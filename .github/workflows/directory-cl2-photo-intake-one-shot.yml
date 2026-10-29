@@ -1,0 +1,118 @@
+name: One-shot CL2 unified photo intake - permanent research-only archive
+on:
+  push:
+    branches:
+      - research/directory-photo-intake-once-20261029
+    paths:
+      - data/directory/research/.run-cl2-photo-intake-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: directory-cl2-photo-intake-20261029-once
+  cancel-in-progress: false
+jobs:
+  build-research-archive:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-photo-intake-once-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: One-shot marker, source sanity, production immutability
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-unified-photo-intake-test.py -v
+          python - <<'PY'
+          import json
+          p=json.load(open('data/directory/research/.run-cl2-photo-intake-20261029.json'))
+          assert p == {'schema':'AO_CL2_PHOTO_QUEUE_ONE_SHOT_V1',
+                       'cl2_commit':'eb67711a9886a7626916b7a145787c5e99105968',
+                       'physical_anchors':2579,'shard_size':250,'publication':False}
+          PY
+      - name: Rebuild exact fully checked CL2 photo queue (no image downloads)
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          src_ref='refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          pinned='eb67711a9886a7626916b7a145787c5e99105968'
+          test "$(git rev-parse "$src_ref")" = "$pinned" || {
+            echo "::error::Unmerged CL2 changed; review and pin a new source before any export."
+            exit 1
+          }
+          git worktree add --detach /tmp/ao-cl2-pinned "$pinned"
+          python tools/directory/build-unified-photo-intake.py \
+            --cl2-dir /tmp/ao-cl2-pinned/data/directory/research/cl2-unified-20261026 \
+            --r49 data/directory/preliminary-map-r49.v1.json \
+            --out-dir /tmp/ao-cl2-photo-intake \
+            --shard-size 250 --cl2-commit "$pinned"
+      - name: Verify 2579 unique research anchors and file-integrity before branch write
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import pathlib,json,hashlib
+          root=pathlib.Path('/tmp/ao-cl2-photo-intake')
+          manifest=json.loads((root/'manifest.json').read_text())
+          counts=manifest['counts']
+          assert manifest['not_app_visible'] is True
+          assert manifest['publication']=='RESEARCH_ONLY_NEVER_APP_VISIBLE'
+          assert counts['distinct_consolidated_physical_anchors']==2579
+          assert counts['historical_canonical_group_ids']==2584
+          assert counts['r49_historical_source_ids']==1879
+          assert counts['r49_exact_source_ids_crosswalked']==1879
+          assert counts['anchors_with_r49_exact_source']==1844
+          assert counts['cl2_venue_sources_safely_attached']==2682
+          assert counts['cl2_venue_sources_held_for_group_conflict']==5
+          assert counts['photos_published']==0
+          assert len(manifest['shards'])==11
+          seen=set()
+          for item in manifest['shards']:
+              p=root/item['path']
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==item['sha256']
+              data=json.loads(p.read_text())
+              assert data['publication']==manifest['publication']
+              for record in data['records']:
+                  assert record['physical_anchor_id'] not in seen
+                  assert record['publication']==manifest['publication']
+                  assert record['building_subject_verified'] is False
+                  assert record['approved_originals']==0
+                  assert record['approved_cover_photo'] is False
+                  seen.add(record['physical_anchor_id'])
+          assert len(seen)==2579
+          print('WORLDWIDE_INTAKE_VERIFIED',json.dumps(counts,sort_keys=True))
+          PY
+      - name: Preserve all 11 source-pinned shards permanently in research branch, never main
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-unified-photo-intake; then
+            git switch -C research/directory-unified-photo-intake origin/research/directory-unified-photo-intake
+          else
+            git fetch --no-tags origin main
+            git switch -c research/directory-unified-photo-intake origin/main
+          fi
+          target="data/directory/research/unified-photo-intake/cl2-eb67711a-20261029"
+          test ! -e "$target" || { echo "Permanent CL2 queue already exists; refuse overwrite"; exit 1; }
+          mkdir -p "$target"
+          cp /tmp/ao-cl2-photo-intake/*.json "$target/"
+          git add "$target"
+          git diff --cached --name-only | while read -r f; do
+            case "$f" in
+              "$target"/*.json) ;;
+              *) echo "Unexpected archive path: $f" >&2; exit 1;;
+            esac
+          done
+          test "$(git diff --cached --name-only | wc -l)" -eq 13
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): archive all 2579 CL2 physical-anchor photo intake records (unpublished)"
+          git push origin HEAD:refs/heads/research/directory-unified-photo-intake
