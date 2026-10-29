@@ -733,8 +733,8 @@ Pinned original source checks at revision
   Preces/Suffragium, Oratio and Conclusio. The historic
   conditions in the source must be evaluated for 1960, not emitted
   as prayers or all applied unconditionally.
-- `Psalterium/Psalmi/Psalmi major.txt#[Day0 Vespera]` provides
-  **109, 110, 111, 112, 113** as five Sunday Vespers psalms,
+- `Psalterium/Psalmi/Psalmi major.txt#[Day6 Vespera]` provides
+  **five Saturday Vespers psalm portions**, specifically 143(1–8), 143(9–15), 144(1–7), 144(8–13a) and 144(13b–21),
   with antiphon stubs. All three source languages contain that
   exact numeric sequence.
 - `Tempora/Adv1-0.txt#[Ant Vespera]` in **Latin** points to
@@ -780,10 +780,10 @@ Implementation:
   Gloria Patri, antiphon repetition/placement, rubrical variants
   and printed source comparison are not certified.
 - `tests/divine-office-advent-first-vespers-source-sequence.mjs`
-  covers the two source files × three languages, 109–113
-  numbering, non-identical Latin vs EN/FR aliases, wrong
-  source identity and the full fifteen source/verse
-  research reads. **Tests use injected synthetic content
+  covers the two source files × three languages, Saturday Psalm 143/144 ranges
+  (including the verse-13a/13b split), non-identical Latin vs EN/FR aliases, wrong
+  source identity and six unique psalm-source leaves
+  (Psalm143 and Psalm144 × three languages) with five segment projections. **Tests use injected synthetic content
   reflecting the inspected source structure**, not a falsely
   described independent printed Breviary or a live-endpoint
   validation.
@@ -845,7 +845,7 @@ source-research manifest is now supplemented by a separate
 
 `tests/divine-office-advent-vespers-remainder-research.mjs`
 covers six regression cases. CI includes the new tests alongside
-the existing psalmody (Psalms 109–113), standard collect conclusion,
+the corrected Saturday-Psalter psalmody (five Psalm143/144 portions), standard collect conclusion,
 reference trace and annual metadata guards.
 
 **Current release position:** original source sequencing is
@@ -856,3 +856,42 @@ text, commemoration concurrence, printed witness collation,
 trilingual alignment and rights review. Certified and published
 Hours remain **zero**. No bulk CGI/XHTML capture, permanent
 text archive, additional hosting or paid services are enabled.
+
+## Critical 1960 First Vespers Psalter correction (29 October)
+
+The prior 2026 Advent I research fixtures incorrectly used
+**Sunday II Vespers** `Psalmi major#Day0 Vespera` and Psalms
+109–113. This was caught by checking the **1960 Breviary General
+Rubrics, no. 166(a)**: at **First Vespers of Sunday**, the
+Ordinary and Psalter are from the **preceding Saturday**,
+with the proper elements of the Sunday.
+
+The correct original, pinned, trilingual source is
+`Psalterium/Psalmi/Psalmi major#Day6 Vespera`. It specifies five
+**portions** from only Psalms **143 and 144**:
+
+1. Psalm 143:1–8
+2. Psalm 143:9–15
+3. Psalm 144:1–7
+4. Psalm 144:8–13a
+5. Psalm 144:13b–21
+
+The pinned source writes `144(8-'13a')` and
+`144('13b'-21)`; the French source uses typographical
+curly apostrophes. The raw `Psalm143.txt` has legitimately
+repeated numeric verse rows for 2, 12 and 13, and
+`Psalm144.txt` has separate **13a/13b** rows. These are
+source semantics, not corrupt duplications. The resolver now
+enforces the exact five spans, repeated labels and same-language
+origin rather than silently selecting the whole psalm.
+
+The previous incorrect 109–113 research fixtures, assertions and
+source hints were replaced; no 109–113 Vespers service was ever
+published. The remaining antiphon, doxology, appointment, local
+calendar and printed witness gates are still outstanding.
+
+Rubrical witness:
+https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html
+(§166(a)). Source revision remains
+`126a07f91ede04664108abb6fb20ace3f4de14b9`.
+This correction is **mandatory** before any complete-Hour certification.
