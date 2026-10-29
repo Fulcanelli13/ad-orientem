@@ -63,7 +63,7 @@ def sacred(t):
  low=t.lower().replace('’',"'")
  if any(x in low for x in NEG_TITLE):return False
  if re.search(r'\b(?:duke|duchess|king of|queen of|prince of|princess of|countess|count of|village of|st\. petersburg|archbishop of|cardinal richelieu|city of|church of|the church|cath[eé]drale|interior of|view of)\b',low):return False
- if re.search(r'\b(?:christian name|christopher|christine|christina|st\. john street|st\. peter's (?:river|square|church))\b',low):return False
+ if re.search(r'\b(?:christian name|christopher|christine|christina|st\. john street|st\. peter.s (?:river|square|church))\b',low):return False
  if re.search(r'\b(?:photograph|engrav|etching|lithograph|sketch)\b',low):return False
  if 'st. paul' in low and ('london' in low or 'cathedral' in low):return False
  return any(x.search(t) for x in PATTERNS)
