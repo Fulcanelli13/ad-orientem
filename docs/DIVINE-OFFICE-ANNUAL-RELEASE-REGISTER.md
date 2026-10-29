@@ -511,3 +511,71 @@ and resumed Sundays; source-specific Sanctoral precedence and
 commemoration selection; assemble complete and aligned LA/EN/FR
 Hours with printed witnesses and rights review. No continuous
 annual source download, generator or raw XHTML archive is needed.
+
+## Original pinned-source conditional metadata read — bounded host transport
+
+The next parsing-first gate is implemented by
+`src/office/conditional-source-reader.js`. The Mass
+`hostResolver.resolveSource(...).map` is useful for exact section
+projections but **flattens** conditional `[Rank]` / `[Rule]`
+alternatives, so it cannot be used as evidence for assigning a 1960
+Office variant. This reader takes the application's *existing* installed
+source-transport-compatible `fetch` as an injected `fetchSource`,
+never creates an independent downloader, and makes **only an explicit
+one-leaf read** using the existing immutable DO revision.
+
+Example of the supported integration contract (not a production entry
+point and **not an Office publication operation**):
+
+    const originalMeta = createOfficeConditionalSourceReader({
+      fetchSource: installedSourceTransportFetch,
+      filenameIndex: pinnedLatinFilenameIndex,
+      maxDistinctReads: 12
+    });
+    const observed = await originalMeta.readDateLead({
+      date: "2026-11-02",
+      path: "Sancti/11-02"
+    });
+    // observed.byKind.Rank retains every conditional witness;
+    // observed.class and observed.appointedOffice are null.
+
+It checks exact filenames in the **1,185-filename pinned index**
+and refuses any path that is not in that index. It pins the URL to
+`raw.githubusercontent.com/DivinumOfficium/divinum-officium/`
+with the immutable `DIVINUM_OFFICIUM_PIN`, disallows redirects,
+requires a successful HTTP 200 original leaf, checks final URL,
+caps source size, enforces a maximum number of distinct reads per
+reader instance even across failures, and deduplicates simultaneous
+requests. The **only cached values are the parsed, bounded conditional
+metadata records**, not the source text. Browser fetch is invoked
+only when `readOne` or `readDateLead` is called; there is no list
+or annual read method, no periodic fetch, no filesystem output,
+no Actions archive, and no generated XHTML.
+
+**Accounting terminology:** the on-demand HTTP read of an original
+leaf is not a permanent source-file download or the bulk XHTML
+capture process previously cancelled. It *does* transfer the minimum
+requested upstream leaf into memory momentarily for the parser.
+The earlier annual metadata-only CLI remains fully offline and does
+not call this reader.
+
+`tests/divine-office-conditional-source-reader.mjs` checks the
+runtime contract with injected/mock transport. It includes the
+pinned original's exact All Souls Rank/Rule metadata shape, preserving
+its competing historical ranks and the `No prima Vespera` directive.
+It asserts that no `[Oratio]` content is returned; validates
+Advent I, pinned URLs, one-leaf in-memory reuse, no arbitrary date
+substitution, no redirect or 404 acceptance, size ceilings and
+bounded-read exhaustion. Tests **do not** claim that the
+actual production browser has invoked this adapter or that Office
+sections/texts/translations have been certified.
+
+    node --test tests/divine-office-conditional-source-reader.mjs
+
+**Next unresolved integration:** provide the live app's existing
+source transport and pinned filename manifest at the user-triggered
+Office research entry point; reconcile the 1960 conditional choice
+with printed Rubrics, multiple occurrences, Vespers and independent
+local Ordo. Only after that can it choose specific source sections
+for the eight Hours. No source archive, bulk capture, public route
+or paid service is introduced by this stage.
