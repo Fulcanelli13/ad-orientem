@@ -148,7 +148,7 @@ try{
      assert.match(snapshot.primary,/omnis honor|all honou?r and glory|honneur et gloire/i,
       "Source doxology text must remain readable in the selected vernacular/Latin mode");
      assert.match(snapshot.liveRubric,spec.lang==="fr"
-      ?/élève légèrement l’Hostie et le calice/:/raises the Host and chalice slightly/,
+      ?/élève légèrement le calice avec la sainte Hostie/:/raises the chalice slightly with the Sacred Host/,
       "LIVE minor elevation lacks text-only source cue");
      assert.equal(snapshot.fakeR17Rubric,0,
       "The canonical gesture-matrix source must never masquerade as an R17 published event");
