@@ -41,11 +41,12 @@ function safeText(v){
  return typeof v==="string"&&v.trim().length>0&&v.length<19000&&
  !/[\u0000]/u.test(v);
 }
-function chunks(lines,{withVerse=false}={}){
+function chunks(lines,{withVerse=false,allowStanzaBreak=false}={}){
  if(typeof lines==="string")return safeText(lines)?[lines]:null;
  if(!Array.isArray(lines)||!lines.length||lines.length>120)return null;
  const out=[];
  for(const item of lines){
+  if(allowStanzaBreak&&item==="\n"){out.push(item);continue}
   if(typeof item==="string"&&safeText(item)){out.push(item);continue}
   if(withVerse&&typeof item==="object"&&safeText(item?.text)&&
      typeof item.verse==="string"&&/^Luke 1:(4[6-9]|5[0-5])$/u.test(item.verse)){
@@ -119,7 +120,8 @@ export function projectAdventI2026ResearchPreview({
   const texts={};
   for(const language of LANGUAGES){
    const lines=get(language);
-   const result=chunks(lines,extra.withVerse?{withVerse:true}:{});
+   const result=chunks(lines,{withVerse:extra.withVerse===true,
+    allowStanzaBreak:extra.allowStanzaBreak===true});
    if(!result)return false;
    texts[language]=Object.freeze([...result]);
   }
@@ -202,7 +204,7 @@ export function projectAdventI2026ResearchPreview({
      if(!Array.isArray(hymn)||hymn.length<20)return null;
      return hymn.map(x=>x.kind==="STANZA_SEPARATOR"?"\n":
        x.kind==="HYMN_LINE"?x.text:null);
-    });break;
+    },{allowStanzaBreak:true});break;
    }
    case "VERSICLE":{
     if(event.sourceId!=="Psalterium/Special/Major Special#Adv Versum 3")break;
