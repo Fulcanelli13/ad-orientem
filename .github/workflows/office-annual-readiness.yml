@@ -4,6 +4,9 @@ on:
     paths:
       - 'src/office/annual-readiness-register.js'
       - 'src/office/source-section-resolver.js'
+      - 'src/office/mass-host-source-bridge.js'
+      - 'src/office/structured-hour-draft.js'
+      - 'tests/divine-office-mass-bridge-and-hour-draft.mjs'
       - 'tests/divine-office-source-section-resolver.mjs'
       - 'src/office/annual-capture-ledger.js'
       - 'scripts/office/emit-annual-capture-ledger.mjs'
@@ -31,6 +34,9 @@ jobs:
           node --check src/office/annual-readiness-register.js
           node --check src/office/source-section-resolver.js
           node --test tests/divine-office-source-section-resolver.mjs
+          node --check src/office/mass-host-source-bridge.js
+          node --check src/office/structured-hour-draft.js
+          node --test tests/divine-office-mass-bridge-and-hour-draft.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
           node --test tests/divine-office-annual-capture-ledger.mjs
