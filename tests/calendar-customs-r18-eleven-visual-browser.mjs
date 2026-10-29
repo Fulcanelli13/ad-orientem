@@ -69,8 +69,15 @@ try{
    assert.equal(await cal.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),35);
    assert.equal(await reviewer.locator('[data-cal-custom-item]').count(),0);
    assert.equal(await reviewer.getAttribute("data-cal-r18-published-count"),"35");
+   // Day-resolution repaint may replace expanded <details>; finish week
+   // resolution before opening the editorial copy for visual capture.
+   await page.waitForFunction(()=>
+     !document.getElementById("ao-cinema-loader")?.classList.contains("aoCinemaLoaderOn"),
+     null,{timeout:90000});
    const first=reviewer.locator('[data-cal-r18-eleven-key="CUSTOMS-R18-03"]');
-   await first.locator(":scope > summary").click();
+   if(await first.getAttribute("open")===null)
+     await first.locator(":scope > summary").click();
+   await first.locator(".aoCalCustomArticleContent").waitFor({state:"visible",timeout:10000});
    const cols=first.locator(".aoCalR18ElevenLanguage");
    assert.equal(await cols.count(),2);
    assert.equal(await cols.nth(0).getAttribute("lang"),"en");
@@ -102,13 +109,25 @@ try{
    // The live week resolver can replace Calendar DOM nodes while preparing
    // the liturgical week; wait for its overlay to clear and capture the
    // browser viewport rather than a transient element handle.
-   await page.waitForFunction(()=>
-     !document.getElementById("ao-cinema-loader")?.classList.contains("aoCinemaLoaderOn"),
-     null,{timeout:90000});
    await reviewer.waitFor({state:"visible",timeout:10000});
-   await reviewer.evaluate(el=>el.scrollIntoView({block:"start",behavior:"instant"}));
+   assert.equal(await first.getAttribute("open"),"",
+     "The editor-expanded first article should persist through settled Calendar render");
+   await first.evaluate(el=>{
+     el.scrollIntoView({block:"start",behavior:"instant"});
+     window.scrollBy({top:-82,behavior:"instant"});
+   });
    const file=resolve(output,"editorial-"+tag+".png");
    await page.screenshot({path:file,fullPage:false,animations:"disabled",timeout:25000});
+   // On a narrow phone, the translated column must be available below the
+   // English copy. Capture it independently without faking a two-column fit.
+   if(width<=430){
+    await cols.nth(1).evaluate(el=>{
+      el.scrollIntoView({block:"start",behavior:"instant"});
+      window.scrollBy({top:-82,behavior:"instant"});
+    });
+    await page.screenshot({path:resolve(output,"editorial-fr-column-"+tag+".png"),
+      fullPage:false,animations:"disabled",timeout:25000});
+   }
    assert.equal(await page.locator('[data-cal-r18-eleven-editorial-preview]').count(),1,
      "Reviewer should survive Calendar week preparation");
    results.push({tag,public_customs:35,review_articles:11,source_links:17,
