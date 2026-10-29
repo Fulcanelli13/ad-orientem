@@ -146,6 +146,44 @@ for x in breviar['records']:
  z['historicalExistingWorkMatches']='NEEDS_PHYSICAL_ID_CONFIRMATION'
  z['sourceImageRightsEvidence']='SOURCE_METADATA_ONLY_NO_NEW_CLEARANCE'
  plateRefs.append(z)
+
+def subject_screen(title):
+ t=norm(title)
+ if not t:return 'EMPTY_TITLE'
+ # Portraits of unrelated people and non-painting artefacts can contain a saint's first name.
+ if any(p in t for p in ('maria stuart','marie antoinette','maria theresia','maria josepha',
+ 'maria jozefa','maria van','marie josephine','portret van maria','portrait of maria',
+ 'rubens bezoekt','rubens visiting','sint jorisgilde','sint sebastiaansgilde',
+ 'heilige geest gilde','guild of the holy spirit','gilde van','saint george guild')):
+  return 'NON_SACRED_PERSON_OR_GUILD_TITLE'
+ nonpainting=('beeldje','beeld van eikenhout','trekring','vaandelpiek','stafbekroning',
+ 'sireschild','sireschakel','armplaat','schild van zilver','kelk van','draagteken',
+ 'lijst met','frame depicting','the frame','ring van','liturgisch boek','boekband',
+ 'medaille','zilver en koper','plaquette','gildepenning','miniatuur in','prentenboek')
+ if any(s in t for s in nonpainting):return 'NON_PAINTING_OBJECT_INDICATOR'
+ explicit=('christus','jezus','jesus christ','christ on','crucifixion','kruisiging','kruisafneming',
+ 'madonna','virgin and child','maria met kind','maria en kind','mary and child',
+ 'maagd maria','virgin mary','heilige maagd','heilige familie','holy family',
+ 'heilige franciscus','heilige magdalena','heilige johannes','heilige augustinus',
+ 'heilige jozef','heilige lucas','heilige pieter','saint ','sainte ','saint-',
+ 'sint ','sint-','saints ','heiligen ','sacred heart','heilig hart',
+ 'annunciation','annunciatie','aankondiging','verkondiging',
+ 'resurrection','verrijzenis','ascension','hemelvaart','pentecost','pinksteren',
+ 'nativity','geboorte van christ','adoration','aanbidding','doopsel van christ',
+ 'baptism of christ','la pieta','pieta','trinity','drie eenheid','last supper','laatste avondmaal',
+ 'martyrdom','martelaarschap','the passion','het lijden van christus',
+ 'immaculate conception','onbevlekte ontvangenis','madonna with','mary magdalene',
+ 'magdalena','johannes de doper','visioen van de heilige','visitation')
+ if any(k in t for k in explicit):return 'SACRED_ICONOGRAPHY_TITLE_MATCH'
+ ambiguous=('maria','marie','angel','engel','peter','petrus','paulus','paul',
+ 'abraham','david','sint','saint','heilig','heilige','johannes','last judgement')
+ if any(k in t for k in ambiguous):return 'AMBIGUOUS_REQUIRES_SUBJECT_CHECK'
+ return 'NOT_SUPPORTED_AS_SACRED_BY_TITLE'
+def holding_museum(x):
+ if x.get('provider')=='rijks':return 'Rijksmuseum Amsterdam'
+ origin=x.get('objectId','')
+ if origin.startswith('https://www.museabrugge.be/'):return 'Musea Brugge — exact holding/site unverified'
+ return 'UNKNOWN_FLEMISH_HOLDING_IN_VKC_OAI'
 new=[]
 if discovery and discovery.get('status')=='METADATA_COLLECTED':
  for x in discovery.get('leads',[]):
@@ -154,6 +192,12 @@ if discovery and discovery.get('status')=='METADATA_COLLECTED':
           x.get('objectUrl',''),None,x.get('objectId'))
   z['museumAsRecorded']=x.get('museum')
   z['sourceProvider']=x['provider']
+  z['sourceAggregator']=('Vlaamse Kunstcollectie OAI (NOT KMSKA object ownership)' if x['provider']=='kmska' else 'Rijksmuseum Linked Art')
+  z['holdingInstitution']=holding_museum(x)
+  z['holdingInstitutionVerified']=bool(x.get('provider')=='rijks')
+  z['sacredSubjectMetadataPreflight']=subject_screen(x.get('title',''))
+  z['mediumEvidence']=('SEARCH_FILTER_PAINTING_NEEDS_OBJECT_CHECK' if x['provider']=='rijks' else 'UNVERIFIED_MAY_BE_SCULPTURE_OR_DECORATIVE_OBJECT')
+  z['visualAestheticAssessment']='NOT_EVALUATED_IMAGE_NOT_REVIEWED'
   z['possibleCanonicalMatches']=x.get('possibleCanonicalMatches',[])
   z['objectIdentityVerifiedAgainst383']=False
   z['sourceImageRightsClaim']=x.get('photographLicence','UNVERIFIED')
@@ -185,7 +229,12 @@ payload={
  'sourcePaths':PATHS,'institutionCount':186,
  'counts':{'canonicalUniqueArtworks':len(records),'original281ExactIdentityLinkedToCanonical':linkedExisting,
   'old281NotYetProvenSameObject':len(extra281),'breviariumPlateReferencesNotUniqueWorks':len(plateRefs),
-  'newB1MetadataLeads':len(new),'unifiedRowsWithoutPhysicalDedupClaim':len(allItems),
+  'newB1MetadataLeads':len(new),
+  'b1TitleExplicitSacred':sum(x['sacredSubjectMetadataPreflight']=='SACRED_ICONOGRAPHY_TITLE_MATCH' for x in new),
+  'b1TitleAmbiguous':sum(x['sacredSubjectMetadataPreflight']=='AMBIGUOUS_REQUIRES_SUBJECT_CHECK' for x in new),
+  'b1TitleNonSacredOrNonPainting':sum(x['sacredSubjectMetadataPreflight'] in ('NON_SACRED_PERSON_OR_GUILD_TITLE','NON_PAINTING_OBJECT_INDICATOR','NOT_SUPPORTED_AS_SACRED_BY_TITLE','EMPTY_TITLE') for x in new),
+  'b1ActualPaintedMediumVerified':0,
+  'unifiedRowsWithoutPhysicalDedupClaim':len(allItems),
   'historicalUserApprovedCanonical':107,
   'sourceKind':dict(counts),'editorialStates':dict(status),
   'newHumanAestheticApprovals':0,'newPhotoRightClearances':0,'newProductionAssets':0},
@@ -213,7 +262,9 @@ lines=['# Sacred Art — European museum art registration and aesthetic triage',
  '- **281** earlier research candidates crosslinked by exact artwork ID or same recorded source URL; **'+str(linkedExisting)+'** such links, **'+str(len(extra281))+'** still identity-unresolved.',
  '- **83 Breviarium plates** registered as visual-source references (not automatically 83 separate physical paintings).',
  '- **'+str(len(new))+'** B1 Rijksmuseum/KMSKA source metadata leads joined (B1 optional; absent or unfinished means zero leads, not an empty collection).',
- '- **0** new human aesthetic approvals; **0** source-image legal clearances; **0** photo QA releases.','',
+ '- **0** new human aesthetic approvals; **0** source-image legal clearances; **0** photo QA releases.',
+ '- B1 title prefilter: **'+str(payload['counts']['b1TitleExplicitSacred'])+'** explicit sacred-title matches, **'+str(payload['counts']['b1TitleAmbiguous'])+'** ambiguous, **'+str(payload['counts']['b1TitleNonSacredOrNonPainting'])+'** unsupported/likely unrelated or non-painting records.',
+ '- The Flemish OAI feed currently yields Musea Brugge collection URLs, **not 374 confirmed KMSKA holdings**. Museum holder and medium must be confirmed independently.','',
  '## Strict aesthetic gates (not an artist-only score)','',
  '1. **Exceptional painterly beauty**: accomplished drawing/anatomy, chromatic richness, strong coherent composition, emotional restraint or depth.',
  '2. **Sacred devotional intensity**: reverence, spiritual gravity, transcendence and visual power; reject generic illustration or merely antiquarian documentation.',
