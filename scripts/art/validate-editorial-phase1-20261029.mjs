@@ -137,4 +137,81 @@ for (const entry of linkage.rows) {
 }
 if (master.phase1Crosswalk.reviewCardsAssessed !== 856 || master.phase1Crosswalk.productionMutation !== false) fail("master crosswalk metadata mismatch");
 if (master.gates.production !== "UNTOUCHED") fail("production gate modified");
+
+const museum479 = load("sacred-art-phase1-museum-479-accession-audit-20261029.v1.json");
+const registry281Ids = new Set(load("sacred-art-candidates.v1.json").artworks.map(r => r.id.toLowerCase()));
+const researchWeak = new Map(weakIdentityQueue.leadRows.map(r => [r.sourceId, r.possibleExistingCanonical.map(w => w.canonicalArtworkId)]));
+const museumTargets = unlinkedRows.filter(r => !r.sourceId.startsWith("commons:"));
+const expectedDomains = {
+  cma: "clevelandart.org", kmska: "kmska.be", met: "metmuseum.org", nga: "nga.gov",
+  walters: "purl.thewalters.org", smk: "open.smk.dk", rijks: "id.rijksmuseum.nl"
+};
+if (museumTargets.length !== 479 || museum479.rows.length !== 479) fail("museum accession audit coverage changed");
+const museumById = new Map(museumTargets.map(r => [r.sourceId, r]));
+if (new Set(museum479.rows.map(r => r.sourceId)).size !== 479) fail("museum accession audit duplicate source ID");
+const accessionAllReviews = new Map();
+const normAcc = v => String(v ?? "").toLowerCase().replace(/\s+/g, "");
+for (const r of records) {
+  const k = r.sourceId.split(":")[0] + "|" + normAcc(r.accession);
+  accessionAllReviews.set(k, [...(accessionAllReviews.get(k) ?? []), r.sourceId]);
+}
+let prior281 = 0, textLeads = 0, conditional479 = 0;
+const titleArtistGroups = new Map();
+const normalized = s => String(s ?? "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+for (const row of museum479.rows) {
+  const reviewed = museumById.get(row.sourceId), raw = byId.get(row.sourceId);
+  if (!reviewed || !raw || raw.decision !== row.userDecision || raw.batch !== row.batch ||
+      reviewed.review.accession !== row.sourceAccession || raw.accession !== row.sourceAccession ||
+      reviewed.review.originalSourceUrl !== row.sourceObjectUrl ||
+      raw.title !== row.title || raw.artist !== row.artistAsReviewed) fail("museum frozen source mismatch " + row.sourceId);
+  const prefix = row.sourceId.split(":")[0], objId = row.sourceId.split(":")[1];
+  if (row.museum !== prefix || row.sourceObjectId !== objId || !Object.hasOwn(expectedDomains, prefix))
+    fail("museum identity prefix mismatch " + row.sourceId);
+  const target = (prefix === "cma" || prefix === "walters") ? row.sourceAccession : objId;
+  const u = new URL(row.sourceObjectUrl);
+  if (u.hostname.toLowerCase().replace(/^www\./, "") !== expectedDomains[prefix] ||
+      !decodeURIComponent(u.pathname).toLowerCase().endsWith("/" + String(target).toLowerCase()) ||
+      row.sourceUrlAlignedWithSuppliedId !== true) fail("museum source URL internal reference mismatch " + row.sourceId);
+  const k = prefix + "|" + normAcc(row.sourceAccession);
+  if ((accessionAllReviews.get(k) ?? []).length !== 1 ||
+      row.sourceAccessionCollisionWithAnyReviewedCard.length !== 0) fail("museum accession collision " + row.sourceId);
+  const researchId = row.sourceId.replace(":", "-").toLowerCase();
+  if (row.reviewResearchRegistry281Id !== (registry281Ids.has(researchId) ? researchId : null))
+    fail("museum research-281 crosswalk mismatch " + row.sourceId);
+  if (row.reviewResearchRegistry281Id) prior281++;
+  const lead = researchWeak.get(row.sourceId) ?? [];
+  if (JSON.stringify(row.existingTextOnlyCanonicalLeads) !== JSON.stringify(lead))
+    fail("museum weak leads changed " + row.sourceId);
+  if (lead.length) textLeads++;
+  if (row.userDecision === "IMPORT_WITH_CORRECTIONS") conditional479++;
+  const key = normalized(row.title) + "|" + normalized(row.artistAsReviewed);
+  titleArtistGroups.set(key, [...(titleArtistGroups.get(key) ?? []), row.sourceId]);
+  if (row.externalInstitutionalRecordVerified !== false || row.canonical383Identity !== "NO_CONFIRMED_LINK" ||
+      row.imageVisualCertified !== false || row.imageRightsCertified !== false || row.productionApproved !== false)
+    fail("museum audit accidentally released or certified an artwork " + row.sourceId);
+}
+let titleGroups = 0;
+for (const r of museum479.rows) {
+  const key = normalized(r.title) + "|" + normalized(r.artistAsReviewed);
+  const peers = (titleArtistGroups.get(key) ?? []).filter(id => id !== r.sourceId);
+  if (JSON.stringify(r.sameTitleArtistOtherSourceCards.slice().sort()) !== JSON.stringify(peers.slice().sort()))
+    fail("museum same-title/artist queue mismatch " + r.sourceId);
+}
+for (const peers of titleArtistGroups.values()) if (peers.length > 1) titleGroups++;
+if (prior281 !== 11 || textLeads !== 11 || conditional479 !== 67 || titleGroups !== 3 ||
+    museum479.counts.institutionBackedUnlinkedSourceCards !== 479 ||
+    museum479.counts.sourceUrlInternallyAligned !== 479 ||
+    museum479.counts.uniqueAccessionKeysAgainstAll2455 !== 479 ||
+    museum479.counts.priorResearchRegistryMatches !== prior281 ||
+    museum479.counts.existingHeuristicTextOnlyLeadRows !== textLeads ||
+    museum479.counts.sameTitleArtistCandidateGroups !== titleGroups ||
+    museum479.counts.conditionalImportCards !== conditional479 ||
+    museum479.counts.externallyVerifiedInstitutionalRecords !== 0 ||
+    museum479.counts.newConfirmedCanonical383Links !== 0 ||
+    museum479.counts.newDistinctPhysicalArtworksCertified !== 0 ||
+    museum479.counts.productionImports !== 0 ||
+    museum479.releaseGates.productionMutation !== false ||
+    museum479.releaseGates.userChoicesModified !== false) fail("museum accession audit count/release gates changed");
+console.log("PASS museum-backed accession internal audit: 479 reviewed, 479 URL-aligned, 11 research-registry matches, zero confirmed new canonical links.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
