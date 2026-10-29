@@ -1,0 +1,65 @@
+name: Sacred Art B13 — final French-museum image and curation corrections
+on:
+  push:
+    branches: [research/sacred-art-b13-french-museums-20261029]
+    paths:
+      - scripts/art/sacred-art-b13-final-photo-quality-20261029.py
+      - .github/workflows/sacred-art-b13-final-photo-quality-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  final-image-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b13-french-museums-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Revalidate ten quality replacements and 250 unique painting images
+        run: |
+          python -m py_compile scripts/art/sacred-art-b13-final-photo-quality-20261029.py
+          python -u scripts/art/sacred-art-b13-final-photo-quality-20261029.py
+      - name: Validate 250-card French museum sorting and fully functioning controls
+        run: |
+          python - <<'PY'
+          import hashlib,json,re
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-b13-french-250-final-editorial-screener-20261029.v2.json').read_text())
+          x=d['rows'];c=d['counts']
+          assert len(x)==c['target']==c['reviewable']==250
+          assert c['frenchMuseumAssociated']>=70 and c['verifiedNewReplacementImages']==10
+          assert c['rejectedDubiousMetadataOrPhotos']==10
+          assert c['prevReviewedBatchesExcluded']==2205
+          assert c['productionImports']==c['originalImagesAcquired']==0
+          assert len({y['id'] for y in x})==len({y['previewURL'] for y in x})==250
+          assert all(y['imageRightsVerified'] and min(y['nativeSourceDimensions'].values())>=1600 for y in x)
+          assert all(y['licenseShortName'].lower() in ('public domain','cc0','cc0 1.0') for y in x)
+          assert d['batchSha256']==hashlib.sha256(json.dumps([y['id'] for y in x],separators=(',',':')).encode()).hexdigest()
+          h=Path('docs/SACRED_ART_B13_FRENCH_MUSEUMS_250_FINAL_REVIEW_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==x
+          assert "batchId:'B13'" in h and 'const PAGE_SIZE=50;' in h
+          assert "filter==='French'" in h and "filter==='Other'" in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/b13-final-gallery.js').write_text(js.group(1))
+          print('FINAL_B13',c)
+          PY
+          node --check /tmp/b13-final-gallery.js
+      - name: Archive final audited research-only candidate gallery
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b13-french-250-final-editorial-screener-20261029.v2.json
+          git add docs/SACRED_ART_B13_FRENCH_MUSEUMS_250_FINAL_QA_20261029.md
+          git add docs/SACRED_ART_B13_FRENCH_MUSEUMS_250_FINAL_REVIEW_20261029.html
+          git diff --cached --check
+          git commit -m "research(art): B13 final 250 French-master photo gallery with ten QA corrections"
+          git pull --rebase origin research/sacred-art-b13-french-museums-20261029
+          git push origin HEAD:research/sacred-art-b13-french-museums-20261029
