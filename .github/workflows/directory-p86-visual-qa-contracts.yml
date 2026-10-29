@@ -9,6 +9,8 @@ on:
       - tests/directory-p88-84-actual-visual-qa-test.py
       - data/directory/research/p89-77-documentary-building-identity-gate-20261029.json
       - tests/directory-p89-77-photo-identity-gate-test.py
+      - data/directory/research/p90-two-originals-media-publication-gates-20261029.json
+      - tests/directory-p90-original-photo-publication-gates-test.py
       - tools/directory/screen-worldwide-p83-photo-candidates.py
       - tests/directory-p83-global-photo-screen-test.py
       - tests/directory-p86-visual-qa-ledger-test.py
@@ -33,5 +35,6 @@ jobs:
           python tests/directory-p88-p85-photo-source-triage-test.py
           python tests/directory-p88-84-actual-visual-qa-test.py
           python tests/directory-p89-77-photo-identity-gate-test.py
+          python tests/directory-p90-original-photo-publication-gates-test.py
           python tests/directory-p83-global-photo-screen-test.py -v
           node tests/production-tree-hygiene.mjs
