@@ -51,7 +51,10 @@ export function officeTranslationContentBlockers({latin,translation}={}){
      translation.language==="fr"){
     const l=latin.sections.find(s=>
       /commemoratio dominica xxiii post pentecosten i[.] novembris/i.test(normalized(s.text)));
-    if(l){
+    // The 31 October FIRST Vespers Sunday commemoration instead uses
+    // Vidi Dominum. Only the SECOND Vespers At Jesus source is missing
+    // from the French composed output; do not quarantine its valid sibling.
+    if(l&&/at jesus conversus/.test(normalized(l.text))){
       const tr=find(translation,l.sourceCellId);
       const all=normalized((translation.sections??[]).map(s=>s.text).join("\n"));
       const hasAntiphon=/jesus se retournant/.test(all);
