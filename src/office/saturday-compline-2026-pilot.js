@@ -273,7 +273,7 @@ export async function assembleSaturdayComplinePilot({reader}={}){
     .replace(/\{::\}/gu,"").trim();
    const ant=all.slice(0,prayerAt).filter(z=>z!=="_").map(clean);
    const collect=all.slice(prayerAt+1).filter(z=>z!=="_").map(clean);
-   if(ant.length<7||collect.length!==1||
+   if(ant.length<3||collect.length!==1||
       ant.some(z=>!isLine(z))||collect.some(z=>!isLine(z)))
     throw Error("COMPLINE_ADVENT_MARIAN_SOURCE_UNRESOLVED:"+l);
    marian[l]=ant;
