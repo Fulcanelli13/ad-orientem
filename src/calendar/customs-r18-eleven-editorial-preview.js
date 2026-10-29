@@ -3,7 +3,7 @@
  * Customs read model, personal customs, Calendar dates, or publication seed.
  *
  * Exactly 11 unsigned R18 articles, copied from the 8-field bilingual source
- * review blob e42482bc7ebe05274a511aa93e40d24fd164b64d; live published count remains 35.
+ * review blob 2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c; live published count remains 35.
  */
 const EDITORIAL_SOURCE_BLOB="2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c";
 const REVIEW_CANDIDATES=Object.freeze([
