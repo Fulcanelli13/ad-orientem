@@ -11,6 +11,7 @@ import {reviewOfficeOccurrence,reviewOfficeVespersConcurrence}
  from "./precedence-review.js";
 import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
 import {planUniversalOfficeKeysForYear} from "./universal-source-descriptors.js";
+import {planTemporalOfficeYear} from "./temporal-source-leads.js";
 import {createOfficePinnedFilenameLookup} from "./pinned-filename-index.js";
 export const OFFICE_ANNUAL_SWEEP_SCHEMA="ao.office.annual-selection-sweep.v1";
 const iso=d=>d.toISOString().slice(0,10);
@@ -73,12 +74,29 @@ function count(map,key){
  * through the independent precedence reviewer. Neither source texts nor
  * language completeness are inspected or implied.
  */
-export function sweepAnnualOfficeResearch({year=2026,officeDays=[],filenameIndex=null}={}){
+export function sweepAnnualOfficeResearch({year=2026,officeDays=[],filenameIndex=null,expandedTemporal=false}={}){
  if(!Number.isInteger(year)||year<1900||year>2099)
   throw Error("OFFICE_SWEEP_YEAR_INVALID");
  const roster=rosterIndex(officeDays,year),dates=daysOf(year);
  const pathPlan=planUniversalOfficeKeysForYear(year);
- const pinnedIndex=filenameIndex===null?null:createOfficePinnedFilenameLookup(filenameIndex).analyzeYear(year);
+ const pinnedLookup=filenameIndex===null?null:createOfficePinnedFilenameLookup(filenameIndex);
+ const pinnedIndex=pinnedLookup?.analyzeYear(year)??null;
+ const temporalPlan=expandedTemporal===true?planTemporalOfficeYear(year):null;
+ if(expandedTemporal!==true&&expandedTemporal!==false)
+  throw Error("OFFICE_SWEEP_TEMPORAL_MODE_INVALID");
+ let temporalListed=0,temporalNotListed=0;
+ const expandedDays=temporalPlan?.dates.map(row=>{
+  const leads=row.leads.map(lead=>{
+   const observed=pinnedLookup?.lookup(lead.path)??null;
+   if(observed){
+    if(observed.filenameStatus==="PINNED_LATIN_FILENAME_LISTED")temporalListed++;
+    else temporalNotListed++;
+   }
+   return Object.freeze({...lead,filenameStatus:observed?.filenameStatus??"NOT_CHECKED"});
+  });
+  return Object.freeze({date:row.date,leads:Object.freeze(leads),
+   uncertainties:row.uncertainties});
+ })??null;
  // Existing annual risk inventory contributes only advisory flags. It does
  // NOT supply a proper Office day or qualify a research candidate.
  const context=buildAnnualOfficeReadiness({year});
@@ -151,6 +169,8 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[],filenameIndex
    occurrenceStatus:occurrence?.status??"NOT_SUPPLIED",
    proposedUniversalSourceKeys:pinnedIndex?
     pinnedIndex.dates[daily.length].keys:pathPlan.days[daily.length].keys,
+   expandedTemporalLeads:expandedDays?.[daily.length]?.leads??null,
+   expandedTemporalUncertainties:expandedDays?.[daily.length]?.uncertainties??null,
    hours:Object.freeze(hours)
   }));
  }
@@ -171,6 +191,12 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[],filenameIndex
    proposedAdventTemporalPaths:pathPlan.adventTemporalPathLeads,
    totalUnverifiedSourcePathLeads:pathPlan.totalProposedSourcePaths,
    sourceFilesVerifiedByThisSweep:0,
+   expandedTemporalProposedPaths:temporalPlan?.totalCandidateKeys??0,
+   expandedTemporalListedFilenames:temporalListed,
+   expandedTemporalNotListedFilenames:temporalNotListed,
+   expandedTemporalExceptionalDates:expandedDays?
+    expandedDays.filter(row=>row.uncertainties.length>0).length:0,
+   expandedTemporalSourceDocumentsRead:0,
    pinnedDirectoryFilenamesIndexed:pinnedIndex?.totalDirectoryFilenames??0,
    proposedPathsWithExactPinnedLatinFilename:pinnedIndex?.exactFilenamesListed??0,
    proposedPathsWithoutExactPinnedLatinFilename:pinnedIndex?.exactFilenamesNotListed??0,
