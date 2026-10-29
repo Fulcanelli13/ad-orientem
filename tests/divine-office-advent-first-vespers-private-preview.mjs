@@ -88,17 +88,18 @@ test("private preview assembles ACTUAL pinned LA/EN/FR snippets into ordered rea
   "Psalterium/Psalmorum/Psalm144#13b-21"
  ]);
  assert.equal(p.blocks.filter(x=>x.kind==="COLLECT_ENDING").length,1);
+  assert.equal(p.blocks.filter(x=>x.kind==="DISMISSAL_DIALOGUE_SOURCE_CANDIDATE").length,1);
  const ending=p.blocks.find(x=>x.kind==="COLLECT_ENDING");
  assert.match(ending.texts.la.join(" "),/Qui vivis et regnas cum Deo Patre/u);
  assert.ok(p.blocks.some(x=>x.kind==="RESEARCH_CALENDAR_NOTICE"));
  assert.equal(p.blocks.some(x=>x.kind==="PATER_NOSTER"),false);
  assert.equal(p.blocks.some(x=>x.kind==="SECOND_DOMINE_EXAUDI_OMITTED"),false);
 });
-test("choir/deacon research has second Dominus response; solo cleric does not",async()=>{
+test("all recitation roles have the concluding dialogue required by printed 1961 §53",async()=>{
  for(const [recitation,minister,hasSecond] of [
-  ["SOLO","DEACON_OR_HIGHER",false],
+  ["SOLO","DEACON_OR_HIGHER",true],
   ["CHOIR_OR_COMMON","DEACON_OR_HIGHER",true],
-  ["CHOIR_OR_COMMON","BELOW_DEACON",false]
+  ["CHOIR_OR_COMMON","BELOW_DEACON",true]
  ]){
   const p=(await assemble({
    ...reader(),universalWitness:universal,recitation,minister
@@ -146,16 +147,16 @@ test("invalid local calendar or public-release flags never become a preview",asy
  assert.equal(x.publishable,false);
 });
 
-test("focused reading retains 37 liturgical events, exactly 40+10 verse rows and six hymn stanzas",async()=>{
+test("focused reading retains 38 liturgical events, exactly 40+10 verse rows and six hymn stanzas",async()=>{
  const result=await assemble({...reader(),universalWitness:universal,
   recitation:"SOLO",minister:"BELOW_DEACON"});
  assert.equal(result.status,"RESEARCH_PREVIEW_ASSEMBLED_NOT_RELEASED",result.reason);
  const p=result.preview;
  const focus=buildFocus({preview:p});
  assert.equal(focus.status,"RESEARCH_VERSE_AND_STANZA_FOCUS_NOT_CERTIFIED",focus.reason);
- assert.equal(focus.originalEventCount,37);
- assert.equal(focus.focusFrameCount,86);
- assert.equal(focus.frames.length,86);
+ assert.equal(focus.originalEventCount,38);
+ assert.equal(focus.focusFrameCount,87);
+ assert.equal(focus.frames.length,87);
  assert.equal(focus.psalmVerseRows,40);
  assert.equal(focus.magnificatVerseRows,10);
  assert.equal(focus.hymnStanzas,6);
@@ -164,7 +165,7 @@ test("focused reading retains 37 liturgical events, exactly 40+10 verse rows and
  assert.equal(focus.published,false);
  assert.equal(focus.publishable,false);
  assert.deepEqual([...new Set(focus.frames.map(x=>x.eventIndex))],
-  [...Array(37).keys()]);
+  [...Array(38).keys()]);
  assert.equal(focus.frames.filter(x=>x.kind==="COLLECT_ENDING").length,1);
  assert.equal(focus.frames.filter(x=>x.kind==="RESEARCH_CALENDAR_NOTICE").length,1);
  const ps=focus.frames.filter(x=>x.focusType==="PSALM_VERSE");
