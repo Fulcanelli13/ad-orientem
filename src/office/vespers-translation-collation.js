@@ -70,11 +70,25 @@ export function collateAllSaintsVespersTranslation(doc){
     if(/^(?:commemoratio(?:nes)?|commemoration(?:s)?|commemoraison(?:s)?|memoire)\b/.test(line))
       headers.push({cell:i,row,sourceCellId:cell.sourceCellId});
   }));
-  if(headers.length!==1)
+  if(headers.length!==1){
+    // Source-sample diagnostic only: see if a different heading spelling
+    // or a misplaced translation explains the missing bounded section.
+    // Presence anywhere is explicitly NOT a pass and cannot authorize text.
+    const text=fold(cells.map(s=>s.text).join("\n"));
+    const headingLeads=cells.flatMap(s=>String(s.text??"").split("\n")
+      .filter(line=>/comm|memoir|m[eé]moire|dimanche|dominic/iu.test(line))
+      .slice(0,4).map(line=>({sourceCellId:s.sourceCellId,
+        lead:line.trim().slice(0,100)}))).slice(0,10);
     return status(date,lang,{sourceHeadingCount:headers.length,
       boundedSectionLocated:false,antiphonSourceIncipitMatched:false,
       sundayCollectSourceIncipitMatched:false,componentOrderMatched:false,
+      sourceIncipientAnywhereForDiagnosis:Object.freeze({
+        antiphon:text.includes(fold(expect.antiphon)),
+        collect:text.includes(fold(expect.collect))
+      }),
+      candidateHeadingLineLeads:Object.freeze(headingLeads),
       reason:"SOURCE_TRANSLATION_COMM_HEADING_AMBIGUOUS"});
+  }
   const header=headers[0];
   const following=cells.slice(header.cell).flatMap((cell,i)=>{
     const lines=String(cell.text??"").split("\n");
