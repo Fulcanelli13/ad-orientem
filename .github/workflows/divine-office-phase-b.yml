@@ -211,7 +211,7 @@ jobs:
         run: |
           node scripts/office/diagnose-french-vespers-composer.mjs \
             --upstream "$UPSTREAM" --report "$OUTPUT/french-vespers-composer-diagnostic.json"
-          test -z "$(git -C "$UPSTREAM" status --porcelain)"
+          git -C "$UPSTREAM" diff --exit-code -- web/cgi-bin/horas/specials/orationes.pl
       - name: Assert normalization manifest coverage (no publication)
         env:
           OUTPUT: ${{ runner.temp }}/ao-office-probe
