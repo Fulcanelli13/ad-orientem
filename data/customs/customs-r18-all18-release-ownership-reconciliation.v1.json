@@ -34,7 +34,10 @@
     "publication_approvals_this_file": 0,
     "new_ids_allocated_this_file": 0,
     "added_calendar_events": 0,
-    "added_indulgences": 0
+    "added_indulgences": 0,
+    "eleven_action_identity_analyst_reviews": 11,
+    "final_new_canonical_identity_approvals": 0,
+    "cross_candidate_family_relationships": 5
   },
   "policy": {
     "source_rechecks_are_narrow_not_full_article_certification": true,
@@ -45,7 +48,10 @@
     "calendars_derive_dates_from_existing_1962_resolver": true,
     "existing_22_historical_details_are_not_22_additional_customs": true,
     "no_automatic_identity_merge_from_competitor_hints": true,
-    "no_customs_atlas": true
+    "no_customs_atlas": true,
+    "analyst_action_dispositions_are_not_final_editorial_signoff": true,
+    "maintain_named_regional_subtypes_without_forced_merge": true,
+    "do_not_synthesize_event_schedules_from_2026_dated_sources": true
   },
   "independent_open_cohort": {
     "pr": 1642,
@@ -258,6 +264,32 @@
           "en": "Local Catholic parish gatherings attested in parts of France; no general rite or standing event schedule.",
           "fr": "Rassemblements paroissiaux locaux attestés en France ; sans rite universel ni programme annuel présumé."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_LOCAL_PRACTICE_IDENTITY_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "SAINT_JOHN_BAPTIST_LOCAL_FIRE",
+        "core_action_en": "Community gathering centred on St John the Baptist's bonfire; sometimes accompanied by locally announced parish worship, meals and prayers.",
+        "feast_or_season_en": "Nativity of St John the Baptist (not St John the Evangelist, 27 December)",
+        "evidence_scope_en": "Documented French parish/heritage localities, not all parishes",
+        "primary_institutional_source_url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+        "regional_subtype_policy": "BONFIRE_GATHERING",
+        "why_not_existing_published_identity_en": "A communal bonfire is not a blessing of wine. BLSS-003 honours another saint (St John Evangelist). No general Roman fire rite follows from a dated diocesan parish notice.",
+        "locality_and_recurrence_gate": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+        "narrower_geographic_scope_en": "Oloron-Sainte-Marie and specific heritage localities",
+        "main_failure_risk_en": "No future date, fire safety instructions, or priestly blessing inferred",
+        "next_independent_editorial_verification_en": "Confirm separately a 1962-compatible devotional description, event organiser and current parish notice; leave all future event entries blocked.",
+        "compare_existing_canonical_ids": [
+          "BLSS-003"
+        ],
+        "cross_candidate_related_not_equivalent": [],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -360,6 +392,33 @@
           "en": "Polish pisanki and Ukrainian pysanka crafts with varied religious and cultural participation.",
           "fr": "Arts décoratifs polonais des pisanki et ukrainiens des pysanky, pratiqués dans des milieux religieux et culturels divers."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "ONE_CRAFT_ACTION_FAMILY_WITH_NAMED_SUBTYPES_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "EASTER_EGG_DECORATION",
+        "core_action_en": "Household egg decoration, including wax-resist Ukrainian pysanka and regional Polish pisanki techniques; not the clerical blessing of Easter foods.",
+        "feast_or_season_en": "Easter preparation and regional cultural tradition; no universal decorating day",
+        "evidence_scope_en": "Ukrainian and Polish traditions, including non-Catholic participation",
+        "primary_institutional_source_url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "regional_subtype_policy": "REGIONAL_EGG_ART_SUBTYPES_UNDER_ONE_CRAFT_IDENTITY",
+        "why_not_existing_published_identity_en": "Decoration is a different act from ministerial blessing. Ukrainian and Polish techniques are regionally distinct but both belong to the proposed single decorating-craft action family; do not manufacture two canonical Customs.",
+        "locality_and_recurrence_gate": "SEASONAL_HERITAGE_CONTEXT_ONLY",
+        "narrower_geographic_scope_en": "Polish and Ukrainian cultural areas, not exclusively Latin Catholic",
+        "main_failure_risk_en": "UNESCO records an interreligious, pre-Christian-rooted craft; do not present it as a Roman liturgical rite or blessed sacramental",
+        "next_independent_editorial_verification_en": "Complete Polish/Ukrainian terminology and attribution review and avoid claiming exclusive Catholic origin.",
+        "compare_existing_canonical_ids": [
+          "BLSS-004",
+          "FOOD-001"
+        ],
+        "cross_candidate_related_not_equivalent": [],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -380,6 +439,11 @@
         },
         {
           "id": "ADVT-002",
+          "publication_state": "PUBLISHED",
+          "is_equivalence_decision": false
+        },
+        {
+          "id": "ADVT-003",
           "publication_state": "PUBLISHED",
           "is_equivalence_decision": false
         }
@@ -450,6 +514,34 @@
           "en": "Regional Austrian Catholic household-image relay; participation depends on the parish.",
           "fr": "Visite itinérante d'une image mariale dans des paroisses catholiques autrichiennes ; participation liée à la paroisse."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_LOCAL_PRACTICE_IDENTITY_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "ADVENT_HOLY_FAMILY_HOSPITALITY",
+        "core_action_en": "A Marian image or statue passes among participating Advent households, with an arrival/departure prayer at each transfer.",
+        "feast_or_season_en": "Advent, days fixed by the participating parish or family network",
+        "evidence_scope_en": "Specific Austrian Catholic parish, e.g. Großpetersdorf",
+        "primary_institutional_source_url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+        "regional_subtype_policy": "ADVENT_HOUSEHOLD_MARIAN_IMAGE_RELAY",
+        "why_not_existing_published_identity_en": "Physical relay of an image with transfer prayers differs from static household Advent wreath and manger; it also differs in action from Las Posadas lodging-song enactment, despite shared hospitality themes.",
+        "locality_and_recurrence_gate": "LOCAL_PARISH_PARTICIPATION_REQUIRED",
+        "narrower_geographic_scope_en": "Named Austrian parish only; no worldwide relay",
+        "main_failure_risk_en": "Do not equate image relay with theatrical Herbergsuche or Mexican Las Posadas; no universal novena",
+        "next_independent_editorial_verification_en": "Confirm action-level distinction from theatrical staging and preserve locality/participation constraints.",
+        "compare_existing_canonical_ids": [
+          "ADVT-001",
+          "ADVT-002",
+          "ADVT-003"
+        ],
+        "cross_candidate_related_not_equivalent": [],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -522,6 +614,11 @@
         {
           "id": "FOOD-001",
           "publication_state": "CONTEXT_ONLY",
+          "is_equivalence_decision": false
+        },
+        {
+          "id": "EPIP-001",
+          "publication_state": "PUBLISHED",
           "is_equivalence_decision": false
         }
       ],
@@ -597,6 +694,36 @@
           "en": "Québec charitable tradition with historic Catholic links and later wider civic participation.",
           "fr": "Tradition caritative québécoise historiquement liée aux milieux catholiques et aujourd'hui également civique."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_CHARITY_ACTION_IDENTITY_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "HOUSE_TO_HOUSE_SEASONAL_VISITS",
+        "core_action_en": "Christmas-season door-to-door collection of food or donations for families in need.",
+        "feast_or_season_en": "Locally announced charity campaign in the Christmas season",
+        "evidence_scope_en": "Québec historical Catholic charitable context; contemporary civic charities also involved",
+        "primary_institutional_source_url": "https://ssvp-mtl.org/fr/guignolee",
+        "regional_subtype_policy": "CHARITABLE_HOUSE_TO_HOUSE_COLLECTION",
+        "why_not_existing_published_identity_en": "Collection of food or alms is not Polish opłatek sharing, church pain bénit, or the German Epiphany star-singing institution. Shared door-to-door activity is a thematic family, not equivalence.",
+        "locality_and_recurrence_gate": "LOCAL_ORGANIZER_CONFIRMATION_REQUIRED",
+        "narrower_geographic_scope_en": "Québec; no global campaign date",
+        "main_failure_risk_en": "Do not assert every modern event is Catholic-organised or a parish obligation",
+        "next_independent_editorial_verification_en": "Verify organizer, exact local campaign for any visitor-facing event and keep cultural charity distinct from a prescribed devotional act.",
+        "compare_existing_canonical_ids": [
+          "XMAS-001",
+          "FOOD-001",
+          "EPIP-001"
+        ],
+        "cross_candidate_related_not_equivalent": [
+          "CUSTOMS-R18-08"
+        ],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -612,6 +739,11 @@
       "existing_canonical_comparisons": [
         {
           "id": "EPIP-001",
+          "publication_state": "PUBLISHED",
+          "is_equivalence_decision": false
+        },
+        {
+          "id": "ADVT-003",
           "publication_state": "PUBLISHED",
           "is_equivalence_decision": false
         }
@@ -682,6 +814,36 @@
           "en": "Polish Christmas visiting performers and singers, with local variations.",
           "fr": "Chanteurs et acteurs itinérants du temps de Noël en Pologne, selon les usages locaux."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "NAMED_REGIONAL_MEMBER_OF_SHARED_VISITING_PERFORMANCE_FAMILY",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "CHRISTMASTIDE_VISITING_PERFORMERS",
+        "core_action_en": "Polish Christmas performers visit homes singing and sometimes playing Nativity or Herod scenes.",
+        "feast_or_season_en": "Christmastide, varying dates by regional troupe",
+        "evidence_scope_en": "Polish community traditions and subtypes",
+        "primary_institutional_source_url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+        "regional_subtype_policy": "POLISH_VISITING_CAROLLERS_WITH_DRAMATIC_VARIANTS",
+        "why_not_existing_published_identity_en": "Polish kolędnicy is not the German Epiphany Sternsinger fundraising custom or a Mexican lodging procession. Some Polish szopka troupes overlap in *action form* with Hungarian betlehemezés; retain linked regional subtypes and hold any parent/subtype publication decision.",
+        "locality_and_recurrence_gate": "REGIONAL_HERITAGE_CONTEXT_ONLY",
+        "narrower_geographic_scope_en": "Regional Polish families and troupes",
+        "main_failure_risk_en": "No claim of uniform script, required performances or automatic local itinerary",
+        "next_independent_editorial_verification_en": "Decide whether both named performer traditions merit regional children under one thematic family, avoiding invented separate Polish subgroup identities.",
+        "compare_existing_canonical_ids": [
+          "EPIP-001",
+          "ADVT-003"
+        ],
+        "cross_candidate_related_not_equivalent": [
+          "CUSTOMS-R18-09",
+          "CUSTOMS-R18-07"
+        ],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -697,6 +859,11 @@
       "existing_canonical_comparisons": [
         {
           "id": "EPIP-001",
+          "publication_state": "PUBLISHED",
+          "is_equivalence_decision": false
+        },
+        {
+          "id": "ADVT-003",
           "publication_state": "PUBLISHED",
           "is_equivalence_decision": false
         }
@@ -773,6 +940,35 @@
           "en": "Hungarian Christmas visiting Nativity drama, with local versions.",
           "fr": "Jeux itinérants de la Nativité en Hongrie, avec des variantes locales."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "NAMED_REGIONAL_MEMBER_OF_SHARED_VISITING_PERFORMANCE_FAMILY",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "CHRISTMASTIDE_VISITING_PERFORMERS",
+        "core_action_en": "Hungarian Nativity theatre taken house-to-house, with shepherd dialogue and live-actor or puppet subtypes.",
+        "feast_or_season_en": "Christmas season, local performances",
+        "evidence_scope_en": "Hungarian traditions with distinct theatrical forms",
+        "primary_institutional_source_url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+        "regional_subtype_policy": "HUNGARIAN_VISITING_NATIVITY_DRAMA",
+        "why_not_existing_published_identity_en": "A house-to-house Nativity drama is not Las Posadas, despite a shared Bethlehem narrative. Actor and puppet versions are *subtypes*, not automatic new Customs. Overlap with Polish performers warrants a shared family relationship, not a merged regional identity.",
+        "locality_and_recurrence_gate": "REGIONAL_HERITAGE_CONTEXT_ONLY",
+        "narrower_geographic_scope_en": "Hungarian localities, without fabricated schedules",
+        "main_failure_risk_en": "The source documents narrative variants; current performances and liturgical authority are not implied",
+        "next_independent_editorial_verification_en": "Compare actor/puppet subtypes with Polish szopka without collapsing cultural and language-specific practices.",
+        "compare_existing_canonical_ids": [
+          "EPIP-001",
+          "ADVT-003"
+        ],
+        "cross_candidate_related_not_equivalent": [
+          "CUSTOMS-R18-08"
+        ],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -1016,6 +1212,33 @@
           "en": "Named Maltese and Gozitan local Easter processions; running varies by place.",
           "fr": "Processions pascales locales attestées à Malte et à Gozo ; la course dépend de la localité."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_LOCAL_PRACTICE_IDENTITY_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "LOCAL_PUBLIC_FEAST_PROCESSIONS",
+        "core_action_en": "Easter Sunday procession carrying the risen-Christ statue; some Maltese localities briefly run with the statue.",
+        "feast_or_season_en": "Easter Sunday, only where an actual procession is announced",
+        "evidence_scope_en": "Specific Maltese and Gozitan communities",
+        "primary_institutional_source_url": "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
+        "regional_subtype_policy": "LOCAL_RESURRECTION_STATUE_PROCESSION_RUNNING_VARIANT",
+        "why_not_existing_published_identity_en": "Easter resurrection procession, with place-dependent running, is not the Easter Monday Emmaus walk nor a French Assumption procession. Running is a local variant inside this identity.",
+        "locality_and_recurrence_gate": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+        "narrower_geographic_scope_en": "Named Maltese/Gozo places, not the whole islands uniformly",
+        "main_failure_risk_en": "No required running with statues, no Mass rite, no recurring event schedule",
+        "next_independent_editorial_verification_en": "Link any future event only after current parish announcement and place-specific evidence of running or non-running form.",
+        "compare_existing_canonical_ids": [
+          "EAST-001",
+          "MARI-001"
+        ],
+        "cross_candidate_related_not_equivalent": [],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -1112,6 +1335,33 @@
           "en": "Regional Polish household greenery custom at Pentecost; the historical photograph needs separate verification.",
           "fr": "Coutume régionale polonaise de décoration végétale à la Pentecôte ; la photographie historique reste à vérifier séparément."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_SEASONAL_ACTION_CONTEXT_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "SEASONAL_GREENERY_DECORATIONS",
+        "core_action_en": "Households, gates or churches are ornamented with spring greenery at Zielone Świątki.",
+        "feast_or_season_en": "Pentecost; date resolves through the 1962 Calendar and not a fixed civil date",
+        "evidence_scope_en": "Historical Polish regional practice",
+        "primary_institutional_source_url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+        "regional_subtype_policy": "PENTECOST_HOUSEHOLD_GREENERY",
+        "why_not_existing_published_identity_en": "Home greenery for Pentecost differs in calendar occasion, action scope and historical source from Corpus Christi floral street decorations and clerical Assumption herb blessings; generic greenery is not a sufficient identity merger.",
+        "locality_and_recurrence_gate": "REGIONAL_HERITAGE_CONTEXT_ONLY",
+        "narrower_geographic_scope_en": "Poland, regional and archival witness",
+        "main_failure_risk_en": "Old photo caption not separately recertified; no magical protective claims or universal Roman Pentecost rite",
+        "next_independent_editorial_verification_en": "Validate Polish archival image caption and keep decoration distinct from blessings and liturgical rubrics.",
+        "compare_existing_canonical_ids": [
+          "BLSS-002",
+          "CORP-001"
+        ],
+        "cross_candidate_related_not_equivalent": [],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -1203,6 +1453,34 @@
           "en": "The Inchinata procession of Tivoli, Italy; event timing requires local confirmation.",
           "fr": "Procession de l'Inchinata à Tivoli, en Italie ; horaires à confirmer localement."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_NAMED_LOCAL_CEREMONIAL_IDENTITY_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "LOCAL_PUBLIC_FEAST_PROCESSIONS",
+        "core_action_en": "At Tivoli the processional images of Christ the Saviour and Our Lady ceremonially meet and bow.",
+        "feast_or_season_en": "Local Assumption Eve / feast, specifically announced for 14–15 August 2026",
+        "evidence_scope_en": "Tivoli, Italy; diocesan context",
+        "primary_institutional_source_url": "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/",
+        "regional_subtype_policy": "TIVOLI_MEETING_OF_TWO_PROCESSIONAL_IMAGES",
+        "why_not_existing_published_identity_en": "A ritual meeting/bow of two images belongs to Tivoli's specific Inchinata, not a generic French Assumption statue procession or Sassari's guild-votive candelieri offering.",
+        "locality_and_recurrence_gate": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+        "narrower_geographic_scope_en": "Tivoli only",
+        "main_failure_risk_en": "The 2026 diocesan programme does not authorize projecting this schedule to subsequent years; no legend treated as history",
+        "next_independent_editorial_verification_en": "Obtain fresh programme before any dated attendance suggestion and verify procession roles separately from 1962 liturgy.",
+        "compare_existing_canonical_ids": [
+          "MARI-001"
+        ],
+        "cross_candidate_related_not_equivalent": [
+          "CUSTOMS-R18-16"
+        ],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -1218,6 +1496,11 @@
       "existing_canonical_comparisons": [
         {
           "id": "MARI-001",
+          "publication_state": "PUBLISHED",
+          "is_equivalence_decision": false
+        },
+        {
+          "id": "BLSS-003",
           "publication_state": "PUBLISHED",
           "is_equivalence_decision": false
         }
@@ -1294,6 +1577,35 @@
           "en": "The Faradda guild procession of Sassari, Sardinia, Italy.",
           "fr": "Procession des corporations de la Faradda à Sassari, en Sardaigne."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_NAMED_LOCAL_CEREMONIAL_IDENTITY_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "LOCAL_PUBLIC_FEAST_PROCESSIONS",
+        "core_action_en": "Sassari guilds carry tall wooden votive candelieri through a civic Marian procession to Santa Maria di Betlem.",
+        "feast_or_season_en": "14 August 2026 municipal programme; not a universal Marian vigil rite",
+        "evidence_scope_en": "Sassari, Sardinia, Italy",
+        "primary_institutional_source_url": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+        "regional_subtype_policy": "SASSARI_GUILD_VOTIVE_WOODEN_CANDELIERI_PROCESSION",
+        "why_not_existing_published_identity_en": "Organised guilds and tall decorative wooden offerings distinguish the Faradda from Assumption statue processions, Tivoli's meeting of images and priestly blessing of wine. The objects are not candles the user is asked to bless.",
+        "locality_and_recurrence_gate": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+        "narrower_geographic_scope_en": "Sassari municipality, no automatic other-town replication",
+        "main_failure_risk_en": "No forecast of 2027 programme; no liturgical candle blessing inferred",
+        "next_independent_editorial_verification_en": "Validate civic-religious role, municipal and diocesan responsibility, and annual dates before showing a live event.",
+        "compare_existing_canonical_ids": [
+          "MARI-001",
+          "BLSS-003"
+        ],
+        "cross_candidate_related_not_equivalent": [
+          "CUSTOMS-R18-15"
+        ],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
@@ -1314,6 +1626,11 @@
         },
         {
           "id": "BLSS-002",
+          "publication_state": "PUBLISHED",
+          "is_equivalence_decision": false
+        },
+        {
+          "id": "DEV-001",
           "publication_state": "PUBLISHED",
           "is_equivalence_decision": false
         }
@@ -1390,6 +1707,34 @@
           "en": "Bavarian Marian shrines observing a regional devotional period; programmes vary by sanctuary.",
           "fr": "Sanctuaires marials bavarois observant une période régionale de dévotion ; programmes variables selon le sanctuaire."
         }
+      },
+      "action_identity_review": {
+        "review_date": "2026-10-29",
+        "analyst_disposition": "DISTINCT_LOCAL_DEVOTIONAL_PERIOD_PROVISIONAL",
+        "final_editorial_identity_approved": false,
+        "final_canonical_id_allocated": false,
+        "proposed_action_family": "MARIAN_REGIONAL_DEVOTIONAL_CYCLES",
+        "core_action_en": "Named Bavarian devotional period of Marian prayer/pilgrimage from Assumption to Holy Cross, with variable shrine activities.",
+        "feast_or_season_en": "Historical 15 August–14 September association; not an extra 1962 liturgical season",
+        "evidence_scope_en": "Bavarian Catholic shrines including Maria Thalkirchen",
+        "primary_institutional_source_url": "https://www.mariathalkirchen.de/index.php?id=164",
+        "regional_subtype_policy": "BAVARIAN_MARIAN_SHRINE_DEVOTIONAL_PERIOD",
+        "why_not_existing_published_identity_en": "This named late-summer period differs from May's general Marian month, French Assumption processions and priestly herb blessings. Modern shrine services are scheduled events, not universal Customs.",
+        "locality_and_recurrence_gate": "SHRINE_PROGRAMME_VERIFICATION_REQUIRED",
+        "narrower_geographic_scope_en": "Named Bavarian shrines only",
+        "main_failure_risk_en": "No automatic adoption of post-1962 propers, shrine Masses, indulgence conditions or 1962 Calendar seasons",
+        "next_independent_editorial_verification_en": "Separate enduring devotional name/history from actual shrine events and verify any claimed grant independently.",
+        "compare_existing_canonical_ids": [
+          "MARI-001",
+          "BLSS-002",
+          "DEV-001"
+        ],
+        "cross_candidate_related_not_equivalent": [],
+        "same_action_family_is_not_publication_permission": true,
+        "can_merge_with_existing_published_article": false,
+        "independently_verified_current_annual_programme": false,
+        "no_auto_indulgence_or_rite": true,
+        "approved_as_separate_new_custom": false
       }
     },
     {
