@@ -28,6 +28,7 @@ const expected=new Map([
  ["ao-fssp-chapelle-saint-louis-de-gonzague-place-saint-louis-de-gonzague-f-64000-pau-france",["place:FR:saint-louis-de-gonzague-pau","osm:way:62885578",322]],
  ["ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france",["place:FR:saint-bruno-bordeaux","osm:way:115526560",330]],
 ]);
+const photoReleasePlaces=new Set(["place:US:st-john-cantius-chicago","place:IT:san-canziano-padova","place:FR:saint-bruno-bordeaux"]);
 const roundMeters=(a,b,c,d)=>{const rad=x=>x*Math.PI/180,x=rad(c-a),y=rad(d-b),q=Math.sin(x/2)**2+Math.cos(rad(a))*Math.cos(rad(c))*Math.sin(y/2)**2;return Math.round(12742000*Math.asin(Math.min(1,Math.sqrt(q)))*10)/10;};
 for(const [venueId,[placeId,osm,sourceRow]] of expected){
  const row=r.records.filter(v=>v[col.id]===venueId);assert.equal(row.length,1,"R49 venue must exist exactly once");
@@ -50,16 +51,21 @@ for(const [venueId,[placeId,osm,sourceRow]] of expected){
  assert.ok(meters<=80,"named church building must align with already established venue pin");
  const pair=crosswalk.candidate_pairs.filter(x=>x.venue_id===venueId&&x.place_id===placeId);
  assert.equal(pair.length,1);assert.equal(pair[0].distance_m,meters);assert.equal(pair[0].disposition,"EXISTING_CONFIRMED_LINK");
- assert.equal(media.items.some(m=>m.place_id===placeId),false,"native-pixel + rights QA not completed: no approved cover");
+ assert.equal(media.items.some(m=>m.place_id===placeId),photoReleasePlaces.has(placeId),"P102 only releases three exact identified covers; Pau remains held");
  assert.equal(gallery.items.some(m=>m.place_id===placeId),false);
  const attached=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:venueId}],{directoryPlaceLinks:g.directoryPlaceLinks,approved:media.items,gallery:gallery.items});
- assert.equal(attached[0].cover_media,undefined,"no premature photo");
- assert.equal(attached[0].gallery_media,undefined,"no premature gallery");
+ if(photoReleasePlaces.has(placeId)){
+  assert.equal(attached[0].cover_media?.place_id,placeId,"P102 approved cover attaches by exact Place");
+  assert.deepEqual(attached[0].gallery_media,[],"No invented gallery photos");
+ }else{
+  assert.equal(attached[0].cover_media,undefined,"Pau photo held");
+  assert.equal(attached[0].gallery_media,undefined,"Pau has no approved gallery");
+ }
  assert.ok(manifest.published_new.some(x=>x.place_id===placeId&&x.candidate_id==="P97-ROW-"+sourceRow&&x.photo_publication==="NONE"));
 }
 assert.equal(crosswalk.counts.canonical_places,522);
 assert.equal(crosswalk.counts.confirmed_links,15);
-assert.equal(crosswalk.counts.exact_confirmed_photo_joins,2,"pre-existing P95 approvals remain");
+assert.equal(crosswalk.counts.exact_confirmed_photo_joins,5,"two historical P95 plus three P102 approved links");
 assert.equal(manifest.policy.no_new_tlm_masses_or_schedules,true);
 assert.equal(manifest.policy.photo_media_unapproved_until_native_rights_derivative_review,true);
 assert.equal(manifest.policy.no_expense,true);
@@ -84,4 +90,4 @@ assert.equal(photoReview.records.find(x=>x.row===322)?.visual_status,"HOLD_PRIMA
 assert.equal(photoReview.counts.new_approved_media,0);
 assert.equal(photoReview.counts.new_published_photos,0);
 
-console.log("P99 PASS: 4 building-ID Place links, 15 Directory links, zero new media; 2 pre-existing covers preserved");
+console.log("P99/P102 PASS: 4 verified building links, 15 exact venue joins; three later approved covers, Pau held");
