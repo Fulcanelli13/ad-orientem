@@ -29,12 +29,13 @@ const originals=registry.items.filter(x=>originalOwners.includes(x.place_id));
 const p73=read("data/geography/research/p73-curated-place-gallery-bundle.v1.json");
 const later=registry.items.filter(x=>!originalOwners.includes(x.place_id));
 assert.equal(originals.length,6);
-assert.ok(later.length===0||later.length===p73.candidates.length,
-  "No partial P73 approval state: image binaries and gallery entries must ship atomically");
-if(later.length){
- assert.deepEqual(new Set(later.map(x=>x.media_id)),
-   new Set(p73.candidates.map(x=>x.media_id)));
-}
+// The P73 six must remain intact; they do not place a ceiling on subsequent
+// independently verified P77 and later gallery cohorts.
+const p73Ids=new Set(p73.candidates.map(x=>x.media_id));
+const p73Rows=later.filter(x=>p73Ids.has(x.media_id));
+assert.equal(p73Rows.length,p73.candidates.length,
+  "The six P73 images must remain an atomic approved cohort");
+assert.deepEqual(new Set(p73Rows.map(x=>x.media_id)),p73Ids);
 assert.equal(registry.items.length,originals.length+later.length);
 assert.equal(hero.items.length,31);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
