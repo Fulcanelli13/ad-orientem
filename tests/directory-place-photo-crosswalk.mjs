@@ -1,0 +1,42 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {buildScreen} from "../tools/directory/screen-canonical-place-photos.mjs";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const geo=read("data/geography/seed-registry.v1.json");
+const r49=read("data/directory/preliminary-map-r49.v1.json");
+const cover=read("data/geography/approved-place-media.v1.json");
+const gallery=read("data/geography/approved-place-gallery.v1.json");
+const review=read("data/geography/research/directory-place-photo-screen-20261029.v1.json");
+assert.deepEqual(review,buildScreen(geo,r49,cover,gallery),
+  "The review registry must exactly reflect authoritative R49 and Place/media manifests");
+assert.equal(review.state,"RESEARCH_ONLY_NEVER_APP_VISIBLE");
+assert.deepEqual([review.counts.venues_screened,review.counts.canonical_places,
+ review.counts.within_350m_pairs,review.counts.venues_near_place],
+ [1879,516,40,37]);
+assert.equal(review.counts.confirmed_links,9);
+assert.equal(review.counts.nearby_approved_photo_pairs,6);
+assert.equal(review.counts.exact_confirmed_photo_joins,0);
+assert.equal(review.counts.published_new_links,0);
+assert.equal(review.counts.published_new_photos,0);
+assert.equal(review.batches.length,10);
+assert.equal(review.batches.reduce((n,b)=>n+b.limit,0),1879);
+assert.equal(review.candidate_pairs.length,40);
+assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,40);
+assert.equal(review.candidate_pairs.every(x=>x.auto_publish===false),true);
+assert.equal(review.candidate_pairs.every(x=>x.distance_m>=0&&x.distance_m<=350),true);
+assert.equal(review.photo_review_queue.length,6);
+assert.equal(review.photo_review_queue.every(x=>x.review==="HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"),true);
+const unrelated=review.candidate_pairs.find(x=>x.venue_name==="Friedhofskirche St. Michael"
+  &&x.place_id==="place:DE:altoetting-gnadenkapelle");
+assert.equal(unrelated?.disposition,"DIFFERENT_OR_GENERIC_DEDICATION_HOLD");
+const wrongChapel=review.candidate_pairs.find(x=>x.venue_name==="Sieben-Schmerzen-Kapelle (Seven Sorrows Chapel)"
+  &&x.place_id==="place:DE:altoetting-gnadenkapelle");
+assert.equal(wrongChapel?.place_has_approved_photo,true);
+assert.notEqual(wrongChapel?.disposition,"EXISTING_CONFIRMED_LINK");
+for(const row of geo.directoryPlaceLinks){
+ const pair=review.candidate_pairs.find(x=>x.venue_id===row.venue_id&&x.place_id===row.place_id);
+ if(pair)assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
+}
+assert.equal(buildScreen({...geo,directoryPlaceLinks:[...geo.directoryPlaceLinks,{
+ venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,0);
+console.log("PASS 1,879 venues x 516 canonical Places: 40 proximity review pairs, 6 photo leads, zero inferred publication");
