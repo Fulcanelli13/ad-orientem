@@ -1,0 +1,67 @@
+name: Sacred Art - B8 SMK 250 new paintings review
+on:
+  push:
+    branches: [research/sacred-art-b8-smk-20261029]
+    paths:
+      - scripts/art/sacred-art-b8-smk-250-source-20261029.py
+      - .github/workflows/sacred-art-b8-smk-250-gallery-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-b8-250-smk
+  cancel-in-progress: true
+jobs:
+  harvest-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b8-smk-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build Batch 8 from official SMK public-domain paintings
+        run: |
+          python -m py_compile scripts/art/sacred-art-b8-smk-250-source-20261029.py
+          python scripts/art/sacred-art-b8-smk-250-source-20261029.py
+      - name: Validate no duplicates, exact PDM images, decisions and review controls
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-b8-smk-250-source-20261029.v1.json').read_text())
+          rows=d['rows'];q=d['counts']
+          assert d['batchReady'] and 200<=len(rows)<=250, q
+          assert len(rows)==len({r['id'] for r in rows})==len({r['previewURL'] for r in rows})
+          assert q['previousReviewIDsExcluded']==1164 and q['userB6RejectedPreserved']==219
+          assert q['userB6AcceptedPreserved']==31 and q['productionImports']==0 and q['originalPhotosSaved']==0
+          assert all(r['provider']=='SMK' and r['sourceImageRights']=='SMK_EXACT_OBJECT_PUBLIC_DOMAIN_PDM_1.0' for r in rows)
+          assert all(r['sourceRightsURL'].startswith('https://creativecommons.org/publicdomain/mark/1.0') for r in rows)
+          assert all(r['previewURL'].startswith('https://iip-thumb.smk.dk/') for r in rows)
+          assert all(not r['productionImported'] for r in rows)
+          h=Path('docs/SACRED_ART_SMK_250_IMPORT_REVIEW_B8_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and len(json.loads(m.group(1)))==len(rows)
+          assert "batchId:'B8'" in h and "const PAGE_SIZE=50;" in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-b8-smk-gallery.js').write_text(js.group(1))
+          print('PASS B8:',len(rows),'verified SMK paintings; 1164 earlier artworks excluded')
+          PY
+          node --check /tmp/ao-b8-smk-gallery.js
+      - name: Preserve validated B8 image-link metadata and HTML on research branch
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b8-smk-250-source-20261029.v1.json
+          git add docs/SACRED_ART_B8_SMK_SOURCE_AND_AESTHETIC_QA_20261029.md
+          git add docs/SACRED_ART_SMK_250_IMPORT_REVIEW_B8_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive B8 verified SMK sacred paintings gallery"
+          git pull --rebase origin research/sacred-art-b8-smk-20261029
+          git push origin HEAD:research/sacred-art-b8-smk-20261029
