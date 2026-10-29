@@ -514,10 +514,10 @@ if (kmskaOfficial2.officialParentEvidence.museumInventory !== "208-210" ||
     kmskaOfficial2.restrictions.productionMutation !== false ||
     master.phase1KmskaVerification.sourceCards !== 89 ||
     master.phase1KmskaVerification.frozenConditionalChoices !== 33 ||
-    master.phase1KmskaVerification.exactOfficialPagesVerified !== 2 ||
-    master.phase1KmskaVerification.exactOfficialPagesStillPending !== 87 ||
-    master.phase1KmskaVerification.museumBackedOfficialVerifiedToDate !== 230 ||
-    master.phase1KmskaVerification.museumBackedOfficialStillUnverified !== 249 ||
+    master.phase1KmskaVerification.exactOfficialPagesVerified !== 89 ||
+    master.phase1KmskaVerification.exactOfficialPagesStillPending !== 0 ||
+    master.phase1KmskaVerification.museumBackedOfficialVerifiedToDate !== 317 ||
+    master.phase1KmskaVerification.museumBackedOfficialStillUnverified !== 162 ||
     master.phase1KmskaVerification.canonical383NewLinks !== 0 ||
     master.phase1KmskaVerification.productionMutation !== false)
   fail("KMSKA master canonical/release source-page totals mismatch");
