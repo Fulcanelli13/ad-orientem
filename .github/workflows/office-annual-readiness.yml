@@ -27,6 +27,9 @@ on:
       - 'src/office/advent-first-vespers-latin-print-anchors.js'
       - 'src/office/advent-first-vespers-1961-magnificat-lexical-check.js'
       - 'src/office/advent-first-vespers-saturday-psalm-integrity.js'
+      - 'src/office/advent-i-2026-proper-printed-latin.js'
+      - 'tests/divine-office-advent-i-proper-printed-latin.mjs'
+      - 'data/office/research/advent-i-2026-proper-full-2009-print.json'
       - 'tests/divine-office-advent-first-vespers-saturday-psalm-integrity.mjs'
       - 'tests/fixtures/office/pinned-latin-psalm143.txt'
       - 'tests/fixtures/office/pinned-latin-psalm144.txt'
@@ -127,6 +130,8 @@ jobs:
           node --test tests/divine-office-advent-first-vespers-1961-magnificat-lexical-check.mjs
           node --check src/office/advent-first-vespers-saturday-psalm-integrity.js
           node --test tests/divine-office-advent-first-vespers-saturday-psalm-integrity.mjs
+          node --check src/office/advent-i-2026-proper-printed-latin.js
+          node --test tests/divine-office-advent-i-proper-printed-latin.mjs
           node --check src/office/conditional-source-reader.js
           node --test tests/divine-office-conditional-source-reader.mjs
           node --test tests/divine-office-expanded-temporal-sweep.mjs
