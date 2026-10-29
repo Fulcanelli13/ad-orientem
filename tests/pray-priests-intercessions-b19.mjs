@@ -42,10 +42,14 @@ const styles=readFileSync(new URL("../src/pray/priestly-intercessions-styles.js"
 for(const k of ["function renderPriestIntercessions(){","data-ao-priests-intercession",
  "data-p435930-priests-purpose","data-p435930-priests-latin",
  "PRIESTLY_INTERCESSION_PURPOSES_B19","priestlyIntercessionFor",
- "data-p435930-own=\"pray.for_priests\"","else if(view==='priests')html=renderPriestIntercessions()"]){
+ "else if(view==='priests')html=renderPriestIntercessions()"]){
  assert.ok(ui.includes(k),"Missing implementation contract "+k);
 }
 assert.ok(ui.includes("'pray.for_priests':{id:'pray.for_priests'"));
+assert.ok(ui.includes("['own','pray.for_priests'"),
+ "Source-owned contextual Prayer card route must be declared exactly: pray.for_priests");
+assert.ok(ui.includes("related.map(item=>prayFamilyItem(item,true))"),
+ "Contextual Prayer route must use shared illustrated module card without a duplicate owner");
 assert.ok(styles.includes("min-height:48px"));
 assert.ok(styles.includes("max-width:360px"));
 assert.ok(!PRIESTLY_INTERCESSIONS_B19.some(x=>x.language==="fr"));
