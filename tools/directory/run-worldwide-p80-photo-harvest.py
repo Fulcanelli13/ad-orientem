@@ -10,7 +10,7 @@ from collections import defaultdict,Counter
 from difflib import SequenceMatcher
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[2]
 PLAN=ROOT/"data/directory/research/p80-worldwide-2579-campaign-plan.v1.json"
 HARVESTER=ROOT/"tools/directory/harvest-wikidata-country-photo-index.py"
 spec=importlib.util.spec_from_file_location("ao_country_p18",HARVESTER)
