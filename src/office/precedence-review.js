@@ -134,10 +134,26 @@ export function reviewOfficeVespersConcurrence({date,today,tomorrow}={}){
  // infer I Vespers from an evening or the Mass's rank.
  if(!a.hasSecondVespers&&!b.hasFirstVespers)
   return withheld("VESPERS","NEITHER_VESPERS_FORM_ESTABLISHED");
- if(!a.hasSecondVespers&&b.hasFirstVespers)
-  return withheld("VESPERS","CURRENT_OFFICE_WITHOUT_SECOND_VESPERS_REQUIRES_REVIEW",{
-   possibleFollowingFirstVespersId:b.principalId
+ if(!a.hasSecondVespers&&b.hasFirstVespers){
+  // RG 13 and 27, 37 and 79: a Saturday feria/BVM office ends after
+  // None and the qualifying following Sunday/feast begins at I Vespers.
+  // For other combinations the missing II Vespers needs its own rubric.
+  const saturday=new Date(date+"T12:00:00Z").getUTCDay()===6;
+  if(!saturday||!["FERIA","SATURDAY_BVM"].includes(a.officeKind))
+   return withheld("VESPERS","CURRENT_OFFICE_WITHOUT_SECOND_VESPERS_REQUIRES_REVIEW",{
+    possibleFollowingFirstVespersId:b.principalId
+   });
+  return Object.freeze({
+   schema:OFFICE_PRECEDENCE_REVIEW_SCHEMA,stage:"VESPERS",
+   status:"RUBRIC_CANDIDATE",reason:"RG_13_27_37_79_SATURDAY_FIRST_VESPERS",
+   candidate:Object.freeze({date:b.date,principalId:b.principalId,
+    part:"FIRST",officeKind:b.officeKind,class:b.class}),
+   concurrence:false,source:OFFICE_PRECEDENCE_SOURCE,
+   commemorationReview:"RG_106_114_BR_250_259_REQUIRED",
+   officeSelectionAuthorized:false,commemorationsApproved:false,
+   liturgicallyCertified:false,published:0
   });
+ }
  const winner=!b.hasFirstVespers?"SECOND":
    (a.class<=b.class?"SECOND":"FIRST");
  const chosen=winner==="SECOND"?a:b;
