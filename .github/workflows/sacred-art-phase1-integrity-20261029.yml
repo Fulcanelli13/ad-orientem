@@ -1,0 +1,33 @@
+name: Sacred Art Phase 1 identity integrity (research only)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-phase1-integrity-20261029.yml
+      - scripts/art/validate-editorial-phase1-20261029.mjs
+      - data/calendar/sacred-art-phase1-nga126-official-csv-report-20261029.v1.json
+      - data/calendar/sacred-art-editorial-master-20261029.v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-phase1-integrity-research
+  cancel-in-progress: false
+
+jobs:
+  check-immutable-frozen-art-and-official-source-identities:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce original 2455 frozen user decisions and 856 canonical crosswalk
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
