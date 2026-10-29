@@ -72,7 +72,12 @@ try{
     assert.ok(dimensions.articleScroll<=dimensions.articleClient+2,
       "Calendar horizontal overflow at "+width+": "+JSON.stringify(dimensions));
     assert.ok(errors.length===0,"Browser errors: "+errors.join(" | "));
-    await parent.scrollIntoViewIfNeeded();
+    // The Calendar can repaint between frames; scrolling a Playwright locator
+    // with a stability wait can target an obsolete node. Resolve the live node.
+    await page.evaluate(()=>{
+      const node=document.querySelector('[data-cal-custom-id="ADVT-001"]');
+      node?.scrollIntoView({block:"start",behavior:"instant"});
+    });
     await page.screenshot({path:resolve(output,`calendar-customs-${review?"review":"default"}-en-${width}.png`),
       fullPage:false,animations:"disabled"});
     console.log("PASS browser Calendar Customs: "+width+"px, "+(review?"review":"ordinary")+
