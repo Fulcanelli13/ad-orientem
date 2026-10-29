@@ -9,6 +9,7 @@ on:
       - "tests/customs-wave-a-bulk-reconciliation.mjs"
       - "tests/customs-a1-evidence-indulgence-gate.mjs"
       - "tests/customs-a23-258-and-primary-facsimile-gate.mjs"
+      - "tests/customs-weiser-original-page-sweep-20261029.mjs"
       - "data/customs/indulgence-grant-research-seed-20261029.v1.json"
       - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
@@ -112,3 +113,7 @@ jobs:
         run: |
           node --check tests/customs-a23-258-and-primary-facsimile-gate.mjs
           node tests/customs-a23-258-and-primary-facsimile-gate.mjs
+      - name: Verify 72 new direct original Weiser source-image checks, 84 cumulative, 66 pending
+        run: |
+          node --check tests/customs-weiser-original-page-sweep-20261029.mjs
+          node tests/customs-weiser-original-page-sweep-20261029.mjs
