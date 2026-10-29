@@ -80,8 +80,9 @@ function fixture({change=()=>{}}={}){
     map.set("Versum 1",["@Psalterium/Special/Major Special:Adv Versum 3"]);
    }
   }else if(path===psalter){
-   map=new Map([["Day0 Vespera",
-    [109,110,111,112,113].map(n=>"Dóminus * laudáte Dóminum.;;"+n)]]);
+   map=new Map([["Day6 Vespera",
+    [[143,"1-8"],[143,"9-15"],[144,"1-7"],[144,"8-'13a'"],[144,"'13b'-21"]]
+     .map(([n,range])=>"Dóminus * laudáte Dóminum.;;"+n+"("+range+")")]]);
   }else if(path===major){
    map=new Map([["Adv Versum 3",[
     "V. "+language+" first Advent source versicle.",
