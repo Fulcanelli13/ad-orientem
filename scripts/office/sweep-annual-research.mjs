@@ -12,7 +12,7 @@ import {sweepAnnualOfficeResearch} from "../../src/office/annual-research-sweep.
 function main(argv){
  const options={};
  for(let i=0;i<argv.length;i+=2){
-  if(!["--year","--out","--office-days"].includes(argv[i])||
+  if(!["--year","--out","--office-days","--source-index"].includes(argv[i])||
      !argv[i+1]||options[argv[i]]!==undefined)
    throw Error("OFFICE_SWEEP_CLI_ARGS_INVALID");
   options[argv[i]]=argv[i+1];
@@ -26,8 +26,14 @@ function main(argv){
   if(statSync(source).size>250000)throw Error("OFFICE_SWEEP_ROSTER_TOO_LARGE");
   officeDays=JSON.parse(readFileSync(source,"utf8"));
  }
+ let filenameIndex=null;
+ if(options["--source-index"]){
+  const source=resolve(options["--source-index"]);
+  if(statSync(source).size>200000)throw Error("OFFICE_SWEEP_FILENAME_INDEX_TOO_LARGE");
+  filenameIndex=JSON.parse(readFileSync(source,"utf8"));
+ }
  const report=sweepAnnualOfficeResearch({
-  year:Number(options["--year"]),officeDays
+  year:Number(options["--year"]),officeDays,filenameIndex
  });
  writeFileSync(resolve(options["--out"]),JSON.stringify(report,null,2)+"\n","utf8");
  console.log("OFFICE_ANNUAL_RESEARCH_SWEEP",JSON.stringify(report.summary));
