@@ -36,7 +36,7 @@ assert.equal(ledger.totals.independent_prior_narrow_witness_groups,12);
 assert.equal(owners.records.length,47);
 assert.equal(owners.records.filter(x=>x.prior_owner_match_vetoed).length,11);
 assert.equal(clusters.clusters.length,12);
-assert.equal(clusters.counts.cluster_member_links,34);
+assert.equal(clusters.counts.cluster_membership_links,34);
 const ownerById=new Map(owners.records.map(r=>[r.group_id,r]));
 for(const r of ledger.records){
  assert.ok(ids.has(r.provisional_group_id));
