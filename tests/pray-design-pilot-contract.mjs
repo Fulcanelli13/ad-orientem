@@ -24,7 +24,7 @@ const actual=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L,esc,DATA:{prayers:{foundations_hail_mary:{title:"Hail Mary",titleFr:"Je vous salue Marie"}}},
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
-assert.equal((actual.match(/class="aoPrayPilotTile/g)||[]).length,9,"nine live mosaic doors");
+assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
 for(const id of ["chaplets","marian","daily","novenas","eucharistic","ourlord","saints","intentions"])
  assert.match(actual,new RegExp('data-p435930-family="'+id+'"'));
 assert.match(actual,/data-p435930-own="pray.library"/);
