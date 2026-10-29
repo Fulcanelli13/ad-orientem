@@ -67,10 +67,14 @@ try{
       const findRow=x=>rows.find(r=>r.dataset.cueId===x) ??
        rows.find(r=>String(r.dataset.sourceCueIds??"").split(/\s+/).includes(x));
       const tiles=[...stage.querySelectorAll(".ao-rail .ao-rail-item")].map(tile=>{
-       const shown=getComputedStyle(tile).display!=="none"&&tile.dataset.active==="true"&&tile.dataset.iconVisible==="true";
+       const rail=tile.closest(".ao-rail");
+       const tr=tile.getBoundingClientRect();
+       const shown=Boolean(rail&&getComputedStyle(rail).display!=="none"&&
+        getComputedStyle(tile).display!=="none"&&tr.width>0&&tr.height>0&&
+        tile.dataset.active==="true"&&tile.dataset.iconVisible==="true");
        const id=tile.dataset.sourceRailCueId,row=findRow(id);
        const reference=row?.querySelector(".ao-line-primary")??row;
-       const rr=reference?.getBoundingClientRect(),tr=tile.getBoundingClientRect();
+       const rr=reference?.getBoundingClientRect();
        const line=reference?parseFloat(getComputedStyle(reference).lineHeight)||28:28;
        const baseline=rr?rr.top+Math.min(23,Math.max(9,line/2)):null;
        return {channel:tile.dataset.channel,shown,id,anchor:tile.dataset.sourceRailAnchor,
