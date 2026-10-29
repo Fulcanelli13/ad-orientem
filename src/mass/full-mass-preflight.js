@@ -2,6 +2,7 @@
 // Ceremony FORM and the liturgical CELEBRATION are different axes. The latter
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
+import {m1AccessPreviewRequested,paintM1AccessRows,m1AccessRows} from "./m1-access-overview.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
@@ -75,6 +76,8 @@ export function mountFullMassPreflight({
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
+  const m1Preview=m1AccessPreviewRequested(doc.defaultView);
+  let m1Focus=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
   let allSoulsSuccession=null;
   const successionFor=legacy=>{
@@ -184,7 +187,7 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";m1Focus=null;}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
@@ -194,6 +197,7 @@ export function mountFullMassPreflight({
     if(!root){
       root=doc.createElement("section");
       root.dataset.aoFullMassPreflight="";
+      if(m1Preview)root.dataset.aoMassAccessM1="true";
       root.className="aoFullMassPreflight";
       root.setAttribute("aria-label","Mass preparation");
       root.innerHTML='<h3 data-full-mass-title></h3>'+ 
@@ -282,7 +286,8 @@ export function mountFullMassPreflight({
         '<button type="button" data-folio-goto="reader">3 · <span data-folio-step-reader></span></button></nav>'+
         '<section data-folio-panel="overview" class="aoMassFolioPanel">'+
         '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
-        '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
+        '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+ 
+         '<div data-m1-rows class="aoM1Choices" role="group" aria-label="Your Mass" hidden></div>'+
         '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
         '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
         '<h3 data-folio-celebration-heading></h3><p data-folio-celebration-intro></p>'+
@@ -328,6 +333,14 @@ export function mountFullMassPreflight({
       move("[data-full-mass-reader-fieldset]","[data-folio-reader-controls]");
       move("[data-full-mass-rites]","[data-folio-rites-slot]");
       move("[data-full-mass-note]","[data-folio-essential-notice]");
+      // Preview reuses original selectors; no second Mass-preferences form.
+      if(m1Preview){
+        const exp=folio.querySelector(".aoMassFolioExperience");
+        exp.querySelector("[data-folio-language]")?.closest(".aoMassFolioOption")?.setAttribute("data-m1-option","language");
+        exp.querySelector("[data-folio-before]")?.closest("fieldset")?.setAttribute("data-m1-option","before");
+        exp.querySelector("[data-folio-after]")?.closest("fieldset")?.setAttribute("data-m1-option","after");
+        exp.querySelector("[data-folio-rites-slot]")?.setAttribute("data-m1-option","rites");
+      }
 
       root.addEventListener("click",e=>{
         const calendarButton=e.target?.closest?.("[data-mass-calendar-open]");
@@ -359,10 +372,19 @@ export function mountFullMassPreflight({
             }});
           return;
         }
+        const m1Button=m1Preview?e.target?.closest?.("[data-m1-choice]"):null;
+        if(m1Button){
+          e.preventDefault();e.stopPropagation();
+          const key=m1Button.dataset.m1Choice;
+          if(!["mass","ceremony","reader","language","before","after","rites"].includes(key))return;
+          m1Focus=key;
+          folioStep=({mass:"celebration",ceremony:"ceremony",reader:"reader"})[key]??"overview";
+          refresh();return;
+        }
         const stageButton=e.target?.closest?.("[data-folio-goto], [data-folio-overview-button], [data-folio-next], [data-folio-back]");
         if(stageButton){
           e.preventDefault();
-          if(stageButton.matches("[data-folio-overview-button]"))folioStep="overview";
+          if(stageButton.matches("[data-folio-overview-button]")){folioStep="overview";m1Focus=null;}
           else if(stageButton.matches("[data-folio-goto]"))folioStep=stageButton.dataset.folioGoto;
           else if(stageButton.matches("[data-folio-back]")){
             folioStep={celebration:"overview",ceremony:"celebration",reader:"ceremony"}[folioStep]??"overview";
@@ -440,10 +462,10 @@ export function mountFullMassPreflight({
           refresh();return;
         }
         if(el?.matches?.("[data-full-mass-reader-mode]")&&["MISSAL","LIVE"].includes(el.value)){
-          selectedMode=el.value;explicitMode=true;refresh();return;
+          selectedMode=el.value;explicitMode=true;if(m1Preview){folioStep="overview";m1Focus=null;}refresh();return;
         }
         if(el?.matches?.("[data-full-mass-form]")&&MASS_FORMS.includes(el.value)){
-          selected=el.value;explicit=true;refresh();
+          selected=el.value;explicit=true;if(m1Preview){folioStep="overview";m1Focus=null;}refresh();
         }
       });
       target.insertAdjacentElement("beforebegin",root);
@@ -540,7 +562,9 @@ export function mountFullMassPreflight({
     word("[data-folio-value-ceremony]",summary.formLabel,summary.formLabel);
     word("[data-folio-value-reader]",summary.readerMode,summary.readerMode);
     word("[data-folio-context-summary]","Calendar details","Détails du calendrier");
-    word("[data-folio-guide-heading]","Before Mass","Avant la messe");
+    word("[data-folio-guide-heading]",m1Preview?
+       (m1Focus?m1AccessRows(summary,{fr}).find(r=>r.id===m1Focus)?.title??l("Your Mass","Votre messe"):l("Your Mass","Votre messe")):
+       l("Before Mass","Avant la messe"),"");
     word("[data-folio-label-overview]","Overview","Vue d’ensemble");
     word("[data-folio-step-celebration]","Mass","Messe");
     word("[data-folio-step-ceremony]","Ceremony","Cérémonie");
@@ -573,6 +597,22 @@ export function mountFullMassPreflight({
     for(const item of folio.querySelectorAll("[data-folio-before]"))item.checked=item.value===summary.beforeMass;
     for(const item of folio.querySelectorAll("[data-folio-after]"))item.checked=item.value===summary.afterMass;
     folio.querySelector("[data-folio-open-prayer]").hidden=!mayOpenFolioPrayer("before",selectedExperience());
+     if(m1Preview){
+       root.dataset.m1Focus=m1Focus??"";
+       root.dataset.m1Focused=String(Boolean(m1Focus));
+       const rows=folio.querySelector("[data-m1-rows]");
+       rows.hidden=Boolean(m1Focus);
+       const exp=folio.querySelector(".aoMassFolioExperience");
+       const optionalRites=availableOptionalMassRites(legacy,{form:summary.form,kind:summary.kind})
+         .some(rite=>rite.allowed||rite.fromSource);
+       if(!m1Focus)paintM1AccessRows(root,summary,{fr,optionalRites});
+       const showExperience=["language","before","after","rites"].includes(m1Focus);
+       exp.hidden=!showExperience;
+       for(const option of exp.querySelectorAll("[data-m1-option]")){
+         option.hidden=option.dataset.m1Option!==m1Focus;
+       }
+       word("[data-folio-label-overview]","Your Mass","Votre messe");
+     }
     for(const section of folio.querySelectorAll("[data-folio-panel]"))section.hidden=section.dataset.folioPanel!==folioStep;
     for(const nav of folio.querySelectorAll("[data-folio-goto]")){
       const active=nav.dataset.folioGoto===folioStep;
@@ -803,7 +843,8 @@ export function mountFullMassPreflight({
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
-      optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep}),
+      optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep,
+      m1Preview,m1Focus}),
     dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
   });
 }
