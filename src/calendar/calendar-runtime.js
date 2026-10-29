@@ -7,6 +7,7 @@ import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./int
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
+import { calendarCustomHistoricalVariants } from "./customs-22-regional-variants.js";
 import { normaliseCustomSearch, calendarCustomSearchIndex, calendarCustomSearchMatches } from "./customs-search.js";
 import { groupCalendarCustomsByYear } from "../customs/year-led-library.js";
 import { personalCustomsForDate } from "../customs/personal-store.js";
@@ -719,6 +720,7 @@ function disciplineReference(discipline){
 function calendarCustomArticleMarkup(article){
   const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
   const sources=article.sources||[],historySources=article.history_sources||[],supportingSources=article.supporting_sources||[];
+  const regionalVariants=calendarCustomHistoricalVariants(article.id,{fr:isFr});
   return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
     <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
     <div class="aoCalCustomArticleContent">
@@ -730,6 +732,11 @@ function calendarCustomArticleMarkup(article){
       ${sources.length?`<h5>${esc(Lcopy("Sources","Sources"))}</h5><ul>${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
       ${historySources.length?`<h5>${esc(Lcopy("Historical sources","Sources historiques"))}</h5><ul>${historySources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
       ${supportingSources.length?`<h5>${esc(Lcopy("Supporting documentation","Documentation complémentaire"))}</h5><ul>${supportingSources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
+      ${regionalVariants.length?`<details class="aoCalCustomRegionalVariants"><summary>${esc(Lcopy("Historical regional variations","Variantes régionales historiques"))} · ${regionalVariants.length}</summary>
+        <p>${esc(Lcopy("These are historical local reports, not universally prescribed practices, verified current parish events or permissions to perform a priestly rite.","Ces notices décrivent des usages locaux historiques ; elles ne constituent ni des prescriptions universelles, ni des événements paroissiaux actuels vérifiés, ni l'autorisation d'accomplir un rite réservé au prêtre."))}</p>
+        ${regionalVariants.map(v=>`<article class="aoCalCustomRegionalVariant"><h5>${esc(v.title)}</h5><p>${esc(v.history)}</p><p>${esc(v.context_or_practice)}</p>
+        <small>${esc(v.geography.join(" · "))} · ${esc(Lcopy("Printed page","Page imprimée"))} ${esc(v.source.printed_page)}</small>
+        <p><a href="${esc(v.source.url)}" target="_blank" rel="noopener noreferrer">${esc(Lcopy("Original historical source","Source historique originale"))} ↗</a></p></article>`).join("")}</details>`:""}
     </div>
   </details>`;
 }
