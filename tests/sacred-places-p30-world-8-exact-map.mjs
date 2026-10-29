@@ -1,5 +1,4 @@
 import assert from "node:assert/strict";
-import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import {readFileSync} from "node:fs";
 import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
