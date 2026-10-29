@@ -118,3 +118,38 @@ A source/artwork title match is insufficient to transfer the 1962 date or phone 
 4. Bring the best already-approved Home, Class I, Sunday and Prayer works to the production QA queue. Do not resume low-priority discovery merely to increase raw reviewed counts.
 
 The Phase 1 validator checks the crosswalk against source-bound decisions, known object identities and master count invariants. It was extended in this research branch; an actual CI execution still must be verified. No new images were downloaded or deployed by this crosswalk.
+
+
+## Follow-up: 856 accepted-to-canonical crosswalk and Phase 2 image-inspection intake
+
+### Physical-work identity — why 784 is NOT the number of genuinely new works
+- All **856 frozen user-accepted or conditionally accepted source cards** were reconciled against the **383 canonical artworks**: **72 have verified identity links** and **784 have no verified canonical identity link**. An unlinked card is not necessarily a unique physical painting, nor necessarily a future app hero.
+- The existing 281-record candidate research registry overlaps 74 accepted cards, of which 11 are not yet linked to the 383 canonical. It is **not** 281 additional accepted artworks.
+- The 72 confirmed historical links have no finished native-image production certification. Their prior states include three first-pass visually clean image-source cases, nine with external non-art border, and one historical editorial conflict requiring manual adjudication.
+- Thirteen weak title/artist candidates were screened; eight were distinguished by object/subject evidence, while five remain unproven identity links. Source museum object accessions and official source URLs have now been attached to those five in the existing [weak identity triage](../data/calendar/sacred-art-phase1-weak-identity-13-triage-20261029.v1.json). Without canonical image provenance or source accession evidence, none can be promoted safely.
+
+### Operational high-volume photo verification
+
+A **200-photo first QA worklist** has now been constructed, not as 200 visual approvals but as **200 source-anchored original artwork image candidates**:
+- all **72** confirmed canonical artwork links
+- all **4** selected original B13 cards affected by later screening
+- **124** other accepted source cards, prioritized toward primary museum open-access policies
+- **656** other accepted source cards retained in the source-bound crosswalk as the next queue
+
+The 200 sources are: **100 Met**, **42 Cleveland**, **45 NGA**, **13 Wikimedia Commons**. All 200 have a frozen preview-image pointer; **112 have recorded native/full-resolution candidate URLs** and **88 only review-preview URL pointers**. Actual image bytes and exact-photo rights have **not** been verified in this pass.
+
+Primary research evidence:
+- [Compact phase 2 manifest](../data/calendar/sacred-art-phase2-856-image-qa-intake-200-first-20261029.v1.json)
+- [Ordered first-200 source worklist](../data/calendar/sacred-art-phase2-first200-qa-worklist-20261029.v1.json)
+- [First 88 source photo links](../data/calendar/sacred-art-phase2-first200-photo-source-index-01-20261029.v1.json)
+- [Remaining 112 source photo links](../data/calendar/sacred-art-phase2-first200-photo-source-index-02-20261029.v1.json)
+
+**Do not conflate preparation with image certification.** Every file has `firstNativeQualityInspection:false`, `exactPhotoLicenseAccepted:false` and `release:false`. A source policy stating CC0/open-access does not certify the exact selected JPEG as framed, whole-work, colour-faithful or publication ready. The earlier incorrectly labeled CC BY-SA photograph of the Blanchard Saint Jerome remains on hold.
+
+### Next release-oriented execution gate
+1. Pull the **exact native originals**, not merely metadata thumbnails, into temporary zero-cost working storage and verify bytes and hashes against official/Commons source file and licence declarations.
+2. Visually inspect images in **substantial operational groups**: whole artwork versus detail, frame/support, restorations, colour, subject and painting attribution. Record actual pass/fail and proposed repairs per source ID; never assume that a different photo inherits a user IMPORT choice.
+3. Clear photo rights, final visual crop/colour check, and identity/attribution before marking any item publication-ready.
+4. Test small actual app placements (Home fixed-date heroes, Class I, Sunday, Prayer modules) and then expand only after those release gates pass. Avoid new general museum discovery while this approved backlog has no production certification.
+
+No image was acquired, visually certified in native resolution or deployed during this staging operation. No paid services were used.
