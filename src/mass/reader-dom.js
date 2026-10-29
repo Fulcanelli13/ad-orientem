@@ -4400,13 +4400,15 @@ export function createReaderDomAdapter({
             ? missalSourceRubricCopy(p,{language:frenchReader?"fr":"en"}):null;
           // Only shorten complete, certified action sequences; never change
           // the original Latin/prayer row or expose editorial research drafts.
-          // Both modes must print the actual 1962 Memento hand/head rubrics,
-          // not the Sung donor's abbreviated "[silent commemoration]" gloss.
-          // Require the existing published R17 event identity and original
-          // source paragraph; never convert an unapproved editorial draft.
+          // For these source-bracket priest sequences, both MISSAL and LIVE
+          // use the already-certified 1962 bilingual copy. Do not print an
+          // uppercase English Sung-donor mnemonic as a French LIVE rubric.
+          // A complete published R17 source event sequence is required; on
+          // any draft/partial event the original paragraph fails open.
           const liveMemento=mode==="LIVE"&&p.kind==="RUBRIC"&&
             p.sourceCueIds?.length===1 &&
-            ["AO.SM.C0155","AO.SM.C0193"].includes(p.sourceCueIds[0]);
+            ["AO.SM.C0117","AO.SM.C0155","AO.SM.C0193","AO.SM.C0263"]
+              .includes(p.sourceCueIds[0]);
           const conciseSource=bookRubric ? conciseMissalSourceRubric(p,{
             form:prepared?.session?.resolvedMass?.form,
             language:frenchReader?"fr":"en",
