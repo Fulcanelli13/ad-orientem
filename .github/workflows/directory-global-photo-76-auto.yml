@@ -3,6 +3,7 @@ on:
   workflow_run:
     workflows:
       - "One-shot worldwide Directory source photography - remaining 68 countries plus AU retry"
+      - "One-shot Directory C4-only Wikimedia country photo recovery"
     types:
       - completed
 permissions:
@@ -12,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   global-source-archive:
-    if: github.repository == 'Fulcanelli13/ad-orientem' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'research/directory-restworld-photo-cohorts-one-shot-20261029' && github.event.workflow_run.head_sha == '7a6ffa9a598dc1ad17673830e5c273625d18e1a6' && github.event.workflow_run.repository.full_name == 'Fulcanelli13/ad-orientem'
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.event.workflow_run.conclusion == 'success' && ((github.event.workflow_run.head_branch == 'research/directory-restworld-photo-cohorts-one-shot-20261029' && github.event.workflow_run.head_sha == '7a6ffa9a598dc1ad17673830e5c273625d18e1a6') || (github.event.workflow_run.head_branch == 'research/directory-C4-recovery-once-20261029' && github.event.workflow_run.head_sha == '64c8a5e6a93973f86b8ca9b3a96951e7a9918f4d')) && github.event.workflow_run.repository.full_name == 'Fulcanelli13/ad-orientem'
     runs-on: ubuntu-latest
     timeout-minutes: 38
     steps:
