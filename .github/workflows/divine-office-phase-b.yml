@@ -257,7 +257,12 @@ jobs:
                !d.canonicalLatinAlignment||!d.sameFrenchAndEnglishNativeIds||
                !d.fullSundayAntiphonMatchesIndependentICKSP||
                !d.fullSundayCollectMatchesIndependentICKSP||
-               !d.antiphonBeforeCollect||d.restoredSemanticBlockers.length||
+               !d.antiphonBeforeCollect||
+               !d.independentFrenchSundayVerseResponseComparison.exactSameWitnessPair||
+               !d.independentFrenchSundayVerseResponseComparison.verseAndResponseInCorrectOrder||
+               !d.frenchVersicleAndResponseIndependentlyPrintedCompared||
+               d.original1961PrintedFrenchBreviaryCertified||
+               d.restoredSemanticBlockers.length||
                d.translationPublicationAuthorized||d.canPublish||d.published)
               throw Error("OFFICE_RESTORED_FRENCH_VESPERS_PROPER_NOT_COLLATED");
             console.log("One restored French research candidate checked against published full antiphon and collect; no publication.");
