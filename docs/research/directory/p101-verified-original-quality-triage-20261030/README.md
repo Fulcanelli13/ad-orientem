@@ -20,11 +20,11 @@ These are **review-order categories, not acceptance or rejections**. The first g
 - **#96 Bayonne**: 1,536×2,048 portrait source would yield a 1,536×864 16:9 crop, below a true 1,920×1,080 output without upscaling. Prior preview also cut spire tops and the file has misleading Sainte-Cécile naming. Verify exact Sainte-Marie depiction, already corroborated in P91.
 - **#12 Fatimakapelle**: 1,280×960 produces a maximum crop of 1,280×720 at 16:9; not suitable for large high-density hero without upscaling.
 - **#20 Sydney St Mary's**: 5,621×4,216 image has ample pixels; a P97 preview established significant traffic, signage and tree interference. Larger source resolution does not fix poor visual composition.
-- **#62 Hannover crypt**: excellent near-16:9 aspect (4,000×2,252) but *crypt secondary interior*, not main church nave/altar. Do not use as a false church-wide image.
+- **#62 Hannover crypt — corrected in P102**: encoded JPEG is 4,000×2,252 pixels but EXIF orientation=6 rotates it to **2,252×4,000 displayed portrait**. A hypothetical 16:9 crop therefore preserves only **31.7%** of the visible photograph (2,252×1,266), not the earlier incorrectly reported near-16:9 landscape geometry. It is a *secondary crypt interior*, never the church's general nave or exterior image.
 - **#61 Hannover St Clemens**: stronger candidate with 5,392×3,595 source and low clipping indicators, but still needs original-resolution image-quality review and proper CC BY-SA 4.0 attribution.
 - **#195 Blandford Forum**: previous SHA-1/SHA-256 verification is valid. Original JPEG decoding did not happen in the one-file probe. CC0 requires no mandatory attribution, but source and author provenance remain recommended.
 
-The illustrative 16:9 calculations are not an assertion of the actual Ad Orientem directory card aspect ratio; inspect the actual image component before deciding crops.
+The illustrative 16:9 calculations now apply EXIF orientation before deriving the displayed crop. They are not assertions of the actual Ad Orientem directory card aspect ratio; inspect the real component and image focal area before deciding crops.
 
 ## Non-negotiable release gates
 
