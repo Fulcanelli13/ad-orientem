@@ -131,7 +131,7 @@ test("source reader rejects cross-language, missing/duplicated and unknown secti
  await assert.rejects(source.readPsalmSource("Psalterium/Psalmorum/Psalm109","la"),/NOT_ALLOWED/);
  const allowed=new Set(["Ant Laudes"]);
  assert.throws(()=>parseAdventPreviewSourceSections(
-  "[Ant Laudes]\nA\n[Ant Laudes]\nB\n",allowed),/DUPLICATED_SECTION/);
+  "[Ant Laudes]\nA complete text is present in the first section.\n[Ant Laudes]\nA second conflicting heading is forbidden.\n",allowed),/DUPLICATED_SECTION/);
  assert.throws(()=>parseAdventPreviewSourceSections(
   "[Something else]\nA\n",allowed),/RAW_SECTION_FILE_INVALID|REQUIRED_SOURCE_SECTION_MISSING/);
 });
