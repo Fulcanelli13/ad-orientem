@@ -29,6 +29,44 @@ try{
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    const rootSel="#aoPray435930.open";
+   // Additional B19-B28 devotions were formerly unstyled plain links below
+   // the original family cards. They must now be full, source-owned cards
+   // with a verified canonical asset, and must still enter their real readers.
+   const relatedFamilies=[
+    {family:"passion",items:[["pray.five_wounds","fiveWounds"]]},
+    {family:"devotions",items:[
+     ["pray.occasional_intercessions","occasionals"],
+     ["pray.st_joseph_seven_sorrows","josephSeven"],
+     ["pray.montfort_consecration","montfort"]
+    ]},
+    {family:"eucharistic",items:[["pray.for_priests","priests"]]}
+   ];
+   for(const group of relatedFamilies){
+    await page.locator(rootSel+' [data-p435930-family="'+group.family+'"]').tap();
+    const original=page.locator(rootSel+" .aoP435930ModuleGrid > .aoP435930ModuleCard");
+    assert.ok(await original.count()>=group.items.length,"Family cards should not be replaced by bare links");
+    for(const [route,reader] of group.items){
+     const card=page.locator(rootSel+' .aoP435930ModuleGrid > .aoP435930ModuleCard[data-p435930-own="'+route+'"]');
+     assert.equal(await card.count(),1,"Related Prayer route must be one first-class card: "+route);
+     assert.equal(await card.locator(".aoP435930ModuleIcon[data-ao-pray-module-asset]").count(),1,
+      "Canonical Prayer icon absent for "+route);
+     assert.equal(await card.locator(".aoP435930ModuleDescription").count(),1,
+      "Related Prayer card needs useful EN/FR description "+route);
+     assert.ok((await card.locator(".aoP435930ModuleDescription").innerText()).trim().length>25,
+      "Related Prayer card description is empty: "+route);
+     await card.tap();
+     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930?.state?.().view),reader,
+      "Related Prayer card did not open its source-owned reader: "+route);
+     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),
+      "Related Prayer reader exceeds phone width: "+route);
+     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+     await page.locator(rootSel+' [data-p435930-family="'+group.family+'"]').tap();
+    }
+    await page.screenshot({path:resolve(out,"prayer-related-cards-"+group.family+"-"+width+".png"),animations:"disabled"});
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),
+     "Family card grid must not overflow at "+width+"px: "+group.family);
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   }
    const door=page.locator(rootSel+' [data-p435930-family="chaplets"]');
    assert.equal(await door.count(),1);
    assert.equal(await page.locator(rootSel+' [data-p435930-own="pray.divine_mercy"]').count(),1,"Divine Mercy direct shortcut remains");
