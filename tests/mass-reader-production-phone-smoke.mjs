@@ -149,6 +149,10 @@ try{
       await root.locator('[data-reader-mode="MISSAL"]').click();
       await page.waitForFunction(()=>document.querySelector('#ao-r17-native-reader-preview [data-ao-reader-shell]')?.dataset?.mode==="MISSAL",
         null,{timeout:10000});
+      // Confirm the Missal itself is visible, not a settings sheet covering
+      // the two Latin/vernacular columns in the acceptance screenshot.
+      const closePreferences=root.locator("[data-reader-preferences-close]");
+      if(await closePreferences.isVisible())await closePreferences.click();
       await snapshot(page,"missal",c);
       if(c.pageErrors.length)throw Error("Production page exceptions: "+c.pageErrors.join(" | "));
       c.pass=true;
