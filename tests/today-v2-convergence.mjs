@@ -32,6 +32,20 @@ for(const cls of ["aoTodayV2CalendarGlance","aoTodayV2PrayNow","aoTodayV2ReadRef
 for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.adoration"])
   assert.ok(html.includes('data-home-cu-route="'+route+'"'),"Noncanonical or missing Pray route: "+route);
 assert.match(html,/data-home-daily-catechism/);
+const emptyRule=buildTodayV2Sections(state,vm,{
+  visible:true,
+  comingUp:{rows:[sample.comingUp.rows[0],{id:"static.none",kind:"all",title:"Daily Rule"}]},
+  dailyCatechism:sample.dailyCatechism,
+});
+assert.doesNotMatch(renderTodayV2Sections(emptyRule,vm),/data-home-cu-static="static.none"/,
+  "No Daily Rule item must not create an inert static action");
+const realRule=buildTodayV2Sections(state,vm,{
+  visible:true,
+  comingUp:{rows:[sample.comingUp.rows[0],{id:"rosary",kind:"static",title:"Rosary",role:"Daily"}]},
+  dailyCatechism:sample.dailyCatechism,
+});
+assert.match(renderTodayV2Sections(realRule,vm),/data-home-cu-static="rosary"/,
+  "A configured Daily Rule item must retain its canonical action");
 assert.ok(html.indexOf("aoTodayV2PrayNow")<html.indexOf("aoTodayV2CalendarGlance"),"Prayer through the day precedes calendar context");
 assert.match(html,/data-home-scripture/);
 assert.match(html,/data-action="gospel"/);
