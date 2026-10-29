@@ -153,3 +153,29 @@ Primary research evidence:
 4. Test small actual app placements (Home fixed-date heroes, Class I, Sunday, Prayer modules) and then expand only after those release gates pass. Avoid new general museum discovery while this approved backlog has no production certification.
 
 No image was acquired, visually certified in native resolution or deployed during this staging operation. No paid services were used.
+
+## Phase 1 museum-accession audit — all 479 remaining institution-backed records (29 October)
+
+Full machine-readable audit: [479 museum accession records](../data/calendar/sacred-art-phase1-museum-479-accession-audit-20261029.v1.json). This is an **internal, source-bound accession/URL consistency pass** across the **479 museum-backed records** within the 784 canonical-unlinked accepted cards. It does **not** verify that 479 live museum records still exist, that these represent 479 distinct physical paintings, or that any artwork can be published.
+
+| Institution | Unlinked source cards | Conditional imports | Existing 281-registry matches |
+|---|---:|---:|---:|
+| National Gallery of Art | 126 | 16 | 3 |
+| KMSKA Antwerp | 89 | 33 | 0 |
+| Metropolitan Museum | 73 | 2 | 6 |
+| Rijksmuseum | 66 | 4 | 0 |
+| SMK Copenhagen | 54 | 2 | 0 |
+| Walters Art Museum | 42 | 2 | 0 |
+| Cleveland Museum of Art | 29 | 8 | 2 |
+| **Total** | **479** | **67** | **11** |
+
+- All **479/479 source URLs are syntactically aligned** with the expected institution domain and the frozen source object's ID or accession number. This is **not independent URL-response or object-page confirmation**.
+- All **479 source IDs have distinct (institution, accession) pairs among all 2,455 frozen review cards**, including rejected cards. Distinct accession pairs are not proof of separate physical paintings, especially where catalogue entries refer to components, studies, or ensembles.
+- **11** records are also independently indexed in the separate **281-entry research candidate registry**. They are catalogue cross-references, not imports into the 383-master nor publication clearance.
+- **11** museum-backed source cards also carry unresolved textual canonical leads in the older 13-lead review queue; **3** repeated title/artist groups occur within these 479. None was promoted by title.
+- The other **305** Commons-source unlinked cards remain for Commons file / museum accession resolution.
+- The Phase 1 integrity script now contains read-only guards for source decisions, accession keys, URL consistency, registry cross-references and closed image/rights/release gates. This script was updated in the repository, but **no independent Node or CI execution is claimed**.
+- **New confirmed links to the 383 catalogue: 0** in this pass. Total previously evidence-linked source cards remain **72** (71 canonical artworks). No new unique-physical-artwork total is justified.
+
+Next evidence gate: visit or fetch each official museum object entry in bulk by institutional API or stable source page, store object-level attribution/accession/physical-object and grouping evidence, then distinguish exact identity from photo variants. Keep conditional choices and historic exclusions unchanged.
+
