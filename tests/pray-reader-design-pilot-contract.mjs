@@ -32,6 +32,8 @@ for(const id of LORETO_SOURCE_IDS){
   assert.match(page,/data-p435930-pilot-loreto-form="litany_loreto_1962"/);
   assert.match(page,/data-p435930-lib-back/);
   assert.match(page,/data-ao-reader-design-pilot="litany"/);
+  assert.match(page,/class="aoReaderPilotRailHead"/,"Litany must name invocation and response rails");
+  assert.match(page,/aoReaderPilotCommunal/,"Group mode uses the distinct communal rail treatment");
  }
 }
 const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
