@@ -32,8 +32,8 @@ export function renderPlaceSacredTreasures(profile,language="en"){
     +'<header><small>'+esc(L(language,"SACRED TREASURES","TRÉSORS SACRÉS"))+'</small>'
     +'<h3>'+esc(L(language,"Relics associated with this sanctuary","Reliques associées à ce sanctuaire"))+'</h3>'
     +'<p>'+esc(L(language,
-      "Their reported custody is documented by the cited sources; authenticity, precise indoor position and public display have not been independently established.",
-      "Les sources citées attestent leur conservation signalée, mais ni leur authenticité, ni leur emplacement précis, ni leur exposition au public ne sont établis indépendamment."))+'</p></header>'
+      "Custody and, where listed, indoor position are attributed to the cited sources; neither authenticity, public display nor visitor access is guaranteed.",
+      "La conservation et, le cas échéant, l’emplacement intérieur sont attribués aux sources citées ; ni authenticité, ni exposition, ni accès ne sont garantis."))+'</p></header>'
     +'<div class="aoExploreTreasureGrid">';
   for(const row of treasures){
     const title=language==="fr"?row.title?.fr:row.title?.en;
