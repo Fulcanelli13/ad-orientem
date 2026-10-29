@@ -31,9 +31,9 @@ for(const id of approved){
  assert.equal(userApprovedMassGestureArt({cueId:cue,matrixAction:{...source,
   actor:"FAITHFUL",authorityClass:"FAITHFUL_CUE_SOT"},priestAction:source}),null);
  const asset=USER_APPROVED_MASS_GESTURE_ASSETS[key];
- assert.ok(asset.endsWith("/assets/active/mass-user-gesture-20261029/"+id+".svg"));
+ assert.ok(asset.endsWith("/assets/extensions/mass-user-gesture-20261029/"+id+".svg"));
  assert.equal(resolveUserApprovedMassGestureArt(key,()=>null),asset);
- const svg=readFileSync(new URL("../assets/active/mass-user-gesture-20261029/"+id+".svg",import.meta.url));
+ const svg=readFileSync(new URL("../assets/extensions/mass-user-gesture-20261029/"+id+".svg",import.meta.url));
  const review=readFileSync(new URL("../assets/review/mass-adaptive-gesture-20261029/"+id+".svg",import.meta.url));
  const digest=createHash("sha256").update(svg).digest("hex");
  assert.equal(digest,votes.items.find(x=>x.cueId===id).submittedSvgSha256,id+" source-art digest mismatch");
