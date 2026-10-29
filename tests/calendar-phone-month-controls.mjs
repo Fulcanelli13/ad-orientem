@@ -205,7 +205,7 @@ try{
    if((width===320&&lang==="en")||(width===390&&lang==="fr")){
      const monthCustom=cal.locator('.aoCalCustomMonthContext [data-cal-custom-id="DEAD-001"]');
      await monthCustom.waitFor({state:"visible",timeout:15000});
-     await monthCustom.locator("summary").click();
+     await monthCustom.locator(":scope > summary").click();
      assert.ok(await monthCustom.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
        "November canonical custom must expose its actual source links in Month");
      await page.screenshot({path:resolve(output,"calendar-custom-month-"+lang+"-"+width+".png"),
@@ -236,7 +236,7 @@ try{
      });
      assert.equal(await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]').count(),1,
        "All Souls must retain all its published day-specific customs");
-     await dayCustom.locator("summary").click();
+     await dayCustom.locator(":scope > summary").click();
      assert.ok(await dayCustom.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
        "Day article must show the actual attributed sources");
      const catalogue=cal.locator(".aoCalCustomCatalogue");
