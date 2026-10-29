@@ -37,6 +37,7 @@ jobs:
           node --check src/office/vespers-concurrence-gate.js
           node --check scripts/office/audit-vespers-concurrence.mjs
           node --check src/office/vespers-commemoration-gate.js
+          node --check src/office/vespers-translation-collation.js
           node --check scripts/office/audit-vespers-commemorations.mjs
           node --check src/office/mass-style-research-ui.js
           node --check scripts/office/build-mass-style-preview.mjs
@@ -51,7 +52,7 @@ jobs:
           node --check scripts/office/audit-all-souls-prime-critical.mjs
           node --check scripts/office/audit-all-souls-proper-prayers.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-prime-martyrology-split.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-vespers-concurrence.mjs tests/divine-office-vespers-commemorations.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-prime-martyrology-split.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-vespers-concurrence.mjs tests/divine-office-vespers-commemorations.mjs tests/divine-office-vespers-translations.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -267,6 +268,13 @@ jobs:
           comms=json.loads((Path(os.environ["OUTPUT"])/"vespers-commemorations.json").read_text(encoding="utf8"))
           assert comms["schema"]=="ao.office.vespers-commemoration-screening.v1"
           assert comms["sampleDates"]==5 and len(comms["cases"])==5
+          assert len(comms["translations"])==4
+          assert {(x["date"],x["language"]) for x in comms["translations"]}=={
+            ("2026-10-31","en"),("2026-10-31","fr"),
+            ("2026-11-01","en"),("2026-11-01","fr")}
+          assert all(not x["translationPublicationAuthorized"] and
+                     not x["independentPrintedTranslationCertified"] and
+                     x["published"]==0 for x in comms["translations"])
           assert len(comms["sundayComparisons"])==2
           assert [(x["date"],x["part"]) for x in comms["sundayComparisons"]]==[
             ("2026-10-31","FIRST"),("2026-11-01","SECOND")]
