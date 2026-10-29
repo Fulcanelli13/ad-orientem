@@ -1,0 +1,39 @@
+name: Customs 22 historical variants — existing Calendar integration
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/calendar/customs-22-regional-variants.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/calendar/customs-search.js"
+      - "src/customs/customs-library.js"
+      - "src/customs/customs-browser.js"
+      - "tests/customs-22-existing-article-enrichment.mjs"
+      - ".github/workflows/customs-22-historical-variants.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  historical-variant-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax check existing readers and new historical variant data
+        run: |
+          node --check src/calendar/customs-22-regional-variants.js
+          node --check src/calendar/calendar-runtime.js
+          node --check src/calendar/customs-search.js
+          node --check src/customs/customs-library.js
+          node --check src/customs/customs-browser.js
+          node --check tests/customs-22-existing-article-enrichment.mjs
+      - name: Validate 22 bilingual variants on 12 published parents, zero extra card/date/indulgence/rubric
+        run: node tests/customs-22-existing-article-enrichment.mjs
+      - name: Recheck existing Calendar customs and search without identity changes
+        run: |
+          node tests/calendar-customs-context.mjs
+          node tests/calendar-customs-search.mjs
+          node tests/customs-living-library.mjs

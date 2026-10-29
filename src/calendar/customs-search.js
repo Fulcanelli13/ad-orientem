@@ -1,3 +1,4 @@
+import {calendarCustomHistoricalVariants} from "./customs-22-regional-variants.js";
 // Search for the 35 published Calendar customs using their actual EN/FR article
 // content. This never changes publication state or creates date-bound events.
 const TEXT_FIELDS=Object.freeze(["title","description","history","meaning","practice","caution","scope","occasion"]);
@@ -20,6 +21,13 @@ export function calendarCustomSearchIndex(article){
   for(const field of SOURCE_FIELDS){
     for(const source of article[field]||[]){
       words.push(source.title??"");
+    }
+  }
+  // Search regional historical witnesses through the *existing parent article*.
+  // These terms never create independent canonical Customs search hits.
+  for(const fr of [false,true]){
+    for(const v of calendarCustomHistoricalVariants(article.id,{fr})){
+      words.push(v.title,v.history,v.context_or_practice,...v.geography);
     }
   }
   return normaliseCustomSearch(words.join(" "));

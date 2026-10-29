@@ -1,7 +1,9 @@
 import {CUSTOMS_YEAR_GROUPS,createCustomsLibrary,selectCustoms,selectResearch} from "./customs-library.js";
 import {calendarCustomArticle} from "../calendar/customs-read-model.js";
+import {calendarCustomHistoricalVariants} from "../calendar/customs-22-regional-variants.js";
 
 const ROOT="ao-customs-library-root";
+const REGIONAL_CSS=".aoCustRegionalVariants{margin-top:18px}.aoCustRegionalVariants summary{min-height:44px;display:flex;align-items:center;cursor:pointer}.aoCustRegionalVariant{margin:12px 0 0;padding:14px 0;border-top:1px solid #514638}.aoCustRegionalVariant h3{font-size:17px;line-height:1.4;color:#e6d2aa;margin:0 0 8px}.aoCustRegionalVariant p{line-height:1.6;margin:7px 0}.aoCustRegionalVariant a{color:#e0c98f;overflow-wrap:anywhere}";
 const E=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const DATA=Object.freeze({
   customs:"../../data/customs/customs-atlas-seed.v1.json",
@@ -31,6 +33,7 @@ function makeOwner(win=globalThis){
     return '<button class="aoCustCard" data-cust-id="'+E(c.id)+'"><span class="aoCustSmall">'+E(c.publication_state==="CONTEXT_ONLY"?L("Historical or regional context","Contexte historique ou régional"):familyLabel(c.family))+'</span><strong>'+E(title(c))+'</strong><span class="aoCustSummary">'+E(dateHint(c)||desc(c))+'</span></button>';
   }
   function article(c){
+    const regionalVariants=c.publication_state==="PUBLISHED"?calendarCustomHistoricalVariants(c.id,{fr:FR()}):[];
     const segments=[
       [L("When","Quand"),dateHint(c)],
       [L("Meaning","Sens"),FR()?c.meaning_fr||c.meaning_en:c.meaning_en],
@@ -66,6 +69,19 @@ function makeOwner(win=globalThis){
         E(L("Additional references","Autres références"))+' · '+(all.length-5)+'</summary><ul>'+
         all.slice(5).map(link).join("")+'</ul></details>';
       html+='</section>';
+    }
+    if(regionalVariants.length){
+      html+='<section class="aoCustRegionalVariants"><details class="aoCustEvidenceDetails"><summary>'+
+        E(L("Historical regional variations","Variantes régionales historiques"))+' · '+regionalVariants.length+'</summary>'+
+        '<p class="aoCustSmall">'+E(L(
+          "Historical testimony only; locality, current practice and any priestly rite must not be presumed.",
+          "Témoignages historiques uniquement : on ne présume ni la continuité locale, ni un rite sacerdotal autorisé."))+'</p>'+
+        regionalVariants.map(v=>'<article class="aoCustRegionalVariant"><h3>'+E(v.title)+'</h3><p>'+E(v.history)+
+          '</p><p>'+E(v.context_or_practice)+'</p><small class="aoCustSmall">'+
+          E(v.geography.join(" · "))+' · '+E(L("Printed page","Page imprimée"))+' '+E(v.source.printed_page)+
+          '</small><p><a href="'+E(v.source.url)+'" target="_blank" rel="noopener noreferrer">'+
+          E(L("Read historical source","Lire la source historique"))+'</a></p></article>').join("")+
+        '</details></section>';
     }
     return html+'</div>';
   }
@@ -142,7 +158,7 @@ function makeOwner(win=globalThis){
     state.archive=false;state.custom=customId;state.research=null;state.q="";state.limit=60;
     root=win.document.createElement("section");root.id=ROOT;root.setAttribute("role","dialog");root.setAttribute("aria-modal","true");
     root.setAttribute("aria-label",L("Customs and Traditions","Coutumes et Traditions"));
-    root.innerHTML='<style>'+CSS+'</style><main class="aoCustFrame"></main>';win.document.body.appendChild(root);
+    root.innerHTML='<style>'+CSS+REGIONAL_CSS+'</style><main class="aoCustFrame"></main>';win.document.body.appendChild(root);
     root.addEventListener("click",onClick);root.addEventListener("submit",onSubmit);root.addEventListener("change",onChange);
     root.addEventListener("keydown",event=>{if(event.key==="Escape"){event.preventDefault();close();}});
     paint();root.querySelector("[data-cust-close]")?.focus();
