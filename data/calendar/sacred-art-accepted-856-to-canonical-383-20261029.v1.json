@@ -14,8 +14,8 @@
     "reviewedSourceCards": 2455,
     "acceptedSourceCards": 856,
     "canonicalArtworkRecords": 383,
-    "confirmed": 67,
-    "unlinked": 789,
+    "confirmed": 72,
+    "unlinked": 784,
     "exactCanonicalId": 63,
     "exactCommonsImage": 4,
     "researchCandidateMatched": 74,
@@ -26,10 +26,12 @@
     "existingCanonicalEditorialApproved": 20,
     "ambiguous": 0,
     "documentedB13Exceptions": 4,
-    "acceptedUserChoicesChanged": 0
+    "acceptedUserChoicesChanged": 0,
+    "exactLegacyCommonsFilenameId": 4,
+    "externalMuseumAccessionCrosswalk": 1
   },
   "identityPolicy": {
-    "positiveMatch": "SOURCE_ID_EQUALS_CANONICAL_OBJECT_ID or exact Wikimedia Commons File path identity only",
+    "positiveMatch": "Exact canonical museum object ID, exact Commons File identity, exact recorded canonical legacy Commons filename ID, or separately verified museum accession linking an alternate Commons photo",
     "notAMatch": "Matching artist and/or title is insufficient; even different museum accession IDs may be separate works",
     "noConfirmedIdentity": "Candidate is unlinked, not proven to be a new physical artwork",
     "photoPolicy": "All accepted choices require independent exact-image licensing and native-image QA",
@@ -14084,9 +14086,18 @@
         "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Avilai.jpg"
       },
       "canonical383": {
-        "status": "NO_CONFIRMED_IDENTITY",
-        "artworkId": null,
-        "evidence": "NO_EXACT_CANONICAL_OBJECT_ID_OR_COMMONS_IMAGE_MATCH"
+        "status": "CONFIRMED_IDENTITY",
+        "artworkId": "met-437542",
+        "evidence": "EXACT_INSTITUTIONAL_ACCESSION_FROM_COMMONS",
+        "existingEditorialState": "PREVIOUSLY_RATED_ACCEPTABLE",
+        "existingPhotoVisualState": "NOT_NATIVE_PHOTO_INSPECTED",
+        "existingProductionApproved": false,
+        "existingSourceImageApproved": false,
+        "existingHistoricalExclusion": false,
+        "independentEvidenceUrls": [
+          "https://commons.wikimedia.org/wiki/File:Avilai.jpg",
+          "https://www.metmuseum.org/art/collection/search/437542"
+        ]
       },
       "research281": {
         "present": false
@@ -14258,9 +14269,17 @@
         "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg"
       },
       "canonical383": {
-        "status": "NO_CONFIRMED_IDENTITY",
-        "artworkId": null,
-        "evidence": "NO_EXACT_CANONICAL_OBJECT_ID_OR_COMMONS_IMAGE_MATCH"
+        "status": "CONFIRMED_IDENTITY",
+        "artworkId": "C34:franciscodezurbaran046jpg",
+        "evidence": "EXACT_LEGACY_COMMONS_FILENAME_ID",
+        "existingEditorialState": "UNREVIEWED",
+        "existingPhotoVisualState": "NOT_NATIVE_PHOTO_INSPECTED",
+        "existingProductionApproved": false,
+        "existingSourceImageApproved": false,
+        "existingHistoricalExclusion": false,
+        "independentEvidenceUrls": [
+          "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg"
+        ]
       },
       "research281": {
         "present": false
@@ -17778,9 +17797,17 @@
         "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg"
       },
       "canonical383": {
-        "status": "NO_CONFIRMED_IDENTITY",
-        "artworkId": null,
-        "evidence": "NO_EXACT_CANONICAL_OBJECT_ID_OR_COMMONS_IMAGE_MATCH"
+        "status": "CONFIRMED_IDENTITY",
+        "artworkId": "C32:eliseuviscontirecompensadesaosebastiaojpg",
+        "evidence": "EXACT_LEGACY_COMMONS_FILENAME_ID",
+        "existingEditorialState": "UNREVIEWED",
+        "existingPhotoVisualState": "NOT_NATIVE_PHOTO_INSPECTED",
+        "existingProductionApproved": false,
+        "existingSourceImageApproved": false,
+        "existingHistoricalExclusion": false,
+        "independentEvidenceUrls": [
+          "https://commons.wikimedia.org/wiki/File:Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg"
+        ]
       },
       "research281": {
         "present": false
@@ -18162,9 +18189,17 @@
         "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg"
       },
       "canonical383": {
-        "status": "NO_CONFIRMED_IDENTITY",
-        "artworkId": null,
-        "evidence": "NO_EXACT_CANONICAL_OBJECT_ID_OR_COMMONS_IMAGE_MATCH"
+        "status": "CONFIRMED_IDENTITY",
+        "artworkId": "C32:cavalierarpinosantaceciliajpg",
+        "evidence": "EXACT_LEGACY_COMMONS_FILENAME_ID",
+        "existingEditorialState": "UNREVIEWED",
+        "existingPhotoVisualState": "NOT_NATIVE_PHOTO_INSPECTED",
+        "existingProductionApproved": false,
+        "existingSourceImageApproved": false,
+        "existingHistoricalExclusion": false,
+        "independentEvidenceUrls": [
+          "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg"
+        ]
       },
       "research281": {
         "present": false
@@ -18402,9 +18437,17 @@
         "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg"
       },
       "canonical383": {
-        "status": "NO_CONFIRMED_IDENTITY",
-        "artworkId": null,
-        "evidence": "NO_EXACT_CANONICAL_OBJECT_ID_OR_COMMONS_IMAGE_MATCH"
+        "status": "CONFIRMED_IDENTITY",
+        "artworkId": "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg",
+        "evidence": "EXACT_LEGACY_COMMONS_FILENAME_ID",
+        "existingEditorialState": "UNREVIEWED",
+        "existingPhotoVisualState": "NOT_NATIVE_PHOTO_INSPECTED",
+        "existingProductionApproved": false,
+        "existingSourceImageApproved": false,
+        "existingHistoricalExclusion": false,
+        "independentEvidenceUrls": [
+          "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg"
+        ]
       },
       "research281": {
         "present": false
@@ -21339,5 +21382,35 @@
       "releaseStatus": "NOT_CERTIFIED_DO_NOT_PUBLISH",
       "productionMutation": false
     }
-  ]
+  ],
+  "additionalExactEvidence": {
+    "newlyEstablishedLinks": [
+      {
+        "sourceId": "commons:160380",
+        "canonicalArtworkId": "C34:franciscodezurbaran046jpg",
+        "basis": "EXACT_LEGACY_COMMONS_FILENAME_ID"
+      },
+      {
+        "sourceId": "commons:37938802",
+        "canonicalArtworkId": "C32:eliseuviscontirecompensadesaosebastiaojpg",
+        "basis": "EXACT_LEGACY_COMMONS_FILENAME_ID"
+      },
+      {
+        "sourceId": "commons:15056772",
+        "canonicalArtworkId": "C32:cavalierarpinosantaceciliajpg",
+        "basis": "EXACT_LEGACY_COMMONS_FILENAME_ID"
+      },
+      {
+        "sourceId": "commons:52718091",
+        "canonicalArtworkId": "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg",
+        "basis": "EXACT_LEGACY_COMMONS_FILENAME_ID"
+      },
+      {
+        "sourceId": "commons:45282804",
+        "canonicalArtworkId": "met-437542",
+        "basis": "EXACT_INSTITUTIONAL_ACCESSION_FROM_COMMONS"
+      }
+    ],
+    "rule": "Exact Commons photographic filename embedded in older C32/C34 registry ID; independent Commons accession and museum record confirmation for Teresa."
+  }
 }
