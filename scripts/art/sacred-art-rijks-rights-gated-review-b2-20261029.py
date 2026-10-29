@@ -34,7 +34,7 @@ def request(url,timeout=20,image=False):
   return data
  return json.loads(data.decode('utf-8'))
 def object_record(id,timeout):
- if not re.fullmatch('[0-9]{4,15}',id):raise ValueError('INVALID_RIJKSMUSEUM_ID')
+ if not re.fullmatch('[0-9]{4,40}',id):raise ValueError('INVALID_RIJKSMUSEUM_ID')
  return request('https://data.rijksmuseum.nl/'+id+'?_profile=la-framed',timeout)
 def rights(d):
  values=[]
@@ -103,6 +103,7 @@ def main():
   assert rights({'subject_to':[{'classified_as':[{'id':'https://creativecommons.org/licenses/by-nc/4.0/'}]}]})[0]!='CC0_OR_PDM'
   assert rights({})[0]=='UNDECLARED'
   assert accession({'identified_by':[{'type':'Identifier','content':'SK-A-123'}]})=='SK-A-123'
+  assert re.fullmatch('[0-9]{4,40}','500711199912110510799100')
   print('OFFLINE_RIGHTS_GATES_PASS');return
  assert 0<a.max_objects<=200 and 0<=a.max_images<=100
  data=json.loads(IN.read_text(encoding='utf-8'))
