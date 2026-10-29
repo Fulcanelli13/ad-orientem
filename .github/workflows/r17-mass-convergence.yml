@@ -94,6 +94,8 @@ jobs:
         run: node tests/mass-1962-memento-minor-phone.mjs
       - name: Certify four remaining prescribed priest gesture rubrics at exact source cues
         run: node tests/mass-1962-four-gestures-phone.mjs
+      - name: Confirm all 17 unbound gesture cues stay on their original 65-card prayer paragraphs
+        run: node tests/mass-17-gesture-source-phone.mjs
       # Independently certify Ordinary priest/Schola separation. The broad
       # npm run test:phone sequence can stop earlier on non-Mass regressions;
       # it must not hide an Agnus/Gloria/Creed renderer failure.
@@ -119,6 +121,14 @@ jobs:
           path: artifacts/curated65-phone/*.png
           if-no-files-found: ignore
           retention-days: 7
+      - name: Retain all 17 source-paragraph placements and original phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-17-gesture-source-phone
+          path: artifacts/mass-17-gesture-source-paragraphs/
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve four 1962 priest gesture source-cue phone screenshots
         if: always()
         uses: actions/upload-artifact@v4
