@@ -1,0 +1,67 @@
+name: Directory source-first photo index - 2579 anchor contract
+on:
+  pull_request:
+    paths:
+      - tools/directory/build-worldwide-photo-source-index.py
+      - tools/directory/harvest-wikidata-country-photo-index.py
+      - tests/directory-bulk-photo-source-index-test.py
+      - .github/workflows/directory-worldwide-photo-source-index.yml
+      - docs/DIRECTORY-WORLDWIDE-SOURCE-FIRST-PHOTOS-20261029.md
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  index-all-2579:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline contracts; no images, no network in tests
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/build-worldwide-photo-source-index.py \
+            tools/directory/harvest-wikidata-country-photo-index.py
+          python tests/directory-bulk-photo-source-index-test.py -v
+          node tests/production-tree-hygiene.mjs
+      - name: Fetch three pinned research sources read-only
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake' \
+            'refs/heads/research/directory-photo-candidates:refs/remotes/origin/research/directory-photo-candidates' \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          test "$(git rev-parse refs/remotes/origin/data/cl2-unified-source-location-classification-20261026)" = eb67711a9886a7626916b7a145787c5e99105968
+          git worktree add --detach /tmp/ao-photo-index-cl2 eb67711a9886a7626916b7a145787c5e99105968
+          git worktree add --detach /tmp/ao-photo-index-intake refs/remotes/origin/research/directory-unified-photo-intake
+          git worktree add --detach /tmp/ao-photo-index-pilots refs/remotes/origin/research/directory-photo-candidates
+      - name: Index full 2579 physical anchors and both real pilot evidence files
+        run: |
+          set -euo pipefail
+          python tools/directory/build-worldwide-photo-source-index.py \
+            --intake-dir /tmp/ao-photo-index-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --cl2-dir /tmp/ao-photo-index-cl2/data/directory/research/cl2-unified-20261026 \
+            --candidate-file /tmp/ao-photo-index-pilots/data/directory/research/photo-candidates/r49-exterior-0-100.json \
+            --candidate-file /tmp/ao-photo-index-pilots/data/directory/research/photo-candidates/r49-exterior-100-100.json \
+            --output /tmp/ao-worldwide-photo-source-index.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/ao-worldwide-photo-source-index.json'))
+          counts=d['counts']
+          assert d['schema']=='AO_DIRECTORY_BULK_MEDIA_SOURCE_INDEX_V1'
+          assert len(d['records'])==2579
+          assert counts['physical_anchors_indexed']==2579
+          assert counts['countries']==76
+          assert counts['prior_pilot_source_venues']==200
+          assert counts['prior_pilot_candidate_links_before_dedup']==42
+          assert counts['original_files_downloaded']==0
+          assert counts['approved_cover_images']==0
+          assert counts['published_images']==0
+          assert all(x['publication']=='RESEARCH_ONLY_NEVER_APP_VISIBLE' and
+                     not x['approved_exterior'] for x in d['records'])
+          print('SOURCE_FIRST_REAL_2579_BASELINE',json.dumps(counts,sort_keys=True))
+          PY
