@@ -8,6 +8,8 @@ The browser audit uncovered a more consequential issue: the shared Prayer semant
 
 The current source-owned Litany reader already provides the chapter timeline; do not create a second Previous/Next system. A review of actual shared CSS showed a **16px** litany-line face with a **52px / 16vw right gutter**, even on 320px devices, and the generic distant-paragraph **30%** opacity which dims historical invocations rather than merely guiding them.
 
+The second 320px phone test exposed another issue: the shared dual-axis stylesheet hid every `.aoP435930GuideNav`, unintentionally hiding the **distinct historical-edition/ritual-use selector** in the private Litany. B38 retains the original chapter rail but places edition choices inside an accessible collapsed-by-default `<details>` disclosure. When expanded, the selector's four 44px+ buttons appear in a compact two-column grid despite the generic chapter-nav suppression. Public source-reference screens retain the directly visible selector.
+
 ## Code change
 1. Scope all layout changes to `[data-ao-devotional-owner="litany"]`, which exists only for the private Litany reader. Change invocations to 18–22px responsive liturgical-serif, 1.58 line height and 12px line spacing. Keep a 15px horizontal card padding on ≤420px devices instead of the excessive right gutter.
 2. Keep the guide and source metadata secondary, with compact guide margins. The actual historical invocation lines are prominent and legible. Do not remove the original 18-line chapter pagination or source edits.
