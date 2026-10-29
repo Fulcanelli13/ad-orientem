@@ -64,6 +64,15 @@ class BulkMediaIndexTests(unittest.TestCase):
         self.assertEqual(result["records"],[])
         self.assertFalse(result["truncated"])
         self.assertEqual(result["publication"],"RESEARCH_ONLY_NEVER_APP_VISIBLE")
+    def test_partial_http_response_becomes_retriable_source_error(self):
+        import http.client
+        with patch.object(har.urllib.request,"urlopen",
+                          side_effect=http.client.IncompleteRead(b"partial")):
+            result=har.call_country("CA",100,retries=1,delay=lambda n:None)
+        self.assertEqual(result["status"],"SOURCE_ERROR_NOT_ZERO_RESULTS")
+        self.assertEqual(result["records"],[])
+        self.assertEqual(len(result["errors"]),2)
+        self.assertTrue(all("IncompleteRead" in e for e in result["errors"]))
     def test_source_country_file_not_mislabeled(self):
         with tempfile.TemporaryDirectory() as td:
             folder=Path(td)

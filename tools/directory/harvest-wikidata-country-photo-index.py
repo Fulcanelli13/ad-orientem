@@ -9,6 +9,7 @@ Query failures and LIMIT truncation are recorded, never silently counted as
 """
 import argparse
 import datetime as dt
+import http.client
 import json
 import re
 import time
@@ -76,7 +77,8 @@ def call_country(country,limit=MAX_PER_COUNTRY,timeout=58,retries=2,delay=time.s
             try: retry_after=int(exc.headers.get("Retry-After","0"))
             except (TypeError,ValueError):retry_after=0
             delay(min(90,max(8*(attempt+1),retry_after)))
-        except (urllib.error.URLError,TimeoutError,ValueError,KeyError,UnicodeError) as exc:
+        except (urllib.error.URLError,TimeoutError,ValueError,KeyError,UnicodeError,
+                http.client.HTTPException,OSError) as exc:
             errors.append(type(exc).__name__+":"+str(exc)[:130])
             if attempt>=retries:break
             delay(10*(attempt+1))
