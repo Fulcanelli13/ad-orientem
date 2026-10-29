@@ -14,6 +14,11 @@ on:
       - "tests/customs-a23-96-original-page-audit-gate.mjs"
       - "tests/customs-a23-second61-source-gates.mjs"
       - "tests/customs-408-complete-source-disposition-gates.mjs"
+      - "tests/customs-all408-bulk-review-and-identity-gates.mjs"
+      - "data/customs/master/customs-all408-consolidated-editorial-decision-ledger-20261029.v1.json"
+      - "data/customs/master/customs-all47-owner-action-comparisons-20261029.v1.json"
+      - "data/customs/master/customs-12-clusters-action-scope-review-20261029.v1.json"
+      - "docs/CUSTOMS_ALL_408_SINGLE_BULK_EDITORIAL_REVIEW_20261029.html"
       - "data/customs/indulgence-grant-research-seed-20261029.v1.json"
       - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
@@ -137,3 +142,7 @@ jobs:
         run: |
           node --check tests/customs-408-complete-source-disposition-gates.mjs
           node tests/customs-408-complete-source-disposition-gates.mjs
+      - name: Verify all 408 editorial cases, 47 owner matches, 12 clusters, and offline review export
+        run: |
+          node --check tests/customs-all408-bulk-review-and-identity-gates.mjs
+          node tests/customs-all408-bulk-review-and-identity-gates.mjs
