@@ -440,9 +440,10 @@ def structured_discovery(client, venue):
     seen = set()
     for page, method, preferred_role in pages:
         title = page.get("title")
-        if not title or title in seen:
+        key = (title, preferred_role or "UNCLASSIFIED")
+        if not title or key in seen:
             continue
-        seen.add(title)
+        seen.add(key)
         for kind in CATEGORIES:
             if preferred_role and kind!=preferred_role:
                 continue
@@ -454,6 +455,11 @@ def structured_discovery(client, venue):
             if preferred_role:
                 c["category_evidence"]="STRUCTURED_SUBCATEGORY_ROLE_UNVERIFIED"
                 c["commons_subcategory"]=relevant.get(preferred_role)
+            elif kind == "EXTERIOR" and (
+                classify_evidence("INTERIOR",str(title),c["description"])=="CATEGORY_TEXT_MATCH"
+                or classify_evidence("SACRED_DETAIL",str(title),c["description"])=="CATEGORY_TEXT_MATCH"
+            ):
+                continue
             elif c["category_evidence"] == "CATEGORY_UNCONFIRMED" and kind != "EXTERIOR":
                 continue
             out[kind].append(c)
