@@ -6,6 +6,7 @@
 import {readFileSync,mkdirSync,writeFileSync} from "node:fs";
 import {resolve,join} from "node:path";
 import {renderOfficeResearchReader} from "../../src/office/research-reader.js";
+import {officeTranslationContentBlockers} from "../../src/office/source-content-gate.js";
 
 function main(){
   const args=process.argv.slice(2);
@@ -21,12 +22,30 @@ function main(){
   mkdirSync(target,{recursive:true});
   let count=0;
   const byHour={};
+  const blocked=[],excluded=new Set();
+  // Preflight before producing any navigation: never create a link to a
+  // partially translated preview that will be withheld at render time.
+  for(const date of dates)for(const hour of hours){
+    const latin=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),"la.research.json"),"utf8"));
+    for(const locale of ["en","fr"]){
+      if(excluded.has(date+":"+hour+":"+locale))continue;
+      const translation=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),
+        locale+".research.json"),"utf8"));
+      const issues=officeTranslationContentBlockers({latin,translation});
+      if(issues.length){
+        excluded.add(date+":"+hour+":"+locale);
+        blocked.push({date,hour,locale,
+          reasons:issues.map(x=>x.reason),
+          sourceCellIds:issues.map(x=>x.translationSourceCellId)});
+      }
+    }
+  }
   for(const date of dates)for(const hour of hours){
     const latin=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),"la.research.json"),"utf8"));
     for(const locale of ["en","fr"]){
       const translation=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),locale+".research.json"),"utf8"));
       const article=renderOfficeResearchReader({latin,translation,locale,mode:"parallel"});
-      const nav=hours.map(h=>'<a href="'+date+'-'+h.toLowerCase()+'-'+locale+'.html">'+h+'</a>').join(" · ");
+      const nav=hours.filter(h=>!excluded.has(date+":"+h+":"+locale)).map(h=>'<a href="'+date+'-'+h.toLowerCase()+'-'+locale+'.html">'+h+'</a>').join(" · ");
       const html='<!doctype html><html lang="'+locale+'"><head><meta charset="utf-8">'+
         '<meta name="viewport" content="width=device-width,initial-scale=1">'+
         '<meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; style-src &#39;unsafe-inline&#39;; base-uri &#39;none&#39;; object-src &#39;none&#39;">'+
@@ -40,9 +59,10 @@ function main(){
     }
   }
   const summary={schema:"ao.office.static-preview-audit.v1",dates,hours,locales:["en","fr"],
-    pages:count,researchOnly:true,published:0,byHour};
+    pages:count,blockedLocalePageCount:blocked.length,blockedLocalePages:blocked,
+    researchOnly:true,published:0,byHour};
   writeFileSync(join(target,"preview-manifest.json"),JSON.stringify(summary,null,2)+"\n");
   console.log("OFFICE_PREVIEW_SUMMARY",JSON.stringify(summary));
-  if(count!==dates.length*hours.length*2)throw Error("OFFICE_PREVIEW_INCOMPLETE");
+  if(count+blocked.length!==dates.length*hours.length*2)throw Error("OFFICE_PREVIEW_INCOMPLETE");
 }
 try{main()}catch(e){console.error(e?.stack??String(e));process.exitCode=1}
