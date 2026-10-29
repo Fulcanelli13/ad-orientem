@@ -1,0 +1,1 @@
+All P93 photographs are research only. No exact-site, licence compliance or publication approval follows from Commons source hashes. Separate 28-image human original quality and Place release gates remain.
