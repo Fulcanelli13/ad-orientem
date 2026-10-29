@@ -287,4 +287,53 @@ html[data-ao-appearance-v1] .aoTodayV2,html[data-ao-appearance-v1] .aoTodayV2 .a
 }
 @media(prefers-reduced-motion:reduce){html[data-ao-appearance-v1] .aoTodayV2,html[data-ao-appearance-v1] .aoTodayV2 *{transition:none!important;scroll-behavior:auto!important}}
 html[data-ao-motion-v1="reduced"] .aoTodayV2,html[data-ao-motion-v1="reduced"] .aoTodayV2 *{transition:none!important;scroll-behavior:auto!important}
+
+/* H1.2: H2 observance and actual Mass Proper occupy distinct source-owned roles.
+   Approved artwork is an uncluttered image island; title always in readable ink. */
+.aoTodayV2Frontispiece{border:1px solid var(--border)!important;border-radius:18px!important;overflow:hidden;background:var(--surface-1)}
+.aoTodayV2Frontispiece .aoTodayV2Art::after{display:none!important}
+.aoTodayV2Frontispiece .aoTodayV2ArtOverlay{display:none!important}
+.aoTodayV2Frontispiece .aoTodayV2HeroActions{min-width:0;padding:16px 18px 14px!important;display:block!important}
+.aoTodayV2DayIdentity{border-top:3px solid var(--liturgical);padding-top:10px}
+.aoTodayV2DayIdentity .eyebrow{display:block;margin-bottom:8px;font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;color:var(--muted)}
+.aoTodayV2DayIdentity h1{font:500 clamp(27px,7.8vw,35px)/1.12 var(--ao-font-display,Georgia,serif);margin:0 0 11px;color:var(--text);text-align:left;letter-spacing:0;text-shadow:none;overflow-wrap:anywhere;text-wrap:balance;hyphens:auto}
+.aoTodayV2Frontispiece .aoEditorialMeta{justify-content:flex-start;gap:5px 10px;margin:0 0 6px;line-height:1.35;overflow-wrap:anywhere}
+.aoTodayV2Frontispiece .aoTodayV2SeasonMicro{text-align:left;max-width:100%;white-space:normal;overflow-wrap:break-word}
+.aoTodayV2ActualFormulary{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;margin:11px 0 0;padding:9px 12px;border:1px solid var(--border);border-radius:11px;background:var(--surface-2);color:var(--text)}
+.aoTodayV2ActualFormulary>span,.aoTodayV2Introit>span{font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--muted)}
+.aoTodayV2ActualFormulary strong{font:500 17px/1.3 var(--ao-font-body,Georgia,serif);overflow-wrap:break-word;white-space:normal}
+.aoTodayV2Introit{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 10px;margin:9px 0 1px;color:var(--text)}
+.aoTodayV2Introit em{font:italic 17px/1.4 var(--ao-font-body,Georgia,serif);overflow-wrap:anywhere;min-width:0}
+.aoTodayV2Frontispiece.aoTodayV2ArtMissing .aoTodayV2Art{display:none!important}
+.aoTodayV2Frontispiece.aoTodayV2ArtMissing .aoTodayV2HeroActions{max-width:760px;margin-inline:auto;padding:14px 18px!important}
+.aoTodayV2 .dateRail .dayCell{position:relative;justify-content:flex-start;padding-top:7px;gap:4px}
+.aoTodayV2 .dateRail .dayCell .aoWeekColour{display:block;width:16px;height:3px;border-radius:3px;flex:0 0 3px;margin-top:2px;background:repeating-linear-gradient(90deg,var(--border) 0 3px,transparent 3px 5px)}
+.aoTodayV2 .dateRail .dayCell.aoVerifiedDay .aoWeekColour{background:var(--liturgical)}
+.aoTodayV2 .dateRail .dayCell.aoUnresolvedDay .aoWeekColour{opacity:.55}
+.aoTodayV2 .dateRail .dayCell.aoUnresolvedDay{color:var(--muted)}
+.aoTodayV2 .dateRail .dayCell{min-height:62px}
+@media(max-width:359px){
+ .aoTodayV2 .dateRail .dayCell{min-height:57px}
+ .aoTodayV2DayIdentity h1{font-size:27px}
+ .aoTodayV2Frontispiece .aoTodayV2HeroActions{padding:14px 13px!important}
+ .aoTodayV2Frontispiece.aoTodayV2ArtMissing .aoTodayV2HeroActions{padding-inline:13px!important}
+}
+@media(min-width:700px){
+ .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing){display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr)}
+ .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing) .aoTodayV2Art{height:410px}
+ .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing) .aoTodayV2HeroActions{align-self:center}
+}
+
+
+/* H2 Calendar band: a legible one-column agenda, not two clipped tiles. */
+.aoTodayV2GlanceEvents{grid-template-columns:minmax(0,1fr)}
+.aoTodayV2CalendarGlance .aoTodayV2Event{display:grid;grid-template-columns:42px minmax(0,1fr) 18px;gap:12px;align-items:center;min-height:62px;padding:9px 14px;flex-direction:row;border-right:0!important;border-bottom:1px solid var(--border)!important}
+.aoTodayV2CalendarGlance .aoTodayV2Event:last-child{border-bottom:0!important}
+.aoTodayV2CalendarGlance .aoTodayV2EventDate{display:grid;gap:3px;text-align:center;color:var(--text);border-bottom:3px solid var(--liturgical-border);padding-bottom:5px}
+.aoTodayV2CalendarGlance .aoTodayV2EventDate small{font:700 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted);text-transform:uppercase}
+.aoTodayV2CalendarGlance .aoTodayV2EventDate b{font:500 20px/1 var(--ao-font-display,Georgia,serif);color:var(--text)}
+.aoTodayV2CalendarGlance .aoTodayV2Event strong{font:500 17px/1.25 var(--ao-font-body,Georgia,serif);overflow-wrap:anywhere;min-width:0}
+.aoTodayV2CalendarGlance .aoTodayV2EventArrow{color:var(--liturgical)}
+.aoTodayV2GlanceNote{font:400 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted)}
+
 `;
