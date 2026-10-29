@@ -12,6 +12,8 @@ on:
       - 'src/office/universal-source-descriptors.js'
       - 'src/office/temporal-source-leads.js'
       - 'src/office/conditional-metadata-parser.js'
+      - 'src/office/source-acceptance-slice.js'
+      - 'tests/divine-office-source-acceptance-slice.mjs'
       - 'src/office/conditional-source-reader.js'
       - 'tests/divine-office-conditional-source-reader.mjs'
       - 'tests/divine-office-temporal-source-leads.mjs'
@@ -73,6 +75,8 @@ jobs:
           node --test tests/divine-office-temporal-source-leads.mjs
           node --check src/office/conditional-metadata-parser.js
           node --test tests/divine-office-conditional-metadata-parser.mjs
+          node --check src/office/source-acceptance-slice.js
+          node --test tests/divine-office-source-acceptance-slice.mjs
           node --check src/office/conditional-source-reader.js
           node --test tests/divine-office-conditional-source-reader.mjs
           node --test tests/divine-office-expanded-temporal-sweep.mjs
