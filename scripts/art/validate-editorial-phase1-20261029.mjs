@@ -523,4 +523,77 @@ if (kmskaOfficial2.officialParentEvidence.museumInventory !== "208-210" ||
   fail("KMSKA master canonical/release source-page totals mismatch");
 console.log("PASS KMSKA two official accession pages, protected triptych parent and rejected-source distinction.");
 
+
+const kmskaOfficial89 = load("sacred-art-phase1-kmska-89-official-inventory-report-20261029.v1.json");
+const kmska89Counts = kmskaOfficial89.counts;
+if (kmskaOfficial89.rows.length !== 89 || kmska89Counts.sourceCards !== 89 ||
+    kmska89Counts.verifiedExact !== 89 ||
+    kmska89Counts.resolvedNeedsReview !== 0 ||
+    kmska89Counts.fetchFailures !== 0 ||
+    kmska89Counts.authorMetadataLeads !== 0 ||
+    kmska89Counts.originalConditionalDecisionsPreserved !== 33 ||
+    kmska89Counts.newCanonical383Links !== 0 ||
+    kmska89Counts.certifiedNewPaintings !== 0 ||
+    kmska89Counts.certifiedImages !== 0 ||
+    kmska89Counts.productionImports !== 0)
+  fail("official KMSKA 89 complete count/release gates mismatch");
+const officialKmskaIDs = new Set();
+for(const record of kmskaOfficial89.rows){
+  const frozen=verifiedKmskaById.get(record.sourceId);
+  if(!frozen || officialKmskaIDs.has(record.sourceId) ||
+    record.accession !== frozen.inventoryNumberExactString ||
+    record.batch !== frozen.batch ||
+    record.userChoice !== frozen.originalUserDecision ||
+    record.reviewedTitle !== frozen.originalReviewedTitle ||
+    record.reviewedArtist !== frozen.originalReviewedArtist ||
+    record.legacyId !== frozen.legacyKmskaId ||
+    record.requestedUrl !== "https://kmska.be/nl/meesterwerk/" + encodeURIComponent(record.accession) ||
+    record.status !== "EXACT_OFFICIAL_INVENTORY_AND_TITLE" ||
+    record.flags.length !== 0 ||
+    record.evidence.status !== 200 || record.evidence.officialHost !== true ||
+    record.evidence.inventoryTextMatches !== true ||
+    record.evidence.titleMatches !== true ||
+    record.evidence.artistMentioned !== true ||
+    !/^[a-f0-9]{64}$/.test(record.evidence.contentSha256) ||
+    record.canonical383Match !== false || record.uniquePhysicalWorkCertified !== false ||
+    record.photoRightsCertified !== false || record.photoVisualCertified !== false ||
+    record.productionMutation !== false)
+    fail("official KMSKA 89 record identity or release gate mismatch "+record.sourceId);
+  officialKmskaIDs.add(record.sourceId);
+}
+if (officialKmskaIDs.size !== 89 ||
+    kmskaOfficial89.gates.originalChoicesModified !== false ||
+    kmskaOfficial89.gates.canonicalMaster383Mutated !== false ||
+    kmskaOfficial89.gates.photoRightsApproved !== false ||
+    kmskaOfficial89.gates.imagesVisuallyInspected !== false ||
+    kmskaOfficial89.gates.productionMutation !== false)
+  fail("official KMSKA 89 release guard changed");
+const kmskaSpecial = load("sacred-art-phase1-kmska-physical-special-cases-20261029.v1.json");
+if(kmskaSpecial.records.length !== 4 ||
+   kmskaSpecial.counts.verifiedSourceIdentities !== 4 ||
+   kmskaSpecial.counts.distinctCossiersPaintings !== 2 ||
+   kmskaSpecial.counts.acceptedTriptychComponents !== 2 ||
+   kmskaSpecial.counts.newCanonical383Links !== 0 ||
+   kmskaSpecial.counts.sourcePhotoCertified !== 0 ||
+   kmskaSpecial.counts.userDecisionsMutated !== 0 ||
+   kmskaSpecial.counts.productionImports !== 0)
+ fail("KMSKA independent ensemble and distinct Cossiers works changed");
+for (const r of kmskaSpecial.records) {
+ const old=verifiedKmskaById.get(r.sourceId);
+ if(!old || old.originalUserDecision!==r.legacyReviewChoice ||
+   old.inventoryNumberExactString!==r.originalAccession ||
+   old.originalReviewedTitle!==r.originalReviewedTitle ||
+   r.releaseGate!=="RESEARCH_ONLY_NO_IMAGE_CERTIFICATION")
+  fail("KMSKA physical special-case changed review choice "+r.sourceId);
+}
+if(master.phase1KmskaVerification.officialInventoryAndTitleMatches !== 89 ||
+   master.phase1KmskaVerification.exactOfficialPagesVerified !== 89 ||
+   master.phase1KmskaVerification.exactOfficialPagesStillPending !== 0 ||
+   master.phase1KmskaVerification.museumBackedOfficialVerifiedToDate !== 317 ||
+   master.phase1KmskaVerification.museumBackedOfficialStillUnverified !== 162 ||
+   master.phase1KmskaVerification.canonical383NewLinks !== 0 ||
+   master.phase1KmskaVerification.productionMutation !== false)
+ fail("KMSKA official 89 verification master summary mismatch");
+console.log("PASS KMSKA 89 official exact inventory/title matches, 4 special physical evidence cases, zero releases.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
