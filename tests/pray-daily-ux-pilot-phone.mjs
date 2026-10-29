@@ -1,0 +1,77 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import {readFile,mkdir} from "node:fs/promises";
+import {extname,resolve,sep} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const captures=resolve(root,"artifacts/pray-daily-ux-pilot");
+await mkdir(captures,{recursive:true});
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp",".woff2":"font/woff2"};
+const server=http.createServer(async(req,res)=>{
+ try{
+  const pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
+  const file=resolve(root,"."+pathname);
+  if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return}
+  const bytes=await readFile(file);res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream"});res.end(bytes);
+ }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message||e))}
+});
+await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ for(const width of [320,390]){
+  const page=await browser.newPage({viewport:{width,height:width===320?568:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
+  const errors=[];page.on("pageerror",e=>errors.push(e.message));
+  try{
+   const origin="http://127.0.0.1:"+server.address().port;
+   await page.goto(origin+"/index.html?aoDailyUxPilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   const opened=await page.evaluate(()=>globalThis.AO_MODULES.open("pray.morning_evening"));
+   assert.notEqual(opened,false,"daily reader module must open");
+   const base="#aoPray435930.open ";
+   await page.waitForSelector(base+'[data-tp381-daily-presentation="continuous"]',{timeout:20000});
+   const state=()=>page.evaluate(()=>{
+    const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+    return {kind:mount?.dataset.aoTraditionalDualAxis,
+      mode:mount?.querySelector(".aoDailyUxContinuous")?.dataset.aoDailyUxMode||"cards",
+      count:mount?.querySelectorAll(".aoDailyUxStage").length||0,
+      overflow:document.documentElement.scrollWidth-innerWidth,
+      mountOverflow:(mount?.scrollWidth||0)-(mount?.clientWidth||0)};
+   });
+   assert.equal((await state()).kind,"daily","card mode must retain original dual-axis reader");
+   assert.equal(await page.locator(base+'.aoDailyUxModes [aria-pressed="true"]').count(),1);
+   await page.screenshot({path:resolve(captures,"daily-morning-cards-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
+   let flow=await state();
+   assert.equal(flow.mode,"continuous");
+   assert.equal(flow.count,11);
+   assert.ok(flow.overflow<=1&&flow.mountOverflow<=1,"morning horizontal overflow "+JSON.stringify(flow));
+   assert.ok(await page.locator(base+'.aoDailyUxStage .aoTP381PrayerCard').count()>0,"continuous mode should reuse real prayer cards");
+   const first=page.locator(base+'[data-ao-daily-position="0"]');
+   assert.ok((await first.innerText()).length>40,"the first prayer must render actual text");
+   await page.screenshot({path:resolve(captures,"daily-morning-continuous-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'.aoDailyUxJump summary').click();
+   await page.locator(base+'[data-tp381-flow-jump="8"]').click();
+   assert.equal(await page.evaluate(()=>document.activeElement?.id),"aoDailyPilotStep-8","jump must focus actual prayer without marking it complete");
+   assert.equal(await page.locator(base+'[data-ao-daily-position="8"][data-completed]').count(),0);
+   await page.locator(base+'[data-tp381-daypart="evening"]').click();
+   flow=await state();
+   assert.equal(flow.count,13,"evening source sequence must retain its thirteen stages");
+   assert.ok(flow.overflow<=1&&flow.mountOverflow<=1,"evening horizontal overflow "+JSON.stringify(flow));
+   await page.screenshot({path:resolve(captures,"daily-evening-continuous-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'[data-tp381-daily-presentation="guided"]').click();
+   assert.equal((await state()).kind,"daily","switching back restores canonical dual-axis cards");
+   assert.equal(await page.locator(base+'.aoDailyUxStage').count(),0);
+   assert.equal(await page.locator(base+'.aoQuietHorizon').count(),1,"existing horizon presentation must remain");
+   await page.screenshot({path:resolve(captures,"daily-evening-cards-"+width+".png"),animations:"disabled"});
+   assert.deepEqual(errors,[],"Uncaught phone errors: "+errors.join("; "));
+   console.log("PASS "+width+"px: 11/13 source-backed daily cards and continuous flow, jump, no completion, original horizon");
+  }finally{await page.close()}
+ }
+}finally{
+ await browser?.close();
+ await new Promise(ok=>server.close(ok));
+}
