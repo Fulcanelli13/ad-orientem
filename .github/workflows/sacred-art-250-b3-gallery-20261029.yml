@@ -1,0 +1,69 @@
+name: Sacred Art — B3 250-work import-only paginated review
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-250-b3-gallery-20261029.yml
+      - scripts/art/build-sacred-art-250-review-gallery-b3-20261029.py
+      - data/calendar/sacred-art-250-review-source-b3-20261029.v1.json
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-250-b3-gallery
+  cancel-in-progress: true
+jobs:
+  build-batch-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate first 250-work HTML when metadata run has completed
+        run: |
+          if [ ! -f data/calendar/sacred-art-250-review-source-b3-20261029.v1.json ]; then
+            echo 'Batch metadata not yet archived'; exit 0
+          fi
+          python -m py_compile scripts/art/build-sacred-art-250-review-gallery-b3-20261029.py
+          python scripts/art/build-sacred-art-250-review-gallery-b3-20261029.py
+      - name: Validate user controls, pagination, source rights and full-batch guard
+        run: |
+          if [ ! -f docs/SACRED_ART_250_WORK_IMPORT_REVIEW_B3_20261029.html ]; then exit 0; fi
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          html=Path('docs/SACRED_ART_250_WORK_IMPORT_REVIEW_B3_20261029.html').read_text()
+          data=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          prior=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',html,re.S)
+          assert m
+          rows=json.loads(m.group(1))
+          ids=[x['id'] for x in rows]
+          excluded={x['sourceId'] for key in ('imports','rejects') for x in prior[key]}
+          assert 200<=len(ids)<=300 and len(ids)==len(set(ids))
+          assert len(ids)==len(data['rows']) and not set(ids)&excluded
+          assert 'const PAGE_SIZE=50' in html and 'seenPages.length<TOTAL_PAGES' in html
+          assert 'IMPORT_WITH_CORRECTIONS' in html and 'UNSELECTED' in html
+          assert 'Finalize and export decisions' in html and 'Export selected-only draft' in html
+          assert 'for(let score=' not in html
+          assert 'productionImported:false' in html
+          assert all(not x['productionImageRightsCleared'] for x in rows if x['provider']=='KMSKA')
+          assert all(x['previewURL'].startswith('https://') for x in rows)
+          print('PASS',len(rows),'images; user 60 decisions excluded; protected rights')
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json
+      - name: Preserve user-selectable HTML in Git, no image originals
+        run: |
+          if [ ! -f docs/SACRED_ART_250_WORK_IMPORT_REVIEW_B3_20261029.html ]; then exit 0; fi
+          git config user.name "Ad Orientem art curation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_250_WORK_IMPORT_REVIEW_B3_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): publish first 250-work B3 paginated import-only gallery"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
