@@ -74,7 +74,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-04",
@@ -151,7 +153,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-05",
@@ -220,7 +224,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-07",
@@ -290,7 +296,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-08",
@@ -366,7 +374,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-09",
@@ -443,7 +453,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-13",
@@ -520,7 +532,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-14",
@@ -590,7 +604,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-15",
@@ -659,7 +675,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-16",
@@ -728,7 +746,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   },
   {
     "review_key": "CUSTOMS-R18-17",
@@ -798,7 +818,9 @@ const REVIEW_CANDIDATES=Object.freeze([
       "calendar": false,
       "activation": false
     },
-    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED"
+    "release_status": "PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED",
+    "editorial_lane": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+    "editorial_lane_status": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"
   }
 ]);
 
@@ -828,7 +850,11 @@ export function calendarR18ElevenEditorialReviewMarkup({fr=false}={}){
      '<li>'+h(s.title[fr?"fr":"en"])+' <small>('+h(s.key)+')</small></li>').join("");
    return '<details class="aoCalCustomArticle aoCalR18ElevenCandidate" data-cal-r18-eleven-key="'+h(r.review_key)+'">'+
      '<summary><span><strong>'+h(String(i+1).padStart(2,"0")+' · '+r.title[fr?"fr":"en"])+'</strong>'+
-     '<small>'+h(fr?"Article proposé · non publié":"Proposed article · not published")+'</small></span><span aria-hidden="true">›</span></summary>'+
+     '<small>'+h(fr?"Article proposé · non publié":"Proposed article · not published")+' · '+
+     h(r.editorial_lane==="LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID"?
+      (fr?"Contexte historique local uniquement":"Local historical context only"):
+      (fr?"Candidat régional · validation requise":"Regional candidate · approval required"))+
+     '</small></span><span aria-hidden="true">›</span></summary>'+
      '<div class="aoCalCustomArticleContent"><p><strong>'+h(fr?"Vérification éditoriale : en attente":"Editorial verification: pending")+'</strong>'+
      ' · '+h(r.review_key)+'</p>'+
      '<p>'+h(fr?"Source établie pour une affirmation limitée ; aucune approbation du texte intégral, d’un rite, d’un événement local récurrent ni d’une indulgence.":"Sources corroborate a narrow claim only; no approval of the whole article, rite, recurring local event, or indulgence.")+'</p>'+
