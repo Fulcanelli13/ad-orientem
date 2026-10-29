@@ -1,0 +1,114 @@
+{
+  "schema": "AO_P106_FOUR_APPROVED_DIRECTORY_COVERS_V1",
+  "date": "2026-10-30",
+  "status": "PR_REVIEW_NOT_YET_ON_MAIN",
+  "p104_places_merged_commit": "8384870a3ad64cadd8056e7b0e36aca9a8bd94d9",
+  "p105_pinned_source_commit": "156972f77b1fa39af3b3402060ddf23f7edc86ad",
+  "p105_originals_sha_verified": 7,
+  "source_binary_audit": "data/directory/research/p106-four-approved-bytes-audit.json",
+  "counts": {
+    "existing_approved_media": 36,
+    "proposed_approved_media": 40,
+    "new_approved_covers": 4,
+    "existing_exact_directory_links": 22,
+    "new_exact_directory_links": 0,
+    "proposed_exact_photo_joins": 9,
+    "existing_confirmed_photo_joins": 5,
+    "schedules_changed": 0,
+    "venue_ids_created": 0,
+    "places_created": 0,
+    "expense_eur": 0
+  },
+  "photos": [
+    {
+      "row": 349,
+      "place_id": "place:GB:sacred-heart-caterham",
+      "venue_id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",
+      "asset_path": "assets/approved/place-media/GB-sacred-heart-caterham.webp",
+      "sha256": "4c46177becf1c0a7b3ab2ab78a4edf5d3e66bf8a71fde221e91a39f4ccdcd891",
+      "source_sha1": "8807b43e2406f93fdbd4bf41962f390a03950de6",
+      "credit": "Tag Scientist",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_Of_The_Sacred_Heart_Of_Jesus.jpg",
+      "dimensions": [
+        1400,
+        788
+      ],
+      "status": "APPROVED_IN_UNMERGED_BRANCH"
+    },
+    {
+      "row": 356,
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "venue_id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY",
+      "asset_path": "assets/approved/place-media/GB-st-mary-catholic-brewood.webp",
+      "sha256": "cef2cb9d49741601c42bf5a19234adc5e74d171748e9c0812f40ae50a90bbde1",
+      "source_sha1": "f658a27b69d7211cd12b8ec4ce6db38ffe6581c9",
+      "credit": "Roger Kidd",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Mary's_Catholic_Church_at_Brewood,_Staffordshire_-_geograph.org.uk_-_4072915.jpg",
+      "dimensions": [
+        1024,
+        760
+      ],
+      "status": "APPROVED_IN_UNMERGED_BRANCH"
+    },
+    {
+      "row": 375,
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "venue_id": "AO-AMER-R26-US-03-08",
+      "asset_path": "assets/approved/place-media/US-immaculate-conception-cathedral-lake-charles.webp",
+      "sha256": "5eca4f1db9bca3e951f51325522469b5a6cc2a8c06b7464be3f81ea1877e859f",
+      "source_sha1": "a5c9f3c950aef4c3541c46629afc560ff23038dc",
+      "credit": "Farragutful",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Immaculate_Conception_-_Lake_Charles_02.jpg",
+      "dimensions": [
+        1400,
+        1053
+      ],
+      "status": "APPROVED_IN_UNMERGED_BRANCH"
+    },
+    {
+      "row": 380,
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+      "asset_path": "assets/approved/place-media/US-holy-family-log-church-cahokia.webp",
+      "sha256": "b4fd5ceb74610f7b7cba32392b3c18d31473bfcea5a2669a48a5b1f63cf5232a",
+      "source_sha1": "fcf74719c3701b7468560a4f4d31bac7b03bb1ae",
+      "credit": "Kbh3rd",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Family_Log_Church_Cahokia_063.jpg",
+      "dimensions": [
+        1400,
+        1111
+      ],
+      "status": "APPROVED_IN_UNMERGED_BRANCH"
+    }
+  ],
+  "holds": [
+    {
+      "row": 309,
+      "reason": "Grey sky/flat façade, seek superior primary"
+    },
+    {
+      "row": 315,
+      "reason": "Cemetery foreground and bright sky, compare alternative"
+    },
+    {
+      "row": 320,
+      "reason": "Basilica adjacent to castle complex, conditional ensemble only"
+    }
+  ],
+  "policy": {
+    "byte_identical_p105_originals": true,
+    "unchanged_framing": true,
+    "full_bilingual_alt": true,
+    "license_and_original_links": true,
+    "no_schedule_changes": true,
+    "no_paid_resources": true
+  }
+}
