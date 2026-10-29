@@ -27,6 +27,13 @@ for(const [key,tokens] of Object.entries(MASS_LITURGICAL_PALETTES)){
   const values=appThemeCssValues({key,tokens});
   assert.ok(contrastRatio(values["--liturgical-ink"],values["--liturgical"])>=4.5,key+" primary-button text is below 4.5:1");
 }
+// Light surfaces retain verified liturgical colours while using legible interactive accents.
+for(const [key,tokens] of Object.entries(MASS_LITURGICAL_PALETTES)){
+  const values=appThemeCssValues({key,tokens},"light");
+  assert.equal(values["--bg"],"#F6F2EA");
+  assert.ok(contrastRatio(values["--liturgical-ink"],values["--liturgical"])>=4.5,key+" light primary action has insufficient contrast");
+}
+assert.notEqual(appThemeCssValues({key:"WHITE"},"light")["--liturgical"],"#766037","White observances must not be rendered with a gold interactive accent");
 assert.equal(resolveAppLiturgicalTheme(day("green")).key,"GREEN");
 assert.equal(resolveAppLiturgicalTheme(day("red")).key,"RED");
 assert.equal(resolveAppLiturgicalTheme(day("purple")).key,"VIOLET");
@@ -75,6 +82,21 @@ bridge.dispose();
 assert.equal(unsubscribeCount,1);
 assert.equal(win.AO_APP_LITURGICAL_THEME_V1,undefined);
 
+// Auto follows system appearance without creating a second Settings key.
+let appearanceChoice="auto", lightMatches=true, osChange=null;
+const lightProps=new Map(),lightHtml={style:{setProperty:(k,v)=>lightProps.set(k,v)},dataset:{}};
+const modeWin={document:{documentElement:lightHtml},matchMedia:()=>({get matches(){return lightMatches},addEventListener:(event,fn)=>{osChange=fn},removeEventListener:()=>{osChange=null}}),
+  AO_SETTINGS_DONOR_V4359:{snapshot:()=>({preferences:{appearance:{mode:appearanceChoice}}})},
+  AO_RUNTIME_V8:{store:{getState:()=>day("white"),subscribe:()=>()=>{}}}};
+const appearanceBridge=installAppLiturgicalTheme({win:modeWin});
+assert.equal(lightHtml.dataset.aoAppearanceV1,"light");
+assert.equal(lightProps.get("--bg"),"#F6F2EA");
+lightMatches=false;osChange?.();
+assert.equal(lightHtml.dataset.aoAppearanceV1,"dark");
+appearanceChoice="light";appearanceBridge.sync();
+assert.equal(lightHtml.dataset.aoAppearanceV1,"light");
+appearanceBridge.dispose();
+assert.equal(osChange,null);
 const entry=await readFile(new URL("../src/app/browser-entry.js",import.meta.url),"utf8");
 assert.match(entry,/import \{ installAppLiturgicalTheme \} from "\.\/liturgical-theme\.js"/);
 assert.match(entry,/installAppLiturgicalTheme\(\{ win \}\)/);
