@@ -1,0 +1,37 @@
+name: P78 bulk 48 licensed Commons originals and local WebP previews
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/p78-48-candidate-manifest.v1.json'
+      - 'tools/verify-p78-48-candidates.py'
+      - '.github/workflows/p78-bulk-48-commons-source-review.yml'
+permissions:
+  contents: read
+jobs:
+  verify-48-source-files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed image decoder and encoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Check frozen 48-file identity/rights plan
+        run: python tools/verify-p78-48-candidates.py --dry-run
+      - name: Verify exact Commons SHA1 and distinct Creative Commons grants; stage only unapproved WebP
+        run: python tools/verify-p78-48-candidates.py --delay 1.6
+      - name: Temporary read-only transfer — commit approved files separately for durable storage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p78-48-source-verified-unapproved-photos
+          retention-days: 1
+          if-no-files-found: warn
+          path: |
+            data/geography/research/p78-review-artifacts/p78-contact-*.jpg
+            data/geography/research/p78-review-artifacts/p78-*.webp
+            data/geography/research/p78-review-artifacts/p78-results.jsonl
+            data/geography/research/p78-review-artifacts/p78-summary.json
