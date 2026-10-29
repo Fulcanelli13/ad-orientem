@@ -1,0 +1,42 @@
+{
+  "schema": "AO_P80_COMPLETED_WORLDWIDE_SOURCE_AUDIT_V1",
+  "as_of": "2026-10-29",
+  "source_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40856809723",
+  "release_merge_sha": "1bf3218ad684552879b95f4de93910d129db2d79",
+  "source_cl2_commit": "eb67711a9886a7626916b7a145787c5e99105968",
+  "original_zip_name": "P80-ONE-WORLDWIDE-2579-PHOTO-SOURCE-AUDIT",
+  "original_artifact_id": 12890088569,
+  "original_artifact_sha256": "ddd6ab30e63c3150450bdbb2941cd9c31f9af86a355d5632f553ce9277e5ce34",
+  "countries_attempted": 76,
+  "countries_success": 73,
+  "source_error_countries": [
+    "BR",
+    "IN",
+    "MX"
+  ],
+  "source_truncated_countries": [
+    "AT",
+    "CZ",
+    "DE",
+    "ES",
+    "FR",
+    "GB",
+    "IT",
+    "PL",
+    "RU",
+    "SE",
+    "US"
+  ],
+  "anchors_accounted": 2579,
+  "raw_country_image_rows": 44777,
+  "distinct_qid_image_keys": 44774,
+  "anchors_with_name_only_unverified_leads": 492,
+  "unverified_candidate_anchor_image_links": 1020,
+  "publication": 0,
+  "notes": [
+    "Country queries are partial church/cathedral P18 image source discovery, not physical-site photo certification.",
+    "Country failures must never count as no-images outcomes.",
+    "No automated approval, rights grant, original SHA1 byte check or visual review.",
+    "Full original-source evidence remains attached to P80 run, with the recorded artifact retention expiry; this report is durable but does not itself preserve all 44,777 raw rows."
+  ]
+}
