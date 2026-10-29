@@ -6,11 +6,11 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const m=read("data/customs/editorial-final-acceptance.v1.json");
 const seed=read("data/customs/customs-atlas-seed.v1.json");
 assert.deepEqual(validationErrors(m),[]);
-assert.equal(m.records.length,35);
+assert.equal(m.records.length,36);
 assert.equal(m.records.filter(x=>x.priority==="CRITICAL_SCOPE").length,13);
-assert.equal(new Set(m.records.map(x=>x.custom_id)).size,35);
+assert.equal(new Set(m.records.map(x=>x.custom_id)).size,36);
 assert.deepEqual(new Set(m.records.map(x=>x.custom_id)),new Set(publishedIds()));
-assert.equal(seed.customs.filter(x=>x.publication_state==="PUBLISHED").length,35);
+assert.equal(seed.customs.filter(x=>x.publication_state==="PUBLISHED").length,36);
 assert.equal(seed.customs.filter(x=>x.publication_state==="CONTEXT_ONLY").length,3);
 for(const row of m.records){
   const article=articleFor(row.custom_id);
@@ -24,7 +24,7 @@ for(const row of m.records){
   assert.equal(row.final_status,"BLOCKED_PENDING_HUMAN_SIGNOFF");
 }
 const review=renderReviewPacket();
-assert.equal((review.match(/\n## \d+\. /g)||[]).length,35);
+assert.equal((review.match(/\n## \d+\. /g)||[]).length,36);
 assert.match(review,/ADVT-001/);
 assert.match(review,/SNIC-001/);
 assert.match(review,/hostie/); // Some articles may contain the word when warning against confusion; full text is shown faithfully
@@ -37,4 +37,4 @@ mutation.records[0].final_en.reviewer="Human Editor";
 mutation.records[0].final_en.reviewed_on="2026-10-23";
 mutation.records[0].final_en.content_sha256="0".repeat(64);
 assert.ok(validationErrors(mutation).some(x=>x.includes("not for current text")),"Stale or invented digest must be rejected");
-console.log("PASS customs final-editorial review packet 35/35, 13 scope-critical, copy-bound approval with zero manufactured human signoffs");
+console.log("PASS customs final-editorial review packet 36/36, 13 scope-critical, copy-bound approval with zero manufactured human signoffs");
