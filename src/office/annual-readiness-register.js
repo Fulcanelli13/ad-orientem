@@ -112,7 +112,7 @@ export function buildAnnualOfficeReadiness({year=2026,probeManifests=[]}={}){
       const row={
         key:proofKey(date,hour,language),date,hour,language,season,
         state,rawCaptureSha256:captured?source.sha256:null,
-        calendarMajorDayCandidates:exceptions.major.get(date)??[],
+        calendarMajorDayCandidates:ex.major.get(date)??[],
         officePrecedenceVerified:false,structureVerified:false,
         independentPrintedTextVerified:false,translationVerified:false,
         rightsReviewed:false,approved:false,published:false,
