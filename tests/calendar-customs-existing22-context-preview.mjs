@@ -36,7 +36,8 @@ for(let i=0;i<en.length;i++){
  assert.ok(Number.isInteger(english.source.printed_page)&&english.source.printed_page>0);
  assert.ok(english.source.observation_ids.length>0);
  assert.deepEqual(english.source,french.source,"Source references must be language-independent");
- assert.equal(english.editorial_preview_only,true);
+ assert.equal(english.historical_context_only,true);
+ assert.equal(english.canonical_publication_authorized,false);
  assert.equal(english.no_calendar_event,true);
  assert.equal(english.no_new_canonical_card,true);
  assert.equal(english.current_local_event_confirmed,false);
@@ -56,9 +57,13 @@ for(const date of ["2026-03-29","2026-04-04","2026-06-04","2026-08-15","2026-11-
 
 // Review-only switch: no default, no region/geolocation inference,
 // and preview content stays nested within the existing article renderer.
-assert.match(runtime,/new URLSearchParams\(globalThis\.location\?\.search\|\|""\)\.get\("customsVariantsReview"\)==="1"/);
-assert.match(runtime,/customsHistoricalVariantPreviewEnabled\(\)\?calendarCustomHistoricalVariantPreview\(article\.id,\{fr:isFr\}\):\[\]/);
+assert.match(runtime,/CUSTOMS_HISTORICAL_PARENT_CONTEXT_RELEASE = true/);
+assert.match(runtime,/new URLSearchParams\(globalThis\.location\?\.search\|\|""\)\.get\("customsHistorical"\)!=="off"/);
+assert.match(runtime,/customsHistoricalVariantContextEnabled\(\)\?calendarCustomHistoricalVariantPreview\(article\.id,\{fr:isFr\}\):\[\]/);
+assert.doesNotMatch(runtime,/\$\{esc\(variant\.optional_practice\)\}/);
+assert.match(runtime,/Historical regional examples · 1958/);
+assert.match(runtime,/Exemples régionaux historiques · 1958/);
 assert.match(runtime,/data-cal-customs-variants-preview/);
 assert.match(runtime,/data-cal-custom-variant/);
 assert.ok(!runtime.includes("geolocation.getCurrentPosition"));
-console.log("PASS: 22 bilingual review-only historical details under 12 existing Calendar Customs, 35 published, no new dates, obligations, blessing, or indulgence");
+console.log("PASS: 22 bilingual historical context details under 12 existing Calendar Customs, 35 published identities, no new dates, obligations, blessing, or indulgence");
