@@ -1,0 +1,52 @@
+{
+  "schema": "AO_DIRECTORY_OPEN_PHOTO_PILOT_AUDIT_V2",
+  "date": "2026-10-29",
+  "repository_pr": 1905,
+  "source_commit": "23d6bd024218d5f943b91514bf4db438f0aa9283",
+  "source_workflow_run": 40792829033,
+  "source_artifact_id": 12861659030,
+  "sample": {
+    "source": "AO_PRELIMINARY_TLM_MAP_R49",
+    "offset": 2,
+    "venues": 6
+  },
+  "approach": [
+    "Wikidata P625/name matching",
+    "Wikidata P18 image and exact Commons category",
+    "Commons geotagged camera locations",
+    "Country-specific Commons text search"
+  ],
+  "outcome": {
+    "venues_processed": 6,
+    "api_errors": 0,
+    "corroborated_wikidata_identities": 1,
+    "held_candidates": {
+      "EXTERIOR": 1,
+      "INTERIOR": 0,
+      "SACRED_DETAIL": 0
+    },
+    "confirmed_venue_photos": 0,
+    "approved": 0,
+    "published": 0,
+    "downloaded": 0
+  },
+  "candidate": {
+    "target_venue_id": "ao-fssp-eglise-saints-jean-et-etienne-aux-minimes-rue-des-minimes-62-b-1000-bruxelles-belgique",
+    "venue_name": "Eglise Saints Jean et Etienne aux Minimes",
+    "country": "BE",
+    "wikidata": "Q2617482",
+    "wikidata_distance_m": 8.6,
+    "commons_title": "File:Entry porch of the Minim church, with the former convent in the back.png",
+    "discovery_method": "WIKIDATA_COMMONS_CATEGORY",
+    "declared_license": "PUBLIC_DOMAIN",
+    "name_score": 0,
+    "category_evidence": "CATEGORY_UNCONFIRMED",
+    "status": "HOLD_FOR_SITE_SUBJECT_AND_RIGHTS_REVIEW"
+  },
+  "next_research_gates": [
+    "Inspect suitability and rights of Wikidata P18",
+    "Search relevant Commons interior and sacred-detail subcategories",
+    "Broaden source discovery beyond Commons",
+    "Never automatically approve media from geographical proximity alone"
+  ]
+}
