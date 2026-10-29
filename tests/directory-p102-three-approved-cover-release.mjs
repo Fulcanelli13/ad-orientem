@@ -74,7 +74,7 @@ for(const p of source.records){
  const english=renderDirectoryVenueCard(items[0],"en");
  const french=renderDirectoryVenueCard(items[0],"fr");
  assert.ok(english.includes(p.approved_path)&&english.includes(p.alt_en));
- assert.ok(french.includes(p.approved_path)&&french.includes(p.alt_fr));
+ assert.ok(french.includes(p.approved_path)&&french.includes(p.alt_fr.replaceAll("&","&amp;").replaceAll("\x27","&#039;")),"French alt text must be HTML-safe and retained");
  const vm=buildExploreViewModel({language:"en",lens:"tlm",items,view:"map",selectedId:"tlm:"+p.venue_id,filters:{directoryGroup:"ALL"}});
  const html=renderExploreToString(vm);
  assert.ok(html.includes("aoTlmPreviewPhoto"));
