@@ -1,10 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {buildAnnualCaptureLedger,validateAnnualCaptureLedger,reconcileAnnualCaptureLedger}
+import {buildAnnualCaptureLedger,validateAnnualCaptureLedger,reconcileAnnualCaptureLedger,ledgerToAnnualEvidenceManifest}
  from "../src/office/annual-capture-ledger.js";
 import {planAnnualOfficeCaptures,selectAnnualOfficeCaptureBatch}
  from "../src/office/annual-capture-plan.js";
 import {DIVINUM_OFFICIUM_PIN} from "../src/app/source-transport-compat.js";
+import {buildAnnualOfficeReadiness} from "../src/office/annual-readiness-register.js";
 const batch=selectAnnualOfficeCaptureBatch(planAnnualOfficeCaptures({year:2026}),"2026-11-05");
 const records=batch.dates.flatMap(date=>["MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"]
  .flatMap(hour=>["la","en","fr"].map(language=>({
@@ -73,4 +74,20 @@ test("untrusted or unverified capture source cannot be promoted into index",()=>
     /PROVENANCE_INCOMPLETE/);
   assert.throws(()=>buildAnnualCaptureLedger({...kwargs,workflowRunId:"not-a-run"}),
     /PROVENANCE_INCOMPLETE/);
+});
+
+
+test("metadata-only historical ledger restores 168 progress entries with zero certification",()=>{
+  const verified=make();
+  const envelope=ledgerToAnnualEvidenceManifest(verified);
+  assert.equal(envelope.evidenceOnlyFromHistoricalLedger,true);
+  assert.equal(envelope.originalBytesNotRetained,true);
+  const report=buildAnnualOfficeReadiness({year:2026,probeManifests:[envelope]});
+  assert.equal(report.summary.rawCaptured,168);
+  assert.equal(report.summary.notGenerated,8592);
+  assert.equal(report.summary.liturgicallyCertified,0);
+  assert.equal(report.summary.approved,0);
+  assert.equal(report.summary.published,0);
+  assert.equal(report.rows.filter(x=>x.rawCaptureSha256!==null).length,168);
+  assert.ok(report.rows.every(x=>!x.approved&&!x.published));
 });
