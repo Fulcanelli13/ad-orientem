@@ -89,6 +89,15 @@ try{
         document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")),
         null,{timeout:65000});
       assert.equal(await page.locator("#ao-r17-native-reader-preview [data-ao-reader-shell]").getAttribute("data-mode"),"LIVE");
+      // Do not certify the reader behind its legitimate introductory
+      // cinematic. Screenshots must show the settled, tappable prayer view.
+      await page.waitForFunction(()=>{
+        const curtain=document.querySelector('#ao-r17-native-reader-preview [data-role="cinematic"]');
+        if(!curtain)return true;
+        const css=getComputedStyle(curtain);
+        return curtain.hidden||curtain.getAttribute("aria-hidden")==="true"||
+          css.display==="none"||css.visibility==="hidden";
+      },null,{timeout:18000});
       c.initial=await page.evaluate(positions);
       await snapshot(page,"reader-open",c);
       const root=page.locator("#ao-r17-native-reader-preview");
