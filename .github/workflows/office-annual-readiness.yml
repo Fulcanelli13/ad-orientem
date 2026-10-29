@@ -10,6 +10,11 @@ on:
       - 'src/office/reviewed-hour-handoff.js'
       - 'src/office/annual-research-sweep.js'
       - 'src/office/universal-source-descriptors.js'
+      - 'src/office/temporal-source-leads.js'
+      - 'src/office/conditional-metadata-parser.js'
+      - 'tests/divine-office-temporal-source-leads.mjs'
+      - 'tests/divine-office-conditional-metadata-parser.mjs'
+      - 'tests/divine-office-expanded-temporal-sweep.mjs'
       - 'src/office/pinned-filename-index.js'
       - 'tests/divine-office-pinned-filename-index.mjs'
       - 'data/office/source-index/roman-1960-pinned-latin-filenames.json'
@@ -62,6 +67,11 @@ jobs:
           node --test tests/divine-office-universal-source-descriptors.mjs
           node --check src/office/pinned-filename-index.js
           node --test tests/divine-office-pinned-filename-index.mjs
+          node --check src/office/temporal-source-leads.js
+          node --test tests/divine-office-temporal-source-leads.mjs
+          node --check src/office/conditional-metadata-parser.js
+          node --test tests/divine-office-conditional-metadata-parser.mjs
+          node --test tests/divine-office-expanded-temporal-sweep.mjs
           node --test tests/divine-office-research-roster.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
@@ -144,6 +154,36 @@ jobs:
             }
           '
       # No source file contents fetched: GitHub file-name index only.
+      - name: Expanded all-season Temporal research status, no source content
+        run: |
+          set -euo pipefail
+          INDEX="data/office/source-index/roman-1960-pinned-latin-filenames.json"
+          for year in 2026 2028; do
+            node scripts/office/sweep-annual-research.mjs \
+              --year "$year" --source-index "$INDEX" \
+              --temporal expanded \
+              --out "$RUNNER_TEMP/office-temporal-${year}.json"
+          done
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,days] of [[2026,365],[2028,366]]){
+              const r=JSON.parse(readFileSync(process.env.RUNNER_TEMP+
+                "/office-temporal-"+year+".json","utf8"));
+              const s=r.summary;
+              if(s.days!==days||s.expandedTemporalProposedPaths<200||
+                 s.expandedTemporalProposedPaths!==
+                   s.expandedTemporalListedFilenames+
+                   s.expandedTemporalNotListedFilenames||
+                 s.expandedTemporalSourceDocumentsRead!==0||
+                 s.researchCandidateHours!==0||
+                 s.completeTrilingualHours!==0||
+                 s.independentlyCertifiedHours!==0||
+                 s.publishedHours!==0||
+                 r.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
+                throw Error("OFFICE_TEMPORAL_METADATA_REPORT_INVALID");
+            }
+          '
+      # No annual Office generation, raw downloaded texts or persistent assets.
       - name: Verify evidence-scoped six-date Office candidate pilot
         run: |
           node scripts/office/sweep-annual-research.mjs \
