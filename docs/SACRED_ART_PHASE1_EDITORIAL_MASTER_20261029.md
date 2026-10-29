@@ -35,3 +35,43 @@ The 383 existing master, 22 Prayer primary hero selections, and 83 Breviarium so
 
 ## Explicit exclusions
 The index does not grant photo rights, certify the visual content or true colour, download high-resolution originals, change the canonical 383 editorial locks, release any images, or update the live app. `productionImported:false` is the frozen review-lane field, **not** proof that an unrelated existing app asset is absent. All work uses existing GitHub research storage and no paid services.
+
+
+## Follow-up evidence triage — 34 title/artist groups (29 October)
+
+Machine-readable outcomes: [34-group identity triage](../data/calendar/sacred-art-phase1-identity-triage-34-20261029.v1.json). These flags came from a naive normalized title/artist collision test, not physical-object matching.
+
+| Disposition | Groups | Effect |
+|---|---:|---|
+| Different museum inventory records with unique accession identifiers | **28** | Keep each museum item independent; shared subject/title alone cannot justify deleting one |
+| Further institutional/provenance evidence establishes distinct works | **2** | Simon Vouet's NGA vs Louvre *Madonna and Child*, and Zurbarán's Houston vs Christie’s-source *Veil of Veronica* are separate holdings/works |
+| Whole/composite vs part, or triptych/ensemble member | **3** | Cleveland Schlägl Passion altarpiece `1951.453` vs `1951.453.a`; KMSKA *Adoration of the Magi* `208` vs `208–210`; KMSKA *Adoration of the Lamb* `413` vs `413–424` |
+| Same physically identified painting with separate source-image records | **1** | Met Rubens Workshop *Saint Teresa* `17.190.19` = Commons `Avilai.jpg`. Both source-image approvals persist |
+| **Total** | **34** | **No approval propagation, no deletion, no automatic production merge** |
+
+Official object evidence:
+- Cleveland: https://www.clevelandart.org/art/1951.453 and https://www.clevelandart.org/art/1951.453.a
+- KMSKA: https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-4 and https://kmska.be/nl/meesterwerk/aanbidding-van-het-lam-gods-0
+- Met: https://www.metmuseum.org/art/collection/search/437542, Commons accession corroboration: https://commons.wikimedia.org/wiki/File:Avilai.jpg
+- Houston MFA: https://emuseum.mfah.org/objects/22064/veil-of-veronica
+
+**Important**: “different accession identifiers” establishes separate museum *catalogue records*; it does not rule out a more distant relationship as parts of the same ensemble. Those remain independent until explicit parent-child evidence is entered. The 34 are now classified for triage; 34 were not confirmed duplicate paintings.
+
+## Follow-up — Four protected B13 approvals affected by later screening
+
+Machine-readable, source-bound repair cases: [B13 four approved source repairs](../data/calendar/sacred-art-b13-four-approved-source-repairs-20261029.v1.json).
+
+| User-accepted original ID | Original issue | Evidence-based remedy or hold |
+|---|---|---|
+| `commons:123828337` — Zurbarán *Sainte Apolline* | Image includes frame | Same physical Louvre object MI 724 has a distinct unframed Commons image candidate, 1,908×3,345 px. Verify exact image bytes, rights and painted-area fidelity before switching source |
+| `commons:81902276` — Vouet *Martyrdom of Saint Catherine* | “Avant restauration” photograph | Current “après restauration” Commons filename alone is insufficient: its file history disputes restored-state pixels. Confirm exact restored photographic version with Strasbourg museum |
+| `commons:163856846` — *Christ Triumphant over Death and Sin* | Detail-only photo, photographer mistaken for artist | The independently user-approved `commons:163856843` is a whole-composition candidate; original detail approval remains separate. Official Strasbourg catalogue describes painting as *after* Rubens (MBA 235), not necessarily an autograph Rubens |
+| `commons:85666930` — Blanchard *Saint Jérôme écrivant* | Incorrect “artist” = uploader; **photograph rights falsely classified as PD** | Musée de Grenoble confirms painter Jacques Blanchard, accession MG 4292. Exact Commons photograph by Jvillafruela is **CC BY-SA 4.0** with attribution/share-alike duties. **Production rights HOLD** until obligations are handled or another lawful image source selected |
+
+Source checks:
+- Saint Apollonia Louvre MI 724: https://collections.louvre.fr/en/ark:/53355/cl010064908 ; no-frame Commons version: https://commons.wikimedia.org/wiki/File:Sainte_Apolline_-_Francisco_de_Zurbar%C3%A1n_-_Mus%C3%A9e_du_Louvre_Peintures_MI_724.jpg
+- Vouet restoration history: https://commons.wikimedia.org/wiki/File:Simon_Vouet,_Martyre_de_Sainte-Catherine_(apr%C3%A8s_restauration).jpg
+- Strasbourg Rubens attribution: https://pop.culture.gouv.fr/notice/joconde/00190023042
+- Grenoble artist: https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm ; Commons source-photo copyright: https://commons.wikimedia.org/wiki/File:Jacques_Blanchard_-_Saint_J%C3%A9r%C3%B4me_%C3%A9crivant.jpg
+
+**Remaining priority**: reconcile the 856 accepted review-card subjects to the canonical 383 *physical-artwork* identities (and to module/day placements), retaining unique source-image variants. The 84 correction holds and photographic rights gates cannot be treated as publishable merely from editorial acceptance. All decisions and production assets are still untouched.
