@@ -83,6 +83,9 @@ test("omitted French XXIII Sunday commemoration blocks otherwise aligned Vespers
     "Commémoraison du dimanche. Jésus se retournant.\n"+
     "Pardonnez, nous vous en supplions, Seigneur, les offenses de vos peuples.");
   assert.deepEqual(officeTranslationContentBlockers({latin,translation:corrected}),[]);
+  const firstLatin=v("la","2026-10-31",comm+"\nAnt. Vidi Dominum sedentem.");
+  const firstFrench=v("fr","2026-10-31","Commémoraison du dimanche. Je vis le Seigneur assis sur un trône élevé. Pardonnez, nous vous en supplions, Seigneur, les offenses de vos peuples.");
+  assert.deepEqual(officeTranslationContentBlockers({latin:firstLatin,translation:firstFrench}),[]);
   const irrelevant=v("la","2026-11-01","Oratio Omnium Sanctorum.");
   assert.deepEqual(officeTranslationContentBlockers({latin:irrelevant,translation:missing}),[]);
   for(const date of ["2027-11-01","2031-11-01"]){
