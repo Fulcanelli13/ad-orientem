@@ -37,7 +37,7 @@ test("40 printed verse rows, 80 independent incipit/cadence anchors, only two pi
  assert.equal(r.originalSourceLinesReordered,false);
  assert.equal(r.fullLatinPrintedTextCollated,false);
  assert.equal(r.full1961TypicalPrintedCollation,false);
- assert.equal(r.1961MameProperAndSaturdayPsalterAccessible,false);
+ assert.equal(r.mame1961ProperAndSaturdayPsalterAccessible,false);
  assert.equal(r.translationsCertified,false);
  assert.equal(r.completeHourCertified,false);
  assert.equal(r.rightsApproved,false);
