@@ -81,6 +81,18 @@ try{
    // The new Five Wounds uses one reader, existing prayers, and no duplicate top-level module.
    await page.locator(rootSel+' [data-p435930-own="pray.five_wounds"]').click();
    assert.equal(await page.locator(rootSel+' [data-ao-five-wounds-reader]').count(),1);
+   const openingLayout=await page.evaluate(()=>{
+    const reader=document.querySelector("#aoPray435930.open .aoFiveWounds");
+    const prayer=reader.querySelector(".aoFiveWoundsPrayerText");
+    const actions=reader.querySelector(".aoFiveWoundsActions");
+    const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+    const p=prayer.getBoundingClientRect(),a=actions.getBoundingClientRect(),v=mount.getBoundingClientRect();
+    return {visibleAboveDock:Math.max(0,Math.min(p.bottom,a.top,v.bottom)-Math.max(p.top,v.top)),
+      prayerTop:p.top,dockTop:a.top,viewportBottom:v.bottom,scrollTop:mount.scrollTop};
+   });
+   assert.ok(openingLayout.visibleAboveDock>=40,
+    "The actual source prayer must appear on the initial phone screen, not only the wound rail: "+JSON.stringify(openingLayout));
+   await page.screenshot({path:resolve(out,"five-wounds-opening-"+width+".png"),animations:"disabled"});
    assert.equal(await page.locator(rootSel+' [data-ao-five-wounds-reader] [role="progressbar"]').getAttribute("aria-valuenow"),"1");
    assert.match(await page.locator(rootSel+' .aoFiveWoundsPrayerText').innerText(),/Glory be to the Father/);
    await page.locator(rootSel+' [data-p435930-five-next]').click();
