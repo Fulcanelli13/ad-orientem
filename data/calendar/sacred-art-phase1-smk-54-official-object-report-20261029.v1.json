@@ -1,0 +1,3644 @@
+{
+  "schema": "AO_SACRED_ART_SMK_54_OFFICIAL_COLLECTION_IDENTITY_V1",
+  "generatedAt": "2026-10-29T21:21:18.669Z",
+  "officialAuthority": "Statens Museum for Kunst (SMK), National Gallery of Denmark",
+  "documentedApi": "https://www.smk.dk/en/article/smk-api/",
+  "source479": "data/calendar/sacred-art-phase1-museum-479-accession-audit-20261029.v1.json",
+  "source479Sha256": "179e879ff6f2a644eb081caf16a5fa8b811e25a3983ce13c74153ec652ee3bd9",
+  "counts": {
+    "frozenSourceCards": 54,
+    "confirmedOfficialIdsAndTitles": 20,
+    "officialResponseButUnresolved": 34,
+    "officialFetchFailures": 0,
+    "originalConditionalImportCount": 2,
+    "creatorReviewFlags": 5,
+    "publicDomainFieldTrue": 54,
+    "publicDomainFieldFalse": 0,
+    "sourcePhotoLicensesCertified": 0,
+    "uniquePhysicalNewPaintingsCertified": 0,
+    "newlyEstablishedCanonical383Links": 0,
+    "productionImports": 0
+  },
+  "methodologicalLimitations": [
+    "Official museum object_number and title are authoritative source identity only, not a match to an existing canonical 383 work.",
+    "Artist names and maker qualifiers are retained as evidence/review flags; no metadata or user's editorial decisions silently changed.",
+    "SMK public_domain and has_image fields are signals, NOT proof of the specific original photographic bytes or suitability.",
+    "No images were fetched, rights certified, frame/crop/colour checked, or physical-object uniqueness certified."
+  ],
+  "release": {
+    "canonical383Changed": false,
+    "originalUserDecisionsChanged": false,
+    "photographicRightsApproved": false,
+    "originalImageVisuallyInspected": false,
+    "productionMutation": false
+  },
+  "rows": [
+    {
+      "sourceId": "smk:KMS1168",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+      "frozenArtist": "Frantz Clein",
+      "frozenAccession": "KMS1168",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS1168",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS1168&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS1168&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "6679376033d1bf3cf6c79b69d39a74c3ecfeb05c56eaf4b8e171198af921d396",
+      "responseBytes": 6551,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS1168",
+        "titles": [
+          "The Presentation of Christ in the Temple, and the Baptism of Christ"
+        ],
+        "creatorTexts": [
+          "Frantz Clein",
+          "Clein, Frantz",
+          "Frantz",
+          "Clein"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS1168",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS1168",
+        "productions": [
+          {
+            "creator": "Clein, Frantz",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS1181",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ in Emmaus",
+      "frozenArtist": "Antonio Circignano",
+      "frozenAccession": "KMS1181",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS1181",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS1181&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS1181&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "d02b6a6b3cb0e5e69b22da0d98260816c90bbb13ed436001b2cf65e468100fff",
+      "responseBytes": 2610,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS1181",
+        "titles": [
+          "Christ in Emmaus"
+        ],
+        "creatorTexts": [
+          "Antonio Circignano",
+          "Circignano, Antonio",
+          "Antonio",
+          "Circignano"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS1181",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS1181",
+        "productions": [
+          {
+            "creator": "Circignano, Antonio",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS1319",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Adam and Eve",
+      "frozenArtist": "Julius Paulsen",
+      "frozenAccession": "KMS1319",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS1319",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS1319&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS1319&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "6925938e42cf8aa46cc5e6601e9d198e8ff38a928354ddd502c35729435c2d35",
+      "responseBytes": 8317,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS1319",
+        "titles": [
+          "Adam and Eve"
+        ],
+        "creatorTexts": [
+          "Julius Paulsen",
+          "Paulsen, Julius",
+          "Julius",
+          "Paulsen"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS1319",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS1319",
+        "productions": [
+          {
+            "creator": "Paulsen, Julius",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS1638",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Betrayal and Arrest of Christ in Gethsemane",
+      "frozenArtist": "Jacob Jordaens",
+      "frozenAccession": "KMS1638",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS1638",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS1638&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS1638&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "4037c03b2537a662f3282655b541442eae352cc218e8d9a8212c94d23040b789",
+      "responseBytes": 7076,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS1638",
+        "titles": [
+          "The Betrayal and Arrest of Christ in Gethsemane"
+        ],
+        "creatorTexts": [
+          "Jacob Jordaens",
+          "Jordaens, Jacob",
+          "Jacob",
+          "Jordaens"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS1638",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS1638",
+        "productions": [
+          {
+            "creator": "Jordaens, Jacob",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS1898",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Paradise before the Fall of Man",
+      "frozenArtist": "Franz Rösel von Rosenhof",
+      "frozenAccession": "KMS1898",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS1898",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS1898&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS1898&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "cf6c17a19eea8a782745735da6f6501d51cec39d52f4a95c7a11afa0b11e6d65",
+      "responseBytes": 4928,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS1898",
+        "titles": [
+          "Paradise before the Fall of Man"
+        ],
+        "creatorTexts": [
+          "Franz Rösel von Rosenhof",
+          "Rösel von Rosenhof, Franz",
+          "Franz",
+          "Rösel von Rosenhof"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS1898",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS1898",
+        "productions": [
+          {
+            "creator": "Rösel von Rosenhof, Franz",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS1899",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Earth after the Fall of Man",
+      "frozenArtist": "Franz Rösel von Rosenhof",
+      "frozenAccession": "KMS1899",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS1899",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS1899&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS1899&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "b090b2abd6bbbd823a62b2a256c366cdb42423865359cc2e77050a847ddc0357",
+      "responseBytes": 4934,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS1899",
+        "titles": [
+          "The Earth after the Fall of Man"
+        ],
+        "creatorTexts": [
+          "Franz Rösel von Rosenhof",
+          "Rösel von Rosenhof, Franz",
+          "Franz",
+          "Rösel von Rosenhof"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS1899",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS1899",
+        "productions": [
+          {
+            "creator": "Rösel von Rosenhof, Franz",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS3141",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ in the Realm of the Dead",
+      "frozenArtist": "Joakim Skovgaard",
+      "frozenAccession": "KMS3141",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS3141",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS3141&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS3141&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "71dd1e69a2b984e381c1d6ad0573d23d495cfc26d5cfa26826ee0d3eb3d1ffd2",
+      "responseBytes": 20319,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS3141",
+        "titles": [
+          "Christ in the Realm of the Dead"
+        ],
+        "creatorTexts": [
+          "Joakim Skovgaard",
+          "Skovgaard, Joakim",
+          "Joakim",
+          "Skovgaard"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS3141",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS3141",
+        "productions": [
+          {
+            "creator": "Skovgaard, Joakim",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS387",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "St Matthew the Evangelist",
+      "frozenArtist": "Carracci, Annibale",
+      "frozenAccession": "KMS387",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS387",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS387&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS387&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "9a53c5f61eba42c148f42ad0a4f9c35375c32023ccc15e8fe87d63f5e7f66be2",
+      "responseBytes": 2786,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS387",
+        "titles": [
+          "St Matthew the Evangelist"
+        ],
+        "creatorTexts": [
+          "Unknown",
+          "Carracci, Annibale",
+          "copy after",
+          "Annibale",
+          "Carracci"
+        ],
+        "creatorQualifiers": [
+          "copy after"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS387",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS387",
+        "productions": [
+          {
+            "creator": "Carracci, Annibale",
+            "creatorRole": "copy after",
+            "creatorQualifier": "copy after"
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS3922",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Angel Raphael Takes Leave of Old Tobit and his Son Tobias",
+      "frozenArtist": "Pieter Lastman",
+      "frozenAccession": "KMS3922",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS3922",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS3922&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS3922&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "89c95e141219696126c9b5125e658a6be0e9a0f6276de0bf99bd8e963b531bb9",
+      "responseBytes": 11735,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS3922",
+        "titles": [
+          "The Angel Raphael Takes Leave of Old Tobit and his Son Tobias"
+        ],
+        "creatorTexts": [
+          "Pieter Lastman",
+          "Lastman, Pieter",
+          "Pieter",
+          "Lastman"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS3922",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS3922",
+        "productions": [
+          {
+            "creator": "Lastman, Pieter",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS3924",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ Driving the Traders from the Temple",
+      "frozenArtist": "Bosch, Hieronymus",
+      "frozenAccession": "KMS3924",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS3924",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS3924&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS3924&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "6b4f18a22d63595fc50ff1c9870eead62c79a5c0a5476de49b0190603de69ec6",
+      "responseBytes": 10737,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS3924",
+        "titles": [
+          "Christ Driving the Traders from the Temple",
+          "The Purification of the Temple"
+        ],
+        "creatorTexts": [
+          "Unknown",
+          "Bosch, Hieronymus",
+          "follower of",
+          "Hieronymus",
+          "Bosch",
+          "Bruegel (I), Pieter",
+          "earlier ascribed to",
+          "Pieter",
+          "Bruegel (I)"
+        ],
+        "creatorQualifiers": [
+          "earlier ascribed to"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS3924",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS3924",
+        "productions": [
+          {
+            "creator": "Bosch, Hieronymus",
+            "creatorRole": "follower of",
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Bruegel (I), Pieter",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS4550",
+      "frozenDecision": "IMPORT_WITH_CORRECTIONS",
+      "sourceBatch": "B8",
+      "frozenTitle": "Judith with the Head of Holophernes",
+      "frozenArtist": "Giordano, Luca",
+      "frozenAccession": "KMS4550",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS4550",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS4550&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS4550&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "0d01cc127db6b04bc66561422f924db17deae2c149b90b33c3207ce5803a34b5",
+      "responseBytes": 4798,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS4550",
+        "titles": [
+          "Judith with the Head of Holophernes"
+        ],
+        "creatorTexts": [
+          "Unknown",
+          "Giordano, Luca",
+          "follower of",
+          "Luca",
+          "Giordano",
+          "Matteis, Paolo de",
+          "earlier ascribed to",
+          "Paolo de",
+          "Matteis"
+        ],
+        "creatorQualifiers": [
+          "follower of",
+          "earlier ascribed to",
+          "earlier ascribed to"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS4550",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS4550",
+        "productions": [
+          {
+            "creator": "Giordano, Luca",
+            "creatorRole": "follower of",
+            "creatorQualifier": "follower of"
+          },
+          {
+            "creator": "Matteis, Paolo de",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          },
+          {
+            "creator": "Giordano, Luca",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS561",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Head of Christ",
+      "frozenArtist": "Carlo Dolci",
+      "frozenAccession": "KMS561",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS561",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS561&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS561&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "3c3550d2413e2f48a1c28205f3367e3545055a78040e0f212043e9c443aac00a",
+      "responseBytes": 2605,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS561",
+        "titles": [
+          "Head of Christ"
+        ],
+        "creatorTexts": [
+          "Carlo Dolci",
+          "Dolci, Carlo",
+          "Carlo",
+          "Dolci"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS561",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS561",
+        "productions": [
+          {
+            "creator": "Dolci, Carlo",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS6468",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Prodigal Son Wasting his Inheritance",
+      "frozenArtist": "Johann Wolfgang Baumgartner",
+      "frozenAccession": "KMS6468",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS6468",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS6468&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS6468&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "c52ba1edd2b881ceaaf9692c55d911724b9c2a7657fe890ca676a25f960b2a4b",
+      "responseBytes": 3651,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS6468",
+        "titles": [
+          "The Prodigal Son Wasting his Inheritance"
+        ],
+        "creatorTexts": [
+          "Johann Wolfgang Baumgartner",
+          "Baumgartner, Johann Wolfgang",
+          "Johann Wolfgang",
+          "Baumgartner"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS6468",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS6468",
+        "productions": [
+          {
+            "creator": "Baumgartner, Johann Wolfgang",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS6469",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Prodigal Son Living with Harlots",
+      "frozenArtist": "Johann Wolfgang Baumgartner",
+      "frozenAccession": "KMS6469",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS6469",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS6469&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS6469&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "bfd675b70f9db35e10cfb3638bf3566e3ef4ec891b3de7fcf0bc65175908b509",
+      "responseBytes": 5545,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS6469",
+        "titles": [
+          "The Prodigal Son Living with Harlots"
+        ],
+        "creatorTexts": [
+          "Johann Wolfgang Baumgartner",
+          "Baumgartner, Johann Wolfgang",
+          "Johann Wolfgang",
+          "Baumgartner"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS6469",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS6469",
+        "productions": [
+          {
+            "creator": "Baumgartner, Johann Wolfgang",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS727",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Temptations of Saint Anthony",
+      "frozenArtist": "David Teniers (II)",
+      "frozenAccession": "KMS727",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS727",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS727&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS727&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "58f3108da8e13c458b4d098403366d7e67262bf41c9168175ca61f96b73891e0",
+      "responseBytes": 3441,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS727",
+        "titles": [
+          "The Temptations of Saint Anthony"
+        ],
+        "creatorTexts": [
+          "David Teniers (II)",
+          "Teniers (II), David",
+          "David",
+          "Teniers (II)"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS727",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS727",
+        "productions": [
+          {
+            "creator": "Teniers (II), David",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS7710",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Adam and Eve",
+      "frozenArtist": "Harald Slott-Møller",
+      "frozenAccession": "KMS7710",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS7710",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS7710&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS7710&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "7d956f5c266ce450ebbef975f73aff5eec529db025bc4941ae98e52b60437ec1",
+      "responseBytes": 7882,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS7710",
+        "titles": [
+          "Adam and Eve"
+        ],
+        "creatorTexts": [
+          "Harald Slott-Møller",
+          "Slott-Møller, Harald",
+          "Harald",
+          "Slott-Møller"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS7710",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS7710",
+        "productions": [
+          {
+            "creator": "Slott-Møller, Harald",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS7976",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Bebudelsen",
+      "frozenArtist": "Francesco Solimena",
+      "frozenAccession": "KMS7976",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS7976",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS7976&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS7976&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "b3e0def4edc2c1c7066007725f637aa3c54b7723df7297db1a2d9b0b7e750ce8",
+      "responseBytes": 4801,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS7976",
+        "titles": [
+          "Bebudelsen",
+          "The Annunciation"
+        ],
+        "creatorTexts": [
+          "Francesco Solimena",
+          "Solimena, Francesco",
+          "Francesco",
+          "Solimena"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS7976",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS7976",
+        "productions": [
+          {
+            "creator": "Solimena, Francesco",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS830",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Samson and the Philistines",
+      "frozenArtist": "Carl Bloch",
+      "frozenAccession": "KMS830",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS830",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS830&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS830&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "413921cf52238e03d7de9d5a4a95be98bad8f0ca031049b5f477c79c0e343d6d",
+      "responseBytes": 10988,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS830",
+        "titles": [
+          "Samson and the Philistines"
+        ],
+        "creatorTexts": [
+          "Carl Bloch",
+          "Bloch, Carl",
+          "Carl",
+          "Bloch"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS830",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS830",
+        "productions": [
+          {
+            "creator": "Bloch, Carl",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS8561",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Good Thief (Saint Dismas)",
+      "frozenArtist": "Ubekendt spansk mester",
+      "frozenAccession": "KMS8561",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS8561",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS8561&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS8561&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "4e0c3d4c187346fd3ad0ac43b958fd23c628a2fb4b44ef83ef368a70a48362a5",
+      "responseBytes": 6059,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS8561",
+        "titles": [
+          "The Good Thief (Saint Dismas)"
+        ],
+        "creatorTexts": [
+          "Unknown",
+          "Ubekendt spansk mester"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS8561",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS8561",
+        "productions": [
+          {
+            "creator": "Ubekendt spansk mester",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "HISTORIC_CREATOR_QUALIFIER_REVIEW"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMS981",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Judith with the Head of Holofernes",
+      "frozenArtist": "Denys Calvaert",
+      "frozenAccession": "KMS981",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMS981",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMS981&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMS981&lang=en",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
+      "responseSha256": "45ffe47fef419efb482e7de67470d7c299f8e10d1af25512b27c27dd3a96254d",
+      "responseBytes": 3342,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMS981",
+        "titles": [
+          "Judith with the Head of Holofernes"
+        ],
+        "creatorTexts": [
+          "Denys Calvaert",
+          "Calvaert, Denys",
+          "Denys",
+          "Calvaert"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMS981",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMS981",
+        "productions": [
+          {
+            "creator": "Calvaert, Denys",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": true,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP11",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Matthew the Evangelist with Benefactor",
+      "frozenArtist": "Perino del Vaga",
+      "frozenAccession": "KMSSP11",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP11",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP11&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP11&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "d723dfb0852c852b915493d6791ef5fb14179d187ada86c7aeffcb60712bd8f0",
+      "responseBytes": 4636,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp11",
+        "titles": [
+          "Matthew the Evangelist with Benefactor"
+        ],
+        "creatorTexts": [
+          "Perino del Vaga",
+          "Vaga, Perino del",
+          "Perino del",
+          "Vaga"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp11",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp11",
+        "productions": [
+          {
+            "creator": "Vaga, Perino del",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP113",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Saint Sebastian",
+      "frozenArtist": "Eugenio Cajés; Unknown",
+      "frozenAccession": "KMSSP113",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP113",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP113&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP113&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "699a96eb4bc5b354544583ae628f22033bb7e52e72e783079fae2e7eaed493b8",
+      "responseBytes": 4200,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp113",
+        "titles": [
+          "Saint Sebastian"
+        ],
+        "creatorTexts": [
+          "Eugenio Cajés",
+          "Unknown",
+          "Cajés, Eugenio",
+          "Eugenio",
+          "Cajés",
+          "Ubekendt",
+          "Lanfranco, Giovanni",
+          "earlier ascribed to",
+          "Giovanni",
+          "Lanfranco"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp113",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp113",
+        "productions": [
+          {
+            "creator": "Cajés, Eugenio",
+            "creatorRole": null,
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Ubekendt",
+            "creatorRole": null,
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Lanfranco, Giovanni",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": false
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
+        "HISTORIC_CREATOR_QUALIFIER_REVIEW"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP114",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Glorification of Christ surrounded by Saints",
+      "frozenArtist": "Giovanni Carlone; Lanfranco, Giovanni",
+      "frozenAccession": "KMSSP114",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP114",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP114&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP114&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "c5cf2a19d6e6dc95609c6416f39ff13817e78ff9737abf2859232e31915afaa9",
+      "responseBytes": 3299,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp114",
+        "titles": [
+          "The Glorification of Christ surrounded by Saints"
+        ],
+        "creatorTexts": [
+          "Giovanni Carlone",
+          "Lanfranco, Giovanni",
+          "earlier ascribed to",
+          "Giovanni",
+          "Lanfranco",
+          "Carlone, Giovanni",
+          "attributed to",
+          "Carlone"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp114",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp114",
+        "productions": [
+          {
+            "creator": "Lanfranco, Giovanni",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Carlone, Giovanni",
+            "creatorRole": "attributed to",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": false
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
+        "HISTORIC_CREATOR_QUALIFIER_REVIEW"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP12",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Last Supper",
+      "frozenArtist": "Girolamo Muziano",
+      "frozenAccession": "KMSSP12",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP12",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP12&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP12&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "2c4a556527177258caedd2d5bf82cf7109458007b74683d9541f3ff2dec08795",
+      "responseBytes": 2711,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp12",
+        "titles": [
+          "The Last Supper"
+        ],
+        "creatorTexts": [
+          "Girolamo Muziano",
+          "Muziano, Girolamo",
+          "Girolamo",
+          "Muziano"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp12",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp12",
+        "productions": [
+          {
+            "creator": "Muziano, Girolamo",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "copper"
+        ],
+        "techniques": [
+          "Oil on copper"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP120",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Penitent St Mary Magdalene",
+      "frozenArtist": "Girolamo Troppa",
+      "frozenAccession": "KMSSP120",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP120",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP120&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP120&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "5f1106f16e071a9b68e378b0170adeb0ca57a1dd46320535182e1f1833a28da7",
+      "responseBytes": 5126,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp120",
+        "titles": [
+          "The Penitent St Mary Magdalene"
+        ],
+        "creatorTexts": [
+          "Girolamo Troppa",
+          "Troppa, Girolamo",
+          "Girolamo",
+          "Troppa"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp120",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp120",
+        "productions": [
+          {
+            "creator": "Troppa, Girolamo",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP124",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Holy Family",
+      "frozenArtist": "Giovanni Battista Tagliasacchi",
+      "frozenAccession": "KMSSP124",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP124",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP124&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP124&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "0b221387e871c50a74292dfaf4c86613a31e1c52a1eafa74061d2f31b44cb2a2",
+      "responseBytes": 5799,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp124",
+        "titles": [
+          "The Holy Family"
+        ],
+        "creatorTexts": [
+          "Giovanni Battista Tagliasacchi",
+          "Tagliasacchi, Giovanni Battista",
+          "attributed to",
+          "Giovanni Battista",
+          "Tagliasacchi",
+          "Cignani, Carlo",
+          "earlier ascribed to",
+          "Carlo",
+          "Cignani",
+          "Polazzo, Francesco",
+          "Francesco",
+          "Polazzo"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp124",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp124",
+        "productions": [
+          {
+            "creator": "Tagliasacchi, Giovanni Battista",
+            "creatorRole": "attributed to",
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Cignani, Carlo",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Polazzo, Francesco",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP126",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Adam and Eve with Cain and Abel",
+      "frozenArtist": "Nicola Vaccaro",
+      "frozenAccession": "KMSSP126",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP126",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP126&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP126&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "08ca6804c0bb22298e2b0a6c029a5509421175daa9fbd3468b9a527d14d135a8",
+      "responseBytes": 3807,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp126",
+        "titles": [
+          "Adam and Eve with Cain and Abel"
+        ],
+        "creatorTexts": [
+          "Nicola Vaccaro",
+          "Vaccaro, Nicola",
+          "attributed to",
+          "Nicola",
+          "Vaccaro",
+          "Cignani, Carlo",
+          "earlier ascribed to",
+          "Carlo",
+          "Cignani"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp126",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp126",
+        "productions": [
+          {
+            "creator": "Vaccaro, Nicola",
+            "creatorRole": "attributed to",
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Cignani, Carlo",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP13",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Annunciation",
+      "frozenArtist": "Federico Barocci",
+      "frozenAccession": "KMSSP13",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP13",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP13&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP13&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "2165ddbe319760a02eb0f01393706a4c3286032c64f223a766938e669d7cfc1c",
+      "responseBytes": 5147,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp13",
+        "titles": [
+          "The Annunciation"
+        ],
+        "creatorTexts": [
+          "Federico Barocci",
+          "Barocci, Federico",
+          "Federico",
+          "Barocci"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp13",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp13",
+        "productions": [
+          {
+            "creator": "Barocci, Federico",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP186",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ on the Cross",
+      "frozenArtist": "Peter Paul Rubens",
+      "frozenAccession": "KMSSP186",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP186",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP186&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP186&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "1e6648012dcedf12325f6829832d6c86677e4cf7179f355ef2dd0c9cd999e343",
+      "responseBytes": 4532,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp186",
+        "titles": [
+          "Christ on the Cross"
+        ],
+        "creatorTexts": [
+          "Peter Paul Rubens",
+          "Rubens, Peter Paul",
+          "attributed to",
+          "Peter Paul",
+          "Rubens",
+          "Momper, Joos de II",
+          "imitator of",
+          "Joos de II",
+          "Momper"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp186",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp186",
+        "productions": [
+          {
+            "creator": "Rubens, Peter Paul",
+            "creatorRole": "attributed to",
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Momper, Joos de II",
+            "creatorRole": "imitator of",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP230",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Coronation of the Virgin",
+      "frozenArtist": "Cornelis Schut",
+      "frozenAccession": "KMSSP230",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP230",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP230&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP230&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "8f05853940abde3658cd336138b3a1e051ff9c076e02f1c78f845255c3d5ab37",
+      "responseBytes": 3918,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp230",
+        "titles": [
+          "The Coronation of the Virgin",
+          "The Coronation of the Virgin Mary, with St Augustine, St Elizabeth of Hungary and Other Saints"
+        ],
+        "creatorTexts": [
+          "Cornelis Schut",
+          "Schut, Cornelis",
+          "attributed to",
+          "Cornelis",
+          "Schut"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp230",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp230",
+        "productions": [
+          {
+            "creator": "Schut, Cornelis",
+            "creatorRole": "attributed to",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "Paper",
+          "wood"
+        ],
+        "techniques": [
+          "Oil on paper, mounted on wooden board"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP234",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ blessing little Children. Suffer Little Children to Come unto me",
+      "frozenArtist": "Jacob Jordaens",
+      "frozenAccession": "KMSSP234",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP234",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP234&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP234&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "ce7270dda7b935cb4fe302baded34b0da99c960e7a4f316490012b78560b9d08",
+      "responseBytes": 7017,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp234",
+        "titles": [
+          "Christ blessing little Children. Suffer Little Children to Come unto me"
+        ],
+        "creatorTexts": [
+          "Jacob Jordaens",
+          "Jordaens, Jacob",
+          "attributed to",
+          "Jacob",
+          "Jordaens"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp234",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp234",
+        "productions": [
+          {
+            "creator": "Jordaens, Jacob",
+            "creatorRole": "attributed to",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP256",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ's Entry into Jerusalem",
+      "frozenArtist": "Adriaen van Nieulandt",
+      "frozenAccession": "KMSSP256",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP256",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP256&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP256&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "dcc7fa55721569ca6d03856cf6e3d51b67e71dcbe1d9a6e8d6f5d3b2853c23ee",
+      "responseBytes": 3875,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp256",
+        "titles": [
+          "Christ's Entry into Jerusalem"
+        ],
+        "creatorTexts": [
+          "Adriaen van Nieulandt",
+          "Nieulandt, Adriaen van",
+          "Adriaen van",
+          "Nieulandt"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp256",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp256",
+        "productions": [
+          {
+            "creator": "Nieulandt, Adriaen van",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP259",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Adoration of the Shepherds",
+      "frozenArtist": "Jan Boeckhorst",
+      "frozenAccession": "KMSSP259",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP259",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP259&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP259&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "72a1e2659c3b97193f9dbee5996f32d7346a5c71cdb9f3efdb020d384889b825",
+      "responseBytes": 4118,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp259",
+        "titles": [
+          "The Adoration of the Shepherds"
+        ],
+        "creatorTexts": [
+          "Jan Boeckhorst",
+          "Boeckhorst, Jan",
+          "attributed to",
+          "Jan",
+          "Boeckhorst"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp259",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp259",
+        "productions": [
+          {
+            "creator": "Boeckhorst, Jan",
+            "creatorRole": "attributed to",
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP28",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Adoration of the Shepherds",
+      "frozenArtist": "Giuseppe Bartolomeo Chiari",
+      "frozenAccession": "KMSSP28",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP28",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP28&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP28&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "4f7e47ae4d5d799ecdb6c5c63e79f9fd532a77fc25dc696c1e96835d638aa38b",
+      "responseBytes": 5356,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp28",
+        "titles": [
+          "The Adoration of the Shepherds"
+        ],
+        "creatorTexts": [
+          "Giuseppe Bartolomeo Chiari",
+          "Chiari, Giuseppe Bartolomeo",
+          "Giuseppe Bartolomeo",
+          "Chiari",
+          "Masucci, Lorenzo",
+          "earlier ascribed to",
+          "Lorenzo",
+          "Masucci",
+          "Maratti, Carlo",
+          "Carlo",
+          "Maratti"
+        ],
+        "creatorQualifiers": [
+          "earlier ascribed to",
+          "earlier ascribed to"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp28",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp28",
+        "productions": [
+          {
+            "creator": "Chiari, Giuseppe Bartolomeo",
+            "creatorRole": null,
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Masucci, Lorenzo",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          },
+          {
+            "creator": "Maratti, Carlo",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP338",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ victoring over Sin and Death",
+      "frozenArtist": "Maarten van Heemskerck",
+      "frozenAccession": "KMSSP338",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP338",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP338&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP338&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "b189cb77c351a43cdb23a7d760105886e8dfcc017f31e7bd40d61ac6fc7bfafc",
+      "responseBytes": 4933,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp338",
+        "titles": [
+          "Christ victoring over Sin and Death"
+        ],
+        "creatorTexts": [
+          "Maarten van Heemskerck",
+          "Heemskerck, Maarten van",
+          "Maarten van",
+          "Heemskerck"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp338",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp338",
+        "productions": [
+          {
+            "creator": "Heemskerck, Maarten van",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP35",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Annunciation",
+      "frozenArtist": "Agostino Masucci",
+      "frozenAccession": "KMSSP35",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP35",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP35&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP35&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "3d5453abeec80bc4208e33cf3c71bcf07937de8e1ea30e9f154a90a15b828c01",
+      "responseBytes": 4717,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp35",
+        "titles": [
+          "The Annunciation"
+        ],
+        "creatorTexts": [
+          "Agostino Masucci",
+          "Masucci, Agostino",
+          "Agostino",
+          "Masucci"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp35",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp35",
+        "productions": [
+          {
+            "creator": "Masucci, Agostino",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP365",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ Crowned with Thorns",
+      "frozenArtist": "Hendrick ter Brugghen",
+      "frozenAccession": "KMSSP365",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP365",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP365&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP365&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "5c08332b4b15d66a570a13dc6fa50b8305aafbc152c3ed178ee94a3d938b906c",
+      "responseBytes": 11899,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp365",
+        "titles": [
+          "Christ Crowned with Thorns"
+        ],
+        "creatorTexts": [
+          "Hendrick ter Brugghen",
+          "Brugghen, Hendrick ter",
+          "Hendrick ter",
+          "Brugghen"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp365",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp365",
+        "productions": [
+          {
+            "creator": "Brugghen, Hendrick ter",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP405",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Supper at Emmaus",
+      "frozenArtist": "Rembrandt van Rijn (værksted); Rembrandt van Rijn",
+      "frozenAccession": "KMSSP405",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP405",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP405&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP405&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "e89b3bfc693019a612cdf92a173370928bcc6b39a4b338c5624bbed88c5a389d",
+      "responseBytes": 17324,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp405",
+        "titles": [
+          "Supper at Emmaus"
+        ],
+        "creatorTexts": [
+          "Rembrandt van Rijn (værksted)",
+          "Rembrandt van Rijn",
+          "earlier ascribed to"
+        ],
+        "creatorQualifiers": [
+          "earlier ascribed to"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp405",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp405",
+        "productions": [
+          {
+            "creator": "Rembrandt van Rijn (værksted)",
+            "creatorRole": null,
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Rembrandt van Rijn",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": false
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
+        "HISTORIC_CREATOR_QUALIFIER_REVIEW"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP427",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Holy Women at the Sepulchre",
+      "frozenArtist": "Ferdinand Bol",
+      "frozenAccession": "KMSSP427",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP427",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP427&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP427&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "721b334e9b4b3cb085fb30862e3321096943dac7c98d452c68b8f40fd9def482",
+      "responseBytes": 7095,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp427",
+        "titles": [
+          "The Holy Women at the Sepulchre",
+          "The Three Marys at the Tomb of Christ"
+        ],
+        "creatorTexts": [
+          "Ferdinand Bol",
+          "Bol, Ferdinand",
+          "Ferdinand",
+          "Bol"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp427",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp427",
+        "productions": [
+          {
+            "creator": "Bol, Ferdinand",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP48",
+      "frozenDecision": "IMPORT_WITH_CORRECTIONS",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ's Agony in the Garden of Gethsemane",
+      "frozenArtist": "Carlo Dolci",
+      "frozenAccession": "KMSSP48",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP48",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP48&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP48&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "3a3edc0954a014f7336c65831047aab374f3f2dbacf6f6229f128130594e2e3a",
+      "responseBytes": 3158,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp48",
+        "titles": [
+          "Christ's Agony in the Garden of Gethsemane"
+        ],
+        "creatorTexts": [
+          "Carlo Dolci",
+          "Dolci, Carlo",
+          "Carlo",
+          "Dolci"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp48",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp48",
+        "productions": [
+          {
+            "creator": "Dolci, Carlo",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP510",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Crucifixion",
+      "frozenArtist": "Flinck, Govert",
+      "frozenAccession": "KMSSP510",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP510",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP510&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP510&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "f02995642716cd2e56ad35b9e473dca7a42691a2e9862d0bbbb30f2d95cdc9c3",
+      "responseBytes": 4124,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp510",
+        "titles": [
+          "The Crucifixion",
+          "Christ on the Cross"
+        ],
+        "creatorTexts": [
+          "Unknown",
+          "Flinck, Govert",
+          "workshop of",
+          "Govert",
+          "Flinck",
+          "Eeckhout, Gerbrand van den",
+          "earlier ascribed to",
+          "Gerbrand van den",
+          "Eeckhout"
+        ],
+        "creatorQualifiers": [
+          "earlier ascribed to"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp510",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp510",
+        "productions": [
+          {
+            "creator": "Flinck, Govert",
+            "creatorRole": "workshop of",
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Eeckhout, Gerbrand van den",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP54",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Penitent St. Jerome",
+      "frozenArtist": "Francisco Collantes",
+      "frozenAccession": "KMSSP54",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP54",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP54&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP54&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "6bccfce2198a26ca1daaab2ac14d9845f9e55767dc418f215fc692c0690ac7bd",
+      "responseBytes": 3998,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp54",
+        "titles": [
+          "The Penitent St. Jerome"
+        ],
+        "creatorTexts": [
+          "Francisco Collantes",
+          "Collantes, Francisco",
+          "Francisco",
+          "Collantes"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp54",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp54",
+        "productions": [
+          {
+            "creator": "Collantes, Francisco",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP64",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Adam and Eve Lamenting over the Body of Abel",
+      "frozenArtist": "Paolo de Matteis",
+      "frozenAccession": "KMSSP64",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP64",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP64&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP64&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "d8a93f0b67dfcaabadd057efc4e1e611c73a57709ffb6b42331304df14107dba",
+      "responseBytes": 5898,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp64",
+        "titles": [
+          "Adam and Eve Lamenting over the Body of Abel"
+        ],
+        "creatorTexts": [
+          "Paolo de Matteis",
+          "Matteis, Paolo de",
+          "Paolo de",
+          "Matteis",
+          "Giordano, Luca",
+          "earlier ascribed to",
+          "Luca",
+          "Giordano"
+        ],
+        "creatorQualifiers": [
+          "earlier ascribed to"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp64",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp64",
+        "productions": [
+          {
+            "creator": "Matteis, Paolo de",
+            "creatorRole": null,
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Giordano, Luca",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP712",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Crucifixion",
+      "frozenArtist": "Lucas Cranach (I)",
+      "frozenAccession": "KMSSP712",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP712",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP712&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP712&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "8e2c9dcf394420eb8dac12430c1ba5b5d260d0f95091e719127aa91c84130028",
+      "responseBytes": 7332,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp712",
+        "titles": [
+          "The Crucifixion"
+        ],
+        "creatorTexts": [
+          "Lucas Cranach (I)",
+          "Cranach (I), Lucas",
+          "Lucas",
+          "Cranach (I)",
+          "Dürer, Albrecht",
+          "earlier ascribed to",
+          "Albrecht",
+          "Dürer",
+          "Wolgemut, Michael",
+          "Michael",
+          "Wolgemut"
+        ],
+        "creatorQualifiers": [
+          "earlier ascribed to",
+          "earlier ascribed to"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp712",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp712",
+        "productions": [
+          {
+            "creator": "Cranach (I), Lucas",
+            "creatorRole": null,
+            "creatorQualifier": null
+          },
+          {
+            "creator": "Dürer, Albrecht",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          },
+          {
+            "creator": "Wolgemut, Michael",
+            "creatorRole": "earlier ascribed to",
+            "creatorQualifier": "earlier ascribed to"
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP734",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "David and Abigail",
+      "frozenArtist": "Jacob Cornelisz van Oostsanen",
+      "frozenAccession": "KMSSP734",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP734",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP734&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP734&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "c31c6e50a543b265a387a37c2920bd17cfa9c3ca7f5daf8b636f130e5d142ac8",
+      "responseBytes": 7913,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp734",
+        "titles": [
+          "David and Abigail"
+        ],
+        "creatorTexts": [
+          "Jacob Cornelisz van Oostsanen",
+          "Cornelisz van Oostsanen, Jacob",
+          "Jacob",
+          "Cornelisz van Oostsanen"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp734",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp734",
+        "productions": [
+          {
+            "creator": "Cornelisz van Oostsanen, Jacob",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP749",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Paulus the Apostle defending himself at the Trial in Caesarea",
+      "frozenArtist": "Nicolaus Knüpfer",
+      "frozenAccession": "KMSSP749",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP749",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP749&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP749&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "086d21a315dc1f81439c98922a81d5f458d4f05babd4ac0fbaa629c9df922f6d",
+      "responseBytes": 4877,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp749",
+        "titles": [
+          "Paulus the Apostle defending himself at the Trial in Caesarea"
+        ],
+        "creatorTexts": [
+          "Nicolaus Knüpfer",
+          "Knüpfer, Nicolaus",
+          "Nicolaus",
+          "Knüpfer"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp749",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp749",
+        "productions": [
+          {
+            "creator": "Knüpfer, Nicolaus",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSSP95",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Entombment of Christ",
+      "frozenArtist": "Ubekendt",
+      "frozenAccession": "KMSSP95",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP95",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP95&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP95&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "346eb146b0fe779b60ffd3e75d9ccb3aba5ace6f74066602215d624e11359396",
+      "responseBytes": 3011,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSsp95",
+        "titles": [
+          "The Entombment of Christ"
+        ],
+        "creatorTexts": [
+          "Unknown",
+          "Ubekendt",
+          "after",
+          "after model by",
+          "Caravaggio, Michelangelo Merisi da",
+          "copy after",
+          "Michelangelo Merisi da",
+          "Caravaggio"
+        ],
+        "creatorQualifiers": [
+          "after",
+          "after"
+        ],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSsp95",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSsp95",
+        "productions": [
+          {
+            "creator": "Ubekendt",
+            "creatorRole": "after model by",
+            "creatorQualifier": "after"
+          },
+          {
+            "creator": "Caravaggio, Michelangelo Merisi da",
+            "creatorRole": "copy after",
+            "creatorQualifier": "after"
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
+        "HISTORIC_CREATOR_QUALIFIER_REVIEW"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSST155",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Saint Peter Penitent",
+      "frozenArtist": "Girolamo Troppa",
+      "frozenAccession": "KMSST155",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST155",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST155&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST155&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "95ac3382bbf8d0c2a37f4cd7a495f4de1a57111730ff7414e58b71b280905c7d",
+      "responseBytes": 5259,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSst155",
+        "titles": [
+          "Saint Peter Penitent"
+        ],
+        "creatorTexts": [
+          "Girolamo Troppa",
+          "Troppa, Girolamo",
+          "Girolamo",
+          "Troppa"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSst155",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSst155",
+        "productions": [
+          {
+            "creator": "Troppa, Girolamo",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSST174",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Susanna and the Elders",
+      "frozenArtist": "Godefridus Schalcken",
+      "frozenAccession": "KMSST174",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST174",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST174&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST174&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "c052528b99c371f1aa371e022c1e7d7049453ce4f53fb9d758ed646f9c3ffbd0",
+      "responseBytes": 3340,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSst174",
+        "titles": [
+          "Susanna and the Elders"
+        ],
+        "creatorTexts": [
+          "Godefridus Schalcken",
+          "Schalcken, Godefridus",
+          "Godefridus",
+          "Schalcken"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSst174",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSst174",
+        "productions": [
+          {
+            "creator": "Schalcken, Godefridus",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSST175",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Christ Healing at the Pool of Bethesda",
+      "frozenArtist": "Dirck van Delen",
+      "frozenAccession": "KMSST175",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST175",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST175&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST175&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "8196e54749edd8b5491c968567786c00c310312208d9c8704a75f4e6cf540910",
+      "responseBytes": 3113,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSst175",
+        "titles": [
+          "Christ Healing at the Pool of Bethesda"
+        ],
+        "creatorTexts": [
+          "Dirck van Delen",
+          "Delen, Dirck van",
+          "Dirck van",
+          "Delen"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSst175",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSst175",
+        "productions": [
+          {
+            "creator": "Delen, Dirck van",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "wood"
+        ],
+        "techniques": [
+          "Oil on panel"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSST488",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Annunciation to the Shepherds",
+      "frozenArtist": "Lieven Mehus",
+      "frozenAccession": "KMSST488",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST488",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST488&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST488&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "ec2fd34c390a8747c6f02a543b9c2588d8ee9a9cfea1375728d7050852307d58",
+      "responseBytes": 3226,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSst488",
+        "titles": [
+          "The Annunciation to the Shepherds"
+        ],
+        "creatorTexts": [
+          "Lieven Mehus",
+          "Mehus, Lieven",
+          "Lieven",
+          "Mehus"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSst488",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSst488",
+        "productions": [
+          {
+            "creator": "Mehus, Lieven",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSST565",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Sacrifice of Isaac",
+      "frozenArtist": "Lieven Mehus",
+      "frozenAccession": "KMSST565",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST565",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST565&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST565&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "6258689e0f197b0a0a322bcb14b3e5ef74652e097cedef3af53fa8456b6dcad4",
+      "responseBytes": 3348,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSst565",
+        "titles": [
+          "The Sacrifice of Isaac"
+        ],
+        "creatorTexts": [
+          "Lieven Mehus",
+          "Mehus, Lieven",
+          "Lieven",
+          "Mehus"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSst565",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSst565",
+        "productions": [
+          {
+            "creator": "Mehus, Lieven",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSST602",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "Moses and the Burning Bush",
+      "frozenArtist": "Lieven Mehus",
+      "frozenAccession": "KMSST602",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST602",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST602&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST602&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "7682f895bc87e9fa5160494b7e6feea14647ac72e31e4a27ac1cd768fd5501a5",
+      "responseBytes": 3213,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSst602",
+        "titles": [
+          "Moses and the Burning Bush"
+        ],
+        "creatorTexts": [
+          "Lieven Mehus",
+          "Mehus, Lieven",
+          "Lieven",
+          "Mehus"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSst602",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSst602",
+        "productions": [
+          {
+            "creator": "Mehus, Lieven",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "canvas"
+        ],
+        "techniques": [
+          "Oil on canvas"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "smk:KMSST87",
+      "frozenDecision": "IMPORT",
+      "sourceBatch": "B8",
+      "frozenTitle": "The Adoration of the Magi",
+      "frozenArtist": "Frans Francken (I)",
+      "frozenAccession": "KMSST87",
+      "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST87",
+      "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST87&lang=en",
+      "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST87&lang=en",
+      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "responseSha256": "5281dbe88ce5a340f477db7507bb795fe12704c20683fdb90b159e2e23e1d2d7",
+      "responseBytes": 2459,
+      "httpStatus": 200,
+      "official": {
+        "objectNumber": "KMSst87",
+        "titles": [
+          "The Adoration of the Magi"
+        ],
+        "creatorTexts": [
+          "Frans Francken (I)",
+          "Francken (I), Frans",
+          "Frans",
+          "Francken (I)"
+        ],
+        "creatorQualifiers": [],
+        "kinds": [
+          "Painting"
+        ],
+        "publicDomainField": true,
+        "imageExistsField": true,
+        "objectUrl": "https://api.smk.dk/api/v1/art?object_number=KMSst87",
+        "frontendUrl": "https://open.smk.dk/artwork/image/KMSst87",
+        "productions": [
+          {
+            "creator": "Francken (I), Frans",
+            "creatorRole": null,
+            "creatorQualifier": null
+          }
+        ],
+        "material": [
+          "metals"
+        ],
+        "techniques": [
+          "Oil on metal"
+        ],
+        "relatedIds": []
+      },
+      "evidence": {
+        "objectNumberExact": false,
+        "normalizedTitleExact": true,
+        "creatorMentionMatch": true
+      },
+      "flags": [
+        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
+      ],
+      "physicalArtworkUniquenessCertified": false,
+      "canonical383Linked": false,
+      "exactOriginalPhotographCertified": false,
+      "photographicRightsCertified": false,
+      "nativeImageVisuallyInspected": false,
+      "userDecisionModified": false,
+      "productionMutation": false
+    }
+  ]
+}
