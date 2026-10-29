@@ -12,7 +12,7 @@ assert.deepEqual(Object.values(m.baseline),[463,761,463,204,145,9]);
 assert.deepEqual(Object.values(m.proposed),[475,773,475,216,146,9]);
 assert.ok(RELEASES.some(r=>r.id==="P40"));
 assert.deepEqual([g.places.length,s.sources.length,h.place_crosswalk.length,h.exception_queues.places_without_direct_claim.length,g.geoAreas.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
-assert.ok(LIVE.places>=475);assert.ok(LIVE.sources>=773);assert.ok(LIVE.areas>=146);assert.equal(LIVE.links,9);
+assert.ok(LIVE.places>=475);assert.ok(LIVE.sources>=773);assert.ok(LIVE.areas>=146);assert.ok(LIVE.links>=9,"Confirmed links may grow only by later source-proven releases");
 assert.equal(h.counts.places,LIVE.places);assert.equal(h.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(m.published_new.length,12);assert.equal(m.new_physical_locations,12);
 assert.equal(m.photo_assets_approved,0);assert.equal(m.tlm_schedule_links_added,0);
