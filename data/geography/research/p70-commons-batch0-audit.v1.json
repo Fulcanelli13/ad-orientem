@@ -1,0 +1,49 @@
+{
+  "schema": "AO_P70_COMMONS_BATCH0_RESULTS_AUDIT_V1",
+  "as_of": "2026-10-29",
+  "discovery_action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40799599227",
+  "source_query_plan": "data/geography/research/media-discovery-p69-batch0.v1.jsonl",
+  "actual_candidates": "data/geography/research/p70-commons-candidates-batch0.jsonl",
+  "queries_planned": 272,
+  "queries_successful": 40,
+  "queries_failed": 232,
+  "failed_requests_recorded_as": "HTTPError (response code not captured by first-run exporter)",
+  "candidates": 70,
+  "unique_entity_ids": 18,
+  "unique_commons_original_sha1": 70,
+  "by_owner": {
+    "GEOGRAPHY": 67,
+    "SACRED_PHENOMENA": 3
+  },
+  "by_license_metadata": {
+    "CC BY 2.5": 3,
+    "CC BY 3.0": 4,
+    "CC BY SA 2.0": 6,
+    "CC BY SA 3.0": 4,
+    "CC BY SA 4.0": 40,
+    "CC0": 11,
+    "PUBLIC DOMAIN": 2
+  },
+  "by_preliminary_screen": {
+    "POSSIBLE_FREE_REUSE_REQUIRES_RIGHTS_AND_SUBJECT_REVIEW": 56,
+    "RIGHTS_METADATA_HOLD": 14
+  },
+  "apparent_free_licenses_held_by_strict_whitelist": {
+    "CC0": 11,
+    "CC BY 2.5": 3
+  },
+  "status": "PARTIAL_RESEARCH_ONLY_UNVERIFIED_SOURCE_METADATA",
+  "publication_claims": {
+    "approved_photographs": 0,
+    "archived_image_bytes": 0,
+    "rights_cleared": 0,
+    "visually_reviewed": 0
+  },
+  "limitations": [
+    "232 unsuccessful HTTP requests must be diagnosed; failure counts are not evidence that Commons lacks photographs.",
+    "Candidate title and gallery match are not proof of correct Place, chapel, relic or underlying artwork reproduction rights.",
+    "The 11 CC0 and three CC BY 2.5 candidates need rights metadata review; whitelist exclusion does not imply non-free licenses.",
+    "No per-request HTTP codes or exhaustive failed-ID list were emitted during this first run. Re-run must capture structured status codes and retry targets.",
+    "One-day Actions artifact is only temporary handoff; this JSONL committed under research is the durable record."
+  ]
+}

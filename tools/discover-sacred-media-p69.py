@@ -26,7 +26,7 @@ MEDIA=ROOT/"data/geography/approved-place-media.v1.json"
 GALLERY=ROOT/"data/geography/approved-place-gallery.v1.json"
 API="https://commons.wikimedia.org/w/api.php"
 ALLOWED_LICENSES={"CC0 1.0","CC BY 4.0","CC BY SA 4.0","CC BY 3.0",
-                  "CC BY SA 3.0","CC BY SA 2.0","PUBLIC DOMAIN","PDM 1.0"}
+                  "CC BY SA 3.0","CC BY SA 2.0","CC BY 2.5","PUBLIC DOMAIN","PDM 1.0"}
 MAX_REQUESTS=400
 MAX_CANDIDATES=500
 
@@ -127,6 +127,17 @@ def license_info(meta):
         return compact((meta.get(k) or {}).get("value"))
     name=value("LicenseShortName").upper().replace("-"," ").replace("  "," ")
     href=value("LicenseUrl")
+    # Commons CC0 pages commonly report an HTTP Creative Commons URL.
+    # Canonicalize only the standard CC0 deed, retaining all publication
+    # barriers: a possible-free result is NEVER rights-cleared.
+    if name=="CC0":
+        name="CC0 1.0"
+        parsed=urlsplit(href)
+        if parsed.hostname in {"creativecommons.org","www.creativecommons.org"} and \
+            parsed.path.rstrip("/").startswith("/publicdomain/zero/1.0"):
+            href="https://creativecommons.org/publicdomain/zero/1.0/"
+        elif not href:
+            href="https://creativecommons.org/publicdomain/zero/1.0/"
     if href and urlsplit(href).scheme!="https":href=None
     valid=name in ALLOWED_LICENSES and (bool(href) or name=="PUBLIC DOMAIN")
     return name,href,valid
