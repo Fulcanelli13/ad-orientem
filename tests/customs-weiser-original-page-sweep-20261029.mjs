@@ -40,7 +40,7 @@ assert.equal(new Set(sweep.records.map(x=>x.source.printed_page_inspected)).size
 assert.equal(sweep.counts.checked_source_actions,72);
 assert.equal(sweep.counts.primary_page_images_inspected,29);
 assert.equal(sweep.counts.cumulative_primary_checked_group_ids,84);
-assert.equal(sweep.counts.corrected_or_earlier_start_pointer,15);
+assert.equal(sweep.counts.corrected_or_earlier_start_pointer,16);
 assert.equal(sweep.counts.source_title_overclaim_cases,1);
 assert.equal(sweep.counts.canonical_identity_approvals,0);
 const invalidTitle=sweep.records.filter(x=>!x.source.source_action_confirmed_on_page);
@@ -49,4 +49,4 @@ assert.ok(invalidTitle[0].evidence_summary_en.includes("does not name a Te Deum"
 assert.equal(new Set([...prior,...checked]).size,84);
 assert.equal(a1.records.length-84,66);
 console.log("PASS Customs Weiser: 72 new original-page action checks on 29 distinct scanned pages; cumulative A1 84/150; 66 still pending.");
-console.log("PASS: specific Te Deum label overclaim held, 15 source-early-start leads, folklore holds, no false calendar, indulgence, canonical or bilingual release.");
+console.log("PASS: specific Te Deum label overclaim held, 16 source-early-start leads, folklore holds, no false calendar, indulgence, canonical or bilingual release.");
