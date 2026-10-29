@@ -75,3 +75,46 @@ Source checks:
 - Grenoble artist: https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm ; Commons source-photo copyright: https://commons.wikimedia.org/wiki/File:Jacques_Blanchard_-_Saint_J%C3%A9r%C3%B4me_%C3%A9crivant.jpg
 
 **Remaining priority**: reconcile the 856 accepted review-card subjects to the canonical 383 *physical-artwork* identities (and to module/day placements), retaining unique source-image variants. The 84 correction holds and photographic rights gates cannot be treated as publishable merely from editorial acceptance. All decisions and production assets are still untouched.
+
+
+## Phase 1 accepted-to-canonical 383 crosswalk (29 October)
+
+A complete, non-mutating comparison of all **856 IMPORT / IMPORT_WITH_CORRECTIONS** entries to the existing **383 canonical art records** is now in [accepted-to-canonical crosswalk](../data/calendar/sacred-art-accepted-856-to-canonical-383-20261029.v1.json).
+
+| Evidence class | Accepted cards | Significance |
+|---|---:|---|
+| Same exact canonical institutional object ID | **63** | Verified canonical object identity via stable museum identifier |
+| Same exact canonical Commons File source page | **4** | Identical referenced photo source to canonical record |
+| Same exact Commons filename encoded in old `C32/C34` artwork ID | **4** | Historic canonical artwork ID encodes this Commons File name, despite missing `source_page` |
+| Independent accession join, Met / Commons | **1** | `commons:45282804` (*Saint Teresa Interceding*) identifies Met object `437542`, accession `17.190.19` |
+| **Evidence-backed links to 383** | **72** | 72 individually matched existing canonical records; no change to frozen editorial flags |
+| **Not yet canonically linked** | **784** | *Unlinked does not imply a new physical painting.* These entries require source/physical-work evidence before identity promotion |
+| **Total accepted and conditional** | **856** | 856 user-review card choices preserved without changing production |
+
+The original 281-row research candidate file contains **74** of these 856 accepted source IDs, including **11** currently unlinked to the 383. This is a *research staging overlap*, not 74 production-ready artworks.
+
+Of the 72 canonical matches, **20** already have either `APPROVED_LOCKED` or `APPROVED_5` canonical editorial states. All **72** have `production_approved:false` in the current curatorial audit. A user photo approval never supersedes the historic master lock or native photo/rights requirements.
+
+Cross-reference trace:
+- Met Saint Teresa museum object: https://www.metmuseum.org/art/collection/search/437542
+- Commons alternate source `Avilai.jpg` records Met object `437542` and accession `17.190.19`: https://commons.wikimedia.org/wiki/File:Avilai.jpg
+- Four filename ID alias links: `commons:160380`, `commons:37938802`, `commons:15056772`, `commons:52718091`; audit retains each original Commons object page and corresponding older `C32:/C34:` canonical ID.
+
+### Remaining physically ambiguous identities
+
+[13 weak title/artist similarity leads](../data/calendar/sacred-art-phase1-identity-review-13-20261029.v1.json) were isolated from the 784 unlinked cards. They are **not** positive matches. Some are plainly different Saint subjects or different artists despite shared tokens (e.g., Ribera Saint Bartholomew versus Saint Philip; Bernardo Strozzi versus Bernardo Cavallino). Four high-value leads for further source identity confirmation are:
+- `nga:63264`: Veronese *Martyrdom and Last Communion of Saint Lucy* vs canonical `G17-010`;
+- `nga:45640`: Rubens *Meeting of Abraham and Melchizedek* vs legacy artwork ID `ART-eter-aul-ubens-eeting-of-braham-and-elchizedek`;
+- `met:436257`: van Dyck *Saint Rosalie Interceding* vs legacy `ART-nthony-van-yck-aint-osalia-nterceding-for-alermo`;
+- `met:439120`: Subleyras *Mass of Saint Basil*, 1746 oil modello vs legacy `ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello`.
+
+A source/artwork title match is insufficient to transfer the 1962 date or phone hero placement from canonical to new image. Obtain source accession, collection and/or exact original image evidence first.
+
+### Next release-aware steps
+
+1. Verify the 13 weak identity leads against physical source identifiers and resolve any exact-object joins. Keep all remaining unlinked choices as candidates, **not** automatically 784 new paintings.
+2. Triage the accepted and conditional cards for exact-image rights, native unframed whole-painting QA, colour, and historic editorial approvals. The **84 conditional approvals** remain on their correction gates.
+3. Freeze the **physical-work identity** separately from **photo-source identity** and **app placement**, including the four already-reviewed B13 photo repair holds and old canonical 383 locks.
+4. Bring the best already-approved Home, Class I, Sunday and Prayer works to the production QA queue. Do not resume low-priority discovery merely to increase raw reviewed counts.
+
+The Phase 1 validator checks the crosswalk against source-bound decisions, known object identities and master count invariants. It was extended in this research branch; an actual CI execution still must be verified. No new images were downloaded or deployed by this crosswalk.
