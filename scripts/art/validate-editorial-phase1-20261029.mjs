@@ -676,4 +676,105 @@ if (master.phase1RijksmuseumOfficialVerification.sourceCards !== 66 ||
   fail("Rijksmuseum official source summary diverged from frozen evidence");
 console.log("PASS Rijksmuseum 66 exact official identity/collection number matches; 28 artist leads and four physical-work exceptions; no releases.");
 
+
+const smkOfficial = load("sacred-art-phase1-smk-54-official-object-report-20261029.v1.json");
+const smkExceptions = load("sacred-art-phase1-smk-54-curatorial-exceptions-20261029.v1.json");
+const smkFrozen = museum479.rows.filter(r => r.museum === "smk");
+const smkFrozenById = new Map(smkFrozen.map(r => [r.sourceId, r]));
+const smkCount = smkOfficial.counts;
+if (smkFrozen.length !== 54 || smkOfficial.rows.length !== 54 ||
+    smkCount.frozenSourceCards !== 54 ||
+    smkCount.confirmedOfficialIdsAndTitles !== 54 ||
+    smkCount.officialResponseButUnresolved !== 0 ||
+    smkCount.officialFetchFailures !== 0 ||
+    smkCount.officialNumbersExactCase !== 20 ||
+    smkCount.officialNumbersCasefoldOnly !== 34 ||
+    smkCount.originalConditionalImportCount !== 2 ||
+    smkCount.publicDomainFieldTrue !== 54 ||
+    smkCount.publicDomainFieldFalse !== 0 ||
+    smkCount.creatorReviewFlags !== 5 ||
+    smkCount.sourcePhotoLicensesCertified !== 0 ||
+    smkCount.uniquePhysicalNewPaintingsCertified !== 0 ||
+    smkCount.newlyEstablishedCanonical383Links !== 0 ||
+    smkCount.productionImports !== 0)
+  fail("SMK official 54 summary/counts changed");
+const smkOfficialIds = new Set();
+let smkExact = 0, smkCaseFold = 0;
+for (const row of smkOfficial.rows) {
+  const old = smkFrozenById.get(row.sourceId);
+  const museumNumber = row.official?.objectNumber;
+  const normal = row.identityNormalization;
+  if (!old || smkOfficialIds.has(row.sourceId) ||
+      row.frozenAccession !== old.sourceAccession ||
+      row.frozenTitle !== old.title ||
+      row.frozenArtist !== old.artistAsReviewed ||
+      row.frozenDecision !== old.userDecision ||
+      row.sourceBatch !== old.batch ||
+      row.originalSourceUrl !== old.sourceObjectUrl ||
+      row.httpStatus !== 200 ||
+      !/^[a-f0-9]{64}$/.test(row.responseSha256) ||
+      row.status !== "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH" ||
+      typeof museumNumber !== "string" ||
+      museumNumber.toUpperCase() !== old.sourceAccession.toUpperCase() ||
+      row.official?.titles?.length < 1 ||
+      row.evidence.normalizedTitleExact !== true ||
+      row.evidence.objectNumberCaseFoldMatches !== true ||
+      row.evidence.objectNumberExact !== true ||
+      normal.fullyMatchedAfterCasefold !== true ||
+      normal.officialVerbatimObjectNumber !== museumNumber ||
+      normal.frozenSourceObjectNumber !== old.sourceAccession ||
+      row.physicalArtworkUniquenessCertified !== false ||
+      row.canonical383Linked !== false ||
+      row.exactOriginalPhotographCertified !== false ||
+      row.photographicRightsCertified !== false ||
+      row.nativeImageVisuallyInspected !== false ||
+      row.userDecisionModified !== false ||
+      row.productionMutation !== false)
+    fail("SMK museum evidence or frozen source decision mismatch " + row.sourceId);
+  smkOfficialIds.add(row.sourceId);
+  if (normal.method === "EXACT_CASE") smkExact++;
+  else if (normal.method === "ASCII_CASEFOLD_ONLY") smkCaseFold++;
+  else fail("Unknown SMK identity case normalization " + row.sourceId);
+}
+if (smkOfficialIds.size !== 54 || smkExact !== 20 || smkCaseFold !== 34 ||
+    smkOfficial.identityNormalization.rule !== "ASCII_CASEFOLD_SAME_INVENTORY_ONLY" ||
+    smkOfficial.identityNormalization.originalMuseumJsonResponseHashesPreserved !== true ||
+    smkOfficial.release.originalUserDecisionsChanged !== false ||
+    smkOfficial.release.canonical383Changed !== false ||
+    smkOfficial.release.photographicRightsApproved !== false ||
+    smkOfficial.release.originalImageVisuallyInspected !== false ||
+    smkOfficial.release.productionMutation !== false)
+  fail("SMK 54 official identity reconciliation release guard changed");
+if (smkExceptions.artistReviewQueue.length !== 18 ||
+    smkExceptions.physicalGroupLeads.length !== 3 ||
+    smkExceptions.counts.creatorAttributionQualifierOrHistoryReview !== 18 ||
+    smkExceptions.counts.historicSourceFlaggedCreators !== 5 ||
+    smkExceptions.counts.physicalGroupLeads !== 3 ||
+    smkExceptions.counts.canonical383NewLinks !== 0 ||
+    smkExceptions.counts.releaseApprovals !== 0 ||
+    smkExceptions.gates.originalUserChoicesChanged !== false ||
+    smkExceptions.gates.productionMutation !== false)
+  fail("SMK source artist/physical grouping review count or release guard changed");
+for (const e of smkExceptions.artistReviewQueue) {
+  const old = smkFrozenById.get(e.sourceId);
+  if (!old || old.userDecision !== e.originalDecision ||
+      old.sourceAccession !== e.accession ||
+      old.title !== e.title ||
+      e.automaticArtistOverwrite !== false ||
+      e.imageReleaseAllowed !== false)
+    fail("SMK qualified artist review changed editorial decision " + e.sourceId);
+}
+if (master.phase1SmkOfficialVerification.frozenSourceCards !== 54 ||
+    master.phase1SmkOfficialVerification.exactOfficialIdAndTitleMatches !== 54 ||
+    master.phase1SmkOfficialVerification.caseFoldOnlyOfficialInventory !== 34 ||
+    master.phase1SmkOfficialVerification.authorQualificationReviewLeads !== 18 ||
+    master.phase1SmkOfficialVerification.museumBackedOfficialVerifiedToDate !== 437 ||
+    master.phase1SmkOfficialVerification.museumBackedOfficialStillUnverified !== 42 ||
+    master.phase1SmkOfficialVerification.commonsSourcedUnlinkedStill !== 305 ||
+    master.phase1SmkOfficialVerification.acceptedToCanonical383LinkedSourceCardsStill !== 72 ||
+    master.phase1SmkOfficialVerification.newCanonical383Links !== 0 ||
+    master.phase1SmkOfficialVerification.productionMutation !== false)
+  fail("SMK research master identity/source-release status changed");
+console.log("PASS SMK 54 official accession+title identities (20 exact case / 34 case-only); 18 author leads; zero releases.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
