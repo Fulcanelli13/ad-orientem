@@ -241,8 +241,8 @@ try{
        "Day article must show the actual attributed sources");
      const catalogue=cal.locator(".aoCalCustomCatalogue");
      await catalogue.locator(":scope > summary").click();
-     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),35,
-       "The existing Day catalogue must expose 35 published canonical customs");
+     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),36,
+       "The existing Day catalogue must expose 36 canonical customs in the proposed pilot");
      const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
      assert.ok(overflow<=1,"Customs Calendar introduces phone horizontal overflow: "+overflow);
      await page.screenshot({path:resolve(output,"calendar-custom-day-"+lang+"-"+width+".png"),
