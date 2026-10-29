@@ -44,19 +44,23 @@ export function auditRestoredFrenchVespers({baseline,candidate}={}){
     throw Error("OFFICE_FR_RECOVERY_LATIN_ENGLISH_MUTATED");
   const sameFrenchCellIDs=matched(original,fr);
   const sameTrilingualIDs=matched(la,fr);
-  // The pinned FR baseline has nine cells: the missing commemoration is
-  // NOT an empty line inside Vespera9. The corrected composer restores
-  // a dedicated tenth cell. Treat append-only recovery as the expected
-  // repair, while disallowing mutation/deletion of any earlier French cell.
-  const originalFrenchCellsPreserved=original.sections.every((section,i)=>{
-    const candidateSection=fr.sections[i];
-    return candidateSection?.sourceCellId===section.sourceCellId&&
-      candidateSection?.text===section.text;
-  });
-  const dedicatedCommemorationCellRestored=
-    fr.sections.length===original.sections.length+1&&
-    fr.sections.at(-1)?.sourceCellId==="Vespera10"&&
-    originalFrenchCellsPreserved;
+  // The source-native ID schemes are different: Latin Vespera9 maps
+  // to French/English Vespera10. The normalizer records the actual
+  // Latin counterpart on each section, preserving BOTH original IDs.
+  const canonicalLatinAlignment=fr.sections.length===la.sections.length&&
+    fr.sections.every((section,i)=>
+      section.index===la.sections[i]?.index&&
+      section.semantic?.latinSourceCellId===la.sections[i]?.sourceCellId);
+  const sameFrenchAndEnglishNativeIds=matched(en,fr);
+  // The original French has TEN cells (one empty of the Sunday proper).
+  // The correction fills Vespera10; the other NINE remain byte-identical.
+  const originalFrenchCellsPreserved=matched(original,fr)&&
+    original.sections.every((section,i)=>
+      section.sourceCellId==="Vespera10"||
+      fr.sections[i]?.text===section.text);
+  const dedicatedCommemorationCellRestored=originalFrenchCellsPreserved&&
+    fr.sections.find(s=>s.sourceCellId==="Vespera10")?.text!==
+      original.sections.find(s=>s.sourceCellId==="Vespera10")?.text;
   const sourceChanged=fr.sections.some((s,i)=>s.text!==original.sections[i]?.text);
   const changedSourceCellIds=fr.sections.filter((s,i)=>
     s.text!==original.sections[i]?.text).map(s=>s.sourceCellId);
@@ -85,6 +89,7 @@ export function auditRestoredFrenchVespers({baseline,candidate}={}){
     cohort:CANDIDATE_COHORT,sourceRevision:DIVINUM_OFFICIUM_PIN,
     date:"2026-11-01",hour:"VESPERS",
     sourceChanged,sameFrenchCellIDs,sameTrilingualIDs,
+    canonicalLatinAlignment,sameFrenchAndEnglishNativeIds,
     originalFrenchCellsPreserved,dedicatedCommemorationCellRestored,
     changedSourceCellIds,changedOnlyPrayerCells,
     originalSemanticBlockers:oldScope.map(x=>x.reason),
@@ -128,9 +133,10 @@ function main(){
   mkdirSync(dirname(report),{recursive:true});
   writeFileSync(report,JSON.stringify(review,null,2)+"\n","utf8");
   console.log("OFFICE_FR_VESPERS_RESTORED_REVIEW",JSON.stringify({
-    candidateTriLanguageAligned:review.sameTrilingualIDs,
-    baselineNineCellsPreserved:review.originalFrenchCellsPreserved,
-    restoredTenthCell:review.dedicatedCommemorationCellRestored,
+    canonicalLatinAlignment:review.canonicalLatinAlignment,
+    localeNativeIdsAligned:review.sameFrenchAndEnglishNativeIds,
+    nineUnaffectedFrenchCellsPreserved:review.originalFrenchCellsPreserved,
+    restoredVespera10Text:review.dedicatedCommemorationCellRestored,
     changed:review.changedSourceCellIds,
     antiphon:review.fullSundayAntiphonMatchesIndependentICKSP,
     collect:review.fullSundayCollectMatchesIndependentICKSP,
@@ -152,7 +158,10 @@ function main(){
     printed1961Certified:false,published:0
   }));
   if(!review.dedicatedCommemorationCellRestored||
-    !review.originalFrenchCellsPreserved||!review.sameTrilingualIDs||
+    !review.originalFrenchCellsPreserved||!review.canonicalLatinAlignment||
+    !review.sameFrenchAndEnglishNativeIds||!review.sameFrenchCellIDs||
+    review.changedSourceCellIds.length!==1||
+    review.changedSourceCellIds[0]!=="Vespera10"||
     !review.changedOnlyPrayerCells||!review.sourceChanged||
     !review.originalSemanticBlockers.includes("FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE")||
     review.restoredSemanticBlockers.length!==0||
