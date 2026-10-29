@@ -46,7 +46,7 @@ export function liturgicalInk(tokens){
 
 export function appThemeCssValues(theme,appearance="dark"){
   if(appearance==="light"){
-    const accents=Object.freeze({NEUTRAL:"#3E7A57",WHITE:"#766037",RED:"#9B2C24",GREEN:"#356E49",VIOLET:"#62478D",ROSE:"#995577",BLACK:"#30363E",GOLD:"#846023"});
+    const accents=Object.freeze({NEUTRAL:"#3E7A57",WHITE:"#596573",RED:"#9B2C24",GREEN:"#356E49",VIOLET:"#62478D",ROSE:"#995577",BLACK:"#30363E",GOLD:"#846023"});
     const accent=accents[theme?.key]??accents.NEUTRAL;
     return Object.freeze({
       "--bg":"#F6F2EA","--surface-1":"#FFFFFF","--surface-2":"#EFE8DC",
