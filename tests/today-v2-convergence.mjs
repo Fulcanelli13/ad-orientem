@@ -32,6 +32,7 @@ for(const cls of ["aoTodayV2CalendarGlance","aoTodayV2PrayNow","aoTodayV2ReadRef
 for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.adoration"])
   assert.ok(html.includes('data-home-cu-route="'+route+'"'),"Noncanonical or missing Pray route: "+route);
 assert.match(html,/data-home-daily-catechism/);
+assert.ok(html.indexOf("aoTodayV2PrayNow")<html.indexOf("aoTodayV2CalendarGlance"),"Prayer through the day precedes calendar context");
 assert.match(html,/data-home-scripture/);
 assert.match(html,/data-action="gospel"/);
 assert.doesNotMatch(html,/data-home-calendar-view="year"/,"Liturgical season year link belongs only in the hero");
@@ -62,7 +63,7 @@ assert.doesNotMatch(temporaHtml,/Life & sources/);
 assert.match(unknownHtml,/data-home-calendar-view="day"/);
 const frvm={...vm,language:"fr"};
 const frHtml=renderTodayV2Sections(buildTodayV2Sections({...state,language:"fr"},frvm,sample),frvm);
-assert.match(frHtml,/Prier maintenant/);
+assert.match(frHtml,/Prier au fil du jour/);
 assert.match(frHtml,/Lire et méditer/);
 assert.match(frHtml,/calendrier/i);
 assert.match(frHtml,/Vie et sources/,"The saint link must be bilingual");
