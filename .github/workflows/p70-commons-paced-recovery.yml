@@ -1,10 +1,6 @@
 name: P70 Commons paced recovery (review-only)
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'tools/recover-commons-media-p70.py'
-      - '.github/workflows/p70-commons-paced-recovery.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
