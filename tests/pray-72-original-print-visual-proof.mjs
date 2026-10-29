@@ -11,13 +11,13 @@ const decision=get('original-print-ten-exception-resolution-20261029.v1.json');
 
 assert.equal(proof.schema,'ao.pray.original-print-body-visual-proof.v1');
 assert.equal(proof.counts.dayBodies,72);
-assert.equal(proof.counts.fullPrintedBodyWordSequenceChecked,26);
-assert.equal(proof.counts.awaitingFullVisualWordSequenceCheck,46);
+assert.equal(proof.counts.fullPrintedBodyWordSequenceChecked,44);
+assert.equal(proof.counts.awaitingFullVisualWordSequenceCheck,28);
 assert.equal(proof.counts.firstEditionWordForWordCertificate,0);
 assert.equal(proof.counts.completeProgrammeDevotionalPrintCertificates,0);
 assert.equal(proof.counts.sourcePrintBookCohorts,4);
-assert.equal(proof.dispositionCounts.PRINT_BODY_WORD_SEQUENCE_CHECKED,26);
-assert.equal(proof.dispositionCounts.AWAITING_COMPLETE_PAGE_WORD_PROOF,36);
+assert.equal(proof.dispositionCounts.PRINT_BODY_WORD_SEQUENCE_CHECKED,44);
+assert.equal(proof.dispositionCounts.AWAITING_COMPLETE_PAGE_WORD_PROOF,18);
 assert.equal(proof.dispositionCounts.OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED,5);
 assert.equal(proof.dispositionCounts.PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW,5);
 assert.equal(proof.records.length,72);
@@ -27,21 +27,23 @@ const originalRows=new Map(source.days.map(r=>[r.id+':'+r.day,r]));
 const bookSHA=new Map(scan.books.map(x=>[x.id,x.sha256]));
 const vetted=proof.records.filter(r=>r.wordSequenceCheckedAgainstFullPageImage);
 const held=proof.records.filter(r=>!r.wordSequenceCheckedAgainstFullPageImage);
-assert.equal(vetted.length,26);
-assert.equal(held.length,46);
-assert.equal(proof.sourceBooks.reduce((n,x)=>n+x.visuallyVerified,0),26);
+assert.equal(vetted.length,44);
+assert.equal(held.length,28);
+assert.equal(proof.sourceBooks.reduce((n,x)=>n+x.visuallyVerified,0),44);
 assert.deepEqual(Object.fromEntries(proof.sourceBooks.map(x=>[x.bookId,x.visuallyVerified])),{
  callan_1925_copyright_later_scan:18,
- moran_1883:0,hammer_1909:6,purgatorian_manual_1894_1907:2
+ moran_1883:18,hammer_1909:6,purgatorian_manual_1894_1907:2
 });
 const expectedVetted=new Set([
  ...Array.from({length:9},(_,i)=>'christmas:'+(i+1)),
  ...Array.from({length:9},(_,i)=>'holy_ghost:'+(i+1)),
+ ...Array.from({length:9},(_,i)=>'immaculate_conception:'+(i+1)),
+ ...Array.from({length:9},(_,i)=>'st_joseph:'+(i+1)),
  'holy_souls:3','holy_souls:7',
  'annunciation:8','seven_sorrows:6','seven_sorrows:7',
  'assumption:1','assumption:5','assumption:8'
 ]);
-assert.equal(expectedVetted.size,26);
+assert.equal(expectedVetted.size,44);
 assert.deepEqual(new Set(vetted.map(x=>x.id+':'+x.day)),expectedVetted);
 const proofPDFSeen=new Set();
 for(const r of proof.records){
@@ -72,12 +74,21 @@ for(const r of proof.records){
   assert.deepEqual(r.sourceImageFiles,[]);
  }
 }
-assert.equal(proofPDFSeen.size,18,'Expected 3 Christmas + 3 Pentecost + 2 Holy Souls + 10 Hammer unique source pages');
+assert.equal(proofPDFSeen.size,29,'18 previously checked source pages + 11 Moran original printed source pages');
 for(const id of ['christmas','holy_ghost'])assert.ok(vetted.filter(x=>x.id===id).every(x=>x.editionCaveat.includes('NOT_AUTHENTICATED_1925_FIRST_EDITION')));
+
+const moranProof=proof.records.filter(x=>x.cohort==='moran_1883');
+assert.equal(moranProof.length,18);
+assert.ok(moranProof.every(x=>x.wordSequenceCheckedAgainstFullPageImage && x.disposition==='PRINT_BODY_WORD_SEQUENCE_CHECKED'));
+assert.deepEqual(new Set(moranProof.map(x=>x.id)),new Set(['immaculate_conception','st_joseph']));
+assert.deepEqual(new Set(moranProof.map(x=>x.printedPageLabels).flat()),new Set([567,569,570,571,572,603,604,605,606,607,608]));
+assert.ok(moranProof.every(x=>x.visualPdfPageIndexesZeroBased.every(p=>p>=x.sourceCandidateWindowZeroBased[0] && p<=x.sourceCandidateWindowZeroBased[1])));
+assert.ok(moranProof.every(x=>x.originalFirstEditionVerified===false && x.fullDevotionalProgrammeVerified===false));
+
 const d4=proof.records.find(x=>x.id==='holy_souls'&&x.day===4);
 assert.deepEqual(d4.correctedSourceWindowZeroBased,[203,204]);
 assert.equal(d4.wordSequenceCheckedAgainstFullPageImage,false);
 assert.equal(decision.outcomes.actualEnglishHistoricalVariantsCorrected,5);
 assert.equal(bulk.counts.newHistoricallyVerifiedBodyCorrections,2);
 assert.equal(proof.counts.firstEditionWordForWordCertificate,0);
-console.log('PASS: 26/72 English proper prayer body word sequences visually checked from real scanned pages (18 Callan later scan, 6 Hammer, 2 Holy Souls); 46 held; no first edition, full programme, French original or indulgence certifications.');
+console.log('PASS: 44/72 English proper prayer body word sequences visually checked from real printed pages (18 Callan later scan, 18 Moran, 6 Hammer, 2 Holy Souls); 28 held; no first edition, full programme, original French or modern indulgence certifications.');
