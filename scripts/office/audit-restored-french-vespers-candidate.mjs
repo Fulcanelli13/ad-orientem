@@ -203,6 +203,9 @@ function main(){
     !review.fullSundayAntiphonMatchesIndependentICKSP||
     !review.fullSundayCollectMatchesIndependentICKSP||
     !review.antiphonBeforeCollect||
+    !review.independentFrenchSundayVerseResponseComparison.exactSameWitnessPair||
+    !review.independentFrenchSundayVerseResponseComparison.verseAndResponseInCorrectOrder||
+    !review.frenchVersicleAndResponseIndependentlyPrintedCompared||
     !review.newTranslationBoundedIncipientCheck||
     review.published!==0)
     throw Error("OFFICE_FR_VESPERS_RESTORED_SOURCE_COLLATION_INCOMPLETE");
