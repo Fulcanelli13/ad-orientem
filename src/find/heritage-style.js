@@ -428,7 +428,8 @@ export const HERITAGE_STYLE = String.raw`
   letter-spacing:-.022em;text-wrap:balance;
 }
 .aoExplorePlaceSheet .aoExplorePlaceChapters{
-  display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;
+  display:flex;gap:7px;min-width:0;width:100%;max-width:100%;
+  box-sizing:border-box;overflow-x:auto;overscroll-behavior-x:contain;
   -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 0 14px;
 }
 .aoExplorePlaceSheet .aoExplorePlaceChapters button{
