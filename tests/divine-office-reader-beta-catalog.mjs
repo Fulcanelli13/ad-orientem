@@ -11,8 +11,9 @@ test("all eight canonical Hours have a reusable date/Hour selection, without a y
  assert.deepEqual(OFFICE_BETA_HOURS,ANNUAL_OFFICE_HOURS);
  assert.equal(OFFICE_BETA_HOURS.length,8);
  const available=officeBetaImplementedHours();
- assert.equal(available.length,1);
- assert.deepEqual(available.map(x=>x.key),["advent-i-2026-first-vespers"]);
+ assert.equal(available.length,2);
+ assert.deepEqual(available.map(x=>x.key),["advent-i-2026-first-vespers",
+  "advent-i-2026-saturday-compline"]);
  assert.ok(Object.isFrozen(available));
  assert.ok(Object.isFrozen(available[0]));
 });
@@ -34,9 +35,18 @@ test("the one source-first First Vespers research pilot retains its distinct civ
  assert.equal(r.entry.translationsApproved,false);
  assert.equal(r.entry.rightsApproved,false);
 });
+test("Saturday Compline is separately appointed for November 28, not automatically assigned Sunday psalms",()=>{
+ const r=reviewOfficeBetaSelection({date:"2026-11-28",hour:"COMPLINE"});
+ assert.equal(r.status,"SOURCE_FIRST_RESEARCH_PREVIEW_AVAILABLE");
+ assert.equal(r.entry.officeDate,"2026-11-28");
+ assert.equal(r.entry.hour,"COMPLINE");
+ assert.equal(r.entry.assembly,"SATURDAY_COMPLINE_2026_SOURCE_FIRST");
+ assert.equal(r.entry.publishable,false);
+ assert.equal(r.entry.rightsApproved,false);
+ assert.equal(r.entry.completeHourCertified,false);
+});
 test("date/Hour combinations not implemented do not silently render any Office",()=>{
  for(const args of [
-  {date:"2026-11-28",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"LAUDS"},
   {date:"2026-11-29",hour:"VESPERS"},
   {date:"2026-10-30",hour:"VESPERS"},
