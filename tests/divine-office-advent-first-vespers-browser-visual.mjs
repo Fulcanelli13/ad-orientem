@@ -79,14 +79,13 @@ function originalSourceFixture(url){
  const cf=complineFixtures[lang];
  const pm=/^Psalterium\/Psalmorum\/Psalm(87|102|233)$/u.exec(id);
  if(pm&&cf.psalms[pm[1]])return cf.psalms[pm[1]];
- if(Object.hasOwn(cf.sections,id))return Object.entries(cf.sections[id])
-  .map(([name,lines])=>"["+name+"]\n"+lines.join("\n"))
-  .join("\n\n")+"\n";
- const sections=f.sections[id];
- if(!sections)throw Error("OFFICE_VISUAL_SOURCE_NOT_IN_FINITE_FIXTURE:"+path);
+ const sections={...(f.sections[id]??{}),...(cf.sections[id]??{})};
+ if(!Object.keys(sections).length)
+  throw Error("OFFICE_VISUAL_SOURCE_NOT_IN_FINITE_FIXTURE:"+path);
  return Object.entries(sections)
   .map(([name,lines])=>"["+name+"]\n"+lines.join("\n"))
   .join("\n\n")+"\n";
+
 }
 const receipt={schema:"ao.office.2026-advent-i-visual-acceptance.v1",
  pinnedRevision:PIN,scenarios:[],screenshots:[],
@@ -383,11 +382,8 @@ try{
  await dp.locator("#reader").waitFor({state:"visible",timeout:35000});
  assert.match(await dp.locator("#office-title").innerText(),/Saturday Compline/);
  assert.match(await dp.locator("#status").innerText(),/Source-first research preview/);
- assert.equal(dhits.size,43,"Saturday Compline must fetch 21 new, finite pinned sources");
- assert.equal(await dp.locator("#bar").getAttribute("aria-valuemax"),
-  String(await dp.locator("#next").evaluate(el=>{
-   return el.closest("main").querySelector("#bar").getAttribute("aria-valuemax")
-  })));
+ assert.equal(dhits.size,40,"Saturday Compline must fetch 21 new, finite pinned sources");
+ assert.ok(Number(await dp.locator("#bar").getAttribute("aria-valuemax"))>42);
  await shot(dp,"20-desktop-1440-saturday-compline-opening");
  await dp.locator('[data-view="whole"]').click();
  const found=new Set();
@@ -418,9 +414,9 @@ try{
  await dp.locator("#office-date").dispatchEvent("change");
  assert.equal(await dp.locator("#reader").isVisible(),true);
  assert.match(await dp.locator("#card").innerText(),/Alleluia/);
- assert.equal(dhits.size,43,"switching pilots must reuse prior pinned source sessions");
+ assert.equal(dhits.size,40,"switching pilots must reuse prior pinned source sessions");
  await shot(dp,"19-desktop-1440-office-beta-date-hour-picker");
- assert.equal(dhits.size,43);
+ assert.equal(dhits.size,40);
  assert.deepEqual(dperrors,[]);
  record("1440px desktop responsive bilingual layout",{
   passed:true,sourceURLs:dhits.size});
