@@ -23,7 +23,11 @@ export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,b
     sourceRecordIds:freeze(["ABS-010"]),
     actorScope:"ALL_FAITHFUL",posture:"LOCAL_OR_INHERIT",
     paragraphs:freeze([]),
-    guide:"Move or remain as directed locally; no universal lay posture is imposed."
+    // Ritus XIII.3 is a conditional transition after Mass, not a new
+    // Absolution prayer/card or an observed sermon/candle event.
+    guide:"If there is a sermon, it is given after Mass and before this Absolution. If candles were distributed, they are lit for the Absolution. Follow local directions; no universal lay posture is imposed.",
+    guideFr:"S’il y a une prédication, elle a lieu après la messe et avant cette absoute. Si des cierges ont été distribués, on les allume pour l’absoute. Suivez les usages locaux ; aucune posture universelle des fidèles n’est imposée.",
+    guideSourceUrl:"https://usus-antiquior.github.io/ritus-servandus.html#XIII"
   }));
 
   if(bodyPresent){
