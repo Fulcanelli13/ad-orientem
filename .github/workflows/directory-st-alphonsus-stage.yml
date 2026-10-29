@@ -1,0 +1,77 @@
+name: Directory St Alphonsus two licensed photos - staged branch
+on:
+  push:
+    branches:
+      - feat/directory-st-alphonsus-media-20261029
+    paths:
+      - tools/directory/stage-st-alphonsus-photos.py
+      - .github/workflows/directory-st-alphonsus-stage.yml
+      - tests/production-tree-hygiene.mjs
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: directory-st-alphonsus-stage-exact-branch
+  cancel-in-progress: false
+jobs:
+  stage:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/feat/directory-st-alphonsus-media-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Confirm exact source ownership and narrowly guarded mutation
+        run: |
+          node tests/production-tree-hygiene.mjs
+          python tools/directory/stage-st-alphonsus-photos.py --validate-only
+      - name: Install standard image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify exact Wikimedia file licences and original SHA1, then stage uncropped WebPs
+        run: python tools/directory/stage-st-alphonsus-photos.py
+      - name: Audit fixed staged image paths and no publication
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json").read_text())
+          assert r["schema"]=="AO_ST_ALPHONSUS_STAGE_REPORT_V1"
+          assert r["status"]=="STAGED_FOR_VISUAL_REVIEW_ONLY" and r["publication"] is False
+          assert len(r["records"])==2
+          for item in r["records"]:
+              assert item["status"]=="STAGED_REVIEW_REQUIRED_NOT_APPROVED"
+              assert item["publication"] is False
+              assert len(item["original_sha1"])==40 and len(item["derivative_sha256"])==64
+              path=Path(item["asset_path"])
+              assert path.is_file() and path.read_bytes().startswith(b"RIFF")
+              print(item["role"], item["asset_path"], item["width"], item["height"])
+          PY
+      - name: Commit only staged binary review assets to the same exact feature branch
+        run: |
+          set -euo pipefail
+          git add assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-exterior-2018.webp
+          git add assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-nave-2013.webp
+          git add data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" -le 3
+          if git diff --cached --quiet; then
+            echo "Exact staged image files unchanged"
+          else
+            git -c user.name='ad-orientem-photo-review' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'research(directory): two license-verified St Alphonsus photos staged for visual review'
+            git push origin HEAD:refs/heads/feat/directory-st-alphonsus-media-20261029
+          fi
+      - name: Limited diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: st-alphonsus-two-photo-staging-diagnostics
+          path: |
+            data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json
+          if-no-files-found: warn
+          retention-days: 2
