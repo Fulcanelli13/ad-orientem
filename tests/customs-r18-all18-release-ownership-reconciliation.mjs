@@ -18,7 +18,9 @@ assert.deepEqual(ledger.counts,{
  remaining_seasonal_regional_identity_scope_reviews:7,
  remaining_local_event_reviews:4,companion_not_a_custom:1,
  independent_cohort_two:2,publication_approvals_this_file:0,
- new_ids_allocated_this_file:0,added_calendar_events:0,added_indulgences:0
+ new_ids_allocated_this_file:0,added_calendar_events:0,added_indulgences:0,
+ eleven_action_identity_analyst_reviews:11,final_new_canonical_identity_approvals:0,
+ cross_candidate_family_relationships:5
 });
 assert.equal(records.length,18);
 assert.deepEqual(records.map(r=>r.release_key),Array.from({length:18},(_,i)=>"CUSTOMS-R18-"+String(i+1).padStart(2,"0")));
@@ -85,6 +87,58 @@ for(const r of records){
   }
  }
 }
+
+const reviewed=records.filter(x=>x.action_identity_review);
+assert.equal(reviewed.length,11,"All unresolved noncompanion records need action-level review");
+const reviewByKey=new Map(reviewed.map(x=>[x.release_key,x]));
+const expectedReviewIds=["03","04","05","07","08","09","13","14","15","16","17"];
+assert.deepEqual([...reviewByKey.keys()],expectedReviewIds.map(n=>"CUSTOMS-R18-"+n));
+const requiredComparators={
+ "03":["BLSS-003"],"04":["BLSS-004"],"05":["ADVT-003"],"07":["EPIP-001"],
+ "08":["EPIP-001"],"09":["ADVT-003"],"13":["EAST-001"],"14":["CORP-001"],
+ "15":["MARI-001"],"16":["MARI-001"],"17":["DEV-001"]
+};
+for(const r of reviewed){
+ const d=r.action_identity_review;
+ assert.equal(r.current_publication_authorized,false);
+ assert.equal(r.identity_finalized,false);
+ assert.equal(d.final_editorial_identity_approved,false);
+ assert.equal(d.final_canonical_id_allocated,false);
+ assert.equal(d.approved_as_separate_new_custom,false);
+ assert.equal(d.can_merge_with_existing_published_article,false);
+ assert.equal(d.same_action_family_is_not_publication_permission,true);
+ assert.equal(d.independently_verified_current_annual_programme,false);
+ assert.equal(d.no_auto_indulgence_or_rite,true);
+ assert.ok(d.analyst_disposition);
+ assert.ok(d.core_action_en.length>30 && d.why_not_existing_published_identity_en.length>50);
+ assert.ok(d.proposed_action_family && d.regional_subtype_policy);
+ assert.ok(d.next_independent_editorial_verification_en.length>25);
+ assert.ok(d.primary_institutional_source_url.startsWith("https://"));
+ assert.ok(r.source_links.some(x=>x.url===d.primary_institutional_source_url));
+ assert.ok(r.unpublished_bilingual_article.title.en && r.unpublished_bilingual_article.title.fr);
+ for(const id of d.compare_existing_canonical_ids){
+  assert.ok(canonicalIds.has(id),"Cannot compare with invented published ID "+id);
+  assert.ok(r.existing_canonical_comparisons.some(c=>c.id===id&&c.is_equivalence_decision===false));
+ }
+ for(const id of requiredComparators[r.release_key.slice(-2)])
+  assert.ok(d.compare_existing_canonical_ids.includes(id),"Missing critical published comparator "+id);
+ for(const other of d.cross_candidate_related_not_equivalent){
+  assert.notEqual(other,r.release_key);
+  const reciprocal=reviewByKey.get(other)?.action_identity_review?.cross_candidate_related_not_equivalent;
+  assert.ok(reciprocal?.includes(r.release_key),
+    "Cross-candidate family relationship must be reciprocal for "+r.release_key+" ↔ "+other);
+ }
+}
+assert.equal(reviewByKey.get("CUSTOMS-R18-04").action_identity_review.regional_subtype_policy,
+ "REGIONAL_EGG_ART_SUBTYPES_UNDER_ONE_CRAFT_IDENTITY");
+assert.equal(reviewByKey.get("CUSTOMS-R18-08").action_identity_review.proposed_action_family,
+ reviewByKey.get("CUSTOMS-R18-09").action_identity_review.proposed_action_family);
+for(const n of ["03","13","15","16"]){
+ const d=reviewByKey.get("CUSTOMS-R18-"+n).action_identity_review;
+ assert.equal(d.locality_and_recurrence_gate,"LOCAL_EVENT_VERIFICATION_REQUIRED");
+ assert.equal(d.independently_verified_current_annual_programme,false);
+}
+
 assert.deepEqual(allocated,six.rows.map(x=>x.proposed_id));
 assert.ok(!allocated.some(x=>ledger.independent_open_cohort.ids.includes(x)));
 assert.equal(records.reduce((n,r)=>n+r.source_links.length,0),34);
@@ -96,4 +150,4 @@ const runtime=readFileSync(new URL("../src/calendar/customs-read-model.js",impor
 assert.doesNotMatch(runtime,/customs-r18-all18-release-ownership-reconciliation/);
 const mainSeed=seed.customs.filter(x=>x.publication_state==="PUBLISHED");
 assert.equal(mainSeed.length,35);
-console.log("PASS Customs R18 full reconciliation: 18/18 tracked, six owned proposals, 11 complete bilingual unpublished drafts, one companion; 2 independent pending IDs; 35 live unchanged; 34 source links, zero automatic approval.");
+console.log("PASS Customs R18 identity adjudication: 11 provisional action decisions, 4 local-event holds, no merges or permanent IDs, cross-candidate relationships reciprocal, 6 prior release dossiers and one companion preserved; 35 published unchanged.");
