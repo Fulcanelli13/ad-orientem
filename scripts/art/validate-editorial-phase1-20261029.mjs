@@ -214,4 +214,75 @@ if (prior281 !== 11 || textLeads !== 11 || conditional479 !== 67 || titleGroups 
     museum479.releaseGates.userChoicesModified !== false) fail("museum accession audit count/release gates changed");
 console.log("PASS museum-backed accession internal audit: 479 reviewed, 479 URL-aligned, 11 research-registry matches, zero confirmed new canonical links.");
 
+
+const officialMuseum = load("sacred-art-phase1-official-cma29-met73-verification-20261029.v1.json");
+const officialCounts = officialMuseum.counts;
+if (officialMuseum.rows.length !== 102 || officialCounts.officialMuseumPagesResolved !== 102 ||
+    officialCounts.clevelandMuseumRecords !== 29 || officialCounts.metropolitanMuseumRecords !== 73 ||
+    officialCounts.attributionOrAnonymousExceptionRows !== 11 ||
+    officialCounts.parentComponentOrTwoSidedExceptionRows !== 5 ||
+    officialCounts.canonical383NewLinks !== 0 ||
+    officialCounts.numberOfDistinctNewPaintingsCertified !== 0 ||
+    officialCounts.userDecisionsChanged !== 0 || officialCounts.productionImports !== 0)
+  fail("102 official museum object page verification totals mismatch");
+const auditedMuseumById = new Map(museum479.rows.map(r => [r.sourceId, r]));
+const pageIds = new Set();
+let cmaPages = 0, metPages = 0, attrExceptions = 0, groupingExceptions = 0;
+for (const item of officialMuseum.rows) {
+  const previous = auditedMuseumById.get(item.sourceId);
+  if (!previous || pageIds.has(item.sourceId) ||
+      previous.museum !== item.institution ||
+      previous.title !== item.reviewedTitle ||
+      previous.userDecision !== item.reviewChoiceFrozen ||
+      previous.sourceAccession !== item.reviewedSourceAccession ||
+      previous.artistAsReviewed !== item.reviewedArtist ||
+      !["cma", "met"].includes(item.institution))
+    fail("official museum record diverges from reviewed audit " + item.sourceId);
+  pageIds.add(item.sourceId);
+  const expectedUrl = item.institution === "cma"
+    ? "https://www.clevelandart.org/art/" + previous.sourceAccession
+    : "https://www.metmuseum.org/art/collection/search/" + previous.sourceObjectId;
+  if (item.officialObjectPage !== expectedUrl ||
+      item.verification.officialCollectionPageRetrieved !== true ||
+      item.verification.objectPageTitleMatchesReviewedTitle !== true ||
+      item.verification.notEvidenceOfDistinctPhysicalWork !== true ||
+      item.canonical383Status !== "REMAINS_UNLINKED_TO_383" ||
+      item.sourcePhotoRightsCertified !== false ||
+      item.nativeImageVisualCertified !== false ||
+      item.productionReleased !== false)
+    fail("official museum evidence/rights gate mismatch " + item.sourceId);
+  if (item.institution === "cma") cmaPages++;
+  if (item.institution === "met") metPages++;
+  if (item.officialAttributionException) attrExceptions++;
+  if (item.physicalObjectRelationship) groupingExceptions++;
+}
+if (cmaPages !== 29 || metPages !== 73 || attrExceptions !== 11 || groupingExceptions !== 5)
+  fail("CMA/Met per-source verification group totals mismatch");
+if (officialMuseum.attributionExceptionQueue.length !== 11 ||
+    officialMuseum.physicalGroupingQueue.length !== 5 ||
+    officialMuseum.metSampleObjectNumberChecks.length !== 5)
+  fail("museum evidence exception/sample queue totals mismatch");
+for (const sample of officialMuseum.metSampleObjectNumberChecks) {
+  const old = auditedMuseumById.get(sample.id);
+  if (!old || old.museum !== "met" || sample.accession !== old.sourceAccession ||
+      sample.source !== "https://www.metmuseum.org/art/collection/search/" + old.sourceObjectId)
+    fail("Met verified sample accession mismatches frozen source " + sample.id);
+}
+if (officialMuseum.statusGuards.physicalUniqueWorkAssignment !== false ||
+    officialMuseum.statusGuards.canonical383Changed !== false ||
+    officialMuseum.statusGuards.sourcePhotographRightsCertified !== false ||
+    officialMuseum.statusGuards.nativeImageInspected !== false ||
+    officialMuseum.statusGuards.sourceUserDecisionsPreserved !== true ||
+    officialMuseum.statusGuards.productionMutation !== false)
+  fail("museum official evidence promoted to an uncertified release");
+if (master.phase1MuseumAccessionAudit.institutionBackedUnlinkedCards !== 479 ||
+    master.phase1MuseumAccessionAudit.productionMutation !== false ||
+    master.phase1OfficialMuseumVerification.officialCollectionObjectPagesResolved !== 102 ||
+    master.phase1OfficialMuseumVerification.remainingMuseumSourceCardsToVerify !== 377 ||
+    master.phase1OfficialMuseumVerification.unlinkedTo383Still !== 784 ||
+    master.phase1OfficialMuseumVerification.canonicalLinksNewlyEstablished !== 0 ||
+    master.phase1OfficialMuseumVerification.productionMutation !== false)
+  fail("phase1 research master museum evidence manifest mismatch");
+console.log("PASS official museum source pages: CMA 29 + Met 73 = 102; 11 attribution exceptions; no production or canonical link mutation.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
