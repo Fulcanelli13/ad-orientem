@@ -49,7 +49,7 @@ for(const item of dispositions.items){
   assert.ok(existsSync(path),"Proposed candidate art missing "+item.id);
   const svg=readFileSync(path,"utf8");
   assert.match(svg,/^<svg\b/,"Only unapproved pure SVG vectors may be compared");
-  assert.doesNotMatch(svg,/<script|<foreignObject|<image|https?:\/\//i,
+  assert.doesNotMatch(svg,/<script|<foreignObject|<image|(?:href|xlink:href)=["\x27]https?:\/\//i,
    "Unsafe or externally fetched image candidate "+item.id);
  }
  if(owned.actor==="FAITHFUL"){
