@@ -4,7 +4,7 @@ const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt
 const A=v=>Array.isArray(v)?v:[];
 const L=(lang,en,fr)=>lang==="fr"?fr:en;
 const path=/^assets\/approved\/(?:place-media|place-gallery)\/[A-Za-z0-9_-]+\.webp$/;
-const licenses=new Set(["PUBLIC_DOMAIN","CC0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"]);
+const licenses=new Set(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"]);
 const https=x=>/^https:\/\/[^\s<>"']+$/.test(String(x??""));
 
 export function eligibleDirectoryImage(img,placeId){
