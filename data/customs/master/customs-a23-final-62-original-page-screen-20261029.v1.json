@@ -1,20 +1,21 @@
 {
   "schema": "AO_CUSTOMS_A23_FINAL_62_SOURCE_IMAGE_SCREEN_V1",
   "date": "2026-10-29",
-  "status": "ALL_REMAINING_62_INDEX_PAGES_VISUALLY_SCREENED_NOT_62_APPROVED_INDEPENDENT_CUSTOMS",
-  "method": "Original 1958 Weiser page images and linked adjacent page checks. A source passage is only a first-hand witness to a historical report; screen negative or imprecise citations honestly. Some page titles remain unsupported and marked hold. No new canonical religious custom identity is certified by this index pass alone.",
+  "status": "ALL_62_SOURCE_ACTIONS_DISPOSITIONED_WITH_ONE_ORIGINAL_PAGE_FETCH_FAILURE_AND_FOUR_CLAIM_HOLDS",
+  "method": "Research review of 62 historical actions and original Weiser page images. 61 indexed pages or adjacent claim pages were successfully opened; the remaining image (printed p131) failed and is kept on hold. Exact source-label conflicts also remain held. Source action review is not approval of distinct Catholic custom identities.",
   "precautions": [
     "This registry does not imply full-page line-by-line certification or modern community continuity.",
     "Source-specific liturgy, disciplinary laws and historical Eastern usage are not presumed to govern current Roman 1962 Calendar.",
     "Current indulgence laws cannot be inferred from 1958 descriptions or superficial name matching.",
-    "Further non-Weiser witnesses and EN/FR editorial approval required before publishing."
+    "Further non-Weiser witnesses and EN/FR editorial approval required before publishing.",
+    "Printed page 131 repeatedly failed retrieval; it has NOT been visually checked. Its label and identity are not certified."
   ],
   "summary": {
     "previous_A1_verified_groups": 150,
     "previous_A23_screened_groups": 196,
     "new_A23_screened_groups": 62,
     "total_408_group_source_screened": 408,
-    "group_index_page_screen_coverage_percent": 100,
+    "group_index_page_screen_coverage_percent": null,
     "narrow_historical_action_support": 24,
     "historical_liturgical_or_other_rite_boundary": 28,
     "folklore_or_cultural_only": 6,
@@ -22,7 +23,11 @@
     "source_location_repairs": 2,
     "newly_certified_distinct_customs": 0,
     "new_published_customs": 0,
-    "new_indulgenced_work_matches": 0
+    "new_indulgenced_work_matches": 0,
+    "groups_with_completed_source_disposition": 408,
+    "final_cohort_direct_page_images_successfully_loaded": 61,
+    "final_cohort_image_access_failures": 1,
+    "cumulative_direct_source_page_checked_group_count": 407
   },
   "records": [
     {
@@ -50,7 +55,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-002",
@@ -77,7 +83,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-003",
@@ -104,7 +111,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-004",
@@ -131,7 +139,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-005",
@@ -158,7 +167,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-006",
@@ -185,7 +195,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-007",
@@ -212,7 +223,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-008",
@@ -226,9 +238,9 @@
       "page_with_narrow_claim": 131,
       "scanned_page_index": 148,
       "primary_source_uri": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-      "source_read_method": "ORIGINAL_PRINT_PAGE_SCREENSHOT_AND_ADJACENT_WHERE_NEEDED",
+      "source_read_method": "DIRECT_INDEX_PAGE_FETCH_FAILED_ADJACENT_P130_EXAMINED",
       "source_scope_disposition": "SOURCE_LABEL_OR_PAGE_NOT_SUPPORTED",
-      "narrow_evidence_en": "Indexed Christmas-candle lighting by a named family member not established by printed p131; earlier family-lamp traditions cited elsewhere, needing exact owner/passage cross-check.",
+      "narrow_evidence_en": "Original printed p131 screenshot could not be retrieved after multiple attempts; neighbouring p130 discusses family Advent candle lighting but does not certify the exact named-family-member Christmas-candle claim.",
       "exact_source_claim_supported_on_checked_leaf": false,
       "source_location_repair_proposed": null,
       "original_edition_period": 1958,
@@ -239,7 +251,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": false
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-009",
@@ -266,7 +279,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-010",
@@ -293,7 +307,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-011",
@@ -320,7 +335,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-012",
@@ -347,7 +363,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-013",
@@ -374,7 +391,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-014",
@@ -401,7 +419,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-015",
@@ -428,7 +447,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-016",
@@ -455,7 +475,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-017",
@@ -482,7 +503,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-018",
@@ -512,7 +534,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-019",
@@ -539,7 +562,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-020",
@@ -566,7 +590,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-021",
@@ -593,7 +618,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-022",
@@ -620,7 +646,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-023",
@@ -647,7 +674,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-024",
@@ -674,7 +702,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-025",
@@ -701,7 +730,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-026",
@@ -728,7 +758,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-027",
@@ -755,7 +786,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-028",
@@ -782,7 +814,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-029",
@@ -809,7 +842,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-030",
@@ -836,7 +870,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-031",
@@ -863,7 +898,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-032",
@@ -890,7 +926,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-033",
@@ -917,7 +954,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-034",
@@ -944,7 +982,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-035",
@@ -971,7 +1010,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-036",
@@ -998,7 +1038,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-037",
@@ -1025,7 +1066,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-038",
@@ -1052,7 +1094,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-039",
@@ -1079,7 +1122,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-040",
@@ -1106,7 +1150,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-041",
@@ -1133,7 +1178,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-042",
@@ -1160,7 +1206,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-043",
@@ -1187,7 +1234,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-044",
@@ -1214,7 +1262,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-045",
@@ -1241,7 +1290,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-046",
@@ -1271,7 +1321,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-047",
@@ -1298,7 +1349,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-048",
@@ -1325,7 +1377,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-049",
@@ -1352,7 +1405,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-050",
@@ -1379,7 +1433,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-051",
@@ -1406,7 +1461,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-052",
@@ -1433,7 +1489,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-053",
@@ -1460,7 +1517,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-054",
@@ -1487,7 +1545,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-055",
@@ -1514,7 +1573,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-056",
@@ -1541,7 +1601,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-057",
@@ -1568,7 +1629,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-058",
@@ -1595,7 +1657,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-059",
@@ -1622,7 +1685,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-060",
@@ -1649,7 +1713,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-061",
@@ -1676,7 +1741,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     },
     {
       "review_id": "AO-CUSTOMS-A23-FINAL-062",
@@ -1703,7 +1769,8 @@
       "calendar_link_approved": false,
       "exact_indulgenced_work_matches": [],
       "en_fr_final_article_approved": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_index_page_image_successfully_loaded": true
     }
   ]
 }
