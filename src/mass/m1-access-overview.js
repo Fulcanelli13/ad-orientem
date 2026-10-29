@@ -36,6 +36,17 @@ export function m1AccessRows(selection,{fr=false,optionalRites=false}={}){
   return Object.freeze(entries.map(([id,title,value])=>Object.freeze({id,title,value})));
 }
 
+// Fail closed: no Introit from a pending/stale or substituted Calendar Proper.
+export function m1SelectedIntroit(legacy,{ready=false}={}){
+  if(!ready)return null;
+  const proper=legacy?.proper?.data;
+  const raw=proper?.introit?.lat;
+  if(typeof raw!=="string")return null;
+  const first=raw.split(/\r?\n/).map(x=>x.trim()).find(Boolean)||"";
+  if(!first)return null;
+  return first.length<=110?first:first.slice(0,110).replace(/\s+\S*$/,"").trim()+"…";
+}
+
 export function paintM1AccessRows(root,selection,{fr=false,optionalRites=false}={}){
   const holder=root?.querySelector?.("[data-m1-rows]");
   if(!holder)return null;
