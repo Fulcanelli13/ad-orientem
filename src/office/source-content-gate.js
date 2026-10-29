@@ -41,5 +41,32 @@ export function officeTranslationContentBlockers({latin,translation}={}){
         resolved:false,canPublish:false,
       }));
   }
+  // Pinned 1960 Latin source includes a Sunday commemoration at All
+  // Saints II Vespers. The matching French source-cell projection omits
+  // its antiphon AND collect: despite equal cell counts, this is not a
+  // complete parallel Office. Gate the *text contradiction*, not the year.
+  // A future source revision that restores the actual components can be
+  // reviewed independently; do not silently fabricate the lost prayers.
+  if(latin.hour==="VESPERS"&&latin.language==="la"&&
+     translation.language==="fr"){
+    const l=latin.sections.find(s=>
+      /commemoratio dominica xxiii post pentecosten i[.] novembris/i.test(normalized(s.text)));
+    if(l){
+      const tr=find(translation,l.sourceCellId);
+      const all=normalized((translation.sections??[]).map(s=>s.text).join("\n"));
+      const hasAntiphon=/jesus se retournant/.test(all);
+      const hasCollect=/pardonnez, nous vous en supplions, seigneur, les offenses de vos peuples/.test(all);
+      const header=/\b(?:commemoratio|commemoration|commemoraison|memoire)\b/.test(all);
+      if(!tr||!hasAntiphon||!hasCollect||!header)
+        blockers.push(Object.freeze({
+          date:latin.date,hour:latin.hour,language:"fr",
+          latinSourceCellId:l.sourceCellId,
+          translationSourceCellId:tr?.sourceCellId??l.sourceCellId,
+          reason:"FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE",
+          editorialResolution:"SOURCE_COMPOSER_TRANSLATION_ALIGNMENT_AND_1961_PROPER_REVIEW",
+          resolved:false,canPublish:false,
+        }));
+    }
+  }
   return Object.freeze(blockers);
 }
