@@ -62,11 +62,13 @@ const earlyExit=[["return '';", "PRECEDENCE_NO_COMMEMORATION"],
 const earlyStart=body.indexOf("  if ( $rule =~ /no\\s+");
 const earlyEnd=body.indexOf("  if ($rank[3] =~",earlyStart);
 if(earlyStart<0||earlyEnd<0)throw Error("OFFICE_DIAGNOSTIC_EARLY_RETURN_RANGE_CHANGED");
-let early=body.slice(earlyStart,earlyEnd);
+let early=body.slice(earlyStart,earlyEnd),nextAt=0;
 for(const [returnStatement,stage] of earlyExit){
-  const pos=early.indexOf(returnStatement);
+  const pos=early.indexOf(returnStatement,nextAt);
   if(pos<0)throw Error("OFFICE_DIAGNOSTIC_EARLY_EXIT_CHANGED:"+stage);
-  early=early.slice(0,pos)+traceReturn(stage)+"\n    "+early.slice(pos);
+  const injection=traceReturn(stage)+"\n    ";
+  early=early.slice(0,pos)+injection+early.slice(pos);
+  nextAt=pos+injection.length+returnStatement.length;
 }
 body=body.slice(0,earlyStart)+early+body.slice(earlyEnd);
 const exits=[
