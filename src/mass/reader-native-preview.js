@@ -75,6 +75,7 @@ import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rub
 import { withPublishedMissalParagraphRubrics } from "./reader-missal-rubrics.js";
 import {with1962RitusXIVParagraphRubrics} from "./1962-all-souls-consecutive-rites.js";
 import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubrics.js";
+import { withRequiemXIII3MissalNotes } from "./reader-requiem-conditions.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
 import { createLiveCanonStageObservationController } from "./reader-live-canon-stage-observation.js";
@@ -2249,7 +2250,10 @@ export async function mountNativeReaderPreview({
         organPermission:project1962ReaderOrganNote({
           riteId:kind,stageId:card.id??card.recordId,
         }),
-        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+        guide:card.guide ? {registryAvailable:true,text:
+          kind==="REQUIEM_ABSOLUTION" &&
+          String(ready.prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr") &&
+          card.guideFr ? card.guideFr : card.guide} : null,
       }),
     });
   }
@@ -2705,6 +2709,7 @@ export async function mountNativeReaderPreview({
             })
           : [],
       paragraphs:with1962RitusXIVParagraphRubrics(withLiveReadingSections(visibleCard,
+        withRequiemXIII3MissalNotes(
         String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
         ? withCertifiedSolemnMissalMinisters(
           withPublishedMissalParagraphRubrics(
@@ -2732,6 +2737,8 @@ export async function mountNativeReaderPreview({
           : withPublishedCanonParagraphRubrics(
               visibleCard.paragraphs,ready.data?.rubricEvents??null,{
                 form:ready.prepared?.session?.resolvedMass?.form,
+              }),ready.prepared?.session?.resolvedMass??null,{
+                language:ready.prepared?.readerPreferences?.language??"en",
               }),{mode:readerModel?.presentationMode}),
         ready.prepared?.session?.resolvedMass?.provenance?.allSoulsSuccession,{
           language:ready.prepared?.readerPreferences?.language??"en",

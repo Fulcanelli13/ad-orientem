@@ -1880,7 +1880,13 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
             event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
             typeof event.actor==="string" && event.actor.trim() &&
             /^SMIN-0(?:0[1-9]|1[0-9])$/.test(String(event.id)) &&
-            event.sourceId==="R18_SOLEMN_FORM_STATE")))
+            event.sourceId==="R18_SOLEMN_FORM_STATE") ||
+           (event.review==="RITUS_1962_REQUIEM_CANDLE_CONDITIONAL" &&
+            event.owner==="REQUIEM_XIII3_CONDITIONAL_SOURCE" &&
+            event.actor==="FAITHFUL" && event.sourceId==="MR62_RITUS" &&
+            event.kind==="CONDITIONAL_DIRECTION" &&
+            ["AO.SM.C0076","AO.SM.C0082","AO.SM.C0174"].includes(event.sourceCueId) &&
+            event.id==="AO.REQ.XIII3."+event.sourceCueId.slice(-5))))
         .map(event=>Object.freeze({
           id:String(event.id),displayText:event.displayText,actor:event.actor,
           shortAction:typeof event.shortAction==="string"?event.shortAction:null,
@@ -4418,6 +4424,8 @@ export function createReaderDomAdapter({
           // separately approved persistent priest state: not another action.
           const shortRubrics=alreadyPrintedRubric
             ? inlineRubrics.filter(event=>event.kind==="STATE" ||
+                (event.owner==="REQUIEM_XIII3_CONDITIONAL_SOURCE" &&
+                 event.review==="RITUS_1962_REQUIEM_CANDLE_CONDITIONAL") ||
                 // The paragraph itself is a source rubric: never print a
                 // duplicate action. Exact separately certified Solemn
                 // minister exceptions may still need their full rubric

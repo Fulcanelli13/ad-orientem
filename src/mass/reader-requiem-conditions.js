@@ -171,3 +171,60 @@ export function requiemOmittedOrdinaryCuesForResolvedMass(resolvedMass){
 export function isRequiemFirstPeacePrayerOmitted(cueId,prepared,conditions=null){
   return String(cueId??"")==="AO.SM.C0225"&&isExplicitRequiemMass(prepared,conditions);
 }
+
+
+// Ritus servandus XIII.3: the distribution of candles is CONDITIONAL.
+// These are static book/source notes, never an observed candle event, a
+// universal faithful posture, or a replacement for the canonical Mass cues.
+// The sermon and post-Mass lighting directions belong to the explicit
+// Absolution following-action, not the Mass's ordinary dismissal.
+export const REQUIEM_XIII3_SOURCE="https://usus-antiquior.github.io/ritus-servandus.html#XIII";
+export const REQUIEM_XIII3_NOTE_OWNER="REQUIEM_XIII3_CONDITIONAL_SOURCE";
+const REQUIEM_XIII3_NOTES=Object.freeze({
+  "AO.SM.C0076":Object.freeze({
+    en:"If candles are to be distributed, they are distributed after the Epistle.",
+    fr:"Si des cierges doivent être distribués, on les distribue après l’Épître.",
+  }),
+  "AO.SM.C0082":Object.freeze({
+    en:"If candles have been distributed, they are lit at the Gospel.",
+    fr:"Si des cierges ont été distribués, on les allume à l’Évangile.",
+  }),
+  "AO.SM.C0174":Object.freeze({
+    en:"If candles have been distributed, they are lit at the elevation of the Blessed Sacrament.",
+    fr:"Si des cierges ont été distribués, on les allume à l’élévation du Saint-Sacrement.",
+  }),
+});
+const REQUIEM_XIII3_FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+
+// Preserve the original text and event-owner lists. An unmatched/ordinary
+// source cue never acquires a Requiem-specific ceremonial explanation.
+export function withRequiemXIII3MissalNotes(paragraphs,resolvedMass,{language="en"}={}){
+  if(!Array.isArray(paragraphs))return Object.freeze([]);
+  if(!isExplicitRequiemMass({session:{resolvedMass}}) ||
+     !REQUIEM_XIII3_FORMS.has(String(resolvedMass?.form??"").toUpperCase()))
+    return Object.freeze(paragraphs);
+  const french=String(language).toLowerCase().startsWith("fr");
+  return Object.freeze(paragraphs.map(paragraph=>{
+    const notes=[...new Set(Array.isArray(paragraph?.sourceCueIds)?paragraph.sourceCueIds:[])]
+      .filter(cueId=>Object.hasOwn(REQUIEM_XIII3_NOTES,cueId))
+      .map(cueId=>Object.freeze({
+        id:"AO.REQ.XIII3."+cueId.slice(-5),
+        sourceCueId:cueId,
+        actor:"FAITHFUL",
+        kind:"CONDITIONAL_DIRECTION",
+        sourceId:"MR62_RITUS",
+        sourceUrl:REQUIEM_XIII3_SOURCE,
+        owner:REQUIEM_XIII3_NOTE_OWNER,
+        review:"RITUS_1962_REQUIEM_CANDLE_CONDITIONAL",
+        displayText:REQUIEM_XIII3_NOTES[cueId][french?"fr":"en"],
+        observedNow:false,
+      }));
+    if(!notes.length)return paragraph;
+    return Object.freeze({...paragraph,
+      publishedMissalRubrics:Object.freeze([
+        ...(Array.isArray(paragraph.publishedMissalRubrics)?paragraph.publishedMissalRubrics:[]),
+        ...notes,
+      ]),
+    });
+  }));
+}
