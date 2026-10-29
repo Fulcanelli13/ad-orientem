@@ -1,0 +1,89 @@
+{
+  "schema": "AO_SACRED_ART_KMSKA_89_OFFICIAL_PAGE_EVIDENCE_INITIAL_V1",
+  "date": "2026-10-29",
+  "purpose": "First exact official accession-and-title verified links for KMSKA accepted sources, preserving triptych parent and panel relationships without source choice transfer",
+  "sourceQueue": "data/calendar/sacred-art-phase1-kmska-89-official-identity-queue-20261029.v1.json",
+  "sourceQueueGitBlobSha": "a09c871d08f19cd7d5ca9c90938fb45cc5d500ed",
+  "counts": {
+    "kmskaSourceCards": 89,
+    "exactOfficialMuseumPagesVerified": 2,
+    "awaitingExactOfficialVerification": 87,
+    "verifiedTriptychComponentOrSurfaceRecords": 2,
+    "confirmedCanonical383LinksAdded": 0,
+    "sourcePhotosCertified": 0,
+    "userDecisionsChanged": 0,
+    "productionMutations": 0
+  },
+  "officialParentEvidence": {
+    "url": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-4",
+    "museumInventory": "208-210",
+    "type": "Small triptych, centre and wings, multiple depicted surfaces",
+    "priorFrozenDecision": "REJECT",
+    "sourceId": "kmska:z5h6lf",
+    "preserved": true
+  },
+  "rows": [
+    {
+      "sourceId": "kmska:7v3wb4",
+      "sourceBatch": "B3",
+      "userDecision": "IMPORT",
+      "originalReviewedTitle": "Aanbidding door de koningen",
+      "originalReviewedArtist": "Schilder: Meester van de Aanbidding te Antwerpen",
+      "accession": "208",
+      "officialObjectPage": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-3",
+      "officialVerified": {
+        "title": true,
+        "inventory": true,
+        "artist": true,
+        "paintingMedium": true
+      },
+      "objectRelation": {
+        "role": "central painted panel",
+        "parentMuseumInventory": "208-210",
+        "parentUrl": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-4",
+        "parentReviewSourceId": "kmska:z5h6lf",
+        "parentUserDecision": "REJECT",
+        "sourceDecisionNotTransferred": true
+      },
+      "photoLicenceCertified": false,
+      "nativePhotoVisualCertified": false,
+      "canonical383MatchEstablished": false,
+      "productionReleased": false
+    },
+    {
+      "sourceId": "kmska:9tct5i",
+      "sourceBatch": "B3",
+      "userDecision": "IMPORT",
+      "originalReviewedTitle": "Annunciatie",
+      "originalReviewedArtist": "Schilder: Meester van de Aanbidding te Antwerpen",
+      "accession": "209bis",
+      "officialObjectPage": "https://kmska.be/nl/meesterwerk/annunciatie",
+      "officialVerified": {
+        "title": true,
+        "inventory": true,
+        "artist": true,
+        "paintingMedium": true
+      },
+      "objectRelation": {
+        "role": "outer wing painted surface",
+        "parentMuseumInventory": "208-210",
+        "parentUrl": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-4",
+        "pairedSameTitleSurfaceInventory": "210bis",
+        "pairedReviewedSourceId": "kmska:hyinp7",
+        "pairedReviewDecision": "REJECT",
+        "sourceDecisionNotTransferred": true
+      },
+      "photoLicenceCertified": false,
+      "nativePhotoVisualCertified": false,
+      "canonical383MatchEstablished": false,
+      "productionReleased": false
+    }
+  ],
+  "restrictions": {
+    "noUniquePaintingCountInferred": true,
+    "doNotMergeAcceptedComponentWithRejectedWhole": true,
+    "doNotTransferApprovalAcrossWings": true,
+    "protectAllFrozenDecisions": true,
+    "productionMutation": false
+  }
+}
