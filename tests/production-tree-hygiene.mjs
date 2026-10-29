@@ -147,6 +147,21 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+  }else if(name==="directory-p84-worldwide-review-one-shot.yml"){
+    // Exact global 301-source review, research-only HTML on immutable review branch.
+    assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*research\/p84-worldwide-review-once-20261029/);
+    assert.match(source,/paths:\s*\n\s*-\s*data\/directory\/research\/\.run-p84-worldwide-review-20261029\.json/);
+    assert.match(source,/github\.ref == 'refs\/heads\/research\/p84-worldwide-review-once-20261029'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.match(source,/build-p84-worldwide-bulk-photo-review\.py/);
+    assert.match(source,/sha256sum -c SHA256SUMS/);
+    assert.match(source,/images_published/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:/);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
