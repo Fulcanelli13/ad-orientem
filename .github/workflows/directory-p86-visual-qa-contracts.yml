@@ -1,0 +1,28 @@
+name: Directory P86 actual visual QA ledger and generic-site photo protection
+on:
+  pull_request:
+    paths:
+      - data/directory/research/p86-actual-visual-photo-qa-301-20261029.json
+      - tools/directory/screen-worldwide-p83-photo-candidates.py
+      - tests/directory-p83-global-photo-screen-test.py
+      - tests/directory-p86-visual-qa-ledger-test.py
+      - .github/workflows/directory-p86-visual-qa-contracts.yml
+permissions:
+  contents: read
+jobs:
+  visual-qa-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify 301 assessed source rows, 52 non-approved choices, city-only holds
+        run: |
+          set -euo pipefail
+          python tests/directory-p86-visual-qa-ledger-test.py
+          python tests/directory-p83-global-photo-screen-test.py -v
+          node tests/production-tree-hygiene.mjs
