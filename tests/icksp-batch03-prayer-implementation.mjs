@@ -68,6 +68,8 @@ assert.match(litanyStyles,/data-ao-devotional-owner="litany"\] \.aoDevoCardScrol
  "The reader typography must be limited to the historical private Litany");
 assert.match(litanyStyles,/clamp\(18px,4\.7vw,22px\)\/1\.66/,
  "Historical litany source text must remain at least 18px");
+assert.match(litanyStyles,/data-ao-devotional-owner="litany"\]\[data-ao-devotional-dual-axis="true"\] \.aoBatch03LitanyUses\{[\s\S]*?display:flex!important/,
+ "Litany edition/use buttons must not be hidden by the generic dual-axis GuideNav suppression");
 assert.match(litanyFocus,/litanySourceLine=kind==="litany"&&Boolean\(p\.closest\("\.aoP435930LitanyVerses"\)\)/,
  "Do not mute entire historical litany invocations as focus context");
 
