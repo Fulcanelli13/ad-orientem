@@ -30,7 +30,7 @@ jobs:
           python scripts/art/sacred-art-rijks-rights-gated-review-b2-20261029.py --offline-smoke
       - name: Prepare official source metadata and CC0-only whole-image research sheets
         run: |
-          python scripts/art/sacred-art-rijks-rights-gated-review-b2-20261029.py --max-objects 140 --max-images 70 --delay 0.15 --timeout 16
+          python scripts/art/sacred-art-rijks-rights-gated-review-b2-20261029.py --max-objects 8 --max-images 2 --delay 0.15 --timeout 16
       - name: Verify no false legal, aesthetic or production promotion
         run: |
           python - <<'PY'
@@ -65,7 +65,8 @@ jobs:
           fi
           git config user.name "Ad Orientem sacred art source research"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/calendar/sacred-art-rijks-rights-gated-review-b2-20261029.v1.json docs/SACRED_ART_RIJKS_RIGHTS_GATED_REVIEW_B2_20261029.md assets/staged/sacred-art-rijks-b2-20261029/
+          git add data/calendar/sacred-art-rijks-rights-gated-review-b2-20261029.v1.json docs/SACRED_ART_RIJKS_RIGHTS_GATED_REVIEW_B2_20261029.md
+          if [ -d assets/staged/sacred-art-rijks-b2-20261029 ]; then git add assets/staged/sacred-art-rijks-b2-20261029/; fi
           git diff --cached --check
           if git diff --cached --quiet; then echo 'No changed evidence'; exit 0; fi
           git commit -m "research(art): persist verified Rijks image rights and full-field aesthetic research previews"
