@@ -149,7 +149,18 @@ def screen(p80,p80_countries,p81_rows,geos=None):
             sha=photo["original_sha1_claim"].lower()
             require(re.fullmatch(r"[a-f0-9]{40}",sha),"Invalid P81 original SHA1 claim")
             key=norm(photo["file_title"])
-            require(key not in group,"Duplicate title in one anchor")
+            if key in group:
+                existing=group[key]
+                if (existing["original_sha1_claim"]!=sha
+                    or existing["commons_page_id"]!=photo["commons_page_id"]):
+                    existing["unresolved_same_title_source_conflict"]=True
+                    existing.setdefault("conflicting_source_claims",[]).append({
+                        "original_sha1_claim":sha,
+                        "commons_page_id":photo["commons_page_id"]})
+                else:
+                    existing["repeated_identical_source_results"]=(
+                        existing.get("repeated_identical_source_results",0)+1)
+                continue
             group[key]={"physical_anchor_id":aid,"country":r["country"],
                 "place_name":r["place_name"],"place_city_hint":city,
                 "source":["P81_COMMONS_DIRECT"],"file_title":photo["file_title"],
@@ -221,7 +232,9 @@ def screen(p80,p80_countries,p81_rows,geos=None):
     for p in index:
         shared=len(bysha.get(p["original_sha1_claim"],set()))>1 if p["original_sha1_claim"] else False
         p["same_original_multiple_site_ids"]=shared
-        if shared:
+        if p.get("unresolved_same_title_source_conflict"):
+            p["screening_disposition"]="HOLD_CONFLICTING_COMMONS_SOURCE_REVISIONS"
+        elif shared:
             p["screening_disposition"]="HOLD_SHARED_IMAGE_ACROSS_DIFFERENT_SITES"
         elif p["rights_metadata_status"]!="SUPPORTED_LICENSE_METADATA_CLAIM_NOT_INDEPENDENTLY_CLEARED":
             p["screening_disposition"]=p["rights_metadata_status"]
