@@ -1,0 +1,103 @@
+name: One-shot full 2579-site eight-country Commons metadata rights preflight
+on:
+  push:
+    branches:
+      - research/directory-eight-country-commons-meta-once-20261029
+    paths:
+      - data/directory/research/.run-eight-country-commons-rights-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-eight-country-commons-rights-20261029-once
+  cancel-in-progress: false
+jobs:
+  metadata-only:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-eight-country-commons-meta-once-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Review release holds, validate exact marker, run offline tests
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-commons-bulk-metadata-test.py -v
+          python - <<'PY'
+          import json
+          j=json.load(open("data/directory/research/.run-eight-country-commons-rights-20261029.json"))
+          assert j=={"schema":"AO_DIRECTORY_EIGHT_COUNTRY_COMMONS_RIGHTS_ONCE_V1",
+                     "physical_anchors":2579,"countries":8,"download_images":False,
+                     "publication":False}
+          PY
+      - name: Load immutable eight-country image index from research-only archive
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-country-media-index:refs/remotes/origin/research/directory-country-media-index'
+          git worktree add --detach /tmp/ao-eight-country-meta-input refs/remotes/origin/research/directory-country-media-index
+          src="/tmp/ao-eight-country-meta-input/data/directory/research/worldwide-media-sources/country-first-20261029-v1"
+          test -f "$src/worldwide-source-index.json"
+          test -f "$src/audit.json"
+          python - <<'PY'
+          import json,pathlib
+          d=pathlib.Path('/tmp/ao-eight-country-meta-input/data/directory/research/worldwide-media-sources/country-first-20261029-v1')
+          j=json.loads((d/'worldwide-source-index.json').read_text())
+          h=json.loads((d/'audit.json').read_text())
+          c=j['counts']
+          assert c['physical_anchors_indexed']==2579
+          assert c['countries_successful']+c.get('countries_with_source_error',0)==8
+          assert c['photographic_lead_links']>=42
+          assert c['published_images']==0
+          assert h['counts']['successful_countries']+h['counts']['error_countries']==8
+          assert j['publication']=='RESEARCH_ONLY_NEVER_APP_VISIBLE'
+          PY
+      - name: Verify all unique Commons titles, 25 per API request, strictly no image download
+        run: |
+          set -euo pipefail
+          src="/tmp/ao-eight-country-meta-input/data/directory/research/worldwide-media-sources/country-first-20261029-v1/worldwide-source-index.json"
+          python tools/directory/verify-worldwide-commons-source-metadata.py \
+            --index "$src" \
+            --output /tmp/ao-eight-country-commons-rights-report.json \
+            --offset 0 --limit 1500 --delay-seconds 4
+          python - <<'PY'
+          import json
+          j=json.load(open('/tmp/ao-eight-country-commons-rights-report.json'))
+          c=j['counts']
+          assert c['source_index_anchors']==2579
+          assert c['selected_unique_titles']<=1500
+          assert c['selected_unique_titles']>0
+          assert c['original_images_downloaded']==0
+          assert c['images_approved']==0
+          assert c['images_published']==0
+          assert all(r['publication']=='RESEARCH_ONLY_NEVER_APP_VISIBLE' for r in j['records'])
+          print('EIGHT_COUNTRY_COMMONS_META_RESULTS',json.dumps(c,sort_keys=True))
+          PY
+      - name: Archive non-public preflight report without mutating the public site
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-country-commons-rights:refs/remotes/origin/research/directory-country-commons-rights' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-country-commons-rights; then
+            git switch -C research/directory-country-commons-rights origin/research/directory-country-commons-rights
+          else
+            git fetch --no-tags origin main
+            git switch -c research/directory-country-commons-rights origin/main
+          fi
+          target="data/directory/research/commons-rights-preflight/eight-country-20261029"
+          test ! -e "$target" || { echo "Immutable rights report already exists"; exit 1; }
+          mkdir -p "$target"
+          cp /tmp/ao-eight-country-commons-rights-report.json "$target/commons-rights-report.json"
+          git add "$target/commons-rights-report.json"
+          test "$(git diff --cached --name-only | wc -l)" -eq 1
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): batch-verify eight-country Commons original metadata, hold all subjects"
+          git push origin HEAD:refs/heads/research/directory-country-commons-rights
