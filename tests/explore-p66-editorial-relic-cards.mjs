@@ -60,7 +60,8 @@ assert.ok(french.includes("Trésors sacrés"));
 assert.ok(french.includes("Sainte Couronne"));
 assert.ok(french.includes("Source de conservation"));
 assert.ok(french.includes("exposition au public"));
-assert.ok(!french.includes("Lieu de conservation ou de vénération décrit par la source citée"));
+assert.ok(!renderPlaceSacredTreasures(notre,"fr").includes("Lieu de conservation ou de vénération décrit par la source citée"),
+  "new editorial relic cards must not repeat the generic French placeholder");
 
 const paray=profile("place:FR:sanctuaire-sacre-coeur-paray");
 assert.ok(paray.editorial_intro,"existing published place story must not be rewritten");
