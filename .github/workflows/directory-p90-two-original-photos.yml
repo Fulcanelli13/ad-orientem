@@ -1,13 +1,12 @@
-name: P90 verify two original Commons church photos without publication
+name: P90 read-only verification of two original Commons church photos
 on:
-  push:
-    branches:
-      - research/p86-directory-visual-qa-reviewed-20261029
+  pull_request:
+    branches: [main]
     paths:
       - tools/directory/p90-acquire-two-commons-originals.py
       - .github/workflows/directory-p90-two-original-photos.yml
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: directory-p90-two-source-originals-once
   cancel-in-progress: false
@@ -19,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: true
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -46,25 +45,3 @@ jobs:
           path: /tmp/p90-originals/
           retention-days: 3
           if-no-files-found: error
-      - name: Preserve exact two-source originals permanently in isolated research branch
-        env:
-          AO_SOURCE_BRANCH: research/p90-original-two-church-photos-20261029
-        run: |
-          set -euo pipefail
-          if git ls-remote --exit-code --heads origin "$AO_SOURCE_BRANCH" >/dev/null; then
-            echo "Permanent P90 archive already exists, refuse overwriting" >&2
-            exit 1
-          fi
-          git fetch --no-tags origin main
-          git switch -c "$AO_SOURCE_BRANCH" origin/main
-          target=docs/research/directory/p90-verified-two-originals-20261029
-          test ! -e "$target"
-          mkdir -p "$target"
-          cp /tmp/p90-originals/* "$target/"
-          (cd "$target" && sha256sum -c SHA256SUMS)
-          git add "$target"
-          test "$(git diff --cached --name-only | wc -l)" -eq 6
-          git -c user.name='ad-orientem-research-bot' \
-            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-            commit -m "research(directory): checksum-verified original Commons photos for two churches"
-          git push origin "HEAD:refs/heads/$AO_SOURCE_BRANCH"
