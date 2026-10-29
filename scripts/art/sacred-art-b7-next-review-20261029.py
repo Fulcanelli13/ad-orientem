@@ -169,27 +169,63 @@ def walters_candidates():
 
 
 def cma_candidates():
- d=json.loads((D/'sacred-art-kmska-cleveland-60page-original-evidence-20261029.v1.json').read_text())
- raw=[x for x in d['records'] if x.get('provider')=='Cleveland']
- result=[]
- for x in raw:
-  med=wal.low(x.get('technique'))
-  title=wal.low(x.get('title'))
-  artist=x.get('artist') or ''
-  if x['id'] in previous or any(z in title for z in ('krishna','colonnade of saint peter','orange christ')):continue
-  if any(z in med for z in ('paper','watercolor','drawing','print','manuscript')):continue
-  if not any(z in med for z in ('oil','tempera')):continue
-  if any(z in wal.low(artist) for z in ('fra angelico','el greco')):continue
-  if already_catalogued(x.get('title'),artist):continue
-  url=x.get('previewURL') or ''
-  if not url.startswith('https://openaccess-cdn.clevelandart.org/'):continue
-  result.append({'id':x['id'],'provider':'Cleveland','sourceInstitution':'Cleveland Museum of Art',
-   'objectId':x['objectId'],'accession':x.get('accession'),'title':x['title'],
-   'artist':artist,'technique':x['technique'],'year':'',
-   'objectUrl':x['objectUrl'],'previewURL':url,
-   'sourceImageRights':'CLEVELAND_EXACT_ARTWORK_CC0',
-   'rightsConflict':None,'productionImageRightsCleared':False,'productionImported':False})
- return result,{'officialSourceCandidates':len(raw),'eligibleDistinct':len(result)}
+ """Full extra official CMA search: the previously saved 58 leads are already
+ represented in completed 60 review, so do NOT recycle them."""
+ source=load('sacred-art-next-round-b4r-20261029.py')
+ queries=[
+ 'Daniel', 'Moses', 'Abraham', 'Isaac', 'Jacob', 'Joseph', 'Judith',
+ 'Esther', 'Tobias', 'Tobit', 'Elijah', 'Elisha', 'Jeremiah', 'Isaiah',
+ 'Ruth', 'Samson', 'King David', 'Job', 'Noah', 'Eve',
+ 'Baptism', 'Christ', 'Jesus', 'Virgin Mary', 'Madonna', 'Nativity',
+ 'Annunciation', 'Crucifixion', 'Resurrection', 'Martyrdom',
+ 'Saint Jerome', 'Saint Sebastian', 'Saint Michael', 'Saint Lawrence',
+ 'Saint John', 'Saint Peter', 'Saint Paul', 'Saint Catherine', 'Saint Theresa',
+ 'Saint Dominic', 'Saint Francis', 'Saint Joseph', 'Holy Family',
+ 'Gethsemane', 'Emmaus', 'Eucharist', 'Presentation', 'Holy Trinity',
+ 'Visitation', 'Adoration', 'Saint Agnes', 'Saint Lucy', 'Saint Thomas',
+ 'Saint Andrew', 'Saint Anthony', 'Saint Roch', 'Pieta',
+ 'Magdalene', 'Saint Ambrose', 'Saint Bernard', 'Saint Cecilia',
+ 'Saint Christopher', 'Saint Francis Xavier', 'Bishop', 'Apostles'
+ ]
+ # Official source licences are object-specific. Only CC0 works with the
+ # source institution's unaltered web-image URL may enter preview selection.
+ results={};errors=[];qcount=0
+ for term in queries:
+  for page in range(3):
+   url=source.API+'?'+urllib.parse.urlencode({'q':term,'has_image':1,
+       'limit':100,'skip':page*100})+'&cc0'
+   try:
+    doc=source.get(url,timeout=16)
+   except Exception as ex:
+    errors.append({'term':term,'page':page,'error':str(ex)[:150]})
+    break
+   qcount+=1
+   raw=doc.get('data') or []
+   for x in raw:
+    id='cma:'+str(x.get('id'))
+    if id in previous or id in results:continue
+    title=wal.low(x.get('title'))
+    if any(z in title for z in ('krishna','orange christ','colonnade of saint peter',
+        'st. petersburg','church interior','view of the church','abraham lincoln')):continue
+    hit=source.eligible(x)
+    if not hit:continue
+    artist,url=hit
+    if already_catalogued(x.get('title'),artist):continue
+    results[id]={'id':id,'provider':'Cleveland',
+      'sourceInstitution':'Cleveland Museum of Art',
+      'objectId':str(x['id']),'accession':x.get('accession_number'),
+      'title':x.get('title'),'artist':artist,'technique':x.get('technique'),
+      'year':x.get('creation_date_earliest') or '',
+      'objectUrl':x.get('url') or 'https://www.clevelandart.org/art/'+str(x.get('accession_number') or x['id']),
+      'previewURL':url,'sourceImageRights':'CLEVELAND_EXACT_ARTWORK_CC0',
+      'rightsConflict':None,'productionImageRightsCleared':False,
+      'productionImported':False}
+   if len(raw)<100:break
+  if len(results)>=65:break
+ result=sorted(results.values(),key=rank_review)
+ return result,{'queryCount':qcount,'eligibleDistinct':len(result),
+    'errors':errors[:12], 'previouslyReviewedCount':len(previous)}
+
 def cma_check(url):
  p=urllib.parse.urlparse(url)
  if p.scheme!='https' or p.hostname!='openaccess-cdn.clevelandart.org' or not p.path.endswith('.jpg'):
