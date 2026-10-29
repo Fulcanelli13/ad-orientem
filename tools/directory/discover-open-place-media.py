@@ -663,9 +663,14 @@ def openverse_discovery(client, venue):
     output = {kind: [] for kind in CATEGORIES}
     variants = search_name_variants(venue["name"])
     country = COUNTRY_TERMS.get(str(venue["country"]).upper(), ("",))[0]
+    # First query remains country-specific; the fallback drops the country
+    # qualifier to improve recall, but retains the venue name and all holds.
+    query_options = [" ".join(filter(None, (name, venue.get("locality", ""), country)))[:200]
+                     for name in variants[:OPENVERSE_REQUEST_BUDGET_PER_VENUE]]
+    if len(query_options) < OPENVERSE_REQUEST_BUDGET_PER_VENUE:
+        query_options.append(" ".join(filter(None, (variants[0], venue.get("locality", ""))))[:200])
     searched = []
-    for name in variants[:OPENVERSE_REQUEST_BUDGET_PER_VENUE]:
-        query = " ".join(filter(None, (name, venue.get("locality", ""), country)))[:200]
+    for query in query_options[:OPENVERSE_REQUEST_BUDGET_PER_VENUE]:
         if query in searched:
             continue
         searched.append(query)
