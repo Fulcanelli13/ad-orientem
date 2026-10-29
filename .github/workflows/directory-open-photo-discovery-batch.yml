@@ -2,6 +2,15 @@ name: Directory open church photos - branch-only archive
 on:
   workflow_dispatch:
     inputs:
+      wave:
+        description: "exterior first; interior and altar in second wave; all for legacy pilots"
+        required: true
+        type: choice
+        options:
+          - exterior
+          - interior
+          - all
+        default: exterior
       offset:
         description: "Frozen R49 starting record (0 to 1878)"
         required: true
@@ -38,21 +47,24 @@ jobs:
           python -c 'import os; a=int(os.environ["OFFSET"]); n=int(os.environ["LIMIT"]); assert 0<=a<1879 and 1<=n<=500 and a+n<=1879'
       - name: Discover only (no image downloads, no app publication)
         env:
+          WAVE: ${{ inputs.wave }}
           OFFSET: ${{ inputs.offset }}
           LIMIT: ${{ inputs.limit }}
         run: |
           mkdir -p /tmp/ad-orientem-photo-research
           python tools/directory/discover-open-place-media.py \
-            --offset "$OFFSET" --limit "$LIMIT" \
-            --output "/tmp/ad-orientem-photo-research/r49-$OFFSET-$LIMIT.json"
+            --offset "$OFFSET" --limit "$LIMIT" --wave "$WAVE" \
+            --output "/tmp/ad-orientem-photo-research/r49-$WAVE-$OFFSET-$LIMIT.json"
       - name: Require a usable result; refuse widespread API failure
         env:
+          WAVE: ${{ inputs.wave }}
           OFFSET: ${{ inputs.offset }}
           LIMIT: ${{ inputs.limit }}
         run: |
-          python -c 'import json,os; a=json.load(open("/tmp/ad-orientem-photo-research/r49-"+os.environ["OFFSET"]+"-"+os.environ["LIMIT"]+".json")); total=sum(len(row["errors"]) for row in a["venues"]); assert a["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE" and a["image_downloads"]==0 and a["publications"]==0 and total<len(a["venues"])*3, "Commons search failed for every category"'
+          python -c 'import json,os; a=json.load(open("/tmp/ad-orientem-photo-research/r49-"+os.environ["WAVE"]+"-"+os.environ["OFFSET"]+"-"+os.environ["LIMIT"]+".json")); total=sum(len(row["errors"]) for row in a["venues"]); assert a["wave"]==os.environ["WAVE"] and a["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE" and a["image_downloads"]==0 and a["publications"]==0 and total<len(a["venues"])*3, "Commons search failed for every category"'
       - name: Archive metadata on research branch only (never main)
         env:
+          WAVE: ${{ inputs.wave }}
           OFFSET: ${{ inputs.offset }}
           LIMIT: ${{ inputs.limit }}
         run: |
@@ -65,12 +77,12 @@ jobs:
           fi
           target="data/directory/research/photo-candidates"
           mkdir -p "$target"
-          cp "/tmp/ad-orientem-photo-research/r49-$OFFSET-$LIMIT.json" "$target/r49-$OFFSET-$LIMIT.json"
-          git add "$target/r49-$OFFSET-$LIMIT.json"
+          cp "/tmp/ad-orientem-photo-research/r49-$WAVE-$OFFSET-$LIMIT.json" "$target/r49-$WAVE-$OFFSET-$LIMIT.json"
+          git add "$target/r49-$WAVE-$OFFSET-$LIMIT.json"
           if git diff --cached --quiet; then
             echo "Research metadata unchanged"
             exit 0
           fi
           git -c user.name='ad-orientem-research-bot' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-            commit -m "research(directory): Commons candidate metadata R49 $OFFSET-$LIMIT (no images)"
+            commit -m "research(directory): $WAVE candidates R49 $OFFSET-$LIMIT (no images)"
           git push origin HEAD:refs/heads/research/directory-photo-candidates
