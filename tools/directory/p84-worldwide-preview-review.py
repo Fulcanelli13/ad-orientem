@@ -136,6 +136,24 @@ def screen_group(rows,pages,base,out,delay,thumb_loader=None):
             if delay:time.sleep(delay)
         except Exception as exc:
             entry["hold_reason"]=type(exc).__name__+":"+str(exc)[:160]
+            # QA only: a source-metadata hold must not prevent visual inspection.
+            # This thumbnail is a research reference, NOT a verified Commons
+            # original, licensed image, or photograph of the correct church.
+            link=fallback_url(r)
+            if link:
+                try:
+                    thumb=(thumb_loader or P79.thumbnail)({"thumburl":link})
+                    check(isinstance(thumb,Image.Image) and min(thumb.size)>60,
+                          "UNVERIFIED_QA_PREVIEW_NOT_DECODABLE")
+                    name="previews/p84-%05d.jpg"%(rowindex+1)
+                    target=out/name;target.parent.mkdir(parents=True,exist_ok=True)
+                    thumb.convert("RGB").save(target,format="JPEG",quality=77,optimize=True)
+                    entry["preview_local_path"]=name
+                    entry["preview_sha256"]=sha(target)
+                    entry["preview_verified"]=True
+                    entry["qa_only_thumbnail_metadata_hold"]=True
+                except Exception as preview_exc:
+                    entry["qa_thumbnail_error"]=type(preview_exc).__name__+":"+str(preview_exc)[:130]
         scanned.append(entry)
     return scanned
 
@@ -259,7 +277,7 @@ def consolidate(queue,summary,parts,out):
     result=template.replace(marker,"const RECORDS="+data+";\nconst SUMMARY="+stat+";")
     (out/"index.html").write_text(result,encoding="utf8")
     for start in range(0,len(pictures),25):
-        image_sheet(pictures[start:start+25],parts,start//25)
+        image_sheet(pictures[start:start+25],out,start//25)
     print("P84_WORLDWIDE_COMPLETE="+json.dumps(archive_summary,sort_keys=True),flush=True)
     return archive_summary
 
