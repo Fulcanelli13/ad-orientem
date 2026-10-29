@@ -99,6 +99,22 @@ class Screening(unittest.TestCase):
         self.assertFalse(index[0]["rights_independently_cleared"])
         self.assertEqual(counts["HOLD_CONFLICTING_COMMONS_SOURCE_REVISIONS"],1)
 
+    def test_city_only_site_cannot_promote_to_photo_review(self):
+        older,countries,rows=corpus()
+        rows[0]["place_name"]="Bergen"
+        rows[0]["source_description_hint"]="5 Road, 5003 Bergen, Norway"
+        rows[0]["source_media_candidates"]=[
+            photo("File:Bergen Church Bergen.jpg","a"*40,"Bergen")]
+        rows[0]["candidate_count"]=1
+        rows[0]["search_status"]="SEARCH_SUCCESS_WITH_CANDIDATES"
+        anchors,index,queue,counts=p83.screen(older,countries,rows)
+        self.assertEqual(len(index),1)
+        self.assertEqual(queue,[])
+        self.assertEqual(index[0]["screening_disposition"],
+            "HOLD_GENERIC_LOCALITY_EXACT_BUILDING_UNIDENTIFIED")
+        self.assertEqual(counts["HOLD_GENERIC_LOCALITY_EXACT_BUILDING_UNIDENTIFIED"],1)
+        self.assertFalse(index[0]["exact_site_verified"])
+
     def test_valid_locality_gives_research_preview_not_approval(self):
         older,countries,rows=corpus()
         rows[0]["source_media_candidates"]=[photo("File:Chapelle Saint-Jean-Marie-Vianney Samoreau.jpg","a"*40,"Samoreau")]
