@@ -44,13 +44,15 @@ export function createOfficeConditionalSourceReader({
   throw Error("OFFICE_CONDITIONAL_READER_CONFIG_INVALID");
  const filenames=createOfficePinnedFilenameLookup(filenameIndex);
  const cache=new Map();
+ let distinctReadsAttempted=0;
  async function readOne(path){
   const url=officePinnedOriginalSourceUrl(path);
   if(filenames.lookup(path).filenameStatus!=="PINNED_LATIN_FILENAME_LISTED")
    throw Error("OFFICE_CONDITIONAL_SOURCE_FILENAME_NOT_INDEXED");
   if(!cache.has(path)){
-   if(cache.size>=maxDistinctReads)
+   if(distinctReadsAttempted>=maxDistinctReads)
     throw Error("OFFICE_CONDITIONAL_SOURCE_READ_BUDGET_EXHAUSTED");
+   distinctReadsAttempted++;
    const promise=(async()=>{
     const response=await fetchSource(url,Object.freeze({
      method:"GET",mode:"cors",credentials:"omit",redirect:"error",
@@ -95,7 +97,7 @@ export function createOfficeConditionalSourceReader({
   schema:OFFICE_CONDITIONAL_SOURCE_READER,
   sourceRevision:DIVINUM_OFFICIUM_PIN,
   readOne,readDateLead,cachedSourceCount:()=>cache.size,
-  remainingReadBudget:()=>maxDistinctReads-cache.size,
+  remainingReadBudget:()=>maxDistinctReads-distinctReadsAttempted,
   // No clearCache(): explicit bounded request budget survives failures.
   bulkReadSupported:false,persistentArchiveSupported:false,
   officeAppointmentSupported:false
