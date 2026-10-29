@@ -21,6 +21,12 @@ The scores in this table were computed **before** the subsequent day-five/day-ei
 
 The reproducible [single-pass reader/render script](../../tools/pray/bulk-original-print-62-visual-review.mjs) and [per-day 62-entry permanent evidence](../../data/pray/original-print-62-bulk-review-20261029.v1.json) include source-cohort IDs, PDF zero-based page windows, OCR gaps, and the negative certification state for every day. The full historical PDFs are **not** copied into Git. Temporary source-page renderings are three-day GitHub Actions review artifacts; the reproducible script and original-source hashes remain permanent.
 
+### Post-correction recheck — independently rerun
+
+The complete four-book [post-correction run](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40881455788) succeeded using the edited live V4 corpus. It again produced **62 source-page comparisons and 69 original scan-page images**, now **40** at least 95% and **22** at 80–95%. The only changed scores were **Holy Souls day 5: 83.33% → 95.35%** and **day 8: 86.60% → 91.84%**, precisely the two wording corrections applied after inspecting the actual source pictures. Remaining unmatched text is confined to PDF/OCR-layer gaps around printed forms and does **not** establish a new historical variant by itself.
+
+[Consolidated corrected-text visual review package](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40881455788/artifacts/12900457415). The package is temporary (three days); the scan-and-render code and permanent 62-row evidence retain the route to regenerate it free of charge.
+
 ## Verified corrections arising from the photographs
 
 ### Holy Souls, day five — complete missing resolution restored
