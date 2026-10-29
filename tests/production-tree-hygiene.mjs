@@ -76,6 +76,22 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-global-photo-76-auto.yml"){
+    // Upstream exact successful research run ONLY, writes one non-public global metadata archive.
+    assert.match(source,/workflow_run:\s*\n\s*workflows:/);
+    assert.match(source,/One-shot worldwide Directory source photography - remaining 68 countries plus AU retry/);
+    assert.match(source,/github\.event\.workflow_run\.conclusion == 'success'/);
+    assert.match(source,/github\.event\.workflow_run\.head_sha == '7a6ffa9a598dc1ad17673830e5c273625d18e1a6'/);
+    assert.match(source,/github\.event\.workflow_run\.repository\.full_name == 'Fulcanelli13\/ad-orientem'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:|^  push:/m);
+    assert.match(source,/--limit 1500 --offset 0 --delay-seconds 4/);
+    assert.match(source,/original_images_downloaded/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
