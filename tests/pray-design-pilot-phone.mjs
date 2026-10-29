@@ -36,6 +36,16 @@ try{
    const base="#aoPray435930.open";
    const mosaic=page.locator(base+" [data-ao-pray-pilot-mosaic]");
    assert.equal(await mosaic.locator(".aoPrayPilotTile").count(),9,"nine real discovery doors");
+   const mosaicGeometry=await mosaic.evaluate(node=>{
+    const box=node.getBoundingClientRect();
+    const tiles=[...node.querySelectorAll(".aoPrayPilotTile")].map(x=>({
+      width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height
+    }));
+    return {width:box.width,display:getComputedStyle(node).display,
+      home:node.closest(".aoPrayPilotHome")?.getBoundingClientRect().width,tiles};
+   });
+   assert.ok(mosaicGeometry.width>=width*.78&&mosaicGeometry.tiles.every(x=>x.width>=width*.19&&x.height>=74),
+    "R1.1 mosaic must fill six-column phone grid, not collapse to a thin strip: "+JSON.stringify(mosaicGeometry));
    await page.screenshot({path:resolve(output,"discovery-"+width+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
