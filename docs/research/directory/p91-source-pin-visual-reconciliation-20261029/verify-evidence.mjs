@@ -37,6 +37,8 @@ for (const key of Object.keys(expected)) {
 }
 if (heldSites.size !== 131 || ledger.unresolved_distinct_physical_site_ids !== 131) fail('expected 141 held physical sites');
 if (photoIds.size !== 385) fail('must preserve 385 distinct indices');
+if (ledger.total_subject_corrob !== 57 || ledger.still_unverified !== 238 || ledger.distinct_subject_site_ids !== 19 || ledger.previous_subject_corrob !== 17 || ledger.new_subject_corrob !== 40) fail('current P92 summary must be self-consistent');
+if (!ledger.p91_historical_summary || ledger.p91_historical_summary.total_subject_corrob !== 17 || ledger.p91_historical_summary.still_unverified !== 278 || ledger.p91_historical_summary.distinct_subject_site_ids !== 9) fail('P91 historical snapshot missing or altered');
 const newlyCorrob = ledger.records.filter(row => row.p92_research_outcome === 'EXACT_CHURCH_CATEGORY_AND_INDEPENDENT_BUILDING_RECORD_CORROBORATED');
 if (newlyCorrob.length !== 40 || new Set(newlyCorrob.map(row => row.physical_anchor_id)).size !== 10 || ledger.p92_new_subject_corrob !== 40 || ledger.p92_new_subject_sites !== 10) fail('P92 must include 40 specific exact-site research matches at 10 physical sites');
 console.log('PASS: 385 rows; 90 wrong buildings; 57 research-only subject matches (40 new P92); 238 holds at 131 sites; zero image rights/publications.');
