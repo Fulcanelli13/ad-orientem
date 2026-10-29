@@ -29,6 +29,7 @@ const cohortUrls={
   'https://fisheaters.com/srpdf/TheCatholicPrayerBook1883.pdf'
  ],
  hammer_1909:[
+  'https://www.catholickingdom.com/s_Library/Books/M/Mary_Help_of_Christians_HAMMER_OCR_CK.pdf',
   'https://archive.org/download/MaryHelpOfChristians/MaryHelpOfChristians.pdf',
   'https://archive.org/download/maryhelpofchristi00hamm/maryhelpofchristi00hamm.pdf'
  ],
