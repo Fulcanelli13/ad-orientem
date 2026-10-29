@@ -642,3 +642,78 @@ for the full Hour in correct order; authoritative Vespers commemoration
 appointment; all three language alignments; and original-print/rights
 review. Until those gates exist, retain the current reader disabled and
 use no scheduled annual raw-source downloads.
+
+## Pinned standard-prayer and psalm-verse source expansion — research only
+
+**Original source check:** at the immutable DivinumOfficium revision
+`126a07f91ede04664108abb6fb20ace3f4de14b9`:
+
+- `web/cgi-bin/DivinumOfficium/LanguageTextTools.pm` defines
+  `prayer(name,language)` from the same-language
+  `Psalterium/Common/Prayers.txt` source. The source has explicit
+  `[Qui vivis]`, `[Qui tecum]`, `[Qui tecum eiusdem]`,
+  `[Per Dominum]`, `[Per Dominum eiusdem]` and
+  `[Per eumdem]` in **Latin, English and French**. Unlike the
+  upstream runtime fallback, Ad Orientem rejects a missing locale
+  instead of silently using the fallback text.
+- `web/cgi-bin/horas/horasscripts.pl` has a `psalm` function
+  that selects `Psalterium/Psalmorum/PsalmN.txt` and applies
+  additional contextual rules. The pinned plain
+  `Psalm116.txt` has source-numbered verses in all three languages;
+  `Tempora/Pasc0-0.txt` contains a plain `&psalm(116)` call
+  in a special Vespers source section. These observations do not
+  establish the Gloria Patri/antiphon rules for a particular Hour.
+
+**Implementation on PR #1950:**
+
+- Existing `src/office/at-reference-resolver.js` supports opt-in
+  `enableStandardPrayers: true` for **only the six named
+  source-owned conclusions**. It reads each explicitly selected
+  `Psalterium/Common/Prayers#section` via the **same injected
+  parsed source host**, preserves exact per-language dependency
+  traces, and blocks other `$...` macros.
+- Opt-in `enablePsalmVerses: true` with caller-injected
+  `readPsalmSource(path,language)` supports **only plain**
+  `&psalm(N)` for 1–150. It validates pinned revision/path/language,
+  psalm-number and increasing verse labels, and preserves verse
+  references without synthesizing translations. Range arguments,
+  missing/incorrect verses, number mismatch, unsupported operators,
+  redirects or other source directives must not be treated as
+  supported Psalterium composition. It does **not** silently append
+  Gloria Patri, antiphons, chant accents or rubrical exceptions.
+  Source content is read only on demand, not archived or generated
+  for a whole year.
+- `src/office/mass-host-source-bridge.js` exposes
+  `createOfficeAtHostBridge`, which calls the SAME pinned
+  `hostResolver.resolveSource(...)` adapter as the original
+  `createOfficeMassHostBridge` — no new permanent source storage,
+  app architecture, independent fetcher or Mass-calendar inference.
+- `src/office/structured-hour-draft.js` keeps exact
+  per-language prayer/psalm source traces, **explicitly counts
+  verse-only psalm components**, and forces
+  `psalmDoxologyAndAntiphonVerified: false`. The
+  `source-acceptance-slice` converts ordinary source/psalm
+  failures into visible `WITHHELD` results, not an incomplete
+  published Hour.
+
+The first **Advent I First Vespers** source acceptance test now
+verifies two trilingual components — named antiphon and the
+`[Oratio]` collect expanded by the source-owned `$Qui vivis`
+section. A missing French ending withholds the entire draft.
+The **Easter** test exercises `&psalm(116)` as a
+**verse-only research component**, with doxology/antiphon and
+complete-Hour approval remaining false.
+
+    node --test tests/divine-office-at-reference-resolver.mjs
+    node --test tests/divine-office-source-acceptance-slice.mjs
+    node --test tests/divine-office-mass-bridge-and-hour-draft.mjs
+
+**Not yet finished:** the actual context-sensitive 1960 Psalterium
+choice (including complete psalm sequence), antiphon repetition,
+Gloria Patri, hymn and chapters, blessings, collect conclusions
+under every rule, all commemorations, seasonal exceptions,
+the authoritative whole-Hour sequence, printed witness comparison,
+translation alignment, rights approval and production browser route.
+As a result, `completeTrilingualHours`, `certifiedHours` and
+`publishedHours` remain **zero**. Do not describe the new
+component tests as independently certified Hours.
