@@ -7,6 +7,8 @@ on:
       - "tests/customs-master-integrity.mjs"
       - "tests/customs-full-registry-census.mjs"
       - "tests/customs-wave-a-bulk-reconciliation.mjs"
+      - "tests/customs-a1-evidence-indulgence-gate.mjs"
+      - "data/customs/indulgence-grant-research-seed-20261029.v1.json"
       - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
       - ".github/workflows/customs-master-integrity.yml"
@@ -101,3 +103,7 @@ jobs:
         run: |
           node --check tests/customs-wave-a-bulk-reconciliation.mjs
           node tests/customs-wave-a-bulk-reconciliation.mjs
+      - name: Verify A1 all-150 evidence dossiers and source-bound indulgence seed
+        run: |
+          node --check tests/customs-a1-evidence-indulgence-gate.mjs
+          node tests/customs-a1-evidence-indulgence-gate.mjs
