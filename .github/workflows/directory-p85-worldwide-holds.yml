@@ -34,6 +34,25 @@ jobs:
           python -m py_compile tools/directory/p85-worldwide-7400-holds-enrichment.py
           python tests/directory-p85-7400-holds-test.py -v
           node tests/production-tree-hygiene.mjs
+      - name: Validate against the actual pinned 7,400 P83 held source records before authorizing another worldwide pass
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin 'refs/heads/research/p83-screened-worldwide-photo-candidates-20261029:refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029'
+          test "$(git rev-parse refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029)" = 736c10ad7f10eced0581834cd09612d4b62761ba
+          git worktree add --detach /tmp/p85-preflight-real 736c10ad7f10eced0581834cd09612d4b62761ba
+          (cd /tmp/p85-preflight-real/data/directory/research/archives/p83-worldwide-screened-photography && sha256sum -c SHA256SUMS)
+          python - <<'PY'
+          import importlib.util,pathlib,collections
+          spec=importlib.util.spec_from_file_location("p85_real_source","tools/directory/p85-worldwide-7400-holds-enrichment.py")
+          mod=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          root=pathlib.Path("/tmp/p85-preflight-real/data/directory/research/archives/p83-worldwide-screened-photography")
+          report,original,held=mod.source_lineage(root/"p83-all-source-photo-assignments.jsonl",root/"p83-holds-for-later-source-work.jsonl",root/"p83-worldwide-summary.json")
+          title_holds=collections.Counter(x["screening_disposition"] for x in held if not mod.filename_ok(x["file_title"]))
+          assert len(original)==7701 and len(held)==7400 and report["anchors_accounted"]==2579
+          assert all(not x["published"] for x in held)
+          print("P85_REAL_7400_PREFLIGHT",{"source_records":len(original),"held":len(held),"unqueryable_title_dispositions":dict(title_holds)},flush=True)
+          PY
 
   one-worldwide-source-harvest:
     if: >-
