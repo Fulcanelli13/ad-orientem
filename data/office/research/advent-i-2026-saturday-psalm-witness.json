@@ -1,0 +1,95 @@
+{
+  "schema": "ao.office.advent-i-2026-saturday-psalm-printed-incpit-v1",
+  "civilDate": "2026-11-28",
+  "officeDate": "2026-11-29",
+  "officePart": "FIRST",
+  "language": "la",
+  "pinnedRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+  "sourceBlobs": {
+    "Psalterium/Psalmorum/Psalm143": "a89374dcddcbba5401756999ac8038d0e1cc8391",
+    "Psalterium/Psalmorum/Psalm144": "370212800b3c896db9307e87546107ba4ea26c50"
+  },
+  "sourceFilesCompared": 2,
+  "sourceVerseRowsExpected": 40,
+  "psalmPortionsExpected": 5,
+  "printedWitness": {
+    "url": "https://media.musicasacra.com/books/breviarium5x8.pdf",
+    "edition": "David Siefker, Diurnale Romanum (2009), Gallican Psalter (secondary proof/research edition)",
+    "kind": "SECONDARY_NOT_AUTHENTICATED_1961_TYPICA",
+    "adventFirstVespersPrintedPage": 26,
+    "satSaturdayPsalterPrintedPages": [
+      436,
+      437,
+      438
+    ],
+    "imagePagesZeroBased": [
+      25,
+      435,
+      436,
+      437
+    ],
+    "scope": "FIVE_PSALM_FIRST_AND_LAST_INCIPITS_PLUS_SEGMENT_HEADERS_NOT_FULL_PRINTED_TEXT"
+  },
+  "parts": [
+    {
+      "number": 143,
+      "range": "1-8",
+      "first": "Benedíctus Dóminus, Deus meus",
+      "last": "Quorum os locútum est vanitátem",
+      "count": 9,
+      "printedPages": [
+        436
+      ]
+    },
+    {
+      "number": 143,
+      "range": "9-15",
+      "first": "Deus, cánticum novum cantábo tibi",
+      "last": "Beátum dixérunt pópulum",
+      "count": 9,
+      "printedPages": [
+        436,
+        437
+      ]
+    },
+    {
+      "number": 144,
+      "range": "1-7",
+      "first": "Exaltábo te, Deus meus, rex",
+      "last": "Memóriam abundántiæ suavitátis tuæ",
+      "count": 7,
+      "printedPages": [
+        437
+      ]
+    },
+    {
+      "number": 144,
+      "range": "8-13a",
+      "first": "Miserátor, et miséricors Dóminus",
+      "last": "Regnum tuum regnum ómnium sæculórum",
+      "count": 6,
+      "printedPages": [
+        437,
+        438
+      ]
+    },
+    {
+      "number": 144,
+      "range": "13b-21",
+      "first": "Fidélis Dóminus in ómnibus verbis suis",
+      "last": "Laudatiónem Dómini loquétur os meum",
+      "count": 9,
+      "printedPages": [
+        438
+      ]
+    }
+  ],
+  "independent1961PrintedFullPsalmWitness": false,
+  "fullPrintedPsalmTextCollated": false,
+  "typographyChantPointingCollated": false,
+  "wholeHourLiturgicallyCertified": false,
+  "translationAlignmentVerified": false,
+  "rightsApproved": false,
+  "publishable": false,
+  "published": false
+}
