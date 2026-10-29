@@ -42,6 +42,8 @@ const regina=renderPilotAngelusEntry({
  head:title=>"<header>"+title+"</header>",L,esc,form:"regina",posture:"Stand · Eastertide",moduleIcon:()=>"<i></i>"
 });
 assert.match(angelus,/data-p435930-pilot-angelus-begin/);
+for(const mode of ["individual","group"])assert.match(angelus,new RegExp('data-p435930-pilot-angelus-recitation="'+mode+'"'));
+assert.match(angelus,/aria-pressed="true">Alone/,"Individual is the default presentation");
 assert.match(angelus,/Angelus/);
 assert.match(regina,/Regina Cæli/);
 assert.doesNotMatch(angelus,/data-ao-incarnation/,"the presentation does not invent canonical prayer units");
