@@ -1,0 +1,36 @@
+name: P4 priest gesture CC0 historical original, source only
+on:
+  push:
+    branches:
+      - research/mass-priest-gesture-source-originals-p4-20261029
+    paths:
+      - data/presentation/mass-priest-gesture-original-source-p4.v1.json
+      - scripts/acquire-mass-priest-gesture-originals-p4.mjs
+      - .github/workflows/mass-priest-gesture-originals-p4.yml
+permissions:
+  contents: write
+jobs:
+  verify-and-stage-cc0-historical-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Acquire public-domain Leclerc plate19 and verify original SHA1 SHA256 and 649x1050 pixels
+        run: node scripts/acquire-mass-priest-gesture-originals-p4.mjs
+      - name: Archive verified original in this SAME research branch, never the active icon bank
+        run: |
+          set -eu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/references/mass-icon-originals/Leclerc_1661_RP-P-OB-69.169_CC0.jpg data/presentation/mass-icon-source-p4-plate19-integrity.json
+          git diff --cached --quiet && { echo "Original asset unexpectedly absent"; exit 1; }
+          git diff --cached --name-only | grep -q '^assets/references/mass-icon-originals/Leclerc_1661_RP-P-OB-69.169_CC0.jpg$'
+          git diff --cached --name-only | grep -q '^data/presentation/mass-icon-source-p4-plate19-integrity.json$'
+          git commit -m "research(mass): archive checked CC0 Leclerc 1661 plate19 original (not a LIVE icon)"
+          git push origin "HEAD:refs/heads/${{ github.ref_name }}"
