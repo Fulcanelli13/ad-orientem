@@ -101,7 +101,8 @@ export function buildHomeViewModel(state,win=globalThis){
   const calendarFailed=resolution?.status==="failed";
   const celebration=(proper?(language==="fr"?(proper.nameFr||proper.name||day?.main?.title):(proper.name||day?.main?.title)):day?.main?.title)
     ||tr(language,calendarFailed?"calendarUnavailable":"loading");
-  // Rank belongs to the observed 1962 day, not the Proper reused at Mass.\n  const rankValue=day?.main?.rank!=null?String(day.main.rank):(proper?.rank||"");
+  // Rank belongs to the observed 1962 day, not the Proper reused at Mass.
+  const rankValue=day?.main?.rank!=null?String(day.main.rank):(proper?.rank||"");
   const rawColour=resolution?.colourPlan?.label||day?.main?.color||"";
   const colourMapFr={Green:"Vert",Violet:"Violet",Purple:"Violet",Red:"Rouge",White:"Blanc",Black:"Noir",Rose:"Rose"};
   const gospelText=localizedText(proper?.gospel,language),reference=gospelRef(gospelText);
