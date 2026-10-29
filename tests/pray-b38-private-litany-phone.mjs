@@ -57,12 +57,15 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.litany_saints",{returnContext:null})),true);
     const owner="#aoPray435930.open [data-ao-devotional-owner='litany']";
     try{
-     await page.waitForSelector(owner+" .aoP435930LitanyLine",{timeout:10000});
+     await page.waitForFunction(()=>Boolean(document.querySelector("#aoPray435930.open [data-ao-devotional-owner='litany'] .aoP435930LitanyLine")),null,{timeout:10000});
     }catch(error){
      const diagnose=await page.evaluate(locale=>{
       const root=document.querySelector("#aoPray435930.open"),cache=localStorage.getItem("ao2:v435930:ws:"+locale+":"+(locale==="fr"?"litany-saints-corneille-fr-v2":"litany-saints-1883-en-v2"));
       return {view:globalThis.AO_PRAY_V435930?.state?.(),text:root?.innerText?.slice(0,1800),
-       cacheLength:cache?.length,html:root?.innerHTML?.slice(0,450),url:location.href};
+       cacheLength:cache?.length,html:root?.innerHTML?.slice(0,450),
+       ownerCount:root?.querySelectorAll('[data-ao-devotional-owner]').length,
+       ownerHtml:root?.querySelector('[data-ao-devotional-owner]')?.outerHTML?.slice(0,700),
+       litanyLineCount:root?.querySelectorAll('.aoP435930LitanyLine').length,url:location.href};
      },language);
      console.error("B38 failed to render source fixture:",JSON.stringify(diagnose));
      throw error;
