@@ -30,6 +30,7 @@ on:
       - 'src/office/advent-i-2026-proper-printed-latin.js'
       - 'src/office/advent-i-collect-ending-1960-research.js'
       - 'src/office/advent-first-vespers-preview-model.js'
+      - 'src/office/advent-first-vespers-reading-focus.js'
       - 'src/office/advent-first-vespers-preview-session.js'
       - 'src/office/advent-first-vespers-bounded-preview-reader.js'
       - 'tests/divine-office-advent-first-vespers-private-preview.mjs'
@@ -147,6 +148,7 @@ jobs:
           node --check src/office/advent-i-collect-ending-1960-research.js
           node --test tests/divine-office-advent-i-collect-ending-1960-research.mjs
           node --check src/office/advent-first-vespers-preview-model.js
+          node --check src/office/advent-first-vespers-reading-focus.js
           node --check src/office/advent-first-vespers-preview-session.js
           node --check src/office/advent-first-vespers-bounded-preview-reader.js
           node --test tests/divine-office-advent-first-vespers-private-preview.mjs
