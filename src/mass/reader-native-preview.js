@@ -64,6 +64,7 @@ import { createNativeScholaController } from "./reader-schola.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
+import { userApprovedMassGestureArt } from "./reader-user-approved-gesture-art.js";
 import { projectCurated65PriestStation } from "./reader-priest-station65.js";
 import { createReaderTransientController, partTransitionCinematic, resolveCanonStageBellCinematic } from "./reader-transients.js";
 import {projectHolyThursdayBell,projectEasterVigilGloriaBell} from "./reader-triduum-bells.js";
@@ -1898,6 +1899,14 @@ export async function mountNativeReaderPreview({
         localPostureEditable:Boolean(activeCueId && !cueProjection?.posture?.fixed),
       }),
       ...iconKeys,
+      // Six user-approved SVGs use source/actor-specific additions rather
+      // than mutating the frozen v4.6 icon bank or the historical matrix.
+      // Rejected C0169 never resolves, and a non-matching source/actor
+      // falls back to the existing certified text rubric.
+      priestActionIconKey:iconKeys.priestActionIconKey ??
+        userApprovedMassGestureArt({
+          cueId:activeCueId,matrixAction,priestAction,
+        }),
       nativeEventId:eventState?.canonicalEventId??null,
       independentlyObservedPriestEvent:observedPriest?.eventId??null,
       sourceOnlyPriestCue:observedPriest?.cueId??null,
