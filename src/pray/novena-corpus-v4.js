@@ -252,8 +252,8 @@ const ST_ANTHONY=F({
     fr:"Recourir à l’intercession de saint Antoine pendant neuf mardis successifs, en subordonnant la demande à la volonté de Dieu et au salut de l’âme."
   }),
   how:F({
-    en:"Each Tuesday, recite the two customary prayers, then one Our Father, one Hail Mary and one Glory Be, followed by the traditional responsory Si quæris miracula. This is the suggested sequence in the 1966 Franciscan pamphlet, not a universally prescribed form. Older recommendations on Confession and Communion are historical context.",
-    fr:"Chaque mardi, récitez les deux prières usuelles, puis un Notre Père, un Je vous salue Marie et un Gloire au Père, suivis du répons traditionnel Si quæris miracula. Il s’agit de la séquence proposée dans le livret franciscain de 1966, non d’une forme universellement prescrite. Les anciennes recommandations sur la Confession et la Communion relèvent du contexte historique."
+    en:"Each Tuesday, recite the two customary prayers, then one Our Father, one Hail Mary and one Glory Be, followed by the traditional responsory Si quæris miracula. This is the suggested sequence in the 1966 Franciscan pamphlet, not a universally prescribed form. The 1966 source and its hosting page also discuss indulgences; their historical notices and the host's statement about continuing validity do not certify any current grant or its conditions.",
+    fr:"Chaque mardi, récitez les deux prières usuelles, puis un Notre Père, un Je vous salue Marie et un Gloire au Père, suivis du répons traditionnel Si quæris miracula. Il s’agit de la séquence proposée dans le livret franciscain de 1966, non d’une forme universellement prescrite. La source de 1966 et le site qui l’héberge évoquent également des indulgences ; ni ces notices historiques ni l’affirmation du site sur leur validité actuelle ne certifient une concession en vigueur ni ses conditions."
   }),
   source:F({
     work:"Devotion of the Nine Tuesdays to St Anthony",
