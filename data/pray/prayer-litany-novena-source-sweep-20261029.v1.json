@@ -1,0 +1,336 @@
+{
+  "schema": "ao.pray.litany-novena-witness-sweep.v1",
+  "date": "2026-10-29",
+  "scope": "ONE_BULK_SOURCE_STRUCTURE_PASS_NOT_VERBATIM_PRINT_CERTIFICATION",
+  "noNewTextImport": true,
+  "publicLitany": {
+    "id": "pray.litany_saints",
+    "owner": "src/pray/litany-1962-use-policy.js",
+    "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0087_nouveau",
+    "lesserRogationsUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0106_nouveau",
+    "rubrics": "Rubricae generales (1960), nn. 80–90",
+    "nonDoublingRule": "n. 82: Litaniae Sanctorum (quae tamen non duplicantur)",
+    "vernacularProvision": "n. 85: local custom allows vernacular participation in public supplications in circumstances specified by rubrics",
+    "publicationStatus": "SOURCE_LINK_ONLY_PENDING_COMPLETE_TEXT_COLLATION",
+    "original1962PrintFacsimile": "PENDING",
+    "frenchEditionLegalReview": "PENDING",
+    "segments": [
+      {
+        "id": "opening_antiphon",
+        "lineStart": 94,
+        "lineEnd": 101,
+        "anchor": "Exsurge, Domine",
+        "purpose": "assemblage and procession antiphon"
+      },
+      {
+        "id": "kneeling_first_invocations",
+        "lineStart": 102,
+        "lineEnd": 111,
+        "anchor": "Sancta Maria, ora pro nobis",
+        "purpose": "kneeling through first Marian invocation"
+      },
+      {
+        "id": "procession_and_saints",
+        "lineStart": 112,
+        "lineEnd": 180,
+        "anchor": "Omnes Sancti et Sanctae Dei",
+        "purpose": "rise and begin procession after Sancta Maria; saint invocations"
+      },
+      {
+        "id": "supplications",
+        "lineStart": 181,
+        "lineEnd": 229,
+        "anchor": "Propitius esto / Agnus Dei",
+        "purpose": "deliverance petitions, church and civic supplications, Agnus Dei and Kyrie"
+      },
+      {
+        "id": "pater_noster",
+        "lineStart": 230,
+        "lineEnd": 233,
+        "anchor": "Pater noster",
+        "purpose": "silent recitation through Et ne nos inducas response"
+      },
+      {
+        "id": "psalm_69",
+        "lineStart": 234,
+        "lineEnd": 243,
+        "anchor": "Deus, in adiutorium meum intende",
+        "purpose": "Psalm 69 and doxology"
+      },
+      {
+        "id": "versicles",
+        "lineStart": 244,
+        "lineEnd": 268,
+        "anchor": "Salvos fac servos tuos",
+        "purpose": "intercessions including Pope, benefactors, faithful departed, absent brethren"
+      },
+      {
+        "id": "collects_and_conclusion",
+        "lineStart": 269,
+        "lineEnd": 289,
+        "anchor": "Deus, cui proprium est misereri",
+        "purpose": "sequence of collects and final versicles"
+      }
+    ],
+    "note": "ICRSP HTML line numbers are webpage navigation anchors for 29 October 2026, not printed-folio numbers; original printed 1962 Latin source and any licensable French edition must be independently collated before release. Historical commentary on the ICRSP page contradicts 1960 n.82 on doubling; rubrics prevail. Private 1883/1862 witnesses are not substituted."
+  },
+  "novenas": [
+    {
+      "id": "holy_ghost",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "NOVENA FOR PENTECOST",
+      "sourceRelationship": "SEPARATE_SECTION_ON_SHARED_CALLAN_PAGE",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "SHARED_PAGE_SECTION_NOT_PRINT_FACSIMILE"
+      ]
+    },
+    {
+      "id": "christmas",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "NOVENA FOR CHRISTMAS",
+      "sourceRelationship": "SEPARATE_SECTION_ON_SHARED_CALLAN_PAGE",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "SHARED_PAGE_SECTION_NOT_PRINT_FACSIMILE",
+        "HISTORICAL_DAYS_INDULGENCE_NOT_CURRENT_CLAIM"
+      ]
+    },
+    {
+      "id": "corpus_christi",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Festival_of_Corpus_Christi",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "FOR THE FESTIVAL OF CORPUS CHRISTI",
+      "sourceRelationship": "REPEAT_FORM",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "PRINT_FACSIMILE_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "sacred_heart",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Feast_of_the_Sacred_Heart",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "FOR THE FEAST OF THE SACRED HEART",
+      "sourceRelationship": "REPEAT_FORM",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "VISIBLE_DIGITAL_TRANSCRIPTION_ERRORS_REQUIRE_PRINT_CHECK"
+      ]
+    },
+    {
+      "id": "immaculate_conception",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_in_Preparation_for_the_Feast_of_the_Immaculate_Conception",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "PRAYER FOR THE FIRST DAY",
+      "sourceRelationship": "DAY_SPECIFIC_WITH_SHARED_PRAYERS",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "MIX_OF_DAILY_AND_REPEATED_COMPONENTS"
+      ]
+    },
+    {
+      "id": "annunciation",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "III. NOVENA FOR THE FEAST OF THE ANNUNCIATION",
+      "sourceRelationship": "HAMMER_SECTION_III",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "HAMMER_MEDITATION_AND_PRACTICE_MUST_REMAIN_SEPARATE"
+      ]
+    },
+    {
+      "id": "assumption",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "V. NOVENA FOR THE FEAST OF THE ASSUMPTION",
+      "sourceRelationship": "HAMMER_SECTION_V",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "HAMMER_MEDITATION_AND_PRACTICE_MUST_REMAIN_SEPARATE"
+      ]
+    },
+    {
+      "id": "seven_sorrows",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "IV. NOVENA FOR THE FEAST OF THE SEVEN SORROWS",
+      "sourceRelationship": "HAMMER_SECTION_IV",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "HAMMER_MEDITATION_AND_PRACTICE_MUST_REMAIN_SEPARATE"
+      ]
+    },
+    {
+      "id": "st_joseph",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_of_St._Joseph",
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "ON THE FIRST DAY",
+      "sourceRelationship": "DAY_SPECIFIC_ST_JOSEPH_1883",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "PRINT_FACSIMILE_NOT_REVIEWED"
+      ]
+    },
+    {
+      "id": "holy_souls",
+      "sourceUrl": "https://www.ecatholic2000.com/life/prayer108.shtml",
+      "sourceWork": "Novena for the Holy Souls in Purgatory",
+      "publishedForm": "DAY_SPECIFIC",
+      "sourceAnchor": "NOVENA FOR THE HOLY SOULS IN PURGATORY",
+      "sourceRelationship": "MODERN_NINE_PAGE_DIGITAL_TRANSCRIPTION",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "ORIGINAL_PRINT_EDITION_UNIDENTIFIED",
+        "REPEATED_VERSE_AND_SEVEN_INTERCESSIONS"
+      ]
+    },
+    {
+      "id": "perpetual_help",
+      "sourceUrl": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
+      "sourceWork": "With God: A Book of Prayers and Reflections",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "Novena to Our Lady of Perpetual Help",
+      "sourceRelationship": "UNPROOFREAD_WIKISOURCE_FACSIMILE_PAGE",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "WIKISOURCE_PAGE_UNPROOFREAD"
+      ]
+    },
+    {
+      "id": "st_therese",
+      "sourceUrl": "https://www.ewtn.com/catholicism/devotions/novena-of-the-twentyfour-glory-bes-to-st-therese-the-little-flower-293",
+      "sourceWork": "Novena of the Twenty-Four Glory Bes to St Thérèse of Lisieux",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "Novena of the Twenty-four Glory Bes",
+      "sourceRelationship": "MODERN_REPRODUCTION_OF_OLDER_DEVOTION",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "MODERN_DEVOTIONAL_REPRODUCTION_NOT_1925_FACSIMILE"
+      ]
+    },
+    {
+      "id": "st_anthony_nine_tuesdays",
+      "sourceUrl": "https://www.pamphlets.info/Australia/acts1014/",
+      "sourceWork": "Devotion of the Nine Tuesdays to St Anthony",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "The Devotions of the Nine Tuesdays",
+      "sourceRelationship": "NONPRESCRIBED_PRAYERS_AND_UNVERIFIED_INDULGENCE_CLAIMS",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "1966_PAMPHLET_RIGHTS_TO_VERIFY",
+        "HOSTING_PAGE_UNSUPPORTED_CURRENT_INDULGENCE_INFERENCE"
+      ]
+    },
+    {
+      "id": "christ_the_king",
+      "sourceUrl": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
+      "sourceWork": "Preces et Pia Opera / Thésaurisons pour le Ciel",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "Au Christ Roi universel",
+      "sourceRelationship": "PDF_NOT_FETCHED_PRINT_COLLATION_PENDING",
+      "accessObservation": "PDF_TOO_LARGE_FOR_WEB_RETRIEVAL",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "ORIGINAL_FRENCH_PDF_NOT_FETCHED",
+        "ENGLISH_EDITORIAL_ALIGNMENT"
+      ]
+    },
+    {
+      "id": "immaculate_heart",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
+      "sourceWork": "The Raccolta · Prayer to the Immaculate Heart of Mary",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "Prayer to the Immaculate Heart of Mary",
+      "sourceRelationship": "SINGLE_PRAYER_ADAPTED_TO_NINE_DAY_DEVOTION",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "SOURCE_IS_PRAYER_NOT_NINE_DAY_NOVENA"
+      ]
+    },
+    {
+      "id": "st_michael",
+      "sourceUrl": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel",
+      "sourceWork": "Leonine Prayer to St Michael the Archangel",
+      "publishedForm": "REPEAT_FORM",
+      "sourceAnchor": "Prières à Saint Michel",
+      "sourceRelationship": "TRADITIONAL_SINGLE_PRAYER_REPEATED",
+      "accessObservation": "PUBLIC_WEB_SOURCE_OR_HEADING_LOCATED_NOT_PRINT_COLLATED",
+      "originalPrintLineByLine": "PENDING",
+      "independentFrenchEdition": "PENDING_OR_EDITORIAL_AS_EXPLICIT_IN_EXISTING_REVIEW",
+      "currentIndulgenceGrant": "NOT_VERIFIED",
+      "flags": [
+        "SOURCE_IS_PRAYER_NOT_NINE_DAY_NOVENA"
+      ]
+    }
+  ],
+  "summary": {
+    "novenaPrograms": 16,
+    "publicLitanySegments": 8,
+    "originalPrintFullCertifications": 0,
+    "currentIndulgenceGrantVerifications": 0,
+    "originalTextPublishedByThisPass": 0,
+    "criticalExceptions": [
+      "1966_ST_ANTHONY_UNSUPPORTED_INDULGENCE_INFERENCE",
+      "CHRIST_KING_PDF_TOO_LARGE_TO_REVIEW",
+      "PERPETUAL_HELP_UNPROOFREAD_TRANSCRIPTION",
+      "PUBLIC_1962_LITANY_PRINT_FACSIMILE_AND_RIGHTS_NOT_COMPLETE"
+    ]
+  }
+}
