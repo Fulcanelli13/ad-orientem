@@ -8,6 +8,8 @@
  * original source cell, id, text, and order remain intact in normalized
  * source documents and are exactly reconstructible from these two parts.
  */
+import {allSoulsObservanceDate} from "../calendar/liturgical-year.js";
+
 const fold=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
   .replaceAll("æ","ae").replaceAll("Æ","AE").replaceAll("œ","oe")
   .toLowerCase().trim();
@@ -53,7 +55,14 @@ export function splitAllSoulsPrimeMartyrologyCell(text,language){
   return Object.freeze({martyrology,postPrayer,boundaryLine:boundary,
     totalLines:lines.length,sourceTextFullyPreserved:true});
 }
+// 1960 General Rubrics 96(b): All Souls is kept on November 2 unless it
+// coincides with Sunday, when it is celebrated Monday November 3.
+// Reuse Calendar's existing authoritative date projection; do not create
+// a separate Office calendar or declare the year's complete Office verified.
 export function primeSplitRequired({date,hour,role,sourceCellId}={}){
-  return date==="2026-11-02"&&hour==="PRIME"&&
+  if(typeof date!=="string"||!/^(?:[12]\\d{3})-11-0[23]$/.test(date))
+    return false;
+  const year=Number(date.slice(0,4));
+  return date===allSoulsObservanceDate(year)&&hour==="PRIME"&&
     role==="MARTYROLOGY"&&sourceCellId==="Prima5";
 }
