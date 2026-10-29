@@ -4,6 +4,8 @@ on:
     paths:
       - 'src/office/annual-readiness-register.js'
       - 'src/office/source-section-resolver.js'
+      - 'src/office/at-reference-resolver.js'
+      - 'tests/divine-office-at-reference-resolver.mjs'
       - 'src/office/mass-host-source-bridge.js'
       - 'src/office/structured-hour-draft.js'
       - 'src/office/precedence-review.js'
@@ -57,6 +59,8 @@ jobs:
           node --check src/office/annual-readiness-register.js
           node --check src/office/source-section-resolver.js
           node --test tests/divine-office-source-section-resolver.mjs
+          node --check src/office/at-reference-resolver.js
+          node --test tests/divine-office-at-reference-resolver.mjs
           node --check src/office/mass-host-source-bridge.js
           node --check src/office/structured-hour-draft.js
           node --test tests/divine-office-mass-bridge-and-hour-draft.mjs
