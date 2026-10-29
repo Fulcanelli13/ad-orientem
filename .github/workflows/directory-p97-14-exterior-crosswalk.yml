@@ -1,0 +1,24 @@
+name: Directory P97 14-original exact-source crosswalk
+on:
+  pull_request:
+    paths:
+      - data/directory/research/p97-14-hero-exterior-venue-place-release-queue-20261029.json
+      - tests/directory-p97-14-original-exterior-crosswalk-test.py
+      - tests/directory-p98-14-photo-venue-eligibility-test.py
+      - data/directory/research/p98-14-photo-venue-eligibility-gates-20261029.json
+      - .github/workflows/directory-p97-14-exterior-crosswalk.yml
+permissions:
+  contents: read
+jobs:
+  safe-candidate-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tests/directory-p97-14-original-exterior-crosswalk-test.py
+      - run: python tests/directory-p98-14-photo-venue-eligibility-test.py
