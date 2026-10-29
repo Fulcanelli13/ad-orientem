@@ -11,6 +11,7 @@ const json=p=>JSON.parse(file(p).toString("utf8"));
 const sourcePath="data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json";
 const stage=json("data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json");
 const editorial=json("data/customs/customs-r18-eleven-bilingual-editorial-copy-review.v1.json");
+const sourceChecked=json("data/customs/customs-r18-eleven-source-checked-full-bilingual-article-pack.v1.json");
 const source=json(sourcePath);
 const seed=json("data/customs/customs-atlas-seed.v1.json");
 const six=json("data/customs/customs-r18-six-canonical-release-candidate.v1.json");
@@ -72,6 +73,27 @@ for(const row of editorial.records){
 
 const sourceReviews=source.records.filter(x=>x.action_identity_review&&x.unpublished_bilingual_article);
 assert.equal(sourceReviews.length,11);
+const checkedFile="data/customs/customs-r18-eleven-source-checked-full-bilingual-article-pack.v1.json";
+assert.equal(sourceChecked.schema,"AO_R18_ELEVEN_SOURCE_CHECKED_FULL_EN_FR_ARTICLE_PACK_V1");
+assert.deepEqual(sourceChecked.counts,{
+ full_eight_field_articles:11,narrow_source_claims_checked:11,source_urls_cited:17,
+ regional_or_seasonal:7,local_context:4,theme_families:8,named_child_forms:15,
+ new_approvals:0,new_canonical_ids:0,new_publications:0,new_events:0
+});
+for(const [k,v] of Object.entries(sourceChecked.contract))
+ assert.equal(v,true,"Missing source-checked approval gate: "+k);
+for(const [key,entry] of Object.entries(sourceChecked.inputs)){
+ const expectedPath={reconciliation:sourcePath,editorial:"data/customs/customs-r18-eleven-bilingual-editorial-copy-review.v1.json",
+ structure:"data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json"}[key];
+ assert.equal(entry.path,expectedPath);
+ const bytes=file(expectedPath);
+ const sha=createHash("sha1").update("blob "+bytes.length+"\\0".replace("\\\\0","\\0")).update(bytes).digest("hex");
+ assert.equal(entry.blob_sha,sha,"Source blob has drifted: "+key);
+}
+assert.equal(sourceChecked.records.length,11);
+const verifiedByKey=new Map(sourceChecked.records.map(x=>[x.review_key,x]));
+assert.equal(verifiedByKey.size,11);
+
 const sourceByKey=new Map(sourceReviews.map(x=>[x.release_key,x]));
 assert.equal(stage.staged.length,11);
 assert.deepEqual(stage.staged.map(x=>x.review_key),sourceReviews.map(x=>x.release_key));
@@ -107,7 +129,32 @@ for(const candidate of stage.staged){
  assert.ok(actual.source_links.some(x=>x.url===candidate.primary_source_url));
  assert.ok(copyByKey.has(key),"Missing copy review for "+key);
  const proposed=copyByKey.get(key);
+ const verified=verifiedByKey.get(key);
+ assert.ok(verified,"Missing source-checked final copy: "+key);
+ assert.equal(verified.working_master_id,actual.working_master_id);
+ assert.equal(verified.complete_bilingual_fields,8);
+ assert.equal(verified.source_check.result,"NARROW_ACTION_CLAIM_CORROBORATED");
+ assert.equal(verified.source_check.full_article_authoritatively_certified,false);
+ assert.equal(verified.source_check.modern_events_authorized,false);
+ assert.equal(verified.source_check.formal_1962_rite_authorized,false);
+ assert.equal(verified.source_check.indulgence_grant_validated,false);
+ assert.ok(verified.source_check.verified_narrow_claim_en.length>50);
+ assert.ok(verified.source_check.evidence_urls.length>=1);
+ assert.ok(verified.source_check.evidence_urls.every(x=>x.startsWith("https://")));
+ assert.equal(verified.release_status,"PROPOSED_READY_FOR_HUMAN_EDITORIAL_REVIEW_NOT_AUTHORIZED");
+ assert.deepEqual(Object.keys(verified.signoffs).sort(),[...approvals].sort());
+ assert.ok(Object.values(verified.signoffs).every(x=>x===false));
+ assert.deepEqual(verified.new_events,[]);
+ assert.deepEqual(verified.indulgence_grants,[]);
+ assert.equal(verified.action_structure.canonical_parent_id,null);
+ assert.equal(verified.action_structure.new_article_id,null);
+ assert.equal(verified.action_structure.scheduled_date,null);
+ assert.equal(verified.action_structure.no_independent_child_customs,true);
+ assert.equal(verified.action_structure.noncanonical_theme_family,candidate.provisional_family_key);
+ assert.deepEqual(verified.action_structure.child_forms,candidate.subtype_examples);
+ 
  const resolvedArticle={...actual.unpublished_bilingual_article,...proposed.changes};
+ assert.deepEqual(verified.article,resolvedArticle,"8-field EN/FR article must equal source with exact reviewed edits");
  for(const field of eightFields)for(const lang of ["en","fr"])
    assert.ok(resolvedArticle[field]?.[lang]?.trim().length>=4,key+" resolved candidate missing "+field+"."+lang);
  assert.deepEqual(Object.keys(resolvedArticle).sort(),[...eightFields].sort());
@@ -162,4 +209,7 @@ for(const date of ["2026-04-05","2026-06-24","2026-08-14","2026-08-15","2026-12-
 assert.ok(publishedApi.every(id=>calendarCustomArticle(id)?.id===id));
 assert.equal(defaults.staged_candidate_actions,stage.staged.length);
 assert.equal(defaults.subtype_examples,subtypeKeys.size);
+// Absence of an import is essential: audited research must not become a production Calendar entry.
+const readModel=readFileSync(new URL("../../src/calendar/customs-read-model.js",import.meta.url),"utf8");
+assert.doesNotMatch(readModel,/customs-r18-eleven-source-checked-full-bilingual-article-pack/);
 console.log("PASS Customs R18 Calendar rehearsal: 11 candidate actions, 8 noncanonical families, 15 subtypes, 33 EN/FR editorial revisions, 35 published unchanged and zero event/grant/identity/copy approvals.");
