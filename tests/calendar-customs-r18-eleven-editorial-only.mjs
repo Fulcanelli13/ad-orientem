@@ -65,7 +65,7 @@ for(const html of [htmlEn,htmlFr]){
 }
 assert.ok(htmlEn.includes("Proposed article · not published"));
 assert.ok(htmlFr.includes("Article proposé · non publié"));
-assert.ok(htmlEn.includes("St John Baptist's community bonfire"));
+assert.ok(htmlEn.includes("St John Baptist&#39;s community bonfire"));
 assert.ok(htmlFr.includes("Le feu communautaire de la Saint-Jean-Baptiste"));
 assert.ok(htmlEn.includes("Plenary indulgence")===false);
 assert.ok(!preview.includes("calendarCustomRecommendations("));
