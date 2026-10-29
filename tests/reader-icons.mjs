@@ -116,7 +116,8 @@ assert.equal(keys.priestPositionIconKey,C("priest.position.facing_people"));
 assert.equal(iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}}).priestActionIconKey,C("priest.action.genuflect"));
 assert.equal(iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}}).priestActionIconKey,null,
   "without its cue, WASHES / PURIFIES is ambiguous (Lavabo or one of two ablutions); the cue decides");
-assert.equal(iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES",cueId:"AO.SM.C0125"}}).priestActionIconKey,C("priest.action.lavabo"));
+assert.equal(iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES",cueId:"AO.SM.C0125"}}).priestActionIconKey,null,
+  "Source C0125 is the priest washing, not an image of the server pouring water");
 assert.equal(iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}}).priestActionIconKey,null,"unmapped action guessed an unrelated icon");
 
 // Gesture-matrix labels resolve to the canonical meaning; no art means text only.

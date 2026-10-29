@@ -58,8 +58,8 @@ const exact=[
  ['AO.SM.C0232','ea_priest_communion_host_original'],
  ['AO.SM.C0234','ea_priest_communion_chalice_original'],
  ['AO.SM.C0246','v46_priest_rail_after_rich'],
- ['AO.SM.C0247','ao_purify_fingers'],
- ['AO.SM.C0248','ao_purify_chalice']
+ ['AO.SM.C0247','ao_purify_chalice'],
+ ['AO.SM.C0248','ao_purify_fingers']
 ];
 for(const [id,assetId] of exact)
  assert.equal(cue('priest_action',id)?.assetId,assetId,'Incorrect source action '+id);
