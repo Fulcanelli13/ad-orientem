@@ -1,0 +1,35 @@
+name: P70 Commons paced recovery (review-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/recover-commons-media-p70.py'
+      - '.github/workflows/p70-commons-paced-recovery.yml'
+permissions:
+  contents: read
+jobs:
+  recover-source-metadata:
+    strategy:
+      fail-fast: false
+      matrix:
+        owner: [GEOGRAPHY, SACRED_PHENOMENA]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact entity partition without Commons queries
+        run: python tools/recover-commons-media-p70.py --owner "${{ matrix.owner }}" --dry-run
+      - name: Retry source searches with slow pacing and explicit HTTP status
+        run: python tools/recover-commons-media-p70.py --owner "${{ matrix.owner }}" --delay 2.0
+      - name: Preserve one-day download handoff (durable review commit separately)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p70-review-only-${{ matrix.owner }}
+          path: |
+            data/geography/research/p70-recovery-*-candidates.jsonl
+            data/geography/research/p70-recovery-*-errors.jsonl
+          retention-days: 1
