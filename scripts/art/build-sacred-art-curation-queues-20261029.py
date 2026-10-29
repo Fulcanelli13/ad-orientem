@@ -43,6 +43,9 @@ assert len(brevia["records"])==83 and len(bad["items"])==103
 approvedBy={z["artwork_id"]:z for z in approved}
 a6By={z["artwork_id"]:z for z in a6}
 a8By={z["artwork_id"]:z for z in a8}
+officialFirstPass=j("sacred-art-curator-official18-native-first-visual-20261029.v1.json")["records"]
+officialFirstBy={z["artwork_id"]:z for z in officialFirstPass}
+assert len(officialFirstBy)==18
 assert len(a6By)==22 and len(a8By)==44
 assert all(k in approvedBy for k in a6By)
 assert all(k in approvedBy for k in a8By)
@@ -100,6 +103,25 @@ for z in main:
     elif approval.get("source_gate")=="A5_RESOLUTION_OR_DIMENSION_HOLD":
         visual_status="APPROVED_SOURCE_RESOLUTION_HOLD"
         photo_action="SOURCE_HIGHER_FIDELITY_EXACT_WORK"
+    # First-pass visual review of source-hash-identical museum CC0 photographs.
+    firstpass=officialFirstBy.get(id)
+    if firstpass:
+        assert official and official.get("source_photo_bytes_same_as_frozen_archive")
+        cls=firstpass["first_visual_assessment"]
+        visual_evidence=firstpass["visual_observation"]
+        if cls=="FIRST_PASS_FRAME_FREE_PAINTED_FIELD":
+            visual_status="MUSEUM_EXACT_CC0_FIRST_VISUAL_CLEAN"
+            photo_action="FINAL_NATIVE_EDGE_COLOUR_AND_RESPONSIVE_CROP_CHECK"
+        elif cls=="CROP_NONART_BORDER":
+            visual_status="MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER"
+            photo_action="LOSSLESS_FRAME_TRIM_VERIFY_PAINT"
+        elif cls=="COMPLEX_FRAME_OR_MOUNT_REVIEW":
+            visual_status="MUSEUM_EXACT_CC0_COMPLEX_EXTERNAL_FRAME"
+            photo_action="REPLACE_OR_MANUAL_CROP_WITH_PIXEL_PROOF"
+        elif cls=="USER_AESTHETIC_VETO":
+            visual_status="USER_DISLIKES_THIS_WORK"
+            photo_action="HOLD_USER_REJECTED_AESTHETIC_CHOICE"
+        else:raise ValueError("UNRECOGNIZED_FROZEN_VISUAL_REVIEW")
     # Hard aesthetic bans and explicit rejected IDs may never be promoted
     # through a different source file.
     conflicting_prior_votes=id in bannedIds and z["frozen_editorial_state"].startswith("APPROVED")
@@ -133,7 +155,8 @@ for z in main:
 rightsQueue=[x for x in mainOut if x["licence_state"] not in ("OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH","EXCLUDED_NO_REUSE_REVIEW","EDITORIAL_CONFLICT_HOLD")]
 needsImage=[x for x in mainOut if x["photo_next_action"] in (
    "ACQUIRE_EXACT_COMPLETE_SOURCE","REPLACE_WITH_FULL_PAINTED_WORK_PHOTO",
-   "SOURCE_HIGHER_FIDELITY_EXACT_WORK","TEST_PAINT_PRESERVING_CROP_OR_REPLACE")]
+   "SOURCE_HIGHER_FIDELITY_EXACT_WORK","TEST_PAINT_PRESERVING_CROP_OR_REPLACE",
+   "LOSSLESS_FRAME_TRIM_VERIFY_PAINT","REPLACE_OR_MANUAL_CROP_WITH_PIXEL_PROOF")]
 strong=[x for x in mainOut if x["licence_state"]=="OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH" and x["approved_primary_cohort"] and not x["historical_exclusion"] and not x["historical_editorial_conflict"]]
 photoCleanA8=[x for x in mainOut if x["photo_visual_state"]=="PRELIMINARY_CONTACT_SHEET_FRAME_FREE"]
 # High potential only: official image hash + CC0 + original >= 2400px
@@ -142,7 +165,7 @@ a6strong=[]
 for x in strong:
     src=a6By[x["artwork_id"]]
     dims=src.get("official_current_image_dimensions") or []
-    if len(dims)==2 and min(dims)>=2400 and x["artwork_id"]!="met-459131":
+    if len(dims)==2 and min(dims)>=2400 and x["photo_visual_state"]=="MUSEUM_EXACT_CC0_FIRST_VISUAL_CLEAN":
         a6strong.append({**x,"official_current_image_dimensions":dims,
           "museum":src["museum"],"official_object_api":src["official_object_api"],
           "proof_label":"OFFICIAL_CC0_SOURCE_HASH_MATCH_NATIVE_VISUAL_REVIEW_PENDING"})
@@ -191,6 +214,11 @@ stats={
  "photo_need_by_action":dict(Counter(x["photo_next_action"] for x in mainOut)),
  "preliminary_a8_frame_free":len(photoCleanA8),
  "a8_border_support_issues":sum(x["photo_visual_state"]=="BORDER_OR_SUPPORT_VIOLATION_SUSPECTED" for x in mainOut),
+ "official_cc0_original_first_visual_reviewed":len(officialFirstBy),
+ "official_cc0_first_pass_clean":sum(x["photo_visual_state"]=="MUSEUM_EXACT_CC0_FIRST_VISUAL_CLEAN" for x in mainOut),
+ "official_cc0_requires_nonart_crop":sum(x["photo_visual_state"]=="MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER" for x in mainOut),
+ "official_cc0_complex_frame_or_mount":sum(x["photo_visual_state"]=="MUSEUM_EXACT_CC0_COMPLEX_EXTERNAL_FRAME" for x in mainOut),
+ "user_disliked_siena_not_curated":sum(x["photo_visual_state"]=="USER_DISLIKES_THIS_WORK" for x in mainOut),
  "conditional_cc_by_sa_file_terms_to_implement":sum(x["licence_state"]=="PER_FILE_CC_BY_SA_EVIDENCE" for x in mainOut),
  "official_cc0_good_resolution_first_final_visual_queue":len(a6strong),
  "prayer_locked_heroes":len(prayerAnnex),"prayer_archived":sum(x["master_original_archived"] for x in prayerAnnex),
@@ -209,6 +237,7 @@ report={"schema":"AO_SACRED_ART_CURATORIAL_QUEUES_20261029_V1","as_of":"2026-10-
    "selected_107":"data/calendar/sacred-art-bulk-approved-107-photo-gates-20261028.csv",
    "a6_official_museum_22":"data/calendar/sacred-art-22-museum-official-cc0-photo-sha-20261028.v1.json",
    "a8_visual_44":"data/calendar/sacred-art-a8-44-visual-contact-screen-20261028.v1.json",
+   "official_museum_18_manual_photo_first_pass":"data/calendar/sacred-art-curator-official18-native-first-visual-20261029.v1.json",
    "prayer_22":"data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json",
    "breviarium_83":"data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json"},
  "caveats":["An official museum source's CC0 rights are confirmed for the current image; when the historical saved JPEG is a different variant, re-link exact-file provenance.",
