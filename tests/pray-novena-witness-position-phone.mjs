@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -179,6 +179,9 @@ try{
     assert.ok(sample.hasSource&&!sample.sourceOpen,"Edition notes must remain accessible but closed by default");
     assert.ok(sample.summaryFont>=14,"Source edition disclosure is not legible on small phones");
     assert.ok(sample.overflow<=1,"Reader must not horizontally overflow at "+width+"px");
+    const shotDir=resolve(root,"artifacts/pray-b35");
+    await mkdir(shotDir,{recursive:true});
+    await page.screenshot({path:resolve(shotDir,"novena-"+locale+"-"+width+"-opening.png"),animations:"disabled"});
     await page.evaluate(()=>{
      const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
      mount.scrollTop=Math.round((mount.scrollHeight-mount.clientHeight)*.55);
@@ -194,6 +197,7 @@ try{
     });
     assert.ok(after.top>=after.portTop-4&&after.bottom<=after.portBottom+4&&after.hit,
      "Thumb dock must remain accessible while scrolling long prayer text: "+JSON.stringify({locale,id,after}));
+    await page.screenshot({path:resolve(shotDir,"novena-"+locale+"-"+width+"-scroll.png"),animations:"disabled"});
    };
    await checkComfort("en","holy_face_1887");
    await checkComfort("fr","holy_ghost");
