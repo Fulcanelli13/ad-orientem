@@ -42,11 +42,11 @@ try{
       return {opened,...api.status};
     },language);
     assert.equal(response.opened,true,"Customs owner must open from standalone route");
-    assert.equal(response.canonical,38);
+    assert.equal(response.canonical,39);
     assert.equal(response.research,568);
     const rootLocator=page.locator("#ao-customs-library-root");
     await rootLocator.waitFor({state:"visible"});
-    assert.equal(await page.locator('[data-cust-id]').count(),26,"year partition must include exactly 26 customs");
+    assert.equal(await page.locator('[data-cust-id]').count(),27,"year partition has 26 original plus Polish Pentecost greenery");
     assert.equal(await page.locator('[data-cust-view="year"][aria-current="page"]').count(),1);
     const geometry=await rootLocator.evaluate(el=>({width:el.clientWidth,scrollWidth:el.scrollWidth,viewport:innerWidth,buttons:[...el.querySelectorAll("button")].filter(b=>b.getBoundingClientRect().height<43).map(b=>b.outerHTML.slice(0,100))}));
     assert.ok(geometry.scrollWidth<=geometry.width+3&&geometry.width<=geometry.viewport+3,"horizontal overflow in "+language+" "+width+": "+JSON.stringify(geometry));
@@ -58,7 +58,7 @@ try{
     assert.match(await rootLocator.textContent(),/CONTEXT|Contexte|contextuel|historiqu/i,"context-only record warning must be visible");
     await page.locator("[data-cust-back]").click();
     await page.locator('[data-cust-view="all"]').click();
-    assert.equal(await page.locator('[data-cust-id]').count(),38,"complete canonical collection available");
+    assert.equal(await page.locator('[data-cust-id]').count(),39,"complete proposed canonical collection available");
     await page.locator('[data-cust-id="BLSS-002"]').click();
     const details=await rootLocator.textContent();
     assert.ok(details.includes(language==="fr"?"Assomption : bénédiction des herbes":"Assumption — blessing of herbs"),"language-specific title missing");
@@ -88,9 +88,9 @@ try{
     assert.deepEqual(errors,[],"unhandled client-side errors");
     await page.locator("[data-cust-close]").click();
     assert.equal(await rootLocator.count(),0,"closing the module should restore the calling interface");
-    metrics.push({width,language,year:26,life:12,canonical:38,research:568,excluded:34,archivePage:120,overflow:false});
+    metrics.push({width,language,year:27,life:12,canonical:39,research:568,excluded:34,archivePage:120,overflow:false});
     await page.close();
   }
   await writeFile(resolve(capture,"metrics.json"),JSON.stringify(metrics,null,2));
-  console.log("PASS first-class Customs phone EN/FR: 38 canonical, 568 research, 26/12 partition, 34 exclusions, sources, tap targets and no overflow.");
+  console.log("PASS first-class Customs phone EN/FR: 39 proposed canonical, 568 research, 27/12 partition, 34 exclusions, sources, tap targets and no overflow.");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
