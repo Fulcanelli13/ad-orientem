@@ -85,8 +85,8 @@ test("meaningful Latin word changes are rejected even with pinned revision metad
    d[properPath].map.get("Capitulum Laudes")[1].replace("credídimus","dormívimus"),
   d=>d[properPath].map.get("Oratio")[0]=
    d[properPath].map.get("Oratio")[0].replace("protegénte","permitténte"),
-  d=>d[ordinaryPath].map.get("Hymnus Adv Vespera")[14]=
-   d[ordinaryPath].map.get("Hymnus Adv Vespera")[14].replace("Cujus","Hujus"),
+  d=>d[ordinaryPath].map.get("Hymnus Adv Vespera")[15]=
+   d[ordinaryPath].map.get("Hymnus Adv Vespera")[15].replace("Cujus","Hujus"),
   d=>d[ordinaryPath].map.get("Adv Versum 3")[1]=
    d[ordinaryPath].map.get("Adv Versum 3")[1].replace("Salvatórem","Redemptórem")
  ]){
