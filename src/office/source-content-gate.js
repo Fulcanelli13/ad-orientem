@@ -54,9 +54,12 @@ export function officeTranslationContentBlockers({latin,translation}={}){
     // metadata; detect the actual Latin prayer SIGNATURE across cells.
     // I Vespers has Vidi Dominum and must not be quarantined here.
     const latinBody=normalized((latin.sections??[]).map(s=>s.text).join("\n"));
+    // Punctuation in Latin incipits varies (Absólve, quǽsumus,
+    // Dómine); compare normalized WORD sequences, not exact commas.
+    const latinTokens=latinBody.replace(/[^a-z0-9]+/g," ");
     const allSaints=/omnium sanctorum/.test(normalized(latin.headline));
-    const target=allSaints&&/at jesus conversus/.test(latinBody)&&
-      /absolve quaesumus domine/.test(latinBody);
+    const target=allSaints&&/at jesus conversus/.test(latinTokens)&&
+      /absolve quaesumus domine/.test(latinTokens);
     if(target){
       const l=latin.sections.find(s=>/at jesus conversus/.test(normalized(s.text)))??
         latin.sections.find(s=>/commemoratio dominica/.test(normalized(s.text)));
