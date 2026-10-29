@@ -1,0 +1,227 @@
+{
+  "schema": "AO_P105_SEVEN_CHECKSUM_VERIFIED_WEBP_STAGING_RESULTS_V1",
+  "source_input": "data/directory/research/p105-seven-source-locked-derivatives-input.json",
+  "source_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+  "status": "STAGING_ONLY_NO_APPROVAL_NO_APP_VISIBILITY",
+  "counts": {
+    "originals_verified": 7,
+    "native_jpeg_decodes": 7,
+    "webp_derivatives_staged": 7,
+    "approved_media_written": 0,
+    "new_photos_live": 0
+  },
+  "contact_sheet": "docs/research/directory/p105-seven-mobile-full-frame-review.jpg",
+  "contact_sheet_sha256": "35f5f35a62cc0fb6cd58e23c1d1a073b8dd6bffd438b93f19a468bff683da690",
+  "records": [
+    {
+      "row": 309,
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/309-original.jpg",
+      "source_sha1_verified": "59ebac6f1a0d26157f0a67c6cdec5042d91971cb",
+      "original_sha256_verified": "d71b580dd217d606af33b2f92fea415631ac1ad1f0c85816c1800c4a25eba51d",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        1200,
+        1600
+      ],
+      "staged_path": "assets/staged/directory-p105/CZ-st-ignatius-jihlava.webp",
+      "staged_sha256": "0edc7fe57a5afcfd403516b6435ef33428b8b2761533133f5c5c845652ea2022",
+      "staged_bytes": 86538,
+      "staged_dimensions": [
+        1050,
+        1400
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Michal Kriška",
+      "source_claimed_license": "CC-BY-SA-3.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Jihlava_(Kostel_sv._Ign%C3%A1ce_z_Loyoly)_-_panoramio.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 315,
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/315-original.jpg",
+      "source_sha1_verified": "2950c29a57538bb91cfdf42b1c949a3135d98481",
+      "original_sha256_verified": "2ee56e2fcbe8db1750906d878ba6bb977844386b3899da15a5892ebdcbb1d13d",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        4032,
+        3024
+      ],
+      "staged_path": "assets/staged/directory-p105/DE-friedhofskirche-st-michael-altoetting.webp",
+      "staged_sha256": "8b8f35e13d308ba2ef2ca11e31b16f10a49d01c9e2b28ddbaf2c8f14dceb4729",
+      "staged_bytes": 206906,
+      "staged_dimensions": [
+        1400,
+        1050
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Ricardalovesmonuments",
+      "source_claimed_license": "CC-BY-SA-4.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_16.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 320,
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/320-original.jpg",
+      "source_sha1_verified": "ef3bc7801bed7968cfe5fa647d1ece3bf07188fe",
+      "original_sha256_verified": "49f2ec2dd449742d221caefc2bd2ea254db014e1cddbfc4d89c93def481f66f2",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "staged_path": "assets/staged/directory-p105/FR-basilique-saint-bernard-fontaine-les-dijon.webp",
+      "staged_sha256": "25d69e6a66592b9eb1ab05512feb96d51e801246854b250d12ed98cdec0e47b3",
+      "staged_bytes": 385984,
+      "staged_dimensions": [
+        1400,
+        933
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Michel FOUCHER",
+      "source_claimed_license": "CC-BY-SA-4.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_F21_basilique_IMF0579.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 349,
+      "place_id": "place:GB:sacred-heart-caterham",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/349-original.jpg",
+      "source_sha1_verified": "8807b43e2406f93fdbd4bf41962f390a03950de6",
+      "original_sha256_verified": "1fe3fbcae97a1b79496bb0da5c59b71e8e6e65dcb5b9e8096f54b2a90204fa00",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        4032,
+        2268
+      ],
+      "staged_path": "assets/staged/directory-p105/GB-sacred-heart-caterham.webp",
+      "staged_sha256": "4c46177becf1c0a7b3ab2ab78a4edf5d3e66bf8a71fde221e91a39f4ccdcd891",
+      "staged_bytes": 273604,
+      "staged_dimensions": [
+        1400,
+        788
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Tag Scientist",
+      "source_claimed_license": "CC-BY-SA-4.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Church_Of_The_Sacred_Heart_Of_Jesus.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 356,
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/356-original.jpg",
+      "source_sha1_verified": "f658a27b69d7211cd12b8ec4ce6db38ffe6581c9",
+      "original_sha256_verified": "e11e3a8a28318db0fc6ff46d60428c63ac0dce6290321aeee39d147d1dd39e59",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        1024,
+        760
+      ],
+      "staged_path": "assets/staged/directory-p105/GB-st-mary-catholic-brewood.webp",
+      "staged_sha256": "cef2cb9d49741601c42bf5a19234adc5e74d171748e9c0812f40ae50a90bbde1",
+      "staged_bytes": 174878,
+      "staged_dimensions": [
+        1024,
+        760
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Roger Kidd",
+      "source_claimed_license": "CC-BY-SA-2.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:St_Mary's_Catholic_Church_at_Brewood,_Staffordshire_-_geograph.org.uk_-_4072915.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 375,
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/375-original.jpg",
+      "source_sha1_verified": "a5c9f3c950aef4c3541c46629afc560ff23038dc",
+      "original_sha256_verified": "3bc771540b9aee8e9dd1a9343b2962688b309d775e1767e3a691d34ea362909e",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        4752,
+        3575
+      ],
+      "staged_path": "assets/staged/directory-p105/US-immaculate-conception-cathedral-lake-charles.webp",
+      "staged_sha256": "5eca4f1db9bca3e951f51325522469b5a6cc2a8c06b7464be3f81ea1877e859f",
+      "staged_bytes": 227076,
+      "staged_dimensions": [
+        1400,
+        1053
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Farragutful",
+      "source_claimed_license": "CC-BY-SA-4.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Immaculate_Conception_-_Lake_Charles_02.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 380,
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/380-original.jpg",
+      "source_sha1_verified": "fcf74719c3701b7468560a4f4d31bac7b03bb1ae",
+      "original_sha256_verified": "660131f8c8b4417bc9c9c91465fe01ca75e5526c13644a13d66fce95a5138d65",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        2191,
+        1739
+      ],
+      "staged_path": "assets/staged/directory-p105/US-holy-family-log-church-cahokia.webp",
+      "staged_sha256": "b4fd5ceb74610f7b7cba32392b3c18d31473bfcea5a2669a48a5b1f63cf5232a",
+      "staged_bytes": 267476,
+      "staged_dimensions": [
+        1400,
+        1111
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Kbh3rd",
+      "source_claimed_license": "CC-BY-SA-3.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Holy_Family_Log_Church_Cahokia_063.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    }
+  ]
+}
