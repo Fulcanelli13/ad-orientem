@@ -59,8 +59,17 @@ export async function composeOfficeHourDraft({resolver,selection}={}){
        !source.texts||!["la","en","fr"].every(lang=>
          typeof source.texts[lang]==="string"&&source.texts[lang].trim()))
       throw Error("OFFICE_DRAFT_PARSED_SECTION_UNTRUSTED");
+    const traces=source.referenceTraces??null;
+    if(traces!==null&&(!["la","en","fr"].every(lang=>
+       Array.isArray(traces[lang])&&traces[lang].length>0&&
+       traces[lang].every(item=>
+         typeof item.sourceId==="string"&&
+         item.language===lang))))
+      throw Error("OFFICE_DRAFT_REFERENCE_TRACE_UNTRUSTED");
     return Object.freeze({key:ref.key,role:ref.role,sourceId:source.sourceId,
-      texts:source.texts,alignmentVerified:false});
+      texts:source.texts,
+      ...(traces===null?{}:{referenceTraces:traces}),
+      alignmentVerified:false});
   });
   return Object.freeze({
     schema:OFFICE_HOUR_DRAFT_SCHEMA,edition:"ROMAN_1960",
