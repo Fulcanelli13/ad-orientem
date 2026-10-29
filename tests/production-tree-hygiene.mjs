@@ -196,6 +196,30 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-p87-worldwide-385-photo-preview.yml"){
+    // Exactly one main-merge-triggered 385-photo small thumbnail campaign.
+    // Only the final audited research branch gets a write permission.
+    assert.match(source,/name: P87 one worldwide 385 actual-photo preview QA and consolidated offline reviewer/);
+    assert.match(source,/pull_request:\s*\n\s*branches: \[main\]/);
+    assert.match(source,/push:\s*\n\s*branches: \[main\]\s*\n\s*paths:/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*read/);
+    assert.match(source,/preserve-one-visual-review-archive:[\s\S]*?permissions:\s*\n\s*contents:\s*write/);
+    assert.match(source,/github\.event_name == 'push'/);
+    assert.match(source,/github\.ref == 'refs\/heads\/main'/);
+    assert.match(source,/source-and-visual-qa-contract/);
+    assert.match(source,/385.*review|385.*preview/);
+    assert.match(source,/Pillow==11\.3\.0/);
+    assert.match(source,/p87-worldwide-385-visual-preview-qa\.py/);
+    assert.match(source,/P87_COMPLETE_WORLDWIDE_PREVIEW_SHARD_/);
+    assert.match(source,/sha256sum -c SHA256SUMS/);
+    assert.match(source,/no_automatic_semantic_subject_validation/);
+    assert.match(source,/photos_published/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:/);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
