@@ -343,7 +343,7 @@ try{
  assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"38");
  assert.equal(await fp.locator("#next").isDisabled(),true);
  await fp.locator('[data-view="focus"]').click();
- assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"86");
+ assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"87");
  assert.equal(await fp.locator("#next").isDisabled(),true);
  record("390px phone: 87 source-preserving focused steps, 40 Psalm rows, ten Magnificat verses, six hymn stanzas",{
   passed:true,sourceEvents:38,focusSteps,psalmVerseRows:focusPsalm,
