@@ -161,6 +161,43 @@ try{
    const blood=rootSel+' [data-ao-precious-blood-reader]';
    assert.equal(await page.locator(blood).count(),1);
    assert.match(await page.locator(blood+' .aoPreciousBloodCard').innerText(),/O God, come to my assistance/);
+   // B37 mobile audit: the *prayer* must be visible above the original
+   // Previous/Continue dock, not just a mystery selector and progress line.
+   const bloodMetrics=()=>page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const reader=root.querySelector(".aoPreciousBlood");
+    const mount=root.querySelector(".aoP435930Mount");
+    const prayer=reader.querySelector(".aoPreciousBloodCard p");
+    const nav=reader.querySelector(".aoPreciousBloodActions");
+    const next=nav.querySelector("[data-p435930-blood-next],[data-p435930-blood-finish]");
+    const p=prayer?.getBoundingClientRect(),a=nav.getBoundingClientRect(),
+      port=mount.getBoundingClientRect(),b=next.getBoundingClientRect();
+    const hit=document.elementFromPoint(b.left+b.width/2,b.top+b.height/2);
+    return {textAboveDock:p?Math.max(0,Math.min(p.bottom,a.top,port.bottom)-Math.max(p.top,port.top)):0,
+      navTop:a.top,navBottom:a.bottom,portTop:port.top,portBottom:port.bottom,
+      dockPosition:getComputedStyle(nav).position,
+      touchHeight:b.height,touchWidth:b.width,touchHit:hit===next||next.contains(hit),
+      textFont:prayer?parseFloat(getComputedStyle(prayer).fontSize):0,
+      scrollRange:mount.scrollHeight-mount.clientHeight,
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   const bloodOpening=await bloodMetrics();
+   assert.ok(bloodOpening.textAboveDock>=40,
+    "Precious Blood must show real source prayer on the first screen: "+JSON.stringify(bloodOpening));
+   assert.equal(bloodOpening.dockPosition,"sticky");
+   assert.ok(bloodOpening.touchHeight>=48&&bloodOpening.touchWidth>=96,
+    "Precious Blood next needs a 48px thumb target");
+   assert.ok(bloodOpening.textFont>=19,"Preserve source prayer's 19px+ serif reading face");
+   assert.ok(bloodOpening.overflow<=1,"Precious Blood opening must fit a narrow phone");
+   await page.screenshot({path:resolve(out,"precious-blood-opening-"+width+".png"),animations:"disabled"});
+   await page.evaluate(()=>{
+    const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+    m.scrollTop=Math.min(200,Math.max(0,m.scrollHeight-m.clientHeight));
+   });
+   const bloodScrolled=await bloodMetrics();
+   assert.ok(bloodScrolled.navTop>=bloodScrolled.portTop-4&&bloodScrolled.navBottom<=bloodScrolled.portBottom+4&&bloodScrolled.touchHit,
+    "Original Precious Blood controls must remain reachable during reading: "+JSON.stringify(bloodScrolled));
+   await page.screenshot({path:resolve(out,"precious-blood-scroll-"+width+".png"),animations:"disabled"});
    await page.locator(rootSel+' [data-p435930-blood-next]').click();
    assert.match(await page.locator(blood+' .aoPreciousBloodCard').innerText(),/Our Father/);
    await page.locator(rootSel+' [data-p435930-blood-next]').click();
