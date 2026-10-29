@@ -11,6 +11,7 @@ import {reviewOfficeOccurrence,reviewOfficeVespersConcurrence}
  from "./precedence-review.js";
 import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
 import {planUniversalOfficeKeysForYear} from "./universal-source-descriptors.js";
+import {createOfficePinnedFilenameLookup} from "./pinned-filename-index.js";
 export const OFFICE_ANNUAL_SWEEP_SCHEMA="ao.office.annual-selection-sweep.v1";
 const iso=d=>d.toISOString().slice(0,10);
 const nextDay=day=>{const d=new Date(day+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+1);return iso(d)};
@@ -72,11 +73,12 @@ function count(map,key){
  * through the independent precedence reviewer. Neither source texts nor
  * language completeness are inspected or implied.
  */
-export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
+export function sweepAnnualOfficeResearch({year=2026,officeDays=[],filenameIndex=null}={}){
  if(!Number.isInteger(year)||year<1900||year>2099)
   throw Error("OFFICE_SWEEP_YEAR_INVALID");
  const roster=rosterIndex(officeDays,year),dates=daysOf(year);
  const pathPlan=planUniversalOfficeKeysForYear(year);
+ const pinnedIndex=filenameIndex===null?null:createOfficePinnedFilenameLookup(filenameIndex).analyzeYear(year);
  // Existing annual risk inventory contributes only advisory flags. It does
  // NOT supply a proper Office day or qualify a research candidate.
  const context=buildAnnualOfficeReadiness({year});
@@ -147,7 +149,8 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
   daily.push(Object.freeze({
    date,officeCalendarResearchCandidate:candidateOk(occurrence),
    occurrenceStatus:occurrence?.status??"NOT_SUPPLIED",
-   proposedUniversalSourceKeys:pathPlan.days[daily.length].keys,
+   proposedUniversalSourceKeys:pinnedIndex?
+    pinnedIndex.dates[daily.length].keys:pathPlan.days[daily.length].keys,
    hours:Object.freeze(hours)
   }));
  }
@@ -168,6 +171,9 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
    proposedAdventTemporalPaths:pathPlan.adventTemporalPathLeads,
    totalUnverifiedSourcePathLeads:pathPlan.totalProposedSourcePaths,
    sourceFilesVerifiedByThisSweep:0,
+   pinnedDirectoryFilenamesIndexed:pinnedIndex?.totalDirectoryFilenames??0,
+   proposedPathsWithExactPinnedLatinFilename:pinnedIndex?.exactFilenamesListed??0,
+   proposedPathsWithoutExactPinnedLatinFilename:pinnedIndex?.exactFilenamesNotListed??0,
    submittedOfficeResearchDays:roster.size,
    researchCandidateDates:candidateDates,
    sourceWitnessDays,sourceHeadingsObserved,
