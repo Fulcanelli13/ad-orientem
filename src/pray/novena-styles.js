@@ -33,7 +33,7 @@ export const NOVENA_N3_CSS=String.raw`
 #aoPray435930 .aoN1Reader .aoN1StageRail{width:100%;min-width:0}
 #aoPray435930 .aoN1Reader .aoN1StageRail span.current{box-shadow:0 0 0 1px color-mix(in srgb,var(--liturgical,#d8bd7d) 30%,transparent)}
 #aoPray435930 .aoN1SourceText{padding:18px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:18px;background:var(--surface-1,#151c24)}
-#aoPray435930 .aoN1SourceText small{display:block;color:var(--liturgical,#d8bd7d);font:650 .62rem/1.2 var(--ao-font-display,var(--font-display,system-ui));letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}
+#aoPray435930 .aoN1SourceText small{display:block;color:var(--liturgical,#d8bd7d);font:650 12px/1.4 var(--ao-font-display,var(--font-display,system-ui));letter-spacing:.045em;text-transform:uppercase;margin-bottom:12px}
 #aoPray435930 .aoN1SourceText p{white-space:pre-wrap;margin:0;color:var(--text,#f3ead7);font:400 1.03rem/1.68 var(--ao-font-liturgical,var(--font-liturgical,Georgia,serif))}
 #aoPray435930 .aoN1Canon{padding:14px;border:1px solid var(--border,rgba(255,255,255,.11));border-radius:14px;background:rgba(255,255,255,.022)}
 #aoPray435930 .aoN1CanonHead{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:8px}
@@ -182,6 +182,36 @@ export const NOVENA_N3_CSS=String.raw`
 }
 
 @media(max-width:560px){#aoPray435930 .aoN1Grid{grid-template-columns:1fr}#aoPray435930 .aoN1DayGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+/* B35: comfortable source provenance and one-thumb controls inside the Novena
+   reader only. The prayer body remains the dominant 18px+ serif surface.
+   Historical source metadata stays in its existing closed disclosure. */
+#aoPray435930 .aoN1Reader .aoN1SourceText>small{
+ font-size:12px;line-height:1.45;letter-spacing:.045em;overflow-wrap:anywhere
+}
+#aoPray435930 .aoN1Reader .aoN1Details>summary{
+ font-size:14px;line-height:1.45;min-height:48px;
+}
+#aoPray435930 .aoN1Reader .aoN1Details .aoN1Fine,
+#aoPray435930 .aoN1Reader .aoN1Details p,
+#aoPray435930 .aoN1Reader .aoN1Details li{
+ font-size:14px;line-height:1.6;
+}
+#aoPray435930 .aoN1Reader .aoN1Nav{
+ position:sticky;bottom:0;z-index:12;
+ display:flex;align-items:stretch;gap:9px;
+ margin:12px 0 0;padding:11px 2px max(11px,env(safe-area-inset-bottom));
+ border-top:1px solid var(--border,rgba(255,255,255,.16));
+ background:var(--surface-1,#151c24);
+}
+#aoPray435930 .aoN1Reader .aoN1Nav>button{
+ flex:1 1 0;min-width:0;min-height:48px;
+ padding:10px 9px;white-space:normal;
+ font-size:12px;line-height:1.35;text-align:center;
+}
+#aoPray435930 .aoN1Reader .aoN1Nav>button:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:-2px;
+}
 `;
 
 export function installNovenaStyles(doc=globalThis.document){

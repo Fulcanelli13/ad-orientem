@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -91,6 +91,7 @@ try{
    await en.waitFor({timeout:5000});
    assert.match(await en.locator("small").innerText(),/TÉMOIN SOURCE ANGLAIS/);
    assert.equal(await en.locator("[data-n1-show-en]").count(),1,"English-only witness must retain a reversible control");
+   await page.waitForFunction(()=>document.activeElement?.matches?.("[data-n1-show-en]")===true,null,{timeout:5000});
    assert.equal((await state()).focus,true);
    await en.locator("[data-n1-show-en]").click();
    await page.locator(rootSel+" .aoN1FailClosed").first().waitFor({timeout:5000});
@@ -134,8 +135,80 @@ try{
    assert.match(await page.locator(rootSel+' .aoN1StageCaption').innerText(),/Prayer stage 2 of 4/);
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),
     "Guided Novena progress must not introduce horizontal overflow");
+   // B35: inspect actual computed type, provenance disclosures, touch targets
+   // and sticky nav geometry in both EN and FR long-form source readers.
+   const checkComfort=async(locale,id)=>{
+    await page.evaluate(language=>{
+     const k="ao2:settings:v1",v=JSON.parse(localStorage.getItem(k)||"{}");
+     localStorage.setItem(k,JSON.stringify({...v,language}));
+    },locale);
+    await open(id);
+    const sample=await page.evaluate(()=>{
+     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+     const nav=mount.querySelector(".aoN1Reader .aoN1Nav");
+     const body=mount.querySelector(".aoN1Reader .aoN1SourceText .aoN1PrayerParagraph");
+     const witness=mount.querySelector(".aoN1Reader .aoN1SourceText>small");
+     const source=mount.querySelector(".aoN1Reader details.aoN1SourceDetails");
+     const summary=source?.querySelector("summary");
+     const next=nav?.querySelector("[data-n1-day-next]");
+     const navR=nav?.getBoundingClientRect(),port=mount.getBoundingClientRect();
+     const btn=next?.getBoundingClientRect();
+     const hit=btn?document.elementFromPoint(btn.left+btn.width/2,btn.top+btn.height/2):null;
+     const paras=[...mount.querySelectorAll(".aoN1Reader .aoN1SourceText .aoN1PrayerParagraph")];
+     return {
+      navPosition:nav?getComputedStyle(nav).position:"",
+      navTop:navR?.top,navBottom:navR?.bottom,portTop:port.top,portBottom:port.bottom,
+      btnHeight:btn?.height,btnWidth:btn?.width,hitTarget:!!next&&(hit===next||next.contains(hit)),
+      witnessFont:witness?parseFloat(getComputedStyle(witness).fontSize):null,
+      bodyFont:body?parseFloat(getComputedStyle(body).fontSize):null,
+      bodyLeading:body?parseFloat(getComputedStyle(body).lineHeight):null,
+      paragraphCount:paras.length,
+      paragraphGap:paras.length>1?paras[1].getBoundingClientRect().top-paras[0].getBoundingClientRect().bottom:null,
+      focusOpacity:paras.map(p=>Number(getComputedStyle(p).opacity)),
+      summaryFont:summary?parseFloat(getComputedStyle(summary).fontSize):null,
+      sourceOpen:source?.open,hasSource:!!source,
+      overflow:document.documentElement.scrollWidth-innerWidth
+     };
+    });
+    assert.equal(sample.navPosition,"sticky","Novena day navigation must stay reachable from the reading viewport");
+    assert.ok(sample.navTop>=sample.portTop-4&&sample.navBottom<=sample.portBottom+4,
+     "Navigation dock is not within the phone reading viewport: "+JSON.stringify({locale,id,sample}));
+    assert.ok(sample.btnHeight>=48&&sample.btnWidth>=96&&sample.hitTarget,
+     "Next-day control must be a reachable 48px+ thumb target: "+JSON.stringify({locale,id,sample}));
+    assert.ok(sample.witnessFont>=12,"Historical source status must be at least 12px");
+    assert.ok(sample.bodyFont>=18&&sample.bodyLeading/sample.bodyFont>=1.55,
+     "Prayer paragraphs must preserve their 18px+ / 1.55+ reading rhythm");
+    assert.ok(sample.paragraphGap===null||sample.paragraphGap>=16,
+     "Consecutive source paragraphs must be visually separated: "+JSON.stringify({locale,id,sample}));
+    assert.ok(sample.focusOpacity.every(x=>x>=.64),
+     "Novena unfocused text must keep readable opacity: "+JSON.stringify({locale,id,opacity:sample.focusOpacity}));
+    assert.ok(sample.hasSource&&!sample.sourceOpen,"Edition notes must remain accessible but closed by default");
+    assert.ok(sample.summaryFont>=14,"Source edition disclosure is not legible on small phones");
+    assert.ok(sample.overflow<=1,"Reader must not horizontally overflow at "+width+"px");
+    const shotDir=resolve(root,"artifacts/pray-b35");
+    await mkdir(shotDir,{recursive:true});
+    await page.screenshot({path:resolve(shotDir,"novena-"+locale+"-"+width+"-opening.png"),animations:"disabled"});
+    await page.evaluate(()=>{
+     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+     mount.scrollTop=Math.round((mount.scrollHeight-mount.clientHeight)*.55);
+    });
+    const after=await page.evaluate(()=>{
+     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+     const nav=mount.querySelector(".aoN1Reader .aoN1Nav");
+     const rect=nav.getBoundingClientRect(),port=mount.getBoundingClientRect();
+     const next=nav.querySelector("[data-n1-day-next]");
+     const b=next.getBoundingClientRect(),hit=document.elementFromPoint(b.left+b.width/2,b.top+b.height/2);
+     return {top:rect.top,bottom:rect.bottom,portTop:port.top,portBottom:port.bottom,
+      hit:hit===next||next.contains(hit)};
+    });
+    assert.ok(after.top>=after.portTop-4&&after.bottom<=after.portBottom+4&&after.hit,
+     "Thumb dock must remain accessible while scrolling long prayer text: "+JSON.stringify({locale,id,after}));
+    await page.screenshot({path:resolve(shotDir,"novena-"+locale+"-"+width+"-scroll.png"),animations:"disabled"});
+   };
+   await checkComfort("en","holy_face_1887");
+   await checkComfort("fr","holy_ghost");
    assert.deepEqual(errors,[],"Unexpected JavaScript errors: "+JSON.stringify(errors));
-   console.log("PASS "+width+"px Novena witness and progress: FR/EN focus; 3/4-stage guided progress; simple unaffected; no overflow");
+   console.log("PASS "+width+"px Novena witness, progress and reading comfort: FR/EN focus; 3/4-stage guided progress; simple unaffected; no overflow");
   }finally{await page.close()}
  }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
