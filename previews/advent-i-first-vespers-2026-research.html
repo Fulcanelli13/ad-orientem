@@ -173,6 +173,7 @@ for(const b of document.querySelectorAll("[data-mode]"))b.addEventListener("clic
   item.setAttribute("aria-pressed",String(active));
  }
  paint();
+ if(blocks.length)card.scrollIntoView({behavior:"instant",block:"start"});
 });
 for(const b of document.querySelectorAll("[data-view]"))b.addEventListener("click",()=>{
  const selected=b.dataset.view;
