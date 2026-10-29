@@ -54,7 +54,11 @@ function validate(records){
 function candidateMonth(record,year,month){
  const c=record.calendar_context,ym=String(year)+"-"+String(month).padStart(2,"0");
  if(c.type==="ADVENT_SEASON_ONLY"){
-  if(month===11||month===12)return {anchor:null,period:"Advent",kind:"SEASON_ONLY_NO_EVENT_DATE"};
+  const start=new Date(Date.UTC(year,10,27,12));
+  while(start.getUTCDay()!==0)start.setUTCDate(start.getUTCDate()+1);
+  const firstAdvent=start.toISOString().slice(0,10);
+  if((month===11&&firstAdvent.slice(5,7)==="11")||month===12)
+   return {anchor:null,period:"Advent (from "+firstAdvent+")",kind:"SEASON_ONLY_NO_EVENT_DATE"};
   return null;
  }
  if(c.type==="CHRISTMAS_SEASON_ONLY"){
