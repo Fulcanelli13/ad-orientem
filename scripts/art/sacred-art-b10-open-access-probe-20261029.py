@@ -19,7 +19,8 @@ for name,url in endpoints.items():
    chunk=r.read(12000);row['http']=r.status;row['mime']=r.headers.get('Content-Type');row['previewBytes']=len(chunk)
   if row['mime'] and ('json' in row['mime']):
    obj=json.loads(chunk)
-   row['total']=obj.get('total') or obj.get('count')
+   row['total']=obj.get('total') or obj.get('count') or (obj.get('partOf') or {}).get('totalItems')
+   row['orderedIDs']=[x.get('id') for x in obj.get('orderedItems',[])[:6]]
    row['ids']=obj.get('objectIDs',[])[:6]
    row['keys']=list(obj)[:10]
   elif row['mime'] and 'image' in row['mime']:
