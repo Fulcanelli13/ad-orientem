@@ -134,6 +134,7 @@ def url_file(uri):
     if parsed.scheme not in ("http","https") or parsed.netloc.lower() not in (
          "commons.wikimedia.org","upload.wikimedia.org"):
         return None
+    if ".." in urllib.parse.unquote(parsed.path).split("/") or "/File:../" in parsed.path:return None
     filename=urllib.parse.unquote(parsed.path.split("/")[-1])
     if not filename or len(filename)>220 or "/" in filename or "\x00" in filename:return None
     if not re.search(r"\.(?:jpe?g|png|webp|tiff?)$",filename,re.I):return None
