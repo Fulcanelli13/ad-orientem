@@ -1,0 +1,107 @@
+name: P84 one worldwide photo review HTML after P83 source screening
+on:
+  workflow_run:
+    workflows:
+      - "P83 one worldwide photo screening and research-only permanent archive"
+    types:
+      - completed
+permissions:
+  contents: write
+concurrency:
+  group: ao-directory-p84-worldwide-bulk-photo-review-20261029
+  cancel-in-progress: false
+jobs:
+  create-research-bulk-review:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      github.event.workflow_run.repository.full_name == 'Fulcanelli13/ad-orientem' &&
+      github.event.workflow_run.name == 'P83 one worldwide photo screening and research-only permanent archive' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'workflow_run' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Confirm no-network review and production hygiene contracts
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-p84-bulk-photo-review-test.py -v
+      - name: Fetch immutable screened world research input, never public/media
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/p83-screened-worldwide-photo-candidates-20261029:refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029'
+          git worktree add --detach /tmp/ao-p84-source refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029
+          cd /tmp/ao-p84-source/data/directory/research/archives/p83-worldwide-screened-photography
+          sha256sum -c SHA256SUMS
+          python - <<'PY'
+          import json
+          d=json.load(open("p83-worldwide-summary.json"))
+          assert d["schema"]=="AO_P83_GLOBAL_PHOTO_PREVIEW_SCREEN_V1"
+          assert d["anchors_accounted"]==2579 and d["countries"]==76
+          assert d["approved_photos"]==0 and d["rights_cleared"]==0
+          assert d["published_photos"]==0 and d["original_photos_downloaded"]==0
+          print("P84_GLOBAL_SOURCE_SCREEN",json.dumps({
+            "review_queue_assignments":d["review_queue_assignments"],
+            "held_assignments":d["held_assignments"],
+            "no_image_lead_anchors":d["no_image_lead_anchors"],
+          },sort_keys=True))
+          PY
+      - name: Generate ONE 250/500-page full-world research-only HTML review
+        run: |
+          set -euo pipefail
+          root=/tmp/ao-p84-source/data/directory/research/archives/p83-worldwide-screened-photography
+          python tools/directory/build-p84-worldwide-bulk-photo-review.py \
+            --queue "$root/p83-source-screened-preview-queue.jsonl" \
+            --summary "$root/p83-worldwide-summary.json" \
+            --output /tmp/ao-directory-p84-worldwide-review.html
+          python - <<'PY'
+          import json,hashlib,pathlib
+          root=pathlib.Path("/tmp/ao-p84-source/data/directory/research/archives/p83-worldwide-screened-photography")
+          report=json.loads((root/"p83-worldwide-summary.json").read_text())
+          html=pathlib.Path("/tmp/ao-directory-p84-worldwide-review.html")
+          data=html.read_text(encoding="utf-8")
+          assert data.count("<script>")==1
+          assert data.count("</script>")==1
+          assert "Export complete review JSON" in data
+          assert "subject_verified:false" in data
+          assert "photos_approved:0" in data
+          assert len(data.encode())<10_000_000
+          audit={"schema":"AO_P84_WORLDWIDE_DIRECTORY_BULK_REVIEW_ARCHIVE_V1",
+                 "p83_summary_sha256":hashlib.sha256((root/"p83-worldwide-summary.json").read_bytes()).hexdigest(),
+                 "p83_queue_sha256":hashlib.sha256((root/"p83-source-screened-preview-queue.jsonl").read_bytes()).hexdigest(),
+                 "review_html_sha256":hashlib.sha256(html.read_bytes()).hexdigest(),
+                 "source_leads":report["review_queue_assignments"],
+                 "page_size_choices":[250,500],
+                 "images_downloaded":0,"images_approved":0,"images_published":0,
+                 "publication":"RESEARCH_ONLY_NEVER_APP_VISIBLE"}
+          pathlib.Path("/tmp/ao-directory-p84-worldwide-review-audit.json").write_text(
+             json.dumps(audit,sort_keys=True,indent=2)+"\n",encoding="utf-8")
+          PY
+      - name: Permanently archive exactly one global review HTML and verified metadata
+        run: |
+          set -euo pipefail
+          branch="research/p84-worldwide-photo-review-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "World review already archived; never overwrite" >&2; exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="docs/research/directory/p84-worldwide-photo-review-20261029"
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/ao-directory-p84-worldwide-review.html "$target/p84-worldwide-photo-review.html"
+          cp /tmp/ao-directory-p84-worldwide-review-audit.json "$target/audit.json"
+          git add "$target/p84-worldwide-photo-review.html" "$target/audit.json"
+          test "$(git diff --cached --name-only | wc -l)" -eq 2
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): one consolidated worldwide photo review, 250/500 page"
+          git push origin "HEAD:refs/heads/$branch"
