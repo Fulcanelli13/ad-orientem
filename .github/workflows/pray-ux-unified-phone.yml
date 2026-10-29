@@ -5,6 +5,8 @@ on:
     paths:
       - "src/pray/internal-route-owner.js"
       - "src/pray/presentation-runtime.js"
+      - "src/pray/prayer-reader-design-pilot.js"
+      - "tests/pray-reader-design-pilot-phone.mjs"
       - "src/pray/presentation-styles.js"
       - "src/pray/devotional-card-deck-styles.js"
       - "src/pray/precious-blood-chaplet-styles.js"
@@ -30,11 +32,15 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Screen all Prayer direct-entry routes at 320px and 390px
         run: node tests/pray-ux-direct-route-mobile-audit.mjs
+      - name: Reader pilot F01/F03 source-owned mobile acceptance
+        run: node tests/pray-reader-design-pilot-phone.mjs
       - name: Temporary route matrix and representative visual captures
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pray-ux-unified-phone-audit
-          path: artifacts/pray-ux-unified/
+          path: |
+            artifacts/pray-ux-unified/
+            artifacts/prayer-reader-design-pilot/
           if-no-files-found: ignore
           retention-days: 3
