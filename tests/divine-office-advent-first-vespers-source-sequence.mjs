@@ -4,8 +4,10 @@ import {DIVINUM_OFFICIUM_PIN} from "../src/app/source-transport-compat.js";
 import {reviewOfficeOccurrence,OFFICE_PRECEDENCE_RULESET,OFFICE_PRECEDENCE_SOURCE}
  from "../src/office/precedence-review.js";
 import {reviewOfficeHourHandoff} from "../src/office/reviewed-hour-handoff.js";
-import {reviewAdventFirstVespersSourceSequence}
+import {reviewAdventFirstVespersSourceSequence,assembleAdventFirstVespersPsalmodyResearch}
  from "../src/office/advent-first-vespers-source-sequence.js";
+import {createOfficeAtReferenceResolver}
+ from "../src/office/at-reference-resolver.js";
 
 const eve="2026-11-28",day="2026-11-29";
 const proper="Tempora/Adv1-0",psalter="Psalterium/Psalmi/Psalmi major";
@@ -180,4 +182,86 @@ test("not a full Office: all remaining rubrical and printed gates stay open",asy
   x.psalmVersesFetched===false&&x.gloriaPatriVerified===false),true);
  assert.equal(r.components.every(s=>s.fullComponentVerified===false),true);
  assert.equal(r.rightsApproved,false);
+});
+
+function verses({missingFrench=false,substituted=false}={}){
+ const calls=[];
+ const resolver=createOfficeAtReferenceResolver({
+  readSource:async()=>{throw Error("NO_ADDITIONAL_OFFICE_SOURCE_READ")},
+  enablePsalmVerses:true,
+  maxDocuments:16,
+  readPsalmSource:async(path,language)=>{
+   calls.push([path,language]);
+   const n=Number(path.slice(path.lastIndexOf("Psalm")+5));
+   return {
+    sourcePath:substituted?"Psalterium/Psalmorum/Psalm99":path,
+    sourceRevision:DIVINUM_OFFICIUM_PIN,language,
+    text:language==="fr"&&missingFrench?"":(
+     n+":1 "+language+" première ligne du psaume.\n"+
+     n+":2 "+language+" deuxième ligne du psaume.")
+   };
+  }
+ });
+ return {resolver,calls};
+}
+test("five exact psalm verse files per language yield 15 traced research components",async()=>{
+ const source=await reviewAdventFirstVespersSourceSequence({
+  handoff:handoff(),readSource:fixture().readSource
+ });
+ const v=verses();
+ const r=await assembleAdventFirstVespersPsalmodyResearch({
+  sourceSequence:source,psalmVerseResolver:v.resolver
+ });
+ assert.equal(r.status,"FIVE_TRILINGUAL_PSALM_VERSE_COMPONENTS_UNVERIFIED");
+ assert.equal(r.fivePsalmsReadFromExactSources,true);
+ assert.equal(r.psalmVerseComponents.length,5);
+ assert.equal(v.calls.length,15);
+ assert.deepEqual(r.psalmVerseComponents.map(x=>x.psalmNumber),psalms);
+ assert.equal(r.psalmVerseComponents[0].languages.la.sourceTrace[0].sourceId,
+  "Psalterium/Psalmorum/Psalm109#VERSES");
+ assert.match(r.psalmVerseComponents[4].languages.fr.psalmVerses,/113:2/);
+ assert.equal(r.psalmVerseComponents.every(x=>
+   x.exactSourceVersesLocated===true&&x.psalmDoxologyVerified===false&&
+   x.liturgicalPlacementVerified===false),true);
+ assert.equal(r.requiredAntiphonPlacementVerified,false);
+ assert.equal(r.gloriaPatriVerified,false);
+ assert.equal(r.translationAlignmentVerified,false);
+ assert.equal(r.completeHourVerified,false);
+ assert.equal(r.published,false);
+});
+test("one missing French psalm withholds all five in research",async()=>{
+ const source=await reviewAdventFirstVespersSourceSequence({
+  handoff:handoff(),readSource:fixture().readSource
+ });
+ const r=await assembleAdventFirstVespersPsalmodyResearch({
+  sourceSequence:source,psalmVerseResolver:verses({missingFrench:true}).resolver
+ });
+ assert.equal(r.status,"WITHHELD");
+ assert.match(r.reason,/OFFICE_AT_PSALM_VERSES_INVALID/);
+ assert.equal(r.psalmRowsVerifiedAsSourceCandidates,0);
+ assert.equal(r.published,false);
+});
+test("psalm verse source identity substitution blocks source composition",async()=>{
+ const source=await reviewAdventFirstVespersSourceSequence({
+  handoff:handoff(),readSource:fixture().readSource
+ });
+ const r=await assembleAdventFirstVespersPsalmodyResearch({
+  sourceSequence:source,psalmVerseResolver:verses({substituted:true}).resolver
+ });
+ assert.equal(r.status,"WITHHELD");
+ assert.match(r.reason,/OFFICE_AT_PSALM_SOURCE_PROVENANCE_OR_SIZE_INVALID/);
+});
+test("a fabricated source sequence or selected psalm number cannot be assembled",async()=>{
+ const source=await reviewAdventFirstVespersSourceSequence({
+  handoff:handoff(),readSource:fixture().readSource
+ });
+ const bad={...source,psalmCandidates:[
+  {...source.psalmCandidates[0],number:118},...source.psalmCandidates.slice(1)
+ ]};
+ const v=verses();
+ const r=await assembleAdventFirstVespersPsalmodyResearch({
+  sourceSequence:bad,psalmVerseResolver:v.resolver
+ });
+ assert.equal(r.reason,"OFFICE_FIRST_VESPERS_SOURCE_CANDIDATE_CHANGED");
+ assert.equal(v.calls.length,0);
 });
