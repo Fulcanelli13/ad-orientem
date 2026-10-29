@@ -53,6 +53,11 @@ try{
  await page.locator(sel+" [data-p435930-conf-path='regular']").tap();
  await page.locator(sel+" [data-p435930-conf-next]").tap();
  await page.waitForSelector(timeline,{timeout:12000});
+ // The chapter timeline renders before the paragraph focus projection.
+ // Await the actual focused question rather than sampling a transient frame.
+ await page.waitForFunction(()=>Boolean(document.querySelector(
+   "#aoPray435930.open .aoP435930ConfessionReader .aoDevoCardScroll .aoDevoParagraph[data-ao-devo-active='true']"
+ )),null,{timeout:12000});
  const state=()=>page.evaluate(()=>{
   const shell=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader");
   const card=shell?.querySelector(".aoDevoCard"),scroll=card?.querySelector(".aoDevoCardScroll");

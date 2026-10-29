@@ -1784,7 +1784,7 @@ function renderAdoration(){
      </button>
     </div>
    </details>
-   <p class="aoAdorationChooserAfterword'>${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
+   <p class="aoAdorationChooserAfterword">${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
    ${adorationReturnFromBenediction?`<button type="button" class="aoP435930Secondary aoAdorationPublicRiteLink" data-p435930-go-ben>
      ${esc(L('Return to public Benediction','Revenir à la bénédiction eucharistique'))}
      <small>${esc(L('Includes optional Christ the King procession and prayers','Avec procession et prières facultatives du Christ-Roi'))}</small>

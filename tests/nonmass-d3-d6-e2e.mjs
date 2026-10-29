@@ -148,6 +148,17 @@ try{
   assert.equal(await page.locator("#aoPray435930 .aoP435930BenedictionReader").count(),0,
     "Contextual Benediction return link must not mount ritual stages itself");
   await publicRiteLink.click();
+  const returned=await page.evaluate(()=>({
+    view:globalThis.AO_PRAY_V435930?.state?.().view,
+    benedictionStep:globalThis.AO_PRAY_V435930?.state?.().benedictionStep,
+    mountView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
+    readerCount:document.querySelectorAll("#aoPray435930 .aoP435930BenedictionReader").length,
+    step:document.querySelector("#aoPray435930 .aoP435930BenedictionReader")?.getAttribute("data-ao-benediction-step")??null,
+  }));
+  assert.equal(returned.view,"benediction",
+    "Contextual return click did not navigate to public Benediction: "+JSON.stringify(returned));
+  assert.equal(returned.benedictionStep,0,
+    "Return from Adoration did not reset Benediction to Exposition");
   await page.waitForSelector(benRoot+"[data-ao-benediction-step='0']",{timeout:5000});
 
   await page.evaluate(async()=>{globalThis.AO_PRAY_V435930.close({silent:true});await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
