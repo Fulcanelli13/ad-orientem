@@ -131,6 +131,25 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-p84-one-worldwide-review.yml"){
+    // One P83-success-triggered complete review; only the final archive job has write.
+    assert.match(source,/workflow_run:\s*\n\s*workflows:/);
+    assert.match(source,/P83 one worldwide photo screening and research-only permanent archive/);
+    assert.match(source,/github\.event\.workflow_run\.conclusion == 'success'/);
+    assert.match(source,/github\.event\.workflow_run\.repository\.full_name == 'Fulcanelli13\/ad-orientem'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*read/);
+    assert.match(source,/permanent-review-index:\s*\n\s*needs: one-worldwide-review[\s\S]*?permissions:\s*\n\s*contents:\s*write/);
+    assert.match(source,/max-parallel:\s*3/);
+    assert.match(source,/shard: \[0, 1, 2, 3, 4, 5, 6, 7\]/);
+    assert.match(source,/p84-worldwide-preview-review\.py/);
+    assert.match(source,/--parts \/tmp\/p84-all-transport/);
+    assert.match(source,/original_bytes_downloaded/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:|^  push:/m);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
