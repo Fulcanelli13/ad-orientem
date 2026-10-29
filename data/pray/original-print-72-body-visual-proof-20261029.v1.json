@@ -12,15 +12,15 @@
   "scope": "Word-sequence of the English proper prayer body only; not punctuation-exact diplomatic transcription, additional preparatory prayers, common prayer references, meditations, practices, French editions or indulgence grants.",
   "counts": {
     "dayBodies": 72,
-    "fullPrintedBodyWordSequenceChecked": 26,
-    "awaitingFullVisualWordSequenceCheck": 46,
+    "fullPrintedBodyWordSequenceChecked": 44,
+    "awaitingFullVisualWordSequenceCheck": 28,
     "firstEditionWordForWordCertificate": 0,
     "completeProgrammeDevotionalPrintCertificates": 0,
     "sourcePrintBookCohorts": 4
   },
   "dispositionCounts": {
-    "PRINT_BODY_WORD_SEQUENCE_CHECKED": 26,
-    "AWAITING_COMPLETE_PAGE_WORD_PROOF": 36,
+    "PRINT_BODY_WORD_SEQUENCE_CHECKED": 44,
+    "AWAITING_COMPLETE_PAGE_WORD_PROOF": 18,
     "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED": 5,
     "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW": 5
   },
@@ -35,7 +35,7 @@
       "bookId": "moran_1883",
       "sha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
       "daysTotal": 18,
-      "visuallyVerified": 0
+      "visuallyVerified": 18
     },
     {
       "bookId": "hammer_1909",
@@ -50,7 +50,7 @@
       "visuallyVerified": 2
     }
   ],
-  "auditPolicy": "A completed body word-sequence check requires actual source-page-image inspection of the entire proper English prayer against the app body. PDF text overlap or a rendered page alone is insufficient. Printed-copy evidence cannot establish a first edition where copy contains later material. The historical printed-day source and complete programme are different certification objects. Do not automatically promote statuses.",
+  "auditPolicy": "A completed body word-sequence check requires direct original-page-image inspection start to finish of the English proper prayer text. Page-image rendering and PDF text-layer overlap alone do NOT certify it. Verify the correct day boundaries instead of assuming the overlapping two-page best-hit window is the body.",
   "records": [
     {
       "id": "holy_ghost",
@@ -627,13 +627,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        567
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        579
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p580.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -652,13 +660,24 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        569,
+        570
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        581,
+        582
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p582.png",
+        "moran_1883-p583.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -677,13 +696,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        570
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        582
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p583.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -702,13 +729,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        570
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        582
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p583.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -727,13 +762,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        571
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        583
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p584.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -752,13 +795,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        571
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        583
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p584.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -777,13 +828,24 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        571,
+        572
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        583,
+        584
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p584.png",
+        "moran_1883-p585.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -802,13 +864,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        572
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        584
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p585.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "immaculate_conception",
@@ -827,13 +897,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        572
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        584
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p585.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "annunciation",
@@ -1585,13 +1663,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        603
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        615
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p616.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1610,13 +1696,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        603
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        615
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p616.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1635,13 +1729,24 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        603,
+        604
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        615,
+        616
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p616.png",
+        "moran_1883-p617.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1660,13 +1765,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        604
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        616
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p617.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1685,13 +1798,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        605
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        617
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p618.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1710,13 +1831,24 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        605,
+        606
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        617,
+        618
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p618.png",
+        "moran_1883-p619.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1735,13 +1867,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        606
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        618
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p619.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1760,13 +1900,24 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        606,
+        607
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        618,
+        619
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p619.png",
+        "moran_1883-p620.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "st_joseph",
@@ -1785,13 +1936,24 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        607,
+        608
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        619,
+        620
+      ],
+      "sourceImageFiles": [
+        "moran_1883-p620.png",
+        "moran_1883-p621.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "visualObservation": "Whole original body compared on the photographed 1883 Moran source page(s); differences in machine score arise from decorative initials, print hyphenation and line breaks. No material prayer-word deviation found.",
+      "directImageVerifiedOn": "2026-10-29"
     },
     {
       "id": "holy_souls",
@@ -2055,5 +2217,8 @@
       "editionCaveat": null,
       "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
     }
-  ]
+  ],
+  "updatedOn": "2026-10-29",
+  "updatedEvidence": "Direct visual word-sequence comparison across all nine Immaculate Conception and all nine St Joseph prayers, source p567,569–572 and pp603–608; prior 26 retained.",
+  "researchStatus": "44 proper English prayer bodies directly checked; 28 pending. Entire first impressions, whole devotional programmes, historical French originals and modern indulgence concessions not certified."
 }
