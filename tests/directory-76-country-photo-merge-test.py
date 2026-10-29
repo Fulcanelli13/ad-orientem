@@ -11,12 +11,11 @@ m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 
 class CountryMergeContract(unittest.TestCase):
     def build_fixture(self,root):
-        codes=set(m.EXISTING)
-        codes.update(chr(65+i//26)+chr(65+i%26) for i in range(68))
-        codes=set(sorted(codes)[:76])
-        codes.update(m.EXISTING)
-        # Ensure all 76 and exactly one overlapping retry country.
-        other=sorted(codes-m.EXISTING)
+        # Build 68 entirely distinct synthetic countries plus 8 fixed prior
+        # countries; use exactly one AU duplicate across independent inputs.
+        candidates=[chr(65+i//26)+chr(65+i%26) for i in range(676)]
+        other=sorted([c for c in candidates if c not in m.EXISTING][:68])
+        codes=set(other)|m.EXISTING
         self.assertEqual(len(other),68)
         paths={}
         (root/"intake.json").write_text(json.dumps({"country_counts":{c:1 for c in codes}}))
