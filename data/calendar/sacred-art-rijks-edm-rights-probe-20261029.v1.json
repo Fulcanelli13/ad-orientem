@@ -26,7 +26,52 @@
             "object",
             "provider"
           ],
-          "edmRightsValues": []
+          "edmRightsValues": [],
+          "aggregationRelevant": {
+            "id": "https://id.rijksmuseum.nl/200109177#aggregation",
+            "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+            "isShownAt": {
+              "id": "https://www.rijksmuseum.nl/nl/collectie/object/SK-A-3992--f7cc5bb9dd4941274c9151320ae75813",
+              "type": "WebResource",
+              "dcType": [
+                {
+                  "id": "http://purl.org/dc/dcmitype/InteractiveResource"
+                }
+              ],
+              "format": [
+                "text/html"
+              ],
+              "language": [
+                "nl"
+              ]
+            },
+            "isShownBy": {
+              "id": "https://iiif.micr.io/rXrek/full/max/0/default.jpg",
+              "type": "WebResource",
+              "http://rdfs.org/sioc/services#has_service": {
+                "id": "https://iiif.micr.io/rXrek",
+                "type": "http://rdfs.org/sioc/services#Service",
+                "conformsTo": [
+                  {
+                    "id": "http://iiif.io/api/image"
+                  }
+                ]
+              }
+            },
+            "object": {
+              "id": "https://iiif.micr.io/rXrek/full/max/0/default.jpg",
+              "type": "WebResource",
+              "http://rdfs.org/sioc/services#has_service": {
+                "id": "https://iiif.micr.io/rXrek",
+                "type": "http://rdfs.org/sioc/services#Service",
+                "conformsTo": [
+                  {
+                    "id": "http://iiif.io/api/image"
+                  }
+                ]
+              }
+            }
+          }
         },
         {
           "profile": "edm",
@@ -63,7 +108,52 @@
             "object",
             "provider"
           ],
-          "edmRightsValues": []
+          "edmRightsValues": [],
+          "aggregationRelevant": {
+            "id": "https://id.rijksmuseum.nl/20025782#aggregation",
+            "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+            "isShownAt": {
+              "id": "https://www.rijksmuseum.nl/nl/collectie/object/SK-A-282--b48ec24e6e5306d6333612c73a94ac61",
+              "type": "WebResource",
+              "dcType": [
+                {
+                  "id": "http://purl.org/dc/dcmitype/InteractiveResource"
+                }
+              ],
+              "format": [
+                "text/html"
+              ],
+              "language": [
+                "nl"
+              ]
+            },
+            "isShownBy": {
+              "id": "https://iiif.micr.io/sRdks/full/max/0/default.jpg",
+              "type": "WebResource",
+              "http://rdfs.org/sioc/services#has_service": {
+                "id": "https://iiif.micr.io/sRdks",
+                "type": "http://rdfs.org/sioc/services#Service",
+                "conformsTo": [
+                  {
+                    "id": "http://iiif.io/api/image"
+                  }
+                ]
+              }
+            },
+            "object": {
+              "id": "https://iiif.micr.io/sRdks/full/max/0/default.jpg",
+              "type": "WebResource",
+              "http://rdfs.org/sioc/services#has_service": {
+                "id": "https://iiif.micr.io/sRdks",
+                "type": "http://rdfs.org/sioc/services#Service",
+                "conformsTo": [
+                  {
+                    "id": "http://iiif.io/api/image"
+                  }
+                ]
+              }
+            }
+          }
         },
         {
           "profile": "edm",
@@ -100,7 +190,52 @@
             "object",
             "provider"
           ],
-          "edmRightsValues": []
+          "edmRightsValues": [],
+          "aggregationRelevant": {
+            "id": "https://id.rijksmuseum.nl/20028546#aggregation",
+            "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+            "isShownAt": {
+              "id": "https://www.rijksmuseum.nl/nl/collectie/object/SK-A-3439--b33db152e0d72630d3d001be2b684842",
+              "type": "WebResource",
+              "dcType": [
+                {
+                  "id": "http://purl.org/dc/dcmitype/InteractiveResource"
+                }
+              ],
+              "format": [
+                "text/html"
+              ],
+              "language": [
+                "nl"
+              ]
+            },
+            "isShownBy": {
+              "id": "https://iiif.micr.io/VRcaC/full/max/0/default.jpg",
+              "type": "WebResource",
+              "http://rdfs.org/sioc/services#has_service": {
+                "id": "https://iiif.micr.io/VRcaC",
+                "type": "http://rdfs.org/sioc/services#Service",
+                "conformsTo": [
+                  {
+                    "id": "http://iiif.io/api/image"
+                  }
+                ]
+              }
+            },
+            "object": {
+              "id": "https://iiif.micr.io/VRcaC/full/max/0/default.jpg",
+              "type": "WebResource",
+              "http://rdfs.org/sioc/services#has_service": {
+                "id": "https://iiif.micr.io/VRcaC",
+                "type": "http://rdfs.org/sioc/services#Service",
+                "conformsTo": [
+                  {
+                    "id": "http://iiif.io/api/image"
+                  }
+                ]
+              }
+            }
+          }
         },
         {
           "profile": "edm",
