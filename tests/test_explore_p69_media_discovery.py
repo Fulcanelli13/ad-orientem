@@ -110,6 +110,8 @@ class BulkMediaDiscoveryTests(unittest.TestCase):
         for name,url in [
            ("CC BY SA 4.0","https://creativecommons.org/licenses/by-sa/4.0/"),
            ("CC0 1.0","https://creativecommons.org/publicdomain/zero/1.0/"),
+           ("CC0","http://creativecommons.org/publicdomain/zero/1.0/"),
+           ("CC BY 2.5","https://creativecommons.org/licenses/by/2.5/"),
            ("PUBLIC DOMAIN",""),
         ]:
            out=mod.candidates_from_response(task,self._fake(name,url),set())
