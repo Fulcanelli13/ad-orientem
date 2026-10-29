@@ -1,5 +1,6 @@
 import {CUSTOMS_YEAR_GROUPS,createCustomsLibrary,selectCustoms,selectResearch} from "./customs-library.js";
 import {calendarCustomArticle} from "../calendar/customs-read-model.js";
+import {calendarCustomHistoricalVariants} from "../calendar/customs-22-regional-variants.js";
 
 const ROOT="ao-customs-library-root";
 const E=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -31,6 +32,7 @@ function makeOwner(win=globalThis){
     return '<button class="aoCustCard" data-cust-id="'+E(c.id)+'"><span class="aoCustSmall">'+E(c.publication_state==="CONTEXT_ONLY"?L("Historical or regional context","Contexte historique ou régional"):familyLabel(c.family))+'</span><strong>'+E(title(c))+'</strong><span class="aoCustSummary">'+E(dateHint(c)||desc(c))+'</span></button>';
   }
   function article(c){
+    const regionalVariants=c.publication_state==="PUBLISHED"?calendarCustomHistoricalVariants(c.id,{fr:FR()}):[];
     const segments=[
       [L("When","Quand"),dateHint(c)],
       [L("Meaning","Sens"),FR()?c.meaning_fr||c.meaning_en:c.meaning_en],
@@ -66,6 +68,19 @@ function makeOwner(win=globalThis){
         E(L("Additional references","Autres références"))+' · '+(all.length-5)+'</summary><ul>'+
         all.slice(5).map(link).join("")+'</ul></details>';
       html+='</section>';
+    }
+    if(regionalVariants.length){
+      html+='<section class="aoCustRegionalVariants"><details class="aoCustEvidenceDetails"><summary>'+
+        E(L("Historical regional variations","Variantes régionales historiques"))+' · '+regionalVariants.length+'</summary>'+
+        '<p class="aoCustSmall">'+E(L(
+          "Historical testimony only; locality, current practice and any priestly rite must not be presumed.",
+          "Témoignages historiques uniquement : on ne présume ni la continuité locale, ni un rite sacerdotal autorisé."))+'</p>'+
+        regionalVariants.map(v=>'<article class="aoCustRegionalVariant"><h3>'+E(v.title)+'</h3><p>'+E(v.history)+
+          '</p><p>'+E(v.context_or_practice)+'</p><small class="aoCustSmall">'+
+          E(v.geography.join(" · "))+' · '+E(L("Printed page","Page imprimée"))+' '+E(v.source.printed_page)+
+          '</small><p><a href="'+E(v.source.url)+'" target="_blank" rel="noopener noreferrer">'+
+          E(L("Read historical source","Lire la source historique"))+'</a></p></article>').join("")+
+        '</details></section>';
     }
     return html+'</div>';
   }
