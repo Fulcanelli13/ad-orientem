@@ -22,6 +22,16 @@ Current canonical Geography registry: **529 Places, 22 confirmed Directory-to-Pl
 
 This applies to these three candidates only, not to the unrelated **36 already approved Place covers** and **33 already approved Place gallery records**.
 
+## Physical-site research advanced (still no canonical Place)
+
+| Photograph | Research-corroborated church address | Independent/source witnesses | Open gate |
+| --- | --- | --- | --- |
+| #61 Hannover | Platz an der Basilika 1, 30169 Hannover | [Basilica official address](https://www.st-clemens-hannover.de/anfahrt/), [Diocese of Hildesheim](https://www.bistum-hildesheim.de/bistum/pfarrgemeinden/kirche/a/basilika-st-clemens-hannover-1/), [FSSP local community](https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/hannover/home.php) | Create/reconcile precise canonical Place and exact confirmed Directory `LOCATED_AT` link |
+| #71 Kolbermoor | Th.-Fontane-Str. 7, 83059 Kolbermoor | [SSPX site listing](https://map.fsspx.org/de/places/kapelle-hl-bruder-konrad), [German district](https://fsspx.de/de/priorate-und-messzentren), [SSPX Chapel service](https://fsspx.today/chapel/kolbermoor/) | Same Place/link gate, keeping SSPX affiliation explicit |
+| #195 Blandford Forum | Whitecliff Mill Street, Blandford Forum DT11 7BN | [Plymouth Diocese](https://www.plymouth-diocese.org.uk/church/blandford-forum-lady-lourdes-st-cecilia/), [Parish own address](https://blandfordcatholics.org/contact-us/) | Physical church confirmed; **current Traditional Latin Mass schedule not independently established**, so do not promote a new schedule |
+
+The existing frozen research anchor and original venue identifier are retained for each photo in `p103-app-layout-and-license-readiness.json`. The independent witness checks improve *site research* but do not create a Place, verify GPS placement, approve any source image or publish Mass schedules.
+
 ## Exact Commons file source and declared reuse rights
 
 | P87 ID | Exact-file author | Declaration | Required if published |
