@@ -1,0 +1,376 @@
+{
+  "schema": "ao.pray.novena-digital-witness-bulk-result.v1",
+  "observedAt": "2026-10-29T11:11:42Z",
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40863452845",
+  "sourceHeadCommit": "77fa053cb09e6f35598a9337bd994400f3100ca4",
+  "method": "Seven-word contiguous shingles over normalized English prayer text and fetched digital HTML. A high overlap is a digital identity screen, NOT a complete original printed edition or French translation certification.",
+  "population": {
+    "programmes": 16,
+    "daySpecific": 72,
+    "repeatForms": 8,
+    "sharedPrayers": 11,
+    "allComponents": 91,
+    "distinctUrls": 21,
+    "fetchedHtml": 20,
+    "pdfHeld": 1
+  },
+  "summary": {
+    "HIGH_DIGITAL_OVERLAP": 85,
+    "INSUFFICIENT_LENGTH": 1,
+    "PARTIAL_DIGITAL_OVERLAP": 1,
+    "LOW_DIGITAL_OVERLAP": 2,
+    "NO_DIGITAL_COMPARISON": 1,
+    "CROSS_LANGUAGE_NOT_EVALUABLE": 1
+  },
+  "dayBodyShingleCoverageThousandths": {
+    "annunciation": [
+      985,
+      1000,
+      1000,
+      985,
+      982,
+      985,
+      978,
+      1000,
+      1000
+    ],
+    "assumption": [
+      1000,
+      982,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "christmas": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "holy_ghost": [
+      980,
+      982,
+      978,
+      980,
+      973,
+      977,
+      971,
+      984,
+      972
+    ],
+    "holy_souls": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      968,
+      950
+    ],
+    "immaculate_conception": [
+      989,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "seven_sorrows": [
+      991,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "st_joseph": [
+      988,
+      992,
+      990,
+      989,
+      1000,
+      995,
+      951,
+      1000,
+      994
+    ]
+  },
+  "additionalComponents": [
+    [
+      "corpus_christi",
+      "repeat_prayer",
+      1000,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "sacred_heart",
+      "repeat_prayer",
+      953,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "immaculate_conception",
+      "opening",
+      957,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "annunciation",
+      "opening",
+      917,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "annunciation",
+      "churchPrayer",
+      978,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "annunciation",
+      "ejaculation",
+      1000,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "assumption",
+      "opening",
+      1000,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "assumption",
+      "churchPrayer",
+      971,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "assumption",
+      "ejaculation",
+      null,
+      "INSUFFICIENT_LENGTH"
+    ],
+    [
+      "seven_sorrows",
+      "opening",
+      900,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "seven_sorrows",
+      "churchPrayer",
+      986,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "seven_sorrows",
+      "ejaculation",
+      1000,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "holy_souls",
+      "sharedClosingText",
+      785,
+      "PARTIAL_DIGITAL_OVERLAP"
+    ],
+    [
+      "perpetual_help",
+      "repeat_prayer",
+      952,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "st_therese",
+      "repeat_prayer",
+      1000,
+      "HIGH_DIGITAL_OVERLAP"
+    ],
+    [
+      "st_anthony_nine_tuesdays",
+      "repeat_prayer",
+      393,
+      "LOW_DIGITAL_OVERLAP"
+    ],
+    [
+      "christ_the_king",
+      "repeat_prayer",
+      null,
+      "NO_DIGITAL_COMPARISON"
+    ],
+    [
+      "immaculate_heart",
+      "repeat_prayer",
+      517,
+      "LOW_DIGITAL_OVERLAP"
+    ],
+    [
+      "st_michael",
+      "repeat_prayer",
+      0,
+      "CROSS_LANGUAGE_NOT_EVALUABLE"
+    ]
+  ],
+  "sourceContentSha256": [
+    {
+      "url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "sha256": "4668f31c158ee2faac503f54f46afbc132eb913263fd7a5d20f415cd36a7d6ec",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Festival_of_Corpus_Christi",
+      "sha256": "92ec539704d3fa314bd5ddad9cb823cb3db47ce49e75aba061221e2783b8580e",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Feast_of_the_Sacred_Heart",
+      "sha256": "9e10050fb1e5613f4cafb26cbaf31a34ff8e9161d9543c79258ccb9a11cad43e",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_in_Preparation_for_the_Feast_of_the_Immaculate_Conception",
+      "sha256": "afd7dc5138a07594d4c2575bffe359c58c6f019ad61f820131520a5018a03053",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "sha256": "bb908dc3650a62dfe960547cb2f7c9307819956c67d4b0d4513a6aa47cef3ec8",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_of_St._Joseph",
+      "sha256": "8a13f702c5e700e3af4c82ac2c08ae0511d3fbff606f5bb0338491a7bf9b2127",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer108.shtml",
+      "sha256": "6a759296626727f506af976caeeb1d1fe78cecf3f35bde0a731232cf4af42537",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer109.shtml",
+      "sha256": "ac1d232e7f414c795f3b4e5b55b3099a54f01a0af96974f68f1e0e43c16b8793",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer110.shtml",
+      "sha256": "9f2eef87362cb3034449faa9a35b92786e8ddbb8e5f46ad17c6251bdcebde96d",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer111.shtml",
+      "sha256": "9d86cffba132ace46a9eac30a9fb55270ece74e2ac3eab9014cc80a13bce2db9",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer112.shtml",
+      "sha256": "147271f1c32d4ca29fba1ed453fcba03f0288f0e75165f9c162f6a9b44904223",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer113.shtml",
+      "sha256": "a927b237601a5d2078c123f909fc2e4616aa8f1cc8e98e6e952e51b8df51c094",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer114.shtml",
+      "sha256": "12262a08dd166e04a075f222f951f1f21dd735cb1a8e6ee8133dff57ccd726c1",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer115.shtml",
+      "sha256": "c14d9fdb1bef27169d655706d8fda7ae89e12b705f975ad2a7b918b8211d4126",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ecatholic2000.com/life/prayer116.shtml",
+      "sha256": "ef83080025a6febc47a081ac0655fcb508c024fec6a5fd33231221ce516e96b0",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
+      "sha256": "f8d588249d1466e02604eabe54fd9a57c6e1ae0077df8f5939d50a524654a891",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.ewtn.com/catholicism/devotions/novena-of-the-twentyfour-glory-bes-to-st-therese-the-little-flower-293",
+      "sha256": "f01cf7f8bbca2842128c5122aecd1b34312d5246be9aa27e497a8ab3501a278b",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.pamphlets.info/Australia/acts1014/",
+      "sha256": "7724d0064da79b05b647af6e1c9735d87dc2742c2136ff7e9717b06d958c6bc0",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
+      "sha256": null,
+      "status": "PDF_NOT_FETCHED"
+    },
+    {
+      "url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
+      "sha256": "5efab0f9de2e09fc32987d9bb0db4231c0081b8b22a2438e095203d1100db294",
+      "status": "FETCHED"
+    },
+    {
+      "url": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel",
+      "sha256": "32e26f2b5f155000c13204cdbe225956276b3950c89cd5ee0c48bb76273bd409",
+      "status": "FETCHED"
+    }
+  ],
+  "pendingExceptions": [
+    {
+      "id": "holy_souls",
+      "segment": "sharedClosingText",
+      "reason": "Closing prayers partly rephrased/abbreviated; segment-by-segment manual check needed, no automatic text change."
+    },
+    {
+      "id": "st_anthony_nine_tuesdays",
+      "segment": "repeat_prayer",
+      "reason": "1966 Franciscan pamphlet prints modern English; app has an archaized adaptation. Rights status for a new verbatim import is unresolved. Provenance text corrected to stop claiming source lock."
+    },
+    {
+      "id": "immaculate_heart",
+      "segment": "repeat_prayer",
+      "reason": "App English is a traditional variant with substantial differences from 1857 Raccolta translation; prose provenance corrected, source words not changed."
+    },
+    {
+      "id": "christ_the_king",
+      "segment": "repeat_prayer",
+      "reason": "Historical French PDF not retrieved; inspect print facsimile before any new claim."
+    },
+    {
+      "id": "st_michael",
+      "segment": "repeat_prayer",
+      "reason": "French web source cannot be used to certify app English rendering by word-overlap."
+    },
+    {
+      "id": "assumption",
+      "segment": "ejaculation",
+      "reason": "Seven-word target below minimum comparable length; manual short-text match."
+    }
+  ],
+  "verificationLimits": {
+    "originalPrintFullCertificatesAdded": 0,
+    "historicalFrenchPrintCertificatesAdded": 0,
+    "currentIndulgenceClaimsCertified": 0,
+    "publishedPrayerWordsChanged": false
+  }
+}
