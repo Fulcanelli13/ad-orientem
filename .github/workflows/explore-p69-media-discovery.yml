@@ -1,0 +1,36 @@
+name: Explore P69 bulk Commons media discovery safeguards
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/discover-sacred-media-p69.py'
+      - 'tests/test_explore_p69_media_discovery.py'
+      - 'data/geography/research/media-discovery-p69-batch0.v1.jsonl'
+      - 'docs/EXPLORE-P69-BULK-MEDIA-DISCOVERY-20261029.md'
+      - '.github/workflows/explore-p69-media-discovery.yml'
+permissions:
+  contents: read
+jobs:
+  offline-research-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all 516 Place and 122 relic queues, source filtering and rights holds
+        run: python -m unittest discover -s tests -p 'test_explore_p69_media_discovery.py' -v
+      - name: Check offline first-batch plan against committed canonical IDs
+        run: |
+          python tools/discover-sacred-media-p69.py --mode plan --batch 0 --batch-size 150 > "${RUNNER_TEMP}/p69-preview.jsonl"
+          python - "${RUNNER_TEMP}/p69-preview.jsonl" <<'PY'
+          import json,sys
+          rows=[json.loads(s) for s in open(sys.argv[1],encoding="utf8")]
+          assert len(rows)==272
+          assert len({x["entity_id"] for x in rows})==272
+          assert sum(x["owner"]=="GEOGRAPHY" for x in rows)==150
+          assert sum(x["owner"]=="SACRED_PHENOMENA" for x in rows)==122
+          assert all(x["publication"]=="RESEARCH_ONLY_QUERY" for x in rows)
+          print("P69 PASS: 150 exact Places, 122 relic source-only queries, zero network calls or publication")
+          PY
