@@ -22,6 +22,9 @@ const knownPlaces=new Set(places.places.map(x=>x.place_id));
 const shrineIds=new Set(canonical.shrines.map(x=>x.shrine_id));
 const placeById=new Map(places.places.map(x=>[x.place_id,x]));
 const imageByPlace=new Map(images.items.map(x=>[x.place_id,x]));
+// The 2026-10-21 source ledger is an historical snapshot; new 2026-10-29 Directory imagery must not retroactively change it.
+const historicImages=images.items.filter(x=>x.place_id!=="place:US:st-alphonsus-baltimore");
+const historicImageByPlace=new Map(historicImages.map(x=>[x.place_id,x]));
 const allGuides=[...oldGuideFiles.flatMap(path=>json(path).guides),...newGuides.guides,...newSaintGuides.guides,...globalMarianB2.guides];
 assert.equal(canonical.shrines.length,257);
 assert.equal(canonical.pilgrimages.length,240);
@@ -37,7 +40,8 @@ assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].so
 assert.equal(ledger.summary.marianShrines,118);
 assert.equal(ledger.summary.shrineGuides,33);
 assert.equal(ledger.summary.shrineApprovedHero,31);
-assert.equal(images.items.length,31,"Approved photo registry count must match source ledger");
+assert.equal(historicImages.length,ledger.summary.approvedSitePhotos,"Original dated photo ledger must remain an intact cohort");
+assert.equal(images.items.length,32,"One later separately-reviewed exact-site Directory hero appended");
 for(const item of images.items){
  assert.ok(item.status==="APPROVED"&&item.rights_verified&&item.subject_verified&&item.crop_reviewed);
  assert.ok(/^https:\/\//.test(item.source_url)&&/^https:\/\//.test(item.license_url));
@@ -72,7 +76,7 @@ for(const entry of ledger.shrines){
  assert.ok(shrineIds.has(entry.shrine_id)&&knownPlaces.has(entry.place_id),entry.shrine_id);
  const g=allGuides.some(x=>x.place_id===entry.place_id);
  assert.equal(entry.detailed_guide==="PUBLISHED",g,entry.shrine_id+" guide coverage drift");
- assert.equal(entry.hero_media==="APPROVED_LOCAL",imageByPlace.get(entry.place_id)?.status==="APPROVED",
+ assert.equal(entry.hero_media==="APPROVED_LOCAL",historicImageByPlace.get(entry.place_id)?.status==="APPROVED",
   entry.shrine_id+" photo coverage drift");
 }
 for(const g of [...newGuides.guides,...newSaintGuides.guides]){

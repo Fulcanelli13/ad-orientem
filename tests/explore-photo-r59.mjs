@@ -62,8 +62,8 @@ for(const c of batch.candidates){
   else assert.fail("Unreviewed licence "+c.expected_license);
 }
 assert.deepEqual([four,three,two],[8,1,1]);
-assert.equal(published.items.length,31,
- "Eight original R59 approved replacements plus six separate, independently certified shrine photographs");
+assert.equal(published.items.length,32,
+ "Historical R58/R59 and shrine approvals retained plus independently verified St Alphonsus exterior");
 const historical=new Set([
  ...old.approved.map(x=>x.place_id),...r59Review.approved.map(x=>x.place_id)
 ]);

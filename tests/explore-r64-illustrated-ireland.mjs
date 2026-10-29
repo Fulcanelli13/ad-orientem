@@ -18,7 +18,7 @@ assert.ok(s.shrines.length>=216);
 assert.ok(s.pilgrimages.length>=206);
 assert.ok(geo.places.length>=220);
 assert.equal(featured.items.length,20);
-assert.equal(media.items.length,31,"Expanded verified sanctuary corpus includes original eighteen plus six new photos");
+assert.equal(media.items.length,32,"Historical source-verified site photos plus St Alphonsus exact Directory cover; Ireland guide cohort unchanged");
 assert.ok(EXPLORE_DATA_URLS.illustratedPlaceGuides.endsWith("/data/shrines/illustrated-place-guides-ireland.v1.json"));
 const ids=new Set(["place:IE:knock-shrine","place:IE:lough-derg-station-island"]);
 let count=0;

@@ -42,6 +42,47 @@ for(const name of workflows){
       name+" review-branch promotion requires explicit contents: write");
     assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
       name+" must push only back to the triggering review branch");
+  }else if(name==="directory-st-alphonsus-stage.yml"){
+    // Narrow, exact-branch staging of FOUR fixed-source local photographs.
+    // Writes staged assets + report only; no approved media or production edits.
+    assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*feat\/directory-st-alphonsus-media-20261029/i,
+      "St Alphonsus binary staging must remain on its exact feature branch");
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i,
+      "St Alphonsus staged-asset job must use explicit write permission");
+    assert.match(source,/refs\/heads\/feat\/directory-st-alphonsus-media-20261029/,
+      "St Alphonsus push cannot address main");
+    assert.match(source,/git add assets\/staged\/directory-st-alphonsus\/US-st-alphonsus-baltimore-exterior-2018\.webp/,
+      "Only explicit exterior image may be staged");
+    assert.match(source,/git add assets\/staged\/directory-st-alphonsus\/US-st-alphonsus-baltimore-nave-2013\.webp/,
+      "Only explicit interior image may be staged");
+    assert.match(source,/git add assets\/staged\/directory-st-alphonsus\/US-st-alphonsus-baltimore-exterior-spire-2014\.webp/,
+      "Only explicit full-spire exterior alternate may be staged");
+    assert.match(source,/git add assets\/staged\/directory-st-alphonsus\/US-st-alphonsus-baltimore-high-altar-2013\.webp/,
+      "Only exact St Alphonsus high altar image may be staged");
+    assert.match(source,/git add data\/geography\/research\/directory-st-alphonsus-photo-stage-20261029\.v1\.json/,
+      "Only provenance report may be staged");
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1,
+      "Exact staged-asset workflow may push only once");
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*\bmain\b/i);
+    assert.doesNotMatch(source,/assets\/approved|approved-place-media\.v1\.json|approved-place-gallery\.v1\.json/,
+      "Staging cannot publish approved images");
+  }else if(name==="directory-st-alphonsus-promote.yml"){
+    // EXACT one-site photo publication candidate, confined to feature branch:
+    // 2 reviewed images + 2 pre-existing canonical media manifests. The PR
+    // must separately pass full CI before any merge; never auto-push main.
+    assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*feat\/directory-st-alphonsus-media-20261029/i);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.match(source,/refs\/heads\/feat\/directory-st-alphonsus-media-20261029/i);
+    assert.match(source,/git add assets\/approved\/place-media\/US-st-alphonsus-baltimore\.webp/i);
+    assert.match(source,/git add assets\/approved\/place-gallery\/US-st-alphonsus-baltimore-facade\.webp/i);
+    assert.match(source,/git add data\/geography\/approved-place-media\.v1\.json/i);
+    assert.match(source,/git add data\/geography\/approved-place-gallery\.v1\.json/i);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*\bmain\b/i);
+    assert.doesNotMatch(source,/force-with-lease|git\s+push\s+--force\b/i);
+    assert.doesNotMatch(source,/workflow_dispatch:|schedule:/i);
   }else if(name==="directory-open-photo-discovery-batch.yml"){
     // Only this explicitly dispatched *metadata-only* collector may write one
     // fixed research branch. Never allow research-batch automation to push main,

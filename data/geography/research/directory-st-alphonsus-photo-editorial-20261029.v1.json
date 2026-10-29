@@ -1,0 +1,47 @@
+{
+  "schema": "AO_ST_ALPHONSUS_DIRECTORY_PHOTO_EDITORIAL_V1",
+  "date": "2026-10-29",
+  "venue_id": "ao-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa",
+  "place_id": "place:US:st-alphonsus-baltimore",
+  "status": "EDITORIAL_RELEASE_SELECTION_FOR_CODE_REVIEW",
+  "approved_source_assets": [
+    {
+      "stage_filename": "US-st-alphonsus-baltimore-exterior-spire-2014.webp",
+      "decision": "APPROVE_HERO",
+      "publish_filename": "US-st-alphonsus-baltimore.webp",
+      "role": "EXTERIOR",
+      "quality": "Acceptable architectural contextual cover: full steeple visible, exact church, unframed 4:3 image; cloudy sky and street infrastructure visible",
+      "license": "CC-BY-SA-4.0",
+      "source_sha1": "52a330832e9605d42673e57a42fc6ffb89b016ac",
+      "derivative_sha256": "1bace81e2af2657dc615d61803ec97162e42f2f893d341a2a0352bd307811e6c"
+    },
+    {
+      "stage_filename": "US-st-alphonsus-baltimore-exterior-2018.webp",
+      "decision": "APPROVE_GALLERY",
+      "publish_filename": "US-st-alphonsus-baltimore-facade.webp",
+      "role": "EXTERIOR",
+      "quality": "Crisp facade and front entrances in direct sunlight, exact building, full original frame; top of spire absent, so gallery exterior detail only",
+      "license": "CC0",
+      "source_sha1": "67e9200bed8050bda00663c72fc5728d81ada109",
+      "derivative_sha256": "c34baffa58df5752037620528c8e95ac883ef0abdbac2782d4a5bfde8d0bf1fa"
+    }
+  ],
+  "held": [
+    {
+      "stage_filename": "US-st-alphonsus-baltimore-nave-2013.webp",
+      "role": "INTERIOR",
+      "status": "HOLD_VISUAL_QUALITY",
+      "reason": "Exact site and CC BY-SA 3.0 verified; image noticeably soft/overexposed and includes seated visitors; seek sharper, more atmospheric unframed source"
+    },
+    {
+      "stage_filename": "US-st-alphonsus-baltimore-high-altar-2013.webp",
+      "role": "SACRED_DETAIL",
+      "status": "HOLD_VISUAL_QUALITY",
+      "reason": "Exact site and CC BY-SA 3.0 verified; visibly blurred and bright window washout, with foreground temporary altar/table obscuring Gothic high altar"
+    }
+  ],
+  "exact_place_promotion_only": true,
+  "alternate_building_fallback_forbidden": true,
+  "release_policy": "Copy only selected WebP derivatives with identical sha256 to existing canonical approved media and gallery registries; do not promote held interior/altar images. Keep two approved exteriors attributable, EN/FR labels, unchanged source licence and original sha1.",
+  "automatically_approved_by_discovery": false
+}

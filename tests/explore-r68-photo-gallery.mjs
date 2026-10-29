@@ -22,7 +22,7 @@ assert.equal(gallery.schema,"AO_APPROVED_PLACE_GALLERY_V1");
 assert.equal(gallery.items.length,2);
 assert.equal(manifest.sources.length,2);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
-assert.equal(hero.items.length,31,"Six separate shrine approvals retain the original Pontmain gallery");
+assert.equal(hero.items.length,32,"Original Pontmain gallery and 31 earlier hero approvals retained; new St Alphonsus Directory photo is separate");
 assert.equal(new Set(gallery.items.map(m=>m.media_id)).size,2);
 const named=new Map(manifest.sources.map(r=>[r.media_id,r]));
 for(const item of gallery.items){

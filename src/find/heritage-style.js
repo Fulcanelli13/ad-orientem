@@ -428,11 +428,12 @@ export const HERITAGE_STYLE = String.raw`
   letter-spacing:-.022em;text-wrap:balance;
 }
 .aoExplorePlaceSheet .aoExplorePlaceChapters{
-  display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;
-  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 0 14px;
+  display:flex;flex-wrap:wrap;gap:7px;max-width:100%;min-width:0;
+  box-sizing:border-box;overflow-x:clip;padding:4px 0 14px;
 }
 .aoExplorePlaceSheet .aoExplorePlaceChapters button{
-  flex:none;min-height:44px;padding:9px 13px;border-radius:999px;
+  flex:0 1 auto;min-width:0;max-width:100%;overflow-wrap:anywhere;
+  min-height:44px;padding:9px 13px;border-radius:999px;
   border:1px solid var(--ao-liturgical-border,rgba(201,173,120,.38));
   background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);
   font:600 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);
