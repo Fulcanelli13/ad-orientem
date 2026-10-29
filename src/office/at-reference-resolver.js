@@ -197,8 +197,108 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
    publishable:false,published:false
   });
  }
- return Object.freeze({resolve,resolveParallel,resolvePlainPsalmParallel,
-  cachedSourceCount:()=>cache.size+psalmCache.size,
+ /**
+  * Segmented Sunday I Vespers Psalm source research. The *Saturday* Psalter
+  * has five ordered portions of only two source psalms (143 and 144).
+  * Some original Psalm143 verse labels are intentionally repeated; Psalm144
+  * has a 13a/13b division. Preserve the author's exact source segmentation.
+  * No Gloria Patri, antiphon or liturgical rubric is inserted.
+  */
+ const SATURDAY_RANGES=Object.freeze({
+  "143:1-8":[100,800],
+  "143:9-15":[900,1500],
+  "144:1-7":[100,700],
+  "144:8-13a":[800,1301],
+  "144:13b-21":[1302,2100]
+ });
+ const saturdayCache=new Map();
+ async function saturdayPsalmRows(number,language){
+  if(!enablePsalmVerses||!readPsalmSource||
+     ![143,144].includes(number)||!LANGUAGES.includes(language))
+   throw Error("OFFICE_AT_PSALM_SEGMENT_NOT_SUPPORTED");
+  const path="Psalterium/Psalmorum/Psalm"+number;
+  const key=path+"|"+language;
+  if(!saturdayCache.has(key)){
+   if(cache.size+psalmCache.size+saturdayCache.size>=maxDocuments)
+    throw Error("OFFICE_AT_SOURCE_READ_BUDGET");
+   const pending=Promise.resolve().then(()=>
+    readPsalmSource(path,language)).then(doc=>{
+    if(doc?.sourceRevision!==DIVINUM_OFFICIUM_PIN||
+       doc.sourcePath!==path||doc.language!==language||
+       typeof doc.text!=="string"||doc.text.length>180000)
+     throw Error("OFFICE_AT_PSALM_SOURCE_PROVENANCE_OR_SIZE_INVALID");
+    const rows=doc.text.replace(/\\r\\n?/g,"\\n").trim().split("\\n");
+    if(rows.length!==(number===143?18:22))
+     throw Error("OFFICE_AT_PSALM_SEGMENT_ROW_COUNT_CHANGED");
+    let prior=0;
+    const counts=new Map(),records=[];
+    for(const line of rows){
+     const m=/^(143|144):([1-9][0-9]?)([ab]?) (.{3,1600})$/u.exec(line);
+     if(!m||Number(m[1])!==number||/[$@&]|<[^>]*>|\\{:/u.test(line))
+      throw Error("OFFICE_AT_PSALM_SEGMENT_SOURCE_INVALID");
+     const n=Number(m[2]),suffix=m[3];
+     const ordinal=n*100+(suffix==="a"?1:suffix==="b"?2:0);
+     if(ordinal<prior)throw Error("OFFICE_AT_PSALM_SEGMENT_OUT_OF_ORDER");
+     if(ordinal===prior){
+      if(number!==143||![2,12,13].includes(n)||suffix||
+         (counts.get(n)??0)>=2)
+       throw Error("OFFICE_AT_PSALM_SEGMENT_DUPLICATE_UNEXPECTED");
+     }
+     prior=ordinal;
+     counts.set(n,(counts.get(n)??0)+1);
+     records.push(Object.freeze({ordinal,line}));
+    }
+    if(number===143&&![2,12,13].every(n=>counts.get(n)===2))
+     throw Error("OFFICE_AT_PSALM_SEGMENT_SPLIT_CHANGED");
+    if(number===144&&(counts.get(13)!==2||
+        !rows.some(x=>x.startsWith("144:13a "))||
+        !rows.some(x=>x.startsWith("144:13b "))))
+     throw Error("OFFICE_AT_PSALM_SEGMENT_SPLIT_CHANGED");
+    return Object.freeze(records);
+   });
+   saturdayCache.set(key,pending);
+  }
+  return saturdayCache.get(key);
+ }
+ async function resolvePsalmSegmentParallel({number,range}={}){
+  if(!Number.isInteger(number)||typeof range!=="string"||
+     !enablePsalmVerses)
+   throw Error("OFFICE_AT_PSALM_SEGMENT_NOT_SUPPORTED");
+  const normalize=x=>x.replace(/[‘’]/gu,"'").replace(/'/gu,"");
+  const canonical=normalize(range);
+  const limits=SATURDAY_RANGES[number+":"+canonical];
+  if(!limits)throw Error("OFFICE_AT_PSALM_SEGMENT_NOT_SUPPORTED");
+  const refs=await Promise.all(LANGUAGES.map(async language=>{
+   const rows=await saturdayPsalmRows(number,language);
+   const selected=rows.filter(row=>row.ordinal>=limits[0]&&row.ordinal<=limits[1]);
+   const expected={
+    "143:1-8":9,"143:9-15":9,"144:1-7":7,
+    "144:8-13a":6,"144:13b-21":9
+   }[number+":"+canonical];
+   if(selected.length!==expected)throw Error("OFFICE_AT_PSALM_SEGMENT_INCOMPLETE");
+   return Object.freeze({
+    language,text:selected.map(x=>x.line).join("\\n"),
+    trace:Object.freeze([Object.freeze({
+     sourceId:"Psalterium/Psalmorum/Psalm"+number+"#"+canonical,
+     language
+    })])
+   });
+  }));
+  return Object.freeze({
+   schema:"ao.office.psalm-source-segment.v1",
+   status:"THREE_LANGUAGE_SATURDAY_PSALTER_SEGMENT_UNVERIFIED",
+   sourceRevision:DIVINUM_OFFICIUM_PIN,
+   psalmNumber:number,range:canonical,
+   sourcePath:"Psalterium/Psalmorum/Psalm"+number,
+   texts:Object.freeze(Object.fromEntries(refs.map(x=>[x.language,x.text]))),
+   referenceTraces:Object.freeze(Object.fromEntries(refs.map(x=>[x.language,x.trace]))),
+   sourceVerseSegmentLocated:true,gloriaPatriVerified:false,
+   antiphonPlacementVerified:false,liturgicalRubricsVerified:false,
+   published:false,publishable:false
+  });
+ }
+ return Object.freeze({resolve,resolveParallel,resolvePlainPsalmParallel,resolvePsalmSegmentParallel,
+  cachedSourceCount:()=>cache.size+psalmCache.size+saturdayCache.size,
   maxDepth,maxNodes,standardPrayersSourceEnabled:enableStandardPrayers,
   psalmVerseSourceEnabled:enablePsalmVerses,
   sourceRevision:DIVINUM_OFFICIUM_PIN});
