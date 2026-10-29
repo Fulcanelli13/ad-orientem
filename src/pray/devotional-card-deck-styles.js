@@ -706,6 +706,9 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll{
  padding:14px 16px 25dvh 16px;
 }
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930LitanyPrayer{
+ margin:0 0 16px;padding:0;border:0;box-shadow:none;background:transparent;
+}
 #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930LitanyVerses{
  display:grid;gap:12px;min-width:0;
 }
