@@ -5,7 +5,8 @@ import {dailyUxPilotEnabled,renderDailyUxModes,renderDailyUxContinuous,renderDai
 const L=(en)=>en;
 const esc=s=>String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");
 assert.equal(DAILY_UX_PILOT_SCHEMA,"ao-daily-ux-pilot-v1");
-assert.equal(dailyUxPilotEnabled(""),false);
+assert.equal(dailyUxPilotEnabled(""),true,"Book-first daily reader must be default");
+assert.equal(dailyUxPilotEnabled("?unrelated=1"),true,"Unrelated query params must not disable the default");
 assert.equal(dailyUxPilotEnabled("?aoDailyUxPilot=1"),true);
 assert.equal(dailyUxPilotEnabled("?aoDailyUxPilot=0"),false);
 const morning=guidedDailyCards("morning"),evening=guidedDailyCards("evening");
