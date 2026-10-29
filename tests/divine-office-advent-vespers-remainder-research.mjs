@@ -120,7 +120,7 @@ test("wrong Ordinary identity, missing source heading and lost variants fail clo
   {sourceText:ordinary.replace("#Canticum: Magnificat","")},
   {sourceText:ordinary.replace("#Capitulum Responsorium Hymnus Versus","")},
   {sourceText:ordinary.replaceAll("#Suffragium","#Different")},
-  {sourceText:ordinary.replaceAll("(sed rubrica","(lost rubrica")}
+  {sourceText:ordinary.replace(/^\([^)]*\)\s*/gm,"")}
  ]){
   const r=reviewAdventVespersOrdinaryStructure({
    sourcePath:"Ordinarium/Vespera",sourceRevision:pin,sourceText:ordinary,...x
