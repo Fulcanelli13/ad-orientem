@@ -1,0 +1,158 @@
+{
+  "schema": "AO_P105_SEVEN_WEBP_VISUAL_EDITORIAL_AUDIT_V1",
+  "date": "2026-10-30",
+  "status": "INDIVIDUAL_IMAGE_REVIEW_COMPLETE_RELEASE_DECISIONS_SEPARATE",
+  "source_commit": "156972f77b1fa39af3b3402060ddf23f7edc86ad",
+  "source_build": "data/directory/research/p105-seven-derivative-build-results.json",
+  "method": "Personally viewed all seven actual generated WebP derivative images independently (not just file metadata/automated contact sheet) at 1050-1400px, compared each to exact P93 source identity and P104 exact Place record. Visibility/framing verdict explicitly separate from licence and app regression. Native decode and SHA guaranteed by P105 GitHub pipeline.",
+  "counts": {
+    "seven_originals_sha_verified": 7,
+    "seven_full_native_decodes": 7,
+    "seven_rendered_webps_individually_viewed": 7,
+    "approved_primary_editorial": 4,
+    "conditional_primary": 2,
+    "held_primary": 1,
+    "photos_published_by_this_audit": 0
+  },
+  "records": [
+    {
+      "row": 309,
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "staged_path": "assets/staged/directory-p105/CZ-st-ignatius-jihlava.webp",
+      "derivative_sha256": "0edc7fe57a5afcfd403516b6435ef33428b8b2761533133f5c5c845652ea2022",
+      "source_original_sha256": "d71b580dd217d606af33b2f92fea415631ac1ad1f0c85816c1800c4a25eba51d",
+      "mobile_dimensions": [
+        1050,
+        1400
+      ],
+      "source_claimed_licence": "CC-BY-SA-3.0",
+      "credit": "Michal Kriška",
+      "status": "HOLD_PRIMARY_FOR_ALTERNATE",
+      "rationale": "Exact Jesuit façade is recognizable and fully framed, but dull heavy-grey sky, flat contrast and strong upward perspective diminish a prominent Directory hero. Keep as gallery or fallback; research better front elevation.",
+      "visually_viewed_webp": true,
+      "native_decode_verified": true,
+      "legal_source_page_checked": false,
+      "published": false
+    },
+    {
+      "row": 315,
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "staged_path": "assets/staged/directory-p105/DE-friedhofskirche-st-michael-altoetting.webp",
+      "derivative_sha256": "8b8f35e13d308ba2ef2ca11e31b16f10a49d01c9e2b28ddbaf2c8f14dceb4729",
+      "source_original_sha256": "2ee56e2fcbe8db1750906d878ba6bb977844386b3899da15a5892ebdcbb1d13d",
+      "mobile_dimensions": [
+        1400,
+        1050
+      ],
+      "source_claimed_licence": "CC-BY-SA-4.0",
+      "credit": "Ricardalovesmonuments",
+      "status": "CONDITIONAL_PRIMARY",
+      "rationale": "Correct Altötting cemetery church, full white nave with small onion tower and foreground graveyard/crucifix. Architectural identity clear; bright clipped sky, crucifix and graves dominate some of frame. Hold primary pending compare with alternative from same Commons category.",
+      "visually_viewed_webp": true,
+      "native_decode_verified": true,
+      "legal_source_page_checked": false,
+      "published": false
+    },
+    {
+      "row": 320,
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "staged_path": "assets/staged/directory-p105/FR-basilique-saint-bernard-fontaine-les-dijon.webp",
+      "derivative_sha256": "25d69e6a66592b9eb1ab05512feb96d51e801246854b250d12ed98cdec0e47b3",
+      "source_original_sha256": "49f2ec2dd449742d221caefc2bd2ea254db014e1cddbfc4d89c93def481f66f2",
+      "mobile_dimensions": [
+        1400,
+        933
+      ],
+      "source_claimed_licence": "CC-BY-SA-4.0",
+      "credit": "Michel FOUCHER",
+      "status": "CONDITIONAL_PRIMARY",
+      "rationale": "Correct Fontaine-lès-Dijon basilica on right, birth-site castle/tower on left; covers entire heritage ensemble rather than standalone basilica. Suitable for ensemble gallery, primary only if the entry labelled Couvent et Basilique Saint-Bernard rather than misrepresenting château tower as church.",
+      "visually_viewed_webp": true,
+      "native_decode_verified": true,
+      "legal_source_page_checked": false,
+      "published": false
+    },
+    {
+      "row": 349,
+      "place_id": "place:GB:sacred-heart-caterham",
+      "staged_path": "assets/staged/directory-p105/GB-sacred-heart-caterham.webp",
+      "derivative_sha256": "4c46177becf1c0a7b3ab2ab78a4edf5d3e66bf8a71fde221e91a39f4ccdcd891",
+      "source_original_sha256": "1fe3fbcae97a1b79496bb0da5c59b71e8e6e65dcb5b9e8096f54b2a90204fa00",
+      "mobile_dimensions": [
+        1400,
+        788
+      ],
+      "source_claimed_licence": "CC-BY-SA-4.0",
+      "credit": "Tag Scientist",
+      "status": "RELEASE_PRIMARY",
+      "rationale": "Correct Grade II Caterham Catholic church. Unobstructed complete façade, roof and spire, clear bright daylight and no frame or watermark. Original high-res and mobile WebP sharp; no crop needed.",
+      "visually_viewed_webp": true,
+      "native_decode_verified": true,
+      "legal_source_page_checked": true,
+      "published": false
+    },
+    {
+      "row": 356,
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "staged_path": "assets/staged/directory-p105/GB-st-mary-catholic-brewood.webp",
+      "derivative_sha256": "cef2cb9d49741601c42bf5a19234adc5e74d171748e9c0812f40ae50a90bbde1",
+      "source_original_sha256": "e11e3a8a28318db0fc6ff46d60428c63ac0dce6290321aeee39d147d1dd39e59",
+      "mobile_dimensions": [
+        1024,
+        760
+      ],
+      "source_claimed_licence": "CC-BY-SA-2.0",
+      "credit": "Roger Kidd",
+      "status": "RELEASE_PRIMARY_WITH_NATIVE_RESOLUTION_NOTE",
+      "rationale": "Correct Pugin St Mary Brewood, full churchyard elevation and steeple; clear architectural identity and composition. Original only 1024x760, so preserve native dimensions without enlargement; adequate for mobile card at contain-fit. Churchyard gravestones are part of heritage context, not obstruction.",
+      "visually_viewed_webp": true,
+      "native_decode_verified": true,
+      "legal_source_page_checked": true,
+      "published": false
+    },
+    {
+      "row": 375,
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "staged_path": "assets/staged/directory-p105/US-immaculate-conception-cathedral-lake-charles.webp",
+      "derivative_sha256": "5eca4f1db9bca3e951f51325522469b5a6cc2a8c06b7464be3f81ea1877e859f",
+      "source_original_sha256": "3bc771540b9aee8e9dd1a9343b2962688b309d775e1767e3a691d34ea362909e",
+      "mobile_dimensions": [
+        1400,
+        1053
+      ],
+      "source_claimed_licence": "CC-BY-SA-4.0",
+      "credit": "Farragutful",
+      "status": "RELEASE_PRIMARY",
+      "rationale": "Correct Lake Charles historic red-brick cathedral with distinctive tower and full gable, readable and sharp, strong daylight. Vehicles, street signs and palm along lower periphery; do not crop tower.",
+      "visually_viewed_webp": true,
+      "native_decode_verified": true,
+      "legal_source_page_checked": true,
+      "published": false
+    },
+    {
+      "row": 380,
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "staged_path": "assets/staged/directory-p105/US-holy-family-log-church-cahokia.webp",
+      "derivative_sha256": "b4fd5ceb74610f7b7cba32392b3c18d31473bfcea5a2669a48a5b1f63cf5232a",
+      "source_original_sha256": "660131f8c8b4417bc9c9c91465fe01ca75e5526c13644a13d66fce95a5138d65",
+      "mobile_dimensions": [
+        1400,
+        1111
+      ],
+      "source_claimed_licence": "CC-BY-SA-3.0",
+      "credit": "Kbh3rd",
+      "status": "RELEASE_PRIMARY",
+      "rationale": "Correct 1799 Holy Family log church, not adjacent modern sanctuary. Well-centered complete timber façade and bell tower, unobstructed entrance, clean natural light. Excellent mobile hero; no frame.",
+      "visually_viewed_webp": true,
+      "native_decode_verified": true,
+      "legal_source_page_checked": true,
+      "published": false
+    }
+  ],
+  "hold_policies": {
+    "conditional_and_held_must_not_be_approved_without_new_review": true,
+    "new_brighton_remains_separate_discovery": true,
+    "pau_hero_remains_held": true,
+    "source_archive_zero_cost": true
+  }
+}
