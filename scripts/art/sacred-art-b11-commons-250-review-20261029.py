@@ -99,7 +99,7 @@ def title(x):
 def short_artist(a):
  # Does not treat "Peter Paul Rubens" and "Rubens, Sir Peter Paul" as
  # distinct painters. Sorted non-honorific name tokens normalize ordering.
- a=norm(re.sub(r'\([^)]*\)','',a))
+ a=norm(re.sub(r'\([^)]*\)','',str(a or '')))
  words=[w for w in a.split() if w not in {'sir','the','a','of','attributed','workshop',
  'school','after','follower','by','painter','unknown','anonymous','circle','of','and',
  'spanish','italian','flemish','dutch','german','artist'}]
