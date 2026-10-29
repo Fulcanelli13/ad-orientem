@@ -1,0 +1,68 @@
+{
+  "schema": "AO_DIRECTORY_OPEN_PHOTO_OPENVERSE_PILOT_AUDIT_V3",
+  "date": "2026-10-29",
+  "source_pr": 1905,
+  "source_ci_run": 40795336201,
+  "source_ci_commit": "caa812d5bd3e987b821f226da892fe06609c687f",
+  "source_ci_artifact_id": 12862814964,
+  "sample": {
+    "source": "AO_PRELIMINARY_TLM_MAP_R49",
+    "offset": 2,
+    "venues_processed": 6,
+    "countries": [
+      "AU",
+      "BE"
+    ]
+  },
+  "metrics": {
+    "venues_with_any_candidate": 2,
+    "openverse_queries_attempted": 10,
+    "openverse_errors": 1,
+    "candidate_counts": {
+      "EXTERIOR": 2,
+      "INTERIOR": 0,
+      "SACRED_DETAIL": 0
+    },
+    "candidates_by_source": {
+      "OPENVERSE_API_SEARCH": 1,
+      "WIKIDATA_COMMONS_CATEGORY": 1
+    },
+    "verified_correct_church_photographs": 0,
+    "approved_images": 0,
+    "published_images": 0,
+    "downloaded_original_images": 0
+  },
+  "held_candidates": [
+    {
+      "venue_id": "ao-fssp-church-of-the-holy-name-80-payneham-rd-stepney-sa-5069-australia",
+      "country": "AU",
+      "candidate_title": "Church of the Holy Name",
+      "original_source_url": "https://www.flickr.com/photos/68317878@N04/53117536107",
+      "discovery_method": "OPENVERSE_API_SEARCH",
+      "catalog_license": "CC-BY-2.0",
+      "country_evidence": "COUNTRY_NOT_ESTABLISHED",
+      "subject_review": "NOT_VERIFIED",
+      "rights_review": "NOT_VERIFIED",
+      "publication_state": "HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW"
+    },
+    {
+      "venue_id": "ao-fssp-eglise-saints-jean-et-etienne-aux-minimes-rue-des-minimes-62-b-1000-bruxelles-belgique",
+      "country": "BE",
+      "original_source_url": "https://commons.wikimedia.org/wiki/File:Entry_porch_of_the_Minim_church%2C_with_the_former_convent_in_the_back.png",
+      "discovery_method": "WIKIDATA_COMMONS_CATEGORY",
+      "subject_review": "HISTORICAL_ARCHITECTURE_MODERN_COVER_NOT_CONFIRMED",
+      "rights_review": "INDIVIDUAL_IMAGE_NOT_VERIFIED",
+      "publication_state": "HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW"
+    }
+  ],
+  "errors": [
+    {
+      "venue_id": "ao-fssp-sts-peter-and-paul-church-2-boake-place-garran-act-2605-australia",
+      "source": "OPENVERSE",
+      "type": "TimeoutError",
+      "message": "The read operation timed out"
+    }
+  ],
+  "safeguards": "All candidates held; no image downloads, no publication; global per-run Openverse budget implemented in subsequent PR commits.",
+  "provenance_note": "This is a durable audit of an expiring CI artifact, not a substitute for the original metadata manifest or identity review."
+}
