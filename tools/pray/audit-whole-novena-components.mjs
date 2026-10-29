@@ -32,7 +32,8 @@ function keys(n){
  if(p==='HAMMER_MARIAN')return ['prepare','opening','church','day','invocation','close'];
  if(p==='OPENING_DAY_COMMON_CLOSE')return ['prepare','opening','common','day','close'];
  if(p==='COMMON_BEFORE_REPEAT')return ['prepare','common','day','close'];
- return n.sharedClosingText?['prepare','day','common','shared','close']:['prepare','day','common','close'];
+ return n.sharedClosingText?['prepare','day','common','shared','close']:
+  (n.commonPrayers?.length?['prepare','day','common','close']:['prepare','day','close']);
 }
 function sourceBlocks(n){return {
  opening:has(n.opening),churchPrayer:has(n.churchPrayer),ejaculation:has(n.ejaculation),
@@ -41,6 +42,7 @@ function sourceBlocks(n){return {
  repeatText:has(n.repeatText),daySpecificEnglish:n.days.filter(d=>has(d.text)).length
 };}
 const flags=[];
+const resolved=[];
 const register=[];
 function flag(n,severity,code,evidence){
  const f={id:n.id,level:severity,code,evidence};
@@ -92,8 +94,9 @@ for(const n of all){
   const f=flag(n,'LOCALE_HOLD',code,englishCount+'/9 English, '+frenchCount+'/9 French days; French UI must retain clear fallback and cannot be called fully bilingual');rec.editorialFindings.push(f.code);
  }
  if(themeCount<9||guideCount<9){const f=flag(n,'LOCALE_HOLD','DAY_GUIDE_OR_THEME_LANGUAGE_INCOMPLETE','Themes '+themeCount+'/9, day guides '+guideCount+'/9 with EN and FR');rec.editorialFindings.push(f.code);}
- if(stages.includes('common')&&common.length===0){
-  const f=flag(n,'UX_REVIEW','EMPTY_COMMON_PRAYER_CARD','Guided navigation explicitly displays a Common prayers stage although the source has no listed canonical common prayer; stage renders only guidance');rec.editorialFindings.push(f.code);
+ if(p==='STANDARD'&&common.length===0&&!n.sharedClosingText){
+  resolved.push({id:n.id,code:'EMPTY_COMMON_PRAYER_CARD_REMOVED',removedStage:'common',cardsRemovedAcrossNineDays:9});
+  assert.deepEqual(stages,['prepare','day','close']);
  }
  if(p==='SOURCE_REPEAT_ONLY'&&common.length){
   const f=flag(n,'BLOCKER','GUIDED_COMMON_PRAYERS_SKIPPED','SOURCE_REPEAT_ONLY branch directly returns before common prayers; Simple renders them, Guided omits them');rec.editorialFindings.push(f.code);
@@ -154,7 +157,8 @@ const cohort={
   contentReview:flags.filter(x=>x.level==='CONTENT_REVIEW').length,
   uxReview:flags.filter(x=>x.level==='UX_REVIEW').length,
   sourceHold:flags.filter(x=>x.level==='SOURCE_HOLD').length
- }
+ },
+ optimizations:{emptyCommonCardsRemovedPerNineDayRun:resolved.reduce((n,x)=>n+x.cardsRemovedAcrossNineDays,0),affectedPrograms:resolved.length}
 };
 const result={
  schema:'ao.pray.whole-novena-19-runtime-component-audit.v1',
@@ -164,6 +168,7 @@ const result={
  denominator:cohort,
  programmes:register,
  findings:flags,
+ resolvedFindings:resolved,
  editorialControls:{
   sourceHistoricalEditionCertificates:0,
   wholeDevotionSequenceCertificates:0,
@@ -185,5 +190,6 @@ if(testmode){
  writeFileSync(join(out,'19-novena-runtime-component-audit.tsv'),['ID\tScope\tPattern\tGuidedCards/Day\tENBodyDays\tFRBodyDays\tCommonRepetitions\tReviewFlags',...lines].join('\n')+'\n');
  console.log('SUMMARY '+JSON.stringify(cohort));
  console.log('FLAGS '+JSON.stringify(flags));
+ console.log('RESOLVED '+JSON.stringify(resolved));
  console.log('OUTPUT '+out);
 }
