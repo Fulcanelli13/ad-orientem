@@ -1519,6 +1519,20 @@ button.ao-schola-control{cursor:pointer}
   font:italic 400 clamp(13px,1.6vw,15px)/1.5 var(--ao-missal-face,Georgia,serif);
   letter-spacing:0;overflow-wrap:break-word;
 }
+/* Source-time rubric order must also be PHYSICAL order. The bilingual
+   prayer columns use an explicit grid-row:1; without this override an
+   earlier/prepended red direction is visually auto-placed *after* the
+   prayer. Applies only to individually certified C0161/C0169/C0204. */
+.ao-reader-shell[data-mode="MISSAL"]
+ .ao-reader-paragraph[data-missal-rubric-before="true"]>.ao-missal-inline-rubrics{
+  grid-row:1;grid-column:1/-1;
+}
+.ao-reader-shell[data-mode="MISSAL"]
+ .ao-reader-paragraph[data-missal-rubric-before="true"]>.ao-line-primary,
+.ao-reader-shell[data-mode="MISSAL"]
+ .ao-reader-paragraph[data-missal-rubric-before="true"]>.ao-line-secondary{
+  grid-row:2;
+}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-heading,
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-source{display:none!important}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-missal-rubric-action{
@@ -4577,8 +4591,10 @@ export function createReaderDomAdapter({
                event.owner==="PUBLISHED_R17_MISSAL_INLINE"&&
                (event.id==="AO.RUB.C0161.01"&&event.sourceCueId==="AO.SM.C0161"||
                 event.id==="AO.RUB.C0169.01"&&event.sourceCueId==="AO.SM.C0169")));
-            if(printedBeforeText)node.prepend(note);
-            else node.append(note);
+            if(printedBeforeText){
+              node.dataset.missalRubricBefore="true";
+              node.prepend(note);
+            }else node.append(note);
           }
           // Existing "long" registry data contains only the SAME short
           // actions again. No fake detail buttons, source-link repetition
