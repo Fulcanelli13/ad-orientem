@@ -1,0 +1,132 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B43_SOURCE_DRAFT_PARITY_V1",
+  "asOf": "2026-10-30",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_CERTIFIED",
+  "continuity": "Follows B42 original draft parity; no source families created and no canonical drafts overwritten",
+  "sourceWitness": {
+    "historical": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "loci": "Q731–750",
+    "status": "1905 Italian online transcription; print collation outstanding"
+  },
+  "laterSource": {
+    "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/iv_the_gravity_of_sin_mortal_and_venial_sin.html",
+    "loci": "§§1857–1860",
+    "status": "later magisterial reference, not 1905 wording"
+  },
+  "originalDraftsRead": [
+    "pius-x-batch12-confession-b-20261020.v1.json",
+    "pius-x-batch12-confession-c-20261020.v1.json",
+    "pius-x-batch12-confession-d-20261020.v1.json"
+  ],
+  "coverage": {
+    "range": "SPX-1905-P-731..750",
+    "families": 20,
+    "allHaveEnglishFrenchOpeningAndFollowup": true,
+    "allSourceQuestionsMatch": true,
+    "originalPrintCollated": false
+  },
+  "proposals": [
+    {
+      "id": "SPX-1905-P-739",
+      "kind": "SUBSTANTIVE_OPENING_OMISSION",
+      "currentOpening": {
+        "en": "The Catechism identifies proximate occasions: circumstances that ordinarily lead someone into mortal sin.",
+        "fr": "Le Catéchisme désigne les occasions prochaines : les circonstances qui entraînent habituellement quelqu'un au péché mortel."
+      },
+      "proposedOpening": {
+        "en": "The Catechism teaches that we are gravely obliged to avoid proximate occasions of sin: those circumstances which ordinarily lead us into mortal sin.",
+        "fr": "Le Catéchisme enseigne que nous sommes gravement obligés d'éviter les occasions prochaines de péché : les circonstances qui nous conduisent habituellement au péché mortel."
+      },
+      "reason": "Original Q739 asks explicitly whether there is a grave obligation and answers yes for proximate occasions. Existing draft defines the category but omits the affirmative obligation.",
+      "sourceLoci": [
+        "PX1905-Q739"
+      ],
+      "wordingClass": "EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM_PERSONAL_POPE_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_VOICE_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-P-736",
+      "kind": "FOLLOWUP_LATER_SOURCE_PROVENANCE",
+      "proposal": {
+        "en": "Keep the historical definition of an acquired bad habit; tag the individual-act knowledge-and-consent qualification as editorial doctrinal explanation, with CCC §§1857–1860 as later reference.",
+        "fr": "Conserver la définition historique de la mauvaise habitude acquise ; qualifier la précision sur la connaissance et le consentement d'un acte particulier d'explication doctrinale éditoriale, avec le CEC §§1857–1860 comme référence postérieure."
+      },
+      "sourceLoci": [
+        "PX1905-Q736",
+        "CCC §§1857–1860"
+      ],
+      "reviewGate": "READY_FOR_HUMAN_ATTRIBUTION_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-P-745",
+      "kind": "FOLLOWUP_SAFEGUARD_IS_EDITORIAL",
+      "proposal": {
+        "en": "Retain the humble-confession explanation; mark 'does not authorize mistreatment' as an editorial safeguard rather than a claim quoted from Q745.",
+        "fr": "Conserver l'explication de l'aveu humble ; présenter « n'autorise aucune maltraitance » comme une précaution éditoriale et non une citation de Q745."
+      },
+      "sourceLoci": [
+        "PX1905-Q745"
+      ],
+      "reviewGate": "READY_FOR_HUMAN_ATTRIBUTION_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "noRewrite": {
+    "count": 17,
+    "ids": [
+      "SPX-1905-P-731",
+      "SPX-1905-P-732",
+      "SPX-1905-P-733",
+      "SPX-1905-P-734",
+      "SPX-1905-P-735",
+      "SPX-1905-P-737",
+      "SPX-1905-P-738",
+      "SPX-1905-P-740",
+      "SPX-1905-P-741",
+      "SPX-1905-P-742",
+      "SPX-1905-P-743",
+      "SPX-1905-P-744",
+      "SPX-1905-P-746",
+      "SPX-1905-P-747",
+      "SPX-1905-P-748",
+      "SPX-1905-P-749",
+      "SPX-1905-P-750"
+    ],
+    "reason": "Source-consistent original bilingual drafts; no substantive defect established."
+  },
+  "relatedPreviouslyDocumentedHold": {
+    "id": "SPX-1905-P-711",
+    "status": "B40 source-wording correction already proposed; not counted as a new B43 finding",
+    "reason": "Original draft adds 'at least implicitly' not found in 1905 Q711; avoid duplicate proposal."
+  },
+  "chanoine": {
+    "newAnswers": 0,
+    "blockedOriginalEnglish": true,
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ]
+  },
+  "counts": {
+    "familiesInspected": 20,
+    "substantiveDraftCorrectionsProposed": 1,
+    "provenanceOnlyRepairs": 2,
+    "answerUnitsPrepared": 2,
+    "certified": 0,
+    "productionChanges": 0
+  },
+  "nextQueue": [
+    "Human review P739 explicit grave obligation, retain existing P739 follow-up unless reviewer finds conflict",
+    "Review B42 eight provenance repairs and B43 two attribution repairs in one human-certification pass",
+    "Source-check Q751–766 against existing batch12 d/e; focus on materially incorrect claims rather than rephrasing",
+    "Keep original English Chanoine and clinical specialist holds blocked",
+    "No publication or routing until human review"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "claimCertified": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}
