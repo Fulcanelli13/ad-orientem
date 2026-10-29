@@ -12,16 +12,16 @@
   "scope": "Word-sequence of the English proper prayer body only; not punctuation-exact diplomatic transcription, additional preparatory prayers, common prayer references, meditations, practices, French editions or indulgence grants.",
   "counts": {
     "dayBodies": 72,
-    "fullPrintedBodyWordSequenceChecked": 44,
-    "awaitingFullVisualWordSequenceCheck": 28,
+    "fullPrintedBodyWordSequenceChecked": 65,
+    "awaitingFullVisualWordSequenceCheck": 7,
     "firstEditionWordForWordCertificate": 0,
     "completeProgrammeDevotionalPrintCertificates": 0,
     "sourcePrintBookCohorts": 4
   },
   "dispositionCounts": {
-    "PRINT_BODY_WORD_SEQUENCE_CHECKED": 44,
-    "AWAITING_COMPLETE_PAGE_WORD_PROOF": 18,
-    "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED": 5,
+    "PRINT_BODY_WORD_SEQUENCE_CHECKED": 65,
+    "AWAITING_COMPLETE_PAGE_WORD_PROOF": 2,
+    "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED": 0,
     "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW": 5
   },
   "sourceBooks": [
@@ -41,7 +41,7 @@
       "bookId": "hammer_1909",
       "sha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
       "daysTotal": 27,
-      "visuallyVerified": 6
+      "visuallyVerified": 27
     },
     {
       "bookId": "purgatorian_manual_1894_1907",
@@ -930,15 +930,22 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         97
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "visualPdfPageIndexesZeroBased": [
+        101
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p102.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification.",
+      "priorOcrExceptionDisposition": "OCR_LAYOUT_ONLY_VISUALLY_RESOLVED"
     },
     {
       "id": "annunciation",
@@ -957,13 +964,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        99
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        103
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p104.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "annunciation",
@@ -982,15 +997,22 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         101
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "visualPdfPageIndexesZeroBased": [
+        105
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p106.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification.",
+      "priorOcrExceptionDisposition": "OCR_LAYOUT_ONLY_VISUALLY_RESOLVED"
     },
     {
       "id": "annunciation",
@@ -1009,15 +1031,22 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         103
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "visualPdfPageIndexesZeroBased": [
+        107
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p108.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification.",
+      "priorOcrExceptionDisposition": "OCR_LAYOUT_ONLY_VISUALLY_RESOLVED"
     },
     {
       "id": "annunciation",
@@ -1036,13 +1065,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        105
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        109
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p110.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "annunciation",
@@ -1061,15 +1098,25 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
-        107
+        107,
+        108
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "visualPdfPageIndexesZeroBased": [
+        111,
+        112
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p112.png",
+        "hammer_1909-p113.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification. Prayer spans printed pp107–108; both photographs checked.",
+      "priorOcrExceptionDisposition": "OCR_LAYOUT_ONLY_VISUALLY_RESOLVED"
     },
     {
       "id": "annunciation",
@@ -1088,13 +1135,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        109
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        113
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p114.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "annunciation",
@@ -1147,13 +1202,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        114
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        119
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p120.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "assumption",
@@ -1206,13 +1269,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        137
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        143
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p144.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "assumption",
@@ -1231,13 +1302,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        139
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        145
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p146.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "assumption",
@@ -1256,13 +1335,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        141
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        147
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p148.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "assumption",
@@ -1312,13 +1399,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        145
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        152
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p153.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "assumption",
@@ -1337,13 +1432,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        147
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        154
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p155.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "assumption",
@@ -1396,13 +1499,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        150
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        157
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p158.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "seven_sorrows",
@@ -1421,13 +1532,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        117
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        122
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p123.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "seven_sorrows",
@@ -1446,13 +1565,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        120
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        125
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p126.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "seven_sorrows",
@@ -1471,15 +1598,22 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         121
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "visualPdfPageIndexesZeroBased": [
+        126
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p127.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification.",
+      "priorOcrExceptionDisposition": "OCR_LAYOUT_ONLY_VISUALLY_RESOLVED"
     },
     {
       "id": "seven_sorrows",
@@ -1498,13 +1632,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        123
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        128
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p129.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "seven_sorrows",
@@ -1523,13 +1665,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        125
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        130
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p131.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification. Day-five body is printed p125 (PDF index130), not next printed p126 where the day-six text starts."
     },
     {
       "id": "seven_sorrows",
@@ -1613,13 +1763,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        130
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        136
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p137.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "seven_sorrows",
@@ -1638,13 +1796,21 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        132
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        138
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p139.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Entire English proper day-prayer word sequence checked against photographs of the source page(s), respecting the printed day boundary; no material word change. Distinct Hail Mary, Ejaculation, litany, meditation, practice and preparatory prayer are outside this body-only verification."
     },
     {
       "id": "st_joseph",
@@ -2219,6 +2385,6 @@
     }
   ],
   "updatedOn": "2026-10-29",
-  "updatedEvidence": "Direct visual word-sequence comparison across all nine Immaculate Conception and all nine St Joseph prayers, source p567,569–572 and pp603–608; prior 26 retained.",
-  "researchStatus": "44 proper English prayer bodies directly checked; 28 pending. Entire first impressions, whole devotional programmes, historical French originals and modern indulgence concessions not certified."
+  "updatedEvidence": "All 27 Hammer proper English day-prayer bodies individually image-proved, including the 21 previously held; 65/72 overall.",
+  "researchStatus": "65 directly visually checked proper English day-prayer bodies; seven Redemptorist Holy Souls remaining. No complete original first-impression, whole-programme, French-original or modern-indulgence certificate."
 }
