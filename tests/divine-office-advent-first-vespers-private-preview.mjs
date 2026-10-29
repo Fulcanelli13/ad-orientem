@@ -127,7 +127,7 @@ test("missing French collect or appointed hymn withholds the entire preview",asy
 test("source reader rejects cross-language, missing/duplicated and unknown sections",async()=>{
  const source=reader();
  await assert.rejects(source.readSource("Tempora/Adv1-0","de"),/LANGUAGE_NOT_ALLOWED/);
- await assert.rejects(source.readSource("Sancti/11-29","la"),/ALLOWLIST/);
+ await assert.rejects(source.readSource("Sancti/11-29","la"),/NOT_ALLOWED/);
  await assert.rejects(source.readPsalmSource("Psalterium/Psalmorum/Psalm109","la"),/NOT_ALLOWED/);
  const allowed=new Set(["Ant Laudes"]);
  assert.throws(()=>parseAdventPreviewSourceSections(
