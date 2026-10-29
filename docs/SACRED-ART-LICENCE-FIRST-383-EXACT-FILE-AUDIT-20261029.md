@@ -65,3 +65,37 @@ Thus **19 selected approved paintings have museum-sourced CC0 photographic prove
 - [Rights-only integrity guard](../scripts/art/validate-sacred-art-licence-first-383-20261029.mjs)
 
 **Next stage only after licensing**: use the above disposition to decide which **precise source image bytes** are legally reusable. Do not inspect aesthetic/photographic quality, crop frames, acquire alternate photography or publish assets in this licensing stage.
+
+## Licence-only follow-up — 27 exact source links recovered (29 October, second pass)
+
+All **112** records with missing source identities were screened as one cohort. **27 originally named Commons image files** were checked in one live `imageinfo` request. All **27** returned a verifiable exact file page and photographer/image licence declaration:
+
+| Newly verified source-file declaration | Additional records |
+|---|---:|
+| Commons Public Domain or CC0 | **20** |
+| CC BY-SA, attribution + share-alike | **5** |
+| CC BY, attribution | **2** |
+| **New source-file licence declarations identified** | **27** |
+
+Two of the 27 are in the **107 already-approved paintings**: *Vision of Saint Bonaventure* (source CC BY-SA) and Bernardino Mei's *Saint Catherine of Siena* (CC BY). Their user painting approvals are untouched. The licence requirements are conditional until image-version provenance and attribution terms are resolved.
+
+The updated consolidated **383-work** licence status is:
+
+| Source-rights disposition | Works |
+|---|---:|
+| Official Met/Cleveland museum CC0 source and archive provenance | **92** |
+| Commons current exact file page marked PD/CC0, saved JPEG byte join still pending | **80** |
+| Commons CC BY-SA conditional free licence | **19** |
+| Commons CC BY attribution-only conditional free licence | **2** |
+| US National Gallery of Art Open Access eligibility not yet checked for the exact source image | **34** |
+| Other source, image-version or rights holds | **146** |
+| Historically excluded / conflicting approval status | **10** |
+| **Total** | **383** |
+
+Of the **146** outstanding rights/source holds: **85** still lack a source page; **25** lack a complete image; **22** have museum-level CC0 but no verified chosen archive-photo linkage; **8** require Met API resolution; **3** are official image version mismatches; and **3** have unresolved Kress rights evidence. These six categories add to exactly 146.
+
+**Important:** verifying a current Commons file declaration is not the same as confirming that the stored original with the frozen SHA-256 is the licensed file. This pass **downloaded no artwork photos, assessed no visual quality, certified no pristine images and changed no production artwork**. All 383 original IDs, 107 approvals, 103 historical rejection records and existing photo SHA-256 values remain unchanged.
+
+[All 112 source identity checks](../data/calendar/sacred-art-licence-next-112-source-identities-20261029.v1.json) · [112-item working CSV](../data/calendar/sacred-art-licence-next-112-source-identities-20261029.csv) · [updated entire 383-work licence master](../data/calendar/sacred-art-licence-first-383-exact-source-audit-20261029.v1.json) · [updated full licence CSV](../data/calendar/sacred-art-licence-first-383-review-20261029.csv).
+
+**Next licence-only gate:** resolve the 85 genuinely unidentified source records from exact museum/source provenance and reconcile current Commons source photos with frozen archive hashes. Do not run photographic-quality inspection before concluding the licence stage.
