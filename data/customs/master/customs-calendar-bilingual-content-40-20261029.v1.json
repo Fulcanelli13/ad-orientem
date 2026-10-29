@@ -47,7 +47,8 @@
         "anchor_key": "WEEKDAY_MONDAY",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Latin Catholic",
       "source_ids": [
@@ -95,7 +96,8 @@
         "anchor_key": "EMBER_DAYS_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Catholic Europe",
       "source_ids": [
@@ -143,7 +145,8 @@
         "anchor_key": "ADVENT_SUNDAYS",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Some European places",
       "source_ids": [
@@ -191,7 +194,8 @@
         "anchor_key": "ST_JOHN_EVANGELIST_DEC27",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Central Europe",
       "source_ids": [
@@ -239,7 +243,8 @@
         "anchor_key": "PALM_SUNDAY_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "France and England (reported historical)",
       "source_ids": [
@@ -287,7 +292,8 @@
         "anchor_key": "PALM_SUNDAY_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Austria Bavaria Slavic regions",
       "source_ids": [
@@ -335,7 +341,8 @@
         "anchor_key": "HOLY_SATURDAY_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Certain Central European villages",
       "source_ids": [
@@ -383,7 +390,8 @@
         "anchor_key": "EASTER_MONDAY_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "French Canada",
       "source_ids": [
@@ -431,7 +439,8 @@
         "anchor_key": "EASTER_PREPARATION_SEASON",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Ukraine, Poland, other Slavic homes",
       "source_ids": [
@@ -479,7 +488,8 @@
         "anchor_key": "CORPUS_CHRISTI_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "France Spain Portugal Belgium Italy and elsewhere",
       "source_ids": [
@@ -527,7 +537,8 @@
         "anchor_key": "CORPUS_CHRISTI_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Central and Northern Europe",
       "source_ids": [
@@ -575,7 +586,8 @@
         "anchor_key": "CORPUS_CHRISTI_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Central Europe and France",
       "source_ids": [
@@ -623,7 +635,8 @@
         "anchor_key": "LOCAL_PATRONAL_DATE_ONLY",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": true
+        "user_specific_date_required": true,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Germany, Hungary, Slovakia, Ukraine, Spain",
       "source_ids": [
@@ -671,7 +684,8 @@
         "anchor_key": "PERSONAL_PATRON_FEAST_ONLY",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": true
+        "user_specific_date_required": true,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "European Catholic families",
       "source_ids": [
@@ -719,7 +733,8 @@
         "anchor_key": "LOCAL_SHRINE_ANNIVERSARY_ONLY",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": true
+        "user_specific_date_required": true,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Early and medieval Christian church",
       "source_ids": [
@@ -767,7 +782,8 @@
         "anchor_key": "ASSUMPTION_AUG15_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Austria and Central Europe",
       "source_ids": [
@@ -815,7 +831,8 @@
         "anchor_key": "ALL_SAINTS_SOULS_PERIOD",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Catholic European communities",
       "source_ids": [
@@ -863,7 +880,8 @@
         "anchor_key": "ALL_SAINTS_SOULS_PERIOD",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Central European Catholic countries",
       "source_ids": [
@@ -911,7 +929,8 @@
         "anchor_key": "ALL_SOULS_NOV2_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Brazil",
       "source_ids": [
@@ -959,7 +978,8 @@
         "anchor_key": "ALL_SOULS_NOV2_CALENDAR",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Puerto Rico",
       "source_ids": [
@@ -1007,7 +1027,8 @@
         "anchor_key": "ALL_SAINTS_SOULS_PERIOD",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Philippines",
       "source_ids": [
@@ -1055,7 +1076,8 @@
         "anchor_key": "ST_ANNE_NAME_DAY_JUL26",
         "derivation": "RESOLVE_FROM_EXISTING_1962_CALENDAR_OR_REAL_LOCAL_EVENT",
         "feast_or_liturgical_rank_override_allowed": false,
-        "user_specific_date_required": false
+        "user_specific_date_required": false,
+        "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
       "region_label": "Central European historic",
       "source_ids": [
