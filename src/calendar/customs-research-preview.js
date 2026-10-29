@@ -139,3 +139,102 @@ export function calendarStagedPublishedCustomVariants(parentCustomId,variantRead
   publication_state:"RESEARCH_VARIANT_DETAIL_NOT_PUBLISHED"
  })));
 }
+
+
+/**
+ * Date-aware, NON-PUBLISHED context projection for the 22 regional details
+ * belonging to the 12 ALREADY published parent Customs. Date matching is
+ * historical/editorial context only: not a verified 1962-day feast, actual
+ * procession, region entitlement, blessing permission, or grant of indulgence.
+ *
+ * This is deliberately separate from calendarCustomRecommendations() and
+ * the runtime's live day events. It does not mutate the canonical 35 cards.
+ */
+const isoUtc=(date,delta=0)=>{
+ const d=new Date(date+"T12:00:00Z");
+ d.setUTCDate(d.getUTCDate()+delta);
+ return d.toISOString().slice(0,10);
+};
+function firstAdventSunday(year){
+ const d=new Date(Date.UTC(year,10,27,12));
+ while(d.getUTCDay()!==0)d.setUTCDate(d.getUTCDate()+1);
+ return d.toISOString().slice(0,10);
+}
+const unresolvedLocalVariantKeys=new Set([
+ "LOCAL_PATRONAL_DATE_ONLY",
+ "PERSONAL_PATRON_FEAST_ONLY",
+ "LOCAL_SHRINE_ANNIVERSARY_ONLY"
+]);
+export const CUSTOMS_RESEARCH_VARIANT_ANCHORS=Object.freeze([
+ "WEEKDAY_MONDAY","EMBER_DAYS_CALENDAR","ADVENT_SUNDAYS",
+ "ST_JOHN_EVANGELIST_DEC27","PALM_SUNDAY_CALENDAR",
+ "HOLY_SATURDAY_CALENDAR","EASTER_MONDAY_CALENDAR",
+ "EASTER_PREPARATION_SEASON","CORPUS_CHRISTI_CALENDAR",
+ "LOCAL_PATRONAL_DATE_ONLY","PERSONAL_PATRON_FEAST_ONLY",
+ "LOCAL_SHRINE_ANNIVERSARY_ONLY","ASSUMPTION_AUG15_CALENDAR",
+ "ALL_SAINTS_SOULS_PERIOD","ALL_SOULS_NOV2_CALENDAR",
+ "ST_ANNE_NAME_DAY_JUL26"
+]);
+function variantContextDate(anchor,iso,liturgicalDates){
+ const md=iso.slice(5),year=Number(iso.slice(0,4));
+ if(unresolvedLocalVariantKeys.has(anchor)||anchor==="EASTER_PREPARATION_SEASON")return null;
+ if(anchor==="WEEKDAY_MONDAY")return new Date(iso+"T12:00:00Z").getUTCDay()===1?"HISTORICAL_WEEKDAY_CONTEXT":null;
+ if(anchor==="EMBER_DAYS_CALENDAR"){
+  return [...liturgicalDates.emberLent,...liturgicalDates.emberPent,...liturgicalDates.emberSept,...liturgicalDates.emberAdvent].includes(iso)
+   ?"TRADITIONAL_EMBER_DAY_CALCULATED_CONTEXT":null;
+ }
+ if(anchor==="ADVENT_SUNDAYS"){
+  const start=firstAdventSunday(year);
+  return [0,7,14,21].some(n=>isoUtc(start,n)===iso)?"ADVENT_SUNDAY_CONTEXT":null;
+ }
+ if(anchor==="ST_JOHN_EVANGELIST_DEC27")return md==="12-27"?"FIXED_FEAST_HISTORICAL_CONTEXT":null;
+ if(anchor==="PALM_SUNDAY_CALENDAR")return iso===liturgicalDates.palm?"MOVABLE_FEAST_HISTORICAL_CONTEXT":null;
+ if(anchor==="HOLY_SATURDAY_CALENDAR")return iso===liturgicalDates.holySaturday?"MOVABLE_FEAST_HISTORICAL_CONTEXT":null;
+ if(anchor==="EASTER_MONDAY_CALENDAR")return iso===isoUtc(liturgicalDates.easter,1)?"MOVABLE_FEAST_HISTORICAL_CONTEXT":null;
+ if(anchor==="CORPUS_CHRISTI_CALENDAR")return iso===liturgicalDates.corpus?"MOVABLE_FEAST_HISTORICAL_CONTEXT":null;
+ if(anchor==="ASSUMPTION_AUG15_CALENDAR")return md==="08-15"?"FIXED_FEAST_HISTORICAL_CONTEXT":null;
+ if(anchor==="ALL_SAINTS_SOULS_PERIOD")return ["11-01","11-02"].includes(md)?"ALL_SAINTS_SOULS_GENERAL_PERIOD_CONTEXT":null;
+ if(anchor==="ALL_SOULS_NOV2_CALENDAR")return md==="11-02"?"FIXED_FEAST_HISTORICAL_CONTEXT":null;
+ if(anchor==="ST_ANNE_NAME_DAY_JUL26")return md==="07-26"?"PATRONAL_NAME_DAY_GENERAL_CONTEXT_NO_PERSON_INFERRED":null;
+ throw new TypeError("Unrecognized historical Customs variant anchor: "+anchor);
+}
+export function calendarStagedPublishedCustomVariantsOnDate(date,variantReadModel,{fr=false}={}){
+ const {year,iso}=checkDay(date);
+ // The parent detail reader carries the source/locale/minister safety checks.
+ const rows=variantReadModel?.records;
+ if(!Array.isArray(rows)||rows.length!==22)throw new TypeError("Expected exactly 22 source-bounded regional variant records");
+ const ownerIds=[...new Set(rows.map(x=>x.owner_custom_id))];
+ const details=new Map(ownerIds.flatMap(id=>calendarStagedPublishedCustomVariants(id,variantReadModel,{fr}).map(x=>[x.variant_id,x])));
+ const days=v384Dates(year);
+ const projected=rows.flatMap(r=>{
+  if(!CUSTOMS_RESEARCH_VARIANT_ANCHORS.includes(r.calendar.anchor_key))
+   throw new TypeError("Unknown source-checked variant anchor "+r.calendar.anchor_key);
+  const mode=variantContextDate(r.calendar.anchor_key,iso,days);
+  if(!mode)return [];
+  const v=details.get(r.variant_id);
+  if(!v)throw new TypeError("Unknown staged parent detail "+r.variant_id);
+  return [Object.freeze({
+   ...v,
+   calendar_context_date:iso,
+   date_precision:mode,
+   occurrence_is_only_historical_context:true,
+   may_appear_in_live_calendar:false,
+   local_event_confirmed:false,
+   linked_indulgence_claims:Object.freeze([]),
+   source_scope_region_required:true,
+   name_day_person_match_assumed:false
+  })];
+ });
+ return Object.freeze(projected.sort((a,b)=>a.parent_custom_id.localeCompare(b.parent_custom_id)||a.variant_id.localeCompare(b.variant_id)));
+}
+export function calendarStagedCustomsFullDayContextPreview(date,stagedUnpublished,stagedVariants,{fr=false}={}){
+ const households=calendarStagedHouseholdCustomsOnDate(date,stagedUnpublished,{fr}).map(r=>Object.freeze({
+  ...r,preview_class:"UNPUBLISHED_HOUSEHOLD_CONTEXT",
+  may_appear_in_live_calendar:false,
+  source_scope_region_required:true
+ }));
+ const variants=calendarStagedPublishedCustomVariantsOnDate(date,stagedVariants,{fr}).map(r=>Object.freeze({
+  ...r,preview_class:"PUBLISHED_PARENT_RESEARCH_VARIANT"
+ }));
+ return Object.freeze([...households,...variants]);
+}
