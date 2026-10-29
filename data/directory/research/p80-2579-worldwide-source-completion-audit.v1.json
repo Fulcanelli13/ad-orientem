@@ -37,6 +37,15 @@
     "Country queries are partial church/cathedral P18 image source discovery, not physical-site photo certification.",
     "Country failures must never count as no-images outcomes.",
     "No automated approval, rights grant, original SHA1 byte check or visual review.",
-    "Full original-source evidence remains attached to P80 run, with the recorded artifact retention expiry; this report is durable but does not itself preserve all 44,777 raw rows."
-  ]
+    "Full original source evidence is now preserved as the checksum-verified permanent research archive in Git, rather than relying on expiring Actions storage."
+  ],
+  "permanent_research_archive": {
+    "branch": "research/archived-p80-worldwide-source-20261029",
+    "commit_sha": "74c3e0043736c6ccbc214fde884849763bb134e5",
+    "path": "data/directory/research/archives/p80-complete-worldwide-source-2579-anchors-76-countries.zip",
+    "git_blob_sha": "17729d4152442a74ff751668c7136f9c4cfaaef5",
+    "archive_sha256": "9310bd13e1b218944bb6a8951f625befc271ed18483dd9170f1fe812ceadcc59",
+    "bytes": 2093020,
+    "includes": "76 country-source JSON files plus complete 2579-anchor source index and audit; 44777 original country P18 rows."
+  }
 }
