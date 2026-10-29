@@ -63,7 +63,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 1280,
+        "height": 960
+      }
     },
     {
       "contact_index": 15,
@@ -104,7 +109,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 3024,
+        "height": 4032
+      }
     },
     {
       "contact_index": 20,
@@ -146,7 +156,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 5621,
+        "height": 4216
+      }
     },
     {
       "contact_index": 52,
@@ -189,7 +204,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 2333,
+        "height": 3500
+      }
     },
     {
       "contact_index": 58,
@@ -228,7 +248,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 3944,
+        "height": 2933
+      }
     },
     {
       "contact_index": 61,
@@ -267,7 +292,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 5392,
+        "height": 3595
+      }
     },
     {
       "contact_index": 62,
@@ -287,9 +317,9 @@
       "source_page_license_claim": "CC BY-SA 4.0",
       "source_page_creator_claim": "Bernd Schwabe in Hannover",
       "hypothetical_16_9_crop": {
-        "crop_width_px": 4000,
-        "crop_height_px": 2250,
-        "retained_original_area_percent": 99.9,
+        "crop_width_px": 2252,
+        "crop_height_px": 1266,
+        "retained_original_area_percent": 31.7,
         "assumed_center_crop": true,
         "review_only_not_app_geometry": true
       },
@@ -297,6 +327,7 @@
       "sampled_near_black_pct": 0.03,
       "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
       "review_flags": [
+        "16_9_CENTER_CROP_RETENTION_UNDER_50_PERCENT",
         "SECONDARY_USE_ONLY_PER_PRIOR_PREVIEW"
       ],
       "observations": [
@@ -308,7 +339,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 6,
+      "display_oriented_dimensions": {
+        "width": 2252,
+        "height": 4000
+      }
     },
     {
       "contact_index": 71,
@@ -347,7 +383,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 4475,
+        "height": 3455
+      }
     },
     {
       "contact_index": 75,
@@ -388,7 +429,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 2736,
+        "height": 3648
+      }
     },
     {
       "contact_index": 96,
@@ -432,7 +478,12 @@
       "actual_app_crop_tested": false,
       "release_license_and_attribution_cleared": false,
       "editorial_acceptance": false,
-      "production_published": false
+      "production_published": false,
+      "exif_orientation_for_display": 1,
+      "display_oriented_dimensions": {
+        "width": 1536,
+        "height": 2048
+      }
     },
     {
       "contact_index": 195,
@@ -631,5 +682,13 @@
     "Manual exact-image viewing is required to confirm framing, blur, obstructions, picture frames, whole church, and correct Mass venue before publication.",
     "CC BY/CC BY-SA license claims are not final license clearance. Record creator, license URL, changes, and ShareAlike before distribution.",
     "Do not retry blocked Wikimedia HTTP 429 requests without respecting service guidance and a separate rate-limited plan."
-  ]
+  ],
+  "orientation_correction": {
+    "made_in": "P102",
+    "reason": "Image dimensions from decoded JPEG raster were previously treated as rendered display dimensions. Respect EXIF orientation before app aspect-ratio calculations.",
+    "affected_photo_ids": [
+      62
+    ],
+    "source": "P100 independently decoded file EXIF metadata + Commons rendered preview."
+  }
 }
