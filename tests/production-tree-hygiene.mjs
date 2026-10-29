@@ -76,6 +76,21 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-country-photo-harvest-one-shot.yml"){
+    // Single one-shot 8-country metadata-only harvest, no publication or main push.
+    assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*research\/directory-country-harvest-once-20261029/);
+    assert.match(source,/paths:\s*\n\s*-\s*data\/directory\/research\/\.run-country-harvest-eight-20261029\.json/);
+    assert.match(source,/github\.ref == 'refs\/heads\/research\/directory-country-harvest-once-20261029'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:/);
+    assert.match(source,/--countries MU,IE,IT,DE,FR,US,AU,BE/);
+    assert.match(source,/--max-rows 2000 --delay-seconds 15/);
+    assert.match(source,/original_files_downloaded/);
+    assert.match(source,/git push origin HEAD:refs\/heads\/research\/directory-country-media-index/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
