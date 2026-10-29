@@ -1,0 +1,57 @@
+name: Sacred Art KMSKA 89 official inventory reconcile (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-kmska-89-official-inventory-20261029.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-kmska-inventory-89
+  cancel-in-progress: false
+
+jobs:
+  verify-kmska-inventories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce frozen 2455 user decisions and 383-master release gates
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Verify 89 museum inventory pages, without fetching image assets
+        run: node scripts/art/reconcile-kmska-official-89-20261029.mjs
+      - name: Check source membership and fail-closed release flags, then commit evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const f='data/calendar/sacred-art-phase1-kmska-89-official-inventory-report-20261029.v1.json';
+          const o=JSON.parse(readFileSync(f,'utf8'));
+          if(o.rows.length!==89 || o.counts.sourceCards!==89 ||
+            o.counts.verifiedExact+o.counts.resolvedNeedsReview+o.counts.fetchFailures!==89 ||
+            o.counts.originalConditionalDecisionsPreserved!==33 ||
+            o.rows.some(r=>r.canonical383Match || r.uniquePhysicalWorkCertified ||
+              r.photoRightsCertified || r.photoVisualCertified || r.productionMutation) ||
+            o.gates.originalChoicesModified!==false || o.gates.productionMutation!==false) {
+            throw Error('KMSKA source identity output violated 89-source/frozen gate invariants');
+          }
+          console.log('KMSKA authoritative page pass',JSON.stringify(o.counts,null,2));
+          NODE
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-kmska-89-official-inventory-report-20261029.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): preserve 89 official KMSKA inventory page checks [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
