@@ -1,0 +1,190 @@
+name: Directory postal-locality 100-site comparison - research only
+on:
+  push:
+    branches:
+      - research/directory-photo-city-replay100-20261029
+    paths:
+      - data/directory/research/.run-exterior-locality-replay100-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-directory-city-replay100-once-20261029
+  cancel-in-progress: false
+jobs:
+  verify-discover-acquire:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-photo-city-replay100-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce exact one-shot marker and no-publication contracts
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-photo-discovery-test.py -v
+          python tests/directory-bulk-photo-stage-test.py -v
+          python - <<'PY'
+          import json,pathlib
+          marker=pathlib.Path("data/directory/research/.run-exterior-locality-replay100-20261029.json")
+          payload=json.loads(marker.read_text())
+          assert payload=={
+            "schema":"AO_DIRECTORY_ONE_SHOT_EXTERIOR_V1",
+            "wave":"exterior","offset":100,"limit":100,
+            "selection_offset":0,"selection_limit":30,
+            "publication":False,
+          }
+          PY
+      - name: Discover exactly 100 frozen exterior venues (metadata only)
+        run: |
+          set -euo pipefail
+          python tools/directory/discover-open-place-media.py \
+            --offset 100 --limit 100 --wave exterior --openverse-budget 20 \
+            --output /tmp/ao-city-replay100-exteriors.json
+          python - <<'PY'
+          import json
+          a=json.load(open("/tmp/ao-city-replay100-exteriors.json"))
+          assert a["schema"]=="AO_DIRECTORY_OPEN_PHOTO_CANDIDATES_V1"
+          assert a["processed"]==100 and a["wave"]=="exterior"
+          assert a["categories"]==["EXTERIOR"]
+          assert a["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
+          assert a["image_downloads"]==0 and a["publications"]==0
+          assert len(a["venues"])==100
+          assert sum(len(x["errors"]) for x in a["venues"])<300, "Systemic discovery API failure"
+          print("WAVE1_DISCOVERY_ACTUAL_COUNTS",json.dumps(a["pilot_metrics"],sort_keys=True))
+          PY
+      - name: Record actual Commons CC-eligible shortlist before acquiring images
+        run: |
+          set -euo pipefail
+          python tools/directory/stage-bulk-place-photos.py \
+            --candidate-file /tmp/ao-city-replay100-exteriors.json --wave exterior \
+            --selection-offset 0 --limit 30 \
+            --output-dir /tmp/ao-preflight-unused \
+            --report /tmp/ao-preflight-unused.json --validate-only \
+            > /tmp/ao-city-replay100-stage-preflight.json
+          python - <<'PY'
+          import json
+          r=json.load(open("/tmp/ao-city-replay100-stage-preflight.json"))
+          assert r["schema"]=="AO_DIRECTORY_BULK_STAGE_REPORT_V1"
+          assert r["publication"] is False and r["status"]=="VALIDATED_NO_NETWORK"
+          print("ACTUAL_COMMONS_CC_PRELIMINARY",r["available_candidates"])
+          PY
+      - name: Commit only second-100 candidate metadata to existing research branch
+        run: |
+          set -euo pipefail
+          git fetch origin 'refs/heads/research/directory-photo-candidates:refs/remotes/origin/research/directory-photo-candidates'
+          git switch -C research/directory-photo-candidates origin/research/directory-photo-candidates
+          target="data/directory/research/photo-candidates/r49-exterior-100-100-locality-v2.json"
+          if test -e "$target"; then
+            echo "Second 100 exteriors already archived; refuse overwrite" >&2
+            exit 1
+          fi
+          mkdir -p "$(dirname "$target")"
+          cp /tmp/ao-city-replay100-exteriors.json "$target"
+          preflight="data/directory/research/photo-staging/preflight/r49-exterior-100-100-locality-v2-0-30.json"
+          mkdir -p "$(dirname "$preflight")"
+          cp /tmp/ao-city-replay100-stage-preflight.json "$preflight"
+          git add "$target" "$preflight"
+          git diff --cached --name-only | grep -Fx "$target"
+          git diff --cached --name-only | grep -Fx "$preflight"
+          git -c user.name='ad-orientem-research-bot' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m "research(directory): second 100 exterior Commons discovery candidates only"
+          git push origin HEAD:refs/heads/research/directory-photo-candidates
+          git switch --detach "$GITHUB_SHA"
+      - name: Install pinned free image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Validate exact second-30 Commons candidate acquisition range
+        run: |
+          set -euo pipefail
+          python tools/directory/stage-bulk-place-photos.py \
+            --candidate-file /tmp/ao-city-replay100-exteriors.json --wave exterior \
+            --selection-offset 0 --limit 30 \
+            --output-dir /tmp/ao-exterior-stage/images \
+            --report /tmp/ao-exterior-stage/report.json --validate-only \
+            > /tmp/ao-city-replay100-stage-preflight.json
+          python - <<'PY'
+          import json
+          x=json.load(open("/tmp/ao-city-replay100-stage-preflight.json"))
+          assert x["status"]=="VALIDATED_NO_NETWORK" and x["publication"] is False
+          print("WAVE1_STAGE_PREFLIGHT",json.dumps(x,sort_keys=True))
+          PY
+      - name: Acquire up to 30 Commons originals with current rights and SHA1 checks
+        id: acquire
+        run: |
+          set -euo pipefail
+          available=$(python - <<'PY'
+          import json
+          print(json.load(open("/tmp/ao-city-replay100-stage-preflight.json"))["available_candidates"])
+          PY
+          )
+          if test "$available" -eq 0; then
+            echo "No Commons-SHA1 anchored candidates; no image acquisition claimed"
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python tools/directory/stage-bulk-place-photos.py \
+            --candidate-file /tmp/ao-city-replay100-exteriors.json --wave exterior \
+            --selection-offset 0 --limit 30 \
+            --output-dir /tmp/ao-exterior-stage/images \
+            --report /tmp/ao-exterior-stage/report.json
+          python - <<'PY'
+          import hashlib,json,pathlib
+          report=json.loads(pathlib.Path("/tmp/ao-exterior-stage/report.json").read_text())
+          assert report["schema"]=="AO_DIRECTORY_BULK_STAGE_REPORT_V1"
+          assert report["status"]=="STAGED_NOT_PUBLISHED" and report["publication"] is False
+          assert 1<=len(report["staged"])<=30
+          assert len(report["staged"])+len(report["held"])==report["selected"]
+          for item in report["staged"]:
+            f=pathlib.Path("/tmp/ao-exterior-stage/images")/item["asset_path"]
+            assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==item["derivative_sha256"]
+            assert item["subject_identity"]=="UNVERIFIED_DISCOVERY_MATCH" and item["publication"] is False
+          print("WAVE1_FILES_ACTUAL",len(report["staged"]),"HELD",len(report["held"]))
+          PY
+          echo "has_files=true" >> "$GITHUB_OUTPUT"
+      - name: Permanently archive verified image files and report, never publish
+        if: steps.acquire.outputs.has_files == 'true'
+        run: |
+          set -euo pipefail
+          target="assets/staged/directory-bulk/r49-exterior-100-100-locality-v2-0-30"
+          report_target="data/directory/research/photo-staging/reports/r49-exterior-100-100-locality-v2-0-30.json"
+          git fetch origin 'refs/heads/research/directory-photo-assets:refs/remotes/origin/research/directory-photo-assets' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-photo-assets; then
+            git switch -C research/directory-photo-assets origin/research/directory-photo-assets
+          else
+            git switch -c research/directory-photo-assets
+          fi
+          if test -e "$report_target"; then
+            echo "Already staged; refuse to overwrite original archive" >&2
+            exit 1
+          fi
+          mkdir -p "$target" "$(dirname "$report_target")"
+          cp /tmp/ao-exterior-stage/images/*.webp "$target/"
+          export AO_TARGET="$target" AO_REPORT_TARGET="$report_target"
+          python - <<'PY'
+          import json,os,pathlib
+          report=json.loads(pathlib.Path("/tmp/ao-exterior-stage/report.json").read_text())
+          report["archive_directory"]=os.environ["AO_TARGET"]
+          for item in report["staged"]:
+            item["asset_path"]=os.environ["AO_TARGET"]+"/"+item["asset_path"]
+          pathlib.Path(os.environ["AO_REPORT_TARGET"]).write_text(
+             json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          PY
+          git add "$target" "$report_target"
+          git diff --cached --name-only | while read -r file; do
+            case "$file" in
+              "$target"/*|"$report_target") ;;
+              *) echo "Unexpected staged file: $file" >&2; exit 1;;
+            esac
+          done
+          git -c user.name='ad-orientem-research-bot' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m "research(directory): verified first exterior WebPs staged not approved"
+          git push origin HEAD:refs/heads/research/directory-photo-assets
