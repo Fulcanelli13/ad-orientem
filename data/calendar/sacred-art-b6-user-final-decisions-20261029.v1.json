@@ -1,0 +1,55 @@
+{
+  "schema": "AO_SACRED_ART_B6_FROZEN_EDITORIAL_LEDGER_V1",
+  "sourceUploadedFile": "ad-orientem-sacred-art-b6-walters-final-choices.json",
+  "date": "2026-10-29",
+  "batchId": "B6",
+  "batchSha256": "f331bb64be74fcdb8ff6dee38d020b96d41602cab2f51d7a4256442c202e54ea",
+  "completeBatch": true,
+  "reviewedVisibleArtworkCount": 250,
+  "counts": {
+    "IMPORT": 30,
+    "IMPORT_WITH_CORRECTIONS": 1,
+    "REJECT": 219
+  },
+  "importSourceIds": [
+    "walters:37037",
+    "walters:2840",
+    "walters:14271",
+    "walters:15290",
+    "walters:40183",
+    "walters:22581",
+    "walters:9018",
+    "walters:9159",
+    "walters:9071",
+    "walters:5083",
+    "walters:7018",
+    "walters:31826",
+    "walters:32732",
+    "walters:32662",
+    "walters:2872",
+    "walters:888",
+    "walters:37591",
+    "walters:34385",
+    "walters:37844",
+    "walters:23519",
+    "walters:4625",
+    "walters:16288",
+    "walters:36475",
+    "walters:36782",
+    "walters:39318",
+    "walters:8257",
+    "walters:18326",
+    "walters:35964",
+    "walters:82254",
+    "walters:37520"
+  ],
+  "importWithCorrections": [
+    {
+      "sourceId": "walters:16411",
+      "corrections": "remove frame"
+    }
+  ],
+  "rejectionRule": "All remaining IDs in the frozen B6 source batch not selected are REJECT. Must validate source batch hash and 250 exact source IDs before processing.",
+  "noProductionMutation": true,
+  "rightHoldsNotOverridden": true
+}
