@@ -122,7 +122,11 @@ def fetch_meta(entry):
             else declared == target), f"Licence mismatch: {declared} vs {target}"
     parsed = urllib.parse.urlsplit(get("LicenseUrl"))
     assert parsed.hostname == "creativecommons.org"
-    assert parsed.path.rstrip("/") == entry["license_path"]
+    license_path = parsed.path.rstrip("/")
+    expected_path = entry["license_path"]
+    assert license_path == expected_path or (entry["license"] == "CC0" and license_path == expected_path + "/deed.en"), (
+        "Unexpected licence URL path " + license_path + " for " + entry["title"]
+    )
     assert urllib.parse.urlsplit(img["url"]).hostname == "upload.wikimedia.org"
     return img
 
