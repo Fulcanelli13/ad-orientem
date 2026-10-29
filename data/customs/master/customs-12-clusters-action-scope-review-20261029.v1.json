@@ -1,0 +1,234 @@
+{
+  "schema": "AO_CUSTOMS_TWELVE_CLUSTER_RELATIONSHIP_DECISIONS_V1",
+  "as_of": "2026-10-29",
+  "status": "EXPLICIT_SOURCE_ACTION_RELATIONSHIP_REVIEW_NOT_SIGNED_IDENTITY_MERGES",
+  "counts": {
+    "source_clusters": 12,
+    "cluster_membership_links": 34,
+    "distinct_source_groups_in_clusters": 34,
+    "actual_mergers_authorized": 0,
+    "canonical_customs_published": 0
+  },
+  "guards": [
+    "Never conflate same feast with same practice; identify action, minister and geographic locus.",
+    "A cluster may resolve to one institution with multiple feast dates or several linked but distinct customs.",
+    "Folk beliefs about magic or guaranteed physical protection are context only.",
+    "Calendar owns days; these proposals do not create or alter any feast calendar."
+  ],
+  "clusters": [
+    {
+      "cluster_id": "SEVILLE_SEISES",
+      "source_ids": [
+        "CAT-WEISER-B-083",
+        "CAT-WEISER-B-109"
+      ],
+      "prior_link_reason": "SINGLE_LOCAL_TRADITION_TWO_FEASTS",
+      "review_relationship": "SAME_LOCAL_INSTITUTION_MULTIPLE_FEAST_CONTEXTS",
+      "narrow_source_reason_en": "Local Seises dance at Corpus Christi and Immaculate Conception may belong to one Seville practice with separate occurrences; never two automatic global customs.",
+      "next_authority_gate": "REGIONAL_SITE_AND_LITURGICAL_AUTHORITY_REVIEW",
+      "case_number": 1,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "POLISH_CORPUS_WREATHS",
+      "source_ids": [
+        "CAT-WEISER-B-085",
+        "CAT-WEISER-B-086"
+      ],
+      "prior_link_reason": "BLESSING_AND_HOME_USE_LIFECYCLE",
+      "review_relationship": "ONE_OBJECT_LIFECYCLE_POSSIBLE",
+      "narrow_source_reason_en": "Priestly blessing of flower wreaths and keeping the blessed wreaths later are different stages of one regional object tradition; minister blessing not assumed lay-performable.",
+      "next_authority_gate": "LOCAL_BLESSING_AUTHORITY_AND_OBJECT_IDENTITY",
+      "case_number": 2,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "EPIPHANY_HOME",
+      "source_ids": [
+        "CAT-WEISER-A-089",
+        "CAT-WEISER-A-090"
+      ],
+      "prior_link_reason": "THEMATICALLY_LINKED_BUT_PRIEST_AND_LAY_ACTIONS_DIFFER",
+      "review_relationship": "DISTINCT_MINISTERIAL_VS_HOUSEHOLD_ACTIONS",
+      "narrow_source_reason_en": "Priestly house blessing and Magi initials/chalking at the door may be linked seasonally but involve distinct ministerial and household practices.",
+      "next_authority_gate": "RITUAL_PRIEST_LAY_ROLE_AND_DATE",
+      "case_number": 3,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "EASTER_HOME_LIGHT",
+      "source_ids": [
+        "CAT-WEISER-B-024",
+        "CAT-WEISER-B-025"
+      ],
+      "prior_link_reason": "LINKED_LOCAL_FIRE_PRACTICES",
+      "review_relationship": "LINKED_TWO_STEP_LOCAL_PROCESS",
+      "narrow_source_reason_en": "Extinguishing household fires and bringing home the Easter Vigil blessed fire can form a single local sequence; confirm place and permitted transport instead of asserting two separate universal customs.",
+      "next_authority_gate": "LOCAL_RITUAL_FIRE_HANDLING",
+      "case_number": 4,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "ADVENT_IMAGE_ROUND",
+      "source_ids": [
+        "CAT-WEISER-A-027",
+        "CAT-WEISER-A-028",
+        "CAT-WEISER-A-029"
+      ],
+      "prior_link_reason": "HOSPITALITY_THEME_ACTION_AND_IMAGE_VARIANTS",
+      "review_relationship": "THREE_DIFFERENT_ACTION_VARIANTS",
+      "narrow_source_reason_en": "Marian-image relay, Saint Joseph image visits and Herbergsuchen lodging play share Advent hospitality themes but involve different image, roles and enactment; no combined automatic identity.",
+      "next_authority_gate": "REGIONAL_IMAGE_AND_PLAY_DIFFERENTIATION",
+      "case_number": 5,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "CANDLEMAS_CANDLE",
+      "source_ids": [
+        "CAT-WEISER-B-113",
+        "CAT-WEISER-B-133"
+      ],
+      "prior_link_reason": "DECORATION_BLESSING_HOME_USE_NOT_IDENTICAL",
+      "review_relationship": "SEPARATE_LITURGICAL_AND_HOME_ACTIONS",
+      "narrow_source_reason_en": "Candlemas candle blessing/decorating and All Souls family prayer with an already blessed candle occur on different dates with distinct actions.",
+      "next_authority_gate": "1962_CANDLE_BLESSING_AND_HOUSEHOLD_USE",
+      "case_number": 6,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "ALL_SOULS_ALMS",
+      "source_ids": [
+        "CAT-WEISER-B-140",
+        "CAT-WEISER-B-141",
+        "CAT-WEISER-B-143",
+        "CAT-WEISER-B-144",
+        "CAT-WEISER-B-145",
+        "CAT-WEISER-B-147"
+      ],
+      "prior_link_reason": "COUNTRY_DISTINCT_CHARITY_VARIANTS",
+      "review_relationship": "MULTIPLE_COUNTRY_AND_ACTION_VARIANTS",
+      "narrow_source_reason_en": "All Souls family portions, bread alms, food charities and hospitality to orphaned children share charitable intention but are country/food/action variants; no single unqualified new custom.",
+      "next_authority_gate": "LOCAL_CHARITY_AND_SUPERSTITION_SCREEN",
+      "case_number": 7,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "EASTER_EGGS",
+      "source_ids": [
+        "CAT-WEISER-B-017",
+        "CAT-WEISER-B-038",
+        "CAT-WEISER-B-039",
+        "CAT-WEISER-B-040",
+        "CAT-WEISER-B-041"
+      ],
+      "prior_link_reason": "DECORATION_GIFT_GAMES_DISTINCT_ACTIONS",
+      "review_relationship": "DECORATION_GIFT_AND_GAMES_DISTINCT",
+      "narrow_source_reason_en": "Egg dyeing, coloured designs, gifts, rolling and hunts do not all describe the same action; retain related subtypes rather than indiscriminately merge.",
+      "next_authority_gate": "CRAFT_GIFT_GAMES_WITH_BLESSING_SEPARATE",
+      "case_number": 8,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "LENTEN_PRETZELS",
+      "source_ids": [
+        "CAT-WEISER-A-107",
+        "CAT-WEISER-A-108"
+      ],
+      "prior_link_reason": "FOOD_AND_ALMS_ACTIONS",
+      "review_relationship": "SAME_FOOD_DIFFERENT_USES",
+      "narrow_source_reason_en": "Prayerful symbolism of Lenten pretzels and giving pretzels to the poor can be two uses of the same food with a distinct charity action.",
+      "next_authority_gate": "REGIONAL_FORM_AND_ALMS_WITNESSES",
+      "case_number": 9,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "SPANISH_IMMACULATE",
+      "source_ids": [
+        "CAT-WEISER-B-107",
+        "CAT-WEISER-B-108"
+      ],
+      "prior_link_reason": "PROCESSION_AND_HOUSEHOLD_DECORATIONS_DISTINCT",
+      "review_relationship": "DISTINCT_PROCESSION_VS_HOUSE_DECOR",
+      "narrow_source_reason_en": "Spanish Immaculate Conception novenas/processions and household balcony decoration share a feast but are distinct actions.",
+      "next_authority_gate": "LOCAL_RITUAL_VS_DOMESTIC",
+      "case_number": 10,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "ALL_SOULS_GRAVES",
+      "source_ids": [
+        "CAT-WEISER-B-129",
+        "CAT-WEISER-B-130",
+        "CAT-WEISER-B-131",
+        "CAT-WEISER-B-135",
+        "CAT-WEISER-B-137"
+      ],
+      "prior_link_reason": "PRIEST_BLESSING_VS_LAY_CARE_OR_VISIT",
+      "review_relationship": "CLERIC_BLESSING_VS_LAY_CARE_AND_REGIONS",
+      "narrow_source_reason_en": "Blessing of graves by clergy, grave cleaning, lanterns and Brazilian/Philippine observances are not one homogeneous ritual; link selectively to cemetery visit existing owner.",
+      "next_authority_gate": "CEMETERY_LAW_LOCAL_AND_ROLE",
+      "case_number": 11,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "cluster_id": "CANDLEMAS_CRIB",
+      "source_ids": [
+        "CAT-WEISER-B-116"
+      ],
+      "prior_link_reason": "OPTIONAL_HOUSEHOLD_CUSTOM_NOT_LITURGICAL_SEASON_RULE",
+      "review_relationship": "OPTIONAL_DOMESTIC_CYCLE_NOT_LITURGICAL_SEASON",
+      "narrow_source_reason_en": "Keeping the Christmas crib up until Candlemas is an optional local household custom, not a universal definition of liturgical Christmastide.",
+      "next_authority_gate": "CALENDAR_FEAST_VS_POPULAR_CUSTOM",
+      "case_number": 12,
+      "all_component_ids_preserved": true,
+      "regional_dates_and_rite_roles_not_collapsed": true,
+      "distinct_custom_id_approved": false,
+      "consolidation_approved": false,
+      "calendar_publication_approved": false
+    }
+  ]
+}
