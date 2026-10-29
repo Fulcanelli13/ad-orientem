@@ -99,8 +99,18 @@ try{
     assert.ok(rects.cols[1].x>rects.cols[0].x+50,
       "On desktop bilingual copy should be side by side: "+JSON.stringify(rects));
    }
+   // The live week resolver can replace Calendar DOM nodes while preparing
+   // the liturgical week; wait for its overlay to clear and capture the
+   // browser viewport rather than a transient element handle.
+   await page.waitForFunction(()=>
+     !document.getElementById("ao-cinema-loader")?.classList.contains("aoCinemaLoaderOn"),
+     null,{timeout:90000});
+   await reviewer.waitFor({state:"visible",timeout:10000});
+   await reviewer.evaluate(el=>el.scrollIntoView({block:"start",behavior:"instant"}));
    const file=resolve(output,"editorial-"+tag+".png");
-   await reviewer.screenshot({path:file,animations:"disabled",timeout:25000});
+   await page.screenshot({path:file,fullPage:false,animations:"disabled",timeout:25000});
+   assert.equal(await page.locator('[data-cal-r18-eleven-editorial-preview]').count(),1,
+     "Reviewer should survive Calendar week preparation");
    results.push({tag,public_customs:35,review_articles:11,source_links:17,
      language_columns:2,overflow:rects.overflow,screenshot:file});
    assert.equal(errors.length,0,"Browser errors: "+errors.join(" | "));
