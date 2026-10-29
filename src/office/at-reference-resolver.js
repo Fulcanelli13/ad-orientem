@@ -2,7 +2,8 @@
  * Bounded source-first expansion of explicit @path:section and @:section
  * references, using the same injected pinned parsed-source reader as Mass.
  *
- * No $ standard-prayer invention, no &psalm() generator, no conditional
+ * Optional exact per-language pinned standard-prayer section resolution;
+ * no invented prayer conclusions, no &psalm() generator or conditional
  * Rubrics evaluation, no CGI, archive, extra network client or French fallback.
  * Any unsupported directive is an error, not a partial liturgical Hour.
  */
@@ -13,6 +14,14 @@ export const OFFICE_AT_REFERENCE_SCHEMA="ao.office.at-reference-resolved.v1";
 const PATH=/^(?:Tempora|Sancti|Commune|Psalterium|Ordinarium|Special|Martyrologium)\/[A-Za-z0-9][A-Za-z0-9_. \/-]{0,139}$/;
 const SECTION=/^[A-Za-z][A-Za-z0-9_. -]{0,100}$/;
 const LANGUAGES=["la","en","fr"];
+// Source witness: pinned LanguageTextTools::prayer reads the names from
+// Psalterium/Common/Prayers.txt. Never substitute a Latin fallback.
+const STANDARD_PRAYER_OWNER="Psalterium/Common/Prayers";
+const STANDARD_PRAYERS=new Set([
+ "Qui vivis","Qui tecum","Qui tecum eiusdem",
+ "Per Dominum","Per Dominum eiusdem","Per eumdem"
+]);
+const PRAYER_DIRECTIVE=/^\$([A-Za-z][A-Za-z ]{0,70})$/u;
 const DIRECTIVE=/^\s*(?:[$&!#%]|\((?:sed|nisi|rubrica|deinde)\b|\{(?:omit|omises|:))/iu;
 const REF=/^@(?:(?<path>(?:Tempora|Sancti|Commune|Psalterium|Ordinarium|Special|Martyrologium)\/[A-Za-z0-9][A-Za-z0-9_. \/-]*)?:)(?<section>[A-Za-z][A-Za-z0-9_. -]{0,100})$/u;
 const fullKey=(p,s,l)=>p+"#"+s+"|"+l;
@@ -23,11 +32,11 @@ function identity(path,section,language){
   throw Error("OFFICE_AT_SOURCE_IDENTITY_INVALID");
 }
 export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
- maxDepth=6,maxNodes=48}={}){
+ maxDepth=6,maxNodes=48,enableStandardPrayers=false}={}){
  if(typeof readSource!=="function"||!Number.isInteger(maxDocuments)||
     maxDocuments<1||maxDocuments>96||!Number.isInteger(maxDepth)||
     maxDepth<1||maxDepth>12||!Number.isInteger(maxNodes)||
-    maxNodes<1||maxNodes>128)
+    maxNodes<1||maxNodes>128||typeof enableStandardPrayers!=="boolean")
   throw Error("OFFICE_AT_RESOLVER_CONFIGURATION_INVALID");
  const cache=new Map();
  async function file(path,language){
@@ -74,6 +83,11 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
       if(!m)throw Error("OFFICE_AT_REFERENCE_SYNTAX_UNSUPPORTED:"+key);
       const q=m.groups.path??p,sectionName=m.groups.section;
       parts.push(await walk(q,sectionName,depth+1));
+     }else if(line.startsWith("$")){
+      const match=PRAYER_DIRECTIVE.exec(line);
+      if(!enableStandardPrayers||!match||!STANDARD_PRAYERS.has(match[1]))
+       throw Error("OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED:"+key);
+      parts.push(await walk(STANDARD_PRAYER_OWNER,match[1],depth+1));
      }else{
       if(DIRECTIVE.test(line)||/\b@(?:Tempora|Sancti|Commune|Psalterium)\//u.test(line))
        throw Error("OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED:"+key);
@@ -108,5 +122,6 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
   });
  }
  return Object.freeze({resolve,resolveParallel,cachedSourceCount:()=>cache.size,
-  maxDepth,maxNodes,sourceRevision:DIVINUM_OFFICIUM_PIN});
+  maxDepth,maxNodes,standardPrayersSourceEnabled:enableStandardPrayers,
+  sourceRevision:DIVINUM_OFFICIUM_PIN});
 }
