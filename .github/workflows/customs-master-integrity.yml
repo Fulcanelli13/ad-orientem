@@ -15,6 +15,10 @@ on:
       - "tests/customs-a23-second61-source-gates.mjs"
       - "tests/customs-408-complete-source-disposition-gates.mjs"
       - "tests/customs-all408-bulk-review-and-identity-gates.mjs"
+      - "tests/customs-calendar-40-bilingual-content-preview.mjs"
+      - "data/customs/master/customs-22-existing-owner-bilingual-variants-20261029.v1.json"
+      - "data/customs/master/customs-calendar-bilingual-content-40-20261029.v1.json"
+      - "docs/CUSTOMS_CALENDAR_40_BILINGUAL_CONTENT_PREVIEW_20261029.html"
       - "data/customs/master/customs-all408-consolidated-editorial-decision-ledger-20261029.v1.json"
       - "data/customs/master/customs-all47-owner-action-comparisons-20261029.v1.json"
       - "data/customs/master/customs-12-clusters-action-scope-review-20261029.v1.json"
@@ -154,3 +158,7 @@ jobs:
           node --check src/calendar/customs-research-preview.js
           node --check tests/calendar-customs-18-bilingual-staged-context.mjs
           node tests/calendar-customs-18-bilingual-staged-context.mjs
+      - name: Verify 40 bilingual Calendar contents with twelve existing owners and no new publication
+        run: |
+          node --check tests/customs-calendar-40-bilingual-content-preview.mjs
+          node tests/customs-calendar-40-bilingual-content-preview.mjs
