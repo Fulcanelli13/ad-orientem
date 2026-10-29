@@ -273,3 +273,80 @@ test("psalm source-number confusion and upstream revision substitution cannot pa
    /OFFICE_AT_PSALM_/);
  }
 });
+
+function saturdayPsalmFixture(number,language){
+ const numbers=number===143?
+  [1,2,2,3,4,5,6,7,8,9,10,11,12,12,13,13,14,15]:
+  [1,2,3,4,5,6,7,8,9,10,11,12,"13a","13b",14,15,16,17,18,19,20,21];
+ return numbers.map((n,i)=>number+":"+n+" "+language+
+  " exact psalter portion "+i+".").join("\n");
+}
+test("1960 Sunday First Vespers Saturday psalm 143/144 source ranges retain split boundaries",async()=>{
+ const calls=[];
+ const resolver=createOfficeAtReferenceResolver({
+  readSource:async()=>{throw Error("NOT_USED")},
+  enablePsalmVerses:true,maxDocuments:12,
+  readPsalmSource:async(path,language)=>{
+   calls.push([path,language]);
+   const number=Number(path.split("Psalm").at(-1));
+   return {sourceRevision:DIVINUM_OFFICIUM_PIN,
+    sourcePath:path,language,text:saturdayPsalmFixture(number,language)};
+  }
+ });
+ const ranges=[[143,"1-8"],[143,"9-15"],[144,"1-7"],
+  [144,"8-13a"],[144,"13b-21"]];
+ const parts=await Promise.all(ranges.map(([number,range])=>
+  resolver.resolvePsalmSegmentParallel({number,range})));
+ assert.equal(parts.length,5);
+ assert.equal(calls.length,6);
+ assert.equal(resolver.cachedSourceCount(),6);
+ assert.equal(parts[0].schema,"ao.office.psalm-source-segment.v1");
+ assert.equal(parts[0].status,"THREE_LANGUAGE_SATURDAY_PSALTER_SEGMENT_UNVERIFIED");
+ assert.equal(parts[0].texts.la.split("\n").length,9);
+ assert.equal(parts[1].texts.la.split("\n").length,9);
+ assert.equal(parts[2].texts.fr.split("\n").length,7);
+ assert.equal(parts[3].texts.fr.split("\n").length,6);
+ assert.equal(parts[4].texts.fr.split("\n").length,9);
+ assert.match(parts[3].texts.fr,/144:13a/);
+ assert.doesNotMatch(parts[3].texts.fr,/144:13b/);
+ assert.match(parts[4].texts.fr,/^144:13b/);
+ assert.equal(parts[0].gloriaPatriVerified,false);
+ assert.equal(parts.every(p=>p.publishable===false),true);
+});
+test("French-source typographic quotes normalize only the explicitly known 144 split",async()=>{
+ const resolver=createOfficeAtReferenceResolver({
+  readSource:async()=>{throw Error("NOT_USED")},
+  enablePsalmVerses:true,
+  readPsalmSource:async(path,language)=>({
+   sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+   text:saturdayPsalmFixture(144,language)
+  })
+ });
+ const one=await resolver.resolvePsalmSegmentParallel({number:144,range:"8-’13a’"});
+ const two=await resolver.resolvePsalmSegmentParallel({number:144,range:"‘13b’-21"});
+ assert.equal(one.range,"8-13a");
+ assert.equal(two.range,"13b-21");
+ await assert.rejects(resolver.resolvePsalmSegmentParallel({number:144,range:"1-21"}),
+  /OFFICE_AT_PSALM_SEGMENT_NOT_SUPPORTED/);
+});
+test("unverified duplicate or missing Saturday psalm verses refuse segmented assembly",async()=>{
+ for(const make of [
+  (n,s)=>s.replace("143:2 ", "143:5 "),
+  (n,s)=>s.replace("144:13b ","144:15 "),
+  (n,s)=>s.split("\n").slice(1).join("\n")
+ ]){
+  const resolver=createOfficeAtReferenceResolver({
+   readSource:async()=>{throw Error("NOT_USED")},
+   enablePsalmVerses:true,
+   readPsalmSource:async(path,language)=>{
+    const n=Number(path.split("Psalm").at(-1));
+    return {sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+     text:make(n,saturdayPsalmFixture(n,language))};
+   }
+  });
+  await assert.rejects(
+   resolver.resolvePsalmSegmentParallel({number:143,range:"1-8"})
+    .then(async x=>resolver.resolvePsalmSegmentParallel({number:144,range:"13b-21"})),
+   /OFFICE_AT_PSALM_SEGMENT_/);
+ }
+});
