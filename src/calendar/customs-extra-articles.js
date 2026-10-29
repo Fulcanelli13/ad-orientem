@@ -1220,5 +1220,53 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
         "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
       }
     ]
+  },
+  {
+    "id": "PENT-001",
+    "title": {
+      "en": "Pentecost greenery decorating Polish homes",
+      "fr": "Décorations végétales de Pentecôte dans les foyers polonais"
+    },
+    "description": {
+      "en": "In certain Polish regional Pentecost customs, households and gates are decorated with spring greenery.",
+      "fr": "Dans certains usages régionaux polonais de Pentecôte, les maisons et les portails sont ornés de feuillages de printemps."
+    },
+    "history": {
+      "en": "Polish State Forests documents the older rural custom of decorating houses, gates and sometimes churches with fresh greenery at Zielone Świątki, the feast of Pentecost. Forms differed by village, and the source also records that some decorations have become less common.",
+      "fr": "Les Forêts d'État polonaises documentent l'ancien usage rural d'orner maisons, portails et parfois églises de feuillages frais à la Pentecôte, dite Zielone Świątki. Les formes variaient selon les villages et la source constate aussi que certaines décorations sont devenues plus rares."
+    },
+    "meaning": {
+      "en": "An optional regional sign of Pentecost joy, never a required Roman liturgical decoration.",
+      "fr": "Un signe régional libre de la joie de Pentecôte, et non une décoration liturgique romaine imposée."
+    },
+    "practice": {
+      "en": "Where the regional custom is known, a household may decorate with sustainably sourced greenery as a voluntary seasonal remembrance.",
+      "fr": "Là où cet usage régional est connu, une famille peut décorer son foyer de feuillages obtenus sans dommage, en souvenir facultatif de la fête."
+    },
+    "caution": {
+      "en": "This regional household decoration is neither a prescribed Roman Pentecost practice nor a priestly blessing; do not attribute magical protection to the branches.",
+      "fr": "Cette décoration domestique régionale n'est ni une pratique prescrite de la Pentecôte romaine ni une bénédiction sacerdotale ; ne prêter aux branches aucun pouvoir magique de protection."
+    },
+    "occasion": {
+      "en": "Pentecost, movable feast resolved by Calendar",
+      "fr": "Pentecôte — date mobile calculée par le calendrier"
+    },
+    "scope": {
+      "en": "Historically documented regional Polish Pentecost greenery, particularly in rural household settings.",
+      "fr": "Décorations de Pentecôte attestées historiquement dans certaines régions polonaises, notamment en milieu rural."
+    },
+    "editorialCopyStatus": "CALENDAR_REGIONAL_ARTICLE_RELEASE_REVIEW",
+    "sources": [
+      {
+        "id": "LASYPANSTWOWE-PENTECOST-GREENERY",
+        "title": "Polish State Forests — Zielone Świątki historical greenery",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich"
+      },
+      {
+        "id": "LASYPANSTWOWE-BIRCH-GREENERY",
+        "title": "Polish State Forests — birch customs and Pentecost decorations",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/brzoza-przytul-sie-do-bialej-pani"
+      }
+    ]
   }
 ];
