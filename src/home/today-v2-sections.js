@@ -143,9 +143,9 @@ export function renderTodayV2Sections(model,vm){
 
   const calendarDates=upcoming.map(rowData=>{
     const name=language==="fr" ? rowData.fr : rowData.en;
-    return `<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="${esc(rowData.date)}" aria-label="${esc(dateDisplay(rowData.date,language)+" · "+name)}"><span class="aoTodayV2EventDate">${esc(dateDisplay(rowData.date,language))}</span><strong>${esc(name)}</strong></button>`;
+    return `<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="${esc(rowData.date)}" aria-label="${esc(dateDisplay(rowData.date,language)+" · "+name)}"><span class="aoTodayV2EventDate"><small>${esc(new Intl.DateTimeFormat(language==="fr"?"fr-FR":"en-GB",{weekday:"short",timeZone:"UTC"}).format(new Date(rowData.date+"T12:00:00Z")).replace(".",""))}</small><b>${esc(String(Number(rowData.date.slice(8))))}</b></span><strong>${esc(name)}</strong><span class="aoTodayV2EventArrow" aria-hidden="true">›</span></button>`;
   }).join("");
-  const glanceNote=txt("Upcoming calendar dates · confirm actual 1962 observance in Calendar","Dates à venir · vérifier la célébration effective de 1962 dans le calendrier");
+  const glanceNote=txt("Upcoming dates are calendar appointments; verify the observed 1962 day in Calendar.","Dates annoncées par le calendrier ; vérifier le jour effectivement célébré selon les règles de 1962.");
   return `<div class="aoTodayV2PrayerThroughDay" id="ao-home-prayer-through-day" tabindex="-1">
     <section class="aoTodayV2Zone aoTodayV2PrayNow"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Prayer through the day","Prier au fil du jour"))}</h2></div><button type="button" data-home-cu-route="pray.library">${esc(txt("All prayers","Toutes les prières"))} →</button></div>
       <div class="aoTodayV2PrayerFeature"><div class="aoTodayV2PrayerGlyph" aria-hidden="true"></div><div><small>${esc(featureRole)}</small><strong>${esc(featureName)}</strong><span>${esc(featureDetail)}</span></div><button type="button" ${featureAttrs}>${esc(txt("Pray","Prier"))}</button></div>
