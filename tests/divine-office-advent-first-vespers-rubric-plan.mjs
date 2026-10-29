@@ -7,6 +7,8 @@ import {reviewAdventFirstVespers1960RubricPlan as review}
  from "../src/office/advent-first-vespers-rubric-plan.js";
 import {reviewAdventI2026UniversalCommemoration}
  from "../src/office/advent-first-vespers-universal-commemoration.js";
+import {reviewAdventI2026CollectConclusion}
+ from "../src/office/advent-i-collect-ending-1960-research.js";
 import {readFileSync} from "node:fs";
 const universal=JSON.parse(readFileSync(new URL(
  "../data/office/research/advent-i-2026-universal-commemoration.json",
@@ -155,4 +157,75 @@ test("forged universal approval or fabricated local resolution fails closed",()=
   const p=review({assembly:assembly(),universalCommemoration:{...ok,...edit}});
   assert.equal(p.status,"WITHHELD");assert.equal(p.publishable,false);
  }
+});
+
+const sourceFixture=JSON.parse(readFileSync(new URL(
+ "../tests/fixtures/office/advent-i-2026-collect-dialogue-source-sections.json",
+ import.meta.url),"utf8"));
+async function sourceDecision(recitation,minister){
+ const readSource=async(path,language)=>{
+  const w=sourceFixture.sections[language];
+  if(!w)throw Error("NO_SOURCE_LANGUAGE_FALLBACK");
+  const isProper=path==="Tempora/Adv1-0";
+  return {
+   sourceRevision:PIN,sourcePath:path,language,
+   sourceBlobSha:isProper?w.properSha:w.prayersSha,
+   map:isProper?new Map([["Oratio",w.Oratio]]):
+    new Map(["Dominus","Oremus","Qui vivis",
+     "Benedicamus Domino","Fidelium animae"].map(k=>[k,w[k]]))
+  };
+ };
+ return reviewAdventI2026CollectConclusion({
+  readSource,recitation,minister
+ });
+}
+test("source-resolved collect Oremus, proper ending and lay dismissal are carried into research rubric events",async()=>{
+ const collectEndingReview=await sourceDecision("SOLO","BELOW_DEACON");
+ const p=review({assembly:assembly(),recitation:"SOLO",
+  minister:"BELOW_DEACON",collectEndingReview});
+ assert.equal(p.status,"RUBRIC_ORDER_RESEARCH_WITH_HELD_COLLATION");
+ assert.equal(p.sourceAudit.collectEndingSourceDecision,"TRILINGUAL_SOURCE_IDENTIFIED");
+ const byKind=Object.fromEntries(p.orderedEvents.map(x=>[x.kind,x]));
+ assert.equal(byKind.BEFORE_COLLECT_DIALOGUE.sourceId,prefix+"Dominus");
+ assert.equal(byKind.BEFORE_COLLECT_DIALOGUE.variant,"DOMINE_EXAUDI");
+ assert.equal(byKind.OREMUS.sourceId,prefix+"Oremus");
+ assert.equal(byKind.COLLECT_ENDING.sourceId,prefix+"Qui vivis");
+ assert.equal(byKind.COLLECT_ENDING.macroResolved,true);
+ assert.equal(byKind.SECOND_DOMINE_EXAUDI_OMITTED.documentedSourceCondition,true);
+ assert.equal(byKind.DISMISSAL_DIALOGUE_SOURCE_CANDIDATE,undefined);
+ assert.equal(byKind.BENEDICAMUS.sourceId,prefix+"Benedicamus Domino");
+ assert.equal(byKind.FIDELIUM_ANIMAE.sourceId,prefix+"Fidelium animae");
+ assert.equal(p.sourceAudit.collectEndingTranslationsApproved,false);
+ assert.ok(p.unresolvedGates.includes("COLLECT_ENDING_1961_PRINT_AND_TRANSLATION_REVIEW"));
+ assert.equal(p.completeHourVerified,false);
+ assert.equal(p.published,false);
+});
+test("cleric/common research retains its source-backed second dismissal dialogue",async()=>{
+ const collectEndingReview=await sourceDecision("CHOIR_OR_COMMON","DEACON_OR_HIGHER");
+ const p=review({assembly:assembly(),recitation:"CHOIR_OR_COMMON",
+  minister:"DEACON_OR_HIGHER",collectEndingReview});
+ assert.equal(p.status,"RUBRIC_ORDER_RESEARCH_WITH_HELD_COLLATION");
+ assert.equal(p.orderedEvents.find(x=>x.kind==="DISMISSAL_DIALOGUE_SOURCE_CANDIDATE").sourceId,
+  prefix+"Dominus");
+ assert.equal(p.orderedEvents.some(x=>x.kind==="SECOND_DOMINE_EXAUDI_OMITTED"),false);
+ assert.equal(p.rubricsFullyCertified,false);
+});
+test("crossed mode, tampered language, fake approval or local overlay fails closed",async()=>{
+ const good=await sourceDecision("SOLO","DEACON_OR_HIGHER");
+ const edits=[
+  {officePart:"SECOND"},{sourceRevision:"wrong"},
+  {translationFidelityCertified:true},{exactPrintedCollectEndingCollated:true},
+  {completeHourCertified:true},{publishable:true},
+  {languageComponentsLocated:2},
+  {languages:{...good.languages,fr:undefined}}
+ ];
+ for(const change of edits){
+  const p=review({assembly:assembly(),recitation:"SOLO",
+   minister:"DEACON_OR_HIGHER",collectEndingReview:{...good,...change}});
+  assert.equal(p.status,"WITHHELD");
+  assert.equal(p.published,false);
+ }
+ const differentMode=review({assembly:assembly(),recitation:"CHOIR_OR_COMMON",
+  minister:"DEACON_OR_HIGHER",collectEndingReview:good});
+ assert.equal(differentMode.status,"WITHHELD");
 });
