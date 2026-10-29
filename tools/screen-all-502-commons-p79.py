@@ -15,7 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"data/geography/research/p79-all-502-commons-review.v1.json"
 UA="AdOrientem-502CommonsBulkReview/1.0 (https://github.com/Fulcanelli13/ad-orientem; read-only photography research)"
 API="https://commons.wikimedia.org/w/api.php"
-ALLOWED={"upload.wikimedia.org","commons.wikimedia.org"}
+ALLOWED={"upload.wikimedia.org","thumb.wikimedia.org","commons.wikimedia.org"}
 LICENSE_PATHS={
  "CC0":"/publicdomain/zero/1.0",
  "CC BY 2.0":"/licenses/by/2.0","CC BY 3.0":"/licenses/by/3.0","CC BY 4.0":"/licenses/by/4.0",
