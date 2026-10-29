@@ -188,7 +188,11 @@ for(const name of workflows){
     assert.match(source,/original_image_bytes_downloaded/);
     assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
     assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
-    assert.doesNotMatch(source,/schedule:\s*\n|^  push:/m);
+    assert.match(source,/push:\s*\n\s*branches: \[main\]\s*\n\s*paths:/);
+    assert.match(source,/github\.event_name == 'push' && github\.ref == 'refs\/heads\/main'/);
+    assert.match(source,/'tools\/directory\/p86-consolidate-one-worldwide-photo-review\.py'/);
+    assert.match(source,/'\.github\/workflows\/directory-p86-final-worldwide-photo-review\.yml'/);
+    assert.doesNotMatch(source,/schedule:\s*\n/);
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
