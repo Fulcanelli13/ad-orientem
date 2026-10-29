@@ -103,3 +103,64 @@ Coordinate with the already-merged W1 discovery pipeline, P69 Places/relic
 discovery and the still-draft St Alphonsus W7 PR #1932. The W7 two approved
 exteriors must remain reviewed on that branch; its soft nave/altar images
 remain research holds unless independently accepted later.
+
+## Implemented binary staging workflow (W8; awaiting merge)
+
+The generic importer is now implemented as
+`tools/directory/stage-bulk-place-photos.py` and the manually
+triggered **Directory bulk photo staging - permanent research archive**
+GitHub Actions workflow. It does **not** add files to production:
+
+- Input: the existing wave-specific W1 JSON file on branch
+  `research/directory-photo-candidates`, referenced by its frozen
+  `r49-<wave>-<offset>-<limit>.json` filename.
+- It deterministically takes at most one Commons-derived file per source
+  venue/role and skips Openverse-only rows without a source-file SHA1.
+  `selection_offset` selects subsequent groups, up to 50 originals
+  per execution; the discovery wave must exist first.
+- It re-queries the individual Commons file for current permissible CC0/CC
+  BY/BY-SA licence URL and credited author; checks the original Commons SHA1
+  against the source metadata and locally downloaded bytes; rejects restricted
+  licences, an altered file, unknown hosts, image types and excessive sizes.
+- It converts full-frame/no-crop to WebP with an independently recorded SHA256.
+  Possible true 360° candidates retain up to 4096px resolution but are **not**
+  declared verified spherical images. Other photos fit within 1280px.
+- It stages only on branch `research/directory-photo-assets`,
+  under `assets/staged/directory-bulk/<batch>/`, with an
+  equivalent JSON report under
+  `data/directory/research/photo-staging/reports/<batch>.json`.
+  No writes to approved manifests, public cards, or main. The archive branch
+  holds persistent Git files rather than seven-day Actions artifacts.
+- Every staged candidate remains `UNVERIFIED_DISCOVERY_MATCH`.
+  An existing confirmed Directory→Place link is recorded only as evidence of
+  *site linking*, not proof of the photograph's subject. A later auditor must
+  independently verify what the photograph shows before any publication.
+- If no image passes hard gates the run fails; if some fail, the others can
+  be committed with explicit hold reasons. Existing batch reports cannot
+  be overwritten or silently reprocessed under the same batch key.
+- Free-only execution: bounded single-job runs, 50 original files, 16MB per
+  source, 160MB original total, and 45-minute job cap. No paid services,
+  scheduled loops, Google Maps images, automatic website links or direct
+  publication.
+
+### Launch sequence
+
+1. After merging W8, run `directory-open-photo-discovery-batch.yml`
+   manually with `wave=exterior, offset=0, limit=100`. Confirm
+   its research-branch output and actual candidate/error counts.
+2. Run `directory-bulk-photo-stage.yml` manually on main with the
+   **same wave/offset/limit** and `selection_offset=0, selection_limit=30`.
+   It reads the exact research file; it does not run discovery or choose a
+   different input from remote filenames.
+3. Check the archived report: staged WebPs, sha256, file-by-file holds, total
+   unique venues and (provisional) 360 candidates. Run subsequent
+   `selection_offset=30, 60, 90` as supported by the
+   actual `available_candidates` count in previous reports.
+4. Continue through the frozen R49 venue ranges, finish exterior coverage,
+   then repeat as `wave=interior` for nave/high altar.
+5. Run separate bulk contact-sheet/quality and exact-subject verification
+   before preparing any reviewed publication PR.
+
+This workflow has no live binary batch results until manually executed after
+the release gates. A metadata candidate is **not** a successfully acquired
+image, and a staged image is **not** an approved/published photograph.
