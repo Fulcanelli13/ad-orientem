@@ -111,6 +111,23 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-p83-global-screen-archive.yml"){
+    // One P82-success-triggered global research-only archive; no photo publishing.
+    assert.match(source,/workflow_run:\s*\n\s*workflows:/);
+    assert.match(source,/P82 preserve P81 worldwide Commons research/);
+    assert.match(source,/github\.event\.workflow_run\.conclusion == 'success'/);
+    assert.match(source,/github\.event\.workflow_run\.repository\.full_name == 'Fulcanelli13\/ad-orientem'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.match(source,/screen-worldwide-p83-photo-candidates\.py/);
+    assert.match(source,/p81-archive-sha256\.txt/);
+    assert.match(source,/P80|p80-complete-worldwide-source-2579-anchors-76-countries/);
+    assert.match(source,/sha256sum -c SHA256SUMS/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:|^  push:/m);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
