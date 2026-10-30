@@ -2,6 +2,15 @@
 // No fixture dates, Mass catalogue, art mapping, or parallel preference store.
 import { TODAY_H4_CSS } from "./today-h4-styles.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
+import { calendarMassColour } from "../calendar/colour-projection.js";
+// Display only verified liturgical colours; never infer them from the season.
+export function verifiedH4WeekColour(resolved,date){
+  if(resolved?.status!=="ready"||resolved.date!==date||!resolved.day?.main)return null;
+  const value=String(calendarMassColour(resolved)).trim().toLowerCase();
+  return ({green:"#62a473",vert:"#62a473",white:"#e9e0c9",blanc:"#e9e0c9",
+    red:"#d0574a",rouge:"#d0574a",black:"#8c8c8c",noir:"#8c8c8c",
+    violet:"#9a7bc4",purple:"#9a7bc4",rose:"#d99aae"})[value]??null;
+}
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const L=(fr,en,french)=>fr?french:en;
 const dateLabel=(date,fr)=>{
@@ -17,7 +26,7 @@ export function h4Enabled(win=globalThis){
 }
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
-  const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"><span>'+esc(d.day)+'</span><b>'+esc(d.number)+'</b><i class="aoWeekColour" aria-hidden="true"></i></button>').join("");
+  const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"><span>'+esc(d.day)+'</span><b>'+esc(d.number)+'</b><i class="aoWeekColour" data-home-week-colour="'+esc(d.date)+'" aria-hidden="true"></i></button>').join("");
   const properIdentity=vm.massFormularyName?'<p class="aoH4Formulary">'+esc(vm.massFormularyName)+'</p>':"";
   const introit=vm.massIntroit?'<p class="aoH4Introit" lang="la">'+esc(vm.massIntroit)+'</p>':"";
   const formName=({
