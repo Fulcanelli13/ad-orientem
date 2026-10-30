@@ -1,0 +1,27 @@
+name: Directory canonical Places Wikidata Commons Openverse photo contracts
+on:
+  pull_request:
+    paths:
+      - tools/directory/discover-open-place-media.py
+      - tests/directory-photo-discovery-test.py
+      - .github/workflows/directory-canonical-place-photo-discovery.yml
+      - docs/DIRECTORY-CANONICAL-PLACE-PHOTO-PIPELINE.md
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate legacy R49 and canonical Place intake
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/discover-open-place-media.py
+          python tests/directory-photo-discovery-test.py -v
+          node tests/production-tree-hygiene.mjs
