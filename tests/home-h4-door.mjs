@@ -4,8 +4,9 @@ import {h4ChoicesMarkup,rememberH4Choices} from "../src/home/today-h4-change-she
 import {createSettingsDonorState} from "../src/settings/donor-state.js";
 import {renderSettingsToString} from "../src/settings/presentation.js";
 import {buildHomeViewModel} from "../src/home/presentation.js";
-assert.equal(h4Enabled({location:{search:""}}),false,"H4 must not replace production until approved");
-assert.equal(h4Enabled({location:{search:"?aoTodayH4=1"}}),true,"H4 preview opt-in missing");
+assert.equal(h4Enabled({location:{search:""}}),true,"Approved H4 must be the default Home");
+assert.equal(h4Enabled({location:{search:"?aoTodayH4=1"}}),true,"H4 explicit route remains valid");
+assert.equal(h4Enabled({location:{search:"?aoTodayH4=0"}}),false,"Temporary rollback must retain old Today");
 const model={
  enricherVisible:true,feature:{id:"angelus.evening",kind:"route",role:"Next",title:"Angelus",
     sub:"Sanctify the evening hour",route:"pray.angelus_regina",due:1080},
