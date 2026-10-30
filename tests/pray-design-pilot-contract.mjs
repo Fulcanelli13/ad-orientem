@@ -6,7 +6,8 @@ import {
 } from "../src/pray/prayer-design-pilot.js";
 
 assert.equal(PRAYER_DESIGN_PILOT_SCHEMA,"ao-prayer-discovery-angelus-pilot-v1");
-assert.equal(prayerPilotEnabled({location:{search:""}}),false);
+assert.equal(prayerPilotEnabled({location:{search:""}}),true);
+assert.equal(prayerPilotEnabled({location:{search:"?from=home"}}),true);
 assert.equal(prayerPilotEnabled({location:{search:"?aoPrayerPilot=1"}}),true);
 assert.equal(prayerPilotEnabled({location:{search:"?aoPrayerPilot=0"}}),false);
 
@@ -33,7 +34,7 @@ assert.match(actual,/data-p435930-pilot-search/);
 assert.equal((actual.match(/data-p435930-pilot-facet="/g)||[]).length,5,"R1.1 has four form filters plus Latin availability");
 assert.match(actual,/data-pilot-form="prayer"/);
 assert.match(actual,/data-pilot-latin="false"/);
-assert.match(actual,/approved paintings and crops are not yet bound/);
+assert.doesNotMatch(actual,/Pilot: approved paintings/,"public Prayer hub must not display prototype implementation notes");
 
 const angelus=renderPilotAngelusEntry({
  head:title=>"<header>"+title+"</header>",L,esc,form:"angelus",posture:"Kneel · ordinary days",moduleIcon:()=>"<i></i>"
