@@ -86,16 +86,16 @@ for(const [number,expected] of [[2,200],[3,200]]){
 const wave4=get("customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json");
 assert.equal(wave4.rows.length,200);
 assert.equal(wave4.counts.source_native_type_available,68);
-assert.equal(wave4.counts.requires_actual_passage_type_screen,62);
-assert.equal(wave4.counts.source_passage_type_verified_in_hosted_reproductions,70);
-assert.equal(wave4.counts.source_semantic_class_available_total,138);
-assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,62);
+assert.equal(wave4.counts.requires_actual_passage_type_screen,0);
+assert.equal(wave4.counts.source_passage_type_verified_in_hosted_reproductions,132);
+assert.equal(wave4.counts.source_semantic_class_available_total,200);
+assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,0);
 assert.ok(wave4.rows.every(x=>unassigned.has(x.evidence_id)&&x.original_source_id_verified&&!x.app_publication_allowed));
 const firstFour=[...wave.rows,...get("customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json").rows,...get("customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json").rows,...wave4.rows];
 assert.equal(new Set(firstFour.map(x=>x.evidence_id)).size,800);
 assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,3295);
 assert.equal(coverage.progress.evidence_only_source_scope_first_pass.unprocessed,0);
-assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_unresolved_requires_passage,62);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_unresolved_requires_passage,0);
 const allSourceScreens=[];
 for(let waveNo=1;waveNo<=17;waveNo++){
  const sourceCount=waveNo===17?95:200;
@@ -118,12 +118,12 @@ for(let waveNo=1;waveNo<=17;waveNo++){
 assert.equal(allSourceScreens.length,3295);
 assert.equal(new Set(allSourceScreens.map(x=>x.evidence_id)).size,3295);
 assert.deepEqual(new Set(allSourceScreens.map(x=>x.evidence_id)),unassigned);
-assert.equal(allSourceScreens.filter(x=>x.preliminary_lane==="ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY").length,62);
-const hosted=get("customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json");
-assert.equal(hosted.records.length,70);
-assert.equal(hosted.source_groups.length,12);
-assert.equal(hosted.counts.source_action_records_pending,62);
-assert.equal(new Set(hosted.records.map(x=>x.source_id)).size,70);
+assert.equal(allSourceScreens.filter(x=>x.preliminary_lane==="ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY").length,0);
+const hosted=get("customs-ultra-master-v2-132-hosted-passage-identity-review-20261030.v1.json");
+assert.equal(hosted.records.length,132);
+assert.equal(hosted.source_groups.length,29);
+assert.equal(hosted.counts.source_action_records_pending,0);
+assert.equal(new Set(hosted.records.map(x=>x.source_id)).size,132);
 const wave4bySource=new Map(wave4.rows.map(x=>[x.source_id,x]));
 for(const r of hosted.records){
  const mapped=wave4bySource.get(r.source_id);
@@ -136,8 +136,23 @@ for(const r of hosted.records){
  assert.equal(r.canonical_merge_permitted,false);
  assert.equal(r.liturgical_1962_rubric_or_ministerial_authority_confirmed,false);
 }
-assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.actual_hosted_passages_checked,70);
-assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.remaining,62);
+assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.actual_hosted_passages_checked,132);
+assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.remaining,0);
+assert.equal(hosted.counts.attribution_conflict_rows,9);
+assert.equal(hosted.records.filter(x=>x.source_attribution_conflict).length,9);
+assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.attribution_conflict_rows,9);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.hosted_source_passage_reclassified,132);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_provisionally_routed,3295);
+assert.equal(hosted.counts.original_printed_facsimiles_newly_checked,0);
+assert.ok(hosted.records.every(x=>x.source_passage_checked&&!x.complete_book_original_facsimile_checked&&!x.canonical_merge_permitted&&!x.calendar_publication_allowed));
+const stPeterBlessing=hosted.records.find(x=>x.source_id==="CCEX26-BERGER-1103-02");
+const stPeterSupper=hosted.records.find(x=>x.source_id==="CCEX26-BERGER-1103-03");
+assert.equal(stPeterBlessing.claim_scope_route,"PRIESTLY_BLESSING_NEW_FISHING_BOAT_MINISTERIAL");
+assert.equal(stPeterBlessing.scope_family,"RITUAL_MINISTER_OR_SEPARATE_OWNER_HOLD");
+assert.equal(stPeterSupper.claim_scope_route,"REPORTED_YORKSHIRE_FISHERMEN_COMMUNAL_FORK_SUPPER");
+assert.equal(stPeterSupper.scope_family,"REPORTED_LOCAL_OR_REGIONAL_PRACTICE");
+assert.ok(stPeterBlessing.source_id!==stPeterSupper.source_id);
+
 const dedup=get("customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json");
 assert.equal(dedup.family_action_groups.length,26);
 assert.equal(dedup.description_pair_edges.length,41);
