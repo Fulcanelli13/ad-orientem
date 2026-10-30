@@ -41,6 +41,16 @@ Four described-place accounts of poor-person hospitality (Ribera, Canicattini, S
 
 **Next identity focus:** compare source-original Pitrè folios and Weiser passages on St Joseph's table, disentangle pageant versus sacramental act and charity versus local fundraiser; subsequently apply the same actor/object/date/region gate to other Sicilian and regional feast complexes. Do not claim separate source witnesses merely because Pitrè names several towns.
 
+## 30 October — collector lineage attribution and bibliography
+
+A new [15-observation Cannizzaro provenance register](./customs-ultra-master-v2-pitre-cannizzaro-witness-lineage-20261030.v1.json) records the named local collecting link behind Pitrè's Santa Croce Camerina St Joseph feast and `Cene` narrative. This attribution derives from the *Società Santacrocese di Storia Patria*, *Archivio Storico*, VII (2020), PDF page index 128, printed p.129, which explicitly states Giovanni Cannizzaro sent correspondence on this devotion for Pitrè's 1900 volume. A later chapter, `Pane, dolci e festa`, cites Pitrè's original book pp.456–459 for Cannizzaro's local source account and p.450 for the ceremonial table; its further quotations cite Antonino Uccello's historical documentation (pp.75–78), but that separate edition has **not** been directly inspected in this pass.
+
+The historical-society PDF **page image was opened and checked**. Pitrè's original 1900 PDF is available through a Wikimedia Commons file record, but is too large for the available webpage PDF reader; therefore the cited printed folio numbers are **secondary bibliographic anchors only**, not directly page-by-page checked source facsimiles. Cannizzaro's original letters have **not** been located or inspected, and no independent published eyewitness or current observance was established. The appearance of a named local collector **corrects the oversimplified assumption that all town reports have only Pitrè as their underlying informant**; it does **not** create another separately verified published witness.
+
+All 15 Santa Croce OCR source IDs `PIT1900-IT-034` through `PIT1900-IT-048` retain their original action labels, original pointers, scope, and unapproved status. The stage-play household `blessing` remains distinct from a priestly church blessing; the festival fundraising auction remains distinct from directly feeding invited poor guests. Count these as **existing source observations with newly recorded lineage**, not 15 discoveries or a published regional practice.
+
+**Further evidence targets:** Pitrè 1900 pp.450 and 456–459 original images; the extant Cannizzaro correspondence (if preserved); and Antonino Uccello, `Pani e dolci di Sicilia`, pp.75–78 as a *potential* later witness after original textual inspection. No new indulgence, Calendar item, registry ID or publication is authorized.
+
 ## Existing research is not being discarded
 
 The authoritative corpus remains at:
