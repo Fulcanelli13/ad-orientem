@@ -523,6 +523,11 @@ try{
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
   await waitForFxSettled();
   await assertHomeHidden("PRAY");
+  // An open modular shell can precede its asynchronous Home catalogue render.
+  // Test the completed 9-door Home, not an intermediate empty mount.
+  await page.waitForFunction(()=>
+    document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length===9,
+    null,{timeout:12000});
   assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost hierarchical Back");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-home]").count(),1,"PRAY root lost explicit global Home");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root regressed to ambiguous Close instead of Home");
