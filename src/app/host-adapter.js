@@ -153,9 +153,12 @@ export function createAppHostAdapter(win = globalThis) {
             opened=style?.display !== "none" && style?.visibility !== "hidden";
           }
           if(!opened)return false;
-          // M1 is an opt-in *shell presentation* of this same host-resolved
-          // preflight, not another celebration selection or reader entry.
-          if(m1RootPreviewRequested(win)&&!activateM1MassRoot(win))return false;
+          // A fresh tab visit always starts at the Mass overview, never in
+          // the last chooser. Reset only the UI; keep every resolved choice.
+          if(m1RootPreviewRequested(win)){
+            win?.AO_R17_BROWSER_ENTRY?.resetPreflightView?.();
+            if(!activateM1MassRoot(win))return false;
+          }
           return true;
         });
       }
