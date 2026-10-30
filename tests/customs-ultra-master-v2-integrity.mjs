@@ -274,4 +274,72 @@ assert.equal(erroneousEasterPair.canonical_merge_authorized,false);
 assert.equal(dedup.counts.source_action_pair_decisions.FALSE_LEXICAL_MATCH_UNRELATED_CAKE_AND_EASTER_FIRE,1);
 assert.equal(Object.values(dedup.counts.source_action_pair_decisions).reduce((a,b)=>a+b,0),41);
 
+
+// Single working reconciliation: all unlinked evidence has an exact original wave position,
+// while suggested owners and 79 caseboard comparisons cannot silently become publications.
+const singleWorkingIndex=get("customs-ultra-master-v2-single-working-relationship-index-20261030.v1.json");
+assert.equal(singleWorkingIndex.counts.evidence_only_routed,3295);
+assert.equal(singleWorkingIndex.evidence_identity_routing.length,3295);
+assert.equal(singleWorkingIndex.counts.registry_rows,465);
+assert.equal(singleWorkingIndex.owner_registry_snapshot.length,465);
+assert.equal(singleWorkingIndex.counts.dedup_case_count,79);
+assert.equal(singleWorkingIndex.dedup_case_decisions.length,79);
+assert.deepEqual(new Set(singleWorkingIndex.dedup_case_decisions.map(x=>x.id)),
+ new Set([...dedup.family_action_groups.map(x=>x.review_id),...dedup.description_pair_edges.map(x=>x.review_id),...dedup.regional_or_institutional_cluster_cases.map(x=>x.review_id)]));
+assert.deepEqual(new Set(singleWorkingIndex.owner_registry_snapshot.map(x=>x.id)),mids);
+for(const o of singleWorkingIndex.owner_registry_snapshot){
+ const original=identities.records.find(x=>x.id===o.id);
+ assert.ok(original);
+ assert.equal(o.layer,original.layer);
+ assert.equal(o.title,original.name.en);
+ assert.equal(o.status,original.publication_state);
+ assert.equal(o.identity_approved,original.identity_approved_for_publication);
+}
+const expectedRoutingLabel=r=>r.description||r.action_label||r.action_or_component||r.source_label||r.action||"";
+const routeTotals={};let explicitlyReviewed=0,withCaseboard=0;
+assert.equal(singleWorkingIndex.evidence_identity_routing.length,allSourceScreens.length);
+for(let i=0;i<allSourceScreens.length;i++){
+ const original=allSourceScreens[i],work=singleWorkingIndex.evidence_identity_routing[i];
+ assert.equal(work.e,original.evidence_id,"Working index evidence pointer shifted "+i);
+ assert.equal(work.s,original.source_id);
+ assert.equal(work.a,expectedRoutingLabel(original));
+ assert.ok(work.w>=1&&work.w<=17);
+ const waveStart=work.w<=16?(work.w-1)*200:3200;
+ assert.equal(work.n,i-waveStart,"Unstable original wave index "+i);
+ assert.ok(typeof work.q==="string"&&work.q.length>0);
+ routeTotals[work.q]=(routeTotals[work.q]||0)+1;
+ if(work.refs?.length){
+  explicitlyReviewed++;
+  if(work.refs.some(x=>!String(x.case).startsWith("HOSTED42:")&&!String(x.case).startsWith("PITRE43:")&&!String(x.case).startsWith("PITRE_OWNER:")))withCaseboard++;
+  for(const e of work.refs){
+   if(e.owners)for(const id of e.owners)assert.ok(mids.has(id),"Unregistered owner review lead "+id);
+   assert.ok(e.side!=="APPROVED","Review link illicitly certified");
+  }
+ }
+}
+assert.deepEqual(routeTotals,singleWorkingIndex.routing_counts);
+assert.equal(Object.values(singleWorkingIndex.routing_counts).reduce((a,b)=>a+b,0),3295);
+assert.equal(explicitlyReviewed,222);
+assert.equal(withCaseboard,138);
+assert.equal(singleWorkingIndex.counts.evidence_with_any_explicit_prior_review,222);
+assert.equal(singleWorkingIndex.counts.evidence_without_explicit_prior_review,3073);
+assert.equal(singleWorkingIndex.counts.hosted_action_edges_retained,42);
+assert.equal(singleWorkingIndex.counts.pitre_regional_source_actions_retained,43);
+assert.equal(singleWorkingIndex.counts.machine_generated_lexical_search_hints,50);
+assert.equal(singleWorkingIndex.machine_generated_search_hints.suggestions.length,50);
+for(const suggestion of singleWorkingIndex.machine_generated_search_hints.suggestions){
+ assert.ok(mids.has(suggestion.owner_id));
+ assert.ok(singleWorkingIndex.evidence_identity_routing.some(x=>x.s===suggestion.source_id));
+ assert.ok(suggestion.lexical_score>=0.75);
+ assert.equal(suggestion.relationship,"SEARCH_HINT_ONLY_NOT_OWNER_LINK");
+}
+const erroneousPairInIndex=singleWorkingIndex.dedup_case_decisions.find(x=>x.id==="CC3WORK-REL-041");
+assert.equal(erroneousPairInIndex.status,"EXPLICIT_NO_SAME_IDENTITY");
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.distinct_new_customs_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+assert.equal(singleWorkingIndex.guard.source_independence_newly_certified,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
