@@ -1,0 +1,43 @@
+{
+  "schema": "AO_SACRED_ART_MASTER_V1_COUNTS",
+  "at": "2026-10-30T06:26:45.956Z",
+  "counts": {
+    "totalUserReviewDecisions": 2455,
+    "acceptedUserReviewChoices": 856,
+    "rejectedUserReviewChoices": 1599,
+    "canonicalRecords": 383,
+    "oldResearchCandidates": 281,
+    "lockedModuleHeroAssignments": 22,
+    "prayerSections": 31,
+    "prayerPlacementDecisions": 118,
+    "registryRecords": 3205,
+    "provisionalWorkGroups": 2941,
+    "operationalWorkGroups": 989,
+    "historicalExcludedOperationalGroups": 0,
+    "queueReadyToPublish": 0,
+    "queuePhotoQaOrRepair": 217,
+    "queueRightsOrAlternative": 772,
+    "reusableExactFileMetadataFirstReviewCandidates": 73,
+    "firstReviewBatchSize": 73,
+    "newQualityApprovalsGranted": 0,
+    "newPhotoPublicationApprovals": 0,
+    "sourceDecisionsModified": 0,
+    "feeEur": 0
+  },
+  "sha256ByOutput": {
+    "master.csv": "ec9a2a32875b6e8dbd695eb9ce51260db04ed4ca7258006a2e7aec179bf85101",
+    "master.json": "2c39eec7a333d15ea0028d847ba23e9f82c89832185d1223f957bdb6c9e08b81",
+    "queue-ready-to-publish.csv": "d0dfa2798896d54a6a7af6d7caa1134cbd64a5675f22f1a4f064394bd885e952",
+    "queue-photo-qa-or-repair.csv": "0020cdd7289d6dbaa8e66b15a8eff64f732f22a29d0a9f025cc879f58a4fb7ed",
+    "queue-rights-or-alternative.csv": "500ca299f19e5714470f666ed610b5ad4574634025e41853b017bb08a767e283",
+    "first-pristine-photo-review.csv": "96bb7e867df0cba5a5e7b1109b3cfb56cc824eeed08ed98a8765d036be2066da",
+    "module-placement-ledger.csv": "31d888d3541a64d0166c7c7df343c351354e621a03d405f9a6086e194b0a9237"
+  },
+  "warnings": [
+    "0 release-ready means no user pristine native photograph PASS yet, not that no usable artwork exists.",
+    "Number of source records exceeds distinct physical artworks due to unidentified duplicates.",
+    "Queue 2 contains free-source-policy leads; user QA must use exact native files, not thumbnails.",
+    "Unapproved and rejected artworks are preserved in master without being added to operational queues.",
+    "Structured-data work QIDs are not verified physical artwork equivalences."
+  ]
+}
