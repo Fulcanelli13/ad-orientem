@@ -6,15 +6,16 @@ const freeze=Object.freeze;
 const ELIGIBLE=new Set(["CHANT","LOCAL_OPTION","ORGAN_OPTION"]);
 const ACTIONS=new Set(["START","FINISH","SKIP","RESET"]);
 const DEFAULT="EXPECTED_NOT_OBSERVED";
-const terminal=new Set(["FINISHED_OBSERVED","SKIPPED_BY_USER"]);
 const statuses=freeze({
  START:"STARTED_OBSERVED",FINISH:"FINISHED_OBSERVED",
  SKIP:"SKIPPED_BY_USER",RESET:DEFAULT
 });
 export const SCHOLA_PERFORMANCE_ACTIONS=freeze([...ACTIONS]);
-function reason(event){
+function reason(event,{manualRelease=false}={}){
  if(!event||!ELIGIBLE.has(event.kind))return "NOT_A_MUSIC_PERFORMANCE";
  if(event.id==="BENEDICTUS_CONTINUOUS")return "CONTINUOUS_WITH_SANCTUS";
+ if(event.id==="BENEDICTUS_AFTER_CHALICE" && !manualRelease)
+  return "BENEDICTUS_MANUAL_RELEASE_REQUIRED";
  if(event.manualOnly && event.id!=="BENEDICTUS_AFTER_CHALICE")
   return "MANUAL_CEREMONY_GATE";
  if(event.musicWindow?.status==="SOURCE_ANCHORS_UNVERIFIED")
@@ -67,7 +68,7 @@ export function createScholaPerformanceLedger(){
   if(!ACTIONS.has(kind))return freeze({ok:false,reason:"INVALID_ACTION"});
   const event=sourceEvent(itinerary,id);
   if(!event)return freeze({ok:false,reason:"NOT_IN_THIS_MASS"});
-  const blocked=reason(event);
+  const blocked=reason(event,{manualRelease});
   if(blocked)return freeze({ok:false,reason:blocked});
   // Delayed polyphonic Benedictus is owned by the existing post-Chalice
   // manual-release button, which separately verifies the actual boundary.
