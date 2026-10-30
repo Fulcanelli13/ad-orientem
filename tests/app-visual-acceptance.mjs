@@ -332,55 +332,32 @@ try{
   assert.equal(designBaseline.controlHeight,"44px","canonical touch-control height drifted");
   await shot("01-home");
 
-  await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
-  await page.locator("[data-home-mass-entry]").click();
-  await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+  // H4's approved Begin button goes directly to the same source-gated R17
+  // reader used by the canonical controller. Options are in Change; there is
+  // no extra preflight dialog or fifth ribbon tab in this flow.
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count(),1,
+    "H4 Mass choices must remain available before beginning");
+  await page.waitForFunction(()=>Boolean(document.querySelector(
+    ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
+  await page.locator(".homeScreen [data-home-h4-begin]").click();
+  await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:20000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
   const massEntry=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
-    preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop .aoMassFlow")),
-    nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+    nativeCount:document.querySelectorAll("#ao-r17-native-reader-preview").length,
+    nativeVisible:Boolean(document.getElementById("ao-r17-native-reader-preview")?.getClientRects().length),
+    preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")?.getClientRects().length),
     donorLearnVisible:Boolean(document.getElementById("ao-v37-root")?.classList?.contains("aoV37ShellOpen")),
   }));
-  assert.equal(massEntry.active,"mass","Home Follow Mass did not activate the Mass destination");
-  assert.equal(massEntry.preflightVisible,true,"Home Follow Mass did not open the celebration preflight");
-  assert.equal(massEntry.nativeMounted,false,"fresh Mass entry bypassed preflight and mounted R17 immediately");
-  const preflightDonor=await page.evaluate(()=>{
-    const flow=document.querySelector("#ao-mass-flow-v1 .aoMassFlow");
-    const folio=flow?.querySelector("[data-ao-full-mass-preflight]");
-    const outline=e=>({tag:e.tagName,id:e.id,cls:String(e.className||"").slice(0,180),
-      data:Object.entries(e.dataset||{}).filter(([a])=>a.startsWith("ao")||a==="role").slice(0,9),
-      text:(e.textContent||"").trim().replace(/\\s+/g," ").slice(0,100),
-      display:getComputedStyle(e).display,visible:!!e.getClientRects().length,
-      parent:e.parentElement?.className||""});
-    return {flow:flow?outline(flow):null,
-      parents:folio?[folio.parentElement,folio.parentElement?.parentElement].filter(Boolean).map(outline):[],
-      siblings:folio?[...folio.parentElement.children].map(outline):[],
-      candidate:[...flow?.querySelectorAll?.("section,div,header,article,fieldset,h2,h3,button")||[]]
-        .filter(e=>e!==folio&&!folio?.contains(e)&&e.children.length<=5 &&
-         /MASS OF THE DAY|CONTENT READINESS|HOW DO YOU WANT TO FOLLOW|VOX|AD ORIENTEM MASS PREFLIGHT/.test((e.textContent||"").trim().replace(/\\s+/g," ").slice(0,110)))
-        .slice(0,35).map(outline)};
-  });
-  console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
-  await shot("01b-mass-preflight");
-  // M1 is a permanent Mass root, not a dismissible dialog. Leaving via the
-  // shell's Today tab is the supported action. The old close/hidden-backdrop
-  // assertion would erroneously fail a correct M1 implementation.
-  const permanentMassRoot=await page.evaluate(()=>
-    document.documentElement.dataset.aoM1MassRoot==="true");
-  if(permanentMassRoot){
-    await page.locator("[data-ao-app-surface='home']").click();
-    await page.waitForFunction(()=>
-      document.documentElement.dataset.aoM1MassRoot!=="true",null,{timeout:5000});
-  }else{
-    const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
-    if(await massFlowClose.isVisible())await massFlowClose.click();
-    await page.waitForFunction(()=>{
-      const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-      return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
-    },null,{timeout:5000});
-    await page.locator("[data-ao-app-surface='home']").click();
-  }
+  assert.equal(massEntry.active,"mass","H4 Begin Mass did not open Mass");
+  assert.equal(massEntry.nativeCount,1,"H4 did not mount exactly one R17 reader");
+  assert.equal(massEntry.nativeVisible,true,"R17 reader is hidden after Begin");
+  assert.equal(massEntry.preflightVisible,false,"H4 reopened retired Mass preflight");
+  assert.equal(massEntry.donorLearnVisible,false,"Mass revealed legacy Learn");
+  await shot("01b-mass-reader-direct-entry");
+  // Return using the permanent Today tab. The reader's actual checkpoint
+  // policy is owned by R17; never fake a preparation or liturgical cue.
+  await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
   // H4 deliberately has no old Read/Reflect calendar link or Today tabs.
