@@ -32,7 +32,7 @@ assert.equal(model.ministries[1].missal,"Pre-1955");
 assert.equal(model.ministries[1].rubrics,"PRE 1955");
 let html=renderTlmChurchProfile(item,"en");
 for(const text of ["St Cantius &amp; Parish","Liturgical rite","Pope named in Canon","Una cum","Missal / books",
- "Rubrical basis","Mass programme","Sunday 12:30 PM Sung Mass","Friday 7:00 AM","Directions","Original sources"])
+ "Rubrical basis","Mass programme","Sunday 12:30 PM Sung Mass","Friday 7:00 AM","Directions","Sources & verification"])
  assert.ok(html.includes(text),text);
 assert.match(html,/data-explore-collapse-detail/);
 assert.match(html,/data-tlm-church-profile="test:church"/);
@@ -45,6 +45,36 @@ assert.doesNotMatch(html,/No currently publishable Mass times/);
 assert.ok(!html.includes("https://bad.example/"));
 assert.match(TLM_CHURCH_PROFILE_STYLE,/aoTlmProfileIdentityGrid/);
 assert.match(TLM_CHURCH_PROFILE_STYLE,/@media\(max-width:560px\)/);
+
+assert.match(html,/aoTlmProfileSpotlight/);
+assert.match(html,/aoTlmProfileAffiliation/);
+assert.match(html,/aoTlmProfileSourceDisclosure/);
+assert.match(html,/data-explore-collapse-detail/);
+assert.match(TLM_CHURCH_PROFILE_STYLE,/aoTlmProfileSpotlight\{display:grid/);
+assert.match(TLM_CHURCH_PROFILE_STYLE,/grid-template-columns:minmax\(0,41fr\)/);
+assert.match(TLM_CHURCH_PROFILE_STYLE,/aoTlmProfileSourceDisclosure summary/);
+// A photograph belongs to the exact canonical Place; the ministry emblem is
+// separate from that photograph and carries no building-wide ecclesial claim.
+const approvedCover={place_id:"p-cantius",status:"APPROVED",
+ asset_path:"assets/approved/place-media/st-cantius.webp",
+ license:"CC0-1.0",license_url:"https://creativecommons.org/publicdomain/zero/1.0/",
+ source_url:"https://commons.wikimedia.org/wiki/File:St_Cantius.jpg",
+ rights_verified:true,subject_verified:true,crop_reviewed:true,
+ derivative_sha256:"a".repeat(64),credit:"Source photographer",alt_en:"Exterior facade",
+ alt_fr:"Façade extérieure"};
+const withCover={...item,place_id:"p-cantius",cover_media:approvedCover};
+const photoHtml=renderTlmChurchProfile(withCover,"en");
+assert.match(photoHtml,/aoTlmProfileHero/);
+assert.match(photoHtml,/aoTlmProfileCredits/);
+assert.match(photoHtml,/aoTlmProfileAffiliation/);
+assert.match(photoHtml,/FSSP_emblem/);
+assert.match(photoHtml,/Photograph &amp; credit/);
+assert.match(photoHtml,/src="assets\/approved\/place-media\/st-cantius.webp"/);
+// Do not show a photograph for the same building without an exact Place join.
+const mismatched=renderTlmChurchProfile({...withCover,place_id:"different-place"},"en");
+assert.doesNotMatch(mismatched,/src="assets\/approved\/place-media\/st-cantius.webp"/);
+assert.match(mismatched,/data-visual-kind="emblem"/);
+
 
 const fr=renderTlmChurchProfile(item,"fr");
 for(const phrase of ["Position ecclésiale","Non établi","Programme des messes","Retour à l’aperçu"])
