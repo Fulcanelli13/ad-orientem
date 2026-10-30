@@ -35,6 +35,19 @@ try{
    assert.notEqual(opened,false,"daily reader module must open");
    const base="#aoPray435930.open ";
    await page.waitForSelector(base+'.aoDailyBookSelector',{timeout:20000});
+   const prayerFirstFold=()=>page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const text=root?.querySelector(".aoTP381GuideCard .aoTP381PrayerCard p, .aoTP381GuideCard .aoTP381TextParagraph");
+    const rect=text?.getBoundingClientRect();
+    return {text:text?.textContent?.trim().slice(0,90)||"",top:rect?.top??9999,
+      visiblePixels:rect?Math.max(0,Math.min(rect.bottom,innerHeight-70)-Math.max(0,rect.top)):0,
+      height:innerHeight,width:innerWidth};
+   });
+   const checkPrayerFold=async(daypart)=>{
+    const fold=await prayerFirstFold();
+    assert.ok(fold.text.length>=8&&fold.visiblePixels>=12,
+      "F05 v3.0 prayer-first fold: "+daypart+" first canonical prayer must appear above phone navigation, "+JSON.stringify(fold));
+   };
    const state=()=>page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
     return {kind:mount?.dataset.aoTraditionalDualAxis,
@@ -60,6 +73,7 @@ try{
    assert.equal(await page.locator(base+'.aoDailyReadingOptions').count(),1,"reading layout belongs to a secondary disclosure");
    assert.equal(await page.locator(base+'.aoDailyReadingOptions').getAttribute("open"),null,"reading options must not displace source books above the prayer");
    assert.equal(await page.locator(base+'.aoDailyUxModes [aria-pressed="true"]').count(),1);
+   await checkPrayerFold("morning");
    await page.screenshot({path:resolve(captures,"daily-morning-cards-"+width+".png"),animations:"disabled"});
    await page.locator(base+'.aoDailyReadingOptions summary').click();
    await page.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
@@ -85,6 +99,7 @@ try{
    assert.equal((await state()).kind,"daily","switching back restores canonical dual-axis cards");
    assert.equal(await page.locator(base+'.aoDailyUxStage').count(),0);
    assert.equal(await page.locator(base+'.aoQuietHorizon').count(),1,"existing horizon presentation must remain");
+   await checkPrayerFold("evening");
    await page.screenshot({path:resolve(captures,"daily-evening-cards-"+width+".png"),animations:"disabled"});
    assert.deepEqual(errors,[],"Uncaught phone errors: "+errors.join("; "));
    console.log("PASS "+width+"px: direct 1913/1905 source pills, three pending book labels, secondary reading control and "+sourcePlan.morning.length+"/"+sourcePlan.evening.length+" source-edition stages; no completion inferred");
