@@ -151,7 +151,9 @@ export function verifiedFerialSundayMassName(resolution, language="en"){
   // its sourcePath, not week proximity or the Introit text, licenses this name.
   const resolved=String(resolution.proper.data?.sourcePath??"").toLowerCase();
   if(resolved!==expected)return null;
-  const fr=language==="fr",ordinal=(fr?ORDINAL_FR:ORDINAL_EN)[n];
+  const fr=language==="fr";
+  const ordinal=fr?ORDINAL_FR[n]:
+    String(n)+(n%100>=11&&n%100<=13?"th":n%10===1?"st":n%10===2?"nd":n%10===3?"rd":"th");
   return ordinal?(fr?"Messe du "+ordinal+" dimanche après la Pentecôte":
     "Mass of the "+ordinal+" Sunday after Pentecost"):null;
 }
