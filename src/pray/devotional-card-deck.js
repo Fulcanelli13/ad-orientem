@@ -196,7 +196,9 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   }
   const active=devotionalFocusIndex(body,all,{ratio:.41});
   all.forEach((p,i)=>{
-   const strength=i===active?"1":Math.abs(i-active)===1?".38":".18";
+   // Nearby and passed lines remain readable in the Angelus; the current
+   // prayer line alone receives full emphasis (editorial review 30 Oct).
+   const strength=i===active?"1":Math.abs(i-active)===1?".45":".40";
    p.style.setProperty("--ao-devo-focus",strength);
    // Legacy Angelus styles contain important whole-unit opacity declarations.
    // The shared card paragraph controller is the single active focus owner.
