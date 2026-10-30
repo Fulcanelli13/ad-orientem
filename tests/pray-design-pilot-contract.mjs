@@ -1,12 +1,14 @@
+import {PRAY_DOOR_ART_SLOTS_V1,prayerDoorArtSlot,hasReleasedDoorPainting} from "../src/pray/art-slot-map.v1.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
- PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,
+ PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,resolvedPrayerPilotFamilies,
  renderPilotDiscovery,renderPilotAngelusEntry
 } from "../src/pray/prayer-design-pilot.js";
 
 assert.equal(PRAYER_DESIGN_PILOT_SCHEMA,"ao-prayer-discovery-angelus-pilot-v1");
-assert.equal(prayerPilotEnabled({location:{search:""}}),false);
+assert.equal(prayerPilotEnabled({location:{search:""}}),true);
+assert.equal(prayerPilotEnabled({location:{search:"?from=home"}}),true);
 assert.equal(prayerPilotEnabled({location:{search:"?aoPrayerPilot=1"}}),true);
 assert.equal(prayerPilotEnabled({location:{search:"?aoPrayerPilot=0"}}),false);
 
@@ -20,11 +22,70 @@ const families={
 };
 const aliases=prayerPilotAliases(L);
 assert.deepEqual(Object.keys(aliases).sort(),["intentions","marian","novenas","ourlord","saints"]);
+const bridged=resolvedPrayerPilotFamilies(L,{
+ ...families,
+ penance:{items:[["own","pray.confession","Confession","Prepare"],["own","pray.penitential_psalms","Seven Penitential Psalms","Source prayer"]]},
+ passion:{items:[["own","pray.stations","Stations","Fourteen"],["own","pray.tenebrae","Office of Tenebrae","Triduum"]]},
+ devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"]]}
+});
+for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],["novenas","pray.holy_name_litany"]]){
+ assert.ok(bridged[door].items.some(item=>item[1]===route),"Nine-door discovery buried original route "+route);
+}
+assert.equal(bridged.ourlord.items.filter(item=>item[1]==="pray.stations").length,1);
+assert.equal(bridged.novenas.items.filter(item=>item[1]==="pray.novenas").length,1);
 const actual=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L,esc,DATA:{prayers:{foundations_hail_mary:{title:"Hail Mary",titleFr:"Je vous salue Marie"}}},
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+const placement=JSON.parse(readFileSync(new URL("../data/pray/art-placement-slots-20261030.v1.json",import.meta.url),"utf8"));
+assert.equal(placement.schema,"AO_ART_MATCHING_MAP_NORMALIZED_V1");
+assert.equal(placement.counts.slots,275);
+assert.equal(placement.counts.subjects,101);
+assert.equal(placement.counts.rotations,11);
+assert.equal(placement.counts.calendar_contexts,39);
+assert.equal(placement.counts.assigned_slot_rows,0);
+assert.equal(placement.counts.eligible_live_paintings,0);
+assert.equal(placement.slots.length,275);
+assert.equal(new Set(placement.slots.map(x=>x.id)).size,275,"One durable identity per artwork position");
+assert.equal(placement.slots.filter(x=>x.level==="Door cover").length,9);
+assert.ok(placement.slots.every(x=>x.assigned_count===0&&x.painting_ids.length===0
+ &&x.publication_status==="NO_ARTWORK_ASSIGNED"),"Illustrative examples must not turn into selected gallery files");
+const permittedSubjects=new Set(placement.subject_vocabulary.map(x=>x.Code));
+for(const row of placement.slots){
+ for(const code of row.eligible_subjects)
+  assert.ok(permittedSubjects.has(code),"Undefined controlled art subject "+code+" in "+row.id);
+}
+const expectedSlots={
+  daily:"DOOR-D1",library:"DOOR-D2",chaplets:"DOOR-D3",novenas:"DOOR-D4",
+  eucharistic:"DOOR-D5",ourlord:"DOOR-D6",marian:"DOOR-D7",
+  saints:"DOOR-D8",intentions:"DOOR-D9"
+};
+assert.deepEqual(Object.keys(PRAY_DOOR_ART_SLOTS_V1).sort(),Object.keys(expectedSlots).sort());
+for(const [id,slotId] of Object.entries(expectedSlots)){
+ const slot=prayerDoorArtSlot(id);
+ assert.equal(slot.slotId,slotId,"Workbook art slot does not match live editorial tile "+id);
+ const sourceSlot=placement.slots.find(x=>x.id===slotId);
+ assert.ok(sourceSlot,"Missing canonical spreadsheet art slot "+slotId);
+ assert.deepEqual(slot.subjectCodes,sourceSlot.eligible_subjects,
+  "Runtime mapping must derive from supplied 275-slot subject blueprint");
+ assert.equal(slot.rotation,sourceSlot.rotation);
+ assert.equal(slot.poolMin,sourceSlot.pool_min);
+ assert.equal(slot.poolIdeal,sourceSlot.pool_ideal);
+ assert.equal(slot.publicationState,"UNASSIGNED");
+ assert.equal(slot.poolMin,4);assert.equal(slot.poolIdeal,12);
+ assert.equal(slot.priority,"A");
+ assert.ok(slot.subjectCodes.length>=2,"No source-approved subject vocabulary for "+id);
+ assert.match(actual,new RegExp('data-ao-art-slot-id="'+slotId+'"'));
+}
+assert.equal((actual.match(/data-ao-art-binding="unassigned"/g)||[]).length,9);
+assert.equal(hasReleasedDoorPainting(null),false);
+assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true}),false);
+assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true,
+ releaseEvidence:{sourceOriginalSha256:"0".repeat(64),rightsForActualFileCleared:true}}),false);
+assert.ok(!actual.includes("http://")&&!actual.includes("https://"),
+ "Slot map may not ship unapproved painting URLs");
+assert.match(actual,/data-p435930-my-customs/,"personal Prayer destination remains reachable");
 for(const id of ["chaplets","marian","daily","novenas","eucharistic","ourlord","saints","intentions"])
  assert.match(actual,new RegExp('data-p435930-family="'+id+'"'));
 assert.match(actual,/data-p435930-own="pray.library"/);
@@ -33,7 +94,7 @@ assert.match(actual,/data-p435930-pilot-search/);
 assert.equal((actual.match(/data-p435930-pilot-facet="/g)||[]).length,5,"R1.1 has four form filters plus Latin availability");
 assert.match(actual,/data-pilot-form="prayer"/);
 assert.match(actual,/data-pilot-latin="false"/);
-assert.match(actual,/approved paintings and crops are not yet bound/);
+assert.doesNotMatch(actual,/Pilot: approved paintings/,"public Prayer hub must not display prototype implementation notes");
 
 const angelus=renderPilotAngelusEntry({
  head:title=>"<header>"+title+"</header>",L,esc,form:"angelus",posture:"Kneel · ordinary days",moduleIcon:()=>"<i></i>"
