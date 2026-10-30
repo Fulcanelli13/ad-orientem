@@ -122,6 +122,21 @@ for(const t of triage.groups.filter(t=>t.identityDisposition==="SAME_PHYSICAL_WO
  const rows=t.sourceRows.map(x=>activeByRecord.get("REVIEW::"+x.sourceId)).filter(Boolean);
  if(rows.length>1)add("PRIOR EVIDENCE — SAME WORK",t.explanation,rows.map(memberFromRecord));
 }
+// A master-source cluster may contain a photographed subset already displayed
+// above. Expand the first group instead of asking for the same decision twice.
+for(let i=0;i<groups.length;i++){
+ const first=groups[i],firstIds=new Set(first.members.map(m=>m.id));
+ for(let j=groups.length-1;j>i;j--){
+  const later=groups[j],laterIds=new Set(later.members.map(m=>m.id));
+  if(laterIds.size<=firstIds.size||![...firstIds].every(id=>laterIds.has(id)))continue;
+  first.members=later.members;
+  first.title=first.members.find(m=>m.preview)?.title||first.title;
+  first.reason+=" All linked master records are included in this one comparison.";
+  first.id="DUP-"+sha(first.members.map(m=>m.id).sort().join("|"));
+  for(const id of laterIds)firstIds.add(id);
+  groups.splice(j,1);
+ }
+}
 groups.sort((a,b)=>{
  const rank={"EXACT SOURCE":0,"LINKED WORK — PHOTOS":1,"POSSIBLE — REVIEW":2,
  "MASTER — EXACT SOURCE":3,"PRIOR EVIDENCE — SAME WORK":4,"MASTER — POSSIBLE":5};
