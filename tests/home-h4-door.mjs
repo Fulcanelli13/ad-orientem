@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {h4Enabled,h4HomeView,verifiedH4WeekColour} from "../src/home/today-h4-view.js";
 import {h4ChoicesMarkup} from "../src/home/today-h4-change-sheet.js";
+import {buildHomeViewModel} from "../src/home/presentation.js";
 assert.equal(h4Enabled({location:{search:""}}),false,"H4 must not replace production until approved");
 assert.equal(h4Enabled({location:{search:"?aoTodayH4=1"}}),true,"H4 preview opt-in missing");
 const model={
@@ -17,6 +18,25 @@ const vm={
  rank:"IV class",colour:"Green",observedTitle:"Feria",massFormularyName:"Mass of the 22nd Sunday after Pentecost",
  massIntroit:"Si iniquitátes observáveris",properStatus:"ready",resolvedForSelection:true,loading:false
 };
+// A source-matched feria may show its verified weekday context even when
+// the Proper's generic title is only "Feria". A Psalm reference is never
+// the Latin Introit incipit.
+const sourceState={language:"en",selectedDate:"2026-10-30",resolving:false,
+  resolution:{status:"ready",date:"2026-10-30",
+    day:{main:{id:":feria:4:g",title:"Feria",rank:4,color:"Green"},
+      tempora:[{id:"tempora:Pent22-5:4:g"}]},
+    proper:{status:"ready",data:{name:"Feria",sourcePath:"Tempora/Pent22-5",
+      introit:{lat:"Ps 129:3-4\\nSi iniquitátes observáveris, Dómine, Dómine, quis sustinébit?"}}}}};
+const sourceVM=buildHomeViewModel(sourceState,{});
+assert.match(sourceVM.contextualObservanceName,/Friday after the Twenty-second Sunday after Pentecost/);
+assert.match(sourceVM.massIntroit,/^Si iniquitátes observáveris/);
+assert.doesNotMatch(sourceVM.massIntroit,/^Ps /);
+const sourceHtml=h4HomeView({...sourceVM,week:vm.week},model);
+assert.match(sourceHtml,/Friday after the Twenty-second Sunday after Pentecost/);
+assert.match(sourceHtml,/Si iniquitátes observáveris/);
+const unrelated=buildHomeViewModel({...sourceState,resolution:{...sourceState.resolution,
+  day:{main:{id:"sancti:10-30:4:w",title:"St Example",rank:4,color:"White"},tempora:[]}}},{});
+assert.equal(unrelated.contextualObservanceName,null,"No invented weekday context for a saint");
 const html=h4HomeView(vm,model);
 assert.match(html,/Friday 30 October/);
 assert.match(html,/Mass of the 22nd Sunday after Pentecost/);
