@@ -148,6 +148,7 @@ assert.match(fr,/Vie et sources|À propos de cette célébration|Jour du calendr
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
 assert.match(fr,/data-home-settings/);
+assert.match(fr,/mercredi 7 octobre/,"Today must show the selected date in French");
 assert.doesNotMatch(fr,/class="languageSwitch"/);
 assert.doesNotMatch(fr,/class="contentCard moreCard"/);
 assert.doesNotMatch(fr,/étape suivante de la migration/i,"French Home still exposes migration-era placeholder copy");
