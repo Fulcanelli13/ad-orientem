@@ -179,13 +179,13 @@ export function renderHomeToString(state,win=globalThis){
   // Artwork is mounted into its own DOM island by renderHome.
   // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
-  const properSections=proper?[
+  const properSections=currentProper?[
     ["introit","Introit","Introït"],["collect","Collect","Collecte"],
     ["epistle","Epistle","Épître"],["lesson","Lesson","Leçon"],
     ["gospel","Gospel","Évangile"],["offertory","Offertory","Offertoire"],
     ["communion","Communion","Communion"],
   ].filter(([key])=>{
-    const value=proper[key];
+    const value=currentProper[key];
     return typeof value==="string"?Boolean(value.trim()):
       Array.isArray(value)?value.length>0:
       Boolean(value&&typeof value==="object"&&Object.keys(value).length);
