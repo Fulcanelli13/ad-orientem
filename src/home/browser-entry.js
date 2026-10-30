@@ -92,6 +92,7 @@ export function createHomeOwner(win=globalThis){
   let enricherClicksBound=false;
   let retiredEnricherObserver=null;
   let inlineCalendarView=null;
+  let h7MassDoorOpen=false;
   let inlineCalendarRestoring=false;
   let requestedDailyHonours=false;
   const weekColourCache=new Map(),weekColourPending=new Map();
@@ -267,8 +268,26 @@ export function createHomeOwner(win=globalThis){
     try{return win?.AO_MODULES?.open?.(id)??false;}catch{return false;}
   }
 
+  function syncH7MassDoor(){
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4.aoH7Screens");
+    const home=screen?.querySelector?.(".aoH7HomeView");
+    const door=screen?.querySelector?.(".aoH7DoorView");
+    if(!home||!door)return false;
+    home.hidden=h7MassDoorOpen;
+    door.hidden=!h7MassDoorOpen;
+    if(h7MassDoorOpen){
+      const src=home.querySelector("[data-ao-home-art-slot]");
+      const dest=door.querySelector(".aoH7DoorArt");
+      if(dest&&src){
+        const art=src.querySelector("picture,img");
+        dest.replaceChildren(...(art?[art.cloneNode(true)]:[]));
+      }
+    }
+    return true;
+  }
   function showHomeToday(){
     inlineCalendarView=null;
+    h7MassDoorOpen=false;
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
     if(screen){
       try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home"})}catch{}
@@ -316,6 +335,24 @@ export function createHomeOwner(win=globalThis){
         if(exact&&!exact.disabled){exact.click();return;}
       }
       void openRoute(retry.dataset?.homeShortcutRetry,{trigger:retry});
+      return;
+    }
+    const h7Enter=target?.closest?.("[data-home-h7-enter]");
+    if(h7Enter){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      if(state(win)?.route!=="home"||inlineCalendarView)return;
+      h7MassDoorOpen=true;
+      syncH7MassDoor();
+      const back=win?.document?.querySelector?.(".aoH7DoorView [data-home-h7-back]");
+      back?.focus?.({preventScroll:true});
+      return;
+    }
+    const h7Back=target?.closest?.("[data-home-h7-back]");
+    if(h7Back){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      h7MassDoorOpen=false;
+      syncH7MassDoor();
+      win?.document?.querySelector?.(".aoH7HomeView [data-home-h7-enter]")?.focus?.({preventScroll:true});
       return;
     }
     const resumeMass=target?.closest?.("[data-resume-mass]");
@@ -613,6 +650,7 @@ export function createHomeOwner(win=globalThis){
     const rendered=renderHome(appRoot,next,win);
     if(!rendered)return false;
     markOwner();
+    syncH7MassDoor();
     hydrateH4WeekColours(next);
     // Lazy on resolved Home only. Calendar and Home reuse the exact same
     // read model and network request; no second modern saint resolver.
@@ -638,7 +676,10 @@ export function createHomeOwner(win=globalThis){
       }
       return false;
     }
-    unsubscribe=store.subscribe(next=>{if(next?.route==="home")paint(next);else closeH4ChoicesSheet(win);});
+    unsubscribe=store.subscribe(next=>{
+      if(next?.route==="home")paint(next);
+      else{h7MassDoorOpen=false;closeH4ChoicesSheet(win);}
+    });
     paint(store.getState());
     return true;
   }
@@ -659,6 +700,7 @@ export function createHomeOwner(win=globalThis){
       }
     }
     inlineCalendarView=null;
+    h7MassDoorOpen=false;
     closeTransientSurfaces(win);
     resetCoreRoute(win);
     try{win?.AO_SETTINGS_APP_V1?.restoreHome?.();}catch{}
