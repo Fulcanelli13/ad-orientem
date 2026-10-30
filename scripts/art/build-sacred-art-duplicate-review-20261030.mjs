@@ -136,11 +136,20 @@ if(!template.includes("__DATA__"))throw Error("Review HTML template token missin
 const html=template.replace("__DATA__",JSON.stringify(out).replace(/</g,"\\u003c"));
 const page="docs/SACRED_ART_DUPLICATE_REVIEW_20261030.html";
 writeFileSync(page,html);
-const summary={schema:out.schema,reviewedCards:444,registryRecords:3205,
+const groupIndex={schema:"AO_SACRED_ART_DUPLICATE_GROUP_INDEX_V1",snapshot:out.snapshot,
+  groups:groups.map(g=>({id:g.id,confidence:g.confidence,reason:g.reason,
+    members:g.members.map(m=>({id:m.id,title:m.title,artist:m.artist,sourceUrl:m.sourceUrl||"",sourceFingerprint:m.sourceFingerprint||""}))}))};
+writeFileSync(BASE+"sacred-art-master-v2/duplicate-review-groups-20261030.v1.json",
+ JSON.stringify(groupIndex,null,2)+"\n");
+const allMembers=groups.flatMap(g=>g.members);
+const summary={schema:out.schema,snapshot:out.snapshot,reviewedCards:444,registryRecords:3205,
  operationalArtworkGroups:989,groups:groups.length,
  byConfidence:Object.fromEntries([...new Set(groups.map(g=>g.confidence))].map(c=>
  [c,groups.filter(g=>g.confidence===c).length])),
  previewMembers:groups.reduce((n,g)=>n+g.members.filter(m=>m.preview).length,0),
+ embeddedPreviewMembers:allMembers.filter(m=>m.preview?.startsWith("data:image/")).length,
+ remotePreviewMembers:allMembers.filter(m=>m.preview&&!m.preview.startsWith("data:image/")).length,
+ groupsFullyEmbedded:groups.filter(g=>g.members.every(m=>m.preview?.startsWith("data:image/"))).length,
  missingPreviewMembers:groups.reduce((n,g)=>n+g.members.filter(m=>!m.preview).length,0),
  sourceGalleryImagesEmbeddedNotReacquired:true,previousApprovalsChanged:0,
  rightsClearancesChanged:0,queue1Promotions:0,productionMutations:0,costEur:0};
