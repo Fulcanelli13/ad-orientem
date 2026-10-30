@@ -480,6 +480,10 @@ try{
    await page.screenshot({path:resolve(out,"schola-kyriale-source-"+width+".png"),
      animations:"disabled"});
    await kyrieMenu.selectOption("CUSTOM");
+   // The UI queues one render after a local profile change; do not race
+   // the render cycle while asserting that Custom restores the editor.
+   await page.waitForFunction(()=>document.querySelector(
+     '[data-schola-ordinary-setting="KYRIE"]')?.hidden===false);
    assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').isVisible(),true,
      "Custom selection must restore the editable text field");
    await panel.locator('[data-schola-ordinary-setting="KYRIE"]').fill("Local polyphonic Kyrie");
