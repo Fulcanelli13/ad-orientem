@@ -3208,9 +3208,9 @@
       "source_work": "Cooking for Christ (1949, hosted excerpt)",
       "claim_owner_author": "Florence Berger",
       "source_passage_checked": true,
-      "claim_scope_route": "REPORTED_YORKSHIRE_ST_PETER_BOAT_PRESENTATION_FESTIVAL",
-      "scope_family": "REPORTED_LOCAL_OR_REGIONAL_PRACTICE",
-      "actor_or_locus": "YORKSHIRE_COAST",
+      "claim_scope_route": "PRIESTLY_BLESSING_NEW_FISHING_BOAT_MINISTERIAL",
+      "scope_family": "RITUAL_MINISTER_OR_SEPARATE_OWNER_HOLD",
+      "actor_or_locus": "YORKSHIRE_COAST_PRIEST_AT_WATERFRONT",
       "existing_master_owner_lead": null,
       "owner_relation": "NO_VALIDATED_MASTER_OWNER_YET",
       "source_attribution_conflict": false,
@@ -3234,9 +3234,9 @@
       "source_work": "Cooking for Christ (1949, hosted excerpt)",
       "claim_owner_author": "Florence Berger",
       "source_passage_checked": true,
-      "claim_scope_route": "PRIESTLY_BLESSING_NEW_FISHING_BOAT_MINISTERIAL",
-      "scope_family": "RITUAL_MINISTER_OR_SEPARATE_OWNER_HOLD",
-      "actor_or_locus": "YORKSHIRE_COAST_CHURCH",
+      "claim_scope_route": "REPORTED_YORKSHIRE_FISHERMEN_COMMUNAL_FORK_SUPPER",
+      "scope_family": "REPORTED_LOCAL_OR_REGIONAL_PRACTICE",
+      "actor_or_locus": "YORKSHIRE_FISHING_COMMUNITY_POST_CEREMONY",
       "existing_master_owner_lead": null,
       "owner_relation": "NO_VALIDATED_MASTER_OWNER_YET",
       "source_attribution_conflict": false,
@@ -3695,5 +3695,18 @@
     }
   ],
   "predecessor_40_record_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
-  "predecessor_70_review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json"
+  "predecessor_70_review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+  "review_corrections": [
+    {
+      "date": "2026-10-30",
+      "affected_ids": [
+        "CCEX26-BERGER-1103-02",
+        "CCEX26-BERGER-1103-03"
+      ],
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1103",
+      "hosted_line": 128,
+      "explanation": "Source describes priest blessing the new craft and community sharing a fork supper as distinct actions; earlier scope routes were transposed.",
+      "canonical_merged": false
+    }
+  ]
 }
