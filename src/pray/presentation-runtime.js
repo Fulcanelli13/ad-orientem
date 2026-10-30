@@ -3049,14 +3049,24 @@ function reconcilePrayerBookSettings(m){
   ownOptions.append(sourceNotes);
   parents=[];
  }
+ // F07 decisions: recitation mode and optional prayers belong in Aa, not
+ // across the prayer page. Move existing nodes, retaining their event handlers.
+ const mercyMode=m.querySelector('.aoMercyReader[data-ao-f07-chaplet] .aoF07MercyRecitation > div[role="group"]');
+ const mercyOptions=[...m.querySelectorAll('.aoMercyReader[data-ao-f07-chaplet] .aoMercyOptional')];
  const lang=header.querySelector('.aoP435930SessionLanguage');
  const settings=header.querySelector('.aoFolioSettingsTrigger');
- if(!parents.length&&!lang&&!settings)return;
+ if(!parents.length&&!lang&&!settings&&!mercyMode&&!mercyOptions.length)return;
  const wrap=document.createElement('details');
  wrap.className='aoPrayerBookMenu';
  wrap.innerHTML='<summary aria-label="'+esc(L('Prayer settings, language and references','Paramètres, langue et références'))+
   '">Aa</summary><div class="aoPrayerBookMenuPanel"></div>';
  const panel=wrap.querySelector('.aoPrayerBookMenuPanel');
+ if(mercyMode){
+  const modeLabel=document.createElement('small');
+  modeLabel.textContent=L('Recitation','Récitation');
+  panel.append(modeLabel,mercyMode);
+ }
+ for(const option of mercyOptions)panel.append(option);
  if(settings)panel.append(settings);
  if(lang)panel.append(lang);
  if(parents.length){
