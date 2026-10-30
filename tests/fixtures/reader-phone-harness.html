@@ -151,6 +151,9 @@ if(params.get("matrix")==="1"){
     form:requestedForm,family:fixtureRequiem?"REQUIEM":"VOTIVE",
     planKind:prepared.session.plan?.kind??null,
     overlayGraphs:[...(prepared.session.plan?.overlayGraphs??[])],
+    blessingAllowed:prepared.session.plan?.blessingAllowed,
+    ordinaryPeacePrayerAllowed:prepared.session.plan?.ordinaryPeacePrayerAllowed,
+    dismissal:prepared.session.plan?.dismissal,
     syntheticProper:true,
   });
 }
