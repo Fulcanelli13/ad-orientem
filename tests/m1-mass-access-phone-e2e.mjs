@@ -23,8 +23,8 @@ await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- for(const width of [390,320]){
-  const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
+ for(const [width,height] of [[390,844],[320,568]]){
+  const page=await browser.newPage({viewport:{width,height},isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native&aoMassAccessM1=1",
     {waitUntil:"domcontentloaded",timeout:90000});
@@ -41,6 +41,40 @@ try{
   assert.deepEqual(ids.slice(0,6),["mass","ceremony","reader","language","before","after"]);
   assert.equal(await page.locator("[data-ao-start-live]").count(),1,
     "M1 must reuse the one authoritative Start Mass button");
+  const grouping=await page.locator("[data-m1-rows] [data-m1-group]").evaluateAll(
+    headings=>headings.map(n=>({key:n.dataset.m1Group,title:n.textContent})));
+  assert.deepEqual(grouping,[{key:"celebration",title:"Celebration"},
+    {key:"preferences",title:"Your preferences"}],
+    "The Mass and personal preferences should have separate readable headings");
+  assert.equal(await page.locator(".aoMassFolioIdentity.aoTcmCard").count(),1,
+    "The existing source-owned Mass identity should consume the shared card");
+  assert.equal(await page.locator("[data-m1-choice].aoTcmRow").count(),6,
+    "All six actual chooser actions must remain touch rows");
+  assert.equal(await page.locator("[data-ao-start-live].aoTcmPrimary").count(),1,
+    "The sole host Start Mass action should use the shared primary control");
+  const initialTheme=await page.evaluate(()=>{
+    const card=document.querySelector(".aoMassFolioIdentity.aoTcmCard");
+    const action=document.querySelector("[data-ao-start-live].aoTcmPrimary");
+    return {card:getComputedStyle(card).backgroundColor,
+      action:getComputedStyle(action).backgroundColor,
+      root:getComputedStyle(document.querySelector("#ao-mass-flow-v1")).getPropertyValue("--ao-tcm-card-radius").trim(),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+  });
+  assert.equal(initialTheme.root,"18px","Shared theme tokens were not installed in Mass");
+  assert.ok(initialTheme.overflow<=1,"M1 overflows phone before changing selections");
+  await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("appearance.mode","light"));
+  await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light");
+  const lightTheme=await page.evaluate(()=>({
+    card:getComputedStyle(document.querySelector(".aoMassFolioIdentity")).backgroundColor,
+    action:getComputedStyle(document.querySelector("[data-ao-start-live]")).backgroundColor,
+    overflow:document.documentElement.scrollWidth-innerWidth,
+  }));
+  assert.notEqual(lightTheme.card,initialTheme.card,"Mass card did not follow light appearance");
+  assert.notEqual(lightTheme.action,initialTheme.action,"Start Mass did not follow light appearance");
+  assert.ok(lightTheme.overflow<=1,"M1 light appearance overflows phone");
+  await page.screenshot({path:resolve(out,width+"-overview-light.png")});
+  await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("appearance.mode","dark"));
+  await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="dark");
   assert.equal(await page.locator(".aoMassFolioStepNav").isVisible(),false,"Old wizard must be hidden in M1");
   // Review frames must show the settled overlay, not a mid-transition crossfade.
   await page.waitForTimeout(750);
@@ -69,6 +103,9 @@ try{
   await page.locator("[data-folio-overview-button]").click();
   await page.waitForSelector("[data-m1-choice='language']",{state:"visible"});
   assert.match(await page.locator("[data-m1-choice='language']").innerText(),/Français/);
+  assert.deepEqual(await page.locator("[data-m1-group]").allTextContents(),
+    ["Célébration","Vos préférences"],
+    "Changing the Mass language should localize both group headings");
   assert.match(await page.locator("[data-ao-start-live]").innerText(),/Commencer la messe/,"Start action must follow selected Mass language without changing its handler");
   assert.equal(await page.locator("[data-folio-host-actions] .aoFlowActions button").filter({hasText:/Enregistrer comme choix habituels/}).count(),0,
     "M1 must not invent a Save as defaults button without host persistence");
