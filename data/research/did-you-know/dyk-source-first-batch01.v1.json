@@ -1,0 +1,937 @@
+{
+  "schema": "AO_DYK_SOURCE_FIRST_EDITORIAL_BATCH_V1",
+  "version": "1.0.0",
+  "created": "2026-10-30",
+  "status": "DRAFT_NONPUBLISHING",
+  "purpose": "Original bilingual Did You Know statements grounded in existing Ad Orientem canonical registries, for human review before rotation or distribution",
+  "owns_runtime": false,
+  "publication_authorized": false,
+  "deduplication_status": "PENDING_AGAINST_EXISTING_DYK_53_AND_195_CANDIDATES",
+  "policy": {
+    "customs_published_metadata_not_equivalent_to_human_final_signoff": true,
+    "do_not_generalize_local_practices": true,
+    "source_owner_unchanged": true,
+    "calendar_trigger_requires_calendar_owner": true,
+    "no_mass_reader_mutation": true,
+    "needs_deep_link_route_resolution": true,
+    "indulgence_claims_require_separate_primary_review": true,
+    "review_en_fr_independently": true
+  },
+  "counts": {
+    "total": 40,
+    "customs": 16,
+    "glossary": 19,
+    "mass_ceremonial": 5
+  },
+  "facts": [
+    {
+      "id": "DYK-SF01-001",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that bedside holy-water fonts are documented in French Catholic homes?",
+        "fr": "Saviez-vous que des bénitiers de chevet sont attestés dans des foyers catholiques français ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DOM-002",
+        "source_ids": [
+          "MUCEM-BENITIER"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DOM-002"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-002",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that the traditional blessing after childbirth was a voluntary thanksgiving, not a mandatory purification?",
+        "fr": "Saviez-vous que les relevailles étaient une action de grâce facultative après une naissance, et non une purification obligatoire ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "LIFE-002",
+        "source_ids": [
+          "RIT-1878",
+          "SCHOLA-RELEVAILLES"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "LIFE-002"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-003",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that ex-votos left at shrines express gratitude rather than an attempt to obtain favours by magic?",
+        "fr": "Saviez-vous que les ex-voto déposés dans les sanctuaires expriment la reconnaissance, et non une tentative d'obtenir des faveurs par magie ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DEV-009",
+        "source_ids": [
+          "LAGHET-EXVOTO",
+          "ALTOETTING-EXVOTO"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DEV-009"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-004",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that Catholic families have traditionally kept Candlemas candles at home after their blessing?",
+        "fr": "Saviez-vous que des familles catholiques conservaient traditionnellement chez elles les cierges bénits de la Chandeleur ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DOM-011",
+        "source_ids": [
+          "ECF-CHANDLEUR-HOME"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DOM-011"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-005",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that blessed Palm Sunday branches have traditionally adorned crucifixes in Catholic homes?",
+        "fr": "Saviez-vous que des rameaux bénits le dimanche des Rameaux ornaient traditionnellement les crucifix de certaines maisons catholiques ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DOM-013",
+        "source_ids": [
+          "ECF-RAMEAUX-HOME",
+          "DPP-2001"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DOM-013"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-006",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that the traditional blessing of throats in honour of Saint Blaise uses two crossed candles blessed for that purpose?",
+        "fr": "Saviez-vous que la bénédiction traditionnelle des gorges en l'honneur de saint Blaise emploie deux cierges croisés, bénits à cette intention ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-001",
+        "source_ids": [
+          "ROMR-BLAISE-1956",
+          "SCHOLA-BLAISE-LATIN",
+          "BOOK-BLESSINGS-BLAISE",
+          "ORDO-BLAISE-1962"
+        ]
+      },
+      "scope": "TRADITIONAL_ROMAN_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-001"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-007",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that the Sicilian tradition of Saint Joseph's table combines a feast-day meal with care for people in need?",
+        "fr": "Saviez-vous que la tradition sicilienne de la table de saint Joseph associe le repas de fête à l'aide apportée aux personnes dans le besoin ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "SJOS-001",
+        "source_ids": [
+          "BR-DIOCESE-STJOSEPH-2026"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "SJOS-001"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-008",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that in parts of Catholic Europe people bring herbs and flowers for blessing on the Assumption?",
+        "fr": "Saviez-vous que, dans certaines régions de l'Europe catholique, on apporte des herbes et des fleurs à bénir pour l'Assomption ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-002",
+        "source_ids": [
+          "DPP-ASSUMPTION-HERBS-181",
+          "RIT-ASSUMPTION-WELLER",
+          "PARISH-ASSUMPTION-HERBS-NEWTON"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-002"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-009",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that some Catholics bring wine for a priest's blessing on Saint John the Evangelist's feast, 27 December?",
+        "fr": "Saviez-vous que certains catholiques font bénir du vin par un prêtre le 27 décembre, fête de saint Jean l'Évangéliste ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-003",
+        "source_ids": [
+          "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+          "UK-PARISH-STJOHN-WINE"
+        ]
+      },
+      "scope": "TRADITIONAL_ROMAN_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-003"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-010",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that in several Central and Eastern European Catholic traditions, families bring Easter foods to be blessed?",
+        "fr": "Saviez-vous que, dans plusieurs traditions catholiques d'Europe centrale et orientale, les familles apportent leurs aliments de Pâques pour les faire bénir ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-004",
+        "source_ids": [
+          "RIT-EASTER-FOOD-WELLER",
+          "US-DIOCESE-EASTER-BASKETS",
+          "DPP-2001"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-004"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-011",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that one traditional Advent family custom is to add straw to an empty manger after acts of kindness or prayer?",
+        "fr": "Saviez-vous qu'une coutume familiale de l'Avent consiste à ajouter de la paille à une crèche vide après un acte de charité ou une prière ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "ADVT-002",
+        "source_ids": [
+          "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
+        ]
+      },
+      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "ADVT-002"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-012",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that Polish families share an unconsecrated Christmas wafer, called opłatek, as a sign of goodwill and reconciliation?",
+        "fr": "Saviez-vous que des familles polonaises partagent à Noël une feuille de pain non consacrée, appelée opłatek, en signe de paix et de réconciliation ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "XMAS-001",
+        "source_ids": [
+          "SJV-VERMONT-OPLATKI"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "XMAS-001"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-013",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that visiting seven altars of repose on Holy Thursday is a devotional custom, not a universal requirement?",
+        "fr": "Saviez-vous que la visite de sept reposoirs le Jeudi saint est une coutume de dévotion, et non une obligation universelle ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "HTHU-001",
+        "source_ids": [
+          "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"
+        ]
+      },
+      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "HTHU-001"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-014",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that families may mark the Rogation days with a private walk and prayers for the harvest, distinct from an official procession?",
+        "fr": "Saviez-vous qu'une famille peut marquer les Rogations par une promenade de prière pour les récoltes, distincte d'une procession liturgique ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "ROGA-001",
+        "source_ids": [
+          "NEWLAND-ROGATION-FAMILY-1956"
+        ]
+      },
+      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "ROGA-001"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-015",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that some Catholic communities decorate Corpus Christi procession routes with carpets of flowers?",
+        "fr": "Saviez-vous que certaines communautés catholiques décorent de tapis de fleurs le parcours des processions de la Fête-Dieu ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "CORP-001",
+        "source_ids": [
+          "UNESCO-CORPUS-FLOWER-CARPETS",
+          "VATICAN-DPP-CORPUS-FLOWERS-162"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "CORP-001"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-016",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that some Polish Pentecost traditions decorate houses and gates with fresh greenery?",
+        "fr": "Saviez-vous que, dans certaines traditions polonaises de la Pentecôte, on décore les maisons et les portails de verdure fraîche ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "PENT-001",
+        "source_ids": [
+          "LASYPANSTWOWE-PENTECOST-GREENERY",
+          "LASYPANSTWOWE-BIRCH-GREENERY"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "PENT-001"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Historical/local scope, source and FR editorial signoff"
+    },
+    {
+      "id": "DYK-SF01-017",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that Solemn Mass is defined by the roles of the celebrant, deacon and subdeacon, not just by the amount of singing?",
+        "fr": "Saviez-vous que la messe solennelle se distingue par les fonctions du célébrant, du diacre et du sous-diacre, et non par la seule quantité de chant ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-001-150.v1.json",
+        "record_id": "G049",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G049"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-018",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the prayer called the Secret is said quietly over the offerings before the Preface in the 1962 Mass?",
+        "fr": "Saviez-vous que la prière appelée Secrète est dite à voix basse sur les offrandes avant la Préface dans la messe de 1962 ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-001-150.v1.json",
+        "record_id": "G059",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G059"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-019",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the Last Gospel at traditional Roman Mass is ordinarily the opening of Saint John's Gospel, though rubrical exceptions exist?",
+        "fr": "Saviez-vous que le Dernier Évangile de la messe romaine traditionnelle est ordinairement le prologue de saint Jean, avec certaines exceptions rubricales ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-001-150.v1.json",
+        "record_id": "G066",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G066"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-020",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that ad orientem means a common liturgical orientation, not necessarily that every church altar faces geographical east?",
+        "fr": "Saviez-vous que l'expression ad orientem désigne une orientation liturgique commune, sans imposer que chaque autel soit tourné vers l'est géographique ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-001-150.v1.json",
+        "record_id": "G075",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G075"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-021",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the Ember Days comprise four seasonal sets of Wednesday, Friday and Saturday?",
+        "fr": "Saviez-vous que les Quatre-Temps comprennent quatre séries saisonnières de mercredi, vendredi et samedi ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-001-150.v1.json",
+        "record_id": "G088",
+        "source_ids": [
+          "SRC-MR62-EMBER-ROGATION"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G088"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-022",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the maniple in the traditional Roman rite is worn on the left forearm?",
+        "fr": "Saviez-vous que, dans le rite romain traditionnel, le manipule se porte sur l'avant-bras gauche ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G182",
+        "source_ids": [
+          "SRC-HIST-VESTMENTS-CE"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G182"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-023",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that sedilia are seats for the celebrant and sacred ministers, rather than the bishop's cathedra?",
+        "fr": "Saviez-vous que les sedilia sont des sièges destinés au célébrant et aux ministres sacrés, et non la cathèdre de l'évêque ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G185",
+        "source_ids": [
+          "SRC-P16-SEDILIA-CATHEDRA"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G185"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-024",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the corporal is the square linen cloth spread on the altar beneath the sacred vessels?",
+        "fr": "Saviez-vous que le corporal est le linge carré déployé sur l'autel sous les vases sacrés ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G187",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G187"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-025",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the purificator and corporal are different linens with different functions at Mass?",
+        "fr": "Saviez-vous que le purificatoire et le corporal sont deux linges distincts qui remplissent des fonctions différentes à la messe ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G188",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G188"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-026",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the pall is a stiff square covering placed over the chalice during specified parts of traditional Mass?",
+        "fr": "Saviez-vous que la pale est une pièce carrée rigide posée sur le calice à certains moments de la messe traditionnelle ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G189",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G189"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-027",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the cruets used for wine and water are service vessels, distinct from the sacred chalice?",
+        "fr": "Saviez-vous que les burettes destinées au vin et à l'eau sont des récipients de service, distincts du calice sacré ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G193",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G193"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-028",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the thurible burns incense, while a separate vessel called the incense boat holds it beforehand?",
+        "fr": "Saviez-vous que l'encens brûle dans l'encensoir, tandis qu'un autre récipient, la navette, le contient auparavant ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G194",
+        "source_ids": [
+          "SRC-HIST-CENSER"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G194"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-029",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the incense boat is often boat-shaped and traditionally accompanies the thurible with a small spoon?",
+        "fr": "Saviez-vous que la navette à encens, souvent en forme de petit bateau, accompagne traditionnellement l'encensoir avec une cuillère ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G195",
+        "source_ids": [
+          "SRC-OCONNELL-MASS-GENERAL-1962"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G195"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-030",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the amice is worn around the neck and shoulders beneath the alb in traditional Roman vesting?",
+        "fr": "Saviez-vous que l'amict se porte autour du cou et des épaules, sous l'aube, dans le vêtement liturgique romain traditionnel ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G197",
+        "source_ids": [
+          "SRC-HIST-VESTMENTS-CE"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G197"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-031",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the dalmatic is the deacon's outer vestment at Solemn Mass, distinct from the priest's chasuble?",
+        "fr": "Saviez-vous que la dalmatique est l'ornement extérieur du diacre à la messe solennelle, distinct de la chasuble du prêtre ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G201",
+        "source_ids": [
+          "SRC-HIST-VESTMENTS-CE"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G201"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-032",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the traditional liturgical burse is a stiff case made to hold the folded corporal?",
+        "fr": "Saviez-vous que la bourse liturgique traditionnelle est un étui rigide destiné à recevoir le corporal plié ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G212",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G212"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-033",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the three traditional altar cards contain fixed prayers that help the priest celebrate Mass?",
+        "fr": "Saviez-vous que les trois canons d'autel présentent des prières fixes qui aident le prêtre à célébrer la messe ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G213",
+        "source_ids": [
+          "SRC-HIST-ALTAR-LITURGY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G213"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-034",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that older Latin liturgical practice used consecrated altar stones containing relics?",
+        "fr": "Saviez-vous que l'ancienne pratique liturgique latine utilisait des pierres d'autel consacrées contenant des reliques ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G219",
+        "source_ids": [
+          "SRC-HIST-ALTAR-STONE"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G219"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-035",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that a ciborium can mean an architectural canopy above an altar, not only a vessel holding the Hosts?",
+        "fr": "Saviez-vous que le mot ciborium peut désigner un baldaquin architectural au-dessus de l'autel, et pas seulement un vase destiné aux hosties ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-301-450.v1.json",
+        "record_id": "G416",
+        "source_ids": [
+          "SRC-P16-RETABLE-CIBORIUM"
+        ]
+      },
+      "scope": "HISTORICAL",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G416"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Factual, translation and duplicate review"
+    },
+    {
+      "id": "DYK-SF01-036",
+      "category": "mass_ceremonial",
+      "text": {
+        "en": "Did you know that the priest genuflects at the words of the Incarnation in the Creed at the traditional Roman Mass?",
+        "fr": "Saviez-vous que le prêtre fait une génuflexion aux paroles de l'Incarnation dans le Credo de la messe romaine traditionnelle ?"
+      },
+      "source": {
+        "owner": "data/mass/gesture-matrix.v1.json",
+        "record_id": "GM.P.C0096.01",
+        "related_record_ids": [],
+        "source_ids": [
+          "MR62_RITUS",
+          "CAMPION_1954"
+        ]
+      },
+      "scope": "1962_ROMAN_MASS; PRIEST; ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "deep_link": {
+        "owner": "mass_reader",
+        "record_id": "AO.SM.C0096"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Independent rubrical/form and FR editorial review"
+    },
+    {
+      "id": "DYK-SF01-037",
+      "category": "mass_ceremonial",
+      "text": {
+        "en": "Did you know that the 1962 Roman Mass prescribes a specific moment during the Canon when the priest holds his hands over the offerings?",
+        "fr": "Saviez-vous que la messe romaine de 1962 prévoit un moment précis du Canon où le prêtre étend les mains sur les offrandes ?"
+      },
+      "source": {
+        "owner": "data/mass/gesture-matrix.v1.json",
+        "record_id": "GM.P.C0161.01",
+        "related_record_ids": [],
+        "source_ids": [
+          "MR62_RITUS",
+          "CAMPION_1954"
+        ]
+      },
+      "scope": "1962_ROMAN_MASS; PRIEST; ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "deep_link": {
+        "owner": "mass_reader",
+        "record_id": "AO.SM.C0161"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Independent rubrical/form and FR editorial review"
+    },
+    {
+      "id": "DYK-SF01-038",
+      "category": "mass_ceremonial",
+      "text": {
+        "en": "Did you know that after consecrating the Host, the priest genuflects, elevates it, then genuflects again?",
+        "fr": "Saviez-vous qu'après la consécration de l'Hostie, le prêtre fait une génuflexion, l'élève, puis fait de nouveau une génuflexion ?"
+      },
+      "source": {
+        "owner": "data/mass/gesture-matrix.v1.json",
+        "record_id": "GM.P.C0174.02",
+        "related_record_ids": [
+          "GM.P.C0174.01",
+          "GM.P.C0174.03"
+        ],
+        "source_ids": [
+          "MR62_RITUS",
+          "CAMPION_1954"
+        ]
+      },
+      "scope": "1962_ROMAN_MASS; PRIEST; ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "deep_link": {
+        "owner": "mass_reader",
+        "record_id": "AO.SM.C0174"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Independent rubrical/form and FR editorial review"
+    },
+    {
+      "id": "DYK-SF01-039",
+      "category": "mass_ceremonial",
+      "text": {
+        "en": "Did you know that the elevation of the consecrated Chalice is framed by two genuflections of the priest?",
+        "fr": "Saviez-vous que l'élévation du Calice consacré est encadrée par deux génuflexions du prêtre ?"
+      },
+      "source": {
+        "owner": "data/mass/gesture-matrix.v1.json",
+        "record_id": "GM.P.C0181.02",
+        "related_record_ids": [
+          "GM.P.C0181.01",
+          "GM.P.C0181.03"
+        ],
+        "source_ids": [
+          "MR62_RITUS",
+          "CAMPION_1954"
+        ]
+      },
+      "scope": "1962_ROMAN_MASS; PRIEST; ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "deep_link": {
+        "owner": "mass_reader",
+        "record_id": "AO.SM.C0181"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Independent rubrical/form and FR editorial review"
+    },
+    {
+      "id": "DYK-SF01-040",
+      "category": "mass_ceremonial",
+      "text": {
+        "en": "Did you know that the priest genuflects at 'Et Verbum caro factum est' when the Last Gospel is read?",
+        "fr": "Saviez-vous que le prêtre fait une génuflexion aux mots « Et Verbum caro factum est » lors de la lecture du Dernier Évangile ?"
+      },
+      "source": {
+        "owner": "data/mass/gesture-matrix.v1.json",
+        "record_id": "GM.P.C0273.01",
+        "related_record_ids": [],
+        "source_ids": [
+          "MR62_RITUS",
+          "CAMPION_1954"
+        ]
+      },
+      "scope": "1962_ROMAN_MASS; PRIEST; ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "deep_link": {
+        "owner": "mass_reader",
+        "record_id": "AO.SM.C0273"
+      },
+      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
+      "human_gate": "Independent rubrical/form and FR editorial review"
+    }
+  ]
+}
