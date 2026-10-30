@@ -258,6 +258,26 @@ try{
     await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
     assert.match(await h4.locator(".aoH4Primary small").innerText(),/Missal|Missel/,
       "H4 Begin must reflect the source preflight reader selection");
+    // The no-art state must collapse the illustration, not leave a decorative
+    // placeholder or bury the single Begin/Resume door beneath the phone ribbon.
+    await h4.evaluate(()=>document.querySelector(".aoH4Door")?.classList.add("aoTodayV2ArtMissing"));
+    const noArt=await h4.evaluate(()=>{
+      const art=document.querySelector(".aoH4Door .aoTodayV2Art");
+      const door=document.querySelector(".aoH4Door");
+      const action=door?.querySelector("[data-home-h4-begin], [data-resume-mass]");
+      const ribbon=document.querySelector("#ao-global-ribbon");
+      const rect=action?.getBoundingClientRect(),nav=ribbon?.getBoundingClientRect();
+      return {display:art?getComputedStyle(art).display:null,
+        door:door?.getBoundingClientRect().height,
+        actionTop:rect?.top,actionBottom:rect?.bottom,ribbonTop:nav?.top,
+        documentWidth:document.documentElement.scrollWidth,viewport:innerWidth};
+    });
+    assert.equal(noArt.display,"none",prefix+" H4 no-art must collapse image block");
+    assert.ok(noArt.documentWidth<=noArt.viewport+2,prefix+" H4 no-art overflow: "+JSON.stringify(noArt));
+    assert.ok(noArt.actionBottom<=noArt.ribbonTop+2,
+      prefix+" H4 no-art Mass entry must remain above the phone ribbon: "+JSON.stringify(noArt));
+    await h4.screenshot({path:resolve(output,prefix+"-h4-no-art-light.png")});
+    await h4.evaluate(()=>document.querySelector(".aoH4Door")?.classList.remove("aoTodayV2ArtMissing"));
     await h4.locator("[data-home-h4-readings]").click();
     await h4.waitForSelector(".aoMassTextsOverlay",{state:"visible",timeout:10000});
     await h4.locator("[data-mass-texts-close]").click();
