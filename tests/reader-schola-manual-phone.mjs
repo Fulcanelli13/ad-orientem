@@ -276,6 +276,55 @@ try{
    assert.equal(await musicMenu.isVisible(),true);
    assert.ok(await musicMenu.locator("[data-schola-event-select]").count()>=25,
      "Schola source itinerary did not populate navigable events");
+
+   // Real phone actions must create ONLY the user's observed music states,
+   // without moving the priest, the chant syllable clock or a quiet interval.
+   const originalPerformance=await page.evaluate(()=>{
+     const l=window.__AO_PHONE_PREVIEW.getScholaPerformance();
+     return {schema:l.performanceSchema,
+       kyrie:l.events.find(x=>x.id==="KYRIE")?.performance.status,
+       quiet:l.events.find(x=>x.id==="CANON")?.performance.eligible,
+       organ:l.events.find(x=>x.id==="ENTRANCE_ORGAN_OPTION")?.performance.eligible,
+       started:l.counts.started};
+   });
+   assert.equal(originalPerformance.schema,"ao-schola-performance-session-v1");
+   assert.equal(originalPerformance.kyrie,"EXPECTED_NOT_OBSERVED");
+   assert.equal(originalPerformance.quiet,false);
+   assert.equal(await musicMenu.locator('[data-schola-performance-row="CANON"]').count(),0,
+     "Canon silence must not be recordable as musical performance");
+   const performanceStart=musicMenu.locator(
+     '[data-schola-performance-event="KYRIE"][data-schola-performance-action="START"]');
+   await performanceStart.click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="KYRIE")?.performance.status==="STARTED_OBSERVED");
+   assert.match(await musicMenu.locator("[data-schola-performance-summary]").textContent(),
+     /1 started/);
+   assert.equal(await musicMenu.locator('[data-schola-performance-status="KYRIE"]').textContent(),
+     "You marked: started");
+   const selectedAfterStart=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   }));
+   assert.deepEqual(selectedAfterStart,priestBeforeMusicPick);
+   await musicMenu.locator(
+     '[data-schola-performance-event="KYRIE"][data-schola-performance-action="FINISH"]').click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="KYRIE")?.performance.status==="FINISHED_OBSERVED");
+   assert.match(await musicMenu.locator("[data-schola-performance-summary]").textContent(),
+     /1 finished/);
+   await page.screenshot({path:resolve(out,"schola-observed-performance-"+width+".png"),
+     animations:"disabled"});
+   await musicMenu.locator(
+     '[data-schola-performance-event="KYRIE"][data-schola-performance-action="RESET"]').click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="KYRIE")?.performance.status==="EXPECTED_NOT_OBSERVED");
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().trackId),
+     "SANCTUS_BENEDICTUS","Recording music must not change the independent choir track");
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   })),priestBeforeMusicPick);
+
    const unselectedMotet=musicMenu.locator('[data-schola-event-select="OFFERTORY_LOCAL_MOTET"]');
    assert.equal(await unselectedMotet.isDisabled(),true,
      "Unplanned local motet must not be presented as a selectable performance");
