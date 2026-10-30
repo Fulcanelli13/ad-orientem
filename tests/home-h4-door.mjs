@@ -124,7 +124,10 @@ assert.equal((html.match(/pray.rosary/g)||[]).length,0,"Rosary should be one per
 assert.equal((html.match(/data-home-cu-static="rosary"/g)||[]).length,1,"Rosary must appear once");
 assert.equal((html.match(/data-home-calendar-date="2026-11-01"/g)||[]).length,1);
 assert.equal((html.match(/data-home-calendar-date="2026-11-02"/g)||[]).length,1);
-assert.equal((html.match(/data-home-daily-catechism/g)||[]).length,1);
+assert.equal((html.match(/data-home-daily-catechism/g)||[]).length,0,"No Catechism on Home");
+assert.equal((html.match(/data-home-dyk-open/g)||[]).length,1,"One Did You Know Home box");
+assert.match(html,/DID YOU KNOW\?/,"English affirmative discovery heading");
+assert.match(h4HomeView({...vm,language:"fr"},model),/LE SAVIEZ-VOUS \?/,"French discovery heading");
 assert.equal((html.match(/data-action="gospel"/g)||[]).length,1);
 assert.doesNotMatch(html,/verify the observed|strongly french-attested|Today\/Month\/Year/i);
 assert.doesNotMatch(html,/data-home-find|data-home-scripture/,"H4 five-block Home must not duplicate other permanent tabs");
