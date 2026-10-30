@@ -36,6 +36,7 @@ try{
    const base="#aoPray435930.open";
    const mosaic=page.locator(base+" [data-ao-pray-pilot-mosaic]");
    assert.equal(await mosaic.locator(".aoPrayPilotTile").count(),9,"nine real discovery doors");
+   assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
     const tiles=[...node.querySelectorAll(".aoPrayPilotTile")].map(x=>({
