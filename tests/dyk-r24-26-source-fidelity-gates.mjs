@@ -35,7 +35,7 @@ for(const record of audit.records){
  assert.equal(c.gates.french_editorial_approved,false,record.id);
  for(const lang of ["en","fr"]){
   assert.ok(c.statement[lang].length>40,record.id);
-  assert.equal(/[?？]\\s*$/.test(c.statement[lang]),false,record.id);
+  assert.equal(/[?？]\s*$/.test(c.statement[lang]),false,record.id);
  }
 }
 assert.match(cards.get("DYK-UM01-011").statement.en,/children repeated the priest's sermon to their father/);
