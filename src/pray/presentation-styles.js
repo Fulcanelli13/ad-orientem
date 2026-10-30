@@ -1054,7 +1054,62 @@ const PRAYER_BOOK_RECONCILIATION_CSS="\n/* Prayer-wide correction to Claude's 18
 #aoPray435930 .aoP435930Head.aoPrayerBookHead>div:first-of-type{
   grid-column:2;grid-row:1;min-width:0!important;
 }
-#aoPray435930 .aoPrayerBookMenu{\n  position:relative;\n  z-index:24;\n  justify-self:end;\n  flex:0 0 40px;\n}\n#aoPray435930 .aoPrayerBookMenu>summary{\n  display:flex;\n  align-items:center;\n  justify-content:center;\n  width:40px;height:44px;\n  list-style:none;\n  cursor:pointer;\n  font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);\n  color:inherit;\n  background:transparent;\n  border:0;\n  border-radius:0;\n}\n#aoPray435930 .aoPrayerBookMenu>summary::-webkit-details-marker{display:none}\n#aoPray435930 .aoPrayerBookMenu>summary:focus-visible{\n  outline:2px solid var(--liturgical,#bda580);\n  outline-offset:1px;\n}\n#aoPray435930 .aoPrayerBookMenuPanel{\n  position:absolute;\n  top:45px;right:0;\n  width:min(270px,calc(100vw - 25px));\n  max-height:65dvh;overflow-y:auto;\n  z-index:25;\n  padding:11px;\n  background:var(--surface-2,#27251f);\n  color:var(--text,#ede4d6);\n  border:1px solid var(--border,rgba(200,175,130,.22));\n  border-radius:5px;\n  box-shadow:0 9px 25px rgba(0,0,0,.18);\n}\n#aoPray435930 .aoPrayerBookMenuPanel>small{\n  display:block;\n  margin:0 0 5px;\n  font:500 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);\n  color:var(--muted,#b5ad9e);\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoP435930SessionLanguage{\n  display:block;\n  width:100%;height:40px;\n  min-height:40px;\n  margin:0 0 5px;\n  padding:4px 10px;\n  text-align:left;\n  border:0;border-radius:2px;\n  background:transparent;\n  font-size:12px;\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources{\n  margin:3px 0 0;\n  padding-top:4px;\n  border:0;\n  font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources>summary{\n  display:flex;\n  align-items:center;\n  min-height:34px;\n  cursor:pointer;\n  list-style:none;\n  font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);\n  color:var(--muted,#b5ad9e);\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources>summary::-webkit-details-marker{display:none}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources a{\n  display:block;\n  min-height:30px;\n  padding:6px 0;\n  color:inherit;\n  font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);\n  text-decoration:underline;\n  text-underline-offset:3px;\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources p,\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources small{\n  font:400 11px/1.5 var(--ao-font-ui,system-ui,sans-serif);\n  color:var(--muted,#b5ad9e);\n}\n/* Neither dark captions nor reference widgets may displace prayer paragraphs. */\n#aoPray435930 .aoP435930Mount .aoP435930Source,\n#aoPray435930 .aoP435930Mount .aoP435930SourceNote,\n#aoPray435930 .aoP435930Mount .aoP435930SourceLink,\n#aoPray435930 .aoP435930Mount .aoMercySource,\n#aoPray435930 .aoP435930Mount .aoFiveWoundsSource,\n#aoPray435930 .aoP435930Mount .aoPreciousBloodProvenance,\n#aoPray435930 .aoP435930Mount .aoLittleCrownSource{\n  font-size:11px;\n  color:var(--muted,#b5ad9e);\n}\n/* Source material is rehomed by the render-time adapter, never discarded. */\n@media(max-width:390px){\n #aoPray435930 .aoP435930Mount:not([data-ao-pray-view=\"home\"]):not([data-ao-pray-view=\"family\"]) .aoP435930Body{padding-top:10px!important}\n #aoPray435930 .aoP435930Head{padding:5px 8px 6px!important}\n #aoPray435930 .aoP435930Head h1{font-size:18px!important}\n}\n";
+#aoPray435930 .aoPrayerBookMenu{\n  position:relative;\n  z-index:24;\n  justify-self:end;\n  flex:0 0 40px;\n}\n#aoPray435930 .aoPrayerBookMenu>summary{\n  display:flex;\n  align-items:center;\n  justify-content:center;\n  width:40px;height:44px;\n  list-style:none;\n  cursor:pointer;\n  font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);\n  color:inherit;\n  background:transparent;\n  border:0;\n  border-radius:0;\n}\n#aoPray435930 .aoPrayerBookMenu>summary::-webkit-details-marker{display:none}\n#aoPray435930 .aoPrayerBookMenu>summary:focus-visible{\n  outline:2px solid var(--liturgical,#bda580);\n  outline-offset:1px;\n}\n#aoPray435930 .aoPrayerBookMenuPanel{\n  position:absolute;\n  top:45px;right:0;\n  width:min(270px,calc(100vw - 25px));\n  max-height:65dvh;overflow-y:auto;\n  z-index:25;\n  padding:11px;\n  background:var(--surface-2,#27251f);\n  color:var(--text,#ede4d6);\n  border:1px solid var(--border,rgba(200,175,130,.22));\n  border-radius:5px;\n  box-shadow:0 9px 25px rgba(0,0,0,.18);\n}\n#aoPray435930 .aoPrayerBookMenuPanel>small{\n  display:block;\n  margin:0 0 5px;\n  font:500 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);\n  color:var(--muted,#b5ad9e);\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoP435930SessionLanguage{\n  display:block;\n  width:100%;height:40px;\n  min-height:40px;\n  margin:0 0 5px;\n  padding:4px 10px;\n  text-align:left;\n  border:0;border-radius:2px;\n  background:transparent;\n  font-size:12px;\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources{\n  margin:3px 0 0;\n  padding-top:4px;\n  border:0;\n  font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources>summary{\n  display:flex;\n  align-items:center;\n  min-height:34px;\n  cursor:pointer;\n  list-style:none;\n  font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);\n  color:var(--muted,#b5ad9e);\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources>summary::-webkit-details-marker{display:none}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources a{\n  display:block;\n  min-height:30px;\n  padding:6px 0;\n  color:inherit;\n  font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);\n  text-decoration:underline;\n  text-underline-offset:3px;\n}\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources p,\n#aoPray435930 .aoPrayerBookMenuPanel .aoPrayerBookSources small{\n  font:400 11px/1.5 var(--ao-font-ui,system-ui,sans-serif);\n  color:var(--muted,#b5ad9e);\n}\n/* Neither dark captions nor reference widgets may displace prayer paragraphs. */\n#aoPray435930 .aoP435930Mount .aoP435930Source,\n#aoPray435930 .aoP435930Mount .aoP435930SourceNote,\n#aoPray435930 .aoP435930Mount .aoP435930SourceLink,\n#aoPray435930 .aoP435930Mount .aoMercySource,\n#aoPray435930 .aoP435930Mount .aoFiveWoundsSource,\n#aoPray435930 .aoP435930Mount .aoPreciousBloodProvenance,\n#aoPray435930 .aoP435930Mount .aoLittleCrownSource{\n  font-size:11px;\n  color:var(--muted,#b5ad9e);\n}\n
+/* The three historical chaplet readers are part of Prayer, including the
+   non-F07 default. Their 30/47/15-step controls remain functional. */
+#aoPray435930 .aoFiveWoundsPrayer,
+#aoPray435930 .aoPreciousBloodCard,
+#aoPray435930 .aoLittleCrownPrayer{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:10px 5px 16px!important;
+}
+#aoPray435930 .aoFiveWoundsActions,
+#aoPray435930 .aoPreciousBloodActions,
+#aoPray435930 .aoLittleCrownActions{
+  box-shadow:none!important;
+  background:transparent!important;
+  border-top:0!important;
+  padding:7px 2px max(7px,env(safe-area-inset-bottom))!important;
+}
+#aoPray435930 .aoFiveWoundsActions button,
+#aoPray435930 .aoPreciousBloodActions button,
+#aoPray435930 .aoLittleCrownActions button{
+  min-height:44px!important;
+  padding:6px 10px!important;
+  font-size:12px!important;
+  border-radius:6px!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  box-shadow:none!important;
+}
+#aoPray435930 .aoFiveWoundsRail button,
+#aoPray435930 .aoPreciousBloodRail button{
+  border:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+#aoPray435930 .aoFiveWoundsRail button[aria-current="step"],
+#aoPray435930 .aoPreciousBloodRail button[aria-current="step"]{
+  border-bottom:1px solid var(--liturgical,#bba17a)!important;
+}
+#aoPray435930 .aoFiveWoundsSource,
+#aoPray435930 .aoPreciousBloodProvenance,
+#aoPray435930 .aoLittleCrownSource{
+  border:0!important;
+  box-shadow:none!important;
+}
+/* Original source-bound prayer and doctrine lines are not decoration. */
+#aoPray435930 .aoP435930Prayer p,
+#aoPray435930 .aoFiveWoundsPrayerText,
+#aoPray435930 .aoPreciousBloodCard p,
+#aoPray435930 .aoLittleCrownPrayerText{
+  text-shadow:none!important;
+}
+/* Source material is rehomed by the render-time adapter, never discarded. */\n@media(max-width:390px){\n #aoPray435930 .aoP435930Mount:not([data-ao-pray-view=\"home\"]):not([data-ao-pray-view=\"family\"]) .aoP435930Body{padding-top:10px!important}\n #aoPray435930 .aoP435930Head{padding:5px 8px 6px!important}\n #aoPray435930 .aoP435930Head h1{font-size:18px!important}\n}\n";
 
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
