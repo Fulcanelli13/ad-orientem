@@ -64,7 +64,7 @@ The DYK [nonpublication and source integrity test](../../tests/dyk-ultramaster-d
 
 Another [50 bilingual Customs research drafts](../../data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json) were prepared **outside the 150-dossier shortlist**: 25 Weiser facts from the source-screened original printed-page review, and 25 Pitrè 1900 observations from previously mapped original-edition page images. The records preserve exact source observation ID, source review ID or Italian text anchor, original page, scope limits, and publication blocks. The revised source pin was read at Customs research head `2db24c69ca5763c301b80593c209533bb140d906`. No private historical observations or final customs identities were newly approved.
 
-**Cumulative in this draft PR: 154 original bilingual fact drafts:** 70 Weiser, 60 Pitrè, 19 Glossary, 5 Mass. Approved: 0. Published: 0. Previously deferred canonical-only Customs examples: 16, not counted. This is draft coverage progress rather than published knowledge.
+**Before semantic overlap review:** 154 original bilingual drafts, 70 Weiser + 60 Pitrè + 19 Glossary + 5 Mass. **After 18-case review:** 145 active = 70 Weiser + 60 Pitrè + 10 Glossary + 5 Mass; 9 glossary drafts deferred intact. Approved: 0. Published: 0. Previously deferred canonical-only Customs examples: 16, not counted. This is draft coverage progress rather than published knowledge.
 
 ### Legacy reconciliation discovered
 
@@ -86,4 +86,31 @@ The [privacy-preserving legacy crosswalk](../../data/research/did-you-know/dyk-l
 4. Evaluate which destination can be linked to a genuine existing glossary, Calendar, prayer, Mass or formation screen. Do not create a false live custom entry just to satisfy a deep link.
 5. Only feed independently reviewed and truly distinct cards to the preexisting private canonical Home runtime, with zero paid services and no new competing bank.
 
-The [154-draft integrity gate](../../tests/dyk-ultramaster-draft-gates.mjs) is staged for CI execution; structural checks have been independently replicated in the available GitHub tool session, but a Node CI run has not been reported.
+The [updated 145-active-draft integrity gate](../../tests/dyk-ultramaster-draft-gates.mjs) is staged for CI execution; structural checks have been independently replicated in the available GitHub tool session, but a Node CI run has not been reported.
+
+## Semantic overlap adjudication and destination contract — 30 October 2026
+
+The 18 glossary source collisions flagged by the earlier reconciliation have now been **compared claim by claim** against the previously authored private DYK statements (53 original pilot, 278 R05 screened and 285 R06 screened, plus overlapping 195 archival conversions). The [18-case research triage](../../data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json) distinguishes:
+- **9 semantically redundant claims** — excluded from the active DYK pool, but preserved as full, reversible drafts in `deferred_legacy_semantic_duplicates`. Not deleted and not silently merged with private source.
+- **9 source-overlapping but different discoveries** — retained because one canonical concept can support multiple genuinely distinct factual details. These still require claim, historical, EN/FR, and route approval.
+- These are **research editorial classifications**, not human approval of either the new candidates or the previous legacy wording.
+
+**Current tally: 145 active EN/FR drafts** = 130 original Customs source-backed historical drafts + 10 glossary + 5 Mass; nine reversible duplicates deferred in addition to 16 older canonical-Customs illustrations already deferred. **0 approved, 0 published.** This 145 tally supersedes the earlier 154-active interim checkpoints. No changes to underlying Customs master or canonical private DYK bank.
+
+### Navigation readiness
+
+The [exact-destination readiness register](../../data/research/did-you-know/dyk-destination-readiness-v1.json) inspects the existing private Home handler and reports:
+- **10 glossary facts** have a source-specific Home destination shape supported by the existing `learn.glossary` contract with `entryId=G###`; source code verifies concept detail ID on open. **No browser acceptance test yet.**
+- **5 Mass facts** are blocked for Home integration until a verified specific-card/cue entry point exists. An ordinary Mass landing screen does *not* fulfil a claim-specific link.
+- **130 historical Customs research facts** have no automatically sanctioned Calendar custom profile. They need a source-specific historical article, curated context, or valid existing feast destination as appropriate, rather than invented calendar identities.
+- No route is marked browser-accepted; no facts may enter production on this registry's authority alone.
+
+### Existing Home affirmative format
+
+The existing private DYK Home component renders the heading `DID YOU KNOW THAT…` / `LE SAVIEZ-VOUS ?` separately from its statement. Our source-research drafts retain a legacy authored question stem `Did you know that…` or `Saviez-vous que…`, often with a closing question mark. Passing them through directly would repeat the heading and break the intended affirmative visual treatment.
+
+Added the **nonpublishing, research-only** [draft statement normalizer](../../tools/dyk/statement-normalizer.mjs) and a format gate in the structural test. It strips the drafting stem and final question mark, handles French `qu'`/`que,` openings and produces a declarative statement without changing the original source draft. This is a *syntactic* check, not French linguistic approval or a production transformation. **No new Home renderer, browser code or runtime deck is included in this PR.**
+
+### Next signoffs before release
+
+Original-claim and native-language editorial checks for historical/local statements, semantic review across the other 130 Customs candidates and the existing 612-item preview bank, verified direct routes, then and only then a controlled handoff to the existing private Home discovery source owner. Preserve the 12-per-local-day selection and source provenance; no cost.
