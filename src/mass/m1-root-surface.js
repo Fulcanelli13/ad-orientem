@@ -21,7 +21,7 @@ function restore(node,attr,old){if(!node)return;if(old==null)node.removeAttribut
 export function deactivateM1MassRoot(win=globalThis){
  const doc=win?.document,entry=doc&&records.get(doc);
  if(!entry)return false;
- const {backdrop,flow,header,attrs,block,observer}=entry;
+ const {backdrop,flow,header,attrs,block,onCloseClick,onEscape,observer}=entry;
  doc.documentElement.removeAttribute("data-ao-m1-mass-root");
  backdrop?.removeAttribute("data-ao-m1-root");
  flow?.removeAttribute("data-ao-m1-root");
@@ -32,6 +32,8 @@ export function deactivateM1MassRoot(win=globalThis){
  restore(flow,"aria-label",attrs.flowLabel);
  restore(flow,"tabindex",attrs.tabindex);
  backdrop?.removeEventListener("click",block,true);
+ doc.removeEventListener("click",onCloseClick,true);
+ win.removeEventListener?.("keydown",onEscape,true);
  observer?.disconnect();
  records.delete(doc);
  return true;
@@ -49,8 +51,26 @@ export function activateM1MassRoot(win=globalThis){
   backdropRole:original(backdrop,"role"),backdropModal:original(backdrop,"aria-modal"),
   flowRole:original(flow,"role"),flowLabel:original(flow,"aria-label"),tabindex:original(flow,"tabindex")
  };
+ const resetOverview=()=>{try{win?.AO_R17_BROWSER_ENTRY?.resetPreflightView?.()}catch{}};
+ // M1 is a permanent tab root, not a dismissible modal. The historical
+ // preflight still listens for Escape and close; consume only those actions.
+ const onEscape=e=>{
+  if(e.key!=="Escape"||doc.documentElement.dataset.aoM1MassRoot!=="true")return;
+  if(win?.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)return;
+  // A genuine nested sheet/dialog gets its own Escape before the Mass root.
+  const dialog=doc.querySelector?.('[role="dialog"][aria-modal="true"],dialog[open]');
+  if(dialog&&!dialog.hidden)return;
+  e.preventDefault();e.stopImmediatePropagation();resetOverview();
+ };
+ const onCloseClick=e=>{
+  const button=e.target?.closest?.("[data-ao-close]");
+  if(!button||!header?.contains(button))return;
+  e.preventDefault();e.stopImmediatePropagation();resetOverview();
+ };
  const block=e=>{if(e.target===backdrop){e.preventDefault();e.stopImmediatePropagation()}};
  backdrop.addEventListener("click",block,true);
+ doc.addEventListener("click",onCloseClick,true);
+ win.addEventListener?.("keydown",onEscape,true);
  backdrop.setAttribute("role","presentation");backdrop.removeAttribute("aria-modal");
  flow.setAttribute("role","main");
  flow.setAttribute("aria-label",win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"?"Messe":"Mass");
@@ -65,7 +85,7 @@ export function activateM1MassRoot(win=globalThis){
    deactivateM1MassRoot(win);
  }):null;
  observer?.observe(backdrop,{attributes:true,attributeFilter:["class","style","hidden","aria-hidden"]});
- records.set(doc,{backdrop,flow,header,attrs,block,observer});
+ records.set(doc,{backdrop,flow,header,attrs,block,onCloseClick,onEscape,observer});
  try{flow.focus({preventScroll:true})}catch{}
  return true;
 }
