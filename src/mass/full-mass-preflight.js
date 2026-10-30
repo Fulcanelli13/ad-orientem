@@ -606,6 +606,19 @@ export function mountFullMassPreflight({
     word("[data-folio-after-thanksgiving]","Thanksgiving after Mass","Action de grâces après la messe");
     word("[data-folio-after-full]","Full prayers after Mass","Prières complètes après la messe");
     word("[data-folio-open-prayer]","Open preparation prayers ↗","Ouvrir les prières de préparation ↗");
+    if(m1Preview){
+      // The host still owns its action buttons and click listeners.
+      // Only their visible labels follow the Mass-language selection.
+      const startAction=folio.querySelector("[data-folio-host-actions] [data-ao-start-live]");
+      if(startAction)startAction.textContent=l("Start Mass →","Commencer la messe →");
+      for(const action of folio.querySelectorAll("[data-folio-host-actions] .aoFlowActions button:not([data-ao-start-live])")){
+        const label=(action.textContent||"").trim();
+        if(/^(Save as defaults|Enregistrer comme choix habituels)$/i.test(label))
+          action.textContent=l("Save as defaults","Enregistrer comme choix habituels");
+        if(/^(Mass Details|Mass details|Détails de la messe)$/i.test(label))
+          action.textContent=l("Mass details","Détails de la messe");
+      }
+    }
     word("[data-folio-back]","Back","Retour");
     word("[data-folio-next]",folioStep==="reader"?"Review Mass":"Continue",folioStep==="reader"?"Voir le résumé":"Continuer");
     folio.querySelector("[data-folio-language]").value=summary.readerLanguage;
