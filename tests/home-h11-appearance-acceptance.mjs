@@ -169,6 +169,64 @@ try{
 
     assert.equal(errors.length,0,"Unexpected H1.1 browser errors: "+JSON.stringify(errors));
     console.log("PASS H1.1 "+prefix+"px dark/light/auto Settings and embedded Calendar: "+JSON.stringify(light));
+    // H4 is a review-only source projection; test it on the genuine app,
+    // not the supplied prototype harness. The production H3 remains default.
+    const h4=await context.newPage(),h4Errors=[];
+    h4.on("pageerror",error=>h4Errors.push(String(error?.message??error)));
+    await h4.goto("http://127.0.0.1:4381/index.html?aoTodayH4=1",{waitUntil:"domcontentloaded",timeout:90000});
+    await h4.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:30000});
+    await h4.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed),null,{timeout:30000});
+    const auditH4=async label=>{
+      const r=await h4.evaluate(()=>{
+        const home=document.querySelector(".homeScreen.aoTodayH4");
+        const hero=home?.querySelector(".aoH4Door");
+        const art=hero?.querySelector("[data-ao-home-art-slot] img");
+        const button=home?.querySelector("[data-home-h4-begin], [data-resume-mass]");
+        const date=home?.querySelector(".aoH4DateOpen");
+        return {
+          width:innerWidth,documentWidth:document.documentElement.scrollWidth,
+          date:date?.textContent?.trim()??"",
+          week:home?.querySelectorAll(".aoH4Week .dayCell").length,
+          selected:home?.querySelectorAll(".aoH4Week .dayCell.selected").length,
+          massCards:home?.querySelectorAll(".aoH4Door").length,
+          beginOrResume:home?.querySelectorAll("[data-home-h4-begin], [data-resume-mass]").length,
+          change:home?.querySelectorAll("[data-home-h4-change]").length,
+          reading:home?.querySelectorAll("[data-home-h4-readings]").length,
+          prayer:home?.querySelectorAll(".aoH4Prayer").length,
+          rosary:home?.querySelectorAll(".aoH4Chips button").length,
+          events:home?.querySelectorAll(".aoH4Upcoming .aoTodayV2Event").length,
+          read:home?.querySelectorAll(".aoH4Read button").length,
+          hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
+          oldExplore:home?.querySelectorAll(".aoTodayExploreFoot").length,
+          artwork:!!art,buttonVisible:!!button&&getComputedStyle(button).display!=="none",
+        };
+      });
+      assert.ok(r.documentWidth<=r.width+2,label+" H4 document overflow: "+JSON.stringify(r));
+      assert.ok(r.date.length>=10,label+" H4 date not visible");
+      assert.deepEqual([r.week,r.selected,r.massCards,r.beginOrResume,r.change,r.reading,r.prayer,r.rosary,r.read,r.hiddenOldTabs,r.oldExplore],
+        [7,1,1,1,1,1,1,3,2,0,0],label+" H4 layout contract");
+      assert.ok(r.events<=2,label+" H4 upcoming copied unsourced dates");
+      assert.equal(r.buttonVisible,true,label+" Mass door hidden");
+      return r;
+    };
+    await h4.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.setPath?.("appearance.mode","dark"));
+    await h4.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="dark",null,{timeout:10000});
+    await auditH4(prefix+" H4 dark");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-door-dark.png"),fullPage:true});
+    await h4.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.setPath?.("appearance.mode","light"));
+    await h4.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light",null,{timeout:10000});
+    await auditH4(prefix+" H4 light");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-door-light.png"),fullPage:true});
+    await h4.locator("[data-home-h4-readings]").click();
+    await h4.waitForSelector(".aoMassTextsOverlay",{state:"visible",timeout:10000});
+    await h4.locator("[data-mass-texts-close]").click();
+    await h4.locator(".aoH4DateOpen").click();
+    await h4.waitForSelector(".aoTodayH4[data-ao-home-calendar-view='picker'] #ao-calendar-modular-root",{state:"attached",timeout:25000});
+    await h4.screenshot({path:resolve(output,prefix+"-h4-calendar-light.png")});
+    await h4.locator(".aoH4CalendarBack [data-home-calendar-today]").click();
+    await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",{state:"visible",timeout:10000});
+    assert.equal(h4Errors.length,0,prefix+" H4 page errors: "+JSON.stringify(h4Errors));
+    await h4.close();
     await context.close();
   }
 }finally{
