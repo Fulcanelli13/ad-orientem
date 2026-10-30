@@ -119,7 +119,7 @@ async function callPageIDs(chunk,batchNumber){
      ...(copyright==="True"?["COPYRIGHTED_FLAG_TRUE_REVIEW"]:[])
     ];
     result.set(original.sourceId,{...base,status,
-     evidence:{pageIdExact,originalSourceFilenameMatchesCurrentTitle:sourceTitleExact,
+     evidence:{pageIdExact:pageIDExact,originalSourceFilenameMatchesCurrentTitle:sourceTitleExact,
       originalFileTitleFromUrl:urlTitle,currentCommonsFileTitle:page.title,
       originalSourceUrlResolvesToCurrentSamePageNotTested:true,
       licenseLabel:license,copyrightFlag:copyright||null},
@@ -129,7 +129,7 @@ async function callPageIDs(chunk,batchNumber){
      imageRightsCertified:false,canonical383LinkNew:false,productionMutation:false});
    }
    return;
-  }catch(e){lastError=String(e).slice(0,190);await sleep(1000*attempt);}
+  }catch(e){if(e instanceof ReferenceError)throw e;lastError=String(e).slice(0,190);await sleep(1000*attempt);}
  }
  requestAudit.push({batch:batchNumber,requested:ids.length,status:"QUERY_FAILED",error:lastError});
  for(const original of chunk){
