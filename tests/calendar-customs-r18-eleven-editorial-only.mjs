@@ -22,7 +22,7 @@ const expectedVisible=canonical.includes("PENT-001")?10:11;
 assert.equal(visibleItems.length,expectedVisible,"Only unpublished records remain in review");
 const completeCorpus=calendarR18ElevenEditorialReviewRecords({includePromoted:true});
 assert.equal(completeCorpus.length,11,"Keep eleven source records available for audit even after promotion");
-const simulatedIds=[...canonical,"PENT-001"];
+const simulatedIds=[...new Set([...canonical,"PENT-001"])];
 const afterPromotion=calendarR18ElevenEditorialReviewRecords({publishedIds:simulatedIds});
 assert.equal(afterPromotion.length,10,"Publication must suppress only R18-14 in unpublished review");
 assert.ok(!afterPromotion.some(x=>x.review_key==="CUSTOMS-R18-14"));
