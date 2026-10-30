@@ -51,9 +51,19 @@ function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){
 function count(){const n=data.filter(x=>review(x)==="VISUAL_APPROVED").length;el("stats").textContent=n+" approved · "+(data.length-n)+" in research · "+errors.size+" preview errors"}
 function setChoice(x,state){if(state==="VISUAL_APPROVED"&&!ok.has(pair(x))){alert("Image has not loaded. Keep it in research and review the source.");return}
 saved[pair(x)]={...saved[pair(x)],decision:state,chosenAt:new Date().toISOString(),imageShown:ok.has(pair(x))};
-persist();render()}
+persist();
+ const article=[...document.querySelectorAll(".card")].find(node=>node.dataset.key===pair(x));
+ if(article){
+  article.classList.toggle("approved",state==="VISUAL_APPROVED");
+  const buttons=article.querySelectorAll(".actions button");
+  if(buttons[0]){buttons[0].classList.toggle("picked",state==="VISUAL_APPROVED");buttons[0].setAttribute("aria-pressed",String(state==="VISUAL_APPROVED"))}
+  const note=article.querySelector(".note");
+  if(note)note.textContent=state==="VISUAL_APPROVED"?"Visual choice saved. Final photograph rights & quality clearance still required.":"Unselected candidates remain in the research queue, not rejected.";
+ }
+ count();
+}
 function card(x){
- const article=make("article","card"+(review(x)==="VISUAL_APPROVED"?" approved":""));
+ const article=make("article","card"+(review(x)==="VISUAL_APPROVED"?" approved":""));article.dataset.key=pair(x);
  const picture=make("div","image"),image=make("img");
  image.alt="Artwork preview: "+x.title;image.loading="lazy";image.referrerPolicy="no-referrer";
  const broken=make("p","broken","Image unavailable. Leave this candidate in research until the actual photograph is visible.");
