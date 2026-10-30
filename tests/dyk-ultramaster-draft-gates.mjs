@@ -111,4 +111,58 @@ for(const x of routes.unresolved_mass){
 }
 assert.equal(triage.counts.published,0);
 assert.equal(legacy.reconciliation_phase.publication_count,0);
+
+const customsScreen=load("dyk-customs-130-source-editorial-screen.v1.json");
+const pitreStories=load("dyk-pitre-12-festival-stories.v1.json");
+const historical=facts.filter(x=>["WEISER_1958","PITRE_1900"].includes(x.source_family));
+assert.equal(historical.length,130);
+assert.equal(customsScreen.records.length,130);
+assert.equal(customsScreen.counts.weiser,70);
+assert.equal(customsScreen.counts.pitre,60);
+assert.equal(customsScreen.counts.source_page_narrow_action_or_original_page_checked,116);
+assert.equal(customsScreen.counts.source_pages_still_needing_specific_individual_weiser_link,14);
+assert.deepEqual(customsScreen.counts.decision_groups,{
+ PRIORITY_FACT_EDITORIAL_REVIEW:27,
+ REWRITE_OR_SOURCE_SPECIFICITY_HOLD:8,
+ SECONDARY_CULTURAL_CONTEXT_REVIEW:28,
+ FESTIVAL_STORY_CLUSTER_REVIEW:59,
+ DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY:8,
+});
+const caseIds=new Set(customsScreen.records.map(x=>x.draft_id));
+assert.equal(caseIds.size,130);
+for(const f of historical)assert.ok(caseIds.has(f.id),f.id+" lacks editorial source review");
+assert.equal(customsScreen.records.filter(x=>x.source_family==="PITRE_1900").length,60);
+assert.equal(customsScreen.records.filter(x=>x.evidence_stage==="ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED").length,60);
+assert.equal(customsScreen.records.filter(x=>x.evidence_stage==="ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD").length,14);
+assert.equal(pitreStories.candidates.length,12);
+assert.equal(pitreStories.counts.net_addition_to_active_fact_pool,0);
+assert.equal(pitreStories.counts.approved,0);
+assert.equal(pitreStories.counts.published,0);
+const priorById=new Map(historical.map(x=>[x.id,x]));
+let storyReferences=0;
+for(const story of pitreStories.candidates){
+ assert.equal(story.publish,false);
+ assert.equal(story.source_fact_ids.length,story.source_provenance.length);
+ assert.equal(story.independent_historical_witnesses_certified,0);
+ assert.ok(story.statement.en&&story.statement.fr);
+ for(const item of story.source_provenance){
+  const prior=priorById.get(item.fact_id);
+  assert.ok(prior&&prior.source_family==="PITRE_1900",item.fact_id+" not retained");
+  assert.equal(item.original_1900_page_source_verified,true);
+  assert.ok(Number.isInteger(item.printed_1900_page));
+  assert.ok(item.italian_anchor);
+  storyReferences++;
+ }
+}
+assert.equal(storyReferences,27);
+for(const f of original.facts.filter(x=>x.source_family==="PITRE_1900")){
+ assert.equal(f.original_source.original_page_image_reviewed,true);
+ assert.ok(Number.isInteger(f.original_source.original_1900_printed_page));
+ assert.ok(f.original_source.italian_text_layer_anchor);
+}
+const narrowed=weiser.facts.find(x=>x.id==="DYK-UM02-006");
+assert.ok(narrowed&&!/reconcil/i.test(narrowed.text.en));
+assert.ok(/UNSUPPORTED_DETAIL_REMOVED/.test(customsScreen.records.find(x=>x.draft_id===narrowed.id).concerns.join(" ")));
+assert.equal(weiser.facts.filter(x=>x.source.original_page_checked_in_later_sweep===true).length,6);
+
 console.log("DYK: 145 active source-first drafts structurally valid; 9 deferred semantic overlaps; 10 glossary routes pending browser acceptance; 0 published.");
