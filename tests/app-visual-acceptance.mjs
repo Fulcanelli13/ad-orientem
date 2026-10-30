@@ -344,9 +344,9 @@ try{
   });
   console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
-  // M1 is a permanent Mass destination, not a dismissible overlay.
-  // Only the rollback sheet has a host Close button. Return by the visible
-  // Today tab without requiring the permanent Mass backdrop to disappear.
+  // M1 is a permanent Mass root, not a dismissible dialog. Leaving via the
+  // shell's Today tab is the supported action. The old close/hidden-backdrop
+  // assertion would erroneously fail a correct M1 implementation.
   const permanentMassRoot=await page.evaluate(()=>
     document.documentElement.dataset.aoM1MassRoot==="true");
   if(permanentMassRoot){

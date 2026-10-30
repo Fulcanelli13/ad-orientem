@@ -263,14 +263,21 @@ try{
      out.available=await container.count()===1&&
        await container.evaluate(el=>!el.hidden);
      if(!out.available)throw Error("NOV02_NATIVE_FORMULARY_UI_NOT_VISIBLE");
-     const tab=page.locator('[data-folio-goto="celebration"]').first();
-     if(await tab.isVisible())await tab.click();
+     // The live M1 presentation uses choice rows, not the hidden legacy
+     // wizard tabs. Go through the actual visible Mass/Reader controls while
+     // retaining all six source-to-reader readiness assertions below.
+     const m1=await page.locator('[data-m1-choice="mass"]').count()===1;
+     if(m1)await page.locator('[data-m1-choice="mass"]').click();
+     else await page.locator('[data-folio-goto="celebration"]').first().click();
      for(const massNumber of [1,2,3]){
        const input=container.locator('[data-ao-all-souls-mass][value="'+massNumber+'"]');
        await input.check();
-       const readerTab=page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]');
-       await readerTab.click();
        for(const mode of ["MISSAL","LIVE"]){
+         if(m1){
+           const back=page.locator('[data-folio-overview-button]');
+           if(await back.isVisible())await back.click();
+           await page.locator('[data-m1-choice="reader"]').click();
+         }else await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
          await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
          const output=await page.evaluate(async()=>{
            const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
@@ -282,11 +289,15 @@ try{
          });
          out.cases.push({massNumber,requestedMode:mode,...output});
        }
-       if(massNumber!==3)await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+       if(massNumber!==3){
+         if(m1)await page.locator('[data-m1-choice="mass"]').click();
+         else await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+       }
      }
      // Ritus XIV is a separate, explicitly observed SAME-PRIEST
      // circumstance; the choice of Mass II alone proves none of it.
-     await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+     if(m1)await page.locator('[data-m1-choice="mass"]').click();
+     else await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
      await container.locator('[data-ao-all-souls-mass][value="2"]').check();
      const successionDetails=container.locator("[data-ao-all-souls-succession-details]");
      if(await successionDetails.evaluate(el=>el.open))
@@ -363,6 +374,9 @@ try{
      rt.resolver.formularies.set(date,number-1);
      await rt.controller.home.resolve(date);
      globalThis.AO_CELEBRATION_API.openPreflight();
+     // Fresh Home-to-Mass entry resets only the presentation. The selected
+     // source Proper, form and R17 checkpoint remain untouched.
+     globalThis.AO_R17_BROWSER_ENTRY.resetPreflightView();
    },originalNumber);
    await page.waitForFunction(number=>{
      const st=globalThis.AO_RUNTIME_V8?.store?.getState?.();
@@ -376,6 +390,11 @@ try{
    const succession=page.locator("[data-ao-all-souls-succession-details]");
    if(await succession.evaluate(el=>el.open))
      throw Error("NOV02_HOME_PREFLIGHT_ADVANCED_CONTROLS_NOT_COLLAPSED");
+   // The source controls are under the current Mass chooser. They must
+   // be visible before asserting or editing the Ritus XIV circumstance.
+   const massChoice=page.locator('[data-m1-choice="mass"]');
+   if(await massChoice.isVisible())await massChoice.click();
+   else await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
    await succession.locator("summary").click();
    await page.locator('[data-ao-all-souls-succession="previous"]')
      .selectOption("IMMEDIATE");

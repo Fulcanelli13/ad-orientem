@@ -1160,6 +1160,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     get polls() { return state.polls; },
     prepare: () => state.controller?.prepare?.(),
     enter: () => state.controller?.enter?.(),
+    // Shell-only presentation reset: does not alter a Mass choice or R17.
+    resetPreflightView: () => state.fullMassPreflight?.resetView?.() ?? false,
     // Read-only Formation projection. The host keeps exclusive ownership of
     // selection and Proper resolution; no preparation or reader activation.
     selectedStudyProper: () => {
