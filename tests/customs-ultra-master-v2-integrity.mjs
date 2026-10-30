@@ -608,4 +608,51 @@ assert.equal(singleWorkingIndex.guard.merges_approved,0);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
+
+
+// Additional 300 rows route to source-backed regional contexts, not new canonical customs.
+const context300=singleWorkingIndex.bulk_identity_review_batches.find(x=>x.id==="REGIONAL-BESTA-BRETON-SANCH-HOUSEHOLD-300-20261030");
+assert.ok(context300);assert.equal(context300.n,300);
+assert.equal(context300.source_selection_ids.length,300);
+assert.deepEqual(context300.source_wave_counts,{"8":47,"9":196,"10":57});
+const beforeContext=new Set([...weiser250Batch.source_selection_ids,...regional250Batch.source_selection_ids,
+ ...household250Batch.source_selection_ids,...crossbook300.source_selection_ids,
+ ...hintsByID.keys(),...singleWorkingIndex.evidence_identity_routing.filter(x=>x.refs?.length).map(x=>x.s)]);
+assert.equal(beforeContext.size,1322);
+const contextGroups={},relations={};let ownerCount=0,vetoCount=0,holdCount=0;
+for(const sid of context300.source_selection_ids){
+ assert.ok(!beforeContext.has(sid),"Already reviewed "+sid);
+ const x=sourceIndexById.get(sid),source=originalScreensBySource.get(sid);
+ assert.ok(x&&source);assert.equal(x.a,expectedRoutingLabel(source));
+ const rev=x.regional_action300_review;
+ assert.equal(rev.batch_id,context300.id);assert.equal(rev.source_id,sid);assert.equal(rev.component,x.a);
+ assert.ok(rev.reason.length>65);assert.ok(rev.original_source_characterization);
+ contextGroups[rev.context_id]=(contextGroups[rev.context_id]||0)+1;
+ for(const f of ["original_folio_newly_checked","independent_witness_certified","current_practice_certified",
+ "ritual_1962_authority_certified","canonical_merge_approved","new_custom_approved",
+ "indulgence_certified","calendar_publish_allowed"])assert.equal(rev[f],false,"Unexpected promotion "+sid);
+ if(rev.proposed_owner_id){assert.ok(mids.has(rev.proposed_owner_id));assert.equal(rev.excluded_owner_id,null);
+  ownerCount++;relations[rev.description_relation]=(relations[rev.description_relation]||0)+1;
+ }else if(rev.excluded_owner_id){assert.ok(mids.has(rev.excluded_owner_id));assert.equal(rev.description_relation,"FALSE_OWNER_EQUIVALENCE_VETO");vetoCount++;
+ }else{assert.equal(rev.description_relation,"NO_DISTINCT_IDENTITY_OR_OWNER_ASSIGNED");holdCount++;}
+}
+assert.equal(ownerCount,context300.proposed_owner_edges);
+assert.equal(vetoCount,context300.explicit_false_owner_equivalence_vetoes);
+assert.equal(holdCount,context300.no_defensible_owner);
+assert.equal(ownerCount+vetoCount+holdCount,300);
+assert.deepEqual(relations,context300.description_relationship_counts);
+assert.deepEqual(contextGroups,Object.fromEntries(context300.contexts.map(x=>[x.id,x.n])));
+assert.equal(new Set([...beforeContext,...context300.source_selection_ids]).size,1622);
+assert.equal(singleWorkingIndex.counts.identity_description_review_coverage_including_regional_action,1622);
+assert.equal(singleWorkingIndex.counts.bulk_regional_action300_reviewed,300);
+assert.equal(singleWorkingIndex.counts.bulk_regional_action300_provisional_owner_links,ownerCount);
+assert.equal(singleWorkingIndex.counts.bulk_regional_action300_negative_owner_vetoes,vetoCount);
+assert.equal(sourceIndexById.get("FRPCI20-PARDON-012").regional_action300_review.proposed_owner_id,"DEV-010");
+assert.equal(sourceIndexById.get("FRSAN23-001").regional_action300_review.excluded_owner_id,"PATR-001");
+assert.equal(sourceIndexById.get("FRPCI18-BB-003").regional_action300_review.excluded_owner_id,"CORP-001");
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
