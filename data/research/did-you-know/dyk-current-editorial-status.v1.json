@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R22_V1",
   "date": "2026-10-30",
-  "current_status": "R24_47_OF_189_SOURCE_TEXT_CORRESPONDENCE_CHECKED_26_LEGACY_WEISER_FOLIO_CHECKED_0_FINAL_APPROVED",
+  "current_status": "R25_62_OF_189_SOURCE_TEXT_CHECKED_8_GLOSSARY_HOME_FIT_TRIAGED_ZERO_FINAL_APPROVED",
   "active_owners": {
     "complete_record_ledger": "dyk-r22-1001-current-master-index.v1.json",
     "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
@@ -13,7 +13,9 @@
     "r22_distinct_selection": "dyk-r22-49-restored-distinct-editorial-selection.v1.json",
     "added_bilingual_drafts": "dyk-r22-21-added-review-cards.v1.json",
     "r23_source_claim_fidelity_audit": "dyk-r23-21-source-fidelity-audit.v1.json",
-    "r24_legacy_weiser_original_folio_audit": "dyk-r24-26-weiser-facsimile-review.v1.json"
+    "r24_legacy_weiser_original_folio_audit": "dyk-r24-26-weiser-facsimile-review.v1.json",
+    "r25_15_roman_mass_direct_text_audit": "dyk-r25-15-roman-mass-direct-source-audit.v1.json",
+    "r25_8_glossary_home_fit_triage": "dyk-r25-eight-glossary-home-fit-triage.v1.json"
   },
   "overall": {
     "generated_candidate_records": 1001,
@@ -39,10 +41,19 @@
     "latest_bilingual_draft_corrections": 13,
     "original_168_source_folio_checked": 26,
     "original_168_remaining_source_folio_review": 142,
-    "overall_source_text_correspondence_checked": 47,
+    "overall_source_text_correspondence_checked": 62,
     "original_168_bilingual_statements_corrected_r24": 26,
     "r24_original_weiser_pages_reviewed": 18,
-    "total_bilingual_statements_corrected_in_r23_r24": 39
+    "total_bilingual_statements_corrected_in_r23_r24": 39,
+    "original_168_source_claims_checked": 41,
+    "original_168_remaining_source_review": 127,
+    "r25_1962_mass_source_claims_checked": 15,
+    "r25_1962_canon_claims_checked": 12,
+    "r25_1962_mass_gesture_claims_checked": 3,
+    "total_bilingual_statements_corrected_in_r23_r24_r25": 54,
+    "r25_glossary_home_fit_reviewed": 8,
+    "r25_glossary_preferred": 5,
+    "r25_glossary_rewrite_review_candidates": 3
   },
   "adjudication": {
     "reviewed": 74,
@@ -81,10 +92,13 @@
     "source_claim_review_of_14_new_historical_cards": "PENDING_RECHECK",
     "source_text_correspondence_for_21_new_cards": "COMPLETE_21_OF_21_AFTER_THIRTEEN_CORRECTIONS",
     "pitre_upstream_page_pointer": "PACHINO_PRINTED_464_CARD_FIXED_UPSTREAM_454_ERRATUM_PENDING",
-    "original_168_source_specific_review": "26_CHECKED_142_REMAIN",
+    "original_168_source_specific_review": "41_CHECKED_127_REMAIN",
     "bilingual_189_editorial_signoff": "0_APPROVED_189_PENDING",
     "existing_home_previews_semantic_novelty": "612_EXISTING_PREVIEW_ITEMS_NEED_FULL_COMPARISON",
-    "r24_folio_image_review": "WEISER_26_CARDS_18_DISTINCT_PRINTED_PAGES_COMPLETE"
+    "r24_folio_image_review": "WEISER_26_CARDS_18_DISTINCT_PRINTED_PAGES_COMPLETE",
+    "total_189_source_claim_review": "62_CHECKED_127_REMAIN",
+    "r25_8_glossary_home_fit": "8_EDITORIALLY_TRIAGED_5_PREFER_LEARN_3_HOME_REWRITE_CANDIDATES_NO_COMPOSITION_CHANGE",
+    "final_189_independent_english_french_signoff": "0_APPROVED_189_PENDING"
   },
   "notes": [
     "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
@@ -92,6 +106,7 @@
     "All original source observations remain intact; triage is not human signoff or proof of historical continuity.",
     "R22 restored-distinct work: 21 promoted to first-pass bilingual review, 28 retained as independent reserves. The 189 review is composed from the prior 168 plus 21 added cards, not new generated source records.",
     "R23 source-text review reconciled 21/21 latest cards to cited witnesses, with 13 corrected EN/FR descriptions; none have independent editorial French signoff, full Home novelty signoff or publication authorization.",
-    "R24 checked 26 original R21 bilingual shortlist descriptions against 18 original Weiser printed pages; all 26 received source-aligned EN/FR wording. Historical recertification, independent French signoff and actual Home publication remain pending."
+    "R24 checked 26 original R21 bilingual shortlist descriptions against 18 original Weiser printed pages; all 26 received source-aligned EN/FR wording. Historical recertification, independent French signoff and actual Home publication remain pending.",
+    "R25 15 original 1962 Mass claims were checked against ICRSP Latin/French Ordo text, and all 15 EN/FR claim presentations refined with exact action metadata. Eight separate glossary cards were triaged as Home-fit proposals; five prefer Learn and three might yield new standalone discoveries after novelty/approval. Original records and the 189-shortlist composition remain unchanged."
   ]
 }
