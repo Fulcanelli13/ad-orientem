@@ -1,0 +1,615 @@
+{
+  "schema": "AO_PRAYER_Q2_PLACEMENT_DECISIONS_V1",
+  "source_branch": "archive/sacred-art-master-20261030-v2",
+  "source_csv_sha": "50a32c3c1ad7a8e979ebe6a55f15acc51c985dba",
+  "blueprint_sha": "db97b5cdffecd369e405ae4ccea1a9580a64942e06f949654589268cbbee73d7",
+  "batch": 1,
+  "count": 50,
+  "reviewed": 50,
+  "decisions": [
+    {
+      "id": "PRAYER::visit--murillo-magi",
+      "title": "Adoration of the Magi",
+      "artist": "Bartolomé Esteban Murillo",
+      "order": 1,
+      "status": "accepted",
+      "placements": [
+        "HERO-03"
+      ],
+      "alternative": "yes fits in visit to the blessed sacrament"
+    },
+    {
+      "id": "PRAYER::saints--vaneyck",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "order": 2,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.benediction-04"
+      ],
+      "alternative": "fits as well in visit to the blessed sacrament"
+    },
+    {
+      "id": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+      "title": "Archangel Michael Defeating Satan",
+      "artist": "Guido Reni",
+      "order": 3,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.litany_saints-01",
+        "COV-novena.st_michael",
+        "COV-devotion_prayer_st_michael",
+        "COV-mass_devotion_leonine",
+        "DOOR-D8"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::w1-kazimirowski",
+      "title": "Divine Mercy (the original, 1934)",
+      "artist": "Eugeniusz Kazimirowski",
+      "order": 4,
+      "status": "accepted",
+      "placements": [],
+      "alternative": "fits only in divine mercy chapelet and sacred side in five wounds"
+    },
+    {
+      "id": "PRAYER::rosary--caravaggio",
+      "title": "Madonna of the Rosary",
+      "artist": "Caravaggio",
+      "order": 5,
+      "status": "accepted",
+      "placements": [
+        "COV-pray.rosary",
+        "COV-pray.rosary_methods",
+        "DOOR-D3"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+      "title": "Miracle of Loaves and Fishes",
+      "artist": "Giovanni Lanfranco",
+      "order": 6,
+      "status": "accepted",
+      "placements": [],
+      "alternative": "fits only for blessing before and after meals"
+    },
+    {
+      "id": "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+      "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+      "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+      "order": 7,
+      "status": "accepted",
+      "placements": [
+        "COV-novena.perpetual_help"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-ean-estout-entecost",
+      "title": "Pentecost",
+      "artist": "Jean Restout",
+      "order": 8,
+      "status": "accepted",
+      "placements": [
+        "STG-novena.holy_ghost-01",
+        "STG-pray.rosary-14",
+        "COV-novena.holy_ghost",
+        "COV-sacrament_come_holy_spirit",
+        "COV-traditional_veni_sancte_sequence",
+        "HERO-14"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+      "title": "Resurrection of Christ",
+      "artist": "Peter Paul Rubens",
+      "order": 9,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-12",
+        "STG-pray.angelus_regina-02",
+        "STG-pray.angelus_regina-04",
+        "STG-pray.angelus-09",
+        "COV-foundations_apostles_creed"
+      ],
+      "alternative": "regina caoeli only (i.e. replaces angelus cover during easter season) and resurrection in glorious mystery during rosary"
+    },
+    {
+      "id": "PRAYER::regina--primary",
+      "title": "Resurrection of Christ",
+      "artist": "Peter Paul Rubens",
+      "order": 10,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-12",
+        "STG-pray.angelus_regina-02"
+      ],
+      "alternative": "regina caoeli only (i.e. replaces angelus cover during easter season) and resurrection in glorious mystery during rosary"
+    },
+    {
+      "id": "CANONICAL::W07-007",
+      "title": "Saint Jerome Writing (Borghese original)",
+      "artist": "Caravaggio",
+      "order": 11,
+      "status": "accepted",
+      "placements": [],
+      "alternative": "only concerns scripture reading"
+    },
+    {
+      "id": "PRAYER::king--primary",
+      "title": "Salvator Mundi",
+      "artist": "Ambrosius Benson",
+      "order": 12,
+      "status": "accepted",
+      "placements": [
+        "COV-novena.christ_the_king",
+        "COV-devotion_consecration_christ_king",
+        "HERO-22"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::king--previtali",
+      "title": "Salvator Mundi",
+      "artist": "Andrea Previtali",
+      "order": 13,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.montfort_consecration-04",
+        "COV-novena.christ_the_king",
+        "COV-devotion_consecration_christ_king"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "order": 14,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-02",
+        "STG-pray.angelus-05",
+        "STG-pray.angelus-06"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "order": 15,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-02",
+        "STG-pray.angelus-05",
+        "STG-pray.angelus-06"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "order": 16,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-02",
+        "STG-novena.christmas-01",
+        "STG-pray.angelus-05",
+        "STG-pray.angelus-06"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::angelus--murillo-annunciation",
+      "title": "The Annunciation (Prado)",
+      "artist": "Bartolomé Esteban Murillo",
+      "order": 17,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-02",
+        "STG-novena.christmas-01",
+        "STG-pray.angelus-05",
+        "STG-pray.angelus-06"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "order": 18,
+      "status": "accepted",
+      "placements": [
+        "STG-novena.christmas-01",
+        "STG-pray.st_joseph_seven_sorrows-01",
+        "STG-pray.st_joseph_seven_sorrows-08",
+        "COV-novena.st_joseph",
+        "COV-pray.st_joseph_seven_sorrows"
+      ],
+      "alternative": "also fits for prayer for good death"
+    },
+    {
+      "id": "PRAYER::joseph--primary",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "order": 19,
+      "status": "accepted",
+      "placements": [
+        "STG-novena.christmas-01",
+        "STG-pray.st_joseph_seven_sorrows-01",
+        "STG-pray.st_joseph_seven_sorrows-08",
+        "COV-novena.st_joseph",
+        "COV-pray.st_joseph_seven_sorrows"
+      ],
+      "alternative": "also fits for prayer for good death"
+    },
+    {
+      "id": "CANONICAL::ART-ietro-da-ortona-he-uardian-ngel",
+      "title": "The Guardian Angel",
+      "artist": "Pietro da Cortona",
+      "order": 20,
+      "status": "accepted",
+      "placements": [
+        "COV-foundations_guardian_angel",
+        "DOOR-D8"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::angel--franceschini",
+      "title": "The Guardian Angel",
+      "artist": "Marcantonio Franceschini",
+      "order": 21,
+      "status": "accepted",
+      "placements": [
+        "COV-foundations_guardian_angel",
+        "DOOR-D8"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::angel--strozzi",
+      "title": "The Guardian Angel",
+      "artist": "Bernardo Strozzi",
+      "order": 22,
+      "status": "accepted",
+      "placements": [
+        "COV-foundations_guardian_angel",
+        "DOOR-D8"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "order": 23,
+      "status": "accepted",
+      "placements": [
+        "STG-prayer.sacred_heart-01",
+        "STG-pray.adoration.night-03",
+        "STG-programme.first_friday-01",
+        "COV-novena.sacred_heart"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::heart-jesus--primary",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "order": 24,
+      "status": "accepted",
+      "placements": [
+        "COV-prayer.sacred_heart",
+        "STG-prayer.sacred_heart-01"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::B02-HEART-MARY-MORLETE",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "order": 25,
+      "status": "accepted",
+      "placements": [
+        "COV-pray.first_saturdays",
+        "STG-programme.first_saturday-01",
+        "COV-novena.immaculate_heart",
+        "COV-programme.first_saturday",
+        "COV-marian_consecration_immaculate_heart"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::heart-mary--primary",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "order": 26,
+      "status": "accepted",
+      "placements": [
+        "COV-pray.first_saturdays",
+        "STG-programme.first_saturday-01",
+        "COV-novena.immaculate_heart",
+        "COV-programme.first_saturday",
+        "COV-marian_consecration_immaculate_heart"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::regina--jan-janssens",
+      "title": "The Resurrection",
+      "artist": "Jan Janssens",
+      "order": 27,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-12",
+        "STG-pray.angelus_regina-02",
+        "STG-pray.angelus_regina-04",
+        "STG-pray.angelus-09",
+        "COV-foundations_apostles_creed"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "PRAYER::regina--murillo-resurrection",
+      "title": "The Resurrection of Christ",
+      "artist": "Bartolomé Esteban Murillo",
+      "order": 28,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-12",
+        "STG-pray.angelus_regina-02",
+        "STG-pray.angelus_regina-04",
+        "STG-pray.angelus-09",
+        "COV-foundations_apostles_creed"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "order": 29,
+      "status": "accepted",
+      "placements": [
+        "COV-pray.adoration",
+        "DOOR-D5"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::cma-143784",
+      "title": "Adoration of the Shepherds",
+      "artist": "Carlo Dolci",
+      "order": 30,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-04",
+        "STG-pray.st_joseph_seven_sorrows-02",
+        "STG-novena.christmas-01",
+        "STG-pray.angelus-07",
+        "STG-pray.little_crown-01"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::met-442488",
+      "title": "The Agony in the Garden",
+      "artist": "Nicolas Poussin",
+      "order": 31,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.precious_blood-02",
+        "STG-pray.rosary-07",
+        "STG-pray.tenebrae-01",
+        "COV-pray.tenebrae",
+        "HERO-06"
+      ],
+      "alternative": "could fit in five wounds"
+    },
+    {
+      "id": "CANONICAL::cma-148758",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "order": 32,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "title": "Adoration of the Magi",
+      "artist": "Peter Paul Rubens",
+      "order": 33,
+      "status": "accepted",
+      "placements": [
+        "HERO-03"
+      ],
+      "alternative": "fits in visit to the blessed sacrament and to the nativity in the rosary"
+    },
+    {
+      "id": "CANONICAL::cma-143644",
+      "title": "Adoration of the Shepherds",
+      "artist": "Bernardo Cavallino",
+      "order": 34,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-04",
+        "STG-pray.st_joseph_seven_sorrows-02",
+        "STG-novena.christmas-01",
+        "STG-pray.angelus-07",
+        "STG-pray.little_crown-01"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "artist": "David Teniers the Elder",
+      "order": 35,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.precious_blood-02",
+        "STG-pray.rosary-07",
+        "STG-pray.tenebrae-01",
+        "HERO-06"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829",
+      "title": "Andrey Ivanov, St. Ambrose Barring Theodosius from Milan Cathedral, 1829, Tretyakov Gallery Ж-560.jpg",
+      "artist": "Andrey Ivanov",
+      "order": 36,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+      "title": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+      "artist": "follower of Anthony van Dyck",
+      "order": 37,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::W14-016",
+      "title": "Apostle Judas Thaddeus (Böhler series)",
+      "artist": "Anthony van Dyck",
+      "order": 38,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::W38-006",
+      "title": "Apostle Philip",
+      "artist": "Anthony van Dyck",
+      "order": 39,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "title": "Ascension — Antwerp Rosary cycle",
+      "artist": "Artus Wolffort",
+      "order": 40,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-13"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::met-436672",
+      "title": "Christ among the Doctors",
+      "artist": "Abraham Hondius",
+      "order": 41,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.rosary-06",
+        "STG-pray.st_joseph_seven_sorrows-07",
+        "STG-prayer.seven_sorrows_chaplet-03"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+      "title": "Christ Carrying the Cross",
+      "artist": "Titian",
+      "order": 42,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.precious_blood-05"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::prado-ribalta-p002804",
+      "title": "Christ embracing Saint Bernard",
+      "artist": "Francisco Ribalta",
+      "order": 43,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "order": 44,
+      "status": "accepted",
+      "placements": [
+        "STG-litany_loreto_1962-04",
+        "STG-pray.adoration.four_ends-04"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+      "title": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+      "artist": "Claude Vignon",
+      "order": 45,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "title": "Conversion of Saint Paul",
+      "artist": "Bartolomé Esteban Murillo",
+      "order": 46,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "title": "Daniel in the Lions’ Den",
+      "artist": "Peter Paul Rubens",
+      "order": 47,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-aravaggio-avid-with-the-ead-of-oliath",
+      "title": "David with the Head of Goliath",
+      "artist": "Caravaggio",
+      "order": 48,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "title": "Descent from the Cross — Prado Passion series",
+      "artist": "Giandomenico Tiepolo",
+      "order": 49,
+      "status": "accepted",
+      "placements": [
+        "STG-pray.five_wounds-01",
+        "STG-pray.stations-13",
+        "STG-prayer.seven_sorrows_chaplet-06"
+      ],
+      "alternative": ""
+    },
+    {
+      "id": "CANONICAL::C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+      "title": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+      "artist": "Attribution not recorded",
+      "order": 50,
+      "status": "not_relevant",
+      "placements": [],
+      "alternative": ""
+    }
+  ]
+}
