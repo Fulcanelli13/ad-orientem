@@ -639,9 +639,9 @@ const SHELL_STYLE = `
  text-align:left;color:var(--ao-mass-accent-text);background:rgba(225,207,145,.08);
  border:1px solid rgba(225,207,145,.26);border-radius:8px;font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-score-open[hidden],.ao-kyriale-score-overlay[hidden]{display:none!important}
-.ao-kyriale-score-overlay{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;
+.ao-kyriale-score-overlay{box-sizing:border-box;position:fixed;inset:0;z-index:100000;display:grid;place-items:center;
  padding:8px;background:rgba(5,10,13,.94);color:#edf0e9}
-.ao-kyriale-score-sheet{display:flex;flex-direction:column;gap:9px;width:min(900px,100%);
+.ao-kyriale-score-sheet{box-sizing:border-box;display:flex;flex-direction:column;gap:9px;width:min(900px,100%);
  height:min(95dvh,920px);min-width:0;min-height:0;padding:clamp(9px,2vw,20px);overflow:hidden;
  background:#152018;border:1px solid rgba(225,207,145,.36);border-radius:12px}
 .ao-kyriale-score-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
