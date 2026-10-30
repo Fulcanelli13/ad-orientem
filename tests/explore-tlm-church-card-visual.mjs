@@ -69,17 +69,18 @@ try{
    await page.locator(".aoTlmVenueCard").first().waitFor({state:"visible",timeout:20000});
    const search=page.locator("#ao-find-modular-root [data-find-query]");
    await search.fill("Cantius");
-   const cards=page.locator(".aoTlmVenueCard");
-   // Search repaints asynchronously: an already visible card belongs to the
-   // previous result set until the new query has been applied.
+   // An institute-affiliation search may return other churches served by
+   // the Canons (e.g. Sacred Heart, Springfield). The approved visual reference
+   // is the physical St John Cantius Church in Chicago, source V19:SJC-001.
+   // Select its stable R49 identity, not the first affiliation match.
+   const exact=page.locator('.aoTlmVenueCard[data-explore-item="tlm:r49:V19:SJC-001"]');
    try{
     await page.waitForFunction(()=>{
      const root=document.querySelector("#ao-find-modular-root");
-     const input=root?.querySelector("[data-find-query]");
-     const first=root?.querySelector(".aoTlmVenueCard");
-     return input?.value==="Cantius"&&first&&/Cantius/i.test(first.textContent||"");
+     return root?.querySelector("[data-find-query]")?.value==="Cantius"&&
+      !!root?.querySelector('.aoTlmVenueCard[data-explore-item="tlm:r49:V19:SJC-001"]');
     },null,{timeout:15000});
-    await cards.first().waitFor({state:"visible"});
+    await exact.waitFor({state:"visible"});
    }
    catch(error){
     console.error("Church search diagnostic:",await page.evaluate(()=>({
@@ -91,18 +92,18 @@ try{
     })));
     throw error;
    }
-   const title=await cards.first().innerText();
-   assert.match(title,/Cantius/i,"Search must find an existing St John Cantius listing");
-   await cards.first().click();
+   const title=await exact.innerText();
+   assert.match(title,/St\\.? John Cantius Church/i,"Search must find the exact Chicago church, not an affiliated venue");
+   await exact.click();
    const preview=page.locator(".aoExploreQuickPreview");
    await preview.waitFor({state:"visible",timeout:12000});
    assert.equal(await preview.locator('[data-explore-expand-detail]').count(),1);
-   assert.match(await preview.innerText(),/Canons of St John Cantius|Cantius/i);
+   assert.match(await preview.innerText(),/St\\.? John Cantius Church/i);
    await captures("01-preview");
    await preview.locator('[data-explore-expand-detail]').click();
    const expanded=page.locator(".aoTlmChurchProfile");
    await expanded.waitFor({state:"visible",timeout:12000});
-   assert.match(await expanded.locator("h2").innerText(),/Cantius/i);
+   assert.match(await expanded.locator("h2").innerText(),/St\\.? John Cantius Church/i);
    assert.equal(await expanded.locator(".aoTlmProfileSpotlight").count(),1);
    assert.equal(await expanded.locator(".aoTlmProfileAffiliation").count(),1);
    assert.equal(await expanded.locator(".aoTlmProfileSourceDisclosure").count(),1);
