@@ -3003,8 +3003,14 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     if(scene){
      let banner=scene.querySelector('.aoFolioIncarnationCue');
      if(active&&action&&!banner){
-      scene.querySelector('.aoDevoCardHead')?.insertAdjacentHTML('beforeend',
-       `<div class="aoFolioIncarnationCue" role="status">${assetIcon(action.iconAssetId,'aoFolioIncarnationIcon')}<span>${esc(action.label)}</span></div>`);
+      // F04 places the gesture next to its actual source-owned Et Verbum
+      // verse; the rollback reader retains the original header treatment.
+      const f04=Boolean(scene.closest('[data-ao-f04-timeline="segments"]'));
+      const cue=f04?scene.querySelector('.aoDevoCardScroll [data-ao-devo-cue="profound-bow"]'):null;
+      const anchor=cue||scene.querySelector('.aoDevoCardHead');
+      anchor?.insertAdjacentHTML(f04?'afterbegin':'beforeend',f04
+       ?`<span class="aoFolioIncarnationCue aoF04InlineBow" role="status">${assetIcon(action.iconAssetId,'aoFolioIncarnationIcon')}<span>${esc(action.label)}</span></span>`
+       :`<div class="aoFolioIncarnationCue" role="status">${assetIcon(action.iconAssetId,'aoFolioIncarnationIcon')}<span>${esc(action.label)}</span></div>`);
       banner=scene.querySelector('.aoFolioIncarnationCue');
      }
      scene.classList.toggle('aoFolioIncarnationActive',active&&!!action);
