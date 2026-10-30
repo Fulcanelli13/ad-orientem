@@ -62,14 +62,41 @@ assert.equal(nativeResume?.sectionId,"AO.CARD.005");
 
 const vm=buildHomeViewModel(base,{AO_DISPLAY_DATE:()=> "07/10/2026"});
 assert.equal(vm.celebration,"Holy Rosary");
+assert.equal(vm.observedTitle,"Our Lady of the Rosary","1962 observance and Mass formulary must have distinct roles");
+assert.equal(vm.massFormularyName,"Holy Rosary","Actual selected Mass must be named from the resolved Proper");
+assert.equal(vm.massIntroit,"Gaudeamus","Latin Introit incipit must be derived from the Proper");
+assert.equal(vm.resolvedForSelection,true);
+assert.equal(vm.rank,"Rank · 2","Day rank must come from 1962 observed-day authority");
 assert.equal(vm.dateLong,"07/10/2026");
 assert.equal(vm.formularyLabel,"Formulary 2/2");
 assert.equal(vm.commemorationLabel,"Commemorations · St Mark");
 assert.equal(vm.gospelReference,"Luke 1:26");
 
+const feriaState={...base,resolution:{...base.resolution,
+ day:{...base.resolution.day,main:{title:"Feria",rank:"IV class",color:"Green"}},
+ proper:{status:"ready",data:{...proper,name:"Mass of the preceding Sunday",rank:"II class",
+   introit:{lat:"Si iniquitátes observáveris, Dómine"}}}}};
+const feriaVm=buildHomeViewModel(feriaState);
+assert.equal(feriaVm.observedTitle,"Feria");
+assert.equal(feriaVm.massFormularyName,"Mass of the preceding Sunday");
+assert.equal(feriaVm.rank,"Rank · IV class","A Sunday Proper must not overwrite the feria rank");
+assert.equal(feriaVm.massIntroit,"Si iniquitátes observáveris, Dómine");
+const feriaHtml=renderHomeToString(feriaState,{});
+assert.match(feriaHtml,/<h1 class="aoEditorialTitle">Feria<\/h1>/);
+assert.match(feriaHtml,/Mass of the preceding Sunday/);
+assert.doesNotMatch(feriaHtml,/<h1 class="aoEditorialTitle">Mass of the preceding Sunday<\/h1>/,
+  "H2 must not confuse the selected Proper with the observed feria");
 const en=renderHomeToString(base,r17Win);
 assert.match(en,new RegExp(`data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}"`));
 assert.match(en,/Holy Rosary/);
+assert.match(en,/<div class="aoTodayV2DayIdentity">/,"H2 observance must be independent of artwork");
+assert.match(en,/<h1 class="aoEditorialTitle">Our Lady of the Rosary<\/h1>/,"The observed day must headline the card");
+assert.match(en,/class="aoTodayV2ActualFormulary"/,"Missing actual Proper summary");
+assert.match(en,/class="aoTodayV2Introit"/,"Latin Introit incipit not displayed");
+assert.match(en,/<em lang="la">Gaudeamus<\/em>/);
+assert.doesNotMatch(en,/<div class="aoTodayV2ArtOverlay">/,"Art should be independent of the observance title");
+assert.equal((en.match(/class="aoWeekColour"/g)||[]).length,7,"Week rail must show a sourced/unknown colour for each day");
+assert.equal((en.match(/class="dayCell[^"]*aoVerifiedDay/g)||[]).length,1,"Only the resolved selected day may claim its colour");
 assert.match(en,/Mass in progress/);
 assert.match(en,/data-ao-resume-owner="R17_NATIVE"/,"Home Resume is not owned by native R17 persistence");
 assert.match(en,/07\/10\/2026 · 5/,"Home Resume lost native checkpoint date/position");
@@ -81,6 +108,9 @@ assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on
 assert.match(en,/Gospel of the Mass/);
 assert.match(en,/aoTodayV2Frontispiece/);
 assert.match(en,/aoTodayV2PrayNow/);
+assert.match(en,/data-home-prayer-jump/,"Today needs a direct prayer-section shortcut");
+assert.ok(en.indexOf('class="aoTodayV2Zone aoTodayV2PrayNow"')<en.indexOf('class="aoTodayV2CalendarGlance"'),"Prayer section must precede Calendar context");
+assert.match(en,/data-date=/,"Seven-day date rail must use canonical selected-date keys");
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
 assert.doesNotMatch(en,/class="aoTodayV2Approaching"|class="aoTodayV2Context"/,"Retired duplicated calendar panels must not render");
@@ -103,9 +133,12 @@ assert.doesNotMatch(en,/next migration stage/i,"Home still exposes migration-era
 
 const fr=renderHomeToString({...base,language:"fr"},r17Win);
 assert.match(fr,/Saint Rosaire/);
+assert.match(fr,/<h1 class="aoEditorialTitle">Our Lady of the Rosary<\/h1>/);
+assert.match(fr,/MESSE DU JOUR/,"French Mass formulary identity missing");
+assert.match(fr,/<em lang="la">Gaudeamus<\/em>/);
 assert.match(fr,/Autour de la Messe/);
 assert.match(fr,/Évangile de la messe/);
-assert.match(fr,/Prier maintenant/);
+assert.match(fr,/Prier au fil du jour/);
 assert.match(fr,/Lire et méditer/);
 assert.match(fr,/Aperçu du calendrier/,"French Calendar at a glance card must be rendered");
 assert.match(fr,/Vie et sources|À propos de cette célébration|Jour du calendrier et sources/);
@@ -161,6 +194,9 @@ const failed=renderHomeToString({
   resolution:{status:"failed",proper:{status:"idle"}},
 },{AO_DISPLAY_DATE:()=> "07/10/2026"});
 assert.match(failed,/Calendar unavailable/);
+assert.doesNotMatch(failed,/class="aoTodayV2ActualFormulary"/,"Failed Calendar must not expose stale Mass formulary");
+assert.doesNotMatch(failed,/class="aoTodayV2Introit"/,"Failed Calendar must not expose stale Mass Introit");
+assert.equal((failed.match(/class="dayCell[^"]*aoVerifiedDay/g)||[]).length,0,"Failed Calendar must not invent a daily colour");
 assert.doesNotMatch(failed,/Mass in progress/);
 
 console.log("PASS modular Home base presentation");

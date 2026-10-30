@@ -112,6 +112,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         select(L("Text size","Taille du texte"),"","accessibility.textScale",[["system","Use device setting","Réglage de l’appareil"],["small","Small","Petite"],["standard","Normal","Normale"],["large","Large","Grande"],["extra_large","Extra large","Très grande"]])+
         select(L("Animations","Animations"),"","accessibility.motion",[["system","Use device setting","Réglage de l’appareil"],["standard","Standard","Standard"],["reduced","Fewer animations","Moins d’animations"]])+
         select(L("Text contrast","Contraste du texte"),"","accessibility.contrast",[["system","Use device setting","Réglage de l’appareil"],["standard","Standard","Standard"],["high","Higher contrast","Contraste renforcé"]])+
+        seg(L("Appearance","Apparence"),"appearance.mode",[["auto","Use device","Selon l’appareil"],["dark","Dark","Sombre"],["light","Light","Clair"]])+ 
         seg(L("Sacred artwork","Art sacré"),"appearance.sacredArt",[["full","Full","Complet"],["subtle","Subtle","Discret"],["minimal","Minimal","Minimal"]])));
   }
   if(vm.route==="/settings/language-reading"){

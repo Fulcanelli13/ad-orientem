@@ -177,8 +177,9 @@ try{
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
-    todayV2Sections:document.querySelectorAll(".aoTodayV2Below .aoTodayV2Zone").length,
+    todayV2Sections:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2Zone,.aoTodayV2Below .aoTodayV2Zone").length,
     todayV2Glance:document.querySelectorAll(".aoTodayV2CalendarGlance").length,
+    prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
     todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2CalendarGlance [data-home-calendar]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
@@ -187,7 +188,8 @@ try{
   assert.equal(homeAudit.suppressed,"false");
   assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===2 &&
     homeAudit.todayV2Glance===1 && homeAudit.todayV2CalendarLinks>=1,
-    "Approved C must render two lower sections, one Calendar at a glance panel and working Calendar links: "+JSON.stringify(homeAudit));
+    "H1.1 must render Prayer and Read/Reflect, one Calendar summary and working Calendar links: "+JSON.stringify(homeAudit));
+  assert.equal(homeAudit.prayerBeforeCalendar,true,"H1.1 requires the prayer entry before Calendar context");
   assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
@@ -249,7 +251,7 @@ try{
   // classes were retired; certify the rendered editorial sections and entry points.
   const homeParity=await page.evaluate(()=>({
     context:document.querySelectorAll(".homeScreen .aoTodayV2SeasonMicro").length,
-    sections:document.querySelectorAll(".homeScreen .aoTodayV2Below .aoTodayV2Zone").length,
+    sections:document.querySelectorAll(".homeScreen .aoTodayV2PrayerThroughDay .aoTodayV2Zone,.homeScreen .aoTodayV2Below .aoTodayV2Zone").length,
     prayerFeature:document.querySelectorAll(".homeScreen .aoTodayV2PrayerFeature [data-home-cu-route]").length,
     prayerShortcuts:document.querySelectorAll(".homeScreen .aoTodayV2PrayerShortcuts [data-home-cu-route]").length,
     gospel:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-action='gospel']").length,
@@ -274,7 +276,7 @@ try{
     unresolvedArt:document.querySelectorAll(".homeScreen .aoSaintArtCard .aoSaintArtPlaceholder").length,
   }));
   assert.equal(homeParity.context,1,"Today v2 lost its hero liturgical-season link");
-  assert.equal(homeParity.sections,2,"Version C keeps Pray and Read/Reflect below one calendar summary");
+  assert.equal(homeParity.sections,2,"H1.1 retains Prayer and Read/Reflect across the homepage hierarchy");
   assert.equal(homeParity.prayerFeature,1,"Today v2 lost its featured prayer entry");
   assert.equal(homeParity.prayerShortcuts,3,"Today v2 lost the three prayer shortcuts");
   assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");

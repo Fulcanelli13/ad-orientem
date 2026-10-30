@@ -4,13 +4,24 @@ const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt
 const A=v=>Array.isArray(v)?v:[];
 const L=(lang,en,fr)=>lang==="fr"?fr:en;
 const path=/^assets\/approved\/(?:place-media|place-gallery)\/[A-Za-z0-9_-]+\.webp$/;
-const licenses=new Set(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"]);
+// The credit's license label and URL must identify the same grant.
+// Keep the approved gallery's CC-BY-3.0 support without weakening release flags.
+const licenseUrls=Object.freeze({
+  "PUBLIC_DOMAIN":"https://creativecommons.org/publicdomain/mark/1.0/",
+  "CC0-1.0":"https://creativecommons.org/publicdomain/zero/1.0/",
+  "CC-BY-3.0":"https://creativecommons.org/licenses/by/3.0/",
+  "CC-BY-4.0":"https://creativecommons.org/licenses/by/4.0/",
+  "CC-BY-SA-2.0":"https://creativecommons.org/licenses/by-sa/2.0/",
+  "CC-BY-SA-3.0":"https://creativecommons.org/licenses/by-sa/3.0/",
+  "CC-BY-SA-4.0":"https://creativecommons.org/licenses/by-sa/4.0/",
+});
 const https=x=>/^https:\/\/[^\s<>"']+$/.test(String(x??""));
 
 export function eligibleDirectoryImage(img,placeId){
   return Boolean(img&&img.place_id===placeId&&img.status==="APPROVED"&&
-    path.test(String(img.asset_path??""))&&licenses.has(String(img.license??""))&&
-    https(img.license_url)&&https(img.source_url)&&
+    path.test(String(img.asset_path??""))&&
+    licenseUrls[String(img.license??"")]===String(img.license_url??"")&&
+    https(img.source_url)&&
     img.rights_verified===true&&img.subject_verified===true&&img.crop_reviewed===true&&
     /^[a-f0-9]{64}$/i.test(String(img.derivative_sha256??""))&&
     String(img.credit??"").trim()&&String(img.alt_en??"").trim()&&String(img.alt_fr??"").trim());
@@ -111,7 +122,7 @@ export function renderDirectoryGallery(item,language="en"){
     +'<div class="aoTlmGalleryGrid">'
     +photos.map(img=>'<figure><img loading="lazy" decoding="async" src="'+E(img.asset_path)+'" alt="'+E(language==="fr"?img.alt_fr:img.alt_en)+'">'
       +'<figcaption><strong>'+E(names[img.media_role]||img["label_"+language]||img.label_en||L(language,"Church photograph","Photographie de l’église"))+'</strong>'
-      +'<small>'+E(img.credit)+' · '+E(img.license)+'</small>'
+      +'<small>'+E(img.credit)+' · <a href="'+E(img.license_url)+'" target="_blank" rel="noopener noreferrer">'+E(img.license)+'</a></small>'
       +'<a href="'+E(img.source_url)+'" target="_blank" rel="noopener noreferrer">'+E(L(language,"Photo source","Source de la photo"))+'</a>'
       +'</figcaption></figure>').join("")
     +'</div></section>';

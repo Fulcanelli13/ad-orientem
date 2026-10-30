@@ -10,6 +10,8 @@ const src=read("data/shrines/source-registry.v1.json");
 const r49=read("data/directory/preliminary-map-r49.v1.json");
 const p104=read("data/geography/research/sacred-places-p104-seven-p97-directory-links.v1.json");
 const media=read("data/geography/approved-place-media.v1.json");
+const laterPhotoRelease=read("data/geography/research/directory-p106-four-approved-covers.v1.json");
+const laterApproved=new Map(laterPhotoRelease.photos.map(p=>[p.place_id,p]));
 const cross=read("data/geography/research/directory-place-photo-screen-p92-20261029.v1.json");
 const columns=Object.fromEntries(r49.columns.map((n,i)=>[n,i]));
 const venueById=new Map(r49.records.map(v=>[v[columns.id],v]));
@@ -31,7 +33,7 @@ assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[529,844,22]);
 assert.deepEqual([geo.places.length,src.sources.length,geo.directoryPlaceLinks.length],[529,844,22]);
 assertExploreGeographyRegistry(geo);
 assert.equal(p104.published_new.length,7);
-assert.equal(media.items.length,36,"P104 must not approve a photograph");
+assert.equal(media.items.length,36+laterPhotoRelease.photos.length,"Historical P104 approved none; P106 later independently approved four");
 const rad=n=>n*Math.PI/180;
 const meters=(a,b,c,d)=>{let q=Math.sin(rad(c-a)/2)**2+Math.cos(rad(a))*Math.cos(rad(c))*Math.sin(rad(d-b)/2)**2;return Math.round(12742000*Math.asin(Math.sqrt(q))*10)/10};
 for(const r of p104.published_new){
@@ -66,9 +68,13 @@ for(const r of p104.published_new){
  }
  assert.equal(sources.get(r.source_ids[0]).url,r.source_site_url);
  assert.equal(sources.get(r.source_ids[1]).url,r.source_geo_url);
- assert.equal(media.items.some(x=>x.place_id===r.place_id),false,"No unreviewed photo may join this P104 link");
+ assert.equal(media.items.some(x=>x.place_id===r.place_id),laterApproved.has(r.place_id),"Only separately verified P106 may approve post-P104 photos");
  const attached=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:r.venue_id}],{directoryPlaceLinks:geo.directoryPlaceLinks,approved:media.items,gallery:[]});
- assert.equal(attached[0].cover_media,undefined);
+ if(laterApproved.has(r.place_id)){
+   const later=laterApproved.get(r.place_id);
+   assert.equal(later.venue_id,r.venue_id);
+   assert.equal(attached[0].cover_media?.derivative_sha256,later.sha256);
+ }else assert.equal(attached[0].cover_media,undefined,"No unreviewed P104 photo");
  assert.equal(r.approved_photo,false);
  assert.equal(r.published_photo,false);
  const pair=cross.candidate_pairs.filter(x=>x.place_id===r.place_id&&x.venue_id===r.venue_id);
@@ -78,7 +84,7 @@ for(const r of p104.published_new){
 }
 assert.equal(cross.counts.canonical_places,529);
 assert.equal(cross.counts.confirmed_links,22);
-assert.equal(cross.counts.exact_confirmed_photo_joins,5,"Only 2 P95 and 3 P103 approved images remain");
+assert.equal(cross.counts.exact_confirmed_photo_joins,5+laterPhotoRelease.photos.length,"P104 adds identity only; four later P106 approvals are separate");
 assert.equal(p104.research_holds.length,4);
 const gnd=cross.candidate_pairs.find(p=>p.venue_id==="ao-research-icksp-federated-v13-icksp-stg-112"&&p.place_id==="place:DE:altoetting-gnadenkapelle");
 assert.equal(gnd?.disposition,"DIFFERENT_CONFIRMED_PLACE_HOLD","Do not mistake cemetery church for Gnadenkapelle");
@@ -89,4 +95,4 @@ const family=p104.published_new.find(x=>x.row===380);
 assert.ok(family.identity_evidence.includes("NOT the modern adjacent sanctuary"));
 for(const [row,min] of [[349,80],[356,100]])assert.ok(p104.published_new.find(x=>x.row===row).existing_r49_pin_distance_m>min,
   "Street-pin discrepancy must remain visible, never hidden in geocoding");
-console.log("P104 PASS: seven exact physical Place links, 22 frozen Directory bridges, no new photographs, four research holds");
+console.log("P104 PASS: seven historical Place bridges, 22 Directory links; four distinct later P106 photos with immutable identities");

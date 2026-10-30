@@ -19,6 +19,7 @@ on:
       - "src/settings/**"
       - "assets/**"
       - "tests/app-visual-acceptance.mjs"
+      - "tests/home-h11-appearance-acceptance.mjs"
       - "tests/explore-medallion-visual-acceptance.mjs"
       - "tests/home-pray-single-reader-e2e.mjs"
       - "tests/catechism-guided-mode-e2e.mjs"
@@ -55,6 +56,7 @@ jobs:
       # The opt-in purpose of this workflow is the live Explore map
       # screenshot review. Run it first so a bad mobile interaction fails
       # promptly without spending CI time on unrelated Mass captures.
+      - run: node tests/home-h11-appearance-acceptance.mjs
       - run: node tests/explore-medallion-visual-acceptance.mjs
       # Preserve existing Mass visual and source/compatibility checks after
       # Explore; neither Mass reader ownership nor its release is modified.
@@ -72,6 +74,7 @@ jobs:
           name: app-visual-acceptance
           path: |
             artifacts/visual-acceptance
+            artifacts/home-h11-acceptance
             artifacts/curated65-phone
             artifacts/live-mass-visual-focus
           if-no-files-found: error

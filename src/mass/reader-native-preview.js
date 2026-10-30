@@ -2973,7 +2973,8 @@ export async function mountNativeReaderPreview({
       }),scholaLocalProgramme);
       const event=itinerary.supported
         ? itinerary.events.find(item=>item.id===String(eventId)) : null;
-      if(!event || event.manualOnly || event.id==="BENEDICTUS_CONTINUOUS")return false;
+      if(!event || event.manualOnly || event.id==="BENEDICTUS_CONTINUOUS" ||
+        event.musicWindow?.status==="SOURCE_ANCHORS_UNVERIFIED")return false;
       if(event.kind==="ORGAN_OPTION" && (event.localPlan?.selected!==true ||
         ["SOLO_FORBIDDEN","REQUIRES_EXACT_RITE_STAGE"].includes(event.organPermission?.status)))
         return false;

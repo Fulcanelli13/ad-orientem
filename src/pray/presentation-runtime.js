@@ -11,6 +11,7 @@ import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
+import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,prayerPilotAliases,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
@@ -85,6 +86,8 @@ const VERSION='43.59.30-pray-acceptance';
 let homeNavigationError=false,homeNavigationPending=false;
 const STORE_KEY='ao.pray.v435930';
 const ROOT_ID='aoPray435930';
+const PRAYER_READER_PILOT_ENABLED=readerPilotEnabled(window);
+let PILOT_LORETO_GROUP=false;
 // The pilot changes presentation only. Direct homepage prayer routes remain immediate.
 const PRAYER_PILOT_ENABLED=prayerPilotEnabled(window);
 let ANGELUS_PILOT_ENTRY=false;
@@ -470,7 +473,10 @@ function open(id,opts={}){
   else if(id==='pray.adoration')view='adoration';
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
-  else if(id==='pray.library')view='library';
+  else if(id==='pray.library'){
+    // Direct Library entry resets selected prayer. In-Library Back retains its own state.
+    view='library';LIB.open=null;LIB.language=null;PILOT_LORETO_GROUP=false;
+  }
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
   else if(id==='pray.occasional_intercessions'){view='occasionals';OCCASIONAL={purpose:'sick',latin:false}}
   else if(id==='pray.st_joseph_seven_sorrows'){view='josephSeven';JOSEPH_SEVEN={step:0,latin:false}}
@@ -2039,10 +2045,14 @@ function renderOccasionalIntercessions(){
 function renderLibrary(){
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
+  if(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(LIB.open)){
+   const selected=LIB.language&&p[LIB.language]?LIB.language:(p[lang()]?lang():(['en','la','fr'].find(k=>p[k])||'en'));
+   return renderPilotLoreto({record:p,id:LIB.open,language:selected,group:PILOT_LORETO_GROUP,head,L,esc,sourceLine,libraryContextMarkup,backIcon:assetIcon('ao-ui-back')});
+  }
   const missing=['en','fr','la'].filter(k=>!p[k]),hasUi=!!p[lang()];
   const missingUi=!hasUi?callout(`${esc(L('No vernacular translation is available in the current UI language.','Aucune traduction vernaculaire n’est disponible dans la langue actuelle de l’interface.'))} ${esc(L('The available source text is shown without fabricating a substitute.','Le texte source disponible est affiché sans fabriquer de traduction de substitution.'))}`,'rubric'):'';
   const category=isFr()?(DATA.categories?.[p.category]?.fr||p.category):(DATA.categories?.[p.category]?.en||p.category),langs=['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · ');
-  return `${head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-lib-back>${assetIcon('ao-ui-back')} ${esc(L('Prayer Library','Livre de prières'))}</button>${missingUi}<section class="aoDevoCard" data-ao-devo-card="${esc(LIB.open)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(isFr()?(p.titleFr||p.title):p.title)}">${prayerBlock(LIB.open,{scriptureContext:true})}</div></section>${libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
+  return `${head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-lib-back>${assetIcon('ao-ui-back')} ${esc(L('Prayer Library','Livre de prières'))}</button>${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${missingUi}<section class="aoDevoCard" data-ao-devo-card="${esc(LIB.open)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(isFr()?(p.titleFr||p.title):p.title)}">${prayerBlock(LIB.open,{scriptureContext:true})}</div></section>${libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
  }
  const q=LIB.q.trim().toLowerCase();let rows=Object.values(DATA.prayers||{}).filter(p=>LIB.cat==='all'||p.category===LIB.cat);if(q)rows=rows.filter(p=>[p.title,p.titleFr,p.en,p.fr,p.la,p.id].join(' ').toLowerCase().includes(q));
  const cats=[['all',L('All','Toutes')],...Object.entries(DATA.categories||{}).map(([id,v])=>[id,isFr()?v.fr:v.en])];
@@ -2201,7 +2211,7 @@ function renderFSMeditation(){
  const mystery=selectedMystery();
  return `${head(L('First Saturday meditation','Méditation du premier samedi'),L('Fifteen minutes with one or more Rosary mysteries · distinct from the five decades','Quinze minutes avec un ou plusieurs mystères du Rosaire · distinctes des cinq dizaines'))}<main class="aoP435930Body"><section class="aoP435930MeditationIntro"><small>${esc(L('CHOOSE A MYSTERY','CHOISISSEZ UN MYSTÈRE'))}</small><h2>${esc(mystery)}</h2><p>${esc(L('You may remain with this mystery for the whole period or deliberately move to another mystery. Do not turn this into another decade of vocal prayer.','Vous pouvez demeurer avec ce mystère pendant toute la période ou passer délibérément à un autre mystère. Ne transformez pas cela en une nouvelle dizaine de prière vocale.'))}</p></section>${mysterySetButtons()}${mysteryButtons()}<section class="aoP435930MeditationFlow"><div>${guideNow(L('Place the mystery before you','Placez le mystère devant vous'),L('Recall the Gospel event simply. Who is present? What is happening? Do not rush to applications yet.','Rappelez simplement l’événement évangélique. Qui est présent ? Que se passe-t-il ? Ne vous hâtez pas encore vers les applications.'))}</div><div>${guideNow(L('Stay with Our Lady’s place in the mystery','Demeurez avec la place de Notre-Dame dans le mystère'),L('Consider what Mary receives, does, suffers, offers, or witnesses here. Remain with what belongs to this mystery rather than inventing a separate scene.','Considérez ce que Marie reçoit, fait, souffre, offre ou contemple ici. Demeurez avec ce qui appartient à ce mystère plutôt que d’inventer une scène distincte.'))}</div><div>${guideNow(L('Turn the mystery toward your own life','Tournez le mystère vers votre propre vie'),L('Ask what grace, conversion, imitation, patience, faith, charity, or fidelity this mystery calls for in you today.','Demandez quelle grâce, conversion, imitation, patience, foi, charité ou fidélité ce mystère appelle en vous aujourd’hui.'))}</div><div>${guideNow(L('Speak briefly, then remain silent','Parlez brièvement, puis demeurez en silence'),L('Speak to God or Our Lady in your own words, then stop adding words and remain with the mystery. Return gently when distracted.','Parlez à Dieu ou à Notre-Dame avec vos propres mots, puis cessez d’ajouter des paroles et demeurez avec le mystère. Revenez-y doucement en cas de distraction.'))}</div></section>${ADOR.timerEnd?timerMarkup():`<div class="aoP435930Timer aoP435930MeditationTimer"><b>${esc(L('15-minute timer aid','Minuteur de 15 minutes'))}</b><span>${esc(L('Start it when you are ready to begin the actual meditation. It never marks the act complete automatically.','Démarrez-le lorsque vous êtes prêt à commencer la méditation proprement dite. Il ne valide jamais automatiquement l’acte.'))}</span><button type="button" data-p435930-timer="15">15 min</button></div>`}<div class="aoP435930MeditationActions"><button class="aoP435930Primary" data-p435930-fs-meditation-complete>${esc(L('I completed fifteen minutes · return','J’ai accompli quinze minutes · retour'))}</button><button class="aoP435930Secondary" data-p435930-fs-meditation-return>${esc(L('Return without marking complete','Retour sans marquer comme accompli'))}</button></div></main>`
 }
-function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),prayerReturnView==='firstFriday'?L('First Friday · Sacred Heart','Premier vendredi · Sacré-Cœur'):L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-prayer-return>${assetIcon('ao-ui-back')} ${esc(L('Return','Retour'))}</button><section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
+function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),prayerReturnView==='firstFriday'?L('First Friday · Sacred Heart','Premier vendredi · Sacré-Cœur'):L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-prayer-return>${assetIcon('ao-ui-back')} ${esc(L('Return','Retour'))}</button>${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
 let prayerReturnView=null,prayerId=null;
 function pushView(v=view){if(v)navStack.push(v);return navStack.length}
 function popView(fallback='home'){view=navStack.length?navStack.pop():fallback;return view}
@@ -3242,6 +3252,31 @@ function onClick(e){
   if(!DATA.prayers?.[id])return;
   pushView();LIB.open=id;LIB.language=null;view='library';return render();
  }
+ if(PRAYER_READER_PILOT_ENABLED&&b.hasAttribute('data-p435930-pilot-focus')){
+  const card=mount()?.querySelector('.aoReaderPilotSingle');
+  if(!card)return;
+  const focused=card.classList.toggle('aoReaderPilotFocus');
+  b.setAttribute('aria-pressed',String(focused));
+  b.textContent=focused?L('Exit reading focus','Quitter la lecture concentrée'):L('Reading focus','Lecture concentrée');
+  return;
+ }
+ if(PRAYER_READER_PILOT_ENABLED&&view==='library'&&LORETO_SOURCE_IDS.includes(LIB.open)){
+  if(b.hasAttribute('data-p435930-pilot-loreto-form')){
+   const id=b.dataset.p435930PilotLoretoForm;
+   if(!LORETO_SOURCE_IDS.includes(id)||!P(id))return;
+   LIB.open=id;return render();
+  }
+  if(b.hasAttribute('data-p435930-pilot-loreto-language')){
+   const language=b.dataset.p435930PilotLoretoLanguage;
+   if(!['en','fr','la'].includes(language)||!P(LIB.open)?.[language])return;
+   LIB.language=language;return render();
+  }
+  if(b.hasAttribute('data-p435930-pilot-loreto-group')){
+   const selected=b.dataset.p435930PilotLoretoGroup;
+   if(selected!=='individual'&&selected!=='group')return;
+   PILOT_LORETO_GROUP=selected==='group';return render();
+  }
+ }
  if(b.hasAttribute('data-p435930-session-language')&&['adoration','benediction','stations','confession'].includes(view)){
   const current=mount(),outerScroll=current?.scrollTop||0;
   const innerScroll=current?.querySelector('.aoDevoCardScroll')?.scrollTop||0;
@@ -3537,7 +3572,7 @@ function onClick(e){
  if(b.dataset.p435930StationStep!=null){STATIONS.step=Math.max(0,Math.min(13,+b.dataset.p435930StationStep));return render()}
  if(b.matches('[data-p435930-station-finish]')&&STATIONS.step===13){STATIONS.step=0;return backToParent()}
  if(b.dataset.p435930LibCat!=null){LIB.cat=b.dataset.p435930LibCat;return render()}
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;return render()}
+ if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
  if(b.matches('[data-p435930-lib-back]')){LIB.open=null;return render()}
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch

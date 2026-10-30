@@ -279,6 +279,48 @@ try{
    const unselectedMotet=musicMenu.locator('[data-schola-event-select="OFFERTORY_LOCAL_MOTET"]');
    assert.equal(await unselectedMotet.isDisabled(),true,
      "Unplanned local motet must not be presented as a selectable performance");
+   // Verify actual 320/390px production-harness cards, not just the
+   // synthetic source-itinerary fixture. An optional title cannot silently
+   // hide a missing exact source cue in the currently selected reader.
+   const optionalWindows=await page.evaluate(()=>{
+     const cards=window.__AO_PHONE_PREVIEW.model.cards;
+     const hasBlock=id=>cards.some(c=>(c.blocks??[]).some(b=>b.blockId===id));
+     const hasCue=id=>cards.some(c=>(c.paragraphs??[]).some(p=>
+       (p.sourceCueIds??[]).includes(id)));
+     const descriptions=Object.fromEntries(
+       ["ENTRANCE_ORGAN_OPTION","OFFERTORY_LOCAL_MOTET",
+        "OFFERTORY_ORGAN_OPTION","COMMUNION_LOCAL_MOTET",
+        "RECESSIONAL_ORGAN_OPTION"].map(id=>{
+         const node=document.querySelector('[data-schola-event-select="'+id+'"]');
+         return [id,{exists:Boolean(node),description:node?.querySelector("small")?.textContent??""}];
+       }));
+     return {source:{
+       offertory:hasBlock("AO.SM.B030"),
+       communion:hasBlock("AO.SM.B074"),
+       secret:hasCue("AO.SM.C0135"),
+       postcommunion:hasCue("AO.SM.C0251")},descriptions};
+   });
+   for(const [source,exists] of Object.entries(optionalWindows.source))
+     assert.equal(exists,true,
+       width+"px actual curated source lost optional Schola anchor "+source);
+   for(const [id,item] of Object.entries(optionalWindows.descriptions)){
+     assert.equal(item.exists,true,width+"px missing existing optional event "+id);
+     assert.ok(item.description.length>25,
+       width+"px optional music lacks editorial boundary "+id);
+     assert.doesNotMatch(item.description,/Exact source anchor unavailable/,
+       width+"px exact cue exists but option was held "+id);
+   }
+   assert.match(optionalWindows.descriptions.ENTRANCE_ORGAN_OPTION.description,
+     /arrival require observation/i);
+   assert.match(optionalWindows.descriptions.OFFERTORY_ORGAN_OPTION.description,
+     /stop by the Secret/i);
+   assert.match(optionalWindows.descriptions.COMMUNION_LOCAL_MOTET.description,
+     /distribution continues/i);
+   assert.match(optionalWindows.descriptions.RECESSIONAL_ORGAN_OPTION.description,
+     /Last Gospel card does not prove/i);
+   console.log("SCHOLA_OPTIONAL_WINDOWS_PHONE="+JSON.stringify({width,...optionalWindows}));
+   await page.screenshot({path:resolve(out,"schola-optional-windows-"+width+".png"),
+     animations:"disabled"});
    // This event exists only with a source-resolved polyphonic setting.
    // Unknown or Gregorian settings must not invent a second Benedictus.
    const delayedBenedictus=musicMenu.locator('[data-schola-event-select="BENEDICTUS_AFTER_CHALICE"]');

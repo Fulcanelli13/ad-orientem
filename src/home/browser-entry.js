@@ -352,6 +352,19 @@ export function createHomeOwner(win=globalThis){
       }
       return;
     }
+    const prayerJump=target?.closest?.("[data-home-prayer-jump]");
+    if(prayerJump){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      if(state(win)?.route!=="home")return;
+      if(inlineCalendarView)showHomeToday();
+      const jump=()=>{
+        const area=win?.document?.getElementById?.("ao-home-prayer-through-day");
+        area?.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"auto":"smooth"});
+        area?.focus?.({preventScroll:true});
+      };
+      (win?.queueMicrotask?.bind(win)||queueMicrotask)(jump);
+      return;
+    }
     const backToday=target?.closest?.("[data-home-calendar-today]");
     if(backToday){event.preventDefault?.();event.stopImmediatePropagation?.();showHomeToday();return}
     const calendar=target?.closest?.("[data-home-calendar]");

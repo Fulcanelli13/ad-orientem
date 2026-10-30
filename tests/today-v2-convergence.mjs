@@ -32,6 +32,21 @@ for(const cls of ["aoTodayV2CalendarGlance","aoTodayV2PrayNow","aoTodayV2ReadRef
 for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.adoration"])
   assert.ok(html.includes('data-home-cu-route="'+route+'"'),"Noncanonical or missing Pray route: "+route);
 assert.match(html,/data-home-daily-catechism/);
+const emptyRule=buildTodayV2Sections(state,vm,{
+  visible:true,
+  comingUp:{rows:[sample.comingUp.rows[0],{id:"static.none",kind:"all",title:"Daily Rule"}]},
+  dailyCatechism:sample.dailyCatechism,
+});
+assert.doesNotMatch(renderTodayV2Sections(emptyRule,vm),/data-home-cu-static="static.none"/,
+  "No Daily Rule item must not create an inert static action");
+const realRule=buildTodayV2Sections(state,vm,{
+  visible:true,
+  comingUp:{rows:[sample.comingUp.rows[0],{id:"rosary",kind:"static",title:"Rosary",role:"Daily"}]},
+  dailyCatechism:sample.dailyCatechism,
+});
+assert.match(renderTodayV2Sections(realRule,vm),/data-home-cu-static="rosary"/,
+  "A configured Daily Rule item must retain its canonical action");
+assert.ok(html.indexOf("aoTodayV2PrayNow")<html.indexOf("aoTodayV2CalendarGlance"),"Prayer through the day precedes calendar context");
 assert.match(html,/data-home-scripture/);
 assert.match(html,/data-action="gospel"/);
 assert.doesNotMatch(html,/data-home-calendar-view="year"/,"Liturgical season year link belongs only in the hero");
@@ -42,7 +57,8 @@ assert.match(html,/Life &amp; sources/,"Observed saint opens context without rep
 assert.doesNotMatch(html,/Saint Francis Borgia/,"Do not repeat principal saint below the hero");
 assert.equal((html.match(/class="aoTodayV2CalendarGlance"/g)||[]).length,1,"One compact Calendar at a glance panel");
 assert.doesNotMatch(html,/aoTodayV2Context|aoTodayV2Approaching|Coming next|Full calendar/,"No duplicate season or upcoming panels");
-assert.match(html,/Upcoming calendar dates · confirm actual 1962 observance in Calendar/);
+assert.match(html,/Upcoming dates are calendar appointments; verify the observed 1962 day in Calendar\./);
+assert.match(html,/class="aoTodayV2EventArrow"/,"H2 agenda rows require a clear destination");
 assert.doesNotMatch(html,/data-home-shortcut="/,
   "Unbound home-shortcut attributes would produce inert buttons");
 assert.equal((html.match(/class="aoTodayV2PrayerFeature"/g)||[]).length,1);
@@ -62,12 +78,12 @@ assert.doesNotMatch(temporaHtml,/Life & sources/);
 assert.match(unknownHtml,/data-home-calendar-view="day"/);
 const frvm={...vm,language:"fr"};
 const frHtml=renderTodayV2Sections(buildTodayV2Sections({...state,language:"fr"},frvm,sample),frvm);
-assert.match(frHtml,/Prier maintenant/);
+assert.match(frHtml,/Prier au fil du jour/);
 assert.match(frHtml,/Lire et méditer/);
 assert.match(frHtml,/calendrier/i);
 assert.match(frHtml,/Vie et sources/,"The saint link must be bilingual");
 assert.doesNotMatch(frHtml,/COMING SOON|<h2>À venir<\/h2>/,"French Home has no second Coming next heading");
-assert.match(frHtml,/Dates à venir/);
+assert.match(frHtml,/Dates annoncées par le calendrier/);
 assert.match(frHtml,/25 oct./i);
 const primary=renderHomeToString(state,{AO_PHASE1_ART:{homeMarkup(){return ""}}});
 assert.match(primary,/aoTodayV2NoArt/,"No approved artwork must preserve a source-safe visual fallback");
@@ -82,6 +98,9 @@ assert.doesNotMatch(primary,/class="contentCard findCard/);
 assert.doesNotMatch(primary,/aoHomeComingUp/);
 assert.equal((primary.match(/data-home-scripture/g)||[]).length,1,"Scripture must retain one compact native entry without duplicate cards");
 assert.doesNotMatch(primary,/data-resume-mass/);
+assert.match(TODAY_V2_CSS,/\.aoTodayV2Frontispiece \.aoTodayV2Art::after\{display:none!important\}/,"H1.2 image island should have no title veil");
+assert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2Art::after'),"Light no-art hero must not retain a dark veil under dark text");
+assert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing) .aoTodayV2ArtOverlay h1'),"Approved artwork keeps light foreground text in either theme");
 assert.match(TODAY_V2_CSS, /@media\(max-width:699px\)\{\s*\.aoTodayV2ArtMissing \.aoTodayV2Art\{height:clamp\(138px,36vw,175px\)!important/,
   "Compact no-art fallback is strictly phone-scoped, leaving desktop layout unchanged");
 assert.match(TODAY_V2_CSS, /\.aoTodayV2ArtMissing \.aoTodayV2Art\{height:clamp\(138px,36vw,175px\)!important/,

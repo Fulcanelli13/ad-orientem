@@ -13,14 +13,14 @@
     "venues_screened": 1879,
     "canonical_places": 529,
     "confirmed_links": 22,
-    "approved_covers": 36,
+    "approved_covers": 40,
     "approved_gallery_images": 33,
     "within_350m_pairs": 54,
     "venues_near_place": 49,
     "pairs_within_100m": 27,
     "high_name_geo_pairs": 16,
-    "nearby_approved_photo_pairs": 12,
-    "exact_confirmed_photo_joins": 5,
+    "nearby_approved_photo_pairs": 16,
+    "exact_confirmed_photo_joins": 9,
     "published_new_links": 0,
     "published_new_photos": 0
   },
@@ -29,7 +29,7 @@
       "offset": 0,
       "limit": 200,
       "nearby_venues": 13,
-      "nearby_approved_photo_venues": 2
+      "nearby_approved_photo_venues": 3
     },
     {
       "offset": 200,
@@ -65,13 +65,13 @@
       "offset": 1200,
       "limit": 200,
       "nearby_venues": 8,
-      "nearby_approved_photo_venues": 3
+      "nearby_approved_photo_venues": 5
     },
     {
       "offset": 1400,
       "limit": 200,
       "nearby_venues": 2,
-      "nearby_approved_photo_venues": 1
+      "nearby_approved_photo_venues": 2
     },
     {
       "offset": 1600,
@@ -321,7 +321,7 @@
       "place_pin_precision": "site",
       "distance_m": 33.9,
       "name_overlap": 0.5,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -627,7 +627,7 @@
       "place_pin_precision": "site",
       "distance_m": 104.9,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -644,7 +644,7 @@
       "place_pin_precision": "site",
       "distance_m": 140.3,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -729,7 +729,7 @@
       "place_pin_precision": "site",
       "distance_m": 24.4,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -1028,6 +1028,16 @@
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {
+      "venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+      "venue_name": "Holy Family Log Church",
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "place_name": "Holy Family Log Church, Cahokia",
+      "distance_m": 33.9,
+      "name_overlap": 0.5,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
       "venue_id": "ao-research-icksp-federated-v13-icksp-stg-112",
       "venue_name": "Friedhofskirche St. Michael",
       "place_id": "place:DE:altoetting-gnadenkapelle",
@@ -1088,6 +1098,26 @@
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {
+      "venue_id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",
+      "venue_name": "Sacred Heart of Jesus, Caterham",
+      "place_id": "place:GB:sacred-heart-caterham",
+      "place_name": "Church of the Sacred Heart of Jesus, Caterham",
+      "distance_m": 104.9,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY",
+      "venue_name": "St Mary's Catholic Church, Brewood",
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "place_name": "Roman Catholic Church of St Mary, Brewood",
+      "distance_m": 140.3,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
       "venue_id": "ao-fssp-maison-saint-aignan-21-rue-de-la-couronne-f-28000-chartres-france",
       "venue_name": "Maison Saint-Aignan",
       "place_id": "place:FR:chartres-notre-dame",
@@ -1095,6 +1125,16 @@
       "distance_m": 340.1,
       "name_overlap": 0,
       "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "AO-AMER-R26-US-03-08",
+      "venue_name": "Cathedral of the Immaculate Conception",
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "place_name": "Cathedral of the Immaculate Conception, Lake Charles",
+      "distance_m": 24.4,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {
