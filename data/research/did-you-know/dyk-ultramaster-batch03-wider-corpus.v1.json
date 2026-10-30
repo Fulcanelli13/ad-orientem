@@ -798,8 +798,8 @@
       "category": "customs_historical_source",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that Weiser recounts a historical custom at Rome's Pantheon in which rose petals fell from above during a religious celebration?",
-        "fr": "Saviez-vous que Weiser relate une ancienne coutume du Panthéon de Rome où des pétales de rose tombaient d'en haut pendant une célébration religieuse ?"
+        "en": "Did you know that Weiser described an old custom at Rome's Pantheon in which roses fell from the roof opening after a papal sermon on the Sunday after Ascension?",
+        "fr": "Saviez-vous que Weiser décrivait un ancien usage du Panthéon de Rome où des roses tombaient de l'ouverture du toit après un sermon pontifical le dimanche suivant l'Ascension ?"
       },
       "historical_claim_only": true,
       "source": {
@@ -816,7 +816,10 @@
         "source_excerpt_scope_en": "Pantheon rose shower after papal sermon; Ascension field procession and priestly land blessing, historical and local.",
         "original_page_narrow_action_checked": true,
         "historical_folklore_only": false,
-        "independent_current_practice_verified": false
+        "independent_current_practice_verified": false,
+        "original_page_direct_rechecked_20261030": true,
+        "direct_review_printed_page": 242,
+        "verified_historical_feast_context": "SUNDAY_AFTER_ASCENSION_PRE_FIFTEENTH_CENTURY_SUNDAY_OF_ROSES"
       },
       "scope": {
         "region": "SOURCE_CLAIM_LIMITED",
@@ -824,10 +827,10 @@
         "no_1962_rubric_inference": true,
         "no_universal_claim": true,
         "not_calendar_rule": true,
-        "qualification": "Do not infer an exact feast date or currently authorised Roman rite from the historical page review."
+        "qualification": "Reported papal custom before development of Ascension octave; must not be labelled a current Pentecost rubrical action."
       },
       "duplicate_gate": "PASS_EXACT_RECORD_NONREUSE_WITHIN_PR_2096_ONLY",
-      "editorial_status": "PENDING_SOURCE_LOCALE_AND_SEMANTIC_REVIEW",
+      "editorial_status": "HISTORICAL_FEAST_CONTEXT_CORRECTED_SOURCE_CHECKED_NOT_APPROVED",
       "publication_authorized": false,
       "deep_link_status": "NOT_RESOLVED"
     },
