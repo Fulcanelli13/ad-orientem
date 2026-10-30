@@ -1,0 +1,297 @@
+{
+  "schema": "AO_DYK_CUSTOMS_ULTRAMASTER_SOURCE_MAP_V1",
+  "date": "2026-10-30",
+  "status": "RESEARCH_INVENTORY_NO_PUBLICATION",
+  "canonical_source_owner": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/customs-multibook-bulk150-20261026",
+    "head_sha": "1ba95d918c9043ec4915dfce84866ac237f1d371",
+    "paths": {
+      "status": "data/customs/master/ULTRA_MASTER_V2_STATUS_20261030.md",
+      "observation_index": "data/customs/master/customs-ultra-master-observation-index-3703-20261030.v1.json",
+      "verified_crosswalk": "data/customs/master/customs-ultra-master-v2-3703-reference-crosswalk.v1.json",
+      "identity_register": "data/customs/master/customs-ultra-master-v2-identity-register-465.v1.json",
+      "multibook_dossiers": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "pitre_st_joseph_corpus": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+      "wave_index": "data/customs/master/customs-ultra-master-v2-bulk-reconciliation-waves-3295.v1.json"
+    }
+  },
+  "counts": {
+    "total_source_observations": 3703,
+    "weiser_observations": 1025,
+    "pitre_original_1900_observations": 718,
+    "other_observations": 1960,
+    "master_identity_rows": 57,
+    "provisional_groups": 408,
+    "evidence_only_not_directly_group_linked": 3295,
+    "source_pointer_match_verified": 3703,
+    "pitre_1950_palermo_separate_from_1900": 110,
+    "distinct_customs_approved_by_this_inventory": 0
+  },
+  "bucket_summary": [
+    {
+      "bucket": "weiser_handbook_1958_original",
+      "source_observations": 568,
+      "provisionally_group_linked": 348,
+      "evidence_only": 220,
+      "printed_page_locator_count": 568,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "weiser_handbook_1958_page_addenda",
+      "source_observations": 6,
+      "provisionally_group_linked": 0,
+      "evidence_only": 6,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "weiser_family_1956_full_scan",
+      "source_observations": 111,
+      "provisionally_group_linked": 0,
+      "evidence_only": 111,
+      "printed_page_locator_count": 111,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "weiser_handbook_granular_details",
+      "source_observations": 340,
+      "provisionally_group_linked": 60,
+      "evidence_only": 280,
+      "printed_page_locator_count": 340,
+      "scan_page_locator_count": 340,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_mcloughlin",
+      "source_observations": 70,
+      "provisionally_group_linked": 0,
+      "evidence_only": 70,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_stokes",
+      "source_observations": 198,
+      "provisionally_group_linked": 0,
+      "evidence_only": 198,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_catholicculture_excerpts",
+      "source_observations": 132,
+      "provisionally_group_linked": 0,
+      "evidence_only": 132,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 132
+    },
+    {
+      "bucket": "external_source_observations_mueller_kelly",
+      "source_observations": 204,
+      "provisionally_group_linked": 0,
+      "evidence_only": 204,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 204
+    },
+    {
+      "bucket": "external_source_observations_chaney",
+      "source_observations": 170,
+      "provisionally_group_linked": 0,
+      "evidence_only": 170,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_france_pci_brittany",
+      "source_observations": 71,
+      "provisionally_group_linked": 0,
+      "evidence_only": 71,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_france_pci_besta",
+      "source_observations": 56,
+      "provisionally_group_linked": 0,
+      "evidence_only": 56,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_wff_hynes",
+      "source_observations": 125,
+      "provisionally_group_linked": 0,
+      "evidence_only": 125,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 125
+    },
+    {
+      "bucket": "external_source_observations_france_sanch",
+      "source_observations": 86,
+      "provisionally_group_linked": 0,
+      "evidence_only": 86,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 86
+    },
+    {
+      "bucket": "external_source_observations_italy_four_unesco",
+      "source_observations": 110,
+      "provisionally_group_linked": 0,
+      "evidence_only": 110,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 110
+    },
+    {
+      "bucket": "external_source_observations_italy_sicily_holy_week",
+      "source_observations": 96,
+      "provisionally_group_linked": 0,
+      "evidence_only": 96,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 96
+    },
+    {
+      "bucket": "external_source_observations_italy_local_feasts_wave02",
+      "source_observations": 114,
+      "provisionally_group_linked": 0,
+      "evidence_only": 114,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_spain_elche_berga_caravaca",
+      "source_observations": 145,
+      "provisionally_group_linked": 0,
+      "evidence_only": 145,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_portugal_pci",
+      "source_observations": 140,
+      "provisionally_group_linked": 0,
+      "evidence_only": 140,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_three_family_books",
+      "source_observations": 133,
+      "provisionally_group_linked": 0,
+      "evidence_only": 133,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_pitre_palermo_1950",
+      "source_observations": 110,
+      "provisionally_group_linked": 0,
+      "evidence_only": 110,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 110
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_ocr",
+      "source_observations": 129,
+      "provisionally_group_linked": 0,
+      "evidence_only": 129,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 129
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_new_ocr",
+      "source_observations": 293,
+      "provisionally_group_linked": 0,
+      "evidence_only": 293,
+      "printed_page_locator_count": 0,
+      "scan_page_locator_count": 0,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave04",
+      "source_observations": 105,
+      "provisionally_group_linked": 0,
+      "evidence_only": 105,
+      "printed_page_locator_count": 105,
+      "scan_page_locator_count": 105,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave05",
+      "source_observations": 132,
+      "provisionally_group_linked": 0,
+      "evidence_only": 132,
+      "printed_page_locator_count": 132,
+      "scan_page_locator_count": 132,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave08",
+      "source_observations": 8,
+      "provisionally_group_linked": 0,
+      "evidence_only": 8,
+      "printed_page_locator_count": 8,
+      "scan_page_locator_count": 8,
+      "direct_url_locator_count": 0
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave09",
+      "source_observations": 51,
+      "provisionally_group_linked": 0,
+      "evidence_only": 51,
+      "printed_page_locator_count": 51,
+      "scan_page_locator_count": 51,
+      "direct_url_locator_count": 0
+    }
+  ],
+  "phase_order": [
+    {
+      "id": "SOURCE_FIRST_WEISER_PITRE",
+      "policy": "Prioritize historical facts from Weiser original source folios and Pitre 1900 local accounts. Explicitly distinguish printed-page locator, OCR line, page-image verification and narrow corroboration. These are research observations, not newly certified custom identities."
+    },
+    {
+      "id": "OTHER_CUSTOMS_ULTRAMASTER",
+      "policy": "Include Stokes, Mueller/Kelly, Chaney, McLoughlin, Trapp/Berger/Newland, localized French/Italian/Portuguese/Spanish and Irish institutional sources after source-owner checks."
+    },
+    {
+      "id": "CONTEXTUAL_LITURGY_GLOSSARY",
+      "policy": "Bring complementary glossary and 1962 Mass ceremonial facts from their own canonical registries; no replacement of their source owners."
+    },
+    {
+      "id": "CATECHISM_COMPLEMENT",
+      "policy": "Catechism and doctrinal facts only after existing Customs / Liturgy reusable knowledge is processed."
+    }
+  ],
+  "release_gates": {
+    "publish_from_research_directly": false,
+    "custom_identity_approval_not_required_to_draft_historical_description": true,
+    "claim_source_and_local_scope_verification_required": true,
+    "author_instruction_not_attested_custom": true,
+    "old_ritual_does_not_establish_current_rule": true,
+    "no_indulgences_without_original_grant": true,
+    "do_not_imply_calendar_event_for_historical_report": true,
+    "original_source_records_preserved": true,
+    "bilingual_edit_and_dedupe_required": true,
+    "prior_53_and_195_dyk_corpora_unreconciled": true
+  }
+}
