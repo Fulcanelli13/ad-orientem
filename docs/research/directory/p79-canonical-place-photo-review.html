@@ -25,7 +25,8 @@ footer{font-size:.82rem;color:var(--muted);text-align:center;padding:2rem}.hidde
 @media(max-width:650px){.photogrid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo img{height:145px}.site{padding:.7rem}.toolbar{align-items:stretch}}
 </style></head><body>
 <header><div class="kicker">AD ORIENTEM · SACRED PLACES · P79</div><h1>Choose photographs by Place</h1>
-<p>430 existing Commons assignments, grouped by canonical Place. Select one candidate per site for <strong>further original, licence and building verification</strong>. Selection does not approve or publish a photograph.</p>
+<p>430 existing Commons assignments, grouped by canonical Place. Approve one candidate per site with a single editorial choice. After that click, the release tool checks the original file, live licence, credit and checksum automatically. Only exceptions return for attention; no photo is published merely by opening this page.</p>
+<p class="small"><strong>Choosing a photograph confirms:</strong> this is the exact named physical Place, its composition/clarity is acceptable, and it does not prominently reproduce restricted modern art or show identifiable people in a sensitive context. If uncertain, choose Hold. This is the one editorial approval; automated source checks still follow.</p>
 <p class="small">Copyright: CC0, compatible CC BY/BY-SA can be considered after exact licence and author checks; public domain requires legal basis. Exclude NC, ND, fair use, unclear licensing. Hold photos of protected modern artwork in restrictive freedom-of-panorama jurisdictions and sensitive identifiable people until individually reviewed. Nearby geotags, subject labels and Commons category are not consistently captured in P79 and are NOT asserted here.</p>
 <div id="overview" class="stat"></div><div class="progress" role="progressbar" aria-label="Photo selection progress"><div id="progressBar"></div></div>
 </header>
@@ -65,7 +66,7 @@ function render(){
  heading.appendChild(node("div","kicker",s.country+(s.city?" · "+s.city:"")));
  heading.appendChild(node("h2","",s.name));heading.appendChild(node("div","id",s.id));
  header.appendChild(heading);header.appendChild(node("span","pill",s.approved?"Already has an approved-media entry":"No approved-media entry in current registry"));card.appendChild(header);
- card.appendChild(node("p","small",s.candidates.length+" P79 assignments · "+(r.status==="unreviewed"?"Awaiting selection":r.status==="chosen"?"Candidate chosen for subsequent verification":r.status==="none"?"No suitable photo selected":"Held for further review")));
+ card.appendChild(node("p","small",s.candidates.length+" P79 assignments · "+(r.status==="unreviewed"?"Awaiting selection":r.status==="chosen"?"Editorially approved · awaiting automated file checks":r.status==="none"?"No suitable photo selected":"Held for further review")));
  const grid=node("div","photogrid"),visible=expanded?s.candidates:s.candidates.slice(0,6);
  for(const c of visible){
   const blocked=c.blocked;const box=node("div","photo"+(blocked?" blocked":"")+(r.status==="chosen"&&r.photoId===c.id?" selected":""));
@@ -80,15 +81,15 @@ function render(){
   if(c.rightsLane==="RIGHTS_MANUAL_HOLD")body.appendChild(node("div","small","Licence needs individual review"));
   if(c.previouslyMarkedPublished)body.appendChild(node("div","small","P79 previously marked published: recheck live registry"));
   const src=node("a","","Open Commons file");src.href=c.page;src.target="_blank";src.rel="noopener noreferrer";body.appendChild(src);
-  const controls=node("div","actions"),btn=node("button",r.status==="chosen"&&r.photoId===c.id?"primary choice":"",r.status==="chosen"&&r.photoId===c.id?"Selected":"Choose this photo");
-  btn.disabled=blocked;btn.title=blocked?"Previously rejected or confirmed wrong-location. Do not override without new evidence.":"Select for next verification gate";btn.onclick=()=>choose(s,"chosen",c.id);
+  const controls=node("div","actions"),btn=node("button",r.status==="chosen"&&r.photoId===c.id?"primary choice":"",r.status==="chosen"&&r.photoId===c.id?"Selected":"Approve this photo");
+  btn.disabled=blocked||c.rightsLane!=="CANDIDATE_LICENSE_RECHECK";btn.title=blocked?"Previously rejected or confirmed wrong-location":c.rightsLane!=="CANDIDATE_LICENSE_RECHECK"?"Licence exception: hold pending research":"One editorial approval; then automatic original and licence verification";btn.onclick=()=>choose(s,"chosen",c.id);
   controls.appendChild(btn);body.appendChild(controls);box.appendChild(body);grid.appendChild(box);
  }
  card.appendChild(grid);
  if(s.candidates.length>6){const btn=node("button","",expanded?"Show first 6":"Show all "+s.candidates.length+" candidates");btn.onclick=()=>{expanded=!expanded;render()};card.appendChild(btn)}
  const actions=node("div","site-actions");for(const [status,label] of [["none","None suitable"],["hold","Hold this Place"],["unreviewed","Clear decision"]]){const b=node("button","",label);b.onclick=()=>{if(status==="unreviewed")delete choices[s.id];else choices[s.id]={status,photoId:null,note:get(s).note||""};save();render()};actions.appendChild(b)}card.appendChild(actions);
  const note=node("label","small","Optional note about building identity, image quality, framing or rights");const field=node("input");field.placeholder="Reason or follow-up";field.style.width="100%";field.maxLength=1200;field.value=r.note||"";field.onchange=()=>{choices[s.id]={status:r.status,photoId:r.photoId,note:field.value};save()};note.appendChild(field);card.appendChild(note);
- card.appendChild(node("p","warning","Not verified: exact building, file licence and author, Commons source SHA1 versus original bytes, modern-art copyright, faces, visual quality, attribution and derivative. A selection is only a research instruction."));
+ card.appendChild(node("p","warning","Your selection is the editorial judgement about building identity, visual suitability and obvious subject exceptions. Automated verification of original bytes, source licence and attribution must still pass before publication."));
  panel.appendChild(card);
 }
 for(const id of ["previous","previous2"])$(id).onclick=()=>{cursor--;expanded=false;render();window.scrollTo(0,0)};
@@ -97,8 +98,8 @@ for(const id of ["coverage","statusFilter","country"])$(id).onchange=()=>{cursor
 $("search").oninput=()=>{cursor=0;expanded=false;render()};
 $("theme").onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="dark"?"light":"dark"};
 $("export").onclick=()=>{
- const decisions=SOURCE.sites.map(s=>{const r=get(s),p=s.candidates.find(c=>c.id===r.photoId);return {place_id:s.id,decision:r.status,selected_p79_id:p?.id||null,source_file:p?.file||null,source_page:p?.page||null,frozen_original_sha1:p?.sha1||null,note:r.note||"",exact_building_verified:false,source_rights_verified:false,original_bytes_verified:false,app_media_approved:false,published:false}});
- const obj={schema:"AO_P79_PLACE_PHOTO_SELECTIONS_V1",source_schema:SOURCE.schema,source_path:SOURCE.source,source_as_of:SOURCE.p79_as_of,source_assignments:SOURCE.source_assignments,canonical_site_count:SOURCE.site_count,candidate_count:SOURCE.candidate_count,selected_for_verification:decisions.filter(d=>d.decision==="chosen").length,approved_photos:0,published_photos:0,decisions};
+ const decisions=SOURCE.sites.map(s=>{const r=get(s),p=s.candidates.find(c=>c.id===r.photoId);return {place_id:s.id,decision:r.status,selected_p79_id:p?.id||null,source_file:p?.file||null,source_page:p?.page||null,frozen_original_sha1:p?.sha1||null,note:r.note||"",editorial_approved:r.status==="chosen",exact_building_editorially_confirmed:r.status==="chosen",visual_quality_editorially_approved:r.status==="chosen",source_rights_verified:false,original_bytes_verified:false,app_media_approved:false,published:false}});
+ const obj={schema:"AO_P79_PLACE_PHOTO_SELECTIONS_V2",source_schema:SOURCE.schema,source_path:SOURCE.source,source_as_of:SOURCE.p79_as_of,source_assignments:SOURCE.source_assignments,canonical_site_count:SOURCE.site_count,candidate_count:SOURCE.candidate_count,editorial_approvals:decisions.filter(d=>d.editorial_approved).length,approved_photos:0,published_photos:0,decisions};
  const blob=new Blob([JSON.stringify(obj,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=node("a");a.href=url;a.download="ad-orientem-p79-place-photo-review-decisions.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)
 };
 $("import").onclick=()=>$("importFile").click();
