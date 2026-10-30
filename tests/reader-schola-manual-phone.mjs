@@ -484,10 +484,33 @@ try{
    assert.deepEqual(selectedSource,{
      kyrie:"MASS_08",credo:"CREDO_03",
      kyrieLabel:"Mass VIII · De Angelis",credoLabel:"Credo III"});
+   // Research notation appears only for an explicitly indexed, exact musical
+   // movement. Never infer a score from legacy free text such as "Mass VIII".
+   const kyrieStudy=panel.locator('[data-schola-notation-preview="KYRIE"]');
+   const credoStudy=panel.locator('[data-schola-notation-preview="CREDO"]');
+   await page.waitForFunction(()=>{
+     const k=document.querySelector('[data-schola-notation-preview="KYRIE"]');
+     const c=document.querySelector('[data-schola-notation-preview="CREDO"]');
+     return k?.hidden===false&&k.href.includes("id=1184")&&
+       c?.hidden===false&&c.href.includes("id=749");
+   });
+   assert.match(await kyrieStudy.textContent(),/Kyrie VIII.*research preview/i);
+   assert.match(await credoStudy.textContent(),/Credo III.*research preview/i);
+   assert.equal(await panel.locator('[data-schola-notation-preview="GLORIA"]').isHidden(),true,
+     "Typed Gloria VIII is custom and cannot claim an indexed score");
+   assert.equal(await kyrieStudy.getAttribute("rel"),"noopener noreferrer");
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   })),profileBefore,"Research score links must not move the priest");
    console.log("SCHOLA_KYRIALE_PHONE="+JSON.stringify({width,...selectedSource}));
    await page.screenshot({path:resolve(out,"schola-kyriale-source-"+width+".png"),
      animations:"disabled"});
    await kyrieMenu.selectOption("CUSTOM");
+   await page.waitForFunction(()=>document.querySelector(
+     '[data-schola-notation-preview="KYRIE"]')?.hidden===true);
+   assert.equal(await kyrieStudy.getAttribute("href"),null,
+     "Custom Kyrie must revoke research-score source link");
    // The UI queues one render after a local profile change; do not race
    // the render cycle while asserting that Custom restores the editor.
    await page.waitForFunction(()=>document.querySelector(
