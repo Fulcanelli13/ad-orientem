@@ -137,6 +137,24 @@ const readFragment=html.slice(html.indexOf('class="aoH4Read"'));
 assert.doesNotMatch(readFragment,/data-home-dyk-open/,"Did You Know must not be inside Read");
 assert.equal((readFragment.match(/data-action="gospel"/g)||[]).length,1,"Read keeps its Gospel entry");
 // H7 Sanctuary Prototype 1 is the visual authority for Home AND the distinct Mass door.
+const h7Facts=h4HomeView(vm,model,{ordoFacts:{
+  status:"SOURCE_PROPER",gloria:false,credo:true,
+  preface:{status:"MATCH",heading:"Praefatio Communis"},
+  introitIncipit:"Si iniquitátes observáveris Dómine"
+},properSections:[{en:"Introit",fr:"Introït"},{en:"Gospel",fr:"Évangile"}]});
+assert.match(h7Facts,/Praefatio Communis/,"Certified Preface must appear in H7 door");
+assert.match(h7Facts,/<small>Gloria<\/small><b[^>]*>Not said<\/b>/,"Only certified Gloria decision may display");
+assert.match(h7Facts,/<small>Credo<\/small><b[^>]*>Said<\/b>/,"Only certified Credo decision may display");
+assert.doesNotMatch(h7Facts,/data-home-h4-readings[^>]*><span>Epistle<\/span>/,
+  "Unavailable proper sections must not be invented");
+assert.match(h7Facts,/Read complete Introit/,"Partial incipit must not masquerade as full prayer text");
+const h7Withheld=h4HomeView(vm,model,{ordoFacts:{
+  status:"SOURCE_PROPER",gloria:null,credo:null,preface:{status:"SOURCE_CONFLICT",heading:null}
+}});
+assert.doesNotMatch(h7Withheld,/<small>Gloria<\/small><b[^>]*>Said<\/b>|<small>Credo<\/small><b[^>]*>Said<\/b>/,
+  "Unverified Ordo decisions must not publish affirmatively");
+assert.doesNotMatch(h7Withheld,/Praefatio Communis/,
+  "Preface conflict must remain withheld on Home");
 assert.match(html,/class="aoH7HomeView home"/,"H7 Home must be an independent screen");
 assert.match(html,/class="celebrationBlock aoTodayV2Frontispiece hero aoH7Hero"/,
   "H7 original full-bleed art hero, not an H4 card");
