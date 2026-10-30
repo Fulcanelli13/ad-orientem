@@ -344,6 +344,10 @@ html[data-ao-motion-v1="reduced"] .aoTodayV2,html[data-ao-motion-v1="reduced"] .
 .aoTodayV2GlanceNote{font:400 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted)}
 
 
+.aoTodayV2 .aoTodayV2DiscoveryStandalone{display:block;margin:16px 16px 0;min-width:0}
+.aoTodayV2 .aoTodayV2DiscoveryStandalone>.aoHomeDYK{box-sizing:border-box;width:100%;border-radius:18px!important;min-height:124px!important}
+@media(max-width:359px){.aoTodayV2 .aoTodayV2DiscoveryStandalone{margin-left:12px;margin-right:12px}}
+
 /* Home's source-owned Did You Know teaser; a full Discovery corpus is still gated. */
 .aoTodayV2 .aoHomeDYK{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:5px!important;min-width:0;width:100%;text-align:left!important;padding:15px 16px!important;min-height:112px!important;border:1px solid var(--ao-rule,var(--border,rgba(225,210,180,.2)))!important;border-radius:14px!important;background:var(--ao-surface-1,var(--surface-1,#161e25))!important;color:var(--ao-text-primary,var(--text,#f2ebe0))!important;white-space:normal!important}
 .aoTodayV2 .aoHomeDYK:disabled{opacity:1!important;cursor:default}
