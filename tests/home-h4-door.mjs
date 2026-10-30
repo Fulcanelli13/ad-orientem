@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {h4Enabled,h4HomeView} from "../src/home/today-h4-view.js";
+import {h4Enabled,h4HomeView,verifiedH4WeekColour} from "../src/home/today-h4-view.js";
 assert.equal(h4Enabled({location:{search:""}}),false,"H4 must not replace production until approved");
 assert.equal(h4Enabled({location:{search:"?aoTodayH4=1"}}),true,"H4 preview opt-in missing");
 const model={
@@ -20,6 +20,14 @@ const html=h4HomeView(vm,model);
 assert.match(html,/Friday 30 October/);
 assert.match(html,/Mass of the 22nd Sunday after Pentecost/);
 assert.match(html,/Si iniquitátes observáveris/);
+assert.equal((html.match(/data-home-week-colour=/g)||[]).length,7,"All days must have independent colour slots");
+const resolved={status:"ready",date:"2026-10-30",day:{main:{id:"temporale:green",color:"Green"}},
+  colourPlan:{massColor:"Green"},proper:{status:"ready",data:{color:"Green"}}};
+assert.equal(verifiedH4WeekColour(resolved,"2026-10-30"),"#62a473","Canonical green Mass");
+assert.equal(verifiedH4WeekColour({...resolved,date:"2026-10-31"},"2026-10-30"),null,"No stale-day colour");
+assert.equal(verifiedH4WeekColour({...resolved,status:"failed"},"2026-10-30"),null,"No failed-day colour");
+assert.equal(verifiedH4WeekColour({...resolved,colourPlan:{massColor:"unknown"},proper:{data:{color:"unknown"}},day:{main:{color:"unknown"}}},"2026-10-30"),null,"Never infer unknown colour");
+assert.equal(verifiedH4WeekColour({...resolved,colourPlan:{massColor:"White"}},"2026-10-30"),"#e9e0c9","Use canonical Mass colour, not observed seasonal guess");
 assert.match(html,/data-home-h4-begin/);
 assert.match(html,/data-home-h4-change/);
 assert.match(html,/data-home-h4-readings/);
