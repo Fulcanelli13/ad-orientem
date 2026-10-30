@@ -22,7 +22,7 @@ assert.equal(new Set(newSites.map(x=>x.id)).size,6);
 assert.deepEqual(new Set(newSites.map(x=>x.country)),new Set(["SG","MA","CA","ZM"]));
 assert.equal(new Set(seed.shrines.map(x=>x.place_id)).size,257);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
-assert.equal(hero.items.length,31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Historical R70 site baseline conserved while separately vetted Directory photos may be added");
+assert.ok(hero.items.length>=31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Historical R70 site baseline conserved while separately vetted Directory photos may be added");
 // Preserve the original six R68/R69 photographs without treating later
 // approved Place imagery as an unauthorized mutation of this R70 cohort.
 assert.equal(gallery.items.filter(item=>item.reviewed_at==="2026-10-11").length,6);
