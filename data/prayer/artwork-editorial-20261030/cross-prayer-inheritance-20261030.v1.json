@@ -23,15 +23,18 @@
     "unreviewed_23_not_imported": 23,
     "q2_accepted_b01_b05": 114,
     "scene_family_count": 21,
-    "added_reuse_edges": 100,
-    "slots_touched": 43,
+    "added_reuse_edges": 101,
+    "slots_touched": 44,
     "remaining_without_explicit_approved_or_locked_candidate": [
       "COV-novena.st_therese"
     ],
     "exact_rite_benediction_still_unapproved": true,
     "st_therese_image_approval_and_rights_still_unresolved": true,
     "all_new_edges_research_only": true,
-    "production_images_published": 0
+    "production_images_published": 0,
+    "scope_guardrail_removals": 22,
+    "luminous_five_with_approved_choices": 5,
+    "luminous_five_runtime_ids_joined": 0
   },
   "scene_families": [
     {
@@ -1020,6 +1023,14 @@
       "from_slot": "COV-pray.benediction",
       "rule": "SAME_BENEDICTION_PRAYER_COVER_CARRYOVER_NOT_A_DEPICTION_OF_THE_BLESSING",
       "kind": "CONTEXTUAL_APPROVED_TEMPORARY_CARRYOVER"
+    },
+    {
+      "target_slot": "COV-pray.five_wounds",
+      "artwork_id": "CANONICAL::met-442488",
+      "title": "The Agony in the Garden",
+      "from_slot": "STG-pray.rosary-07",
+      "rule": "USER_Q2_BATCH_01_ORDER_31_FIVE_WOUNDS_CONTEXT",
+      "kind": "CONTEXTUAL_USER_AUTHORIZED"
     }
   ],
   "additional_semantic_slots_under_runtime_join": [
@@ -3655,5 +3666,302 @@
       "type": "ACTUAL_RUNTIME_CARD_PARITY_UNVERIFIED",
       "note": "267 is editorial blueprint, NOT proof of every live interactive card or bead image"
     }
-  ]
+  ],
+  "scope_guardrail_corrections": {
+    "date": "2026-10-30",
+    "removed_from_active_candidates": [
+      {
+        "slot_id": "HERO-04",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "HERO-04",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "HERO-18",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "HERO-18",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "DOOR-D9",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "DOOR-D9",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.angelus-09",
+        "artwork_id": "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+        "title": "Resurrection of Christ",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "REGINA_CAELI_NOT_REGULAR_ANGELUS"
+      },
+      {
+        "slot_id": "COV-daily.personal_rule",
+        "artwork_id": "CANONICAL::W07-007",
+        "title": "Saint Jerome Writing (Borghese original)",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "COV-pray.precious_blood",
+        "artwork_id": "PRAYER::w1-kazimirowski",
+        "title": "Divine Mercy (the original, 1934)",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.precious_blood-07",
+        "artwork_id": "PRAYER::w1-kazimirowski",
+        "title": "Divine Mercy (the original, 1934)",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "COV-adoration_lord_i_am_not_worthy",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "COV-adoration_lord_i_am_not_worthy",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.adoration.four_ends-04",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.adoration.four_ends-04",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-prayer.communion-01",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-prayer.communion-01",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.litany_saints-05",
+        "artwork_id": "CANONICAL::W07-007",
+        "title": "Saint Jerome Writing (Borghese original)",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.penitential_psalms-03",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.penitential_psalms-03",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "STG-pray.confession-01",
+        "artwork_id": "CANONICAL::W07-007",
+        "title": "Saint Jerome Writing (Borghese original)",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "COV-pray.occasional_intercessions",
+        "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      },
+      {
+        "slot_id": "COV-pray.occasional_intercessions",
+        "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "title": "Miracle of Loaves and Fishes",
+        "previous_editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "reason": "Q2_USER_ONLY_SCOPE"
+      }
+    ],
+    "removed_count": 22,
+    "rule": "Only-scope removes inferred artwork edges, leaving historical human approvals intact in ledger. Regina Caeli is not the regular Angelus. Later Our Father note extends but does not nullify meals scope.",
+    "optional_added_user_instruction": "CANONICAL::met-442488"
+  },
+  "optional_luminous_mysteries": {
+    "count": 5,
+    "with_approved_art": 5,
+    "stable_runtime_card_ids": 0,
+    "status": "EDITORIAL_SEMANTIC_CHOICE_ONLY_NOT_1962_TRADITIONAL_FIFTEEN",
+    "mysteries": [
+      {
+        "key": "baptism_of_christ",
+        "label": "Baptism of Christ",
+        "approved_new_oct30": [],
+        "approved_existing_q2_ids": [
+          "CANONICAL::met-440393",
+          "CANONICAL::cma-127746"
+        ],
+        "runtime_card_id": null,
+        "photo_rights_passed": false,
+        "publication_ready": false
+      },
+      {
+        "key": "wedding_at_cana",
+        "label": "Wedding at Cana",
+        "approved_new_oct30": [
+          {
+            "candidate_key": "SEM-rosary.wedding_at_cana::01",
+            "title": "The Wedding at Cana",
+            "artist": "Adam van Noort",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.wedding_at_cana::03",
+            "title": "Marriage at Cana",
+            "artist": "Gaetano Gandolfi",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.wedding_at_cana::05",
+            "title": "The Marriage at Cana",
+            "artist": "James Tissot",
+            "user_approved": true
+          }
+        ],
+        "approved_existing_q2_ids": [],
+        "runtime_card_id": null,
+        "photo_rights_passed": false,
+        "publication_ready": false
+      },
+      {
+        "key": "proclamation_of_kingdom",
+        "label": "Proclamation of the Kingdom",
+        "approved_new_oct30": [
+          {
+            "candidate_key": "SEM-rosary.proclamation_of_kingdom::01",
+            "title": "The Sermon on the Mount",
+            "artist": "Carl Bloch",
+            "user_approved": true
+          }
+        ],
+        "approved_existing_q2_ids": [],
+        "runtime_card_id": null,
+        "photo_rights_passed": false,
+        "publication_ready": false
+      },
+      {
+        "key": "transfiguration",
+        "label": "Transfiguration",
+        "approved_new_oct30": [
+          {
+            "candidate_key": "SEM-rosary.transfiguration::01",
+            "title": "The Transfiguration",
+            "artist": "Peter Paul Rubens",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.transfiguration::02",
+            "title": "The Transfiguration",
+            "artist": "Ludovico Carracci",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.transfiguration::04",
+            "title": "The Transfiguration",
+            "artist": "Domenico Pugliani",
+            "user_approved": true
+          }
+        ],
+        "approved_existing_q2_ids": [],
+        "runtime_card_id": null,
+        "photo_rights_passed": false,
+        "publication_ready": false
+      },
+      {
+        "key": "institution_of_eucharist",
+        "label": "Institution of the Eucharist",
+        "approved_new_oct30": [
+          {
+            "candidate_key": "SEM-rosary.institution_of_eucharist::01",
+            "title": "La Petite Cène",
+            "artist": "Philippe de Champaigne",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.institution_of_eucharist::02",
+            "title": "The Last Supper",
+            "artist": "Valentin de Boulogne",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.institution_of_eucharist::03",
+            "title": "The Last Supper",
+            "artist": "Artus Wolffort and workshop",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.institution_of_eucharist::04",
+            "title": "The Last Supper",
+            "artist": "Jacob Jordaens",
+            "user_approved": true
+          },
+          {
+            "candidate_key": "SEM-rosary.institution_of_eucharist::06",
+            "title": "The Last Supper",
+            "artist": "Frans Walschartz",
+            "user_approved": true
+          }
+        ],
+        "approved_existing_q2_ids": [
+          "CANONICAL::met-459131"
+        ],
+        "runtime_card_id": null,
+        "photo_rights_passed": false,
+        "publication_ready": false,
+        "editorial_preference": "Philippe de Champaigne's La Petite Cène preferred; do not promote Ugolino da Siena to default despite existing Q2 historical acceptance."
+      }
+    ]
+  }
 }
