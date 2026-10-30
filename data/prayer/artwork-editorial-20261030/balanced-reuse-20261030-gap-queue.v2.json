@@ -1,0 +1,613 @@
+{
+  "schema": "AO_PRAYER_RESEARCH_AFTER_REUSE_V2",
+  "counts": {
+    "blueprint_image_slots": 267,
+    "covered_with_at_least_one_eligible_candidate": 263,
+    "with_any_defensible_candidate": 259,
+    "empty": 4,
+    "weak_only": 4,
+    "below_minimum_after_pruning": 33,
+    "pruned_weak_edges": 32,
+    "user_accepted_first_five": 114,
+    "user_accepted_later": 107,
+    "locked_covers": 5,
+    "unresolved_semantic_edges": 16,
+    "artwork_edges_after_consolidation": 1545,
+    "explicit_user_acceptances_never_auto_pruned": true
+  },
+  "items": [
+    {
+      "slot_id": "HERO-08",
+      "door": "Pray home",
+      "label": "Palm Sunday",
+      "priority": "A",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "HERO-10",
+      "door": "Pray home",
+      "label": "Good Friday",
+      "priority": "A",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "HERO-14",
+      "door": "Pray home",
+      "label": "Pentecost",
+      "priority": "A",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "HERO-17",
+      "door": "Pray home",
+      "label": "Sacred Heart",
+      "priority": "A",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "HERO-18",
+      "door": "Pray home",
+      "label": "Time after Pentecost",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 11,
+      "adequate_fit_distinct_works": 11,
+      "minimum": 10,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "HERO-20",
+      "door": "Pray home",
+      "label": "All Saints",
+      "priority": "A",
+      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 2,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "HERO-21",
+      "door": "Pray home",
+      "label": "All Souls",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 4,
+      "adequate_fit_distinct_works": 4,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "DOOR-D1",
+      "door": "D1 Daily Prayer",
+      "label": "Daily Prayer",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 6,
+      "adequate_fit_distinct_works": 4,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "DOOR-D9",
+      "door": "D9 Life & Intentions",
+      "label": "Life & Intentions",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 11,
+      "adequate_fit_distinct_works": 11,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-foundations_morning_offering",
+      "door": "D1 Daily Prayer",
+      "label": "Card vignette",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-daily.morning",
+      "door": "D1 Daily Prayer",
+      "label": "Cover",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 6,
+      "adequate_fit_distinct_works": 4,
+      "minimum": 6,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-daily.evening",
+      "door": "D1 Daily Prayer",
+      "label": "Cover",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 5,
+      "adequate_fit_distinct_works": 4,
+      "minimum": 6,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-sacrament_come_holy_spirit",
+      "door": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-traditional_veni_sancte_sequence",
+      "door": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-03",
+      "door": "D3 Rosary & Chaplets",
+      "label": "The Visitation",
+      "priority": "A",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-10",
+      "door": "D3 Rosary & Chaplets",
+      "label": "Carrying of the Cross",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 5,
+      "adequate_fit_distinct_works": 4,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-13",
+      "door": "D3 Rosary & Chaplets",
+      "label": "The Ascension",
+      "priority": "A",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-14",
+      "door": "D3 Rosary & Chaplets",
+      "label": "Descent of the Holy Ghost",
+      "priority": "A",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-novena.holy_ghost",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-novena.holy_ghost-01",
+      "door": "D4 Novenas & Journeys",
+      "label": "Day images",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 5,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-novena.sacred_heart",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-novena.st_therese",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "priority": "B",
+      "why": "EMPTY_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 0,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 3,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "COV-novena.immaculate_heart",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-novena.st_anthony_nine_tuesdays",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "priority": "B",
+      "why": "EMPTY_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 0,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 3,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "COV-programme.first_friday",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-benediction_o_salutaris",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "priority": "C",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-pray.adoration",
+      "door": "D5 Holy Eucharist",
+      "label": "Cover",
+      "priority": "A",
+      "why": "FINAL_COVER_CHOICE_LOCKED_ASSET_QA_PENDING",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 4,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.adoration-02",
+      "door": "D5 Holy Eucharist",
+      "label": "In stillness (exposition)",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-pray.benediction",
+      "door": "D5 Holy Eucharist",
+      "label": "Cover",
+      "priority": "A",
+      "why": "FINAL_COVER_CHOICE_LOCKED_ASSET_QA_PENDING",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.benediction-02",
+      "door": "D5 Holy Eucharist",
+      "label": "Tantum Ergo · incensation",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.benediction-03",
+      "door": "D5 Holy Eucharist",
+      "label": "The blessing",
+      "priority": "B",
+      "why": "EMPTY_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 0,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 2,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "COV-pray.forty_hours",
+      "door": "D5 Holy Eucharist",
+      "label": "Cover",
+      "priority": "B",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-sacred_heart_aspiration_trust",
+      "door": "D6 Our Lord",
+      "label": "Card vignette",
+      "priority": "C",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-01",
+      "door": "D6 Our Lord",
+      "label": "'Father, forgive them'",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-04",
+      "door": "D6 Our Lord",
+      "label": "'My God, why hast Thou forsaken me?'",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-05",
+      "door": "D6 Our Lord",
+      "label": "'I thirst'",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-06",
+      "door": "D6 Our Lord",
+      "label": "'It is consummated'",
+      "priority": "A",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-prayer.sacred_heart",
+      "door": "D6 Our Lord",
+      "label": "Cover",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-devotion_st_anthony_lost_items",
+      "door": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "priority": "C",
+      "why": "EMPTY_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 0,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 2,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-01",
+      "door": "D8 Saints & Angels",
+      "label": "Doubt · the angel's message",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-pray.litany_saints",
+      "door": "D8 Saints & Angels",
+      "label": "Cover",
+      "priority": "B",
+      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 3,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-06",
+      "door": "D8 Saints & Angels",
+      "label": "Virgins and widows; all saints",
+      "priority": "B",
+      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 2,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "COV-church_prayer_for_pope",
+      "door": "D9 Life & Intentions",
+      "label": "Card vignette",
+      "priority": "C",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 2,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    },
+    {
+      "slot_id": "COV-pray.for_priests",
+      "door": "D9 Life & Intentions",
+      "label": "Cover",
+      "priority": "B",
+      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "eligible_distinct_works": 4,
+      "adequate_fit_distinct_works": 0,
+      "minimum": 3,
+      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+    },
+    {
+      "slot_id": "COV-prayer.good_death",
+      "door": "D9 Life & Intentions",
+      "label": "Cover",
+      "priority": "B",
+      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
+      "minimum": 3,
+      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+    }
+  ],
+  "unmapped_approved": [
+    {
+      "slot_id": "STG-prayer.sacred_heart-01",
+      "artwork_id": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED"
+    },
+    {
+      "slot_id": "STG-prayer.sacred_heart-01",
+      "artwork_id": "PRAYER::heart-jesus--primary",
+      "title": "The Heart of Jesus",
+      "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED"
+    },
+    {
+      "slot_id": "COV-pray.first_saturdays",
+      "artwork_id": "CANONICAL::B02-HEART-MARY-MORLETE",
+      "title": "The Heart of Mary",
+      "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED"
+    },
+    {
+      "slot_id": "COV-pray.first_saturdays",
+      "artwork_id": "PRAYER::heart-mary--primary",
+      "title": "The Heart of Mary",
+      "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED"
+    },
+    {
+      "slot_id": "COV-litany_loreto_current",
+      "artwork_id": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+      "title": "Immaculate Conception",
+      "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED"
+    },
+    {
+      "slot_id": "COV-litany_loreto_current",
+      "artwork_id": "CANONICAL::met-437423",
+      "title": "The Immaculate Conception",
+      "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED"
+    },
+    {
+      "slot_id": "COV-litany_loreto_current",
+      "artwork_id": "CANONICAL::cma-135659",
+      "title": "The Immaculate Conception",
+      "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED"
+    },
+    {
+      "slot_id": "SEM-rosary.baptism_of_christ",
+      "artwork_id": "REVIEW::commons:15177655",
+      "title": "Baptism of Christ-Francesco Albani-MBA Lyon A170-IMG 0339",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-rosary.baptism_of_christ",
+      "artwork_id": "REVIEW::commons:75930307",
+      "title": "German: Taufe Christi | Baptism of Christ \" \"",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-rosary.wedding_at_cana",
+      "artwork_id": "REVIEW::commons:158345",
+      "title": "Hochzeit zu Kana",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-rosary.baptism_of_christ",
+      "artwork_id": "REVIEW::commons:9569342",
+      "title": "Le Baptême du Christ Stella",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-rosary.baptism_of_christ",
+      "artwork_id": "REVIEW::commons:131104289",
+      "title": "Lemoyne Baptême du Christ Sens",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-prayer.recollection",
+      "artwork_id": "REVIEW::commons:107336115",
+      "title": "Magdalena penitente - Mateo Cerezo",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-rosary.institution_of_eucharist",
+      "artwork_id": "REVIEW::commons:48577448",
+      "title": "The Last Supper",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-prayer.recollection",
+      "artwork_id": "REVIEW::commons:77219970",
+      "title": "The penitent Magdalene",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    },
+    {
+      "slot_id": "SEM-rosary.wedding_at_cana",
+      "artwork_id": "REVIEW::commons:74197382",
+      "title": "The Wedding at Cana \" \"",
+      "origin": "BATCHES_06_11_USER_APPROVED"
+    }
+  ]
+}
