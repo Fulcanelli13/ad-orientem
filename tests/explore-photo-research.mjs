@@ -39,7 +39,9 @@ const p102=read("data/geography/research/directory-p102-three-approved-covers.v1
 const p102ByPlace=new Map(p102.photos.map(x=>[x.place_id,x]));
 const p106=read("data/geography/research/directory-p106-four-approved-covers.v1.json");
 const p106ByPlace=new Map(p106.photos.map(x=>[x.place_id,x]));
-assert.equal(approved.items.length,31+p95.photos.length+p102.photos.length+p106.photos.length,"Historical shrine and P95 covers plus exactly three P102 licensed Directory additions must remain intact");
+const p108=read("data/geography/research/directory-p108-one-approved-jihlava-cover.v1.json");
+const p108ByPlace=new Map(p108.photos.map(x=>[x.place_id,x]));
+assert.equal(approved.items.length,31+p95.photos.length+p102.photos.length+p106.photos.length+p108.photos.length,"Historical shrine and P95 covers plus exactly three P102 licensed Directory additions must remain intact");
 const shrineRecovery=read("data/geography/research/shrine-seven-photo-recovery-20261021.v1.json");
 const shrineCandidates=new Map(shrineRecovery.candidates.map(x=>[x.place_id,x]));
 const b2Candidates=new Map(read("data/geography/research/explore-major-marian-b2-photo-candidates.v1.json").candidates.map(x=>[x.place_id,x]));
@@ -98,6 +100,14 @@ for(const item of approved.items){
     assert.equal(item.license,c.license);
     assert.equal(item.source_sha1,c.source_sha1);
     assert.equal(item.derivative_sha256,c.sha256);
+    assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT"));
+  }else if(p108ByPlace.has(item.place_id)){
+    const c=p108ByPlace.get(item.place_id);
+    assert.equal(item.source_url,c.source_url);
+    assert.equal(item.credit,c.credit);
+    assert.equal(item.license,c.license);
+    assert.equal(item.source_sha1,c.source_sha1);
+    assert.equal(item.derivative_sha256,c.derivative_sha256);
     assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT"));
   }else{
     const c=shrineCandidates.get(item.place_id)||b2Candidates.get(item.place_id);
