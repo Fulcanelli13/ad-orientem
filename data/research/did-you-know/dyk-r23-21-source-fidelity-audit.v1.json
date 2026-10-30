@@ -1,0 +1,350 @@
+{
+  "schema": "AO_DYK_R23_21_SOURCE_FIDELITY_AUDIT_V1",
+  "date": "2026-10-30",
+  "status": "SOURCE_CORRESPONDENCE_REVIEW_NOT_PUBLICATION",
+  "card_source": "dyk-r22-21-added-review-cards.v1.json",
+  "scope": "R22 21 new shortlist cards only; previous 168 remain pending. Source fidelity to cited witness does not establish independent historical corroboration or sign off on English/French suitability.",
+  "counts": {
+    "audited": 21,
+    "original_weiser_page_images_read": 7,
+    "canon_1962_primary_text_crosschecks": 5,
+    "gesture_1962_primary_text_crosschecks": 2,
+    "claims_corresponding_to_cited_source_after_revisions": 14,
+    "prior_pitre_not_rechecked_in_r23": 7,
+    "corrected_bilingual_drafts": 9,
+    "final_approved": 0,
+    "live_published": 0
+  },
+  "release_gates": {
+    "independent_french_signoff": "PENDING",
+    "editorial_english_signoff": "PENDING",
+    "independent_historical_corrob_where_needed": "PENDING",
+    "full_612_home_preview_semantic_novelty": "PENDING",
+    "gesture_exact_routes": "PENDING_2",
+    "publication": "BLOCKED"
+  },
+  "verification_note": "Weiser pages manually reviewed in the cited 384-page PDF; page number mapping used printed page +17 as zero-based PDF index. 1962 text crosschecks used ICRSP bilingual Ordo, the Ritus source registry, and 1960 rubric codification for Credo. For R22 21 Pitrè items, original earlier verification ownership is preserved but new page-image verification is not claimed.",
+  "records": [
+    {
+      "id": "DYK-UM01-024",
+      "source_family": "PITRE_1900",
+      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
+      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "location": {
+        "printed_pages": [
+          454
+        ],
+        "source_id": "PIT1900-IT-049",
+        "prior_source_page_report": true
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": false,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+    },
+    {
+      "id": "DYK-UM03-030",
+      "source_family": "PITRE_1900",
+      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
+      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "location": {
+        "printed_pages": [
+          36
+        ],
+        "source_id": "PIT1900-NEW-024",
+        "prior_source_page_report": true
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": false,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+    },
+    {
+      "id": "DYK-UM03-035",
+      "source_family": "PITRE_1900",
+      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
+      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "location": {
+        "printed_pages": [
+          80
+        ],
+        "source_id": "PIT1900-NEW-046",
+        "prior_source_page_report": true
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": false,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+    },
+    {
+      "id": "DYK-UM03-036",
+      "source_family": "PITRE_1900",
+      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
+      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "location": {
+        "printed_pages": [
+          86
+        ],
+        "source_id": "PIT1900-NEW-056",
+        "prior_source_page_report": true
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": false,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+    },
+    {
+      "id": "DYK-UM03-042",
+      "source_family": "PITRE_1900",
+      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
+      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "location": {
+        "printed_pages": [
+          125
+        ],
+        "source_id": "PIT1900-NEW-082",
+        "prior_source_page_report": true
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": false,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+    },
+    {
+      "id": "DYK-SF01-036",
+      "source_family": "1962_GESTURE_MATRIX",
+      "status": "1962_GESTURE_PRIMARY_TEXT_CROSSCHECKED",
+      "witness": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "location": {
+        "gesture_id": "GM.P.C0096.01",
+        "cue_id": "AO.SM.C0096"
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Exact application reader cue route remains pending."
+    },
+    {
+      "id": "DYK-SF01-039",
+      "source_family": "1962_GESTURE_MATRIX",
+      "status": "1962_GESTURE_PRIMARY_TEXT_CROSSCHECKED",
+      "witness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "location": {
+        "gesture_id": "GM.P.C0181.02",
+        "cue_id": "AO.SM.C0181"
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Exact application reader cue route remains pending."
+    },
+    {
+      "id": "DYK-H04-W-A-049",
+      "source_family": "WEISER_1958",
+      "status": "WEISER_PRINTED_PAGE_IMAGE_CHECKED",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "location": {
+        "printed_page": 97,
+        "pdf_page_index_zero_based": 114
+      },
+      "claim_correction": "Source specifies candles on shelves of a wooden pyramid, adorned with fir twigs—not a pyramid assembled from candles.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-H04-W-A-097",
+      "source_family": "WEISER_1958",
+      "status": "WEISER_PRINTED_PAGE_IMAGE_CHECKED",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "location": {
+        "printed_page": 159,
+        "pdf_page_index_zero_based": 176
+      },
+      "claim_correction": "Source explicitly identifies the inscribed straw figure, removal from choir, and burning in churchyard; period is before Septuagesima.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-H04-W-B-038",
+      "source_family": "WEISER_1958",
+      "status": "WEISER_PRINTED_PAGE_IMAGE_CHECKED",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "location": {
+        "printed_page": 234,
+        "pdf_page_index_zero_based": 251
+      },
+      "claim_correction": "Source gives a concrete secondary report about Edward I and 450 dyed or gilded eggs; original generic statement implied decorated eggs to all servants without an exact witness.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Weiser relays a historical report; contemporaneous evidence not independently checked."
+    },
+    {
+      "id": "DYK-H04-W-B-044",
+      "source_family": "WEISER_1958",
+      "status": "WEISER_PRINTED_PAGE_IMAGE_CHECKED",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "location": {
+        "printed_page": 238,
+        "pdf_page_index_zero_based": 255
+      },
+      "claim_correction": "Critical correction: Weiser describes a Russian moulded preparation with crosses on its sides, NOT a bread loaf marked on its crust.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-H04-W-B-097",
+      "source_family": "WEISER_1958",
+      "status": "WEISER_PRINTED_PAGE_IMAGE_CHECKED",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "location": {
+        "printed_page": 282,
+        "pdf_page_index_zero_based": 299
+      },
+      "claim_correction": "Source explicitly mentions visits on death anniversaries and all-night vigils.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-H04-W-B-104",
+      "source_family": "WEISER_1958",
+      "status": "WEISER_PRINTED_PAGE_IMAGE_CHECKED",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "location": {
+        "printed_page": 291,
+        "pdf_page_index_zero_based": 308
+      },
+      "claim_correction": "Source specifies French Alpine parish priests, successive pastures, Assumption/day or octave, and animal blessing by decorated cross.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-H04-W-B-131",
+      "source_family": "WEISER_1958",
+      "status": "WEISER_PRINTED_PAGE_IMAGE_CHECKED",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "location": {
+        "printed_page": 310,
+        "pdf_page_index_zero_based": 327,
+        "NOTE": "Both pp. 310 and 311 were inspected."
+      },
+      "claim_correction": "Source says small-glass-lantern-protected candles near tombs, lit on All Saints' Eve and left overnight.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-H04-P-014",
+      "source_family": "PITRE_1900",
+      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
+      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "location": {
+        "printed_pages": [
+          88
+        ],
+        "source_id": "PIT1900-W05-OBS-014",
+        "prior_source_page_report": null
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": false,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+    },
+    {
+      "id": "DYK-H04-P-097",
+      "source_family": "PITRE_1900",
+      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
+      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "location": {
+        "printed_pages": [
+          401
+        ],
+        "source_id": "PIT1900-W05-OBS-097",
+        "prior_source_page_report": null
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": false,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+    },
+    {
+      "id": "DYK-M04-CANON-003",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "status": "1962_CANON_PRIMARY_TEXT_CROSSCHECKED",
+      "witness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "location": {
+        "action_id": "AO.CANON.R62.003",
+        "ritus_locator": "VIII.1",
+        "source_cue_id": "AO.SM.C0152"
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-M04-CANON-022",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "status": "1962_CANON_PRIMARY_TEXT_CROSSCHECKED",
+      "witness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "location": {
+        "action_id": "AO.CANON.R62.022",
+        "ritus_locator": "VIII.5",
+        "source_cue_id": "AO.SM.C0173"
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-M04-CANON-038",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "status": "1962_CANON_PRIMARY_TEXT_CROSSCHECKED",
+      "witness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "location": {
+        "action_id": "AO.CANON.R62.038",
+        "ritus_locator": "IX.1",
+        "source_cue_id": "AO.SM.C0184"
+      },
+      "claim_correction": "Ordo 1962 specifies three crosses over both Species followed by one over Host and one over chalice; distinct from Te igitur.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-M04-CANON-047",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "status": "1962_CANON_PRIMARY_TEXT_CROSSCHECKED",
+      "witness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "location": {
+        "action_id": "AO.CANON.R62.047",
+        "ritus_locator": "IX.2",
+        "source_cue_id": "AO.SM.C0193"
+      },
+      "claim_correction": null,
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    },
+    {
+      "id": "DYK-M04-CANON-056",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "status": "1962_CANON_PRIMARY_TEXT_CROSSCHECKED",
+      "witness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "location": {
+        "action_id": "AO.CANON.R62.056",
+        "ritus_locator": "IX.3",
+        "source_cue_id": "AO.SM.C0202"
+      },
+      "claim_correction": "Ordo 1962 specifies three Host-crosses over chalice then two crosses between celebrant and chalice; preserve the two stages.",
+      "source_correspondence_checked": true,
+      "claim_is_eligible_for_release": false,
+      "additional_limitations": null
+    }
+  ]
+}
