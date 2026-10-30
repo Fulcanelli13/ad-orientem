@@ -77,9 +77,21 @@ function observedClassLabel(rank,language){
     /^(I|II|III|IV)(?:\s+(?:class|classe))?$/i.exec(raw)?.[1]?.toUpperCase();
   return roman?(language==="fr"?roman+"ᵉ classe":roman+" class"):raw;
 }
-// Reuse the Calendar's source-owned incipit parser, which strips citation
-// lines like "Ps 129:3-4" instead of presenting those as Latin text.
-function introitIncipit(proper){return latinIntroitIncipit(proper?.introit);}
+// Reuse Calendar's source-owned parser for citations and full texts.
+// Home additionally retains genuine one-word Latin incipits (e.g. "Gaudeamus")
+// supported by its existing contract; a reference or placeholder is not one.
+function introitIncipit(proper){
+  const parsed=latinIntroitIncipit(proper?.introit);
+  if(parsed)return parsed;
+  const latin=proper?.introit?.lat??proper?.introit?.la;
+  if(typeof latin!=="string")return null;
+  const lines=latin.trim().split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+  if(lines.length!==1)return null;
+  const word=lines[0];
+  return /^[\p{L}][\p{L}\p{M}\u2019-]*\.?$/u.test(word)&&
+    !/^(?:introitus|introit|psalmus|psalm|ps|sourceplaceholder|feria)$/iu.test(word)
+      ?word:null;
+}
 function gospelRef(text){return text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).find(x=>/\b\d{1,3}:\d/.test(x))??null;}
 function excerpt(text,reference,max=220){
   const joined=text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)
