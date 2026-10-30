@@ -1,0 +1,2842 @@
+{
+  "schema": "AO_WALTERS_42_AUTHORITY_STATIC_CSV_OBJECT_JOIN_V1",
+  "generatedAt": "2026-10-30T04:17:24.111Z",
+  "museumAuthority": "The Walters Art Museum",
+  "sourceFrozen": "data/calendar/sacred-art-phase1-museum-479-accession-audit-20261029.v1.json",
+  "sourceFrozenSha256": "179e879ff6f2a644eb081caf16a5fa8b811e25a3983ce13c74153ec652ee3bd9",
+  "sourceRepo": "https://github.com/WaltersArtMuseum/api-thewalters-org",
+  "officialCSV": {
+    "art": {
+      "url": "https://raw.githubusercontent.com/WaltersArtMuseum/api-thewalters-org/main/art.csv",
+      "sha256": "bd3d85ba8c871948d269aea2a51947eda4dcde0a0f1da7e87c1a34e8fafa704b",
+      "bytes": 28745960,
+      "totalRows": 22193
+    },
+    "relationships": {
+      "url": "https://raw.githubusercontent.com/WaltersArtMuseum/api-thewalters-org/main/relationships.csv",
+      "sha256": "09a7d34c9875ad3616679ab6b0b1a347ef55ae8aecfb084a1deb689bebdf9bba",
+      "bytes": 284316,
+      "totalRows": 6749
+    }
+  },
+  "counts": {
+    "frozenSourceCards": 42,
+    "exactObjectIdAccessionTitlePurlMatch": 42,
+    "foundNumericIdButDifferentMetadata": 0,
+    "absentNumericObjectId": 0,
+    "numericIdExact": 42,
+    "accessionExact": 42,
+    "titleNormalizedExact": 42,
+    "purlExact": 42,
+    "recordsWithRelatedAcceptedMuseumObjects": 7,
+    "originalConditionalDecisions": 2,
+    "unrelatedRecordsVerifiedAsNewPhysicalArtworks": 0,
+    "newCanonical383Links": 0,
+    "originalPhotoRightsCertified": 0,
+    "productionImports": 0
+  },
+  "notes": [
+    "Walters original API v1 retired in 2023. Official museum CSV snapshot is static, not a guarantee of unchanged current catalogue metadata",
+    "Exact numeric museum object ID + accession + normalized title + legacy official PURL used to confirm archived physical-object catalogue identity",
+    "Explicit relationships can contain generic See Also; do not infer merges, count all panels as unrelated, or treat a set as extra standalone work",
+    "Associated official image filenames are catalogue descriptions, not downloaded original media or rights/quality checks",
+    "Live Walters online collection pages are verified in a separate per-URL ledger."
+  ],
+  "release": {
+    "allFrozenDecisionsRetained": true,
+    "originalPhotoRightsCertified": false,
+    "canonical383Mutated": false,
+    "sourcePhotographsVisuallyInspected": false,
+    "productionMutation": false
+  },
+  "rows": [
+    {
+      "sourceId": "walters:1016",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Altarpiece with the Passion of Christ: Arrest of Christ",
+      "reviewedArtist": "German",
+      "reviewedAccession": "37.667",
+      "originalPurl": "https://purl.thewalters.org/art/37.667",
+      "officialArchivedMuseumId": "1016",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.667",
+        "title": "Altarpiece with the Passion of Christ: Arrest of Christ",
+        "resourceUrl": "https://purl.thewalters.org/art/37.667",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on panel",
+        "culture": "German",
+        "dateText": "ca. 1480-1495 (Late Medieval)",
+        "creatorNumericIds": [
+          "6211"
+        ],
+        "relatedObjectIds": [
+          "3119",
+          "25924",
+          "4153",
+          "4130",
+          "26000"
+        ],
+        "associatedImageFileNames": [
+          "PL7_37.667_Fnt_BW_T01.jpg",
+          "PL1_37.667_Fnt_TR_T01II.jpg"
+        ],
+        "curatorText": " The Passion of Christ was a popular theme for 15th-century altarpieces in northern Europe. It is the story of Christ's suffering-from his arrest to his Crucifixion-although it was often expanded to include earlier and later events, such as the Entombment (see Walters 37.663, 37.664, 37.668, 37.669, 37.670, 37.671, and 37.674). The figures and settings are treated in a life-like fashion to make the events seem real and the message persuasive. The gold-leaf backdrop embossed to look like damask w"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "57502",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57508",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57514",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57515",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57516",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57517",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57518",
+          "otherMuseumObjectId": "26000",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [
+        {
+          "relationshipId": "57502",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57508",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57514",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57515",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57516",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57517",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "1016",
+          "title": "Altarpiece with the Passion of Christ: Arrest of Christ"
+        }
+      ],
+      "flags": [
+        "RELATED_ACCEPTED_SOURCE_IDS_NO_AUTO_MERGE"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:12854",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "The Adoration of the Three Kings",
+      "reviewedArtist": "Girolamo da Santacroce",
+      "reviewedAccession": "37.261",
+      "originalPurl": "https://purl.thewalters.org/art/37.261",
+      "officialArchivedMuseumId": "12854",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.261",
+        "title": "The Adoration of the Three Kings",
+        "resourceUrl": "https://purl.thewalters.org/art/37.261",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1525-1530 (Renaissance)",
+        "creatorNumericIds": [
+          "2293"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.261_DetA_DD_T11.jpg",
+          "PS1_37.261_DetB_DD_T11.jpg",
+          "PS1_37.261_DetC_DD_T11.jpg",
+          "PL2_37.261_Fnt_TR_H76III.jpg",
+          "PS1_37.261_Fnt_DD_T11.jpg"
+        ],
+        "curatorText": " Three wise men, or magi, are described in the Gospels as having seen a new star and journeyed “from the East” to pay tribute to the child marked as divine in the heavens. These wise men were often portrayed as kings, and by the Renaissance the youngest was frequently depicted as an African, seen here holding a gold vessel containing myrrh, a precious resin from Arabia and Africa used for perfume. By representing the kings as coming from a variety of cultures, this imagery reflects the concepts "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "12854",
+          "title": "The Adoration of the Three Kings"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:14271",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Adoration of the Shepherds",
+      "reviewedArtist": "Bernardo Strozzi",
+      "reviewedAccession": "37.277",
+      "originalPurl": "https://purl.thewalters.org/art/37.277",
+      "officialArchivedMuseumId": "14271",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.277",
+        "title": "Adoration of the Shepherds",
+        "resourceUrl": "https://purl.thewalters.org/art/37.277",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "Italian",
+        "dateText": "ca. 1615 (Baroque)",
+        "creatorNumericIds": [
+          "4498"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.277_Fnt_TR_T87IIA.jpg"
+        ],
+        "curatorText": " The Evangelist Luke recorded that the birth of Christ was announced first to shepherds, who then went to Bethlehem to find the baby, but his Gospel does not state that they worshipped Jesus. This interpretation was introduced by St. Francis of Assisi, who stressed that the glad news was first revealed to the shepherds to signify the importance of the poor in God's plan; it remained important to the teachings of the Franciscan religious order, founded by St. Francis. Bernardo Strozzi, a member o"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "14271",
+          "title": "Adoration of the Shepherds"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:15290",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Flight of the Holy Family into Egypt",
+      "reviewedArtist": "Jacob Jordaens the elder",
+      "reviewedAccession": "37.2368",
+      "originalPurl": "https://purl.thewalters.org/art/37.2368",
+      "officialArchivedMuseumId": "15290",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.2368",
+        "title": "Flight of the Holy Family into Egypt",
+        "resourceUrl": "https://purl.thewalters.org/art/37.2368",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "1647 (Baroque)",
+        "creatorNumericIds": [
+          "4216"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL7_37.2368_NF_T87-tms.jpg",
+          "PL1_37.2368_Fnt_TR_T86III.jpg"
+        ],
+        "curatorText": " After the departure of the wise men, the Gospel of Matthew reports that an angel appeared to Joseph in a dream and warned him to take Mary and Jesus and flee to safety in Egypt. Here, they are guided by an angel through what should be an arid desert or wilderness but is more like the countryside near Antwerp. Jordaens may not have known-or cared-what desert terrain looked like, but his flamboyant vegetation lends baroque drama to the moment and is typical of the artist who followed in importanc"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "15290",
+          "title": "Flight of the Holy Family into Egypt"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:16288",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Christ on the Cross",
+      "reviewedArtist": "Eugène Delacroix",
+      "reviewedAccession": "37.62",
+      "originalPurl": "https://purl.thewalters.org/art/37.62",
+      "officialArchivedMuseumId": "16288",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.62",
+        "title": "Christ on the Cross",
+        "resourceUrl": "https://purl.thewalters.org/art/37.62",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "1846",
+        "creatorNumericIds": [
+          "2617"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.62_Fnt_DD_T11.jpg",
+          "PL1_37.62_Fnt_TR_T98III.jpg"
+        ],
+        "curatorText": " Sharply silhouetted against the darkened sky is the dying Christ. A couple of gesturing spectators appear at the left, and on the right are two mounted Roman soldiers with billowing banners. Other onlookers are visible in the mid-ground. Although not a practicing Christian, Delacroix painted a number of New Testament subjects. Evidently, he was attracted to the drama of Christ's Passion and was endeavoring to deal with issues of personal faith raised by Christ's human and divine nature. When th"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "16288",
+          "title": "Christ on the Cross"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:16411",
+      "originalFrozenDecision": "IMPORT_WITH_CORRECTIONS",
+      "batch": "B6",
+      "reviewedTitle": "The Deposition from the Cross",
+      "reviewedArtist": "Johann Michael Rottmayr",
+      "reviewedAccession": "37.788",
+      "originalPurl": "https://purl.thewalters.org/art/37.788",
+      "officialArchivedMuseumId": "16411",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.788",
+        "title": "The Deposition from the Cross",
+        "resourceUrl": "https://purl.thewalters.org/art/37.788",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "ca. 1712 (Baroque)",
+        "creatorNumericIds": [
+          "4803"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL9_37.788_Fnt_SL.jpg"
+        ],
+        "curatorText": " This oil sketch depicting Christ being taken down from the cross is a study for a larger canvas commissioned for a private chapel in the monastery of Kremsmünter in Austria. Rottmayr painted many altars and ceiling frescoes in churches throughout Austria. His extremely fluid brush strokes bind the composition together. Preliminary studies like this could be used to show a patron what the final altarpiece would look like before work was begun. They were increasingly appreciated as works of art a"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "16411",
+          "title": "The Deposition from the Cross"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:18326",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Claire of Assisi",
+      "reviewedArtist": "Benedetto Coda",
+      "reviewedAccession": "37.1084",
+      "originalPurl": "https://purl.thewalters.org/art/37.1084",
+      "officialArchivedMuseumId": "18326",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1084",
+        "title": "Saint Claire of Assisi",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1084",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "1515-1520 (Renaissance)",
+        "creatorNumericIds": [
+          "3401"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS4_37.1084_Fnt_DD_AT19_13597_hpr_RS428993.jpg"
+        ],
+        "curatorText": " For more information on this panel, please see Federico Zeri's 1976 catalogue no. 266, p. 392. For the latest information about this object, Saint Claire of Assisi , visit the Online Collection of the Walters Art Museum. "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "18326",
+          "title": "Saint Claire of Assisi"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:22081",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Altarpiece with the Passion of Christ: Way to Calvary",
+      "reviewedArtist": "German",
+      "reviewedAccession": "37.663",
+      "originalPurl": "https://purl.thewalters.org/art/37.663",
+      "officialArchivedMuseumId": "22081",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.663",
+        "title": "Altarpiece with the Passion of Christ: Way to Calvary",
+        "resourceUrl": "https://purl.thewalters.org/art/37.663",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on panel, gold leaf",
+        "culture": "German",
+        "dateText": "ca. 1480-1495 (Renaissance)",
+        "creatorNumericIds": [
+          "6211"
+        ],
+        "relatedObjectIds": [
+          "29501",
+          "1016",
+          "3119",
+          "25924",
+          "4153",
+          "4130",
+          "26000"
+        ],
+        "associatedImageFileNames": [
+          "CON_37.663_XR_1976.jpg",
+          "PL1_37.663_Fnt_TR_T01II.jpg"
+        ],
+        "curatorText": " The Passion of Christ was a popular theme for 15th-century altarpieces in northern Europe. It is the story of Christ's suffering-from his arrest to his Crucifixion-although it was often expanded to include earlier and later events, such as the Entombment (see Walters 37.664, 37.667, 37.668, 37.669, 37.670, 37.671, and 37.674). The figures and settings are treated in a life-like fashion to make the events seem real and the message persuasive. The gold-leaf backdrop embossed to look like damask w"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "57501",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57502",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57503",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57504",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57505",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57506",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57507",
+          "otherMuseumObjectId": "26000",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [
+        {
+          "relationshipId": "57501",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57502",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57503",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57504",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57505",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57506",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "22081",
+          "title": "Altarpiece with the Passion of Christ: Way to Calvary"
+        }
+      ],
+      "flags": [
+        "RELATED_ACCEPTED_SOURCE_IDS_NO_AUTO_MERGE"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:22554",
+      "originalFrozenDecision": "IMPORT_WITH_CORRECTIONS",
+      "batch": "B7",
+      "reviewedTitle": "Passion of Christ",
+      "reviewedArtist": "Netherlandish",
+      "reviewedAccession": "37.776",
+      "originalPurl": "https://purl.thewalters.org/art/37.776",
+      "officialArchivedMuseumId": "22554",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.776",
+        "title": "Passion of Christ",
+        "resourceUrl": "https://purl.thewalters.org/art/37.776",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on wood",
+        "culture": "Medieval European",
+        "dateText": "ca. 1440-1460 (Late Medieval)",
+        "creatorNumericIds": [
+          "15361"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.776_Back_DD_T17-tms.jpg",
+          "PL9_37.776_Fnt_BW_H52.jpg",
+          "PS1_37.776_Fnt_DD_T17-tms.jpg"
+        ],
+        "curatorText": " The story threads its way from the upper left rear to the lower right front: Christ in the Garden of Gethsemane and then taken into custody; Christ before Pilate; the Flagellation; the Mocking of Christ; Christ Carrying the Cross on the road to Calvary; the Crucifixion; the Deposition (the dead Christ removed down from the cross); and the Entombment. The use of simultaneous narrative - showing events that happened in sequence all together within one continuous space - is an ingenious device for"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "22554",
+          "title": "Passion of Christ"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:22581",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Virgin and Child",
+      "reviewedArtist": "Anthony van Dyck",
+      "reviewedAccession": "37.234",
+      "originalPurl": "https://purl.thewalters.org/art/37.234",
+      "officialArchivedMuseumId": "22581",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.234",
+        "title": "Virgin and Child",
+        "resourceUrl": "https://purl.thewalters.org/art/37.234",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "ca. 1630-1632 (Baroque)",
+        "creatorNumericIds": [
+          "6861"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.234_Fnt_TR_T87III.jpg"
+        ],
+        "curatorText": " This Virgin and Child subtly incorporates traditional allusions to the miraculous. Mary's long, loose hair identifies her as a virgin, alluding to the virgin birth. The palatial column evokes her future reign as Queen of Heaven, while the nakedness of the Christ Child, explicitly a little boy, reminds believers that, miraculously, Christ was fully human and fully God.Van Dyck worked in the Antwerp studio of Peter Paul Rubens before spending six years in Italy. Once returned, he created a style "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "22581",
+          "title": "Virgin and Child"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:23519",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Head of Saint John the Baptist Presented to Salome",
+      "reviewedArtist": "François de Nomé",
+      "reviewedAccession": "37.329",
+      "originalPurl": "https://purl.thewalters.org/art/37.329",
+      "officialArchivedMuseumId": "23519",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.329",
+        "title": "Head of Saint John the Baptist Presented to Salome",
+        "resourceUrl": "https://purl.thewalters.org/art/37.329",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on copper",
+        "culture": "",
+        "dateText": "ca. 1620-1624 (Baroque)",
+        "creatorNumericIds": [
+          "3548"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.329_Fnt_TR_T91IV.jpg"
+        ],
+        "curatorText": " These scenes from earliest Christian history are set amid fantasy architecture, mysteriously lit under dark skies. The small scale of the figures makes the buildings seem enormous. De Nomé has imagined ancient streetscapes of Athens and Jerusalem as lined with sculpture and rich architectural ornament. In the scene of St. Paul preaching (Walters 37.328), a circular pagan temple stands next to a lavish entrance to a synagogue, with a statue of Moses at the left that appears to be adapted from th"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "23519",
+          "title": "Head of Saint John the Baptist Presented to Salome"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:25563",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "The Christ Child",
+      "reviewedArtist": "Andreas Johann Jacob Müller",
+      "reviewedAccession": "37.178",
+      "originalPurl": "https://purl.thewalters.org/art/37.178",
+      "officialArchivedMuseumId": "25563",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.178",
+        "title": "The Christ Child",
+        "resourceUrl": "https://purl.thewalters.org/art/37.178",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "1849",
+        "creatorNumericIds": [
+          "4149"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL2_37.178_Fnt_BW.jpg",
+          "PS1_37.178_ATDetA_DD_T12.jpg",
+          "PS1_37.178_ATDetB_DD_T12.jpg",
+          "PS1_37.178_ATFnt_DD_T12.jpg"
+        ],
+        "curatorText": " The sleeping child lies on a sheet of white cloth partially covered by a pink cloth. He is identified by the aureole of light and three stylized rays forming a halo and by the ribbon he holds which is inscribed: [AGN] US DEI ECCE QUI T[OLLIS PECCATA MUNDI: MISERERE NOBIS] (Roman Missal, Communion: 3). He is surrounded by meticulously rendered flora and fauna, laden with Christian symbolism. The rose bushes allude to martyrdom, strawberry plants to perfect righteousness, violets to humility, sev"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "25563",
+          "title": "The Christ Child"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:25924",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Altarpiece with the Passion of Christ: Christ before High Priest",
+      "reviewedArtist": "German",
+      "reviewedAccession": "37.669",
+      "originalPurl": "https://purl.thewalters.org/art/37.669",
+      "officialArchivedMuseumId": "25924",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.669",
+        "title": "Altarpiece with the Passion of Christ: Christ before High Priest",
+        "resourceUrl": "https://purl.thewalters.org/art/37.669",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on panel",
+        "culture": "German",
+        "dateText": "ca. 1480-1495 (Renaissance)",
+        "creatorNumericIds": [
+          "6211"
+        ],
+        "relatedObjectIds": [
+          "4153",
+          "4130",
+          "26000"
+        ],
+        "associatedImageFileNames": [
+          "PL7_37.669_Fnt_BW_H53.jpg",
+          "PL1_37.669_Fnt_TR_T01II.jpg"
+        ],
+        "curatorText": " The Passion of Christ was a popular theme for 15th-century altarpieces in northern Europe. It is the story of Christ's suffering-from his arrest to his Crucifixion-although it was often expanded to include earlier and later events, such as the Entombment (see Walters 37.663, 37.664, 37.667, 37.668, 37.670, 37.671, and 37.674). The figures and settings are treated in a life-like fashion to make the events seem real and the message persuasive. The gold-leaf backdrop embossed to look like damask w"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "57504",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57510",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57515",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57519",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57523",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57524",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57525",
+          "otherMuseumObjectId": "26000",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [
+        {
+          "relationshipId": "57504",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57510",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57515",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57519",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57523",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57524",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "25924",
+          "title": "Altarpiece with the Passion of Christ: Christ before High Priest"
+        }
+      ],
+      "flags": [
+        "RELATED_ACCEPTED_SOURCE_IDS_NO_AUTO_MERGE"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:2840",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "The Virgin of the Immaculate Conception",
+      "reviewedArtist": "Bartolomé Estebán Murillo",
+      "reviewedAccession": "37.286",
+      "originalPurl": "https://purl.thewalters.org/art/37.286",
+      "officialArchivedMuseumId": "2840",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.286",
+        "title": "The Virgin of the Immaculate Conception",
+        "resourceUrl": "https://purl.thewalters.org/art/37.286",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "ca. 1660 (Baroque)",
+        "creatorNumericIds": [
+          "8003"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.286_Fnt_TR_T05.jpg"
+        ],
+        "curatorText": " According to the Catholic doctrine of the Immaculate Conception, the Virgin was already free from the original sin that applied to all the descendants of Adam and Eve at the moment she was conceived by her parents. This became official dogma in 1854 but was widely accepted long before, especially in 17th-century Counter Reformation Spain. The image of a virgin whose triumph over sin is acknowledged by the cosmos in the form of a crown of stars, an aura of golden light from the sun, and the moon"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "2840",
+          "title": "The Virgin of the Immaculate Conception"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:2872",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Helena",
+      "reviewedArtist": "Francesco Morandini",
+      "reviewedAccession": "37.1096",
+      "originalPurl": "https://purl.thewalters.org/art/37.1096",
+      "officialArchivedMuseumId": "2872",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1096",
+        "title": "Saint Helena",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1096",
+        "classification": "Painting & Drawing",
+        "objectType": "panel paintings",
+        "medium": "oil and tempera on panel",
+        "culture": "",
+        "dateText": "ca. 1575 (Renaissance)",
+        "creatorNumericIds": [
+          "2718"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL9_37.1096_Fnt_SL.jpg"
+        ],
+        "curatorText": " St. Helena (ca. 247-ca. 327) was the mother of Emperor Constantine the Great (ca. 288-337), who, according to tradition, Christianized the Roman Empire. Helena is shown holding the True Cross (the cross on which Christ was crucified), which she is said to have discovered in Jerusalem. Her elaborate headdress and idealized, slightly masculine facial features reveal the artist's study of Michelangelo's so-called \"teste divine\" (\"divine heads\"), admired for their great beauty. Morandini and other "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "2872",
+          "title": "Saint Helena"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:29501",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Altarpiece with the Passion of Christ: Entombment",
+      "reviewedArtist": "German",
+      "reviewedAccession": "37.664",
+      "originalPurl": "https://purl.thewalters.org/art/37.664",
+      "officialArchivedMuseumId": "29501",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.664",
+        "title": "Altarpiece with the Passion of Christ: Entombment",
+        "resourceUrl": "https://purl.thewalters.org/art/37.664",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on panel",
+        "culture": "German",
+        "dateText": "ca. 1480-1495 (Late Medieval)",
+        "creatorNumericIds": [
+          "6211"
+        ],
+        "relatedObjectIds": [
+          "1016",
+          "3119",
+          "25924",
+          "4153",
+          "4130",
+          "26000"
+        ],
+        "associatedImageFileNames": [
+          "PS4_37.664_Fnt_DD_AT19_2-tms.jpg",
+          "PL7_37.664_Fnt_BW_T89.jpg",
+          "PL1_37.664_Fnt_TR_T01II.jpg"
+        ],
+        "curatorText": " The Passion of Christ was a popular theme for 15th-century altarpieces in northern Europe. It is the story of Christ's suffering-from his arrest to his Crucifixion-although it was often expanded to include earlier and later events, such as the Entombment (see Walters 37.663, 37.667, 37.668, 37.669, 37.670, 37.671, and 37.674). The figures and settings are treated in a life-like fashion to make the events seem real and the message persuasive. The gold-leaf backdrop embossed to look like damask w"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "57501",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57508",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57509",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57510",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57511",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57512",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57513",
+          "otherMuseumObjectId": "26000",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [
+        {
+          "relationshipId": "57501",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57508",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57509",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57510",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57511",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57512",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "29501",
+          "title": "Altarpiece with the Passion of Christ: Entombment"
+        }
+      ],
+      "flags": [
+        "RELATED_ACCEPTED_SOURCE_IDS_NO_AUTO_MERGE"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:31086",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Virgin of the Deliverance",
+      "reviewedArtist": "Auguste-Antoine-Ernest Hébert",
+      "reviewedAccession": "37.5",
+      "originalPurl": "https://purl.thewalters.org/art/37.5",
+      "officialArchivedMuseumId": "31086",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.5",
+        "title": "Virgin of the Deliverance",
+        "resourceUrl": "https://purl.thewalters.org/art/37.5",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on panel, gesso",
+        "culture": "",
+        "dateText": "after 1872",
+        "creatorNumericIds": [
+          "5597"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.5_FntAftTrt_DD_T08.jpg"
+        ],
+        "curatorText": " Hébert was yet another of the artists working in the orbit of Paul Delaroche whose name fell into relative obscurity in the last century. He was, in fact, like Delaroche, one of the most highly regarded and decorated painters of his generation, winning medals at several \"Expositions Universelles\" (World's Fairs). He received the Grande Croix of the Legion of Honor in 1903.This is a variant based on a large-scale altarpiece that Hébert painted in time for the Salon of 1872 and that was finally i"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "31086",
+          "title": "Virgin of the Deliverance"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:3119",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Altarpiece with the Passion of Christ: Crucifixion",
+      "reviewedArtist": "German",
+      "reviewedAccession": "37.668",
+      "originalPurl": "https://purl.thewalters.org/art/37.668",
+      "officialArchivedMuseumId": "3119",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.668",
+        "title": "Altarpiece with the Passion of Christ: Crucifixion",
+        "resourceUrl": "https://purl.thewalters.org/art/37.668",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on panel",
+        "culture": "German",
+        "dateText": "ca. 1480-1495 (Late Medieval)",
+        "creatorNumericIds": [
+          "6211"
+        ],
+        "relatedObjectIds": [
+          "25924",
+          "4153",
+          "4130",
+          "26000"
+        ],
+        "associatedImageFileNames": [
+          "PL7_37.668_Fnt_BW_T01_duringtrt.jpg",
+          "PL1_37.668_Fnt_TR_T01II.jpg"
+        ],
+        "curatorText": " The Passion of Christ was a popular theme for 15th-century altarpieces in northern Europe. It is the story of Christ's suffering-from his arrest to his Crucifixion-although it was often expanded to include earlier and later events, such as the Entombment (see Walters 37.663, 37.664, 37.667, 37.669, 37.670, 37.671, and 37.674). The figures and settings are treated in a life-like fashion to make the events seem real and the message persuasive. The gold-leaf backdrop embossed to look like damask w"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "57503",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57509",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57514",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57519",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57520",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57521",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57522",
+          "otherMuseumObjectId": "26000",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [
+        {
+          "relationshipId": "57503",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57509",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57514",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57519",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57520",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57521",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "3119",
+          "title": "Altarpiece with the Passion of Christ: Crucifixion"
+        }
+      ],
+      "flags": [
+        "RELATED_ACCEPTED_SOURCE_IDS_NO_AUTO_MERGE"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:31826",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "The Adoration of the Magi",
+      "reviewedArtist": "Scarsellino",
+      "reviewedAccession": "37.1922",
+      "originalPurl": "https://purl.thewalters.org/art/37.1922",
+      "officialArchivedMuseumId": "31826",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1922",
+        "title": "The Adoration of the Magi",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1922",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "ca. 1610 (Renaissance)",
+        "creatorNumericIds": [
+          "6516"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.1922_Fnt_DD_T07.jpg"
+        ],
+        "curatorText": " For more information on this painting, please see Federico Zeri's 1976 catalogue no. 253, p. 375. For the latest information about this object, The Adoration of the Magi , visit the Online Collection of the Walters Art Museum. "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "31826",
+          "title": "The Adoration of the Magi"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:32662",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Christ and the Tribute Money",
+      "reviewedArtist": "Domenico Fetti; Titian",
+      "reviewedAccession": "37.582",
+      "originalPurl": "https://purl.thewalters.org/art/37.582",
+      "officialArchivedMuseumId": "32662",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.582",
+        "title": "Christ and the Tribute Money",
+        "resourceUrl": "https://purl.thewalters.org/art/37.582",
+        "classification": "Painting & Drawing",
+        "objectType": "panel paintings; oil paintings",
+        "medium": "oil on panel",
+        "culture": "Italian",
+        "dateText": "ca. 1618-1620 (Baroque)",
+        "creatorNumericIds": [
+          "5842",
+          "7167"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.582_Fnt_TR_T86III.jpg"
+        ],
+        "curatorText": " The Pharisees tried to trap Christ by asking him whether people should pay taxes to the Romans. Pointing to a denarius (Roman coin with the image of the emperor), he replied: \"Give to the emperor the things that are the emperor's, and to God the things that are God's\" (Mark 12:17).Fetti painted this work while court artist to the Gonzagas, the ruling family of Mantua, as a copy of a painting by Titian (ca. 1490-1576), famous for his use of impasto (strokes of thick oil paint). Fetti also imitat"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "32662",
+          "title": "Christ and the Tribute Money"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:32732",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "The Adoration of the Shepherds",
+      "reviewedArtist": "Bernardo Castello",
+      "reviewedAccession": "37.1929",
+      "originalPurl": "https://purl.thewalters.org/art/37.1929",
+      "officialArchivedMuseumId": "32732",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1929",
+        "title": "The Adoration of the Shepherds",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1929",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "1582 (Renaissance)",
+        "creatorNumericIds": [
+          "5385"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL7_37.1929_Fnt_BW_H44.jpg",
+          "PL1_37.1929_Fnt_TR_T91II.jpg"
+        ],
+        "curatorText": " For more information on this painting, please see Federico Zeri's 1976 catalogue no. 299, p. 429. For the latest information about this object, The Adoration of the Shepherds , visit the Online Collection of the Walters Art Museum. "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "32732",
+          "title": "The Adoration of the Shepherds"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:34385",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "St. Agatha",
+      "reviewedArtist": "Francesco Furini",
+      "reviewedAccession": "37.1839",
+      "originalPurl": "https://purl.thewalters.org/art/37.1839",
+      "officialArchivedMuseumId": "34385",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1839",
+        "title": "St. Agatha",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1839",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil and tempera on canvas",
+        "culture": "",
+        "dateText": "ca. 1635-1645",
+        "creatorNumericIds": [
+          "2302"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.1839_Fnt_TR_T02IV.jpg"
+        ],
+        "curatorText": " The early Christian martyr St. Agatha was pursued by the consular official of Sicily. She refused him, and the tortures to which he submitted her included cutting off her breasts. They were restored though the divine intervention of St. Peter.This devotional image shows the saint contemplating God while tenderly holding the pincers, the instruments of her sufferings through which she achieved her sanctity. The palm branch is the attribute of martyrs. The way in which the saint is modeled with s"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "34385",
+          "title": "St. Agatha"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:35964",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Jerome in His Study",
+      "reviewedArtist": "Pieter Coecke van Aelst, the elder; Pieter Coecke van Aelst, the elder",
+      "reviewedAccession": "37.256",
+      "originalPurl": "https://purl.thewalters.org/art/37.256",
+      "officialArchivedMuseumId": "35964",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.256",
+        "title": "Saint Jerome in His Study",
+        "resourceUrl": "https://purl.thewalters.org/art/37.256",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1530 (Renaissance)",
+        "creatorNumericIds": [
+          "2817",
+          "2817"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL9_37.256_Fnt_SL.jpg"
+        ],
+        "curatorText": " St. Jerome (ca. 341-420 CE), the greatest Christian scholar of the classics, is revered for his translation of the Bible from the original Greek and Hebrew into Latin. He completed it in a monastery in Palestine, which the artist has suggested in the view through the window by adding camels to an otherwise Flemish landscape. The admonition that Jerome has fixed to the wall, \"Cogita Mori\" (Think upon death), is made explicit by the skull. His Bible is open to an image of the Last Judgment, while"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "35964",
+          "title": "Saint Jerome in His Study"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:36475",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Madonna and Child with Saints Mark and Peter",
+      "reviewedArtist": "Polidoro da Lanciano",
+      "reviewedAccession": "37.515",
+      "originalPurl": "https://purl.thewalters.org/art/37.515",
+      "officialArchivedMuseumId": "36475",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.515",
+        "title": "Madonna and Child with Saints Mark and Peter",
+        "resourceUrl": "https://purl.thewalters.org/art/37.515",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "1535-1540 (Baroque)",
+        "creatorNumericIds": [
+          "3316"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "CON_37.515_XR_1964.jpg",
+          "PL9_37.515_Fnt_SL.jpg"
+        ],
+        "curatorText": " Held by his mother, the infant Christ instructs the Evangelist Mark (seated on a lion, his symbol) while blessing him with his right hand. St. Peter can be recognized by his keys. By representing the holy figures interacting, the painter has added liveliness to the otherwise static representation of the Virgin and Child flanked by saints. The placement of saintly figures in an idyllic landscape is characteristic of Venetian painting, which is also known for its pictorial naturalism and rich col"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "36475",
+          "title": "Madonna and Child with Saints Mark and Peter"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:36782",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "The Christian Martyrs' Last Prayer",
+      "reviewedArtist": "Jean-Léon Gérôme",
+      "reviewedAccession": "37.113",
+      "originalPurl": "https://purl.thewalters.org/art/37.113",
+      "officialArchivedMuseumId": "36782",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.113",
+        "title": "The Christian Martyrs' Last Prayer",
+        "resourceUrl": "https://purl.thewalters.org/art/37.113",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "1863-1883",
+        "creatorNumericIds": [
+          "4384"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.113_Fnt_DD_T09.jpg"
+        ],
+        "curatorText": " William T. Walters commissioned this painting in 1863, but the artist did not deliver it until 20 years later. In a letter to Walters, Gérôme identified the setting as ancient Rome's racecourse, the Circus Maximus. He noted such details as the goal posts and the chariot tracks in the dirt. The seating, however, more closely resembles that of the Colosseum, Rome's amphitheater, in which gladiatorial combats and other spectacles were held. Similarly, the hill in the background surmounted by a col"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "36782",
+          "title": "The Christian Martyrs' Last Prayer"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:37037",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Paul the Hermit",
+      "reviewedArtist": "Jusepe de Ribera",
+      "reviewedAccession": "37.278",
+      "originalPurl": "https://purl.thewalters.org/art/37.278",
+      "officialArchivedMuseumId": "37037",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.278",
+        "title": "Saint Paul the Hermit",
+        "resourceUrl": "https://purl.thewalters.org/art/37.278",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "ca.1638 (Baroque)",
+        "creatorNumericIds": [
+          "3623"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.278_Fnt_TR_T03V.jpg"
+        ],
+        "curatorText": " Paul the Hermit was a 3rd-century Egyptian saint who escaped persecution as a Christian by retreating into the desert, where he lived in continual meditation until he was more than 100 years old. The raven that sustained Paul by bringing him bread each day appears at the upper left. The skull prompted his meditation on the brevity of human life.Ribera was born in Spain but worked in Italy, first in Rome, and after 1616 in Naples, where by the 1630s he was considered the leading painter. His use"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "37037",
+          "title": "Saint Paul the Hermit"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:37520",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Mary Magdalene",
+      "reviewedArtist": "Bernardino Luini; Andrea Solario",
+      "reviewedAccession": "37.509",
+      "originalPurl": "https://purl.thewalters.org/art/37.509",
+      "officialArchivedMuseumId": "37520",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.509",
+        "title": "Saint Mary Magdalene",
+        "resourceUrl": "https://purl.thewalters.org/art/37.509",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel pantings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1524 (Renaissance)",
+        "creatorNumericIds": [
+          "2233",
+          "15488"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.509_Fnt_TR_T03IV.jpg"
+        ],
+        "curatorText": " According to Church (but not biblical) tradition, Mary Magdalene (probably indicating that she came from the the town Magdala) was a sinful woman, who upon meeting Christ repented her former ways. She was present at the Crucifixion and later went to anoint Christ's dead body (in accordance with Jewish burial ritual), only to discover that he was resurrected. As in this painting, the Magdalene is often depicted as a great beauty with long golden hair. She is shown here transferring the ointment "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "37520",
+          "title": "Saint Mary Magdalene"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:37591",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Nicholas",
+      "reviewedArtist": "Jacques de Poindre",
+      "reviewedAccession": "37.2615",
+      "originalPurl": "https://purl.thewalters.org/art/37.2615",
+      "officialArchivedMuseumId": "37591",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.2615",
+        "title": "Saint Nicholas",
+        "resourceUrl": "https://purl.thewalters.org/art/37.2615",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "1563 (Renaissance)",
+        "creatorNumericIds": [
+          "2129"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.2615_Fnt_TR_T87II.jpg"
+        ],
+        "curatorText": " These companion images represent the abbot Nicolas à Spira (on the right) in prayer to his patron saint, the 4th-century bishop St. Nicholas. On the backs of the panels are remnants of an Annunciation scene, with Gabriel on one panel and the Virgin on the other. The panels were part of an altarpiece, with the Annunciation visible as a unified scene on the exterior of the wings when the altarpiece was closed. On the interior, the two Nicholases flanked a lost central image, perhaps a Madonna and"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "37591",
+          "title": "Saint Nicholas"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:37844",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "St. Paul Preaching to the Athenians",
+      "reviewedArtist": "François de Nomé",
+      "reviewedAccession": "37.328",
+      "originalPurl": "https://purl.thewalters.org/art/37.328",
+      "officialArchivedMuseumId": "37844",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.328",
+        "title": "St. Paul Preaching to the Athenians",
+        "resourceUrl": "https://purl.thewalters.org/art/37.328",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on copper",
+        "culture": "",
+        "dateText": "ca. 1620-1624 (Baroque)",
+        "creatorNumericIds": [
+          "3548"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.328_Fnt_TR_T91IV.jpg"
+        ],
+        "curatorText": " These scenes from earliest Christian history are set amid fantasy architecture, mysteriously lit under dark skies. The small scale of the figures makes the buildings seem enormous. De Nomé has imagined ancient streetscapes of Athens and Jerusalem as lined with sculpture and rich architectural ornament. In the scene of St. Paul preaching, a circular pagan temple stands next to a lavish entrance to a synagogue, with a statue of Moses at the left that appears to be adapted from the famous Well of "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "37844",
+          "title": "St. Paul Preaching to the Athenians"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:39318",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Christ Weeping Over Jerusalem",
+      "reviewedArtist": "Ary Scheffer",
+      "reviewedAccession": "37.111",
+      "originalPurl": "https://purl.thewalters.org/art/37.111",
+      "officialArchivedMuseumId": "39318",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.111",
+        "title": "Christ Weeping Over Jerusalem",
+        "resourceUrl": "https://purl.thewalters.org/art/37.111",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on fabric",
+        "culture": "",
+        "dateText": "1851",
+        "creatorNumericIds": [
+          "5601"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.111_Fnt_TR_C80II.jpg"
+        ],
+        "curatorText": " Before enrolling in the École des Beaux-Arts, Scheffer studied with the neoclassically trained artist Pierre-Joseph Proudhon, whose mastery of the art of the past and high technical finish he emulated. He exhibited his first works at the age of 17 in the 1812 Salon in the so-called \"juste-milieu\" (in English, literally, middle path) tradition. Scheffer was attracted to romantic themes gleaned from contemporary authors such as Sir Walter Scott and Goethe. His meteoric rise in the art world drew "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "39318",
+          "title": "Christ Weeping Over Jerusalem"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:40183",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "The Penitent Magdalene",
+      "reviewedArtist": "Guido Reni",
+      "reviewedAccession": "37.2631",
+      "originalPurl": "https://purl.thewalters.org/art/37.2631",
+      "officialArchivedMuseumId": "40183",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.2631",
+        "title": "The Penitent Magdalene",
+        "resourceUrl": "https://purl.thewalters.org/art/37.2631",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on canvas",
+        "culture": "Italian",
+        "dateText": "ca. 1635 (Baroque)",
+        "creatorNumericIds": [
+          "1913"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.2631_Fnt_TR_T87.jpg",
+          "PS4_37.2631_Fnt_DD_AT22_37195-tms.jpg"
+        ],
+        "curatorText": " According to Christian tradition, after meeting Christ, Mary Magdalene repented of her former sinful ways. With her ivory skin and long golden hair, the beautiful Magdalene turns her gaze toward heaven. Her cross and the skull make it clear she is meditating on the brevity of life and the salvation made possible by Christ's death.Reni created an idealized, as well as classical style influenced by ancient sculpture and by the Renaissance artist Raphael (1483-1520). This influence is visible in t"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "40183",
+          "title": "The Penitent Magdalene"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:4130",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Altarpiece with the Passion of Christ: Christ Mocked",
+      "reviewedArtist": "German",
+      "reviewedAccession": "37.671",
+      "originalPurl": "https://purl.thewalters.org/art/37.671",
+      "officialArchivedMuseumId": "4130",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.671",
+        "title": "Altarpiece with the Passion of Christ: Christ Mocked",
+        "resourceUrl": "https://purl.thewalters.org/art/37.671",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on panel",
+        "culture": "German",
+        "dateText": "ca. 1480-1495 (Late Medieval)",
+        "creatorNumericIds": [
+          "6211"
+        ],
+        "relatedObjectIds": [
+          "26000"
+        ],
+        "associatedImageFileNames": [
+          "PL7_37.671_Fnt_BW_T89.jpg",
+          "PL1_37.671_Fnt_TR_T01II.jpg"
+        ],
+        "curatorText": " The Passion of Christ was a popular theme for 15th-century altarpieces in northern Europe. It is the story of Christ's suffering-from his arrest to his Crucifixion-although it was often expanded to include earlier and later events, such as the Entombment (see Walters 37.663, 37.664, 37.667, 37.668, 37.669, 37.670, and 37.674). The figures and settings are treated in a life-like fashion to make the events seem real and the message persuasive. The gold-leaf backdrop embossed to look like damask w"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "57506",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57512",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57517",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57521",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57524",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57526",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57528",
+          "otherMuseumObjectId": "26000",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [
+        {
+          "relationshipId": "57506",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57512",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57517",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57521",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57524",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57526",
+          "otherMuseumObjectId": "4153",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "4130",
+          "title": "Altarpiece with the Passion of Christ: Christ Mocked"
+        }
+      ],
+      "flags": [
+        "RELATED_ACCEPTED_SOURCE_IDS_NO_AUTO_MERGE"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:4153",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B7",
+      "reviewedTitle": "Altarpiece with the Passion of Christ: Flagellation",
+      "reviewedArtist": "German",
+      "reviewedAccession": "37.670",
+      "originalPurl": "https://purl.thewalters.org/art/37.670",
+      "officialArchivedMuseumId": "4153",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.670",
+        "title": "Altarpiece with the Passion of Christ: Flagellation",
+        "resourceUrl": "https://purl.thewalters.org/art/37.670",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on panel",
+        "culture": "German",
+        "dateText": "ca. 1480-1495 (Renaissance)",
+        "creatorNumericIds": [
+          "6211"
+        ],
+        "relatedObjectIds": [
+          "4130",
+          "26000"
+        ],
+        "associatedImageFileNames": [
+          "PL7_37.670_Fnt_BW_T89.jpg",
+          "PL1_37.670_Fnt_TR_T01II.jpg"
+        ],
+        "curatorText": " The Passion of Christ was a popular theme for 15th-century altarpieces in northern Europe. It is the story of Christ's suffering-from his arrest to his Crucifixion-although it was often expanded to include earlier and later events, such as the Entombment (see Walters 37.663, 37.664, 37.667, 37.668, 37.669, 37.671, and 37.674). The figures and settings are treated in a life-like fashion to make the events seem real and the message persuasive. The gold-leaf backdrop embossed to look like damask w"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "57505",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57511",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57516",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57520",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57523",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57526",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57527",
+          "otherMuseumObjectId": "26000",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [
+        {
+          "relationshipId": "57505",
+          "otherMuseumObjectId": "22081",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57511",
+          "otherMuseumObjectId": "29501",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57516",
+          "otherMuseumObjectId": "1016",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57520",
+          "otherMuseumObjectId": "3119",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57523",
+          "otherMuseumObjectId": "25924",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        },
+        {
+          "relationshipId": "57526",
+          "otherMuseumObjectId": "4130",
+          "directedRelationship": "See Also, Part of Set",
+          "reverseRelationship": "See Also, Part of Set"
+        }
+      ],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "4153",
+          "title": "Altarpiece with the Passion of Christ: Flagellation"
+        }
+      ],
+      "flags": [
+        "RELATED_ACCEPTED_SOURCE_IDS_NO_AUTO_MERGE"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:4625",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "The Annunciation",
+      "reviewedArtist": "Santi di Tito",
+      "reviewedAccession": "37.1677",
+      "originalPurl": "https://purl.thewalters.org/art/37.1677",
+      "officialArchivedMuseumId": "4625",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1677",
+        "title": "The Annunciation",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1677",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1580 (Renaissance)",
+        "creatorNumericIds": [
+          "4797"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL9_37.1677_Fnt_SL.jpg"
+        ],
+        "curatorText": " The archangel Gabriel announces to the Virgin Mary that she will bear the Christ Child, while God the Father and the Holy Ghost (in the form of a dove) appear above left. The white lilies Gabriel holds are symbolic of the Virgin's chastity.The painter has depicted the loggia of the Church of the Santissima Annunziata (Annunciate Mary) in Florence behind his own Annunciation scene, revealing his pride in being a Florentine artist. The elongated and graceful style and the decorously draped figure"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "4625",
+          "title": "The Annunciation"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:5083",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Mary Magdalene",
+      "reviewedArtist": "Giovanni Antonio Galli",
+      "reviewedAccession": "37.651",
+      "originalPurl": "https://purl.thewalters.org/art/37.651",
+      "officialArchivedMuseumId": "5083",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.651",
+        "title": "Saint Mary Magdalene",
+        "resourceUrl": "https://purl.thewalters.org/art/37.651",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "Roman Baroque",
+        "dateText": "ca. 1625-1635 (Baroque)",
+        "creatorNumericIds": [
+          "7031"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.651_Fnt_DD_T07.jpg"
+        ],
+        "curatorText": " IIn the New Testament, Mary from the town of Magdala was one of Christ's most loyal followers. Later tradition associated her with a reformed prostitute. The merging of these identities produced emotionally powerful images of a remorseful yet alluring young woman, meditating on death. Many people kept skulls for meditational purposes. Spadarino is one of several painters in Rome in the early 1600s who explored dramatic, compact compositions of a few figures in a dark space illuminated by a stro"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "5083",
+          "title": "Saint Mary Magdalene"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:7018",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Pietà",
+      "reviewedArtist": "Francesco de Mura",
+      "reviewedAccession": "37.1125",
+      "originalPurl": "https://purl.thewalters.org/art/37.1125",
+      "officialArchivedMuseumId": "7018",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1125",
+        "title": "Pietà",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1125",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works)",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "ca. 1725-1730 (Baroque)",
+        "creatorNumericIds": [
+          "6386"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL9_37.1125_Fnt_SL.jpg",
+          "PS1_37.1125_Fnt_DD_T15-tms.jpg"
+        ],
+        "curatorText": " A Pietà (meaning compassion in Italian) is the image of the Virgin Mary mourning her dead son. In the Bible, she mourns along with others. Isolating her focuses the viewer's attention on her suffering and her compassion for her son's suffering, thereby offering the ultimate example for pious Catholics.The idealized, muscular body of the dead Christ is set off against the stately, pyramidal figure of Mary in her voluminous robe and presented to the viewer so that he or she, like the Virgin Mary,"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "7018",
+          "title": "Pietà"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:82254",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Louise of Toulouse",
+      "reviewedArtist": "Cristoforo Caselli",
+      "reviewedAccession": "37.531B",
+      "originalPurl": "https://purl.thewalters.org/art/37.531B",
+      "officialArchivedMuseumId": "82254",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.531B",
+        "title": "Saint Louise of Toulouse",
+        "resourceUrl": "https://purl.thewalters.org/art/37.531B",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); triptychs",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1499-1500 (Renaissance)",
+        "creatorNumericIds": [
+          "3230"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL7_37.531B_Fnt_BW_H69.jpg",
+          "PS1_37.531b_Fnt_DD_T16-tms.jpg"
+        ],
+        "curatorText": " This triptych (an altarpiece with three panels) of three Franciscan holy men was probably placed on the high altar of a Franciscan church. Depicted as if bathed in natural light, the architectural setting with the three saints opens up to a serene landscape. Inside the church, this illusionistic opening would have given the painting the character of a divine vision. Rose petals are scattered across the floor.For more information on these panels, please see Federico Zeri's 1976 catalogue no. 186"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [
+        {
+          "relationshipId": "63661",
+          "otherMuseumObjectId": "3723",
+          "directedRelationship": "Component",
+          "reverseRelationship": "Whole"
+        }
+      ],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "82254",
+          "title": "Saint Louise of Toulouse"
+        }
+      ],
+      "flags": [
+        "TRIPTYCH_OR_COMPONENT_NEEDS_PHYSICAL_OBJECT_REVIEW"
+      ],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:8257",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Bruno",
+      "reviewedArtist": "Girolamo Marchesi",
+      "reviewedAccession": "37.423",
+      "originalPurl": "https://purl.thewalters.org/art/37.423",
+      "officialArchivedMuseumId": "8257",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.423",
+        "title": "Saint Bruno",
+        "resourceUrl": "https://purl.thewalters.org/art/37.423",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1525 (Renaissance)",
+        "creatorNumericIds": [
+          "6625"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.423_Fnt_DD_T07.jpg"
+        ],
+        "curatorText": " The inscription on the ledge identifies the subject as St. Bruno of Cologne (ca. 1035-1101), the founder of the Carthusian monastic order. He was canonized, or sainted, by Pope Leo X in 1514. Although the artist did not know what St. Bruno actually looked like, he created an individualized portrait with hollow cheeks and large eyes. These features, along with the landscape, make the saint seem quite real to the viewer. For the latest information about this object, Saint Bruno , visit the Online"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "8257",
+          "title": "Saint Bruno"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:888",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Jerome in the Wilderness",
+      "reviewedArtist": "Angelo Caroselli",
+      "reviewedAccession": "37.1910",
+      "originalPurl": "https://purl.thewalters.org/art/37.1910",
+      "officialArchivedMuseumId": "888",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.1910",
+        "title": "Saint Jerome in the Wilderness",
+        "resourceUrl": "https://purl.thewalters.org/art/37.1910",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1620-1630 (Baroque)",
+        "creatorNumericIds": [
+          "2409"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.1910_Fnt_DD_T10.jpg"
+        ],
+        "curatorText": " The theologian St. Jerome (ca. 340-420) is shown meditating on the cross of Christ during his four years of penitence in the Syrian desert when he was in his 30s. However, his great service to the Church was his translation of the Bible, made when he was much older, when he was also said to have tamed a wild lion who became his companion. Artists often combined these compelling images.Influenced by the strident naturalism of Caravaggio (1571-1610), the unusual, close-up, naturalistic view of th"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "888",
+          "title": "Saint Jerome in the Wilderness"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:9018",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Ecce Homo",
+      "reviewedArtist": "Luca Giordano",
+      "reviewedAccession": "37.243",
+      "originalPurl": "https://purl.thewalters.org/art/37.243",
+      "officialArchivedMuseumId": "9018",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.243",
+        "title": "Ecce Homo",
+        "resourceUrl": "https://purl.thewalters.org/art/37.243",
+        "classification": "Painting & Drawing",
+        "objectType": "oil paintings (visual works); panel paintings",
+        "medium": "oil on wood (European walnut) panel",
+        "culture": "",
+        "dateText": "1650-1659 (Baroque)",
+        "creatorNumericIds": [
+          "7032"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.243_Fnt_TR_T86III.jpg"
+        ],
+        "curatorText": " After he was taken prisoner by Roman soldiers in the Garden of Gethsemane of Jerusalem, Christ was brought before the people by the Roman governor Pontius Pilate, who addressed the crowd: \"'Look, I am bringing him out to you to let you know that I find no case against him.' So Jesus came out, wearing the crown of thorns and the purple robe. Pilate said to them, 'Here is the man!' [Ecce Homo]\" (John 19:4-5). the Jewish crowd called for Christ to be executed and he was taken to Calvary and crucif"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "9018",
+          "title": "Ecce Homo"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:9071",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Saint Gregory the Great",
+      "reviewedArtist": "Jacopo Vignali",
+      "reviewedAccession": "37.2530",
+      "originalPurl": "https://purl.thewalters.org/art/37.2530",
+      "officialArchivedMuseumId": "9071",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.2530",
+        "title": "Saint Gregory the Great",
+        "resourceUrl": "https://purl.thewalters.org/art/37.2530",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings",
+        "medium": "oil on canvas",
+        "culture": "",
+        "dateText": "ca. 1630",
+        "creatorNumericIds": [
+          "5594"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PS1_37.2530_Fnt_DD_T12.jpg"
+        ],
+        "curatorText": " This painting is from a series depicting famous theologians (scholars who studied and wrote about the nature of God) for the ceiling of the library in the Dominican convent of Santa Maria Novella in Florence.St. Gregory the Great (AD 540-604) was one of the four Latin Church Fathers (along with Sts. Jerome, Augustine, and Ambrose). As pope, he instituted many reforms of the church service. An angel holds his papal tiara. He is shown here as if seen from below, with the dove, a symbol of the Hol"
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "9071",
+          "title": "Saint Gregory the Great"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "walters:9159",
+      "originalFrozenDecision": "IMPORT",
+      "batch": "B6",
+      "reviewedTitle": "Mary Magdalene",
+      "reviewedArtist": "Anthony van Dyck; Jan Boeckhorst",
+      "reviewedAccession": "37.372",
+      "originalPurl": "https://purl.thewalters.org/art/37.372",
+      "officialArchivedMuseumId": "9159",
+      "status": "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED",
+      "official": {
+        "accessionNumber": "37.372",
+        "title": "Mary Magdalene",
+        "resourceUrl": "https://purl.thewalters.org/art/37.372",
+        "classification": "Painting & Drawing",
+        "objectType": "paintings; portraits",
+        "medium": "oil on panel",
+        "culture": "",
+        "dateText": "ca. 1650 (Baroque)",
+        "creatorNumericIds": [
+          "6861",
+          "15390"
+        ],
+        "relatedObjectIds": [],
+        "associatedImageFileNames": [
+          "PL1_37.372_Fnt_TR_T04III.jpg"
+        ],
+        "curatorText": " According to biographies of the saints composed in the Middle Ages, Mary Magdalene was a prostitute at the time that she became a follower of Christ, and after Christ was crucified, she became a hermit and lived the rest of her life in meditating on the follishness of focusing on earthly pleasures and doing penance. She is therefore often shown meditating on a skull as a symbol of the transitoriness of life. She is normaly shown as still very beautiful and especially appealing in her semi-nude "
+      },
+      "sourceEvidence": {
+        "numericIdExact": true,
+        "accessionExact": true,
+        "titleNormalizedExact": true,
+        "purlExact": true,
+        "objectFromOfficialWaltersCSV": true
+      },
+      "relationshipEdges": [],
+      "relationshipEdgesWithinAccepted42": [],
+      "accessionCrossCheckCandidates": [
+        {
+          "id": "9159",
+          "title": "Mary Magdalene"
+        }
+      ],
+      "flags": [],
+      "newPhysicalUniqueWorkCertified": false,
+      "canonical383Match": false,
+      "selectedImageBytesVisuallyChecked": false,
+      "imageRightsCertified": false,
+      "frozenEditorialChoiceChanged": false,
+      "productionMutation": false
+    }
+  ]
+}
