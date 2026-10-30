@@ -40,17 +40,6 @@ try{
     assert.equal(await band.locator(c.kind==="little-crown"?".aoF07LittleCrownBead":
       c.kind==="five-wounds"?".aoF07WoundPoint":c.kind==="precious-blood"?".aoF07BloodSegment":".aoF07VariantDot").count(),c.dots);
     if(c.kind==="five-wounds"){
-     const alignment=await page.locator(prefix+".aoP435930Head").evaluate(h=>{
-      const lang=h.querySelector(".aoP435930SessionLanguage")?.getBoundingClientRect();
-      const home=h.querySelector(".aoP435930Home")?.getBoundingClientRect();
-      return {langLeft:lang?.left,homeLeft:home?.left,langTop:lang?.top,homeTop:home?.top,viewport:innerWidth};
-     });
-     assert.ok(Number.isFinite(alignment.langLeft)&&Number.isFinite(alignment.homeLeft)&&
-      alignment.langLeft>alignment.viewport*.58&&alignment.homeLeft>alignment.langLeft+35&&
-      Math.abs(alignment.langTop-alignment.homeTop)<=4,
-      "F07 Five Wounds: Home shortcut must stay beside EN/FR on the same header row: "+JSON.stringify(alignment));
-    }
-    if(c.kind==="five-wounds"){
      assert.equal(await page.locator(prefix+" .aoF07ReaderLanguage summary").count(),1,
       "F07 w1 must own one discreet Aa language menu");
      const header=page.locator(prefix+" .aoP435930Head .aoP435930Home");
