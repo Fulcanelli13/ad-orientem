@@ -93,5 +93,14 @@ export const TODAY_H4_CSS=`
 .aoTodayV2 .aoHomeDYKSource{font:600 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#c9ad78);margin-top:6px}
 .aoTodayV2 .aoHomeDYK:not(:disabled):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
 
+/* Sanctuary Calendar: discreet underlined view navigation, never a pill-shaped segmented card. */
+.aoTodayH4 .aoH4CalendarViews{grid-template-columns:1fr 1fr minmax(0,1.45fr);gap:0!important;margin:0 var(--h4-gap) 9px!important;padding:0!important;border:0!important;border-bottom:1px solid var(--h4-line)!important;border-radius:0!important;background:transparent!important}
+.aoTodayH4 .aoH4CalendarViews button{min-height:44px!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:0!important;padding:7px 3px!important;background:transparent!important;color:var(--h4-muted)!important;font:500 13px/1.15 var(--h4-serif)!important}
+.aoTodayH4 .aoH4CalendarViews button[aria-current="page"]{border-bottom-color:#d58275!important;background:transparent!important;color:var(--h4-ink)!important}
+.aoTodayH4 .aoH4CalendarBack{min-height:50px!important}
+.aoTodayH4 .aoH4CalendarBack strong{flex:1;min-width:0}
+.aoTodayH4 .aoH4CalendarBack .aoH4CalendarHelp{height:44px;width:44px;min-height:44px;border:0!important;border-radius:50%;background:transparent!important;color:var(--h4-muted)!important;font:500 18px/1 var(--h4-serif)}
+@media(max-width:359px){.aoTodayH4 .aoH4CalendarViews button{font-size:11.5px!important}}
+
 @media(prefers-reduced-motion:reduce){.aoTodayH4 *{scroll-behavior:auto!important;transition:none!important}}
 `;
