@@ -1,0 +1,2734 @@
+{
+  "schema": "AO_DYK_R21_74_CONSOLIDATION_BOUNDARY_AUDIT_V1",
+  "date": "2026-10-30",
+  "status": "ALL_74_REVIEWED_FOR_CLAIM_IDENTITY_NO_NEW_EDITORIAL_APPROVAL",
+  "method": "Read each of the 74 previously flagged record claims alongside its proposed target and source observation/action identifiers. Preserve separate towns, temporal moments, countries, and Mass cue identities. Absorb only redundant or supporting details into the lead draft; topic comparison does not count as a duplicate. Source images, French proofreading and final approval remain pending.",
+  "totals": {
+    "reviewed": 74,
+    "COMPARE_RELATED_VARIANTS": 16,
+    "ABSORB_SUPPORTING_DETAIL": 16,
+    "RETAIN_DISTINCT_INCORRECT_LEAD": 33,
+    "HOLD_HISTORICAL_PRECISION": 1,
+    "HOME_PREVIEW_SAME_SOURCE_VARIANT": 8,
+    "deleted": 0,
+    "approved": 0,
+    "published": 0
+  },
+  "meanings": {
+    "ABSORB_SUPPORTING_DETAIL": "Supporting or already subsumed point; retain original observation, enrich lead if source-confirmed; not independently publishable yet.",
+    "HOME_PREVIEW_SAME_SOURCE_VARIANT": "Same glossary record as Home preview but not necessarily identical; check whether concise value lies in rewriting existing preview.",
+    "RETAIN_DISTINCT_INCORRECT_LEAD": "Previous proposed merge target is wrong or unrelated; restore as independent candidate or reserve, without inventing another merge.",
+    "COMPARE_RELATED_VARIANTS": "Related by feast or custom but still independent local action or geography; optionally create transparent comparison with separate source citations.",
+    "HOLD_HISTORICAL_PRECISION": "Original historical interpretation needs a narrower witness and qualification, not an automatic release."
+  },
+  "review_cautions": {
+    "all_records_persist": true,
+    "original_1962_priest_cues_not_coalesced_across_sections": true,
+    "italian_sicilian_town_identity_not_erased": true,
+    "household_folklore_not_1962_rubric": true,
+    "final_publication_signoff": false
+  },
+  "decisions": [
+    {
+      "id": "DYK-UM01-022",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM01-021",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM01-021",
+      "factual_rationale": "Canicattini's three symbolic guests are documented in a different town from Ribera; preserve the town-specific observation.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch01.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-IT-026"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that a historical Saint Joseph bread-table custom in Canicattini seated an older man, a woman and a child as figures of the Holy Family?",
+        "fr": "Saviez-vous qu'une ancienne coutume de la table de saint Joseph à Canicattini faisait asseoir un homme âgé, une femme et un enfant pour représenter la Sainte Famille ?"
+      },
+      "lead_original_claim": {
+        "en": "Did you know that a 1900 account of Saint Joseph's feast in Ribera, Sicily, describes inviting three poor guests to represent the Holy Family at a household meal?",
+        "fr": "Saviez-vous qu'un récit de 1900 sur la fête de saint Joseph à Ribera, en Sicile, décrit trois invités pauvres représentant la Sainte Famille lors d'un repas domestique ?"
+      },
+      "no_cross_town_merging": true,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM01-023",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM01-021",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM01-021",
+      "factual_rationale": "Santa Croce Camerina is not Ribera; keep its three-guest hospitality as its own regional witness and group with later charity detail.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch01.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-IT-036"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè's account of Santa Croce Camerina describes three poor residents being welcomed to a Saint Joseph votive feast?",
+        "fr": "Saviez-vous que le récit de Pitrè sur Santa Croce Camerina décrit l'accueil de trois habitants pauvres à un repas votif en l'honneur de saint Joseph ?"
+      },
+      "lead_original_claim": {
+        "en": "Did you know that a 1900 account of Saint Joseph's feast in Ribera, Sicily, describes inviting three poor guests to represent the Holy Family at a household meal?",
+        "fr": "Saviez-vous qu'un récit de 1900 sur la fête de saint Joseph à Ribera, en Sicile, décrit trois invités pauvres représentant la Sainte Famille lors d'un repas domestique ?"
+      },
+      "no_cross_town_merging": true,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM01-024",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM01-021",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM01-021",
+      "factual_rationale": "Pachino's vicchiareddi guest groups differ in local naming and organization; do not erase the place distinction.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch01.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-IT-049"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè described a Saint Joseph hospitality custom in Pachino in which families received groups of poor guests called vicchiareddi?",
+        "fr": "Saviez-vous que Pitrè a décrit à Pachino une coutume d'hospitalité pour la fête de saint Joseph, où des familles recevaient des groupes d'invités pauvres appelés vicchiareddi ?"
+      },
+      "lead_original_claim": {
+        "en": "Did you know that a 1900 account of Saint Joseph's feast in Ribera, Sicily, describes inviting three poor guests to represent the Holy Family at a household meal?",
+        "fr": "Saviez-vous qu'un récit de 1900 sur la fête de saint Joseph à Ribera, en Sicile, décrit trois invités pauvres représentant la Sainte Famille lors d'un repas domestique ?"
+      },
+      "no_cross_town_merging": true,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM01-029",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-UM01-021",
+      "merge_lead": "DYK-UM01-023",
+      "comparison_theme_lead": null,
+      "factual_rationale": "The extension of hospitality beyond three principal guests supplements the earlier Santa Croce Camerina record; correct target to UM01-023.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch01.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-IT-046"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that a historical Saint Joseph household feast in Santa Croce Camerina extended hospitality beyond its three principal guests to other poor visitors?",
+        "fr": "Saviez-vous qu'un repas traditionnel de saint Joseph à Santa Croce Camerina étendait l'hospitalité, au-delà des trois invités principaux, à d'autres visiteurs pauvres ?"
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Pitrè's account of Santa Croce Camerina describes three poor residents being welcomed to a Saint Joseph votive feast?",
+        "fr": "Saviez-vous que le récit de Pitrè sur Santa Croce Camerina décrit l'accueil de trois habitants pauvres à un repas votif en l'honneur de saint Joseph ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-002",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-W-B-179",
+      "merge_lead": "DYK-H04-W-B-179",
+      "comparison_theme_lead": null,
+      "factual_rationale": "General Scandinavian candlelight detail is covered more vividly by the white-robed Saint Lucy with candle wreath and breakfast.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-28-024"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-017",
+        "pages": [
+          341
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Saint Lucy's candlelight celebrations became a distinctive Scandinavian December tradition.",
+        "fr": "Saviez-vous que les célébrations de sainte Lucie à la lumière des bougies sont devenues une tradition caractéristique du mois de décembre en Scandinavie."
+      },
+      "lead_original_claim": {
+        "en": "A Scandinavian Saint Lucy household custom involved a white-robed girl wearing a candle wreath and serving breakfast.",
+        "fr": "Une coutume scandinave de la Sainte-Lucie mettait en scène une jeune fille vêtue de blanc, portant une couronne de bougies et servant le petit déjeuner."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-003",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-W-B-093",
+      "merge_lead": "DYK-H04-W-B-093",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Historical Saint Martin goose dinner is the same central example as the later Weiser goose source.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-22-008"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-019",
+        "pages": [
+          270
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Martinmas in parts of Europe was celebrated with Mass and a festive harvest dinner, often featuring roast goose?",
+        "fr": "Saviez-vous que, dans certaines régions d'Europe, la Saint-Martin associait la messe à un repas de fête des récoltes, où l'oie rôtie tenait souvent une place importante ?"
+      },
+      "lead_original_claim": {
+        "en": "A goose dinner became a historical food tradition associated with Saint Martin's Day.",
+        "fr": "Le repas d'oie est devenu une ancienne tradition culinaire liée à la Saint-Martin."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-009",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-022",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Latin Easter acclamation and Polish Easter family greeting are different sayings and cultures.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-16-005"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-026",
+        "pages": [
+          212
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that the traditional Latin Easter greeting Surrexit Dominus vere means 'The Lord has truly risen'?",
+        "fr": "Saviez-vous que la salutation pascale traditionnelle Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité » ?"
+      },
+      "lead_original_claim": {
+        "en": "Polish Easter greetings once included the joyful formula Wesołego Alleluja.",
+        "fr": "Les salutations polonaises de Pâques comprenaient la formule joyeuse Wesołego Alleluja."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-010",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-H04-W-B-041",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-H04-W-B-041",
+      "factual_rationale": "Rolling eggs and hunting for eggs are distinct games, potentially one themed Easter-games comparison, not an exact duplicate.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-17-016"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-027",
+        "pages": [
+          235
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that rolling hard-boiled eggs was among the games played in some European Easter celebrations.",
+        "fr": "Saviez-vous que faire rouler des œufs durs figurait parmi les jeux de certaines célébrations pascales européennes."
+      },
+      "lead_original_claim": {
+        "en": "Easter egg hunts and games belonged to family tradition rather than to the Church's official rites.",
+        "fr": "La chasse aux œufs et les jeux de Pâques relevaient des traditions familiales, non des rites officiels de l'Église."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-011",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-037",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Easter lilies as decorations are not butter or sugar Easter lambs.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-17-019"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-028",
+        "pages": [
+          236
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Easter lilies became seasonal decorations in some American churches and homes.",
+        "fr": "Saviez-vous que les lis de Pâques sont devenus des décorations saisonnières dans certaines églises et maisons américaines."
+      },
+      "lead_original_claim": {
+        "en": "Easter lambs were fashioned not only from pastry but sometimes from butter or sugar for the family table.",
+        "fr": "On façonnait des agneaux de Pâques non seulement en pâtisserie, mais aussi parfois en beurre ou en sucre pour la table familiale."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-018",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-019",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-019",
+      "factual_rationale": "Monday prayers for Holy Souls are not Tuesday prayers for angels; both belong to a broader historical weekday-devotions set.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-02-004"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-041",
+        "pages": [
+          27
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Monday was associated with personal prayers for the Holy Souls in some Catholic devotional schedules.",
+        "fr": "Saviez-vous que le lundi était associé à des prières pour les âmes du purgatoire dans certains usages de dévotion catholiques."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Tuesday could be set aside for a voluntary devotion to the holy angels.",
+        "fr": "Saviez-vous que le mardi pouvait être consacré à une dévotion facultative envers les saints anges."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-021",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-019",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-019",
+      "factual_rationale": "Thursday Eucharistic devotion must not be absorbed by Tuesday angel devotion.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-02-007"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-044",
+        "pages": [
+          29
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Thursday has been associated with a special devotion to the Blessed Sacrament.",
+        "fr": "Saviez-vous que le jeudi est associé à une dévotion particulière envers le Saint-Sacrement."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Tuesday could be set aside for a voluntary devotion to the holy angels.",
+        "fr": "Saviez-vous que le mardi pouvait être consacré à une dévotion facultative envers les saints anges."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-022",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-019",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-019",
+      "factual_rationale": "First Friday Sacred Heart devotion is distinct from Tuesday angel devotion.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-02-008"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-045",
+        "pages": [
+          29
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that First Fridays have long been linked to devotion to the Sacred Heart of Jesus.",
+        "fr": "Saviez-vous que les premiers vendredis du mois sont depuis longtemps liés à la dévotion au Sacré-Cœur de Jésus."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Tuesday could be set aside for a voluntary devotion to the holy angels.",
+        "fr": "Saviez-vous que le mardi pouvait être consacré à une dévotion facultative envers les saints anges."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-023",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-019",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-019",
+      "factual_rationale": "Saturday Marian devotion is distinct from Tuesday angel devotion.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-02-009"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-046",
+        "pages": [
+          29
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Saturday has traditionally been associated with devotion to the Blessed Virgin Mary.",
+        "fr": "Saviez-vous que le samedi est traditionnellement associé à la dévotion envers la Bienheureuse Vierge Marie."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Tuesday could be set aside for a voluntary devotion to the holy angels.",
+        "fr": "Saviez-vous que le mardi pouvait être consacré à une dévotion facultative envers les saints anges."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM02-024",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-A-013",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Ember-Day harvest thanksgiving is not identical to a distinct Ember-Day prayer for priestly vocations.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch02a-weiser.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-03-003"
+        ],
+        "action_id": null,
+        "record_id": "BULK150-047",
+        "pages": [
+          32
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Weiser connected the early Ember Days with prayers seeking God's blessing and thanking Him for the harvest?",
+        "fr": "Saviez-vous que Weiser associait les anciens Quatre-Temps à des prières demandant la bénédiction de Dieu et le remerciant pour les récoltes ?"
+      },
+      "lead_original_claim": {
+        "en": "Ember Days were occasions to pray especially for priests and priestly vocations.",
+        "fr": "Les Quatre-Temps offraient notamment l'occasion de prier pour les prêtres et les vocations sacerdotales."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-005",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOLD_HISTORICAL_PRECISION",
+      "next_status": "R21_HOLD_PRECISE_HISTORICAL_CLAIM",
+      "previous_lead": "DYK-H04-W-B-155",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Do not assert a historically authenticated Saint Patrick shamrock catechesis; wearing the shamrock and catechetical origin need separation.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-20-005"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          257
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that the shamrock has been used as a symbol to explain the Holy Trinity.",
+        "fr": "Saviez-vous que le trèfle a servi de symbole pour expliquer la Sainte Trinité."
+      },
+      "lead_original_claim": {
+        "en": "Wearing a shamrock for Saint Patrick's Day is historical Irish custom; its precise catechetical origin remains legendary.",
+        "fr": "Porter du trèfle à la Saint-Patrick est une coutume irlandaise ancienne, dont l'origine catéchétique précise reste légendaire."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-021",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-W-A-096",
+      "merge_lead": "DYK-H04-W-A-096",
+      "comparison_theme_lead": null,
+      "factual_rationale": "General farewell to Alleluia can introduce Toul's documented ceremonial burial without a second Home card.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-13-006"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          159
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that some communities once marked the approach of Lent with a ceremonial farewell to the Alleluia.",
+        "fr": "Saviez-vous que certaines communautés marquaient autrefois l'approche du Carême par un adieu cérémoniel à l'Alléluia."
+      },
+      "lead_original_claim": {
+        "en": "Choirboys in Toul once enacted a symbolic burial of the Alleluia before the pre-Lenten season.",
+        "fr": "À Toul, des enfants de chœur mettaient autrefois en scène un enterrement symbolique de l'Alléluia avant le Carême."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-024",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-W-B-072",
+      "merge_lead": "DYK-H04-W-B-072",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Holy Trinity thanksgiving after epidemics is already more specifically illustrated by Central European plague columns.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-20-009"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          258
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Did you know that some historical shrines dedicated to the Holy Trinity were erected in thanksgiving after epidemics.",
+        "fr": "Saviez-vous que certains anciens monuments de dévotion à la Sainte Trinité furent érigés en action de grâce après des épidémies."
+      },
+      "lead_original_claim": {
+        "en": "Public Holy Trinity columns in Central Europe could commemorate deliverance from plague.",
+        "fr": "Des colonnes publiques de la Sainte Trinité en Europe centrale pouvaient commémorer une délivrance de la peste."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-026",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-027",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-027",
+      "factual_rationale": "The multiweek construction of Saint Rosalia's cart and its crowned figure are complementary details of the same cart, not identical sentences.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-005"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          13
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè describes Palermo's monumental Saint Rosalia festival cart being built during the weeks before the July festivities.",
+        "fr": "Saviez-vous que Pitrè décrit la construction du grand char de sainte Rosalie à Palerme dans les semaines précédant les fêtes de juillet."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Palermo's historical Saint Rosalia triumphal cart carried a white-clad, crowned figure of the saint above the crowd?",
+        "fr": "Saviez-vous que l'ancien char triomphal de sainte Rosalie à Palerme portait au sommet une figure de la sainte vêtue de blanc et couronnée ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-027",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-UM02-029",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Changes in the day of Palermo Vespers are distinct from the composition of a procession.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-015"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          22
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè recorded changes to the day on which solemn cathedral Vespers were celebrated during Palermo's Saint Rosalia festival.",
+        "fr": "Saviez-vous que Pitrè a relevé des changements dans le jour des vêpres solennelles célébrées à la cathédrale pendant les fêtes de sainte Rosalie à Palerme."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that an old Saint Rosalia procession in Palermo brought together her relics, confraternities, clergy and civic representatives?",
+        "fr": "Saviez-vous qu'une ancienne procession de sainte Rosalie à Palerme réunissait ses reliques, les confréries, le clergé et des représentants de la cité ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-029",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-UM02-029",
+      "merge_lead": "DYK-UM02-029",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Other patron saints' statues preceding the reliquary provide useful order-detail to the existing Saint Rosalia procession description.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-022"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          34
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that figures of other patron saints preceded Saint Rosalia's silver reliquary in an old Palermo procession.",
+        "fr": "Saviez-vous que des figures d'autres saints patrons précédaient le reliquaire d'argent de sainte Rosalie lors d'une ancienne procession palermitaine."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that an old Saint Rosalia procession in Palermo brought together her relics, confraternities, clergy and civic representatives?",
+        "fr": "Saviez-vous qu'une ancienne procession de sainte Rosalie à Palerme réunissait ses reliques, les confréries, le clergé et des représentants de la cité ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-030",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-029",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-029",
+      "factual_rationale": "Alternating procession routes through Palermo's quarters are distinct from who attended the procession.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-024"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          36
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that the route of Saint Rosalia's historical relic procession alternated between different quarters of Palermo.",
+        "fr": "Saviez-vous que le parcours de l'ancienne procession des reliques de sainte Rosalie alternait entre différents quartiers de Palerme."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that an old Saint Rosalia procession in Palermo brought together her relics, confraternities, clergy and civic representatives?",
+        "fr": "Saviez-vous qu'une ancienne procession de sainte Rosalie à Palerme réunissait ses reliques, les confréries, le clergé et des représentants de la cité ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-034",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-034",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-034",
+      "factual_rationale": "Families travelled to Palermo for the festival; the lead concerns workers from Kalsa carrying the litter.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-039"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          76
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that fishermen and their families travelled from nearby communities for the procession of Saints Cosmas and Damian in Palermo.",
+        "fr": "Saviez-vous que des pêcheurs et leurs familles venaient des environs pour la procession des saints Côme et Damien à Palerme."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Pitrè described Palermo fishermen and fishmongers from the Kalsa carrying the heavy litter of Saints Cosmas and Damian?",
+        "fr": "Saviez-vous que Pitrè relatait comment des pêcheurs et des poissonniers du quartier de la Kalsa, à Palerme, portaient le lourd brancard des saints Côme et Damien ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-035",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-034",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-034",
+      "factual_rationale": "Bearers' white attire, red sash and yellow scarf add a distinct visual detail about the same procession.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-046"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          80
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè described the bearers of Saints Cosmas and Damian's litter in white clothing with a red sash and yellow headscarf.",
+        "fr": "Saviez-vous que Pitrè décrivait les porteurs du brancard des saints Côme et Damien vêtus de blanc, avec une ceinture rouge et un foulard jaune."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Pitrè described Palermo fishermen and fishmongers from the Kalsa carrying the heavy litter of Saints Cosmas and Damian?",
+        "fr": "Saviez-vous que Pitrè relatait comment des pêcheurs et des poissonniers du quartier de la Kalsa, à Palerme, portaient le lourd brancard des saints Côme et Damien ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-036",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-UM02-034",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-UM02-034",
+      "factual_rationale": "Midnight return with bells is a separate processional moment, not a duplicate of the Kalsa bearers.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-056"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          86
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè described the statues of Saints Cosmas and Damian returning to their Palermo church around midnight, accompanied by bells.",
+        "fr": "Saviez-vous que Pitrè décrivait le retour des statues des saints Côme et Damien dans leur église de Palerme vers minuit, au son des cloches."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Pitrè described Palermo fishermen and fishmongers from the Kalsa carrying the heavy litter of Saints Cosmas and Damian?",
+        "fr": "Saviez-vous que Pitrè relatait comment des pêcheurs et des poissonniers du quartier de la Kalsa, à Palerme, portaient le lourd brancard des saints Côme et Damien ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-038",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-UM02-038",
+      "merge_lead": "DYK-UM02-038",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Carrying the Marian banner belongs to the same Piazza Armerina Assumption cavalcade described in the lead.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-063"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          559
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè describes an Assumption procession in Piazza Armerina carrying a Marian banner behind confraternities and patron-saint statues.",
+        "fr": "Saviez-vous que Pitrè décrit à Piazza Armerina une procession de l'Assomption où une bannière mariale suivait les confréries et les statues de saints patrons."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that a historical Assumption cavalcade in Piazza Armerina reenacted Count Roger's entry and carried a copy of a Marian banner?",
+        "fr": "Saviez-vous qu'une ancienne cavalcade de l'Assomption à Piazza Armerina reconstituait l'entrée du comte Roger et portait une copie d'une bannière mariale ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-041",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-UM02-042",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Wine supplied to bearers differs from gifts collected at houses for Saint James; opposite action direction.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-081"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          125
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that bearers of Saint James's statue at Gratteri were offered wine during their procession.",
+        "fr": "Saviez-vous que les porteurs de la statue de saint Jacques à Gratteri recevaient du vin pendant leur procession."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that a statue of Saint James visited Gratteri houses collecting gifts that could include grain, oil, wine and eggs?",
+        "fr": "Saviez-vous qu'à Gratteri une statue de saint Jacques visitait les maisons pour recevoir des offrandes, notamment du grain, de l'huile, du vin et des œufs ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-042",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-UM02-042",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "The statue moving rapidly across the Franciscan square differs from receiving gifts at household stops.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-082"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          125
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè describes Saint James's statue being hurried across the square of the Franciscan convent at Gratteri.",
+        "fr": "Saviez-vous que Pitrè décrit la statue de saint Jacques traversant rapidement la place du couvent franciscain de Gratteri."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that a statue of Saint James visited Gratteri houses collecting gifts that could include grain, oil, wine and eggs?",
+        "fr": "Saviez-vous qu'à Gratteri une statue de saint Jacques visitait les maisons pour recevoir des offrandes, notamment du grain, de l'huile, du vin et des œufs ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-044",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-UM02-046",
+      "merge_lead": "DYK-UM02-046",
+      "comparison_theme_lead": null,
+      "factual_rationale": "A trumpet sounding the start of Geraci Siculo's shepherd cavalcade enriches the description of that cavalcade.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-092"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          127
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that in an old Geraci Siculo celebration, a trumpet announced the departure of the shepherds' mounted procession.",
+        "fr": "Saviez-vous que lors d'une ancienne fête de Geraci Siculo, une trompette annonçait le départ de la cavalcade des bergers."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that shepherds in Geraci Siculo held a mounted cavalcade for their historical June Blessed Sacrament celebration?",
+        "fr": "Saviez-vous que les bergers de Geraci Siculo organisaient une cavalcade lors de leur ancienne célébration de juin en l'honneur du Saint-Sacrement ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-047",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-UM03-048",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Colour-coded confraternity banners and an angel-costumed child on a rope are different actions during the same Marineo feast.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-103"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          133
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that confraternities in the old Saint Cyrus procession at Marineo marched behind banners distinguished by the colours of their habits.",
+        "fr": "Saviez-vous que les confréries de l'ancienne procession de saint Cyr à Marineo défilaient derrière des bannières distinguées par les couleurs de leurs habits."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Pitrè described an angel-costumed child being carried along a rope towards Saint Cyrus's statue to recite a prayer during a festival in Marineo.",
+        "fr": "Saviez-vous que Pitrè décrivait à Marineo un enfant costumé en ange s'avançant le long d'une corde vers la statue de saint Cyr pour réciter une prière."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-UM03-050",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-UM03-049",
+      "merge_lead": "DYK-UM03-049",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Soldiers, hermits, angels and personified virtues are costume details of the existing Marineo street drama.",
+      "own_source": {
+        "source_file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-NEW-119"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          137
+        ],
+        "url": "https://archive.org/details/afm3499.0021.001.umich.edu"
+      },
+      "own_original_claim": {
+        "en": "Did you know that Pitrè's account of the Saint Cyrus drama at Marineo includes performers dressed as soldiers, hermits, angels and personified virtues and vices.",
+        "fr": "Saviez-vous que le récit de Pitrè sur la représentation de saint Cyr à Marineo mentionne des acteurs déguisés en soldats, ermites, anges, vertus et vices personnifiés."
+      },
+      "lead_original_claim": {
+        "en": "Did you know that Marineo once staged a street drama called the Dimostranza, with scenes from Saint Cyrus's life performed by local people.",
+        "fr": "Saviez-vous que Marineo présentait autrefois une représentation de rue appelée Dimostranza, avec des scènes de la vie de saint Cyr jouées par les habitants."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-018",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R04-LI-02",
+      "merge_lead": "DYK-R04-LI-02",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Quietly spoken Secret versus its name's derivation are related G059 explanations; preserve extra timing before Preface in Learn unless independently interesting.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G059",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the prayer called the Secret is said quietly over the offerings before the Preface in the 1962 Mass?",
+        "fr": "Saviez-vous que la prière appelée Secrète est dite à voix basse sur les offrandes avant la Préface dans la messe de 1962 ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-019",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R06-G066",
+      "merge_lead": "DYK-R06-G066",
+      "comparison_theme_lead": null,
+      "factual_rationale": "The usual John 1 Last Gospel adds content to the preview's exceptions statement; not a new independent topic.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G066",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the Last Gospel at traditional Roman Mass is ordinarily the opening of Saint John's Gospel, though rubrical exceptions exist?",
+        "fr": "Saviez-vous que le Dernier Évangile de la messe romaine traditionnelle est ordinairement le prologue de saint Jean, avec certaines exceptions rubricales ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-021",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R04-CA-01",
+      "merge_lead": "DYK-R06-G088",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Ember-Day Wednesday/Friday/Saturday schedule supplements G088's already-previewed 1962 Ember lessons; previous target was wrong.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G088",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the Ember Days comprise four seasonal sets of Wednesday, Friday and Saturday?",
+        "fr": "Saviez-vous que les Quatre-Temps comprennent quatre séries saisonnières de mercredi, vendredi et samedi ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-022",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R05-G182",
+      "merge_lead": "DYK-R05-G182",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Maniple worn on the left forearm is a fact about G182; the Home preview already describes its rubrical status.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G182",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the maniple in the traditional Roman rite is worn on the left forearm?",
+        "fr": "Saviez-vous que, dans le rite romain traditionnel, le manipule se porte sur l'avant-bras gauche ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-024",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R06-G187",
+      "merge_lead": "DYK-R06-G187",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Square corporal under vessels adds physical context to the existing G187 preview of the corporal's handling.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G187",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the corporal is the square linen cloth spread on the altar beneath the sacred vessels?",
+        "fr": "Saviez-vous que le corporal est le linge carré déployé sur l'autel sous les vases sacrés ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-026",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R06-G189",
+      "merge_lead": "DYK-R06-G189",
+      "comparison_theme_lead": null,
+      "factual_rationale": "A pall covering the chalice reinforces the G189 preview distinguishing it from other covers.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G189",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the pall is a stiff square covering placed over the chalice during specified parts of traditional Mass?",
+        "fr": "Saviez-vous que la pale est une pièce carrée rigide posée sur le calice à certains moments de la messe traditionnelle ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-030",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R05-G197",
+      "merge_lead": "DYK-R05-G197",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Amice worn at neck and shoulders adds practical placement to the existing G197 preview of vesting order.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G197",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the amice is worn around the neck and shoulders beneath the alb in traditional Roman vesting?",
+        "fr": "Saviez-vous que l'amict se porte autour du cou et des épaules, sous l'aube, dans le vêtement liturgique romain traditionnel ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-032",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "HOME_PREVIEW_SAME_SOURCE_VARIANT",
+      "next_status": "R21_HOME_PREVIEW_ENTRY_VARIANT",
+      "previous_lead": "DYK-R05-G212",
+      "merge_lead": "DYK-R05-G212",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Burse holding the folded corporal gives object function within the same G212 Home explanation.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G212",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the traditional liturgical burse is a stiff case made to hold the folded corporal?",
+        "fr": "Saviez-vous que la bourse liturgique traditionnelle est un étui rigide destiné à recevoir le corporal plié ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-033",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-R05-G213",
+      "merge_lead": "DYK-R05-G213",
+      "comparison_theme_lead": null,
+      "factual_rationale": "The existing G213 Home preview already specifically names altar-card prayers and function; the older generic wording adds no material claim.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "G213",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the three traditional altar cards contain fixed prayers that help the priest celebrate Mass?",
+        "fr": "Saviez-vous que les trois canons d'autel présentent des prières fixes qui aident le prêtre à célébrer la messe ?"
+      },
+      "lead_original_claim": null,
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-036",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-001",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Creed genuflection at Incarnation is unrelated to the opening of the Canon; preserve this separately located gesture.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "GM.P.C0096.01",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the priest genuflects at the words of the Incarnation in the Creed at the traditional Roman Mass?",
+        "fr": "Saviez-vous que le prêtre fait une génuflexion aux paroles de l'Incarnation dans le Credo de la messe romaine traditionnelle ?"
+      },
+      "lead_original_claim": {
+        "en": "At the opening of the 1962 Roman Canon, the priest raises his hands and eyes, then bows profoundly before praying.",
+        "fr": "À l'ouverture du Canon romain de 1962, le prêtre élève les mains et les yeux, puis s'incline profondément avant de prier."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-SF01-039",
+      "previous_disposition": "CONSOLIDATE_WITH_RELATED",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-SF01-038",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Host and Chalice elevations have different consecration locations even if each includes genuflections; compare without conflating.",
+      "own_source": {
+        "source_file": "dyk-source-first-batch01.v1.json",
+        "source_family": null,
+        "observation_ids": [],
+        "action_id": null,
+        "record_id": "GM.P.C0181.02",
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Did you know that the elevation of the consecrated Chalice is framed by two genuflections of the priest?",
+        "fr": "Saviez-vous que l'élévation du Calice consacré est encadrée par deux génuflexions du prêtre ?"
+      },
+      "lead_original_claim": {
+        "en": "Did you know that after consecrating the Host, the priest genuflects, elevates it, then genuflects again?",
+        "fr": "Saviez-vous qu'après la consécration de l'Hostie, le prêtre fait une génuflexion, l'élève, puis fait de nouveau une génuflexion ?"
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-A-032",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-W-A-059",
+      "merge_lead": "DYK-H04-W-A-059",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Family prayer at crib before Christmas gifts overlaps the stronger same-household Gospel, prayer and hymn account.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-06-007"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          74
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Some Christmas Eve family devotions began with prayers and hymns at the crib before presents were opened.",
+        "fr": "Dans certains foyers, on priait et chantait devant la crèche la veille de Noël avant d'ouvrir les cadeaux."
+      },
+      "lead_original_claim": {
+        "en": "In some Christmas households, the Gospel, a prayer at the crib and a hymn preceded gifts attributed to the Christ Child.",
+        "fr": "Dans certains foyers, l'Évangile, une prière à la crèche et un cantique précédaient les présents attribués à l'Enfant Jésus."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-A-049",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-A-048",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Evergreen candle pyramids differ from three-light arrangements symbolizing the Trinity.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-08-007"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          97
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "German Christmas decorations once included candle pyramids built with evergreen branches.",
+        "fr": "Les décorations allemandes de Noël comprenaient autrefois des pyramides de bougies ornées de branches persistantes."
+      },
+      "lead_original_claim": {
+        "en": "Some older Christmas candle arrangements joined three lights to symbolize the Holy Trinity.",
+        "fr": "Certains anciens arrangements de bougies de Noël réunissaient trois flammes pour symboliser la Sainte Trinité."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-A-064",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-A-062",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "German Christstollen is not Ukrainian wheat-and-honey kutia.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-09-008"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          118
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "The Christstollen belongs to an older regional tradition of German Christmas breads.",
+        "fr": "Le Christstollen s'inscrit dans une ancienne tradition régionale de pains de Noël allemands."
+      },
+      "lead_original_claim": {
+        "en": "Ukrainian Christmas Eve meals traditionally included kutia, prepared from wheat, honey and poppy seeds.",
+        "fr": "Les repas ukrainiens de la veille de Noël comprenaient traditionnellement la koutia, à base de blé, de miel et de pavot."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-A-066",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-A-062",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Spanish or Latin American pastries are not Ukrainian kutia.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-09-010"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          119
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Christmas sweets recorded in Spain and Latin America included almond pastries and buñuelos.",
+        "fr": "Parmi les douceurs de Noël recensées en Espagne et en Amérique latine figuraient les pâtisseries aux amandes et les buñuelos."
+      },
+      "lead_original_claim": {
+        "en": "Ukrainian Christmas Eve meals traditionally included kutia, prepared from wheat, honey and poppy seeds.",
+        "fr": "Les repas ukrainiens de la veille de Noël comprenaient traditionnellement la koutia, à base de blé, de miel et de pavot."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-A-067",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-A-062",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "French-Canadian beignes and sucre à la crème are not Ukrainian kutia.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-09-011"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          119
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "French-Canadian Christmas food traditions included beignes and sucre à la crème.",
+        "fr": "Les traditions culinaires de Noël des Canadiens français comprenaient les beignes et le sucre à la crème."
+      },
+      "lead_original_claim": {
+        "en": "Ukrainian Christmas Eve meals traditionally included kutia, prepared from wheat, honey and poppy seeds.",
+        "fr": "Les repas ukrainiens de la veille de Noël comprenaient traditionnellement la koutia, à base de blé, de miel et de pavot."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-A-097",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-H04-W-A-096",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-H04-W-A-096",
+      "factual_rationale": "The Paris straw-effigy Alleluia farewell contrasts with Toul's ceremonial burial, and their local forms should remain distinguishable.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-13-008"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          159
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "In Paris, an old farewell to the Alleluia could use a straw effigy rather than an actual liturgical burial.",
+        "fr": "À Paris, un ancien adieu à l'Alléluia pouvait employer une effigie de paille plutôt qu'un véritable enterrement liturgique."
+      },
+      "lead_original_claim": {
+        "en": "Choirboys in Toul once enacted a symbolic burial of the Alleluia before the pre-Lenten season.",
+        "fr": "À Toul, des enfants de chœur mettaient autrefois en scène un enterrement symbolique de l'Alléluia avant le Carême."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-038",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-037",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Easter eggs distributed as gifts differ from butter/sugar lamb-shaped foods.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-17-012"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          234
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Decorated Easter eggs were historically presented to children and household workers as gifts.",
+        "fr": "Les œufs de Pâques décorés étaient autrefois offerts aux enfants et aux employés de maison."
+      },
+      "lead_original_claim": {
+        "en": "Easter lambs were fashioned not only from pastry but sometimes from butter or sugar for the family table.",
+        "fr": "On façonnait des agneaux de Pâques non seulement en pâtisserie, mais aussi parfois en beurre ou en sucre pour la table familiale."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-041",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-042",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Easter egg hunts and games differ from a single blessed egg shared at family breakfast.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-17-017"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          235
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Easter egg hunts and games belonged to family tradition rather than to the Church's official rites.",
+        "fr": "La chasse aux œufs et les jeux de Pâques relevaient des traditions familiales, non des rites officiels de l'Église."
+      },
+      "lead_original_claim": {
+        "en": "Some Slavic families divided a single blessed Easter egg among everyone at breakfast.",
+        "fr": "Dans certaines familles slaves, on partageait un seul œuf pascal béni entre tous les convives au petit déjeuner."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-044",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-037",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "A decorated paska loaf differs from lambs formed of butter or sugar.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-17-023"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          238
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Some traditional paska Easter loaves carried a cross on their crust.",
+        "fr": "Certains pains traditionnels de Pâques appelés paska portaient une croix sur leur croûte."
+      },
+      "lead_original_claim": {
+        "en": "Easter lambs were fashioned not only from pastry but sometimes from butter or sugar for the family table.",
+        "fr": "On façonnait des agneaux de Pâques non seulement en pâtisserie, mais aussi parfois en beurre ou en sucre pour la table familiale."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-045",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-037",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Austrian Easter loaves are not an Easter lamb moulded in butter or sugar.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-17-024"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          238
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Austrian Easter loaves and Osterstollen formed distinct regional types of festive bread.",
+        "fr": "Les pains de Pâques autrichiens et l'Osterstollen représentaient des variantes régionales de pains de fête."
+      },
+      "lead_original_claim": {
+        "en": "Easter lambs were fashioned not only from pastry but sometimes from butter or sugar for the family table.",
+        "fr": "On façonnait des agneaux de Pâques non seulement en pâtisserie, mais aussi parfois en beurre ou en sucre pour la table familiale."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-046",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-037",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Polish mazurki are a separate Easter cake, not a butter or sugar Easter lamb.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-17-025"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          238
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Polish mazurki were among the regional cakes served at Easter.",
+        "fr": "Les mazurki polonais figuraient parmi les gâteaux régionaux servis à Pâques."
+      },
+      "lead_original_claim": {
+        "en": "Easter lambs were fashioned not only from pastry but sometimes from butter or sugar for the family table.",
+        "fr": "On façonnait des agneaux de Pâques non seulement en pâtisserie, mais aussi parfois en beurre ou en sucre pour la table familiale."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-077",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-H04-W-B-076",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-H04-W-B-076",
+      "factual_rationale": "Birch greenery and sacred-image windows are different but complementary decorations along Corpus Christi routes.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-21-008"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          262
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Birch branches once decorated houses and streets along Corpus Christi processions in some regions.",
+        "fr": "Des branches de bouleau décoraient autrefois les maisons et rues sur le parcours de processions de la Fête-Dieu."
+      },
+      "lead_original_claim": {
+        "en": "Windows along Corpus Christi procession routes were sometimes adorned with candles and sacred images.",
+        "fr": "Les fenêtres longeant les processions de la Fête-Dieu étaient parfois ornées de cierges et d'images saintes."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-084",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "COMPARE_RELATED_VARIANTS",
+      "next_status": "R21_RETAIN_COMPARATIVE_VARIANTS",
+      "previous_lead": "DYK-H04-W-B-086",
+      "merge_lead": null,
+      "comparison_theme_lead": "DYK-H04-W-B-086",
+      "factual_rationale": "Flower wreaths decorating procession structures differ from Polish blessed wreaths later displayed by houses or fields.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-21-018"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          265
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Flower wreaths could decorate Corpus Christi banners, houses and poles, apart from the Eucharistic rite itself.",
+        "fr": "Des couronnes de fleurs pouvaient orner bannières, maisons et perches pour la Fête-Dieu, indépendamment du rite eucharistique."
+      },
+      "lead_original_claim": {
+        "en": "In some Polish places, blessed Corpus Christi wreaths were later hung in houses or near fields.",
+        "fr": "En certains lieux de Pologne, les couronnes bénies à la Fête-Dieu étaient ensuite suspendues dans les maisons ou près des champs."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-097",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-095",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Early Christian martyr-tomb observance and German Kirchweih dedication festivals are different eras and practices.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-23-014"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          282
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Early Christians commemorated martyrs by visiting their tombs, especially on their death anniversaries.",
+        "fr": "Les premiers chrétiens commémoraient les martyrs en visitant leurs tombeaux, notamment au jour anniversaire de leur mort."
+      },
+      "lead_original_claim": {
+        "en": "German Kirchweih or Kirmes festivities historically combined a church's dedication or patronal feast with local celebrations.",
+        "fr": "Les Kirchweih ou Kirmes allemandes associaient autrefois la dédicace ou la fête patronale d'une église à des réjouissances locales."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-103",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-105",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Blessing countryside and fields is different from Portuguese boats or sea blessings at Assumption.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-24-012"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          291
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Some local Assumption celebrations included blessings of fields and countryside.",
+        "fr": "Certaines célébrations locales de l'Assomption comportaient des bénédictions des champs et de la campagne."
+      },
+      "lead_original_claim": {
+        "en": "Some Portuguese coastal communities included boats or the sea in local Assumption blessings.",
+        "fr": "Certaines communautés côtières portugaises associaient barques ou mer aux bénédictions locales de l'Assomption."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-104",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-105",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Blessing Alpine livestock is distinct from Portuguese coastal blessings at Assumption.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-24-013"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          291
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "In Alpine areas, blessings of mountain livestock could be associated with Assumption celebrations.",
+        "fr": "Dans les régions alpines, des bénédictions du bétail de montagne pouvaient accompagner les fêtes de l'Assomption."
+      },
+      "lead_original_claim": {
+        "en": "Some Portuguese coastal communities included boats or the sea in local Assumption blessings.",
+        "fr": "Certaines communautés côtières portugaises associaient barques ou mer aux bénédictions locales de l'Assomption."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-131",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-133",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Graveside lights at All Souls differ in location and purpose from a Candlemas-blessed household candle.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-26-011"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          311
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Lanterns and protected candles were placed at graves around All Saints and All Souls in some countries.",
+        "fr": "Dans certains pays, on déposait des lanternes et des cierges protégés sur les tombes à la Toussaint et au jour des Défunts."
+      },
+      "lead_original_claim": {
+        "en": "Some families preserved a blessed Candlemas candle and lit it when praying for the dead at All Souls.",
+        "fr": "Certaines familles conservaient un cierge béni à la Chandeleur et l'allumaient pour prier pour les défunts."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-135",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-137",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Brazilian visits and candles at cemeteries are different regional evidence from Philippine grave repairs for the novena.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-26-015"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          312
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Brazilian All Souls observances historically included cemetery visits, prayers and candles.",
+        "fr": "Au Brésil, les anciennes pratiques du jour des Défunts comprenaient visites au cimetière, prières et cierges."
+      },
+      "lead_original_claim": {
+        "en": "In the Philippines, families repaired graves in preparation for an All Souls novena.",
+        "fr": "Aux Philippines, des familles entretenaient les tombes en vue d'une neuvaine pour les défunts."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-W-B-163",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-W-B-160",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Tuesday Saint Anthony novenas are not the Basque sailors' mast-mounted Saint Anthony shrines.",
+      "own_source": {
+        "source_file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_family": "WEISER_1958",
+        "observation_ids": [
+          "WEI58-27-027"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          328
+        ],
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+      },
+      "own_original_claim": {
+        "en": "Tuesday devotions and continuing novenas to Saint Anthony appear in historical Catholic practice.",
+        "fr": "Des dévotions du mardi et des neuvaines permanentes à saint Antoine sont attestées dans l'histoire catholique."
+      },
+      "lead_original_claim": {
+        "en": "Some Basque sailors historically kept a small shrine to Saint Anthony on a ship's mast.",
+        "fr": "Certains marins basques installaient autrefois un petit sanctuaire dédié à saint Antoine sur le mât de leur bateau."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-P-014",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-P-015",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Ways pilgrims travelled to Altavilla are distinct from its tall decorated votive candles.",
+      "own_source": {
+        "source_file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-W05-OBS-014"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          88
+        ],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Pilgrims reached the Loreto shrine at Altavilla by several routes, including on foot, by carriage, rail and boat.",
+        "fr": "Les pèlerins rejoignaient le sanctuaire de Notre-Dame de Lorette à Altavilla à pied, en voiture, en train ou en bateau."
+      },
+      "lead_original_claim": {
+        "en": "Some Altavilla pilgrims carried long decorated votive candles as tall as their own bodies.",
+        "fr": "Certains pèlerins d'Altavilla portaient de longs cierges votifs décorés, parfois aussi hauts qu'eux."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-P-060",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-P-061",
+      "merge_lead": "DYK-H04-P-061",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Drumming to summon candle-bearers supplies a striking additional detail to Saint Conrad's lit candle procession in Noto.",
+      "own_source": {
+        "source_file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-W05-OBS-060"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          301
+        ],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "In Noto, a drummer once summoned participants bringing tall devotional candles to Saint Conrad's procession.",
+        "fr": "À Noto, un tambour rappelait autrefois les participants portant de grands cierges votifs à la procession de saint Conrad."
+      },
+      "lead_original_claim": {
+        "en": "At Noto, Saint Conrad's reliquary passed between rows of lighted votive structures while devotees knelt.",
+        "fr": "À Noto, le reliquaire de saint Conrad passait entre des rangées de structures votives allumées tandis que les fidèles s'agenouillaient."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-P-062",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-P-061",
+      "merge_lead": "DYK-H04-P-061",
+      "comparison_theme_lead": null,
+      "factual_rationale": "White garments and headscarves characterize Saint Conrad participants; retain alongside the procession's votive lights.",
+      "own_source": {
+        "source_file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-W05-OBS-062"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          302
+        ],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Some devotees joining Saint Conrad's Noto procession wore long white garments and white headscarves.",
+        "fr": "Certains fidèles de la procession de saint Conrad à Noto portaient de longues tenues blanches et un foulard blanc."
+      },
+      "lead_original_claim": {
+        "en": "At Noto, Saint Conrad's reliquary passed between rows of lighted votive structures while devotees knelt.",
+        "fr": "À Noto, le reliquaire de saint Conrad passait entre des rangées de structures votives allumées tandis que les fidèles s'agenouillaient."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-P-097",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-H04-P-098",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Children bringing a crown, mantle and halo differ from the machinery raising the Madonna image at Villafranca; no sequence inferred.",
+      "own_source": {
+        "source_file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-W05-OBS-097"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          401
+        ],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "At Villafranca, festively dressed children brought offerings such as a mantle, crown and halo to the Madonna.",
+        "fr": "À Villafranca, des enfants en habits de fête apportaient à la Vierge des offrandes comme un manteau, une couronne et une auréole."
+      },
+      "lead_original_claim": {
+        "en": "During old Villafranca Vespers, a pulley mechanism raised the Madonna delle Mortelle image behind the altar.",
+        "fr": "Pendant les anciennes vêpres de Villafranca, une poulie soulevait l'image de la Madonna delle Mortelle derrière l'autel."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-P-123",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-P-122",
+      "merge_lead": "DYK-H04-P-122",
+      "comparison_theme_lead": null,
+      "factual_rationale": "The winner paying to illuminate a Racalmuto candle structure enriches the existing description of those structures.",
+      "own_source": {
+        "source_file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-W05-OBS-123"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          430
+        ],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "At Racalmuto, the winner of a festival competition had to illuminate a large devotional candle structure at personal expense.",
+        "fr": "À Racalmuto, le gagnant d'un concours de fête devait illuminer à ses frais une grande structure votive à cierges."
+      },
+      "lead_original_claim": {
+        "en": "Large candle-bearing structures called cilii appeared in old Racalmuto Marian processions.",
+        "fr": "De grandes structures à cierges appelées cilii figuraient dans les anciennes processions mariales de Racalmuto."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-H04-P-127",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-H04-P-129",
+      "merge_lead": "DYK-H04-P-129",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Three-day Sambuca feast and evening schedule can qualify the dramatic candlelight procession description.",
+      "own_source": {
+        "source_file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_family": "PITRE_1900",
+        "observation_ids": [
+          "PIT1900-W05-OBS-127"
+        ],
+        "action_id": null,
+        "record_id": null,
+        "pages": [
+          435
+        ],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "Sambuca's Madonna dell'Udienza festival once unfolded over three days, with an evening procession.",
+        "fr": "À Sambuca, la fête de la Madonna dell'Udienza s'étendait autrefois sur trois jours et comprenait une procession du soir."
+      },
+      "lead_original_claim": {
+        "en": "The lights carried by pilgrims in Sambuca's historical Marian procession were compared to a river of fire.",
+        "fr": "Les lumières portées par les pèlerins de l'ancienne procession mariale de Sambuca étaient comparées à un fleuve de feu."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-003",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-013",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "The Te igitur and Quam oblationem three-cross gestures happen at different points of the Canon; never merge their cue IDs.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.003",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "During Te igitur, the celebrant traces three crosses over the Host and chalice together.",
+        "fr": "Pendant le Te igitur, le célébrant trace trois croix au-dessus de l'hostie et du calice ensemble."
+      },
+      "lead_original_claim": {
+        "en": "At benedictam, adscriptam and ratam in Quam oblationem, the priest traces three crosses over both offerings.",
+        "fr": "Aux mots benedictam, adscriptam et ratam du Quam oblationem, le prêtre trace trois croix au-dessus des deux oblats."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-015",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "ABSORB_SUPPORTING_DETAIL",
+      "next_status": "R21_ABSORB_IN_LEAD_COPY_REVIEW",
+      "previous_lead": "DYK-M04-CANON-014",
+      "merge_lead": "DYK-M04-CANON-014",
+      "comparison_theme_lead": null,
+      "factual_rationale": "Chalice-only Sanguis cross is already paired with Host-only Corpus cross in the updated Quam oblationem featured copy.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.015",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "The cross at Sanguis in Quam oblationem is traced over the chalice alone.",
+        "fr": "La croix au mot Sanguis dans le Quam oblationem est tracée au-dessus du calice seul."
+      },
+      "lead_original_claim": {
+        "en": "The cross traced at Corpus in Quam oblationem is made over the Host alone.",
+        "fr": "La croix tracée au mot Corpus dans le Quam oblationem est faite au-dessus de l'hostie seule."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": false,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-022",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-021",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Quiet Host Consecration is a different point from the non-breaking meaning of fregit in the preceding narrative.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.022",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "The words of consecration over the Host are pronounced quietly, before the public elevation.",
+        "fr": "Les paroles de la consécration de l'hostie sont prononcées à voix basse, avant l'élévation visible des fidèles."
+      },
+      "lead_original_claim": {
+        "en": "The word fregit in the consecration narrative does not mean that the Host is broken at that moment.",
+        "fr": "Le mot fregit dans le récit de l'institution ne signifie pas que l'hostie est rompue à cet instant."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-032",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-021",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Quiet chalice Consecration is not the moment described by Host narrative fregit.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.032",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "The words of consecration over the chalice are pronounced quietly while the priest bends over it.",
+        "fr": "Les paroles de consécration du calice sont prononcées à voix basse tandis que le prêtre s'incline au-dessus de lui."
+      },
+      "lead_original_claim": {
+        "en": "The word fregit in the consecration narrative does not mean that the Host is broken at that moment.",
+        "fr": "Le mot fregit dans le récit de l'institution ne signifie pas que l'hostie est rompue à cet instant."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-038",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-013",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Unde et memores is after Consecration; its three crosses are different from those in Quam oblationem before Consecration.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.038",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "During Unde et memores, the priest traces three crosses over the consecrated Host and chalice together.",
+        "fr": "Pendant l'Unde et memores, le prêtre trace trois croix sur l'hostie et le calice consacrés ensemble."
+      },
+      "lead_original_claim": {
+        "en": "At benedictam, adscriptam and ratam in Quam oblationem, the priest traces three crosses over both offerings.",
+        "fr": "Aux mots benedictam, adscriptam et ratam du Quam oblationem, le prêtre trace trois croix au-dessus des deux oblats."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-047",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-006",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Memento of the dead and Memento of the living are categorically distinct prayers, on different sides of Consecration.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.047",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "A short silent remembrance of the departed belongs to the Roman Canon's prayers after consecration.",
+        "fr": "Un bref souvenir silencieux des défunts fait partie des prières du Canon romain après la consécration."
+      },
+      "lead_original_claim": {
+        "en": "The Memento of the living includes an interval in which the priest commemorates particular people quietly.",
+        "fr": "Le Memento des vivants comprend un moment où le prêtre fait mémoire de personnes particulières en silence."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-056",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-058",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Three Host crosses at Per ipsum differ from the subsequent small elevation, though both occur in the closing doxology.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.056",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "At Per ipsum, cum ipso and in ipso, the priest traces three crosses with the consecrated Host above the chalice.",
+        "fr": "Aux mots Per ipsum, cum ipso et in ipso, le prêtre trace trois croix avec l'hostie consacrée au-dessus du calice."
+      },
+      "lead_original_claim": {
+        "en": "The small elevation at the close of the Canon is different from the greater elevations after each consecration.",
+        "fr": "La petite élévation à la fin du Canon est distincte des grandes élévations qui suivent chacune des consécrations."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    },
+    {
+      "id": "DYK-M04-CANON-057",
+      "previous_disposition": "CONSOLIDATE_OR_SPREAD_FESTIVAL",
+      "resolution": "RETAIN_DISTINCT_INCORRECT_LEAD",
+      "next_status": "R21_RETAIN_DISTINCT_WRONG_LEAD",
+      "previous_lead": "DYK-M04-CANON-058",
+      "merge_lead": null,
+      "comparison_theme_lead": null,
+      "factual_rationale": "Two crosses at Patri and Sancti differ from the small elevation; do not flatten into one movement.",
+      "own_source": {
+        "source_file": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+        "observation_ids": [],
+        "action_id": "AO.CANON.R62.057",
+        "record_id": null,
+        "pages": [],
+        "url": null
+      },
+      "own_original_claim": {
+        "en": "At Patri and Sancti in the final doxology, two crosses with the Host are made between the chalice and the priest's breast.",
+        "fr": "Aux mots Patri et Sancti de la doxologie finale, deux croix sont tracées avec l'hostie entre le calice et la poitrine du prêtre."
+      },
+      "lead_original_claim": {
+        "en": "The small elevation at the close of the Canon is different from the greater elevations after each consecration.",
+        "fr": "La petite élévation à la fin du Canon est distincte des grandes élévations qui suivent chacune des consécrations."
+      },
+      "no_cross_town_merging": false,
+      "true_word_for_word_duplicate_certified": false,
+      "publish_current_record_as_separate_new_fact": null,
+      "historical_original_page_verified_this_pass": false,
+      "english_claim_signed_off": false,
+      "french_claim_signed_off": false,
+      "published": false
+    }
+  ]
+}
