@@ -1,0 +1,4346 @@
+{
+  "schema": "AO_PRAY_ART_GALLERY_TITLE_CANDIDATE_DELTA_V1",
+  "date": "2026-10-30",
+  "stage": "RESEARCH_ONLY__NO_PUBLICATION",
+  "purpose": "Conservative exact-title-cue supplement to the 22-primary editorial identity join, using the 383-record Sacred Art gallery curator register. Neither an artwork's earlier approval for another context nor a title match is approval for a Prayer slot.",
+  "input_gallery": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "ref": "research/prayer-artwork-pristine-registry-bulk-20261028",
+    "path": "data/calendar/sacred-art-curator-queues-383-20261029.v1.json"
+  },
+  "input_slot_registry": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "ref": "feat/pray-art-slots-nine-door-20261030",
+    "path": "data/pray/art-placement-slots-20261030.v1.json"
+  },
+  "companion_join": "data/pray/artwork-candidate-join-20261030.v1.json",
+  "filters": [
+    "Only APPROVED_LOCKED or APPROVED_5 identities considered",
+    "Exclude historical exclusion and conflicted approval/rejection",
+    "Exclude user-disliked Siena Last Supper and Fra Angelico and El Greco",
+    "Exclude Prado-sourced records from this first-wave acquisition proposal",
+    "Only explicit distinctive title cues mapped to controlled subject codes",
+    "Exclude artwork IDs already present in 22 primary heroes",
+    "Photo rights, crop, framing and final photographic QA remain separate blocked gates"
+  ],
+  "limitations": [
+    "Title cues can establish only research interest, not complete visual iconography or quality",
+    "Some eligible title-cue matches can be poor compositional fits for a given Prayer door and require review",
+    "383 other identities not silently rejected; broader unreviewed gallery belongs to separate editorial queue"
+  ],
+  "statistics": {
+    "total_gallery_records": 383,
+    "approved_nonexcluded_source_identities_considered": 95,
+    "newly_classified_gallery_identities": 35,
+    "candidate_links_added": 262,
+    "slots_newly_covered": 81,
+    "combined_slots_with_candidates": 228,
+    "combined_candidate_links": 469,
+    "combined_doors_with_candidates": 9,
+    "production_ready": 0
+  },
+  "artwork_candidate_index": [
+    {
+      "artwork_id": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "title_in_source": "Saint Dominic of Guzmán",
+      "artist_in_source": "Claudio Coello",
+      "title_supported_subject_codes": [
+        "SNT-DOMINIC"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "RIGHTS_EVIDENCE_GAP",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "title_in_source": "Assumption of the Virgin",
+      "artist_in_source": "Peter Paul Rubens",
+      "title_supported_subject_codes": [
+        "MAR-ASSUMPTION"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "RIGHTS_EVIDENCE_GAP",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "W01-001",
+      "title_in_source": "The Martyrdom of Saint Philip",
+      "artist_in_source": "Jusepe de Ribera",
+      "title_supported_subject_codes": [
+        "SNT-MARTYRS"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "W07-014",
+      "title_in_source": "The Incredulity of Saint Thomas",
+      "artist_in_source": "Caravaggio",
+      "title_supported_subject_codes": [
+        "CHR-APPEAR"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+      "title_in_source": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+      "artist_in_source": "Attribution not recorded",
+      "title_supported_subject_codes": [
+        "CHR-CRUCIFIX"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-usepe-de-ibera-aint-erome-riting",
+      "title_in_source": "Saint Jerome Writing",
+      "artist_in_source": "Jusepe de Ribera",
+      "title_supported_subject_codes": [
+        "SNT-JEROME",
+        "LIFE-STUDY"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-437722",
+      "title_in_source": "The Mass of Saint Gregory",
+      "artist_in_source": "Spanish Painter",
+      "title_supported_subject_codes": [
+        "LIFE-MASS"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_COMPLEX_EXTERNAL_FRAME",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-arlo-rivelli-aint-homas-quinas",
+      "title_in_source": "Saint Thomas Aquinas",
+      "artist_in_source": "Carlo Crivelli",
+      "title_supported_subject_codes": [
+        "SNT-AQUINAS"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "BORDER_OR_SUPPORT_VIOLATION_SUSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "2020.263.8",
+      "title_in_source": "The Flight into Egypt",
+      "artist_in_source": "Carlo Maratti",
+      "title_supported_subject_codes": [
+        "CHR-FLIGHT"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-aphael-and-iulio-omano-he-isitation",
+      "title_in_source": "The Visitation",
+      "artist_in_source": "Raphael and Giulio Romano",
+      "title_supported_subject_codes": [
+        "MAR-VISITATION"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "title_in_source": "Presentation of Jesus at the Temple",
+      "artist_in_source": "Philippe de Champaigne",
+      "title_supported_subject_codes": [
+        "CHR-PRESENT"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "PRELIMINARY_CONTACT_SHEET_FRAME_FREE",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "title_in_source": "Agony in the Garden — Antwerp Rosary cycle",
+      "artist_in_source": "David Teniers the Elder",
+      "title_supported_subject_codes": [
+        "CHR-GETHSEMANE"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+      "title_in_source": "Scourging at the Pillar — Antwerp Rosary cycle",
+      "artist_in_source": "Peter Paul Rubens",
+      "title_supported_subject_codes": [
+        "CHR-SCOURGING"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+      "title_in_source": "The Lance Thrust",
+      "artist_in_source": "Anthony van Dyck",
+      "title_supported_subject_codes": [
+        "CHR-SIDE"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "PRELIMINARY_CONTACT_SHEET_FRAME_FREE",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "title_in_source": "Ascension — Antwerp Rosary cycle",
+      "artist_in_source": "Artus Wolffort",
+      "title_supported_subject_codes": [
+        "CHR-ASCENSION"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "PRELIMINARY_CONTACT_SHEET_FRAME_FREE",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+      "title_in_source": "San Polo Via Crucis — Station 02: Jesus Takes Up the Cross",
+      "artist_in_source": "Giandomenico Tiepolo",
+      "title_supported_subject_codes": [
+        "CHR-CROSSBEAR"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "PER_FILE_CC_BY_SA_EVIDENCE",
+      "visual_state": "PRELIMINARY_CONTACT_SHEET_FRAME_FREE",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "title_in_source": "Miracle of Loaves and Fishes",
+      "artist_in_source": "Giovanni Lanfranco",
+      "title_supported_subject_codes": [
+        "CHR-MIRACLE"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+      "title_in_source": "Raising of Lazarus",
+      "artist_in_source": "Jean Jouvenet",
+      "title_supported_subject_codes": [
+        "CHR-MIRACLE"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "APPROVED_SOURCE_RESOLUTION_HOLD",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-436199",
+      "title_in_source": "Christ Healing the Sick",
+      "artist_in_source": "Christian Wilhelm Ernst Dietrich",
+      "title_supported_subject_codes": [
+        "CHR-MIRACLE"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-436672",
+      "title_in_source": "Christ among the Doctors",
+      "artist_in_source": "Abraham Hondius",
+      "title_supported_subject_codes": [
+        "CHR-FINDING"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-436791",
+      "title_in_source": "The Annunciation",
+      "artist_in_source": "Joos van Cleve",
+      "title_supported_subject_codes": [
+        "MAR-ANNUNCIATION"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-436502",
+      "title_in_source": "The Annunciation",
+      "artist_in_source": "Luca Giordano",
+      "title_supported_subject_codes": [
+        "MAR-ANNUNCIATION"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "cma-127572",
+      "title_in_source": "The Annunciation",
+      "artist_in_source": "Workshop of Paolo Veronese",
+      "title_supported_subject_codes": [
+        "MAR-ANNUNCIATION"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "cma-143644",
+      "title_in_source": "Adoration of the Shepherds",
+      "artist_in_source": "Bernardo Cavallino",
+      "title_supported_subject_codes": [
+        "CHR-NATIVITY"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_CURRENT_VARIANT_DIFFERS",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-437977",
+      "title_in_source": "The Last Communion of Saint Mary of Egypt",
+      "artist_in_source": "Marcantonio Franceschini",
+      "title_supported_subject_codes": [
+        "EUC-COMMUNION"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "cma-148758",
+      "title_in_source": "The Crucifixion of Saint Andrew",
+      "artist_in_source": "Caravaggio",
+      "title_supported_subject_codes": [
+        "SNT-MARTYRS"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_FIRST_VISUAL_CLEAN",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "cma-143784",
+      "title_in_source": "Adoration of the Shepherds",
+      "artist_in_source": "Carlo Dolci",
+      "title_supported_subject_codes": [
+        "CHR-NATIVITY"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_FIRST_VISUAL_CLEAN",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-436839",
+      "title_in_source": "The Penitent Magdalen",
+      "artist_in_source": "Georges de La Tour",
+      "title_supported_subject_codes": [
+        "PEN-MAGDALENE"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-438724",
+      "title_in_source": "The Annunciation",
+      "artist_in_source": "Philippe de Champaigne",
+      "title_supported_subject_codes": [
+        "MAR-ANNUNCIATION"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OPEN_METADATA_ONLY",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-442488",
+      "title_in_source": "The Agony in the Garden",
+      "artist_in_source": "Nicolas Poussin",
+      "title_supported_subject_codes": [
+        "CHR-GETHSEMANE"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_FIRST_VISUAL_CLEAN",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-436835",
+      "title_in_source": "The Ascension of Christ",
+      "artist_in_source": "Hans Süss von Kulmbach",
+      "title_supported_subject_codes": [
+        "CHR-ASCENSION"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "cma-136507",
+      "title_in_source": "The Trinity",
+      "artist_in_source": "Laurent Girardin",
+      "title_supported_subject_codes": [
+        "TRI-TRINITY"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_CURRENT_VARIANT_DIFFERS",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-437738",
+      "title_in_source": "The Beheading of Saint John the Baptist",
+      "artist_in_source": "Spanish Catalan Painter",
+      "title_supported_subject_codes": [
+        "SNT-BAPTIST"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "met-437423",
+      "title_in_source": "The Immaculate Conception",
+      "artist_in_source": "Guido Reni",
+      "title_supported_subject_codes": [
+        "MAR-IMMACULATE"
+      ],
+      "editorial_state": "APPROVED_5",
+      "source_photo_rights_state": "OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH",
+      "visual_state": "MUSEUM_EXACT_CC0_EXTERNAL_NONART_BORDER",
+      "release_eligible": false
+    },
+    {
+      "artwork_id": "cma-135659",
+      "title_in_source": "The Immaculate Conception",
+      "artist_in_source": "Bartolomé Esteban Murillo",
+      "title_supported_subject_codes": [
+        "MAR-IMMACULATE"
+      ],
+      "editorial_state": "APPROVED_LOCKED",
+      "source_photo_rights_state": "OFFICIAL_CC0_CURRENT_VARIANT_DIFFERS",
+      "visual_state": "NOT_NATIVE_PHOTO_INSPECTED",
+      "release_eligible": false
+    }
+  ],
+  "slot_proposals": [
+    {
+      "slot_id": "HERO-01",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-02",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-03",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-04",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "matched_subject_codes": [
+            "CHR-PRESENT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-05",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-06",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-442488",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-07",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-08",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-09",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-442488",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-10",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-11",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-12",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-13",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-ASCENSION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436835",
+          "matched_subject_codes": [
+            "CHR-ASCENSION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-14",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-15",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "cma-136507",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-16",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-17",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-18",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-19",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+          "matched_subject_codes": [
+            "MAR-ASSUMPTION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-20",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-21",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-22",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-23",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D1",
+      "level": "Door cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "DOOR-D2",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "cma-136507",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D3",
+      "level": "Door cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "DOOR-D4",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D5",
+      "level": "Door cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "DOOR-D6",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D7",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D8",
+      "level": "Door cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "DOOR-D9",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_morning_offering",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-weekday_benedictus",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-437738",
+          "matched_subject_codes": [
+            "SNT-BAPTIST"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.angelus",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-01",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-02",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-03",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-04",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-08",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.angelus-09",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.angelus_regina",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-daily.morning",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-daily.morning-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-daily.evening",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-daily.evening-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-daily.nightly_examen",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-436839",
+          "matched_subject_codes": [
+            "PEN-MAGDALENE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-daily.personal_rule",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-usepe-de-ibera-aint-erome-riting",
+          "matched_subject_codes": [
+            "LIFE-STUDY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_sign_of_cross",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-136507",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_our_father",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_hail_mary",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-aphael-and-iulio-omano-he-isitation",
+          "matched_subject_codes": [
+            "MAR-VISITATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_glory_be",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "cma-136507",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_apostles_creed",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-136507",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sacrament_act_of_contrition",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-436839",
+          "matched_subject_codes": [
+            "PEN-MAGDALENE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_act_of_faith",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_act_of_hope",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_act_of_love",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_guardian_angel",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_grace_before_meals",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_grace_after_meals",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_prayer_of_adoration",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-mass_confiteor",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-437722",
+          "matched_subject_codes": [
+            "LIFE-MASS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sacrament_come_holy_spirit",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-traditional_veni_sancte_sequence",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.rosary",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-laudio-oello-aint-ominic-of-uzm-n",
+          "matched_subject_codes": [
+            "SNT-DOMINIC"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-aphael-and-iulio-omano-he-isitation",
+          "matched_subject_codes": [
+            "MAR-VISITATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "matched_subject_codes": [
+            "CHR-PRESENT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436672",
+          "matched_subject_codes": [
+            "CHR-FINDING"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-442488",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-08",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-SCOURGING"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-09",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-10",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-11",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-12",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-13",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-ASCENSION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436835",
+          "matched_subject_codes": [
+            "CHR-ASCENSION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-14",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-15",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+          "matched_subject_codes": [
+            "MAR-ASSUMPTION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-16",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-17",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.divine_mercy",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.divine_mercy-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.five_wounds",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436839",
+          "matched_subject_codes": [
+            "PEN-MAGDALENE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.precious_blood",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "matched_subject_codes": [
+            "CHR-PRESENT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-442488",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-SCOURGING"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.little_crown",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.little_crown-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.rosary_methods",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-laudio-oello-aint-ominic-of-uzm-n",
+          "matched_subject_codes": [
+            "SNT-DOMINIC"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-prayer.seven_sorrows_chaplet",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "matched_subject_codes": [
+            "CHR-PRESENT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "2020.263.8",
+          "matched_subject_codes": [
+            "CHR-FLIGHT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436672",
+          "matched_subject_codes": [
+            "CHR-FINDING"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.holy_ghost",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-novena.holy_ghost-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.christmas",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "2020.263.8",
+          "matched_subject_codes": [
+            "CHR-FLIGHT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-novena.christmas-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-aphael-and-iulio-omano-he-isitation",
+          "matched_subject_codes": [
+            "MAR-VISITATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.corpus_christi",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.sacred_heart",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.immaculate_conception",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.annunciation",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.assumption",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+          "matched_subject_codes": [
+            "MAR-ASSUMPTION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.seven_sorrows",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.st_joseph",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.holy_souls",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-novena.holy_souls-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.perpetual_help",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.st_therese",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-novena.st_therese-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.christ_the_king",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.immaculate_heart",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.st_michael",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.st_anthony_nine_tuesdays",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.holy_face_1887",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.montfort_consecration",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436839",
+          "matched_subject_codes": [
+            "PEN-MAGDALENE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-programme.first_friday",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-programme.first_friday-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437977",
+          "matched_subject_codes": [
+            "EUC-COMMUNION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-programme.first_saturday",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-programme.first_saturday-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-adoration_anima_christi",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437977",
+          "matched_subject_codes": [
+            "EUC-COMMUNION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-adoration_spiritual_communion",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437977",
+          "matched_subject_codes": [
+            "EUC-COMMUNION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-benediction_o_salutaris",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-arlo-rivelli-aint-homas-quinas",
+          "matched_subject_codes": [
+            "SNT-AQUINAS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-benediction_tantum_ergo",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-arlo-rivelli-aint-homas-quinas",
+          "matched_subject_codes": [
+            "SNT-AQUINAS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-benediction_divine_praises",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "cma-136507",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-adoration_litany_blessed_sacrament",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-benediction_versicles",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-adoration_lord_i_am_not_worthy",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437977",
+          "matched_subject_codes": [
+            "EUC-COMMUNION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-mass_devotion_leonine",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-benediction_adoremus_ps116",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.adoration.night",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-442488",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437977",
+          "matched_subject_codes": [
+            "EUC-COMMUNION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.adoration",
+      "level": "Hub cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.adoration.four_ends",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.benediction",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.benediction-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.benediction-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-arlo-rivelli-aint-homas-quinas",
+          "matched_subject_codes": [
+            "SNT-AQUINAS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.benediction-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-437722",
+          "matched_subject_codes": [
+            "LIFE-MASS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.benediction-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.forty_hours",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-prayer.communion",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437977",
+          "matched_subject_codes": [
+            "EUC-COMMUNION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.communion-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.communion-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "W07-014",
+          "matched_subject_codes": [
+            "CHR-APPEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-437977",
+          "matched_subject_codes": [
+            "EUC-COMMUNION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-devotion_consecration_christ_king",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-sacred_heart_short_prayer",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-sacred_heart_aspiration_trust",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.stations",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-08",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-09",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+          "matched_subject_codes": [
+            "CHR-CROSSBEAR"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-10",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-11",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-12",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-13",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-14",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.seven_words",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-08",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.tenebrae",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-442488",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-442488",
+          "matched_subject_codes": [
+            "CHR-GETHSEMANE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "matched_subject_codes": [
+            "CHR-CRUCIFIX"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-prayer.sacred_heart",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+          "matched_subject_codes": [
+            "CHR-SIDE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-marian_hail_holy_queen",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-marian_memorare",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-weekday_magnificat",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-aphael-and-iulio-omano-he-isitation",
+          "matched_subject_codes": [
+            "MAR-VISITATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-marian_consecration_immaculate_heart",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sub_tuum",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-litany_loreto_1962",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436791",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436502",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-127572",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438724",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-litany_loreto_current",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-437423",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-135659",
+          "matched_subject_codes": [
+            "MAR-IMMACULATE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-devotion_prayer_st_michael",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_memorare_st_joseph",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_st_anthony_lost_items",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_litany_st_joseph",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_ad_te_beate_ioseph",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "2020.263.8",
+          "matched_subject_codes": [
+            "CHR-FLIGHT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.st_joseph_seven_sorrows",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "cma-143644",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-143784",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "matched_subject_codes": [
+            "CHR-PRESENT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "matched_subject_codes": [
+            "CHR-PRESENT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "2020.263.8",
+          "matched_subject_codes": [
+            "CHR-FLIGHT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "2020.263.8",
+          "matched_subject_codes": [
+            "CHR-FLIGHT"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-436672",
+          "matched_subject_codes": [
+            "CHR-FINDING"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-08",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.litany_saints",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-437738",
+          "matched_subject_codes": [
+            "SNT-BAPTIST"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "W01-001",
+          "matched_subject_codes": [
+            "SNT-MARTYRS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "cma-148758",
+          "matched_subject_codes": [
+            "SNT-MARTYRS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-usepe-de-ibera-aint-erome-riting",
+          "matched_subject_codes": [
+            "SNT-JEROME"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-arlo-rivelli-aint-homas-quinas",
+          "matched_subject_codes": [
+            "SNT-AQUINAS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-church_prayer_for_pope",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_eternal_rest",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-dead_de_profundis",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-dead_fidelium_deus",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-dead_eternal_rest_singular",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.penitential_psalms",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.confession",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.confession-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-usepe-de-ibera-aint-erome-riting",
+          "matched_subject_codes": [
+            "SNT-JEROME"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436839",
+          "matched_subject_codes": [
+            "PEN-MAGDALENE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.confession-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.confession-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.confession-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.for_priests",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "met-437722",
+          "matched_subject_codes": [
+            "LIFE-MASS"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.occasional_intercessions",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-436199",
+          "matched_subject_codes": [
+            "CHR-MIRACLE"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-prayer.good_death",
+      "level": "Hub cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.good_death-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-prayer.lection",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-usepe-de-ibera-aint-erome-riting",
+          "matched_subject_codes": [
+            "SNT-JEROME",
+            "LIFE-STUDY"
+          ],
+          "basis": "EXPLICIT_ARTWORK_TITLE_SUBJECT_CUE__REQUIRES_VISUAL_CURATOR_REVIEW",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "ALIAS-pray.visit_blessed_sacrament",
+      "level": "Alias (inherits)",
+      "proposals": []
+    },
+    {
+      "slot_id": "ALIAS-pray.de_profundis",
+      "level": "Alias (inherits)",
+      "proposals": []
+    },
+    {
+      "slot_id": "ALIAS-pray.eternal_rest",
+      "level": "Alias (inherits)",
+      "proposals": []
+    },
+    {
+      "slot_id": "NAV-pray.library",
+      "level": "Navigation",
+      "proposals": []
+    },
+    {
+      "slot_id": "NAV-pray.hub",
+      "level": "Navigation",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-prayer.hymns",
+      "level": "Module cover",
+      "proposals": []
+    }
+  ]
+}
