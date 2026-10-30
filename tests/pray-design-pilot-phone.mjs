@@ -140,14 +140,19 @@ try{
     return {count:segments.length,
       heights:segments.map(el=>el.getBoundingClientRect().height),
       numbersHidden:segments.every(el=>getComputedStyle(el.querySelector(".aoDevoStopNumber")).display==="none"),
-      bars:segments.map(el=>getComputedStyle(el,"::before").height)
+      dots:segments.map(el=>el.querySelectorAll(".aoF04DotGroup .aoF04Dot").length),
+      barsHidden:segments.every(el=>getComputedStyle(el,"::before").display==="none")
     };
    });
    assert.equal(timeline.count,count,"F04 must retain one interactive progress segment per canonical card");
    assert.ok(timeline.numbersHidden,"F04 must not display numbered ribbon boxes");
    assert.ok(timeline.heights.every(h=>h>=43),"F04 progress segments keep accessible touch targets");
-   assert.ok(timeline.bars.every(h=>Math.abs(parseFloat(h)-4)<=1),
-    "F04 progress track should render as four-pixel rules rather than boxed numbers: "+JSON.stringify(timeline));
+   assert.ok(timeline.dots.every(n=>n===3)&&timeline.barsHidden,
+    "F04 progress must use three visible dots per moment, not the earlier ruled segments: "+JSON.stringify(timeline));
+   assert.equal(await page.locator(base+" .aoDevoCard:not([hidden]) .aoFolioPostureNote").count(),1,
+    "F04 first-card posture chip must be attached to the card, not stranded above navigation");
+   assert.ok(await page.locator(base+' [data-ao-angelus-recitation="group"] .aoF04VoiceRole').count()>=2,
+    "F04 grouped prayer must visually identify LEADER and ALL without rewriting canonical lines");
 
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0);
 
@@ -171,6 +176,21 @@ try{
    assert.match(await dock.locator(".aoDevoF04Position").innerText(),/1 (?:of|sur) [45]/,
     "F04 Previous must return to the original canonical card");
    await page.screenshot({path:resolve(output,"angelus-cards-"+width+".png"),animations:"disabled"});
+   for(let i=0;i<count;i++)await page.locator(base+" [data-ao-f04-next]").click();
+   assert.equal(await page.locator(base+" .aoDevoF04Complete:visible").count(),1,
+    "Final Next must open the F04 Amen screen without a sixth invented prayer card");
+   assert.match(await page.locator(base+" .aoF04NextTime").innerText(),/Next (Angelus|Regina Cæli) at \\d{2}:00/,
+    "Completion must calculate the next customary local prayer hour");
+   assert.equal(await page.locator(base+" .aoDevoCard").count(),count,
+    "Amen must not mutate the canonical Angelus or Regina card count");
+   await page.screenshot({path:resolve(output,"angelus-amen-"+width+".png"),animations:"disabled"});
+   await page.locator(base+" [data-ao-f04-again]").click();
+   assert.equal(await page.locator(base+" .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-index"),"0",
+    "Pray again returns to the first canonical prayer card");
+   for(let i=0;i<count;i++)await page.locator(base+" [data-ao-f04-next]").click();
+   await page.locator(base+" .aoF04CompleteReturn").click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family",
+    "Return to Daily Prayer must use the existing daily family route");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus_regina",{returnContext:null}));
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0,
