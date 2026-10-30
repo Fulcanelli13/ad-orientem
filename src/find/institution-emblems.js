@@ -1,16 +1,9 @@
 // Source-attributed institutional insignia for the Mass finder.
 // The asset URL is a public Wikimedia source for preview; self-host or obtain
 // approved originals before commercial release. Insignia never imply endorsement.
+// Diocesan sites use a neutral church marker: Holy See arms do not identify their owner.
 // Do not infer canonical standing, Communion with Rome, or una-cum practice from logos.
 export const MASS_INSTITUTION_EMBLEMS=Object.freeze({
-  DIOCESAN:Object.freeze({
-    label:"Diocesan",image:"https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_Holy_See_3x2.svg",
-    source:"https://commons.wikimedia.org/wiki/File:Emblem_Holy_See_3x2.svg",
-    rights:"CC0 artwork; the Holy See insignia remain separately protected",
-    licenseUrl:"https://creativecommons.org/publicdomain/zero/1.0/",
-    reviewBeforeCommercialRelease:true,
-    disclaimer:"Holy See arms used as an editorial map symbol for diocesan venues; no Holy See endorsement or operation is implied.",
-  }),
   FSSP:Object.freeze({
     label:"FSSP",image:"https://commons.wikimedia.org/wiki/Special:FilePath/FSSP_emblem.svg",
     source:"https://commons.wikimedia.org/wiki/File:FSSP_emblem.svg",
