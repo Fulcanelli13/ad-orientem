@@ -295,7 +295,7 @@ function rowMarkup(row,win){
 
 export function renderHomeEnrichersToString(model,state,win=globalThis){
   if(!model?.visible)return"";
-  const fr=lang(state)==="fr",daily=model.dailyCatechism;
+  // Daily Catechism is retained within Learn, never shown on the homepage.
   return `<style data-ao-home-enricher-suppression>
 .homeScreen .aoComingUpV4323,.homeScreen .aoDailyCateHome,.aoComingUpV4323,.aoDailyCateHome{display:none!important}
 .aoHomeEnricherCard{margin-top:14px}.aoHomeEnricherHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.aoHomeEnricherHead button{border:0;background:transparent;color:inherit;min-height:44px}
@@ -303,6 +303,5 @@ export function renderHomeEnrichersToString(model,state,win=globalThis){
 .aoHomeDailyBody{display:flex;align-items:center;justify-content:space-between;gap:14px}.aoHomeDailyCopy b{display:block;margin:4px 0}.aoHomeDailyCopy p{margin:4px 0 8px}.aoHomeDailyMeta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted-2,#9d9a94)}.aoHomeDailyBadge{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:4px 7px}.aoHomeDailyOpen{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:transparent;color:inherit}
 @media(max-width:430px){.aoHomeCuRow{grid-template-columns:72px 28px 1fr auto;gap:6px}.aoHomeCuRole{font-size:9px;letter-spacing:.03em}}
 </style>
-<section class="contentCard aoHomeEnricherCard aoHomeComingUp" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}" aria-label="${esc(model.comingUp.title)}"><div class="aoHomeEnricherHead"><div class="cardKicker">${esc(model.comingUp.title)}</div><button type="button" data-home-cu-all>${esc(model.comingUp.viewAll)} ${uiIcon("ao-ui-next")}</button></div><div class="aoHomeCuRows">${model.comingUp.rows.map(row=>rowMarkup(row,win)).join("")}</div></section>
-<section class="contentCard aoHomeEnricherCard aoHomeDailyCatechism" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}"><div class="aoHomeDailyBody"><div class="aoHomeDailyCopy"><div class="cardKicker">${fr?"Formation":"Formation"}</div><b>${esc(daily.title)}</b><p>${esc(daily.description)}</p><div class="aoHomeDailyMeta"><span class="aoHomeDailyBadge">${esc(daily.badge)}</span><span>${esc(daily.meta)}</span></div></div><button type="button" class="aoHomeDailyOpen" data-home-daily-catechism aria-label="${esc(fr?"Ouvrir le Catéchisme quotidien":"Open Daily Catechism")}">${uiIcon("ao-ui-next")}</button></div></section>`;
+<section class="contentCard aoHomeEnricherCard aoHomeComingUp" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}" aria-label="${esc(model.comingUp.title)}"><div class="aoHomeEnricherHead"><div class="cardKicker">${esc(model.comingUp.title)}</div><button type="button" data-home-cu-all>${esc(model.comingUp.viewAll)} ${uiIcon("ao-ui-next")}</button></div><div class="aoHomeCuRows">${model.comingUp.rows.map(row=>rowMarkup(row,win)).join("")}</div></section>`;
 }
