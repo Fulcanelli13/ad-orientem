@@ -383,16 +383,11 @@ try{
   }
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
-  // A previously selected Month/Year lens may be retained across tabs.
-  // Select Today through its public control before opening Day & sources.
-  // Never force-click a hidden Read/Reflect row.
-  const dayLink=page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']");
-  if(!await dayLink.isVisible()){
-    const todayLens=page.locator(".homeScreen .aoTodayV2Tabs [data-home-calendar-today]");
-    await todayLens.waitFor({state:"visible",timeout:10000});
-    await todayLens.click();
-    await dayLink.waitFor({state:"visible",timeout:10000});
-  }
+  // H4 deliberately has no old Read/Reflect calendar link or Today tabs.
+  // Open a real dated This week event, then exercise the source-owned
+  // embedded Calendar's own Day/Month/Year navigation.
+  const dayLink=page.locator(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance [data-home-calendar-view='day']").first();
+  assert.ok(await dayLink.isVisible(),"H4 This week must expose a dated Calendar entry");
   await dayLink.click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
@@ -481,8 +476,10 @@ try{
   assert.ok(inPageCalendar.overflow<=1,"Calendar Day overflows phone width: "+JSON.stringify(inPageCalendar));
   await shot("02-calendar-day");
 
-  const todayTabs=".homeScreen.aoTodayV2 .aoTodayV2Tabs";
-  await page.locator(todayTabs+" [data-home-calendar-view='year']").click();
+  const calendarTabs="#ao-calendar-modular-root .aoCalV2Tabs";
+  assert.equal(await page.locator(calendarTabs+" [data-cal-view]").count(),3,
+    "H4 embedded Calendar must expose Day, Month and Liturgical Year");
+  await page.locator(calendarTabs+" [data-cal-view='year']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoClockDial",{state:"visible",timeout:10000});
   const inlineYear=await page.evaluate(()=>({
     segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
@@ -495,7 +492,7 @@ try{
     seasons:document.querySelectorAll("#ao-calendar-modular-root [data-cal-clock-season]").length,
     obsoleteRings:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Ring").length,
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
+    selected:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineYear.segments,0,"Home Year must not duplicate Clock as a separate season bar");
   assert.equal(inlineYear.periods,0,"Home Year must not stack eleven duplicate cards");
@@ -511,7 +508,7 @@ try{
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 
-  await page.locator(todayTabs+" [data-home-calendar-view='picker']").click();
+  await page.locator(calendarTabs+" [data-cal-view='picker']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:30000});
   const inlineMonth=await page.evaluate(()=>({
@@ -519,7 +516,7 @@ try{
     markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
     views:[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")].map(x=>x.dataset.calMonthView),
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    active:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
+    active:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
   assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
@@ -540,7 +537,7 @@ try{
   }
   await shot("02g-calendar-month-filters");
 
-  await page.locator(todayTabs+" [data-home-calendar-today]").click();
+  await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarBack [data-home-calendar-today]").click();
   await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayV2 [data-home-calendar-inline]")?.hidden===true,
     null,{timeout:10000});
   assert.equal(await page.locator(".homeScreen .aoTodayV2ReadReflect").count(),1,
