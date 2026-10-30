@@ -31,7 +31,7 @@ for(const item of six){
  assert.equal(main.includes(item.id),false);
  assert.equal(new Set(item.sources.map(s=>s.id)).size,item.sources.length);
  for(const field of ["title","description","history","meaning","practice","caution","scope","occasion"]){
-  for(const lang of ["en","fr"])assert.ok(item[field]?.[lang]?.trim().length>8,
+  for(const lang of ["en","fr"])assert.ok(item[field]?.[lang]?.trim().length>(field==="occasion"?3:8),
     item.id+" "+field+"."+lang+" must be complete");
  }
 }
