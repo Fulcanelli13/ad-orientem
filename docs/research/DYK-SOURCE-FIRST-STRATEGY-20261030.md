@@ -31,7 +31,7 @@ Machine-readable [26-bucket source map](../../data/research/did-you-know/dyk-cus
 3. **Apply evidence-gated editorial fact generation**: 1 observation can support multiple facts, multiple observations can support 1 fact; evaluate fact-level uniqueness separately from Customs identity-level uniqueness.
 4. **Integrate glossary (450 source-backed concepts, 232 in directly relevant four categories) and Mass ceremonial research** (142 gesture records + 57 rubrical events + 280 speaker/cue evidence records, all overlapping) as equal complementary topical streams.
 5. **Add catechism/doctrine only later**, after the existing Customs, glossary and Mass research has been usefully mined.
-6. Dedupe against the earlier **53 bilingual DYK facts and 195 converted candidates**, whose authoritative owner was not found on `main` in this session; do not claim net-new publication or reuse without reconciliation.
+6. Reconcile with the earlier **53 bilingual pilot DYK facts, 195 converted archival candidates and 612 branch-preview statements** now located in the private canonical research branch. These stages overlap; preserve the original runtime/approval owner and do not add counts as if unique. See the Batch 03 reconciliation below.
 7. Resolve actual app deep links; Calendar owns dates. Approval requires independent EN+FR source/claim editorial review, topical suitability, moderation of sensitive/folkloric claims and no false universal claim; then connect to existing max-12/day nonrepeating DYK implementation.
 
 ### No automatic certification
@@ -56,6 +56,34 @@ The DYK [nonpublication and source integrity test](../../tests/dyk-ultramaster-d
 
 ### Next editorial gate
 1. Obtain original printed-folio checks for the outstanding Weiser rows, and compare exact Italian wording for the Pitrè drafts to avoid overstated certainty; retain historical/local specificity.
-2. Reconcile the existing 53 and 195 DYK corpora before counting genuine new facts or connecting runtime. Preserve prior approvals.
+2. Continue editorial assessment of the now-located older 53 pilot, 195 archival conversion and 612 preview statement corpora, especially the 18 public drafts flagged for the same canonical source record; establish actual claim-level duplicates before consolidation. Preserve prior approvals.
 3. Run human factual/FR native-language review, semantic clustering (e.g. weekday devotional associations and multi-detail local processions), source/rite separation, and no-endorsement rules for folklore.
 4. Verify deep-link targets against real current runtime routes. Only human-approved, deduplicated items can enter the existing 12/day nonrepeating delivery mechanism.
+
+## Batch 03 — wider research intake and legacy-owner discovery (30 October 2026)
+
+Another [50 bilingual Customs research drafts](../../data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json) were prepared **outside the 150-dossier shortlist**: 25 Weiser facts from the source-screened original printed-page review, and 25 Pitrè 1900 observations from previously mapped original-edition page images. The records preserve exact source observation ID, source review ID or Italian text anchor, original page, scope limits, and publication blocks. The revised source pin was read at Customs research head `2db24c69ca5763c301b80593c209533bb140d906`. No private historical observations or final customs identities were newly approved.
+
+**Cumulative in this draft PR: 154 original bilingual fact drafts:** 70 Weiser, 60 Pitrè, 19 Glossary, 5 Mass. Approved: 0. Published: 0. Previously deferred canonical-only Customs examples: 16, not counted. This is draft coverage progress rather than published knowledge.
+
+### Legacy reconciliation discovered
+
+The original DYK **private canonical research branch** was found and inspected: `Fulcanelli13/folio-core`, `research/did-you-know-discovery-r01-20261028`. It contains the Home discovery runtime owner and source-fact generators, plus:
+- **53** original R04 affirmative pilot facts, **49** eligible for branch preview (4 unpublished Formation leads excluded).
+- **278** mechanically screened R05 statements.
+- **285** mechanically screened R06 statements.
+- The private **612-item branch-preview bank** = 49 + 278 + 285. It is **not independently approved or publicly released**.
+- **195** additional R04 converted archival drafts. These overlap earlier editorial source spans and the preview cohorts; **do not add 195 to 612**.
+- Home's existing research branch handles random daily rotation with a **12-per-local-day limit**, nonrepetition and language switching. Do not create a second DYK runtime in public validation or imply private preview is deployed.
+
+The [privacy-preserving legacy crosswalk](../../data/research/did-you-know/dyk-legacy-reconciliation-v1.json) records **18 of our 154** with the *same canonical glossary source record* as at least one earlier private pilot/screened/archival item, without copying private legacy fact text/IDs into this public research PR. **0 exact identical English statements found** in the checked cohorts. **136** lack an exact matching earlier source record, which **does not establish semantic novelty or editorial acceptability**; historical related facts may still repeat themes. This is source-level triage, not a duplicate adjudication. No final merger, deletion, reallocation or publication decision has been made.
+
+### Next mandatory editorial steps
+
+1. Review the **18 same-source glossary pairs** and approve retain/defer/replace on *meaning*, not only source record identity. Preserve distinct facts when genuinely different.
+2. Cluster historical Customs variants: multiple Pitrè reports from one festival or author are *not* independent authors or separate Customs identities, even when suited to different DYK facts. Avoid saturating daily rotation with one Sicilian festival.
+3. Verify language and historical statement with the original folio, and secure appropriate native French proofreading; distinguish folk belief from Catholic teaching and historical rite from today's 1962 norm.
+4. Evaluate which destination can be linked to a genuine existing glossary, Calendar, prayer, Mass or formation screen. Do not create a false live custom entry just to satisfy a deep link.
+5. Only feed independently reviewed and truly distinct cards to the preexisting private canonical Home runtime, with zero paid services and no new competing bank.
+
+The [154-draft integrity gate](../../tests/dyk-ultramaster-draft-gates.mjs) is staged for CI execution; structural checks have been independently replicated in the available GitHub tool session, but a Node CI run has not been reported.
