@@ -1,16 +1,16 @@
 /**
- * Prayer discovery + Angelus presentation pilot (opt-in).
+ * Prayer discovery + Angelus presentation (default; explicitly reversible).
  *
  * This file is PRESENTATION ONLY. It does not alter any canonical prayer,
  * devotional event stream, ritual posture, seasonal resolver or saved progress.
- * Enable on a preview deployment with ?aoPrayerPilot=1.
+ * The nine-door landing is on by default. ?aoPrayerPilot=0 restores the legacy hub.
  * Artwork is intentionally not invented: the mosaic uses native Ad Orientem
  * semantic icons until approved art identities and crops are wired separately.
  */
 export const PRAYER_DESIGN_PILOT_SCHEMA="ao-prayer-discovery-angelus-pilot-v1";
 export function prayerPilotEnabled(win){
-  try{return new URLSearchParams(win.location.search).get("aoPrayerPilot")==="1"}
-  catch{return false}
+  try{return new URLSearchParams(win.location.search).get("aoPrayerPilot")!=="0"}
+  catch{return true}
 }
 export function prayerPilotAliases(L){
   return {
@@ -154,7 +154,6 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
       '<p data-ao-pilot-empty hidden>'+esc(L("No matching prayers or devotions.","Aucune prière ni dévotion correspondante."))+'</p></div>'+
       '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
-      '<p class="aoPrayPilotArtNote">'+esc(L("Pilot: approved paintings and crops are not yet bound. These tiles use existing app icons, not invented artwork.","Prototype : les tableaux et cadrages approuvés ne sont pas encore reliés. Les icônes proviennent de l'application."))+'</p>'+
     '</main>';
 }
 export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual'}){
