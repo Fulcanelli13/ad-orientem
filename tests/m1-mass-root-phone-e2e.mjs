@@ -20,11 +20,12 @@ try{
  for(const width of [320,390]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native&aoMassAccessM1=1",
     {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
-  await page.waitForSelector('#ao-global-ribbon [data-ao-app-surface="mass"]',{state:"visible",timeout:20000});
-  await page.locator('#ao-global-ribbon [data-ao-app-surface="mass"]').click();
+  // Mass is now a contextual root reached through Today; the Mass ribbon tab is retired.
+  await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:20000});
+  await page.locator('.homeScreen [data-home-mass-entry]').click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] #ao-mass-flow-v1 [data-ao-m1-root]',{timeout:18000});
   await page.waitForSelector("[data-m1-rows] [data-m1-choice='mass']",{state:"visible",timeout:15000});
   const v=await page.evaluate(()=>{
@@ -36,7 +37,8 @@ try{
     return {
       ariaModal:back?.hasAttribute("aria-modal"),role:flow?.getAttribute("role"),
       tabs:[...nav.querySelectorAll("[data-ao-app-surface]")].filter(x=>!x.hidden).length,
-      massSelected:nav.querySelector('[data-ao-app-surface="mass"]')?.getAttribute("aria-current"),
+      homeSelected:nav.querySelector('[data-ao-app-surface="home"]')?.getAttribute("aria-current"),
+      retiredMassTab:nav.querySelectorAll('[data-ao-app-surface="mass"]').length,
       modalHeaderVisible:header?getComputedStyle(header).display!=="none":null,
       overlayTop:overlay?.top,overlayBottom:overlay?.bottom,ribbonTop:ribbon?.top,
       documentWidth:document.documentElement.scrollWidth,viewport:innerWidth,
@@ -48,15 +50,16 @@ try{
   });
   assert.equal(v.ariaModal,false,"Root destination must not claim an overlay modal");
   assert.equal(v.role,"main","Mass preflight must act as a named app root");
-  assert.equal(v.massSelected,"page","Mass ribbon must be the selected destination");
-  assert.ok(v.tabs>=5,"Bottom shell destinations must remain available");
+  assert.equal(v.homeSelected,"page","Today must remain the selected navigation destination for Mass");
+  assert.equal(v.retiredMassTab,0,"Mass must not reclaim a permanent ribbon tab");
+  assert.ok(v.tabs>=4,"Four bottom destinations must remain available");
   assert.ok(v.overlayTop>=-2&&v.overlayTop<=2,"Mass root must begin at viewport top");
   assert.ok(v.overlayBottom<=v.ribbonTop+3&&v.overlayBottom>=v.ribbonTop-6,
     "Mass root must end above ribbon, not obscure navigation: "+JSON.stringify(v));
   assert.equal(v.modalHeaderVisible,false,"Legacy Mass Setup / close header must not render");
   assert.equal(v.massFlowCount,1,"Host Mass preflight must retain one owner");
   assert.equal(v.startCount,1,"Exactly one original Begin Mass action");
-  assert.equal(v.readerMounted,false,"Mass tab must not skip source preflight");
+  assert.equal(v.readerMounted,false,"Today entry must not skip source preflight");
   assert.ok(v.documentWidth<=v.viewport+1,"Mass root horizontal overflow");
   // The host's crossfade can linger after selector readiness. Capture the
   // settled root, not a translucent outgoing Home frame.
@@ -93,11 +96,11 @@ try{
         choiceContrast:contrast(getComputedStyle(choice).color,choiceBg),
         choiceCaptionContrast:contrast(getComputedStyle(choiceSmall).color,choiceBg),
         overflow:document.documentElement.scrollWidth-innerWidth,
-        selected:document.querySelector('#ao-global-ribbon [data-ao-app-surface="mass"]')?.getAttribute("aria-current")
+        selected:document.querySelector('#ao-global-ribbon [data-ao-app-surface="home"]')?.getAttribute("aria-current")
       };
     });
     assert.equal(observed.appearance,expected,"M1 must track Settings-owned effective appearance");
-    assert.equal(observed.selected,"page","Appearance changes must not lose Mass tab");
+    assert.equal(observed.selected,"page","Appearance changes must retain Today as the Mass entry destination");
     assert.ok(observed.overflow<=1,"M1 appearance causes horizontal overflow: "+JSON.stringify(observed));
     for(const key of ["headlineContrast","kickerContrast","choiceContrast","choiceCaptionContrast"])
       assert.ok(observed[key]>=4.5,"M1 contrast "+key+" below AA: "+JSON.stringify(observed));
@@ -120,7 +123,7 @@ try{
   await assertSurfaceTheme("dark");
   await page.screenshot({path:resolve(artifact,width+"-mass-root-auto-dark.png")});
 
-  // P0: the host's Escape must not close the permanent Mass root.
+  // P0: Escape must not close the active contextual Mass preflight.
   await page.locator('[data-m1-choice="ceremony"]').click();
   await page.waitForFunction(()=>
     globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step==="ceremony");
@@ -128,9 +131,9 @@ try{
   await page.waitForFunction(()=>
     globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step==="overview");
   assert.equal(await page.locator('html[data-ao-m1-mass-root="true"]').count(),1,
-    "Escape must return to the overview, not leave an empty Mass tab");
+    "Escape must return to the overview, not leave an empty Mass root");
 
-  // P0: returning from another tab starts at the overview, not the last chooser.
+  // P0: returning to Today and reopening Mass resets only the chooser presentation.
   await page.locator('[data-m1-choice="ceremony"]').click();
   await page.waitForFunction(()=>
     globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step==="ceremony");
@@ -146,7 +149,7 @@ try{
   assert.equal(after.home,true,"Back navigation must restore Today");
   assert.equal(after.root,false,"Mass root style must clean up");
   assert.notEqual(after.modal,"main","Mass role must restore after leaving");
-  await page.locator('#ao-global-ribbon [data-ao-app-surface="mass"]').click();
+  await page.locator('.homeScreen [data-home-mass-entry]').click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-choice="mass"]',{state:"visible",timeout:15000});
   assert.equal(await page.locator('[data-ao-full-mass-preflight]').count(),1,
     "Re-entering Mass must not create a second preflight");
@@ -154,7 +157,7 @@ try{
     globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step),"overview",
     "Re-entering Mass must reset only the chooser presentation");
   assert.equal(errors.length,0,"Unexpected root browser errors: "+JSON.stringify(errors));
-  console.log("PASS M1 Mass tab root "+width+"px, source-owned single preflight, 5 tabs, no modal, round-trip Today "+JSON.stringify(v));
+  console.log("PASS M1 contextual Mass root "+width+"px, source-owned preflight, four destinations, no modal, Today round-trip "+JSON.stringify(v));
   await page.close();
  }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
