@@ -318,6 +318,13 @@ export function mountFullMassPreflight({
         '<button type="button" data-folio-back hidden></button><button type="button" data-folio-next hidden></button></div>'+
         '<div data-folio-host-actions></div></div>';
       root.prepend(folio);
+      if(m1Preview){
+        // M1 adopts the shared Today / Calendar / Mass visual primitives,
+        // but the host keeps its sole original Start button and resolver.
+        folio.querySelector(".aoMassFolioIdentity")?.classList.add("aoTcmCard");
+        folio.querySelector("[data-mass-texts-open]")?.classList.add("aoTcmSecondary");
+        folio.querySelector("[data-folio-overview-button]")?.classList.add("aoTcmSecondary");
+      }
       const move=(selector,slot)=>{
         const source=root.querySelector(selector),destination=folio.querySelector(slot);
         if(source&&destination)destination.append(source);
@@ -641,7 +648,10 @@ export function mountFullMassPreflight({
       // The host still owns its action buttons and click listeners.
       // Only their visible labels follow the Mass-language selection.
       const startAction=folio.querySelector("[data-folio-host-actions] [data-ao-start-live]");
-      if(startAction)startAction.textContent=l("Start Mass →","Commencer la messe →");
+      if(startAction){
+        startAction.textContent=l("Start Mass →","Commencer la messe →");
+        startAction.classList.add("aoTcmPrimary");
+      }
       // Do not imply a Save as defaults control exists. Existing secondary
       // host actions remain under their original ownership.
     }
