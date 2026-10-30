@@ -3457,7 +3457,12 @@ function onClick(e){
      if(!['en','fr','la'].includes(choice))return;
      if(choice==='la')LITTLE_CROWN.latin=true;
      else{LITTLE_CROWN.latin=false;praySessionLanguage=choice}
-     return render();
+     // Preserve the canonical bead index while returning the bead circle to
+     // the top of the actual scroll owner. Without this, changing languages
+     // from the lower prayer card leaves bead 14 behind the mobile header.
+     render();
+     queueMicrotask(()=>{const host=mount();if(host)host.scrollTop=0});
+     return;
    }
    if(b.hasAttribute('data-p435930-crown-bead')){
      const n=Number(b.dataset.p435930CrownBead);
