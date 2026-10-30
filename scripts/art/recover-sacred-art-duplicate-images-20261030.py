@@ -130,6 +130,27 @@ for g in groups:
         p=item.get("preview","")
         if p.startswith("data:image/") and item.get("sourceUrl"):
             cache[item["sourceUrl"]]=p
+# Same physical works independently identified by museum accession / institutional
+# inventory. The Commons file is an ALTERNATE photo, not automatically the
+# selected original and never a production-rights clearance.
+VERIFIED_ALTERNATE_PAGES={
+ "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory":
+   "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+ "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario":
+   "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+ "https://www.wallraf.museum/2017-11-17-honthorst/":
+   "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+ "https://artuk.org/discover/artworks/the-prayer-19241":
+   "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Fr%C3%A8re_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+ "https://www.nga.gov/artworks/34956-return-prodigal-son":
+   "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+ "https://www.artic.edu/artworks/94841/the-song-of-the-lark":
+   "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+}
+# Christie's URL for the Benson hero appears to identify a different lot.
+# Do not quietly recover from a different item. No-source Van Dyck alias
+# likewise remains held until independent exact-photo provenance exists.
+
 def acquire(item):
     source=item.get("sourceUrl","")
     if not source:return None,{"reason":"NO_EXACT_PHOTO_SOURCE"}
@@ -142,8 +163,20 @@ def acquire(item):
             thumb,metadata=as_thumb(blob)
             return thumb,{"reason":"RECOVERED_EXACT_SOURCE","imageUrl":resolved,"sourceUrl":source,**metadata}
         except Exception as e:errors.append(str(e)[:100])
+    alternate=VERIFIED_ALTERNATE_PAGES.get(source)
+    if alternate:
+        mirror_urls=exact_candidate_urls(alternate,item.get("title",""),item.get("artist",""))
+        for u in mirror_urls[:5]:
+            try:
+                data,real,content_type=retry(u)
+                thumb,meta=as_thumb(data)
+                return thumb,{"reason":"VERIFIED_SAME_WORK_ALTERNATE_NOT_ORIGINAL_PHOTO",
+                   "sourceUrl":source,"alternatePhotoSourceUrl":alternate,
+                   "imageUrl":real,**meta}
+            except Exception as e:errors.append(str(e)[:100])
     return None,{"reason":"EXACT_SOURCE_IMAGE_NOT_RECOVERED","sourceUrl":source,
-                 "attempted":len(urls),"lastErrors":errors[-3:]}
+                 "attempted":len(urls),"alternateTried":bool(alternate),
+                 "lastErrors":errors[-3:]}
 missing={}
 for g in groups:
     for mem in g["members"]:
@@ -163,7 +196,11 @@ for src,items in missing.items():
     thumb,details=result
     if thumb:
         cache[src]=thumb
-        for item in items:item["preview"]=thumb
+        for item in items:
+            item["preview"]=thumb
+            if details.get("alternatePhotoSourceUrl"):
+                item["reviewImageSourceUrl"]=details["alternatePhotoSourceUrl"]
+                item["reviewImageSourceNote"]="Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
     proof["images"].append({"sourceUrl":src,"memberIds":[x["id"] for x in items],
         "recovered":bool(thumb),**details})
 for g in groups:
@@ -187,6 +224,18 @@ summary.update({
  "recoveredExactSources":sum(v[0] is not None for v in by_url.values()),
  "incompleteGroupsHidden":True})
 MANIFEST.write_text(json.dumps(summary,indent=2)+"\n")
+# Keep a source-bound record of the ACTUAL displayed photo in every candidate
+# so importing a visual preference cannot silently refer to a different file.
+INDEX=Path("data/calendar/sacred-art-master-v2/duplicate-review-groups-20261030.v1.json")
+index=json.loads(INDEX.read_text())
+by_review_id={x["id"]:x for g in groups for x in g["members"]}
+for g in index["groups"]:
+    for x in g["members"]:
+        shown=by_review_id.get(x["id"])
+        if not shown:raise ValueError("Missing index member after image recovery")
+        x["reviewImageSourceUrl"]=shown.get("reviewImageSourceUrl") or x["sourceUrl"]
+        x["reviewImageSourceNote"]=shown.get("reviewImageSourceNote") or ""
+INDEX.write_text(json.dumps(index,ensure_ascii=False,indent=2)+"\n")
 PROOF.write_text(json.dumps(proof,indent=2)+"\n")
 print(json.dumps({"reviewableGroups":payload["readyGroups"],
  "heldIncompleteGroups":payload["heldGroups"],"recoveredSourcePhotos":summary["recoveredExactSources"],
