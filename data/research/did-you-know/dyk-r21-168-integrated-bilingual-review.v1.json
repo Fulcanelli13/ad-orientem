@@ -4157,8 +4157,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In one regional Advent-wreath custom, a child named John or Joan received the first turn to light the candles.",
-        "fr": "Dans une variante régionale de la couronne de l'Avent, un enfant nommé Jean ou Jeanne allumait les bougies en premier."
+        "en": "In a regional Advent custom, someone named John or Joan had the first right to light the Advent wreath or Christmas tree candles, recalling Saint John the Baptist.",
+        "fr": "Dans une coutume régionale de l'Avent, une personne prénommée Jean ou Jeanne avait la priorité pour allumer les bougies de la couronne de l'Avent ou du sapin de Noël, en souvenir de saint Jean-Baptiste."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -4166,9 +4166,15 @@
         "source_id": "WEI58-05-003",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          55
-        ],
+        "locator": {
+          "printed_pages": [
+            55
+          ],
+          "pdf_page_indices_zero_based": [
+            72
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -4187,7 +4193,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -4197,7 +4203,28 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          55
+        ],
+        "pdf_indices_zero_based": [
+          72
+        ],
+        "original_claim": {
+          "en": "In one regional Advent-wreath custom, a child named John or Joan received the first turn to light the candles.",
+          "fr": "Dans une variante régionale de la couronne de l'Avent, un enfant nommé Jean ou Jeanne allumait les bougies en premier."
+        },
+        "change_reason": "Weiser p. 55 says persons named John or Joan, not specifically a child; this right applied to both Advent wreath and Christmas tree.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-035",
@@ -4269,8 +4296,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "A Christmas hymn in the Huron language is associated with the missionary Saint Jean de Brébeuf.",
-        "fr": "Un chant de Noël en langue huronne est associé au missionnaire saint Jean de Brébeuf."
+        "en": "According to Weiser, Saint Jean de Brébeuf composed a Christmas hymn in the Huron language, Jesus Ahatonhia, adapting a sixteenth-century French folk melody.",
+        "fr": "Selon Weiser, saint Jean de Brébeuf composa en langue huronne un chant de Noël, Jesus Ahatonhia, en adaptant une mélodie populaire française du XVIe siècle."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -4278,9 +4305,15 @@
         "source_id": "WEI58-07-003",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          82
-        ],
+        "locator": {
+          "printed_pages": [
+            82
+          ],
+          "pdf_page_indices_zero_based": [
+            99
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -4299,7 +4332,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -4309,7 +4342,28 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          82
+        ],
+        "pdf_indices_zero_based": [
+          99
+        ],
+        "original_claim": {
+          "en": "A Christmas hymn in the Huron language is associated with the missionary Saint Jean de Brébeuf.",
+          "fr": "Un chant de Noël en langue huronne est associé au missionnaire saint Jean de Brébeuf."
+        },
+        "change_reason": "The author mentions the Huron-language title and French melody; avoid overstating 'first American' as an independently confirmed musicological fact.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-046",
@@ -4576,8 +4630,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Britain's Saint Stephen's Day became associated with charity boxes and gifts to poorer neighbors.",
-        "fr": "En Grande-Bretagne, le jour de saint Étienne fut associé aux boîtes d'aumônes et aux dons aux voisins démunis."
+        "en": "Weiser traces Britain's Boxing Day to Saint Stephen's Day alms boxes and workers' savings boxes, traditionally opened after Christmas.",
+        "fr": "Weiser rattache le Boxing Day britannique, jour de saint Étienne, aux troncs d'aumônes et aux tirelires des travailleurs traditionnellement ouverts après Noël."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -4585,9 +4639,15 @@
         "source_id": "WEI58-08-025",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          111
-        ],
+        "locator": {
+          "printed_pages": [
+            111
+          ],
+          "pdf_page_indices_zero_based": [
+            128
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -4606,7 +4666,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -4616,7 +4676,28 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          111
+        ],
+        "pdf_indices_zero_based": [
+          128
+        ],
+        "original_claim": {
+          "en": "Britain's Saint Stephen's Day became associated with charity boxes and gifts to poorer neighbors.",
+          "fr": "En Grande-Bretagne, le jour de saint Étienne fut associé aux boîtes d'aumônes et aux dons aux voisins démunis."
+        },
+        "change_reason": "Original card's generic gifts to poor neighbours omitted important distinction between church alms and personal boxes kept by servants, apprentices and workers.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-062",
@@ -4941,8 +5022,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Some Central European families prayed the Rosary as the old year gave way to the new.",
-        "fr": "Dans certaines familles d'Europe centrale, on récitait le chapelet au passage de l'ancienne à la nouvelle année."
+        "en": "In rural central Europe, some families greeted the New Year by praying the Rosary or other prayers around midnight.",
+        "fr": "Dans les campagnes d'Europe centrale, certaines familles accueillaient la nouvelle année en récitant le rosaire ou d'autres prières vers minuit."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -4950,9 +5031,15 @@
         "source_id": "WEI58-11-006",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          139
-        ],
+        "locator": {
+          "printed_pages": [
+            138
+          ],
+          "pdf_page_indices_zero_based": [
+            155
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -4971,7 +5058,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -4981,15 +5068,36 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          138
+        ],
+        "pdf_indices_zero_based": [
+          155
+        ],
+        "original_claim": {
+          "en": "Some Central European families prayed the Rosary as the old year gave way to the new.",
+          "fr": "Dans certaines familles d'Europe centrale, on récitait le chapelet au passage de l'ancienne à la nouvelle année."
+        },
+        "change_reason": "Source p. 138 expressly states 'rural sections of central Europe' and rosary or other prayers around midnight.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-081",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "An older New Year's household blessing involved the father tracing a cross on family members' foreheads.",
-        "fr": "Une ancienne bénédiction familiale du Nouvel An consistait pour le père à tracer une croix sur le front des proches."
+        "en": "In an older French and French-Canadian New Year's custom, a father blessed his kneeling family with the Sign of the Cross traced on their foreheads.",
+        "fr": "Selon une ancienne coutume française et canadienne-française du Nouvel An, le père bénissait sa famille agenouillée en traçant le signe de croix sur les fronts."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -4997,9 +5105,17 @@
         "source_id": "WEI58-11-007",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          139
-        ],
+        "locator": {
+          "printed_pages": [
+            138,
+            139
+          ],
+          "pdf_page_indices_zero_based": [
+            155,
+            156
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5018,7 +5134,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5028,15 +5144,38 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          138,
+          139
+        ],
+        "pdf_indices_zero_based": [
+          155,
+          156
+        ],
+        "original_claim": {
+          "en": "An older New Year's household blessing involved the father tracing a cross on family members' foreheads.",
+          "fr": "Une ancienne bénédiction familiale du Nouvel An consistait pour le père à tracer une croix sur le front des proches."
+        },
+        "change_reason": "Source places parental forehead-cross blessing specifically in France and French Canada; distinct from rosary around midnight in rural central Europe.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-082",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Some Alpine communities welcomed the New Year with carols sung from church towers.",
-        "fr": "Dans certaines localités alpines, des cantiques chantés depuis les clochers accueillaient la nouvelle année."
+        "en": "In Alpine towns of Austria and Germany, small brass bands played carols from church towers to welcome the New Year; elsewhere carol singers moved from street to street.",
+        "fr": "Dans des villes alpines d'Autriche et d'Allemagne, de petites fanfares jouaient des cantiques depuis les clochers pour accueillir le Nouvel An ; ailleurs, des chanteurs parcouraient les rues."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5044,9 +5183,15 @@
         "source_id": "WEI58-11-008",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          139
-        ],
+        "locator": {
+          "printed_pages": [
+            139
+          ],
+          "pdf_page_indices_zero_based": [
+            156
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5065,7 +5210,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5075,7 +5220,28 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          139
+        ],
+        "pdf_indices_zero_based": [
+          156
+        ],
+        "original_claim": {
+          "en": "Some Alpine communities welcomed the New Year with carols sung from church towers.",
+          "fr": "Dans certaines localités alpines, des cantiques chantés depuis les clochers accueillaient la nouvelle année."
+        },
+        "change_reason": "Distinguish tower brass band from street/carol processions; source explicitly lists both variants.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-093",
@@ -5382,8 +5548,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In Italy, presenting a blessed palm branch to a former adversary could symbolize reconciliation.",
-        "fr": "En Italie, offrir un rameau béni à un ancien adversaire pouvait symboliser la réconciliation."
+        "en": "In Italy, offering a blessed Palm Sunday branch to someone after a quarrel could be a gesture of peace and reconciliation.",
+        "fr": "En Italie, offrir un rameau béni des Rameaux à une personne avec laquelle on s'était querellé pouvait être un geste de paix et de réconciliation."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5391,9 +5557,15 @@
         "source_id": "WEI58-15-008",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          192
-        ],
+        "locator": {
+          "printed_pages": [
+            192
+          ],
+          "pdf_page_indices_zero_based": [
+            209
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5412,7 +5584,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5422,15 +5594,36 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          192
+        ],
+        "pdf_indices_zero_based": [
+          209
+        ],
+        "original_claim": {
+          "en": "In Italy, presenting a blessed palm branch to a former adversary could symbolize reconciliation.",
+          "fr": "En Italie, offrir un rameau béni à un ancien adversaire pouvait symboliser la réconciliation."
+        },
+        "change_reason": "Original page p. 192 specifies former quarrels or unfriendly relations; not a universal rite.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-006",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In parts of Central and Eastern Europe, families kept blessed palm branches in barns or fields.",
-        "fr": "Dans certaines régions d'Europe centrale et orientale, les familles plaçaient des rameaux bénis dans les granges ou les champs."
+        "en": "In Austria, Bavaria and Slavic regions, farming families carried blessed Palm Sunday branches through their fields and placed sprigs in barns and pastures.",
+        "fr": "En Autriche, en Bavière et dans des régions slaves, des familles paysannes portaient des rameaux bénis des Rameaux à travers leurs champs et en plaçaient dans les étables et les pâturages."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5438,9 +5631,15 @@
         "source_id": "WEI58-15-010",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          192
-        ],
+        "locator": {
+          "printed_pages": [
+            192
+          ],
+          "pdf_page_indices_zero_based": [
+            209
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5459,7 +5658,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5469,15 +5668,36 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          192
+        ],
+        "pdf_indices_zero_based": [
+          209
+        ],
+        "original_claim": {
+          "en": "In parts of Central and Eastern Europe, families kept blessed palm branches in barns or fields.",
+          "fr": "Dans certaines régions d'Europe centrale et orientale, les familles plaçaient des rameaux bénis dans les granges ou les champs."
+        },
+        "change_reason": "Source specifies regions, family walk in afternoon with prayer and hymns, and barns and stables.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-007",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In parts of the Latin world, the Holy Thursday Altar of Repose was called the monumento and richly decorated.",
-        "fr": "Dans certains pays latins, le reposoir du Jeudi saint était appelé monumento et abondamment décoré."
+        "en": "In some Latin European and South American countries, the Holy Thursday repository was called a monumento and could be elaborately decorated and visited by the faithful.",
+        "fr": "Dans certains pays d'Europe latine et d'Amérique du Sud, le reposoir du Jeudi saint était appelé monumento ; il pouvait recevoir un décor élaboré et être visité par les fidèles."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5485,9 +5705,15 @@
         "source_id": "WEI58-15-016",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          195
-        ],
+        "locator": {
+          "printed_pages": [
+            194
+          ],
+          "pdf_page_indices_zero_based": [
+            211
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5506,7 +5732,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5516,15 +5742,36 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          194
+        ],
+        "pdf_indices_zero_based": [
+          211
+        ],
+        "original_claim": {
+          "en": "In parts of the Latin world, the Holy Thursday Altar of Repose was called the monumento and richly decorated.",
+          "fr": "Dans certains pays latins, le reposoir du Jeudi saint était appelé monumento et abondamment décoré."
+        },
+        "change_reason": "Weiser p. 194 calls Holy Thursday repository monumento in Latin countries of Europe and South America. Distinct from stripped altars and from treating as a shrine separate from the Eucharistic reservation.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-010",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Central European Green Thursday meals could feature spinach or green-herb soup.",
-        "fr": "Les repas du Jeudi vert en Europe centrale pouvaient comporter des épinards ou une soupe aux herbes."
+        "en": "In central European Green Thursday customs, the meal could begin with green-herb soup followed by spinach and eggs.",
+        "fr": "Dans des coutumes d'Europe centrale du Jeudi vert, le repas pouvait commencer par une soupe aux herbes, puis se poursuivre avec des épinards et des œufs."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5532,9 +5779,15 @@
         "source_id": "WEI58-15-021",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          197
-        ],
+        "locator": {
+          "printed_pages": [
+            197
+          ],
+          "pdf_page_indices_zero_based": [
+            214
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5553,7 +5806,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5563,15 +5816,36 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          197
+        ],
+        "pdf_indices_zero_based": [
+          214
+        ],
+        "original_claim": {
+          "en": "Central European Green Thursday meals could feature spinach or green-herb soup.",
+          "fr": "Les repas du Jeudi vert en Europe centrale pouvaient comporter des épinards ou une soupe aux herbes."
+        },
+        "change_reason": "Source p. 197 specifies meal structure rather than generic green food.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-018",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In some places, a priest visited homes on Holy Saturday to bless Easter foods rather than receiving baskets at church.",
-        "fr": "En certains lieux, le prêtre passait dans les maisons le Samedi saint pour bénir les mets de Pâques au lieu de recevoir les paniers à l'église."
+        "en": "Weiser describes regions where priests went from house to house on Holy Saturday to bless Easter food arranged on flower-decorated tables.",
+        "fr": "Weiser décrit des régions où les prêtres passaient de maison en maison le Samedi saint pour bénir les mets de Pâques disposés sur des tables ornées de fleurs."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5579,9 +5853,15 @@
         "source_id": "WEI58-15-037",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          208
-        ],
+        "locator": {
+          "printed_pages": [
+            208
+          ],
+          "pdf_page_indices_zero_based": [
+            225
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5600,7 +5880,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5610,7 +5890,28 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          208
+        ],
+        "pdf_indices_zero_based": [
+          225
+        ],
+        "original_claim": {
+          "en": "In some places, a priest visited homes on Holy Saturday to bless Easter foods rather than receiving baskets at church.",
+          "fr": "En certains lieux, le prêtre passait dans les maisons le Samedi saint pour bénir les mets de Pâques au lieu de recevoir les paniers à l'église."
+        },
+        "change_reason": "Avoid unsupported 'rather than church baskets' comparison; page specifically gives house-to-house Holy Saturday visits.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-033",
@@ -5805,8 +6106,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In some medieval churches, trumpet sounds dramatized Pentecost during the liturgical sequence; this is not a universal 1962 rubric.",
-        "fr": "Dans certaines églises médiévales, des trompettes soulignaient la Pentecôte pendant la séquence ; ce n'est pas une rubrique universelle de 1962."
+        "en": "Weiser describes a historical Pentecost sequence ceremony in which the sound of a violent wind was imitated with trumpets in some countries, including France.",
+        "fr": "Weiser décrit une ancienne cérémonie de la séquence de Pentecôte où le bruit d'un vent violent était imité au moyen de trompettes dans certains pays, notamment en France."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5814,9 +6115,15 @@
         "source_id": "WEI58-19-015",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          252
-        ],
+        "locator": {
+          "printed_pages": [
+            252
+          ],
+          "pdf_page_indices_zero_based": [
+            269
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5835,7 +6142,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5845,15 +6152,36 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          252
+        ],
+        "pdf_indices_zero_based": [
+          269
+        ],
+        "original_claim": {
+          "en": "In some medieval churches, trumpet sounds dramatized Pentecost during the liturgical sequence; this is not a universal 1962 rubric.",
+          "fr": "Dans certaines églises médiévales, des trompettes soulignaient la Pentecôte pendant la séquence ; ce n'est pas une rubrique universelle de 1962."
+        },
+        "change_reason": "Separate symbolic wind sound from the liturgical text and form; Weiser attributes this to historical dramatic additions.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-060",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Some medieval churches released living doves at Pentecost as a visible symbol of the Holy Spirit.",
-        "fr": "Certaines églises médiévales lâchaient de vraies colombes à la Pentecôte pour figurer visiblement le Saint-Esprit."
+        "en": "According to Weiser, some thirteenth-century French cathedrals released living white doves during the Pentecost sequence as a symbol of the Holy Spirit.",
+        "fr": "Selon Weiser, dans certaines cathédrales françaises du XIIIe siècle, on lâchait des colombes blanches vivantes pendant la séquence de Pentecôte pour symboliser le Saint-Esprit."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5861,9 +6189,15 @@
         "source_id": "WEI58-19-016",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          252
-        ],
+        "locator": {
+          "printed_pages": [
+            252
+          ],
+          "pdf_page_indices_zero_based": [
+            269
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5882,7 +6216,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5892,15 +6226,36 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          252
+        ],
+        "pdf_indices_zero_based": [
+          269
+        ],
+        "original_claim": {
+          "en": "Some medieval churches released living doves at Pentecost as a visible symbol of the Holy Spirit.",
+          "fr": "Certaines églises médiévales lâchaient de vraies colombes à la Pentecôte pour figurer visiblement le Saint-Esprit."
+        },
+        "change_reason": "Source specifies France thirteenth century, white pigeons, not present-day 1962 ceremonies.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-061",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "A wooden dove symbolizing the Holy Spirit could once hang over a family's Pentecost dining table.",
-        "fr": "Une colombe de bois symbolisant le Saint-Esprit pouvait autrefois être suspendue au-dessus de la table familiale à la Pentecôte."
+        "en": "In parts of central and eastern Europe, a carved wooden dove representing the Holy Spirit was suspended above the family dining table at Pentecost.",
+        "fr": "Dans certaines régions d'Europe centrale et orientale, une colombe de bois sculpté figurant le Saint-Esprit était suspendue au-dessus de la table familiale à la Pentecôte."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -5908,9 +6263,15 @@
         "source_id": "WEI58-19-017",
         "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          252
-        ],
+        "locator": {
+          "printed_pages": [
+            252
+          ],
+          "pdf_page_indices_zero_based": [
+            269
+          ],
+          "edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs, 1958, 384-page public facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -5929,7 +6290,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -5939,7 +6300,28 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_weiser_direct_review": {
+        "status": "ORIGINAL_PRINTED_PAGE_IMAGES_INSPECTED_CLAIM_TEXT_CORRESPONDENCE",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          252
+        ],
+        "pdf_indices_zero_based": [
+          269
+        ],
+        "original_claim": {
+          "en": "A wooden dove symbolizing the Holy Spirit could once hang over a family's Pentecost dining table.",
+          "fr": "Une colombe de bois symbolisant le Saint-Esprit pouvait autrefois être suspendue au-dessus de la table familiale à la Pentecôte."
+        },
+        "change_reason": "A separate household decoration, not the live pigeons released during a church ceremony.",
+        "source_image_checked_in_r26": true,
+        "source_only_not_independent_historical_verification": true,
+        "independent_en_french_final_signoff": false,
+        "novelty_against_612_previews_approved": false,
+        "route_accepted_in_live_browser": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-075",
