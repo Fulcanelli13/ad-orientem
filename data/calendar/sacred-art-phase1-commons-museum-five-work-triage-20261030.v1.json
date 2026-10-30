@@ -1,0 +1,186 @@
+{
+  "schema": "AO_SACRED_ART_PHASE1_FIVE_COMMONS_MUSEUM_WORK_IDENTITY_TRIAGE_V1",
+  "generatedAt": "2026-10-30",
+  "sourceCrosswalk": "data/calendar/sacred-art-phase1-commons-wikidata-museum-work-crosswalk-20261030.v1.json",
+  "counts": {
+    "reviewed": 5,
+    "samePhysicalArtworkHighConfidenceFamilies": 3,
+    "accessionCollisionDoNotMerge": 2,
+    "sourceReviewCardsInThreeFamilies": 6,
+    "newConfirmedLinksToCanonical383": 0,
+    "photoRightsCertifications": 0,
+    "productionImports": 0
+  },
+  "interpretation": "Each of three groups consists of a Commons accepted card and a museum accepted card identifying the same museum-held work; it is a within-accepted-queue relation, not a link to the locked canonical 383. The other two are accession-number coincidences across different museums.",
+  "caveats": [
+    "Keep both original approvals and their exact source-page/photo identities; no replacement photograph inherits approval.",
+    "Three high-confidence groups still require original photograph and licence QA before release.",
+    "Never use title alone or accession without matching collection to establish a physical-work join.",
+    "None of the three groups establishes a new canonical-383 join or certifies an additional new physical painting.",
+    "Wikidata is community maintained; official museum object identifiers, attribution and physical ensembles remain controlling."
+  ],
+  "cases": [
+    {
+      "commonsSourceId": "commons:9734560",
+      "museumSourceId": "kmska:ny9mxd",
+      "workQid": "Q3947826",
+      "commonsReviewTitle": "Saint Peter Martyr with Saints Nicholas and Benedict",
+      "museumReviewTitle": "Heilige Nicolaas van Myra",
+      "originalCommonsUserDecision": "IMPORT",
+      "originalMuseumUserDecision": "IMPORT",
+      "wikidataInventoryNumbers": [
+        "177"
+      ],
+      "museumAccession": "177",
+      "wikidataCollectionItems": [
+        {
+          "qid": "Q150066",
+          "label": "Pinacoteca di Brera"
+        }
+      ],
+      "museum": "kmska",
+      "originalCommonsPage": "https://commons.wikimedia.org/wiki/File:Cima_da_conegliano%2C_san_pietro_martire_e_santi_01.jpg",
+      "originalOfficialMuseumPage": "http://kmska.be/collection/work/data/ny9mxd",
+      "officialMuseumVerificationLedger": "data/calendar/sacred-art-phase1-kmska-89-official-inventory-report-20261029.v1.json",
+      "classification": "FALSE_POSITIVE_ACCESSION_COLLISION_DIFFERENT_COLLECTIONS",
+      "basis": "Number alone matches, but Wikidata P195 identifies an entirely different museum and artwork title; reject this proposed join",
+      "currentCanonical383Links": [],
+      "inheritPhotoApproval": false,
+      "inheritCopyrightClearance": false,
+      "userDecisionsChanged": false,
+      "canon383LinkAdded": false,
+      "productionMutation": false
+    },
+    {
+      "commonsSourceId": "commons:22145562",
+      "museumSourceId": "smk:KMS7976",
+      "workQid": "Q20354516",
+      "commonsReviewTitle": "The Annunciation",
+      "museumReviewTitle": "Bebudelsen",
+      "originalCommonsUserDecision": "IMPORT",
+      "originalMuseumUserDecision": "IMPORT",
+      "wikidataInventoryNumbers": [
+        "KMS7976"
+      ],
+      "museumAccession": "KMS7976",
+      "wikidataCollectionItems": [
+        {
+          "qid": "Q671384",
+          "label": "Statens Museum for Kunst"
+        }
+      ],
+      "museum": "smk",
+      "originalCommonsPage": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Annunciation_-_Google_Art_Project.jpg",
+      "originalOfficialMuseumPage": "https://open.smk.dk/en/artwork/image/KMS7976",
+      "officialMuseumVerificationLedger": "data/calendar/sacred-art-phase1-smk-54-official-object-report-20261029.v1.json",
+      "classification": "CROSS_SOURCE_SAME_PHYSICAL_ARTWORK_HIGH_CONFIDENCE_MUSEUM_CORROBORATED",
+      "basis": "Commons P6243 same-work QID, Wikidata P217 inventory and P195 collection correspond to separately verified museum inventory and object/title",
+      "currentCanonical383Links": [],
+      "inheritPhotoApproval": false,
+      "inheritCopyrightClearance": false,
+      "userDecisionsChanged": false,
+      "canon383LinkAdded": false,
+      "productionMutation": false
+    },
+    {
+      "commonsSourceId": "commons:34312593",
+      "museumSourceId": "rijks:20026562",
+      "workQid": "Q17334268",
+      "commonsReviewTitle": "Abraham Leaves Harran",
+      "museumReviewTitle": "Abraham Leaves Haran",
+      "originalCommonsUserDecision": "IMPORT",
+      "originalMuseumUserDecision": "IMPORT",
+      "wikidataInventoryNumbers": [
+        "SK-A-3377"
+      ],
+      "museumAccession": "SK-A-3377",
+      "wikidataCollectionItems": [
+        {
+          "qid": "Q190804",
+          "label": "Rijksmuseum"
+        }
+      ],
+      "museum": "rijks",
+      "originalCommonsPage": "https://commons.wikimedia.org/wiki/File:Francesco_Bassano_(il_Giovane)_-_Abraham_vertrekt_uit_Haran_Rijksmuseum_SK-A-3377.jpg",
+      "originalOfficialMuseumPage": "https://id.rijksmuseum.nl/20026562",
+      "officialMuseumVerificationLedger": "data/calendar/sacred-art-phase1-rijks-66-official-linked-art-report-20261029.v1.json",
+      "classification": "CROSS_SOURCE_SAME_PHYSICAL_ARTWORK_HIGH_CONFIDENCE_MUSEUM_CORROBORATED",
+      "basis": "Commons P6243 same-work QID, Wikidata P217 inventory and P195 collection correspond to separately verified museum inventory and object/title",
+      "currentCanonical383Links": [],
+      "inheritPhotoApproval": false,
+      "inheritCopyrightClearance": false,
+      "userDecisionsChanged": false,
+      "canon383LinkAdded": false,
+      "productionMutation": false
+    },
+    {
+      "commonsSourceId": "commons:35629944",
+      "museumSourceId": "met:439553",
+      "workQid": "Q19905177",
+      "commonsReviewTitle": "Pietà",
+      "museumReviewTitle": "The Lamentation",
+      "originalCommonsUserDecision": "IMPORT",
+      "originalMuseumUserDecision": "IMPORT",
+      "wikidataInventoryNumbers": [
+        "2008.72"
+      ],
+      "museumAccession": "2008.72",
+      "wikidataCollectionItems": [
+        {
+          "qid": "Q160236",
+          "label": "Metropolitan Museum of Art"
+        }
+      ],
+      "museum": "met",
+      "originalCommonsPage": "https://commons.wikimedia.org/wiki/File:Domenichino%2C_Piet%C3%A0%2C_1603%2C_MET.jpg",
+      "originalOfficialMuseumPage": "https://www.metmuseum.org/art/collection/search/439553",
+      "officialMuseumVerificationLedger": "data/calendar/sacred-art-phase1-official-cma29-met73-verification-20261029.v1.json",
+      "classification": "CROSS_SOURCE_SAME_PHYSICAL_ARTWORK_HIGH_CONFIDENCE_MUSEUM_CORROBORATED",
+      "basis": "Commons P6243 same-work QID, Wikidata P217 inventory and P195 collection correspond to separately verified museum inventory and object/title",
+      "currentCanonical383Links": [],
+      "inheritPhotoApproval": false,
+      "inheritCopyrightClearance": false,
+      "userDecisionsChanged": false,
+      "canon383LinkAdded": false,
+      "productionMutation": false
+    },
+    {
+      "commonsSourceId": "commons:148537247",
+      "museumSourceId": "kmska:gwtztk",
+      "workQid": "Q15691130",
+      "commonsReviewTitle": "Massacre of the Innocents \" \"",
+      "museumReviewTitle": "Ecce Homo",
+      "originalCommonsUserDecision": "IMPORT",
+      "originalMuseumUserDecision": "IMPORT",
+      "wikidataInventoryNumbers": [
+        "572"
+      ],
+      "museumAccession": "572",
+      "wikidataCollectionItems": [
+        {
+          "qid": "Q812285",
+          "label": "Bavarian State Painting Collections"
+        }
+      ],
+      "museum": "kmska",
+      "originalCommonsPage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Massacre_of_the_Innocent_(Pinatkothek).jpg",
+      "originalOfficialMuseumPage": "http://kmska.be/collection/work/data/gwtztk",
+      "officialMuseumVerificationLedger": "data/calendar/sacred-art-phase1-kmska-89-official-inventory-report-20261029.v1.json",
+      "classification": "FALSE_POSITIVE_ACCESSION_COLLISION_DIFFERENT_COLLECTIONS",
+      "basis": "Number alone matches, but Wikidata P195 identifies an entirely different museum and artwork title; reject this proposed join",
+      "currentCanonical383Links": [],
+      "inheritPhotoApproval": false,
+      "inheritCopyrightClearance": false,
+      "userDecisionsChanged": false,
+      "canon383LinkAdded": false,
+      "productionMutation": false
+    }
+  ],
+  "releaseGates": {
+    "canonical383Unchanged": true,
+    "editorialChoicesPreserved": true,
+    "photoRightsUncertified": true,
+    "nativeImagesNotVisuallyApproved": true,
+    "productionMutation": false
+  }
+}
