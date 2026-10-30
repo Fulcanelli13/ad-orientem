@@ -36,7 +36,7 @@ jobs:
           set -euo pipefail
           node --input-type=module <<'NODE'
           import {readFileSync} from 'node:fs';
-          const p='data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v1.json';
+          const p='data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json';
           const r=JSON.parse(readFileSync(p,'utf8')),c=r.counts;
           if(r.rows.length!==305 || c.acceptedUnlinkedCommonsSourceCards!==305 ||
             c.frozenImports!==299 || c.frozenImportsWithCorrections!==6 ||
@@ -56,7 +56,7 @@ jobs:
           NODE
           git config user.name "Ad Orientem research audit"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v1.json
+          git add data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json
           git diff --cached --check
           git commit -m "research(sacred-art): record Commons 305 official file identity and metadata audit [skip ci]"
           git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
