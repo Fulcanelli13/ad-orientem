@@ -503,12 +503,44 @@ try{
      card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
      cue:window.__AO_PHONE_PREVIEW.getActiveCue()
    })),profileBefore,"Research score links must not move the priest");
+   const offlineKyrie=panel.locator('[data-schola-score-open="KYRIE"]');
+   assert.equal(await offlineKyrie.isVisible(),true,
+     "Selected source-indexed Kyrie must offer an in-app offline score");
+   assert.equal(await panel.locator('[data-schola-score-open="GLORIA"]').isHidden(),true,
+     "Custom Gloria cannot become an indexed offline score");
+   await offlineKyrie.click();
+   const scoreSheet=page.locator(".ao-kyriale-score-overlay");
+   await page.waitForFunction(()=>document.querySelector(
+     ".ao-kyriale-score-overlay:not([hidden]) [data-kyriale-score-viewport] svg")!==null,
+     null,{timeout:15000});
+   assert.equal(await scoreSheet.getAttribute("aria-modal"),"true");
+   assert.match(await scoreSheet.locator("[data-kyriale-score-title]").textContent(),/Kyrie VIII/);
+   assert.match(await scoreSheet.locator("[data-kyriale-score-status]").textContent(),/Offline SVG notation/);
+   assert.match(await scoreSheet.locator("[data-kyriale-score-source]").getAttribute("href"),/id=1184/);
+   const scoreGeometry=await page.evaluate(()=>{
+     const sheet=document.querySelector(".ao-kyriale-score-sheet");
+     const rect=sheet.getBoundingClientRect();
+     return {left:rect.left,right:rect.right,viewport:window.innerWidth,
+       scrollWidth:document.documentElement.scrollWidth};
+   });
+   assert.ok(scoreGeometry.left>=0&&scoreGeometry.right<=width+1,
+     width+"px offline score panel escapes viewport: "+JSON.stringify(scoreGeometry));
+   await page.screenshot({path:resolve(out,"schola-kyriale-offline-"+width+".png"),
+     animations:"disabled"});
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   })),profileBefore,"Opening an offline score moved the priest");
+   await scoreSheet.locator("[data-kyriale-score-close]").click();
+   await page.waitForFunction(()=>document.querySelector(".ao-kyriale-score-overlay")?.hidden===true);
    console.log("SCHOLA_KYRIALE_PHONE="+JSON.stringify({width,...selectedSource}));
    await page.screenshot({path:resolve(out,"schola-kyriale-source-"+width+".png"),
      animations:"disabled"});
    await kyrieMenu.selectOption("CUSTOM");
    await page.waitForFunction(()=>document.querySelector(
      '[data-schola-notation-preview="KYRIE"]')?.hidden===true);
+   assert.equal(await offlineKyrie.isHidden(),true,
+     "Custom Kyrie must remove the offline score button");
    assert.equal(await kyrieStudy.getAttribute("href"),null,
      "Custom Kyrie must revoke research-score source link");
    // The UI queues one render after a local profile change; do not race
