@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
-import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
+import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,renderDirectoryIdentityFallback,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const hash="a".repeat(64);
 const photo={
@@ -118,4 +120,28 @@ assert.match(renderExploreToString(noPhotoMap),/aoTlmVenueIdentity--preview/);
 assert.match(renderExploreToString(noPhotoMap),/FSSP_emblem/);
 const diocesanMap=buildExploreViewModel({language:"fr",lens:"tlm",items:[diocesan],view:"map",selectedId:item.item_id,filters:{directoryGroup:"ALL"}});
 assert.match(renderExploreToString(diocesanMap),/Église diocésaine/);
-console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, safe preview");
+
+// Complete visual identity is independent from photograph availability.
+// Cover every one of the actual lightweight map records, not a small showcase subset.
+const readRegistry=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
+const baseMap=projectPreliminaryR49(readRegistry("data/directory/preliminary-map-r49.v1.json"));
+const fullMap=projectPublishedProvisionalMassSites(
+  baseMap,readRegistry("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+assert.equal(fullMap.length,1882,"The map's 1,879 + 3 known visual slots must be accounted for");
+const logoGroups=new Set(["FSSP","ICKSP","SSPX","IBP"]);
+const visualCount={emblem:0,neutral:0};
+for(const venue of fullMap){
+  const fallback=renderDirectoryIdentityFallback(venue,"en");
+  const card=renderDirectoryVenueCard(venue,"en");
+  assert.match(card,/aoTlmVenueVisual/,"Every listed venue must have its visual area");
+  if(logoGroups.has(venue.community_id)){
+    assert.match(fallback,/data-visual-kind="emblem"/);
+    visualCount.emblem++;
+  }else{
+    assert.match(fallback,/data-visual-kind="neutral"/);
+    assert.match(fallback,/aoTlmVenueGlyph/);
+    visualCount.neutral++;
+  }
+}
+assert.deepEqual(visualCount,{emblem:1186,neutral:696});
+console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
