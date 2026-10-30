@@ -29,6 +29,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 
 ## Full bilingual copy and evidence
 
+<a id="candidate-1"></a>
+
 ### Candidate 1 — St Patrick's ribbon cross
 
 **Review key:** `CUSTOMS-R18-01` · **Canonical ID:** proposed `PATR-002` · **Working ID:** `CANDIDATE-STPATRICK-RIBBON`
@@ -84,6 +86,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 **Decision:** EN [ ] Approve [ ] Revise · FR [ ] Approve [ ] Revise · Claims [ ] Approve [ ] Revise · Identity/scope [ ] Approve [ ] Revise
 
 ---
+
+<a id="candidate-2"></a>
 
 ### Candidate 2 — The Irish Christmas candle
 
@@ -143,6 +147,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 
 ---
 
+<a id="candidate-3"></a>
+
 ### Candidate 3 — Christmas Eve hay beneath the tablecloth
 
 **Review key:** `CUSTOMS-R18-06` · **Canonical ID:** proposed `XMAS-003` · **Working ID:** `CUST-XMAS-POLISH-HAY`
@@ -199,6 +205,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 
 ---
 
+<a id="candidate-4"></a>
+
 ### Candidate 4 — St Barbara branches — Barbarazweige
 
 **Review key:** `CUSTOMS-R18-10` · **Canonical ID:** proposed `SBAR-001` · **Working ID:** `CUST-BARBARA-BRANCHES`
@@ -252,6 +260,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 **Decision:** EN [ ] Approve [ ] Revise · FR [ ] Approve [ ] Revise · Claims [ ] Approve [ ] Revise · Identity/scope [ ] Approve [ ] Revise
 
 ---
+
+<a id="candidate-5"></a>
 
 ### Candidate 5 — Provençal Christmas pain calendal and the poor person's portion
 
@@ -309,6 +319,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 
 ---
 
+<a id="candidate-6"></a>
+
 ### Candidate 6 — Three Kings gifts left in children's shoes
 
 **Review key:** `CUSTOMS-R18-12` · **Canonical ID:** proposed `EPIP-004` · **Working ID:** `CUST-EPIPHANY-SPANISH-MAGI-GIFTS`
@@ -364,6 +376,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 **Decision:** EN [ ] Approve [ ] Revise · FR [ ] Approve [ ] Revise · Claims [ ] Approve [ ] Revise · Identity/scope [ ] Approve [ ] Revise
 
 ---
+
+<a id="candidate-7"></a>
 
 ### Candidate 7 — Decorated Easter eggs — Polish pisanki and Ukrainian pysanky
 
@@ -425,6 +439,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 
 ---
 
+<a id="candidate-8"></a>
+
 ### Candidate 8 — Herbergsuche — Advent visits of a Marian image
 
 **Review key:** `CUSTOMS-R18-05` · **Canonical ID:** not assigned; approve scope first · **Working ID:** `CUST-ADVT-HERBERGSUCHE`
@@ -478,6 +494,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 **Decision:** EN [ ] Approve [ ] Revise · FR [ ] Approve [ ] Revise · Claims [ ] Approve [ ] Revise · Identity/scope [ ] Approve [ ] Revise
 
 ---
+
+<a id="candidate-9"></a>
 
 ### Candidate 9 — Québec guignolée — Christmas charity collection
 
@@ -537,6 +555,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 
 ---
 
+<a id="candidate-10"></a>
+
 ### Candidate 10 — Polish kolędnicy — visiting Christmas carollers
 
 **Review key:** `CUSTOMS-R18-08` · **Canonical ID:** not assigned; approve scope first · **Working ID:** `CUST-XMAS-POLISH-KOLEDNICI`
@@ -590,6 +610,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 **Decision:** EN [ ] Approve [ ] Revise · FR [ ] Approve [ ] Revise · Claims [ ] Approve [ ] Revise · Identity/scope [ ] Approve [ ] Revise
 
 ---
+
+<a id="candidate-11"></a>
 
 ### Candidate 11 — Hungarian betlehemezés — visiting Nativity plays
 
@@ -648,6 +670,8 @@ The [existing read-only bilingual Calendar reviewer](https://ad-orientem.vercel.
 **Decision:** EN [ ] Approve [ ] Revise · FR [ ] Approve [ ] Revise · Claims [ ] Approve [ ] Revise · Identity/scope [ ] Approve [ ] Revise
 
 ---
+
+<a id="candidate-12"></a>
 
 ### Candidate 12 — Frauendreißiger — Bavarian Marian pilgrimage period
 
