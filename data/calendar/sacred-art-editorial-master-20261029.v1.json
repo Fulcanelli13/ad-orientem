@@ -18617,5 +18617,33 @@
     "productionImports": 0,
     "userChoicesChanged": false,
     "productionMutation": false
+  },
+  "phase1CommonsFileIdentityVerification": {
+    "sourceFileEvidence": "data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json",
+    "earlierFailedDiagnostic": "data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v1.json",
+    "officialSourceAuthority": "Wikimedia Commons MediaWiki Action API, numeric file page ID and current imageinfo",
+    "sourceCards": 305,
+    "imports": 299,
+    "conditionalImports": 6,
+    "exactFilePageIdAndImageMetadataVerified": 305,
+    "originalSourceFilenameMatchesCurrentFileTitle": 305,
+    "existingFileMediaSha1": 305,
+    "uniqueFileSha1": 305,
+    "exactSourceMediaByteDuplicateGroupsInside305": 0,
+    "unavailableOrDeletedFiles": 0,
+    "originalSourceFilenameMoved": 0,
+    "missingArtistExtmetadata": 4,
+    "missingCreditExtmetadata": 1,
+    "officialMuseumBackedSourceIdentityPreviouslyCompleted": 479,
+    "acceptedToCanonical383LinkedSourceCardsStill": 72,
+    "acceptedToCanonical383UnlinkedSourceCardsStill": 784,
+    "actualNewPhysicalArtworkIdentityConfirmed": 0,
+    "originalImagesVisuallyApproved": 0,
+    "photographRightsCleared": 0,
+    "canonical383NewLinks": 0,
+    "productionImports": 0,
+    "userChoicesChanged": false,
+    "productionMutation": false,
+    "workLevelStructuredWikibaseReconciliation": "STAGED_NOT_VERIFIED"
   }
 }
