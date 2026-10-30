@@ -69,7 +69,9 @@ def exact_candidate_urls(source,title="",artist=""):
         md=hashlib.md5(fn.encode("utf-8")).hexdigest()
         urls.extend([
             "https://commons.wikimedia.org/wiki/Special:Redirect/file/"+quoted+"?width=840",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/"+md[0]+"/"+md[:2]+"/"+quoted+"/840px-"+quoted
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/"+md[0]+"/"+md[:2]+"/"+quoted+"/640px-"+quoted,
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/"+md[0]+"/"+md[:2]+"/"+quoted+"/330px-"+quoted,
+            "https://upload.wikimedia.org/wikipedia/commons/"+md[0]+"/"+md[:2]+"/"+quoted
         ])
         # Ask Commons for this exact File's actual thumbnail to handle redirects/renames
         query=U.urlencode({"action":"query","format":"json","prop":"imageinfo","iiprop":"url|size",
