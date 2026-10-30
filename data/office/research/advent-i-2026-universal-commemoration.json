@@ -1,0 +1,65 @@
+{
+  "schema": "ao.office.advent-i-2026-universal-commemoration-evidence.v1",
+  "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+  "civilDate": "2026-11-28",
+  "officeDate": "2026-11-29",
+  "officePart": "FIRST",
+  "calendarScope": "UNIVERSAL_ONLY",
+  "localCalendar": "UNREVIEWED",
+  "principal": {
+    "id": "advent-i-2026-11-29",
+    "kind": "SUNDAY",
+    "class": 1,
+    "officeTitle": "Dominica I Adventus"
+  },
+  "encountered": [
+    {
+      "id": "bvm-on-saturday-2026-11-28",
+      "kind": "SATURDAY_BVM",
+      "class": 4,
+      "position": "PRECEDING_SATURDAY",
+      "privileged": false,
+      "commemorationPermitted": false
+    },
+    {
+      "id": "st-saturninus-2026-11-29",
+      "kind": "SAINT",
+      "class": 4,
+      "position": "OCCURS_ON_SUNDAY",
+      "privileged": false,
+      "commemorationPermitted": false
+    }
+  ],
+  "evidence": [
+    {
+      "rule": "RG13",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "meaning": "Sunday Office commences at First Vespers of preceding Saturday"
+    },
+    {
+      "rule": "RG11a",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "meaning": "The Sundays of Advent are first class"
+    },
+    {
+      "rule": "RG108-111",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "meaning": "First-class days admit only privileged commemorations; neither identified IV-class day qualifies"
+    },
+    {
+      "rule": "2026-11-28-ordo",
+      "url": "https://ordo.fsspx.org/day/2026-11-28?lang=en",
+      "meaning": "Our Lady on Saturday IV class, evening First Vespers of Advent I"
+    },
+    {
+      "rule": "2026-11-29-ordo",
+      "url": "https://laudemus.org/?breviary_calendar=roman&breviary_rubrics=1960&date=2026-11-29&office=prima&place_id=4",
+      "meaning": "Advent I Sunday I class and St Saturninus IV class suppressed"
+    }
+  ],
+  "decision": "NO_UNIVERSAL_COMMEMORATION_FOR_ADVENT_I_FIRST_VESPERS",
+  "sourceRightsChecked": false,
+  "localExceptionsResolved": false,
+  "completeHourCertified": false,
+  "liturgicalTextPublished": false
+}
