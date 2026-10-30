@@ -364,7 +364,6 @@ const SHELL_STYLE = `
   font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
 }
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
-
 /* The historical 320px acceptance found an unbreakable following Canon line
    that can clip at simulated 200% prayer text. Preserve exact wording and
    font size; allow the line to wrap inside the source-owned reading viewport.
@@ -377,6 +376,7 @@ const SHELL_STYLE = `
     overflow-wrap:anywhere;word-break:normal;min-width:0;max-width:100%;
   }
 }
+
 
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-primary,
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
@@ -3039,7 +3039,13 @@ export function createReaderDomAdapter({
             field.hidden=indexed;
           }
         }
-        if(field&&field.value!==(selectedPlan.ordinarySettings?.[id]??""))
+        // The Schola ticker or another local music change can repaint while
+        // a custom Ordinary title is still being typed. Do not overwrite the
+        // focused draft with the previously persisted value before change/blur
+        // commits it; profile switching moves focus off the input, so the
+        // selected profile's stored title still replaces the field normally.
+        if(field&&field!==field.ownerDocument.activeElement&&
+           field.value!==(selectedPlan.ordinarySettings?.[id]??""))
           field.value=selectedPlan.ordinarySettings?.[id]??"";
       }
       const parish=planRoot.querySelector("[data-schola-local-parish]");
