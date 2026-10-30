@@ -34,7 +34,9 @@
     "production_images_published": 0,
     "scope_guardrail_removals": 22,
     "luminous_five_with_approved_choices": 5,
-    "luminous_five_runtime_ids_joined": 0
+    "luminous_five_runtime_ids_joined": 0,
+    "added_reuse_edges_approved": 89,
+    "added_reuse_edges_needing_approval": 12
   },
   "scene_families": [
     {
@@ -230,7 +232,8 @@
       "title": "The Annunciation",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -238,7 +241,8 @@
       "title": "The Annunciation (Prado)",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -246,7 +250,8 @@
       "title": "The Annunciation",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -254,7 +259,8 @@
       "title": "The Annunciation",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -262,7 +268,8 @@
       "title": "The Annunciation",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -270,7 +277,8 @@
       "title": "Annunciation",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -278,7 +286,8 @@
       "title": "The Annunciation",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -286,7 +295,8 @@
       "title": "The Annunciation",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -294,7 +304,8 @@
       "title": "The Annunciation \" \"",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.annunciation",
@@ -302,7 +313,8 @@
       "title": "The Annunciation \" \"",
       "from_slot": "STG-pray.rosary-02",
       "rule": "SHARED_EXACT_SCENE:annunciation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.rosary-04",
@@ -310,7 +322,8 @@
       "title": "The Adoration of the Christ Child",
       "from_slot": "HERO-02",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -318,7 +331,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -326,7 +340,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -334,7 +349,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -342,7 +358,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -350,7 +367,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -358,7 +376,8 @@
       "title": "Adoration of the Magi .",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -366,7 +385,8 @@
       "title": "The Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
@@ -374,7 +394,8 @@
       "title": "The Adoration of the Christ Child",
       "from_slot": "HERO-02",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -382,7 +403,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -390,7 +412,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -398,7 +421,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -406,7 +430,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -414,7 +439,8 @@
       "title": "Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -422,7 +448,8 @@
       "title": "Adoration of the Magi .",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -430,7 +457,8 @@
       "title": "Nativity",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -438,7 +466,8 @@
       "title": "The Adoration of the Magi",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -446,7 +475,8 @@
       "title": "The Adoration of the Shepherds",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -454,7 +484,8 @@
       "title": "The Adoration of the Shepherds",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-02",
@@ -462,7 +493,8 @@
       "title": "The Nativity or the Adoration of the Angels",
       "from_slot": "STG-pray.rosary-04",
       "rule": "SHARED_EXACT_SCENE:nativity",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-prayer.seven_sorrows_chaplet-01",
@@ -470,7 +502,8 @@
       "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
       "from_slot": "STG-pray.rosary-05",
       "rule": "SHARED_EXACT_SCENE:presentation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-04",
@@ -478,7 +511,8 @@
       "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
       "from_slot": "STG-pray.rosary-05",
       "rule": "SHARED_EXACT_SCENE:presentation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-pray.precious_blood-05",
@@ -486,7 +520,8 @@
       "title": "Christ Carrying the Cross",
       "from_slot": "STG-pray.rosary-10",
       "rule": "SHARED_EXACT_SCENE:carrying_cross",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-pray.stations-02",
@@ -494,7 +529,8 @@
       "title": "Christ Carrying the Cross",
       "from_slot": "STG-pray.rosary-10",
       "rule": "SHARED_EXACT_SCENE:carrying_cross",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-prayer.seven_sorrows_chaplet-05",
@@ -502,7 +538,8 @@
       "title": "The Lance Thrust",
       "from_slot": "STG-pray.rosary-11",
       "rule": "SHARED_EXACT_SCENE:crucifixion",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-12",
@@ -510,7 +547,8 @@
       "title": "The Crucifixion",
       "from_slot": "STG-pray.rosary-11",
       "rule": "SHARED_EXACT_SCENE:crucifixion",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-12",
@@ -518,7 +556,8 @@
       "title": "Crucifixion",
       "from_slot": "STG-pray.rosary-11",
       "rule": "SHARED_EXACT_SCENE:crucifixion",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-12",
@@ -526,7 +565,8 @@
       "title": "Crucifixion",
       "from_slot": "STG-pray.rosary-11",
       "rule": "SHARED_EXACT_SCENE:crucifixion",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-12",
@@ -534,7 +574,8 @@
       "title": "French: La crucifixion",
       "from_slot": "STG-pray.rosary-11",
       "rule": "SHARED_EXACT_SCENE:crucifixion",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-12",
@@ -542,7 +583,8 @@
       "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
       "from_slot": "STG-pray.rosary-11",
       "rule": "SHARED_EXACT_SCENE:crucifixion",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-12",
@@ -550,7 +592,8 @@
       "title": "The Lance Thrust",
       "from_slot": "STG-pray.rosary-11",
       "rule": "SHARED_EXACT_SCENE:crucifixion",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-pray.angelus_regina",
@@ -558,7 +601,8 @@
       "title": "The Resurrection",
       "from_slot": "STG-pray.rosary-12",
       "rule": "SHARED_EXACT_SCENE:resurrection",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-12",
@@ -566,7 +610,8 @@
       "title": "The Resurrection",
       "from_slot": "STG-pray.rosary-12",
       "rule": "SHARED_EXACT_SCENE:resurrection",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-13",
@@ -574,7 +619,8 @@
       "title": "The Ascension (after Leandro Bassano)",
       "from_slot": "STG-pray.rosary-13",
       "rule": "SHARED_EXACT_SCENE:ascension",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-13",
@@ -582,7 +628,8 @@
       "title": "The Ascension of Christ",
       "from_slot": "STG-pray.rosary-13",
       "rule": "SHARED_EXACT_SCENE:ascension",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-novena.holy_ghost-01",
@@ -590,7 +637,8 @@
       "title": "Pentecost",
       "from_slot": "STG-pray.rosary-14",
       "rule": "SHARED_EXACT_SCENE:pentecost",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-novena.holy_ghost",
@@ -598,7 +646,8 @@
       "title": "Pentecost",
       "from_slot": "STG-pray.rosary-14",
       "rule": "SHARED_EXACT_SCENE:pentecost",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-sacrament_come_holy_spirit",
@@ -606,7 +655,8 @@
       "title": "Pentecost",
       "from_slot": "STG-pray.rosary-14",
       "rule": "SHARED_EXACT_SCENE:pentecost",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-14",
@@ -614,7 +664,8 @@
       "title": "Pentecost",
       "from_slot": "STG-pray.rosary-14",
       "rule": "SHARED_EXACT_SCENE:pentecost",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-19",
@@ -622,7 +673,8 @@
       "title": "The Assumption of the Virgin",
       "from_slot": "STG-pray.rosary-15",
       "rule": "SHARED_EXACT_SCENE:assumption",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "HERO-19",
@@ -630,7 +682,8 @@
       "title": "The Assumption of the Virgin",
       "from_slot": "STG-pray.rosary-15",
       "rule": "SHARED_EXACT_SCENE:assumption",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-litany_loreto_1962-05",
@@ -638,7 +691,8 @@
       "title": "The Coronation of the Virgin",
       "from_slot": "STG-pray.rosary-16",
       "rule": "SHARED_EXACT_SCENE:coronation",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-pray.precious_blood-01",
@@ -646,7 +700,8 @@
       "title": "The Circumcision of Christ",
       "from_slot": "STG-pray.st_joseph_seven_sorrows-03",
       "rule": "SHARED_EXACT_SCENE:circumcision",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
@@ -654,7 +709,8 @@
       "title": "The Circumcision",
       "from_slot": "STG-pray.precious_blood-01",
       "rule": "SHARED_EXACT_SCENE:circumcision",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
@@ -662,7 +718,8 @@
       "title": "The Circumcision of Christ",
       "from_slot": "STG-pray.precious_blood-01",
       "rule": "SHARED_EXACT_SCENE:circumcision",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
@@ -670,7 +727,8 @@
       "title": "The Circumcision of Christ",
       "from_slot": "STG-pray.precious_blood-01",
       "rule": "SHARED_EXACT_SCENE:circumcision",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
@@ -678,7 +736,8 @@
       "title": "The Circumcision of Christ",
       "from_slot": "STG-pray.precious_blood-01",
       "rule": "SHARED_EXACT_SCENE:circumcision",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.precious_blood-07",
@@ -686,7 +745,8 @@
       "title": "The Lance Thrust",
       "from_slot": "STG-pray.five_wounds-05",
       "rule": "SHARED_EXACT_SCENE:pierced_side",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-pray.stations-04",
@@ -694,7 +754,8 @@
       "title": "Via Crucis — Jesus encounters His Mother",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-04",
       "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-04",
@@ -702,7 +763,8 @@
       "title": "Jesus meets His Mother",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-04",
       "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-04",
@@ -710,7 +772,8 @@
       "title": "Solesmes — Fourth Station of the Way of the Cross",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-04",
       "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-prayer.seven_sorrows_chaplet-04",
@@ -718,7 +781,8 @@
       "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
       "from_slot": "STG-pray.stations-04",
       "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -726,7 +790,8 @@
       "title": "La Pietà",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
       "rule": "SHARED_EXACT_SCENE:deposition",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -734,7 +799,8 @@
       "title": "Lamentation of Christ",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
       "rule": "SHARED_EXACT_SCENE:deposition",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -742,7 +808,8 @@
       "title": "Pietà",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
       "rule": "SHARED_EXACT_SCENE:deposition",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -750,7 +817,8 @@
       "title": "The Lamentation",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
       "rule": "SHARED_EXACT_SCENE:deposition",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -758,7 +826,8 @@
       "title": "The lamentation of Christ",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
       "rule": "SHARED_EXACT_SCENE:deposition",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -766,7 +835,8 @@
       "title": "The lamentation over the dead Christ",
       "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
       "rule": "SHARED_EXACT_SCENE:deposition",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-09",
@@ -774,7 +844,8 @@
       "title": "The Last Supper",
       "from_slot": "COV-prayer.communion",
       "rule": "SHARED_EXACT_SCENE:last_supper",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "STG-prayer.communion-01",
@@ -782,7 +853,8 @@
       "title": "The Last Supper",
       "from_slot": "COV-prayer.communion",
       "rule": "SHARED_EXACT_SCENE:last_supper",
-      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+      "approval_evidence": "RESEARCH_ONLY_NOT_USER_APPROVED"
     },
     {
       "target_slot": "COV-pray.litany_saints",
@@ -790,7 +862,8 @@
       "title": "Adoration of the Mystic Lamb",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.litany_saints-06",
@@ -798,7 +871,8 @@
       "title": "Adoration of the Mystic Lamb",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.divine_mercy-01",
@@ -806,7 +880,8 @@
       "title": "Divine Mercy (the original, 1934)",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-foundations_grace_before_meals",
@@ -814,7 +889,8 @@
       "title": "Miracle of Loaves and Fishes",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-foundations_grace_after_meals",
@@ -822,7 +898,8 @@
       "title": "Miracle of Loaves and Fishes",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-prayer.good_death",
@@ -830,7 +907,8 @@
       "title": "The Dream of Saint Joseph",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-prayer.good_death-01",
@@ -838,7 +916,8 @@
       "title": "The Dream of Saint Joseph",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-prayer.good_death",
@@ -846,7 +925,8 @@
       "title": "The Dream of Saint Joseph",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-prayer.good_death-01",
@@ -854,7 +934,8 @@
       "title": "The Dream of Saint Joseph",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-foundations_our_father",
@@ -862,7 +943,8 @@
       "title": "Miracle of Loaves and Fishes",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.five_wounds-05",
@@ -870,7 +952,8 @@
       "title": "The Incredulity of Saint Thomas",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.precious_blood-07",
@@ -878,7 +961,8 @@
       "title": "The Incredulity of Saint Thomas",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.confession-02",
@@ -886,7 +970,8 @@
       "title": "The Penitent Magdalen",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-11",
@@ -894,7 +979,8 @@
       "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.rosary-12",
@@ -902,7 +988,8 @@
       "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-11",
@@ -910,7 +997,8 @@
       "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.rosary-12",
@@ -918,7 +1006,8 @@
       "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "HERO-11",
@@ -926,7 +1015,8 @@
       "title": "Christ's Descent into Hell",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -934,7 +1024,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-prayer.seven_sorrows_chaplet-06",
@@ -942,7 +1033,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.seven_words-08",
@@ -950,7 +1042,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -958,7 +1051,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-prayer.seven_sorrows_chaplet-06",
@@ -966,7 +1060,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.seven_words-08",
@@ -974,7 +1069,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.stations-13",
@@ -982,7 +1078,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-prayer.seven_sorrows_chaplet-06",
@@ -990,7 +1087,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.seven_words-08",
@@ -998,7 +1096,8 @@
       "title": "The Lamentation",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.adoration-01",
@@ -1006,7 +1105,8 @@
       "title": "Adoration of the Magi",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.rosary-04",
@@ -1014,7 +1114,8 @@
       "title": "Adoration of the Magi",
       "from_slot": null,
       "rule": "VERBATIM_Q2_USER_INSTRUCTION",
-      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "STG-pray.benediction-03",
@@ -1022,7 +1123,8 @@
       "title": "The Virgin Adoring the Host",
       "from_slot": "COV-pray.benediction",
       "rule": "SAME_BENEDICTION_PRAYER_COVER_CARRYOVER_NOT_A_DEPICTION_OF_THE_BLESSING",
-      "kind": "CONTEXTUAL_APPROVED_TEMPORARY_CARRYOVER"
+      "kind": "CONTEXTUAL_APPROVED_TEMPORARY_CARRYOVER",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     },
     {
       "target_slot": "COV-pray.five_wounds",
@@ -1030,7 +1132,8 @@
       "title": "The Agony in the Garden",
       "from_slot": "STG-pray.rosary-07",
       "rule": "USER_Q2_BATCH_01_ORDER_31_FIVE_WOUNDS_CONTEXT",
-      "kind": "CONTEXTUAL_USER_AUTHORIZED"
+      "kind": "CONTEXTUAL_USER_AUTHORIZED",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
     }
   ],
   "additional_semantic_slots_under_runtime_join": [
@@ -3963,5 +4066,86 @@
         "editorial_preference": "Philippe de Champaigne's La Petite Cène preferred; do not promote Ugolino da Siena to default despite existing Q2 historical acceptance."
       }
     ]
+  },
+  "approval_exactness_fix": {
+    "date": "2026-10-30",
+    "policy": "Only explicit positive decision states, not substring matches. Quarantine cross-pool edges inferred from unapproved candidates; never delete or misstate human decisions.",
+    "active_cross_edges": 89,
+    "quarantined_cross_edges": [
+      {
+        "slot_id": "HERO-09",
+        "artwork_id": "REVIEW::nga:12130",
+        "title": "The Last Supper",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "HERO-19",
+        "artwork_id": "CANONICAL::nga-46470",
+        "title": "The Assumption of the Virgin",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "HERO-19",
+        "artwork_id": "CANONICAL::nga-50280",
+        "title": "The Assumption of the Virgin",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-pray.precious_blood-01",
+        "artwork_id": "REVIEW::commons:160384",
+        "title": "The Circumcision of Christ",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-pray.precious_blood-05",
+        "artwork_id": "CANONICAL::nga-137505",
+        "title": "Christ Carrying the Cross",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-pray.precious_blood-07",
+        "artwork_id": "PRAYER::historic:anthony van dyck:the lance thrust",
+        "title": "The Lance Thrust",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-prayer.seven_sorrows_chaplet-01",
+        "artwork_id": "REVIEW::smk:KMS1168",
+        "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-prayer.seven_sorrows_chaplet-04",
+        "artwork_id": "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+        "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-prayer.communion-01",
+        "artwork_id": "REVIEW::nga:12130",
+        "title": "The Last Supper",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-pray.stations-02",
+        "artwork_id": "CANONICAL::nga-137505",
+        "title": "Christ Carrying the Cross",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-litany_loreto_1962-05",
+        "artwork_id": "REVIEW::smk:KMSSP230",
+        "title": "The Coronation of the Virgin",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      },
+      {
+        "slot_id": "STG-pray.st_joseph_seven_sorrows-04",
+        "artwork_id": "REVIEW::smk:KMS1168",
+        "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+        "reason": "Previously counted as approved because NOT_USER_APPROVED string matched a substring test; no positive decision found in supplied Q2/Q6-11 or approved registry statuses."
+      }
+    ],
+    "quarantined_count": 12,
+    "unreviewed_blueprint_candidates_remain_research_only": true
   }
 }
