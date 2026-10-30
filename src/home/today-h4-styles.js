@@ -76,6 +76,16 @@ export const TODAY_H4_CSS=`
 /* H4 retired the former Today V2 Day/Month/Year tabs; the canonical
    embedded Calendar must expose its own native view switcher instead. */
 .aoTodayH4 #ao-calendar-modular-root[data-ao-calendar-embedded="true"] .aoCalV2Tabs{display:grid!important}
+/* The embedded 1962 Year/Clock inherits content-box width and insets from
+   the standalone Calendar. Constrain its geometry to H4's actual phone slot
+   without clipping the Year Clock, shrinking the dial, or hiding overflow. */
+.aoTodayH4 #ao-calendar-modular-root[data-ao-calendar-embedded="true"] .aoCalModBody,
+.aoTodayH4 #ao-calendar-modular-root[data-ao-calendar-embedded="true"] .aoClock{
+  box-sizing:border-box!important;width:100%;max-width:100%;min-width:0;
+}
+.aoTodayH4 #ao-calendar-modular-root[data-ao-calendar-embedded="true"] .aoCalModTop{
+  box-sizing:border-box;max-width:100%;min-width:0;
+}
 @media(max-width:359px){.homeScreen.aoTodayV2.aoTodayH4{--h4-gap:12px}.aoTodayH4 .aoH4Bar{height:44px}.aoTodayH4 .aoH4DateOpen strong{font-size:23px}.aoTodayH4 .dateRail.aoH4Week .dayCell{height:46px}.aoTodayH4 .aoH4Door .aoLiturgicalDayKicker{display:none!important}.aoTodayH4 .aoH4Door .aoTodayV2Art{height:76px!important;max-height:76px!important}.aoTodayH4 .aoH4Door .aoTodayV2ArtSource{height:76px!important;max-height:76px!important;aspect-ratio:auto!important}.aoTodayH4 .aoH4MassBody{padding:12px 16px 0}.aoTodayH4 .aoH4MassBody h1{font-size:29px}.aoTodayH4 .aoH4Acts{margin:0 -16px}.aoTodayH4 .aoH4Acts button{font-size:13px}}
 
 .aoTodayH4 .aoH4DiscoveryStandalone{display:block;margin:18px var(--h4-gap) 0;min-width:0}
