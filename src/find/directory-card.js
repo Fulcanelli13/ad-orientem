@@ -109,7 +109,7 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
     (emblem?'<img src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':
       useNamed?'<span class="aoTlmVenueNamedMark" aria-hidden="true">'+E(namedSourceMark(sourceLabel))+'</span>':
         '<span class="aoTlmVenueGlyph">'+churchGlyph+'</span>')+
-    '<small>'+E(useNamed?L(language,"Source lists: ","Source : ")+label:label)+'</small></span>';
+    '<small>'+E(useNamed?L(language,"Listed as: ","Selon la source : ")+label:label)+'</small></span>';
 }
 
 export function renderDirectoryVenueCard(item,language="en"){
