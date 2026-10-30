@@ -1,0 +1,603 @@
+{
+  "schema": "AO_SACRED_ART_SOURCE_ALIAS_RECONCILIATION_V1",
+  "snapshot": "71537a018e39e7",
+  "groupIndexPath": "data/calendar/sacred-art-master-v2/duplicate-review-groups-20261030.v1.json",
+  "humanDecisionLedgerPath": "data/calendar/sacred-art-master-v2/duplicate-review-user-decisions-20261030.v1.json",
+  "generatedAt": "2026-10-30",
+  "totalComparedGroups": 18,
+  "humanPreferencesRecorded": 4,
+  "automaticExactSourceAliases": 12,
+  "sameDisplayedPreviewAliasesProvisional": 1,
+  "visuallyDistinctSourceGroupsRemaining": 1,
+  "photoPreferenceRequiredGroupIds": [
+    "DUP-e0dcb905df5513"
+  ],
+  "recordsConsolidated": 0,
+  "recordsDeleted": 0,
+  "identitiesMerged": 0,
+  "sourceReferenceRewrites": 0,
+  "historicalEditorialDecisionMutations": 0,
+  "queue1Promotions": 0,
+  "rightsCertifications": 0,
+  "productionMutations": 0,
+  "feeEur": 0,
+  "notes": [
+    "An exact-source alias is a link between registry records sharing one exact source URL, NOT permission to delete any record or merge physical-work identity.",
+    "The Lotto group shows one Commons comparison photograph in both tiles but different original source records. It remains provisional until exact-file/photo lineage is checked.",
+    "Ambrosius Benson Salvator Mundi has two distinct photo source records; both were recovered, and only the user can select a preferred photograph."
+  ],
+  "dispositions": [
+    {
+      "id": "DUP-b4aadabdb3bde4",
+      "title": "Miracle of Loaves and Fishes",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes"
+      ],
+      "records": [
+        {
+          "recordId": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "sourceFingerprint": "b8b257f4ed74ff83fc4a577005ffc8c5c65e90ab",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "sourceFingerprint": "b8b257f4ed74ff83fc4a577005ffc8c5c65e90ab",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-65d89a2cbd0af8",
+      "title": "Resurrection of Christ",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+        "PRAYER::regina--primary"
+      ],
+      "records": [
+        {
+          "recordId": "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+          "title": "Resurrection of Christ",
+          "artist": "Peter Paul Rubens",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "sourceFingerprint": "86de2b5f40868bc29eb0010550733a03321f0b88",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::regina--primary",
+          "title": "Resurrection of Christ",
+          "artist": "Peter Paul Rubens",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "sourceFingerprint": "86de2b5f40868bc29eb0010550733a03321f0b88",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-46d8aac8932d14",
+      "title": "The Annunciation",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "CANONICAL::met-438724",
+        "PRAYER::angelus--primary"
+      ],
+      "records": [
+        {
+          "recordId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+          "title": "The Annunciation",
+          "artist": "Philippe de Champaigne",
+          "originalSourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "displayedPreviewSourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "sourceFingerprint": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "CANONICAL::met-438724",
+          "title": "The Annunciation",
+          "artist": "Philippe de Champaigne",
+          "originalSourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "displayedPreviewSourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "sourceFingerprint": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::angelus--primary",
+          "title": "The Annunciation",
+          "artist": "Philippe de Champaigne",
+          "originalSourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "displayedPreviewSourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": "https://www.metmuseum.org/art/collection/search/438724",
+      "sharedPreviewSource": "https://www.metmuseum.org/art/collection/search/438724",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-e65dba10399459",
+      "title": "The Dream of Saint Joseph",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "PRAYER::joseph--primary"
+      ],
+      "records": [
+        {
+          "recordId": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceFingerprint": "2b08a1ff9231833c73f3c1666de26f6505dacd4c",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::joseph--primary",
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceFingerprint": "2b08a1ff9231833c73f3c1666de26f6505dacd4c",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-5e69e53dec11b8",
+      "title": "The Heart of Jesus",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "CANONICAL::commons-morlete-sacred-heart-1759",
+        "PRAYER::heart-jesus--primary"
+      ],
+      "records": [
+        {
+          "recordId": "CANONICAL::commons-morlete-sacred-heart-1759",
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceFingerprint": "0c66eb897cd193ce77ab4fa0962084a64c2bca1f",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::heart-jesus--primary",
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceFingerprint": "0c66eb897cd193ce77ab4fa0962084a64c2bca1f",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-b67c1305999ae9",
+      "title": "The Heart of Mary",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "CANONICAL::B02-HEART-MARY-MORLETE",
+        "PRAYER::heart-mary--primary"
+      ],
+      "records": [
+        {
+          "recordId": "CANONICAL::B02-HEART-MARY-MORLETE",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "sourceFingerprint": "d3da6eecacbbedb2bccbdef73d62b6e762634a88",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::heart-mary--primary",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "sourceFingerprint": "d3da6eecacbbedb2bccbdef73d62b6e762634a88",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-654cd12a77a45e",
+      "title": "Madonna and Child with Souls in Purgatory",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "HERO::souls::1",
+        "PRAYER::souls--primary"
+      ],
+      "records": [
+        {
+          "recordId": "HERO::souls::1",
+          "title": "Madonna and Child with Souls in Purgatory",
+          "artist": "Luca Giordano",
+          "originalSourceUrl": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        },
+        {
+          "recordId": "PRAYER::souls--primary",
+          "title": "Madonna and Child with Souls in Purgatory",
+          "artist": "Luca Giordano",
+          "originalSourceUrl": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        }
+      ],
+      "sharedSource": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-95a732a13abe77",
+      "title": "Madonna del Rosario",
+      "status": "SAME_DISPLAYED_PREVIEW_ONLY_REQUIRES_ORIGINAL_PHOTO_VERIFICATION",
+      "recordIds": [
+        "HERO::fondazione-zeri:47818",
+        "PRAYER::rosary--primary"
+      ],
+      "records": [
+        {
+          "recordId": "HERO::fondazione-zeri:47818",
+          "title": "Madonna del Rosario",
+          "artist": "Lorenzo Lotto",
+          "originalSourceUrl": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        },
+        {
+          "recordId": "PRAYER::rosary--primary",
+          "title": "Madonna del Rosario",
+          "artist": "Lorenzo Lotto",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": null,
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-e0dcb905df5513",
+      "title": "Salvator Mundi",
+      "status": "REQUIRES_USER_PHOTO_SELECTION",
+      "recordIds": [
+        "HERO::LOCAL-BENSON-SALVATOR",
+        "PRAYER::king--primary"
+      ],
+      "records": [
+        {
+          "recordId": "HERO::LOCAL-BENSON-SALVATOR",
+          "title": "Salvator Mundi",
+          "artist": "Ambrosius Benson",
+          "originalSourceUrl": "https://www.christies.com/en/lot/lot-6238407",
+          "displayedPreviewSourceUrl": "https://www.christies.com/en/lot/lot-6238407",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::king--primary",
+          "title": "Salvator Mundi",
+          "artist": "Ambrosius Benson",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg",
+          "sourceFingerprint": "86832ebbbcb54f3a364bc32aaf67791a727d6b7c",
+          "alternatePhotoSourceNote": ""
+        }
+      ]
+    },
+    {
+      "id": "DUP-cba0c2e40f2d97",
+      "title": "The Adoration of the Shepherds",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "HERO::wallraf:honthorst-adoration-shepherds-1622",
+        "PRAYER::visit--primary"
+      ],
+      "records": [
+        {
+          "recordId": "HERO::wallraf:honthorst-adoration-shepherds-1622",
+          "title": "The Adoration of the Shepherds",
+          "artist": "Gerrit van Honthorst",
+          "originalSourceUrl": "https://www.wallraf.museum/2017-11-17-honthorst/",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        },
+        {
+          "recordId": "PRAYER::visit--primary",
+          "title": "The Adoration of the Shepherds",
+          "artist": "Gerrit van Honthorst",
+          "originalSourceUrl": "https://www.wallraf.museum/2017-11-17-honthorst/",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        }
+      ],
+      "sharedSource": "https://www.wallraf.museum/2017-11-17-honthorst/",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-edb2f142350d83",
+      "title": "The Lance Thrust",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+        "PRAYER::historic:anthony van dyck:the lance thrust"
+      ],
+      "records": [
+        {
+          "recordId": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+          "title": "The Lance Thrust",
+          "artist": "Anthony van Dyck",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceFingerprint": "2d7bdd1c7dc4583634f1c00dc99d5d38088be3fc",
+          "alternatePhotoSourceNote": ""
+        },
+        {
+          "recordId": "PRAYER::historic:anthony van dyck:the lance thrust",
+          "title": "The Lance Thrust",
+          "artist": "Anthony van Dyck",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": ""
+        }
+      ],
+      "sharedSource": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-6d97cade42d28c",
+      "title": "The Prayer",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "HERO::artuk:op6-prayer-frere",
+        "PRAYER::evening--primary"
+      ],
+      "records": [
+        {
+          "recordId": "HERO::artuk:op6-prayer-frere",
+          "title": "The Prayer",
+          "artist": "Pierre-Édouard Frère",
+          "originalSourceUrl": "https://artuk.org/discover/artworks/the-prayer-19241",
+          "displayedPreviewSourceUrl": "https://d3d00swyhr67nd.cloudfront.net/w1200h1200/collection/STF/WAG/STF_WAG_OP6-001.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        },
+        {
+          "recordId": "PRAYER::evening--primary",
+          "title": "The Prayer",
+          "artist": "Pierre-Édouard Frère",
+          "originalSourceUrl": "https://artuk.org/discover/artworks/the-prayer-19241",
+          "displayedPreviewSourceUrl": "https://d3d00swyhr67nd.cloudfront.net/w1200h1200/collection/STF/WAG/STF_WAG_OP6-001.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        }
+      ],
+      "sharedSource": "https://artuk.org/discover/artworks/the-prayer-19241",
+      "sharedPreviewSource": "https://d3d00swyhr67nd.cloudfront.net/w1200h1200/collection/STF/WAG/STF_WAG_OP6-001.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-cccab96dbf2f1c",
+      "title": "The Return of the Prodigal Son",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "HERO::nga:34956",
+        "PRAYER::confession--primary"
+      ],
+      "records": [
+        {
+          "recordId": "HERO::nga:34956",
+          "title": "The Return of the Prodigal Son",
+          "artist": "Bartolomé Esteban Murillo",
+          "originalSourceUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        },
+        {
+          "recordId": "PRAYER::confession--primary",
+          "title": "The Return of the Prodigal Son",
+          "artist": "Bartolomé Esteban Murillo",
+          "originalSourceUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        }
+      ],
+      "sharedSource": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    },
+    {
+      "id": "DUP-8de26ac1927601",
+      "title": "The Song of the Lark",
+      "status": "EXACT_SOURCE_RECORD_ALIAS_NO_VISUAL_CHOICE",
+      "recordIds": [
+        "HERO::new:jules-breton-song-of-the-lark-artic-94841",
+        "PRAYER::morning--primary"
+      ],
+      "records": [
+        {
+          "recordId": "HERO::new:jules-breton-song-of-the-lark-artic-94841",
+          "title": "The Song of the Lark",
+          "artist": "Jules Breton",
+          "originalSourceUrl": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        },
+        {
+          "recordId": "PRAYER::morning--primary",
+          "title": "The Song of the Lark",
+          "artist": "Jules Breton",
+          "originalSourceUrl": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "displayedPreviewSourceUrl": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+          "sourceFingerprint": "",
+          "alternatePhotoSourceNote": "Confirmed same physical artwork; alternate Commons photograph shown (not original selected photo)"
+        }
+      ],
+      "sharedSource": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+      "sharedPreviewSource": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+      "actionsAllowed": [
+        "link source references non-destructively",
+        "reuse one preview only after exact source validation"
+      ],
+      "actionsForbidden": [
+        "merge or delete artwork identities",
+        "promote to Queue 1",
+        "treat preview as rights clearance",
+        "overwrite editorial approvals"
+      ]
+    }
+  ]
+}

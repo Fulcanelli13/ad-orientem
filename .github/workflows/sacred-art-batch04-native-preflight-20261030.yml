@@ -1,0 +1,68 @@
+name: Sacred Art Batch 04 original-photo preflight (€0 research)
+on:
+  push:
+    branches: [research/sacred-art-duplicate-gate-20261030]
+    paths:
+      - scripts/art/native-preflight-sacred-art-batch04-20261030.py
+      - .github/workflows/sacred-art-batch04-native-preflight-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-batch04-native-preflight
+  cancel-in-progress: false
+jobs:
+  check-native-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Syntax and synthetic photo anomaly self-test
+        run: |
+          python -m py_compile scripts/art/native-preflight-sacred-art-batch04-20261030.py
+          python scripts/art/native-preflight-sacred-art-batch04-20261030.py --self-test
+      - name: Re-download exact pinned native originals and check source version
+        run: python scripts/art/native-preflight-sacred-art-batch04-20261030.py
+      - name: Enforce identity, inventory, and no-approval invariants
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import csv,json,re
+          root=Path("data/calendar/sacred-art-master-v2")
+          source=json.loads((root/"fast-grid-batch04-unmatched-104-recovery-20261030.v1.json").read_text())
+          recovery=json.loads((root/"fast-grid-batch04-recovery-results-20261030.v1.json").read_text())
+          report=json.loads((root/"native-photo-preflight-batch04-20261030.v1.json").read_text())
+          assert report["assessedOriginals"]==104==len(report["records"])
+          assert report["exactSourceSha256Matched"]+report["heldSourceVersions"]==104
+          assert len({x["physicalWorkGroup"] for x in report["records"]})==104
+          assert {x["physicalWorkGroup"] for x in report["records"]}=={x["physicalWorkGroup"] for x in recovery["records"]}=={x["physicalWorkGroup"] for x in source["candidates"]}
+          assert report["registrySnapshot"]=="71537a018e39e7"
+          assert report["queue1Promotions"]==report["finalPristineApprovals"]==report["finalRightsCertifications"]==report["productionChanges"]==report["feeEur"]==0
+          assert report["historicalSourcesDeleted"]==report["priorEditorialApprovalsModified"]==0
+          assert all(x["pristineApproved"] is False and x["rightsFinallyCertified"] is False and x["queue1Promoted"] is False for x in report["records"])
+          assert all(x["visualGate"]=="MANUAL_NATIVE_IMAGE_REVIEW_REQUIRED" for x in report["records"])
+          with (root/"native-photo-preflight-batch04-priority-20261030.csv").open(encoding="utf-8",newline="") as f:
+            rows=list(csv.DictReader(f))
+          assert len(rows)==104 and len({x["stable_group_id"] for x in rows})==104
+          assert all(x["manual_quality_approved"]=="NO" and x["release_authorized"]=="NO" for x in rows)
+          print("PRECHECK_VALID", report["exactSourceSha256Matched"], "exact SHA matched,",
+                report["heldSourceVersions"],"held, 0 decisions, 0 publication")
+          PY
+      - name: Preserve only metadata QA on research branch
+        run: |
+          git config user.name "Ad Orientem Sacred Art QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-master-v2/native-photo-preflight-batch04-20261030.v1.json data/calendar/sacred-art-master-v2/native-photo-preflight-batch04-priority-20261030.csv
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "research(sacred-art): record exact-file native-photo QA flags without approval [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi

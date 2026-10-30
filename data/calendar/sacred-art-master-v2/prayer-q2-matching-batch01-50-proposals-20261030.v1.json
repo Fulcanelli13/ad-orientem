@@ -1,0 +1,1306 @@
+{
+  "schema": "AO_PRAYER_Q2_SLOT_REVIEW_BATCH01_V1",
+  "createdUtc": "2026-10-30T11:50:28.205301+00:00",
+  "batch": 1,
+  "firstQueue2RecordIndex": 1,
+  "lastQueue2RecordIndex": 50,
+  "queue2MasterPath": "data/calendar/sacred-art-master-v2/queue-photo-qa-or-repair.csv",
+  "reviewCount": 50,
+  "sourceImageCardsEmbedded": 50,
+  "paintingMatchingProposals": 141,
+  "queue1ReleasePromotions": 0,
+  "artworkQualityCertifications": 0,
+  "rightsReleaseCertifications": 0,
+  "historicalArtworkApprovalsChanged": 0,
+  "sourceRecordsMergedOrDeleted": 0,
+  "editorialReviewStatus": "AWAITING_USER_REVIEW",
+  "userChoices": [
+    "ACCEPT_SELECTED_SLOTS",
+    "REPLACE_OR_ADD_OWN_ASSIGNMENT",
+    "REJECT_FOR_PRAYER_ONLY",
+    "UNDECIDED"
+  ],
+  "note": "Accepting a prayer assignment does not certify the exact image for release.",
+  "items": [
+    {
+      "n": 1,
+      "workGroup": "PRAYER::visit--murillo-magi",
+      "title": "Adoration of the Magi",
+      "artist": "Bartolomé Esteban Murillo",
+      "proposedSlots": [
+        {
+          "id": "HERO-03",
+          "label": "Pray Home · Epiphany"
+        },
+        {
+          "id": "DOOR-D6",
+          "label": "Prayer doors · Our Lord"
+        },
+        {
+          "id": "COV-pray.adoration",
+          "label": "Adoration / Visit · cover"
+        }
+      ],
+      "reason": "Exact Epiphany subject; Eucharistic adoration is an optional thematic parallel rather than a literal sacramental scene.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+      "sourcePhotoFingerprint": "1469e834cd41bed570dedd2764ed0ec7b75603c5",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 2,
+      "workGroup": "PRAYER::saints--vaneyck",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D5",
+          "label": "Prayer doors · Holy Eucharist"
+        },
+        {
+          "id": "COV-pray.adoration",
+          "label": "Adoration / Visit · cover"
+        },
+        {
+          "id": "COV-pray.adoration.four_ends",
+          "label": "Four Ends of Adoration · cover"
+        },
+        {
+          "id": "COV-benediction_divine_praises",
+          "label": "Benediction divine praises · prayer card"
+        }
+      ],
+      "reason": "The Lamb and heavenly worship speak to Eucharistic adoration, benediction and liturgical praise.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ghent%20Altarpiece%20-%20Adoration%20of%20the%20Mystic%20Lamb.jpg",
+      "sourcePhotoFingerprint": "820e200bddfbf1df0c51f256e60266ac0d6015be",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 3,
+      "workGroup": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+      "title": "Archangel Michael Defeating Satan",
+      "artist": "Guido Reni",
+      "proposedSlots": [
+        {
+          "id": "COV-novena.st_michael",
+          "label": "Novena to Saint Michael · cover"
+        },
+        {
+          "id": "COV-devotion_prayer_st_michael",
+          "label": "Devotion prayer st michael · prayer card"
+        },
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Direct Saint Michael subject. Can recur in saint/angel prayers and his novena.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "sourcePhotoFingerprint": "dfcaee8ee34422c3863332a58154466d9ac7c54a",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 4,
+      "workGroup": "PRAYER::w1-kazimirowski",
+      "title": "Divine Mercy (the original, 1934)",
+      "artist": "Eugeniusz Kazimirowski",
+      "proposedSlots": [
+        {
+          "id": "COV-pray.divine_mercy",
+          "label": "Divine Mercy Chaplet · cover"
+        },
+        {
+          "id": "STG-pray.divine_mercy-01",
+          "label": "Divine Mercy Chaplet · scene 01"
+        }
+      ],
+      "reason": "Direct historical Divine Mercy image; assess whether devotional style suits the module and note separate photo-rights questions.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Divina_Misericordia_(Eugeniusz_Kazimirowski,_1934).jpg",
+      "sourcePhotoFingerprint": "2e0ac8d03c0ecddeb9709b88032c0030fef738eb",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 5,
+      "workGroup": "PRAYER::rosary--caravaggio",
+      "title": "Madonna of the Rosary",
+      "artist": "Caravaggio",
+      "proposedSlots": [
+        {
+          "id": "COV-pray.rosary",
+          "label": "Holy Rosary · cover"
+        },
+        {
+          "id": "STG-pray.rosary-01",
+          "label": "Rosary · Opening prayers"
+        },
+        {
+          "id": "DOOR-D3",
+          "label": "Prayer doors · Rosary and Chaplets"
+        },
+        {
+          "id": "COV-pray.rosary_methods",
+          "label": "Rosary Methods · cover"
+        }
+      ],
+      "reason": "Rosary devotion and its opening, not a specific Gospel mystery. Earlier Lotto final cover approval is preserved.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+      "sourcePhotoFingerprint": "289a9980d41f280da89bed2bed12dc3c59887d36",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 6,
+      "workGroup": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+      "title": "Miracle of Loaves and Fishes",
+      "artist": "Giovanni Lanfranco",
+      "proposedSlots": [
+        {
+          "id": "STG-prayer.communion-01",
+          "label": "Communion Preparation · scene 01"
+        },
+        {
+          "id": "COV-adoration_lord_i_am_not_worthy",
+          "label": "Adoration lord i am not worthy · prayer card"
+        },
+        {
+          "id": "HERO-18",
+          "label": "Pray Home · Time after Pentecost"
+        }
+      ],
+      "reason": "Multiplication of loaves offers a broad Eucharistic and providence parallel, not an image of Communion itself.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "sourcePhotoFingerprint": "b8b257f4ed74ff83fc4a577005ffc8c5c65e90ab",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 7,
+      "workGroup": "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+      "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+      "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D7",
+          "label": "Prayer doors · Our Lady"
+        },
+        {
+          "id": "STG-pray.angelus-08",
+          "label": "Angelus · Intercession"
+        }
+      ],
+      "reason": "Our Lady as intercessor. This reproduction should be judged carefully for poster-like presentation and rights.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+      "sourcePhotoFingerprint": "ffe6514401c14f678284bfb9bc52415c22cb4ef6",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 8,
+      "workGroup": "CANONICAL::ART-ean-estout-entecost",
+      "title": "Pentecost",
+      "artist": "Jean Restout",
+      "proposedSlots": [
+        {
+          "id": "HERO-14",
+          "label": "Pray Home · Pentecost"
+        },
+        {
+          "id": "STG-pray.rosary-14",
+          "label": "Rosary · Descent of the Holy Ghost"
+        },
+        {
+          "id": "COV-sacrament_come_holy_spirit",
+          "label": "Sacrament come holy spirit · prayer card"
+        }
+      ],
+      "reason": "Direct Pentecost subject for feast, Glorious mystery and invocation of the Holy Ghost.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+      "sourcePhotoFingerprint": "c2d6695b10e6366b34b5e1abf055c1e8c319ab6e",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 9,
+      "workGroup": "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+      "title": "Resurrection of Christ",
+      "artist": "Peter Paul Rubens",
+      "proposedSlots": [
+        {
+          "id": "HERO-12",
+          "label": "Pray Home · Easter/Paschaltide"
+        },
+        {
+          "id": "STG-pray.rosary-12",
+          "label": "Rosary · The Resurrection"
+        },
+        {
+          "id": "STG-pray.angelus_regina-02",
+          "label": "Regina Cæli · He Is Risen"
+        },
+        {
+          "id": "COV-pray.angelus_regina",
+          "label": "Regina Cæli · cover"
+        }
+      ],
+      "reason": "Direct Resurrection; one photograph may serve the Regina Cæli and the Glorious mystery.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "sourcePhotoFingerprint": "86de2b5f40868bc29eb0010550733a03321f0b88",
+      "samePhotoAs": [
+        10
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 10,
+      "workGroup": "PRAYER::regina--primary",
+      "title": "Resurrection of Christ",
+      "artist": "Peter Paul Rubens",
+      "proposedSlots": [
+        {
+          "id": "HERO-12",
+          "label": "Pray Home · Easter/Paschaltide"
+        },
+        {
+          "id": "STG-pray.rosary-12",
+          "label": "Rosary · The Resurrection"
+        },
+        {
+          "id": "STG-pray.angelus_regina-02",
+          "label": "Regina Cæli · He Is Risen"
+        },
+        {
+          "id": "COV-pray.angelus_regina",
+          "label": "Regina Cæli · cover"
+        }
+      ],
+      "reason": "Same subject/source as another separate record. Review independently; duplicates are not merged.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "sourcePhotoFingerprint": "86de2b5f40868bc29eb0010550733a03321f0b88",
+      "samePhotoAs": [
+        9
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 11,
+      "workGroup": "CANONICAL::W07-007",
+      "title": "Saint Jerome Writing (Borghese original)",
+      "artist": "Caravaggio",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        },
+        {
+          "id": "COV-daily.personal_rule",
+          "label": "Personal Prayer Rule · cover"
+        }
+      ],
+      "reason": "Saint Jerome as scriptural meditation and learned prayer; no direct Rosary mystery.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint%20Jerome%20Writing-Caravaggio%20(1605-6).jpg",
+      "sourcePhotoFingerprint": "623158130d53ff152a4cffd24900250ddf0681ee",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 12,
+      "workGroup": "PRAYER::king--primary",
+      "title": "Salvator Mundi",
+      "artist": "Ambrosius Benson",
+      "proposedSlots": [
+        {
+          "id": "HERO-22",
+          "label": "Pray Home · Christ the King"
+        },
+        {
+          "id": "DOOR-D6",
+          "label": "Prayer doors · Our Lord"
+        }
+      ],
+      "reason": "Christ as Savior and King. Historically approved artwork identity for Christ the King; photograph remains release-gated.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg",
+      "sourcePhotoFingerprint": "86832ebbbcb54f3a364bc32aaf67791a727d6b7c",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 13,
+      "workGroup": "PRAYER::king--previtali",
+      "title": "Salvator Mundi",
+      "artist": "Andrea Previtali",
+      "proposedSlots": [
+        {
+          "id": "HERO-22",
+          "label": "Pray Home · Christ the King"
+        },
+        {
+          "id": "DOOR-D6",
+          "label": "Prayer doors · Our Lord"
+        }
+      ],
+      "reason": "Savior/King theme; potential alternative to Benson rather than a replacement for his historical approval.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrea%20Previtali%20-%20Salvator%20Mundi%20-%20Google%20Art%20Project.jpg",
+      "sourcePhotoFingerprint": "ae0655c742b2f0a44d60588d30a1f1e312e85258",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 14,
+      "workGroup": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "proposedSlots": [
+        {
+          "id": "COV-pray.angelus",
+          "label": "Angelus · cover"
+        },
+        {
+          "id": "STG-pray.angelus-05",
+          "label": "Angelus · Announcement"
+        },
+        {
+          "id": "STG-pray.angelus-06",
+          "label": "Angelus · Mary's Fiat"
+        },
+        {
+          "id": "STG-pray.rosary-02",
+          "label": "Rosary · The Annunciation"
+        },
+        {
+          "id": "HERO-01",
+          "label": "Pray Home · Advent"
+        }
+      ],
+      "reason": "Annunciation: Angelus and first Joyful mystery. Dawn/noon/dusk cover variants require a separate light-and-mood choice.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourcePhotoFingerprint": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 15,
+      "workGroup": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "proposedSlots": [
+        {
+          "id": "COV-pray.angelus",
+          "label": "Angelus · cover"
+        },
+        {
+          "id": "STG-pray.angelus-05",
+          "label": "Angelus · Announcement"
+        },
+        {
+          "id": "STG-pray.angelus-06",
+          "label": "Angelus · Mary's Fiat"
+        },
+        {
+          "id": "STG-pray.rosary-02",
+          "label": "Rosary · The Annunciation"
+        },
+        {
+          "id": "HERO-01",
+          "label": "Pray Home · Advent"
+        }
+      ],
+      "reason": "Annunciation: Angelus and first Joyful mystery. Art-specific time-of-day choice is optional.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+      "sourcePhotoFingerprint": "6abe52de3122179ac44486de73865c37f235ac98",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 16,
+      "workGroup": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "proposedSlots": [
+        {
+          "id": "COV-pray.angelus",
+          "label": "Angelus · cover"
+        },
+        {
+          "id": "STG-pray.angelus-05",
+          "label": "Angelus · Announcement"
+        },
+        {
+          "id": "STG-pray.angelus-06",
+          "label": "Angelus · Mary's Fiat"
+        },
+        {
+          "id": "STG-pray.rosary-02",
+          "label": "Rosary · The Annunciation"
+        },
+        {
+          "id": "HERO-01",
+          "label": "Pray Home · Advent"
+        }
+      ],
+      "reason": "Annunciation: Angelus and first Joyful mystery. Art-specific time-of-day choice is optional.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annunciazione%20%281623%20circa%29%20-%20Orazio%20Gentileschi.jpg",
+      "sourcePhotoFingerprint": "d0229f4298318501f41024c1ee8af92e89fbc400",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 17,
+      "workGroup": "PRAYER::angelus--murillo-annunciation",
+      "title": "The Annunciation (Prado)",
+      "artist": "Bartolomé Esteban Murillo",
+      "proposedSlots": [
+        {
+          "id": "COV-pray.angelus",
+          "label": "Angelus · cover"
+        },
+        {
+          "id": "STG-pray.angelus-05",
+          "label": "Angelus · Announcement"
+        },
+        {
+          "id": "STG-pray.angelus-06",
+          "label": "Angelus · Mary's Fiat"
+        },
+        {
+          "id": "STG-pray.rosary-02",
+          "label": "Rosary · The Annunciation"
+        },
+        {
+          "id": "HERO-01",
+          "label": "Pray Home · Advent"
+        }
+      ],
+      "reason": "Annunciation: Angelus and first Joyful mystery. Prado source is disfavoured under existing image preferences.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolome_murillo-anunciacion.jpg",
+      "sourcePhotoFingerprint": "d1a7a85119af2d74336fc5a4d52c60f1638017a4",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 18,
+      "workGroup": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "proposedSlots": [
+        {
+          "id": "COV-novena.st_joseph",
+          "label": "Novena to Saint Joseph · cover"
+        },
+        {
+          "id": "HERO-01",
+          "label": "Pray Home · Advent"
+        }
+      ],
+      "reason": "Joseph's dream naturally suits Joseph devotion and Advent expectation; no need to force an Angelus-stage scene.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "sourcePhotoFingerprint": "2b08a1ff9231833c73f3c1666de26f6505dacd4c",
+      "samePhotoAs": [
+        19
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 19,
+      "workGroup": "PRAYER::joseph--primary",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "proposedSlots": [
+        {
+          "id": "COV-novena.st_joseph",
+          "label": "Novena to Saint Joseph · cover"
+        },
+        {
+          "id": "HERO-01",
+          "label": "Pray Home · Advent"
+        }
+      ],
+      "reason": "Joseph's dream naturally suits Joseph devotion and Advent expectation. Parallel source record kept distinct.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "sourcePhotoFingerprint": "2b08a1ff9231833c73f3c1666de26f6505dacd4c",
+      "samePhotoAs": [
+        18
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 20,
+      "workGroup": "CANONICAL::ART-ietro-da-ortona-he-uardian-ngel",
+      "title": "The Guardian Angel",
+      "artist": "Pietro da Cortona",
+      "proposedSlots": [
+        {
+          "id": "COV-foundations_guardian_angel",
+          "label": "Foundations guardian angel · prayer card"
+        },
+        {
+          "id": "STG-pray.adoration.night-06",
+          "label": "pray.adoration.night · scene 06"
+        },
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Guardian Angel for foundational prayer, evening entrustment and angels door.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+      "sourcePhotoFingerprint": "79a5b0803a4324714a92a5fa31fe46117c0c2685",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 21,
+      "workGroup": "PRAYER::angel--franceschini",
+      "title": "The Guardian Angel",
+      "artist": "Marcantonio Franceschini",
+      "proposedSlots": [
+        {
+          "id": "COV-foundations_guardian_angel",
+          "label": "Foundations guardian angel · prayer card"
+        },
+        {
+          "id": "STG-pray.adoration.night-06",
+          "label": "pray.adoration.night · scene 06"
+        },
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Guardian Angel for foundational prayer, evening entrustment and angels door.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg",
+      "sourcePhotoFingerprint": "9e493cd7fbc8a01c368e7d5f1081d58a2573e16a",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 22,
+      "workGroup": "PRAYER::angel--strozzi",
+      "title": "The Guardian Angel",
+      "artist": "Bernardo Strozzi",
+      "proposedSlots": [
+        {
+          "id": "COV-foundations_guardian_angel",
+          "label": "Foundations guardian angel · prayer card"
+        },
+        {
+          "id": "STG-pray.adoration.night-06",
+          "label": "pray.adoration.night · scene 06"
+        },
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Guardian Angel for foundational prayer, evening entrustment and angels door.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+      "sourcePhotoFingerprint": "a20ce6c76d6f0954fcaa680ee39d98719848161a",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 23,
+      "workGroup": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "proposedSlots": [
+        {
+          "id": "COV-prayer.sacred_heart",
+          "label": "Sacred Heart · cover"
+        },
+        {
+          "id": "COV-novena.sacred_heart",
+          "label": "Novena to Sacred Heart · cover"
+        },
+        {
+          "id": "HERO-17",
+          "label": "Pray Home · Sacred Heart"
+        },
+        {
+          "id": "COV-sacred_heart_short_prayer",
+          "label": "Sacred heart short prayer · prayer card"
+        }
+      ],
+      "reason": "Sacred Heart iconography: Sacred Heart devotion, first Friday, reparation and feast.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourcePhotoFingerprint": "0c66eb897cd193ce77ab4fa0962084a64c2bca1f",
+      "samePhotoAs": [
+        24
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 24,
+      "workGroup": "PRAYER::heart-jesus--primary",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "proposedSlots": [
+        {
+          "id": "COV-prayer.sacred_heart",
+          "label": "Sacred Heart · cover"
+        },
+        {
+          "id": "COV-novena.sacred_heart",
+          "label": "Novena to Sacred Heart · cover"
+        },
+        {
+          "id": "HERO-17",
+          "label": "Pray Home · Sacred Heart"
+        },
+        {
+          "id": "COV-sacred_heart_short_prayer",
+          "label": "Sacred heart short prayer · prayer card"
+        }
+      ],
+      "reason": "Same Heart of Jesus subject as another source record; keep choices independent pending deduplication.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourcePhotoFingerprint": "0c66eb897cd193ce77ab4fa0962084a64c2bca1f",
+      "samePhotoAs": [
+        23
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 25,
+      "workGroup": "CANONICAL::B02-HEART-MARY-MORLETE",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "proposedSlots": [
+        {
+          "id": "COV-novena.immaculate_heart",
+          "label": "Novena to Immaculate Heart · cover"
+        },
+        {
+          "id": "COV-marian_consecration_immaculate_heart",
+          "label": "Marian consecration immaculate heart · prayer card"
+        },
+        {
+          "id": "DOOR-D7",
+          "label": "Prayer doors · Our Lady"
+        }
+      ],
+      "reason": "Immaculate Heart devotion and consecration; no assumption of specific prayer-card position.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "sourcePhotoFingerprint": "d3da6eecacbbedb2bccbdef73d62b6e762634a88",
+      "samePhotoAs": [
+        26
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 26,
+      "workGroup": "PRAYER::heart-mary--primary",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "proposedSlots": [
+        {
+          "id": "COV-novena.immaculate_heart",
+          "label": "Novena to Immaculate Heart · cover"
+        },
+        {
+          "id": "COV-marian_consecration_immaculate_heart",
+          "label": "Marian consecration immaculate heart · prayer card"
+        },
+        {
+          "id": "DOOR-D7",
+          "label": "Prayer doors · Our Lady"
+        }
+      ],
+      "reason": "Immaculate Heart devotion and consecration; source alias remains distinct.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "sourcePhotoFingerprint": "d3da6eecacbbedb2bccbdef73d62b6e762634a88",
+      "samePhotoAs": [
+        25
+      ],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 27,
+      "workGroup": "PRAYER::regina--jan-janssens",
+      "title": "The Resurrection",
+      "artist": "Jan Janssens",
+      "proposedSlots": [
+        {
+          "id": "HERO-12",
+          "label": "Pray Home · Easter/Paschaltide"
+        },
+        {
+          "id": "STG-pray.rosary-12",
+          "label": "Rosary · The Resurrection"
+        },
+        {
+          "id": "STG-pray.angelus_regina-02",
+          "label": "Regina Cæli · He Is Risen"
+        },
+        {
+          "id": "COV-pray.angelus_regina",
+          "label": "Regina Cæli · cover"
+        }
+      ],
+      "reason": "Resurrection image suitable for Paschaltide, Regina Cæli and the Glorious mystery.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_Resurrection.jpg",
+      "sourcePhotoFingerprint": "f56485a301aa20f04051c55d821e99ac80692439",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 28,
+      "workGroup": "PRAYER::regina--murillo-resurrection",
+      "title": "The Resurrection of Christ",
+      "artist": "Bartolomé Esteban Murillo",
+      "proposedSlots": [
+        {
+          "id": "HERO-12",
+          "label": "Pray Home · Easter/Paschaltide"
+        },
+        {
+          "id": "STG-pray.rosary-12",
+          "label": "Rosary · The Resurrection"
+        },
+        {
+          "id": "STG-pray.angelus_regina-02",
+          "label": "Regina Cæli · He Is Risen"
+        },
+        {
+          "id": "COV-pray.angelus_regina",
+          "label": "Regina Cæli · cover"
+        }
+      ],
+      "reason": "Resurrection image suitable for Paschaltide, Regina Cæli and the Glorious mystery.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+      "sourcePhotoFingerprint": "e11117210005165fc711415ffe497e386eaf782e",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 29,
+      "workGroup": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "proposedSlots": [
+        {
+          "id": "COV-pray.adoration",
+          "label": "Adoration / Visit · cover"
+        },
+        {
+          "id": "COV-prayer.communion",
+          "label": "Communion Preparation · cover"
+        },
+        {
+          "id": "COV-adoration_spiritual_communion",
+          "label": "Adoration spiritual communion · prayer card"
+        },
+        {
+          "id": "STG-prayer.communion-02",
+          "label": "Communion Preparation · scene 02"
+        }
+      ],
+      "reason": "Virgin adoring the Host is a strong bridge between Marian devotion and Eucharistic prayer.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+      "sourcePhotoFingerprint": "fc84f477b7450933247b00e9d59f98a8ba5d1c81",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 30,
+      "workGroup": "CANONICAL::cma-143784",
+      "title": "Adoration of the Shepherds",
+      "artist": "Carlo Dolci",
+      "proposedSlots": [
+        {
+          "id": "HERO-02",
+          "label": "Pray Home · Christmastide"
+        },
+        {
+          "id": "STG-pray.rosary-04",
+          "label": "Rosary · The Nativity"
+        }
+      ],
+      "reason": "Shepherds' adoration is the Nativity mystery and Christmas seasonal hero.",
+      "sourceUrl": "https://clevelandart.org/art/1968.22",
+      "sourcePhotoFingerprint": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 31,
+      "workGroup": "CANONICAL::met-442488",
+      "title": "The Agony in the Garden",
+      "artist": "Nicolas Poussin",
+      "proposedSlots": [
+        {
+          "id": "STG-pray.rosary-07",
+          "label": "Rosary · Agony in the Garden"
+        },
+        {
+          "id": "STG-pray.precious_blood-02",
+          "label": "pray.precious_blood · scene 02"
+        },
+        {
+          "id": "STG-pray.adoration.night-02",
+          "label": "pray.adoration.night · scene 02"
+        },
+        {
+          "id": "HERO-06",
+          "label": "Pray Home · Lent"
+        }
+      ],
+      "reason": "Gethsemane maps directly to first Sorrowful mystery, Precious Blood episode and reparation at night.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442488",
+      "sourcePhotoFingerprint": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 32,
+      "workGroup": "CANONICAL::cma-148758",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Martyrdom of Saint Andrew belongs to the saints, not to the Twelfth Station of CHRIST'S Passion.",
+      "sourceUrl": "https://clevelandart.org/art/1976.2",
+      "sourcePhotoFingerprint": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 33,
+      "workGroup": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "title": "Adoration of the Magi",
+      "artist": "Peter Paul Rubens",
+      "proposedSlots": [
+        {
+          "id": "HERO-03",
+          "label": "Pray Home · Epiphany"
+        },
+        {
+          "id": "DOOR-D6",
+          "label": "Prayer doors · Our Lord"
+        },
+        {
+          "id": "COV-pray.adoration",
+          "label": "Adoration / Visit · cover"
+        }
+      ],
+      "reason": "Magi/Christ Child subject for Epiphany; optional typological adoration link.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+      "sourcePhotoFingerprint": "a4701462dfcc3b8cc9f5f89a1e8e6b17f09544d7",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 34,
+      "workGroup": "CANONICAL::cma-143644",
+      "title": "Adoration of the Shepherds",
+      "artist": "Bernardo Cavallino",
+      "proposedSlots": [
+        {
+          "id": "HERO-02",
+          "label": "Pray Home · Christmastide"
+        },
+        {
+          "id": "STG-pray.rosary-04",
+          "label": "Rosary · The Nativity"
+        }
+      ],
+      "reason": "Shepherds' adoration: Nativity mystery and Christmas; earlier approved Christmas hero identity is preserved.",
+      "sourceUrl": "https://clevelandart.org/art/1968.100",
+      "sourcePhotoFingerprint": "",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 35,
+      "workGroup": "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "artist": "David Teniers the Elder",
+      "proposedSlots": [
+        {
+          "id": "STG-pray.rosary-07",
+          "label": "Rosary · Agony in the Garden"
+        },
+        {
+          "id": "STG-pray.precious_blood-02",
+          "label": "pray.precious_blood · scene 02"
+        },
+        {
+          "id": "STG-pray.adoration.night-02",
+          "label": "pray.adoration.night · scene 02"
+        },
+        {
+          "id": "HERO-06",
+          "label": "Pray Home · Lent"
+        }
+      ],
+      "reason": "Gethsemane episode within Sorrowful mystery, Blood chaplet and night adoration.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "sourcePhotoFingerprint": "4cb63ff9ce98e1c337f849e16debd3ec5d22eef5",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 36,
+      "workGroup": "CANONICAL::C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829",
+      "title": "Andrey Ivanov, St. Ambrose Barring Theodosius from Milan Cathedral, 1829, Tretyakov Gallery Ж-560.jpg",
+      "artist": "Andrey Ivanov",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Saint Ambrose can enter saints/Doctors imagery; no specific matching novena in the present slot catalogue.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg",
+      "sourcePhotoFingerprint": "4187b67c6bdc200009d034daf785929eaf8f22a9",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 37,
+      "workGroup": "CANONICAL::C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+      "title": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+      "artist": "follower of Anthony van Dyck",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Saint Peter portrait fits saints and apostles collections; does not by itself depict Peter's repentance.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg",
+      "sourcePhotoFingerprint": "25e5c3f939704949aa8026e90538ad5fcab22ed8",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 38,
+      "workGroup": "CANONICAL::W14-016",
+      "title": "Apostle Judas Thaddeus (Böhler series)",
+      "artist": "Anthony van Dyck",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Apostle Jude Thaddeus fits saints and apostles prayers; no forced Rosary mystery.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Apostel_Judas_Thadd%C3%A4us_-_GG_6809_-_Kunsthistorisches_Museum.jpg",
+      "sourcePhotoFingerprint": "bba3484ff7f880523a5bff11d8dbab4d327a56c3",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 39,
+      "workGroup": "CANONICAL::W38-006",
+      "title": "Apostle Philip",
+      "artist": "Anthony van Dyck",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Apostle Philip fits saints and apostles prayers; no forced Rosary mystery.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg",
+      "sourcePhotoFingerprint": "0c337670c07d46134d0009691de1cfcf20398501",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 40,
+      "workGroup": "CANONICAL::ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "title": "Ascension — Antwerp Rosary cycle",
+      "artist": "Artus Wolffort",
+      "proposedSlots": [
+        {
+          "id": "HERO-13",
+          "label": "Pray Home · Ascension"
+        },
+        {
+          "id": "STG-pray.rosary-13",
+          "label": "Rosary · The Ascension"
+        }
+      ],
+      "reason": "Ascension directly matches the Glorious mystery and feast hero.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+      "sourcePhotoFingerprint": "1c1997782354e9d2548906eb3f64d76a10b43034",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 41,
+      "workGroup": "CANONICAL::met-436672",
+      "title": "Christ among the Doctors",
+      "artist": "Abraham Hondius",
+      "proposedSlots": [
+        {
+          "id": "STG-pray.rosary-06",
+          "label": "Rosary · Finding in the Temple"
+        },
+        {
+          "id": "HERO-04",
+          "label": "Pray Home · Time after Epiphany"
+        }
+      ],
+      "reason": "Christ among doctors directly matches fifth Joyful mystery.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436672",
+      "sourcePhotoFingerprint": "36b3bed7dbe53ac4c32d2627c68f3d8bee159814d1b3105c42433e82e869a3f6",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 42,
+      "workGroup": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+      "title": "Christ Carrying the Cross",
+      "artist": "Titian",
+      "proposedSlots": [
+        {
+          "id": "HERO-07",
+          "label": "Pray Home · Passiontide"
+        },
+        {
+          "id": "STG-pray.rosary-10",
+          "label": "Rosary · Carrying of the Cross"
+        },
+        {
+          "id": "COV-pray.stations",
+          "label": "Stations of the Cross · cover"
+        },
+        {
+          "id": "STG-pray.stations-02",
+          "label": "Stations of the Cross · scene 02"
+        }
+      ],
+      "reason": "Christ bearing the Cross directly fits the fourth Sorrowful mystery and the second Station.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+      "sourcePhotoFingerprint": "77f5201a77fc0d6d1a6b9132d87a57b0fd524fa4",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 43,
+      "workGroup": "CANONICAL::prado-ribalta-p002804",
+      "title": "Christ embracing Saint Bernard",
+      "artist": "Francisco Ribalta",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Christ embracing Saint Bernard is an excellent contemplative scene but only a broad saints-door fit here.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_Ribalta_001.jpg",
+      "sourcePhotoFingerprint": "1dc80e61eafb2549e1d169617bc08117daca7b8b",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 44,
+      "workGroup": "CANONICAL::met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "proposedSlots": [
+        {
+          "id": "HERO-18",
+          "label": "Pray Home · Time after Pentecost"
+        },
+        {
+          "id": "STG-pray.adoration.four_ends-04",
+          "label": "Four Ends of Adoration · scene 04"
+        },
+        {
+          "id": "COV-adoration_lord_i_am_not_worthy",
+          "label": "Adoration lord i am not worthy · prayer card"
+        }
+      ],
+      "reason": "Healing the sick can illustrate intercession and Christ's mercy, not the Eucharistic rite literally.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436199",
+      "sourcePhotoFingerprint": "f68a9d408b8d03554f26cd84aa31a9c4f7f4eafd0693482bdba2ce69d7536a97",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 45,
+      "workGroup": "CANONICAL::C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+      "title": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+      "artist": "Claude Vignon",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        }
+      ],
+      "reason": "Saint Ambrose fits saints and Doctors imagery; avoid inventing a dedicated prayer slot.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+      "sourcePhotoFingerprint": "5daa0d36a68570652195d04c5891275cd0a64cf1",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 46,
+      "workGroup": "CANONICAL::ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "title": "Conversion of Saint Paul",
+      "artist": "Bartolomé Esteban Murillo",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        },
+        {
+          "id": "COV-daily.nightly_examen",
+          "label": "Nightly Examination · cover"
+        }
+      ],
+      "reason": "Conversion of Saint Paul fits saints and an examination/repentance theme, not a precise Passion stage.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_conversi%C3%B3n_de_san_Pablo_(Murillo).jpg",
+      "sourcePhotoFingerprint": "4ee9bb17413bd6a3bb792c9981cc7103219f2aac",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 47,
+      "workGroup": "CANONICAL::ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "title": "Daniel in the Lions’ Den",
+      "artist": "Peter Paul Rubens",
+      "proposedSlots": [
+        {
+          "id": "HERO-01",
+          "label": "Pray Home · Advent"
+        },
+        {
+          "id": "DOOR-D2",
+          "label": "Prayer doors · Essential Prayers"
+        }
+      ],
+      "reason": "Daniel in the lions' den signals fidelity, trust and biblical expectation; weakly linked to broad Prayer slots.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daniel_in_the_Lion%27s_Den_c1615_Peter_Paul_Rubens.jpg",
+      "sourcePhotoFingerprint": "4f3cc2d9485f596081706af5e347cffcf9eb79dd",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 48,
+      "workGroup": "CANONICAL::ART-aravaggio-avid-with-the-ead-of-oliath",
+      "title": "David with the Head of Goliath",
+      "artist": "Caravaggio",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D9",
+          "label": "Prayer doors · Life and Intentions"
+        },
+        {
+          "id": "COV-daily.personal_rule",
+          "label": "Personal Prayer Rule · cover"
+        }
+      ],
+      "reason": "David and Goliath can connote courage/trials in a daily rule; the current Prayer map lacks a direct narrative slot.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_with_the_Head_of_Goliath-Caravaggio_(c.1606-7).jpg",
+      "sourcePhotoFingerprint": "60ef6fff81a4261f86768e4ae7ff46bf5b0550c1",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 49,
+      "workGroup": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "title": "Descent from the Cross — Prado Passion series",
+      "artist": "Giandomenico Tiepolo",
+      "proposedSlots": [
+        {
+          "id": "HERO-11",
+          "label": "Pray Home · Holy Saturday"
+        },
+        {
+          "id": "STG-pray.stations-13",
+          "label": "Stations of the Cross · scene 13"
+        },
+        {
+          "id": "COV-pray.five_wounds",
+          "label": "Chaplet of Five Wounds · cover"
+        }
+      ],
+      "reason": "Deposition aligns with Station XIII and Holy Saturday; the Five Wounds link is optional meditation.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+      "sourcePhotoFingerprint": "6305d728e1f804b831ef784f6b9363f0e3fde678",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    },
+    {
+      "n": 50,
+      "workGroup": "CANONICAL::C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+      "title": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+      "artist": "Attribution not recorded",
+      "proposedSlots": [
+        {
+          "id": "DOOR-D8",
+          "label": "Prayer doors · Saints and Angels"
+        },
+        {
+          "id": "COV-daily.personal_rule",
+          "label": "Personal Prayer Rule · cover"
+        }
+      ],
+      "reason": "Luke painting the Crucified Christ can fit evangelists and meditative study; not identical to the Crucifixion scene.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg",
+      "sourcePhotoFingerprint": "6065fbc86e0521008a9ed90eb1a1565b3b8941b2",
+      "samePhotoAs": [],
+      "reviewStatus": "PROPOSED_NOT_ACCEPTED",
+      "released": false
+    }
+  ]
+}

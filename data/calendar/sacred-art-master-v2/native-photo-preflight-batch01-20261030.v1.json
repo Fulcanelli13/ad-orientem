@@ -1,0 +1,3604 @@
+{
+  "schema": "AO_SACRED_ART_FIRST73_NATIVE_SHA_SCREEN_V1",
+  "createdUtc": "2026-10-30T11:01:55.039953+00:00",
+  "inputCsv": "data/calendar/sacred-art-master-v1/first-pristine-photo-review.csv",
+  "previousReviewProof": "data/calendar/sacred-art-master-v1/fast-grid-first73-previews-20261030.v1.json",
+  "protectedRecords": 73,
+  "checked": 73,
+  "exactHistoricalShaMatches": 28,
+  "held": 45,
+  "statusCounts": {
+    "NATIVE_SOURCE_MATCHED_SCREENING_ONLY": 28,
+    "HOLD_PRIOR_ORIGINAL_SHA_DIFFERS": 1,
+    "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE": 44
+  },
+  "advisoryFlagCounts": {
+    "MOBILE_HERO_PIXEL_DENSITY_CHECK": 9,
+    "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE": 16,
+    "SUSPECT_DARK_EXTERIOR_MARGIN": 2,
+    "LOW_EDGE_CONTRAST_MANUAL_DETAIL_INSPECTION": 1,
+    "POSSIBLE_UNIFORM_FRAME_OR_MATTE": 1
+  },
+  "notUserPhotoRejections": true,
+  "automatedQualityPassCount": 0,
+  "sourceRecordDeletions": 0,
+  "existing73GalleryMutations": 0,
+  "editorialDecisionsChanged": 0,
+  "finalRightsCertifications": 0,
+  "humanPristineApprovals": 0,
+  "queue1Promotions": 0,
+  "productionMutations": 0,
+  "feeEur": 0,
+  "records": [
+    {
+      "physicalWorkGroup": "CANONICAL::ART-ean-estout-entecost",
+      "title": "Pentecost",
+      "artist": "Jean Restout",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+      "historicalNativeSha256": "2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+      "currentImageSha256": "2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589",
+      "fileBytes": 161524,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        1240,
+        730
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.6986,
+      "screeningSampleDimensions": [
+        768,
+        452
+      ],
+      "outerBandWidthSamplePx": 20,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            158.7,
+            143.6,
+            125.0
+          ],
+          "luminanceMean": 146.0,
+          "luminanceStddev": 52.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            77.9,
+            50.1,
+            41.6
+          ],
+          "luminanceMean": 57.4,
+          "luminanceStddev": 41.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.002
+        },
+        "left": {
+          "rgbMean": [
+            97.2,
+            72.6,
+            59.2
+          ],
+          "luminanceMean": 78.4,
+          "luminanceStddev": 30.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            114.7,
+            91.9,
+            75.4
+          ],
+          "luminanceMean": 96.9,
+          "luminanceStddev": 43.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          128.9,
+          103.4,
+          85.6
+        ],
+        "luminanceMean": 109.0,
+        "luminanceStddev": 53.0,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 49.18,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W07-007",
+      "title": "Saint Jerome Writing (Borghese original)",
+      "artist": "Caravaggio",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint%20Jerome%20Writing-Caravaggio%20(1605-6).jpg",
+      "historicalNativeSha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Saint%20Jerome%20Writing-Caravaggio%20(1605-6).jpg",
+      "currentImageSha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+      "fileBytes": 7423474,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        8708,
+        6212
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.4018,
+      "screeningSampleDimensions": [
+        768,
+        548
+      ],
+      "outerBandWidthSamplePx": 25,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            3.7,
+            2.0,
+            4.9
+          ],
+          "luminanceMean": 2.9,
+          "luminanceStddev": 1.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "bottom": {
+          "rgbMean": [
+            66.1,
+            25.8,
+            23.5
+          ],
+          "luminanceMean": 37.6,
+          "luminanceStddev": 32.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.345
+        },
+        "left": {
+          "rgbMean": [
+            9.2,
+            6.5,
+            9.9
+          ],
+          "luminanceMean": 7.8,
+          "luminanceStddev": 5.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.855
+        },
+        "right": {
+          "rgbMean": [
+            48.8,
+            34.9,
+            31.8
+          ],
+          "luminanceMean": 38.7,
+          "luminanceStddev": 30.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.186
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          62.1,
+          38.8,
+          32.2
+        ],
+        "luminanceMean": 45.1,
+        "luminanceStddev": 52.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.371
+      },
+      "edgeContrastStddevHeuristic": 24.97,
+      "advisoryFlags": [
+        "SUSPECT_DARK_EXTERIOR_MARGIN",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+      "historicalNativeSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT5656.jpg",
+      "currentImageSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "fileBytes": 3055151,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        3741,
+        3658
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.0227,
+      "screeningSampleDimensions": [
+        768,
+        751
+      ],
+      "outerBandWidthSamplePx": 34,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            96.9,
+            76.0,
+            52.9
+          ],
+          "luminanceMean": 79.6,
+          "luminanceStddev": 43.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.079
+        },
+        "bottom": {
+          "rgbMean": [
+            93.1,
+            76.8,
+            54.3
+          ],
+          "luminanceMean": 79.1,
+          "luminanceStddev": 52.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.206
+        },
+        "left": {
+          "rgbMean": [
+            73.1,
+            58.1,
+            42.8
+          ],
+          "luminanceMean": 60.8,
+          "luminanceStddev": 45.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.136
+        },
+        "right": {
+          "rgbMean": [
+            95.9,
+            81.7,
+            69.2
+          ],
+          "luminanceMean": 84.5,
+          "luminanceStddev": 45.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.102
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          70.6,
+          66.2,
+          68.4
+        ],
+        "luminanceMean": 67.7,
+        "luminanceStddev": 41.9,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.001
+      },
+      "edgeContrastStddevHeuristic": 32.64,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "historicalNativeSha256": "2ef4e0f8baa052318a3d0850393a8a58f9221ae342a7683b8ea18cc5ad0d7b3d",
+      "status": "HOLD_PRIOR_ORIGINAL_SHA_DIFFERS",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "currentImageSha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+      "fileBytes": 19749000,
+      "originalShaMatched": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-ietro-da-ortona-he-uardian-ngel",
+      "title": "The Guardian Angel",
+      "artist": "Pietro da Cortona",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+      "historicalNativeSha256": "9e1d8a2732d7f156d9fc94d4c552e915c0c54b756049de03a37b3b41ffbae01f",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cortona_Guardian_Angel_01.jpg",
+      "currentImageSha256": "9e1d8a2732d7f156d9fc94d4c552e915c0c54b756049de03a37b3b41ffbae01f",
+      "fileBytes": 103659,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        694,
+        1100
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.6309,
+      "screeningSampleDimensions": [
+        485,
+        768
+      ],
+      "outerBandWidthSamplePx": 22,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            86.3,
+            71.4,
+            58.7
+          ],
+          "luminanceMean": 74.4,
+          "luminanceStddev": 73.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.105
+        },
+        "bottom": {
+          "rgbMean": [
+            47.0,
+            35.2,
+            29.0
+          ],
+          "luminanceMean": 38.0,
+          "luminanceStddev": 28.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.163
+        },
+        "left": {
+          "rgbMean": [
+            79.2,
+            60.8,
+            51.8
+          ],
+          "luminanceMean": 65.3,
+          "luminanceStddev": 56.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.001
+        },
+        "right": {
+          "rgbMean": [
+            26.8,
+            20.8,
+            19.5
+          ],
+          "luminanceMean": 22.5,
+          "luminanceStddev": 12.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.137
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          113.2,
+          95.0,
+          83.8
+        ],
+        "luminanceMean": 99.2,
+        "luminanceStddev": 75.7,
+        "nearWhiteFraction": 0.003,
+        "nearBlackFraction": 0.006
+      },
+      "edgeContrastStddevHeuristic": 35.75,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "historicalNativeSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "currentImageSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "fileBytes": 2012474,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2345,
+        3045
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7701,
+      "screeningSampleDimensions": [
+        591,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            113.0,
+            120.9,
+            102.8
+          ],
+          "luminanceMean": 116.4,
+          "luminanceStddev": 54.6,
+          "nearWhiteFraction": 0.001,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            79.0,
+            89.9,
+            80.7
+          ],
+          "luminanceMean": 85.6,
+          "luminanceStddev": 50.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.003
+        },
+        "left": {
+          "rgbMean": [
+            50.9,
+            59.5,
+            57.5
+          ],
+          "luminanceMean": 56.7,
+          "luminanceStddev": 30.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            53.5,
+            78.7,
+            81.8
+          ],
+          "luminanceMean": 71.5,
+          "luminanceStddev": 24.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          134.6,
+          135.4,
+          118.8
+        ],
+        "luminanceMean": 133.3,
+        "luminanceStddev": 57.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 32.38,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::B02-HEART-MARY-MORLETE",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "historicalNativeSha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "currentImageSha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+      "fileBytes": 1951966,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2277,
+        2960
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7693,
+      "screeningSampleDimensions": [
+        591,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            127.9,
+            154.3,
+            145.4
+          ],
+          "luminanceMean": 145.4,
+          "luminanceStddev": 48.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            75.4,
+            87.7,
+            85.2
+          ],
+          "luminanceMean": 83.7,
+          "luminanceStddev": 51.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            48.0,
+            88.3,
+            99.4
+          ],
+          "luminanceMean": 77.5,
+          "luminanceStddev": 23.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            57.5,
+            81.3,
+            82.7
+          ],
+          "luminanceMean": 74.4,
+          "luminanceStddev": 32.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          142.9,
+          142.7,
+          124.7
+        ],
+        "luminanceMean": 140.7,
+        "luminanceStddev": 56.5,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 33.17,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-143784",
+      "title": "Adoration of the Shepherds",
+      "artist": "Carlo Dolci",
+      "sourceUrl": "https://clevelandart.org/art/1968.22",
+      "historicalNativeSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "CMA_OFFICIAL_CURRENT_PRINT",
+      "officialImageUrl": "https://openaccess-cdn.clevelandart.org/1968.22/1968.22_print.jpg",
+      "currentImageSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "fileBytes": 3056285,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2715,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7985,
+      "screeningSampleDimensions": [
+        613,
+        768
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            117.4,
+            93.3,
+            59.9
+          ],
+          "luminanceMean": 96.7,
+          "luminanceStddev": 50.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            58.6,
+            35.9,
+            17.6
+          ],
+          "luminanceMean": 40.6,
+          "luminanceStddev": 12.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            54.3,
+            30.3,
+            15.0
+          ],
+          "luminanceMean": 35.7,
+          "luminanceStddev": 30.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.207
+        },
+        "right": {
+          "rgbMean": [
+            53.3,
+            42.1,
+            32.5
+          ],
+          "luminanceMean": 44.4,
+          "luminanceStddev": 32.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.073
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          50.3,
+          38.1,
+          29.5
+        ],
+        "luminanceMean": 40.8,
+        "luminanceStddev": 38.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.132
+      },
+      "edgeContrastStddevHeuristic": 21.58,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-442488",
+      "title": "The Agony in the Garden",
+      "artist": "Nicolas Poussin",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442488",
+      "historicalNativeSha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-23235-001.jpg",
+      "currentImageSha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "fileBytes": 3749251,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        3153,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7883,
+      "screeningSampleDimensions": [
+        605,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            54.6,
+            31.7,
+            16.9
+          ],
+          "luminanceMean": 36.8,
+          "luminanceStddev": 10.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            52.3,
+            32.1,
+            19.7
+          ],
+          "luminanceMean": 36.7,
+          "luminanceStddev": 4.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            59.1,
+            35.4,
+            21.6
+          ],
+          "luminanceMean": 40.9,
+          "luminanceStddev": 4.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            54.9,
+            34.7,
+            22.2
+          ],
+          "luminanceMean": 39.3,
+          "luminanceStddev": 5.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          69.5,
+          37.9,
+          18.3
+        ],
+        "luminanceMean": 45.1,
+        "luminanceStddev": 12.9,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 10.11,
+      "advisoryFlags": [
+        "LOW_EDGE_CONTRAST_MANUAL_DETAIL_INSPECTION"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-148758",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "sourceUrl": "https://clevelandart.org/art/1976.2",
+      "historicalNativeSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "CMA_OFFICIAL_CURRENT_PRINT",
+      "officialImageUrl": "https://openaccess-cdn.clevelandart.org/1976.2/1976.2_print.jpg",
+      "currentImageSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "fileBytes": 2841935,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2563,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7538,
+      "screeningSampleDimensions": [
+        579,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            22.3,
+            13.7,
+            6.8
+          ],
+          "luminanceMean": 15.5,
+          "luminanceStddev": 9.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.298
+        },
+        "bottom": {
+          "rgbMean": [
+            41.3,
+            23.8,
+            14.9
+          ],
+          "luminanceMean": 28.0,
+          "luminanceStddev": 18.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.1
+        },
+        "left": {
+          "rgbMean": [
+            52.1,
+            41.6,
+            32.8
+          ],
+          "luminanceMean": 43.7,
+          "luminanceStddev": 35.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.012
+        },
+        "right": {
+          "rgbMean": [
+            67.1,
+            47.8,
+            34.6
+          ],
+          "luminanceMean": 52.1,
+          "luminanceStddev": 28.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          65.6,
+          44.0,
+          26.7
+        ],
+        "luminanceMean": 48.5,
+        "luminanceStddev": 43.4,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.047
+      },
+      "edgeContrastStddevHeuristic": 25.55,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "title": "Adoration of the Magi",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+      "historicalNativeSha256": "b2f6afdaed9a31f351a44aede5cdf7621d10847cbafa39f7f1e4fa23333f2ded",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+      "currentImageSha256": "b2f6afdaed9a31f351a44aede5cdf7621d10847cbafa39f7f1e4fa23333f2ded",
+      "fileBytes": 7873218,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        3051,
+        2131
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": 1,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 1.4317,
+      "screeningSampleDimensions": [
+        768,
+        536
+      ],
+      "outerBandWidthSamplePx": 24,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            49.6,
+            51.2,
+            45.2
+          ],
+          "luminanceMean": 50.0,
+          "luminanceStddev": 26.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            45.3,
+            40.9,
+            31.2
+          ],
+          "luminanceMean": 41.1,
+          "luminanceStddev": 23.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            47.9,
+            47.4,
+            44.0
+          ],
+          "luminanceMean": 47.2,
+          "luminanceStddev": 13.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            46.9,
+            43.7,
+            37.9
+          ],
+          "luminanceMean": 44.0,
+          "luminanceStddev": 30.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.042
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          73.3,
+          61.0,
+          45.4
+        ],
+        "luminanceMean": 62.9,
+        "luminanceStddev": 41.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 42.58,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "artist": "David Teniers the Elder",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "historicalNativeSha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "currentImageSha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+      "fileBytes": 1916709,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        1333,
+        1799
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.741,
+      "screeningSampleDimensions": [
+        569,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            78.6,
+            63.5,
+            46.9
+          ],
+          "luminanceMean": 66.1,
+          "luminanceStddev": 35.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            67.7,
+            54.0,
+            50.0
+          ],
+          "luminanceMean": 57.6,
+          "luminanceStddev": 26.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            74.5,
+            56.8,
+            41.9
+          ],
+          "luminanceMean": 60.4,
+          "luminanceStddev": 35.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.001
+        },
+        "right": {
+          "rgbMean": [
+            59.0,
+            40.8,
+            29.0
+          ],
+          "luminanceMean": 44.9,
+          "luminanceStddev": 25.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          84.8,
+          47.6,
+          31.4
+        ],
+        "luminanceMean": 56.9,
+        "luminanceStddev": 48.4,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.092
+      },
+      "edgeContrastStddevHeuristic": 32.44,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829",
+      "title": "Andrey Ivanov, St. Ambrose Barring Theodosius from Milan Cathedral, 1829, Tretyakov Gallery Ж-560.jpg",
+      "artist": "Andrey Ivanov",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg",
+      "historicalNativeSha256": "48070e74dba62b670e6442dd27d2ab4e55cb85a2edfb7914861611e22059b210",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg",
+      "currentImageSha256": "48070e74dba62b670e6442dd27d2ab4e55cb85a2edfb7914861611e22059b210",
+      "fileBytes": 1060036,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        1544,
+        2048
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7539,
+      "screeningSampleDimensions": [
+        579,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            82.5,
+            66.0,
+            48.6
+          ],
+          "luminanceMean": 68.9,
+          "luminanceStddev": 33.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            85.5,
+            66.1,
+            47.7
+          ],
+          "luminanceMean": 69.8,
+          "luminanceStddev": 36.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.016
+        },
+        "left": {
+          "rgbMean": [
+            70.8,
+            57.4,
+            41.2
+          ],
+          "luminanceMean": 59.5,
+          "luminanceStddev": 39.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            94.1,
+            71.4,
+            53.5
+          ],
+          "luminanceMean": 76.1,
+          "luminanceStddev": 41.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.002
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          92.1,
+          68.9,
+          46.6
+        ],
+        "luminanceMean": 73.3,
+        "luminanceStddev": 34.0,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 29.55,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+      "title": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+      "artist": "follower of Anthony van Dyck",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg",
+      "historicalNativeSha256": "548234a595344a0e5b9ae2f100d2e0994083d6988e523b9e6e6b3314e9fd720a",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg",
+      "currentImageSha256": "548234a595344a0e5b9ae2f100d2e0994083d6988e523b9e6e6b3314e9fd720a",
+      "fileBytes": 710708,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        1301,
+        1692
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7689,
+      "screeningSampleDimensions": [
+        591,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            30.0,
+            30.2,
+            32.1
+          ],
+          "luminanceMean": 30.3,
+          "luminanceStddev": 6.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            63.0,
+            54.2,
+            44.8
+          ],
+          "luminanceMean": 55.8,
+          "luminanceStddev": 23.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            66.3,
+            49.5,
+            36.7
+          ],
+          "luminanceMean": 53.1,
+          "luminanceStddev": 25.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            36.1,
+            36.7,
+            35.2
+          ],
+          "luminanceMean": 36.3,
+          "luminanceStddev": 24.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          90.8,
+          66.8,
+          45.4
+        ],
+        "luminanceMean": 71.5,
+        "luminanceStddev": 41.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 26.28,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W14-016",
+      "title": "Apostle Judas Thaddeus (Böhler series)",
+      "artist": "Anthony van Dyck",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Apostel_Judas_Thadd%C3%A4us_-_GG_6809_-_Kunsthistorisches_Museum.jpg",
+      "historicalNativeSha256": "5d48dee61e04b458e635dce387e216471638dcfb4e0f1d263e5013ebffe298bf",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anthonis_van_Dyck%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Apostel_Judas_Thadd%C3%A4us_-_GG_6809_-_Kunsthistorisches_Museum.jpg",
+      "currentImageSha256": "5d48dee61e04b458e635dce387e216471638dcfb4e0f1d263e5013ebffe298bf",
+      "fileBytes": 596977,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        1244,
+        1555
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": 1,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8,
+      "screeningSampleDimensions": [
+        614,
+        768
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            42.2,
+            21.7,
+            16.3
+          ],
+          "luminanceMean": 27.2,
+          "luminanceStddev": 13.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.043
+        },
+        "bottom": {
+          "rgbMean": [
+            49.4,
+            31.1,
+            18.3
+          ],
+          "luminanceMean": 35.1,
+          "luminanceStddev": 46.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.487
+        },
+        "left": {
+          "rgbMean": [
+            26.1,
+            12.9,
+            10.0
+          ],
+          "luminanceMean": 16.5,
+          "luminanceStddev": 11.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.373
+        },
+        "right": {
+          "rgbMean": [
+            68.8,
+            40.5,
+            23.9
+          ],
+          "luminanceMean": 47.1,
+          "luminanceStddev": 22.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.014
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          85.3,
+          54.4,
+          32.7
+        ],
+        "luminanceMean": 61.2,
+        "luminanceStddev": 46.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.149
+      },
+      "edgeContrastStddevHeuristic": 41.87,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W38-006",
+      "title": "Apostle Philip",
+      "artist": "Anthony van Dyck",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg",
+      "historicalNativeSha256": "faa567ee507b19d0ae340c03994d8324894f756a4211280c410c146542d792fe",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "title": "Ascension — Antwerp Rosary cycle",
+      "artist": "Artus Wolffort",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+      "historicalNativeSha256": "b1a754b0b1b42454e9021b663f25fc8459be329eff73f2bb81fbefc4ce7421d2",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436672",
+      "title": "Christ among the Doctors",
+      "artist": "Abraham Hondius",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436672",
+      "historicalNativeSha256": "36b3bed7dbe53ac4c32d2627c68f3d8bee159814d1b3105c42433e82e869a3f6",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP147792.jpg",
+      "currentImageSha256": "36b3bed7dbe53ac4c32d2627c68f3d8bee159814d1b3105c42433e82e869a3f6",
+      "fileBytes": 2015792,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        3895,
+        2998
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.2992,
+      "screeningSampleDimensions": [
+        768,
+        591
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            46.2,
+            41.6,
+            33.7
+          ],
+          "luminanceMean": 42.1,
+          "luminanceStddev": 22.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.022
+        },
+        "bottom": {
+          "rgbMean": [
+            65.8,
+            56.4,
+            44.7
+          ],
+          "luminanceMean": 57.9,
+          "luminanceStddev": 17.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.027
+        },
+        "left": {
+          "rgbMean": [
+            32.1,
+            25.9,
+            19.8
+          ],
+          "luminanceMean": 27.0,
+          "luminanceStddev": 11.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.099
+        },
+        "right": {
+          "rgbMean": [
+            41.6,
+            30.0,
+            21.7
+          ],
+          "luminanceMean": 32.5,
+          "luminanceStddev": 15.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.034
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          81.9,
+          62.2,
+          44.7
+        ],
+        "luminanceMean": 66.1,
+        "luminanceStddev": 21.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 20.1,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+      "title": "Christ Carrying the Cross",
+      "artist": "Titian",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+      "historicalNativeSha256": "19dcd79059a7a4b928a1a20f97bdb546563a13bbbc7344300be2842a616ca231",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::prado-ribalta-p002804",
+      "title": "Christ embracing Saint Bernard",
+      "artist": "Francisco Ribalta",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_Ribalta_001.jpg",
+      "historicalNativeSha256": "ccb0da3f5aeb5a60644037a047f883ab74e5cd9ddc2b16c1ef721f37829a8b3c",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Francisco_Ribalta_001.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436199",
+      "historicalNativeSha256": "f68a9d408b8d03554f26cd84aa31a9c4f7f4eafd0693482bdba2ce69d7536a97",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-22532-001.jpg",
+      "currentImageSha256": "f68a9d408b8d03554f26cd84aa31a9c4f7f4eafd0693482bdba2ce69d7536a97",
+      "fileBytes": 3874119,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        4000,
+        3254
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 1.2293,
+      "screeningSampleDimensions": [
+        768,
+        625
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            26.9,
+            22.2,
+            19.7
+          ],
+          "luminanceMean": 23.3,
+          "luminanceStddev": 26.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.486
+        },
+        "bottom": {
+          "rgbMean": [
+            39.7,
+            30.3,
+            23.1
+          ],
+          "luminanceMean": 32.3,
+          "luminanceStddev": 32.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.453
+        },
+        "left": {
+          "rgbMean": [
+            21.2,
+            16.9,
+            14.4
+          ],
+          "luminanceMean": 17.9,
+          "luminanceStddev": 20.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.527
+        },
+        "right": {
+          "rgbMean": [
+            28.9,
+            23.3,
+            19.3
+          ],
+          "luminanceMean": 24.5,
+          "luminanceStddev": 21.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.368
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          56.3,
+          43.5,
+          29.3
+        ],
+        "luminanceMean": 45.7,
+        "luminanceStddev": 18.0,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 24.1,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+      "title": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+      "artist": "Claude Vignon",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+      "historicalNativeSha256": "136048d44bc80fd92087818b91e0fdf858ed2fb6e8ad617fb714a28b7c1d1603",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "title": "Conversion of Saint Paul",
+      "artist": "Bartolomé Esteban Murillo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_conversi%C3%B3n_de_san_Pablo_(Murillo).jpg",
+      "historicalNativeSha256": "3fc8e693014d672a5b10654599a86ccf7a8803f7e7e452c0a7880b0c781db9ed",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_conversi%C3%B3n_de_san_Pablo_(Murillo).jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "title": "Daniel in the Lions’ Den",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daniel_in_the_Lion%27s_Den_c1615_Peter_Paul_Rubens.jpg",
+      "historicalNativeSha256": "751de49baa30c7426536bdf89e2653668241a926685d1db8d2c2ca3684075e9f",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Daniel_in_the_Lion%27s_Den_c1615_Peter_Paul_Rubens.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-aravaggio-avid-with-the-ead-of-oliath",
+      "title": "David with the Head of Goliath",
+      "artist": "Caravaggio",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_with_the_Head_of_Goliath-Caravaggio_(c.1606-7).jpg",
+      "historicalNativeSha256": "4f82a7b49ae683d72fb3ca861286c18cfd226b8e5c1c8d3508d3f1bc370fdeb5",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/David_with_the_Head_of_Goliath-Caravaggio_(c.1606-7).jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "title": "Descent from the Cross — Prado Passion series",
+      "artist": "Giandomenico Tiepolo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+      "historicalNativeSha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+      "title": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+      "artist": "Attribution not recorded",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg",
+      "historicalNativeSha256": "918ccb7d9e2d651ec5e922525c5fd7d448bda32a0cb3e1c09807f3a77b66a19f",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+      "title": "Garden of Eden with the Fall",
+      "artist": "Peter Paul Rubens and Jan Brueghel the Elder",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_Brueghel_de_Oude_en_Peter_Paul_Rubens_-_Het_aards_paradijs_met_de_zondeval_van_Adam_en_Eva.jpg",
+      "historicalNativeSha256": "f5b7b928066af4e8d3d65cf26063f830dc33e4d1c28704687dbf455f0ed1c203",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jan_Brueghel_de_Oude_en_Peter_Paul_Rubens_-_Het_aards_paradijs_met_de_zondeval_van_Adam_en_Eva.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W36-SNT-AP-03-3e9d9be5f41a",
+      "title": "Guido Reni - Saint James the Greater - Google Art Project",
+      "artist": "Guido Reni",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+      "historicalNativeSha256": "5f6aafd4ea2d304cacb8fb11fd8faac5bb8005b6878d4a6b7b785217568b3ed2",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+      "title": "Immaculate Conception",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Immaculate_Conception_(Prado).jpg",
+      "historicalNativeSha256": "201df794fff9663520c1b23123052ecb5ac87012548336ebc4ea34f55aff78fa",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Peter_Paul_Rubens_-_Immaculate_Conception_(Prado).jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-aravaggio-nspiration-of-aint-atthew",
+      "title": "Inspiration of Saint Matthew",
+      "artist": "Caravaggio",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Inspiration_of_Saint_Matthew-Caravaggio_(1602).jpg",
+      "historicalNativeSha256": "91ab56aa9ff23b5048f9b1b82730cd7e6d10d9d92561261bcfacf95fabdc1d8e",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Inspiration_of_Saint_Matthew-Caravaggio_(1602).jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-os-de-ibera-acob-s-ream",
+      "title": "Jacob’s Dream",
+      "artist": "José de Ribera",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_sue%C3%B1o_de_Jacob%2C_by_Jos%C3%A9_de_Ribera%2C_from_Prado_in_Google_Earth.jpg",
+      "historicalNativeSha256": "a4fdbfe15a0fd139c8cfad66e916baddb9bc758ea9992d4c71915cc8af060e42",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/El_sue%C3%B1o_de_Jacob%2C_by_Jos%C3%A9_de_Ribera%2C_from_Prado_in_Google_Earth.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "title": "Joan of Arc at Coronation of Charles VII",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ingres_coronation_charles_vii.jpg",
+      "historicalNativeSha256": "f74c1875315a9874c8f5f0a16a7b70363ffac1b161bda9c6d0f8e1b8cc71ffc0",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ingres_coronation_charles_vii.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-acopo-intoretto-udith-and-olofernes",
+      "title": "Judith and Holofernes",
+      "artist": "Jacopo Tintoretto",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Judit_y_Holofernes%2C_por_Tintoretto.jpg",
+      "historicalNativeSha256": "7df5df72cc1492bb9d870ecb5f96e1ec3a32423fb3bb8f4afc00d5d03aaa9c12",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Judit_y_Holofernes%2C_por_Tintoretto.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "title": "Martyrdom of Saint Stephen",
+      "artist": "Juan de Juanes",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martirio%20de%20San%20Esteban%2C%20de%20Juan%20de%20Juanes%20(Museo%20del%20Prado).jpg",
+      "historicalNativeSha256": "5e4aa3db3f35edd7a06f033e958a6c3799bf7b35c146f0dc5c7deebc9cc90d3b",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Martirio%20de%20San%20Esteban%2C%20de%20Juan%20de%20Juanes%20(Museo%20del%20Prado).jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "title": "Miracle of Loaves and Fishes",
+      "artist": "Giovanni Lanfranco",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "historicalNativeSha256": "f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::B01-MARK-TINTORETTO-ACCADEMIA",
+      "title": "Miracle of the Slave (Saint Mark intervenes)",
+      "artist": "Jacopo Tintoretto",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+      "historicalNativeSha256": "e1d74fea3f4412e454fe027bf8c1058125940ee3bc4790f3f5019e67d2f61e62",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "title": "Miracles of Saint Ignatius of Loyola",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens,_,_Kunsthistorisches_Museum_Wien,_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
+      "historicalNativeSha256": "2f4a667512623c9b4aa71b8b3c6495668a7e0b37a435980eb2227c91e5b18a39",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "title": "Presentation of Jesus at the Temple",
+      "artist": "Philippe de Champaigne",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+      "historicalNativeSha256": "c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-ean-ouvenet-aising-of-azarus",
+      "title": "Raising of Lazarus",
+      "artist": "Jean Jouvenet",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Raising_of_Lazarus_LACMA_M.2000.179.4.jpg",
+      "historicalNativeSha256": "87f06e786e32bbe98bcbb81d9ef29775204bad94aa18f03a901f06fbacd00807",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Raising_of_Lazarus_LACMA_M.2000.179.4.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "title": "Saint Ambrose Barring Theodosius",
+      "artist": "Anthony van Dyck",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_005.jpg",
+      "historicalNativeSha256": "b7dcde9d1bdd85d0085bae1cb5859f59598062230664a24613eb41209cb976a7",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anthonis_van_Dyck_005.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-hilippe-de-hampaigne-aint-ugustine",
+      "title": "Saint Augustine",
+      "artist": "Philippe de Champaigne",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+      "historicalNativeSha256": "71aacc33afedd79c4fd6f51805989d444708cf8a58fc5c2662f63d8c583ceeba",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W02-001",
+      "title": "Saint Bartholomew (Apostolado series, 1630–35)",
+      "artist": "Jusepe de Ribera",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Bartolom%C3%A9%2C_P001099.jpg",
+      "historicalNativeSha256": "f340c4f47940f530335aeeff8309a4ebd293d49beb40c9902c5abb647f410c22",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ribera_-_San_Bartolom%C3%A9%2C_P001099.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::prado-rubens-p001651",
+      "title": "Saint James the Less",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_jakobus_mindere_grt.jpg",
+      "historicalNativeSha256": "636e9523519b33c105ad6909aa6565eb7e8755edb4e14041ea05ce107555f5ac",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rubens_apostel_jakobus_mindere_grt.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-usepe-de-ibera-aint-erome-riting",
+      "title": "Saint Jerome Writing",
+      "artist": "Jusepe de Ribera",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Jer%C3%B3nimo_escribiendo%2C_P005201.jpg",
+      "historicalNativeSha256": "c6072628e4da5969160b0931ab50d1fc7ee95bb60da491147b6fbe28962459da",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ribera_-_San_Jer%C3%B3nimo_escribiendo%2C_P005201.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::prado-rubens-p001647",
+      "title": "Saint John the Evangelist",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_johannes_grt.jpg",
+      "historicalNativeSha256": "60b7bcf2f8e9d52e9d16e255bf0ca4fde49ef7665a71a754ef6363de0b3771a4",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rubens_apostel_johannes_grt.jpg",
+      "currentImageSha256": "60b7bcf2f8e9d52e9d16e255bf0ca4fde49ef7665a71a754ef6363de0b3771a4",
+      "fileBytes": 1776414,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        1437,
+        1920
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7484,
+      "screeningSampleDimensions": [
+        575,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            30.5,
+            26.2,
+            20.1
+          ],
+          "luminanceMean": 26.8,
+          "luminanceStddev": 2.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            91.9,
+            48.6,
+            36.8
+          ],
+          "luminanceMean": 60.2,
+          "luminanceStddev": 28.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            69.6,
+            48.5,
+            38.7
+          ],
+          "luminanceMean": 53.7,
+          "luminanceStddev": 37.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            74.3,
+            41.8,
+            31.2
+          ],
+          "luminanceMean": 50.3,
+          "luminanceStddev": 19.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          126.1,
+          80.0,
+          61.2
+        ],
+        "luminanceMean": 91.6,
+        "luminanceStddev": 43.4,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 16.0,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::B01-MARK-RENI-GENOA",
+      "title": "Saint Mark the Evangelist — Palazzo Rosso",
+      "artist": "Guido Reni",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guido%20Reni%20San%20Marco%20Evangelista.jpg",
+      "historicalNativeSha256": "fd7adbc610f0d0c9c87f8d472d82a78348152ac5dba5fce9f35195f07607c3ab",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Guido%20Reni%20San%20Marco%20Evangelista.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::B01-MARK-MARATTA-THYSSEN",
+      "title": "Saint Mark the Evangelist (c. 1655–60)",
+      "artist": "Carlo Maratta",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_evangelista_san_Marcos_(Maratta).jpg",
+      "historicalNativeSha256": "265b4cc83d30fa209d7b03838d99d321313674da6aa8c22fc4c653d326432cae",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/El_evangelista_san_Marcos_(Maratta).jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-uido-eni-aint-ary-agdalene",
+      "title": "Saint Mary Magdalene",
+      "artist": "Guido Reni",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_Project.jpg",
+      "historicalNativeSha256": "651aeae81e3cda249643e742916ca9eafc3c755c8cb836c31dfe9b00970f1216",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_Project.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::C34:saintmatthewbyvalentindeboulognejpg",
+      "title": "Saint Matthew, by Valentin de Boulogne.jpg",
+      "artist": "Attribution not recorded",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg",
+      "historicalNativeSha256": "f3999ae23e43db5ef6cf53c4b85caee941100e63b58d6db5a4f6045823c886e6",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-usepe-de-ibera-aint-aul-postolate",
+      "title": "Saint Paul — Apostolate",
+      "artist": "Jusepe de Ribera",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Pablo,_P001074.jpg",
+      "historicalNativeSha256": "d248e0f268437c7120b73280d0221a8ba42fe14b87b2b45de0361f8bdd545961",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ribera_-_San_Pablo%2C_P001074.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "title": "Saint Paul Preaching at Ephesus",
+      "artist": "Eustache Le Sueur",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_-_The_Preaching_of_St_Paul_at_Ephesus_-_WGA12613.jpg",
+      "historicalNativeSha256": "bf5af58043f34dd4ff333e3e6c03126dce5f82579d32f5709f8c81dc79389d2d",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Eustache_Le_Sueur_-_The_Preaching_of_St_Paul_at_Ephesus_-_WGA12613.jpg",
+      "currentImageSha256": "bf5af58043f34dd4ff333e3e6c03126dce5f82579d32f5709f8c81dc79389d2d",
+      "fileBytes": 165215,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        1000,
+        1186
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.8432,
+      "screeningSampleDimensions": [
+        648,
+        768
+      ],
+      "outerBandWidthSamplePx": 29,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            96.2,
+            87.9,
+            71.3
+          ],
+          "luminanceMean": 88.5,
+          "luminanceStddev": 29.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            147.5,
+            115.4,
+            74.3
+          ],
+          "luminanceMean": 120.3,
+          "luminanceStddev": 55.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.017
+        },
+        "left": {
+          "rgbMean": [
+            73.6,
+            60.1,
+            44.2
+          ],
+          "luminanceMean": 62.3,
+          "luminanceStddev": 38.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            74.7,
+            58.6,
+            38.3
+          ],
+          "luminanceMean": 61.1,
+          "luminanceStddev": 35.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.159
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          118.3,
+          88.4,
+          62.7
+        ],
+        "luminanceMean": 94.4,
+        "luminanceStddev": 52.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.001
+      },
+      "edgeContrastStddevHeuristic": 34.79,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-usepe-de-ibera-aint-eter-postolate",
+      "title": "Saint Peter — Apostolate",
+      "artist": "Jusepe de Ribera",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Pedro,_P001071.jpg",
+      "historicalNativeSha256": "db18b13c5ceef7c117bb8d4f45432f951a8f680f4a02964f9d94b6e9768d7c14",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ribera_-_San_Pedro%2C_P001071.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::prado-rubens-p001655",
+      "title": "Saint Simon",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_simon.jpg",
+      "historicalNativeSha256": "e9c63251329eabc576dd14d48c1d4f0349f5995b45440b5f28066bed30aed9b6",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rubens_apostel_simon.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+      "title": "Saint Thomas Aquinas",
+      "artist": "Carlo Crivelli",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "historicalNativeSha256": "67509963a0515b44b6403c7ea33451d96b6e564d9c05e07f7a1e645970afdc0f",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-442491",
+      "title": "Saints Peter and Paul",
+      "artist": "Bartolomeo Manfredi",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442491",
+      "historicalNativeSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-23364-001.jpg",
+      "currentImageSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+      "fileBytes": 3327528,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        4000,
+        3113
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 1.2849,
+      "screeningSampleDimensions": [
+        768,
+        598
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            37.8,
+            30.1,
+            24.8
+          ],
+          "luminanceMean": 31.8,
+          "luminanceStddev": 28.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.276
+        },
+        "bottom": {
+          "rgbMean": [
+            40.9,
+            30.6,
+            23.2
+          ],
+          "luminanceMean": 32.8,
+          "luminanceStddev": 30.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.326
+        },
+        "left": {
+          "rgbMean": [
+            33.0,
+            23.3,
+            16.5
+          ],
+          "luminanceMean": 25.4,
+          "luminanceStddev": 21.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.308
+        },
+        "right": {
+          "rgbMean": [
+            29.7,
+            22.7,
+            17.5
+          ],
+          "luminanceMean": 24.2,
+          "luminanceStddev": 21.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.329
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          56.5,
+          43.3,
+          32.8
+        ],
+        "luminanceMean": 46.0,
+        "luminanceStddev": 25.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 17.26,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-uido-eni-usannah-and-the-lders",
+      "title": "Susannah and the Elders",
+      "artist": "Guido Reni",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Susannah_and_the_Elders_NG196.jpg",
+      "historicalNativeSha256": "ebd4a272ffcb1e22fe8324815e93c933175467fbfa82d66f787457fd69c0c6a4",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Guido_Reni_-_Susannah_and_the_Elders_NG196.jpg",
+      "currentImageSha256": "ebd4a272ffcb1e22fe8324815e93c933175467fbfa82d66f787457fd69c0c6a4",
+      "fileBytes": 68249,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        800,
+        617
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.2966,
+      "screeningSampleDimensions": [
+        768,
+        592
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            24.0,
+            18.3,
+            14.7
+          ],
+          "luminanceMean": 19.6,
+          "luminanceStddev": 5.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.002
+        },
+        "bottom": {
+          "rgbMean": [
+            51.6,
+            37.6,
+            23.8
+          ],
+          "luminanceMean": 40.2,
+          "luminanceStddev": 26.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            67.2,
+            40.2,
+            25.5
+          ],
+          "luminanceMean": 46.6,
+          "luminanceStddev": 18.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            36.1,
+            31.3,
+            23.3
+          ],
+          "luminanceMean": 31.9,
+          "luminanceStddev": 22.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.014
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          69.8,
+          54.7,
+          39.2
+        ],
+        "luminanceMean": 57.5,
+        "luminanceStddev": 44.5,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.001
+      },
+      "edgeContrastStddevHeuristic": 16.23,
+      "advisoryFlags": [
+        "MOBILE_HERO_PIXEL_DENSITY_CHECK",
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436791",
+      "title": "The Annunciation",
+      "artist": "Joos van Cleve",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436791",
+      "historicalNativeSha256": "f294a91e54d1e073bbabf9c5d5ce4d8576febe145dff2ce5d278fc47dfb43d15",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-19433-001.jpg",
+      "currentImageSha256": "f294a91e54d1e073bbabf9c5d5ce4d8576febe145dff2ce5d278fc47dfb43d15",
+      "fileBytes": 6327199,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        3729,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.9323,
+      "screeningSampleDimensions": [
+        716,
+        768
+      ],
+      "outerBandWidthSamplePx": 32,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            69.2,
+            45.3,
+            23.4
+          ],
+          "luminanceMean": 49.9,
+          "luminanceStddev": 44.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.366
+        },
+        "bottom": {
+          "rgbMean": [
+            76.9,
+            64.0,
+            50.4
+          ],
+          "luminanceMean": 66.3,
+          "luminanceStddev": 58.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.373
+        },
+        "left": {
+          "rgbMean": [
+            49.8,
+            44.7,
+            38.7
+          ],
+          "luminanceMean": 45.5,
+          "luminanceStddev": 46.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.332
+        },
+        "right": {
+          "rgbMean": [
+            53.0,
+            30.5,
+            25.4
+          ],
+          "luminanceMean": 36.6,
+          "luminanceStddev": 37.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.386
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          92.6,
+          78.8,
+          65.0
+        ],
+        "luminanceMean": 81.4,
+        "luminanceStddev": 43.1,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 36.02,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436502",
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436502",
+      "historicalNativeSha256": "a76e00046346849d284e777072cff343a60faefa218178663071a08a10dc74b8",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-22842-001.jpg",
+      "currentImageSha256": "a76e00046346849d284e777072cff343a60faefa218178663071a08a10dc74b8",
+      "fileBytes": 2720236,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2926,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7315,
+      "screeningSampleDimensions": [
+        562,
+        768
+      ],
+      "outerBandWidthSamplePx": 25,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            37.0,
+            26.5,
+            13.2
+          ],
+          "luminanceMean": 28.1,
+          "luminanceStddev": 37.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.574
+        },
+        "bottom": {
+          "rgbMean": [
+            42.6,
+            34.0,
+            23.1
+          ],
+          "luminanceMean": 35.3,
+          "luminanceStddev": 36.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.499
+        },
+        "left": {
+          "rgbMean": [
+            30.3,
+            21.4,
+            11.8
+          ],
+          "luminanceMean": 22.9,
+          "luminanceStddev": 36.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.685
+        },
+        "right": {
+          "rgbMean": [
+            35.4,
+            26.6,
+            16.0
+          ],
+          "luminanceMean": 28.0,
+          "luminanceStddev": 35.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.502
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          69.9,
+          58.4,
+          44.3
+        ],
+        "luminanceMean": 60.2,
+        "luminanceStddev": 26.1,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.002
+      },
+      "edgeContrastStddevHeuristic": 22.47,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437738",
+      "title": "The Beheading of Saint John the Baptist",
+      "artist": "Spanish Catalan Painter",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437738",
+      "historicalNativeSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP300711.jpg",
+      "currentImageSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "fileBytes": 2810618,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        3882,
+        3836
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 1.012,
+      "screeningSampleDimensions": [
+        768,
+        759
+      ],
+      "outerBandWidthSamplePx": 34,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            92.5,
+            84.5,
+            60.5
+          ],
+          "luminanceMean": 84.2,
+          "luminanceStddev": 16.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.017
+        },
+        "bottom": {
+          "rgbMean": [
+            101.0,
+            57.7,
+            38.5
+          ],
+          "luminanceMean": 68.5,
+          "luminanceStddev": 25.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.091
+        },
+        "left": {
+          "rgbMean": [
+            119.8,
+            67.8,
+            48.2
+          ],
+          "luminanceMean": 81.1,
+          "luminanceStddev": 17.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.023
+        },
+        "right": {
+          "rgbMean": [
+            92.3,
+            74.8,
+            54.4
+          ],
+          "luminanceMean": 77.7,
+          "luminanceStddev": 27.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.06
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          105.0,
+          68.3,
+          44.7
+        ],
+        "luminanceMean": 76.6,
+        "luminanceStddev": 24.9,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 25.4,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-eter-aul-ubens-he-razen-erpent",
+      "title": "The Brazen Serpent",
+      "artist": "Peter Paul Rubens",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Moses_and_the_Brazen_Serpent.jpg",
+      "historicalNativeSha256": "f3afa409e318bcece6dce61770d773d169e4c31d18f358121c296a1e0ebe1f07",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Peter_Paul_Rubens_-_Moses_and_the_Brazen_Serpent.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W05-027",
+      "title": "The Crucifixion of Saint Peter",
+      "artist": "Caravaggio",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crucifixion%20of%20Saint%20Peter-Caravaggio%20(c.1600)FXD.jpg",
+      "historicalNativeSha256": "0d9f7b9c85319cbb859baa002c684ca788dcf6f5b371819ac18c144af62cf6a2",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Crucifixion%20of%20Saint%20Peter-Caravaggio%20(c.1600)FXD.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-bastien-ourdon-he-inding-of-oses",
+      "title": "The Finding of Moses",
+      "artist": "Sébastien Bourdon",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastien_Bourdon%2C_The_Finding_of_Moses%2C_c._1655-1660%2C_NGA_46164.jpg",
+      "historicalNativeSha256": "88d53fe111628313c80a0f410b620e406d2fc497dc5248d74df961d00baa9551",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/S%C3%A9bastien_Bourdon%2C_The_Finding_of_Moses%2C_c._1655-1660%2C_NGA_46164.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437423",
+      "title": "The Immaculate Conception",
+      "artist": "Guido Reni",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437423",
+      "historicalNativeSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT1138.jpg",
+      "currentImageSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+      "fileBytes": 2104668,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2597,
+        3722
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.6977,
+      "screeningSampleDimensions": [
+        536,
+        768
+      ],
+      "outerBandWidthSamplePx": 24,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            105.7,
+            79.0,
+            54.0
+          ],
+          "luminanceMean": 84.1,
+          "luminanceStddev": 43.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.154
+        },
+        "bottom": {
+          "rgbMean": [
+            77.1,
+            84.5,
+            105.2
+          ],
+          "luminanceMean": 84.7,
+          "luminanceStddev": 34.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.117
+        },
+        "left": {
+          "rgbMean": [
+            117.0,
+            99.2,
+            88.2
+          ],
+          "luminanceMean": 103.2,
+          "luminanceStddev": 58.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.172
+        },
+        "right": {
+          "rgbMean": [
+            107.6,
+            91.3,
+            81.7
+          ],
+          "luminanceMean": 95.1,
+          "luminanceStddev": 48.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.142
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          138.5,
+          108.6,
+          92.0
+        ],
+        "luminanceMean": 115.6,
+        "luminanceStddev": 43.5,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 29.81,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W07-014",
+      "title": "The Incredulity of Saint Thomas",
+      "artist": "Caravaggio",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+      "historicalNativeSha256": "1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Incredulity%20of%20Saint%20Thomas.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "title": "The Lance Thrust",
+      "artist": "Anthony van Dyck",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "historicalNativeSha256": "0dea697a2137bfc3c2145389d495e43921e61335f457b75450eaf5e4e6f4034e",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437977",
+      "title": "The Last Communion of Saint Mary of Egypt",
+      "artist": "Marcantonio Franceschini",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437977",
+      "historicalNativeSha256": "62e1b85b4afa6301eac6a8d6b9974384729f43563c08c3f2ed4e2af80574b90e",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-24112-001.jpg",
+      "currentImageSha256": "62e1b85b4afa6301eac6a8d6b9974384729f43563c08c3f2ed4e2af80574b90e",
+      "fileBytes": 4137773,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        4000,
+        3123
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 1.2808,
+      "screeningSampleDimensions": [
+        768,
+        600
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            35.0,
+            42.6,
+            44.9
+          ],
+          "luminanceMean": 40.6,
+          "luminanceStddev": 49.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.587
+        },
+        "bottom": {
+          "rgbMean": [
+            41.6,
+            37.2,
+            28.9
+          ],
+          "luminanceMean": 37.5,
+          "luminanceStddev": 40.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.514
+        },
+        "left": {
+          "rgbMean": [
+            24.8,
+            28.4,
+            26.5
+          ],
+          "luminanceMean": 27.1,
+          "luminanceStddev": 35.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.555
+        },
+        "right": {
+          "rgbMean": [
+            30.9,
+            27.8,
+            20.3
+          ],
+          "luminanceMean": 27.8,
+          "luminanceStddev": 31.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.52
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          96.8,
+          86.4,
+          68.3
+        ],
+        "luminanceMean": 87.4,
+        "luminanceStddev": 38.6,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 21.3,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-459131",
+      "title": "The Last Supper",
+      "artist": "Ugolino da Siena",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459131",
+      "historicalNativeSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/rl/original/DT3003.jpg",
+      "currentImageSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "fileBytes": 2772824,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        3811,
+        2499
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.525,
+      "screeningSampleDimensions": [
+        768,
+        504
+      ],
+      "outerBandWidthSamplePx": 23,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            175.0,
+            122.5,
+            64.1
+          ],
+          "luminanceMean": 131.5,
+          "luminanceStddev": 38.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            129.2,
+            85.5,
+            49.0
+          ],
+          "luminanceMean": 94.4,
+          "luminanceStddev": 28.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            134.5,
+            84.2,
+            38.5
+          ],
+          "luminanceMean": 94.0,
+          "luminanceStddev": 25.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            146.7,
+            89.0,
+            33.6
+          ],
+          "luminanceMean": 99.9,
+          "luminanceStddev": 24.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          132.9,
+          100.3,
+          67.8
+        ],
+        "luminanceMean": 106.3,
+        "luminanceStddev": 39.9,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 46.49,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::W01-001",
+      "title": "The Martyrdom of Saint Philip",
+      "artist": "Jusepe de Ribera",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_de_Ribera_054.jpg",
+      "historicalNativeSha256": "b2106748f10d00d0fe36f535429a3e17ce4c290586677a5377a162c564c84211",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jos%C3%A9_de_Ribera_054.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437722",
+      "title": "The Mass of Saint Gregory",
+      "artist": "Spanish Painter",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437722",
+      "historicalNativeSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT10252.jpg",
+      "currentImageSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "fileBytes": 4048137,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2991,
+        3721
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.8038,
+      "screeningSampleDimensions": [
+        617,
+        768
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            139.9,
+            71.4,
+            38.1
+          ],
+          "luminanceMean": 88.1,
+          "luminanceStddev": 42.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.047
+        },
+        "bottom": {
+          "rgbMean": [
+            98.0,
+            48.0,
+            23.7
+          ],
+          "luminanceMean": 60.2,
+          "luminanceStddev": 31.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.12
+        },
+        "left": {
+          "rgbMean": [
+            156.4,
+            88.7,
+            54.0
+          ],
+          "luminanceMean": 105.0,
+          "luminanceStddev": 53.3,
+          "nearWhiteFraction": 0.004,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            132.4,
+            78.6,
+            50.6
+          ],
+          "luminanceMean": 91.5,
+          "luminanceStddev": 60.7,
+          "nearWhiteFraction": 0.002,
+          "nearBlackFraction": 0.072
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          132.9,
+          85.8,
+          46.2
+        ],
+        "luminanceMean": 95.4,
+        "luminanceStddev": 54.4,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.009
+      },
+      "edgeContrastStddevHeuristic": 60.99,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436839",
+      "title": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436839",
+      "historicalNativeSha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+      "status": "NATIVE_SOURCE_MATCHED_SCREENING_ONLY",
+      "expectedRightsEvidence": "OFFICIAL_MUSEUM_CC0_AND_HISTORICAL_ARCHIVE_SHA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "MET_OFFICIAL_CURRENT_PRIMARY",
+      "officialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg",
+      "currentImageSha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+      "fileBytes": 3255733,
+      "originalShaMatched": true,
+      "nativeDimensions": [
+        2947,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": 1,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7368,
+      "screeningSampleDimensions": [
+        566,
+        768
+      ],
+      "outerBandWidthSamplePx": 25,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "bottom": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "left": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "right": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          56.6,
+          36.6,
+          25.4
+        ],
+        "luminanceMean": 41.3,
+        "luminanceStddev": 43.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.055
+      },
+      "edgeContrastStddevHeuristic": 29.11,
+      "advisoryFlags": [
+        "SUSPECT_DARK_EXTERIOR_MARGIN",
+        "POSSIBLE_UNIFORM_FRAME_OR_MATTE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-aphael-and-iulio-omano-he-isitation",
+      "title": "The Visitation",
+      "artist": "Raphael and Giulio Romano",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Visitaci%C3%B3n_de_Rafael.jpg",
+      "historicalNativeSha256": "e86c2a06c1c2babca13bc756662e5b02b936bfe4d7938cbd32bff70b6519335b",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Visitaci%C3%B3n_de_Rafael.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::ART-ieter-ruegel-the-lder-ower-of-abel",
+      "title": "Tower of Babel",
+      "artist": "Pieter Bruegel the Elder",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_d._%C3%84.%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Turmbau_zu_Babel_-_GG_1026_-_Kunsthistorisches_Museum.jpg",
+      "historicalNativeSha256": "9e5e71d6c315c898a6f9e896e8b5243c55758ffca4cc73c834d9f42d28bab7c0",
+      "status": "HOLD_NATIVE_IMAGE_RETRIEVAL_OR_SOURCE",
+      "expectedRightsEvidence": "CURRENT_COMMONS_EXACT_FILE_METADATA",
+      "rightsFinallyCertified": false,
+      "humanPristineApproved": false,
+      "queue1Promoted": false,
+      "manualVisualReviewStillRequired": true,
+      "resolvedSourceMethod": "COMMONS_FILE_TITLE",
+      "officialImageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pieter_Bruegel_d._%C3%84.%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Turmbau_zu_Babel_-_GG_1026_-_Kunsthistorisches_Museum.jpg",
+      "error": "HTTPError:HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    }
+  ]
+}

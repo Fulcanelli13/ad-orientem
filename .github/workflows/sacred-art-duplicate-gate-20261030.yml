@@ -1,0 +1,72 @@
+name: Sacred Art duplicate comparison · single offline HTML (€0)
+on:
+  push:
+    branches:
+      - research/sacred-art-duplicate-gate-20261030
+    paths:
+      - scripts/art/build-sacred-art-duplicate-review-20261030.mjs
+      - scripts/art/sacred-art-duplicate-review-template-20261030.html
+      - scripts/art/recover-sacred-art-duplicate-images-20261030.py
+      - .github/workflows/sacred-art-duplicate-gate-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-duplicate-gate-20261030
+  cancel-in-progress: false
+jobs:
+  build-reviewed-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate one self-contained duplicate comparison page
+        run: node scripts/art/build-sacred-art-duplicate-review-20261030.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install thumbnail validation dependency
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Recover exact object photographs and withhold incomplete comparisons
+        run: python scripts/art/recover-sacred-art-duplicate-images-20261030.py
+      - name: Verify review safety and embedded previews
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          import { Script } from 'node:vm';
+          const summary=JSON.parse(readFileSync('data/calendar/sacred-art-master-v2/duplicate-review-page-manifest-20261030.v1.json','utf8'));
+          const html=readFileSync('docs/SACRED_ART_DUPLICATE_REVIEW_20261030.html','utf8');
+          if(summary.reviewedCards!==444||summary.registryRecords!==3205||summary.operationalArtworkGroups!==989)
+            throw Error('Input scope changed');
+          if(summary.byConfidence['EXACT SOURCE']!==6)throw Error('Six source-identity pairs absent');
+          if(!html.includes('NOT_DUPLICATE_KEEP_ALL')||!html.includes('SAME_WORK_KEEP_PREFERRED')||
+            !html.includes('Export decisions (JSON)')||!html.includes('data:image/jpeg;base64,'))
+            throw Error('Reviewer missing decisions or offline images');
+          if(!summary.incompleteGroupsHidden || summary.groupsFullyEmbedded + summary.groupsHeldIncomplete!==summary.groups)
+            throw Error('Incomplete comparisons must be hidden from reviewers');
+          if(summary.previousApprovalsChanged!==0||summary.queue1Promotions!==0||summary.productionMutations!==0)
+            throw Error('Unsafe approval or queue mutation');
+          const inline=html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
+          if(!inline)throw Error('No inline review JS');
+          new Script(inline,{filename:'sacred-art-duplicate-review-inline.js'});
+          const idx=JSON.parse(readFileSync('data/calendar/sacred-art-master-v2/duplicate-review-groups-20261030.v1.json','utf8'));
+          if(idx.groups.length!==summary.groups||idx.snapshot!==summary.snapshot)
+            throw Error('Group manifest differs from offline HTML');
+          console.log(summary);
+          NODE
+      - name: Persist review page and proof in the research branch
+        run: |
+          git config user.name "Ad Orientem sacred-art QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_DUPLICATE_REVIEW_20261030.html data/calendar/sacred-art-master-v2/duplicate-review-page-manifest-20261030.v1.json data/calendar/sacred-art-master-v2/duplicate-review-groups-20261030.v1.json data/calendar/sacred-art-master-v2/duplicate-review-image-recovery-20261030.v1.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "build(sacred-art): offline duplicate-choice gallery and review manifest [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi

@@ -1,0 +1,55 @@
+name: Sacred Art Batch 02 official museums native QA (€0)
+on:
+  push:
+    branches: [research/sacred-art-duplicate-gate-20261030]
+    paths:
+      - scripts/art/native-preflight-sacred-art-batch02-museums-20261030.py
+      - .github/workflows/sacred-art-batch02-museum-native-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-batch02-museum-native-20261030
+  cancel-in-progress: false
+jobs:
+  official-native-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Native image file validation
+        run: |
+          python -m py_compile scripts/art/native-preflight-sacred-art-batch02-museums-20261030.py
+          python scripts/art/native-preflight-sacred-art-batch02-museums-20261030.py
+      - name: Ensure zero rights or photo auto-approvals
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('data/calendar/sacred-art-master-v2/native-photo-preflight-batch02-official-museums-20261030.v1.json').read_text())
+          assert r['cases']==40==len(r['records'])
+          assert len({x['physicalWorkGroup'] for x in r['records']})==40
+          assert sum(r['resultsByStatus'].values())==40
+          assert r['humanPhotoApprovals']==r['fileRightsFinalCertifications']==r['queue1Promotions']==r['productionChanges']==r['feesEur']==0
+          assert r['originalSourceRecordsMutated']==r['editorialDecisionsMutated']==0
+          assert all(not x['humanPhotoApproved'] and not x['fileRightsFinallyCertified'] and not x['queue1Promotion'] for x in r['records'])
+          print('VALIDATED 40 official museum source checks, zero release')
+          PY
+      - name: Preserve evidence only on research branch
+        run: |
+          git config user.name "Ad Orientem Sacred Art QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-master-v2/native-photo-preflight-batch02-official-museums-20261030.v1.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "research(sacred-art): record native-quality preflight for 40 official museum sources [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi

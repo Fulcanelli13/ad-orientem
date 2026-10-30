@@ -1,0 +1,111 @@
+{
+  "schema": "AO_SACRED_ART_DUPLICATE_DECISION_LEDGER_V1",
+  "sourceReviewSchema": "AO_SACRED_ART_DUPLICATE_REVIEW_DECISIONS_V1",
+  "sourceRegistrySnapshot": "71537a018e39e7",
+  "sourceGroupIndex": "data/calendar/sacred-art-master-v2/duplicate-review-groups-20261030.v1.json",
+  "sourceUserSelections": "data/calendar/sacred-art-master-v2/duplicate-review-user-selections-20261030.v1.json",
+  "totalGroupCount": 18,
+  "decisionsRecorded": 4,
+  "markedNotDuplicate": 0,
+  "preferredPhotoSelections": 4,
+  "unresolvedGroups": 14,
+  "decisions": [
+    {
+      "groupId": "DUP-1e2ac5289479e5",
+      "identityDisposition": "SAME_WORK_KEEP_PREFERRED",
+      "preferredSourceRecord": "REVIEW::commons:45282804",
+      "allRecordsRetained": true,
+      "priorEditorialDecisionsPreserved": true,
+      "requiresFinalExactPhotoRightAndByteQa": true,
+      "notDuplicatePairHold": [],
+      "memberIds": [
+        "REVIEW::commons:45282804",
+        "REVIEW::met:437542"
+      ],
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Avilai.jpg",
+        "https://www.metmuseum.org/art/collection/search/437542"
+      ],
+      "displayedPhotoSourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Avilai.jpg",
+        "https://www.metmuseum.org/art/collection/search/437542"
+      ],
+      "preferredDisplayedPhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Avilai.jpg",
+      "decidedAt": "2026-10-30T09:55:31Z"
+    },
+    {
+      "groupId": "DUP-2fcd46ed1ba6c4",
+      "identityDisposition": "SAME_WORK_KEEP_PREFERRED",
+      "preferredSourceRecord": "CANONICAL::met-436839",
+      "allRecordsRetained": true,
+      "priorEditorialDecisionsPreserved": true,
+      "requiresFinalExactPhotoRightAndByteQa": true,
+      "notDuplicatePairHold": [],
+      "memberIds": [
+        "CANONICAL::met-436839",
+        "PRAYER::confession--latour-magdalen"
+      ],
+      "sourceUrls": [
+        "https://www.metmuseum.org/art/collection/search/436839",
+        "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg"
+      ],
+      "displayedPhotoSourceUrls": [
+        "https://www.metmuseum.org/art/collection/search/436839",
+        "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg"
+      ],
+      "preferredDisplayedPhotoSourceUrl": "https://www.metmuseum.org/art/collection/search/436839",
+      "decidedAt": "2026-10-30T09:55:31Z"
+    },
+    {
+      "groupId": "DUP-e0c4571c7146e2",
+      "identityDisposition": "SAME_WORK_KEEP_PREFERRED",
+      "preferredSourceRecord": "CANONICAL::met-438434",
+      "allRecordsRetained": true,
+      "priorEditorialDecisionsPreserved": true,
+      "requiresFinalExactPhotoRightAndByteQa": true,
+      "notDuplicatePairHold": [],
+      "memberIds": [
+        "CANONICAL::met-438434",
+        "PRAYER::adoration--primary"
+      ],
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+        "https://www.metmuseum.org/art/collection/search/438434"
+      ],
+      "displayedPhotoSourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+        "https://www.metmuseum.org/art/collection/search/438434"
+      ],
+      "preferredDisplayedPhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+      "decidedAt": "2026-10-30T09:55:31Z"
+    },
+    {
+      "groupId": "DUP-ee5b27f191de26",
+      "identityDisposition": "SAME_WORK_KEEP_PREFERRED",
+      "preferredSourceRecord": "REVIEW::commons:22178536",
+      "allRecordsRetained": true,
+      "priorEditorialDecisionsPreserved": true,
+      "requiresFinalExactPhotoRightAndByteQa": true,
+      "notDuplicatePairHold": [],
+      "memberIds": [
+        "REVIEW::commons:22178536",
+        "REVIEW::commons:75000039"
+      ],
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+        "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary%2C_c._1610_(Getty_Center).jpg"
+      ],
+      "displayedPhotoSourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+        "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary%2C_c._1610_(Getty_Center).jpg"
+      ],
+      "preferredDisplayedPhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+      "decidedAt": "2026-10-30T09:55:31Z"
+    }
+  ],
+  "masterEditorialDecisionsChanged": 0,
+  "queue1Promotions": 0,
+  "originalFileRightsCertified": 0,
+  "productionImports": 0,
+  "feeEur": 0
+}
