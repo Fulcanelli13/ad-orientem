@@ -42,12 +42,20 @@ function memberFromCard(c){
   label:"Reviewed Batch "+c.batch,rights:c.rightsLabel||"",
   preview:c.preview||c.remotePreview||"",sourceFingerprint:c.sourcePhotoFingerprint||""};
 }
+// Source corrections are non-destructive overlays: preserve the historic URL for provenance.
+const exactSourceCorrections=new Map([
+ ["HERO::LOCAL-BENSON-SALVATOR","https://www.christies.com/en/lot/lot-6238407"],
+ ["PRAYER::historic:anthony van dyck:the lance thrust","https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg"]
+]);
 function memberFromWork(w){
  const c=cardById.get(w.workGroupId);
  if(c)return memberFromCard(c);
- const url=w.selectedSourceUrl||"";
+ const url=exactSourceCorrections.get(w.workGroupId)||w.selectedSourceUrl||"";
+ const historicIncorrectSourceUrl=exactSourceCorrections.has(w.workGroupId)?w.selectedSourceUrl||"":"";
  return {id:w.workGroupId,title:w.artworkTitle||"",artist:w.artist||"",sourceUrl:url,
   label:"Master candidate · "+(w.queue||"research"),rights:w.rightsLabel||"",
+  originalSourceBeforeCorrection:historicIncorrectSourceUrl,
+  sourceCorrectionEvidence:historicIncorrectSourceUrl?"Source record corrected; original preserved in immutable master":"",
   preview:embeddedByUrl.get(normUrl(url))||w.qualityReviewPreviewUrl||"",
   sourceFingerprint:w.selectedPhotoFingerprint||""};
 }
