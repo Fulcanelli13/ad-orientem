@@ -1,3 +1,4 @@
+import "./home-h4-door.mjs";
 import assert from "node:assert/strict";
 import {
   HOME_PRESENTATION_VERSION,
