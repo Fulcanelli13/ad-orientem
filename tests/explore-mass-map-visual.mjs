@@ -4,8 +4,11 @@ import {mkdir,readFile,writeFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
-import {PRELIMINARY_R49_TOTAL,PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
-const APPROVED_MASS_MAP_TOTAL=PRELIMINARY_R49_TOTAL+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
+import {PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
+import {CL2_PHYSICAL_SITE_COUNT,CL2_EXPECTED_R49_GROUPS} from "../src/find/cl2-physical-directory.js";
+// The worldwide list includes 735 address-only sites with no corresponding pins.
+const WORLDWIDE_DIRECTORY_TOTAL=CL2_PHYSICAL_SITE_COUNT+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
+const MAPPED_MASS_PINS_TOTAL=CL2_EXPECTED_R49_GROUPS+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
 
 // This acceptance captures the actual traditional Mass screen, which the
 // general app visual suite does not cover. No fake map data or synthetic UI.
@@ -89,7 +92,12 @@ try{
       null,{timeout:30000});
     await page.waitForFunction(expected=>Number(document.querySelector(
       '#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===expected,
-      APPROVED_MASS_MAP_TOTAL,{timeout:30000});
+      WORLDWIDE_DIRECTORY_TOTAL,{timeout:30000});
+    await page.waitForFunction(expected=>document.querySelector(
+      '#ao-find-modular-root .aoFindResultMeta')?.textContent?.includes(String(expected)),
+      735,{timeout:10000});
+    assert.equal(MAPPED_MASS_PINS_TOTAL,1847,
+      "Only source-backed positioned sites and three approved additions receive map pins");
     // Give the external free map engine a bounded opportunity to render.
     await Promise.race([
       page.waitForSelector('.aoFindMap[data-ao-map-state="ready"]',
@@ -188,7 +196,7 @@ try{
     assert.equal(mapDiagnostics.badgeImage,true,
       config.name+": Cluster sprite is missing");
     assert.ok((mapDiagnostics.badges??0)>0,
-      config.name+": No clusters are visible despite 1,879 source locations; "+JSON.stringify(mapDiagnostics));
+      config.name+": No clusters are visible despite 1,847 source-backed map locations; "+JSON.stringify(mapDiagnostics));
     assert.equal(mapDiagnostics.compactCountOnly,true,
       config.name+": Map markers must show only a compact count, never affiliation text boxes");
     assert.equal(errors.length,0,config.name+": browser runtime errors: "+errors.join("; "));
