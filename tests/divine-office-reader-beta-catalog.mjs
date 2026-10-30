@@ -11,10 +11,14 @@ test("all eight canonical Hours have a reusable date/Hour selection, without a y
  assert.deepEqual(OFFICE_BETA_HOURS,ANNUAL_OFFICE_HOURS);
  assert.equal(OFFICE_BETA_HOURS.length,8);
  const available=officeBetaImplementedHours();
- assert.equal(available.length,3);
- assert.deepEqual(available.map(x=>x.key),["advent-i-2026-first-vespers",
+ assert.equal(available.length,9);
+ assert.deepEqual(available.map(x=>x.key).slice(0,3),[
+  "advent-i-2026-first-vespers",
   "advent-i-2026-saturday-compline",
   "advent-i-2026-ferial-tuesday-compline"]);
+ assert.deepEqual(available.slice(3).map(x=>x.civilDate),
+  ["2026-11-29","2026-11-30","2026-12-02","2026-12-03",
+   "2026-12-04","2026-12-05"]);
  assert.ok(Object.isFrozen(available));
  assert.ok(Object.isFrozen(available[0]));
 });
@@ -55,11 +59,24 @@ test("Tuesday Advent I ferial Compline is explicitly appointed, not guessed for 
  assert.equal(r.entry.publishable,false);
  assert.equal(r.published,false);
 });
+test("reviewed week has eight distinct Compline dates, while II-class St Andrew uses Sunday Psalms",()=>{
+ for(const date of ["2026-11-28","2026-11-29","2026-11-30",
+  "2026-12-01","2026-12-02","2026-12-03","2026-12-04",
+  "2026-12-05"]){
+  const r=reviewOfficeBetaSelection({date,hour:"COMPLINE"});
+  assert.equal(r.status,"SOURCE_FIRST_RESEARCH_PREVIEW_AVAILABLE");
+  assert.equal(r.entry.publishable,false);
+ }
+ const andrew=reviewOfficeBetaSelection({date:"2026-11-30",hour:"COMPLINE"});
+ assert.equal(andrew.entry.appointedPsalmDay,"Dominica");
+ assert.equal(andrew.entry.officeClass,"II_FEAST");
+});
 test("date/Hour combinations not implemented do not silently render any Office",()=>{
  for(const args of [
   {date:"2026-11-28",hour:"LAUDS"},
   {date:"2026-11-29",hour:"VESPERS"},
-  {date:"2026-12-02",hour:"COMPLINE"},
+  {date:"2026-12-06",hour:"COMPLINE"},
+  {date:"2026-12-08",hour:"COMPLINE"},
   {date:"2026-10-30",hour:"VESPERS"},
   {date:"2027-11-27",hour:"VESPERS"}
  ]){
