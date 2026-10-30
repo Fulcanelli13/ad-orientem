@@ -534,19 +534,19 @@ const records={
  reviewBatch:firstReview.map(x=>({id:x.physical_work_group,source:x.source_record,
   decision:"PENDING_USER_REVIEW"})),
  release:{productionMutation:false,editorialChanges:0,userPhotoApproved:0}};
-writeFileSync(out+"master.json",JSON.stringify(records,null,2)+"\n",{flag:"wx"});
-writeFileSync(out+"master.csv",csv(masterRows,Object.keys(masterRows[0])),{flag:"wx"});
+writeFileSync(out+"master.json",JSON.stringify(records,null,2)+"\n");
+writeFileSync(out+"master.csv",csv(masterRows,Object.keys(masterRows[0])));
 for(const [name,arr] of Object.entries(queues))
  writeFileSync(out+"queue-"+name.toLowerCase().replaceAll("_","-")+".csv",
- csv(toQueue(arr),queueCols),{flag:"wx"});
-writeFileSync(out+"first-pristine-photo-review.csv",csv(firstReview,reviewCols),{flag:"wx"});
+ csv(toQueue(arr),queueCols));
+writeFileSync(out+"first-pristine-photo-review.csv",csv(firstReview,reviewCols));
 writeFileSync(out+"module-placement-ledger.csv",csv([
  ...heroPlacements.map(h=>({placement_kind:"HERO",module:h.moduleId,artwork_id:h.artworkId,
   group_id:h.workGroupId,action:"FINAL_USER_APPROVED",source_url:h.sourceUrl,
   app_released:false})),
  ...prayerPlacements.map(p=>({placement_kind:"PRAYER",module:p.moduleId,artwork_id:p.artworkId,
   group_id:p.workGroupId,action:p.decision,source_url:p.sourceUrl,app_released:false}))
- ],["placement_kind","module","artwork_id","group_id","action","source_url","app_released"]),{flag:"wx"});
+ ],["placement_kind","module","artwork_id","group_id","action","source_url","app_released"]));
 writeFileSync(out+"summary.json",JSON.stringify({schema:"AO_SACRED_ART_MASTER_V1_COUNTS",
  at:new Date().toISOString(),counts:outcomes,sha256ByOutput:Object.fromEntries(
  ["master.csv","master.json","queue-ready-to-publish.csv","queue-photo-qa-or-repair.csv",
@@ -556,5 +556,5 @@ writeFileSync(out+"summary.json",JSON.stringify({schema:"AO_SACRED_ART_MASTER_V1
   "Number of source records exceeds distinct physical artworks due to unidentified duplicates.",
   "Queue 2 contains free-source-policy leads; user QA must use exact native files, not thumbnails.",
   "Unapproved and rejected artworks are preserved in master without being added to operational queues.",
-  "Structured-data work QIDs are not verified physical artwork equivalences."]},null,2)+"\n",{flag:"wx"});
+  "Structured-data work QIDs are not verified physical artwork equivalences."]},null,2)+"\n");
 console.log(JSON.stringify(outcomes,null,2));
