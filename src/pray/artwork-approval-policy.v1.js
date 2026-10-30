@@ -11,13 +11,18 @@ const POSITIVE=new Set([
 const REUSED="USER_APPROVED_CROSS_PRAYER_REUSE";
 
 export function isEditorialArtworkPlacementApproved(work,{sourceArtIdApproved=false}={}){
- if(!work||work.eligible===false||work.id===null||work.id===undefined)return false;
+ if(!work||work.eligible===false)return false;
+ // A user-locked cover can be an approved painting before its canonical asset
+ // ID is resolved; that is editorial approval, never photo clearance.
+ if(work.editorial==="USER_FINAL_LOCKED")return true;
+ if(work.id===null||work.id===undefined)return false;
  if(POSITIVE.has(work.editorial))return true;
  return work.editorial===REUSED&&sourceArtIdApproved===true;
 }
 
 export function isUserApprovedPhotographPublishable(work,photo={}){
  if(!isEditorialArtworkPlacementApproved(work,{sourceArtIdApproved:photo.sourceArtIdApproved===true}))return false;
+ if(work.id===null||work.id===undefined)return false;
  // Every gate below must have its own positive verified evidence. Missing
  // metadata is a FAIL, never a permission to show the image.
  return photo.exactWorkIdentityVerified===true
