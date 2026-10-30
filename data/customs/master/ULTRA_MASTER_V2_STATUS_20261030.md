@@ -100,3 +100,11 @@ Preliminary source-type routing:
 | Indulgence-specific source review | 1 |
 
 **200 / 3,295 first-pass source classifications complete; 3,095 remain in the 17-wave source queue.** Zero new canonical identities, zero primary-grant validations, zero new published Customs. [Wave 01 audited 200-record file](./customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json).
+
+## 30 October — first three waves and original indulgence facsimile (later verified addendum)
+
+- Source-native first-pass routing now **600/3,295** (18.2%) in the wave 01–03 JSON files; remaining **2,695** still require first-pass scope review and **all 3,295** require final practice/variant ownership decisions. Waves 02 and 03 each retain exact ID joins into independently preserved Weiser original 1958 and targeted addendum sources, with zero invented canonical identities.
+- **One primary grant-instrument facsimile newly located:** 9 January 1998 Apostolic Penitentiary Caravaca Vera Cruz concession, Prot. **2/98/I**, signed image and English translation on printed brochure/PDF page 5 (zero-based page 4): https://www.caminodecaravacadelacruz.es/webs/murciaturistica/folletos/1/PTMDOC_2_3122017.pdf . The Diocese of Cartagena also describes the act and conditions: https://diocesisdecartagena.org/blog/caravaca-de-la-cruz-abre-los-brazos-al-mundo-en-un-nuevo-ano-jubilar/ . Primary facsimiles located **1 of 4** cases, with the other three still unresolved; this updates the earlier zero count above.
+- Grant terms are strictly tied to Caravaca shrine works and conditions; **no automatic indulgence for Caravaca customs, no new grant to any user, no app release**. See [four-case source recheck](./customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json). Old 1962/Raccolta grants are not presumed active; exact current language still requires ecclesiastical editorial review.
+
+Research-only; Calendar, PR #2058, and 36 published Customs unchanged. CI passing status is not claimed until checked.
