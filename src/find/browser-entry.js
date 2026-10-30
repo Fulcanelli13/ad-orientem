@@ -500,6 +500,7 @@ export function createFindOwner(win=globalThis){
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:preliminaryMode?[]:data.directory?.loadedProviders??[],
       unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
+      tlmAvailableCommunities:state.lens==="tlm"?[...new Set((preliminary??[]).map(item=>item.community_id).filter(Boolean))]:[],
       view:state.view,
       filters:state,
       saintsRelease:dataset?.saintsRelease??null,
