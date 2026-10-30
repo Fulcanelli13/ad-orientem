@@ -9,6 +9,9 @@ on:
       - docs/research/directory/p79-canonical-place-photo-review.html
       - docs/research/directory/P79-PLACE-PHOTO-REVIEW.md
       - tests/p79-place-photo-review-contract.mjs
+      - tools/directory/release-p79-approved-photos.py
+      - tests/p79-place-photo-release-test.py
+      - tools/directory/stage-bulk-place-photos.py
       - docs/DIRECTORY-CANONICAL-PLACE-PHOTO-PIPELINE.md
 permissions:
   contents: read
@@ -33,3 +36,4 @@ jobs:
         run: |
           node tools/directory/build-p79-place-photo-review.mjs --check
           node tests/p79-place-photo-review-contract.mjs
+          python tests/p79-place-photo-release-test.py -v

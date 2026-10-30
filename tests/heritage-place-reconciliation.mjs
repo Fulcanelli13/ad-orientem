@@ -96,6 +96,8 @@ const admittedAfterSnapshot=[
   ["CORP-001","att:CORP-001:PL","NOT_MAPPED"],
   ["EAST-001","att:EAST-001:DE","NOT_MAPPED"],
   ["MARI-002","att:MARI-002:US","NOT_MAPPED"],
+  // One separately sourced Polish regional article added after the fixed editorial snapshot.
+  ["PENT-001","att:PENT-001:PL-HISTORICAL","NOT_MAPPED"],
 ];
 for(const [customId,attestationId,policy] of admittedAfterSnapshot){
   const custom=C.customs.find(x=>x.custom_id===customId);

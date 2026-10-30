@@ -7,15 +7,15 @@ const atlas=read("../data/customs/customs-atlas-seed.v1.json");
 const registry=read("../data/customs/source-registry.v1.json");
 const ext=read("../data/customs/sot07-extensions.v1.json");
 const neg=read("../data/customs/negative-knowledge.v1.json");
-assert.equal(atlas.customs.length,38);
-assert.equal(atlas.attestations.length,97);
-assert.equal(registry.sources.length,108);
+assert.equal(atlas.customs.length,39);
+assert.equal(atlas.attestations.length,98);
+assert.equal(registry.sources.length,110);
 assert.equal(ext.extensions.length,22);
 assert.equal(neg.entries.length,7);
 const ids=new Set(atlas.customs.map(c=>c.custom_id)),src=new Set(registry.sources.map(s=>s.id));
-assert.equal(ids.size,38);
-assert.equal(new Set(registry.sources.map(s=>s.id)).size,108);
-assert.equal(new Set(atlas.attestations.map(a=>a.attestation_id)).size,97);
+assert.equal(ids.size,39);
+assert.equal(new Set(registry.sources.map(s=>s.id)).size,110);
+assert.equal(new Set(atlas.attestations.map(a=>a.attestation_id)).size,98);
 assert.equal(new Set(ext.extensions.map(e=>e.custom_id)).size,22);
 const seven=["NDAY-001","PATR-001","MARI-001","SJOS-001","SANT-001","SCHR-001","SNIC-001"];
 const three=["BLSS-002","BLSS-003","BLSS-004"];
@@ -51,4 +51,4 @@ for(const year of [2026,2027,2030]){
  assert.equal(v384Events(`${year}-08-15`).filter(e=>e.key==="assumption-marian-procession").length,0,"Marian procession is context without duplicate date notice");
  assert.equal(v384Events(`${year}-11-02`).filter(e=>e.key==="holy-souls").length,1,"only one All Souls date card");
 }
-console.log("PASS coordinated customs union + P0 six: 38 canonical, 97 attestations, 108 sources, 22 extensions, original 10 release IDs intact, DEAD-003 enrichment and Holy Saturday unchanged.");
+console.log("PASS coordinated customs union + P0 six: 39 canonical, 98 attestations, 110 sources, 22 extensions, original 10 release IDs intact, DEAD-003 enrichment and Holy Saturday unchanged.");

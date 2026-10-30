@@ -650,6 +650,23 @@
       "calendar_trigger_hint": "May or another suitable gardening season; linked to DEV-001",
       "confidence": "MEDIUM_HIGH",
       "guardrail": "Voluntary household devotion connected to existing May custom DEV-001, not a new feast. No magical, medicinal or historically unsupported plant properties."
+    },
+    {
+      "custom_id": "PENT-001",
+      "family": "Pentecost regional household customs",
+      "name": "Polish Pentecost greenery — Zielone Świątki",
+      "canonical_statement": "In documented Polish regional Pentecost traditions, people decorated homes, gates and occasionally churches with fresh greenery; this is cultural and household practice, not a universal Roman liturgical rite.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Documented historic rural use, with variable or declining modern continuity",
+      "decision": "KEEP — INDIVIDUAL PENTECOST GREENERY RELEASE CANDIDATE",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "MEDIUM_HIGH",
+      "guardrail": "Historic voluntary Polish regional cultural custom. No pan-Catholic requirement, Mass rubric, parish programme, ritual blessing, protective efficacy or automatically recurring event."
     }
   ],
   "attestations": [
@@ -2215,6 +2232,23 @@
         "CATHCULTURE-MARY-GARDEN"
       ],
       "evidence_note": "WEI58-13-011. Catholic Culture documents practical household Mary gardens, without independently establishing legends about particular plant names.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "attestation_id": "att:PENT-001:PL-HISTORICAL",
+      "custom_id": "PENT-001",
+      "geo_area_id": "geo:country:PL",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historically documented Polish household custom; observed continuity variable",
+      "strength": "STRONG",
+      "source_ids": [
+        "LASYPANSTWOWE-PENTECOST-GREENERY",
+        "LASYPANSTWOWE-BIRCH-GREENERY"
+      ],
+      "evidence_note": "Polish State Forests records historic Zielone Świątki decorating of houses, gates and some churches with branches; present use may be uncommon; not a rite or recurring local event.",
       "map_policy": "NOT_MAPPED",
       "confidence": "MEDIUM_HIGH"
     }

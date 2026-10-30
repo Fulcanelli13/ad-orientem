@@ -64,5 +64,5 @@ for(const year of [2026,2027,2030]){
   }
  }
 }
-assert.equal(atlas.customs.length,38);
+assert.equal(atlas.customs.length,39);
 console.log("PASS: exact eleven custom Calendar deep links across three liturgical years, EN/FR, no duplicate rite or feasts, 33 unique customs.");

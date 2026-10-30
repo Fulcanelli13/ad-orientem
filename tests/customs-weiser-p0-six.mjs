@@ -17,16 +17,16 @@ const planned=[
   ["HTHU-001","US","CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"],
   ["ROGA-001","US","NEWLAND-ROGATION-FAMILY-1956"]
 ];
-assert.equal(atlas.customs.length,38);
-assert.equal(atlas.attestations.length,97);
-assert.equal(sources.sources.length,108);
+assert.equal(atlas.customs.length,39);
+assert.equal(atlas.attestations.length,98);
+assert.equal(sources.sources.length,110);
 assert.equal(extensions.extensions.length,22);
 assert.equal(negatives.entries.length,7);
 assert.equal(guidance.entries.length,6);
 assert.equal(guidance.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
-assert.equal(new Set(atlas.customs.map(x=>x.custom_id)).size,38);
-assert.equal(new Set(atlas.attestations.map(x=>x.attestation_id)).size,97);
-assert.equal(new Set(sources.sources.map(x=>x.id)).size,108);
+assert.equal(new Set(atlas.customs.map(x=>x.custom_id)).size,39);
+assert.equal(new Set(atlas.attestations.map(x=>x.attestation_id)).size,98);
+assert.equal(new Set(sources.sources.map(x=>x.id)).size,110);
 assert.equal(new Set(extensions.extensions.map(x=>x.custom_id)).size,22);
 assert.equal(new Set(guidance.entries.map(x=>x.custom_id)).size,6);
 
@@ -98,4 +98,4 @@ for(const year of [2026,2027,2030]){
  assert.equal(v384Events(saturday).filter(e=>e.key==="holy-saturday").length,1);
  assert.equal(v384Events(saturday).some(e=>e.key==="easter-foods"),false);
 }
-console.log("PASS Weiser six P0: 38 customs, 97 attestations, 108 sources, 22 extensions; all six EN/FR complete; 3 new date notices, one Holy Thursday and Rogation owner; no maps, duplicate ceremonies or changed Holy Saturday.");
+console.log("PASS Weiser six P0: 39 customs, 98 attestations, 110 sources, 22 extensions; all six EN/FR complete; 3 new date notices, one Holy Thursday and Rogation owner; no maps, duplicate ceremonies or changed Holy Saturday.");

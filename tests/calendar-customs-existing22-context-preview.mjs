@@ -12,7 +12,7 @@ import {normaliseCustomSearch,calendarCustomSearchIndex,calendarCustomSearchMatc
 
 const runtime=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 const sourceIds=calendarCustomArticleIds();
-assert.equal(sourceIds.length,35,"No new canonical published Customs articles");
+assert.equal(sourceIds.length,36,"No new canonical published Customs articles");
 assert.equal(CUSTOMS_EXISTING_VARIANT_TOTAL,22);
 assert.equal(CUSTOMS_EXISTING_VARIANT_OWNER_TOTAL,12);
 
@@ -82,4 +82,4 @@ assert.match(runtime,/Exemples régionaux historiques · 1958/);
 assert.match(runtime,/data-cal-customs-variants-preview/);
 assert.match(runtime,/data-cal-custom-variant/);
 assert.ok(!runtime.includes("geolocation.getCurrentPosition"));
-console.log("PASS: 22 bilingual historical context details under 12 existing Calendar Customs, 35 published identities, no new dates, obligations, blessing, or indulgence");
+console.log("PASS: 22 bilingual historical context details under 12 existing Calendar Customs, 35 original identities + PENT-001 pilot, no new dates, obligations, blessing, or indulgence");
