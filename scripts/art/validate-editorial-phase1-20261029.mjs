@@ -777,4 +777,145 @@ if (master.phase1SmkOfficialVerification.frozenSourceCards !== 54 ||
   fail("SMK research master identity/source-release status changed");
 console.log("PASS SMK 54 official accession+title identities (20 exact case / 34 case-only); 18 author leads; zero releases.");
 
+
+const waltersCsv = load("sacred-art-phase1-walters-42-official-csv-report-20261030.v1.json");
+const waltersPages = load("sacred-art-phase1-walters-42-current-page-report-20261030.v1.json");
+const waltersExceptions = load("sacred-art-phase1-walters-42-curatorial-exceptions-20261030.v1.json");
+const waltersFrozen = museum479.rows.filter(r => r.museum === "walters");
+const waltersById = new Map(waltersFrozen.map(r => [r.sourceId, r]));
+const wc = waltersCsv.counts;
+if (waltersFrozen.length !== 42 || waltersCsv.rows.length !== 42 ||
+    wc.frozenSourceCards !== 42 ||
+    wc.exactObjectIdAccessionTitlePurlMatch !== 42 ||
+    wc.foundNumericIdButDifferentMetadata !== 0 ||
+    wc.absentNumericObjectId !== 0 ||
+    wc.numericIdExact !== 42 || wc.accessionExact !== 42 ||
+    wc.titleNormalizedExact !== 42 || wc.purlExact !== 42 ||
+    wc.recordsWithRelatedAcceptedMuseumObjects !== 7 ||
+    wc.originalConditionalDecisions !== 2 ||
+    wc.newCanonical383Links !== 0 ||
+    wc.originalPhotoRightsCertified !== 0 ||
+    wc.productionImports !== 0)
+  fail("Walters 42 official static CSV identity totals mismatch");
+const waltersJoined = new Set();
+let linkedPanelRecords = 0;
+for(const r of waltersCsv.rows){
+  const frozen = waltersById.get(r.sourceId);
+  if(!frozen || waltersJoined.has(r.sourceId) ||
+    r.originalFrozenDecision !== frozen.userDecision ||
+    r.batch !== frozen.batch ||
+    r.reviewedTitle !== frozen.title ||
+    r.reviewedArtist !== frozen.artistAsReviewed ||
+    r.reviewedAccession !== frozen.sourceAccession ||
+    r.originalPurl !== frozen.sourceObjectUrl ||
+    r.officialArchivedMuseumId !== frozen.sourceObjectId ||
+    r.official.accessionNumber !== frozen.sourceAccession ||
+    r.official.resourceUrl !== frozen.sourceObjectUrl ||
+    r.status !== "OFFICIAL_ARCHIVED_ID_ACCESSION_TITLE_PURL_CONFIRMED" ||
+    r.sourceEvidence.numericIdExact !== true ||
+    r.sourceEvidence.accessionExact !== true ||
+    r.sourceEvidence.titleNormalizedExact !== true ||
+    r.sourceEvidence.purlExact !== true ||
+    r.newPhysicalUniqueWorkCertified !== false ||
+    r.canonical383Match !== false ||
+    r.selectedImageBytesVisuallyChecked !== false ||
+    r.imageRightsCertified !== false ||
+    r.frozenEditorialChoiceChanged !== false ||
+    r.productionMutation !== false)
+    fail("Walters current frozen editorial source diverges from official museum CSV " + r.sourceId);
+  waltersJoined.add(r.sourceId);
+  if(r.relationshipEdgesWithinAccepted42.length) linkedPanelRecords++;
+}
+if(waltersJoined.size !== 42 || linkedPanelRecords !== 7 ||
+   waltersCsv.release.allFrozenDecisionsRetained !== true ||
+   waltersCsv.release.originalPhotoRightsCertified !== false ||
+   waltersCsv.release.canonical383Mutated !== false ||
+   waltersCsv.release.sourcePhotographsVisuallyInspected !== false ||
+   waltersCsv.release.productionMutation !== false ||
+   !/^[a-f0-9]{64}$/.test(waltersCsv.officialCSV.art.sha256) ||
+   !/^[a-f0-9]{64}$/.test(waltersCsv.officialCSV.relationships.sha256))
+  fail("Walters official CSV provenance/rights/ensemble guard changed");
+const wp = waltersPages.counts;
+if(waltersPages.rows.length !== 42 ||
+   wp.frozenAcceptedCards !== 42 ||
+   wp.officialTitleAndAccessionConfirmed !== 38 ||
+   wp.officialPagesNeedsReview !== 0 ||
+   wp.sourcePageFetchFailed !== 4 ||
+   wp.originalConditionalDecisions !== 2 ||
+   wp.canonical383NewLinks !== 0 ||
+   wp.newPhysicalPaintingCountCertified !== 0 ||
+   wp.photoRightsCertified !== 0 ||
+   wp.productionImports !== 0)
+  fail("Walters live-page partial confirmation count changed");
+let currentPages = 0, blockedPages = 0;
+const pageById = new Map(waltersPages.rows.map(r=>[r.sourceId,r]));
+if(pageById.size !== 42)fail("Walters live-page duplicate source IDs");
+for(const [id,row] of pageById){
+ const frozen=waltersById.get(id);
+ if(!frozen || frozen.userDecision !== row.frozenDecision ||
+    frozen.title !== row.sourceTitle ||
+    frozen.sourceAccession !== row.sourceAccession ||
+    frozen.sourceObjectUrl !== row.originalSourceUrl ||
+    row.canonical383IdentityLinked !== false ||
+    row.originalDecisionPreserved !== true ||
+    row.sourcePhotoRightsCertified !== false ||
+    row.originalPhotoVisuallyInspected !== false ||
+    row.productionMutation !== false)
+    fail("Walters live-page verification changed original editor decision "+id);
+ if(row.status === "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED"){
+  currentPages++;
+  if(row.evidence.officialHost !== true ||
+     row.evidence.titleNormalizedMatched !== true ||
+     row.evidence.accessionLabelAndNumberMatched !== true ||
+     row.titleMatchingMethod !== "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE" ||
+     !/^[a-f0-9]{64}$/.test(row.pageSha256))
+   fail("Walters live official accession/title identity proof invalid "+id);
+ }else if(row.status==="PAGE_FETCH_FAILED"){
+  blockedPages++;
+  if(row.reason!=="HTTP_403" || row.returnedUrl!==null)
+   fail("Walters known 403 source changed "+id);
+ }else fail("Walters page unexpectedly promoted or pending "+id);
+}
+if(currentPages!==38 || blockedPages!==4 ||
+    waltersPages.release.userDecisionsChanged !== false ||
+    waltersPages.release.canonical383Changed !== false ||
+    waltersPages.release.imagesCleared !== false ||
+    waltersPages.release.productionMutation !== false)
+ fail("Walters 38 live current pages / 4 blocked source gate mismatch");
+const we=waltersExceptions.counts;
+if(waltersExceptions.sevenPassionPanels.length !== 7 ||
+   waltersExceptions.artistAttributionReview.length !== 5 ||
+   waltersExceptions.otherPhysicalAndTitleCorrections.length !== 4 ||
+   we.passionAltarpiecePanelsInAcceptedSource !== 7 ||
+   we.individualComponentsOfCaselliTriptych !== 1 ||
+   we.artistQualifiedReview !== 5 ||
+   we.canonical383LinksAdded !== 0 ||
+   we.photosCertified !== 0 ||
+   we.releaseActions !== 0 ||
+   waltersExceptions.gates.allFrozenChoicesUnchanged !== true ||
+   waltersExceptions.gates.canonical383Mutated !== false ||
+   waltersExceptions.gates.photoRightsCertified !== false ||
+   waltersExceptions.gates.productionMutation !== false)
+ fail("Walters art-object relationship/author exceptions changed");
+for(const r of [...waltersExceptions.sevenPassionPanels,...waltersExceptions.artistAttributionReview]){
+ const frozen=waltersById.get(r.sourceId);
+ if(!frozen || frozen.sourceAccession !== r.accession ||
+  (r.originalDecision??r.originalDecision) !== frozen.userDecision)
+  fail("Walters curatorial exception forgot frozen source decision "+r.sourceId);
+}
+if(master.phase1WaltersOfficialVerification.frozenSourceCards!==42 ||
+   master.phase1WaltersOfficialVerification.officialStaticCsvNumericIdAccessionTitlePurlMatches!==42 ||
+   master.phase1WaltersOfficialVerification.currentLiveMuseumPageTitleAndAccessionVerified!==38 ||
+   master.phase1WaltersOfficialVerification.currentLiveMuseumPageFetch403!==4 ||
+   master.phase1WaltersOfficialVerification.museumBackedOriginalQueueComplete!==true ||
+   master.phase1WaltersOfficialVerification.museumBackedOfficialVerifiedToDate!==479 ||
+   master.phase1WaltersOfficialVerification.museumBackedOfficialStillUnverified!==0 ||
+   master.phase1WaltersOfficialVerification.commonsSourcedUnlinkedStill!==305 ||
+   master.phase1WaltersOfficialVerification.acceptedToCanonical383LinkedSourceCardsStill!==72 ||
+   master.phase1WaltersOfficialVerification.acceptedToCanonical383UnlinkedSourceCardsStill!==784 ||
+   master.phase1WaltersOfficialVerification.newCanonical383Links!==0 ||
+   master.phase1WaltersOfficialVerification.productionMutation!==false)
+ fail("Walters museum verification or 479/479 master counts drifted");
+console.log("PASS Walters 42/42 official CSV object IDs + accessions + titles + PURLs, 38 live pages, 4 blocked, 7 altarpiece panels; all 479 museum records checked and no publication.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
