@@ -161,4 +161,28 @@ assert.equal(dedup.regional_or_institutional_cluster_cases.length,12);
 assert.equal(dedup.counts.merge_operations_approved,0);
 assert.equal(dedup.counts.original_family_observations_accounted_for,70);
 assert.equal(coverage.progress.dedup_action_review_caseboard.total_review_units,79);
+const actionEdges=get("customs-ultra-master-v2-42-action-identity-edges-20261030.v1.json");
+assert.equal(actionEdges.rows.length,42);
+assert.equal(actionEdges.counts.source_action_edges,42);
+assert.equal(actionEdges.counts.existing_owner_ids_examined,14);
+assert.equal(new Set(actionEdges.rows.map(x=>x.source_id)).size,42);
+assert.equal(actionEdges.counts.negative_or_separate_actor_edges,11);
+assert.equal(actionEdges.counts.positive_core_description_matches,6);
+assert.equal(actionEdges.counts.human_approved_mergers,0);
+const reviewedHosteds=new Map(hosted.records.map(x=>[x.source_id,x]));
+for(const edge of actionEdges.rows){
+ const src=reviewedHosteds.get(edge.source_id);
+ assert.ok(src,"Identity review references missing hosted source "+edge.source_id);
+ assert.equal(edge.source_action,src.source_label);
+ assert.equal(edge.source_url,src.hosted_article_url);
+ assert.ok(mids.has(edge.claimed_owner_id),"Unknown master owner "+edge.claimed_owner_id);
+ assert.equal(edge.actual_owner_relationship_human_approved,false);
+ assert.equal(edge.indulgence_grant_confirmed,false);
+ assert.equal(edge.publication_allowed,false);
+ assert.equal(edge.original_printed_folio_pair_checked,false);
+}
+assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-NEWLAND-0272-01").claimed_owner_id,"ADVT-001");
+assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-NEWLAND-1234-02").action_relationship,"VETO_MINISTERIAL_DISTINCT_ACTOR");
+assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-BERGER-0463-07").action_relationship,"VETO_AUTHOR_RECIPE_NOT_SAME_CUSTOM");
+assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-TRAPP-0075-01").action_relationship,"VETO_DIFFERENT_DATE_AND_PLANT_OBJECT");
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
