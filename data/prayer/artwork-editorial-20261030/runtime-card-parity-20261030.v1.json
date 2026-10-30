@@ -62,7 +62,13 @@
     "direct_editorial_slot_lookup_gaps": 0,
     "production_artwork_runtime_wiring_verified": false,
     "reader_ui_image_coverage_certified": false,
-    "nonvisual_runtime_identity_annotations_present": true
+    "nonvisual_runtime_identity_annotations_present": true,
+    "first_friday_macro_stages": 5,
+    "first_saturday_macro_stages": 6,
+    "confession_macro_stages": 4,
+    "canonical_prayers_with_candidates": 48,
+    "canonical_direct_blueprint_slots": 47,
+    "canonical_current_loreto_reuses_1962_slot": 1
   },
   "runtime_stage_to_editorial_slot": {
     "benediction": [
@@ -526,6 +532,87 @@
         "prayer_id": "foundations_glory_be",
         "editorial_slot": "COV-foundations_glory_be"
       }
+    ],
+    "first_friday": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-programme.first_friday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-programme.first_friday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-programme.first_friday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-programme.first_friday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "STG-programme.first_friday-01",
+        "fallback_only": true
+      }
+    ],
+    "first_saturday": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-programme.first_saturday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-programme.first_saturday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-programme.first_saturday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-programme.first_saturday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "STG-programme.first_saturday-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 5,
+        "editorial_slot": "STG-programme.first_saturday-01",
+        "fallback_only": true
+      }
+    ],
+    "confession_macro": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-pray.confession-01",
+        "note": "Macro-stage; child cards/path branches not certified"
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-pray.confession-02",
+        "note": "Macro-stage; child cards/path branches not certified"
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-pray.confession-03",
+        "note": "Macro-stage; child cards/path branches not certified"
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-pray.confession-04",
+        "note": "Macro-stage; child cards/path branches not certified"
+      }
     ]
   },
   "novena_guided": [
@@ -811,7 +898,7 @@
     },
     {
       "route": "pray.confession",
-      "note": "Path, examination, rite and after-care substeps are dynamic; four narrative blueprint stages not an exact card census"
+      "note": "Four macro-stage artwork IDs are mapped, but exact examination, chosen paths, before/after subcards remain unverified"
     },
     {
       "route": "pray.sacred_hymns",
@@ -883,5 +970,6 @@
     "full_parity_status": "OPEN"
   },
   "runtime_identity_source": "src/pray/artwork-runtime-identity.v1.js",
-  "verified_nonvisual_integration": "src/pray/presentation-runtime.js;src/pray/novena-runtime.js;src/pray/traditional-pray-runtime.js"
+  "verified_nonvisual_integration": "src/pray/presentation-runtime.js;src/pray/novena-runtime.js;src/pray/traditional-pray-runtime.js",
+  "canonical_prayer_bridge": "balanced-reuse-20261030-live-prayer-48-bridge.v1.json"
 }
