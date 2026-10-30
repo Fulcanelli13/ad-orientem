@@ -2,6 +2,7 @@
 // No fixture dates, Mass catalogue, art mapping, or parallel preference store.
 import { TODAY_H4_CSS } from "./today-h4-styles.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
+import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
 // Display only verified liturgical colours; never infer them from the season.
 export function verifiedH4WeekColour(resolved,date){
@@ -60,7 +61,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={})
   const spotlight=model.spotlight;
   const custom=spotlight?.article?'<button type="button" class="aoH4Custom" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(spotlight.contextDate)+'"><span class="aoH4Eyebrow">'+esc(say("Tradition","Coutume"))+'</span><strong>'+esc(spotlight.article.title[fr?"fr":"en"])+'</strong><small>'+esc(dateLabel(spotlight.contextDate,fr))+'</small></button>':"";
   const gospelSub=model.gospelReference||say("Available when the Proper resolves","Disponible après résolution du Propre");
-  const cate=model.daily?.title||say("Daily Catechism","Catéchisme quotidien");
+
   return '<style data-ao-today-v2-style>'+TODAY_H4_CSS+'</style>'+
   '<main class="homeScreen aoTodayV2 aoTodayH4" data-home-language="'+vm.language+'" data-ao-home-presentation-owner="modular-home-presentation-v1">'+
   '<header class="aoH4Bar"><span class="aoH4Wordmark">AD ORIENTEM</span><button class="aoH4Utility" type="button" data-home-settings aria-label="'+esc(say("Settings","Réglages"))+'">⚙</button></header>'+
@@ -82,6 +83,6 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={})
   '<section class="aoTodayV2CalendarGlance"><div class="aoH4SectionHead"><h2>'+esc(say("This week","Cette semaine"))+'</h2></div><div class="aoH4Upcoming aoTodayV2GlanceEvents">'+upcoming+custom+'</div></section>'+
   '<div class="aoTodayV2Below" data-ao-home-enricher-owner="'+HOME_ENRICHERS_VERSION+'"><section class="aoTodayV2ReadReflect"><div class="aoH4SectionHead"><h2>'+esc(say("Read","Lire"))+'</h2></div><div class="aoH4Read">'+
   '<button type="button" data-action="gospel"><span><strong>'+esc(say("Gospel of the Mass","Évangile de la messe"))+'</strong><small>'+esc(gospelSub)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>'+
-  '<button type="button" data-home-daily-catechism><span><strong>'+esc(cate)+'</strong><small>'+esc(model.daily?.description||say("Daily lesson","Leçon du jour"))+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>'+
+  homeDidYouKnowMarkup(vm.language)+
   '</div></section></div><div style="height:32px"></div></div></main>';
 }
