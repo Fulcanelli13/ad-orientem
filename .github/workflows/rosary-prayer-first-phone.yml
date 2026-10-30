@@ -7,6 +7,9 @@ on:
     paths:
       - "src/pray/presentation-runtime.js"
       - "src/pray/rosary-card-chapters.js"
+      - "src/pray/rosary-r2-pilot.js"
+      - "tests/rosary-r2-pilot-contract.mjs"
+      - "tests/rosary-r2-pilot-phone.mjs"
       - "src/pray/devotional-card-deck-styles.js"
       - "tests/rosary-named-timeline.mjs"
       - "tests/rosary-canonical-phone-controls.mjs"
@@ -28,6 +31,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Source-first Rosary named chapter boundaries
         run: node tests/rosary-named-timeline.mjs
+      - name: Claude R2 source-owned chapter and bead projection
+        run: node tests/rosary-r2-pilot-contract.mjs && node tests/rosary-r2-pilot-phone.mjs
       - name: 320/390/430 canonical Rosary timeline and bead ownership
         run: node tests/rosary-canonical-phone-controls.mjs
       - name: 320/390/430 prayer-first method, preserved source and canonical donor
@@ -36,6 +41,8 @@ jobs:
         if: always()
         with:
           name: rosary-methods-prayer-first-phone
-          path: artifacts/rosary-methods-phone/
+          path: |
+            artifacts/rosary-methods-phone/
+            artifacts/rosary-r2-phone/
           retention-days: 30
           if-no-files-found: warn

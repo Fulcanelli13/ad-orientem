@@ -48,6 +48,7 @@ import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleRespon
 import { rosaryGuideSections } from "./rosary-guide-data.js";
 import {B01_AUGUST_QUEEN_SOURCE} from "./icksp-batch01-public.v1.js";
 import { rosaryNamedChapters,rosaryCurrentChapter } from "./rosary-card-chapters.js";
+import {rosaryR2PilotEnabled,applyRosaryR2Pilot} from "./rosary-r2-pilot.js";
 import {installRosaryActiveCard} from "./rosary-active-card.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENINGS, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
 import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
@@ -1471,15 +1472,19 @@ function decorateRosary(){
  const info=rosaryLiveInfo();
  if(info?.steps?.length){
   const titles=FS_MYSTERIES[info.set]?.items?.[isFr()?"fr":"en"]||[];
+  const chapters=rosaryNamedChapters(info.steps,{set:info.set,french:isFr(),titles});
   installRosaryActiveCard({
    root:r,stepIndex:info.index,
-   chapters:rosaryNamedChapters(info.steps,{set:info.set,french:isFr(),titles}),
+   chapters,
    navigate:start=>{
     const api=window.AO_ROSARY_V381;
     if(typeof api?.setStep==="function"&&api.setStep(start)!==false)
      setTimeout(decorateRosary,0);
    }
   });
+  // Source-owned visual pilot: never a second bead engine.
+  if(rosaryR2PilotEnabled(window))
+    applyRosaryR2Pilot({root:r,steps:info.steps,index:info.index,chapters,french:isFr()});
  }
 }
 function confessionModeLabel(path){

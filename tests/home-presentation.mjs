@@ -66,8 +66,9 @@ assert.equal(vm.observedTitle,"Our Lady of the Rosary","1962 observance and Mass
 assert.equal(vm.massFormularyName,"Holy Rosary","Actual selected Mass must be named from the resolved Proper");
 assert.equal(vm.massIntroit,"Gaudeamus","Latin Introit incipit must be derived from the Proper");
 assert.equal(vm.resolvedForSelection,true);
-assert.equal(vm.rank,"Rank · 2","Day rank must come from 1962 observed-day authority");
-assert.equal(vm.dateLong,"07/10/2026");
+assert.equal(vm.rank,"II class","Day rank must come from 1962 observed-day authority");
+assert.equal(vm.dateLong,"07/10/2026","Existing date model must retain global input/display format");
+assert.equal(vm.dateTitle,"Wednesday 7 October","Today must show a natural English date");
 assert.equal(vm.formularyLabel,"Formulary 2/2");
 assert.equal(vm.commemorationLabel,"Commemorations · St Mark");
 assert.equal(vm.gospelReference,"Luke 1:26");
@@ -79,7 +80,7 @@ const feriaState={...base,resolution:{...base.resolution,
 const feriaVm=buildHomeViewModel(feriaState);
 assert.equal(feriaVm.observedTitle,"Feria");
 assert.equal(feriaVm.massFormularyName,"Mass of the preceding Sunday");
-assert.equal(feriaVm.rank,"Rank · IV class","A Sunday Proper must not overwrite the feria rank");
+assert.equal(feriaVm.rank,"IV class","A Sunday Proper must not overwrite the feria rank");
 assert.equal(feriaVm.massIntroit,"Si iniquitátes observáveris, Dómine");
 const feriaHtml=renderHomeToString(feriaState,{});
 assert.match(feriaHtml,/<h1 class="aoEditorialTitle">Feria<\/h1>/);
@@ -111,6 +112,9 @@ assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/data-home-prayer-jump/,"Today needs a direct prayer-section shortcut");
 assert.ok(en.indexOf('class="aoTodayV2Zone aoTodayV2PrayNow"')<en.indexOf('class="aoTodayV2CalendarGlance"'),"Prayer section must precede Calendar context");
 assert.match(en,/data-date=/,"Seven-day date rail must use canonical selected-date keys");
+assert.match(en,/data-home-calendar-date="2026-10-07"/,
+  "Today date must be visible and open the existing Month lens");
+assert.match(en,/Wednesday 7 October/,"Today date must be legible in natural English");
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
 assert.doesNotMatch(en,/class="aoTodayV2Approaching"|class="aoTodayV2Context"/,"Retired duplicated calendar panels must not render");
@@ -145,6 +149,7 @@ assert.match(fr,/Vie et sources|À propos de cette célébration|Jour du calendr
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
 assert.match(fr,/data-home-settings/);
+assert.match(fr,/mercredi 7 octobre/,"Today must show the selected date in French");
 assert.doesNotMatch(fr,/class="languageSwitch"/);
 assert.doesNotMatch(fr,/class="contentCard moreCard"/);
 assert.doesNotMatch(fr,/étape suivante de la migration/i,"French Home still exposes migration-era placeholder copy");
