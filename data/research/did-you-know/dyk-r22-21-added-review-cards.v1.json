@@ -1,0 +1,1331 @@
+{
+  "schema": "AO_DYK_R22_21_NEW_SHORTLIST_CARDS_V1",
+  "date": "2026-10-30",
+  "counts": {
+    "total": 21,
+    "historical": 14,
+    "canon": 5,
+    "gesture_pending": 2,
+    "approved": 0,
+    "published": 0
+  },
+  "cards": [
+    {
+      "id": "DYK-UM01-024",
+      "category": "customs",
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-IT-049",
+      "statement": {
+        "en": "In Pitrè's account of Pachino in Sicily, families welcomed poorer guests called vicchiareddi for Saint Joseph's feast.",
+        "fr": "Dans le récit de Pitrè sur Pachino, en Sicile, des familles accueillaient pour la fête de saint Joseph des invités pauvres appelés vicchiareddi."
+      },
+      "source_batch": "ORIGINAL_145",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-024",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-IT-049"
+          ],
+          "printed_pages": [
+            454
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Historical local custom documented by Pitrè (1900); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Pitrè (1900) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-ultramaster-batch01.v1.json",
+        "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+        "observation_ids": [
+          "PIT1900-IT-049"
+        ],
+        "printed_pages": [
+          454
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "author": "Giuseppe Pitrè",
+          "work": "Feste patronali in Sicilia",
+          "year": 1900,
+          "observation_ids": [
+            "PIT1900-IT-049"
+          ],
+          "intake_dossier_id": null,
+          "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+          "source_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/48"
+          },
+          "original_ocr_line_anchor": 17216,
+          "original_facsimile_rechecked_for_this_claim": false,
+          "independent_source_corroboration_certified": false,
+          "review_group": "SJ-PIT-01",
+          "original_1900_printed_page": 454,
+          "original_scan_pdf_page_1based": 512,
+          "italian_text_layer_anchor": "vicchiareddiy ne sfama",
+          "original_page_image_reviewed": true,
+          "original_folio_verification_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+          "independent_historical_witness_confirmed": false
+        }
+      },
+      "editorial_reason": "Pachino's vicchiareddi is an unusually specific, locally named practice, distinct from three-guest tables.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-UM03-030",
+      "category": "customs",
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-024",
+      "statement": {
+        "en": "In historical Palermo, Saint Rosalia's relic procession alternated its route between different quarters of the city.",
+        "fr": "Dans l'ancien Palerme, la procession des reliques de sainte Rosalie changeait de parcours selon les quartiers de la ville."
+      },
+      "source_batch": "ORIGINAL_145",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-030",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-024"
+          ],
+          "printed_pages": [
+            36
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Historical local custom documented by Pitrè (1900); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Pitrè (1900) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+        "observation_ids": [
+          "PIT1900-NEW-024"
+        ],
+        "printed_pages": [
+          36
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "research_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "original_observation_ids": [
+            "PIT1900-NEW-024"
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_printed_page": 36,
+          "original_pdf_page_1_based": 98,
+          "original_italian_text_anchor": "quartieri dell albergarla e della kalsa",
+          "original_scan_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "original_page_location_checked": true,
+          "source_page_image_reviewed": true,
+          "independent_original_witness_verified": false
+        }
+      },
+      "editorial_reason": "Alternating different Palermo quarters is a specific historical route custom.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-UM03-035",
+      "category": "customs",
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-046",
+      "statement": {
+        "en": "At an old Palermo festival for Saints Cosmas and Damian, statue bearers wore white, with a red sash and yellow headscarf.",
+        "fr": "À une ancienne fête des saints Côme et Damien à Palerme, les porteurs des statues étaient vêtus de blanc, avec une ceinture rouge et un foulard jaune."
+      },
+      "source_batch": "ORIGINAL_145",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-035",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-046"
+          ],
+          "printed_pages": [
+            80
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Historical local custom documented by Pitrè (1900); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Pitrè (1900) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+        "observation_ids": [
+          "PIT1900-NEW-046"
+        ],
+        "printed_pages": [
+          80
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "research_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "original_observation_ids": [
+            "PIT1900-NEW-046"
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_printed_page": 80,
+          "original_pdf_page_1_based": 142,
+          "original_italian_text_anchor": "bianch",
+          "original_scan_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "original_page_location_checked": true,
+          "source_page_image_reviewed": true,
+          "independent_original_witness_verified": false
+        }
+      },
+      "editorial_reason": "Colourful clothing worn by the actual bearers is a distinctive observed detail.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-UM03-036",
+      "category": "customs",
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-056",
+      "statement": {
+        "en": "Pitrè described the statues of Saints Cosmas and Damian returning to their Palermo church around midnight, to the sound of bells.",
+        "fr": "Pitrè décrivait le retour des statues des saints Côme et Damien dans leur église de Palerme vers minuit, au son des cloches."
+      },
+      "source_batch": "ORIGINAL_145",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-036",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-056"
+          ],
+          "printed_pages": [
+            86
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Historical local custom documented by Pitrè (1900); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Pitrè (1900) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+        "observation_ids": [
+          "PIT1900-NEW-056"
+        ],
+        "printed_pages": [
+          86
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "research_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "original_observation_ids": [
+            "PIT1900-NEW-056"
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_printed_page": 86,
+          "original_pdf_page_1_based": 148,
+          "original_italian_text_anchor": "mezzanotte",
+          "original_scan_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "original_page_location_checked": true,
+          "source_page_image_reviewed": true,
+          "independent_original_witness_verified": false
+        }
+      },
+      "editorial_reason": "Midnight return amid bells is a definite processional moment, not a generic procession.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-UM03-042",
+      "category": "customs",
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-082",
+      "statement": {
+        "en": "In Gratteri, Pitrè recorded Saint James's statue being hurried across the square of the Franciscan convent.",
+        "fr": "À Gratteri, Pitrè rapporte que la statue de saint Jacques traversait rapidement la place du couvent franciscain."
+      },
+      "source_batch": "ORIGINAL_145",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-042",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-082"
+          ],
+          "printed_pages": [
+            125
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Historical local custom documented by Pitrè (1900); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Pitrè (1900) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+        "observation_ids": [
+          "PIT1900-NEW-082"
+        ],
+        "printed_pages": [
+          125
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "research_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "original_observation_ids": [
+            "PIT1900-NEW-082"
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_printed_page": 125,
+          "original_pdf_page_1_based": 187,
+          "original_italian_text_anchor": "convento",
+          "original_scan_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "original_page_location_checked": true,
+          "source_page_image_reviewed": true,
+          "independent_original_witness_verified": false
+        }
+      },
+      "editorial_reason": "Statue hurried across the Franciscan square is a peculiar local action, distinct from almsgiving.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-SF01-036",
+      "category": "mass_liturgy",
+      "source_family": "1962_GESTURE_MATRIX",
+      "source_id": "GM.P.C0096.01",
+      "statement": {
+        "en": "At the words of the Incarnation in the Credo of the traditional Roman Mass, the celebrant genuflects.",
+        "fr": "Aux paroles de l'Incarnation dans le Credo de la messe romaine traditionnelle, le célébrant fait une génuflexion."
+      },
+      "source_batch": "ORIGINAL_145",
+      "destination": {
+        "type": "PENDING_EXACT_GESTURE_SOURCE_VIEW",
+        "gesture_record_id": "GM.P.C0096.01",
+        "source_cue_id": "AO.SM.C0096",
+        "reader_cue_jump_verified": false
+      },
+      "source": {
+        "source_path": "dyk-source-first-batch01.v1.json",
+        "source_url": null,
+        "observation_ids": [],
+        "printed_pages": [],
+        "original_record_id": "GM.P.C0096.01",
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/mass/gesture-matrix.v1.json",
+          "record_id": "GM.P.C0096.01",
+          "related_record_ids": [],
+          "source_ids": [
+            "MR62_RITUS",
+            "CAMPION_1954"
+          ]
+        }
+      },
+      "editorial_reason": "Genuflection in the Creed is a distinct ceremonial cue, not part of the Canon.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-SF01-039",
+      "category": "mass_liturgy",
+      "source_family": "1962_GESTURE_MATRIX",
+      "source_id": "GM.P.C0181.02",
+      "statement": {
+        "en": "During the elevation of the consecrated chalice in the 1962 Roman Mass, the priest genuflects before and after raising it.",
+        "fr": "Lors de l'élévation du calice consacré dans la messe romaine de 1962, le prêtre fait une génuflexion avant et après l'élévation."
+      },
+      "source_batch": "ORIGINAL_145",
+      "destination": {
+        "type": "PENDING_EXACT_GESTURE_SOURCE_VIEW",
+        "gesture_record_id": "GM.P.C0181.02",
+        "source_cue_id": "AO.SM.C0181",
+        "reader_cue_jump_verified": false
+      },
+      "source": {
+        "source_path": "dyk-source-first-batch01.v1.json",
+        "source_url": null,
+        "observation_ids": [],
+        "printed_pages": [],
+        "original_record_id": "GM.P.C0181.02",
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/mass/gesture-matrix.v1.json",
+          "record_id": "GM.P.C0181.02",
+          "related_record_ids": [
+            "GM.P.C0181.01",
+            "GM.P.C0181.03"
+          ],
+          "source_ids": [
+            "MR62_RITUS",
+            "CAMPION_1954"
+          ]
+        }
+      },
+      "editorial_reason": "The chalice elevation has a separate cue and surrounding genuflections.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-W-A-049",
+      "category": "customs",
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-08-007",
+      "statement": {
+        "en": "Some traditional German Christmas decorations featured pyramids of candles assembled with evergreen branches.",
+        "fr": "Certaines anciennes décorations allemandes de Noël comportaient des pyramides de bougies ornées de rameaux persistants."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-W-A-049",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-08-007"
+          ],
+          "printed_pages": [
+            97
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical local custom documented by Weiser (1958); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Weiser (1958) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "observation_ids": [
+          "WEI58-08-007"
+        ],
+        "printed_pages": [
+          97
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/customs-ultra-master-integrated-20261030.v1.json",
+          "group_id": "CAT-WEISER-A-049",
+          "observation_ids": [
+            "WEI58-08-007"
+          ],
+          "printed_pages": [
+            97
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "original_passage_reviewed": true
+        }
+      },
+      "editorial_reason": "Evergreen candle pyramids are a concrete, less obvious German household custom.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-W-A-097",
+      "category": "customs",
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-13-008",
+      "statement": {
+        "en": "An old Parisian farewell to the Alleluia could use a straw effigy before Lent.",
+        "fr": "À Paris, un ancien adieu à l'Alléluia pouvait employer une effigie de paille avant le Carême."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-W-A-097",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-13-008"
+          ],
+          "printed_pages": [
+            159
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical local custom documented by Weiser (1958); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Weiser (1958) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "observation_ids": [
+          "WEI58-13-008"
+        ],
+        "printed_pages": [
+          159
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/customs-ultra-master-integrated-20261030.v1.json",
+          "group_id": "CAT-WEISER-A-097",
+          "observation_ids": [
+            "WEI58-13-008"
+          ],
+          "printed_pages": [
+            159
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "original_passage_reviewed": true
+        }
+      },
+      "editorial_reason": "Parisian straw-effigy farewell is distinct from the Toul Alleluia burial.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-W-B-038",
+      "category": "customs",
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-17-012",
+      "statement": {
+        "en": "In some historical Easter customs, decorated eggs were given not only to children but also to household workers.",
+        "fr": "Dans certaines coutumes pascales anciennes, on offrait des œufs décorés non seulement aux enfants mais aussi aux employés de maison."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-W-B-038",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-17-012"
+          ],
+          "printed_pages": [
+            234
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical local custom documented by Weiser (1958); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Weiser (1958) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "observation_ids": [
+          "WEI58-17-012"
+        ],
+        "printed_pages": [
+          234
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/customs-ultra-master-integrated-20261030.v1.json",
+          "group_id": "CAT-WEISER-B-038",
+          "observation_ids": [
+            "WEI58-17-012"
+          ],
+          "printed_pages": [
+            234
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "original_passage_reviewed": true
+        }
+      },
+      "editorial_reason": "Eggs given to household workers are a social detail beyond a generic Easter egg.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-W-B-044",
+      "category": "customs",
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-17-023",
+      "statement": {
+        "en": "Some traditional Easter loaves called paska bore a cross on their crust.",
+        "fr": "Certains pains de Pâques traditionnels appelés paska portaient une croix sur leur croûte."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-W-B-044",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-17-023"
+          ],
+          "printed_pages": [
+            238
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical local custom documented by Weiser (1958); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Weiser (1958) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "observation_ids": [
+          "WEI58-17-023"
+        ],
+        "printed_pages": [
+          238
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/customs-ultra-master-integrated-20261030.v1.json",
+          "group_id": "CAT-WEISER-B-044",
+          "observation_ids": [
+            "WEI58-17-023"
+          ],
+          "printed_pages": [
+            238
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "original_passage_reviewed": true
+        }
+      },
+      "editorial_reason": "Cross on paska crust is a concrete material religious motif.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-W-B-097",
+      "category": "customs",
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-23-014",
+      "statement": {
+        "en": "Early Christians commemorated martyrs by visiting their tombs, particularly on anniversaries of their deaths.",
+        "fr": "Les premiers chrétiens commémoraient les martyrs en visitant leurs tombeaux, notamment à la date anniversaire de leur mort."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-W-B-097",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-23-014"
+          ],
+          "printed_pages": [
+            282
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical local custom documented by Weiser (1958); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Weiser (1958) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "observation_ids": [
+          "WEI58-23-014"
+        ],
+        "printed_pages": [
+          282
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/customs-ultra-master-integrated-20261030.v1.json",
+          "group_id": "CAT-WEISER-B-097",
+          "observation_ids": [
+            "WEI58-23-014"
+          ],
+          "printed_pages": [
+            282
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "original_passage_reviewed": true
+        }
+      },
+      "editorial_reason": "Commemorating martyrs by visiting graves is historically consequential and not Kirchweih.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-W-B-104",
+      "category": "customs",
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-24-013",
+      "statement": {
+        "en": "In some Alpine communities, Assumption celebrations were associated with blessings of mountain livestock.",
+        "fr": "Dans certaines communautés alpines, les célébrations de l'Assomption étaient associées à des bénédictions du bétail de montagne."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-W-B-104",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-24-013"
+          ],
+          "printed_pages": [
+            291
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical local custom documented by Weiser (1958); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Weiser (1958) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "observation_ids": [
+          "WEI58-24-013"
+        ],
+        "printed_pages": [
+          291
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/customs-ultra-master-integrated-20261030.v1.json",
+          "group_id": "CAT-WEISER-B-104",
+          "observation_ids": [
+            "WEI58-24-013"
+          ],
+          "printed_pages": [
+            291
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "original_passage_reviewed": true
+        }
+      },
+      "editorial_reason": "Alpine livestock blessing gives a concrete regional counterpart to coastal blessings.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-W-B-131",
+      "category": "customs",
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-26-011",
+      "statement": {
+        "en": "In some historical All Saints and All Souls customs, families placed lanterns or sheltered candles beside graves.",
+        "fr": "Dans certaines anciennes coutumes de la Toussaint et du jour des Défunts, des familles plaçaient des lanternes ou des cierges abrités près des tombes."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-W-B-131",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-26-011"
+          ],
+          "printed_pages": [
+            311
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical local custom documented by Weiser (1958); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Weiser (1958) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "observation_ids": [
+          "WEI58-26-011"
+        ],
+        "printed_pages": [
+          311
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/customs-ultra-master-integrated-20261030.v1.json",
+          "group_id": "CAT-WEISER-B-131",
+          "observation_ids": [
+            "WEI58-26-011"
+          ],
+          "printed_pages": [
+            311
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "original_passage_reviewed": true
+        }
+      },
+      "editorial_reason": "Sheltered grave lights have a specific material and devotional use.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-P-014",
+      "category": "customs",
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-W05-OBS-014",
+      "statement": {
+        "en": "Pitrè described pilgrims reaching the Loreto shrine at Altavilla by foot, carriage, train or boat.",
+        "fr": "Pitrè décrivait des pèlerins se rendant au sanctuaire de Notre-Dame de Lorette à Altavilla à pied, en voiture, en train ou en bateau."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-P-014",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-W05-OBS-014"
+          ],
+          "printed_pages": [
+            88
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Historical local custom documented by Pitrè (1900); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Pitrè (1900) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+        "observation_ids": [
+          "PIT1900-W05-OBS-014"
+        ],
+        "printed_pages": [
+          88
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/pitre-1900-wave05-editorial-staging-and-holds.v1.json",
+          "observation_id": "PIT1900-W05-OBS-014",
+          "printed_page": 88,
+          "scan_page_1_based": 150,
+          "source_anchor": "A piedi, a cavallo, sopra car- rette, in carrozza, su sciarabbà \\ per ferrovia,",
+          "source_chapter": "IV",
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "archive_id": "afm3499.0021.001.umich.edu",
+          "source_sha256": "100e2b3164bd7a342c5c0c5d01df2a60b4635d5695dea456e9b93769866ee5ee",
+          "ocr_excerpt_rematched": true,
+          "original_page_image_verified": false
+        }
+      },
+      "editorial_reason": "Foot, carriage, rail and boat to one sanctuary makes a distinctive travel comparison.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-H04-P-097",
+      "category": "customs",
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-W05-OBS-097",
+      "statement": {
+        "en": "In old Villafranca festivities, children in festive dress brought offerings such as a mantle, crown and halo to the Madonna.",
+        "fr": "Lors d'anciennes fêtes à Villafranca, des enfants en tenue de fête apportaient à la Vierge des offrandes telles qu'un manteau, une couronne et une auréole."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-H04-P-097",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-W05-OBS-097"
+          ],
+          "printed_pages": [
+            401
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Historical local custom documented by Pitrè (1900); not a universal rite or proof of current practice.",
+            "fr": "Usage local historique rapporté par Pitrè (1900) ; ni rite universel ni attestation d'une pratique actuelle."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+        "observation_ids": [
+          "PIT1900-W05-OBS-097"
+        ],
+        "printed_pages": [
+          401
+        ],
+        "original_record_id": null,
+        "canonical_action_id": null,
+        "original_source_provenance": {
+          "owner": "data/customs/master/pitre-1900-wave05-editorial-staging-and-holds.v1.json",
+          "observation_id": "PIT1900-W05-OBS-097",
+          "printed_page": 401,
+          "scan_page_1_based": 459,
+          "source_anchor": "Consistono in un manto dì seta celeste, una corona ed un'aureola stel- lata che",
+          "source_chapter": "XLI",
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "archive_id": "afm3499.0021.001.umich.edu",
+          "source_sha256": "100e2b3164bd7a342c5c0c5d01df2a60b4635d5695dea456e9b93769866ee5ee",
+          "ocr_excerpt_rematched": true,
+          "original_page_image_verified": false
+        }
+      },
+      "editorial_reason": "Children bringing a mantle, crown and halo is a distinctive votive practice.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-M04-CANON-003",
+      "category": "mass_liturgy",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source_id": "AO.CANON.R62.003",
+      "statement": {
+        "en": "During Te igitur in the 1962 Roman Canon, the celebrant traces three crosses over the Host and chalice together.",
+        "fr": "Pendant le Te igitur du Canon romain de 1962, le célébrant trace trois croix au-dessus de l'hostie et du calice réunis."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-003",
+        "reader_cue_jump_verified": false,
+        "mass_context": {
+          "action_id": "AO.CANON.R62.003",
+          "cue_id": "AO.SM.C0152",
+          "ritus_locator": "VIII.1",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass priest action, Ritus servandus. This read-only source reference does not seek a live Mass cue.",
+            "fr": "Geste du prêtre dans la messe romaine de 1962, Ritus servandus. Cette référence documentaire ne déplace pas le lecteur de messe."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "observation_ids": [],
+        "printed_pages": [],
+        "original_record_id": null,
+        "canonical_action_id": "AO.CANON.R62.003",
+        "original_source_provenance": {
+          "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "action_id": "AO.CANON.R62.003",
+          "source_cue_id": "AO.SM.C0152",
+          "ritus_locator": "VIII.1",
+          "source_urls": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "original_english_action": "He makes three crosses over the Host and chalice.",
+          "original_french_rubric": "Trace trois signes de croix sur l'hostie et le calice ensemble.",
+          "authority_class": "ROMAN_MISSAL_1962",
+          "original_record_editorial_preview_only": true
+        }
+      },
+      "editorial_reason": "The three crosses in Te igitur are a distinct preconsecration act.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-M04-CANON-022",
+      "category": "mass_liturgy",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source_id": "AO.CANON.R62.022",
+      "statement": {
+        "en": "In the 1962 Roman Mass, the priest pronounces the words of consecration over the Host quietly, before elevating it.",
+        "fr": "Dans la messe romaine de 1962, le prêtre prononce à voix basse les paroles de consécration sur l'hostie avant de l'élever."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-022",
+        "reader_cue_jump_verified": false,
+        "mass_context": {
+          "action_id": "AO.CANON.R62.022",
+          "cue_id": "AO.SM.C0173",
+          "ritus_locator": "VIII.5",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass priest action, Ritus servandus. This read-only source reference does not seek a live Mass cue.",
+            "fr": "Geste du prêtre dans la messe romaine de 1962, Ritus servandus. Cette référence documentaire ne déplace pas le lecteur de messe."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "observation_ids": [],
+        "printed_pages": [],
+        "original_record_id": null,
+        "canonical_action_id": "AO.CANON.R62.022",
+        "original_source_provenance": {
+          "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "action_id": "AO.CANON.R62.022",
+          "source_cue_id": "AO.SM.C0173",
+          "ritus_locator": "VIII.5",
+          "source_urls": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "original_english_action": "He quietly pronounces the words of consecration.",
+          "original_french_rubric": "Avant-bras/coudes sur l'autel, prononce distinctement et avec révérence les paroles sur l'hostie; ce sont les paroles consacratoires, non l'élévation.",
+          "authority_class": "ROMAN_MISSAL_1962",
+          "original_record_editorial_preview_only": true
+        }
+      },
+      "editorial_reason": "Quiet Host Consecration and elevation are distinct priestly acts.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-M04-CANON-038",
+      "category": "mass_liturgy",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source_id": "AO.CANON.R62.038",
+      "statement": {
+        "en": "After the consecrations, during Unde et memores, the priest traces three crosses over the consecrated Host and chalice.",
+        "fr": "Après les consécrations, pendant l'Unde et memores, le prêtre trace trois croix sur l'hostie et le calice consacrés."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-038",
+        "reader_cue_jump_verified": false,
+        "mass_context": {
+          "action_id": "AO.CANON.R62.038",
+          "cue_id": "AO.SM.C0184",
+          "ritus_locator": "IX.1",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass priest action, Ritus servandus. This read-only source reference does not seek a live Mass cue.",
+            "fr": "Geste du prêtre dans la messe romaine de 1962, Ritus servandus. Cette référence documentaire ne déplace pas le lecteur de messe."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "observation_ids": [],
+        "printed_pages": [],
+        "original_record_id": null,
+        "canonical_action_id": "AO.CANON.R62.038",
+        "original_source_provenance": {
+          "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "action_id": "AO.CANON.R62.038",
+          "source_cue_id": "AO.SM.C0184",
+          "ritus_locator": "IX.1",
+          "source_urls": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "original_english_action": "He makes three crosses over the Host and chalice.",
+          "original_french_rubric": "Trace trois croix sur les deux Espèces consacrées ensemble.",
+          "authority_class": "ROMAN_MISSAL_1962",
+          "original_record_editorial_preview_only": true
+        }
+      },
+      "editorial_reason": "The crosses in Unde et memores occur after, rather than before, Consecration.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-M04-CANON-047",
+      "category": "mass_liturgy",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source_id": "AO.CANON.R62.047",
+      "statement": {
+        "en": "The Roman Canon includes a silent remembrance of the departed after the Consecration, distinct from the earlier remembrance of the living.",
+        "fr": "Le Canon romain comprend après la consécration une commémoration silencieuse des défunts, distincte de celle des vivants qui la précède."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-047",
+        "reader_cue_jump_verified": false,
+        "mass_context": {
+          "action_id": "AO.CANON.R62.047",
+          "cue_id": "AO.SM.C0193",
+          "ritus_locator": "IX.2",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass priest action, Ritus servandus. This read-only source reference does not seek a live Mass cue.",
+            "fr": "Geste du prêtre dans la messe romaine de 1962, Ritus servandus. Cette référence documentaire ne déplace pas le lecteur de messe."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "observation_ids": [],
+        "printed_pages": [],
+        "original_record_id": null,
+        "canonical_action_id": "AO.CANON.R62.047",
+        "original_source_provenance": {
+          "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "action_id": "AO.CANON.R62.047",
+          "source_cue_id": "AO.SM.C0193",
+          "ritus_locator": "IX.2",
+          "source_urls": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "original_english_action": "He commemorates the faithful departed in a brief silence.",
+          "original_french_rubric": "Fait mémoire des défunts à sa convenance, comme au Memento des vivants.",
+          "authority_class": "ROMAN_MISSAL_1962",
+          "original_record_editorial_preview_only": true
+        }
+      },
+      "editorial_reason": "The Memento of the departed follows the Consecration, unlike the living earlier in Canon.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "DYK-M04-CANON-056",
+      "category": "mass_liturgy",
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source_id": "AO.CANON.R62.056",
+      "statement": {
+        "en": "At Per ipsum, cum ipso and in ipso, the priest traces three crosses with the consecrated Host above the chalice.",
+        "fr": "Aux mots Per ipsum, cum ipso et in ipso, le prêtre trace trois croix avec l'hostie consacrée au-dessus du calice."
+      },
+      "source_batch": "SOURCE_FIRST_216",
+      "destination": {
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-056",
+        "reader_cue_jump_verified": false,
+        "mass_context": {
+          "action_id": "AO.CANON.R62.056",
+          "cue_id": "AO.SM.C0202",
+          "ritus_locator": "IX.3",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass priest action, Ritus servandus. This read-only source reference does not seek a live Mass cue.",
+            "fr": "Geste du prêtre dans la messe romaine de 1962, Ritus servandus. Cette référence documentaire ne déplace pas le lecteur de messe."
+          }
+        }
+      },
+      "source": {
+        "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "observation_ids": [],
+        "printed_pages": [],
+        "original_record_id": null,
+        "canonical_action_id": "AO.CANON.R62.056",
+        "original_source_provenance": {
+          "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "action_id": "AO.CANON.R62.056",
+          "source_cue_id": "AO.SM.C0202",
+          "ritus_locator": "IX.3",
+          "source_urls": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "original_english_action": "At Per ipsum, cum ipso and in ipso, he makes three crosses with the Host over the chalice.",
+          "original_french_rubric": "Avec l'Hostie, trace trois croix d'un bord à l'autre au-dessus du calice.",
+          "authority_class": "ROMAN_MISSAL_1962",
+          "original_record_editorial_preview_only": true
+        }
+      },
+      "editorial_reason": "The three Host crosses in the final doxology precede the different small elevation.",
+      "release": "R22_REVIEW_ONLY_NOT_APPROVED",
+      "approval": {
+        "english": false,
+        "french": false,
+        "source_images_reverified_this_pass": false,
+        "semantic_uniqueness": false,
+        "browser_route": false,
+        "publication": false
+      }
+    }
+  ]
+}
