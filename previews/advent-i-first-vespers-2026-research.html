@@ -95,8 +95,8 @@ import {buildAdventI2026ReadingFocus}
  from "../src/office/advent-first-vespers-reading-focus.js";
 import {reviewOfficeBetaSelection}
  from "../src/office/reader-beta-catalog.js";
-import {createSaturdayComplinePinnedReader,
- assembleSaturdayComplinePilot}
+import {createSaturdayComplinePinnedReader,assembleSaturdayComplinePilot,
+ createFerialTuesdayComplinePinnedReader,assembleFerialTuesdayComplinePilot}
  from "../src/office/saturday-compline-2026-pilot.js";
 
 const status=document.getElementById("status");
@@ -130,29 +130,41 @@ async function refreshBetaSelection(){
  }
  const entry=review.entry,oldKey=selectedPilotKey;
  betaTitle.textContent=entry.label;
- betaSubtitle.textContent=entry.officeDate===entry.civilDate?
-  "Saturday, 28 November 2026 · research-only":
-  "Saturday evening, 28 November 2026 · Universal calendar · research-only";
+ const dateText=new Intl.DateTimeFormat("en-GB",{
+  weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"
+ }).format(new Date(entry.civilDate+"T12:00:00Z"));
+ betaSubtitle.textContent=dateText+
+  (entry.officeDate!==entry.civilDate?" · First Vespers of "+entry.officeDate:"")+
+  " · universal calendar · research-only";
  if(!pilotStore.has(entry.key)){
   reader.hidden=true;
   status.textContent="Assembling pinned, source-owned "+entry.hour.toLowerCase()+
    " components in Latin, English and French.";
-  if(entry.assembly!=="SATURDAY_COMPLINE_2026_SOURCE_FIRST")return;
+  const saturday=entry.assembly==="SATURDAY_COMPLINE_2026_SOURCE_FIRST";
+  const tuesday=entry.assembly==="FERIAL_TUESDAY_COMPLINE_2026_SOURCE_FIRST";
+  if(!saturday&&!tuesday)return;
   try{
-   const source=createSaturdayComplinePinnedReader({
-    fetchSource:fetch.bind(globalThis)
-   });
-   const data=await assembleSaturdayComplinePilot({reader:source});
-   if(data.status!=="SOURCE_FIRST_SATURDAY_COMPLINE_RESEARCH_NOT_CERTIFIED"||
+   const source=(saturday?createSaturdayComplinePinnedReader:
+    createFerialTuesdayComplinePinnedReader)({
+     fetchSource:fetch.bind(globalThis)
+    });
+   const data=await (saturday?assembleSaturdayComplinePilot:
+    assembleFerialTuesdayComplinePilot)({reader:source});
+   const expected=saturday?
+    "SOURCE_FIRST_SATURDAY_COMPLINE_RESEARCH_NOT_CERTIFIED":
+    "SOURCE_FIRST_FERIAL_TUESDAY_COMPLINE_RESEARCH_NOT_CERTIFIED";
+   if(data.status!==expected||
+      data.civilDate!==entry.civilDate||
+      data.officeDate!==entry.officeDate||
       data.publishable!==false||data.published!==false||
       data.blocks.length!==42||!data.frames.length)
-    throw Error(data.reason||"Saturday Compline source assembly withheld");
+    throw Error(data.reason||"Compline appointed source assembly withheld");
    pilotStore.set(entry.key,{blocks:data.blocks,frames:data.frames});
   }catch(error){
    if(serial!==requestSerial)return;
    selectedPilotKey=null;reader.hidden=true;
    status.classList.add("error");
-   status.textContent="Saturday Compline preview withheld: "+
+   status.textContent="Compline source preview withheld: "+
     String(error?.message??error);
    return;
   }
