@@ -37,7 +37,7 @@ assert.equal(p73Rows.length,p73.candidates.length,
   "The six P73 images must remain an atomic approved cohort");
 assert.deepEqual(new Set(p73Rows.map(x=>x.media_id)),p73Ids);
 assert.equal(registry.items.length,originals.length+later.length);
-assert.equal(hero.items.length,31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length);
+assert.equal(hero.items.length,31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p108-one-approved-jihlava-cover.v1.json").photos.length);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
 assert.equal(new Set(registry.items.map(x=>x.media_id)).size,registry.items.length);
 assert.deepEqual([...new Set(originals.map(x=>x.place_id))].sort(),originalOwners.sort());
