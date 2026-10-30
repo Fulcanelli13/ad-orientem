@@ -136,6 +136,14 @@ assert.ok(html.indexOf('class="aoH4DiscoveryStandalone"')<html.indexOf('class="a
 const readFragment=html.slice(html.indexOf('class="aoH4Read"'));
 assert.doesNotMatch(readFragment,/data-home-dyk-open/,"Did You Know must not be inside Read");
 assert.equal((readFragment.match(/data-action="gospel"/g)||[]).length,1,"Read keeps its Gospel entry");
+assert.match(html,/class="aoH4CalendarViews"/,"Calendar must retain its own view selector");
+for(const [view,count] of [["day",1],["year",1]]){
+ assert.equal((html.match(new RegExp('data-home-calendar-view="'+view+'"',"g"))||[]).length,count,
+   "No Calendar "+view+" access in H4");
+}
+assert.match(html,/Liturgical Year/,"Year clock needs a visible labelled route");
+assert.match(h4HomeView({...vm,language:"fr"},model),/Année liturgique/,
+  "Year clock route must be bilingual");
 assert.match(html,/DID YOU KNOW\?/,"English affirmative discovery heading");
 assert.match(h4HomeView({...vm,language:"fr"},model),/LE SAVIEZ-VOUS \?/,"French discovery heading");
 assert.equal((html.match(/data-action="gospel"/g)||[]).length,1);
