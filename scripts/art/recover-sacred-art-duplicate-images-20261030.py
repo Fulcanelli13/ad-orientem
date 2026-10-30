@@ -149,6 +149,12 @@ VERIFIED_ALTERNATE_PAGES={
  "https://www.artic.edu/artworks/94841/the-song-of-the-lark":
    "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
 }
+# Exact Art UK object OP6, via its publicly displayed artwork delivery URL
+# (only used as review image, not a reuse licence or a publication original).
+DIRECT_OFFICIAL_IMAGE_URLS={
+ "https://artuk.org/discover/artworks/the-prayer-19241":
+  "https://d3d00swyhr67nd.cloudfront.net/w1200h1200/collection/STF/WAG/STF_WAG_OP6-001.jpg",
+}
 # Christie's URL for the Benson hero appears to identify a different lot.
 # Do not quietly recover from a different item. No-source Van Dyck alias
 # likewise remains held until independent exact-photo provenance exists.
@@ -164,6 +170,15 @@ def acquire(item):
             blob,resolved,contenttype=retry(u)
             thumb,metadata=as_thumb(blob)
             return thumb,{"reason":"RECOVERED_EXACT_SOURCE","imageUrl":resolved,"sourceUrl":source,**metadata}
+        except Exception as e:errors.append(str(e)[:100])
+    official_preview=DIRECT_OFFICIAL_IMAGE_URLS.get(source)
+    if official_preview:
+        try:
+            data,real,content_type=retry(official_preview)
+            thumb,meta=as_thumb(data)
+            return thumb,{"reason":"EXACT_OBJECT_OFFICIAL_PREVIEW_NOT_RELEASE_FILE",
+               "sourceUrl":source,"alternatePhotoSourceUrl":official_preview,
+               "imageUrl":real,**meta}
         except Exception as e:errors.append(str(e)[:100])
     alternate=VERIFIED_ALTERNATE_PAGES.get(source)
     if alternate:
