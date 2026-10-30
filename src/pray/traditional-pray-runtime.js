@@ -1,4 +1,5 @@
 import "./traditional-pray-styles.js";
+import { stampArtworkRuntimeIdentity } from "./artwork-runtime-identity.v1.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
 import {
   SACRED_HYMNS_V381,
@@ -278,6 +279,8 @@ function render(){
   const m=mount();if(!m)return false;
   m.dataset.aoPrayView="traditional-pray";
   m.dataset.aoTraditionalPrayRoute=S.route;
+  const dailyArtPrayer=S.route==="pray.morning_evening"&&S.dailyMode==="guided"?guidedDailyCards(S.daypart)?.[S.dailyStep]?.id:null;
+  stampArtworkRuntimeIdentity(m,{owner:"traditional",route:S.route,screen:S.screen,prayerId:S.prayerId,daypart:S.daypart,dailyStep:S.dailyStep,stepPrayerId:dailyArtPrayer,examenStep:S.examenStep});
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   injectGlossaryAction();
   m.scrollTop=0;
