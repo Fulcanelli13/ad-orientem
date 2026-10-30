@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {h4Enabled,h4HomeView,verifiedH4WeekColour} from "../src/home/today-h4-view.js";
 import {h4ChoicesMarkup,rememberH4Choices} from "../src/home/today-h4-change-sheet.js";
 import {createSettingsDonorState} from "../src/settings/donor-state.js";
+import {renderSettingsToString} from "../src/settings/presentation.js";
 import {buildHomeViewModel} from "../src/home/presentation.js";
 assert.equal(h4Enabled({location:{search:""}}),false,"H4 must not replace production until approved");
 assert.equal(h4Enabled({location:{search:"?aoTodayH4=1"}}),true,"H4 preview opt-in missing");
@@ -78,6 +79,10 @@ assert.deepEqual({ok:saved.ok,persistent:saved.persistent},{ok:true,persistent:t
 assert.deepEqual(createSettingsDonorState(savedWin).snapshot().preferences.mass.todayChoices,{
   form:"SOLEMN",readerMode:"MISSAL",readerLanguage:"fr",beforeMass:"prepare",afterMass:"thanksgiving"
 },"All five usual Mass choices must survive a donor reinitialisation");
+const settingsMass=renderSettingsToString(savedWin,{route:"/settings/mass"});
+assert.match(settingsMass,/data-pref-clear-today/, "Remembered choices need a targeted Settings reset");
+assert.match(settingsMass,/Defaults saved from Today/, "Settings must disclose their override");
+
 savedWin.AO_R17_BROWSER_ENTRY={status:()=>({fullMassPreflight:{chosenForm:"INVALID",
   readerMode:"LIVE",experience:{language:"en",before:"none",after:"none"}}})};
 assert.equal(rememberH4Choices(savedWin).ok,false,"Never persist an invalid ceremony");
@@ -85,6 +90,8 @@ savedWin.AO_SETTINGS_DONOR_V4359.setPath("mass.todayChoices",{form:"SOLEMN",
   readerMode:"INVALID",readerLanguage:"fr",beforeMass:"prepare",afterMass:"thanksgiving"});
 assert.equal(savedWin.AO_SETTINGS_DONOR_V4359.snapshot().preferences.mass.todayChoices,null,
   "Settings must reject malformed remembered choices");
+assert.doesNotMatch(renderSettingsToString(savedWin,{route:"/settings/mass"}),/data-pref-clear-today/,
+  "Clearing remembered choices must restore legacy Mass preference presentation");
 const modalFr=h4ChoicesMarkup({chosenForm:"LOW",formChangeAllowed:false,readerMode:"LIVE",
   experience:{language:"fr",before:"none",after:"full"}},{language:"fr"});
 assert.match(modalFr,/Une autre messe est célébrée/);
