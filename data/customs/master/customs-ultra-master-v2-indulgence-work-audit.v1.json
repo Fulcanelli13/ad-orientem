@@ -20,10 +20,11 @@
     "conditional_practice_to_work_research_matches": 8,
     "existing_historical_claim_clusters": 4,
     "explicit_source_labels_mentioning_indulgence": 5,
-    "original_grants_verified_for_historical_cases": 0,
-    "new_public_indulgence_assertions": 0
+    "original_grants_verified_for_historical_cases": 1,
+    "new_public_indulgence_assertions": 0,
+    "original_signed_facsimiles_found": 1
   },
-  "caution": "No indulgence is attached to a customs identity simply by its title, date, place or historical folklore description; the prescribed work and all current conditions must be met. Research matching does not record that any individual has gained an indulgence.",
+  "caution": "No indulgence is attached to a customs identity simply by its title, date, place or historical folklore description; the prescribed work and all current conditions must be met. Research matching does not record that any individual has gained an indulgence. Caravaca has a reproduced signed 1998 grant facsimile, but release of its exact concession to public Calendar remains gated; three other cases have no original grant instrument found.",
   "current_grant_work_seeds": [
     {
       "grant_id": "ENCH1999-01",
@@ -175,12 +176,20 @@
       "location": "Municipal tourism source lines 104, 116",
       "origin_url": "https://nueva.turismocaravaca.com/en/the-cross-of-caravaca",
       "historical_claim_type": "HISTORICAL_PAPAL_JUBILEE_OR_SANCTUARY_GRANT",
-      "source_status": "TOURISM_SOURCE_NOT_PRIMARY_GRANT",
-      "authority_instrument_retrieved": false,
-      "purported_plenary_or_partial_exactness_verified": false,
-      "eligibility_and_conditions_verified": false,
+      "source_status": "1998_APOSTOLIC_PENITENTIARY_SIGNED_FACSIMILE_AND_TRANSLATION_SEEN",
+      "authority_instrument_retrieved": true,
+      "purported_plenary_or_partial_exactness_verified": true,
+      "eligibility_and_conditions_verified": true,
       "can_appear_as_current_grant": false,
-      "next_original_evidence_step": "Primary papal decree, designated jubilee years, eligible shrine visits and conditions"
+      "next_original_evidence_step": "Primary papal decree, designated jubilee years, eligible shrine visits and conditions",
+      "facsimile_url": "https://www.caminodecaravacadelacruz.es/webs/murciaturistica/folletos/1/PTMDOC_2_3122017.pdf",
+      "facsimile_pdf_page_one_based": 5,
+      "primary_protocol": "2/98/I",
+      "grant_issued": "1998-01-09",
+      "post_reform_original_grant": true,
+      "legal_editorial_signoff_pending": true,
+      "diocesan_reconfirmation": "https://diocesisdecartagena.org/blog/caravaca-de-la-cruz-abre-los-brazos-al-mundo-en-un-nuevo-ano-jubilar/",
+      "review_dossier": "data/customs/master/customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json"
     },
     {
       "claim_id": "HIST-IND-004",
