@@ -1,0 +1,127 @@
+{
+  "schema": "AO_DYK_R25_EIGHT_GLOSSARY_HOME_FIT_TRIAGE_V1",
+  "date": "2026-10-30",
+  "status": "EDITORIAL_HOME_SUITABILITY_ONLY_NOT_SOURCE_APPROVAL_OR_PUBLICATION",
+  "counts": {
+    "records_reviewed": 8,
+    "glossary_preferred": 5,
+    "home_rewrite_candidates": 3,
+    "shortlist_count_unchanged": 189,
+    "final_approved": 0,
+    "published": 0
+  },
+  "protocol": "Do not delete or reclassify canonical source records, do not remove shortlisted IDs without explicit composition update, and do not turn explanatory app/implementation metadata into discoveries. These are editorial route recommendations, not claim approval.",
+  "decisions": [
+    {
+      "id": "DYK-GI-G074",
+      "source_glossary_id": "G074",
+      "decision": "LEARN_GLOSSARY_PREFERRED",
+      "rationale": "Generic posture caveat; not surprising or source-particular, and local custom should be handled by user settings rather than a Home discovery.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": null,
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G218",
+      "source_glossary_id": "G218",
+      "decision": "LEARN_GLOSSARY_PREFERRED",
+      "rationale": "Description largely duplicates the sanctuary-lamp definition; fuel variance requires qualified canon-law explanation.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": null,
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G411",
+      "source_glossary_id": "G411",
+      "decision": "LEARN_GLOSSARY_PREFERRED",
+      "rationale": "Stoup-versus-font is useful glossary context but repeats the purpose of the original entry.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": null,
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G094",
+      "source_glossary_id": "G094",
+      "decision": "HOME_REWRITE_CANDIDATE_PENDING_NOVELTY",
+      "rationale": "The 25 April Greater Litany and pre-Ascension Lesser Litanies offer a concrete calendar-based discovery, distinct from unsupported assumptions about a local procession.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": {
+        "en": "In the 1962 Roman calendar, the Greater Litanies are assigned to 25 April, while the Lesser Litanies normally fall on the three days before Ascension.",
+        "fr": "Dans le calendrier romain de 1962, les Grandes Litanies sont fixées au 25 avril, tandis que les Petites Litanies ont normalement lieu les trois jours précédant l'Ascension.",
+        "witness_url": "https://1962ordo.today/day/vigil-of-ascension/",
+        "secondary_citation": "1962 General Rubrics, chapter 10, nos. 80 and 87"
+      },
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G311",
+      "source_glossary_id": "G311",
+      "decision": "HOME_REWRITE_CANDIDATE_PENDING_NOVELTY",
+      "rationale": "Historical source confirms O salutaris is drawn from two concluding stanzas of Thomas Aquinas's larger Corpus Christi hymn; discard app-internal 'Latin phrase object' language.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": {
+        "en": "O salutaris Hostia is not a separate hymn originally: its two stanzas come from the end of Saint Thomas Aquinas's Verbum supernum prodiens.",
+        "fr": "O salutaris Hostia n'était pas à l'origine un hymne indépendant : ses deux strophes proviennent de la fin du Verbum supernum prodiens de saint Thomas d'Aquin.",
+        "witness_url": "https://www.newadvent.org/cathen/11334a.htm",
+        "secondary_citation": "Catholic Encyclopedia, O Salutaris Hostia"
+      },
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G318",
+      "source_glossary_id": "G318",
+      "decision": "LEARN_GLOSSARY_PREFERRED",
+      "rationale": "The pyx's portability and communion-to-sick use are already essentially in the glossary definition; not novel enough independently.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": null,
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G319",
+      "source_glossary_id": "G319",
+      "decision": "LEARN_GLOSSARY_PREFERRED",
+      "rationale": "Distinguishing ciborium, chalice, and humeral veils is glossary taxonomy, without an independently compelling source anecdote.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": null,
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G038",
+      "source_glossary_id": "G038",
+      "decision": "HOME_REWRITE_CANDIDATE_PENDING_NOVELTY",
+      "rationale": "The historical name of the sacrament and its explicit treatment by Trent can make a clear discovery; remove internal glossary-scope explanation.",
+      "source_glossary_path": "dyk-glossary-second-insights-200.v1.json",
+      "proposed_home_copy_not_applied": {
+        "en": "The Council of Trent explicitly taught that Extreme Unction is a sacrament instituted by Christ, drawing on Saint James's instruction about anointing the sick.",
+        "fr": "Le concile de Trente enseigna explicitement que l'Extrême-Onction est un sacrement institué par le Christ, en s'appuyant sur l'enseignement de saint Jacques au sujet de l'onction des malades.",
+        "witness_url": "https://adfonteslibrary.org/work-council-trent-session-14",
+        "secondary_citation": "Council of Trent, Session XIV, On Extreme Unction, chapter I"
+      },
+      "source_correspondence_certified": false,
+      "home_preview_612_novelty_checked": false,
+      "final_signoff": false,
+      "publication_authorized": false
+    }
+  ]
+}
