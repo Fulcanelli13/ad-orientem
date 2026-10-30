@@ -34,7 +34,14 @@ try{
    const opened=await page.evaluate(()=>globalThis.AO_MODULES.open("pray.morning_evening"));
    assert.notEqual(opened,false,"daily reader module must open");
    const base="#aoPray435930.open ";
-   await page.waitForSelector(base+'.aoDailyBookSelector',{timeout:20000});
+   await page.waitForSelector(base+'.aoDailyBookSelector',{state:"attached",timeout:20000});
+   const openBookSettings=async()=>{
+    const aa=page.locator(base+'.aoP435930Head.aoPrayerBookHead > .aoPrayerBookMenu');
+    assert.equal(await aa.count(),1,"Historical editions must remain in Aa");
+    if(!await aa.evaluate(el=>el.open))await aa.locator(":scope > summary").click();
+    assert.ok(await page.locator(base+'.aoDailyBookSelector').isVisible(),"The book selector must be reachable, not always displayed above prayer");
+   };
+   await openBookSettings();
    const prayerFirstFold=()=>page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930.open");
     const text=root?.querySelector(".aoTP381GuideCard .aoTP381PrayerCard p, .aoTP381GuideCard .aoTP381TextParagraph");
@@ -64,17 +71,21 @@ try{
    assert.equal(await page.locator(base+'.aoDailyBookEditions [aria-pressed="true"]').count(),1);
    assert.equal(await page.locator(base+'[data-tp381-personal-value="1913"]').getAttribute("aria-pressed"),"true");
    await page.locator(base+'[data-tp381-personal-value="1905"]').click();
+   await openBookSettings();
    assert.equal(await page.locator(base+'[data-tp381-personal-value="1905"]').getAttribute("aria-pressed"),"true","1905 pill must switch the existing edition owner");
    assert.equal(await page.locator(base+'[data-ao-pray-guide-card^="piusx-1905"]').count(),1,"1905 must load its complete source-defined stage");
    await page.screenshot({path:resolve(captures,"daily-morning-1905-book-"+width+".png"),animations:"disabled"});
    await page.locator(base+'[data-tp381-personal-value="1913"]').click();
+   await openBookSettings();
    assert.equal(await page.locator(base+'[data-tp381-personal-value="1913"]').getAttribute("aria-pressed"),"true");
    assert.equal(await page.locator(base+'[data-ao-pray-guide-card^="piusx-1913"]').count(),1,"1913 restores the original source-defined stage");
    assert.equal(await page.locator(base+'.aoDailyReadingOptions').count(),1,"reading layout belongs to a secondary disclosure");
    assert.equal(await page.locator(base+'.aoDailyReadingOptions').getAttribute("open"),null,"reading options must not displace source books above the prayer");
    assert.equal(await page.locator(base+'.aoDailyUxModes [aria-pressed="true"]').count(),1);
+   await page.locator(base+'.aoP435930Head.aoPrayerBookHead > .aoPrayerBookMenu > summary').click();
    await checkPrayerFold("morning");
    await page.screenshot({path:resolve(captures,"daily-morning-cards-"+width+".png"),animations:"disabled"});
+   await openBookSettings();
    await page.locator(base+'.aoDailyReadingOptions summary').click();
    await page.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
    let flow=await state();
@@ -94,6 +105,7 @@ try{
    assert.equal(flow.count,sourcePlan.evening.length,"Evening must match the selected St Pius X source-edition plan, not impose the 13-step canonical baseline");
    assert.ok(flow.overflow<=1&&flow.mountOverflow<=1,"evening horizontal overflow "+JSON.stringify(flow));
    await page.screenshot({path:resolve(captures,"daily-evening-continuous-"+width+".png"),animations:"disabled"});
+   await openBookSettings();
    await page.locator(base+'.aoDailyReadingOptions summary').click();
    await page.locator(base+'[data-tp381-daily-presentation="guided"]').click();
    assert.equal((await state()).kind,"daily","switching back restores canonical dual-axis cards");
@@ -123,7 +135,11 @@ try{
   const opened=await frPage.evaluate(()=>globalThis.AO_MODULES.open("pray.morning_evening"));
   assert.notEqual(opened,false);
   const base="#aoPray435930.open ";
-  await frPage.waitForSelector(base+".aoDailyBookSelector",{timeout:20000});
+  await frPage.waitForSelector(base+".aoDailyBookSelector",{state:"attached",timeout:20000});
+  const frenchAa=frPage.locator(base+'.aoP435930Head.aoPrayerBookHead > .aoPrayerBookMenu');
+  assert.equal(await frenchAa.count(),1);
+  await frenchAa.locator(":scope > summary").click();
+  assert.ok(await frPage.locator(base+'.aoDailyBookSelector').isVisible());
   assert.match(await frPage.locator(base+".aoDailyBookLabel").innerText(),/Version du livre de prières/i);
   await frPage.locator(base+".aoDailyReadingOptions summary").click();
   await frPage.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
