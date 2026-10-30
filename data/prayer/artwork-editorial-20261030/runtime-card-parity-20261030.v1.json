@@ -61,7 +61,8 @@
     "optional_luminous_semantic_artwork_families": 5,
     "direct_editorial_slot_lookup_gaps": 0,
     "production_artwork_runtime_wiring_verified": false,
-    "reader_ui_image_coverage_certified": false
+    "reader_ui_image_coverage_certified": false,
+    "nonvisual_runtime_identity_annotations_present": true
   },
   "runtime_stage_to_editorial_slot": {
     "benediction": [
@@ -73,9 +74,9 @@
       },
       {
         "runtime_stage_id": "adoration",
-        "editorial_slot": "STG-pray.benediction-01",
+        "editorial_slot": "STG-pray.adoration-02",
         "exact_scene_exception": false,
-        "fallback_only": false
+        "fallback_only": true
       },
       {
         "runtime_stage_id": "hymn",
@@ -644,8 +645,8 @@
       "per_day_guided_stages": 4,
       "total_guided_day_stage_states": 36,
       "cover_slot": "COV-novena.st_therese",
-      "preferred_day_slot": "STG-novena.st_therese-01",
-      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Only contextual Thérèse cover research image is indexed; no exact Saint Thérèse image cleared for any day/stage. Do not imply day-pool figures of the Christ Child depict the saint.",
       "publication_gate": "EXACT_SAINT_IMAGE_NOT_CLEARED"
     },
     {
@@ -818,7 +819,9 @@
     },
     {
       "route": "pray.holy_name_litany",
-      "note": "Separate traditional litany route is not separately mapped to an art-bearing blueprint slot"
+      "note": "Separate traditional litany route is not separately mapped to an art-bearing blueprint slot",
+      "status": "CONFIRMED_NO_ARTWORK_SLOT_IN_EXISTING_RUNTIME_IDENTITY",
+      "priority": "P0"
     },
     {
       "route": "pray.dying_companion",
@@ -852,25 +855,33 @@
       {
         "path": "src/pray/presentation-runtime.js",
         "has_editorial_import": false,
-        "has_img_markup": false
+        "has_img_markup": false,
+        "has_runtime_identity_marker_import": true,
+        "note": "Nonvisual existing runtime stage identity marker wired; does NOT render selected image sources"
       },
       {
         "path": "src/pray/novena-runtime.js",
         "has_editorial_import": false,
-        "has_img_markup": false
+        "has_img_markup": false,
+        "has_runtime_identity_marker_import": true,
+        "note": "Nonvisual existing runtime stage identity marker wired; does NOT render selected image sources"
       },
       {
         "path": "src/pray/traditional-pray-runtime.js",
         "has_editorial_import": false,
-        "has_img_markup": false
+        "has_img_markup": false,
+        "has_runtime_identity_marker_import": true,
+        "note": "Nonvisual existing runtime stage identity marker wired; does NOT render selected image sources"
       }
     ],
-    "conclusion": "Inspected module sources contain no image markup or artwork-editorial registry imports. Rosary delegates to separate donor artwork handling. This is static-source evidence only, not rendered-browser verification."
+    "conclusion": "The three modular readers stamp a nonvisual artwork identity for their current stage, but do not import image selections or render candidate paintings. Rosary donor may have independent imagery; DOM/photographic QA remains unverified."
   },
   "validation": {
     "no_published_images_asserted": true,
     "no_merge_or_deploy_requested": true,
     "missing_editorship_slots": [],
     "full_parity_status": "OPEN"
-  }
+  },
+  "runtime_identity_source": "src/pray/artwork-runtime-identity.v1.js",
+  "verified_nonvisual_integration": "src/pray/presentation-runtime.js;src/pray/novena-runtime.js;src/pray/traditional-pray-runtime.js"
 }
