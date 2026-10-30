@@ -1,0 +1,27 @@
+name: Directory P108 single approved Jihlava source-pinned cover
+on:
+  pull_request:
+    paths:
+      - assets/approved/place-media/CZ-st-ignatius-jihlava.webp
+      - data/geography/approved-place-media.v1.json
+      - data/geography/research/directory-p108-one-approved-jihlava-cover.v1.json
+      - data/directory/research/p108-jihlava-approved-cover-byte-audit.v1.json
+      - tests/directory-p108-one-jihlava-approved-cover.mjs
+      - .github/workflows/directory-p108-approved-cover-gate.yml
+permissions:
+  contents: read
+jobs:
+  exact-jihlava-media-and-credits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/directory-p108-one-jihlava-approved-cover.mjs
+      - run: node tests/directory-p106-four-approved-covers.mjs
+      - run: node tests/directory-p104-seven-p97-exact-place-links.mjs
+      - run: node tests/directory-place-photo-crosswalk.mjs
