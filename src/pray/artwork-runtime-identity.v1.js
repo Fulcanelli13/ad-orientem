@@ -39,7 +39,7 @@ const result=(key,slot,fit,extra={})=>Object.freeze({
 });
 // The 1962 and current Loreto texts are distinct editions of the same Marian invocation;
 // their approved Marian paintings are reusable, but the text remains separate.
-const devotional=(id)=>id==="litany_loreto_current"?"COV-litany_loreto_1962":"COV-"+id;
+const devotional=(id)=>id==="litany_loreto_current"?"COV-litany_loreto_1962":id==="pray.nightly_examen"?"COV-daily.nightly_examen":"COV-"+id;
 
 export function resolveArtworkRuntimeIdentity(input={}){
  const owner=String(input.owner||"presentation");
