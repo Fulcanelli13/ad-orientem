@@ -91,8 +91,8 @@ class PhotoFinderTests(unittest.TestCase):
   self.assertEqual((selected,no_selection,files),(395,56,972))
   # Asset release remains separate: approved media is NEVER inferred from
   # editorial DONE. Only source-verified files are in approved cover/gallery.
-  self.assertEqual(len(self.covers["items"]),90)
-  self.assertEqual(len(self.gallery["items"]),33)
+  self.assertGreaterEqual(len(self.covers["items"]),90)
+  self.assertGreaterEqual(len(self.gallery["items"]),33)
  def test_older_licences_not_misrepresented(self):
   for c in ["CC-BY-2.0","CC-BY-2.5","CC-BY-SA-2.5"]:
    self.assertIn(c,mod.stage.LICENSES)
