@@ -743,8 +743,8 @@
       "source_batch": "ORIGINAL_145",
       "category": "PITRE_1900",
       "statement": {
-        "en": "In Sicily, Saint Joseph's tables welcomed three poor guests in Ribera and Santa Croce Camerina; in Canicattini, an older man, a woman and a child represented the Holy Family.",
-        "fr": "En Sicile, les tables de saint Joseph accueillaient trois hôtes pauvres à Ribera et Santa Croce Camerina ; à Canicattini, un homme âgé, une femme et un enfant représentaient la Sainte Famille."
+        "en": "At Saint Joseph's feast in Ribera, Pitrè described a household table where three poor guests represented the Holy Family.",
+        "fr": "Pour la fête de saint Joseph à Ribera, Pitrè décrit une table familiale où trois hôtes pauvres représentaient la Sainte Famille."
       },
       "editorial_copy_method": "R21_COMBINED_CLAIM_SOURCE_AWARE_REVIEW",
       "source": {
@@ -838,6 +838,35 @@
         "original_source_pages_verified_in_this_pass": false,
         "replaces_existing_fact_id": "DYK-UM01-021",
         "new_fact_generated": false
+      },
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch01.v1.json",
+        "original_source_id": "PIT1900-IT-008",
+        "printed_page": 443,
+        "original_scan_page_1_based": 501,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": null,
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Ribera, Agrigento, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": true,
+        "editorial_reason": "The source record PIT1900-IT-008 is only Ribera; Canicattini PIT1900-IT-026 and Santa Croce Camerina PIT1900-IT-036 are different local witnesses and already explicitly protected in R21 adjudication. Remove composite cross-town assertions.",
+        "previous_bilingual_claim": {
+          "en": "In Sicily, Saint Joseph's tables welcomed three poor guests in Ribera and Santa Croce Camerina; in Canicattini, an older man, a woman and a child represented the Holy Family.",
+          "fr": "En Sicile, les tables de saint Joseph accueillaient trois hôtes pauvres à Ribera et Santa Croce Camerina ; à Canicattini, un homme âgé, une femme et un enfant représentaient la Sainte Famille."
+        },
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "MULTI_TOWN_CLAIM_USED_SINGLE_RIBERA_SOURCE"
+        ]
       }
     },
     {
@@ -869,7 +898,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch01.v1.json",
+        "original_source_id": "PIT1900-IT-011",
+        "printed_page": 444,
+        "original_scan_page_1_based": 502,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": null,
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Ribera, Agrigento, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM01-026",
@@ -900,7 +953,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch01.v1.json",
+        "original_source_id": "PIT1900-IT-017",
+        "printed_page": 445,
+        "original_scan_page_1_based": 503,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": null,
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Ribera, Agrigento, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM01-027",
@@ -931,7 +1008,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch01.v1.json",
+        "original_source_id": "PIT1900-IT-031",
+        "printed_page": 448,
+        "original_scan_page_1_based": 506,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": null,
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Canicattini (Syracuse), Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM01-028",
@@ -962,7 +1063,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch01.v1.json",
+        "original_source_id": "PIT1900-IT-002",
+        "printed_page": 441,
+        "original_scan_page_1_based": 499,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": null,
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Ribera, Agrigento, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM01-030",
@@ -993,7 +1118,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch01.v1.json",
+        "original_source_id": "PIT1900-IT-024",
+        "printed_page": 447,
+        "original_scan_page_1_based": 505,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": null,
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Canicattini (Syracuse), Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-001",
@@ -1405,7 +1554,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-002",
+        "printed_page": 12,
+        "original_scan_page_1_based": 78,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "nove giorni",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-027",
@@ -1483,6 +1656,30 @@
         "original_source_pages_verified_in_this_pass": false,
         "replaces_existing_fact_id": "DYK-UM02-027",
         "new_fact_generated": false
+      },
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-009",
+        "printed_page": 14,
+        "original_scan_page_1_based": 80,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "figura della santa dalle candide vesti",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
       }
     },
     {
@@ -1514,7 +1711,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-018",
+        "printed_page": 31,
+        "original_scan_page_1_based": 93,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "barche",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-031",
@@ -1545,7 +1766,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-030",
+        "printed_page": 72,
+        "original_scan_page_1_based": 134,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "tabelle votive",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-032",
@@ -1576,15 +1821,39 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-033",
+        "printed_page": 73,
+        "original_scan_page_1_based": 135,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "venditori de santi in pasta",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-034",
       "source_batch": "ORIGINAL_145",
       "category": "PITRE_1900",
       "statement": {
-        "en": "Pitrè described Palermo fishermen and fishmongers from the Kalsa carrying the heavy litter of Saints Cosmas and Damian.",
-        "fr": "Pitrè relatait comment des pêcheurs et des poissonniers du quartier de la Kalsa, à Palerme, portaient le lourd brancard des saints Côme et Damien."
+        "en": "Pitrè described a group of about fifty fishermen and fishmongers carrying the processional litter of Saints Cosmas and Damian in Palermo.",
+        "fr": "Pitrè décrit une cinquantaine de pêcheurs et de poissonniers portant le brancard de procession des saints Côme et Damien à Palerme."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
@@ -1607,7 +1876,34 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-045",
+        "printed_page": 79,
+        "original_scan_page_1_based": 141,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "cinquanta pescatori e pesciauoli",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": true,
+        "editorial_reason": "Original Italian anchor explicitly says 'cinquanta pescatori e pesciauoli'. Avoid inferring weight and the group's precise residence solely from this short anchor.",
+        "previous_bilingual_claim": {
+          "en": "Pitrè described Palermo fishermen and fishmongers from the Kalsa carrying the heavy litter of Saints Cosmas and Damian.",
+          "fr": "Pitrè relatait comment des pêcheurs et des poissonniers du quartier de la Kalsa, à Palerme, portaient le lourd brancard des saints Côme et Damien."
+        },
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-035",
@@ -1638,7 +1934,33 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-048",
+        "printed_page": 80,
+        "original_scan_page_1_based": 142,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "quartare",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-036",
@@ -1669,7 +1991,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-054",
+        "printed_page": 84,
+        "original_scan_page_1_based": 146,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "con giri vorticosi",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-038",
@@ -1700,7 +2046,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-062",
+        "printed_page": 559,
+        "original_scan_page_1_based": 617,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "cavalcata",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Piazza Armerina, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-039",
@@ -1731,7 +2101,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-068",
+        "printed_page": 560,
+        "original_scan_page_1_based": 618,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "campanello",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Piazza Armerina, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-040",
@@ -1762,15 +2156,39 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-073",
+        "printed_page": 122,
+        "original_scan_page_1_based": 184,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "giovedi",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Gangi, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-042",
       "source_batch": "ORIGINAL_145",
       "category": "PITRE_1900",
       "statement": {
-        "en": "A statue of Saint James visited Gratteri houses collecting gifts that could include grain, oil, wine and eggs.",
-        "fr": "À Gratteri une statue de saint Jacques visitait les maisons pour recevoir des offrandes, notamment du grain, de l'huile, du vin et des œufs."
+        "en": "At Gratteri, Pitrè described Saint James's statue being taken to houses to collect offerings that included money, grain, barley and broad beans.",
+        "fr": "À Gratteri, Pitrè décrit la statue de saint Jacques portée de maison en maison pour recueillir notamment de l'argent, du grain, de l'orge et des fèves."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
@@ -1793,7 +2211,34 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-075",
+        "printed_page": 124,
+        "original_scan_page_1_based": 186,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "danaro grano orzo fave",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Gratteri, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": true,
+        "editorial_reason": "Italian anchor 'danaro grano orzo fave' directly supports these offerings; R21's oil, wine and eggs are not evidenced by the narrow supplied source anchor.",
+        "previous_bilingual_claim": {
+          "en": "A statue of Saint James visited Gratteri houses collecting gifts that could include grain, oil, wine and eggs.",
+          "fr": "À Gratteri une statue de saint Jacques visitait les maisons pour recevoir des offrandes, notamment du grain, de l'huile, du vin et des œufs."
+        },
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-043",
@@ -1824,7 +2269,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-078",
+        "printed_page": 124,
+        "original_scan_page_1_based": 186,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "giardini",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Gratteri, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-044",
@@ -1855,7 +2324,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-080",
+        "printed_page": 125,
+        "original_scan_page_1_based": 187,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "grap poli d uva",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Gratteri, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-045",
@@ -1886,7 +2379,33 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-084",
+        "printed_page": 126,
+        "original_scan_page_1_based": 188,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "terza domenica",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Geraci Siculo, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-046",
@@ -1917,7 +2436,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-085",
+        "printed_page": 126,
+        "original_scan_page_1_based": 188,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "la terza domenica di griugno",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Geraci Siculo, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-048",
@@ -1948,7 +2491,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-095",
+        "printed_page": 128,
+        "original_scan_page_1_based": 190,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "caciocavalli",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Geraci Siculo, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM02-050",
@@ -1979,7 +2546,33 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch02b-pitre.v1.json",
+        "original_source_id": "PIT1900-NEW-110",
+        "printed_page": 135,
+        "original_scan_page_1_based": 197,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "america",
+        "source_family": "PITRE_1900",
+        "scope": [
+          "Marineo, Palermo, Sicily"
+        ],
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-003",
@@ -2371,7 +2964,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-020",
+        "printed_page": 33,
+        "original_scan_page_1_based": 95,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "offrire la cera di uso",
+        "source_family": "PITRE_1900",
+        "scope": "Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-031",
@@ -2402,7 +3017,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-028",
+        "printed_page": 71,
+        "original_scan_page_1_based": 133,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "la festa si ripete in chiesa",
+        "source_family": "PITRE_1900",
+        "scope": "Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-033",
@@ -2433,7 +3070,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-037",
+        "printed_page": 74,
+        "original_scan_page_1_based": 136,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "quadri su tela ad acquarello",
+        "source_family": "PITRE_1900",
+        "scope": "Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-037",
@@ -2464,7 +3125,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-059",
+        "printed_page": 558,
+        "original_scan_page_1_based": 616,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "una lamina d argento",
+        "source_family": "PITRE_1900",
+        "scope": "Piazza Armerina, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-039",
@@ -2495,7 +3178,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-067",
+        "printed_page": 560,
+        "original_scan_page_1_based": 618,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "monache",
+        "source_family": "PITRE_1900",
+        "scope": "Piazza Armerina, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-040",
@@ -2526,7 +3231,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-070",
+        "printed_page": 120,
+        "original_scan_page_1_based": 182,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "confraternite",
+        "source_family": "PITRE_1900",
+        "scope": "Gangi, Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-043",
@@ -2557,7 +3284,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-087",
+        "printed_page": 126,
+        "original_scan_page_1_based": 188,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "latte",
+        "source_family": "PITRE_1900",
+        "scope": "Geraci Siculo, Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-045",
@@ -2588,7 +3337,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-096",
+        "printed_page": 128,
+        "original_scan_page_1_based": 190,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "cera",
+        "source_family": "PITRE_1900",
+        "scope": "Geraci Siculo, Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-046",
@@ -2619,7 +3390,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-097",
+        "printed_page": 129,
+        "original_scan_page_1_based": 191,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "poesie d occasione in lode",
+        "source_family": "PITRE_1900",
+        "scope": "Geraci Siculo, Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-048",
@@ -2650,7 +3443,29 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-111",
+        "printed_page": 135,
+        "original_scan_page_1_based": 197,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "vestito da angelo per un anello",
+        "source_family": "PITRE_1900",
+        "scope": "Marineo, Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
+      }
     },
     {
       "id": "DYK-UM03-049",
@@ -2728,6 +3543,28 @@
         "original_source_pages_verified_in_this_pass": false,
         "replaces_existing_fact_id": "DYK-UM03-049",
         "new_fact_generated": false
+      },
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+        "original_source_id": "PIT1900-NEW-116",
+        "printed_page": 136,
+        "original_scan_page_1_based": 198,
+        "previous_page_image_flag_in_upstream": true,
+        "source_anchor": "sulle pubbliche vie e sulle piazze",
+        "source_family": "PITRE_1900",
+        "scope": "Marineo, Palermo, Sicily",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": []
       }
     },
     {
@@ -6322,7 +7159,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-015",
+        "printed_page": 89,
+        "original_scan_page_1_based": 151,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "LA MADONNA DI LORETO IN ALTAVILLA 89 vola sola; lunga quanto gli stradali ond'essa",
+        "source_family": "PITRE_1900",
+        "scope": "Our Lady of Loreto — Altavilla",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-017",
@@ -6367,7 +7228,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-017",
+        "printed_page": 90,
+        "original_scan_page_1_based": 152,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "In men che non si pensi, delle migliaia di lire entrano nella cassa della",
+        "source_family": "PITRE_1900",
+        "scope": "Our Lady of Loreto — Altavilla",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-025",
@@ -6412,7 +7297,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-025",
+        "printed_page": 102,
+        "original_scan_page_1_based": 164,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "In man- canza di figli maschi il diritto passa ai fratelli ed ai figli",
+        "source_family": "PITRE_1900",
+        "scope": "Holy Crucifix — Monreale",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-029",
@@ -6457,7 +7366,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-029",
+        "printed_page": 105,
+        "original_scan_page_1_based": 167,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Né si stancano di ripetere per ben cinquanta volte , intramezzandola con gloriapatri, la",
+        "source_family": "PITRE_1900",
+        "scope": "Holy Crucifix — Monreale",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-037",
@@ -6502,7 +7435,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-037",
+        "printed_page": 114,
+        "original_scan_page_1_based": 176,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Innanzi il Crocifìsso, piantato sul fercolo , vanno le verginelle, bambine rappresentanti sante diverse",
+        "source_family": "PITRE_1900",
+        "scope": "Holy Crucifix — multiple Palermo-area towns",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-054",
@@ -6547,7 +7504,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-054",
+        "printed_page": 293,
+        "original_scan_page_1_based": 351,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "All'uscire di chiesa sono a governo delle aste coloro che hanno moglie, ed essi",
+        "source_family": "PITRE_1900",
+        "scope": "St Sebastian — Francofonte",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-061",
@@ -6655,6 +7636,31 @@
         "original_source_pages_verified_in_this_pass": false,
         "replaces_existing_fact_id": "DYK-H04-P-061",
         "new_fact_generated": false
+      },
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-061",
+        "printed_page": 302,
+        "original_scan_page_1_based": 360,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Ed ecco, in mezzo a due file di cilii accesi, l'urna be- nedetta, innanzi",
+        "source_family": "PITRE_1900",
+        "scope": "St Conrad — Noto/Avola",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+          "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN"
+        ]
       }
     },
     {
@@ -6700,7 +7706,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-072",
+        "printed_page": 312,
+        "original_scan_page_1_based": 370,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Quella di S. aiorgio dura due giorni, 23 e 24 Aprile, , se ne",
+        "source_family": "PITRE_1900",
+        "scope": "St George/St Peter — Modica",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-085",
@@ -6745,7 +7775,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-085",
+        "printed_page": 389,
+        "original_scan_page_1_based": 447,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Dietro la croce, e proprio alle spranghe che la fissano alla bara, sono attaccati",
+        "source_family": "PITRE_1900",
+        "scope": "Holy Crucifix — Santa Margherita",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-098",
@@ -6790,7 +7844,32 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-098",
+        "printed_page": 402,
+        "original_scan_page_1_based": 460,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Sul far della sera, quando la chiesa è illuminata a giorno pei vespri ,",
+        "source_family": "PITRE_1900",
+        "scope": "Our Lady delle Mortelle — Villafranca",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+          "DISTINGUISH_CORRECT_VILLAFRANCA_MORTELLE_FROM_CAMP0BELLO_MADONNA_DEL_AIUTO"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-111",
@@ -6835,7 +7914,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-111",
+        "printed_page": 416,
+        "original_scan_page_1_based": 474,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "„ 416 FESTE PATRONALI Contadini; poi, marinai e persone facoltose, la mattina si godono",
+        "source_family": "PITRE_1900",
+        "scope": "St Angelo — Licata/Muxaro",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
+      }
     },
     {
       "id": "DYK-H04-P-122",
@@ -6927,6 +8030,30 @@
         "original_source_pages_verified_in_this_pass": false,
         "replaces_existing_fact_id": "DYK-H04-P-122",
         "new_fact_generated": false
+      },
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-122",
+        "printed_page": 430,
+        "original_scan_page_1_based": 488,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "430 FESTE PATRONALI •cilii in. generale e di quelli , in particolare^ \" che",
+        "source_family": "PITRE_1900",
+        "scope": "Our Lady del Monte — Racalmuto",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED"
+        ]
       }
     },
     {
@@ -7019,6 +8146,31 @@
         "original_source_pages_verified_in_this_pass": false,
         "replaces_existing_fact_id": "DYK-H04-P-129",
         "new_fact_generated": false
+      },
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-129",
+        "printed_page": 436,
+        "original_scan_page_1_based": 494,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Sono- migliaia e migliaia di devoti , che richiamano alla, mente i festaiuoli della",
+        "source_family": "PITRE_1900",
+        "scope": "Our Lady dell'Udienza — Sambuca/Menfi",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+          "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN"
+        ]
       }
     },
     {
@@ -7064,7 +8216,32 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r26_pitre_provenance_audit": {
+        "status": "INTERNAL_PROVENANCE_CROSSWALK_ONLY_FACSIMILE_RECHECK_PENDING",
+        "prior_source_pack": "dyk-customs-pitre-new-feasts-04c.v1.json",
+        "original_source_id": "PIT1900-W05-OBS-152",
+        "printed_page": 485,
+        "original_scan_page_1_based": 543,
+        "previous_page_image_flag_in_upstream": false,
+        "source_anchor": "Le fanciullette •cantano questo rosario innanzi gli altarini; e tanto esse quanto le donne",
+        "source_family": "PITRE_1900",
+        "scope": "Our Lady of Miracles — Alcamo/Collesano",
+        "crosswalk_match": true,
+        "claim_copy_narrowed": false,
+        "editorial_reason": null,
+        "previous_bilingual_claim": null,
+        "original_page_image_rechecked_in_r26": false,
+        "italian_quotation_checked_against_original_in_r26": false,
+        "independent_historical_confirmation": false,
+        "independent_french_signoff": false,
+        "semantic_novelty_vs_612_checked": false,
+        "publication_authorized": false,
+        "flags": [
+          "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+          "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN"
+        ]
+      }
     },
     {
       "id": "DYK-M04-CANON-001",
