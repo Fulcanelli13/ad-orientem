@@ -5,6 +5,7 @@ import { observedCommemorationLabels } from "../calendar/observed-commemoration-
 import { buildReviewedSanctoralCards } from "../calendar/reviewed-sanctoral-cards.js";
 import { getSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
+import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
 import { homeSeasonalCustomForDate } from "../customs/seasonal-home-spotlight.js";
 
 const esc = value => String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -119,8 +120,7 @@ export function renderTodayV2Sections(model,vm){
   const gospelDetail=model.gospelReference||(
     model.gospelStatus==="ready"?txt("Read and explore the appointed Gospel","Lire et méditer l’Évangile du jour")
     :txt("Available when the Proper resolves","Disponible après résolution du Propre"));
-  const cateTitle=daily?.title||txt("Daily Catechism","Catéchisme quotidien");
-  const cateDetail=daily?.badge?`${daily.badge} · ${daily.description||""}`:txt("Saint Pius X catechism","Catéchisme de saint Pie X");
+
 
   // Version C: one Home-owned calendar summary; source ownership remains
   // with the 1962 resolver and the separately reviewed later-calendar data.
@@ -168,7 +168,7 @@ export function renderTodayV2Sections(model,vm){
     <section class="aoTodayV2Zone aoTodayV2ReadReflect aoTcmCard"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Read & reflect","Lire et méditer"))}</h2></div></div>
       ${row(saintTitle,saintDetail,'data-home-calendar data-home-calendar-view="day"')}
       ${row(txt("The Gospel of the Mass","Évangile de la messe"),gospelDetail,'data-action="gospel"')}
-      ${row(cateTitle,cateDetail,'data-home-daily-catechism')}
+      ${homeDidYouKnowMarkup(language)}
       ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
     </section>
   </div>`;
