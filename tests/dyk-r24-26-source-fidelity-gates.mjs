@@ -1,0 +1,52 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const root="data/research/did-you-know/";
+const read=name=>JSON.parse(readFileSync(root+name,"utf8"));
+const review=read("dyk-r21-168-integrated-bilingual-review.v1.json");
+const audit=read("dyk-r24-26-weiser-facsimile-review.v1.json");
+const index=read("dyk-r22-189-review-index.v1.json");
+const add=read("dyk-r22-21-added-review-cards.v1.json");
+const W="https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf";
+assert.equal(review.cards.length,168);
+assert.equal(add.cards.length,21);
+assert.equal(index.all_review_ids.length,189);
+assert.equal(audit.records.length,26);
+assert.equal(audit.counts.source_checked_in_this_batch,26);
+assert.equal(audit.counts.original_168_remaining_source_review,142);
+const ids=new Set(audit.records.map(r=>r.id));
+assert.equal(ids.size,26);
+const cards=new Map(review.cards.map(x=>[x.id,x]));
+for(const record of audit.records){
+ const c=cards.get(record.id);
+ assert.ok(c,record.id);
+ assert.equal(c.r24_source_review.status,"CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",record.id);
+ assert.equal(c.r24_source_review.printed_page,record.printed_page,record.id);
+ assert.equal(c.source.source_url,W,record.id);
+ assert.equal(c.source.source_visual_checked,true,record.id);
+ assert.equal(c.source.locator.printed_page,record.printed_page,record.id);
+ assert.equal(c.source.locator.pdf_page_zero_based,record.printed_page+17,record.id);
+ assert.equal(c.r24_source_review.english_editorial_signoff,false,record.id);
+ assert.equal(c.r24_source_review.french_editorial_signoff,false,record.id);
+ assert.equal(c.r24_source_review.semantic_novelty_verified,false,record.id);
+ assert.equal(c.r24_source_review.reader_destination_verified,false,record.id);
+ assert.equal(c.r24_source_review.publication_authorized,false,record.id);
+ assert.equal(c.gates.publication_authorized,false,record.id);
+ assert.equal(c.gates.claim_editorial_approved,false,record.id);
+ assert.equal(c.gates.french_editorial_approved,false,record.id);
+ for(const lang of ["en","fr"]){
+  assert.ok(c.statement[lang].length>40,record.id);
+  assert.equal(/[?？]\\s*$/.test(c.statement[lang]),false,record.id);
+ }
+}
+assert.match(cards.get("DYK-UM01-011").statement.en,/children repeated the priest's sermon to their father/);
+assert.match(cards.get("DYK-UM01-012").statement.en,/three times over a fresh loaf/);
+assert.match(cards.get("DYK-UM01-001").statement.en,/Forefather/);
+assert.doesNotMatch(cards.get("DYK-UM01-001").statement.en,/didukh/i);
+assert.match(cards.get("DYK-UM03-017").statement.en,/Saint Thomas's Day on 21 December/);
+assert.match(cards.get("DYK-UM01-017").statement.en,/Easter walks/);
+assert.match(cards.get("DYK-UM01-018").statement.en,/All Souls' Day/);
+assert.equal(audit.counts.final_approved,0);
+assert.equal(audit.counts.published_new,0);
+const all=new Set([...review.cards,...add.cards].map(x=>x.id));
+assert.deepEqual(all,new Set(index.all_review_ids));
+console.log(JSON.stringify({status:"PASS",r24SourceChecked:26,original168:168,shortlist:189,published:0,approved:0}));
