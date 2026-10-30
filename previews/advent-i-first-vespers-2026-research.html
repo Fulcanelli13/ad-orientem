@@ -93,13 +93,8 @@ import {assembleAdventI2026PrivatePreviewSession}
  from "../src/office/advent-first-vespers-preview-session.js";
 import {buildAdventI2026ReadingFocus}
  from "../src/office/advent-first-vespers-reading-focus.js";
-import {reviewOfficeBetaSelection}
- from "../src/office/reader-beta-catalog.js";
-import {createSaturdayComplinePinnedReader,assembleSaturdayComplinePilot,
- createFerialTuesdayComplinePinnedReader,assembleFerialTuesdayComplinePilot,
- createComplinePinnedReader,assembleDatedComplinePilot}
- from "../src/office/saturday-compline-2026-pilot.js";
-
+// This focused pilot intentionally contains ONE independently assembled Hour.
+// The separate Compline feature stays in draft PR #2045; no cross-PR imports.
 const status=document.getElementById("status");
 const reader=document.getElementById("reader");
 const bar=document.getElementById("bar");
@@ -111,6 +106,22 @@ const betaTitle=document.getElementById("office-title");
 const betaSubtitle=document.getElementById("office-subtitle");
 const titleByHour={MATINS:"Matins",LAUDS:"Lauds",PRIME:"Prime",
  TERCE:"Terce",SEXT:"Sext",NONE:"None",VESPERS:"Vespers",COMPLINE:"Compline"};
+const ONLY_APPOINTED_RESEARCH=Object.freeze({
+ key:"advent-i-2026-first-vespers",civilDate:"2026-11-28",
+ officeDate:"2026-11-29",hour:"VESPERS",
+ label:"First Vespers · First Sunday of Advent",assembly:"ADVENT_I_2026_SOURCE_FIRST",
+ publishable:false,published:false
+});
+function reviewOfficeBetaSelection({date,hour}={}){
+ const valid=typeof date==="string"&&/^\\d{4}-\\d\\d-\\d\\d$/u.test(date) &&
+  new Date(date+"T12:00:00Z").toISOString().slice(0,10)===date;
+ if(!valid||!Object.hasOwn(titleByHour,hour))
+  return {status:"NOT_AVAILABLE",reason:"INVALID_DATE_OR_CANONICAL_HOUR",canPreview:false};
+ if(date!==ONLY_APPOINTED_RESEARCH.civilDate||hour!=="VESPERS")
+  return {status:"NOT_AVAILABLE",reason:"DATE_HOUR_NOT_YET_IMPLEMENTED",canPreview:false};
+ return {status:"SOURCE_FIRST_RESEARCH_PREVIEW_AVAILABLE",entry:ONLY_APPOINTED_RESEARCH,
+  canPreview:true,publishable:false,published:false};
+}
 const pilotStore=new Map();
 let selectedPilotKey=null,requestSerial=0;
 async function refreshBetaSelection(){
@@ -141,41 +152,8 @@ async function refreshBetaSelection(){
   reader.hidden=true;
   status.textContent="Assembling pinned, source-owned "+entry.hour.toLowerCase()+
    " components in Latin, English and French.";
-  const saturday=entry.assembly==="SATURDAY_COMPLINE_2026_SOURCE_FIRST";
-  const tuesday=entry.assembly==="FERIAL_TUESDAY_COMPLINE_2026_SOURCE_FIRST";
-  const appointed=entry.assembly==="APPOINTED_COMPLINE_2026_SOURCE_FIRST";
-  if(!saturday&&!tuesday&&!appointed)return;
-  try{
-   const source=appointed?
-    createComplinePinnedReader({fetchSource:fetch.bind(globalThis),
-     date:entry.civilDate}):
-    (saturday?createSaturdayComplinePinnedReader:
-     createFerialTuesdayComplinePinnedReader)({
-      fetchSource:fetch.bind(globalThis)
-     });
-   const data=appointed?
-    await assembleDatedComplinePilot({reader:source,date:entry.civilDate}):
-    await (saturday?assembleSaturdayComplinePilot:
-     assembleFerialTuesdayComplinePilot)({reader:source});
-   const expected=appointed?
-    "SOURCE_FIRST_APPOINTED_COMPLINE_RESEARCH_NOT_CERTIFIED":
-    saturday?"SOURCE_FIRST_SATURDAY_COMPLINE_RESEARCH_NOT_CERTIFIED":
-    "SOURCE_FIRST_FERIAL_TUESDAY_COMPLINE_RESEARCH_NOT_CERTIFIED";
-   if(data.status!==expected||
-      data.civilDate!==entry.civilDate||
-      data.officeDate!==entry.officeDate||
-      data.publishable!==false||data.published!==false||
-      data.blocks.length!==42||!data.frames.length)
-    throw Error(data.reason||"Compline appointed source assembly withheld");
-   pilotStore.set(entry.key,{blocks:data.blocks,frames:data.frames});
-  }catch(error){
-   if(serial!==requestSerial)return;
-   selectedPilotKey=null;reader.hidden=true;
-   status.classList.add("error");
-   status.textContent="Compline source preview withheld: "+
-    String(error?.message??error);
-   return;
-  }
+  // No substitute text or Compline fallback. The source-first Vespers
+  // assembly is loaded below, once, only for the exact reviewed date/Hour.
  }
  if(serial!==requestSerial)return;
  const pilot=pilotStore.get(entry.key);
