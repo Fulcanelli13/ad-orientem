@@ -336,6 +336,19 @@ export function mountFullMassPreflight({
       move("[data-full-mass-note]","[data-folio-essential-notice]");
       // Preview reuses original selectors; no second Mass-preferences form.
       if(m1Preview){
+        // Two distinct host-owned paths, one public Other entry: changing
+        // the celebration is not equivalent to selecting another dated Proper.
+        const categories=folio.querySelector("[data-full-mass-categories]");
+        const other=doc.createElement("details");
+        other.className="aoM1OtherMass";
+        other.dataset.m1OtherGroup="";
+        const caption=doc.createElement("summary");caption.dataset.m1OtherSummary="";
+        other.append(caption);
+        for(const kind of ["OTHER","SOURCE_DATE"]){
+          const button=categories.querySelector('[data-full-mass-category="'+kind+'"]');
+          if(button)other.append(button);
+        }
+        categories.append(other);
         const exp=folio.querySelector(".aoMassFolioExperience");
         exp.querySelector("[data-folio-language]")?.closest(".aoMassFolioOption")?.setAttribute("data-m1-option","language");
         exp.querySelector("[data-folio-before]")?.closest("fieldset")?.setAttribute("data-m1-option","before");
@@ -568,6 +581,7 @@ export function mountFullMassPreflight({
        l("Before Mass","Avant la messe"),"");
     word("[data-folio-label-overview]","Overview","Vue d’ensemble");
     word("[data-folio-step-celebration]","Mass","Messe");
+    if(m1Preview)word("[data-m1-other-summary]","Other Mass or Proper","Autre messe ou autre propre");
     word("[data-folio-step-ceremony]","Ceremony","Cérémonie");
     word("[data-folio-step-reader]","Reader","Lecture");
     word("[data-folio-overview-heading]","Ready to begin","Prêt à commencer");
