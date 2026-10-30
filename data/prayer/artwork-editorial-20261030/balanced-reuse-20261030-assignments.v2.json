@@ -21,7 +21,7 @@
     "unresolved_semantic_edges": 16,
     "artwork_edges_after_consolidation": 1651,
     "explicit_user_acceptances_never_auto_pruned": true,
-    "cross_prayer_inherited_new_edges": 89,
+    "cross_prayer_inherited_new_edges": 93,
     "cross_prayer_staged_candidate_slots": 267,
     "cross_prayer_exact_scene_gaps": 1,
     "cross_prayer_not_publication_ready": true,
@@ -33,10 +33,11 @@
     "luminous_optional_families_with_approved_art": 5,
     "luminous_optional_stable_runtime_card_mapping": 0,
     "cross_prayer_inherited_unverified_edges": 12,
-    "cross_prayer_inherited_verified_edges": 89,
-    "cross_prayer_inherited_total_staged_edges": 101,
+    "cross_prayer_inherited_verified_edges": 93,
+    "cross_prayer_inherited_total_staged_edges": 105,
     "original_blueprint_unreviewed_edges_still_eligible": 954,
-    "artwork_count_note": "Staged candidate != approved. Never match USER_APPROVED by substring (NEW_CANDIDATE_NOT_USER_APPROVED is negative). All nonapproved suggestions need positive source evidence before use. "
+    "artwork_count_note": "Staged candidate != approved. Never match USER_APPROVED by substring (NEW_CANDIDATE_NOT_USER_APPROVED is negative). All nonapproved suggestions need positive source evidence before use. ",
+    "cross_prayer_reclassified_existing_candidate_edges": 4
   },
   "locked": [
     {
@@ -9864,13 +9865,17 @@
           "id": "CANONICAL::cma-97147",
           "title": "The Crucifixion",
           "artist": "Sodoma (Italian, 1477–1549)",
-          "fit": "DIRECT_SUBJECT_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "USER_APPROVED_CRUCIFIXION_CONTEXT_NOT_ANATOMICAL_CLOSEUP",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "source": "https://clevelandart.org/art/1916.786",
           "gate": "EXISTING_GALLERY_PHOTO_QA",
           "eligible": true,
-          "flag": "",
-          "origin": "EXISTING_GALLERY_REUSE_V1"
+          "flag": "Artwork approved elsewhere and subject reused per user instruction; no exact anatomical/bead-scene or photograph/rights claims.",
+          "origin": "EXISTING_GALLERY_REUSE_V1+AUTHORIZED_SHARED_SCENE_REUSE",
+          "previous_editorial_status": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "approval_evidence": "Q2_ACCEPTED_FOR_PRAYER_REVIEW_USER_CROSS_SCENE_PERMISSION_2026_10_30",
+          "cross_prayer_source_stage": "STG-pray.five_wounds-01",
+          "cross_prayer_reuse_rule": "PREVIOUS_Q2_APPROVAL_SAME_SUBJECT_CONTEXT_NO_PHOTO_CLEARANCE"
         },
         {
           "id": "CANONICAL::cma-97181",
@@ -9929,13 +9934,17 @@
           "id": "CANONICAL::cma-97147",
           "title": "The Crucifixion",
           "artist": "Sodoma (Italian, 1477–1549)",
-          "fit": "DIRECT_SUBJECT_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "USER_APPROVED_CRUCIFIXION_CONTEXT_NOT_ANATOMICAL_CLOSEUP",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "source": "https://clevelandart.org/art/1916.786",
           "gate": "EXISTING_GALLERY_PHOTO_QA",
           "eligible": true,
-          "flag": "",
-          "origin": "EXISTING_GALLERY_REUSE_V1"
+          "flag": "Artwork approved elsewhere and subject reused per user instruction; no exact anatomical/bead-scene or photograph/rights claims.",
+          "origin": "EXISTING_GALLERY_REUSE_V1+AUTHORIZED_SHARED_SCENE_REUSE",
+          "previous_editorial_status": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "approval_evidence": "Q2_ACCEPTED_FOR_PRAYER_REVIEW_USER_CROSS_SCENE_PERMISSION_2026_10_30",
+          "cross_prayer_source_stage": "STG-pray.five_wounds-01",
+          "cross_prayer_reuse_rule": "PREVIOUS_Q2_APPROVAL_SAME_SUBJECT_CONTEXT_NO_PHOTO_CLEARANCE"
         },
         {
           "id": "CANONICAL::cma-97181",
@@ -10198,13 +10207,17 @@
           "id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
           "title": "The Lance Thrust",
           "artist": "Anthony van Dyck",
-          "fit": "DIRECT_SUBJECT_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "USER_APPROVED_PIERCED_SIDE_CONTEXT_FOR_PRECIOUS_BLOOD_COVER",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
           "gate": "EXISTING_GALLERY_PHOTO_QA",
           "eligible": true,
-          "flag": "",
-          "origin": "EXISTING_GALLERY_REUSE_V1"
+          "flag": "Artwork approved elsewhere and subject reused per user instruction; no exact anatomical/bead-scene or photograph/rights claims.",
+          "origin": "EXISTING_GALLERY_REUSE_V1+AUTHORIZED_SHARED_SCENE_REUSE",
+          "previous_editorial_status": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "approval_evidence": "Q2_ACCEPTED_FOR_PRAYER_REVIEW_USER_CROSS_SCENE_PERMISSION_2026_10_30",
+          "cross_prayer_source_stage": "STG-pray.precious_blood-07",
+          "cross_prayer_reuse_rule": "PREVIOUS_Q2_APPROVAL_SAME_SUBJECT_CONTEXT_NO_PHOTO_CLEARANCE"
         },
         {
           "id": "REVIEW::met:437172",
@@ -10913,13 +10926,17 @@
           "id": "CANONICAL::cma-143644",
           "title": "Adoration of the Shepherds",
           "artist": "Bernardo Cavallino",
-          "fit": "DIRECT_SUBJECT_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "USER_APPROVED_NATIVITY_CONTEXT_FOR_MARIAN_LITTLE_CROWN",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "source": "https://clevelandart.org/art/1968.100",
           "gate": "EXISTING_GALLERY_PHOTO_QA",
           "eligible": true,
-          "flag": "",
-          "origin": "EXISTING_GALLERY_REUSE_V1"
+          "flag": "Artwork approved elsewhere and subject reused per user instruction; no exact anatomical/bead-scene or photograph/rights claims.",
+          "origin": "EXISTING_GALLERY_REUSE_V1+AUTHORIZED_SHARED_SCENE_REUSE",
+          "previous_editorial_status": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "approval_evidence": "Q2_ACCEPTED_FOR_PRAYER_REVIEW_USER_CROSS_SCENE_PERMISSION_2026_10_30",
+          "cross_prayer_source_stage": "STG-pray.little_crown-01",
+          "cross_prayer_reuse_rule": "PREVIOUS_Q2_APPROVAL_SAME_SUBJECT_CONTEXT_NO_PHOTO_CLEARANCE"
         },
         {
           "id": "CANONICAL::cma-143784",
@@ -25178,7 +25195,7 @@
       "unreviewed_23_not_imported": 23,
       "q2_accepted_b01_b05": 114,
       "scene_family_count": 21,
-      "added_reuse_edges": 101,
+      "added_reuse_edges": 105,
       "slots_touched": 44,
       "remaining_without_explicit_approved_or_locked_candidate": [
         "COV-novena.st_therese"
@@ -25190,7 +25207,7 @@
       "scope_guardrail_removals": 22,
       "luminous_five_with_approved_choices": 5,
       "luminous_five_runtime_ids_joined": 0,
-      "cross_prayer_approved_edges": 89,
+      "cross_prayer_approved_edges": 93,
       "cross_prayer_quarantined_edges": 12
     }
   },
