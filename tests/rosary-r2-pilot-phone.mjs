@@ -83,8 +83,9 @@ try{
    assert.ok(baseline.count>60&&baseline.chapters>=7,"Original steps and named chapters missing");
    assert.equal(baseline.firstMystery,"I","R2 must use Roman mystery pills");
    assert.equal(baseline.current,1,"Exactly one current chapter");
-   assert.ok(baseline.nativeBeads>0&&baseline.caption===1,
-    "Original bead controls and one R2 caption: "+JSON.stringify(baseline));
+   // Opening prayers precede the decades: the donor correctly shows no
+   // bead-picker buttons on the opening Sign of the Cross.
+   assert.equal(baseline.caption,1,"One source-position caption at opening");
    assert.equal(baseline.openingPill,"Opening","Opening pill must not repeat its title");
    assert.equal(baseline.dockCount,1,"Native Previous/Next row must be one R2 phone dock");
    assert.equal(baseline.rowChildren,2,"Dock must preserve only the native two navigation buttons");
@@ -105,6 +106,21 @@ try{
    await donor.locator("[data-lab-rosary-prev]").click();
    await page.waitForFunction(expected=>window.AO_ROSARY_V381?.state?.()?.step===expected,
      baseline.step,{timeout:10000});
+   // Require the real donor's bead controls *at a bead-bearing position*,
+   // rather than assuming they exist during the opening prayers.
+   const beadIndex=await page.evaluate(()=>{
+     const steps=window.AO_ROSARY_V381?.steps?.()||[];
+     return steps.findIndex(s=>Number.isInteger(s?.bead)&&s.bead>0);
+   });
+   assert.ok(beadIndex>baseline.step,"Canonical Rosary has no subsequent bead step");
+   const donorJump=await page.evaluate(index=>window.AO_ROSARY_V381?.setStep?.(index),beadIndex);
+   assert.notEqual(donorJump,false,"Canonical donor refused bead step");
+   await page.waitForFunction(index=>window.AO_ROSARY_V381?.state?.()?.step===index,
+     beadIndex,{timeout:10000});
+   await page.waitForFunction(index=>document.querySelector("#aoPrayerBookRoot.open .pbShell")
+     ?.dataset.aoRosaryR2CanonicalStep===String(index),beadIndex,{timeout:10000});
+   const beadCount=await page.locator("#aoPrayerBookRoot.open .lab-bead-stage [data-ao-rosary-bead]").count();
+   assert.ok(beadCount>0,"Native bead picker missing at canonical bead step "+beadIndex);
    assert.deepEqual(errors,[],"Browser errors in R2 pilot: "+errors.join("; "));
    console.log("PASS Rosary R2 "+width+"x"+height+": source donor, Roman chapter pills, native beads, exact Next/Previous, no overflow");
   }finally{await page.close();}
