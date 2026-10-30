@@ -459,13 +459,15 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoExamenContritionChoices button{white-space:normal;min-width:0;min-height:44px;overflow-wrap:anywhere}
 `;
 
+const TRADITIONAL_FOLIO_CORRECTIONS="\n/* Claude prayer-book corrections also govern the traditional routes\n   (Morning, Evening, meal prayers, examination, communion, hymns). */\n#aoPray435930 .aoTP381Tabs,\n#aoPray435930 .aoTP381Lang{\n padding:0 0 5px;gap:8px;background:transparent;\n}\n#aoPray435930 .aoTP381Tabs button,\n#aoPray435930 .aoTP381Lang button{\n min-height:44px;min-width:42px;\n padding:6px 8px;\n border:0;border-radius:0;\n background:transparent;\n color:var(--muted,#b8afa0);\n font:500 12px/1.25 var(--ao-font-ui,system-ui,sans-serif);\n letter-spacing:0;text-transform:none;\n box-shadow:none;\n}\n#aoPray435930 .aoTP381Tabs button.active,\n#aoPray435930 .aoTP381Lang button.active{\n color:var(--text,#eee4d7);\n border-bottom:1px solid var(--liturgical,#bda57f);\n background:transparent;\n}\n#aoPray435930 .aoTP381Glossary{\n min-height:40px;\n border:0;border-radius:0;\n background:transparent;\n font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);\n padding:6px 1px;\n color:var(--muted,#b6ad9d);\n}\n#aoPray435930 .aoTP381Source,\n#aoPray435930 .aoTP381Source summary{\n font-size:11px;\n font-weight:400;\n color:var(--muted,#b7ad9d);\n border:0;box-shadow:none;\n}\n#aoPray435930 .aoTP381DonorBody .aoP435930Prayer,\n#aoPray435930 .aoTP381DonorBody .aoDevoCard{\n border:0;border-radius:0;\n background:transparent;\n box-shadow:none;\n padding:9px 4px 13px;\n}\n#aoPray435930 .aoTP381DonorBody .aoP435930Primary{\n width:auto;max-width:100%;\n align-self:center;\n min-height:44px;\n padding:8px 15px;\n border-radius:6px;\n font:500 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);\n letter-spacing:0;text-transform:none;\n}\n";
+
 export function installTraditionalPrayStyles(doc=globalThis.document){
   if(!doc?.head)return false;
   let style=doc.getElementById("ao-v381-traditional-pray-css");
   if(!style){
     style=doc.createElement("style");
     style.id="ao-v381-traditional-pray-css";
-    style.textContent=TRADITIONAL_PRAY_V381_CSS;
+    style.textContent=TRADITIONAL_PRAY_V381_CSS+'\n'+TRADITIONAL_FOLIO_CORRECTIONS;
     doc.head.appendChild(style);
   }
   return true;
