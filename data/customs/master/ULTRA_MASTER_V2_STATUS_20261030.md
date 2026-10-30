@@ -10,6 +10,19 @@ A pointer-by-pointer audit resolved **3,703 / 3,703 original JSON pointers**, wi
 
 The published catalogue remains **36**; the research register does not license new Calendar publications.
 
+## Latest adjudication checkpoint — all 79 cross-book cases now action-reviewed (30 October)
+
+**79/79 original dedup caseboard review units now have research-level action/identity-boundary or source-dependence decisions** in the [single working index](./customs-ultra-master-v2-single-working-relationship-index-20261030.v1.json). This is an identity *comparison* milestone, **not 79 canonically distinct customs or human-approved identities**.
+
+- **30 action-boundary veto / relationship units:** 15 explicit false-match non-merges, 12 related-but-not-identical action pairs, and 3 role/calendar regional distinctions, preserved from the earlier adjudication.
+- **14 same-core description pairs:** 11 distinct hosted CatholicCulture passage pages checked, but **zero original printed-source pairs independently verified** and zero independent attestations certified. The two Christmas-candle comparisons repeating an observation remain non-additive.
+- **26 McLoughlin family clusters, 70 exact source observations:** now separated into components of existing customs, single multistage domestic activities, different actions sharing a feast, source-only food claims, author adaptations, historical assertions, and cross-rite or blessing-authority holds. The EWTN hosted transcription has later-edition indicators; no verification of the printed 1954 first edition is newly claimed.
+- **9 remaining regional/ritual clusters, 28 existing Weiser group records:** local institutional repetitions, object lifecycles, minister versus family actions, feast-date variance, crafts, charity and regional cemetery practices are distinguished. Previously checked narrow Weiser printed passages remain source-scoped; no new independent facsimile verification is claimed in this batch.
+
+[View the 35-case evidence-preserving adjudication ledger](./customs-ultra-master-v2-35-family-regional-action-boundaries-20261030.v1.json). Every record retains exact source observation or existing group IDs, source descriptions, passage line or previously documented printed-page references, an actionable boundary decision and a remaining research gate. The working index carries an exact case-ID crosslink; the Customs integrity test checks all 35 against their original registers and rejects any unreviewed caseboard unit.
+
+**Remaining is not more screening of these same 79 cases.** The next substantive gate is source-independence and original-book verification for the 14 candidate same-core pairs, followed by targeted primary-original checks for cases claiming wider or regional historical continuities; then adjudicate identities among the thousands of evidence records not yet explicitly related to a working owner. The 465 working registry rows and **36 published customs** remain intact. **Zero** new human identity approvals, canonical mergers, indulgence grants or Calendar publications.
+
 ## Latest checkpoint — source scope, owner decisions and release boundaries
 
 | Measure | Current research result | What this does **not** mean |
