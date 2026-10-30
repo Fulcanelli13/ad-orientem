@@ -1,0 +1,278 @@
+{
+  "schema": "AO_PRAYER_RUNTIME_READER_ART_PARITY_V1",
+  "date": "2026-10-30",
+  "branch": "research/prayer-existing-artwork-coverage-first-20261030",
+  "purpose": "Identify actual card/stage identities in current modular Prayer sources, separately from 267 editorial candidate slot blueprint.",
+  "source_files": [
+    "src/pray/presentation-runtime.js",
+    "src/pray/canonical-data.js",
+    "src/pray/novena-runtime.js",
+    "src/pray/novena-corpus-v4.js",
+    "src/pray/traditional-pray-runtime.js",
+    "src/pray/guided-daily-cards.js",
+    "src/pray/confession-paths.js",
+    "src/pray/lazy-module-registry.js",
+    "src/pray/artwork-runtime-identity.v1.js",
+    "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json"
+  ],
+  "stamping_implemented": {
+    "presentation": "Main Pray root now records active view/stage/slot and Rosary donor shell records mystery identity, bead and step index.",
+    "novenas": "Native 16-novena owner records each chosen novena ID, day, simple/guided mode and guided stage.",
+    "traditional": "Traditional Prayer owner records route, current canonical prayer ID when applicable, daily step and nightly examen step.",
+    "images_changed": false,
+    "image_urls_introduced": 0,
+    "editorial_artworks_published": 0
+  },
+  "measured_runtime_inventory": {
+    "canonical_prayer_record_count": 48,
+    "novenas_count": 16,
+    "novenas_day_count": 144,
+    "novenas_guided_card_states": 648,
+    "novenas_patterns": [
+      {
+        "id": "holy_ghost",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.holy_ghost",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "christmas",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.christmas",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "corpus_christi",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.corpus_christi",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "sacred_heart",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.sacred_heart",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "immaculate_conception",
+        "days": 9,
+        "stages_per_day": 5,
+        "guided_card_states": 45,
+        "editorial_cover": "COV-novena.immaculate_conception",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "annunciation",
+        "days": 9,
+        "stages_per_day": 6,
+        "guided_card_states": 54,
+        "editorial_cover": "COV-novena.annunciation",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "assumption",
+        "days": 9,
+        "stages_per_day": 6,
+        "guided_card_states": 54,
+        "editorial_cover": "COV-novena.assumption",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "seven_sorrows",
+        "days": 9,
+        "stages_per_day": 6,
+        "guided_card_states": 54,
+        "editorial_cover": "COV-novena.seven_sorrows",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "st_joseph",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.st_joseph",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "holy_souls",
+        "days": 9,
+        "stages_per_day": 5,
+        "guided_card_states": 45,
+        "editorial_cover": "COV-novena.holy_souls",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "perpetual_help",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.perpetual_help",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "st_therese",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.st_therese",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "christ_the_king",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.christ_the_king",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "immaculate_heart",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.immaculate_heart",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "st_michael",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.st_michael",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      },
+      {
+        "id": "st_anthony_nine_tuesdays",
+        "days": 9,
+        "stages_per_day": 4,
+        "guided_card_states": 36,
+        "editorial_cover": "COV-novena.st_anthony_nine_tuesdays",
+        "stage_fidelity": "COVER_CONTEXT_ONLY_UNLESS_EXACT_IMAGE_APPROVED"
+      }
+    ],
+    "stations_count": 14,
+    "benediction_steps": 7,
+    "benediction_step_names": [
+      "exposition",
+      "adoration",
+      "hymn",
+      "prayer",
+      "blessing",
+      "praises",
+      "reposition"
+    ],
+    "adoration_visit_steps": 7,
+    "adoration_holy_hour_steps": 8,
+    "adoration_four_ends_steps": 5,
+    "penitential_psalms": 7,
+    "seven_last_words": 7,
+    "forty_hours_steps": 6,
+    "first_fridays_steps": 5,
+    "first_saturdays_steps": 6,
+    "first_saturday_meditation_mysteries": 20,
+    "traditional_daily_steps": {
+      "morning": 11,
+      "evening": 13
+    },
+    "traditional_nightly_examen_stages": 5,
+    "confession_paths": {
+      "regular": {
+        "examination_cards": 5,
+        "rite_cards": 3,
+        "after_cards": 3
+      },
+      "returning": {
+        "examination_cards": 13,
+        "rite_cards": 3,
+        "after_cards": 3
+      },
+      "general": {
+        "examination_cards": 14,
+        "rite_cards": 3,
+        "after_cards": 3
+      }
+    },
+    "rosary_editorial_mysteries": {
+      "traditional": 15,
+      "optional_luminous": 5
+    },
+    "rosary_actual_donor_bead_card_count": "DYNAMIC_NOT_COUNTED",
+    "angelus_paragraph_card_count": "DEPENDS_ON_TEXT_AND_SEASON_NOT_STATICALLY_RECONCILED",
+    "litany_saints_witness_page_count": "DYNAMIC_SOURCE_LINES_NOT_STATICALLY_RECONCILED"
+  },
+  "verified_current_regressions_or_gaps": [
+    {
+      "severity": "P0",
+      "key": "NOVENA_STAGE_ART",
+      "description": "648 guided day-stage states have no individual certified image identity. Cover artwork can be shared contextually, but that does not make every day's meditation a depiction of the cover painting.",
+      "resolution": "Map stage/day subjects; inherit existing exact paintings where justified, mark contextual carryover separately."
+    },
+    {
+      "severity": "P0",
+      "key": "BENEDICTION_EXACT_BLESSING",
+      "slot": "STG-pray.benediction-03",
+      "description": "Actual blessing has contextual approved cover carryover but no approved artwork of exact rite. Earlier six proposed images rejected.",
+      "resolution": "New artwork research with event fidelity, then explicit human review."
+    },
+    {
+      "severity": "P0",
+      "key": "SAINT_THERESE_ART",
+      "slot": "COV-novena.st_therese",
+      "description": "Existing 1925 Thérèse aux roses indexed without approved, usable, verified image. No editorial portrait approval established for this cover.",
+      "resolution": "Frame-free genuinely usable free source and explicit approval; no publication in current branch."
+    },
+    {
+      "severity": "P0",
+      "key": "FIVE_CHAPLET_OWNERS",
+      "names": [
+        "Divine Mercy",
+        "Five Wounds",
+        "Precious Blood",
+        "Little Crown",
+        "Seven Sorrows"
+      ],
+      "description": "Artwork blueprint defines five families, but corresponding owned routes were not found in modular presentation, traditional or novena route registries. Legacy donor may contain additional paths; its current runtime route parity still needs direct inspection.",
+      "resolution": "Identify exact current owner and stable stage IDs before claiming coverage or wiring assets."
+    },
+    {
+      "severity": "P1",
+      "key": "HOLY_NAME_LITANY",
+      "route": "pray.holy_name_litany",
+      "description": "Real traditional Prayer route is present without a matching 267-slot editorial artwork cover. Do not assign an arbitrary saint or unrelated event merely to fill the count.",
+      "resolution": "Find an already-approved exact/appropriate Christ Holy Name depiction or obtain new user art approval."
+    },
+    {
+      "severity": "P1",
+      "key": "ANGELUS_AND_LITANY_DYNAMIC",
+      "description": "Angelus prayer units and Litany of Saints sections use dynamic text segmentation. Blueprint chapter slots are not one-to-one with actual text units.",
+      "resolution": "Join by content/semantic anchors rather than numeric unit index; preserve Angelus/Regina Cæli seasonal separation."
+    },
+    {
+      "severity": "P1",
+      "key": "ROSARY_DONOR_DYNAMIC",
+      "description": "Rosary is a separate donor with step and bead state; 15 traditional mysteries can inherit existing scenes but individual donor steps and optional luminous joins need run-time parity checks.",
+      "resolution": "Use actual donor step.kind/mi/set and native media identity; verify each bead and the closing prayers."
+    }
+  ],
+  "counts_not_equivalent": {
+    "editorial_blueprint_candidates": "267/267 from source registry",
+    "all_actual_interactive_runtime_cards": "NOT_CERTIFIED",
+    "actual_image_sources_identity_rights_and_visual_qa": "NOT_CERTIFIED",
+    "published_new_curated_images": 0
+  },
+  "regression_command": "node scripts/prayer-art-runtime-parity-audit.mjs",
+  "rules": [
+    "Never infer rejection from omitted checkbox. Never interpret event-sharing as approval of a different work or a different ritual act.",
+    "Never auto-publish a candidate because it has a matching subject: official source identity, native photo, frame-free composition and licensing are separate gates.",
+    "No new boxes, prominent provenance panels or pill controls. Runtime metadata is non-visual.",
+    "Strict zero cost; do not buy photos, subscribe to APIs or contact owners."
+  ]
+}
