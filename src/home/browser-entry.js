@@ -1,4 +1,5 @@
 import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
+import { verifiedH4WeekColour } from "./today-h4-view.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 
@@ -91,6 +92,41 @@ export function createHomeOwner(win=globalThis){
   let inlineCalendarView=null;
   let inlineCalendarRestoring=false;
   let requestedDailyHonours=false;
+  const weekColourCache=new Map(),weekColourPending=new Map();
+  function hydrateH4WeekColours(current){
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4");
+    if(!screen)return;
+    const dots=[...screen.querySelectorAll("[data-home-week-colour]")];
+    const apply=(date,col)=>{
+      const latest=win?.document?.querySelector?.(".homeScreen.aoTodayH4");
+      if(!latest)return;
+      for(const dot of latest.querySelectorAll("[data-home-week-colour]")){
+        if(dot.dataset.homeWeekColour!==date)continue;
+        if(col){dot.style.setProperty("--ao-h4-day-colour",col);dot.dataset.verifiedColour=col;}
+        else {dot.style.removeProperty("--ao-h4-day-colour");delete dot.dataset.verifiedColour;}
+      }
+    };
+    for(const dot of dots){
+      const date=dot.dataset.homeWeekColour;
+      if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(date??""))continue;
+      if(weekColourCache.has(date)){apply(date,weekColourCache.get(date));continue;}
+      const selected=current?.resolution?.date===date?
+        verifiedH4WeekColour(current.resolution,date):null;
+      if(selected){weekColourCache.set(date,selected);apply(date,selected);continue;}
+      if(weekColourPending.has(date))continue;
+      const resolver=runtime(win)?.resolver;
+      if(typeof resolver?.resolveDay!=="function")continue;
+      const task=Promise.resolve().then(()=>resolver.resolveDay(date))
+        .then(resolved=>{
+          const colour=verifiedH4WeekColour(resolved,date);
+          weekColourCache.set(date,colour);
+          apply(date,colour);
+        })
+        .catch(()=>{weekColourCache.set(date,null);apply(date,null);})
+        .finally(()=>weekColourPending.delete(date));
+      weekColourPending.set(date,task);
+    }
+  }
 
   function ensureRetiredEnricherWatch(){
     if(retiredEnricherObserver)return;
@@ -525,6 +561,7 @@ export function createHomeOwner(win=globalThis){
     const rendered=renderHome(appRoot,next,win);
     if(!rendered)return false;
     markOwner();
+    hydrateH4WeekColours(next);
     // Lazy on resolved Home only. Calendar and Home reuse the exact same
     // read model and network request; no second modern saint resolver.
     if(!requestedDailyHonours&&next?.resolution?.day?.main&&!next?.resolving){
