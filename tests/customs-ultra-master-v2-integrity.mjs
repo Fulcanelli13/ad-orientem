@@ -185,4 +185,49 @@ assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-NEWLAND-0272-01").cl
 assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-NEWLAND-1234-02").action_relationship,"VETO_MINISTERIAL_DISTINCT_ACTOR");
 assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-BERGER-0463-07").action_relationship,"VETO_AUTHOR_RECIPE_NOT_SAME_CUSTOM");
 assert.equal(actionEdges.rows.find(x=>x.source_id==="CCEX26-TRAPP-0075-01").action_relationship,"VETO_DIFFERENT_DATE_AND_PLANT_OBJECT");
+
+// Identity-cohort release lock: St Joseph regional source descriptions remain one Pitrè author,
+// not independent attestations or independently approved calendar customs.
+const josephTowns=get("customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json");
+assert.equal(josephTowns.counts.unique_pitre_observations_screened,43);
+assert.equal(josephTowns.counts.regional_action_review_families,7);
+assert.equal(josephTowns.review_groups.length,7);
+const expectedJosephIds=new Set(josephTowns.review_groups.flatMap(g=>g.source_observation_ids));
+assert.equal(expectedJosephIds.size,43);
+const pitreWave13=get("customs-ultra-master-v2-wave13-200-source-scope-screen.v1.json");
+const pitreById=new Map(pitreWave13.rows.map(r=>[r.source_id,r]));
+for(const group of josephTowns.review_groups){
+ assert.equal(group.custom_identity_merge_approved,false);
+ assert.equal(group.indulgence_grant_confirmed,false);
+ assert.equal(group.calendar_publication_allowed,false);
+ assert.equal(group.cross_book_source_independence_established,false);
+ assert.equal(group.observations.length,group.source_observation_ids.length);
+ if(group.provisional_existing_master_owner)assert.ok(mids.has(group.provisional_existing_master_owner));
+ for(const o of group.observations){
+  const source=pitreById.get(o.original_source_id);
+  assert.ok(source,"Unresolvable Pitrè original source "+o.original_source_id);
+  assert.equal(o.evidence_id,source.evidence_id);
+  assert.equal(o.reported_action,source.action_or_component);
+  assert.equal(o.reported_locality,source.source_scope);
+  assert.equal(o.original_ocr_line_anchor,source.source_line);
+  assert.equal(o.original_record_pointer.json_pointer,source.original_record.json_pointer);
+  assert.equal(o.source_record_id_matched,true);
+  assert.equal(source.original_source_page_newly_verified_this_pass,false);
+ }
+}
+for(const r of josephTowns.owner_comparisons){
+ assert.ok(mids.has(r.owner_id),"Unresolved Joseph owner "+r.owner_id);
+ assert.equal(r.approval,false);
+}
+assert.equal(josephTowns.counts.new_distinct_customs,0);
+assert.equal(josephTowns.counts.new_identity_mergers,0);
+assert.equal(josephTowns.counts.new_indulgence_grants,0);
+assert.equal(josephTowns.counts.calendar_publications,0);
+assert.equal(josephTowns.release_freeze,"RESEARCH_ONLY_NO_MERGE_NO_CALENDAR_OR_PUBLICATION_UPDATE");
+const erroneousEasterPair=dedup.description_pair_edges.find(r=>r.review_id==="CC3WORK-REL-041");
+assert.equal(erroneousEasterPair.action_core_relation_as_reviewed,"FALSE_LEXICAL_MATCH_UNRELATED_CAKE_AND_EASTER_FIRE");
+assert.equal(erroneousEasterPair.canonical_merge_authorized,false);
+assert.equal(dedup.counts.source_action_pair_decisions.FALSE_LEXICAL_MATCH_UNRELATED_CAKE_AND_EASTER_FIRE,1);
+assert.equal(Object.values(dedup.counts.source_action_pair_decisions).reduce((a,b)=>a+b,0),41);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
