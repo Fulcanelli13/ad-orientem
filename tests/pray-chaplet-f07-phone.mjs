@@ -33,8 +33,8 @@ try{
    assert.equal(await crown.locator(".aoF07Bead").count(),55);
    assert.equal(await crown.getAttribute("data-total"),"62","The canonical five decades have 62 events by default");
    assert.equal(await page.locator(base+"[data-ao-mercy-bead-navigation]").count(),1,"The existing bead/decade navigator remains the owner");
-   assert.ok((await page.locator(base+".aoMercyLine.aoMercyPrayer p").innerText()).length>15,"Full source prayer remains visible");
-   const firstPrayer=await page.locator(base+".aoMercyLine.aoMercyPrayer p").evaluate(el=>{
+   assert.ok((await page.locator(base+".aoMercyLine.aoMercyPrayer").innerText()).length>15,"Full source prayer remains visible");
+   const firstPrayer=await page.locator(base+".aoMercyLine.aoMercyPrayer").evaluate(el=>{
     const r=el.getBoundingClientRect();
     return {top:r.top,pixels:Math.max(0,Math.min(r.bottom,innerHeight-70)-Math.max(0,r.top)),height:innerHeight};
    });
@@ -49,7 +49,9 @@ try{
     "The original large bead and ten smaller beads must remain directly selectable");
    assert.equal(await pilot.locator('.aoF07MercyChapterChips button').count(),7,
     "Opening, five decades and Closing are one compact chapter rail");
-   assert.equal(await pilot.locator('.aoF07MercyDock output').innerText(),'5 / 62');
+   assert.equal(await pilot.locator('.aoF07MercyDock').count(),0,
+    "No routine previous/next Mercy arrows: direct beads and scroll own navigation");
+   assert.equal(await pilot.locator('[data-p435930-mercy-next],[data-p435930-mercy-prev]').count(),0);
    assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole').count(),2,
     "Both source-owned parts must display ℣ / ℟ on large bead");
    assert.match(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response').innerText(),/ALL/);
@@ -57,9 +59,9 @@ try{
    assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRoles').getAttribute('data-f07-group'),'with-others');
    const responseWeight=await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response p').evaluate(el=>Number.parseInt(getComputedStyle(el).fontWeight));
    assert.ok(responseWeight>=600,'With others must make ALL response typographically prominent');
-   await pilot.locator('[data-p435930-mercy-next]').click();
+   await pilot.locator('.aoMercyStrand [data-p435930-mercy-jump="5"]').click();
    assert.equal(await crown.getAttribute('data-position'),'5');
-   await pilot.locator('[data-p435930-mercy-prev]').click();
+   await pilot.locator('.aoMercyStrand [data-p435930-mercy-jump="4"]').click();
    assert.equal(await crown.getAttribute('data-position'),'4');
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
    assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/);
@@ -82,8 +84,10 @@ try{
    await pilot.locator('[data-p435930-mercy-chapter="59"]').click();
    assert.equal(await crown.getAttribute('data-position'),'59');
    assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response').count(),1);
-   await pilot.locator('[data-p435930-mercy-next]').click();
-   await pilot.locator('[data-p435930-mercy-next]').click();
+   await pilot.locator('.aoDevoCardScroll [data-ao-mercy-step="61"]').scrollIntoViewIfNeeded();
+   await page.waitForFunction(()=>
+     document.querySelector('#aoPray435930.open [data-ao-f07-crown]')?.dataset.position==='61',
+     null,{timeout:8000});
    assert.equal(await crown.getAttribute('data-position'),'61');
    assert.equal(await pilot.locator('[data-p435930-mercy-finish]').count(),1);
    await pilot.locator('[data-p435930-mercy-finish]').click();
