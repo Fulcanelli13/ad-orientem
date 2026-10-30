@@ -1224,36 +1224,36 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
   {
     "id": "PENT-001",
     "title": {
-      "en": "Pentecost greenery decorating Polish homes",
-      "fr": "Décorations végétales de Pentecôte dans les foyers polonais"
+      "en": "Zielone Świątki — traditional Pentecost greenery in Poland",
+      "fr": "Zielone Świątki — feuillages traditionnels de Pentecôte en Pologne"
     },
     "description": {
-      "en": "In certain Polish regional Pentecost customs, households and gates are decorated with spring greenery.",
-      "fr": "Dans certains usages régionaux polonais de Pentecôte, les maisons et les portails sont ornés de feuillages de printemps."
+      "en": "In historical Polish Pentecost customs, families decorated houses, gates and farmyards with spring branches and greenery. Practices varied locally and are less common today.",
+      "fr": "Dans d'anciens usages polonais de Pentecôte, les familles ornaient maisons, portails et cours de ferme de branches et de feuillages printaniers. Les formes variaient selon les lieux et sont devenues moins courantes."
     },
     "history": {
-      "en": "Polish State Forests documents the older rural custom of decorating houses, gates and sometimes churches with fresh greenery at Zielone Świątki, the feast of Pentecost. Forms differed by village, and the source also records that some decorations have become less common.",
-      "fr": "Les Forêts d'État polonaises documentent l'ancien usage rural d'orner maisons, portails et parfois églises de feuillages frais à la Pentecôte, dite Zielone Świątki. Les formes variaient selon les villages et la source constate aussi que certaines décorations sont devenues plus rares."
+      "en": "Polish State Forests and regional museums document the older rural practice of majenie: decorating homes, gates, farmyards and sometimes churches at Zielone Świątki. It combined the Christian Pentecost occasion with older springtime and agricultural folk associations; no continuous practice in every locality is established.",
+      "fr": "Les Forêts d’État polonaises et des musées régionaux documentent l’ancien usage rural du majenie : orner les maisons, portails, fermes et parfois les églises à Zielone Świątki. Cet usage associait la Pentecôte chrétienne à des traditions populaires printanières et agricoles plus anciennes ; sa continuité dans chaque localité n’est pas établie."
     },
     "meaning": {
-      "en": "An optional regional sign of Pentecost joy, never a required Roman liturgical decoration.",
-      "fr": "Un signe régional libre de la joie de Pentecôte, et non une décoration liturgique romaine imposée."
+      "en": "A historically attested seasonal decoration associated with Pentecost in Polish folk life, not a prescribed Roman Catholic ceremony.",
+      "fr": "Une décoration saisonnière historiquement attestée dans la culture populaire polonaise de Pentecôte, et non une cérémonie catholique romaine prescrite."
     },
     "practice": {
-      "en": "Where the regional custom is known, a household may decorate with sustainably sourced greenery as a voluntary seasonal remembrance.",
-      "fr": "Là où cet usage régional est connu, une famille peut décorer son foyer de feuillages obtenus sans dommage, en souvenir facultatif de la fête."
+      "en": "Where this local household tradition is known, greenery obtained responsibly may be used as a voluntary seasonal decoration. Do not cut saplings or gather branches without permission.",
+      "fr": "Là où cet usage familial local est connu, on peut employer librement des feuillages obtenus de manière responsable. Ne pas couper de jeunes arbres ni prélever de branches sans autorisation."
     },
     "caution": {
       "en": "This regional household decoration is neither a prescribed Roman Pentecost practice nor a priestly blessing; do not attribute magical protection to the branches.",
       "fr": "Cette décoration domestique régionale n'est ni une pratique prescrite de la Pentecôte romaine ni une bénédiction sacerdotale ; ne prêter aux branches aucun pouvoir magique de protection."
     },
     "occasion": {
-      "en": "Pentecost, movable feast resolved by Calendar",
-      "fr": "Pentecôte — date mobile calculée par le calendrier"
+      "en": "Pentecost, a movable feast; not a scheduled public ceremony",
+      "fr": "Pentecôte, fête mobile ; aucune cérémonie publique programmée"
     },
     "scope": {
-      "en": "Historically documented regional Polish Pentecost greenery, particularly in rural household settings.",
-      "fr": "Décorations de Pentecôte attestées historiquement dans certaines régions polonaises, notamment en milieu rural."
+      "en": "Poland — historically documented rural household and farmstead custom; modern participation varies by locality.",
+      "fr": "Pologne — ancien usage rural attesté dans les foyers et les fermes ; la pratique actuelle varie selon les localités."
     },
     "editorialCopyStatus": "CALENDAR_REGIONAL_ARTICLE_RELEASE_REVIEW",
     "sources": [
