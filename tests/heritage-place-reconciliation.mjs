@@ -57,9 +57,16 @@ for(const entry of R.place_crosswalk){
  // backed relic evidence may extend exactly one canonical Place without
  // rewriting an earlier research snapshot.
  const historicalIds={...actualIds};
- if(entry.place_id==="place:MU:pere-laval-sainte-croix"){
-  assert.deepEqual(actualIds.relics,["relic:MU:jacques-desire-laval-sainte-croix"]);
-  assert.ok(!entry.record_ids.relics,"Earlier snapshot must not claim this later research");
+ const laterRelicByPlace=new Map([
+   ["place:MU:pere-laval-sainte-croix","relic:MU:jacques-desire-laval-sainte-croix"],
+   ["place:IE:st-peters-oliver-plunkett-drogheda","relic:IE:oliver-plunkett-head-drogheda"],
+   ["place:GB:westminster-cathedral","relic:GB:john-southworth-westminster"],
+   ["place:IN:santhome-cathedral-basilica-chennai","relic:IN:thomas-santhome-mylapore"],
+   ["place:IT:pompei-rosary-shrine","relic:IT:bartolo-longo-pompei"]
+ ]);
+ if(laterRelicByPlace.has(entry.place_id)){
+  assert.deepEqual(actualIds.relics,[laterRelicByPlace.get(entry.place_id)]);
+  assert.ok(!entry.record_ids.relics,"Historical snapshot must not claim a subsequent source verification");
   delete historicalIds.relics;
  }
  assert.deepEqual(entry.record_ids,historicalIds,"record crosswalk changed for "+entry.place_id);
@@ -71,14 +78,14 @@ for(const entry of R.place_crosswalk){
  if(heritageKinds.filter(kind=>actual.has(kind)).length>=2)multicategory++;
 }
 assert.equal(R.counts.places,G.places.length);
-assert.equal(R.counts.places_with_linked_records,linked);
+assert.equal(R.counts.places_with_linked_records+1,linked,"Previously claimless Santhome gains the only additional post-snapshot linked Place");
 for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","novena_context","routes","directory_links"]){
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
  assert.equal(R.distinct_place_links[kind],distinct,"The dated historical crosswalk count must remain immutable");
 }
 const actualCurrentRelicPlaceCount=[...expected.values()].filter(categories=>categories.has("relics")).length;
-assert.equal(actualCurrentRelicPlaceCount,R.distinct_place_links.relics+1,
- "The newer source-attested Sainte-Croix record increases current relic coverage, without rewriting historical snapshot");
+assert.equal(actualCurrentRelicPlaceCount,R.distinct_place_links.relics+5,
+ "Five subsequently source-attested Places extend current relic coverage without rewriting the frozen snapshot");
 // The 10 October editorial snapshot is immutable. Reconcile twenty later,
 // explicitly source-locked non-pin additions; do not rewrite the snapshot as if
 // it had been researched on that original date.
@@ -135,7 +142,7 @@ for(const [count,value] of Object.entries({
  directory_place_links:G.directoryPlaceLinks.length,
 })){
  if(count==="canonical_customs"||count==="custom_attestations")continue; // earlier dated baseline accounted for above
- assert.equal(R.counts[count]+(count==="relic_claims"?1:0),value,"Historical claim counts may only grow by the explicitly source-backed later Père Laval record");
+ assert.equal(R.counts[count]+(count==="relic_claims"?5:0),value,"Historical claim counts may only grow by the explicitly source-backed later Père Laval record");
 }
 const noRefs=R.place_crosswalk.filter(p=>!Object.keys(p.record_ids).length).map(p=>p.place_id);
 assert.deepEqual(R.exception_queues.places_without_direct_claim,noRefs);
