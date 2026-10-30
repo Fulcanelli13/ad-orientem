@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {expandOfficialSspxMassPlaces} from "../src/find/official-sspx-discovery.js";
+import {fetchOfficialSspxPlaceIndex} from "../src/find/sspx-indicative-geo.js";
 import {loadDirectoryDataset,filterDirectoryRecords} from "../src/find/data-service.js";
 import {projectDirectoryItems} from "../src/find/explore-projection.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
@@ -86,3 +87,31 @@ assert.equal(dataset.records.length,3);
 assert.equal(dataset.records.filter(x=>x.venue.publication_state==="OFFICIAL_LISTED_MASS_TIMES_UNCONFIRMED").length,2);
 assert.equal(dataset.records.filter(x=>x.venue.upstream.provider_id==="SSPX_MAP_API").length,2);
 console.log("Official SSPX global source: PASS — Sunday and weekday Mass locations, independent identity holds, no fabricated schedules or routes");
+
+// Global API pagination must be atomic: never publish first-page-only discovery.
+const makeApiPage=(offset,total,items)=>({ok:true,json:async()=>({total,offset,limit:1000,items})});
+const firstPage=Array.from({length:1000},(_,i)=>({crmId:"OPE-"+i,slug:"chapel-"+i}));
+const lastPage=[{crmId:"OPE-1000",slug:"chapel-1000"}];
+const fullPageFetch=async url=>{
+ const offset=Number(new URL(url).searchParams.get("offset"));
+ return makeApiPage(offset,1001,offset===0?firstPage:lastPage);
+};
+assert.equal((await fetchOfficialSspxPlaceIndex({fetchImpl:fullPageFetch})).length,1001,
+ "All pages must be present before using the worldwide feed");
+const missingSecondPage=async url=>Number(new URL(url).searchParams.get("offset"))===0
+ ?makeApiPage(0,1001,firstPage):{ok:false,status:503};
+assert.equal((await fetchOfficialSspxPlaceIndex({fetchImpl:missingSecondPage})).length,0,
+ "A failed later page must discard the earlier partial snapshot");
+const changingTotal=async url=>{
+ const offset=Number(new URL(url).searchParams.get("offset"));
+ return makeApiPage(offset,offset===0?1001:1002,offset===0?firstPage:lastPage);
+};
+assert.equal((await fetchOfficialSspxPlaceIndex({fetchImpl:changingTotal})).length,0,
+ "A source total changing during pagination must invalidate the snapshot");
+const emptySecondPage=async url=>{
+ const offset=Number(new URL(url).searchParams.get("offset"));
+ return makeApiPage(offset,1001,offset===0?firstPage:[]);
+};
+assert.equal((await fetchOfficialSspxPlaceIndex({fetchImpl:emptySecondPage})).length,0,
+ "An incomplete final page must invalidate the snapshot");
+console.log("SSPX worldwide source pagination: PASS — complete or no live supplement");

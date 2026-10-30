@@ -141,26 +141,39 @@ export function applyIndicativeSspxLocations(records,{officialPlaces=[]}={}){
   });
   return Object.freeze({records:Object.freeze(result),summary:Object.freeze(report)});
 }
-export async function fetchOfficialSspxPlaceIndex({fetchImpl=fetch,timeoutMs=5000}={}){
-  const out=[];
+// Only a complete, internally consistent snapshot can support worldwide discovery.
+// The source can span several pages; partial responses must never become venues.
+export async function fetchOfficialSspxPlaceIndex({fetchImpl=fetch,timeoutMs=12000}={}){
+  const out=[],pageSize=1000,maxRows=10000;
+  let expectedTotal=null,offset=0;
   const controller=typeof AbortController!=="undefined"?new AbortController():null;
   const timer=controller?setTimeout(()=>controller.abort(),timeoutMs):null;
   try{
-    for(let offset=0;offset<=2000;offset+=1000){
-      const url=MAP_API+"?lang=en&limit=1000&offset="+offset;
-      const response=await fetchImpl(url,{headers:{accept:"application/json"},...(controller?{signal:controller.signal}:{})});
-      if(!response?.ok)break;
-      const result=await response.json();
-      if(!Array.isArray(result?.items))break;
-      out.push(...result.items);
-      if(out.length>=Number(result.total||0)||result.items.length<1000)break;
+    while(offset<maxRows){
+      const url=MAP_API+"?lang=en&limit="+pageSize+"&offset="+offset;
+      const response=await fetchImpl(url,{headers:{accept:"application/json"},
+        ...(controller?{signal:controller.signal}:{})});
+      if(!response?.ok)return []; // Fail closed; never use the earlier pages.
+      const page=await response.json();
+      if(!Array.isArray(page?.items)||!Number.isSafeInteger(page.total)||
+        page.total<0||page.total>maxRows||
+        (page.offset!==undefined&&page.offset!==offset)||
+        (page.limit!==undefined&&(!Number.isInteger(page.limit)||page.limit<1||page.limit>pageSize)))
+        return [];
+      if(expectedTotal===null)expectedTotal=page.total;
+      if(page.total!==expectedTotal||page.items.length>pageSize||
+        offset+page.items.length>expectedTotal)return [];
+      if(!page.items.length&&offset<expectedTotal)return [];
+      out.push(...page.items);
+      if(out.length===expectedTotal)return out;
+      offset=out.length; // A short response is not proof that pagination ended.
     }
+    return []; // Unexpectedly large inventories require explicit review.
   }catch{
-    // Offline mode: existing first-party coordinates are still used for coarse discovery.
+    // Network failure, timeout or invalid JSON: preserve offline corpus only.
+    return [];
   }finally{if(timer!==null)clearTimeout(timer)}
-  return out;
 }
-
 
 /**
  * Extends the discovery-only policy to other communities. An existing mapped
