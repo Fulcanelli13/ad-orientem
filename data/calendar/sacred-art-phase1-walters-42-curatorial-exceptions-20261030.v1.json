@@ -1,0 +1,260 @@
+{
+  "schema": "AO_WALTERS_42_PHYSICAL_ENSEMBLE_AND_AUTHORSHIP_EXCEPTIONS_V1",
+  "asOf": "2026-10-30",
+  "sourceOfficialCSV": "data/calendar/sacred-art-phase1-walters-42-official-csv-report-20261030.v1.json",
+  "sourceGitBlobSha": "c654bc04df0e07a9c8181f05012680d213a3b054",
+  "counts": {
+    "passionAltarpiecePanelsInAcceptedSource": 7,
+    "distinctAccessionedPassionPanelsInOneHistoricalSet": 7,
+    "individualComponentsOfCaselliTriptych": 1,
+    "singleNarrativeMultipleScenes": 1,
+    "preparatorySketchDifferentFromFinishedWork": 1,
+    "sourceTitleSemanticReview": 1,
+    "artistQualifiedReview": 5,
+    "canonical383LinksAdded": 0,
+    "photosCertified": 0,
+    "releaseActions": 0
+  },
+  "sevenPassionPanels": [
+    {
+      "sourceId": "walters:1016",
+      "accession": "37.667",
+      "title": "Altarpiece with the Passion of Christ: Arrest of Christ",
+      "originalDecision": "IMPORT",
+      "physicalItemType": "INDIVIDUAL_ALTARPIECE_PANEL",
+      "evidenceUrl": "https://art.thewalters.org/object/37.667/",
+      "relatedAcceptedPanelIds": [
+        "walters:22081",
+        "walters:29501",
+        "walters:3119",
+        "walters:25924",
+        "walters:4153",
+        "walters:4130"
+      ],
+      "evidenceBasis": "Official Walters 6749-row relationship table links other panels as See Also, Part of Set; independent museum object page identifies late-medieval Passion altarpiece",
+      "autoMerge": false
+    },
+    {
+      "sourceId": "walters:22081",
+      "accession": "37.663",
+      "title": "Altarpiece with the Passion of Christ: Way to Calvary",
+      "originalDecision": "IMPORT",
+      "physicalItemType": "INDIVIDUAL_ALTARPIECE_PANEL",
+      "evidenceUrl": "https://art.thewalters.org/object/37.663/",
+      "relatedAcceptedPanelIds": [
+        "walters:29501",
+        "walters:1016",
+        "walters:3119",
+        "walters:25924",
+        "walters:4153",
+        "walters:4130"
+      ],
+      "evidenceBasis": "Official Walters 6749-row relationship table links other panels as See Also, Part of Set; independent museum object page identifies late-medieval Passion altarpiece",
+      "autoMerge": false
+    },
+    {
+      "sourceId": "walters:25924",
+      "accession": "37.669",
+      "title": "Altarpiece with the Passion of Christ: Christ before High Priest",
+      "originalDecision": "IMPORT",
+      "physicalItemType": "INDIVIDUAL_ALTARPIECE_PANEL",
+      "evidenceUrl": "https://art.thewalters.org/object/37.669/",
+      "relatedAcceptedPanelIds": [
+        "walters:22081",
+        "walters:29501",
+        "walters:1016",
+        "walters:3119",
+        "walters:4153",
+        "walters:4130"
+      ],
+      "evidenceBasis": "Official Walters 6749-row relationship table links other panels as See Also, Part of Set; independent museum object page identifies late-medieval Passion altarpiece",
+      "autoMerge": false
+    },
+    {
+      "sourceId": "walters:29501",
+      "accession": "37.664",
+      "title": "Altarpiece with the Passion of Christ: Entombment",
+      "originalDecision": "IMPORT",
+      "physicalItemType": "INDIVIDUAL_ALTARPIECE_PANEL",
+      "evidenceUrl": "https://art.thewalters.org/object/37.664/",
+      "relatedAcceptedPanelIds": [
+        "walters:22081",
+        "walters:1016",
+        "walters:3119",
+        "walters:25924",
+        "walters:4153",
+        "walters:4130"
+      ],
+      "evidenceBasis": "Official Walters 6749-row relationship table links other panels as See Also, Part of Set; independent museum object page identifies late-medieval Passion altarpiece",
+      "autoMerge": false
+    },
+    {
+      "sourceId": "walters:3119",
+      "accession": "37.668",
+      "title": "Altarpiece with the Passion of Christ: Crucifixion",
+      "originalDecision": "IMPORT",
+      "physicalItemType": "INDIVIDUAL_ALTARPIECE_PANEL",
+      "evidenceUrl": "https://art.thewalters.org/object/37.668/",
+      "relatedAcceptedPanelIds": [
+        "walters:22081",
+        "walters:29501",
+        "walters:1016",
+        "walters:25924",
+        "walters:4153",
+        "walters:4130"
+      ],
+      "evidenceBasis": "Official Walters 6749-row relationship table links other panels as See Also, Part of Set; independent museum object page identifies late-medieval Passion altarpiece",
+      "autoMerge": false
+    },
+    {
+      "sourceId": "walters:4130",
+      "accession": "37.671",
+      "title": "Altarpiece with the Passion of Christ: Christ Mocked",
+      "originalDecision": "IMPORT",
+      "physicalItemType": "INDIVIDUAL_ALTARPIECE_PANEL",
+      "evidenceUrl": "https://art.thewalters.org/object/37.671/",
+      "relatedAcceptedPanelIds": [
+        "walters:22081",
+        "walters:29501",
+        "walters:1016",
+        "walters:3119",
+        "walters:25924",
+        "walters:4153"
+      ],
+      "evidenceBasis": "Official Walters 6749-row relationship table links other panels as See Also, Part of Set; independent museum object page identifies late-medieval Passion altarpiece",
+      "autoMerge": false
+    },
+    {
+      "sourceId": "walters:4153",
+      "accession": "37.670",
+      "title": "Altarpiece with the Passion of Christ: Flagellation",
+      "originalDecision": "IMPORT",
+      "physicalItemType": "INDIVIDUAL_ALTARPIECE_PANEL",
+      "evidenceUrl": "https://art.thewalters.org/object/37.670/",
+      "relatedAcceptedPanelIds": [
+        "walters:22081",
+        "walters:29501",
+        "walters:1016",
+        "walters:3119",
+        "walters:25924",
+        "walters:4130"
+      ],
+      "evidenceBasis": "Official Walters 6749-row relationship table links other panels as See Also, Part of Set; independent museum object page identifies late-medieval Passion altarpiece",
+      "autoMerge": false
+    }
+  ],
+  "otherPhysicalAndTitleCorrections": [
+    {
+      "sourceId": "walters:82254",
+      "accession": "37.531B",
+      "type": "COMPONENT_OF_TRIPTYCH",
+      "wholeAccession": "37.531",
+      "wholeWaltersObjectId": "3723",
+      "sourceRelationshipType": "Component",
+      "wholeObjectRelation": "Whole",
+      "status": "MUSEUM_EXPLICIT_COMPONENT",
+      "sourceUrl": "https://art.thewalters.org/object/37.531B/",
+      "action": "Keep accepted saint panel separate from whole triptych physical support accounting; do not publish whole from source choice"
+    },
+    {
+      "sourceId": "walters:22554",
+      "accession": "37.776",
+      "type": "CONTINUOUS_NARRATIVE_ON_ONE_PAINTING",
+      "status": "SINGLE_PAINTING_MULTIPLE_SCENES",
+      "sourceUrl": "https://art.thewalters.org/object/37.776/",
+      "action": "Do not count depicted Passion episodes as separate painted panels; source choice has one painting"
+    },
+    {
+      "sourceId": "walters:16411",
+      "accession": "37.788",
+      "type": "OIL_SKETCH_PREPARATORY_FOR_DIFFERENT_ALTARPIECE",
+      "status": "STUDY_NOT_FINISHED_LARGE_ALTARPIECE",
+      "sourceUrl": "https://art.thewalters.org/object/37.788/",
+      "action": "Distinguish accepted preparatory sketch from different monastery altarpiece"
+    },
+    {
+      "sourceId": "walters:82254",
+      "accession": "37.531B",
+      "type": "MUSEUM_TITLE_SEMANTIC_DISCREPANCY",
+      "status": "FROZEN_MUSEUM_TITLE_IS_SAINT_LOUISE_PARENT_USES_SAINT_LOUIS",
+      "sourceUrl": "https://art.thewalters.org/object/37.531B/",
+      "action": "Preserve frozen source title, flag human editorial review of translated historical saint title"
+    }
+  ],
+  "artistAttributionReview": [
+    {
+      "sourceId": "walters:22581",
+      "accession": "37.234",
+      "originalArtist": "Anthony van Dyck",
+      "reviewedTitle": "Virgin and Child",
+      "originalDecision": "IMPORT",
+      "qualifierType": "VAN_DYCK_AND_WORKSHOP_NOT_SOLE_AUTOGRAPH",
+      "officialAttribution": "Anthony van Dyck and workshop",
+      "evidenceUrl": "https://art.thewalters.org/object/37.234/",
+      "action": "PRESERVE_FROZEN_EDITOR_CHOICE_REVIEW_CREATOR_QUALIFIER_BEFORE_PUBLIC_COPY",
+      "photoApproved": false
+    },
+    {
+      "sourceId": "walters:32662",
+      "accession": "37.582",
+      "originalArtist": "Domenico Fetti; Titian",
+      "reviewedTitle": "Christ and the Tribute Money",
+      "originalDecision": "IMPORT",
+      "qualifierType": "FETTI_COPY_AFTER_TITIAN_NOT_TITIAN_AUTOGRAPH",
+      "officialAttribution": "Domenico Fetti, copy after Titian",
+      "evidenceUrl": "https://art.thewalters.org/object/37.582/",
+      "action": "PRESERVE_FROZEN_EDITOR_CHOICE_REVIEW_CREATOR_QUALIFIER_BEFORE_PUBLIC_COPY",
+      "photoApproved": false
+    },
+    {
+      "sourceId": "walters:37520",
+      "accession": "37.509",
+      "originalArtist": "Bernardino Luini; Andrea Solario",
+      "reviewedTitle": "Saint Mary Magdalene",
+      "originalDecision": "IMPORT",
+      "qualifierType": "LUINI_OR_SOLARIO_STYLISTIC_ATTRIBUTION_HISTORY",
+      "officialAttribution": "Bernardino Luini; style of Andrea Solario; earlier attribution debated",
+      "evidenceUrl": "https://art.thewalters.org/object/37.509/",
+      "action": "PRESERVE_FROZEN_EDITOR_CHOICE_REVIEW_CREATOR_QUALIFIER_BEFORE_PUBLIC_COPY",
+      "photoApproved": false
+    },
+    {
+      "sourceId": "walters:9159",
+      "accession": "37.372",
+      "originalArtist": "Anthony van Dyck; Jan Boeckhorst",
+      "reviewedTitle": "Mary Magdalene",
+      "originalDecision": "IMPORT",
+      "qualifierType": "JAN_BOECKHORST_POSSIBLE_STYLE_OF_VAN_DYCK",
+      "officialAttribution": "Jan Boeckhorst (?) in the style of Anthony van Dyck",
+      "evidenceUrl": "https://art.thewalters.org/object/37.372/",
+      "action": "PRESERVE_FROZEN_EDITOR_CHOICE_REVIEW_CREATOR_QUALIFIER_BEFORE_PUBLIC_COPY",
+      "photoApproved": false
+    },
+    {
+      "sourceId": "walters:35964",
+      "accession": "37.256",
+      "originalArtist": "Pieter Coecke van Aelst, the elder; Pieter Coecke van Aelst, the elder",
+      "reviewedTitle": "Saint Jerome in His Study",
+      "originalDecision": "IMPORT",
+      "qualifierType": "DUPLICATED_SOURCE_CREATOR_LABEL_NOT_TWO_ARTISTS",
+      "officialAttribution": "Pieter Coecke van Aelst the Elder, one named painter",
+      "evidenceUrl": "https://art.thewalters.org/object/37.256/",
+      "action": "PRESERVE_FROZEN_EDITOR_CHOICE_REVIEW_CREATOR_QUALIFIER_BEFORE_PUBLIC_COPY",
+      "photoApproved": false
+    }
+  ],
+  "policy": [
+    "Passion panel source records all remain 7 independent object IDs and 7 distinct user choices, linked by one historical ensemble relation; no new item representing entire set",
+    "Do not transfer an accepted component's decision to its whole altarpiece or other panels",
+    "A painting depicting multiple scenes is not multiple paintings",
+    "Artist attribution qualifier or past ascription must be displayed explicitly, no autopromotion as autograph original",
+    "Exact image rights/native crops/frames/colour/fidelity have not been reviewed"
+  ],
+  "gates": {
+    "allFrozenChoicesUnchanged": true,
+    "canonical383Mutated": false,
+    "physicalUniqueWorksNewlyCertified": 0,
+    "photoRightsCertified": false,
+    "productionMutation": false
+  }
+}
