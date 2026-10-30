@@ -172,7 +172,7 @@ export async function assembleWeekdayComplinePilot({reader,weekday="Sabbato"}={}
    for(const path of paths){
     sections[l][path]={};
     // Read all named sections through the cached original leaf.
-    for(const name of allowed[path]){
+    for(const name of path===MARIAN?[appointment.marianSection]:allowed[path]){
      try{sections[l][path][name]=await reader.section(path,name,l)}
      catch(e){throw Error(l+":"+path+"#"+name+":"+e.message)}
     }
