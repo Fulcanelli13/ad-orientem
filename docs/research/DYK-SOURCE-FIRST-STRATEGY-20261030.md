@@ -170,3 +170,23 @@ Four additional held claims were checked/narrowed: the Sunday sermon family conv
 All eight previously flagged **source-precision** holds were reassessed and moved into the next editorial categories; **none were declared independently fact-verified for publication**. The [130-case review board](../../data/research/did-you-know/dyk-customs-130-source-editorial-screen.v1.json) now groups the same 130 preserved drafts as 31 priority review, 31 secondary context, 60 historical-festival story candidates and 8 repetitive/low-curiosity facts.
 
 **Remaining:** actual claim-level editorial certification (including narrower context), genuine novelty and diversity versus the older private DYK deck, independent French review, 10 glossary browser-route acceptance tests, and fact-specific destinations for Mass and Customs. No new Calendar identity, runtime deck or publication.
+
+## Bilingual discovery shortlist — 26 feature treatments (30 October 2026)
+
+The [readable, source-page-linked 26-fact bilingual review sheet](DYK-26-FEATURE-FACTS-REVIEW-20261030.md) now provides a practical *retain / revise / defer* decision surface, not another bulk candidate dump.
+
+From **31** individually screened priority Weiser drafts, [the source-preserving editorial copy file](../../data/research/did-you-know/dyk-weiser-31-edited-priority-facts.v1.json) selects **18 FEATURE, 12 RESERVE, one HOLD**. Each retains its original observation ID, historic scope warning, candidate EN/FR affirmative display text and nonpublishing flags. The hold is the 8 September seed-blessing item, where local ritual authority and exact source/feast semantics require more than a fact-page locator.
+
+From the prior **12 composite Sicilian festival proposals**, [the revised story shortlist](../../data/research/did-you-know/dyk-pitre-12-story-editorial-shortlist.v1.json) selects **eight FEATURE**, **four RESERVE**, choosing **no more than one featured story per original Pitrè festival family**. It explicitly corrects that Palermo fishermen carried *statues* of Saints Cosmas and Damian and limits Saint Joseph hospitality generalisations to guests of appropriate historically reported status.
+
+The **26 featured display treatments (18 + 8)** are **not added** to the active 145-draft research pool: 18 are editorial rewrites of existing Weiser fact drafts, and eight are composite story candidates drawing on source-preserved Pitrè observations. Zero claims are approved, French professionally reviewed, browser-accepted, released or published.
+
+### Exact-destination restraint and Home compatibility
+
+The private canonical Home DYK runtime already displays its own bilingual heading and enforces a **12-per-local-day** cap. The edited featured statements are independent declarative prose rather than a second `Did you know that...` question, and they do not create a second runtime.
+
+Static inspection of the earlier private Home dispatcher confirmed an exact Glossary concept route contract; it did **not** establish a user-tested source-specific historical Customs destination for any of these **26** candidate treatments. Mark their deep-link state as **UNVERIFIED/UNAVAILABLE** rather than sending visitors to a generic Calendar or invented published Customs identity. A safe future option is a read-only contextual source-detail view inside the existing Home/source-owner navigation, but that is **a proposed implementation**, not a feature built in this research branch. Source links should retain original printed folios and avoid treating regional practice as universal 1962 rubrics.
+
+### Remaining release gates
+
+Choose/adjust the reviewed 26 copy proposals; perform final factual claims and French quality adjudication; compare substantive meanings with old private DYK preview statements; implement and browser-accept specific source destinations before any Home ingest. The 130 historical source folio checks are **complete**, so source-retrieval expansion is not a prerequisite to editorial work. Historical facts are never equivalent to indulgence grants or universal devotional obligations. Zero new paid services.
