@@ -12,14 +12,20 @@ import {parseAdventPreviewSourceSections}
  from "./advent-first-vespers-bounded-preview-reader.js";
 import {planWeeklyComplinePsalter,COMPLINE_MARIAN_SOURCE_SECTIONS}
  from "./weekday-compline-psalter-plan.js";
+import {reviewAdventIComplineAppointment}
+ from "./compline-advent-2026-appointments.js";
 
 export const SATURDAY_COMPLINE_PILOT_SCHEMA="ao.office.2026-advent-i-saturday-compline-pilot.v1";
 export const FERIAL_COMPLINE_PILOT_SCHEMA="ao.office.2026-advent-i-ferial-compline-pilot.v1";
-const APPOINTMENTS=Object.freeze({
- Sabbato:Object.freeze({weekday:"Sabbato",civilDate:"2026-11-28",officeDate:"2026-11-28",marianSection:"Advent",kind:"SATURDAY_COMPLINE_AFTER_SUNDAY_FIRST_VESPERS_BR166B"}),
- "Feria III":Object.freeze({weekday:"Feria III",civilDate:"2026-12-01",officeDate:"2026-12-01",marianSection:"Advent",kind:"ADVENT_I_FERIA_III_OFFICE_BR170_171_E"})
+const PSALMS_TO_READ=Object.freeze({
+ Dominica:Object.freeze([4,90,133,233]),
+ "Feria II":Object.freeze([6,7,233]),
+ "Feria III":Object.freeze([11,12,15,233]),
+ "Feria IV":Object.freeze([33,60,233]),
+ "Feria V":Object.freeze([69,70,233]),
+ "Feria VI":Object.freeze([76,85,233]),
+ Sabbato:Object.freeze([87,102,233])
 });
-const PSALMS_TO_READ=Object.freeze({Sabbato:Object.freeze([87,102,233]),"Feria III":Object.freeze([11,12,15,233])});
 const BASE="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+PIN+"/web/www/horas/";
 const LOCALE=Object.freeze({la:"Latin",en:"English",fr:"Francais"});
 const LANGS=Object.freeze(["la","en","fr"]);
@@ -47,10 +53,16 @@ function held(reason,weekday="Sabbato"){
   canPreview:false,rightsApproved:false,publishable:false,published:false
  });
 }
-export function createComplinePinnedReader({fetchSource,weekday="Sabbato"}={}){
- if(typeof fetchSource!=="function"||!Object.hasOwn(PSALMS_TO_READ,weekday))
+export function createComplinePinnedReader({fetchSource,weekday=null,date=null}={}){
+ const reviewed=date===null?null:reviewAdventIComplineAppointment(date);
+ if(date!==null&&reviewed.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH")
+  throw Error("COMPLINE_UNREVIEWED_DATE_READER_WITHHELD");
+ const psalmDay=reviewed?.appointment?.psalmDay??weekday??"Sabbato";
+ if(typeof fetchSource!=="function"||
+    !Object.hasOwn(PSALMS_TO_READ,psalmDay)||
+    (reviewed&&weekday!==null&&psalmDay!==weekday))
   throw Error("COMPLINE_FETCH_OR_WEEKDAY_NOT_SUPPORTED");
- const psalmIds=PSALMS_TO_READ[weekday];
+ const psalmIds=PSALMS_TO_READ[psalmDay];
  const cache=new Map();
  function url(path,language){
   if(!Object.hasOwn(LOCALE,language))
@@ -100,7 +112,7 @@ export function createComplinePinnedReader({fetchSource,weekday="Sabbato"}={}){
   return raw("Psalterium/Psalmorum/Psalm"+number,language);
  }
  return Object.freeze({
-  sourceRevision:PIN,weekday,section,psalm,
+  sourceRevision:PIN,weekday:psalmDay,date,section,psalm,
   cachedDistinctFiles:()=>cache.size,maxDistinctFiles:(4+psalmIds.length)*3
  });
 }
@@ -153,14 +165,21 @@ function stanzas(lines){
  }
  return parts.some(x=>!x.length)?null:parts;
 }
-export async function assembleWeekdayComplinePilot({reader,weekday="Sabbato"}={}){
- if(!Object.hasOwn(APPOINTMENTS,weekday))
+export async function assembleWeekdayComplinePilot({
+ reader,weekday="Sabbato",date=null
+}={}){
+ const appointedDate=date??(weekday==="Sabbato"?"2026-11-28":
+  weekday==="Feria III"?"2026-12-01":null);
+ const review=reviewAdventIComplineAppointment(appointedDate);
+ if(review.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH")
   return held("OFFICE_DATE_APPOINTMENT_NOT_REVIEWED",weekday);
- const appointment=APPOINTMENTS[weekday],psalmIds=PSALMS_TO_READ[weekday];
- if(reader?.sourceRevision!==PIN||reader.weekday!==weekday||
+ const appointment=review.appointment,psalmDay=appointment.psalmDay;
+ const psalmIds=PSALMS_TO_READ[psalmDay];
+ if(reader?.sourceRevision!==PIN||reader.weekday!==psalmDay||
+    (date!==null&&reader.date!==date)||
     typeof reader.section!=="function"||
     typeof reader.psalm!=="function")
-  return held("PINNED_COMPLINE_READER_REQUIRED",weekday);
+  return held("PINNED_COMPLINE_READER_REQUIRED",psalmDay);
  const blocks=[];
  try{
   const sections={};
@@ -210,7 +229,7 @@ export async function assembleWeekdayComplinePilot({reader,weekday="Sabbato"}={}
   prayer("Deus in adjutorium","OPENING",x=>x.slice(0,4));
   prayer("Alleluia","ALLELUIA",x=>x.filter(z=>!z.startsWith("(")).slice(0,1));
   const plan=planWeeklyComplinePsalter({
-   weekday,marianSection:appointment.marianSection,
+   weekday:psalmDay,marianSection:appointment.marianSection,
    sourceSections:Object.fromEntries(LANGS.map(l=>[
     l,at(l,PSALMI,"Completorium")
    ]))
@@ -219,7 +238,7 @@ export async function assembleWeekdayComplinePilot({reader,weekday="Sabbato"}={}
      plan.psalmIds.some(n=>!psalmIds.includes(n))||
      plan.segments.length!==3)
    throw Error(plan.reason||"COMPLINE_WEEKDAY_PINNED_PSALTER_UNRESOLVED");
-  blocks.push(projectBlock("ANTIPHON",PSALMI,"Completorium:"+weekday,
+  blocks.push(projectBlock("ANTIPHON",PSALMI,"Completorium:"+psalmDay,
    Object.fromEntries(LANGS.map(l=>[l,[plan.antiphons[l]]]))));
   for(const {number,start,end} of plan.segments){
    const portions={};
@@ -240,7 +259,7 @@ export async function assembleWeekdayComplinePilot({reader,weekday="Sabbato"}={}
     range,portions));
    prayer("Gloria","DOXOLOGY");
   }
-  blocks.push(projectBlock("ANTIPHON",PSALMI,"Completorium:"+weekday,
+  blocks.push(projectBlock("ANTIPHON",PSALMI,"Completorium:"+psalmDay,
    Object.fromEntries(LANGS.map(l=>[l,[plan.antiphons[l]]]))));
   minor("Hymnus Completorium","HYMN",x=>{
    const part=stanzas(x);
@@ -333,22 +352,29 @@ export async function assembleWeekdayComplinePilot({reader,weekday="Sabbato"}={}
    }
   });
   return Object.freeze({
-   schema:weekday==="Sabbato"?SATURDAY_COMPLINE_PILOT_SCHEMA:FERIAL_COMPLINE_PILOT_SCHEMA,
-   status:weekday==="Sabbato"?
+   schema:psalmDay==="Sabbato"?SATURDAY_COMPLINE_PILOT_SCHEMA:FERIAL_COMPLINE_PILOT_SCHEMA,
+   status:appointedDate==="2026-11-28"?
     "SOURCE_FIRST_SATURDAY_COMPLINE_RESEARCH_NOT_CERTIFIED":
-    "SOURCE_FIRST_FERIAL_TUESDAY_COMPLINE_RESEARCH_NOT_CERTIFIED",
-   civilDate:appointment.civilDate,officeDate:appointment.officeDate,hour:"COMPLINE",
-   weekday,marianSection:appointment.marianSection,
-   rubricalAppointment:appointment.kind,
+    appointedDate==="2026-12-01"?
+    "SOURCE_FIRST_FERIAL_TUESDAY_COMPLINE_RESEARCH_NOT_CERTIFIED":
+    "SOURCE_FIRST_APPOINTED_COMPLINE_RESEARCH_NOT_CERTIFIED",
+   civilDate:appointment.date,officeDate:appointment.date,hour:"COMPLINE",
+   weekday:psalmDay,civilWeekday:appointment.weekday,
+   marianSection:appointment.marianSection,officeClass:appointment.officeClass,
+   rubricalAppointment:appointedDate==="2026-11-28"?
+    "SATURDAY_COMPLINE_AFTER_SUNDAY_FIRST_VESPERS_BR166B":
+    appointedDate==="2026-12-01"?
+    "ADVENT_I_FERIA_III_OFFICE_BR170_171_E":
+    appointment.rubricalReason,
    sourceRevision:PIN,availableLanguages:LANGS,
    blocks:Object.freeze(blocks),blockCount:blocks.length,
    frames:Object.freeze(frames),focusFrameCount:frames.length,
    sourceTextAltered:false,sourceDocumentsPerLanguage:4+psalmIds.length,
-   firstVespersConcurrenceHandled:weekday==="Sabbato",
+   firstVespersConcurrenceHandled:psalmDay==="Sabbato",
    officeCompletenessCertified:false,translationApproved:false,
    rightsApproved:false,publishable:false,published:false
   });
- }catch(e){return held(String(e?.message??e),weekday)}
+ }catch(e){return held(String(e?.message??e),psalmDay)}
 }
 export function createSaturdayComplinePinnedReader({fetchSource}={}){
  return createComplinePinnedReader({fetchSource,weekday:"Sabbato"});
@@ -361,4 +387,7 @@ export async function assembleSaturdayComplinePilot({reader}={}){
 }
 export async function assembleFerialTuesdayComplinePilot({reader}={}){
  return assembleWeekdayComplinePilot({reader,weekday:"Feria III"});
+}
+export async function assembleDatedComplinePilot({reader,date}={}){
+ return assembleWeekdayComplinePilot({reader,date});
 }
