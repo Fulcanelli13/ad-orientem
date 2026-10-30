@@ -130,7 +130,7 @@ export function filterPilotDiscovery(root,value){
   const empty=root.querySelector("[data-ao-pilot-empty]");
   if(empty)empty.hidden=count!==0;
 }
-export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
+export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,resume=null}){
   const all=resolvedPrayerPilotFamilies(L,families);
   const makeTile=tile=>{
     const family=all[tile.id];
@@ -152,6 +152,18 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
   const routeForm=id=>/novena|montfort|first_friday|first_saturday/.test(id)?"novena"
     :/rosary|chaplet|five_wounds|little_crown|precious_blood|mercy/.test(id)?"chaplet"
     :/litany/.test(id)?"litany":"prayer";
+  // R1.1 Continue only when the canonical Montfort owner has saved progress.
+  // Never present prototype sample progress as the user's actual progress.
+  const completed=Number.isInteger(resume?.completed)&&resume.completed>0
+    ?Math.min(33,resume.completed):0;
+  const continueRow=completed
+    ?'<button type="button" class="aoPrayPilotMini" data-p435930-own="pray.montfort_consecration">'+
+      '<span class="aoPrayPilotMiniArt" aria-hidden="true"></span>'+
+      '<span class="aoPrayPilotMiniText"><small>'+esc(L("CONTINUE","REPRENDRE"))+'</small>'+
+      '<b>'+esc(L("Montfort · 33-day preparation","Montfort · préparation de 33 jours"))+'</b>'+
+      '<span>'+esc(L(completed+" of 33 completed",completed+" sur 33 accomplis"))+'</span>'+
+      '<span class="aoPrayPilotMiniProgress" aria-hidden="true"><i style="width:'+((completed/33)*100).toFixed(1)+'%"></i></span></span>'+
+      '<span class="aoPrayPilotMiniChevron" aria-hidden="true">›</span></button>':'';
   const routeRows=[...routes.values()].map(row=>
     '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+routeForm(row.id)+'" data-pilot-latin="false" data-pilot-searchable="'+esc([row.title,row.description].join(" "))+'"'+
     (row.owner==="external"?' data-p435930-external="':' data-p435930-own="')+esc(row.id)+'">'+
@@ -166,7 +178,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     '<main class="aoP435930Body aoPrayPilotHome">'+
       '<div class="aoPrayPilotTop"><h2>'+esc(L("Prayer","Prière"))+'</h2>'+
       '<label class="aoPrayPilotSearch">'+assetIcon("ao-ui-search","aoPrayPilotSearchIcon")+
-      '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+'</div>'+
+      '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+'</div>'+continueRow+
       '<div data-ao-pray-pilot-results class="aoPrayPilotResults" hidden>'+
       '<div class="aoPrayPilotFacets" role="group" aria-label="'+esc(L("Filter search results","Filtrer les résultats"))+'">'+
       [["prayer",L("Prayers","Prières")],["litany",L("Litanies","Litanies")],["chaplet",L("Chaplets","Chapelets")],["novena",L("Novenas","Neuvaines")],["la",L("Latin","Latin")]]
@@ -257,6 +269,15 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotTop h2{font:600 28px/1.15 var(--ao-font-display,Georgia,serif);margin:10px 0 12px}",
     "#aoPray435930 .aoPrayPilotSearch{height:44px;min-height:44px;background:var(--chip,var(--surface-1,#18202a));margin-bottom:14px}",
     "#aoPray435930 .aoPrayPilotDoorLabel{margin:20px 16px 10px;font:600 11px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayPilotMini{display:flex;align-items:center;gap:12px;min-height:60px;margin:0 16px 8px;padding:9px 10px 9px 9px;width:calc(100% - 32px);border:1px solid var(--border,#49433b);border-radius:12px;background:var(--surface-1,#25211d);color:var(--text,#f0e9df);text-align:left;cursor:pointer}",
+    "#aoPray435930 .aoPrayPilotMiniArt{flex:0 0 42px;height:42px;border-radius:8px;background:linear-gradient(140deg,#443c33,#222936)}",
+    "#aoPray435930 .aoPrayPilotMiniText{display:flex;flex:1;min-width:0;flex-direction:column;gap:2px}",
+    "#aoPray435930 .aoPrayPilotMiniText small{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.09em;color:var(--liturgical,#c9a47b)}",
+    "#aoPray435930 .aoPrayPilotMiniText b{font:600 15px/1.25 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayPilotMiniText>span:not(.aoPrayPilotMiniProgress){font:400 12.5px/1.3 system-ui,sans-serif;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayPilotMiniProgress{height:3px;border-radius:2px;background:var(--border,#444);margin-top:6px;overflow:hidden}",
+    "#aoPray435930 .aoPrayPilotMiniProgress i{display:block;height:100%;background:var(--liturgical,#c9a47b)}",
+    "#aoPray435930 .aoPrayPilotMiniChevron{font-size:22px;color:var(--muted,#aaa)}",
     "#aoPray435930 .aoPrayPilotTileCaption{padding:26px 9px 8px;font:600 14px/1.15 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font:600 20px/1.15 var(--ao-font-display,Georgia,serif);padding:40px 12px 12px}",
     "#aoPray435930 .aoPrayPilotTileInfo{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.45);box-shadow:0 0 0 1px rgba(255,255,255,.35);color:#fff;font:italic 600 13px/1 Georgia,serif}",
