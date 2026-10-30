@@ -186,6 +186,7 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass>summary::after{content:'›';margin-left:auto;color:var(--liturgical);font:22px Georgia,serif}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass[open]>summary::after{transform:rotate(90deg)}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass [data-full-mass-category]{width:100%;margin:5px 0;min-width:0;white-space:normal}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'][data-m1-focused='false'] [data-folio-overview-button]{display:none!important}",
   ].join("\n");
   document.head.appendChild(el);
 }
