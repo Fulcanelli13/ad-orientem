@@ -274,6 +274,9 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotRecitation{display:flex;align-self:center;justify-content:center;gap:0;margin:12px 0 0;padding:3px;width:auto;border-radius:18px;background:rgba(255,255,255,.12)}",
     "#aoPray435930 .aoPrayPilotRecitation button{min-height:32px;padding:0 14px;border:0;border-radius:16px;font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);color:#f4eee6}",
     "#aoPray435930 .aoPrayPilotRecitation button[aria-pressed=true]{background:rgba(255,255,255,.22);color:#f4eee6;box-shadow:none}",
+    "#aoPray435930 .aoP435930Body.aoPrayPilotAngelusEntry{width:100%!important;max-width:none!important;min-height:calc(100dvh - 122px)!important;padding:0!important;margin:0!important;gap:0!important;display:flex!important;flex-direction:column!important}",
+    "#aoPray435930 .aoPrayPilotAngelusEntry .aoPrayPilotAngelusHero{flex:1 0 auto!important;width:100%;box-sizing:border-box;min-height:calc(100dvh - 122px)!important}",
+    "#aoPray435930 .aoPrayPilotAngelusEntry .aoPrayPilotAngelusContent{box-sizing:border-box}",
   ].join("\n");
   const style=document.createElement("style");style.id="ao-prayer-design-pilot-css";style.textContent=css;document.head.appendChild(style);
 }
