@@ -38,16 +38,23 @@ try{
  assert.equal(await page.locator(sel+" input").count(),1,"Confession screen collects sensitive sin answers");
 
  const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
+ const togglePrayerLanguage=async()=>{
+  const aa=page.locator("#aoPray435930 .aoP435930Head.aoPrayerBookHead > .aoPrayerBookMenu");
+  assert.equal(await aa.count(),1,"Prayer language must be located in the shared Aa menu");
+  if(!await aa.evaluate(el=>el.open))await aa.locator(":scope > summary").click();
+  assert.ok(await locale.isVisible(),"Language choice must be available after opening Aa");
+  await togglePrayerLanguage();
+ };
  assert.equal(await locale.count(),1,"Confession should share the devotional EN/FR header control");
  assert.equal((await locale.innerText()).trim(),"EN");
  await page.locator(sel+" [data-p435930-since]").fill("three weeks");
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await locale.innerText()).trim(),"FR");
  assert.equal(await page.locator(sel+" [data-p435930-since]").inputValue(),"three weeks",
   "Switching language may not discard the private session-only time estimate");
  assert.match(await page.locator(sel+" [data-p435930-conf-path='regular']").innerText(),/Confession rapide/);
  await page.screenshot({path:resolve(captures,"confession-390-chooser-fr.png"),animations:"disabled"});
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await locale.innerText()).trim(),"EN");
 
  await page.locator(sel+" [data-p435930-conf-path='regular']").tap();
@@ -83,7 +90,7 @@ try{
 
 
  const enExamText=await page.locator(sel+" .aoP435930ConfQuestions").innerText();
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await locale.innerText()).trim(),"FR");
  let frState=await state();
  assert.equal(frState.stage,1);assert.equal(frState.id,st.id);
@@ -96,7 +103,7 @@ try{
   el=>parseFloat(getComputedStyle(el).fontSize));
  assert.ok(questionFont>instructionFont+3,"Examination questions must be more salient than directions");
  await page.screenshot({path:resolve(captures,"confession-390-examination-fr.png"),animations:"disabled"});
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await locale.innerText()).trim(),"EN");
 
  assert.equal(st.nav,null,"Interior Confession cards must not render extra Previous/Next controls");
