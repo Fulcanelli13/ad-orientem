@@ -1,0 +1,104 @@
+{
+  "schema": "AO_DYK_R31_THREE_GLOSSARY_TO_DISCOVERY_SOURCE_REWRITES_V1",
+  "date": "2026-10-30",
+  "status": "TWO_PRIMARY_TEXT_SOURCE_CHECKS_ONE_SECONDARY_HYMN_CONTEXT_NOT_FINAL_EDITORIAL_APPROVAL",
+  "source_method": "Directly inspect 1960 English translation of 1962-in-force rubrics via original PDF screenshot, 1551 Council of Trent English translated primary text, and Catholic Encyclopedia on Aquinas's hymn.",
+  "counts": {
+    "glossary_exact_copies_rewritten": 3,
+    "independent_primary_source_text_checks": 2,
+    "independent_secondary_hymn_context_checks": 1,
+    "original_168_new_direct_source_claim_checks": 2,
+    "source_direct_claims_total_from_prior_131": 133,
+    "original_168_source_claims_checked": 112,
+    "original_168_source_claims_remaining": 56,
+    "pitre_original_page_image_checks_new": 0,
+    "approved": 0,
+    "published": 0
+  },
+  "editorial_cautions": [
+    "The remaining five glossary exact explanations remain Learn-only.",
+    "A secondary musicological reference is not a first-party autograph or liturgical book inspection.",
+    "Primary source textual correspondence does not certify current local customary practice, Home semantic uniqueness, independent English/French editing or actual navigation.",
+    "The private 612 preview bank must be re-screened for all three rewritten statements before Home release.",
+    "All remaining original Pitrè page-image holds and St Anthony ship-mast source mismatch are unchanged."
+  ],
+  "records": [
+    {
+      "id": "DYK-GI-G094",
+      "source_glossary_id": "G094",
+      "previous_glossary_copy": {
+        "en": "The 1962 Roman books distinguish the Greater Litany and the Minor Litanies or Rogations. Their calendar occurrence does not by itself prove that a procession actually takes place; the app therefore requires an explicit following-action or local witness.",
+        "fr": "Les livres romains de 1962 distinguent la Grande Litanie et les Petites Litanies ou Rogations. Leur présence au calendrier ne prouve pas à elle seule qu’une procession ait effectivement lieu ; l’application exige donc une action suivante explicite ou un témoignage local."
+      },
+      "new_discovery": {
+        "en": "The 1962 Roman rubrics set the Greater Litanies on 25 April (with an Easter-date exception) and the Lesser Litanies normally on the three days before Ascension. Where a procession cannot take place, the bishop provides special public prayers.",
+        "fr": "Selon les rubriques romaines de 1962, la Grande Litanie a lieu le 25 avril (sauf report lié à Pâques), et les Petites Litanies normalement les trois jours avant l'Ascension. Si la procession ne peut se tenir, l'évêque prévoit des prières publiques."
+      },
+      "source_url": "https://maternalheart.org/library/1962rubrics.pdf",
+      "primary_source_correspondence_checked": true,
+      "witness_type": "ORIGINAL_1960_CODE_OF_RUBRICS_ENGLISH_TRANSLATION_PAGE_IMAGE",
+      "source_locator": {
+        "printed_pages": [
+          14,
+          15
+        ],
+        "pdf_page_zero_based": [
+          14
+        ],
+        "rubrics": [
+          80,
+          82,
+          83,
+          87,
+          89
+        ]
+      },
+      "reason": "Distinct year-and-procession exception not present in imported glossary explanation; exact section chapter 10 visually inspected.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G311",
+      "source_glossary_id": "G311",
+      "previous_glossary_copy": {
+        "en": "The text comes from Saint Thomas Aquinas’s hymn Verbum supernum prodiens. In practice it functions as a prayer text and Latin phrase object linked to Eucharistic adoration.",
+        "fr": "Le texte provient de l’hymne Verbum supernum prodiens de saint Thomas d’Aquin. En pratique, il fonctionne comme texte de prière et comme objet de phrase latine lié à l’adoration eucharistique."
+      },
+      "new_discovery": {
+        "en": "The familiar Benediction hymn O salutaris Hostia is actually the final two stanzas of Saint Thomas Aquinas's longer Verbum supernum prodiens, composed for Lauds of Corpus Christi.",
+        "fr": "L'hymne O salutaris Hostia, bien connu au Salut du Saint-Sacrement, correspond en réalité aux deux dernières strophes du Verbum supernum prodiens de saint Thomas d'Aquin, composé pour les Laudes de la Fête-Dieu."
+      },
+      "source_url": "https://www.newadvent.org/cathen/11334a.htm",
+      "primary_source_correspondence_checked": false,
+      "witness_type": "CATHOLIC_ENCYCLOPEDIA_HYMN_HISTORY_TEXT_SECONDARY",
+      "source_locator": {
+        "entry": "O Salutaris Hostia",
+        "stanzas": "penultimate and final of Verbum supernum prodiens"
+      },
+      "reason": "Remove app-internal 'Latin phrase object' language and state the unexpected textual origin, independently checked against Catholic Encyclopedia, without claiming review of Aquinas's autograph.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-GI-G038",
+      "source_glossary_id": "G038",
+      "previous_glossary_copy": {
+        "en": "Trent teaches Extreme Unction as a true sacrament instituted by Christ. The older Roman books employ the title and a fuller series of anointings; current Roman discipline commonly uses the title Anointing of the Sick. The glossary keeps the layers distinct.",
+        "fr": "Trente enseigne que l’Extrême-Onction est un véritable sacrement institué par le Christ. Les anciens livres romains emploient ce titre et une série plus développée d’onctions ; la discipline romaine actuelle emploie couramment le titre Onction des malades. Le glossaire distingue ces couches."
+      },
+      "new_discovery": {
+        "en": "The Council of Trent cited Saint James 5:14–15 to explain Extreme Unction as a sacrament instituted by Christ—not merely a custom invented by people.",
+        "fr": "Le concile de Trente s'appuya sur l'épître de saint Jacques (5, 14–15) pour enseigner que l'Extrême-Onction est un sacrement institué par le Christ, et non une simple coutume inventée par les hommes."
+      },
+      "source_url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5357",
+      "primary_source_correspondence_checked": true,
+      "witness_type": "COUNCIL_OF_TRENT_SESSION_XIV_CHAPTER_I_ENGLISH_TRANSLATION",
+      "source_locator": {
+        "session": "XIV",
+        "year": 1551,
+        "chapter": "On the Institution of the Sacrament of Extreme Unction",
+        "biblical_anchor": "James 5:14–15"
+      },
+      "reason": "Specific Council historical and biblical citation is distinct from copied glossary overview; avoids unhelpful contrast with modern terminology.",
+      "publication_authorized": false
+    }
+  ]
+}
