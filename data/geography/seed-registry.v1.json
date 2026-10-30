@@ -22241,6 +22241,45 @@
         "AO-P104-380-SITE",
         "AO-P104-380-GEO"
       ]
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "name": {
+        "official": "Propsteikirche Basilika St. Clemens, Hannover",
+        "aliases": [
+          "Basilika St. Clemens",
+          "St. Clement's Basilica, Hanover"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 52.373,
+        "lng": 9.72681,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.visit-a-church.info/sacred-buildings/church/detail/1526608833421?lang=en",
+        "source_ref": "independent:visit-a-church:1526608833421",
+        "matched_country_code": "DE",
+        "verified_at": "2026-10-30"
+      },
+      "address": {
+        "line1": "Platz an der Basilika 1",
+        "line2": null,
+        "postal_code": "30169",
+        "city": "Hannover",
+        "region": "Lower Saxony",
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Platz an der Basilika 1, 30169, Hannover, Germany"
+      },
+      "source_ids": [
+        "AO-PHOTO-P104-61-SITE",
+        "AO-PHOTO-P104-61-GEO"
+      ]
     }
   ],
   "directoryPlaceLinks": [
@@ -22497,6 +22536,18 @@
         "AO-P104-380-SITE",
         "AO-P104-380-GEO",
         "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:DE:basilika-st-clemens-hannover",
+      "venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-PHOTO-P104-61-SITE",
+        "AO-PHOTO-P104-61-GEO",
+        "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland"
       ]
     }
   ]

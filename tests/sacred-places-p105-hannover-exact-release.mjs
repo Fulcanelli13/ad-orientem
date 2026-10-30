@@ -1,0 +1,71 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {auditPlace,auditDirectoryPlaceLink,assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
+import {auditShrineSource} from "../src/find/shrines-contracts.js";
+import {LEDGER,RELEASES,LIVE} from "./helpers/sacred-places-live-baseline.mjs";
+import {attachApprovedDirectoryMedia} from "../src/find/directory-card.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const geo=read("data/geography/seed-registry.v1.json");
+const sources=read("data/shrines/source-registry.v1.json");
+const cross=read("data/explore/heritage-place-reconciliation.review.v1.json");
+const r49=read("data/directory/preliminary-map-r49.v1.json");
+const approved=read("data/geography/approved-place-media.v1.json");
+const p105=read("data/geography/research/sacred-places-p105-hannover-st-clemens-exact-link.v1.json");
+const photoP104=read("docs/research/directory/p104-photo-site-join-reconciliation-20261030/p104-three-place-evidence.json");
+const baseline={places:529,sources:844,crosswalk:529,unlinked:257,geo_areas:146,directory_links:22};
+const proposed={places:530,sources:846,crosswalk:530,unlinked:257,geo_areas:146,directory_links:23};
+assert.equal(p105.schema,"AO_SACRED_PLACES_P105_HANNOVER_CLEMENS_EXACT_PLACE_V1");
+assert.deepEqual(p105.baseline,baseline);
+assert.deepEqual(p105.proposed,proposed);
+assert.equal(RELEASES.at(-1).id,"P105");
+assert.equal(LEDGER.releases.at(-1).id,"P105");
+assert.equal(RELEASES.find(r=>r.id==="P104").data.proposed.places,529);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links,LIVE.unlinked],[530,846,23,257]);
+assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,geo.directoryPlaceLinks.length],[530,846,530,23]);
+assert.deepEqual([cross.counts.places_with_linked_records,cross.counts.places_without_direct_claim],[273,257]);
+assert.equal(cross.distinct_place_links.directory_links,23);
+assert.equal(p105.published_new.length,1);
+const x=p105.published_new[0];
+const frozen=photoP104.candidates.find(z=>z.photo_contact_id===61);
+assert.equal(x.place_id,"place:DE:basilika-st-clemens-hannover");
+assert.equal(x.venue_id,frozen.frozen_venue_id);
+assert.equal(x.link_id,frozen.proposed_link.link_id);
+assert.deepEqual(x.source_ids,frozen.proposed_place.source_ids);
+assert.equal(x.legacy_r49_pin_distance_m,1.6);
+assert.equal(x.existing_r49_pin_precision,"building");
+assert.equal(x.approved_photo,false);
+assert.equal(x.published_photo,false);
+assert.equal(p105.policy.schedule_or_calendar_claims_added,0);
+const place=geo.places.find(z=>z.place_id===x.place_id);
+const link=geo.directoryPlaceLinks.find(z=>z.link_id===x.link_id);
+assert.deepEqual(place,frozen.proposed_place);
+assert.deepEqual(link,frozen.proposed_link);
+assert.deepEqual(auditPlace(place),[]);
+assert.deepEqual(auditDirectoryPlaceLink(link),[]);
+assert.ok(isMapPublishablePlaceGeo(place.geo,"DE"));
+assert.equal(geo.places.filter(p=>p.place_id===place.place_id).length,1);
+assert.equal(geo.directoryPlaceLinks.filter(l=>l.venue_id===x.venue_id).length,1);
+const srcMap=new Map(sources.sources.map(s=>[s.id,s]));
+for(const s of frozen.proposed_sources){
+ assert.deepEqual(srcMap.get(s.id),s);
+ assert.deepEqual(auditShrineSource(s),[]);
+}
+const heritage=cross.place_crosswalk.find(z=>z.place_id===place.place_id);
+assert.deepEqual(heritage.record_ids,{directory_links:[link.link_id]});
+assert.ok(!cross.exception_queues.places_without_direct_claim.includes(place.place_id));
+const cols=Object.fromEntries(r49.columns.map((k,i)=>[k,i]));
+const matching=r49.records.filter(row=>row[cols.id]===x.venue_id);
+assert.equal(matching.length,1);
+assert.equal(matching[0][cols.precision],"building");
+const attached=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:x.venue_id}],{
+ directoryPlaceLinks:geo.directoryPlaceLinks,approved:approved.items,gallery:[]
+});
+assert.equal(attached[0].place_id,place.place_id);
+assert.equal(attached[0].cover_media,undefined,"Unapproved source photograph cannot be published through location link alone");
+for(const hold of p105.research_holds){
+ assert.ok(!geo.places.some(p=>p.place_id===photoP104.candidates.find(z=>z.photo_contact_id===hold.photo_id)?.proposed_place?.place_id));
+ assert.equal(hold.no_new_link,true);
+}
+assert.equal(p105.research_holds.length,2);
+assert.equal(assertExploreGeographyRegistry(geo).pass,true);
+console.log("PASS P105 Hannover: 530 Places / 846 sources / 23 links; exact FSSP building, no photos or Mass times promoted.");

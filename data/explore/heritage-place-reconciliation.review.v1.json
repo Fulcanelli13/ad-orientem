@@ -11,8 +11,8 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 529,
-    "places_with_linked_records": 272,
+    "places": 530,
+    "places_with_linked_records": 273,
     "places_without_direct_claim": 257,
     "multicategory_heritage_places": 212,
     "shrines": 257,
@@ -23,7 +23,7 @@
     "custom_attestations": 71,
     "novena_context_links": 18,
     "route_records": 20,
-    "directory_place_links": 22
+    "directory_place_links": 23
   },
   "exception_queues": {
     "dangling_place_references": [],
@@ -5999,6 +5999,16 @@
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "display_name": "Propsteikirche Basilika St. Clemens, Hannover",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:DE:basilika-st-clemens-hannover"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
@@ -6009,7 +6019,7 @@
     "customs": 55,
     "novena_context": 10,
     "routes": 18,
-    "directory_links": 22
+    "directory_links": 23
   },
   "map_policy_note": "The distinct-place counts include address-only or coordinate-pending Places. They are not counts of publishable map pins.",
   "georeference_tranche_20261010": {
@@ -6313,5 +6323,18 @@
     ],
     "not_mapped_unlisted_new_brighton": true,
     "approved_photos": 0
+  },
+  "georeference_tranche_20261030_p105_hannover": {
+    "schema": "AO_SACRED_PLACES_P105_HANNOVER_CLEMENS_EXACT_LINK_V1",
+    "new_place_ids": [
+      "place:DE:basilika-st-clemens-hannover"
+    ],
+    "new_link_ids": [
+      "link:directory-place:DE:basilika-st-clemens-hannover"
+    ],
+    "identity_owner": "SACRED_PLACES_CANONICAL_RELEASE_NOT_DIRECTORY_PHOTOGRAPHY_RESEARCH",
+    "photo_research_id": 61,
+    "no_photographs_approved": true,
+    "no_mass_times_promoted": true
   }
 }

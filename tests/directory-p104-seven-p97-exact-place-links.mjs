@@ -28,9 +28,9 @@ const expected=new Map([
 assert.equal(p104.schema,"AO_SACRED_PLACES_P104_SEVEN_P97_EXACT_DIRECTORY_CHURCHES_V1");
 assert.deepEqual(p104.baseline,{places:522,sources:830,crosswalk:522,unlinked:257,geo_areas:146,directory_links:15});
 assert.deepEqual(p104.proposed,{places:529,sources:844,crosswalk:529,unlinked:257,geo_areas:146,directory_links:22});
-assert.equal(RELEASES.at(-1).id,"P104");
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[529,844,22]);
-assert.deepEqual([geo.places.length,src.sources.length,geo.directoryPlaceLinks.length],[529,844,22]);
+assert.ok(RELEASES.some(r=>r.id==="P104"),"Historical P104 must remain frozen");
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,23]);
+assert.deepEqual([geo.places.length,src.sources.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.links]);
 assertExploreGeographyRegistry(geo);
 assert.equal(p104.published_new.length,7);
 assert.equal(media.items.length,36+laterPhotoRelease.photos.length,"Historical P104 approved none; P106 later independently approved four");
@@ -82,8 +82,8 @@ for(const r of p104.published_new){
  assert.equal(pair[0].disposition,"EXISTING_CONFIRMED_LINK");
  assert.equal(pair[0].distance_m,m);
 }
-assert.equal(cross.counts.canonical_places,529);
-assert.equal(cross.counts.confirmed_links,22);
+assert.equal(cross.counts.canonical_places,LIVE.places);
+assert.equal(cross.counts.confirmed_links,LIVE.links);
 assert.equal(cross.counts.exact_confirmed_photo_joins,5+laterPhotoRelease.photos.length,"P104 adds identity only; four later P106 approvals are separate");
 assert.equal(p104.research_holds.length,4);
 const gnd=cross.candidate_pairs.find(p=>p.venue_id==="ao-research-icksp-federated-v13-icksp-stg-112"&&p.place_id==="place:DE:altoetting-gnadenkapelle");

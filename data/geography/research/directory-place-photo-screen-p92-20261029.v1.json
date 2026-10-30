@@ -11,14 +11,14 @@
   "policy": "Nearby coordinates or name overlaps never certify the same physical worship building. No link, source, image or calendar publication may be inferred.",
   "counts": {
     "venues_screened": 1879,
-    "canonical_places": 529,
-    "confirmed_links": 22,
+    "canonical_places": 530,
+    "confirmed_links": 23,
     "approved_covers": 40,
     "approved_gallery_images": 33,
-    "within_350m_pairs": 54,
-    "venues_near_place": 49,
-    "pairs_within_100m": 27,
-    "high_name_geo_pairs": 16,
+    "within_350m_pairs": 55,
+    "venues_near_place": 50,
+    "pairs_within_100m": 28,
+    "high_name_geo_pairs": 17,
     "nearby_approved_photo_pairs": 16,
     "exact_confirmed_photo_joins": 9,
     "published_new_links": 0,
@@ -28,7 +28,7 @@
     {
       "offset": 0,
       "limit": 200,
-      "nearby_venues": 13,
+      "nearby_venues": 14,
       "nearby_approved_photo_venues": 3
     },
     {
@@ -87,6 +87,23 @@
     }
   ],
   "candidate_pairs": [
+    {
+      "directory_record_index": 21,
+      "venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+      "venue_name": "Basilika St. Clemens",
+      "country": "DE",
+      "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/fssp/geo.v1.geojson",
+      "venue_pin_precision": "building",
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "place_name": "Propsteikirche Basilika St. Clemens, Hannover",
+      "place_source_url": "https://www.visit-a-church.info/sacred-buildings/church/detail/1526608833421?lang=en",
+      "place_pin_precision": "site",
+      "distance_m": 1.6,
+      "name_overlap": 1,
+      "place_has_approved_photo": false,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
     {
       "directory_record_index": 32,
       "venue_id": "ao-fssp-st-apollinaris-jan-wellem-strasse-12-d-51789-lindlar-deutschland",

@@ -291,7 +291,7 @@
     "test:sacred-places-p20": "node tests/sacred-places-p20-bulk-triage.mjs",
     "test:sacred-places-p21": "node tests/sacred-places-p21-first200-source-review.mjs",
     "test:sacred-places-p22": "node tests/sacred-places-p22-map-first-minimum.mjs",
-    "test:sacred-places-live": "node tests/sacred-places-current-live-baseline.mjs",
+    "test:sacred-places-live": "node tests/sacred-places-current-live-baseline.mjs && node tests/sacred-places-p105-hannover-exact-release.mjs",
     "test:sacred-places-p24": "node tests/sacred-places-p24-world-16-map-first.mjs",
     "test:sacred-places-p25": "node tests/sacred-places-p25-bulk151-source-screen.mjs",
     "test:sacred-places-p26": "node tests/sacred-places-p26-authority-evidence.mjs",
