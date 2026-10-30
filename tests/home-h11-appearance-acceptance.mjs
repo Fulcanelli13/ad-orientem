@@ -279,6 +279,15 @@ try{
     assert.equal(restored.current.experience.language,"fr",prefix+" remembered translation");
     assert.equal(restored.current.experience.before,"prepare",prefix+" remembered preparation");
     assert.equal(restored.current.experience.after,"thanksgiving",prefix+" remembered thanksgiving");
+    await remembered.locator(".homeScreen [data-home-settings]").click();
+    await remembered.waitForSelector('#ao-settings-modular-root [data-settings-route="/settings/mass"]',
+      {state:"visible",timeout:15000});
+    await remembered.locator('#ao-settings-modular-root [data-settings-route="/settings/mass"]').click();
+    await remembered.waitForSelector('#ao-settings-modular-root [data-pref-clear-today]',
+      {state:"visible",timeout:15000});
+    await remembered.locator('#ao-settings-modular-root [data-pref-clear-today]').click();
+    await remembered.waitForFunction(()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()
+      ?.preferences?.mass?.todayChoices===null,null,{timeout:10000});
     await remembered.close();
     await h4.locator(".aoH4SheetBottom [data-h4-sheet-close]").click();
     await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
