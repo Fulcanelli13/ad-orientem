@@ -494,10 +494,22 @@
         3603,
         5567
       ],
-      "quality_status": "PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
+      "quality_status": "FRAME_PRESENT_CROP_REQUIRED",
       "photo_identity_status": "FULL_PAINTING_PHOTO_CANDIDATE_VERIFIED",
-      "risk": "Attribution photographer Mongolo1984, license link and modification notices mandatory; photographed artwork perspective/border/crop inspection needed",
-      "publication_hold": true
+      "risk": "User-approved Carracci work, Commons CC BY-SA 4.0 3603×5567 photograph, but source visibly includes ornate gilt frame. Source is not publication-ready unchanged. Examine frame-free crop, perspective, blur, tonal integrity; photographer Mongolo1984 attribution and license/share-alike conditions survive cropping.",
+      "publication_hold": true,
+      "photo_visual_qa": {
+        "source": "https://commons.wikimedia.org/wiki/File:Lodovico_Carracci,_Trasfigurazione_di_Gesù_Cristo,_1595.jpg",
+        "inspected_preview": "500×773 Wikimedia thumbnail of same file",
+        "status": "GOLD_FRAME_FAIL_AS_IS_CROP_FEASIBILITY_PENDING",
+        "observations": [
+          "gold frame on all four edges",
+          "painting itself otherwise visible",
+          "image cropping constitutes a modification under CC BY-SA 4.0"
+        ],
+        "approved_artwork_preserved": true,
+        "publication_hold": true
+      }
     },
     {
       "slot_id": "SEM-rosary.transfiguration",
@@ -534,10 +546,22 @@
         2816,
         2112
       ],
-      "quality_status": "PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
+      "quality_status": "FRAME_AND_MUSEUM_WALL_PRESENT_CROP_REQUIRED",
       "photo_identity_status": "EXACT_LOUVRE_INV_1125_FILE_IDENTIFIED",
-      "risk": "This photographer-released Commons photo is not the separately rights-restricted RMN photograph; check frame/reflection/crop and avoid swapping with La Grande Cène INV 1124",
-      "publication_hold": true
+      "risk": "The own-work, public-domain Tangopaso photograph (2816×2112) is of approved Louvre INV 1125, but source includes large ornate gilt frame and blue museum wall; slight gallery reflections/perspective. It must not be used uncropped. Validate sufficient sharpness and natural colour of a frame-free crop or find better exact-work photo. The alternative Commons 1112×591 tight work crop is low-resolution and has a different provenance.",
+      "publication_hold": true,
+      "photo_visual_qa": {
+        "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
+        "inspected_preview": "960×720 Wikimedia thumbnail of same file",
+        "status": "FRAME_AND_WALL_FAIL_AS_IS_CROP_FEASIBILITY_PENDING",
+        "observations": [
+          "ornate gilt frame prominent",
+          "museum wall visible around all sides",
+          "gallery photograph rather than straight museum-supplied flat scan"
+        ],
+        "approved_artwork_preserved": true,
+        "publication_hold": true
+      }
     },
     {
       "slot_id": "SEM-rosary.institution_of_eucharist",
@@ -628,7 +652,7 @@
     "free_alternate_sources_with_licence_conditions": 1,
     "source_repair_unresolved": 6,
     "all_original_photo_visual_certifications_pending": true,
-    "note": "Source-level rights verification plus a focused visual original-file check. Tintoretto higher-resolution photographed source rejected for architecture/doorway/glare; Genoa Rubens rejected as a distinct painting from approved Vienna modello. Gentileschi and Rubens Nancy have exact/suggested file rights bases but are not publication-ready. All publication holds remain; 0 native-photo visual passes.",
+    "note": "Source-level rights verification plus a focused visual original-file check. Tintoretto higher-resolution photographed source rejected for architecture/doorway/glare; Genoa Rubens rejected as a distinct painting from approved Vienna modello. Gentileschi and Rubens Nancy have exact/suggested file rights bases but are not publication-ready. All publication holds remain; 0 native-photo visual passes. Visually inspected Commons thumbnails of Champaigne La Petite Cène and Carracci Transfiguration; both contain visible gold frames and fail frame-free as-is use. Cropping may be feasible but remains unverified. Approval status unchanged.",
     "original_two_same_work_claim_corrected": true,
     "work_identity_correction": "The Genoa Rubens 1912×3072 photo is NOT the user-approved Vienna modello; removed from valid upgrades and explicitly blocked.",
     "tinoretto_full_photo_visual_rejected": true
@@ -648,6 +672,10 @@
       "https://commons.wikimedia.org/wiki/File:La_transfiguration_Pierre_Paul_Rubens_0678.JPG"
     ],
     "publication_hold": true,
-    "source_image_visual_rejections": 2
+    "source_image_visual_rejections": 2,
+    "frame_contamination_found_on": [
+      "SEM-rosary.institution_of_eucharist::01",
+      "SEM-rosary.transfiguration::02"
+    ]
   }
 }
