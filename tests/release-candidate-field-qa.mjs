@@ -277,9 +277,13 @@ try{
     assert.equal(preflight.nativeMounted,false,viewport.width+"px fresh Mass entry bypassed preflight");
     assert.equal(preflight.legacyReader,false,viewport.width+"px fresh Mass entry exposed legacy reader ownership");
 
-    await page.locator("#ao-mass-flow-v1 [data-ao-close]").last().click();
-    await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
+    // M1 is a full app-shell destination, not a dismissible setup sheet.
+    // The old × is intentionally hidden; use the permanent Today tab.
     await openSurface(page,"home",viewport.width);
+    await page.waitForFunction(()=>document.documentElement.dataset.aoM1MassRoot!=="true",
+      null,{timeout:5000});
+    assert.equal(await visible(page,".homeScreen"),true,
+      viewport.width+"px Today was not restored after leaving Mass");
 
     if(consoleErrors.length||failedResources.length)console.log("RC field QA resource diagnostics",JSON.stringify({viewport:viewport.width,consoleErrors,failedResources},null,2));
     assert.deepEqual(pageErrors,[],viewport.width+"px assembled app emitted page errors");
