@@ -112,6 +112,12 @@ const SHELL_STYLE = `
 .ao-schola-events-menu button[data-schola-event-select] small{display:block;color:#a4b5a7;font-size:10px}
 .ao-schola-events-menu button[data-schola-event-select]:disabled{opacity:.46}
 .ao-schola-events-menu button[data-schola-event-select]:focus-visible{outline:2px solid var(--ao-mass-accent)}
+.ao-schola-performance-summary{font-size:11px!important;color:#d8e6d2!important;line-height:1.5!important}
+.ao-schola-performance-actions{display:flex;flex-wrap:wrap;gap:5px;align-items:center;padding:3px 10px 9px;margin:0 0 5px;border-bottom:1px solid rgba(225,207,145,.10)}
+.ao-schola-performance-actions small{flex-basis:100%;font-size:10px;color:#a7b6a7}
+.ao-schola-performance-actions button{min-height:34px;border:1px solid rgba(225,207,145,.30);border-radius:7px;padding:5px 9px;
+background:rgba(225,207,145,.07);color:#ecf0e8;font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-performance-actions button:focus-visible{outline:2px solid var(--ao-mass-accent);outline-offset:1px}
 .ao-schola-dock[data-event-reference="true"]{display:block!important;height:82px!important;min-height:82px!important;padding:7px 11px!important}
 .ao-schola-dock[data-event-reference="true"] .ao-schola-meta,
 .ao-schola-dock[data-event-reference="true"] .ao-schola-toggle,
@@ -2598,6 +2604,7 @@ export function createReaderDomAdapter({
   onScholaRelease = null,
   onScholaRejoin = null,
   onScholaEventSelect = null,
+  onScholaPerformanceChange = null,
   sections = [],
   scholaMusicItinerary = null,
   specialRiteMusicItinerary = null,
@@ -3239,8 +3246,18 @@ export function createReaderDomAdapter({
     heading.textContent="Schola · music order";
     menu.append(heading);
     const note=doc.createElement("p");
-    note.textContent="Select the music or interval to display. This never moves the priest or detects singing.";
+    note.textContent="Choose a piece to view. Separately record what you personally hear: Start, Finish or Not sung. Priest cards and timers cannot make these observations.";
     menu.append(note);
+    const counts=itinerary.counts;
+    if(counts){
+      const summary=doc.createElement("p");
+      summary.className="ao-schola-performance-summary";
+      summary.dataset.scholaPerformanceSummary="";
+      summary.setAttribute("aria-live","polite");
+      summary.textContent="Observed by you · "+counts.started+" started · "+counts.finished+
+        " finished · "+counts.skipped+" not sung · "+counts.expected+" unconfirmed";
+      menu.append(summary);
+    }
     if(current?.scholaCatchupPinned){
       const rejoin=doc.createElement("button");
       rejoin.type="button";
@@ -3290,6 +3307,38 @@ export function createReaderDomAdapter({
       if(item.id===current?.scholaEventSelection?.id)
         button.setAttribute("aria-current","true");
       menu.append(button);
+      if(item.performance?.eligible===true){
+        const row=doc.createElement("div");
+        row.className="ao-schola-performance-actions";
+        row.dataset.scholaPerformanceRow=item.id;
+        const status=doc.createElement("small");
+        status.dataset.scholaPerformanceStatus=item.id;
+        const state=item.performance.status;
+        status.textContent=state==="STARTED_OBSERVED"?"You marked: started":
+          state==="FINISHED_OBSERVED"?"You marked: finished":
+          state==="SKIPPED_BY_USER"?"You marked: not sung":
+          "Expected · not observed";
+        row.append(status);
+        const makeAction=(action,label)=>{
+          const actionButton=doc.createElement("button");
+          actionButton.type="button";
+          actionButton.dataset.scholaPerformanceAction=action;
+          actionButton.dataset.scholaPerformanceEvent=item.id;
+          actionButton.textContent=label;
+          actionButton.setAttribute("aria-label",label+" · "+item.label);
+          row.append(actionButton);
+        };
+        if(state==="EXPECTED_NOT_OBSERVED"){
+          makeAction("START","I hear it start");
+          makeAction("SKIP","Not sung");
+        }else if(state==="STARTED_OBSERVED"){
+          makeAction("FINISH","I hear it finish");
+          makeAction("RESET","Undo");
+        }else{
+          makeAction("RESET","Undo");
+        }
+        menu.append(row);
+      }
     }
     return true;
   }
@@ -3578,6 +3627,20 @@ export function createReaderDomAdapter({
       const musicRejoin=event.target?.closest?.("[data-schola-events-rejoin]");
       if(musicRejoin){
         onScholaRejoin?.(current,prepared);closeScholaEventMenu();return;
+      }
+      const observation=event.target?.closest?.("[data-schola-performance-action]");
+      if(observation){
+        const result=onScholaPerformanceChange?.({
+          eventId:observation.dataset.scholaPerformanceEvent,
+          action:observation.dataset.scholaPerformanceAction,
+        });
+        if(result?.ok===true){
+          const menu=root.querySelector('[data-role="schola-events-menu"]');
+          const offset=menu?.scrollTop??0;
+          populateScholaEvents();
+          if(menu)menu.scrollTop=offset;
+        }
+        return;
       }
       const scholaEventSelect=event.target?.closest?.("[data-schola-event-select]");
       if(scholaEventSelect){
