@@ -106,11 +106,17 @@ export function renderTlmChurchProfile(item,language="en"){
    '<strong>'+E(introLabel)+'</strong></div></div>'+
    '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
   '</header></div>';
- // The original Directory's own statement of evidence/scope is substantive.
- // Do not lose it when replacing the legacy generic detail reader.
+ // Preserve source-owned summaries only when their schedule content is
+ // publishable. An unverified row can carry a stale timetable in item.summary:
+ // suppress it even though ministry.schedules have already been filtered out.
  const originalSummary=T(language==="fr"&&item?.summary_fr?item.summary_fr:item?.summary);
- if(originalSummary&&!originalSummary.startsWith("Provisional venue pin."))
-  html+='<p class="aoTlmProfileSourceLead">'+E(originalSummary)+'</p>';
+ const officialPresence=T(venue?.publication_state)==="OFFICIAL_LISTED_MASS_TIMES_UNCONFIRMED";
+ const officialSummary=officialPresence?L(language,
+   item?.community_id==="SSPX"?"SSPX officially lists Mass at this place. Check the official source for current days and times.":"An official source lists Mass at this place. Check the source for current days and times.",
+   item?.community_id==="SSPX"?"La FSSPX indique une messe dans ce lieu. Consultez la source officielle pour les jours et horaires actuels.":"Une source officielle mentionne une messe dans ce lieu. Vérifiez les jours et horaires actuels auprès de la source."):null;
+ const safeIntro=v.unverified?officialSummary:
+   originalSummary&&!originalSummary.startsWith("Provisional venue pin.")?originalSummary:null;
+ if(safeIntro)html+='<p class="aoTlmProfileSourceLead">'+E(safeIntro)+'</p>';
  // Provisional source labels are useful for identification, not ecclesial proof.
  if(!v.ministries.length)html+='<p class="aoTlmProfileListedNote" data-tlm-source-affiliation="'+E(item?.community_id)+'">'+
  E(L(language,"Affiliation is source-reported; it does not establish any specific Mass, rite, missal or ecclesial status.",
