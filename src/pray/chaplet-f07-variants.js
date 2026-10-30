@@ -44,7 +44,7 @@ export function renderF07FiveWounds(position,{french=false}={}){
  const title=french?labels[selected.group].fr:labels[selected.group].en;
  const prayer=selected.kind==="ave"?translate("Je vous salue Marie","Hail Mary",french):
   translate("Gloire au Père","Glory Be",french)+" "+(selected.bead+1)+" / 5";
- return shell("five-wounds",position,30,title,prayer+" · "+(position+1)+" / 30",grouped,{french,phase:String(selected.group+1)});
+ return shell("five-wounds",position,30,title,translate("Méditez cette plaie","Meditate on this wound",french)+" · "+prayer+" · "+(position+1)+" / 30",grouped,{french,phase:String(selected.group+1)});
 }
 
 export function renderF07PreciousBlood(phase,bead,{french=false}={}){
@@ -120,6 +120,7 @@ const STYLES=`
 #aoPray435930 .aoF07VariantDot-response{border-radius:1px;transform:rotate(45deg)}
 #aoPray435930 .aoF07VariantDot[data-f07-status="passed"]{background:var(--liturgical,#c6ad83);opacity:.46}
 #aoPray435930 .aoF07VariantDot[data-f07-status="current"]{background:var(--liturgical,#c6ad83);border-color:var(--text,#fff2db);opacity:1;box-shadow:0 0 0 2px rgba(195,158,100,.2)}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"]>header{display:none}
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsProgress,
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsBeads,
 #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodProgress,
