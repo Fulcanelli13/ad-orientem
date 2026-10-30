@@ -38,6 +38,17 @@ try{
     const band=page.locator(prefix+'[data-f07-variant="'+c.kind+'"]');
     assert.equal(await band.count(),1,c.route+" source-owned presentation band missing");
     assert.equal(await band.locator(".aoF07VariantDot").count(),c.dots);
+    if(c.kind==="five-wounds"){
+     const alignment=await page.locator(prefix+".aoP435930Head").evaluate(h=>{
+      const lang=h.querySelector(".aoP435930SessionLanguage")?.getBoundingClientRect();
+      const home=h.querySelector(".aoP435930Home")?.getBoundingClientRect();
+      return {langLeft:lang?.left,homeLeft:home?.left,langTop:lang?.top,homeTop:home?.top,viewport:innerWidth};
+     });
+     assert.ok(Number.isFinite(alignment.langLeft)&&Number.isFinite(alignment.homeLeft)&&
+      alignment.langLeft>alignment.viewport*.58&&alignment.homeLeft>alignment.langLeft+35&&
+      Math.abs(alignment.langTop-alignment.homeTop)<=4,
+      "F07 Five Wounds: Home shortcut must stay beside EN/FR on the same header row: "+JSON.stringify(alignment));
+    }
     assert.equal(await page.locator(prefix+c.legacyNav).count(),c.kind==="precious-blood"?7:c.kind==="five-wounds"?5:15);
     const text=page.locator(prefix+c.prayer).first();
     assert.ok((await text.innerText()).trim().length>=18,c.route+" canonical prayer text absent");
