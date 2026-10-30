@@ -1368,8 +1368,8 @@ function calendarSanctuaryCss(){return `
 .aoTodayH4 #ao-calendar-modular-root .aoCalV2MonthNav button{min-height:44px!important;border:0!important;border-radius:0!important;background:transparent!important;padding:4px 0!important;font:500 13px/1.2 var(--h4-serif,Georgia,serif)!important;color:var(--h4-muted)!important}
 .aoTodayH4 #ao-calendar-modular-root .aoCalV2MonthNav button:first-child{justify-self:start!important}
 .aoTodayH4 #ao-calendar-modular-root .aoCalV2MonthNav button:last-child{justify-self:end!important}
-.aoTodayH4 #ao-calendar-modular-root .aoCalMonthTabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:0!important;margin:0 0 9px!important;padding:0!important;border-bottom:1px solid var(--sanctuary-rule)!important}
-.aoTodayH4 #ao-calendar-modular-root .aoCalMonthTabs button{min-height:44px!important;font:600 12px/1.15 var(--h4-serif,Georgia,serif)!important;letter-spacing:.02em!important;text-transform:none!important;padding:6px 3px!important;white-space:normal!important}
+.aoTodayH4 #ao-calendar-modular-root .aoCalMonthTabs{display:flex!important;flex-wrap:nowrap!important;gap:0!important;margin:0 0 9px!important;padding:0!important;border-bottom:1px solid var(--sanctuary-rule)!important}
+.aoTodayH4 #ao-calendar-modular-root .aoCalMonthTabs button{flex:1 1 0!important;min-width:0!important;min-height:44px!important;font:600 12px/1.15 var(--h4-serif,Georgia,serif)!important;letter-spacing:.02em!important;text-transform:none!important;padding:6px 3px!important;white-space:nowrap!important}
 .aoTodayH4 #ao-calendar-modular-root .aoCalMonthTabs button.active{color:var(--h4-ink)!important}
 .aoTodayH4 #ao-calendar-modular-root .aoCalMonthTabs button.active:after{bottom:-1px!important;left:18%!important;right:18%!important;background:var(--sanctuary-rubric)!important}
 .aoTodayH4 #ao-calendar-modular-root .aoCalMonthLayouts{display:flex!important;justify-content:flex-end!important;gap:13px!important;margin:2px 0 8px!important;padding:0!important}
