@@ -73,6 +73,13 @@ try{
     assert.equal(initial.fixture?.family,family,"Wrong fixture family");
     assert.equal(initial.fixture?.planKind,"MASS","Must use canonical plan compiler");
     assert.equal(initial.fixture?.syntheticProper,true);
+    assert(initial.fixture.overlayGraphs.includes(family==="REQUIEM"?"REQUIEM":"VOTIVE_PROPER"),
+      "Current compiled plan dropped family overlay");
+    if(family==="REQUIEM"){
+      assert.equal(initial.fixture.blessingAllowed,false,"Requiem may not show final blessing");
+      assert.equal(initial.fixture.ordinaryPeacePrayerAllowed,false,"Requiem peace prayer leak");
+      assert.equal(initial.fixture.dismissal,"REQUIESCANT_IN_PACE");
+    }
     assert.equal(initial.mode,"LIVE","Fixture did not mount LIVE");
     assert.equal(initial.form,form,"R17 form selection failed");
     assert(initial.cards>25,"Missing source-owned reader cards");
@@ -129,7 +136,8 @@ try{
      const focused=await page.evaluate(()=>{
        const a=window.__AO_PHONE_PREVIEW,st=a.getNativeEventState();
        return {active:a.getActiveCue(),nativeCue:st?.nativeCueId??null,
-         minister:st?.sacredMinister?.actor??null,bell:st?.bell?.label??null};
+         minister:st?.sacredMinister?.actor??null,bell:st?.bell?.label??null,
+         priestAction:st?.priestAction?.label??null};
      });
      Object.assign(sampled,focused);
      assert(sampled.rendered&&sampled.sourceIds.includes(cue)&&sampled.text.length>0,
@@ -141,6 +149,9 @@ try{
         ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"].includes(form)){
       assert.equal(sampled.minister,null,"Invented sacred minister at "+form+"/"+cue);
      }
+     if(family==="REQUIEM"&&form==="LOW"&&cue==="AO.SM.C0112"&&
+        sampled.active===cue&&sampled.nativeCue===cue)
+      assert.equal(sampled.priestAction,null,"Requiem Low source water must not be blessed");
      samples.push({...before,...sampled,sourceCueActivated:
        sampled.active===cue&&sampled.nativeCue===cue});
      if(cue==="AO.SM.C0174"){
@@ -157,7 +168,7 @@ try{
        b.properSlot==="EPISTLE_OR_LESSON"));
      if(!card)return {found:false};
      api.showSequence(card.sequence);
-     return {found:true,sourceSectionId:card.sourceSectionId??null,
+     return {found:true,sectionId:card.sectionId,sourceSectionId:card.sourceSectionId??null,
        hasProper:card.blocks.some(b=>b.properSlot==="EPISTLE_OR_LESSON"),
        sourceCueOnProper:card.paragraphs.some(p=>(p.sourceCueIds??[])
          .includes("AO.SM.C0075"))};
@@ -165,6 +176,11 @@ try{
     assert(epistle.found&&epistle.hasProper,form+"/"+family+" lost resolved Epistle source");
     // C0075 is a priest event, not a fabricated Proper text clock.
     assert(!epistle.sourceCueOnProper,"Epistle inherited unrelated C0075 priest event");
+    await page.waitForFunction(section=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId===section,
+      epistle.sectionId,{timeout:10000});
+    const epistleRender=await page.evaluate(()=>
+      document.querySelector('[data-role="paragraphs"]')?.textContent?.trim()??"");
+    assert(epistleRender.length>25,form+"/"+family+" rendered Epistle is empty");
     assert.deepEqual(errors,[],form+"/"+family+" uncaught browser errors");
     result.push({form,family,viewport,initial,samples,epistle,errors,
       fixtureScope:"SYNTHETIC_PROPER_NOT_AUTHENTIC_REQUIEM_MASS_TEXT",
