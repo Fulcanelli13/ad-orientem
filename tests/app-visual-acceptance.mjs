@@ -344,32 +344,37 @@ try{
   });
   console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
-  // M1 presents the preflight as a full Mass page and deliberately hides
-  // the old host modal's close button. Return through the visible global
-  // navigation instead; only the legacy sheet uses its native close action.
-  const m1FullPage=await page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop[data-ao-m1-root='true']").isVisible();
-  if(!m1FullPage){
+  // M1 is a permanent Mass root, not a dismissible dialog. Leaving via the
+  // shell's Today tab is the supported action. The old close/hidden-backdrop
+  // assertion would erroneously fail a correct M1 implementation.
+  const permanentMassRoot=await page.evaluate(()=>
+    document.documentElement.dataset.aoM1MassRoot==="true");
+  if(permanentMassRoot){
+    await page.locator("[data-ao-app-surface='home']").click();
+    await page.waitForFunction(()=>
+      document.documentElement.dataset.aoM1MassRoot!=="true",null,{timeout:5000});
+  }else{
     const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
-    if(await massFlowClose.isVisible()){
-      try{await massFlowClose.click({timeout:1500})}
-      catch(error){
-        const retired=await page.waitForFunction(()=>{
-          const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-          return !backdrop||!backdrop.getClientRects().length||
-            getComputedStyle(backdrop).visibility==="hidden";
-        },null,{timeout:2500}).then(()=>true,()=>false);
-        if(!retired)throw error;
-      }
-    }
+    if(await massFlowClose.isVisible())await massFlowClose.click();
+    await page.waitForFunction(()=>{
+      const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+      return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
+    },null,{timeout:5000});
+    await page.locator("[data-ao-app-surface='home']").click();
   }
-  await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
-  await page.waitForFunction(()=>{
-    const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-    return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
-  },null,{timeout:5000});
 
-  await page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']").click();
+  // A previously selected Month/Year lens may be retained across tabs.
+  // Select Today through its public control before opening Day & sources.
+  // Never force-click a hidden Read/Reflect row.
+  const dayLink=page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']");
+  if(!await dayLink.isVisible()){
+    const todayLens=page.locator(".homeScreen .aoTodayV2Tabs [data-home-calendar-today]");
+    await todayLens.waitFor({state:"visible",timeout:10000});
+    await todayLens.click();
+    await dayLink.waitFor({state:"visible",timeout:10000});
+  }
+  await dayLink.click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
     const el=document.getElementById("ao-cinema-transition");

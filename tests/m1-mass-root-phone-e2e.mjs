@@ -120,6 +120,20 @@ try{
   await assertSurfaceTheme("dark");
   await page.screenshot({path:resolve(artifact,width+"-mass-root-auto-dark.png")});
 
+  // P0: the host's Escape must not close the permanent Mass root.
+  await page.locator('[data-m1-choice="ceremony"]').click();
+  await page.waitForFunction(()=>
+    globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step==="ceremony");
+  await page.keyboard.press("Escape");
+  await page.waitForFunction(()=>
+    globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step==="overview");
+  assert.equal(await page.locator('html[data-ao-m1-mass-root="true"]').count(),1,
+    "Escape must return to the overview, not leave an empty Mass tab");
+
+  // P0: returning from another tab starts at the overview, not the last chooser.
+  await page.locator('[data-m1-choice="ceremony"]').click();
+  await page.waitForFunction(()=>
+    globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step==="ceremony");
   await page.locator('#ao-global-ribbon [data-ao-app-surface="home"]').click();
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:15000});
   await page.waitForFunction(()=>document.documentElement.dataset.aoM1MassRoot!=="true",
@@ -136,6 +150,9 @@ try{
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-choice="mass"]',{state:"visible",timeout:15000});
   assert.equal(await page.locator('[data-ao-full-mass-preflight]').count(),1,
     "Re-entering Mass must not create a second preflight");
+  assert.equal(await page.evaluate(()=>
+    globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.step),"overview",
+    "Re-entering Mass must reset only the chooser presentation");
   assert.equal(errors.length,0,"Unexpected root browser errors: "+JSON.stringify(errors));
   console.log("PASS M1 Mass tab root "+width+"px, source-owned single preflight, 5 tabs, no modal, round-trip Today "+JSON.stringify(v));
   await page.close();

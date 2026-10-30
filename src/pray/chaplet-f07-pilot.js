@@ -53,11 +53,18 @@ const F07_STYLE=`
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyStrand,
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadPosition{display:none}
 @media(max-width:390px){
- #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand{grid-template-columns:92px minmax(0,1fr);gap:8px;padding:2px 7px;margin:0 0 3px}
- #aoPray435930 .aoF07CrownDiagram{width:92px;height:92px}
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand{grid-template-columns:84px minmax(0,1fr);gap:8px;padding:2px 7px;margin:0 0 3px}
+ #aoPray435930 .aoF07CrownDiagram{width:84px;height:84px}
  #aoPray435930 .aoF07CrownText{gap:4px}
  #aoPray435930 .aoF07CrownText strong{font-size:17px}
  #aoPray435930 .aoF07CrownText span{font-size:12px}
+}
+@media(max-width:359px){
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand{grid-template-columns:74px minmax(0,1fr);gap:6px;padding:2px 6px}
+ #aoPray435930 .aoF07CrownDiagram{width:74px;height:74px}
+ #aoPray435930 .aoF07CrownText{gap:3px}
+ #aoPray435930 .aoF07CrownText strong{font-size:15px;line-height:1.2}
+ #aoPray435930 .aoF07CrownText span{font-size:11px}
 }
 `;
 export function installChapletF07Styles(doc=globalThis.document){
