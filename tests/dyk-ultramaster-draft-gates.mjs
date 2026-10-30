@@ -254,4 +254,51 @@ for(const item of storyEdits.records){
 assert.equal(storyIds.size,12);
 assert.equal(featuredFamilies.size,8);
 
+
+const historyHandoff=load("dyk-26-historical-home-route-handoff.v1.json");
+assert.equal(historyHandoff.records.length,26);
+assert.equal(historyHandoff.counts.weiser,18);
+assert.equal(historyHandoff.counts.pitre,8);
+assert.equal(historyHandoff.counts.eligible_for_bank_import,0);
+assert.equal(historyHandoff.counts.published,0);
+assert.equal(routes.counts.historical_source_handoff_payloads,26);
+assert.equal(routes.counts.historical_source_browser_verified,0);
+const editedById=new Map([...priorityEdits.records.filter(x=>x.editorial_tier==="FEATURE").map(x=>[x.original_draft_id,x]),
+ ...storyEdits.records.filter(x=>x.editorial_tier==="FEATURE").map(x=>[x.proposal_id,x])]);
+const handoffIds=new Set();
+const allowedSourceUrls={
+ WEISER_1958:"https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+ PITRE_1900:"https://archive.org/details/afm3499.0021.001.umich.edu"
+};
+for(const fact of historyHandoff.records){
+ assert.ok(!handoffIds.has(fact.id),"Duplicate historical Home payload ID");
+ handoffIds.add(fact.id);
+ const owner=editedById.get(fact.id);
+ assert.ok(owner,"Unreviewed Home historical payload "+fact.id);
+ assert.deepEqual(fact.statement,owner.display_statement);
+ assert.equal(fact.category,"customs");
+ assert.equal(fact.destination.type,"route");
+ assert.equal(fact.destination.id,"home.historical-source");
+ assert.equal(fact.destination.factId,fact.id);
+ assert.equal(fact.release,"RESEARCH_HANDOFF_NOT_PUBLISHED");
+ assert.ok(Object.values(fact.editorial_gate).every(x=>x===false));
+ const ctx=fact.destination.historical_context;
+ assert.equal(ctx.source_url,allowedSourceUrls[fact.source_family]);
+ assert.ok(ctx.printed_pages.length>0&&ctx.printed_pages.every(Number.isInteger));
+ assert.ok(ctx.observation_ids.length>0);
+ assert.ok(ctx.scope.en.length>20&&ctx.scope.fr.length>20);
+ if(fact.source_family==="WEISER_1958"){
+  assert.deepEqual(ctx.observation_ids,owner.original_observation_ids);
+  assert.ok(ctx.observation_ids.includes(fact.source_id));
+  assert.ok(ctx.observation_ids.every(id=>/^WEI58-[A-Z0-9-]+$/.test(id)));
+ }else{
+  assert.equal(fact.source_family,"PITRE_1900");
+  assert.equal(fact.source_id,fact.id);
+  assert.ok(/^DYK-STORY-PITRE-[0-9]{2}$/.test(fact.id));
+  assert.deepEqual(ctx.observation_ids,owner.original_observation_ids);
+  assert.ok(ctx.observation_ids.every(id=>/^PIT1900-(?:IT|NEW)-[0-9]{3}$/.test(id)));
+ }
+}
+assert.equal(handoffIds.size,26);
+
 console.log("DYK: 145 active source-first drafts structurally valid; 9 deferred semantic overlaps; 10 glossary routes pending browser acceptance; 0 published.");
