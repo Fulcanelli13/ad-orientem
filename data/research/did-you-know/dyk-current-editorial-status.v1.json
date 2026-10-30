@@ -1,0 +1,65 @@
+{
+  "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R21_V1",
+  "date": "2026-10-30",
+  "current_status": "FIRST_PASS_COMPLETED_CONSOLIDATION_RESOLVED_RESEARCH_NOT_FINAL",
+  "active_owners": {
+    "complete_record_ledger": "dyk-r21-unified-1001-consolidation-master.v1.json",
+    "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
+    "shortlisted_bilingual_drafts": "dyk-r21-168-integrated-bilingual-review.v1.json",
+    "composite_sources": "dyk-r21-12-bilingual-consolidated-copy-proposals.v1.json",
+    "previous_first_pass_ledger": "dyk-r20-unified-1001-first-pass-ledger.v1.json",
+    "private_preview_owner": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028"
+  },
+  "overall": {
+    "generated_candidate_records": 1001,
+    "first_pass_classified": 1001,
+    "prior_consolidation_flags_reviewed": 74,
+    "high_interest_shortlist": 168,
+    "shortlist_copy_revisions_integrated": 9,
+    "additional_optional_reserve_drafts": 3,
+    "final_approved": 0,
+    "newly_live": 0,
+    "existing_private_home_preview_separate": 612,
+    "per_day_limit_unmodified": 12
+  },
+  "adjudication": {
+    "reviewed": 74,
+    "COMPARE_RELATED_VARIANTS": 16,
+    "ABSORB_SUPPORTING_DETAIL": 16,
+    "RETAIN_DISTINCT_INCORRECT_LEAD": 33,
+    "HOLD_HISTORICAL_PRECISION": 1,
+    "HOME_PREVIEW_SAME_SOURCE_VARIANT": 8,
+    "deleted": 0,
+    "approved": 0,
+    "published": 0
+  },
+  "statuses": {
+    "FEATURED_FOR_REVIEW": 168,
+    "HOLD_SOURCE_OR_SCOPE": 23,
+    "RESERVE_FOR_BALANCE": 100,
+    "R21_RETAIN_COMPARATIVE_VARIANTS": 16,
+    "R21_ABSORB_IN_LEAD_COPY_REVIEW": 16,
+    "R21_RETAIN_DISTINCT_WRONG_LEAD": 33,
+    "R21_HOLD_PRECISE_HISTORICAL_CLAIM": 1,
+    "R21_HOME_PREVIEW_ENTRY_VARIANT": 8,
+    "LEARN_REFERENCE_OR_MASS_RESERVE": 21,
+    "LEARN_GLOSSARY_REFERENCE_ONLY": 440,
+    "EXACT_HOME_PREVIEW_ALIAS": 142,
+    "SAME_SOURCE_HOME_VARIANT": 14,
+    "HOLD_SCOPE_OR_QUALITY": 19
+  },
+  "next_gates": {
+    "editorial_quality_review_of_168": "PENDING",
+    "source_specific_original_pages_where_needed": "PENDING",
+    "final_French_readthrough": "PENDING",
+    "reconcile_49_restored_distinct_facts_to_shortlist_or_reserve": "PENDING",
+    "compare_612_Home_previews_semantically": "PARTIAL_ONLY",
+    "exact_Mass_reader_cue_jump": "UNAVAILABLE_SOURCE_DIALOG_ONLY",
+    "publication": "NOT_AUTHORIZED"
+  },
+  "notes": [
+    "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
+    "Twelve bilingual composite wording drafts are optional replacements of original records, not 12 new research facts; nine are inside the 168-card review pack and three stay reserve.",
+    "All original source observations remain intact; triage is not human signoff or proof of historical continuity."
+  ]
+}
