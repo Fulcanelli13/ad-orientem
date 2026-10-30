@@ -1,3 +1,4 @@
+import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 
@@ -283,6 +284,50 @@ export function createHomeOwner(win=globalThis){
           try{win?.console?.error?.("Mass resume unavailable",error)}catch{}
           showRouteError("mass.resume",resumeMass);
         });
+      return;
+    }
+    const h4Begin=target?.closest?.("[data-home-h4-begin]");
+    if(h4Begin){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      if(h4Begin.disabled)return;
+      const current=state(win);
+      if(current?.route!=="home"||current?.resolving||
+         current?.resolution?.proper?.status!=="ready"||
+         (current.resolution.date&&current.resolution.date!==current.selectedDate)){
+        showRouteError("mass.unavailable",h4Begin);return;
+      }
+      h4Begin.disabled=true;
+      void Promise.resolve(win?.AO_R17_BROWSER_ENTRY?.startFromToday?.())
+        .then(result=>{
+          if(result?.ok===true){clearRouteError();return;}
+          showRouteError("mass.begin",h4Begin);
+        }).catch(error=>{
+          try{win?.console?.error?.("Today R17 Mass entry rejected",error)}catch{}
+          showRouteError("mass.begin",h4Begin);
+        }).finally(()=>{if(h4Begin.isConnected)h4Begin.disabled=false});
+      return;
+    }
+    const h4Change=target?.closest?.("[data-home-h4-change]");
+    if(h4Change){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      // Interim source-owner handoff: M1 preflight holds the actual ceremony,
+      // reader and liturgical choices. A competing H4 form is forbidden.
+      void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});
+      return;
+    }
+    const h4Readings=target?.closest?.("[data-home-h4-readings]");
+    if(h4Readings){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const current=state(win),resolved=current?.resolution;
+      const proper=resolved?.proper?.status==="ready"&&
+        (!resolved.date||resolved.date===current.selectedDate)?resolved.proper.data:null;
+      const fr=current?.language==="fr";
+      const title=fr?(proper?.nameFr||proper?.name||resolved?.day?.main?.title):
+        (proper?.name||resolved?.day?.main?.title);
+      const sheet=openMassTextsSheet(win.document,{
+        proper,language:fr?"fr":"en",date:current?.selectedDate,
+        title,sourceReady:Boolean(proper),opener:h4Readings});
+      if(!sheet)showRouteError("mass.readings",h4Readings);
       return;
     }
     const massEntry=target?.closest?.("[data-home-mass-entry]");
