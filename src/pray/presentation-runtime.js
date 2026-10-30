@@ -52,6 +52,7 @@ import {installRosaryActiveCard} from "./rosary-active-card.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENINGS, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
 import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
 import {chapletF07PilotEnabled,renderMercyF07Crown} from "./chaplet-f07-pilot.js";
+import {renderF07FiveWounds,renderF07PreciousBlood,renderF07LittleCrown} from "./chaplet-f07-variants.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
@@ -2788,14 +2789,14 @@ function renderPreciousBlood(){
  source.works.map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+
  esc("Raccolta · "+x.edition+" · §"+x.entry)+'</a>').join('')+'</details>';
  return head(name,L("Seven sheddings · thirty-three Our Fathers","Sept effusions · trente-trois Notre Père"))+
- '<main class="aoP435930Body aoPreciousBlood" data-ao-precious-blood-reader>'+
+ '<main class="aoP435930Body aoPreciousBlood" data-ao-precious-blood-reader '+(CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-variant="precious-blood"':'')+'>'+
  '<div class="aoPreciousBloodTop"><span>'+esc(L("Step","Étape"))+' '+(s.phase+1)+' / 9</span>'+latin+'</div>'+
  nav+'<div class="aoPreciousBloodProgress" role="progressbar" aria-valuemin="0" aria-valuemax="9" aria-valuenow="'+
  (s.phase+1)+'" aria-label="'+esc(L("Devotion progress","Progression"))+'"><span style="width:'+
- Math.round((s.phase+1)/9*100)+'%"></span></div>'+
+ Math.round((s.phase+1)/9*100)+'%"></span></div>'+ (CHAPLET_F07_PILOT_ENABLED?renderF07PreciousBlood(s.phase,s.bead,{french:fr}):'')+
  contents+'<footer class="aoPreciousBloodActions">'+previous+next+'</footer>'+history+'</main>';
 }
-function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl})}
+function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Band:CHAPLET_F07_PILOT_ENABLED?renderF07LittleCrown(LITTLE_CROWN.index,{french:isFr()}):""})}
 function renderFiveWounds(){
  const index=Math.max(0,Math.min(29,FIVE_WOUNDS.index));FIVE_WOUNDS.index=index;
  const langCode=FIVE_WOUNDS.latin?'la':(isFr()?'fr':'en');
@@ -2825,14 +2826,14 @@ function renderFiveWounds(){
   '" aria-label="'+esc(FIVE_WOUNDS.latin?L('Return to vernacular prayer','Revenir à la prière vernaculaire'):L('Pray in Latin','Prier en latin'))+'">'+
   esc(FIVE_WOUNDS.latin?L('EN / FR','EN / FR'):'LATIN')+'</button>';
  return head(L('Chaplet of the Five Wounds','Chapelet des Cinq Plaies'),L('A meditation on the Passion · five wounds','Méditation de la Passion · cinq plaies'))+
- '<main class="aoP435930Body aoFiveWounds" data-ao-five-wounds-reader>'+
+ '<main class="aoP435930Body aoFiveWounds" data-ao-five-wounds-reader '+(CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-variant="five-wounds"':'')+'>'+
  '<header><p class="aoFiveWoundsEyebrow">'+esc(L('PASSION · TRADITIONAL CHAPLET','PASSION · CHAPELET TRADITIONNEL'))+
  '</p><h2>'+esc(step.wound)+'</h2><p>'+esc(nature)+'</p></header>'+
  '<nav class="aoFiveWoundsRail" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+dots+'</nav>'+
  '<div class="aoFiveWoundsProgress" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="'+
   progress.completed+'" aria-label="'+esc(L('Chaplet progress','Progression du chapelet'))+'"><span style="width:'+
   Math.round(progress.completed/30*100)+'%"></span></div>'+
- '<div class="aoFiveWoundsBeads" aria-label="'+esc(L('Five Glory Bes, then a Hail Mary','Cinq Gloria Patri, puis un Ave Maria'))+'">'+beads+'</div>'+
+ '<div class="aoFiveWoundsBeads" aria-label="'+esc(L('Five Glory Bes, then a Hail Mary','Cinq Gloria Patri, puis un Ave Maria'))+'">'+beads+'</div>'+ (CHAPLET_F07_PILOT_ENABLED?renderF07FiveWounds(index,{french:isFr()}):'')+
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
  esc(prayerLabel)+'</small>'+langButton+'</div><p class="aoFiveWoundsPrayerText" lang="'+
  esc(langCode)+'">'+nl(step.text)+'</p></article>'+
