@@ -48,7 +48,7 @@ const host=mk("AO.SM.C0174",
  "[GENUFLECTS — ELEVATES THE SACRED HOST — REPLACES IT — GENUFLECTS]",
  "[Génuflexion — élévation de la sainte Hostie — dépose l’Hostie — génuflexion]");
 const published=withPublishedMissalParagraphRubrics([host],registry,{form:"LOW",language:"fr"})[0];
-assert.deepEqual(published.publishedMissalRubrics.filter(x=>x.kind!=="STATE").map(x=>x.id),[
+assert.deepEqual(published.publishedMissalRubrics.filter(x=>x.kind!=="STATE"&&x.kind!=="BELL").map(x=>x.id),[
  "AO.RUB.C0174.01","AO.RUB.C0174.02",
  "AO.RUB.C0174.04","AO.RUB.C0174.05"
 ]);
@@ -69,7 +69,9 @@ const single=withPublishedMissalParagraphRubrics([{
 assert.equal(missalRubricDetailForParagraph(single),null,
  "A Latin trigger is not itself a new long ceremonial description");
 const norm=normalizeReaderMoment({paragraphs:[published]});
-assert.equal(norm.paragraphs[0].publishedMissalRubrics.length,5);
+assert.equal(norm.paragraphs[0].publishedMissalRubrics.length,6);
+assert.deepEqual(norm.paragraphs[0].publishedMissalRubrics.filter(x=>x.kind==="BELL").map(x=>x.id),
+ ["AO.RUB.C0174.03"],"The server bell is a separate printed direction, not a fifth priest action");
 assert.equal(missalRubricDetailForParagraph(norm.paragraphs[0]),null);
 const speculative={
  status:"EDITORIAL_RESEARCH_ONLY",owner:"MISSAL_RUBRIC_LONG_CERTIFIED",
@@ -88,4 +90,4 @@ assert.equal(missalRubricDetailForParagraph({...published,approvedExtendedCeremo
  ...sourceLocked,cueId:"AO.SM.C0999"}}),null,"Wrong cue must fail closed");
 assert.equal(missalRubricDetailForParagraph({...published,approvedExtendedCeremonial:sourceLocked}).sourceCueId,
  "AO.SM.C0174");
-console.log("PASS 15 English/French source-only book rubrics, zero false Latin column, 4 Host actions + 1 separate state, no repetitive long expansions, future certified detail gate.");
+console.log("PASS 15 English/French source-only book rubrics, zero false Latin column, 4 Host actions + 1 finger state + 1 source-bound bell direction, no repetitive long expansions, future certified detail gate.");
