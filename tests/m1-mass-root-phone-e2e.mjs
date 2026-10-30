@@ -64,6 +64,62 @@ try{
   assert.equal(await page.locator("[data-folio-overview-button]").isVisible(),false,
     "Overview must not repeat Your Mass as a useless back button");
   await page.screenshot({path:resolve(artifact,width+"-mass-root.png")});
+
+  // H1.2 owns appearance globally; M1 must follow without its own theme state.
+  const assertSurfaceTheme=async(expected)=>{
+    const observed=await page.evaluate(()=>{
+      const html=document.documentElement,cs=getComputedStyle(html);
+      const identity=document.querySelector("[data-ao-mass-access-m1] .aoMassFolioIdentity");
+      const title=identity?.querySelector("h2");
+      const kicker=identity?.querySelector(".aoMassFolioKicker");
+      const list=document.querySelector(".aoM1Choices");
+      const choice=list?.querySelector(".aoM1ChoiceContent strong");
+      const choiceSmall=list?.querySelector(".aoM1ChoiceContent small");
+      const rgb=s=>{const parts=String(s).match(/\d+(?:\.\d+)?/g)?.slice(0,3).map(Number);
+        return parts?.length===3?parts:null;};
+      const lin=n=>{const v=n/255;return v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4;};
+      const luminance=s=>{const n=rgb(s);return n?.length===3?(0.2126*lin(n[0])+0.7152*lin(n[1])+0.0722*lin(n[2])):null;};
+      const contrast=(a,b)=>{const x=luminance(a),y=luminance(b);
+        return x===null||y===null?null:(Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+      const bg=getComputedStyle(identity).backgroundColor;
+      const choiceBg=getComputedStyle(list).backgroundColor;
+      return {
+        appearance:html.dataset.aoAppearanceV1,
+        choice:html.dataset.aoAppearanceChoiceV1,
+        tokens:{background:cs.getPropertyValue("--bg").trim(),text:cs.getPropertyValue("--text").trim()},
+        identityBg:bg,
+        headlineContrast:contrast(getComputedStyle(title).color,bg),
+        kickerContrast:contrast(getComputedStyle(kicker).color,bg),
+        choiceContrast:contrast(getComputedStyle(choice).color,choiceBg),
+        choiceCaptionContrast:contrast(getComputedStyle(choiceSmall).color,choiceBg),
+        overflow:document.documentElement.scrollWidth-innerWidth,
+        selected:document.querySelector('#ao-global-ribbon [data-ao-app-surface="mass"]')?.getAttribute("aria-current")
+      };
+    });
+    assert.equal(observed.appearance,expected,"M1 must track Settings-owned effective appearance");
+    assert.equal(observed.selected,"page","Appearance changes must not lose Mass tab");
+    assert.ok(observed.overflow<=1,"M1 appearance causes horizontal overflow: "+JSON.stringify(observed));
+    for(const key of ["headlineContrast","kickerContrast","choiceContrast","choiceCaptionContrast"])
+      assert.ok(observed[key]>=4.5,"M1 contrast "+key+" below AA: "+JSON.stringify(observed));
+    return observed;
+  };
+  await assertSurfaceTheme("dark");
+  await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("appearance.mode","light"));
+  await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light");
+  const light=await assertSurfaceTheme("light");
+  assert.equal(light.tokens.background,"#F6F2EA","Light theme must use H1.2 shared foundation");
+  assert.equal(light.tokens.text,"#1E242B","Light theme must use H1.2 shared foreground");
+  await page.screenshot({path:resolve(artifact,width+"-mass-root-light.png")});
+  await page.emulateMedia({colorScheme:"light"});
+  await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("appearance.mode","auto"));
+  await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceChoiceV1==="auto"&&
+    document.documentElement.dataset.aoAppearanceV1==="light");
+  await assertSurfaceTheme("light");
+  await page.emulateMedia({colorScheme:"dark"});
+  await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="dark");
+  await assertSurfaceTheme("dark");
+  await page.screenshot({path:resolve(artifact,width+"-mass-root-auto-dark.png")});
+
   await page.locator('#ao-global-ribbon [data-ao-app-surface="home"]').click();
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:15000});
   await page.waitForFunction(()=>document.documentElement.dataset.aoM1MassRoot!=="true",
