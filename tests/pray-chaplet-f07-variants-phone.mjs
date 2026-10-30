@@ -17,7 +17,7 @@ const server=http.createServer(async(req,res)=>{
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
 const cases=[
  {route:"pray.five_wounds",kind:"five-wounds",dots:30,prayer:".aoFiveWoundsPrayerText",next:"[data-p435930-five-next]",after:"1",previous:"[data-p435930-five-prev]",legacyNav:".aoFiveWoundsRail button"},
- {route:"pray.precious_blood",kind:"precious-blood",dots:47,prayer:".aoPreciousBloodCard p",next:"[data-p435930-blood-next]",after:"1:0",previous:"[data-p435930-blood-prev]",legacyNav:".aoPreciousBloodRail button"},
+ {route:"pray.precious_blood",kind:"precious-blood",dots:7,prayer:".aoPreciousBloodCard p",next:"[data-p435930-blood-next]",after:"1:0",previous:"[data-p435930-blood-prev]",legacyNav:".aoF07BloodJump .aoPreciousBloodRail button"},
  {route:"pray.little_crown",kind:"little-crown",dots:15,prayer:".aoLittleCrownPrayerText",next:"[data-p435930-crown-next]",after:"1",previous:"[data-p435930-crown-prev]",legacyNav:".aoLittleCrownBeads button"}
 ];
 let browser;
@@ -37,7 +37,7 @@ try{
     const prefix="#aoPray435930.open ";
     const band=page.locator(prefix+'[data-f07-variant="'+c.kind+'"]');
     assert.equal(await band.count(),1,c.route+" source-owned presentation band missing");
-    assert.equal(await band.locator(".aoF07VariantDot").count(),c.dots);
+    assert.equal(await band.locator(c.kind==="precious-blood"?".aoF07BloodSegment":".aoF07VariantDot").count(),c.dots);
     if(c.kind==="five-wounds"){
      const alignment=await page.locator(prefix+".aoP435930Head").evaluate(h=>{
       const lang=h.querySelector(".aoP435930SessionLanguage")?.getBoundingClientRect();
@@ -64,13 +64,20 @@ try{
      "F07 "+c.kind+" horizontal overflow at "+width+": "+JSON.stringify(geometry));
     await page.screenshot({path:resolve(captures,c.kind+"-"+width+"-opening.png"),animations:"disabled"});
     await page.locator(prefix+c.next).click();
-    assert.equal(await band.getAttribute("data-f07-position"),c.after,c.route+" indicator must follow source navigation");
-    assert.equal(await band.locator('[data-f07-status="current"]').count(),1);
+    if(c.kind==="precious-blood"){
+     assert.equal(await band.getAttribute("data-f07-phase"),"1");
+     assert.equal(await band.getAttribute("data-f07-bead"),"0");
+     assert.equal(await band.locator('[data-f07-blood-status="current"]').count(),1);
+    }else{
+     assert.equal(await band.getAttribute("data-f07-position"),c.after,c.route+" indicator must follow source navigation");
+     assert.equal(await band.locator('[data-f07-status="current"]').count(),1);
+    }
     await page.locator(prefix+c.previous).click();
-    assert.equal(await band.getAttribute("data-f07-position"),c.kind==="precious-blood"?"opening":"0");
+    if(c.kind==="precious-blood")assert.equal(await band.getAttribute("data-f07-phase"),"0");
+    else assert.equal(await band.getAttribute("data-f07-position"),"0");
     await page.screenshot({path:resolve(captures,c.kind+"-"+width+"-return.png"),animations:"disabled"});
     assert.deepEqual(errors,[],c.route+" uncaught mobile error(s)");
-    console.log("PASS F07 "+width+" "+c.kind+": canonical "+c.dots+" positions, first prayer, controls, next/previous and rollback-safe navigation");
+    console.log("PASS F07 "+width+" "+c.kind+": canonical source projection, "+c.dots+" visual markers, first prayer, controls, next/previous and rollback-safe navigation");
    }finally{await page.close()}
   }
  }
