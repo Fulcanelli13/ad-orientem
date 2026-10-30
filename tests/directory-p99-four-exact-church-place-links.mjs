@@ -65,7 +65,7 @@ for(const [venueId,[placeId,osm,sourceRow]] of expected){
 }
 assert.equal(crosswalk.counts.canonical_places,LIVE.places);
 assert.equal(crosswalk.counts.confirmed_links,LIVE.links);
-assert.equal(crosswalk.counts.exact_confirmed_photo_joins,9,"two P95, three P102 and four P106 exact photos");
+assert.equal(crosswalk.counts.exact_confirmed_photo_joins,10,"two P95, three P102, four P106 and one P108 exact photo");
 assert.equal(manifest.policy.no_new_tlm_masses_or_schedules,true);
 assert.equal(manifest.policy.photo_media_unapproved_until_native_rights_derivative_review,true);
 assert.equal(manifest.policy.no_expense,true);
