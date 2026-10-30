@@ -85,9 +85,17 @@ export function renderTlmChurchProfile(item,language="en"){
   html+='<figure class="aoTlmProfileHero"><img loading="lazy" decoding="async" src="'+E(m.asset_path)+'" alt="'+E(language==="fr"?m.alt_fr:m.alt_en)+'"><figcaption>'+E(m.credit)+' · '+
    link(m.license_url,m.license)+' · '+link(m.source_url,L(language,"Original photograph","Photographie originale"))+'</figcaption></figure>';
  }else html+=renderDirectoryIdentityFallback(item,language,"detail");
+ const listedAffiliation=T(item?.eyebrow)||T(item?.community_id)||unknown(language);
+ const listedEmblem=massInstitutionEmblem(item?.community_id);
+ // R49 map records retain their source-reported affiliation even when no
+ // canonical Directory ministry or independently verified rite was imported.
+ if(!v.ministries.length)html+='<section class="aoTlmProfileListedAffiliation" data-tlm-source-affiliation="'+E(item?.community_id)+'">'+
+  (hasPhoto&&listedEmblem?'<img src="'+E(listedEmblem.image)+'" loading="lazy" decoding="async" alt="">':'')+
+  '<div><small>'+E(L(language,"Affiliation · according to the directory source","Affiliation · selon la source de l’annuaire"))+'</small>'+
+  '<strong>'+E(listedAffiliation)+'</strong><span>'+E(L(language,"Reported identity only; not a verified Mass, rite, missal or canonical status","Identité signalée uniquement ; ni messe, rite, missel ou statut canonique vérifié"))+'</span></div></section>';
  html+='<section class="aoTlmProfilePanel" aria-label="'+E(L(language,"Liturgical and ecclesial identity","Identité liturgique et ecclésiale"))+'">';
  html+='<h3>'+E(L(language,"Liturgy & ecclesial identity","Liturgie et identité ecclésiale"))+'</h3>';
- if(!v.ministries.length)html+='<p>'+E(L(language,"Ministry not established from the directory source.","Ministère non établi par la source."))+'</p>';
+ if(!v.ministries.length)html+='<p>'+E(L(language,"No independently verified ministry-level liturgical classification is attached to this directory record.","Aucune classification liturgique de ministère vérifiée indépendamment n’est associée à cette fiche."))+'</p>';
  for(const [idx,m] of v.ministries.entries()){
    const emblem=massInstitutionEmblem(m.raw?.community_id);
    html+='<article class="aoTlmProfileMinistry"><div class="aoTlmProfileMinistryHead">'+
@@ -155,6 +163,12 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 .aoTlmProfileHero{margin:13px 0 12px}.aoTlmProfileHero img{display:block;width:100%;max-height:270px;object-fit:contain;background:#09131d;border-radius:12px}
 .aoTlmProfileHero figcaption{margin:6px 2px;font:10px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#b2b5b4}
 .aoTlmChurchProfile a{color:#e5c98e;text-decoration:underline;text-underline-offset:3px}
+.aoTlmProfileListedAffiliation{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:11px 0;border:1px solid #c4aa7740;border-radius:12px;background:#20303a}
+.aoTlmProfileListedAffiliation img{height:46px;width:46px;flex:none;object-fit:contain}
+.aoTlmProfileListedAffiliation div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.aoTlmProfileListedAffiliation small{font:650 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;color:#d1b581}
+.aoTlmProfileListedAffiliation strong{font:600 16px/1.25 var(--ao-font-display,Georgia,serif);color:#f0e3c9;overflow-wrap:anywhere}
+.aoTlmProfileListedAffiliation span{font:11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#aab7be}
 .aoTlmProfilePanel{margin:15px 0 0;padding:16px;background:#111d27;border:1px solid #bca47530;border-radius:14px}
 .aoTlmProfilePanel h3{font:600 20px/1.23 var(--ao-font-display,Georgia,serif);color:#f4e6cb;margin:0 0 14px}
 .aoTlmProfilePanel p{color:#dad1c1;font:13px/1.55 var(--ao-font-ui,system-ui,sans-serif)}
