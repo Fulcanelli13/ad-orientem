@@ -425,7 +425,20 @@ export function createHomeOwner(win=globalThis){
       const sheet=openMassTextsSheet(win.document,{
         proper,language:fr?"fr":"en",date:current?.selectedDate,
         title,sourceReady:Boolean(proper),opener:h4Readings});
-      if(!sheet)showRouteError("mass.readings",h4Readings);
+      if(!sheet){showRouteError("mass.readings",h4Readings);return;}
+      const slot=h4Readings.dataset.homeH4ReadingSlot;
+      if(slot){
+        const match=sheet.model?.sections?.find?.(section=>
+          section.id===slot&&section.status==="READY");
+        const section=match?[...sheet.root.querySelectorAll("[data-mass-texts-slot]")]
+          .find(node=>node.dataset.massTextsSlot===slot):null;
+        if(section){
+          sheet.root.querySelectorAll(".aoMassTextsSection").forEach(node=>node.open=false);
+          section.open=true;
+          section.scrollIntoView?.({block:"start",behavior:"instant"});
+          section.querySelector("summary")?.focus?.({preventScroll:true});
+        }
+      }
       return;
     }
     const massEntry=target?.closest?.("[data-home-mass-entry]");
