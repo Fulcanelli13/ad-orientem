@@ -654,7 +654,10 @@ function paschal(){
 }
 function angelusChoice(){const p=paschal();if(S.angelusMode==='regina')return {form:'regina',auto:false,authority:p};if(S.angelusMode==='angelus')return {form:'angelus',auto:false,authority:p};return {form:p.ok&&p.value?'regina':'angelus',auto:true,authority:p}}
 function splitPrayer(text){return String(text||'').split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean)}
-function prayFamilies(localize=L){
+function prayFamilies(){
+ return prayFamiliesLocalized(L);
+}
+function prayFamiliesLocalized(localize){
  const L=localize;
  return Object.freeze({
   daily:Object.freeze({
@@ -760,8 +763,8 @@ function renderPrayHome(){
  if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({
   head,L,esc,DATA,families,assetIcon,
   searchFamilies:{
-   en:resolvedPrayerPilotFamilies((en,fr)=>en,prayFamilies((en,fr)=>en)),
-   fr:resolvedPrayerPilotFamilies((en,fr)=>fr,prayFamilies((en,fr)=>fr))
+   en:resolvedPrayerPilotFamilies((en,fr)=>en,prayFamiliesLocalized((en,fr)=>en)),
+   fr:resolvedPrayerPilotFamilies((en,fr)=>fr,prayFamiliesLocalized((en,fr)=>fr))
   }
  });
  const door=id=>prayFamilyDoor(id,families[id]);
