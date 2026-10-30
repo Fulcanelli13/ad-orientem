@@ -725,7 +725,9 @@ export function renderExploreToString(vm){
   :L(vm.language,"places connected to saints","lieux associés aux saints")):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped&&vm.mapped<vm.items.length)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
-  if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
+  if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(vm.lens==="tlm"
+    ?L(vm.language,"list only · no map pin","en liste seulement · sans repère sur la carte")
+    :L(vm.language,"address only","adresse seule"))+'</span>';
   if(vm.lens==="tlm"&&vm.view==="map")html+='<span class="aoTlmViewportContext" data-tlm-viewport-count aria-live="polite">'+esc(L(vm.language,"In this view: …","Dans cette vue : …"))+'</span>';
   if(vm.lens==="tlm"){
     const listed=vm.items.filter(x=>x.status==="SCHEDULE UNVERIFIED").length;
@@ -739,7 +741,7 @@ export function renderExploreToString(vm){
       vm.mapped
         ?L(vm.language,"Loading source-backed map points…","Chargement des points cartographiques sourcés…")
         :vm.addressOnly
-          ?L(vm.language,"These records have canonical addresses, but no publishable coordinates yet. Use List for full access.","Ces fiches ont des adresses canoniques, mais pas encore de coordonnées publiables. Utilisez Liste pour tout consulter.")
+          ?L(vm.language,"These source listings have no publishable coordinates. Some contain only a locality or country. Use List to view them.","Ces fiches sourcées n’ont pas de coordonnées publiables. Certaines ne donnent qu’une localité ou un pays. Consultez-les en Liste.")
           :L(vm.language,"No publishable map points in this lens yet.","Aucun point cartographique publiable dans ce volet pour le moment.")
     )+'</span></div></div>';
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
