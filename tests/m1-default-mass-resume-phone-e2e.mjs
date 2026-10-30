@@ -33,7 +33,7 @@ try{
     globalThis.AO_R17_BROWSER_ENTRY?.installed,{timeout:45000});
   assert.equal(await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY.hasResumable()),false,
     "Fresh profile must start without an R17 checkpoint");
-  const missing=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.go("mass",{resume:true}));
+  const missing=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("mass",{resume:true}));
   assert.equal(missing.reason,"NO_RESUMABLE_MASS","Explicit Resume must fail closed with no checkpoint");
   await page.locator('#ao-global-ribbon [data-ao-app-surface="mass"]').click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"visible",timeout:25000});
@@ -74,7 +74,7 @@ try{
   await page.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.installed&&globalThis.AO_APP_SHELL_V1?.installed,
     null,{timeout:45000});
   assert.equal(await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY.hasResumable()),true);
-  const fresh=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.go("mass"));
+  const fresh=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("mass"));
   assert.equal(fresh.ok,true,"Fresh tab navigation must be permitted with a checkpoint");
   assert.equal(fresh.resumedMass,undefined,"Ordinary Mass tab may not silently Resume");
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"visible",timeout:20000});
@@ -83,7 +83,7 @@ try{
   let unchanged=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"null"));
   assert.equal(unchanged.readerPosition?.sectionId,selected.sectionId,
     "Ordinary Mass entry must not overwrite existing checkpoint");
-  const result=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.go("mass",{resume:true}));
+  const result=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("mass",{resume:true}));
   assert.equal(result.ok,true,"Explicit Resume must restore a saved reader: "+JSON.stringify(result));
   assert.equal(result.resumedMass,true);
   await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected,null,{timeout:30000});
