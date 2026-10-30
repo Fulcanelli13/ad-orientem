@@ -21,7 +21,6 @@ import { createPresentationFxBridge } from "./presentation-fx.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
 import {
-  APP_SURFACES,
   APP_RIBBON_SURFACES,
   NON_MASS_DONOR_CONTRACT,
   createAppHostAdapter,
