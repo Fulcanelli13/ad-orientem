@@ -1,0 +1,55 @@
+name: Sacred Art first 73 pinned native checks (€0 research)
+on:
+  push:
+    branches: [research/sacred-art-duplicate-gate-20261030]
+    paths:
+      - scripts/art/native-preflight-sacred-art-batch01-20261030.py
+      - .github/workflows/sacred-art-first73-native-preflight-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-first73-native-preflight
+  cancel-in-progress: false
+jobs:
+  screen-protected-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify syntax and run original-SHA screening
+        run: |
+          python -m py_compile scripts/art/native-preflight-sacred-art-batch01-20261030.py
+          python scripts/art/native-preflight-sacred-art-batch01-20261030.py
+      - name: Prove protected 73 still require independent release gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/calendar/sacred-art-master-v2/native-photo-preflight-batch01-20261030.v1.json')
+          r=json.loads(p.read_text())
+          assert r['checked']==73==len(r['records'])
+          assert r['exactHistoricalShaMatches']+r['held']==73
+          assert len({x['physicalWorkGroup'] for x in r['records']})==73
+          assert r['existing73GalleryMutations']==r['editorialDecisionsChanged']==r['humanPristineApprovals']==r['finalRightsCertifications']==r['queue1Promotions']==r['productionMutations']==r['feeEur']==0
+          assert all(not x['humanPristineApproved'] and not x['rightsFinallyCertified'] and not x['queue1Promoted'] for x in r['records'])
+          print('First73 original-screen',r['exactHistoricalShaMatches'],'matching,',r['held'],'held; 0 release mutations')
+          PY
+      - name: Save QA evidence without touching existing first 73
+        run: |
+          git config user.name "Ad Orientem Sacred Art QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-master-v2/native-photo-preflight-batch01-20261030.v1.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "research(sacred-art): source-hash preflight of protected first 73 [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi
