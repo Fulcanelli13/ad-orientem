@@ -1,0 +1,461 @@
+{
+  "schema": "ao-pray-visual-review-20261030-v1",
+  "exported_at": "2026-10-30T10:13:50.154Z",
+  "repository": "Fulcanelli13/ad-orientem",
+  "source_prs": [
+    {
+      "number": 2054,
+      "merged_commit": "6854531419e27e383d8f02fae97196e35d3d207b"
+    },
+    {
+      "number": 2057,
+      "merged_commit": "0d1742c10474adc8fabd1d2745fd020ad879f054"
+    }
+  ],
+  "source_artifacts": {
+    "rosary-r2-phone": {
+      "artifact_id": 12964851628,
+      "run_id": 41028539472
+    },
+    "rosary-methods-phone": {
+      "artifact_id": 12964851628,
+      "run_id": 41028539472
+    },
+    "prayer-design-pilot": {
+      "artifact_id": 12962469218,
+      "run_id": 41023912022
+    },
+    "pray-chaplet-f07": {
+      "artifact_id": 12962469218,
+      "run_id": 41023912022
+    },
+    "pray-chaplet-f07-variants": {
+      "artifact_id": 12962469218,
+      "run_id": 41023912022
+    },
+    "pray-ux-unified": {
+      "artifact_id": 12962469218,
+      "run_id": 41023912022
+    },
+    "five-wounds": {
+      "artifact_id": 12964024783,
+      "run_id": 41028539707
+    },
+    "precious-blood": {
+      "artifact_id": 12964388286,
+      "run_id": 41028539551
+    },
+    "daily": {
+      "artifact_id": 12962188573,
+      "run_id": 41023912049
+    },
+    "prayer-reader-design-pilot": {
+      "artifact_id": 12962469218,
+      "run_id": 41023912022
+    }
+  },
+  "decisions": [
+    {
+      "id": "home",
+      "title": "Prayer discovery — nine-door landing",
+      "category": "context",
+      "status": "revise",
+      "note": "we need to do it IDENTICALLY AS claude's prototype 1C in r1.1 discovery... in that version it allows to continue praying etc, and it doesnt waste space telling user \"enter into rpayer\" etc",
+      "updated_at": "2026-10-30T10:03:52.613Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "prayer-design-pilot/discovery-320.png",
+          "size_bytes": 79532,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-design-pilot/discovery-390.png",
+          "size_bytes": 177608,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "angelus_entry",
+      "title": "Angelus — entry",
+      "category": "context",
+      "status": "revise",
+      "note": "placement of pills/tabs for begining is very ugly... we have to do it exactly as AO_Prayer_F04_Ritual_of_the_Hour_Angelus.html ",
+      "updated_at": "2026-10-30T10:03:56.536Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "prayer-design-pilot/angelus-entry-320.png",
+          "size_bytes": 48682,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-design-pilot/angelus-entry-390.png",
+          "size_bytes": 75438,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "angelus_reader",
+      "title": "Angelus — source-owned reader",
+      "category": "attention",
+      "status": "revise",
+      "note": "the top ribbon with 1-4 is absolutely horendous... i'd rather have a progress bar... i think we have to go towards AO_Prayer_F04_Ritual_of_the_Hour_Angelus.html",
+      "updated_at": "2026-10-30T10:05:09.688Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "prayer-design-pilot/angelus-cards-320.png",
+          "size_bytes": 23364,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-design-pilot/angelus-cards-390.png",
+          "size_bytes": 44563,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "rosary_r2",
+      "title": "Holy Rosary — R2 active reader",
+      "category": "pilot",
+      "status": "revise",
+      "note": "lots of space wasted here",
+      "updated_at": "2026-10-30T10:05:36.563Z",
+      "evidence": [
+        {
+          "label": "320 × 568",
+          "path": "rosary-r2-phone/rosary-r2-320x568-opening.png",
+          "size_bytes": 65810,
+          "artifact_id": 12964851628
+        },
+        {
+          "label": "320 × 700",
+          "path": "rosary-r2-phone/rosary-r2-320x700-opening.png",
+          "size_bytes": 69695,
+          "artifact_id": 12964851628
+        },
+        {
+          "label": "390 × 844",
+          "path": "rosary-r2-phone/rosary-r2-390x844-opening.png",
+          "size_bytes": 84169,
+          "artifact_id": 12964851628
+        }
+      ]
+    },
+    {
+      "id": "rosary_existing",
+      "title": "Holy Rosary — canonical opening",
+      "category": "context",
+      "status": "revise",
+      "note": "i hate when you put source and external links like that. they are supposed to be much more discrete... also the tab for change method is shit poor UI",
+      "updated_at": "2026-10-30T10:06:26.427Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "rosary-methods-phone/rosary-prayer-first-320.png",
+          "size_bytes": 58800,
+          "artifact_id": 12964851628
+        },
+        {
+          "label": "390 px",
+          "path": "rosary-methods-phone/rosary-prayer-first-390.png",
+          "size_bytes": 67393,
+          "artifact_id": 12964851628
+        }
+      ]
+    },
+    {
+      "id": "f07_mercy_open",
+      "title": "Divine Mercy — F07 opening",
+      "category": "pilot",
+      "status": "revise",
+      "note": "maybe a bit more muted for the non activated prayers just to show more contrast",
+      "updated_at": "2026-10-30T10:08:31.824Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07/mercy-crown-opening-320.png",
+          "size_bytes": 35792,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07/mercy-crown-opening-390.png",
+          "size_bytes": 57498,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "f07_mercy_decade",
+      "title": "Divine Mercy — F07 first decade",
+      "category": "pilot",
+      "status": "revise",
+      "note": "do you think we need to add paintings? not sure what to add, what do you suggest? also very crucial to have V. and R. here",
+      "updated_at": "2026-10-30T10:08:36.896Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07/mercy-crown-decade-320.png",
+          "size_bytes": 34626,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07/mercy-crown-decade-390.png",
+          "size_bytes": 51305,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "f07_five_open",
+      "title": "Five Wounds — F07 opening",
+      "category": "pilot",
+      "status": "revise",
+      "note": "this UI is shit... we need to do exactly as Claude's prototype... also we need to add paintings i think",
+      "updated_at": "2026-10-30T10:09:22.708Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/five-wounds-320-opening.png",
+          "size_bytes": 39113,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/five-wounds-390-opening.png",
+          "size_bytes": 48633,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "f07_five_guided",
+      "title": "Five Wounds — guided prayer",
+      "category": "pilot",
+      "status": "revise",
+      "note": "this UI is shit... we need to do exactly as Claude's prototype... also we need to add paintings i think.... look at how huge these fucking pills are... the UI is not consistent with other prayers",
+      "updated_at": "2026-10-30T10:10:02.394Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "five-wounds/five-wounds-guided-320.png",
+          "size_bytes": 46275,
+          "artifact_id": 12964024783
+        },
+        {
+          "label": "390 px",
+          "path": "five-wounds/five-wounds-guided-390.png",
+          "size_bytes": 53017,
+          "artifact_id": 12964024783
+        }
+      ]
+    },
+    {
+      "id": "f07_blood_open",
+      "title": "Precious Blood — F07 opening",
+      "category": "pilot",
+      "status": "revise",
+      "note": "dreadful... poor UI",
+      "updated_at": "2026-10-30T10:10:27.214Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/precious-blood-320-opening.png",
+          "size_bytes": 37757,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/precious-blood-390-opening.png",
+          "size_bytes": 54066,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "f07_blood_guided",
+      "title": "Precious Blood — guided step",
+      "category": "pilot",
+      "status": "revise",
+      "note": "dreadful... poor UI",
+      "updated_at": "2026-10-30T10:10:37.334Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "precious-blood/precious-blood-full-guided-320.png",
+          "size_bytes": 42597,
+          "artifact_id": 12964388286
+        },
+        {
+          "label": "390 px",
+          "path": "precious-blood/precious-blood-full-guided-390.png",
+          "size_bytes": 59771,
+          "artifact_id": 12964388286
+        }
+      ]
+    },
+    {
+      "id": "f07_little_open",
+      "title": "Little Crown — F07 opening",
+      "category": "pilot",
+      "status": "revise",
+      "note": "dreadful... poor UI",
+      "updated_at": "2026-10-30T10:10:51.902Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/little-crown-320-opening.png",
+          "size_bytes": 40316,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/little-crown-390-opening.png",
+          "size_bytes": 61395,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "f07_little_return",
+      "title": "Little Crown — navigation return",
+      "category": "pilot",
+      "status": "revise",
+      "note": "dreadful poor UI",
+      "updated_at": "2026-10-30T10:11:10.023Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/little-crown-320-return.png",
+          "size_bytes": 38732,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/little-crown-390-return.png",
+          "size_bytes": 59787,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "morning",
+      "title": "Morning Prayer — historical prayer-book version",
+      "category": "context",
+      "status": "revise",
+      "note": "fucking pills are too big and shouldnt be that high... don't give fucking source like that it ruins prayer experience... these have to be masked and discrete",
+      "updated_at": "2026-10-30T10:12:03.626Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "daily/morning-320.png",
+          "size_bytes": 81816,
+          "artifact_id": 12962188573
+        },
+        {
+          "label": "390 px",
+          "path": "daily/morning-390.png",
+          "size_bytes": 94595,
+          "artifact_id": 12962188573
+        }
+      ]
+    },
+    {
+      "id": "evening",
+      "title": "Evening Prayer — historical prayer-book version",
+      "category": "context",
+      "status": "revise",
+      "note": "fucking pills are too big and shouldnt be that high... don't give fucking source like that it ruins prayer experience... these have to be masked and discrete",
+      "updated_at": "2026-10-30T10:13:11.553Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "daily/evening-320.png",
+          "size_bytes": 83007,
+          "artifact_id": 12962188573
+        },
+        {
+          "label": "390 px",
+          "path": "daily/evening-390.png",
+          "size_bytes": 112798,
+          "artifact_id": 12962188573
+        }
+      ]
+    },
+    {
+      "id": "loreto",
+      "title": "Litany of Loreto — 1962 era",
+      "category": "context",
+      "status": "revise",
+      "note": "poor UI",
+      "updated_at": "2026-10-30T10:13:22.294Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "prayer-reader-design-pilot/loreto-1962-320.png",
+          "size_bytes": 35394,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-reader-design-pilot/loreto-1962-390.png",
+          "size_bytes": 56682,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "adoration",
+      "title": "Adoration — Prayer route",
+      "category": "context",
+      "status": "revise",
+      "note": "awful UI",
+      "updated_at": "2026-10-30T10:13:33.876Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-ux-unified/route-pray-adoration-320.png",
+          "size_bytes": 46057,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-ux-unified/route-pray-adoration-390.png",
+          "size_bytes": 47673,
+          "artifact_id": 12962469218
+        }
+      ]
+    },
+    {
+      "id": "confession",
+      "title": "Confession — Prayer route",
+      "category": "context",
+      "status": "revise",
+      "note": "ugly UI",
+      "updated_at": "2026-10-30T10:13:45.745Z",
+      "evidence": [
+        {
+          "label": "320 px",
+          "path": "pray-ux-unified/route-pray-confession-320.png",
+          "size_bytes": 48296,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-ux-unified/route-pray-confession-390.png",
+          "size_bytes": 59240,
+          "artifact_id": 12962469218
+        }
+      ]
+    }
+  ]
+}
