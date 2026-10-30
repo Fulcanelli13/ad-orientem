@@ -327,12 +327,45 @@ assert.equal(singleWorkingIndex.counts.hosted_action_edges_retained,42);
 assert.equal(singleWorkingIndex.counts.pitre_regional_source_actions_retained,43);
 assert.equal(singleWorkingIndex.counts.machine_generated_lexical_search_hints,50);
 assert.equal(singleWorkingIndex.machine_generated_search_hints.suggestions.length,50);
+assert.equal(singleWorkingIndex.counts.lexical_search_hint_description_decisions_reviewed,50);
+assert.equal(singleWorkingIndex.counts.evidence_with_provisional_description_comparison_including_search_hints,272);
+const hintReviewed=singleWorkingIndex.machine_generated_search_hints.description_level_review_result;
+assert.equal(hintReviewed.source_action_reviewed,50);
+assert.equal(hintReviewed.previous_evidence_with_any_explicit_prior_review,222);
+assert.equal(hintReviewed.current_evidence_with_editorial_description_review_or_prior_exact_comparison,272);
+assert.equal(hintReviewed.approved_registry_relationships_added,0);
+assert.equal(hintReviewed.source_independence_certified,0);
+assert.equal(hintReviewed.original_folios_newly_checked,0);
+assert.equal(hintReviewed.new_practices_approved,0);
+assert.equal(hintReviewed.ecclesial_ritual_authority_holds,9);
+assert.deepEqual(hintReviewed.negative_owner_search_veto_source_ids,["WFF92-EWTN-066"]);
+assert.deepEqual(hintReviewed.decisions_by_relation,{
+ COMPONENT_OR_VARIANT_HOLD:11,
+ DESCRIPTION_LEVEL_SAME_CORE_HOLD:28,
+ RITE_OR_MINISTERIAL_AUTHORITY_HOLD:9,
+ HISTORICAL_FOLKLORE_CONTEXT_HOLD:1,
+ NO_SAME_ACTION_REJECT_CANDIDATE:1
+});
+const hintsByID=new Map();
 for(const suggestion of singleWorkingIndex.machine_generated_search_hints.suggestions){
  assert.ok(mids.has(suggestion.owner_id));
  assert.ok(singleWorkingIndex.evidence_identity_routing.some(x=>x.s===suggestion.source_id));
  assert.ok(suggestion.lexical_score>=0.75);
- assert.equal(suggestion.relationship,"SEARCH_HINT_ONLY_NOT_OWNER_LINK");
+ assert.ok(!hintsByID.has(suggestion.source_id),"Duplicate source candidate "+suggestion.source_id);
+ hintsByID.set(suggestion.source_id,suggestion);
+ assert.ok(["SEARCH_HINT_REVIEWED_NOT_OWNER_LINK","REJECTED_SEARCH_HINT_NOT_OWNER_LINK"].includes(suggestion.relationship));
+ assert.equal(suggestion.review.review_status,"DESCRIPTION_LEVEL_MANUAL_TRIAGE_NOT_PRIMARY_FOLIO_VERIFICATION");
+ assert.ok(suggestion.review.rationale.length>35);
+ for(const field of ["owner_relationship_approved","source_independence_certified","original_printed_folio_pair_verified",
+  "ritual_1962_authority_confirmed","indulgence_grant_confirmed","calendar_or_publication_allowed"])
+  assert.equal(suggestion.review[field],false);
 }
+assert.equal(hintsByID.size,50);
+assert.equal(hintsByID.get("WFF92-EWTN-066").review.relationship_decision,"NO_SAME_ACTION_REJECT_CANDIDATE");
+assert.equal(hintsByID.get("WEI58-08-016").review.relationship_decision,"HISTORICAL_FOLKLORE_CONTEXT_HOLD");
+assert.equal(hintsByID.get("STOKES55-EWTN-116").review.relationship_decision,"COMPONENT_OR_VARIANT_HOLD");
+assert.equal(hintsByID.get("WEI58-10-013").review.relationship_decision,"RITE_OR_MINISTERIAL_AUTHORITY_HOLD");
+assert.equal(hintsByID.get("WEI58-16-028").review.relationship_decision,"DESCRIPTION_LEVEL_SAME_CORE_HOLD");
 const erroneousPairInIndex=singleWorkingIndex.dedup_case_decisions.find(x=>x.id==="CC3WORK-REL-041");
 assert.equal(erroneousPairInIndex.status,"EXPLICIT_NO_SAME_IDENTITY");
 assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
