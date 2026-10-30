@@ -494,4 +494,56 @@ assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 assert.equal(singleWorkingIndex.guard.source_independence_newly_certified,0);
 
+
+
+// Third 250-row source-description action/owner pass: distinct unreviewed evidence only.
+const household250Batch=singleWorkingIndex.bulk_identity_review_batches.find(x=>x.id==="HOUSEHOLD-CHAN-MCL-KEL-MUE-250-20261030");
+assert.ok(household250Batch);
+assert.equal(household250Batch.n,250);
+assert.equal(household250Batch.source_selection_ids.length,250);
+assert.equal(new Set(household250Batch.source_selection_ids).size,250);
+assert.equal(singleWorkingIndex.counts.bulk_household250_reviewed,250);
+const householdRelCounts={};
+let householdEdges=0;
+for(const id of household250Batch.source_selection_ids){
+ const x=sourceIndexById.get(id);const src=originalScreensBySource.get(id);
+ assert.ok(x&&src,"Missing screened household source evidence "+id);
+ assert.equal(x.a,expectedRoutingLabel(src),"Changed source description "+id);
+ assert.ok(!x.refs?.length,"Reused caseboard review "+id);
+ assert.ok(!hintsByID.has(id),"Reused lexical search result "+id);
+ assert.ok(!x.bulk250_identity_review&&!x.regional250_identity_review,"Reused previous bulk record "+id);
+ assert.ok(x.w===5||x.w===6);
+ const r=x.household250_identity_review;
+ assert.equal(r.batch_id,household250Batch.id);
+ assert.equal(r.source_id,id);
+ assert.equal(r.source_original_pointer_retained,true);
+ assert.ok(r.reason.length>55);
+ for(const prop of ["original_printed_folio_newly_verified","source_independence_certified",
+   "rites_and_ministerial_authority_certified","canonical_identity_merge_approved",
+   "distinct_custom_approved","indulgence_grant_verified","calendar_publication_allowed"])
+   assert.equal(r[prop],false,"Unverified customary or ritual claim promoted in "+id);
+ if(r.proposed_existing_owner_id){
+  assert.ok(mids.has(r.proposed_existing_owner_id),"Unknown household parent "+id);
+  assert.equal(r.route,"DESCRIBED_ACTION_OWNER_HYPOTHESIS");
+  householdRelCounts[r.relationship]=(householdRelCounts[r.relationship]||0)+1;
+  householdEdges++;
+ }else{
+  assert.equal(r.route,"NO_DEFENSIBLE_MATCH_FROM_DESCRIPTION_ONLY");
+  assert.equal(r.relationship,"NO_SPECIFIC_EXISTING_OWNER_SUPPORTED_BY_CURRENT_DESCRIPTION");
+ }
+}
+assert.equal(householdEdges,household250Batch.curated);
+assert.equal(householdEdges,singleWorkingIndex.counts.bulk_household250_description_owner_candidates);
+assert.deepEqual(householdRelCounts,household250Batch.description_relation_counts);
+assert.equal(250-householdEdges,household250Batch.unmatched_description_holds);
+assert.equal(household250Batch.integrity_provisional_only,true);
+const reviewedIDs=new Set([...regional250Batch.source_selection_ids,...weiser250Batch.source_selection_ids,
+ ...hintsByID.keys(),...singleWorkingIndex.evidence_identity_routing.filter(x=>x.refs?.length).map(x=>x.s),
+ ...household250Batch.source_selection_ids]);
+assert.equal(reviewedIDs.size,1022);
+assert.equal(singleWorkingIndex.counts.identity_description_review_coverage_including_bulk_household,1022);
+assert.equal(sourceIndexById.get("CHANEY55-EWTN-055").household250_identity_review.proposed_existing_owner_id,"XMAS-001");
+assert.equal(sourceIndexById.get("CHANEY55-EWTN-142").household250_identity_review.relationship,"RITUAL_MINISTERIAL_BOUNDARY_HOLD");
+assert.equal(sourceIndexById.get("KEL59-EWTN-061").household250_identity_review.relationship,"HISTORICAL_SCOPE_BOUNDARY_HOLD");
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
