@@ -1,0 +1,126 @@
+{
+  "schema": "AO_DYK_R29_GLOSSARY_LINEAGE_AND_PITRE_SECONDARY_QUOTATION_REVIEW_V1",
+  "date": "2026-10-30",
+  "status": "SOURCE_LINEAGE_CHECKED_NOT_COUNTED_AS_ORIGINAL_TEXT_FACSIMILE_REVIEW",
+  "counts": {
+    "glossary_records_exact_canonical_explanation_copies": 8,
+    "glossary_prefer_Learn": 5,
+    "glossary_Home_rewrite_pending": 3,
+    "pitre_secondary_quote_checked": 1,
+    "pitre_original_facsimile_pages_reopened": 0,
+    "new_direct_primary_source_count": 0,
+    "final_approved": 0,
+    "published": 0
+  },
+  "glossary": [
+    {
+      "id": "DYK-GI-G074",
+      "source_id": "G074",
+      "source_file": "data/glossary/concepts-001-150.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "LEARN_GLOSSARY_PREFERRED",
+      "source_ids": [
+        "MR62-ORDINARY"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    },
+    {
+      "id": "DYK-GI-G218",
+      "source_id": "G218",
+      "source_file": "data/glossary/concepts-151-300.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "LEARN_GLOSSARY_PREFERRED",
+      "source_ids": [
+        "SRC-CIC83-938-940"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    },
+    {
+      "id": "DYK-GI-G411",
+      "source_id": "G411",
+      "source_file": "data/glossary/concepts-301-450.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "LEARN_GLOSSARY_PREFERRED",
+      "source_ids": [
+        "SRC-HIST-FONT-STOUP"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    },
+    {
+      "id": "DYK-GI-G094",
+      "source_id": "G094",
+      "source_file": "data/glossary/concepts-001-150.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "HOME_REWRITE_CANDIDATE_PENDING_NOVELTY",
+      "source_ids": [
+        "SRC-MR62-EMBER-ROGATION"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    },
+    {
+      "id": "DYK-GI-G311",
+      "source_id": "G311",
+      "source_file": "data/glossary/concepts-301-450.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "HOME_REWRITE_CANDIDATE_PENDING_NOVELTY",
+      "source_ids": [
+        "PRAY-CANONICAL-CORPUS"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    },
+    {
+      "id": "DYK-GI-G318",
+      "source_id": "G318",
+      "source_file": "data/glossary/concepts-301-450.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "LEARN_GLOSSARY_PREFERRED",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    },
+    {
+      "id": "DYK-GI-G319",
+      "source_id": "G319",
+      "source_file": "data/glossary/concepts-301-450.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "LEARN_GLOSSARY_PREFERRED",
+      "source_ids": [
+        "SRC-ROMRIT"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    },
+    {
+      "id": "DYK-GI-G038",
+      "source_id": "G038",
+      "source_file": "data/glossary/concepts-001-150.v1.json",
+      "both_languages_exact_explanation_copy": true,
+      "home_suitability": "HOME_REWRITE_CANDIDATE_PENDING_NOVELTY",
+      "source_ids": [
+        "TRENT-XIV-EXTREME-UNCTION"
+      ],
+      "hold_reason": "The imported claim is a verbatim duplicate of the glossary explanation, not an independently established second discovery; source ID alone is not independent textual verification."
+    }
+  ],
+  "pitre_correction": {
+    "id": "DYK-H04-P-061",
+    "before": {
+      "en": "In old Noto, a drummer summoned votive candle-bearers for Saint Conrad's procession; some devotees wore white as the reliquary passed rows of lighted offerings.",
+      "fr": "À Noto, un tambour appelait autrefois les porteurs de cierges votifs pour la procession de saint Conrad ; certains fidèles étaient vêtus de blanc tandis que le reliquaire passait entre des rangées d'offrandes lumineuses."
+    },
+    "after": {
+      "en": "At Noto's historical Saint Conrad procession, a drummer summoned bearers of tall votive candles, and the saint's reliquary passed between two rows of lights as devotees knelt.",
+      "fr": "Lors de l'ancienne procession de saint Conrad à Noto, un tambour appelait les porteurs de grands cierges votifs ; le reliquaire du saint passait entre deux rangées de lumières tandis que les fidèles s'agenouillaient."
+    },
+    "secondary_url": "https://www.iris.unict.it/retrieve/0dc62bb9-6e3a-484a-ad65-e87eb9193882/tesi_Luisa_Trovato_01.pdf",
+    "quoted_original_page": 302,
+    "reason": "Remove unsubstantiated claim that devotees wore white clothes: original excerpt describes white towels slung on the candle-bearers' shoulders. Restore confirmed drummer, votive candle, reliquary and kneeling sequence.",
+    "original_page_image_reviewed": false,
+    "release_authorized": false
+  },
+  "policy": [
+    "Glossary explanations copied verbatim are lineage checks only; they are not eight independently verified new Did You Know discoveries.",
+    "A Pitrè passage reproduced in a doctoral thesis is partial textual corroboration, not an original 1900 scan read and not automatic publication signoff.",
+    "Never convert source provenance matching to primary-text verification without original witness examination."
+  ]
+}
