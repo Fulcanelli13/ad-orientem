@@ -9,6 +9,7 @@ import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
 import { calendarCustomHistoricalVariantPreview } from "./customs-existing-variant-preview.js";
 import { calendarR18ElevenEditorialReviewMarkup } from "./customs-r18-eleven-editorial-preview.js";
+import { calendarR18SixEditorialSupplementMarkup } from "./customs-r18-six-editorial-supplement.js";
 import { normaliseCustomSearch, calendarCustomSearchIndex, calendarCustomSearchMatches } from "./customs-search.js";
 import { groupCalendarCustomsByYear } from "../customs/year-led-library.js";
 import { personalCustomsForDate } from "../customs/personal-store.js";
@@ -786,7 +787,8 @@ function calendarCustomCatalogueMarkup(){
     +'<input id="ao-cal-custom-search" type="search" data-cal-custom-search autocomplete="off" placeholder="'+esc(L("Name or subject","Nom ou sujet"))+'">'
     +'<p data-cal-custom-empty hidden>'+esc(L("No matching customs.","Aucune coutume correspondante."))+'</p>'
     +'<div class="aoCalCustomCatalogueItems">'+groups.map(group=>'<section class="aoCalCustomYearGroup" data-cal-custom-year-group="'+esc(group.key)+'"><h4>'+esc(isFr?group.fr:group.en)+'</h4>'+group.articles.map(item).join("")+'</section>').join("")+'</div>'
-    +'</details>'+(r18ElevenEditorialReviewEnabled()?calendarR18ElevenEditorialReviewMarkup({fr:isFr}):"")+'+<button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+' →</button></section>';
+    +'</details>'+(r18ElevenEditorialReviewEnabled()?calendarR18ElevenEditorialReviewMarkup({fr:isFr}):"")+
+    (r18ElevenEditorialReviewEnabled()?calendarR18SixEditorialSupplementMarkup({fr:isFr}):"")+'+<button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+' →</button></section>';
 }
 
 
