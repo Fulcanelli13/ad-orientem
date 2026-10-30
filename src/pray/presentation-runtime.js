@@ -3434,8 +3434,8 @@ function onClick(e){
    if(Number.isInteger(n)&&n>=0&&n<steps.length){MERCY.step=n;return render()}
    return;
   }
-  if(b.hasAttribute('data-p435930-mercy-guide')){MERCY.guide=MERCY.guide==='guided'?'simple':'guided';return render()}
-  if(b.hasAttribute('data-p435930-mercy-closing')){MERCY.includeClosing=!MERCY.includeClosing;return render()}
+  if(b.hasAttribute('data-p435930-mercy-guide')){MERCY.optionsOpen=Boolean(b.closest('details[data-ao-mercy-options]')?.open);MERCY.guide=MERCY.guide==='guided'?'simple':'guided';return render()}
+  if(b.hasAttribute('data-p435930-mercy-closing')){MERCY.optionsOpen=Boolean(b.closest('details[data-ao-mercy-options]')?.open);MERCY.includeClosing=!MERCY.includeClosing;return render()}
  }
  if(b.matches('[data-p435930-close]'))return close();
  if(b.matches('[data-p435930-home]')||b.matches('[data-p435930-home-retry]'))return goGlobalHome();
