@@ -5,6 +5,10 @@ on:
       - tools/directory/discover-open-place-media.py
       - tests/directory-photo-discovery-test.py
       - .github/workflows/directory-canonical-place-photo-discovery.yml
+      - tools/directory/build-p79-place-photo-review.mjs
+      - docs/research/directory/p79-canonical-place-photo-review.html
+      - docs/research/directory/P79-PLACE-PHOTO-REVIEW.md
+      - tests/p79-place-photo-review-contract.mjs
       - docs/DIRECTORY-CANONICAL-PLACE-PHOTO-PIPELINE.md
 permissions:
   contents: read
@@ -25,3 +29,7 @@ jobs:
           python -m py_compile tools/directory/discover-open-place-media.py
           python tests/directory-photo-discovery-test.py -v
           node tests/production-tree-hygiene.mjs
+      - name: Check frozen P79 candidate reviewer against source records
+        run: |
+          node tools/directory/build-p79-place-photo-review.mjs --check
+          node tests/p79-place-photo-review-contract.mjs
