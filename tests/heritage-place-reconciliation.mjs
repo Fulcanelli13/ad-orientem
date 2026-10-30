@@ -74,8 +74,11 @@ assert.equal(R.counts.places,G.places.length);
 assert.equal(R.counts.places_with_linked_records,linked);
 for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","novena_context","routes","directory_links"]){
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
- assert.equal(R.distinct_place_links[kind]+(kind==="relics"?1:0),distinct,"Only the independently sourced Père Laval relic may extend the frozen relic Place count");
+ assert.equal(R.distinct_place_links[kind],distinct,"The dated historical crosswalk count must remain immutable");
 }
+const actualCurrentRelicPlaceCount=[...expected.values()].filter(categories=>categories.has("relics")).length;
+assert.equal(actualCurrentRelicPlaceCount,R.distinct_place_links.relics+1,
+ "The newer source-attested Sainte-Croix record increases current relic coverage, without rewriting historical snapshot");
 // The 10 October editorial snapshot is immutable. Reconcile twenty later,
 // explicitly source-locked non-pin additions; do not rewrite the snapshot as if
 // it had been researched on that original date.
