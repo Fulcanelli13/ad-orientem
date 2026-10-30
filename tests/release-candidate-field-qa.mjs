@@ -146,13 +146,15 @@ async function openSurface(page,surface,width){
     // Settings is contextual, never an extra permanent destination.
     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   }else if(surface==="calendar"){
-    // PR #1023 made Calendar a canonical in-page Today view. Many contextual
-    // date links exist, so use the unique Month tab rather than an ambiguous
-    // [data-home-calendar] locator or retired sixth shell destination.
+    // H4 keeps Calendar embedded under Today. Its dated Calendar opener
+    // replaces the old Month tab, and is distinct from contextual event links
+    // and the retired sixth shell destination.
     await page.locator("[data-ao-app-surface='home']").first().click();
     await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
-    const month=page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]');
-    assert.equal(await month.count(),1,width+"px Today lost its Month tab");
+    const month=page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]');
+    assert.equal(await month.count(),1,width+"px H4 lost its dated Calendar entry");
+    assert.ok(await month.evaluate(el=>el.getBoundingClientRect().height)>=44,
+      width+"px H4 Calendar opener is below the phone touch target");
     await month.click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
