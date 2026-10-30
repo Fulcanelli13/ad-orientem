@@ -1,0 +1,3822 @@
+{
+  "schema": "AO_SACRED_ART_BATCH02_OFFICIAL_NATIVE_SCREENING_V1",
+  "createdUtc": "2026-10-30T11:06:22.858441+00:00",
+  "reviewCsv": "data/calendar/sacred-art-master-v2/first-look-photo-review-batch-02.csv",
+  "cases": 40,
+  "resultsByStatus": {
+    "HOLD_HISTORICAL_ORIGINAL_SHA_CHANGED": 3,
+    "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED": 37
+  },
+  "historicalSha256Matches": 2,
+  "newCurrentSourceSha256WithoutHistoricalComparison": 35,
+  "advisoryFlags": {
+    "SUSPECT_DARK_EXTERIOR_MARGIN": 5,
+    "POSSIBLE_UNIFORM_FRAME_OR_MATTE": 4,
+    "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE": 13
+  },
+  "unvalidatedOrHeld": 3,
+  "autoApprovedPhotoCount": 0,
+  "originalSourceRecordsMutated": 0,
+  "editorialDecisionsMutated": 0,
+  "humanPhotoApprovals": 0,
+  "fileRightsFinalCertifications": 0,
+  "queue1Promotions": 0,
+  "productionChanges": 0,
+  "feesEur": 0,
+  "notes": [
+    "Institutional object/rights metadata does not clear a specific photo in every jurisdiction.",
+    "No title-based source substitutions. If the museum points to a different image file, hold.",
+    "No archived original hash means the new SHA is a current source fingerprint, not historical validation."
+  ],
+  "records": [
+    {
+      "physicalWorkGroup": "CANONICAL::cma-143644",
+      "sourcePage": "https://clevelandart.org/art/1968.100",
+      "title": "Adoration of the Shepherds",
+      "artist": "Bernardo Cavallino",
+      "historicOriginalSha256": "725146e8bbf6ac79fcb741ce42cc891f8bfd2b5b34e758c89992a4f16377acad",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+      "status": "HOLD_HISTORICAL_ORIGINAL_SHA_CHANGED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+      "fileBytes": 6445697,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-712539",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/712539",
+      "title": "Saint Philip Neri (1515–1595)",
+      "artist": "Carlo Dolci",
+      "historicOriginalSha256": "667ad6757d2356e03f6e3629c854861eabdde8f91deeec76c3808cabcd9fc75a",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-944-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "667ad6757d2356e03f6e3629c854861eabdde8f91deeec76c3808cabcd9fc75a",
+      "fileBytes": 2606377,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-944-001.jpg",
+      "nativeDimensions": [
+        3363,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8407,
+      "screeningSampleDimensions": [
+        646,
+        768
+      ],
+      "outerBandWidthSamplePx": 29,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            12.6,
+            9.2,
+            5.9
+          ],
+          "luminanceMean": 9.9,
+          "luminanceStddev": 10.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.64
+        },
+        "bottom": {
+          "rgbMean": [
+            7.2,
+            6.4,
+            4.7
+          ],
+          "luminanceMean": 6.5,
+          "luminanceStddev": 6.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.932
+        },
+        "left": {
+          "rgbMean": [
+            8.3,
+            7.9,
+            5.5
+          ],
+          "luminanceMean": 7.7,
+          "luminanceStddev": 7.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.898
+        },
+        "right": {
+          "rgbMean": [
+            10.6,
+            8.4,
+            6.0
+          ],
+          "luminanceMean": 8.8,
+          "luminanceStddev": 8.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.719
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          56.2,
+          46.7,
+          37.0
+        ],
+        "luminanceMean": 48.5,
+        "luminanceStddev": 47.4,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.314
+      },
+      "edgeContrastStddevHeuristic": 13.92,
+      "advisoryFlags": [
+        "SUSPECT_DARK_EXTERIOR_MARGIN",
+        "POSSIBLE_UNIFORM_FRAME_OR_MATTE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": true,
+      "newSha256CapturedWithoutHistoricalComparison": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-122338",
+      "sourcePage": "https://clevelandart.org/art/1942.635",
+      "title": "The Annunciation",
+      "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1942.635/1942.635_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "aa6178b97052ec2dff5ad2f9da58269a23cabfd311983fce7c1f9d2b66b4075a",
+      "fileBytes": 7475699,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1942.635/1942.635_print.jpg",
+      "nativeDimensions": [
+        2815,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8279,
+      "screeningSampleDimensions": [
+        636,
+        768
+      ],
+      "outerBandWidthSamplePx": 29,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            118.5,
+            93.7,
+            79.4
+          ],
+          "luminanceMean": 99.5,
+          "luminanceStddev": 55.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            177.7,
+            162.2,
+            131.1
+          ],
+          "luminanceMean": 163.3,
+          "luminanceStddev": 34.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            129.2,
+            108.0,
+            86.3
+          ],
+          "luminanceMean": 111.9,
+          "luminanceStddev": 52.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            112.3,
+            80.8,
+            69.2
+          ],
+          "luminanceMean": 88.9,
+          "luminanceStddev": 44.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          100.4,
+          96.4,
+          85.7
+        ],
+        "luminanceMean": 96.4,
+        "luminanceStddev": 55.0,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 43.26,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-438724",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "historicOriginalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT5656.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "fileBytes": 3055151,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT5656.jpg",
+      "nativeDimensions": [
+        3741,
+        3658
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.0227,
+      "screeningSampleDimensions": [
+        768,
+        751
+      ],
+      "outerBandWidthSamplePx": 34,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            96.9,
+            76.0,
+            52.9
+          ],
+          "luminanceMean": 79.6,
+          "luminanceStddev": 43.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.079
+        },
+        "bottom": {
+          "rgbMean": [
+            93.1,
+            76.8,
+            54.3
+          ],
+          "luminanceMean": 79.1,
+          "luminanceStddev": 52.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.206
+        },
+        "left": {
+          "rgbMean": [
+            73.1,
+            58.1,
+            42.8
+          ],
+          "luminanceMean": 60.8,
+          "luminanceStddev": 45.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.136
+        },
+        "right": {
+          "rgbMean": [
+            95.9,
+            81.7,
+            69.2
+          ],
+          "luminanceMean": 84.5,
+          "luminanceStddev": 45.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.102
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          70.6,
+          66.2,
+          68.4
+        ],
+        "luminanceMean": 67.7,
+        "luminanceStddev": 41.9,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.001
+      },
+      "edgeContrastStddevHeuristic": 32.64,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": true,
+      "newSha256CapturedWithoutHistoricalComparison": false
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-135659",
+      "sourcePage": "https://clevelandart.org/art/1959.189",
+      "title": "The Immaculate Conception",
+      "artist": "Bartolomé Esteban Murillo",
+      "historicOriginalSha256": "3529a2073c509f42fa047229bd38cfc633e41d07b91cc6c693172678f130b2e2",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+      "status": "HOLD_HISTORICAL_ORIGINAL_SHA_CHANGED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "fileBytes": 4691706,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-136507",
+      "sourcePage": "https://clevelandart.org/art/1960.79",
+      "title": "The Trinity",
+      "artist": "Laurent Girardin",
+      "historicOriginalSha256": "214ac3f6f09304ff96ab68beb5395e8a0d220c623613395dd494f05f98f84022",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1960.79/1960.79_print.jpg",
+      "status": "HOLD_HISTORICAL_ORIGINAL_SHA_CHANGED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "161aa1edd73d63709ed835e5e20e3ee5e7a175358d0a52a00a8c0ea86840a050",
+      "fileBytes": 8508548,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1960.79/1960.79_print.jpg"
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-702752",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/702752",
+      "title": "Christ and the Woman of Samaria",
+      "artist": "Benedetto Luti",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-20208-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
+      "fileBytes": 4496125,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-20208-001.jpg",
+      "nativeDimensions": [
+        3262,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8155,
+      "screeningSampleDimensions": [
+        626,
+        768
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            39.7,
+            39.4,
+            33.5
+          ],
+          "luminanceMean": 38.8,
+          "luminanceStddev": 49.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.559
+        },
+        "bottom": {
+          "rgbMean": [
+            49.2,
+            41.8,
+            27.5
+          ],
+          "luminanceMean": 42.4,
+          "luminanceStddev": 50.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.558
+        },
+        "left": {
+          "rgbMean": [
+            44.7,
+            36.4,
+            22.9
+          ],
+          "luminanceMean": 37.3,
+          "luminanceStddev": 45.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.571
+        },
+        "right": {
+          "rgbMean": [
+            26.0,
+            23.3,
+            16.6
+          ],
+          "luminanceMean": 23.4,
+          "luminanceStddev": 29.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.587
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          90.0,
+          58.3,
+          34.9
+        ],
+        "luminanceMean": 65.1,
+        "luminanceStddev": 23.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 21.27,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437403",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437403",
+      "title": "Christ and the Woman of Samaria",
+      "artist": "Rembrandt",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP145935.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "3c748a4137bae35764fa9fb607bf4af21366436db4c18594ec7aaba72427d108",
+      "fileBytes": 2485638,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP145935.jpg",
+      "nativeDimensions": [
+        2912,
+        3722
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7824,
+      "screeningSampleDimensions": [
+        601,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            29.7,
+            22.4,
+            14.5
+          ],
+          "luminanceMean": 23.7,
+          "luminanceStddev": 18.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.242
+        },
+        "bottom": {
+          "rgbMean": [
+            40.0,
+            24.0,
+            12.3
+          ],
+          "luminanceMean": 27.4,
+          "luminanceStddev": 16.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.201
+        },
+        "left": {
+          "rgbMean": [
+            49.6,
+            38.9,
+            28.3
+          ],
+          "luminanceMean": 40.9,
+          "luminanceStddev": 31.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.214
+        },
+        "right": {
+          "rgbMean": [
+            46.6,
+            33.6,
+            21.8
+          ],
+          "luminanceMean": 36.1,
+          "luminanceStddev": 31.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.281
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          38.0,
+          27.4,
+          18.3
+        ],
+        "luminanceMean": 29.5,
+        "luminanceStddev": 26.0,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.108
+      },
+      "edgeContrastStddevHeuristic": 23.94,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-97181",
+      "sourcePage": "https://clevelandart.org/art/1916.816",
+      "title": "Preparation for the Crucifixion",
+      "artist": "",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1916.816/1916.816_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "944ba04f66faaf903df9b945dc32952b8bf0b0f5e606eb45f7073c0739c7cc74",
+      "fileBytes": 7553922,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1916.816/1916.816_print.jpg",
+      "nativeDimensions": [
+        2837,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8344,
+      "screeningSampleDimensions": [
+        641,
+        768
+      ],
+      "outerBandWidthSamplePx": 29,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            75.8,
+            76.6,
+            65.9
+          ],
+          "luminanceMean": 75.1,
+          "luminanceStddev": 11.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            59.6,
+            48.6,
+            39.9
+          ],
+          "luminanceMean": 50.9,
+          "luminanceStddev": 17.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            65.4,
+            58.6,
+            48.9
+          ],
+          "luminanceMean": 59.5,
+          "luminanceStddev": 20.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            83.4,
+            59.0,
+            51.5
+          ],
+          "luminanceMean": 65.4,
+          "luminanceStddev": 19.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          75.8,
+          67.1,
+          55.4
+        ],
+        "luminanceMean": 68.4,
+        "luminanceStddev": 28.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 27.85,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-438134",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438134",
+      "title": "Saint Catherine of Alexandria in Prison",
+      "artist": "Paolo Veronese (Paolo Caliari)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-035.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "263c9e06dbc7f5ef80325def8bae06f2369ee79c41f4b04930c610771d0a0fa7",
+      "fileBytes": 3977026,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-035.jpg",
+      "nativeDimensions": [
+        2966,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7415,
+      "screeningSampleDimensions": [
+        569,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            36.5,
+            26.7,
+            16.0
+          ],
+          "luminanceMean": 28.4,
+          "luminanceStddev": 49.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.685
+        },
+        "bottom": {
+          "rgbMean": [
+            39.9,
+            29.9,
+            18.8
+          ],
+          "luminanceMean": 31.6,
+          "luminanceStddev": 55.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.735
+        },
+        "left": {
+          "rgbMean": [
+            46.0,
+            35.3,
+            23.2
+          ],
+          "luminanceMean": 37.1,
+          "luminanceStddev": 64.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.728
+        },
+        "right": {
+          "rgbMean": [
+            43.4,
+            33.2,
+            21.8
+          ],
+          "luminanceMean": 35.0,
+          "luminanceStddev": 63.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.725
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          47.0,
+          35.7,
+          25.8
+        ],
+        "luminanceMean": 38.0,
+        "luminanceStddev": 36.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.237
+      },
+      "edgeContrastStddevHeuristic": 35.44,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436198",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436198",
+      "title": "Saint Cecilia",
+      "artist": "Abraham van Diepenbeeck",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-22910-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "95566ebeb14d227a44c2464864556ad0049b40a1ce5128fbb8a065713027bc7f",
+      "fileBytes": 3983218,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-22910-001.jpg",
+      "nativeDimensions": [
+        3385,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8462,
+      "screeningSampleDimensions": [
+        650,
+        768
+      ],
+      "outerBandWidthSamplePx": 29,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            29.5,
+            21.1,
+            14.8
+          ],
+          "luminanceMean": 22.9,
+          "luminanceStddev": 43.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.735
+        },
+        "bottom": {
+          "rgbMean": [
+            27.0,
+            23.3,
+            17.2
+          ],
+          "luminanceMean": 23.7,
+          "luminanceStddev": 47.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.757
+        },
+        "left": {
+          "rgbMean": [
+            42.2,
+            32.8,
+            23.5
+          ],
+          "luminanceMean": 34.6,
+          "luminanceStddev": 54.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.629
+        },
+        "right": {
+          "rgbMean": [
+            37.5,
+            29.5,
+            21.5
+          ],
+          "luminanceMean": 31.0,
+          "luminanceStddev": 54.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.662
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          92.4,
+          70.2,
+          46.5
+        ],
+        "luminanceMean": 74.1,
+        "luminanceStddev": 34.4,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 25.9,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-647338",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/647338",
+      "title": "Saint Francis in Ecstasy",
+      "artist": "Giovanni Benedetto Castiglione (Il Grechetto)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP328663.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "ea1999a8bf70a3eedf2a1d3a059fbed4d6623c3970bf813645572a379c084f5a",
+      "fileBytes": 1729202,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP328663.jpg",
+      "nativeDimensions": [
+        2675,
+        3884
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.6887,
+      "screeningSampleDimensions": [
+        529,
+        768
+      ],
+      "outerBandWidthSamplePx": 24,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            77.4,
+            68.1,
+            54.4
+          ],
+          "luminanceMean": 69.3,
+          "luminanceStddev": 32.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.126
+        },
+        "bottom": {
+          "rgbMean": [
+            40.1,
+            29.3,
+            23.2
+          ],
+          "luminanceMean": 31.8,
+          "luminanceStddev": 22.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.147
+        },
+        "left": {
+          "rgbMean": [
+            47.5,
+            42.7,
+            36.2
+          ],
+          "luminanceMean": 43.4,
+          "luminanceStddev": 24.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.097
+        },
+        "right": {
+          "rgbMean": [
+            55.2,
+            50.4,
+            40.6
+          ],
+          "luminanceMean": 50.7,
+          "luminanceStddev": 25.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.081
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          65.4,
+          48.8,
+          36.7
+        ],
+        "luminanceMean": 52.4,
+        "luminanceStddev": 23.3,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 24.61,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-136680",
+      "sourcePage": "https://clevelandart.org/art/1961.219",
+      "title": "Saint Jerome",
+      "artist": "Jusepe de Ribera (Spanish, 1591–1652)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1961.219/1961.219_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "0b876319f895d7758a7bdac6e7c0c9a247054d825f4800991146daf1709a8bcd",
+      "fileBytes": 4999515,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1961.219/1961.219_print.jpg",
+      "nativeDimensions": [
+        2640,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7765,
+      "screeningSampleDimensions": [
+        596,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            36.4,
+            31.5,
+            27.5
+          ],
+          "luminanceMean": 32.5,
+          "luminanceStddev": 3.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            63.9,
+            41.5,
+            30.2
+          ],
+          "luminanceMean": 46.9,
+          "luminanceStddev": 12.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            33.1,
+            30.4,
+            27.2
+          ],
+          "luminanceMean": 30.8,
+          "luminanceStddev": 2.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            40.1,
+            34.5,
+            28.9
+          ],
+          "luminanceMean": 35.5,
+          "luminanceStddev": 12.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          86.0,
+          68.1,
+          53.4
+        ],
+        "luminanceMean": 71.8,
+        "luminanceStddev": 47.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 14.78,
+      "advisoryFlags": [
+        "POSSIBLE_UNIFORM_FRAME_OR_MATTE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-438824",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438824",
+      "title": "Saint John the Baptist Preaching",
+      "artist": "Mattia Preti (Il Cavalier Calabrese)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP152164.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "2cf40d7d5fe0c8a513b3054281d60ee5c31ce03adcb53be40f79d2d588b2929a",
+      "fileBytes": 3523975,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP152164.jpg",
+      "nativeDimensions": [
+        2760,
+        3838
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7191,
+      "screeningSampleDimensions": [
+        552,
+        768
+      ],
+      "outerBandWidthSamplePx": 25,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            47.4,
+            32.6,
+            20.9
+          ],
+          "luminanceMean": 35.6,
+          "luminanceStddev": 29.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.188
+        },
+        "bottom": {
+          "rgbMean": [
+            34.4,
+            25.9,
+            15.3
+          ],
+          "luminanceMean": 27.2,
+          "luminanceStddev": 19.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.187
+        },
+        "left": {
+          "rgbMean": [
+            33.6,
+            25.5,
+            16.8
+          ],
+          "luminanceMean": 26.9,
+          "luminanceStddev": 33.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.338
+        },
+        "right": {
+          "rgbMean": [
+            76.8,
+            55.1,
+            32.3
+          ],
+          "luminanceMean": 59.0,
+          "luminanceStddev": 40.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.118
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          62.3,
+          45.0,
+          29.2
+        ],
+        "luminanceMean": 48.4,
+        "luminanceStddev": 38.3,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.053
+      },
+      "edgeContrastStddevHeuristic": 31.47,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437729",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+      "title": "Saint Michael the Archangel",
+      "artist": "Ignacio de Ries",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-26763-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "26be17aa91fd738b87c38204430e9cff8333197c585fd4f95706d25e43fc3b4e",
+      "fileBytes": 4166277,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-26763-001.jpg",
+      "nativeDimensions": [
+        2694,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": 1,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.6735,
+      "screeningSampleDimensions": [
+        517,
+        768
+      ],
+      "outerBandWidthSamplePx": 23,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            89.2,
+            62.0,
+            27.3
+          ],
+          "luminanceMean": 66.2,
+          "luminanceStddev": 43.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.276
+        },
+        "bottom": {
+          "rgbMean": [
+            32.7,
+            21.8,
+            13.8
+          ],
+          "luminanceMean": 24.1,
+          "luminanceStddev": 21.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.338
+        },
+        "left": {
+          "rgbMean": [
+            55.6,
+            39.4,
+            24.8
+          ],
+          "luminanceMean": 42.6,
+          "luminanceStddev": 38.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.3
+        },
+        "right": {
+          "rgbMean": [
+            62.8,
+            44.1,
+            25.9
+          ],
+          "luminanceMean": 47.6,
+          "luminanceStddev": 41.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.297
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          90.7,
+          64.5,
+          50.8
+        ],
+        "luminanceMean": 70.7,
+        "luminanceStddev": 35.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.003
+      },
+      "edgeContrastStddevHeuristic": 27.69,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437542",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artist": "Peter Paul Rubens",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-013.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "fileBytes": 4103505,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-013.jpg",
+      "nativeDimensions": [
+        3094,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7735,
+      "screeningSampleDimensions": [
+        594,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            37.4,
+            32.3,
+            23.4
+          ],
+          "luminanceMean": 32.8,
+          "luminanceStddev": 42.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.511
+        },
+        "bottom": {
+          "rgbMean": [
+            30.0,
+            23.2,
+            16.8
+          ],
+          "luminanceMean": 24.5,
+          "luminanceStddev": 27.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.471
+        },
+        "left": {
+          "rgbMean": [
+            39.6,
+            34.7,
+            26.5
+          ],
+          "luminanceMean": 35.2,
+          "luminanceStddev": 38.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.447
+        },
+        "right": {
+          "rgbMean": [
+            30.9,
+            26.9,
+            20.7
+          ],
+          "luminanceMean": 27.4,
+          "luminanceStddev": 34.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.546
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          108.2,
+          79.4,
+          55.5
+        ],
+        "luminanceMean": 85.3,
+        "luminanceStddev": 33.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 22.6,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-150955",
+      "sourcePage": "https://clevelandart.org/art/1982.36",
+      "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+      "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1982.36/1982.36_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "d738e33cf352a13f1bc8e4178449c0938cc59f6d149f4cfb2477d7dd93ccc71a",
+      "fileBytes": 6063450,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1982.36/1982.36_print.jpg",
+      "nativeDimensions": [
+        2640,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7765,
+      "screeningSampleDimensions": [
+        596,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            95.0,
+            73.9,
+            59.1
+          ],
+          "luminanceMean": 78.5,
+          "luminanceStddev": 25.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            55.2,
+            51.0,
+            40.8
+          ],
+          "luminanceMean": 51.1,
+          "luminanceStddev": 21.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            83.9,
+            68.8,
+            56.6
+          ],
+          "luminanceMean": 71.9,
+          "luminanceStddev": 27.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            75.0,
+            63.4,
+            55.8
+          ],
+          "luminanceMean": 66.0,
+          "luminanceStddev": 23.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          90.3,
+          77.5,
+          65.3
+        ],
+        "luminanceMean": 79.9,
+        "luminanceStddev": 35.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 25.74,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-435900",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/435900",
+      "title": "The Adoration of the Shepherds with Saint Catherine of Alexandria",
+      "artist": "Cigoli (Ludovico Cardi)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT6545.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "71735160551b379138067a3386e5559bad881566959e2b039fc11bb2feddd839",
+      "fileBytes": 1855997,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT6545.jpg",
+      "nativeDimensions": [
+        2351,
+        3722
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.6316,
+      "screeningSampleDimensions": [
+        485,
+        768
+      ],
+      "outerBandWidthSamplePx": 22,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            107.4,
+            95.6,
+            68.4
+          ],
+          "luminanceMean": 96.0,
+          "luminanceStddev": 53.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.117
+        },
+        "bottom": {
+          "rgbMean": [
+            43.9,
+            36.2,
+            22.6
+          ],
+          "luminanceMean": 36.9,
+          "luminanceStddev": 20.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.109
+        },
+        "left": {
+          "rgbMean": [
+            66.7,
+            55.6,
+            43.3
+          ],
+          "luminanceMean": 57.5,
+          "luminanceStddev": 28.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.076
+        },
+        "right": {
+          "rgbMean": [
+            53.7,
+            45.5,
+            37.2
+          ],
+          "luminanceMean": 47.0,
+          "luminanceStddev": 28.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.116
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          83.1,
+          70.0,
+          51.8
+        ],
+        "luminanceMean": 71.8,
+        "luminanceStddev": 45.6,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 26.44,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437490",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437490",
+      "title": "The Annunciation",
+      "artist": "Hans Memling",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP240360.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "4a5b21d087c1c827c792b89b0c37c689e1c72b0779cc1a3b8bea92a1de69a36a",
+      "fileBytes": 2001949,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP240360.jpg",
+      "nativeDimensions": [
+        2425,
+        3878
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.6253,
+      "screeningSampleDimensions": [
+        480,
+        768
+      ],
+      "outerBandWidthSamplePx": 22,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            85.9,
+            48.1,
+            35.0
+          ],
+          "luminanceMean": 57.9,
+          "luminanceStddev": 22.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.011
+        },
+        "bottom": {
+          "rgbMean": [
+            60.1,
+            47.0,
+            35.2
+          ],
+          "luminanceMean": 49.6,
+          "luminanceStddev": 21.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.06
+        },
+        "left": {
+          "rgbMean": [
+            61.6,
+            48.5,
+            38.8
+          ],
+          "luminanceMean": 51.3,
+          "luminanceStddev": 32.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.142
+        },
+        "right": {
+          "rgbMean": [
+            93.3,
+            53.4,
+            39.6
+          ],
+          "luminanceMean": 63.8,
+          "luminanceStddev": 36.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.158
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          77.1,
+          56.2,
+          49.1
+        ],
+        "luminanceMean": 61.6,
+        "luminanceStddev": 38.1,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.024
+      },
+      "edgeContrastStddevHeuristic": 37.01,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-440393",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/440393",
+      "title": "The Baptism of Christ",
+      "artist": "Jacopo Bassano (Jacopo da Ponte)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP276931.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "bfb3e05e9fe0ec75b0bc55152d335bf834666fa672ce4cace595025f3e7390b1",
+      "fileBytes": 2048649,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP276931.jpg",
+      "nativeDimensions": [
+        3143,
+        3857
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.8149,
+      "screeningSampleDimensions": [
+        626,
+        768
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            17.3,
+            12.5,
+            11.3
+          ],
+          "luminanceMean": 13.8,
+          "luminanceStddev": 3.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.479
+        },
+        "bottom": {
+          "rgbMean": [
+            27.5,
+            23.2,
+            21.6
+          ],
+          "luminanceMean": 24.3,
+          "luminanceStddev": 6.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.005
+        },
+        "left": {
+          "rgbMean": [
+            32.1,
+            26.5,
+            24.1
+          ],
+          "luminanceMean": 27.9,
+          "luminanceStddev": 15.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.08
+        },
+        "right": {
+          "rgbMean": [
+            22.9,
+            20.0,
+            19.3
+          ],
+          "luminanceMean": 20.8,
+          "luminanceStddev": 5.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.178
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          42.0,
+          29.5,
+          23.8
+        ],
+        "luminanceMean": 32.5,
+        "luminanceStddev": 28.4,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.172
+      },
+      "edgeContrastStddevHeuristic": 16.62,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-438338",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438338",
+      "title": "The Burial of Christ",
+      "artist": "Annibale Carracci",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP312834.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+      "fileBytes": 2111362,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP312834.jpg",
+      "nativeDimensions": [
+        3122,
+        3875
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.8057,
+      "screeningSampleDimensions": [
+        619,
+        768
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            9.3,
+            8.4,
+            7.5
+          ],
+          "luminanceMean": 8.6,
+          "luminanceStddev": 8.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.784
+        },
+        "bottom": {
+          "rgbMean": [
+            11.3,
+            8.8,
+            8.3
+          ],
+          "luminanceMean": 9.5,
+          "luminanceStddev": 11.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.7
+        },
+        "left": {
+          "rgbMean": [
+            18.5,
+            16.9,
+            15.7
+          ],
+          "luminanceMean": 17.2,
+          "luminanceStddev": 16.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.465
+        },
+        "right": {
+          "rgbMean": [
+            15.0,
+            14.7,
+            14.0
+          ],
+          "luminanceMean": 14.7,
+          "luminanceStddev": 15.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.504
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          29.4,
+          22.4,
+          18.0
+        ],
+        "luminanceMean": 24.0,
+        "luminanceStddev": 19.2,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.246
+      },
+      "edgeContrastStddevHeuristic": 19.4,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437986",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437986",
+      "title": "The Denial of Saint Peter",
+      "artist": "Caravaggio (Michelangelo Merisi)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-12413-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "566616872ca68aa9301a91f4e8ebd7631433cc42358f963e3230cbe6dd913dea",
+      "fileBytes": 1615347,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-12413-001.jpg",
+      "nativeDimensions": [
+        3904,
+        2904
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.3444,
+      "screeningSampleDimensions": [
+        768,
+        571
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            13.1,
+            9.3,
+            2.6
+          ],
+          "luminanceMean": 9.7,
+          "luminanceStddev": 5.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.718
+        },
+        "bottom": {
+          "rgbMean": [
+            18.4,
+            13.8,
+            6.8
+          ],
+          "luminanceMean": 14.4,
+          "luminanceStddev": 10.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.572
+        },
+        "left": {
+          "rgbMean": [
+            15.9,
+            13.0,
+            7.5
+          ],
+          "luminanceMean": 13.3,
+          "luminanceStddev": 7.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.55
+        },
+        "right": {
+          "rgbMean": [
+            15.2,
+            12.4,
+            7.8
+          ],
+          "luminanceMean": 12.7,
+          "luminanceStddev": 7.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.573
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          21.2,
+          14.2,
+          5.5
+        ],
+        "luminanceMean": 15.3,
+        "luminanceStddev": 18.1,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.633
+      },
+      "edgeContrastStddevHeuristic": 13.98,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-438561",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438561",
+      "title": "The Denial of Saint Peter",
+      "artist": "Ludovico Carracci",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-40824-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "c69f9767527a3ea7249d8a2523bc8eec50810dd147dfcfb4bd0cdf7e3babc2ca",
+      "fileBytes": 2839735,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-40824-001.jpg",
+      "nativeDimensions": [
+        2727,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": 1,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.6817,
+      "screeningSampleDimensions": [
+        524,
+        768
+      ],
+      "outerBandWidthSamplePx": 24,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            10.9,
+            9.5,
+            7.7
+          ],
+          "luminanceMean": 9.7,
+          "luminanceStddev": 16.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.87
+        },
+        "bottom": {
+          "rgbMean": [
+            14.5,
+            12.7,
+            10.3
+          ],
+          "luminanceMean": 13.0,
+          "luminanceStddev": 27.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.878
+        },
+        "left": {
+          "rgbMean": [
+            13.8,
+            11.5,
+            8.9
+          ],
+          "luminanceMean": 11.9,
+          "luminanceStddev": 19.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.834
+        },
+        "right": {
+          "rgbMean": [
+            11.6,
+            9.4,
+            6.9
+          ],
+          "luminanceMean": 9.8,
+          "luminanceStddev": 18.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.875
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          70.9,
+          54.4,
+          42.1
+        ],
+        "luminanceMean": 57.9,
+        "luminanceStddev": 33.1,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 22.61,
+      "advisoryFlags": [
+        "SUSPECT_DARK_EXTERIOR_MARGIN"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436302",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436302",
+      "title": "The Good Samaritan",
+      "artist": "Domenico Fetti",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP278746.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da",
+      "fileBytes": 2874702,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP278746.jpg",
+      "nativeDimensions": [
+        2792,
+        3866
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7222,
+      "screeningSampleDimensions": [
+        555,
+        768
+      ],
+      "outerBandWidthSamplePx": 25,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            91.7,
+            83.1,
+            65.6
+          ],
+          "luminanceMean": 83.7,
+          "luminanceStddev": 32.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.096
+        },
+        "bottom": {
+          "rgbMean": [
+            49.7,
+            36.1,
+            29.0
+          ],
+          "luminanceMean": 39.4,
+          "luminanceStddev": 17.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.063
+        },
+        "left": {
+          "rgbMean": [
+            114.9,
+            104.2,
+            85.0
+          ],
+          "luminanceMean": 105.2,
+          "luminanceStddev": 36.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.034
+        },
+        "right": {
+          "rgbMean": [
+            74.4,
+            65.5,
+            53.4
+          ],
+          "luminanceMean": 66.7,
+          "luminanceStddev": 40.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.052
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          76.3,
+          64.5,
+          49.1
+        ],
+        "luminanceMean": 66.2,
+        "luminanceStddev": 25.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 28.28,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-436794",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436794",
+      "title": "The Last Judgment",
+      "artist": "Joos van Cleve",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-26502-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "a96c2979bbce3032a6fa7c0a1213833c645ec3586e612ae814080808838bedeb",
+      "fileBytes": 3459692,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-26502-001.jpg",
+      "nativeDimensions": [
+        3095,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": 1,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7738,
+      "screeningSampleDimensions": [
+        594,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "bottom": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "left": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "right": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          90.1,
+          72.9,
+          58.5
+        ],
+        "luminanceMean": 76.4,
+        "luminanceStddev": 37.1,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.001
+      },
+      "edgeContrastStddevHeuristic": 37.04,
+      "advisoryFlags": [
+        "SUSPECT_DARK_EXTERIOR_MARGIN",
+        "POSSIBLE_UNIFORM_FRAME_OR_MATTE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-97143",
+      "sourcePage": "https://clevelandart.org/art/1916.782",
+      "title": "Adoration of the Shepherds",
+      "artist": "",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1916.782/1916.782_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "bbd7a0d0f59e9accc3b5cf45017709895ef5b8e7e49f242d2f9c0f959241776d",
+      "fileBytes": 7445044,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1916.782/1916.782_print.jpg",
+      "nativeDimensions": [
+        2410,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7088,
+      "screeningSampleDimensions": [
+        544,
+        768
+      ],
+      "outerBandWidthSamplePx": 24,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            107.7,
+            119.0,
+            105.8
+          ],
+          "luminanceMean": 114.1,
+          "luminanceStddev": 23.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            156.5,
+            130.7,
+            84.9
+          ],
+          "luminanceMean": 133.2,
+          "luminanceStddev": 29.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            146.2,
+            126.8,
+            90.0
+          ],
+          "luminanceMean": 128.4,
+          "luminanceStddev": 35.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            108.1,
+            89.4,
+            62.5
+          ],
+          "luminanceMean": 91.9,
+          "luminanceStddev": 29.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          117.4,
+          97.0,
+          64.7
+        ],
+        "luminanceMean": 99.4,
+        "luminanceStddev": 37.5,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 34.48,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-127746",
+      "sourcePage": "https://clevelandart.org/art/1950.400",
+      "title": "Baptism of Christ",
+      "artist": "Jacopo Tintoretto (Italian, 1518–1594)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1950.400/1950.400_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "3ec7f722c11141337c98a884cd34c87cf09ed4f22e648603136bca0239ba046e",
+      "fileBytes": 6239791,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1950.400/1950.400_print.jpg",
+      "nativeDimensions": [
+        3400,
+        2253
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 1.5091,
+      "screeningSampleDimensions": [
+        768,
+        509
+      ],
+      "outerBandWidthSamplePx": 23,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            119.7,
+            113.1,
+            95.4
+          ],
+          "luminanceMean": 113.0,
+          "luminanceStddev": 45.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            54.2,
+            54.2,
+            44.8
+          ],
+          "luminanceMean": 53.1,
+          "luminanceStddev": 16.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            110.3,
+            106.4,
+            94.0
+          ],
+          "luminanceMean": 106.2,
+          "luminanceStddev": 28.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            86.6,
+            81.0,
+            67.6
+          ],
+          "luminanceMean": 81.1,
+          "luminanceStddev": 19.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          95.4,
+          91.8,
+          79.3
+        ],
+        "luminanceMean": 91.5,
+        "luminanceStddev": 34.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 33.29,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-94846",
+      "sourcePage": "https://clevelandart.org/art/1915.407",
+      "title": "Pietà",
+      "artist": "",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1915.407/1915.407_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "e76eab273a2ce74b4b0077ff517fbb94906ada94735a86225fe12f0e6c955415",
+      "fileBytes": 6193102,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1915.407/1915.407_print.jpg",
+      "nativeDimensions": [
+        2551,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7503,
+      "screeningSampleDimensions": [
+        576,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            50.2,
+            52.0,
+            49.3
+          ],
+          "luminanceMean": 51.1,
+          "luminanceStddev": 5.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            61.3,
+            59.6,
+            51.8
+          ],
+          "luminanceMean": 59.2,
+          "luminanceStddev": 18.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            96.8,
+            87.8,
+            66.9
+          ],
+          "luminanceMean": 88.1,
+          "luminanceStddev": 37.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            98.5,
+            73.5,
+            56.6
+          ],
+          "luminanceMean": 79.0,
+          "luminanceStddev": 26.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          78.8,
+          68.9,
+          53.4
+        ],
+        "luminanceMean": 70.1,
+        "luminanceStddev": 29.0,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 19.03,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-97147",
+      "sourcePage": "https://clevelandart.org/art/1916.786",
+      "title": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1916.786/1916.786_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "fileBytes": 8293229,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1916.786/1916.786_print.jpg",
+      "nativeDimensions": [
+        2673,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7862,
+      "screeningSampleDimensions": [
+        604,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            46.2,
+            68.8,
+            59.8
+          ],
+          "luminanceMean": 61.0,
+          "luminanceStddev": 18.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            95.6,
+            89.7,
+            59.3
+          ],
+          "luminanceMean": 88.0,
+          "luminanceStddev": 32.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            97.8,
+            92.8,
+            63.5
+          ],
+          "luminanceMean": 91.0,
+          "luminanceStddev": 37.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            101.7,
+            102.1,
+            81.1
+          ],
+          "luminanceMean": 99.6,
+          "luminanceStddev": 42.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          117.9,
+          115.3,
+          86.0
+        ],
+        "luminanceMean": 112.7,
+        "luminanceStddev": 38.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 26.45,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-159488",
+      "sourcePage": "https://clevelandart.org/art/1996.26",
+      "title": "The Trinity",
+      "artist": "Hendrik van Balen (Flemish, 1575–1632)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1996.26/1996.26_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "1880866ce9b1cfc27c59a177fbe16689d6d2a595aa69b3cf2fbf9a62c59f49a7",
+      "fileBytes": 4353315,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1996.26/1996.26_print.jpg",
+      "nativeDimensions": [
+        2720,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8,
+      "screeningSampleDimensions": [
+        614,
+        768
+      ],
+      "outerBandWidthSamplePx": 28,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            1.5,
+            1.4,
+            1.3
+          ],
+          "luminanceMean": 1.4,
+          "luminanceStddev": 9.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.976
+        },
+        "bottom": {
+          "rgbMean": [
+            13.5,
+            12.7,
+            11.1
+          ],
+          "luminanceMean": 12.8,
+          "luminanceStddev": 33.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.814
+        },
+        "left": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        },
+        "right": {
+          "rgbMean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "luminanceMean": 0.0,
+          "luminanceStddev": 0.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 1.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          108.6,
+          89.0,
+          75.1
+        ],
+        "luminanceMean": 93.3,
+        "luminanceStddev": 47.9,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 30.39,
+      "advisoryFlags": [
+        "SUSPECT_DARK_EXTERIOR_MARGIN",
+        "POSSIBLE_UNIFORM_FRAME_OR_MATTE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-370119",
+      "sourcePage": "https://clevelandart.org/art/2019.168",
+      "title": "Holy Family with the Mystic Marriage of Saint Catherine",
+      "artist": "Tommaso d’Antonio Manzuoli, called Maso da San Friano (Italian, 1531–1571)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/2019.168/2019.168_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "f0e2a6a0727d4c323bf78ab9b999b1ad4c2240c79a696cc0e8b250ec58fc2d10",
+      "fileBytes": 2578269,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/2019.168/2019.168_print.jpg",
+      "nativeDimensions": [
+        2596,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7635,
+      "screeningSampleDimensions": [
+        586,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            27.4,
+            24.6,
+            22.0
+          ],
+          "luminanceMean": 25.1,
+          "luminanceStddev": 22.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.317
+        },
+        "bottom": {
+          "rgbMean": [
+            89.1,
+            46.8,
+            36.5
+          ],
+          "luminanceMean": 58.3,
+          "luminanceStddev": 23.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            64.8,
+            53.5,
+            43.7
+          ],
+          "luminanceMean": 55.7,
+          "luminanceStddev": 33.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.105
+        },
+        "right": {
+          "rgbMean": [
+            36.5,
+            22.6,
+            14.5
+          ],
+          "luminanceMean": 25.8,
+          "luminanceStddev": 22.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.263
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          66.3,
+          43.2,
+          35.1
+        ],
+        "luminanceMean": 49.2,
+        "luminanceStddev": 37.6,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.105
+      },
+      "edgeContrastStddevHeuristic": 17.39,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437336",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437336",
+      "title": "Madonna and Child with Saints Francis and Dominic and Angels",
+      "artist": "Giulio Cesare Procaccini",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT9442.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "934a14aa1e9c3efe31a9170825f24bf37b5bd6083953ebeb5c91cdc7265baf27",
+      "fileBytes": 1699030,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT9442.jpg",
+      "nativeDimensions": [
+        2102,
+        3722
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.5648,
+      "screeningSampleDimensions": [
+        434,
+        768
+      ],
+      "outerBandWidthSamplePx": 20,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            63.4,
+            58.6,
+            48.2
+          ],
+          "luminanceMean": 58.8,
+          "luminanceStddev": 45.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.209
+        },
+        "bottom": {
+          "rgbMean": [
+            64.4,
+            57.4,
+            45.0
+          ],
+          "luminanceMean": 58.1,
+          "luminanceStddev": 44.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.156
+        },
+        "left": {
+          "rgbMean": [
+            64.7,
+            59.6,
+            50.5
+          ],
+          "luminanceMean": 60.1,
+          "luminanceStddev": 49.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.229
+        },
+        "right": {
+          "rgbMean": [
+            51.5,
+            48.9,
+            44.8
+          ],
+          "luminanceMean": 49.2,
+          "luminanceStddev": 43.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.273
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          91.1,
+          74.8,
+          57.6
+        ],
+        "luminanceMean": 77.7,
+        "luminanceStddev": 54.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 40.23,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-160143",
+      "sourcePage": "https://clevelandart.org/art/1998.10",
+      "title": "The Holy Family",
+      "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1998.10/1998.10_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "fileBytes": 1127551,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1998.10/1998.10_print.jpg",
+      "nativeDimensions": [
+        2681,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 0.7885,
+      "screeningSampleDimensions": [
+        606,
+        768
+      ],
+      "outerBandWidthSamplePx": 27,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            77.9,
+            61.7,
+            46.4
+          ],
+          "luminanceMean": 64.8,
+          "luminanceStddev": 19.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            65.2,
+            51.0,
+            39.3
+          ],
+          "luminanceMean": 53.9,
+          "luminanceStddev": 11.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            71.1,
+            53.8,
+            40.7
+          ],
+          "luminanceMean": 57.5,
+          "luminanceStddev": 10.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            77.1,
+            71.3,
+            60.8
+          ],
+          "luminanceMean": 71.9,
+          "luminanceStddev": 27.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          108.1,
+          86.1,
+          65.7
+        ],
+        "luminanceMean": 90.3,
+        "luminanceStddev": 37.0,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 16.85,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-150389",
+      "sourcePage": "https://clevelandart.org/art/1981.18",
+      "title": "The Holy Family on the Steps",
+      "artist": "Nicolas Poussin (French, 1594–1665)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1981.18/1981.18_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "4d3e81096c456cb1b5ad9d36c69e82cba0e14655a1cd0a68a1d4776b4b1f55aa",
+      "fileBytes": 4963729,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1981.18/1981.18_print.jpg",
+      "nativeDimensions": [
+        3400,
+        2333
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 1.4574,
+      "screeningSampleDimensions": [
+        768,
+        527
+      ],
+      "outerBandWidthSamplePx": 24,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            70.8,
+            82.0,
+            94.9
+          ],
+          "luminanceMean": 80.1,
+          "luminanceStddev": 19.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            67.9,
+            54.7,
+            43.5
+          ],
+          "luminanceMean": 57.4,
+          "luminanceStddev": 16.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            76.6,
+            66.0,
+            54.4
+          ],
+          "luminanceMean": 67.8,
+          "luminanceStddev": 26.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            64.1,
+            54.9,
+            46.9
+          ],
+          "luminanceMean": 56.7,
+          "luminanceStddev": 24.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          74.7,
+          64.7,
+          59.5
+        ],
+        "luminanceMean": 67.1,
+        "luminanceStddev": 36.6,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 21.13,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437458",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
+      "title": "The Holy Family with Angels",
+      "artist": "Sebastiano Ricci",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-17632-001.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "6c980df07e2fd9ddc2bfc4b00b913fb6b60890f06fee9f11a8d640f8488b3abe",
+      "fileBytes": 4122933,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-17632-001.jpg",
+      "nativeDimensions": [
+        3540,
+        4000
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.885,
+      "screeningSampleDimensions": [
+        680,
+        768
+      ],
+      "outerBandWidthSamplePx": 31,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            9.2,
+            7.9,
+            6.4
+          ],
+          "luminanceMean": 8.1,
+          "luminanceStddev": 19.6,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.821
+        },
+        "bottom": {
+          "rgbMean": [
+            2.5,
+            2.1,
+            1.8
+          ],
+          "luminanceMean": 2.2,
+          "luminanceStddev": 9.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.944
+        },
+        "left": {
+          "rgbMean": [
+            24.4,
+            23.1,
+            20.2
+          ],
+          "luminanceMean": 23.2,
+          "luminanceStddev": 34.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.64
+        },
+        "right": {
+          "rgbMean": [
+            14.5,
+            12.4,
+            10.8
+          ],
+          "luminanceMean": 12.8,
+          "luminanceStddev": 26.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.772
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          71.1,
+          57.9,
+          41.4
+        ],
+        "luminanceMean": 60.0,
+        "luminanceStddev": 27.7,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 22.61,
+      "advisoryFlags": [
+        "SUSPECT_DARK_EXTERIOR_MARGIN"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-78982",
+      "sourcePage": "https://clevelandart.org/art/2017.192",
+      "title": "The Resurrection of Christ",
+      "artist": "Johann König (German, 1586–1642)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "fileBytes": 1932047,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_print.jpg",
+      "nativeDimensions": [
+        2561,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7532,
+      "screeningSampleDimensions": [
+        578,
+        768
+      ],
+      "outerBandWidthSamplePx": 26,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            88.8,
+            67.0,
+            37.2
+          ],
+          "luminanceMean": 70.1,
+          "luminanceStddev": 36.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.035
+        },
+        "bottom": {
+          "rgbMean": [
+            57.7,
+            48.0,
+            36.6
+          ],
+          "luminanceMean": 49.6,
+          "luminanceStddev": 20.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            84.0,
+            73.2,
+            58.5
+          ],
+          "luminanceMean": 74.8,
+          "luminanceStddev": 38.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.005
+        },
+        "right": {
+          "rgbMean": [
+            54.7,
+            42.4,
+            34.6
+          ],
+          "luminanceMean": 45.2,
+          "luminanceStddev": 24.5,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          84.0,
+          69.8,
+          58.7
+        ],
+        "luminanceMean": 72.8,
+        "luminanceStddev": 42.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.012
+      },
+      "edgeContrastStddevHeuristic": 30.03,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-130392",
+      "sourcePage": "https://clevelandart.org/art/1953.156",
+      "title": "The Return of the Holy Family to Nazareth",
+      "artist": "Nicolas Poussin (French, 1594–1665)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1953.156/1953.156_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "87c75f556071d28bbda0584a070886d9704cd8ad68245dd1942ef4030ed5b414",
+      "fileBytes": 5807331,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1953.156/1953.156_print.jpg",
+      "nativeDimensions": [
+        2500,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7353,
+      "screeningSampleDimensions": [
+        565,
+        768
+      ],
+      "outerBandWidthSamplePx": 25,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            78.9,
+            69.6,
+            56.7
+          ],
+          "luminanceMean": 70.9,
+          "luminanceStddev": 14.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            51.6,
+            42.9,
+            36.3
+          ],
+          "luminanceMean": 44.8,
+          "luminanceStddev": 9.9,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            85.1,
+            74.0,
+            60.5
+          ],
+          "luminanceMean": 75.8,
+          "luminanceStddev": 26.7,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            60.3,
+            52.4,
+            44.6
+          ],
+          "luminanceMean": 53.9,
+          "luminanceStddev": 21.3,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          83.7,
+          67.1,
+          54.8
+        ],
+        "luminanceMean": 70.7,
+        "luminanceStddev": 24.5,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 21.93,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-437871",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437871",
+      "title": "The Supper at Emmaus",
+      "artist": "Velázquez (Diego Rodríguez de Silva y Velázquez)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP120945.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+      "fileBytes": 1984486,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP120945.jpg",
+      "nativeDimensions": [
+        3538,
+        3303
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": false,
+      "estimatedAspectRatio": 1.0711,
+      "screeningSampleDimensions": [
+        768,
+        717
+      ],
+      "outerBandWidthSamplePx": 32,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            63.1,
+            49.0,
+            33.3
+          ],
+          "luminanceMean": 51.4,
+          "luminanceStddev": 19.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.073
+        },
+        "bottom": {
+          "rgbMean": [
+            51.4,
+            38.1,
+            20.2
+          ],
+          "luminanceMean": 40.0,
+          "luminanceStddev": 19.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.047
+        },
+        "left": {
+          "rgbMean": [
+            78.7,
+            61.3,
+            46.0
+          ],
+          "luminanceMean": 64.8,
+          "luminanceStddev": 35.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.048
+        },
+        "right": {
+          "rgbMean": [
+            72.1,
+            57.2,
+            45.2
+          ],
+          "luminanceMean": 60.3,
+          "luminanceStddev": 33.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.085
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          61.2,
+          50.8,
+          37.6
+        ],
+        "luminanceMean": 52.4,
+        "luminanceStddev": 28.9,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 20.14,
+      "advisoryFlags": [
+        "MISSING_EMBEDDED_ICC_COMPARE_MUSEUM_REFERENCE"
+      ],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::met-441971",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/441971",
+      "title": "The Tears of Saint Peter",
+      "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP286357.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "MET_OBJECT_ID_AND_PD_VERIFIED",
+      "currentSha256": "7970ccb32aaeea443e325b21cf004131bf2515e969b6be9e098c6a400be0300a",
+      "fileBytes": 1707843,
+      "finalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP286357.jpg",
+      "nativeDimensions": [
+        2721,
+        3874
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.7024,
+      "screeningSampleDimensions": [
+        539,
+        768
+      ],
+      "outerBandWidthSamplePx": 24,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            34.0,
+            28.3,
+            22.3
+          ],
+          "luminanceMean": 29.3,
+          "luminanceStddev": 21.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.212
+        },
+        "bottom": {
+          "rgbMean": [
+            63.5,
+            55.1,
+            44.9
+          ],
+          "luminanceMean": 56.5,
+          "luminanceStddev": 19.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.08
+        },
+        "left": {
+          "rgbMean": [
+            36.0,
+            32.8,
+            29.4
+          ],
+          "luminanceMean": 33.4,
+          "luminanceStddev": 15.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.03
+        },
+        "right": {
+          "rgbMean": [
+            34.7,
+            31.6,
+            29.9
+          ],
+          "luminanceMean": 32.3,
+          "luminanceStddev": 14.2,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.074
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          59.4,
+          40.7,
+          28.4
+        ],
+        "luminanceMean": 44.9,
+        "luminanceStddev": 23.5,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.087
+      },
+      "edgeContrastStddevHeuristic": 16.13,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    },
+    {
+      "physicalWorkGroup": "CANONICAL::cma-126768",
+      "sourcePage": "https://clevelandart.org/art/1949.185",
+      "title": "Holy Family with a Shepherd",
+      "artist": "Battista Dossi (Italian, c. 1490–1548)",
+      "historicOriginalSha256": "",
+      "expectedOfficialImageUrl": "https://openaccess-cdn.clevelandart.org/1949.185/1949.185_print.jpg",
+      "status": "NATIVE_CURRENT_OFFICIAL_IMAGE_SCREENED",
+      "fileRightsFinallyCertified": false,
+      "humanPhotoApproved": false,
+      "queue1Promotion": false,
+      "officialIdentityVerification": "CMA_ACCESSION_AND_CC0_VERIFIED",
+      "currentSha256": "ad354b41cb5b18f54f1362c6bbee187b4d03859b6f8c0cc7dcd6078cf66698ad",
+      "fileBytes": 7196131,
+      "finalImageUrl": "https://openaccess-cdn.clevelandart.org/1949.185/1949.185_print.jpg",
+      "nativeDimensions": [
+        2851,
+        3400
+      ],
+      "rawMode": "RGB",
+      "rawFormat": "JPEG",
+      "exifOrientationTag": null,
+      "iccProfilePresent": true,
+      "estimatedAspectRatio": 0.8385,
+      "screeningSampleDimensions": [
+        644,
+        768
+      ],
+      "outerBandWidthSamplePx": 29,
+      "outerBands": {
+        "top": {
+          "rgbMean": [
+            45.7,
+            41.3,
+            31.3
+          ],
+          "luminanceMean": 41.5,
+          "luminanceStddev": 8.8,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "bottom": {
+          "rgbMean": [
+            90.5,
+            72.3,
+            44.8
+          ],
+          "luminanceMean": 74.6,
+          "luminanceStddev": 15.0,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "left": {
+          "rgbMean": [
+            56.3,
+            46.0,
+            33.6
+          ],
+          "luminanceMean": 47.6,
+          "luminanceStddev": 14.4,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        },
+        "right": {
+          "rgbMean": [
+            55.1,
+            50.5,
+            37.3
+          ],
+          "luminanceMean": 50.4,
+          "luminanceStddev": 21.1,
+          "nearWhiteFraction": 0.0,
+          "nearBlackFraction": 0.0
+        }
+      },
+      "centralReference": {
+        "rgbMean": [
+          73.4,
+          59.2,
+          40.6
+        ],
+        "luminanceMean": 61.3,
+        "luminanceStddev": 33.8,
+        "nearWhiteFraction": 0.0,
+        "nearBlackFraction": 0.0
+      },
+      "edgeContrastStddevHeuristic": 30.77,
+      "advisoryFlags": [],
+      "manualChecks": [
+        "Visible frame, mount, hardware or reflection",
+        "Faithful artwork boundaries; no subject/halo or painted-field loss",
+        "Colour and contrast against trusted museum original",
+        "Native detail, noise, compression, softness and relevant mobile crop",
+        "Correct physical work and original-photo rights in applicable jurisdictions"
+      ],
+      "computerVisionCertification": false,
+      "photoPristineCertified": false,
+      "historicalNativeSha256Matched": false,
+      "newSha256CapturedWithoutHistoricalComparison": true
+    }
+  ]
+}
