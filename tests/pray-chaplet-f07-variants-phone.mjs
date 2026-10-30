@@ -42,11 +42,12 @@ try{
      const alignment=await page.locator(prefix+".aoP435930Head").evaluate(h=>{
       const lang=h.querySelector(".aoP435930SessionLanguage")?.getBoundingClientRect();
       const home=h.querySelector(".aoP435930Home")?.getBoundingClientRect();
-      return {langLeft:lang?.left,homeLeft:home?.left,viewport:innerWidth};
+      return {langLeft:lang?.left,homeLeft:home?.left,langTop:lang?.top,homeTop:home?.top,viewport:innerWidth};
      });
      assert.ok(Number.isFinite(alignment.langLeft)&&Number.isFinite(alignment.homeLeft)&&
-      Math.abs(alignment.langLeft-alignment.homeLeft)<=3&&alignment.homeLeft>alignment.viewport*.6,
-      "F07 Five Wounds: Home shortcut wrapped beneath title instead of aligning with EN/FR: "+JSON.stringify(alignment));
+      alignment.langLeft>alignment.viewport*.58&&alignment.homeLeft>alignment.langLeft+35&&
+      Math.abs(alignment.langTop-alignment.homeTop)<=4,
+      "F07 Five Wounds: Home shortcut must stay beside EN/FR on the same header row: "+JSON.stringify(alignment));
     }
     assert.equal(await page.locator(prefix+c.legacyNav).count(),c.kind==="precious-blood"?7:c.kind==="five-wounds"?5:15);
     const text=page.locator(prefix+c.prayer).first();
