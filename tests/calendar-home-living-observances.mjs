@@ -23,7 +23,7 @@ assert.match(leonardi.html,/Historical Saint/);
 assert.match(leonardi.html,/1962 Mass commemoration/);
 assert.match(leonardi.html,/John Henry Newman/);
 assert.match(leonardi.html,/Modern Roman calendar/);
-assert.equal((leonardi.html.match(/class="aoTodayV2ObservedRow"/g)||[]).length,2);
+assert.equal((leonardi.html.match(/class="aoTodayV2ObservedRow(?:\s[^"]*)?"/g)||[]).length,2);
 assert.match(leonardi.html,/data-home-calendar-view="day"/);
 assert.doesNotMatch(leonardi.html,/data-cal-mass|data-home-mass-entry/);
 
