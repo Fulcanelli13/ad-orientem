@@ -1,10 +1,81 @@
 name: St Pius X standalone study review
+
+# Avoid running costly obsolete Playwright jobs for every new draft-PR commit.
+concurrency:
+  group: spx-standalone-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 on:
   push:
     branches:
       - prototype/pius-x-standalone-study-20261021
     paths:
       - 'previews/pius-x-study/**'
+      - 'tools/build-pius-x-p26-offline-replay.mjs'
+      - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'tools/pius-x-p32-bulk-200-source-crosswalk.mjs'
+      - 'tools/formation/pius-x-p33-italian-original-100-audit.py'
+      - 'tools/pius-x-p34-bilingual-claim-comparison.mjs'
+      - 'tools/pius-x-p35-substantive-35-editorial-review.mjs'
+      - 'tools/pius-x-p36-corrected-bilingual-35-review.mjs'
+      - 'tools/pius-x-p37-second-pass-eleven.mjs'
+      - 'tools/pius-x-p38-bulk-89-remaining-original-text-audit.mjs'
+      - 'tests/pius-x-p38-bulk-89-review-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p38-sixtyfive-new-italian-source-assessments-20261024.v1.json'
+      - 'previews/pius-x-study/evidence/pius-x-p39-bilingual29-and-specialist36-20261024.v1.json'
+      - 'tests/pius-x-p39-bilingual-candidate-queue-contract.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p40-65-answer-second-pass-20261024.v1.json'
+      - 'tests/pius-x-p40-source-second-pass-contract.mjs'
+      - 'tools/pius-x-p41-build-specialist-bilingual-dossier.mjs'
+      - 'tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs'
+      - 'tools/pius-x-p42-source-owner-reconciliation-preview.mjs'
+      - 'tests/pius-x-p42-owner-reconciliation-preview-contract.mjs'
+      - 'tools/pius-x-p43-independent-edition-text-crosscheck.mjs'
+      - 'tests/pius-x-p43-edition-source-crosswalk-contract.mjs'
+      - 'tools/pius-x-p44-map-39-to-1905-printed-scan-pages.mjs'
+      - 'tests/pius-x-p44-printed-page-locator-contract.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p44-39-print-scan-page-index-20261024.v1.json'
+      - 'previews/pius-x-study/review/pius-x-p45-specialist-39-review-packet-20261024.md'
+      - 'previews/pius-x-study/review/pius-x-p45-unsent-expert-outreach-drafts-20261024.md'
+      - 'previews/pius-x-study/review/pius-x-p45-three-case-review-sample-20261024.md'
+      - 'tests/pius-x-p45-external-review-packet-contract.mjs'
+      - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
+      - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p36-eleven-bilingual-rewrite-proposals-20261024.v1.json'
+      - 'tests/pius-x-p35-substantive-35-editorial-review-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p35-35-high-priority-editorial-findings-20261024.v1.json'
+      - 'previews/pius-x-study/spx-p34-claim-review-template.html'
+      - 'tests/pius-x-p34-claim-review-e2e.mjs'
+      - 'tests/pius-x-p33-italian-original-100-audit.py'
+      - 'tests/pius-x-p32-bulk-200-source-crosswalk.mjs'
+      - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
+      - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
+      - 'previews/pius-x-study/spx-p26-offline-replay-client.js'
+      - 'previews/pius-x-study/spx-p26-offline-replay-style.css'
+      - 'previews/pius-x-study/spx-p29-source-dossier-client.js'
+      - 'previews/pius-x-study/spx-p29-source-dossier-style.css'
+      - 'tests/pius-x-p26-offline-replay-e2e.mjs'
+      - 'tests/pius-x-p46-guided-source-conversation-e2e.mjs'
+      - 'tests/pius-x-p47-historical-voice-comparison-e2e.mjs'
+      - 'tests/pius-x-p55-real-model-comparison-e2e.mjs'
+      - 'tests/pius-x-p59-cross-document-offline-conversation-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p54-real-7b-four-turn-research-20261024.v1.json'
+      - 'tests/pius-x-p48-contextual-model-conversation-e2e.mjs'
+      - 'tests/pius-x-p51-real-output-surface-gate.mjs'
+      - 'tests/pius-x-p52-localized-composer-context.mjs'
+      - 'tests/pius-x-p53-atomic-natural-dialogue.mjs'
+      - 'tests/pius-x-p56-local-gpu-runtime-contract.mjs'
+      - 'tests/pius-x-p57-gpu-readiness.mjs'
+      - 'tests/pius-x-p58-private-report-contract.mjs'
+      - 'tools/pius-x-p58-device-report.mjs'
+      - 'tools/pius-x-p58-private-pc-check.cmd'
+      - 'tools/pius-x-p57-device-readiness.mjs'
+      - 'tools/pius-x-p56-local-pilot.mjs'
+      - 'tools/pius-x-p53-atomic-claim-composer.mjs'
+      - 'tools/pius-x-p52-bilingual-composer-context.mjs'
+      - 'tools/pius-x-draft-surface-gate.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-e-supremi-gpt6-inchat-bilingual-dialogue-20261023.v1.json'
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
@@ -15,12 +86,108 @@ on:
       - 'tools/build-pius-x-earlier-94-p6.mjs'
       - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
       - 'tests/pius-x-study-free-ask-e2e.mjs'
+      - 'tools/pius-x-generative-review.mjs'
+      - 'tools/pius-x-source-only-gate.mjs'
+      - 'tests/pius-x-source-only-gate.mjs'
+      - 'tests/pius-x-wave4-original-contexts.mjs'
+      - 'tests/pius-x-wave5-bulk-inventory.mjs'
+      - 'tests/pius-x-wave6-five-vatican-documents.mjs'
+      - 'tests/pius-x-salzano-wave7-transcription-research.mjs'
+      - 'tests/pius-x-catechismo-maggiore-wave8-all59.mjs'
+      - 'tests/pius-x-wave9-biography-quam-singulari-all31.mjs'
+      - 'tests/pius-x-p22-bilingual-claim-acceptance.mjs'
+      - 'tests/pius-x-p23-bilingual-fidelity-review.mjs'
+      - 'tests/pius-x-p24-unexpected-visitors.mjs'
+      - 'tests/pius-x-p25-intent-to-original-witness-routing.mjs'
+      - 'tools/pius-x-pilot-question-router.mjs'
+      - 'previews/pius-x-study/spx-model-review-client.js'
+      - 'previews/pius-x-study/spx-model-review-style.css'
+      - 'tests/pius-x-generative-review-e2e.mjs'
+      - 'tools/pius-x-live-eval.mjs'
+      - 'tests/pius-x-live-eval-harness.mjs'
+      - 'tests/pius-x-live-bilingual-loopback-adapter.mjs'
+      - 'tests/pius-x-inchat-bilingual-conversation-specimen.mjs'
+      - 'tests/pius-x-primary-witness-contract.mjs'
+      - 'tests/pius-x-primary-witness-expansion.mjs'
+      - 'tools/pius-x-audit-primary-witnesses.mjs'
+      - 'tests/pius-x-primary-witness-webtext-audit.mjs'
+      - 'tools/pius-x-primary-coverage-report.mjs'
+      - 'tests/pius-x-primary-coverage-report.mjs'
+      - 'tests/pius-x-next12-primary-discovery-contract.mjs'
+      - 'tests/pius-x-eight-opening-context-witnesses.mjs'
+      - 'tests/pius-x-eight-opening-bilingual-audit.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
   pull_request:
     paths:
       - 'previews/pius-x-study/**'
+      - 'tools/build-pius-x-p26-offline-replay.mjs'
+      - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'tools/pius-x-p32-bulk-200-source-crosswalk.mjs'
+      - 'tools/formation/pius-x-p33-italian-original-100-audit.py'
+      - 'tools/pius-x-p34-bilingual-claim-comparison.mjs'
+      - 'tools/pius-x-p35-substantive-35-editorial-review.mjs'
+      - 'tools/pius-x-p36-corrected-bilingual-35-review.mjs'
+      - 'tools/pius-x-p37-second-pass-eleven.mjs'
+      - 'tools/pius-x-p38-bulk-89-remaining-original-text-audit.mjs'
+      - 'tests/pius-x-p38-bulk-89-review-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p38-sixtyfive-new-italian-source-assessments-20261024.v1.json'
+      - 'previews/pius-x-study/evidence/pius-x-p39-bilingual29-and-specialist36-20261024.v1.json'
+      - 'tests/pius-x-p39-bilingual-candidate-queue-contract.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p40-65-answer-second-pass-20261024.v1.json'
+      - 'tests/pius-x-p40-source-second-pass-contract.mjs'
+      - 'tools/pius-x-p41-build-specialist-bilingual-dossier.mjs'
+      - 'tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs'
+      - 'tools/pius-x-p42-source-owner-reconciliation-preview.mjs'
+      - 'tests/pius-x-p42-owner-reconciliation-preview-contract.mjs'
+      - 'tools/pius-x-p43-independent-edition-text-crosscheck.mjs'
+      - 'tests/pius-x-p43-edition-source-crosswalk-contract.mjs'
+      - 'tools/pius-x-p44-map-39-to-1905-printed-scan-pages.mjs'
+      - 'tests/pius-x-p44-printed-page-locator-contract.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p44-39-print-scan-page-index-20261024.v1.json'
+      - 'previews/pius-x-study/review/pius-x-p45-specialist-39-review-packet-20261024.md'
+      - 'previews/pius-x-study/review/pius-x-p45-unsent-expert-outreach-drafts-20261024.md'
+      - 'previews/pius-x-study/review/pius-x-p45-three-case-review-sample-20261024.md'
+      - 'tests/pius-x-p45-external-review-packet-contract.mjs'
+      - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
+      - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p36-eleven-bilingual-rewrite-proposals-20261024.v1.json'
+      - 'tests/pius-x-p35-substantive-35-editorial-review-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p35-35-high-priority-editorial-findings-20261024.v1.json'
+      - 'previews/pius-x-study/spx-p34-claim-review-template.html'
+      - 'tests/pius-x-p34-claim-review-e2e.mjs'
+      - 'tests/pius-x-p33-italian-original-100-audit.py'
+      - 'tests/pius-x-p32-bulk-200-source-crosswalk.mjs'
+      - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
+      - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
+      - 'previews/pius-x-study/spx-p26-offline-replay-client.js'
+      - 'previews/pius-x-study/spx-p26-offline-replay-style.css'
+      - 'previews/pius-x-study/spx-p29-source-dossier-client.js'
+      - 'previews/pius-x-study/spx-p29-source-dossier-style.css'
+      - 'tests/pius-x-p26-offline-replay-e2e.mjs'
+      - 'tests/pius-x-p46-guided-source-conversation-e2e.mjs'
+      - 'tests/pius-x-p47-historical-voice-comparison-e2e.mjs'
+      - 'tests/pius-x-p55-real-model-comparison-e2e.mjs'
+      - 'tests/pius-x-p59-cross-document-offline-conversation-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p54-real-7b-four-turn-research-20261024.v1.json'
+      - 'tests/pius-x-p48-contextual-model-conversation-e2e.mjs'
+      - 'tests/pius-x-p51-real-output-surface-gate.mjs'
+      - 'tests/pius-x-p52-localized-composer-context.mjs'
+      - 'tests/pius-x-p53-atomic-natural-dialogue.mjs'
+      - 'tests/pius-x-p56-local-gpu-runtime-contract.mjs'
+      - 'tests/pius-x-p57-gpu-readiness.mjs'
+      - 'tests/pius-x-p58-private-report-contract.mjs'
+      - 'tools/pius-x-p58-device-report.mjs'
+      - 'tools/pius-x-p58-private-pc-check.cmd'
+      - 'tools/pius-x-p57-device-readiness.mjs'
+      - 'tools/pius-x-p56-local-pilot.mjs'
+      - 'tools/pius-x-p53-atomic-claim-composer.mjs'
+      - 'tools/pius-x-p52-bilingual-composer-context.mjs'
+      - 'tools/pius-x-draft-surface-gate.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-e-supremi-gpt6-inchat-bilingual-dialogue-20261023.v1.json'
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
@@ -31,6 +198,26 @@ on:
       - 'tools/build-pius-x-earlier-94-p6.mjs'
       - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
       - 'tests/pius-x-study-free-ask-e2e.mjs'
+      - 'tools/pius-x-generative-review.mjs'
+      - 'tools/pius-x-source-only-gate.mjs'
+      - 'tests/pius-x-source-only-gate.mjs'
+      - 'tests/pius-x-wave4-original-contexts.mjs'
+      - 'previews/pius-x-study/spx-model-review-client.js'
+      - 'previews/pius-x-study/spx-model-review-style.css'
+      - 'tests/pius-x-generative-review-e2e.mjs'
+      - 'tools/pius-x-live-eval.mjs'
+      - 'tests/pius-x-live-eval-harness.mjs'
+      - 'tests/pius-x-live-bilingual-loopback-adapter.mjs'
+      - 'tests/pius-x-inchat-bilingual-conversation-specimen.mjs'
+      - 'tests/pius-x-primary-witness-contract.mjs'
+      - 'tests/pius-x-primary-witness-expansion.mjs'
+      - 'tools/pius-x-audit-primary-witnesses.mjs'
+      - 'tests/pius-x-primary-witness-webtext-audit.mjs'
+      - 'tools/pius-x-primary-coverage-report.mjs'
+      - 'tests/pius-x-primary-coverage-report.mjs'
+      - 'tests/pius-x-next12-primary-discovery-contract.mjs'
+      - 'tests/pius-x-eight-opening-context-witnesses.mjs'
+      - 'tests/pius-x-eight-opening-bilingual-audit.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -63,10 +250,138 @@ jobs:
         run: node tests/pius-x-study-next12-pastoral-e2e.mjs
       - name: Build separate P6 voice-review artifact for twelve earlier subjects
         run: node tools/build-pius-x-earlier-94-p6.mjs
+      - name: Reconcile 423 source-owned avatar turns with both 433-question catechism indexes without source promotion
+        run: node tools/pius-x-p31-cross-source-reconciliation.mjs
+      - name: Validate read-only cross-source candidates, editorial-number caveats and zero semantic merges
+        run: node tests/pius-x-p31-cross-source-reconciliation.mjs
+      - name: Cross-reference 200 existing 1905 source-owner turns against P6 and the 339-question upstream registry
+        run: node tools/pius-x-p32-bulk-200-source-crosswalk.mjs
+      - name: Test P1 200-turn source identity, research holds and zero artificial semantic merges
+        run: node tests/pius-x-p32-bulk-200-source-crosswalk.mjs
+      - name: Verify original 1905 Italian Q&A extraction parser without network
+        run: python3 tools/formation/pius-x-p33-italian-original-100-audit.py --selftest
+      - name: Extract 100 original Italian catechism Q&A witnesses from live museum transcription
+        run: python3 tools/formation/pius-x-p33-italian-original-100-audit.py
+      - name: Reconcile 100 Italian source witnesses and keep translations, print and pastoral holds unapproved
+        run: python3 tests/pius-x-p33-italian-original-100-audit.py
+      - name: Align 100 bilingual editorial opening drafts with original Italian witness excerpts as an uncertified claim review packet
+        run: node tools/pius-x-p34-bilingual-claim-comparison.mjs
+      - name: Browser-test 100-case offline documentary desk, human-review flags and research export
+        run: node tests/pius-x-p34-claim-review-e2e.mjs
+      - name: Build 35 exact-Italian-phrase-grounded substantive editorial decisions without approvals
+        run: node tools/pius-x-p35-substantive-35-editorial-review.mjs
+      - name: Browser-test 35 priority case findings and suggested source corrections
+        run: node tests/pius-x-p35-substantive-35-editorial-review-e2e.mjs
+      - name: Generate eleven bilingual source-limited corrections without mutating original drafts
+        run: node tools/pius-x-p36-corrected-bilingual-35-review.mjs
+      - name: Browser-test 35-case review including 11 proposed corrections and 24 held originals
+        run: node tests/pius-x-p36-bilingual-corrections-e2e.mjs
+      - name: Build second-pass Italian-to-bilingual review with 25 original-language anchors
+        run: node tools/pius-x-p37-second-pass-eleven.mjs
+      - name: Browser-test 11 evidence cases and 3 additive EN/FR refinements with no publication or remote calls
+        run: node tests/pius-x-p37-second-pass-eleven-e2e.mjs
+      - name: Consolidate source-scope assessments for 89 remaining openings (65 newly inspected, 24 preserved earlier)
+        run: node tools/pius-x-p38-bulk-89-remaining-original-text-audit.mjs
+      - name: Browser-test the 89-case offline source desk and verify original evidence and bilingual drafts remain intact
+        run: node tests/pius-x-p38-bulk-89-review-e2e.mjs
+      - name: Verify P1.39 29 bilingual candidate corrections and 36 specialist queue records (structural, not human approval)
+        run: node tests/pius-x-p39-bilingual-candidate-queue-contract.mjs
+      - name: Verify P1.40 65-answer original-language second-pass partitions (editorial, not human translation approval)
+        run: node tests/pius-x-p40-source-second-pass-contract.mjs
+      - name: Assemble P1.41 source-anchored 39-case bilingual specialist dossier from original P34 Italian witnesses
+        run: node tools/pius-x-p41-build-specialist-bilingual-dossier.mjs
+      - name: Verify original Italian text provenance, section boundaries and offline desktop/mobile P1.41 desk
+        run: node tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs
+      - name: Prepare exact 39-owner source reconciliation preview and unsigned human specialist decision ledger
+        run: node tools/pius-x-p42-source-owner-reconciliation-preview.mjs
+      - name: Assert all 39 original source-owner fingerprints, unaffected followups and zero release signoffs
+        run: node tests/pius-x-p42-owner-reconciliation-preview-contract.mjs
+      - name: Cross-check 39 original Italian questions and answers with proofread 1905 scan-linked Wikisource text
+        run: node tools/pius-x-p43-independent-edition-text-crosscheck.mjs
+      - name: Verify 39-item digital witness classifications and preserve all print-page and human-approval holds
+        run: node tests/pius-x-p43-edition-source-crosswalk-contract.mjs
+      - name: Resolve 39 question IDs to 1905 printed scan pages and build offline visual-locator desk
+        run: node tools/pius-x-p44-map-39-to-1905-printed-scan-pages.mjs
+      - name: Verify P1.44 printed page metadata, 18 priority scan notes and no invented human approvals
+        run: node tests/pius-x-p44-printed-page-locator-contract.mjs
+      - name: Verify permanent P1.45 39-case human-review packet against source-owner translations and exact scan pages
+        run: node tests/pius-x-p45-external-review-packet-contract.mjs
+      - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
+        run: node tools/build-pius-x-p26-offline-replay.mjs
+      - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
+        run: node tests/pius-x-p26-offline-replay-e2e.mjs
+      - name: Browser-test staged P2.46 three-turn EN/FR documented dialogue, refusals, reset and two-turn alternate
+        run: node tests/pius-x-p46-guided-source-conversation-e2e.mjs
+      - name: Browser-test six P2.47 first-person editorial style specimens against source witnesses and original replies
+        run: node tests/pius-x-p47-historical-voice-comparison-e2e.mjs
+      - name: Browser-test four genuine P2.55 Qwen 7B research samples against original Latin and unchanged EN/FR avatar dialogue
+        run: node tests/pius-x-p55-real-model-comparison-e2e.mjs
+      - name: Browser-test P2.59 four real papal documents and exact-question offline branching on mobile and desktop
+        run: node tests/pius-x-p59-cross-document-offline-conversation-e2e.mjs
+      - name: Exercise P2.48 contextual source follow-ups and optional period voice in private model review UI
+        run: node tests/pius-x-p48-contextual-model-conversation-e2e.mjs
+      - name: Reject actual P2.50 model false-positives in P2.51 source-grounded bilingual output surface gate
+        run: node tests/pius-x-p51-real-output-surface-gate.mjs
+      - name: Verify P2.52 bilingual composer-only French glosses preserve original Latin and unchanged verifier evidence
+        run: node tests/pius-x-p52-localized-composer-context.mjs
+      - name: Test P2.53 six unprepared bilingual visitor questions, six private-detail holds and atomic cue evidence isolation
+        run: node tests/pius-x-p53-atomic-natural-dialogue.mjs
+      - name: Contract-test P2.56 strict €0 localhost 7B runtime, fake backend, source guards and original visual novel
+        run: node tests/pius-x-p56-local-gpu-runtime-contract.mjs
+      - name: Validate P2.57 no-network Windows GPU readiness and honest non-certified hardware classification
+        run: node tests/pius-x-p57-gpu-readiness.mjs
+      - name: Validate P2.58 private shareable Windows report and optional real-local-only benchmark flow
+        run: node tests/pius-x-p58-private-report-contract.mjs
       - name: Validate P6 preserved sources and bilingual offline interaction
         run: node tests/pius-x-study-earlier-94-p6-e2e.mjs
       - name: Test typed questions, conservative source navigation and short-form follow-ups
         run: node tests/pius-x-study-free-ask-e2e.mjs
+      - name: Verify private model-assisted source-constrained research stage
+        run: node tests/pius-x-generative-review-e2e.mjs
+      - name: Reject all uncollated model topics and withhold full P6 editorial answers
+        run: node tests/pius-x-source-only-gate.mjs
+      - name: Verify 23 wave4 Latin and Italian excerpts against independent Vatican text windows
+        run: node tests/pius-x-wave4-original-contexts.mjs
+      - name: Reconcile all 228 outside-batch St Pius X source-owner nodes without evidence admissions
+        run: node tests/pius-x-wave5-bulk-inventory.mjs
+      - name: Audit five newly researched Vatican documents with 18 immutable dialogue nodes
+        run: node tests/pius-x-wave6-five-vatican-documents.mjs
+      - name: Audit all 120 Salzano source-owner nodes against numbered Italian manuscript-transcription loci
+        run: node tests/pius-x-salzano-wave7-transcription-research.mjs
+      - name: Validate all 59 Italian 1905 Catechismo Maggiore evidence decisions without papal authorship inflation
+        run: node tests/pius-x-catechismo-maggiore-wave8-all59.mjs
+      - name: Verify final biography and Congregational source triage and complete 228-node reconciliation
+        run: node tests/pius-x-wave9-biography-quam-singulari-all31.mjs
+      - name: Check eleven source-bound bilingual conversation specimens, six present-law refusals and two historical holds
+        run: node tests/pius-x-p22-bilingual-claim-acceptance.mjs
+      - name: Validate 23 bilingual claim sentences against source-specific Latin or Italian fragments
+        run: node tests/pius-x-p23-bilingual-fidelity-review.mjs
+      - name: Hold unsafe invented memories and current-law verdicts across 80 bilingual unseen prompts
+        run: node tests/pius-x-p24-unexpected-visitors.mjs
+      - name: Route 32 unseen English and French questions to their exact historical witness-owned cards
+        run: node tests/pius-x-p25-intent-to-original-witness-routing.mjs
+      - name: Exercise real-model evaluation harness without external inference
+        run: node tests/pius-x-live-eval-harness.mjs
+      - name: Exercise provider HTTP integration against loopback fake model (no paid inference)
+        run: node tests/pius-x-live-bilingual-loopback-adapter.mjs
+      - name: Replay six in-chat GPT-6 source-scoped specimen replies (not live inference)
+        run: node tests/pius-x-inchat-bilingual-conversation-specimen.mjs
+      - name: Validate bounded original E supremi pilot witness metadata
+        run: node tests/pius-x-primary-witness-contract.mjs
+      - name: Validate additional original Italian and Latin source-witness annexes
+        run: node tests/pius-x-primary-witness-expansion.mjs
+      - name: Test 23 Vatican excerpt presence against independently transcribed source windows
+        run: node tests/pius-x-primary-witness-webtext-audit.mjs
+      - name: Account for all 106 research chapters and next primary-document targets
+        run: node tests/pius-x-primary-coverage-report.mjs
+      - name: Verify twelve Vatican document groups and eight unpromoted textual witnesses
+        run: node tests/pius-x-next12-primary-discovery-contract.mjs
+      - name: Verify 41 contextual original-language source snippets against independent text windows
+        run: node tests/pius-x-eight-opening-context-witnesses.mjs
+      - name: Check source-aligned English and French opening paragraphs and editorial cautions
+        run: node tests/pius-x-eight-opening-bilingual-audit.mjs
+      - name: Attach private P2 source-coverage inventory and next twelve document candidates
+        run: AO_SPX_COVERAGE_REPORT_OUTPUT=artifacts/pius-x-study-expanded/PiusX_Private_Source_Coverage.json node tools/pius-x-primary-coverage-report.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
