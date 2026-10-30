@@ -3,7 +3,7 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 export function createKyrialeNotationViewer({document:doc}={}){
  if(!doc?.body?.appendChild)throw new TypeError("Browser document required");
- const overlay=doc.createElement("div");
+ const overlay=doc.createElement("dialog");
  overlay.className="ao-kyriale-score-overlay";
  overlay.setAttribute("role","dialog");
  overlay.setAttribute("aria-modal","true");
@@ -30,7 +30,9 @@ export function createKyrialeNotationViewer({document:doc}={}){
  let activeId=null,request=0,previousFocus=null,destroyed=false;
  function close(){
    if(destroyed)return;
-   request++;overlay.hidden=true;activeId=null;
+   request++;
+   if(overlay.open)overlay.close();
+   overlay.hidden=true;activeId=null;
    viewport.replaceChildren();
    const target=previousFocus;previousFocus=null;
    if(target?.isConnected && typeof target.focus==="function")target.focus();
@@ -42,7 +44,9 @@ export function createKyrialeNotationViewer({document:doc}={}){
    if(event.target===overlay||event.target?.closest?.("[data-kyriale-score-close]"))
      close();
  }
+ const onCancel=event=>{event.preventDefault();close()};
  doc.addEventListener("keydown",onKey);
+ overlay.addEventListener("cancel",onCancel);
  overlay.addEventListener("click",onClick);
  async function open(score,{trigger=null}={}){
    if(destroyed||!score?.gabc||!score?.scoreId||!score?.sourceUrl)
@@ -54,6 +58,9 @@ export function createKyrialeNotationViewer({document:doc}={}){
    link.href=score.sourceUrl;
    status.textContent="Engraving locally…";
    viewport.replaceChildren();overlay.hidden=false;
+   // Native dialog enters the browser top layer. The fixed reader ribbon
+   // otherwise intercepts Close taps on 320px phone layouts despite z-index.
+   if(!overlay.open)overlay.showModal();
    closeButton.focus();
    // Defer until the sheet has measurable width. Stale asynchronous renders
    // cannot repaint a later selection, and closing never mutates Mass state.
@@ -73,6 +80,7 @@ export function createKyrialeNotationViewer({document:doc}={}){
    if(destroyed)return;
    close();destroyed=true;
    doc.removeEventListener("keydown",onKey);
+   overlay.removeEventListener("cancel",onCancel);
    overlay.removeEventListener("click",onClick);
    engraver.destroy();overlay.remove();
  }
