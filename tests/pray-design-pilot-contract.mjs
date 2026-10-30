@@ -117,3 +117,40 @@ assert.match(runtime,/function angelusExactPosture\(\)/,"the real posture owner 
 assert.match(runtime,/installAngelusCardDeck\(/,"the real five\/four-card engine remains");
 assert.match(runtime,/if\(PRAYER_PILOT_ENABLED&&x.matches\('\[data-p435930-pilot-search\]'\)\)/);
 console.log("Prayer presentation pilot source contract: passed");
+
+// Research-only Sacred Art candidate joins; no implied rights or release.
+
+const heroJoin=JSON.parse(readFileSync(new URL("../data/pray/artwork-candidate-join-20261030.v1.json",import.meta.url),"utf8"));
+const galleryDelta=JSON.parse(readFileSync(new URL("../data/pray/artwork-candidate-gallery-delta-20261030.v1.json",import.meta.url),"utf8"));
+assert.equal(heroJoin.statistics.slots_total,275);
+assert.equal(heroJoin.statistics.artworks_user_approved_identity,22);
+assert.equal(heroJoin.statistics.slots_with_proposals,147);
+assert.equal(heroJoin.statistics.candidate_links,207);
+assert.equal(galleryDelta.statistics.total_gallery_records,383);
+assert.equal(galleryDelta.statistics.newly_classified_gallery_identities,35);
+assert.equal(galleryDelta.statistics.candidate_links_added,262);
+assert.equal(galleryDelta.statistics.combined_slots_with_candidates,228);
+assert.equal(galleryDelta.statistics.combined_candidate_links,469);
+assert.equal(galleryDelta.statistics.combined_doors_with_candidates,9);
+const idSource=new Map([...heroJoin.artwork_identity_index.map(a=>[a.artwork_id,a]),...galleryDelta.artwork_candidate_index.map(a=>[a.artwork_id,a])]);
+assert.equal(idSource.size,57,"Artwork references must deduplicate primary and gallery identities");
+const sourceSlots=new Map(placement.slots.map(s=>[s.id,s]));
+for(const joined of [heroJoin,galleryDelta]){
+ assert.equal(joined.slot_proposals.length,275);
+ assert.deepEqual(joined.slot_proposals.map(s=>s.slot_id),placement.slots.map(s=>s.id));
+ for(const slot of joined.slot_proposals){
+  const source=sourceSlots.get(slot.slot_id);
+  assert.ok(source);
+  for(const proposal of slot.proposals){
+   assert.ok(idSource.has(proposal.artwork_id),"Unknown proposed artwork");
+   assert.ok(proposal.matched_subject_codes.length>0,"Empty title/subject cue");
+   assert.ok(proposal.matched_subject_codes.every(code=>source.eligible_subjects.includes(code)),"Invalid controlled subject for "+slot.slot_id);
+   assert.equal(proposal.slot_placement_editorially_approved,false);
+   assert.equal(proposal.release_eligible,false);
+  }
+ }
+}
+assert.ok(heroJoin.artwork_identity_index.every(x=>x.publication_eligible===false));
+assert.ok(galleryDelta.artwork_candidate_index.every(x=>x.release_eligible===false));
+assert.equal(heroJoin.statistics.production_ready,0);
+assert.equal(galleryDelta.statistics.production_ready,0);
