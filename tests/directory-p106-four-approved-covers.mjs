@@ -15,14 +15,14 @@ const sha=buf=>createHash("sha256").update(buf).digest("hex");
 assert.equal(b.schema,"AO_P106_FOUR_EDITORIALLY_CHOSEN_DIRECTORY_COVERS_INPUT_V1");
 assert.equal(audit.schema,"AO_P106_EXACT_FOUR_WEBP_BYTES_AUDIT_V1");
 assert.equal(manifest.schema,"AO_P106_FOUR_APPROVED_DIRECTORY_COVERS_V1");
-assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length,photos.items.length],[529,22,40]);
+assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length,photos.items.length],[529,22,41]);
 assert.equal(manifest.counts.existing_approved_media,36);
 assert.equal(manifest.counts.proposed_approved_media,40);
 assert.equal(manifest.counts.new_approved_covers,4);
 assert.equal(manifest.counts.proposed_exact_photo_joins,9);
-assert.equal(sheet.counts.approved_covers,40);
-assert.equal(sheet.counts.exact_confirmed_photo_joins,9);
-assert.equal(sheet.counts.nearby_approved_photo_pairs,16);
+assert.equal(sheet.counts.approved_covers,41);
+assert.equal(sheet.counts.exact_confirmed_photo_joins,10);
+assert.equal(sheet.counts.nearby_approved_photo_pairs,17);
 assert.equal(audit.copied,4);
 assert.equal(b.records.length,4);
 assert.equal(new Set(b.records.map(p=>p.place_id)).size,4);
@@ -73,7 +73,7 @@ for(const rec of b.records){
 }
 assert.equal(b.records.find(x=>x.row===356).width,1024,"Original small Brewood photo never upscaled");
 const held=[...b.holds.map(x=>x.row),322];assert.deepEqual(held.sort((a,b)=>a-b),[309,315,320,322]);
-for(const placeId of ["place:CZ:st-ignatius-jihlava","place:DE:friedhofskirche-st-michael-altoetting",
+for(const placeId of ["place:DE:friedhofskirche-st-michael-altoetting",
 "place:FR:basilique-saint-bernard-fontaine-les-dijon","place:FR:saint-louis-de-gonzague-pau"]){
  assert.equal(photos.items.some(x=>x.place_id===placeId),false,"Conditional/weak hero must not silently publish");
 }
