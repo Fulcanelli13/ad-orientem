@@ -155,6 +155,6 @@ for(const venue of fullMap){
     visualCount.neutral++;
   }
 }
-assert.deepEqual(visualCount,{emblem:1191,named:42,neutral:649},
-  "All 1,882 venues have either a source-specific emblem, named monogram or neutral church symbol");
+assert.deepEqual(visualCount,{emblem:1188,named:61,neutral:633},
+  "All 1,882 original R49 and approved additions have an honest emblem, source-named monogram or neutral church symbol");
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
