@@ -23,4 +23,23 @@ document.getElementById("search").addEventListener("input",render);document.getE
 document.getElementById("export").addEventListener("click",()=>{const all=ITEMS.map(x=>({id:x.id,title:x.title,artist:x.artist,order:x.index,...({status:"undecided",placements:[],alternative:"",...(decisions[x.id]||{})})}));const out={schema:"AO_PRAYER_Q2_PLACEMENT_DECISIONS_V1",source_branch:"archive/sacred-art-master-20261030-v2",source_csv_sha:SNAPSHOT,blueprint_sha:"db97b5cdffecd369e405ae4ccea1a9580a64942e06f949654589268cbbee73d7",batch:BATCH,count:ITEMS.length,reviewed:all.filter(x=>x.status!=="undecided").length,decisions:all};const blob=new Blob([JSON.stringify(out,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="AO_Prayer_Q2_Batch_03_Decisions.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);});
 document.getElementById("import").onclick=()=>document.getElementById("file").click();
 document.getElementById("file").addEventListener("change",async e=>{const f=e.target.files[0];if(!f)return;try{const j=JSON.parse(await f.text());if(j.source_csv_sha!==SNAPSHOT||j.batch!==BATCH)throw Error("Not this snapshot or batch");for(const d of j.decisions||[]){if(ITEMS.some(x=>x.id===d.id))decisions[d.id]=d;}save();render();alert("Batch decisions imported.");}catch(e){alert("Import failed: "+e.message);}e.target.value="";});render();
+</script><script>
+/* Optional best-effort image preview resolution for the recorded exact museum object.
+   Uses only the museum's public artwork API; does not certify photo rights or quality. */
+(function(){
+const cache={};let running=0;const pending=[];const limit=3;
+function getMuseumUrl(x){let m=x.source.match(/metmuseum\.org\/art\/collection\/search\/(\d+)/i);if(m)return {kind:"met",url:"https://collectionapi.metmuseum.org/public/collection/v1/objects/"+m[1]};let c=x.origin.match(/(?:cma:|cma-)(\d+)/i);if(c)return {kind:"cma",url:"https://openaccess-api.clevelandart.org/api/artworks/"+c[1]};return null;}
+function process(){if(running>=limit||!pending.length)return;const job=pending.shift();running++;const {card,x,museum}=job;
+fetch(museum.url).then(r=>{if(!r.ok)throw Error("museum-api-"+r.status);return r.json()}).then(j=>{
+const url=museum.kind==="met"?(j.primaryImageSmall||j.primaryImage):(j.data?.images?.web?.url||j.data?.images?.print?.url||j.images?.web?.url||j.images?.print?.url);
+if(!url||!/^https:\/\//.test(url))throw Error("no-photo");
+if(!card.isConnected)return;
+const art=card.querySelector(".art");const img=document.createElement("img");img.loading="lazy";img.alt=x.title;img.referrerPolicy="no-referrer";img.onload=()=>art.classList.remove("noimage");img.onerror=()=>art.classList.add("noimage");img.src=url;art.prepend(img);
+}).catch(()=>{}).finally(()=>{running--;process();});
+}
+function loadOne(card){if(card.dataset.enrichment)return;card.dataset.enrichment="1";const x=ITEMS.find(x=>x.id===card.dataset.id);if(!x||x.preview)return;const museum=getMuseumUrl(x);if(!museum)return;pending.push({card,x,museum});process();}
+const watcher=("IntersectionObserver" in window)?new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){watcher.unobserve(e.target);loadOne(e.target);}},{rootMargin:"350px"}):null;
+function hydrate(){document.querySelectorAll(".card").forEach(card=>{const x=ITEMS.find(x=>x.id===card.dataset.id);if(x&&!x.preview){if(watcher)watcher.observe(card);else loadOne(card);}});}
+const originalRender=render;render=function(){originalRender();hydrate();};hydrate();
+})();
 </script></body></html>
