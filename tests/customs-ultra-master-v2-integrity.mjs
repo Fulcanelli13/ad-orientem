@@ -88,5 +88,37 @@ assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,132)
 assert.ok(wave4.rows.every(x=>unassigned.has(x.evidence_id)&&x.original_source_id_verified&&!x.app_publication_allowed));
 const firstFour=[...wave.rows,...get("customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json").rows,...get("customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json").rows,...wave4.rows];
 assert.equal(new Set(firstFour.map(x=>x.evidence_id)).size,800);
-assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,800);
-console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 linked evidence/3295 separately indexed, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,3295);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.unprocessed,0);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_unresolved_requires_passage,132);
+const allSourceScreens=[];
+for(let waveNo=1;waveNo<=17;waveNo++){
+ const sourceCount=waveNo===17?95:200;
+ const screenName="customs-ultra-master-v2-wave"+String(waveNo).padStart(2,"0")+"-"+sourceCount+"-source-scope-screen.v1.json";
+ const screen=get(screenName);
+ const expected=waves.batches[waveNo-1].source_evidence_ids;
+ assert.equal(screen.rows.length,expected.length,"Unexpected number of records in "+screenName);
+ for(let i=0;i<screen.rows.length;i++){
+  const r=screen.rows[i];
+  assert.equal(r.evidence_id,expected[i],"Unstable source ID / wave position in "+screenName);
+  assert.equal(r.source_id,r.evidence_id.slice(r.evidence_id.indexOf(":")+1),"Original source ID mismatch "+r.evidence_id);
+  assert.ok(unassigned.has(r.evidence_id),"Not a preserved evidence-only record: "+r.evidence_id);
+  assert.ok(r.original_source_id_verified===true||r.source_id_exact_match===true||r.original_source_record_id_matched===true||r.source_id_verified_in_this_wave===true,
+   "Original record not matched: "+r.evidence_id);
+  for(const field of ["publication_allowed","app_publication_allowed","publish_allowed","app_publication","app_published","calendar_published","indulgence_grant_certified","original_indulgence_grant_verified","distinct_custom_certified"])
+   if(field in r)assert.equal(r[field],false,field+" accidentally granted to "+r.evidence_id);
+ }
+ allSourceScreens.push(...screen.rows);
+}
+assert.equal(allSourceScreens.length,3295);
+assert.equal(new Set(allSourceScreens.map(x=>x.evidence_id)).size,3295);
+assert.deepEqual(new Set(allSourceScreens.map(x=>x.evidence_id)),unassigned);
+assert.equal(allSourceScreens.filter(x=>x.preliminary_lane==="ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY").length,132);
+const dedup=get("customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json");
+assert.equal(dedup.family_action_groups.length,26);
+assert.equal(dedup.description_pair_edges.length,41);
+assert.equal(dedup.regional_or_institutional_cluster_cases.length,12);
+assert.equal(dedup.counts.merge_operations_approved,0);
+assert.equal(dedup.counts.original_family_observations_accounted_for,70);
+assert.equal(coverage.progress.dedup_action_review_caseboard.total_review_units,79);
+console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
