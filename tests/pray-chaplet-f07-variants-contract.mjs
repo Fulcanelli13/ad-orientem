@@ -12,12 +12,14 @@ assert.equal(LITTLE_CROWN_B30_BEADS.length,15);
 for(const language of [false,true]){
  for(const i of [0,4,5,6,24,29]){
   const html=renderF07FiveWounds(i,{french:language});
-  assert.equal(count(html,/class="aoF07VariantDot /g),30);
-  assert.equal(count(html,/data-f07-status="current"/g),1);
+  assert.match(html, /class="aoF07WoundsCross"/);
+  assert.equal(count(html,/data-f07-wound-status="/g),5,"five source wound points");
+  assert.equal(count(html,/data-f07-wound-status="current"/g),1);
+  assert.equal(count(html,/data-f07-wound-status="passed"/g),Math.floor(i/6));
   assert.match(html,new RegExp('data-f07-position="'+i+'" data-f07-total="30"'));
-  assert.equal(count(html,/data-f07-group=/g),5);
-  assert.equal(count(html,/aoF07VariantDot-gloria/g),25);
-  assert.equal(count(html,/aoF07VariantDot-ave/g),5);
+  assert.equal(count(html,/<circle class="aoF07WoundPoint"/g),5);
+  assert.doesNotMatch(html,/aoF07VariantDot|CHAPLET POSITION|REPÈRE DU CHAPELET/,"no redundant thirty-dot box");
+  assert.match(html,/(Glory Be|Hail Mary|Gloire au Père|Je vous salue Marie)/);
  }
  for(const [phase,bead] of [[0,0],[1,0],[1,4],[1,5],[1,6],[7,2],[7,3],[7,4],[8,0]]){
   const html=renderF07PreciousBlood(phase,bead,{french:language});
@@ -46,4 +48,4 @@ for(const fn of [()=>renderF07FiveWounds(0),()=>renderF07PreciousBlood(0,0),()=>
  assert.doesNotMatch(html,/data-p435930|localStorage|data-prayed|data-completed|data-navigation-owner/,
   "F07 is a read-only source position projection and cannot become a second engine");
 }
-console.log("PASS F07 chaplet variants: 30, 33+7+7 and 3+12 source positions; no parallel event ownership");
+console.log("PASS F07 chaplet variants: 5-point Five Wounds w1 cross over 30 steps; Precious Blood 33+7+7, Little Crown 3+12; no parallel owner");
