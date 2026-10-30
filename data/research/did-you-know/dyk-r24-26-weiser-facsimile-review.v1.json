@@ -5,7 +5,7 @@
   "source_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
   "source_book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958), first edition, 384-page facsimile",
   "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-  "scope": "26 previously shortlisted records from the original 168 reviewed against printed page images; distinct ritual, cultural and geographical claims retained; secondary historical verification, translation signoff and Home uniqueness are still pending.",
+  "scope": "26 previously shortlisted records from the original 168 reviewed against printed page images; distinct ritual, cultural and geographical claims retained; secondary historical verification, translation signoff and Home uniqueness are still pending. One didukh/Forefather term equivalence checked against the independent Internet Encyclopedia of Ukraine (2005 update).",
   "counts": {
     "original_168": 168,
     "source_checked_in_this_batch": 26,
@@ -13,19 +13,25 @@
     "unique_printed_pages": 18,
     "bilingual_statements_reworded": 26,
     "final_approved": 0,
-    "published_new": 0
+    "published_new": 0,
+    "independent_terminology_crosschecks": 1
   },
   "records": [
     {
       "id": "DYK-UM01-001",
       "printed_page": 116,
       "bilingual_copy_revised": true,
-      "reason": "The cited text says Forefather, not didukh; retain independent source requirement for Ukrainian-language equivalence.",
+      "reason": "Weiser p. 116 explicitly says 'Forefather'; Ukrainian-language equivalent didukh independently corroborated by Internet Encyclopedia of Ukraine.",
       "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
       "source_pdf_page_zero_based": 133,
       "independent_historical_witness": false,
       "french_signoff": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "secondary_lexical_witness": {
+        "url": "https://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CC%5CH%5CChristmas.htm",
+        "scope": "Ukrainian name didukh / did (grandsire) for ancestral grain sheaf",
+        "verified_2026_10_30": true
+      }
     },
     {
       "id": "DYK-UM01-003",
