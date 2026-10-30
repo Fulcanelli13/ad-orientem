@@ -15,7 +15,8 @@
     "held": 36,
     "official_candidates": 7,
     "cl2_distinct_affiliation_labels": 138,
-    "cl2_venue_source_rows": 2687
+    "cl2_venue_source_rows": 2687,
+    "source_named_candidates_with_image_urls": 3
   },
   "groups": [
     {
@@ -107,8 +108,10 @@
       "source": "https://donaldsuniform.com/collections/congregation-of-mary-immaculate-queen",
       "license": null,
       "rights": "THIRD_PARTY_IMAGE_RIGHTS_NOT_CLEARED",
-      "note": "Vendor's CMRI Spokane crest is identifiable; not the arms of Bishop Pivarunas. Must verify with institute itself. Institute's official US map features a CMRI crest; do not substitute Bishop Pivarunas personal arms.",
-      "identity_evidence_url": "https://www.cmri.org/pdfs/cmri-traditional-latin-mass-map-usa-2026a.pdf"
+      "note": "Vendor's CMRI Spokane crest is identifiable; not the arms of Bishop Pivarunas. Must verify with institute itself. Institute's official US map features a CMRI crest; do not substitute Bishop Pivarunas personal arms. The official CMRI US Mass centres map depicts its institutional crest; keep separate from Bishop Pivarunas's personal arms and vendor-artwork rights.",
+      "identity_evidence_url": "https://www.cmri.org/pdfs/cmri-traditional-latin-mass-map-usa-2026a.pdf",
+      "candidate_image_url": "https://donaldsuniform.com/cdn/shop/collections/1666.jpg?v=1745799973",
+      "candidate_image_scope": "THIRD_PARTY_REFERENCE_ONLY_NOT_PUBLISHABLE"
     },
     {
       "group_code": "CSPV",
@@ -196,7 +199,9 @@
       "source": "https://www.chemere.org/",
       "license": null,
       "rights": "PENDING",
-      "note": "Use Fraternity of St Vincent Ferrer arms, not Dominican generic arms; prior Logo_FSVF.jpg Commons link not independently verified."
+      "note": "Use Fraternity of St Vincent Ferrer arms, not Dominican generic arms; prior Logo_FSVF.jpg Commons link not independently verified. Fraternity-identifying black/white arms with Fraternitas Sancti Vincentii Ferrerii motto; Wikipedia fr is not Commons commercial-use clearance.",
+      "candidate_image_url": "https://upload.wikimedia.org/wikipedia/fr/1/19/Logo_FSVF.jpg",
+      "candidate_image_scope": "WIKIPEDIA_FR_IDENTITY_REFERENCE_ONLY_RIGHTS_UNCLEARED"
     },
     {
       "group_code": "IBP",
@@ -229,7 +234,8 @@
       "source": "https://www.sodalitium.biz/",
       "license": null,
       "rights": "PENDING",
-      "note": "Commons upload previously flagged potential copyright violation; require original owner source."
+      "note": "Commons upload previously flagged potential copyright violation; require original owner source. A tempting heraldic web image is labelled as Bishop Michel Guérard des Lauriers's personal arms: not an institute emblem. Remains held.",
+      "rejected_identity_lookalike": "https://ecclesiasticalheraldry.weebly.com/uploads/5/7/2/2/57220915/coat-of-arms-of-bishop-michel-gu-rard-des-lauriers_orig.png"
     },
     {
       "group_code": "INDEPENDENT",
@@ -383,8 +389,8 @@
       "type": "INSTITUTE",
       "source": "https://misericordedivine.fr/",
       "license": null,
-      "rights": "PENDING",
-      "note": "Exact organisation source available; image file and reuse require review."
+      "rights": "OFFICIAL_SITE_COPYRIGHT_RESERVED__REUSE_NOT_CLEARED",
+      "note": "Exact organisation source available; image file and reuse require review. The society's legal notices reserve copyright to the Missionaries of Divine Mercy."
     },
     {
       "group_code": "SOCIEDAD_TRENTO",
