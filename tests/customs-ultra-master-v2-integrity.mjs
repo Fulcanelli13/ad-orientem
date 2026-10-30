@@ -662,7 +662,7 @@ assert.equal(singleWorkingIndex.identity_boundary_review.batch_id,"IDENTITY-BOUN
 assert.equal(singleWorkingIndex.identity_boundary_review.description_scope_adjudications,30);
 assert.equal(singleWorkingIndex.identity_boundary_review.remaining_dedup_caseboards_not_adjudicated_at_this_depth,49);
 assert.equal(singleWorkingIndex.counts.dedup_description_boundary_adjudications,30);
-assert.equal(singleWorkingIndex.counts.dedup_action_scope_remaining,49);
+assert.equal(singleWorkingIndex.counts.dedup_action_scope_remaining,0);
 assert.equal(singleWorkingIndex.counts.dedup_hardened_false_merge_vetoes,15);
 assert.equal(singleWorkingIndex.counts.dedup_related_nonidentical_pair_boundaries,12);
 assert.equal(singleWorkingIndex.counts.dedup_regional_role_day_boundaries,3);
@@ -768,12 +768,73 @@ assert.equal(uniquePages.size,11);
 assert.equal(groupIDs.size,13);
 assert.equal(sameCoreChecked.filter(c=>c.subjects.includes("CC3WORK-2026-085")).length,2);
 assert.deepEqual(sc14.repeated_case_ids,["CC3WORK-REL-013","CC3WORK-REL-040"]);
-assert.equal(singleWorkingIndex.dedup_case_decisions.filter(c=>!c.identity_boundary_adjudication&&!c.same_core_source_verification).length,35);
+assert.equal(singleWorkingIndex.dedup_case_decisions.filter(c=>!c.identity_boundary_adjudication&&!c.same_core_source_verification&&!c.action_boundary_depth_review).length,0);
 assert.equal(singleWorkingIndex.counts.same_core_pairs_hosted_source_reviewed,14);
 assert.equal(singleWorkingIndex.counts.same_core_unique_hosted_page_reviews,11);
 assert.equal(singleWorkingIndex.counts.same_core_new_independent_attestations,0);
-assert.equal(singleWorkingIndex.counts.dedup_cases_with_action_boundary_or_source_review,44);
-assert.equal(singleWorkingIndex.counts.dedup_cases_awaiting_deeper_work,35);
+assert.equal(singleWorkingIndex.counts.dedup_cases_with_action_boundary_or_source_review,79);
+assert.equal(singleWorkingIndex.counts.dedup_cases_awaiting_deeper_work,0);
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
+
+// 35 action-boundary decisions (26 McLoughlin families; 9 previously reviewed Weiser regional clusters).
+const depth35=get("customs-ultra-master-v2-35-family-regional-action-boundaries-20261030.v1.json");
+assert.equal(depth35.schema,"AO_CUSTOMS_V2_35_FAMILY_REGIONAL_ACTION_BOUNDARY_ADJUDICATION");
+assert.equal(depth35.counts.cases,35);
+assert.equal(depth35.family_decisions.length,26);
+assert.equal(depth35.regional_decisions.length,9);
+assert.equal(depth35.counts.family_witness_rows,70);
+assert.equal(depth35.counts.regional_group_rows,28);
+assert.equal(depth35.counts.newly_verified_independent_authors,0);
+assert.equal(depth35.counts.newly_verified_original_facsimiles,0);
+for(const n of ["new_canonical_identities","canonical_merges","indulgences_granted","calendar_publications"])
+ assert.equal(depth35.counts[n],0);
+assert.equal(depth35.publication_guards.existing_published_customs,36);
+for(const n of ["source_independence_certified","church_ritual_authority_certified","human_identity_approval","automatic_identity_merges","new_calendar_publication"])
+ assert.equal(depth35.publication_guards[n],false);
+const depthDecisions=[...depth35.family_decisions,...depth35.regional_decisions],depthIDs=new Set();
+const originalMcl=JSON.parse(readFileSync(new URL("mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",root),"utf8"));
+const mclByID=new Map(originalMcl.records.map(x=>[x.observation_id,x]));
+const originalRegionalByID=new Map(sourceOwners.records.map(x=>[x.provisional_group_id,x]));
+const touchedMcl=new Set(),touchedRegional=new Set();
+for(const d of depthDecisions){
+ assert.ok(!depthIDs.has(d.case_id),"duplicate reviewed case "+d.case_id);depthIDs.add(d.case_id);
+ const c=singleWorkingIndex.dedup_case_decisions.find(x=>x.id===d.case_id);
+ assert.ok(c && c.action_boundary_depth_review,"missing crosslink "+d.case_id);
+ assert.equal(c.action_boundary_depth_review.disposition,d.adjudication);
+ assert.equal(c.action_boundary_depth_review.source_record_path,"data/customs/master/customs-ultra-master-v2-35-family-regional-action-boundaries-20261030.v1.json");
+ assert.deepEqual(c.subjects,d.source_witnesses.map(x=>x.id));
+ assert.ok(d.action_boundary.length>80 && d.next_evidence_gate.length>30);
+ for(const flag of ["identity_certified","independent_attestation_certified","new_source_original_facsimile_verified","rite_and_indulgence_authority_verified","automatic_merge_authorized","calendar_release_authorized"])
+  assert.equal(c.action_boundary_depth_review[flag],false);
+ for(const w of d.source_witnesses){
+  if(d.kind==="FAMILY"){
+   const orig=mclByID.get(w.id);assert.ok(orig);assert.ok(!touchedMcl.has(w.id));touchedMcl.add(w.id);
+   assert.equal(w.action,orig.independently_worded_source_label);
+   assert.equal(w.claim_type,orig.claim_characterization);
+   assert.equal(w.hosted_url,orig.source_locator.web_url);
+   assert.deepEqual(w.hosted_lines,[orig.source_locator.html_line_start,orig.source_locator.html_line_end]);
+   assert.equal(w.printed_1954_original_verified,false);
+  }else{
+   const orig=originalRegionalByID.get(w.id);assert.ok(orig);assert.ok(!touchedRegional.has(w.id));touchedRegional.add(w.id);
+   assert.equal(w.action,orig.working_action_label_en);
+   assert.deepEqual(w.printed_pages,orig.original_index_printed_pages);
+   assert.deepEqual(w.primary_source_observation_ids,orig.source_observation_ids);
+   assert.equal(w.original_printed_passage_previously_reviewed,orig.source_original_printed_page_checked);
+  }
+ }
+}
+assert.equal(depthIDs.size,35);
+assert.equal(touchedMcl.size,70);
+assert.equal(touchedRegional.size,28);
+assert.equal(singleWorkingIndex.action_boundary_completion_review.full_79_case_action_boundary_coverage,79);
+assert.equal(singleWorkingIndex.action_boundary_completion_review.original_book_pair_provenance_still_pending,true);
+assert.equal(singleWorkingIndex.counts.dedup_family_action_boundaries_reviewed,26);
+assert.equal(singleWorkingIndex.counts.dedup_regional_action_boundaries_reviewed,9);
+assert.equal(singleWorkingIndex.dedup_case_decisions.filter(x=>Boolean(x.identity_boundary_adjudication)+Boolean(x.same_core_source_verification)+Boolean(x.action_boundary_depth_review)!==1).length,0);
 assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
 assert.equal(singleWorkingIndex.guard.merges_approved,0);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
