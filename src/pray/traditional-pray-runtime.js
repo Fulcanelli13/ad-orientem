@@ -821,7 +821,7 @@ function injectGlossaryAction(){
 function reconcileTraditionalPrayerSettings(m){
  const header=m.querySelector('.aoP435930Head');
  if(!header)return;
- const candidates=[...m.querySelectorAll('.aoTP381Source,.aoDailyBookSourceNote,.aoTP381Lang')];
+ const candidates=[...m.querySelectorAll('.aoTP381Source,.aoDailyBookSourceNote,.aoTP381Lang,.aoDailyBookSelector,.aoDailyReadingOptions')];
  const nodes=candidates.filter(x=>!candidates.some(y=>y!==x&&y.contains(x)));
  if(!nodes.length)return;
  const menu=document.createElement('details');
@@ -829,7 +829,7 @@ function reconcileTraditionalPrayerSettings(m){
  menu.innerHTML='<summary aria-label="'+esc(L("Prayer language and source notes","Langue de prière et notes de source"))+
   '">Aa</summary><div class="aoPrayerBookMenuPanel"></div>';
  const body=menu.querySelector('.aoPrayerBookMenuPanel');
- const languages=nodes.filter(n=>n.matches('.aoTP381Lang'));
+ const languages=nodes.filter(n=>n.matches('.aoTP381Lang,.aoDailyBookSelector,.aoDailyReadingOptions'));
  const references=nodes.filter(n=>!n.matches('.aoTP381Lang'));
  languages.forEach(n=>body.append(n));
  if(references.length){
