@@ -63,6 +63,36 @@ class PhotoFinderTests(unittest.TestCase):
   self.assertEqual([x["place_id"] for x in second],
                    [x["place_id"] for x in later_window])
   self.assertTrue(mod.already_released(second[0],later,self.gallery))
+ def test_all_451_photo_reviews_are_done_in_canonical_place_master(self):
+  lookup={p["place_id"]:p for p in self.places["places"]}
+  ds=self.decisions["decisions"]
+  self.assertEqual(len(lookup),530)
+  self.assertEqual(len(ds),451)
+  self.assertEqual(sum(1 for p in lookup.values() if "photo_editorial" in p),451)
+  files=0
+  selected=0
+  no_selection=0
+  for pid,p in lookup.items():
+   review=p.get("photo_editorial")
+   original=ds.get(pid)
+   if original is None:
+    self.assertIsNone(review,"Unreviewed Place cannot be marked DONE")
+    continue
+   self.assertIsNotNone(review)
+   self.assertEqual(review["status"],"DONE")
+   self.assertEqual(review["source"],"AO_PLACE_PHOTO_DECISIONS_V1")
+   self.assertEqual(review["decided_on"],original["decided_on"])
+   self.assertEqual(review["decision"],"SELECTED" if original["files"] else "NONE_SELECTED")
+   self.assertEqual(review["cover_commons_file"],original["files"][0] if original["files"] else None)
+   self.assertEqual(review["gallery_commons_files"],original["files"][1:])
+   files+=len(original["files"])
+   selected+=bool(original["files"])
+   no_selection+=not bool(original["files"])
+  self.assertEqual((selected,no_selection,files),(395,56,972))
+  # Asset release remains separate: approved media is NEVER inferred from
+  # editorial DONE. Only source-verified files are in approved cover/gallery.
+  self.assertGreaterEqual(len(self.covers["items"]),90)
+  self.assertGreaterEqual(len(self.gallery["items"]),33)
  def test_older_licences_not_misrepresented(self):
   for c in ["CC-BY-2.0","CC-BY-2.5","CC-BY-SA-2.5"]:
    self.assertIn(c,mod.stage.LICENSES)
