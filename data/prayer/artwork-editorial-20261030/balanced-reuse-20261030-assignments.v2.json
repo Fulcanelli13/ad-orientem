@@ -20,7 +20,11 @@
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
     "artwork_edges_after_consolidation": 1572,
-    "explicit_user_acceptances_never_auto_pruned": true
+    "explicit_user_acceptances_never_auto_pruned": true,
+    "cross_prayer_inherited_new_edges": 100,
+    "cross_prayer_staged_candidate_slots": 267,
+    "cross_prayer_exact_scene_gaps": 1,
+    "cross_prayer_not_publication_ready": true
   },
   "locked": [
     {
@@ -350,6 +354,160 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::commons:34140055",
+          "title": "Adoration of the Magi",
+          "artist": "Workshop of Peter Paul Rubens",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:28933083",
+          "title": "Adoration of the Magi",
+          "artist": "Anton Kern",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:115220164",
+          "title": "Adoration of the Magi",
+          "artist": "Denys Calvaert",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:56890177",
+          "title": "Adoration of the Magi",
+          "artist": "Jean-Baptiste de Faudran",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:40907107",
+          "title": "Adoration of the Magi",
+          "artist": "Massimo Stanzione",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:52809691",
+          "title": "Adoration of the Magi .",
+          "artist": "Jacob Jordaens",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:51744278",
+          "title": "Nativity",
+          "artist": "Aertgen van Leyden",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:74483814",
+          "title": "The Adoration of the Magi",
+          "artist": "François Lemoyne",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:31782068",
+          "title": "The Adoration of the Shepherds",
+          "artist": "Guido Reni",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:23100292",
+          "title": "The Adoration of the Shepherds",
+          "artist": "Barent Fabritius",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:93153411",
+          "title": "The Nativity or the Adoration of the Angels",
+          "artist": "Gerard Seghers",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
         }
       ]
     },
@@ -1117,6 +1275,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::nga:12130",
+          "title": "The Last Supper",
+          "artist": "Sebastiano Ricci",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.nga.gov/artworks/12130",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:last_supper; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "COV-prayer.communion",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:last_supper"
         }
       ]
     },
@@ -1211,6 +1383,48 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::commons:163856846",
+          "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
+          "artist": "DCHNwam",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::commons:163856843",
+          "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+          "artist": "DCHNwam",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::met:435725",
+          "title": "Christ's Descent into Hell",
+          "artist": "Hieronymus Bosch",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -1372,6 +1586,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::commons:22002144",
+          "title": "The Resurrection",
+          "artist": "Ricci, Sebastiano",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:resurrection; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-12",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:resurrection"
         }
       ]
     },
@@ -1413,6 +1641,36 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-13::05",
+          "title": "The Ascension (after Leandro Bassano)",
+          "artist": "David Teniers",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:ascension; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.rosary-13::05",
+          "cross_prayer_source_stage": "STG-pray.rosary-13",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:ascension"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-13::06",
+          "title": "The Ascension of Christ",
+          "artist": "Pietro Perugino",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Pietro_Perugino_-_The_Ascension_of_Christ_-_WGA17257.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:ascension; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.rosary-13::06",
+          "cross_prayer_source_stage": "STG-pray.rosary-13",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:ascension"
         }
       ]
     },
@@ -1454,6 +1712,21 @@
           "eligible": true,
           "flag": "Already chosen for Pentecost Vigil in Calendar; do not overwrite specific liturgical hero choices",
           "origin": "2026-10-30_EDITORIAL_CROSS_REFERENCE"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+          "title": "Pentecost",
+          "artist": "Mateo Cerezo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:pentecost; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.rosary-14::06",
+          "cross_prayer_source_stage": "STG-pray.rosary-14",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:pentecost"
         }
       ]
     },
@@ -1803,6 +2076,34 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::nga-46470",
+          "title": "The Assumption of the Virgin",
+          "artist": "Nicolas Poussin",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.nga.gov/artworks/46470",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:assumption; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-15",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:assumption"
+        },
+        {
+          "id": "CANONICAL::nga-50280",
+          "title": "The Assumption of the Virgin",
+          "artist": "Michel Sittow",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.nga.gov/artworks/50280",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:assumption; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-15",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:assumption"
         }
       ]
     },
@@ -4789,6 +5090,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::commons:22002144",
+          "title": "The Resurrection",
+          "artist": "Ricci, Sebastiano",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:resurrection; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-12",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:resurrection"
         }
       ]
     },
@@ -5823,6 +6138,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -6684,6 +7013,20 @@
           "eligible": false,
           "flag": "Weak reuse trimmed only from pool of >5 distinct eligible paintings; 5 retained",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -6761,6 +7104,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -6920,6 +7277,21 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+          "title": "Pentecost",
+          "artist": "Mateo Cerezo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:pentecost; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.rosary-14::06",
+          "cross_prayer_source_stage": "STG-pray.rosary-14",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:pentecost"
         }
       ]
     },
@@ -7754,6 +8126,34 @@
           "eligible": true,
           "flag": "",
           "origin": "BATCHES_06_11_USER_APPROVED"
+        },
+        {
+          "id": "REVIEW::met:436781",
+          "title": "The Adoration of the Christ Child",
+          "artist": "Jan Joest of Kalkar",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.metmuseum.org/art/collection/search/436781",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "HERO-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+          "title": "Adoration of the Magi",
+          "artist": "Peter Paul Rubens",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -8514,6 +8914,34 @@
           "eligible": true,
           "flag": "",
           "origin": "BATCHES_06_11_USER_APPROVED"
+        },
+        {
+          "id": "REVIEW::commons:163856846",
+          "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
+          "artist": "DCHNwam",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::commons:163856843",
+          "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+          "artist": "DCHNwam",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -9123,6 +9551,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "PRAYER::w1-kazimirowski",
+          "title": "Divine Mercy (the original, 1934)",
+          "artist": "Eugeniusz Kazimirowski",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Explicit note permits Sacred Side only+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -9765,6 +10207,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::W07-014",
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -9983,6 +10439,20 @@
           "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
           "origin": "UPLOADED_APPROVAL_JSON_20261030",
           "candidate_key": "STG-pray.precious_blood-01::06"
+        },
+        {
+          "id": "REVIEW::commons:160384",
+          "title": "The Circumcision of Christ",
+          "artist": "Francisco de Zurbarán",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_050.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:circumcision; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.st_joseph_seven_sorrows-03",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:circumcision"
         }
       ]
     },
@@ -10279,6 +10749,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::nga-137505",
+          "title": "Christ Carrying the Cross",
+          "artist": "Cornelis van Poelenburch",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.nga.gov/artworks/137505",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:carrying_cross; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-10",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:carrying_cross"
         }
       ]
     },
@@ -10469,6 +10953,34 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "PRAYER::historic:anthony van dyck:the lance thrust",
+          "title": "The Lance Thrust",
+          "artist": "Anthony van Dyck",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:pierced_side; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.five_wounds-05",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:pierced_side"
+        },
+        {
+          "id": "CANONICAL::W07-014",
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -10906,6 +11418,20 @@
           "eligible": true,
           "flag": "",
           "origin": "BATCHES_06_11_USER_APPROVED"
+        },
+        {
+          "id": "REVIEW::smk:KMS1168",
+          "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+          "artist": "Frantz Clein",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://open.smk.dk/en/artwork/image/KMS1168",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:presentation; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-05",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:presentation"
         }
       ]
     },
@@ -11164,6 +11690,20 @@
           "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
           "origin": "UPLOADED_APPROVAL_JSON_20261030",
           "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::04"
+        },
+        {
+          "id": "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+          "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+          "artist": "Giandomenico Tiepolo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IV_-_Jesus_meets_his_mother_by_Giandomenico_Tiepolo.jpg",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:mary_meets_cross; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.stations-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross"
         }
       ]
     },
@@ -11301,6 +11841,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+          "title": "The Lance Thrust",
+          "artist": "Anthony van Dyck",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:crucifixion; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-11",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:crucifixion"
         }
       ]
     },
@@ -11486,6 +12040,48 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::met:438427",
+          "title": "The Lamentation",
+          "artist": "Ludovico Carracci",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::met:439553",
+          "title": "The Lamentation",
+          "artist": "Domenichino (Domenico Zampieri)",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::met:437342",
+          "title": "The Lamentation",
+          "artist": "Scipione Pulzone (Il Gaetano)",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -11580,6 +12176,21 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+          "title": "Pentecost",
+          "artist": "Mateo Cerezo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:pentecost; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.rosary-14::06",
+          "cross_prayer_source_stage": "STG-pray.rosary-14",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:pentecost"
         }
       ]
     },
@@ -11609,6 +12220,21 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+          "title": "Pentecost",
+          "artist": "Mateo Cerezo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:pentecost; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.rosary-14::06",
+          "cross_prayer_source_stage": "STG-pray.rosary-14",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:pentecost"
         }
       ]
     },
@@ -12335,6 +12961,146 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+          "title": "The Annunciation",
+          "artist": "Philippe de Champaigne",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "PRAYER::angelus--murillo-annunciation",
+          "title": "The Annunciation (Prado)",
+          "artist": "Bartolomé Esteban Murillo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "CANONICAL::met-436791",
+          "title": "The Annunciation",
+          "artist": "Joos van Cleve",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "CANONICAL::met-436502",
+          "title": "The Annunciation",
+          "artist": "Luca Giordano",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "CANONICAL::cma-127572",
+          "title": "The Annunciation",
+          "artist": "Workshop of Paolo Veronese",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "REVIEW::commons:55389333",
+          "title": "Annunciation",
+          "artist": "Giovanni Lanfranco",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "REVIEW::commons:22145562",
+          "title": "The Annunciation",
+          "artist": "Francesco Solimena",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "REVIEW::commons:21885843",
+          "title": "The Annunciation",
+          "artist": "Henry Ossawa Tanner",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "REVIEW::commons:74171702",
+          "title": "The Annunciation \" \"",
+          "artist": "Frans Francken the Younger",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
+        },
+        {
+          "id": "REVIEW::commons:186817730",
+          "title": "The Annunciation \" \"",
+          "artist": "Hendrick ter Brugghen",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:annunciation; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:annunciation"
         }
       ]
     },
@@ -15921,6 +16687,20 @@
           "eligible": false,
           "flag": "A Mass scene does not depict this Eucharistic devotion/rite",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+          "title": "Adoration of the Magi",
+          "artist": "Peter Paul Rubens",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -16395,6 +17175,20 @@
           "eligible": false,
           "flag": "A Mass scene does not depict this Eucharistic devotion/rite",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "PRAYER::adoration--primary",
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "fit": "CONTEXTUAL_APPROVED_TEMPORARY_CARRYOVER",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SAME_BENEDICTION_PRAYER_COVER_CARRYOVER_NOT_A_DEPICTION_OF_THE_BLESSING; research-only, no publication clearance",
+          "origin": "Existing Eucharistic devotional painting; not asserted to depict Forty Hours ritual+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "COV-pray.benediction",
+          "cross_prayer_reuse_rule": "SAME_BENEDICTION_PRAYER_COVER_CARRYOVER_NOT_A_DEPICTION_OF_THE_BLESSING"
         }
       ]
     },
@@ -16691,6 +17485,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::nga:12130",
+          "title": "The Last Supper",
+          "artist": "Sebastiano Ricci",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.nga.gov/artworks/12130",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:last_supper; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "COV-prayer.communion",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:last_supper"
         }
       ]
     },
@@ -17158,6 +17966,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::nga-137505",
+          "title": "Christ Carrying the Cross",
+          "artist": "Cornelis van Poelenburch",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.nga.gov/artworks/137505",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:carrying_cross; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-10",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:carrying_cross"
         }
       ]
     },
@@ -17276,6 +18098,51 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::01",
+          "title": "Via Crucis — Jesus encounters His Mother",
+          "artist": "Giandomenico Tiepolo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
+          "gate": "RIGHTS_NOT_CLEARED;NATIVE_PHOTO_UNVERIFIED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:mary_meets_cross; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::01",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
+          "title": "Jesus meets His Mother",
+          "artist": "Théophile Lybaert",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_meets_His_Mother.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;MODERATE_SOURCE_RESOLUTION_NATIVE_QA_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:mary_meets_cross; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::03",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04",
+          "title": "Solesmes — Fourth Station of the Way of the Cross",
+          "artist": "Attributed in Commons filename to Delacroix",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Solesmes_(Nord,_Fr)_chemin_de_Croix_par_Delacroix,_station_04.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:mary_meets_cross; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::04",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross"
         }
       ]
     },
@@ -17724,6 +18591,90 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::met:437172",
+          "title": "The Crucifixion",
+          "artist": "Bartolomé Estebán Murillo",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.metmuseum.org/art/collection/search/437172",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:crucifixion; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-11",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:crucifixion"
+        },
+        {
+          "id": "REVIEW::commons:115166028",
+          "title": "Crucifixion",
+          "artist": "Hans Jordaens III",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:crucifixion; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-11",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:crucifixion"
+        },
+        {
+          "id": "REVIEW::cma:127664",
+          "title": "Crucifixion",
+          "artist": "",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:crucifixion; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-11",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:crucifixion"
+        },
+        {
+          "id": "REVIEW::commons:4965555",
+          "title": "French: La crucifixion",
+          "artist": "Philippe de Champaigne",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:crucifixion; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-11",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:crucifixion"
+        },
+        {
+          "id": "REVIEW::commons:33831598",
+          "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+          "artist": "Annibale Carracci",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:crucifixion; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-11",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:crucifixion"
+        },
+        {
+          "id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+          "title": "The Lance Thrust",
+          "artist": "Anthony van Dyck",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:crucifixion; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-11",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:crucifixion"
         }
       ]
     },
@@ -17789,6 +18740,132 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::commons:3110508",
+          "title": "La Pietà",
+          "artist": "Guercino",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:deposition; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-06",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:deposition"
+        },
+        {
+          "id": "REVIEW::commons:15385030",
+          "title": "Lamentation of Christ",
+          "artist": "Annibale Carracci",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_-_Lamentation_of_Christ_-_WGA4436.jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:deposition; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-06",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:deposition"
+        },
+        {
+          "id": "REVIEW::commons:35629944",
+          "title": "Pietà",
+          "artist": "Domenichino",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:deposition; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-06",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:deposition"
+        },
+        {
+          "id": "REVIEW::commons:44220879",
+          "title": "The Lamentation",
+          "artist": "Simon de Vos",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:deposition; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-06",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:deposition"
+        },
+        {
+          "id": "REVIEW::commons:147368181",
+          "title": "The lamentation of Christ",
+          "artist": "Circle of Peter Paul Rubens",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Circle_of_Peter_Paul_Rubens_-_The_Lamentation_of_Christ_(Alte_Pinakothek).jpg",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:deposition; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-06",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:deposition"
+        },
+        {
+          "id": "REVIEW::commons:45590714",
+          "title": "The lamentation over the dead Christ",
+          "artist": "Alessandro Turchi",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:deposition; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-06",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:deposition"
+        },
+        {
+          "id": "REVIEW::met:438427",
+          "title": "The Lamentation",
+          "artist": "Ludovico Carracci",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::met:439553",
+          "title": "The Lamentation",
+          "artist": "Domenichino (Domenico Zampieri)",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::met:437342",
+          "title": "The Lamentation",
+          "artist": "Scipione Pulzone (Il Gaetano)",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -18463,6 +19540,48 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::met:438427",
+          "title": "The Lamentation",
+          "artist": "Ludovico Carracci",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::met:439553",
+          "title": "The Lamentation",
+          "artist": "Domenichino (Domenico Zampieri)",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "REVIEW::met:437342",
+          "title": "The Lamentation",
+          "artist": "Scipione Pulzone (Il Gaetano)",
+          "source": "",
+          "gate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED",
+          "eligible": true,
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "Q2_USER_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -20043,6 +21162,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::smk:KMSSP230",
+          "title": "The Coronation of the Virgin",
+          "artist": "Cornelis Schut",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://open.smk.dk/en/artwork/image/KMSSP230",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:coronation; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-16",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:coronation"
         }
       ]
     },
@@ -20827,6 +21960,118 @@
           "eligible": true,
           "flag": "",
           "origin": "BATCHES_06_11_USER_APPROVED"
+        },
+        {
+          "id": "REVIEW::commons:34140055",
+          "title": "Adoration of the Magi",
+          "artist": "Workshop of Peter Paul Rubens",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:28933083",
+          "title": "Adoration of the Magi",
+          "artist": "Anton Kern",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:115220164",
+          "title": "Adoration of the Magi",
+          "artist": "Denys Calvaert",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:56890177",
+          "title": "Adoration of the Magi",
+          "artist": "Jean-Baptiste de Faudran",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:40907107",
+          "title": "Adoration of the Magi",
+          "artist": "Massimo Stanzione",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:52809691",
+          "title": "Adoration of the Magi .",
+          "artist": "Jacob Jordaens",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::commons:74483814",
+          "title": "The Adoration of the Magi",
+          "artist": "François Lemoyne",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "BATCHES_06_11_USER_APPROVED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-04",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
+        },
+        {
+          "id": "REVIEW::met:436781",
+          "title": "The Adoration of the Christ Child",
+          "artist": "Jan Joest of Kalkar",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.metmuseum.org/art/collection/search/436781",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:nativity; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "HERO-02",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:nativity"
         }
       ]
     },
@@ -20904,6 +22149,66 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::01",
+          "title": "The Circumcision",
+          "artist": "Jacopo Tintoretto",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:circumcision; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::01",
+          "cross_prayer_source_stage": "STG-pray.precious_blood-01",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:circumcision"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::02",
+          "title": "The Circumcision of Christ",
+          "artist": "Pieter van Lint",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_The_Circumcision_of_Christ.Jpeg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:circumcision; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::02",
+          "cross_prayer_source_stage": "STG-pray.precious_blood-01",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:circumcision"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::05",
+          "title": "The Circumcision of Christ",
+          "artist": "Peter Paul Rubens",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:circumcision; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::05",
+          "cross_prayer_source_stage": "STG-pray.precious_blood-01",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:circumcision"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::06",
+          "title": "The Circumcision of Christ",
+          "artist": "Orazio Gentileschi",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.meisterdrucke.jp/fine-art-prints/Orazio-Gentileschi/1198610/",
+          "gate": "RIGHTS_NOT_CLEARED;NATIVE_PHOTO_UNVERIFIED",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:circumcision; research-only, no publication clearance",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::06",
+          "cross_prayer_source_stage": "STG-pray.precious_blood-01",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:circumcision"
         }
       ]
     },
@@ -20969,6 +22274,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "REVIEW::smk:KMS1168",
+          "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+          "artist": "Frantz Clein",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://open.smk.dk/en/artwork/image/KMS1168",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "SHARED_EXACT_SCENE:presentation; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": "STG-pray.rosary-05",
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:presentation"
         }
       ]
     },
@@ -21366,6 +22685,20 @@
           "eligible": false,
           "flag": "Depicts prelapsarian Paradise or the Expulsion, not the saints",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "PRAYER::saints--vaneyck",
+          "title": "Adoration of the Mystic Lamb",
+          "artist": "Hubert and Jan van Eyck",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -21840,6 +23173,20 @@
           "eligible": false,
           "flag": "Depicts prelapsarian Paradise or the Expulsion, not the saints",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "PRAYER::saints--vaneyck",
+          "title": "Adoration of the Mystic Lamb",
+          "artist": "Hubert and Jan van Eyck",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -22896,6 +24243,20 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::met-436839",
+          "title": "The Penitent Magdalen",
+          "artist": "Georges de La Tour",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.metmuseum.org/art/collection/search/436839",
+          "gate": "EXISTING_GALLERY_PHOTO_QA",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -23281,6 +24642,34 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_06_11_USER_APPROVED"
+        },
+        {
+          "id": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "PRAYER::joseph--primary",
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -23334,6 +24723,34 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
+        },
+        {
+          "id": "PRAYER::joseph--primary",
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED",
+          "eligible": true,
+          "flag": "VERBATIM_Q2_USER_INSTRUCTION; research-only, no publication clearance",
+          "origin": "BATCHES_01_05_EXPLICIT_ACCEPTED+CROSS_PRAYER_INHERITANCE_20261030",
+          "cross_prayer_source_stage": null,
+          "cross_prayer_reuse_rule": "VERBATIM_Q2_USER_INSTRUCTION"
         }
       ]
     },
@@ -23976,5 +25393,43 @@
     "semantic_unmapped": 12,
     "publication_status": "ALL_HELD_FOR_NATIVE_IMAGE_RIGHTS_AND_VISUAL_QA",
     "previous_approvals_remain_untouched": true
+  },
+  "cross_prayer_inheritance": {
+    "overlay_file": "data/prayer/artwork-editorial-20261030/cross-prayer-inheritance-20261030.v1.json",
+    "date": "2026-10-30",
+    "staged_qa": {
+      "original_image_bearing_blueprint_slots": 267,
+      "staged_editorial_slots_with_at_least_one_candidate": 267,
+      "source_scope": "267 image-bearing editorial blueprint slots, NOT all live runtime cards",
+      "approved_new_oct30_25": 25,
+      "rejected_18_not_imported": 18,
+      "unreviewed_23_not_imported": 23,
+      "q2_accepted_b01_b05": 114,
+      "scene_family_count": 21,
+      "added_reuse_edges": 100,
+      "slots_touched": 43,
+      "remaining_without_explicit_approved_or_locked_candidate": [
+        "COV-novena.st_therese"
+      ],
+      "exact_rite_benediction_still_unapproved": true,
+      "st_therese_image_approval_and_rights_still_unresolved": true,
+      "all_new_edges_research_only": true,
+      "production_images_published": 0
+    }
+  },
+  "stats_before_cross_prayer_inheritance": {
+    "blueprint_image_slots": 267,
+    "covered_with_at_least_one_eligible_candidate": 266,
+    "with_any_defensible_candidate": 266,
+    "empty": 1,
+    "weak_only": 0,
+    "below_minimum_after_pruning": 29,
+    "pruned_weak_edges": 31,
+    "user_accepted_first_five": 114,
+    "user_accepted_later": 107,
+    "locked_covers": 6,
+    "unresolved_semantic_edges": 16,
+    "artwork_edges_after_consolidation": 1572,
+    "explicit_user_acceptances_never_auto_pruned": true
   }
 }
