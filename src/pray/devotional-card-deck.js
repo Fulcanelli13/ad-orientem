@@ -344,7 +344,13 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
  });
  host.addEventListener("click",e=>{
   if(e.target.closest("[data-ao-f04-again]")){
-   e.preventDefault();go(0,{initial:true});return;
+   e.preventDefault();
+   // Repetition is a fresh recitation; no previous card's scroll focus carries over.
+   cards.forEach(card=>{
+    const body=card.querySelector(".aoDevoCardScroll");
+    if(body){body.scrollTop=0;delete body.dataset.aoFocusRunway}
+   });
+   go(0,{initial:true});return;
   }
   const previousClick=e.target.closest("[data-ao-f04-previous]");
   const nextClick=e.target.closest("[data-ao-f04-next]");
