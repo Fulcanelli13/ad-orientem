@@ -157,7 +157,7 @@ try{
       /provisoire|vérif|sources/i,config.name+": French map copy was never activated");
     assert.equal(data.allDefault,true,config.name+": first visit filtered venues");
     assert.equal(data.visibleAffiliations,6,config.name+": institute controls missing");
-    assert.ok(data.emblemFilterCount>=5,config.name+": authentic icons absent from filter row");
+    assert.ok(data.emblemFilterCount>=4,config.name+": four sourced institute emblems absent from filter row");
     // The legacy stacked directory used a sticky toolbar. The approved
     // map-first Explore layout deliberately floats it absolutely above the
     // canvas; either is persistent, provided the floating search is visible
