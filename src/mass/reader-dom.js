@@ -3027,14 +3027,11 @@ export function createReaderDomAdapter({
       }
       const sanctus=planRoot.querySelector("[data-schola-local-sanctus]");
       const currentSetting=prepared?.readerPreferences?.sanctusPerformance;
-      // The existing independent Schola controller is authoritative for
-      // edited per-parish Benedictus preference (not this local-plan file).
-      const setting=typeof scholaMusicItinerary==="function"
-        ? scholaMusicItinerary()?.events?.some(e=>e.id==="BENEDICTUS_AFTER_CHALICE")
-          ?"POLYPHONIC":scholaMusicItinerary()?.events?.some(e=>e.id==="BENEDICTUS_CONTINUOUS")
-          ?"GREGORIAN":"UNSPECIFIED"
-        :(currentSetting??"UNSPECIFIED");
-      if(sanctus)sanctus.value=setting;
+      // The selected profile owns its own preference; the event itinerary
+      // is conditional on the current rite and cannot be used to infer it.
+      // The independent Schola controller is updated on profile selection.
+      const setting=selectedPlan.sanctusPerformance??currentSetting??"UNSPECIFIED";
+      if(sanctus && sanctus.value!==setting)sanctus.value=setting;
     }
     const schola=current?.scholaVisible ? current.schola : null;
     const eventReference=!schola?current?.scholaEventSelection:null;
@@ -3420,13 +3417,9 @@ export function createReaderDomAdapter({
         }
         return;
       }
-      if(field?.matches?.("[data-schola-profile-name]")){
-        onScholaLocalProgrammeChange?.({kind:"profileRename",value:field.value});return;
-      }
-      if(field?.matches?.("[data-schola-ordinary-setting]")){
-        onScholaLocalProgrammeChange?.({kind:"ordinarySetting",
-          eventId:field.dataset.scholaOrdinarySetting,value:field.value});return;
-      }
+      // Save profile names and Ordinary titles on change/blur instead of
+      // every keystroke, so spaces and selection ranges are not rewritten
+      // while a parish name or musical title is being typed.
       if(field?.matches?.("[data-schola-local-parish]")){
         onScholaLocalProgrammeChange?.({kind:"parishLabel",value:field.value});return;
       }
