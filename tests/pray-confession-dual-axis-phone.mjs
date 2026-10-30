@@ -43,7 +43,7 @@ try{
   assert.equal(await aa.count(),1,"Prayer language must be located in the shared Aa menu");
   if(!await aa.evaluate(el=>el.open))await aa.locator(":scope > summary").click();
   assert.ok(await locale.isVisible(),"Language choice must be available after opening Aa");
-  await togglePrayerLanguage();
+  await locale.click();
  };
  assert.equal(await locale.count(),1,"Confession should share the devotional EN/FR header control");
  assert.equal((await locale.innerText()).trim(),"EN");
