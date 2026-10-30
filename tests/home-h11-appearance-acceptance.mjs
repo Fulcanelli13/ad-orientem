@@ -72,6 +72,22 @@ try{
       assert.ok(state.sections[0]?.includes("aoTodayV2PrayNow") &&
         state.sections[1]?.includes("aoTodayV2CalendarGlance"),label+" should put Prayer above Calendar");
       assert.equal(state.primary,1,label+" must have exactly one Mass entry or Resume action");
+      const ribbon=await page.evaluate(()=>{
+        const nav=document.querySelector("#ao-global-ribbon .aoGlobalRibbonInner");
+        const active=[...document.querySelectorAll("#ao-global-ribbon [data-ao-app-surface]")];
+        const donor=document.querySelector('#ao-global-ribbon [data-ao-app-secondary="mass"]');
+        return {items:active.map(b=>b.dataset.aoAppSurface),
+          columns:getComputedStyle(nav).gridTemplateColumns.split(" ").filter(Boolean).length,
+          massVisible:!!donor&&getComputedStyle(donor).display!=="none",
+          massFocusable:!!donor?.hasAttribute("data-ao-app-surface"),
+          navScroll:nav.scrollWidth-nav.clientWidth};
+      });
+      assert.deepEqual(ribbon.items,["home","pray","learn","find"],
+        label+" must have Today/Pray/Formation/Explore only");
+      assert.equal(ribbon.columns,4,label+" still reserves a fifth Mass slot");
+      assert.equal(ribbon.massVisible,false,label+" Mass donor icon is visible");
+      assert.equal(ribbon.massFocusable,false,label+" hidden Mass still owns a navigation action");
+      assert.ok(ribbon.navScroll<=1,label+" ribbon overflows 320/390px phone width");
       return state;
     };
     // H3 Today editorial migration: the existing source-owned sections now
