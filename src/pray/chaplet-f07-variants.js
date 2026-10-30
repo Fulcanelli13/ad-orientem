@@ -92,12 +92,12 @@ export function renderF07LittleCrown(position,{french=false}={}){
  const child=LITTLE_CROWN_B30_BEADS.slice(3);
  const groups=[
   group(translate("Jésus, Marie, Joseph","Jesus, Mary, Joseph",french),
-   holy.map(x=>dot(["Jesus","Mary","Joseph"][x.index],x.index===position,x.index<position,"pater")),"holy-family"),
+   holy.map(x=>dot((french?["Jésus","Marie","Joseph"]:["Jesus","Mary","Joseph"])[x.index],x.index===position,x.index<position,"pater")),"holy-family"),
   group(translate("Douze années de la Sainte Enfance","Twelve years of the Holy Childhood",french),
    child.map(x=>dot((french?"Année ":"Year ")+(x.index-2),x.index===position,x.index<position,"ave")),"childhood")
  ];
  const current=LITTLE_CROWN_B30_BEADS[position];
- const title=position<3?["Jesus","Mary","Joseph"][position]:
+ const title=position<3?(french?["Jésus","Marie","Joseph"]:["Jesus","Mary","Joseph"])[position]:
  (french?"Année de l’Enfance ":"Year of the Holy Childhood ")+(position-2);
  const subtitle=position<3?translate("Notre Père","Our Father",french):
   translate("Je vous salue Marie","Hail Mary",french);
