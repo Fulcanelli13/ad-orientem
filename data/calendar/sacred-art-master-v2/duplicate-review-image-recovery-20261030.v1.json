@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_DUPLICATE_RECOVERY_V1",
-  "asOf": "2026-10-30T08:51:06.986941+00:00",
+  "asOf": "2026-10-30T08:53:18.072543+00:00",
   "sourcePagesAttempted": 11,
   "images": [
     {
@@ -153,15 +153,21 @@
         "HERO::artuk:op6-prayer-frere",
         "PRAYER::evening--primary"
       ],
-      "recovered": false,
-      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
-      "attempted": 0,
-      "alternateTried": true,
-      "lastErrors": [
-        "HTTP Error 429: Too Many Requests (015d12c)",
-        "HTTP Error 429: Too Many Requests (015d12c)",
-        "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
-      ]
+      "recovered": true,
+      "reason": "EXACT_OBJECT_OFFICIAL_PREVIEW_NOT_RELEASE_FILE",
+      "alternatePhotoSourceUrl": "https://d3d00swyhr67nd.cloudfront.net/w1200h1200/collection/STF/WAG/STF_WAG_OP6-001.jpg",
+      "imageUrl": "https://d3d00swyhr67nd.cloudfront.net/w1200h1200/collection/STF/WAG/STF_WAG_OP6-001.jpg",
+      "originalDimensions": [
+        898,
+        1200
+      ],
+      "reviewDimensions": [
+        629,
+        840
+      ],
+      "downloadSha256": "d316b44293dcf144bc944e3d8ec767595694c21f931b938d083ab6424bdfa484",
+      "thumbnailSha256": "a427fca2ae2177e655c52e292601757ff34365f2589094828956259ea6d4425f",
+      "thumbnailBytes": 87312
     },
     {
       "sourceUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
