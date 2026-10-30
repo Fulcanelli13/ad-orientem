@@ -1,5 +1,5 @@
 {
-  "schema": "AO_TLM_EMBLEM_ACQUISITION_QUEUE_V2",
+  "schema": "AO_TLM_EMBLEM_ACQUISITION_QUEUE_V1",
   "date": "2026-10-30",
   "read_only_overlay_of": [
     "data/directory/communities.v1.json",
@@ -12,8 +12,8 @@
   "summary": {
     "total_groups": 41,
     "draft_exact_images": 5,
-    "held": 29,
-    "official_candidates": 7,
+    "held": 36,
+    "official_candidates": 8,
     "cl2_distinct_affiliation_labels": 138,
     "cl2_venue_source_rows": 2687
   },
@@ -55,7 +55,7 @@
       "group_code": "CANONS_ST_JOHN_CANTIUS",
       "display_name": "Canons Regular of St. John Cantius",
       "source_owner": "data/directory/communities.v1.json",
-      "state": "EXACT_OFFICIAL_CREAST_IMAGE_LOCATED_RIGHTS_PENDING",
+      "state": "EXACT_OFFICIAL_CREST_IMAGE_LOCATED_RIGHTS_PENDING",
       "type": "INSTITUTE",
       "source": "https://www.canons-regular.org/",
       "license": null,
