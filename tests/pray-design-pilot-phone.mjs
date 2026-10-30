@@ -123,6 +123,16 @@ try{
    await page.screenshot({path:resolve(output,"angelus-entry-"+width+".png"),animations:"disabled"});
    await page.locator(base+" [data-p435930-pilot-angelus-begin]").click();
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
+   const momentGeometry=await page.locator(base+" .aoP435930Mount").evaluate(m=>{
+     const active=m.querySelector(".aoDevoCard:not([hidden])");
+     const title=active?.querySelector(".aoDevoCardTitle");
+     return {outerScrollTop:m.scrollTop,titleTop:title?.getBoundingClientRect().top??-1,
+       viewportHeight:window.innerHeight};
+   });
+   assert.ok(momentGeometry.outerScrollTop<=1,
+     "F04 opening moment must reset the entry's inherited scroll: "+JSON.stringify(momentGeometry));
+   assert.ok(momentGeometry.titleTop>=0&&momentGeometry.titleTop<momentGeometry.viewportHeight*.62,
+     "F04 first moment must show its heading, not start halfway through a prayer: "+JSON.stringify(momentGeometry));
    const count=await page.locator(base+" .aoDevoCard").count();
    assert.ok(count===4||count===5,"canonical Angelus / Regina must retain its original 4/5 cards; got "+count);
    const timeline=await page.locator(base+" [data-ao-f04-timeline=segments] .aoDevoTimeline").evaluate(node=>{
