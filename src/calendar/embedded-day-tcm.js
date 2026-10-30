@@ -10,7 +10,7 @@ export const EMBEDDED_DAY_TCM_CSS=String.raw`
  background:var(--ao-tcm-bg,var(--ao-bg-canvas,#0b1017));
 }
 #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalModBody{
- width:min(760px,100%);padding:8px var(--ao-tcm-gutter,16px) 50px;
+ width:min(760px,100%);padding:8px min(12px,var(--ao-tcm-gutter,16px)) 50px;
 }
 #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2DayNav{
  grid-template-columns:44px minmax(0,1fr) 44px;
@@ -104,7 +104,7 @@ export const EMBEDDED_DAY_TCM_CSS=String.raw`
  outline:2px solid var(--ao-tcm-gold)!important;outline-offset:2px;
 }
 @media(max-width:430px){
- #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalModBody{padding-inline:var(--ao-tcm-gutter,16px)}
+ #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalModBody{padding-inline:min(12px,var(--ao-tcm-gutter,16px))}
  #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Hero{padding:18px 14px}
  #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Hero h2{font-size:clamp(26px,8vw,33px)}
  #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Hero .aoCalDayScriptureActions{grid-template-columns:minmax(0,1fr)}
