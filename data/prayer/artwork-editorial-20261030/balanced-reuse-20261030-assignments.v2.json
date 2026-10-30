@@ -9,17 +9,17 @@
   },
   "stats": {
     "blueprint_image_slots": 267,
-    "covered_with_at_least_one_eligible_candidate": 263,
-    "with_any_defensible_candidate": 263,
-    "empty": 4,
+    "covered_with_at_least_one_eligible_candidate": 266,
+    "with_any_defensible_candidate": 266,
+    "empty": 1,
     "weak_only": 0,
-    "below_minimum_after_pruning": 31,
+    "below_minimum_after_pruning": 29,
     "pruned_weak_edges": 31,
     "user_accepted_first_five": 114,
     "user_accepted_later": 107,
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1548,
+    "artwork_edges_after_consolidation": 1561,
     "explicit_user_acceptances_never_auto_pruned": true
   },
   "locked": [
@@ -12794,11 +12794,11 @@
       "priority": "B",
       "minimum": 3,
       "ideal": 9,
-      "status": "EMPTY_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 0,
-      "adequate_fit_distinct_works": 0,
+      "status": "TITLE_FOUND_PHOTO_AND_REUSE_RIGHTS_MISSING",
+      "eligible_distinct_works": 1,
+      "adequate_fit_distinct_works": 1,
       "approved_edges": 0,
-      "direct_or_user_edges": 0,
+      "direct_or_user_edges": 1,
       "above_minimum": false,
       "chosen_cover": null,
       "works": [
@@ -12813,6 +12813,18 @@
           "eligible": false,
           "flag": "Depicts St Joseph, not St Thérèse",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "carmel-lisieux-1925-therese-aux-roses",
+          "title": "Thérèse aux roses (1925)",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "EXISTING_RESEARCH_SUBJECT_NO_USABLE_PHOTOGRAPH",
+          "source": "",
+          "gate": "NO_PHYSICAL_ORIGINAL_AND_RIGHTS_UNVERIFIED",
+          "eligible": true,
+          "flag": "Correct Saint Thérèse subject already indexed. No source original or reuse rights verified; photo needed, not necessarily new painting.",
+          "origin": "EXISTING_383_NOT_Q2"
         }
       ]
     },
@@ -13131,14 +13143,87 @@
       "priority": "B",
       "minimum": 3,
       "ideal": 9,
-      "status": "EMPTY_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 0,
-      "adequate_fit_distinct_works": 0,
+      "status": "EXISTING_SAINT_ART_REASSIGNED_QA_PENDING",
+      "eligible_distinct_works": 6,
+      "adequate_fit_distinct_works": 6,
       "approved_edges": 0,
-      "direct_or_user_edges": 0,
-      "above_minimum": false,
+      "direct_or_user_edges": 6,
+      "above_minimum": true,
       "chosen_cover": null,
-      "works": []
+      "works": [
+        {
+          "id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "artist": "Peter Paul Rubens",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "SOURCE_IMAGE_MISSING_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "Exact subject; no complete source photo presently",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "sdma-48-3-pittoni-anthony",
+          "title": "The Vision of Saint Anthony of Padua",
+          "artist": "Giovanni Battista Pittoni",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+          "eligible": true,
+          "flag": "Existing original evidence; photographer/file rights unverified",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "G17-012",
+          "title": "Saint Anthony of Padua with the Infant Christ",
+          "artist": "Giuseppe Bazzani",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+          "eligible": true,
+          "flag": "Existing original evidence; photographer/file rights unverified",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "W07-006",
+          "title": "Madonna and Child with Saint Anthony of Padua",
+          "artist": "Anthony van Dyck",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+          "eligible": true,
+          "flag": "Exact Saint Anthony subject; photographer/file rights unverified",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "W38-009",
+          "title": "Saint Anthony of Padua",
+          "artist": "Claudio Coello",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "EXACT_FILE_RIGHTS_AND_NATIVE_QA_PENDING",
+          "eligible": true,
+          "flag": "Open metadata only; no exact file rights certification",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "REVIEW::commons:163857127",
+          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
+          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
+          "gate": "COMMONS_PDM_US_SCOPE_AND_NATIVE_PHOTO_QA_PENDING",
+          "eligible": true,
+          "flag": "2025 Commons/Flickr photograph at 3336×3936; Public Domain Mark is jurisdiction-sensitive; do not publish without checking full original/artist",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        }
+      ]
     },
     {
       "slot_id": "COV-novena.holy_face_1887",
@@ -20025,14 +20110,87 @@
       "priority": "C",
       "minimum": 2,
       "ideal": 6,
-      "status": "EMPTY_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 0,
-      "adequate_fit_distinct_works": 0,
+      "status": "EXISTING_SAINT_ART_REASSIGNED_QA_PENDING",
+      "eligible_distinct_works": 6,
+      "adequate_fit_distinct_works": 6,
       "approved_edges": 0,
-      "direct_or_user_edges": 0,
-      "above_minimum": false,
+      "direct_or_user_edges": 6,
+      "above_minimum": true,
       "chosen_cover": null,
-      "works": []
+      "works": [
+        {
+          "id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "artist": "Peter Paul Rubens",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "SOURCE_IMAGE_MISSING_RIGHTS_PENDING",
+          "eligible": true,
+          "flag": "Exact subject; no complete source photo presently",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "sdma-48-3-pittoni-anthony",
+          "title": "The Vision of Saint Anthony of Padua",
+          "artist": "Giovanni Battista Pittoni",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+          "eligible": true,
+          "flag": "Existing original evidence; photographer/file rights unverified",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "G17-012",
+          "title": "Saint Anthony of Padua with the Infant Christ",
+          "artist": "Giuseppe Bazzani",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+          "eligible": true,
+          "flag": "Existing original evidence; photographer/file rights unverified",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "W07-006",
+          "title": "Madonna and Child with Saint Anthony of Padua",
+          "artist": "Anthony van Dyck",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+          "eligible": true,
+          "flag": "Exact Saint Anthony subject; photographer/file rights unverified",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "W38-009",
+          "title": "Saint Anthony of Padua",
+          "artist": "Claudio Coello",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "gate": "EXACT_FILE_RIGHTS_AND_NATIVE_QA_PENDING",
+          "eligible": true,
+          "flag": "Open metadata only; no exact file rights certification",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        },
+        {
+          "id": "REVIEW::commons:163857127",
+          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
+          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
+          "gate": "COMMONS_PDM_US_SCOPE_AND_NATIVE_PHOTO_QA_PENDING",
+          "eligible": true,
+          "flag": "2025 Commons/Flickr photograph at 3336×3936; Public Domain Mark is jurisdiction-sensitive; do not publish without checking full original/artist",
+          "origin": "EXISTING_383_OR_ACCEPTED856_NOT_Q2"
+        }
+      ]
     },
     {
       "slot_id": "COV-devotion_litany_st_joseph",
@@ -23590,5 +23748,64 @@
         "fit": "DIRECT_SUBJECT_CANDIDATE"
       }
     ]
+  },
+  "excluded_subject_records_do_not_reactivate": [
+    {
+      "id": "met-436982",
+      "title": "Saint Anthony of Padua",
+      "artist": "Maso di Banco",
+      "reason": "EXCLUDED_BY_HISTORICAL_USER_EDIT in canonical 383; later candidate registry CC0 cannot override explicit exclusion"
+    }
+  ],
+  "post_cross_registry_reuse": {
+    "date": "2026-10-30",
+    "reason": "User correctly identified Saint Anthony works omitted by 989-record Prayer source aggregation; checked canonical 383 and Sacred Art imports",
+    "saint_anthony_sources": [
+      {
+        "id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+        "title": "Saint Anthony of Padua with the Christ Child",
+        "artist": "Peter Paul Rubens",
+        "gate": "SOURCE_IMAGE_MISSING_RIGHTS_PENDING",
+        "warning": "Exact subject; no complete source photo presently"
+      },
+      {
+        "id": "sdma-48-3-pittoni-anthony",
+        "title": "The Vision of Saint Anthony of Padua",
+        "artist": "Giovanni Battista Pittoni",
+        "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+        "warning": "Existing original evidence; photographer/file rights unverified"
+      },
+      {
+        "id": "G17-012",
+        "title": "Saint Anthony of Padua with the Infant Christ",
+        "artist": "Giuseppe Bazzani",
+        "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+        "warning": "Existing original evidence; photographer/file rights unverified"
+      },
+      {
+        "id": "W07-006",
+        "title": "Madonna and Child with Saint Anthony of Padua",
+        "artist": "Anthony van Dyck",
+        "gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING",
+        "warning": "Exact Saint Anthony subject; photographer/file rights unverified"
+      },
+      {
+        "id": "W38-009",
+        "title": "Saint Anthony of Padua",
+        "artist": "Claudio Coello",
+        "gate": "EXACT_FILE_RIGHTS_AND_NATIVE_QA_PENDING",
+        "warning": "Open metadata only; no exact file rights certification"
+      },
+      {
+        "id": "REVIEW::commons:163857127",
+        "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
+        "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
+        "gate": "COMMONS_PDM_US_SCOPE_AND_NATIVE_PHOTO_QA_PENDING",
+        "warning": "2025 Commons/Flickr photograph at 3336×3936; Public Domain Mark is jurisdiction-sensitive; do not publish without checking full original/artist"
+      }
+    ],
+    "saint_therese_existing_title": "Thérèse aux roses (1925)",
+    "editorial_rule": "No silent activation of excluded works, no false production completeness claim",
+    "rereview_scope": "Existing gallery only; no acquisition"
   }
 }
