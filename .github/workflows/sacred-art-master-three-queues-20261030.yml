@@ -6,6 +6,7 @@ on:
       - research/sacred-art-phase1-consolidation-20261029
     paths:
       - .github/workflows/sacred-art-master-three-queues-20261030.yml
+      - scripts/art/build-sacred-art-unified-master-v1-20261030.mjs
   workflow_dispatch:
 
 permissions:
