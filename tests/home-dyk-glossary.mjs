@@ -28,6 +28,7 @@ assert.ok(h4.includes("homeDidYouKnowMarkup(vm.language)"));
 assert.ok(h3.includes("homeDidYouKnowMarkup(language)"));
 assert.ok(!h4.includes("data-home-daily-catechism"));
 assert.ok(!h3.includes("data-home-daily-catechism"));
-assert.ok(owner.includes("AO_GLOSSARY_V1?.openEntry?.(entryId)"),
-  "Did You Know must open the exact canonical Glossary entry, not a generic hub");
+assert.ok(owner.includes('ensureLearnModule("learn.glossary",win)'),"Cold Home must lazy-load Glossary");
+assert.ok(owner.includes('AO_GLOSSARY_V1?.open?.({entryId,origin:"context",trigger:dyk})'),
+  "Did You Know must open the exact concept and restore Home on close");
 console.log("PASS Home Did You Know: six source-owned bilingual teasers, no Catechism, exact Glossary route");
