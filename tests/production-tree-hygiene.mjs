@@ -47,6 +47,8 @@ for(const name of workflows){
       assert.match(source,/git add -- data\/geography\/approved-place-media\.v1\.json/);
       assert.match(source,/releases\/b/);
       assert.match(source,/verification-report\.json/);
+      assert.match(source,/node tools\/directory\/build-p79-place-photo-review\.mjs --check/);
+      assert.match(source,/git add -- docs\/research\/directory\/p79-canonical-place-photo-review\.html/);
       assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
       assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
     }

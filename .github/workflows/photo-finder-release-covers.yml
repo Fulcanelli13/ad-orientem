@@ -79,6 +79,11 @@ jobs:
           dest.write_text(json.dumps(a,ensure_ascii=False,indent=2)+'\n')
           print('FROZEN_WINDOW',n,'VERIFIED_ASSETS',a['verified'],'HELD_EXCEPTIONS',len(a['exceptions']))
           PY
+      - name: Refresh existing P79 reviewer from new approved media
+        run: |
+          node tools/directory/build-p79-place-photo-review.mjs
+          node tools/directory/build-p79-place-photo-review.mjs --check
+          node tests/p79-place-photo-review-contract.mjs
       - name: Commit exact verified files and persistent exception report to this review branch only
         shell: bash
         run: |
@@ -86,6 +91,7 @@ jobs:
           git config user.name 'Ad Orientem verified photograph release'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- data/geography/approved-place-media.v1.json
+          git add -- docs/research/directory/p79-canonical-place-photo-review.html
           git add -- "data/geography/research/photo-finder-20261030/releases/b${AO_PHOTO_BATCH}-verification-report.json"
           git add -- assets/approved/place-media/pf-*.webp
           python - <<'PY'
@@ -93,6 +99,7 @@ jobs:
           n=int(os.environ['AO_PHOTO_BATCH'])
           a=json.load(open(f'data/geography/research/photo-finder-20261030/releases/b{n}-verification-report.json'))
           expected={'data/geography/approved-place-media.v1.json',
+                    'docs/research/directory/p79-canonical-place-photo-review.html',
                     f'data/geography/research/photo-finder-20261030/releases/b{n}-verification-report.json'}
           expected.update(row['item']['asset_path'] for row in a['media_records'])
           staged=set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())
