@@ -1,0 +1,67 @@
+name: Sacred Art Batch 04 exact-source recovery (€0, research-only)
+on:
+  push:
+    branches:
+      - research/sacred-art-duplicate-gate-20261030
+    paths:
+      - scripts/art/recover-sacred-art-fast-grid-batch04-20261030.py
+      - .github/workflows/sacred-art-batch04-source-recovery-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-batch04-source-recovery
+  cancel-in-progress: false
+jobs:
+  recover-source-bound-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Validate recovery script syntax
+        run: python -m py_compile scripts/art/recover-sacred-art-fast-grid-batch04-20261030.py
+      - name: Recover only exact object/accession-bound museum images
+        run: python scripts/art/recover-sacred-art-fast-grid-batch04-20261030.py
+      - name: Validate Batch 04 output and zero-release invariants
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          root=Path('data/calendar/sacred-art-master-v2')
+          source=json.loads((root/'fast-grid-batch04-unmatched-104-recovery-20261030.v1.json').read_text())
+          result=json.loads((root/'fast-grid-batch04-recovery-results-20261030.v1.json').read_text())
+          page=Path('docs/SACRED_ART_FAST_GRID_REVIEW_BATCH04_20261030.html').read_text()
+          m=re.search(r'const data=(\[[\s\S]*?\]);\s*const KEY=',page)
+          assert m,'Missing gallery'
+          cards=json.loads(m.group(1))
+          assert source['counts']['missingCandidates']==104 and len(source['candidates'])==104
+          assert len(result['records'])==104 and result['sourceRecordsChecked']==104
+          assert result['downloadedAndEmbedded']+result['notRecovered']==104
+          assert len(cards)==result['downloadedAndEmbedded']
+          assert len({x['id'] for x in cards})==len(cards)
+          assert all(x['available'] and x['preview'].startswith('data:image/jpeg;base64,') for x in cards)
+          assert set(x['id'] for x in cards).issubset(set(x['physicalWorkGroup'] for x in source['candidates']))
+          assert result['queue1Promotions']==result['newPristinePhotoApprovals']==result['newRightsFinalCertifications']==result['productionMutations']==0
+          assert result['sourceRecordDeletions']==result['historicalApprovalsChanged']==result['previousReviewBatchesChanged']==result['costEur']==0
+          assert all(not r['pristineApproved'] and not r['rightsReleaseCertified'] and not r['queue1Promoted'] for r in result['records'])
+          assert all(not r['nativeArchiveHashMatched'] or r['nativeArchiveHashComparisonAvailable'] for r in result['records'])
+          print('Batch 04:',len(cards),'embedded verified-source preview images,',result['notRecovered'],'on hold, 0 release approvals')
+          PY
+      - name: Commit reversible recovery evidence only to draft research branch
+        run: |
+          git config user.name "Ad Orientem Sacred Art QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-master-v2/fast-grid-batch04-recovery-results-20261030.v1.json docs/SACRED_ART_FAST_GRID_REVIEW_BATCH04_20261030.html
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "research(sacred-art): save exact-source Batch 04 preview QA and unresolved holds [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi
