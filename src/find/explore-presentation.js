@@ -1,6 +1,7 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderDirectoryVenueCard,eligibleDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
+import {renderTlmChurchProfile} from "./tlm-church-profile.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
@@ -406,6 +407,7 @@ function compactExploreItemSheet(vm){
 }
 function detailSheet(vm){
   const item=vm.selected;if(!item)return "";
+  if(item.kind==="TLM_VENUE")return renderTlmChurchProfile(item,vm.language);
   let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet'+(item.kind==="CANONICAL_CUSTOM"?' aoExploreTraditionSheet':'')+'" role="dialog" aria-modal="true"'+(item.kind==="CANONICAL_CUSTOM"?' data-explore-custom-id="'+esc(item.source_id)+'"':'')+'>';
   html+='<header><div><small>'+esc((vm.language==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(translatedTitle(item,vm.language)||"")+'</h2>';
   const subtitle=vm.language==="fr"?(item.kind==="CANONICAL_CUSTOM"?item.subtitle_fr:item.subtitle_fr||item.subtitle):item.subtitle;
