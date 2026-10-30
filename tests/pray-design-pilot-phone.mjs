@@ -125,6 +125,20 @@ try{
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
    const count=await page.locator(base+" .aoDevoCard").count();
    assert.ok(count===4||count===5,"canonical Angelus / Regina must retain its original 4/5 cards; got "+count);
+   const timeline=await page.locator(base+" [data-ao-f04-timeline=segments] .aoDevoTimeline").evaluate(node=>{
+    const segments=[...node.querySelectorAll(".aoDevoStop")];
+    return {count:segments.length,
+      heights:segments.map(el=>el.getBoundingClientRect().height),
+      numbersHidden:segments.every(el=>getComputedStyle(el.querySelector(".aoDevoStopNumber")).display==="none"),
+      bars:segments.map(el=>getComputedStyle(el,"::before").height)
+    };
+   });
+   assert.equal(timeline.count,count,"F04 must retain one interactive progress segment per canonical card");
+   assert.ok(timeline.numbersHidden,"F04 must not display numbered ribbon boxes");
+   assert.ok(timeline.heights.every(h=>h>=43),"F04 progress segments keep accessible touch targets");
+   assert.ok(timeline.bars.every(h=>Math.abs(parseFloat(h)-4)<=1),
+    "F04 progress track should render as four-pixel rules rather than boxed numbers: "+JSON.stringify(timeline));
+
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0);
    await page.screenshot({path:resolve(output,"angelus-cards-"+width+".png"),animations:"disabled"});
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus_regina",{returnContext:null}));
