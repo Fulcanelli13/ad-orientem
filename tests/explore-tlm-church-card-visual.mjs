@@ -70,7 +70,17 @@ try{
    const search=page.locator("#ao-find-modular-root [data-find-query]");
    await search.fill("Cantius");
    const cards=page.locator(".aoTlmVenueCard");
-   try{await cards.first().waitFor({state:"visible",timeout:15000});}
+   // Search repaints asynchronously: an already visible card belongs to the
+   // previous result set until the new query has been applied.
+   try{
+    await page.waitForFunction(()=>{
+     const root=document.querySelector("#ao-find-modular-root");
+     const input=root?.querySelector("[data-find-query]");
+     const first=root?.querySelector(".aoTlmVenueCard");
+     return input?.value==="Cantius"&&first&&/Cantius/i.test(first.textContent||"");
+    },null,{timeout:15000});
+    await cards.first().waitFor({state:"visible"});
+   }
    catch(error){
     console.error("Church search diagnostic:",await page.evaluate(()=>({
      status:globalThis.AO_FIND_APP_V1?.status?.(),
