@@ -200,4 +200,34 @@ body.w320 .grid button{height:48px}
 .aoH7Screens .aoH7Week{margin-top:6px}
 .aoH7Screens .btn[disabled]{opacity:.55}
 @media(max-width:359px){.aoH7Screens .hero{height:470px!important}}
+
+/* Faithful H7 selectors mapped onto existing source-owned Home content. */
+.aoH7Screens .aoH7HomeView{height:auto!important;overflow:visible!important}
+.aoH7Screens .aoH7HomeView .sec{padding:0 var(--g)!important}
+.aoH7Screens .aoH7HomeView .aoH4SectionHead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:26px 0 10px}
+.aoH7Screens .aoH7HomeView .aoH4SectionHead h2{font:500 21px/1.1 var(--serif)!important;margin:0}
+.aoH7Screens .aoH7HomeView .aoH4SectionHead button{border:0!important;background:transparent!important;color:var(--sage)!important;font:500 14.5px/1 var(--serif)!important;min-height:44px!important;padding:4px 0!important}
+.aoH7Screens .aoH7HomeView .aoH4Prayer.np{display:flex!important;align-items:center!important;gap:14px!important;width:100%!important;min-height:80px!important;padding:14px!important;border:1px solid var(--ln)!important;border-radius:18px!important;background:var(--sf)!important;color:var(--ink)!important;text-align:left!important}
+.aoH7Screens .aoH7HomeView .aoH4PrayerGlyph{width:44px!important;height:44px!important;border-radius:50%!important;background:var(--sageBg)!important;color:var(--sage)!important;display:grid!important;place-items:center!important;flex:0 0 44px!important}
+.aoH7Screens .aoH7HomeView .aoH4PrayerText{flex:1!important;min-width:0}
+.aoH7Screens .aoH7HomeView .aoH4PrayerText strong{display:block;font:500 18px/1.2 var(--serif)!important;margin-top:5px}
+.aoH7Screens .aoH7HomeView .aoH4PrayerText small{font:13px/1.3 var(--sans)!important;color:var(--mu)!important}
+.aoH7Screens .aoH7HomeView .aoH4Chips.chips{display:flex!important;gap:8px!important;overflow-x:auto!important;margin-top:10px!important;padding:0!important}
+.aoH7Screens .aoH7HomeView .aoH4Chips.chips button{flex:0 0 auto!important;min-height:42px!important;padding:0 14px!important;border:1px solid var(--ln)!important;border-radius:21px!important;background:transparent!important;color:var(--ink)!important;font:500 14.5px/1 var(--serif)!important}
+.aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc{display:flex!important;gap:10px!important;overflow-x:auto!important;scrollbar-width:none!important;padding:0!important}
+.aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc button{flex:0 0 150px!important;min-height:104px!important;border-radius:16px!important;border:1px solid var(--ln)!important;background:var(--sf)!important;color:var(--ink)!important;text-align:left!important;padding:12px!important;display:flex!important;flex-direction:column!important;gap:0!important}
+.aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc strong{font:500 17px/1.2 var(--serif)!important;margin:8px 0 auto!important}
+.aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc small{font:12.5px/1.3 var(--sans)!important;color:var(--mu)!important;margin-top:6px!important}
+.aoH7Screens .aoH7HomeView .aoH4Read.card{border:1px solid var(--ln)!important;border-radius:16px!important;background:var(--sf)!important;overflow:hidden!important}
+.aoH7Screens .aoH7HomeView .aoH4Read.card button.row{min-height:58px!important;padding:8px 14px!important;border:0!important;background:transparent!important;color:var(--ink)!important;display:flex!important;align-items:center!important;gap:12px!important;text-align:left!important}
+.aoH7Screens .aoH7HomeView .aoH4Read.card button.row strong{font:500 16px/1.25 var(--serif)!important}
+.aoH7Screens .aoH7HomeView .aoH4Read.card button.row small{font:13px/1.3 var(--sans)!important;color:var(--mu)!important}
+.aoH7Screens .aoH7HomeView .aoH4DiscoveryStandalone{margin:26px var(--g) 0!important;padding:0!important}
+.aoH7Screens .aoH7DoorView .foot>.btn{display:flex!important;min-height:56px!important;width:100%!important;padding:8px 10px 8px 18px!important;border:0!important;border-radius:16px!important;background:var(--sage)!important;color:var(--onsage)!important;text-align:left!important}
+.aoH7Screens .aoH7DoorView .foot>.btn>span:first-child{flex:1;min-width:0}
+.aoH7Screens .aoH7DoorView .foot>.btn strong{display:block;font:600 18px/1.15 var(--serif)!important;color:var(--onsage)!important}
+.aoH7Screens .aoH7DoorView .foot>.btn small{display:block;font:500 12px/1.3 var(--sans)!important;opacity:.78}
+.aoH7Screens .aoH7DoorView .foot>.btn .aoH4Arrow{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.14);font-size:23px}
+.aoH7Screens .aoH7DoorView .foot .mini{display:flex!important;justify-content:center!important;gap:2px!important;margin-top:4px!important}
+.aoH7Screens .aoH7DoorView .foot .mini button{min-height:40px!important;padding:0 12px!important;border:0!important;background:transparent!important;color:var(--ink2)!important;font:500 14px/1 var(--serif)!important}
 `;
