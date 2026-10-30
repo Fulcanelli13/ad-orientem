@@ -15,15 +15,24 @@ const dayOf=(date,fr)=>{
 export function h4Enabled(win=globalThis){
   try{return new URLSearchParams(win?.location?.search??"").get("aoTodayH4")==="1"}catch{return false}
 }
-export function h4HomeView(vm,model,{resume=null,coverage=null}={}){
+export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
   const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"><span>'+esc(d.day)+'</span><b>'+esc(d.number)+'</b><i class="aoWeekColour" aria-hidden="true"></i></button>').join("");
   const properIdentity=vm.massFormularyName?'<p class="aoH4Formulary">'+esc(vm.massFormularyName)+'</p>':"";
   const introit=vm.massIntroit?'<p class="aoH4Introit" lang="la">'+esc(vm.massIntroit)+'</p>':"";
+  const formName=({
+    LOW:say("Low Mass","Messe basse"),
+    MISSA_CANTATA_SIMPLE:say("Sung · no incense","Chantée · sans encens"),
+    MISSA_CANTATA_INCENSE:say("Sung · incense","Chantée · avec encens"),
+    SOLEMN:say("Solemn Mass","Messe solennelle"),
+  })[choices?.chosenForm]??null;
+  const selectedChoices=[formName,choices?.readerMode==="MISSAL"?say("Missal","Missel"):
+    choices?.readerMode==="LIVE"?"LIVE":null].filter(Boolean).join(" · ")||
+    say("Choose Mass options","Choisir les options de messe");
   const resumeLabel=resume?[resume.date?dateLabel(resume.date,fr):"",resume.stepNumber?say("Card ","Carte ")+resume.stepNumber:""].filter(Boolean).join(" · "):"";
   const mainAction=resume?
     '<button type="button" class="aoH4Primary" data-resume-mass data-ao-resume-owner="R17_NATIVE"><span><strong>'+esc(say("Resume Mass","Reprendre la messe"))+'</strong><small>'+esc(resumeLabel)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>':
-    '<button type="button" class="aoH4Primary" data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(vm.isToday?say("Begin Mass","Commencer la messe"):say("Begin selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(say("Using the current Mass choices","Avec les choix actuels"))+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
+    '<button type="button" class="aoH4Primary" data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(vm.isToday?say("Begin Mass","Commencer la messe"):say("Begin selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(selectedChoices)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
   const unresolved=!resume&&!ready?'<div class="aoH4Status" role="status">'+esc(vm.loading?say("Resolving the selected Mass…","Résolution de la messe choisie…"):say("Mass texts are not yet available. Begin is unavailable.","Les textes de la messe ne sont pas encore disponibles. Le démarrage est indisponible."))+'</div>':"";
   const feature=model.enricherVisible?model.feature:null;
   const attrs=feature?.kind==="dynamic"?
