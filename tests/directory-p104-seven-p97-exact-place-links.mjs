@@ -11,7 +11,8 @@ const r49=read("data/directory/preliminary-map-r49.v1.json");
 const p104=read("data/geography/research/sacred-places-p104-seven-p97-directory-links.v1.json");
 const media=read("data/geography/approved-place-media.v1.json");
 const laterPhotoRelease=read("data/geography/research/directory-p106-four-approved-covers.v1.json");
-const laterApproved=new Map(laterPhotoRelease.photos.map(p=>[p.place_id,p]));
+const newestPhotoRelease=read("data/geography/research/directory-p108-one-approved-jihlava-cover.v1.json");
+const laterApproved=new Map([...laterPhotoRelease.photos,...newestPhotoRelease.photos].map(p=>[p.place_id,p]));
 const cross=read("data/geography/research/directory-place-photo-screen-p92-20261029.v1.json");
 const columns=Object.fromEntries(r49.columns.map((n,i)=>[n,i]));
 const venueById=new Map(r49.records.map(v=>[v[columns.id],v]));
@@ -33,7 +34,7 @@ assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[529,844,22]);
 assert.deepEqual([geo.places.length,src.sources.length,geo.directoryPlaceLinks.length],[529,844,22]);
 assertExploreGeographyRegistry(geo);
 assert.equal(p104.published_new.length,7);
-assert.equal(media.items.length,36+laterPhotoRelease.photos.length,"Historical P104 approved none; P106 later independently approved four");
+assert.equal(media.items.length,36+laterPhotoRelease.photos.length+newestPhotoRelease.photos.length,"Historical P104 approved none; P106 later independently approved four");
 const rad=n=>n*Math.PI/180;
 const meters=(a,b,c,d)=>{let q=Math.sin(rad(c-a)/2)**2+Math.cos(rad(a))*Math.cos(rad(c))*Math.sin(rad(d-b)/2)**2;return Math.round(12742000*Math.asin(Math.sqrt(q))*10)/10};
 for(const r of p104.published_new){
@@ -84,7 +85,7 @@ for(const r of p104.published_new){
 }
 assert.equal(cross.counts.canonical_places,529);
 assert.equal(cross.counts.confirmed_links,22);
-assert.equal(cross.counts.exact_confirmed_photo_joins,5+laterPhotoRelease.photos.length,"P104 adds identity only; four later P106 approvals are separate");
+assert.equal(cross.counts.exact_confirmed_photo_joins,5+laterPhotoRelease.photos.length+newestPhotoRelease.photos.length,"P104 adds identity only; four later P106 approvals are separate");
 assert.equal(p104.research_holds.length,4);
 const gnd=cross.candidate_pairs.find(p=>p.venue_id==="ao-research-icksp-federated-v13-icksp-stg-112"&&p.place_id==="place:DE:altoetting-gnadenkapelle");
 assert.equal(gnd?.disposition,"DIFFERENT_CONFIRMED_PLACE_HOLD","Do not mistake cemetery church for Gnadenkapelle");
