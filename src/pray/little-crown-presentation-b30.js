@@ -1,6 +1,6 @@
 /** B30 presentation inside the existing Pray shell; no separate engine. */
 import {LITTLE_CROWN_B30_SOURCE,LITTLE_CROWN_B30_BEADS,littleCrownStep} from "./little-crown-b30.js";
-export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,esc,nl}){
+export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,esc,nl,f07Band=""}){
  const position=Math.max(0,Math.min(14,index));
  const langCode=latin?"la":(french?"fr":"en");
  const step=littleCrownStep(position,langCode);
@@ -22,22 +22,25 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
  const latinToggle='<button type="button" data-p435930-crown-latin aria-pressed="'+String(latin)+'" aria-label="'+
    esc(latin?L("Return to vernacular","Revenir à la langue vernaculaire"):L("Pray in Latin","Prier en latin"))+'">'+
    esc(latin?"EN / FR":"LATIN")+'</button>';
+ const beadNavigator='<nav aria-label="'+esc(L("The fifteen beads","Les quinze grains"))+'">'+
+  group(L("Jesus · Mary · Joseph","Jésus · Marie · Joseph"),0,3)+
+  group(L("Twelve years of the Holy Childhood","Douze années de la Sainte Enfance"),3,15)+'</nav>';
  return head(L("Little Crown of the Infant Jesus","Petite Couronne de l’Enfant-Jésus"),
   L("Three Our Fathers · twelve Hail Marys","Trois Notre Père · douze Je vous salue Marie"))+
-  '<main class="aoP435930Body aoLittleCrown" data-ao-little-crown-reader>'+
+  '<main class="aoP435930Body aoLittleCrown" data-ao-little-crown-reader '+(f07Band?'data-ao-f07-variant="little-crown"':'')+'>'+
   '<header class="aoLittleCrownIntro"><small>'+esc(L("THE HOLY CHILDHOOD · 15 BEADS","SAINTE ENFANCE · 15 GRAINS"))+
   '</small><h2>'+esc(step.heading)+'</h2><p>'+esc(L("Before every bead, recall the Incarnation and pray at your own pace.",
   "Avant chaque grain, rappelez-vous l’Incarnation et priez à votre rythme."))+'</p></header>'+
   '<div class="aoLittleCrownProgress" role="progressbar" aria-label="'+esc(L("Chaplet progress","Progression du chapelet"))+
   '" aria-valuemin="0" aria-valuemax="15" aria-valuenow="'+(position+1)+'"><span style="width:'+
   Math.round((position+1)/15*100)+'%"></span></div>'+
-  '<nav aria-label="'+esc(L("The fifteen beads","Les quinze grains"))+'">'+
-  group(L("Jesus · Mary · Joseph","Jésus · Marie · Joseph"),0,3)+
-  group(L("Twelve years of the Holy Childhood","Douze années de la Sainte Enfance"),3,15)+'</nav>'+
+  (f07Band?f07Band:beadNavigator)+
+
   '<article class="aoLittleCrownPrayer" tabindex="0"><div class="aoLittleCrownPrayerTop"><small>'+
   esc((position+1)+' / 15 · '+(step.group==="holy-family"?L("Our Father","Notre Père"):L("Hail Mary","Je vous salue Marie")))+
   '</small>'+latinToggle+'</div><p class="aoLittleCrownAspiration" lang="'+esc(langCode)+'">'+esc(step.aspiration)+
   '</p><p class="aoLittleCrownPrayerText" lang="'+esc(langCode)+'">'+nl(step.prayerText)+'</p></article>'+
+  (f07Band?'<details class="aoF07JumpDisclosure"><summary>'+esc(L("Choose a bead","Choisir un grain"))+'</summary>'+beadNavigator+'</details>':'')+
   '<footer class="aoLittleCrownActions">'+prev+next+'</footer>'+
   '<details class="aoLittleCrownSource"><summary>'+esc(L("Historical form & sources","Forme historique et sources"))+
   '</summary><p>'+esc(L("The 1940 English devotional witness documents three Our Fathers for the Holy Family and twelve Hail Marys for the twelve years of Our Lord’s childhood. The Incarnation aspiration precedes each bead.",

@@ -6,6 +6,9 @@ on:
       - "src/pray/internal-route-owner.js"
       - "src/pray/presentation-runtime.js"
       - "src/pray/chaplet-f07-pilot.js"
+      - "src/pray/chaplet-f07-variants.js"
+      - "src/pray/little-crown-presentation-b30.js"
+      - "tests/pray-chaplet-f07-variants-phone.mjs"
       - "tests/pray-chaplet-f07-phone.mjs"
       - "src/pray/prayer-reader-design-pilot.js"
       - "tests/pray-reader-design-pilot-phone.mjs"
@@ -34,6 +37,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Use local Chromium for real mobile DOM checks
         run: npx playwright install --with-deps chromium
+      - name: F07 Three source-specific chaplets source and mobile acceptance
+        run: node tests/pray-chaplet-f07-variants-contract.mjs && node tests/pray-chaplet-f07-variants-phone.mjs
       - name: Screen all Prayer direct-entry routes at 320px and 390px
         run: node tests/pray-ux-direct-route-mobile-audit.mjs
       - name: Reader pilot F01/F03 source-owned mobile acceptance
@@ -52,5 +57,6 @@ jobs:
             artifacts/prayer-design-pilot/
             artifacts/prayer-reader-design-pilot/
             artifacts/pray-chaplet-f07/
+            artifacts/pray-chaplet-f07-variants/
           if-no-files-found: ignore
           retention-days: 3
