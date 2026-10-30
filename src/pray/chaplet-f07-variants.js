@@ -294,6 +294,57 @@ const STYLES=`
 #aoPray435930 .aoF07LittleCrownCentre>span{font:400 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
 #aoPray435930 .aoF07LittleCrownTools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;margin:0 0 1px}
 #aoPray435930 .aoF07LittleCrownTools>small{font:600 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em;color:var(--liturgical,#cbb28b)}
+/* The original 320x568 browser capture put the first prayer at y=595 and
+   the sticky Prayer heading intercepted bead 14. Keep the full 282px
+   fifteen-bead circle and 48px hit targets; reclaim *chrome* instead. */
+#aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Mount{
+ scroll-padding-top:78px
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownBead{
+ scroll-margin-top:82px;
+}
+@media(max-width:359px) and (max-height:620px){
+ #aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head{
+  padding:4px 9px 5px;align-items:center;grid-template-columns:38px minmax(0,1fr) 38px;gap:6px
+ }
+ #aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head button{
+  width:36px;height:36px
+ }
+ #aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head div{
+  padding:0;min-width:0
+ }
+ #aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head small,
+ #aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head p{
+  display:none
+ }
+ #aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head h1{
+  font-size:15px;line-height:1.05;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"]{
+  padding:0 10px 12px;gap:0
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownTools{
+  min-height:30px;margin:0
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownBand{
+  gap:0;margin:0
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownPrompt{
+  display:none
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayer{
+  padding:5px 9px;margin:0
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayerTop{
+  min-height:0
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownAspiration{
+  font-size:15px;line-height:1.25;margin:2px auto 3px
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayerText{
+  font-size:19px;line-height:1.45
+ }
+}
 #aoPray435930 .aoF07LittleCrownPrompt{display:flex;align-items:baseline;gap:7px;min-width:0;text-align:center;flex-wrap:wrap;justify-content:center}
 #aoPray435930 .aoF07LittleCrownPrompt strong{font:400 16px/1.2 var(--ao-font-liturgical,Georgia,serif);color:var(--text,#f3e8da)}
 #aoPray435930 .aoF07LittleCrownPrompt small{font:400 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
