@@ -25,8 +25,8 @@ await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- for(const width of [320,390]){
-  const page=await browser.newPage({viewport:{width,height:width===320?700:844},isMobile:true,hasTouch:true,
+ for(const {width,height} of [{width:320,height:568},{width:320,height:700},{width:390,height:844}]){
+  const page=await browser.newPage({viewport:{width,height},isMobile:true,hasTouch:true,
    deviceScaleFactor:1,reducedMotion:"reduce",serviceWorkers:"block"});
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
   try{
@@ -51,6 +51,10 @@ try{
     const dockBox=dock?.getBoundingClientRect();
     const prevBox=prev?.getBoundingClientRect();
     const nextBox=next?.getBoundingClientRect();
+    const activePrayer=shell?.querySelector('.aoRosaryActiveCard .aoDevoParagraph[data-ao-devo-active="true"]');
+    const prayerBox=activePrayer?.getBoundingClientRect();
+    const prayerAboveDock=prayerBox&&dockBox
+      ?Math.max(0,Math.min(prayerBox.bottom,dockBox.top)-Math.max(0,prayerBox.top)):0;
     return {
      roots:document.querySelectorAll("#aoPrayerBookRoot.open").length,
      step:window.AO_ROSARY_V381?.state?.()?.step,
@@ -66,6 +70,7 @@ try{
      prevTop:prevBox?.top??null,nextTop:nextBox?.top??null,
      prevBottom:prevBox?.bottom??null,nextBottom:nextBox?.bottom??null,
      rowChildren:dock?.querySelectorAll(":scope > button").length??0,
+     prayerAboveDock,
      openingPill:rail?.querySelector('[data-ao-rosary-r2-role="opening"]')?.innerText?.trim(),
      viewportHeight:innerHeight,
      overflow:document.documentElement.scrollWidth-innerWidth,
@@ -84,8 +89,10 @@ try{
      baseline.nextBottom<=baseline.viewportHeight-1&&baseline.prevBottom<=baseline.viewportHeight-1,
      "Both native controls must remain visible above the mobile safe-area dock: "+JSON.stringify(baseline));
    assert.ok(baseline.nextHeight>=44&&baseline.text>15,"Source prayer and Next action must remain usable");
+   assert.ok(baseline.prayerAboveDock>=18,"The first actual prayer must be readable before scrolling at "+
+     width+"x"+height+": "+JSON.stringify(baseline));
    assert.ok(baseline.overflow<=2,"Phone horizontal overflow");
-   await page.screenshot({path:resolve(artifacts,"rosary-r2-"+width+"-opening.png"),animations:"disabled"});
+   await page.screenshot({path:resolve(artifacts,"rosary-r2-"+width+"x"+height+"-opening.png"),animations:"disabled"});
    await donor.locator("[data-lab-rosary-next]").click();
    await page.waitForFunction(before=>window.AO_ROSARY_V381?.state?.()?.step===before+1,
      baseline.step,{timeout:10000});
@@ -97,7 +104,7 @@ try{
    await page.waitForFunction(expected=>window.AO_ROSARY_V381?.state?.()?.step===expected,
      baseline.step,{timeout:10000});
    assert.deepEqual(errors,[],"Browser errors in R2 pilot: "+errors.join("; "));
-   console.log("PASS Rosary R2 "+width+"px: source donor, Roman chapter pills, native beads, exact Next/Previous, no overflow");
+   console.log("PASS Rosary R2 "+width+"x"+height+": source donor, Roman chapter pills, native beads, exact Next/Previous, no overflow");
   }finally{await page.close();}
  }
  const normal=await browser.newPage({viewport:{width:320,height:700},isMobile:true,serviceWorkers:"block"});
