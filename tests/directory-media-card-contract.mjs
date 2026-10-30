@@ -136,7 +136,7 @@ const fullMap=projectPublishedProvisionalMassSites(
   baseMap,readRegistry("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 assert.equal(fullMap.length,1882,"The map's 1,879 + 3 known visual slots must be accounted for");
 const logoGroups=new Set(["FSSP","ICKSP","SSPX","IBP","AASJMV"]);
-const visualCount={emblem:0,neutral:0};
+const visualCount={emblem:0,named:0,neutral:0};
 for(const venue of fullMap){
   const fallback=renderDirectoryIdentityFallback(venue,"en");
   const card=renderDirectoryVenueCard(venue,"en");
@@ -144,11 +144,17 @@ for(const venue of fullMap){
   if(logoGroups.has(venue.community_id)){
     assert.match(fallback,/data-visual-kind="emblem"/);
     visualCount.emblem++;
+  }else if(fallback.includes('data-visual-kind="named"')){
+    assert.match(fallback,/aoTlmVenueNamedMark/);
+    assert.match(fallback,/Listed as: /,"Named monogram must disclose source-only affiliation");
+    assert.doesNotMatch(fallback,/<img /,"Uncleared source labels must not acquire a logo");
+    visualCount.named++;
   }else{
     assert.match(fallback,/data-visual-kind="neutral"/);
     assert.match(fallback,/aoTlmVenueGlyph/);
     visualCount.neutral++;
   }
 }
-assert.deepEqual(visualCount,{emblem:1191,neutral:691});
+assert.deepEqual(visualCount,{emblem:1191,named:42,neutral:649},
+  "All 1,882 venues have either a source-specific emblem, named monogram or neutral church symbol");
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
