@@ -4577,9 +4577,11 @@ export function createReaderDomAdapter({
             decorateLiturgicalSpeaker(secondary,parallel);
             node.append(secondary);
           }
-          const inlineRubrics=mode==="MISSAL"||mode==="LIVE"
+          const inlineRubrics=mode==="MISSAL"
             ? p.publishedMissalRubrics
-            : [...p.publishedCanonRubrics,
+            : mode==="LIVE"
+              ? p.publishedMissalRubrics.filter(event=>event.kind!=="BELL")
+              : [...p.publishedCanonRubrics,
               ...p.publishedMissalRubrics.filter(event=>
                 event.review==="RITUS_1962_EXPLICIT_PRIEST_SUCCESSION" &&
                 event.owner==="RITUS_XIV_SOURCE_CONDITIONAL")];
@@ -4591,6 +4593,11 @@ export function createReaderDomAdapter({
           // separately approved persistent priest state: not another action.
           const shortRubrics=alreadyPrintedRubric
             ? inlineRubrics.filter(event=>event.kind==="STATE" ||
+                // A source bracket already prints the priest's acts, not the
+                // separate Ritus VIII.6 server bell direction. Keep that
+                // note in MISSAL only, never a LIVE action or timed bell.
+                (mode==="MISSAL" && event.kind==="BELL" &&
+                 ["AO.RUB.C0161.02","AO.RUB.C0174.03","AO.RUB.C0181.03"].includes(event.id)) ||
                 (event.owner==="REQUIEM_XIII3_CONDITIONAL_SOURCE" &&
                  event.review==="RITUS_1962_REQUIEM_CANDLE_CONDITIONAL") ||
                 // The paragraph itself is a source rubric: never print a
