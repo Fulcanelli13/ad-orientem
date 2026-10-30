@@ -182,6 +182,21 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
  });
  timeline.append(stops);
  host.replaceChildren(timeline,viewport);host.dataset.aoDevotionalDeck="v1";
+ // F04 bottom navigation is one more view of this SAME source-owned go()
+ // cursor. No duplicate card index, liturgical text or completion state.
+ const f04=mount.matches('[data-ao-f04-timeline="segments"]');
+ const dock=f04?create(doc,"nav","aoDevoF04Dock"):null;
+ const previous=dock?create(doc,"button","aoDevoF04Previous","‹"):null;
+ const position=dock?create(doc,"span","aoDevoF04Position"):null;
+ const next=dock?create(doc,"button","aoDevoF04Next",language==="fr"?"Suivant ›":"Next ›"):null;
+ if(dock){
+  dock.setAttribute("aria-label",language==="fr"?"Navigation des moments":"Prayer moment navigation");
+  previous.type="button";previous.dataset.aoF04Previous="";
+  previous.setAttribute("aria-label",language==="fr"?"Moment précédent":"Previous moment");
+  next.type="button";next.dataset.aoF04Next="";
+  next.setAttribute("aria-label",language==="fr"?"Moment suivant":"Next moment");
+  dock.append(previous,position,next);host.append(dock);
+ }
  host.classList.add("aoDevoDeck");
  originalAppendix?.remove();
  let index=0,lastParagraph=null,lastCue=null,raf=0;
@@ -223,6 +238,11 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
    x.setAttribute("aria-current",i===index?"step":"false");
   });
   updateDevotionalProgress(timeline,{index,total:plan.length,language});
+  if(dock){
+   previous.disabled=index===0;next.disabled=index===plan.length-1;
+   position.textContent=language==="fr"?"Moment "+(index+1)+" sur "+plan.length:
+    "Moment "+(index+1)+" of "+plan.length;
+  }
   // Keep timeline item visible without scrolling the vertical Prayer mount.
   const button=stops.children[index],rail=stops;
   rail.scrollLeft=Math.max(0,button.offsetLeft-rail.offsetLeft-(rail.clientWidth-button.clientWidth)/2);
@@ -261,6 +281,11 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   go(index+(e.key==="ArrowRight"?1:-1));
  });
  host.addEventListener("click",e=>{
+  const previousClick=e.target.closest("[data-ao-f04-previous]");
+  const nextClick=e.target.closest("[data-ao-f04-next]");
+  if(previousClick||nextClick){
+   e.preventDefault();go(index+(nextClick?1:-1));return;
+  }
   if(e.target.closest("[data-p435930-card-flip]")){
    const currentBody=cards[index]?.querySelector(".aoDevoCardScroll");
    if(currentBody)delete currentBody.dataset.aoFocusRunway;
