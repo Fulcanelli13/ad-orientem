@@ -136,6 +136,10 @@ for g in groups:
 # inventory. The Commons file is an ALTERNATE photo, not automatically the
 # selected original and never a production-rights clearance.
 VERIFIED_ALTERNATE_PAGES={
+ # Original frozen source was Christie’s lot 6223948 (different painting);
+ # verified Benson lot 6238407 identifies exactly the Commons source below.
+ "https://www.christies.com/en/lot/lot-6238407":
+   "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
  "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory":
    "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
  "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario":
