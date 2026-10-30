@@ -137,10 +137,9 @@ const readFragment=html.slice(html.indexOf('class="aoH4Read"'));
 assert.doesNotMatch(readFragment,/data-home-dyk-open/,"Did You Know must not be inside Read");
 assert.equal((readFragment.match(/data-action="gospel"/g)||[]).length,1,"Read keeps its Gospel entry");
 assert.match(html,/class="aoH4CalendarViews"/,"Calendar must retain its own view selector");
-for(const [view,count] of [["day",1],["year",1]]){
- assert.equal((html.match(new RegExp('data-home-calendar-view="'+view+'"',"g"))||[]).length,count,
-   "No Calendar "+view+" access in H4");
-}
+assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\\s\\S]*data-home-calendar-view="day">Day/);
+assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\\s\\S]*data-home-calendar-view="picker">Month/);
+assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\\s\\S]*data-home-calendar-view="year">Liturgical Year/);
 assert.match(html,/Liturgical Year/,"Year clock needs a visible labelled route");
 assert.match(h4HomeView({...vm,language:"fr"},model),/Année liturgique/,
   "Year clock route must be bilingual");
