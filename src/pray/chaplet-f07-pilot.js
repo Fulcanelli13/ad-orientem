@@ -32,6 +32,9 @@ export function renderMercyF07Crown(steps,index,{french=false}={}){
   '</figcaption></figure>';
 }
 const F07_STYLE=`
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"]{display:flex;flex-direction:column}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"]>.aoBatch02MercyOpenings{order:10}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadNavigation{margin-top:0!important;margin-bottom:0!important}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand{display:grid;grid-template-columns:118px minmax(0,1fr);align-items:center;gap:12px;width:100%;min-width:0;margin:2px 0 6px;padding:4px 12px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:14px;box-sizing:border-box;background:var(--surface-1,rgba(25,30,35,.18))}
 #aoPray435930 .aoF07CrownDiagram{width:118px;height:118px;display:block}
 #aoPray435930 .aoF07CrownTrack{fill:none;stroke:var(--border,rgba(220,220,220,.2));stroke-width:.65}
