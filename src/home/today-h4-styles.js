@@ -65,6 +65,11 @@ export const TODAY_H4_CSS=`
 .aoTodayH4 .aoH4Read button strong{display:block;font:500 16.5px/1.25 var(--h4-serif)}
 .aoTodayH4 .aoH4Read button small{display:block;font:400 13px/1.3 system-ui,sans-serif;color:var(--h4-muted);margin-top:3px}
 .aoTodayH4 .aoH4Read button .aoH4Arrow{margin-left:auto}
+.aoTodayH4 .aoH4CalendarViews{display:none;grid-template-columns:1fr 1fr minmax(0,1.7fr);gap:5px;margin:5px var(--h4-gap) 12px;padding:4px;border:1px solid var(--h4-line);border-radius:15px;background:var(--h4-surface)}
+.aoTodayH4[data-ao-home-calendar-view] .aoH4CalendarViews{display:grid}
+.aoTodayH4 .aoH4CalendarViews button{display:flex;min-width:0;min-height:44px;align-items:center;justify-content:center;padding:8px 5px;border:1px solid transparent;border-radius:11px;background:transparent;color:var(--h4-muted);font:600 12px/1.25 system-ui,sans-serif;text-align:center;white-space:normal}
+.aoTodayH4 .aoH4CalendarViews button[aria-current="page"]{background:color-mix(in srgb,var(--h4-accent) 18%,var(--h4-surface));border-color:var(--h4-accent);color:var(--h4-ink)}
+@media(max-width:359px){.aoTodayH4 .aoH4CalendarViews button{font-size:11.5px;padding:7px 3px}}
 .aoTodayH4 .aoH4CalendarInline{display:none}
 .aoTodayH4[data-ao-home-calendar-view] .aoH4CalendarInline{display:block}
 .aoTodayH4[data-ao-home-calendar-view] .aoH4TodayContent{display:none}
