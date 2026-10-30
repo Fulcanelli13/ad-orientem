@@ -35,7 +35,9 @@ try{
     "Fresh profile must start without an R17 checkpoint");
   const missing=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("mass",{resume:true}));
   assert.equal(missing.reason,"NO_RESUMABLE_MASS","Explicit Resume must fail closed with no checkpoint");
-  await page.locator('#ao-global-ribbon [data-ao-app-surface="mass"]').click();
+  // Mass is entered from Today, not a retired bottom-navigation tab.
+  await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:25000});
+  await page.locator('.homeScreen [data-home-mass-entry]').click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"visible",timeout:25000});
   assert.equal(await page.locator("[data-ao-start-live]").count(),1,"Only original Start Mass");
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").count(),1,"One source-owned preflight");
@@ -75,8 +77,8 @@ try{
     null,{timeout:45000});
   assert.equal(await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY.hasResumable()),true);
   const fresh=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("mass"));
-  assert.equal(fresh.ok,true,"Fresh tab navigation must be permitted with a checkpoint");
-  assert.equal(fresh.resumedMass,undefined,"Ordinary Mass tab may not silently Resume");
+  assert.equal(fresh.ok,true,"Explicit contextual Mass preparation must be permitted with a checkpoint");
+  assert.equal(fresh.resumedMass,undefined,"Ordinary Mass entry may not silently Resume");
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"visible",timeout:20000});
   assert.equal(await page.evaluate(()=>Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)),false,
     "Fresh entry with checkpoint must show the source preflight, never the LIVE reader");
