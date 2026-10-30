@@ -271,6 +271,9 @@ try{
     // supported phone width.
     assert.equal(await page.locator("[data-ao-app-surface='mass']").count(),0,
       "Mass is not a fifth ribbon tab");
+    const calendarBack=page.locator(".aoH4CalendarBack [data-home-calendar-today]");
+    if(await calendarBack.isVisible())await calendarBack.click();
+    await page.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",{state:"visible",timeout:10000});
     const massNav=page.locator(".homeScreen [data-home-h4-begin], .homeScreen [data-resume-mass]").first();
     assert.equal(await massNav.count(),1,
       viewport.width+"px Home lost the sole canonical Mass entry");
