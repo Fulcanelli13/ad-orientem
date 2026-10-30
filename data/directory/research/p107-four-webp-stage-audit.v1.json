@@ -1,0 +1,48 @@
+{
+  "schema": "AO_P107_FOUR_HASH_VERIFIED_ALTERNATIVE_STAGING_V1",
+  "status": "RESEARCH_ONLY_NO_APPROVED_PLACE_MEDIA",
+  "source": "data/directory/research/p107-four-commons-original-alternatives.v1.json",
+  "counts": {
+    "originals_sha1_verified": 1,
+    "native_decodes": 1,
+    "uncropped_webps_staged": 1,
+    "candidates_screened": 4,
+    "editorially_rejected_before_download": 3,
+    "media_approved": 0,
+    "published": 0
+  },
+  "contact_sheet": "docs/research/directory/p107-four-alternatives-contact-sheet.jpg",
+  "contact_sheet_sha256": "15a7c3779ccef511a6462318e07e7df95a77e251e61859316d0074d6e330e3d8",
+  "records": [
+    {
+      "row": 309,
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_(8686).jpg",
+      "exact_download_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_%288686%29.jpg",
+      "photographer": "Gampe",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_path": "docs/research/directory/p107-alternative-originals-20261030/309-alternate-original.jpg",
+      "original_sha1_verified": "a61c6ec7df0680fc9cd37c802ce0e10346694367",
+      "original_sha256": "abaa284d7cfcbbc78e05cdfb1cf73bc7fe2b37bf2334a3c6d2886a6a3dc3c25d",
+      "original_bytes": 4197924,
+      "original_dimensions": [
+        3000,
+        4000
+      ],
+      "staged_path": "assets/staged/directory-p107/309-alternate-full-frame.webp",
+      "staged_sha256": "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+      "staged_bytes": 154206,
+      "staged_dimensions": [
+        1050,
+        1400
+      ],
+      "native_jpeg_decode": true,
+      "no_crop": true,
+      "source_licence_verified_on_commons_page": true,
+      "visual_editorial_review": "PENDING_INDIVIDUAL_IMAGE_INSPECTION",
+      "rights_and_derivative_publication_gate": "PENDING",
+      "published": false
+    }
+  ]
+}
