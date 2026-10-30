@@ -1,0 +1,206 @@
+{
+  "schema": "AO_DYK_LEGACY_SOURCE_RECONCILIATION_V1",
+  "date": "2026-10-30",
+  "status": "CROSS_SOURCE_AUDIT_UNPUBLISHED",
+  "privacy": "No private legacy fact body, record IDs or source text copied into the public draft branch; only publicly available canonical record IDs and new candidate IDs are included.",
+  "source_owner_description": "Earlier discovery owners are in the existing private canonical research branch; preserve ownership and approval statuses; no copy or transfer of private text into public files.",
+  "legacy_counts": {
+    "R04_pilot_total": 53,
+    "R04_pilot_home_preview_eligible": 49,
+    "R05_mechanically_screened": 278,
+    "R06_mechanically_screened": 285,
+    "home_preview_bank_eligible": 612,
+    "original_195_conversions_archival_overlapping": true,
+    "archival_conversion_rows": 195,
+    "legacy_approved": 0,
+    "legacy_production_published": 0
+  },
+  "new_public_draft_counts": {
+    "all": 154,
+    "source_record_flags": 18,
+    "no_exact_legacy_source_match": 136,
+    "exact_english_text_matches": 0,
+    "historical_customs_observation_count": 130
+  },
+  "reconciliation_semantics": {
+    "same_canonical_source_is_not_necessarily_same_claim": true,
+    "absence_of_exact_source_overlap_is_not_semantic_dedup_certification": true,
+    "older_pilot_and_screened_candidates_overlaps_do_not_add_to_195": true,
+    "keep_previous_editorial_decisions": true,
+    "do_not_duplicate_private_corpus_into_public_repo": true,
+    "all_match_flags_manual_editorial_review": true
+  },
+  "flagged_public_drafts": [
+    {
+      "draft_id": "DYK-SF01-017",
+      "canonical_source_record_id": "G049",
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-018",
+      "canonical_source_record_id": "G059",
+      "prior_cohort_source_overlap": [
+        "R04",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-019",
+      "canonical_source_record_id": "G066",
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-021",
+      "canonical_source_record_id": "G088",
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-022",
+      "canonical_source_record_id": "G182",
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-023",
+      "canonical_source_record_id": "G185",
+      "prior_cohort_source_overlap": [
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-024",
+      "canonical_source_record_id": "G187",
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-025",
+      "canonical_source_record_id": "G188",
+      "prior_cohort_source_overlap": [
+        "R04",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-026",
+      "canonical_source_record_id": "G189",
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-027",
+      "canonical_source_record_id": "G193",
+      "prior_cohort_source_overlap": [
+        "R06",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-028",
+      "canonical_source_record_id": "G194",
+      "prior_cohort_source_overlap": [
+        "R04"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-029",
+      "canonical_source_record_id": "G195",
+      "prior_cohort_source_overlap": [
+        "R06",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-030",
+      "canonical_source_record_id": "G197",
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-031",
+      "canonical_source_record_id": "G201",
+      "prior_cohort_source_overlap": [
+        "R04",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-032",
+      "canonical_source_record_id": "G212",
+      "prior_cohort_source_overlap": [
+        "R05"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-033",
+      "canonical_source_record_id": "G213",
+      "prior_cohort_source_overlap": [
+        "R05"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-034",
+      "canonical_source_record_id": "G219",
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    },
+    {
+      "draft_id": "DYK-SF01-035",
+      "canonical_source_record_id": "G416",
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
+      "not_exact_text_duplicate": true
+    }
+  ]
+}
