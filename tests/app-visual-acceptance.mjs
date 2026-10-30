@@ -355,10 +355,21 @@ try{
   assert.equal(massEntry.preflightVisible,false,"H4 reopened retired Mass preflight");
   assert.equal(massEntry.donorLearnVisible,false,"Mass revealed legacy Learn");
   await shot("01b-mass-reader-direct-entry");
-  // Return using the permanent Today tab. The reader's actual checkpoint
-  // policy is owned by R17; never fake a preparation or liturgical cue.
-  await page.locator("[data-ao-app-surface='home']").click();
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
+  // LIVE suppresses the global ribbon. Use the real reader Home control,
+  // including optional After Mass choice and explicit leave confirmation.
+  assert.equal(await page.locator("#ao-global-ribbon").isVisible(),false,
+    "LIVE Mass must hide the ordinary app navigation ribbon");
+  const leavePrompts=[];
+  const acceptLeave=async dialog=>{leavePrompts.push(dialog.message());await dialog.accept();};
+  page.on("dialog",acceptLeave);
+  await page.locator("#ao-r17-native-reader-preview [data-reader-home]").click();
+  const afterMass=page.locator("#ao-r17-native-reader-preview .aoReaderAfterMassChoice");
+  if(await afterMass.count())await afterMass.locator("[data-ao-return-home]").click();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"&&
+    !document.getElementById("ao-r17-native-reader-preview"),null,{timeout:15000});
+  page.off("dialog",acceptLeave);
+  assert.equal(leavePrompts.length,1,"LIVE Mass must require one explicit leave confirmation");
+  assert.match(leavePrompts[0],/Mass is in progress\. Leave the Mass follower\?/);
 
   // H4 deliberately has no old Read/Reflect calendar link or Today tabs.
   // Open a real dated This week event, then exercise the source-owned
