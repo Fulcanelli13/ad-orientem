@@ -1,21 +1,35 @@
 {
-  "schema": "AO_PRAYER_RESEARCH_AFTER_REUSE_V2",
+  "schema": "AO_PRAYER_RESEARCH_AFTER_ALL_EXISTING_GALLERIES_V3",
   "counts": {
     "blueprint_image_slots": 267,
-    "covered_with_at_least_one_eligible_candidate": 263,
-    "with_any_defensible_candidate": 263,
-    "empty": 4,
+    "covered_with_at_least_one_eligible_candidate": 266,
+    "with_any_defensible_candidate": 266,
+    "empty": 1,
     "weak_only": 0,
-    "below_minimum_after_pruning": 31,
+    "below_minimum_after_pruning": 29,
     "pruned_weak_edges": 31,
     "user_accepted_first_five": 114,
     "user_accepted_later": 107,
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1548,
+    "artwork_edges_after_consolidation": 1561,
     "explicit_user_acceptances_never_auto_pruned": true
   },
-  "items": [
+  "truth_note": "Source-title candidate coverage only, not image-rights or every actual live-card coverage",
+  "empty_scenes": [
+    {
+      "id": "STG-pray.benediction-03",
+      "label": "The blessing"
+    }
+  ],
+  "need_source_image_not_new_painting": [
+    "COV-novena.st_therese"
+  ],
+  "need_photo_rights_qa": [
+    "COV-novena.st_anthony_nine_tuesdays",
+    "COV-devotion_st_anthony_lost_items"
+  ],
+  "below_target": [
     {
       "slot_id": "HERO-10",
       "door": "Pray home",
@@ -23,9 +37,8 @@
       "priority": "A",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "HERO-17",
@@ -34,53 +47,8 @@
       "priority": "A",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
-    },
-    {
-      "slot_id": "HERO-18",
-      "door": "Pray home",
-      "label": "Time after Pentecost",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 11,
-      "adequate_fit_distinct_works": 11,
-      "minimum": 10,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
-    },
-    {
-      "slot_id": "HERO-21",
-      "door": "Pray home",
-      "label": "All Souls",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 5,
-      "adequate_fit_distinct_works": 5,
-      "minimum": 2,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
-    },
-    {
-      "slot_id": "DOOR-D1",
-      "door": "D1 Daily Prayer",
-      "label": "Daily Prayer",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 6,
-      "adequate_fit_distinct_works": 4,
-      "minimum": 4,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
-    },
-    {
-      "slot_id": "DOOR-D9",
-      "door": "D9 Life & Intentions",
-      "label": "Life & Intentions",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 11,
-      "adequate_fit_distinct_works": 11,
-      "minimum": 4,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-foundations_morning_offering",
@@ -89,20 +57,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
-    },
-    {
-      "slot_id": "COV-daily.morning",
-      "door": "D1 Daily Prayer",
-      "label": "Cover",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 6,
-      "adequate_fit_distinct_works": 4,
-      "minimum": 6,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-daily.evening",
@@ -111,9 +67,8 @@
       "priority": "A",
       "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 5,
-      "adequate_fit_distinct_works": 4,
       "minimum": 6,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-sacrament_come_holy_spirit",
@@ -122,9 +77,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-traditional_veni_sancte_sequence",
@@ -133,9 +87,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.rosary-03",
@@ -144,20 +97,8 @@
       "priority": "A",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
-    },
-    {
-      "slot_id": "STG-pray.rosary-10",
-      "door": "D3 Rosary & Chaplets",
-      "label": "Carrying of the Cross",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 5,
-      "adequate_fit_distinct_works": 4,
-      "minimum": 4,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.rosary-13",
@@ -166,9 +107,8 @@
       "priority": "A",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
       "minimum": 4,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.rosary-14",
@@ -177,9 +117,8 @@
       "priority": "A",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-novena.holy_ghost",
@@ -188,9 +127,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-novena.holy_ghost-01",
@@ -199,9 +137,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 5,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-novena.sacred_heart",
@@ -210,20 +147,18 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-novena.st_therese",
       "door": "D4 Novenas & Journeys",
       "label": "Cover",
       "priority": "B",
-      "why": "EMPTY_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 0,
-      "adequate_fit_distinct_works": 0,
+      "why": "TITLE_FOUND_PHOTO_AND_REUSE_RIGHTS_MISSING",
+      "eligible_distinct_works": 1,
       "minimum": 3,
-      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
+      "action": "SOURCE_IMAGE_AND_RIGHTS_REPAIR"
     },
     {
       "slot_id": "COV-novena.immaculate_heart",
@@ -232,20 +167,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
-    },
-    {
-      "slot_id": "COV-novena.st_anthony_nine_tuesdays",
-      "door": "D4 Novenas & Journeys",
-      "label": "Cover",
-      "priority": "B",
-      "why": "EMPTY_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 0,
-      "adequate_fit_distinct_works": 0,
-      "minimum": 3,
-      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-programme.first_friday",
@@ -254,9 +177,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-benediction_o_salutaris",
@@ -265,9 +187,8 @@
       "priority": "C",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-pray.adoration",
@@ -276,9 +197,8 @@
       "priority": "A",
       "why": "FINAL_COVER_CHOICE_LOCKED_ASSET_QA_PENDING",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.adoration-02",
@@ -287,9 +207,8 @@
       "priority": "A",
       "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-pray.benediction",
@@ -298,9 +217,8 @@
       "priority": "A",
       "why": "FINAL_COVER_CHOICE_LOCKED_ASSET_QA_PENDING",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.benediction-02",
@@ -309,9 +227,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.benediction-03",
@@ -320,9 +237,8 @@
       "priority": "B",
       "why": "EMPTY_RESEARCH_REQUIRED",
       "eligible_distinct_works": 0,
-      "adequate_fit_distinct_works": 0,
       "minimum": 2,
-      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
+      "action": "NEW_EXACT_ICONOGRAPHY_IF_UNAVAILABLE_IN_EXISTING_GALLERY"
     },
     {
       "slot_id": "COV-pray.forty_hours",
@@ -331,9 +247,8 @@
       "priority": "B",
       "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-sacred_heart_aspiration_trust",
@@ -342,53 +257,8 @@
       "priority": "C",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
-    },
-    {
-      "slot_id": "STG-pray.seven_words-01",
-      "door": "D6 Our Lord",
-      "label": "'Father, forgive them'",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
-      "minimum": 2,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
-    },
-    {
-      "slot_id": "STG-pray.seven_words-04",
-      "door": "D6 Our Lord",
-      "label": "'My God, why hast Thou forsaken me?'",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
-      "minimum": 2,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
-    },
-    {
-      "slot_id": "STG-pray.seven_words-05",
-      "door": "D6 Our Lord",
-      "label": "'I thirst'",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
-      "minimum": 2,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
-    },
-    {
-      "slot_id": "STG-pray.seven_words-06",
-      "door": "D6 Our Lord",
-      "label": "'It is consummated'",
-      "priority": "A",
-      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
-      "minimum": 2,
-      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-prayer.sacred_heart",
@@ -397,20 +267,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 2,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
-    },
-    {
-      "slot_id": "COV-devotion_st_anthony_lost_items",
-      "door": "D8 Saints & Angels",
-      "label": "Card vignette",
-      "priority": "C",
-      "why": "EMPTY_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 0,
-      "adequate_fit_distinct_works": 0,
-      "minimum": 2,
-      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.st_joseph_seven_sorrows-01",
@@ -419,9 +277,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-pray.litany_saints",
@@ -430,9 +287,8 @@
       "priority": "B",
       "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "STG-pray.litany_saints-06",
@@ -441,9 +297,8 @@
       "priority": "B",
       "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-church_prayer_for_pope",
@@ -452,9 +307,8 @@
       "priority": "C",
       "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     },
     {
       "slot_id": "COV-prayer.good_death",
@@ -463,9 +317,8 @@
       "priority": "B",
       "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
+      "action": "NO_FORCED_MATCHES_REVIEW_IF_EDITORIALLY_NEEDED"
     }
   ],
   "unmapped_approved": [
@@ -565,78 +418,5 @@
       "title": "The Wedding at Cana \" \"",
       "origin": "BATCHES_06_11_USER_APPROVED"
     }
-  ],
-  "editorial_second_pass": {
-    "policy": "Previously approved All Saints context reinstated; nonliteral Mass scenes excluded from Eucharistic rites; approved first-Saturday images mapped to current cover slot without destroying historical IDs.",
-    "changes": [
-      {
-        "slot": "HERO-20",
-        "title": "Paradise",
-        "status": "PROMOTED",
-        "fit": "APPROVED_ALL_SAINTS_SUBJECT"
-      },
-      {
-        "slot": "DOOR-D8",
-        "title": "Paradise",
-        "status": "PROMOTED",
-        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
-      },
-      {
-        "slot": "COV-pray.litany_saints",
-        "title": "Paradise",
-        "status": "PROMOTED",
-        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
-      },
-      {
-        "slot": "STG-pray.litany_saints-06",
-        "title": "Paradise",
-        "status": "PROMOTED",
-        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
-      },
-      {
-        "slot": "COV-pray.for_priests",
-        "title": "The Mass of Saint Gregory the Great",
-        "status": "PROMOTED",
-        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
-      },
-      {
-        "slot": "COV-programme.first_saturday",
-        "title": "The Heart of Mary",
-        "status": "ALREADY_PRESENT"
-      },
-      {
-        "slot": "COV-programme.first_saturday",
-        "title": "The Heart of Mary",
-        "status": "ALREADY_PRESENT"
-      },
-      {
-        "slot": "COV-prayer.sacred_heart",
-        "title": "The Heart of Jesus",
-        "status": "ALREADY_PRESENT"
-      },
-      {
-        "slot": "COV-prayer.sacred_heart",
-        "title": "The Heart of Jesus",
-        "status": "ALREADY_PRESENT"
-      },
-      {
-        "slot": "HERO-08",
-        "title": "Entry into Jerusalem",
-        "status": "ADDED",
-        "fit": "DIRECT_SUBJECT_CANDIDATE"
-      },
-      {
-        "slot": "HERO-21",
-        "title": "Angel Frees the Souls",
-        "status": "ADDED",
-        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
-      },
-      {
-        "slot": "HERO-14",
-        "title": "Pentecost",
-        "status": "ADDED",
-        "fit": "DIRECT_SUBJECT_CANDIDATE"
-      }
-    ]
-  }
+  ]
 }
