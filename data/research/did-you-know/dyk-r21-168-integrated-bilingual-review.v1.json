@@ -4447,18 +4447,33 @@
       "source_batch": "GLOSSARY_CONTEXTUAL_200",
       "category": "GLOSSARY_CONTEXT",
       "statement": {
-        "en": "The 1962 Roman books distinguish the Greater Litany and the Minor Litanies or Rogations. Their calendar occurrence does not by itself prove that a procession actually takes place; the app therefore requires an explicit following-action or local witness.",
-        "fr": "Les livres romains de 1962 distinguent la Grande Litanie et les Petites Litanies ou Rogations. Leur présence au calendrier ne prouve pas à elle seule qu’une procession ait effectivement lieu ; l’application exige donc une action suivante explicite ou un témoignage local."
+        "en": "The 1962 Roman rubrics set the Greater Litanies on 25 April (with an Easter-date exception) and the Lesser Litanies normally on the three days before Ascension. Where a procession cannot take place, the bishop provides special public prayers.",
+        "fr": "Selon les rubriques romaines de 1962, la Grande Litanie a lieu le 25 avril (sauf report lié à Pâques), et les Petites Litanies normalement les trois jours avant l'Ascension. Si la procession ne peut se tenir, l'évêque prévoit des prières publiques."
       },
       "editorial_copy_method": "CONTEXTUAL_ENTRY_COPY_NEEDS_EDITOR",
       "source": {
         "family": "GLOSSARY_CONTEXT",
         "source_id": "G094",
         "source_path": "dyk-glossary-second-insights-200.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://maternalheart.org/library/1962rubrics.pdf",
+        "locator": {
+          "printed_pages": [
+            14,
+            15
+          ],
+          "pdf_page_zero_based": [
+            14
+          ],
+          "rubrics": [
+            80,
+            82,
+            83,
+            87,
+            89
+          ]
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -4492,13 +4507,46 @@
         "release_authorized": false
       },
       "r30_home_composition": {
-        "status": "HOME_HOLD_REWRITE_AS_DISTINCT_DISCOVERY_REQUIRED",
-        "rationale": "Current card is verbatim canonical glossary explanation; keep its ID and provenance but replace only after sourcing a genuinely additional fact and securing EN/FR approval.",
+        "status": "DISTINCT_SOURCE_BACKED_HOME_REWRITE_PREPARED_PENDING_EDITORIAL_APPROVAL",
+        "rationale": "R31 replaced verbatim glossary copy with separately evidenced discovery. Home release remains held pending independent EN/FR approval, refreshed cross-bank screening and browser routes.",
         "current_card_in_provisional_home_rotation": false,
         "research_record_retained": true,
         "automatic_publication_prohibited": true,
         "independent_source_corroboration": false,
         "semantic_final_signoff": false
+      },
+      "r31_distinct_discovery_rewrite": {
+        "status": "INDEPENDENT_PRIMARY_TEXT_CLAIM_CORRESPONDENCE_CHECKED_NOT_EDITORIALLY_APPROVED",
+        "witness_url": "https://maternalheart.org/library/1962rubrics.pdf",
+        "witness_tier": "ORIGINAL_1960_CODE_OF_RUBRICS_ENGLISH_TRANSLATION_PAGE_IMAGE",
+        "source_locator": {
+          "printed_pages": [
+            14,
+            15
+          ],
+          "pdf_page_zero_based": [
+            14
+          ],
+          "rubrics": [
+            80,
+            82,
+            83,
+            87,
+            89
+          ]
+        },
+        "original_glossary_copy": {
+          "en": "The 1962 Roman books distinguish the Greater Litany and the Minor Litanies or Rogations. Their calendar occurrence does not by itself prove that a procession actually takes place; the app therefore requires an explicit following-action or local witness.",
+          "fr": "Les livres romains de 1962 distinguent la Grande Litanie et les Petites Litanies ou Rogations. Leur présence au calendrier ne prouve pas à elle seule qu’une procession ait effectivement lieu ; l’application exige donc une action suivante explicite ou un témoignage local."
+        },
+        "rewrite_rationale": "Distinct year-and-procession exception not present in imported glossary explanation; exact section chapter 10 visually inspected.",
+        "independent_primary_text_checked": true,
+        "original_Pitre_source_claim_check": false,
+        "English_editorial_signoff": false,
+        "French_editorial_signoff": false,
+        "semantic_uniqueness_vs_612_approved": false,
+        "route_browser_verified": false,
+        "publication_authorized": false
       }
     },
     {
@@ -4506,16 +4554,19 @@
       "source_batch": "GLOSSARY_CONTEXTUAL_200",
       "category": "GLOSSARY_CONTEXT",
       "statement": {
-        "en": "The text comes from Saint Thomas Aquinas’s hymn Verbum supernum prodiens. In practice it functions as a prayer text and Latin phrase object linked to Eucharistic adoration.",
-        "fr": "Le texte provient de l’hymne Verbum supernum prodiens de saint Thomas d’Aquin. En pratique, il fonctionne comme texte de prière et comme objet de phrase latine lié à l’adoration eucharistique."
+        "en": "The familiar Benediction hymn O salutaris Hostia is actually the final two stanzas of Saint Thomas Aquinas's longer Verbum supernum prodiens, composed for Lauds of Corpus Christi.",
+        "fr": "L'hymne O salutaris Hostia, bien connu au Salut du Saint-Sacrement, correspond en réalité aux deux dernières strophes du Verbum supernum prodiens de saint Thomas d'Aquin, composé pour les Laudes de la Fête-Dieu."
       },
       "editorial_copy_method": "CONTEXTUAL_ENTRY_COPY_NEEDS_EDITOR",
       "source": {
         "family": "GLOSSARY_CONTEXT",
         "source_id": "G311",
         "source_path": "dyk-glossary-second-insights-200.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.newadvent.org/cathen/11334a.htm",
+        "locator": {
+          "entry": "O Salutaris Hostia",
+          "stanzas": "penultimate and final of Verbum supernum prodiens"
+        },
         "deep_link": null,
         "source_visual_checked": false
       },
@@ -4551,13 +4602,34 @@
         "release_authorized": false
       },
       "r30_home_composition": {
-        "status": "HOME_HOLD_REWRITE_AS_DISTINCT_DISCOVERY_REQUIRED",
-        "rationale": "Current card is verbatim canonical glossary explanation; keep its ID and provenance but replace only after sourcing a genuinely additional fact and securing EN/FR approval.",
+        "status": "DISTINCT_SOURCE_BACKED_HOME_REWRITE_PREPARED_PENDING_EDITORIAL_APPROVAL",
+        "rationale": "R31 replaced verbatim glossary copy with separately evidenced discovery. Home release remains held pending independent EN/FR approval, refreshed cross-bank screening and browser routes.",
         "current_card_in_provisional_home_rotation": false,
         "research_record_retained": true,
         "automatic_publication_prohibited": true,
         "independent_source_corroboration": false,
         "semantic_final_signoff": false
+      },
+      "r31_distinct_discovery_rewrite": {
+        "status": "INDEPENDENT_SECONDARY_HYMN_WITNESS_CORRESPONDENCE_NOT_PRIMARY_CHECKED",
+        "witness_url": "https://www.newadvent.org/cathen/11334a.htm",
+        "witness_tier": "CATHOLIC_ENCYCLOPEDIA_HYMN_HISTORY_TEXT_SECONDARY",
+        "source_locator": {
+          "entry": "O Salutaris Hostia",
+          "stanzas": "penultimate and final of Verbum supernum prodiens"
+        },
+        "original_glossary_copy": {
+          "en": "The text comes from Saint Thomas Aquinas’s hymn Verbum supernum prodiens. In practice it functions as a prayer text and Latin phrase object linked to Eucharistic adoration.",
+          "fr": "Le texte provient de l’hymne Verbum supernum prodiens de saint Thomas d’Aquin. En pratique, il fonctionne comme texte de prière et comme objet de phrase latine lié à l’adoration eucharistique."
+        },
+        "rewrite_rationale": "Remove app-internal 'Latin phrase object' language and state the unexpected textual origin, independently checked against Catholic Encyclopedia, without claiming review of Aquinas's autograph.",
+        "independent_primary_text_checked": false,
+        "original_Pitre_source_claim_check": false,
+        "English_editorial_signoff": false,
+        "French_editorial_signoff": false,
+        "semantic_uniqueness_vs_612_approved": false,
+        "route_browser_verified": false,
+        "publication_authorized": false
       }
     },
     {
@@ -4683,16 +4755,21 @@
       "source_batch": "GLOSSARY_CONTEXTUAL_200",
       "category": "GLOSSARY_CONTEXT",
       "statement": {
-        "en": "Trent teaches Extreme Unction as a true sacrament instituted by Christ. The older Roman books employ the title and a fuller series of anointings; current Roman discipline commonly uses the title Anointing of the Sick. The glossary keeps the layers distinct.",
-        "fr": "Trente enseigne que l’Extrême-Onction est un véritable sacrement institué par le Christ. Les anciens livres romains emploient ce titre et une série plus développée d’onctions ; la discipline romaine actuelle emploie couramment le titre Onction des malades. Le glossaire distingue ces couches."
+        "en": "The Council of Trent cited Saint James 5:14–15 to explain Extreme Unction as a sacrament instituted by Christ—not merely a custom invented by people.",
+        "fr": "Le concile de Trente s'appuya sur l'épître de saint Jacques (5, 14–15) pour enseigner que l'Extrême-Onction est un sacrement institué par le Christ, et non une simple coutume inventée par les hommes."
       },
       "editorial_copy_method": "CONTEXTUAL_ENTRY_COPY_NEEDS_EDITOR",
       "source": {
         "family": "GLOSSARY_CONTEXT",
         "source_id": "G038",
         "source_path": "dyk-glossary-second-insights-200.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5357",
+        "locator": {
+          "session": "XIV",
+          "year": 1551,
+          "chapter": "On the Institution of the Sacrament of Extreme Unction",
+          "biblical_anchor": "James 5:14–15"
+        },
         "deep_link": null,
         "source_visual_checked": false
       },
@@ -4728,13 +4805,36 @@
         "release_authorized": false
       },
       "r30_home_composition": {
-        "status": "HOME_HOLD_REWRITE_AS_DISTINCT_DISCOVERY_REQUIRED",
-        "rationale": "Current card is verbatim canonical glossary explanation; keep its ID and provenance but replace only after sourcing a genuinely additional fact and securing EN/FR approval.",
+        "status": "DISTINCT_SOURCE_BACKED_HOME_REWRITE_PREPARED_PENDING_EDITORIAL_APPROVAL",
+        "rationale": "R31 replaced verbatim glossary copy with separately evidenced discovery. Home release remains held pending independent EN/FR approval, refreshed cross-bank screening and browser routes.",
         "current_card_in_provisional_home_rotation": false,
         "research_record_retained": true,
         "automatic_publication_prohibited": true,
         "independent_source_corroboration": false,
         "semantic_final_signoff": false
+      },
+      "r31_distinct_discovery_rewrite": {
+        "status": "INDEPENDENT_PRIMARY_TEXT_CLAIM_CORRESPONDENCE_CHECKED_NOT_EDITORIALLY_APPROVED",
+        "witness_url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5357",
+        "witness_tier": "COUNCIL_OF_TRENT_SESSION_XIV_CHAPTER_I_ENGLISH_TRANSLATION",
+        "source_locator": {
+          "session": "XIV",
+          "year": 1551,
+          "chapter": "On the Institution of the Sacrament of Extreme Unction",
+          "biblical_anchor": "James 5:14–15"
+        },
+        "original_glossary_copy": {
+          "en": "Trent teaches Extreme Unction as a true sacrament instituted by Christ. The older Roman books employ the title and a fuller series of anointings; current Roman discipline commonly uses the title Anointing of the Sick. The glossary keeps the layers distinct.",
+          "fr": "Trente enseigne que l’Extrême-Onction est un véritable sacrement institué par le Christ. Les anciens livres romains emploient ce titre et une série plus développée d’onctions ; la discipline romaine actuelle emploie couramment le titre Onction des malades. Le glossaire distingue ces couches."
+        },
+        "rewrite_rationale": "Specific Council historical and biblical citation is distinct from copied glossary overview; avoids unhelpful contrast with modern terminology.",
+        "independent_primary_text_checked": true,
+        "original_Pitre_source_claim_check": false,
+        "English_editorial_signoff": false,
+        "French_editorial_signoff": false,
+        "semantic_uniqueness_vs_612_approved": false,
+        "route_browser_verified": false,
+        "publication_authorized": false
       }
     },
     {
