@@ -1,0 +1,88 @@
+{
+  "schema": "AO_MASS_P0_THREE_LATIN_DISCREPANCY_ADJUDICATION_V1",
+  "status": "RUNTIME_FIXTURE_CONFIRMS_SOURCE_FIRST_GOSPEL_HEADING_MISMATCH",
+  "evidence": {
+    "canonicalMainSha": "7d88a0f193d947565259d8a41ed3c53aa38d1980",
+    "canonicalSungBlobSha": "29dd8a6da521cf1c16b2c3d13005bd1e3bb76f25",
+    "readerTextSourceSha": "4364914188a1f448973ce1fed184f576d8f3b8f9",
+    "readerModelSourceSha": "3d74d43fbba31dfaaeacf53186d380eb274788cf",
+    "referenceTexts": [
+      {
+        "url": "https://la.wikisource.org/wiki/Confiteor_(1962)",
+        "role": "secondary_transcription_unaccented_confiteor"
+      },
+      {
+        "url": "https://www.mr-1962.com/",
+        "role": "secondary_missal_transcription_accented_confiteor"
+      },
+      {
+        "url": "https://www.missalemeum.com/en/widgets/propers/2026-09-24",
+        "role": "example_of_a_proper_with_named_matthew_evangelist"
+      },
+      {
+        "url": "https://maternalheart.org/library/1962rubrics.pdf",
+        "role": "1960_code_of_rubrics_stylistic_and_ritual_authority_where_applicable"
+      }
+    ],
+    "original1962PrintedEditionWitnessCertified": false
+  },
+  "decisions": [
+    {
+      "ids": [
+        "AO.V3.0023.U002",
+        "AO.V3.0237.U002"
+      ],
+      "canonicalCues": [
+        "AO.SM.C0023",
+        "AO.SM.C0237"
+      ],
+      "family": "CONFITEOR_ORARE_ACCENTUATION",
+      "researchForm": "orare",
+      "canonicalForm": "oráre",
+      "lexicalCheck": "SAME_WORD_WHEN_ACUTE_STRESS_MARK_OMITTED",
+      "literalEquality": false,
+      "liturgicalWordDifference": false,
+      "priority": "NO_CHANGE_TO_CANONICAL_MASS_TEXT",
+      "P0Decision": "RESOLVED_AS_ORTHOGRAPHIC_STRESS_ACCENT_VARIANT",
+      "printedWitnessApproval": false,
+      "rule": "Preserve canonical reader accents; preserve original workbook verbatim. Do not substitute unaccented research spelling or publish a corrected text based on these records alone."
+    },
+    {
+      "ids": [
+        "AO.V3.0084.U001"
+      ],
+      "canonicalCues": [
+        "AO.SM.C0084"
+      ],
+      "family": "GOSPEL_HEADING_VARIABLE_EVANGELIST",
+      "researchForm": "secúndum N.",
+      "canonicalForm": "secúndum Matthǽum",
+      "literalEquality": false,
+      "P0Decision": "CONFIRMED_SOURCE_FIRST_MODEL_ANNOUNCEMENT_PROPER_MISMATCH_REQUIRES_OWNER_FIX",
+      "confirmedFrozenBehavior": "Sung ordinary donor C0084 names Matthaeum; adjacent B026 resolved Proper is separate. The baseline reader-model ordinaryVariants are sourced only from holyThursdayCanonVariantsForProper and ordinaryParagraphs projects C0084 from donor unless supplied with an explicit variant.",
+      "testRequired": "Render two selected 1962 Masses with Gospels according to different evangelists; confirm the heading matches each resolved Proper Gospel in LIVE, SIMPLE and MISSAL before P1 links.",
+      "ownership": "CANONICAL_MASS_READER_AND_PROPER_RESOLVER",
+      "fixBoundary": "Separate owning Mass/Proper pipeline; do not silently mutate reader corpus or add a noncanonical microtext in this P0 branch.",
+      "positiveApproval": false,
+      "runtimeSourceFirstDiagnostic": {
+        "test": "tests/mass-knowledge-research-bridge.mjs",
+        "commit": "0769910cf856eff16145f97e12815ff5c0fd2069",
+        "ciWorkflowRunId": 38876627431,
+        "outcome": "CONFIRMED_STATIC_MATTHEW_HEADING_OWNER_RISK",
+        "fixture": "MISSA_CANTATA_INCENSE, synthetic Gospel according to John, fixed donor C0084 names Matthew",
+        "limitation": "This is a source-first reader-model diagnostic and does not establish every deployed UI path",
+        "publicationApproval": false
+      }
+    }
+  ],
+  "counts": {
+    "rawDifferences": 3,
+    "displayAccentuationsExplained": 2,
+    "remainingConditionalGospelOwnerRisk": 1,
+    "printedMissalLiteralVerificationsApproved": 0,
+    "readerTextMutations": 0,
+    "publicationAuthorizations": 0,
+    "runtimeGospelEvangelistMismatchReproduced": 1
+  },
+  "release": "FAIL_CLOSED_UNTIL_FORM_CORRECT_GOSPEL_HEADING_RUNTIME_CHECK"
+}

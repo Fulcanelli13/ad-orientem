@@ -1,0 +1,27 @@
+name: Mass Knowledge Bridge Research Integrity
+on:
+  pull_request:
+    paths:
+      - 'src/learn/mass-knowledge-research-bridge.js'
+      - 'tests/mass-knowledge-research-bridge.mjs'
+      - '.github/workflows/mass-knowledge-research-bridge.yml'
+  push:
+    branches:
+      - 'research/ultra-master-mass-knowledge-bridge-20261016'
+    paths:
+      - 'src/learn/mass-knowledge-research-bridge.js'
+      - 'tests/mass-knowledge-research-bridge.mjs'
+      - '.github/workflows/mass-knowledge-research-bridge.yml'
+permissions:
+  contents: read
+jobs:
+  fail-closed-linkage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate research-only bridge
+        run: node tests/mass-knowledge-research-bridge.mjs
