@@ -3224,6 +3224,21 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     if(CHAPLET_F07_PILOT_ENABLED){
       const crown=m.querySelector('[data-ao-f07-crown]');
       if(crown)crown.outerHTML=renderMercyF07Crown(steps,i,{french:isFr()});
+      // Focus changes originate in the original prayer-scrolling engine.
+      // Reconcile only the end affordance in-place; rerendering the whole
+      // chapter here would interrupt the canonical reading position.
+      let finish=m.querySelector('.aoF07MercyDock');
+      if(i===steps.length-1&&!finish){
+        finish=document.createElement('footer');
+        finish.className='aoF07MercyDock';
+        finish.innerHTML='<output aria-label="'+
+          esc(L('Prayer position','Position de la prière'))+'">'+(i+1)+' / '+steps.length+'</output>'+
+          '<button type="button" class="aoF07MercyDockNext" data-p435930-mercy-finish>'+
+          esc(L('Finish chaplet','Terminer le chapelet'))+'</button>';
+        m.querySelector('.aoMercyReader .aoDevoCard')?.insertAdjacentElement('afterend',finish);
+      }else if(i!==steps.length-1&&finish){
+        finish.remove();
+      }
     }
 
    }
