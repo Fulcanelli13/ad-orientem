@@ -16,12 +16,19 @@ for(const row of m.records){
   const article=articleFor(row.custom_id);
   assert.ok(article,"Published custom must have existing Calendar article");
   for(const key of ["final_en","final_fr","final_claims"]){
-    assert.equal(row[key].decision,"PENDING","No human approval can be manufactured by this research branch");
-    assert.equal(row[key].reviewer,null);
-    assert.equal(row[key].content_sha256,null);
+    if(row.custom_id==="PENT-001"){
+      assert.equal(row[key].decision,"APPROVED","Only explicitly owner-approved PENT-001 may have final signoff");
+      assert.equal(row[key].reviewer,"Fulcanelli13");
+      assert.equal(row[key].reviewed_on,"2026-10-30");
+      assert.equal(row[key].content_sha256,fingerprint(row.custom_id,key),"Approved fingerprint must match current text");
+    }else{
+      assert.equal(row[key].decision,"PENDING","Unapproved historical records must retain pending signoff");
+      assert.equal(row[key].reviewer,null);
+      assert.equal(row[key].content_sha256,null);
+    }
     assert.match(fingerprint(row.custom_id,key),/^[a-f0-9]{64}$/);
   }
-  assert.equal(row.final_status,"BLOCKED_PENDING_HUMAN_SIGNOFF");
+  assert.equal(row.final_status,row.custom_id==="PENT-001"?"FINAL_HUMAN_SIGNOFF_RECORDED":"BLOCKED_PENDING_HUMAN_SIGNOFF");
 }
 const review=renderReviewPacket();
 assert.equal((review.match(/\n## \d+\. /g)||[]).length,36);
@@ -37,4 +44,4 @@ mutation.records[0].final_en.reviewer="Human Editor";
 mutation.records[0].final_en.reviewed_on="2026-10-23";
 mutation.records[0].final_en.content_sha256="0".repeat(64);
 assert.ok(validationErrors(mutation).some(x=>x.includes("not for current text")),"Stale or invented digest must be rejected");
-console.log("PASS customs final-editorial review packet 36/36, 13 scope-critical, copy-bound approval with zero manufactured human signoffs");
+console.log("PASS customs final-editorial review packet 36/36, 13 scope-critical, one owner-approved current-text signoff and all other records pending");

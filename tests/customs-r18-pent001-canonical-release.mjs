@@ -5,6 +5,7 @@ import {readFileSync} from "node:fs";
 import {auditCustom,auditAttestation,assertCustomsAtlasRegistry} from "../src/find/customs-contracts.js";
 import {calendarCustomArticle,calendarCustomArticleIds,calendarCustomRecommendations,calendarCustomSeasonalMonthEntries} from "../src/calendar/customs-read-model.js";
 import {groupCalendarCustomsByYear} from "../src/customs/year-led-library.js";
+import {fingerprint,validationErrors} from "../tools/customs/editorial-acceptance-contract.mjs";
 
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const seed=read("data/customs/customs-atlas-seed.v1.json");
@@ -72,24 +73,26 @@ assert.ok(/pratique prescrite|bénédiction sacerdotale/i.test(article.caution.f
 assert.ok(!/1930 archival photograph/i.test(article.history.en));
 const accepted=consent.records.find(x=>x.custom_id===id);
 assert.ok(accepted);
-assert.equal(accepted.final_status,"BLOCKED_PENDING_HUMAN_SIGNOFF");
+assert.equal(accepted.final_status,"FINAL_HUMAN_SIGNOFF_RECORDED");
+assert.deepEqual(validationErrors(consent),[]);
 for(const part of ["final_en","final_fr","final_claims"]){
- assert.equal(accepted[part].decision,"PENDING");
- assert.equal(accepted[part].reviewer,null);
- assert.equal(accepted[part].content_sha256,null);
+ assert.equal(accepted[part].decision,"APPROVED");
+ assert.equal(accepted[part].reviewer,"Fulcanelli13");
+ assert.equal(accepted[part].reviewed_on,"2026-10-30");
+ assert.equal(accepted[part].content_sha256,fingerprint(id,part));
 }
-// Human publication remains blocked even when three independent institutional
-// sources support the narrow historical account.
+// The project owner's explicit approval is now recorded for this one custom.
+// Independent institutional evidence remains distinct from editorial consent.
 const editorial=release.editorial_review_20261030;
-assert.equal(editorial.status,"SOURCE_CLAIMS_CORROBORATED_EDITORIAL_COPY_REVISED_NOT_HUMAN_SIGNED");
+assert.equal(editorial.status,"SOURCE_CLAIMS_CORROBORATED_AND_FINAL_OWNER_APPROVAL_RECORDED");
 assert.match(editorial.independent_institutional_crosscheck.url,/^https:\/\/www\.muzeum-radom\.pl\//);
 assert.equal(editorial.primary_crosscheck.length,2);
 assert.equal(editorial.claim_decisions.length,6);
 assert.ok(editorial.claim_decisions.every(x=>x.decision));
-assert.deepEqual(editorial.human_final_approval,{en:false,fr:false,claims:false});
+assert.deepEqual(editorial.human_final_approval,{en:true,fr:true,claims:true});
 assert.equal(editorial.no_scheduled_event,true);
 assert.equal(editorial.no_publication_before_approval,true);
-assert.equal(release.release_gates.user_final_merge_approval,"NOT_YET_GIVEN");
+assert.equal(release.release_gates.user_final_merge_approval,"GIVEN_ON_2026-10-30");
 assert.ok(/historical Polish Pentecost customs/i.test(article.description.en),
  "English overview must avoid implying universal present-day practice");
 assert.ok(/d'anciens usages polonais/i.test(article.description.fr),
@@ -98,7 +101,11 @@ assert.ok(/older springtime and agricultural folk associations/.test(article.his
 assert.ok(/traditions populaires printanières et agricoles/.test(article.history.fr));
 assert.ok(/without permission/.test(article.practice.en));
 assert.ok(/sans autorisation/.test(article.practice.fr));
-assert.equal(release.authorizations.human_final_copy_signoff,false);
+assert.equal(release.authorizations.human_final_copy_signoff,true);
+assert.equal(release.final_owner_approval.reviewer,"Fulcanelli13");
+for(const part of ["final_en","final_fr","final_claims"]){
+ assert.equal(release.final_owner_approval.content_sha256[part],fingerprint(id,part));
+}
 assert.equal(release.authorizations.automatic_merge_allowed,false);
 assert.equal(release.live_change_now,false);
 assert.equal(release.proposed_scope.automatic_calendar_reminder,false);
@@ -116,4 +123,4 @@ assert.ok(!calendarCustomSeasonalMonthEntries("2026-06").some(x=>x.id===id));
 for(const forbidden of ["CUSTOMS-R18-03","CUSTOMS-R18-04","CUSTOMS-R18-05","CUSTOMS-R18-07","CUSTOMS-R18-08","CUSTOMS-R18-09","CUSTOMS-R18-13","CUSTOMS-R18-15","CUSTOMS-R18-16","CUSTOMS-R18-17"]){
  assert.equal(calendarCustomArticle(forbidden),null);
 }
-console.log("PASS PENT-001 proposed single canonical regional article: 36/39 identity parity, 98 attestations, 110 sources, bilingual article, Poland-only history, no automatic event or fabricated human signoff");
+console.log("PASS PENT-001 owner-approved single canonical regional article: 36/39 identity parity, 98 attestations, 110 sources, bilingual article, Poland-only history, no automatic event, text-bound approval");

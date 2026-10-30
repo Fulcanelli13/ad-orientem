@@ -1,7 +1,7 @@
 {
   "schema": "AO_CUSTOMS_FINAL_HUMAN_EDITORIAL_SIGNOFF_V1",
   "as_of": "2026-10-23",
-  "scope": "35 previously catalogued Customs plus one separate proposed Polish Pentecost greenery candidate, all still awaiting final human bilingual and claims signoff. Proposed article is not live until PR merge.",
+  "scope": "35 previously published Customs retain their independent pending human editorial signoffs; PENT-001 has explicit project-owner approval dated 2026-10-30, limited to its final English/French text and historical claims.",
   "canonical_text_owner": "src/calendar/customs-read-model.js; src/calendar/customs-extra-articles.js",
   "source_review_basis": "data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json",
   "export_command": "node tools/customs/export-final-editorial-review.mjs",
@@ -969,27 +969,27 @@
       "priority": "REGIONAL_SCOPE",
       "review_focus": "Polish Zielone Świątki household greenery: historically attested countryside custom; no global Catholic norm, Roman blessing, annual parish event, or protective efficacy. The editorial reviewer must explicitly approve English, French and claims before this draft PR can merge.",
       "final_en": {
-        "decision": "PENDING",
-        "reviewer": null,
-        "reviewed_on": null,
-        "content_sha256": null,
-        "review_note": null
+        "decision": "APPROVED",
+        "reviewer": "Fulcanelli13",
+        "reviewed_on": "2026-10-30",
+        "content_sha256": "ddd9055341b2c191243eaff115555d7c662d65a7030957c83fa8dd56bf399f44",
+        "review_note": "The project owner explicitly approved the final English wording in ChatGPT on 2026-10-30, scoped to PR #2033's exact approved copy."
       },
       "final_fr": {
-        "decision": "PENDING",
-        "reviewer": null,
-        "reviewed_on": null,
-        "content_sha256": null,
-        "review_note": null
+        "decision": "APPROVED",
+        "reviewer": "Fulcanelli13",
+        "reviewed_on": "2026-10-30",
+        "content_sha256": "bacda8676d826dc890bf7a2276c90594897dfa2b6a0224116ab0e74cf60fd331",
+        "review_note": "The project owner explicitly approved the final French wording in ChatGPT on 2026-10-30, scoped to PR #2033's exact approved copy."
       },
       "final_claims": {
-        "decision": "PENDING",
-        "reviewer": null,
-        "reviewed_on": null,
-        "content_sha256": null,
-        "review_note": null
+        "decision": "APPROVED",
+        "reviewer": "Fulcanelli13",
+        "reviewed_on": "2026-10-30",
+        "content_sha256": "b1e4c14e199256dd1a3dd3bd52de156c41de064eb5a721c54461427b6cfa23ce",
+        "review_note": "The project owner explicitly approved the historical claims in ChatGPT on 2026-10-30, limited to Polish regional historical practice; no Roman rite, blessing, indulgence, guaranteed protection, current local event or automatic recommendation."
       },
-      "final_status": "BLOCKED_PENDING_HUMAN_SIGNOFF"
+      "final_status": "FINAL_HUMAN_SIGNOFF_RECORDED"
     }
   ]
 }
