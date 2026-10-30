@@ -1,7 +1,7 @@
 {
   "schema": "AO_P104_NEW_BRIGHTON_MISSING_TLM_VENUE_EVIDENCE_V1",
   "date": "2026-10-30",
-  "status": "EXACT_PHYSICAL_SITE_VERIFIED_DISCOVERY_LEAD_NOT_OPERATIONAL_VENUE",
+  "status": "RECONCILED_EXISTING_SITE_PUBLICLY_LISTED_NOT_NEW_VENUE",
   "p97_source_row": 127,
   "church": "Catholic Shrine Church of Saints Peter and Paul and Saint Philomena",
   "operator": "Institute of Christ the King Sovereign Priest (ICKSP)",
@@ -22,18 +22,38 @@
     "frozen_r49_exact_match": false,
     "existing_nearby_liverpool_venue": "SSPXMAP:OPE-002284",
     "same_building_as_liverpool_venue": false,
-    "policy": "Do not reuse the Liverpool Saints Peter and Paul church venue ID; review all latest active discovery and operational inventories before assigning a new stable ID."
+    "policy": "Do not create a new Directory venue or reuse Liverpool SSPX identity. Reconcile existing public listing with ICKSP-STG-076 and verify address postal code; preserve independent schedule-verification pipeline.",
+    "existing_icksp_federated_id": "ICKSP-STG-076",
+    "app_existing_listing": "https://adorientem.church/find/sts-peter-paul-and-philomena-new-brighton-4c562ab9",
+    "public_exists": true
   },
   "promotion_requirements": [
-    "Cross-check latest separate high-volume Directory venue discovery master and schedule verification master",
-    "Assign frozen stable site identifier only in authoritative venue discovery workflow",
-    "Do not create schedule rows from research JSON or overwrite verified schedule counts",
-    "After exact identity is operationally committed, add independently sourced Place-to-venue link",
-    "Inspect original photo, verify licence and attribution, test no-crop WebP before media approval"
+    "Do not add a venue: already published via the public Ad Orientem route and present in ICKSP federated source ICKSP-STG-076",
+    "Reconcile official CH45 9LT postcode with published CH45 2PG in authoritative venue master without creating a duplicate",
+    "Pass official ICKSP schedule effective 31 August 2026 to existing schedule-verification owner; no synthetic schedule rows",
+    "Only add a canonical Place link after inspecting exact immutable production venue ID and avoiding research-stage ID assumption",
+    "Independently inspect and licence P93 New Brighton original before any Place media approval"
   ],
   "no_place_created": true,
   "no_operational_venue_created": true,
   "no_schedule_changed": true,
   "no_photo_approved": true,
-  "expense_eur": 0
+  "expense_eur": 0,
+  "reconciled_at": "2026-10-30",
+  "reconciliation": {
+    "r49_absent_not_equivalent_to_app_absent": true,
+    "existing_icksp_federated_record_id": "ICKSP-STG-076",
+    "existing_icksp_federated_source": "data/directory/generated/v19/icksp-federated.v1.json",
+    "existing_app_listing_url": "https://adorientem.church/find/sts-peter-paul-and-philomena-new-brighton-4c562ab9",
+    "public_directory_state": "EXISTS_ALREADY_WITH_LOW_CONFIDENCE_REPORTED_SCHEDULE",
+    "listed_schedule_source": "TradVillage third-party source; official 2026-08-31 ICKSP update separately available",
+    "frozen_r49_exact_match": false,
+    "official_address": "7 Atherton Street, New Brighton, Wallasey CH45 9LT",
+    "published_address": "7 Atherton St, New Brighton, Wallasey CH45 2PG",
+    "address_mismatch": "POSTCODE_CONFLICT_HOLD_VERIFY_CANONICAL_ENTRY",
+    "authoritative_identity_and_schedule_url": "https://icksp.org.uk/newbrighton/",
+    "no_new_venue_to_create": true,
+    "no_live_schedule_update_by_this_research": true,
+    "not_same_as_nearby_liverpool_sspx": true
+  }
 }
