@@ -61,6 +61,10 @@ try{
   await page.locator("[data-folio-overview-button]").click();
   await page.locator('[data-m1-choice="reader"]').click();
   await page.locator('[data-full-mass-reader-mode][value="LIVE"]').check();
+  // LIVE may already be selected, so no change event fires: leave the
+  // focused chooser through its existing Back control.
+  if(!await page.locator('[data-m1-choice="reader"]').isVisible())
+    await page.locator("[data-folio-overview-button]").click();
   await page.waitForSelector('[data-m1-choice="reader"]',{state:"visible",timeout:12000});
   await page.waitForFunction(()=>{const button=document.querySelector("[data-ao-start-live]");
     return button&&!button.disabled;},null,{timeout:25000});
