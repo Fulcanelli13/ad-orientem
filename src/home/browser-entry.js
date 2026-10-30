@@ -1,5 +1,6 @@
 import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { verifiedH4WeekColour } from "./today-h4-view.js";
+import { openH4ChoicesSheet,closeH4ChoicesSheet } from "./today-h4-change-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 
@@ -346,9 +347,13 @@ export function createHomeOwner(win=globalThis){
     const h4Change=target?.closest?.("[data-home-h4-change]");
     if(h4Change){
       event.preventDefault?.();event.stopImmediatePropagation?.();
-      // Interim source-owner handoff: M1 preflight holds the actual ceremony,
-      // reader and liturgical choices. A competing H4 form is forbidden.
-      void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});
+      // The Change sheet is a presentation of R17's one existing preflight.
+      // Alternative Mass/Proper selection still goes through the host resolver.
+      const opened=openH4ChoicesSheet(win,{
+        onOtherMass:()=>{void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});},
+        onDone:()=>{if(state(win)?.route==="home")paint(state(win));},
+      });
+      if(!opened)void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});
       return;
     }
     const h4Readings=target?.closest?.("[data-home-h4-readings]");
@@ -586,7 +591,7 @@ export function createHomeOwner(win=globalThis){
       }
       return false;
     }
-    unsubscribe=store.subscribe(next=>{if(next?.route==="home")paint(next);});
+    unsubscribe=store.subscribe(next=>{if(next?.route==="home")paint(next);else closeH4ChoicesSheet(win);});
     paint(store.getState());
     return true;
   }
@@ -634,6 +639,7 @@ export function createHomeOwner(win=globalThis){
   }
 
   function dispose(){
+    closeH4ChoicesSheet(win);
     try{unsubscribe?.();}catch{}
     unsubscribe=null;
     if(retryTimer&&typeof win?.clearTimeout==="function")win.clearTimeout(retryTimer);
