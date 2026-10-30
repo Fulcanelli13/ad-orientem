@@ -187,6 +187,18 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass[open]>summary::after{transform:rotate(90deg)}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass [data-full-mass-category]{width:100%;margin:5px 0;min-width:0;white-space:normal}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'][data-m1-focused='false'] [data-folio-overview-button]{display:none!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioIdentity>small,#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioKicker{color:var(--muted,#abb0af)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-folio-calendar-details]>summary,#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioChange{color:var(--liturgical,#a58958)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioPanel>p,#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoFullMassReviewRow,#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-full-mass-resolver]{color:var(--muted,#abb0af)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoFullMassPreflight h3,#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioPanel h3{color:var(--text,#eee)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoFullMassChoice{background:var(--surface-1,#111924)!important;border-color:var(--border,rgba(238,238,238,.18))!important;color:var(--text,#eee)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoFullMassChoice:has(input:checked){background:var(--surface-2,#1a2330)!important;border-color:var(--liturgical,#a58958)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoFullMassChoice input:checked+span{color:var(--text,#eee)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioOption input{accent-color:var(--liturgical,#a58958)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioIdentity{border-color:var(--border,rgba(238,238,238,.18))!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-folio-calendar-details]{border-color:var(--border,rgba(238,238,238,.18))!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-folio-host-actions] [data-ao-start-live]{background:var(--liturgical,#a58958)!important;color:var(--liturgical-ink,#fff)!important;border-color:var(--liturgical,#a58958)!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-folio-host-actions] [data-ao-start-live]:disabled{opacity:.5;cursor:not-allowed}",
   ].join("\n");
   document.head.appendChild(el);
 }
