@@ -191,4 +191,67 @@ assert.ok(narrowed&&!/reconcil/i.test(narrowed.text.en));
 assert.ok(/UNSUPPORTED_DETAIL_REMOVED/.test(customsScreen.records.find(x=>x.draft_id===narrowed.id).concerns.join(" ")));
 assert.equal(weiser.facts.filter(x=>x.source.original_page_checked_in_later_sweep===true).length,6);
 
+
+const priorityEdits=load("dyk-weiser-31-edited-priority-facts.v1.json");
+const storyEdits=load("dyk-pitre-12-story-editorial-shortlist.v1.json");
+assert.equal(priorityEdits.records.length,31);
+assert.equal(priorityEdits.counts.feature,18);
+assert.equal(priorityEdits.counts.reserve,12);
+assert.equal(priorityEdits.counts.hold,1);
+assert.equal(priorityEdits.counts.published,0);
+const sourcePriorities=new Set(customsScreen.records
+ .filter(x=>x.decision==="PRIORITY_FACT_EDITORIAL_REVIEW")
+ .map(x=>x.draft_id));
+assert.equal(sourcePriorities.size,31);
+const copyIds=new Set();
+for(const item of priorityEdits.records){
+ assert.ok(sourcePriorities.has(item.original_draft_id),"Source priority not in review screen");
+ assert.ok(!copyIds.has(item.original_draft_id),"Repeated edited fact");
+ copyIds.add(item.original_draft_id);
+ const old=priorById.get(item.original_draft_id);
+ assert.ok(old&&old.source_family==="WEISER_1958");
+ const sourceRefs=old.original_source?.observation_ids||old.source?.observation_ids||old.source?.original_observation_ids;
+ assert.deepEqual(item.original_observation_ids,sourceRefs);
+ for(const lang of ["en","fr"]){
+  const txt=item.display_statement[lang];
+  assert.ok(txt&&txt.endsWith("."),item.original_draft_id+" "+lang+" not declarative");
+  assert.ok(!txt.includes("?"),item.original_draft_id+" contains question mark");
+  assert.ok(txt.length<290,item.original_draft_id+" too long");
+ }
+ assert.doesNotMatch(item.display_statement.en,/^Did you know/);
+ assert.doesNotMatch(item.display_statement.fr,/^Saviez-vous/);
+ assert.equal(item.editorially_approved,false);
+ assert.equal(item.publication_authorized,false);
+ assert.equal(item.exact_destination_verified,false);
+}
+assert.equal(copyIds.size,31);
+assert.equal(storyEdits.records.length,12);
+assert.equal(storyEdits.counts.feature,8);
+assert.equal(storyEdits.counts.reserve,4);
+assert.equal(storyEdits.counts.added_active_fact_records,0);
+const featuredFamilies=new Set();
+const storyIds=new Set();
+for(const item of storyEdits.records){
+ assert.ok(!storyIds.has(item.proposal_id));
+ storyIds.add(item.proposal_id);
+ const original=pitreStories.candidates.find(x=>x.proposal_id===item.proposal_id);
+ assert.ok(original);
+ assert.deepEqual(item.underlying_source_fact_ids,original.source_fact_ids);
+ assert.deepEqual(item.original_observation_ids,original.original_observation_ids);
+ assert.equal(item.source_original_scan_page_anchored,true);
+ if(item.editorial_tier==="FEATURE"){
+  assert.ok(!featuredFamilies.has(item.festival_family),"Too many leading facts from one festival family");
+  featuredFamilies.add(item.festival_family);
+ }
+ assert.equal(item.approved,false);
+ assert.equal(item.published,false);
+ assert.equal(item.route_verified,false);
+ for(const lang of ["en","fr"]){
+  const txt=item.display_statement[lang];
+  assert.ok(txt&&txt.endsWith(".")&&!txt.includes("?"));
+ }
+}
+assert.equal(storyIds.size,12);
+assert.equal(featuredFamilies.size,8);
+
 console.log("DYK: 145 active source-first drafts structurally valid; 9 deferred semantic overlaps; 10 glossary routes pending browser acceptance; 0 published.");
