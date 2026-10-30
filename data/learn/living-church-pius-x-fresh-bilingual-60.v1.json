@@ -1,0 +1,707 @@
+{
+  "schema": "AO_LIVING_CHURCH_PIUS_X_BLIND_BILINGUAL_FRESH_PROBES_V1",
+  "created": "2026-10-19",
+  "status": "FROZEN_EDITORIAL_FRESH_UNTUNED_NOT_INDEPENDENT_VISITOR_SAMPLE",
+  "authoringMethod": "Assistant-authored before any router run on these exact questions. No production user traffic or independent human annotations. Never tune this fixture and re-label as untouched.",
+  "baselines": [
+    "Original 184-topic router had 9/48 correct shared, 1/48 correct hybrid and 4/0 wrong respectively.",
+    "Source-aware corrected 48-question REGRESSION had 25/48 shared, 26/48 hybrid and zero wrong specific sources; those were reused developer-inspected queries."
+  ],
+  "topicCount": 12,
+  "sourceNavigableCaseFamilies": 10,
+  "heldPersonalCaseFamilies": 2,
+  "totals": {
+    "primary": 60,
+    "english": 30,
+    "french": 30,
+    "documentedPrimary": 40,
+    "heldPrimary": 8,
+    "outOfScopePrimary": 12,
+    "confirmedContextContinuations": 8,
+    "totalUtterances": 68
+  },
+  "scorePolicy": {
+    "correct": "Only exact intended original source pointer counts as correct document navigation. Confirmed user interpretation alone does not create an answer.",
+    "ambiguous": "Safe abstention is good safety but not document recall. Clarification options including intended topic are noted separately, not a certified answer.",
+    "held": "Both unsupported personal testimony and individual spiritual diagnosis must abstain. No plausible-sounding invented quote.",
+    "unknown": "Outside-source and current-law questions must not spuriously claim a specific historical source. Ordinary domain handoffs, if otherwise source-backed, must not be conflated with a historical papal answer.",
+    "followup": "Context can continue the same original document ONLY when prior source was independently confirmed. A mere activeTopicId is not permission to assume a historical source.",
+    "publication": "Never return new persona text; approvedReply must remain false; answers generated zero."
+  },
+  "primary": [
+    {
+      "id": "SPXFRESH-001",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "When Cardinal Sarto was elected, did he think himself fit to govern the Church?",
+      "expected_topic_id": "pius.historical_spx_pilot_01",
+      "expected_source_id": "SPX-PILOT-01",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-002",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "What did the new Pope express about the burden handed to him after Leo XIII?",
+      "expected_topic_id": "pius.historical_spx_pilot_01",
+      "expected_source_id": "SPX-PILOT-01",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-003",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "À l’issue du conclave de 1903, comment Sarto considérait-il la charge pontificale ?",
+      "expected_topic_id": "pius.historical_spx_pilot_01",
+      "expected_source_id": "SPX-PILOT-01",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-004",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Dans son premier texte pontifical, évoque-t-il sa crainte de succéder à Léon XIII ?",
+      "expected_topic_id": "pius.historical_spx_pilot_01",
+      "expected_source_id": "SPX-PILOT-01",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-005",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Could a person assist at the Holy Sacrifice by quietly reciting decades of the Rosary?",
+      "expected_topic_id": "pius.historical_spx_pilot_02",
+      "expected_source_id": "SPX-PILOT-02",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-006",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Was a personal Rosary treated as incompatible with following the offering at Mass?",
+      "expected_topic_id": "pius.historical_spx_pilot_02",
+      "expected_source_id": "SPX-PILOT-02",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-007",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Le fidèle pouvait-il méditer les mystères du rosaire tandis que le prêtre célébrait ?",
+      "expected_topic_id": "pius.historical_spx_pilot_02",
+      "expected_source_id": "SPX-PILOT-02",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-008",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "La récitation du chapelet empêchait-elle d’assister pieusement au sacrifice ?",
+      "expected_topic_id": "pius.historical_spx_pilot_02",
+      "expected_source_id": "SPX-PILOT-02",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-009",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "When an evil thought crosses my mind without invitation, must I confess that as sin?",
+      "expected_topic_id": "pius.historical_spx_pilot_03",
+      "expected_source_id": "SPX-PILOT-03",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-010",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Is simply being tempted identical to choosing wrongdoing?",
+      "expected_topic_id": "pius.historical_spx_pilot_03",
+      "expected_source_id": "SPX-PILOT-03",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-011",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Si une pensée mauvaise surgit sans que je la veuille, ai-je consenti au mal ?",
+      "expected_topic_id": "pius.historical_spx_pilot_03",
+      "expected_source_id": "SPX-PILOT-03",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-012",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "La simple tentation signifie-t-elle que j’ai choisi le péché ?",
+      "expected_topic_id": "pius.historical_spx_pilot_03",
+      "expected_source_id": "SPX-PILOT-03",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-013",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "What attitude should follow receiving the Blessed Sacrament?",
+      "expected_topic_id": "pius.historical_spx_pilot_04",
+      "expected_source_id": "SPX-PILOT-04",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-014",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "How did Sarto's early parish catechesis describe thanking Our Lord after reception?",
+      "expected_topic_id": "pius.historical_spx_pilot_04",
+      "expected_source_id": "SPX-PILOT-04",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-015",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Après avoir reçu le Corps du Christ, quelle place donner au silence et à l’adoration ?",
+      "expected_topic_id": "pius.historical_spx_pilot_04",
+      "expected_source_id": "SPX-PILOT-04",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-016",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Quels actes intérieurs recommander après l’Eucharistie ?",
+      "expected_topic_id": "pius.historical_spx_pilot_04",
+      "expected_source_id": "SPX-PILOT-04",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-017",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Is supernatural help moving us to act the same as the life of grace abiding in the soul?",
+      "expected_topic_id": "pius.historical_spx_pilot_05",
+      "expected_source_id": "SPX-PILOT-05",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-018",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Can divine aid prompt a free decision without compelling it?",
+      "expected_topic_id": "pius.historical_spx_pilot_05",
+      "expected_source_id": "SPX-PILOT-05",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-019",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Comment distinguer un secours passager de Dieu de l’état de grâce dans l’âme ?",
+      "expected_topic_id": "pius.historical_spx_pilot_05",
+      "expected_source_id": "SPX-PILOT-05",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-020",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Dieu peut-il mouvoir la volonté sans la contraindre par sa grâce ?",
+      "expected_topic_id": "pius.historical_spx_pilot_05",
+      "expected_source_id": "SPX-PILOT-05",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-021",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Did the reform of church music give the ancient Roman melodies special standing?",
+      "expected_topic_id": "pius.historical_spx_pilot_06",
+      "expected_source_id": "SPX-PILOT-06",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-022",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Could elaborate choral composition be fitting sacred music under Pius X?",
+      "expected_topic_id": "pius.historical_spx_pilot_06",
+      "expected_source_id": "SPX-PILOT-06",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-023",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Pourquoi le motu proprio sur la musique privilégiait-il les anciennes mélodies romaines ?",
+      "expected_topic_id": "pius.historical_spx_pilot_06",
+      "expected_source_id": "SPX-PILOT-06",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-024",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Les compositions à plusieurs voix étaient-elles exclues des offices ?",
+      "expected_topic_id": "pius.historical_spx_pilot_06",
+      "expected_source_id": "SPX-PILOT-06",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-025",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "What errors did Pascendi see in making faith only a private religious experience?",
+      "expected_topic_id": "pius.historical_spx_pilot_07",
+      "expected_source_id": "SPX-PILOT-07",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-026",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "What did Sarto mean by treating Modernism as one connected system of errors?",
+      "expected_topic_id": "pius.historical_spx_pilot_07",
+      "expected_source_id": "SPX-PILOT-07",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-027",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "En quoi le modernisme transformait-il la foi en expérience intérieure ?",
+      "expected_topic_id": "pius.historical_spx_pilot_07",
+      "expected_source_id": "SPX-PILOT-07",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-028",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Que reproche l’encyclique Pascendi à la transformation des dogmes ?",
+      "expected_topic_id": "pius.historical_spx_pilot_07",
+      "expected_source_id": "SPX-PILOT-07",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-029",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Can adults unfamiliar with Catholic teaching learn enough from occasional Sunday sermons?",
+      "expected_topic_id": "pius.historical_spx_pilot_08",
+      "expected_source_id": "SPX-PILOT-08",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-030",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Why did Pius X demand straightforward doctrinal instruction for grown people?",
+      "expected_topic_id": "pius.historical_spx_pilot_08",
+      "expected_source_id": "SPX-PILOT-08",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-031",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "La prédication dominicale suffit-elle à former des adultes peu catéchisés ?",
+      "expected_topic_id": "pius.historical_spx_pilot_08",
+      "expected_source_id": "SPX-PILOT-08",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-032",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Comment un curé devait-il expliquer les vérités élémentaires aux grandes personnes ?",
+      "expected_topic_id": "pius.historical_spx_pilot_08",
+      "expected_source_id": "SPX-PILOT-08",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-033",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Why does an overworked pastor still need periods of reflection before God?",
+      "expected_topic_id": "pius.historical_spx_pilot_09",
+      "expected_source_id": "SPX-PILOT-09",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-034",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Was the work of the parish regarded as a substitute for a priest's interior life?",
+      "expected_topic_id": "pius.historical_spx_pilot_09",
+      "expected_source_id": "SPX-PILOT-09",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-035",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Les occupations du ministère dispensent-elles les prêtres de l’oraison ?",
+      "expected_topic_id": "pius.historical_spx_pilot_09",
+      "expected_source_id": "SPX-PILOT-09",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-036",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Comment la méditation aide-t-elle le clergé à conserver la vie intérieure ?",
+      "expected_topic_id": "pius.historical_spx_pilot_09",
+      "expected_source_id": "SPX-PILOT-09",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-037",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Is a particular school grade required before children approach the Eucharistic table?",
+      "expected_topic_id": "pius.historical_spx_pilot_10",
+      "expected_source_id": "SPX-PILOT-10",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-038",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "en",
+      "question": "Must a seven-year-old pass a complete doctrinal examination before First Communion?",
+      "expected_topic_id": "pius.historical_spx_pilot_10",
+      "expected_source_id": "SPX-PILOT-10",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-039",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "La première communion dépend-elle seulement de la date du septième anniversaire ?",
+      "expected_topic_id": "pius.historical_spx_pilot_10",
+      "expected_source_id": "SPX-PILOT-10",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-040",
+      "kind": "DOCUMENTED_HISTORICAL",
+      "language": "fr",
+      "question": "Faut-il connaître tout le catéchisme avant d’être admis à la sainte Table ?",
+      "expected_topic_id": "pius.historical_spx_pilot_10",
+      "expected_source_id": "SPX-PILOT-10",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "editorial_category": "ORIGINAL_HISTORICAL_SOURCE"
+    },
+    {
+      "id": "SPXFRESH-041",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "en",
+      "question": "Can you recount the exact words your mother said when your family ran short of money?",
+      "expected_topic_id": "pius.historical_spx_pilot_11",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNATTESTED_CHILDHOOD_MEMORY"
+    },
+    {
+      "id": "SPXFRESH-042",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "en",
+      "question": "What feelings did the young Giuseppe secretly confide to himself about being poor?",
+      "expected_topic_id": "pius.historical_spx_pilot_11",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNATTESTED_CHILDHOOD_MEMORY"
+    },
+    {
+      "id": "SPXFRESH-043",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "fr",
+      "question": "Pouvez-vous raconter une conversation précise entre votre père et vous sur la pauvreté ?",
+      "expected_topic_id": "pius.historical_spx_pilot_11",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNATTESTED_CHILDHOOD_MEMORY"
+    },
+    {
+      "id": "SPXFRESH-044",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "fr",
+      "question": "De quoi aviez-vous honte intérieurement, enfant, à Riese ?",
+      "expected_topic_id": "pius.historical_spx_pilot_11",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNATTESTED_CHILDHOOD_MEMORY"
+    },
+    {
+      "id": "SPXFRESH-045",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "en",
+      "question": "From my distracted prayers, can you determine whether I have lost sanctifying grace?",
+      "expected_topic_id": "pius.historical_spx_pilot_12",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNSUPPORTED_PERSONAL_SPIRITUAL_DIAGNOSIS"
+    },
+    {
+      "id": "SPXFRESH-046",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "en",
+      "question": "Does feeling nothing at devotion prove that I have mortally offended God?",
+      "expected_topic_id": "pius.historical_spx_pilot_12",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNSUPPORTED_PERSONAL_SPIRITUAL_DIAGNOSIS"
+    },
+    {
+      "id": "SPXFRESH-047",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "fr",
+      "question": "Pouvez-vous juger mon âme à partir de mes distractions pendant l’oraison ?",
+      "expected_topic_id": "pius.historical_spx_pilot_12",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNSUPPORTED_PERSONAL_SPIRITUAL_DIAGNOSIS"
+    },
+    {
+      "id": "SPXFRESH-048",
+      "kind": "PERSONAL_SOURCE_HOLD",
+      "language": "fr",
+      "question": "Le sentiment de sécheresse prouve-t-il que je suis en état de péché mortel ?",
+      "expected_topic_id": "pius.historical_spx_pilot_12",
+      "expected_source_id": null,
+      "expected_outcome": "NO_PERSONALIZED_ANSWER",
+      "editorial_category": "UNSUPPORTED_PERSONAL_SPIRITUAL_DIAGNOSIS"
+    },
+    {
+      "id": "SPXFRESH-049",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "en",
+      "question": "Which railway fare did Sarto pay on his first trip to Rome?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "UNSUPPORTED_FACT"
+    },
+    {
+      "id": "SPXFRESH-050",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "en",
+      "question": "Did Pius X approve television broadcasts of Mass?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "ANACHRONISM"
+    },
+    {
+      "id": "SPXFRESH-051",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "en",
+      "question": "What Eucharistic fasting rule is legally binding worldwide in 2026?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "CURRENT_LAW"
+    },
+    {
+      "id": "SPXFRESH-052",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "en",
+      "question": "How do I configure the Wi-Fi password on my laptop?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "UNRELATED"
+    },
+    {
+      "id": "SPXFRESH-053",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "en",
+      "question": "Can I declare a church musician in mortal sin merely for using an English hymn?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "PERSONAL_JUDGMENT"
+    },
+    {
+      "id": "SPXFRESH-054",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "en",
+      "question": "Was Pope Pius X familiar with artificial-intelligence chatbots?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "ANACHRONISM"
+    },
+    {
+      "id": "SPXFRESH-055",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "fr",
+      "question": "Quelle monnaie utilise aujourd’hui la poste du Vatican pour ses frais d’expédition ?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "CURRENT_EXTERNAL"
+    },
+    {
+      "id": "SPXFRESH-056",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "fr",
+      "question": "Pie X a-t-il commenté la diffusion des messes à la télévision ?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "ANACHRONISM"
+    },
+    {
+      "id": "SPXFRESH-057",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "fr",
+      "question": "Combien coûte aujourd’hui l’inscription au séminaire de Trévise ?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "CURRENT_EXTERNAL"
+    },
+    {
+      "id": "SPXFRESH-058",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "fr",
+      "question": "Comment remplacer la batterie défectueuse de mon ordinateur ?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "UNRELATED"
+    },
+    {
+      "id": "SPXFRESH-059",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "fr",
+      "question": "Puis-je traiter mon voisin d’hérétique parce qu’il aime la musique contemporaine ?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "PERSONAL_JUDGMENT"
+    },
+    {
+      "id": "SPXFRESH-060",
+      "kind": "OUTSIDE_SCOPED_HISTORICAL_SOURCE",
+      "language": "fr",
+      "question": "Peux-tu prévoir le jour exact de ma mort ?",
+      "expected_topic_id": null,
+      "expected_source_id": null,
+      "expected_outcome": "NO_FALSE_HISTORICAL_CLAIM",
+      "editorial_category": "UNSUPPORTED_FACT"
+    }
+  ],
+  "confirmedContextContinuations": [
+    {
+      "id": "SPXCONTEXT-01",
+      "language": "en",
+      "question": "And what did he hope to accomplish in the Church?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_01",
+      "expected_source_id": "SPX-PILOT-01",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    },
+    {
+      "id": "SPXCONTEXT-02",
+      "language": "en",
+      "question": "How should the faithful unite themselves to the offering, in practice?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_02",
+      "expected_source_id": "SPX-PILOT-02",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    },
+    {
+      "id": "SPXCONTEXT-03",
+      "language": "en",
+      "question": "And at what point does my will enter into it?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_03",
+      "expected_source_id": "SPX-PILOT-03",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    },
+    {
+      "id": "SPXCONTEXT-04",
+      "language": "en",
+      "question": "Then what might my thanksgiving contain?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_04",
+      "expected_source_id": "SPX-PILOT-04",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    },
+    {
+      "id": "SPXCONTEXT-05",
+      "language": "fr",
+      "question": "Cette aide peut-elle être refusée par la volonté ?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_05",
+      "expected_source_id": "SPX-PILOT-05",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    },
+    {
+      "id": "SPXCONTEXT-06",
+      "language": "fr",
+      "question": "Et les œuvres de la tradition polyphonique ?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_06",
+      "expected_source_id": "SPX-PILOT-06",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    },
+    {
+      "id": "SPXCONTEXT-07",
+      "language": "fr",
+      "question": "Pourquoi ce sentiment religieux posait-il un problème ?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_07",
+      "expected_source_id": "SPX-PILOT-07",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    },
+    {
+      "id": "SPXCONTEXT-08",
+      "language": "fr",
+      "question": "Et comment l’oraison fortifie-t-elle son ministère ?",
+      "confirmed_source_topic_id": "pius.historical_spx_pilot_09",
+      "expected_source_id": "SPX-PILOT-09",
+      "expected_outcome": "SPECIFIC_SOURCE_OR_SAFE_ABSTENTION",
+      "unconfirmed_context_must_not_receive_verified_history": true
+    }
+  ]
+}
