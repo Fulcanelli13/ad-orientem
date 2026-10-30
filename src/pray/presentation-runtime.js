@@ -2851,7 +2851,10 @@ function renderFiveWounds(){
  '<div class="aoFiveWoundsBeads" aria-label="'+esc(L('Five Glory Bes, then a Hail Mary','Cinq Gloria Patri, puis un Ave Maria'))+'">'+beads+'</div>'+
  (CHAPLET_F07_PILOT_ENABLED?
   '<div class="aoF07FiveWoundsTop">'+renderF07FiveWounds(index,{french:isFr()})+
-  '<details class="aoF07ReaderLanguage"><summary aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">Aa</summary>'+langButton+'</details></div>'+
+  '<details class="aoF07ReaderLanguage"><summary aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">Aa</summary>'+
+  '<div class="aoF07LanguageOptions" role="group" aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">'+
+  ['en','fr','la'].map(code=>'<button type="button" data-p435930-five-language="'+code+'" aria-pressed="'+String(langCode===code)+'">'+
+    esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+'</div></details></div>'+
   '<nav class="aoF07WoundChips" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+woundChips+'</nav>':'')+
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
  esc(prayerLabel)+'</small>'+(CHAPLET_F07_PILOT_ENABLED?'':langButton)+'</div><p class="aoFiveWoundsPrayerText" lang="'+
@@ -3321,6 +3324,15 @@ function onClick(e){
  }
  // A chaplet-specific extension leaves the historic four-reader language
  // handler above byte-for-byte intact for the established public/pray tests.
+ // F07 w1 moves EN / FR / Latin to one discreet Aa reader menu.
+ // This manipulates the *existing* session language and Latin switch only.
+ if(CHAPLET_F07_PILOT_ENABLED&&view==='fiveWounds'&&b.hasAttribute('data-p435930-five-language')){
+  const choice=b.dataset.p435930FiveLanguage;
+  if(!['en','fr','la'].includes(choice))return;
+  if(choice==='la')FIVE_WOUNDS.latin=true;
+  else{FIVE_WOUNDS.latin=false;praySessionLanguage=choice}
+  return render();
+ }
  if(view==='fiveWounds'&&b.hasAttribute('data-p435930-session-language')&&!FIVE_WOUNDS.latin){
   const current=mount(),outerScroll=current?.scrollTop||0;
   praySessionLanguage=isFr()?'en':'fr';
