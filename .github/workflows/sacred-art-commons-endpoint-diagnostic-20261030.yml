@@ -1,0 +1,63 @@
+name: Sacred Art Commons public API endpoint diagnostic (research only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-commons-endpoint-diagnostic-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-commons-api-endpoint-diagnostic
+  cancel-in-progress: false
+jobs:
+  diagnose-commons-access:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check three free official Wikimedia interfaces with bounded timeouts
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import {writeFileSync} from "node:fs";
+          const targets={
+            actionApi:"https://commons.wikimedia.org/w/api.php?action=query&format=json&formatversion=2&prop=imageinfo&pageids=22151874&iiprop=sha1%7Csize%7Cmime",
+            filePage:"https://commons.wikimedia.org/wiki/File:Poussin%2C_Nicolas_-_The_Translation_of_Saint_Rita_of_Cascia_-_Google_Art_Project.jpg",
+            wikibaseFile:"https://commons.wikimedia.org/wiki/Special:EntityData/M22151874.json",
+            mediawikiApiViaWikimedia:"https://commons.wikimedia.org/w/api.php?action=query&format=json&meta=siteinfo"
+          };
+          const results=await Promise.all(Object.entries(targets).map(async([label,url])=>{
+           let info={label,url};
+           try{
+            const r=await fetch(url,{signal:AbortSignal.timeout(12000),headers:{Accept:"application/json,text/html;q=0.8,*/*;q=0.5",
+              "User-Agent":"AdOrientemSacredArtResearch/0.1 (https://github.com/Fulcanelli13/ad-orientem)"}});
+            const txt=(await r.text()).slice(0,500);
+            info={...info,httpStatus:r.status,mime:r.headers.get("content-type"),bytesSampled:txt.length,
+              responsePrefix:txt.slice(0,200)};
+           }catch(e){info={...info,error:String(e).slice(0,250)}}
+           return info;
+          }));
+          const o={schema:"AO_COMMONS_NETWORK_DIAGNOSTIC_20261030",at:new Date().toISOString(),
+            oneFilePageId:22151874,sourceIdentityPromoted:0,sourceImagesDownloaded:0,
+            dataReadOnly:true,results};
+          writeFileSync("data/calendar/sacred-art-commons-network-diagnostic-20261030.v1.json",JSON.stringify(o,null,2)+"\n",{flag:"wx"});
+          console.log(JSON.stringify(results,null,2));
+          NODE
+      - name: Commit diagnostics only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-commons-network-diagnostic-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): record Commons public endpoint diagnostic [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
