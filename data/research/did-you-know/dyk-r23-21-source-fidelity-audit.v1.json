@@ -9,11 +9,13 @@
     "original_weiser_page_images_read": 7,
     "canon_1962_primary_text_crosschecks": 5,
     "gesture_1962_primary_text_crosschecks": 2,
-    "claims_corresponding_to_cited_source_after_revisions": 14,
-    "prior_pitre_not_rechecked_in_r23": 7,
-    "corrected_bilingual_drafts": 9,
+    "claims_corresponding_to_cited_source_after_revisions": 21,
+    "prior_pitre_not_rechecked_in_r23": 0,
+    "corrected_bilingual_drafts": 13,
     "final_approved": 0,
-    "live_published": 0
+    "live_published": 0,
+    "original_pitre_1900_ocr_text_layer_checks": 7,
+    "pitre_original_facsimile_images_not_rechecked": 7
   },
   "release_gates": {
     "independent_french_signoff": "PENDING",
@@ -21,94 +23,121 @@
     "independent_historical_corrob_where_needed": "PENDING",
     "full_612_home_preview_semantic_novelty": "PENDING",
     "gesture_exact_routes": "PENDING_2",
-    "publication": "BLOCKED"
+    "publication": "BLOCKED",
+    "pitre_facsimile_page_validation": "PENDING_7",
+    "source_pointer_reconciliation": "PENDING_PACHINO_PAGE_454_VS_464"
   },
-  "verification_note": "Weiser pages manually reviewed in the cited 384-page PDF; page number mapping used printed page +17 as zero-based PDF index. 1962 text crosschecks used ICRSP bilingual Ordo, the Ritus source registry, and 1960 rubric codification for Credo. For R22 21 Pitrè items, original earlier verification ownership is preserved but new page-image verification is not claimed.",
+  "verification_note": "Weiser pages manually reviewed in the cited 384-page PDF; page number mapping used printed page +17 as zero-based PDF index. 1962 text crosschecks used ICRSP bilingual Ordo, the Ritus source registry, and 1960 rubric codification for Credo. For R22 21 Pitrè items, original earlier verification ownership is preserved but new page-image verification is not claimed. Subsequent R23 original Pitrè 1900 OCR text-layer review checked all 7 Pitrè claims. Corrected a place attribution from Villafranca to Campobello and discovered a Pachino page-locator mismatch (printed p. 454 vs p. 464). These are NOT new scan-image certifications.",
   "records": [
     {
       "id": "DYK-UM01-024",
       "source_family": "PITRE_1900",
-      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
-      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "status": "PITRE_ORIGINAL_1900_OCR_TEXT_LAYER_CHECKED_NO_NEW_FACSIMILE",
+      "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
           454
         ],
         "source_id": "PIT1900-IT-049",
-        "prior_source_page_report": true
+        "prior_source_page_report": true,
+        "original_text_ocr_lines": [
+          17197,
+          17219
+        ],
+        "printed_page_from_text_layer": 464
       },
-      "claim_correction": null,
-      "source_correspondence_checked": false,
+      "claim_correction": "Pitrè p. 464 (not p. 454 in the card) says each Pachino family fed and gifted 4, 6, up to 30 vicchiareddi; generic poverty identity should not be imposed.",
+      "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice. Source pointer mismatch: record says printed page 454, verified text appears on printed p. 464; source ledger requires correction."
     },
     {
       "id": "DYK-UM03-030",
       "source_family": "PITRE_1900",
-      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
-      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "status": "PITRE_ORIGINAL_1900_OCR_TEXT_LAYER_CHECKED_NO_NEW_FACSIMILE",
+      "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
           36
         ],
         "source_id": "PIT1900-NEW-024",
-        "prior_source_page_report": true
+        "prior_source_page_report": true,
+        "original_text_ocr_lines": [
+          3214,
+          3230
+        ],
+        "printed_page_from_text_layer": 36
       },
-      "claim_correction": null,
-      "source_correspondence_checked": false,
+      "claim_correction": "Pitrè pp. 35–36 specifies alternating annual districts; not just occasionally varying routes.",
+      "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice."
     },
     {
       "id": "DYK-UM03-035",
       "source_family": "PITRE_1900",
-      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
-      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "status": "PITRE_ORIGINAL_1900_OCR_TEXT_LAYER_CHECKED_NO_NEW_FACSIMILE",
+      "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
           80
         ],
         "source_id": "PIT1900-NEW-046",
-        "prior_source_page_report": true
+        "prior_source_page_report": true,
+        "original_text_ocr_lines": [
+          4817,
+          4830
+        ],
+        "printed_page_from_text_layer": 80
       },
       "claim_correction": null,
-      "source_correspondence_checked": false,
+      "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice."
     },
     {
       "id": "DYK-UM03-036",
       "source_family": "PITRE_1900",
-      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
-      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "status": "PITRE_ORIGINAL_1900_OCR_TEXT_LAYER_CHECKED_NO_NEW_FACSIMILE",
+      "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
           86
         ],
         "source_id": "PIT1900-NEW-056",
-        "prior_source_page_report": true
+        "prior_source_page_report": true,
+        "original_text_ocr_lines": [
+          5075,
+          5079
+        ],
+        "printed_page_from_text_layer": 80
       },
       "claim_correction": null,
-      "source_correspondence_checked": false,
+      "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice."
     },
     {
       "id": "DYK-UM03-042",
       "source_family": "PITRE_1900",
-      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
-      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "status": "PITRE_ORIGINAL_1900_OCR_TEXT_LAYER_CHECKED_NO_NEW_FACSIMILE",
+      "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
           125
         ],
         "source_id": "PIT1900-NEW-082",
-        "prior_source_page_report": true
+        "prior_source_page_report": true,
+        "original_text_ocr_lines": [
+          6444,
+          6448
+        ],
+        "printed_page_from_text_layer": 125
       },
-      "claim_correction": null,
-      "source_correspondence_checked": false,
+      "claim_correction": "Pitrè p. 125 records both the running across the square and the stop at Saint Francis's church; not generic hurried carrying.",
+      "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice."
     },
     {
       "id": "DYK-SF01-036",
@@ -240,36 +269,46 @@
     {
       "id": "DYK-H04-P-014",
       "source_family": "PITRE_1900",
-      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
-      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "status": "PITRE_ORIGINAL_1900_OCR_TEXT_LAYER_CHECKED_NO_NEW_FACSIMILE",
+      "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
           88
         ],
         "source_id": "PIT1900-W05-OBS-014",
-        "prior_source_page_report": null
+        "prior_source_page_report": null,
+        "original_text_ocr_lines": [
+          5127,
+          5139
+        ],
+        "printed_page_from_text_layer": 88
       },
       "claim_correction": null,
-      "source_correspondence_checked": false,
+      "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice."
     },
     {
       "id": "DYK-H04-P-097",
       "source_family": "PITRE_1900",
-      "status": "PITRE_RETAINS_PRIOR_EVIDENCE_NEEDS_R23_DIRECT_RECHECK",
-      "witness": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "status": "PITRE_ORIGINAL_1900_OCR_TEXT_LAYER_CHECKED_NO_NEW_FACSIMILE",
+      "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
           401
         ],
         "source_id": "PIT1900-W05-OBS-097",
-        "prior_source_page_report": null
+        "prior_source_page_report": null,
+        "original_text_ocr_lines": [
+          15409,
+          15426
+        ],
+        "printed_page_from_text_layer": 401
       },
-      "claim_correction": null,
-      "source_correspondence_checked": false,
+      "claim_correction": "CRITICAL GEOGRAPHY: Pitrè pp. 401–402 explicitly describes Campobello (Madonna dell'Aiuto), NOT Villafranca. Previous R22 place name was incorrect.",
+      "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Prior Pitrè source anchors remain; no new direct original-page scan certification."
+      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice."
     },
     {
       "id": "DYK-M04-CANON-003",
