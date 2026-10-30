@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R22_V1",
   "date": "2026-10-30",
-  "current_status": "R27_96_OF_189_SOURCE_CLAIMS_CHECKED_14_PITRE_FACSIMILE_HOLDS_0_FINAL_APPROVED",
+  "current_status": "R28_123_OF_189_DIRECT_SOURCE_CLAIMS_CHECKED_14_PITRE_FACSIMILE_HOLDS_ZERO_FINAL_APPROVALS",
   "active_owners": {
     "complete_record_ledger": "dyk-r22-1001-current-master-index.v1.json",
     "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
@@ -19,7 +19,8 @@
     "r26_pitre_49_provenance_identity": "dyk-r26-49-pitre-provenance-identity-crosswalk.v1.json",
     "r26_weiser_14_folio_inspection": "dyk-r26-weiser-14-original-facsimile-source-check.v1.json",
     "r27_weiser_20_direct_page_review": "dyk-r27-weiser-20-direct-original-page-review.v1.json",
-    "r27_pitre_14_facsimile_hold_queue": "dyk-r27-pitre-14-high-priority-original-page-holds.v1.json"
+    "r27_pitre_14_facsimile_hold_queue": "dyk-r27-pitre-14-high-priority-original-page-holds.v1.json",
+    "r28_27_weiser_direct_facsimile_check": "dyk-r28-weiser-27-original-page-audit.v1.json"
   },
   "overall": {
     "generated_candidate_records": 1001,
@@ -45,12 +46,12 @@
     "latest_bilingual_draft_corrections": 13,
     "original_168_source_folio_checked": 26,
     "original_168_remaining_source_folio_review": 142,
-    "overall_source_text_correspondence_checked": 96,
+    "overall_source_text_correspondence_checked": 123,
     "original_168_bilingual_statements_corrected_r24": 26,
     "r24_original_weiser_pages_reviewed": 18,
     "total_bilingual_statements_corrected_in_r23_r24": 39,
-    "original_168_source_claims_checked": 75,
-    "original_168_remaining_source_review": 93,
+    "original_168_source_claims_checked": 102,
+    "original_168_remaining_source_review": 66,
     "r25_1962_mass_source_claims_checked": 15,
     "r25_1962_canon_claims_checked": 12,
     "r25_1962_mass_gesture_claims_checked": 3,
@@ -71,7 +72,14 @@
     "r27_pitre_additional_textual_or_locality_risks": 5,
     "r27_pitre_original_page_images_read_this_pass": 0,
     "r27_bilingual_statements_revised": 20,
-    "total_bilingual_statements_corrected_in_r23_r24_r25_r26_r27": 91
+    "total_bilingual_statements_corrected_in_r23_r24_r25_r26_r27": 91,
+    "r28_weiser_cards_original_image_checked": 27,
+    "r28_weiser_distinct_printed_pages": 29,
+    "r28_weiser_unverified_St_Anthony_source_folio": 1,
+    "r28_mothering_sunday_near_duplicate_pair": 1,
+    "r28_pitre_image_status_unchanged": 14,
+    "r28_bilingual_statements_revised": 27,
+    "total_bilingual_statements_corrected_in_r23_r24_r25_r26_r27_r28": 118
   },
   "adjudication": {
     "reviewed": 74,
@@ -110,11 +118,11 @@
     "source_claim_review_of_14_new_historical_cards": "PENDING_RECHECK",
     "source_text_correspondence_for_21_new_cards": "COMPLETE_21_OF_21_AFTER_THIRTEEN_CORRECTIONS",
     "pitre_upstream_page_pointer": "PACHINO_PRINTED_464_CARD_FIXED_UPSTREAM_454_ERRATUM_PENDING",
-    "original_168_source_specific_review": "75_CHECKED_93_REMAIN",
+    "original_168_source_specific_review": "102_CHECKED_66_REMAIN",
     "bilingual_189_editorial_signoff": "0_APPROVED_189_PENDING",
     "existing_home_previews_semantic_novelty": "612_EXISTING_PREVIEW_ITEMS_NEED_FULL_COMPARISON",
     "r24_folio_image_review": "WEISER_26_CARDS_18_DISTINCT_PRINTED_PAGES_COMPLETE",
-    "total_189_source_claim_review": "96_CHECKED_93_ORIGINAL_168_REMAIN",
+    "total_189_source_claim_review": "123_CHECKED_66_REMAIN",
     "r25_8_glossary_home_fit": "8_EDITORIALLY_TRIAGED_5_PREFER_LEARN_3_HOME_REWRITE_CANDIDATES_NO_COMPOSITION_CHANGE",
     "final_189_independent_english_french_signoff": "0_APPROVED_189_PENDING",
     "pitre_49_provenance_not_certification": "49_CROSSWALKED_0_ORIGINAL_FACSIMILE_IMAGES_REOPENED",
@@ -122,7 +130,10 @@
     "full_612_home_preview_semantic_comparison": "PENDING",
     "french_editorial_189": "0_FINAL_APPROVED_189_PENDING",
     "r27_pitre_original_facsimile_review": "14_PREVIOUSLY_UNVERIFIED_PAGE_IMAGES_HELD_5_ADDITIONAL_RISKS",
-    "original_page_weiser_r27": "20_CARDS_10_ORIGINAL_PRINTED_PAGES_CHECKED"
+    "original_page_weiser_r27": "20_CARDS_10_ORIGINAL_PRINTED_PAGES_CHECKED",
+    "r28_Pitre_facs_hold": "14_ORIGINAL_PAGE_IMAGES_NOT_RECHECKED_CURRENT_SOURCE_ACCESS_BLOCKER",
+    "r28_St_Anthony_exact_original_locator": "SOURCE_MISMATCH_PRINTED_PAGE_327_HOLD",
+    "r28_Mothering_Sunday_duplicate": "PAIR_SOURCE_SUPPORTED_BUT_INDEPENDENT_HOME_RELEASE_BLOCKED"
   },
   "notes": [
     "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
@@ -133,6 +144,7 @@
     "R24 checked 26 original R21 bilingual shortlist descriptions against 18 original Weiser printed pages; all 26 received source-aligned EN/FR wording. Historical recertification, independent French signoff and actual Home publication remain pending.",
     "R25 15 original 1962 Mass claims were checked against ICRSP Latin/French Ordo text, and all 15 EN/FR claim presentations refined with exact action metadata. Eight separate glossary cards were triaged as Home-fit proposals; five prefer Learn and three might yield new standalone discoveries after novelty/approval. Original records and the 189-shortlist composition remain unchanged.",
     "R26: 49/49 Pitrè shortlist source IDs, folios and scan-page references reconciled against retained repository observation packets; original facsimiles NOT reopened, so this is not an addition to 76 direct source checks. R21 Ribera lead restored to Ribera-only; two additional claims narrowed. Separately 14 Weiser claims corrected after direct page-image checks (10 distinct printed folios). Independent EN/FR signoff, home semantic comparison and publication remain blocked.",
-    "R27 directly inspected original Weiser scanned printed pages for 20 more pre-existing bilingual shortlist cards and refined all 20 EN/FR drafts; fixes include young men not children at Philippine All Saints, boy Gabriel in the Annunciation pageant, Polish Corpus Christi page locator 265, and Sunday-after-Ascension Pantheon roses. Pitrè 14 explicit facsimile holds and 5 other scope-sensitive cases were prioritized but NOT counted as source-checked, because remote original text navigation timed out. No releases."
+    "R27 directly inspected original Weiser scanned printed pages for 20 more pre-existing bilingual shortlist cards and refined all 20 EN/FR drafts; fixes include young men not children at Philippine All Saints, boy Gabriel in the Annunciation pageant, Polish Corpus Christi page locator 265, and Sunday-after-Ascension Pantheon roses. Pitrè 14 explicit facsimile holds and 5 other scope-sensitive cases were prioritized but NOT counted as source-checked, because remote original text navigation timed out. No releases.",
+    "R28: 27 additional original Weiser printed-page screenshot reviews; 27 EN/FR drafts corrected. 123/189 direct claim-source correspondence checked (102/168 original, 66 remain). Saint Anthony ship-mast detail not substantiated on cited Weiser p327 and held. Mothering Sunday pair explicitly flagged near-duplicate. Pitrè 14 original-image holds remain because original 21.7-MB PDF cannot be opened/read in current tools (Commons page is available but actual file blocked). No release or final approvals."
   ]
 }
