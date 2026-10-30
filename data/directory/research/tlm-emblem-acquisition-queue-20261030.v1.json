@@ -1,18 +1,21 @@
 {
-  "schema": "AO_TLM_EMBLEM_ACQUISITION_QUEUE_V1",
+  "schema": "AO_TLM_EMBLEM_ACQUISITION_QUEUE_V2",
   "date": "2026-10-30",
   "read_only_overlay_of": [
     "data/directory/communities.v1.json",
     "data/directory/tlm-user-classification-taxonomy.v1.json (CL27 branch)",
     "data/directory/research/cl2-unified-20261026 (CL2 branch)",
-    "src/find/institution-emblems.js"
+    "src/find/institution-emblems.js",
+    "data/directory/research/cl2-unified-20261026/venue-01-of-10.json through venue-10-of-10.json (PR #1729)"
   ],
-  "note": "Research queue, not an institution master. A source-listed affiliation does not by itself establish ownership, ecclesial position, Una Cum, Mass rite, or exact celebrant. Image copyright and institutional insignia restrictions are separate.",
+  "note": "Research queue, not an institution master. A source-listed affiliation does not by itself establish ownership, ecclesial position, Una Cum, Mass rite, or exact celebrant. Image copyright and institutional insignia restrictions are separate. CL2 affiliation counts are source rows, not unique sites or approved logos; candidate_group_code is an image-research hint only.",
   "summary": {
-    "total_groups": 34,
+    "total_groups": 41,
     "draft_exact_images": 5,
     "held": 29,
-    "official_candidates": 7
+    "official_candidates": 7,
+    "cl2_distinct_affiliation_labels": 138,
+    "cl2_venue_source_rows": 2687
   },
   "groups": [
     {
@@ -38,15 +41,28 @@
       "note": "Benedictine PAX cannot identify each monastery."
     },
     {
+      "group_code": "BENEDICTINES_BELLAIGUE",
+      "display_name": "Benedictines of Bellaigue",
+      "source_owner": "CL2 raw source-affiliation label (research-only)",
+      "state": "EXACT_COMMUNITY_EMBLEM_RESEARCH_NEEDED",
+      "type": "DISTINCT_MONASTERY",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Individual monastery coat of arms preferable to Benedictine PAX."
+    },
+    {
       "group_code": "CANONS_ST_JOHN_CANTIUS",
       "display_name": "Canons Regular of St. John Cantius",
       "source_owner": "data/directory/communities.v1.json",
-      "state": "OFFICIAL_SITE_BRANDING_CANDIDATE",
+      "state": "EXACT_OFFICIAL_CREAST_IMAGE_LOCATED_RIGHTS_PENDING",
       "type": "INSTITUTE",
       "source": "https://www.canons-regular.org/",
       "license": null,
-      "rights": "UNDETERMINED",
-      "note": "Official footer uses crest.png; need exact original image URL, permission/reuse terms and identity review."
+      "rights": "OFFICIAL_BRANDING_IDENTIFIED__IMAGE_REUSE_NOT_CLEARED",
+      "note": "Official footer uses crest.png; need exact original image URL, permission/reuse terms and identity review.",
+      "candidate_image_url": "https://static.wixstatic.com/media/dba24e_8159dcc30a1544e4a889a6909d1d702a~mv2_d_2137_1948_s_2.png",
+      "identity_evidence_url": "https://www.canons-regular.org/"
     },
     {
       "group_code": "CAPUCHINS_MORGON",
@@ -57,7 +73,8 @@
       "source": "https://capucins-morgon.fr/",
       "license": null,
       "rights": "PENDING",
-      "note": "Capuchins of Morgon; distinguish from general Franciscan symbols."
+      "note": "Capuchins of Morgon; distinguish from general Franciscan symbols. Their own site explicitly labels an image 'Logo de la Custodie des Frères Mineurs Capucins'; standalone asset/license pending.",
+      "identity_evidence_url": "https://capucins-morgon.fr/histoire/ordre-capucin"
     },
     {
       "group_code": "CARMELITE",
@@ -90,7 +107,8 @@
       "source": "https://donaldsuniform.com/collections/congregation-of-mary-immaculate-queen",
       "license": null,
       "rights": "THIRD_PARTY_IMAGE_RIGHTS_NOT_CLEARED",
-      "note": "Vendor's CMRI Spokane crest is identifiable; not the arms of Bishop Pivarunas. Must verify with institute itself."
+      "note": "Vendor's CMRI Spokane crest is identifiable; not the arms of Bishop Pivarunas. Must verify with institute itself. Institute's official US map features a CMRI crest; do not substitute Bishop Pivarunas personal arms.",
+      "identity_evidence_url": "https://www.cmri.org/pdfs/cmri-traditional-latin-mass-map-usa-2026a.pdf"
     },
     {
       "group_code": "CSPV",
@@ -126,6 +144,17 @@
       "note": "Resolve exact organisation or community-specific arms before any map icon."
     },
     {
+      "group_code": "DOMINICAINES_FANJEAUX",
+      "display_name": "Dominican teaching sisters of Fanjeaux",
+      "source_owner": "CL2 raw source-affiliation label (research-only)",
+      "state": "EXACT_COMMUNITY_EMBLEM_RESEARCH_NEEDED",
+      "type": "DISTINCT_CONGREGATION",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Do not equate with Dominicans of Avrillé or generic Dominican heraldry."
+    },
+    {
       "group_code": "DOMINICAN",
       "display_name": "Dominican",
       "source_owner": "data/directory/communities.v1.json",
@@ -135,6 +164,17 @@
       "license": "PD-self",
       "rights": "GENERIC_ORDER_ARM_NOT_EXACT_COMMUNITY",
       "note": "Never label a distinct traditional Dominican community or FSVF with universal order heraldry without community-specific evidence."
+    },
+    {
+      "group_code": "DOMINICANS_AVRILLE",
+      "display_name": "Dominicans of Avrillé",
+      "source_owner": "CL2 raw source-affiliation label (research-only)",
+      "state": "EXACT_COMMUNITY_EMBLEM_RESEARCH_NEEDED",
+      "type": "DISTINCT_CONGREGATION",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Official house branding must be distinguished from general Dominican arms."
     },
     {
       "group_code": "FSSP",
@@ -214,6 +254,17 @@
       "note": "Resolve exact organisation or community-specific arms before any map icon."
     },
     {
+      "group_code": "INSTITUTE_ST_PHILIP_NERI",
+      "display_name": "Institute of St Philip Neri",
+      "source_owner": "CL2 raw source-affiliation label (research-only)",
+      "state": "EXACT_COMMUNITY_EMBLEM_RESEARCH_NEEDED",
+      "type": "INSTITUTE",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Not interchangeable with Philadelphia Oratory arms."
+    },
+    {
       "group_code": "LAY_ASSOCIATION",
       "display_name": "LAY_ASSOCIATION",
       "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
@@ -233,7 +284,19 @@
       "source": "https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/",
       "license": null,
       "rights": "GRAPHIC_REUSE_PENDING",
-      "note": "Organisation specifies octagonal red cross; not interchangeable with unrelated Templar marks."
+      "note": "Organisation specifies octagonal red cross; not interchangeable with unrelated Templar marks.",
+      "identity_evidence_url": "https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/"
+    },
+    {
+      "group_code": "MOSTEIRO_SANTA_CRUZ",
+      "display_name": "Mosteiro da Santa Cruz",
+      "source_owner": "CL2 raw source-affiliation label (research-only)",
+      "state": "EXACT_COMMUNITY_EMBLEM_RESEARCH_NEEDED",
+      "type": "DISTINCT_MONASTERY",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resistance association does not grant a universal SSPX-Resistance emblem."
     },
     {
       "group_code": "NORBERTINE",
@@ -324,6 +387,17 @@
       "note": "Exact organisation source available; image file and reuse require review."
     },
     {
+      "group_code": "SOCIEDAD_TRENTO",
+      "display_name": "Sociedad Sacerdotal Trento",
+      "source_owner": "CL2 raw source-affiliation label (research-only)",
+      "state": "EXACT_COMMUNITY_EMBLEM_RESEARCH_NEEDED",
+      "type": "INSTITUTE",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Source-named society; institutional arms not established, do not substitute episcopal arms."
+    },
+    {
       "group_code": "SSPV",
       "display_name": "Society of Saint Pius V",
       "source_owner": "data/directory/communities.v1.json",
@@ -355,6 +429,17 @@
       "license": null,
       "rights": "NOT_APPLICABLE",
       "note": "Umbrella directory label, not a single organisation; identify specific community before artwork."
+    },
+    {
+      "group_code": "SSPX_SISTERS",
+      "display_name": "Sisters of the Society of Saint Pius X",
+      "source_owner": "CL2 raw source-affiliation label (research-only)",
+      "state": "EXACT_COMMUNITY_EMBLEM_RESEARCH_NEEDED",
+      "type": "DISTINCT_CONGREGATION",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Source names a sister congregation; do not assume priests' logo is its distinct arms."
     },
     {
       "group_code": "TRANSFIGURATION",
@@ -389,5 +474,848 @@
       "rights": "NOT_VERIFIED",
       "note": "Resolve exact organisation or community-specific arms before any map icon."
     }
-  ]
+  ],
+  "cl2_source_affiliation_audit": {
+    "basis": "CL2 PR #1729, original source_record[8] affiliation labels; no reconciliation with canonical Place IDs and no release projection",
+    "status": "RESEARCH_ONLY_NOT_PUBLIC",
+    "distinct_source_labels": 138,
+    "venue_source_rows": 2687,
+    "disposition_row_counts": {
+      "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC": 2095,
+      "UNRESOLVED_SOURCE_LABEL": 358,
+      "ASSOCIATION_ONLY_NOT_OPERATOR": 95,
+      "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW": 115,
+      "FAMILY_ONLY_NOT_MONASTERY_ARMS": 24
+    },
+    "labels": [
+      {
+        "source_affiliation": "SSPX",
+        "venue_source_rows": 766,
+        "candidate_group_code": "SSPX",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Diocesan",
+        "venue_source_rows": 588,
+        "candidate_group_code": "DIOCESAN",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "FSSP",
+        "venue_source_rows": 380,
+        "candidate_group_code": "FSSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "UNVERIFIED_OPERATOR_LMS_DISCOVERY",
+        "venue_source_rows": 211,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "ICKSP",
+        "venue_source_rows": 147,
+        "candidate_group_code": "ICKSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Unclassified (LMD source)",
+        "venue_source_rows": 75,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "SSPX / FSSPX",
+        "venue_source_rows": 51,
+        "candidate_group_code": "SSPX",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "CMRI DIRECTORY (affiliation of celebrant not inferred)",
+        "venue_source_rows": 39,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "IBP",
+        "venue_source_rows": 31,
+        "candidate_group_code": "IBP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "SSPV / Congregation of St Pius V directory (specific body unconfirmed)",
+        "venue_source_rows": 25,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Roman Catholic Institute / cooperating clergy",
+        "venue_source_rows": 21,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Other",
+        "venue_source_rows": 20,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Friendly community — unclassified",
+        "venue_source_rows": 17,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Diocesan / Una Voce (unassessed)",
+        "venue_source_rows": 16,
+        "candidate_group_code": "DIOCESAN",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "CMRI",
+        "venue_source_rows": 15,
+        "candidate_group_code": "CMRI",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "",
+        "venue_source_rows": 12,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Diocesan/FSSP organizer",
+        "venue_source_rows": 12,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "ICKSP / ICRSP",
+        "venue_source_rows": 11,
+        "candidate_group_code": "ICKSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Philippines — diocesan / religious LMD",
+        "venue_source_rows": 11,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Istituto Mater Boni Consilii",
+        "venue_source_rows": 10,
+        "candidate_group_code": "IMBC",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "AASJMV",
+        "venue_source_rows": 9,
+        "candidate_group_code": "AASJMV",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "FSSP AUSTRIA",
+        "venue_source_rows": 9,
+        "candidate_group_code": "FSSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Local coetus",
+        "venue_source_rows": 9,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Benedictine",
+        "venue_source_rows": 8,
+        "candidate_group_code": "BENEDICTINE",
+        "disposition": "FAMILY_ONLY_NOT_MONASTERY_ARMS"
+      },
+      {
+        "source_affiliation": "Fraternité de la Transfiguration",
+        "venue_source_rows": 6,
+        "candidate_group_code": "TRANSFIGURATION",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Sociedad Sacerdotal Trento",
+        "venue_source_rows": 6,
+        "candidate_group_code": "SOCIEDAD_TRENTO",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "BENEDICTINE | Owner-listed",
+        "venue_source_rows": 5,
+        "candidate_group_code": "BENEDICTINE",
+        "disposition": "FAMILY_ONLY_NOT_MONASTERY_ARMS"
+      },
+      {
+        "source_affiliation": "BENEDICTINE NUNS | Owner-listed",
+        "venue_source_rows": 5,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Capucins de Morgon",
+        "venue_source_rows": 5,
+        "candidate_group_code": "CAPUCHINS_MORGON",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "CMRI directory / affiliated clergy",
+        "venue_source_rows": 5,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "INDEPENDENT ST EDMUND MISSION OR OTHER",
+        "venue_source_rows": 5,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Oratorians",
+        "venue_source_rows": 5,
+        "candidate_group_code": "ORATORIAN",
+        "disposition": "FAMILY_ONLY_NOT_MONASTERY_ARMS"
+      },
+      {
+        "source_affiliation": "Carmélites",
+        "venue_source_rows": 4,
+        "candidate_group_code": "CARMELITE",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Premonstratensian",
+        "venue_source_rows": 4,
+        "candidate_group_code": "PREMONSTRATENSIAN",
+        "disposition": "FAMILY_ONLY_NOT_MONASTERY_ARMS"
+      },
+      {
+        "source_affiliation": "UNA VOCE SCOTLAND",
+        "venue_source_rows": 4,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Unknown",
+        "venue_source_rows": 4,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "CANONS REGULAR | Owner-listed",
+        "venue_source_rows": 3,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Discalced Carmelite nuns",
+        "venue_source_rows": 3,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "ICKSP ITALY",
+        "venue_source_rows": 3,
+        "candidate_group_code": "ICKSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Independent",
+        "venue_source_rows": 3,
+        "candidate_group_code": "INDEPENDENT",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Monastic",
+        "venue_source_rows": 3,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Mosteiro da Santa Cruz / Resistance",
+        "venue_source_rows": 3,
+        "candidate_group_code": "MOSTEIRO_SANTA_CRUZ",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "SSPX ITALY",
+        "venue_source_rows": 3,
+        "candidate_group_code": "SSPX",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Una Voce Japan",
+        "venue_source_rows": 3,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "UNASSESSED",
+        "venue_source_rows": 3,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Canons of St John Cantius",
+        "venue_source_rows": 2,
+        "candidate_group_code": "CANONS_ST_JOHN_CANTIUS",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Canons Regular of Saint John Cantius",
+        "venue_source_rows": 2,
+        "candidate_group_code": "CANONS_ST_JOHN_CANTIUS",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Diocese São José dos Campos",
+        "venue_source_rows": 2,
+        "candidate_group_code": "DIOCESAN",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Dominicaines Contemplatives",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Dominicaines enseignantes du Saint-Nom-de-Jésus",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Franciscaines du Trévoux",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "FSSP SWITZERLAND",
+        "venue_source_rows": 2,
+        "candidate_group_code": "FSSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Fundación Mater Dei / CMRI directory",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Militia Templi",
+        "venue_source_rows": 2,
+        "candidate_group_code": "MILITIA_TEMPLI",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Petites servantes de saint Jean-Baptiste",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Pro Missa Tridentina; local parish owner outstanding",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Religious/Monastic",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Sœurs de la Fraternité Saint Pie X",
+        "venue_source_rows": 2,
+        "candidate_group_code": "SSPX_SISTERS",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Sœurs de la Transfiguration",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "SSPX GREAT BRITAIN AND IRELAND",
+        "venue_source_rows": 2,
+        "candidate_group_code": "SSPX",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "SSPX-affiliated / friendly; not SSPX-operated",
+        "venue_source_rows": 2,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Archdiocese of Siena; 2025 custodianship Equestrian Order of Holy Sepulchre",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Bénédictines",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "BÉNÉDICTINS DE BELLAIGUE",
+        "venue_source_rows": 1,
+        "candidate_group_code": "BENEDICTINES_BELLAIGUE",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "CANONESSES | Owner-listed",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Carmelite",
+        "venue_source_rows": 1,
+        "candidate_group_code": "CARMELITE",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "CARMELITE NUNS | Owner-listed",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Carmelites of Holy Face",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Clarisses",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "CMRI / Hobsonville Church booking",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Communauté bénédictine de Bellefontaine",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Confraternita San Carlo Borromeo / local organiser",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Congregation of St. Pius V (CSPV)",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Daughters of Mary, Mother of Israels Hope",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Diocese Guarulhos",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Diocesi di Trieste / Parrocchia Beata Vergine del Rosario",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Discepole del Cenacolo",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "DOMINICAINES DE FANJEAUX",
+        "venue_source_rows": 1,
+        "candidate_group_code": "DOMINICAINES_FANJEAUX",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Dominicaines enseignantes du Saint-Nom-de-Jésus et du Coeur Immaculé de Marie",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Dominicains",
+        "venue_source_rows": 1,
+        "candidate_group_code": "DOMINICAN",
+        "disposition": "FAMILY_ONLY_NOT_MONASTERY_ARMS"
+      },
+      {
+        "source_affiliation": "DOMINICAINS D AVRILLÉ",
+        "venue_source_rows": 1,
+        "candidate_group_code": "DOMINICANS_AVRILLE",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Dominican",
+        "venue_source_rows": 1,
+        "candidate_group_code": "DOMINICAN",
+        "disposition": "FAMILY_ONLY_NOT_MONASTERY_ARMS"
+      },
+      {
+        "source_affiliation": "DOMINICAN FAMILY | Owner-listed",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Dompfarrei St. Georg / Pro Missa Tridentina",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Duszpasterstwo Wiernych Tradycji Łacińskiej Diecezji Świdnickiej",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "FRATERNITÉ DE LA TRANSFIGURATION",
+        "venue_source_rows": 1,
+        "candidate_group_code": "TRANSFIGURATION",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "FSSP GERMANY",
+        "venue_source_rows": 1,
+        "candidate_group_code": "FSSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "FSSP listed; parish venue",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "FSSP per specialist",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "FSSP SCOTLAND",
+        "venue_source_rows": 1,
+        "candidate_group_code": "FSSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "FSSP SOUTH TYROL",
+        "venue_source_rows": 1,
+        "candidate_group_code": "FSSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "FSSP UK AND IRELAND",
+        "venue_source_rows": 1,
+        "candidate_group_code": "FSSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "ICKSP GREAT BRITAIN",
+        "venue_source_rows": 1,
+        "candidate_group_code": "ICKSP",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Independent Monastic",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Institute of Christ the King Sovereign Priest (ICRSS), per association",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Institute of Saint Philip Neri",
+        "venue_source_rows": 1,
+        "candidate_group_code": "INSTITUTE_ST_PHILIP_NERI",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Instituto Bom Pastor",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Irmandade Nossa Senhora do Carmo / Colégio Santo Tomás de Aquino",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Local diocesan community / Alleati dell'Eucaristia",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Local Steinen parish not yet verified as TLM operator",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Marias Lamm",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Mosteiro da Santa Cruz & associated Benedictines",
+        "venue_source_rows": 1,
+        "candidate_group_code": "MOSTEIRO_SANTA_CRUZ",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Mouvement de la Jeunesse Catholique de France",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Oasis de Jesús Sacerdote",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Oratório Santo Antônio / Associação Cultural Santo Antônio",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Parafia bł. Edmunda Bojanowskiego",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Parafia Maryi Królowej, Archidiecezja Poznańska",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Parafia Matki Bożej Królowej Polski / Duszpasterstwo Tradycji Łacińskiej",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Parafia Wniebowzięcia NMP — Duszpasterstwo Tradycji Łacińskiej",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Parish (celebrant unknown)",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Parish / Fr Gabriel Ertl (liturgical role not independently certified)",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Père Avril",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Personalpfarrei Maria Immaculata",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Pfarrei St. Peter und Paul Bad Camberg / Pro Missa Tridentina",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Poor Clare Colettine nuns",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Pro Missa Tridentina directory",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Pro Missa Tridentina, Bistum Limburg",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Religiosas Ecuménicas de Guadalupe",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Religious",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Santuario Nostra Signora di Pontelungo / Diocese of Albenga-Imperia",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Schola Veritatis",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Servi Jesu et Mariae",
+        "venue_source_rows": 1,
+        "candidate_group_code": "SJM",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Siervas de Jesús Sacerdote y del Corazón de María",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Sisters of Saint Benedict Center",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Slaves of Immaculate Heart of Mary",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Society of the Missionaries of Divine Mercy",
+        "venue_source_rows": 1,
+        "candidate_group_code": "SMMD",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "Sœurs de la Fraternité Saint-Pie X",
+        "venue_source_rows": 1,
+        "candidate_group_code": "SSPX_SISTERS",
+        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+      },
+      {
+        "source_affiliation": "SSPX FRANCE AND RELATED",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "SSPX Marian Corps / Resistance",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "SSVM / diocesan host",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Suore Consolatrici del Sacro Cuore di Gesù",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Traditional Benedictine; liturgical books unverified",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Traditional Mass Philippines independent clergy",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Tradycja.org Upper Silesia Latin Mass schedule; parish affiliation stated",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "ASSOCIATION_ONLY_NOT_OPERATOR"
+      },
+      {
+        "source_affiliation": "Unconfirmed",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "UNRESOLVED_SOURCE_LABEL"
+      },
+      {
+        "source_affiliation": "Vereinigung St Nikolaus von der Flüe",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Wallfahrt Maria Vesperbild / Bistum Augsburg",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      },
+      {
+        "source_affiliation": "Wallfahrtsgemeinde St. Marien Kevelaer",
+        "venue_source_rows": 1,
+        "candidate_group_code": null,
+        "disposition": "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW"
+      }
+    ]
+  }
 }
