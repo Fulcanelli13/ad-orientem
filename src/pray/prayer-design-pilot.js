@@ -355,6 +355,13 @@ function installStyles(){
     "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow .aoFolioIncarnationIcon{width:16px;height:16px}",
     "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardScroll .aoF04InlineBow{flex-shrink:0}",
     "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow:not(.is-active){display:none!important}",
+    "/* F04 grouped prayer: role and ℣/℟ sit in a compact, single-row margin grid. */",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoAngelusDialogueLine{display:grid!important;grid-template-columns:38px 23px minmax(0,1fr)!important;grid-template-rows:auto;column-gap:6px!important;row-gap:0!important;align-items:start!important;padding:7px 0!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoF04VoiceRole{grid-column:1;grid-row:1;flex:none!important;width:auto!important;min-width:0;font:700 9px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.02em!important;margin:3px 0 0!important;white-space:nowrap}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoAngelusDialogueLine>.ao-liturgical-speaker{grid-column:2;grid-row:1;flex:none!important;margin:0}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoAngelusDialogueLine>span:last-child{grid-column:3;grid-row:1;min-width:0}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop.active{background:transparent!important;box-shadow:none!important;border:0!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop:focus-visible{outline:2px solid var(--f04-accent)!important;outline-offset:-4px}",
   ].join("\n");
   const style=document.createElement("style");style.id="ao-prayer-design-pilot-css";style.textContent=css;document.head.appendChild(style);
 }
