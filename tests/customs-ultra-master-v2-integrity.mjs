@@ -935,4 +935,70 @@ assert.equal(singleWorkingIndex.guard.merges_approved,0);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
+
+// Indulgence programme: 4 general + 33 numbered concessions, specific exact-work crosswalk,
+// and later papal decrees are distinct grants, never automatic customary rites.
+const indulgenceV2=get("customs-ultra-master-v2-1999-33-concessions-and-2026-exact-work-routes.v1.json");
+assert.equal(indulgenceV2.schema,"AO_CUSTOMS_INDULGENCES_NORMATIVE_GRANT_TO_WORK_CROSSWALK_V1");
+assert.equal(indulgenceV2.general_concessions.length,4);
+assert.deepEqual(indulgenceV2.general_concessions.map(x=>x.general_concession),["I","II","III","IV"]);
+assert.equal(indulgenceV2.particular_concessions.length,33);
+const validWorkGrantIDs=new Set();
+for(let n=1;n<=33;n++){
+ const c=indulgenceV2.particular_concessions[n-1],id="ENCH1999-"+String(n).padStart(2,"0");
+ assert.equal(c.grant_id,id);
+ assert.equal(c.concession_number,n);
+ assert.ok(c.title_en.length>5 && c.title_fr.length>5);
+ assert.equal(c.source_url,indulgenceV2.authority.enchiridion_1999_latin);
+ assert.equal(c.subclauses_must_be_read_for_exact_work,true);
+ validWorkGrantIDs.add(id);
+}
+for(const g of indulgenceV2.general_concessions)validWorkGrantIDs.add(g.grant_id);
+assert.equal(indulgenceV2.additional_active_decrees.length,2);
+for(const special of indulgenceV2.additional_active_decrees){
+ assert.ok(special.source_url.startsWith("https://www.vatican.va/"));
+ assert.equal(special.source_primary_decree_verified,true);
+ assert.equal(special.public_release_review_pending,true);
+ validWorkGrantIDs.add(special.grant_id);
+}
+const francis=indulgenceV2.additional_active_decrees.find(x=>x.grant_id==="AP-2026-FRANCIS-YEAR");
+assert.equal(francis.effective_from,"2026-01-10");
+assert.equal(francis.effective_through,"2027-01-10");
+assert.equal(francis.site_designation_requires_individual_validation,true);
+assert.ok(indulgenceV2.additional_active_decrees.some(x=>x.grant_id==="AP-2002-DIVINE-MERCY"));
+const works=indulgenceV2.exact_work_routes;
+assert.equal(works.length,31);
+assert.equal(indulgenceV2.counts.work_routes,31);
+assert.equal(new Set(works.map(x=>x.work_key)).size,31);
+assert.equal(works.filter(x=>x.customs_owner_id).length,14);
+for(const w of works){
+ assert.ok(validWorkGrantIDs.has(w.normative_grant_id),"Unknown normative indulgence "+w.normative_grant_id);
+ assert.ok(w.title_en.length>6 && w.title_fr.length>6);
+ assert.ok(w.qualifying_work_and_condition_en.length>35);
+ assert.ok(w.explicit_non_equivalence.length>18);
+ assert.ok(w.proposed_surfaces.length>0);
+ assert.equal(w.published_in_app,false);
+ assert.equal(w.human_app_editorial_approval,false);
+ if(w.customs_owner_id){
+  assert.ok(mids.has(w.customs_owner_id),"Unregistered Customs owner "+w.customs_owner_id);
+  assert.equal(w.link_status,"WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER");
+ }
+}
+assert.equal(works.find(x=>x.work_key==="AO-IND-WORK-031").normative_grant_id,"AP-2026-FRANCIS-YEAR");
+assert.equal(indulgenceV2.counts.general_concessions,4);
+assert.equal(indulgenceV2.counts.particular_concessions,33);
+assert.equal(indulgenceV2.counts.work_routes_with_existing_custom_owner_id,14);
+assert.equal(indulgenceV2.counts.separate_primary_decrees,2);
+assert.equal(indulgenceV2.publication_contract.individual_published_customs_unchanged,36);
+assert.equal(indulgenceV2.publication_contract.no_automatic_custom_wide_indulgence,true);
+assert.equal(indulgenceV2.publication_contract.exact_prayer_text_or_place_must_be_reconciled,true);
+assert.equal(indulgenceV2.publication_contract.editorial_liturgical_legal_signoff_required_for_app,true);
+assert.equal(indulgenceV2.publication_contract.calendar_runtime_changed,false);
+assert.equal(indulgenceV2.publication_contract.new_indulgence_assertions_in_runtime,0);
+assert.equal(indulgenceV2.counts.new_customs_published,0);
+assert.equal(indulgenceV2.counts.new_indulgence_runtime_claims,0);
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
