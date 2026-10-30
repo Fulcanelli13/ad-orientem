@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+// Retain the existing Schola test command; include session observation gates.
+import "./reader-schola-performance-ledger.mjs";
 import {readFileSync} from "node:fs";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
  nextScholaMusicEvent} from "../src/mass/reader-schola-event-timeline.js";
@@ -157,7 +159,9 @@ assert.equal(nextScholaMusicEvent(plan,cards.at(-1).sectionId),null);
 const ui=read("src/mass/reader-dom.js"),native=read("src/mass/reader-native-preview.js");
 assert.match(ui,/data-role="schola-upcoming"/);
 assert.match(ui,/nextScholaMusicEvent\(itinerary,current\?\.id\)/);
-assert.match(native,/scholaMusicItinerary:\(\)=>applyScholaLocalProgramme\(buildScholaMusicItinerary/);
+assert.match(native,/scholaMusicItinerary:\(\)=>scholaPerformance\.project\(applyScholaLocalProgramme\(buildScholaMusicItinerary/);
+assert.match(native,/onScholaPerformanceChange:change=>/);
+assert.match(native,/createScholaPerformanceLedger\(\)/);
 assert.match(native,/onScholaLocalProgrammeChange:change=>/);
 assert.doesNotMatch(ui,/onScholaAdvance\?\.\(nextScholaMusicEvent/);
 assert.match(ui,/item\.musicWindow\?\.status==="SOURCE_ANCHORS_UNVERIFIED"/);

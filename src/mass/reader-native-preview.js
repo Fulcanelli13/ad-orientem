@@ -14,6 +14,7 @@ import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom
 import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
 import {projectNativeRiteMusicItinerary} from "./reader-schola-special-rite-itinerary.js";
 import {readScholaLocalProgramme, updateScholaLocalProgramme, applyScholaLocalProgramme} from "./reader-schola-local-programme.js";
+import {createScholaPerformanceLedger} from "./reader-schola-performance-ledger.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
 import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
 import { loadReaderCueRegistries } from "./reader-cue-state.js";
@@ -1365,6 +1366,9 @@ export async function mountNativeReaderPreview({
   let modeSwitchCueLock=null;
   let scholaPinnedByCatchup=false;
   let selectedScholaEvent=null;
+  // Per-Mass volatile observations; never inherit them from parish profiles,
+  // earlier Masses, source cues, an animation timer or priest-card movement.
+  const scholaPerformance=createScholaPerformanceLedger();
   let stopModeSwitchCueLock=()=>{};
   let enteredCanonicalCueSequence=false;
   // Explicit external observation only; neither scroll focus nor Schola audio
@@ -2950,7 +2954,7 @@ export async function mountNativeReaderPreview({
       }
       queue();
     },
-    scholaMusicItinerary:()=>applyScholaLocalProgramme(buildScholaMusicItinerary({
+    scholaMusicItinerary:()=>scholaPerformance.project(applyScholaLocalProgramme(buildScholaMusicItinerary({
       // An omitted Gloria, Credo, Requiem blessing, or optional Confiteor
       // must not survive as a navigable music event for this Mass.
       cards:readerModel?.cards.filter(visibleCardAllowed),
@@ -2958,7 +2962,20 @@ export async function mountNativeReaderPreview({
       resolvedMass:prepared.session.resolvedMass,
       tracks:ready.scholaState?.trackIds??[],
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
-    }),scholaLocalProgramme),
+    }),scholaLocalProgramme),{selectedEventId:selectedScholaEvent?.id??null}),
+    onScholaPerformanceChange:change=>{
+      // Only an explicit user action may write an observed music status.
+      const itinerary=applyScholaLocalProgramme(buildScholaMusicItinerary({
+        cards:readerModel?.cards.filter(visibleCardAllowed),
+        form:prepared.session.resolvedMass.form,
+        resolvedMass:prepared.session.resolvedMass,
+        tracks:ready.scholaState?.trackIds??[],
+        sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
+      }),scholaLocalProgramme);
+      const result=scholaPerformance.change(itinerary,change);
+      if(result.ok)queue();
+      return result;
+    },
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
@@ -3025,7 +3042,24 @@ export async function mountNativeReaderPreview({
         (card.blocks??[]).some(block=>block.blockId==="AO.SM.B053")).at(-1);
       if(!lastChalice || Number(current?.sequence)<=Number(lastChalice.sequence))
         return ready.scholaState.project();
+      const before=ready.scholaState.project?.();
+      if(before?.trackId!=="SANCTUS_BENEDICTUS" || !before?.benedictusHold)
+        return before;
       const value=ready.scholaState.releaseBenedictus?.();
+      // The release is the user's independent "I hear the Benedictus"
+      // action, not a deduction from the displayed Chalice card.
+      if(value?.benedictusHold===false){
+        const sourceItinerary=applyScholaLocalProgramme(buildScholaMusicItinerary({
+          cards:readerModel?.cards.filter(visibleCardAllowed),
+          form:prepared.session.resolvedMass.form,
+          resolvedMass:prepared.session.resolvedMass,
+          tracks:ready.scholaState?.trackIds??[],
+          sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
+        }),scholaLocalProgramme);
+        scholaPerformance.change(sourceItinerary,{
+          eventId:"BENEDICTUS_AFTER_CHALICE",action:"START",manualRelease:true
+        });
+      }
       queue();return value;
     },
     onScholaPrevious:()=>{
@@ -3404,6 +3438,13 @@ export async function mountNativeReaderPreview({
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
     getScholaState:()=>ready.scholaState.project(),
     getSelectedScholaEvent:()=>selectedScholaEvent,
+    getScholaPerformance:()=>scholaPerformance.project(applyScholaLocalProgramme(buildScholaMusicItinerary({
+      cards:readerModel?.cards.filter(visibleCardAllowed),
+      form:prepared.session.resolvedMass.form,
+      resolvedMass:prepared.session.resolvedMass,
+      tracks:ready.scholaState?.trackIds??[],
+      sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
+    }),scholaLocalProgramme)),
     getTransientState:()=>activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null),
     nextSchola:()=>{const value=ready.scholaState.next();queue();return value},
     previousSchola:()=>{const value=ready.scholaState.previous();queue();return value},
