@@ -81,8 +81,8 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={})
   '<div class="aoTodayV2Zone aoTodayV2PrayNow"><button type="button" class="aoH4Prayer" '+attrs+'><span class="aoH4PrayerGlyph" aria-hidden="true">✝</span><span class="aoH4PrayerText"><span class="aoH4Eyebrow">'+esc(nextRole)+(due?' · '+esc(due):'')+'</span><strong>'+esc(prayerTitle)+'</strong><small>'+esc(prayerCaption)+'</small></span><span aria-hidden="true">›</span></button>'+
   '<div class="aoH4Chips aoTodayV2PrayerShortcuts"><button '+rosaryAttr+' type="button">'+esc(say("Rosary","Rosaire"))+(rosaryRule?'<span class="aoH4Mine">'+esc(say("MY RULE","MA RÈGLE"))+'</span>':'')+'</button><button data-home-cu-route="pray.confession" type="button">'+esc(say("Confession","Confession"))+'</button><button data-home-cu-route="pray.adoration" type="button">'+esc(say("Adoration","Adoration"))+'</button></div></div></section>'+
   '<section class="aoTodayV2CalendarGlance"><div class="aoH4SectionHead"><h2>'+esc(say("This week","Cette semaine"))+'</h2></div><div class="aoH4Upcoming aoTodayV2GlanceEvents">'+upcoming+custom+'</div></section>'+
+  '<section class="aoH4DiscoveryStandalone" aria-label="'+esc(say("Did you know?","Le saviez-vous ?"))+'">'+homeDidYouKnowMarkup(vm.language)+'</section>'+
   '<div class="aoTodayV2Below" data-ao-home-enricher-owner="'+HOME_ENRICHERS_VERSION+'"><section class="aoTodayV2ReadReflect"><div class="aoH4SectionHead"><h2>'+esc(say("Read","Lire"))+'</h2></div><div class="aoH4Read">'+
   '<button type="button" data-action="gospel"><span><strong>'+esc(say("Gospel of the Mass","Évangile de la messe"))+'</strong><small>'+esc(gospelSub)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>'+
-  homeDidYouKnowMarkup(vm.language)+
   '</div></section></div><div style="height:32px"></div></div></main>';
 }
