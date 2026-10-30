@@ -1,0 +1,63 @@
+name: Sacred Art Commons 305 exact file identity audit (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-commons-305-source-files-20261030.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-commons-305-identity-audit
+  cancel-in-progress: false
+
+jobs:
+  audit-frozen-305-commons-filepages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify frozen 2455 editorial decisions and 479 museum source checks
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Query Wikimedia Commons by numeric page ID for all 305 frozen source files
+        run: node scripts/art/reconcile-commons-305-files-20261030.mjs
+      - name: Preserve exact source-file metadata with no identity or rights promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const p='data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v1.json';
+          const r=JSON.parse(readFileSync(p,'utf8')),c=r.counts;
+          if(r.rows.length!==305 || c.acceptedUnlinkedCommonsSourceCards!==305 ||
+            c.frozenImports!==299 || c.frozenImportsWithCorrections!==6 ||
+            c.officialCurrentFilePageAndMediaVerified+c.deletedOrMissingFilePages+
+            c.officialPageHasNoCurrentFile+c.officialApiRequestUnresolved+c.otherUnresolved!==305 ||
+            r.rows.some(x=>x.originalCanonical383IdentityStatus!=='NO_CONFIRMED_IDENTITY' ||
+              x.uniquePhysicalWorkCertified!==false ||
+              x.photographQualityCertified!==false ||
+              x.imageRightsCertified!==false ||
+              x.canonical383LinkNew!==false || x.productionMutation!==false) ||
+            r.release.frozenUserDecisionsUnmodified!==true ||
+            r.release.canonical383Protected!==true ||
+            r.release.productionMutation!==false ||
+            c.canonical383LinkedNew!==0 || c.photoRightsClearedForApp!==0 ||
+            c.productionImports!==0)throw Error('Commons 305 evidence violated frozen-selection/rights/release gate');
+          console.log('Commons 305 summary:',JSON.stringify(c,null,2));
+          NODE
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): record Commons 305 official file identity and metadata audit [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
