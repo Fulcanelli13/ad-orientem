@@ -19,9 +19,8 @@ export const TODAY_H4_CSS=`
 .aoTodayH4 .dateRail.aoH4Week .dayCell b{font:500 17px/1 var(--h4-serif)}
 .aoTodayH4 .dateRail.aoH4Week .dayCell.selected{border-color:var(--h4-accent);background:var(--h4-surface)}
 .aoTodayH4 .dateRail.aoH4Week .dayCell.today:not(.selected) b{text-decoration:underline;text-decoration-color:var(--h4-gold);text-underline-offset:4px}
-.aoTodayH4 .dateRail.aoH4Week .aoWeekColour{display:block!important;width:16px!important;height:4px!important;border-radius:3px;background:var(--ao-liturgical-color,var(--h4-muted));opacity:.5}
-.aoTodayH4 .dateRail.aoH4Week .dayCell:not(.selected) .aoWeekColour{background:repeating-linear-gradient(90deg,var(--h4-muted) 0 3px,transparent 3px 6px);opacity:.45}
-.aoTodayH4 .dateRail.aoH4Week .dayCell.selected .aoWeekColour{background:var(--liturgical,var(--h4-accent));opacity:1}
+.aoTodayH4 .dateRail.aoH4Week .aoWeekColour{display:block!important;width:16px!important;height:4px!important;border-radius:3px;background:repeating-linear-gradient(90deg,var(--h4-muted) 0 3px,transparent 3px 6px)!important;opacity:.3}
+.aoTodayH4 .dateRail.aoH4Week .dayCell .aoWeekColour[data-verified-colour]{background:var(--ao-h4-day-colour)!important;opacity:1}
 .aoTodayH4 .aoH4Door{position:relative;margin:12px var(--h4-gap) 0;border:1px solid var(--h4-line);border-radius:22px;background:var(--h4-surface);overflow:hidden}
 .aoTodayH4 .aoH4Door .aoTodayV2Art{position:relative;width:100%;height:auto;max-height:none;min-height:0;margin:0;overflow:hidden;border:0;border-radius:0}
 .aoTodayH4 .aoH4Door .aoTodayV2ArtSource{width:100%;aspect-ratio:16/10;min-height:0;position:relative;overflow:hidden}
