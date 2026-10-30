@@ -3025,7 +3025,13 @@ export function createReaderDomAdapter({
             field.hidden=indexed;
           }
         }
-        if(field&&field.value!==(selectedPlan.ordinarySettings?.[id]??""))
+        // The Schola ticker or another local music change can repaint while
+        // a custom Ordinary title is still being typed. Do not overwrite the
+        // focused draft with the previously persisted value before change/blur
+        // commits it; profile switching moves focus off the input, so the
+        // selected profile's stored title still replaces the field normally.
+        if(field&&field!==field.ownerDocument.activeElement&&
+           field.value!==(selectedPlan.ordinarySettings?.[id]??""))
           field.value=selectedPlan.ordinarySettings?.[id]??"";
       }
       const parish=planRoot.querySelector("[data-schola-local-parish]");
