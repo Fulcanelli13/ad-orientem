@@ -23,13 +23,15 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
   LITTLE_CROWN_B30_BEADS.slice(start,end).map(bead).join('')+'</div></section>';
  const f07Band=f07Active?f07Render(position,{french,interactiveBeads:
   LITTLE_CROWN_B30_BEADS.map(x=>bead(x,true)).join('')}):"";
- const tools=f07Active?
-  '<div class="aoF07LittleCrownTools"><small>'+esc(L("THE HOLY CHILDHOOD · 15 BEADS","SAINTE ENFANCE · 15 GRAINS"))+'</small>'+
+ // The Aa control belongs to the single source prayer card, not to a
+ // second 30px toolbar above the 15-bead circle. This is especially important
+ // at 320x568, where both circle and first prayer must be on screen.
+ const f07LanguageMenu=f07Active?
   '<details class="aoF07LittleCrownLanguage"><summary aria-label="'+esc(L("Prayer language","Langue de la prière"))+'">Aa</summary>'+
   '<div class="aoF07LittleCrownLanguageOptions" role="group" aria-label="'+esc(L("Prayer language","Langue de la prière"))+'">'+
    ['en','fr','la'].map(code=>'<button type="button" data-p435930-crown-language="'+code+
     '" aria-pressed="'+String(langCode===code)+'">'+esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+
-  '</div></details></div>':"";
+  '</div></details>':"";
  const prev=f07Active?
   '<button class="aoF07LittleCrownPrevious" type="button" data-p435930-crown-prev aria-label="'+
    esc(L("Previous bead","Grain précédent"))+'" '+(position===0?'disabled':'')+'>‹</button>':
@@ -46,7 +48,7 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
  return head(L("Little Crown of the Infant Jesus","Petite Couronne de l’Enfant-Jésus"),
   L("Three Our Fathers · twelve Hail Marys","Trois Notre Père · douze Je vous salue Marie"))+
   '<main class="aoP435930Body aoLittleCrown" data-ao-little-crown-reader '+(f07Band?'data-ao-f07-variant="little-crown"':'')+'>'+
-  (f07Active?tools:
+  (f07Active?'':
   '<header class="aoLittleCrownIntro"><small>'+esc(L("THE HOLY CHILDHOOD · 15 BEADS","SAINTE ENFANCE · 15 GRAINS"))+
   '</small><h2>'+esc(step.heading)+'</h2><p>'+esc(L("Before every bead, recall the Incarnation and pray at your own pace.",
   "Avant chaque grain, rappelez-vous l’Incarnation et priez à votre rythme."))+'</p></header>'+
@@ -57,7 +59,7 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
 
   '<article class="aoLittleCrownPrayer" tabindex="0"><div class="aoLittleCrownPrayerTop"><small>'+
   esc((position+1)+' / 15 · '+(step.group==="holy-family"?L("Our Father","Notre Père"):L("Hail Mary","Je vous salue Marie")))+
-  '</small>'+(f07Active?'':latinToggle)+'</div><p class="aoLittleCrownAspiration" lang="'+esc(langCode)+'">'+esc(step.aspiration)+
+  '</small>'+(f07Active?f07LanguageMenu:latinToggle)+'</div><p class="aoLittleCrownAspiration" lang="'+esc(langCode)+'">'+esc(step.aspiration)+
   '</p><p class="aoLittleCrownPrayerText" lang="'+esc(langCode)+'">'+nl(step.prayerText)+'</p></article>'+
   '<footer class="aoLittleCrownActions">'+prev+
    (f07Active?'<output class="aoF07LittleCrownDockCount" aria-label="'+esc(L("Bead position","Position du grain"))+'">'+
