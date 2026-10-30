@@ -108,10 +108,17 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
 
  const stationsLocale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
+ const togglePrayerLanguage=async()=>{
+  const aa=page.locator("#aoPray435930 .aoP435930Head.aoPrayerBookHead > .aoPrayerBookMenu");
+  assert.equal(await aa.count(),1,"Prayer language must be located in the shared Aa menu");
+  if(!await aa.evaluate(el=>el.open))await aa.locator(":scope > summary").click();
+  assert.ok(await stationsLocale.isVisible(),"Language choice must be available after opening Aa");
+  await togglePrayerLanguage();
+ };
  assert.equal(await stationsLocale.count(),1,"Stations must share in-session EN/FR control");
  const englishStation=await page.locator("#aoPray435930 .aoDevoCardTitle").innerText();
  const englishMeditation=await page.locator("#aoPray435930 .aoP435930StationConsider p").innerText();
- await stationsLocale.click();
+ await togglePrayerLanguage();
  assert.equal((await stationsLocale.innerText()).trim(),"FR");
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
  assert.notEqual(await page.locator("#aoPray435930 .aoDevoCardTitle").innerText(),englishStation,
@@ -133,7 +140,7 @@ try{
   "Both parts of the Stations versicle/response must be legible: "+JSON.stringify(responseOpacity));
 
  await page.screenshot({path:resolve(captures,"02-stations-fr-language-390.png"),fullPage:false,animations:"disabled"});
- await stationsLocale.click();
+ await togglePrayerLanguage();
  assert.equal((await stationsLocale.innerText()).trim(),"EN");
 
  await page.screenshot({path:resolve(captures,"02-stations-dual-axis-390.png"),fullPage:false,animations:"disabled"});
