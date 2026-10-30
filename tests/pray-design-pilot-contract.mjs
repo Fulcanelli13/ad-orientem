@@ -154,3 +154,22 @@ assert.ok(heroJoin.artwork_identity_index.every(x=>x.publication_eligible===fals
 assert.ok(galleryDelta.artwork_candidate_index.every(x=>x.release_eligible===false));
 assert.equal(heroJoin.statistics.production_ready,0);
 assert.equal(galleryDelta.statistics.production_ready,0);
+
+// Nine-door static editorial shortlist, fail-closed photograph gates.
+
+const doorReviewHtml=readFileSync(new URL("../assets/editorial/prayer-nine-door-artwork-one-click-20261030.html",import.meta.url),"utf8");
+const doorReviewDataMatch=doorReviewHtml.match(/const data=(\[[^\n]+\]);\nconst groups=/);
+assert.ok(doorReviewDataMatch,"Nine-door review has embedded pinned data");
+const doorReviewRows=JSON.parse(doorReviewDataMatch[1]);
+assert.equal(doorReviewRows.length,25,"One visible candidate card per real slot × painting pair");
+assert.equal(new Set(doorReviewRows.map(x=>x.slot)).size,9,"All nine doors need an inspectable candidate");
+assert.equal(new Set(doorReviewRows.map(x=>x.slot+"::"+x.id)).size,25,"No duplicate candidate cards for the same slot");
+assert.ok(doorReviewRows.every(x=>x.image?.startsWith("https://")),"Never place an invented or missing preview on a card");
+assert.ok(doorReviewRows.every(x=>x.source?.startsWith("https://")),"Each card has a verifiable source page");
+assert.ok(doorReviewRows.every(x=>x.sha===null||/^[a-f0-9]{64}$/i.test(x.sha)),"Pinned original checksums must be valid or absent");
+assert.equal(doorReviewRows.filter(x=>x.archived).length,15,"Archived originals used for primary gallery proof");
+assert.ok(doorReviewHtml.includes('localStorage.setItem(KEY'),"Selections must persist locally");
+assert.ok(doorReviewHtml.includes('SCHEMA="AO_PRAY_NINE_DOOR_VISUAL_DECISIONS_V1"'),"Review export schema frozen");
+assert.ok(doorReviewHtml.includes('rightsFinalCleared:false,photoQualityFinalCleared:false,productionApproved:false'),"Never promote visual choices to publication automatically");
+assert.ok(doorReviewHtml.includes('if(state==="VISUAL_APPROVED"&&!ok.has(pair(x)))'),"Do not approve a failed image load");
+assert.ok(doorReviewHtml.includes('not a duplicate'),"Distinct painting adjudication remains available");
