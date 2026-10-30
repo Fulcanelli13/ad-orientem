@@ -48,6 +48,27 @@ const lavalRecord=relics.relics.find(x=>x.id==="relic:MU:jacques-desire-laval-sa
 assert.equal(lavalRecord.source_claim,"LOCATION_AND_VENERATION_ATTESTED");
 assert.equal(lavalRecord.authentication,"NOT_INDEPENDENTLY_CERTIFIED_BY_APP");
 assert.match(lavalRecord.source_url,/^https:\/\/dioceseportlouis\.org\//);
+const newSiteRelics=[
+  ["place:IE:st-peters-oliver-plunkett-drogheda","relic:IE:oliver-plunkett-head-drogheda","BODILY_FRAGMENT","www.saintpetersdrogheda.ie"],
+  ["place:GB:westminster-cathedral","relic:GB:john-southworth-westminster","BODILY_REMAINS","westminstercathedral.org.uk"],
+  ["place:IN:santhome-cathedral-basilica-chennai","relic:IN:thomas-santhome-mylapore","REPUTED_BODILY_REMAINS","santhomechurch.org"],
+  ["place:IT:pompei-rosary-shrine","relic:IT:bartolo-longo-pompei","BODILY_REMAINS","www.santuario.it"]
+];
+for(const [placeId,relicId,kind,host] of newSiteRelics){
+ const record=relics.relics.find(r=>r.id===relicId);
+ assert.ok(record&&record.place_id===placeId,"Relic must use exactly the custodian's canonical Place");
+ assert.equal(record.relic_kind,kind);
+ assert.equal(record.authentication,"NOT_INDEPENDENTLY_CERTIFIED_BY_APP");
+ assert.equal(record.source_claim,"LOCATION_AND_VENERATION_ATTESTED");
+ assert.equal(new URL(record.source_url).hostname,host);
+ assert.ok(record.title_en&&record.title_fr&&record.summary_en&&record.summary_fr);
+ const page=profile(placeId);
+ assert.ok(page?.sacred_treasures.some(r=>r.id===relicId),
+   "Place profile must show the sourced relic without new editorial approval");
+ const english=render(placeId);
+ assert.ok(english.includes('data-sacred-object-id="'+relicId+'"'),
+   "Relic object must be present on the existing Place card");
+}
 const notre=profile("place:FR:notre-dame-paris");
 const notreHtml=render(notre.place_id);
 assert.equal(notre.sacred_treasures.length,3);
