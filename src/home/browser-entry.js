@@ -486,6 +486,25 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("find",{trigger:find,routeId:"find"});
       return;
     }
+    const dyk=target?.closest?.("[data-home-dyk-open]");
+    if(dyk){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const entryId=dyk.dataset?.homeDykEntry;
+      if(!/^G\d{3}$/.test(String(entryId??""))||dyk.disabled){
+        showRouteError("home.did-you-know",dyk);return;
+      }
+      // The source-owning bilingual Glossary opens the exact cited concept;
+      // no generic Learn hub and no independent Home fact detail.
+      void Promise.resolve().then(()=>win?.AO_GLOSSARY_V1?.openEntry?.(entryId))
+        .then(opened=>{
+          if(opened===true){clearRouteError();return;}
+          showRouteError("home.did-you-know",dyk);
+        }).catch(error=>{
+          try{win?.console?.error?.("Did You Know source unavailable",error)}catch{}
+          showRouteError("home.did-you-know",dyk);
+        });
+      return;
+    }
     const daily=target?.closest?.("[data-home-daily-catechism]");
     if(daily){
       event.preventDefault?.();
