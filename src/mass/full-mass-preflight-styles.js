@@ -180,6 +180,12 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-folio-essential-notice]:empty{display:none!important}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1ActualIntroit{margin:8px 0 0;font:italic 16px/1.4 var(--ao-font-body,Georgia,serif);color:var(--text,#eee);overflow-wrap:anywhere}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1ActualIntroit[hidden]{display:none!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass{grid-column:1/-1;min-width:0;border:1px solid var(--border,rgba(238,238,238,.18));border-radius:10px;padding:0 10px;background:var(--surface-1,#101820)}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass>summary{display:flex;align-items:center;min-height:48px;cursor:pointer;font:600 14px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text,#eee);list-style:none}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass>summary::-webkit-details-marker{display:none}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass>summary::after{content:'›';margin-left:auto;color:var(--liturgical);font:22px Georgia,serif}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass[open]>summary::after{transform:rotate(90deg)}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1OtherMass [data-full-mass-category]{width:100%;margin:5px 0;min-width:0;white-space:normal}",
   ].join("\n");
   document.head.appendChild(el);
 }
