@@ -110,10 +110,27 @@ const CSS = `
    over large decorative chrome, without removing any navigation or beads. */
 @media(max-width:399px){
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .lab-view-head{
-  padding-block:7px!important;min-height:0!important
+  min-height:68px!important;max-height:68px!important;height:68px!important;
+  box-sizing:border-box!important;padding:5px 10px!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .lab-view-head h1,
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .lab-view-head h2{
+  font-size:clamp(20px,5.5vw,24px)!important;
+  line-height:1.12!important;margin-block:2px!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .lab-view-head .eyebrow{
+  font-size:9px!important;line-height:1.1!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryFaithfulRail{
+  margin-block:2px!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveOptions{
+  margin-block:2px!important
  }
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryNamedTimeline{
-  margin-block:3px!important;min-height:0!important
+  margin-block:2px!important;min-height:0!important;
+  height:48px!important;max-height:48px!important;
+  padding-block:0!important;row-gap:1px!important
  }
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard{
   padding:10px 12px 9px!important
