@@ -27,7 +27,10 @@ export function h4Enabled(win=globalThis){
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
   const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"><span>'+esc(d.day)+'</span><b>'+esc(d.number)+'</b><i class="aoWeekColour" data-home-week-colour="'+esc(d.date)+'" aria-hidden="true"></i></button>').join("");
-  const properIdentity=vm.massFormularyName?'<p class="aoH4Formulary">'+esc(vm.massFormularyName)+'</p>':"";
+  // Keep actual formulary identity ahead of the Calendar's attested weekday context.
+  // The latter is never mislabelled as an appointed Sunday Mass.
+  const subtitle=vm.massFormularyName||vm.contextualObservanceName;
+  const properIdentity=subtitle?'<p class="aoH4Formulary">'+esc(subtitle)+'</p>':"";
   const introit=vm.massIntroit?'<p class="aoH4Introit" lang="la">'+esc(vm.massIntroit)+'</p>':"";
   const formName=({
     LOW:say("Low Mass","Messe basse"),
