@@ -85,6 +85,22 @@ Within this cohort **76 action/owner proposals** span **56 different existing re
 
 This pass **did not reread original printed folios, inspect new independent-source witnesses, adjudicate all 219 distinct candidates, or promote an identity relation to an approved merge**. The original work's categories are retained. Existing 36 published Customs, indulgence work grants and Calendar remain frozen. The next 200–300-record identity pass should prioritize historically distinct action candidates from a **different source family** (e.g. Pitrè and local regional inventories) and compare against existing Weiser owner clusters in the same index, rather than repeat the 250 Weiser entries or open another separate ledger.
 
+## 30 October — 250 Pitrè and regional-source identity comparisons
+
+The **second single-index bulk review** is recorded under `REGIONAL-PITRE-250-20261030` inside the [same working index](./customs-ultra-master-v2-single-working-relationship-index-20261030.v1.json), not a separate duplicate ledger.
+
+**Exactly 250 previously unreviewed evidence-only source observations**, counted once: **100** Pitrè 1900 original-publication evidence; **50** Pitrè Palermo retrospective; **50** modern Caltanissetta/Enna Holy Week reports; **25** Berga Patum components; and **25** Alenquer Epiphany painting/singing observations. Existing 222 prior caseboard/owner sources, 50 previously reviewed lexical suggestions and 250 Weiser-bulk observations are explicitly excluded.
+
+The 250 reported actions are now distributed into **24 named local *research contexts*** (NOT 24 approved customs). Examples include St Rosalia's Palermo festino (28 action/context rows), the paired Saints Cosmas and Damian festival (28), Geraci Siculo's June shepherds/third-Sunday Blessed Sacrament complex (16), Caltanissetta Holy Week (28), Enna Holy Week (22), Berga's Corpus-derived Patum (25) and Alenquer's Epiphany `Pintar e Cantar os Reis` (25). Related performances, processional timing, roles, costume, votive tokens, charitable gestures, foods and civic details are retained as components rather than additional custom IDs.
+
+**21 explicit existing-owner/action comparisons** have written research reasons, including: Pitrè's displayed votive tablets vs existing `DEV-009` ex-votos; Gangi Holy Spirit pilgrimage vs `DEV-006`; Enna Holy Thursday visits to altar-of-repose churches vs `HTHU-001`; Palermo's knee-bending as the Blessed Sacrament passes; and an explicit **no-merge** between Alenquer painted house symbols and the Epiphany **blessed-chalk** practice. Berga Patum is a Corpus-derived civic/festival performance and cannot be conflated with Catholic liturgical Mass or flower carpets. The precise local event/rite distinction remains a hard gate.
+
+Bulk role classification of these **source observations**, not distinct traditions: **68** public-procession/sacred-stage components; **54** locally reported domestic/devotional actions; **48** programme/material components; **59** historical civic/period context; **11** ministerial/rite authority holds; **10** reported folk beliefs not endorsed. Some original Pitrè page evidence had already been checked in earlier source-work; **zero new original pages were verified in this particular identity pass**.
+
+**Updated overall identity-comparison coverage: 772 / 3,295 = 23.4%.** That consists of 222 prior source/owner/caseboard review records, 50 lexical-description adjudications, 250 Weiser source-action decisions and 250 Pitrè/regional reviews, all disjoint. **2,523 observations** have not yet had identity-comparison work. All 3,703 source observations remain retained, and 465 registry rows still consist of 57 master + 408 provisional research groups. Neither the **219 potentially distinct** provisional groups nor **24 local contexts** can be promoted to a final number of distinct customs without actual identity certification.
+
+**Publication, merger and indulgence approvals: zero new.** The 36 published Customs and Calendar remain unchanged. Next pass should focus on high-yield *cross-source* regional comparisons rather than starting a new master, with source independence and 1962 liturgical authority tested where material.
+
 ## Existing research is not being discarded
 
 The authoritative corpus remains at:
