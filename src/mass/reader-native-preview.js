@@ -1391,7 +1391,14 @@ export async function mountNativeReaderPreview({
   try{customStorage=win.localStorage??null;}catch{}
   let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
-  let scholaLocalProgramme=readScholaLocalProgramme(customStorage);
+  let scholaLocalProgramme=readScholaLocalProgramme(customStorage,customaryPrefs.sanctusPerformance);
+  // Selecting a saved parish profile changes a personal Schola setting,
+  // never the text, priest cues or liturgical form.
+  if(scholaLocalProgramme.sanctusPerformance!==customaryPrefs.sanctusPerformance){
+    customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,
+      {kind:"sanctusPerformance",value:scholaLocalProgramme.sanctusPerformance},customStorage);
+    ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
+  }
   let riteChoice=null;
   let palmGospelCueVisible=null;
 
@@ -2936,6 +2943,11 @@ export async function mountNativeReaderPreview({
     scholaLocalProgramme:()=>scholaLocalProgramme,
     onScholaLocalProgrammeChange:change=>{
       scholaLocalProgramme=updateScholaLocalProgramme(scholaLocalProgramme,change,customStorage);
+      if(["profileSelect","profileCreate","profileDelete","sanctusPerformance"].includes(change?.kind)){
+        customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,
+          {kind:"sanctusPerformance",value:scholaLocalProgramme.sanctusPerformance},customStorage);
+        ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
+      }
       queue();
     },
     scholaMusicItinerary:()=>applyScholaLocalProgramme(buildScholaMusicItinerary({
@@ -2951,6 +2963,10 @@ export async function mountNativeReaderPreview({
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
       if(change?.kind==="sanctusPerformance"){
+        // A setting changed through Mass preferences also belongs to the
+        // active named programme; older preferences remain readable.
+        scholaLocalProgramme=updateScholaLocalProgramme(scholaLocalProgramme,
+          {kind:"sanctusPerformance",value:customaryPrefs.sanctusPerformance},customStorage);
         ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
       }
       if(change?.kind==="secondConfiteor"){
