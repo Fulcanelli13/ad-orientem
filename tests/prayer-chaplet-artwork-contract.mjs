@@ -35,8 +35,8 @@ assert.equal(registry.slots.length,267);
 assert.equal(newApproved.approved.length,25);
 assert.equal(q2.counts.accepted_for_prayer,114);
 assert.equal(b611.decisions.length,107);
-assert.equal(overlay.inherited_reuse_edges.length,101);
-assert.equal(activeCross.length,89);
+assert.equal(overlay.inherited_reuse_edges.length,105);
+assert.equal(activeCross.length,93);
 assert.equal(quarantined.length,12);
 for(const w of activeCross)assert.ok(approvedIds.has(w.id),"Cross-module reuse without affirmative user decision: "+w.slot+"/"+w.id);
 for(const w of quarantined){assert.equal(w.eligible,false,"Quarantined edge unexpectedly eligible: "+w.slot);assert.ok(!approvedIds.has(w.id),"Approved work wrongly quarantined: "+w.id);}
@@ -63,7 +63,7 @@ for(const family of families){
   assert.equal(resolved.key,direct.key);
   assert.equal(resolved.publicationReady,false);
   assert.equal(resolved.assetUrl,null);
-  const explicit=row.works.filter(w=>w.eligible&&(affirm.has(w.editorial)||(w.editorial==="USER_APPROVED_CROSS_PRAYER_REUSE"&&approvedIds.has(w.id))));
+  const explicit=row.works.filter(w=>isEditorialArtworkPlacementApproved(w,{sourceArtIdApproved:approvedIds.has(w.id)}));
   if(explicit.length)counts[family.route].slotsWithApprovedStagePlacements++;
   else counts[family.route].stagesWithoutApprovedPlacement.push(item.id);
  }
