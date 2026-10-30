@@ -286,11 +286,28 @@ try{
     assert.equal(started.preflightVisible,false,viewport.width+"px H4 reopened the retired preflight");
     assert.equal(started.legacyReader,false,viewport.width+"px H4 opened a legacy Mass reader");
 
-    // M1 is a full app-shell destination, not a dismissible setup sheet.
-    // The old × is intentionally hidden; use the permanent Today tab.
-    await openSurface(page,"home",viewport.width);
-    await page.waitForFunction(()=>document.documentElement.dataset.aoM1MassRoot!=="true",
-      null,{timeout:5000});
+    // LIVE owns the screen and hides the global ribbon. Exit through R17's
+    // actual Home action, never through the deliberately hidden ribbon.
+    assert.equal(await visible(page,"#ao-global-ribbon"),false,
+      viewport.width+"px LIVE Mass must suppress the global ribbon");
+    const prompts=[];
+    const confirmLeave=async dialog=>{
+      prompts.push(dialog.message());
+      await dialog.accept();
+    };
+    page.on("dialog",confirmLeave);
+    await page.locator("#ao-r17-native-reader-preview [data-reader-home]").click();
+    const afterMass=page.locator("#ao-r17-native-reader-preview .aoReaderAfterMassChoice");
+    if(await afterMass.count()){
+      await afterMass.locator("[data-ao-return-home]").click();
+    }
+    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"&&
+      document.documentElement.dataset.aoM1MassRoot!=="true"&&
+      !document.getElementById("ao-r17-native-reader-preview"),null,{timeout:15000});
+    page.off("dialog",confirmLeave);
+    assert.equal(prompts.length,1,viewport.width+"px exiting LIVE Mass must ask once");
+    assert.match(prompts[0],/Mass is in progress\. Leave the Mass follower\?/,
+      viewport.width+"px LIVE Mass confirmation text changed");
     assert.equal(await visible(page,".homeScreen"),true,
       viewport.width+"px Today was not restored after leaving Mass");
 
