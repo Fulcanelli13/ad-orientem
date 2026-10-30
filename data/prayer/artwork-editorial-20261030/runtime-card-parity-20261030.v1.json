@@ -74,7 +74,12 @@
       81
     ],
     "rosary_step_generator_source_verified": true,
-    "rosary_hero_art_opening_closing_unverified": true
+    "rosary_hero_art_opening_closing_unverified": true,
+    "chaplet_editorial_covers_with_slot_contract": 5,
+    "chaplet_editorial_stages_with_slot_contract": 21,
+    "chaplet_live_bead_readers_verified": 0,
+    "verified_approved_cross_prayer_reuses": 93,
+    "quarantined_cross_prayer_reuses": 12
   },
   "runtime_stage_to_editorial_slot": {
     "benediction": [
@@ -893,7 +898,8 @@
     },
     {
       "route": "chaplets",
-      "note": "Five chaplet families have editorial pools but actual bead/player IDs and counts remain to be extracted from donor runtime"
+      "note": "Five chaplet families now have 26 nonvisual editorial stage/cover IDs and exact-positive approval safeguards; no actual bead/player runtime owner or complete bead count has been verified. Do not report 26 rendered cards.",
+      "status": "26_EDITORIAL_CONTRACT_SLOTS_RUNTIME_PLAYER_NOT_VERIFIED"
     },
     {
       "route": "pray.angelus",
@@ -1027,5 +1033,12 @@
     "stage_identity_rule": "Opening/conclusion have no mi, so inherit COV-pray.rosary; mystery introductions and decade prayers carry mi=0..4 and inherit STG-pray.rosary-02..16 or the five SEM-rosary luminous candidate pools.",
     "visual_caveat": "The donor hero-art decorator explicitly clears mystery background when mi is null, therefore no opening/closing hero is currently demonstrated. Even where mi exists, photo rights/quality and DOM visibility are unverified.",
     "source_status": "INSPECTED_BUNDLE_STEP_GENERATOR_NOT_BROWSER_RENDER_VERIFICATION"
+  },
+  "approval_quality_correction": {
+    "date": "2026-10-30",
+    "positive_permission": "Exact affirmative decision only, 93 active cross-prayer reuses",
+    "quarantine": "12 inferred cross-prayer placements derived from unapproved sources set eligible:false",
+    "locked_mnac_hero": "Seven Sorrows: approved user-final image with unresolved canonical ID, cannot publish without photo QA",
+    "new_verified_user_reuse_in_chaplets": 4
   }
 }
