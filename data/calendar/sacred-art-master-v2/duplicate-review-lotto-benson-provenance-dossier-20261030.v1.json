@@ -1,0 +1,130 @@
+{
+  "schema": "AO_SACRED_ART_LOTTO_BENSON_PHOTO_LINEAGE_AUDIT_V1",
+  "asOf": "2026-10-30",
+  "registrySnapshot": "71537a018e39e7",
+  "parentResearchPr": 2069,
+  "policy": {
+    "historicalEditorialApprovalsPreserved": true,
+    "exactArchivedFilesNotModified": true,
+    "artworkIdentitiesMerged": 0,
+    "approvedPhotosAutoSelected": 0,
+    "rightsCertifications": 0,
+    "pristinePhotoApprovals": 0,
+    "queue1Promotions": 0,
+    "mainUpdates": 0,
+    "costEur": 0
+  },
+  "cases": [
+    {
+      "groupId": "DUP-95a732a13abe77",
+      "artist": "Lorenzo Lotto",
+      "title": "Madonna del Rosario",
+      "recordIds": [
+        "HERO::fondazione-zeri:47818",
+        "PRAYER::rosary--primary"
+      ],
+      "physicalWorkIdentityEvidence": [
+        {
+          "url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario",
+          "fact": "Lotto Madonna del Rosario, 1539, Church of San Domenico in Cingoli, oil on canvas, 384 x 264 cm"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+          "fact": "Same painting; separate Sailko photo 1772 x 2652 px, CC BY 3.0 Unported attribution required"
+        }
+      ],
+      "recordedSelectedHeroArchive": {
+        "registry": "data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json",
+        "registryBlobSha": "dc7bb7ee2a81f396058e1b9f4dcaaf9358593334",
+        "repo": "Fulcanelli13/ad-orientem",
+        "gitRef": "research/prayer-wave1-photo-comparison-20261028",
+        "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg",
+        "sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "dimensions": [
+          1880,
+          2886
+        ],
+        "priorArchiveVerification": "REHASHED_20_MASTER_BATCH_CI_PASS",
+        "matteResearchOnly": "assets/staged/prayer-art-b5b-lotto-exterior-matte-20261028/matte-proofs.json",
+        "matteNotPristine": true
+      },
+      "previewAliasSource": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "assessment": "The two registry tiles share the same displayed Commons preview, but the editorially approved archived full master has a different pixel size and its own pinned SHA. Same displayed preview is not proof of same native photo. Retain source-alias disposition as provisional for original-file identity.",
+      "nextProofs": [
+        "Recheck pinned archive bytes and SHA without replacing them",
+        "Compare the Zeri catalog image, Sailko Commons photo and exact archived native visually and by source metadata",
+        "Confirm author, licence, attribution and use of the selected archived master",
+        "Preserve entire curved painting and all fifteen medallions for optional mask/crop review"
+      ],
+      "userChoiceNeededNow": false,
+      "queue1Ready": false
+    },
+    {
+      "groupId": "DUP-e0dcb905df5513",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "recordIds": [
+        "HERO::LOCAL-BENSON-SALVATOR",
+        "PRAYER::king--primary"
+      ],
+      "confirmedChristiesObjectPage": "https://www.christies.com/en/lot/lot-6238407",
+      "christiesDetails": "Ambrosius Benson Salvator Mundi, 3 December 2019, lot 4; oil on panel 91.4 x 86.1 cm",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+      "commonsOrigin": "Commons page cites Christie's 2019 lot 6238407; exact original file and artwork identity still require photo comparison against archived hero source",
+      "incorrectEditorialSource": {
+        "url": "https://www.christies.com/en/lot/lot-6223948",
+        "actualContents": "Italian School, 18th century, Ceiling painting with scenes of music, dance, singerie and jesting",
+        "inFile": "data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json",
+        "field": "primary_artworks[module_id=king].editorial_source_url",
+        "action": "CORRECTION_REQUIRED_IN_FOLLOWUP_METADATA_REPAIR; original historical approval preserved; no rewrite in this dossier"
+      },
+      "recordedSelectedHeroArchive": {
+        "repo": "Fulcanelli13/ad-orientem",
+        "gitRef": "research/module-hero-wave2-20261026",
+        "path": "assets/staged/module-hero-wave2/king.jpg",
+        "sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+        "dimensions": [
+          2987,
+          3200
+        ],
+        "priorArchiveVerification": "REHASHED_20_MASTER_BATCH_CI_PASS",
+        "knownIssue": "Visible non-art white margin; source-to-exact-archived-photograph provenance and correct depicted work not yet certified"
+      },
+      "assessment": "The Christie's source now maps to a real Benson painting and Commons cites that lot, but the hero registry's historical editorial lot link is demonstrably unrelated. Do not infer the archived hero photo is either displayed gallery photo without fingerprint/pixel comparison.",
+      "nextProofs": [
+        "Correct provenance metadata with an append-only historical correction record before a release; do not change the user artwork approval",
+        "Match both comparison images to correct Christie lot and the pinned hero JPEG, not merely artist/title",
+        "Obtain and document permissible exact-photo reuse rights, separately from painting public-domain status",
+        "Present both proven photographs for the remaining genuine user visual choice"
+      ],
+      "userChoiceNeededAfterSourceRepair": true,
+      "queue1Ready": false
+    }
+  ],
+  "sources": [
+    {
+      "kind": "GitHub",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/sacred-art-duplicate-gate-20261030/data/calendar/sacred-art-master-v2/duplicate-review-source-alias-reconciliation-20261030.v1.json"
+    },
+    {
+      "kind": "GitHub",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/sacred-art-duplicate-gate-20261030/data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json"
+    },
+    {
+      "kind": "external_original_work",
+      "url": "https://www.christies.com/en/lot/lot-6238407"
+    },
+    {
+      "kind": "external_wrong_lot",
+      "url": "https://www.christies.com/en/lot/lot-6223948"
+    },
+    {
+      "kind": "external_registry",
+      "url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario"
+    },
+    {
+      "kind": "external_commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg"
+    }
+  ]
+}
