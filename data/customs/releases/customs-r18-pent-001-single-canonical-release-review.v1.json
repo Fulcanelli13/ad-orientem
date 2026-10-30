@@ -23,7 +23,10 @@
     "eight_fields_en_fr_verified": true,
     "title_history_meaning_practice_caution_scope_cross_checked": true,
     "source_claim_bounded": true,
-    "photo_rights_not_in_scope": true
+    "photo_rights_not_in_scope": true,
+    "historical_tense_and_current_continuity_explicit": true,
+    "independent_regional_museum_source_crosscheck": true,
+    "edit_renders_title_en_fr_movable_without_scheduling": true
   },
   "release_gates": {
     "id_collision_check": "REQUIRED",
@@ -58,5 +61,74 @@
     "automatic_merge_allowed": false,
     "annual_local_event_allowed": false,
     "indulgences_allowed": false
+  },
+  "editorial_review_20261030": {
+    "status": "SOURCE_CLAIMS_CORROBORATED_EDITORIAL_COPY_REVISED_NOT_HUMAN_SIGNED",
+    "independent_institutional_crosscheck": {
+      "name": "Muzeum im. Jacka Malczewskiego w Radomiu",
+      "url": "https://www.muzeum-radom.pl/wydarzenia/zielone-swiatki-w-tradycji-ziemianskiej/3194",
+      "role": "Independent Polish regional museum confirms rural majenie, birch branches, homes, farmsteads and older agrarian folk beliefs; no current universal Catholic rite."
+    },
+    "primary_crosscheck": [
+      {
+        "name": "Polish State Forests — Zielone Świątki",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+        "supports": [
+          "historical houses and gates",
+          "sometimes churches",
+          "declining continuity",
+          "warnings about uncontrolled collection"
+        ]
+      },
+      {
+        "name": "Polish State Forests — Brzoza",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/brzoza-przytul-sie-do-bialej-pani",
+        "supports": [
+          "birch branches as Pentecost decorations",
+          "distinguish Corpus Christi decorations"
+        ]
+      }
+    ],
+    "claim_decisions": [
+      {
+        "claim": "Historical household and farmyard Pentecost greenery in Poland",
+        "decision": "CORROBORATED",
+        "notes": "Forestry agency and regional museum agree on the historic practice."
+      },
+      {
+        "claim": "Association with rural agrarian and springtime folklore",
+        "decision": "CORROBORATED_WITH_BOUNDARY",
+        "notes": "Historically associated with folk practices; no protection or magical efficacy endorsed."
+      },
+      {
+        "claim": "Modern continuity",
+        "decision": "VARIES_NOT_UNIVERSAL",
+        "notes": "Do not infer an event or established practice in each parish or town."
+      },
+      {
+        "claim": "1962 Roman rubric, universal blessing or required custom",
+        "decision": "EXCLUDED_NOT_ESTABLISHED",
+        "notes": "Historical home decoration, not Mass or Office rubrics."
+      },
+      {
+        "claim": "Church indulgence attached to decoration",
+        "decision": "EXCLUDED_NOT_ESTABLISHED",
+        "notes": "No validated grant or conditions."
+      },
+      {
+        "claim": "Environmental permission",
+        "decision": "RECOMMENDED_PRACTICE_NOT_HISTORICAL_RUBRIC",
+        "notes": "Do not encourage cutting young trees or collecting branches without permission."
+      }
+    ],
+    "final_copy_changes": "Explicit historical tense, named Zielone Świątki, independent museum support, distinction between Pentecost association and older folk beliefs, responsible collection, exact EN/FR parity.",
+    "reviewer_role": "Source-led editorial analyst review only. No claim that a human editor has signed the English, French or claims gates.",
+    "human_final_approval": {
+      "en": false,
+      "fr": false,
+      "claims": false
+    },
+    "no_scheduled_event": true,
+    "no_publication_before_approval": true
   }
 }
