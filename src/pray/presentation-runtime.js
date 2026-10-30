@@ -757,7 +757,10 @@ function myCustomsDoor(){
 }
 function renderPrayHome(){
  const families=prayFamilies();
- if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({head,L,esc,DATA,families,assetIcon});
+ if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({
+  head,L,esc,DATA,families,assetIcon,
+  resume:{completed:MONTFORT.completed.filter(day=>Number.isInteger(day)&&day>=1&&day<=33).length}
+ });
  const door=id=>prayFamilyDoor(id,families[id]);
  const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
  const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
