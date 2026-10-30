@@ -369,7 +369,7 @@ try{
       {state:"visible",timeout:20000});
     const dykId=await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]")
       .getAttribute("data-home-dyk-entry");
-    assert.match(dykId,/^G\\d{3}$/);
+    assert.match(dykId,/^G\d{3}$/);
     await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]").click();
     await h4.waitForFunction(id=>
       globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,
