@@ -2,9 +2,9 @@
   "schema": "AO_PRAYER_RESEARCH_AFTER_ALL_EXISTING_GALLERIES_V3",
   "counts": {
     "blueprint_image_slots": 267,
-    "covered_with_at_least_one_eligible_candidate": 266,
-    "with_any_defensible_candidate": 266,
-    "empty": 1,
+    "covered_with_at_least_one_eligible_candidate": 267,
+    "with_any_defensible_candidate": 267,
+    "empty": 0,
     "weak_only": 0,
     "below_minimum_after_pruning": 29,
     "pruned_weak_edges": 31,
@@ -12,16 +12,11 @@
     "user_accepted_later": 107,
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1561,
+    "artwork_edges_after_consolidation": 1661,
     "explicit_user_acceptances_never_auto_pruned": true
   },
-  "truth_note": "Source-title candidate coverage only, not image-rights or every actual live-card coverage",
-  "empty_scenes": [
-    {
-      "id": "STG-pray.benediction-03",
-      "label": "The blessing"
-    }
-  ],
+  "truth_note": "Source-title candidate coverage only, not image-rights or every actual live-card coverage; updated: after approved cross-prayer inheritance, 267/267 have editorial candidate records; Benoediction blessing is only a contextual inherited image (exact image still missing), Thérèse cover is research-only, no publication rights or runtime parity certified.",
+  "empty_scenes": [],
   "need_source_image_not_new_painting": [
     "COV-novena.st_therese"
   ],
@@ -418,5 +413,33 @@
       "title": "The Wedding at Cana \" \"",
       "origin": "BATCHES_06_11_USER_APPROVED"
     }
-  ]
+  ],
+  "counts_before_cross_prayer_inheritance": {
+    "blueprint_image_slots": 267,
+    "covered_with_at_least_one_eligible_candidate": 266,
+    "with_any_defensible_candidate": 266,
+    "empty": 1,
+    "weak_only": 0,
+    "below_minimum_after_pruning": 29,
+    "pruned_weak_edges": 31,
+    "user_accepted_first_five": 114,
+    "user_accepted_later": 107,
+    "locked_covers": 6,
+    "unresolved_semantic_edges": 16,
+    "artwork_edges_after_consolidation": 1561,
+    "explicit_user_acceptances_never_auto_pruned": true
+  },
+  "exact_scene_and_source_blockers": [
+    {
+      "id": "STG-pray.benediction-03",
+      "label": "The blessing",
+      "status": "EDITORIAL_CONTEXTUAL_INHERITANCE_NOT_AN_EXACT_BLESSING_PAINTING"
+    },
+    {
+      "id": "COV-novena.st_therese",
+      "label": "Saint Thérèse cover",
+      "status": "ARTWORK_REFERENCED_BUT_UNAPPROVED_SOURCE_RIGHTS_UNRESOLVED"
+    }
+  ],
+  "reconciled_overlay_file": "data/prayer/artwork-editorial-20261030/cross-prayer-inheritance-20261030.v1.json"
 }
