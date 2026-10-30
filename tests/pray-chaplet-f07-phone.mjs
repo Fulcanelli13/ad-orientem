@@ -44,6 +44,21 @@ try{
    const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
    await large.click();
    assert.equal(await crown.getAttribute("data-position"),"4");
+   const pilot=page.locator(base+'.aoMercyReader[data-ao-f07-chaplet="crown-v1"]');
+   assert.equal(await pilot.locator('.aoF07MercyChapterChips button').count(),7,
+    "Opening, five decades and Closing are one compact chapter rail");
+   assert.equal(await pilot.locator('.aoF07MercyDock output').innerText(),'5 / 62');
+   assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole').count(),2,
+    "Both source-owned parts must display ℣ / ℟ on large bead");
+   assert.match(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response').innerText(),/ALL/);
+   await pilot.locator('[data-p435930-mercy-recite="group"]').click();
+   assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRoles').getAttribute('data-f07-group'),'with-others');
+   const responseWeight=await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response p').evaluate(el=>Number.parseInt(getComputedStyle(el).fontWeight));
+   assert.ok(responseWeight>=600,'With others must make ALL response typographically prominent');
+   await pilot.locator('[data-p435930-mercy-next]').click();
+   assert.equal(await crown.getAttribute('data-position'),'5');
+   await pilot.locator('[data-p435930-mercy-prev]').click();
+   assert.equal(await crown.getAttribute('data-position'),'4');
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
    assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/);
    await page.locator(base+".aoDevoCardScroll").evaluate(el=>{el.scrollTop+=200});
@@ -61,6 +76,22 @@ try{
     return {document:document.documentElement.scrollWidth-innerWidth,mount:(mount?.scrollWidth||0)-(mount?.clientWidth||0)};
    });
    assert.ok(overflow.document<=1&&overflow.mount<=1,"No 320/390 horizontal overflow: "+JSON.stringify(overflow));
+   // Complete all source prayers without inventing additional text.
+   await pilot.locator('[data-p435930-mercy-jump="59"]').click();
+   assert.equal(await crown.getAttribute('data-position'),'59');
+   assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response').count(),1);
+   await pilot.locator('[data-p435930-mercy-next]').click();
+   await pilot.locator('[data-p435930-mercy-next]').click();
+   assert.equal(await crown.getAttribute('data-position'),'61');
+   assert.equal(await pilot.locator('[data-p435930-mercy-finish]').count(),1);
+   await pilot.locator('[data-p435930-mercy-finish]').click();
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),1,
+    "Claude F07 m3 is a completion screen after the third Holy God");
+   assert.match(await page.locator(base+'[data-f07-mercy-completion]').innerText(),/Jesus, I trust in You/);
+   await page.screenshot({path:resolve(output,"mercy-f07-completion-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'[data-p435930-mercy-again]').click();
+   assert.equal(await crown.getAttribute('data-position'),'0');
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
    assert.deepEqual(errors,[],"No uncaught F07 pilot errors");
    console.log("PASS F07 "+width+"px: source 62 events, 55-bead crown, decade jump, full prayer, no overflow");
   }finally{await page.close()}
