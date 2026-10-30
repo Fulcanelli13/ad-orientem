@@ -1,0 +1,23 @@
+name: Directory P107 New Brighton and alternate-photo source gate
+on:
+  pull_request:
+    paths:
+      - data/directory/research/p104-new-brighton-missing-venue-discovery-lead.json
+      - data/directory/research/p107-four-commons-original-alternatives.v1.json
+      - data/directory/research/p107-four-webp-stage-audit.v1.json
+      - tests/directory-p107-dedup-and-pinned-alternatives.mjs
+      - .github/workflows/directory-p107-source-integrity.yml
+permissions:
+  contents: read
+jobs:
+  source-and-dedup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/directory-p107-dedup-and-pinned-alternatives.mjs
