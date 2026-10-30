@@ -22,7 +22,7 @@ const BENE=[
  ["exposition","STG-pray.benediction-01","EXACT_STAGE_FAMILY"],
  ["adoration","STG-pray.adoration-02","CONTEXTUAL_UNVERIFIED"],
  ["hymn","STG-pray.benediction-02","EXACT_STAGE_FAMILY"],
- ["prayer","STG-pray.benediction-02","CONTEXTUAL_UNVERIFIED"],
+ ["prayer","COV-pray.benediction","RITE_PRAYER_COVER_CONTEXTUAL"],
  ["blessing","STG-pray.benediction-03","EXACT_BLESSING_ART_MISSING"],
  ["praises","STG-pray.benediction-04","EXACT_STAGE_FAMILY"],
  ["reposition","STG-pray.benediction-04","CONTEXTUAL_UNVERIFIED"]
@@ -48,7 +48,10 @@ export function resolveArtworkRuntimeIdentity(input={}){
   if(!id||screen==="overview")return result("novena:overview",null,"NOT_AN_IMAGE_BEARING_PRAYER_CARD");
   const key="novena:"+id+":"+screen+(day===null?"":":day-"+pad(day+1))+(screen==="day"?":"+String(input.mode||"guided")+":stage-"+(stage===null?"unknown":pad(stage+1)):"");
   const cover=devotional("novena."+id);
-  return result(key,cover,id==="st_therese"?"SAINT_THERESE_UNAPPROVED_IMAGE_SOURCE":"NOVENA_COVER_CONTEXTUAL_NOT_DAY_SCENE",{day:day===null?null:day+1,stage:screen==="day"?stage:null});
+  // Reuse an approved day-scene pool in the three genuinely illustrated novenas.
+  // St Thérèse remains on hold: her day pool is contextual, not a cleared saint portrait.
+  const dayPool=screen==="day"&&["holy_ghost","christmas","holy_souls"].includes(id)?"STG-novena."+id+"-01":null;
+  return result(key,dayPool||cover,id==="st_therese"?"SAINT_THERESE_UNAPPROVED_IMAGE_SOURCE":"NOVENA_COVER_CONTEXTUAL_NOT_DAY_SCENE",{day:day===null?null:day+1,stage:screen==="day"?stage:null});
  }
  if(owner==="traditional"){
   const route=String(input.route||"pray.morning_evening");
@@ -60,7 +63,10 @@ export function resolveArtworkRuntimeIdentity(input={}){
    return result("traditional:daily:"+part+":"+(step===null?"list":"step-"+pad(step+1)),prayerId?devotional(prayerId):"COV-daily."+part,
     prayerId?"CANONICAL_SHARED_PRAYER":"DAILY_COVER_CONTEXTUAL");
   }
-  if(route==="pray.nightly_examen")return result("traditional:examen:"+pad((index(input.examenStep,20)??0)+1),"COV-daily.nightly_examen","CONTEXTUAL_COVER_NOT_EXAMEN_STAGE");
+  if(route==="pray.nightly_examen"){
+   const step=index(input.examenStep,5)??0;
+   return result("traditional:examen:"+pad(step+1),step===4?"COV-sacrament_act_of_contrition":"COV-daily.nightly_examen",step===4?"SHARED_ACT_OF_CONTRITION":"CONTEXTUAL_EXAMEN_COVER");
+  }
   if(route==="pray.holy_name_litany")return result("traditional:holy-name-litany","", "NO_BLUEPRINT_ARTWORK_SLOT");
   const map={
    "pray.sacred_hymns":"COV-prayer.hymns",
@@ -97,7 +103,7 @@ export function resolveArtworkRuntimeIdentity(input={}){
  if(view==="adoration"){
   const mode=String(input.mode||"home");
   if(mode==="visit")return result("presentation:adoration:visit:"+pad((index(n,7)??0)+1),"STG-pray.adoration-01","VISIT_STAGE_CONTEXTUAL_NOT_EXACT");
-  if(mode==="holy")return result("presentation:adoration:holy:"+pad((index(n,8)??0)+1),"COV-pray.adoration","HOLY_HOUR_COVER_CONTEXTUAL");
+  if(mode==="holy")return result("presentation:adoration:holy:"+pad((index(n,8)??0)+1),n===0?"STG-pray.rosary-07":"COV-pray.adoration",n===0?"GETHSEMANE_EXACT_EVENT_SHARED_WITH_ROSARY":"HOLY_HOUR_COVER_CONTEXTUAL");
   if(mode==="four"){
    const i=index(n,5),slot=i!==null&&i<4?"STG-pray.adoration.four_ends-"+pad(i+1):"COV-pray.adoration.four_ends";
    return result("presentation:adoration:four:"+pad((i??0)+1),slot,"FOUR_ENDS_CONTEXTUAL_UNVERIFIED");
@@ -118,7 +124,7 @@ export function resolveArtworkRuntimeIdentity(input={}){
  }
  if(view==="angelus")return result("presentation:angelus:"+(input.form==="regina"?"regina":"ordinary"),input.form==="regina"?"COV-pray.angelus_regina":"COV-pray.angelus","DYNAMIC_PARAGRAPH_STAGE_NOT_JOINED");
  if(view==="litany")return result("presentation:litany:page-"+pad((index(n,200)??0)+1),"COV-pray.litany_saints","DYNAMIC_WITNESS_PAGINATION_NOT_SCENE_JOINED");
- if(view==="fortyHours")return result("presentation:forty-hours:"+pad((index(n,6)??0)+1),"COV-pray.forty_hours","CONTEXTUAL_COVER_NOT_STAGE_SPECIFIC");
+ if(view==="fortyHours")return result("presentation:forty-hours:"+pad((index(n,6)??0)+1),n===4?"COV-pray.benediction":"COV-pray.forty_hours",n===4?"BENEDICTION_SHARED_RITE_COVER":"CONTEXTUAL_COVER_NOT_STAGE_SPECIFIC");
  return result("presentation:"+view,null,"NO_RUNTIME_ARTWORK_MAPPING");
 }
 
