@@ -31,7 +31,14 @@ for(const cls of ["aoTodayV2CalendarGlance","aoTodayV2PrayNow","aoTodayV2ReadRef
 }
 for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.adoration"])
   assert.ok(html.includes('data-home-cu-route="'+route+'"'),"Noncanonical or missing Pray route: "+route);
-assert.match(html,/data-home-daily-catechism/);
+assert.doesNotMatch(html,/data-home-daily-catechism/,"Catechism remains in Learn, not Today");
+assert.match(html,/class="aoTodayV2DiscoveryStandalone"/,"Did You Know has a standalone section");
+assert.match(html,/data-home-dyk-open/,"Did You Know must be linked to its source");
+assert.ok(html.indexOf('class="aoTodayV2CalendarGlance') <
+  html.indexOf('class="aoTodayV2DiscoveryStandalone"') &&
+  html.indexOf('class="aoTodayV2DiscoveryStandalone"') <
+  html.indexOf('class="aoTodayV2Below"'),
+  "Did You Know follows the week, before Read");
 const emptyRule=buildTodayV2Sections(state,vm,{
   visible:true,
   comingUp:{rows:[sample.comingUp.rows[0],{id:"static.none",kind:"all",title:"Daily Rule"}]},
