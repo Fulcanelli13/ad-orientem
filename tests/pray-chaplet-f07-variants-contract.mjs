@@ -31,19 +31,27 @@ for(const language of [false,true]){
  }
  for(const i of [0,2,3,7,14]){
   const html=renderF07LittleCrown(i,{french:language});
-  assert.equal(count(html,/class="aoF07VariantDot /g),15);
-  assert.equal(count(html,/aoF07VariantDot-pater/g),3);
-  assert.equal(count(html,/aoF07VariantDot-ave/g),12);
+  assert.equal(count(html,/class="aoF07CrownMarker /g),15,"fifteen source beads arranged in a circle");
+  assert.equal(count(html,/aoF07CrownMarker-pater/g),3);
+  assert.equal(count(html,/aoF07CrownMarker-ave/g),12);
   assert.equal(count(html,/data-f07-status="current"/g),1);
+  assert.match(html, /class="aoF07LittleCrownCircle"/);
+  assert.match(html,/role="progressbar" aria-valuemin="0" aria-valuemax="15"/);
+  assert.doesNotMatch(html,/aoF07VariantDots|CHAPLET POSITION|REPÈRE DU CHAPELET/);
   assert.match(html,new RegExp('data-f07-position="'+i+'" data-f07-total="15"'));
  }
 }
 assert.throws(()=>renderF07FiveWounds(30),RangeError);
 assert.throws(()=>renderF07PreciousBlood(7,5),RangeError);
 assert.throws(()=>renderF07LittleCrown(15),RangeError);
+const sourceOwnedBeads=Array.from({length:15},(_,i)=>'<button class="aoF07LittleCrownBead" data-canonical-bead="'+i+'"></button>').join("");
+const interactiveProjection=renderF07LittleCrown(3,{interactiveBeads:sourceOwnedBeads});
+assert.equal(count(interactiveProjection,/data-canonical-bead="/g),15);
+assert.equal(count(interactiveProjection,/aoF07CrownMarker/g),0,"no duplicate decorative bead ring");
+assert.match(interactiveProjection,/data-f07-position="3" data-f07-total="15"/);
 for(const fn of [()=>renderF07FiveWounds(0),()=>renderF07PreciousBlood(0,0),()=>renderF07LittleCrown(0)]){
  const html=fn();
  assert.doesNotMatch(html,/data-p435930|localStorage|data-prayed|data-completed|data-navigation-owner/,
   "F07 is a read-only source position projection and cannot become a second engine");
 }
-console.log("PASS F07 chaplet variants: 30, 33+7+7 and 3+12 source positions; no parallel event ownership");
+console.log("PASS F07 chaplet variants: 30 Five Wounds, 33+7+7 Precious Blood, Little Crown 15 circular 3+12 source positions; no parallel event ownership");
