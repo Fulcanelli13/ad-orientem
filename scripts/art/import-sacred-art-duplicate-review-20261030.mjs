@@ -26,8 +26,10 @@ for(const d of review.decisions){
  if(!g)throw Error("Unknown group "+d.groupId);
  const ids=g.members.map(m=>m.id);
  const urls=g.members.map(m=>m.sourceUrl||"");
+ const displayPhotos=g.members.map(m=>m.reviewImageSourceUrl||m.sourceUrl||"");
  if(JSON.stringify(d.memberIds)!==JSON.stringify(ids)||
- JSON.stringify(d.sourceUrls)!==JSON.stringify(urls))
+ JSON.stringify(d.sourceUrls)!==JSON.stringify(urls)||
+ JSON.stringify(d.displayedPhotoSourceUrls)!==JSON.stringify(displayPhotos))
   throw Error("Source/member mismatch for "+g.id);
  if(!["NOT_DUPLICATE_KEEP_ALL","SAME_WORK_KEEP_PREFERRED"].includes(d.reviewDecision))
   throw Error("Invalid decision "+g.id);
@@ -43,7 +45,9 @@ for(const d of review.decisions){
   requiresFinalExactPhotoRightAndByteQa:true,
   notDuplicatePairHold:d.reviewDecision==="NOT_DUPLICATE_KEEP_ALL"?
    ids.flatMap((x,i)=>ids.slice(i+1).map(y=>[x,y])):[],
-  memberIds:ids,sourceUrls:urls,decidedAt:d.decidedAt||null});
+  memberIds:ids,sourceUrls:urls,displayedPhotoSourceUrls:displayPhotos,
+  preferredDisplayedPhotoSourceUrl:preferred?displayPhotos[ids.indexOf(preferred)]:"",
+  decidedAt:d.decidedAt||null});
 }
 decisions.sort((a,b)=>a.groupId.localeCompare(b.groupId));
 const output={schema:"AO_SACRED_ART_DUPLICATE_DECISION_LEDGER_V1",
