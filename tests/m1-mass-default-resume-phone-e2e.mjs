@@ -74,11 +74,16 @@ try{
   const saved=await page.evaluate(()=>{
     const api=window.AO_R17_NATIVE_READER_PREVIEW;
     const all=api?.model?.cards??[];
-    const card=all.find(c=>c?.sectionId&&c?.sequence>=9&&c?.sequence<=20)??all.find(c=>c?.sectionId);
-    if(!card)throw Error("R17_SOURCE_CARDS_NOT_AVAILABLE");
-    api.showSection(card.sectionId);
-    const actual=api.getCurrentCard()?.sectionId;
-    if(actual!==card.sectionId)throw Error("R17_SECTION_SELECTION_FAILED");
+    const original=api?.getCurrentCard?.()?.sectionId??null;
+    // Not every model card is displayed for the currently selected 1962
+    // Mass (e.g. locally omitted Credo/second Confiteor). Pick an actual
+    // source-authorized section accepted by the real reader.
+    let card=null;
+    for(const candidate of all.filter(c=>c?.sectionId&&c.sectionId!==original&&c.sequence>=9)){
+      api.showSection(candidate.sectionId);
+      if(api.getCurrentCard()?.sectionId===candidate.sectionId){card=candidate;break;}
+    }
+    if(!card)throw Error("NO_VISIBLE_NONINITIAL_R17_CARD");
     const suspended=window.AO_R17_BROWSER_ENTRY.suspend();
     const record=JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"null");
     return {suspended,section:card.sectionId,position:record?.readerPosition?.sectionId,
