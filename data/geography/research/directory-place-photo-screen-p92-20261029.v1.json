@@ -13,14 +13,14 @@
     "venues_screened": 1879,
     "canonical_places": 530,
     "confirmed_links": 23,
-    "approved_covers": 40,
+    "approved_covers": 41,
     "approved_gallery_images": 33,
     "within_350m_pairs": 55,
     "venues_near_place": 50,
     "pairs_within_100m": 28,
     "high_name_geo_pairs": 17,
-    "nearby_approved_photo_pairs": 16,
-    "exact_confirmed_photo_joins": 9,
+    "nearby_approved_photo_pairs": 17,
+    "exact_confirmed_photo_joins": 10,
     "published_new_links": 0,
     "published_new_photos": 0
   },
@@ -35,7 +35,7 @@
       "offset": 200,
       "limit": 200,
       "nearby_venues": 6,
-      "nearby_approved_photo_venues": 1
+      "nearby_approved_photo_venues": 2
     },
     {
       "offset": 400,
@@ -457,7 +457,7 @@
       "place_pin_precision": "site",
       "distance_m": 15.5,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -1062,6 +1062,16 @@
       "distance_m": 264.1,
       "name_overlap": 0,
       "disposition": "DIFFERENT_CONFIRMED_PLACE_HOLD",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius",
+      "venue_name": "Kostel sv. Ignáce z Loyoly",
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "place_name": "Kostel svatého Ignáce z Loyoly, Jihlava",
+      "distance_m": 15.5,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {

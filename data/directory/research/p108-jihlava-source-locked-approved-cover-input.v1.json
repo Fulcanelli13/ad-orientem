@@ -1,0 +1,58 @@
+{
+  "schema": "AO_P108_JIHLAVA_SOURCE_LOCKED_COVER_INPUT_V1",
+  "date": "2026-10-30",
+  "state": "DRAFT_RELEASE_NOT_MERGED",
+  "prerequisite_research_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2039",
+  "exact_research_source_commit": "74f6aa47dc17576df5b97c43840a2d98b99c5761",
+  "source_audit_path": "data/directory/research/p107-four-webp-stage-audit.v1.json",
+  "site_registry": "data/geography/seed-registry.v1.json",
+  "record": {
+    "row": 309,
+    "place_id": "place:CZ:st-ignatius-jihlava",
+    "venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius",
+    "source_original_path": "docs/research/directory/p107-alternative-originals-20261030/309-alternate-original.jpg",
+    "source_file_url": "https://commons.wikimedia.org/wiki/File:Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_(8686).jpg",
+    "source_sha1": "a61c6ec7df0680fc9cd37c802ce0e10346694367",
+    "staged_webp_path": "assets/staged/directory-p107/309-alternate-full-frame.webp",
+    "approved_asset_path": "assets/approved/place-media/CZ-st-ignatius-jihlava.webp",
+    "derivative_sha256": "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+    "derivative_bytes": 154206,
+    "width": 1050,
+    "height": 1400,
+    "credit": "Gampe",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_place_ref": "AO-P104-309-SITE",
+    "alt_en": "Complete exterior of the Baroque Church of Saint Ignatius of Loyola in Jihlava, with pale ornate facade and two spired towers against a cloudy blue sky",
+    "alt_fr": "Vue entière de la façade baroque de l'église Saint-Ignace-de-Loyola à Jihlava, ornée de sculptures et surmontée de deux tours à flèches sous un ciel nuageux"
+  },
+  "holds": [
+    {
+      "row": 315,
+      "reason": "Wrong subject statue alternative and original P105 only conditional"
+    },
+    {
+      "row": 320,
+      "reason": "Dark snow-heavy alternative worse than ensemble P105"
+    },
+    {
+      "row": 322,
+      "reason": "Cars and traffic obstruct alternative Pau; earlier bollard photo still held"
+    }
+  ],
+  "policy": {
+    "one_existing_exact_place_id": true,
+    "one_existing_verified_venue_id": true,
+    "never_unverified_photo": true,
+    "no_new_mass_times": true,
+    "photo_no_crop": true,
+    "CC_attribution_required": true,
+    "zero_expense": true
+  },
+  "baseline_new_main": {
+    "places": 530,
+    "confirmed_directory_links": 23,
+    "approved_media": 40,
+    "reconciled_concurrent_hannover_release": true
+  }
+}

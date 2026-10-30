@@ -14,8 +14,8 @@ assert.deepEqual([review.counts.venues_screened,review.counts.canonical_places,
  review.counts.within_350m_pairs,review.counts.venues_near_place],
  [1879,530,55,50]);
 assert.equal(review.counts.confirmed_links,23);
-assert.equal(review.counts.nearby_approved_photo_pairs,16);
-assert.equal(review.counts.exact_confirmed_photo_joins,9);
+assert.equal(review.counts.nearby_approved_photo_pairs,17);
+assert.equal(review.counts.exact_confirmed_photo_joins,10);
 assert.equal(review.counts.published_new_links,0);
 assert.equal(review.counts.published_new_photos,0);
 assert.equal(review.counts.approved_gallery_images,33);
@@ -31,7 +31,7 @@ assert.equal(review.candidate_pairs.length,55);
 assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,55);
 assert.equal(review.candidate_pairs.every(x=>x.auto_publish===false),true);
 assert.equal(review.candidate_pairs.every(x=>x.distance_m>=0&&x.distance_m<=350),true);
-assert.equal(review.photo_review_queue.length,16);
+assert.equal(review.photo_review_queue.length,17);
 assert.equal(review.photo_review_queue.every(x=>x.review==="HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"),true);
 const unrelated=review.candidate_pairs.find(x=>x.venue_name==="Friedhofskirche St. Michael"
   &&x.place_id==="place:DE:altoetting-gnadenkapelle");
@@ -84,4 +84,4 @@ const hannover=review.candidate_pairs.find(x=>x.place_id==="place:DE:basilika-st
 assert.equal(hannover?.distance_m,1.6);
 assert.equal(hannover?.disposition,"EXISTING_CONFIRMED_LINK");
 assert.equal(hannover?.place_has_approved_photo,false,"Canonical Place must not bypass photo release checks");
-console.log("PASS 1,879 venues x 530 Places: 55 spatial pairs, 9 approved-photo joins, Hannover exact site linked without photo");
+console.log("PASS 1,879 venues x 530 Places: 55 spatial pairs, 10 approved-photo joins, Hannover exact site linked without photo");
