@@ -1182,12 +1182,19 @@
         "original_facsimile_rechecked_for_this_claim": false,
         "independent_source_corroboration_certified": false,
         "review_group": "SJ-PIT-01",
-        "original_1900_printed_page": 454,
+        "original_1900_printed_page": 464,
         "original_scan_pdf_page_1based": 512,
         "italian_text_layer_anchor": "vicchiareddiy ne sfama",
         "original_page_image_reviewed": true,
         "original_folio_verification_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
-        "independent_historical_witness_confirmed": false
+        "independent_historical_witness_confirmed": false,
+        "r23_source_locator_erratum": {
+          "previous_printed_page": 454,
+          "corrected_printed_page": 464,
+          "original_ocr_line_anchor": 17216,
+          "original_scan_pdf_page_1based": 512,
+          "original_source_observation_record_still_needs_reconciliation": true
+        }
       },
       "scoping": {
         "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
