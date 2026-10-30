@@ -18,7 +18,7 @@ await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0
 const cases=[
  {route:"pray.five_wounds",kind:"five-wounds",dots:30,prayer:".aoFiveWoundsPrayerText",next:"[data-p435930-five-next]",after:"1",previous:"[data-p435930-five-prev]",legacyNav:".aoFiveWoundsRail button"},
  {route:"pray.precious_blood",kind:"precious-blood",dots:47,prayer:".aoPreciousBloodCard p",next:"[data-p435930-blood-next]",after:"1:0",previous:"[data-p435930-blood-prev]",legacyNav:".aoPreciousBloodRail button"},
- {route:"pray.little_crown",kind:"little-crown",dots:15,prayer:".aoLittleCrownAspiration",next:"[data-p435930-crown-next]",after:"1",previous:"[data-p435930-crown-prev]",legacyNav:".aoLittleCrownBeads button"}
+ {route:"pray.little_crown",kind:"little-crown",dots:15,prayer:".aoLittleCrownPrayerText",next:"[data-p435930-crown-next]",after:"1",previous:"[data-p435930-crown-prev]",legacyNav:".aoLittleCrownBeads button"}
 ];
 let browser;
 try{
@@ -43,10 +43,12 @@ try{
     assert.ok((await text.innerText()).trim().length>=18,c.route+" canonical prayer text absent");
     const geometry=await text.evaluate(el=>{
      const rect=el.getBoundingClientRect(),root=document.querySelector("#aoPray435930.open .aoP435930Mount");
-     return {top:rect.top,visiblePixels:Math.max(0,Math.min(rect.bottom,innerHeight-70)-Math.max(0,rect.top)),
+     const footer=el.closest("main")?.querySelector(".aoFiveWoundsActions,.aoPreciousBloodActions,.aoLittleCrownActions");
+     const availableBottom=Math.min(innerHeight-70,(footer?.getBoundingClientRect().top??innerHeight)-6);
+     return {top:rect.top,availableBottom,visiblePixels:Math.max(0,Math.min(rect.bottom,availableBottom)-Math.max(0,rect.top)),
       pageOverflow:document.documentElement.scrollWidth-innerWidth,mountOverflow:(root?.scrollWidth||0)-(root?.clientWidth||0)};
     });
-    assert.ok(geometry.visiblePixels>=12,"F07 "+c.kind+" first source prayer below mobile dock at "+width+": "+JSON.stringify(geometry));
+    assert.ok(geometry.visiblePixels>=40,"F07 "+c.kind+" first source prayer below mobile dock at "+width+": "+JSON.stringify(geometry));
     assert.ok(geometry.pageOverflow<=1&&geometry.mountOverflow<=1,
      "F07 "+c.kind+" horizontal overflow at "+width+": "+JSON.stringify(geometry));
     await page.screenshot({path:resolve(captures,c.kind+"-"+width+"-opening.png"),animations:"disabled"});
