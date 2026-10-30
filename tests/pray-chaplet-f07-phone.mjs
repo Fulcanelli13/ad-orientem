@@ -49,16 +49,30 @@ try{
     "The original large bead and ten smaller beads must remain directly selectable");
    assert.equal(await pilot.locator('.aoF07MercyChapterChips button').count(),7,
     "Opening, five decades and Closing are one compact chapter rail");
-   assert.equal(await pilot.locator('.aoF07MercyDock').count(),0,
-    "No routine previous/next Mercy arrows: direct beads and scroll own navigation");
-   assert.equal(await pilot.locator('[data-p435930-mercy-next],[data-p435930-mercy-prev]').count(),0);
+   assert.equal(await pilot.locator('.aoF07MercyDock').count(),1,
+    "Reviewed F07 m2 has one compact Previous / position / Next dock");
+   assert.equal(await pilot.locator('[data-p435930-mercy-next]').count(),1);
+   assert.equal(await pilot.locator('[data-p435930-mercy-prev]').count(),1);
+   assert.equal(await pilot.locator('.aoF07MercyRubric').innerText(),'Pray once on the large bead.');
+   assert.equal(await pilot.locator('.aoF07MercyRoleLabel').count(),2);
    assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole').count(),2,
     "Both source-owned parts must display ℣ / ℟ on large bead");
    assert.match(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response').innerText(),/ALL/);
-   await pilot.locator('[data-p435930-mercy-recite="group"]').click();
+   const aa=page.locator(base+'.aoP435930Head > .aoPrayerBookMenu');
+   assert.equal(await aa.count(),1,"Mercy must have one discreet Aa menu");
+   assert.equal(await pilot.locator('.aoMercyOptional').count(),0,
+    "Optional devotions and settings must not interrupt the prayer body");
+   await aa.locator(':scope > summary').click();
+   assert.equal(await aa.locator('[data-p435930-mercy-recite="group"]').count(),1);
+   await aa.locator('[data-p435930-mercy-recite="group"]').click();
    assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRoles').getAttribute('data-f07-group'),'with-others');
    const responseWeight=await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response p').evaluate(el=>Number.parseInt(getComputedStyle(el).fontWeight));
    assert.ok(responseWeight>=600,'With others must make ALL response typographically prominent');
+   await pilot.locator('[data-p435930-mercy-next]').click();
+   assert.equal(await crown.getAttribute('data-position'),'5',"Next must advance exactly one canonical event");
+   assert.match(await pilot.locator('.aoF07MercyRubric').innerText(),/ten small beads/);
+   await pilot.locator('[data-p435930-mercy-prev]').click();
+   assert.equal(await crown.getAttribute('data-position'),'4',"Previous must restore the large bead");
    await pilot.locator('.aoMercyStrand [data-p435930-mercy-jump="5"]').click();
    assert.equal(await crown.getAttribute('data-position'),'5');
    await pilot.locator('.aoMercyStrand [data-p435930-mercy-jump="4"]').click();
@@ -109,8 +123,9 @@ try{
    assert.equal(await crown.getAttribute('data-position'),'0');
    assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
    // Optional closing is a 63rd source event, not a default prayer.
-   await pilot.locator('details[data-ao-mercy-options] > summary').click();
-   await pilot.locator('[data-p435930-mercy-closing]').click();
+   await aa.locator(':scope > summary').click();
+   await aa.locator('details[data-ao-mercy-options] > summary').click();
+   await aa.locator('[data-p435930-mercy-closing]').click();
    assert.equal(await crown.getAttribute('data-total'),'63');
    assert.equal(await pilot.locator('.aoF07MercyChapterChips button').count(),8,
      "Optional source conclusion must have its own eighth chapter");
