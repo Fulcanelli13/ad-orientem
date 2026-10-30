@@ -7249,8 +7249,8 @@
         "r25_primary_text_witness": {
           "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
           "format": "Latin-French Ordo Missae (1962) HTML",
-          "line_start": 305,
-          "line_end": 309,
+          "line_start": 441,
+          "line_end": 451,
           "witnessed_action_or_primitive_id": "AO.CANON.R62.008"
         }
       },
@@ -7272,8 +7272,8 @@
         },
         "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
         "source_line_span": [
-          305,
-          309
+          441,
+          451
         ],
         "roman_action_id": "AO.CANON.R62.008",
         "precision_rationale": "Conditional proper text is not a separate action; exact appointed days governed by prescribed rubrics.",
@@ -7282,7 +7282,11 @@
         "independent_linguist_signoff": false,
         "reader_source_view_verified": false,
         "final_approval": false,
-        "publication_authorized": false
+        "publication_authorized": false,
+        "cross_reference_lines": [
+          305,
+          307
+        ]
       }
     },
     {
