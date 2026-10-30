@@ -37,9 +37,17 @@ const render=(id,language="en")=>renderExploreToString(buildExploreViewModel({
   filters:{heritageCategories:[]},
   selectedPlaceId:id,placeProfiles:profiles,expandPlace:true,
 }));
-assert.equal(relics.relics.length,122,"source-count change requires review");
-assert.equal(new Set(relics.relics.map(x=>x.place_id)).size,92);
+assert.equal(relics.relics.length,123,"The original 122 relic records plus one independently sourced Sainte-Croix tomb");
+assert.equal(new Set(relics.relics.map(x=>x.place_id)).size,93);
 assert.ok(profiles.length>=516);
+const perelaval=profile("place:MU:pere-laval-sainte-croix");
+assert.ok(perelaval,"The canonical Père Laval shrine must exist");
+assert.ok(perelaval.sacred_treasures.some(x=>x.id==="relic:MU:jacques-desire-laval-sainte-croix"),
+ "Source-attested Père Laval tomb must be linked to exactly the correct Sainte-Croix Place");
+const lavalRecord=relics.relics.find(x=>x.id==="relic:MU:jacques-desire-laval-sainte-croix");
+assert.equal(lavalRecord.source_claim,"LOCATION_AND_VENERATION_ATTESTED");
+assert.equal(lavalRecord.authentication,"NOT_INDEPENDENTLY_CERTIFIED_BY_APP");
+assert.match(lavalRecord.source_url,/^https:\/\/dioceseportlouis\.org\//);
 const notre=profile("place:FR:notre-dame-paris");
 const notreHtml=render(notre.place_id);
 assert.equal(notre.sacred_treasures.length,3);

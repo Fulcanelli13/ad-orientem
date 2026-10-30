@@ -11,7 +11,7 @@ const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
 assert.equal(geo.places.length,LIVE.places);
 assert.equal(sacred.apparitions.length,33);
-assert.equal(sacred.relics.length,122);
+assert.equal(sacred.relics.length,123);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
 assert.equal(assertExploreGeographyRegistry(geo).counts.places,LIVE.places);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));

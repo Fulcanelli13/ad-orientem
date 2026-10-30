@@ -92,6 +92,9 @@ assert.equal(preview.saint_relic_site_associations,71);
 assert.equal(preview.new_site_candidates,39);
 assert.equal(preview.exceptional_sacred_object_groupings,15);
 assert.equal(preview.production_pins_created,0);
-assert.equal(published.relics.length,122);
+assert.equal(published.relics.length,123,"Original 122 plus one sourced Père Laval relic at existing Sainte-Croix Place");
+assert.ok(published.relics.some(x=>x.id==="relic:MU:jacques-desire-laval-sainte-croix"&&
+  x.place_id==="place:MU:pere-laval-sainte-croix"&&
+  x.source_claim==="LOCATION_AND_VENERATION_ATTESTED"));
 assert.equal(places.places.length,LIVE.places,"R87 added 33 sourced Place identities; relic subject assignments remain separately owned");
 console.log("PASS relic selection: 133 subject reach screens, "+assessed+" traceable reach indicators including "+universals+" apostolic roles, 71 associations → 66 sites (39 new candidates), 15 exceptional groups, 18 nonpin decisions; 0 production pins");

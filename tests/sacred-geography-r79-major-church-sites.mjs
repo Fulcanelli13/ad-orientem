@@ -63,5 +63,5 @@ for(const x of release.previously_mislinked_but_already_published){
  assert.equal(r.candidates.find(c=>c.candidate_id===x.candidate_id).confirmed_place_id,x.place_id);
 }
 assert.equal(sacred.apparitions.length,33,"No invented apparitions");
-assert.equal(sacred.relics.length,122,"No unexamined relic authenticity claims");
+assert.equal(sacred.relics.length,123,"The 122 historical relics plus separately sourced Père Laval tomb have qualified evidence");
 console.log("PASS R79: 3 exact original-source Catholic landmark Places and 2 corrected reused major church identities");
