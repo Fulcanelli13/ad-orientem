@@ -77,8 +77,8 @@
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that Advent calendars grew out of German-speaking household customs, including pictures and chalk marks to count the days?",
-        "fr": "Saviez-vous que les calendriers de l'Avent se sont développés dans les foyers germanophones, où images et marques à la craie servaient notamment à compter les jours ?"
+        "en": "Did you know that Weiser described German Advent calendars with small windows opened daily to reveal pictures before Christmas?",
+        "fr": "Saviez-vous que Weiser décrivait des calendriers de l'Avent allemands dont on ouvrait chaque jour une petite fenêtre pour découvrir une image avant Noël ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -102,7 +102,8 @@
         "additional_source_ids": [
           "DE-KNAUF-ADVENTKALENDER",
           "DE-MUSEUM-FFB-ADVENT"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "REGIONAL_CULTURAL_OR_MATERIAL_CONTEXT",
@@ -114,16 +115,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 56,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Removed chalk marks, absent from checked page.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-003",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that in Adnet, Austria, a Marian image has been carried from household to household during Advent for family prayer?",
-        "fr": "Saviez-vous qu'à Adnet, en Autriche, une image de la Vierge a circulé de foyer en foyer pendant l'Avent pour accompagner la prière familiale ?"
+        "en": "Did you know that in some Alpine districts a picture of the Blessed Virgin was carried between homes on the nine evenings before Christmas?",
+        "fr": "Saviez-vous que, dans certaines régions alpines, une image de la Sainte Vierge était portée de maison en maison pendant les neuf soirées précédant Noël ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -147,7 +157,8 @@
         "additional_source_ids": [
           "AT-ADNET-HERBERG",
           "AT-GROSSPETERSDORF-HERBERG"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
@@ -159,16 +170,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 57,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Replaced specific Adnet claim with Weiser's Alpine regional source; modern parish witness remains separate.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-004",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that a household Advent image in Großpetersdorf, Austria, recalled Mary and Joseph's search for lodging?",
-        "fr": "Saviez-vous qu'à Großpetersdorf, en Autriche, une image accueillie dans les foyers pendant l'Avent rappelait la recherche d'un logement par Marie et Joseph ?"
+        "en": "Did you know that an Advent play called Herbergsuchen reenacted Mary and Joseph being turned away before finding shelter in a stable?",
+        "fr": "Saviez-vous qu'une représentation de l'Avent appelée Herbergsuchen montrait Marie et Joseph repoussés de porte en porte avant de trouver refuge dans une étable ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -191,7 +211,8 @@
         "independent_narrow_witness": true,
         "additional_source_ids": [
           "AT-PARISH-HERBERGSUCHE"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "COMMUNAL_PRACTICE_LOCALITY_CHECK",
@@ -203,16 +224,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 57,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Replaced unverified Großpetersdorf image attribution with original German staged-play description.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-005",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that in some Austrian homes a small bell announces the moment of Christmas gift-giving associated with the Christkind?",
-        "fr": "Saviez-vous que, dans certains foyers autrichiens, une petite clochette annonce le moment des cadeaux de Noël associés au Christkind ?"
+        "en": "Did you know that Weiser described a Christmas gift-giving custom in which a small bell signalled that the Christ Child had brought the presents?",
+        "fr": "Saviez-vous que Weiser décrivait une coutume de Noël où une petite cloche annonçait que l'Enfant Jésus avait apporté les cadeaux ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -235,7 +265,8 @@
         "independent_narrow_witness": true,
         "additional_source_ids": [
           "AT-LINZ-CHRISTKIND"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
@@ -247,16 +278,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 74,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Removed Austria-only scope not established in printed passage.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-006",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that Alpine Nativity scenes could grow into large landscapes occupying much of a family room?",
-        "fr": "Saviez-vous que des crèches alpines pouvaient prendre la forme de vastes paysages occupant une grande partie de la pièce familiale ?"
+        "en": "Did you know that some families in the mountain regions of central Europe built Nativity cribs with hundreds of figures, filling an entire room?",
+        "fr": "Saviez-vous que certaines familles des régions montagneuses d'Europe centrale construisaient des crèches comportant des centaines de personnages et remplissant toute une pièce ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -280,7 +320,8 @@
         "additional_source_ids": [
           "AT-TYROL-MUSEUM-CRIB-HISTORY",
           "AT-TYROL-MUSEUM-PERMANENT"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "REGIONAL_CULTURAL_OR_MATERIAL_CONTEXT",
@@ -292,16 +333,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 95,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Grounded specifically in printed pp. 95–96; not generalized to all Alpine homes.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-007",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that some Polish families carried a small Nativity theatre, or szopka, from house to house while singing carols?",
-        "fr": "Saviez-vous qu'en Pologne, certains groupes promenaient de maison en maison une petite crèche-théâtre appelée szopka, en chantant des cantiques ?"
+        "en": "Did you know that Weiser described a northern Slavic puppet theatre called a szopka, in which religious Nativity scenes alternated with other dramatic scenes?",
+        "fr": "Saviez-vous que Weiser décrivait chez les Slaves du Nord un théâtre de marionnettes appelé szopka, alternant scènes de la Nativité et autres saynètes ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -325,7 +375,8 @@
         "additional_source_ids": [
           "PL-EDUC-CHODZENIE-SZOPKA",
           "UNESCO-KRAKOW-SZOPKA-OTHER"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "COMMUNAL_PRACTICE_LOCALITY_CHECK",
@@ -337,16 +388,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 124,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Removed false assignment of Hungarian house-to-house carrying to Polish szopka.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-008",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that French-Canadian Mi-Carême celebrations included masked visits, music and gatherings halfway through Lent?",
-        "fr": "Saviez-vous que les fêtes de la Mi-Carême au Canada français comprenaient des visites masquées, de la musique et des rassemblements au milieu du Carême ?"
+        "en": "Did you know that Weiser described mid-Lent in France and Canada as a time for a festive meal and entertainment at home?",
+        "fr": "Saviez-vous que Weiser décrivait la mi-Carême en France et au Canada comme l'occasion d'un repas joyeux et de divertissements à la maison ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -370,7 +430,8 @@
         "additional_source_ids": [
           "QC-HERITAGE-MI-CAREME",
           "CA-ACOA-MI-CAREME"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "COMMUNAL_PRACTICE_LOCALITY_CHECK",
@@ -382,16 +443,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 184,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Removed masked visits/music not supported by cited source pages.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-009",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that in parts of Poland, preparing for Easter once involved thorough household cleaning during Holy Week?",
-        "fr": "Saviez-vous que, dans certaines régions de Pologne, la préparation à Pâques comportait un grand nettoyage de la maison pendant la Semaine sainte ?"
+        "en": "Did you know that Weiser described an old Easter custom of thoroughly cleaning homes during the three days after Palm Sunday?",
+        "fr": "Saviez-vous que Weiser décrivait une ancienne coutume pascale consistant à nettoyer à fond les maisons pendant les trois jours suivant le dimanche des Rameaux ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -414,7 +484,8 @@
         "independent_narrow_witness": true,
         "additional_source_ids": [
           "PL-RADOM-MUSEUM-HOLYWEEK"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
@@ -426,16 +497,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 188,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Qualified broad custom; source identifies Poland specifically for further greenery decoration, not necessarily exclusive cleaning.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-010",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that Polish Pentecost greenery decorations were documented not only in households but also on gates and, in some places, churches?",
-        "fr": "Saviez-vous que, dans certaines traditions polonaises de Pentecôte, la verdure décorait non seulement les maisons, mais aussi les portails et parfois les églises ?"
+        "en": "Did you know that in Poland Pentecost was called the Green Holiday, linked to decorating homes and churches with fresh greenery?",
+        "fr": "Saviez-vous qu'en Pologne la Pentecôte était appelée la « fête verte », en lien avec la décoration des maisons et des églises par de la verdure fraîche ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -459,7 +539,8 @@
         "additional_source_ids": [
           "PL-NAC-PENTECOST-1930",
           "PL-FORESTRY-PENTECOST"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
@@ -471,16 +552,25 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 248,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Removed unsupported specific gate decoration, retained attested homes/churches.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-011",
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that Weiser's 1958 handbook describes families discussing the Sunday sermon with children after Mass?",
-        "fr": "Saviez-vous que le manuel de Weiser paru en 1958 décrit des familles échangeant avec leurs enfants au sujet du sermon dominical après la messe ?"
+        "en": "Did you know that Weiser described a Sunday family custom in which fathers recounted the priest's sermon and children repeated what they remembered?",
+        "fr": "Saviez-vous que Weiser décrivait une coutume familiale dominicale où les pères relataient le sermon du prêtre et les enfants répétaient ce qu'ils en avaient retenu ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -501,7 +591,8 @@
         "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
         "original_page_checked_prior": true,
         "independent_narrow_witness": false,
-        "additional_source_ids": []
+        "additional_source_ids": [],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "CANDIDATE_DOMESTIC_PRACTICE",
@@ -513,8 +604,17 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 16,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Weiser's Folklore section explicitly reports a custom, rather than a mere proposed family exercise.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-012",
@@ -689,8 +789,8 @@
       "domain": "customs_historical_research",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that the Provençal Christmas Gros Souper traditionally preceded Midnight Mass, while the réveillon followed later?",
-        "fr": "Saviez-vous qu'en Provence le Gros Souper de Noël précédait traditionnellement la messe de minuit, tandis que le réveillon venait ensuite ?"
+        "en": "Did you know that Weiser described a French Christmas family meal called the réveillon, traditionally held just after Midnight Mass?",
+        "fr": "Saviez-vous que Weiser décrivait un repas familial français de Noël appelé réveillon, traditionnellement pris juste après la messe de minuit ?"
       },
       "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
       "historical_geography": [
@@ -713,7 +813,8 @@
         "independent_narrow_witness": true,
         "additional_source_ids": [
           "FR-CULTURE-NOEL-PROVENCE"
-        ]
+        ],
+        "original_page_checked_now": true
       },
       "scoping": {
         "preliminary_scope": "RITUAL_OR_LOCAL_EVENT_BOUNDARY",
@@ -725,8 +826,17 @@
         "kind": "calendar_season_or_formational_reference",
         "route_verified": false
       },
-      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
-      "publication_authorized": false
+      "editorial_state": "SOURCE_CLAIM_NARROWED_OR_CONFIRMED_NOT_APPROVED",
+      "publication_authorized": false,
+      "editorial_source_correction": {
+        "checked_weiser_printed_page": 76,
+        "source": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "source_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "research_verification": "EXACT_PRINTED_FOLIO_DIRECT_IMAGE_REVIEW_2026_10_30",
+        "correction_note": "Removed unsupported claim about the preceding Provençal Gros Souper from this source locator.",
+        "independent_historical_corroboration": false,
+        "editorial_approval": false
+      }
     },
     {
       "id": "DYK-UM01-017",
