@@ -1357,17 +1357,33 @@ try{
     if(route==="pray.morning_evening"){
        assert.equal(await page.locator("#aoPray435930 [data-ao-pray-guide-card]").count(),1,
          "Morning/Evening must open as a single guided prayer card");
-       assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").count(),1,
-         "Morning/Evening guided prayer must offer the direct named-prayer chooser");
-       assert.match(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").innerText(),
-         /Choose a prayer|Choisir une prière/,
-         "Morning/Evening should expose the current direct prayer access control");
-       await shot("03g-pray-morning-guided");
-       const details=page.locator("#aoPray435930 [data-ao-daily-options]");
-       await details.locator("summary").click();
-       assert.equal(await details.evaluate(el=>el.open),true,
-         "Secondary options cannot be opened from the finished prayer card");
-       await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
+       const bookFirst=await page.locator("#aoPray435930 .aoDailyBookSelector").count()===1;
+       if(bookFirst){
+         assert.equal(await page.locator("#aoPray435930 .aoDailyBookEditions [data-tp381-personal-action='edition']").count(),2,
+           "F05 must expose source-owned St Pius X 1905/1913 editions above the prayer");
+         assert.equal(await page.locator("#aoPray435930 .aoDailyBookPillPending").count(),3,
+           "Lasance, Moran and Blessed Be God remain partial, never selectable complete editions");
+         await shot("03g-pray-morning-guided");
+         const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+         await details.locator("summary").click();
+         assert.equal(await details.evaluate(el=>el.open),true,
+           "Secondary contextual options must remain accessible");
+         const layout=page.locator("#aoPray435930 .aoDailyReadingOptions");
+         assert.equal(await layout.count(),1,"F05 must preserve secondary Reading layout");
+         await layout.locator("summary").click();
+         await page.locator("#aoPray435930 [data-tp381-daily-presentation='list']").click();
+       }else{
+         assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").count(),1,
+           "Legacy Morning/Evening must offer a direct named-prayer chooser");
+         assert.match(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").innerText(),
+           /Choose a prayer|Choisir une prière/);
+         await shot("03g-pray-morning-guided");
+         const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+         await details.locator("summary").click();
+         assert.equal(await details.evaluate(el=>el.open),true,
+           "Secondary options cannot be opened from the finished prayer card");
+         await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
+       }
       const rowGeometry=await page.evaluate(()=>{
         const rows=[...document.querySelectorAll("#aoPray435930 .aoDailyPrayerCatalog .aoDailyCatalogRows button")];
         const visible=rows.filter(row=>row.getClientRects().length>0);
