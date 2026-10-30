@@ -328,7 +328,7 @@ assert.equal(singleWorkingIndex.counts.pitre_regional_source_actions_retained,43
 assert.equal(singleWorkingIndex.counts.machine_generated_lexical_search_hints,50);
 assert.equal(singleWorkingIndex.machine_generated_search_hints.suggestions.length,50);
 assert.equal(singleWorkingIndex.counts.lexical_search_hint_description_decisions_reviewed,50);
-assert.equal(singleWorkingIndex.counts.evidence_with_provisional_description_comparison_including_search_hints,522);
+assert.equal(singleWorkingIndex.counts.evidence_with_provisional_description_comparison_including_search_hints,772);
 const hintReviewed=singleWorkingIndex.machine_generated_search_hints.description_level_review_result;
 assert.equal(hintReviewed.source_action_reviewed,50);
 assert.equal(hintReviewed.previous_evidence_with_any_explicit_prior_review,222);
@@ -418,6 +418,72 @@ assert.equal(sourceIndexById.get("WEI58-16-010").bulk250_identity_review.descrip
 assert.equal(sourceIndexById.get("WEI58-02-010").bulk250_identity_review.route,"EXACT_INDULGENCE_GRANT_REVIEW");
 assert.equal(new Set([...weiser250Batch.source_selection_ids,...hintsByID.keys(),
  ...singleWorkingIndex.evidence_identity_routing.filter(x=>x.refs?.length).map(x=>x.s)]).size,522);
+
+// Second 250-row bulk pass: historical Pitrè sources and four local-regional research families.
+// A regional complex is a CONTEXT container, never a newly approved canonical custom.
+const regional250Batch=singleWorkingIndex.bulk_identity_review_batches.find(x=>x.id==="REGIONAL-PITRE-250-20261030");
+assert.ok(regional250Batch);
+assert.equal(regional250Batch.n,250);
+assert.deepEqual(regional250Batch.source_family_counts,{
+ PITRE1900:100,PITRE_PALERMO:50,SICILY_HOLYWEEK:50,SPAIN_PATUM:25,PORTUGAL_REIS:25
+});
+assert.equal(regional250Batch.research_complex_count,24);
+assert.equal(regional250Batch.description_owner_comparisons,21);
+assert.equal(regional250Batch.integrity_provisional_only,true);
+assert.equal(regional250Batch.source_selection_ids.length,250);
+assert.equal(new Set(regional250Batch.source_selection_ids).size,250);
+assert.equal(singleWorkingIndex.counts.bulk_region250_reviewed,250);
+assert.equal(singleWorkingIndex.counts.bulk_region250_explicit_description_parent_candidates,21);
+const regionalRoleCounts={}; const regionalComplexCounts={}; let regionalComparisons=0;
+const originalRegionRows=new Map(allSourceScreens.map(r=>[r.source_id,r]));
+for(const id of regional250Batch.source_selection_ids){
+ const x=sourceIndexById.get(id);
+ const src=originalRegionRows.get(id);
+ assert.ok(x&&src,"Missing regional source evidence "+id);
+ assert.equal(x.e,src.evidence_id);
+ assert.equal(x.a,expectedRoutingLabel(src));
+ assert.ok(!x.refs?.length,"Previously reviewed source reprocessed "+id);
+ assert.ok(!hintsByID.has(id),"Previously reviewed lexical suggestion reprocessed "+id);
+ assert.ok(!x.bulk250_identity_review,"Previous Weiser bulk review reprocessed "+id);
+ const r=x.regional250_identity_review;assert.ok(r,"Missing regional adjudication "+id);
+ assert.equal(r.batch_id,regional250Batch.id);
+ assert.equal(r.component_subfamily===null||typeof r.component_subfamily==="string",true);
+ assert.ok(r.explanation.length>40);
+ assert.ok(r.source_class_as_reported.length>0);
+ for(const field of ["original_source_page_newly_checked","source_independence_certified",
+   "current_1962_rite_authority_certified","indulgence_grant_verified","candidate_identity_approved",
+   "new_canonical_custom_id_created","publish"])
+   assert.equal(r[field],false,"Unsupported source/canonical approval "+id);
+ if(r.proposed_existing_owner_id){
+  regionalComparisons++;
+  assert.ok(mids.has(r.proposed_existing_owner_id),"Owner missing "+r.proposed_existing_owner_id);
+  assert.notEqual(r.relationship,"REGIONAL_COMPLEX_COMPONENT_NOT_CANONICAL_NEW_CUSTOM");
+ }else{
+  assert.equal(r.relationship,"REGIONAL_COMPLEX_COMPONENT_NOT_CANONICAL_NEW_CUSTOM");
+ }
+ regionalRoleCounts[r.role]=(regionalRoleCounts[r.role]||0)+1;
+ regionalComplexCounts[r.complex_id]=(regionalComplexCounts[r.complex_id]||0)+1;
+}
+assert.equal(regionalComparisons,21);
+assert.deepEqual(regionalRoleCounts,regional250Batch.role_counts);
+assert.deepEqual(new Set(Object.keys(regionalComplexCounts)),new Set(Object.keys(regional250Batch.research_complex_summary)));
+for(const [key,count] of Object.entries(regionalComplexCounts)){
+ const complex=regional250Batch.research_complex_summary[key];
+ assert.ok(complex);
+ assert.equal(complex.count,count);
+}
+assert.equal(new Set([...regional250Batch.source_selection_ids,
+ ...weiser250Batch.source_selection_ids,...hintsByID.keys(),
+ ...singleWorkingIndex.evidence_identity_routing.filter(x=>x.refs?.length).map(x=>x.s)]).size,772);
+assert.equal(sourceIndexById.get("PIT1900-NEW-030").regional250_identity_review.proposed_existing_owner_id,"DEV-009");
+assert.equal(sourceIndexById.get("PIT-PAL-26-018").regional250_identity_review.relationship,"EXPLICIT_FALSE_SAME_OCCASION_VETO");
+assert.equal(sourceIndexById.get("ITSI26-ENN-007").regional250_identity_review.relationship,"SAME_DESCRIBED_ACTION_CORE_HOLD");
+assert.equal(sourceIndexById.get("SPREG26-B-001").regional250_identity_review.relationship,"EXPLICIT_FALSE_CATHOLIC_CUSTOM_VETO");
+assert.equal(sourceIndexById.get("PT-PCI26-A-004").regional250_identity_review.relationship,"EXPLICIT_PAINT_VS_BLESSED_CHALK_VETO");
+assert.equal(sourceIndexById.get("PT-PCI26-A-023").regional250_identity_review.relationship,"EXPLICIT_PAINT_VS_CHALK_VETO");
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.distinct_new_customs_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
 const erroneousPairInIndex=singleWorkingIndex.dedup_case_decisions.find(x=>x.id==="CC3WORK-REL-041");
 assert.equal(erroneousPairInIndex.status,"EXPLICIT_NO_SAME_IDENTITY");
