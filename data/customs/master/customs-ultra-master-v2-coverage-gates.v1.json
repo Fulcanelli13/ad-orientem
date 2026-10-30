@@ -5,7 +5,8 @@
     "data/customs/master/customs-ultra-master-v2-identity-register-465.v1.json",
     "data/customs/master/customs-ultra-master-v2-3703-reference-crosswalk.v1.json",
     "data/customs/master/customs-ultra-master-v2-indulgence-work-audit.v1.json",
-    "data/customs/master/customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json"
+    "data/customs/master/customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json",
+    "data/customs/master/customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json"
   ],
   "progress": {
     "source_evidence_pointer_integrity": {
@@ -52,21 +53,53 @@
       "done": 200,
       "total": 3295,
       "remaining": 3095,
-      "method": "Original record source_kind/claim_type native fields, not inferred identity; no primary page-image certifications this pass."
+      "method": "Original record source_kind/claim_type native fields, not inferred identity; no primary page-image certifications this pass.",
+      "historical_wave01_snapshot_only": true,
+      "remaining_at_completion": 0
     },
     "evidence_only_source_scope_first_pass": {
-      "done": 800,
+      "done": 3295,
       "total": 3295,
-      "unprocessed": 2495,
+      "unprocessed": 0,
       "wave_files": [
         "customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json",
         "customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json",
         "customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json",
-        "customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json"
+        "customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave05-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave06-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave07-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave08-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave09-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave10-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave11-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave12-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave13-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave14-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave15-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave16-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave17-95-source-scope-screen.v1.json"
       ],
       "not_final_identity_mapping": true,
-      "source_type_provisionally_routed": 668,
-      "source_type_unresolved_requires_passage": 132
+      "source_type_provisionally_routed": 3163,
+      "source_type_unresolved_requires_passage": 132,
+      "source_id_exact_matches": 3295,
+      "original_page_images_newly_certified_by_this_wave_set": 0,
+      "meaning": "Complete nonduplicative partition of evidence-only source IDs with exact links into previously retained source records. 132 CatholicCulture action entries have only source-label/lexical contextual evidence and need passage-level class review. This is not final independent custom identification or official rite verification."
+    },
+    "evidence_only_to_approved_practice_relationships": {
+      "done": 0,
+      "total": 3295,
+      "status": "NO_NEW_HUMAN_APPROVED_IDENTITY_LINKS",
+      "note": "17 source-type waves and 79 dedup case units are not 3295 certified semantic practice/variant dispositions."
+    },
+    "dedup_action_review_caseboard": {
+      "family_clusters": 26,
+      "description_pair_comparisons": 41,
+      "institutional_or_regional_cases": 12,
+      "total_review_units": 79,
+      "approved_canonical_merges": 0,
+      "source_independence_newly_verified": 0
     }
   },
   "direct_source_index_completeness": {
