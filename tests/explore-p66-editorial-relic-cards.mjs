@@ -69,6 +69,27 @@ for(const [placeId,relicId,kind,host] of newSiteRelics){
  assert.ok(english.includes('data-sacred-object-id="'+relicId+'"'),
    "Relic object must be present on the existing Place card");
 }
+const candidateRelicImages=[
+ "relic:IE:oliver-plunkett-head-drogheda",
+ "relic:GB:john-southworth-westminster",
+ "relic:IN:thomas-santhome-mylapore",
+ "relic:IT:bartolo-longo-pompei"
+];
+const gallery=read("data/geography/approved-place-gallery.v1.json");
+for(const id of candidateRelicImages){
+ const relic=relics.relics.find(x=>x.id===id);
+ const c=relic?.photo_candidate;
+ assert.equal(c?.status,"COMMONS_SOURCE_CANDIDATE_NOT_APPROVED");
+ assert.ok(c.source_page.startsWith("https://commons.wikimedia.org/wiki/File:"));
+ assert.ok(c.commons_title.startsWith("File:"));
+ assert.ok(c.author_claim&&c.licence_claim&&c.subject_note);
+ assert.equal(c.rights_verified,false);
+ assert.equal(c.original_bytes_verified,false);
+ assert.equal(c.editorial_approved,false);
+ assert.equal(c.published,false);
+ assert.ok(!gallery.items.some(x=>x.subject_relic_id===id),
+  "A researched relic image must not quietly become approved gallery media");
+}
 const notre=profile("place:FR:notre-dame-paris");
 const notreHtml=render(notre.place_id);
 assert.equal(notre.sacred_treasures.length,3);
