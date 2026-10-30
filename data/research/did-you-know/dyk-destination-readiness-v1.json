@@ -1,0 +1,238 @@
+{
+  "schema": "AO_DYK_DRAFT_DESTINATION_READINESS_V1",
+  "date": "2026-10-30",
+  "status": "OWNER_CONTRACT_INSPECTED_NOT_BROWSER_ACCEPTED",
+  "source_owner": "Existing private Home discovery; no second DYK runtime",
+  "known_existing_home_route_contracts": {
+    "exact_glossary": {
+      "shape": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G###"
+      },
+      "validation": "Existing Home handler uses openExactDiscoveryGlossary, checks matching concept detail; browser test required"
+    },
+    "mass_cue": {
+      "status": "UNKNOWN_EXACT_CUE_NAVIGATION",
+      "reason": "The Mass reader has cue focus state, but the existing Home discovery dispatcher was not shown accepting a Mass cue destination. Generic Mass landing is not an acceptable exact link."
+    },
+    "customs_source_observations": {
+      "status": "SOURCE_ONLY_NO_CUSTOMS_PAGE",
+      "reason": "Historical source observation is not a published Calendar custom or directly selectable page; do not invent a dated or place-specific destination."
+    }
+  },
+  "counts": {
+    "glossary_source_specific_route_shape_supported": 10,
+    "mass_cue_unresolved": 5,
+    "historical_customs_unresolved": 130,
+    "active_drafts_total": 145,
+    "exact_browser_verified": 0,
+    "publication_authorized": 0
+  },
+  "ready_for_browser_testing": [
+    {
+      "draft_id": "DYK-SF01-018",
+      "source_record_id": "G059",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G059"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-019",
+      "source_record_id": "G066",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G066"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-020",
+      "source_record_id": "G075",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G075"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-021",
+      "source_record_id": "G088",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G088"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-022",
+      "source_record_id": "G182",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G182"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-024",
+      "source_record_id": "G187",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G187"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-026",
+      "source_record_id": "G189",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G189"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-030",
+      "source_record_id": "G197",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G197"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-032",
+      "source_record_id": "G212",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G212"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-033",
+      "source_record_id": "G213",
+      "destination": {
+        "type": "route",
+        "id": "learn.glossary",
+        "entryId": "G213"
+      },
+      "route_contract": "SUPPORTED_EXACT_CONCEPT_OWNER_CODE",
+      "route_contract_source": "src/home/discovery-glossary-route.js",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    }
+  ],
+  "unresolved_mass": [
+    {
+      "draft_id": "DYK-SF01-036",
+      "source_record_id": "GM.P.C0096.01",
+      "reader_cue_id": "AO.SM.C0096",
+      "destination": null,
+      "route_contract": "NO_VERIFIED_CARD_CUE_FROM_HOME",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-037",
+      "source_record_id": "GM.P.C0161.01",
+      "reader_cue_id": "AO.SM.C0161",
+      "destination": null,
+      "route_contract": "NO_VERIFIED_CARD_CUE_FROM_HOME",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-038",
+      "source_record_id": "GM.P.C0174.02",
+      "reader_cue_id": "AO.SM.C0174",
+      "destination": null,
+      "route_contract": "NO_VERIFIED_CARD_CUE_FROM_HOME",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-039",
+      "source_record_id": "GM.P.C0181.02",
+      "reader_cue_id": "AO.SM.C0181",
+      "destination": null,
+      "route_contract": "NO_VERIFIED_CARD_CUE_FROM_HOME",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    },
+    {
+      "draft_id": "DYK-SF01-040",
+      "source_record_id": "GM.P.C0273.01",
+      "reader_cue_id": "AO.SM.C0273",
+      "destination": null,
+      "route_contract": "NO_VERIFIED_CARD_CUE_FROM_HOME",
+      "browser_acceptance": "NOT_TESTED",
+      "fact_claim_approved": false,
+      "can_feed_production": false
+    }
+  ],
+  "unresolved_customs": {
+    "count": 130,
+    "policy": "Review possible specific feast, existing source article or contextual module on a per-fact basis; do not use a generic Calendar link as proof of this historic research observation."
+  },
+  "render_contract": {
+    "existing_home_heading_en": "DID YOU KNOW THAT…",
+    "existing_home_heading_fr": "LE SAVIEZ-VOUS ?",
+    "new_draft_text_en_has_question_prefix": true,
+    "new_draft_text_fr_has_question_prefix": true,
+    "direct_passthrough_to_home_forbidden": true,
+    "required_prepublication_transform": "Strip the drafting question stem and terminal question mark to yield one independent affirmative statement; review French elisions, punctuation and grammatical subjects individually. Do not repeat a Did You Know heading within its fact body."
+  }
+}
