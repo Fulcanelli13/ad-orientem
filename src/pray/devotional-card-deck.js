@@ -189,7 +189,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   if(f04&&recitationMode==="group"){
    for(const line of body.querySelectorAll("[data-ao-angelus-voice]")){
     const all=line.dataset.aoAngelusVoice==="response";
-    const role=create(doc,"span","aoF04VoiceRole",
+    const role=create(doc,"small","aoF04VoiceRole",
      all?(language==="fr"?"TOUS":"ALL"):(language==="fr"?"GUIDE":"LEADER"));
     role.setAttribute("aria-hidden","true");
     line.prepend(role);
