@@ -8,6 +8,7 @@ import { scriptureContextCapsule } from "../scripture/context.js";
 import { TODAY_V2_CSS } from "./today-v2-styles.js";
 import { buildTodayV2Sections, renderTodayV2Sections } from "./today-v2-sections.js";
 import { h4Enabled, h4HomeView } from "./today-h4-view.js";
+import { hydrateHomeDidYouKnow } from "./did-you-know-glossary.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
 
@@ -234,5 +235,8 @@ export function renderHome(root,state,win=globalThis){
     if(!hasArt)slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
   }
   reconcileTodayHero(root);
+  // Nonblocking source-owned Gospel/Glossary discovery hydration. This never
+  // consumes draft DYK research items or creates a second fact database.
+  hydrateHomeDidYouKnow(root,win);
   return true;
 }
