@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R22_V1",
   "date": "2026-10-30",
-  "current_status": "1001_CLASSIFIED_74_CONSOLIDATIONS_REVIEWED_49_RESTORED_DISTINCT_TRIAGED_189_BILINGUAL_DRAFTS_ZERO_APPROVALS",
+  "current_status": "R23_21_NEW_SOURCE_TEXT_CORRESPONDENCE_CHECKED_13_COPY_CORRECTIONS_189_SHORTLIST_ZERO_FINAL_APPROVALS",
   "active_owners": {
     "complete_record_ledger": "dyk-r22-1001-current-master-index.v1.json",
     "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
@@ -11,7 +11,8 @@
     "private_preview_owner": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028",
     "r22_full_provenance_base": "dyk-r21-unified-1001-consolidation-master.v1.json",
     "r22_distinct_selection": "dyk-r22-49-restored-distinct-editorial-selection.v1.json",
-    "added_bilingual_drafts": "dyk-r22-21-added-review-cards.v1.json"
+    "added_bilingual_drafts": "dyk-r22-21-added-review-cards.v1.json",
+    "r23_source_claim_fidelity_audit": "dyk-r23-21-source-fidelity-audit.v1.json"
   },
   "overall": {
     "generated_candidate_records": 1001,
@@ -28,7 +29,13 @@
     "latest_shortlist_promotions": 21,
     "latest_distinct_reserves": 28,
     "pending_mass_gesture_exact_source_views": 2,
-    "current_composed_review_pack": 189
+    "current_composed_review_pack": 189,
+    "latest_source_text_correspondence_checked": 21,
+    "latest_weiser_original_page_images_checked": 7,
+    "latest_roman_1962_primary_text_checks": 7,
+    "latest_pitre_original_text_layer_checked": 7,
+    "latest_pitre_facsimile_images_rechecked": 0,
+    "latest_bilingual_draft_corrections": 13
   },
   "adjudication": {
     "reviewed": 74,
@@ -56,7 +63,7 @@
     "HOLD_SCOPE_OR_QUALITY": 19
   },
   "next_gates": {
-    "source_specific_original_pages_where_needed": "PENDING",
+    "source_specific_original_pages_where_needed": "WEISER_7_REVIEWED_PITRE_7_ORIGINAL_TEXT_READ_PAGE_IMAGES_NOT_RECHECKED",
     "final_French_readthrough": "PENDING",
     "reconcile_49_restored_distinct_facts_to_shortlist_or_reserve": "COMPLETE_21_PROMOTED_28_RESERVED",
     "compare_612_Home_previews_semantically": "PARTIAL_ONLY",
@@ -64,12 +71,15 @@
     "publication": "NOT_AUTHORIZED",
     "editorial_quality_review_of_189": "PENDING",
     "exact_1962_Mass_gesture_source_view": "2_SOURCE_CUE_LINKS_PENDING",
-    "source_claim_review_of_14_new_historical_cards": "PENDING_RECHECK"
+    "source_claim_review_of_14_new_historical_cards": "PENDING_RECHECK",
+    "source_text_correspondence_for_21_new_cards": "COMPLETE_21_OF_21_AFTER_THIRTEEN_CORRECTIONS",
+    "pitre_upstream_page_pointer": "PACHINO_PRINTED_464_CARD_FIXED_UPSTREAM_454_ERRATUM_PENDING"
   },
   "notes": [
     "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
     "Twelve bilingual composite wording drafts are optional replacements of original records, not 12 new research facts; nine are inside the 168-card review pack and three stay reserve.",
     "All original source observations remain intact; triage is not human signoff or proof of historical continuity.",
-    "R22 restored-distinct work: 21 promoted to first-pass bilingual review, 28 retained as independent reserves. The 189 review is composed from the prior 168 plus 21 added cards, not new generated source records."
+    "R22 restored-distinct work: 21 promoted to first-pass bilingual review, 28 retained as independent reserves. The 189 review is composed from the prior 168 plus 21 added cards, not new generated source records.",
+    "R23 source-text review reconciled 21/21 latest cards to cited witnesses, with 13 corrected EN/FR descriptions; none have independent editorial French signoff, full Home novelty signoff or publication authorization."
   ]
 }
