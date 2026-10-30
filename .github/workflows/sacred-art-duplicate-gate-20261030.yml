@@ -1,0 +1,55 @@
+name: Sacred Art duplicate comparison · single offline HTML (€0)
+on:
+  push:
+    branches:
+      - research/sacred-art-duplicate-gate-20261030
+    paths:
+      - scripts/art/build-sacred-art-duplicate-review-20261030.mjs
+      - scripts/art/sacred-art-duplicate-review-template-20261030.html
+      - .github/workflows/sacred-art-duplicate-gate-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-duplicate-gate-20261030
+  cancel-in-progress: false
+jobs:
+  build-reviewed-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate one self-contained duplicate comparison page
+        run: node scripts/art/build-sacred-art-duplicate-review-20261030.mjs
+      - name: Verify review safety and embedded previews
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const summary=JSON.parse(readFileSync('data/calendar/sacred-art-master-v2/duplicate-review-page-manifest-20261030.v1.json','utf8'));
+          const html=readFileSync('docs/SACRED_ART_DUPLICATE_REVIEW_20261030.html','utf8');
+          if(summary.reviewedCards!==444||summary.registryRecords!==3205||summary.operationalArtworkGroups!==989)
+            throw Error('Input scope changed');
+          if(summary.byConfidence['EXACT SOURCE']!==6)throw Error('Six source-identity pairs absent');
+          if(!html.includes('NOT_DUPLICATE_KEEP_ALL')||!html.includes('SAME_WORK_KEEP_PREFERRED')||
+            !html.includes('Export decisions (JSON)')||!html.includes('data:image/jpeg;base64,'))
+            throw Error('Reviewer missing decisions or offline images');
+          if(summary.previousApprovalsChanged!==0||summary.queue1Promotions!==0||summary.productionMutations!==0)
+            throw Error('Unsafe approval or queue mutation');
+          console.log(summary);
+          NODE
+      - name: Persist review page and proof in the research branch
+        run: |
+          git config user.name "Ad Orientem sacred-art QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_DUPLICATE_REVIEW_20261030.html data/calendar/sacred-art-master-v2/duplicate-review-page-manifest-20261030.v1.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "build(sacred-art): offline duplicate-choice gallery and review manifest [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi
