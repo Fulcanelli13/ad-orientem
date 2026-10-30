@@ -1,0 +1,38 @@
+name: R17 four-form family phone matrix
+
+on:
+  pull_request:
+    paths:
+      - "src/mass/**"
+      - "data/mass/**"
+      - "data/presentation/**"
+      - "tests/fixtures/reader-phone-harness.html"
+      - "tests/r17-four-form-family-phone.mjs"
+      - ".github/workflows/r17-four-form-family-phone.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-owned-four-form-family:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Render four forms × Votive/Requiem and assert source-cue ownership
+        run: node tests/r17-four-form-family-phone.mjs
+      - name: Preserve rendered phone captures and source-cue manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r17-four-form-family-phone-evidence
+          path: artifacts/r17-four-form-family-matrix/
+          if-no-files-found: warn
+          retention-days: 14
