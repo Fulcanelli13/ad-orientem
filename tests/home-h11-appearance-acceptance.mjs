@@ -297,8 +297,18 @@ try{
     await remembered.close();
     await h4.locator(".aoH4SheetBottom [data-h4-sheet-close]").click();
     await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
+    await h4.waitForFunction(()=>document.activeElement?.matches?.(
+      ".homeScreen.aoTodayH4 [data-home-h4-change]"),null,{timeout:10000});
     assert.match(await h4.locator(".aoH4Primary small").innerText(),/Missal|Missel/,
       "H4 Begin must reflect the source preflight reader selection");
+    // Escape is an independent dismissal path. The native dialog must restore
+    // focus to the fresh Home trigger after the canonical Home repaint.
+    await h4.locator("[data-home-h4-change]").click();
+    await h4.waitForSelector(".aoH4ChoiceDialog[open]",{state:"visible",timeout:10000});
+    await h4.keyboard.press("Escape");
+    await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
+    await h4.waitForFunction(()=>document.activeElement?.matches?.(
+      ".homeScreen.aoTodayH4 [data-home-h4-change]"),null,{timeout:10000});
     // The no-art state must collapse the illustration, not leave a decorative
     // placeholder or bury the single Begin/Resume door beneath the phone ribbon.
     await h4.evaluate(()=>{
