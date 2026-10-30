@@ -124,9 +124,9 @@ for(const check of rosaryDonorScenarios){
   for(const set of ['joyful','sorrowful','glorious','luminous']){
     // Every decade step carries mi and inherits that mystery image. All
     // opening and concluding prayers inherit the Rosary cover candidate.
-    assert.equal(presentationResolve('rosary',0,{set,mystery:null}).slot,'COV-pray.rosary');
+    assert.equal(resolveArtworkRuntimeIdentity({owner:'presentation',view:'rosary',set,mystery:null}).slot,'COV-pray.rosary');
     for(let mi=0;mi<5;mi++){
-      assert.ok(presentationResolve('rosary',0,{set,mystery:mi}).slot,
+      assert.ok(resolveArtworkRuntimeIdentity({owner:'presentation',view:'rosary',set,mystery:mi}).slot,
         'Rosary decade image stage missing '+set+' / '+mi);
     }
   }
