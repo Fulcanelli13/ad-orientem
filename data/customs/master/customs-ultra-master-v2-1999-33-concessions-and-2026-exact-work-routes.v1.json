@@ -1,0 +1,1020 @@
+{
+  "schema": "AO_CUSTOMS_INDULGENCES_NORMATIVE_GRANT_TO_WORK_CROSSWALK_V1",
+  "as_of": "2026-10-30",
+  "state": "SOURCE_VERIFIED_WORK_REGISTRY_RELEASE_REVIEW_ONLY",
+  "purpose": "Complete 33-concession and four-general 1999 Enchiridion index and actionable bilingual exact-work routes for existing Customs, Prayers, Mass, Bible, Calendar and Explore. Separate 2002 and 2026 apostolic decrees; no historic continuity assumption.",
+  "authority": {
+    "enchiridion_1999_latin": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+    "doctrina_1967": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html",
+    "special_mercy_2002": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020629_decree-ii_en.html",
+    "special_francis_2026": "https://www.vatican.va/content/romancuria/en/organismi-di-giustizia/penitenzieria-apostolica/documenti/20260110-indulgenze-sanfrancesco.html"
+  },
+  "global_conditions": {
+    "plenary": "State of grace; no attachment even to venial sin; prescribed work; sacramental confession, Eucharistic communion and prayer for the Roman Pontiff's intentions; specific concession exceptions. Generally at most one plenary per day, except point of death.",
+    "partial": "At least a contrite heart and precise work and conditions; not simply owning an item or celebrating a date.",
+    "for_deceased": "Applicable by way of suffrage, with specified departed-only concessions; cannot claim an individual obtained an indulgence.",
+    "calendar": "A grant tied to a particular liturgical day follows its own canonical date and legitimate transfer rules; 1962 calendar presentation does not independently redefine indulgence law.",
+    "historical": "Pre-1967 grants and 1962 Raccolta numbers are not presumed legally in force; particular later grants require their own decree."
+  },
+  "general_concessions": [
+    {
+      "grant_id": "ENCH1999-GI",
+      "general_concession": "I",
+      "title_en": "Pious invocation while performing duties or enduring difficulties",
+      "title_fr": "Invocation pieuse au cours des devoirs ou épreuves",
+      "class": "PARTIAL",
+      "exact_work_summary_en": "Raise heart to God with humble confidence, with at least a mental pious invocation.",
+      "primary_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "status": "CURRENT_FRAMEWORK_NORMATIVE_WORK_NOT_PER_CUSTOM"
+    },
+    {
+      "grant_id": "ENCH1999-GII",
+      "general_concession": "II",
+      "title_en": "Works of mercy for people in need",
+      "title_fr": "Œuvres de miséricorde envers les personnes dans le besoin",
+      "class": "PARTIAL",
+      "exact_work_summary_en": "Give of oneself or one's goods in a spirit of faith and mercy to those actually in need.",
+      "primary_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "status": "CURRENT_FRAMEWORK_NORMATIVE_WORK_NOT_PER_CUSTOM"
+    },
+    {
+      "grant_id": "ENCH1999-GIII",
+      "general_concession": "III",
+      "title_en": "Voluntary penitential abstinence",
+      "title_fr": "Abstinence volontaire accomplie dans un esprit de pénitence",
+      "class": "PARTIAL",
+      "exact_work_summary_en": "Voluntarily abstain from something lawful and pleasing in a spirit of penance.",
+      "primary_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "status": "CURRENT_FRAMEWORK_NORMATIVE_WORK_NOT_PER_CUSTOM"
+    },
+    {
+      "grant_id": "ENCH1999-GIV",
+      "general_concession": "IV",
+      "title_en": "Open witness of faith in everyday circumstances",
+      "title_fr": "Témoignage public de foi dans la vie quotidienne",
+      "class": "PARTIAL",
+      "exact_work_summary_en": "Freely give an open witness to the faith in particular daily-life circumstances.",
+      "primary_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "status": "CURRENT_FRAMEWORK_NORMATIVE_WORK_NOT_PER_CUSTOM"
+    }
+  ],
+  "particular_concessions": [
+    {
+      "grant_id": "ENCH1999-01",
+      "concession_number": 1,
+      "title_en": "Act of family consecration",
+      "title_fr": "Acte de consécration de la famille",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 1",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-02",
+      "concession_number": 2,
+      "title_en": "Dedication of the human race to Christ the King",
+      "title_fr": "Consécration du genre humain au Christ-Roi",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 2",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-03",
+      "concession_number": 3,
+      "title_en": "Act of reparation to the Sacred Heart",
+      "title_fr": "Acte de réparation au Sacré-Cœur",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 3",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-04",
+      "concession_number": 4,
+      "title_en": "Papal blessing",
+      "title_fr": "Bénédiction papale",
+      "possible_indulgence_classes": "PLENARY",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 4",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-05",
+      "concession_number": 5,
+      "title_en": "Universally designated religious days",
+      "title_fr": "Journées universelles consacrées à une intention religieuse",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 5",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-06",
+      "concession_number": 6,
+      "title_en": "Teaching or learning Christian doctrine",
+      "title_fr": "Enseignement ou étude de la doctrine chrétienne",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 6",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-07",
+      "concession_number": 7,
+      "title_en": "Eucharistic adoration and procession",
+      "title_fr": "Adoration et procession eucharistiques",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 7",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-08",
+      "concession_number": 8,
+      "title_en": "Eucharistic and spiritual Communion",
+      "title_fr": "Communion eucharistique et spirituelle",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 8",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-09",
+      "concession_number": 9,
+      "title_en": "Examination of conscience and contrition",
+      "title_fr": "Examen de conscience et contrition",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 9",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-10",
+      "concession_number": 10,
+      "title_en": "Spiritual exercises and monthly recollection",
+      "title_fr": "Exercices spirituels et récollection mensuelle",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 10",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-11",
+      "concession_number": 11,
+      "title_en": "Week of Prayer for Christian Unity",
+      "title_fr": "Semaine de prière pour l'unité des chrétiens",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 11",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-12",
+      "concession_number": 12,
+      "title_en": "At the point of death",
+      "title_fr": "À l'article de la mort",
+      "possible_indulgence_classes": "PLENARY",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 12",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-13",
+      "concession_number": 13,
+      "title_en": "In memory of the Passion and Death of the Lord",
+      "title_fr": "En mémoire de la Passion et de la Mort du Seigneur",
+      "possible_indulgence_classes": "PLENARY",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 13",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-14",
+      "concession_number": 14,
+      "title_en": "Devout use of blessed articles",
+      "title_fr": "Usage pieux d'objets bénits",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 14",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-15",
+      "concession_number": 15,
+      "title_en": "Mental prayer",
+      "title_fr": "Oraison mentale",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 15",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-16",
+      "concession_number": 16,
+      "title_en": "Participation in sacred preaching",
+      "title_fr": "Participation à la prédication sacrée",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 16",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-17",
+      "concession_number": 17,
+      "title_en": "Prayers to the Blessed Virgin Mary",
+      "title_fr": "Prières à la Bienheureuse Vierge Marie",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 17",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-18",
+      "concession_number": 18,
+      "title_en": "Prayers to one's guardian angel",
+      "title_fr": "Prières à son ange gardien",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 18",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-19",
+      "concession_number": 19,
+      "title_en": "Prayers in honour of Saint Joseph",
+      "title_fr": "Prières en l'honneur de saint Joseph",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 19",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-20",
+      "concession_number": 20,
+      "title_en": "Prayers in honour of Saints Peter and Paul",
+      "title_fr": "Prières en l'honneur des saints Pierre et Paul",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 20",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-21",
+      "concession_number": 21,
+      "title_en": "Prayers in honour of saints and blesseds",
+      "title_fr": "Prières en l'honneur des saints et bienheureux",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 21",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-22",
+      "concession_number": 22,
+      "title_en": "Novenas, litanies and little offices",
+      "title_fr": "Neuvaines, litanies et petits offices",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 22",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-23",
+      "concession_number": 23,
+      "title_en": "Prayers of the Eastern Churches",
+      "title_fr": "Prières des Églises orientales",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 23",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-24",
+      "concession_number": 24,
+      "title_en": "Prayers for benefactors",
+      "title_fr": "Prières pour les bienfaiteurs",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 24",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-25",
+      "concession_number": 25,
+      "title_en": "Prayers for pastors",
+      "title_fr": "Prières pour les pasteurs",
+      "possible_indulgence_classes": "PARTIAL",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 25",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-26",
+      "concession_number": 26,
+      "title_en": "Prayers of petition and thanksgiving",
+      "title_fr": "Prières de supplication et d'action de grâces",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 26",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-27",
+      "concession_number": 27,
+      "title_en": "First Mass and ordination jubilees",
+      "title_fr": "Première messe et jubilés d'ordination",
+      "possible_indulgence_classes": "PLENARY",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 27",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-28",
+      "concession_number": 28,
+      "title_en": "Profession of faith and theological virtues",
+      "title_fr": "Profession de foi et actes des vertus théologales",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 28",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-29",
+      "concession_number": 29,
+      "title_en": "Prayers for the departed",
+      "title_fr": "Prières pour les fidèles défunts",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 29",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-30",
+      "concession_number": 30,
+      "title_en": "Reading or listening to Sacred Scripture",
+      "title_fr": "Lecture ou écoute de la Sainte Écriture",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 30",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-31",
+      "concession_number": 31,
+      "title_en": "Diocesan synod",
+      "title_fr": "Synode diocésain",
+      "possible_indulgence_classes": "PLENARY",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 31",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-32",
+      "concession_number": 32,
+      "title_en": "Pastoral visitation",
+      "title_fr": "Visite pastorale",
+      "possible_indulgence_classes": "PLENARY",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 32",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    },
+    {
+      "grant_id": "ENCH1999-33",
+      "concession_number": 33,
+      "title_en": "Visits to sacred places",
+      "title_fr": "Visites de lieux sacrés",
+      "possible_indulgence_classes": "BOTH",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "source_locator": "Concessio 33",
+      "status": "OFFICIAL_PRIMARY_TEXT_INDEXED_NOT_CUSTOM_WIDE",
+      "subclauses_must_be_read_for_exact_work": true
+    }
+  ],
+  "exact_work_routes": [
+    {
+      "work_key": "AO-IND-WORK-001",
+      "normative_grant_id": "ENCH1999-01",
+      "title_en": "Family consecration to Sacred Heart or Holy Family",
+      "title_fr": "Consécration familiale au Sacré-Cœur ou à la Sainte Famille",
+      "grant_class_when_exactly_performed": "PLENARY_FIRST_DAY_PARTIAL_ANNIVERSARY",
+      "qualifying_work_and_condition_en": "Approved prayer before image; first consecration; if possible priest/deacon leads; anniversary only partial",
+      "customs_owner_id": "DOM-006",
+      "proposed_surfaces": [
+        "Prayers",
+        "Customs"
+      ],
+      "explicit_non_equivalence": "FIRST_FAMILY_CONSECRATION_OR_ANNIVERSARY",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-002",
+      "normative_grant_id": "ENCH1999-02",
+      "title_en": "Public act of dedication to Christ the King",
+      "title_fr": "Acte public de consécration au Christ-Roi",
+      "grant_class_when_exactly_performed": "PLENARY_ON_CHRIST_KING_PARTIAL_OTHER",
+      "qualifying_work_and_condition_en": "Public recitation of Iesu dulcissime Redemptor on the solemnity of Christ the King; other occasions partial",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "OFFICIAL_SOLEMNITY_DATE_MUST_BE_RECONCILED_WITH_1962_CALENDAR",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-003",
+      "normative_grant_id": "ENCH1999-03",
+      "title_en": "Public reparation to Sacred Heart",
+      "title_fr": "Acte public de réparation au Sacré-Cœur",
+      "grant_class_when_exactly_performed": "PLENARY_ON_SACRED_HEART_PARTIAL_OTHER",
+      "qualifying_work_and_condition_en": "Public recitation of Iesu dulcissime on the solemnity of the Sacred Heart; otherwise partial",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "TEXT_AND_PUBLIC_CONTEXT_REQUIRED",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-004",
+      "normative_grant_id": "ENCH1999-07",
+      "title_en": "Eucharistic adoration",
+      "title_fr": "Adoration eucharistique",
+      "grant_class_when_exactly_performed": "PLENARY_30_MIN_PARTIAL_SHORTER",
+      "qualifying_work_and_condition_en": "At least 30 minutes for plenary; shorter devout visit is partial",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Mass",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "ADORATION_ACTUALLY_PERFORMED_NOT_MERE_CHURCH_VISIT",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-005",
+      "normative_grant_id": "ENCH1999-07",
+      "title_en": "Tantum ergo at Holy Thursday repository",
+      "title_fr": "Tantum ergo au reposoir du Jeudi saint",
+      "grant_class_when_exactly_performed": "PLENARY",
+      "qualifying_work_and_condition_en": "Devoutly recite hymn during solemn reposition after Mass in Cena Domini",
+      "customs_owner_id": "HTHU-001",
+      "proposed_surfaces": [
+        "Mass",
+        "Calendar",
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "VISIT_TO_CHURCH_ALONE_NOT_THIS_WORK",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-006",
+      "normative_grant_id": "ENCH1999-07",
+      "title_en": "Solemn Eucharistic procession",
+      "title_fr": "Procession eucharistique solennelle",
+      "grant_class_when_exactly_performed": "PLENARY",
+      "qualifying_work_and_condition_en": "Devoutly participate in solemn procession of the Eucharist, particularly Corpus Christi",
+      "customs_owner_id": "CORP-001",
+      "proposed_surfaces": [
+        "Mass",
+        "Calendar",
+        "Customs"
+      ],
+      "explicit_non_equivalence": "FLOWER_CARPET_ALONE_NOT_PROCESSION_PARTICIPATION",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-007",
+      "normative_grant_id": "ENCH1999-08",
+      "title_en": "Prayer after Communion or spiritual Communion",
+      "title_fr": "Prière après la communion ou communion spirituelle",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Approved act of spiritual Communion or thanksgiving after Communion; special plenary First Communion and Lenten-Friday Crucifix prayers have separate requirements",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Mass",
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "DO_NOT_CLAIM_PLENARY_FOR_EVERY_AFTER_COMMUNION_PRAYER",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-008",
+      "normative_grant_id": "ENCH1999-09",
+      "title_en": "Examination of conscience and act of contrition",
+      "title_fr": "Examen de conscience et acte de contrition",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Devout examination with resolve to amend, or devout act of contrition by legitimate formula",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Confession",
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "SACRAMENTAL_ABSOLUTION_IS_NOT_A_GRANT_CONDITION_FOR_EVERY_PARTIAL_WORK",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-009",
+      "normative_grant_id": "ENCH1999-13",
+      "title_en": "Way of the Cross",
+      "title_fr": "Chemin de croix",
+      "grant_class_when_exactly_performed": "PLENARY",
+      "qualifying_work_and_condition_en": "Legitimately erected Stations; meditation on the Passion; customary movement or applicable exemption; not any Passion walk",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "NEWLAND_12_CANDLE_IMPERSONATION_EXCLUDED",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-010",
+      "normative_grant_id": "ENCH1999-14",
+      "title_en": "Devout use of prescribed blessed articles",
+      "title_fr": "Usage pieux d'objets de piété bénits",
+      "grant_class_when_exactly_performed": "PARTIAL_OR_PLENARY_JUNE_29",
+      "qualifying_work_and_condition_en": "Crucifix/cross, rosary, scapular or medal properly blessed; episcopal/papal blessing plus profession of faith on 29 June for plenary",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar",
+        "Glossary"
+      ],
+      "explicit_non_equivalence": "CANDLE_OR_BLESSED_PALM_NOT_AUTOMATICALLY_IN_THIS_ENUMERATED_LIST",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-011",
+      "normative_grant_id": "ENCH1999-17",
+      "title_en": "Five-decade meditated Rosary",
+      "title_fr": "Rosaire médité de cinq dizaines",
+      "grant_class_when_exactly_performed": "PLENARY_QUALIFIED_SETTING_PARTIAL_OTHER",
+      "qualifying_work_and_condition_en": "Five consecutive decades and meditation, in church/oratory, family or specified community setting; otherwise partial",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "READING_A_MARIAN_ARTICLE_IS_NOT_RECITATION",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-012",
+      "normative_grant_id": "ENCH1999-17",
+      "title_en": "Angelus or Regina Caeli",
+      "title_fr": "Angélus ou Regina caeli",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "At morning, noon, or evening, devout Angelus with versicles and concluding prayer; Regina caeli in Easter season",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Home",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "MUST_INCLUDE_PROPER_PRAYER_CONTEXT_AND_SEASON",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-013",
+      "normative_grant_id": "ENCH1999-17",
+      "title_en": "Magnificat and approved Marian prayers",
+      "title_fr": "Magnificat et prières mariales approuvées",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Devout Magnificat; approved prayers e.g. Memorare, Salve Regina or Sub tuum praesidium",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "MARIAN_PROCESSION_BY_ITSELF_NOT_THIS_WORK",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-014",
+      "normative_grant_id": "ENCH1999-19",
+      "title_en": "Approved prayer to Saint Joseph",
+      "title_fr": "Prière approuvée à saint Joseph",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Devout invocation by approved prayer such as Ad te beate Ioseph",
+      "customs_owner_id": "SJOS-001",
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "ST_JOSEPH_TABLE_OR_FOOD_NOT_AUTOMATICALLY_INDULGENCED_PRAYER",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-015",
+      "normative_grant_id": "ENCH1999-22",
+      "title_en": "Approved litanies",
+      "title_fr": "Litanies approuvées",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Approved litanies including Precious Blood, Sacred Heart, Blessed Virgin, Saint Joseph, Saints",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "NOT_ANY_LITANY_OR_UNVERIFIED_PRIVATE_FORMULA",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-016",
+      "normative_grant_id": "ENCH1999-22",
+      "title_en": "Public novena exercise",
+      "title_fr": "Exercice public d'une neuvaine",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Devout participation in public novena, e.g. Christmas, Pentecost or Immaculate Conception",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar",
+        "Customs"
+      ],
+      "explicit_non_equivalence": "PRIVATE_NINE_DAY_CRAFT_NOT_AUTOMATICALLY_PUBLIC_NOVENA",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-017",
+      "normative_grant_id": "ENCH1999-26",
+      "title_en": "Public Veni Creator on January 1 or Pentecost",
+      "title_fr": "Veni Creator public le 1er janvier ou à la Pentecôte",
+      "grant_class_when_exactly_performed": "PLENARY",
+      "qualifying_work_and_condition_en": "Devout attendance at solemn public recitation or singing in church or oratory on the qualifying day",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar",
+        "Mass"
+      ],
+      "explicit_non_equivalence": "EXACT_DATE_AND_PUBLIC_LITURGICAL_SETTING",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-018",
+      "normative_grant_id": "ENCH1999-26",
+      "title_en": "Public Te Deum on December 31",
+      "title_fr": "Te Deum public le 31 décembre",
+      "grant_class_when_exactly_performed": "PLENARY",
+      "qualifying_work_and_condition_en": "Devout attendance at solemn public recitation or singing in church or oratory on 31 December",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "NOT_A_PRIVATE_TE_DEUM_AUTOMATICALLY",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-019",
+      "normative_grant_id": "ENCH1999-28",
+      "title_en": "Renew baptismal promises",
+      "title_fr": "Renouvellement des promesses du baptême",
+      "grant_class_when_exactly_performed": "PLENARY_EASTER_VIGIL_OR_BAPTISM_ANNIVERSARY_PARTIAL_OTHER",
+      "qualifying_work_and_condition_en": "Approved form during Easter Vigil celebration or own baptism anniversary for plenary; otherwise partial",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Mass",
+        "Prayers",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "NOT_ANY_EASTER_MEAL_OR_NAME_DAY",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-020",
+      "normative_grant_id": "ENCH1999-28",
+      "title_en": "Sign of the Cross or Creed",
+      "title_fr": "Signe de croix ou Credo",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Devoutly make sign of Cross with Trinitarian invocation or recite Apostles'/Nicene Creed",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Prayers",
+        "Mass"
+      ],
+      "explicit_non_equivalence": "MERE_DISPLAY_OF_CROSS_OR_BAPTISMAL_OBJECT_NOT_THIS_WORK",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-021",
+      "normative_grant_id": "ENCH1999-29",
+      "title_en": "Prayerful cemetery visit 1–8 November",
+      "title_fr": "Visite pieuse au cimetière du 1er au 8 novembre",
+      "grant_class_when_exactly_performed": "PLENARY_FOR_DEPARTED",
+      "qualifying_work_and_condition_en": "Devout cemetery visit and prayer for departed (even mentally) between 1 and 8 November",
+      "customs_owner_id": "DEAD-001",
+      "proposed_surfaces": [
+        "Calendar",
+        "Customs",
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "NOT_GRAVE_CLEANING_OR_LANTERN_ALONE",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-022",
+      "normative_grant_id": "ENCH1999-29",
+      "title_en": "Prayerful cemetery visit outside 1–8 November",
+      "title_fr": "Visite pieuse au cimetière hors du 1er–8 novembre",
+      "grant_class_when_exactly_performed": "PARTIAL_FOR_DEPARTED",
+      "qualifying_work_and_condition_en": "Devout visit with prayer for the dead outside plenary date window",
+      "customs_owner_id": "DEAD-001",
+      "proposed_surfaces": [
+        "Calendar",
+        "Customs",
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "DATE_SCOPE_ONLY_PLENARY_NOV_1_TO_8",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-023",
+      "normative_grant_id": "ENCH1999-29",
+      "title_en": "All Souls church/oratory visit",
+      "title_fr": "Visite d'une église ou chapelle pour les défunts",
+      "grant_class_when_exactly_performed": "PLENARY_FOR_DEPARTED",
+      "qualifying_work_and_condition_en": "Church/oratory visit with Our Father and Creed on All Souls; specified transfer allowed only with Ordinary consent",
+      "customs_owner_id": "DEAD-003",
+      "proposed_surfaces": [
+        "Calendar",
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "GENERIC_NOV_2_PRAYER_NOT_AUTOMATICALLY_CHURCH_VISIT",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-024",
+      "normative_grant_id": "ENCH1999-29",
+      "title_en": "Requiem aeternam or Office of the Dead",
+      "title_fr": "Requiem aeternam ou Office des morts",
+      "grant_class_when_exactly_performed": "PARTIAL_FOR_DEPARTED",
+      "qualifying_work_and_condition_en": "Devout Requiem aeternam or Lauds/Vespers of Office of the Dead",
+      "customs_owner_id": "DEAD-003",
+      "proposed_surfaces": [
+        "Prayers",
+        "Divine Office",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "NO_AUTO_PLENARY_FOR_GENERAL_PRAYERS",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-025",
+      "normative_grant_id": "ENCH1999-30",
+      "title_en": "Devout Sacred Scripture reading or listening",
+      "title_fr": "Lecture ou écoute pieuse de l'Écriture sainte",
+      "grant_class_when_exactly_performed": "PLENARY_30_MIN_PARTIAL_SHORTER",
+      "qualifying_work_and_condition_en": "Approved Scripture text spiritually read for at least 30 minutes; eligible listening exception",
+      "customs_owner_id": null,
+      "proposed_surfaces": [
+        "Bible",
+        "Historia Salutis",
+        "Prayers"
+      ],
+      "explicit_non_equivalence": "BROWSING_VERSE_CARDS_OR_BRIEF_CAPTIONS_NOT_30_MIN",
+      "link_status": "WORK_LEVEL_MODULE_ROUTE_ONLY",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-026",
+      "normative_grant_id": "ENCH1999-33",
+      "title_en": "Qualifying shrine pilgrimage or visit",
+      "title_fr": "Pèlerinage ou visite d'un sanctuaire reconnu",
+      "grant_class_when_exactly_performed": "PLENARY_CONDITIONAL",
+      "qualifying_work_and_condition_en": "Recognized international/national/diocesan shrine; proper occasion (titular solemnity, one freely chosen day annually, organized pilgrimage); Our Father and Creed",
+      "customs_owner_id": "DEV-006",
+      "proposed_surfaces": [
+        "Explore",
+        "Calendar",
+        "Customs"
+      ],
+      "explicit_non_equivalence": "MUST_VERIFY_CANONICAL_SHRINE_DESIGNATION_AND_ELIGIBLE_OCCASION",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-027",
+      "normative_grant_id": "ENCH1999-33",
+      "title_en": "Titular feast / Porziuncola parish church visit",
+      "title_fr": "Visite d'église paroissiale à la fête patronale ou à la Portioncule",
+      "grant_class_when_exactly_performed": "PLENARY_CONDITIONAL",
+      "qualifying_work_and_condition_en": "Visit actual parish church on its titular solemnity or August 2, with Our Father and Creed",
+      "customs_owner_id": "PATR-001",
+      "proposed_surfaces": [
+        "Explore",
+        "Calendar",
+        "Customs"
+      ],
+      "explicit_non_equivalence": "LOCAL_VILLAGE_FAIR_NOT_SUFFICIENT; NOT_ALL_RITES_CELEBRATE_AUG_2_SAME_WAY",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-028",
+      "normative_grant_id": "ENCH1999-GII",
+      "title_en": "Giving food or help to someone in need",
+      "title_fr": "Don de nourriture ou aide à une personne dans le besoin",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Mercifully give oneself or goods in a spirit of faith to a person actually needing help",
+      "customs_owner_id": "SJOS-001",
+      "proposed_surfaces": [
+        "Customs",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "TABLE_FEAST_ALONE_DOES_NOT_SATISFY_NEED_RECIPIENT",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-029",
+      "normative_grant_id": "ENCH1999-GII",
+      "title_en": "Alms or bread to the poor",
+      "title_fr": "Aumône ou pain donné aux pauvres",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Actual aid to those in need, with spirit of faith and mercy, not only food blessing or feast cooking",
+      "customs_owner_id": "SANT-001",
+      "proposed_surfaces": [
+        "Customs",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "RECIPIENT_NEED_AND_CHARITABLE_ACT_MUST_BE_REAL",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-030",
+      "normative_grant_id": "ENCH1999-GII",
+      "title_en": "Christmas collection for needy families",
+      "title_fr": "Collecte de Noël pour familles nécessiteuses",
+      "grant_class_when_exactly_performed": "PARTIAL",
+      "qualifying_work_and_condition_en": "Actual relief of need through charitable distribution in spirit of faith",
+      "customs_owner_id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "proposed_surfaces": [
+        "Customs",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "NOT_MERELY_CAROLING_WITHOUT_AID",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    },
+    {
+      "work_key": "AO-IND-WORK-031",
+      "normative_grant_id": "ENCH1999-33",
+      "title_en": "St Francis 2026 pilgrimage (separate 2026 decree)",
+      "title_fr": "Pèlerinage franciscain 2026 (décret spécial distinct)",
+      "grant_class_when_exactly_performed": "SPECIAL_DECREE_NOT_ENCH_33",
+      "qualifying_work_and_condition_en": "Qualifying Franciscan or dedicated place under 10 Jan 2026–10 Jan 2027 special decree; see separate grant below",
+      "customs_owner_id": "DEV-006",
+      "proposed_surfaces": [
+        "Explore",
+        "Calendar"
+      ],
+      "explicit_non_equivalence": "DO_NOT_CONFUSE_WITH_ENCH1999_33_AS_A_SINGLE_GRANT",
+      "link_status": "WORK_LEVEL_CONDITIONAL_RELATION_EXISTING_OWNER",
+      "human_app_editorial_approval": false,
+      "published_in_app": false
+    }
+  ],
+  "additional_active_decrees": [
+    {
+      "grant_id": "AP-2002-DIVINE-MERCY",
+      "title_en": "Divine Mercy Second Sunday of Easter",
+      "title_fr": "Dimanche de la Miséricorde divine (deuxième dimanche de Pâques)",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020629_decree-ii_en.html",
+      "grant_class": "PLENARY_OR_PARTIAL_EXACT_WORK",
+      "applicability": "GENERAL_PERSISTENT_2002_DECREE",
+      "plenary_work": "On the Second Sunday of Easter, attend Divine Mercy prayers/devotions in a church or chapel, or before the Blessed Sacrament recite Our Father and Creed plus a prayer to merciful Jesus; special provision for homebound applies.",
+      "partial_work": "Devout approved invocation to merciful Jesus with contrite heart.",
+      "calendar_context": "SECOND_SUNDAY_OF_EASTER",
+      "precise_rite_alignment_required": true,
+      "does_not_indulge": "Any chaplet recited anywhere by itself is not automatically the Sunday plenary indulgenced work.",
+      "source_primary_decree_verified": true,
+      "public_release_review_pending": true
+    },
+    {
+      "grant_id": "AP-2026-FRANCIS-YEAR",
+      "title_en": "Year of Saint Francis pilgrimage indulgence",
+      "title_fr": "Indulgence du Jubilé franciscain 2026–2027",
+      "source_url": "https://www.vatican.va/content/romancuria/en/organismi-di-giustizia/penitenzieria-apostolica/documenti/20260110-indulgenze-sanfrancesco.html",
+      "grant_class": "PLENARY_EXACT_WORK",
+      "effective_from": "2026-01-10",
+      "effective_through": "2027-01-10",
+      "applicability": "TEMPORARY_2026_2027",
+      "plenary_work": "During specified period visit a qualifying Franciscan church or place dedicated or linked to Francis as a pilgrimage; follow jubilee rites or spend time in meditation and the specified concluding prayers; distinct provisions for Franciscan members and homebound.",
+      "calendar_context": "TEMPORARY_GRANT_NOT_PERPETUAL",
+      "site_designation_requires_individual_validation": true,
+      "does_not_indulge": "Any church simply labelled Franciscan, every Franciscan custom, or a generic tourist visit.",
+      "source_primary_decree_verified": true,
+      "public_release_review_pending": true
+    }
+  ],
+  "publication_contract": {
+    "no_automatic_custom_wide_indulgence": true,
+    "individual_published_customs_unchanged": 36,
+    "new_customs_approved": 0,
+    "new_indulgence_assertions_in_runtime": 0,
+    "calendar_runtime_changed": false,
+    "exact_prayer_text_or_place_must_be_reconciled": true,
+    "editorial_liturgical_legal_signoff_required_for_app": true,
+    "local_shrine_specific_decrees_preserved": true
+  },
+  "counts": {
+    "general_concessions": 4,
+    "particular_concessions": 33,
+    "work_routes": 31,
+    "work_routes_with_existing_custom_owner_id": 14,
+    "separate_primary_decrees": 2,
+    "new_customs_published": 0,
+    "new_indulgence_runtime_claims": 0
+  }
+}
