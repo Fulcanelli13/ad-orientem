@@ -21,8 +21,8 @@
       "category": "customs_historical_source",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that At Easter, some European families traditionally put on new clothes for the first time.",
-        "fr": "Saviez-vous que à Pâques, certaines familles européennes portaient traditionnellement des vêtements neufs pour la première fois."
+        "en": "Did you know that at Easter, some European families traditionally put on new clothes for the first time.",
+        "fr": "Saviez-vous qu'à Pâques, certaines familles européennes portaient traditionnellement des vêtements neufs pour la première fois."
       },
       "historical_claim_only": true,
       "source": {
@@ -798,8 +798,8 @@
       "category": "customs_historical_source",
       "source_family": "WEISER_1958",
       "text": {
-        "en": "Did you know that Weiser recounts an old Pentecost-related custom at Rome's Pantheon in which rose petals fell from above.",
-        "fr": "Saviez-vous que Weiser relate une ancienne coutume romaine liée à la Pentecôte, au Panthéon, où des pétales de rose tombaient d'en haut."
+        "en": "Did you know that Weiser recounts a historical custom at Rome's Pantheon in which rose petals fell from above during a religious celebration?",
+        "fr": "Saviez-vous que Weiser relate une ancienne coutume du Panthéon de Rome où des pétales de rose tombaient d'en haut pendant une célébration religieuse ?"
       },
       "historical_claim_only": true,
       "source": {
@@ -823,7 +823,8 @@
         "year": "HISTORICAL_AS_REPORTED_IN_1958",
         "no_1962_rubric_inference": true,
         "no_universal_claim": true,
-        "not_calendar_rule": true
+        "not_calendar_rule": true,
+        "qualification": "Do not infer an exact feast date or currently authorised Roman rite from the historical page review."
       },
       "duplicate_gate": "PASS_EXACT_RECORD_NONREUSE_WITHIN_PR_2096_ONLY",
       "editorial_status": "PENDING_SOURCE_LOCALE_AND_SEMANTIC_REVIEW",
