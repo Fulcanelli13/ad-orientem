@@ -23,11 +23,11 @@
       "FEATURED_FOR_REVIEW": 168,
       "HOLD_SOURCE_OR_SCOPE": 23,
       "RESERVE_FOR_BALANCE": 100,
-      "CONSOLIDATE_WITH_RELATED": 42,
+      "CONSOLIDATE_WITH_RELATED": 41,
       "LEARN_GLOSSARY_REFERENCE_ONLY": 440,
       "EXACT_HOME_PREVIEW_ALIAS": 142,
       "SAME_SOURCE_HOME_VARIANT": 14,
-      "LEARN_REFERENCE_OR_MASS_RESERVE": 20,
+      "LEARN_REFERENCE_OR_MASS_RESERVE": 21,
       "CONSOLIDATE_OR_SPREAD_FESTIVAL": 33,
       "HOLD_SCOPE_OR_QUALITY": 19
     },
@@ -36,7 +36,8 @@
         "FEATURED_FOR_REVIEW": 74,
         "HOLD_SOURCE_OR_SCOPE": 14,
         "RESERVE_FOR_BALANCE": 15,
-        "CONSOLIDATE_WITH_RELATED": 42
+        "CONSOLIDATE_WITH_RELATED": 41,
+        "LEARN_REFERENCE_OR_MASS_RESERVE": 1
       },
       "GLOSSARY_DEFINITIONS_440": {
         "LEARN_GLOSSARY_REFERENCE_ONLY": 440
@@ -2583,15 +2584,16 @@
       "source_family": "glossary",
       "source_record_id": "G075",
       "source_observations": [],
-      "status": "CONSOLIDATE_WITH_RELATED",
+      "status": "LEARN_REFERENCE_OR_MASS_RESERVE",
       "classification_method": "MANUAL_TOPICAL_FIRST_PASS",
       "related_lead": null,
-      "unresolved_legacy_lead": "DYK-R05-G075",
+      "unresolved_legacy_lead": null,
       "home_existing_exact": null,
       "copy_en": "Did you know that ad orientem means a common liturgical orientation, not necessarily that every church altar faces geographical east?",
       "copy_fr": "Saviez-vous que l'expression ad orientem désigne une orientation liturgique commune, sans imposer que chaque autel soit tourné vers l'est géographique ?",
       "approved": false,
-      "published": false
+      "published": false,
+      "disposition_note": "Glossary explanation, no verified Home fact to merge; retain as reference, not a resolved duplicate."
     },
     {
       "id": "DYK-SF01-021",
