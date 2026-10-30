@@ -283,7 +283,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  color:var(--muted,#b6ad9a);font:500 13px/1.45 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);
 }
 #aoPray435930 .aoFolioReader .aoFolioPostureNote summary{
- display:flex;gap:8px;align-items:center;cursor:pointer;min-height:32px;list-style:none}
+ display:flex;gap:8px;align-items:center;cursor:pointer;min-height:44px;list-style:none}
 #aoPray435930 .aoFolioReader .aoFolioPostureNote summary::-webkit-details-marker{display:none}
 #aoPray435930 .aoFolioReader .aoFolioPostureNote summary span:last-child{opacity:.65;font-style:normal}
 #aoPray435930 .aoFolioReader .aoFolioPostureNote p{margin:5px 0 8px 26px;max-width:56ch;line-height:1.5}
@@ -379,7 +379,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  margin:0 2px 3px!important;font-size:12px!important;
 }
 #aoPray435930 .aoFolioReader .aoFolioPostureNote summary{
- min-height:32px!important;gap:7px!important;
+ min-height:44px!important;gap:7px!important;
 }
 #aoPray435930 .aoFolioReader .aoFolioPostureIcon{
  width:18px!important;height:18px!important;
