@@ -13,10 +13,13 @@ const preview=fs("src/calendar/customs-r18-eleven-editorial-preview.js");
 const source=JSON.parse(fs("data/customs/customs-atlas-seed.v1.json"));
 const published=source.customs.filter(r=>r.publication_state==="PUBLISHED");
 const canonical=calendarCustomArticleIds();
-assert.equal(published.length,35);
-assert.equal(canonical.length,35);
+assert.equal(published.length,canonical.includes("PENT-001")?36:35);
+assert.equal(canonical.length,published.length);
 assert.deepEqual(new Set(canonical),new Set(published.map(x=>x.custom_id)));
-const items=calendarR18ElevenEditorialReviewRecords();
+const items=calendarR18ElevenEditorialReviewRecords({includePromoted:true});
+const visibleItems=calendarR18ElevenEditorialReviewRecords();
+const expectedVisible=canonical.includes("PENT-001")?10:11;
+assert.equal(visibleItems.length,expectedVisible,"Only unpublished records remain in review");
 const completeCorpus=calendarR18ElevenEditorialReviewRecords({includePromoted:true});
 assert.equal(completeCorpus.length,11,"Keep eleven source records available for audit even after promotion");
 const simulatedIds=[...canonical,"PENT-001"];
@@ -79,11 +82,11 @@ for(const date of ["2026-04-05","2026-06-20","2026-06-24","2026-08-14","2026-08-
 const htmlEn=calendarR18ElevenEditorialReviewMarkup({fr:false});
 const htmlFr=calendarR18ElevenEditorialReviewMarkup({fr:true});
 for(const html of [htmlEn,htmlFr]){
- assert.equal((html.match(/data-cal-r18-eleven-key=/g)||[]).length,11);
- assert.equal((html.match(/class="aoCalR18ElevenLanguage"/g)||[]).length,22);
- assert.equal((html.match(/data-cal-r18-published-count="35"/g)||[]).length,1);
+ assert.equal((html.match(/data-cal-r18-eleven-key=/g)||[]).length,expectedVisible);
+ assert.equal((html.match(/class="aoCalR18ElevenLanguage"/g)||[]).length,2*expectedVisible);
+ assert.equal((html.match(new RegExp('data-cal-r18-published-count="'+canonical.length+'"','g'))||[]).length,1);
  assert.equal((html.match(/class="aoCalR18ElevenCandidate"/g)||[]).length,0); // wrapped with canonical card class but isolated selector
- assert.equal((html.match(/<a href=/g)||[]).length,17);
+ assert.equal((html.match(/<a href=/g)||[]).length,visibleItems.reduce((n,item)=>n+item.urls.length,0));
  assert.ok(!html.includes("publication_allowed=true"));
  assert.ok(!html.includes("data-cal-custom-id="),"Do not accidentally register candidate as published article");
  assert.ok(!html.includes("data-cal-custom-item"),"Don't mix reviewer items with public search");
@@ -113,4 +116,4 @@ assert.ok(runtime.includes('calendarCustomHistoricalVariantPreview(article.id'))
 assert.ok(runtime.includes('const CUSTOMS_HISTORICAL_PARENT_CONTEXT_RELEASE = true;'));
 assert.ok(!runtime.includes("r18ElevenEditorialReviewEnabled()?calendarCustomRecommendations"));
 assert.ok(!runtime.includes("r18ElevenEditorialReviewEnabled()?calendarCustomArticleIds"));
-console.log("PASS Calendar reviewer-only R18 eleven bilingual folios: explicit URL gate, 11 complete EN/FR articles, 15 subtypes, 17 source URLs, 35 public Customs unchanged, no recommendation/event/adoption leakage");
+console.log("PASS Calendar reviewer: 11 original bilingual dossiers, "+expectedVisible+" remaining unpublished in "+canonical.length+"-item canonical state, 15 original subtypes, source URLs, no recommendation/event/adoption leakage");
