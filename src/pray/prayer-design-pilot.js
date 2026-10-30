@@ -139,7 +139,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     const slot=prayerDoorArtSlot(tile.id);
     const artLink=slot?' data-ao-art-slot-id="'+esc(slot.slotId)+'" data-ao-art-rotation="'+esc(slot.rotation)+'" data-ao-art-binding="unassigned"':'';
     return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+'" style="grid-column:'+tile.col+';grid-row:'+tile.row+'"'+target+artLink+' aria-label="'+esc(label)+'">'+
-      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true})+'</span>'+
+      '<span class="aoPrayPilotTileInfo" aria-hidden="true">i</span>'+
       '<span class="aoPrayPilotTileCaption">'+esc(label)+'</span></button>';
   };
   const routes=new Map();
@@ -164,17 +164,17 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
   ).join("");
   return head(L("Pray","Prier"),L("Find a prayer or devotion","Trouvez une prière ou une dévotion"))+
     '<main class="aoP435930Body aoPrayPilotHome">'+
-      '<div class="aoPrayPilotTop"><h2>'+esc(L("Enter into prayer","Entrer en prière"))+'</h2>'+
+      '<div class="aoPrayPilotTop"><h2>'+esc(L("Prayer","Prière"))+'</h2>'+
       '<label class="aoPrayPilotSearch">'+assetIcon("ao-ui-search","aoPrayPilotSearchIcon")+
-      '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+
-      '<p class="aoPrayPilotIntro">'+esc(L("Choose a door or search the existing prayer library and readers.","Choisissez une porte ou recherchez les prières et les lecteurs existants."))+'</p></div>'+
+      '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+'</div>'+
       '<div data-ao-pray-pilot-results class="aoPrayPilotResults" hidden>'+
       '<div class="aoPrayPilotFacets" role="group" aria-label="'+esc(L("Filter search results","Filtrer les résultats"))+'">'+
       [["prayer",L("Prayers","Prières")],["litany",L("Litanies","Litanies")],["chaplet",L("Chaplets","Chapelets")],["novena",L("Novenas","Neuvaines")],["la",L("Latin","Latin")]]
         .map(([id,label])=>'<button type="button" data-p435930-pilot-facet="'+id+'" aria-pressed="false">'+esc(label)+'</button>').join("")+
       '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
       '<p data-ao-pilot-empty hidden>'+esc(L("No matching prayers or devotions.","Aucune prière ni dévotion correspondante."))+'</p></div>'+
-      '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
+      '<div class="aoPrayPilotDoorLabel">'+esc(L("Doors","Portes"))+'</div>'+
+       '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
       '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon",{preferEmbedded:true})+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
     '</main>';
 }
@@ -248,7 +248,15 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotBegin{width:100%;min-height:52px;border:0;border-radius:999px;background:var(--liturgical,#c9ae76);color:#0d1520;font:600 16px/1.2 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotAngelusActions p{font:400 12px/1.45 var(--ao-font-display,Georgia,serif);color:var(--muted,#aaa);text-align:center}",
     "@media(max-width:359px){#aoPray435930 .aoPrayPilotMosaic{grid-auto-rows:37px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}#aoPray435930 .aoPrayPilotTop h2{font-size:25px}}",
-    "@media(prefers-reduced-motion:reduce){#aoPray435930 .aoPrayPilotTile{scroll-behavior:auto}}"
+    "@media(prefers-reduced-motion:reduce){#aoPray435930 .aoPrayPilotTile{scroll-behavior:auto}}",
+    "#aoPray435930 .aoPrayPilotTop{padding:4px 16px 0}",
+    "#aoPray435930 .aoPrayPilotTop h2{font:600 28px/1.15 var(--ao-font-display,Georgia,serif);margin:10px 0 12px}",
+    "#aoPray435930 .aoPrayPilotSearch{height:44px;min-height:44px;background:var(--chip,var(--surface-1,#18202a));margin-bottom:14px}",
+    "#aoPray435930 .aoPrayPilotDoorLabel{margin:20px 16px 10px;font:600 11px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayPilotTileCaption{padding:26px 9px 8px;font:600 14px/1.15 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font:600 20px/1.15 var(--ao-font-display,Georgia,serif);padding:40px 12px 12px}",
+    "#aoPray435930 .aoPrayPilotTileInfo{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.45);box-shadow:0 0 0 1px rgba(255,255,255,.35);color:#fff;font:italic 600 13px/1 Georgia,serif}",
+    "@media(max-width:359px){#aoPray435930 .aoPrayPilotTop h2{font-size:25px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}}"
   ].join("\n");
   const style=document.createElement("style");style.id="ao-prayer-design-pilot-css";style.textContent=css;document.head.appendChild(style);
 }
