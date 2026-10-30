@@ -22,7 +22,10 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
        row.publishedMissalRubrics?.length??0,
        "Reader normalization must not strip source-backed rubric identity");
      for(const item of normalized[i].publishedMissalRubrics){
-       assert.equal(item.actor,"PRIEST");
+       if(item.kind==="BELL"){
+         assert.equal(item.actor,"SERVER","A certified bell note cannot become a priest action");
+         assert.ok(["AO.RUB.C0174.03","AO.RUB.C0181.03"].includes(item.id));
+       }else assert.equal(item.actor,"PRIEST");
        assert.equal(item.sourceId,"MR62_RITUS");
        assert.equal(item.observedNow,false);
        assert.equal(item.owner,"PUBLISHED_R17_MISSAL_INLINE");
@@ -57,7 +60,9 @@ assert.match(native,/: String\(readerModel\?\.presentationMode\?\?""\)\.toUpperC
 assert.match(native,/withPublishedMissalParagraphRubrics\(\s*visibleCard\.paragraphs/);
 assert.match(native,/guide:null,/);
 assert.equal((native.match(/guide:null,/g)||[]).length>=2,true,"Card and cue updates must both exclude Guide");
-assert.match(dom,/mode==="MISSAL"\|\|mode==="LIVE"\s*\? p\.publishedMissalRubrics/);
+assert.match(dom,/const inlineRubrics=mode==="MISSAL"\s*\? p\.publishedMissalRubrics/);
+assert.match(dom,/mode==="LIVE"\s*\? p\.publishedMissalRubrics\.filter\(event=>event\.kind!=="BELL"\)/,
+ "Printed VIII.6 server bell notes must never become LIVE reader events");
 assert.match(dom,/const alreadyPrintedRubric=\(mode==="MISSAL"\|\|mode==="LIVE"\)/);
 assert.match(dom,/shell\.dataset\.canonInline="false"/);
 console.log("PASS: LIVE 65 removes Guide from reader chrome, publishes only certified source-cue EN/FR priest rubrics, no copied explanations, staged exceptions guarded and canonical text untouched.");
