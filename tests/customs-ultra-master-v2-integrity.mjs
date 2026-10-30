@@ -1011,4 +1011,37 @@ assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
+
+// Editor-facing 2026 Calendar indulgence cues; preserve actual 1962 Calendar and no automatic entitlement.
+const calendarIndulgences=JSON.parse(readFileSync(new URL("../data/calendar/indulgences-2026-dated-exact-work-cues.v1.json",import.meta.url),"utf8"));
+assert.equal(calendarIndulgences.schema,"AO_CALENDAR_2026_INDULGENCED_EXACT_WORK_EDITORIAL_CUES");
+assert.equal(calendarIndulgences.items.length,10);
+assert.equal(calendarIndulgences.counts.november_cemetery_days,8);
+assert.equal(calendarIndulgences.counts.november_second_work_on_all_souls,1);
+assert.equal(calendarIndulgences.counts.december_public_hymn,1);
+const knownWorkKeys=new Map(works.map(x=>[x.work_key,x]));
+const calendarCues=new Set();
+for(const d of calendarIndulgences.items){
+ assert.ok(!calendarCues.has(d.id));calendarCues.add(d.id);
+ assert.match(d.date,/^2026-(?:11-(?:0[1-8])|12-31)$/);
+ assert.equal(d.legal_source,indulgenceV2.authority.enchiridion_1999_latin);
+ assert.ok(d.required_work_en.length>65 && d.required_work_fr.length>65);
+ assert.ok(d.not_sufficient_en.length>40 && d.not_sufficient_fr.length>40);
+ assert.equal(d.display_state,"SOURCE_VERIFIED_EDITORIAL_PREVIEW_NO_RUNTIME_WRITE");
+ assert.equal(d.must_not_combine_with_other_same_day_plenary,true);
+ const work=knownWorkKeys.get(d.exact_work_key);
+ assert.ok(work && work.normative_grant_id===d.grant_id);
+ if(d.existing_custom_id)assert.ok(mids.has(d.existing_custom_id));
+}
+assert.equal(calendarIndulgences.items.filter(x=>x.exact_work_key==="AO-IND-WORK-021").length,8);
+assert.equal(calendarIndulgences.items.filter(x=>x.exact_work_key==="AO-IND-WORK-023").length,1);
+assert.equal(calendarIndulgences.items.filter(x=>x.exact_work_key==="AO-IND-WORK-018").length,1);
+assert.equal(calendarIndulgences.items.filter(x=>x.date==="2026-11-02").length,2);
+assert.equal(calendarIndulgences.release.runtime_unchanged,true);
+assert.equal(calendarIndulgences.release.existing_1962_feast_ranks_unchanged,true);
+assert.equal(calendarIndulgences.release.published_customs_unchanged,36);
+assert.equal(calendarIndulgences.release.editorial_signoff_required,true);
+assert.equal(calendarIndulgences.release.indulgence_attached_to_date_alone,false);
+assert.equal(calendarIndulgences.release.merged_or_published,false);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
