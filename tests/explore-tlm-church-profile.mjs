@@ -32,7 +32,7 @@ assert.equal(model.ministries[1].missal,"Pre-1955");
 assert.equal(model.ministries[1].rubrics,"PRE 1955");
 let html=renderTlmChurchProfile(item,"en");
 for(const text of ["St Cantius &amp; Parish","Liturgical rite","Pope named in Canon","Una cum","Missal / books",
- "Rubrical basis","Mass programme","Sunday 12:30 PM Sung Mass","Friday 7:00 AM","Directions","Sources & verification"])
+ "Rubrical basis","Mass programme","Sunday 12:30 PM Sung Mass","Friday 7:00 AM","Directions","Sources &amp; verification"])
  assert.ok(html.includes(text),text);
 assert.match(html,/data-explore-collapse-detail/);
 assert.match(html,/data-tlm-church-profile="test:church"/);
