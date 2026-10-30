@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_DUPLICATE_RECOVERY_V1",
-  "asOf": "2026-10-30T08:48:03.415373+00:00",
+  "asOf": "2026-10-30T08:50:24.909501+00:00",
   "sourcePagesAttempted": 11,
   "images": [
     {
@@ -29,20 +29,42 @@
         "HERO::souls::1",
         "PRAYER::souls--primary"
       ],
-      "recovered": false,
-      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
-      "attempted": 0,
-      "lastErrors": []
+      "recovered": true,
+      "reason": "VERIFIED_SAME_WORK_ALTERNATE_NOT_ORIGINAL_PHOTO",
+      "alternatePhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg/960px-Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalDimensions": [
+        960,
+        1284
+      ],
+      "reviewDimensions": [
+        628,
+        840
+      ],
+      "downloadSha256": "4d7e9c36a1fe9bd98993dcdd3d66146eea7f189ad3d29b0ae4d21cefa7be0f67",
+      "thumbnailSha256": "1466b785ada4d0798bf7c0a4d4183d93ad0f471fa5632a98ebfc6fa1d158b0c8",
+      "thumbnailBytes": 111752
     },
     {
       "sourceUrl": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario",
       "memberIds": [
         "HERO::fondazione-zeri:47818"
       ],
-      "recovered": false,
-      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
-      "attempted": 0,
-      "lastErrors": []
+      "recovered": true,
+      "reason": "VERIFIED_SAME_WORK_ALTERNATE_NOT_ORIGINAL_PHOTO",
+      "alternatePhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Lorenzo_lotto%2C_madonna_del_rosario%2C_1539%2C_01.jpg/960px-Lorenzo_lotto%2C_madonna_del_rosario%2C_1539%2C_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalDimensions": [
+        960,
+        1437
+      ],
+      "reviewDimensions": [
+        561,
+        840
+      ],
+      "downloadSha256": "d7354f6e0d30f58356aed26bdbc42e0c64076b11216a96a8b3efe14b3c8e0b89",
+      "thumbnailSha256": "56d87888886367786935386c5440ac96c2d7356c8e45e021dbff65c559c5a79f",
+      "thumbnailBytes": 132894
     },
     {
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
@@ -72,6 +94,7 @@
       "recovered": false,
       "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
       "attempted": 0,
+      "alternateTried": false,
       "lastErrors": []
     },
     {
@@ -80,10 +103,21 @@
         "HERO::wallraf:honthorst-adoration-shepherds-1622",
         "PRAYER::visit--primary"
       ],
-      "recovered": false,
-      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
-      "attempted": 0,
-      "lastErrors": []
+      "recovered": true,
+      "reason": "VERIFIED_SAME_WORK_ALTERNATE_NOT_ORIGINAL_PHOTO",
+      "alternatePhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Adoration_of_the_shepherds%2C_by_Gerard_van_Honthorst.jpg/960px-Adoration_of_the_shepherds%2C_by_Gerard_van_Honthorst.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalDimensions": [
+        960,
+        809
+      ],
+      "reviewDimensions": [
+        840,
+        708
+      ],
+      "downloadSha256": "d747f35646ab42f40012c87d3430298118d290620a0c2ab9f21e4d736a380846",
+      "thumbnailSha256": "1b76db63b9818fb280cd78c60016224cbdc4e408bed70c61e7b8f8457cac7641",
+      "thumbnailBytes": 98725
     },
     {
       "sourceUrl": "",
@@ -122,7 +156,12 @@
       "recovered": false,
       "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
       "attempted": 0,
-      "lastErrors": []
+      "alternateTried": true,
+      "lastErrors": [
+        "HTTP Error 429: Too Many Requests (015d12c)",
+        "HTTP Error 429: Too Many Requests (015d12c)",
+        "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
+      ]
     },
     {
       "sourceUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
@@ -130,10 +169,21 @@
         "HERO::nga:34956",
         "PRAYER::confession--primary"
       ],
-      "recovered": false,
-      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
-      "attempted": 0,
-      "lastErrors": []
+      "recovered": true,
+      "reason": "VERIFIED_SAME_WORK_ALTERNATE_NOT_ORIGINAL_PHOTO",
+      "alternatePhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg/960px-Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalDimensions": [
+        960,
+        867
+      ],
+      "reviewDimensions": [
+        840,
+        759
+      ],
+      "downloadSha256": "b77038346f97bcf33a540ea7ca50eed98e95e0bdac3aa10ce3d423b713583562",
+      "thumbnailSha256": "52ef7e43fdb016d75c5b27d78085a7cf9b1b22048fcfac9cbb0dd9aa78a20aee",
+      "thumbnailBytes": 119565
     },
     {
       "sourceUrl": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
@@ -141,12 +191,21 @@
         "HERO::new:jules-breton-song-of-the-lark-artic-94841",
         "PRAYER::morning--primary"
       ],
-      "recovered": false,
-      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
-      "attempted": 1,
-      "lastErrors": [
-        "HTTP Error 403: Forbidden"
-      ]
+      "recovered": true,
+      "reason": "VERIFIED_SAME_WORK_ALTERNATE_NOT_ORIGINAL_PHOTO",
+      "alternatePhotoSourceUrl": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Song_of_the_Lark_-_Jules_Breton.png/960px-Song_of_the_Lark_-_Jules_Breton.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalDimensions": [
+        960,
+        1445
+      ],
+      "reviewDimensions": [
+        558,
+        840
+      ],
+      "downloadSha256": "2b51b74201aebeb4fffb2d3979fbee9046a3c593c11960587db103da13802e82",
+      "thumbnailSha256": "054ec73f98dc51c430441a7b2ba86e201ff336450c69176088c0b789c235c96e",
+      "thumbnailBytes": 106563
     },
     {
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
