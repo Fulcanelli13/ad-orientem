@@ -207,6 +207,9 @@ try{
           hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
           oldExplore:home?.querySelectorAll(".aoTodayExploreFoot").length,
           artwork:!!art,buttonVisible:!!button&&getComputedStyle(button).display!=="none",
+          firstFoldActionBottom:button?.getBoundingClientRect().bottom??null,
+          ribbonTop:document.getElementById("ao-global-ribbon")?.getBoundingClientRect().top??null,
+          initialScrollTop:document.scrollingElement?.scrollTop??0,
         };
       });
       assert.ok(r.documentWidth<=r.width+2,label+" H4 document overflow: "+JSON.stringify(r));
@@ -215,6 +218,9 @@ try{
         [7,1,1,1,1,1,1,3,2,0,0],label+" H4 layout contract");
       assert.ok(r.events<=2,label+" H4 upcoming copied unsourced dates");
       assert.equal(r.buttonVisible,true,label+" Mass door hidden");
+      assert.equal(r.initialScrollTop,0,label+" H4 first-fold audit must start at scroll 0");
+      assert.ok(r.ribbonTop!=null&&r.firstFoldActionBottom<=r.ribbonTop+2,
+        label+" H4 Begin/Resume must be visible above fixed ribbon without scrolling: "+JSON.stringify(r));
       return r;
     };
     await h4.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.setPath?.("appearance.mode","dark"));
@@ -295,7 +301,19 @@ try{
       "H4 Begin must reflect the source preflight reader selection");
     // The no-art state must collapse the illustration, not leave a decorative
     // placeholder or bury the single Begin/Resume door beneath the phone ribbon.
-    await h4.evaluate(()=>document.querySelector(".aoH4Door")?.classList.add("aoTodayV2ArtMissing"));
+    await h4.evaluate(()=>{
+      scrollTo({top:0,behavior:"instant"});
+      document.querySelector(".aoH4Door")?.classList.add("aoTodayV2ArtMissing");
+    });
+    // The presentation bridge animates Home with transient filter:blur().
+    // Never accept a blurred frame as no-art visual evidence.
+    await h4.waitForFunction(()=>{
+      const node=document.querySelector(".aoH4Door");
+      if(!node)return false;
+      const style=getComputedStyle(node);
+      return style.filter==="none"&&Number(style.opacity)>.99;
+    },null,{timeout:10000});
+    await h4.waitForTimeout(650);
     const noArt=await h4.evaluate(()=>{
       const art=document.querySelector(".aoH4Door .aoTodayV2Art");
       const door=document.querySelector(".aoH4Door");
@@ -311,6 +329,14 @@ try{
     assert.ok(noArt.documentWidth<=noArt.viewport+2,prefix+" H4 no-art overflow: "+JSON.stringify(noArt));
     assert.ok(noArt.actionBottom<=noArt.ribbonTop+2,
       prefix+" H4 no-art Mass entry must remain above the phone ribbon: "+JSON.stringify(noArt));
+    const settledNoArt=await h4.evaluate(()=>{
+      const hero=document.querySelector(".aoH4Door");
+      const screen=document.querySelector(".homeScreen.aoTodayH4");
+      return {heroFilter:getComputedStyle(hero).filter,screenFilter:getComputedStyle(screen).filter,
+        top:document.scrollingElement?.scrollTop};
+    });
+    assert.deepEqual(settledNoArt,{heroFilter:"none",screenFilter:"none",top:0},
+      prefix+" no-art capture must be settled and at the initial viewport");
     await h4.screenshot({path:resolve(output,prefix+"-h4-no-art-light.png")});
     await h4.evaluate(()=>document.querySelector(".aoH4Door")?.classList.remove("aoTodayV2ArtMissing"));
     await h4.locator("[data-home-h4-readings]").click();
