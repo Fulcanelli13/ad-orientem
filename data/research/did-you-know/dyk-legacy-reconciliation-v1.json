@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_LEGACY_SOURCE_RECONCILIATION_V1",
   "date": "2026-10-30",
-  "status": "CROSS_SOURCE_AUDIT_UNPUBLISHED",
+  "status": "LEGACY_SOURCE_AUDIT_COMPLETED_18_CLAIM_TRIAGE_STAGED",
   "privacy": "No private legacy fact body, record IDs or source text copied into the public draft branch; only publicly available canonical record IDs and new candidate IDs are included.",
   "source_owner_description": "Earlier discovery owners are in the existing private canonical research branch; preserve ownership and approval statuses; no copy or transfer of private text into public files.",
   "legacy_counts": {
@@ -202,5 +202,18 @@
       "editorial_status": "SAME_SOURCE_REVIEW_REQUIRED",
       "not_exact_text_duplicate": true
     }
-  ]
+  ],
+  "reconciliation_phase": {
+    "baseline_before_claim_triage": 154,
+    "baseline_same_source_matches": 18,
+    "claim_overlap_reviews_completed": 18,
+    "semantically_redundant_drafts_deferred": 9,
+    "same_source_distinct_facts_retained": 9,
+    "current_active_drafts_after_triage": 145,
+    "first_legacy_owner_changed": false,
+    "editorial_approval_count": 0,
+    "publication_count": 0,
+    "decision_file": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json",
+    "qualification": "Source-overlap snapshot counts above refer to the prior 154-draft baseline. Nine semantically redundant candidate drafts are now deferred and preserved; the active pool is 145. Neither all 136 unmatched records nor nine retained entries have been fully claim-certified."
+  }
 }
