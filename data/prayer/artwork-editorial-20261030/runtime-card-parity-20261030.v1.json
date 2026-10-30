@@ -79,7 +79,9 @@
     "chaplet_editorial_stages_with_slot_contract": 21,
     "chaplet_live_bead_readers_verified": 0,
     "verified_approved_cross_prayer_reuses": 93,
-    "quarantined_cross_prayer_reuses": 12
+    "quarantined_cross_prayer_reuses": 12,
+    "holy_name_litany_contextual_approved_pool_mapped": true,
+    "holy_name_litany_actual_artwork_published": false
   },
   "runtime_stage_to_editorial_slot": {
     "benediction": [
@@ -919,9 +921,11 @@
     },
     {
       "route": "pray.holy_name_litany",
-      "note": "Separate traditional litany route is not separately mapped to an art-bearing blueprint slot",
-      "status": "CONFIRMED_NO_ARTWORK_SLOT_IN_EXISTING_RUNTIME_IDENTITY",
-      "priority": "P0"
+      "note": "Route now resolves through the existing positively approved Salvator Mundi (Christ the King) portrait pool, as contextual Christ iconography rather than an exact Holy Name painting.",
+      "status": "CONTEXTUAL_APPROVED_POOL_MAPPED_NONVISUAL",
+      "priority": "P2",
+      "editorial_slot": "COV-devotion_consecration_christ_king",
+      "publication_ready": false
     },
     {
       "route": "pray.dying_companion",
