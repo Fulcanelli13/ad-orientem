@@ -230,4 +230,19 @@ body.w320 .grid button{height:48px}
 .aoH7Screens .aoH7DoorView .foot>.btn .aoH4Arrow{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.14);font-size:23px}
 .aoH7Screens .aoH7DoorView .foot .mini{display:flex!important;justify-content:center!important;gap:2px!important;margin-top:4px!important}
 .aoH7Screens .aoH7DoorView .foot .mini button{min-height:40px!important;padding:0 12px!important;border:0!important;background:transparent!important;color:var(--ink2)!important;font:500 14px/1 var(--serif)!important}
+
+/* Production app appearance donor (prototype used only body.light). */
+html[data-ao-appearance-v1="light"] .aoH7Screens,
+html[data-ao-appearance-choice-v1="light"] .aoH7Screens{
+ --bg:#F7F2E9;--sf:#FFFFFF;--sf2:#F0E8DA;--ln:#E3D9C8;--ink:#221E1A;--ink2:#433C35;--mu:#6E6A64;--gold:#8E6A2B;--rub:#9B2C24;--sage:#3E7A57;--onsage:#fff;--sageBg:#E3EFE6;color-scheme:light
+}
+.homeScreen.aoTodayV2.aoTodayH4.aoH7Screens{background:var(--bg)!important;color:var(--ink)!important}
+.aoH7Screens.lc-green{--lc:#62A473}
+.aoH7Screens.lc-white{--lc:#E9E0C9}
+.aoH7Screens.lc-red{--lc:#D0574A}
+.aoH7Screens.lc-black{--lc:#8C8C8C}
+.aoH7Screens.lc-violet{--lc:#9A7BC4}
+.aoH7Screens.lc-rose{--lc:#D99AAE}
+.aoH7Screens.lc-none{--lc:#3A4652}
+.aoH7Screens .dateRail.aoH4Week .aoWeekColour[data-verified-colour]{width:16px!important;height:3px!important;background:var(--ao-h4-day-colour)!important;opacity:1!important}
 `;
