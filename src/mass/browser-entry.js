@@ -1185,6 +1185,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     prepare: () => state.controller?.prepare?.(),
     enter: () => state.controller?.enter?.(),
     startFromToday: startMassFromToday,
+    selectTodayOption: (key,value) => state.fullMassPreflight?.setTodayChoice?.(key,value) === true,
     // Shell-only presentation reset: does not alter a Mass choice or R17.
     resetPreflightView: () => state.fullMassPreflight?.resetView?.() ?? false,
     // Read-only Formation projection. The host keeps exclusive ownership of
