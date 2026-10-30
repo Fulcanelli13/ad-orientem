@@ -5,6 +5,9 @@ import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
+// Legacy three-step preflight fixture is retained for 1962 source regression.
+ // M1 default full-page entry and exact checkpoint Resume have their own
+ // live-app 320/390 phone acceptance test.
 const base=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json"};
 const server=http.createServer(async(req,res)=>{
@@ -22,7 +25,7 @@ try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
  const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
- await page.goto("http://127.0.0.1:"+server.address().port+"/tests/fixtures/rogation-premass.html");
+ await page.goto("http://127.0.0.1:"+server.address().port+"/tests/fixtures/rogation-premass.html?aoMassAccessM1=0");
  await page.evaluate(async()=>{
   const {mountFullMassPreflight}=await import("/src/mass/full-mass-preflight.js");
   await import("/src/mass/full-mass-preflight-styles.js");
