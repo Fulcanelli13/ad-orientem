@@ -2791,10 +2791,10 @@ function renderPreciousBlood(){
  return head(name,L("Seven sheddings · thirty-three Our Fathers","Sept effusions · trente-trois Notre Père"))+
  '<main class="aoP435930Body aoPreciousBlood" data-ao-precious-blood-reader '+(CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-variant="precious-blood"':'')+'>'+
  '<div class="aoPreciousBloodTop"><span>'+esc(L("Step","Étape"))+' '+(s.phase+1)+' / 9</span>'+latin+'</div>'+
- nav+'<div class="aoPreciousBloodProgress" role="progressbar" aria-valuemin="0" aria-valuemax="9" aria-valuenow="'+
+ (CHAPLET_F07_PILOT_ENABLED?'':nav)+'<div class="aoPreciousBloodProgress" role="progressbar" aria-valuemin="0" aria-valuemax="9" aria-valuenow="'+
  (s.phase+1)+'" aria-label="'+esc(L("Devotion progress","Progression"))+'"><span style="width:'+
  Math.round((s.phase+1)/9*100)+'%"></span></div>'+ (CHAPLET_F07_PILOT_ENABLED?renderF07PreciousBlood(s.phase,s.bead,{french:fr}):'')+
- contents+'<footer class="aoPreciousBloodActions">'+previous+next+'</footer>'+history+'</main>';
+ contents+(CHAPLET_F07_PILOT_ENABLED?'<details class="aoF07JumpDisclosure"><summary>'+esc(L('Choose a mystery','Choisir un mystère'))+'</summary>'+nav+'</details>':'')+'<footer class="aoPreciousBloodActions">'+previous+next+'</footer>'+history+'</main>';
 }
 function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Band:CHAPLET_F07_PILOT_ENABLED?renderF07LittleCrown(LITTLE_CROWN.index,{french:isFr()}):""})}
 function renderFiveWounds(){
@@ -2829,7 +2829,7 @@ function renderFiveWounds(){
  '<main class="aoP435930Body aoFiveWounds" data-ao-five-wounds-reader '+(CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-variant="five-wounds"':'')+'>'+
  '<header><p class="aoFiveWoundsEyebrow">'+esc(L('PASSION · TRADITIONAL CHAPLET','PASSION · CHAPELET TRADITIONNEL'))+
  '</p><h2>'+esc(step.wound)+'</h2><p>'+esc(nature)+'</p></header>'+
- '<nav class="aoFiveWoundsRail" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+dots+'</nav>'+
+ (CHAPLET_F07_PILOT_ENABLED?'':'<nav class="aoFiveWoundsRail" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+dots+'</nav>')+
  '<div class="aoFiveWoundsProgress" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="'+
   progress.completed+'" aria-label="'+esc(L('Chaplet progress','Progression du chapelet'))+'"><span style="width:'+
   Math.round(progress.completed/30*100)+'%"></span></div>'+
@@ -2837,6 +2837,7 @@ function renderFiveWounds(){
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
  esc(prayerLabel)+'</small>'+langButton+'</div><p class="aoFiveWoundsPrayerText" lang="'+
  esc(langCode)+'">'+nl(step.text)+'</p></article>'+
+ (CHAPLET_F07_PILOT_ENABLED?'<details class="aoF07JumpDisclosure"><summary>'+esc(L('Choose a wound','Choisir une plaie'))+'</summary>'+ '<nav class="aoFiveWoundsRail" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+dots+'</nav>' +'</details>':'')+
  '<footer class="aoFiveWoundsActions">'+prev+next+'</footer>'+
  '<details class="aoFiveWoundsSource"><summary>'+esc(L('Historical form & sources','Forme historique et sources'))+
  '</summary><p>'+esc(L('Five groups of five Glory Bes; after each group one Hail Mary in honour of Our Lady of Sorrows. This is a private devotional chaplet, not the Stations of the Cross.',
