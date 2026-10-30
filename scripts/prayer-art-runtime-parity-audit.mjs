@@ -5,6 +5,7 @@ import {NOVENA_CORPUS_V4} from "../src/pray/novena-corpus-v4.js";
 import {DAILY_GUIDED_STEPS,NIGHTLY_EXAMEN_CARDS} from "../src/pray/guided-daily-cards.js";
 import {CONFESSION_PATHS,confessionRiteCards,confessionAfterCards,confessionExaminationCards} from "../src/pray/confession-paths.js";
 import {resolveArtworkRuntimeIdentity as resolve,PRAYER_ART_RUNTIME_IDENTITY_VERSION} from "../src/pray/artwork-runtime-identity.v1.js";
+import {isEditorialArtworkPlacementApproved} from "../src/pray/artwork-approval-policy.v1.js";
 
 /**
  * Source-linked, non-visual Prayer artwork runtime inventory.
@@ -13,12 +14,23 @@ import {resolveArtworkRuntimeIdentity as resolve,PRAYER_ART_RUNTIME_IDENTITY_VER
 const read=name=>readFileSync(name,"utf8");
 const editorial=JSON.parse(read("data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json"));
 const overlay=JSON.parse(read("data/prayer/artwork-editorial-20261030/cross-prayer-inheritance-20261030.v1.json"));
+const q2=JSON.parse(read("data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json"));
+const b611=JSON.parse(read("data/prayer/artwork-editorial-20261030/approved-unified-b06-b11-from-user-message.v1.json"));
+const positive=new Set(["USER_APPROVED","USER_APPROVED_EXISTING_SAINTS_SELECTION","USER_APPROVED_20261030_NEW_ARTWORK_REUSE","USER_FINAL_LOCKED"]);
+const sourceApprovedIds=new Set([
+ ...q2.records.filter(x=>x.prayer_editorial_status==="ACCEPTED_FOR_PRAYER_REVIEW").map(x=>x.artwork_id),
+ ...b611.decisions.filter(x=>x.status==="ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW").map(x=>x.artwork_id),
+ ...editorial.slots.flatMap(slot=>slot.works.filter(w=>positive.has(w.editorial)).map(w=>w.id))
+]);
+const placementApproved=w=>isEditorialArtworkPlacementApproved(w,{sourceArtIdApproved:sourceApprovedIds.has(w.id)});
 const slots=new Map(editorial.slots.map(s=>[s.slot_id,s]));
 const runtime=read("src/pray/presentation-runtime.js");
 const novenaRuntime=read("src/pray/novena-runtime.js");
 const traditionalRuntime=read("src/pray/traditional-pray-runtime.js");
 const lazyRegistry=read("src/pray/lazy-module-registry.js");
 assert.equal(slots.size,267);
+assert.equal(placementApproved({id:"never",eligible:true,editorial:"NEW_CANDIDATE_NOT_USER_APPROVED"}),false,"Approval must not be substring-based");
+assert.equal(placementApproved({id:"never",eligible:true,editorial:"USER_APPROVED_CROSS_PRAYER_REUSE"}),false,"Cross-prayer reuse requires an affirmatively approved work ID");
 assert.ok(runtime.includes('stampArtworkRuntimeIdentity(m,'));
 assert.ok(runtime.includes('stampArtworkRuntimeIdentity(shell,'));
 assert.ok(novenaRuntime.includes("stampArtworkRuntimeIdentity(m,"));
@@ -31,7 +43,7 @@ const add=(owner,card,slotStatus="CHECK")=>{
  const {key,slot,fit,publicationReady,assetUrl}=card;
  const found=slot?slots.get(slot):null;
  if(slot && !found && !slot.startsWith("SEM-"))throw Error("Artwork slot missing from editorial blueprint: "+key+" => "+slot);
- rows.push({owner,key,slot,fit,hasEditorialSlot:!!found,approvedArtworkInSlot:!!found?.works.some(w=>w.eligible&&(/USER_APPROVED|USER_FINAL_LOCK/.test(w.editorial)||w.editorial==="USER_APPROVED_CROSS_PRAYER_REUSE")),status:slotStatus});
+ rows.push({owner,key,slot,fit,hasEditorialSlot:!!found,approvedArtworkInSlot:!!found?.works.some(placementApproved),status:slotStatus});
  assert.equal(publicationReady,false);
  assert.equal(assetUrl,null);
  return card;
