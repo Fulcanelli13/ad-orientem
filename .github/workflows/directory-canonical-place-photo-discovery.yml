@@ -11,6 +11,11 @@ on:
       - tests/p79-place-photo-review-contract.mjs
       - tools/directory/release-p79-approved-photos.py
       - tests/p79-place-photo-release-test.py
+      - tools/directory/release-photo-finder-decisions.py
+      - tests/photo-finder-451-intake-test.py
+      - data/geography/research/photo-finder-20261030/**
+      - src/find/place-profiles.js
+      - src/find/directory-card.js
       - tools/directory/stage-bulk-place-photos.py
       - docs/DIRECTORY-CANONICAL-PLACE-PHOTO-PIPELINE.md
 permissions:
@@ -37,3 +42,7 @@ jobs:
           node tools/directory/build-p79-place-photo-review.mjs --check
           node tests/p79-place-photo-review-contract.mjs
           python tests/p79-place-photo-release-test.py -v
+      - name: Validate imported 451 Place editorial decisions and release plan
+        run: |
+          python tools/directory/release-photo-finder-decisions.py --plan
+          python tests/photo-finder-451-intake-test.py -v

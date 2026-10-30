@@ -32,9 +32,12 @@ UA = "AdOrientemDirectoryPhotoStaging/1.0 (https://github.com/Fulcanelli13/ad-or
 ROLES = {"exterior": ("EXTERIOR",), "interior": ("INTERIOR", "SACRED_DETAIL")}
 LICENSES = {
     "CC0": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "CC-BY-2.0": "https://creativecommons.org/licenses/by/2.0/",
+    "CC-BY-2.5": "https://creativecommons.org/licenses/by/2.5/",
     "CC-BY-3.0": "https://creativecommons.org/licenses/by/3.0/",
     "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
     "CC-BY-SA-4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "CC-BY-SA-2.5": "https://creativecommons.org/licenses/by-sa/2.5/",
     "CC-BY-SA-3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
     "CC-BY-SA-2.0": "https://creativecommons.org/licenses/by-sa/2.0/",
 }
@@ -76,9 +79,12 @@ def license_from_metadata(image):
     label = re.sub(r"[^A-Z0-9]", "", get("LicenseShortName").upper())
     named = {
         "CC0": "CC0", "CC010": "CC0",
+        "CCBY20": "CC-BY-2.0",
+        "CCBY25": "CC-BY-2.5",
         "CCBY30": "CC-BY-3.0",
         "CCBY40": "CC-BY-4.0",
         "CCBYSA40": "CC-BY-SA-4.0",
+        "CCBYSA25": "CC-BY-SA-2.5",
         "CCBYSA30": "CC-BY-SA-3.0",
         "CCBYSA20": "CC-BY-SA-2.0",
     }.get(label)
