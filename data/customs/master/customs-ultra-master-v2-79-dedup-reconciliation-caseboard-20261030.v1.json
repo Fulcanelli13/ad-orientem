@@ -55,7 +55,10 @@
     "cross_source_independence_newly_certified": 0,
     "distinct_custom_identities_newly_certified": 0,
     "merge_operations_approved": 0,
-    "customs_published": 0
+    "customs_published": 0,
+    "description_pairs_with_new_hosted_passage_anchor": 3,
+    "description_pairs_still_without_both_source_original_facsimiles": 41,
+    "newly_confirmed_cross_book_independent_eyewitnesses": 0
   },
   "review_priority": {
     "same_core_or_variant_first": "Compare actors, exact action, occasion, geography and actual textual dependence; same generic action can have separate local variants",
@@ -610,7 +613,17 @@
       "original_description_pair_checked": true,
       "independent_witness_certified": false,
       "canonical_merge_authorized": false,
-      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES",
+      "passage_review_enrichment": {
+        "reviewed_side": "RIGHT",
+        "source_id": "CCEX26-NEWLAND-1065-04",
+        "hosted_article_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+        "hosted_directions_line_anchor": 147,
+        "claim_scope_route": "FIVE_CLOVES_SYMBOLIC_DOMESTIC_INSERTION",
+        "confirm_source_description_matches_hosted_passage": true,
+        "compared_other_source_full_original_facsimile_checked": false,
+        "relationship_from_prior_manual_contrast_not_double_verified": true
+      }
     },
     {
       "review_id": "CC3WORK-REL-002",
@@ -890,7 +903,17 @@
       "original_description_pair_checked": true,
       "independent_witness_certified": false,
       "canonical_merge_authorized": false,
-      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS",
+      "passage_review_enrichment": {
+        "reviewed_side": "RIGHT",
+        "source_id": "CCEX26-NEWLAND-1215-04",
+        "hosted_article_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+        "hosted_directions_line_anchor": 163,
+        "claim_scope_route": "DOMESTIC_TREE_BLESSING_TEXT_AUTHORITY_HOLD",
+        "confirm_source_description_matches_hosted_passage": true,
+        "compared_other_source_full_original_facsimile_checked": false,
+        "relationship_from_prior_manual_contrast_not_double_verified": true
+      }
     },
     {
       "review_id": "CC3WORK-REL-022",
@@ -974,7 +997,17 @@
       "original_description_pair_checked": true,
       "independent_witness_certified": false,
       "canonical_merge_authorized": false,
-      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT",
+      "passage_review_enrichment": {
+        "reviewed_side": "RIGHT",
+        "source_id": "CCEX26-NEWLAND-0300-02",
+        "hosted_article_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
+        "hosted_directions_line_anchor": 161,
+        "claim_scope_route": "HOME_BAPTISMAL_RENEWAL_CANDLE_COMPONENT_RITE_HOLD",
+        "confirm_source_description_matches_hosted_passage": true,
+        "compared_other_source_full_original_facsimile_checked": false,
+        "relationship_from_prior_manual_contrast_not_double_verified": true
+      }
     },
     {
       "review_id": "CC3WORK-REL-028",
