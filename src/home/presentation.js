@@ -1,5 +1,6 @@
 import { removeExcludedLegacyHomeArtwork } from "./legacy-art-exclusions.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { releasedClassIArtwork, releasedClassIArtworkMarkup, safeLegacyHomeArtMarkup } from "./sacred-art-selection.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
@@ -198,8 +199,15 @@ export function renderHome(root,state,win=globalThis){
   if(slot){
     const language=state?.language==="fr"?"fr":"en";
     let art="";
-    try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
-    catch(error){win?.console?.warn?.("Approved Today artwork unavailable",error)}
+    const released=releasedClassIArtwork(state);
+    if(released){
+      // The selected Proper and exact local master already passed the independent release gate.
+      art=releasedClassIArtworkMarkup(released);
+    }else{
+      try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
+      catch(error){win?.console?.warn?.("Historical Today artwork unavailable",error)}
+      art=safeLegacyHomeArtMarkup(state,art,win);
+    }
     if(art)slot.innerHTML=art;
     // Legacy art is not curatorial approval; remove known rejected painter/ID selections.
     removeExcludedLegacyHomeArtwork(slot);

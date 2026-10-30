@@ -1,0 +1,25 @@
+name: Class I approved Sacred Art — Home release guard
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/home/presentation.js"
+      - "src/home/sacred-art-selection.js"
+      - "tests/sacred-art-class-i-home-guard.mjs"
+      - ".github/workflows/sacred-art-class-i-home-guard.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  protect-curator-decisions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check approved art and permanent exclusions
+        run: node tests/sacred-art-class-i-home-guard.mjs
+      - name: Verify modular Home still works
+        run: node tests/home-presentation.mjs
