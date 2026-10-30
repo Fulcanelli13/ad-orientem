@@ -16,7 +16,7 @@ const guides=[
 ].flatMap(id=>read("data/shrines/illustrated-place-guides-"+id+".v1.json").guides);
 const refs=read("data/shrines/source-registry.v1.json");
 const byId=new Map(phenomena.relics.map(x=>[x.id,x]));
-assert.equal(phenomena.relics.length,122);
+assert.equal(phenomena.relics.length,123);
 assert.equal(placement.entries.length,25);
 assert.equal(new Set(placement.entries.map(x=>x.relic_id)).size,25);
 assert.equal(new Set(placement.entries.map(x=>x.place_id)).size,10);
@@ -92,11 +92,11 @@ const packet=JSON.parse(execFileSync(process.execPath,[
 ],{encoding:"utf8"}));
 assert.deepEqual([packet.relic_records,packet.physical_places_with_relics,
  packet.source_attributed_indoor_placements,packet.places_with_indoor_positions,
- packet.site_only_relics,packet.new_physical_pins],[122,92,25,10,97,0]);
+ packet.site_only_relics,packet.new_physical_pins],[123,93,25,10,98,0]);
 const missing=execFileSync(process.execPath,[
  new URL("../tools/audit-relic-indoor-placement-p67.mjs",import.meta.url).pathname,"--jsonl"
 ],{encoding:"utf8"}).trim().split("\n").map(JSON.parse);
-assert.equal(missing.length,97);
+assert.equal(missing.length,98);
 assert.ok(missing.every(x=>x.publication==="RESEARCH_ONLY_NOT_DISPLAYED"));
 assert.ok(missing.some(x=>x.relic_id==="relic:FR:crown-of-thorns-paris"));
-console.log("P67 PASS 25 sourced indoor locations, 97 explicit research-only remaining, EN/FR, temporary closure, no cross-site misbinding");
+console.log("P67 PASS 25 sourced indoor locations, 98 explicit research-only remaining, EN/FR, temporary closure, no cross-site misbinding");
