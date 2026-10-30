@@ -2,9 +2,10 @@
  * CALENDAR-LOCAL EDITORIAL PREVIEW ONLY. Never import into the canonical
  * Customs read model, personal customs, Calendar dates, or publication seed.
  *
- * Exactly 11 unsigned R18 articles, copied from the 8-field bilingual source
- * review blob 2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c; live published count remains 35.
+ * Up to 11 unsigned R18 articles, copied from the 8-field bilingual source
+ * review blob 2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c. Promoted articles are hidden when canonical; no fixed live count.
  */
+import { calendarCustomArticleIds } from "./customs-read-model.js";
 const EDITORIAL_SOURCE_BLOB="2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c";
 const REVIEW_CANDIDATES=Object.freeze([
   {
@@ -834,12 +835,22 @@ const FIELDS=Object.freeze([
  ["scope","Geographic and religious scope","Portée géographique et religieuse"]
 ]);
 const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const headline=(en,fr,useFr)=>useFr?fr:en;
+// A concrete canonical promotion is not an editorial approval of other dossiers.
+ // Only exact identities are suppressed; this preserves the research evidence
+ // while avoiding contradictory published/unpublished labels in the Calendar.
+const PROMOTED_CANONICAL_IDS=Object.freeze({"CUSTOMS-R18-14":"PENT-001"});
+function pendingReviewRecords(publishedIds){
+ const published=new Set(publishedIds);
+ return REVIEW_CANDIDATES.filter(r=>!published.has(PROMOTED_CANONICAL_IDS[r.review_key]));
+}
 export const CALENDAR_R18_ELEVEN_REVIEW_BLOB=EDITORIAL_SOURCE_BLOB;
-export function calendarR18ElevenEditorialReviewRecords(){return REVIEW_CANDIDATES}
-export function calendarR18ElevenEditorialReviewMarkup({fr=false}={}){
+export function calendarR18ElevenEditorialReviewRecords({includePromoted=false,publishedIds=calendarCustomArticleIds()}={}){
+ return includePromoted?REVIEW_CANDIDATES:pendingReviewRecords(publishedIds);
+}
+export function calendarR18ElevenEditorialReviewMarkup({fr=false,publishedIds=calendarCustomArticleIds()}={}){
  const h=escapeHtml,labels=FIELDS;
- const cards=REVIEW_CANDIDATES.map((r,i)=>{
+ const candidates=pendingReviewRecords(publishedIds);
+ const cards=candidates.map((r,i)=>{
    const cols=["en","fr"].map(lang=>
      '<section class="aoCalR18ElevenLanguage" lang="'+lang+'"><h5>'+ (lang==="en"?"English":"Français") +'</h5>'+
      labels.map(([key,en,frText])=>'<h6>'+h(lang==="en"?en:frText)+'</h6><p>'+h(r.article[key][lang])+'</p>').join("")+
@@ -867,9 +878,9 @@ export function calendarR18ElevenEditorialReviewMarkup({fr=false}={}){
      '<p><small>'+h(fr?"Tous les contrôles de publication sont en attente : identité, source, anglais, français, géographie, liturgie, calendrier, activation.":"All publication signoffs pending: identity, source, English, French, geography, liturgy, Calendar and activation.")+'</small></p>'+
      '</div></details>';
  }).join("");
- return '<section class="aoCalR18ElevenEditorialPreview" data-cal-r18-eleven-editorial-preview data-cal-r18-published-count="35">'+
-   '<div class="aoCalV2SectionTitle"><div><small>'+h(fr?"EXAMEN ÉDITORIAL · 11 DOSSIERS NON PUBLIÉS":"EDITORIAL REVIEW · 11 UNPUBLISHED DOSSIERS")+'</small>'+
+ return '<section class="aoCalR18ElevenEditorialPreview" data-cal-r18-eleven-editorial-preview data-cal-r18-published-count="'+h(publishedIds.length)+'">'+
+   '<div class="aoCalV2SectionTitle"><div><small>'+h(fr?"EXAMEN ÉDITORIAL · '+h(candidates.length)+' DOSSIERS NON PUBLIÉS":"EDITORIAL REVIEW · '+h(candidates.length)+' UNPUBLISHED DOSSIERS")+'</small>'+
    '<h3>'+h(fr?"Textes comparés anglais / français":"Side-by-side English / French copy")+'</h3></div></div>'+
-   '<p>'+h(fr?"Aperçu réservé au paramètre de vérification. Les 35 coutumes publiées et les recommandations du calendrier restent inchangées.":"Explicit review-parameter preview only. The 35 published Customs and Calendar recommendations remain unchanged.")+'</p>'+
+   '<p>'+h(fr?"Aperçu réservé au paramètre de vérification. Les '+h(publishedIds.length)+' coutumes publiées et les recommandations du calendrier restent inchangées.":"Explicit review-parameter preview only. The '+h(publishedIds.length)+' published Customs and Calendar recommendations remain unchanged.")+'</p>'+
    '<div class="aoCalR18ElevenItems">'+cards+'</div></section>';
 }
