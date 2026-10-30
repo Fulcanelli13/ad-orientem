@@ -1,0 +1,1330 @@
+{
+  "schema": "AO_DYK_ULTRAMASTER_SOURCE_DRAFT_V1",
+  "date": "2026-10-30",
+  "status": "NONPUBLISHING_SOURCE_RESEARCH",
+  "source_branch": "research/customs-multibook-bulk150-20261026",
+  "source_head_sha": "1ba95d918c9043ec4915dfce84866ac237f1d371",
+  "source_corpus_observations": 3703,
+  "source_pitre_observations": 718,
+  "description": "First thirty EN/FR Did You Know drafts drawn from *unpublished Ultra-Master historical evidence* (not the 39 canonical Calendar Customs). Human page/source, regional, language and duplicate review required.",
+  "counts": {
+    "total": 30,
+    "WEISER_1958": 20,
+    "PITRE_1900": 10,
+    "approved": 0,
+    "published": 0
+  },
+  "rights": "Original concise editorial paraphrases only; preserve original source evidence and bibliography",
+  "rules": {
+    "research_evidence_not_custom_identity": true,
+    "do_not_auto_approve_or_publish": true,
+    "do_not_assume_1962_liturgical_authority": true,
+    "do_not_present_folklore_as_dogma": true,
+    "do_not_claim_current_practice_from_historical_source": true,
+    "do_not_treat_one_author_multiple_localities_as_independent_witnesses": true,
+    "dedupe_against_prior_dyk_53_and_195": true,
+    "deep_link_stubs_not_runtime_routes": true,
+    "source_folio_page_image_review_when_unchecked": true
+  },
+  "facts": [
+    {
+      "id": "DYK-UM01-001",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Ukrainian Christmas traditions include a grain sheaf called a didukh, brought into the home for Christmas Eve?",
+        "fr": "Saviez-vous que des traditions ukrainiennes de Noël comprennent une gerbe de céréales appelée didukh, introduite dans la maison la veille de Noël ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Ukraine"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          116
+        ],
+        "observation_ids": [
+          "WEI58-09-001"
+        ],
+        "intake_dossier_id": "BULK150-001",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "UA-CATHOLIC-DIDUKH",
+          "UA-ENCYCLOPEDIA-CHRISTMAS"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "EASTERN_TRADITION_CONTEXT_HOLD",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-002",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Advent calendars grew out of German-speaking household customs, including pictures and chalk marks to count the days?",
+        "fr": "Saviez-vous que les calendriers de l'Avent se sont développés dans les foyers germanophones, où images et marques à la craie servaient notamment à compter les jours ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Germany; later wider"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          56
+        ],
+        "observation_ids": [
+          "WEI58-05-006"
+        ],
+        "intake_dossier_id": "BULK150-002",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "DE-KNAUF-ADVENTKALENDER",
+          "DE-MUSEUM-FFB-ADVENT"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "REGIONAL_CULTURAL_OR_MATERIAL_CONTEXT",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-003",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that in Adnet, Austria, a Marian image has been carried from household to household during Advent for family prayer?",
+        "fr": "Saviez-vous qu'à Adnet, en Autriche, une image de la Vierge a circulé de foyer en foyer pendant l'Avent pour accompagner la prière familiale ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Alpine Europe"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          57
+        ],
+        "observation_ids": [
+          "WEI58-05-008"
+        ],
+        "intake_dossier_id": "BULK150-003",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "AT-ADNET-HERBERG",
+          "AT-GROSSPETERSDORF-HERBERG"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-004",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that a household Advent image in Großpetersdorf, Austria, recalled Mary and Joseph's search for lodging?",
+        "fr": "Saviez-vous qu'à Großpetersdorf, en Autriche, une image accueillie dans les foyers pendant l'Avent rappelait la recherche d'un logement par Marie et Joseph ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "German-speaking areas"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          58
+        ],
+        "observation_ids": [
+          "WEI58-05-010"
+        ],
+        "intake_dossier_id": "BULK150-004",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "AT-PARISH-HERBERGSUCHE"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "COMMUNAL_PRACTICE_LOCALITY_CHECK",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-005",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that in some Austrian homes a small bell announces the moment of Christmas gift-giving associated with the Christkind?",
+        "fr": "Saviez-vous que, dans certains foyers autrichiens, une petite clochette annonce le moment des cadeaux de Noël associés au Christkind ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "German/Austrian/central European Catholic homes"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          74
+        ],
+        "observation_ids": [
+          "WEI58-06-008"
+        ],
+        "intake_dossier_id": "BULK150-005",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "AT-LINZ-CHRISTKIND"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-006",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Alpine Nativity scenes could grow into large landscapes occupying much of a family room?",
+        "fr": "Saviez-vous que des crèches alpines pouvaient prendre la forme de vastes paysages occupant une grande partie de la pièce familiale ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Alpine central Europe"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          96
+        ],
+        "observation_ids": [
+          "WEI58-08-002"
+        ],
+        "intake_dossier_id": "BULK150-006",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "AT-TYROL-MUSEUM-CRIB-HISTORY",
+          "AT-TYROL-MUSEUM-PERMANENT"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "REGIONAL_CULTURAL_OR_MATERIAL_CONTEXT",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-007",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that some Polish families carried a small Nativity theatre, or szopka, from house to house while singing carols?",
+        "fr": "Saviez-vous qu'en Pologne, certains groupes promenaient de maison en maison une petite crèche-théâtre appelée szopka, en chantant des cantiques ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Poland"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          124
+        ],
+        "observation_ids": [
+          "WEI58-10-004"
+        ],
+        "intake_dossier_id": "BULK150-007",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "PL-EDUC-CHODZENIE-SZOPKA",
+          "UNESCO-KRAKOW-SZOPKA-OTHER"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "COMMUNAL_PRACTICE_LOCALITY_CHECK",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-008",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that French-Canadian Mi-Carême celebrations included masked visits, music and gatherings halfway through Lent?",
+        "fr": "Saviez-vous que les fêtes de la Mi-Carême au Canada français comprenaient des visites masquées, de la musique et des rassemblements au milieu du Carême ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "France and French Canada"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          185
+        ],
+        "observation_ids": [
+          "WEI58-14-026"
+        ],
+        "intake_dossier_id": "BULK150-008",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "QC-HERITAGE-MI-CAREME",
+          "CA-ACOA-MI-CAREME"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "COMMUNAL_PRACTICE_LOCALITY_CHECK",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-009",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that in parts of Poland, preparing for Easter once involved thorough household cleaning during Holy Week?",
+        "fr": "Saviez-vous que, dans certaines régions de Pologne, la préparation à Pâques comportait un grand nettoyage de la maison pendant la Semaine sainte ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Poland and other Catholic European countries"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          188
+        ],
+        "observation_ids": [
+          "WEI58-15-002"
+        ],
+        "intake_dossier_id": "BULK150-009",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "PL-RADOM-MUSEUM-HOLYWEEK"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-010",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Polish Pentecost greenery decorations were documented not only in households but also on gates and, in some places, churches?",
+        "fr": "Saviez-vous que, dans certaines traditions polonaises de Pentecôte, la verdure décorait non seulement les maisons, mais aussi les portails et parfois les églises ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Polish, Ukrainian and central European Christian traditions"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          248
+        ],
+        "observation_ids": [
+          "WEI58-19-003"
+        ],
+        "intake_dossier_id": "BULK150-010",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "PL-NAC-PENTECOST-1930",
+          "PL-FORESTRY-PENTECOST"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-011",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser's 1958 handbook describes families discussing the Sunday sermon with children after Mass?",
+        "fr": "Saviez-vous que le manuel de Weiser paru en 1958 décrit des familles échangeant avec leurs enfants au sujet du sermon dominical après la messe ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Various countries"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          16
+        ],
+        "observation_ids": [
+          "WEI58-01-005"
+        ],
+        "intake_dossier_id": "BULK150-011",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "CANDIDATE_DOMESTIC_PRACTICE",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-012",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser recorded a household practice of tracing a cross on freshly baked Sunday bread before cutting it?",
+        "fr": "Saviez-vous que Weiser a décrit une pratique domestique consistant à tracer une croix sur le pain dominical fraîchement cuit avant de le couper ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Unspecified regions"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          16
+        ],
+        "observation_ids": [
+          "WEI58-01-007"
+        ],
+        "intake_dossier_id": "BULK150-012",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "CANDIDATE_DOMESTIC_PRACTICE",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-013",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser described an Alpine custom of carrying a statue of Saint Joseph to different homes over nine nights before Christmas?",
+        "fr": "Saviez-vous que Weiser a décrit une coutume alpine dans laquelle une statue de saint Joseph passait de maison en maison pendant neuf soirées avant Noël ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Alpine Europe"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          57
+        ],
+        "observation_ids": [
+          "WEI58-05-009"
+        ],
+        "intake_dossier_id": "BULK150-013",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "DISTINCT_REGIONAL_PRACTICE_CANDIDATE",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-014",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser recorded a Central European Lenten practice of giving pretzels as alms to people in need?",
+        "fr": "Saviez-vous que Weiser a signalé une pratique de Carême en Europe centrale consistant à offrir des bretzels en aumône aux personnes démunies ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Central Europe"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          184
+        ],
+        "observation_ids": [
+          "WEI58-14-023"
+        ],
+        "intake_dossier_id": "BULK150-015",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "DISTINCT_REGIONAL_PRACTICE_CANDIDATE",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-015",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser described Spanish Immaculate Conception Eve balconies decorated with flowers and candles?",
+        "fr": "Saviez-vous que Weiser a décrit des balcons espagnols décorés de fleurs et de cierges à la veille de l'Immaculée Conception ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Northern Spanish provinces"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          294
+        ],
+        "observation_ids": [
+          "WEI58-24-021"
+        ],
+        "intake_dossier_id": "BULK150-016",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "DISTINCT_REGIONAL_SEASONAL_CANDIDATE",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-016",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that the Provençal Christmas Gros Souper traditionally preceded Midnight Mass, while the réveillon followed later?",
+        "fr": "Saviez-vous qu'en Provence le Gros Souper de Noël précédait traditionnellement la messe de minuit, tandis que le réveillon venait ensuite ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "France"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          76
+        ],
+        "observation_ids": [
+          "WEI58-06-015"
+        ],
+        "intake_dossier_id": "BULK150-018",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": false,
+        "independent_narrow_witness": true,
+        "additional_source_ids": [
+          "FR-CULTURE-NOEL-PROVENCE"
+        ]
+      },
+      "scoping": {
+        "preliminary_scope": "RITUAL_OR_LOCAL_EVENT_BOUNDARY",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-017",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that some German and Austrian communities have held Easter processions on horseback, known as Osterritt?",
+        "fr": "Saviez-vous que certaines communautés allemandes et autrichiennes ont organisé des processions pascales à cheval, appelées Osterritt ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Rural Germany and Austria"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          221
+        ],
+        "observation_ids": [
+          "WEI58-16-023"
+        ],
+        "intake_dossier_id": "BULK150-020",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "DISTINCT_LOCAL_PROCESSION_REVIEW",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-018",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that regional All Souls foods in Spain include sweets called huesos de santo and, in Catalonia, panellets?",
+        "fr": "Saviez-vous que parmi les douceurs régionales de la Toussaint et des défunts en Espagne figurent les huesos de santo et, en Catalogne, les panellets ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Spain Catalonia"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          314
+        ],
+        "observation_ids": [
+          "WEI58-26-027"
+        ],
+        "intake_dossier_id": "BULK150-033",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "REGIONAL_FOOD_CONTEXT",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-019",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that historical Corpus Christi processions in parts of Europe featured children dressed as angels scattering flower petals?",
+        "fr": "Saviez-vous que certaines processions historiques de la Fête-Dieu en Europe comportaient des enfants déguisés en anges qui répandaient des pétales de fleurs ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Italy Germany and wider Europe history"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          265
+        ],
+        "observation_ids": [
+          "WEI58-21-015"
+        ],
+        "intake_dossier_id": "BULK150-034",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "LOCAL_PROCESSIONAL_COMPONENT",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-020",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that the historical German-Austrian custom called Kindelwiegen involved rocking a cradle with a figure of the Christ Child to carols?",
+        "fr": "Saviez-vous que la coutume historique germano-autrichienne appelée Kindelwiegen consistait à bercer une figurine de l'Enfant Jésus au son de chants de Noël ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "historical_geography": [
+        "Germany/Austria and Tyrol"
+      ],
+      "original_source": {
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          92
+        ],
+        "observation_ids": [
+          "WEI58-07-012"
+        ],
+        "intake_dossier_id": "BULK150-036",
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "original_page_checked_prior": true,
+        "independent_narrow_witness": false,
+        "additional_source_ids": []
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_RITUAL_BOUNDARY",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "calendar_season_or_formational_reference",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_HISTORICAL_VERIFICATION_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-021",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that a 1900 account of Saint Joseph's feast in Ribera, Sicily, describes inviting three poor guests to represent the Holy Family at a household meal?",
+        "fr": "Saviez-vous qu'un récit de 1900 sur la fête de saint Joseph à Ribera, en Sicile, décrit trois invités pauvres représentant la Sainte Famille lors d'un repas domestique ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-008"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/7"
+        },
+        "original_ocr_line_anchor": 16819,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-01"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-022",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that a historical Saint Joseph bread-table custom in Canicattini seated an older man, a woman and a child as figures of the Holy Family?",
+        "fr": "Saviez-vous qu'une ancienne coutume de la table de saint Joseph à Canicattini faisait asseoir un homme âgé, une femme et un enfant pour représenter la Sainte Famille ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Canicattini (Syracuse), Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-026"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/25"
+        },
+        "original_ocr_line_anchor": 16993,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-01"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-023",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that Pitrè's account of Santa Croce Camerina describes three poor residents being welcomed to a Saint Joseph votive feast?",
+        "fr": "Saviez-vous que le récit de Pitrè sur Santa Croce Camerina décrit l'accueil de trois habitants pauvres à un repas votif en l'honneur de saint Joseph ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Santa Croce Camerina, Ragusa, Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-036"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/35"
+        },
+        "original_ocr_line_anchor": 17063,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-01"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-024",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that Pitrè described a Saint Joseph hospitality custom in Pachino in which families received groups of poor guests called vicchiareddi?",
+        "fr": "Saviez-vous que Pitrè a décrit à Pachino une coutume d'hospitalité pour la fête de saint Joseph, où des familles recevaient des groupes d'invités pauvres appelés vicchiareddi ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Pachino, Syracuse, Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-049"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/48"
+        },
+        "original_ocr_line_anchor": 17216,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-01"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-025",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that Pitrè's historical description of Saint Joseph's feast in Ribera mentions large decorative breads called cudduri hung on house walls?",
+        "fr": "Saviez-vous que la description historique de Pitrè sur la fête de saint Joseph à Ribera évoque de grands pains décoratifs appelés cudduri suspendus aux murs des maisons ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-011"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/10"
+        },
+        "original_ocr_line_anchor": 16840,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-02"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-026",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that a historical Saint Joseph celebration in Ribera included a dramatic scene in which a costumed Holy Family was refused lodging?",
+        "fr": "Saviez-vous qu'une ancienne fête de saint Joseph à Ribera comprenait une scène où la Sainte Famille costumée se voyait refuser l'hospitalité ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-017"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/16"
+        },
+        "original_ocr_line_anchor": 16900,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-03"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-027",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that Pitrè described food and agricultural produce being auctioned in Canicattini to support a local Saint Joseph festival?",
+        "fr": "Saviez-vous que Pitrè a décrit à Canicattini la vente aux enchères d'aliments et de produits agricoles au profit de la fête locale de saint Joseph ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Canicattini (Syracuse), Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-031"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/30"
+        },
+        "original_ocr_line_anchor": 17010,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-04"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-028",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that Pitrè described a ceremonial Entry of Laurel near Saint Joseph's feast in Ribera, with boughs collected outside town and brought in on horseback?",
+        "fr": "Saviez-vous que Pitrè a décrit près de la fête de saint Joseph à Ribera une entrée cérémonielle de laurier, dont les branches étaient ramassées hors de la ville puis apportées à cheval ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-002"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/1"
+        },
+        "original_ocr_line_anchor": 16760,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-05"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-029",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that a historical Saint Joseph household feast in Santa Croce Camerina extended hospitality beyond its three principal guests to other poor visitors?",
+        "fr": "Saviez-vous qu'un repas traditionnel de saint Joseph à Santa Croce Camerina étendait l'hospitalité, au-delà des trois invités principaux, à d'autres visiteurs pauvres ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Santa Croce Camerina, Ragusa, Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-046"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/45"
+        },
+        "original_ocr_line_anchor": 17137,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-04"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-030",
+      "domain": "customs_historical_research",
+      "source_family": "PITRE_1900",
+      "text": {
+        "en": "Did you know that Pitrè recorded two local dates for Saint Joseph festivities in Canicattini: 19 March and the first Sunday in September?",
+        "fr": "Saviez-vous que Pitrè a relevé deux dates locales de fêtes de saint Joseph à Canicattini : le 19 mars et le premier dimanche de septembre ?"
+      },
+      "claim_mode": "1900_AUTHOR_REPORTED_DESCRIPTION_NOT_CURRENT_PRACTICE",
+      "historical_geography": [
+        "Canicattini (Syracuse), Sicily"
+      ],
+      "original_source": {
+        "author": "Giuseppe Pitrè",
+        "work": "Feste patronali in Sicilia",
+        "year": 1900,
+        "observation_ids": [
+          "PIT1900-IT-024"
+        ],
+        "intake_dossier_id": null,
+        "record_owner": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json",
+        "source_record_pointer": {
+          "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+          "json_pointer": "/records/23"
+        },
+        "original_ocr_line_anchor": 16972,
+        "original_facsimile_rechecked_for_this_claim": false,
+        "independent_source_corroboration_certified": false,
+        "review_group": "SJ-PIT-06"
+      },
+      "scoping": {
+        "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+        "universal_catholic_obligation": false,
+        "calendar_entry_authorized": false,
+        "current_observance_not_inferred": true
+      },
+      "destination_hint": {
+        "kind": "st_joseph_historical_context",
+        "route_verified": false
+      },
+      "editorial_state": "DRAFT_PITRE_ORIGINAL_FACSIMILE_CHECK_REQUIRED",
+      "publication_authorized": false
+    }
+  ]
+}
