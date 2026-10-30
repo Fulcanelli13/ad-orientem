@@ -84,7 +84,7 @@ export function renderF07PreciousBlood(phase,bead,{french=false}={}){
  }).join("");
  return '<section class="aoF07BloodGuide" data-f07-variant="precious-blood" data-f07-phase="'+phase+
   '" data-f07-bead="'+bead+'" data-f07-completed="'+completed+'" data-f07-total="47" aria-label="'+
-  esc(translate("Sept effusions","Seven sheddings",french)+": "+title)+"\""+'>'+
+  esc(translate("Sept effusions","Seven sheddings",french)+": "+title)+'">'+
   '<div class="aoF07BloodProgress" role="progressbar" aria-valuemin="0" aria-valuemax="47" aria-valuenow="'+completed+
    '" aria-label="'+esc(translate("Progrès du chapelet","Chaplet prayer progress",french))+'">'+segments+'</div>'+
   '<div class="aoF07BloodContext"><small>'+esc(phase===0?translate("AVANT LES SEPT EFFUSIONS","BEFORE SEVEN SHEDDINGS",french):
