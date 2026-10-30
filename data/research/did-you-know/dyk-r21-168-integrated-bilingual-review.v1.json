@@ -21,8 +21,8 @@
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In Weiser's account of Ukrainian Christmas Eve, a sheaf of wheat called the ‘Forefather’ was carried into the home to recall earlier generations.",
-        "fr": "Dans le récit de Weiser sur la veille de Noël ukrainienne, on apportait à la maison une gerbe de blé appelée « l'Ancêtre », en souvenir des générations passées."
+        "en": "In Ukrainian Christmas Eve customs, a grain sheaf called a didukh (‘Forefather’) was brought into the home to remember earlier generations.",
+        "fr": "Dans les coutumes ukrainiennes de la veille de Noël, on apportait à la maison une gerbe de céréales appelée didukh (« l'Ancêtre »), en souvenir des générations passées."
       },
       "editorial_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
       "source": {
@@ -56,7 +56,7 @@
           "en": "In Ukrainian Christmas Eve customs, a grain sheaf called a didukh was brought into the home.",
           "fr": "Dans les coutumes ukrainiennes de la veille de Noël, on introduisait dans la maison une gerbe de céréales appelée didukh."
         },
-        "editorial_rationale": "The cited text says Forefather, not didukh; retain independent source requirement for Ukrainian-language equivalence.",
+        "editorial_rationale": "Weiser p. 116 names the sheaf 'Forefather'; an independent Ukrainian scholarly encyclopedia confirms the original Ukrainian term didukh. Do not attribute the Ukrainian word itself to Weiser.",
         "printed_page": 116,
         "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
@@ -64,7 +64,15 @@
         "french_editorial_signoff": false,
         "semantic_novelty_verified": false,
         "reader_destination_verified": false,
-        "publication_authorized": false
+        "publication_authorized": false,
+        "secondary_lexical_witness": {
+          "url": "https://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CC%5CH%5CChristmas.htm",
+          "publisher": "Internet Encyclopedia of Ukraine, Canadian Institute of Ukrainian Studies",
+          "article": "Christmas",
+          "last_updated": 2005,
+          "claim": "Didukh / did signifies grandsire, a Christmas Eve grain sheaf",
+          "source_scope": "Independent term-equivalence corroboration, not universal current custom"
+        }
       }
     },
     {
