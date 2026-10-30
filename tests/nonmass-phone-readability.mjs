@@ -87,30 +87,63 @@ try{
    assert.ok(formation.scrollWidth<=formation.innerWidth+1,"Formation overflow at "+width+"px");
    await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="pray"]').click();
-   await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
+   // Current Prayer uses the source-owned nine-door mosaic by default.
+   // The classic organised family screen is an explicit ?aoPrayerPilot=0 mode.
+   // Both must remain readable, but they do not share DOM card names.
+   const opened=await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true&&
+     !!document.querySelector(
+       "#aoPray435930.open :is(.aoPrayPilotHome,.aoP435930RootOrganised)"),
+     null,{timeout:18000}).then(()=>true,()=>false);
+   if(!opened){
+     const state=await page.evaluate(()=>({
+       route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+       owner:globalThis.AO_PRAY_APP_V1?.status?.(),
+       donorView:globalThis.AO_PRAY_V435930?.state?.()?.view,
+       mount:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView,
+       classes:document.getElementById("aoPray435930")?.className,
+     }));
+     throw Error("Formation -> Pray navigation failed: "+JSON.stringify({...state,errors}));
+   }
    const prayer=await page.evaluate(()=>{
-    const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
-    const visible=selector=>[...document.querySelectorAll(selector)].filter(el=>{
-      const s=getComputedStyle(el),r=el.getBoundingClientRect();
-      return s.display!=="none"&&s.visibility!=="hidden"&&r.height>0&&r.width>0;
-    });
-    const kind=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind");
-    const descriptions=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription");
-    const font=el=>parseFloat(getComputedStyle(el).fontSize);
-    return {root:!!root,kind:kind.map(font),descriptions:descriptions.map(font),
-      scrollWidth:document.documentElement.scrollWidth,innerWidth,
-      rootButtons:[...root.querySelectorAll("button")].length};
+     const root=document.querySelector("#aoPray435930.open :is(.aoPrayPilotHome,.aoP435930RootOrganised)");
+     const pilot=root?.classList.contains("aoPrayPilotHome")??false;
+     const visible=selector=>[...root.querySelectorAll(selector)].filter(el=>{
+       const s=getComputedStyle(el),r=el.getBoundingClientRect();
+       return s.display!=="none"&&s.visibility!=="hidden"&&r.height>0&&r.width>0;
+     });
+     const font=el=>parseFloat(getComputedStyle(el).fontSize);
+     const tiles=visible(pilot?".aoPrayPilotTile":".aoP435930ModuleCard");
+     const kind=visible(".aoP435930ModuleKind");
+     const descriptions=visible(".aoP435930ModuleDescription");
+     const labels=visible(".aoPrayPilotTileCaption");
+     const intro=visible(".aoPrayPilotIntro");
+     const search=visible(".aoPrayPilotSearch");
+     return {pilot,root:!!root,tiles:tiles.length,
+       tileHeights:tiles.map(el=>el.getBoundingClientRect().height),
+       labels:labels.map(font),intro:intro.map(font),
+       searchHeight:search[0]?.getBoundingClientRect().height??null,
+       kind:kind.map(font),descriptions:descriptions.map(font),
+       scrollWidth:document.documentElement.scrollWidth,innerWidth};
    });
-   assert.ok(prayer.kind.length>=4&&prayer.descriptions.length>=4,
-     "Prayer family list unavailable at "+width+"px");
-   assert.ok(prayer.kind.every(px=>px>=11),"Prayer category microtype still <11px: "+JSON.stringify(prayer));
-   assert.ok(prayer.descriptions.every(px=>px>=13),
-     "Prayer descriptions still below 13px: "+JSON.stringify(prayer));
+   if(prayer.pilot){
+     assert.equal(prayer.tiles,9,"Current Prayer mosaic must expose nine source-owned category doors");
+     assert.ok(prayer.tileHeights.every(h=>h>=44),"Nine-door Prayer mosaic has small touch targets");
+     assert.ok(prayer.labels.every(px=>px>=11),"Mosaic labels unreadable: "+JSON.stringify(prayer));
+     assert.ok(prayer.intro.length&&prayer.intro.every(px=>px>=13),
+       "Current Pray discovery introduction is too small");
+     assert.ok(prayer.searchHeight>=40,"Prayer search target too small");
+   }else{
+     assert.ok(prayer.kind.length>=4&&prayer.descriptions.length>=4,
+       "Classic Prayer family list unavailable at "+width+"px");
+     assert.ok(prayer.kind.every(px=>px>=11),"Classic Prayer category type too small");
+     assert.ok(prayer.descriptions.every(px=>px>=13),
+       "Classic Prayer descriptions below 13px: "+JSON.stringify(prayer));
+   }
    assert.ok(prayer.scrollWidth<=prayer.innerWidth+1,"Prayer overflow at "+width+"px");
    await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
    assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
    console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
-     prayer.kind.length+" Prayer family kinds, no viewport overflow");
+     (prayer.pilot?prayer.tiles:prayer.kind.length)+" Prayer doors, no viewport overflow");
   }finally{await context.close();}
  }
 }finally{

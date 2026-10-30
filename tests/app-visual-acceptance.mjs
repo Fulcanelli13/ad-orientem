@@ -644,7 +644,7 @@ try{
   assert.equal(angelusFolio.channels,"posture,gesture","Source ritual rail lost its posture/gesture identities");
   assert.equal(angelusFolio.postureVisible,true,"Folio's source-owned posture note is hidden");
   assert.equal(angelusFolio.postureSummaryVisible,true,"Folio posture disclosure is inaccessible");
-  assert.ok(angelusFolio.postureSummaryHeight>=32,"Folio posture disclosure collapsed");
+  assert.ok(angelusFolio.postureSummaryHeight>=44,"Visible Folio posture disclosure must provide a 44px+ touch target");
   assert.match(angelusFolio.postureText,/Stand|Kneel|Debout|genoux/i,
     "Folio no longer explains the current prayer posture");
   assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusFolio.postureIcon),
