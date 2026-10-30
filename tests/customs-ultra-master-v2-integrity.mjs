@@ -256,6 +256,13 @@ assert.equal(cannizzaroLineage.counts.new_identity_merges,0);
 assert.equal(cannizzaroLineage.counts.new_current_indulgence_claims,0);
 assert.equal(cannizzaroLineage.counts.new_calendar_publications,0);
 assert.equal(cannizzaroLineage.publication_allowed,false);
+assert.equal(cannizzaroLineage.secondary_scholarship_leads.length,3);
+assert.equal(cannizzaroLineage.secondary_scholarship_leads[0].publication_year,1876);
+assert.equal(cannizzaroLineage.secondary_scholarship_leads[0].same_custom_independent_attestation_certified,false);
+assert.equal(cannizzaroLineage.secondary_scholarship_leads[0].pdf_page_image_checked,false);
+assert.equal(cannizzaroLineage.secondary_scholarship_leads[1].original_book_directly_read,false);
+assert.equal(cannizzaroLineage.counts.new_verified_independent_historical_action_matches,0);
+
 for(const row of cannizzaroLineage.research_decisions){
  assert.ok(row.source_ids.every(x=>pitreById.has(x)));
  assert.ok(row.source_ids.every(x=>x.startsWith("PIT1900-IT-")));
