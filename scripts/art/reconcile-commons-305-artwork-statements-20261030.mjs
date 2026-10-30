@@ -9,7 +9,7 @@
 import {readFileSync,writeFileSync} from "node:fs";
 import {createHash} from "node:crypto";
 const inpath="data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json";
-const outpath="data/calendar/sacred-art-phase1-commons-305-structured-work-leads-20261030.v1.json";
+const outpath="data/calendar/sacred-art-phase1-commons-305-structured-work-leads-20261030.v2.json";
 const input=JSON.parse(readFileSync(inpath,"utf8"));
 if(input.rows.length!==305||input.counts.frozenImports!==299||input.counts.frozenImportsWithCorrections!==6)
  throw Error("Commons source file evidence 305 baseline mismatch");
@@ -43,7 +43,7 @@ async function runBatch(slice,i){
    for(const s of slice){
     const entityId="M"+s.sourceId.slice("commons:".length);
     const entity=j.entities[entityId]??null;
-    const claims=entity?.claims??{};
+    const claims=entity?.statements??entity?.claims??{};
     const targets=Object.fromEntries(propIds.map(p=>[p,idsFromClaim(claims,p)]));
     const supported=!!entity&&!entity.missing&&entity.id===entityId;
     rows.set(s.sourceId,{
@@ -95,6 +95,8 @@ const reportRows=input.rows.map(r=>{
   artworkQIdMuseumCorroborated:false,physicalPaintingSameAsCanonical383:false,
   originalPhotoVisuallyCertified:false,newCanonical383Link:false,productionMutation:false};
 });
+const knownPoussin=reportRows.find(r=>r.sourceId==="commons:22151874");
+if(!knownPoussin?.wikidataDigitalRepresentationOf?.includes("Q23929162"))throw Error("KNOWN_COMMONS_P6243_DIGITAL_REPRESENTATION_ASSERTION_MISSING; verify MediaInfo statement JSON schema before accepting work-level counts");
 const works=new Map();
 for(const r of reportRows){
  for(const q of r.wikidataDigitalRepresentationOf)
