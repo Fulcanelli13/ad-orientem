@@ -86,7 +86,8 @@ try{
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
      "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
      "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
-     "assets/pray/angelus/tanner-annunciation-1898.webp"];
+     "assets/pray/angelus/tanner-annunciation-1898.webp",
+     "assets/vendor/exsurge/exsurge.min.js"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
    return {...meta,missing};
@@ -101,6 +102,35 @@ try{
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
+ // Render a real score on FIRST offline use, not only check that a binary
+ // resource was written to the snapshot. Neither priest nor choir state exists
+ // in this temporary verification viewport.
+ const offlineScore=await page.evaluate(async()=>{
+   let node=null,engraver=null;
+   try{
+     const owner=await import("./src/mass/reader-kyriale-research-gabc.js");
+     const renderer=await import("./src/mass/reader-chant-engraver.js");
+     const source=owner.offlineKyrialeResearchScore("KYRIE","MASS_08");
+     node=document.createElement("div");
+     node.style.width="310px";
+     node.style.position="absolute";
+     node.style.left="-5000px";
+     document.body.append(node);
+     engraver=renderer.createOfflineChantEngraver({viewport:node,document});
+     const rendered=await engraver.engrave(source.gabc);
+     return {rendered,svg:node.querySelector("svg")!==null,
+       sourceId:source.scoreId,remoteAudio:false};
+   }catch(error){
+     return {rendered:false,svg:false,error:String(error)};
+   }finally{
+     engraver?.destroy?.();node?.remove?.();
+   }
+ });
+ assert.equal(offlineScore.rendered,true,
+   "First offline-use Kyriale engraving failed: "+JSON.stringify(offlineScore));
+ assert.equal(offlineScore.svg,true,"Offline Kyrie VIII failed to yield SVG");
+ assert.equal(offlineScore.sourceId,"GREGOBASE-1184");
+ console.log("OFFLINE_KYRIALE_GREGORIAN_SCORE="+JSON.stringify(offlineScore));
  // The Rosary is a core devotional pilot journey: it must open on a first
  // offline launch after a completed bootstrap, even before it was opened online.
  // This exercises the actual first-use dynamic Prayer module graph, not just Home.
