@@ -6,9 +6,13 @@ import {mkdir,readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {calendarCustomArticleIds} from "../src/calendar/customs-read-model.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/calendar-customs-r18-eleven-visual");
+const publishedCount=calendarCustomArticleIds().length;
+const remainingReviewCount=publishedCount===36?10:11;
+assert.ok([35,36].includes(publishedCount),"Unexpected canonical corpus before review release: "+publishedCount);
 await mkdir(output,{recursive:true});
 const mime={
  ".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -65,10 +69,15 @@ try{
    await cal.locator(".aoCalCustomCatalogue > summary").click();
    const reviewer=cal.locator('[data-cal-r18-eleven-editorial-preview]');
    await reviewer.waitFor({state:"visible",timeout:10000});
-   assert.equal(await reviewer.locator('[data-cal-r18-eleven-key]').count(),11);
-   assert.equal(await cal.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),35);
+   assert.equal(await reviewer.locator('[data-cal-r18-eleven-key]').count(),remainingReviewCount);
+   assert.equal(await cal.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),publishedCount);
    assert.equal(await reviewer.locator('[data-cal-custom-item]').count(),0);
-   assert.equal(await reviewer.getAttribute("data-cal-r18-published-count"),"35");
+   assert.equal(await reviewer.getAttribute("data-cal-r18-published-count"),String(publishedCount));
+   if(publishedCount===36){
+     assert.equal(await reviewer.locator('[data-cal-r18-eleven-key="CUSTOMS-R18-14"]').count(),0,
+       "PENT-001 cannot appear a second time as unpublished R18-14");
+     assert.equal(await cal.locator('[data-cal-custom-id="PENT-001"]').count(),1);
+   }
    // Day-resolution repaint may replace expanded <details>; finish week
    // resolution before opening the editorial copy for visual capture.
    await page.waitForFunction(()=>
@@ -130,7 +139,7 @@ try{
    }
    assert.equal(await page.locator('[data-cal-r18-eleven-editorial-preview]').count(),1,
      "Reviewer should survive Calendar week preparation");
-   results.push({tag,public_customs:35,review_articles:11,source_links:17,
+   results.push({tag,public_customs:publishedCount,review_articles:remainingReviewCount,
      language_columns:2,overflow:rects.overflow,screenshot:file});
    assert.equal(errors.length,0,"Browser errors: "+errors.join(" | "));
   }catch(error){
