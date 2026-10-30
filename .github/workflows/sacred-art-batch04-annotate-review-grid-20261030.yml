@@ -1,0 +1,61 @@
+name: Sacred Art Batch 04 native QA review-grid overlays (€0)
+on:
+  push:
+    branches: [research/sacred-art-duplicate-gate-20261030]
+    paths:
+      - scripts/art/annotate-sacred-art-batch04-preflight-gallery-20261030.py
+      - .github/workflows/sacred-art-batch04-annotate-review-grid-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-batch04-annotate-review-grid
+  cancel-in-progress: false
+jobs:
+  source-bound-qa-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply native SHA hold and review hints to offline gallery
+        run: |
+          python -m py_compile scripts/art/annotate-sacred-art-batch04-preflight-gallery-20261030.py
+          python scripts/art/annotate-sacred-art-batch04-preflight-gallery-20261030.py
+      - name: Validate no publication or unguarded selection
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          root=Path('data/calendar/sacred-art-master-v2')
+          pr=json.loads((root/'native-photo-preflight-batch04-20261030.v1.json').read_text())
+          ui=json.loads((root/'native-photo-preflight-batch04-gallery-ui-20261030.v1.json').read_text())
+          text=Path(ui['gallery']).read_text()
+          m=re.search(r'const data=(\[[\s\S]*?\]);\s*const KEY=',text)
+          assert m
+          cards=json.loads(m.group(1))
+          assert len(cards)==ui['embeddedPreviewsPreserved']==104
+          assert sum(x['nativeSourceHold'] for x in cards)==pr['heldSourceVersions']
+          assert ui['queue1Promotions']==ui['rightsCertifications']==ui['automatedPristineApprovals']==ui['productionMutations']==ui['costEur']==0
+          assert len({x['id'] for x in cards})==104
+          assert 'if(!x||!x.available||x.nativeSourceHold)return' in text
+          assert 'data.filter(x=>approved[x.id]&&x.available&&!x.nativeSourceHold)' in text
+          assert 'filter(x=>approved[x.id]&&x.available&&!x.nativeSourceHold)' in text
+          assert 'native-qa-status-v1' in text
+          print('NATIVE_GALLERY_PASS',len(cards),'embedded',ui['holdsBlocked'],'file-version holds')
+          PY
+      - name: Commit one-click review hints on research branch only
+        run: |
+          git config user.name "Ad Orientem Sacred Art QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_FAST_GRID_REVIEW_BATCH04_20261030.html data/calendar/sacred-art-master-v2/native-photo-preflight-batch04-gallery-ui-20261030.v1.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "research(sacred-art): show native QA flags and disable changed-file selections in Batch 04 [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi
