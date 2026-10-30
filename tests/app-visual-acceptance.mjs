@@ -1721,7 +1721,10 @@ try{
   // Wide-browser regression: preserve the integrated v3.4.10 composition — 820px PRAY shell, 760px content measure, two-column hub.
   const wideContext=await browser.newContext({viewport:{width:1440,height:960},deviceScaleFactor:1,hasTouch:false,locale:"en-GB"});
   const wide=await wideContext.newPage();
-  await wide.goto("http://127.0.0.1:4186/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+  // The wide two-column Prayer regression also targets the supported grouped
+  // rollback. Default nine-tile mosaic desktop/phone acceptance is separate.
+  await wide.goto("http://127.0.0.1:4186/index.html?aoPrayerPilot=0",
+    {waitUntil:"domcontentloaded",timeout:90000});
   await wide.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true&&globalThis.AO_PRAY_APP_V1?.status?.().installed===true,null,{timeout:30000});
   await wide.locator("[data-ao-app-surface='pray']").click();
   await wide.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
