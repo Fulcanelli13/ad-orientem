@@ -720,4 +720,63 @@ assert.equal(singleWorkingIndex.guard.merges_approved,0);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
+
+
+// 14 same-core pairs assessed against hosted source excerpts; independent provenance remains unproven.
+const sc14=singleWorkingIndex.same_core_derivation_review;
+assert.equal(sc14.review_id,"SOURCE-DEPENDENCE-14-20261030");
+assert.equal(sc14.same_core_case_count,14);
+assert.equal(sc14.hosted_one_side_checked,14);
+assert.equal(sc14.distinct_hosted_activity_pages,11);
+assert.equal(sc14.printed_original_facsimile_pairs_verified,0);
+assert.equal(sc14.source_independence_certifications,0);
+assert.equal(sc14.distinct_canonical_customs_newly_approved,0);
+assert.equal(sc14.canonical_merges_approved,0);
+assert.equal(sc14.provisional_action_group_labels,13);
+const sameCoreChecked=singleWorkingIndex.dedup_case_decisions.filter(x=>x.same_core_source_verification);
+assert.equal(sameCoreChecked.length,14);
+const uniquePages=new Set(),groupIDs=new Set();
+for(const c of sameCoreChecked){
+ assert.equal(c.type,"PAIR");
+ assert.equal(c.status,"SAME_CORE_DESCRIPTION_SOURCE_INDEPENDENCE_HOLD");
+ const p=c.same_core_source_verification;
+ assert.equal(p.review_id,"SOURCE-DEPENDENCE-14-20261030");
+ assert.equal(p.review_level,"HOSTED_PASSAGE_CONFIRMATION_ONE_SIDE_AND_ACTION_COMPARISON");
+ assert.ok(p.hosted_passage_url.startsWith("https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id="));
+ assert.ok(p.hosted_source_attribution.length>5 && p.printed_work_attribution.length>10);
+ assert.ok(p.hosted_passage_line_anchor>100);
+ assert.ok(p.reason.length>85 && p.comparison_disposition.length>15);
+ assert.deepEqual(p.source_subjects.map(s=>s.source_id),c.subjects);
+ for(const s of p.source_subjects){
+  if(s.kind==="EVIDENCE_ONLY"){
+   const orig=sourceIndexById.get(s.source_id);
+   assert.ok(orig);assert.equal(s.recorded_evidence_id,orig.e);
+   assert.equal(s.wave,orig.w);assert.equal(s.row,orig.n);assert.equal(s.action,orig.a);
+  }else{
+   assert.equal(s.kind,"WORKING_OWNER");assert.ok(mids.has(s.existing_owner_id));
+   assert.equal(s.identity_approved,false);
+  }
+ }
+ assert.equal(p.source_dependence_status,"UNKNOWN");
+ for(const f of ["separate_source_independence_certified","both_original_printed_pages_verified",
+ "automatic_merge_allowed","canonical_identity_certified","ritual_authority_certified",
+ "indulgence_grant_certified","calendar_publication_allowed","editorial_approval"])
+  assert.equal(p[f],false,"Unapproved identity promotion in "+c.id);
+ uniquePages.add(p.hosted_passage_url);groupIDs.add(p.provisional_action_group_label);
+}
+assert.equal(uniquePages.size,11);
+assert.equal(groupIDs.size,13);
+assert.equal(sameCoreChecked.filter(c=>c.subjects.includes("CC3WORK-2026-085")).length,2);
+assert.deepEqual(sc14.repeated_case_ids,["CC3WORK-REL-013","CC3WORK-REL-040"]);
+assert.equal(singleWorkingIndex.dedup_case_decisions.filter(c=>!c.identity_boundary_adjudication&&!c.same_core_source_verification).length,35);
+assert.equal(singleWorkingIndex.counts.same_core_pairs_hosted_source_reviewed,14);
+assert.equal(singleWorkingIndex.counts.same_core_unique_hosted_page_reviews,11);
+assert.equal(singleWorkingIndex.counts.same_core_new_independent_attestations,0);
+assert.equal(singleWorkingIndex.counts.dedup_cases_with_action_boundary_or_source_review,44);
+assert.equal(singleWorkingIndex.counts.dedup_cases_awaiting_deeper_work,35);
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
