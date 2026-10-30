@@ -291,6 +291,12 @@ export function createHomeOwner(win=globalThis){
       button.removeAttribute("aria-current");
     const selectedTab=screen.querySelector('.aoTodayV2Tabs [data-home-calendar-view="'+view+'"]');
     selectedTab?.setAttribute("aria-current","page");
+    // H4 intentionally has no always-visible tabs on Today. In the Calendar
+    // subview, retain the canonical Day / Month / Liturgical Year selector.
+    for(const button of screen.querySelectorAll(".aoH4CalendarViews [data-home-calendar-view]")){
+      if(button.dataset.homeCalendarView===view)button.setAttribute("aria-current","page");
+      else button.removeAttribute("aria-current");
+    }
     const api=win?.AO_CALENDAR_APP_V1;
     const opened=await api?.openEmbedded?.(slot,{view,onClose:()=>{
       if(inlineCalendarView)showHomeToday();
