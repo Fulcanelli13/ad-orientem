@@ -126,7 +126,13 @@ export function createAppHostAdapter(win = globalThis) {
           const mass=win?.AO_R17_BROWSER_ENTRY;
           if(typeof mass?.hasResumable!=="function"||!mass.hasResumable()||
              typeof mass?.resume!=="function")return false;
-          return Promise.resolve(mass.resume()).then(openedSuccessfully);
+          return Promise.resolve(mass.resume()).then(value=>{
+            if(!openedSuccessfully(value))return false;
+            // Reader ownership wins after an explicit checkpoint restoration.
+            // Do not leave the full-page preflight active beneath resumed R17.
+            deactivateM1MassRoot(win);
+            return true;
+          });
         }
         const celebration = win?.AO_CELEBRATION_API;
         if (typeof celebration?.openPreflight !== "function") return false;

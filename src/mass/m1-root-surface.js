@@ -2,9 +2,12 @@
 // resolver and Start action; R17 owns resumption and the 65-card reader.
 const records=new WeakMap();
 export function m1RootPreviewRequested(win=globalThis){
+ // Default Mass tab uses the original source-owning preflight as a full page.
+ // A query flag with =0 opts back into the old sheet for safe field rollback.
+ if(!win?.location)return false;
  try{
-  const p=new URLSearchParams(win?.location?.search||"");
-  return p.get("aoMassAccessM1")==="1"&&p.get("aoMassRootM1")==="1";
+  const p=new URLSearchParams(win.location.search||"");
+  return p.get("aoMassAccessM1")!=="0"&&p.get("aoMassRootM1")!=="0";
  }catch{return false}
 }
 function ensureStyle(doc){

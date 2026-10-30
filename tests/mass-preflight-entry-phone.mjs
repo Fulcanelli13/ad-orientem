@@ -82,8 +82,15 @@ try{
     "Before Mass must have none, brief and full choices");
   assert.equal(await page.locator("[data-folio-after]").count(),3,
     "After Mass must have none, thanksgiving and full choices");
+  // M1 shows one source-owned choice panel at a time. Select the visible
+  // Before/After rows instead of clicking controls hidden behind other rows.
+  await page.locator("[data-m1-choice='before']").click();
   await page.locator("[data-folio-before][value='full']").check();
+  await page.locator("[data-folio-overview-button]").click();
+  await page.locator("[data-m1-choice='after']").click();
   await page.locator("[data-folio-after][value='full']").check();
+  await page.locator("[data-folio-overview-button]").click();
+  await page.locator("[data-m1-choice='before']").click();
   assert.deepEqual(await page.evaluate(()=>{
     const x=globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience;
     return {before:x?.before,after:x?.after};

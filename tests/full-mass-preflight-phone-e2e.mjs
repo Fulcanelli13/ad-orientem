@@ -22,7 +22,7 @@ try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
  const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
- await page.goto("http://127.0.0.1:"+server.address().port+"/tests/fixtures/rogation-premass.html");
+ await page.goto("http://127.0.0.1:"+server.address().port+"/tests/fixtures/rogation-premass.html?aoMassAccessM1=0&aoMassRootM1=0");
  await page.evaluate(async()=>{
   const {mountFullMassPreflight}=await import("/src/mass/full-mass-preflight.js");
   await import("/src/mass/full-mass-preflight-styles.js");
