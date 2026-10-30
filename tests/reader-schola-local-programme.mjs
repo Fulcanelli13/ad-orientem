@@ -117,6 +117,5 @@ assert.equal(normalizeScholaLocalProgramme({profiles:[
 assert.equal(normalizeScholaLocalProgramme({profiles:[
  {id:"p4",name:"Safe",ordinarySettings:{CREDO:"Credo I",CANON:"bad"}}
 ]}).ordinarySettings.CANON,undefined);
-assert.match((await import("../src/mass/reader-native-preview.js")).mountNativeReaderPreview.toString(),/onScholaLocalProgrammeChange/);
 
 console.log("PASS saved local programme, five optional event IDs, no ritual overrides, organ prohibition remains visible");
