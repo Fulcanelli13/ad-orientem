@@ -1,0 +1,58 @@
+{
+  "schema": "AO_P108_ONE_APPROVED_JIHLAVA_DIRECTORY_COVER_V1",
+  "date": "2026-10-30",
+  "state": "DRAFT_PENDING_MAIN_CI",
+  "source_research_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2039",
+  "source_commit": "74f6aa47dc17576df5b97c43840a2d98b99c5761",
+  "source_bytes_audit": "data/directory/research/p108-jihlava-approved-cover-byte-audit.v1.json",
+  "counts": {
+    "approved_covers_before": 40,
+    "approved_covers_after": 41,
+    "new_covers": 1,
+    "exact_confirmed_venue_place_links": 22,
+    "exact_approved_photo_joins_before": 9,
+    "exact_approved_photo_joins_after": 10,
+    "venues_created": 0,
+    "mass_schedules_modified": 0,
+    "expense_eur": 0
+  },
+  "photos": [
+    {
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius",
+      "asset_path": "assets/approved/place-media/CZ-st-ignatius-jihlava.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_(8686).jpg",
+      "credit": "Gampe",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_sha1": "a61c6ec7df0680fc9cd37c802ce0e10346694367",
+      "derivative_sha256": "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+      "dimensions": [
+        1050,
+        1400
+      ],
+      "status": "APPROVED_IN_PR_NOT_LIVE"
+    }
+  ],
+  "holds": [
+    {
+      "row": 315,
+      "reason": "Wrong subject statue alternative and original P105 only conditional"
+    },
+    {
+      "row": 320,
+      "reason": "Dark snow-heavy alternative worse than ensemble P105"
+    },
+    {
+      "row": 322,
+      "reason": "Cars and traffic obstruct alternative Pau; earlier bollard photo still held"
+    }
+  ],
+  "policy": {
+    "no_wrong_subject_images": true,
+    "no_new_venues": true,
+    "full_frame_no_crop": true,
+    "source_byte_identity_required": true,
+    "credit_and_changes_bilingual": true
+  }
+}
