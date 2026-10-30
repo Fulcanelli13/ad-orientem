@@ -69,6 +69,13 @@ function info(g){const d=decisions[g.id];
  if(d.status==="NOT_DUPLICATE_KEEP_ALL")return "Not duplicates — retain every artwork independently";
  return "Same work — preferred image selected; other records preserved";
 }
+function maybeUnlock(img){
+ const section=img.closest(".group");if(!section)return;
+ const candidates=section.querySelectorAll(".candidate");
+ const images=section.querySelectorAll(".candidate img");
+ if(images.length!==candidates.length||[...images].some(x=>!x.complete||x.naturalWidth===0))return;
+ section.querySelectorAll("button[data-pref]").forEach(button=>button.disabled=false);
+}
 function render(){
  const term=document.querySelector("#search").value.toLowerCase().trim();
  const filter=document.querySelector("#filter").value;
@@ -82,10 +89,10 @@ function render(){
  document.querySelector("#groups").innerHTML=found.length?found.map(g=>{
  const d=decisions[g.id];
  return '<section class="group '+(d?"resolved":"")+'"><div class="group-header"><div><span class="tag">'+esc(g.confidence)+'</span><h2>'+esc(g.title)+'</h2><p class="muted">'+esc(g.reason)+' · '+g.members.length+' candidate records</p></div><small>'+esc(g.id)+'</small></div><div class="candidates">'+
- g.members.map(m=>'<article class="candidate '+(d?.preferred===m.id?"selected":"")+'"><div class="figure">'+(m.preview?'<img loading="lazy" src="'+esc(m.preview)+'" alt="'+esc(m.title)+'" onload="this.closest(\'.candidate\').querySelector(\'button[data-pref]\').disabled=false" onerror="this.replaceWith(document.createTextNode(\'Image unavailable — use source link\'))">':'<div class="missing">No verified embedded preview<br>Use source link; retain for photo research</div>')+'</div><div class="details"><strong>'+esc(m.title)+'</strong><small>'+esc(m.artist||"Artist unrecorded")+'</small><small>'+esc(m.label||"")+'</small><small>'+esc(m.id)+'</small><small>'+esc(m.rights||"")+'</small>'+(m.sourceUrl?'<a href="'+esc(m.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Artwork source</a>':"")+'<button data-id="'+esc(g.id)+'" data-pref="'+esc(m.id)+'" '+'disabled title="Choose only after its image loads"'+'>'+(d?.preferred===m.id?"Preferred image selected":"Choose this as best photo")+'</button></div></article>').join("")+
+ g.members.map(m=>'<article class="candidate '+(d?.preferred===m.id?"selected":"")+'"><div class="figure">'+(m.preview?'<img loading="lazy" src="'+esc(m.preview)+'" alt="'+esc(m.title)+'" onload="maybeUnlock(this)" onerror="this.replaceWith(document.createTextNode(\'Image unavailable — use source link\'))">':'<div class="missing">No verified embedded preview<br>Use source link; retain for photo research</div>')+'</div><div class="details"><strong>'+esc(m.title)+'</strong><small>'+esc(m.artist||"Artist unrecorded")+'</small><small>'+esc(m.label||"")+'</small><small>'+esc(m.id)+'</small><small>'+esc(m.rights||"")+'</small>'+(m.sourceUrl?'<a href="'+esc(m.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Artwork source</a>':"")+'<button data-id="'+esc(g.id)+'" data-pref="'+esc(m.id)+'" '+'disabled title="Choose only after all comparison images load"'+'>'+(d?.preferred===m.id?"Preferred image selected":"Choose this as best photo")+'</button></div></article>').join("")+
  '</div><div class="decision"><strong>'+esc(info(g))+'</strong><button class="distinct" data-distinct="'+esc(g.id)+'">Not duplicates — keep all</button><button class="undecided" data-undo="'+esc(g.id)+'" '+(!d?"disabled":"")+'>Undecided / reset</button></div></section>';
  }).join(""):'<div class="empty">No groups match this filter.</div>';
- document.querySelectorAll(".candidate img").forEach(img=>{if(img.complete && img.naturalWidth>0){const button=img.closest(".candidate").querySelector("button[data-pref]");if(button)button.disabled=false}});
+ document.querySelectorAll(".candidate img").forEach(img=>{if(img.complete && img.naturalWidth>0)maybeUnlock(img)});
  document.querySelectorAll("button[data-pref]").forEach(b=>b.onclick=()=>setDecision(b.dataset.id,"SAME_WORK_KEEP_PREFERRED",b.dataset.pref));
  document.querySelectorAll("button[data-distinct]").forEach(b=>b.onclick=()=>setDecision(b.dataset.distinct,"NOT_DUPLICATE_KEEP_ALL",""));
  document.querySelectorAll("button[data-undo]").forEach(b=>b.onclick=()=>clearDecision(b.dataset.undo));
