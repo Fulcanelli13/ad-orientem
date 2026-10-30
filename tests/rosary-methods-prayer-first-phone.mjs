@@ -44,14 +44,15 @@ try{
     const b=root.querySelector("[data-p435930-rosary-begin]");
     const panel=root.querySelector("#ao-rosary-chooser-options");
     const toggle=root.querySelector("[data-p435930-rosary-customize]");
-    const source=root.querySelector(".aoRosarySourceCurrent a");
+    const source=document.querySelector("#aoPray435930 .aoPrayerBookSources .aoRosarySourceCurrent a");
+    const sourcesClosed=!!source&&!source.closest(".aoPrayerBookSources").open;
     const box=b.getBoundingClientRect(),outer=root.getBoundingClientRect();
     return {begins:root.querySelectorAll("[data-p435930-rosary-begin]").length,
       label:b.textContent.trim(),buttonHeight:box.height,
       relativeY:box.top-outer.top,
       panelHidden:panel.hidden,options:panel.querySelectorAll("[data-p435930-rosary-choose]").length,
       toggleHeight:toggle.getBoundingClientRect().height,toggleExpanded:toggle.getAttribute("aria-expanded"),
-      sourceHref:source?.href,overflow:document.documentElement.scrollWidth-innerWidth};
+      sourceHref:source?.href,sourcesClosed,overflow:document.documentElement.scrollWidth-innerWidth};
    });
    assert.equal(first.begins,1,"More than one Rosary start button");
    assert.equal(first.panelHidden,true,"Complex Rosary options must not obstruct first prayer");
@@ -59,7 +60,8 @@ try{
    assert.ok(first.buttonHeight>=52&&first.toggleHeight>=44,"Rosary phone controls undersized");
    assert.ok(first.relativeY<360,"Begin prayer buried below method controls: "+JSON.stringify(first));
    assert.equal(first.options,5,"Rosary historical methods removed or duplicated");
-   assert.ok(first.sourceHref?.startsWith("https://"),"Method provenance link lost");
+   assert.ok(first.sourceHref?.startsWith("https://")&&first.sourcesClosed,
+    "Method provenance must remain reachable inside Aa without appearing in the Rosary body");
    assert.ok(first.overflow<=1,"Rosary chooser overflow");
    await page.screenshot({path:resolve(out,"rosary-prayer-first-"+width+".png"),
      fullPage:false,animations:"disabled"});
