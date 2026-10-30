@@ -1,6 +1,8 @@
 # Did You Know — corrected source-first research strategy
 _Date: 30 October 2026 · Status: nonpublishing research; user correction incorporated_
 
+**Current checkpoint (later same day): 145 active bilingual drafts; 130 historical Customs source facts; 130/130 original-page or source-leaf checks; 0 publication approvals.** Historic 116/14 checkpoints below are kept as provenance of earlier progress, not current outstanding work.
+
 ## Governing editorial decision
 **Customs DYK facts must be mined primarily from the FULL Customs Ultra-Master research collection, especially Francis X. Weiser and Giuseppe Pitrè, rather than being limited to the 39 canonical published/context Customs records.** The latter are a tiny Calendar publication layer, not the research universe.
 
@@ -123,7 +125,7 @@ The [130-case source/editorial decision register](../../data/research/did-you-kn
 
 **Original-page audit recovered:** The initially provisional first ten Pitrè St Joseph examples were cross-referenced to later completed source scans: one P0, one P1, eight P2 original-page reviews. Each now has its specific Pitrè 1900 printed page, original scan-page number, matched Italian anchor and an image-checked source record. Six additional Weiser draft rows were cross-referenced to already completed direct-page visual checks in the Customs primary sweep.
 
-Consequently, **116 of the 130 active historical draft facts** now carry an individual previously-checked original folio/leaf source-action pointer in the available research records: 60 Pitrè (all) and 56 Weiser. The **remaining 14** are Weiser excerpts with a page reference but no joined direct original-page check in this DYK screen. None of the 116 have automatic independent historical corroboration, modern continuity, certified 1962 ritual norms, editorial language approval or runtime links. Do not re-run the original Customs page-acquisition process simply to rediscover already checked Pitrè leaves.
+Consequently, **Previous checkpoint, now superseded:** 116 of the 130 active historical draft facts then had linked original folio/leaf actions (60 Pitrè and 56 Weiser), with 14 Weiser rows awaiting direct verification. The later direct-page review below closed those 14 gaps. Neither checkpoint establishes independent historical corroboration, modern continuity, certified 1962 ritual norms, editorial language approval or runtime links. Do not re-run the original Customs page-acquisition process simply to rediscover already checked Pitrè leaves.
 
 ### Twelve consolidated Sicilian festival stories
 
@@ -136,6 +138,35 @@ The twelve stories are **not an additional twelve active discoveries**: zero net
 - **Corrected:** `DYK-UM02-006` no longer says households sought reconciliation; the checked Weiser action summary supports completing work and tidying for Christmas Eve.
 - **Held for narrower proof:** `DYK-UM02-015` (exact Assumption versus broader harvest cycle source context), `DYK-UM03-022` (Pantheon rose-shower liturgical feast dating), `DYK-UM01-011` (author's recommended family practice versus independently attested custom), and other rows explicitly flagged in the register.
 - **Lower priority:** generic weekday-devotion statements and familiar facts that are not much of a curiosity hook; do not inflate production facts by turning every day of the week or every ceremony detail into a separate trivium.
-- **Still to do:** 14 outstanding individual Weiser folio joins, Italian claim/source semantics, native French language review, verified exact routes, thematic uniqueness and concentration controls. No production or Calendar change.
+- **Checkpoint pending work (now superseded):** fourteen individual Weiser folio joins have subsequently been completed; Italian claim/source semantics, native French review, verified exact routes, thematic uniqueness and concentration controls remain. No production or Calendar change.
 
-The updated structural gate `tests/dyk-ultramaster-draft-gates.mjs` checks the 130 rows, 116/14 source-stage counts, 12 nonpublishing story proposals with 27 page-linked references, and the corrected original facts. Source-field consistency was checked in research; no GitHub Actions/Node test completion is claimed until a run is observed.
+The updated structural gate `tests/dyk-ultramaster-draft-gates.mjs` checks the 130 rows and the subsequently updated 130/0 source-stage counts, 12 nonpublishing story proposals with 27 page-linked references, and the corrected original facts. Source-field consistency was checked in research; no GitHub Actions/Node test completion is claimed until a run is observed.
+
+## Weiser original-folio closure and source-claim corrections — 30 October 2026
+
+The final 14 previously unjoined Weiser entries were checked against the scanned original **Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)**. Exact source-page locators and source-scope corrections are recorded in [the 14-folio adjudication](../../data/research/did-you-know/dyk-weiser-14-original-folio-adjudication.v1.json). The printed-page to zero-based PDF page offset in the checked scan is **+17**. No bulk re-download or paid source capture was necessary.
+
+**130/130 active Customs research facts now have source-level original-page or directly screened leaf evidence:** 60 Pitrè, 70 Weiser. **Zero** remain without this source-leaf check. This closes a provenance *mapping* gate, **not** independent historical attestation, source-meaning sign-off, live observance, native French approval, meaningful discovery quality, doctrinal validation or user-facing release permission.
+
+### Historical corrections arising from actual source-page reading
+
+- German Advent calendars: Weiser p.56 describes picture windows, **not** the extra chalk-mark claim. The fact was narrowed.
+- Marian-image Advent visits: p.57 describes **Alpine-region** household visits, not the named Adnet parish. The named-location attribution was removed.
+- Herbergsuchen: p.57 describes a **German Advent dramatic play** about the search for lodging. The previously claimed specific Großpetersdorf domestic picture was not established from the cited original and was removed.
+- Christmas gift bell: p.74 confirms a bell announcing the Christ Child's gifts, without making the custom exclusively Austrian.
+- Mountain-region large Nativity displays: pp.95–96 support the hundreds-of-figures room-scale crib description.
+- Northern Slavic szopka: p.124 describes puppet-theatre Nativity scenes, while a **separate Hungarian account** describes carrying a Nativity representation door to door. The incorrect Polish transfer was removed.
+- Mi-Carême: p.184 supports **French and Canadian festive family meals and entertainment**, not the previously asserted masked visits. Those details were removed.
+- Holy Week spring cleaning: p.188 locates the custom in many countries after Palm Sunday. Polish greenery decorations are a separate detail.
+- Polish Pentecost greenery: p.248 supports homes and churches and the Green Holiday appellation, not an extra claim about gates.
+- French réveillon: p.76 documents **a family meal after Midnight Mass**. The contrasting Provençal Gros Souper before Mass does not appear in this source passage and was removed from this candidate.
+- Martinmas: pp.270–271 locate the historic Mass-and-harvest-feast context and roast goose.
+- Polish Święte Wieczory: pp.123–124 support the specific term for twelve nights between Christmas and Epiphany.
+- Wednesday devotion to Saint Joseph: p.28 supports the historical weekday connection; historic indulgence text on the page is **not** carried into the fact.
+- Ember Days: p.32 discusses historical seasonal prayer and thanksgiving for harvest; not current fasting law.
+
+Four additional held claims were checked/narrowed: the Sunday sermon family conversation (Weiser p.16), letters to the Christ Child on Saint Nicholas Eve (pp.55–56), Hungarian Assumption harvest celebrations versus similar but not necessarily same-date Polish wreath processions (p.270), and the roses at the Pantheon on **the Sunday after Ascension** (p.242). The separately page-verified Pitrè p.443 Saint Joseph hospitality account remains a local report, never an implied Roman-rite obligation.
+
+All eight previously flagged **source-precision** holds were reassessed and moved into the next editorial categories; **none were declared independently fact-verified for publication**. The [130-case review board](../../data/research/did-you-know/dyk-customs-130-source-editorial-screen.v1.json) now groups the same 130 preserved drafts as 31 priority review, 31 secondary context, 60 historical-festival story candidates and 8 repetitive/low-curiosity facts.
+
+**Remaining:** actual claim-level editorial certification (including narrower context), genuine novelty and diversity versus the older private DYK deck, independent French review, 10 glossary browser-route acceptance tests, and fact-specific destinations for Mass and Customs. No new Calendar identity, runtime deck or publication.
