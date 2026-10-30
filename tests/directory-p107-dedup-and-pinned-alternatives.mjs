@@ -30,6 +30,11 @@ const keys=Object.fromEntries(r49.columns.map((x,i)=>[x,i]));
 assert.equal(r49.records.filter(x=>x[keys.name]?.toLowerCase().includes("peter")&&x[keys.locality]?.toLowerCase().includes("new brighton")).length,0,"R49 omission remains historical evidence only");
 assert.equal(src.schema,"AO_P107_FOUR_PINNED_COMMONS_ALTERNATIVE_ORIGINALS_V1");
 assert.equal(src.records.length,4);
+assert.equal(src.records.filter(r=>r.selected_for_native_acquisition).length,1);
+assert.equal(src.records.find(r=>r.row===309).visual_screening,"PRIMARY_CANDIDATE_SOURCE_PINNED");
+assert.equal(src.records.find(r=>r.row===315).visual_screening,"REJECT_WRONG_SUBJECT_FOR_EXTERIOR");
+assert.equal(src.records.find(r=>r.row===320).visual_screening,"REJECT_WEAK_FOR_PRIMARY");
+assert.equal(src.records.find(r=>r.row===322).visual_screening,"REJECT_INTRUSIVE_VEHICLES");
 assert.deepEqual(src.records.map(x=>x.row).sort((a,b)=>a-b),[309,315,320,322]);
 for(const r of src.records){
  assert.match(r.source_sha1,/^[a-f0-9]{40}$/i);
@@ -46,10 +51,11 @@ const stagedFull=new URL("../"+stagedPath,import.meta.url);
 if(fs.existsSync(stagedFull)){
  const audit=load(stagedPath);
  assert.equal(audit.schema,"AO_P107_FOUR_HASH_VERIFIED_ALTERNATIVE_STAGING_V1");
- assert.deepEqual(audit.counts,{originals_sha1_verified:4,native_decodes:4,uncropped_webps_staged:4,media_approved:0,published:0});
+ assert.deepEqual(audit.counts,{originals_sha1_verified:1,native_decodes:1,uncropped_webps_staged:1,candidates_screened:4,editorially_rejected_before_download:3,media_approved:0,published:0});
  const digest=d=>createHash("sha256").update(d).digest("hex");
  assert.equal(digest(fs.readFileSync(new URL("../"+audit.contact_sheet,import.meta.url))),audit.contact_sheet_sha256);
- for(const r of src.records){
+ assert.equal(audit.records.length,1);
+ for(const r of src.records.filter(r=>r.selected_for_native_acquisition)){
   const x=audit.records.find(x=>x.row===r.row);
   assert.ok(x);
   assert.equal(x.place_id,r.place_id);
@@ -65,4 +71,4 @@ if(fs.existsSync(stagedFull)){
   assert.equal(x.published,false);
  }
 }
-console.log("P107 PASS: New Brighton already exists, postage mismatch retained, 4 pinned source-photo candidates, 0 new media");
+console.log("P107 PASS: New Brighton existing site, postcode mismatch retained, four images visually screened, only Jihlava staged, zero publication");
