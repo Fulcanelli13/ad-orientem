@@ -57,17 +57,32 @@ export function paintM1AccessRows(root,selection,{fr=false,optionalRites=false}=
   const holder=root?.querySelector?.("[data-m1-rows]");
   if(!holder)return null;
   const doc=holder.ownerDocument,rows=m1AccessRows(selection,{fr,optionalRites});
-  // Construct with DOM text nodes, never template-inject source Proper data.
-  holder.replaceChildren(...rows.map(row=>{
+  // A single source-owned chooser, visually grouped into essential
+  // celebration decisions and personal follow/prayer preferences. Do not
+  // clone, default, persist or re-order the actual Mass selection controls.
+  // Construct with text nodes only; no source-Proper HTML interpolation.
+  const nodes=[];
+  holder.setAttribute("aria-label",L(fr,"Your Mass","Votre messe"));
+  rows.forEach((row,index)=>{
+    if(index===0||index===3){
+      const heading=doc.createElement("h4");
+      heading.className="aoM1ChoiceHeading";
+      heading.dataset.m1Group=index===0?"celebration":"preferences";
+      heading.textContent=index===0
+        ?L(fr,"Celebration","Célébration")
+        :L(fr,"Your preferences","Vos préférences");
+      nodes.push(heading);
+    }
     const button=doc.createElement("button");button.type="button";
-    button.dataset.m1Choice=row.id;button.className="aoM1Choice";
+    button.dataset.m1Choice=row.id;button.className="aoM1Choice aoTcmRow";
     button.setAttribute("aria-label",row.title+": "+row.value);
     const body=doc.createElement("span");body.className="aoM1ChoiceContent";
     const title=doc.createElement("small");title.textContent=row.title;
     const value=doc.createElement("strong");value.textContent=row.value;
     const arrow=doc.createElement("span");arrow.className="aoM1ChoiceArrow";
     arrow.textContent="›";arrow.setAttribute("aria-hidden","true");
-    body.append(title,value);button.append(body,arrow);return button;
-  }));
+    body.append(title,value);button.append(body,arrow);nodes.push(button);
+  });
+  holder.replaceChildren(...nodes);
   return rows;
 }
