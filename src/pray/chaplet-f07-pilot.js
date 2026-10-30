@@ -85,7 +85,7 @@ const F07_STYLE=`
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadNavigation>.aoDevoProgress{display:none!important}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadNavigation{margin:0!important;padding:0!important}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoSequenceTimeline{display:none}
-#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine{transition:opacity .12s ease;opacity:.34;filter:none}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine{transition:opacity .12s ease;opacity:.43;filter:none}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine.aoMercyPrayer{opacity:1}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine:not(.aoMercyPrayer)>p{font-size:14px!important;line-height:1.35!important}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine.aoMercyPrayer>p{font-size:20px!important;line-height:1.52!important}
@@ -195,6 +195,46 @@ const F07_STYLE=`
  font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
  text-decoration:underline;text-underline-offset:3px;
 }
+/* Claude m2: unboxed recitation, sage ℣/℟ and an italic instruction placed
+   immediately before the text. Touch areas remain usable on narrow phones. */
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRubric{
+ margin:2px 4px 11px;min-height:0;
+ font:italic 400 13px/1.4 var(--ao-font-liturgical,Georgia,serif);
+ color:var(--muted,#b5afa8);
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRubric:empty{display:none}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRoleLabel{
+ color:var(--ao-prayer-sage,#a9c6b7)!important;
+ font-size:16px!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRole-Response .aoF07MercyRoleName{
+ color:var(--ao-prayer-sage,#a9c6b7)!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRoles[data-f07-group="alone"] .aoF07MercyRole{
+ grid-template-columns:20px minmax(0,1fr);
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRoles[data-f07-group="alone"] .aoF07MercyRoleName{display:none}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyDock{
+ background:var(--surface-1,#231d18);border-top:1px solid var(--border,rgba(210,185,144,.13))!important;
+ padding:4px 7px max(4px,env(safe-area-inset-bottom));min-height:52px;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyDock button{
+ min-height:44px;min-width:44px;
+ background:transparent!important;border:0!important;
+ border-radius:3px!important;box-shadow:none!important;
+ font:500 13px/1.2 var(--ao-font-ui,system-ui,sans-serif)!important;
+ color:var(--text,#eee)!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyDock button:disabled{
+ opacity:.4;cursor:default;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyDockNext{
+ padding-inline:10px!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine:not(.aoMercyPrayer) .aoF07MercyRole p{
+ font-size:15px!important;line-height:1.45!important;
+}
+
 `;
 export function installChapletF07Styles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-chaplet-f07-style"))return;
