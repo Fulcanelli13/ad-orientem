@@ -1,0 +1,60 @@
+{
+  "schema": "AO_2026_ART_PREVIEW_SOURCES_QA_20261030_V1",
+  "date": "2026-10-30",
+  "scope": "Research-only image-source repair for standalone 365-day Calendar artwork review; no production app modification",
+  "diagnosis": "Calendar candidate rows omitted image preview metadata even when archived Sacred Art source registry provided it. Artwork image source needs to be joined by physical_work_group or exact canonical ID, rather than treating all undefined thumbnail_url as genuine missing photographs.",
+  "sources": {
+    "image_master_branch": "archive/sacred-art-master-20261030-v2",
+    "image_master_commit": "4377112d050f0ff2444e1d55a2edbb657cced74a",
+    "image_master_files": [
+      "data/calendar/sacred-art-master-v2/queue-photo-qa-or-repair.csv",
+      "data/calendar/sacred-art-master-v2/queue-rights-or-alternative.csv"
+    ],
+    "q2_records": 548,
+    "q2_official_image_preview_records": 371,
+    "rights_alternative_records": 441
+  },
+  "corrective_viewer_policy": [
+    "Join exact artwork and group IDs to pinned source metadata",
+    "Normalize archived thumb.wikimedia.org URLs to upload.wikimedia.org",
+    "When Commons imageinfo preview absent, use Special:Redirect/file with the exact Commons filename",
+    "For Metropolitan Museum use single-object Open Access API with the exact object ID to obtain primaryImageSmall",
+    "For Cleveland Museum use Open Access API exact Athena ID or accession and images.web.url",
+    "For unresolved images, open the official source record; do not fabricate a substitute or automatically approve visual fit",
+    "Support enlargement, neutral Reset and keep Phase 1 broad-fit decisions under the unchanged review revision key"
+  ],
+  "verified_examples": [
+    {
+      "artwork_id": "REVIEW::commons:41334838",
+      "title": "Presentation of Jesus Christ at the Temple",
+      "creator": "Nicolas Labbé",
+      "source": "https://commons.wikimedia.org/wiki/File:Nicolas_Labb%C3%A9-Pr%C3%A9sentation_au_temple.jpg",
+      "method": "EXACT_EXISTING_IMAGEINFO_PREVIEW_FROM_PINNED_Q2_MASTER"
+    },
+    {
+      "artwork_id": "REVIEW::cma:139532",
+      "title": "Study for \"The Presentation of Christ in the Temple\" (for Saint Ulrich, Vienna)",
+      "creator": "Franz Anton Maulbertsch",
+      "source": "https://www.clevelandart.org/art/1963.326",
+      "exact_commons_file": "https://commons.wikimedia.org/wiki/File:Clevelandart_1963.326.jpg",
+      "note": "Available CC0 reproduction includes a carved external frame; do not approve as final hero-photo crop"
+    },
+    {
+      "artwork_id": "nga-46127",
+      "title": "The Presentation in the Temple",
+      "creator": "Master of the Prado \"Adoration of the Magi\"",
+      "source": "https://www.nga.gov/artworks/46127-presentation-temple",
+      "exact_iiif_image": "https://api.nga.gov/iiif/a1871fb3-fa75-4868-ab25-8870b9e833c7/full/full/0/default.jpg?attachment_filename=the_presentation_in_the_temple_1961.9.28.jpg"
+    },
+    {
+      "artwork_id": "met-437298",
+      "title": "The Presentation in the Temple",
+      "creator": "Alvaro Pirez",
+      "source_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437298",
+      "verification": "API_IMAGE_AVAILABILITY_NOT_VERIFIED; use official object page if absent"
+    }
+  ],
+  "human_editorial_decisions_changed": 0,
+  "calendar_scripture_tags_changed": 0,
+  "production_publications_changed": 0
+}
