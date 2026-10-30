@@ -5,7 +5,9 @@ const base={kind:"CALENDAR",kindLabel:"Mass of the day",actualTitle:"Feria",
  readerMode:"LIVE",readerLanguage:"en",beforeMass:"none",afterMass:"none"};
 assert.equal(m1AccessPreviewRequested({location:{search:"?aoMassAccessM1=1"}}),true);
 assert.equal(m1AccessPreviewRequested({location:{search:"?aoMassAccessM1=0"}}),false);
-assert.equal(m1AccessPreviewRequested({location:{search:""}}),false);
+assert.equal(m1AccessPreviewRequested({location:{search:""}}),true,"Mass access defaults on");
+assert.equal(m1AccessPreviewRequested({location:{search:"?aoMassRootM1=0"}}),false,"Rollback disables M1 access");
+assert.equal(m1AccessPreviewRequested({}),false,"Non-browser mocks preserve historical host");
 const rows=m1AccessRows(base);
 assert.deepEqual(rows.map(x=>x.id),["mass","ceremony","reader","language","before","after"]);
 assert.equal(rows[0].value,"Mass of the day","Mass identity comes from the host selection");
