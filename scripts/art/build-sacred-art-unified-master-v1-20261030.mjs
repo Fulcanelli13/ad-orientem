@@ -402,7 +402,7 @@ for(const [gid,rows] of groups){
   rightsCategory:r.classification,rightsLabel:r.label,
   rightsEvidence:r.evidence,rightsTerms:r.terms,rightsPolicyUrl:r.policyUrl,
   photographerCredit:r.credit,selectedPhotoFingerprint:r.sourcePhotoId,
-  preferredRecordId:best.recordId,selectedSourceUrl:best.sourceUrl,
+  preferredRecordId:best.recordId,selectedSourceUrl:best.sourceUrl||rows.map(x=>sourceObjectPage(x.sourceUrl)).find(Boolean)||"",
   sourceOriginalSha256:best.originalSha,
   acceptedRecordIds:active.map(x=>x.recordId),
   allSourceVariantCount:rows.length,
