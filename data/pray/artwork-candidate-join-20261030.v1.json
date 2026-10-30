@@ -1,0 +1,3729 @@
+{
+  "schema": "AO_PRAY_ART_EDITORIAL_IDENTITY_CANDIDATE_JOIN_V1",
+  "date": "2026-10-30",
+  "stage": "RESEARCH_ONLY__NOT_APPROVAL__NOT_PRODUCTION",
+  "description": "Deterministic candidate suggestions joining the 275-slot Prayer Art Matching Map to 22 user-approved primary painting identities. Subject fits are preliminary; original identity approval never implies approval for every matched slot or a certified source photo.",
+  "input_slot_registry": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "ref": "feat/pray-art-slots-nine-door-20261030",
+    "path": "data/pray/art-placement-slots-20261030.v1.json",
+    "workbook_sha256": "db97b5cdffecd369e405ae4ccea1a9580a64942e06f949654589268cbbee73d7"
+  },
+  "input_painting_master": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "ref": "research/prayer-artwork-pristine-registry-bulk-20261028",
+    "path": "data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json"
+  },
+  "safeguards": [
+    "No modifications to source placement registry or source painting master",
+    "No use of workbook illustrative examples as candidate selections",
+    "No inferential reuse of a painting-specific approval as a slot approval",
+    "No released image URLs; no upload or production activation",
+    "No inferred full-image rights, native QA, photo crop or visual approval",
+    "Excluded Fra Angelico and El Greco remain excluded",
+    "Zero paid source or storage required",
+    "Multi-slot reuse refers back to a single stable artwork ID"
+  ],
+  "scope_limitations": [
+    "Only 22 explicitly approved primary artworks included; the wider 383-record gallery is not yet joined",
+    "Subject tags are provisional curatorial classification requiring slot-specific editorial review",
+    "Candidate pool counts are not image availability or publication readiness"
+  ],
+  "statistics": {
+    "slots_total": 275,
+    "artworks_user_approved_identity": 22,
+    "slots_with_proposals": 147,
+    "candidate_links": 207,
+    "doors_with_proposals": 8,
+    "doors_total": 9,
+    "by_level": {
+      "Seasonal hero": {
+        "slots": 23,
+        "with_candidates": 14,
+        "candidate_links": 17
+      },
+      "Door cover": {
+        "slots": 9,
+        "with_candidates": 8,
+        "candidate_links": 17
+      },
+      "Prayer card vignette": {
+        "slots": 48,
+        "with_candidates": 32,
+        "candidate_links": 43
+      },
+      "Module cover": {
+        "slots": 45,
+        "with_candidates": 33,
+        "candidate_links": 45
+      },
+      "Time / feast variant": {
+        "slots": 4,
+        "with_candidates": 4,
+        "candidate_links": 6
+      },
+      "Stage image": {
+        "slots": 134,
+        "with_candidates": 52,
+        "candidate_links": 75
+      },
+      "Hub cover": {
+        "slots": 7,
+        "with_candidates": 4,
+        "candidate_links": 4
+      },
+      "Alias (inherits)": {
+        "slots": 3,
+        "with_candidates": 0,
+        "candidate_links": 0
+      },
+      "Navigation": {
+        "slots": 2,
+        "with_candidates": 0,
+        "candidate_links": 0
+      }
+    },
+    "production_ready": 0
+  },
+  "artwork_identity_index": [
+    {
+      "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "approved_primary_module": "angelus",
+      "provisional_subject_codes": [
+        "MAR-ANNUNCIATION"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "approved_primary_module": "joseph",
+      "provisional_subject_codes": [
+        "JOS-DREAM"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "ART-ean-estout-entecost",
+      "approved_primary_module": "holy-spirit",
+      "provisional_subject_codes": [
+        "SPR-PENTECOST"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "commons-morlete-sacred-heart-1759",
+      "approved_primary_module": "heart-jesus",
+      "provisional_subject_codes": [
+        "CHR-SACREDHEART"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "B02-HEART-MARY-MORLETE",
+      "approved_primary_module": "heart-mary",
+      "provisional_subject_codes": [
+        "MAR-HEART"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "approved_primary_module": "michael",
+      "provisional_subject_codes": [
+        "ANG-MICHAEL"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+      "approved_primary_module": "angel",
+      "provisional_subject_codes": [
+        "ANG-GUARDIAN"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": false,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+      "approved_primary_module": "regina",
+      "provisional_subject_codes": [
+        "CHR-RESURRECT"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "met-438434",
+      "approved_primary_module": "adoration",
+      "provisional_subject_codes": [
+        "EUC-MONSTRANCE",
+        "MAR-PRAYING"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "W07-007",
+      "approved_primary_module": "scripture",
+      "provisional_subject_codes": [
+        "SNT-JEROME",
+        "LIFE-STUDY"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "LOCAL-BENSON-SALVATOR",
+      "approved_primary_module": "king",
+      "provisional_subject_codes": [
+        "CHR-KING"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "souls::1",
+      "approved_primary_module": "souls",
+      "provisional_subject_codes": [
+        "END-PURGATORY",
+        "MAR-MADONNA"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "salvation::1",
+      "approved_primary_module": "salvation",
+      "provisional_subject_codes": [
+        "CHR-NATIVITY"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+      "approved_primary_module": "morning",
+      "provisional_subject_codes": [
+        "NAT-DAWN"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "artuk:op6-prayer-frere",
+      "approved_primary_module": "evening",
+      "provisional_subject_codes": [
+        "LIFE-PRAYER"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": false,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+      "approved_primary_module": "perpetual",
+      "provisional_subject_codes": [
+        "MAR-ICON",
+        "MAR-MADONNA"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "khm:GG-838",
+      "approved_primary_module": "saints",
+      "provisional_subject_codes": [
+        "TRI-TRINITY",
+        "SNT-ALLSAINTS"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+      "approved_primary_module": "visit",
+      "provisional_subject_codes": [
+        "CHR-NATIVITY"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+      "approved_primary_module": "mass",
+      "provisional_subject_codes": [
+        "LIFE-MASS"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "nga:34956",
+      "approved_primary_module": "confession",
+      "provisional_subject_codes": [
+        "PEN-PRODIGAL"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "fondazione-zeri:47818",
+      "approved_primary_module": "rosary",
+      "provisional_subject_codes": [
+        "MAR-ROSARY",
+        "MAR-MADONNA"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    },
+    {
+      "artwork_id": "mnac:008327-000",
+      "approved_primary_module": "sorrows",
+      "provisional_subject_codes": [
+        "MAR-SORROWS"
+      ],
+      "editorial_artwork_identity": "USER_FINAL_APPROVED",
+      "source_original_archived": true,
+      "photo_final_qa": "NOT_CERTIFIED",
+      "publication_eligible": false
+    }
+  ],
+  "slot_proposals": [
+    {
+      "slot_id": "HERO-01",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "matched_subject_codes": [
+            "JOS-DREAM"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-02",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-03",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-04",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-05",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "nga:34956",
+          "matched_subject_codes": [
+            "PEN-PRODIGAL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-06",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "nga:34956",
+          "matched_subject_codes": [
+            "PEN-PRODIGAL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-07",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-08",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-09",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-10",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-11",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-12",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-13",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-14",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "ART-ean-estout-entecost",
+          "matched_subject_codes": [
+            "SPR-PENTECOST"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-15",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-16",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-17",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-18",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-19",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "HERO-20",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "SNT-ALLSAINTS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-21",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-22",
+      "level": "Seasonal hero",
+      "proposals": [
+        {
+          "artwork_id": "LOCAL-BENSON-SALVATOR",
+          "matched_subject_codes": [
+            "CHR-KING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "HERO-23",
+      "level": "Seasonal hero",
+      "proposals": []
+    },
+    {
+      "slot_id": "DOOR-D1",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "artuk:op6-prayer-frere",
+          "matched_subject_codes": [
+            "LIFE-PRAYER"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D2",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D3",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-ROSARY",
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D4",
+      "level": "Door cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "DOOR-D5",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D6",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "LOCAL-BENSON-SALVATOR",
+          "matched_subject_codes": [
+            "CHR-KING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D7",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D8",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "matched_subject_codes": [
+            "ANG-MICHAEL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+          "matched_subject_codes": [
+            "ANG-GUARDIAN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "SNT-ALLSAINTS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "DOOR-D9",
+      "level": "Door cover",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_morning_offering",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-weekday_benedictus",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.angelus",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "artuk:op6-prayer-frere",
+          "matched_subject_codes": [
+            "LIFE-PRAYER"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-01",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-02",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-03",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "artuk:op6-prayer-frere",
+          "matched_subject_codes": [
+            "LIFE-PRAYER"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-04",
+      "level": "Time / feast variant",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "MAR-PRAYING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-08",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus-09",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.angelus_regina",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-daily.morning",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "artuk:op6-prayer-frere",
+          "matched_subject_codes": [
+            "LIFE-PRAYER"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-daily.morning-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-daily.evening",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "artuk:op6-prayer-frere",
+          "matched_subject_codes": [
+            "LIFE-PRAYER"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-daily.evening-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-daily.nightly_examen",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-daily.personal_rule",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "W07-007",
+          "matched_subject_codes": [
+            "LIFE-STUDY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "artuk:op6-prayer-frere",
+          "matched_subject_codes": [
+            "LIFE-PRAYER"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_sign_of_cross",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_our_father",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_hail_mary",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_glory_be",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_apostles_creed",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "TRI-TRINITY",
+            "SNT-ALLSAINTS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sacrament_act_of_contrition",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "nga:34956",
+          "matched_subject_codes": [
+            "PEN-PRODIGAL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_act_of_faith",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_act_of_hope",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_act_of_love",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_guardian_angel",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+          "matched_subject_codes": [
+            "ANG-GUARDIAN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-foundations_grace_before_meals",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_grace_after_meals",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_prayer_of_adoration",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-mass_confiteor",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+          "matched_subject_codes": [
+            "LIFE-MASS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sacrament_come_holy_spirit",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-ean-estout-entecost",
+          "matched_subject_codes": [
+            "SPR-PENTECOST"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-traditional_veni_sancte_sequence",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-ean-estout-entecost",
+          "matched_subject_codes": [
+            "SPR-PENTECOST"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.rosary",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-ROSARY",
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-ROSARY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-08",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-09",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-10",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-11",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-12",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "matched_subject_codes": [
+            "CHR-RESURRECT"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-13",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-14",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-ean-estout-entecost",
+          "matched_subject_codes": [
+            "SPR-PENTECOST"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.rosary-15",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-16",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.rosary-17",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.divine_mercy",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.divine_mercy-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.five_wounds",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.precious_blood",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.little_crown",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.little_crown-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.rosary_methods",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-ROSARY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-prayer.seven_sorrows_chaplet",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.holy_ghost",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-ean-estout-entecost",
+          "matched_subject_codes": [
+            "SPR-PENTECOST"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-novena.holy_ghost-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-ean-estout-entecost",
+          "matched_subject_codes": [
+            "SPR-PENTECOST"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.christmas",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-novena.christmas-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "matched_subject_codes": [
+            "JOS-DREAM"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.corpus_christi",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.sacred_heart",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.immaculate_conception",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.annunciation",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.assumption",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.seven_sorrows",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.st_joseph",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "matched_subject_codes": [
+            "JOS-DREAM"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.holy_souls",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-novena.holy_souls-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.perpetual_help",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-ICON"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.st_therese",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-novena.st_therese-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.christ_the_king",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "LOCAL-BENSON-SALVATOR",
+          "matched_subject_codes": [
+            "CHR-KING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.immaculate_heart",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "B02-HEART-MARY-MORLETE",
+          "matched_subject_codes": [
+            "MAR-HEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.st_michael",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "matched_subject_codes": [
+            "ANG-MICHAEL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-novena.st_anthony_nine_tuesdays",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-novena.holy_face_1887",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.montfort_consecration",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "LOCAL-BENSON-SALVATOR",
+          "matched_subject_codes": [
+            "CHR-KING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-programme.first_friday",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-programme.first_friday-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-programme.first_saturday",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "B02-HEART-MARY-MORLETE",
+          "matched_subject_codes": [
+            "MAR-HEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-ROSARY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-programme.first_saturday-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "B02-HEART-MARY-MORLETE",
+          "matched_subject_codes": [
+            "MAR-HEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-ROSARY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-adoration_anima_christi",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-adoration_spiritual_communion",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-benediction_o_salutaris",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-benediction_tantum_ergo",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-benediction_divine_praises",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "TRI-TRINITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-adoration_litany_blessed_sacrament",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-benediction_versicles",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-adoration_lord_i_am_not_worthy",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-mass_devotion_leonine",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "matched_subject_codes": [
+            "ANG-MICHAEL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-benediction_adoremus_ps116",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.adoration.night",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+          "matched_subject_codes": [
+            "ANG-GUARDIAN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.adoration",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.adoration-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.adoration.four_ends",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.benediction",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.benediction-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.benediction-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.benediction-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+          "matched_subject_codes": [
+            "LIFE-MASS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.benediction-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.forty_hours",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "EUC-MONSTRANCE"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-prayer.communion",
+      "level": "Hub cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.communion-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.communion-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "MAR-PRAYING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-devotion_consecration_christ_king",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "LOCAL-BENSON-SALVATOR",
+          "matched_subject_codes": [
+            "CHR-KING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sacred_heart_short_prayer",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sacred_heart_aspiration_trust",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.stations",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.stations-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-08",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-09",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-10",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-11",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-12",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-13",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.stations-14",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.seven_words",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.seven_words-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.seven_words-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.seven_words-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.seven_words-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.seven_words-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.seven_words-08",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "mnac:008327-000",
+          "matched_subject_codes": [
+            "MAR-SORROWS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.tenebrae",
+      "level": "Module cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-prayer.sacred_heart",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "matched_subject_codes": [
+            "CHR-SACREDHEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-marian_hail_holy_queen",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-marian_memorare",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "MAR-PRAYING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-weekday_magnificat",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-marian_consecration_immaculate_heart",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "B02-HEART-MARY-MORLETE",
+          "matched_subject_codes": [
+            "MAR-HEART"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "MAR-PRAYING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-sub_tuum",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-ICON"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-litany_loreto_1962",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "fondazione-zeri:47818",
+          "matched_subject_codes": [
+            "MAR-MADONNA"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "matched_subject_codes": [
+            "MAR-ANNUNCIATION"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "met-438434",
+          "matched_subject_codes": [
+            "MAR-PRAYING"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "SNT-ALLSAINTS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-litany_loreto_current",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_prayer_st_michael",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "matched_subject_codes": [
+            "ANG-MICHAEL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-devotion_memorare_st_joseph",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_st_anthony_lost_items",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_litany_st_joseph",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-devotion_ad_te_beate_ioseph",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.st_joseph_seven_sorrows",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "matched_subject_codes": [
+            "JOS-DREAM"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "matched_subject_codes": [
+            "JOS-DREAM"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "salvation::1",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+          "matched_subject_codes": [
+            "CHR-NATIVITY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-06",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-08",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.litany_saints",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "SNT-ALLSAINTS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "matched_subject_codes": [
+            "ANG-MICHAEL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-03",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "SNT-ALLSAINTS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-05",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "W07-007",
+          "matched_subject_codes": [
+            "SNT-JEROME"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "khm:GG-838",
+          "matched_subject_codes": [
+            "SNT-ALLSAINTS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-church_prayer_for_pope",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-foundations_eternal_rest",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-dead_de_profundis",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-dead_fidelium_deus",
+      "level": "Prayer card vignette",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-dead_eternal_rest_singular",
+      "level": "Prayer card vignette",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-pray.penitential_psalms",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "nga:34956",
+          "matched_subject_codes": [
+            "PEN-PRODIGAL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-01",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-02",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "nga:34956",
+          "matched_subject_codes": [
+            "PEN-PRODIGAL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-04",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-05",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-06",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "souls::1",
+          "matched_subject_codes": [
+            "END-PURGATORY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-07",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.confession",
+      "level": "Module cover",
+      "proposals": [
+        {
+          "artwork_id": "nga:34956",
+          "matched_subject_codes": [
+            "PEN-PRODIGAL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.confession-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "W07-007",
+          "matched_subject_codes": [
+            "SNT-JEROME"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "STG-pray.confession-02",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.confession-03",
+      "level": "Stage image",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-pray.confession-04",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+          "matched_subject_codes": [
+            "NAT-DAWN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        },
+        {
+          "artwork_id": "nga:34956",
+          "matched_subject_codes": [
+            "PEN-PRODIGAL"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.for_priests",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+          "matched_subject_codes": [
+            "LIFE-MASS"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-pray.occasional_intercessions",
+      "level": "Hub cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-prayer.good_death",
+      "level": "Hub cover",
+      "proposals": []
+    },
+    {
+      "slot_id": "STG-prayer.good_death-01",
+      "level": "Stage image",
+      "proposals": [
+        {
+          "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+          "matched_subject_codes": [
+            "ANG-GUARDIAN"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "COV-prayer.lection",
+      "level": "Hub cover",
+      "proposals": [
+        {
+          "artwork_id": "W07-007",
+          "matched_subject_codes": [
+            "SNT-JEROME",
+            "LIFE-STUDY"
+          ],
+          "basis": "EXACT_CONTROLLED_SUBJECT_CODE_WITH_EDITORIALLY_APPROVED_IDENTITY",
+          "slot_placement_editorially_approved": false,
+          "release_eligible": false
+        }
+      ]
+    },
+    {
+      "slot_id": "ALIAS-pray.visit_blessed_sacrament",
+      "level": "Alias (inherits)",
+      "proposals": []
+    },
+    {
+      "slot_id": "ALIAS-pray.de_profundis",
+      "level": "Alias (inherits)",
+      "proposals": []
+    },
+    {
+      "slot_id": "ALIAS-pray.eternal_rest",
+      "level": "Alias (inherits)",
+      "proposals": []
+    },
+    {
+      "slot_id": "NAV-pray.library",
+      "level": "Navigation",
+      "proposals": []
+    },
+    {
+      "slot_id": "NAV-pray.hub",
+      "level": "Navigation",
+      "proposals": []
+    },
+    {
+      "slot_id": "COV-prayer.hymns",
+      "level": "Module cover",
+      "proposals": []
+    }
+  ]
+}

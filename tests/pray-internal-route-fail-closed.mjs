@@ -68,6 +68,10 @@ try{
   b.id="valid-internal-prayer-route";b.textContent="Angelus";
   document.querySelector("#aoPray435930 .aoP435930Mount").append(b);b.click();
  });
+ // The approved hub-to-Angelus entry adds an introduction, without changing
+ // the canonical five/four-card reader or invalid-route fail-closed behavior.
+ const intro=page.locator('#aoPray435930.open [data-p435930-pilot-angelus-begin]');
+ if(await intro.count())await intro.click();
  await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{timeout:9000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
  assert.equal(await page.locator("#aoPray435930 [data-p435930-internal-route-error]").count(),0);

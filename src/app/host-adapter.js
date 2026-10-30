@@ -69,7 +69,15 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     hardHome() {
-      // Root-mode Mass is a shell destination; drop its presentation on navigation.
+      // M1 is only a presentation of the source-owned Mass preflight.
+      // Close that preflight via its original close control before removing M1:
+      // simply dropping the M1 root styling leaves its host backdrop visible
+      // above Home, although the shell already reports "home".
+      const massBackdrop=win?.document?.querySelector?.("#ao-mass-flow-v1 .aoMassFlowBackdrop[data-ao-m1-root='true']");
+      if(massBackdrop&&!massBackdrop.hidden){
+        const nativeClose=massBackdrop.querySelector("[data-ao-close]");
+        if(nativeClose)nativeClose.click();
+      }
       deactivateM1MassRoot(win);
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
