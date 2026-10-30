@@ -82,8 +82,8 @@ for(const r of p104.published_new){
  assert.equal(pair[0].disposition,"EXISTING_CONFIRMED_LINK");
  assert.equal(pair[0].distance_m,m);
 }
-assert.equal(cross.counts.canonical_places,529);
-assert.equal(cross.counts.confirmed_links,22);
+assert.equal(cross.counts.canonical_places,LIVE.places);
+assert.equal(cross.counts.confirmed_links,LIVE.links);
 assert.equal(cross.counts.exact_confirmed_photo_joins,5+laterPhotoRelease.photos.length,"P104 adds identity only; four later P106 approvals are separate");
 assert.equal(p104.research_holds.length,4);
 const gnd=cross.candidate_pairs.find(p=>p.venue_id==="ao-research-icksp-federated-v13-icksp-stg-112"&&p.place_id==="place:DE:altoetting-gnadenkapelle");
