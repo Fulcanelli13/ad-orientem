@@ -20,7 +20,7 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
  };
  const group=(title,start,end)=>'<section class="aoLittleCrownGroup"><h3>'+esc(title)+'</h3>'+
   '<div class="aoLittleCrownBeads" role="group" aria-label="'+esc(title)+'">'+
-  LITTLE_CROWN_B30_BEADS.slice(start,end).map(bead).join('')+'</div></section>';
+  LITTLE_CROWN_B30_BEADS.slice(start,end).map(x=>bead(x,false)).join('')+'</div></section>';
  const f07Band=f07Active?f07Render(position,{french,interactiveBeads:
   LITTLE_CROWN_B30_BEADS.map(x=>bead(x,true)).join('')}):"";
  // The Aa control belongs to the single source prayer card, not to a
