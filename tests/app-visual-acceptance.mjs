@@ -358,7 +358,17 @@ try{
   }
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
-  await page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']").click();
+  // A previously selected Month/Year lens may be retained across tabs.
+  // Select Today through its public control before opening Day & sources.
+  // Never force-click a hidden Read/Reflect row.
+  const dayLink=page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']");
+  if(!await dayLink.isVisible()){
+    const todayLens=page.locator(".homeScreen .aoTodayV2Tabs [data-home-calendar-today]");
+    await todayLens.waitFor({state:"visible",timeout:10000});
+    await todayLens.click();
+    await dayLink.waitFor({state:"visible",timeout:10000});
+  }
+  await dayLink.click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
     const el=document.getElementById("ao-cinema-transition");
