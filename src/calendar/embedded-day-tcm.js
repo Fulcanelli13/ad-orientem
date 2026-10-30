@@ -103,6 +103,67 @@ export const EMBEDDED_DAY_TCM_CSS=String.raw`
 #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] :is(.aoCalV2DayNav button,.aoCalDayScriptureActions button,.aoCalV2Primary):focus-visible{
  outline:2px solid var(--ao-tcm-gold)!important;outline-offset:2px;
 }
+/* Resolve inherited dark-only Calendar paint in both appearances. */
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalModTop{
+ background:var(--ao-tcm-surface)!important;color:var(--ao-tcm-ink)!important;
+ border-bottom-color:var(--ao-tcm-line)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalModTop h1{
+ color:var(--ao-tcm-ink)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalModTop button{
+ background:var(--ao-tcm-raised)!important;color:var(--ao-tcm-ink)!important;
+ border-color:var(--ao-tcm-line)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2NextMajor{
+ background:var(--ao-tcm-raised)!important;border:1px solid var(--ao-tcm-line)!important;
+ border-radius:12px!important;color:var(--ao-tcm-ink)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2NextMajor :is(small,strong,span){
+ color:var(--ao-tcm-ink)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2TextLink,
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalDaySources :is(summary,a),
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2PrintOptions summary{
+ color:var(--ao-tcm-ink)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Documentation .aoCalSourceLine,
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2SectionTitle small{
+ color:var(--ao-tcm-mute)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalOrdoBasis summary{
+ color:var(--ao-tcm-gold)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalPracticeContext{
+ color:var(--ao-tcm-ink);border-color:var(--ao-tcm-line)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalPracticeContext :is(.aoCalPracticeCard,.aoCalPracticeDiscipline,.aoCalCustomsBlock,.aoCalPilgrimagePlaces){
+ background:var(--ao-tcm-surface)!important;color:var(--ao-tcm-ink)!important;
+ border:1px solid var(--ao-tcm-line)!important;border-radius:12px;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalPracticeContext :is(.aoCalPracticeCard,.aoCalPracticeDiscipline,.aoCalCustomsBlock,.aoCalPilgrimagePlaces) :is(h4,strong,b,summary,a){
+ color:var(--ao-tcm-ink)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalPracticeContext :is(.aoCalPracticeCard,.aoCalPracticeDiscipline,.aoCalCustomsBlock,.aoCalPilgrimagePlaces) :is(p,small,span){
+ color:var(--ao-tcm-ink-2)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalPracticeContext :is(.aoCalPracticeCard,.aoCalPracticeDiscipline,.aoCalCustomsBlock,.aoCalPilgrimagePlaces) button{
+ background:var(--ao-tcm-raised)!important;color:var(--ao-tcm-ink)!important;
+ border-color:var(--ao-tcm-line)!important;min-height:44px;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalPracticeIntro{
+ color:var(--ao-tcm-ink-2)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Week :is(button,button.active){
+ background:var(--ao-tcm-raised)!important;color:var(--ao-tcm-ink)!important;
+ border-color:var(--ao-tcm-line)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Week button :is(small,b,span){
+ color:var(--ao-tcm-ink-2)!important;
+}
+#ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Week button.active{
+ box-shadow:inset 0 -2px 0 var(--ao-tcm-sage)!important;
+}
 @media(max-width:430px){
  #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalModBody{padding-inline:min(12px,var(--ao-tcm-gutter,16px))}
  #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"] .aoCalV2Hero{padding:18px 14px}
