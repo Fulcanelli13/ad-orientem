@@ -975,6 +975,8 @@ for(const w of works){
  assert.ok(validWorkGrantIDs.has(w.normative_grant_id),"Unknown normative indulgence "+w.normative_grant_id);
  assert.ok(w.title_en.length>6 && w.title_fr.length>6);
  assert.ok(w.qualifying_work_and_condition_en.length>35);
+ assert.ok(w.qualifying_work_and_condition_fr.length>35);
+ assert.ok(w.non_equivalence_fr.length>20);
  assert.ok(w.explicit_non_equivalence.length>18);
  assert.ok(w.proposed_surfaces.length>0);
  assert.equal(w.published_in_app,false);
@@ -989,6 +991,14 @@ assert.equal(indulgenceV2.counts.general_concessions,4);
 assert.equal(indulgenceV2.counts.particular_concessions,33);
 assert.equal(indulgenceV2.counts.work_routes_with_existing_custom_owner_id,14);
 assert.equal(indulgenceV2.counts.separate_primary_decrees,2);
+assert.equal(indulgenceV2.counts.exact_work_routes_fully_bilingual,31);
+for(const value of Object.values(indulgenceV2.global_conditions_fr))assert.ok(value.length>50);
+assert.equal(indulgences.current_normative_extension.general_concessions_indexed,4);
+assert.equal(indulgences.current_normative_extension.particular_concessions_indexed,33);
+assert.equal(indulgences.current_normative_extension.exact_work_routes_en_fr,31);
+assert.equal(indulgences.current_normative_extension.exact_work_routes_with_existing_owner,14);
+assert.equal(indulgences.current_normative_extension.publication_approval,false);
+
 assert.equal(indulgenceV2.publication_contract.individual_published_customs_unchanged,36);
 assert.equal(indulgenceV2.publication_contract.no_automatic_custom_wide_indulgence,true);
 assert.equal(indulgenceV2.publication_contract.exact_prayer_text_or_place_must_be_reconciled,true);
