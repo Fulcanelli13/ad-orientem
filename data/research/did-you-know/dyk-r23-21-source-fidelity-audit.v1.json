@@ -25,9 +25,9 @@
     "gesture_exact_routes": "PENDING_2",
     "publication": "BLOCKED",
     "pitre_facsimile_page_validation": "PENDING_7",
-    "source_pointer_reconciliation": "PENDING_PACHINO_PAGE_454_VS_464"
+    "source_pointer_reconciliation": "CARD_CORRECTED_464_UPSTREAM_PITRE_OBSERVATION_454_PENDING_ERRATUM"
   },
-  "verification_note": "Weiser pages manually reviewed in the cited 384-page PDF; page number mapping used printed page +17 as zero-based PDF index. 1962 text crosschecks used ICRSP bilingual Ordo, the Ritus source registry, and 1960 rubric codification for Credo. For R22 21 Pitrè items, original earlier verification ownership is preserved but new page-image verification is not claimed. Subsequent R23 original Pitrè 1900 OCR text-layer review checked all 7 Pitrè claims. Corrected a place attribution from Villafranca to Campobello and discovered a Pachino page-locator mismatch (printed p. 454 vs p. 464). These are NOT new scan-image certifications.",
+  "verification_note": "Weiser pages manually reviewed in the cited 384-page PDF; page number mapping used printed page +17 as zero-based PDF index. 1962 text crosschecks used ICRSP bilingual Ordo, the Ritus source registry, and 1960 rubric codification for Credo. For R22 21 Pitrè items, original earlier verification ownership is preserved but new page-image verification is not claimed. Subsequent R23 original Pitrè 1900 OCR text-layer review checked all 7 Pitrè claims. Corrected a place attribution from Villafranca to Campobello and discovered a Pachino page-locator mismatch (printed p. 454 vs p. 464). These are NOT new scan-image certifications. Card's printed-page link repaired to p. 464; original upstream Pitrè observation metadata is not silently rewritten.",
   "records": [
     {
       "id": "DYK-UM01-024",
@@ -36,7 +36,7 @@
       "witness": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
       "location": {
         "printed_pages": [
-          454
+          464
         ],
         "source_id": "PIT1900-IT-049",
         "prior_source_page_report": true,
@@ -49,7 +49,7 @@
       "claim_correction": "Pitrè p. 464 (not p. 454 in the card) says each Pachino family fed and gifted 4, 6, up to 30 vicchiareddi; generic poverty identity should not be imposed.",
       "source_correspondence_checked": true,
       "claim_is_eligible_for_release": false,
-      "additional_limitations": "Original 1900 OCR text-layer matched; original facsimile not independently re-inspected in R23. Local custom in 1900, not universal or modern practice. Source pointer mismatch: record says printed page 454, verified text appears on printed p. 464; source ledger requires correction."
+      "additional_limitations": "Original 1900 text layer confirms printed p. 464. R22 card locator corrected; inherited observation-source record still carries p. 454 and requires upstream erratum. Original facsimile not newly inspected. No publication authorization."
     },
     {
       "id": "DYK-UM03-030",
@@ -110,7 +110,7 @@
           5075,
           5079
         ],
-        "printed_page_from_text_layer": 80
+        "printed_page_from_text_layer": 86
       },
       "claim_correction": null,
       "source_correspondence_checked": true,
