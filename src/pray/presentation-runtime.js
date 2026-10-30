@@ -2956,7 +2956,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  // changing its route signature. Prevent the previous family's/focused button's
  // scroll offset from clipping the hero title after this rerender.
  lastRenderSignature=sig;
- if(moved||(PRAYER_PILOT_ENABLED&&view==='angelus'&&ANGELUS_PILOT_ENTRY))
+ if(moved||(PRAYER_PILOT_ENABLED&&view==='angelus'))
   queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
