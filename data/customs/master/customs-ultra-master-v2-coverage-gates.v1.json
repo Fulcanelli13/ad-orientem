@@ -93,7 +93,7 @@
     "evidence_only_to_approved_practice_relationships": {
       "done": 0,
       "total": 3295,
-      "status": "NO_NEW_HUMAN_APPROVED_IDENTITY_LINKS",
+      "status": "42 SOURCE-DESCRIPTION EDGES REVIEWED, ZERO HUMAN-APPROVED OWNER MERGES",
       "note": "17 source-type waves and 79 dedup case units are not 3295 certified semantic practice/variant dispositions."
     },
     "dedup_action_review_caseboard": {
@@ -103,7 +103,11 @@
       "total_review_units": 79,
       "approved_canonical_merges": 0,
       "source_independence_newly_verified": 0,
-      "pairs_with_reinspected_hosted_source": 3
+      "pairs_with_reinspected_hosted_source": 3,
+      "new_owner_action_comparison_edges": 42,
+      "newly_adjudicated_owner_ids": 0,
+      "description_level_core_matches_without_canonical_merge": 6,
+      "explicit_no_merge_vetoes_added": 11
     },
     "catholicculture_132_hosted_passage_review": {
       "total": 132,
@@ -115,7 +119,14 @@
       "new_customs_certified": 0,
       "reference_file": "customs-ultra-master-v2-132-hosted-passage-identity-review-20261030.v1.json",
       "attribution_conflict_rows": 9,
-      "still_requires_original_book_facsimile_or_authorship_review": true
+      "still_requires_original_book_facsimile_or_authorship_review": true,
+      "action_to_owner_comparison_edges": 42,
+      "action_to_owner_source_records_reviewed": 42,
+      "existing_owner_identities_examined": 14,
+      "negative_or_separate_actor_edges": 11,
+      "positive_exact_description_core_matches": 6,
+      "owner_relationship_editorially_reviewed_not_approved": true,
+      "action_owner_review_path": "customs-ultra-master-v2-42-action-identity-edges-20261030.v1.json"
     },
     "exact_work_indulgence_non_equivalence_checks": {
       "done": 4,
