@@ -1,0 +1,589 @@
+{
+  "schema": "AO_DYK_PITRE_STORY_COMPOSITION_PROPOSALS_V1",
+  "date": "2026-10-30",
+  "status": "NONPUBLISHING_EDITORIAL_STORY_PROPOSALS",
+  "input": "60 Pitrè drafted source observations in 8 festival clusters; 12 newly authored source-composite story treatments (nonadditive)",
+  "counts": {
+    "historical_observations_from_pitre": 60,
+    "festival_families": 8,
+    "story_proposals": 12,
+    "approved": 0,
+    "published": 0,
+    "net_addition_to_active_fact_pool": 0
+  },
+  "constraints": {
+    "one_author_not_multiple_corroborations": true,
+    "original_source_observations_preserved": true,
+    "local_and_historical_scope_required": true,
+    "do_not_derive_current_practice": true,
+    "do_not_derive_1962_rite": true,
+    "no_feast_calendar_insertions": true,
+    "no_current_deep_link_guesses": true,
+    "fr_factual_review_pending": true
+  },
+  "candidates": [
+    {
+      "proposal_id": "DYK-STORY-PITRE-01",
+      "family": "ST_JOSEPH_SICILIAN_TOWNS",
+      "statement": {
+        "en": "Historical St Joseph tables in Ribera, Canicattini and Santa Croce Camerina welcomed poor guests who represented the Holy Family.",
+        "fr": "Des tables de saint Joseph à Ribera, Canicattini et Santa Croce Camerina accueillaient autrefois des personnes pauvres figurant la Sainte Famille."
+      },
+      "source_fact_ids": [
+        "DYK-UM01-021",
+        "DYK-UM01-022",
+        "DYK-UM01-023"
+      ],
+      "original_observation_ids": [
+        "PIT1900-IT-008",
+        "PIT1900-IT-026",
+        "PIT1900-IT-036"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM01-021",
+          "observation_ids": [
+            "PIT1900-IT-008"
+          ],
+          "source_file": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json"
+        },
+        {
+          "fact_id": "DYK-UM01-022",
+          "observation_ids": [
+            "PIT1900-IT-026"
+          ],
+          "source_file": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json"
+        },
+        {
+          "fact_id": "DYK-UM01-023",
+          "observation_ids": [
+            "PIT1900-IT-036"
+          ],
+          "source_file": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json"
+        }
+      ],
+      "editorial_source_limit": "The three towns are distinct locality variants reported by Pitrè, not independent author attestations",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-02",
+      "family": "ST_JOSEPH_SICILIAN_TOWNS",
+      "statement": {
+        "en": "In an older Saint Joseph festival at Ribera, large decorated loaves hung on walls, laurel was brought into town on horseback, and a dramatic scene showed the Holy Family refused lodging.",
+        "fr": "Lors d'une ancienne fête de saint Joseph à Ribera, de grands pains décoraient les murs, du laurier entrait en ville à cheval et une scène représentait la Sainte Famille à qui l'on refusait un abri."
+      },
+      "source_fact_ids": [
+        "DYK-UM01-025",
+        "DYK-UM01-026",
+        "DYK-UM01-028"
+      ],
+      "original_observation_ids": [
+        "PIT1900-IT-011",
+        "PIT1900-IT-017",
+        "PIT1900-IT-002"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM01-025",
+          "observation_ids": [
+            "PIT1900-IT-011"
+          ],
+          "source_file": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json"
+        },
+        {
+          "fact_id": "DYK-UM01-026",
+          "observation_ids": [
+            "PIT1900-IT-017"
+          ],
+          "source_file": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json"
+        },
+        {
+          "fact_id": "DYK-UM01-028",
+          "observation_ids": [
+            "PIT1900-IT-002"
+          ],
+          "source_file": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json"
+        }
+      ],
+      "editorial_source_limit": "Three reported components of one festival, no assumption of one fixed timetable",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-03",
+      "family": "ST_JOSEPH_SICILIAN_TOWNS",
+      "statement": {
+        "en": "Pitrè recorded Saint Joseph festivities at Canicattini on both 19 March and, historically, the first Sunday of September.",
+        "fr": "Pitrè a relevé à Canicattini des fêtes de saint Joseph le 19 mars ainsi qu'autrefois le premier dimanche de septembre."
+      },
+      "source_fact_ids": [
+        "DYK-UM01-030"
+      ],
+      "original_observation_ids": [
+        "PIT1900-IT-024"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM01-030",
+          "observation_ids": [
+            "PIT1900-IT-024"
+          ],
+          "source_file": "data/customs/master/customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json"
+        }
+      ],
+      "editorial_source_limit": "Historical second local date must not be applied to current universal Roman calendar",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-04",
+      "family": "PALERMO_ST_ROSALIA",
+      "statement": {
+        "en": "Palermo's old Saint Rosalia festivities featured a monumental cart bearing a crowned figure of the saint, while a separate relic procession brought together clergy and confraternities.",
+        "fr": "Les anciennes fêtes de sainte Rosalie à Palerme comprenaient un char monumental surmonté d'une figure couronnée de la sainte, tandis qu'une procession distincte des reliques réunissait clergé et confréries."
+      },
+      "source_fact_ids": [
+        "DYK-UM02-027",
+        "DYK-UM02-029",
+        "DYK-UM03-026"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-009",
+        "PIT1900-NEW-021",
+        "PIT1900-NEW-005"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM02-027",
+          "observation_ids": [
+            "PIT1900-NEW-009"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 14
+        },
+        {
+          "fact_id": "DYK-UM02-029",
+          "observation_ids": [
+            "PIT1900-NEW-021"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 33
+        },
+        {
+          "fact_id": "DYK-UM03-026",
+          "observation_ids": [
+            "PIT1900-NEW-005"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 13
+        }
+      ],
+      "editorial_source_limit": "Cart and relic procession were distinct festive components; avoid implying they occurred together",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-05",
+      "family": "PALERMO_ST_ROSALIA",
+      "statement": {
+        "en": "During historical Saint Rosalia festivities, Palermo spectators watched elaborate fireworks from boats with coloured lanterns in the gulf.",
+        "fr": "Lors d'anciennes fêtes de sainte Rosalie, des spectateurs à Palerme regardaient les feux d'artifice depuis des barques ornées de lanternes colorées dans le golfe."
+      },
+      "source_fact_ids": [
+        "DYK-UM02-028"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-018"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM02-028",
+          "observation_ids": [
+            "PIT1900-NEW-018"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 31
+        }
+      ],
+      "editorial_source_limit": "Municipal festival setting, not a Roman-rite ceremonial requirement",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-06",
+      "family": "PALERMO_COSMAS_DAMIAN",
+      "statement": {
+        "en": "In Pitrè's account of Palermo, fishermen from the Kalsa carried the heavy litter of Saints Cosmas and Damian while children followed with small flower-topped water jugs.",
+        "fr": "Dans le récit de Pitrè sur Palerme, des pêcheurs de la Kalsa portaient le lourd brancard des saints Côme et Damien tandis que des enfants avançaient avec de petites cruches d'eau ornées de fleurs."
+      },
+      "source_fact_ids": [
+        "DYK-UM02-034",
+        "DYK-UM02-035"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-045",
+        "PIT1900-NEW-048"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM02-034",
+          "observation_ids": [
+            "PIT1900-NEW-045"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 79
+        },
+        {
+          "fact_id": "DYK-UM02-035",
+          "observation_ids": [
+            "PIT1900-NEW-048"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 80
+        }
+      ],
+      "editorial_source_limit": "Household devotional beliefs about that water are not included or endorsed",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-07",
+      "family": "PALERMO_COSMAS_DAMIAN",
+      "statement": {
+        "en": "Festival stalls in historical Palermo sold edible sweets shaped like Saints Cosmas and Damian and displayed painted scenes of their lives.",
+        "fr": "Lors d'anciennes fêtes à Palerme, des étals vendaient des friandises représentant les saints Côme et Damien et exposaient des scènes peintes de leur vie."
+      },
+      "source_fact_ids": [
+        "DYK-UM02-032",
+        "DYK-UM03-033"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-033",
+        "PIT1900-NEW-037"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM02-032",
+          "observation_ids": [
+            "PIT1900-NEW-033"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 73
+        },
+        {
+          "fact_id": "DYK-UM03-033",
+          "observation_ids": [
+            "PIT1900-NEW-037"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 74
+        }
+      ],
+      "editorial_source_limit": "Market practice is social/cultural context, not liturgical ritual",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-08",
+      "family": "PIAZZA_ARMERINA_ASSUMPTION",
+      "statement": {
+        "en": "At Piazza Armerina, an older Assumption celebration brought a decorated Marian banner through town, and a separate cavalcade represented Count Roger's entry.",
+        "fr": "À Piazza Armerina, une ancienne fête de l'Assomption faisait parcourir la ville à une bannière mariale ornée, tandis qu'une cavalcade distincte représentait l'entrée du comte Roger."
+      },
+      "source_fact_ids": [
+        "DYK-UM03-037",
+        "DYK-UM03-038",
+        "DYK-UM02-038"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-059",
+        "PIT1900-NEW-063",
+        "PIT1900-NEW-062"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM03-037",
+          "observation_ids": [
+            "PIT1900-NEW-059"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 558
+        },
+        {
+          "fact_id": "DYK-UM03-038",
+          "observation_ids": [
+            "PIT1900-NEW-063"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 559
+        },
+        {
+          "fact_id": "DYK-UM02-038",
+          "observation_ids": [
+            "PIT1900-NEW-062"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 559
+        }
+      ],
+      "editorial_source_limit": "The Count Roger narrative is local historical commemoration, not certified provenance of the banner",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-09",
+      "family": "GANGI_HOLY_SPIRIT",
+      "statement": {
+        "en": "Pitrè described a Holy Spirit feast at Gangi preceded by celebrations on seven Thursdays, with nine confraternities taking part in the procession.",
+        "fr": "Pitrè décrivait à Gangi une fête du Saint-Esprit précédée de célébrations pendant sept jeudis, avec neuf confréries participant à la procession."
+      },
+      "source_fact_ids": [
+        "DYK-UM02-040",
+        "DYK-UM03-040"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-073",
+        "PIT1900-NEW-070"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM02-040",
+          "observation_ids": [
+            "PIT1900-NEW-073"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 122
+        },
+        {
+          "fact_id": "DYK-UM03-040",
+          "observation_ids": [
+            "PIT1900-NEW-070"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 120
+        }
+      ],
+      "editorial_source_limit": "Original 1900 descriptive festival, not a prescribed Pentecost vigil or octave",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-10",
+      "family": "GRATTERI_ST_JAMES",
+      "statement": {
+        "en": "At Gratteri, the statue of Saint James visited homes and nearby orchards, and people tied grape clusters to its silver staff.",
+        "fr": "À Gratteri, la statue de saint Jacques visitait les maisons et les vergers voisins, et des habitants attachaient des grappes de raisin à son bâton d'argent."
+      },
+      "source_fact_ids": [
+        "DYK-UM02-042",
+        "DYK-UM02-043",
+        "DYK-UM02-044"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-075",
+        "PIT1900-NEW-078",
+        "PIT1900-NEW-080"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM02-042",
+          "observation_ids": [
+            "PIT1900-NEW-075"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 124
+        },
+        {
+          "fact_id": "DYK-UM02-043",
+          "observation_ids": [
+            "PIT1900-NEW-078"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 124
+        },
+        {
+          "fact_id": "DYK-UM02-044",
+          "observation_ids": [
+            "PIT1900-NEW-080"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 125
+        }
+      ],
+      "editorial_source_limit": "Avoid endorsing related source folk claims about trampled vegetation",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-11",
+      "family": "GERACI_BLESSED_SACRAMENT",
+      "statement": {
+        "en": "During an older Eucharistic festival at Geraci Siculo, shepherds rode in a cavalcade and carried ribboned displays of small cheeses shaped like animals.",
+        "fr": "Lors d'une ancienne fête eucharistique à Geraci Siculo, les bergers défilaient à cheval avec des présentoirs ornés de rubans et de petits fromages en forme d'animaux."
+      },
+      "source_fact_ids": [
+        "DYK-UM02-046",
+        "DYK-UM02-048"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-085",
+        "PIT1900-NEW-095"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM02-046",
+          "observation_ids": [
+            "PIT1900-NEW-085"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 126
+        },
+        {
+          "fact_id": "DYK-UM02-048",
+          "observation_ids": [
+            "PIT1900-NEW-095"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 128
+        }
+      ],
+      "editorial_source_limit": "Do not imply this is a formal procession of the Blessed Sacrament with the Eucharist",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-12",
+      "family": "MARINEO_ST_CYRUS",
+      "statement": {
+        "en": "An old Saint Cyrus festival in Marineo included a travelling street drama performed by local people, with soldiers, hermits, angels and allegorical virtues and vices.",
+        "fr": "Une ancienne fête de saint Cyr à Marineo comportait une représentation itinérante jouée par les habitants, avec soldats, ermites, anges, vertus et vices personnifiés."
+      },
+      "source_fact_ids": [
+        "DYK-UM03-049",
+        "DYK-UM03-050"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-116",
+        "PIT1900-NEW-119"
+      ],
+      "source_provenance": [
+        {
+          "fact_id": "DYK-UM03-049",
+          "observation_ids": [
+            "PIT1900-NEW-116"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 136
+        },
+        {
+          "fact_id": "DYK-UM03-050",
+          "observation_ids": [
+            "PIT1900-NEW-119"
+          ],
+          "source_file": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+          "locator": 137
+        }
+      ],
+      "editorial_source_limit": "Historical performance, not prescribed Roman ritual or current event listing",
+      "source_author": "Giuseppe Pitrè",
+      "source_edition": "Feste patronali in Sicilia (1900)",
+      "historical_only": true,
+      "independent_historical_witnesses_certified": 0,
+      "exact_roman_1962_rite_prescribed": false,
+      "italian_original_sentence_level_read_required": true,
+      "fr_native_review_required": true,
+      "source_specific_destination_status": "UNRESOLVED",
+      "editorial_review_state": "RESEARCH_STORY_PROPOSAL_NOT_APPROVED",
+      "publish": false
+    }
+  ]
+}
