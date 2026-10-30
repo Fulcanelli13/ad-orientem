@@ -174,7 +174,12 @@ const STYLES=`
 #aoPray435930 .aoF07ReaderLanguage{position:relative;flex:0 0 auto;z-index:3}
 #aoPray435930 .aoF07ReaderLanguage>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;border:1px solid var(--border,rgba(210,190,150,.28));border-radius:50%;font:500 12px var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
 #aoPray435930 .aoF07ReaderLanguage>summary::-webkit-details-marker{display:none}
-#aoPray435930 .aoF07ReaderLanguage>button{display:block;position:absolute;right:0;top:43px;min-height:44px;min-width:132px;z-index:4;border-radius:10px;border:1px solid var(--border,rgba(210,190,150,.28));background:var(--surface-2,#292520);color:var(--text,#eee);padding:8px 12px;font:500 13px var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoF07ReaderLanguage>.aoF07LanguageOptions{position:absolute;right:0;top:43px;width:148px;z-index:4;display:flex;flex-direction:column;gap:2px;border-radius:10px;border:1px solid var(--border,rgba(210,190,150,.28));background:var(--surface-2,#292520);padding:4px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+#aoPray435930 .aoF07LanguageOptions>button{display:block;width:100%;min-height:44px;border:0;border-radius:7px;background:transparent;color:var(--text,#eee);padding:8px 12px;text-align:left;font:500 13px var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoF07LanguageOptions>button[aria-pressed="true"]{background:rgba(205,185,145,.18);color:var(--text,#fff)}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head{grid-template-columns:44px minmax(0,1fr) 44px!important}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head>.aoP435930SessionLanguage{display:none}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head>.aoP435930Home{grid-column:3;grid-row:1}
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsPrayerTop button[data-p435930-five-latin]{display:none}
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsPrayer{margin:5px 0 0}
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsActions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding:8px 3px;background:transparent;border:0}
