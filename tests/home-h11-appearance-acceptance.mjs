@@ -176,6 +176,14 @@ try{
     await h4.goto("http://127.0.0.1:4381/index.html?aoTodayH4=1",{waitUntil:"domcontentloaded",timeout:90000});
     await h4.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:30000});
     await h4.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed),null,{timeout:30000});
+    // A painted Home behind the cinematic boot is not a screenshot of Home.
+    // Require the real startup overlay to finish before any H4 captures.
+    await h4.waitForFunction(()=>{
+      const boot=document.getElementById("ao-cinema-boot");
+      if(!boot||!boot.isConnected)return true;
+      const style=getComputedStyle(boot);
+      return style.display==="none"||style.visibility==="hidden"||Number(style.opacity)<.02;
+    },null,{timeout:60000});
     const auditH4=async label=>{
       const r=await h4.evaluate(()=>{
         const home=document.querySelector(".homeScreen.aoTodayH4");
