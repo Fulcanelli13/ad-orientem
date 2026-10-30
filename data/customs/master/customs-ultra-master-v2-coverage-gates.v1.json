@@ -4,7 +4,8 @@
   "source_files": [
     "data/customs/master/customs-ultra-master-v2-identity-register-465.v1.json",
     "data/customs/master/customs-ultra-master-v2-3703-reference-crosswalk.v1.json",
-    "data/customs/master/customs-ultra-master-v2-indulgence-work-audit.v1.json"
+    "data/customs/master/customs-ultra-master-v2-indulgence-work-audit.v1.json",
+    "data/customs/master/customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json"
   ],
   "progress": {
     "source_evidence_pointer_integrity": {
@@ -31,9 +32,10 @@
       "unpublished_working_master": 18
     },
     "historical_indulgence_original_grants_verified": {
-      "done": 0,
+      "done": 1,
       "reported_clusters": 4,
-      "original_label_leads": 5
+      "original_label_leads": 5,
+      "definition": "One signed 1998 primary-instrument facsimile and translation reproduced by regional government (Caravaca); other three original instruments still absent. No Customs publication approval."
     },
     "modern_norm_work_seed_screen": {
       "known_work_categories": 7,
@@ -51,6 +53,17 @@
       "total": 3295,
       "remaining": 3095,
       "method": "Original record source_kind/claim_type native fields, not inferred identity; no primary page-image certifications this pass."
+    },
+    "evidence_only_source_scope_first_pass": {
+      "done": 600,
+      "total": 3295,
+      "unprocessed": 2695,
+      "wave_files": [
+        "customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json"
+      ],
+      "not_final_identity_mapping": true
     }
   },
   "direct_source_index_completeness": {
