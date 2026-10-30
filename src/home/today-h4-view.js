@@ -48,7 +48,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const prefaceText=verifiedOrdo&&ordoFacts.preface?.status==="MATCH"&&ordoFacts.preface.heading
     ?ordoFacts.preface.heading:"—";
   const introitExcerpt=verifiedOrdo?ordoFacts.introitIncipit:null;
-  const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"><span class="w">'+esc(d.day)+'</span><b class="n">'+esc(d.number)+'</b><i class="aoWeekColour" data-home-week-colour="'+esc(d.date)+'" aria-hidden="true"></i></button>').join("");
+  const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today td':'')+(new Date(d.date+'T12:00:00').getDay()===0?' su':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"'+(d.selected?' aria-current="date"':'')+'><span class="w">'+esc(d.day)+'</span><b class="n">'+esc(d.number)+'</b><i class="aoWeekColour" data-home-week-colour="'+esc(d.date)+'" aria-hidden="true"></i></button>').join("");
   // Keep actual formulary identity ahead of the Calendar's attested weekday context.
   // The latter is never mislabelled as an appointed Sunday Mass.
   const subtitle=vm.massFormularyName||vm.contextualObservanceName;
