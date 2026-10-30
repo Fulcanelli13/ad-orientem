@@ -106,6 +106,20 @@ const CSS = `
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryNamedTimeline .aoDevoStop{padding:5px 8px!important}
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard .aoRosaryPrayerScroll{font-size:19px}
 }
+/* iPhone SE height: the optional artwork should not push the first prayer
+   entirely beneath the native dock; long canonical prayers still scroll. */
+@media(max-width:359px) and (max-height:650px){
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .pbShell>.lab-rosary-hero{display:none!important}
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard{
+  padding:8px 10px!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard .aoRosaryPrayerScroll,
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard.aoRosaryPrayerScroll{
+  height:auto!important;min-height:125px!important;
+  max-height:min(32dvh,188px)!important;
+  padding:6px 4px 48px 3px!important
+ }
+}
 `;
 export function installRosaryR2Styles(doc=globalThis.document){
  if(!doc?.createElement||doc.getElementById("ao-rosary-r2-pilot-style"))return false;
