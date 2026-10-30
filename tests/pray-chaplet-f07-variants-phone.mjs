@@ -76,10 +76,14 @@ try{
      return {top:rect.top,prayerHeight:rect.height,availableBottom,visiblePixels:Math.max(0,Math.min(rect.bottom,availableBottom)-Math.max(0,rect.top)),
       pageOverflow:document.documentElement.scrollWidth-innerWidth,mountOverflow:(root?.scrollWidth||0)-(root?.clientWidth||0)};
     });
+    // Capture *before* the visibility assertion so failing 320px layouts
+    // still yield a real browser screenshot, not only an error message.
+    await page.screenshot({path:resolve(captures,c.kind+"-"+width+"-opening.png"),animations:"disabled"});
+    console.log("F07-GEOMETRY "+width+" "+c.kind+" "+JSON.stringify(geometry));
     assert.ok(geometry.visiblePixels>=Math.min(40,Math.max(1,geometry.prayerHeight-0.5)),"F07 "+c.kind+" first source prayer below mobile dock at "+width+": "+JSON.stringify(geometry));
     assert.ok(geometry.pageOverflow<=1&&geometry.mountOverflow<=1,
      "F07 "+c.kind+" horizontal overflow at "+width+": "+JSON.stringify(geometry));
-    await page.screenshot({path:resolve(captures,c.kind+"-"+width+"-opening.png"),animations:"disabled"});
+
     await page.locator(prefix+c.next).click();
     if(c.kind==="precious-blood"){
      assert.equal(await band.getAttribute("data-f07-phase"),"1");
