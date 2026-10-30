@@ -1,0 +1,310 @@
+{
+  "schema": "AO_SPX_P4_NEW_CHAPTER_BATCH_V1",
+  "status": "UNAPPROVED_SOURCE_LOCATOR_BOUND_BILINGUAL",
+  "chapters": [
+    {
+      "id": "SPX-NEW-017",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "grave",
+      "related": [
+        "SPX-015",
+        "SPX-PILOT-09",
+        "SPX-EXP-046"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "Haerent animo (4 August 1908), §§25–28: conscience and the sacrament of Penance",
+        "tier": "ORIGINAL_ITALIAN_EDITORIAL_TRANSLATION_NOT_APPROVED",
+        "genre": "PAPAL_DOCUMENT_APOSTOLIC_EXHORTATION"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-017.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why should a priest who hears confessions also confess his own sins?",
+            "fr": "Pourquoi le prêtre qui entend les confessions doit-il confesser ses propres péchés ?"
+          },
+          "a": {
+            "en": "In Haerent animo, We warned that the priest who urges others to turn away from sin must not neglect his own soul. He may preach repentance, administer the sacrament and console penitents, yet be tempted to regard his own faults less seriously. We therefore joined the daily examination of conscience to frequent recourse to Penance and to practical efforts at amendment. Sacred Orders do not make a man incapable of sin or dispensable from the ordinary helps of Christian life. Nor did We invite lay observers to speculate about the confessions of a particular priest. The exhortation was addressed to the clergy themselves, in a spirit of paternal solicitude and grave responsibility.",
+            "fr": "Dans Haerent animo, Nous avertissions que le prêtre qui exhorte les autres à quitter le péché ne doit pas négliger sa propre âme. Il peut prêcher le repentir, administrer le sacrement et consoler les pénitents, tout en étant tenté de prendre ses propres fautes moins au sérieux. Nous unissions donc l'examen quotidien de conscience au recours fréquent à la pénitence et aux efforts pratiques d'amendement. Les saints Ordres ne rendent pas un homme incapable de pécher et ne le dispensent pas des secours ordinaires de la vie chrétienne. Nous n'invitions pas non plus les laïcs à supposer ce qui se passe dans la confession d'un prêtre particulier. L'exhortation s'adressait au clergé dans un esprit de sollicitude paternelle et de grave responsabilité."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-017.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does ordination make a priest incapable of sinning?",
+            "fr": "L'ordination rend-elle le prêtre incapable de pécher ?"
+          },
+          "a": {
+            "en": "No. We exhorted ordained ministers precisely because they remain obliged to watch over their conduct and ask God's mercy. Sacramental office is distinct from personal impeccability and does not replace repentance.",
+            "fr": "Non. Nous exhortions les ministres ordonnés précisément parce qu'ils doivent encore veiller sur leur conduite et demander la miséricorde divine. L'office sacramentel se distingue de l'impeccabilité personnelle et ne remplace pas le repentir."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-017.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can a preacher neglect the medicine he recommends to others?",
+            "fr": "Un prédicateur peut-il négliger le remède qu'il recommande aux autres ?"
+          },
+          "a": {
+            "en": "We lamented that a priest might teach others the value of Confession while delaying it himself. The contradiction shows why interior discipline and the sacrament of Penance must sustain his pastoral words.",
+            "fr": "Nous déplorions qu'un prêtre puisse enseigner aux autres la valeur de la confession tout en la retardant pour lui-même. Cette contradiction montre pourquoi la discipline intérieure et le sacrement de pénitence doivent soutenir ses paroles pastorales."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-017.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does this permit us to accuse a particular priest of hypocrisy?",
+            "fr": "Cela permet-il d'accuser un prêtre particulier d'hypocrisie ?"
+          },
+          "a": {
+            "en": "No. We addressed a general spiritual danger; neither Our warning nor the visitor's impression reveals the private confessional life of an individual. Concrete concerns require facts and appropriate ecclesiastical channels.",
+            "fr": "Non. Nous dénoncions un danger spirituel général ; ni Notre avertissement ni l'impression du visiteur ne révèlent la vie confessionnelle privée d'un individu. Les préoccupations concrètes demandent des faits et les voies ecclésiastiques appropriées."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why should a priest who hears confessions also confess his own sins?",
+        "fr": "Pourquoi le prêtre qui entend les confessions doit-il confesser ses propres péchés ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-018",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "thoughtful",
+      "related": [
+        "SPX-NEW-017",
+        "SPX-034",
+        "SPX-PILOT-09"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "Haerent animo (4 August 1908), §34, section XV: annual exercises and monthly recollection",
+        "tier": "ORIGINAL_ITALIAN_EDITORIAL_TRANSLATION_NOT_APPROVED",
+        "genre": "PAPAL_DOCUMENT_APOSTOLIC_EXHORTATION"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-018.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you recommend an annual retreat to priests?",
+            "fr": "Pourquoi recommandiez-vous une retraite annuelle aux prêtres ?"
+          },
+          "a": {
+            "en": "In Haerent animo, We proposed periods of spiritual exercises as a practical help to priests who must continually return to the purpose of their vocation. An annual retreat, when possible, offered time apart from the demands of ministry for prayer, self-examination and renewal. We also commended a shorter monthly recollection, privately or in company, and noted the value of the bishop's encouragement. The point was not to make a retreat a magical remedy or to abandon one's flock, but to prevent routine and distraction from silently weakening the interior life. These were counsels addressed specifically to priests within their pastoral discipline, not a universal retreat schedule imposed on all the faithful.",
+            "fr": "Dans Haerent animo, Nous proposions les exercices spirituels comme secours pratique aux prêtres qui doivent revenir sans cesse à la fin de leur vocation. Une retraite annuelle, lorsque cela est possible, permettait de se retirer des exigences du ministère pour la prière, l'examen de soi et le renouvellement. Nous recommandions aussi un recueillement mensuel plus bref, seul ou en commun, et soulignions la valeur de l'encouragement épiscopal. Il ne s'agissait ni de faire de la retraite un remède magique ni d'abandonner le troupeau, mais d'empêcher que la routine et la distraction n'affaiblissent insensiblement la vie intérieure. Ces conseils s'adressaient spécialement aux prêtres dans leur discipline pastorale, non comme un calendrier de retraites universel pour tous les fidèles."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-018.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why step away from daily ministry when people need help?",
+            "fr": "Pourquoi quitter momentanément le ministère alors que les gens ont besoin d'aide ?"
+          },
+          "a": {
+            "en": "The temporary withdrawal serves the ministry when it renews the priest's prayer and vigilance. We commended recollection because ceaseless activity can obscure the purpose of sacred duties, not because the faithful should be abandoned.",
+            "fr": "Ce retrait momentané sert le ministère lorsqu'il renouvelle la prière et la vigilance du prêtre. Nous recommandions le recueillement parce qu'une activité incessante peut obscurcir la fin des devoirs sacrés, non parce qu'il faudrait abandonner les fidèles."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-018.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why suggest a shorter monthly recollection as well?",
+            "fr": "Pourquoi proposer aussi un recueillement mensuel plus court ?"
+          },
+          "a": {
+            "en": "An annual retreat is not the whole of spiritual life. We observed that a brief, recurring pause, undertaken alone or with other priests, could help maintain the resolutions and awareness renewed during longer exercises.",
+            "fr": "Une retraite annuelle ne constitue pas toute la vie spirituelle. Nous observions qu'une pause brève et répétée, seul ou avec d'autres prêtres, pouvait soutenir les résolutions et l'attention renouvelées durant les exercices plus longs."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-018.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Must every Catholic follow a priest's retreat schedule?",
+            "fr": "Chaque catholique doit-il suivre le calendrier de retraite du prêtre ?"
+          },
+          "a": {
+            "en": "No. The immediate audience was the clergy, and the practical arrangements belonged to their duties and episcopal direction. Lay Christians may find the principle fruitful without acquiring an obligation that the text never placed on them.",
+            "fr": "Non. L'auditoire immédiat était le clergé, et les dispositions pratiques relevaient de ses devoirs et de la direction épiscopale. Les laïcs peuvent trouver le principe fructueux sans recevoir une obligation que le texte ne leur a jamais imposée."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why did you recommend an annual retreat to priests?",
+        "fr": "Pourquoi recommandiez-vous une retraite annuelle aux prêtres ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-019",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "welcoming",
+      "related": [
+        "SPX-NEW-018",
+        "SPX-NEW-017",
+        "SPX-EXP-046"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "Haerent animo (4 August 1908), §§35–36, section XV: priestly unions",
+        "tier": "ORIGINAL_ITALIAN_EDITORIAL_TRANSLATION_NOT_APPROVED",
+        "genre": "PAPAL_DOCUMENT_APOSTOLIC_EXHORTATION"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-019.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why should priests support one another instead of working alone?",
+            "fr": "Pourquoi les prêtres devraient-ils se soutenir plutôt que travailler isolément ?"
+          },
+          "a": {
+            "en": "In Haerent animo, We recommended a closer fraternal bond among priests, strengthened and directed by their bishops. Mutual help in adversity is valuable, as is defending the dignity of their common ministry. Yet We placed even greater emphasis upon associations that cultivate sacred learning, sustain fidelity to vocation and improve the care of souls through shared counsel and effort. The purpose was not a closed circle formed for social standing, nor a substitute for a priest's responsibilities toward his own parish. Priestly friendship was to encourage perseverance in faith and service. These counsels also show why the interior life cannot be reduced to a purely solitary undertaking detached from legitimate spiritual and pastoral companionship.",
+            "fr": "Dans Haerent animo, Nous recommandions des liens fraternels plus étroits entre les prêtres, fortifiés et dirigés par leurs évêques. L'entraide dans l'adversité est précieuse, comme la défense de la dignité de leur ministère commun. Pourtant, Nous accordions une valeur encore plus grande aux associations qui cultivent la science sacrée, soutiennent la fidélité à la vocation et améliorent le soin des âmes par les conseils et les efforts partagés. Le but n'était ni un cercle fermé recherchant le prestige social ni un substitut aux responsabilités du prêtre dans sa propre paroisse. L'amitié sacerdotale devait encourager la persévérance dans la foi et le service. Ces conseils montrent également pourquoi la vie intérieure ne se réduit pas à une entreprise solitaire sans véritable compagnonnage spirituel et pastoral."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-019.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Is mutual practical assistance the only purpose of priestly friendship?",
+            "fr": "L'entraide pratique est-elle l'unique fin de l'amitié sacerdotale ?"
+          },
+          "a": {
+            "en": "No. We commended help in adversity, but gave particular weight to common study, fidelity to vocation and the improvement of pastoral work. Fraternal support should benefit souls as well as the priests themselves.",
+            "fr": "Non. Nous recommandions l'aide dans l'adversité, mais donnions un poids particulier à l'étude commune, à la fidélité vocationnelle et au progrès du travail pastoral. L'appui fraternel doit profiter aux âmes autant qu'aux prêtres."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-019.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Did you personally organise a priestly association before becoming Pope?",
+            "fr": "Aviez-vous personnellement organisé une association de prêtres avant de devenir pape ?"
+          },
+          "a": {
+            "en": "Yes. In Haerent animo, We recalled that during Our episcopal ministry We had encouraged such an association and experienced its benefits. This is a rare personal detail confirmed in Our published writing, though the passage alone does not identify every member or meeting.",
+            "fr": "Oui. Dans Haerent animo, Nous rappelions avoir encouragé une telle association durant Notre ministère épiscopal et en avoir éprouvé les avantages. C'est un détail personnel attesté par Notre écrit publié, mais le passage ne nomme pas à lui seul tous ses membres ni ses réunions."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-019.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can this teach laypeople something about friendship?",
+            "fr": "Cela peut-il apprendre quelque chose aux laïcs sur l'amitié ?"
+          },
+          "a": {
+            "en": "Mutual help and shared pursuit of virtue have wider human value. But the particular exhortation concerned priests and their episcopal responsibilities; it should not be presented as a newly binding law governing every lay friendship.",
+            "fr": "L'entraide et la recherche commune de la vertu possèdent une valeur humaine plus large. Mais cette exhortation particulière concernait les prêtres et leurs responsabilités épiscopales ; elle ne doit pas devenir une loi nouvelle régissant toute amitié laïque."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why should priests support one another instead of working alone?",
+        "fr": "Pourquoi les prêtres devraient-ils se soutenir plutôt que travailler isolément ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-020",
+      "category": "FOUNDATIONS_AND_BIOGRAPHY",
+      "pose": "thoughtful",
+      "related": [
+        "SPX-PILOT-01",
+        "SPX-EXP-001",
+        "SPX-NEW-017"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "Haerent animo (4 August 1908), introduction §§1–2: fiftieth anniversary of priestly ordination",
+        "tier": "ORIGINAL_ITALIAN_EDITORIAL_TRANSLATION_NOT_APPROVED",
+        "genre": "PAPAL_DOCUMENT_APOSTOLIC_EXHORTATION"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-020.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "What did your fiftieth anniversary as a priest mean to you?",
+            "fr": "Que signifiait pour vous le cinquantième anniversaire de votre sacerdoce ?"
+          },
+          "a": {
+            "en": "In 1908, fifty years after Our priestly ordination, We addressed the Catholic clergy in Haerent animo. The anniversary prompted remembrance of the responsibilities placed upon priests, rather than a celebration of Our personal distinction. We recalled Our own human shortcomings with humility and invited the clergy to renew their dedication to holiness; their fidelity would be the most welcome offering in that jubilee year. We also spoke with paternal solicitude for those who had grown less fervent. These sentiments are expressed in the published exhortation and therefore have an identifiable documentary foundation. They must not be embellished into invented recollections of the ordination ceremony, or into private conversations with friends whose actual words were never preserved.",
+            "fr": "En 1908, cinquante ans après Notre ordination sacerdotale, Nous Nous adressions au clergé catholique dans Haerent animo. Cet anniversaire invitait à rappeler les responsabilités confiées aux prêtres plutôt qu'à célébrer une distinction personnelle. Nous évoquions humblement Nos propres manquements humains et invitions le clergé à renouveler son attachement à la sainteté ; sa fidélité serait l'offrande la plus agréable en cette année jubilaire. Nous parlions aussi avec une sollicitude paternelle pour ceux dont la ferveur s'était affaiblie. Ces sentiments sont exprimés dans l'exhortation publiée et possèdent donc un fondement documentaire identifiable. Il ne faut pas les embellir par des souvenirs inventés de la cérémonie d'ordination ou des conversations privées dont les paroles réelles n'ont jamais été conservées."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-020.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Did you describe yourself as beyond ordinary human failings?",
+            "fr": "Vous présentiez-vous comme exempt des faiblesses humaines ordinaires ?"
+          },
+          "a": {
+            "en": "No. In the introduction We recalled the need to repent of Our own human shortcomings. That passage prevents treating the anniversary as a claim of personal impeccability, although it does not provide a diary or list of specific faults.",
+            "fr": "Non. Dans l'introduction, Nous rappelions la nécessité de regretter Nos propres manquements humains. Ce passage interdit de faire de l'anniversaire une prétention à l'impeccabilité personnelle, mais ne fournit ni journal intime ni liste de fautes particulières."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-020.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "What gift did you most wish to receive for the anniversary?",
+            "fr": "Quel présent désiriez-vous surtout recevoir pour cet anniversaire ?"
+          },
+          "a": {
+            "en": "We told the clergy that renewed fidelity and progress toward the holiness required of their office would be the most welcome gift. The emphasis lay on their spiritual welfare and on the benefit flowing to the faithful.",
+            "fr": "Nous disions au clergé que la fidélité renouvelée et le progrès vers la sainteté exigée par sa charge seraient le présent le plus agréable. L'accent portait sur son bien spirituel et sur le profit qui en découlerait pour les fidèles."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-020.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can we reconstruct your private feelings on the day of ordination?",
+            "fr": "Peut-on reconstituer vos sentiments privés le jour de l'ordination ?"
+          },
+          "a": {
+            "en": "The exhortation testifies to sentiments expressed at the fiftieth anniversary, not to the exact words or every inward emotion of the young Giuseppe Sarto in 1858. Those unknown details must remain outside a source-grounded conversation.",
+            "fr": "L'exhortation atteste des sentiments exprimés au cinquantième anniversaire, non des paroles exactes ni de toutes les émotions intimes du jeune Giuseppe Sarto en 1858. Ces détails inconnus doivent rester hors d'une conversation fondée sur les sources."
+          }
+        }
+      ],
+      "title": {
+        "en": "What did your fiftieth anniversary as a priest mean to you?",
+        "fr": "Que signifiait pour vous le cinquantième anniversaire de votre sacerdoce ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    }
+  ]
+}

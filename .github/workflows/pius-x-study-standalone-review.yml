@@ -1,0 +1,78 @@
+name: St Pius X standalone study review
+on:
+  push:
+    branches:
+      - prototype/pius-x-standalone-study-20261021
+    paths:
+      - 'previews/pius-x-study/**'
+      - 'tests/pius-x-study-standalone-e2e.mjs'
+      - 'tests/pius-x-study-expanded-82-e2e.mjs'
+      - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
+      - 'tests/pius-x-study-next12-pastoral-e2e.mjs'
+      - 'tools/build-pius-x-expanded-standalone.mjs'
+      - 'tools/build-pius-x-next12-dialogues.mjs'
+      - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
+      - 'tools/build-pius-x-earlier-94-p6.mjs'
+      - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
+      - 'tests/pius-x-study-free-ask-e2e.mjs'
+      - 'tools/spx-p0-editorial-normalization.mjs'
+      - 'tools/spx-p2-followup-editorial-layer.mjs'
+      - '.github/workflows/pius-x-study-standalone-review.yml'
+  pull_request:
+    paths:
+      - 'previews/pius-x-study/**'
+      - 'tests/pius-x-study-standalone-e2e.mjs'
+      - 'tests/pius-x-study-expanded-82-e2e.mjs'
+      - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
+      - 'tests/pius-x-study-next12-pastoral-e2e.mjs'
+      - 'tools/build-pius-x-expanded-standalone.mjs'
+      - 'tools/build-pius-x-next12-dialogues.mjs'
+      - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
+      - 'tools/build-pius-x-earlier-94-p6.mjs'
+      - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
+      - 'tests/pius-x-study-free-ask-e2e.mjs'
+      - 'tools/spx-p0-editorial-normalization.mjs'
+      - 'tools/spx-p2-followup-editorial-layer.mjs'
+      - '.github/workflows/pius-x-study-standalone-review.yml'
+permissions:
+  contents: read
+jobs:
+  offline-visual-novel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --ignore-scripts --no-audit --no-fund @playwright/test@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - name: Execute the single-file story at phone and desktop sizes
+        run: node tests/pius-x-study-standalone-e2e.mjs
+      - name: Compile the full 82-chapter offline review from immutable source-owner stages
+        run: node tools/build-pius-x-expanded-standalone.mjs
+      - name: Exercise expanded bilingual dialogue, sources and third-level questions
+        run: node tests/pius-x-study-expanded-82-e2e.mjs
+      - name: Assemble twelve additional source-linked dialogues without mutating previous 327 replies
+        run: node tools/build-pius-x-next12-dialogues.mjs
+      - name: Test all 94 subjects, bilingual authorship and offline browser interaction
+        run: node tests/pius-x-study-next12-dialogues-e2e.mjs
+      - name: Assemble the next twelve pastoral dialogue chapters
+        run: node tools/build-pius-x-next12-pastoral-dialogues.mjs
+      - name: Browser-test 106 bilingual subjects and immutable original 375 answers
+        run: node tests/pius-x-study-next12-pastoral-e2e.mjs
+      - name: Build separate P6 voice-review artifact for twelve earlier subjects
+        run: node tools/build-pius-x-earlier-94-p6.mjs
+      - name: Validate P6 preserved sources and bilingual offline interaction
+        run: node tests/pius-x-study-earlier-94-p6-e2e.mjs
+      - name: Test typed questions, conservative source navigation and short-form follow-ups
+        run: node tests/pius-x-study-free-ask-e2e.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-study-desktop-mobile-review
+          path: |
+            artifacts/pius-x-study-review/
+            artifacts/pius-x-study-expanded/
+          if-no-files-found: warn
+          retention-days: 30

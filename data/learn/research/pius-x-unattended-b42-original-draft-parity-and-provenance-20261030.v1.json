@@ -1,0 +1,312 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B42_DRAFT_PARITY_AND_PROVENANCE_V1",
+  "asOf": "2026-10-30",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_CERTIFIED",
+  "baseline": "21 Oct consolidated 68 family contexts/65 improved/130 answer units/64 human-certification packets; historical and not additive",
+  "continuity": {
+    "latest": "B41 2026-10-29, B39 Chanoine 2026-10-28",
+    "readBackedOriginalDrafts": [
+      "pius-x-batch11-penance-e-20261020.v1.json",
+      "pius-x-batch12-confession-a-20261020.v1.json",
+      "pius-x-batch12-confession-b-20261020.v1.json",
+      "pius-x-batch12-confession-c-20261020.v1.json",
+      "pius-x-batch12-confession-d-20261020.v1.json",
+      "pius-x-batch12-confession-e-20261020.v1.json"
+    ],
+    "keyDiscovery": "B41 had not retrieved canonical original drafts. All six B41 proposed answer rewrites substantially repeat content already present in the original batch11/12 bilingual drafts; suppress redundant rewrites."
+  },
+  "sources": [
+    {
+      "id": "PX1905",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q704–705, Q712–730, Q740, Q753–754",
+      "witness": "ONLINE_ITALIAN_TRANSCRIPTION_NOT_PRINT_COLLATED"
+    },
+    {
+      "id": "CCC",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "§§1451–1458",
+      "witness": "LATER_MAGISTERIAL_CROSS_REFERENCE_NOT_HISTORICAL_PIUS_X_SPEECH"
+    }
+  ],
+  "b41SixCandidateDraftParity": [
+    {
+      "sourceQuestionId": "PX1905-Q712",
+      "existingDraftId": "SPX-1905-P-712",
+      "b41CandidateStatus": "SUBSTANTIVELY_ALREADY_COVERED_BY_20261020_DRAFT",
+      "disposition": "DO_NOT_REPLACE_OR_COUNT_AS_IMPROVED; only independent source/citation repair where specifically itemized"
+    },
+    {
+      "sourceQuestionId": "PX1905-Q714",
+      "existingDraftId": "SPX-1905-P-714",
+      "b41CandidateStatus": "SUBSTANTIVELY_ALREADY_COVERED_BY_20261020_DRAFT",
+      "disposition": "DO_NOT_REPLACE_OR_COUNT_AS_IMPROVED; only independent source/citation repair where specifically itemized"
+    },
+    {
+      "sourceQuestionId": "PX1905-Q717",
+      "existingDraftId": "SPX-1905-P-717",
+      "b41CandidateStatus": "SUBSTANTIVELY_ALREADY_COVERED_BY_20261020_DRAFT",
+      "disposition": "DO_NOT_REPLACE_OR_COUNT_AS_IMPROVED; only independent source/citation repair where specifically itemized"
+    },
+    {
+      "sourceQuestionId": "PX1905-Q719",
+      "existingDraftId": "SPX-1905-P-719",
+      "b41CandidateStatus": "SUBSTANTIVELY_ALREADY_COVERED_BY_20261020_DRAFT",
+      "disposition": "DO_NOT_REPLACE_OR_COUNT_AS_IMPROVED; only independent source/citation repair where specifically itemized"
+    },
+    {
+      "sourceQuestionId": "PX1905-Q720",
+      "existingDraftId": "SPX-1905-P-720",
+      "b41CandidateStatus": "SUBSTANTIVELY_ALREADY_COVERED_BY_20261020_DRAFT",
+      "disposition": "DO_NOT_REPLACE_OR_COUNT_AS_IMPROVED; only independent source/citation repair where specifically itemized"
+    },
+    {
+      "sourceQuestionId": "PX1905-Q721",
+      "existingDraftId": "SPX-1905-P-721",
+      "b41CandidateStatus": "SUBSTANTIVELY_ALREADY_COVERED_BY_20261020_DRAFT",
+      "disposition": "DO_NOT_REPLACE_OR_COUNT_AS_IMPROVED; only independent source/citation repair where specifically itemized"
+    }
+  ],
+  "p722ToP730OriginalDraftParity": [
+    {
+      "sourceQuestionId": "PX1905-Q722",
+      "existingDraftId": "SPX-1905-P-722",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q723",
+      "existingDraftId": "SPX-1905-P-723",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q724",
+      "existingDraftId": "SPX-1905-P-724",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q725",
+      "existingDraftId": "SPX-1905-P-725",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q726",
+      "existingDraftId": "SPX-1905-P-726",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q727",
+      "existingDraftId": "SPX-1905-P-727",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q728",
+      "existingDraftId": "SPX-1905-P-728",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q729",
+      "existingDraftId": "SPX-1905-P-729",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    },
+    {
+      "sourceQuestionId": "PX1905-Q730",
+      "existingDraftId": "SPX-1905-P-730",
+      "draftLocated": true,
+      "englishPresent": true,
+      "frenchPresent": true,
+      "originalItalianQuestionPresent": true,
+      "answerSource": "MUSEO_1905_ITALIAN_HTML",
+      "sourceScope": "CATECHISM_EDITORIAL_PARAPHRASE_NOT_POPE_VERBATIM",
+      "substantiveReplacementRequired": false
+    }
+  ],
+  "provenanceRepairs": [
+    {
+      "id": "SPX-1905-P-715",
+      "issue": "FOLLOWUP_REFERENCES_Q721_BUT_SUPPORTS_ONLY_Q715",
+      "proposal": {
+        "en": "Keep existing bilingual answer; add Q721 to follow-up support for the claim that tears are unnecessary.",
+        "fr": "Conserver la réponse bilingue ; ajouter Q721 à la référence de la relance concernant l'absence de nécessité des larmes."
+      },
+      "sourceLoci": [
+        "PX1905-Q715",
+        "PX1905-Q721"
+      ],
+      "class": "CITATION_PRECISION_ONLY"
+    },
+    {
+      "id": "SPX-1905-P-720",
+      "issue": "FOLLOWUP_REFERENCES_NEXT_QUESTION_WITHOUT_CITING_IT",
+      "proposal": {
+        "en": "Retain answer; cite Q721 alongside Q720 in the follow-up about tears.",
+        "fr": "Conserver la réponse ; citer Q721 avec Q720 dans la relance sur les larmes."
+      },
+      "sourceLoci": [
+        "PX1905-Q720",
+        "PX1905-Q721"
+      ],
+      "class": "CITATION_PRECISION_ONLY"
+    },
+    {
+      "id": "SPX-1905-P-722",
+      "issue": "FOLLOWUP_FORGOTTEN_SINS_NOT_LOCATED_IN_Q722",
+      "proposal": {
+        "en": "Keep distinction between universal contrition and exact memory; cross-reference Q753–754 for innocently forgotten mortal sins rather than attributing that qualification to Q722.",
+        "fr": "Maintenir la distinction entre contrition universelle et mémoire exacte ; renvoyer aux Q753–754 pour les péchés mortels oubliés sans faute, sans attribuer cette précision à Q722."
+      },
+      "sourceLoci": [
+        "PX1905-Q722",
+        "PX1905-Q753",
+        "PX1905-Q754"
+      ],
+      "class": "CROSS_REFERENCE_PRECISION"
+    },
+    {
+      "id": "SPX-1905-P-723",
+      "issue": "FOLLOWUP_ENDLESS_SEARCHING_IS_PASTORAL_INFERENCE",
+      "proposal": {
+        "en": "Preserve the source-based teaching on repentance for every mortal sin. Mark 'not endless retrospective searching' as pastoral inference, not a sentence of Q723; Q704–705 supply proportionate examination context.",
+        "fr": "Conserver l'enseignement sur le repentir de tous les péchés mortels. Qualifier « non une recherche rétrospective sans fin » d'application pastorale, non de phrase de Q723 ; Q704–705 donnent le contexte d'un examen proportionné."
+      },
+      "sourceLoci": [
+        "PX1905-Q723",
+        "PX1905-Q704",
+        "PX1905-Q705"
+      ],
+      "class": "ATTRIBUTION_BOUNDARY"
+    },
+    {
+      "id": "SPX-1905-P-726",
+      "issue": "FOLLOWUP_CONFESSOR_COUNSEL_EXTENDS_BEYOND_Q726",
+      "proposal": {
+        "en": "Keep the source's warning that confession without genuine contrition is invalid. Label advice to ask God for sorrow and speak with a confessor as pastoral synthesis supported separately by Q724 and Q740.",
+        "fr": "Conserver l'avertissement de la source sur l'invalidité de la confession sans vrai repentir. Présenter le conseil de demander la contrition à Dieu et de parler au confesseur comme une synthèse pastorale, appuyée séparément par Q724 et Q740."
+      },
+      "sourceLoci": [
+        "PX1905-Q726",
+        "PX1905-Q724",
+        "PX1905-Q740"
+      ],
+      "class": "ATTRIBUTION_BOUNDARY"
+    },
+    {
+      "id": "SPX-1905-P-727",
+      "issue": "FOLLOWUP_QUANTITY_COMPARISON_IS_EDITORIAL_SUMMARY",
+      "proposal": {
+        "en": "Retain the accurate Q727 distinction: in confession of venial sins alone, contrition for at least one suffices for validity, while forgiveness of all recognized venial sins requires sorrow for them all. Label the follow-up's 'above mere quantity' as editorial explanation.",
+        "fr": "Conserver la distinction exacte de Q727 : dans la confession de seuls péchés véniels, le regret d'au moins un suffit à la validité, tandis que le pardon de tous ceux reconnus demande le regret de tous. Présenter « au-dessus du nombre » comme une explication éditoriale."
+      },
+      "sourceLoci": [
+        "PX1905-Q727"
+      ],
+      "class": "ATTRIBUTION_BOUNDARY"
+    },
+    {
+      "id": "SPX-1905-P-729",
+      "issue": "SCRUPULOSITY_GUIDANCE_NOT_IN_1905_Q729",
+      "proposal": {
+        "en": "Keep optional historical prudential counsel about a previously confessed sin. Mark advice against compulsive repetition as modern editorial pastoral guidance requiring specialist review; do not present it as Q729's wording.",
+        "fr": "Conserver le conseil prudentiel historique et facultatif relatif à un péché déjà confessé. Marquer le conseil contre les répétitions compulsives comme une orientation pastorale éditoriale exigeant une revue spécialisée ; ne pas le présenter comme le texte de Q729."
+      },
+      "sourceLoci": [
+        "PX1905-Q729"
+      ],
+      "class": "PASTORAL_INFERENCE_SPECIALIST_REVIEW"
+    },
+    {
+      "id": "SPX-1905-P-730",
+      "issue": "COMPULSIVE_THOUGHT_CLASSIFICATION_NOT_IN_1905_Q730",
+      "proposal": {
+        "en": "Keep historical recommendation of frequent acts of contrition, particularly before sleep and in grave spiritual need. Label the anti-compulsion follow-up as editorial pastoral advice, not original papal or catechism wording; do not imply Q730 commands obsessive self-checking.",
+        "fr": "Conserver la recommandation historique de faire souvent l'acte de contrition, surtout avant le sommeil et en cas de besoin spirituel grave. Qualifier la relance contre les compulsions de conseil pastoral éditorial, non de paroles du pape ou du Catéchisme ; ne pas laisser croire que Q730 impose des vérifications obsessionnelles."
+      },
+      "sourceLoci": [
+        "PX1905-Q730"
+      ],
+      "class": "PASTORAL_INFERENCE_SPECIALIST_REVIEW"
+    }
+  ],
+  "chanoine": {
+    "newProposals": 0,
+    "originalEnglishHistoricalWitness": "BLOCKED_DO_NOT_RECONSTRUCT",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ],
+    "reason": "B39 already source-reviewed CSE141–147; no new primary witness or specialist clearance. Preserve distinct Chanoine persona; do not attribute later sources as historical personal speech."
+  },
+  "counts": {
+    "originalDraftFilesInspected": 6,
+    "originalP722ToP730FamiliesVerified": 9,
+    "b41ConditionalCandidatesDeDuplicated": 6,
+    "provenanceRepairsProposed": 8,
+    "newSubstantiveAnswerRewrites": 0,
+    "originalEnglishChanoineReconstructed": 0,
+    "humanCertified": 0,
+    "productionChanged": 0
+  },
+  "nextQueue": [
+    "Human review eight provenance-only deltas against original draft source fields; do not replace correct answer bodies",
+    "Compare B40 P711 source wording correction with original batch11 and determine whether its narrow wording fix should be promoted",
+    "Source-first review P731–740 against existing batch12-b/c; prioritize demonstrable errors over volume",
+    "Specialist review only for CSE142/CSE143 and scrupulosity-related editorial inference",
+    "Printed 1905 Italian facsimile collation when authentic witness becomes accessible"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "claimCertified": false,
+    "publicationApproved": false,
+    "routingEnabled": false,
+    "original1905PrintCollated": false
+  }
+}
