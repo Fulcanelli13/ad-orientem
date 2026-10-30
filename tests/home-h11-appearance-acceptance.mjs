@@ -109,6 +109,7 @@ try{
           saint:reflect.querySelectorAll('[data-home-calendar-view="day"]').length,
           gospel:reflect.querySelectorAll('[data-action="gospel"]').length,
           catechism:reflect.querySelectorAll("[data-home-daily-catechism]").length,
+          dyk:reflect.querySelectorAll("[data-home-dyk-open]").length,
           scripture:reflect.querySelectorAll("[data-home-scripture]").length,
           prayer:home.querySelectorAll('[data-home-cu-route="pray.rosary"]').length,
           footer:home.querySelectorAll(".aoTodayExploreFoot button").length,
@@ -120,9 +121,9 @@ try{
       assert.equal(info.calendar,info.reflection,label+" editorial cards should share a surface");
       if(info.custom)assert.equal(info.custom,info.calendar,label+" optional Customs card must share surface");
       assert.ok(info.calendarRows<=2,label+" upcoming calendar must not invent additional dates");
-      assert.equal(info.readRows,4,label+" reflection rows changed");
-      assert.deepEqual([info.saint,info.gospel,info.catechism,info.scripture,info.prayer,info.footer],
-        [1,1,1,1,1,2],label+" changed an existing route");
+      assert.equal(info.readRows,3,label+" reflection rows exclude Catechism");
+      assert.deepEqual([info.saint,info.gospel,info.catechism,info.dyk,info.scripture,info.prayer,info.footer],
+        [1,1,0,1,1,1,2],label+" Did You Know replaces Catechism");
       assert.match(info.appointmentNote,/calendar appointments|dates annoncées/i,
         label+" removed the observed-date caveat");
       assert.ok(info.totalWidth<=info.viewport+2,label+" horizontal overflow");
@@ -184,6 +185,10 @@ try{
       const style=getComputedStyle(boot);
       return style.display==="none"||style.visibility==="hidden"||Number(style.opacity)<.02;
     },null,{timeout:60000});
+    await h4.waitForFunction(()=>Boolean(document.querySelector(
+      ".homeScreen.aoTodayH4 [data-home-dyk-entry]")),null,{timeout:20000});
+    assert.equal(await h4.locator("[data-home-daily-catechism]").count(),0,
+      "H4 must not show Catechism");
     const auditH4=async label=>{
       const r=await h4.evaluate(()=>{
         const home=document.querySelector(".homeScreen.aoTodayH4");
@@ -204,6 +209,7 @@ try{
           rosary:home?.querySelectorAll(".aoH4Chips button").length,
           events:home?.querySelectorAll(".aoH4Upcoming .aoTodayV2Event").length,
           read:home?.querySelectorAll(".aoH4Read button").length,
+          dyk:home?.querySelectorAll(".aoH4Read [data-home-dyk-entry]").length,
           hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
           oldExplore:home?.querySelectorAll(".aoTodayExploreFoot").length,
           artwork:!!art,buttonVisible:!!button&&getComputedStyle(button).display!=="none",
@@ -214,8 +220,8 @@ try{
       });
       assert.ok(r.documentWidth<=r.width+2,label+" H4 document overflow: "+JSON.stringify(r));
       assert.ok(r.date.length>=10,label+" H4 date not visible");
-      assert.deepEqual([r.week,r.selected,r.massCards,r.beginOrResume,r.change,r.reading,r.prayer,r.rosary,r.read,r.hiddenOldTabs,r.oldExplore],
-        [7,1,1,1,1,1,1,3,2,0,0],label+" H4 layout contract");
+      assert.deepEqual([r.week,r.selected,r.massCards,r.beginOrResume,r.change,r.reading,r.prayer,r.rosary,r.read,r.dyk,r.hiddenOldTabs,r.oldExplore],
+        [7,1,1,1,1,1,1,3,2,1,0,0],label+" H4 layout contract");
       assert.ok(r.events<=2,label+" H4 upcoming copied unsourced dates");
       assert.equal(r.buttonVisible,true,label+" Mass door hidden");
       assert.equal(r.initialScrollTop,0,label+" H4 first-fold audit must start at scroll 0");
