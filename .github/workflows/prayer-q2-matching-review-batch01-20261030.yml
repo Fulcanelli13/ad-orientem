@@ -1,0 +1,58 @@
+name: Prayer Artwork · Q2 first 50 matching review (€0)
+on:
+  push:
+    branches: [research/sacred-art-duplicate-gate-20261030]
+    paths:
+      - scripts/art/build-prayer-q2-matching-review-batch01-50-20261030.py
+      - .github/workflows/prayer-q2-matching-review-batch01-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: prayer-q2-review-batch01
+  cancel-in-progress: false
+jobs:
+  build-source-bound-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-duplicate-gate-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build standalone 50-image Prayer matching review
+        run: |
+          python -m py_compile scripts/art/build-prayer-q2-matching-review-batch01-50-20261030.py
+          python scripts/art/build-prayer-q2-matching-review-batch01-50-20261030.py
+      - name: Assert exact source identity and user-decision safety
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          root=Path('data/calendar/sacred-art-master-v2')
+          x=json.loads((root/'prayer-q2-matching-batch01-50-proposals-20261030.v1.json').read_text())
+          h=Path('docs/AO_PRAYER_ART_Q2_MATCHING_REVIEW_BATCH01_50_20261030.html').read_text()
+          assert len(x['items'])==x['reviewCount']==x['sourceImageCardsEmbedded']==50
+          assert len({t['workGroup'] for t in x['items']})==50
+          assert x['queue1ReleasePromotions']==x['artworkQualityCertifications']==x['rightsReleaseCertifications']==x['historicalArtworkApprovalsChanged']==x['sourceRecordsMergedOrDeleted']==0
+          assert all(not t['released'] and t['reviewStatus']=='PROPOSED_NOT_ACCEPTED' for t in x['items'])
+          assert h.count('data:image/jpeg;base64,')>=50
+          assert 'userAlternativeAssignments' in h and 'NOT_RELEVANT_TO_PRAYER' in h
+          assert 'ACCEPT_PRAYER_MATCHING' in h and 'photoPublicationApproval:false' in h
+          assert 'let state={}' in h and 'localStorage.setItem' in h
+          assert sum(len(t['proposedSlots']) for t in x['items'])>=100
+          print('FIRST50_PRAYER_MATCHING_VALID', len(x['items']), 'records', len(h), 'html chars')
+          PY
+      - name: Commit gallery and reviewable source manifest to research branch
+        run: |
+          git config user.name "Ad Orientem Prayer Art Review"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/AO_PRAYER_ART_Q2_MATCHING_REVIEW_BATCH01_50_20261030.html data/calendar/sacred-art-master-v2/prayer-q2-matching-batch01-50-proposals-20261030.v1.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "research(prayer-art): first 50 Q2 paintings with proposal choices and embedded photos [skip ci]"
+            git pull --rebase origin research/sacred-art-duplicate-gate-20261030
+            git push origin HEAD:research/sacred-art-duplicate-gate-20261030
+          fi
