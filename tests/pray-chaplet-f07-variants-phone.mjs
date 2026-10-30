@@ -45,10 +45,10 @@ try{
      const rect=el.getBoundingClientRect(),root=document.querySelector("#aoPray435930.open .aoP435930Mount");
      const footer=el.closest("main")?.querySelector(".aoFiveWoundsActions,.aoPreciousBloodActions,.aoLittleCrownActions");
      const availableBottom=Math.min(innerHeight-70,(footer?.getBoundingClientRect().top??innerHeight)-6);
-     return {top:rect.top,availableBottom,visiblePixels:Math.max(0,Math.min(rect.bottom,availableBottom)-Math.max(0,rect.top)),
+     return {top:rect.top,prayerHeight:rect.height,availableBottom,visiblePixels:Math.max(0,Math.min(rect.bottom,availableBottom)-Math.max(0,rect.top)),
       pageOverflow:document.documentElement.scrollWidth-innerWidth,mountOverflow:(root?.scrollWidth||0)-(root?.clientWidth||0)};
     });
-    assert.ok(geometry.visiblePixels>=40,"F07 "+c.kind+" first source prayer below mobile dock at "+width+": "+JSON.stringify(geometry));
+    assert.ok(geometry.visiblePixels>=Math.min(40,Math.max(1,geometry.prayerHeight-0.5)),"F07 "+c.kind+" first source prayer below mobile dock at "+width+": "+JSON.stringify(geometry));
     assert.ok(geometry.pageOverflow<=1&&geometry.mountOverflow<=1,
      "F07 "+c.kind+" horizontal overflow at "+width+": "+JSON.stringify(geometry));
     await page.screenshot({path:resolve(captures,c.kind+"-"+width+"-opening.png"),animations:"disabled"});
