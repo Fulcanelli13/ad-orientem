@@ -68,6 +68,10 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={})
   '<main class="homeScreen aoTodayV2 aoTodayH4" data-home-language="'+vm.language+'" data-ao-home-presentation-owner="modular-home-presentation-v1">'+
   '<header class="aoH4Bar"><span class="aoH4Wordmark">AD ORIENTEM</span><button class="aoH4Utility" type="button" data-home-settings aria-label="'+esc(say("Settings","Réglages"))+'">⚙</button></header>'+
   '<div class="aoH4CalendarBack"><button type="button" data-home-calendar-today aria-label="'+esc(say("Back to Today","Retour à aujourd’hui"))+'">←</button><strong>'+esc(say("Calendar","Calendrier"))+'</strong></div>'+
+  '<nav class="aoH4CalendarViews" aria-label="'+esc(say("Calendar views","Vues du calendrier"))+'">'+
+  '<button type="button" data-home-calendar data-home-calendar-view="day">'+esc(say("Day","Jour"))+'</button>'+
+  '<button type="button" data-home-calendar data-home-calendar-view="picker">'+esc(say("Month","Mois"))+'</button>'+
+  '<button type="button" data-home-calendar data-home-calendar-view="year">'+esc(say("Liturgical Year","Année liturgique"))+'</button></nav>'+
   '<div class="aoTodayV2CalendarInline aoH4CalendarInline" data-home-calendar-inline hidden aria-label="'+esc(say("Liturgical calendar","Calendrier liturgique"))+'"></div>'+
   '<div class="aoH4TodayContent">'+
   '<div class="aoH4DateBar"><button class="aoH4DateOpen" type="button" data-home-calendar data-home-calendar-view="picker" data-home-calendar-date="'+esc(vm.dateIso)+'"><span class="aoH4Eyebrow">'+esc(vm.isToday?say("Today","Aujourd’hui"):say("Viewing","Jour choisi"))+' · '+esc(say("Calendar","Calendrier"))+'</span><strong>'+esc(vm.dateTitle)+'</strong></button>'+
