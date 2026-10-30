@@ -70,16 +70,17 @@ const document={createElement(type){
 const map={hasImage(id){return sprites.has(id)},
   addImage(id,data,options){sprites.set(id,{data,options})}};
 assert.equal(registerExploreClusterBadge(map,{document}),true);
-for(const group of ["DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV","OTHER","MIXED","PLACES"]){
+const badgeGroups=["DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV","OTHER","MIXED","PLACES"];
+for(const group of badgeGroups){
   const badge=sprites.get("ao-explore-cluster-badge-"+group);
   assert.ok(badge,"Required source-derived badge missing for "+group);
   assert.equal(badge.options.pixelRatio,2);
 }
-assert.equal(sprites.size,8,"Every source-supported cluster kind has a circular badge");
-assert.ok(arcs>=8,"Cluster designs must draw circles, not hexagons");
+assert.equal(sprites.size,badgeGroups.length,"Every source-supported cluster kind has a circular badge");
+assert.ok(arcs>=badgeGroups.length,"Cluster designs must draw circles, not hexagons");
 assert.equal(registerExploreClusterBadge({},{}),false,"Non-browser tests must degrade gracefully");
 assert.equal(registerExploreCategoryMedallions(map,{document}),true);
-assert.equal(sprites.size,8+EXPLORE_MEDALLION_KINDS.length*2,
+assert.equal(sprites.size,badgeGroups.length+EXPLORE_MEDALLION_KINDS.length*2,
   "Every category must render exact and indicative bubble sprites");
 for(const kind of EXPLORE_MEDALLION_KINDS){
   for(const suffix of ["","-indicative"]){
