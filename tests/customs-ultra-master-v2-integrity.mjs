@@ -83,14 +83,16 @@ for(const [number,expected] of [[2,200],[3,200]]){
 const wave4=get("customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json");
 assert.equal(wave4.rows.length,200);
 assert.equal(wave4.counts.source_native_type_available,68);
-assert.equal(wave4.counts.requires_actual_passage_type_screen,132);
-assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,132);
+assert.equal(wave4.counts.requires_actual_passage_type_screen,92);
+assert.equal(wave4.counts.source_passage_type_verified_in_hosted_reproductions,40);
+assert.equal(wave4.counts.source_semantic_class_available_total,108);
+assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,92);
 assert.ok(wave4.rows.every(x=>unassigned.has(x.evidence_id)&&x.original_source_id_verified&&!x.app_publication_allowed));
 const firstFour=[...wave.rows,...get("customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json").rows,...get("customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json").rows,...wave4.rows];
 assert.equal(new Set(firstFour.map(x=>x.evidence_id)).size,800);
 assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,3295);
 assert.equal(coverage.progress.evidence_only_source_scope_first_pass.unprocessed,0);
-assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_unresolved_requires_passage,132);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_unresolved_requires_passage,92);
 const allSourceScreens=[];
 for(let waveNo=1;waveNo<=17;waveNo++){
  const sourceCount=waveNo===17?95:200;
@@ -113,7 +115,26 @@ for(let waveNo=1;waveNo<=17;waveNo++){
 assert.equal(allSourceScreens.length,3295);
 assert.equal(new Set(allSourceScreens.map(x=>x.evidence_id)).size,3295);
 assert.deepEqual(new Set(allSourceScreens.map(x=>x.evidence_id)),unassigned);
-assert.equal(allSourceScreens.filter(x=>x.preliminary_lane==="ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY").length,132);
+assert.equal(allSourceScreens.filter(x=>x.preliminary_lane==="ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY").length,92);
+const hosted=get("customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json");
+assert.equal(hosted.records.length,40);
+assert.equal(hosted.source_groups.length,6);
+assert.equal(hosted.counts.source_action_records_pending,92);
+assert.equal(new Set(hosted.records.map(x=>x.source_id)).size,40);
+const wave4bySource=new Map(wave4.rows.map(x=>[x.source_id,x]));
+for(const r of hosted.records){
+ const mapped=wave4bySource.get(r.source_id);
+ assert.ok(mapped,"Missing classified hosted source in wave04: "+r.source_id);
+ assert.equal(mapped.source_type_as_recorded,r.claim_scope_route);
+ assert.equal(mapped.semantic_source_type_available,true);
+ assert.equal(mapped.original_source_url,r.hosted_article_url);
+ assert.equal(mapped.app_publication_allowed,false);
+ assert.equal(r.calendar_publication_allowed,false);
+ assert.equal(r.canonical_merge_permitted,false);
+ assert.equal(r.liturgical_1962_rubric_or_ministerial_authority_confirmed,false);
+}
+assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.actual_hosted_passages_checked,40);
+assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.remaining,92);
 const dedup=get("customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json");
 assert.equal(dedup.family_action_groups.length,26);
 assert.equal(dedup.description_pair_edges.length,41);
