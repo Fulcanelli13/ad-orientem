@@ -369,6 +369,17 @@ try{
     await h4.locator(".aoH4DateOpen").click();
     await h4.waitForSelector(".aoTodayH4[data-ao-home-calendar-view='picker'] #ao-calendar-modular-root",{state:"attached",timeout:25000});
     await h4.screenshot({path:resolve(output,prefix+"-h4-calendar-light.png")});
+    await h4.locator('.aoH4CalendarViews [data-home-calendar-view="year"]').click();
+    await h4.waitForSelector('.aoTodayH4[data-ao-home-calendar-view="year"] [data-ao-liturgical-clock="v1"] .aoClockDial',
+      {state:"visible",timeout:30000});
+    assert.equal(await h4.locator('.aoH4CalendarViews [data-home-calendar-view="year"]')
+      .getAttribute("aria-current"),"page",prefix+" selected Calendar Year not announced");
+    assert.ok(await h4.locator(".aoTodayH4 .aoClockSector").count()>=6,
+      prefix+" restored clock must retain the actual liturgical seasons");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-year-clock-light.png"),fullPage:true});
+    await h4.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
+    await h4.waitForSelector('.aoTodayH4[data-ao-home-calendar-view="picker"] #ao-calendar-modular-root',
+      {state:"attached",timeout:30000});
     await h4.locator(".aoH4CalendarBack [data-home-calendar-today]").click();
     await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",{state:"visible",timeout:10000});
     // A cold Home click must lazy-load the exact source-owned glossary entry,
