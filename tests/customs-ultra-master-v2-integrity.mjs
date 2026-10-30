@@ -546,4 +546,66 @@ assert.equal(sourceIndexById.get("CHANEY55-EWTN-055").household250_identity_revi
 assert.equal(sourceIndexById.get("CHANEY55-EWTN-142").household250_identity_review.relationship,"RITUAL_MINISTERIAL_BOUNDARY_HOLD");
 assert.equal(sourceIndexById.get("KEL59-EWTN-061").household250_identity_review.relationship,"HISTORICAL_SCOPE_BOUNDARY_HOLD");
 
+
+
+// Coherent fourth cross-book batch: independent review coverage only, not approved identities.
+const crossbook300=singleWorkingIndex.bulk_identity_review_batches.find(x=>x.id==="CROSSBOOK-STOKES-THREEFAMILY-300-20261030");
+assert.ok(crossbook300);assert.equal(crossbook300.n,300);
+assert.deepEqual(crossbook300.source_wave_counts,{"7":186,"8":114});
+assert.equal(crossbook300.source_selection_ids.length,300);
+assert.equal(new Set(crossbook300.source_selection_ids).size,300);
+const prior=new Set([...weiser250Batch.source_selection_ids,...regional250Batch.source_selection_ids,
+ ...household250Batch.source_selection_ids,...hintsByID.keys(),
+ ...singleWorkingIndex.evidence_identity_routing.filter(x=>x.refs?.length).map(x=>x.s)]);
+assert.equal(prior.size,1022);
+const cRel={};let cOwner=0,cVeto=0,cHold=0;
+for(const id of crossbook300.source_selection_ids){
+ assert.ok(!prior.has(id),"Repeated source already reviewed "+id);
+ const x=sourceIndexById.get(id),src=originalScreensBySource.get(id);
+ assert.ok(x&&src);assert.equal(x.a,expectedRoutingLabel(src));
+ const rev=x.crossbook300_identity_review;
+ assert.equal(rev.batch_id,crossbook300.id);assert.equal(rev.source_id,id);
+ assert.equal(rev.original_source_wave,x.w);assert.equal(rev.original_source_index,x.n);
+ assert.ok(x.w===7||x.w===8);assert.ok(rev.reason.length>58);
+ for(const field of ["source_page_verified_this_pass","source_independence_certified",
+ "ritual_authority_certified","new_canonical_identity_approved","canonical_merge_approved",
+ "indulgence_verified","calendar_publish_allowed"])
+  assert.equal(rev[field],false,"Research-only assertion violated: "+id);
+ if(rev.proposed_existing_owner_id){
+  assert.ok(mids.has(rev.proposed_existing_owner_id));assert.equal(rev.excluded_false_owner_id,null);
+  cOwner++;cRel[rev.relationship]=(cRel[rev.relationship]||0)+1;
+ }else if(rev.excluded_false_owner_id){
+  assert.ok(mids.has(rev.excluded_false_owner_id));
+  assert.equal(rev.relationship,"EXPLICIT_FALSE_OWNER_EQUIVALENCE_VETO");cVeto++;
+ }else{
+  assert.equal(rev.relationship,"NO_SPECIFIC_EXISTING_OWNER_SUPPORTED_BY_CURRENT_DESCRIPTION");cHold++;
+ }
+}
+assert.deepEqual(cRel,crossbook300.description_relation_counts);
+assert.equal(cOwner,crossbook300.proposed_owner_edges);
+assert.equal(cVeto,crossbook300.explicit_owner_vetoes);
+assert.equal(cHold,crossbook300.open_no_exact_owner);
+assert.equal(cOwner+cVeto+cHold,300);
+assert.equal(crossbook300.cross_source_pair_count,crossbook300.cross_source_action_pair_hypotheses.length);
+for(const e of crossbook300.cross_source_action_pair_hypotheses){
+ assert.ok(sourceIndexById.has(e.left_source_id));
+ assert.ok(e.right_source_id?sourceIndexById.has(e.right_source_id):mids.has(e.right_registry_owner_id));
+ for(const f of ["source_independence_certified","original_folios_both_verified","automatic_merge_approved","formal_custom_distinctness_certified"])
+  assert.equal(e[f],false);
+}
+assert.equal(singleWorkingIndex.counts.bulk_crossbook300_reviewed,300);
+assert.equal(singleWorkingIndex.counts.bulk_crossbook300_provisional_owner_edges,cOwner);
+assert.equal(singleWorkingIndex.counts.bulk_crossbook300_explicit_false_owner_vetoes,cVeto);
+assert.equal(singleWorkingIndex.counts.bulk_crossbook300_comparison_pairs,crossbook300.cross_source_pair_count);
+assert.equal(new Set([...prior,...crossbook300.source_selection_ids]).size,1322);
+assert.equal(singleWorkingIndex.counts.identity_description_review_coverage_including_bulk_crossbook,1322);
+assert.equal(sourceIndexById.get("STOKES55-EWTN-014").crossbook300_identity_review.proposed_existing_owner_id,"CUST-BARBARA-BRANCHES");
+assert.equal(sourceIndexById.get("STOKES55-EWTN-112").crossbook300_identity_review.excluded_false_owner_id,"CORP-001");
+assert.equal(sourceIndexById.get("STOKES55-EWTN-175").crossbook300_identity_review.excluded_false_owner_id,"LIFE-002");
+assert.equal(sourceIndexById.get("HYN77-CC-013").crossbook300_identity_review.proposed_existing_owner_id,"CAT-WEISER-B-001");
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
