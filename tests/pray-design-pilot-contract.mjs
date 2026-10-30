@@ -58,7 +58,7 @@ assert.equal(hasReleasedDoorPainting(null),false);
 assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true}),false);
 assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true,
  releaseEvidence:{sourceOriginalSha256:"0".repeat(64),rightsForActualFileCleared:true}}),false);
-assert.doesNotMatch(actual,/https?:\\/\\/[^"' ]+\\.(?:jpg|jpeg|png|webp)/i,
+assert.ok(!actual.includes("http://")&&!actual.includes("https://"),
  "Slot map may not ship unapproved painting URLs");
 assert.match(actual,/data-p435930-my-customs/,"personal Prayer destination remains reachable");
 for(const id of ["chaplets","marian","daily","novenas","eucharistic","ourlord","saints","intentions"])
