@@ -23,7 +23,7 @@ Machine-readable [26-bucket source map](../../data/research/did-you-know/dyk-cus
 ### Corrected first draft files
 1. [30 original historical Customs DYK drafts](../../data/research/did-you-know/dyk-ultramaster-batch01.v1.json): **20 Weiser, 10 Pitrè**; EN+FR, origin record/printed-page or original OCR line, locality, source status and fail-closed publication gate. Drafts explicitly frame historical, local and author-reported material. **No one has approved publication of these facts.**
 2. [24 complementary Glossary/Mass drafts](../../data/research/did-you-know/dyk-source-first-batch01.v1.json): 19 glossary + 5 Mass; EN+FR, primary registry references and pending rubric/translation checks. The earlier 16 drafts derived solely from canonical Customs have been moved into `deferred_canonical_customs_illustrations`, **outside the active candidate pool**, with their work preserved.
-3. **Total active drafts in this PR: 54; approved: 0; published: 0.** No runtime, Calendar or existing Customs records have been changed.
+3. **Initial checkpoint: 54 active drafts (30 historical Customs, 19 Glossary, 5 Mass).** Extended in Batch 02 below. No runtime, Calendar or existing Customs records have been changed.
 
 ### Source-first production order
 1. **Mine the Weiser 1,025 and Pitrè 718 evidence records** in useful themed batches, carefully distinguish duplicate historical action reports, recipes, regional feast celebrations, pageants, historical beliefs, parish liturgy, actual sacramentals, and family suggestions. Keep local exceptions and author/time attribution directly in the fact wording.
@@ -43,3 +43,19 @@ Machine-readable [26-bucket source map](../../data/research/did-you-know/dyk-cus
 - Do not publish historical custom observations as universal Calendar items and do not create a standalone Customs Atlas.
 - Do not conflate research completion, editorial approval, public availability and current universal applicability.
 - Zero paid services, zero duplicate research pipelines, no automatic publication.
+
+## Batch 02 — completed 30 October 2026
+
+The same nonpublishing DYK research branch now holds another **50 bilingual drafts**:
+- [Batch 02A: 25 Weiser historical observations](../../data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json), keyed to original `BULK150` action dossiers and book printed-page pointers. **15/25** carry an explicit previously-checked original printed-folio flag; the remainder need original-page review. Distinguish author-suggested household exercises from attested regional practice. No endorsement of cross-confessional customs as universal 1962 Roman usage.
+- [Batch 02B: 25 Pitrè original-1900 source observations](../../data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json), each keyed to a source record with **a located original printed folio, text anchor and reviewed scan-page contact sheet**. Topics cover St Rosalia, Saints Cosmas and Damian, Piazza Armerina's Assumption, Gangi, Gratteri, Geraci Siculo, and Marineo. This is original-edition page correspondence, **not** independent historical corroboration or current observance.
+
+**Cumulative staged active drafts: 104**, comprising **45 Weiser + 35 Pitrè + 19 Glossary + 5 Mass**. All are EN/FR, all remain editorial drafts, none published; the **16 canonical-only Customs illustrations** remain separately deferred and uncounted. Source registries retain ownership. These are fact drafts, not 104 accepted/new customary identities.
+
+The DYK [nonpublication and source integrity test](../../tests/dyk-ultramaster-draft-gates.mjs) covers draft IDs, raw observation-ID nonreuse, bilingual fields, local/temporal scope, unpublished flags, candidate totals and Pitrè page anchors. It does **not** independently validate historical claims or literary quality, and it does not resolve the older 53 facts / 195 conversion candidates outside this branch.
+
+### Next editorial gate
+1. Obtain original printed-folio checks for the outstanding Weiser rows, and compare exact Italian wording for the Pitrè drafts to avoid overstated certainty; retain historical/local specificity.
+2. Reconcile the existing 53 and 195 DYK corpora before counting genuine new facts or connecting runtime. Preserve prior approvals.
+3. Run human factual/FR native-language review, semantic clustering (e.g. weekday devotional associations and multi-detail local processions), source/rite separation, and no-endorsement rules for folklore.
+4. Verify deep-link targets against real current runtime routes. Only human-approved, deduplicated items can enter the existing 12/day nonrepeating delivery mechanism.
