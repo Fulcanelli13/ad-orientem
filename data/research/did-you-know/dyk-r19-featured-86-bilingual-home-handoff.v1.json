@@ -28,12 +28,13 @@
     ],
     "manual_semantic_final_certified": false,
     "independent_original_pitre_page_images_reviewed": false,
-    "exact_browser_clickthroughs_for_this_86": 0
+    "exact_browser_clickthroughs_for_this_86": 0,
+    "mass_source_detail_contract_prepared": 12
   },
   "gating": {
     "WEISER_1958": "Exact historical-source route shape prepared, source IDs and book URL pinned; browser click test outstanding",
     "PITRE_1900": "W05-OBS ID support committed to private route, test staged; original images and browser clicks pending",
-    "ROMAN_CANON_1962": "Canonical cue/action IDs preserved, but exact reader card route not certified; no fabricated mass link"
+    "ROMAN_CANON_1962": "Exact, read-only home.mass-source detail now prepared with action/cue ID and Ritus locator. No Mass-reader jump verified; preview only."
   },
   "editorial_schedule_policy": {
     "daily_limit_if_published_later": 12,
@@ -3979,10 +3980,22 @@
       "research_fact_id": "DYK-M04-CANON-001",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0150",
-        "action_id": "AO.CANON.R62.001",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-001",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.001",
+          "cue_id": "AO.SM.C0150",
+          "ritus_locator": "VIII.1",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4023,10 +4036,22 @@
       "research_fact_id": "DYK-M04-CANON-006",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0155",
-        "action_id": "AO.CANON.R62.006",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-006",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.006",
+          "cue_id": "AO.SM.C0155",
+          "ritus_locator": "VIII.3",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4067,10 +4092,22 @@
       "research_fact_id": "DYK-M04-CANON-008",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0157",
-        "action_id": "AO.CANON.R62.008",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-008",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.008",
+          "cue_id": "AO.SM.C0157",
+          "ritus_locator": "VIII.4",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4111,10 +4148,22 @@
       "research_fact_id": "DYK-M04-CANON-013",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0164",
-        "action_id": "AO.CANON.R62.013",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-013",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.013",
+          "cue_id": "AO.SM.C0164",
+          "ritus_locator": "VIII.4",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4155,10 +4204,22 @@
       "research_fact_id": "DYK-M04-CANON-014",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0165",
-        "action_id": "AO.CANON.R62.014",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-014",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.014",
+          "cue_id": "AO.SM.C0165",
+          "ritus_locator": "VIII.4",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4199,10 +4260,22 @@
       "research_fact_id": "DYK-M04-CANON-021",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0172",
-        "action_id": "AO.CANON.R62.021",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-021",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.021",
+          "cue_id": "AO.SM.C0172",
+          "ritus_locator": "VIII.4",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4243,10 +4316,22 @@
       "research_fact_id": "DYK-M04-CANON-026",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0174",
-        "action_id": "AO.CANON.R62.026",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-026",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.026",
+          "cue_id": "AO.SM.C0174",
+          "ritus_locator": "VIII.5",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4287,10 +4372,22 @@
       "research_fact_id": "DYK-M04-CANON-041",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0187",
-        "action_id": "AO.CANON.R62.041",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-041",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.041",
+          "cue_id": "AO.SM.C0187",
+          "ritus_locator": "IX.1",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4331,10 +4428,22 @@
       "research_fact_id": "DYK-M04-CANON-042",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0188",
-        "action_id": "AO.CANON.R62.042",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-042",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.042",
+          "cue_id": "AO.SM.C0188",
+          "ritus_locator": "IX.1",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4375,10 +4484,22 @@
       "research_fact_id": "DYK-M04-CANON-050",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0196",
-        "action_id": "AO.CANON.R62.050",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-050",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.050",
+          "cue_id": "AO.SM.C0196",
+          "ritus_locator": "IX.3",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4419,10 +4540,22 @@
       "research_fact_id": "DYK-M04-CANON-058",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0204",
-        "action_id": "AO.CANON.R62.058",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-058",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.058",
+          "cue_id": "AO.SM.C0204",
+          "ritus_locator": "IX.3",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
@@ -4463,10 +4596,22 @@
       "research_fact_id": "DYK-M04-CANON-060",
       "source_path": "dyk-mass-canon-discoveries-04d.v1.json",
       "destination": {
-        "type": "PENDING_EXACT_MASS_CUE_ROUTE",
-        "cue_id": "AO.SM.C0206",
-        "action_id": "AO.CANON.R62.060",
-        "reader_route_verified": false
+        "type": "route",
+        "id": "home.mass-source",
+        "factId": "DYK-M04-CANON-060",
+        "mass_context": {
+          "action_id": "AO.CANON.R62.060",
+          "cue_id": "AO.SM.C0206",
+          "ritus_locator": "X.1",
+          "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "source_owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+          "source_owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+          "scope": {
+            "en": "1962 Roman Mass; celebrant's action recorded in the Ritus servandus. This is a source-reference view, not a live-Mass cursor or verified jump to the exact reader paragraph.",
+            "fr": "Messe romaine de 1962 ; geste du célébrant rapporté au Ritus servandus. Il s'agit d'une référence documentaire, non du suivi de la messe en cours ni d'un accès vérifié au paragraphe du lecteur."
+          }
+        },
+        "reader_cue_jump_verified": false
       },
       "proof": {
         "original_source_refs": {
