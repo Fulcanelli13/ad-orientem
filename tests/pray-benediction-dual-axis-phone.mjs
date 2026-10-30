@@ -53,6 +53,13 @@ try{
  await page.screenshot({path:resolve(captures,"benediction-390-exposition.png"),animations:"disabled"});
  // Actual phone locale and visual-salience acceptance, not only static selectors.
  const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
+ const togglePrayerLanguage=async()=>{
+  const aa=page.locator("#aoPray435930 .aoP435930Head.aoPrayerBookHead > .aoPrayerBookMenu");
+  assert.equal(await aa.count(),1,"Benediction language belongs in the shared Aa menu");
+  if(!await aa.evaluate(el=>el.open))await aa.locator(":scope > summary").click();
+  assert.ok(await locale.isVisible(),"Language choice must remain accessible inside Aa");
+  await locale.click();
+ };
  assert.equal(await locale.count(),1,"In-rite language control is missing");
  assert.equal((await locale.innerText()).trim(),"EN");
  const prayerFace=page.locator(rootSel+" .aoP435930Flip").first();
@@ -60,12 +67,12 @@ try{
  const cueFont=await page.locator(rootSel+" .aoP435930GuideNow p").first()
   .evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
  assert.ok(faceFont>=cueFont+4,"Prayer text must dominate small instructions: "+JSON.stringify({faceFont,cueFont}));
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await locale.innerText()).trim(),"FR");
  assert.equal((await snapshot()).index,0,"Changing French altered the public rite stage");
  assert.match(await page.locator(rootSel+" .aoP435930Flip [data-face-v]").first().innerText(),/Victime sainte/);
  await page.screenshot({path:resolve(captures,"benediction-390-exposition-fr.png"),animations:"disabled"});
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await locale.innerText()).trim(),"EN");
  const latinFlip=page.locator(rootSel+" .aoP435930Flip").first();
  await latinFlip.evaluate(el=>el.click());
@@ -220,7 +227,7 @@ try{
  assert.ok(royalScroll.height>royalScroll.viewport&&royalScroll.overflow==="auto",
   "Full Laudes must scroll vertically within its existing card");
  await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-en.png"),animations:"disabled"});
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await snapshot()).card,"king-royal-praises",
   "French switch changed the current Laudes stage");
  const royalFrench=await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText();
@@ -236,13 +243,13 @@ try{
  assert.match(royalLatinText,/N\. Summo Pontifici/);
  assert.match(royalLatinText,/Pax Christi veniat/);
  await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-latin.png"),animations:"disabled"});
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await snapshot()).card,"king-royal-praises");
 
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  assert.equal((await snapshot()).card,"king-consecration");
  assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Most sweet Jesus/);
- await locale.click();
+ await togglePrayerLanguage();
  assert.equal((await snapshot()).card,"king-consecration","Local French toggle lost Feast card");
  assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Très doux Jésus/);
  await page.screenshot({path:resolve(captures,"benediction-390-christ-king-consecration-fr.png"),animations:"disabled"});
