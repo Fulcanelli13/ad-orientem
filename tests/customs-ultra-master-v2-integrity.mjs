@@ -840,4 +840,59 @@ assert.equal(singleWorkingIndex.guard.merges_approved,0);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
+
+// Print witness audit: six hosted excerpts located verbatim in four scanned primary anthology pages.
+// A facsimile of ONE work does not certify source independence of the pair.
+const printAudit=get("customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json");
+assert.equal(printAudit.schema,"AO_CUSTOMS_ULTRA_MASTER_V2_14_PAIRS_PRIMARY_PRINT_WITNESS_AUDIT");
+assert.equal(printAudit.counts.case_pairs,14);
+assert.equal(printAudit.records.length,14);
+assert.equal(printAudit.counts.case_pairs_with_one_original_printed_passage_verified,6);
+assert.equal(printAudit.counts.case_pairs_without_new_printed_passage,8);
+assert.equal(printAudit.counts.unique_original_printed_page_anchors,4);
+assert.equal(printAudit.printed_volume.edition_date,"UNVERIFIED_NO_YEAR_ON_INSPECTED_TITLE_PAGES");
+assert.equal(printAudit.printed_volume.digitized_pdf,"https://distantreader.org/stacks/pamphlets/pdf/005195891.pdf");
+assert.equal(printAudit.counts.case_pairs_with_both_independently_verified_original_printed_pages,0);
+assert.equal(printAudit.counts.new_source_independence_certifications,0);
+for(const v of ["canonical_custom_merges_approved","new_canonicals_approved","indulgence_grants_approved","calendar_publications"])
+ assert.equal(printAudit.counts[v],0);
+const printedCases=new Set(["CC3WORK-REL-004","CC3WORK-REL-007","CC3WORK-REL-011","CC3WORK-REL-012","CC3WORK-REL-014","CC3WORK-REL-015"]);
+const checkedPrintPages=new Set(),seenPrintCases=new Set();
+for(const d of printAudit.records){
+ assert.ok(!seenPrintCases.has(d.case_id));seenPrintCases.add(d.case_id);
+ const c=singleWorkingIndex.dedup_case_decisions.find(x=>x.id===d.case_id);
+ assert.ok(c && c.same_core_source_verification && c.primary_print_witness_review);
+ assert.deepEqual(c.subjects,d.subjects);
+ assert.equal(c.primary_print_witness_review.one_side_exact_printed_excerpt_verified,Boolean(d.original_print_scan));
+ assert.equal(c.primary_print_witness_review.scan_pdf_page,d.original_print_scan?.pdf_zero_based_page??null);
+ assert.equal(c.primary_print_witness_review.printed_chapter_author,d.original_print_scan?.chapter_contributor??null);
+ assert.equal(c.primary_print_witness_review.book_level_prior_author_acknowledgment,Boolean(d.book_level_dependency_warning));
+ for(const guard of ["both_printed_source_pages_compared","independent_attestation_certified","canonical_merge_authorized","calendar_publication_authorized"])
+  assert.equal(c.primary_print_witness_review[guard],false);
+ for(const guard of ["other_side_original_printed_page_verified_in_this_pass","independent_authorship_certified","source_dependence_resolved","original_book_pair_both_pages_compared","automatic_identity_merging_allowed","canonical_custom_approved","indulgence_grant_verified","calendar_publication_allowed"])
+  assert.equal(d[guard],false);
+ assert.equal(Boolean(d.original_print_scan),printedCases.has(d.case_id));
+ if(d.original_print_scan){
+  const p=d.original_print_scan;checkedPrintPages.add(p.pdf_zero_based_page);
+  assert.ok([26,35,47,66].includes(p.pdf_zero_based_page));
+  assert.equal(p.digital_scan_url,printAudit.printed_volume.digitized_pdf);
+  assert.ok(p.section.length>12 && p.chapter_contributor.length>8);
+  assert.equal(p.edition_date_in_this_scan,"NOT_VERIFIED");
+  assert.equal(p.match_status,"EXACT_PASSAGE_VERIFIED_IN_PRINT_SCAN");
+ }
+}
+assert.equal(seenPrintCases.size,14);
+assert.equal(checkedPrintPages.size,4);
+assert.equal(printAudit.additional_dependency_evidence.length,1);
+assert.deepEqual(new Set(printAudit.additional_dependency_evidence[0].affected_case_ids),new Set(["CC3WORK-REL-006","CC3WORK-REL-016","CC3WORK-REL-017"]));
+assert.equal(singleWorkingIndex.printed_witness_review.case_pairs_covered,14);
+assert.equal(singleWorkingIndex.counts.same_core_exact_printed_first_side_cases,6);
+assert.equal(singleWorkingIndex.counts.same_core_unique_printed_page_anchors,4);
+assert.equal(singleWorkingIndex.counts.same_core_case_pairs_pending_second_original_page_comparison,14);
+assert.equal(singleWorkingIndex.printed_witness_review.new_independent_corroborations,0);
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
