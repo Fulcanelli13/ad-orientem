@@ -1,0 +1,354 @@
+{
+  "schema": "AO_CUSTOMS_V2_HISTORICAL_PRIMARY_COLLECTOR_ATTRIBUTION_WITH_SECONDARY_ANCHORS",
+  "date": "2026-10-30",
+  "claim_scope": "Santa Croce Camerina St Joseph annual Cene/novena in Giuseppe Pitre Feste patronali in Sicilia 1900",
+  "source_lineage": {
+    "primary_collected_material": {
+      "collector": "Giovanni Cannizzaro",
+      "role": "NAMED_LOCAL_CORRESPONDENT_AND_COLLECTOR_REPORTED_BY_LATER_HISTORICAL_SOURCES",
+      "reporting_location": "Santa Croce Camerina (Ragusa), Sicily",
+      "source_form": "LETTERS_AND_VERNACULAR_PRAYER_REPORTED; ORIGINAL_CORRESPONDENCE_NOT_INSPECTED",
+      "is_independent_publication": false
+    },
+    "published_compilation": {
+      "editor_author": "Giuseppe Pitrè",
+      "book": "Feste patronali in Sicilia",
+      "edition_year": 1900,
+      "publisher_reference": "1900 printed edition (exact physical copy not newly opened)",
+      "individual_original_publication_checked": false,
+      "book_printed_page_leads_from_later_chapter": [
+        450,
+        456,
+        457,
+        458,
+        459
+      ],
+      "page_mapping_status": "RANGES_FROM_SECONDARY_CITATION_NOT_INDIVIDUAL_OBSERVATION_PAGE_VERIFICATION"
+    },
+    "historical_society_report": {
+      "name": "Società Santacrocese di Storia Patria, Archivio Storico, VII",
+      "issue_year": 2020,
+      "web_pdf": "https://storiapatriasantacrocese.it/wp-content/uploads/2023/03/Annuario-7.pdf",
+      "pdf_page_index_zero_based": 128,
+      "printed_page": 129,
+      "inspected_page_image": true,
+      "report": "Identifies Cannizzaro as Pitrè's correspondent furnishing descriptions of St Joseph feast, novena, and Cene for the 1900 book",
+      "evidence_kind": "SECONDARY_LOCAL_HISTORICAL_ATTRIBUTION_NOT_ORIGINAL_LETTERS"
+    },
+    "secondary_scholarly_chapter": {
+      "title_as_hosted": "Pane, dolci e festa",
+      "hosted_transcription_url": "https://diazilla.com/doc/376579/scarica-il-capitolo-in-pdf",
+      "displayed_pages": [
+        110,
+        111,
+        112
+      ],
+      "article_author": "NOT_CLEARED_FROM_HOSTED_METADATA",
+      "source_notes": [
+        "103 cites Pitrè, Feste patronali, pp. 456-459 for the local collector and novena",
+        "104 cites Pitrè, Feste patronali, p. 450 for Holy Family table description",
+        "105-107 cite Antonino Uccello, Pani e dolci di Sicilia, pp. 75-78 for later custom testimony"
+      ],
+      "source_note_kind": "SECONDARY_PITRE_CITATIONS_AND_LATER_ATTESTATION_LEADS_NOT_DIRECT_ORIGINAL_FOLIO_INSPECTION"
+    }
+  },
+  "source_independence_gate": {
+    "pitre_and_cannizzaro": "PITRE_DEPENDENT_ON_NAMED_LOCAL_COLLECTOR_FOR_SANTA_CROCE_NARRATIVE",
+    "cannizzaro_primary_letters": "UNLOCATED_NOT_READ",
+    "late_local_history": "ATTRIBUTION_CORROBORATION_NOT_AN_INDEPENDENT_1900_CUSTOM_WITNESS",
+    "antonino_uccello_1970s": "POTENTIAL_LATER_INDEPENDENT_RESEARCH_LEAD_DIRECT_ORIGINAL_BOOK_NOT_READ",
+    "guastella_19th_century": "POTENTIAL_OTHER_AUTHOR_CONTEXT_OR_LEAD_CONTENT_AND_DEPENDENCE_UNCHECKED",
+    "universality": "LOCAL_HISTORICAL_SICILY_NOT_UNIVERSAL",
+    "present_2026_observance": "NOT_VERIFIED"
+  },
+  "reclassified_exact_existing_source_ids": [
+    {
+      "id": "PIT1900-IT-034",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-034",
+      "action": "Distinguish local patronage attributed to Rosalia John Baptist and Joseph from strongest actual Joseph festivity",
+      "research_action_route": "HISTORICAL_LOCAL_PATRONAGE_CONTEXT",
+      "existing_original_source_json_pointer": "/records/33",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17038,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-035",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-035",
+      "action": "Observe a three-day Joseph festival with two initial market days and principal 19 March observance",
+      "research_action_route": "LOCAL_MARKET_DAY_AND_FIXED_FEAST_CONTEXT",
+      "existing_original_source_json_pointer": "/records/34",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17049,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-036",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-036",
+      "action": "Invite three especially poor residents to a votive household feast representing the Holy Family",
+      "research_action_route": "VOTIVE_FEAST_POOR_HOLY_FAMILY_GUESTS",
+      "existing_original_source_json_pointer": "/records/35",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17063,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-037",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-037",
+      "action": "Prepare enormous buccellati and vegetable pies for the three guests' table",
+      "research_action_route": "BUCCELLATI_AND_PIE_COMPONENT",
+      "existing_original_source_json_pointer": "/records/36",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17069,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-038",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-038",
+      "action": "Set an image of the Holy Family with lights and elaborate food display",
+      "research_action_route": "HOUSEHOLD_HOLY_FAMILY_IMAGE_AND_LIGHTS",
+      "existing_original_source_json_pointer": "/records/37",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17080,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-039",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-039",
+      "action": "Report warning that food may not be taken before the three guests' symbolic blessing",
+      "research_action_route": "REPORTED_BELIEF_NO_RITUAL_PRESCRIPTION",
+      "existing_original_source_json_pointer": "/records/38",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17084,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-040",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-040",
+      "action": "Costume three invited poor residents as Joseph Mary and Jesus",
+      "research_action_route": "DOMESTIC_COSTUMED_REPRESENTATION",
+      "existing_original_source_json_pointer": "/records/39",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17094,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-041",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-041",
+      "action": "Have the three invited guests first hear Mass and receive a special church blessing",
+      "research_action_route": "MASS_AND_PRIESTLY_BLESSING_SEPARATE",
+      "existing_original_source_json_pointer": "/records/40",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17099,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-042",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-042",
+      "action": "Host, as an element of vow fulfilment, follows the Holy Family guests barefoot",
+      "research_action_route": "BAREFOOT_VOWFUL_HOST_PERSON",
+      "existing_original_source_json_pointer": "/records/41",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17101,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-043",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-043",
+      "action": "Pretend to refuse shelter until the Joseph figure demands entry",
+      "research_action_route": "STAGED_HOSPITALITY_REFUSAL",
+      "existing_original_source_json_pointer": "/records/42",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17108,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-044",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-044",
+      "action": "The man representing Joseph gives a popular-formula domestic blessing as a staged gesture, not a priest's rite",
+      "research_action_route": "LAY_ROLE_PLAY_BLESSING_NOT_PRIESTLY",
+      "existing_original_source_json_pointer": "/records/43",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17114,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-045",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-045",
+      "action": "Serve the invited Holy Family guests a local maccu dish at the votive meal",
+      "research_action_route": "LOCAL_MACCU_FEAST_FOOD",
+      "existing_original_source_json_pointer": "/records/44",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17124,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-046",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-046",
+      "action": "Extend hospitality from the ceremonial guests to other poor visitors at the votive house",
+      "research_action_route": "EXTENDED_ALMSGIVING_HOSPITALITY",
+      "existing_original_source_json_pointer": "/records/45",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17137,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-047",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-047",
+      "action": "Gather donated wheat poultry bread and other goods for the festival auction",
+      "research_action_route": "PUBLIC_FESTIVAL_FUNDRAISING_MATERIAL",
+      "existing_original_source_json_pointer": "/records/46",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17143,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    },
+    {
+      "id": "PIT1900-IT-048",
+      "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-048",
+      "action": "Auction household donations beside the church for the saint's festival fund",
+      "research_action_route": "PUBLIC_FESTIVAL_AUCTION_NOT_FEAST_TABLE",
+      "existing_original_source_json_pointer": "/records/47",
+      "existing_original_source_file": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "original_ocr_line": 17149,
+      "same_compilation_witness_dependency": "CANNIZZARO_LOCAL_REPORT_PUBLISHED_BY_PITRE; NOT_EXTRA_PUBLISHED_WITNESS",
+      "cited_original_folio_per_action": "PENDING_DIRECT_PAGE_IMAGE_MATCH",
+      "source_passage_approval_for_current_practice": false,
+      "ritual_ministerial_authority_approved": false,
+      "indulgence_claim_verified": false
+    }
+  ],
+  "research_decisions": [
+    {
+      "id": "CAN-01",
+      "source_ids": [
+        "PIT1900-IT-036",
+        "PIT1900-IT-046"
+      ],
+      "edge": "POSSIBLE_LOCAL_HOSPITALITY_VARIANT",
+      "owner_candidate": "SJOS-001",
+      "status": "DESCRIPTION_LEVEL_ONLY"
+    },
+    {
+      "id": "CAN-02",
+      "source_ids": [
+        "PIT1900-IT-037",
+        "PIT1900-IT-038",
+        "PIT1900-IT-045"
+      ],
+      "edge": "COMPONENTS_OF_SANTA_CROCE_CENE_NOT_NEW_IDENTITIES",
+      "owner_candidate": "SJOS-001",
+      "status": "DESCRIPTION_LEVEL_ONLY"
+    },
+    {
+      "id": "CAN-03",
+      "source_ids": [
+        "PIT1900-IT-040",
+        "PIT1900-IT-043",
+        "PIT1900-IT-044"
+      ],
+      "edge": "STAGED_HOLY_FAMILY_GESTURE_NOT_LITURGICAL_BLESSING",
+      "owner_candidate": null,
+      "status": "NEGATIVE_RITUAL_ROLE_GATE"
+    },
+    {
+      "id": "CAN-04",
+      "source_ids": [
+        "PIT1900-IT-041"
+      ],
+      "edge": "CLERICAL_MASS_AND_BLESSING_MUST_BE_SEPARATELY_AUTHORIZED",
+      "owner_candidate": null,
+      "status": "RITUAL_AUTHORITY_HOLD"
+    },
+    {
+      "id": "CAN-05",
+      "source_ids": [
+        "PIT1900-IT-047",
+        "PIT1900-IT-048"
+      ],
+      "edge": "AUCTION_AND_FUNDRAISING_NOT_SAME_AS_FEEDING_POOR",
+      "owner_candidate": null,
+      "status": "SEPARATE_COMMUNITY_ACTION_GATE"
+    },
+    {
+      "id": "CAN-06",
+      "source_ids": [
+        "PIT1900-IT-039"
+      ],
+      "edge": "REPORTED_FOLK_BELIEF_NOT_ENDORSED_AS_CATHOLIC_REQUIREMENT",
+      "owner_candidate": null,
+      "status": "NEGATIVE_PUBLICATION_GATE"
+    }
+  ],
+  "counts": {
+    "previously_existing_pitre_source_observations_with_new_lineage_metadata": 15,
+    "new_source_observations_created": 0,
+    "independent_publications_proven_for_original_custom": 0,
+    "original_1900_folio_pages_freshly_verified": 0,
+    "new_identity_merges": 0,
+    "new_current_indulgence_claims": 0,
+    "new_calendar_publications": 0
+  },
+  "next_primary_checks": [
+    "Directly inspect original 1900 book p.450 and pp.456–459, map each of 15 OCR observations to page and paragraph",
+    "Locate or cite Cannizzaro's surviving letters, if any, before assigning first-hand witness status",
+    "Inspect original Antonino Uccello Pani e dolci di Sicilia pp.75–78 before treating as independent later attestation",
+    "Check sacred-representation / priestly blessing distinctions against the relevant approved ritual books, not descriptive folklore"
+  ],
+  "publication_allowed": false
+}
