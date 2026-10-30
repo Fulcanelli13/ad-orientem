@@ -1,4 +1,5 @@
 import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
+import { ensureLearnModule } from "../learn/lazy-module-registry.js";
 import { verifiedH4WeekColour } from "./today-h4-view.js";
 import { openH4ChoicesSheet,closeH4ChoicesSheet } from "./today-h4-change-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
@@ -495,7 +496,8 @@ export function createHomeOwner(win=globalThis){
       }
       // The source-owning bilingual Glossary opens the exact cited concept;
       // no generic Learn hub and no independent Home fact detail.
-      void Promise.resolve().then(()=>win?.AO_GLOSSARY_V1?.openEntry?.(entryId))
+      void Promise.resolve().then(()=>ensureLearnModule("learn.glossary",win))
+        .then(()=>win?.AO_GLOSSARY_V1?.open?.({entryId,origin:"context",trigger:dyk}))
         .then(opened=>{
           if(opened===true){clearRouteError();return;}
           showRouteError("home.did-you-know",dyk);
