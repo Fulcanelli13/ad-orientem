@@ -254,6 +254,32 @@ try{
     await h4.locator('[data-h4-option="afterMass"]').selectOption("thanksgiving");
     await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience?.after==="thanksgiving");
     await h4.screenshot({path:resolve(output,prefix+"-h4-change-light.png")});
+    await h4.locator("[data-h4-remember]").click();
+    await h4.waitForFunction(()=>{
+      const value=globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.mass?.todayChoices;
+      return value?.readerMode==="MISSAL"&&value?.readerLanguage==="fr"&&
+        value?.beforeMass==="prepare"&&value?.afterMass==="thanksgiving";
+    },null,{timeout:10000});
+    assert.match(await h4.locator("[data-h4-save-status]").innerText(),
+      /saved|enregistrés/i,"Remember must report a real Settings write");
+    // New page in the same browser context verifies persisted Settings defaults,
+    // not merely preflight state held by the original live tab.
+    const remembered=await context.newPage();
+    await remembered.goto("http://127.0.0.1:4381/index.html?aoTodayH4=1",
+      {waitUntil:"domcontentloaded",timeout:90000});
+    await remembered.waitForFunction(()=>Boolean(
+      globalThis.AO_R17_BROWSER_ENTRY?.installed&&globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()),
+      null,{timeout:30000});
+    const restored=await remembered.evaluate(()=>({
+      stored:globalThis.AO_SETTINGS_DONOR_V4359.snapshot().preferences.mass.todayChoices,
+      current:globalThis.AO_R17_BROWSER_ENTRY.status().fullMassPreflight,
+    }));
+    assert.equal(restored.stored.readerMode,"MISSAL",prefix+" remembered reader");
+    assert.equal(restored.current.readerMode,"MISSAL",prefix+" R17 must load remembered reader");
+    assert.equal(restored.current.experience.language,"fr",prefix+" remembered translation");
+    assert.equal(restored.current.experience.before,"prepare",prefix+" remembered preparation");
+    assert.equal(restored.current.experience.after,"thanksgiving",prefix+" remembered thanksgiving");
+    await remembered.close();
     await h4.locator(".aoH4SheetBottom [data-h4-sheet-close]").click();
     await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
     assert.match(await h4.locator(".aoH4Primary small").innerText(),/Missal|Missel/,
