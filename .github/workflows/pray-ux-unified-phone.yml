@@ -13,6 +13,9 @@ on:
       - "src/pray/prayer-reader-design-pilot.js"
       - "tests/pray-reader-design-pilot-phone.mjs"
       - "src/pray/prayer-design-pilot.js"
+      - "src/pray/prayer-mosaic-art-gates.js"
+      - "data/pray/prayer-discovery-release-gates-20261030.v1.json"
+      - "tests/pray-discovery-release-evidence.mjs"
       - "tests/pray-design-pilot-phone.mjs"
       - "src/pray/presentation-styles.js"
       - "src/pray/devotional-card-deck-styles.js"
@@ -45,7 +48,9 @@ jobs:
         run: node tests/pray-reader-design-pilot-phone.mjs
       - name: F07 Divine Mercy crown pilot and canonical step acceptance
         run: node tests/pray-chaplet-f07-phone.mjs
-      - name: Pilot Discovery and Angelus mobile visual acceptance
+      - name: Nine-door source evidence, bilingual search and photographic release gates
+        run: node tests/pray-discovery-release-evidence.mjs && node tests/pray-design-pilot-contract.mjs
+      - name: Default discovery and Angelus mobile visual acceptance
         run: node tests/pray-design-pilot-phone.mjs
       - name: Temporary route matrix and representative visual captures
         if: always()
