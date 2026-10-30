@@ -59,7 +59,7 @@ def commons_name(url):
     path=U.unquote(p.path)
     if "/wiki/File:" not in path:return ""
     return path.split("/wiki/File:",1)[1].replace("_"," ")
-def exact_candidate_urls(source):
+def exact_candidate_urls(source,title="",artist=""):
     urls=[]
     parts=U.urlsplit(source);host=(parts.hostname or "").lower()
     name=commons_name(source)
@@ -112,7 +112,14 @@ def exact_candidate_urls(source):
                         if not match:continue
                         link=U.urljoin(realurl,unescape(match.group(1)))
                         low=link.lower()
-                        if not re.search(r"logo|avatar|favicon|placeholder|sprite|default-image|logo-social",low):
+                        # Page social-card metadata is frequently unrelated to the
+                        # specified object (Christie's redirected to another lot).
+                        # No third-party/generic social image may masquerade as
+                        # an exact-source artwork photograph.
+                        tokens=[x.lower() for x in re.findall(r"[A-Za-z]{5,}",title+" "+artist)
+                                if x.lower() not in {"painting","saint","jesus","christ","master","school"}]
+                        if (tokens and any(t in U.unquote(low) for t in tokens) and
+                            not re.search(r"logo|avatar|favicon|placeholder|sprite|default-image|logo-social",low)):
                             urls.append(link)
         except Exception:pass
     return list(dict.fromkeys(u for u in urls if u.startswith("https://")))
@@ -127,7 +134,7 @@ def acquire(item):
     source=item.get("sourceUrl","")
     if not source:return None,{"reason":"NO_EXACT_PHOTO_SOURCE"}
     if source in cache:return cache[source],{"reason":"PREVIOUS_EMBED_EXACT_SOURCE"}
-    urls=exact_candidate_urls(source)
+    urls=exact_candidate_urls(source,item.get("title",""),item.get("artist",""))
     errors=[]
     for u in urls[:9]:
         try:
@@ -143,7 +150,8 @@ for g in groups:
         if not mem.get("preview","").startswith("data:image/"):
             missing.setdefault(mem.get("sourceUrl",""),[]).append(mem)
 print("MISSING ITEMS",sum(len(v) for v in missing.values()),"SOURCE_URLS",len(missing),flush=True)
-to_do=[{"sourceUrl":src} for src in missing if src]
+to_do=[{"sourceUrl":src,"title":items[0].get("title",""),
+         "artist":items[0].get("artist","")} for src,items in missing.items() if src]
 with ThreadPoolExecutor(max_workers=4) as pool:
     result=list(pool.map(acquire,to_do))
 by_url={row["sourceUrl"]:value for row,value in zip(to_do,result)}
