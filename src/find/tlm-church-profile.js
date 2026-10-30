@@ -227,6 +227,19 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 
 .aoTlmProfileSourceLead{margin:15px 0 4px;padding:10px 13px;border-left:2px solid #ceb27c;background:#1c2b3638;border-radius:0 9px 9px 0;font:500 12px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:#dfd5c2}
 @media(max-width:560px){.aoTlmProfileSourceLead{font-size:11px;padding:9px 10px}}
+/* Override the generic .aoFindSheet header's 2-column grid. Without this,
+ * a phone renders the church name as a narrow right-hand rail. */
+.aoFindSheet.aoTlmChurchProfile header.aoTlmProfileHeading{
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ grid-template-columns:none;gap:0;min-width:0;width:100%;box-sizing:border-box
+}
+.aoFindSheet.aoTlmChurchProfile header.aoTlmProfileHeading h2{
+ display:block;min-width:0;width:100%;max-width:100%;overflow-wrap:break-word;
+ word-break:normal;hyphens:auto
+}
+.aoFindSheet.aoTlmChurchProfile header.aoTlmProfileHeading .aoTlmProfileAffiliation{
+ box-sizing:border-box;max-width:100%;min-width:0
+}
 /* Editorial church-profile layout: photographic cover and distinct ministry
  * insignia, with text-first provenance and no unverified status inference. */
 .aoTlmChurchProfile{width:min(100%,920px);max-width:920px;max-height:min(94dvh,1000px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;padding:0 21px 28px;border-radius:20px;box-shadow:0 24px 85px #04080ca0}
