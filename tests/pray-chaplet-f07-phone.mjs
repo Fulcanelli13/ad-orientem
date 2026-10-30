@@ -98,6 +98,21 @@ try{
    await page.locator(base+'[data-p435930-mercy-again]').click();
    assert.equal(await crown.getAttribute('data-position'),'0');
    assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
+   // Optional closing is a 63rd source event, not a default prayer.
+   await pilot.locator('details[data-ao-mercy-options] > summary').click();
+   await pilot.locator('[data-p435930-mercy-closing]').click();
+   assert.equal(await crown.getAttribute('data-total'),'63');
+   assert.equal(await pilot.locator('.aoF07MercyChapterChips button').count(),8,
+     "Optional source conclusion must have its own eighth chapter");
+   await pilot.locator('[data-p435930-mercy-chapter="62"]').click();
+   assert.equal(await crown.getAttribute('data-position'),'62');
+   assert.equal(await pilot.locator('[data-p435930-mercy-finish]').count(),1);
+   assert.match(await pilot.locator('.aoMercyLine.aoMercyPrayer').innerText(),/Eternal God, in whom mercy is endless/);
+   await pilot.locator('[data-p435930-mercy-finish]').click();
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),1);
+   await page.locator(base+'[data-p435930-mercy-again]').click();
+   assert.equal(await crown.getAttribute('data-total'),'63');
+   assert.equal(await crown.getAttribute('data-position'),'0');
    assert.deepEqual(errors,[],"No uncaught F07 pilot errors");
    console.log("PASS F07 "+width+"px: source 62 events, 55-bead crown, decade jump, full prayer, no overflow");
   }finally{await page.close()}
