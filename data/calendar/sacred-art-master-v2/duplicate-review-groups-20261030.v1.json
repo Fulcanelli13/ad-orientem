@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_DUPLICATE_GROUP_INDEX_V1",
-  "snapshot": "0d2ec298a36592",
+  "snapshot": "71537a018e39e7",
   "groups": [
     {
       "id": "DUP-b4aadabdb3bde4",
@@ -45,9 +45,9 @@
       ]
     },
     {
-      "id": "DUP-9c02bfa388508a",
+      "id": "DUP-46d8aac8932d14",
       "confidence": "EXACT SOURCE",
-      "reason": "Identical exact source page; choose the preferred catalogue record. Both source histories remain.",
+      "reason": "Identical exact source page; choose the preferred catalogue record. Both source histories remain. All linked master records are included in this one comparison.",
       "members": [
         {
           "id": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
@@ -62,6 +62,13 @@
           "artist": "Philippe de Champaigne",
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
           "sourceFingerprint": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6"
+        },
+        {
+          "id": "PRAYER::angelus--primary",
+          "title": "The Annunciation",
+          "artist": "Philippe de Champaigne",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "sourceFingerprint": ""
         }
       ]
     },
@@ -167,34 +174,6 @@
           "artist": "Domenichino",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary%2C_c._1610_(Getty_Center).jpg",
           "sourceFingerprint": "1ddfbfa501610a466d102977f4e3487e50791d66"
-        }
-      ]
-    },
-    {
-      "id": "DUP-46d8aac8932d14",
-      "confidence": "MASTER — EXACT SOURCE",
-      "reason": "Other active master records share an exact source page. No approval or merge has been inferred.",
-      "members": [
-        {
-          "id": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
-          "title": "The Annunciation",
-          "artist": "Philippe de Champaigne",
-          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
-          "sourceFingerprint": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6"
-        },
-        {
-          "id": "CANONICAL::met-438724",
-          "title": "The Annunciation",
-          "artist": "Philippe de Champaigne",
-          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
-          "sourceFingerprint": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6"
-        },
-        {
-          "id": "PRAYER::angelus--primary",
-          "title": "The Annunciation",
-          "artist": "Philippe de Champaigne",
-          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
-          "sourceFingerprint": ""
         }
       ]
     },
