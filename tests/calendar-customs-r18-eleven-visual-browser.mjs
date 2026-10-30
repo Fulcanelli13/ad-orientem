@@ -73,6 +73,16 @@ try{
    assert.equal(await cal.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),publishedCount);
    assert.equal(await reviewer.locator('[data-cal-custom-item]').count(),0);
    assert.equal(await reviewer.getAttribute("data-cal-r18-published-count"),String(publishedCount));
+   const originalSix=cal.locator('[data-cal-r18-six-supplement]');
+   await originalSix.waitFor({state:"visible",timeout:10000});
+   const sourceIds=["PATR-002","XMAS-002","XMAS-003","SBAR-001","XMAS-004","EPIP-004"];
+   const sourceRemaining=sourceIds.filter(id=>!calendarCustomArticleIds().includes(id)).length;
+   assert.equal(await originalSix.locator('[data-cal-r18-six-review-key]').count(),sourceRemaining);
+   assert.equal(await originalSix.getAttribute("data-cal-r18-six-count"),String(sourceRemaining));
+   assert.equal(await originalSix.locator('a[href^="https://"]').count(),12);
+   assert.equal(await originalSix.locator('[data-cal-custom-item]').count(),0);
+   assert.equal(await originalSix.locator('[data-cal-custom-id]').count(),0);
+
    if(publishedCount===36){
      assert.equal(await reviewer.locator('[data-cal-r18-eleven-key="CUSTOMS-R18-14"]').count(),0,
        "PENT-001 cannot appear a second time as unpublished R18-14");
@@ -139,6 +149,17 @@ try{
    }
    assert.equal(await page.locator('[data-cal-r18-eleven-editorial-preview]').count(),1,
      "Reviewer should survive Calendar week preparation");
+   const olderFirst=originalSix.locator('[data-cal-r18-six-review-key="PATR-002"]');
+   if(await olderFirst.getAttribute("open")===null)
+     await olderFirst.locator(":scope > summary").click();
+   await olderFirst.locator(".aoCalCustomArticleContent").waitFor({state:"visible",timeout:10000});
+   assert.equal(await olderFirst.locator(".aoCalR18ElevenLanguage").count(),2);
+   await olderFirst.evaluate(el=>{
+      el.scrollIntoView({block:"start",behavior:"instant"});
+      window.scrollBy({top:-82,behavior:"instant"});
+   });
+   await page.screenshot({path:resolve(output,"editorial-original-six-"+tag+".png"),
+       fullPage:false,animations:"disabled",timeout:25000});
    results.push({tag,public_customs:publishedCount,review_articles:remainingReviewCount,
      language_columns:2,overflow:rects.overflow,screenshot:file});
    assert.equal(errors.length,0,"Browser errors: "+errors.join(" | "));
@@ -157,6 +178,8 @@ try{
  await negative.locator(".aoTodayV2Tabs [data-home-calendar-today]").click();
  await negative.locator('[data-home-calendar-view="day"]').first().click();
  await negative.locator(".aoCalCustomCatalogue").waitFor({state:"attached",timeout:45000});
+ assert.equal(await negative.locator('[data-cal-r18-six-supplement]').count(),0,
+   "The six old review dossiers must also be absent by default");
  assert.equal(await negative.locator('[data-cal-r18-eleven-editorial-preview]').count(),0,
    "Without the explicit query param, editorial copy must not enter the Calendar");
  await negative.close();
