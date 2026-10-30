@@ -143,6 +143,12 @@ const requiem=buildScholaMusicItinerary({...args,
 for(const id of ["GLORIA","GLORIA_INTONATION","CREDO",
  "CREDO_INTONATION","BLESSING"])assert.ok(!requiem.events.some(e=>e.id===id));
 assert.ok(requiem.events.some(e=>e.id==="AGNUS_DEI"));
+const explicitRequiem=buildScholaMusicItinerary({...args,
+ resolvedMass:{actualCelebration:{type:"REQUIEM"},overlays:[]}});
+for(const id of ["GLORIA","CREDO","BLESSING"])
+ assert.ok(!explicitRequiem.events.some(e=>e.id===id));
+assert.equal(explicitRequiem.events.find(e=>e.id==="OFFERTORY_ORGAN_OPTION")
+ .organPermission.status,"SOLO_FORBIDDEN");
 // An explicit funeral absolution suppresses the Mass's Last Gospel;
 // it must not leave a fictional Last Gospel or recessional organ event.
 const funeral=buildScholaMusicItinerary({...args,
