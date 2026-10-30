@@ -79,6 +79,11 @@ const F07_STYLE=`
 #aoPray435930 .aoF07MercyChapterChips button{flex:0 0 auto;height:29px;min-width:34px;padding:0 8px;border-radius:999px;border:1px solid var(--border,rgba(210,185,144,.3));background:transparent;color:var(--muted,#bab2a3);font:500 11px/1 var(--ao-font-ui,system-ui,sans-serif)}
 #aoPray435930 .aoF07MercyChapterChips button[aria-current="step"]{border-color:var(--liturgical,#cbb28b);color:var(--text,#eee);background:rgba(210,185,144,.16)}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyPhases{display:none}
+/* The 55 source beads and seven/eight section stops already give position.
+   Keep the canonical progress owner in the original reader, but don't show
+   a second horizontal strip in this opt-in mobile projection. */
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadNavigation>.aoDevoProgress{display:none!important}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadNavigation{margin:0!important;padding:0!important}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoSequenceTimeline{display:none}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine{transition:opacity .12s ease;opacity:.34;filter:none}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine.aoMercyPrayer{opacity:1}
