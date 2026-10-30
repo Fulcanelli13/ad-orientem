@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {h4Enabled,h4HomeView,verifiedH4WeekColour} from "../src/home/today-h4-view.js";
+import {h4ChoicesMarkup} from "../src/home/today-h4-change-sheet.js";
 assert.equal(h4Enabled({location:{search:""}}),false,"H4 must not replace production until approved");
 assert.equal(h4Enabled({location:{search:"?aoTodayH4=1"}}),true,"H4 preview opt-in missing");
 const model={
@@ -30,6 +31,19 @@ assert.equal(verifiedH4WeekColour({...resolved,colourPlan:{massColor:"unknown"},
 assert.equal(verifiedH4WeekColour({...resolved,colourPlan:{massColor:"White"}},"2026-10-30"),"#e9e0c9","Use canonical Mass colour, not observed seasonal guess");
 assert.match(html,/data-home-h4-begin/);
 assert.match(html,/data-home-h4-change/);
+const modal=h4ChoicesMarkup({chosenForm:"SOLEMN",formChangeAllowed:true,readerMode:"MISSAL",
+  experience:{language:"fr",before:"prepare",after:"thanksgiving"}},{language:"en"});
+assert.equal((modal.match(/data-h4-option=/g)||[]).length,5,"Mass, ceremony, reader, language and prayer choices use one sheet");
+assert.match(modal,/data-h4-different-mass/,"Other Mass must use canonical resolver");
+assert.match(modal,/value="SOLEMN" selected/,"Source preflight ceremony must populate sheet");
+assert.match(modal,/value="MISSAL" selected/,"Source preflight reader must populate sheet");
+assert.match(modal,/value="fr" selected/,"Source preflight language must populate sheet");
+assert.doesNotMatch(modal,/remember these choices/i,"Do not advertise unsupported full-form persistence");
+const modalFr=h4ChoicesMarkup({chosenForm:"LOW",formChangeAllowed:false,readerMode:"LIVE",
+  experience:{language:"fr",before:"none",after:"full"}},{language:"fr"});
+assert.match(modalFr,/Une autre messe est célébrée/);
+assert.match(modalFr,/data-h4-option="form" disabled/,"Good Friday must block illicit form change");
+
 assert.match(html,/data-home-h4-readings/);
 assert.match(html,/data-home-cu-route="pray.angelus_regina"/);
 assert.match(html,/Next · 18:00/);
