@@ -88,7 +88,12 @@ const blessing=resolve({view:"benediction",step:4});
 assert.equal(blessing.fit,"EXACT_BLESSING_ART_MISSING");
 assert.equal(resolve({view:"rosary",set:"joyful",mystery:null}).slot,"COV-pray.rosary");
 assert.equal(resolve({view:"prayerOnly",prayerId:"litany_loreto_current"}).slot,"COV-litany_loreto_1962");
-assert.equal(resolve({owner:"traditional",route:"pray.holy_name_litany"}).slot,null);
+const holyName=resolve({owner:"traditional",route:"pray.holy_name_litany"});
+assert.equal(holyName.slot,"COV-devotion_consecration_christ_king");
+assert.equal(holyName.fit,"APPROVED_CHRIST_PORTRAIT_CONTEXTUAL_REUSE_NOT_EXACT_HOLY_NAME_DEPICTION");
+assert.equal(holyName.publicationReady,false);
+assert.ok(slots.get(holyName.slot).works.some(w=>w.eligible&&w.editorial==="USER_APPROVED"&&w.title==="Salvator Mundi"));
+add("traditional-holy-name",holyName,"CONTEXTUAL_APPROVED_CHRIST_PORTRAIT_REUSE");
 assert.ok(!editorial.slots.find(s=>s.slot_id==="COV-novena.st_therese").works.some(w=>w.eligible&&/USER_APPROVED|USER_FINAL_LOCK/.test(w.editorial)));
 const chaplets=["pray.divine_mercy","pray.five_wounds","pray.precious_blood","pray.little_crown","prayer.seven_sorrows_chaplet"];
 const absentModularRoutes=chaplets.filter(id=>![runtime,traditionalRuntime,novenaRuntime,lazyRegistry].some(src=>src.includes("'"+id+"'")||src.includes('"'+id+'"')));
@@ -115,7 +120,8 @@ const output={
  blocked:{
   exactBenedictionBlessing:true,
   saintThereseApprovedPortrait:false,
-  holyNameLitanyArtworkSlotMissing:true,
+  holyNameLitanyArtworkSlotMissing:false,
+  holyNameLitanyArtworkContextualOnly:true,
   chapletRoutesNotInModularOwners:absentModularRoutes,
   dynamicStagesNotExhaustivelyEnumerated:dynamicRoutes,
   rightsAndNativePhotoQualityCertified:false,
