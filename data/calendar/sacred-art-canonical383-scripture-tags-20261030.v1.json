@@ -25,51 +25,56 @@
   },
   "counts": {
     "artworks": 383,
-    "with_at_least_one_scripture_reference": 374,
+    "with_at_least_one_scripture_reference": 381,
     "with_direct_scene_tag": 150,
-    "without_reference": 9,
-    "scripture_relations": 448,
+    "without_reference": 2,
+    "scripture_relations": 455,
     "by_status": {
-      "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION": 220,
+      "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION": 226,
       "DIRECT_SCENE_TITLE_MATCH_REQUIRES_IMAGE_QA": 150,
-      "UNMATCHED_NEEDS_RESEARCH": 9,
-      "AMBIGUOUS_SCENE_REQUIRES_IMAGE_QA": 4
+      "AMBIGUOUS_SCENE_REQUIRES_IMAGE_QA": 5,
+      "UNMATCHED_NEEDS_RESEARCH": 2
     },
     "by_relationship": {
-      "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT": 121,
+      "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT": 126,
       "DEVOTIONAL_COMPOSITION_CONTEXT": 24,
-      "DIRECT_BIBLICAL_SCENE": 157,
+      "DIRECT_BIBLICAL_SCENE": 156,
       "DOCTRINAL_ICONOGRAPHY_NOT_LITERAL_SCENE": 4,
       "DOCTRINAL_CONTEXT_NOT_LITERAL_SCENE": 4,
-      "BIBLICAL_PERSON_CONTEXT": 65,
+      "BIBLICAL_PERSON_CONTEXT": 64,
       "BIBLICAL_VISION_OR_ICONOGRAPHY": 2,
       "DEVOTIONAL_DOCTRINAL_NOT_LITERAL_SCENE": 3,
       "TYPOLOGICAL_DOCTRINAL_NOT_LITERAL_SCENE": 27,
       "THEOLOGICAL_INTERPRETATION_NOT_LITERAL_NARRATIVE": 1,
       "DOCTRINAL_VISION": 4,
       "PARALLEL_GOSPEL_EVENT": 2,
-      "EVENT_VARIANT_REQUIRES_IMAGE_REVIEW": 4,
+      "EVENT_VARIANT_REQUIRES_IMAGE_REVIEW": 5,
+      "POST_BIBLICAL_DEVOTIONAL_THEME": 4,
       "POST_BIBLICAL_MARTYRDOM_THEME": 4,
       "POST_BIBLICAL_LITURGICAL_THEME": 2,
-      "POST_BIBLICAL_DEVOTIONAL_THEME": 3,
       "TRADITIONAL_DEVOTIONAL_ASSOCIATION_NOT_PERSON_IDENTITY": 3,
       "TRADITIONAL_STATION_WITH_BIBLICAL_MEDITATION": 5,
       "PASSION_EVENT_INFERRED_FROM_POST_RESURRECTION_TEXT": 1,
       "RELATED_BIBLICAL_EVENT": 4,
+      "ALTERNATIVE_EVENT_UNVERIFIED": 1,
       "GENERIC_BIBLICAL_NARRATIVE": 1,
       "EUCHARISTIC_DEVOTIONAL_CONTEXT_NOT_HISTORICAL_SCENE": 1,
       "DOCTRINAL_DEVOTIONAL_NOT_LITERAL_SCENE": 2,
       "ROSARY_DEVOTIONAL_CONTEXT_NOT_SINGLE_SCENE": 1,
-      "GOSPEL_EVENT_NOT_MOMENT_OF_RISING": 2,
+      "GOSPEL_EVENT_NOT_MOMENT_OF_RISING": 3,
       "GENERIC_DEVOTIONAL_CONTEXT": 1
     },
     "flags": {
       "NO_SPECIFIC_BIBLICAL_EVENT": 47,
       "DOCTRINAL_SUBJECT_NOT_BIBLICAL_NARRATIVE": 16,
-      "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG": 9,
       "IMAGE_REVIEW_NEEDED_TO_DISAMBIGUATE_EVENT": 4,
+      "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG": 2,
+      "SOURCE_TITLE_INSUFFICIENT_FOR_PERSON_OR_SCENE_IDENTIFICATION": 2,
       "STATION_TRADITION_NOT_EXPLICIT_GOSPEL_SCENE": 5,
-      "HISTORICAL_ART_EDITORIAL_LOCK_PRESERVED": 10
+      "TWO_DISTINCT_FEEDINGS_MUST_NOT_BE_CONFLATED": 1,
+      "HISTORICAL_ART_EDITORIAL_LOCK_PRESERVED": 10,
+      "COMPOSITE_SCENES_REQUIRE_INDIVIDUAL_CROPS_OR_LABELS": 1,
+      "COMPOSITION_MIXES_BIBLICAL_AND_POST_BIBLICAL_ELEMENTS": 2
     }
   },
   "records": [
@@ -630,13 +635,6 @@
           "reference": "Luke 2:39–40",
           "relationship": "DEVOTIONAL_COMPOSITION_CONTEXT",
           "event_or_theme_key": "holy-family-anne",
-          "evidence_basis": "TITLE_DERIVED_EXPLICIT_OR_THEME",
-          "editorial_note": null
-        },
-        {
-          "reference": "Luke 2:39–40",
-          "relationship": "DEVOTIONAL_COMPOSITION_CONTEXT",
-          "event_or_theme_key": "holy-family",
           "evidence_basis": "TITLE_DERIVED_EXPLICIT_OR_THEME",
           "editorial_note": null
         }
@@ -2179,14 +2177,20 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "2 Timothy 4:2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "catherine-siena-teaching",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Saint Catherine of Siena identified in legacy image filename; contextual only"
+        }
+      ],
       "subject_tags": [
         "SOURCE:SUBJECT_REVIEW_REQUIRED"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -2227,14 +2231,20 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Mark 1:35",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "francis-sales-prayer",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Saint Francis de Sales in the desert; solitude/prayer theme, not Gospel event"
+        }
+      ],
       "subject_tags": [
         "SOURCE:SUBJECT_REVIEW_REQUIRED"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -2277,14 +2287,20 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "2 Timothy 4:2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "athanasius-teaching",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Athanasius identified by historical file title; teaching theme"
+        }
+      ],
       "subject_tags": [
         "SOURCE:SUBJECT_REVIEW_REQUIRED"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -2297,14 +2313,20 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Ecclesiasticus 39:1–5",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "albertus-magnus-scholarship",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "St Albert the Great; scholarly saint theme"
+        }
+      ],
       "subject_tags": [
         "SOURCE:SUBJECT_REVIEW_REQUIRED"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -2409,7 +2431,8 @@
       ],
       "match_status": "UNMATCHED_NEEDS_RESEARCH",
       "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
+        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG",
+        "SOURCE_TITLE_INSUFFICIENT_FOR_PERSON_OR_SCENE_IDENTIFICATION"
       ],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
@@ -2913,14 +2936,20 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "John 19:34",
+          "relationship": "POST_BIBLICAL_DEVOTIONAL_THEME",
+          "event_or_theme_key": "margaret-mary-sacred-heart",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Post-biblical apparition of Our Lord to St Margaret Mary; Sacred Heart scriptural foundation, not depicted Gospel scene"
+        }
+      ],
       "subject_tags": [
         "SOURCE:SUBJECT_REVIEW_REQUIRED"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -3303,13 +3332,6 @@
           "reference": "John 2:1–11",
           "relationship": "DIRECT_BIBLICAL_SCENE",
           "event_or_theme_key": "wedding-at-cana",
-          "evidence_basis": "TITLE_DERIVED_EXPLICIT_OR_THEME",
-          "editorial_note": null
-        },
-        {
-          "reference": "John 2:1–11",
-          "relationship": "DIRECT_BIBLICAL_SCENE",
-          "event_or_theme_key": "cana",
           "evidence_basis": "TITLE_DERIVED_EXPLICIT_OR_THEME",
           "editorial_note": null
         }
@@ -5625,13 +5647,30 @@
       "source_subject": "gospel_life",
       "editorial_state_as_found": "APPROVED_LOCKED",
       "source_page_as_found": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
-      "scripture_links": [],
-      "subject_tags": [
-        "BIBLE:GOSPEL_LIFE"
+      "scripture_links": [
+        {
+          "reference": "Matthew 14:13–21",
+          "relationship": "EVENT_VARIANT_REQUIRES_IMAGE_REVIEW",
+          "event_or_theme_key": "feeding-five-thousand",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Verify whether the artwork represents the feeding of five thousand rather than four thousand"
+        },
+        {
+          "reference": "Mark 8:1–9",
+          "relationship": "ALTERNATIVE_EVENT_UNVERIFIED",
+          "event_or_theme_key": "feeding-four-thousand",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Alternative narrative; not interchangeable with Matthew 14:13–21"
+        }
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
+      "subject_tags": [
+        "BIBLE:GOSPEL_LIFE",
+        "BIBLE:GOSPEL_LIFE",
+        "SUBJECT:FEEDING_OF_MULTITUDE_UNRESOLVED"
+      ],
+      "match_status": "AMBIGUOUS_SCENE_REQUIRES_IMAGE_QA",
       "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
+        "TWO_DISTINCT_FEEDINGS_MUST_NOT_BE_CONFLATED"
       ],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
@@ -6804,13 +6843,6 @@
           "event_or_theme_key": "wedding-at-cana",
           "evidence_basis": "TITLE_DERIVED_EXPLICIT_OR_THEME",
           "editorial_note": null
-        },
-        {
-          "reference": "John 2:1–11",
-          "relationship": "DIRECT_BIBLICAL_SCENE",
-          "event_or_theme_key": "cana",
-          "evidence_basis": "TITLE_DERIVED_EXPLICIT_OR_THEME",
-          "editorial_note": null
         }
       ],
       "subject_tags": [
@@ -7407,6 +7439,20 @@
           "event_or_theme_key": "crucifixion-christ",
           "evidence_basis": "TITLE_DERIVED_EXPLICIT_OR_THEME",
           "editorial_note": null
+        },
+        {
+          "reference": "Matthew 28:1–10",
+          "relationship": "GOSPEL_EVENT_NOT_MOMENT_OF_RISING",
+          "event_or_theme_key": "resurrection",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "One component of multi-scene composition"
+        },
+        {
+          "reference": "Luke 24:13–35",
+          "relationship": "DIRECT_BIBLICAL_SCENE",
+          "event_or_theme_key": "emmaus",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Pilgrims of Emmaus component of multi-scene composition"
         }
       ],
       "subject_tags": [
@@ -7415,7 +7461,9 @@
         "COMPOSITE_OR_MULTIPANEL_REVIEW"
       ],
       "match_status": "DIRECT_SCENE_TITLE_MATCH_REQUIRES_IMAGE_QA",
-      "review_flags": [],
+      "review_flags": [
+        "COMPOSITE_SCENES_REQUIRE_INDIVIDUAL_CROPS_OR_LABELS"
+      ],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -8348,7 +8396,9 @@
         "PERSON:SAINT_OR_APOSTLE"
       ],
       "match_status": "DIRECT_SCENE_TITLE_MATCH_REQUIRES_IMAGE_QA",
-      "review_flags": [],
+      "review_flags": [
+        "COMPOSITION_MIXES_BIBLICAL_AND_POST_BIBLICAL_ELEMENTS"
+      ],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -8428,7 +8478,9 @@
         "PERSON:SAINT_OR_APOSTLE"
       ],
       "match_status": "DIRECT_SCENE_TITLE_MATCH_REQUIRES_IMAGE_QA",
-      "review_flags": [],
+      "review_flags": [
+        "COMPOSITION_MIXES_BIBLICAL_AND_POST_BIBLICAL_ELEMENTS"
+      ],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -8486,6 +8538,13 @@
           "event_or_theme_key": "person-john-baptist",
           "evidence_basis": "PERSON_IDENTIFIED_BY_TITLE",
           "editorial_note": "Portrait or visionary depiction; passage does not assert portrayed episode"
+        },
+        {
+          "reference": "Isaias 53:3–5",
+          "relationship": "DEVOTIONAL_COMPOSITION_CONTEXT",
+          "event_or_theme_key": "man-of-sorrows",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Reverse of composite image: Man of Sorrows typology"
         }
       ],
       "subject_tags": [
@@ -9004,13 +9063,6 @@
           "event_or_theme_key": "person-john-baptist",
           "evidence_basis": "PERSON_IDENTIFIED_BY_TITLE",
           "editorial_note": "Portrait or visionary depiction; passage does not assert portrayed episode"
-        },
-        {
-          "reference": "Matthew 3:1–6",
-          "relationship": "BIBLICAL_PERSON_CONTEXT",
-          "event_or_theme_key": "person-john-baptist",
-          "evidence_basis": "PERSON_IDENTIFIED_BY_TITLE",
-          "editorial_note": null
         }
       ],
       "subject_tags": [
@@ -9352,7 +9404,8 @@
       ],
       "match_status": "UNMATCHED_NEEDS_RESEARCH",
       "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
+        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG",
+        "SOURCE_TITLE_INSUFFICIENT_FOR_PERSON_OR_SCENE_IDENTIFICATION"
       ],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
@@ -10135,14 +10188,20 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 10:8",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "healing-miracle",
+          "evidence_basis": "MANUAL_EDITORIAL_TITLE_TRIAGE",
+          "editorial_note": "Historical Miracle des Ardents, not a specific Gospel miracle; title and provenance should be checked"
+        }
+      ],
       "subject_tags": [
         "SOURCE:SUBJECT_REVIEW_REQUIRED"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
@@ -11221,5 +11280,21 @@
       "artwork_approval_changed": false,
       "production_release_changed": false
     }
-  ]
+  ],
+  "quality_audit": {
+    "date": "2026-10-30",
+    "actions": [
+      "Named title-derived contextual links added to post-biblical saints and devotions, without claiming events occur in Scripture",
+      "Both feedings of the multitude kept distinct; Lanfranco work flagged for visual disambiguation",
+      "Multiple distinct components added to composite Passion/Resurrection/Emmaus work",
+      "Redundant literal duplicate citation relationships collapsed",
+      "Two legacy-image records lacking subjects remain untagged rather than fabricating Bible references"
+    ],
+    "untagged_artwork_ids": [
+      "C32:guidoreni042jpg",
+      "C34:franciscodezurbaran046jpg"
+    ],
+    "calendar_assignments_created": 0,
+    "artwork_approval_changes": 0
+  }
 }
