@@ -29,6 +29,18 @@ The Saint Peter fishing-festival case was corrected in the 132 source ledger and
 
 **Next:** review the remaining unpaired source-to-owner action evidence across Weiser/Pitrè/regional inventories; explicitly determine local variance vs genuinely distinct historical customs; obtain remaining original indulgence instruments and map concessions to exactly described indulgenced works. Maintain publication freeze, zero cost and draft PR #1723.
 
+## 30 October — St Joseph regional identity cohort and false-match repair
+
+The 79-case reconciliation board contains an explicit **erratum on CC3WORK-REL-041**: McLoughlin's Easter spice-ring cake around a family candle is **not** Stokes's transport of Easter Vigil blessed fire by lantern. This is now a **negative comparison**, not a same-core match. The original two source observations remain intact. The caseboard still has **79 review units** and authorizes **zero merges**.
+
+The [Pitrè St Joseph cross-town research ledger](./customs-ultra-master-v2-pitre-st-joseph-cross-town-identity-20261030.v1.json) now makes **43 existing 1900 Pitrè source actions** reviewable under **seven distinct action/role families**: poor-person hospitality at a household table; table food and prayers; staged Holy Family shelter scenes; bread distribution and civic fundraising; processions/Mass/clerical roles; local historical dates; and beliefs or gestures not endorsed as devotional instructions.
+
+Four described-place accounts of poor-person hospitality (Ribera, Canicattini, Santa Croce Camerina and Pachino) can be considered **possible local variants** of the existing `SJOS-001` St Joseph table owner, not four author-independent witnesses. The comparative gates also explicitly distinguish Weiser 1956's generic suggested home feast, Weiser's fritelli/festival-bread research group and Weiser's pilgrimage/lamb-meal research group. Neither similar bread labels nor a common feast imply identical historical practices. The source review **does not** newly inspect printed facsimile pages, prove ongoing local observance, approve regional liturgical rubrics, or verify any indulgence.
+
+**Accounting:** the 43 source rows are a *subset* of the already indexed 3,295 evidence-only observations, not additional observations, newly certified unique Customs or 43 new dedup board cases. The existing **36** published Customs, 465-row register, 3,703 source observation index, and historical indulgence holds remain unchanged. Original page/line identifiers and negative relationships are preserved. The updated identity test checks all 43 source pointers and prohibits publication, merging and grant inference.
+
+**Next identity focus:** compare source-original Pitrè folios and Weiser passages on St Joseph's table, disentangle pageant versus sacramental act and charity versus local fundraiser; subsequently apply the same actor/object/date/region gate to other Sicilian and regional feast complexes. Do not claim separate source witnesses merely because Pitrè names several towns.
+
 ## Existing research is not being discarded
 
 The authoritative corpus remains at:
