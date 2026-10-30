@@ -18,28 +18,26 @@ This is an **execution pipeline for existing canonical physical places**, not an
 5. **Evidence and editorial gates:** screen each candidate for correct physical building, correct church/site (not an adjacent chapel), photographic subjects and original 100%-pixel quality, architecture, obstructions, framing, image composition, author and license. The high-volume batch is metadata-only; shortlisted originals may be acquired later through a bounded, rate-compliant, hash-verified process. Never infer the building solely from 100 m proximity.
 6. **Publication:** preserve original checksum, photographer, source file page, exact license URL, changes and derivative SHA256; make a source-derived production WebP at suitable original-native resolution. Link to the exact canonical Place, existing Directory venue only where confirmed. Use existing approved media registries, bilingual credits and full-frame rendering. Only after an image has passed those gates may it become public.
 
-**No paid service, photographer contact, permission solicitations, image scraping, auto-publication, or expiring Action artifacts as the sole archive.** Source metadata from manually dispatched batches is committed to `research/canonical-place-photo-candidates`, retaining stable canonical IDs. Branch retention is controlled by the repository; externally supplied originals and approved derivatives require durable free archival storage within provider limits.
+**No paid service, photographer contact, permission solicitations, image scraping, auto-publication, or expiring Action artifacts as the sole archive.** Repository governance deliberately prohibits GitHub Actions from writing to branches. Run the acquisition script in a reviewed worktree; immediately commit source metadata and provenance to `research/canonical-place-photo-candidates` through a normal authenticated GitHub commit/PR, not an ephemeral Action download. Approved derivatives require durable free archival storage within provider limits.
 
-## Launch a batch
+## Execute 50–100 canonical Places per metadata batch
 
-Repository **Actions → Directory canonical Places Wikidata Commons Openverse photo intake → Run workflow**:
+Use the existing CLI from a **reviewed local/Work checkout** of the repository, on a dedicated research branch. It writes research JSON directly to the worktree, not to an expiring GitHub Actions artifact. The read-only CI job checks both old R49 and new canonical-source contracts.
 
-- `wave=exterior`, `offset=0`, `limit=50`: first sorted 50 canonical Places
-- Repeat offsets `50,100,150,…,500` with the final batch `limit=30` (assuming the source remains at 530 records)
-- Run `wave=interior` only for Places that need interior/altar galleries, with the same stable ID-driven screen.
-- Each run bounds requests and records which venues had errors, missing results, existing eligible Commons photos or exhausted Openverse quotas. HTTP 429 and API failures are explicit errors, **not negative photo evidence**.
-
-Example local command using the existing tool, without changing production:
+Example:
 
 ```bash
+mkdir -p data/directory/research/canonical-place-photo-candidates
 python tools/directory/discover-open-place-media.py \
  --source data/geography/seed-registry.v1.json \
  --offset 0 --limit 50 --wave exterior \
  --openverse-budget 10 --openverse-per-venue 1 \
- --output /tmp/canonical-place-photos-0-50.json
+ --output data/directory/research/canonical-place-photo-candidates/canonical-exterior-0-50.json
 ```
 
-The job's persisted candidate JSON remains `RESEARCH_ONLY_NEVER_APP_VISIBLE` with `image_downloads: 0` and `publications: 0`. These values must not be described as released photographs.
+Repeat `--offset 50,100,150,…,500`, using `--limit 30` for the final 530-place batch; refresh the sorted Place manifest if the canonical registry changes. Use `--wave interior` for the second pass only where relevant. Review the API errors and licence/identity holds, then preserve metadata through the normal GitHub commit/PR process; **do not delete the source research branch** until its records are merged or archived permanently.
+
+This method retains source JSON, avoids expiring transport artifacts and obeys repository `contents: read` workflow governance. The candidate JSON remains `RESEARCH_ONLY_NEVER_APP_VISIBLE` with `image_downloads: 0` and `publications: 0`. Bulk metadata is not an approved photo release.
 
 ## Workflows already in the repository that this consolidates
 
