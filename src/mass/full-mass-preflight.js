@@ -61,6 +61,7 @@ export function mountFullMassPreflight({
   getResolvedMass,
   getDefaultForm=()=> "sung",
   getDefaultReaderMode=()=> "LIVE",
+  getDefaultExperience=()=>null,
   language=()=> "en",
   getCelebrationApi=()=>globalThis.AO_CELEBRATION_API,
   onBeforeCategoryChange=()=>{},
@@ -80,7 +81,15 @@ export function mountFullMassPreflight({
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   const m1Preview=m1AccessPreviewRequested(doc.defaultView);
   let m1Focus=null;
-  let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
+  // Optional usual choices come exclusively from Settings; changes made in
+  // this preflight remain session-local until explicitly remembered.
+  let storedExperience=null;
+  try{storedExperience=getDefaultExperience()}catch{}
+  let folioStep="overview",
+    experience=storedExperience&&typeof storedExperience==="object"
+      ?normalizeFolioExperience(storedExperience,language())
+      :{before:"none",after:"none",language:null},
+    prayerOpening=false;
   let allSoulsSuccession=null;
   const successionFor=legacy=>{
     const massNumber=getAllSoulsMassChoice(legacy);
