@@ -100,10 +100,13 @@ try{
    const hourCard=await page.locator(base+" .aoPrayPilotAngelusHero").evaluate(node=>({
     height:node.getBoundingClientRect().height,
     viewport:window.innerHeight,
+    bottomGap:node.getBoundingClientRect().bottom-node.querySelector(".aoPrayPilotAngelusContent").getBoundingClientRect().bottom,
     text:node.innerText
    }));
    assert.ok(hourCard.height>=hourCard.viewport*.72,
     "F04 Angelus must fill available phone viewport, not leave a blank half-screen: "+JSON.stringify(hourCard));
+   assert.ok(hourCard.bottomGap>=-2&&hourCard.bottomGap<=4,
+    "F04 entry content must be anchored at card bottom, not stranded above blank space: "+JSON.stringify(hourCard));
    assert.doesNotMatch(hourCard.text,/A pause for prayer|existing named cards/,
     "F04 hour card must not show developer explanation");
    await page.screenshot({path:resolve(output,"angelus-entry-"+width+".png"),animations:"disabled"});
