@@ -328,7 +328,7 @@ assert.equal(singleWorkingIndex.counts.pitre_regional_source_actions_retained,43
 assert.equal(singleWorkingIndex.counts.machine_generated_lexical_search_hints,50);
 assert.equal(singleWorkingIndex.machine_generated_search_hints.suggestions.length,50);
 assert.equal(singleWorkingIndex.counts.lexical_search_hint_description_decisions_reviewed,50);
-assert.equal(singleWorkingIndex.counts.evidence_with_provisional_description_comparison_including_search_hints,272);
+assert.equal(singleWorkingIndex.counts.evidence_with_provisional_description_comparison_including_search_hints,522);
 const hintReviewed=singleWorkingIndex.machine_generated_search_hints.description_level_review_result;
 assert.equal(hintReviewed.source_action_reviewed,50);
 assert.equal(hintReviewed.previous_evidence_with_any_explicit_prior_review,222);
@@ -366,6 +366,59 @@ assert.equal(hintsByID.get("WEI58-08-016").review.relationship_decision,"HISTORI
 assert.equal(hintsByID.get("STOKES55-EWTN-116").review.relationship_decision,"COMPONENT_OR_VARIANT_HOLD");
 assert.equal(hintsByID.get("WEI58-10-013").review.relationship_decision,"RITE_OR_MINISTERIAL_AUTHORITY_HOLD");
 assert.equal(hintsByID.get("WEI58-16-028").review.relationship_decision,"DESCRIPTION_LEVEL_SAME_CORE_HOLD");
+
+// First bulk identity-processing pass: 250 stable Weiser source evidence records,
+// exactly 76 description-based candidate owner edges and no canonical identity promotion.
+const weiser250Batch=singleWorkingIndex.bulk_identity_review_batches.find(x=>x.id==="WEISER-ACTION-250-20261030");
+assert.ok(weiser250Batch);
+assert.equal(weiser250Batch.n,250);
+assert.equal(weiser250Batch.curated,76);
+assert.equal(weiser250Batch.source_selection_ids.length,250);
+assert.equal(new Set(weiser250Batch.source_selection_ids).size,250);
+assert.equal(singleWorkingIndex.counts.bulk250_reviewed,250);
+assert.equal(singleWorkingIndex.counts.bulk250_explicit_description_parent_candidates,76);
+const explicitCandidateCodes=new Set(["SAME_DESCRIBED_ACTION_CORE_HOLD","COMPONENT_OR_LOCAL_VARIANT_HOLD",
+ "RITUAL_MINISTERIAL_BOUNDARY_HOLD","NEGATIVE_MERGE_VETO","RELATED_CONTEXT_NOT_SAME_ACTION"]);
+const expected250RelationCounts={
+ SAME_DESCRIBED_ACTION_CORE_HOLD:43,COMPONENT_OR_LOCAL_VARIANT_HOLD:23,
+ RITUAL_MINISTERIAL_BOUNDARY_HOLD:3,NEGATIVE_MERGE_VETO:6,RELATED_CONTEXT_NOT_SAME_ACTION:1
+};
+const sourceIndexById=new Map(singleWorkingIndex.evidence_identity_routing.map(x=>[x.s,x]));
+const originalScreensBySource=new Map(allSourceScreens.map(x=>[x.source_id,x]));
+const candidateTally={},laneTally={};let directlyCompared=0;
+for(const id of weiser250Batch.source_selection_ids){
+ const x=sourceIndexById.get(id);const original=originalScreensBySource.get(id);
+ assert.ok(x&&original,"Missing original source evidence in bulk batch "+id);
+ assert.equal(x.a,expectedRoutingLabel(original));
+ assert.ok(x.e.startsWith("weiser_"));
+ assert.ok(!x.refs?.length,"Source from prior verified caseboard was inadvertently reprocessed "+id);
+ assert.ok(!hintsByID.has(id),"Source from 50-lexical prior review was inadvertently reprocessed "+id);
+ const rev=x.bulk250_identity_review;
+ assert.equal(rev.batch_id,weiser250Batch.id);
+ for(const prop of ["original_page_checked","source_independence_certified","canonical_owner_link_approved","publication_allowed"])
+  assert.equal(rev[prop],false,"Unverified owner accidentally approved in "+id);
+ if(rev.parent_candidate_id){
+  directlyCompared++;
+  assert.ok(mids.has(rev.parent_candidate_id),"Nonexistent owner "+rev.parent_candidate_id);
+  assert.ok(explicitCandidateCodes.has(rev.description_relation));
+  candidateTally[rev.description_relation]=(candidateTally[rev.description_relation]||0)+1;
+ }else{
+  assert.equal(rev.description_relation,"NO_SPECIFIC_EXISTING_OWNER_SUPPORTED_BY_CURRENT_DESCRIPTION");
+ }
+ laneTally[rev.route]=(laneTally[rev.route]||0)+1;
+}
+assert.equal(directlyCompared,76);
+assert.deepEqual(candidateTally,expected250RelationCounts);
+assert.deepEqual(laneTally,weiser250Batch.route_counts);
+assert.equal(weiser250Batch.integrity_provisional_only,true);
+assert.equal(sourceIndexById.get("WEI-FAM56-078").bulk250_identity_review.description_relation,"NEGATIVE_MERGE_VETO");
+assert.equal(sourceIndexById.get("WEI-FAM56-086").bulk250_identity_review.description_relation,"NEGATIVE_MERGE_VETO");
+assert.equal(sourceIndexById.get("WEI58-13-015").bulk250_identity_review.description_relation,"NEGATIVE_MERGE_VETO");
+assert.equal(sourceIndexById.get("WEI58-16-010").bulk250_identity_review.description_relation,"NEGATIVE_MERGE_VETO");
+assert.equal(sourceIndexById.get("WEI58-02-010").bulk250_identity_review.route,"EXACT_INDULGENCE_GRANT_REVIEW");
+assert.equal(new Set([...weiser250Batch.source_selection_ids,...hintsByID.keys(),
+ ...singleWorkingIndex.evidence_identity_routing.filter(x=>x.refs?.length).map(x=>x.s)]).size,522);
+
 const erroneousPairInIndex=singleWorkingIndex.dedup_case_decisions.find(x=>x.id==="CC3WORK-REL-041");
 assert.equal(erroneousPairInIndex.status,"EXPLICIT_NO_SAME_IDENTITY");
 assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
