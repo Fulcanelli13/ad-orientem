@@ -10,16 +10,16 @@
   "stats": {
     "blueprint_image_slots": 267,
     "covered_with_at_least_one_eligible_candidate": 263,
-    "with_any_defensible_candidate": 259,
+    "with_any_defensible_candidate": 263,
     "empty": 4,
-    "weak_only": 4,
-    "below_minimum_after_pruning": 33,
-    "pruned_weak_edges": 32,
+    "weak_only": 0,
+    "below_minimum_after_pruning": 31,
+    "pruned_weak_edges": 31,
     "user_accepted_first_five": 114,
     "user_accepted_later": 107,
-    "locked_covers": 5,
+    "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1545,
+    "artwork_edges_after_consolidation": 1548,
     "explicit_user_acceptances_never_auto_pruned": true
   },
   "locked": [
@@ -57,6 +57,13 @@
       "title": "The Return of the Prodigal Son",
       "artist": "Bartolomé Esteban Murillo",
       "reason": "Previously approved final Confession hero; exact canonical asset ID unresolved"
+    },
+    {
+      "slot_id": "HERO-20",
+      "artwork_id": "PRAYER::saints--saraceni",
+      "title": "Paradise",
+      "artist": "Carlo Saraceni",
+      "reason": "Previously approved All Saints painting reused for Prayer season; rights review remains"
     }
   ],
   "slots": [
@@ -1015,13 +1022,25 @@
       "minimum": 2,
       "ideal": 4,
       "status": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
-      "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
       "approved_edges": 0,
-      "direct_or_user_edges": 1,
-      "above_minimum": false,
+      "direct_or_user_edges": 2,
+      "above_minimum": true,
       "chosen_cover": null,
       "works": [
+        {
+          "id": null,
+          "title": "Entry into Jerusalem",
+          "artist": "Anthony van Dyck",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "CROSS_MODULE_EDITORIAL_REUSE",
+          "source": "",
+          "gate": "RESOLVE_EXISTING_CALENDAR_ASSET_ID_AND_RIGHTS",
+          "eligible": true,
+          "flag": "Already chosen for Palm Sunday in the Calendar; exact Prayer gallery ID, photographic quality and licence require resolution",
+          "origin": "2026-10-30_EDITORIAL_CROSS_REFERENCE"
+        },
         {
           "id": "REVIEW::smk:KMSSP256",
           "title": "Christ's Entry into Jerusalem",
@@ -1405,11 +1424,11 @@
       "minimum": 2,
       "ideal": 5,
       "status": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
-      "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
+      "eligible_distinct_works": 2,
+      "adequate_fit_distinct_works": 2,
       "approved_edges": 1,
-      "direct_or_user_edges": 1,
-      "above_minimum": false,
+      "direct_or_user_edges": 2,
+      "above_minimum": true,
       "chosen_cover": null,
       "works": [
         {
@@ -1423,6 +1442,18 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED"
+        },
+        {
+          "id": null,
+          "title": "Pentecost",
+          "artist": "Juan Bautista Maíno",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "CROSS_MODULE_EDITORIAL_REUSE",
+          "source": "",
+          "gate": "RESOLVE_EXISTING_CALENDAR_ASSET_ID_AND_RIGHTS",
+          "eligible": true,
+          "flag": "Already chosen for Pentecost Vigil in Calendar; do not overwrite specific liturgical hero choices",
+          "origin": "2026-10-30_EDITORIAL_CROSS_REFERENCE"
         }
       ]
     },
@@ -1782,11 +1813,11 @@
       "priority": "A",
       "minimum": 2,
       "ideal": 4,
-      "status": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "status": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
       "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 0,
-      "approved_edges": 0,
-      "direct_or_user_edges": 0,
+      "adequate_fit_distinct_works": 1,
+      "approved_edges": 1,
+      "direct_or_user_edges": 1,
       "above_minimum": true,
       "chosen_cover": null,
       "works": [
@@ -1794,12 +1825,12 @@
           "id": "PRAYER::saints--saraceni",
           "title": "Paradise",
           "artist": "Carlo Saraceni",
-          "fit": "WEAK_REUSE_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "APPROVED_ALL_SAINTS_SUBJECT",
+          "editorial": "USER_APPROVED_EXISTING_SAINTS_SELECTION",
           "source": "https://www.metmuseum.org/art/collection/search/437607",
           "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
           "eligible": true,
-          "flag": "",
+          "flag": "Existing user-approved All Saints painting; photo and rights gate stays in force",
           "origin": "EXISTING_GALLERY_REUSE_V1"
         },
         {
@@ -1824,8 +1855,8 @@
       "minimum": 2,
       "ideal": 4,
       "status": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 4,
-      "adequate_fit_distinct_works": 4,
+      "eligible_distinct_works": 5,
+      "adequate_fit_distinct_works": 5,
       "approved_edges": 0,
       "direct_or_user_edges": 0,
       "above_minimum": true,
@@ -1878,6 +1909,18 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": null,
+          "title": "Angel Frees the Souls",
+          "artist": "Ludovico Carracci",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "CROSS_MODULE_EDITORIAL_REUSE",
+          "source": "",
+          "gate": "RESOLVE_EXISTING_CALENDAR_ASSET_ID_AND_RIGHTS",
+          "eligible": true,
+          "flag": "Already chosen for All Souls in Calendar; image exact identity and rights require reconciliation",
+          "origin": "2026-10-30_EDITORIAL_CROSS_REFERENCE"
         }
       ]
     },
@@ -2930,8 +2973,8 @@
       "minimum": 4,
       "ideal": 12,
       "status": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
-      "eligible_distinct_works": 11,
-      "adequate_fit_distinct_works": 11,
+      "eligible_distinct_works": 12,
+      "adequate_fit_distinct_works": 12,
       "approved_edges": 5,
       "direct_or_user_edges": 5,
       "above_minimum": true,
@@ -3073,12 +3116,12 @@
           "id": "PRAYER::saints--saraceni",
           "title": "Paradise",
           "artist": "Carlo Saraceni",
-          "fit": "WEAK_REUSE_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "EDITORIAL_CONTEXTUAL_REUSE",
           "source": "https://www.metmuseum.org/art/collection/search/437607",
           "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": false,
-          "flag": "Weak reuse trimmed only from pool of >5 distinct eligible paintings; 5 retained",
+          "eligible": true,
+          "flag": "The communion of saints is appropriate for Saints & Angels door; reused without asserting literal depiction of each saint",
           "origin": "EXISTING_GALLERY_REUSE_V1"
         },
         {
@@ -20965,9 +21008,9 @@
       "priority": "B",
       "minimum": 3,
       "ideal": 8,
-      "status": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "status": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 0,
+      "adequate_fit_distinct_works": 1,
       "approved_edges": 0,
       "direct_or_user_edges": 0,
       "above_minimum": false,
@@ -20977,12 +21020,12 @@
           "id": "PRAYER::saints--saraceni",
           "title": "Paradise",
           "artist": "Carlo Saraceni",
-          "fit": "WEAK_REUSE_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "EDITORIAL_CONTEXTUAL_REUSE",
           "source": "https://www.metmuseum.org/art/collection/search/437607",
           "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
           "eligible": true,
-          "flag": "",
+          "flag": "Appropriate communion-of-saints image; not a literal depiction of the entire litany",
           "origin": "EXISTING_GALLERY_REUSE_V1"
         },
         {
@@ -21451,9 +21494,9 @@
       "priority": "B",
       "minimum": 2,
       "ideal": 4,
-      "status": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "status": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 0,
+      "adequate_fit_distinct_works": 1,
       "approved_edges": 0,
       "direct_or_user_edges": 0,
       "above_minimum": false,
@@ -21463,12 +21506,12 @@
           "id": "PRAYER::saints--saraceni",
           "title": "Paradise",
           "artist": "Carlo Saraceni",
-          "fit": "WEAK_REUSE_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "EDITORIAL_CONTEXTUAL_REUSE",
           "source": "https://www.metmuseum.org/art/collection/search/437607",
           "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
           "eligible": true,
-          "flag": "",
+          "flag": "For concluding all-saints section only; virgins/widows still merit an exact image",
           "origin": "EXISTING_GALLERY_REUSE_V1"
         },
         {
@@ -22678,9 +22721,9 @@
       "priority": "B",
       "minimum": 3,
       "ideal": 8,
-      "status": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "status": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 4,
-      "adequate_fit_distinct_works": 0,
+      "adequate_fit_distinct_works": 1,
       "approved_edges": 0,
       "direct_or_user_edges": 0,
       "above_minimum": true,
@@ -22690,12 +22733,12 @@
           "id": "REVIEW::commons:48327311",
           "title": "The Mass of Saint Gregory the Great",
           "artist": "Adriaen Isenbrandt",
-          "fit": "WEAK_REUSE_CANDIDATE",
-          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "EDITORIAL_CONTEXTUAL_REUSE",
           "source": "https://commons.wikimedia.org/wiki/File:Adriaen_Ysenbrandt_-_The_Mass_of_Saint_Gregory_the_Great_-_69.PB.11_-_J._Paul_Getty_Museum.jpg",
           "gate": "EXISTING_GALLERY_PHOTO_QA",
           "eligible": true,
-          "flag": "",
+          "flag": "Saint celebrating Mass is a legitimate association for Prayer for Priests; does not depict the reader's own priest",
           "origin": "EXISTING_GALLERY_REUSE_V1"
         },
         {
@@ -23182,13 +23225,6 @@
     },
     {
       "slot_id": "DOOR-D8",
-      "artwork_id": "PRAYER::saints--saraceni",
-      "title": "Paradise",
-      "artist": "Carlo Saraceni",
-      "work_key": "carlo saraceni|paradise"
-    },
-    {
-      "slot_id": "DOOR-D8",
       "artwork_id": "REVIEW::nga:70986",
       "title": "The Expulsion of Adam and Eve from Paradise",
       "artist": "Benjamin West",
@@ -23481,5 +23517,78 @@
       "title": "The Wedding at Cana \" \"",
       "origin": "BATCHES_06_11_USER_APPROVED"
     }
-  ]
+  ],
+  "editorial_second_pass": {
+    "policy": "Previously approved All Saints context reinstated; nonliteral Mass scenes excluded from Eucharistic rites; approved first-Saturday images mapped to current cover slot without destroying historical IDs.",
+    "changes": [
+      {
+        "slot": "HERO-20",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "APPROVED_ALL_SAINTS_SUBJECT"
+      },
+      {
+        "slot": "DOOR-D8",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "COV-pray.litany_saints",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "STG-pray.litany_saints-06",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "COV-pray.for_priests",
+        "title": "The Mass of Saint Gregory the Great",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "COV-programme.first_saturday",
+        "title": "The Heart of Mary",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "COV-programme.first_saturday",
+        "title": "The Heart of Mary",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "COV-prayer.sacred_heart",
+        "title": "The Heart of Jesus",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "COV-prayer.sacred_heart",
+        "title": "The Heart of Jesus",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "HERO-08",
+        "title": "Entry into Jerusalem",
+        "status": "ADDED",
+        "fit": "DIRECT_SUBJECT_CANDIDATE"
+      },
+      {
+        "slot": "HERO-21",
+        "title": "Angel Frees the Souls",
+        "status": "ADDED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "HERO-14",
+        "title": "Pentecost",
+        "status": "ADDED",
+        "fit": "DIRECT_SUBJECT_CANDIDATE"
+      }
+    ]
+  }
 }
