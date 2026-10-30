@@ -1078,8 +1078,15 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
              if(details)details.open=false;
            }});
          },
-         getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
-         getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
+         // Settings donor is the only durable owner of remembered Today choices.
+         getDefaultForm:()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.mass?.todayChoices?.form
+           ??arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
+         getDefaultReaderMode:()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.mass?.todayChoices?.readerMode
+           ??mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
+         getDefaultExperience:()=>{
+           const saved=globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.mass?.todayChoices;
+           return saved?{language:saved.readerLanguage,before:saved.beforeMass,after:saved.afterMass}:null;
+         },
          language:()=>runtimeState()?.language??"en",
        });
       state.localOrations=mountObservedLocalOrationsPreflight({
