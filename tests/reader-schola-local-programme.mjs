@@ -4,6 +4,8 @@ import {normalizeScholaLocalProgramme,readScholaLocalProgramme,updateScholaLocal
 import {KYRIALE_MASSES,KYRIALE_CREDOS,KYRIALE_SOURCE,
  kyrialeChoicesForMovement,resolveKyrialeChoice,
  KYRIALE_RESEARCH_NOTATION_EXAMPLES,kyrialeResearchNotationPreview} from "../src/mass/reader-kyriale-catalogue.js";
+import {offlineKyrialeResearchScore,OFFLINE_KYRIALE_RESEARCH_SCORE_COUNT}
+ from "../src/mass/reader-kyriale-research-gabc.js";
 const data=new Map(),storage={getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v)};
 const empty=readScholaLocalProgramme(storage);
 assert.equal(empty.parishLabel,"");
@@ -124,6 +126,7 @@ assert.equal(normalizeScholaLocalProgramme({profiles:[
 
 // Seven research-only GABC preview leads match explicit movement and
 // source-indexed choice; no text-label inference or facsimile approval.
+assert.equal(OFFLINE_KYRIALE_RESEARCH_SCORE_COUNT,7);
 assert.equal(KYRIALE_RESEARCH_NOTATION_EXAMPLES.length,7);
 for(const candidate of KYRIALE_RESEARCH_NOTATION_EXAMPLES){
  const choice=resolveKyrialeChoice(candidate.movement,candidate.catalogueId);
@@ -134,6 +137,15 @@ for(const candidate of KYRIALE_RESEARCH_NOTATION_EXAMPLES){
  assert.equal(candidate.recordingApproved,false);
  assert.equal(candidate.observedPerformance,false);
  assert.equal(candidate.status,"RESEARCH_TRANSCRIPTION_NOT_FACSIMILE_APPROVED");
+ const offline=offlineKyrialeResearchScore(candidate.movement,candidate.catalogueId);
+ assert.equal(offline?.scoreId,candidate.scoreId);
+ assert.equal(offline?.sourceUrl,candidate.sourceUrl);
+ assert.equal(offline?.scoreApproved,false);
+ assert.equal(offline?.recordingApproved,false);
+ assert.equal(offline?.observedPerformance,false);
+ assert.match(offline.gabc,/(?:name:|office-part:).*;/);
+ assert.match(offline.gabc,/%%/);
+ assert.ok(offline.gabc.length>240,"Truncated source GABC: "+candidate.scoreId);
 }
 assert.equal(kyrialeResearchNotationPreview("KYRIE","MASS_08")?.scoreId,"GREGOBASE-1184");
 assert.equal(kyrialeResearchNotationPreview("KYRIE","MASS_11")?.scoreId,"GREGOBASE-2982");
@@ -148,6 +160,12 @@ assert.equal(kyrialeResearchNotationPreview("CREDO","MASS_08"),null);
 assert.equal(kyrialeResearchNotationPreview("KYRIE","CREDO_03"),null);
 assert.equal(kyrialeResearchNotationPreview("KYRIE","CUSTOM"),null);
 assert.equal(kyrialeResearchNotationPreview("KYRIE","Mass VIII"),null);
+assert.equal(offlineKyrialeResearchScore("KYRIE","Mass VIII"),null);
+assert.equal(offlineKyrialeResearchScore("KYRIE","CUSTOM"),null);
+assert.equal(offlineKyrialeResearchScore("GLORIA","MASS_17"),null);
+assert.equal(offlineKyrialeResearchScore("CREDO","MASS_08"),null);
+assert.equal(offlineKyrialeResearchScore("AGNUS_DEI","MASS_11"),null);
+
 
 // Source-indexed selections identify historical melodies, not performance.
 // Each movement is independently chosen; Gloria is absent from Masses XVI–XVIII.
