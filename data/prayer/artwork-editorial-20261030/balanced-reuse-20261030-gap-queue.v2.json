@@ -12,10 +12,14 @@
     "user_accepted_later": 107,
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1661,
-    "explicit_user_acceptances_never_auto_pruned": true
+    "artwork_edges_after_consolidation": 1640,
+    "explicit_user_acceptances_never_auto_pruned": true,
+    "cross_prayer_inherited_new_edges": 101,
+    "scope_guardrail_removed_edges": 22,
+    "luminous_optional_mysteries_with_approved_art": 5,
+    "luminous_optional_mysteries_with_stable_runtime_card_ids": 0
   },
-  "truth_note": "Source-title candidate coverage only, not image-rights or every actual live-card coverage; updated: after approved cross-prayer inheritance, 267/267 have editorial candidate records; Benoediction blessing is only a contextual inherited image (exact image still missing), Thérèse cover is research-only, no publication rights or runtime parity certified.",
+  "truth_note": "Source-title candidate coverage only, not image-rights or every actual live-card coverage; updated: after approved cross-prayer inheritance, 267/267 have editorial candidate records; Benediction blessing is only a contextual inherited image (exact image still missing), Thérèse cover is research-only, no publication rights or runtime parity certified.",
   "empty_scenes": [],
   "need_source_image_not_new_painting": [
     "COV-novena.st_therese"
@@ -441,5 +445,6 @@
       "status": "ARTWORK_REFERENCED_BUT_UNAPPROVED_SOURCE_RIGHTS_UNRESOLVED"
     }
   ],
-  "reconciled_overlay_file": "data/prayer/artwork-editorial-20261030/cross-prayer-inheritance-20261030.v1.json"
+  "reconciled_overlay_file": "data/prayer/artwork-editorial-20261030/cross-prayer-inheritance-20261030.v1.json",
+  "staged_editorial_test_command": "node scripts/prayer-art-cross-prayer-audit.mjs"
 }
