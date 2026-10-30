@@ -387,15 +387,30 @@ try{
    assert.equal(await journey.evaluate(el=>getComputedStyle(el).visibility),"hidden",
      "A preserved Journey must not remain visually superimposed beneath the C Place folio");
    if(mobile){
-     const noPhoto=await stagePlace.evaluate(el=>{
+     const mobilePlace=await stagePlace.evaluate(el=>{
        const title=el.querySelector(".aoHeritageCardTitle"),
-         empty=el.querySelector(".aoHeritageCardEmpty");
-       if(!empty||!title||el.querySelector(".aoHeritagePlaceThumb"))return null;
-       const t=title.getBoundingClientRect(),e=empty.getBoundingClientRect();
-       return {titleLeft:t.left,textLeft:e.left,textWidth:e.width};
+         empty=el.querySelector(".aoHeritageCardEmpty"),
+         photo=el.querySelector(".aoHeritagePlaceThumb");
+       if(!title)return null;
+       const t=title.getBoundingClientRect();
+       if(photo){
+         const p=photo.getBoundingClientRect();
+         return {hasPhoto:true,titleWidth:t.width,photoWidth:p.width,
+           photoHeight:p.height,photoVisible:p.width>0&&p.height>0,
+           imageSource:!!photo.querySelector("img")};
+       }
+       if(!empty)return null;
+       const e=empty.getBoundingClientRect();
+       return {hasPhoto:false,titleLeft:t.left,textLeft:e.left,textWidth:e.width};
      });
-     assert.ok(noPhoto&&Math.abs(noPhoto.titleLeft-noPhoto.textLeft)<16&&noPhoto.textWidth>0.75*width,
-       "No-photo Place preview needs one legible mobile text column: "+JSON.stringify(noPhoto));
+     assert.ok(mobilePlace,"Holywell Place preview must have a visible title");
+     if(mobilePlace.hasPhoto){
+       assert.ok(mobilePlace.photoVisible&&mobilePlace.imageSource&&mobilePlace.photoWidth<width,
+         "New approved Holywell photograph must render within the mobile Place card: "+JSON.stringify(mobilePlace));
+     }else{
+       assert.ok(Math.abs(mobilePlace.titleLeft-mobilePlace.textLeft)<16&&mobilePlace.textWidth>0.75*width,
+         "No-photo Place preview needs one legible mobile text column: "+JSON.stringify(mobilePlace));
+     }
    }
    assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
      document.querySelector("#ao-find-modular-root .maplibregl-canvas")),
