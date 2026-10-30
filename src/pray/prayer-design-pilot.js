@@ -260,7 +260,7 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotTileCaption{padding:26px 9px 8px;font:600 14px/1.15 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font:600 20px/1.15 var(--ao-font-display,Georgia,serif);padding:40px 12px 12px}",
     "#aoPray435930 .aoPrayPilotTileInfo{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.45);box-shadow:0 0 0 1px rgba(255,255,255,.35);color:#fff;font:italic 600 13px/1 Georgia,serif}",
-    "@media(max-width:359px){#aoPray435930 .aoPrayPilotTop h2{font-size:25px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}}"
+    "@media(max-width:359px){#aoPray435930 .aoPrayPilotTop h2{font-size:25px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}}",
     "#aoPray435930 .aoPrayPilotAngelusEntry{display:flex;flex-direction:column;min-height:100%;padding:0}",
     "#aoPray435930 .aoPrayPilotAngelusHero{flex:1;position:relative;min-height:calc(100dvh - 130px);display:flex;align-items:stretch;justify-content:flex-end;padding:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18) 38%,rgba(10,7,5,.86) 72%,rgba(10,7,5,.94)),linear-gradient(160deg,#68513c,#15131a)}",
     "#aoPray435930 .aoPrayPilotAngelusContent{display:flex;flex-direction:column;justify-content:flex-end;width:100%;padding:24px 16px 22px;color:#f4eee6}",
