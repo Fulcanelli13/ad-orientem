@@ -37,7 +37,7 @@ assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].so
 assert.equal(ledger.summary.marianShrines,118);
 assert.equal(ledger.summary.shrineGuides,33);
 assert.equal(ledger.summary.shrineApprovedHero,31);
-assert.equal(images.items.length,ledger.summary.shrineApprovedHero+json("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+json("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length,"Historical Marian shrine count must remain intact while separately vetted Directory images are added");
+assert.equal(images.items.length,ledger.summary.shrineApprovedHero+json("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+json("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+json("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Historical Marian shrine count must remain intact while separately vetted Directory images are added");
 for(const item of images.items){
  assert.ok(item.status==="APPROVED"&&item.rights_verified&&item.subject_verified&&item.crop_reviewed);
  assert.ok(/^https:\/\//.test(item.source_url)&&/^https:\/\//.test(item.license_url));

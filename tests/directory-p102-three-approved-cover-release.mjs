@@ -14,7 +14,7 @@ const digest=v=>createHash("sha256").update(v).digest("hex");
 assert.equal(release.schema,"AO_P102_THREE_VERIFIED_DIRECTORY_COVERS_V1");
 assert.equal(source.schema,"AO_P102_THREE_SOURCE_LOCKED_CHURCH_COVERS_RELEASE_INPUT_V1");
 assert.equal(audit.schema,"AO_P102_PHOTO_SOURCE_BYTES_RELEASE_AUDIT_V1");
-assert.deepEqual([registry.places.length,registry.directoryPlaceLinks.length,covers.items.length],[529,22,36]);
+assert.deepEqual([registry.places.length,registry.directoryPlaceLinks.length,covers.items.length],[529,22,40]);
 assert.equal(release.counts.existing_approved_covers,33);
 assert.equal(release.counts.proposed_approved_covers,36);
 assert.equal(release.counts.added_approved_covers,3);

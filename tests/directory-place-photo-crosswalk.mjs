@@ -14,8 +14,8 @@ assert.deepEqual([review.counts.venues_screened,review.counts.canonical_places,
  review.counts.within_350m_pairs,review.counts.venues_near_place],
  [1879,529,54,49]);
 assert.equal(review.counts.confirmed_links,22);
-assert.equal(review.counts.nearby_approved_photo_pairs,12);
-assert.equal(review.counts.exact_confirmed_photo_joins,5);
+assert.equal(review.counts.nearby_approved_photo_pairs,16);
+assert.equal(review.counts.exact_confirmed_photo_joins,9);
 assert.equal(review.counts.published_new_links,0);
 assert.equal(review.counts.published_new_photos,0);
 assert.equal(review.counts.approved_gallery_images,33);
@@ -31,7 +31,7 @@ assert.equal(review.candidate_pairs.length,54);
 assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,54);
 assert.equal(review.candidate_pairs.every(x=>x.auto_publish===false),true);
 assert.equal(review.candidate_pairs.every(x=>x.distance_m>=0&&x.distance_m<=350),true);
-assert.equal(review.photo_review_queue.length,12);
+assert.equal(review.photo_review_queue.length,16);
 assert.equal(review.photo_review_queue.every(x=>x.review==="HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"),true);
 const unrelated=review.candidate_pairs.find(x=>x.venue_name==="Friedhofskirche St. Michael"
   &&x.place_id==="place:DE:altoetting-gnadenkapelle");
@@ -45,7 +45,7 @@ for(const row of geo.directoryPlaceLinks){
  if(pair)assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
 }
 assert.equal(buildScreen({...geo,directoryPlaceLinks:[...geo.directoryPlaceLinks,{
- venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,5);
+ venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,9);
 const adjudication=read("data/geography/research/directory-place-identity-editorial-20261029.v1.json");
 assert.equal(adjudication.schema,"AO_DIRECTORY_PLACE_EXACT_BUILDING_EDITORIAL_REVIEW_V1");
 assert.equal(adjudication.release_candidate_count,0);
@@ -80,4 +80,4 @@ assert.equal(trio.photos[0].license,"CC0");
 assert.equal(trio.photos[1].license,"CC-BY-SA-3.0");
 assert.equal(trio.photos[2].license,null,"Unknown altar copyright must remain unverified");
 
-console.log("PASS 1,879 venues x 529 Places: 54 spatial pairs, 5 exact approved photo joins, 7 new non-published P104 identity links");
+console.log("PASS 1,879 venues x 529 Places: 54 spatial pairs, 9 exact approved photo joins, 7 new non-published P104 identity links");

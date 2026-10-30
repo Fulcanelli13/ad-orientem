@@ -1,0 +1,30 @@
+name: Directory P106 four exact-site photo approvals
+on:
+  pull_request:
+    paths:
+      - assets/approved/place-media/GB-sacred-heart-caterham.webp
+      - assets/approved/place-media/GB-st-mary-catholic-brewood.webp
+      - assets/approved/place-media/US-immaculate-conception-cathedral-lake-charles.webp
+      - assets/approved/place-media/US-holy-family-log-church-cahokia.webp
+      - data/geography/approved-place-media.v1.json
+      - data/geography/research/directory-p106-four-approved-covers.v1.json
+      - data/directory/research/p106-four-approved-bytes-audit.json
+      - tests/directory-p106-four-approved-covers.mjs
+      - .github/workflows/directory-p106-approved-cover-gate.yml
+permissions:
+  contents: read
+jobs:
+  four-binary-and-identity-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/directory-p106-four-approved-covers.mjs
+      - run: node tests/directory-p102-three-approved-cover-release.mjs
+      - run: node tests/directory-place-photo-crosswalk.mjs
+      - run: node tests/explore-photo-research.mjs
