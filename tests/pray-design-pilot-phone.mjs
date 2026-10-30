@@ -179,7 +179,7 @@ try{
    for(let i=0;i<count;i++)await page.locator(base+" [data-ao-f04-next]").click();
    assert.equal(await page.locator(base+" .aoDevoF04Complete:visible").count(),1,
     "Final Next must open the F04 Amen screen without a sixth invented prayer card");
-   assert.match(await page.locator(base+" .aoF04NextTime").innerText(),/Next (Angelus|Regina Cæli) at \\d{2}:00/,
+   assert.match(await page.locator(base+" .aoF04NextTime").innerText(),/Next (Angelus|Regina Cæli) at \d{2}:00/,
     "Completion must calculate the next customary local prayer hour");
    assert.equal(await page.locator(base+" .aoDevoCard").count(),count,
     "Amen must not mutate the canonical Angelus or Regina card count");
