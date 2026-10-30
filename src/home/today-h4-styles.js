@@ -73,6 +73,6 @@ export const TODAY_H4_CSS=`
 .aoTodayH4 .aoH4CalendarBack button{width:44px;height:44px;border:0;background:transparent;color:var(--h4-ink)}
 .aoTodayH4 .aoH4CalendarBack strong{font:500 20px/1.2 var(--h4-serif)}
 .aoTodayH4 .aoH4CalendarInline:not([hidden]){display:block}
-@media(max-width:359px){.homeScreen.aoTodayV2.aoTodayH4{--h4-gap:12px}.aoTodayH4 .aoH4DateOpen strong{font-size:23px}.aoTodayH4 .aoH4MassBody{padding:14px 16px 0}.aoTodayH4 .aoH4MassBody h1{font-size:29px}.aoTodayH4 .aoH4Acts{margin:0 -16px}.aoTodayH4 .aoH4Acts button{font-size:13px}}
+@media(max-width:359px){.homeScreen.aoTodayV2.aoTodayH4{--h4-gap:12px}.aoTodayH4 .aoH4Bar{height:44px}.aoTodayH4 .aoH4DateOpen strong{font-size:23px}.aoTodayH4 .dateRail.aoH4Week .dayCell{height:46px}.aoTodayH4 .aoH4Door .aoLiturgicalDayKicker{display:none!important}.aoTodayH4 .aoH4Door .aoTodayV2Art{height:76px!important;max-height:76px!important}.aoTodayH4 .aoH4Door .aoTodayV2ArtSource{height:76px!important;max-height:76px!important;aspect-ratio:auto!important}.aoTodayH4 .aoH4MassBody{padding:12px 16px 0}.aoTodayH4 .aoH4MassBody h1{font-size:29px}.aoTodayH4 .aoH4Acts{margin:0 -16px}.aoTodayH4 .aoH4Acts button{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.aoTodayH4 *{scroll-behavior:auto!important;transition:none!important}}
 `;
