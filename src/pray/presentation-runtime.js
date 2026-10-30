@@ -654,7 +654,8 @@ function paschal(){
 }
 function angelusChoice(){const p=paschal();if(S.angelusMode==='regina')return {form:'regina',auto:false,authority:p};if(S.angelusMode==='angelus')return {form:'angelus',auto:false,authority:p};return {form:p.ok&&p.value?'regina':'angelus',auto:true,authority:p}}
 function splitPrayer(text){return String(text||'').split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean)}
-function prayFamilies(){
+function prayFamilies(localize=L){
+ const L=localize;
  return Object.freeze({
   daily:Object.freeze({
    title:L('Daily Prayer','Prière quotidienne'),
@@ -756,7 +757,13 @@ function myCustomsDoor(){
 }
 function renderPrayHome(){
  const families=prayFamilies();
- if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({head,L,esc,DATA,families,assetIcon});
+ if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({
+  head,L,esc,DATA,families,assetIcon,
+  searchFamilies:{
+   en:resolvedPrayerPilotFamilies((en,fr)=>en,prayFamilies((en,fr)=>en)),
+   fr:resolvedPrayerPilotFamilies((en,fr)=>fr,prayFamilies((en,fr)=>fr))
+  }
+ });
  const door=id=>prayFamilyDoor(id,families[id]);
  const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
  const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
