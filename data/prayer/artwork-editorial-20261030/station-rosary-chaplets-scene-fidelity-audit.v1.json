@@ -1,0 +1,1065 @@
+{
+  "schema": "AO_PRAYER_SCENE_AND_CARD_ARTWORK_AUDIT_V1",
+  "date": "2026-10-30",
+  "source_branch": "research/prayer-existing-artwork-coverage-first-20261030",
+  "denominator_policy": "267 is image-bearing editorial blueprint, not all actual interactive Prayer cards",
+  "counts": {
+    "station_stages": 14,
+    "station_stages_with_candidates": 14,
+    "station_stages_with_specific_event_candidate": 14,
+    "traditional_rosary_mysteries": 15,
+    "traditional_mysteries_with_candidates": 15,
+    "luminous_in_canonical_data": 5,
+    "luminous_with_stable_blueprint_slot": 0,
+    "chaplet_families": 5,
+    "chaplet_families_with_all_defined_slots_having_candidates": 5,
+    "seven_last_words_with_candidates": 7,
+    "saint_anthony_nonexcluded_candidates_per_slot": 6,
+    "prayer_blueprint_subject_route_count": 266,
+    "prayer_blueprint_subject_route_total": 267,
+    "prayer_base_record_count": 48,
+    "prayer_base_records_with_candidate": 48
+  },
+  "stations": [
+    {
+      "slot_id": "STG-pray.stations-01",
+      "title": "Jesus is condemned to death",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Christ Presented to the People (Ecce Homo)",
+        "San Polo Via Crucis — Station 01: Christ Condemned to Death"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 01: Christ Condemned to Death",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-02",
+      "title": "Jesus takes up His Cross",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Way to Calvary",
+        "The Way to Calvary"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 02: Jesus Takes Up the Cross",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-03",
+      "title": "Jesus falls the first time",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 03: First Fall",
+        "Christ Carrying the Cross"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 03: First Fall",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-04",
+      "title": "Jesus meets His Mother",
+      "candidate_count": 4,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+        "Pietà"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-05",
+      "title": "Simon of Cyrene helps Jesus",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 05: Simon of Cyrene Helps",
+        "Christ Carrying the Cross"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 05: Simon of Cyrene Helps",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-06",
+      "title": "Veronica wipes the face of Jesus",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Veil of Veronica",
+        "San Polo Via Crucis — Station 06: Veronica Wipes His Face"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 06: Veronica Wipes His Face",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-07",
+      "title": "Jesus falls the second time",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 07: Second Fall",
+        "Christ Carrying the Cross"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 07: Second Fall",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-08",
+      "title": "Jesus consoles the women of Jerusalem",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 08: Jesus Addresses the Women of Jerusalem",
+        "Christ Carrying the Cross"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 08: Jesus Addresses the Women of Jerusalem",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-09",
+      "title": "Jesus falls the third time",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 09: Third Fall",
+        "Christ Carrying the Cross"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 09: Third Fall",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-10",
+      "title": "Jesus is stripped of His garments",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 10: Stripping of His Garments",
+        "The Crucifixion"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 10: Stripping of His Garments",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-11",
+      "title": "Jesus is nailed to the Cross",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 11: Nailing to the Cross",
+        "The Crucifixion"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 11: Nailing to the Cross",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-12",
+      "title": "Jesus dies on the Cross",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "San Polo Via Crucis — Station 12: Death on the Cross",
+        "The Crucifixion"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "SAN_POLO_CYCLE_RIGHTS_PHOTO_QA_REQUIRED"
+    },
+    {
+      "slot_id": "STG-pray.stations-13",
+      "title": "Jesus is taken down from the Cross",
+      "candidate_count": 4,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Descent from the Cross — Prado Passion series",
+        "The Deposition"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "title": "The Deposition",
+          "artist": "Francesco Solimena",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "title": "The Deposition from the Cross",
+          "artist": "Johann Michael Rottmayr",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING"
+        }
+      ],
+      "gate": "PHOTO_OR_SOURCE_QA_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-14",
+      "title": "Jesus is laid in the tomb",
+      "candidate_count": 6,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Burial of Christ",
+        "De graflegging van Christus"
+      ],
+      "explicit_subject_candidate": true,
+      "exact_scene_candidates": [
+        {
+          "title": "The Burial of Christ",
+          "artist": "Annibale Carracci",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "title": "De graflegging van Christus",
+          "artist": "Adriaen van der Werff",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "artist": "Titian",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "title": "The Entombment of Christ",
+          "artist": "Kamal-ol-molk",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        }
+      ],
+      "gate": "PHOTO_OR_SOURCE_QA_PENDING"
+    }
+  ],
+  "rosary_traditional": [
+    {
+      "slot_id": "STG-pray.rosary-02",
+      "title": "The Annunciation",
+      "candidate_count": 14,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Annunciation",
+        "The Annunciation"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-03",
+      "title": "The Visitation",
+      "candidate_count": 1,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Visitation"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SMALL_POOL_APPROVED_ART_EXISTS_NEEDS_PHOTO_RIGHTS_QA"
+    },
+    {
+      "slot_id": "STG-pray.rosary-04",
+      "title": "The Nativity",
+      "candidate_count": 20,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Adoration of the Shepherds",
+        "Adoration of the Shepherds"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-05",
+      "title": "The Presentation",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Presentation of Jesus at the Temple",
+        "Study for \"The Presentation of Christ in the Temple\" (for Saint Ulrich, Vienna)"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-06",
+      "title": "Finding in the Temple",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Christ among the Doctors",
+        "Christ among the Doctors \" \""
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-07",
+      "title": "Agony in the Garden",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Agony in the Garden — Antwerp Rosary cycle",
+        "The Agony in the Garden"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-08",
+      "title": "Scourging at the Pillar",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Christ at the Column",
+        "Altarpiece with the Passion of Christ: Flagellation"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-09",
+      "title": "Crowning with Thorns",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+        "Eustache Le Sueur Ecce Homo"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-10",
+      "title": "Carrying of the Cross",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Christ Carrying the Cross",
+        "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \""
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "CARRYING_CROSS_TITLES_EXIST_BUT_FIT_TAG_MISLABELLED_CONTEXTUAL"
+    },
+    {
+      "slot_id": "STG-pray.rosary-11",
+      "title": "The Crucifixion",
+      "candidate_count": 9,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Crucifixion",
+        "The Crucifixion"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-12",
+      "title": "The Resurrection",
+      "candidate_count": 12,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Resurrection of Christ",
+        "The Resurrection of Christ"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-13",
+      "title": "The Ascension",
+      "candidate_count": 2,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Ascension — Antwerp Rosary cycle",
+        "The Ascension of Christ"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SMALL_POOL_APPROVED_ART_EXISTS_NEEDS_PHOTO_RIGHTS_QA"
+    },
+    {
+      "slot_id": "STG-pray.rosary-14",
+      "title": "Descent of the Holy Ghost",
+      "candidate_count": 1,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Pentecost"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SMALL_POOL_APPROVED_ART_EXISTS_NEEDS_PHOTO_RIGHTS_QA"
+    },
+    {
+      "slot_id": "STG-pray.rosary-15",
+      "title": "The Assumption",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Assumption of Mary \"",
+        "Study for \"The Assumption of the Virgin\" for San Augustín, Seville"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    },
+    {
+      "slot_id": "STG-pray.rosary-16",
+      "title": "Coronation of Our Lady",
+      "candidate_count": 4,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The coronation of the Virgin",
+        "The Virgin Crowned by Angels"
+      ],
+      "stage_kind": "TRADITIONAL_MYSTERY",
+      "editorial_subject_candidate_present": true,
+      "note": "SOURCE_PHOTO_AND_RIGHTS_QA_BEFORE_PUBLISH"
+    }
+  ],
+  "rosary_luminous_optional": [
+    {
+      "title": "Baptism of the Lord",
+      "semantic_route": "SEM-rosary.baptism_of_christ",
+      "stable_blueprint_slot": null,
+      "user_accepted_prior_candidates": [
+        {
+          "artwork_id": "REVIEW::commons:15177655",
+          "title": "Baptism of Christ-Francesco Albani-MBA Lyon A170-IMG 0339",
+          "artist": "Rama"
+        },
+        {
+          "artwork_id": "REVIEW::commons:75930307",
+          "title": "German: Taufe Christi | Baptism of Christ \" \"",
+          "artist": "Cornelis van Haarlem"
+        },
+        {
+          "artwork_id": "REVIEW::commons:9569342",
+          "title": "Le Baptême du Christ Stella",
+          "artist": "Jacques Stella"
+        },
+        {
+          "artwork_id": "REVIEW::commons:131104289",
+          "title": "Lemoyne Baptême du Christ Sens",
+          "artist": "François Lemoyne"
+        }
+      ],
+      "coverage_state": "OPTIONAL_MYSTERY_PRESENT_IN_CANONICAL_SOURCE_BUT_NO_STABLE_267_BLUEPRINT_SLOT",
+      "action": "MAP_SEMANTIC_TO_REAL_ROSARY_MYSTERY_CARD_BEFORE_ASSERTING_COMPLETENESS"
+    },
+    {
+      "title": "Wedding at Cana",
+      "semantic_route": "SEM-rosary.wedding_at_cana",
+      "stable_blueprint_slot": null,
+      "user_accepted_prior_candidates": [
+        {
+          "artwork_id": "REVIEW::commons:158345",
+          "title": "Hochzeit zu Kana",
+          "artist": "Sebastiano Ricci"
+        },
+        {
+          "artwork_id": "REVIEW::commons:74197382",
+          "title": "The Wedding at Cana \" \"",
+          "artist": "Giuseppe Maria Crespi"
+        }
+      ],
+      "coverage_state": "OPTIONAL_MYSTERY_PRESENT_IN_CANONICAL_SOURCE_BUT_NO_STABLE_267_BLUEPRINT_SLOT",
+      "action": "MAP_SEMANTIC_TO_REAL_ROSARY_MYSTERY_CARD_BEFORE_ASSERTING_COMPLETENESS"
+    },
+    {
+      "title": "Proclamation of the Kingdom",
+      "semantic_route": "SEM-rosary.proclamation_of_kingdom",
+      "stable_blueprint_slot": null,
+      "user_accepted_prior_candidates": [],
+      "coverage_state": "OPTIONAL_MYSTERY_PRESENT_IN_CANONICAL_SOURCE_BUT_NO_STABLE_267_BLUEPRINT_SLOT",
+      "action": "MAP_SEMANTIC_TO_REAL_ROSARY_MYSTERY_CARD_BEFORE_ASSERTING_COMPLETENESS"
+    },
+    {
+      "title": "Transfiguration",
+      "semantic_route": "SEM-rosary.transfiguration",
+      "stable_blueprint_slot": null,
+      "user_accepted_prior_candidates": [],
+      "coverage_state": "OPTIONAL_MYSTERY_PRESENT_IN_CANONICAL_SOURCE_BUT_NO_STABLE_267_BLUEPRINT_SLOT",
+      "action": "MAP_SEMANTIC_TO_REAL_ROSARY_MYSTERY_CARD_BEFORE_ASSERTING_COMPLETENESS"
+    },
+    {
+      "title": "Institution of the Eucharist",
+      "semantic_route": "SEM-rosary.institution_of_eucharist",
+      "stable_blueprint_slot": null,
+      "user_accepted_prior_candidates": [
+        {
+          "artwork_id": "REVIEW::commons:48577448",
+          "title": "The Last Supper",
+          "artist": "Giovanni Lanfranco"
+        }
+      ],
+      "coverage_state": "OPTIONAL_MYSTERY_PRESENT_IN_CANONICAL_SOURCE_BUT_NO_STABLE_267_BLUEPRINT_SLOT",
+      "action": "MAP_SEMANTIC_TO_REAL_ROSARY_MYSTERY_CARD_BEFORE_ASSERTING_COMPLETENESS"
+    }
+  ],
+  "chaplets": [
+    {
+      "module": "Divine Mercy",
+      "ids": [
+        "COV-pray.divine_mercy",
+        "STG-pray.divine_mercy-01"
+      ],
+      "exactness": "ORIGINAL_KAZIMIROWSKI_DIVINE_MERCY_IMAGE_USER_APPROVED_FOR_COVER; decade reuse is shared-pool",
+      "slots": [
+        {
+          "slot_id": "COV-pray.divine_mercy",
+          "title": "Cover",
+          "candidate_count": 8,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Divine Mercy (the original, 1934)",
+            "The Heart of Jesus"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.divine_mercy-01",
+          "title": "Decades (shared pool)",
+          "candidate_count": 9,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Preparation for the Crucifixion",
+            "The Crucifixion"
+          ]
+        }
+      ],
+      "covered": true
+    },
+    {
+      "module": "Five Wounds",
+      "ids": [
+        "COV-pray.five_wounds",
+        "STG-pray.five_wounds-01",
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "STG-pray.five_wounds-04",
+        "STG-pray.five_wounds-05"
+      ],
+      "exactness": "FIVE_OF_FIVE_STAGES_CANDIDATES; feet/hands often generic Crucifixions, precise wound depiction not independently verified",
+      "slots": [
+        {
+          "slot_id": "COV-pray.five_wounds",
+          "title": "Cover",
+          "candidate_count": 8,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Saint Francis of Assisi at the foot of the Cross",
+            "The Stigmatization of Saint Francis \" \""
+          ]
+        },
+        {
+          "slot_id": "STG-pray.five_wounds-01",
+          "title": "Left foot",
+          "candidate_count": 17,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Crucifixion",
+            "Preparation for the Crucifixion"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.five_wounds-02",
+          "title": "Right foot",
+          "candidate_count": 4,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Crucifixion",
+            "Preparation for the Crucifixion"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.five_wounds-03",
+          "title": "Left hand",
+          "candidate_count": 4,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Crucifixion",
+            "Preparation for the Crucifixion"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.five_wounds-04",
+          "title": "Right hand",
+          "candidate_count": 6,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+            "The Doubting Thomas"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.five_wounds-05",
+          "title": "Sacred side",
+          "candidate_count": 3,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Divine Mercy (the original, 1934)",
+            "The Heart of Jesus"
+          ]
+        }
+      ],
+      "covered": true
+    },
+    {
+      "module": "Precious Blood",
+      "ids": [
+        "COV-pray.precious_blood",
+        "STG-pray.precious_blood-01",
+        "STG-pray.precious_blood-02",
+        "STG-pray.precious_blood-03",
+        "STG-pray.precious_blood-04",
+        "STG-pray.precious_blood-05",
+        "STG-pray.precious_blood-06",
+        "STG-pray.precious_blood-07"
+      ],
+      "exactness": "SEVEN_OF_SEVEN_STAGES_CANDIDATES; circumcision has no title-exact candidate; Piercing of Side has van Dyck Lance Thrust user-approved association",
+      "slots": [
+        {
+          "slot_id": "COV-pray.precious_blood",
+          "title": "Cover",
+          "candidate_count": 5,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Crucifixion",
+            "Preparation for the Crucifixion"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-01",
+          "title": "Circumcision",
+          "candidate_count": 4,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Presentation of Jesus at the Temple",
+            "Saints Presenting a Devout Woman to the Virgin and Child"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-02",
+          "title": "Agony in Gethsemane",
+          "candidate_count": 5,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Agony in the Garden — Antwerp Rosary cycle",
+            "The Agony in the Garden"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-03",
+          "title": "Scourging",
+          "candidate_count": 5,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Christ at the Column",
+            "Altarpiece with the Passion of Christ: Flagellation"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-04",
+          "title": "Crowning with thorns",
+          "candidate_count": 5,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+            "Christ Crowned with Thorns"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-05",
+          "title": "Way of the Cross",
+          "candidate_count": 4,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Christ Carrying the Cross",
+            "The Way to Calvary"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-06",
+          "title": "Crucifixion",
+          "candidate_count": 9,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Crucifixion",
+            "Preparation for the Crucifixion"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-07",
+          "title": "Piercing of the side",
+          "candidate_count": 2,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Heart of Jesus",
+            "The Lance Thrust"
+          ]
+        }
+      ],
+      "covered": true
+    },
+    {
+      "module": "Little Crown",
+      "ids": [
+        "COV-pray.little_crown",
+        "STG-pray.little_crown-01"
+      ],
+      "exactness": "COVER_AND_SHARED_BEAD_POOL_ONLY; NOT_UNIQUE_IMAGE_PER_BEAD",
+      "slots": [
+        {
+          "slot_id": "COV-pray.little_crown",
+          "title": "Cover",
+          "candidate_count": 8,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Adoration of the Shepherds",
+            "Adoration of the Shepherds"
+          ]
+        },
+        {
+          "slot_id": "STG-pray.little_crown-01",
+          "title": "Beads (shared pool)",
+          "candidate_count": 8,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Adoration of the Shepherds",
+            "Adoration of the Shepherds"
+          ]
+        }
+      ],
+      "covered": true
+    },
+    {
+      "module": "Seven Sorrows",
+      "ids": [
+        "COV-prayer.seven_sorrows_chaplet",
+        "STG-prayer.seven_sorrows_chaplet-01",
+        "STG-prayer.seven_sorrows_chaplet-02",
+        "STG-prayer.seven_sorrows_chaplet-03",
+        "STG-prayer.seven_sorrows_chaplet-04",
+        "STG-prayer.seven_sorrows_chaplet-05",
+        "STG-prayer.seven_sorrows_chaplet-06",
+        "STG-prayer.seven_sorrows_chaplet-07"
+      ],
+      "exactness": "SEVEN_OF_SEVEN_STAGES_CANDIDATES; fourth sorrow Mary's meeting with Jesus carrying Cross has no exact-depiction candidate",
+      "slots": [
+        {
+          "slot_id": "COV-prayer.seven_sorrows_chaplet",
+          "title": "Cover",
+          "candidate_count": 5,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Virgin of the Seven Sorrows",
+            "Pietà"
+          ]
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-01",
+          "title": "The prophecy of Simeon",
+          "candidate_count": 3,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Presentation of Jesus at the Temple",
+            "Study for \"The Presentation of Christ in the Temple\" (for Saint Ulrich, Vienna)"
+          ]
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-02",
+          "title": "The flight into Egypt",
+          "candidate_count": 6,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Rest on the Flight into Egypt",
+            "The Flight into Egypt"
+          ]
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+          "title": "The loss of the Child in the Temple",
+          "candidate_count": 4,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Christ among the Doctors",
+            "Christ among the Doctors \" \""
+          ]
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-04",
+          "title": "Mary meets Jesus carrying the Cross",
+          "candidate_count": 4,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Pietà",
+            "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)"
+          ]
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-05",
+          "title": "The Crucifixion",
+          "candidate_count": 10,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Crucifixion",
+            "Preparation for the Crucifixion"
+          ]
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+          "title": "Jesus taken down from the Cross",
+          "candidate_count": 14,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "Descent from the Cross — Prado Passion series",
+            "The Deposition"
+          ]
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+          "title": "Jesus laid in the tomb",
+          "candidate_count": 4,
+          "source_image_and_rights_certified": false,
+          "top": [
+            "The Burial of Christ",
+            "De graflegging van Christus"
+          ]
+        }
+      ],
+      "covered": true
+    }
+  ],
+  "seven_last_words": [
+    {
+      "slot_id": "STG-pray.seven_words-01",
+      "title": "'Father, forgive them'",
+      "candidate_count": 2,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Crucifixion",
+        "Preparation for the Crucifixion"
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-02",
+      "title": "'This day thou shalt be with me in Paradise'",
+      "candidate_count": 3,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Good Thief (Saint Dismas)",
+        "The Crucifixion"
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-03",
+      "title": "'Woman, behold thy son'",
+      "candidate_count": 5,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Pietà",
+        "Pietà"
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-04",
+      "title": "'My God, why hast Thou forsaken me?'",
+      "candidate_count": 2,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Crucifixion",
+        "Preparation for the Crucifixion"
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-05",
+      "title": "'I thirst'",
+      "candidate_count": 2,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Crucifixion",
+        "Preparation for the Crucifixion"
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-06",
+      "title": "'It is consummated'",
+      "candidate_count": 2,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "The Lance Thrust",
+        "The Heart of Jesus"
+      ]
+    },
+    {
+      "slot_id": "STG-pray.seven_words-07",
+      "title": "'Into Thy hands I commend my spirit'",
+      "candidate_count": 6,
+      "source_image_and_rights_certified": false,
+      "top": [
+        "Pietà",
+        "Pietà"
+      ]
+    }
+  ],
+  "known_exact_scene_and_integration_issues": [
+    {
+      "slot": "STG-pray.precious_blood-01",
+      "subject": "Circumcision",
+      "severity": "EXACT_SCENE_NOT_YET_ASSIGNED",
+      "why": "Presentation at Temple is not the Circumcision; retain associated imagery as contextual only"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-04",
+      "subject": "Mary meets Jesus carrying the Cross",
+      "severity": "EXACT_SCENE_NOT_YET_ASSIGNED",
+      "why": "Pietà/Crucifixion do not depict the actual meeting"
+    },
+    {
+      "slot": "STG-pray.benediction-03",
+      "subject": "Blessing with the Blessed Sacrament",
+      "severity": "EMPTY_SLOT",
+      "why": "No explicit depiction in existing indexed 383/856/989 by title; do not substitute Mass scenes"
+    },
+    {
+      "slot": "COV-novena.st_therese",
+      "subject": "St Thérèse novena cover",
+      "severity": "EXACT_SUBJECT_IDENTIFIED_SOURCE_PHOTO_NOT_AVAILABLE",
+      "why": "1925 Thérèse aux roses by Céline Martin in gallery, but no verified complete image or rights"
+    },
+    {
+      "slot": "STG-pray.rosary-10",
+      "subject": "Carrying the Cross",
+      "severity": "FIT_CLASS_METADATA_INCORRECT",
+      "why": "Christ Carrying the Cross and Way to Calvary are direct iconographic subjects even if previous registry called them contextual"
+    },
+    {
+      "slot": "SEM-rosary.baptism_of_christ",
+      "subject": "Baptism of the Lord",
+      "severity": "SEMANTIC_ROUTE_ONLY",
+      "why": "Existing canonical optional Luminous mystery lacks normalized 267-slot artwork link"
+    },
+    {
+      "slot": "SEM-rosary.wedding_at_cana",
+      "subject": "Wedding at Cana",
+      "severity": "SEMANTIC_ROUTE_ONLY",
+      "why": "Existing canonical optional Luminous mystery lacks normalized 267-slot artwork link"
+    },
+    {
+      "slot": "SEM-rosary.proclamation_of_kingdom",
+      "subject": "Proclamation of the Kingdom",
+      "severity": "SEMANTIC_ROUTE_ONLY",
+      "why": "Existing canonical optional Luminous mystery lacks normalized 267-slot artwork link"
+    },
+    {
+      "slot": "SEM-rosary.transfiguration",
+      "subject": "Transfiguration",
+      "severity": "SEMANTIC_ROUTE_ONLY",
+      "why": "Existing canonical optional Luminous mystery lacks normalized 267-slot artwork link"
+    },
+    {
+      "slot": "SEM-rosary.institution_of_eucharist",
+      "subject": "Institution of the Eucharist",
+      "severity": "SEMANTIC_ROUTE_ONLY",
+      "why": "Existing canonical optional Luminous mystery lacks normalized 267-slot artwork link"
+    }
+  ],
+  "blocked_user_excluded_artwork": [
+    {
+      "id": "met-436982",
+      "reason": "EXCLUDED_BY_HISTORICAL_USER_EDIT"
+    }
+  ],
+  "truth": "No claims of production activation; every candidate image must pass source, visual, frame, rights and runtime card-ID gates."
+}
