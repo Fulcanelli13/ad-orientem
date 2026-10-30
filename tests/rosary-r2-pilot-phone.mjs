@@ -38,9 +38,8 @@ try{
    await page.locator("#aoPray435930 [data-p435930-rosary-begin]").click();
    const donor=page.locator("#aoPrayerBookRoot.open");
    await donor.locator("[data-lab-rosary-today]").click();
-   await donor.locator('[data-ao-rosary-r2="v1"]').waitFor({state:"attached",timeout:14000})
-    .catch(async()=>{await page.waitForFunction(()=>document.querySelector(
-      '#aoPrayerBookRoot.open[data-ao-rosary-r2="v1"]'),null,{timeout:14000})});
+   await page.waitForFunction(()=>document.querySelector(
+    '#aoPrayerBookRoot.open[data-ao-rosary-r2="v1"]'),null,{timeout:14000});
    const baseline=await page.evaluate(()=>{
     const r=document.querySelector("#aoPrayerBookRoot.open");
     const shell=r?.querySelector(".pbShell");
