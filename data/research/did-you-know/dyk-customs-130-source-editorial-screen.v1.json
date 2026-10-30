@@ -22,9 +22,9 @@
     },
     "primary_evidence_stage": {
       "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK": 25,
-      "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD": 20,
-      "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK": 10,
-      "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED": 50,
+      "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD": 14,
+      "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED": 60,
+      "ORIGINAL_WEISER_LATER_DIRECT_PAGE_SWEEP_CHECK": 6,
       "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT": 25
     },
     "festival_family_counts": {
@@ -38,9 +38,11 @@
       "MARINEO_ST_CYRUS": 6
     },
     "approved": 0,
-    "published": 0
+    "published": 0,
+    "source_page_narrow_action_or_original_page_checked": 116,
+    "source_pages_still_needing_specific_individual_weiser_link": 14
   },
-  "method": "Every drafted Customs fact matched to its original action dossier, old Pitrè OCR line, screened Weiser printed page or Pitrè 1900 scanned original page. Classifications are reversible editorial priorities; page location is not independent historical corroboration. No public runtime changes.",
+  "method": "Every drafted Customs fact matched to its original action dossier, old Pitrè OCR line, screened Weiser printed page or Pitrè 1900 scanned original page. Classifications are reversible editorial priorities; page location is not independent historical corroboration. No public runtime changes. Reconciled ten original Pitrè 1900 printed folios and six later direct Weiser page checks already available in source owner; 116/130 now have an individual checked original-page/leaf pointer, 14 still need one in current data.",
   "editorial_policy": "Do not equate 130 source observations with 130 independent customary identities or automatically publishable interesting facts. Deduplicate narrative families, verify local period and original source, require EN/FR review and exact destination.",
   "records": [
     {
@@ -466,220 +468,250 @@
       "source_family": "PITRE_1900",
       "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 16819,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 443,
+        "scan_pdf_page_1based": 501,
+        "italian_text_anchor": "un vecchio, una giovane ed un bambino"
+      },
       "source_action_as_recorded": "Invite three poor people to represent Joseph Mary and Jesus at a household votive meal",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": "One Pitrè authored report, not independently verified continued practice; do not promote to Roman-liturgical norm.",
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 16819
     },
     {
       "draft_id": "DYK-UM01-022",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 16993,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 448,
+        "scan_pdf_page_1based": 506,
+        "italian_text_anchor": "una donna ed un bambino"
+      },
       "source_action_as_recorded": "Seat an elderly person, woman and child representing the Holy Family at the bread table",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 16993
     },
     {
       "draft_id": "DYK-UM01-023",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 17063,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 450,
+        "scan_pdf_page_1based": 508,
+        "italian_text_anchor": "tre poveri, che sceglie"
+      },
       "source_action_as_recorded": "Invite three especially poor residents to a votive household feast representing the Holy Family",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 17063
     },
     {
       "draft_id": "DYK-UM01-024",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 17216,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 454,
+        "scan_pdf_page_1based": 512,
+        "italian_text_anchor": "vicchiareddiy ne sfama"
+      },
       "source_action_as_recorded": "Households host sets of four to thirty poor guests known as vicchiareddi at the Joseph feast",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 17216
     },
     {
       "draft_id": "DYK-UM01-025",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 16840,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 444,
+        "scan_pdf_page_1based": 502,
+        "italian_text_anchor": "attaccate alle pareti"
+      },
       "source_action_as_recorded": "Hang large cudduri loaves on the household walls",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 16840
     },
     {
       "draft_id": "DYK-UM01-026",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 16900,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 445,
+        "scan_pdf_page_1based": 503,
+        "italian_text_anchor": "Giun- gono innanzi un fondaco"
+      },
       "source_action_as_recorded": "Stage a dramatic refusal of shelter at a closed inn door for the costumed Holy Family",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 16900
     },
     {
       "draft_id": "DYK-UM01-027",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 17010,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 448,
+        "scan_pdf_page_1based": 506,
+        "italian_text_anchor": "vendita dei doni"
+      },
       "source_action_as_recorded": "Auction donated food and produce after the church ceremony for the festival cause",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 17010
     },
     {
       "draft_id": "DYK-UM01-028",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 16760,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 441,
+        "scan_pdf_page_1based": 499,
+        "italian_text_anchor": "due lunghe file di cavalieri"
+      },
       "source_action_as_recorded": "Appoint festival officers to collect laurel boughs outside town and enter on horseback",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 16760
     },
     {
       "draft_id": "DYK-UM01-029",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 17137,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 452,
+        "scan_pdf_page_1based": 510,
+        "italian_text_anchor": "servendo i poveri venuti"
+      },
       "source_action_as_recorded": "Extend hospitality from the ceremonial guests to other poor visitors at the votive house",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 17137
     },
     {
       "draft_id": "DYK-UM01-030",
       "source_family": "PITRE_1900",
       "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
-      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
-      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
-      "evidence_locator": 16972,
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-17-p1-date-region-page-gates.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": {
+        "original_printed_page": 447,
+        "scan_pdf_page_1based": 505,
+        "italian_text_anchor": "il 19 Marzo e la prima Domenica di Settembre"
+      },
       "source_action_as_recorded": "Observe two local Joseph feasts, 19 March and the first Sunday of September",
       "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
       "concerns": [
-        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
         "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
-        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "prior_ocr_line_locator": 16972
     },
     {
       "draft_id": "DYK-UM02-001",
@@ -1045,21 +1077,19 @@
       "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
       "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
-      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
-      "evidence_locator": [
-        27
-      ],
+      "evidence_stage": "ORIGINAL_WEISER_LATER_DIRECT_PAGE_SWEEP_CHECK",
+      "evidence_locator": 27,
       "source_action_as_recorded": "Monday household or personal prayers for the Holy Souls",
       "festival_cluster": null,
       "concerns": [
-        "NO_INDEPENDENT_SECOND_WITNESS",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NO_INDEPENDENT_SECOND_WITNESS"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "direct_review_id": "AO-CUSTOMS-WEISER-P2-039"
     },
     {
       "draft_id": "DYK-UM02-019",
@@ -1067,21 +1097,19 @@
       "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
       "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
-      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
-      "evidence_locator": [
-        27
-      ],
+      "evidence_stage": "ORIGINAL_WEISER_LATER_DIRECT_PAGE_SWEEP_CHECK",
+      "evidence_locator": 27,
       "source_action_as_recorded": "Tuesday devotion to the holy angels",
       "festival_cluster": null,
       "concerns": [
-        "NO_INDEPENDENT_SECOND_WITNESS",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NO_INDEPENDENT_SECOND_WITNESS"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "direct_review_id": "AO-CUSTOMS-WEISER-P2-040"
     },
     {
       "draft_id": "DYK-UM02-020",
@@ -1111,22 +1139,20 @@
       "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
       "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
-      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
-      "evidence_locator": [
-        29
-      ],
+      "evidence_stage": "ORIGINAL_WEISER_LATER_DIRECT_PAGE_SWEEP_CHECK",
+      "evidence_locator": 29,
       "source_action_as_recorded": "Thursday devotion to the Blessed Sacrament",
       "festival_cluster": null,
       "concerns": [
         "NO_INDEPENDENT_SECOND_WITNESS",
-        "RELIGIOUS_SCOPE_REVIEW",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "RELIGIOUS_SCOPE_REVIEW"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "direct_review_id": "AO-CUSTOMS-WEISER-P2-010"
     },
     {
       "draft_id": "DYK-UM02-022",
@@ -1134,21 +1160,19 @@
       "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
       "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
-      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
-      "evidence_locator": [
-        29
-      ],
+      "evidence_stage": "ORIGINAL_WEISER_LATER_DIRECT_PAGE_SWEEP_CHECK",
+      "evidence_locator": 29,
       "source_action_as_recorded": "First Friday Sacred Heart observance",
       "festival_cluster": null,
       "concerns": [
-        "NO_INDEPENDENT_SECOND_WITNESS",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NO_INDEPENDENT_SECOND_WITNESS"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "direct_review_id": "AO-CUSTOMS-WEISER-P2-011"
     },
     {
       "draft_id": "DYK-UM02-023",
@@ -1156,21 +1180,19 @@
       "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
       "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
-      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
-      "evidence_locator": [
-        29
-      ],
+      "evidence_stage": "ORIGINAL_WEISER_LATER_DIRECT_PAGE_SWEEP_CHECK",
+      "evidence_locator": 29,
       "source_action_as_recorded": "Saturday Marian devotions",
       "festival_cluster": null,
       "concerns": [
-        "NO_INDEPENDENT_SECOND_WITNESS",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NO_INDEPENDENT_SECOND_WITNESS"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "direct_review_id": "AO-CUSTOMS-WEISER-P2-012"
     },
     {
       "draft_id": "DYK-UM02-024",
@@ -1200,21 +1222,19 @@
       "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
       "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
       "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
-      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
-      "evidence_locator": [
-        36
-      ],
+      "evidence_stage": "ORIGINAL_WEISER_LATER_DIRECT_PAGE_SWEEP_CHECK",
+      "evidence_locator": 36,
       "source_action_as_recorded": "Ember-day almsgiving",
       "festival_cluster": null,
       "concerns": [
-        "NO_INDEPENDENT_SECOND_WITNESS",
-        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+        "NO_INDEPENDENT_SECOND_WITNESS"
       ],
       "claim_correction_or_hold_reason": null,
       "fr_native_review_done": false,
       "claim_verified_for_publication": false,
       "destination_verified": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "direct_review_id": "AO-CUSTOMS-WEISER-P2-014"
     },
     {
       "draft_id": "DYK-UM02-026",
