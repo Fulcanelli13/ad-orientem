@@ -445,6 +445,19 @@ const STYLES=`
   margin-top:0
  }
 }
+/* A 320px short phone has only ~421px before the persistent app controls.
+   A pinned Little Crown dock would cover the *first* Our Father line; on
+   mobile the canonical 15-bead ring remains direct-tappable and actions
+   follow the complete source prayer in the scroll, as in the safe donor. */
+@media(max-width:420px){
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"]{
+  min-height:0
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownActions{
+  position:relative;bottom:auto;z-index:1;margin-top:8px;
+  background:transparent;border-top:0
+ }
+}
 #aoPray435930 .aoF07JumpDisclosure{margin:3px 0 7px}
 #aoPray435930 .aoF07JumpDisclosure>summary{min-height:44px;display:flex;align-items:center;justify-content:center;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#bbb3a7);cursor:pointer}
 #aoPray435930 .aoF07JumpDisclosure>nav{padding-bottom:8px}
