@@ -397,6 +397,9 @@ try{
    assert.notEqual(createdProfile,"p1","New profile did not become active");
    await panel.locator('[data-schola-ordinary-setting="KYRIE"]').fill("Mass VIII");
    await panel.locator('[data-schola-ordinary-setting="CREDO"]').fill("Credo III");
+   // Ordinary inputs persist on change/blur (not per keystroke); explicit
+   // commit avoids reading a still-focused uncommitted text field.
+   await panel.locator('[data-schola-ordinary-setting="CREDO"]').blur();
    await panel.locator("[data-schola-local-sanctus]").selectOption("POLYPHONIC");
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()
      ?.sanctusPerformance==="POLYPHONIC");
