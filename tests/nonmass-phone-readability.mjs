@@ -87,7 +87,24 @@ try{
    assert.ok(formation.scrollWidth<=formation.innerWidth+1,"Formation overflow at "+width+"px");
    await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="pray"]').click();
-   await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
+   // Wait for canonical lazy Prayer owner, with route diagnostics on failure.
+   const opened=await page.waitForFunction(()=>
+     globalThis.AO_PRAY_APP_V1?.status?.().open===true &&
+     document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length===9,
+     null,{timeout:18000}).then(()=>true,()=>false);
+   if(!opened){
+     const state=await page.evaluate(()=>({
+       route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+       owner:globalThis.AO_PRAY_APP_V1?.status?.(),
+       donorView:globalThis.AO_PRAY_V435930?.state?.()?.view,
+       mount:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView,
+       classes:document.getElementById("aoPray435930")?.className,
+       renderedDoors:document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length,
+       errors
+     }));
+     throw Error("Formation -> Pray navigation did not render nine doors: "+JSON.stringify(state));
+   }
+   await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:4500});
    const prayer=await page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
     const visible=selector=>[...document.querySelectorAll(selector)].filter(el=>{
