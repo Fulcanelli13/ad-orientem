@@ -58,11 +58,14 @@ def main():
     rows=manifest["records"]
     if len(rows)!=4 or {x["row"] for x in rows}!={309,315,320,322}:
         raise ValueError("Unexpected photo shortlist: do not widen automated image intake")
+    selected=[x for x in rows if x.get("selected_for_native_acquisition") is True]
+    if len(selected)!=1 or selected[0]["row"]!=309:
+        raise ValueError("Only visually screened Jihlava alternative is eligible for download")
     ORIGINALS.mkdir(parents=True,exist_ok=True)
     STAGED.mkdir(parents=True,exist_ok=True)
     REC=[]
     previews=[]
-    for item in rows:
+    for item in selected:
         raw,origin=retrieve(item)
         with Image.open(io.BytesIO(raw)) as im:
             if im.format!="JPEG" or im.size!=(item["width"],item["height"]):
@@ -108,7 +111,7 @@ def main():
           "rights_and_derivative_publication_gate":"PENDING",
           "published":False
         })
-    review=Image.new("RGB",(420*4,780),"#171e25")
+    review=Image.new("RGB",(420*len(selected),780),"#171e25")
     draw=ImageDraw.Draw(review)
     for i,(row,img) in enumerate(previews):
         thumb=ImageOps.contain(img,(380,700),Image.Resampling.LANCZOS)
@@ -120,14 +123,14 @@ def main():
       "schema":"AO_P107_FOUR_HASH_VERIFIED_ALTERNATIVE_STAGING_V1",
       "status":"RESEARCH_ONLY_NO_APPROVED_PLACE_MEDIA",
       "source":str(INPUT.relative_to(ROOT)),
-      "counts":{"originals_sha1_verified":4,"native_decodes":4,
-                "uncropped_webps_staged":4,"media_approved":0,"published":0},
+      "counts":{"originals_sha1_verified":len(selected),"native_decodes":len(selected),
+                "uncropped_webps_staged":len(selected),"candidates_screened":len(rows),"editorially_rejected_before_download":len(rows)-len(selected),"media_approved":0,"published":0},
       "contact_sheet":str(REVIEW.relative_to(ROOT)),
       "contact_sheet_sha256":h(REVIEW.read_bytes()),
       "records":REC
     }
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print("P107 four alternative originals hash-verified; research-stage only")
+    print("P107 one selected original hash-verified; three poorer alternatives held, research-stage only")
     for x in REC:
         print(x["row"],x["original_sha1_verified"],x["staged_sha256"],x["staged_dimensions"])
 
