@@ -39,7 +39,13 @@ try{
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
 
-  await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
+  // This historical, full-app visual acceptance suite asserts the 9-card
+  // grouped Prayer hub and the direct Angelus Folio path. Those remain the
+  // supported rollback layout. The new DEFAULT 9-tile Prayer discovery and
+  // optional Angelus entry are certified separately by
+  // tests/pray-design-pilot-phone.mjs at 320px and 390px.
+  await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native&aoPrayerPilot=0",
+    {waitUntil:"domcontentloaded",timeout:90000});
 
   // Original v43.43 loader ownership: same boot/async DOM, exact Marian and
   // Four Evangelists masks, no additional spinner or second overlay.
