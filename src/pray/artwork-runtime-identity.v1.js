@@ -31,13 +31,15 @@ const SLUG={
  firstFriday:"programme.first_friday",
  firstSaturday:"programme.first_saturday"
 };
-const index=(value,max)=>Number.isInteger(Number(value))&&Number(value)>=0&&Number(value)<max?Number(value):null;
+const index=(value,max)=>value===null||value===undefined||value===""?null:Number.isInteger(Number(value))&&Number(value)>=0&&Number(value)<max?Number(value):null;
 const pad=n=>String(n).padStart(2,"0");
 const result=(key,slot,fit,extra={})=>Object.freeze({
  key,slot:slot||null,fit,publicationReady:false,assetUrl:null,
  ...extra
 });
-const devotional=(id)=>"COV-"+id;
+// The 1962 and current Loreto texts are distinct editions of the same Marian invocation;
+// their approved Marian paintings are reusable, but the text remains separate.
+const devotional=(id)=>id==="litany_loreto_current"?"COV-litany_loreto_1962":"COV-"+id;
 
 export function resolveArtworkRuntimeIdentity(input={}){
  const owner=String(input.owner||"presentation");
