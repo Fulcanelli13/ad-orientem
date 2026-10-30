@@ -123,8 +123,12 @@ const F07_STYLE=`
 #aoPray435930 .aoF07CrownText small{font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;color:var(--liturgical,#cbb28b)}
 #aoPray435930 .aoF07CrownText strong{font:500 clamp(18px,4.5vw,23px)/1.25 var(--ao-font-liturgical,Georgia,serif);color:var(--text,#f1e7d7)}
 #aoPray435930 .aoF07CrownText span{font:400 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b9b6b3)}
-#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyStrand,
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadPosition{display:none}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyStrand{display:flex!important;gap:5px;align-items:center;overflow-x:auto;scrollbar-width:none;max-width:100%;padding:3px 1px 5px;min-height:44px}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyStrand::-webkit-scrollbar{display:none}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyStrand .aoMercyBeadButton{flex:0 0 40px;min-width:40px;min-height:40px;height:40px;border-radius:50%;touch-action:manipulation}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyStrand .aoMercyBeadButton[data-bead="0"]{flex-basis:44px;min-width:44px;height:44px}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyStrand .aoMercyBeadButton[data-status="active"]{outline:2px solid #bd655b;outline-offset:-2px}
 @media(max-width:390px){
  #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand{grid-template-columns:84px minmax(0,1fr);gap:8px;padding:2px 7px;margin:0 0 3px}
  #aoPray435930 .aoF07CrownDiagram{width:84px;height:84px}
