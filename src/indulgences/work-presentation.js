@@ -272,7 +272,7 @@ export function installIndulgenceContextStyles(doc=globalThis.document){
  return true;
 }
 export function indulgenceCalendarCuesForDate(date){
- if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(date||"")))return [];
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(String(date||"")))return [];
  return CALENDAR_WORKS.filter(item=>item.date===date);
 }
 export function indulgencePrayerCues(view,{angelusForm=null}={}){
