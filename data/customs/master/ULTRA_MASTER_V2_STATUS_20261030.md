@@ -75,6 +75,16 @@ There are now **222 evidence-only observations with existing explicit reviewed s
 
 Next task must re-use the same master index for true cross-record identity decisions, prioritizing distinct action families and their variants rather than multiplying stand-alone research files; count verified underlying witnesses, not copied author reports. No publication, grant or Calendar changes.
 
+## 30 October — first 250-action Weiser identity cohort (single-index batch)
+
+The [single master working relationship index](./customs-ultra-master-v2-single-working-relationship-index-20261030.v1.json) now contains **250 additional per-source bulk identity-review decisions** under one keyed cohort, `WEISER-ACTION-250-20261030`. The selected sources are the earliest 250 previously unreviewed Weiser 1956 family-book and 1958 Handbook observations in their retained original 17-wave order, excluding all 222 prior exact-reviewed sources and all 50 description-level reviewed lexical suggestions.
+
+Within this cohort **76 action/owner proposals** span **56 different existing registry owner IDs**: **43 same-described-action comparisons**, **23 related components or local variants**, **3 ritual/ministerial-authority holds**, **6 negative same-owner vetoes**, and **1 related historical context**. The remaining **174** are not silently assigned to existing owners: **62 liturgical/sacramental**, **39 historical/folkloric**, **17 author proposals**, **55 possible practices without an exact owner**, and **1 historical indulgence grant requiring the original instrument**. Negative edges explicitly separate family Holy Thursday supper from church visits, parents sprinkling Easter eggs from a priest's blessing, Assumption fruit exchange from an authorized blessing, shrine straw from Christmas dinner-table hay, Easter versus Saint John bonfires, and blessing of new fire from its separate household transport.
+
+**Global progress:** original pointer / source classification remains **3,295 / 3,295**. Owner/caseboard research connections with exact prior review remain **222**. The 50 earlier lexical suggestions have written source-description assessments. Adding this 250-row action-scope review yields **522 / 3,295 (15.8%)** observations with some identity comparison or review and **2,773** not yet processed at identity-comparison level. These **different evidence depths must not be treated as final approvals**. The canonical register is still **57 original master rows and 408 provisional groups**; the **219** `POTENTIALLY_DISTINCT_HISTORICAL_ACTION` items remain *candidates*, not 219 proven customs.
+
+This pass **did not reread original printed folios, inspect new independent-source witnesses, adjudicate all 219 distinct candidates, or promote an identity relation to an approved merge**. The original work's categories are retained. Existing 36 published Customs, indulgence work grants and Calendar remain frozen. The next 200–300-record identity pass should prioritize historically distinct action candidates from a **different source family** (e.g. Pitrè and local regional inventories) and compare against existing Weiser owner clusters in the same index, rather than repeat the 250 Weiser entries or open another separate ledger.
+
 ## Existing research is not being discarded
 
 The authoritative corpus remains at:
