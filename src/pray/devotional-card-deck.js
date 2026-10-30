@@ -184,7 +184,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
  host.replaceChildren(timeline,viewport);host.dataset.aoDevotionalDeck="v1";
  // F04 bottom navigation is one more view of this SAME source-owned go()
  // cursor. No duplicate card index, liturgical text or completion state.
- const f04=mount.matches('[data-ao-f04-timeline="segments"]');
+ const f04=Boolean(mount.querySelector('[data-ao-f04-timeline="segments"]'));
  const dock=f04?create(doc,"nav","aoDevoF04Dock"):null;
  const previous=dock?create(doc,"button","aoDevoF04Previous","‹"):null;
  const position=dock?create(doc,"span","aoDevoF04Position"):null;
