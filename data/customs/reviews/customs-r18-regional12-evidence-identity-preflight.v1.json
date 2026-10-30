@@ -1,0 +1,358 @@
+{
+  "schema": "AO_CUSTOMS_R18_REGIONAL12_EVIDENCE_IDENTITY_PREFLIGHT_V1",
+  "as_of": "2026-10-30",
+  "applies_to": "Draft PR #2058; no reader, Calendar or canonical data changes",
+  "reviewer_source": {
+    "path": "data/customs/reviews/customs-r18-regional12-review-only.v1.json",
+    "origin": "PR #1759 pinned historical bilingual source"
+  },
+  "main_baseline": {
+    "published": 36,
+    "context_only": 3,
+    "other_cohort_unapproved_ids": [
+      "EPIP-003",
+      "CRIB-001"
+    ]
+  },
+  "counts": {
+    "candidate_articles": 12,
+    "existing_research_ids": 6,
+    "additional_proposed_ids_not_allocated": 6,
+    "narrow_claims_supported_by_direct_read": 7,
+    "narrow_claims_supported_by_indexed_text": 5,
+    "full_articles_certified": 0,
+    "owner_signoffs": 0,
+    "publication_authorizations": 0
+  },
+  "policies": {
+    "no_auto_promotion": true,
+    "no_customs_atlas": true,
+    "no_event_creation": true,
+    "no_cross_identity_auto_merge": true,
+    "no_auto_region_assumption": true,
+    "no_unverified_indulgences": true,
+    "fresh_source_check_does_not_certify_all_claims": true
+  },
+  "rows": [
+    {
+      "review_key": "CUSTOMS-R18-01",
+      "title_en": "St Patrick's ribbon cross",
+      "proposed_id_for_editorial_review_only": "PATR-002",
+      "proposed_id_is_not_canonical_or_reserved": false,
+      "identity_comparison_ids": [
+        "PATR-001"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/",
+        "method": "DIRECT_PAGE",
+        "supported": "Thomas Dineley witnessed St Patrick's crosses in the 1680s; ribbon and paper versions developed; no continuing nationwide practice inferred.",
+        "limitation": "Museum page is not a certification of every editorial sentence.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": null,
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-02",
+      "title_en": "The Irish Christmas candle",
+      "proposed_id_for_editorial_review_only": "XMAS-002",
+      "proposed_id_is_not_canonical_or_reserved": false,
+      "identity_comparison_ids": [
+        "DOM-011",
+        "XMAS-001"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y",
+        "method": "INDEXED_SOURCE_TEXT",
+        "supported": "National Museum records Annascaul, Kerry Christmas candle testimony dated 1941 and accounts of candles for departed relatives.",
+        "limitation": "Direct page fetch and independent Dúchas archival page remain inaccessible. Preserve attributed folklore, not a claim of supernatural effects.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": "ARCHIVE_REOPEN_UNAVAILABLE",
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-06",
+      "title_en": "Christmas Eve hay beneath the tablecloth",
+      "proposed_id_for_editorial_review_only": "XMAS-003",
+      "proposed_id_is_not_canonical_or_reserved": false,
+      "identity_comparison_ids": [
+        "XMAS-001",
+        "ADVT-002"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+        "method": "DIRECT_PAGE",
+        "supported": "Poland's Ministry of Culture states hay under a white tablecloth in Wigilia, symbolizing Christ's humility and manger.",
+        "limitation": "Cultural tradition, not mandated Catholic ritual or blessing.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": null,
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-10",
+      "title_en": "St Barbara branches — Barbarazweige",
+      "proposed_id_for_editorial_review_only": "SBAR-001",
+      "proposed_id_is_not_canonical_or_reserved": false,
+      "identity_comparison_ids": [
+        "ADVT-002"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://www.erzdioezese-wien.at/heilige-barbara",
+        "method": "DIRECT_PAGE",
+        "supported": "Vienna Archdiocese describes cherry/apple branches placed in water on 4 December, and distinguishes St Barbara's uncertain history.",
+        "limitation": "Miraculous flowering legend cannot be asserted as verified fact.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": null,
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-11",
+      "title_en": "Provençal Christmas pain calendal and the poor person's portion",
+      "proposed_id_for_editorial_review_only": "XMAS-004",
+      "proposed_id_is_not_canonical_or_reserved": false,
+      "identity_comparison_ids": [
+        "FOOD-001",
+        "EPIP-002"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+        "method": "DIRECT_PAGE",
+        "supported": "Var tourism source describes pain calendal and the traditional three portions for the poor, supper and miracles.",
+        "limitation": "Folk miracle component is reported folklore, not any proven power or liturgical bread blessing.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": null,
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-12",
+      "title_en": "Three Kings gifts left in children's shoes",
+      "proposed_id_for_editorial_review_only": "EPIP-004",
+      "proposed_id_is_not_canonical_or_reserved": false,
+      "identity_comparison_ids": [
+        "EPIP-001",
+        "EPIP-002",
+        "SNIC-001"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+        "method": "DIRECT_PAGE",
+        "supported": "Spain's official tourism site describes shoes put out for gifts on 5 January and gifts on 6 January.",
+        "limitation": "2023 guide to 2024 is not evidence for current local parade schedules.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": null,
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-04",
+      "title_en": "Decorated Easter eggs — Polish pisanki and Ukrainian pysanky",
+      "proposed_id_for_editorial_review_only": "EAST-002",
+      "proposed_id_is_not_canonical_or_reserved": true,
+      "identity_comparison_ids": [
+        "BLSS-004"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "method": "INDEXED_SOURCE_TEXT",
+        "supported": "UNESCO's 2024 listing describes wax-resist pysanka and participation across religions; the Radom museum separately records Polish pisanki.",
+        "limitation": "UNESCO direct page is bot-protected; secondary Radom museum indexed text only. Avoid claiming a uniquely Catholic or priestly rite.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": "FOLKLORE_CROSS_CONFESSIONAL",
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-05",
+      "title_en": "Herbergsuche — Advent visits of a Marian image",
+      "proposed_id_for_editorial_review_only": "ADVT-004",
+      "proposed_id_is_not_canonical_or_reserved": true,
+      "identity_comparison_ids": [
+        "ADVT-003"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+        "method": "INDEXED_SOURCE_TEXT",
+        "supported": "A dated 9 December 2023 Austrian parish notice describes a Marian image/statue circulating among families with short Advent prayers.",
+        "limitation": "Page direct fetch unavailable; no evidence of 2026/current route or mandated novena.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": "LOCAL_2023_EXAMPLE",
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-07",
+      "title_en": "Québec guignolée — Christmas charity collection",
+      "proposed_id_for_editorial_review_only": "XMAS-005",
+      "proposed_id_is_not_canonical_or_reserved": true,
+      "identity_comparison_ids": [
+        "SANT-001",
+        "EPIP-001"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://ssvp-mtl.org/fr/guignolee",
+        "method": "INDEXED_SOURCE_TEXT",
+        "supported": "Montreal St Vincent de Paul states first Québec Guignolée in 1861, with modern collections on organiser-specific dates.",
+        "limitation": "Direct page fetch unavailable; a 2026 event programme, where shown, cannot establish recurring future schedules.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": "ORGANISER_LOCAL_DATES",
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-08",
+      "title_en": "Polish kolędnicy — visiting Christmas carollers",
+      "proposed_id_for_editorial_review_only": "XMAS-006",
+      "proposed_id_is_not_canonical_or_reserved": true,
+      "identity_comparison_ids": [
+        "EPIP-001"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+        "method": "DIRECT_PAGE",
+        "supported": "Polish state educational material describes costumed kolędnicy going house to house, singing and staging regional scenes including Herody.",
+        "limitation": "Not interchangeable with German Sternsinger or Hungarian betlehemezés.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": null,
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-09",
+      "title_en": "Hungarian betlehemezés — visiting Nativity plays",
+      "proposed_id_for_editorial_review_only": "XMAS-007",
+      "proposed_id_is_not_canonical_or_reserved": true,
+      "identity_comparison_ids": [
+        "EPIP-001",
+        "ADVT-003"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+        "method": "INDEXED_SOURCE_TEXT",
+        "supported": "Hungarian Catholic Lexicon describes shepherd dialogues and distinct regional theatrical versions; Hungarian ethnographic lexicon corroborates actors and puppets.",
+        "limitation": "Direct lexicon page fetch unavailable, indexed source text only; current performance schedules cannot be inferred.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": null,
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-17",
+      "title_en": "Frauendreißiger — Bavarian Marian pilgrimage period",
+      "proposed_id_for_editorial_review_only": "MARI-003",
+      "proposed_id_is_not_canonical_or_reserved": true,
+      "identity_comparison_ids": [
+        "MARI-001",
+        "DEV-006"
+      ],
+      "identity_decision": "DISTINCT_CANDIDATE_PENDING_OWNER_REVIEW",
+      "primary_source_check": {
+        "url": "https://www.mariathalkirchen.de/index.php?id=164",
+        "method": "DIRECT_PAGE",
+        "supported": "Maria Thalkirchen shrine describes Frauendreißiger from Assumption through 14 September and reports a Pius VI privilege from 1780.",
+        "limitation": "Original papal grant and present applicable conditions not verified. No indulgence offered or portrayed as approved; no new 1962 season.",
+        "checked_on": "2026-10-30",
+        "status": "NARROW_FACT_CORROBORATED_NOT_FULL_ARTICLE_CERTIFICATION"
+      },
+      "remaining_exception": "UNVERIFIED_INDULGENCE",
+      "publication_decisions": {
+        "english": "PENDING",
+        "french": "PENDING",
+        "historical_claims": "PENDING",
+        "identity_scope": "PENDING"
+      },
+      "canonical_write_authorized": false
+    }
+  ]
+}
