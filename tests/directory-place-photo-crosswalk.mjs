@@ -12,8 +12,8 @@ assert.deepEqual(review,buildScreen(geo,r49,cover,gallery),
 assert.equal(review.state,"RESEARCH_ONLY_NEVER_APP_VISIBLE");
 assert.deepEqual([review.counts.venues_screened,review.counts.canonical_places,
  review.counts.within_350m_pairs,review.counts.venues_near_place],
- [1879,529,54,49]);
-assert.equal(review.counts.confirmed_links,22);
+ [1879,530,55,50]);
+assert.equal(review.counts.confirmed_links,23);
 assert.equal(review.counts.nearby_approved_photo_pairs,16);
 assert.equal(review.counts.exact_confirmed_photo_joins,9);
 assert.equal(review.counts.published_new_links,0);
@@ -27,8 +27,8 @@ for(const [venue,place] of [["AO-AMER-R28-US-25-03","place:US:st-boniface-sioux-
 }
 assert.equal(review.batches.length,10);
 assert.equal(review.batches.reduce((n,b)=>n+b.limit,0),1879);
-assert.equal(review.candidate_pairs.length,54);
-assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,54);
+assert.equal(review.candidate_pairs.length,55);
+assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,55);
 assert.equal(review.candidate_pairs.every(x=>x.auto_publish===false),true);
 assert.equal(review.candidate_pairs.every(x=>x.distance_m>=0&&x.distance_m<=350),true);
 assert.equal(review.photo_review_queue.length,16);
@@ -80,4 +80,8 @@ assert.equal(trio.photos[0].license,"CC0");
 assert.equal(trio.photos[1].license,"CC-BY-SA-3.0");
 assert.equal(trio.photos[2].license,null,"Unknown altar copyright must remain unverified");
 
-console.log("PASS 1,879 venues x 529 Places: 54 spatial pairs, 9 exact approved photo joins, 7 new non-published P104 identity links");
+const hannover=review.candidate_pairs.find(x=>x.place_id==="place:DE:basilika-st-clemens-hannover");
+assert.equal(hannover?.distance_m,1.6);
+assert.equal(hannover?.disposition,"EXISTING_CONFIRMED_LINK");
+assert.equal(hannover?.place_has_approved_photo,false,"Canonical Place must not bypass photo release checks");
+console.log("PASS 1,879 venues x 530 Places: 55 spatial pairs, 9 approved-photo joins, Hannover exact site linked without photo");
