@@ -1,0 +1,88 @@
+{
+  "schema": "AO_DYK_R30_189_VS_612_CROSSBANK_RELEASE_BOUNDARY_V1",
+  "date": "2026-10-30",
+  "status": "FULL_PRIVATE_612_LEXICAL_SCREEN_COMPLETE_HOME_RELEASE_NOT_CERTIFIED",
+  "sources": {
+    "candidate_index": "dyk-r22-189-review-index.v1.json",
+    "candidate_review": "dyk-r21-168-integrated-bilingual-review.v1.json",
+    "additional_drafts": "dyk-r22-21-added-review-cards.v1.json",
+    "private_legacy_owner": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028",
+    "private_evidence": "data/discovery/research/r30-dyk-189-vs-612-lexical-crossbank.v1.json",
+    "private_shards": [
+      "src/home/discovery-facts-001.generated.js",
+      "src/home/discovery-facts-002.generated.js",
+      "src/home/discovery-facts-003.generated.js",
+      "src/home/discovery-facts-004.generated.js"
+    ],
+    "public_release_boundary": "The 612 legacy preview statements and their individual IDs remain only in the private branch. This public ledger contains aggregates and new shortlist candidate IDs only."
+  },
+  "counts": {
+    "legacy_private_preview": 612,
+    "legacy_private_preview_unique_ids": 612,
+    "legacy_private_preview_customs": 6,
+    "legacy_private_preview_scripture": 46,
+    "legacy_private_preview_mass_liturgy": 143,
+    "legacy_private_preview_prayer": 87,
+    "legacy_private_preview_calendar": 27,
+    "legacy_private_preview_sacred_places": 176,
+    "legacy_private_preview_catechism": 127,
+    "new_shortlist_cards_screened": 189,
+    "English_exact_sentence_collisions": 0,
+    "French_exact_sentence_collisions": 0,
+    "source_id_identical_collisions": 0,
+    "English_unique_token_jaccard_at_least_0_3": 0,
+    "English_unique_token_jaccard_at_least_0_2": 5,
+    "five_nearest_manual_distinction_triaged": 5,
+    "five_nearest_final_semantic_approvals": 0,
+    "glossary_exact_canonical_explanation_home_holds": 8,
+    "glossary_learn_only": 5,
+    "glossary_rewrite_pending": 3,
+    "mothering_sunday_intra_shortlist_hold": 1,
+    "provisional_max_nonrepetitive_home_card_count": 180,
+    "actual_final_publication_approved": 0,
+    "newly_published": 0,
+    "previous_direct_source_text_claims_checked": 131,
+    "unresolved_original_source_claims": 58,
+    "pitre_original_facsimile_holds": 14
+  },
+  "method": {
+    "English_screen": "lowercase NFKD, stopword removal and limited plural normalization, Jaccard of unique word sets for each of the 189 against each of the 612; exact EN/FR and same source ID independently checked",
+    "supporting_private_record": "Retains all 189 top-three nearest legacy preview IDs and scores in private research branch",
+    "necessary_qualification": "Zero exact sentence/source ID collisions and five modest lexical similarities do not mean zero semantic paraphrase duplicates. Manual multilingual meaning review not complete; no automatic final approval.",
+    "review_subjects": [
+      "Aquinas hymn titles with distinct origins",
+      "Eucharistic vessel veil versus architectural ciborium",
+      "Credo Incarnation genuflection versus Consecration elevation",
+      "Chalice elevation gesture versus general Consecration timeline",
+      "Silent Host Consecration versus elevation sequence"
+    ]
+  },
+  "one_intra_shortlist_duplicate": {
+    "lead_id": "DYK-UM02-001",
+    "hold_id": "DYK-H04-W-A-103",
+    "topic": "English Mothering Sunday / Laetare, apprentices and servants, mother church and simnel cake",
+    "status": "PROVISIONAL_ONE_HOME_LEAD_ONLY_NO_SOURCE_DELETE"
+  },
+  "glossary_holds": {
+    "learn_only": [
+      "DYK-GI-G074",
+      "DYK-GI-G218",
+      "DYK-GI-G411",
+      "DYK-GI-G318",
+      "DYK-GI-G319"
+    ],
+    "requires_distinct_rewrite": [
+      "DYK-GI-G094",
+      "DYK-GI-G311",
+      "DYK-GI-G038"
+    ],
+    "reason": "All eight entries copy canonical glossary explanations word-for-word in both languages, so cannot be treated as additional Home discoveries without original new editorial work."
+  },
+  "constraints": [
+    "Private legacy preview bank of 612 is not an additive pool of 1,001 original source-first research candidates.",
+    "No 612 unpublished preview card text or ID may be published into the public app repository via this report.",
+    "No Pitrè original source facsimile was newly inspected in R30 because available original endpoint/download options remain inaccessible.",
+    "Direct source-claim verification total remains 131/189; this lexical screen does not advance it.",
+    "0 final EN/FR approvals, 0 source-first card releases, 12/day limit unchanged."
+  ]
+}
