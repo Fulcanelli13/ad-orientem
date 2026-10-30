@@ -220,8 +220,8 @@ try{
    await page.waitForFunction(expected=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===expected,
      WORLDWIDE_DIRECTORY_TOTAL,{timeout:12000});
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="SSPX"]').tap();
-   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===RECONCILED_SSPX_TOTAL,
-     null,{timeout:12000});
+   await page.waitForFunction(expected=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===expected,
+     RECONCILED_SSPX_TOTAL,{timeout:12000});
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ROME"]').tap();
    await page.waitForFunction(expected=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===expected,
      RECONCILED_ROME_TOTAL,{timeout:12000});
