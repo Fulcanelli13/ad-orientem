@@ -114,3 +114,28 @@ Added the **nonpublishing, research-only** [draft statement normalizer](../../to
 ### Next signoffs before release
 
 Original-claim and native-language editorial checks for historical/local statements, semantic review across the other 130 Customs candidates and the existing 612-item preview bank, verified direct routes, then and only then a controlled handoff to the existing private Home discovery source owner. Preserve the 12-per-local-day selection and source provenance; no cost.
+
+## Customs editorial review and source-folio recovery — 30 October 2026
+
+The [130-case source/editorial decision register](../../data/research/did-you-know/dyk-customs-130-source-editorial-screen.v1.json) matches **all 130 active historical Customs draft facts** to their own Weiser or Pitrè research records. This is full source-action and scope triage, not independent factual approval or a new Roman-rite customs identity registry. Every case stays unpublished with its original action ID.
+
+**Editorial disposition (preliminary, reversible):** 27 priority standalone discoveries; 28 secondary cultural/contextual facts; 8 needing a correction or narrower source scope; 8 low-curiosity/common or clustered weekday items; 59 in the festival-story clustering pool. One further Pitrè historical fact is included in the 8 correction holds rather than the 59 clustering cases. All 130 are retained in the source research, not silently deleted.
+
+**Original-page audit recovered:** The initially provisional first ten Pitrè St Joseph examples were cross-referenced to later completed source scans: one P0, one P1, eight P2 original-page reviews. Each now has its specific Pitrè 1900 printed page, original scan-page number, matched Italian anchor and an image-checked source record. Six additional Weiser draft rows were cross-referenced to already completed direct-page visual checks in the Customs primary sweep.
+
+Consequently, **116 of the 130 active historical draft facts** now carry an individual previously-checked original folio/leaf source-action pointer in the available research records: 60 Pitrè (all) and 56 Weiser. The **remaining 14** are Weiser excerpts with a page reference but no joined direct original-page check in this DYK screen. None of the 116 have automatic independent historical corroboration, modern continuity, certified 1962 ritual norms, editorial language approval or runtime links. Do not re-run the original Customs page-acquisition process simply to rediscover already checked Pitrè leaves.
+
+### Twelve consolidated Sicilian festival stories
+
+[Source-first story proposals](../../data/research/did-you-know/dyk-pitre-12-festival-stories.v1.json) recombine **27 traceable original Pitrè observations** from the **60** original distinct source-action drafts into **12 candidate story statements in EN/FR**, without replacing or automatically publishing the 60 evidence records. Each source pointer includes its verified printed original folio, Italian match anchor, source-review owner, and the source fact. The grouped themes cover Sicilian Saint Joseph hospitality and bread traditions, Palermo's Rosalia festival, Palermo's Saints Cosmas and Damian, Piazza Armerina's Marian banner, Gangi's Holy Spirit feast, Gratteri's Saint James, Geraci shepherds' Eucharistic celebration, and Marineo's Saint Cyrus street theatre.
+
+The twelve stories are **not an additional twelve active discoveries**: zero net addition to the 145 active DYK draft count. They illustrate how a small number of interesting narratives may be editorially assembled from many source details, rather than mechanically emitting multiple repetitive daily facts about one local festival. A single Pitrè source family remains one authorial witness.
+
+### Concrete correction and priority gates
+
+- **Corrected:** `DYK-UM02-006` no longer says households sought reconciliation; the checked Weiser action summary supports completing work and tidying for Christmas Eve.
+- **Held for narrower proof:** `DYK-UM02-015` (exact Assumption versus broader harvest cycle source context), `DYK-UM03-022` (Pantheon rose-shower liturgical feast dating), `DYK-UM01-011` (author's recommended family practice versus independently attested custom), and other rows explicitly flagged in the register.
+- **Lower priority:** generic weekday-devotion statements and familiar facts that are not much of a curiosity hook; do not inflate production facts by turning every day of the week or every ceremony detail into a separate trivium.
+- **Still to do:** 14 outstanding individual Weiser folio joins, Italian claim/source semantics, native French language review, verified exact routes, thematic uniqueness and concentration controls. No production or Calendar change.
+
+The updated structural gate `tests/dyk-ultramaster-draft-gates.mjs` checks the 130 rows, 116/14 source-stage counts, 12 nonpublishing story proposals with 27 page-linked references, and the corrected original facts. Source-field consistency was checked in research; no GitHub Actions/Node test completion is claimed until a run is observed.
