@@ -206,7 +206,11 @@
     },
     "rosary_actual_donor_bead_card_count": "DYNAMIC_NOT_COUNTED",
     "angelus_paragraph_card_count": "DEPENDS_ON_TEXT_AND_SEASON_NOT_STATICALLY_RECONCILED",
-    "litany_saints_witness_page_count": "DYNAMIC_SOURCE_LINES_NOT_STATICALLY_RECONCILED"
+    "litany_saints_witness_page_count": "DYNAMIC_SOURCE_LINES_NOT_STATICALLY_RECONCILED",
+    "chaplet_editorial_stage_pool_count": 26,
+    "chaplet_editorial_stage_groups": 21,
+    "chaplet_cover_pools": 5,
+    "chaplet_runtime_player_bead_count": "NOT_VERIFIED"
   },
   "verified_current_regressions_or_gaps": [
     {
@@ -239,8 +243,8 @@
         "Little Crown",
         "Seven Sorrows"
       ],
-      "description": "Artwork blueprint defines five families, but corresponding owned routes were not found in modular presentation, traditional or novena route registries. Legacy donor may contain additional paths; its current runtime route parity still needs direct inspection.",
-      "resolution": "Identify exact current owner and stable stage IDs before claiming coverage or wiring assets."
+      "description": "All five families now have nonvisual stage ID contracts (5 covers + 21 stage/shared bead pools); no active dedicated chaplet player ownership or exact bead flow has been verified in modular owners, and legacy donor requires direct code/runtime confirmation.",
+      "resolution": "Inspect active donor, connect existing prayer text and stage IDs to the 26 artwork identity contracts, then verify image-quality/rights and UI."
     },
     {
       "severity": "P1",
@@ -274,5 +278,23 @@
     "Never auto-publish a candidate because it has a matching subject: official source identity, native photo, frame-free composition and licensing are separate gates.",
     "No new boxes, prominent provenance panels or pill controls. Runtime metadata is non-visual.",
     "Strict zero cost; do not buy photos, subscribe to APIs or contact owners."
-  ]
+  ],
+  "editorial_decision_integrity": {
+    "approved_cross_prayer_reuses": 93,
+    "quarantined_unapproved_reuses": 12,
+    "staged_cross_prayer_total": 105,
+    "source": "decision-ledger-b01-b05 + approved-unified-b06-b11 + exact-positive statuses; no substring matching",
+    "approved_cover_seven_sorrows": "USER_FINAL_LOCKED_BUT_CANONICAL_ASSET_ID_NULL",
+    "photo_publication_ready": false
+  },
+  "chaplet_contracts": {
+    "identity_source": "src/pray/chaplet-artwork-stage-contract.v1.js",
+    "shared_runtime_resolver": "src/pray/artwork-runtime-identity.v1.js",
+    "test": "tests/prayer-chaplet-artwork-contract.mjs",
+    "stage_families": 5,
+    "stage_slots": 21,
+    "covers": 5,
+    "verified_runtime_owner": 0,
+    "content": "No invented beads, prayers or runtime route. Exact wound anatomy not claimed from generic Crucifixion."
+  }
 }
