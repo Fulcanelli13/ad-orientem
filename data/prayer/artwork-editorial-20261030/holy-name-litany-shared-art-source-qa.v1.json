@@ -1,0 +1,64 @@
+{
+  "schema": "AO_HOLY_NAME_LITANY_SHARED_ART_QA_V1",
+  "date": "2026-10-30",
+  "route": "pray.holy_name_litany",
+  "editorial_slot": "COV-devotion_consecration_christ_king",
+  "assignment_type": "CONTEXTUAL_SAME_PERSON_NO_EXACT_HOLY_NAME_SCENE",
+  "rationale": "The Holy Name Litany honours Jesus Christ, so a previously approved Christ portrait may be reused. This does not imply the painting depicts the Holy Name or its historical litany, and does not broaden original editorial approval to a new artwork.",
+  "no_new_approval": true,
+  "source_image_url_publication_authorized": false,
+  "priority_unset": true,
+  "reviewed_user_approved_existing_art": [
+    {
+      "artwork_id": "PRAYER::king--primary",
+      "artist": "Ambrosius Benson",
+      "work": "Salvator Mundi",
+      "existing_context": "Consecration to Christ the King",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+      "source_photo_origin": "Christie's lot 4, London sale of 3 December 2019; Commons record references this source",
+      "reported_native_dimensions": [
+        2987,
+        3200
+      ],
+      "file_size_bytes": 7773073,
+      "commons_rights_statement": "PD-Art faithful reproduction of historic public-domain two-dimensional work; US and other jurisdiction caveats apply",
+      "art_identity_status": "MATCHED_BY_COMMONS_TITLE_ARTIST_AND_SOURCE; independent full artwork identity/photo review still pending",
+      "visual_composition": "DO_NOT_ASSERT_FRAME_FREE_WITHOUT_NATIVE_PHOTO_CHECK",
+      "publication_status": "BLOCKED_FULL_IMAGE_AND_REUSE_REVIEW"
+    },
+    {
+      "artwork_id": "PRAYER::king--previtali",
+      "artist": "Andrea Previtali",
+      "work": "Salvator Mundi",
+      "existing_context": "Consecration to Christ the King",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Andrea_Previtali_-_Salvator_Mundi_-_Google_Art_Project.jpg",
+      "collection": "National Gallery London NG2501",
+      "reported_native_dimensions": [
+        2559,
+        3000
+      ],
+      "file_size_bytes": 4187888,
+      "commons_rights_statement": "Commons PD-Art faithful reproduction; note Wikimedia caveats for other jurisdictions",
+      "note": "Commons explicitly states the frame is part of the original painting (two-dimensional). User requires frame-free Prayer images: frame/border treatment must be visually resolved, not silently accepted.",
+      "publication_status": "BLOCKED_FRAME_COMPOSITION_AND_NATIVE_PHOTO_REVIEW"
+    }
+  ],
+  "additional_existing_approved_option": {
+    "artwork_id": "REVIEW::commons:178038797",
+    "artist": "Joos van Cleve",
+    "title": "Christ as Salvator Mundi",
+    "editorial_status": "USER_APPROVED",
+    "photo_qa": "NOT_YET_INVESTIGATED"
+  },
+  "gates": {
+    "original_artwork_identity_verified": false,
+    "native_full_photo_visual_quality_verified": false,
+    "acceptable_frame_free_composition_verified": false,
+    "photographic_rights_for_app_jurisdictions_verified": false,
+    "user_artwork_selection_original_affirmative": true,
+    "subject_use_contextual_user_reuse_rule": true,
+    "actual_reader_image_display_verified": false,
+    "publication_ready": false
+  },
+  "safety": "Do not use any of the three photo URLs in the reader until all gates pass. No paid image acquisitions, contact with owners, subscriptions or deployment."
+}
