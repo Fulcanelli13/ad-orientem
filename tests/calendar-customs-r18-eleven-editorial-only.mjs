@@ -17,6 +17,25 @@ assert.equal(published.length,35);
 assert.equal(canonical.length,35);
 assert.deepEqual(new Set(canonical),new Set(published.map(x=>x.custom_id)));
 const items=calendarR18ElevenEditorialReviewRecords();
+const completeCorpus=calendarR18ElevenEditorialReviewRecords({includePromoted:true});
+assert.equal(completeCorpus.length,11,"Keep eleven source records available for audit even after promotion");
+const simulatedIds=[...canonical,"PENT-001"];
+const afterPromotion=calendarR18ElevenEditorialReviewRecords({publishedIds:simulatedIds});
+assert.equal(afterPromotion.length,10,"Publication must suppress only R18-14 in unpublished review");
+assert.ok(!afterPromotion.some(x=>x.review_key==="CUSTOMS-R18-14"));
+assert.equal(completeCorpus.filter(x=>x.review_key==="CUSTOMS-R18-14").length,1,
+  "The historical review record remains for audit, not an extra card");
+const promotedHtmlEn=calendarR18ElevenEditorialReviewMarkup({fr:false,publishedIds:simulatedIds});
+const promotedHtmlFr=calendarR18ElevenEditorialReviewMarkup({fr:true,publishedIds:simulatedIds});
+for(const html of [promotedHtmlEn,promotedHtmlFr]){
+ assert.equal((html.match(/data-cal-r18-eleven-key=/g)||[]).length,10);
+ assert.equal((html.match(/data-cal-r18-published-count="36"/g)||[]).length,1);
+ assert.ok(!html.includes('data-cal-r18-eleven-key="CUSTOMS-R18-14"'));
+ assert.equal((html.match(/class="aoCalR18ElevenLanguage"/g)||[]).length,20);
+ assert.ok(!html.includes("11 UNPUBLISHED DOSSIERS"));
+}
+assert.ok(promotedHtmlEn.includes("EDITORIAL REVIEW · 10 UNPUBLISHED DOSSIERS"));
+assert.ok(promotedHtmlFr.includes("EXAMEN ÉDITORIAL · 10 DOSSIERS NON PUBLIÉS"));
 assert.equal(items.length,11);
 assert.equal(CALENDAR_R18_ELEVEN_REVIEW_BLOB,"2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c",
   "Reviewer text must be regenerated from QA-corrected source and not earlier copy");
@@ -83,7 +102,11 @@ assert.ok(htmlEn.includes("St John Baptist&#39;s community bonfire"));
 assert.ok(htmlFr.includes("Le feu communautaire de la Saint-Jean-Baptiste"));
 assert.ok(htmlEn.includes("Plenary indulgence")===false);
 assert.ok(!preview.includes("calendarCustomRecommendations("));
-assert.ok(!preview.includes("calendarCustomArticleIds("));
+assert.ok(preview.includes('import { calendarCustomArticleIds } from "./customs-read-model.js";'));
+assert.ok(preview.includes('"CUSTOMS-R18-14":"PENT-001"'),
+  "Promotion must use the exact one-to-one canonical ID, not matching titles");
+assert.ok(!preview.includes("calendarCustomRecommendations("),
+ "Reviewer must never influence date recommendations");
 assert.ok(runtime.includes('get("customsR18Eleven")==="review"'));
 assert.ok(runtime.includes('r18ElevenEditorialReviewEnabled()?calendarR18ElevenEditorialReviewMarkup({fr:isFr}):""'));
 assert.ok(runtime.includes('calendarCustomHistoricalVariantPreview(article.id'));
