@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import {normalizeScholaLocalProgramme,readScholaLocalProgramme,updateScholaLocalProgramme,
  applyScholaLocalProgramme,SCHOLA_OPTIONAL_EVENT_IDS} from "../src/mass/reader-schola-local-programme.js";
+import {KYRIALE_MASSES,KYRIALE_CREDOS,KYRIALE_SOURCE,
+ kyrialeChoicesForMovement,resolveKyrialeChoice} from "../src/mass/reader-kyriale-catalogue.js";
 const data=new Map(),storage={getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v)};
 const empty=readScholaLocalProgramme(storage);
 assert.equal(empty.parishLabel,"");
@@ -117,5 +119,71 @@ assert.equal(normalizeScholaLocalProgramme({profiles:[
 assert.equal(normalizeScholaLocalProgramme({profiles:[
  {id:"p4",name:"Safe",ordinarySettings:{CREDO:"Credo I",CANON:"bad"}}
 ]}).ordinarySettings.CANON,undefined);
+
+
+// Source-indexed selections identify historical melodies, not performance.
+// Each movement is independently chosen; Gloria is absent from Masses XVI–XVIII.
+assert.equal(KYRIALE_MASSES.length,18);
+assert.equal(KYRIALE_CREDOS.length,6);
+assert.equal(new Set([...KYRIALE_MASSES,...KYRIALE_CREDOS].map(c=>c.id)).size,24);
+assert.equal(kyrialeChoicesForMovement("KYRIE").length,18);
+assert.equal(kyrialeChoicesForMovement("GLORIA").length,15);
+assert.equal(kyrialeChoicesForMovement("SANCTUS_BENEDICTUS").length,18);
+assert.equal(kyrialeChoicesForMovement("AGNUS_DEI").length,18);
+assert.equal(kyrialeChoicesForMovement("CREDO").length,6);
+assert.equal(resolveKyrialeChoice("GLORIA","MASS_17"),null);
+assert.equal(resolveKyrialeChoice("CREDO","MASS_08"),null);
+assert.equal(resolveKyrialeChoice("KYRIE","CREDO_03"),null);
+assert.equal(resolveKyrialeChoice("KYRIE","MASS_08")?.title,"Mass VIII · De Angelis");
+assert.equal(resolveKyrialeChoice("CREDO","CREDO_06")?.title,"Credo VI");
+assert.ok(KYRIALE_SOURCE.url.endsWith("/pdf/kyriale.pdf"));
+assert.equal(KYRIALE_MASSES[7].scoreEncoded,false);
+
+// A legacy free-text label is NEVER automatically promoted to source-edition
+// verified status, even when the words happen to match a catalogue entry.
+let provenance=normalizeScholaLocalProgramme({
+ ordinarySettings:{KYRIE:"Mass VIII",CREDO:"Credo III"}
+});
+assert.equal(provenance.ordinarySelections.KYRIE,"");
+assert.equal(provenance.ordinarySelections.CREDO,"");
+const prior=applyScholaLocalProgramme({supported:true,events:[
+ {id:"KYRIE",trackId:"KYRIE",kind:"CHANT"}]},provenance);
+assert.equal(prior.events[0].localOrdinary.status,"PERSONAL_UNVERIFIED_SETTING");
+provenance=updateScholaLocalProgramme(provenance,
+ {kind:"ordinarySelection",eventId:"KYRIE",value:"MASS_08"},storage);
+assert.equal(provenance.ordinarySelections.KYRIE,"MASS_08");
+assert.equal(provenance.ordinarySettings.KYRIE,"Mass VIII · De Angelis");
+provenance=updateScholaLocalProgramme(provenance,
+ {kind:"ordinarySelection",eventId:"CREDO",value:"CREDO_03"},storage);
+assert.equal(readScholaLocalProgramme(storage).ordinarySelections.CREDO,"CREDO_03");
+const verified=applyScholaLocalProgramme({supported:true,events:[
+ {id:"KYRIE",trackId:"KYRIE",kind:"CHANT"},
+ {id:"CREDO",trackId:"CREDO",kind:"CHANT"}]},provenance);
+assert.equal(verified.events[0].localOrdinary.status,"SOURCE_EDITION_INDEXED_NOT_OBSERVED");
+assert.equal(verified.events[0].localOrdinary.catalogueId,"MASS_08");
+assert.equal(verified.events[0].localOrdinary.sourceUrl,KYRIALE_SOURCE.url);
+assert.equal(verified.events[0].localOrdinary.observed,false);
+assert.equal(verified.events[1].localOrdinary.catalogueId,"CREDO_03");
+const beforeWrong=data.get("ao-schola-profile-library-v2");
+provenance=updateScholaLocalProgramme(provenance,
+ {kind:"ordinarySelection",eventId:"GLORIA",value:"MASS_17"},storage);
+assert.equal(data.get("ao-schola-profile-library-v2"),beforeWrong,
+ "Denied musical item must not be saved to profile");
+provenance=updateScholaLocalProgramme(provenance,
+ {kind:"ordinarySetting",eventId:"KYRIE",value:"Custom polyphonic Kyrie"},storage);
+assert.equal(provenance.ordinarySelections.KYRIE,"");
+assert.equal(provenance.ordinarySettings.KYRIE,"Custom polyphonic Kyrie");
+assert.equal(applyScholaLocalProgramme({supported:true,events:[
+ {id:"KYRIE",trackId:"KYRIE",kind:"CHANT"}]},provenance)
+ .events[0].localOrdinary.status,"PERSONAL_UNVERIFIED_SETTING");
+provenance=updateScholaLocalProgramme(provenance,
+ {kind:"ordinarySelection",eventId:"CREDO",value:"CUSTOM"},storage);
+assert.equal(provenance.ordinarySettings.CREDO,"Credo III",
+ "Switching to custom must retain the existing printed label");
+assert.equal(provenance.ordinarySelections.CREDO,"");
+assert.equal(normalizeScholaLocalProgramme({profiles:[
+ {id:"p1",ordinarySettings:{KYRIE:"Mass VIII"},ordinarySelections:{KYRIE:"MASS_08",GLORIA:"MASS_17"}}
+]}).ordinarySelections.GLORIA,"","Invalid persisted movement ID must be discarded");
+assert.equal(readScholaLocalProgramme(storage).observedSinging,false);
 
 console.log("PASS saved local programme, five optional event IDs, no ritual overrides, organ prohibition remains visible");
