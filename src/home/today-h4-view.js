@@ -47,7 +47,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={})
   const resumeLabel=resume?[resume.date?dateLabel(resume.date,fr):"",resume.stepNumber?say("Card ","Carte ")+resume.stepNumber:""].filter(Boolean).join(" · "):"";
   const mainAction=resume?
     '<button type="button" class="aoH4Primary" data-resume-mass data-ao-resume-owner="R17_NATIVE"><span><strong>'+esc(say("Resume Mass","Reprendre la messe"))+'</strong><small>'+esc(resumeLabel)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>':
-    '<button type="button" class="aoH4Primary" data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(vm.isToday?say("Begin Mass","Commencer la messe"):say("Begin selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(selectedChoices)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
+    '<button type="button" class="aoH4Primary" data-home-mass-entry data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(vm.isToday?say("Begin Mass","Commencer la messe"):say("Begin selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(selectedChoices)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
   const unresolved=!resume&&!ready?'<div class="aoH4Status" role="status">'+esc(vm.loading?say("Resolving the selected Mass…","Résolution de la messe choisie…"):say("Mass texts are not yet available. Begin is unavailable.","Les textes de la messe ne sont pas encore disponibles. Le démarrage est indisponible."))+'</div>':"";
   const feature=model.enricherVisible?model.feature:null;
   const attrs=feature?.kind==="dynamic"?
