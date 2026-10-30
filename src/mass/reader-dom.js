@@ -364,6 +364,20 @@ const SHELL_STYLE = `
   font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
 }
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
+
+/* The historical 320px acceptance found an unbreakable following Canon line
+   that can clip at simulated 200% prayer text. Preserve exact wording and
+   font size; allow the line to wrap inside the source-owned reading viewport.
+   No change to regular type sizes or liturgical cues. */
+@media(max-width:360px){
+  #ao-r17-native-reader-preview[data-r17-curated-review="true"]
+    .ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-reader-paragraph .ao-line-primary,
+  #ao-r17-native-reader-preview[data-r17-curated-review="true"]
+    .ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-reader-paragraph .ao-line-secondary{
+    overflow-wrap:anywhere;word-break:normal;min-width:0;max-width:100%;
+  }
+}
+
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-primary,
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
 .ao-speaker-turn{display:block;margin:0 0 6px;font:650 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
