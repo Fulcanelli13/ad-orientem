@@ -108,3 +108,7 @@ Preliminary source-type routing:
 - Grant terms are strictly tied to Caravaca shrine works and conditions; **no automatic indulgence for Caravaca customs, no new grant to any user, no app release**. See [four-case source recheck](./customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json). Old 1962/Raccolta grants are not presumed active; exact current language still requires ecclesiastical editorial review.
 
 Research-only; Calendar, PR #2058, and 36 published Customs unchanged. CI passing status is not claimed until checked.
+
+## 30 October — wave 04 honest semantic hold
+
+Another **200** records have exact original-source ID joins ([wave 04](./customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json)). Of these, **68** include an original source-native type/claim characterization, while **132 CatholicCulture excerpt rows** only carry lexical comparison results. Those 132 are explicitly retained as **ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY**, not automatically classified as practices. This updates the first-pass count to **800/3,295 provenance-screened**, comprising **668 source-type routed** and **132 requiring original passage classification**. **2,495** source records have not yet been first-pass checked in these waves. None of these 800 has received final independent-custom or owner adjudication.
