@@ -1917,7 +1917,12 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
           (p.sourceCueIds??[]).includes(event.sourceCueId) &&
           ((event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
             event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
-            event.actor==="PRIEST" && event.sourceId==="MR62_RITUS") ||
+            event.sourceId==="MR62_RITUS" &&
+            (event.actor==="PRIEST" ||
+             (event.actor==="SERVER" && event.kind==="BELL" &&
+              (event.id==="AO.RUB.C0161.02"&&event.sourceCueId==="AO.SM.C0161" ||
+               event.id==="AO.RUB.C0174.03"&&event.sourceCueId==="AO.SM.C0174" ||
+               event.id==="AO.RUB.C0181.03"&&event.sourceCueId==="AO.SM.C0181")))) ||
            (event.review==="EXACT_1962_GESTURE_MATRIX_RUBRIC" &&
             event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY" &&
             event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
