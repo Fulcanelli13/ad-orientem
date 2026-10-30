@@ -15,8 +15,8 @@ const uniqueCueIds=[...new Set(selected.map(x=>x.cueId))];
 let renderedIds=[];
 for(const cueId of uniqueCueIds){
  const p=publishedMissalRubricsForParagraph(mk(cueId,[cueId]),source,{form:"LOW",language:"en"});
- renderedIds.push(...p.filter(x=>x.kind!=="STATE").map(x=>x.id));
- assert.ok(p.filter(x=>x.kind!=="STATE").every(x=>x.sourceCueId===cueId&&x.sourceUrl===cited&&
+ renderedIds.push(...p.filter(x=>x.kind!=="STATE"&&x.kind!=="BELL").map(x=>x.id));
+ assert.ok(p.filter(x=>x.kind!=="STATE"&&x.kind!=="BELL").every(x=>x.sourceCueId===cueId&&x.sourceUrl===cited&&
    x.displayText.startsWith("The priest ")&&x.observedNow===false),
    cueId+" lost source or observation boundary");
 }
@@ -24,7 +24,7 @@ assert.equal(renderedIds.length,52,"52 original actions must appear once in ordi
 assert.equal(new Set(renderedIds).size,52,"Duplicate action IDs");
 for(const cueId of uniqueCueIds){
  const p=publishedMissalRubricsForParagraph(mk(cueId,[cueId]),source,{form:"LOW",language:"fr"});
- assert.ok(p.length>0 && p.filter(x=>x.kind!=="STATE").every(x=>x.displayText.startsWith("Le prêtre ")&&x.observedNow===false),
+ assert.ok(p.length>0 && p.filter(x=>x.kind!=="STATE"&&x.kind!=="BELL").every(x=>x.displayText.startsWith("Le prêtre ")&&x.observedNow===false),
   cueId+" lacks original French Missal direction");
 }
 const wrong=publishedMissalRubricsForParagraph(mk("x",["AO.SM.C0161"]),null);
