@@ -1,0 +1,235 @@
+{
+  "schema": "AO_SACRED_PLACES_P104_SEVEN_P97_EXACT_DIRECTORY_CHURCHES_V1",
+  "date": "2026-10-30",
+  "status": "DRAFT_NOT_MERGED_OR_DEPLOYED",
+  "baseline": {
+    "places": 522,
+    "sources": 830,
+    "crosswalk": 522,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 15
+  },
+  "proposed": {
+    "places": 529,
+    "sources": 844,
+    "crosswalk": 529,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 22
+  },
+  "new_places": 7,
+  "confirmed_directory_links_added": 7,
+  "published_new": [
+    {
+      "row": 309,
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius",
+      "link_id": "link:directory-place:CZ:st-ignatius-jihlava",
+      "source_ids": [
+        "AO-P104-309-SITE",
+        "AO-P104-309-GEO"
+      ],
+      "source_site_url": "https://www.unavoce.cz/kostely/brno/jihlava",
+      "source_geo_url": "https://www.outdooractive.com/en/poi/jihlava/jezuitsky-kostel-sv.-ignace-z-loyoly-jihlava/40442032/",
+      "geo_source_ref": "independent:outdooractive:40442032",
+      "geo_source_kind": "OTHER",
+      "geo_coordinates": [
+        49.39669,
+        15.591157
+      ],
+      "existing_r49_pin_distance_m": 15.5,
+      "existing_r49_pin_precision": "street",
+      "identity_evidence": "Una Voce identifies the Church of St Ignatius of Loyola at Masarykovo náměstí and documents traditional Mass provision; independent heritage/tourism record independently identifies that specific Jesuit church at 110/64. Distinguish from nearby former Jesuit college building.",
+      "photo_release_status": "P93_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "approved_photo": false,
+      "published_photo": false,
+      "candidate_id": "P97-ROW-309",
+      "directory_venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius"
+    },
+    {
+      "row": 315,
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-112",
+      "link_id": "link:directory-place:DE:friedhofskirche-st-michael-altoetting",
+      "source_ids": [
+        "AO-P104-315-SITE",
+        "AO-P104-315-GEO"
+      ],
+      "source_site_url": "https://institut-christus-koenig.de/altoetting/",
+      "source_geo_url": "https://www.openstreetmap.org/way/207573764",
+      "geo_source_ref": "osm:way:207573764",
+      "geo_source_kind": "OSM",
+      "geo_coordinates": [
+        48.2282,
+        12.67853
+      ],
+      "existing_r49_pin_distance_m": 39.3,
+      "existing_r49_pin_precision": "building",
+      "identity_evidence": "Named Catholic cemetery church OSM way 207573764 and Wikidata Q41278392 corroborate the exact structure; NOT the nearby Gnadenkapelle pilgrimage chapel. Some address aggregators disagree on number 7 vs 24; record street only until independently reconciled.",
+      "photo_release_status": "P93_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "approved_photo": false,
+      "published_photo": false,
+      "candidate_id": "P97-ROW-315",
+      "directory_venue_id": "ao-research-icksp-federated-v13-icksp-stg-112"
+    },
+    {
+      "row": 320,
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-013-fontaine",
+      "link_id": "link:directory-place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "source_ids": [
+        "AO-P104-320-SITE",
+        "AO-P104-320-GEO"
+      ],
+      "source_site_url": "https://maisonnatalesaintbernard.ovh/visiter/",
+      "source_geo_url": "https://www.plan-du-patrimoine.fr/monument-historique/21/fontaine-les-dijon/couvent-et-basilique-saint-bernard/PA00112467/",
+      "geo_source_ref": "fr:monument-historique:PA00112467",
+      "geo_source_kind": "OTHER",
+      "geo_coordinates": [
+        47.345814,
+        5.015873
+      ],
+      "existing_r49_pin_distance_m": 21.3,
+      "existing_r49_pin_precision": "street",
+      "identity_evidence": "The named protected church is the basilica within the Saint-Bernard birthplace complex, not the nearby modern Église Saint-Bernard in Dijon. Heritage listing PA00112467 names basilica, entrance tower and connecting buildings; marker positions this specific heritage structure, not independently surveyed altar/entrance. Original P93 image is explicitly categorised by Commons as Couvent et basilique Saint-Bernard.",
+      "photo_release_status": "P93_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "approved_photo": false,
+      "published_photo": false,
+      "candidate_id": "P97-ROW-320",
+      "directory_venue_id": "ao-research-icksp-federated-v13-icksp-stg-013-fontaine"
+    },
+    {
+      "row": 349,
+      "place_id": "place:GB:sacred-heart-caterham",
+      "venue_id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",
+      "link_id": "link:directory-place:GB:sacred-heart-caterham",
+      "source_ids": [
+        "AO-P104-349-SITE",
+        "AO-P104-349-GEO"
+      ],
+      "source_site_url": "https://www.caterhamcatholic.co.uk/index.html",
+      "source_geo_url": "https://historicengland.org.uk/listing/the-list/list-entry/1294941",
+      "geo_source_ref": "historic-england:1294941",
+      "geo_source_kind": "OTHER",
+      "geo_coordinates": [
+        51.287381,
+        -0.08646362
+      ],
+      "existing_r49_pin_distance_m": 104.9,
+      "existing_r49_pin_precision": "street",
+      "identity_evidence": "Historic England lists exact 1881 Roman Catholic church on Essendene Road, Grade II 1294941; Commons image caption independently matches listing and western exterior. Legacy R49 'street' marker is approximately 110 m from listed building; do NOT use street marker as site centre.",
+      "photo_release_status": "P93_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "approved_photo": false,
+      "published_photo": false,
+      "candidate_id": "P97-ROW-349",
+      "directory_venue_id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART"
+    },
+    {
+      "row": 356,
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "venue_id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY",
+      "link_id": "link:directory-place:GB:st-mary-catholic-brewood",
+      "source_ids": [
+        "AO-P104-356-SITE",
+        "AO-P104-356-GEO"
+      ],
+      "source_site_url": "https://www.stmarybrewood.org.uk/",
+      "source_geo_url": "https://historicengland.org.uk/listing/the-list/list-entry/1039334",
+      "geo_source_ref": "historic-england:1039334",
+      "geo_source_kind": "OTHER",
+      "geo_coordinates": [
+        52.6776,
+        -2.1798
+      ],
+      "existing_r49_pin_distance_m": 140.3,
+      "existing_r49_pin_precision": "street",
+      "identity_evidence": "Official parish and Historic England identify A.W.N. Pugin Catholic church of 1843–44 on Kiddemore Green Road, grade II 1039334. The P93 source is a churchyard view of this precise Catholic building, not a Protestant St Mary. R49 street-level marker lies ~140 m north; documented discrepancy, not coordinate-inferred join.",
+      "photo_release_status": "P93_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "approved_photo": false,
+      "published_photo": false,
+      "candidate_id": "P97-ROW-356",
+      "directory_venue_id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY"
+    },
+    {
+      "row": 375,
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "venue_id": "AO-AMER-R26-US-03-08",
+      "link_id": "link:directory-place:US:immaculate-conception-cathedral-lake-charles",
+      "source_ids": [
+        "AO-P104-375-SITE",
+        "AO-P104-375-GEO"
+      ],
+      "source_site_url": "https://immaculateconceptioncathedral.com/about-us",
+      "source_geo_url": "https://sv.aroundus.com/p/5298480-cathedral-of-the-immaculate-conception",
+      "geo_source_ref": "independent:aroundus:5298480",
+      "geo_source_kind": "OTHER",
+      "geo_coordinates": [
+        30.22639,
+        -93.21667
+      ],
+      "existing_r49_pin_distance_m": 24.4,
+      "existing_r49_pin_precision": "source_marker_unassessed",
+      "identity_evidence": "Official Mass address 935 Bilbo Street and separately named Lake Charles cathedral map match exact historic red-brick church; P93 photo Commons geotag 30.226588,-93.216640 at cathedral exterior and NRHP 94001201. Legacy R49 source_marker_unassessed deliberately not used as geographical proof; map source building coordinate independent.",
+      "photo_release_status": "P93_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "approved_photo": false,
+      "published_photo": false,
+      "candidate_id": "P97-ROW-375",
+      "directory_venue_id": "AO-AMER-R26-US-03-08"
+    },
+    {
+      "row": 380,
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+      "link_id": "link:directory-place:US:holy-family-log-church-cahokia",
+      "source_ids": [
+        "AO-P104-380-SITE",
+        "AO-P104-380-GEO"
+      ],
+      "source_site_url": "https://institute-christ-king.org/cahokia-home",
+      "source_geo_url": "https://commons.wikimedia.org/wiki/Category:Church_of_the_Holy_Family,_Cahokia",
+      "geo_source_ref": "wikidata:Q5117898;nrhp:70000851",
+      "geo_source_kind": "OTHER",
+      "geo_coordinates": [
+        38.5701225,
+        -90.188512
+      ],
+      "existing_r49_pin_distance_m": 33.9,
+      "existing_r49_pin_precision": "building",
+      "identity_evidence": "ICKSP identifies its Sunday Mass at 116 Church Street, but historic site contains two neighboring churches. This Place identifies the 1799 upright-log church, NOT the modern adjacent sanctuary, supported by NRHP 70000851 and church photograph from precisely titled Commons category.",
+      "photo_release_status": "P93_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "approved_photo": false,
+      "published_photo": false,
+      "candidate_id": "P97-ROW-380",
+      "directory_venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4"
+    }
+  ],
+  "research_holds": [
+    {
+      "row": 322,
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "hold": "PRIMARY_PHOTO_BOLLARD_NEEDS_BETTER_IMAGE_EXISTING_P99_LINK"
+    },
+    {
+      "row": 61,
+      "hold": "NO_CONFIRMED_CURRENT_1962_TLM"
+    },
+    {
+      "row": 284,
+      "hold": "NO_CONFIRMED_CURRENT_1962_TLM"
+    },
+    {
+      "row": 127,
+      "hold": "NEW_BRIGHTON_UNLISTED_SOURCE_VERIFIED_ICKSP_VENUE_SEPARATE_DISCOVERY_WORKFLOW"
+    }
+  ],
+  "policy": {
+    "not_a_new_mass_time_assertion": true,
+    "never_assume_same_church_from_coordinate_only": true,
+    "retain_existing_directory_venue_ids": true,
+    "source_marker_unassessed_not_used_for_lake_charles_geolocation": true,
+    "distinct_holy_family_log_vs_modern": true,
+    "no_new_media_published": true,
+    "free_only": true
+  }
+}

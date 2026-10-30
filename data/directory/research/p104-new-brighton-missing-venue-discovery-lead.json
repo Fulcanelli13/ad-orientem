@@ -1,0 +1,39 @@
+{
+  "schema": "AO_P104_NEW_BRIGHTON_MISSING_TLM_VENUE_EVIDENCE_V1",
+  "date": "2026-10-30",
+  "status": "EXACT_PHYSICAL_SITE_VERIFIED_DISCOVERY_LEAD_NOT_OPERATIONAL_VENUE",
+  "p97_source_row": 127,
+  "church": "Catholic Shrine Church of Saints Peter and Paul and Saint Philomena",
+  "operator": "Institute of Christ the King Sovereign Priest (ICKSP)",
+  "address": "7 Atherton Street, Wallasey, New Brighton, CH45 9LT, United Kingdom",
+  "country": "GB",
+  "official_identity_url": "https://icksp.org.uk/newbrighton/contact-us/",
+  "official_schedule_url": "https://icksp.org.uk/newbrighton/",
+  "official_current_schedule_effective": "2026-08-31",
+  "current_1962_status": "TRADITIONAL_LATIN_MASSES_PUBLISHED_BY_ICKSP",
+  "historic_building_list_url": "https://historicengland.org.uk/listing/the-list/list-entry/1390763",
+  "historic_building_id": "1390763",
+  "source_original_p93": "docs/research/directory/p93-bulk-28-originals-20261029/127-original.jpg",
+  "p93_original_sha256": "90f76a9418528c88a740510949af2e426f0477ed8a18c9a8c8dc055c7bdfc9a3",
+  "p93_source_claimed_licence": "CC BY-SA 2.0",
+  "credit": "Karl and Ali",
+  "image_identity_state": "P93_BYTES_VERIFIED_P94_PROMISING_EXTERIOR_BUT_NOT_APPROVED",
+  "dedup": {
+    "frozen_r49_exact_match": false,
+    "existing_nearby_liverpool_venue": "SSPXMAP:OPE-002284",
+    "same_building_as_liverpool_venue": false,
+    "policy": "Do not reuse the Liverpool Saints Peter and Paul church venue ID; review all latest active discovery and operational inventories before assigning a new stable ID."
+  },
+  "promotion_requirements": [
+    "Cross-check latest separate high-volume Directory venue discovery master and schedule verification master",
+    "Assign frozen stable site identifier only in authoritative venue discovery workflow",
+    "Do not create schedule rows from research JSON or overwrite verified schedule counts",
+    "After exact identity is operationally committed, add independently sourced Place-to-venue link",
+    "Inspect original photo, verify licence and attribution, test no-crop WebP before media approval"
+  ],
+  "no_place_created": true,
+  "no_operational_venue_created": true,
+  "no_schedule_changed": true,
+  "no_photo_approved": true,
+  "expense_eur": 0
+}

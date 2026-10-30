@@ -1,0 +1,65 @@
+{
+  "schema": "AO_P106_EXACT_FOUR_WEBP_BYTES_AUDIT_V1",
+  "source_p105_commit": "156972f77b1fa39af3b3402060ddf23f7edc86ad",
+  "status": "PROPOSED_PR_NOT_DEPLOYED",
+  "copied": 4,
+  "records": [
+    {
+      "row": 349,
+      "place_id": "place:GB:sacred-heart-caterham",
+      "source_git_commit": "156972f77b1fa39af3b3402060ddf23f7edc86ad",
+      "from": "assets/staged/directory-p105/GB-sacred-heart-caterham.webp",
+      "to": "assets/approved/place-media/GB-sacred-heart-caterham.webp",
+      "sha256": "4c46177becf1c0a7b3ab2ab78a4edf5d3e66bf8a71fde221e91a39f4ccdcd891",
+      "bytes": 273604,
+      "width": 1400,
+      "height": 788,
+      "source_sha1": "8807b43e2406f93fdbd4bf41962f390a03950de6",
+      "byte_identical": true,
+      "reencoded": false
+    },
+    {
+      "row": 356,
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "source_git_commit": "156972f77b1fa39af3b3402060ddf23f7edc86ad",
+      "from": "assets/staged/directory-p105/GB-st-mary-catholic-brewood.webp",
+      "to": "assets/approved/place-media/GB-st-mary-catholic-brewood.webp",
+      "sha256": "cef2cb9d49741601c42bf5a19234adc5e74d171748e9c0812f40ae50a90bbde1",
+      "bytes": 174878,
+      "width": 1024,
+      "height": 760,
+      "source_sha1": "f658a27b69d7211cd12b8ec4ce6db38ffe6581c9",
+      "byte_identical": true,
+      "reencoded": false
+    },
+    {
+      "row": 375,
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "source_git_commit": "156972f77b1fa39af3b3402060ddf23f7edc86ad",
+      "from": "assets/staged/directory-p105/US-immaculate-conception-cathedral-lake-charles.webp",
+      "to": "assets/approved/place-media/US-immaculate-conception-cathedral-lake-charles.webp",
+      "sha256": "5eca4f1db9bca3e951f51325522469b5a6cc2a8c06b7464be3f81ea1877e859f",
+      "bytes": 227076,
+      "width": 1400,
+      "height": 1053,
+      "source_sha1": "a5c9f3c950aef4c3541c46629afc560ff23038dc",
+      "byte_identical": true,
+      "reencoded": false
+    },
+    {
+      "row": 380,
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "source_git_commit": "156972f77b1fa39af3b3402060ddf23f7edc86ad",
+      "from": "assets/staged/directory-p105/US-holy-family-log-church-cahokia.webp",
+      "to": "assets/approved/place-media/US-holy-family-log-church-cahokia.webp",
+      "sha256": "b4fd5ceb74610f7b7cba32392b3c18d31473bfcea5a2669a48a5b1f63cf5232a",
+      "bytes": 267476,
+      "width": 1400,
+      "height": 1111,
+      "source_sha1": "fcf74719c3701b7468560a4f4d31bac7b03bb1ae",
+      "byte_identical": true,
+      "reencoded": false
+    }
+  ],
+  "approved_media_registry_separate_gate": true
+}

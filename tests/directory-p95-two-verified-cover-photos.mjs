@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import fs from "node:fs";
 import {createHash} from "node:crypto";
 import {attachApprovedDirectoryMedia,eligibleDirectoryImage,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
@@ -8,10 +9,10 @@ const geo=read("data/geography/seed-registry.v1.json");
 const manifest=read("data/geography/approved-place-media.v1.json");
 const release=read("data/geography/research/directory-p95-first-two-photo-covers.v1.json");
 assert.equal(release.schema,"AO_P95_TWO_VERIFIED_DIRECTORY_COVERS_V1");
-assert.equal(geo.places.length,518);
-assert.equal(geo.directoryPlaceLinks.length,11);
+assert.equal(geo.places.length,LIVE.places);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links);
 assert.equal(manifest.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(manifest.items.length,33);
+assert.ok(manifest.items.length>=33,"Historical P95 covers persist when later media releases append new entries");
 assert.equal(release.photos.length,2);
 const expected=[
   ["AO-AMER-R28-US-25-03","place:US:st-boniface-sioux-city",

@@ -49,12 +49,20 @@ assert.match(galleryHtml,/FR-test-nave\.webp/);
 assert.match(galleryHtml,/Interior/);
 assert.match(galleryHtml,/Example photographer/);
 assert.match(galleryHtml,/commons\.wikimedia\.org/);
+assert.match(galleryHtml,/href="https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\/"/);
+assert.match(renderDirectoryGallery(details,"fr"),/creativecommons\.org\/licenses\/by-sa\/4\.0/);
 assert.doesNotMatch(galleryHtml,/FR-test\.webp/);
 assert.equal((galleryHtml.match(/<figure>/g)||[]).length,1);
 assert.match(renderDirectoryGallery(details,"fr"),/Intérieur/);
 assert.equal(renderDirectoryGallery({...details,place_id:"place:FR:unrelated"}),"");
 
 assert.equal(eligibleDirectoryImage(photo,photo.place_id),true);
+assert.equal(eligibleDirectoryImage({...photo,license_url:"https://example.org/unrelated"},photo.place_id),false);
+assert.equal(eligibleDirectoryImage({...photo,license:"CC0-1.0"},photo.place_id),false);
+assert.equal(eligibleDirectoryImage({...photo,license_url:"https://creativecommons.org/licenses/by/3.0/"},photo.place_id),false);
+assert.equal(eligibleDirectoryImage({...photo,license:"CC-BY-3.0",license_url:"https://creativecommons.org/licenses/by/3.0/"},photo.place_id),true);
+assert.equal(eligibleDirectoryImage({...photo,license:"PUBLIC_DOMAIN",license_url:"https://creativecommons.org/publicdomain/mark/1.0/"},photo.place_id),true);
+assert.equal(eligibleDirectoryImage({...photo,license:"CC0-1.0",license_url:"https://creativecommons.org/publicdomain/zero/1.0/"},photo.place_id),true);
 assert.equal(eligibleDirectoryImage(photo,"place:FR:another"),false);
 for(const invalid of [
   {...photo,status:"CANDIDATE"},

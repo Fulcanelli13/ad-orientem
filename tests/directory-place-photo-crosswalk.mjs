@@ -12,10 +12,10 @@ assert.deepEqual(review,buildScreen(geo,r49,cover,gallery),
 assert.equal(review.state,"RESEARCH_ONLY_NEVER_APP_VISIBLE");
 assert.deepEqual([review.counts.venues_screened,review.counts.canonical_places,
  review.counts.within_350m_pairs,review.counts.venues_near_place],
- [1879,522,46,43]);
-assert.equal(review.counts.confirmed_links,15);
-assert.equal(review.counts.nearby_approved_photo_pairs,9);
-assert.equal(review.counts.exact_confirmed_photo_joins,2);
+ [1879,529,54,49]);
+assert.equal(review.counts.confirmed_links,22);
+assert.equal(review.counts.nearby_approved_photo_pairs,16);
+assert.equal(review.counts.exact_confirmed_photo_joins,9);
 assert.equal(review.counts.published_new_links,0);
 assert.equal(review.counts.published_new_photos,0);
 assert.equal(review.counts.approved_gallery_images,33);
@@ -27,15 +27,15 @@ for(const [venue,place] of [["AO-AMER-R28-US-25-03","place:US:st-boniface-sioux-
 }
 assert.equal(review.batches.length,10);
 assert.equal(review.batches.reduce((n,b)=>n+b.limit,0),1879);
-assert.equal(review.candidate_pairs.length,46);
-assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,46);
+assert.equal(review.candidate_pairs.length,54);
+assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,54);
 assert.equal(review.candidate_pairs.every(x=>x.auto_publish===false),true);
 assert.equal(review.candidate_pairs.every(x=>x.distance_m>=0&&x.distance_m<=350),true);
-assert.equal(review.photo_review_queue.length,9);
+assert.equal(review.photo_review_queue.length,16);
 assert.equal(review.photo_review_queue.every(x=>x.review==="HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"),true);
 const unrelated=review.candidate_pairs.find(x=>x.venue_name==="Friedhofskirche St. Michael"
   &&x.place_id==="place:DE:altoetting-gnadenkapelle");
-assert.equal(unrelated?.disposition,"DIFFERENT_OR_GENERIC_DEDICATION_HOLD");
+assert.equal(unrelated?.disposition,"DIFFERENT_CONFIRMED_PLACE_HOLD","P104 exact cemetery-church link must block Gnadenkapelle media substitution");
 const wrongChapel=review.candidate_pairs.find(x=>x.venue_name==="Sieben-Schmerzen-Kapelle (Seven Sorrows Chapel)"
   &&x.place_id==="place:DE:altoetting-gnadenkapelle");
 assert.equal(wrongChapel?.place_has_approved_photo,true);
@@ -45,7 +45,7 @@ for(const row of geo.directoryPlaceLinks){
  if(pair)assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
 }
 assert.equal(buildScreen({...geo,directoryPlaceLinks:[...geo.directoryPlaceLinks,{
- venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,2);
+ venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,9);
 const adjudication=read("data/geography/research/directory-place-identity-editorial-20261029.v1.json");
 assert.equal(adjudication.schema,"AO_DIRECTORY_PLACE_EXACT_BUILDING_EDITORIAL_REVIEW_V1");
 assert.equal(adjudication.release_candidate_count,0);
@@ -80,4 +80,4 @@ assert.equal(trio.photos[0].license,"CC0");
 assert.equal(trio.photos[1].license,"CC-BY-SA-3.0");
 assert.equal(trio.photos[2].license,null,"Unknown altar copyright must remain unverified");
 
-console.log("PASS 1,879 venues x 522 Places: 46 spatial pairs, 2 historical approved covers, zero inferred P99 photo publication");
+console.log("PASS 1,879 venues x 529 Places: 54 spatial pairs, 9 exact approved photo joins, 7 new non-published P104 identity links");

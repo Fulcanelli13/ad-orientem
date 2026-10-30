@@ -35,7 +35,11 @@ assert.equal(approved.items.filter(x=>legacyIds.has(x.place_id)).length,18,
  "The original ten plus eight replacement approved photographs must be preserved");
 const p95=read("data/geography/research/directory-p95-first-two-photo-covers.v1.json");
 const p95ByPlace=new Map(p95.photos.map(x=>[x.place_id,x]));
-assert.equal(approved.items.length,31+p95.photos.length,"Historical 31 shrine covers and separately verified Directory additions must remain intact");
+const p102=read("data/geography/research/directory-p102-three-approved-covers.v1.json");
+const p102ByPlace=new Map(p102.photos.map(x=>[x.place_id,x]));
+const p106=read("data/geography/research/directory-p106-four-approved-covers.v1.json");
+const p106ByPlace=new Map(p106.photos.map(x=>[x.place_id,x]));
+assert.equal(approved.items.length,31+p95.photos.length+p102.photos.length+p106.photos.length,"Historical shrine and P95 covers plus exactly three P102 licensed Directory additions must remain intact");
 const shrineRecovery=read("data/geography/research/shrine-seven-photo-recovery-20261021.v1.json");
 const shrineCandidates=new Map(shrineRecovery.candidates.map(x=>[x.place_id,x]));
 const b2Candidates=new Map(read("data/geography/research/explore-major-marian-b2-photo-candidates.v1.json").candidates.map(x=>[x.place_id,x]));
@@ -79,6 +83,22 @@ for(const item of approved.items){
     assert.equal(item.source_sha1,c.original_sha1);
     assert.equal(item.derivative_sha256,c.derivative_sha256);
     assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.relationship==="LOCATED_AT"&&x.confidence==="CONFIRMED"));
+  }else if(p102ByPlace.has(item.place_id)){
+    const c=p102ByPlace.get(item.place_id);
+    assert.equal(item.source_url,c.source_url);
+    assert.equal(item.credit,c.credit);
+    assert.equal(item.license,c.license);
+    assert.equal(item.source_sha1,c.source_sha1);
+    assert.equal(item.derivative_sha256,c.derivative_sha256);
+    assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.relationship==="LOCATED_AT"&&x.confidence==="CONFIRMED"));
+  }else if(p106ByPlace.has(item.place_id)){
+    const c=p106ByPlace.get(item.place_id);
+    assert.equal(item.source_url,c.source_url);
+    assert.equal(item.credit,c.credit);
+    assert.equal(item.license,c.license);
+    assert.equal(item.source_sha1,c.source_sha1);
+    assert.equal(item.derivative_sha256,c.sha256);
+    assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT"));
   }else{
     const c=shrineCandidates.get(item.place_id)||b2Candidates.get(item.place_id);
     assert.ok(c&&c.image_review_state==="EDITORIALLY_ACCEPTED_EXACT_SITE_AND_FULL_FRAME_20261021",

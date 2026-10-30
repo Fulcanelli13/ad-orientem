@@ -11,16 +11,16 @@
   "policy": "Nearby coordinates or name overlaps never certify the same physical worship building. No link, source, image or calendar publication may be inferred.",
   "counts": {
     "venues_screened": 1879,
-    "canonical_places": 522,
-    "confirmed_links": 15,
-    "approved_covers": 33,
+    "canonical_places": 529,
+    "confirmed_links": 22,
+    "approved_covers": 40,
     "approved_gallery_images": 33,
-    "within_350m_pairs": 46,
-    "venues_near_place": 43,
-    "pairs_within_100m": 22,
-    "high_name_geo_pairs": 12,
-    "nearby_approved_photo_pairs": 9,
-    "exact_confirmed_photo_joins": 2,
+    "within_350m_pairs": 54,
+    "venues_near_place": 49,
+    "pairs_within_100m": 27,
+    "high_name_geo_pairs": 16,
+    "nearby_approved_photo_pairs": 16,
+    "exact_confirmed_photo_joins": 9,
     "published_new_links": 0,
     "published_new_photos": 0
   },
@@ -28,13 +28,13 @@
     {
       "offset": 0,
       "limit": 200,
-      "nearby_venues": 12,
-      "nearby_approved_photo_venues": 0
+      "nearby_venues": 13,
+      "nearby_approved_photo_venues": 3
     },
     {
       "offset": 200,
       "limit": 200,
-      "nearby_venues": 4,
+      "nearby_venues": 6,
       "nearby_approved_photo_venues": 1
     },
     {
@@ -64,14 +64,14 @@
     {
       "offset": 1200,
       "limit": 200,
-      "nearby_venues": 6,
-      "nearby_approved_photo_venues": 2
+      "nearby_venues": 8,
+      "nearby_approved_photo_venues": 5
     },
     {
       "offset": 1400,
       "limit": 200,
-      "nearby_venues": 1,
-      "nearby_approved_photo_venues": 1
+      "nearby_venues": 2,
+      "nearby_approved_photo_venues": 2
     },
     {
       "offset": 1600,
@@ -185,7 +185,7 @@
       "place_pin_precision": "site",
       "distance_m": 64.9,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -236,7 +236,7 @@
       "place_pin_precision": "site",
       "distance_m": 9.7,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -309,6 +309,23 @@
       "auto_publish": false
     },
     {
+      "directory_record_index": 199,
+      "venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+      "venue_name": "Holy Family Log Church",
+      "country": "US",
+      "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/icksp/geo.v1.geojson",
+      "venue_pin_precision": "building",
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "place_name": "Holy Family Log Church, Cahokia",
+      "place_source_url": "https://commons.wikimedia.org/wiki/Category:Church_of_the_Holy_Family,_Cahokia",
+      "place_pin_precision": "site",
+      "distance_m": 33.9,
+      "name_overlap": 0.5,
+      "place_has_approved_photo": true,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
       "directory_record_index": 207,
       "venue_id": "ao-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14",
       "venue_name": "St. Mary of the Assumption Parish and Shrine",
@@ -320,6 +337,23 @@
       "place_source_url": "https://www.openstreetmap.org/way/833622044",
       "place_pin_precision": "address",
       "distance_m": 0,
+      "name_overlap": 1,
+      "place_has_approved_photo": false,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 227,
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-013-fontaine",
+      "venue_name": "Basilique de la Maison natale Saint-Bernard",
+      "country": "FR",
+      "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/v19/icksp-federated.geojson",
+      "venue_pin_precision": "street",
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "place_name": "Basilique Saint-Bernard de Fontaine-lès-Dijon",
+      "place_source_url": "https://www.plan-du-patrimoine.fr/monument-historique/21/fontaine-les-dijon/couvent-et-basilique-saint-bernard/PA00112467/",
+      "place_pin_precision": "site",
+      "distance_m": 21.3,
       "name_overlap": 1,
       "place_has_approved_photo": false,
       "disposition": "EXISTING_CONFIRMED_LINK",
@@ -349,6 +383,23 @@
       "country": "DE",
       "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/v19/icksp-federated.geojson",
       "venue_pin_precision": "building",
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "place_name": "Friedhofskirche St. Michael, Altötting",
+      "place_source_url": "https://www.openstreetmap.org/way/207573764",
+      "place_pin_precision": "site",
+      "distance_m": 39.3,
+      "name_overlap": 0.667,
+      "place_has_approved_photo": false,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 277,
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-112",
+      "venue_name": "Friedhofskirche St. Michael",
+      "country": "DE",
+      "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/v19/icksp-federated.geojson",
+      "venue_pin_precision": "building",
       "place_id": "place:DE:altoetting-gnadenkapelle",
       "place_name": "Gnadenkapelle Altötting",
       "place_source_url": "https://mapcarta.com/de/W80328722",
@@ -356,7 +407,7 @@
       "distance_m": 264.1,
       "name_overlap": 0,
       "place_has_approved_photo": true,
-      "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "disposition": "DIFFERENT_CONFIRMED_PLACE_HOLD",
       "auto_publish": false
     },
     {
@@ -374,6 +425,23 @@
       "name_overlap": 0,
       "place_has_approved_photo": false,
       "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 361,
+      "venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius",
+      "venue_name": "Kostel sv. Ignáce z Loyoly",
+      "country": "CZ",
+      "venue_source_url": "https://www.unavoce.cz/kostely/brno/jihlava",
+      "venue_pin_precision": "street",
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "place_name": "Kostel svatého Ignáce z Loyoly, Jihlava",
+      "place_source_url": "https://www.outdooractive.com/en/poi/jihlava/jezuitsky-kostel-sv.-ignace-z-loyoly-jihlava/40442032/",
+      "place_pin_precision": "site",
+      "distance_m": 15.5,
+      "name_overlap": 1,
+      "place_has_approved_photo": false,
+      "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
     {
@@ -542,7 +610,41 @@
       "place_pin_precision": "site",
       "distance_m": 46,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 1242,
+      "venue_id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",
+      "venue_name": "Sacred Heart of Jesus, Caterham",
+      "country": "GB",
+      "venue_source_url": "https://www.caterhamcatholic.co.uk/index.html",
+      "venue_pin_precision": "street",
+      "place_id": "place:GB:sacred-heart-caterham",
+      "place_name": "Church of the Sacred Heart of Jesus, Caterham",
+      "place_source_url": "https://historicengland.org.uk/listing/the-list/list-entry/1294941",
+      "place_pin_precision": "site",
+      "distance_m": 104.9,
+      "name_overlap": 1,
+      "place_has_approved_photo": true,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 1248,
+      "venue_id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY",
+      "venue_name": "St Mary's Catholic Church, Brewood",
+      "country": "GB",
+      "venue_source_url": "https://birmingham-lms-rep.blogspot.com/2026/10/",
+      "venue_pin_precision": "street",
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "place_name": "Roman Catholic Church of St Mary, Brewood",
+      "place_source_url": "https://historicengland.org.uk/listing/the-list/list-entry/1039334",
+      "place_pin_precision": "site",
+      "distance_m": 140.3,
+      "name_overlap": 1,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -612,6 +714,23 @@
       "name_overlap": 0,
       "place_has_approved_photo": true,
       "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 1454,
+      "venue_id": "AO-AMER-R26-US-03-08",
+      "venue_name": "Cathedral of the Immaculate Conception",
+      "country": "US",
+      "venue_source_url": "https://adorientem.church/find/cathedral-of-the-immaculate-conception-lake-charles-b8e49681",
+      "venue_pin_precision": "source_marker_unassessed",
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "place_name": "Cathedral of the Immaculate Conception, Lake Charles",
+      "place_source_url": "https://sv.aroundus.com/p/5298480-cathedral-of-the-immaculate-conception",
+      "place_pin_precision": "site",
+      "distance_m": 24.4,
+      "name_overlap": 1,
+      "place_has_approved_photo": true,
+      "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
     {
@@ -751,6 +870,23 @@
       "auto_publish": false
     },
     {
+      "directory_record_index": 1787,
+      "venue_id": "AO-EUR-DE-100",
+      "venue_name": "Sieben-Schmerzen-Kapelle (Seven Sorrows Chapel)",
+      "country": "DE",
+      "venue_source_url": "https://adorientem.church/find/sieben-schmerzen-kapelle-seven-sorrows-chapel-84503-altotting-6494891c",
+      "venue_pin_precision": "source_marker_unassessed",
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "place_name": "Friedhofskirche St. Michael, Altötting",
+      "place_source_url": "https://www.openstreetmap.org/way/207573764",
+      "place_pin_precision": "site",
+      "distance_m": 303.3,
+      "name_overlap": 0,
+      "place_has_approved_photo": false,
+      "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "auto_publish": false
+    },
+    {
       "directory_record_index": 1794,
       "venue_id": "AO-EUR-GB-003",
       "venue_name": "Basilica of Our Lady of Walsingham - Catholic National Shrine of Our Lady",
@@ -872,13 +1008,43 @@
   ],
   "photo_review_queue": [
     {
+      "venue_id": "ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france",
+      "venue_name": "Eglise Saint-Bruno",
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "place_name": "Église Saint-Bruno de Bordeaux",
+      "distance_m": 64.9,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "ao-fssp-chiesa-di-san-canziano-via-s-canziano-9-i-35100-padova-italia",
+      "venue_name": "Chiesa di San Canziano",
+      "place_id": "place:IT:san-canziano-padova",
+      "place_name": "Chiesa di San Canziano, Padova",
+      "distance_m": 9.7,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+      "venue_name": "Holy Family Log Church",
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "place_name": "Holy Family Log Church, Cahokia",
+      "distance_m": 33.9,
+      "name_overlap": 0.5,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
       "venue_id": "ao-research-icksp-federated-v13-icksp-stg-112",
       "venue_name": "Friedhofskirche St. Michael",
       "place_id": "place:DE:altoetting-gnadenkapelle",
       "place_name": "Gnadenkapelle Altötting",
       "distance_m": 264.1,
       "name_overlap": 0,
-      "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "disposition": "DIFFERENT_CONFIRMED_PLACE_HOLD",
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {
@@ -922,6 +1088,36 @@
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {
+      "venue_id": "V19:SJC-001",
+      "venue_name": "St. John Cantius Church",
+      "place_id": "place:US:st-john-cantius-chicago",
+      "place_name": "St. John Cantius Church, Chicago",
+      "distance_m": 46,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",
+      "venue_name": "Sacred Heart of Jesus, Caterham",
+      "place_id": "place:GB:sacred-heart-caterham",
+      "place_name": "Church of the Sacred Heart of Jesus, Caterham",
+      "distance_m": 104.9,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY",
+      "venue_name": "St Mary's Catholic Church, Brewood",
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "place_name": "Roman Catholic Church of St Mary, Brewood",
+      "distance_m": 140.3,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
       "venue_id": "ao-fssp-maison-saint-aignan-21-rue-de-la-couronne-f-28000-chartres-france",
       "venue_name": "Maison Saint-Aignan",
       "place_id": "place:FR:chartres-notre-dame",
@@ -929,6 +1125,16 @@
       "distance_m": 340.1,
       "name_overlap": 0,
       "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "AO-AMER-R26-US-03-08",
+      "venue_name": "Cathedral of the Immaculate Conception",
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "place_name": "Cathedral of the Immaculate Conception, Lake Charles",
+      "distance_m": 24.4,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {
