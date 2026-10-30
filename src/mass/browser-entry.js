@@ -1156,12 +1156,35 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       .finally(() => { if (button.isConnected) button.disabled = false; });
   }, true);
 
+  async function startMassFromToday(){
+    // Entry is deliberately delegated to the same source-verifying R17
+    // controller and optional preparation route as the sole host Start action.
+    if(!state.installed||!state.controller)
+      return Object.freeze({ok:false,reason:"MASS_CONTROLLER_NOT_READY"});
+    if(hasResumableMass())
+      return Object.freeze({ok:false,reason:"RESUME_EXISTING_MASS_FIRST"});
+    const current=runtimeState();
+    if(current?.resolving||current?.resolution?.status!=="ready"||
+       current?.resolution?.proper?.status!=="ready"||
+       (current?.resolution?.date&&current.resolution.date!==current.selectedDate))
+      return Object.freeze({ok:false,reason:"SELECTED_PROPER_NOT_READY"});
+    const before=currentFolioSelection();
+    const depth=experiencePrayerDepth("before",{before:before?.beforeMass??"none"});
+    if(depth){
+      const opened=await openFolioPrayer("mass.prepare",{depth,language:before?.readerLanguage});
+      return Object.freeze({ok:Boolean(opened),reason:opened?null:"MASS_PREPARATION_PRAYERS_UNAVAILABLE"});
+    }
+    const prepared=await state.controller.enter();
+    globalThis.AO_APP_SHELL_V1?.syncSurface?.("mass");
+    return Object.freeze({ok:true,prepared});
+  }
   globalThis.AO_R17_BROWSER_ENTRY = Object.freeze({
     version: VERSION,
     get installed() { return state.installed; },
     get polls() { return state.polls; },
     prepare: () => state.controller?.prepare?.(),
     enter: () => state.controller?.enter?.(),
+    startFromToday: startMassFromToday,
     // Shell-only presentation reset: does not alter a Mass choice or R17.
     resetPreflightView: () => state.fullMassPreflight?.resetView?.() ?? false,
     // Read-only Formation projection. The host keeps exclusive ownership of
