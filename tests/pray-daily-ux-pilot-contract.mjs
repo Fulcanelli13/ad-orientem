@@ -5,7 +5,8 @@ import {dailyUxPilotEnabled,renderDailyUxModes,renderDailyUxContinuous,renderDai
 const L=(en)=>en;
 const esc=s=>String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");
 assert.equal(DAILY_UX_PILOT_SCHEMA,"ao-daily-ux-pilot-v1");
-assert.equal(dailyUxPilotEnabled(""),false);
+assert.equal(dailyUxPilotEnabled(""),true,"Book-first daily reader must be default");
+assert.equal(dailyUxPilotEnabled("?unrelated=1"),true,"Unrelated query params must not disable the default");
 assert.equal(dailyUxPilotEnabled("?aoDailyUxPilot=1"),true);
 assert.equal(dailyUxPilotEnabled("?aoDailyUxPilot=0"),false);
 const morning=guidedDailyCards("morning"),evening=guidedDailyCards("evening");
@@ -28,6 +29,8 @@ for(const edition of ["1913","1905"]){
  assert.match(top,/class="aoDailyBookSelector"/);
  assert.equal((top.match(/data-tp381-personal-action="edition"/g)||[]).length,2,
   "Only two source-cleared St Pius X editions may be switched directly");
+ assert.match(top,/<details class="aoDailyBookOther">/,"Unreleased books stay accessible but collapsed below released editions");
+ assert.match(top,/St Pius X · 1913/,"Source-version pills directly name the selectable book");
  assert.equal((top.match(/class="aoDailyBookPill aoDailyBookPillPending"/g)||[]).length,3,
   "The three research-only books are not functional editions");
  assert.match(top,new RegExp('data-tp381-personal-value="'+edition+'" aria-pressed="true"'));
