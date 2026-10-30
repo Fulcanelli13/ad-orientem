@@ -33,6 +33,9 @@ on:
       - 'src/office/reader-beta-catalog.js'
       - 'src/office/saturday-compline-2026-pilot.js'
       - 'src/office/weekday-compline-psalter-plan.js'
+      - 'src/office/compline-advent-2026-appointments.js'
+      - 'tests/divine-office-advent-i-full-week-compline.mjs'
+      - 'tests/fixtures/office/advent-i-week-compline-*.json'
       - 'tests/divine-office-weekday-compline-psalter.mjs'
       - 'tests/fixtures/office/advent-i-feria-iii-compline-*.json'
       - 'tests/divine-office-saturday-compline-pilot.mjs'
@@ -167,6 +170,8 @@ jobs:
           node --test tests/divine-office-saturday-compline-pilot.mjs
           node --check src/office/weekday-compline-psalter-plan.js
           node --test tests/divine-office-weekday-compline-psalter.mjs
+          node --check src/office/compline-advent-2026-appointments.js
+          node --test tests/divine-office-advent-i-full-week-compline.mjs
           node --check src/office/reader-beta-parallel-projection.js
           node --test tests/divine-office-reader-beta-parallel-projection.mjs
           node --check src/office/advent-first-vespers-reading-focus.js
