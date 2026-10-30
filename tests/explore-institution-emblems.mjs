@@ -36,9 +36,14 @@ const provisionalSites=projectPreliminaryR49(r49);
 const pictured=provisionalSites.filter(item=>massInstitutionEmblem(item.community_id));
 const neutral=provisionalSites.filter(item=>!massInstitutionEmblem(item.community_id));
 assert.equal(provisionalSites.length,1879);
-assert.equal(pictured.length,1191,"Do not lose source-identifiable institute emblems");
-assert.equal(neutral.length,688,"Do not fabricate institute logos for other sources");
-assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX").length,732);
+assert.equal(pictured.length,1188,"Do not lose exact-source institute emblems; sister communities have separate identities");
+assert.equal(neutral.length,691,"Do not fabricate institute logos for other sources or reuse SSPX arms for distinct sister communities");
+assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX").length,729);
+assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX_SISTERS").length,3,
+  "Three source-named sister-community venues must remain separate from SSPX priestly houses");
+assert.ok(provisionalSites.filter(x=>x.community_id==="SSPX_SISTERS").every(x=>
+  x.preliminary_group==="SSPX"&&massInstitutionEmblem(x.community_id)===null),
+  "Do not infer sister-community insignia from source-group classification");
 assert.equal(provisionalSites.filter(x=>x.community_id==="FSSP").length,307);
 assert.equal(provisionalSites.filter(x=>x.community_id==="ICKSP").length,128);
 assert.equal(provisionalSites.filter(x=>x.community_id==="IBP").length,19);
