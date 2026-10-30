@@ -23,7 +23,9 @@ const dayOf=(date,fr)=>{
   return new Intl.DateTimeFormat(fr?"fr-FR":"en-GB",{weekday:"short"}).format(d).replace(".","");
 };
 export function h4Enabled(win=globalThis){
-  try{return new URLSearchParams(win?.location?.search??"").get("aoTodayH4")==="1"}catch{return false}
+  // H4 is the approved Home. The old Today is retained as an explicit,
+  // reversible query-only rollback while the production transition settles.
+  try{return new URLSearchParams(win?.location?.search??"").get("aoTodayH4")!=="0"}catch{return true}
 }
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
