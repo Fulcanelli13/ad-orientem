@@ -6,6 +6,7 @@ import {
   massInstitutionImageId,registerMassInstitutionImages,
 } from "../src/find/institution-emblems.js";
 import { exploreMapFeatures, MASS_MAP_GROUP_COLORS } from "../src/find/map-runtime.js";
+import {renderDirectoryIdentityFallback} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
@@ -42,6 +43,46 @@ assert.equal(provisionalSites.filter(x=>x.community_id==="FSSP").length,307);
 assert.equal(provisionalSites.filter(x=>x.community_id==="ICKSP").length,128);
 assert.equal(provisionalSites.filter(x=>x.community_id==="IBP").length,19);
 assert.equal(provisionalSites.filter(x=>x.community_id==="AASJMV").length,5);
+
+// Preserve distinct named source affiliates even without an exact emblem.
+// R49 source group UNKNOWN stays UNKNOWN; the name-only mapping is never a
+// classification of ecclesial position or individual Masses.
+const sourceNamedGroups=new Map([
+ ["Canons of St John Cantius",["CANONS_ST_JOHN_CANTIUS",2]],
+ ["Capucins de Morgon",["CAPUCHINS_MORGON",5]],
+ ["Fraternité de la Transfiguration",["TRANSFIGURATION",5]],
+ ["Oratorians",["ORATORIAN",5]],
+ ["Carmélites",["CARMELITE",4]],
+ ["Bénédictines",["BENEDICTINE",1]],
+ ["Dominicains",["DOMINICAN",1]],
+]);
+for(const [sourceLabel,[code,expected]] of sourceNamedGroups){
+ const items=provisionalSites.filter(x=>x.eyebrow===sourceLabel);
+ assert.equal(items.length,expected,sourceLabel+" source count");
+ assert.equal(items.filter(x=>x.community_id===code).length,expected,sourceLabel+" group code");
+ for(const item of items){
+  assert.equal(item.affiliation_scope,"SOURCE_LABEL_ONLY");
+  assert.equal(massInstitutionEmblem(item.community_id),null,"Uncleared heraldry must not be published");
+  const fallback=renderDirectoryIdentityFallback(item,"en","preview");
+  assert.match(fallback,/data-visual-kind="named"/);
+  assert.ok(fallback.includes(sourceLabel),"Preserve the original source's community name");
+  assert.doesNotMatch(fallback,/<img /,"No unrelated heraldic substitute");
+ }
+}
+const noInventedLogo=renderDirectoryIdentityFallback({
+  community_id:"CMRI",eyebrow:"CMRI directory / affiliated clergy"
+},"en","card");
+assert.match(noInventedLogo,/data-visual-kind="named"/);
+assert.doesNotMatch(noInventedLogo,/CMRI_emblem\.(png|svg)/);
+assert.match(renderDirectoryIdentityFallback({community_id:"DIOCESAN",eyebrow:"Diocesan"}),/data-visual-kind="neutral"/);
+const researchQueue=JSON.parse(readFileSync(new URL("../data/directory/research/tlm-emblem-acquisition-queue-20261030.v1.json",import.meta.url),"utf8"));
+assert.equal(researchQueue.schema,"AO_TLM_EMBLEM_ACQUISITION_QUEUE_V1");
+assert.equal(researchQueue.groups.length,41);
+assert.equal(researchQueue.cl2_source_affiliation_audit.distinct_source_labels,138);
+assert.equal(researchQueue.cl2_source_affiliation_audit.venue_source_rows,2687);
+assert.equal(researchQueue.cl2_source_affiliation_audit.labels.reduce((n,x)=>n+x.venue_source_rows,0),2687);
+assert.equal(researchQueue.groups.filter(x=>x.state==="EXACT_CANDIDATE_IN_DRAFT").length,5);
+assert.equal(researchQueue.groups.find(x=>x.group_code==="CMRI").rights,"THIRD_PARTY_IMAGE_RIGHTS_NOT_CLEARED");
 
 const mapped=exploreMapFeatures([
   {item_id:"tlm:r49:diocese",lens:"tlm",community_id:"DIOCESAN",
