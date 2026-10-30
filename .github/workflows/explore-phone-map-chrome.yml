@@ -9,6 +9,10 @@ on:
       - "src/find/heritage-style.js"
       - "tests/explore-phone-map-chrome.mjs"
       - "tests/explore-phone-overview-visual.mjs"
+      - "tests/explore-tlm-church-card-visual.mjs"
+      - "src/find/tlm-church-profile.js"
+      - "src/find/directory-card.js"
+      - "src/find/preliminary-directory-r49.js"
       - ".github/workflows/explore-phone-map-chrome.yml"
   workflow_dispatch:
 
@@ -29,11 +33,15 @@ jobs:
         run: node tests/explore-layout-phone.mjs
       - name: Real 320/390/430 EN/FR basemap, clusters and bottom controls
         run: node tests/explore-phone-overview-visual.mjs
+      - name: Real 320/390/1440 Explore TLM church cards
+        run: node tests/explore-tlm-church-card-visual.mjs
       - name: Preserve actual map comparison screenshots
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: explore-phone-overview
-          path: artifacts/explore-phone-overview/
+          path: |
+            artifacts/explore-phone-overview/
+            artifacts/explore-tlm-church-card/
           if-no-files-found: warn
           retention-days: 30
