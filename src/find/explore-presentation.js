@@ -520,7 +520,7 @@ function massEmblemCredits(language){
 // Display source-present community identities, not just the first four emblem holders.
 // Research-only CL2/CL27 codes do not become public affiliations through this filter.
 function availableTlmCommunityIds(vm,aff=[]){
-  const present=new Set([...arr(vm.items).filter(item=>item?.kind==="TLM_VENUE").map(item=>String(item.community_id??"").toUpperCase()),
+  const present=new Set([...arr(vm.tlmAvailableCommunities?.length?vm.tlmAvailableCommunities:vm.items.filter(item=>item?.kind==="TLM_VENUE").map(item=>item.community_id)).map(id=>String(id??"").toUpperCase()),
     ...arr(aff).map(id=>String(id??"").toUpperCase())].filter(Boolean));
   const priority=["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV","CMRI","SSPV","CSPV","RCI","FSVF",
     "CANONS_ST_JOHN_CANTIUS","SMMD","BENEDICTINE","DOMINICAN","ORATORIAN","NORBERTINE","INDEPENDENT","OTHER","UNKNOWN"];
@@ -582,6 +582,7 @@ export function buildExploreViewModel({
   atlasFacets=null,
   loadedProviders=[],
   unavailableProviders=[],
+  tlmAvailableCommunities=[],
   view="list",
   filters={},
   saintsRelease=null,
@@ -616,6 +617,7 @@ export function buildExploreViewModel({
     atlasFacets,
     loadedProviders:arr(loadedProviders),
     unavailableProviders:arr(unavailableProviders),
+    tlmAvailableCommunities:arr(tlmAvailableCommunities),
     view,
     filters,
     journeyOpen:Boolean(journeyOpen),
