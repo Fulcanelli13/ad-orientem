@@ -416,6 +416,59 @@ try{
    assert.equal(await page.locator(night+' [data-ao-devo-card="close"]').count(),1);
    await page.locator(night+' [data-p435930-night-finish]').tap();
    assert.equal(await page.locator(aRoot).count(),1,"Finish returns to established Adoration chooser");
+   // Review-only F07 w1: this is intentionally separate from baseline
+   // acceptance. A screenshot of the default reader is not w1 evidence.
+   await page.setViewportSize({width,height:width===320?568:844});
+   await page.goto("http://127.0.0.1:"+server.address().port+
+    "/index.html?aoPrayerPilot=0&aoChapletF07Pilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:40000});
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.five_wounds",{returnContext:null}));
+   const pilot=rootSel+' .aoFiveWounds[data-ao-f07-variant="five-wounds"]';
+   assert.equal(await page.locator(pilot+' .aoF07WoundsCross').count(),1);
+   assert.equal(await page.locator(pilot+' [data-f07-wound-status]').count(),5);
+   assert.equal(await page.locator(pilot+' [data-f07-wound-status="current"]').count(),1);
+   assert.equal(await page.locator(pilot+' .aoF07WoundChips [data-p435930-five-wound]').count(),5);
+   assert.equal(await page.locator(pilot+' .aoF07LanguageOptions [data-p435930-five-language]').count(),3);
+   assert.equal(await page.locator(pilot+' .aoF07JumpDisclosure').count(),0,
+    "w1 uses direct wound chips, not a redundant Choose a wound panel");
+   const w1Opening=await page.evaluate(()=>{
+    const reader=document.querySelector('#aoPray435930.open .aoFiveWounds[data-ao-f07-variant="five-wounds"]');
+    const prayer=reader.querySelector('.aoFiveWoundsPrayerText').getBoundingClientRect();
+    const nav=reader.querySelector('.aoFiveWoundsActions').getBoundingClientRect();
+    const port=document.querySelector('#aoPray435930.open .aoP435930Mount').getBoundingClientRect();
+    return {prayerAboveDock:Math.max(0,Math.min(prayer.bottom,nav.top,port.bottom)-Math.max(prayer.top,port.top)),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(w1Opening.prayerAboveDock>=24&&w1Opening.overflow<=1,
+    "Claude w1 must show actual canonical prayer on short phones: "+JSON.stringify(w1Opening));
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-opening-'+width+'.png'),animations:"disabled"});
+   await page.locator(pilot+' [data-p435930-five-wound="3"]').click();
+   assert.equal(await page.locator(pilot+' .aoF07FiveWoundsMeta small').innerText(),"RIGHT HAND");
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"19 / 30");
+   await page.locator(pilot+' [data-p435930-five-next]').click();
+   await page.locator(pilot+' [data-p435930-five-next]').click();
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"21 / 30");
+   assert.equal(await page.locator(pilot+' .aoF07FiveWoundsMeta strong').innerText(),"Glory Be");
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-guided-'+width+'.png'),animations:"disabled"});
+   await page.locator(pilot+' .aoF07ReaderLanguage summary').click();
+   await page.locator(pilot+' [data-p435930-five-language="la"]').click();
+   assert.equal(await page.locator(pilot+' .aoFiveWoundsPrayerText').getAttribute('lang'),'la');
+   assert.match(await page.locator(pilot+' .aoFiveWoundsPrayerText').innerText(),/Gloria Patri/i);
+   await page.locator(pilot+' .aoF07ReaderLanguage summary').click();
+   await page.locator(pilot+' [data-p435930-five-language="fr"]').click();
+   assert.equal(await page.locator(pilot+' .aoFiveWoundsPrayerText').getAttribute('lang'),'fr');
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"21 / 30");
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-french-'+width+'.png'),animations:"disabled"});
+   await page.locator(pilot+' .aoF07ReaderLanguage summary').click();
+   await page.locator(pilot+' [data-p435930-five-language="en"]').click();
+   assert.equal(await page.locator(pilot+' .aoFiveWoundsPrayerText').getAttribute('lang'),'en');
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"21 / 30");
+   await page.locator(pilot+' [data-p435930-five-wound="4"]').click();
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"25 / 30");
+   assert.equal(await page.locator(pilot+' [data-f07-wound-status="current"]').count(),1);
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-return-'+width+'.png'),animations:"disabled"});
+   console.log('PASS F07 Claude w1 Five Wounds '+width+'px: cross, chips, active prayer, dock and EN/FR/LA');
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}
