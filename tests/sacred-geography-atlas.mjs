@@ -11,7 +11,7 @@ const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
 assert.equal(geo.places.length,LIVE.places);
 assert.equal(sacred.apparitions.length,33);
-assert.equal(sacred.relics.length,123);
+assert.equal(sacred.relics.length,127);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
 assert.equal(assertExploreGeographyRegistry(geo).counts.places,LIVE.places);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
@@ -210,4 +210,4 @@ assert.equal(notreDame.counts.apparitions,0);
 assert.equal(notreDame.counts.relics,3);
 assert.equal(geo.directoryPlaceLinks.some(link=>link.place_id==="place:FR:abbaye-mont-saint-michel"),false,
   "historical shrine is not automatically a TLM directory venue");
-console.log(`PASS 33 qualified apparition traditions, 122 relic holdings, ${geo.places.length} source-anchored physical Places, four P11 OSM footprints, bilingual status and no TLM/calendar inference`);
+console.log(`PASS 33 qualified apparition traditions, 127 relic holdings, ${geo.places.length} source-anchored physical Places, four P11 OSM footprints, bilingual status and no TLM/calendar inference`);
