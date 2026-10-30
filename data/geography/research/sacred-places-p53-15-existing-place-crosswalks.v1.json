@@ -1,0 +1,302 @@
+{
+  "schema": "AO_SACRED_PLACES_P53_EXISTING_PLACE_CROSSWALK_15_V1",
+  "as_of": "2026-10-28",
+  "status": "RESEARCH_CROSSWALK_VERIFIED_NO_NEW_PINS",
+  "canonical_places_before": 512,
+  "canonical_places_after": 512,
+  "baseline_acquisition500_unresolved_P48": 364,
+  "additional_acquisition500_canonical_reuses": 15,
+  "working_acquisition500_unresolved_after_crosswalk": 349,
+  "working_acquisition500_exact_links_after_crosswalk": 151,
+  "baseline_all750_unresolved_before_crosswalk": 443,
+  "working_all750_unresolved_after_crosswalk": 428,
+  "original_candidate_country_code_preserved": true,
+  "notes": [
+    "15 already-published canonical Place identities linked to unresolved frozen candidate IDs; not 15 new physical sites.",
+    "P49 previously recognized 3 of these and P51 flagged 11 more; P52 supplied a further confirmed direct OSM match for Trier Cathedral.",
+    "Country DY is retained in historical R70 input for Ouidah, but map identity country is BJ (Benin).",
+    "Candidate SG-INV-0026 (Convent Saint-Gildard Nevers) deliberately not closed here because convent versus Espace Bernadette chapel/site scope needs a distinct physical-object adjudication.",
+    "Separate high-priority P50 geometry proposals remain unmerged. No photo work, no production app work."
+  ],
+  "rows": [
+    {
+      "candidate_id": "SG-INV-0051",
+      "candidate_name": "Basilica of Saint Paul Outside the Walls, Rome",
+      "original_country_code": "IT",
+      "canonical_place_id": "place:IT:saint-paul-outside-walls-rome",
+      "canonical_name": "Basilica Papale di San Paolo fuori le Mura",
+      "canonical_country_code": "IT",
+      "canonical_geo_source_ref": "wikidata:Q231699",
+      "identity_source_url": "https://basilicas.vatican.va/en/basilica-san-paolo.html",
+      "canonical_source_ids": [
+        "wikidata:Q231699"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Vatican basilica and same historic landmark; geometry in canonical Place uses Wikidata rather than OSM way"
+    },
+    {
+      "candidate_id": "SG-INV-0089",
+      "candidate_name": "Basilica of Saint Mark, Venice",
+      "original_country_code": "IT",
+      "canonical_place_id": "place:IT:basilica-san-marco-venezia",
+      "canonical_name": "Basilica Cattedrale Patriarcale di San Marco",
+      "canonical_country_code": "IT",
+      "canonical_geo_source_ref": "wikidata:Q172988",
+      "identity_source_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
+      "canonical_source_ids": [
+        "SHR-IT-basilica-san-marco-venezia"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Venetian cathedral basilica; canonical source is site custodians"
+    },
+    {
+      "candidate_id": "SG-INV-0170",
+      "candidate_name": "Aachen Cathedral",
+      "original_country_code": "DE",
+      "canonical_place_id": "place:DE:aachener-dom-four-textiles",
+      "canonical_name": "Aachener Dom — Four Sacred Textiles",
+      "canonical_country_code": "DE",
+      "canonical_geo_source_ref": "UNESCO:WHC:003:cathedral",
+      "identity_source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+      "canonical_source_ids": [
+        "SHR-DE-aachener-dom-four-textiles"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "P49 canon reuse"
+    },
+    {
+      "candidate_id": "SG-INV-0175",
+      "candidate_name": "Cathedral of Trier and Holy Tunic",
+      "original_country_code": "DE",
+      "canonical_place_id": "place:DE:trierer-dom-heiliger-rock",
+      "canonical_name": "Trierer Dom — Holy Robe",
+      "canonical_country_code": "DE",
+      "canonical_geo_source_ref": "osm:way:50284360",
+      "identity_source_url": "https://www.bistum-trier.de/kultur-musik/trierer-dom/index.html",
+      "canonical_source_ids": [
+        "SHR-DE-trierer-dom-heiliger-rock"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "P52 OSM exact feature identity matches existing canonical Trier Cathedral. Do not republish."
+    },
+    {
+      "candidate_id": "SG-INV-0232",
+      "candidate_name": "Basilica of Our Lady, Maastricht",
+      "original_country_code": "NL",
+      "canonical_place_id": "place:NL:maastricht-sterre-der-zee",
+      "canonical_name": "Basiliek Onze Lieve Vrouw — Sterre der Zee",
+      "canonical_country_code": "NL",
+      "canonical_geo_source_ref": "FIETSNETWERK:maastricht-basilica",
+      "identity_source_url": "https://olv-sintpieter.nl/kerken/",
+      "canonical_source_ids": [
+        "SHR-MAASTRICHT-STERRE-DER-ZEE"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Basiliek Onze Lieve Vrouw Maastricht; canonical geometry provenance not exact OSM way"
+    },
+    {
+      "candidate_id": "SG-INV-0387",
+      "candidate_name": "National Shrine of the North American Martyrs, Auriesville",
+      "original_country_code": "US",
+      "canonical_place_id": "place:US:auriesville-martyrs",
+      "canonical_name": "National Shrine of Our Lady of Martyrs",
+      "canonical_country_code": "US",
+      "canonical_geo_source_ref": "PILGRIM-MAP:auriesville",
+      "identity_source_url": "https://www.ourladyofmartyrsshrine.org/about-the-shrine",
+      "canonical_source_ids": [
+        "SHR-AURIESVILLE-MARTYRS"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Auriesville North American Martyrs site is now named National Shrine of Our Lady of Martyrs"
+    },
+    {
+      "candidate_id": "SG-INV-0422",
+      "candidate_name": "Bishop Velychkovsky National Martyr's Shrine, Winnipeg",
+      "original_country_code": "CA",
+      "canonical_place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "canonical_name": "Bishop Velychkovsky National Martyr's Shrine",
+      "canonical_country_code": "CA",
+      "canonical_geo_source_ref": "osm:node/3183027127",
+      "identity_source_url": "https://www.stjosephukrwinnipeg.ca/bishop-velychkovsky-martyrs-shrine/",
+      "canonical_source_ids": [
+        "SG-R70-SITE-SG-INV-0422",
+        "SG-R70-GEO-SG-INV-0422"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Original source ID SG-R70-SITE-SG-INV-0422 and exact OSM node already canonical"
+    },
+    {
+      "candidate_id": "SG-INV-0518",
+      "candidate_name": "Basilica of the National Vow, Quito",
+      "original_country_code": "EC",
+      "canonical_place_id": "place:EC:basilica-voto-nacional-quito",
+      "canonical_name": "Basílica del Voto Nacional — Quito",
+      "canonical_country_code": "EC",
+      "canonical_geo_source_ref": "osm:way:107938444",
+      "identity_source_url": "https://www.basilicadelvotonacionalecuador.com/historia_patrimonio",
+      "canonical_source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-013",
+        "AO-R87-GEO-R87-AO-R80-DISC-013"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "P49 canon reuse"
+    },
+    {
+      "candidate_id": "SG-INV-0572",
+      "candidate_name": "Mount Nebo Memorial Church",
+      "original_country_code": "JO",
+      "canonical_place_id": "place:JO:memorial-moses-mount-nebo",
+      "canonical_name": "Basilica of the Memorial of Moses, Mount Nebo",
+      "canonical_country_code": "JO",
+      "canonical_geo_source_ref": "osm:way:115677147",
+      "identity_source_url": "https://www.custodia.org/en/convents/madaba-mount-nebo/",
+      "canonical_source_ids": [
+        "AO-R90-SITE-AO-R81-DISC-064",
+        "AO-R90-GEO-AO-R81-DISC-064"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Custodia Terrae Sanctae + same Memorial of Moses church, OSM way:115677147"
+    },
+    {
+      "candidate_id": "SG-INV-0585",
+      "candidate_name": "Basilica of Our Lady of Mount Mary, Bandra",
+      "original_country_code": "IN",
+      "canonical_place_id": "place:IN:mount-mary-basilica-bandra",
+      "canonical_name": "Basilica of Our Lady of the Mount — Bandra",
+      "canonical_country_code": "IN",
+      "canonical_geo_source_ref": "osm:way:281241933",
+      "identity_source_url": "https://www.mountmarybasilicabandra.in/",
+      "canonical_source_ids": [
+        "AO-R87-SITE-R87-AO-R82-DISC-022",
+        "AO-R87-GEO-R87-AO-R82-DISC-022"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Mount Mary Basilica Bandra custodians and exact OSM way:281241933"
+    },
+    {
+      "candidate_id": "SG-INV-0590",
+      "candidate_name": "Saint Thomas Cathedral Basilica, Chennai",
+      "original_country_code": "IN",
+      "canonical_place_id": "place:IN:santhome-cathedral-basilica-chennai",
+      "canonical_name": "Santhome Cathedral Basilica — Shrine of St Thomas",
+      "canonical_country_code": "IN",
+      "canonical_geo_source_ref": "osm:way:1115403900",
+      "identity_source_url": "https://archdioceseofmadrasmylapore.in/parishes/",
+      "canonical_source_ids": [
+        "AO-R87-SITE-R87-SG-INV-0590",
+        "AO-R87-GEO-R87-SG-INV-0590"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Original source ID AO-R87-SITE-R87-SG-INV-0590 and exact OSM way:1115403900"
+    },
+    {
+      "candidate_id": "SG-INV-0618",
+      "candidate_name": "Oura Cathedral, Nagasaki",
+      "original_country_code": "JP",
+      "canonical_place_id": "place:JP:oura-cathedral-nagasaki",
+      "canonical_name": "Ōura Cathedral — Twenty-Six Martyrs Basilica",
+      "canonical_country_code": "JP",
+      "canonical_geo_source_ref": "osm:way:243003159",
+      "identity_source_url": "https://whc.unesco.org/en/list/1495/maps/",
+      "canonical_source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-041",
+        "AO-R87-GEO-R87-AO-R81-DISC-041"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Ōura Catholic Cathedral, canonical OSM way:243003159"
+    },
+    {
+      "candidate_id": "SG-INV-0620",
+      "candidate_name": "Urakami Cathedral, Nagasaki",
+      "original_country_code": "JP",
+      "canonical_place_id": "place:JP:urakami-cathedral-nagasaki",
+      "canonical_name": "Urakami Catholic Cathedral — Nagasaki",
+      "canonical_country_code": "JP",
+      "canonical_geo_source_ref": "osm:way:280652259",
+      "identity_source_url": "https://www.nagasaki.catholic.jp/archives/13707",
+      "canonical_source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-042",
+        "AO-R87-GEO-R87-AO-R81-DISC-042"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Official Nagasaki Catholic source and OSM way:280652259"
+    },
+    {
+      "candidate_id": "SG-INV-0649",
+      "candidate_name": "Basilica of the Black Nazarene, Quiapo Manila",
+      "original_country_code": "PH",
+      "canonical_place_id": "place:PH:quiapo-national-shrine-jesus-nazareno",
+      "canonical_name": "Minor Basilica and National Shrine of Jesus Nazareno — Quiapo",
+      "canonical_country_code": "PH",
+      "canonical_geo_source_ref": "osm:way:27086772",
+      "identity_source_url": "https://rcam.org/quiapo-church-officially-declared-as-national-shrine/",
+      "canonical_source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-032",
+        "AO-R87-GEO-R87-AO-R81-DISC-032"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "Archdiocese Manila + Quiapo custodian; canonical OSM way:27086772"
+    },
+    {
+      "candidate_id": "SG-INV-0728",
+      "candidate_name": "Basilica of the Immaculate Conception, Ouidah",
+      "original_country_code": "DY",
+      "canonical_place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "canonical_name": "Basilica of the Immaculate Conception, Ouidah",
+      "canonical_country_code": "BJ",
+      "canonical_geo_source_ref": "osm:way:402951938",
+      "identity_source_url": "https://www.vatican.va/content/benedict-xvi/en/speeches/2011/november/documents/hf_ben-xvi_spe_20111119_firma-es-ap.html",
+      "canonical_source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-035",
+        "AO-R90-GEO-AO-R82-DISC-035"
+      ],
+      "site_identity_state": "MATCHED_TO_ALREADY_PUBLISHED_CATHOLIC_PLACE",
+      "candidate_reconciliation_state": "CANONICAL_ID_LINKED_P53_REUSE",
+      "new_place_to_publish": false,
+      "canonical_data_mutated": false,
+      "scope_note": "P49 canon reuse"
+    }
+  ]
+}
