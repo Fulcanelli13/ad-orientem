@@ -255,10 +255,10 @@ def frozen_id_locality_hint(source_id, country):
 def canonical_wikidata_qid(place):
     """Use only explicitly identified Wikidata QIDs; never infer from a nearby pin."""
     direct = place.get("wikidata_id") or place.get("wikidata_qid")
-    if isinstance(direct, str) and re.fullmatch(r"Q[1-9]\\d*", direct):
+    if isinstance(direct, str) and re.fullmatch(r"Q[1-9]\d*", direct):
         return direct
     ref = str((place.get("geo") or {}).get("source_ref") or "")
-    match = re.search(r"(?:wikidata:|wikidata\\.org/(?:wiki/|entity/))(Q[1-9]\\d*)(?:\\b|$)", ref, re.I)
+    match = re.search(r"(?:wikidata:|wikidata\.org/(?:wiki/|entity/))(Q[1-9]\d*)(?:\b|$)", ref, re.I)
     return match.group(1).upper() if match else None
 
 
@@ -419,7 +419,7 @@ def wikidata_photo_identity(client, venue):
     if short_name != name and len(short_name) >= 8:
         variants.append(short_name)
     direct_qid = venue.get("wikidata_id")
-    ids = [direct_qid] if direct_qid and re.fullmatch(r"Q[1-9]\\d*", direct_qid) else []
+    ids = [direct_qid] if direct_qid and re.fullmatch(r"Q[1-9]\d*", direct_qid) else []
     for variant in ([] if ids else variants):
         results = client.request({
             "action": "wbsearchentities", "format": "json", "language": "en",
