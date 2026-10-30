@@ -465,6 +465,8 @@ try{
      "Mass VIII · De Angelis");
    assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').isDisabled(),true,
      "A source-indexed label must not be editable until custom is chosen");
+   assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').isHidden(),true,
+     "Indexed option must not duplicate its title in a disabled mobile text field");
    const selectedSource=await page.evaluate(()=>{
      const v=JSON.parse(localStorage.getItem("ao-schola-profile-library-v2")||"{}");
      const p=v.profiles?.find(x=>x.id===v.activeProfileId);
@@ -478,6 +480,8 @@ try{
    await page.screenshot({path:resolve(out,"schola-kyriale-source-"+width+".png"),
      animations:"disabled"});
    await kyrieMenu.selectOption("CUSTOM");
+   assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').isVisible(),true,
+     "Custom selection must restore the editable text field");
    await panel.locator('[data-schola-ordinary-setting="KYRIE"]').fill("Local polyphonic Kyrie");
    await panel.locator('[data-schola-ordinary-setting="KYRIE"]').blur();
    await page.waitForFunction(()=>{
