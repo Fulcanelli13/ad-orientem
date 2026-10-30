@@ -45,6 +45,15 @@ try{
   // Review frames must show the settled overlay, not a mid-transition crossfade.
   await page.waitForTimeout(750);
   await page.screenshot({path:resolve(out,width+"-overview-dark.png")});
+  await page.locator("[data-m1-choice='mass']").click();
+  const other=page.locator("[data-m1-other-group]");
+  assert.equal(await other.count(),1,"M1 must present one Other Mass disclosure");
+  await other.locator("summary").click();
+  assert.deepEqual(await other.locator("[data-full-mass-category]").evaluateAll(
+    nodes=>nodes.map(x=>x.dataset.fullMassCategory)),["OTHER","SOURCE_DATE"],
+    "Other celebration and other source Proper must keep their distinct host routes");
+  await page.locator("[data-folio-overview-button]").click();
+  await page.waitForSelector("[data-m1-choice='ceremony']",{state:"visible"});
   await page.locator("[data-m1-choice='ceremony']").click();
   await page.locator('[data-full-mass-form][value="LOW"]').check();
   await page.waitForSelector("[data-m1-choice='ceremony']",{state:"visible"});
