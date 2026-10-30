@@ -1,0 +1,40 @@
+{
+  "schema": "EXPLORE_AFRICAN_EPISCOPAL_PRIORITY_V1",
+  "as_of": "2026-10-10",
+  "scope": "Source-corroborated priority African Marian shrines, not a continent-wide inventory",
+  "records": [
+    {
+      "key": "AF-ZM-LUSAKA-OUR-LADY",
+      "country": "ZM",
+      "name": "Marian Shrine of Our Lady of Lusaka",
+      "locality": "Archdiocese of Lusaka, Zambia",
+      "type": "MARIAN_SHRINE",
+      "status": "PRESENT_ACTIVE_PILGRIMAGE_VERIFIED",
+      "sources": [
+        "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/",
+        "https://communications.amecea.org/index.php/2013/08/30/zambia-pope-francis-sends-greetings-to/"
+      ],
+      "historical": "Annual Marian pilgrimages documented in 2013 and in 2025. 2025 procession starting at Roma Parish crosses to sanctuary; do not create route coordinates from narrative.",
+      "canonical_place_id": null,
+      "published": false,
+      "reconcile": "PENDING_CANONICAL_PLACE",
+      "source_capture": "ORIGINAL_ARCHDIOCESAN_OR_REGIONAL_EPISCOPAL"
+    },
+    {
+      "key": "AF-KE-SUBUKIA",
+      "country": "KE",
+      "name": "National Marian Shrine, Subukia",
+      "locality": "Subukia, Nakuru Diocese, Kenya",
+      "type": "MARIAN_SHRINE",
+      "status": "NATIONAL_PILGRIMAGE_VERIFIED",
+      "sources": [
+        "https://communications.amecea.org/index.php/2026/09/25/kenya-kccb-dedicates-october-3rd-to-national-prayer-for-peaceful-cohesion/"
+      ],
+      "historical": "Existing initial 16-lead entry. Corroborated upcoming Kenyan national prayer/pilgrimage.",
+      "canonical_place_id": null,
+      "published": false,
+      "reconcile": "PENDING_CANONICAL_PLACE",
+      "source_capture": "ORIGINAL_ARCHDIOCESAN_OR_REGIONAL_EPISCOPAL"
+    }
+  ]
+}

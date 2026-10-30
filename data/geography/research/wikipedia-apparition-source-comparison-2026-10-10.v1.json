@@ -1,0 +1,129 @@
+{
+  "schema": "EXPLORE_WIKIPEDIA_APPARITION_SOURCE_COMPARISON_V1",
+  "as_of": "2026-10-10",
+  "source_type": "SECONDARY_HISTORICAL_CLAIM_INDEX",
+  "existing_live_claims": 32,
+  "sampled_cases": 12,
+  "rows": [
+    {
+      "name": "Lourdes",
+      "existing_phenomenon_id": "apparition:FR:lourdes",
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Fatima",
+      "existing_phenomenon_id": "apparition:PT:fatima",
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Kibeho",
+      "existing_phenomenon_id": "apparition:RW:kibeho",
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Champion",
+      "existing_phenomenon_id": "apparition:US:champion",
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Banneux",
+      "existing_phenomenon_id": "apparition:BE:banneux",
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Beauraing",
+      "existing_phenomenon_id": "apparition:BE:beauraing",
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Guadalupe",
+      "existing_phenomenon_id": "apparition:MX:guadalupe",
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Querrien",
+      "existing_phenomenon_id": null,
+      "original_discernment_document": "DIOCESAN_WEBSITE_REPORTS_BISHOP_AUTHENTICATED_SEPTEMBER_1652_ARCHIVAL_DECREE_NOT_ACQUIRED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "RESEARCH_SOURCE_EVIDENCE_FOUND_NOT_APP_PUBLISHED",
+      "authoritative_source_url": "https://saintbrieuc-treguier.catholique.fr/le-diocese/le-sanctuaire/",
+      "authoritative_facts": {
+        "ordinary": "Mgr Denis de La Barde, bishop of Saint-Brieuc",
+        "reported_recognition": "September 1652 episcopal authentication of the claimed appearance to Jeanne Courtel, according to modern diocesan historical summary",
+        "statue_coronation": "14 August 1950",
+        "diocesan_shrine_designation": "2002",
+        "site": "Notre-Dame de Toute Aide, Querrien, La Prénessaye",
+        "original_decree_recovered": false
+      },
+      "status_correction": "DIOCESE_EXPLICITLY_REPORTS_HISTORICAL_APPROVAL_NOT_UNAPPROVED_BY_DEFAULT"
+    },
+    {
+      "name": "Lezajsk",
+      "existing_phenomenon_id": null,
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Cimbres Pesqueira",
+      "existing_phenomenon_id": null,
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    },
+    {
+      "name": "Velankanni",
+      "existing_phenomenon_id": null,
+      "original_discernment_document": "LOCAL_ORDINARY_HISTORY_REPORTS_ORAL_TRADITION_NO_HISTORIC_APPARITION_AUTHENTICATION_DOCUMENT_OBTAINED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "RESEARCH_SOURCE_EVIDENCE_FOUND_NOT_APP_PUBLISHED",
+      "authoritative_source_url": "https://tanjorediocese.org/front/history",
+      "corrob_source_url": "https://www.vaticannews.va/en/vatican-city/news/2024-08/ddf-support-india-vailankanni-marian-shrine.html",
+      "authoritative_facts": {
+        "historic_apparitions": "The Diocese of Thanjavur acknowledges no historical records for the early appearances and describes the accounts as persistent oral tradition",
+        "existing_Christian_chapel_recorded": "1630–1635 chronicle and 1642 correspondence cited by local ordinary",
+        "basilica_elevation": "3 November 1962, according to shrine's official chronology",
+        "DDF_2024_letter": "Welcomes and blesses shrine pilgrimage/devotion; no supernatural-authenticity declaration identified",
+        "apparition_approval": "NOT_ESTABLISHED_BY_SOURCES_RETRIEVED"
+      },
+      "status_correction": "MAJOR_CATHOLIC_PILGRIMAGE_CONFIRMED_HISTORICAL_APPARITION_ORAL_TRADITION_NOT_ECCLESIAL_SUPERNATURAL_AUTHENTICATION"
+    },
+    {
+      "name": "Quito Buen Suceso",
+      "existing_phenomenon_id": null,
+      "original_discernment_document": "NOT_YET_CHECKED",
+      "source_reference": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "publication": "NOT_APPROVED"
+    }
+  ],
+  "original_rule_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
+  "notes": "Do not infer approbation from pilgrimage, basilica, image coronation or reported supernatural experience; no new apparition statuses granted.",
+  "primary_source_closure_checkpoint": {
+    "date": "2026-10-10",
+    "reviewed_original_or_diocesan_cases": 2,
+    "querrien": "historical episcopal authentication documented by current ordinary's diocesan website; original signed 1652 decree not acquired",
+    "velankanni": "local bishop's own history confirms oral-tradition nature of early claim; a Catholic shrine/basilica is not a supernatural ruling",
+    "still_unreviewed_missing_cases": [
+      "Lezajsk",
+      "Cimbres Pesqueira",
+      "Quito Buen Suceso"
+    ],
+    "remaining_original_documents_for_existing_cases": "PENDING",
+    "existing_live_apparition_ids_unchanged": true,
+    "new_approved_app_claims": 0
+  }
+}
