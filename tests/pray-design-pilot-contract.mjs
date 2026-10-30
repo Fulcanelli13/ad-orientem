@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
- PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,
+ PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,resolvedPrayerPilotFamilies,
  renderPilotDiscovery,renderPilotAngelusEntry
 } from "../src/pray/prayer-design-pilot.js";
 
@@ -21,6 +21,17 @@ const families={
 };
 const aliases=prayerPilotAliases(L);
 assert.deepEqual(Object.keys(aliases).sort(),["intentions","marian","novenas","ourlord","saints"]);
+const bridged=resolvedPrayerPilotFamilies(L,{
+ ...families,
+ penance:{items:[["own","pray.confession","Confession","Prepare"],["own","pray.penitential_psalms","Seven Penitential Psalms","Source prayer"]]},
+ passion:{items:[["own","pray.stations","Stations","Fourteen"],["own","pray.tenebrae","Office of Tenebrae","Triduum"]]},
+ devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"]]}
+});
+for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],["novenas","pray.holy_name_litany"]]){
+ assert.ok(bridged[door].items.some(item=>item[1]===route),"Nine-door discovery buried original route "+route);
+}
+assert.equal(bridged.ourlord.items.filter(item=>item[1]==="pray.stations").length,1);
+assert.equal(bridged.novenas.items.filter(item=>item[1]==="pray.novenas").length,1);
 const actual=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L,esc,DATA:{prayers:{foundations_hail_mary:{title:"Hail Mary",titleFr:"Je vous salue Marie"}}},
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
