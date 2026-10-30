@@ -1,3 +1,4 @@
+import {PRAY_DOOR_ART_SLOTS_V1,prayerDoorArtSlot,hasReleasedDoorPainting} from "../src/pray/art-slot-map.v1.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
@@ -37,6 +38,53 @@ const actual=renderPilotDiscovery({
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+const placement=JSON.parse(readFileSync(new URL("../data/pray/art-placement-slots-20261030.v1.json",import.meta.url),"utf8"));
+assert.equal(placement.schema,"AO_ART_MATCHING_MAP_NORMALIZED_V1");
+assert.equal(placement.counts.slots,275);
+assert.equal(placement.counts.subjects,101);
+assert.equal(placement.counts.rotations,11);
+assert.equal(placement.counts.calendar_contexts,39);
+assert.equal(placement.counts.assigned_slot_rows,0);
+assert.equal(placement.counts.eligible_live_paintings,0);
+assert.equal(placement.slots.length,275);
+assert.equal(new Set(placement.slots.map(x=>x.id)).size,275,"One durable identity per artwork position");
+assert.equal(placement.slots.filter(x=>x.level==="Door cover").length,9);
+assert.ok(placement.slots.every(x=>x.assigned_count===0&&x.painting_ids.length===0
+ &&x.publication_status==="NO_ARTWORK_ASSIGNED"),"Illustrative examples must not turn into selected gallery files");
+const permittedSubjects=new Set(placement.subject_vocabulary.map(x=>x.Code));
+for(const row of placement.slots){
+ for(const code of row.eligible_subjects)
+  assert.ok(permittedSubjects.has(code),"Undefined controlled art subject "+code+" in "+row.id);
+}
+const expectedSlots={
+  daily:"DOOR-D1",library:"DOOR-D2",chaplets:"DOOR-D3",novenas:"DOOR-D4",
+  eucharistic:"DOOR-D5",ourlord:"DOOR-D6",marian:"DOOR-D7",
+  saints:"DOOR-D8",intentions:"DOOR-D9"
+};
+assert.deepEqual(Object.keys(PRAY_DOOR_ART_SLOTS_V1).sort(),Object.keys(expectedSlots).sort());
+for(const [id,slotId] of Object.entries(expectedSlots)){
+ const slot=prayerDoorArtSlot(id);
+ assert.equal(slot.slotId,slotId,"Workbook art slot does not match live editorial tile "+id);
+ const sourceSlot=placement.slots.find(x=>x.id===slotId);
+ assert.ok(sourceSlot,"Missing canonical spreadsheet art slot "+slotId);
+ assert.deepEqual(slot.subjectCodes,sourceSlot.eligible_subjects,
+  "Runtime mapping must derive from supplied 275-slot subject blueprint");
+ assert.equal(slot.rotation,sourceSlot.rotation);
+ assert.equal(slot.poolMin,sourceSlot.pool_min);
+ assert.equal(slot.poolIdeal,sourceSlot.pool_ideal);
+ assert.equal(slot.publicationState,"UNASSIGNED");
+ assert.equal(slot.poolMin,4);assert.equal(slot.poolIdeal,12);
+ assert.equal(slot.priority,"A");
+ assert.ok(slot.subjectCodes.length>=2,"No source-approved subject vocabulary for "+id);
+ assert.match(actual,new RegExp('data-ao-art-slot-id="'+slotId+'"'));
+}
+assert.equal((actual.match(/data-ao-art-binding="unassigned"/g)||[]).length,9);
+assert.equal(hasReleasedDoorPainting(null),false);
+assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true}),false);
+assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true,
+ releaseEvidence:{sourceOriginalSha256:"0".repeat(64),rightsForActualFileCleared:true}}),false);
+assert.ok(!actual.includes("http://")&&!actual.includes("https://"),
+ "Slot map may not ship unapproved painting URLs");
 assert.match(actual,/data-p435930-my-customs/,"personal Prayer destination remains reachable");
 for(const id of ["chaplets","marian","daily","novenas","eucharistic","ourlord","saints","intentions"])
  assert.match(actual,new RegExp('data-p435930-family="'+id+'"'));

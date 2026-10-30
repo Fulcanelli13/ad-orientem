@@ -36,6 +36,13 @@ try{
    const base="#aoPray435930.open";
    const mosaic=page.locator(base+" [data-ao-pray-pilot-mosaic]");
    assert.equal(await mosaic.locator(".aoPrayPilotTile").count(),9,"nine real discovery doors");
+   const artSlots=await mosaic.locator(".aoPrayPilotTile").evaluateAll(nodes=>
+     nodes.map(n=>({slot:n.dataset.aoArtSlotId,binding:n.dataset.aoArtBinding,
+       rotation:n.dataset.aoArtRotation})));
+   assert.deepEqual(artSlots.map(x=>x.slot).sort(),
+    ["DOOR-D1","DOOR-D2","DOOR-D3","DOOR-D4","DOOR-D5","DOOR-D6","DOOR-D7","DOOR-D8","DOOR-D9"]);
+   assert.ok(artSlots.every(x=>x.binding==="unassigned"&&x.rotation?.startsWith("R-")),
+    "Artwork selection cannot silently bypass source/rights/quality approvals");
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
