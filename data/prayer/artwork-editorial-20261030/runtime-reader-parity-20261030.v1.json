@@ -210,7 +210,15 @@
     "chaplet_editorial_stage_pool_count": 26,
     "chaplet_editorial_stage_groups": 21,
     "chaplet_cover_pools": 5,
-    "chaplet_runtime_player_bead_count": "NOT_VERIFIED"
+    "chaplet_runtime_player_bead_count": "NOT_VERIFIED",
+    "holy_name_litany": {
+      "route": "pray.holy_name_litany",
+      "editorial_slot": "COV-devotion_consecration_christ_king",
+      "stage": "single traditional litany text",
+      "user_approved_contextual_christ_art": true,
+      "exact_holy_name_art": false,
+      "photographic_publication_cleared": false
+    }
   },
   "verified_current_regressions_or_gaps": [
     {
@@ -247,11 +255,18 @@
       "resolution": "Inspect active donor, connect existing prayer text and stage IDs to the 26 artwork identity contracts, then verify image-quality/rights and UI."
     },
     {
-      "severity": "P1",
+      "severity": "P2",
       "key": "HOLY_NAME_LITANY",
       "route": "pray.holy_name_litany",
-      "description": "Real traditional Prayer route is present without a matching 267-slot editorial artwork cover. Do not assign an arbitrary saint or unrelated event merely to fill the count.",
-      "resolution": "Find an already-approved exact/appropriate Christ Holy Name depiction or obtain new user art approval."
+      "description": "The real traditional Holy Name Litany route now inherits already approved depictions of Christ from the Christ the King/Salvator Mundi pool. This is contextually appropriate, not iconography specifically of the Holy Name. No extra candidate accepted or picture published.",
+      "resolution": "Nonvisual route mapping applied. Verify exact artwork source, rights, frame-free native quality and in-reader composition before publication; separate Holy Name-specific image may be explored but is not forced.",
+      "status": "EDITORIAL_CONTEXTUAL_REUSE_ASSIGNED_NO_VISUAL_QA",
+      "editorial_slot": "COV-devotion_consecration_christ_king",
+      "approved_subject": "Salvator Mundi",
+      "approved_artwork_ids": [
+        "PRAYER::king--primary",
+        "PRAYER::king--previtali"
+      ]
     },
     {
       "severity": "P1",
@@ -285,7 +300,9 @@
     "staged_cross_prayer_total": 105,
     "source": "decision-ledger-b01-b05 + approved-unified-b06-b11 + exact-positive statuses; no substring matching",
     "approved_cover_seven_sorrows": "USER_FINAL_LOCKED_BUT_CANONICAL_ASSET_ID_NULL",
-    "photo_publication_ready": false
+    "photo_publication_ready": false,
+    "holy_name_contextual_reuse_no_new_approval": true,
+    "approval_policy_exact_enum_only": true
   },
   "chaplet_contracts": {
     "identity_source": "src/pray/chaplet-artwork-stage-contract.v1.js",
