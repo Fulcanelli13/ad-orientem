@@ -2927,7 +2927,7 @@ function renderMercy(){
  }).join('');
  const note=item.group==='large-bead'?L('Pray once on the large bead.','Récitez une fois sur le gros grain.'):item.group==='small-bead'?L('Pray on each of the ten small beads.','Récitez sur chacun des dix petits grains.'):item.group==='conclusion'?L('Repeat three times.','Répétez trois fois.'):'';
  const chapterChips='<nav class="aoF07MercyChapterChips" aria-label="'+esc(L('Chaplet sections','Étapes du chapelet'))+'">'+
-   chapters.map((c,i)=>'<button type="button" data-p435930-mercy-jump="'+c.start+'" '+
+   chapters.map((c,i)=>'<button type="button" data-p435930-mercy-chapter="'+c.start+'" '+
     (i===chapterIndex?'aria-current="step" ':'')+'aria-label="'+esc(c.title)+'">'+
     esc(c.id==='opening'?L('Opening','Ouverture'):c.id==='conclusion'?L('Closing','Conclusion'):
       c.id==='optional-conclusion'?L('Optional','Facultative'):
@@ -3538,6 +3538,12 @@ function onClick(e){
  if(b.hasAttribute('data-p435930-rosary-fifteen'))return launchFifteenRosary();
  if(view==='mercy'){
   if(CHAPLET_F07_PILOT_ENABLED){
+    if(b.hasAttribute('data-p435930-mercy-chapter')){
+      const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
+      const n=Number(b.dataset.p435930MercyChapter);
+      if(!Number.isInteger(n)||n<0||n>=steps.length)return;
+      MERCY.finished=false;MERCY.step=n;return render();
+    }
     if(b.hasAttribute('data-p435930-mercy-recite')){
       const mode=b.dataset.p435930MercyRecite;
       if(!['individual','group'].includes(mode))return;
