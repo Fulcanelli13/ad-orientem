@@ -80,6 +80,29 @@ try {
    try{
     if(open)await open();
     await page.locator(selector).first().waitFor({state:"visible",timeout:22000});
+    // Remote image bytes can follow the already-mounted Home artwork node.
+    // Wait for complete/decode state so a screenshot isn't falsely classified
+    // as an empty or rejected painting. Capture failures remain review-only.
+    if(name==="today"){
+      await page.waitForFunction(()=>{
+        const images=[...(document.querySelector("[data-ao-home-art-slot]")
+          ?.querySelectorAll("img")??[])];
+        return !images.length || images.every(x=>x.complete);
+      },null,{timeout:8000}).catch(()=>{});
+      record.artVisual=await page.evaluate(()=>{
+        const images=[...(document.querySelector("[data-ao-home-art-slot]")
+          ?.querySelectorAll("img")??[])];
+        return {imageCount:images.length,
+          decoded:images.filter(x=>x.complete&&x.naturalWidth>0).length,
+          pending:images.filter(x=>!x.complete).length,
+          broken:images.filter(x=>x.complete&&x.naturalWidth===0).length,
+          noArtFallback:!!document.querySelector(".aoTodayV2ArtMissing")};
+      });
+      record.artAcceptance=record.artVisual.noArtFallback
+        ?"NO_ART_FALLBACK_NEEDS_EDITORIAL_CHECK"
+        :record.artVisual.imageCount&&record.artVisual.decoded===record.artVisual.imageCount
+          ?"IMAGE_LOADED_NEEDS_VISUAL_REVIEW":"ART_UNVERIFIED";
+    }
     // MapLibre's map 'load' can precede asynchronously painted GeoJSON
     // clusters. Give only Explore time to paint before screenshot comparison.
     await sleep(name==="explore"?1100:180);
@@ -201,6 +224,12 @@ const summary={
   renderedCandidates:rows.filter(x=>x.name==="explore"&&x.mapVisual?.renderedCandidate).length,
   unverified:rows.filter(x=>x.name==="explore"&&!x.mapVisual?.renderedCandidate)
    .map(x=>({language:x.language,width:x.width,mapState:x.mapVisual?.mapState||"missing",notice:x.mapVisual?.notice||null}))
+ },
+ todayArt:{
+  loaded:rows.filter(x=>x.name==="today"&&x.artAcceptance==="IMAGE_LOADED_NEEDS_VISUAL_REVIEW").length,
+  fallback:rows.filter(x=>x.name==="today"&&x.artAcceptance==="NO_ART_FALLBACK_NEEDS_EDITORIAL_CHECK").length,
+  unverified:rows.filter(x=>x.name==="today"&&x.artAcceptance==="ART_UNVERIFIED")
+    .map(x=>({language:x.language,width:x.width,detail:x.artVisual??null}))
  },
  horizontalOverflow:rows.filter(x=>x.metrics?.horizontalOverflowPx>1).map(x=>({
   case:x.language+"-"+x.width+"-"+x.name,pixels:x.metrics.horizontalOverflowPx
