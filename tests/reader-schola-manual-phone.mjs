@@ -289,6 +289,34 @@ try{
        started:l.counts.started};
    });
    assert.equal(originalPerformance.schema,"ao-schola-performance-session-v1");
+   // The same human-authorized post-Chalice release that starts the delayed
+   // Benedictus must expose Finish and Undo; the priest cue must not move.
+   const benedictusAfterRelease=await page.evaluate(()=>window.__AO_PHONE_PREVIEW
+     .getScholaPerformance().events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")?.performance);
+   assert.equal(benedictusAfterRelease?.status,"STARTED_OBSERVED");
+   assert.equal(benedictusAfterRelease?.eligible,true,
+     "Post-Chalice observed Benedictus must be finishable in the music menu");
+   await musicMenu.locator(
+     '[data-schola-performance-event="BENEDICTUS_AFTER_CHALICE"][data-schola-performance-action="FINISH"]'
+   ).click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status==="FINISHED_OBSERVED");
+   await musicMenu.locator(
+     '[data-schola-performance-event="BENEDICTUS_AFTER_CHALICE"][data-schola-performance-action="RESET"]'
+   ).click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status==="EXPECTED_NOT_OBSERVED");
+   // Undo never requires replaying the Chalice gate, but the next START is
+   // still a separate manual "I hear it start" action.
+   await musicMenu.locator(
+     '[data-schola-performance-event="BENEDICTUS_AFTER_CHALICE"][data-schola-performance-action="START"]'
+   ).click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status==="STARTED_OBSERVED");
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   })),priestBeforeMusicPick,"Benedictus correction altered the priest Mass clock");
    assert.equal(originalPerformance.kyrie,"EXPECTED_NOT_OBSERVED");
    assert.equal(originalPerformance.quiet,false);
    assert.ok(originalPerformance.quietId,
