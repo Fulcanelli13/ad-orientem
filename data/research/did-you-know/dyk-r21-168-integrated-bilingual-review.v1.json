@@ -21,18 +21,22 @@
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In Ukrainian Christmas Eve customs, a grain sheaf called a didukh was brought into the home.",
-        "fr": "Dans les coutumes ukrainiennes de la veille de Noël, on introduisait dans la maison une gerbe de céréales appelée didukh."
+        "en": "In Weiser's account of Ukrainian Christmas Eve, a sheaf of wheat called the ‘Forefather’ was carried into the home to recall earlier generations.",
+        "fr": "Dans le récit de Weiser sur la veille de Noël ukrainienne, on apportait à la maison une gerbe de blé appelée « l'Ancêtre », en souvenir des générations passées."
       },
       "editorial_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-09-001",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 116,
+          "pdf_page_zero_based": 133,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Ukrainian Christmas traditions include a grain sheaf called a didukh, brought into the home for Christmas Eve?",
@@ -45,25 +49,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "In Ukrainian Christmas Eve customs, a grain sheaf called a didukh was brought into the home.",
+          "fr": "Dans les coutumes ukrainiennes de la veille de Noël, on introduisait dans la maison une gerbe de céréales appelée didukh."
+        },
+        "editorial_rationale": "The cited text says Forefather, not didukh; retain independent source requirement for Ukrainian-language equivalence.",
+        "printed_page": 116,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-003",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In some Alpine districts a picture of the Blessed Virgin was carried between homes on the nine evenings before Christmas.",
-        "fr": "Dans certaines régions alpines, une image de la Sainte Vierge était portée de maison en maison pendant les neuf soirées précédant Noël."
+        "en": "In Alpine regions, an image of Our Lady was carried from house to house with prayers and lanterns during the nine evenings before Christmas.",
+        "fr": "Dans les Alpes, une image de Notre-Dame était portée de maison en maison, avec prières et lanternes, durant les neuf soirées précédant Noël."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-05-008",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 57,
+          "pdf_page_zero_based": 74,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that in some Alpine districts a picture of the Blessed Virgin was carried between homes on the nine evenings before Christmas?",
@@ -76,25 +100,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "In some Alpine districts a picture of the Blessed Virgin was carried between homes on the nine evenings before Christmas.",
+          "fr": "Dans certaines régions alpines, une image de la Sainte Vierge était portée de maison en maison pendant les neuf soirées précédant Noël."
+        },
+        "editorial_rationale": "Adds precise devotional and procession context; distinct from the Saint Joseph statue carried by schoolboys.",
+        "printed_page": 57,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-004",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "An Advent play called Herbergsuchen reenacted Mary and Joseph being turned away before finding shelter in a stable.",
-        "fr": "Une représentation de l'Avent appelée Herbergsuchen montrait Marie et Joseph repoussés de porte en porte avant de trouver refuge dans une étable."
+        "en": "In the German Advent play Herbergsuchen, Mary and Joseph knocked at doors seeking shelter; the often-sung scene ended at a stable.",
+        "fr": "Dans le jeu de l'Avent allemand Herbergsuchen, Marie et Joseph frappaient aux portes pour demander l'hospitalité ; cette scène souvent chantée s'achevait dans une étable."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-05-010",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 57,
+          "pdf_page_zero_based": 74,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that an Advent play called Herbergsuchen reenacted Mary and Joseph being turned away before finding shelter in a stable?",
@@ -107,25 +151,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "An Advent play called Herbergsuchen reenacted Mary and Joseph being turned away before finding shelter in a stable.",
+          "fr": "Une représentation de l'Avent appelée Herbergsuchen montrait Marie et Joseph repoussés de porte en porte avant de trouver refuge dans une étable."
+        },
+        "editorial_rationale": "Source explicitly says this is often sung, a dramatic enactment rather than a universal rite.",
+        "printed_page": 57,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-005",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Weiser described a Christmas gift-giving custom in which a small bell signalled that the Christ Child had brought the presents.",
-        "fr": "Weiser décrivait une coutume de Noël où une petite cloche annonçait que l'Enfant Jésus avait apporté les cadeaux."
+        "en": "In some European Christmas Eve customs, a little bell signalled that children could enter the room where the Christ Child was believed to have left gifts.",
+        "fr": "Selon certaines coutumes européennes de la veille de Noël, une petite cloche annonçait aux enfants qu'ils pouvaient entrer dans la pièce où l'Enfant Jésus était censé avoir déposé des cadeaux."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-06-008",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 74,
+          "pdf_page_zero_based": 91,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser described a Christmas gift-giving custom in which a small bell signalled that the Christ Child had brought the presents?",
@@ -138,25 +202,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Weiser described a Christmas gift-giving custom in which a small bell signalled that the Christ Child had brought the presents.",
+          "fr": "Weiser décrivait une coutume de Noël où une petite cloche annonçait que l'Enfant Jésus avait apporté les cadeaux."
+        },
+        "editorial_rationale": "Restores the actual bell function: signal to enter prepared room, not literal claim of audible arrival.",
+        "printed_page": 74,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-006",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Some Central European families built Nativity scenes with hundreds of figures—large enough to fill a room.",
-        "fr": "Certaines familles d'Europe centrale construisaient des crèches comptant des centaines de personnages, au point de remplir une pièce."
+        "en": "In mountain districts of central Europe, farmers sometimes enlarged Nativity cribs until they held hundreds of figures and filled a room.",
+        "fr": "Dans les régions montagneuses d'Europe centrale, des paysans agrandissaient parfois leurs crèches jusqu'à leur donner des centaines de figurines et à remplir une pièce."
       },
       "editorial_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-08-002",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 96,
+          "pdf_page_zero_based": 113,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that some families in the mountain regions of central Europe built Nativity cribs with hundreds of figures, filling an entire room?",
@@ -169,25 +253,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Some Central European families built Nativity scenes with hundreds of figures—large enough to fill a room.",
+          "fr": "Certaines familles d'Europe centrale construisaient des crèches comptant des centaines de personnages, au point de remplir une pièce."
+        },
+        "editorial_rationale": "Source identifies farmers in mountain districts, not all Central European households.",
+        "printed_page": 96,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-007",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In a northern Slavic Nativity tradition, a puppet theatre called a szopka alternated sacred scenes with other short plays.",
-        "fr": "Dans une tradition de la Nativité chez les Slaves du Nord, un théâtre de marionnettes appelé szopka alternait scènes sacrées et autres saynètes."
+        "en": "Among northern Slavs, a Christmas puppet theatre called szopka alternated religious scenes with secular dramatic sketches.",
+        "fr": "Chez les Slaves du Nord, un théâtre de marionnettes de Noël appelé szopka faisait alterner scènes religieuses et saynètes profanes."
       },
       "editorial_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-10-004",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 124,
+          "pdf_page_zero_based": 141,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser described a northern Slavic puppet theatre called a szopka, in which religious Nativity scenes alternated with other dramatic scenes?",
@@ -200,25 +304,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "In a northern Slavic Nativity tradition, a puppet theatre called a szopka alternated sacred scenes with other short plays.",
+          "fr": "Dans une tradition de la Nativité chez les Slaves du Nord, un théâtre de marionnettes appelé szopka alternait scènes sacrées et autres saynètes."
+        },
+        "editorial_rationale": "Makes clear secular scenes coexist with the religious Christmas material.",
+        "printed_page": 124,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-010",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In Poland Pentecost was called the Green Holiday, linked to decorating homes and churches with fresh greenery.",
-        "fr": "En Pologne la Pentecôte était appelée la « fête verte », en lien avec la décoration des maisons et des églises par de la verdure fraîche."
+        "en": "Weiser records that in Poland and Ukraine Pentecost was called the ‘Green Holyday’, associated with decorating homes and churches with flowers and branches.",
+        "fr": "Weiser rapporte qu'en Pologne et en Ukraine la Pentecôte était appelée la « fête verte », en lien avec la décoration des maisons et des églises de fleurs et de branches."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-19-003",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 248,
+          "pdf_page_zero_based": 265,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that in Poland Pentecost was called the Green Holiday, linked to decorating homes and churches with fresh greenery?",
@@ -231,25 +355,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "In Poland Pentecost was called the Green Holiday, linked to decorating homes and churches with fresh greenery.",
+          "fr": "En Pologne la Pentecôte était appelée la « fête verte », en lien avec la décoration des maisons et des églises par de la verdure fraîche."
+        },
+        "editorial_rationale": "Restores Ukraine and the distinction between regional folk nomenclature and liturgical title.",
+        "printed_page": 248,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-011",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In one historical Sunday custom, fathers retold the priest's sermon at home, and children repeated what they remembered.",
-        "fr": "Selon une ancienne coutume dominicale, des pères racontaient à la maison le sermon du prêtre, puis les enfants répétaient ce qu'ils en avaient retenu."
+        "en": "In one Sunday household custom, children repeated the priest's sermon to their father during a meal, while their mother supplied corrections or explanations.",
+        "fr": "Selon une ancienne coutume dominicale, les enfants répétaient à leur père le sermon du prêtre pendant un repas, tandis que leur mère apportait les corrections ou explications nécessaires."
       },
       "editorial_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-01-005",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 16,
+          "pdf_page_zero_based": 33,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser described a Sunday family custom in which fathers recounted the priest's sermon and children repeated what they remembered?",
@@ -262,25 +406,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "In one historical Sunday custom, fathers retold the priest's sermon at home, and children repeated what they remembered.",
+          "fr": "Selon une ancienne coutume dominicale, des pères racontaient à la maison le sermon du prêtre, puis les enfants répétaient ce qu'ils en avaient retenu."
+        },
+        "editorial_rationale": "CRITICAL: old card reversed the actors; Weiser says the children retold the sermon to the father.",
+        "printed_page": 16,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-012",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Weiser recorded a household practice of tracing a cross on freshly baked Sunday bread before cutting it.",
-        "fr": "Weiser a décrit une pratique domestique consistant à tracer une croix sur le pain dominical fraîchement cuit avant de le couper."
+        "en": "Weiser describes a Sunday household custom in which the sign of the cross was made three times over a fresh loaf before it was cut.",
+        "fr": "Weiser décrit une coutume dominicale consistant à tracer trois fois le signe de croix sur un pain frais avant de le couper."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-01-007",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 16,
+          "pdf_page_zero_based": 33,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser recorded a household practice of tracing a cross on freshly baked Sunday bread before cutting it?",
@@ -293,25 +457,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Weiser recorded a household practice of tracing a cross on freshly baked Sunday bread before cutting it.",
+          "fr": "Weiser a décrit une pratique domestique consistant à tracer une croix sur le pain dominical fraîchement cuit avant de le couper."
+        },
+        "editorial_rationale": "Old card omitted that the sign was made three times.",
+        "printed_page": 16,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-013",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Weiser described an Alpine custom of carrying a statue of Saint Joseph to different homes over nine nights before Christmas.",
-        "fr": "Weiser a décrit une coutume alpine dans laquelle une statue de saint Joseph passait de maison en maison pendant neuf soirées avant Noël."
+        "en": "In a Christmas novena custom described by Weiser, schoolboys carried a statue of Saint Joseph between homes for nine nights, then took it to church on Christmas Eve.",
+        "fr": "Dans une coutume de neuvaine de Noël décrite par Weiser, des écoliers portaient une statue de saint Joseph de maison en maison pendant neuf nuits, puis à l'église le soir de Noël."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-05-009",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 57,
+          "pdf_page_zero_based": 74,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser described an Alpine custom of carrying a statue of Saint Joseph to different homes over nine nights before Christmas?",
@@ -324,25 +508,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Weiser described an Alpine custom of carrying a statue of Saint Joseph to different homes over nine nights before Christmas.",
+          "fr": "Weiser a décrit une coutume alpine dans laquelle une statue de saint Joseph passait de maison en maison pendant neuf soirées avant Noël."
+        },
+        "editorial_rationale": "Josephstragen is separate from Marian image devotion on same page; schoolboys participate.",
+        "printed_page": 57,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-014",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Weiser recorded a Central European Lenten practice of giving pretzels as alms to people in need.",
-        "fr": "Weiser a signalé une pratique de Carême en Europe centrale consistant à offrir des bretzels en aumône aux personnes démunies."
+        "en": "Weiser reports that in towns of central Europe pretzels were distributed to poor people on many days during Lent.",
+        "fr": "Weiser rapporte que, dans des villes d'Europe centrale, des bretzels étaient distribués aux pauvres pendant de nombreux jours du Carême."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-14-023",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 184,
+          "pdf_page_zero_based": 201,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser recorded a Central European Lenten practice of giving pretzels as alms to people in need?",
@@ -355,25 +559,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Weiser recorded a Central European Lenten practice of giving pretzels as alms to people in need.",
+          "fr": "Weiser a signalé une pratique de Carême en Europe centrale consistant à offrir des bretzels en aumône aux personnes démunies."
+        },
+        "editorial_rationale": "Keep urban almsgiving apart from food, seasonal and devotional symbolism.",
+        "printed_page": 184,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-017",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Some German and Austrian communities have held Easter processions on horseback, known as Osterritt.",
-        "fr": "Certaines communautés allemandes et autrichiennes ont organisé des processions pascales à cheval, appelées Osterritt."
+        "en": "In parts of Germany and Austria, young farmers joined Easter walks on richly decorated horses, a custom called Osterritt.",
+        "fr": "Dans certaines régions d'Allemagne et d'Autriche, de jeunes paysans prenaient part aux promenades pascales sur des chevaux richement décorés : c'est l'Osterritt."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-16-023",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 221,
+          "pdf_page_zero_based": 238,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that some German and Austrian communities have held Easter processions on horseback, known as Osterritt?",
@@ -386,25 +610,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Some German and Austrian communities have held Easter processions on horseback, known as Osterritt.",
+          "fr": "Certaines communautés allemandes et autrichiennes ont organisé des processions pascales à cheval, appelées Osterritt."
+        },
+        "editorial_rationale": "Source treats this as a folk Easter walk, not necessarily a liturgical procession.",
+        "printed_page": 221,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-018",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Regional All Souls foods in Spain include sweets called huesos de santo and, in Catalonia, panellets.",
-        "fr": "Parmi les douceurs régionales de la Toussaint et des défunts en Espagne figurent les huesos de santo et, en Catalogne, les panellets."
+        "en": "For All Souls' Day, Weiser describes huesos de santo pastries in northern Spain and Madrid, and panellets in Catalonia.",
+        "fr": "Pour le jour des Défunts, Weiser décrit les pâtisseries huesos de santo dans le nord de l'Espagne et à Madrid, et les panellets en Catalogne."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-26-027",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 313,
+          "pdf_page_zero_based": 330,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that regional All Souls foods in Spain include sweets called huesos de santo and, in Catalonia, panellets?",
@@ -417,25 +661,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Regional All Souls foods in Spain include sweets called huesos de santo and, in Catalonia, panellets.",
+          "fr": "Parmi les douceurs régionales de la Toussaint et des défunts en Espagne figurent les huesos de santo et, en Catalogne, les panellets."
+        },
+        "editorial_rationale": "Source specifies All Souls, not conflating regional foods with universal All Saints practice.",
+        "printed_page": 313,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-020",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "The historical German-Austrian custom called Kindelwiegen involved rocking a cradle with a figure of the Christ Child to carols.",
-        "fr": "La coutume historique germano-autrichienne appelée Kindelwiegen consistait à bercer une figurine de l'Enfant Jésus au son de chants de Noël."
+        "en": "In the old Kindelwiegen custom of Germany and Austria, a cradle holding a figure of the Christ Child was rocked while hymns and prayers were offered.",
+        "fr": "Dans l'ancienne coutume du Kindelwiegen, en Allemagne et en Autriche, on berçait un berceau contenant une figurine de l'Enfant Jésus au chant d'hymnes et de prières."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-07-012",
         "source_path": "dyk-ultramaster-batch01.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 91,
+          "pdf_page_zero_based": 108,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that the historical German-Austrian custom called Kindelwiegen involved rocking a cradle with a figure of the Christ Child to carols?",
@@ -448,7 +712,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "The historical German-Austrian custom called Kindelwiegen involved rocking a cradle with a figure of the Christ Child to carols.",
+          "fr": "La coutume historique germano-autrichienne appelée Kindelwiegen consistait à bercer une figurine de l'Enfant Jésus au son de chants de Noël."
+        },
+        "editorial_rationale": "Begins in church service; source p. 92 documents later household versions; do not conflate historical stages.",
+        "printed_page": 91,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-021",
@@ -991,18 +1271,22 @@
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Weiser recorded the Polish name Święte Wieczory, meaning 'Holy Evenings', for the twelve nights between Christmas and Epiphany.",
-        "fr": "Weiser relevait en Pologne l'expression Święte Wieczory, « Saintes Soirées », pour désigner les douze nuits entre Noël et l'Épiphanie."
+        "en": "Weiser records the Polish name Święte Wieczory (‘Holy Evenings’) for the twelve nights between Christmas and Epiphany.",
+        "fr": "Weiser relève le nom polonais Święte Wieczory (« Saintes Soirées ») pour les douze nuits entre Noël et l'Épiphanie."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "BULK150-038",
         "source_path": "dyk-ultramaster-batch02a-weiser.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 124,
+          "pdf_page_zero_based": 141,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser recorded the Polish name Święte Wieczory, meaning 'Holy Evenings', for the twelve nights between Christmas and Epiphany?",
@@ -1015,25 +1299,45 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Weiser recorded the Polish name Święte Wieczory, meaning 'Holy Evenings', for the twelve nights between Christmas and Epiphany.",
+          "fr": "Weiser relevait en Pologne l'expression Święte Wieczory, « Saintes Soirées », pour désigner les douze nuits entre Noël et l'Épiphanie."
+        },
+        "editorial_rationale": "Preserves Polish term and twelve-night scope; independent of szopka puppet theatre.",
+        "printed_page": 124,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM02-020",
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Weiser traced the Catholic custom of dedicating Wednesdays to Saint Joseph to the spread of his devotion in the sixteenth and seventeenth centuries.",
-        "fr": "Weiser rattachait la dévotion catholique du mercredi à saint Joseph à son développement aux XVIe et XVIIe siècles."
+        "en": "Weiser links the custom of honoring Saint Joseph on Wednesdays to the spread of his devotion in the sixteenth and seventeenth centuries.",
+        "fr": "Weiser rattache la coutume d'honorer saint Joseph le mercredi à l'essor de sa dévotion aux XVIe et XVIIe siècles."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "BULK150-043",
         "source_path": "dyk-ultramaster-batch02a-weiser.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 28,
+          "pdf_page_zero_based": 45,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser traced the Catholic custom of dedicating Wednesdays to Saint Joseph to the spread of his devotion in the sixteenth and seventeenth centuries?",
@@ -1046,7 +1350,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Weiser traced the Catholic custom of dedicating Wednesdays to Saint Joseph to the spread of his devotion in the sixteenth and seventeenth centuries.",
+          "fr": "Weiser rattachait la dévotion catholique du mercredi à saint Joseph à son développement aux XVIe et XVIIe siècles."
+        },
+        "editorial_rationale": "Historical explanatory attribution, not assertion that Church established the practice universally in those centuries.",
+        "printed_page": 28,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM02-026",
@@ -1813,18 +2133,22 @@
       "source_batch": "ORIGINAL_145",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Weiser reports a household Rosary accompanying a farmer's use of holy water and incense around farm buildings.",
-        "fr": "Weiser rapporte qu'un chapelet familial accompagnait l'emploi d'eau bénite et d'encens autour de bâtiments agricoles."
+        "en": "Around Saint Thomas's Day on 21 December, Weiser describes central European farmers carrying holy water and incense around their buildings while the household prayed the Rosary.",
+        "fr": "Autour de la Saint-Thomas, le 21 décembre, Weiser décrit des paysans d'Europe centrale parcourant leurs bâtiments avec eau bénite et encens, tandis que la maisonnée récitait le rosaire."
       },
       "editorial_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
       "source": {
         "family": "WEISER_1958",
         "source_id": "WEI58-DETAIL-D-023",
         "source_path": "dyk-ultramaster-batch03-wider-corpus.v1.json",
-        "source_url": null,
-        "locator": null,
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "locator": {
+          "printed_page": 58,
+          "pdf_page_zero_based": 75,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": null,
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": {
         "en": "Did you know that Weiser reports a household Rosary accompanying a farmer's use of holy water and incense around farm buildings.",
@@ -1837,7 +2161,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Weiser reports a household Rosary accompanying a farmer's use of holy water and incense around farm buildings.",
+          "fr": "Weiser rapporte qu'un chapelet familial accompagnait l'emploi d'eau bénite et d'encens autour de bâtiments agricoles."
+        },
+        "editorial_rationale": "Restores explicit Saint Thomas/Rough Nights seasonal context; not a generalized Christmas Eve rite.",
+        "printed_page": 58,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM03-018",
@@ -2704,8 +3044,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Some households marked Sunday by lighting a lamp or candle before an image of the Holy Trinity.",
-        "fr": "Certains foyers marquaient le dimanche en allumant une lampe ou une bougie devant une image de la Sainte Trinité."
+        "en": "Weiser reports that on Sundays some families lit a candle or lamp before an image of the Holy Trinity.",
+        "fr": "Weiser rapporte que, le dimanche, certaines familles allumaient une bougie ou une lampe devant une image de la Sainte Trinité."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -2713,9 +3053,11 @@
         "source_id": "WEI58-01-008",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          17
-        ],
+        "locator": {
+          "printed_page": 17,
+          "pdf_page_zero_based": 34,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -2734,7 +3076,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -2744,7 +3086,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Some households marked Sunday by lighting a lamp or candle before an image of the Holy Trinity.",
+          "fr": "Certains foyers marquaient le dimanche en allumant une lampe ou une bougie devant une image de la Sainte Trinité."
+        },
+        "editorial_rationale": "Qualified as household devotional custom, not universal obligation.",
+        "printed_page": 17,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-013",
@@ -2845,8 +3203,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In Alpine valleys, worshippers once carried lanterns down mountain paths to Christmas Midnight Mass.",
-        "fr": "Dans les vallées alpines, des fidèles descendaient autrefois les sentiers de montagne à la lueur de lanternes pour la messe de minuit."
+        "en": "Weiser describes Alpine worshippers carrying lanterns down mountain paths to Christmas Midnight Mass.",
+        "fr": "Weiser décrit des fidèles des Alpes descendant les sentiers de montagne avec des lanternes pour se rendre à la messe de minuit de Noël."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -2854,9 +3212,11 @@
         "source_id": "WEI58-06-013",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          75
-        ],
+        "locator": {
+          "printed_page": 75,
+          "pdf_page_zero_based": 92,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -2875,7 +3235,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -2885,7 +3245,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "In Alpine valleys, worshippers once carried lanterns down mountain paths to Christmas Midnight Mass.",
+          "fr": "Dans les vallées alpines, des fidèles descendaient autrefois les sentiers de montagne à la lueur de lanternes pour la messe de minuit."
+        },
+        "editorial_rationale": "Separates journey custom from liturgical rubrics; direct p. 75 witness.",
+        "printed_page": 75,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-039",
@@ -2939,8 +3315,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "The Moravian putz tradition arranged miniature Nativity scenes into elaborate landscapes, including in Bethlehem, Pennsylvania.",
-        "fr": "La tradition morave du putz disposait les scènes de la Nativité dans des paysages miniatures élaborés, notamment à Bethlehem en Pennsylvanie."
+        "en": "The Moravian Christmas putz in Bethlehem, Pennsylvania, could surround a Nativity scene with miniature houses, waterfalls, bridges and landscapes.",
+        "fr": "À Bethlehem, en Pennsylvanie, le putz de Noël morave pouvait entourer la crèche de maisons miniatures, de cascades, de ponts et de paysages."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -2948,9 +3324,11 @@
         "source_id": "WEI58-08-003",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          96
-        ],
+        "locator": {
+          "printed_page": 96,
+          "pdf_page_zero_based": 113,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -2969,7 +3347,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -2979,15 +3357,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "The Moravian putz tradition arranged miniature Nativity scenes into elaborate landscapes, including in Bethlehem, Pennsylvania.",
+          "fr": "La tradition morave du putz disposait les scènes de la Nativité dans des paysages miniatures élaborés, notamment à Bethlehem en Pennsylvanie."
+        },
+        "editorial_rationale": "Distinct tradition of Moravian communities; avoid generalizing to all churches or homes.",
+        "printed_page": 96,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-047",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "In some Slavic homes, a priest-blessed Christmas candle occupied a place on the family table.",
-        "fr": "Dans certains foyers slaves, une bougie de Noël bénie par un prêtre prenait place sur la table familiale."
+        "en": "Weiser describes Christmas candles blessed by a priest and placed on the table in some Polish, Ukrainian and Russian homes.",
+        "fr": "Weiser décrit des cierges de Noël bénis par un prêtre puis placés sur la table dans certains foyers polonais, ukrainiens et russes."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -2995,9 +3389,11 @@
         "source_id": "WEI58-08-005",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          97
-        ],
+        "locator": {
+          "printed_page": 96,
+          "pdf_page_zero_based": 113,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -3016,7 +3412,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -3026,15 +3422,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "In some Slavic homes, a priest-blessed Christmas candle occupied a place on the family table.",
+          "fr": "Dans certains foyers slaves, une bougie de Noël bénie par un prêtre prenait place sur la table familiale."
+        },
+        "editorial_rationale": "Names Slavic contexts recorded by source; note Ukraine candle could be placed in loaf rather than candlestick.",
+        "printed_page": 96,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-048",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Some older Christmas candle arrangements joined three lights to symbolize the Holy Trinity.",
-        "fr": "Certains anciens arrangements de bougies de Noël réunissaient trois flammes pour symboliser la Sainte Trinité."
+        "en": "In older English and French Christmas customs, three candles moulded together at the base could symbolize the Holy Trinity.",
+        "fr": "Dans d'anciennes coutumes de Noël anglaises et françaises, trois bougies réunies à la base pouvaient symboliser la Sainte Trinité."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -3042,9 +3454,11 @@
         "source_id": "WEI58-08-006",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          97
-        ],
+        "locator": {
+          "printed_page": 96,
+          "pdf_page_zero_based": 113,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -3063,7 +3477,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -3073,15 +3487,31 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Some older Christmas candle arrangements joined three lights to symbolize the Holy Trinity.",
+          "fr": "Certains anciens arrangements de bougies de Noël réunissaient trois flammes pour symboliser la Sainte Trinité."
+        },
+        "editorial_rationale": "Three candle moulds are a distinct local custom, not the German Christmas pyramid.",
+        "printed_page": 96,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-051",
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "German Paradise plays used an apple-decorated tree to represent Eden before Christmas.",
-        "fr": "Des représentations allemandes du Paradis utilisaient avant Noël un arbre garni de pommes pour évoquer l'Éden."
+        "en": "Medieval Paradise plays portrayed Eden with a fir tree hung with apples, a custom later adapted in Christmas decorations.",
+        "fr": "Les jeux médiévaux du Paradis figuraient l'Éden par un sapin garni de pommes, une coutume reprise ensuite dans des décorations de Noël."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -3089,9 +3519,11 @@
         "source_id": "WEI58-08-010",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          99
-        ],
+        "locator": {
+          "printed_page": 99,
+          "pdf_page_zero_based": 116,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -3110,7 +3542,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -3120,7 +3552,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "German Paradise plays used an apple-decorated tree to represent Eden before Christmas.",
+          "fr": "Des représentations allemandes du Paradis utilisaient avant Noël un arbre garni de pommes pour évoquer l'Éden."
+        },
+        "editorial_rationale": "Distinguish the dramatic Paradise tree from later household Christmas trees; historical sequence.",
+        "printed_page": 99,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-058",
@@ -3174,8 +3622,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "Ukrainian Christmas Eve meals traditionally included kutia, prepared from wheat, honey and poppy seeds.",
-        "fr": "Les repas ukrainiens de la veille de Noël comprenaient traditionnellement la koutia, à base de blé, de miel et de pavot."
+        "en": "In Ukrainian Christmas Eve customs described by Weiser, the first dish, kutia, combined boiled wheat, honey and poppy seeds.",
+        "fr": "Dans les coutumes ukrainiennes de la veille de Noël rapportées par Weiser, le premier plat, la koutia, associait du blé bouilli, du miel et des graines de pavot."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -3183,9 +3631,11 @@
         "source_id": "WEI58-09-002",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          117
-        ],
+        "locator": {
+          "printed_page": 117,
+          "pdf_page_zero_based": 134,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -3204,7 +3654,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -3214,7 +3664,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "Ukrainian Christmas Eve meals traditionally included kutia, prepared from wheat, honey and poppy seeds.",
+          "fr": "Les repas ukrainiens de la veille de Noël comprenaient traditionnellement la koutia, à base de blé, de miel et de pavot."
+        },
+        "editorial_rationale": "Ingredients and meal position confirmed; distinct from the wheat sheaf remembrance.",
+        "printed_page": 117,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-063",
@@ -3315,8 +3781,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "At Rome's Ara Coeli, children recited prayers and poems before the Santo Bambino image during Christmas observances.",
-        "fr": "À l'Ara Cœli de Rome, des enfants récitaient prières et poèmes devant l'image du Santo Bambino au temps de Noël."
+        "en": "At Rome's Ara Coeli church during Christmas celebrations, children preached short addresses and recited poems before the Bambino figure.",
+        "fr": "À l'église de l'Ara Coeli à Rome, pendant les fêtes de Noël, des enfants prononçaient de courtes allocutions et récitaient des poèmes devant l'image du Bambino."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -3324,9 +3790,11 @@
         "source_id": "WEI58-10-006",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          124
-        ],
+        "locator": {
+          "printed_page": 124,
+          "pdf_page_zero_based": 141,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -3345,7 +3813,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -3355,7 +3823,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "At Rome's Ara Coeli, children recited prayers and poems before the Santo Bambino image during Christmas observances.",
+          "fr": "À l'Ara Cœli de Rome, des enfants récitaient prières et poèmes devant l'image du Santo Bambino au temps de Noël."
+        },
+        "editorial_rationale": "CRITICAL: original card said prayers; Weiser states children preached and recited poems.",
+        "printed_page": 124,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-076",
@@ -3832,8 +4316,8 @@
       "source_batch": "SOURCE_FIRST_216",
       "category": "WEISER_1958",
       "statement": {
-        "en": "The Lenten pretzel's twisted form has been interpreted as two arms crossed in prayer.",
-        "fr": "La forme torsadée du bretzel de Carême a été interprétée comme deux bras croisés pour prier."
+        "en": "Weiser recounts a traditional explanation of the pretzel's shape as two arms crossed in prayer during Lent.",
+        "fr": "Weiser rapporte une interprétation traditionnelle de la forme du bretzel comme deux bras croisés en prière pendant le Carême."
       },
       "editorial_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
       "source": {
@@ -3841,9 +4325,11 @@
         "source_id": "WEI58-14-022",
         "source_path": "dyk-customs-weiser-folio-expansion-04a.v1.json",
         "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-        "locator": [
-          184
-        ],
+        "locator": {
+          "printed_page": 183,
+          "pdf_page_zero_based": 200,
+          "edition": "1958 first edition, 384-page facsimile"
+        },
         "deep_link": {
           "type": "route",
           "id": "home.historical-source",
@@ -3862,7 +4348,7 @@
             }
           }
         },
-        "source_visual_checked": false
+        "source_visual_checked": true
       },
       "original_language_text": null,
       "gates": {
@@ -3872,7 +4358,23 @@
         "destination_browser_verified": false,
         "publication_authorized": false
       },
-      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED"
+      "release": "R20_BILINGUAL_REVIEW_NOT_APPROVED",
+      "r24_source_review": {
+        "status": "CLAIM_CROSSCHECKED_WITH_WEISER_1958_FACSIMILE",
+        "original_statement": {
+          "en": "The Lenten pretzel's twisted form has been interpreted as two arms crossed in prayer.",
+          "fr": "La forme torsadée du bretzel de Carême a été interprétée comme deux bras croisés pour prier."
+        },
+        "editorial_rationale": "This is an attribution to Weiser's historical explanation, NOT independent certification of the pretzel's disputed ancient origin.",
+        "printed_page": 183,
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "verifier_scope": "Claim-to-cited-source correspondence only, not independent historiography, approval or current practice",
+        "english_editorial_signoff": false,
+        "french_editorial_signoff": false,
+        "semantic_novelty_verified": false,
+        "reader_destination_verified": false,
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-004",
