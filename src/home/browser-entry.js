@@ -305,6 +305,10 @@ export function createHomeOwner(win=globalThis){
     const retry=target?.closest?.("[data-home-shortcut-retry]");
     if(retry){
       event.preventDefault?.();
+      if(retry.dataset?.homeShortcutRetry==="home.did-you-know"){
+        const exact=win?.document?.querySelector?.(".homeScreen [data-home-dyk-entry]");
+        if(exact&&!exact.disabled){exact.click();return;}
+      }
       void openRoute(retry.dataset?.homeShortcutRetry,{trigger:retry});
       return;
     }
