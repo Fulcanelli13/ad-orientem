@@ -1,28 +1,31 @@
-# 2026 Mass readings → Sacred Art fit-review registry
+# 2026 Mass Calendar × Scripture × Existing Sacred Art — Phase 1 registry
 
-This is a **365-day working editorial register**, not a change to live 1962 Mass content. The user reviews **broad fit first**, then **exact fit**, then **gaps**; only afterwards may new painting research start.
+This is the **current editorial review source** for Ad Orientem, using the 1962 General Roman Calendar for 2026. Created 30 October 2026; **research branch only**, no production change.
 
-## Coverage
-- 365 dated 1962 general Roman Calendar rows (Jan–Dec 2026)
-- 365 first-lesson/Epistle citations and 365 Gospel/Passion citations, all **source-provisional where not independently collated**
-- 165 days with at least one existing art candidate; 200 currently without any
-- 986 proposed day-to-painting shortlist rows (many-to-many, not approval)
-- 10 days have preserved historical Class I art approvals from `src/calendar/approved-class-i-heroes-2026.js`
-- 13 multiple-lesson/rite-context days, 5 explicit reading exception overrides
+## Registered coverage
+- **365 / 365 days** with named feast/feria, weekday, season, liturgical rank, colour, commemorations/alternative observances and source state.
+- **365 / 365 first reading/Epistle citations**, **365 / 365 Gospel/Passion citations**; many are sourced from the pinned upstream calendar but **not independently collated against every day's actual selected Latin Proper**.
+- **13 days** carry separately ordered multi-reading material; special treatment for Palm Sunday, Holy Wednesday, Good Friday, Easter Vigil and all three Christmas Masses.
+- **1,154 provisional day/artwork candidates** across **178 days**, maximum 20 shown per day; another **187 days** currently have no suggested candidate (this is NOT a confirmed gap after review).
+- **15 days** with a preserved date-specific user editorial decision or more recent preference, including the supersession of Ugolino da Siena by Philippe de Champaigne for Holy Thursday.
+- Current data: `data/calendar/2026-calendar-scripture-art-fit-v2.json` and `data/calendar/2026-calendar-art-fit-proposals-v2.csv`. Older v1 drafts in this branch are not the active review source.
 
-## Major caveats
-The yearwide machine-readable baseline (`igorlaguiar/ambo-liturgical-calendars`, MIT, pinned SHA `af4a22a4014e9a46cadafc4c2ede4aa784f5a6f2`) was not fully independently collated against every 1962 Latin source. Its own PROVENANCE.md admits *Pentecost white*, *Palm blessing Gospel mistaken for Mass Gospel*, and incomplete *Christmas three Mass forms*. Fixed explicitly in this register; also Palm, Holy Wednesday, Good Friday, Easter Vigil have source-order protection. No publication until comprehensive Proper source-path verification.
+## Verified source exceptions and scope limitations
+Ambo's 2026 baseline is pinned to `igorlaguiar/ambo-liturgical-calendars@af4a22a4014e9a46cadafc4c2ede4aa784f5a6f2`, `data/v1/1962/general-roman/2026.json`. Baseline known issues corrected locally include:
+- Palm Sunday distinguishes the Mass Passion from the Gospel at blessing palms.
+- Holy Wednesday preserves **Isaias 62:11; 63:1–7** and the second **Isaias 53:1–12** lesson, with Luke Passion.
+- Good Friday is a solemn **liturgical action** (not an ordinary Mass) with Osee, Exodus and Johannine Passion.
+- Easter Vigil preserves **four ordered prophecies**, the Mass Epistle and Gospel.
+- Nativity 25 Dec retains **three separate Mass formularies**.
+- Pentecost 24 May and St Stephen 26 Dec corrected to **red**.
+Before production, every row must be reconciled with the 1962 calendar's selected Proper source path and the Latin passage boundaries, especially local observances, transferred feasts, non-contiguous lessons and special rites.
 
-Good Friday is a solemn liturgical action, not an ordinary Mass. The 'first reading' is the first prophecy. Holy Saturday has four prophecies before Mass Epistle; the bogus source citation joining Colossians and Psalm 117 is removed. Christmas carries Midnight, Dawn, Day as distinct formularies. Extra Ember lessons are retained in `additional_readings`; user must not flatten them.
+## Four editorial stages (order locked)
+1. **Broad fit**: user says whether a candidate artwork belongs on a date, and may suggest any alternate gallery artwork, with many-to-many placement allowed.
+2. **Exact fit**: once broadly approved, inspect depiction, biblical scene identity, liturgical context, alternative first reading/Gospel, correct image original, and historical source selection.
+3. **Confirmed gaps**: only after fit and exact-fit decisions, record genuine missing coverage, not mere mechanical absence of candidate suggestions.
+4. **New research**: look up additional paintings only for the confirmed gaps.
 
-The **first fit** list is proposed by passage overlap and restricted feast-title matching, using the Oct 30 canonical 383 and 989 operational Sacred Art Scripture registers. A verse overlap is never equated with identity of a depicted scene. Candidate photos, exact subject images and rights may still be unverified. Historical approvals are retained separately, with later user dislike of Ugolino da Siena overriding the former Thursday preferred artwork.
+Artwork proposals derive from existing 383 canonical and 989 operational Sacred Art Scripture indices, not new image discovery. Preserve original editorial approvals, rejections, art registry identities, photo-rights gates and 2026 Class I decisions. The Holy Thursday superseded Ugolino entry remains historical only.
 
-## Data
-- `data/calendar/2026-calendar-reading-art-fit-review.v1.json` all dated details and review fields
-- `data/calendar/2026-calendar-reading-art-fit-review.v1.csv` one row per day for workbook import
-- `data/calendar/2026-calendar-art-candidates-fit-review.v1.csv` one row per suggested day→art pairing; editorial decisions must be entered against each stable pair, not against art identity alone
-
-## Review progression
-**Stage 1:** Decide broad `FIT / NOT_FIT / ALTERNATIVE / UNDECIDED` for each day-to-artwork proposal, preserving old approvals. **Stage 2:** For fit-approved pairings, inspect image, verify narrative subject, passage and liturgical appropriateness; decide exact/canonical/seasonal/indirect fit with reasons. **Stage 3:** Only then report genuinely unfilled days/feasts. **Stage 4:** Research new artwork solely for confirmed gaps.
-
-No automatic edit to canonical registry or production, no new artwork research.
+No human fit decision has been imported or presumed. All artworks are **review suggestions**, not publication approvals.
