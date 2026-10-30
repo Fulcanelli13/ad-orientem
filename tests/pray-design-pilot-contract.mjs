@@ -173,3 +173,39 @@ assert.ok(doorReviewHtml.includes('SCHEMA="AO_PRAY_NINE_DOOR_VISUAL_DECISIONS_V1
 assert.ok(doorReviewHtml.includes('rightsFinalCleared:false,photoQualityFinalCleared:false,productionApproved:false'),"Never promote visual choices to publication automatically");
 assert.ok(doorReviewHtml.includes('if(state==="VISUAL_APPROVED"&&!ok.has(pair(x)))'),"Do not approve a failed image load");
 assert.ok(doorReviewHtml.includes('not a duplicate'),"Distinct painting adjudication remains available");
+
+// Exercise research / visual-approval queues with a complete browser export.
+
+const {mkdtempSync,writeFileSync,rmSync}=await import("node:fs");
+const {tmpdir}=await import("node:os");
+const {join:joinReview}=await import("node:path");
+const {spawnSync:runReviewImporter}=await import("node:child_process");
+const tempNineDoorReviewDir=mkdtempSync(joinReview(tmpdir(),"ao-pray-nine-door-"));
+const importerPath=new URL("../scripts/art/import-pray-nine-door-visual-decisions-20261030.mjs",import.meta.url).pathname;
+try{
+ const fixture={schema:"AO_PRAY_NINE_DOOR_VISUAL_DECISIONS_V1",
+  decisions:doorReviewRows.map(row=>({slotId:row.slot,artworkId:row.id,decision:"RESEARCH",
+   imageShown:false,distinct:false,chosenAt:null,productionApproved:false,
+   rightsFinalCleared:false,photoQualityFinalCleared:false}))};
+ const input=joinReview(tempNineDoorReviewDir,"choices.json");
+ const invoke=()=>runReviewImporter(process.execPath,[importerPath,input],{encoding:"utf8"});
+ writeFileSync(input,JSON.stringify(fixture));
+ let tested=invoke();
+ assert.equal(tested.status,0,tested.stderr);
+ let queues=JSON.parse(tested.stdout);
+ assert.equal(queues.counts.research,25);
+ assert.equal(queues.counts.publicationReady,0);
+ fixture.decisions[0].decision="VISUAL_APPROVED";fixture.decisions[0].imageShown=true;
+ writeFileSync(input,JSON.stringify(fixture));
+ tested=invoke();
+ assert.equal(tested.status,0,tested.stderr);
+ queues=JSON.parse(tested.stdout);
+ assert.equal(queues.counts.visualApproved,1);
+ assert.equal(queues.counts.research,24);
+ assert.equal(queues.queues.ready_for_publication.length,0);
+ assert.equal(queues.queues.visually_approved_pending_exact_rights_photo_qa_and_crop.length,1);
+ fixture.decisions[0].rightsFinalCleared=true;
+ writeFileSync(input,JSON.stringify(fixture));
+ tested=invoke();
+ assert.notEqual(tested.status,0,"Browser export cannot certify file-specific rights");
+}finally{rmSync(tempNineDoorReviewDir,{recursive:true,force:true})}
