@@ -75,6 +75,10 @@ export const TODAY_H4_CSS=`
 .aoTodayH4 .aoH4CalendarInline:not([hidden]){display:block}
 @media(max-width:359px){.homeScreen.aoTodayV2.aoTodayH4{--h4-gap:12px}.aoTodayH4 .aoH4Bar{height:44px}.aoTodayH4 .aoH4DateOpen strong{font-size:23px}.aoTodayH4 .dateRail.aoH4Week .dayCell{height:46px}.aoTodayH4 .aoH4Door .aoLiturgicalDayKicker{display:none!important}.aoTodayH4 .aoH4Door .aoTodayV2Art{height:76px!important;max-height:76px!important}.aoTodayH4 .aoH4Door .aoTodayV2ArtSource{height:76px!important;max-height:76px!important;aspect-ratio:auto!important}.aoTodayH4 .aoH4MassBody{padding:12px 16px 0}.aoTodayH4 .aoH4MassBody h1{font-size:29px}.aoTodayH4 .aoH4Acts{margin:0 -16px}.aoTodayH4 .aoH4Acts button{font-size:13px}}
 
+.aoTodayH4 .aoH4DiscoveryStandalone{display:block;margin:18px var(--h4-gap) 0;min-width:0}
+.aoTodayH4 .aoH4DiscoveryStandalone>.aoHomeDYK{box-sizing:border-box;width:100%;border-radius:18px!important;min-height:124px!important;padding:16px 18px!important}
+.aoTodayH4 .aoH4DiscoveryStandalone+.aoTodayV2Below{margin-top:4px}
+
 /* Home's source-owned Did You Know teaser; a full Discovery corpus is still gated. */
 .aoTodayV2 .aoHomeDYK{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:5px!important;min-width:0;width:100%;text-align:left!important;padding:15px 16px!important;min-height:112px!important;border:1px solid var(--ao-rule,var(--border,rgba(225,210,180,.2)))!important;border-radius:14px!important;background:var(--ao-surface-1,var(--surface-1,#161e25))!important;color:var(--ao-text-primary,var(--text,#f2ebe0))!important;white-space:normal!important}
 .aoTodayV2 .aoHomeDYK:disabled{opacity:1!important;cursor:default}
