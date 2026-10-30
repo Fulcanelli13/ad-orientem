@@ -283,15 +283,19 @@ try{
      const l=window.__AO_PHONE_PREVIEW.getScholaPerformance();
      return {schema:l.performanceSchema,
        kyrie:l.events.find(x=>x.id==="KYRIE")?.performance.status,
-       quiet:l.events.find(x=>x.id==="CANON")?.performance.eligible,
+       quiet:l.events.find(x=>x.kind==="QUIET_INTERVAL")?.performance.eligible,
+       quietId:l.events.find(x=>x.kind==="QUIET_INTERVAL")?.id??null,
        organ:l.events.find(x=>x.id==="ENTRANCE_ORGAN_OPTION")?.performance.eligible,
        started:l.counts.started};
    });
    assert.equal(originalPerformance.schema,"ao-schola-performance-session-v1");
    assert.equal(originalPerformance.kyrie,"EXPECTED_NOT_OBSERVED");
    assert.equal(originalPerformance.quiet,false);
-   assert.equal(await musicMenu.locator('[data-schola-performance-row="CANON"]').count(),0,
-     "Canon silence must not be recordable as musical performance");
+   assert.ok(originalPerformance.quietId,
+     "Expected a source-backed quiet interval for this Sung Mass");
+   assert.equal(await musicMenu.locator(
+     '[data-schola-performance-row="'+originalPerformance.quietId+'"]').count(),0,
+     "Quiet or Canon interval must not be recordable as musical performance");
    const performanceStart=musicMenu.locator(
      '[data-schola-performance-event="KYRIE"][data-schola-performance-action="START"]');
    await performanceStart.click();
