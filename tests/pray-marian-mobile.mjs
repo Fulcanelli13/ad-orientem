@@ -113,7 +113,7 @@ try{
   assert.equal(await aa.count(),1,"Prayer language must be located in the shared Aa menu");
   if(!await aa.evaluate(el=>el.open))await aa.locator(":scope > summary").click();
   assert.ok(await stationsLocale.isVisible(),"Language choice must be available after opening Aa");
-  await togglePrayerLanguage();
+  await stationsLocale.click();
  };
  assert.equal(await stationsLocale.count(),1,"Stations must share in-session EN/FR control");
  const englishStation=await page.locator("#aoPray435930 .aoDevoCardTitle").innerText();
