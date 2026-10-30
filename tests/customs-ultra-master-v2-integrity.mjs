@@ -55,4 +55,17 @@ for(const x of indulgences.screening_by_identity){assert.equal(x.universal_indul
 assert.equal(coverage.progress.evidence_directly_linked_to_group.not_directly_linked,3295);
 assert.equal(coverage.progress.historical_indulgence_original_grants_verified.done,0);
 assert.equal(coverage.release_freeze,"RESEARCH_ONLY");
+
+const wave=get("customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json");
+assert.equal(wave.rows.length,200);
+assert.equal(new Set(wave.rows.map(x=>x.evidence_id)).size,200);
+assert.equal(wave.counts.pending_remaining_source_records,3095);
+assert.deepEqual(wave.source_bucket_counts,{weiser_family_1956_full_scan:111,weiser_handbook_1958_original:89});
+assert.equal(wave.counts.indulgence_grants_certified,0);
+assert.ok(wave.rows.every(x=>x.original_source_id_verified===true&&!x.publication_allowed&&!x.calendar_rule_approved&&!x.original_indulgence_grant_verified&&x.final_work_identity_id===null));
+assert.ok(wave.rows.every(x=>unassigned.has(x.evidence_id)));
+const waves=get("customs-ultra-master-v2-bulk-reconciliation-waves-3295.v1.json");
+assert.equal(waves.batches.length,17);
+assert.equal(waves.batches.flatMap(x=>x.source_evidence_ids).length,3295);
+assert.deepEqual(new Set(waves.batches.flatMap(x=>x.source_evidence_ids)),unassigned);
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 linked evidence/3295 separately indexed, 465 identities, 0 unpublished grants, zero canonical writes");
