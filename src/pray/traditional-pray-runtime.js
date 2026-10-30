@@ -815,6 +815,33 @@ function injectGlossaryAction(){
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
+// Historical morning/evening and the wider traditional treasury share
+// the same discreet Aa and source-notes rule as the primary Prayer reader.
+function reconcileTraditionalPrayerSettings(m){
+ const header=m.querySelector('.aoP435930Head');
+ if(!header)return;
+ const candidates=[...m.querySelectorAll('.aoTP381Source,.aoDailyBookSourceNote,.aoTP381Lang')];
+ const nodes=candidates.filter(x=>!candidates.some(y=>y!==x&&y.contains(x)));
+ if(!nodes.length)return;
+ const menu=document.createElement('details');
+ menu.className='aoPrayerBookMenu';
+ menu.innerHTML='<summary aria-label="'+esc(L("Prayer language and source notes","Langue de prière et notes de source"))+
+  '">Aa</summary><div class="aoPrayerBookMenuPanel"></div>';
+ const body=menu.querySelector('.aoPrayerBookMenuPanel');
+ const languages=nodes.filter(n=>n.matches('.aoTP381Lang'));
+ const references=nodes.filter(n=>!n.matches('.aoTP381Lang'));
+ languages.forEach(n=>body.append(n));
+ if(references.length){
+  const info=document.createElement('details');
+  info.className='aoPrayerBookSources';
+  info.innerHTML='<summary>ⓘ '+esc(L("Sources","Sources"))+'</summary>';
+  references.forEach(n=>info.append(n));
+  body.append(info);
+ }
+ const home=header.querySelector('.aoP435930Home');
+ if(home)home.before(menu);else header.append(menu);
+ header.classList.add('aoPrayerBookHead');
+}
 function render(){
   const m=mount();if(!m)return false;
   // The native disclosure can be opened or closed directly. Preserve its
@@ -829,6 +856,7 @@ function render(){
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  reconcileTraditionalPrayerSettings(m);
   if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
     const daily=S.route==="pray.morning_evening";
