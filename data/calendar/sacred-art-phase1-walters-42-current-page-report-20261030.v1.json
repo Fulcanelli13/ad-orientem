@@ -8,8 +8,8 @@
   "method": "Exact current official object webpage, extracted H1 and accession label, no photos",
   "counts": {
     "frozenAcceptedCards": 42,
-    "officialTitleAndAccessionConfirmed": 0,
-    "officialPagesNeedsReview": 38,
+    "officialTitleAndAccessionConfirmed": 38,
+    "officialPagesNeedsReview": 0,
     "sourcePageFetchFailed": 4,
     "originalConditionalDecisions": 2,
     "canonical383NewLinks": 0,
@@ -150,23 +150,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.62/",
       "httpStatus": 200,
       "pageSha256": "fc9d74853b62ef14c6aa8416d012e5bb3b2182d7ea1c86e80446fb23686ff8ec",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Eugène Delacroix, Christ on the Cross, 1846. Acquired by William T. Walters, 1886, 37.62 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:16411",
@@ -180,23 +180,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.788/",
       "httpStatus": 200,
       "pageSha256": "e055987fdeafa9a4718ffe4c4da00320fb361886c51392d40ccc50aab4fd8269",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Johann Michael Rottmayr, The Deposition from the Cross, ca. 1712 (Baroque). Acquired by Henry Walters, 37.788 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:18326",
@@ -210,23 +210,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1084/",
       "httpStatus": 200,
       "pageSha256": "f6ec2fdb3194a03cb8f933112a3cc97e05410c95bccc3d1462c72cb42eed1663",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Benedetto Coda, Saint Claire of Assisi, 1515-1520 (Renaissance). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1084 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:22081",
@@ -240,23 +240,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.663/",
       "httpStatus": 200,
       "pageSha256": "734f1e86939262abcc2a5d8bf74605f7811d11d10505da72353dfa749a8ed1fc",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Altarpiece with the Passion of Christ: Way to Calvary, ca. 1480-1495 (Renaissance). Acquired by Henry Walters, before 1909, 37.663 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:22554",
@@ -270,23 +270,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.776/",
       "httpStatus": 200,
       "pageSha256": "47e5ed8947cd98438e1d132b0f41809d0368937701273c90f9f5ce2f7bae448b",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Passion of Christ, ca. 1440-1460 (Late Medieval). Acquired by Henry Walters, 37.776 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:22581",
@@ -300,23 +300,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.234/",
       "httpStatus": 200,
       "pageSha256": "95b0a02eb8ee942a7d4c69fba1f3ca38c3a0073c37eec8924738ff12d512eb94",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Anthony van Dyck, Virgin and Child, ca. 1630-1632 (Baroque). Acquired by Henry Walters, 1898, 37.234 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:23519",
@@ -330,23 +330,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.329/",
       "httpStatus": 200,
       "pageSha256": "4848e3e88305abadd9667b696727d92d1246831d38b5113a14358e3e913fe9dc",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "François de Nomé, Head of Saint John the Baptist Presented to Salome, ca. 1620-1624 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.329 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:25563",
@@ -360,23 +360,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.178/",
       "httpStatus": 200,
       "pageSha256": "ec1dad20460aaa2f2cd94fa5cd1943510093beda02d8d6b9b22dbdf67fb51beb",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Andreas Johann Jacob Müller, The Christ Child, 1849. Acquired by William T. or Henry Walters, 37.178 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:25924",
@@ -390,23 +390,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.669/",
       "httpStatus": 200,
       "pageSha256": "f023b357fbe908ccbb8ea1080b6f36f3a138d540a4443cefd4e7252e8788f817",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Altarpiece with the Passion of Christ: Christ before High Priest, ca. 1480-1495 (Renaissance). Acquired by Henry Walters, before 1909, 37.669 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:2840",
@@ -420,23 +420,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.286/",
       "httpStatus": 200,
       "pageSha256": "7d5289ceb7c63ee5aad871d7a868e8b0157a21de3248bdccd3e8dc6014c3f5e5",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Bartolomé Estebán Murillo, The Virgin of the Immaculate Conception, ca. 1660 (Baroque). Acquired by Henry Walters, 1902, 37.286 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:2872",
@@ -450,23 +450,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1096/",
       "httpStatus": 200,
       "pageSha256": "ae41da7cfba73b4f6bca1913dc68c146ad580c17697bcb5b79f7627a72941118",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Francesco Morandini, Saint Helena, ca. 1575 (Renaissance). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1096 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:29501",
@@ -480,23 +480,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.664/",
       "httpStatus": 200,
       "pageSha256": "92533c1d4c3156b4e2445af69c96045c4b724a9fad222cf787e0ce3aaa5900be",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Altarpiece with the Passion of Christ: Entombment, ca. 1480-1495 (Late Medieval). Acquired by Henry Walters, before 1909, 37.664 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:31086",
@@ -510,23 +510,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.5/",
       "httpStatus": 200,
       "pageSha256": "715d474b12d02e9b1456093aacce26d47aa0cd07f5bb1b9276468d94f62df75a",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Auguste-Antoine-Ernest Hébert, Virgin of the Deliverance, after 1872. Acquired by William T. Walters, 1886, 37.5 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:3119",
@@ -540,23 +540,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.668/",
       "httpStatus": 200,
       "pageSha256": "0b93e10188980a18d82c8fd1daca84d933efb7df9f80e6921f3e28bfc5941c8c",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Altarpiece with the Passion of Christ: Crucifixion, ca. 1480-1495 (Late Medieval). Acquired by Henry Walters, before 1909, 37.668 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:31826",
@@ -570,23 +570,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1922/",
       "httpStatus": 200,
       "pageSha256": "1a70c72a5f2cf26d94379a4d3e4a44202165e9a33a6c9cc634921a4976fa4d8d",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Scarsellino, The Adoration of the Magi, ca. 1610 (Renaissance). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1922 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:32662",
@@ -600,23 +600,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.582/",
       "httpStatus": 200,
       "pageSha256": "fd6e89fe8a2a47fe0d5951deb031ca5bdb4f516017ffff9640d9a8837b3c410b",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Domenico Fetti Titian, Christ and the Tribute Money, ca. 1618-1620 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.582 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:32732",
@@ -630,23 +630,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1929/",
       "httpStatus": 200,
       "pageSha256": "6b31b8e082592b93674b73451aa0221a813bece31977f282a1fe7535d360922d",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Bernardo Castello, The Adoration of the Shepherds, 1582 (Renaissance). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1929 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:34385",
@@ -660,23 +660,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1839/",
       "httpStatus": 200,
       "pageSha256": "7b4fbe2e838f9ceb7d42d4bac53c6ae7770cf2d9d5377c89ce491adc3454bff9",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Francesco Furini, St. Agatha, ca. 1635-1645. Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1839 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:35964",
@@ -690,23 +690,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.256/",
       "httpStatus": 200,
       "pageSha256": "1a3aff2c4d1eea7e9c57ae784cdfe2e4fefada007ccae9651a132e6db466161d",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Pieter Coecke van Aelst, the elder Pieter Coecke van Aelst, the elder, Saint Jerome in His Study, ca. 1530 (Renaissance). Acquired by Henry Walters, 37.256 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:36475",
@@ -720,23 +720,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.515/",
       "httpStatus": 200,
       "pageSha256": "6ce2b7c88662d2f6711dd8e71d8000a4c1ffa8072cf440887d19a7f63b575f29",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Polidoro da Lanciano, Madonna and Child with Saints Mark and Peter, 1535-1540 (Baroque). Acquired by Henry Walters, 1911, 37.515 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:36782",
@@ -750,23 +750,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.113/",
       "httpStatus": 200,
       "pageSha256": "f10ed955b738f60564d701f8eff0a723bf8f48e952d348189a77d0b58bd17e83",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Jean-Léon Gérôme, The Christian Martyrs' Last Prayer, 1863-1883. Acquired by William T. Walters, 1883, 37.113 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:37037",
@@ -780,23 +780,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.278/",
       "httpStatus": 200,
       "pageSha256": "421d8bdbadf855bfd941117d86cfb19f9b8e4e02946ca38d549d8df2427610e7",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Jusepe de Ribera, Saint Paul the Hermit, ca.1638 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.278 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:37520",
@@ -810,23 +810,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.509/",
       "httpStatus": 200,
       "pageSha256": "733df98607e54c8cdc8881493bed1c12d3eb3aa63be7f3dcf6fc46217768da08",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Andrea Solario, Saint Mary Magdalene, ca. 1524 (Renaissance). Acquired by Henry Walters, before 1922, 37.509 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:37591",
@@ -840,23 +840,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.2615/",
       "httpStatus": 200,
       "pageSha256": "96b7dcdee9574cf605de4e0b4f7a0bca8116e67b7499dbb72a8886aa730b55c9",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Jacques de Poindre, Saint Nicholas, 1563 (Renaissance). Museum purchase with funds provided by the W. Alton Jones Foundation Acquisition Fund, 1984, 37.2615 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:37844",
@@ -870,23 +870,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.328/",
       "httpStatus": 200,
       "pageSha256": "9d484727619bd50d8cb5efdb983edf02ea37cd8efde9240c01b27aabbd58b893",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "François de Nomé, St. Paul Preaching to the Athenians, ca. 1620-1624 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.328 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:39318",
@@ -900,23 +900,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.111/",
       "httpStatus": 200,
       "pageSha256": "2e1a208e7f50a40c3ccee88bb4d86b0f27c076ca3bfe042dd462e4c766d3b282",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Ary Scheffer, Christ Weeping Over Jerusalem, 1851. Acquired by William T. or Henry Walters, 1882, 37.111 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:40183",
@@ -930,23 +930,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.2631/",
       "httpStatus": 200,
       "pageSha256": "7ab104a1543cc0eaefadaeca09874cb768875fbb3234056ea6e6e05f7231d65c",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Guido Reni, The Penitent Magdalene, ca. 1635 (Baroque). Museum purchase with funds provided by the W. Alton Jones Foundation Acquisition Fund and the Sales & Accessions Purchase Fund, 1987, 37.2631 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:4130",
@@ -960,23 +960,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.671/",
       "httpStatus": 200,
       "pageSha256": "3a0ee25d61714f63fea685fa460bdf25b91f2cd25d68d33203dafbf926a45155",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Altarpiece with the Passion of Christ: Christ Mocked, ca. 1480-1495 (Late Medieval). Acquired by Henry Walters, before 1909, 37.671 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:4153",
@@ -990,23 +990,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.670/",
       "httpStatus": 200,
       "pageSha256": "94919bb2f1de4e630ae999094b510cd994f2800eb8bab6b6f34af70c4dc45814",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Altarpiece with the Passion of Christ: Flagellation, ca. 1480-1495 (Renaissance). Acquired by Henry Walters, before 1909, 37.670 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:4625",
@@ -1020,23 +1020,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1677/",
       "httpStatus": 200,
       "pageSha256": "69fec42da3b0254f16bacb1f1986a1da3ae0c0fb0123faf29d1545d589befc74",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Santi di Tito, The Annunciation, ca. 1580 (Renaissance). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1677 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:5083",
@@ -1050,23 +1050,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.651/",
       "httpStatus": 200,
       "pageSha256": "672515f54cc4660d8c8e3129fd370e27f5cbba979217327843b9c96bfedb7af5",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Giacomo Galli, Saint Mary Magdalene, ca. 1625-1635 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.651 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:7018",
@@ -1080,23 +1080,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1125/",
       "httpStatus": 200,
       "pageSha256": "86b9d6eb2258074703e81c15ed0a14bfd14332955e5babc1a669803584a9b597",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Francesco de Mura, Pietà, ca. 1725-1730 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1125 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:82254",
@@ -1110,23 +1110,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.531B/",
       "httpStatus": 200,
       "pageSha256": "91331345ca44f9d56ea8ba73a6522224363f488d86bbafd861c9f447c70b5926",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Cristoforo Caselli, Saint Louise of Toulouse, ca. 1499-1500 (Renaissance). Acquired by Henry Walters, before 1922, 37.531B | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:8257",
@@ -1140,23 +1140,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.423/",
       "httpStatus": 200,
       "pageSha256": "6da75ec9cf3c278792e8ecdab7db71636f19dc2c6a6b239fdb92adddf002fde2",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Girolamo Marchesi, Saint Bruno, ca. 1525 (Renaissance). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.423 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:888",
@@ -1170,23 +1170,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.1910/",
       "httpStatus": 200,
       "pageSha256": "1478bd689f93317c34de9098f19a19bda0b39b5798f629dbd6a72480c445f161",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Angelo Caroselli, Saint Jerome in the Wilderness, ca. 1620-1630 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.1910 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:9018",
@@ -1200,23 +1200,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.243/",
       "httpStatus": 200,
       "pageSha256": "95cd024c05ae3885a12fdee471bc9d511c3438ad064b8d31e8793330a21288c4",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Luca Giordano Albrecht Dürer, Ecce Homo, 1650-1659 (Baroque). Acquired by Henry Walters, before 1909, 37.243 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:9071",
@@ -1230,23 +1230,23 @@
       "returnedUrl": "https://art.thewalters.org/object/37.2530/",
       "httpStatus": 200,
       "pageSha256": "761f311c906a9da4c9d61e08f37ce5ec6a2ef42b3e50bdf2d886d9af7a1c3519",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Jacopo Vignali, Saint Gregory the Great, ca. 1630. Gift of Carlton M. Slagle, Jr., in memory of his grandfather, Charles W. Slagle, 1976, 37.2530 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     },
     {
       "sourceId": "walters:9159",
@@ -1260,23 +1260,28 @@
       "returnedUrl": "https://art.thewalters.org/object/37.372/",
       "httpStatus": 200,
       "pageSha256": "cfd39d6442ed9ca0f01e3068e917c7ba9abd3a6321415ded066abfb2ec153ea5",
-      "status": "OFFICIAL_PAGE_REVIEW_NEEDED",
+      "status": "OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED",
       "evidence": {
         "titleH1": "",
         "htmlTitle": "Jan Boeckhorst Anthony van Dyck, Mary Magdalene, ca. 1650 (Baroque). Acquired by Henry Walters with the Massarenti Collection, 1902, 37.372 | The Walters Art Museum",
         "officialHost": true,
-        "titleNormalizedMatched": false,
-        "accessionLabelAndNumberMatched": true
+        "titleNormalizedMatched": true,
+        "accessionLabelAndNumberMatched": true,
+        "h1NotPresentInHtmlResponse": true
       },
-      "flags": [
-        "TITLE_VARIANT_OR_EXTRACTION_REVIEW"
-      ],
+      "flags": [],
       "distinctPhysicalWorkCertified": false,
       "sourcePhotoRightsCertified": false,
       "originalPhotoVisuallyInspected": false,
       "canonical383IdentityLinked": false,
       "originalDecisionPreserved": true,
-      "productionMutation": false
+      "productionMutation": false,
+      "titleMatchingMethod": "OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE"
     }
-  ]
+  ],
+  "verificationMethodAmendment": {
+    "reason": "Official HTML uses a full document title (artist + artwork + dates + acquisition) but no server-rendered h1. Verified artwork title as normalized substring of official HTML title with exact on-page Accession Number; no new HTTP calls or fabricated values",
+    "confirmedFromPreviouslyCapturedOfficialPageResponses": 38,
+    "unreachableCurrentMuseumPagesStill": 4
+  }
 }
