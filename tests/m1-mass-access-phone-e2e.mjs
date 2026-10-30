@@ -69,6 +69,9 @@ try{
   await page.locator("[data-folio-overview-button]").click();
   await page.waitForSelector("[data-m1-choice='language']",{state:"visible"});
   assert.match(await page.locator("[data-m1-choice='language']").innerText(),/Français/);
+  assert.match(await page.locator("[data-ao-start-live]").innerText(),/Commencer la messe/,"Start action must follow selected Mass language without changing its handler");
+  const saveAction=page.locator("[data-folio-host-actions] .aoFlowActions button").filter({hasText:/Enregistrer comme choix habituels/});
+  assert.equal(await saveAction.count(),1,"Existing Save as defaults action should be localized, not duplicated");
   assert.match(await page.locator("[data-m1-choice='ceremony']").innerText(),/Messe basse/,
     "The ceremonial label must follow the chosen pre-Mass language");
   await page.locator("[data-m1-choice='before']").click();
