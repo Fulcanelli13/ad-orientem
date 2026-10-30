@@ -1,7 +1,7 @@
 {
   "schema": "AO_P107_FOUR_PINNED_COMMONS_ALTERNATIVE_ORIGINALS_V1",
   "date": "2026-10-30",
-  "state": "CANDIDATE_NATIVE_ACQUISITION_NO_PUBLICATION",
+  "state": "FOUR_EXACT_ORIGINALS_VISUALLY_SCREENED_ONE_ACCEPTED_FOR_STAGING",
   "source_standard": "Commons file description pages, page-specific published SHA-1; original bytes and dimensions must match prior to any derivative generation",
   "source_revision_policy": "Hash verification is mandatory; if Commons source changes, fail closed. Never replace with an unpinned near match.",
   "p105_existing_research_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2028",
@@ -24,7 +24,11 @@
         15.590778
       ],
       "photo_site": "Jihlava Church of St Ignatius, not adjacent Jesuit seminary",
-      "review_intent": "Compare this alternate façade to dark-grey sky P105 row 309, avoid premature approval"
+      "review_intent": "Compare this alternate façade to dark-grey sky P105 row 309, avoid premature approval",
+      "visual_screening": "PRIMARY_CANDIDATE_SOURCE_PINNED",
+      "selected_for_native_acquisition": true,
+      "visual_evidence": "Exact original viewed at Commons full-frame: complete light-coloured Baroque twin-tower facade, detailed reliefs, good daylight on building against dramatic sky, vertical portrait, small distant pedestrians. Better front elevation than P105 uniform grey image.",
+      "exact_commons_original_viewed": true
     },
     {
       "row": 315,
@@ -43,7 +47,11 @@
         12.678889
       ],
       "photo_site": "Cemetery church St Michael, NOT distinct nearby Gnadenkapelle",
-      "review_intent": "Assess portrait composition as alternative to P105 cemetery-wide view; no Gnadenkapelle substitution"
+      "review_intent": "Assess portrait composition as alternative to P105 cemetery-wide view; no Gnadenkapelle substitution",
+      "visual_screening": "REJECT_WRONG_SUBJECT_FOR_EXTERIOR",
+      "selected_for_native_acquisition": false,
+      "visual_evidence": "Exact original viewed: interior devotional statue of Saint Joseph with Christ Child, not any exterior or architectural view of Friedhofskirche. Same location/category is insufficient. Keep current P105 exterior as conditional.",
+      "exact_commons_original_viewed": true
     },
     {
       "row": 320,
@@ -62,7 +70,11 @@
         5.015877
       ],
       "photo_site": "Standalone Basilica Saint-Bernard, distinct from birth-site château tower",
-      "review_intent": "Prefer basilica-only architecture to P105 whole complex photo; check full church framing"
+      "review_intent": "Prefer basilica-only architecture to P105 whole complex photo; check full church framing",
+      "visual_screening": "REJECT_WEAK_FOR_PRIMARY",
+      "selected_for_native_acquisition": false,
+      "visual_evidence": "Exact original viewed: wide winter ensemble with snow covering most lower frame, dark underexposed basilica and tower; not improved over P105 daylight heritage-complex view. Category/building identity correct but photographic quality inadequate.",
+      "exact_commons_original_viewed": true
     },
     {
       "row": 322,
@@ -81,16 +93,30 @@
         -0.365722
       ],
       "photo_site": "Pau Saint-Louis-de-Gonzague church, not Corsican funerary chapel",
-      "review_intent": "Compare with bollard-obstructed P100/P94 source; inspect for further obstructions"
+      "review_intent": "Compare with bollard-obstructed P100/P94 source; inspect for further obstructions",
+      "visual_screening": "REJECT_INTRUSIVE_VEHICLES",
+      "selected_for_native_acquisition": false,
+      "visual_evidence": "Exact original viewed: 2007 street-level church facade surrounded by vehicles, traffic signs and foreground roadway. Does not improve on P100 held 2026 composition. Continue seeking unobstructed Pau image.",
+      "exact_commons_original_viewed": true
     }
   ],
   "quality_policy": {
-    "all_four_originals_verified_before_stage": true,
+    "all_four_originals_verified_before_stage": false,
     "all_derivatives_full_frame_no_crop": true,
     "each_requires_visual_qa": true,
     "each_requires_independent_photo_and_licence_qa": true,
     "newly_published_covers": 0,
     "photo_media_registry_changed": false,
-    "zero_cost": true
+    "zero_cost": true,
+    "selected_originals_verified_before_stage": true,
+    "review_failed_photos_not_downloaded": true
+  },
+  "screening_counts": {
+    "images_visually_reviewed": 4,
+    "select_for_native_download_and_stage": 1,
+    "reject_as_wrong_subject": 1,
+    "reject_as_weak_photo": 1,
+    "reject_as_intrusive_foreground": 1,
+    "approved_for_publication": 0
   }
 }
