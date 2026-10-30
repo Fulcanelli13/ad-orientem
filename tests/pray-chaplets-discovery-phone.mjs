@@ -416,6 +416,57 @@ try{
    assert.equal(await page.locator(night+' [data-ao-devo-card="close"]').count(),1);
    await page.locator(night+' [data-p435930-night-finish]').tap();
    assert.equal(await page.locator(aRoot).count(),1,"Finish returns to established Adoration chooser");
+   // Opt-in F07 Precious Blood: exercise the REAL reader, not the default
+   // historical source view; no phantom 47-dot dashboard.
+   await page.setViewportSize({width,height:width===320?568:844});
+   await page.goto("http://127.0.0.1:"+server.address().port+
+    "/index.html?aoPrayerPilot=0&aoChapletF07Pilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.precious_blood",{returnContext:null}));
+   const bloodPilot=rootSel+' .aoPreciousBlood[data-ao-f07-variant="precious-blood"]';
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodProgress').count(),1);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodSegment').count(),7);
+   assert.equal(await page.locator(bloodPilot+' .aoPreciousBloodTop:visible').count(),0);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodLanguageOptions [data-p435930-blood-language]').count(),3);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodJump').count(),1);
+   assert.equal(await page.locator(bloodPilot+' .aoF07JumpDisclosure').count(),0);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'0');
+   assert.match(await page.locator(bloodPilot+' .aoPreciousBloodCard').innerText(),/O God, come to my assistance/);
+   const opening=await page.evaluate(()=>{
+    const r=document.querySelector('#aoPray435930.open .aoPreciousBlood[data-ao-f07-variant="precious-blood"]');
+    const p=r.querySelector('.aoPreciousBloodCard p').getBoundingClientRect();
+    const dock=r.querySelector('.aoPreciousBloodActions').getBoundingClientRect();
+    const port=document.querySelector('#aoPray435930.open .aoP435930Mount').getBoundingClientRect();
+    return {visiblePrayer:Math.max(0,Math.min(p.bottom,dock.top,port.bottom)-Math.max(p.top,port.top)),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(opening.visiblePrayer>=20&&opening.overflow<=1,
+    'F07 Precious Blood must show source opening prayer above dock: '+JSON.stringify(opening));
+   await page.screenshot({path:resolve(out,'precious-blood-f07-opening-'+width+'.png'),animations:'disabled'});
+   await page.locator(bloodPilot+' .aoF07BloodJump summary').click();
+   assert.equal(await page.locator(bloodPilot+' [data-p435930-blood-mystery]').count(),7);
+   await page.locator(bloodPilot+' [data-p435930-blood-mystery="6"]').click();
+   assert.match(await page.locator(bloodPilot+' .aoF07BloodContext strong').innerText(),/Piercing of His Side/);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'42');
+   await page.locator(bloodPilot+' [data-p435930-blood-next]').click();
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'43');
+   await page.screenshot({path:resolve(out,'precious-blood-f07-seventh-'+width+'.png'),animations:'disabled'});
+   await page.locator(bloodPilot+' .aoF07BloodLanguage summary').click();
+   await page.locator(bloodPilot+' [data-p435930-blood-language="la"]').click();
+   assert.match(await page.locator(bloodPilot+' .aoPreciousBloodCard').innerText(),/Pater noster/i);
+   await page.locator(bloodPilot+' .aoF07BloodLanguage summary').click();
+   await page.locator(bloodPilot+' [data-p435930-blood-language="fr"]').click();
+   assert.equal(await page.locator(bloodPilot+' .aoPreciousBloodCard p').getAttribute('lang'),'fr');
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'43');
+   await page.screenshot({path:resolve(out,'precious-blood-f07-french-'+width+'.png'),animations:'disabled'});
+   await page.locator(bloodPilot+' .aoF07BloodLanguage summary').click();
+   await page.locator(bloodPilot+' [data-p435930-blood-language="en"]').click();
+   assert.equal(await page.locator(bloodPilot+' .aoPreciousBloodCard p').getAttribute('lang'),'en');
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'43');
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   console.log('PASS '+width+'px F07 Precious Blood: 7 segments, original 47 positions, full prayer, source-based jump and EN/FR/LA');
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}
