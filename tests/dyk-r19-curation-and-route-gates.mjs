@@ -54,10 +54,14 @@ for(const c of featured.cards){
   }
  }else{
   assert.equal(c.category,"mass_liturgy");
-  assert.equal(c.destination.type,"PENDING_EXACT_MASS_CUE_ROUTE");
-  assert.equal(c.destination.action_id,r.source.action_id);
-  assert.equal(c.destination.cue_id,r.source.source_cue_id);
-  assert.equal(c.destination.reader_route_verified,false);
+  assert.equal(c.destination.type,"route");
+  assert.equal(c.destination.id,"home.mass-source");
+  assert.equal(c.destination.factId,c.id);
+  assert.equal(c.destination.mass_context.action_id,r.source.action_id);
+  assert.equal(c.destination.mass_context.cue_id,r.source.source_cue_id);
+  assert.equal(c.destination.mass_context.ritus_locator,r.source.ritus_locator);
+  assert.equal(c.destination.mass_context.source_url,"https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/");
+  assert.equal(c.destination.reader_cue_jump_verified,false);
  }
 }
 assert.equal(featured.cards.filter(x=>x.source_family==="WEISER_1958").length,60);
