@@ -10,6 +10,28 @@ const CHOICES=Object.freeze({
   beforeMass:[["none","None","Aucune"],["prepare","Brief","Brève"],["full","Full","Complète"]],
   afterMass:[["none","None","Aucune"],["thanksgiving","Brief","Brève"],["full","Full","Complète"]],
 });
+// Remembering is an explicit opt-in write to the existing Settings donor.
+// Do not create a Home-owned localStorage key or silently save session edits.
+export function rememberH4Choices(win=globalThis){
+  const donor=win?.AO_SETTINGS_DONOR_V4359;
+  const preflight=win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight;
+  if(!preflight||typeof donor?.setPath!=="function"||typeof donor?.snapshot!=="function")
+    return Object.freeze({ok:false,reason:"NO_CANONICAL_SETTINGS_OWNER"});
+  const exp=preflight.experience??{};
+  const values={form:preflight.chosenForm,readerMode:preflight.readerMode,
+    readerLanguage:exp.language,beforeMass:exp.before,afterMass:exp.after};
+  for(const [key,value] of Object.entries(values))
+    if(!CHOICES[key]?.some(row=>row[0]===value))
+      return Object.freeze({ok:false,reason:"INVALID_PREFLIGHT_CHOICE"});
+  try{
+    donor.setPath("mass.todayChoices",values);
+    const state=donor.snapshot();
+    const saved=state?.preferences?.mass?.todayChoices;
+    const matched=Boolean(saved&&Object.keys(values).every(key=>saved[key]===values[key]));
+    return Object.freeze({ok:matched,persistent:matched&&state.persistence==="local",
+      reason:matched?null:"SETTINGS_REJECTED_CHOICES"});
+  }catch{return Object.freeze({ok:false,reason:"SETTINGS_WRITE_FAILED"});}
+}
 export function h4ChoicesMarkup(status,{language="en"}={}){
   const fr=language==="fr",say=(en,frText)=>fr?frText:en;
   const experience=status?.experience??{};
@@ -35,10 +57,13 @@ export function h4ChoicesMarkup(status,{language="en"}={}){
     row("afterMass",say("After Mass thanksgiving","Action de grâces après la messe"))+
     '<p class="aoH4SheetError" role="alert" data-h4-choice-error hidden></p>'+
     '<p class="aoH4SheetContext">'+esc(say(
-      "These choices apply to this Mass. Set your usual defaults in Settings.",
-      "Ces choix s’appliquent à cette messe. Réglez vos préférences habituelles dans Réglages."))+'</p>'+
+      "Changes apply to this Mass unless you explicitly save them as your usual choices.",
+      "Les changements s’appliquent à cette messe, sauf si vous les enregistrez comme choix habituels."))+'</p>'+
+    '<button type="button" class="aoH4Remember" data-h4-remember>'+esc(say(
+      "Remember these choices","Mémoriser ces choix"))+'</button>'+
+    '<p class="aoH4SheetSaveStatus" role="status" data-h4-save-status hidden></p>'+
     '<button type="button" class="aoH4Usual" data-h4-usual-settings>'+esc(say(
-      "Usual Mass preferences","Préférences habituelles pour la messe"))+'</button></div>'+
+      "More Mass preferences in Settings","Autres préférences de messe dans Réglages"))+'</button></div>'+
     '<div class="aoH4SheetBottom"><button type="button" data-h4-sheet-close>'+esc(say("Done","Terminer"))+'</button></div>';
 }
 const STYLE=` 
@@ -59,6 +84,8 @@ const STYLE=`
 .aoH4ChoiceDialog select{min-width:142px;max-width:63%;min-height:44px;background:var(--ao-surface-1,#19242b);
  color:inherit;border:1px solid rgba(190,177,157,.3);border-radius:9px;padding:9px 8px;font:inherit}
 .aoH4ChoiceDialog select:disabled{opacity:.5}
+.aoH4ChoiceDialog .aoH4Remember{display:block;width:100%;min-height:48px;padding:9px 12px;margin:8px 0;border:1px solid var(--ao-liturgical,#c9ad78);border-radius:12px;background:var(--ao-surface-1,#19242b);color:inherit;font:600 14px system-ui,sans-serif}
+.aoH4ChoiceDialog .aoH4SheetSaveStatus{color:var(--ao-text-primary,#f1e9dc);font-size:12px;line-height:1.5}
 .aoH4ChoiceDialog .aoH4DifferentMass,.aoH4ChoiceDialog .aoH4Usual{display:block;width:100%;min-height:44px;
  text-align:left;padding:9px 0;color:var(--ao-liturgical,#c9ad78);background:transparent;border:0;font:inherit}
 .aoH4ChoiceDialog .aoH4SheetError{color:#ecad93}
@@ -92,6 +119,22 @@ export function openH4ChoicesSheet(win=globalThis,{onOtherMass=()=>{},onDone=()=
     if(event.target===dialog){done();return;}
     if(event.target?.closest?.("[data-h4-sheet-close]")){done();return;}
     if(event.target?.closest?.("[data-h4-different-mass]")){closeH4ChoicesSheet(win);onOtherMass?.();return;}
+    if(event.target?.closest?.("[data-h4-remember]")){
+      const result=rememberH4Choices(win);
+      const status=dialog.querySelector("[data-h4-save-status]");
+      if(status){
+        status.hidden=false;
+        status.textContent=!result.ok?(language==="fr"
+          ?"Enregistrement impossible. Les choix de cette messe restent actifs."
+          :"Could not save. This Mass's selections remain active."):
+          !result.persistent?(language==="fr"
+          ?"Choix conservés temporairement ; le stockage permanent du navigateur est indisponible."
+          :"Choices retained temporarily; durable browser storage is unavailable."):
+          (language==="fr"?"Choix habituels enregistrés dans Réglages."
+            :"Usual choices saved in Settings.");
+      }
+      return;
+    }
     if(event.target?.closest?.("[data-h4-usual-settings]")){
       closeH4ChoicesSheet(win);onDone?.();
       win?.AO_SETTINGS_APP_V1?.open?.("/settings/mass");return;
@@ -105,6 +148,8 @@ export function openH4ChoicesSheet(win=globalThis,{onOtherMass=()=>{},onDone=()=
     const error=dialog.querySelector("[data-h4-choice-error]");
     if(!ok){if(error){error.hidden=false;error.textContent=language==="fr"?"Ce choix n’a pas été accepté par la préparation de la messe.":"The Mass preflight did not accept this choice.";}return;}
     if(error)error.hidden=true;
+    const saved=dialog.querySelector("[data-h4-save-status]");
+    if(saved)saved.hidden=true;
   });
   if(typeof dialog.showModal==="function")dialog.showModal();
   else dialog.setAttribute("open","");
