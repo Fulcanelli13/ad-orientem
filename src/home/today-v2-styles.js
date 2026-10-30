@@ -1,3 +1,4 @@
+import { TODAY_H3_SECTIONS_CSS } from "./today-h3-sections-styles.js";
 /* Home Today v2 styles as source-owned string: works in browser and Node ESM tests. */
 export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred frontispiece reference. Canonical Home actions remain unchanged. */
 .homeScreen.aoTodayV2{background:var(--bg,#080c12);color:var(--text,#eee9df);padding-bottom:max(112px,calc(78px + env(safe-area-inset-bottom,0px)))}
@@ -342,4 +343,4 @@ html[data-ao-motion-v1="reduced"] .aoTodayV2,html[data-ao-motion-v1="reduced"] .
 .aoTodayV2CalendarGlance .aoTodayV2EventArrow{color:var(--liturgical)}
 .aoTodayV2GlanceNote{font:400 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted)}
 
-`;
+` + TODAY_H3_SECTIONS_CSS;
