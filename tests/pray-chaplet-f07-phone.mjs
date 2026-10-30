@@ -46,9 +46,15 @@ try{
    assert.equal(await crown.getAttribute("data-position"),"4");
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
    assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/);
-   await page.locator(base+'[data-ao-mercy-step="5"]').focus();
-   assert.equal(await crown.getAttribute("data-position"),"5",
-    "F07 crown must follow the existing paragraph focus cursor without a second state engine");
+   await page.locator(base+".aoDevoCardScroll").evaluate(el=>{el.scrollTop+=200});
+   await page.waitForFunction(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const cursor=Number(root?.querySelector("[data-ao-f07-crown]")?.dataset.position);
+    return Number.isInteger(cursor)&&cursor>4;
+   },null,{timeout:8000});
+   const actual=await page.locator(base+".aoMercyLine.aoMercyPrayer").getAttribute("data-ao-mercy-step");
+   assert.equal(await crown.getAttribute("data-position"),actual,
+    "Crown must follow the canonical paragraph scroll cursor without a second state engine");
    await page.screenshot({path:resolve(output,"mercy-crown-decade-"+width+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
