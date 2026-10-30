@@ -88,8 +88,7 @@ const churchGlyph='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" st
 // An institution's emblem identifies its Mass ministry, never church ownership.
 export function renderDirectoryIdentityFallback(item,language="en",variant="card"){
   const group=String(item?.community_id??"").toUpperCase();
-  const emblem=["FSSP","ICKSP","SSPX","IBP"].includes(group)
-    ?massInstitutionEmblem(group):null;
+  const emblem=massInstitutionEmblem(group);
   const label=emblem?.label||(group==="DIOCESAN"
     ?L(language,"Diocesan church","Église diocésaine")
     :L(language,"Church / chapel","Église / chapelle"));
