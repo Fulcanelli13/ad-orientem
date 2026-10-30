@@ -213,6 +213,10 @@ try{
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
      await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-11-02",
        null,{timeout:15000});
+     // A NEW date may need the asynchronous source resolver. Wait for
+     // the selected Day view; only a *same-date* return below is synchronous.
+     await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")
+       ?.dataset.aoCalendarView==="day",null,{timeout:15000});
      // The date grid itself owns Month -> Day. Do not click Home's "Today"
      // action here: it deliberately returns to today's context and can reset
      // the specifically selected All Souls date while a resolver is pending.
@@ -226,7 +230,7 @@ try{
        ["2026-11-02","2026-11-02"],
        "Calendar date-grid selection must retain the exact selected and resolved day");
      assert.equal(afterDatePick.view,"day",
-       "Picking 2 November should enter its canonical Day without pressing Today");
+       "Source-resolved 2 November should enter Day without pressing Today");
      const dayCustom=cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-001"]');
      await dayCustom.waitFor({state:"visible",timeout:10000}).catch(async err=>{
        console.log("CALENDAR_CUSTOM_DAY_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
