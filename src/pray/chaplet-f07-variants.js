@@ -495,6 +495,81 @@ const STYLES=`
  #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsRail{margin:3px 0}
  #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodRail{margin-bottom:2px}
 }
+
+/* Prayer-book presentation contract: the source text, never its controls,
+   is the dominant surface. No panel chrome or oversized rounded pills.
+   Applies only to the opt-in F07 visual variants, not baseline readers. */
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsPrayer,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodCard,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayer,
+#aoPray435930 .aoF07VariantBand{
+ border:0!important;border-radius:0!important;
+ background:transparent!important;box-shadow:none!important;
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsPrayer,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodCard,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayer{
+ padding:9px 4px 12px!important;
+}
+#aoPray435930 .aoF07VariantBand{
+ padding:5px 0!important;margin:4px 0 7px!important;
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsActions,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodActions,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownActions{
+ border:0!important;box-shadow:none!important;background:var(--surface-1,#101719);
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsActions>button,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodActions>button,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownActions>button{
+ min-height:44px;border:0!important;border-radius:0!important;
+ background:transparent!important;box-shadow:none!important;
+ color:var(--text,#eee2d4)!important;font-weight:400;
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsActions>button:not(:disabled):last-child,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodActions>button:not(:disabled):last-child,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownActions>button:not(:disabled):last-child{
+ color:var(--liturgical,#d4bb93)!important;font-weight:550;
+}
+#aoPray435930 .aoF07WoundChips button,
+#aoPray435930 .aoF07ReaderLanguage>summary,
+#aoPray435930 .aoF07BloodLanguage>summary,
+#aoPray435930 .aoF07BloodJump>summary,
+#aoPray435930 .aoF07LittleCrownLanguage>summary{
+ border:0!important;border-radius:0!important;
+ background:transparent!important;box-shadow:none!important;
+}
+#aoPray435930 .aoF07WoundChips button[aria-current="step"]{
+ border:0!important;border-bottom:1px solid var(--liturgical,#cbb28b)!important;
+ background:transparent!important;
+}
+#aoPray435930 .aoF07BloodJump>nav,
+#aoPray435930 .aoF07LanguageOptions,
+#aoPray435930 .aoF07BloodLanguageOptions,
+#aoPray435930 .aoF07LittleCrownLanguageOptions{
+ border:0!important;border-radius:3px!important;
+ box-shadow:none!important;
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsSource,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodProvenance,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownSource{
+ order:99!important;border:0!important;border-top:0!important;
+ margin:14px 0 4px!important;padding:0!important;
+ font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsSource>summary,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodProvenance>summary,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownSource>summary{
+ min-height:34px!important;font-size:11px!important;
+ font-weight:400!important;color:var(--muted,#aaa394)!important;
+ opacity:.65;letter-spacing:0!important;text-transform:none!important;
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsSource a,
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodProvenance a,
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownSource a{
+ font-size:11px!important;color:var(--muted,#aaa394)!important;
+ text-decoration:underline;text-underline-offset:3px;
+}
 `;
 export function installF07VariantStyles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-f07-variant-style"))return;
