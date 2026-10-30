@@ -146,12 +146,24 @@ try{
 
   const expectedRibbonAssets={
     home:"ao-nav-home",
-    mass:"ao-brand-emblem",
     pray:"ao-nav-pray",
     learn:"ao-nav-learn",
     // Calendar is nested under Today; Settings remains a contextual overlay.
     find:"ao-ui-search",
   };
+  const ribbonGeometry=await page.evaluate(()=>{
+    const nav=document.querySelector("#ao-global-ribbon .aoGlobalRibbonInner");
+    const buttons=[...document.querySelectorAll("#ao-global-ribbon [data-ao-app-surface]")];
+    return {tabs:buttons.map(b=>b.dataset.aoAppSurface),
+      columns:getComputedStyle(nav).gridTemplateColumns.split(" ").filter(Boolean).length,
+      massTab:document.querySelectorAll("#ao-global-ribbon [data-ao-app-surface='mass']").length,
+      massDonorVisible:[...document.querySelectorAll("#ao-global-ribbon [data-ao-app-secondary='mass']")]
+        .some(b=>getComputedStyle(b).display!=="none")};
+  });
+  assert.deepEqual(ribbonGeometry.tabs,["home","pray","learn","find"],"Visible ribbon must have four destinations");
+  assert.equal(ribbonGeometry.columns,4,"Ribbon still reserves space for retired Mass");
+  assert.equal(ribbonGeometry.massTab,0,"Duplicate Mass ribbon destination is still interactive");
+  assert.equal(ribbonGeometry.massDonorVisible,false,"Historical Mass slot is still visible");
   const ribbonAssets=await page.evaluate(expected=>Object.fromEntries(
     Object.entries(expected).map(([surface,assetId])=>{
       const button=document.querySelector(`#ao-global-ribbon [data-ao-app-surface="${surface}"]`);
