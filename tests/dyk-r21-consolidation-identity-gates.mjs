@@ -109,6 +109,40 @@ for(const p of proposals.proposals){
  for(const v of Object.values(p.signoff))assert.equal(v,false,p.id);
  assert.equal(p.release,"UNPUBLISHED_EDITORIAL_OPTION");
 }
+const reviewPrevious=read("dyk-r20-168-bilingual-review-cards.v1.json");
+const reviewCurrent=read("dyk-r21-168-integrated-bilingual-review.v1.json");
+assert.equal(reviewCurrent.cards.length,168);
+assert.equal(reviewCurrent.counts.updated_composite_copy,9);
+assert.equal(reviewCurrent.counts.optional_reserve_rewrites_not_promoted,3);
+assert.equal(reviewCurrent.counts.new_source_records,0);
+assert.equal(reviewCurrent.counts.approved,0);
+assert.equal(reviewCurrent.counts.published,0);
+const previousReviewById=new Map(reviewPrevious.cards.map(x=>[x.id,x]));
+const integratedById=new Map(reviewCurrent.cards.map(x=>[x.id,x]));
+assert.deepEqual(new Set(previousReviewById.keys()),new Set(integratedById.keys()));
+let revised=0;
+for(const [id,card] of integratedById){
+ const older=previousReviewById.get(id);
+ assert.equal(card.gates.publication_authorized,false);
+ assert.equal(card.gates.claim_editorial_approved,false);
+ assert.equal(card.gates.french_editorial_approved,false);
+ if(card.r21_provenance){
+  revised++;
+  const proposal=proposals.proposals.find(x=>x.id===card.r21_provenance.source_proposal_id);
+  assert.ok(proposal,id);
+  assert.equal(proposal.updates_existing_candidate_id,id);
+  assert.deepEqual(card.statement,proposal.statement);
+  assert.deepEqual(card.prior_statement_for_editorial_comparison,older.statement);
+  assert.deepEqual(card.r21_provenance.original_fact_ids,proposal.originating_fact_ids);
+  assert.equal(card.r21_provenance.new_fact_generated,false);
+ }else assert.deepEqual(card,older);
+}
+assert.equal(revised,9);
+assert.equal(reviewCurrent.optional_reserve_proposals.length,3);
+for(const item of reviewCurrent.optional_reserve_proposals){
+ assert.ok(!integratedById.has(item.lead));
+ assert.equal(item.status,"OPTIONAL_RESERVE_ONLY_NOT_SHORTLISTED");
+}
 console.log(JSON.stringify({status:"PASS",sourceRecords:1001,
  reviewedFlaggedPairs:74,absorbDetails:16,
  restoredIncorrectMerges:33,regionalComparisons:16,
