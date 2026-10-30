@@ -12,6 +12,7 @@ const read=name=>JSON.parse(readFileSync(directory+name,'utf8'));
 const manifest=read('runtime-card-parity-20261030.v1.json');
 const approved=read('missing-art-approved-only-20261030.v1.json');
 const canonicalBridge=read('balanced-reuse-20261030-live-prayer-48-bridge.v1.json');
+const holyNameSourceQa=read('holy-name-litany-shared-art-source-qa.v1.json');
 const overlay=read('cross-prayer-inheritance-20261030.v1.json');
 const ledger=read('balanced-reuse-20261030-assignments.v2.json');
 const slots=new Map(ledger.slots.map(s=>[s.slot_id,s]));
@@ -221,6 +222,17 @@ for(const row of manifest.rosary_mystery_context){
   const actual=presentationResolve('rosary',0,{set,mystery});
   assert.equal(actual.slot,row.editorial_slot,'Rosary scene reuse mismatch '+context);
   assert.equal(actual.publicationReady,false);
+}
+assert.equal(holyNameSourceQa.editorial_slot,'COV-devotion_consecration_christ_king');
+assert.equal(holyNameSourceQa.no_new_approval,true);
+assert.equal(holyNameSourceQa.gates.publication_ready,false);
+assert.equal(holyNameSourceQa.gates.actual_reader_image_display_verified,false);
+assert.ok(holyNameSourceQa.reviewed_user_approved_existing_art.length>=2);
+for(const artwork of holyNameSourceQa.reviewed_user_approved_existing_art){
+  const works=slots.get(holyNameSourceQa.editorial_slot)?.works||[];
+  assert.ok(works.some(w=>w.id===artwork.artwork_id&&w.eligible&&w.editorial==='USER_APPROVED'),
+    'The Holy Name alias must not silently substitute unapproved artwork: '+artwork.artwork_id);
+  assert.equal(artwork.publication_status.startsWith('BLOCKED'),true);
 }
 const holyName=traditionalResolve('pray.holy_name_litany');
 assert.equal(holyName.slot,'COV-devotion_consecration_christ_king');
