@@ -1,0 +1,55 @@
+{
+  "schema": "AO_SACRED_ART_W68_USER_RATING_HANDOFF_TO_W64_RESEARCH_V1",
+  "asOf": "2026-10-15",
+  "authorityBranch": "platform/885-sacred-art-candidates",
+  "sourceOfTruth": {
+    "newNumericRatings": "data/calendar/sacred-art-w68-w67-r1-explicit-user-scores-20261015.v1.json",
+    "combinedGlobalRejectedIDs": "data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json",
+    "humanScore5Existing": "data/research/sacred-visual-w64-explicit-user-5star-physical-record-authority-20261015.v1.json"
+  },
+  "scope": "W67_R1_USER_SUBMISSION_RECONCILED_WITH_PRIOR_W49_W46_W64_NO_DUPLICATE_USER_REVIEW",
+  "counts": {
+    "reviewedNumeric": 70,
+    "five": 0,
+    "four": 28,
+    "three": 34,
+    "zeroToTwoNewBanned": 8,
+    "effectiveGlobalBannedIDs": 103,
+    "sourceFlags": 8,
+    "suitabilityProvided": 2,
+    "suitabilityNotProvided": 68,
+    "previousFiveStarIDsRetained": 109,
+    "reviewedSubjects": 33,
+    "reviewedSubjectsWithAtLeastOneW49ExistingFivePlacement": 31
+  },
+  "existingW49SubjectsWithNoFiveAmongThisBatch": [
+    {
+      "subjectId": "SNT-DC-06",
+      "name": "Saint Bonaventure",
+      "newW67Scores": [
+        3,
+        3
+      ],
+      "existingW49PendingFourCount": 1
+    },
+    {
+      "subjectId": "SNT-DC-09",
+      "name": "Saint Catherine of Siena",
+      "newW67Scores": [
+        3,
+        3
+      ],
+      "existingW49PendingFourCount": 3
+    }
+  ],
+  "instructions": [
+    "W49 pre-existing 5/5 aesthetic selections are unaffected; do not count W68 new scores as more five-star originals.",
+    "Do not use gallery completedCount=2 as numeric-score count; all 70 scored.",
+    "Next reviewer galleries must exclude all 103 rejected record IDs plus verified same physical originals and excluded artists.",
+    "All new 0-2 ratings are permanent original rejection; user fit remains optional and null must not become a default judgment.",
+    "Previously scored 4 options for Bonaventure and Catherine are still pending, not new numeric five; reconcile before unnecessary research.",
+    "Eight sourceIssue flags are technical leads requiring checks, not proof of wrong image or user request for permission.",
+    "No live app writes, no contacting museums or rights holders, no paid image licenses.",
+    "W65 two saint rights holds remain independent and unchanged."
+  ]
+}

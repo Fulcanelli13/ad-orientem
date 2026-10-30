@@ -1,0 +1,316 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B02_V1",
+  "batchId": "AO-ART-2026-10-21-B02",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "continues": "data/research/sacred-art-b01-2026-10-21-source-identity-and-rights-batch.v1.json",
+  "scope": "supplemental source/identity research; do not modify canonical catalogue, rating or editorial decision records, production assets, or selections",
+  "rules": {
+    "noPradoOrMirrors": true,
+    "blockedArtists": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "scores0to2": "permanent rejection",
+    "score3": "research-only",
+    "score4": "pending editorial decision",
+    "score5": "existing aesthetic approval only",
+    "unrated": "unknown; never permission to supersede",
+    "noPublication": true,
+    "noPurchaseOrPermissionsContact": true
+  },
+  "b01AcquisitionAttempt": {
+    "requestedFiles": 6,
+    "acquiredFiles": 0,
+    "sha256Recorded": 0,
+    "networkPermission": "granted for turn",
+    "shellAttempt": "exec_command download was rejected: approval required by policy; sandbox_approval is disabled for this session.",
+    "nodeAttempt": "fetch() for six public source URLs returned TypeError: fetch failed.",
+    "status": "deferred; no files are claimed downloaded or acquired. Web source pages remain discoverable; continue metadata research."
+  },
+  "reconciliation": {
+    "catalogue": 451,
+    "pr887Snapshot": 281,
+    "pr887IdentityMaster": {
+      "identities": 222,
+      "archivedOriginals": 8,
+      "pending": 214
+    },
+    "approvedIDs": 107,
+    "lockedIDs": 90,
+    "permanentRejections": 68,
+    "historicW64FivePhysicalIDs": 109,
+    "classI": {
+      "dateAssociations": "53/53",
+      "strict": "18/53"
+    },
+    "majorClassII": {
+      "strict": "13/24"
+    },
+    "otherClassII": {
+      "strict": "6/52"
+    },
+    "productionCertifiedMasters": 0
+  },
+  "batchTotals": {
+    "targets": 8,
+    "physicalPaintingIdentitiesVerifiedOrReconfirmed": 8,
+    "newIdentityConfirmationsForPreviouslyUnverifiedTargets": 5,
+    "priorB01IdentitiesWithNewSourceRightsEvidence": 3,
+    "physicalWorkCandidateLeadsDiscovered": 5,
+    "newCanonicalCatalogueEntries": 0,
+    "newImageSourceRoutes": 8,
+    "cumulativeVerifiedPhysicalIdentities": 14,
+    "cumulativeSourceRoutes": 14,
+    "cumulativeSpecificRightsEvidenceFindings": 14,
+    "imageSpecificReuseEvidenceFound": 8,
+    "rawFilesAcquired": 0,
+    "ratingsChanged": 0,
+    "editorialApprovalsAdded": 0,
+    "productionMastersCertified": 0
+  },
+  "records": [
+    {
+      "target": "B02-01",
+      "group": "Approved Class I — Feb 22 I Sunday of Lent",
+      "artworkId": null,
+      "painting": {
+        "artist": "Ivan Kramskoi",
+        "title": "Christ in the Wilderness (Christ in the Desert)",
+        "date": "1872",
+        "holdingInstitution": "State Tretyakov Gallery",
+        "objectId": "651",
+        "officialObjectUrl": "https://my.tretyakov.ru/app/masterpiece/8448"
+      },
+      "subjectRelation": "Related to Matthew 4:1–11 as Christ's solitude and inner struggle, but no tempter is visibly represented; do not describe it as a literal Satan confrontation.",
+      "imageSource": {
+        "url": "https://commons.wikimedia.org/wiki/File:Christ_in_the_Wilderness_-_Ivan_Kramskoy_-_Google_Cultural_Institute.jpg",
+        "pixels": "4000 × 3507",
+        "sourceRoute": "Google Cultural Institute reproduction hosted on Wikimedia Commons"
+      },
+      "photoRights": {
+        "status": "image-specific Public Domain Mark / PD-Art evidence located",
+        "terms": "Commons file records a faithful reproduction of a public-domain 2D painting and marks it free of known copyright/neighbouring-right restrictions; Commons cautions reuse may differ by jurisdiction.",
+        "commercialReuse": "provisional, jurisdiction review pending",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Christ_in_the_Wilderness_-_Ivan_Kramskoy_-_Google_Cultural_Institute.jpg"
+      },
+      "decision": "existing date-specific selection preserved; no score or date association changed",
+      "next": "download/hash and verify full image/crop when raw media transfer is available"
+    },
+    {
+      "target": "B02-02",
+      "group": "Approved Class I Mar 1 + major Class II Aug 6",
+      "artworkId": null,
+      "painting": {
+        "artist": "Raphael",
+        "title": "The Transfiguration",
+        "date": "1516–1520",
+        "holdingInstitution": "Vatican Museums, Pinacoteca",
+        "officialObjectUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html"
+      },
+      "subjectRelation": "Exact Transfiguration scene; whole panel also includes healing of the possessed boy in the lower register.",
+      "imageSource": {
+        "url": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl,_La_Transfiguration,_1518%E2%80%931520,_huile_sur_bois,_405_%C3%97_278_cm,_Mus%C3%A9es_du_Vatican,_Pinacoth%C3%A8que,_inv._4.jpg",
+        "pixels": "6349 × 9381",
+        "sourceRoute": "Photograph of the Vatican Pinacoteca painting, inv. 4, hosted on Wikimedia Commons"
+      },
+      "photoRights": {
+        "status": "image-specific Public Domain Mark / PD-Art evidence located",
+        "terms": "Commons file explicitly describes a photographic reproduction of the exact painting and marks it public domain in the United States; it warns reuse may be restricted elsewhere.",
+        "commercialReuse": "provisional, jurisdiction review pending",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl,_La_Transfiguration,_1518%E2%80%931520,_huile_sur_bois,_405_%C3%97_278_cm,_Mus%C3%A9es_du_Vatican,_Pinacoth%C3%A8que,_inv._4.jpg"
+      },
+      "decision": "March 1 and August 6 associations preserved; Vatican photo route remains unavailable under free-only terms; Commons route is a separate image-rights lead, not a Vatican licence",
+      "next": "verify photographer/source and global-use jurisdiction; then acquire/hash and crop-test"
+    },
+    {
+      "target": "B02-03",
+      "group": "Approved Class I — Mar 15 IV Sunday of Lent",
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "painting": {
+        "artist": "Giovanni Lanfranco",
+        "title": "The Miracle of the Loaves and Fishes",
+        "date": "1624–1625",
+        "holdingInstitution": "National Gallery of Ireland",
+        "objectId": "NGI.72",
+        "officialObjectUrl": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes"
+      },
+      "subjectRelation": "Exact Gospel miracle.",
+      "imageSource": {
+        "url": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+        "pixels": "1285 × 683",
+        "sourceRoute": "WGA image depicting NGI.72; prior wrong Tintoretto image remains quarantined"
+      },
+      "photoRights": {
+        "status": "image-specific Public Domain Mark / PD-Art evidence located; exact NGI Creative Commons icon still not verified",
+        "terms": "Commons page identifies the artist, title and NGI.72 accession and declares the faithful reproduction PD-Art/PDM; Commons warns reuse may vary outside the United States. Its structured date says 1620–1623, conflicting with the NGI official 1624–1625 date; exact photographic identity awaits pixel comparison.",
+        "commercialReuse": "provisional, jurisdiction review pending; source resolution is low",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+        "officialAlternativeRightsPolicy": "https://www.nationalgallery.ie/explore-and-learn/creative-commons-download-artwork"
+      },
+      "decision": "existing locked association and ID preserved; no new Class I approval",
+      "next": "prefer exact-image NGI CC BY 4.0 if its orange CC icon is found; otherwise assess low-res WGA route after jurisdiction and crop review"
+    },
+    {
+      "target": "B02-04",
+      "group": "Major Class II — Jan 13 Baptism of the Lord",
+      "artworkId": "cma-127746",
+      "reviewState": "PREVIOUSLY_RATED_ACCEPTABLE / EDITORIAL_HOLD in 451 intake; not a date approval",
+      "painting": {
+        "artist": "Workshop of Jacopo Tintoretto",
+        "title": "Baptism of Christ",
+        "date": "1580s",
+        "holdingInstitution": "Cleveland Museum of Art",
+        "objectId": "1950.400",
+        "officialObjectUrl": "https://www.clevelandart.org/art/1950.400"
+      },
+      "subjectRelation": "Exact baptism of Christ by John in the Jordan.",
+      "imageSource": {
+        "url": "https://clevelandart.org/art/1950.400",
+        "pixels": null
+      },
+      "photoRights": {
+        "status": "CMA object page states copy, modify and distribute without permission; museum labels work CC0/Open Access",
+        "commercialReuse": "explicit object-level/open-image terms found; file not acquired",
+        "evidenceUrl": "https://clevelandart.org/art/1950.400"
+      },
+      "decision": "existing research candidate only; no rating, primary date placement or approval created"
+    },
+    {
+      "target": "B02-05",
+      "group": "Major Class II — Jan 13 Baptism of the Lord",
+      "artworkId": "met-437457",
+      "reviewState": "PREVIOUSLY_RATED_ACCEPTABLE / EDITORIAL_HOLD in 451 intake; not a date approval",
+      "painting": {
+        "artist": "Sebastiano Ricci",
+        "title": "The Baptism of Christ",
+        "date": "ca. 1713–1714",
+        "holdingInstitution": "The Metropolitan Museum of Art",
+        "objectId": "1981.186",
+        "officialObjectUrl": "https://www.metmuseum.org/art/collection/search/437457"
+      },
+      "subjectRelation": "Exact Gospel baptism. It is an oil sketch for a now-lost chapel decoration, not a monumental altarpiece.",
+      "imageSource": {
+        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437457/796664/main-image",
+        "pixels": null
+      },
+      "photoRights": {
+        "status": "Met object page labels exact image Public Domain; Met states eligible Open Access images may be used commercially and non-commercially without permission or fee",
+        "commercialReuse": "explicit CC0/Open Access terms",
+        "evidenceUrl": "https://www.metmuseum.org/art/collection/search/437457"
+      },
+      "decision": "existing research candidate only; no rating, primary date placement or approval created"
+    },
+    {
+      "target": "B02-06",
+      "group": "Major Class II — Oct 7 Our Lady of the Rosary",
+      "artworkId": "met-437216",
+      "reviewState": "PREVIOUSLY_RATED_ACCEPTABLE / EDITORIAL_HOLD in 451 intake; not a date approval",
+      "painting": {
+        "artist": "Netherlandish (Brussels) Painter",
+        "title": "The Fifteen Mysteries and the Virgin of the Rosary",
+        "date": "ca. 1515–1520",
+        "holdingInstitution": "The Metropolitan Museum of Art",
+        "objectId": "1987.290.3a–p",
+        "officialObjectUrl": "https://www.metmuseum.org/art/collection/search/437216"
+      },
+      "subjectRelation": "Exact Rosary devotional iconography: the fifteen mysteries appear in separate scenes and the Virgin and Child below are enclosed by a rosary-like garland.",
+      "imageSource": {
+        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437216/796495/main-image",
+        "pixels": null
+      },
+      "photoRights": {
+        "status": "Met object page labels image Public Domain and provides eligible Open Access image",
+        "commercialReuse": "explicit CC0/Open Access terms",
+        "evidenceUrl": "https://www.metmuseum.org/art/collection/search/437216"
+      },
+      "decision": "existing research candidate only; do not infer approval from exact title or availability"
+    },
+    {
+      "target": "B02-07",
+      "group": "Major Class II — Dec 28 Holy Innocents",
+      "artworkId": "met-438462",
+      "reviewState": "score 3; research-only, not an approval",
+      "painting": {
+        "artist": "François Joseph Navez",
+        "title": "The Massacre of the Innocents",
+        "date": "1824",
+        "holdingInstitution": "The Metropolitan Museum of Art",
+        "objectId": "2023.733",
+        "officialObjectUrl": "https://www.metmuseum.org/art/collection/search/438462"
+      },
+      "subjectRelation": "Exact Matthew 2:16–18 subject. Navez depicts the violence in the background and foregrounds the victims/families.",
+      "imageSource": {
+        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/438462/2216963/main-image",
+        "pixels": null
+      },
+      "photoRights": {
+        "status": "Met object page labels image Public Domain and provides eligible Open Access image",
+        "commercialReuse": "explicit CC0/Open Access terms",
+        "evidenceUrl": "https://www.metmuseum.org/art/collection/search/438462"
+      },
+      "decision": "score 3 remains research-only and unchanged; no date placement or approval"
+    },
+    {
+      "target": "B02-08",
+      "group": "Major Class II — Aug 10 St Lawrence; legacy approved identity join",
+      "artworkId": "nga-106362",
+      "relatedCatalogueID": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+      "ratingAuthority": "legacy W64 five record only; not new date approval",
+      "painting": {
+        "artist": "Jean Baptiste de Champaigne",
+        "title": "The Martyrdom of Saint Lawrence",
+        "date": "ca. 1660",
+        "holdingInstitution": "National Gallery of Art, Washington",
+        "objectId": "1998.68.1",
+        "officialObjectUrl": "https://www.nga.gov/artworks/106362-martyrdom-saint-lawrence"
+      },
+      "subjectRelation": "Exact martyrdom of St Lawrence; exact titled devotional/feast iconography.",
+      "imageSource": {
+        "url": "https://www.nga.gov/artworks/106362-martyrdom-saint-lawrence",
+        "pixels": null
+      },
+      "photoRights": {
+        "status": "NGA object page states this object's media is free and in the public domain; NGA Open Access allows free download/use of available public-domain object media",
+        "commercialReuse": "explicit object-specific Open Access evidence found",
+        "evidenceUrl": "https://www.nga.gov/artworks/106362-martyrdom-saint-lawrence",
+        "policyUrl": "https://www.nga.gov/artworks/free-images-and-open-access"
+      },
+      "identityJoin": "Official NGA object record confirms artist/title/date/accession for nga-106362. The related ART-... ID has stale/unsupported NGA URL (103596); no ID merge permitted until preferred-image pixels prove same physical painting.",
+      "decision": "historical five preserved; Class II coverage unchanged; join remains provisional pending image-key comparison"
+    }
+  ],
+  "coverageAfter": {
+    "classIDateAssociations": "53/53 unchanged",
+    "classIStrictPlacement": "18/53 unchanged",
+    "majorClassIIStrict": "13/24 unchanged",
+    "otherClassIIStrict": "6/52 unchanged",
+    "majorClassIIRowsWithNewExactSourceLeads": [
+      "2026-01-13 Baptism of the Lord",
+      "2026-08-06 Transfiguration (source route only; existing March painting)",
+      "2026-08-10 St Lawrence (physical-object join provisional)",
+      "2026-10-07 Our Lady of the Rosary",
+      "2026-12-28 Holy Innocents (score-3 source lead only)"
+    ],
+    "productionCertifiedMasters": 0
+  },
+  "queues": {
+    "approvedClassISourceAndRightsRoutes": [
+      "2026-02-22 Kramskoi; Commons photo route PDM/PD-Art; jurisdiction review pending",
+      "2026-03-01 Raphael; Commons photograph PDM/PD-Art; jurisdiction review pending",
+      "2026-03-15 Lanfranco; Commons/WGA PDM/PD-Art, low resolution; NGI CC image still preferred",
+      "2026-03-29 Van Dyck; GAC record says Public Domain",
+      "2026-05-01 La Tour; Commons PD-Art/PDM",
+      "2026-11-01 Saraceni; Met Public Domain / eligible CC0"
+    ],
+    "needsRawFileAcquisitionAndQA": 9,
+    "rightsOrIdentityStillBlocked": [
+      "Guardian Angel exact non-Prado original painting identity",
+      "Cecilia/Le Sueur/Zurbarán file-to-institution pixel confirmation",
+      "St Lawrence artwork-ID join pending preferred image pixel check"
+    ],
+    "allCandidatesRemainResearchOnly": true
+  },
+  "nextCheckpoint": "AO-ART-2026-10-21-B03 — continue the 11-row major Class II triage after saving B02; begin with Nativity of Mary and Exaltation of the Cross, then Lateran dedication and Simon & Jude. Keep all discovered artworks as research leads only; no decision changes."
+}

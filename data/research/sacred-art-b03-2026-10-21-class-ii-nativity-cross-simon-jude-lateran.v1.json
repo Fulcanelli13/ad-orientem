@@ -1,0 +1,264 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B03_V1",
+  "batchId": "AO-ART-2026-10-21-B03",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive identity/source/rights research only; no canonical IDs assigned, ratings or decisions changed, assets published, or production masters certified.",
+  "reconciliation": {
+    "candidateCatalogue": {
+      "path": "data/calendar/sacred-art-candidates.v1.json",
+      "branch": "platform/885-sacred-art-candidates",
+      "entries": 281
+    },
+    "sourceIdentity": {
+      "pointer": "data/calendar/sacred-art-source-identity-master-CURRENT-20261013.v1.json",
+      "queue": "data/calendar/sacred-art-source-identity-master-222-queue-20261013.v8.json",
+      "branch": "platform/885-sacred-art-candidates",
+      "identities": 222,
+      "mastersAcquired": 8,
+      "mastersPending": 214
+    },
+    "bulkIntake": {
+      "path": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+      "works": 451,
+      "approved": 107,
+      "rejected": 68,
+      "editorialHold": 199
+    },
+    "frozenDecisions": {
+      "path": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+      "approved": 107,
+      "locked": 90,
+      "rejected": 68,
+      "historicalFiveDistinct": 109
+    },
+    "historicFiveAuthority": "data/research/sacred-visual-w64-explicit-user-5star-physical-record-authority-20261015.v1.json",
+    "observedCalendar": "data/research/sacred-visual-w64-2026-production-observed-day-id-and-commemorations-20261015.v1.json",
+    "dedupe": "Exact artist/title and object comparison against 451 intake, 281-entry registry, 222-lead source queue and frozen ID sets found no same physical paintings for these works. Sebastiano Ricci's met-437457 is a different work. No canonical catalogue IDs assigned; unreconciled historic ratings remain unknown, not permission to supersede."
+  },
+  "policy": {
+    "preserveDecisions": true,
+    "noPradoOrMirrors": true,
+    "blockedArtists": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "scores": "0–2 permanent rejection; 3 research only; 4 awaits editorial decision; 5 existing aesthetic approval only",
+    "noPublication": true,
+    "noPaidLicencesOrPermissionRequests": true,
+    "noProductionMutation": true,
+    "noMasterCertification": true
+  },
+  "records": [
+    {
+      "recordId": "B03-01",
+      "calendarSubject": "Nativity of the Blessed Virgin Mary, 8 September 1962 (Class II)",
+      "principalId": "sancti:09-08:2:w",
+      "existingArtworkId": null,
+      "identityStatus": "IDENTITY_VERIFIED_NEW_RESEARCH_LEAD",
+      "painting": {
+        "artist": "Andrea di Bartolo",
+        "title": "The Nativity of the Virgin",
+        "date": "c. 1400/1405",
+        "institution": "National Gallery of Art, Washington",
+        "accession": "1939.1.42",
+        "medium": "tempera on poplar panel",
+        "dimensions": "painted surface 44.2 × 32.5 cm",
+        "objectUrl": "https://www.nga.gov/artworks/183-nativity-virgin"
+      },
+      "relation": "Exact subject; NGA identifies this as the birth of the Virgin, with the infant Mary and her mother Anna.",
+      "image": {
+        "url": "https://api.nga.gov/iiif/789d7bcb-9bb2-4fdc-b049-1c9e8ebcce51/full/full/0/default.jpg",
+        "route": "NGA object-page full/full IIIF download",
+        "pixels": null,
+        "pixelsStatus": "Direct download exposed; info.json pixel dimensions could not be read in this session.",
+        "acquired": false
+      },
+      "rights": {
+        "status": "EXPLICIT OBJECT-SPECIFIC OPEN ACCESS",
+        "objectEvidence": "https://www.nga.gov/artworks/183-nativity-virgin",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "terms": "NGA object page says media is free and public domain; NGA policy says eligible image downloads are free for commercial and non-commercial use under CC0."
+      },
+      "mobile": "Vertical panel, central domestic grouping. Preserve full composition; crop QA awaits the original file.",
+      "decision": "Research lead only; no artwork ID, score, date placement or approval added."
+    },
+    {
+      "recordId": "B03-02",
+      "calendarSubject": "Exaltation of the Holy Cross, 14 September 1962 (Class II)",
+      "principalId": "sancti:09-14:2:r",
+      "existingArtworkId": null,
+      "identityStatus": "IDENTITY_VERIFIED_NEW_RESEARCH_LEAD",
+      "painting": {
+        "artist": "Sebastiano Ricci",
+        "title": "The Exaltation of the True Cross",
+        "date": "1733",
+        "institution": "National Gallery of Art, Washington",
+        "accession": "1939.1.72",
+        "medium": "oil on canvas",
+        "dimensions": "84 × 35 cm",
+        "objectUrl": "https://www.nga.gov/artworks/213-exaltation-true-cross"
+      },
+      "relation": "Exact title and Cross-centred scene, with kneeling man, women and angels. Distinct from met-437457, Ricci's different painting The Baptism of Christ.",
+      "image": {
+        "url": "https://api.nga.gov/iiif/07315508-c424-4099-9737-38ed557a01da/full/full/0/default.jpg",
+        "route": "NGA object-page full/full IIIF download",
+        "pixels": null,
+        "pixelsStatus": "Direct download exposed; info.json pixel dimensions could not be read in this session.",
+        "acquired": false
+      },
+      "rights": {
+        "status": "EXPLICIT OBJECT-SPECIFIC OPEN ACCESS",
+        "objectEvidence": "https://www.nga.gov/artworks/213-exaltation-true-cross",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "terms": "NGA object page says media is free and public domain; NGA policy permits commercial and non-commercial use under CC0."
+      },
+      "mobile": "Narrow vertical composition. Full-image integrity is essential; crop QA awaits original file.",
+      "decision": "Research lead only; no artwork ID, score, date placement or approval added."
+    },
+    {
+      "recordId": "B03-03",
+      "calendarSubject": "Exaltation of the Holy Cross, related legend lead",
+      "principalId": "sancti:09-14:2:r",
+      "existingArtworkId": null,
+      "identityStatus": "IDENTITY_VERIFIED_RELATED_SUBJECT",
+      "painting": {
+        "artist": "Adam Elsheimer",
+        "title": "The Frankfurt Altarpiece of the Exaltation of the True Cross: Emperor Heraclius’ Entry into Jerusalem",
+        "date": "1603–1605",
+        "institution": "Städel Museum, Frankfurt",
+        "inventory": "2054",
+        "medium": "oil on copper",
+        "dimensions": "22.7 × 15.3 × 0.07 cm",
+        "objectUrl": "https://sammlung.staedelmuseum.de/en/work/the-frankfurt-altarpiece-of-the-exaltation-of-the-true-cross"
+      },
+      "relation": "Related, not literal feast iconography: Heraclius enters Jerusalem carrying the True Cross. Städel indexes the Legend of the Cross and the Heraclius entry.",
+      "image": {
+        "url": "https://cdn.staedelmuseum.de/images/d6/45/2054/thumb-xl.jpg",
+        "route": "Städel Digital Collection image route; downloadable public-domain image",
+        "pixels": null,
+        "pixelsStatus": "Exact original dimensions not exposed; direct image fetch unavailable.",
+        "acquired": false
+      },
+      "rights": {
+        "status": "EXPLICIT PUBLIC-DOMAIN IMAGE EVIDENCE",
+        "objectEvidence": "https://sammlung.staedelmuseum.de/en/work/the-frankfurt-altarpiece-of-the-exaltation-of-the-true-cross",
+        "policy": "https://sammlung.staedelmuseum.de/en/concept",
+        "terms": "Object page says Picture Copyright: Public Domain. Städel policy says public-domain images are free to download and may be used for any purpose; requests credit 'Städel Museum, Frankfurt am Main'."
+      },
+      "mobile": "Small narrow panel; maintain full narrative context; legibility QA awaits image file.",
+      "decision": "Related-subject alternative only; do not count as strict coverage."
+    },
+    {
+      "recordId": "B03-04",
+      "calendarSubject": "Sts. Simon & Jude, 28 October 1962 (Class II)",
+      "principalId": "sancti:10-28:2:r",
+      "existingArtworkId": null,
+      "identityStatus": "IDENTITY_VERIFIED_NEW_RESEARCH_LEAD",
+      "painting": {
+        "artist": "Stefan Lochner",
+        "title": "Martyrdom of Ss Simon and Judas",
+        "date": "after 1435",
+        "institution": "Städel Museum, Frankfurt",
+        "inventory": "830",
+        "medium": "mixed technique on walnut",
+        "dimensions": "40 × 40.5 × 0.5 cm",
+        "objectUrl": "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas"
+      },
+      "relation": "Exact paired subject. Städel identifies Simon the Zealot and Judas Thaddeus, and records this as part 10 of a twelve-part altarpiece cycle.",
+      "image": {
+        "url": "https://cdn.staedelmuseum.de/images/7a/d4/830/thumb-xl.jpg",
+        "route": "Städel Digital Collection image route; downloadable public-domain image",
+        "pixels": null,
+        "pixelsStatus": "Exact original dimensions not exposed; direct image fetch unavailable.",
+        "acquired": false
+      },
+      "rights": {
+        "status": "EXPLICIT PUBLIC-DOMAIN IMAGE EVIDENCE",
+        "objectEvidence": "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas",
+        "policy": "https://sammlung.staedelmuseum.de/en/concept",
+        "terms": "Object page says Picture Copyright: Public Domain. Städel policy permits any use of public-domain images; requests credit 'Städel Museum, Frankfurt am Main'."
+      },
+      "mobile": "Near-square panel; preserve complete scene; pixel-level mobile QA awaits image file.",
+      "decision": "Research lead only; no artwork ID, score, date placement or approval added."
+    },
+    {
+      "recordId": "B03-05",
+      "calendarSubject": "Dedication of the Archbasilica of Our Holy Savior, 9 November 1962 (Class II)",
+      "principalId": "sancti:11-09:2:w",
+      "existingArtworkId": null,
+      "identityStatus": "NO_EXACT_FEAST_SCENE_FOUND; RELATED_DOCUMENTARY_IMAGE_BLOCKED",
+      "painting": {
+        "artist": "Filippo Gagliardi",
+        "title": "Interno di San Giovanni in Laterano (Interior of St John Lateran)",
+        "date": "1651",
+        "institution": "Basilica dei SS. Silvestro e Martino ai Monti, Rome",
+        "nationalCatalogueId": "1200261369",
+        "medium": "fresco",
+        "objectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200261369"
+      },
+      "relation": "A documentary view of the old basilica interior, not its dedication; not exact feast coverage.",
+      "image": {
+        "url": null,
+        "pixels": null,
+        "acquired": false
+      },
+      "rights": {
+        "status": "IMAGE RIGHTS UNVERIFIED",
+        "evidence": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200261369",
+        "terms": "The national catalogue gives CC BY 4.0 for catalogue metadata only, not the fresco photograph."
+      },
+      "decision": "Keep Lateran dedication gap open; no candidate ID or coverage added."
+    }
+  ],
+  "totals": {
+    "targetRows": 5,
+    "feastPriorityRows": 4,
+    "paintingIdentitiesVerified": 4,
+    "newExactSubjectLeads": 3,
+    "relatedSubjectLeads": 1,
+    "blockedOrInexactTargets": 1,
+    "objectRecordsVerified": 5,
+    "openImageRightsFindings": 4,
+    "sourceRoutesIdentified": 4,
+    "sourceFilesAcquired": 0,
+    "pixelDimensionsVerified": 0,
+    "mobileCropQA": 0,
+    "catalogueEntriesAdded": 0,
+    "canonicalIDsAssigned": 0,
+    "ratingsOrApprovalsChanged": 0,
+    "strictCoverageChanges": 0,
+    "mastersCertified": 0
+  },
+  "coverageAfter": {
+    "classIDates": "53/53 unchanged",
+    "classIStrict": "18/53 unchanged",
+    "majorClassIIStrict": "13/24 unchanged",
+    "otherClassIIStrict": "6/52 unchanged",
+    "2026-09-08": "NGA exact subject/open-access lead; no strict placement",
+    "2026-09-14": "NGA exact source/rights lead plus related Städel panel; no strict placement",
+    "2026-10-28": "Städel exact paired martyrdom lead; no strict placement",
+    "2026-11-09": "Gap remains; only a documentary interior was found"
+  },
+  "queues": {
+    "imageAcquisitionAndQA": [
+      "NGA 1939.1.42: acquire official IIIF image; verify dimensions, hash and crop",
+      "NGA 1939.1.72: acquire official IIIF image; verify dimensions, hash and crop",
+      "Städel 2054: obtain collection download and inspect pixels/crop",
+      "Städel 830: obtain collection download and inspect pixels/crop"
+    ],
+    "rightsBlocked": [
+      "Lateran fresco photograph reuse rights unknown"
+    ],
+    "identityAndCoverage": [
+      "Lateran dedication exact subject unresolved",
+      "Reconcile historical rating IDs outside freeze before any future catalogue insertion"
+    ],
+    "priorWork": [
+      "B01/B02 approved Class I sources remain pending raw-file and crop QA"
+    ]
+  },
+  "limitations": "No image bytes acquired in B03. Earlier remote acquisition was rejected by sandbox approval policy and node fetch failed. Official downloads and rights evidence are recorded for subsequent acquisition/QA.",
+  "nextCheckpoint": "AO-ART-2026-10-21-B04 — resume highest-priority approved Class I source gaps identified in B02 (begin March 29 Van Dyck); continue major Class II triage. All raw source acquisition and image QA from B01–B03 remains queued."
+}
