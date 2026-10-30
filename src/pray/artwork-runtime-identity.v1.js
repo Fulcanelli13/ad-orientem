@@ -70,7 +70,7 @@ export function resolveArtworkRuntimeIdentity(input={}){
    const step=index(input.examenStep,5)??0;
    return result("traditional:examen:"+pad(step+1),step===4?"COV-sacrament_act_of_contrition":"COV-daily.nightly_examen",step===4?"SHARED_ACT_OF_CONTRITION":"CONTEXTUAL_EXAMEN_COVER");
   }
-  if(route==="pray.holy_name_litany")return result("traditional:holy-name-litany","", "NO_BLUEPRINT_ARTWORK_SLOT");
+  if(route==="pray.holy_name_litany")return result("traditional:holy-name-litany","COV-devotion_consecration_christ_king","APPROVED_CHRIST_PORTRAIT_CONTEXTUAL_REUSE_NOT_EXACT_HOLY_NAME_DEPICTION",{sourceSubject:"Salvator Mundi",approvedPool:"COV-devotion_consecration_christ_king",visualPublicationBlocked:true});
   const map={
    "pray.sacred_hymns":"COV-prayer.hymns",
    "pray.meal_prayers":"COV-foundations_grace_before_meals",
