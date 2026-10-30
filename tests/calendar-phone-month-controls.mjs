@@ -213,12 +213,24 @@ try{
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
      await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-11-02",
        null,{timeout:15000});
-     // The Home-embedded month remains in picker mode after date selection.
-     // Enter the existing selected-day Calendar via its real Home control.
-     await page.locator(".aoTodayV2Tabs [data-home-calendar-today]").click();
-     await page.locator('[data-home-calendar-view="day"]').first().click();
-     await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset.aoCalendarView==="day",
-       null,{timeout:15000});
+     // A NEW date may need the asynchronous source resolver. Wait for
+     // the selected Day view; only a *same-date* return below is synchronous.
+     await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")
+       ?.dataset.aoCalendarView==="day",null,{timeout:15000});
+     // The date grid itself owns Month -> Day. Do not click Home's "Today"
+     // action here: it deliberately returns to today's context and can reset
+     // the specifically selected All Souls date while a resolver is pending.
+     // Verify the actual selected-date click navigated this Calendar to Day.
+     const afterDatePick=await page.evaluate(()=>{
+       const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+       return {selected:s?.selectedDate,resolved:s?.resolution?.date,
+         view:document.getElementById("ao-calendar-modular-root")?.dataset.aoCalendarView};
+     });
+     assert.deepEqual([afterDatePick.selected,afterDatePick.resolved],
+       ["2026-11-02","2026-11-02"],
+       "Calendar date-grid selection must retain the exact selected and resolved day");
+     assert.equal(afterDatePick.view,"day",
+       "Source-resolved 2 November should enter Day without pressing Today");
      const dayCustom=cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-001"]');
      await dayCustom.waitFor({state:"visible",timeout:10000}).catch(async err=>{
        console.log("CALENDAR_CUSTOM_DAY_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
@@ -247,6 +259,66 @@ try{
      assert.ok(overflow<=1,"Customs Calendar introduces phone horizontal overflow: "+overflow);
      await page.screenshot({path:resolve(output,"calendar-custom-day-"+lang+"-"+width+".png"),
        fullPage:true,animations:"disabled"});
+
+     // Historical source-linked search/return QA (#1571). The corpus may grow:
+     // compare the actual registry-derived count, not the old 35-item snapshot.
+     // The asynchronous date/neighbor renderer may replace the Day DOM
+     // after the first screenshot. Use the current catalogue and expand it
+     // through its actual summary before interacting with the search input.
+     await catalogue.waitFor({state:"visible",timeout:15000});
+     if(await catalogue.getAttribute("open")===null)
+       await catalogue.locator(":scope > summary").click();
+     const allPublished=await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count();
+     const search=catalogue.locator("[data-cal-custom-search]");
+     await search.waitFor({state:"visible",timeout:15000});
+     assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),
+       "2026-11-02","Search must begin on the chosen All Souls date");
+     await search.fill("woods HOLE");
+     const maryGarden=catalogue.locator('[data-cal-custom-item] [data-cal-custom-id="MARI-002"]');
+     assert.equal(await maryGarden.isVisible(),true,
+       "Mixed-case source-text search should find Mary Garden");
+     await maryGarden.locator("summary").click();
+     assert.ok(await maryGarden.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
+       "Expanded custom must retain original attributed sources");
+     assert.equal(await maryGarden.getAttribute("open"),"");
+     await page.screenshot({path:resolve(output,"calendar-custom-reading-"+lang+"-"+width+".png"),
+       fullPage:false,animations:"disabled"});
+     await maryGarden.locator("summary").click();
+     assert.equal(await maryGarden.getAttribute("open"),null);
+     await search.fill(lang==="fr"?"aupres des defunts":"AUPrès des DÉFUNTS");
+     assert.equal(await catalogue.locator('[data-cal-custom-item] [data-cal-custom-id="DOM-011"]').isVisible(),true,
+       "Accent/case-neutral historical-text search must retain Candlemas caution");
+     await search.fill("");
+     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]:visible").count(),
+       allPublished,"Clearing search should restore all current, not historical, published articles");
+     await catalogue.locator(":scope > summary").click();
+     assert.equal(await catalogue.getAttribute("open"),null);
+     const beforeReturn=await page.evaluate(()=>{
+       const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+       return [s?.selectedDate,s?.resolution?.date];
+     });
+     assert.deepEqual(beforeReturn,["2026-11-02","2026-11-02"],
+       "Reading unrelated customs must preserve the selected and resolved Mass date");
+     assert.equal(await cal.getAttribute("data-ao-calendar-view"),"day");
+     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
+     await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")
+       ?.dataset.aoCalendarView==="picker",null,{timeout:15000});
+     assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),
+       "2026-11-02","Returning to Month must retain All Souls");
+     await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
+     assert.equal(await cal.getAttribute("data-ao-calendar-view"),"day",
+       "Reopening an already-resolved date should display Day synchronously");
+     await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]')
+       .waitFor({state:"visible",timeout:15000});
+     const returned=await page.evaluate(()=>{
+       const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+       return [s?.selectedDate,s?.resolution?.date];
+     });
+     assert.deepEqual(returned,["2026-11-02","2026-11-02"],
+       "Day/Month/Day must preserve the exact selected Mass date");
+     console.log("CALENDAR_CUSTOM_RETURN_AUDIT="+JSON.stringify({lang,width,
+       published:allPublished,selectedDate:returned[0],resolvedDate:returned[1]}));
+
    }
    assert.equal(errors.length,0,"Calendar runtime errors: "+errors.slice(0,3).join("; "));
    console.log("PASS "+width+"px "+lang+": three in-grid filters, 44px controls, 42 days, month navigation");

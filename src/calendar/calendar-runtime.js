@@ -1777,7 +1777,20 @@ function bind(r){
     const monthOpen=event.target.closest?.("[data-cal-open-month]");if(monthOpen){event.preventDefault();setMonthView(monthOpen.dataset.calOpenMonth||"calendar",{openMonth:true});return}
     const dayShift=event.target.closest?.("[data-cal-day-shift]");if(dayShift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(dayShift.dataset.calDayShift||0)));return}
     const monthShift=event.target.closest?.("[data-cal-month-shift]");if(monthShift){event.preventDefault();const base=pickerMonthId||String(state()?.selectedDate||iso(new Date())).slice(0,7),parts=base.split("-").map(Number),d=new Date(parts[0],parts[1]-1+Number(monthShift.dataset.calMonthShift||0),1,12);pickerMonthId=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");paint();requestPickerMonth();return}
-    const pick=event.target.closest?.("[data-cal-pick-date]");if(pick){event.preventDefault();calendarView="day";void select(pick.dataset.calPickDate);return}
+    const pick=event.target.closest?.("[data-cal-pick-date]");if(pick){
+      event.preventDefault();
+      const picked=pick.dataset.calPickDate,current=state();
+      // A same-date return after the resolver has already finished is a
+      // Calendar view change, not another asynchronous weekly preparation.
+      if(picked===current?.selectedDate&&current?.resolution?.date===picked&&!current?.resolving){
+        setView("day");return;
+      }
+      // New dates still require asynchronous source resolution. Enter Day
+      // only on success, after the picker/embedded Home repaints settle.
+      void select(picked).then(ok=>{
+        if(ok&&state()?.selectedDate===picked)setView("day");
+      });return;
+    }
     const secondaryPlace=event.target.closest?.("[data-cal-secondary-place]");if(secondaryPlace){event.preventDefault();event.stopPropagation?.();void openSecondarySaintPlace(secondaryPlace);return}
     const saintDetail=event.target.closest?.("[data-cal-saint-date]");if(saintDetail){event.preventDefault();event.stopPropagation?.();void openSaintDetail(saintDetail.dataset.calSaintDate);return}
     const intelligenceRoute=event.target.closest?.("[data-cal-intelligence-route]");if(intelligenceRoute){event.preventDefault();const route=intelligenceRoute.dataset.calIntelligenceRoute||"";if(route==="mass.current"){void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar practice Mass route failed",error));return}if(route==="today.calendar"){calendarView="day";paint();return}if(route.startsWith("find:")){

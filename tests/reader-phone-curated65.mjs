@@ -443,6 +443,53 @@ try{
     assert.ok(resolvedIcons.slots.length>=1,
       "Production icon bank did not render a visible icon on any curated source-cued card");
 
+    // Exact source-cue visibility audit for the *current* visual policy:
+    // missing artwork is not a miniature text icon. It is hidden from
+    // the rail; its original instruction remains in the source-owned
+    // paragraph/rubric. Never infer an icon or swap actor lanes.
+    if(width===390 && lang==="en" && !secondConfiteor){
+      const iconRailAudit=await page.evaluate(async()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const rows=[],empty=[],misplaced=[],iconlessVisible=[];
+        const frame=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+        const shown=el=>Boolean(el&&!el.hidden&&el.getClientRects().length&&
+          getComputedStyle(el).display!=="none"&&getComputedStyle(el).visibility!=="hidden");
+        for(const card of api.model.cards){
+          if(!api.showSequence(card.sequence))continue;
+          await frame();await frame();
+          const shell=document.querySelector("#ao-r17-native-reader-preview");
+          for(const tile of shell.querySelectorAll(".ao-rail-left .ao-rail-item,.ao-rail-right .ao-rail-item")){
+            if(tile.dataset.active!=="true"||!shown(tile))continue;
+            const lane=tile.closest(".ao-rail-left")?"left":"right";
+            const channel=tile.dataset.channel;
+            const icon=tile.querySelector("[data-icon-slot]");
+            const painted=shown(icon)&&(
+              getComputedStyle(icon).maskImage!=="none"||
+              getComputedStyle(icon).webkitMaskImage!=="none"||
+              getComputedStyle(icon).backgroundImage!=="none");
+            const row={card:card.title,cue:api.getActiveCue(),lane,channel,
+              iconVisible:tile.dataset.iconVisible??null,painted};
+            rows.push(row);
+            if(!painted)empty.push(row);
+            if(tile.dataset.iconVisible==="false")iconlessVisible.push(row);
+            if((lane==="left"&&["priest-action","priest-position","priest-voice","bell"].includes(channel))||
+               (lane==="right"&&["gesture","posture","response","posture-change"].includes(channel)))
+              misplaced.push(row);
+          }
+        }
+        return {count:rows.length,empty,misplaced,iconlessVisible};
+      });
+      console.log("LIVE_ICON_RAIL_RENDERED_AUDIT="+JSON.stringify(iconRailAudit));
+      assert.ok(iconRailAudit.count>0,"No source-cued icon rails were sampled");
+      assert.deepEqual(iconRailAudit.empty,[],
+        "Visible active LIVE rail has no approved painted icon");
+      assert.deepEqual(iconRailAudit.iconlessVisible,[],
+        "LIVE displays a blank active tile instead of its inline source rubric");
+      assert.deepEqual(iconRailAudit.misplaced,[],
+        "LIVE faithful/priest active source cue occupies the wrong actor lane");
+    }
+
+
     if(width===390 && lang==="en" && !secondConfiteor){
       // A premium reading layout shows the same exact-cue faithful gesture
       // in its rail/ribbon, not miniature buttons on each Gloria/Credo line.
@@ -934,6 +981,123 @@ try{
         await page.screenshot({path:resolve(out,
           "live-65-inline-"+name+"-"+lang+"-"+width+".png"),
           fullPage:false,animations:"disabled"});
+
+        // Real 320px Consecration reachability: the final translated words
+        // must be reachable by touch scrolling and must clear the persistent
+        // arrows, progress counter and any active Schola panel. A screenshot
+        // showing truncated words at the fold is NOT itself a failure.
+        if(width===320 && lang==="en" && !secondConfiteor){
+          const scroller=page.locator("#ao-r17-native-reader-preview .ao-prayer-card");
+          const ready=await scroller.evaluate(el=>{
+            const translation=[...el.querySelectorAll(".ao-line-secondary")]
+              .filter(node=>node.textContent.trim()).at(-1);
+            return {max:el.scrollHeight-el.clientHeight,translation:translation?.textContent.trim()??"",
+              clientHeight:el.clientHeight};
+          });
+          assert.ok(ready.translation.length>12,name+" Consecration translation missing on 320px phone");
+          if(name==="chalice")assert.ok(ready.max>100,
+            "Chalice Consecration has no real vertical reading travel");
+          const bounds=await scroller.boundingBox();
+          assert.ok(bounds && bounds.width>150 && bounds.height>160,
+            name+" Consecration scrolling territory absent");
+          let touchTravel=0;
+          // Short Host words may already be fully visible; only force a
+          // finger-scroll assertion when actual scroll travel is needed.
+          if(ready.max>40){
+          const touch=await context.newCDPSession(page);
+          const x=Math.round(bounds.x+bounds.width*.5);
+          const fromY=Math.round(bounds.y+bounds.height*.66);
+          const toY=Math.round(bounds.y+bounds.height*.22);
+          await scroller.evaluate(el=>{el.scrollTop=0});
+          await touch.send("Input.dispatchTouchEvent",{type:"touchStart",
+            touchPoints:[{x,y:fromY}]});
+          for(let step=1;step<=9;step++){
+            const y=Math.round(fromY+(toY-fromY)*step/9);
+            await touch.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y}]});
+          }
+          await touch.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+          await page.waitForTimeout(300);
+          touchTravel=await scroller.evaluate(el=>el.scrollTop);
+          assert.ok(touchTravel>15,name+" Consecration cannot be finger-scrolled at 320px");
+          }
+
+          const bottomEvidence=async()=>page.evaluate(()=>{
+            const el=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+            el.scrollTop=0;
+            const last=[...el.querySelectorAll(".ao-line-secondary")]
+              .filter(node=>node.textContent.trim()).at(-1);
+            const controls=[...document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-nav],"+
+              "#ao-r17-native-reader-preview [data-role='progress']")]
+              .filter(node=>getComputedStyle(node).display!=="none" &&
+                getComputedStyle(node).visibility!=="hidden");
+            const dock=document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock");
+            const dockActive=dock?.dataset.active==="true" &&
+              getComputedStyle(dock).display!=="none";
+            const box=el.getBoundingClientRect();
+            const floor=Math.min(box.bottom,
+              ...controls.map(node=>node.getBoundingClientRect().top),
+              dockActive?dock.getBoundingClientRect().top:Infinity);
+            const before=last?.getBoundingClientRect();
+            // Some source cards deliberately have scrolling runway AFTER
+            // their last spoken text. The final translation must be reachable
+            // at its own reading position, not necessarily at scrollMax.
+            const target=Math.max(0,(before?.bottom??Infinity)-(floor-14));
+            el.scrollTop=target;
+            const lastBox=last?.getBoundingClientRect();
+            return {scrollTop:el.scrollTop,max:el.scrollHeight-el.clientHeight,
+              floor,scrollerTop:box.top,scrollerBottom:box.bottom,
+              lastTop:lastBox?.top??Infinity,lastBottom:lastBox?.bottom??Infinity,
+              lastText:last?.textContent.trim()??"",
+              horizontalOverflow:el.scrollWidth>el.clientWidth+1,
+              scrollSize:[el.scrollWidth,el.clientWidth],
+              overflowNodes:[...el.querySelectorAll("*")].filter(node=>
+                node.scrollWidth>node.clientWidth+2).slice(0,9).map(node=>({
+                  className:String(node.className??"").slice(0,100),
+                  width:node.clientWidth,scroll:node.scrollWidth,
+                  text:node.textContent.trim().slice(0,95)
+                }))};
+          });
+          const verifyBottom=(seen,scale)=>{
+            assert.ok(seen.scrollTop>=0 && seen.scrollTop<=seen.max+2,
+              name+" "+scale+" cannot position the final translated words in its scroller");
+            assert.equal(seen.lastText,ready.translation,
+              name+" "+scale+" discarded or substituted Consecration translation");
+            assert.equal(seen.horizontalOverflow,false,
+              name+" "+scale+" introduces side-scrolling prayer text");
+            assert.ok(seen.lastBottom>=seen.scrollerTop+10 &&
+              seen.lastBottom<=seen.floor-5,
+              name+" "+scale+" last translated words are still underneath "+
+              "reader controls or Schola: "+JSON.stringify(seen));
+          };
+          await page.waitForTimeout(80);
+          const normal=await bottomEvidence();
+          verifyBottom(normal,"normal type");
+          await page.screenshot({path:resolve(out,"consecration-"+name+"-320-bottom.png"),
+            animations:"disabled"});
+
+          // Simulated 200% TEXT size: snapshot computed type sizes first and
+          // double just the prayer text, keeping the actual 320px shell,
+          // rails, progress and Schola controls in place. This is not a
+          // substitute for separate full-page browser 200% zoom acceptance.
+          await page.evaluate(()=>{
+            const el=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+            const nodes=[...el.querySelectorAll(".ao-reader-paragraph,.ao-line-primary,.ao-line-secondary")];
+            const fontSizes=nodes.map(node=>parseFloat(getComputedStyle(node).fontSize));
+            nodes.forEach((node,i)=>node.style.setProperty("font-size",
+              (fontSizes[i]*2)+"px","important"));
+          });
+          await page.waitForTimeout(120);
+          const doubled=await bottomEvidence();
+          await page.screenshot({path:resolve(out,"consecration-"+name+"-320-text200-bottom.png"),
+            animations:"disabled"});
+          if(doubled.horizontalOverflow)console.log("CONSECRATION_320_OVERFLOW_DIAGNOSTICS="+
+            JSON.stringify({name,normal,doubled}));
+          verifyBottom(doubled,"200% prayer text");
+          console.log("PASS "+name+" Consecration 320px touch and 200% text reachability",{
+            touchTravel,normalBottomGap:normal.floor-normal.lastBottom,
+            enlargedBottomGap:doubled.floor-doubled.lastBottom
+          });
+        }
       }
     }
     // Capture the named liturgical scene, never the last card left behind
