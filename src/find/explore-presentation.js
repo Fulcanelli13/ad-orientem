@@ -512,8 +512,8 @@ function massEmblemCredits(language){
         +esc(L(language,"Original image licence","Licence de l’image"))+'</a></p>';
     }).join("")
     +'<p>'+esc(L(language,
-      "The Holy See arms identify diocesan listings editorially. Neither Holy See endorsement nor oversight of the listed Mass is implied. Copyright licences do not waive separate insignia or trademark rights. Commercial clearance remains outstanding.",
-      "Les armes du Saint-Siège identifient les fiches diocésaines dans cette carte, sans impliquer son approbation ni son contrôle. Les licences d’auteur ne lèvent pas les droits distincts attachés aux insignes ou aux marques. La validation commerciale reste à effectuer."))+'</p></div></details>';
+      "Diocesan and unidentified listings use neutral map symbols, not Holy See or assumed institute arms. Institutional emblems identify source-reported ministry only, not the church owner or a verified Mass. Copyright licences do not waive separate insignia or trademark rights; commercial clearance remains outstanding.",
+      "Les fiches diocésaines ou sans affiliation déterminée utilisent des repères neutres, non les armes du Saint-Siège ni celles d’un institut supposé. Les emblèmes signalent seulement le ministère indiqué par la source, pas le propriétaire de l’église ni une messe vérifiée. La licence d’auteur ne lève pas les droits propres aux insignes et marques ; la validation commerciale reste nécessaire."))+'</p></div></details>';
 }
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
