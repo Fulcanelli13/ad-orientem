@@ -2815,6 +2815,12 @@ function renderFiveWounds(){
    ' aria-label="'+esc(label)+'" title="'+esc(label)+'">'+
    '<span aria-hidden="true"></span><small>'+esc(label)+'</small></button>';
  }).join('');
+ const shortWoundNames=isFr()?['Pied gauche','Pied droit','Main gauche','Main droite','Côté sacré']:
+  ['Left foot','Right foot','Left hand','Right hand','Sacred side'];
+ const woundChips=FIVE_WOUNDS_WOUNDS_V1.map((w,i)=>
+  '<button type="button" data-p435930-five-wound="'+i+'" '+(progress.group===i+1?'aria-current="step" ':'')+
+   'aria-label="'+esc(isFr()?w.fr:w.en)+'" title="'+esc(isFr()?w.fr:w.en)+'">'+esc(shortWoundNames[i])+'</button>'
+ ).join('');
  const beads=Array.from({length:6},(_,i)=>'<span class="'+(progress.position===i+1?'current':'')+
   (i===5?' ave':'')+'" aria-hidden="true"></span>').join('');
  const prayerLabel=step.kind==='gloria'
@@ -2823,10 +2829,14 @@ function renderFiveWounds(){
  const nature=step.kind==='gloria'
   ?L('Meditate on this wound. Pray the Glory Be.','Méditez cette plaie. Récitez le Gloire au Père.')
   :L('Offer one Hail Mary in honour of Our Lady of Sorrows.','Récitez un Je vous salue Marie en l’honneur de Notre-Dame des Douleurs.');
- const prev=index>0?'<button type="button" data-p435930-five-prev>'+esc(L('Previous','Précédent'))+'</button>':'';
+ const prev=CHAPLET_F07_PILOT_ENABLED?
+  '<button class="aoF07WoundPrevious" type="button" data-p435930-five-prev aria-label="'+
+    esc(L('Previous prayer','Prière précédente'))+'" '+(index===0?'disabled':'')+'>‹</button>':
+  index>0?'<button type="button" data-p435930-five-prev>'+esc(L('Previous','Précédent'))+'</button>':'';
  const finish=step.isLast;
- const next='<button type="button" class="primary" '+(finish?'data-p435930-five-finish':'data-p435930-five-next')+'>'+
-  esc(finish?L('Finish chaplet','Terminer le chapelet'):L('Next prayer','Prière suivante'))+'</button>';
+ const next='<button type="button" class="'+(CHAPLET_F07_PILOT_ENABLED?'aoF07WoundNext':'primary')+'" '+
+  (finish?'data-p435930-five-finish':'data-p435930-five-next')+'>'+
+  esc(finish?L('Finish','Terminer'):CHAPLET_F07_PILOT_ENABLED?L('Next','Suivant'):L('Next prayer','Prière suivante'))+'</button>';
  const langButton='<button type="button" data-p435930-five-latin aria-pressed="'+String(FIVE_WOUNDS.latin)+
   '" aria-label="'+esc(FIVE_WOUNDS.latin?L('Return to vernacular prayer','Revenir à la prière vernaculaire'):L('Pray in Latin','Prier en latin'))+'">'+
   esc(FIVE_WOUNDS.latin?L('EN / FR','EN / FR'):'LATIN')+'</button>';
@@ -2838,12 +2848,18 @@ function renderFiveWounds(){
  '<div class="aoFiveWoundsProgress" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="'+
   progress.completed+'" aria-label="'+esc(L('Chaplet progress','Progression du chapelet'))+'"><span style="width:'+
   Math.round(progress.completed/30*100)+'%"></span></div>'+
- '<div class="aoFiveWoundsBeads" aria-label="'+esc(L('Five Glory Bes, then a Hail Mary','Cinq Gloria Patri, puis un Ave Maria'))+'">'+beads+'</div>'+ (CHAPLET_F07_PILOT_ENABLED?renderF07FiveWounds(index,{french:isFr()}):'')+
+ '<div class="aoFiveWoundsBeads" aria-label="'+esc(L('Five Glory Bes, then a Hail Mary','Cinq Gloria Patri, puis un Ave Maria'))+'">'+beads+'</div>'+
+ (CHAPLET_F07_PILOT_ENABLED?
+  '<div class="aoF07FiveWoundsTop">'+renderF07FiveWounds(index,{french:isFr()})+
+  '<details class="aoF07ReaderLanguage"><summary aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">Aa</summary>'+langButton+'</details></div>'+
+  '<nav class="aoF07WoundChips" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+woundChips+'</nav>':'')+
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
- esc(prayerLabel)+'</small>'+langButton+'</div><p class="aoFiveWoundsPrayerText" lang="'+
+ esc(prayerLabel)+'</small>'+(CHAPLET_F07_PILOT_ENABLED?'':langButton)+'</div><p class="aoFiveWoundsPrayerText" lang="'+
  esc(langCode)+'">'+nl(step.text)+'</p></article>'+
- (CHAPLET_F07_PILOT_ENABLED?'<details class="aoF07JumpDisclosure"><summary>'+esc(L('Choose a wound','Choisir une plaie'))+'</summary>'+ '<nav class="aoFiveWoundsRail" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+dots+'</nav>' +'</details>':'')+
- '<footer class="aoFiveWoundsActions">'+prev+next+'</footer>'+
+
+ '<footer class="aoFiveWoundsActions">'+prev+
+  (CHAPLET_F07_PILOT_ENABLED?'<output class="aoF07WoundDockCount" aria-label="'+esc(L('Chaplet position','Position dans le chapelet'))+'">'+(index+1)+' / 30</output>':'')+
+  next+'</footer>'+
  '<details class="aoFiveWoundsSource"><summary>'+esc(L('Historical form & sources','Forme historique et sources'))+
  '</summary><p>'+esc(L('Five groups of five Glory Bes; after each group one Hail Mary in honour of Our Lady of Sorrows. This is a private devotional chaplet, not the Stations of the Cross.',
  'Cinq groupes de cinq Gloria Patri ; à la fin de chaque groupe, un Ave Maria en l’honneur de Notre-Dame des Douleurs. Il s’agit d’un chapelet privé, distinct du Chemin de Croix.'))+
