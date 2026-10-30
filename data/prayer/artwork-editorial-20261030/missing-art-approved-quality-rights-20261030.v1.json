@@ -4,8 +4,8 @@
   "policy": "Artistic user acceptance does not itself certify photograph/file quality, attribution, rights, source identity or production activation. No paid assets, no upscaling, no framed paintings.",
   "counts": {
     "reviewed": 25,
-    "rights_basis_identified": 20,
-    "rights_not_cleared": 5,
+    "rights_basis_identified": 22,
+    "rights_not_cleared": 3,
     "low_source_resolution": 8,
     "visual_native_pass": 0,
     "production_ready": 0
@@ -18,17 +18,17 @@
       "artist": "Jacopo Tintoretto",
       "approved": true,
       "source_original": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
-      "source_for_photo_qa": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
+      "source_for_photo_qa": "https://commons.wikimedia.org/wiki/File:Jacopo_tintorettto,_circoncisione,_1583-87,_01.jpg",
       "suggested_file": null,
-      "rights_status": "COMMONS_PD_ART_US_REUSE_DECLARED",
+      "rights_status": "COMMONS_CC_BY_3_0_PHOTOGRAPH_SAILKO_ATTRIBUTION_REQUIRED",
       "license_gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING",
       "original_pixels": [
-        1385,
-        976
+        2016,
+        1900
       ],
-      "quality_status": "LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+      "quality_status": "PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
       "photo_identity_status": "SOURCE_PAGE_VERIFIED",
-      "risk": "Modest native resolution, broad altarpiece and original source reproduction quality; native colour/frame inspection needed",
+      "risk": "Same Scuola Grande di San Rocco work; source photo 2016×1900, CC BY 3.0 by Sailko. High-ISO 6400 exposure; check noise, focus, glare, frame and exact composition before publication.",
       "publication_hold": true,
       "same_artwork_photo_source_repair": {
         "url": "https://commons.wikimedia.org/wiki/File:Jacopo_tintorettto%2C_circoncisione%2C_1583-87%2C_01.jpg",
@@ -36,9 +36,9 @@
           2016,
           1900
         ],
-        "rights": "COMMONS_PHOTO_TERMS_NEED_NATIVE_REVIEW",
+        "rights": "CC_BY_3_0_SAILKO_PHOTOGRAPH_ATTRIBUTION_AND_MODIFICATION_NOTICE_REQUIRED",
         "source_note": "Same Tintoretto Circumcision in Scuola Grande di San Rocco, not new artwork; 2.42MB instead of 544KB",
-        "status": "HIGHER_RES_CANDIDATE_SAME_WORK"
+        "status": "SAME_WORK_SOURCE_LICENSE_CONFIRMED_NATIVE_VISUAL_QA_PENDING"
       }
     },
     {
@@ -78,17 +78,27 @@
       ],
       "quality_status": "LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
       "photo_identity_status": "SOURCE_PAGE_VERIFIED",
-      "risk": "600×875: too small for image hero or enlarged prayer card; seek source-equivalent higher fidelity",
+      "risk": "Approved painting is Rubens's 1605 Vienna modello (Academy of Fine Arts Vienna GG-897), NOT the later Genoa altarpiece. Original Commons photo remains 600×875. Search must identify higher-resolution reproduction of Vienna GG-897; do not substitute Genoa.",
       "publication_hold": true,
       "same_artwork_photo_source_repair": {
-        "url": "https://commons.wikimedia.org/wiki/File:Rubens%2C_circoncisione_di_ges%C3%B9_per_niccol%C3%B2_pallavicino%2C_1605%2C_01.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Rubens,_circoncisione_di_gesù_per_niccolò_pallavicino,_1605,_01.JPG",
         "pixels": [
           1912,
           3072
         ],
-        "rights": "CC_BY_3_0_UNPORTED_CREDIT_SAILKO_MODIFICATIONS",
-        "source_note": "Same Genoa Rubens work; original 2013 photograph is ISO 6400 and may have noise; credit Sailko and link licence",
-        "status": "FREE_ATTRIBUTION_REQUIRED_SAME_WORK"
+        "rights": "CC_BY_3_0_BUT_NOT_SAME_WORK",
+        "source_note": "REJECTED SOURCE MATCH. The approved Commons image identifies Vienna GG-897 (1605 modello). This image identifies Genoa Chiesa del Gesù altarpiece, a distinct realization based on the Vienna modello. Artist and subject match, work identity does not. Do not substitute, deploy or count as repaired. Original 600×875 Vienna image remains.",
+        "status": "REJECTED_DISTINCT_WORK_VIENNA_MODELLO_VS_GENOA_ALTARPIECE"
+      },
+      "verified_work_identity": {
+        "approved_work": "Rubens, Circumcision of Christ, Vienna (modello), GG-897",
+        "incorrect_alternate_work": "Rubens, Circumcision of Christ, Chiesa del Gesù, Genoa",
+        "original_approved_file": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+        "evidence": [
+          "https://www.wga.hu/html_m/r/rubens/10religi/03religj.html",
+          "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+          "https://commons.wikimedia.org/wiki/File:Rubens,_circoncisione_di_gesù_per_niccolò_pallavicino,_1605,_01.JPG"
+        ]
       }
     },
     {
@@ -98,15 +108,28 @@
       "artist": "Orazio Gentileschi",
       "approved": true,
       "source_original": "https://www.meisterdrucke.jp/fine-art-prints/Orazio-Gentileschi/1198610/",
-      "source_for_photo_qa": "https://www.meisterdrucke.jp/fine-art-prints/Orazio-Gentileschi/1198610/",
+      "source_for_photo_qa": "https://commons.wikimedia.org/wiki/File:Circoncisione_di_Gesù_-_O._Gentileschi.png",
       "suggested_file": null,
-      "rights_status": "COMMERCIAL_REPRODUCTION_NO_REUSE_GRANT_VERIFIED",
-      "license_gate": "RIGHTS_NOT_CLEARED",
-      "original_pixels": null,
-      "quality_status": "NATIVE_PHOTO_UNVERIFIED",
-      "photo_identity_status": "COMMERCIAL_PRINT_PAGE_ONLY",
-      "risk": "Artist/work approved but shop image not free/licensed for reuse; find institution/Commons original without fee",
-      "publication_hold": true
+      "rights_status": "COMMONS_PD_ART_US_MARKED_FILE_EXACT_ANCONA_WORK",
+      "license_gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING",
+      "original_pixels": [
+        893,
+        1429
+      ],
+      "quality_status": "LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+      "photo_identity_status": "EXACT_ANCONA_WORK_COMMONS_FILE_IDENTIFIED",
+      "risk": "Exact Gentileschi Circumcision in Ancona identified via Commons PD-Art 893×1429 PNG (scan). Free-file basis exists, but resolution, scan sharpness and border/colour quality remain insufficiently verified; no commercial print reuse.",
+      "publication_hold": true,
+      "same_artwork_photo_source_repair": {
+        "url": "https://commons.wikimedia.org/wiki/File:Circoncisione_di_Gesù_-_O._Gentileschi.png",
+        "pixels": [
+          893,
+          1429
+        ],
+        "rights": "COMMONS_PD_ART_US_TAG_REUSE_JURISDICTION_CHECK_PENDING",
+        "source_note": "Same Ancona Circumcision (1605-07) as approved commercial source; PNG scan is not claimed high-quality or publication-ready.",
+        "status": "FREE_EXACT_WORK_FOUND_LOW_RES_AND_NATIVE_QA_PENDING"
+      }
     },
     {
       "slot_id": "STG-prayer.seven_sorrows_chaplet-04",
@@ -413,15 +436,28 @@
       "artist": "Peter Paul Rubens",
       "approved": true,
       "source_original": "https://commons.wikimedia.org/wiki/Category:Transfiguration_by_Peter_Paul_Rubens",
-      "source_for_photo_qa": "https://commons.wikimedia.org/wiki/Category:Transfiguration_by_Peter_Paul_Rubens",
+      "source_for_photo_qa": "https://commons.wikimedia.org/wiki/File:La_transfiguration_Pierre_Paul_Rubens_0678.JPG",
       "suggested_file": "https://commons.wikimedia.org/wiki/File:La_transfiguration_Pierre_Paul_Rubens_0678.JPG",
-      "rights_status": "FILE_LICENSE_PENDING",
-      "license_gate": "RIGHTS_NOT_CLEARED",
-      "original_pixels": null,
-      "quality_status": "NATIVE_PHOTO_UNVERIFIED",
-      "photo_identity_status": "CATEGORY_MULTIPLE_EXACT_SOURCE_FILE_NOT_SELECTED",
-      "risk": "The category includes prints, details and photographed gallery versions; choose and license a clean, complete original-work photograph, not the 1889 print scan",
-      "publication_hold": true
+      "rights_status": "COMMONS_CC_BY_SA_3_0_GARITAN_ATTRIBUTION_SHAREALIKE",
+      "license_gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING",
+      "original_pixels": [
+        3795,
+        2562
+      ],
+      "quality_status": "PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
+      "photo_identity_status": "SUGGESTED_EXACT_NANCY_TRANSFIGURATION_FILE_IDENTIFIED",
+      "risk": "The previously suggested Commons photo depicts Rubens Transfiguration in Nancy (inv.71), 3795×2562, photo by G.Garitan under CC BY-SA 3.0. Confirm full composition, border/glare/tonal accuracy and how ShareAlike conditions apply to derivative image before use.",
+      "publication_hold": true,
+      "same_artwork_photo_source_repair": {
+        "url": "https://commons.wikimedia.org/wiki/File:La_transfiguration_Pierre_Paul_Rubens_0678.JPG",
+        "pixels": [
+          3795,
+          2562
+        ],
+        "rights": "CC_BY_SA_3_0_G_GARITAN_ATTRIBUTION_AND_SHAREALIKE",
+        "source_note": "File from the previously suggested direct candidate page, not a different artist or subject. Nancy work is a constituent scene of the Gonzaga family altarpiece; native-image framing must be checked.",
+        "status": "SOURCE_RIGHTS_BASIS_VERIFIED_NATIVE_QA_PENDING"
+      }
     },
     {
       "slot_id": "SEM-rosary.transfiguration",
@@ -568,10 +604,28 @@
     "date": "2026-10-30",
     "same_artwork_only": true,
     "no_new_artistic_choices": true,
-    "alternate_sources_verified": 2,
-    "free_alternate_sources_with_licence_conditions": 1,
-    "source_repair_unresolved": 5,
+    "alternate_sources_verified": 3,
+    "free_alternate_sources_with_licence_conditions": 2,
+    "source_repair_unresolved": 6,
     "all_original_photo_visual_certifications_pending": true,
-    "note": "Source page and technical size validation is not a human native-image aesthetic review; full-framed state, glare, crop/colour and mobile image rendering still unverified."
+    "note": "Source-level rights check only; 1 same-work higher-resolution candidate (Tintoretto), 2 new exact/suggested-file rights paths (Gentileschi and Rubens Transfiguration), and 1 rejected false same-work match (Rubens Genoa vs Vienna). All publication holds remain and no native-image visual certification has occurred.",
+    "original_two_same_work_claim_corrected": true,
+    "work_identity_correction": "The Genoa Rubens 1912×3072 photo is NOT the user-approved Vienna modello; removed from valid upgrades and explicitly blocked."
+  },
+  "source_corrections_2026_10_30": {
+    "verified_at": "2026-10-30",
+    "user_artistic_approvals_unchanged": true,
+    "rejected_unreviewed_not_imported": true,
+    "source_identity_errors_blocked": 1,
+    "source_rights_status_improved": 2,
+    "new_native_visual_certifications": 0,
+    "source_links": [
+      "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+      "https://commons.wikimedia.org/wiki/File:Rubens,_circoncisione_di_gesù_per_niccolò_pallavicino,_1605,_01.JPG",
+      "https://commons.wikimedia.org/wiki/File:Jacopo_tintorettto,_circoncisione,_1583-87,_01.jpg",
+      "https://commons.wikimedia.org/wiki/File:Circoncisione_di_Gesù_-_O._Gentileschi.png",
+      "https://commons.wikimedia.org/wiki/File:La_transfiguration_Pierre_Paul_Rubens_0678.JPG"
+    ],
+    "publication_hold": true
   }
 }
