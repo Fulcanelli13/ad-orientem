@@ -1785,7 +1785,11 @@ function bind(r){
       if(picked===current?.selectedDate&&current?.resolution?.date===picked&&!current?.resolving){
         setView("day");return;
       }
-      calendarView="day";void select(picked);return;
+      // New dates still require asynchronous source resolution. Enter Day
+      // only on success, after the picker/embedded Home repaints settle.
+      void select(picked).then(ok=>{
+        if(ok&&state()?.selectedDate===picked)setView("day");
+      });return;
     }
     const secondaryPlace=event.target.closest?.("[data-cal-secondary-place]");if(secondaryPlace){event.preventDefault();event.stopPropagation?.();void openSecondarySaintPlace(secondaryPlace);return}
     const saintDetail=event.target.closest?.("[data-cal-saint-date]");if(saintDetail){event.preventDefault();event.stopPropagation?.();void openSaintDetail(saintDetail.dataset.calSaintDate);return}
