@@ -47,6 +47,9 @@ for(const x of identities.records.filter(x=>x.layer==="PROVISIONAL_GROUP"))asser
 assert.equal(indulgences.screening_by_identity.length,465);
 assert.equal(new Set(indulgences.screening_by_identity.map(x=>x.identity_id)).size,465);
 assert.equal(indulgences.current_grant_work_seeds.length,7);
+assert.equal(indulgences.current_work_exactness_exclusions.length,4);
+assert.ok(indulgences.current_work_exactness_exclusions.every(x=>x.blanket_plenary_indulgence_claim_allowed===false));
+assert.ok(indulgences.current_work_exactness_exclusions.find(x=>x.candidate_concession==="ENCH1999-13").source_action_ids.includes("CCEX26-NEWLAND-0911-01"));
 assert.equal(indulgences.screening_by_identity.reduce((n,x)=>n+x.candidate_work_matches.length,0),8);
 assert.equal(indulgences.historic_grant_cases.length,4);
 assert.equal(indulgences.original_observation_indulgence_mentions.length,5);
@@ -83,16 +86,16 @@ for(const [number,expected] of [[2,200],[3,200]]){
 const wave4=get("customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json");
 assert.equal(wave4.rows.length,200);
 assert.equal(wave4.counts.source_native_type_available,68);
-assert.equal(wave4.counts.requires_actual_passage_type_screen,92);
-assert.equal(wave4.counts.source_passage_type_verified_in_hosted_reproductions,40);
-assert.equal(wave4.counts.source_semantic_class_available_total,108);
-assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,92);
+assert.equal(wave4.counts.requires_actual_passage_type_screen,62);
+assert.equal(wave4.counts.source_passage_type_verified_in_hosted_reproductions,70);
+assert.equal(wave4.counts.source_semantic_class_available_total,138);
+assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,62);
 assert.ok(wave4.rows.every(x=>unassigned.has(x.evidence_id)&&x.original_source_id_verified&&!x.app_publication_allowed));
 const firstFour=[...wave.rows,...get("customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json").rows,...get("customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json").rows,...wave4.rows];
 assert.equal(new Set(firstFour.map(x=>x.evidence_id)).size,800);
 assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,3295);
 assert.equal(coverage.progress.evidence_only_source_scope_first_pass.unprocessed,0);
-assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_unresolved_requires_passage,92);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.source_type_unresolved_requires_passage,62);
 const allSourceScreens=[];
 for(let waveNo=1;waveNo<=17;waveNo++){
  const sourceCount=waveNo===17?95:200;
@@ -115,12 +118,12 @@ for(let waveNo=1;waveNo<=17;waveNo++){
 assert.equal(allSourceScreens.length,3295);
 assert.equal(new Set(allSourceScreens.map(x=>x.evidence_id)).size,3295);
 assert.deepEqual(new Set(allSourceScreens.map(x=>x.evidence_id)),unassigned);
-assert.equal(allSourceScreens.filter(x=>x.preliminary_lane==="ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY").length,92);
-const hosted=get("customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json");
-assert.equal(hosted.records.length,40);
-assert.equal(hosted.source_groups.length,6);
-assert.equal(hosted.counts.source_action_records_pending,92);
-assert.equal(new Set(hosted.records.map(x=>x.source_id)).size,40);
+assert.equal(allSourceScreens.filter(x=>x.preliminary_lane==="ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY").length,62);
+const hosted=get("customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json");
+assert.equal(hosted.records.length,70);
+assert.equal(hosted.source_groups.length,12);
+assert.equal(hosted.counts.source_action_records_pending,62);
+assert.equal(new Set(hosted.records.map(x=>x.source_id)).size,70);
 const wave4bySource=new Map(wave4.rows.map(x=>[x.source_id,x]));
 for(const r of hosted.records){
  const mapped=wave4bySource.get(r.source_id);
@@ -133,11 +136,12 @@ for(const r of hosted.records){
  assert.equal(r.canonical_merge_permitted,false);
  assert.equal(r.liturgical_1962_rubric_or_ministerial_authority_confirmed,false);
 }
-assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.actual_hosted_passages_checked,40);
-assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.remaining,92);
+assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.actual_hosted_passages_checked,70);
+assert.equal(coverage.progress.catholicculture_132_hosted_passage_review.remaining,62);
 const dedup=get("customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json");
 assert.equal(dedup.family_action_groups.length,26);
 assert.equal(dedup.description_pair_edges.length,41);
+assert.equal(dedup.counts.description_pairs_with_new_hosted_passage_anchor,3);
 assert.equal(dedup.regional_or_institutional_cluster_cases.length,12);
 assert.equal(dedup.counts.merge_operations_approved,0);
 assert.equal(dedup.counts.original_family_observations_accounted_for,70);
