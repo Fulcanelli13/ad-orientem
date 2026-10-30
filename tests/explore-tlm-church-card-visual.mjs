@@ -58,10 +58,24 @@ try{
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm",null,{timeout:25000});
    const list=page.locator('[data-find-filter="view"][data-find-filter-value="list"]');
    if(await list.count())await list.click();
+   // The view toggle repaints asynchronously. Never type into a retiring
+   // map search input: its input event can be superseded by list rendering.
+   await page.locator('.aoFindBody[data-find-view="list"]').waitFor({state:"visible",timeout:20000});
+   await page.locator(".aoTlmVenueCard").first().waitFor({state:"visible",timeout:20000});
    const search=page.locator("#ao-find-modular-root [data-find-query]");
-   await search.fill("St. John Cantius");
+   await search.fill("Cantius");
    const cards=page.locator(".aoTlmVenueCard");
-   await cards.first().waitFor({state:"visible",timeout:15000});
+   try{await cards.first().waitFor({state:"visible",timeout:15000});}
+   catch(error){
+    console.error("Church search diagnostic:",await page.evaluate(()=>({
+     status:globalThis.AO_FIND_APP_V1?.status?.(),
+     query:document.querySelector("#ao-find-modular-root [data-find-query]")?.value,
+     results:document.querySelector("#ao-find-modular-root .aoFindResultMeta")?.textContent,
+     view:document.querySelector("#ao-find-modular-root .aoFindBody")?.dataset?.findView,
+     visible:document.querySelector("#ao-find-modular-root .aoFindList")?.textContent?.slice(0,250)
+    })));
+    throw error;
+   }
    const title=await cards.first().innerText();
    assert.match(title,/Cantius/i,"Search must find an existing St John Cantius listing");
    await cards.first().click();
