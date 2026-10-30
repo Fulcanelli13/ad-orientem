@@ -65,7 +65,7 @@ assert.match(html,new RegExp(`data-ao-home-enricher-owner="${HOME_ENRICHERS_VERS
 assert.match(html,/data-home-cu-route="pray\.angelus_regina"/,"future Angelus item should route through the canonical prayer module");
 assert.match(html,/data-home-cu-static="rosary"/);
 assert.match(html,/data-home-cu-route="pray\.rosary"/,"October Rosary context should come from shared Calendar intelligence");
-assert.match(html,/data-home-daily-catechism/);
+assert.doesNotMatch(html,/data-home-daily-catechism/,"No Catechism on Home");
 assert.match(html,/data-ao-asset-id="ao-rich-rosary"/);
 assert.match(html,/<use href="#ao-rich-angelus"><\/use>/);
 assert.match(html,/<use href="#ao-rich-rosary"><\/use>/);
