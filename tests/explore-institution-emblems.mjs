@@ -4,6 +4,7 @@ import {
   massInstitutionImageId,registerMassInstitutionImages,
 } from "../src/find/institution-emblems.js";
 import { exploreMapFeatures, MASS_MAP_GROUP_COLORS } from "../src/find/map-runtime.js";
+import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
   ["FSSP","IBP","ICKSP","SSPX","AASJMV"].sort(),
@@ -37,6 +38,21 @@ assert.deepEqual(mapped.map(x=>x.properties.provider_group),
   ["DIOCESAN","FSSP","OTHER"]);
 assert.equal(mapped.every(x=>x.properties.approximate),true,
   "A logo must never upgrade geographical precision");
+
+// Source-owned independent community groups remain selectable without a visual emblem.
+for(const view of ["list","map"]){
+  const samples=["CMRI","SSPV","RCI","AASJMV","OTHER"].map((id,index)=>({
+    kind:"TLM_VENUE",item_id:"tlm:source:"+id,source_id:"src:"+id,
+    lens:"tlm",title:id+" listed venue",subtitle:"Source city",community_id:id,
+    map_publishable:view==="map",geo:{lat:10+index,lng:20+index},source_links:[],
+  }));
+  const html=renderExploreToString(buildExploreViewModel({
+    lens:"tlm",items:samples,view,filters:{affiliations:[],directoryGroup:"ALL"},language:"en"
+  }));
+  for(const group of ["CMRI","SSPV","RCI","AASJMV","OTHER"])
+    assert.match(html,new RegExp('data-find-affiliation="'+group+'"'),group+" must remain available without logo");
+  assert.doesNotMatch(html,/data-find-affiliation="IMBC"/,"Do not promote a research-only classification into published venue filters");
+}
 
 // Image load and cross-origin failures must not prevent clicking original markers.
 const loaded=new Map();
