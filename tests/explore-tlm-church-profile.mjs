@@ -50,6 +50,18 @@ const fr=renderTlmChurchProfile(item,"fr");
 for(const phrase of ["Position ecclésiale","Non établi","Programme des messes","Retour à l’aperçu"])
  assert.ok(fr.includes(phrase),phrase);
 
+const exceptionRecord=structuredClone(record);
+exceptionRecord.ministries[0].schedules.push({
+ schedule_id:"sch-exception",service_type:"MASS",mass_type:"SUNG",
+ payload:{raw:"First Sunday 1 PM",liturgical_usage:{family:"ROMAN",books:"2002"}},
+ verification:{state:"OFFICIAL_VERIFIED",checked_at:"2026-10-28T10:00:00Z"}
+});
+const [exceptionItem]=projectDirectoryItems([exceptionRecord],{communities:[{id:"FSSP",abbreviation:"FSSP"}]});
+const exceptionalHtml=renderTlmChurchProfile(exceptionItem);
+assert.match(exceptionalHtml,/Roman · 2002 · specific celebration/);
+assert.match(exceptionalHtml,/First Sunday 1 PM/);
+assert.equal(buildTlmChurchProfile(exceptionItem).ministries[0].missal,"1962"); // ministry policy unchanged
+
 const preliminary={...item,status:"SCHEDULE UNVERIFIED",
  raw:{...record,venue:{...church,publication_state:"DIRECTORY_LISTED_UNVERIFIED"}}};
 model=buildTlmChurchProfile(preliminary);
