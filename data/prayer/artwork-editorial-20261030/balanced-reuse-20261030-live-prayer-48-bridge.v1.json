@@ -6,8 +6,8 @@
   "scope_note": "48 base prayers only; guided module/stage runtime needs separate parity validation",
   "summary": {
     "total": 48,
-    "with_candidate": 47,
-    "without_candidate": 1,
+    "with_candidate": 48,
+    "without_candidate": 0,
     "linked_to_blueprint": 47,
     "approved_outside_blueprint": 1
   },
@@ -1966,9 +1966,64 @@
       "category": "saints",
       "cover_slot": "COV-devotion_st_anthony_lost_items",
       "image_bearing_blueprint_slot": true,
-      "has_eligible_artwork": false,
-      "status": "EMPTY_RESEARCH_REQUIRED",
-      "paintings": []
+      "has_eligible_artwork": true,
+      "status": "EXISTING_SAINT_ART_REASSIGNED_QA_PENDING",
+      "paintings": [
+        {
+          "artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "artist": "Peter Paul Rubens",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "approval": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "source_gate": "SOURCE_IMAGE_MISSING_RIGHTS_PENDING"
+        },
+        {
+          "artwork_id": "sdma-48-3-pittoni-anthony",
+          "title": "The Vision of Saint Anthony of Padua",
+          "artist": "Giovanni Battista Pittoni",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "approval": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "source_gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING"
+        },
+        {
+          "artwork_id": "G17-012",
+          "title": "Saint Anthony of Padua with the Infant Christ",
+          "artist": "Giuseppe Bazzani",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "approval": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "source_gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING"
+        },
+        {
+          "artwork_id": "W07-006",
+          "title": "Madonna and Child with Saint Anthony of Padua",
+          "artist": "Anthony van Dyck",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "approval": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "source_gate": "RIGHTS_EVIDENCE_GAP_NATIVE_VISUAL_QA_PENDING"
+        },
+        {
+          "artwork_id": "W38-009",
+          "title": "Saint Anthony of Padua",
+          "artist": "Claudio Coello",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "approval": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "",
+          "source_gate": "EXACT_FILE_RIGHTS_AND_NATIVE_QA_PENDING"
+        },
+        {
+          "artwork_id": "REVIEW::commons:163857127",
+          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
+          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "approval": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "source": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
+          "source_gate": "COMMONS_PDM_US_SCOPE_AND_NATIVE_PHOTO_QA_PENDING"
+        }
+      ]
     },
     {
       "prayer_id": "sacred_heart_short_prayer",
