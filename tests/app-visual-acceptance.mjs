@@ -525,9 +525,22 @@ try{
   await assertHomeHidden("PRAY");
   // An open modular shell can precede its asynchronous Home catalogue render.
   // Test the completed 9-door Home, not an intermediate empty mount.
-  await page.waitForFunction(()=>
+  const prayHubReady=await page.waitForFunction(()=>
     document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length===9,
-    null,{timeout:12000});
+    null,{timeout:12000}).then(()=>true,()=>false);
+  if(!prayHubReady){
+    const trace=await page.evaluate(()=>({
+      route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+      owner:globalThis.AO_PRAY_APP_V1?.status?.(),
+      state:globalThis.AO_PRAY_V435930?.state?.()?.view,
+      mount:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView,
+      classes:document.getElementById("aoPray435930")?.className,
+      open:document.getElementById("aoPray435930")?.classList.contains("open"),
+      html:document.querySelector("#aoPray435930 .aoP435930Mount")?.innerHTML?.slice(0,1000),
+      errors,
+    }));
+    throw new Error("PRAY hub failed to render nine doors: "+JSON.stringify(trace));
+  }
   assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost hierarchical Back");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-home]").count(),1,"PRAY root lost explicit global Home");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root regressed to ambiguous Close instead of Home");
