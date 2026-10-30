@@ -61,6 +61,41 @@ try{
     }
   }
   await page.screenshot({path:resolve(shots,"today-"+width+".png"),fullPage:true});
+  // H3 embeds the canonical resolved Day; do not introduce a second route.
+  await page.locator('.homeScreen .aoTodayV2ReadReflect [data-home-calendar-view="day"]').click();
+  const dayRoot=page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-embedded="true"][data-ao-calendar-view="day"]');
+  await dayRoot.waitFor({state:"visible",timeout:30000});
+  const dayCard=dayRoot.locator(".aoCalV2Hero");
+  await dayCard.waitFor({state:"visible",timeout:12000});
+  const dayTheme=await dayRoot.evaluate(root=>{
+    const hero=root.querySelector(".aoCalV2Hero");
+    const style=getComputedStyle(hero),r=hero.getBoundingClientRect();
+    return {card:style.backgroundColor,radius:style.borderRadius,
+      border:style.borderTopWidth,width:r.width,viewport:document.documentElement.clientWidth,
+      token:getComputedStyle(root).getPropertyValue("--ao-tcm-card-radius").trim(),
+      selected:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate,
+      date:root.dataset.aoCalendarPaintDate,view:root.dataset.aoCalendarView,
+      sources:hero.querySelectorAll(".aoCalV2Documentation .aoCalDaySources").length,
+      reader:!!globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected};
+  });
+  assert.equal(dayTheme.token,"18px","Embedded Day did not inherit the shared design kit");
+  assert.equal(dayTheme.radius,"18px","Embedded Day card not migrated");
+  assert.equal(dayTheme.border,"1px");
+  assert.ok(dayTheme.width<=dayTheme.viewport,"Embedded Day overflows viewport");
+  assert.equal(dayTheme.date,dayTheme.selected,"Day must keep canonical selected date");
+  assert.equal(dayTheme.sources,1,"Rubrical sources must remain available");
+  assert.equal(dayTheme.reader,false,"Opening Calendar Day must not start Mass");
+  assert.equal(await page.locator('#ao-calendar-modular-root[aria-modal="true"]').count(),0);
+  await page.screenshot({path:resolve(shots,"today-day-dark-"+width+".png"),fullPage:true});
+  await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("appearance.mode","light"));
+  await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light");
+  const lightCard=await dayCard.evaluate(el=>getComputedStyle(el).backgroundColor);
+  assert.notEqual(lightCard,dayTheme.card,"Embedded Day must follow light appearance");
+  await page.screenshot({path:resolve(shots,"today-day-light-"+width+".png"),fullPage:true});
+  await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("appearance.mode","dark"));
+  await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="dark");
+  await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
+  await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
   await page.locator('.aoTodayV2Tabs [data-home-calendar-view="year"]').click();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockDial').count(),1,
