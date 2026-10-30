@@ -1,0 +1,103 @@
+{
+  "schema": "AO_TLM_B82_CONSOLIDATED_RESEARCH_EVIDENCE_V1",
+  "date": "2026-10-25",
+  "status": "RESEARCH_ONLY_NOT_PUBLIC",
+  "dependencies": {
+    "B79": "Operational workbook with 2,575 provisional distinct physical sites",
+    "B80": "PR #1682",
+    "B81": "PR #1683",
+    "SSPX_B79": "PR #1672"
+  },
+  "b82_offline_workbook": "Ad_Orientem_TLM_B82_Consolidated_Identity_And_Physical_View_2026-10-25.xlsx",
+  "b82_offline_workbook_sha256": "c74fb0e92a03b792867ec394bb3cabbb505aca3e55f8600c0c891aaf4cdfcc61",
+  "counts": {
+    "B79_distinct_provisional_physical": 2575,
+    "B82_distinct_provisional_physical": 2573,
+    "historical_canonical_ID_rows": 2576,
+    "unique_current_canonical_IDs": 2576,
+    "physical_source_view_rows": 2576,
+    "identity_alias_rows": 3,
+    "venue_source_rows": 2679,
+    "inherited_timetable_rows": 4681,
+    "previously_verified_timetable_rows": 3347,
+    "newly_certified_schedules": 0,
+    "new_public_places": 0,
+    "new_research_sites_admitted": 0
+  },
+  "applied_corrections": [
+    {
+      "category": "ADDRESS_CORRECTION",
+      "research_group_id": "RG-91DED12A8EBD",
+      "old_physical": "301 Avenue Y South, Saskatoon, SK, Canada",
+      "new_physical": "St Joseph Catholic Church, 535 8th Street East, Saskatoon, SK S7H 0P9, Canada",
+      "do_not_use_as_church": "238 4th Street East, rectory and mailing address",
+      "sources": [
+        "https://saskatoonlatinmass.com/",
+        "https://rcdos.ca/mass_times/sacred-heart-latin-mass-community/"
+      ]
+    },
+    {
+      "category": "EXACT_SAME_PHYSICAL_SITE",
+      "anchor": "RG-3EFF2C4A33C0",
+      "historical_aliases": [
+        "RG-FB8FE21E0732",
+        "RG-570BDEDA273D"
+      ],
+      "building": "Eglise Saint-Irenee, 560 Avenue Atwater, Montreal QC",
+      "prior_mass_rows_preserved": true,
+      "source": "https://st-irenee.org/mass-times/"
+    },
+    {
+      "category": "B79_ALREADY_RESOLVED_IDENTITY",
+      "anchor": "RG-D9490DF575C9",
+      "historical_alias": "RG-E0C932E6CB74",
+      "building": "St Pius X, 16 Deer Park Road, Manchester",
+      "source": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "category": "REBUILT_PHYSICAL_VIEW",
+      "canonical_only_groups_materialized": 26,
+      "legacy_physical_view_only_groups_archived": 5,
+      "legacy_sheet": "B79 PHYSICAL LEGACY",
+      "archive_sheet": "B82 LEGACY ORPHANS",
+      "no_historical_ID_deletions": true
+    }
+  ],
+  "pending": {
+    "Barntown": {
+      "lead": "St Alphonsus Church, Barntown, County Wexford",
+      "current_mass_status": "HOLD_CURRENT_1962_SITE_USE_NOT_CONFIRMED",
+      "sources": [
+        "https://fssp.org.uk/locations/",
+        "https://ferns.ie/barntown-glynn/",
+        "https://fssp.ie/mass-times/"
+      ]
+    },
+    "legacy_B69_physical_only_IDs": [
+      "RG-B69-6415E91BC4A8",
+      "RG-B69-7B862EC2FE95",
+      "RG-B69-8020AEEEC172",
+      "RG-B69-DE69FB1FBC95",
+      "RG-B69-F55F05975DD6"
+    ]
+  },
+  "qa": {
+    "result": "PASS_WITH_EXPLICIT_REPRESENTATION_NOTE",
+    "inherited_timetable_cell_contents_exact": true,
+    "inherited_timetable_row_count_exact": 4681,
+    "historical_ordered_canonical_IDs_exact": true,
+    "historical_ordered_source_IDs_exact": true,
+    "all_rebuilt_physical_rows_resolve_to_canonical_ID": true,
+    "old_physical_tab_preserved_in_full": true,
+    "caveat": "34 raw UTC ISO timestamp strings in historical B77 SSPX 613 CROSSWALK H49:H82 were converted to Excel date serials by the authoring library; all represent original 2026-10-08T08:07:00Z. They are source checked dates only, not Mass timetables; originals remain in B79 immutable workbook and B82 local supplemental JSON audit.",
+    "b77_raw_timestamp": {
+      "sheet": "B77 SSPX 613 CROSSWALK",
+      "row_first": 49,
+      "row_last": 82,
+      "column": "H",
+      "raw_original_value": "2026-10-08T08:07:00Z",
+      "count": 34
+    }
+  },
+  "merge_gate": "Evidence-only manifest: no new site IDs, schedule verification state, canonical Place IDs or public map changes. Do not merge as a production import. Keep B79 and original repo lineage."
+}
