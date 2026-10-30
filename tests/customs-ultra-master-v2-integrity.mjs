@@ -895,4 +895,44 @@ assert.equal(singleWorkingIndex.guard.merges_approved,0);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
+
+// 2026-10-30 additional printed-edition search: eight case-specific locator outcomes.
+// Modern-reset Craig pamphlet with post-1946 editorial aside is not a facsimile.
+const ed2=printAudit.edition_locator_second_pass;
+assert.equal(ed2.eight_without_printed_primary_accounted_for,8);
+assert.equal(ed2.original_print_pages_newly_certified_within_paired_works,0);
+assert.equal(ed2.additional_1956_weiser_contextual_print_scan_page_images_reviewed,2);
+assert.equal(ed2.modern_retypeset_1946_pamphlet_reclassified_as_not_original_facsimile,true);
+assert.equal(ed2.stokes_mueller_and_family_life_bureau_citations_found,true);
+assert.equal(ed2.case_013_and_040_share_craig_underlying_witness,true);
+assert.equal(ed2.additional_cross_source_independence_certifications,0);
+assert.equal(ed2.original_source_pairs_with_both_original_editions_page_verified,0);
+assert.equal(ed2.source_notes.length,4);
+const ed2IDs=new Set(["CC3WORK-REL-001","CC3WORK-REL-002","CC3WORK-REL-006","CC3WORK-REL-008","CC3WORK-REL-013","CC3WORK-REL-016","CC3WORK-REL-017","CC3WORK-REL-040"]);
+const pendingPrint=printAudit.records.filter(x=>x.next_edition_locator_review);
+assert.equal(pendingPrint.length,8);
+for(const r of pendingPrint){
+ assert.ok(ed2IDs.has(r.case_id));
+ assert.equal(r.original_print_scan,null);
+ assert.equal(r.next_edition_locator_review.additional_original_printed_page_verified,false);
+ assert.equal(r.next_edition_locator_review.source_independence_established,false);
+ assert.ok(r.next_edition_locator_review.uri.startsWith("https://"));
+ assert.ok(r.next_edition_locator_review.note.length>90);
+ const indexed=singleWorkingIndex.dedup_case_decisions.find(x=>x.id===r.case_id).primary_print_witness_review;
+ assert.equal(indexed.second_pass_source_uri,r.next_edition_locator_review.uri);
+ assert.equal(indexed.second_pass_source_kind,r.next_edition_locator_review.kind);
+ assert.equal(indexed.second_pass_edition_locator_status,r.next_edition_locator_review.status);
+ assert.equal(indexed.added_original_print_page_verified,false);
+ assert.equal(indexed.author_independence_certified,false);
+}
+assert.deepEqual(new Set(pendingPrint.map(x=>x.case_id)),ed2IDs);
+for(const id of ["CC3WORK-REL-013","CC3WORK-REL-040"])
+ assert.equal(printAudit.records.find(x=>x.case_id===id).next_edition_locator_review.kind,"MODERN_RESET_TEXT_OF_1946_PAMPHLET_NOT_UNALTERED_FACSIMILE");
+assert.equal(singleWorkingIndex.printed_witness_review.eight_pending_edition_location_pass.cases_traced,8);
+assert.equal(singleWorkingIndex.printed_witness_review.eight_pending_edition_location_pass.print_origins_newly_found,0);
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
