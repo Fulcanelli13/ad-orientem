@@ -67,8 +67,9 @@ assert.ok(runtime.includes("FIVE_WOUNDS.index=Math.max(0,FIVE_WOUNDS.index-1)"))
 assert.ok(runtime.includes("FIVE_WOUNDS.index=Math.min(29,FIVE_WOUNDS.index+1)"));
 assert.ok(runtime.includes("if(b.hasAttribute('data-p435930-five-finish')&&FIVE_WOUNDS.index===29)"));
 assert.ok(runtime.includes("FIVE_WOUNDS.latin=!FIVE_WOUNDS.latin"));
-assert.ok(runtime.includes("const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)"),
- "Five Wounds must have the same session-only EN/FR switch while preserving the original four-reader contract");
+assert.ok(runtime.includes("const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin&&!CHAPLET_F07_PILOT_ENABLED)"),
+ "Default Five Wounds keeps the existing session-only EN/FR switch; the opt-in reader must not show it twice");
+assert.ok(runtime.includes('data-p435930-five-language'),"Opt-in Five Wounds Aa menu must remain wired to the original prayer language state");
 assert.ok(runtime.includes("if(view==='fiveWounds'&&b.hasAttribute('data-p435930-session-language')&&!FIVE_WOUNDS.latin)"),
  "The chaplet language action must be source-local and not alter the historic four-reader handler");
 assert.ok(runtime.includes('data-p435930-own="${esc(route)}"'));
