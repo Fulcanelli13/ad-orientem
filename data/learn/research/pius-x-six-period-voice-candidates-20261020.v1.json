@@ -1,0 +1,178 @@
+{
+  "schema": "AO_SPX_SIX_FIRST_PERIOD_VOICE_CANDIDATES_V1",
+  "created": "2026-10-20",
+  "status": "STYLE_CONSTRAINED_SOURCE_FIRST_REVIEW_ONLY_NOT_AUTHOR_SPEECH",
+  "voiceOwner": {
+    "pr": 1419,
+    "headCommit": "b99bedc27b194c7391375911c01b283fd88e9702",
+    "artifact": "data/learn/pius-x-documentary-voice-style.v1.json",
+    "released": false
+  },
+  "sourceOwner": "data/learn/research/pius-x-source-bounded-bilingual-corrections-20261020.v1.json",
+  "guidance": "This is a controlled period-register editorial experiment on 5 doctrinal examples and 1 out-of-character historic discipline note. Neither papal prescription of the 1905 Catechism nor plausible period diction equates to words personally spoken by Pius X.",
+  "claims": {
+    "periodStyleIllustrations": 5,
+    "outOfCharacterHistoricalNotes": 1,
+    "independentlyApproved": 0,
+    "replacedCanonicalAnswers": 0
+  },
+  "rules": [
+    "No invented first-person papal memory, private exhortation or blessing",
+    "No artificial faux-archaisms or habitual 'my child'",
+    "No invented doctrinal conclusion or current-law advice",
+    "Keep editorial historical-law caveat out of the character dialogue",
+    "Source and doctrine owner prevails over the style draft"
+  ],
+  "records": [
+    {
+      "turnId": "SPX-1905-S-607-T1",
+      "register": "CATECHETICAL",
+      "channel": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED",
+      "labels": {
+        "en": "Period-register candidate · reconstructed catechesis",
+        "fr": "Proposition de style d’époque · catéchèse reconstituée"
+      },
+      "candidate": {
+        "en": "The Church gives to this conversion the name of transubstantiation. The substance of bread and wine is changed into the Body and Blood of Our Lord, while their sensible appearances remain.",
+        "fr": "L’Église donne à cette conversion le nom de transsubstantiation. La substance du pain et du vin est changée au Corps et au Sang de Notre-Seigneur, tandis que demeurent leurs apparences sensibles."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q596",
+        "PX1905-Q607",
+        "PX1905-Q609",
+        "PX1905-Q610"
+      ],
+      "reason": "Restrained catechetical naming followed by definition, no invented scientific explanation.",
+      "authorClaim": "EDITORIAL_COMPOSITION_NOT_SOURCE_QUOTATION",
+      "sourceSentenceCertified": false,
+      "styleHumanApproved": false,
+      "translationHumanApproved": false,
+      "theologyHumanApproved": false,
+      "originalPrintedWordSequenceVerified": false,
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-619-T1",
+      "register": "CATECHETICAL",
+      "channel": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED",
+      "labels": {
+        "en": "Period-register candidate · reconstructed catechesis",
+        "fr": "Proposition de style d’époque · catéchèse reconstituée"
+      },
+      "candidate": {
+        "en": "The whole Christ is present under the consecrated host, and likewise under each of its particles, so long as the sacramental species remain.",
+        "fr": "Le Christ tout entier est présent sous l’hostie consacrée et pareillement sous chacune de ses parcelles, aussi longtemps que demeurent les espèces sacramentelles."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q619",
+        "PX1905-Q641"
+      ],
+      "reason": "Precise clarification without a fabricated consoling maxim.",
+      "authorClaim": "EDITORIAL_COMPOSITION_NOT_SOURCE_QUOTATION",
+      "sourceSentenceCertified": false,
+      "styleHumanApproved": false,
+      "translationHumanApproved": false,
+      "theologyHumanApproved": false,
+      "originalPrintedWordSequenceVerified": false,
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-652-T1",
+      "register": "CATECHETICAL",
+      "channel": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED",
+      "labels": {
+        "en": "Period-register candidate · reconstructed catechesis",
+        "fr": "Proposition de style d’époque · catéchèse reconstituée"
+      },
+      "candidate": {
+        "en": "Sacrifice is an offering made to God of some sensible thing, with its destruction in some manner, thereby acknowledging His sovereign dominion over us and over all creatures.",
+        "fr": "Le sacrifice est l’offrande faite à Dieu d’une chose sensible, avec sa destruction d’une certaine manière, pour reconnaître ainsi son souverain domaine sur nous et sur toutes les créatures."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q652"
+      ],
+      "reason": "Historical wording of a general sacrifice definition; no substitution of change or transformation for destruction.",
+      "authorClaim": "EDITORIAL_COMPOSITION_NOT_SOURCE_QUOTATION",
+      "sourceSentenceCertified": false,
+      "styleHumanApproved": false,
+      "translationHumanApproved": false,
+      "theologyHumanApproved": false,
+      "originalPrintedWordSequenceVerified": false,
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-655-T1",
+      "register": "DOCTRINAL_CORRECTION",
+      "channel": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED",
+      "labels": {
+        "en": "Period-register candidate · reconstructed catechesis",
+        "fr": "Proposition de style d’époque · catéchèse reconstituée"
+      },
+      "candidate": {
+        "en": "The Sacrifice of the Mass is substantially the same as that of Calvary. Jesus Christ, who offered Himself upon the Cross, is offered upon the altar by the ministry of the priests; the manner of offering is different.",
+        "fr": "Le Sacrifice de la Messe est substantiellement le même que celui du Calvaire. Jésus-Christ, qui s’est offert sur la Croix, est offert sur l’autel par le ministère des prêtres ; seul diffère le mode de l’offrande."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q655",
+        "PX1905-Q660"
+      ],
+      "reason": "Differentiates identity of sacrifice and manner, avoiding a second redemptive death.",
+      "authorClaim": "EDITORIAL_COMPOSITION_NOT_SOURCE_QUOTATION",
+      "sourceSentenceCertified": false,
+      "styleHumanApproved": false,
+      "translationHumanApproved": false,
+      "theologyHumanApproved": false,
+      "originalPrintedWordSequenceVerified": false,
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-657-T1",
+      "register": "CATECHETICAL",
+      "channel": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED",
+      "labels": {
+        "en": "Period-register candidate · reconstructed catechesis",
+        "fr": "Proposition de style d’époque · catéchèse reconstituée"
+      },
+      "candidate": {
+        "en": "The separate consecration signifies the shedding of Christ’s Blood upon the Cross. By virtue of the words of consecration His Body is under the species of bread, and His Blood under those of wine; yet by concomitance and the hypostatic union the whole living Christ is present under either species.",
+        "fr": "La consécration séparée représente l’effusion du Sang du Christ sur la Croix. En vertu des paroles de la consécration, son Corps est sous l’espèce du pain et son Sang sous celle du vin ; cependant, par concomitance et en raison de l’union hypostatique, le Christ vivant tout entier est présent sous chacune des espèces."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q657"
+      ],
+      "reason": "Preserves distinct consecration and whole-Christ presence, does not imply bread holds Christ's Body alone. Explicitly retain the hypostatic-union qualification from Q657.",
+      "authorClaim": "EDITORIAL_COMPOSITION_NOT_SOURCE_QUOTATION",
+      "sourceSentenceCertified": false,
+      "styleHumanApproved": false,
+      "translationHumanApproved": false,
+      "theologyHumanApproved": false,
+      "originalPrintedWordSequenceVerified": false,
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-633-T1",
+      "register": "HISTORICAL_LIMIT",
+      "channel": "OUT_OF_CHARACTER_EDITORIAL_HISTORICAL_NOTE",
+      "labels": {
+        "en": "Historical discipline note · not spoken by St Pius X",
+        "fr": "Note historique · non prononcée par saint Pie X"
+      },
+      "candidate": {
+        "en": "The 1905 Catechism prescribed a natural fast beginning at midnight before Holy Communion. Its explanation of that fast belongs to the historical discipline of the period; it must not be presented as the current general rule.",
+        "fr": "Le Catéchisme de 1905 prescrivait avant la sainte communion un jeûne naturel commençant à minuit. Cette explication relève de la discipline de son époque ; elle ne saurait être présentée comme la règle générale en vigueur aujourd’hui."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q628",
+        "PX1905-Q633"
+      ],
+      "reason": "This retrospective legal qualification must appear in an editorial note, never as a spontaneous quotation from Pius X.",
+      "authorClaim": "EDITORIAL_COMPOSITION_NOT_SOURCE_QUOTATION",
+      "sourceSentenceCertified": false,
+      "styleHumanApproved": false,
+      "translationHumanApproved": false,
+      "theologyHumanApproved": false,
+      "originalPrintedWordSequenceVerified": false,
+      "published": false
+    }
+  ]
+}

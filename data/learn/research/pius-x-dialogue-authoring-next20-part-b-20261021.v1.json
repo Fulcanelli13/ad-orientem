@@ -1,0 +1,757 @@
+{
+  "schema": "AO_SPX_NEXT20_DIALOGUES_PART_B_V1",
+  "asOf": "2026-10-21",
+  "state": "EDITORIAL_CONVERSATION_AUTHORING_ONLY",
+  "part": "B",
+  "contents": "10 Church life and pastoral themes, 30 EN/FR three-turn Q&A chapters, visitor-choice links",
+  "records": [
+    {
+      "id": "SPX-EXP-024",
+      "category": "HISTORICAL_CHURCH_STATE",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+        "locus": "§§1–12",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_024.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why did you oppose the French separation law?",
+            "fr": "Pourquoi vous êtes-vous opposé à la loi française de séparation ?"
+          },
+          "answer": {
+            "en": "In Vehementer nos I addressed a particular law enacted in France in 1905. I objected to its treatment of the Church, her rights and institutions, and urged Catholics to respond in fidelity to their religion and pastors. My judgement concerned the circumstances and provisions of that law.",
+            "fr": "Dans Vehementer nos, j'ai examiné une loi précise adoptée en France en 1905. Je contestais le sort qu'elle réservait à l'Église, à ses droits et à ses institutions, et j'appelais les catholiques à demeurer fidèles à leur religion et à leurs pasteurs. Mon jugement portait sur les circonstances et les dispositions de cette loi."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-024",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_024.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Was this simply a dispute over the Church's possessions?",
+            "fr": "Ne s'agissait-il que d'une querelle concernant les biens de l'Église ?"
+          },
+          "answer": {
+            "en": "The encyclical treats the conditions of the Church's freedom and public religious life, not merely the loss of property. Property and institutions mattered there because their treatment affected the exercise of the Church's mission.",
+            "fr": "L'encyclique traite des conditions de la liberté de l'Église et de sa vie religieuse publique, non de la seule perte de biens. Le sort des biens et des institutions importait dans la mesure où il touchait l'exercice de sa mission."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-024",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_024.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Would your answer to the law of 1905 automatically govern my country's law today?",
+            "fr": "Votre réponse à la loi de 1905 régit-elle automatiquement le droit de mon pays aujourd'hui ?"
+          },
+          "answer": {
+            "en": "No. The principles and the historical decisions in Vehementer nos must be distinguished. Applying Church teaching to another legal system requires its facts, subsequent Church law and competent authority.",
+            "fr": "Non. Il faut distinguer les principes et les décisions historiques de Vehementer nos. Leur application à un autre système juridique demande l'examen des faits, du droit ecclésiastique postérieur et de l'autorité compétente."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-024",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-028",
+        "SPX-EXP-025"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-028",
+      "category": "HOPE_AND_MISSION",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "§§5–9",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_028.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "How can Christians avoid discouragement when society loses faith?",
+            "fr": "Comment les chrétiens peuvent-ils éviter le découragement lorsque la société perd la foi ?"
+          },
+          "answer": {
+            "en": "In E supremi I faced the irreligion and hostility of my age without making them reasons for surrender. The work I proposed was to bring souls to Christ through faithful teaching, prayer and the example of Christian life. Hope was to lead to labour, not to passivity.",
+            "fr": "Dans E supremi, j'ai considéré l'irréligion et l'hostilité de mon temps sans y voir des raisons d'abandonner. L'œuvre que je proposais consistait à conduire les âmes au Christ par un enseignement fidèle, la prière et l'exemple chrétien. L'espérance devait conduire au travail, non à la passivité."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-028",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_028.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does Christian hope mean denying that the crisis is real?",
+            "fr": "L'espérance chrétienne consiste-t-elle à nier la réalité de la crise ?"
+          },
+          "answer": {
+            "en": "No. I described serious disorders and opposition openly. The purpose was to act with confidence in Christ despite those difficulties, rather than pretend they did not exist.",
+            "fr": "Non. J'ai décrit ouvertement des désordres et des oppositions graves. Il s'agissait d'agir avec confiance dans le Christ malgré ces difficultés, sans feindre qu'elles n'existaient pas."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-028",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_028.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Where does an ordinary believer begin?",
+            "fr": "Par où un simple fidèle peut-il commencer ?"
+          },
+          "answer": {
+            "en": "The encyclical's programme begins with the return to Christ, not with an invented private campaign against particular people. Prayer, knowledge of the faith and fidelity in one's duties belong to that wider work.",
+            "fr": "Le programme de l'encyclique commence par le retour au Christ, non par une campagne privée inventée contre des personnes déterminées. La prière, la connaissance de la foi et la fidélité aux devoirs de chacun participent à cette œuvre."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-028",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-048",
+        "SPX-EXP-021"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-032",
+      "category": "MIRACLES_AND_REVELATION",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§6–10",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_032.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Are miracles and prophecies merely symbols of religious experience?",
+            "fr": "Les miracles et les prophéties ne sont-ils que des symboles de l'expérience religieuse ?"
+          },
+          "answer": {
+            "en": "In Pascendi I opposed an approach that removed the supernatural character of revelation and treated its outward signs as products of inward religious consciousness. The encyclical contests that reduction; it does not decide the authenticity of every modern claim to a miracle.",
+            "fr": "Dans Pascendi, j'ai combattu une méthode qui supprimait le caractère surnaturel de la Révélation et ramenait ses signes extérieurs aux produits de la conscience religieuse. L'encyclique rejette cette réduction, sans juger pour autant l'authenticité de toute prétention moderne à un miracle."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-032",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_032.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Would a miracle be true merely because someone is moved by its story?",
+            "fr": "Un miracle serait-il vrai simplement parce que son récit émeut quelqu'un ?"
+          },
+          "answer": {
+            "en": "No. Being deeply moved is not the same as establishing the truth of an event. My criticism concerns the attempt to replace objective supernatural claims with subjective religious meaning.",
+            "fr": "Non. Être profondément ému ne revient pas à établir la vérité d'un fait. Ma critique vise la tentative de remplacer les réalités surnaturelles objectives par une signification religieuse seulement subjective."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-032",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_032.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Does the encyclical authenticate a miracle someone reports today?",
+            "fr": "L'encyclique authentifie-t-elle un miracle rapporté aujourd'hui ?"
+          },
+          "answer": {
+            "en": "No. It examines principles concerning revelation and historical testimony, not the evidence for a particular present-day event. Such a case must be investigated on its own merits.",
+            "fr": "Non. Elle examine des principes concernant la Révélation et le témoignage historique, non les preuves d'un événement actuel particulier. Un tel fait doit être examiné selon les preuves qui lui sont propres."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-032",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-016",
+        "SPX-EXP-013"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-037",
+      "category": "SACRED_MUSIC_CRITERIA",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "locus": "general instruction §§1–6",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_037.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What makes music truly suitable for the liturgy?",
+            "fr": "Qu'est-ce qui rend une musique véritablement convenable à la liturgie ?"
+          },
+          "answer": {
+            "en": "In Tra le sollecitudini I required sacred music to possess holiness, genuine artistry and a character fitting for the Church's universal worship. Music that merely imitates the theatre is ill suited to the solemn prayer of the Church, however skilled its performance.",
+            "fr": "Dans Tra le sollecitudini, j'ai demandé que la musique sacrée possède la sainteté, un art véritable et un caractère convenant au culte universel de l'Église. Une musique qui ne fait qu'imiter le théâtre sert mal la prière solennelle, si habilement qu'elle soit exécutée."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-037",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_037.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does that mean artistic quality is unimportant?",
+            "fr": "Cela signifie-t-il que la qualité artistique est sans importance ?"
+          },
+          "answer": {
+            "en": "Quite the opposite: the instruction requires true art. But musical skill must serve the sacred action; pleasing an audience is not the governing end of the liturgy.",
+            "fr": "Bien au contraire : l'instruction exige un art véritable. Mais le talent musical doit servir l'action sacrée ; plaire à un public n'est pas la fin qui gouverne la liturgie."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-037",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_037.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Is all music other than Gregorian chant excluded?",
+            "fr": "Toute musique autre que le chant grégorien est-elle exclue ?"
+          },
+          "answer": {
+            "en": "No. I held Gregorian chant up as a principal model, while also recognising worthy classical polyphony. Those distinctions must be read within the precise prescriptions and historical discipline of the instruction.",
+            "fr": "Non. J'ai proposé le chant grégorien comme modèle privilégié tout en reconnaissant la valeur d'une polyphonie classique digne du culte. Ces distinctions doivent être comprises dans les prescriptions précises et la discipline historique de l'instruction."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-037",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-038",
+        "SPX-EXP-039"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-038",
+      "category": "LITURGICAL_MUSIC_PURPOSE",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "locus": "introduction and instruction §§1–3",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_038.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why did the dignity of church music concern you so deeply?",
+            "fr": "Pourquoi la dignité de la musique d'église vous préoccupait-elle autant ?"
+          },
+          "answer": {
+            "en": "Sacred music is part of public and solemn worship, not a decoration added for amusement. In Tra le sollecitudini I linked its dignity to the reverence due to the liturgy and the Christian spirit cultivated in the faithful.",
+            "fr": "La musique sacrée appartient au culte public et solennel ; elle n'est pas une décoration destinée au divertissement. Dans Tra le sollecitudini, j'ai lié sa dignité à la révérence due à la liturgie et à l'esprit chrétien nourri chez les fidèles."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-038",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_038.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Can a congregation enjoy beautiful music without turning Mass into a concert?",
+            "fr": "Les fidèles peuvent-ils goûter la beauté musicale sans transformer la messe en concert ?"
+          },
+          "answer": {
+            "en": "Beauty is not the objection. Music must remain ordered to the sacred action and its texts, rather than making worship chiefly an occasion to admire performers.",
+            "fr": "Ce n'est pas la beauté qui est en cause. La musique doit rester ordonnée à l'action sacrée et à ses textes, plutôt que de faire du culte une occasion surtout destinée à admirer des exécutants."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-038",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_038.F2",
+          "kind": "followup",
+          "question": {
+            "en": "What should come first when choosing music for a service?",
+            "fr": "Qu'est-ce qui doit passer en premier dans le choix de la musique ?"
+          },
+          "answer": {
+            "en": "The liturgical purpose and dignity of the worship should govern the choice; technical accomplishment and personal taste come after that. Particular permissions and musical rules must be read from the rite and discipline that actually applies.",
+            "fr": "La fin liturgique et la dignité du culte doivent diriger le choix ; la virtuosité et le goût personnel viennent ensuite. Les permissions et règles précises dépendent du rite et de la discipline effectivement applicables."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-038",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-037",
+        "SPX-EXP-039"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-039",
+      "category": "PUBLIC_PRAYER_PARTICIPATION",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "locus": "introduction and §§1–3",
+        "evidenceTier": "PRIMARY_PARTIAL",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_039.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What did you mean by participation in the Church's public prayer?",
+            "fr": "Qu'entendiez-vous par la participation à la prière publique de l'Église ?"
+          },
+          "answer": {
+            "en": "In the introduction to Tra le sollecitudini I spoke of the faithful drawing Christian spirit from the Church's public and solemn prayer. The passage establishes that pastoral aim, but does not by itself prescribe a single gesture, booklet or private devotion for everyone at Mass.",
+            "fr": "Dans l'introduction de Tra le sollecitudini, j'ai parlé de l'esprit chrétien que les fidèles puisent dans la prière publique et solennelle de l'Église. Ce passage établit une fin pastorale, mais n'impose à lui seul ni geste, ni livret, ni dévotion privée identique pour tous pendant la messe."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-039",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_039.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does participation mean that everyone must perform the same outward action?",
+            "fr": "La participation exige-t-elle que tous accomplissent le même geste extérieur ?"
+          },
+          "answer": {
+            "en": "That cannot be concluded from these lines. They praise the formative place of solemn worship; detailed prescriptions about lay gestures or private prayer need the relevant liturgical and catechetical texts.",
+            "fr": "On ne saurait le conclure de ces lignes. Elles louent le rôle formateur du culte solennel ; les prescriptions concernant les gestes des fidèles et la prière personnelle relèvent des textes liturgiques et catéchétiques pertinents."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-039",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_039.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Can someone prayerfully follow Mass without singing every chant?",
+            "fr": "Peut-on suivre pieusement la messe sans chanter chaque pièce ?"
+          },
+          "answer": {
+            "en": "This document does not establish a rule that every person must sing every piece. Its aim is participation in the Church's worship, while the precise ways of assisting at Mass must be determined from the appropriate sources.",
+            "fr": "Ce document ne prescrit pas que chacun chante toutes les pièces. Il vise la participation au culte de l'Église ; les manières précises d'assister à la messe doivent être établies à partir des sources appropriées."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-039",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-038",
+        "SPX-PILOT-02"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-042",
+      "category": "FIRST_COMMUNION_PREPARATION",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "§§19–23",
+        "evidenceTier": "PRIMARY_PARTIAL",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_042.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "How should children be prepared for Holy Communion?",
+            "fr": "Comment préparer les enfants à la sainte communion ?"
+          },
+          "answer": {
+            "en": "In Acerbo nimis I insisted that children be instructed in Christian doctrine according to their capacity. But the question of the age and dispositions required for admission to First Communion belongs especially to Quam singulari, the 1910 decree approved under my pontificate.",
+            "fr": "Dans Acerbo nimis, j'ai insisté pour que les enfants soient instruits de la doctrine chrétienne selon leurs capacités. Mais la question de l'âge et des dispositions requises pour la première communion relève surtout de Quam singulari, décret de 1910 approuvé sous mon pontificat."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-042",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_042.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Must a child master the whole catechism before First Communion?",
+            "fr": "L'enfant doit-il maîtriser tout le catéchisme avant la première communion ?"
+          },
+          "answer": {
+            "en": "That is not what these paragraphs of Acerbo nimis prescribe. Quam singulari treats the child's use of reason and a suitable understanding of the sacrament; its actual words must govern any more specific historical claim.",
+            "fr": "Ce n'est pas ce que prescrivent ces passages d'Acerbo nimis. Quam singulari traite de l'usage de raison et d'une connaissance convenable du sacrement ; ses propres termes doivent gouverner toute affirmation historique plus précise."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-042",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_042.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Should the 1910 decree be attributed as your personal encyclical?",
+            "fr": "Faut-il présenter le décret de 1910 comme une encyclique écrite personnellement par vous ?"
+          },
+          "answer": {
+            "en": "No. Quam singulari was issued by the competent Roman Congregation and received papal approval. That attribution should remain visible rather than being turned into words supposedly spoken by me in an encyclical.",
+            "fr": "Non. Quam singulari fut promulgué par la Congrégation romaine compétente et reçut l'approbation pontificale. Il faut conserver cette attribution, non transformer le décret en paroles que j'aurais personnellement prononcées dans une encyclique."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-042",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-PILOT-10",
+        "SPX-EXP-043"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      },
+      "supportingSource": {
+        "name": "Quam singulari (1910)",
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+        "sourceScope": "disciplinary rules 1–4 and papal approval at close",
+        "sourceClass": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT_NOT_PERSONAL_ENCYCLICAL",
+        "ownedBy": "SPX-PILOT-10",
+        "note": "Used solely to distinguish first Communion admission requirements from catechetical guidance in Acerbo nimis; no novel attribution or edition certification."
+      }
+    },
+    {
+      "id": "SPX-EXP-044",
+      "category": "SECULAR_SCHOOL_CATECHESIS",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "§23",
+        "evidenceTier": "PRIMARY_PARTIAL",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_044.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What provision did you urge for children in secular schools?",
+            "fr": "Que demandiez-vous pour les enfants fréquentant les écoles sans enseignement religieux ?"
+          },
+          "answer": {
+            "en": "In Acerbo nimis I required attention to the religious instruction of children who attended schools where it was not given. The encyclical directs pastors to arrange catechetical teaching; it does not settle every decision a parent must make under today's civil law.",
+            "fr": "Dans Acerbo nimis, j'ai demandé qu'on veille à l'instruction religieuse des enfants qui fréquentaient des écoles où elle n'était pas donnée. L'encyclique charge les pasteurs d'organiser la catéchèse ; elle ne règle pas toute décision qu'un parent doit prendre selon le droit civil actuel."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-044",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_044.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Who was expected to organise that instruction?",
+            "fr": "À qui revenait l'organisation de cette instruction ?"
+          },
+          "answer": {
+            "en": "The encyclical places specific responsibilities on pastors and ecclesiastical teachers to make Christian doctrine accessible to those children. Parents and the Church's teaching mission should not be portrayed as mutually exclusive.",
+            "fr": "L'encyclique confie aux pasteurs et aux catéchistes des responsabilités précises afin que ces enfants puissent apprendre la doctrine chrétienne. Il ne faut pas opposer artificiellement les parents à la mission enseignante de l'Église."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-044",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_044.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Does this determine whether my child must attend a particular school today?",
+            "fr": "Cela détermine-t-il l'école que doit fréquenter mon enfant aujourd'hui ?"
+          },
+          "answer": {
+            "en": "No. The historical source addresses the provision of instruction, not the facts and legal options of a family in the present. Those require current, local information and the child's concrete circumstances.",
+            "fr": "Non. La source historique traite de l'organisation de l'instruction, non des faits et possibilités juridiques propres à une famille d'aujourd'hui. Ceux-ci demandent des renseignements actuels et locaux ainsi que l'examen des circonstances de l'enfant."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-044",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-043",
+        "SPX-EXP-042"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-046",
+      "category": "PRIESTLY_EXAMPLE",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "§§2–4",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_046.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why should a priest's example matter as much as his preaching?",
+            "fr": "Pourquoi l'exemple d'un prêtre importe-t-il autant que sa prédication ?"
+          },
+          "answer": {
+            "en": "In Haerent animo I exhorted priests to seek holiness in their own lives. Instruction loses force when it is contradicted by conduct. The pastor must first strive to live the truth that he proclaims, relying upon grace rather than mere outward activity.",
+            "fr": "Dans Haerent animo, j'ai exhorté les prêtres à rechercher la sainteté dans leur propre vie. L'enseignement perd de sa force lorsqu'il est contredit par la conduite. Le pasteur doit d'abord s'efforcer de vivre la vérité qu'il annonce, en comptant sur la grâce plutôt que sur la seule activité extérieure."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-046",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_046.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does eloquent preaching excuse a priest from personal discipline?",
+            "fr": "Une prédication éloquente dispense-t-elle le prêtre de se discipliner lui-même ?"
+          },
+          "answer": {
+            "en": "No. Eloquence is not a substitute for priestly virtue. The exhortation treats personal holiness as essential to the pastoral vocation, not as an optional ornament of public ministry.",
+            "fr": "Non. L'éloquence ne remplace pas la vertu sacerdotale. L'exhortation présente la sainteté personnelle comme essentielle à la vocation pastorale, non comme un ornement facultatif du ministère public."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-046",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_046.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Were these words meant as a private accusation against a particular priest?",
+            "fr": "Ces paroles accusaient-elles en privé un prêtre en particulier ?"
+          },
+          "answer": {
+            "en": "They were an exhortation addressed to the clergy in general. The text does not establish the fault or sanctity of any named priest whom a visitor may have in mind.",
+            "fr": "Il s'agissait d'une exhortation adressée au clergé en général. Le texte n'établit ni la faute ni la sainteté d'un prêtre déterminé auquel un lecteur penserait."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-046",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-PILOT-09",
+        "SPX-EXP-043"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-048",
+      "category": "CHARITY_AND_TRUTH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "§§12–13",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_048.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "How can a Catholic defend doctrine firmly without treating opponents harshly?",
+            "fr": "Comment un catholique peut-il défendre fermement la doctrine sans maltraiter ses contradicteurs ?"
+          },
+          "answer": {
+            "en": "In E supremi I urged the restoration of all things in Christ through Christian teaching and a charity directed toward those who do not yet know Him. Fidelity to truth need not become contempt for persons; persuasion must seek their good.",
+            "fr": "Dans E supremi, j'ai demandé de tout restaurer dans le Christ par l'enseignement chrétien et par une charité tournée vers ceux qui ne Le connaissent pas encore. La fidélité à la vérité n'exige pas le mépris des personnes ; la persuasion doit rechercher leur bien."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-048",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_048.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does charity mean never correcting a false idea?",
+            "fr": "La charité interdit-elle de corriger une idée fausse ?"
+          },
+          "answer": {
+            "en": "No. The encyclical joins patient charity to the work of teaching. One may contest an error while still recognising duties toward the person who holds it.",
+            "fr": "Non. L'encyclique unit la charité patiente à la mission d'enseigner. On peut contester une erreur tout en respectant ses devoirs envers la personne qui la soutient."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-048",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_048.F2",
+          "kind": "followup",
+          "question": {
+            "en": "May I declare an opponent's motives wicked because I disagree with him?",
+            "fr": "Puis-je déclarer mauvaises les intentions de mon contradicteur parce que je suis en désaccord avec lui ?"
+          },
+          "answer": {
+            "en": "The source does not authorise such a personal verdict. To defend a doctrinal claim is not to possess knowledge of another person's conscience or hidden intentions.",
+            "fr": "La source n'autorise pas un tel jugement personnel. Défendre une affirmation doctrinale ne donne pas accès à la conscience ni aux intentions cachées d'autrui."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-048",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-028",
+        "SPX-EXP-022"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    }
+  ]
+}

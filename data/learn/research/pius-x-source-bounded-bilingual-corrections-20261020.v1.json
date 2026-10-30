@@ -1,0 +1,294 @@
+{
+  "schema": "AO_SPX_BILINGUAL_CORRECTED_DRAFT_CANDIDATES_V1",
+  "created": "2026-10-20",
+  "state": "NONRUNTIME_EDITORIAL_PATCH_OVERLAY_NOT_PUBLISHED_OR_ORIGIN_MUTATION",
+  "sourceAttribution": "1905 PAPALLY PRESCRIBED CATECHISM, NOT PERSONAL PAPAL AUTOGRAPH",
+  "method": "Use exact numbered original-language source propositions to repair inaccurate/hard-to-justify phrasing; preserve original draft owner and proposed EN/FR in a separate typed overlay pending theological, voice and translation approval.",
+  "counters": {
+    "revisedBilingualTurnCandidates": 10,
+    "independentHistoricalVoiceApprovals": 0,
+    "independentTheologicalApprovals": 0,
+    "approvedEnglishFrenchPairs": 0,
+    "liveReplacements": 0
+  },
+  "records": [
+    {
+      "turnId": "SPX-1905-E-651-T2",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "familyId": "SPX-1905-E-651",
+      "turnIndex": 2,
+      "originalDraftAnswer": {
+        "en": "It defines it as offering a visible thing to God, with a sacrificial change or destruction, to acknowledge His supreme dominion over us and all creation. This is a historical catechetical definition.",
+        "fr": "Il le définit comme l'offrande à Dieu d'une réalité visible, avec une transformation ou destruction sacrificielle, pour reconnaître son souverain domaine sur nous et la création. C'est une définition catéchétique historique."
+      },
+      "revisionCandidate": {
+        "en": "In the Catechism's general explanation, sacrifice consists of offering something perceptible to God and destroying it in some manner, to acknowledge His supreme dominion over us and all things.",
+        "fr": "Dans l'explication générale du Catéchisme, le sacrifice consiste à offrir à Dieu une chose sensible et à la détruire d'une certaine manière, afin de reconnaître son souverain domaine sur nous et sur toutes choses."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q652"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Replace 'change or destruction' with original's 'destroy in some manner' in general sacrifice definition",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-652-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "familyId": "SPX-1905-E-652",
+      "turnIndex": 1,
+      "originalDraftAnswer": {
+        "en": "It defines it as offering a visible thing to God, with a sacrificial change or destruction, to acknowledge His supreme dominion over us and all creation. This is a historical catechetical definition.",
+        "fr": "Il le définit comme l'offrande à Dieu d'une réalité visible, avec une transformation ou destruction sacrificielle, pour reconnaître son souverain domaine sur nous et la création. C'est une définition catéchétique historique."
+      },
+      "revisionCandidate": {
+        "en": "In the Catechism's general explanation, sacrifice consists of offering something perceptible to God and destroying it in some manner, to acknowledge His supreme dominion over us and all things.",
+        "fr": "Dans l'explication générale du Catéchisme, le sacrifice consiste à offrir à Dieu une chose sensible et à la détruire d'une certaine manière, afin de reconnaître son souverain domaine sur nous et sur toutes choses."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q652"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Same source-accurate correction for the standalone Q652 opening",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-656-T2",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "familyId": "SPX-1905-E-656",
+      "turnIndex": 2,
+      "originalDraftAnswer": {
+        "en": "The separate consecration under the appearances of bread and wine signifies the separation of Christ's Body and Blood on the Cross, while the whole living Christ is present under both species.",
+        "fr": "La consécration séparée sous les espèces du pain et du vin signifie la séparation du Corps et du Sang du Christ sur la Croix, tandis que le Christ vivant tout entier est présent sous les deux espèces."
+      },
+      "revisionCandidate": {
+        "en": "The Mass represents the shedding of Christ's Blood on the Cross: by the words of Consecration His Body is made present under the species of bread and His Blood under the species of wine. Yet, by concomitance and the hypostatic union, the whole living Christ is present under each species.",
+        "fr": "La Messe représente l'effusion du Sang du Christ sur la Croix : par les paroles de la consécration, son Corps est rendu présent sous l'espèce du pain et son Sang sous celle du vin. Pourtant, par concomitance et en raison de l'union hypostatique, le Christ vivant tout entier est présent sous chacune des espèces."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q657"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Keep distinction between force of words, concomitance and hypostatic union; avoid implying each species holds only one component; original Q657 already contains the natural concomitance and hypostatic union distinction",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-657-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "familyId": "SPX-1905-E-657",
+      "turnIndex": 1,
+      "originalDraftAnswer": {
+        "en": "The separate consecration under the appearances of bread and wine signifies the separation of Christ's Body and Blood on the Cross, while the whole living Christ is present under both species.",
+        "fr": "La consécration séparée sous les espèces du pain et du vin signifie la séparation du Corps et du Sang du Christ sur la Croix, tandis que le Christ vivant tout entier est présent sous les deux espèces."
+      },
+      "revisionCandidate": {
+        "en": "The Mass represents the shedding of Christ's Blood on the Cross: by the words of Consecration His Body is made present under the species of bread and His Blood under the species of wine. Yet, by concomitance and the hypostatic union, the whole living Christ is present under each species.",
+        "fr": "La Messe représente l'effusion du Sang du Christ sur la Croix : par les paroles de la consécration, son Corps est rendu présent sous l'espèce du pain et son Sang sous celle du vin. Pourtant, par concomitance et en raison de l'union hypostatique, le Christ vivant tout entier est présent sous chacune des espèces."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q657"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Repair abridgment of Q657's explicit force-of-the-words/concomitance nuance; original Q657 already contains the natural concomitance and hypostatic union distinction",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-654-T2",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "familyId": "SPX-1905-E-654",
+      "turnIndex": 2,
+      "originalDraftAnswer": {
+        "en": "Substantially yes: Jesus Christ is the same Priest and Victim; the mode of offering differs. The Catechism insists on their intimate and essential relation.",
+        "fr": "Substantiellement oui : Jésus-Christ est le même Prêtre et la même Victime ; le mode d'offrande diffère. Le Catéchisme insiste sur leur relation intime et essentielle."
+      },
+      "revisionCandidate": {
+        "en": "Yes, substantially. The same Jesus Christ who offered Himself on the Cross is offered upon the altar through priests, His ministers; the manner of offering differs. Christ remains the first and principal offerer.",
+        "fr": "Oui, substantiellement. Le même Jésus-Christ qui s'est offert sur la Croix est offert sur l'autel par le ministère des prêtres ; le mode d'offrande diffère. Le Christ demeure le premier et principal offrant."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q655",
+        "PX1905-Q660"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Anchor Christ's principal offering role specifically in Q660, and remove inference that 'same Priest/Victim' appears verbatim in Q655",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-655-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "familyId": "SPX-1905-E-655",
+      "turnIndex": 1,
+      "originalDraftAnswer": {
+        "en": "Substantially yes: Jesus Christ is the same Priest and Victim; the mode of offering differs. The Catechism insists on their intimate and essential relation.",
+        "fr": "Substantiellement oui : Jésus-Christ est le même Prêtre et la même Victime ; le mode d'offrande diffère. Le Catéchisme insiste sur leur relation intime et essentielle."
+      },
+      "revisionCandidate": {
+        "en": "Yes, substantially. The same Jesus Christ who offered Himself on the Cross is offered upon the altar through priests, His ministers; the manner of offering differs. Christ remains the first and principal offerer.",
+        "fr": "Oui, substantiellement. Le même Jésus-Christ qui s'est offert sur la Croix est offert sur l'autel par le ministère des prêtres ; le mode d'offrande diffère. Le Christ demeure le premier et principal offrant."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q655",
+        "PX1905-Q660"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Apply matching correction to duplicate draft occurrence of the Q655 claim, without merging source IDs",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-S-607-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "familyId": "SPX-1905-S-607",
+      "turnIndex": 1,
+      "originalDraftAnswer": {
+        "en": "Transubstantiation: the conversion of the substance of bread and wine into Christ's Body and Blood while the sensible appearances remain.",
+        "fr": "La transsubstantiation : conversion de la substance du pain et du vin au Corps et au Sang du Christ, tandis que demeurent les apparences sensibles."
+      },
+      "revisionCandidate": {
+        "en": "The Catechism calls this conversion transubstantiation: the substance of bread and wine is changed into Christ's Body and Blood, while the species—the perceptible appearances—remain.",
+        "fr": "Le Catéchisme appelle ce changement la transsubstantiation : la substance du pain et du vin est changée au Corps et au Sang du Christ, tandis que les espèces, c'est-à-dire les apparences sensibles, demeurent."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q596",
+        "PX1905-Q607",
+        "PX1905-Q609",
+        "PX1905-Q610"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Identify entire substance, term and continuing species, not merely a Q607 one-word definition",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-619-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "familyId": "SPX-1905-E-619",
+      "turnIndex": 1,
+      "originalDraftAnswer": {
+        "en": "The same Jesus Christ is present under a large host and under a particle of it, while the Eucharistic species remain.",
+        "fr": "Le même Jésus-Christ est présent sous une grande hostie et sous une parcelle de celle-ci, tant que subsistent les espèces eucharistiques."
+      },
+      "revisionCandidate": {
+        "en": "The whole Christ is present under a consecrated host and under each of its particles, for as long as the sacramental species endure.",
+        "fr": "Le Christ tout entier est présent sous l'hostie consacrée et sous chacune de ses parcelles, tant que subsistent les espèces sacramentelles."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q619",
+        "PX1905-Q641"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Specify continuing species condition with Q641, distinct from mere particle teaching Q619",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-633-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "familyId": "SPX-1905-E-633",
+      "turnIndex": 1,
+      "originalDraftAnswer": {
+        "en": "It describes the natural fast, then required from midnight, broken by taking food or drink. The discipline subsequently changed; this statement must not be treated as today's rule.",
+        "fr": "Il décrit le jeûne naturel, alors exigé depuis minuit, interrompu par la prise d'aliments ou de boissons. Cette discipline a changé et ne doit pas être présentée comme la règle actuelle."
+      },
+      "revisionCandidate": {
+        "en": "The 1905 Catechism prescribed a natural fast from midnight before Communion. It describes the fast as broken by taking food or drink as such. This is a historical rule, not a statement of today's discipline.",
+        "fr": "Le Catéchisme de 1905 prescrivait un jeûne naturel depuis minuit avant la communion. Il le considère rompu lorsque l'on prend des aliments ou des boissons comme tels. Il s'agit d'une règle historique, non de la discipline actuelle."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q628",
+        "PX1905-Q633"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Explicitly separate historical midnight requirement Q628 from nature of natural fast Q633",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    },
+    {
+      "turnId": "SPX-1905-E-632-T2",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "familyId": "SPX-1905-E-632",
+      "turnIndex": 2,
+      "originalDraftAnswer": {
+        "en": "It describes the natural fast, then required from midnight, broken by taking food or drink. The discipline subsequently changed; this statement must not be treated as today's rule.",
+        "fr": "Il décrit le jeûne naturel, alors exigé depuis minuit, interrompu par la prise d'aliments ou de boissons. Cette discipline a changé et ne doit pas être présentée comme la règle actuelle."
+      },
+      "revisionCandidate": {
+        "en": "In the 1905 discipline, the Catechism prescribed fasting from midnight (Q628) and described a natural fast broken by taking food or drink (Q633). This is not the general rule in force today.",
+        "fr": "Dans la discipline de 1905, le Catéchisme prescrivait le jeûne depuis minuit (Q628) et définissait un jeûne naturel rompu par la prise d'aliments ou de boissons (Q633). Ce n'est pas la règle générale actuellement en vigueur."
+      },
+      "sourceQuestionIds": [
+        "PX1905-Q628",
+        "PX1905-Q633"
+      ],
+      "originalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "reason": "Second reused Q633 answer also needs earlier midnight timing Q628 and historical caveat",
+      "revisionStatus": "SOURCE_BOUNDED_EDITORIAL_CORRECTION_NOT_APPROVED_HISTORICAL_VOICE",
+      "sameOriginalWitnessNotPrintCollated": true,
+      "theologyApproved": false,
+      "translationApproved": {
+        "en": false,
+        "fr": false
+      },
+      "published": false
+    }
+  ]
+}

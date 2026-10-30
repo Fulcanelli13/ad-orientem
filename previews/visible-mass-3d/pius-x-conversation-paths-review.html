@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>St Pius X · Conversation paths · Editorial review</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--panel:#101720;--panel2:#151d27;--line:#39424b;--text:#ece8e1;--soft:#b2b9c1;--gold:#c4a776;--focus:#f7dc96}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}
+body{font:16px/1.55 Georgia,"Times New Roman",serif}
+button{cursor:pointer}button,a{touch-action:manipulation}
+button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+a{color:#d7be8e}
+header{padding:17px clamp(14px,3vw,36px);border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#0b1119}
+header h1{font-size:clamp(21px,2.3vw,30px);font-weight:400;margin:0}
+.subline{font:11px/1.5 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+header p{margin:4px 0 0;color:var(--soft);font:12px/1.5 system-ui,sans-serif}
+header .tools{display:flex;gap:8px}
+.tools button{background:#18222d;border:1px solid #59616b;border-radius:7px;padding:9px 15px;color:var(--text);font:13px system-ui,sans-serif}
+.tools button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}
+.wrap{max-width:1430px;min-height:calc(100vh - 100px);margin:auto;padding:21px clamp(14px,2.3vw,30px);display:grid;grid-template-columns:290px minmax(0,1fr);gap:22px}
+aside{align-self:start;border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--panel)}
+aside h2{font-weight:400;font-size:19px;margin:0 0 3px}aside p{color:var(--soft);font:12px/1.5 system-ui,sans-serif;margin:0 0 14px}
+#chapters{display:grid;gap:4px;max-height:calc(100vh - 200px);overflow-y:auto;scrollbar-width:thin}
+.chapter{width:100%;border:1px solid transparent;background:transparent;text-align:left;color:var(--soft);padding:9px 11px;border-radius:6px;font:13px/1.4 Georgia,serif}
+.chapter:hover,.chapter[aria-current="true"]{background:#1d2631;border-color:#6e654e;color:var(--text)}
+main{min-width:0}
+.frame{border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3.8vw,48px);min-height:390px;background:linear-gradient(160deg,#151e28,#0c121a 60%,#121822)}
+.eyebrow{font:11px/1.5 system-ui,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.frame h2{font-weight:400;font-size:clamp(26px,3.3vw,40px);line-height:1.2;margin:12px 0}
+.frame h3{font-size:24px;font-weight:400;line-height:1.3;margin:12px 0}
+.frame p{max-width:64ch}
+.note{font:12px/1.55 system-ui,sans-serif;color:var(--soft)}
+.warning{border-left:2px solid var(--gold);padding:8px 12px;color:#d6c5a5;font:12px/1.6 system-ui,sans-serif;background:#4a3c2926;margin:19px 0}
+.choice-list{display:grid;gap:9px;margin:22px 0}
+.choice{display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;background:#1b2530;border:1px solid #47505a;border-radius:8px;color:var(--text);padding:12px 16px;font:15px/1.35 Georgia,serif;min-height:49px}
+.choice:hover{border-color:var(--gold);background:#27303a}
+.choice .arr{font:17px system-ui,sans-serif;color:var(--gold)}
+.question-title{font-size:clamp(25px,3.1vw,37px);line-height:1.24;font-weight:400;margin:13px 0}
+.answer{font-size:clamp(17px,2.0vw,22px);line-height:1.7;max-width:60ch}
+.divider{height:1px;background:var(--line);margin:24px 0}
+.toolbar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:17px}
+.toolbar button{background:#1a232d;border:1px solid #59616a;border-radius:7px;color:#eee9dc;padding:9px 12px;font:12px system-ui,sans-serif}
+.toolbar button.active{border-color:var(--gold);color:var(--gold)}
+.caption{font:11px/1.5 system-ui,sans-serif;color:var(--soft)}
+.novel-layout{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(220px,.84fr);min-height:440px;gap:0;background:radial-gradient(ellipse at 70% 28%,#4d4434 0%,#25262b 31%,#101722 70%);border:1px solid #4a453a;border-radius:8px;overflow:hidden;margin:9px 0 24px}
+.novel-portrait{grid-column:2;grid-row:1;display:flex;justify-content:center;align-items:flex-end;min-height:395px;position:relative;overflow:hidden}
+.novel-portrait:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#11182055,transparent 35%),radial-gradient(ellipse at 52% 73%,#e1bf7a13,transparent 70%);pointer-events:none}
+.novel-portrait img{display:block;width:100%;height:440px;object-fit:contain;object-position:center bottom;filter:drop-shadow(-7px 4px 12px #0007)}
+.novel-portrait .no-photo{font:13px/1.5 system-ui,sans-serif;color:var(--soft);padding:20px}
+.novel-dialogue{grid-column:1;grid-row:1;z-index:2;align-self:end;min-width:0;min-height:240px;padding:28px;background:linear-gradient(95deg,#0b111af0,#101822e9);border-right:1px solid #9d835a55}
+.novel-dialogue .question-title{font-size:clamp(22px,2.4vw,31px)}
+.novel-dialogue .answer{font-size:clamp(17px,1.7vw,21px);line-height:1.65}
+.scene-caption{font:10px/1.5 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 9px}
+.editorial{margin:20px 0 8px;border-top:1px solid var(--line);padding-top:12px}
+.editorial-title{font:11px/1.5 system-ui,sans-serif;color:var(--gold);text-transform:uppercase;letter-spacing:.1em}
+.editorial-options{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.editorial-options button{font:12px system-ui,sans-serif;background:#19212b;border:1px solid #525c66;color:var(--text);padding:9px 11px;border-radius:5px}
+.editorial-options button[aria-pressed="true"]{border-color:var(--gold);background:#4c4130}
+.editorial textarea{background:#121c27;color:var(--text);border:1px solid var(--line);width:100%;resize:vertical;min-height:70px;padding:11px;font:13px/1.5 system-ui,sans-serif;border-radius:6px}
+
+.source-links{font:12px/1.9 system-ui,sans-serif;color:var(--soft);display:flex;flex-wrap:wrap;gap:13px}
+.canon{margin:20px 0 0;border:1px solid #60553e;background:#1d1d1b;border-radius:7px;padding:14px}
+.canon p{margin:4px 0 9px;color:var(--soft);font:12px/1.55 system-ui,sans-serif}
+.canon button{background:#302b23;border:1px solid #756649;border-radius:6px;color:#eee1c9;padding:9px 12px;font:12px system-ui,sans-serif}
+[hidden]{display:none!important}
+#status{padding:10px;font:13px system-ui,sans-serif;color:var(--soft)}
+#errors{color:#f3b7a3;white-space:pre-wrap}
+@media(max-width:760px){header{align-items:flex-start}.wrap{display:flex;flex-direction:column;gap:12px;padding:12px}
+aside{width:100%;padding:12px}#chapters{display:flex;overflow-x:auto;max-height:none;gap:7px;padding:3px 0 5px;scrollbar-width:thin}.chapter{min-width:160px;max-width:190px;border-color:var(--line);white-space:normal}
+.frame{min-height:310px;padding:20px}.choice{padding:12px}
+.novel-layout{grid-template-columns:minmax(0,1fr);min-height:0;margin:8px 0 16px}
+.novel-portrait{grid-column:1;grid-row:1;min-height:275px;justify-content:flex-end;align-items:flex-start}
+.novel-portrait img{height:295px;width:auto;max-width:80%;object-position:right bottom}
+.novel-dialogue{grid-column:1;grid-row:2;min-height:0;padding:19px;border-right:0;border-top:1px solid #9d835a55}
+.novel-dialogue .question-title{font-size:23px}header p{max-width:32ch}}
+@media(prefers-reduced-motion:no-preference){.choice,.chapter{transition:background .12s ease,border-color .12s ease}}
+</style></head>
+<body>
+<header>
+<div><div class="subline">Ad Orientem · Living Church · Editorial proof</div><h1>St Pius X · Living Catechism</h1>
+<p>Source-owned conversation review · Not approved for public release</p></div>
+<div class="tools"><button id="view-scene" aria-pressed="true" type="button">Scene</button><button id="view-folio" aria-pressed="false" type="button">Folio</button><button id="lang-en" aria-pressed="true" type="button">English</button><button id="lang-fr" aria-pressed="false" type="button">Français</button><button id="export-review" type="button" title="Export your editorial observations as JSON">Export notes</button></div>
+</header>
+<div class="wrap">
+<aside><h2 id="chapters-heading">Choose a subject</h2><p id="chapters-hint">20 chapters · 50 thematic pathways</p><nav id="chapters" aria-label="Catechism chapters"></nav></aside>
+<main><section class="frame" id="content" aria-live="polite"><div class="eyebrow">Research preview</div><h2>Source-first conversations</h2>
+<p>Read a topic and choose a genuine follow-up, instead of automatically advancing through the next printed question.</p>
+<div class="warning">The English and French answers are reconstructed editorial drafts, not recorded words of St Pius X. Denzinger references are optional and are not required here.</div></section>
+<div id="status" role="status">Loading the original source-owner index…</div><pre id="errors" hidden></pre></main>
+</div>
+<script type="module">
+import {createPiusX20PathReview} from "./pius-x-20path-editorial-review.mjs";
+const $=id=>document.getElementById(id);
+const content=$("content"), status=$("status"), error=$("errors");
+let model=null,lang="en",currentChapter=null,currentQuestion=null,entry=null,revision=false,periodMode=false,canonRevealed=false,sceneMode=true;
+const decisions=new Map();
+const visited=new Set();
+const make=(tag,cl="",txt="")=>{const x=document.createElement(tag);if(cl)x.className=cl;if(txt)x.textContent=txt;return x;};
+const append=(parent,...children)=>children.forEach(c=>parent.append(c));
+const word=(en,fr)=>lang==="fr"?fr:en;
+const read=async path=>{
+ if(!/^data\/learn\/research\/pius-x-[a-z0-9-]+\.v1\.json$/.test(path))throw Error("Unrecognised source-owner file");
+ const r=await fetch("../../"+path,{cache:"no-store"});
+ if(!r.ok)throw Error("Source file unavailable: "+path+" (HTTP "+r.status+")");
+ return r.json();
+};
+function reset(){content.replaceChildren();canonRevealed=false;}
+function sectionLabel(text){content.append(make("div","eyebrow",text));}
+function action(text,fn){const b=make("button","choice");b.type="button";const t=make("span","",text);const arrow=make("span","arr","›");append(b,t,arrow);b.addEventListener("click",fn);return b;}
+function title(text){content.append(make("h2","",text));}
+function note(text){content.append(make("p","note",text));}
+function warning(text){content.append(make("div","warning",text));}
+function options(rows){const list=make("div","choice-list");for(const r of rows)list.append(action(r[lang],()=>openQuestion(r.id)));content.append(list);}
+function sourceLinks(question){
+ const wrap=make("div","source-links");const one=make("a","",word("Read the Italian source","Lire le texte italien"));
+ one.href=question.sourceUrl;one.target="_blank";one.rel="noopener noreferrer";
+ const two=make("a","",word("1905 original print · unnumbered questions","Édition imprimée de 1905 · questions non numérotées"));
+ two.href=question.printIndex;two.target="_blank";two.rel="noopener noreferrer";append(wrap,one,two);content.append(wrap);
+}
+function renderMenu(){
+ const nav=$("chapters");nav.replaceChildren();
+ for(const ch of model.chapters){const b=make("button","chapter",ch[lang]);b.type="button";b.setAttribute("aria-current",String(currentChapter===ch.id));
+ b.addEventListener("click",()=>openChapter(ch.id));nav.append(b);}
+}
+async function openChapter(id){
+ currentChapter=id;currentQuestion=null;entry=null;revision=false;reset();renderMenu();
+ const ch=model.getChapter(id);if(!ch)return;
+ sectionLabel(word("Catechism subject · choose a question","Sujet du catéchisme · choisir une question"));
+ title(ch[lang]);
+ note(word("Each choice opens the original draft answer and its sources. Questions are not forced into printed order.",
+ "Chaque choix ouvre la réponse provisoire et ses sources. Les questions ne suivent pas automatiquement l'ordre imprimé."));
+ const rows=ch.entries.map(e=>({id:e.sourceQuestionId,en:e.labelEN,fr:e.labelFR}));
+ options(rows);warning(word("Research review: the original 1905 printed Catechism does not number individual questions. IDs shown here are editorial locators.",
+ "Révision : les questions du catéchisme imprimé en 1905 ne sont pas numérotées ; les identifiants affichés sont éditoriaux."));
+ status.textContent=word("Choose a question.","Choisissez une question.");
+}
+async function openQuestion(id){
+ if(!model)return;entry=await model.inspect(id);if(!entry)return;
+ currentQuestion=id;currentChapter=entry.arc;visited.add(id);revision=false;periodMode=false;reset();renderMenu();renderQuestion();
+}
+function renderQuestion(){
+ if(!entry)return;reset();sectionLabel(word("St Pius X · source-bounded editorial dialogue","Saint Pie X · dialogue éditorial fondé sur les sources"));
+ let destination=content;
+ if(sceneMode){
+  const stage=make("div","novel-layout"),picture=make("div","novel-portrait"),dialogue=make("div","novel-dialogue");
+  const img=make("img");img.alt=word("Approved historical portrait of St Pius X, "+entry.visual.pose+" expression",
+   "Portrait historique approuvé de saint Pie X, expression "+entry.visual.pose);
+  img.decoding="async";img.src=entry.visual.portraitUrl;
+  img.addEventListener("error",()=>{picture.replaceChildren(make("p","no-photo",word("Portrait source temporarily unavailable","Portrait momentanément indisponible")))});
+  picture.append(img);
+  dialogue.append(make("div","scene-caption",word("St Pius X · educational reconstruction","Saint Pie X · reconstitution pédagogique")));
+  append(stage,picture,dialogue);content.append(stage);destination=dialogue;
+ }
+ const q=make("h2","question-title",entry.question[lang]);destination.append(q);
+ const line=make("div","caption",word("PROPOSED PARAPHRASE · NOT AUTHENTIC SPOKEN WORDS","PARAPHRASE PROPOSÉE · NON PAROLES HISTORIQUES"));destination.append(line);
+ const answer=entry.periodVersion&&periodMode?entry.periodVersion[lang]:(entry.proposedRevision&&revision?entry.proposedRevision[lang]:entry.answer[lang]);
+ destination.append(make("p","answer",answer));
+ if(entry.proposedRevision){
+  const bar=make("div","toolbar");
+  for(const [on,label] of [[false,word("Original draft","Première version")],[true,word("Proposed correction","Correction proposée")]]){
+   const selected=on===revision&&!periodMode;
+   const b=make("button",selected?"active":"",label);b.type="button";b.setAttribute("aria-pressed",String(selected));
+   b.addEventListener("click",()=>{revision=on;periodMode=false;renderQuestion()});bar.append(b);}
+  if(entry.periodVersion){
+   const period=make("button",periodMode?"active":"",word("Period-register draft","Version de style d’époque"));
+   period.type="button";period.setAttribute("aria-pressed",String(periodMode));
+   period.addEventListener("click",()=>{revision=false;periodMode=true;renderQuestion()});bar.append(period);
+  }
+  content.append(bar);
+ }
+ warning(word("For research only. Historical Catechism source; English/French wording and theology still await independent approval. No current sacramental discipline should be inferred from a rule dated 1905.",
+ "Pour la recherche seulement. Texte historique ; les traductions et leur précision théologique ne sont pas encore approuvées. Les règles de 1905 ne constituent pas nécessairement la discipline actuelle."));
+ if(entry.editorialNote){
+  sectionLabel(word("Historical editor’s note · never character speech","Note historique de l’éditeur · jamais parole du personnage"));
+  note(entry.editorialNote[lang]);
+ }
+ const cite=make("div","caption",entry.sourceLabel);content.append(cite);sourceLinks(entry);
+ editorialReview();
+ const line2=make("div","divider");content.append(line2);
+ const follow=entry.choices.filter(c=>!visited.has(c.id));
+ sectionLabel(word("Choose what to explore next","Choisissez la suite"));
+ if(follow.length)options(follow);
+ else note(word("No unread suggestions in this branch. Select another chapter or revisit a subject.",
+ "Aucune nouvelle suggestion ici. Choisissez un autre chapitre ou reprenez un sujet."));
+ const cross=entry.cross.filter(c=>!visited.has(c.id));
+ if(cross.length){sectionLabel(word("Related subjects","Sujets connexes"));options(cross);}
+ canonPanel();
+ const toolbar=make("div","toolbar");
+ const back=make("button","",word("Back to chapter","Retour au chapitre"));back.type="button";back.addEventListener("click",()=>openChapter(entry.arc));
+ toolbar.append(back);content.append(toolbar);
+ status.textContent=word("Source question reviewed: ","Question examinée : ")+entry.id+" · "+visited.size+" / 100";
+}
+function editorialReview(){
+ const block=make("section","editorial");
+ block.append(make("div","editorial-title",word("Editorial assessment · never a publication approval","Évaluation éditoriale · pas une autorisation de publication")));
+ const options=make("div","editorial-options");
+ const marks=[["keep",word("Keep for further review","Conserver pour examen")],
+  ["revise",word("Revise wording","Revoir la formulation")],
+  ["source",word("Source concern","Problème de source")],
+  ["tone",word("Voice / tone concern","Problème de ton")]];
+ const current=decisions.get(entry.id)||{status:null,note:""};
+ for(const [key,label] of marks){
+  const b=make("button","",label);b.type="button";b.setAttribute("aria-pressed",String(current.status===key));
+  b.addEventListener("click",()=>{const old=decisions.get(entry.id)||{status:null,note:""};
+   decisions.set(entry.id,{...old,status:key,variant:periodMode?"period_register_unapproved":revision?"proposed_revision":"original_draft"});
+   renderQuestion();});options.append(b);}
+ block.append(options);
+ const area=make("textarea");area.setAttribute("aria-label",word("Review note","Note de révision"));
+ area.placeholder=word("Document the exact sentence, source problem or period-register concern…","Précisez la phrase ou le problème de source et de style…");
+ area.value=current.note||"";
+ area.addEventListener("input",()=>{const old=decisions.get(entry.id)||{status:null};
+  decisions.set(entry.id,{...old,note:area.value,variant:revision?"proposed_revision":"original_draft"});});
+ block.append(area);content.append(block);
+}
+function canonPanel(){
+ const box=make("section","canon"),name=make("div","eyebrow",word("Consult Monsieur le Chanoine","Consulter Monsieur le Chanoine"));box.append(name);
+ const info=entry.canon;const button=make("button","",word("Check a Chanoine follow-up","Examiner le renvoi au Chanoine"));button.type="button";
+ const details=make("div");details.hidden=!canonRevealed;
+ button.addEventListener("click",()=>{canonRevealed=!canonRevealed;details.hidden=!canonRevealed;button.setAttribute("aria-expanded",String(canonRevealed))});
+ button.setAttribute("aria-expanded",String(canonRevealed));box.append(button);
+ const good=info?.status==="MATCHED_NARROW_CONTENT_SUBJECT";
+ const text=good?
+  word("A matching source-owned Apostolate answer exists ("+info.availableOwnerAnswerId+"), but the Chanoine character handoff is not yet approved or wired. This is a content-eligibility result only.",
+  "Une réponse correspondante existe dans le corpus Apostolate ("+info.availableOwnerAnswerId+"), mais le transfert vers le personnage du Chanoine n'est pas encore approuvé ni intégré."):
+  word("No verified answer from the Chanoine is available for this precise question. The current router remains blocked; no substitute reply will be invented.",
+  "Aucune réponse vérifiée du Chanoine n'est disponible pour cette question précise. Le routage reste bloqué.");
+ details.append(make("p","",text));box.append(details);content.append(box);
+}
+function setLanguage(value){lang=value;document.documentElement.lang=lang;
+ $("lang-en").setAttribute("aria-pressed",String(value==="en"));$("lang-fr").setAttribute("aria-pressed",String(value==="fr"));
+ $("chapters-heading").textContent=word("Choose a subject","Choisir un sujet");
+ $("chapters-hint").textContent=word("20 chapters · 50 thematic pathways","20 chapitres · 50 parcours thématiques");
+ renderMenu();if(entry)renderQuestion();else if(currentChapter)openChapter(currentChapter);
+}
+function setMode(scene){
+ sceneMode=scene;
+ $("view-scene").setAttribute("aria-pressed",String(scene));
+ $("view-folio").setAttribute("aria-pressed",String(!scene));
+ if(entry)renderQuestion();
+}
+$("view-scene").addEventListener("click",()=>setMode(true));
+$("view-folio").addEventListener("click",()=>setMode(false));
+$("export-review").addEventListener("click",()=>{
+ const payload={schema:"AO_SPX_20PATH_EDITORIAL_SESSION_V1",publicationApproval:false,
+  source:"PR1458 20-path viewer",reviewedAt:new Date().toISOString(),
+  choices:[...decisions].map(([sourceQuestionId,detail])=>({sourceQuestionId,...detail}))};
+ const file=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(file),link=document.createElement("a");
+ link.href=url;link.download="pius-x-conversation-editorial-notes.json";link.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+$("lang-en").addEventListener("click",()=>setLanguage("en"));
+$("lang-fr").addEventListener("click",()=>setLanguage("fr"));
+try{
+ model=await createPiusX20PathReview(read);
+ status.textContent=word("20 subjects available · Research only","20 sujets disponibles · Recherche uniquement");
+ await openChapter(model.chapters[0].id);
+}catch(e){error.hidden=false;error.textContent=String(e);status.textContent="Review data refused or unavailable.";}
+</script>
+</body></html>

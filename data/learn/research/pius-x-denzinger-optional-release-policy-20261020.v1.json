@@ -1,0 +1,45 @@
+{
+  "schema": "AO_PIUS_X_OPTIONAL_DENZINGER_RELEASE_POLICY_V1",
+  "date": "2026-10-20",
+  "directive": "DENZINGER_NOT_REQUIRED_FOR_SAINT_PIUS_X_CONVERSATIONS",
+  "status": "PRODUCT_PRIORITY_DECISION_RECORDED_NO_PUBLICATION_AUTHORIZED",
+  "scope": "St Pius X avatar answers, original-source citations, bilingual conversation pathways and optional transfer to Monsieur le Chanoine",
+  "rules": {
+    "denzingerRequirement": "OPTIONAL_NON_BLOCKING",
+    "numberedDenzingerLinks": "OMIT_UNLESS_INDEPENDENTLY_VERIFIED_AND_APPLICABLE",
+    "fallbackDoctrineContext": "ORIGINAL_MAGISTERIUM_DOCUMENT_LINK_IF_EXISTS_AND_CONTEXT_MATCHES_CLAIM",
+    "primaryCitation": "ORIGINAL_1905_CATECHISM_PRINT_PAGE_OR_ORIGINAL_PIUS_X_DOCUMENT_LOCUS",
+    "sourcePriority": [
+      "Original Catholic source document and exact witness",
+      "Original language attribution / 1905 printed page with editorial QIDs distinguished",
+      "Theologically accurate paraphrase and bilingual EN/FR translation",
+      "Historically faithful, clearly educational persona with no fabricated direct quotation",
+      "Visitor-selected conversation and optional consent-gated colleague handoff"
+    ],
+    "upstreamDenzingerQueue": "data/learn/research/pius-x-eight-old-dz-number-print-facsimile-queue-20261020.v1.json",
+    "previousOldDzLeadRecords": "RETAINED_FOR_ARCHIVAL_RESEARCH_NOT_WORKSTREAM_PRIORITY",
+    "doNotImply": "Approval or authorship from an old Denzinger OCR number",
+    "chanoineTransfer": "OPTIONAL_CONTEXT_PRESERVING_AFTER_EXPLICIT_VISITOR_CONSENT_NOT_REQUIRED_FOR_SPX_ANSWER_RELEASE",
+    "releaseRequired": [
+      "Verifiable original primary-source passage locator",
+      "Accurate doctrinal scope and no unsupported claim",
+      "Independent period voice and translation review EN/FR",
+      "Contemporary historical-discipline safety for dated rules",
+      "Proof that review-only content is not accidentally promoted to published character voice"
+    ],
+    "notRequired": [
+      "Denzinger 1911 page-image entry certification",
+      "Modern DS/DH number concordance",
+      "Denzinger applicability status on every source-only Q&A",
+      "Full 810-family Denzinger citations before releasing a separately approved SPX answer"
+    ]
+  },
+  "nextImplementationPriority": "INTERNAL_20_PATH_CONVERSATION_EDITORIAL_REVIEW_THEN_SOURCE_AND_VOICE_APPROVED_CHARACTER_SCENE",
+  "counts": {
+    "draftFamiliesRetained": 810,
+    "reviewedSacramentsFamilies": 100,
+    "reviewedSacramentsDraftTurns": 200,
+    "denzingerNumberRequirementsForSPX": 0,
+    "publishedNewAnswers": 0
+  }
+}

@@ -1,0 +1,562 @@
+{
+  "schema": "AO_SPX_DOCUMENT_FIRST_ROUTER_TO_CLAIMS_BRIDGE_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_UNAPPROVED_ADAPTED_VOICE_NOT_PUBLISHED",
+  "sourceOwner": "formation/1457-pius-x-conversation-evidence",
+  "navigationOwner": "feature/living-church-shared-question-routing-20261019",
+  "expectedRouterCommit": "433e0b515b4800593a18b1d8594efec3f9936eaa",
+  "benchmarkArtifact": "artifacts/pius-x-complete-corpus/SPX_Three_Document_Full_34_Turn_Claim_Map.json",
+  "rules": {
+    "retrieval": "Existing shared-router source_navigation and exact sourceRef+URL+locator only; this file contains no new document classifier.",
+    "selection": "Select whole pre-mapped bilingual segments by source and bounded concept; never generate new papal sentences or infer person-specific decisions.",
+    "confirm": "A candidate remains unspoken until explicit topic confirmation; human approval remains separately false.",
+    "security": "Reject unexpected source pointer, mismatched URL, partial claim mismatch, unsupported segment loci, or any ambiguous/unresolved router result."
+  },
+  "entries": [
+    {
+      "sourceRef": "SPX-PILOT-13",
+      "topicId": "pius.historical_spx_pilot_13",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§12–14",
+      "selectionPlans": [
+        {
+          "id": "ACERBO_PREACHING_FOUNDATION",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T7.S1",
+            "SPX.BENCH.ACERBO.T7.S2"
+          ],
+          "claimIds": [
+            "A15",
+            "A16"
+          ]
+        },
+        {
+          "id": "ACERBO_HOMILY_CATECHESIS",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "distinction",
+              "difference",
+              "compared",
+              "compare",
+              "milk",
+              "bread"
+            ],
+            "fr": [
+              "distinction",
+              "différence",
+              "comparer",
+              "compare",
+              "lait",
+              "pain"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T3.S1",
+            "SPX.BENCH.ACERBO.T3.S2"
+          ],
+          "claimIds": [
+            "A05",
+            "A06"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-14",
+      "topicId": "pius.historical_spx_pilot_14",
+      "document": "ESUPREMI",
+      "locator": "E supremi §13",
+      "selectionPlans": [
+        {
+          "id": "ESUPREMI_CHARITY_OPPONENTS",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T2.S2",
+            "SPX.BENCH.E_SUPREMI.T7.S1"
+          ],
+          "claimIds": [
+            "E03",
+            "E13"
+          ]
+        },
+        {
+          "id": "ESUPREMI_SEVERE_REPROOF",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "reproof",
+              "reproach",
+              "severity",
+              "harsh",
+              "bitter zeal"
+            ],
+            "fr": [
+              "reproche",
+              "sévérité",
+              "sévère",
+              "zèle amer",
+              "réprimande",
+              "reproches",
+              "sévères"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T2.S1",
+            "SPX.BENCH.E_SUPREMI.T2.S2"
+          ],
+          "claimIds": [
+            "E03"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-09",
+      "topicId": "pius.historical_spx_pilot_09",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§15–20",
+      "selectionPlans": [
+        {
+          "id": "HAERENT_BUSY_PRIEST_MEDITATION",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T7.S1",
+            "SPX.BENCH.HAERENT.T7.S2"
+          ],
+          "claimIds": [
+            "H17",
+            "H18",
+            "H20"
+          ]
+        },
+        {
+          "id": "HAERENT_HABIT_FERVOUR",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "habit",
+              "routine",
+              "fervour",
+              "reverence",
+              "cold"
+            ],
+            "fr": [
+              "habitude",
+              "routine",
+              "ferveur",
+              "révérence",
+              "refroidi"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T12.S1",
+            "SPX.BENCH.HAERENT.T12.S2"
+          ],
+          "claimIds": [
+            "H19",
+            "H18"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-15",
+      "topicId": "pius.historical_spx_pilot_15",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§1–2",
+      "selectionPlans": [
+        {
+          "id": "A_IGNORANCE",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T1.S1",
+            "SPX.BENCH.ACERBO.T1.S2"
+          ],
+          "claimIds": [
+            "A01",
+            "A02"
+          ]
+        },
+        {
+          "id": "A_EDUCATED",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "educated",
+              "cultivated",
+              "well educated",
+              "schooling"
+            ],
+            "fr": [
+              "cultivées",
+              "cultivés",
+              "instruites",
+              "instruits"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T2.S1",
+            "SPX.BENCH.ACERBO.T2.S2"
+          ],
+          "claimIds": [
+            "A03",
+            "A04"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-16",
+      "topicId": "pius.historical_spx_pilot_16",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§7–9",
+      "selectionPlans": [
+        {
+          "id": "A_PASTORS",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T6.S1",
+            "SPX.BENCH.ACERBO.T6.S2"
+          ],
+          "claimIds": [
+            "A13",
+            "A14"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-17",
+      "topicId": "pius.historical_spx_pilot_17",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§25–26",
+      "selectionPlans": [
+        {
+          "id": "A_CATECHIST_PREPARATION",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T9.S1",
+            "SPX.BENCH.ACERBO.T9.S2"
+          ],
+          "claimIds": [
+            "A19",
+            "A20",
+            "A09",
+            "A10"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-18",
+      "topicId": "pius.historical_spx_pilot_18",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §16",
+      "selectionPlans": [
+        {
+          "id": "A_BAPTISM_FAITH",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T11.S1",
+            "SPX.BENCH.ACERBO.T11.S2"
+          ],
+          "claimIds": [
+            "A23",
+            "A24"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-19",
+      "topicId": "pius.historical_spx_pilot_19",
+      "document": "ESUPREMI",
+      "locator": "E supremi §12",
+      "selectionPlans": [
+        {
+          "id": "E_INSTRUCTION",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T5.S1",
+            "SPX.BENCH.E_SUPREMI.T5.S2"
+          ],
+          "claimIds": [
+            "E09",
+            "E10"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-20",
+      "topicId": "pius.historical_spx_pilot_20",
+      "document": "ESUPREMI",
+      "locator": "E supremi §14",
+      "selectionPlans": [
+        {
+          "id": "E_LAY_APOSTOLATE",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T8.S1",
+            "SPX.BENCH.E_SUPREMI.T8.S2"
+          ],
+          "claimIds": [
+            "E15",
+            "E16"
+          ]
+        },
+        {
+          "id": "E_PRACTICAL_WORKS",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "works",
+              "action",
+              "deeds",
+              "talking",
+              "duties"
+            ],
+            "fr": [
+              "agir",
+              "œuvres",
+              "parler",
+              "devoirs",
+              "actes"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T9.S1",
+            "SPX.BENCH.E_SUPREMI.T9.S2"
+          ],
+          "claimIds": [
+            "E17",
+            "E18"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-21",
+      "topicId": "pius.historical_spx_pilot_21",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§8–10",
+      "selectionPlans": [
+        {
+          "id": "H_SERVICE_HOLINESS",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T2.S1",
+            "SPX.BENCH.HAERENT.T2.S2"
+          ],
+          "claimIds": [
+            "H03",
+            "H04"
+          ]
+        },
+        {
+          "id": "H_MINISTRY_BALANCE",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "abandon",
+              "withdraw",
+              "neglect",
+              "leave parish"
+            ],
+            "fr": [
+              "abandonner",
+              "quitter",
+              "négliger",
+              "quitter sa paroisse"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T3.S1",
+            "SPX.BENCH.HAERENT.T3.S2"
+          ],
+          "claimIds": [
+            "H05",
+            "H06"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-22",
+      "topicId": "pius.historical_spx_pilot_22",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§22–23",
+      "selectionPlans": [
+        {
+          "id": "H_SPIRITUAL_READING",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T9.S1",
+            "SPX.BENCH.HAERENT.T9.S2"
+          ],
+          "claimIds": [
+            "H23",
+            "H24",
+            "H25"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-23",
+      "topicId": "pius.historical_spx_pilot_23",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§25–27",
+      "selectionPlans": [
+        {
+          "id": "H_EXAMINATION",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T10.S1",
+            "SPX.BENCH.HAERENT.T10.S2"
+          ],
+          "claimIds": [
+            "H26",
+            "H27",
+            "H28",
+            "H29"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-24",
+      "topicId": "pius.historical_spx_pilot_24",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§34–36",
+      "selectionPlans": [
+        {
+          "id": "H_RETREATS",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T13.S1"
+          ],
+          "claimIds": [
+            "H32"
+          ]
+        },
+        {
+          "id": "H_PRIESTLY_ASSOCIATIONS",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "association",
+              "mutual support",
+              "support",
+              "union",
+              "associations"
+            ],
+            "fr": [
+              "association",
+              "associations",
+              "entraide",
+              "soutien"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T13.S2"
+          ],
+          "claimIds": [
+            "H33",
+            "H34"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-25",
+      "topicId": "pius.historical_spx_pilot_25",
+      "document": "HAERENT",
+      "locator": "Haerent animo §37",
+      "selectionPlans": [
+        {
+          "id": "H_PRAYER_CLERGY",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T11.S1",
+            "SPX.BENCH.HAERENT.T11.S2"
+          ],
+          "claimIds": [
+            "H30",
+            "H31"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-01",
+      "topicId": "pius.historical_spx_pilot_01",
+      "document": "ESUPREMI",
+      "locator": "E supremi §§1–4",
+      "selectionPlans": [
+        {
+          "id": "E_PONTIFICAL_PURPOSE",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T1.S1",
+            "SPX.BENCH.E_SUPREMI.T1.S2"
+          ],
+          "claimIds": [
+            "E01",
+            "E02"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-08",
+      "topicId": "pius.historical_spx_pilot_08",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§15, 24–25",
+      "selectionPlans": [
+        {
+          "id": "A_ADULT_CATECHESIS",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T8.S1",
+            "SPX.BENCH.ACERBO.T8.S2"
+          ],
+          "claimIds": [
+            "A17",
+            "A18"
+          ]
+        }
+      ]
+    }
+  ],
+  "approvals": {
+    "source": false,
+    "theology": false,
+    "english": false,
+    "french": false,
+    "periodVoice": false,
+    "publishing": false
+  },
+  "expansion": {
+    "additionalSpecificPassagePointers": 11,
+    "reusedExistingPointers": 2,
+    "additionalSourcePlans": 17,
+    "sourceExpansionFixture": "data/learn/research/pius-x-next11-frozen-english-french-question-probes-20261021.v1.json",
+    "independentVisitorAccuracyClaim": false,
+    "navigationImprovement": {
+      "sourceConceptFamilies": 18,
+      "reuses": "Existing PR #1443 source-concept candidate registry, no parallel matcher",
+      "firstProspectiveScreen": {
+        "supportedQuestions": 22,
+        "correctBeforeSafetyCorrection": 16,
+        "wrongDocument": 0,
+        "unsafeNegativeFirstRun": 3,
+        "unsafeNegativeAfterScopeCorrection": 0
+      },
+      "provenance": "Editorial frozen before expansion, not representative real users",
+      "currentStatus": "RESEARCH_ONLY"
+    }
+  }
+}

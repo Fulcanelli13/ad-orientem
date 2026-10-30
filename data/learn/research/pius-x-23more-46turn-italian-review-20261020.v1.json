@@ -1,0 +1,1375 @@
+{
+  "schema": "AO_SPX_23_MORE_FAMILIES_46_TURNS_ITALIAN_REVIEW_V1",
+  "asOf": "2026-10-20",
+  "state": "PRELIMINARY_DIGITAL_ITALIAN_SOURCE_INSPECTED_NEITHER_CERTIFIED_NOR_RUNTIME",
+  "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+  "methodology": "Compare each existing EN/FR opening+follow-up draft against original Italian question-and-answer context for Eucharist Q599-608 and Communion Q625-645; preserve original words; record missing linked numbered question and historical-discipline alerts; no print facsimile or independent theological/translation certification.",
+  "countedTogetherWith": "data/learn/research/pius-x-31family-62turn-italian-review-20261020.v1.json",
+  "totals": {
+    "newFamilies": 23,
+    "newTurns": 46,
+    "newTurnSupportCorrections": 1,
+    "newFlaggedFamilies": 12,
+    "combinedDistinctFamilies": 54,
+    "combinedDraftTurnsInitiallyScreened": 108,
+    "originalPrintFacsimileCertifications": 0,
+    "independentSourceCertifications": 0,
+    "approvedTranslations": 0,
+    "approvedDenzingerClaimCitations": 0,
+    "approvedChanoineClaimHandoffs": 0,
+    "published": 0
+  },
+  "casesNeedingSourceExtension": [
+    {
+      "turnId": "SPX-1905-E-632-T2",
+      "declared": [
+        "PX1905-Q633"
+      ],
+      "needed": [
+        "PX1905-Q628",
+        "PX1905-Q633"
+      ]
+    }
+  ],
+  "originalTextNotCopied": true,
+  "records": [
+    {
+      "familyId": "SPX-1905-S-599",
+      "questionId": "PX1905-Q599",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-599-T1",
+          "kind": "opening",
+          "questionEN": "What matter is used for the sacrament of the Eucharist?",
+          "questionFR": "Quelle matière emploie-t-on pour le sacrement de l'Eucharistie ?",
+          "draftAnswerEN": "The Catechism names wheat bread and grape wine, following the elements Christ used at the Last Supper.",
+          "draftAnswerFR": "Le Catéchisme nomme le pain de froment et le vin de raisin, selon les éléments employés par le Christ à la dernière Cène.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q599"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q599"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-599-T2",
+          "kind": "followup",
+          "questionEN": "How does the Catechism summarize the consecrating words?",
+          "questionFR": "Comment le Catéchisme résume-t-il les paroles consécratoires ?",
+          "draftAnswerEN": "It recalls Christ's words identifying the bread as His Body and the wine as His Blood. The abbreviated catechetical summary is not a substitute for a full approved Mass rite.",
+          "draftAnswerFR": "Il rappelle les paroles du Christ identifiant le pain à son Corps et le vin à son Sang. Ce résumé catéchétique abrégé ne remplace pas un rite de la messe approuvé.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q600"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q600"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-600",
+      "questionId": "PX1905-Q600",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-600-T1",
+          "kind": "opening",
+          "questionEN": "How does the 1905 Catechism describe the Eucharistic form?",
+          "questionFR": "Comment le Catéchisme de 1905 décrit-il la forme eucharistique ?",
+          "draftAnswerEN": "It points to the words used by Christ at the Last Supper, 'This is my Body' and 'This is my Blood'. The passage is a catechetical summary, not the complete set of words of the traditional Roman Canon.",
+          "draftAnswerFR": "Il renvoie aux paroles du Christ à la dernière Cène : « Ceci est mon Corps » et « Ceci est mon Sang ». Ce passage est un résumé catéchétique, non l'intégralité des paroles du Canon romain traditionnel.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q600"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q600"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-600-T2",
+          "kind": "followup",
+          "questionEN": "What is the host before consecration?",
+          "questionFR": "Qu'est-ce que l'hostie avant la consécration ?",
+          "draftAnswerEN": "Bread.",
+          "draftAnswerFR": "Du pain.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q601"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q601"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "CATECHETICAL_SHORT_FORMULA_NOT_A_CERTIFIED_ROMAN_CANON_TEXT"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-601",
+      "questionId": "PX1905-Q601",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-601-T1",
+          "kind": "opening",
+          "questionEN": "What is the host before consecration?",
+          "questionFR": "Qu'est-ce que l'hostie avant la consécration ?",
+          "draftAnswerEN": "It is bread. The Eucharistic change described by the Catechism has not yet taken place.",
+          "draftAnswerFR": "C'est du pain. Le changement eucharistique décrit par le Catéchisme n'a pas encore eu lieu.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q601"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q601"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-601-T2",
+          "kind": "followup",
+          "questionEN": "What is it after consecration?",
+          "questionFR": "Qu'est-elle après la consécration ?",
+          "draftAnswerEN": "The true Body of Our Lord Jesus Christ under the appearances of bread.",
+          "draftAnswerFR": "Le vrai Corps de Notre-Seigneur Jésus-Christ sous les apparences du pain.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q602"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q602"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-602",
+      "questionId": "PX1905-Q602",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-602-T1",
+          "kind": "opening",
+          "questionEN": "What is the consecrated host?",
+          "questionFR": "Qu'est-ce que l'hostie consacrée ?",
+          "draftAnswerEN": "After consecration it is truly the Body of Jesus Christ under the appearances of bread.",
+          "draftAnswerFR": "Après la consécration, elle est véritablement le Corps de Jésus-Christ sous les apparences du pain.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q602"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q602"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-602-T2",
+          "kind": "followup",
+          "questionEN": "What is in the chalice before consecration?",
+          "questionFR": "Que contient le calice avant la consécration ?",
+          "draftAnswerEN": "Wine with a few drops of water, as the traditional Mass rite described here provides.",
+          "draftAnswerFR": "Du vin avec quelques gouttes d'eau, comme le prévoit le rite traditionnel décrit ici.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q603"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q603"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-603",
+      "questionId": "PX1905-Q603",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-603-T1",
+          "kind": "opening",
+          "questionEN": "What is in the chalice before consecration?",
+          "questionFR": "Que contient le calice avant la consécration ?",
+          "draftAnswerEN": "The Catechism describes wine mixed with a few drops of water.",
+          "draftAnswerFR": "Le Catéchisme décrit du vin auquel on a ajouté quelques gouttes d'eau.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q603"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q603"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-603-T2",
+          "kind": "followup",
+          "questionEN": "What is in the chalice after consecration?",
+          "questionFR": "Que contient le calice après la consécration ?",
+          "draftAnswerEN": "The true Blood of Our Lord under the appearances of wine.",
+          "draftAnswerFR": "Le vrai Sang de Notre-Seigneur sous les apparences du vin.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q604"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q604"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-604",
+      "questionId": "PX1905-Q604",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-604-T1",
+          "kind": "opening",
+          "questionEN": "What is present in the chalice after consecration?",
+          "questionFR": "Qu'est-ce qui est présent dans le calice après la consécration ?",
+          "draftAnswerEN": "The true Blood of Jesus Christ under the appearances of wine.",
+          "draftAnswerFR": "Le vrai Sang de Jésus-Christ sous les apparences du vin.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q604"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q604"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-604-T2",
+          "kind": "followup",
+          "questionEN": "At what moment does this change take place?",
+          "questionFR": "À quel moment ce changement se produit-il ?",
+          "draftAnswerEN": "When the priest pronounces the words of consecration during Mass, according to the Catechism.",
+          "draftAnswerFR": "Lorsque le prêtre prononce les paroles de la consécration pendant la messe, selon le Catéchisme.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q605"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q605"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-605",
+      "questionId": "PX1905-Q605",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-605-T1",
+          "kind": "opening",
+          "questionEN": "When does the Eucharistic conversion take place?",
+          "questionFR": "Quand se produit la conversion eucharistique ?",
+          "draftAnswerEN": "The Catechism places it at the consecration, when the priest pronounces Christ's words at Mass.",
+          "draftAnswerFR": "Le Catéchisme la situe à la consécration, lorsque le prêtre prononce les paroles du Christ à la messe.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q605"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q605"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-605-T2",
+          "kind": "followup",
+          "questionEN": "What does the Catechism call consecration?",
+          "questionFR": "Qu'appelle-t-il consécration ?",
+          "draftAnswerEN": "The sacramental making-present of Christ's change of bread and wine into His Body and Blood, according to the Catechism's traditional language of renewing the miracle of the Last Supper.",
+          "draftAnswerFR": "L'acte sacramentel qui rend présent le changement du pain et du vin au Corps et au Sang du Christ, selon le langage traditionnel du Catéchisme sur le renouvellement du miracle de la dernière Cène.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q606"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q606"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "RENEWAL_OF_LAST_SUPPER_MIRACLE_CATECHETICAL_NOT_REPEAT_CALVARY"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-606",
+      "questionId": "PX1905-Q606",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-606-T1",
+          "kind": "opening",
+          "questionEN": "What is consecration in the Eucharistic context?",
+          "questionFR": "Qu'est-ce que la consécration dans le contexte eucharistique ?",
+          "draftAnswerEN": "The Catechism describes the priest's sacramental act, using Christ's words, by which bread and wine become His Body and Blood, in continuation of the mystery of the Last Supper.",
+          "draftAnswerFR": "Le Catéchisme décrit l'acte sacramentel du prêtre qui, par les paroles du Christ, fait que le pain et le vin deviennent son Corps et son Sang, dans la continuité du mystère de la dernière Cène.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q606"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q606"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-606-T2",
+          "kind": "followup",
+          "questionEN": "What name is given to this conversion?",
+          "questionFR": "Quel nom donne-t-on à cette conversion ?",
+          "draftAnswerEN": "Transubstantiation.",
+          "draftAnswerFR": "La transsubstantiation.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q607"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q607"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "HISTORICAL_RENOVATION_LANGUAGE_SOURCE_MEANING_REVIEW"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-S-608",
+      "questionId": "PX1905-Q608",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-S-608-T1",
+          "kind": "opening",
+          "questionEN": "Who gives the consecration its power?",
+          "questionFR": "Qui donne à la consécration sa puissance ?",
+          "draftAnswerEN": "The Catechism attributes the efficacy of Christ's words to Jesus Christ Himself, who is almighty God.",
+          "draftAnswerFR": "Le Catéchisme attribue l'efficacité des paroles du Christ à Jésus-Christ Lui-même, Dieu tout-puissant.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q608"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q608"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-S-608-T2",
+          "kind": "followup",
+          "questionEN": "Does any bread or wine remain in substance after consecration?",
+          "questionFR": "Reste-t-il du pain ou du vin quant à leur substance après la consécration ?",
+          "draftAnswerEN": "No. The Catechism teaches that the appearances of bread and wine remain.",
+          "draftAnswerFR": "Non. Le Catéchisme enseigne que demeurent les apparences du pain et du vin.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q609"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q609"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-625",
+      "questionId": "PX1905-Q625",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-625-T1",
+          "kind": "opening",
+          "questionEN": "What are the principal effects of worthy Holy Communion?",
+          "questionFR": "Quels sont les principaux effets d'une sainte Communion reçue dignement ?",
+          "draftAnswerEN": "It preserves and increases sanctifying grace, remits venial sins and protects against mortal sin, and brings spiritual consolation.",
+          "draftAnswerFR": "Elle conserve et accroît la grâce sanctifiante, remet les péchés véniels, préserve du péché mortel et apporte une consolation spirituelle.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q625"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q625"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-625-T2",
+          "kind": "followup",
+          "questionEN": "What other fruits does worthy Communion bring?",
+          "questionFR": "Quels autres fruits apporte la Communion digne ?",
+          "draftAnswerEN": "It weakens disordered passions, increases charity toward God and neighbour, helps conform our actions to Christ, and pledges future glory and bodily resurrection.",
+          "draftAnswerFR": "Elle affaiblit les passions désordonnées, accroît la charité envers Dieu et le prochain, aide à conformer nos actes au Christ et donne un gage de la gloire future et de la résurrection du corps.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q626"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q626"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-626",
+      "questionId": "PX1905-Q626",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-626-T1",
+          "kind": "opening",
+          "questionEN": "What other fruits does worthy Communion bring?",
+          "questionFR": "Quels autres fruits apporte la Communion digne ?",
+          "draftAnswerEN": "It weakens disordered passions, increases charity toward God and neighbour, helps conform our actions to Christ, and pledges future glory and bodily resurrection.",
+          "draftAnswerFR": "Elle affaiblit les passions désordonnées, accroît la charité envers Dieu et le prochain, aide à conformer nos actes au Christ et donne un gage de la gloire future et de la résurrection du corps.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q626"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q626"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-626-T2",
+          "kind": "followup",
+          "questionEN": "Do the Eucharist's fruits depend on how it is received?",
+          "questionFR": "Les fruits de l'Eucharistie dépendent-ils des dispositions du communiant ?",
+          "draftAnswerEN": "The Catechism teaches that its marvelous effects are received when the necessary dispositions are present.",
+          "draftAnswerFR": "Le Catéchisme enseigne que ses merveilleux effets sont reçus lorsque les dispositions nécessaires sont présentes.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q627"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q627"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-627",
+      "questionId": "PX1905-Q627",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-627-T1",
+          "kind": "opening",
+          "questionEN": "Do the Eucharist's fruits depend on how it is received?",
+          "questionFR": "Les fruits de l'Eucharistie dépendent-ils des dispositions du communiant ?",
+          "draftAnswerEN": "The Catechism teaches that its marvelous effects are received when the necessary dispositions are present.",
+          "draftAnswerFR": "Le Catéchisme enseigne que ses merveilleux effets sont reçus lorsque les dispositions nécessaires sont présentes.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q627"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q627"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-627-T2",
+          "kind": "followup",
+          "questionEN": "What three things does the 1905 Catechism require for worthy Communion?",
+          "questionFR": "Quelles trois choses le Catéchisme de 1905 exige-t-il pour communier dignement ?",
+          "draftAnswerEN": "It names being in God's grace, the Eucharistic fast as then prescribed from midnight, and knowing Whom one receives while approaching with devotion. Its fasting rule is historical, not the universal rule in force today.",
+          "draftAnswerFR": "Il nomme l'état de grâce, le jeûne eucharistique alors prescrit depuis minuit et la connaissance de Celui qu'on reçoit avec dévotion. La règle du jeûne est historique, non la règle universelle actuellement en vigueur.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q628"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q628"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "FOLLOWUP_Q628_MIDNIGHT_FAST_HISTORICAL"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-629",
+      "questionId": "PX1905-Q629",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-629-T1",
+          "kind": "opening",
+          "questionEN": "What does being in a state of grace mean here?",
+          "questionFR": "Que signifie ici être en état de grâce ?",
+          "draftAnswerEN": "In the Catechism's account, it means having a conscience free from mortal sin. An individual's culpability is not established by outward appearances.",
+          "draftAnswerFR": "Dans cet enseignement, cela signifie avoir la conscience libre de péché mortel. L'apparence extérieure ne permet pas d'établir la culpabilité d'une personne.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q629"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q629"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-629-T2",
+          "kind": "followup",
+          "questionEN": "What does the Catechism say someone conscious of mortal sin should do before Communion?",
+          "questionFR": "Que recommande le Catéchisme à une personne consciente d'un péché mortel avant la Communion ?",
+          "draftAnswerEN": "It teaches that such a person must ordinarily make a good sacramental Confession before receiving Communion. Questions about an individual's spiritual state should be discussed with a confessor.",
+          "draftAnswerFR": "Il enseigne qu'une telle personne doit ordinairement faire une bonne confession sacramentelle avant la Communion. Les questions concernant l'état spirituel personnel doivent être abordées avec un confesseur.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q630"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q630"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-632",
+      "questionId": "PX1905-Q632",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-632-T1",
+          "kind": "opening",
+          "questionEN": "Does unworthy Communion cease to be the reception of Christ?",
+          "questionFR": "Une Communion indigne cesse-t-elle d'être la réception du Christ ?",
+          "draftAnswerEN": "The Catechism says that Christ is truly received, but the fruit of grace is obstructed by deliberate grave sin; it calls such reception sacrilegious. This classification cannot be used to declare a particular person's guilt or eternal fate.",
+          "draftAnswerFR": "Le Catéchisme dit que le Christ est réellement reçu, mais que le fruit de grâce est empêché par le péché grave délibéré ; il qualifie une telle réception de sacrilège. Cette classification ne permet pas de juger la culpabilité ou la destinée éternelle d'une personne.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q632"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q632"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-632-T2",
+          "kind": "followup",
+          "questionEN": "What Eucharistic fast did the 1905 Catechism prescribe?",
+          "questionFR": "Quel jeûne eucharistique le Catéchisme de 1905 prescrivait-il ?",
+          "draftAnswerEN": "It describes the natural fast, then required from midnight, broken by taking food or drink. The discipline subsequently changed; this statement must not be treated as today's rule.",
+          "draftAnswerFR": "Il décrit le jeûne naturel, alors exigé depuis minuit, interrompu par la prise d'aliments ou de boissons. Cette discipline a changé et ne doit pas être présentée comme la règle actuelle.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q633"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q628",
+            "PX1905-Q633"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "FOLLOWUP_Q633_REQUIRES_Q628_FOR_MIDNIGHT_FAST",
+        "AVOID_PERSONAL_SIN_VERDICT"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-634",
+      "questionId": "PX1905-Q634",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-634-T1",
+          "kind": "opening",
+          "questionEN": "Did the 1905 fasting rule distinguish accidental swallowing from eating or drinking?",
+          "questionFR": "La règle de jeûne de 1905 distinguait-elle l'ingestion accidentelle de manger ou boire ?",
+          "draftAnswerEN": "Yes. It says swallowing a little food remaining between the teeth or a few drops of water while washing does not have the character of taking food or drink. This is historical catechetical discussion, not individualized fasting advice.",
+          "draftAnswerFR": "Oui. Il précise qu'avaler un reste minime entre les dents ou quelques gouttes d'eau durant la toilette n'a pas le caractère de manger ou boire. C'est un exposé historique, non un conseil personnalisé sur le jeûne.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q634"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q634"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-634-T2",
+          "kind": "followup",
+          "questionEN": "What exceptions to the Communion fast did the 1905 Catechism mention?",
+          "questionFR": "Quelles exceptions au jeûne eucharistique le Catéchisme de 1905 mentionnait-il ?",
+          "draftAnswerEN": "It mentions those gravely ill and in danger of death, and special papal permissions for prolonged illness, calling Communion of the dying Viaticum. These exemptions reflect the discipline of its period.",
+          "draftAnswerFR": "Il mentionne les malades en danger de mort et des permissions pontificales particulières en cas de maladie prolongée, nommant viatique la Communion des mourants. Ces exceptions reflètent la discipline de l'époque.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q635"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q635"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "OLD_EUCHARISTIC_FAST_1905_ONLY"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-636",
+      "questionId": "PX1905-Q636",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-636-T1",
+          "kind": "opening",
+          "questionEN": "What does it mean to know Whom one receives in Communion?",
+          "questionFR": "Que signifie connaître Celui qu'on reçoit dans la Communion ?",
+          "draftAnswerEN": "It means understanding and firmly believing the Church's teaching about the Eucharist, rather than treating Communion as ordinary food.",
+          "draftAnswerFR": "Cela signifie comprendre et croire fermement l'enseignement de l'Église sur l'Eucharistie, plutôt que d'y voir un aliment ordinaire.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q636"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q636"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-636-T2",
+          "kind": "followup",
+          "questionEN": "What does receiving Communion with devotion mean?",
+          "questionFR": "Que signifie communier avec dévotion ?",
+          "draftAnswerEN": "The Catechism recommends humility, modesty, preparation beforehand and thanksgiving afterward.",
+          "draftAnswerFR": "Le Catéchisme recommande l'humilité, la modestie, la préparation avant et l'action de grâce après.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q637"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q637"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-637",
+      "questionId": "PX1905-Q637",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-637-T1",
+          "kind": "opening",
+          "questionEN": "What does receiving Communion with devotion mean?",
+          "questionFR": "Que signifie communier avec dévotion ?",
+          "draftAnswerEN": "The Catechism recommends humility, modesty, preparation beforehand and thanksgiving afterward.",
+          "draftAnswerFR": "Le Catéchisme recommande l'humilité, la modestie, la préparation avant et l'action de grâce après.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q637"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q637"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-637-T2",
+          "kind": "followup",
+          "questionEN": "How does the Catechism propose preparing before Holy Communion?",
+          "questionFR": "Comment le Catéchisme propose-t-il de se préparer à la Communion ?",
+          "draftAnswerEN": "It recommends reflecting on Who Christ is and who we are, and making acts of faith, hope, charity, sorrow, adoration, humility and desire to receive Him.",
+          "draftAnswerFR": "Il recommande de considérer qui est le Christ et qui nous sommes, puis de faire des actes de foi, d'espérance, de charité, de contrition, d'adoration, d'humilité et de désir de Le recevoir.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q638"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q638"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "PRACTICAL_DEVOTION_NOT_PERSONAL_CONSCIENCE_JUDGMENT"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-638",
+      "questionId": "PX1905-Q638",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-638-T1",
+          "kind": "opening",
+          "questionEN": "How does the Catechism propose preparing before Holy Communion?",
+          "questionFR": "Comment le Catéchisme propose-t-il de se préparer à la Communion ?",
+          "draftAnswerEN": "It recommends reflecting on Who Christ is and who we are, and making acts of faith, hope, charity, sorrow, adoration, humility and desire to receive Him.",
+          "draftAnswerFR": "Il recommande de considérer qui est le Christ et qui nous sommes, puis de faire des actes de foi, d'espérance, de charité, de contrition, d'adoration, d'humilité et de désir de Le recevoir.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q638"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q638"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-638-T2",
+          "kind": "followup",
+          "questionEN": "What should thanksgiving after Communion include?",
+          "questionFR": "Que doit comprendre l'action de grâce après la Communion ?",
+          "draftAnswerEN": "Remain recollected in Christ's presence and make acts of faith, hope, love, adoration, thanks, self-offering and petition for necessary graces for oneself and others.",
+          "draftAnswerFR": "Demeurer recueilli dans la présence du Christ et faire des actes de foi, d'espérance, d'amour, d'adoration, de reconnaissance, d'offrande et de demande de grâces pour soi et autrui.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q639"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q639"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-640",
+      "questionId": "PX1905-Q640",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-640-T1",
+          "kind": "opening",
+          "questionEN": "How should the rest of the day after Communion be spent?",
+          "questionFR": "Comment vivre le reste de la journée après la Communion ?",
+          "draftAnswerEN": "The Catechism encourages recollection where possible, works of piety and especially diligent fulfilment of the duties of one's state in life.",
+          "draftAnswerFR": "Le Catéchisme encourage le recueillement dans la mesure du possible, les œuvres de piété et surtout l'accomplissement soigneux des devoirs de son état.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q640"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q640"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-640-T2",
+          "kind": "followup",
+          "questionEN": "How long does Christ's Eucharistic presence remain after Communion?",
+          "questionFR": "Combien de temps dure la présence eucharistique du Christ après la Communion ?",
+          "draftAnswerEN": "The Catechism distinguishes His Real Presence, lasting as long as the sacramental species remain, from His gracious indwelling, which remains unless one loses sanctifying grace.",
+          "draftAnswerFR": "Le Catéchisme distingue sa Présence réelle, qui demeure tant que subsistent les espèces sacramentelles, de sa présence par la grâce, qui demeure tant que la grâce sanctifiante n'est pas perdue.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q641"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q641"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "Q641_DISTINGUISHES_SACRAMENTAL_SPECIES_PRESENCE_FROM_SANCTIFYING_GRACE"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-641",
+      "questionId": "PX1905-Q641",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-641-T1",
+          "kind": "opening",
+          "questionEN": "How long does Christ's Eucharistic presence remain after Communion?",
+          "questionFR": "Combien de temps dure la présence eucharistique du Christ après la Communion ?",
+          "draftAnswerEN": "The Catechism distinguishes His Real Presence, lasting as long as the sacramental species remain, from His gracious indwelling, which remains unless one loses sanctifying grace.",
+          "draftAnswerFR": "Le Catéchisme distingue sa Présence réelle, qui demeure tant que subsistent les espèces sacramentelles, de sa présence par la grâce, qui demeure tant que la grâce sanctifiante n'est pas perdue.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q641"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q641"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-641-T2",
+          "kind": "followup",
+          "questionEN": "How does the 1905 Catechism describe the posture for receiving Communion?",
+          "questionFR": "Comment le Catéchisme de 1905 décrit-il l'attitude pour recevoir la Communion ?",
+          "draftAnswerEN": "It describes kneeling, modestly raising the head, opening the mouth and extending the tongue slightly to receive the sacred host. This reflects the historical Latin practice described, not all valid contemporary forms.",
+          "draftAnswerFR": "Il décrit une posture à genoux, la tête légèrement relevée, la bouche ouverte et la langue un peu avancée pour recevoir l'hostie. C'est la pratique latine historique décrite, non l'ensemble des formes valides actuelles.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q642"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q642"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "Q642_DESCRIBES_HISTORICAL_LATIN_RITE_PRACTICE_NOT_GENERAL_TODAY"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-643",
+      "questionId": "PX1905-Q643",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-643-T1",
+          "kind": "opening",
+          "questionEN": "Why did communicants use a Communion cloth or paten?",
+          "questionFR": "Pourquoi employait-on une nappe ou un plateau de Communion ?",
+          "draftAnswerEN": "The cloth or paten was held to catch the sacred host if it should fall. The text describes a customary means of Eucharistic reverence.",
+          "draftAnswerFR": "La nappe ou le plateau était tenu pour recueillir l'hostie sacrée si elle venait à tomber. Le texte décrit ainsi une pratique de révérence eucharistique.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q643"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q643"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-643-T2",
+          "kind": "followup",
+          "questionEN": "What does the historical Catechism advise after receiving the sacred host?",
+          "questionFR": "Que conseille le Catéchisme historique après la réception de l'hostie ?",
+          "draftAnswerEN": "It instructs the communicant to swallow the host promptly and to avoid spitting for a time, reflecting reverence for the sacramental species.",
+          "draftAnswerFR": "Il demande au communiant d'avaler rapidement l'hostie et d'éviter de cracher pendant un certain temps, par révérence envers les espèces sacramentelles.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q644"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q644"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "COMMUNION_PATEN_CLOTH_HISTORICAL_DISCIPLINE"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-644",
+      "questionId": "PX1905-Q644",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-644-T1",
+          "kind": "opening",
+          "questionEN": "What does the historical Catechism advise after receiving the sacred host?",
+          "questionFR": "Que conseille le Catéchisme historique après la réception de l'hostie ?",
+          "draftAnswerEN": "It instructs the communicant to swallow the host promptly and to avoid spitting for a time, reflecting reverence for the sacramental species.",
+          "draftAnswerFR": "Il demande au communiant d'avaler rapidement l'hostie et d'éviter de cracher pendant un certain temps, par révérence envers les espèces sacramentelles.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q644"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q644"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-644-T2",
+          "kind": "followup",
+          "questionEN": "What did the Catechism say if the host adhered to the palate?",
+          "questionFR": "Que recommandait le Catéchisme si l'hostie restait collée au palais ?",
+          "draftAnswerEN": "It recommended loosening the host gently with the tongue, not with the finger, as part of its historical Communion discipline.",
+          "draftAnswerFR": "Il recommandait de dégager doucement l'hostie avec la langue plutôt qu'avec le doigt, dans le cadre de la discipline historique de la Communion.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q645"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q645"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "OLD_RITUAL_PRACTICE_AVOID_CURRENT_UNIVERSAL_ADVICE"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    },
+    {
+      "familyId": "SPX-1905-E-645",
+      "questionId": "PX1905-Q645",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "turns": [
+        {
+          "turnId": "SPX-1905-E-645-T1",
+          "kind": "opening",
+          "questionEN": "What did the Catechism say if the host adhered to the palate?",
+          "questionFR": "Que recommandait le Catéchisme si l'hostie restait collée au palais ?",
+          "draftAnswerEN": "It recommended loosening the host gently with the tongue, not with the finger, as part of its historical Communion discipline.",
+          "draftAnswerFR": "Il recommandait de dégager doucement l'hostie avec la langue plutôt qu'avec le doigt, dans le cadre de la discipline historique de la Communion.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q645"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q645"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        },
+        {
+          "turnId": "SPX-1905-E-645-T2",
+          "kind": "followup",
+          "questionEN": "When did the 1905 Catechism say Catholics were obliged to receive Communion?",
+          "questionFR": "Quand le Catéchisme de 1905 disait-il que les catholiques devaient communier ?",
+          "draftAnswerEN": "It speaks of annual Easter Communion in one's parish and Communion in danger of death. The parish specification reflects historical discipline; current requirements must be checked separately.",
+          "draftAnswerFR": "Il parle de la Communion annuelle à Pâques dans sa paroisse et de la Communion en danger de mort. La précision paroissiale relève de la discipline historique ; les règles actuelles doivent être vérifiées séparément.",
+          "declaredSourceQuestionIds": [
+            "PX1905-Q646"
+          ],
+          "screenedSourceQuestionIds": [
+            "PX1905-Q646"
+          ],
+          "sourceCheck": "ORIGINAL_ITALIAN_MUSEO_QA_PARAGRAPH_PRELIMINARY_SEMANTIC_SCREEN",
+          "originalPrintedEditionCollated": false,
+          "independentlySourceCertified": false,
+          "theologyApproved": false,
+          "translationENApproved": false,
+          "translationFRApproved": false,
+          "denzingerClaimLinkApproved": false,
+          "chanoineClaimLinkApproved": false,
+          "publicationAllowed": false
+        }
+      ],
+      "historicalOrScopeFlags": [
+        "OLD_RITUAL_PRACTICE",
+        "FOLLOWUP_Q646_HISTORICAL_OWN_PARISH_RULE"
+      ],
+      "historicalSourceAttribution": "1905_PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_WRITING",
+      "reviewClass": "ITALIAN_DIGITAL_WITNESS_INITIAL_SCOPE_SCREEN_ONLY"
+    }
+  ]
+}

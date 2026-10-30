@@ -1,0 +1,831 @@
+{
+  "schema": "AO_SPX_BATCH3_PRACTICAL_DIALOGUES_PART_B_V1",
+  "created": "2026-10-21",
+  "status": "EDITORIAL_BILINGUAL_AUTHORING_UNAPPROVED",
+  "purpose": "Add two useful followup branches to each of 12 existing Q&A families, retaining original opening and first followup with attribution",
+  "records": [
+    {
+      "id": "SPX-049",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-049",
+      "originalOpeningQuestion": {
+        "en": "How can Jesus Christ be God and man?",
+        "fr": "Comment Jésus-Christ est-il à la fois Dieu et homme ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Did the Word cease to be God when He became man?",
+        "fr": "Le Verbe a-t-il cessé d'être Dieu en devenant homme ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q85–105",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-049",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_049.F2",
+          "q": {
+            "en": "Did the Son of God assume a complete human nature?",
+            "fr": "Le Fils de Dieu a-t-il assumé une nature humaine complète ?"
+          },
+          "a": {
+            "en": "The catechetical teaching insists that the eternal Son truly became man without ceasing to be God. His humanity is not an appearance or a borrowed body: Christ is truly God and truly man, one divine Person.",
+            "fr": "L'enseignement catéchétique affirme que le Fils éternel s'est véritablement fait homme sans cesser d'être Dieu. Son humanité n'est ni une apparence ni un corps emprunté : le Christ est vrai Dieu et vrai homme, une seule Personne divine."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_049.F3",
+          "q": {
+            "en": "Why does this matter for the work of redemption?",
+            "fr": "Pourquoi cela importe-t-il pour la Rédemption ?"
+          },
+          "a": {
+            "en": "The one who acts in the Incarnation and Passion is the eternal Son made man. Distinguishing His two natures without dividing His Person allows the Church to confess both His true human suffering and His divine identity.",
+            "fr": "Celui qui agit dans l'Incarnation et la Passion est le Fils éternel fait homme. Distinguer ses deux natures sans diviser sa Personne permet à l'Église de confesser sa souffrance véritablement humaine et son identité divine."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-051",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-051",
+      "originalOpeningQuestion": {
+        "en": "Why are Scripture and Apostolic Tradition both necessary?",
+        "fr": "Pourquoi l'Écriture et la Tradition apostolique sont-elles nécessaires ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is authentic interpretation merely a private choice?",
+        "fr": "L'interprétation authentique est-elle un simple choix privé ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "locus": "1905 Catechismo maggiore Q874–891",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-051",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_051.F2",
+          "q": {
+            "en": "Is Apostolic Tradition merely a collection of human customs?",
+            "fr": "La Tradition apostolique n'est-elle qu'un ensemble de coutumes humaines ?"
+          },
+          "a": {
+            "en": "In the catechetical teaching, Apostolic Tradition concerns the handing down of the revelation entrusted to the Church. It should not be confused with every local custom, prudential regulation or later practice.",
+            "fr": "Dans l'enseignement catéchétique, la Tradition apostolique concerne la transmission de la Révélation confiée à l'Église. Il ne faut pas la confondre avec toute coutume locale, toute règle prudentielle ou toute pratique postérieure."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_051.F3",
+          "q": {
+            "en": "Can a private reading of Scripture settle every disputed doctrine?",
+            "fr": "Une lecture privée de l'Écriture peut-elle trancher toute controverse doctrinale ?"
+          },
+          "a": {
+            "en": "The Catechism places Scripture and Apostolic Tradition within the Church's stewardship of revelation. It does not present an isolated reader's interpretation as having the same authority as the Church's teaching office.",
+            "fr": "Le Catéchisme situe l'Écriture et la Tradition apostolique dans la garde de la Révélation par l'Église. Il ne place pas l'interprétation isolée d'un lecteur au même rang que le magistère de l'Église."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-053",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-053",
+      "originalOpeningQuestion": {
+        "en": "How do we recognise the Church founded by Christ?",
+        "fr": "Comment reconnaît-on l'Église fondée par le Christ ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Are those four marks decorative titles?",
+        "fr": "Ces quatre notes ne sont-elles que des titres décoratifs ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q263–271",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-053",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_053.F2",
+          "q": {
+            "en": "What makes the Church apostolic?",
+            "fr": "Qu'est-ce qui rend l'Église apostolique ?"
+          },
+          "a": {
+            "en": "Apostolicity refers to the Church's continuity with the Apostles in the faith she professes and in the pastors who succeed them. It is more than the claim of possessing an ancient name.",
+            "fr": "L'apostolicité désigne la continuité de l'Église avec les Apôtres dans la foi qu'elle professe et dans les pasteurs qui leur succèdent. C'est davantage que la possession d'un nom ancien."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_053.F3",
+          "q": {
+            "en": "Does the mark of holiness mean that every Catholic is personally sinless?",
+            "fr": "La note de sainteté signifie-t-elle que chaque catholique est sans péché ?"
+          },
+          "a": {
+            "en": "No. The catechetical mark concerns the Church's holy founder, teaching, worship and means of sanctification. It does not say that every one of her members is without personal sin.",
+            "fr": "Non. La note catéchétique se rapporte au saint Fondateur de l'Église, à sa doctrine, à son culte et aux moyens de sanctification. Elle ne prétend pas que chacun de ses membres soit personnellement sans péché."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-054",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-054",
+      "originalOpeningQuestion": {
+        "en": "Why does the Church need Pope and bishops?",
+        "fr": "Pourquoi l'Église a-t-elle besoin du pape et des évêques ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does this mean the Church is merely a human association?",
+        "fr": "Cela signifie-t-il que l'Église n'est qu'une association humaine ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q256–262; 1905 Catechismo maggiore Q192–209",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-054",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_054.F2",
+          "q": {
+            "en": "Why does unity require more than private agreement between believers?",
+            "fr": "Pourquoi l'unité exige-t-elle davantage qu'un accord privé entre croyants ?"
+          },
+          "a": {
+            "en": "The Catechism presents the Church as a visible society gathered in common faith, sacramental life and legitimate pastoral government. Communion with the successor of Peter and the bishops is therefore not an optional decoration of Christian unity.",
+            "fr": "Le Catéchisme présente l'Église comme une société visible unie dans la foi, la vie sacramentelle et le gouvernement pastoral légitime. La communion avec le successeur de Pierre et les évêques n'est donc pas un simple ornement de l'unité chrétienne."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_054.F3",
+          "q": {
+            "en": "Does this make bishops a substitute for Christ?",
+            "fr": "Cela fait-il des évêques des remplaçants du Christ ?"
+          },
+          "a": {
+            "en": "No. Their authority serves the Church founded by Christ and is subordinate to Him. The catechetical account assigns pastors a real office without identifying any pastor with the divine Founder.",
+            "fr": "Non. Leur autorité sert l'Église fondée par le Christ et lui demeure subordonnée. L'exposé catéchétique attribue aux pasteurs une charge réelle sans identifier aucun pasteur au divin Fondateur."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-055",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-055",
+      "originalOpeningQuestion": {
+        "en": "Does papal infallibility mean the Pope cannot err?",
+        "fr": "L'infaillibilité pontificale signifie-t-elle que le pape ne se trompe jamais ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does it guarantee correctness in every historical or scientific remark?",
+        "fr": "Garantit-elle la justesse de toute remarque historique ou scientifique ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q197–203",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-055",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_055.F2",
+          "q": {
+            "en": "What sort of teaching is protected by papal infallibility?",
+            "fr": "Quel genre d'enseignement est protégé par l'infaillibilité pontificale ?"
+          },
+          "a": {
+            "en": "The doctrine concerns a definitive act of the Roman Pontiff teaching the universal Church on faith or morals under the specified conditions. It is not a promise that every conversation, opinion or disciplinary decision is free from all error.",
+            "fr": "La doctrine concerne un acte définitif du Pontife romain enseignant à l'Église universelle la foi ou les mœurs dans les conditions prévues. Elle ne promet pas que toute conversation, opinion ou décision disciplinaire soit exempte de toute erreur."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_055.F3",
+          "q": {
+            "en": "Can the avatar use infallibility to authenticate an invented papal quotation?",
+            "fr": "L'avatar peut-il invoquer l'infaillibilité pour authentifier une citation pontificale inventée ?"
+          },
+          "a": {
+            "en": "Certainly not. The historical authenticity of a quotation depends on documentary evidence, while infallibility is a doctrine about certain teaching acts. It cannot turn a newly composed reply into words that Pius X actually uttered.",
+            "fr": "Certainement pas. L'authenticité historique d'une citation dépend de preuves documentaires, tandis que l'infaillibilité concerne certains actes d'enseignement. Elle ne transforme pas une réponse nouvellement composée en paroles réellement prononcées par Pie X."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-056",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-056",
+      "originalOpeningQuestion": {
+        "en": "Can someone outside visible Catholic communion be saved?",
+        "fr": "Une personne hors de la communion catholique visible peut-elle être sauvée ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Can this teaching tell me whether a named person is damned?",
+        "fr": "Cet enseignement permet-il de dire qu'une personne nommée est damnée ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q163–172",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-056",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_056.F2",
+          "q": {
+            "en": "Does the Catechism identify who is personally culpable for separation?",
+            "fr": "Le Catéchisme désigne-t-il les personnes coupables de leur séparation ?"
+          },
+          "a": {
+            "en": "It distinguishes principles about the Church and culpability, but does not claim access to each person's conscience. Responsibility cannot be inferred merely from the external fact that a person is not visibly in Catholic communion.",
+            "fr": "Il distingue des principes sur l'Église et la culpabilité, sans prétendre accéder à la conscience de chacun. La responsabilité ne se déduit pas du seul fait qu'une personne n'appartient pas visiblement à la communion catholique."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_056.F3",
+          "q": {
+            "en": "Can I ask the avatar for the eternal fate of a deceased relative?",
+            "fr": "Puis-je demander à l'avatar le sort éternel d'un parent défunt ?"
+          },
+          "a": {
+            "en": "The avatar may explain the Church's teaching and encourage prayer for the dead, but cannot claim to know God's final judgment upon a named soul. A source-grounded conversation must preserve that limit.",
+            "fr": "L'avatar peut expliquer l'enseignement de l'Église et rappeler la prière pour les défunts, mais il ne peut prétendre connaître le jugement final de Dieu sur une âme nommée. Cette limite doit être respectée."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-058",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-058",
+      "originalOpeningQuestion": {
+        "en": "Do the sacraments confer grace or merely symbolize it?",
+        "fr": "Les sacrements donnent-ils la grâce ou la représentent-ils seulement ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does the sign itself have a religious purpose?",
+        "fr": "Le signe visible a-t-il lui-même une fonction religieuse ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q519–549",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-058",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_058.F2",
+          "q": {
+            "en": "Why call a sacrament an efficacious sign?",
+            "fr": "Pourquoi appeler le sacrement un signe efficace ?"
+          },
+          "a": {
+            "en": "The sign is visible and intelligible, but it is not merely an illustration. According to the Catechism, Christ instituted the sacraments to signify and confer grace through the sacramental action.",
+            "fr": "Le signe est visible et intelligible, mais il n'est pas seulement une illustration. Selon le Catéchisme, le Christ a institué les sacrements pour signifier et conférer la grâce par l'action sacramentelle."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_058.F3",
+          "q": {
+            "en": "Does receiving a sacrament make our dispositions irrelevant?",
+            "fr": "La réception d'un sacrement rend-elle nos dispositions indifférentes ?"
+          },
+          "a": {
+            "en": "No. The catechetical doctrine of sacramental efficacy does not abolish the need for the proper dispositions of the recipient. The existence of grace and the fruitful reception of a sacrament must not be confused.",
+            "fr": "Non. La doctrine de l'efficacité sacramentelle n'abolit pas la nécessité des dispositions convenables du fidèle. Il ne faut pas confondre la grâce conférée dans le sacrement avec sa réception fructueuse."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-059",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-059",
+      "originalOpeningQuestion": {
+        "en": "What happens through Holy Orders?",
+        "fr": "Que se passe-t-il dans le sacrement de l'ordre ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is ordination simply assigning a community job?",
+        "fr": "L'ordination est-elle simplement l'attribution d'une fonction communautaire ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q814–822",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-059",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_059.F2",
+          "q": {
+            "en": "What is meant by the sacramental character of Orders?",
+            "fr": "Que signifie le caractère sacramentel de l'ordre ?"
+          },
+          "a": {
+            "en": "The Catechism teaches that Holy Orders imparts a spiritual character connected with the sacred ministry. Ordination is not simply a revocable appointment to help administer a religious community.",
+            "fr": "Le Catéchisme enseigne que le sacrement de l'ordre imprime un caractère spirituel lié au ministère sacré. L'ordination n'est pas une simple nomination révocable à la gestion d'une communauté religieuse."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_059.F3",
+          "q": {
+            "en": "Does every ordained person exercise exactly the same ministry?",
+            "fr": "Toute personne ordonnée exerce-t-elle exactement le même ministère ?"
+          },
+          "a": {
+            "en": "The catechetical explanation distinguishes sacred orders and their functions. A general answer about the sacrament should not be mistaken for a detailed ruling on the faculties or office of a particular clergyman.",
+            "fr": "L'exposé catéchétique distingue les ordres sacrés et leurs fonctions. Une réponse générale sur le sacrement ne constitue pas une décision détaillée sur les facultés ou la charge d'un clerc particulier."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-060",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-060",
+      "originalOpeningQuestion": {
+        "en": "Why receive Extreme Unction before death is imminent?",
+        "fr": "Pourquoi ne pas attendre la dernière minute pour recevoir l'extrême-onction ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is it only a sign that death is certain?",
+        "fr": "N'est-elle que le signe d'une mort certaine ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q808–813",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-060",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_060.F2",
+          "q": {
+            "en": "Why should the sick receive spiritual help before losing consciousness?",
+            "fr": "Pourquoi donner ce secours spirituel avant la perte de conscience ?"
+          },
+          "a": {
+            "en": "The catechetical purpose of Extreme Unction is the help of grace amid serious illness. Waiting until a patient can no longer take part may deprive that person of consolation and preparation that could have been received earlier.",
+            "fr": "La fin catéchétique de l'extrême-onction est le secours de la grâce dans la maladie grave. Attendre que le malade ne puisse plus participer peut le priver de consolations et d'une préparation qu'il aurait pu recevoir auparavant."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_060.F3",
+          "q": {
+            "en": "Can an avatar tell whether someone's illness qualifies under current Church law?",
+            "fr": "L'avatar peut-il décider si une maladie remplit les conditions du droit ecclésiastique actuel ?"
+          },
+          "a": {
+            "en": "No. The text records historical sacramental teaching, while an actual pastoral decision also involves a priest and the applicable present discipline. The avatar should not issue a diagnosis or declare a particular person's eligibility.",
+            "fr": "Non. Le texte transmet un enseignement sacramentel historique ; une décision pastorale concrète relève aussi du prêtre et de la discipline actuelle. L'avatar ne doit ni diagnostiquer ni déclarer l'éligibilité d'une personne déterminée."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-062",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-062",
+      "originalOpeningQuestion": {
+        "en": "Will our bodies rise again?",
+        "fr": "Nos corps ressusciteront-ils vraiment ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is the resurrection only a metaphor for remembering the dead?",
+        "fr": "La résurrection n'est-elle qu'une métaphore du souvenir des morts ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q299; 1905 Catechismo maggiore Q239–245",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-062",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_062.F2",
+          "q": {
+            "en": "How does the resurrection differ from the soul's survival after death?",
+            "fr": "En quoi la résurrection diffère-t-elle de la survie de l'âme après la mort ?"
+          },
+          "a": {
+            "en": "The Catechism speaks of more than the soul continuing to exist. It professes that the dead will truly rise and that the human destiny includes the body, not permanent separation from it.",
+            "fr": "Le Catéchisme ne parle pas seulement de la survie de l'âme. Il professe la résurrection réelle des morts et une destinée humaine qui inclut le corps, non sa séparation définitive."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_062.F3",
+          "q": {
+            "en": "Is the doctrine about the same ordinary life simply continuing indefinitely?",
+            "fr": "S'agit-il de la même vie terrestre prolongée indéfiniment ?"
+          },
+          "a": {
+            "en": "No. The Christian confession is of a resurrection at the last day, not a return to a merely earthly existence without end. Its full mystery should not be reduced to an imaginative description of future bodies.",
+            "fr": "Non. La foi chrétienne professe une résurrection au dernier jour, non le simple retour à une existence terrestre sans fin. Il ne faut pas réduire ce mystère à une description imaginaire des corps futurs."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-063",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-063",
+      "originalOpeningQuestion": {
+        "en": "What is the happiness of Heaven?",
+        "fr": "En quoi consiste le bonheur du Ciel ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is Heaven simply comfort without troubles?",
+        "fr": "Le Ciel est-il simplement le confort sans soucis ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q246–251",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-063",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_063.F2",
+          "q": {
+            "en": "What makes the vision of God the centre of heavenly happiness?",
+            "fr": "Pourquoi la vision de Dieu est-elle au centre du bonheur céleste ?"
+          },
+          "a": {
+            "en": "The catechetical doctrine identifies God Himself as the fulfilment of the blessed. The happiness of Heaven does not consist chiefly in possessions or amusements transported from this world.",
+            "fr": "La doctrine catéchétique reconnaît en Dieu lui-même l'accomplissement des bienheureux. Le bonheur du Ciel ne consiste pas d'abord en biens ou divertissements transportés de ce monde."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_063.F3",
+          "q": {
+            "en": "May I say with certainty that a particular deceased person is in Heaven?",
+            "fr": "Puis-je affirmer avec certitude qu'un défunt particulier est au Ciel ?"
+          },
+          "a": {
+            "en": "Not on the basis of a general historical catechism. The Church's recognised judgments and the final judgment of God are different matters from private speculation about an individual.",
+            "fr": "Pas sur la seule base d'un catéchisme historique général. Les jugements reconnus de l'Église et le jugement final de Dieu sont autre chose que des suppositions privées sur une personne."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-064",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "originalDraftId": "SPX-064",
+      "originalOpeningQuestion": {
+        "en": "Why is Purgatory needed after forgiveness?",
+        "fr": "Pourquoi le purgatoire après le pardon des péchés ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is Purgatory a second chance after final rejection of God?",
+        "fr": "Le purgatoire est-il une seconde chance après le rejet définitif de Dieu ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q272–293; 1905 Catechismo maggiore Q776–790",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+        "recordId": "SPX-064",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_064.F2",
+          "q": {
+            "en": "If a sin has been pardoned, what could remain to be purified?",
+            "fr": "Si le péché est pardonné, que reste-t-il à purifier ?"
+          },
+          "a": {
+            "en": "The catechetical teaching distinguishes forgiveness of guilt from temporal consequences and the purification still needed by a soul destined for God. It does not teach that the redemption of Christ is incomplete.",
+            "fr": "L'enseignement catéchétique distingue le pardon de la faute des conséquences temporelles et de la purification qui peut encore être nécessaire à une âme destinée à Dieu. Il n'enseigne pas que la Rédemption du Christ soit inachevée."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_064.F3",
+          "q": {
+            "en": "What can the living do for the souls in Purgatory?",
+            "fr": "Que peuvent faire les vivants pour les âmes du purgatoire ?"
+          },
+          "a": {
+            "en": "The traditional catechetical life of the Church encourages prayers and suffrages for the departed. Such prayer entrusts the dead to God's mercy; it does not claim detailed knowledge of an individual soul's state.",
+            "fr": "La vie catéchétique traditionnelle de l'Église encourage la prière et les suffrages pour les défunts. Cette prière les confie à la miséricorde de Dieu sans prétendre connaître dans le détail l'état d'une âme particulière."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    }
+  ],
+  "counts": {
+    "chapters": 12,
+    "existingReferencedQATurns": 24,
+    "newQATurns": 24,
+    "combinedQATurns": 48,
+    "newLocalizedAnswers": 48
+  }
+}

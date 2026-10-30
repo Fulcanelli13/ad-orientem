@@ -1,0 +1,282 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B19_COMMUNION_KNOWLEDGE_CONTEXT_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "formation/1457-pius-x-conversation-evidence",
+  "status": "RESEARCH_ONLY_INCREMENTAL_1910_CONTEXT_AND_MIRROR_ALIGNMENT",
+  "counts": {
+    "families": 2,
+    "answerUnits": 4,
+    "additionalEditorialNotes": 1,
+    "certified": 0,
+    "published": 0
+  },
+  "priorCompletedWork": {
+    "path": "data/learn/research/pius-x-first40-claim-italian-witness-review-20261020.v1.json",
+    "scope": "636 and637 opening precision proposals already exist. Reuse rather than claim a new audit. New contribution: exact child-knowledge context in Quam singulari, issuer/date separation, and propagation637 to636followup."
+  },
+  "records": [
+    {
+      "familyId": "SPX-1905-E-636",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "originalOwnerBlob": "6c703c000fd7a0d2b4c57170eed689cd2c194ae7",
+      "originalRecord": {
+        "id": "SPX-1905-E-636",
+        "source": {
+          "edition": "1905_LONG_CATECHISM",
+          "questionId": "PX1905-Q636",
+          "originalQuestionItalian": "Che cosa vuol dire: sapere ciò che si va a ricevere?",
+          "companionQuestionId": "PX1905-Q637",
+          "section": "COMMUNION_DISPOSITIONS_AND_HISTORICAL_FAST",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+          "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "What does it mean to know Whom one receives in Communion?",
+              "fr": "Que signifie connaître Celui qu'on reçoit dans la Communion ?"
+            },
+            "response": {
+              "en": "It means understanding and firmly believing the Church's teaching about the Eucharist, rather than treating Communion as ordinary food.",
+              "fr": "Cela signifie comprendre et croire fermement l'enseignement de l'Église sur l'Eucharistie, plutôt que d'y voir un aliment ordinaire."
+            },
+            "supports": [
+              "PX1905-Q636"
+            ]
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "What does receiving Communion with devotion mean?",
+              "fr": "Que signifie communier avec dévotion ?"
+            },
+            "response": {
+              "en": "The Catechism recommends humility, modesty, preparation beforehand and thanksgiving afterward.",
+              "fr": "Le Catéchisme recommande l'humilité, la modestie, la préparation avant et l'action de grâce après."
+            },
+            "supports": [
+              "PX1905-Q637"
+            ]
+          }
+        ],
+        "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+        "release": {
+          "sourceSentenceVerified": false,
+          "theologyApproved": false,
+          "translationApproved": false,
+          "voiceApproved": false,
+          "production": false
+        }
+      },
+      "proposedTurns": [
+        {
+          "en": "Know what Christian doctrine teaches about this sacrament, and believe it firmly.",
+          "fr": "Connaissez ce qu’enseigne la doctrine chrétienne sur ce sacrement, et croyez-y fermement.",
+          "claims": [
+            {
+              "text": "Prior636 correction retained",
+              "refs": [
+                "PX636"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Approach with humility and modesty in bearing and dress, with preparation and thanksgiving.",
+          "fr": "Approchez-vous avec humilité et modestie dans le maintien et la tenue, avec préparation et action de grâces.",
+          "claims": [
+            {
+              "text": "Prior637 correction shared",
+              "refs": [
+                "PX637"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "SOURCE_BOUND_RECONSTRUCTION_NOT_AUTHENTIC_PAPAL_UTTERANCE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "historicalVoiceApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-1905-E-637",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "originalOwnerBlob": "e02e92f2f3d57d16e2f36ba28efa27daeecf613a",
+      "originalRecord": {
+        "id": "SPX-1905-E-637",
+        "source": {
+          "edition": "1905_LONG_CATECHISM",
+          "questionId": "PX1905-Q637",
+          "originalQuestionItalian": "Che cosa vuol dire comunicarsi con divozione?",
+          "companionQuestionId": "PX1905-Q638",
+          "section": "COMMUNION_DEVOTION_AND_HISTORICAL_PRACTICE",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+          "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "What does receiving Communion with devotion mean?",
+              "fr": "Que signifie communier avec dévotion ?"
+            },
+            "response": {
+              "en": "The Catechism recommends humility, modesty, preparation beforehand and thanksgiving afterward.",
+              "fr": "Le Catéchisme recommande l'humilité, la modestie, la préparation avant et l'action de grâce après."
+            },
+            "supports": [
+              "PX1905-Q637"
+            ]
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "How does the Catechism propose preparing before Holy Communion?",
+              "fr": "Comment le Catéchisme propose-t-il de se préparer à la Communion ?"
+            },
+            "response": {
+              "en": "It recommends reflecting on Who Christ is and who we are, and making acts of faith, hope, charity, sorrow, adoration, humility and desire to receive Him.",
+              "fr": "Il recommande de considérer qui est le Christ et qui nous sommes, puis de faire des actes de foi, d'espérance, de charité, de contrition, d'adoration, d'humilité et de désir de Le recevoir."
+            },
+            "supports": [
+              "PX1905-Q638"
+            ]
+          }
+        ],
+        "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+        "release": {
+          "sourceSentenceVerified": false,
+          "theologyApproved": false,
+          "translationApproved": false,
+          "voiceApproved": false,
+          "production": false
+        }
+      },
+      "proposedTurns": [
+        {
+          "en": "Approach with humility and modesty in bearing and dress, with preparation and thanksgiving.",
+          "fr": "Approchez-vous avec humilité et modestie dans le maintien et la tenue, avec préparation et action de grâces.",
+          "claims": [
+            {
+              "text": "Prior637 correction shared",
+              "refs": [
+                "PX637"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Consider Whom you receive and who you are; make acts of faith, hope, charity, contrition, adoration, humility and desire.",
+          "fr": "Considérez Celui que vous recevez et ce que vous êtes ; faites des actes de foi, d’espérance, de charité, de contrition, d’adoration, d’humilité et de désir.",
+          "claims": [
+            {
+              "text": "Preparation content preserved",
+              "refs": [
+                "PX638"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "SOURCE_BOUND_RECONSTRUCTION_NOT_AUTHENTIC_PAPAL_UTTERANCE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "historicalVoiceApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "editorialContext": {
+    "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+    "avatarLineAllowed": false,
+    "en": "For children, Quam singulari distinguishes initial preparation from complete later instruction: rules II–III require understanding suited to capacity, including the distinction between Eucharistic and ordinary bread. This is later context, not a quotation from catechism question636.",
+    "fr": "Pour les enfants, Quam singulari distingue la préparation initiale de l’instruction complète ultérieure : ses règles II–III demandent une connaissance adaptée à leurs capacités, notamment la distinction entre pain eucharistique et pain ordinaire. C’est un contexte ultérieur, non une citation de la question636 du catéchisme.",
+    "claims": [
+      {
+        "text": "Age-appropriate knowledge and continued instruction",
+        "refs": [
+          "QS-II-III"
+        ]
+      }
+    ],
+    "publication": false
+  },
+  "evidence": [
+    {
+      "id": "PX636",
+      "work": "1905 Compendio, Catechismo maggiore, ParteIV CapoIV §3, editorialQ636",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "Che cosa vuol dire: sapere ciò che si va a ricevere?",
+      "supports": "Knowledge and firm belief; no claim entire theology must be mastered"
+    },
+    {
+      "id": "PX637",
+      "work": "Same editorialQ637",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "Che cosa vuol dire comunicarsi con divozione?",
+      "supports": "Humility/modesty, bearing/dress, preparation/thanksgiving"
+    },
+    {
+      "id": "PX638",
+      "work": "Same editorialQ638",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "In che consiste la preparazione prima della Comunione?",
+      "supports": "Meditation and seven named acts; no requirement of a particular emotional intensity"
+    },
+    {
+      "id": "QS-II-III",
+      "work": "Sacred Congregation for the Discipline of the Sacraments, Quam singulari, rulesII–III, AAS2(1910),pp577–583, rulesonp582",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=582",
+      "pdfZeroBasedPage": 581,
+      "language": "Latin official publication",
+      "supports": "Perfect and complete doctrinal knowledge not necessary before firstConfession/Communion; instruction afterward according to intelligence. Necessary mysteries according to capacity; distinguish Eucharistic/ordinary bread; age-appropriate devotion."
+    },
+    {
+      "id": "QS-DATES",
+      "work": "Same conclusion, printedp583",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=583",
+      "pdfZeroBasedPage": 582,
+      "language": "Latin",
+      "supports": "General congregation15July1910; papal approval7August; dateline8August1910. Issuer is Congregation for Discipline of Sacraments, signedCardinalDomenicoFerrata and secretaryFilippoGiustini; not papalautograph.",
+      "qualification": "Dates transcribed from officialPDFtext; visual print verification remains a human review check"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "636 ordinary-food contrast belonged to later child-preparation context, not the actual1905 answer. Preserve distinction and provide exact later source instead of silently moving words into636",
+    "637 appearance/dress detail already proposed in prioraudit; align its636followup mirror so contexts do not diverge",
+    "Do not infer psychological feelings or intellectual maturity beyond capacity from devotional answer",
+    "Distinguish7August papal approval from8August printed decree dateline; do not replace every conventional7August reference as if necessarily false"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "SPX-1905-E-636-T2",
+        "SPX-1905-E-637-T1"
+      ],
+      "decision": "Shared637claim/variant, retain contextualIDs and pending approvals."
+    },
+    {
+      "ids": [
+        "SPX-1905-E-637-T2",
+        "SPX-1905-E-638-T1"
+      ],
+      "decision": "Existing638mirror flagged;638family not counted as newly improved or certified."
+    }
+  ],
+  "humanDecisions": [
+    "Theologian/historian checks later child-specific context is not generalized to every communicant or put into1905 source",
+    "EN/FR and historical voice review; no individual child eligibility determination"
+  ],
+  "newSubstantiveGaps": [],
+  "numbering": "1905 question numbers are editorial. Latin1910 decree Roman rule numbers are printed.",
+  "approvalsChanged": 0,
+  "continue": true
+}

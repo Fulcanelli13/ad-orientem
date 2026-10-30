@@ -1,0 +1,825 @@
+{
+  "schema": "AO_SPX_FIRST_RELEASE_SOURCE_LOCKED_EIGHT_SCENES_V1",
+  "asOf": "2026-10-21",
+  "selectionAuthority": "generated canonical 130-from-810 shortlist matched to existing 82 authored chapter IDs in first release reconciliation CI",
+  "sourceIndexGenerator": "tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs",
+  "status": "BILINGUAL_SOURCE_TETHERED_EDITORIAL_REVIEW_NOT_APPROVED",
+  "counts": {
+    "firstReleaseSubset": 8,
+    "existingChapterIdsReused": 8,
+    "conversationsWithThreeConnectedTurns": 8,
+    "unapprovedBilingualTurnPairs": 24,
+    "localizedDraftAnswerCount": 48,
+    "newCanonicalTopics": 0,
+    "originalSourceOwnerAnswersModified": 0
+  },
+  "records": [
+    {
+      "id": "SPX-016",
+      "selection": {
+        "firstReleaseRank": 34,
+        "category": "PRAYER_AND_SPIRITUAL_LIFE",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch2-a1-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "document": "Salzano catechism",
+        "originalLanguage": "it",
+        "witnessClass": "SARTO_PREPAPAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+        "locatorIsEditorial": true,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-016.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "How should I examine my conscience?",
+            "fr": "Comment dois-je examiner ma conscience ?"
+          },
+          "reply": {
+            "en": "Before confession, ask God for help. Examine your conduct against God's commandments, the Church's precepts, the duties of your state in life, and the occasions in which you have sinned.",
+            "fr": "Avant la confession, demandez le secours de Dieu. Examinez votre conduite selon les commandements de Dieu, les préceptes de l'Église, les devoirs de votre état et les occasions dans lesquelles vous avez péché."
+          },
+          "loci": [
+            "Q524",
+            "Q526",
+            "Q527",
+            "Q528",
+            "Q529"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-016.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "Is a bad thought already a sin as soon as it occurs?",
+            "fr": "Une mauvaise pensée est-elle déjà un péché dès qu'elle se présente ?"
+          },
+          "reply": {
+            "en": "No. The mere appearance of a bad thought does not suffice: there must be pleasure taken in it and consent of the will.",
+            "fr": "Non. La seule apparition d'une mauvaise pensée ne suffit pas : il faut y prendre plaisir et y consentir par la volonté."
+          },
+          "loci": [
+            "Q541",
+            "Q542",
+            "Q543"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-016.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "How long must I continue this examination?",
+            "fr": "Combien de temps dois-je poursuivre cet examen ?"
+          },
+          "reply": {
+            "en": "The time varies with the interval since your last confession and with what is needed. The manuscript gives no fixed number of minutes.",
+            "fr": "La durée varie selon le temps écoulé depuis votre dernière confession et selon les besoins. Le manuscrit ne fixe aucun nombre de minutes."
+          },
+          "loci": [
+            "Q548"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    },
+    {
+      "id": "SPX-015",
+      "selection": {
+        "firstReleaseRank": 91,
+        "category": "SACRAMENTS_AND_MASS",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch2-a1-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "document": "Salzano catechism",
+        "originalLanguage": "it",
+        "witnessClass": "SARTO_PREPAPAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+        "locatorIsEditorial": true,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-015.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "Why confess sins to a priest?",
+            "fr": "Pourquoi confesser ses péchés à un prêtre ?"
+          },
+          "reply": {
+            "en": "Christ instituted the sacrament of Penance for sins committed after Baptism. The priest is its minister and pronounces the words of absolution.",
+            "fr": "Le Christ a institué le sacrement de pénitence pour les péchés commis après le baptême. Le prêtre en est le ministre et prononce les paroles de l'absolution."
+          },
+          "loci": [
+            "Q509",
+            "Q510",
+            "Q517",
+            "Q518"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-015.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "Does confession make personal sorrow unnecessary?",
+            "fr": "La confession rend-elle inutile le regret personnel ?"
+          },
+          "reply": {
+            "en": "No. The penitent's acts include contrition, confession and satisfaction. Sorrow for having offended God cannot simply be omitted.",
+            "fr": "Non. Les actes du pénitent comprennent la contrition, la confession et la satisfaction. La douleur d'avoir offensé Dieu ne saurait être omise."
+          },
+          "loci": [
+            "Q516",
+            "Q523",
+            "Q550"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-015.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "What distinguishes absolution from words of human comfort?",
+            "fr": "Qu'est-ce qui distingue l'absolution de simples paroles de réconfort ?"
+          },
+          "reply": {
+            "en": "Absolution belongs to the sacrament instituted by Christ. The priest pronounces its sacramental form; it is not merely a friend's reassurance.",
+            "fr": "L'absolution appartient au sacrement institué par le Christ. Le prêtre en prononce la formule sacramentelle ; ce n'est pas seulement une parole rassurante d'un ami."
+          },
+          "loci": [
+            "Q509",
+            "Q511",
+            "Q517",
+            "Q518"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    },
+    {
+      "id": "SPX-035",
+      "selection": {
+        "firstReleaseRank": 36,
+        "category": "PRAYER_AND_SPIRITUAL_LIFE",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "document": "Haerent animo",
+        "originalLanguage": "it",
+        "witnessClass": "PAPAL_EXHORTATION_TO_PRIESTS",
+        "locatorIsEditorial": false,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-035.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "Why should a priest read Scripture and spiritual books?",
+            "fr": "Pourquoi un prêtre doit-il lire l'Écriture et les livres spirituels ?"
+          },
+          "reply": {
+            "en": "Sacred reading should accompany his daily meditation, especially the inspired Scriptures. He must learn what he is to teach, so that sound doctrine may guide his ministry.",
+            "fr": "La lecture sacrée doit accompagner sa méditation quotidienne, surtout celle des Écritures inspirées. Il doit apprendre ce qu'il aura à enseigner, afin qu'une doctrine saine guide son ministère."
+          },
+          "loci": [
+            "§22"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-035.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "How can a spiritual book help him?",
+            "fr": "Comment un livre spirituel peut-il lui venir en aide ?"
+          },
+          "reply": {
+            "en": "A sound book can serve as a faithful friend: it recalls duties, reproves neglected resolutions and warns against dangers to the soul.",
+            "fr": "Un bon livre peut être un ami fidèle : il rappelle les devoirs, reproche les résolutions négligées et met en garde contre les dangers de l'âme."
+          },
+          "loci": [
+            "§23"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-035.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "Can reading replace the work of examining and correcting one's conduct?",
+            "fr": "La lecture peut-elle remplacer l'examen et la correction de sa conduite ?"
+          },
+          "reply": {
+            "en": "No. The exhortation joins reading and meditation to examining whether what was considered has actually been practised.",
+            "fr": "Non. L'exhortation unit la lecture et la méditation à l'examen de ce qui a réellement été mis en pratique."
+          },
+          "loci": [
+            "§24"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    },
+    {
+      "id": "SPX-034",
+      "selection": {
+        "firstReleaseRank": 37,
+        "category": "PRAYER_AND_SPIRITUAL_LIFE",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "document": "Haerent animo",
+        "originalLanguage": "it",
+        "witnessClass": "PAPAL_EXHORTATION_TO_PRIESTS",
+        "locatorIsEditorial": false,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-034.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "Why should a priest meditate on Christ's life?",
+            "fr": "Pourquoi un prêtre doit-il méditer sur la vie du Christ ?"
+          },
+          "reply": {
+            "en": "The priest is called another Christ in the exercise of his ministry. He should therefore strive also to imitate Christ's holy works, meditating on His life.",
+            "fr": "Le prêtre est appelé un autre Christ dans l'exercice de son ministère. Il doit donc s'efforcer d'imiter aussi les œuvres saintes du Christ, en méditant sa vie."
+          },
+          "loci": [
+            "§21"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-034.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "Can the duties of ministry excuse him from daily meditation?",
+            "fr": "Les devoirs du ministère le dispensent-ils de la méditation quotidienne ?"
+          },
+          "reply": {
+            "en": "The exhortation says that even grave and numerous occupations are no excuse for neglecting meditation on divine things.",
+            "fr": "L'exhortation enseigne que même des occupations nombreuses et graves ne dispensent pas de méditer les choses divines."
+          },
+          "loci": [
+            "§15",
+            "§17",
+            "§20"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-034.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "What should meditation produce in his conduct?",
+            "fr": "Quels fruits la méditation doit-elle porter dans sa conduite ?"
+          },
+          "reply": {
+            "en": "It should regulate affections, direct actions and help correct faults. The point is not reflection left apart from life.",
+            "fr": "Elle doit régler les affections, diriger les actes et aider à corriger les défauts. Il ne s'agit pas d'une réflexion séparée de la vie."
+          },
+          "loci": [
+            "§15",
+            "§21"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    },
+    {
+      "id": "SPX-027",
+      "selection": {
+        "firstReleaseRank": 39,
+        "category": "PRAYER_AND_SPIRITUAL_LIFE",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "document": "Salzano catechism",
+        "originalLanguage": "it",
+        "witnessClass": "SARTO_PREPAPAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+        "locatorIsEditorial": true,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-027.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "Can prayers assist our departed loved ones?",
+            "fr": "La prière peut-elle aider nos chers défunts ?"
+          },
+          "reply": {
+            "en": "The faithful on earth, the saints in Heaven and the souls in Purgatory belong to the one Church of Christ. We pray to God for the souls in Purgatory.",
+            "fr": "Les fidèles sur la terre, les saints au Ciel et les âmes du purgatoire appartiennent à l'unique Église du Christ. Nous prions Dieu pour les âmes du purgatoire."
+          },
+          "loci": [
+            "Q272",
+            "Q275",
+            "Q276",
+            "Q279"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-027.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "How can they still belong to the same Church?",
+            "fr": "Comment peuvent-ils encore appartenir à la même Église ?"
+          },
+          "reply": {
+            "en": "They belong to one family in which the members help one another. That mutual aid is called the communion of saints.",
+            "fr": "Ils appartiennent à une seule famille dont les membres s'entraident. Cette aide réciproque s'appelle la communion des saints."
+          },
+          "loci": [
+            "Q277",
+            "Q281"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-027.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "Do the saints in Heaven pray for us?",
+            "fr": "Les saints du Ciel prient-ils pour nous ?"
+          },
+          "reply": {
+            "en": "Yes. The catechism explicitly says that the saints in Heaven pray to the Lord for us.",
+            "fr": "Oui. Le catéchisme enseigne expressément que les saints du Ciel prient le Seigneur pour nous."
+          },
+          "loci": [
+            "Q278"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    },
+    {
+      "id": "SPX-036",
+      "selection": {
+        "firstReleaseRank": 43,
+        "category": "PRAYER_AND_SPIRITUAL_LIFE",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "document": "Salzano catechism",
+        "originalLanguage": "it",
+        "witnessClass": "SARTO_PREPAPAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+        "locatorIsEditorial": true,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-036.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "Why examine my conscience each evening?",
+            "fr": "Pourquoi examiner ma conscience chaque soir ?"
+          },
+          "reply": {
+            "en": "It makes the examination easier. Each evening, remember where you have been, with whom you have dealt, and what you have done.",
+            "fr": "Cela facilite l'examen. Chaque soir, rappelez-vous les lieux où vous êtes allé, les personnes que vous avez rencontrées et ce que vous avez fait."
+          },
+          "loci": [
+            "Q549"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-036.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "Is the evening examination merely an impression of how the day felt?",
+            "fr": "L'examen du soir n'est-il qu'une impression de la journée ?"
+          },
+          "reply": {
+            "en": "No. The instruction gives concrete points to recall: places, people and actions.",
+            "fr": "Non. L'instruction donne des points concrets à se rappeler : les lieux, les personnes et les actes."
+          },
+          "loci": [
+            "Q549"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-036.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "Does the manuscript impose the same length of examination every time?",
+            "fr": "Le manuscrit impose-t-il toujours la même durée d'examen ?"
+          },
+          "reply": {
+            "en": "No. It says the time needed varies according to the interval since the last confession and one's needs.",
+            "fr": "Non. Il dit que le temps nécessaire varie selon la durée écoulée depuis la dernière confession et selon les besoins de chacun."
+          },
+          "loci": [
+            "Q548"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    },
+    {
+      "id": "SPX-005",
+      "selection": {
+        "firstReleaseRank": 90,
+        "category": "SACRAMENTS_AND_MASS",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch2-a1-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "document": "Catechismo maggiore",
+        "originalLanguage": "it",
+        "witnessClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PAPAL_UTTERANCE",
+        "locatorIsEditorial": false,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-005.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "What happens at the Consecration?",
+            "fr": "Que se passe-t-il à la consécration ?"
+          },
+          "reply": {
+            "en": "When the priest pronounces the words of Consecration, the bread and wine are changed into the Body and Blood of Jesus Christ. The catechism calls this conversion transubstantiation.",
+            "fr": "Lorsque le prêtre prononce les paroles de la consécration, le pain et le vin sont changés au Corps et au Sang de Jésus-Christ. Le catéchisme appelle cette conversion transsubstantiation."
+          },
+          "loci": [
+            "Q605",
+            "Q606",
+            "Q607"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-005.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "Why does the Host still look like bread?",
+            "fr": "Pourquoi l'hostie garde-t-elle l'apparence du pain ?"
+          },
+          "reply": {
+            "en": "Only the species remain: the sensible qualities such as appearance, colour and taste. The substance has been changed.",
+            "fr": "Seules les espèces demeurent : les qualités sensibles, telles que l'apparence, la couleur et le goût. La substance a été changée."
+          },
+          "loci": [
+            "Q609",
+            "Q610"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-005.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "Where does the power of the words of Consecration come from?",
+            "fr": "D'où vient la puissance des paroles de la consécration ?"
+          },
+          "reply": {
+            "en": "From Our Lord Jesus Christ Himself, whom the catechism calls almighty God.",
+            "fr": "De Notre-Seigneur Jésus-Christ Lui-même, que le catéchisme appelle Dieu tout-puissant."
+          },
+          "loci": [
+            "Q608"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    },
+    {
+      "id": "SPX-021",
+      "selection": {
+        "firstReleaseRank": 92,
+        "category": "SACRAMENTS_AND_MASS",
+        "preExistingAuthoringRoot": true,
+        "sourceOwner": "data/learn/research/pius-x-batch2-a1-20261019.v1.json"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "document": "Salzano catechism",
+        "originalLanguage": "it",
+        "witnessClass": "SARTO_PREPAPAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+        "locatorIsEditorial": true,
+        "passageEvidenceState": "SOURCE_PROPOSITIONS_TRACED_TO_ORIGINAL_EDITORIAL_TRANSCRIPT_OR_VATICAN_ITALIAN_TEXT_NOT_INDEPENDENT_APPROVAL"
+      },
+      "turns": [
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-021.T1",
+          "stage": "opening",
+          "visitor": {
+            "en": "What does Baptism change in the soul?",
+            "fr": "Que change le baptême dans l'âme ?"
+          },
+          "reply": {
+            "en": "It takes away original sin and any actual sins already committed; it also gives habitual grace and makes us children of God and of the Church.",
+            "fr": "Il efface le péché originel ainsi que les péchés personnels déjà commis, s'il y en a ; il donne aussi la grâce habituelle et fait de nous des enfants de Dieu et de l'Église."
+          },
+          "loci": [
+            "Q432",
+            "Q433",
+            "Q435"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-021.T2",
+          "stage": "selected_followup",
+          "visitor": {
+            "en": "Does Baptism leave a lasting mark?",
+            "fr": "Le baptême laisse-t-il une marque durable ?"
+          },
+          "reply": {
+            "en": "Yes. It imprints a character upon the soul, a mark which sin does not remove.",
+            "fr": "Oui. Il imprime dans l'âme un caractère, une marque que le péché n'efface pas."
+          },
+          "loci": [
+            "Q417",
+            "Q418",
+            "Q419",
+            "Q420",
+            "Q435"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        },
+        {
+          "id": "SPX.P1.SOURCELOCK.SPX-021.T3",
+          "stage": "dependent_continuation",
+          "visitor": {
+            "en": "Can Baptism be repeated?",
+            "fr": "Peut-on recevoir le baptême plusieurs fois ?"
+          },
+          "reply": {
+            "en": "No. Its character remains; for that reason Baptism is received only once.",
+            "fr": "Non. Son caractère demeure ; c'est pourquoi on ne reçoit le baptême qu'une seule fois."
+          },
+          "loci": [
+            "Q420",
+            "Q421"
+          ],
+          "claimClassification": "B_FAITHFUL_ADAPTATION_UNAPPROVED",
+          "quote": false,
+          "periodVoiceApproved": false,
+          "translationApproved": false,
+          "sourceMeaningReview": "CLAIMS_CHECKED_AGAINST_SPECIFIED_SOURCE_LINES",
+          "subjectToHistoricalDisciplineCheck": true
+        }
+      ],
+      "scene": {
+        "threeTurnSelectedPath": true,
+        "allThreeSiblingBranchesUnaffected": true,
+        "voiceTreatment": "PAPAL_CHARACTER_EDUCATIONAL_RECONSTRUCTION_NOT_RECORDED_SPEECH",
+        "sourcesVisibleSeparateFromCharacter": true,
+        "anyPersonalSacramentalVerdictPermitted": false
+      },
+      "approvals": {
+        "historical": false,
+        "theology": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "release": false
+      }
+    }
+  ]
+}

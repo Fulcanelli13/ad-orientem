@@ -1,0 +1,56 @@
+{
+  "schema": "AO_PIUS_X_TWO_REVIEWED_CROSS_FAMILY_INTENT_RELATIONSHIPS_V1",
+  "as_of": "2026-10-19",
+  "status": "RESEARCH_INTENT_EQUIVALENCE_REVIEWED_NO_CANONICAL_RECORD_MERGE",
+  "adjudicated_pairs": [
+    {
+      "existing_family_id": "SPX-053",
+      "expansion_id": "SPX-EXP-035",
+      "relation": "SAME_USER_INTENT_FOR_ROUTING_RESEARCH",
+      "intent_summary": "How to recognize Christ's visible Church by her identifying marks",
+      "evidence": [
+        {
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+          "locator": "1905 Q155–162"
+        },
+        {
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+          "locator": "1912 digital Q107–111"
+        }
+      ],
+      "rationale": "The two English prompts are paraphrases asking how to identify the true Church founded by Christ. Both anchor to the four marks, rather than independent subquestions.",
+      "source_witnesses_retained": true,
+      "published_answer_approved": false,
+      "runtime_routes_merged": false
+    },
+    {
+      "existing_family_id": "SPX-014",
+      "expansion_id": "SPX-EXP-045",
+      "relation": "SAME_USER_INTENT_FOR_ROUTING_RESEARCH",
+      "intent_summary": "Why busy priestly ministry cannot replace meditation or interior prayer",
+      "evidence": [
+        {
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "locator": "Haerent animo §§15–20, especially §18"
+        }
+      ],
+      "rationale": "One prompt asks why priests need meditation despite their pastoral duties; the other asks whether those duties can replace interior prayer. Both are answered by Pius X's direct rejection of the busyness excuse.",
+      "source_witnesses_retained": true,
+      "published_answer_approved": false,
+      "runtime_routes_merged": false
+    }
+  ],
+  "counts": {
+    "cross_cohort_pairs_reviewed": 2,
+    "research_same_user_intents": 2,
+    "logical_intent_units_within_these_four_seeds": 2,
+    "other_expansion_seeds_unadjudicated": 46,
+    "all_112_unique_intentions_count": null,
+    "published_visitor_answers": 0
+  },
+  "constraints": [
+    "Same-intent research means a shared retrieval intention; sources remain separate and canonical SPX family IDs are untouched.",
+    "Reviewing two pairs does not prove that the remaining 108 raw idea seeds are independent.",
+    "No historical first-person speech, visitor answer, voice or current disciplinary claim approved."
+  ]
+}

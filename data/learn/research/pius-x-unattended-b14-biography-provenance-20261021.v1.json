@@ -1,0 +1,514 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B14_BIOGRAPHY_PROVENANCE_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "formation/1457-pius-x-conversation-evidence",
+  "counts": {
+    "families": 6,
+    "answerUnits": 12,
+    "certified": 0,
+    "published": 0
+  },
+  "status": "RESEARCH_ONLY_SECONDARY_HISTORY_WITH_PRIMARY_TEXT_PROVENANCE_BOUNDARY",
+  "records": [
+    {
+      "familyId": "SPX-EXP-003",
+      "originalRecord": {
+        "id": "SPX-EXP-003",
+        "opening": {
+          "question": {
+            "en": "What drew you toward the priesthood as a boy?",
+            "fr": "Que sait-on des premiers signes de sa vocation sacerdotale ?"
+          },
+          "response": {
+            "en": "The museum's childhood account reports early prayer and the emergence of a priestly vocation, including episodes associated with Cendrole. These are later historical reports, not a diary recording his hidden motives.",
+            "fr": "Le récit de l'enfance conservé par le musée rapporte des pratiques de prière et les premiers signes de vocation, notamment à Cendrole. Il s'agit de témoignages biographiques, non d'un journal personnel révélant les motifs cachés du jeune Sarto."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Can an exact inner moment of vocation be identified?",
+            "fr": "Peut-on identifier l'instant intérieur exact de sa vocation ?"
+          },
+          "response": {
+            "en": "Not from this evidence. The chronology of his religious life can be described, but an undocumented private moment should not be invented.",
+            "fr": "Non à partir de cette preuve. On peut décrire la chronologie de sa vie religieuse, mais non inventer un instant intérieur qui n'est pas documenté."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "proposedOpeningQuestion": {
+        "en": "What do the sources report about Sarto’s early vocation?",
+        "fr": "Que rapportent les sources sur les débuts de la vocation de Sarto ?"
+      },
+      "proposedTurns": [
+        {
+          "en": "The museum biography reports prayer at Cendrole and Latin studies encouraged by parish priests.",
+          "fr": "La biographie du musée rapporte sa prière aux Cendrole et des études latines encouragées par les prêtres de la paroisse.",
+          "claims": [
+            {
+              "text": "Attributed historical report",
+              "refs": [
+                "M-CHILD"
+              ],
+              "type": "SECONDARY_HISTORICAL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "An exact private moment of vocation is not established by this account.",
+          "fr": "Ce récit n’établit pas l’instant intérieur exact de sa vocation.",
+          "claims": [
+            {
+              "text": "Evidence boundary, not an assertion that no testimony exists anywhere",
+              "refs": [
+                "M-CHILD"
+              ],
+              "type": "RESEARCH_EVIDENCE_BOUNDARY"
+            }
+          ]
+        }
+      ],
+      "displayRole": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "authenticPapalQuotation": false,
+      "firstPersonMemoryAllowed": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-004",
+      "originalRecord": {
+        "id": "SPX-EXP-004",
+        "opening": {
+          "question": {
+            "en": "What did you learn during your seminary years?",
+            "fr": "Que fit Giuseppe Sarto au séminaire de Padoue ?"
+          },
+          "response": {
+            "en": "The museum's biography identifies Sarto's years at the seminary of Padua, his studies, musical activity and responsibilities among fellow students. It does not quote his own retrospective evaluation of every lesson.",
+            "fr": "La biographie du musée situe les années de Giuseppe Sarto au séminaire de Padoue et mentionne ses études, ses activités musicales et des responsabilités parmi les étudiants. Elle n'offre pas un jugement personnel authentifié sur chacune des leçons suivies."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Did his seminary years include musical work?",
+            "fr": "Ses années de séminaire comportaient-elles une activité musicale ?"
+          },
+          "response": {
+            "en": "Yes. Musical activity is among the documented elements of his formation; later liturgical policy should not be presented as a private prediction he made at the seminary.",
+            "fr": "Oui. L'activité musicale figure parmi les éléments documentés de sa formation ; on ne doit pas présenter sa future politique liturgique comme une prédiction privée faite au séminaire."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "proposedOpeningQuestion": {
+        "en": "What is documented about Sarto’s seminary formation?",
+        "fr": "Que sait-on de la formation de Sarto au séminaire ?"
+      },
+      "proposedTurns": [
+        {
+          "en": "The museum places him at Padua’s seminary from 1850 to 1858 and records study, sacred music and responsibilities among seminarians.",
+          "fr": "Le musée situe sa formation au séminaire de Padoue de 1850 à 1858 et mentionne études, musique sacrée et responsabilités parmi les séminaristes.",
+          "claims": [
+            {
+              "text": "Attributed historical report",
+              "refs": [
+                "M-SEMINARY"
+              ],
+              "type": "SECONDARY_HISTORICAL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "This does not establish a private prediction of his later liturgical reforms.",
+          "fr": "Cela n’établit aucune prédiction privée de ses futures réformes liturgiques.",
+          "claims": [
+            {
+              "text": "Evidence boundary, not an assertion that no testimony exists anywhere",
+              "refs": [
+                "M-SEMINARY"
+              ],
+              "type": "RESEARCH_EVIDENCE_BOUNDARY"
+            }
+          ]
+        }
+      ],
+      "displayRole": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "authenticPapalQuotation": false,
+      "firstPersonMemoryAllowed": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-005",
+      "originalRecord": {
+        "id": "SPX-EXP-005",
+        "opening": {
+          "question": {
+            "en": "What did serving in Tombolo teach you about souls?",
+            "fr": "Quel fut son premier ministère à Tombolo ?"
+          },
+          "response": {
+            "en": "The later biography records Giuseppe Sarto's early priestly service at Tombolo between 1858 and 1867. It gives the setting and chronology of his pastoral work without an authenticated first-person account of what each encounter taught him.",
+            "fr": "Une biographie postérieure situe les premières années de ministère sacerdotal de Sarto à Tombolo, de 1858 à 1867. Elle documente un cadre de service pastoral, non les paroles exactes qu'il aurait prononcées ni les enseignements qu'il en aurait tirés intérieurement."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "May we put an invented pastoral lesson into his voice?",
+            "fr": "Peut-on lui attribuer une leçon pastorale inventée ?"
+          },
+          "response": {
+            "en": "No. A biographer's record of ministry does not supply the precise words or interior reflections of the priest who performed it.",
+            "fr": "Non. Le récit d'un biographe sur le ministère ne fournit ni les paroles exactes ni les réflexions intérieures du prêtre qui l'exerça."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "proposedOpeningQuestion": {
+        "en": "What was Sarto’s first parish ministry?",
+        "fr": "Quel fut le premier ministère paroissial de Sarto ?"
+      },
+      "proposedTurns": [
+        {
+          "en": "The museum records his service as curate at Tombolo from November 1858 to May 1867.",
+          "fr": "Le musée situe son ministère de vicaire à Tombolo de novembre 1858 à mai 1867.",
+          "claims": [
+            {
+              "text": "Attributed historical report",
+              "refs": [
+                "M-TOMBOLO"
+              ],
+              "type": "SECONDARY_HISTORICAL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "A biographical account does not supply his exact private reflections.",
+          "fr": "Un récit biographique ne fournit pas ses réflexions privées exactes.",
+          "claims": [
+            {
+              "text": "Evidence boundary, not an assertion that no testimony exists anywhere",
+              "refs": [
+                "M-TOMBOLO"
+              ],
+              "type": "RESEARCH_EVIDENCE_BOUNDARY"
+            }
+          ]
+        }
+      ],
+      "displayRole": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "authenticPapalQuotation": false,
+      "firstPersonMemoryAllowed": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-006",
+      "originalRecord": {
+        "id": "SPX-EXP-006",
+        "opening": {
+          "question": {
+            "en": "What was your work as parish priest in Salzano?",
+            "fr": "Que faisait-il comme curé de Salzano ?"
+          },
+          "response": {
+            "en": "Biographical sources place Giuseppe Sarto in parish ministry at Salzano from 1867 to 1875 and report demanding pastoral activity. His catechetical manuscript gives further evidence of the teaching material associated with this period.",
+            "fr": "Les sources biographiques situent le ministère paroissial de Giuseppe Sarto à Salzano entre 1867 et 1875 et décrivent une activité pastorale exigeante. Le manuscrit de son catéchisme témoigne en outre des matières religieuses enseignées à cette époque."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Can the Salzano Catechism reveal his interests more securely than an imagined memory?",
+            "fr": "Le catéchisme de Salzano révèle-t-il ses préoccupations mieux qu'un souvenir imaginé ?"
+          },
+          "response": {
+            "en": "It provides actual educational material associated with Sarto, whereas the biographical chronology alone cannot tell us his private thoughts on a particular day.",
+            "fr": "Il fournit un véritable matériel d'enseignement associé à Sarto, tandis que la seule chronologie biographique ne révèle pas ses pensées privées un jour déterminé."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "proposedOpeningQuestion": {
+        "en": "What is documented about Sarto’s ministry at Salzano?",
+        "fr": "Que sait-on du ministère de Sarto à Salzano ?"
+      },
+      "proposedTurns": [
+        {
+          "en": "The museum places his parish ministry at Salzano in 1867–1875 and describes catechesis of children and adults.",
+          "fr": "Le musée situe son ministère à Salzano en 1867–1875 et décrit sa catéchèse des enfants et des adultes.",
+          "claims": [
+            {
+              "text": "Attributed historical report",
+              "refs": [
+                "M-SALZANO"
+              ],
+              "type": "SECONDARY_HISTORICAL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "The surviving catechetical notebooks are teaching texts. Their exact composition date is not established by the published editorial preface.",
+          "fr": "Les cahiers catéchétiques conservés sont des textes d’enseignement. Leur date précise de composition n’est pas établie par la préface éditoriale publiée.",
+          "claims": [
+            {
+              "text": "Notebook genre and composition date",
+              "refs": [
+                "SALZANO-PREFACE"
+              ],
+              "type": "EDITORIAL_PROVENANCE"
+            }
+          ]
+        }
+      ],
+      "displayRole": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "authenticPapalQuotation": false,
+      "firstPersonMemoryAllowed": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-007",
+      "originalRecord": {
+        "id": "SPX-EXP-007",
+        "opening": {
+          "question": {
+            "en": "How did serving in the diocesan curia shape your ministry?",
+            "fr": "Quelles charges occupa-t-il à la curie de Trévise ?"
+          },
+          "response": {
+            "en": "The biographical record identifies Sarto's service in the diocesan curia, including chancellery and seminary responsibilities, and his role as a canon after the Salzano years. It establishes offices, not a transcript of his reflections on them.",
+            "fr": "La biographie atteste les responsabilités de Sarto à la curie diocésaine de Trévise, notamment à la chancellerie, au séminaire et comme chanoine. Elle établit ces fonctions sans reproduire de confidences personnelles sur leur influence intérieure."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Can we know from this alone how those offices changed his temperament?",
+            "fr": "Cette seule source montre-t-elle comment ces charges transformèrent son caractère ?"
+          },
+          "response": {
+            "en": "No. Institutional appointments can be documented, but attributing a precise psychological transformation requires independent personal testimony.",
+            "fr": "Non. Les nominations institutionnelles peuvent être établies, mais une transformation psychologique précise exige un témoignage personnel indépendant."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "proposedOpeningQuestion": {
+        "en": "Which offices did Sarto hold at Treviso?",
+        "fr": "Quelles charges Sarto occupa-t-il à Trévise ?"
+      },
+      "proposedTurns": [
+        {
+          "en": "The museum records service from 1875 as diocesan chancellor, seminary spiritual director and canon; later he administered the vacant see.",
+          "fr": "Le musée rapporte qu’à partir de 1875 il fut chancelier diocésain, directeur spirituel du séminaire et chanoine ; il administra ensuite le siège vacant.",
+          "claims": [
+            {
+              "text": "Attributed historical report",
+              "refs": [
+                "M-TREVISO"
+              ],
+              "type": "SECONDARY_HISTORICAL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "These offices do not establish a particular psychological transformation.",
+          "fr": "Ces charges n’établissent pas une transformation psychologique particulière.",
+          "claims": [
+            {
+              "text": "Evidence boundary, not an assertion that no testimony exists anywhere",
+              "refs": [
+                "M-TREVISO"
+              ],
+              "type": "RESEARCH_EVIDENCE_BOUNDARY"
+            }
+          ]
+        }
+      ],
+      "displayRole": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "authenticPapalQuotation": false,
+      "firstPersonMemoryAllowed": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-008",
+      "originalRecord": {
+        "id": "SPX-EXP-008",
+        "opening": {
+          "question": {
+            "en": "What challenges awaited you as Bishop of Mantua?",
+            "fr": "Quels défis rencontra-t-il comme évêque de Mantoue ?"
+          },
+          "response": {
+            "en": "Later biographies describe pastoral renewal and difficult diocesan circumstances during Sarto's episcopate at Mantua. They also mention challenges in relations with public authorities and Christian social work.",
+            "fr": "Les biographies décrivent les difficultés diocésaines et les efforts de renouveau pastoral pendant l'épiscopat de Sarto à Mantoue. Elles évoquent aussi les relations avec les autorités civiles et l'action sociale chrétienne, sans fournir de dialogues privés authentifiés."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Does this prove the words of a private conversation he held with officials?",
+            "fr": "Cela prouve-t-il les paroles d'une conversation privée avec les autorités ?"
+          },
+          "response": {
+            "en": "No. A summary of administrative and pastoral difficulties should not be expanded into an unattested dialogue with named officials.",
+            "fr": "Non. Le résumé de difficultés administratives et pastorales ne doit pas être développé en un dialogue non attesté avec des responsables nommés."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "proposedOpeningQuestion": {
+        "en": "What is documented about Sarto at Mantua?",
+        "fr": "Que sait-on de Sarto à Mantoue ?"
+      },
+      "proposedTurns": [
+        {
+          "en": "The Casa Museo biography places his appointment to Mantua in 1884 and describes difficulties within the diocese and with civil authority.",
+          "fr": "La biographie de la Casa Museo situe sa nomination à Mantoue en 1884 et évoque des difficultés internes au diocèse et avec le pouvoir civil.",
+          "claims": [
+            {
+              "text": "Attributed historical report",
+              "refs": [
+                "CM-MANTUA"
+              ],
+              "type": "SECONDARY_HISTORICAL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "That account does not authenticate a private dialogue with particular officials.",
+          "fr": "Ce récit n’authentifie aucun dialogue privé avec des responsables particuliers.",
+          "claims": [
+            {
+              "text": "Evidence boundary, not an assertion that no testimony exists anywhere",
+              "refs": [
+                "CM-MANTUA"
+              ],
+              "type": "RESEARCH_EVIDENCE_BOUNDARY"
+            }
+          ]
+        }
+      ],
+      "displayRole": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "authenticPapalQuotation": false,
+      "firstPersonMemoryAllowed": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "M-CHILD",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+      "locator": "L’infanzia e l’adolescenza, paragraphs Ogni giorno si recava and Il parroco don Tito Fusarini",
+      "language": "Italian",
+      "kind": "SECONDARY_BIOGRAPHY",
+      "supports": "Attributed childhood practices; no childhood vision or inner-moment reconstruction"
+    },
+    {
+      "id": "M-SEMINARY",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+      "locator": "Nel seminario di Padova (13 novembre 1850–14 agosto 1858), paragraphs Il 19 settembre 1850; Dopo il primo anno; Nel seminario patavino",
+      "kind": "SECONDARY_BIOGRAPHY",
+      "supports": "Dates, study, music and prefect role; article note16 cites Zaggia 1969 pp339–345, not separately consulted"
+    },
+    {
+      "id": "M-TOMBOLO",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/cappellano-di-tombolo/",
+      "locator": "Page heading Cappellano di Tombolo (novembre 1858–maggio 1867), opening and paragraph Il 21 maggio 1867",
+      "kind": "SECONDARY_BIOGRAPHY",
+      "supports": "Curate chronology; does not authenticate private words"
+    },
+    {
+      "id": "M-SALZANO",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/parroco-di-salzano-maggio-1867-novembre-1875/",
+      "locator": "Heading; paragraphs Come tutti gli storici and Lasciò Salzano ufficialmente",
+      "kind": "SECONDARY_BIOGRAPHY",
+      "supports": "Catechesis and service years; formal departure September1875 and final handover November1875 are distinct"
+    },
+    {
+      "id": "SALZANO-PREFACE",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "locator": "Editorial preface paragraphs Per ciò che riguarda la data; Il documento consta; Alle sigle D. e R.",
+      "kind": "EDITORIAL_DESCRIPTION_OF_MANUSCRIPT_NOT_PAPAL_PROSE",
+      "exactItalianExcerpt": "nessun elemento noi conosciamo che possa stabilirla con certezza",
+      "supports": "Date not established; two notebooks; editor supplies question numbering; interleaved notes are not all Sarto's words",
+      "existingHold": "data/learn/research/pius-x-salzano-editorial-numbering-hold-20261019.v1.json",
+      "existingHoldBlob": "e9d3d1faf72758302252ae0a7dcce5be1f67b361"
+    },
+    {
+      "id": "M-TREVISO",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/canonico-a-treviso-novembre-1875-novembre-1884/",
+      "locator": "Opening and paragraphs Fu principalmente; Circondato",
+      "kind": "SECONDARY_BIOGRAPHY",
+      "supports": "Three offices and later vicar capitular; independent of Casa Museo summary"
+    },
+    {
+      "id": "CM-MANTUA",
+      "url": "https://www.papapiox.it/biografia/",
+      "locator": "Vescovo di Mantova, first two paragraphs",
+      "kind": "SECONDARY_BIOGRAPHY",
+      "supports": "Appointment year and general difficulties only; source date defects elsewhere already recorded B06"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "Six English opening questions address Sarto as you while French questions and narrator answers use third person; align both with documentary role",
+    "EXP006: distinguish teaching notebooks from transcripts; retain pre-existing editorial numbering hold; remove implication that exact composition date is settled",
+    "Avoid Casa Museo approximate nine years at Salzano as exact duration: museum chronology is May1867–November1875; distinguish formal departure and handover",
+    "Museum seminary section ends with seminary/Tombolo wording inconsistency in attributed best-years recollection; do not use that quotation without underlying Romanato p38 witness"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "SPX-EXP-003",
+        "SPX-EXP-004",
+        "SPX-EXP-005",
+        "SPX-EXP-006",
+        "SPX-EXP-007",
+        "SPX-EXP-008"
+      ],
+      "decision": "Distinct vocation, seminary and successive offices; no duplicate families created."
+    }
+  ],
+  "humanDecisions": [
+    "Historian reviews secondary-source summaries before certification; no primary archival examination is claimed",
+    "Existing source-page best-years recollection requires underlying cited witness before authentic quotation, not needed for retained bounded drafts"
+  ],
+  "newSubstantiveGaps": [],
+  "continue": true
+}

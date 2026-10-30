@@ -1,0 +1,961 @@
+{
+  "schema": "AO_SPX_1905_LONG_CATECHISM_BATCH15_PRODUCTION_V1",
+  "created": "2026-10-20",
+  "status": "SOURCE_ANCHORED_EN_FR_DRAFTS_NOT_APPROVED",
+  "sourceWitness": {
+    "edition": "1905 Catechismo maggiore",
+    "ranges": [
+      {
+        "from": 12,
+        "to": 14,
+        "part": "Preliminary"
+      },
+      {
+        "from": 15,
+        "to": 61,
+        "part": "Apostles' Creed"
+      }
+    ],
+    "urls": [
+      "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/lezione-preliminare/",
+      "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/"
+    ],
+    "originalItalianQuestionWordingRetained": 50,
+    "italianAnswerNotPrintCollated": true,
+    "attribution": "Catechism prescribed by Pius X, adapted from existing Italian bishops' text, not personal spoken words"
+  },
+  "files": [
+    "data/learn/research/pius-x-batch15-creed-a-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-b-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-c-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-d-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-e-20261020.v1.json"
+  ],
+  "readableFile": "docs/research/PIUS-X-BATCH-15-CONVERSATIONS-20261020.md",
+  "items": [
+    {
+      "id": "SPX-1905-C-012",
+      "part": "A",
+      "questionId": "PX1905-Q12",
+      "italianQuestion": "Che cosa c’insegna il Pater noster?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/lezione-preliminare/",
+      "visitorQuestionEN": "What does the Our Father principally teach us?",
+      "visitorQuestionFR": "Que nous enseigne principalement le Notre Père ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-013",
+      "part": "A",
+      "questionId": "PX1905-Q13",
+      "italianQuestion": "Dite cosa c’insegnano i Comandamenti?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/lezione-preliminare/",
+      "visitorQuestionEN": "What is the essential lesson of the Commandments?",
+      "visitorQuestionFR": "Quelle est la leçon essentielle des Commandements ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-014",
+      "part": "A",
+      "questionId": "PX1905-Q14",
+      "italianQuestion": "Che cosa c’insegna la dottrina dei Sacramenti?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/lezione-preliminare/",
+      "visitorQuestionEN": "What is the purpose of learning about the Sacraments?",
+      "visitorQuestionFR": "À quoi sert l'enseignement sur les Sacrements ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-015",
+      "part": "A",
+      "questionId": "PX1905-Q15",
+      "italianQuestion": "Qual’è la prima parte della dottrina cristiana?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Which principal part of Christian doctrine comes first?",
+      "visitorQuestionFR": "Quelle partie principale de la doctrine chrétienne vient d'abord ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-016",
+      "part": "A",
+      "questionId": "PX1905-Q16",
+      "italianQuestion": "Perché chiamate voi il Credo: Simbolo degli Apostoli?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Why is the Creed called the Apostles' Symbol?",
+      "visitorQuestionFR": "Pourquoi appelle-t-on le Credo le Symbole des Apôtres ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-017",
+      "part": "A",
+      "questionId": "PX1905-Q17",
+      "italianQuestion": "Quanti articoli sono nel Credo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "How many articles are in the Apostles' Creed?",
+      "visitorQuestionFR": "Combien d'articles contient le Symbole des Apôtres ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-018",
+      "part": "A",
+      "questionId": "PX1905-Q18",
+      "italianQuestion": "Recitateli.",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Can you outline the twelve articles of the Apostles' Creed?",
+      "visitorQuestionFR": "Pouvez-vous résumer les douze articles du Symbole des Apôtres ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-019",
+      "part": "A",
+      "questionId": "PX1905-Q19",
+      "italianQuestion": "Che cosa vuoi dire la parola Credo, che dite in principio del Simbolo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What does 'I believe' mean at the beginning of the Creed?",
+      "visitorQuestionFR": "Que signifie « Je crois » au début du Credo ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-020",
+      "part": "A",
+      "questionId": "PX1905-Q20",
+      "italianQuestion": "Che cosa contengono gli articoli del Credo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What do the articles of the Creed chiefly concern?",
+      "visitorQuestionFR": "De quoi traitent principalement les articles du Credo ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-021",
+      "part": "A",
+      "questionId": "PX1905-Q21",
+      "italianQuestion": "E cosa molto utile il recitare spesso il Credo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Why recite the Creed often?",
+      "visitorQuestionFR": "Pourquoi réciter souvent le Credo ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-022",
+      "part": "B",
+      "questionId": "PX1905-Q22",
+      "italianQuestion": "Che cosa c’insegna il primo articolo: Io credo in Dio Padre onnipotente, creatore del cielo e della terra?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What does the first article of the Creed profess?",
+      "visitorQuestionFR": "Que professe le premier article du Credo ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-023",
+      "part": "B",
+      "questionId": "PX1905-Q23",
+      "italianQuestion": "Come sappiamo noi che vi è Dio?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "How does the Catechism say we know God exists?",
+      "visitorQuestionFR": "Comment le Catéchisme dit-il que nous savons que Dieu existe ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-024",
+      "part": "B",
+      "questionId": "PX1905-Q24",
+      "italianQuestion": "Perché si dice che Dio è Padre?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "In what different senses is God called Father?",
+      "visitorQuestionFR": "En quels sens différents Dieu est-il appelé Père ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-025",
+      "part": "B",
+      "questionId": "PX1905-Q25",
+      "italianQuestion": "Perché il Padre è la prima Persona della Santissima Trinità?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Why is the Father called the first Person of the Trinity?",
+      "visitorQuestionFR": "Pourquoi le Père est-il appelé la première Personne de la Trinité ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-026",
+      "part": "B",
+      "questionId": "PX1905-Q26",
+      "italianQuestion": "Che vuoi dire la parola onnipotente?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What does it mean to call God almighty?",
+      "visitorQuestionFR": "Que signifie appeler Dieu tout-puissant ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-027",
+      "part": "B",
+      "questionId": "PX1905-Q27",
+      "italianQuestion": "Dio non può peccare né morire; come dunque si dice ch’egli può far tutto?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "If God cannot sin or die, is He still omnipotent?",
+      "visitorQuestionFR": "Si Dieu ne peut ni pécher ni mourir, demeure-t-Il tout-puissant ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-028",
+      "part": "B",
+      "questionId": "PX1905-Q28",
+      "italianQuestion": "Che cosa vuol dire: Creatore del cielo e della terra?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What does creation mean in the Creed?",
+      "visitorQuestionFR": "Que signifie la création dans le Credo ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-029",
+      "part": "B",
+      "questionId": "PX1905-Q29",
+      "italianQuestion": "Il mondo è stato creato solamente dal Padre?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Did the Father alone create the world?",
+      "visitorQuestionFR": "Le Père seul a-t-Il créé le monde ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-030",
+      "part": "B",
+      "questionId": "PX1905-Q30",
+      "italianQuestion": "Perché dunque la creazione si attribuisce particolarmente al Padre?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Why is creation especially attributed to the Father?",
+      "visitorQuestionFR": "Pourquoi attribue-t-on spécialement la création au Père ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-031",
+      "part": "B",
+      "questionId": "PX1905-Q31",
+      "italianQuestion": "Dio ha egli cura del mondo e delle cose tutte che ha create?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Does God continue to care for creation?",
+      "visitorQuestionFR": "Dieu continue-t-Il à prendre soin de la création ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-032",
+      "part": "C",
+      "questionId": "PX1905-Q32",
+      "italianQuestion": "Perché dite che nulla succede senza che Dio lo voglia o lo permetta?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Does God will every event in the same way?",
+      "visitorQuestionFR": "Dieu veut-Il tous les événements de la même manière ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-033",
+      "part": "C",
+      "questionId": "PX1905-Q33",
+      "italianQuestion": "Perché Iddio non impedisce il peccato?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Why does God permit human sin?",
+      "visitorQuestionFR": "Pourquoi Dieu permet-Il le péché humain ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-034",
+      "part": "C",
+      "questionId": "PX1905-Q34",
+      "italianQuestion": "Quali sono le creature più nobili che Dio ha creato?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Which created beings does this Catechism call the noblest?",
+      "visitorQuestionFR": "Quelles créatures ce Catéchisme appelle-t-il les plus nobles ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-035",
+      "part": "C",
+      "questionId": "PX1905-Q35",
+      "italianQuestion": "Chi sono gli Angeli?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What are angels according to Catholic catechesis?",
+      "visitorQuestionFR": "Que sont les anges selon la catéchèse catholique ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-036",
+      "part": "C",
+      "questionId": "PX1905-Q36",
+      "italianQuestion": "Per qual fine Iddio ha creato gli Angeli?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "For what end were angels created?",
+      "visitorQuestionFR": "Dans quel but Dieu a-t-Il créé les anges ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-037",
+      "part": "C",
+      "questionId": "PX1905-Q37",
+      "italianQuestion": "Quale forma e figura hanno gli Angeli?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Do angels have a physical shape of their own?",
+      "visitorQuestionFR": "Les anges ont-ils une forme physique qui leur appartienne ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-038",
+      "part": "C",
+      "questionId": "PX1905-Q38",
+      "italianQuestion": "Perché dunque gli Angeli si rappresentano sotto forme sensibili?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Why does sacred art depict angels with visible bodies?",
+      "visitorQuestionFR": "Pourquoi l'art sacré représente-t-il les anges sous des formes visibles ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-039",
+      "part": "C",
+      "questionId": "PX1905-Q39",
+      "italianQuestion": "Gli Angeli furono tutti fedeli a Dio?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Were all angels faithful to God?",
+      "visitorQuestionFR": "Tous les anges sont-ils restés fidèles à Dieu ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-040",
+      "part": "C",
+      "questionId": "PX1905-Q40",
+      "italianQuestion": "Come si chiamano gli Angeli esclusi per sempre dal paradiso e condannati all’inferno?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What names does the Catechism give to fallen angels?",
+      "visitorQuestionFR": "Quels noms le Catéchisme donne-t-il aux anges déchus ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-041",
+      "part": "C",
+      "questionId": "PX1905-Q41",
+      "italianQuestion": "I demoni possono farci alcun male?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What does the Catechism teach about demonic temptation?",
+      "visitorQuestionFR": "Que dit le Catéchisme de la tentation démoniaque ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-042",
+      "part": "D",
+      "questionId": "PX1905-Q42",
+      "italianQuestion": "Perché ci tentano?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Why does the Catechism say fallen angels tempt humanity?",
+      "visitorQuestionFR": "Pourquoi le Catéchisme dit-il que les anges déchus tentent l'humanité ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-043",
+      "part": "D",
+      "questionId": "PX1905-Q43",
+      "italianQuestion": "Come possiamo vincere le tentazioni?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What means does the Catechism recommend against temptation?",
+      "visitorQuestionFR": "Quels moyens le Catéchisme recommande-t-il contre la tentation ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-044",
+      "part": "D",
+      "questionId": "PX1905-Q44",
+      "italianQuestion": "Gli Angeli rimasti fedeli a Dio come si chiamano?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What are the angels who remained faithful called?",
+      "visitorQuestionFR": "Comment appelle-t-on les anges restés fidèles à Dieu ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-045",
+      "part": "D",
+      "questionId": "PX1905-Q45",
+      "italianQuestion": "Che cosa avvenne degli Angeli rimasti fedeli a Dio?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What happened to the faithful angels?",
+      "visitorQuestionFR": "Qu'est-il arrivé aux anges fidèles ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-046",
+      "part": "D",
+      "questionId": "PX1905-Q46",
+      "italianQuestion": "Dio si serve degli Angeli come suo ministri?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Does God send angels to serve and protect?",
+      "visitorQuestionFR": "Dieu envoie-t-Il les anges pour servir et protéger ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-047",
+      "part": "D",
+      "questionId": "PX1905-Q47",
+      "italianQuestion": "Dobbiamo noi avere particolare devozione verso l’Angelo nostro custode?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "How should a Christian honour a guardian angel?",
+      "visitorQuestionFR": "Comment un chrétien doit-il honorer son ange gardien ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-048",
+      "part": "D",
+      "questionId": "PX1905-Q48",
+      "italianQuestion": "Qual’è la creatura più nobile che Dio ha posto sulla terra?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What does the Catechism call God's noblest earthly creature?",
+      "visitorQuestionFR": "Quelle créature le Catéchisme appelle-t-il la plus noble sur terre ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-049",
+      "part": "D",
+      "questionId": "PX1905-Q49",
+      "italianQuestion": "Che cosa è l’uomo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "How does the Catechism describe the human person?",
+      "visitorQuestionFR": "Comment le Catéchisme décrit-il la personne humaine ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-050",
+      "part": "D",
+      "questionId": "PX1905-Q50",
+      "italianQuestion": "Dite cosa è l’anima?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What is the human soul in this Catechism?",
+      "visitorQuestionFR": "Qu'est-ce que l'âme humaine dans ce Catéchisme ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-051",
+      "part": "D",
+      "questionId": "PX1905-Q51",
+      "italianQuestion": "L’anima umana si può vedere e toccare?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Can a human soul be seen or touched?",
+      "visitorQuestionFR": "Peut-on voir ou toucher l'âme humaine ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-052",
+      "part": "E",
+      "questionId": "PX1905-Q52",
+      "italianQuestion": "L’anima umana muore col corpo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Does the soul perish when the body dies?",
+      "visitorQuestionFR": "L'âme périt-elle lorsque le corps meurt ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-053",
+      "part": "E",
+      "questionId": "PX1905-Q53",
+      "italianQuestion": "L’uomo è libero nelle sue azioni?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What does the Catechism say about human free will?",
+      "visitorQuestionFR": "Que dit le Catéchisme du libre arbitre humain ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-054",
+      "part": "E",
+      "questionId": "PX1905-Q54",
+      "italianQuestion": "Spiegate con un esempio la libertà umana.",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "How does the Catechism illustrate freedom of choice?",
+      "visitorQuestionFR": "Comment le Catéchisme illustre-t-il le libre choix ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-055",
+      "part": "E",
+      "questionId": "PX1905-Q55",
+      "italianQuestion": "Perché si dice che l’uomo fu creato ad imagine e somiglianza di Dio?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "In what sense is the human person made in God's image?",
+      "visitorQuestionFR": "En quel sens la personne humaine est-elle créée à l'image de Dieu ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-056",
+      "part": "E",
+      "questionId": "PX1905-Q56",
+      "italianQuestion": "In quale stato pose Dio i nostri primi progenitori Adamo ed Eva?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What was the original state of Adam and Eve?",
+      "visitorQuestionFR": "Quel était l'état originel d'Adam et Ève ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-057",
+      "part": "E",
+      "questionId": "PX1905-Q57",
+      "italianQuestion": "Oltre l’innocenza e la grazia santificante conferì Dio altri doni ai nostri progenitori?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Which special gifts does the Catechism attribute to humanity's first parents?",
+      "visitorQuestionFR": "Quels dons particuliers le Catéchisme attribue-t-il aux premiers parents ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-058",
+      "part": "E",
+      "questionId": "PX1905-Q58",
+      "italianQuestion": "Quale fu il peccato di Adamo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "How does the Catechism characterize Adam's sin?",
+      "visitorQuestionFR": "Comment le Catéchisme caractérise-t-il le péché d'Adam ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-059",
+      "part": "E",
+      "questionId": "PX1905-Q59",
+      "italianQuestion": "Quali fu il castigo del peccato di Adamo ed Eva?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "What consequences does the Catechism associate with the first disobedience?",
+      "visitorQuestionFR": "Quelles conséquences le Catéchisme associe-t-il à la première désobéissance ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-060",
+      "part": "E",
+      "questionId": "PX1905-Q60",
+      "italianQuestion": "Se Adamo ed Eva non avessero peccato, sarebbero stati esenti dalla morte?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Would Adam and Eve have died if they had remained faithful?",
+      "visitorQuestionFR": "Adam et Ève seraient-ils morts s'ils étaient restés fidèles ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-C-061",
+      "part": "E",
+      "questionId": "PX1905-Q61",
+      "italianQuestion": "Erano questi doni dovuti all’uomo?",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "visitorQuestionEN": "Were the first parents entitled to their special gifts?",
+      "visitorQuestionFR": "Les premiers parents avaient-ils droit à leurs dons particuliers ?",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ],
+  "counts": {
+    "families": 50,
+    "turns": 100,
+    "localizedDraftAnswers": 200,
+    "uniqueNumberedOpeningAnchors": 50,
+    "previousBatch3to14QuestionNumberCollisions": 0,
+    "semanticReviewClusters": 6,
+    "certifiedDistinctVisitorIntents": 0,
+    "sourceSentenceApproved": 0,
+    "theologyApproved": 0,
+    "translationApproved": 0,
+    "voiceApproved": 0,
+    "production": 0
+  },
+  "semanticReviewClusters": [
+    {
+      "topic": "Preliminary and Creed recitation",
+      "questionIds": [
+        "PX1905-Q12",
+        "PX1905-Q13",
+        "PX1905-Q14",
+        "PX1905-Q15",
+        "PX1905-Q16",
+        "PX1905-Q17",
+        "PX1905-Q18",
+        "PX1905-Q19",
+        "PX1905-Q20",
+        "PX1905-Q21"
+      ],
+      "semanticStatus": "NEEDS_REVIEW_NOT_APPROVED_UNIQUE"
+    },
+    {
+      "topic": "The Father, creation, divine names and the Trinity",
+      "questionIds": [
+        "PX1905-Q22",
+        "PX1905-Q23",
+        "PX1905-Q24",
+        "PX1905-Q25",
+        "PX1905-Q26",
+        "PX1905-Q27",
+        "PX1905-Q28",
+        "PX1905-Q29",
+        "PX1905-Q30"
+      ],
+      "semanticStatus": "NEEDS_REVIEW_NOT_APPROVED_UNIQUE"
+    },
+    {
+      "topic": "Providence, permission and human moral evil",
+      "questionIds": [
+        "PX1905-Q31",
+        "PX1905-Q32",
+        "PX1905-Q33"
+      ],
+      "semanticStatus": "NEEDS_REVIEW_NOT_APPROVED_UNIQUE"
+    },
+    {
+      "topic": "Angelic nature, good and fallen angels, guardianship",
+      "questionIds": [
+        "PX1905-Q34",
+        "PX1905-Q35",
+        "PX1905-Q36",
+        "PX1905-Q37",
+        "PX1905-Q38",
+        "PX1905-Q39",
+        "PX1905-Q40",
+        "PX1905-Q41",
+        "PX1905-Q42",
+        "PX1905-Q43",
+        "PX1905-Q44",
+        "PX1905-Q45",
+        "PX1905-Q46",
+        "PX1905-Q47"
+      ],
+      "semanticStatus": "NEEDS_REVIEW_NOT_APPROVED_UNIQUE"
+    },
+    {
+      "topic": "Human dignity, body, soul and freedom",
+      "questionIds": [
+        "PX1905-Q48",
+        "PX1905-Q49",
+        "PX1905-Q50",
+        "PX1905-Q51",
+        "PX1905-Q52",
+        "PX1905-Q53",
+        "PX1905-Q54",
+        "PX1905-Q55"
+      ],
+      "semanticStatus": "NEEDS_REVIEW_NOT_APPROVED_UNIQUE"
+    },
+    {
+      "topic": "First parents, original gifts and the fall",
+      "questionIds": [
+        "PX1905-Q56",
+        "PX1905-Q57",
+        "PX1905-Q58",
+        "PX1905-Q59",
+        "PX1905-Q60",
+        "PX1905-Q61"
+      ],
+      "semanticStatus": "NEEDS_REVIEW_NOT_APPROVED_UNIQUE"
+    }
+  ],
+  "reviewPriorities": [
+    "Collate the original Italian answers and print witness for Q12–61; original question wording alone is not sentence verification.",
+    "Q18: the twelve Apostles' Creed articles are outlined in the drafts and must not be presented as an exact source quotation.",
+    "Q24–30: theological review of eternal Trinitarian relations, omnipotence and appropriation.",
+    "Q31–33: Providence and permission of moral evil must not become an assertion that God wills wrongful acts.",
+    "Q41–47: do not diagnose personal experiences, illness or mental health as angelic or demonic.",
+    "Q49–55: guard the distinction between free moral choices and involuntary thoughts.",
+    "Q56–61: first parents and original supernatural gifts, not individual blame or empirical proof claims.",
+    "Crosswalk with 1912 Catechism, prior topic-seed bank and other Ad Orientem modules before asserting semantically distinct questions."
+  ],
+  "policies": [
+    "All approval flags false; not a source-certified papal conversational quote or published answer.",
+    "Do not duplicate the independent historical-voice or existing canonical content registries.",
+    "Questions Q12–61 are numbered historical anchors, not independently verified unique audience intents.",
+    "Original language witness and edition provenance retained."
+  ],
+  "owners": {
+    "content": "PR #1458",
+    "voice": "PR #1419",
+    "router": "PR #1443",
+    "avatar": "PR #1402"
+  }
+}

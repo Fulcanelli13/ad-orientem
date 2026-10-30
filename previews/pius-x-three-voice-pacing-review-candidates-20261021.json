@@ -1,0 +1,164 @@
+{
+  "schema": "AO_SPX_THREE_SCENE_VOICE_PACING_EXPERIMENT_20261021_V1",
+  "date": "2026-10-21",
+  "publication": "UNAPPROVED_EXPERIMENTAL_DIALOGUE_NOT_PAPAL_QUOTATION",
+  "styleOwner": "PR#1419",
+  "sourceOwner": "PR#1458",
+  "sceneOwner": "PR#1402",
+  "purpose": "Compare unchanged documentary answer against a proposed conversational stage rendition in 3 deliberately selected existing branches. A, B and C boundaries reviewed externally; no new source claims may be introduced.",
+  "inputPaths": [
+    "data/learn/research/pius-x-12chapter-dependent-dialogue-flow-20261021.v1.json",
+    "previews/pius-x-depth12-source-owned-review-fixture-20261021.json"
+  ],
+  "count": {
+    "scenes": 3,
+    "voiceTrialPaths": 3,
+    "stageSegments": 9,
+    "sourceOwnedAnswersModified": 0,
+    "approvedHistoricalQuotations": 0,
+    "productionPublished": 0
+  },
+  "candidates": [
+    {
+      "chapterId": "SPX-010",
+      "routeIndex": 1,
+      "documentarySource": "Salzano Q198–200",
+      "reviewConcern": "Opening and second branch repeat the repentance-versus-despair contrast; source commentary appears as if spoken by the saint.",
+      "opening": {
+        "q": {
+          "en": "Why did Peter repent while Judas despaired?",
+          "fr": "Pourquoi saint Pierre s'est-il repenti tandis que Judas a désespéré ?"
+        },
+        "a": {
+          "en": "Peter fell grievously; nevertheless, he returned in tears. Judas, too, had sinned, but gave himself over to despair. The lesson concerns what follows the sinner's fall.",
+          "fr": "Pierre tomba gravement ; néanmoins, il revint dans les larmes. Judas avait lui aussi péché, mais il s'abandonna au désespoir. La leçon porte sur ce qui suit la chute du pécheur."
+        }
+      },
+      "follow": {
+        "q": {
+          "en": "Was Peter's betrayal less serious because he repented?",
+          "fr": "La trahison de Pierre était-elle moins grave parce qu'il s'est repenti ?"
+        },
+        "a": {
+          "en": "No. Repentance does not make betrayal a small matter. It turns the sinner back toward God instead of closing his heart in despair.",
+          "fr": "Non. Le repentir ne rend pas la trahison insignifiante. Il ramène le pécheur vers Dieu au lieu de fermer son cœur dans le désespoir."
+        }
+      },
+      "deep": {
+        "q": {
+          "en": "What keeps sorrow for sin from turning into despair?",
+          "fr": "Qu'est-ce qui empêche la douleur du péché de tourner au désespoir ?"
+        },
+        "a": {
+          "en": "One must not mistake the seriousness of sin for the impossibility of pardon. Peter's tears invite repentance; they neither excuse his fault nor surrender hope of mercy.",
+          "fr": "Il ne faut pas confondre la gravité du péché avec l'impossibilité du pardon. Les larmes de Pierre invitent au repentir ; elles n'excusent pas sa faute et ne renoncent pas à l'espérance de la miséricorde."
+        }
+      },
+      "speakerPolicy": {
+        "opening": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "follow": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "deep": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS"
+      },
+      "pose": [
+        "thoughtful",
+        "explaining",
+        "thoughtful"
+      ],
+      "specificSourceClaimApproval": false
+    },
+    {
+      "chapterId": "SPX-023",
+      "routeIndex": 2,
+      "documentarySource": "Salzano Q476–481",
+      "reviewConcern": "Frequent documentary labels and an anachronistic 'avatar' question in later personal-sacramental follow-up.",
+      "opening": {
+        "q": {
+          "en": "What is spiritual Communion?",
+          "fr": "Qu'est-ce que la communion spirituelle ?"
+        },
+        "a": {
+          "en": "Spiritual Communion is made through the desire for union with Christ. To receive His Body in the sacrament is another act; desire and reception must not be confused.",
+          "fr": "La communion spirituelle se fait par le désir de l'union au Christ. Recevoir son Corps dans le sacrement est un autre acte ; il ne faut pas confondre le désir et la réception."
+        }
+      },
+      "follow": {
+        "q": {
+          "en": "Is spiritual Communion without value when I cannot approach the altar?",
+          "fr": "La communion spirituelle est-elle sans valeur lorsque je ne puis approcher de l'autel ?"
+        },
+        "a": {
+          "en": "It is not without value. The desire to be united to Christ has its place in prayer, although it is not itself the sacramental reception of the Eucharist.",
+          "fr": "Elle n'est pas sans valeur. Le désir d'être uni au Christ a sa place dans la prière, bien qu'il ne constitue pas en lui-même la réception sacramentelle de l'Eucharistie."
+        }
+      },
+      "deep": {
+        "q": {
+          "en": "Can you tell whether I ought to receive Communion today?",
+          "fr": "Pouvez-vous me dire si je dois communier aujourd'hui ?"
+        },
+        "a": {
+          "en": "This source distinguishes spiritual desire from reception of the sacrament; it cannot assess your personal dispositions. A concrete difficulty about receiving Communion belongs with a confessor.",
+          "fr": "Cette source distingue le désir spirituel de la réception du sacrement ; elle ne peut examiner vos dispositions personnelles. Une difficulté concrète concernant la communion doit être exposée à un confesseur."
+        }
+      },
+      "speakerPolicy": {
+        "opening": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "follow": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "deep": "OUT_OF_CHARACTER_EDITORIAL_BOUNDARY_NOT_PIUS_SPEECH"
+      },
+      "pose": [
+        "explaining",
+        "welcoming",
+        null
+      ],
+      "specificSourceClaimApproval": false
+    },
+    {
+      "chapterId": "SPX-032",
+      "routeIndex": 0,
+      "documentarySource": "E supremi §13",
+      "reviewConcern": "The child question merely repeats the earlier objection about truth versus patience; detached references make the spoken reply less natural.",
+      "opening": {
+        "q": {
+          "en": "How should I correct someone without bitterness?",
+          "fr": "Comment corriger une personne sans amertume ?"
+        },
+        "a": {
+          "en": "Correction ought to be firm in the truth, yet governed by charity. Needless severity may drive the person corrected farther away.",
+          "fr": "La correction doit être ferme dans la vérité, tout en demeurant réglée par la charité. Une sévérité inutile peut éloigner davantage celui que l'on reprend."
+        }
+      },
+      "follow": {
+        "q": {
+          "en": "Does patience require me to pretend that an error is true?",
+          "fr": "La patience exige-t-elle que je fasse passer une erreur pour la vérité ?"
+        },
+        "a": {
+          "en": "By no means. Charity does not ask that error be approved; it should govern the manner in which one seeks to correct it.",
+          "fr": "Nullement. La charité ne demande pas d'approuver l'erreur ; elle doit régler la manière dont on cherche à la corriger."
+        }
+      },
+      "deep": {
+        "q": {
+          "en": "What, then, should be my aim when I speak?",
+          "fr": "Quel doit donc être mon but lorsque je parle ?"
+        },
+        "a": {
+          "en": "The good of the person before you. The truth ought not to be concealed, yet a harsh manner can defeat the very purpose of correction.",
+          "fr": "Le bien de la personne qui vous écoute. Il ne faut pas cacher la vérité, mais une manière dure peut faire manquer le but même de la correction."
+        }
+      },
+      "speakerPolicy": {
+        "opening": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "follow": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "deep": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS"
+      },
+      "pose": [
+        "explaining",
+        "thoughtful",
+        "welcoming"
+      ],
+      "specificSourceClaimApproval": false
+    }
+  ]
+}

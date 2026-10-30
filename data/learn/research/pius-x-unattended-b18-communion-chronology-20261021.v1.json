@@ -1,0 +1,303 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B18_FREQUENT_COMMUNION_CHRONOLOGY_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "formation/1457-pius-x-conversation-evidence",
+  "ownerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+  "ownerBlob": "ac0fed4b369277ed51d2a0491e046843e71e486d",
+  "status": "RESEARCH_ONLY_INCREMENTAL_HISTORICAL_CONTEXT_NOT_REAUDIT",
+  "counts": {
+    "families": 2,
+    "answerUnits": 4,
+    "additionalEditorialNotes": 1,
+    "certified": 0,
+    "published": 0
+  },
+  "priorCompletedWork": {
+    "path": "data/learn/research/pius-x-first40-claim-italian-witness-review-20261020.v1.json",
+    "blob": "08600d988cde949abc63c36ce7aec3c239fc71c8",
+    "scope": "Italian opening meanings already compared on20October. Do not repeat that audit or claim discovery of its650 wording correction. New work supplies exact later decree text, dates, issuer and rule5 qualification."
+  },
+  "records": [
+    {
+      "familyId": "SPX-1905-E-649",
+      "originalRecord": {
+        "id": "SPX-1905-E-649",
+        "source": {
+          "edition": "1905_LONG_CATECHISM",
+          "questionId": "PX1905-Q649",
+          "originalQuestionItalian": "È cosa buona ed utile comunicarsi spesso?",
+          "companionQuestionId": "PX1905-Q650",
+          "section": "EASTER_COMMUNION_AND_FREQUENCY",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+          "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "Does the Catechism encourage frequent Holy Communion?",
+              "fr": "Le Catéchisme encourage-t-il la Communion fréquente ?"
+            },
+            "response": {
+              "en": "Yes. It calls frequent Communion an excellent practice, provided the recipient approaches with the required dispositions.",
+              "fr": "Oui. Il présente la Communion fréquente comme une excellente pratique, pourvu qu'on y apporte les dispositions nécessaires."
+            },
+            "supports": [
+              "PX1905-Q649"
+            ]
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "How often did the 1905 Catechism advise receiving Communion?",
+              "fr": "À quelle fréquence le Catéchisme de 1905 conseillait-il de communier ?"
+            },
+            "response": {
+              "en": "It recommended the greatest frequency that a devout and learned confessor judged suitable for the person. Its account reflects pastoral practice of the period rather than a fixed numerical limit.",
+              "fr": "Il conseillait la fréquence la plus grande qu'un confesseur pieux et instruit jugeait convenable. Cet exposé reflète une pratique pastorale de l'époque plutôt qu'une limite numérique fixe."
+            },
+            "supports": [
+              "PX1905-Q650"
+            ]
+          }
+        ],
+        "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+        "release": {
+          "sourceSentenceVerified": false,
+          "theologyApproved": false,
+          "translationApproved": false,
+          "voiceApproved": false,
+          "production": false
+        }
+      },
+      "proposedTurns": [
+        {
+          "en": "Frequent Holy Communion is an excellent practice, provided one approaches with the due dispositions.",
+          "fr": "La Communion fréquente est une excellente pratique, pourvu qu’on s’en approche avec les dispositions requises.",
+          "claims": [
+            {
+              "text": "Retain previously matched opening meaning",
+              "refs": [
+                "PX649"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Receive as frequently as a pious and learned confessor advises.",
+          "fr": "Communiez aussi fréquemment que le conseille un confesseur pieux et instruit.",
+          "claims": [
+            {
+              "text": "Frequency formulation shared with650",
+              "refs": [
+                "PX650"
+              ]
+            }
+          ]
+        }
+      ],
+      "sourceWork": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "classification": "SOURCE_BOUND_RECONSTRUCTION_NOT_AUTHENTIC_PAPAL_UTTERANCE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "historicalVoiceApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-1905-E-650",
+      "originalRecord": {
+        "id": "SPX-1905-E-650",
+        "source": {
+          "edition": "1905_LONG_CATECHISM",
+          "questionId": "PX1905-Q650",
+          "originalQuestionItalian": "Con quale frequenza si può andare alla Comunione?",
+          "companionQuestionId": "PX1905-Q651",
+          "section": "EASTER_COMMUNION_AND_FREQUENCY",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+          "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "How often did the 1905 Catechism advise receiving Communion?",
+              "fr": "À quelle fréquence le Catéchisme de 1905 conseillait-il de communier ?"
+            },
+            "response": {
+              "en": "It recommended the greatest frequency that a devout and learned confessor judged suitable for the person. Its account reflects pastoral practice of the period rather than a fixed numerical limit.",
+              "fr": "Il conseillait la fréquence la plus grande qu'un confesseur pieux et instruit jugeait convenable. Cet exposé reflète une pratique pastorale de l'époque plutôt qu'une limite numérique fixe."
+            },
+            "supports": [
+              "PX1905-Q650"
+            ]
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "Is the Eucharist only a sacrament, or also a sacrifice?",
+              "fr": "L'Eucharistie est-elle seulement un sacrement, ou également un sacrifice ?"
+            },
+            "response": {
+              "en": "It is both: the sacrament of Christ's Body and Blood and the enduring sacrifice of the New Law, entrusted by Him to the Church for offering through priests.",
+              "fr": "Elle est les deux : le sacrement du Corps et du Sang du Christ et le sacrifice permanent de la Nouvelle Loi, confié par Lui à l'Église pour être offert par les prêtres."
+            },
+            "supports": [
+              "PX1905-Q651"
+            ]
+          }
+        ],
+        "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+        "release": {
+          "sourceSentenceVerified": false,
+          "theologyApproved": false,
+          "translationApproved": false,
+          "voiceApproved": false,
+          "production": false
+        }
+      },
+      "proposedTurns": [
+        {
+          "en": "Receive as frequently as a pious and learned confessor advises.",
+          "fr": "Communiez aussi fréquemment que le conseille un confesseur pieux et instruit.",
+          "claims": [
+            {
+              "text": "Prior650 precision proposal synchronized with649 followup",
+              "refs": [
+                "PX650"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The Eucharist is also the abiding sacrifice of the New Law, offered to God through the ministry of priests.",
+          "fr": "L’Eucharistie est aussi le sacrifice permanent de la Loi nouvelle, offert à Dieu par le ministère des prêtres.",
+          "claims": [
+            {
+              "text": "Existing651 followup preserved in its own source scope",
+              "refs": [
+                "PX651"
+              ]
+            }
+          ]
+        }
+      ],
+      "sourceWork": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "classification": "SOURCE_BOUND_RECONSTRUCTION_NOT_AUTHENTIC_PAPAL_UTTERANCE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "historicalVoiceApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "editorialContext": {
+    "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+    "avatarLineAllowed": false,
+    "en": "The catechism’s wording must be read alongside the subsequent decree Sacra Tridentina Synodus, dated 20 December 1905. Rules 1 and 5 open frequent and daily Communion to the faithful in grace with a right intention; confessors’ advice remains, but they must not discourage those meeting these conditions. This is historical explanation, not an individual present-day direction.",
+    "fr": "La formulation du catéchisme doit être lue avec le décret ultérieur Sacra Tridentina Synodus, daté du 20 décembre 1905. Ses règles 1 et 5 ouvrent la Communion fréquente et quotidienne aux fidèles en état de grâce avec une intention droite ; le conseil du confesseur demeure, mais il ne doit pas écarter ceux qui remplissent ces conditions. Il s’agit d’histoire, non d’une directive individuelle actuelle.",
+    "claims": [
+      {
+        "text": "Decree date and approval sequence",
+        "refs": [
+          "STS-DATES"
+        ]
+      },
+      {
+        "text": "Admission and advice qualification",
+        "refs": [
+          "STS1",
+          "STS5"
+        ]
+      }
+    ],
+    "publication": false
+  },
+  "evidence": [
+    {
+      "id": "PX649",
+      "work": "Compendio della dottrina cristiana (1905), Catechismo maggiore, ParteIV CapoIV §5, editorial question649",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "È cosa buona ed utile comunicarsi spesso?",
+      "exactItalianExcerpt": "purché si faccia con le disposizioni dovute",
+      "numbering": "EDITORIAL_NOT_ORIGINAL_PRINT_QUESTION_NUMBER",
+      "supports": "Frequent Communion and dispositions; source already matched in prior audit"
+    },
+    {
+      "id": "PX650",
+      "work": "Same editorial question650",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "Con quale frequenza si può andare alla Comunione?",
+      "exactItalianExcerpt": "da un pio e dotto confessore",
+      "numbering": "EDITORIAL_NOT_ORIGINAL_PRINT_QUESTION_NUMBER",
+      "supports": "Sync649T2/650T1; no fixed numerical ceiling invented"
+    },
+    {
+      "id": "PX651",
+      "work": "Same ParteIV CapoV §1, editorial question651",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "L’Eucaristia si deve considerare solamente come sacramento?",
+      "supports": "Sacrament and permanent sacrifice of New Law; source651 remains separate linked followup"
+    },
+    {
+      "id": "STS1",
+      "work": "Sacred Congregation of the Council, Sacra Tridentina Synodus, rule1; AAS2(1910), Appendix pp894–898, rule1 onp896",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=896",
+      "pdfZeroBasedPage": 895,
+      "language": "Latin official publication reprint",
+      "exactLatinExcerpt": "nemo, qui in statu gratiae sit",
+      "supports": "All faithful, any order/condition, grace and right pious intention; not solely a reward for perfection"
+    },
+    {
+      "id": "STS5",
+      "work": "Same rule5, printedp897",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=897",
+      "pdfZeroBasedPage": 896,
+      "language": "Latin",
+      "exactLatinExcerpt": "oportet ut Confessarii consilium intercedat",
+      "supports": "Advice retained; following sentence prohibits discouraging those in grace with right intention. Do not replace one unqualified confessor-rule with claim no advice is contemplated."
+    },
+    {
+      "id": "STS-DATES",
+      "work": "Same plenary meeting and approbation paragraphs pp896–898",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=898",
+      "pdfZeroBasedPage": 897,
+      "language": "Latin",
+      "supports": "Congregation meeting16December1905; papal approval audience17December; decree dated20December. Printedp898 signed VincenzoVannutelli and secretaryGaetanoDeLai. Congregational decree approved by PiusX, not a papal autograph or motu proprio."
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "Resolve prior chronology hold by exact later official Latin decree passages, rather than redoing first40 Italian audit",
+    "Prior unapproved650 correction propagated to matching649 followup: greatest frequency must not imply maximum numerical permission invented by editor",
+    "Historical counsel remains in Decemberrule5; safeguard against wrongly claiming decree abolished it",
+    "Keep all modern scope explanation outside avatar; no present-day disciplinary prescription is inferred"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "SPX-1905-E-649-T2",
+        "SPX-1905-E-650-T1"
+      ],
+      "decision": "Identical visitor intent/source650: one shared draft variant proposed; preserve both context IDs and all approval states."
+    },
+    {
+      "ids": [
+        "SPX-1905-E-650-T2",
+        "SPX-1905-E-651-T1"
+      ],
+      "decision": "Existing adjacent-source mirror; no new651 family or certification claimed."
+    }
+  ],
+  "humanDecisions": [
+    "Historian checks presentation of catechism/decree sequence before release",
+    "Independent EN/FR and theological review; no present-day Communion eligibility ruling"
+  ],
+  "newSubstantiveGaps": [],
+  "originalPrintLimit": "No new1905catechism photograph collation. AAS Latin extracted from official PDF with exact printed-page locators; no image-only reading certification claimed.",
+  "approvalsChanged": 0,
+  "continue": true
+}

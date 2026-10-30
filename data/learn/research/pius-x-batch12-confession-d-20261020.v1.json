@@ -1,0 +1,519 @@
+{
+  "schema": "AO_SPX_1905_BATCH12_PART_V1",
+  "part": "D",
+  "created": "2026-10-20",
+  "status": "BILINGUAL_DOCUMENTARY_DRAFT_NOT_CERTIFIED",
+  "followupPolicy": "SAME_QUESTION_DISTINCT_PASTORAL_INTENT",
+  "records": [
+    {
+      "id": "SPX-1905-P-747",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q747",
+        "originalQuestionItalian": "Quali circostanze si devono manifestare, perché l’accusa sia intiera?",
+        "relatedQuestionId": "PX1905-Q748",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Which circumstances of a sin need to be mentioned in Confession?",
+            "fr": "Quelles circonstances d'un péché faut-il mentionner en confession ?"
+          },
+          "response": {
+            "en": "The Catechism specifies circumstances that change the moral species or kind of the sin.",
+            "fr": "Le Catéchisme précise les circonstances qui changent l'espèce ou la nature morale du péché."
+          },
+          "supports": [
+            "PX1905-Q747"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does this call for an exhaustive account of every surrounding event?",
+            "fr": "Cela demande-t-il de raconter exhaustivement tout ce qui s'est passé ?"
+          },
+          "response": {
+            "en": "No. The answer narrows the requirement to circumstances that change the kind of sin, not incidental details.",
+            "fr": "Non. La réponse limite cette exigence aux circonstances qui changent la nature du péché, non aux détails accessoires."
+          },
+          "supports": [
+            "PX1905-Q747"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-748",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q748",
+        "originalQuestionItalian": "Quali sono le circostanze che mutano la specie del peccato?",
+        "relatedQuestionId": "PX1905-Q749",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What makes a circumstance change the kind of sin?",
+            "fr": "Qu'est-ce qui fait qu'une circonstance change la nature du péché ?"
+          },
+          "response": {
+            "en": "The Catechism gives two categories: one that renders an otherwise venial act grave, and one that makes an action involve the malice of more than one grave sin.",
+            "fr": "Le Catéchisme donne deux catégories : celle qui rend grave une faute autrement vénielle et celle qui fait qu'une action comporte la malice de plusieurs péchés graves."
+          },
+          "supports": [
+            "PX1905-Q748"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why does the confessor need such a distinction?",
+            "fr": "Pourquoi le confesseur a-t-il besoin de cette distinction ?"
+          },
+          "response": {
+            "en": "So the essential moral nature of what is confessed is not concealed by an incomplete description.",
+            "fr": "Pour que la nature morale essentielle de la faute ne soit pas masquée par une description incomplète."
+          },
+          "supports": [
+            "PX1905-Q748"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-749",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q749",
+        "originalQuestionItalian": "Datemi l’esempio di una circostanza che faccia diventar mortale un peccato veniate?",
+        "relatedQuestionId": "PX1905-Q750",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Can a lie become gravely wrong because it seriously harms someone?",
+            "fr": "Un mensonge peut-il devenir gravement fautif à cause d'un préjudice sérieux infligé à autrui ?"
+          },
+          "response": {
+            "en": "The Catechism gives an example of a lie told as an excuse that brings grave harm to a neighbour; the serious harm must be mentioned.",
+            "fr": "Le Catéchisme donne l'exemple d'un mensonge destiné à s'excuser qui cause un grave dommage au prochain ; ce dommage sérieux doit être indiqué."
+          },
+          "supports": [
+            "PX1905-Q749"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is a harmless exaggeration the same example?",
+            "fr": "Une exagération sans dommage est-elle le même exemple ?"
+          },
+          "response": {
+            "en": "No. The illustration's decisive added circumstance is grave injury to another person.",
+            "fr": "Non. La circonstance décisive de l'exemple est le grave préjudice causé à autrui."
+          },
+          "supports": [
+            "PX1905-Q749"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-750",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q750",
+        "originalQuestionItalian": "Datemi ora l’esempio di una circostanza per la quale una stessa azione peccaminosa contiene la malizia di due o più peccati.",
+        "relatedQuestionId": "PX1905-Q751",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Can one wrongful act involve more than one kind of offence?",
+            "fr": "Un seul acte mauvais peut-il comporter plusieurs sortes de faute ?"
+          },
+          "response": {
+            "en": "The Catechism illustrates this with stealing a sacred object, which adds sacrilege to theft.",
+            "fr": "Le Catéchisme illustre cela par le vol d'un objet sacré, qui ajoute le sacrilège au vol."
+          },
+          "supports": [
+            "PX1905-Q750"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What would have to be made clear in that example?",
+            "fr": "Que faudrait-il préciser dans cet exemple ?"
+          },
+          "response": {
+            "en": "That the object was sacred, rather than describing the act as ordinary theft alone.",
+            "fr": "Que l'objet était sacré, plutôt que de présenter l'acte comme un simple vol."
+          },
+          "supports": [
+            "PX1905-Q750"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-751",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q751",
+        "originalQuestionItalian": "Se taluno non fosse certo di aver commesso un peccato, deve confessarsene?",
+        "relatedQuestionId": "PX1905-Q752",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Must I confess something I am not sure I did?",
+            "fr": "Dois-je confesser une chose dont je ne suis pas certain de l'avoir commise ?"
+          },
+          "response": {
+            "en": "The Catechism says no obligation arises from such uncertainty; if it is mentioned, the uncertainty should be stated plainly.",
+            "fr": "Le Catéchisme dit qu'une telle incertitude n'entraîne pas d'obligation ; si on la mentionne, il faut dire clairement qu'on n'en est pas certain."
+          },
+          "supports": [
+            "PX1905-Q751"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Should I present a doubtful memory as a proven fact?",
+            "fr": "Dois-je présenter un souvenir incertain comme un fait établi ?"
+          },
+          "response": {
+            "en": "No. The source explicitly asks a person who mentions it to say that it is uncertain.",
+            "fr": "Non. La source demande expressément de signaler l'incertitude si on en parle."
+          },
+          "supports": [
+            "PX1905-Q751"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-752",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q752",
+        "originalQuestionItalian": "Chi non ricorda precisamente il numero de’ suoi peccati, che cosa deve fare?",
+        "relatedQuestionId": "PX1905-Q753",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What if I cannot remember the exact number of sins?",
+            "fr": "Que faire si je ne me rappelle pas exactement le nombre de mes fautes ?"
+          },
+          "response": {
+            "en": "The Catechism allows an approximate number when an exact count cannot be recalled.",
+            "fr": "Le Catéchisme permet un nombre approximatif lorsque le compte exact ne peut être retrouvé."
+          },
+          "supports": [
+            "PX1905-Q752"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Am I expected to invent a precise number?",
+            "fr": "Dois-je inventer un chiffre précis ?"
+          },
+          "response": {
+            "en": "No. An honest approximation is what the historical instruction requests.",
+            "fr": "Non. L'instruction historique demande une estimation honnête."
+          },
+          "supports": [
+            "PX1905-Q752"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-753",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q753",
+        "originalQuestionItalian": "Chi ha taciuto per pura dimenticanza un peccato mortale, o una circostanza necessaria, ha fatto una buona confessione?",
+        "relatedQuestionId": "PX1905-Q754",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Is Confession valid if a grave sin was honestly forgotten?",
+            "fr": "La confession est-elle valide si un péché grave a été oublié de bonne foi ?"
+          },
+          "response": {
+            "en": "The Catechism says yes, provided the penitent used reasonable diligence to remember; innocent forgetting is not deliberate concealment.",
+            "fr": "Le Catéchisme dit oui, pourvu que le pénitent ait fait un effort raisonnable de mémoire ; l'oubli innocent n'est pas une dissimulation volontaire."
+          },
+          "supports": [
+            "PX1905-Q753"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does forgetting mean I deliberately hid something?",
+            "fr": "Oublier signifie-t-il avoir dissimulé quelque chose volontairement ?"
+          },
+          "response": {
+            "en": "No. The source draws precisely the opposite distinction.",
+            "fr": "Non. La source distingue précisément ces deux situations."
+          },
+          "supports": [
+            "PX1905-Q753"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-754",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q754",
+        "originalQuestionItalian": "Se un peccato mortale dimenticato nella confessione torna poi in mente, siamo obbligati ad accusarcene in un’altra confessione?",
+        "relatedQuestionId": "PX1905-Q755",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What if a genuinely forgotten mortal sin later comes back to mind?",
+            "fr": "Que faire si un péché mortel réellement oublié revient ensuite à la mémoire ?"
+          },
+          "response": {
+            "en": "The historical Catechism says to mention it at the next Confession; its preceding answer says the earlier good-faith confession was not invalidated.",
+            "fr": "Le Catéchisme historique demande de le mentionner à la confession suivante ; sa réponse précédente précise que la confession de bonne foi n'a pas été invalidée."
+          },
+          "supports": [
+            "PX1905-Q754"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Should I assume my earlier absolution never counted?",
+            "fr": "Dois-je supposer que mon absolution précédente n'a jamais compté ?"
+          },
+          "response": {
+            "en": "No. The distinction rests on the prior omission being genuinely accidental.",
+            "fr": "Non. La distinction repose sur le caractère réellement involontaire de l'omission."
+          },
+          "supports": [
+            "PX1905-Q754"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-755",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q755",
+        "originalQuestionItalian": "Chi per vergogna, o per qualche altro motivo tace colpevolmente nella confessione qualche peccato mortale, che cosa commette?",
+        "relatedQuestionId": "PX1905-Q756",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Catechism condemn deliberately hiding a known mortal sin in Confession?",
+            "fr": "Pourquoi le Catéchisme condamne-t-il la dissimulation volontaire d'un péché mortel connu en confession ?"
+          },
+          "response": {
+            "en": "It calls intentional, culpable concealment a grave sacrilege because it falsifies the sacramental confession. This does not apply automatically to doubt, memory lapses or involuntary anxiety.",
+            "fr": "Il qualifie la dissimulation volontaire et coupable de grave sacrilège parce qu'elle fausse l'aveu sacramentel. Cela ne s'applique pas automatiquement au doute, à l'oubli ou à l'anxiété involontaire."
+          },
+          "supports": [
+            "PX1905-Q755"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does shame by itself mean I deliberately concealed a sin?",
+            "fr": "La honte signifie-t-elle à elle seule que j'ai dissimulé volontairement un péché ?"
+          },
+          "response": {
+            "en": "No. The Catechism specifies culpably remaining silent about a known grave sin, not merely feeling ashamed.",
+            "fr": "Non. Le Catéchisme vise le silence coupable sur un péché grave connu, non le simple sentiment de honte."
+          },
+          "supports": [
+            "PX1905-Q755"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-756",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q756",
+        "originalQuestionItalian": "Chi ha taciuto colpevolmente qualche peccato mortale nella confessione, come deve provvedere alla propria coscienza?",
+        "relatedQuestionId": "PX1905-Q757",
+        "section": "CONFESSION_INTEGRITY_MEMORY_AND_DISCLOSURE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What remedy does the old Catechism propose for knowingly concealing a mortal sin?",
+            "fr": "Quel remède l'ancien Catéchisme propose-t-il pour la dissimulation consciente d'un péché mortel ?"
+          },
+          "response": {
+            "en": "It directs the person to explain the concealment and relevant previous confessions to a confessor, to remedy the defective sacramental confession. The exact pastoral course should be guided by the priest.",
+            "fr": "Il invite à expliquer au confesseur la dissimulation et les confessions précédentes concernées, afin de remédier à l'aveu défectueux. La démarche pastorale précise doit être guidée par le prêtre."
+          },
+          "supports": [
+            "PX1905-Q756"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Should a person who is merely doubtful repeat many confessions on their own initiative?",
+            "fr": "Une personne seulement incertaine doit-elle répéter de nombreuses confessions de sa propre initiative ?"
+          },
+          "response": {
+            "en": "No. This rule concerns culpable concealment, and uncertainty or scruples should instead be brought to a trusted confessor.",
+            "fr": "Non. Cette règle concerne une dissimulation coupable ; l'incertitude ou les scrupules doivent plutôt être confiés à un confesseur de confiance."
+          },
+          "supports": [
+            "PX1905-Q756"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ]
+}

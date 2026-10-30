@@ -1,0 +1,355 @@
+{
+  "schema": "AO_SPX_DEPENDENT_CONTINUATIONS_DEPTH12_PART_B_V1",
+  "date": "2026-10-21",
+  "stage": "BILINGUAL_EDITORIAL_AUTHORING_ONLY",
+  "sourceSchema": "AO_SPX_82_CHAPTER_CONVERSATION_AUTHORING_GRAPH_V1",
+  "chapters": [
+    {
+      "chapterId": "SPX-027",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-027.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "If death does not end Christian communion, what does prayer express?",
+              "fr": "Si la mort n'abolit pas la communion chrétienne, qu'exprime la prière ?"
+            },
+            "a": {
+              "en": "It expresses charity toward those who have departed. The Salzano teaching joins the faithful on earth and the departed within the communion of saints; it does not require us to know each person's hidden condition.",
+              "fr": "Elle manifeste la charité envers ceux qui nous ont quittés. L'enseignement de Salzano unit les fidèles de la terre et les défunts dans la communion des saints, sans demander de connaître l'état caché de chacun."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-064"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-027.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Is prayer for the dead an attempt to reverse God's judgment?",
+              "fr": "La prière pour les morts cherche-t-elle à renverser le jugement de Dieu ?"
+            },
+            "a": {
+              "en": "No. The catechetical practice commends the departed to God's mercy. It is not a claim that the living command the divine judgment or possess certainty about its application to one soul.",
+              "fr": "Non. La pratique catéchétique confie les défunts à la miséricorde de Dieu. Elle ne signifie ni que les vivants commandent au jugement divin ni qu'ils connaissent avec certitude son application à une âme."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-064"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-027.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Then should I stop praying because I cannot see what my prayer accomplished?",
+              "fr": "Dois-je donc cesser de prier faute de voir ce que ma prière accomplit ?"
+            },
+            "a": {
+              "en": "The absence of such knowledge is no reason to abandon charity. The teaching recommends prayer and suffrages while leaving the soul's state and God's response in His hands.",
+              "fr": "L'absence de cette connaissance n'est pas une raison d'abandonner la charité. L'enseignement recommande la prière et les suffrages tout en laissant à Dieu l'état de l'âme et la réponse à nos prières."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-063"
+        }
+      ],
+      "authoringNote": "Offer after corresponding first-level Q&A only; no source claims beyond originating chapter's documentary witness."
+    },
+    {
+      "chapterId": "SPX-032",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-032.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "If I believe a teaching is false, can I say so plainly?",
+              "fr": "Si je crois qu'un enseignement est faux, puis-je le dire nettement ?"
+            },
+            "a": {
+              "en": "The counsel in E supremi does not ask that truth be disguised. It asks that correction serve the good of the hearer, with patience rather than a harshness that may drive that person away.",
+              "fr": "Le conseil d'E supremi ne demande pas de dissimuler la vérité. Il veut que la correction serve le bien de celui qui écoute, avec patience plutôt qu'avec une dureté qui risquerait de l'éloigner."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-EXP-048"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-032.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Is the aim of correction to prove that I am superior?",
+              "fr": "La correction a-t-elle pour but de prouver ma supériorité ?"
+            },
+            "a": {
+              "en": "No. The principle here is concern for the neighbour's good. To turn correction into a victory over a person would alter its purpose, even if the doctrine being defended is true.",
+              "fr": "Non. Le principe est la recherche du bien du prochain. Faire de la correction une victoire sur la personne en changerait la fin, même si la doctrine défendue est vraie."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-020"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-032.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Should I keep accusing someone until they agree with me?",
+              "fr": "Dois-je continuer à accuser quelqu'un jusqu'à ce qu'il me donne raison ?"
+            },
+            "a": {
+              "en": "The passage does not give licence to coerce assent or pronounce on motives. If an exchange becomes bitter, the question of charity and prudence remains; the source cannot command another person's conscience.",
+              "fr": "Le passage n'autorise ni à contraindre l'assentiment ni à juger les intentions. Si l'échange devient amer, la charité et la prudence demeurent nécessaires ; la source ne permet pas de commander à la conscience d'autrui."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-020"
+        }
+      ],
+      "authoringNote": "Offer after corresponding first-level Q&A only; no source claims beyond originating chapter's documentary witness."
+    },
+    {
+      "chapterId": "SPX-034",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-034.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "What connects contemplating Christ with a priest's daily duties?",
+              "fr": "Quel lien unit la contemplation du Christ aux devoirs quotidiens du prêtre ?"
+            },
+            "a": {
+              "en": "Haerent animo does not treat meditation as a separate accomplishment. Contemplating the Lord's life is meant to shape the priest's conduct and the spirit in which he serves his flock.",
+              "fr": "Haerent animo ne traite pas la méditation comme une réalisation séparée. Contempler la vie du Seigneur doit former la conduite du prêtre et l'esprit dans lequel il sert son troupeau."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-PILOT-09"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-034.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Would studying the Gospel without changing one's actions fulfil that purpose?",
+              "fr": "Étudier l'Évangile sans changer sa conduite accomplirait-il ce dessein ?"
+            },
+            "a": {
+              "en": "Not the purpose described here. The exhortation joins consideration of Christ with imitation; knowledge that leaves conduct untouched falls short of that pastoral aim.",
+              "fr": "Ce ne serait pas le but décrit ici. L'exhortation unit la contemplation du Christ à son imitation ; un savoir qui ne touche pas la conduite manque cette fin pastorale."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-035"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-034.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Could a layperson still learn something from a priestly exhortation?",
+              "fr": "Un laïc peut-il pourtant apprendre quelque chose d'une exhortation aux prêtres ?"
+            },
+            "a": {
+              "en": "Certainly the example of Christ is not foreign to lay Christians. But the specific rule and immediate address in Haerent animo concern priests; we should distinguish a useful principle from a command made personally to every visitor.",
+              "fr": "Assurément, l'exemple du Christ n'est pas étranger aux laïcs. Mais la règle précise et le destinataire immédiat de Haerent animo sont les prêtres ; il faut distinguer un principe utile d'un ordre adressé personnellement à chaque visiteur."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-035"
+        }
+      ],
+      "authoringNote": "Offer after corresponding first-level Q&A only; no source claims beyond originating chapter's documentary witness."
+    },
+    {
+      "chapterId": "SPX-035",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-035.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Why not let religious reading replace prayer when a priest is busy?",
+              "fr": "Pourquoi ne pas remplacer la prière par une lecture religieuse lorsqu'un prêtre est occupé ?"
+            },
+            "a": {
+              "en": "The exhortation presents spiritual reading as an aid to the interior life, not a substitute for it. Its purpose is to furnish matter for reflection and imitation rather than let activity crowd out recollection.",
+              "fr": "L'exhortation présente la lecture spirituelle comme une aide de la vie intérieure, non comme son substitut. Elle fournit une matière à la réflexion et à l'imitation au lieu de laisser l'activité chasser le recueillement."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-034"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-035.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Should a good book be judged only by how interesting it is?",
+              "fr": "Faut-il juger un bon livre seulement à l'intérêt qu'il suscite ?"
+            },
+            "a": {
+              "en": "Interest alone does not settle its value for spiritual formation. Haerent animo emphasises sound reading that serves holiness and discernment, rather than curiosity detached from Christian conduct.",
+              "fr": "L'intérêt ne suffit pas à en établir la valeur pour la formation spirituelle. Haerent animo insiste sur une lecture saine qui sert la sainteté et le discernement, plutôt que la curiosité séparée de la conduite chrétienne."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-034"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-035.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Does the exhortation list an obligatory reading schedule for every visitor?",
+              "fr": "L'exhortation fixe-t-elle un programme de lecture obligatoire pour chaque visiteur ?"
+            },
+            "a": {
+              "en": "No. It is an exhortation to priests about priestly spiritual life. The value of sound reading can be discussed generally, but an exact universal routine for laypeople cannot be drawn from these paragraphs alone.",
+              "fr": "Non. Elle s'adresse aux prêtres au sujet de leur vie spirituelle. On peut parler plus généralement de la valeur d'une bonne lecture, mais ces paragraphes ne fixent pas à eux seuls une règle universelle pour les laïcs."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-036"
+        }
+      ],
+      "authoringNote": "Offer after corresponding first-level Q&A only; no source claims beyond originating chapter's documentary witness."
+    },
+    {
+      "chapterId": "SPX-036",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-036.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Why recall places and encounters instead of judging the whole day at once?",
+              "fr": "Pourquoi se rappeler les lieux et les rencontres plutôt que juger toute la journée d'un coup ?"
+            },
+            "a": {
+              "en": "The Salzano instruction asks for concrete recollection: where one was, whom one met and what was done. Such detail helps to see duties and actions more clearly than a single changing impression.",
+              "fr": "L'instruction de Salzano invite à des souvenirs concrets : les lieux fréquentés, les personnes rencontrées et les actes accomplis. Ces détails éclairent les devoirs et les actes mieux qu'une seule impression changeante."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-016"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-036.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Does the short evening examination replace confession?",
+              "fr": "Ce bref examen du soir remplace-t-il la confession ?"
+            },
+            "a": {
+              "en": "No. The two practices are related, but the evening review is a regular recollection of the day's conduct. Sacramental confession has its own purpose and requirements; one should not declare them interchangeable.",
+              "fr": "Non. Les deux pratiques sont liées, mais l'examen du soir rappelle régulièrement la conduite de la journée. La confession sacramentelle a sa propre fin et ses exigences ; il ne faut pas les confondre."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-016"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-036.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "If I find only a vague uneasiness, should I presume I committed a grave sin?",
+              "fr": "Si je n'éprouve qu'un malaise vague, dois-je présumer avoir commis un péché grave ?"
+            },
+            "a": {
+              "en": "The catechetical counsel turns to identifiable conduct and duties, not a mood taken as proof. A general explanation cannot judge a particular conscience, especially where uncertainty persists.",
+              "fr": "Le conseil catéchétique porte sur les actes et devoirs reconnaissables, non sur une humeur prise pour preuve. Une explication générale ne peut juger une conscience particulière, surtout lorsque l'incertitude demeure."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-009"
+        }
+      ],
+      "authoringNote": "Offer after corresponding first-level Q&A only; no source claims beyond originating chapter's documentary witness."
+    },
+    {
+      "chapterId": "SPX-EXP-041",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-EXP-041.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "How is reverence related to the dispositions of the communicant?",
+              "fr": "Quel lien unit la révérence aux dispositions du communiant ?"
+            },
+            "a": {
+              "en": "The Catechism treats preparation as more than an external gesture. Reverence belongs with the spiritual disposition of the person receiving the Eucharist; it cannot be measured by appearance alone.",
+              "fr": "Le Catéchisme ne réduit pas la préparation à un geste extérieur. Le respect dû au sacrement accompagne la disposition spirituelle de celui qui reçoit l'Eucharistie ; il ne se mesure pas aux seules apparences."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-023"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-EXP-041.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "So can the old fasting rule be applied to my Communion tomorrow?",
+              "fr": "Puis-je donc appliquer l'ancienne règle de jeûne à ma communion de demain ?"
+            },
+            "a": {
+              "en": "The precise rule printed in the historical Catechism belongs to its own time. The lasting call to reverence should not be confused with an unverified claim about present Eucharistic discipline.",
+              "fr": "La règle précise de l'ancien Catéchisme appartient à son époque. L'appel durable au respect du sacrement ne doit pas être confondu avec une affirmation non vérifiée sur la discipline eucharistique actuelle."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-023"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-EXP-041.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Can this dialogue certify that I am properly disposed to receive?",
+              "fr": "Ce dialogue peut-il certifier que je suis bien disposé à communier ?"
+            },
+            "a": {
+              "en": "No. It can explain the importance of preparation, but it does not know your sacramental circumstances or conscience. A concrete question about receiving Holy Communion should be discussed with a priest.",
+              "fr": "Non. Il peut expliquer l'importance de la préparation, mais il ne connaît ni vos circonstances sacramentelles ni votre conscience. Une question concrète au sujet de la communion doit être examinée avec un prêtre."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-015"
+        }
+      ],
+      "authoringNote": "Offer after corresponding first-level Q&A only; no source claims beyond originating chapter's documentary witness."
+    }
+  ],
+  "globalRelease": {
+    "approved": false,
+    "production": false,
+    "claimsNotVerbatim": true
+  }
+}

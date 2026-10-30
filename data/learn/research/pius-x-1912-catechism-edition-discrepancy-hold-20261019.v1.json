@@ -1,0 +1,52 @@
+{
+  "schema": "AO_PIUS_X_SOURCE_EDITION_DISCREPANCY_HOLD_V1",
+  "date": "2026-10-19",
+  "review_owner_issue": 1457,
+  "status": "HOLD_SOURCE_WITNESS_REQUIRES_EDITION_COLLATION",
+  "affected_source": "Pinned Italian digital 1912-short-Catechism-aligned study transcription",
+  "pinned_witness_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md",
+  "witness_date_claim": "Reused repository index identifies numbered 433 questions as 1912 shorter Catechism; the linked modern transcription lacks authenticated 1912 print collation.",
+  "confirmed_text_questions": [
+    {
+      "qid": "PX1912-Q409",
+      "subject": "Whether Church marriage produces civil effects in Italy",
+      "witness_claim": "State recognises civil effects of canonical marriage"
+    },
+    {
+      "qid": "PX1912-Q410",
+      "subject": "How civil effects arise",
+      "witness_claim": "Civil effects through transcription into state registers requested by parish priest"
+    },
+    {
+      "qid": "PX1912-Q411",
+      "subject": "Whether Catholic spouses can also contract a civil marriage",
+      "witness_claim": "Civil marriage before or after a religious marriage forbidden by the text",
+      "review": "ASSOCIATED_HISTORICAL_DISCIPLINARY_LANGUAGE_NEEDS_1912_WITNESS_COMPARISON"
+    }
+  ],
+  "external_primary_history": [
+    {
+      "url": "https://www.vatican.va/roman_curia/secretariat_state/archivio/documents/rc_seg-st_19290211_patti-lateranensi_it.html",
+      "locator": "Concordato 11 February 1929, Article 34",
+      "evidence": "Italian State agreed to recognise civil effects of canon-law sacramental marriage, with registration"
+    },
+    {
+      "url": "https://www.treccani.it/enciclopedia/patti-lateranensi_%28Diritto-on-line%29/",
+      "locator": "Marriage civil-effects historical account",
+      "evidence": "Prior to 1929, canon-law marriage had no civil effects without separate civil marriage under the then operative Italian system"
+    }
+  ],
+  "finding": "The Q409–410 claims reflect the post-1929 concordat regime and cannot be treated as personally authored or approved wording by Pius X, who died in 1914. Exact later edition responsible not established. Q411 is held as collateral edition-sensitive wording.",
+  "scope": "Edition-integrity defect demonstrated in marriage section; do not infer other 430 question texts are all incorrect, but do not claim any is exact 1912 facsimile-certified wording.",
+  "block_actions": [
+    "Do not attribute Q409–411 Italian text directly to St Pius X or the original 1912 printing",
+    "Mark Italian digital text as a possibly modified later catechetical witness, not a print-original",
+    "Require actual pre-1914 print scan comparison before upgrading any family to authentic 1912 wording",
+    "Preserve existing source owner/index pending separate supervised reconciliation; do not silently rewrite original data"
+  ],
+  "affected_spx_families": [
+    "SPX-028",
+    "SPX-044"
+  ],
+  "independent_source_review_required": true
+}

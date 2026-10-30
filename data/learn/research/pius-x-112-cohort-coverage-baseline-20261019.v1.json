@@ -1,0 +1,41 @@
+{
+  "schema": "AO_PIUS_X_112_IDEA_EVIDENCE_PROGRESS_SNAPSHOT_V1",
+  "as_of": "2026-10-19",
+  "status": "RESEARCH_SCOPED_SCREEN_ONLY_NOT_TOTAL_ANSWERABLE_QUESTIONS",
+  "cohort_totals": {
+    "original_64": 64,
+    "expansion_48": 48,
+    "all_topic_idea_seeds": 112
+  },
+  "evidence_buckets": {
+    "direct_passage_indicated": 79,
+    "partial_passage_indicated": 19,
+    "related_only_initial64": 5,
+    "secondary_biographical_context_only_expansion48": 9
+  },
+  "cross_cohort_links": {
+    "potential_overlaps_or_followups": 17,
+    "strong_same_intent_candidates_without_merge": [
+      {
+        "new_id": "SPX-EXP-035",
+        "existing_id": "SPX-053",
+        "reason": "Four identifying marks of Church"
+      },
+      {
+        "new_id": "SPX-EXP-045",
+        "existing_id": "SPX-014",
+        "reason": "Meditation for busy priests"
+      }
+    ]
+  },
+  "certified_unique_answerable_intentions": null,
+  "certified_historically_attributed_visitor_replies": 0,
+  "important_interpretation": "79 direct matches reflect different witness classes across the two cohorts; they are not 79 answered questions or 79 distinct question intentions. 9 biography-only ideas are not Sarto first-person testimony. Overlap review is restricted to the first 64 family titles, not all catechism loci, papal writings or other conversation characters.",
+  "future_milestones": [
+    "Resolve strong overlaps and make first reviewed distinct-intent count only for the adjudicated subset",
+    "Evaluate all 48 with exact evidence sufficiency for answering, including first-person quote restrictions",
+    "Investigate historically authored letters/testimony for early-life and vocation questions",
+    "Add validated extra source for Communion policy (Quam singulari, 1910) and context for discipline",
+    "Expand across more independent papal encyclicals and pastoral correspondence; do not let raw prompts be the denominator for app answerability"
+  ]
+}

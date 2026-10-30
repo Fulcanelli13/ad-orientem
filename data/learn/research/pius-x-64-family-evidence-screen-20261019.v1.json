@@ -1,0 +1,1162 @@
+{
+  "schema": "AO_PIUS_X_INITIAL_64_CONVERSATION_FAMILY_EVIDENCE_SCREEN_V1",
+  "date": "2026-10-19",
+  "status": "RESEARCH_ONLY_COVERAGE_NOT_ANSWER_APPROVAL",
+  "source_owner": "data/learn/research/pius-x-p0-p1-intent-evidence-bridge-20261019.v1.json",
+  "review_owner_files": [
+    "data/learn/research/pius-x-p1-first24-italian-text-review-20261019.v1.json",
+    "data/learn/research/pius-x-p1-next40-italian-text-review-20261019.v1.json",
+    "data/learn/research/pius-x-p1-original-source-support-wave1-20261019.v1.json"
+  ],
+  "definition": "Direct = at least one reviewed historical/digital passage classified direct for the subject; partial = at least one partial, but no direct; related = no direct/partial. This scores source matches, NOT dialogue completeness, doctrinal certification, distinctness, historical voice, or actual visitor answerability.",
+  "summary": {
+    "initial_families": 64,
+    "DIRECT_PASSAGE_ANCHOR": 48,
+    "PARTIAL_PASSAGE_ANCHOR": 11,
+    "RELATED_OR_UNRESOLVED": 5,
+    "approved_distinct_conversation_intents": 0,
+    "certified_visitor_answers_in_this_screen": 0
+  },
+  "required_next_steps": [
+    "Resolve overlapping intents within 1905 long and 1912 short before extrapolating totals",
+    "Add Salzano and Feast cross-edition semantic evidence (not merely number indexes)",
+    "Expand the question-universe beyond the first 64 doctrinal topics to personal life, papal governance, Modernism, Church crisis, contemporary apologetics and pastoral situations",
+    "Require original-edition checks for time-sensitive questions before attributed first-person dialogue"
+  ],
+  "source_witness_holds": [
+    "1912 DIGITAL witness carries 1929 marriage-law language; direct matches must not override this edition hold",
+    "Salzano printed editorial IDs have Q321 and Q406 collisions; these are not autograph numbers",
+    "1905 museum transcript has repeated Q950 instead of positional Q960; correction is a research locator, not silently asserted print text",
+    "Feast publication says 219 but the 26 retrieved chapter pages presently supply 218 matched Q/A records"
+  ],
+  "records": [
+    {
+      "id": "SPX-001",
+      "first_cohort_source_id": "SPX-001",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q349"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-002",
+      "first_cohort_source_id": "SPX-002",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q354"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-003",
+      "first_cohort_source_id": "SPX-003",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "1905 longer Catechism Q669",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "content_match": "DIRECT",
+          "attribution_class": "PAPALLY_APPROVED_CATECHISM",
+          "source_medium": "HISTORICAL_CATECHISM_ON_MUSEUM_SITE_NOT_MANUSCRIPT_AUTHORED"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-004",
+      "first_cohort_source_id": "SPX-004",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "1903 motu proprio Tra le sollecitudini §§2–5",
+          "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+          "content_match": "DIRECT",
+          "attribution_class": "PAPAL_MOTU_PROPRIO",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-005",
+      "first_cohort_source_id": "SPX-005",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q328"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-006",
+      "first_cohort_source_id": "SPX-006",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q344",
+        "PX1912-Q345"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q506–508",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-007",
+      "first_cohort_source_id": "SPX-007",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q361",
+        "PX1912-Q369",
+        "PX1912-Q370",
+        "PX1912-Q371"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q570–577",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "PARTIAL",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-008",
+      "first_cohort_source_id": "SPX-008",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q140",
+        "PX1912-Q141"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q541–543",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-009",
+      "first_cohort_source_id": "SPX-009",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q270"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q369–371",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-010",
+      "first_cohort_source_id": "SPX-010",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q198–200",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-011",
+      "first_cohort_source_id": "SPX-011",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "E supremi §§12–13",
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "content_match": "PARTIAL",
+          "attribution_class": "AUTHORED_PAPAL_TEXT",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-012",
+      "first_cohort_source_id": "SPX-012",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "Acerbo nimis, opening and adult instruction provisions",
+          "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-013",
+      "first_cohort_source_id": "SPX-013",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q433"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-014",
+      "first_cohort_source_id": "SPX-014",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q416",
+        "PX1912-Q419"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Haerent animo §§16–18",
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT_PRIESTS",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-015",
+      "first_cohort_source_id": "SPX-015",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q356",
+        "PX1912-Q357",
+        "PX1912-Q380"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-016",
+      "first_cohort_source_id": "SPX-016",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q359"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-017",
+      "first_cohort_source_id": "SPX-017",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q365"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-018",
+      "first_cohort_source_id": "SPX-018",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q205"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-019",
+      "first_cohort_source_id": "SPX-019",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q206",
+        "PX1912-Q208"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-020",
+      "first_cohort_source_id": "SPX-020",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q193",
+        "PX1912-Q198",
+        "PX1912-Q199",
+        "PX1912-Q200"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-021",
+      "first_cohort_source_id": "SPX-021",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q295",
+        "PX1912-Q296"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-022",
+      "first_cohort_source_id": "SPX-022",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q309"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-023",
+      "first_cohort_source_id": "SPX-023",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q476–481",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-024",
+      "first_cohort_source_id": "SPX-024",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q493–497",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-025",
+      "first_cohort_source_id": "SPX-025",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q190",
+        "PX1912-Q191",
+        "PX1912-Q192"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-026",
+      "first_cohort_source_id": "SPX-026",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q189"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-027",
+      "first_cohort_source_id": "SPX-027",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q102",
+        "PX1912-Q123"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q272–279",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-028",
+      "first_cohort_source_id": "SPX-028",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q406",
+        "PX1912-Q413"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [
+        "PX1912-Q409-Q411_POST_1929_ANACHRONISM_SCOPE_MUST_BE_CHECKED"
+      ],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-029",
+      "first_cohort_source_id": "SPX-029",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q242"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Il fermo proposito §3",
+          "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-030",
+      "first_cohort_source_id": "SPX-030",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "Iucunda sane, concluding practical exhortation",
+          "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_12031904_iucunda-sane.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-031",
+      "first_cohort_source_id": "SPX-031",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q243"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "E supremi §13",
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "content_match": "PARTIAL",
+          "attribution_class": "AUTHORED_PAPAL_TEXT",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-032",
+      "first_cohort_source_id": "SPX-032",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q243"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "E supremi §13",
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-033",
+      "first_cohort_source_id": "SPX-033",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q418"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Haerent animo §§16–18",
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "content_match": "PARTIAL",
+          "attribution_class": "AUTHORED_PAPAL_TEXT_PRIESTS",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-034",
+      "first_cohort_source_id": "SPX-034",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q416"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Haerent animo §21",
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT_PRIESTS",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-035",
+      "first_cohort_source_id": "SPX-035",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q234"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Haerent animo §§22–24",
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT_PRIESTS",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-036",
+      "first_cohort_source_id": "SPX-036",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q359"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q548–549",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-037",
+      "first_cohort_source_id": "SPX-037",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q238",
+        "PX1912-Q239"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-038",
+      "first_cohort_source_id": "SPX-038",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "1905 longer Catechism Q917–925, especially Q925",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+          "content_match": "PARTIAL",
+          "attribution_class": "PAPALLY_APPROVED_CATECHISM",
+          "source_medium": "HISTORICAL_CATECHISM_ON_MUSEUM_SITE_NOT_MANUSCRIPT_AUTHORED"
+        }
+      ],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-039",
+      "first_cohort_source_id": "SPX-039",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q255"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "RELATED_OR_UNRESOLVED",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-040",
+      "first_cohort_source_id": "SPX-040",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q264"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "RELATED_OR_UNRESOLVED",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-041",
+      "first_cohort_source_id": "SPX-041",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q265"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-042",
+      "first_cohort_source_id": "SPX-042",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q264"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "RELATED_OR_UNRESOLVED",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-043",
+      "first_cohort_source_id": "SPX-043",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q240",
+        "PX1912-Q241",
+        "PX1912-Q242"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "Salzano Q300–301",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "content_match": "DIRECT",
+          "attribution_class": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+          "source_medium": "EDITORIAL_TRANSCRIPTION_OF_REPORTED_AUTOGRAPH"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-044",
+      "first_cohort_source_id": "SPX-044",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q406"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [
+        "PX1912-Q409-Q411_POST_1929_ANACHRONISM_SCOPE_MUST_BE_CHECKED"
+      ],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-045",
+      "first_cohort_source_id": "SPX-045",
+      "short_digital_review_classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "short_candidate_qids": [],
+      "additional_source_anchors": [
+        {
+          "locator": "Ad diem illum §21",
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+          "content_match": "DIRECT",
+          "attribution_class": "AUTHORED_PAPAL_TEXT",
+          "source_medium": "VATICAN_OFFICIAL_WEB_TEXT"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-046",
+      "first_cohort_source_id": "SPX-046",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q264",
+        "PX1912-Q265"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "RELATED_OR_UNRESOLVED",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-047",
+      "first_cohort_source_id": "SPX-047",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q043",
+        "PX1912-Q046",
+        "PX1912-Q304"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-048",
+      "first_cohort_source_id": "SPX-048",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q038",
+        "PX1912-Q039",
+        "PX1912-Q040",
+        "PX1912-Q048"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-049",
+      "first_cohort_source_id": "SPX-049",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q078",
+        "PX1912-Q079"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-050",
+      "first_cohort_source_id": "SPX-050",
+      "short_digital_review_classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q090",
+        "PX1912-Q091",
+        "PX1912-Q092"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "RELATED_OR_UNRESOLVED",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-051",
+      "first_cohort_source_id": "SPX-051",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235",
+        "PX1912-Q236"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-052",
+      "first_cohort_source_id": "SPX-052",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q105",
+        "PX1912-Q106"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-053",
+      "first_cohort_source_id": "SPX-053",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q107",
+        "PX1912-Q108",
+        "PX1912-Q109",
+        "PX1912-Q110",
+        "PX1912-Q111"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-054",
+      "first_cohort_source_id": "SPX-054",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q112",
+        "PX1912-Q113",
+        "PX1912-Q114"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-055",
+      "first_cohort_source_id": "SPX-055",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q116"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-056",
+      "first_cohort_source_id": "SPX-056",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q132"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-057",
+      "first_cohort_source_id": "SPX-057",
+      "short_digital_review_classification": "MISMATCHED_DOCTRINAL_DISTINCTION",
+      "short_candidate_qids": [
+        "PX1912-Q269",
+        "PX1912-Q270",
+        "PX1912-Q271"
+      ],
+      "additional_source_anchors": [
+        {
+          "locator": "1905 longer Catechism Q527–533",
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "content_match": "DIRECT",
+          "attribution_class": "PAPALLY_APPROVED_CATECHISM",
+          "source_medium": "HISTORICAL_CATECHISM_ON_MUSEUM_SITE_NOT_MANUSCRIPT_AUTHORED"
+        }
+      ],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [
+        "PX1912-Q269_Q271_FALSE_MATCH_REJECTED_USE_PX1905-Q527_Q533"
+      ],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-058",
+      "first_cohort_source_id": "SPX-058",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q267",
+        "PX1912-Q268"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-059",
+      "first_cohort_source_id": "SPX-059",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q397"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-060",
+      "first_cohort_source_id": "SPX-060",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q396"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-061",
+      "first_cohort_source_id": "SPX-061",
+      "short_digital_review_classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q097",
+        "PX1912-Q098"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "PARTIAL_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-062",
+      "first_cohort_source_id": "SPX-062",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q157",
+        "PX1912-Q158"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-063",
+      "first_cohort_source_id": "SPX-063",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q014",
+        "PX1912-Q159"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    },
+    {
+      "id": "SPX-064",
+      "first_cohort_source_id": "SPX-064",
+      "short_digital_review_classification": "DIRECT_CATECHISM_QUESTION",
+      "short_candidate_qids": [
+        "PX1912-Q099",
+        "PX1912-Q101"
+      ],
+      "additional_source_anchors": [],
+      "evidence_tier": "DIRECT_PASSAGE_ANCHOR",
+      "edition_holds": [],
+      "semantically_deduplicated": false,
+      "complete_visitor_answer_certified": false,
+      "historical_first_person_voice_certified": false
+    }
+  ]
+}

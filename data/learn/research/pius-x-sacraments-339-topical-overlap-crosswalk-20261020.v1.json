@@ -1,0 +1,4693 @@
+{
+  "schema": "AO_SPX_1905_SACRAMENTS_TO_PILOT_SEMANTIC_CROSSWALK_V1",
+  "created": "2026-10-20",
+  "status": "EVIDENCE_LEVEL_CITATION_RANGE_INTERSECT_NOT_DEDUPLICATED",
+  "scope": {
+    "questionRange": [
+      517,
+      855
+    ],
+    "historicalSource": "1905 Catechismo maggiore Part IV",
+    "stagedBatchNumbers": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "earlierTopicalIndex": "data/learn/research/pius-x-batch2-production-index-20261019.v1.json",
+    "important": "Ranges cited by earlier conversations indicate candidate topical evidence overlap, NOT one-to-one duplicate intentions. 339 Q anchors are not 339 unique doctrines."
+  },
+  "summary": {
+    "historicalSourceQuestionTotal": 339,
+    "stagedWithFirstPassBilingualFamily": 339,
+    "distinctSourceNumberAnchors": 339,
+    "linkedEarlierTopicalConversationSeeds": 10,
+    "sourceQuestionsWithinBroadPilotCitationRanges": 103,
+    "questionsOutsideTheseSpecificPilotCitationRanges": 236,
+    "confirmedSemanticallyDuplicateIntents": 0,
+    "certifiedUniqueVisitorIntents": 0,
+    "sourceTextAndTranslationCertified": 0,
+    "runtimePublishedFromTheseDrafts": 0
+  },
+  "earlierTopicalLinks": [
+    {
+      "pilotConversationId": "SPX-001",
+      "title": {
+        "en": "Why is the Mass a sacrifice?",
+        "fr": "Pourquoi la messe est-elle un sacrifice ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q652–664",
+      "matchedQuestions": [
+        652,
+        653,
+        654,
+        655,
+        656,
+        657,
+        658,
+        659,
+        660,
+        661,
+        662,
+        663,
+        664
+      ],
+      "matchedFamilies": [
+        "SPX-1905-E-652",
+        "SPX-1905-E-653",
+        "SPX-1905-E-654",
+        "SPX-1905-E-655",
+        "SPX-1905-E-656",
+        "SPX-1905-E-657",
+        "SPX-1905-E-658",
+        "SPX-1905-E-659",
+        "SPX-1905-E-660",
+        "SPX-1905-E-661",
+        "SPX-1905-E-662",
+        "SPX-1905-E-663",
+        "SPX-1905-E-664"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-002",
+      "title": {
+        "en": "How should I pray and follow Mass?",
+        "fr": "Comment assister pieusement à la messe ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q665–671",
+      "matchedQuestions": [
+        665,
+        666,
+        667,
+        668,
+        669,
+        670,
+        671
+      ],
+      "matchedFamilies": [
+        "SPX-1905-E-665",
+        "SPX-1905-E-666",
+        "SPX-1905-P-667",
+        "SPX-1905-P-668",
+        "SPX-1905-P-669",
+        "SPX-1905-P-670",
+        "SPX-1905-P-671"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-003",
+      "title": {
+        "en": "May I pray the Rosary during Mass?",
+        "fr": "Le chapelet est-il permis pendant la messe ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q667–669",
+      "matchedQuestions": [
+        667,
+        668,
+        669
+      ],
+      "matchedFamilies": [
+        "SPX-1905-P-667",
+        "SPX-1905-P-668",
+        "SPX-1905-P-669"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-005",
+      "title": {
+        "en": "What happens at the Consecration?",
+        "fr": "Que se passe-t-il à la consécration ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q605–613",
+      "matchedQuestions": [
+        605,
+        606,
+        607,
+        608,
+        609,
+        610,
+        611,
+        612,
+        613
+      ],
+      "matchedFamilies": [
+        "SPX-1905-S-605",
+        "SPX-1905-S-606",
+        "SPX-1905-S-607",
+        "SPX-1905-S-608",
+        "SPX-1905-S-609",
+        "SPX-1905-S-610",
+        "SPX-1905-S-611",
+        "SPX-1905-S-612",
+        "SPX-1905-S-613"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-028",
+      "title": {
+        "en": "What graces and duties belong to Christian marriage?",
+        "fr": "Quels dons et quels devoirs comporte le mariage chrétien ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q830–841",
+      "matchedQuestions": [
+        830,
+        831,
+        832,
+        833,
+        834,
+        835,
+        836,
+        837,
+        838,
+        839,
+        840,
+        841
+      ],
+      "matchedFamilies": [
+        "SPX-1905-O-830",
+        "SPX-1905-O-831",
+        "SPX-1905-O-832",
+        "SPX-1905-O-833",
+        "SPX-1905-O-834",
+        "SPX-1905-O-835",
+        "SPX-1905-O-836",
+        "SPX-1905-M-837",
+        "SPX-1905-M-838",
+        "SPX-1905-M-839",
+        "SPX-1905-M-840",
+        "SPX-1905-M-841"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-044",
+      "title": {
+        "en": "Why is Christian marriage indissoluble?",
+        "fr": "Pourquoi le mariage chrétien est-il indissoluble ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q830–835 and Q851",
+      "matchedQuestions": [
+        830,
+        831,
+        832,
+        833,
+        834,
+        835,
+        851
+      ],
+      "matchedFamilies": [
+        "SPX-1905-O-830",
+        "SPX-1905-O-831",
+        "SPX-1905-O-832",
+        "SPX-1905-O-833",
+        "SPX-1905-O-834",
+        "SPX-1905-O-835",
+        "SPX-1905-M-851"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-058",
+      "title": {
+        "en": "Do the sacraments confer grace or merely symbolize it?",
+        "fr": "Les sacrements donnent-ils la grâce ou la représentent-ils seulement ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q519–549",
+      "matchedQuestions": [
+        519,
+        520,
+        521,
+        522,
+        523,
+        524,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        531,
+        532,
+        533,
+        534,
+        535,
+        536,
+        537,
+        538,
+        539,
+        540,
+        541,
+        542,
+        543,
+        544,
+        545,
+        546,
+        547,
+        548,
+        549
+      ],
+      "matchedFamilies": [
+        "SPX-1905-S-519",
+        "SPX-1905-S-520",
+        "SPX-1905-S-521",
+        "SPX-1905-S-522",
+        "SPX-1905-S-523",
+        "SPX-1905-S-524",
+        "SPX-1905-S-525",
+        "SPX-1905-S-526",
+        "SPX-1905-S-527",
+        "SPX-1905-S-528",
+        "SPX-1905-S-529",
+        "SPX-1905-S-530",
+        "SPX-1905-S-531",
+        "SPX-1905-S-532",
+        "SPX-1905-S-533",
+        "SPX-1905-S-534",
+        "SPX-1905-S-535",
+        "SPX-1905-S-536",
+        "SPX-1905-S-537",
+        "SPX-1905-S-538",
+        "SPX-1905-S-539",
+        "SPX-1905-S-540",
+        "SPX-1905-S-541",
+        "SPX-1905-S-542",
+        "SPX-1905-S-543",
+        "SPX-1905-S-544",
+        "SPX-1905-S-545",
+        "SPX-1905-S-546",
+        "SPX-1905-S-547",
+        "SPX-1905-S-548",
+        "SPX-1905-S-549"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-059",
+      "title": {
+        "en": "What happens through Holy Orders?",
+        "fr": "Que se passe-t-il dans le sacrement de l'ordre ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q814–822",
+      "matchedQuestions": [
+        814,
+        815,
+        816,
+        817,
+        818,
+        819,
+        820,
+        821,
+        822
+      ],
+      "matchedFamilies": [
+        "SPX-1905-S-814",
+        "SPX-1905-S-815",
+        "SPX-1905-S-816",
+        "SPX-1905-O-817",
+        "SPX-1905-O-818",
+        "SPX-1905-O-819",
+        "SPX-1905-O-820",
+        "SPX-1905-O-821",
+        "SPX-1905-O-822"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-060",
+      "title": {
+        "en": "Why receive Extreme Unction before death is imminent?",
+        "fr": "Pourquoi ne pas attendre la dernière minute pour recevoir l'extrême-onction ?"
+      },
+      "sourceLocus": "1905 Catechismo maggiore Q808–813",
+      "matchedQuestions": [
+        808,
+        809,
+        810,
+        811,
+        812,
+        813
+      ],
+      "matchedFamilies": [
+        "SPX-1905-S-808",
+        "SPX-1905-S-809",
+        "SPX-1905-S-810",
+        "SPX-1905-S-811",
+        "SPX-1905-S-812",
+        "SPX-1905-S-813"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    },
+    {
+      "pilotConversationId": "SPX-064",
+      "title": {
+        "en": "Why is Purgatory needed after forgiveness?",
+        "fr": "Pourquoi le purgatoire après le pardon des péchés ?"
+      },
+      "sourceLocus": "Salzano manuscript Q272–293; 1905 Catechismo maggiore Q776–790",
+      "matchedQuestions": [
+        776,
+        777,
+        778,
+        779,
+        780,
+        781,
+        782,
+        783,
+        784,
+        785,
+        786,
+        787,
+        788,
+        789,
+        790
+      ],
+      "matchedFamilies": [
+        "SPX-1905-P-776",
+        "SPX-1905-P-777",
+        "SPX-1905-P-778",
+        "SPX-1905-P-779",
+        "SPX-1905-P-780",
+        "SPX-1905-P-781",
+        "SPX-1905-P-782",
+        "SPX-1905-P-783",
+        "SPX-1905-P-784",
+        "SPX-1905-P-785",
+        "SPX-1905-P-786",
+        "SPX-1905-P-787",
+        "SPX-1905-P-788",
+        "SPX-1905-P-789",
+        "SPX-1905-P-790"
+      ],
+      "matchStatus": "CITATION_RANGE_INTERSECT_NOT_SEMANTIC_DUPLICATE"
+    }
+  ],
+  "sourceQuestionCrosswalk": [
+    {
+      "questionId": "PX1905-Q517",
+      "number": 517,
+      "conversationFamilyId": "SPX-1905-S-517",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q518",
+      "number": 518,
+      "conversationFamilyId": "SPX-1905-S-518",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q519",
+      "number": 519,
+      "conversationFamilyId": "SPX-1905-S-519",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q520",
+      "number": 520,
+      "conversationFamilyId": "SPX-1905-S-520",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q521",
+      "number": 521,
+      "conversationFamilyId": "SPX-1905-S-521",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q522",
+      "number": 522,
+      "conversationFamilyId": "SPX-1905-S-522",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q523",
+      "number": 523,
+      "conversationFamilyId": "SPX-1905-S-523",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q524",
+      "number": 524,
+      "conversationFamilyId": "SPX-1905-S-524",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q525",
+      "number": 525,
+      "conversationFamilyId": "SPX-1905-S-525",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q526",
+      "number": 526,
+      "conversationFamilyId": "SPX-1905-S-526",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q527",
+      "number": 527,
+      "conversationFamilyId": "SPX-1905-S-527",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q528",
+      "number": 528,
+      "conversationFamilyId": "SPX-1905-S-528",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q529",
+      "number": 529,
+      "conversationFamilyId": "SPX-1905-S-529",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q530",
+      "number": 530,
+      "conversationFamilyId": "SPX-1905-S-530",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q531",
+      "number": 531,
+      "conversationFamilyId": "SPX-1905-S-531",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q532",
+      "number": 532,
+      "conversationFamilyId": "SPX-1905-S-532",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q533",
+      "number": 533,
+      "conversationFamilyId": "SPX-1905-S-533",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q534",
+      "number": 534,
+      "conversationFamilyId": "SPX-1905-S-534",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q535",
+      "number": 535,
+      "conversationFamilyId": "SPX-1905-S-535",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q536",
+      "number": 536,
+      "conversationFamilyId": "SPX-1905-S-536",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q537",
+      "number": 537,
+      "conversationFamilyId": "SPX-1905-S-537",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q538",
+      "number": 538,
+      "conversationFamilyId": "SPX-1905-S-538",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q539",
+      "number": 539,
+      "conversationFamilyId": "SPX-1905-S-539",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q540",
+      "number": 540,
+      "conversationFamilyId": "SPX-1905-S-540",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q541",
+      "number": 541,
+      "conversationFamilyId": "SPX-1905-S-541",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q542",
+      "number": 542,
+      "conversationFamilyId": "SPX-1905-S-542",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q543",
+      "number": 543,
+      "conversationFamilyId": "SPX-1905-S-543",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q544",
+      "number": 544,
+      "conversationFamilyId": "SPX-1905-S-544",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q545",
+      "number": 545,
+      "conversationFamilyId": "SPX-1905-S-545",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q546",
+      "number": 546,
+      "conversationFamilyId": "SPX-1905-S-546",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q547",
+      "number": 547,
+      "conversationFamilyId": "SPX-1905-S-547",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q548",
+      "number": 548,
+      "conversationFamilyId": "SPX-1905-S-548",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q549",
+      "number": 549,
+      "conversationFamilyId": "SPX-1905-S-549",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-058"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q550",
+      "number": 550,
+      "conversationFamilyId": "SPX-1905-S-550",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q551",
+      "number": 551,
+      "conversationFamilyId": "SPX-1905-S-551",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q552",
+      "number": 552,
+      "conversationFamilyId": "SPX-1905-S-552",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q553",
+      "number": 553,
+      "conversationFamilyId": "SPX-1905-S-553",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q554",
+      "number": 554,
+      "conversationFamilyId": "SPX-1905-S-554",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q555",
+      "number": 555,
+      "conversationFamilyId": "SPX-1905-S-555",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q556",
+      "number": 556,
+      "conversationFamilyId": "SPX-1905-S-556",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q557",
+      "number": 557,
+      "conversationFamilyId": "SPX-1905-S-557",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q558",
+      "number": 558,
+      "conversationFamilyId": "SPX-1905-S-558",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q559",
+      "number": 559,
+      "conversationFamilyId": "SPX-1905-S-559",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q560",
+      "number": 560,
+      "conversationFamilyId": "SPX-1905-S-560",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q561",
+      "number": 561,
+      "conversationFamilyId": "SPX-1905-S-561",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q562",
+      "number": 562,
+      "conversationFamilyId": "SPX-1905-S-562",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q563",
+      "number": 563,
+      "conversationFamilyId": "SPX-1905-S-563",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q564",
+      "number": 564,
+      "conversationFamilyId": "SPX-1905-S-564",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q565",
+      "number": 565,
+      "conversationFamilyId": "SPX-1905-S-565",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q566",
+      "number": 566,
+      "conversationFamilyId": "SPX-1905-S-566",
+      "batch": 8,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q567",
+      "number": 567,
+      "conversationFamilyId": "SPX-1905-S-567",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q568",
+      "number": 568,
+      "conversationFamilyId": "SPX-1905-S-568",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q569",
+      "number": 569,
+      "conversationFamilyId": "SPX-1905-S-569",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q570",
+      "number": 570,
+      "conversationFamilyId": "SPX-1905-S-570",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q571",
+      "number": 571,
+      "conversationFamilyId": "SPX-1905-S-571",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q572",
+      "number": 572,
+      "conversationFamilyId": "SPX-1905-S-572",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q573",
+      "number": 573,
+      "conversationFamilyId": "SPX-1905-S-573",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q574",
+      "number": 574,
+      "conversationFamilyId": "SPX-1905-S-574",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q575",
+      "number": 575,
+      "conversationFamilyId": "SPX-1905-S-575",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q576",
+      "number": 576,
+      "conversationFamilyId": "SPX-1905-S-576",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q577",
+      "number": 577,
+      "conversationFamilyId": "SPX-1905-S-577",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q578",
+      "number": 578,
+      "conversationFamilyId": "SPX-1905-S-578",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q579",
+      "number": 579,
+      "conversationFamilyId": "SPX-1905-S-579",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q580",
+      "number": 580,
+      "conversationFamilyId": "SPX-1905-S-580",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q581",
+      "number": 581,
+      "conversationFamilyId": "SPX-1905-S-581",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q582",
+      "number": 582,
+      "conversationFamilyId": "SPX-1905-S-582",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q583",
+      "number": 583,
+      "conversationFamilyId": "SPX-1905-S-583",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q584",
+      "number": 584,
+      "conversationFamilyId": "SPX-1905-S-584",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q585",
+      "number": 585,
+      "conversationFamilyId": "SPX-1905-S-585",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q586",
+      "number": 586,
+      "conversationFamilyId": "SPX-1905-S-586",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q587",
+      "number": 587,
+      "conversationFamilyId": "SPX-1905-S-587",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q588",
+      "number": 588,
+      "conversationFamilyId": "SPX-1905-S-588",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q589",
+      "number": 589,
+      "conversationFamilyId": "SPX-1905-S-589",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q590",
+      "number": 590,
+      "conversationFamilyId": "SPX-1905-S-590",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q591",
+      "number": 591,
+      "conversationFamilyId": "SPX-1905-S-591",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q592",
+      "number": 592,
+      "conversationFamilyId": "SPX-1905-S-592",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q593",
+      "number": 593,
+      "conversationFamilyId": "SPX-1905-S-593",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q594",
+      "number": 594,
+      "conversationFamilyId": "SPX-1905-S-594",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q595",
+      "number": 595,
+      "conversationFamilyId": "SPX-1905-S-595",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q596",
+      "number": 596,
+      "conversationFamilyId": "SPX-1905-S-596",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q597",
+      "number": 597,
+      "conversationFamilyId": "SPX-1905-S-597",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q598",
+      "number": 598,
+      "conversationFamilyId": "SPX-1905-S-598",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q599",
+      "number": 599,
+      "conversationFamilyId": "SPX-1905-S-599",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q600",
+      "number": 600,
+      "conversationFamilyId": "SPX-1905-S-600",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q601",
+      "number": 601,
+      "conversationFamilyId": "SPX-1905-S-601",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q602",
+      "number": 602,
+      "conversationFamilyId": "SPX-1905-S-602",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q603",
+      "number": 603,
+      "conversationFamilyId": "SPX-1905-S-603",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q604",
+      "number": 604,
+      "conversationFamilyId": "SPX-1905-S-604",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q605",
+      "number": 605,
+      "conversationFamilyId": "SPX-1905-S-605",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q606",
+      "number": 606,
+      "conversationFamilyId": "SPX-1905-S-606",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q607",
+      "number": 607,
+      "conversationFamilyId": "SPX-1905-S-607",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q608",
+      "number": 608,
+      "conversationFamilyId": "SPX-1905-S-608",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q609",
+      "number": 609,
+      "conversationFamilyId": "SPX-1905-S-609",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q610",
+      "number": 610,
+      "conversationFamilyId": "SPX-1905-S-610",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q611",
+      "number": 611,
+      "conversationFamilyId": "SPX-1905-S-611",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q612",
+      "number": 612,
+      "conversationFamilyId": "SPX-1905-S-612",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q613",
+      "number": 613,
+      "conversationFamilyId": "SPX-1905-S-613",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-005"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q614",
+      "number": 614,
+      "conversationFamilyId": "SPX-1905-S-614",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q615",
+      "number": 615,
+      "conversationFamilyId": "SPX-1905-S-615",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q616",
+      "number": 616,
+      "conversationFamilyId": "SPX-1905-S-616",
+      "batch": 9,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q617",
+      "number": 617,
+      "conversationFamilyId": "SPX-1905-E-617",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q618",
+      "number": 618,
+      "conversationFamilyId": "SPX-1905-E-618",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q619",
+      "number": 619,
+      "conversationFamilyId": "SPX-1905-E-619",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q620",
+      "number": 620,
+      "conversationFamilyId": "SPX-1905-E-620",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q621",
+      "number": 621,
+      "conversationFamilyId": "SPX-1905-E-621",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q622",
+      "number": 622,
+      "conversationFamilyId": "SPX-1905-E-622",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q623",
+      "number": 623,
+      "conversationFamilyId": "SPX-1905-E-623",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q624",
+      "number": 624,
+      "conversationFamilyId": "SPX-1905-E-624",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q625",
+      "number": 625,
+      "conversationFamilyId": "SPX-1905-E-625",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q626",
+      "number": 626,
+      "conversationFamilyId": "SPX-1905-E-626",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q627",
+      "number": 627,
+      "conversationFamilyId": "SPX-1905-E-627",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q628",
+      "number": 628,
+      "conversationFamilyId": "SPX-1905-E-628",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q629",
+      "number": 629,
+      "conversationFamilyId": "SPX-1905-E-629",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q630",
+      "number": 630,
+      "conversationFamilyId": "SPX-1905-E-630",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q631",
+      "number": 631,
+      "conversationFamilyId": "SPX-1905-E-631",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q632",
+      "number": 632,
+      "conversationFamilyId": "SPX-1905-E-632",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q633",
+      "number": 633,
+      "conversationFamilyId": "SPX-1905-E-633",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q634",
+      "number": 634,
+      "conversationFamilyId": "SPX-1905-E-634",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q635",
+      "number": 635,
+      "conversationFamilyId": "SPX-1905-E-635",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q636",
+      "number": 636,
+      "conversationFamilyId": "SPX-1905-E-636",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q637",
+      "number": 637,
+      "conversationFamilyId": "SPX-1905-E-637",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q638",
+      "number": 638,
+      "conversationFamilyId": "SPX-1905-E-638",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q639",
+      "number": 639,
+      "conversationFamilyId": "SPX-1905-E-639",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q640",
+      "number": 640,
+      "conversationFamilyId": "SPX-1905-E-640",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q641",
+      "number": 641,
+      "conversationFamilyId": "SPX-1905-E-641",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q642",
+      "number": 642,
+      "conversationFamilyId": "SPX-1905-E-642",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q643",
+      "number": 643,
+      "conversationFamilyId": "SPX-1905-E-643",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q644",
+      "number": 644,
+      "conversationFamilyId": "SPX-1905-E-644",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q645",
+      "number": 645,
+      "conversationFamilyId": "SPX-1905-E-645",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q646",
+      "number": 646,
+      "conversationFamilyId": "SPX-1905-E-646",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q647",
+      "number": 647,
+      "conversationFamilyId": "SPX-1905-E-647",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q648",
+      "number": 648,
+      "conversationFamilyId": "SPX-1905-E-648",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q649",
+      "number": 649,
+      "conversationFamilyId": "SPX-1905-E-649",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q650",
+      "number": 650,
+      "conversationFamilyId": "SPX-1905-E-650",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q651",
+      "number": 651,
+      "conversationFamilyId": "SPX-1905-E-651",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q652",
+      "number": 652,
+      "conversationFamilyId": "SPX-1905-E-652",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q653",
+      "number": 653,
+      "conversationFamilyId": "SPX-1905-E-653",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q654",
+      "number": 654,
+      "conversationFamilyId": "SPX-1905-E-654",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q655",
+      "number": 655,
+      "conversationFamilyId": "SPX-1905-E-655",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q656",
+      "number": 656,
+      "conversationFamilyId": "SPX-1905-E-656",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q657",
+      "number": 657,
+      "conversationFamilyId": "SPX-1905-E-657",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q658",
+      "number": 658,
+      "conversationFamilyId": "SPX-1905-E-658",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q659",
+      "number": 659,
+      "conversationFamilyId": "SPX-1905-E-659",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q660",
+      "number": 660,
+      "conversationFamilyId": "SPX-1905-E-660",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q661",
+      "number": 661,
+      "conversationFamilyId": "SPX-1905-E-661",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q662",
+      "number": 662,
+      "conversationFamilyId": "SPX-1905-E-662",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q663",
+      "number": 663,
+      "conversationFamilyId": "SPX-1905-E-663",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q664",
+      "number": 664,
+      "conversationFamilyId": "SPX-1905-E-664",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-001"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q665",
+      "number": 665,
+      "conversationFamilyId": "SPX-1905-E-665",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-002"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q666",
+      "number": 666,
+      "conversationFamilyId": "SPX-1905-E-666",
+      "batch": 10,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-002"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q667",
+      "number": 667,
+      "conversationFamilyId": "SPX-1905-P-667",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-002",
+        "SPX-003"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q668",
+      "number": 668,
+      "conversationFamilyId": "SPX-1905-P-668",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-002",
+        "SPX-003"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q669",
+      "number": 669,
+      "conversationFamilyId": "SPX-1905-P-669",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-002",
+        "SPX-003"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q670",
+      "number": 670,
+      "conversationFamilyId": "SPX-1905-P-670",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-002"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q671",
+      "number": 671,
+      "conversationFamilyId": "SPX-1905-P-671",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-002"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q672",
+      "number": 672,
+      "conversationFamilyId": "SPX-1905-P-672",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q673",
+      "number": 673,
+      "conversationFamilyId": "SPX-1905-P-673",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q674",
+      "number": 674,
+      "conversationFamilyId": "SPX-1905-P-674",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q675",
+      "number": 675,
+      "conversationFamilyId": "SPX-1905-P-675",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q676",
+      "number": 676,
+      "conversationFamilyId": "SPX-1905-P-676",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q677",
+      "number": 677,
+      "conversationFamilyId": "SPX-1905-P-677",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q678",
+      "number": 678,
+      "conversationFamilyId": "SPX-1905-P-678",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q679",
+      "number": 679,
+      "conversationFamilyId": "SPX-1905-P-679",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q680",
+      "number": 680,
+      "conversationFamilyId": "SPX-1905-P-680",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q681",
+      "number": 681,
+      "conversationFamilyId": "SPX-1905-P-681",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q682",
+      "number": 682,
+      "conversationFamilyId": "SPX-1905-P-682",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q683",
+      "number": 683,
+      "conversationFamilyId": "SPX-1905-P-683",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q684",
+      "number": 684,
+      "conversationFamilyId": "SPX-1905-P-684",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q685",
+      "number": 685,
+      "conversationFamilyId": "SPX-1905-P-685",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q686",
+      "number": 686,
+      "conversationFamilyId": "SPX-1905-P-686",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q687",
+      "number": 687,
+      "conversationFamilyId": "SPX-1905-P-687",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q688",
+      "number": 688,
+      "conversationFamilyId": "SPX-1905-P-688",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q689",
+      "number": 689,
+      "conversationFamilyId": "SPX-1905-P-689",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q690",
+      "number": 690,
+      "conversationFamilyId": "SPX-1905-P-690",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q691",
+      "number": 691,
+      "conversationFamilyId": "SPX-1905-P-691",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q692",
+      "number": 692,
+      "conversationFamilyId": "SPX-1905-P-692",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q693",
+      "number": 693,
+      "conversationFamilyId": "SPX-1905-P-693",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q694",
+      "number": 694,
+      "conversationFamilyId": "SPX-1905-P-694",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q695",
+      "number": 695,
+      "conversationFamilyId": "SPX-1905-P-695",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q696",
+      "number": 696,
+      "conversationFamilyId": "SPX-1905-P-696",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q697",
+      "number": 697,
+      "conversationFamilyId": "SPX-1905-P-697",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q698",
+      "number": 698,
+      "conversationFamilyId": "SPX-1905-P-698",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q699",
+      "number": 699,
+      "conversationFamilyId": "SPX-1905-P-699",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q700",
+      "number": 700,
+      "conversationFamilyId": "SPX-1905-P-700",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q701",
+      "number": 701,
+      "conversationFamilyId": "SPX-1905-P-701",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q702",
+      "number": 702,
+      "conversationFamilyId": "SPX-1905-P-702",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q703",
+      "number": 703,
+      "conversationFamilyId": "SPX-1905-P-703",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q704",
+      "number": 704,
+      "conversationFamilyId": "SPX-1905-P-704",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q705",
+      "number": 705,
+      "conversationFamilyId": "SPX-1905-P-705",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q706",
+      "number": 706,
+      "conversationFamilyId": "SPX-1905-P-706",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q707",
+      "number": 707,
+      "conversationFamilyId": "SPX-1905-P-707",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q708",
+      "number": 708,
+      "conversationFamilyId": "SPX-1905-P-708",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q709",
+      "number": 709,
+      "conversationFamilyId": "SPX-1905-P-709",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q710",
+      "number": 710,
+      "conversationFamilyId": "SPX-1905-P-710",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q711",
+      "number": 711,
+      "conversationFamilyId": "SPX-1905-P-711",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q712",
+      "number": 712,
+      "conversationFamilyId": "SPX-1905-P-712",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q713",
+      "number": 713,
+      "conversationFamilyId": "SPX-1905-P-713",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q714",
+      "number": 714,
+      "conversationFamilyId": "SPX-1905-P-714",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q715",
+      "number": 715,
+      "conversationFamilyId": "SPX-1905-P-715",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q716",
+      "number": 716,
+      "conversationFamilyId": "SPX-1905-P-716",
+      "batch": 11,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q717",
+      "number": 717,
+      "conversationFamilyId": "SPX-1905-P-717",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q718",
+      "number": 718,
+      "conversationFamilyId": "SPX-1905-P-718",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q719",
+      "number": 719,
+      "conversationFamilyId": "SPX-1905-P-719",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q720",
+      "number": 720,
+      "conversationFamilyId": "SPX-1905-P-720",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q721",
+      "number": 721,
+      "conversationFamilyId": "SPX-1905-P-721",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q722",
+      "number": 722,
+      "conversationFamilyId": "SPX-1905-P-722",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q723",
+      "number": 723,
+      "conversationFamilyId": "SPX-1905-P-723",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q724",
+      "number": 724,
+      "conversationFamilyId": "SPX-1905-P-724",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q725",
+      "number": 725,
+      "conversationFamilyId": "SPX-1905-P-725",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q726",
+      "number": 726,
+      "conversationFamilyId": "SPX-1905-P-726",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q727",
+      "number": 727,
+      "conversationFamilyId": "SPX-1905-P-727",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q728",
+      "number": 728,
+      "conversationFamilyId": "SPX-1905-P-728",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q729",
+      "number": 729,
+      "conversationFamilyId": "SPX-1905-P-729",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q730",
+      "number": 730,
+      "conversationFamilyId": "SPX-1905-P-730",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q731",
+      "number": 731,
+      "conversationFamilyId": "SPX-1905-P-731",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q732",
+      "number": 732,
+      "conversationFamilyId": "SPX-1905-P-732",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q733",
+      "number": 733,
+      "conversationFamilyId": "SPX-1905-P-733",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q734",
+      "number": 734,
+      "conversationFamilyId": "SPX-1905-P-734",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q735",
+      "number": 735,
+      "conversationFamilyId": "SPX-1905-P-735",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q736",
+      "number": 736,
+      "conversationFamilyId": "SPX-1905-P-736",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q737",
+      "number": 737,
+      "conversationFamilyId": "SPX-1905-P-737",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q738",
+      "number": 738,
+      "conversationFamilyId": "SPX-1905-P-738",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q739",
+      "number": 739,
+      "conversationFamilyId": "SPX-1905-P-739",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q740",
+      "number": 740,
+      "conversationFamilyId": "SPX-1905-P-740",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q741",
+      "number": 741,
+      "conversationFamilyId": "SPX-1905-P-741",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q742",
+      "number": 742,
+      "conversationFamilyId": "SPX-1905-P-742",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q743",
+      "number": 743,
+      "conversationFamilyId": "SPX-1905-P-743",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q744",
+      "number": 744,
+      "conversationFamilyId": "SPX-1905-P-744",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q745",
+      "number": 745,
+      "conversationFamilyId": "SPX-1905-P-745",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q746",
+      "number": 746,
+      "conversationFamilyId": "SPX-1905-P-746",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q747",
+      "number": 747,
+      "conversationFamilyId": "SPX-1905-P-747",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q748",
+      "number": 748,
+      "conversationFamilyId": "SPX-1905-P-748",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q749",
+      "number": 749,
+      "conversationFamilyId": "SPX-1905-P-749",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q750",
+      "number": 750,
+      "conversationFamilyId": "SPX-1905-P-750",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q751",
+      "number": 751,
+      "conversationFamilyId": "SPX-1905-P-751",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q752",
+      "number": 752,
+      "conversationFamilyId": "SPX-1905-P-752",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q753",
+      "number": 753,
+      "conversationFamilyId": "SPX-1905-P-753",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q754",
+      "number": 754,
+      "conversationFamilyId": "SPX-1905-P-754",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q755",
+      "number": 755,
+      "conversationFamilyId": "SPX-1905-P-755",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q756",
+      "number": 756,
+      "conversationFamilyId": "SPX-1905-P-756",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q757",
+      "number": 757,
+      "conversationFamilyId": "SPX-1905-P-757",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q758",
+      "number": 758,
+      "conversationFamilyId": "SPX-1905-P-758",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q759",
+      "number": 759,
+      "conversationFamilyId": "SPX-1905-P-759",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q760",
+      "number": 760,
+      "conversationFamilyId": "SPX-1905-P-760",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q761",
+      "number": 761,
+      "conversationFamilyId": "SPX-1905-P-761",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q762",
+      "number": 762,
+      "conversationFamilyId": "SPX-1905-P-762",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q763",
+      "number": 763,
+      "conversationFamilyId": "SPX-1905-P-763",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q764",
+      "number": 764,
+      "conversationFamilyId": "SPX-1905-P-764",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q765",
+      "number": 765,
+      "conversationFamilyId": "SPX-1905-P-765",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q766",
+      "number": 766,
+      "conversationFamilyId": "SPX-1905-P-766",
+      "batch": 12,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q767",
+      "number": 767,
+      "conversationFamilyId": "SPX-1905-P-767",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q768",
+      "number": 768,
+      "conversationFamilyId": "SPX-1905-P-768",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q769",
+      "number": 769,
+      "conversationFamilyId": "SPX-1905-P-769",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q770",
+      "number": 770,
+      "conversationFamilyId": "SPX-1905-P-770",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q771",
+      "number": 771,
+      "conversationFamilyId": "SPX-1905-P-771",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q772",
+      "number": 772,
+      "conversationFamilyId": "SPX-1905-P-772",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q773",
+      "number": 773,
+      "conversationFamilyId": "SPX-1905-P-773",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q774",
+      "number": 774,
+      "conversationFamilyId": "SPX-1905-P-774",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q775",
+      "number": 775,
+      "conversationFamilyId": "SPX-1905-P-775",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q776",
+      "number": 776,
+      "conversationFamilyId": "SPX-1905-P-776",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q777",
+      "number": 777,
+      "conversationFamilyId": "SPX-1905-P-777",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q778",
+      "number": 778,
+      "conversationFamilyId": "SPX-1905-P-778",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q779",
+      "number": 779,
+      "conversationFamilyId": "SPX-1905-P-779",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q780",
+      "number": 780,
+      "conversationFamilyId": "SPX-1905-P-780",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q781",
+      "number": 781,
+      "conversationFamilyId": "SPX-1905-P-781",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q782",
+      "number": 782,
+      "conversationFamilyId": "SPX-1905-P-782",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q783",
+      "number": 783,
+      "conversationFamilyId": "SPX-1905-P-783",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q784",
+      "number": 784,
+      "conversationFamilyId": "SPX-1905-P-784",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q785",
+      "number": 785,
+      "conversationFamilyId": "SPX-1905-P-785",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q786",
+      "number": 786,
+      "conversationFamilyId": "SPX-1905-P-786",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q787",
+      "number": 787,
+      "conversationFamilyId": "SPX-1905-P-787",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q788",
+      "number": 788,
+      "conversationFamilyId": "SPX-1905-P-788",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q789",
+      "number": 789,
+      "conversationFamilyId": "SPX-1905-P-789",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q790",
+      "number": 790,
+      "conversationFamilyId": "SPX-1905-P-790",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-064"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q791",
+      "number": 791,
+      "conversationFamilyId": "SPX-1905-P-791",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q792",
+      "number": 792,
+      "conversationFamilyId": "SPX-1905-P-792",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q793",
+      "number": 793,
+      "conversationFamilyId": "SPX-1905-P-793",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q794",
+      "number": 794,
+      "conversationFamilyId": "SPX-1905-P-794",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q795",
+      "number": 795,
+      "conversationFamilyId": "SPX-1905-P-795",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q796",
+      "number": 796,
+      "conversationFamilyId": "SPX-1905-P-796",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q797",
+      "number": 797,
+      "conversationFamilyId": "SPX-1905-I-797",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q798",
+      "number": 798,
+      "conversationFamilyId": "SPX-1905-I-798",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q799",
+      "number": 799,
+      "conversationFamilyId": "SPX-1905-I-799",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q800",
+      "number": 800,
+      "conversationFamilyId": "SPX-1905-I-800",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q801",
+      "number": 801,
+      "conversationFamilyId": "SPX-1905-I-801",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q802",
+      "number": 802,
+      "conversationFamilyId": "SPX-1905-I-802",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q803",
+      "number": 803,
+      "conversationFamilyId": "SPX-1905-I-803",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q804",
+      "number": 804,
+      "conversationFamilyId": "SPX-1905-I-804",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q805",
+      "number": 805,
+      "conversationFamilyId": "SPX-1905-I-805",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q806",
+      "number": 806,
+      "conversationFamilyId": "SPX-1905-I-806",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q807",
+      "number": 807,
+      "conversationFamilyId": "SPX-1905-S-807",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q808",
+      "number": 808,
+      "conversationFamilyId": "SPX-1905-S-808",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-060"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q809",
+      "number": 809,
+      "conversationFamilyId": "SPX-1905-S-809",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-060"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q810",
+      "number": 810,
+      "conversationFamilyId": "SPX-1905-S-810",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-060"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q811",
+      "number": 811,
+      "conversationFamilyId": "SPX-1905-S-811",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-060"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q812",
+      "number": 812,
+      "conversationFamilyId": "SPX-1905-S-812",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-060"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q813",
+      "number": 813,
+      "conversationFamilyId": "SPX-1905-S-813",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-060"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q814",
+      "number": 814,
+      "conversationFamilyId": "SPX-1905-S-814",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q815",
+      "number": 815,
+      "conversationFamilyId": "SPX-1905-S-815",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q816",
+      "number": 816,
+      "conversationFamilyId": "SPX-1905-S-816",
+      "batch": 13,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q817",
+      "number": 817,
+      "conversationFamilyId": "SPX-1905-O-817",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q818",
+      "number": 818,
+      "conversationFamilyId": "SPX-1905-O-818",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q819",
+      "number": 819,
+      "conversationFamilyId": "SPX-1905-O-819",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q820",
+      "number": 820,
+      "conversationFamilyId": "SPX-1905-O-820",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q821",
+      "number": 821,
+      "conversationFamilyId": "SPX-1905-O-821",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q822",
+      "number": 822,
+      "conversationFamilyId": "SPX-1905-O-822",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-059"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q823",
+      "number": 823,
+      "conversationFamilyId": "SPX-1905-O-823",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q824",
+      "number": 824,
+      "conversationFamilyId": "SPX-1905-O-824",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q825",
+      "number": 825,
+      "conversationFamilyId": "SPX-1905-O-825",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q826",
+      "number": 826,
+      "conversationFamilyId": "SPX-1905-O-826",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q827",
+      "number": 827,
+      "conversationFamilyId": "SPX-1905-O-827",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q828",
+      "number": 828,
+      "conversationFamilyId": "SPX-1905-O-828",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q829",
+      "number": 829,
+      "conversationFamilyId": "SPX-1905-O-829",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q830",
+      "number": 830,
+      "conversationFamilyId": "SPX-1905-O-830",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028",
+        "SPX-044"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q831",
+      "number": 831,
+      "conversationFamilyId": "SPX-1905-O-831",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028",
+        "SPX-044"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q832",
+      "number": 832,
+      "conversationFamilyId": "SPX-1905-O-832",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028",
+        "SPX-044"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q833",
+      "number": 833,
+      "conversationFamilyId": "SPX-1905-O-833",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028",
+        "SPX-044"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q834",
+      "number": 834,
+      "conversationFamilyId": "SPX-1905-O-834",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028",
+        "SPX-044"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q835",
+      "number": 835,
+      "conversationFamilyId": "SPX-1905-O-835",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028",
+        "SPX-044"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q836",
+      "number": 836,
+      "conversationFamilyId": "SPX-1905-O-836",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q837",
+      "number": 837,
+      "conversationFamilyId": "SPX-1905-M-837",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q838",
+      "number": 838,
+      "conversationFamilyId": "SPX-1905-M-838",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q839",
+      "number": 839,
+      "conversationFamilyId": "SPX-1905-M-839",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q840",
+      "number": 840,
+      "conversationFamilyId": "SPX-1905-M-840",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q841",
+      "number": 841,
+      "conversationFamilyId": "SPX-1905-M-841",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-028"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q842",
+      "number": 842,
+      "conversationFamilyId": "SPX-1905-M-842",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q843",
+      "number": 843,
+      "conversationFamilyId": "SPX-1905-M-843",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q844",
+      "number": 844,
+      "conversationFamilyId": "SPX-1905-M-844",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q845",
+      "number": 845,
+      "conversationFamilyId": "SPX-1905-M-845",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q846",
+      "number": 846,
+      "conversationFamilyId": "SPX-1905-M-846",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q847",
+      "number": 847,
+      "conversationFamilyId": "SPX-1905-M-847",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q848",
+      "number": 848,
+      "conversationFamilyId": "SPX-1905-M-848",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q849",
+      "number": 849,
+      "conversationFamilyId": "SPX-1905-M-849",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q850",
+      "number": 850,
+      "conversationFamilyId": "SPX-1905-M-850",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q851",
+      "number": 851,
+      "conversationFamilyId": "SPX-1905-M-851",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [
+        "SPX-044"
+      ],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q852",
+      "number": 852,
+      "conversationFamilyId": "SPX-1905-M-852",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q853",
+      "number": 853,
+      "conversationFamilyId": "SPX-1905-M-853",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q854",
+      "number": 854,
+      "conversationFamilyId": "SPX-1905-M-854",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    },
+    {
+      "questionId": "PX1905-Q855",
+      "number": 855,
+      "conversationFamilyId": "SPX-1905-M-855",
+      "batch": 14,
+      "linkedEarlierTopicalSeeds": [],
+      "sourceIdentityCheck": "UNIQUE_Q_NUMBER_WITHIN_BATCHES8_TO14",
+      "semanticOverlapStatus": "NOT_ADJUDICATED",
+      "sourceSentenceCertified": false,
+      "translationCertified": false,
+      "runtimePublished": false
+    }
+  ],
+  "reviewOrder": [
+    "SPX-001/SPX-002/SPX-003/SPX-005 Mass/Communion bridge to Ultra Master Matrix (reader remains unchanged)",
+    "SPX-028/SPX-044 Marriage and old canonical discipline",
+    "SPX-058 wide-ranging Sacraments grace Q519–549; inspect sentence-level matching before collapsing 31 cited questions",
+    "SPX-059 Orders and historical degrees",
+    "SPX-060 Anointing of Sick versus Extreme Unction terminology",
+    "SPX-064 Purgatory and Confession's temporal satisfaction"
+  ],
+  "reviewGates": {
+    "verifyOriginalItalianSentenceForEveryQ": false,
+    "compare1912AndSalzano": false,
+    "mapToCanonicalDoctrinalIntents": false,
+    "historicalVoiceCertified": false,
+    "englishFrenchTranslationCertified": false,
+    "approvedForPublication": false
+  },
+  "pipelineRule": "Reuse existing St Pius X source/content PR #1458, historical voice PR #1419 and Ad Orientem module canonical registries; no new deployed answer bank."
+}

@@ -1,0 +1,3867 @@
+{
+  "schema": "AO_SPX_100ANSWER_EDITORIAL_RELEASE_TRIAGE_V1",
+  "date": "2026-10-20",
+  "status": "RESEARCH_CANDIDATE_REVIEW_NOT_RELEASE_APPROVAL",
+  "sources": {
+    "canonicalOwner": "PR#1458",
+    "periodStyleOwner": "PR#1419",
+    "chanoineOwner": "PR#1402",
+    "originalOriginal": "Compendio della dottrina cristiana, Rome, Tipografia Vaticana, 1905",
+    "digitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+  },
+  "policy": {
+    "denzingerMandatory": false,
+    "originalQIDsEditorialNotPrinted": true,
+    "batchReviewerMayRecommendButNotIndependentlyCertify": true,
+    "candidateCanOnlyBecomePublishedAfter": [
+      "Independent Italian source/claim collation",
+      "Doctrinal examination",
+      "Independent English review",
+      "Independent French review",
+      "Historical-period voice approval",
+      "Historical/current sacramental discipline review when needed"
+    ]
+  },
+  "counts": {
+    "indexedOpeningTurnCandidates": 100,
+    "firstWave": 40,
+    "remaining": 60,
+    "firstWaveBatches": 4,
+    "sourceAuthoritativeApprovals": 0,
+    "doctrinalApprovals": 0,
+    "englishFrenchApprovals": 0,
+    "periodVoiceApprovals": 0,
+    "published": 0
+  },
+  "waves": [
+    {
+      "id": "W1_REAL_PRESENCE",
+      "labelEN": "The Real Presence and Consecration",
+      "labelFR": "Présence réelle et consécration",
+      "questionIds": [
+        "PX1905-Q596",
+        "PX1905-Q597",
+        "PX1905-Q598",
+        "PX1905-Q602",
+        "PX1905-Q604",
+        "PX1905-Q605",
+        "PX1905-Q607",
+        "PX1905-Q609",
+        "PX1905-Q610",
+        "PX1905-Q612"
+      ],
+      "count": 10
+    },
+    {
+      "id": "W2_EUCHARISTIC_DOCTRINE",
+      "labelEN": "Eucharistic worship and fruits",
+      "labelFR": "Culte eucharistique et fruits",
+      "questionIds": [
+        "PX1905-Q613",
+        "PX1905-Q617",
+        "PX1905-Q618",
+        "PX1905-Q619",
+        "PX1905-Q620",
+        "PX1905-Q621",
+        "PX1905-Q622",
+        "PX1905-Q623",
+        "PX1905-Q625",
+        "PX1905-Q626"
+      ],
+      "count": 10
+    },
+    {
+      "id": "W3_COMMUNION_PRACTICE",
+      "labelEN": "Receiving and preparing for Communion",
+      "labelFR": "Préparation et communion",
+      "questionIds": [
+        "PX1905-Q624",
+        "PX1905-Q627",
+        "PX1905-Q636",
+        "PX1905-Q637",
+        "PX1905-Q638",
+        "PX1905-Q639",
+        "PX1905-Q641",
+        "PX1905-Q649",
+        "PX1905-Q650",
+        "PX1905-Q665"
+      ],
+      "count": 10
+    },
+    {
+      "id": "W4_MASS_THEOLOGY",
+      "labelEN": "The Holy Sacrifice of the Mass",
+      "labelFR": "Le saint sacrifice de la Messe",
+      "questionIds": [
+        "PX1905-Q651",
+        "PX1905-Q652",
+        "PX1905-Q654",
+        "PX1905-Q655",
+        "PX1905-Q656",
+        "PX1905-Q657",
+        "PX1905-Q658",
+        "PX1905-Q659",
+        "PX1905-Q660",
+        "PX1905-Q663"
+      ],
+      "count": 10
+    }
+  ],
+  "records": [
+    {
+      "id": "PX1905-Q567",
+      "turnId": "SPX-1905-S-567-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_PROMISES",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Can the absence of sacramental Baptism be supplied in another way?",
+      "questionFR": "Peut-on suppléer d'une autre manière à l'absence du baptême sacramentel ?",
+      "originalDraftEN": "The 1905 Catechism teaches that martyrdom, called Baptism of blood, or perfect love of God or contrition joined to at least an implicit desire for Baptism may supply for its absence.",
+      "originalDraftFR": "Le Catéchisme de 1905 enseigne que le martyre, appelé baptême de sang, ou l'amour parfait de Dieu ou la contrition parfaite unis au moins au désir implicite du baptême peuvent suppléer à son absence.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q567"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q568",
+      "turnId": "SPX-1905-S-568-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_PROMISES",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "BAPTISMAL_OBLIGATIONS_AS_1905_CATECHETICAL_INSTRUCTION"
+      ],
+      "questionEN": "What obligations does Baptism place upon a Christian?",
+      "questionFR": "Quelles obligations le baptême impose-t-il au chrétien ?",
+      "originalDraftEN": "The baptized person is called to profess the Catholic faith and keep the law of Jesus Christ and His Church.",
+      "originalDraftFR": "Le baptisé est appelé à professer la foi catholique et à observer la loi de Jésus-Christ et de son Église.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q568"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q569",
+      "turnId": "SPX-1905-S-569-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_PROMISES",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What renunciations are made at Baptism?",
+      "questionFR": "À quelles choses renonce-t-on lors du saint baptême ?",
+      "originalDraftEN": "The rite expresses a lasting renunciation of the devil, his works and his pomps.",
+      "originalDraftFR": "Le rite exprime une renonciation durable au démon, à ses œuvres et à ses pompes.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q569"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q570",
+      "turnId": "SPX-1905-S-570-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_PROMISES",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What does the Catechism mean by the devil's works and pomps?",
+      "questionFR": "Que signifie, dans le Catéchisme, les œuvres et les pompes du démon ?",
+      "originalDraftEN": "It means sins and ways of thinking valued by the world but contrary to the Gospel; the language belongs to the traditional renunciations of Baptism.",
+      "originalDraftFR": "Il s'agit des péchés et des maximes valorisées par le monde mais contraires à l'Évangile ; ce langage appartient aux renonciations traditionnelles du baptême.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q570"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q571",
+      "turnId": "SPX-1905-S-571-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_SPONSORS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Why give a saint's name to a child being baptized?",
+      "questionFR": "Pourquoi donner à l'enfant baptisé le nom d'un saint ?",
+      "originalDraftEN": "The Catechism says the name invokes a heavenly patron's protection and encourages imitation of that saint's example.",
+      "originalDraftFR": "Le Catéchisme dit que ce nom sollicite la protection d'un patron céleste et encourage à imiter son exemple.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q571"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q572",
+      "turnId": "SPX-1905-S-572-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_SPONSORS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What responsibility do baptismal godparents assume?",
+      "questionFR": "Quelle responsabilité les parrains et marraines du baptême assument-ils ?",
+      "originalDraftEN": "The Catechism depicts them as sponsors who answer at the font for the child and guarantee, before God, the child's Christian formation if necessary.",
+      "originalDraftFR": "Le Catéchisme les présente comme des répondants qui parlent pour l'enfant aux fonts baptismaux et garantissent devant Dieu, au besoin, sa formation chrétienne.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q572"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q573",
+      "turnId": "SPX-1905-S-573-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_SPONSORS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Do baptismal promises made by godparents still concern the baptized person?",
+      "questionFR": "Les promesses prononcées par les parrains au baptême concernent-elles toujours le baptisé ?",
+      "originalDraftEN": "Yes. The Catechism says that promises and renunciations made on the child's behalf are obligations of the Christian life, not merely formal words of the ceremony.",
+      "originalDraftFR": "Oui. Le Catéchisme enseigne que les promesses et renonciations prononcées pour l'enfant sont des obligations de la vie chrétienne, et non de simples formules cérémonielles.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q573"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q574",
+      "turnId": "SPX-1905-S-574-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_SPONSORS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "SPONSOR_ELIGIBILITY_DEPENDS_ON_APPLICABLE_LAW"
+      ],
+      "questionEN": "Whom does the historical Catechism recommend choosing as godparents?",
+      "questionFR": "Qui le Catéchisme historique recommande-t-il de choisir comme parrains et marraines ?",
+      "originalDraftEN": "It recommends Catholics of good moral life who faithfully observe the Church's law. Present-day eligibility must be verified under applicable Church norms.",
+      "originalDraftFR": "Il recommande des catholiques de bonnes mœurs qui observent fidèlement la loi de l'Église. Les conditions actuelles doivent être vérifiées selon les normes ecclésiastiques applicables.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q574"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q575",
+      "turnId": "SPX-1905-S-575-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_SPONSORS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What are the lasting duties of godparents?",
+      "questionFR": "Quels sont les devoirs durables des parrains et marraines ?",
+      "originalDraftEN": "They are to help their spiritual children learn the truths of faith and live as good Christians, above all by their example.",
+      "originalDraftFR": "Ils doivent aider leurs filleuls à connaître les vérités de la foi et à vivre chrétiennement, avant tout par leur exemple.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q575"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q576",
+      "turnId": "SPX-1905-S-576-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json",
+      "arcId": "SPX-ARC-BAPTISM_SPONSORS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "SPONSOR_MARRIAGE_IMPEDIMENT_HISTORICAL_NOT_PRESENT_DAY"
+      ],
+      "questionEN": "What spiritual kinship did godparents contract under the 1905 Catechism?",
+      "questionFR": "Quelle parenté spirituelle les parrains contractaient-ils selon le Catéchisme de 1905 ?",
+      "originalDraftEN": "The text describes spiritual kinship with the baptized person and the parents and says that, under its historical discipline, this could be an impediment to marriage. It is not a statement of today's canonical impediments.",
+      "originalDraftFR": "Le texte décrit une parenté spirituelle avec le baptisé et ses parents qui, selon la discipline historique évoquée, pouvait empêcher un mariage. Ce n'est pas un exposé des empêchements canoniques actuels.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q576"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q577",
+      "turnId": "SPX-1905-S-577-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_MEANING",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is the sacrament of Confirmation?",
+      "questionFR": "Qu'est-ce que le sacrement de confirmation ?",
+      "originalDraftEN": "Confirmation gives the Holy Ghost, impresses the character of a soldier of Jesus Christ and brings the Christian to greater maturity in the faith, in the Catechism's traditional formulation.",
+      "originalDraftFR": "La confirmation donne le Saint-Esprit, imprime le caractère de soldat de Jésus-Christ et conduit le chrétien à une plus grande maturité dans la foi, selon la formule traditionnelle du Catéchisme.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q577"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q578",
+      "turnId": "SPX-1905-S-578-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_MEANING",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "How does Confirmation perfect the Christian life?",
+      "questionFR": "Comment la confirmation perfectionne-t-elle la vie chrétienne ?",
+      "originalDraftEN": "It strengthens the baptized person in faith and perfects the virtues and gifts already received in Baptism; 'perfect' here concerns sacramental strengthening, not an absence of faults.",
+      "originalDraftFR": "Elle affermit le baptisé dans la foi et perfectionne les vertus et les dons déjà reçus au baptême ; « parfait » désigne ici l'affermissement sacramentel, non une absence de défauts.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q578"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q579",
+      "turnId": "SPX-1905-S-579-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_MEANING",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Which seven gifts does Confirmation strengthen?",
+      "questionFR": "Quels sont les sept dons que la confirmation affermit ?",
+      "originalDraftEN": "The Catechism names wisdom, understanding, counsel, fortitude, knowledge, piety and fear of God.",
+      "originalDraftFR": "Le Catéchisme nomme la sagesse, l'intelligence, le conseil, la force, la science, la piété et la crainte de Dieu.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q579"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q580",
+      "turnId": "SPX-1905-S-580-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "HISTORICAL_CONFIRMATION_MATTER_AND_FORM_NOT_CURRENT_PRESCRIPTION"
+      ],
+      "questionEN": "What matter does the 1905 Catechism describe for Confirmation?",
+      "questionFR": "Quelle matière le Catéchisme de 1905 décrit-il pour la confirmation ?",
+      "originalDraftEN": "It names the bishop's imposition of hands and an anointing on the baptized person's forehead with sacred chrism. The precise ritual and validity questions must be assessed in their historical context.",
+      "originalDraftFR": "Il nomme l'imposition des mains par l'évêque et l'onction du front du baptisé avec le saint chrême. Les questions précises de rite et de validité doivent être examinées dans leur contexte historique.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q580"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q581",
+      "turnId": "SPX-1905-S-581-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "HISTORICAL_CHRISM_PREPARATION"
+      ],
+      "questionEN": "What is the sacred chrism used in Confirmation?",
+      "questionFR": "Qu'est-ce que le saint chrême employé à la confirmation ?",
+      "originalDraftEN": "The Catechism describes it as oil mixed with balsam and consecrated by the bishop on Holy Thursday.",
+      "originalDraftFR": "Le Catéchisme le décrit comme de l'huile mêlée de baume et consacrée par l'évêque le Jeudi saint.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q581"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q582",
+      "turnId": "SPX-1905-S-582-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What do oil and balsam symbolize in Confirmation?",
+      "questionFR": "Que symbolisent l'huile et le baume dans la confirmation ?",
+      "originalDraftEN": "Oil suggests grace spreading through and strengthening the soul; balsam, through its fragrance and preserving property, evokes good Christian example and resistance to vice.",
+      "originalDraftFR": "L'huile évoque la grâce qui se répand dans l'âme et la fortifie ; le baume, par son parfum et sa propriété conservatrice, évoque le bon exemple chrétien et la résistance au vice.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q582"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q583",
+      "turnId": "SPX-1905-S-583-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "OLD_LATIN_CONFIRMATION_FORMULA_1905_NOT_ALL_CURRENT_RITES"
+      ],
+      "questionEN": "What formula does the 1905 text give for Confirmation?",
+      "questionFR": "Quelle formule le texte de 1905 donne-t-il pour la confirmation ?",
+      "originalDraftEN": "It gives the traditional formula of signing with the Cross and confirming with the chrism of salvation in the name of Father, Son and Holy Ghost. This is a historical description, not a universal liturgical prescription today.",
+      "originalDraftFR": "Il donne la formule traditionnelle du signe de la Croix et de la confirmation avec le chrême du salut au nom du Père, du Fils et du Saint-Esprit. C'est une description historique, non une prescription liturgique universelle actuelle.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q583"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q584",
+      "turnId": "SPX-1905-S-584-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "ORDINARY_MINISTER_HISTORICAL_LATIN_CONTEXT"
+      ],
+      "questionEN": "Who ordinarily confers Confirmation in the 1905 Catechism?",
+      "questionFR": "Qui confère ordinairement la confirmation dans le Catéchisme de 1905 ?",
+      "originalDraftEN": "It names the bishop as the ordinary minister. This reflects its historical Latin-rite teaching; present-day discipline and faculties should be checked separately.",
+      "originalDraftFR": "Il nomme l'évêque ministre ordinaire. Cela reflète l'enseignement latin de son époque ; la discipline et les facultés actuelles doivent être vérifiées séparément.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q584"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q585",
+      "turnId": "SPX-1905-S-585-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "PRE_1971_LATIN_CONFIRMATION_RITE_DESCRIPTION"
+      ],
+      "questionEN": "What did a Confirmation ceremony look like in the 1905 account?",
+      "questionFR": "Comment se déroulait la cérémonie de confirmation selon l'exposé de 1905 ?",
+      "originalDraftEN": "The bishop first prayed with hands extended, then anointed the forehead in the shape of the Cross while speaking the sacramental form, gave a light touch to the cheek with a greeting of peace, and blessed the group. The description is period-specific.",
+      "originalDraftFR": "L'évêque priait d'abord les mains étendues, puis oignait le front en forme de Croix en prononçant la formule, touchait légèrement la joue avec une salutation de paix et bénissait l'assemblée. Cette description est propre à cette époque.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q585"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q586",
+      "turnId": "SPX-1905-S-586-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Why was the forehead anointed in Confirmation?",
+      "questionFR": "Pourquoi oignait-on le front lors de la confirmation ?",
+      "originalDraftEN": "The Catechism points to the forehead as a place where fear or embarrassment shows; anointing there signifies courage openly to profess the Christian name.",
+      "originalDraftFR": "Le Catéchisme désigne le front comme le lieu où se manifeste la peur ou la honte ; l'onction y signifie le courage de professer ouvertement le nom chrétien.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q586"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q587",
+      "turnId": "SPX-1905-S-587-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_RITE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "OLDER_CONFIRMATION_LIGHT_CHEEK_TOUCH"
+      ],
+      "questionEN": "Why was a light touch on the cheek part of the old Confirmation rite?",
+      "questionFR": "Pourquoi un léger geste sur la joue figurait-il dans l'ancien rite de confirmation ?",
+      "originalDraftEN": "The Catechism explains it as a reminder to endure insult or hardship for the faith. This gesture belongs to the rite described in 1905 and should not be assumed universal today.",
+      "originalDraftFR": "Le Catéchisme l'explique comme un rappel à supporter les affronts et les épreuves pour la foi. Ce geste appartient au rite décrit en 1905 et ne doit pas être présumé universel aujourd'hui.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q587"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q588",
+      "turnId": "SPX-1905-S-588-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Should every Catholic seek the sacrament of Confirmation?",
+      "questionFR": "Tout catholique devrait-il chercher à recevoir la confirmation ?",
+      "originalDraftEN": "The 1905 Catechism answers yes and also urges those responsible for dependants to help them receive it.",
+      "originalDraftFR": "Le Catéchisme de 1905 répond oui et invite ceux qui ont des personnes à leur charge à les aider à le recevoir.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q588"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q589",
+      "turnId": "SPX-1905-S-589-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "CONFIRMATION_AGE_PERIOD_SPECIFIC"
+      ],
+      "questionEN": "At what age did the 1905 text recommend Confirmation?",
+      "questionFR": "À quel âge le texte de 1905 recommandait-il la confirmation ?",
+      "originalDraftEN": "Around age seven, reasoning that the child could then begin to face temptations and understand and remember the sacrament. This was period-specific guidance, not an assertion of universal present discipline.",
+      "originalDraftFR": "Vers sept ans, car l'enfant pouvait alors commencer à rencontrer des tentations, comprendre le sacrement et s'en souvenir. Il s'agit d'un conseil de l'époque, non d'une discipline actuelle universelle.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q589"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q590",
+      "turnId": "SPX-1905-S-590-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "INDIVIDUAL_SACRAMENTAL_SITUATION_REQUIRES_PASTORAL_ADVICE"
+      ],
+      "questionEN": "What dispositions does the Catechism call for before Confirmation?",
+      "questionFR": "Quelles dispositions le Catéchisme demande-t-il avant la confirmation ?",
+      "originalDraftEN": "It names being in God's grace, knowing the principal mysteries of the faith, and approaching with reverence and devotion. An individual pastoral situation calls for a priest's guidance.",
+      "originalDraftFR": "Il nomme l'état de grâce, la connaissance des principaux mystères de la foi et une attitude de respect et de dévotion. Une situation personnelle demande le conseil d'un prêtre.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q590"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q591",
+      "turnId": "SPX-1905-S-591-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "PRESUMED_REPEAT_CONFIRMATION_VS_DOUBTFUL_PRIOR_VALIDITY"
+      ],
+      "questionEN": "Why does the Catechism forbid deliberately receiving Confirmation twice?",
+      "questionFR": "Pourquoi le Catéchisme interdit-il de recevoir délibérément la confirmation deux fois ?",
+      "originalDraftEN": "It teaches that Confirmation imprints an enduring character and so is received only once. The text calls knowingly repeating it a sacrilege; an actual case of doubt about earlier Confirmation needs qualified pastoral judgment.",
+      "originalDraftFR": "Il enseigne que la confirmation imprime un caractère durable et n'est donc reçue qu'une fois. Le texte qualifie sa répétition consciente de sacrilège ; un doute réel sur une confirmation antérieure demande un jugement pastoral compétent.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q591"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q592",
+      "turnId": "SPX-1905-S-592-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "How does one preserve the grace of Confirmation?",
+      "questionFR": "Comment conserver la grâce de la confirmation ?",
+      "originalDraftEN": "The Catechism counsels frequent prayer, good works and conduct in accord with the law of Christ, without being governed by human respect.",
+      "originalDraftFR": "Le Catéchisme conseille la prière fréquente, les bonnes œuvres et une conduite conforme à la loi du Christ, sans céder au respect humain.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q592"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q593",
+      "turnId": "SPX-1905-S-593-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is the purpose of sponsors at Confirmation?",
+      "questionFR": "Quel est le rôle des parrains et marraines de confirmation ?",
+      "originalDraftEN": "Sponsors are to guide the confirmed person by word and example along the way of salvation and support their spiritual struggle.",
+      "originalDraftFR": "Les parrains doivent guider le confirmé par la parole et l'exemple sur la voie du salut et le soutenir dans le combat spirituel.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q593"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q594",
+      "turnId": "SPX-1905-S-594-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "HISTORICAL_SPONSOR_ELIGIBILITY_VS_CURRENT_NORMS"
+      ],
+      "questionEN": "What made a suitable Confirmation sponsor in the 1905 account?",
+      "questionFR": "Quelles étaient les qualités d'un parrain de confirmation selon l'exposé de 1905 ?",
+      "originalDraftEN": "A person of suitable age, Catholic and confirmed, instructed in the essentials of religion and of good conduct. Specific eligibility is governed by the applicable Church law.",
+      "originalDraftFR": "Une personne d'âge convenable, catholique et confirmée, instruite de l'essentiel de la religion et de bonne conduite. Les conditions précises dépendent du droit de l'Église applicable.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q594"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q595",
+      "turnId": "SPX-1905-S-595-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-CONFIRMATION_PREP",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "SPONSOR_SPIRITUAL_KINSHIP_HISTORICAL"
+      ],
+      "questionEN": "Did Confirmation sponsors contract spiritual kinship in the older discipline?",
+      "questionFR": "Les parrains de confirmation contractaient-ils une parenté spirituelle dans l'ancienne discipline ?",
+      "originalDraftEN": "The 1905 Catechism answers yes, likening it to the spiritual kinship of baptismal sponsors. The old matrimonial consequences should not be transposed into current law.",
+      "originalDraftFR": "Le Catéchisme de 1905 répond oui, l'assimilant à la parenté spirituelle des parrains de baptême. Les anciennes conséquences matrimoniales ne doivent pas être transposées au droit actuel.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q576",
+        "PX1905-Q595"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q596",
+      "turnId": "SPX-1905-S-596-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CHRIST_PRESENT",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is the Eucharist according to the 1905 Catechism?",
+      "questionFR": "Qu'est-ce que l'Eucharistie selon le Catéchisme de 1905 ?",
+      "originalDraftEN": "It teaches that the substance of bread and wine is converted into Christ's Body and Blood, so that His Body, Blood, Soul and Divinity are truly, really and substantially present under the appearances of bread and wine for our spiritual nourishment.",
+      "originalDraftFR": "Il enseigne que la substance du pain et du vin est changée au Corps et au Sang du Christ, de sorte que son Corps, son Sang, son Âme et sa Divinité sont présents véritablement, réellement et substantiellement sous les apparences du pain et du vin pour notre nourriture spirituelle.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q596"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q597",
+      "turnId": "SPX-1905-S-597-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CHRIST_PRESENT",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Is the Jesus present in the Eucharist the same Jesus born of Mary?",
+      "questionFR": "Le Jésus présent dans l'Eucharistie est-il celui-là même qui est né de Marie ?",
+      "originalDraftEN": "Yes. The Catechism explicitly identifies the Eucharistic Lord with Jesus Christ born of the Blessed Virgin and living in heaven.",
+      "originalDraftFR": "Oui. Le Catéchisme identifie expressément le Seigneur présent dans l'Eucharistie à Jésus-Christ, né de la Sainte Vierge et vivant au ciel.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q597"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q598",
+      "turnId": "SPX-1905-S-598-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CHRIST_PRESENT",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Why does Catholic faith affirm Christ's real Eucharistic presence?",
+      "questionFR": "Pourquoi la foi catholique affirme-t-elle la présence réelle du Christ dans l'Eucharistie ?",
+      "originalDraftEN": "The Catechism answers that Christ Himself said so, and the holy Church teaches the truth of His presence.",
+      "originalDraftFR": "Le Catéchisme répond que le Christ Lui-même l'a dit et que la sainte Église enseigne la vérité de sa présence.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q598"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q599",
+      "turnId": "SPX-1905-S-599-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What matter is used for the sacrament of the Eucharist?",
+      "questionFR": "Quelle matière emploie-t-on pour le sacrement de l'Eucharistie ?",
+      "originalDraftEN": "The Catechism names wheat bread and grape wine, following the elements Christ used at the Last Supper.",
+      "originalDraftFR": "Le Catéchisme nomme le pain de froment et le vin de raisin, selon les éléments employés par le Christ à la dernière Cène.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q599"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q600",
+      "turnId": "SPX-1905-S-600-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "CATECHETICAL_SHORT_FORMULA_NOT_A_CERTIFIED_ROMAN_CANON_TEXT"
+      ],
+      "questionEN": "How does the 1905 Catechism describe the Eucharistic form?",
+      "questionFR": "Comment le Catéchisme de 1905 décrit-il la forme eucharistique ?",
+      "originalDraftEN": "It points to the words used by Christ at the Last Supper, 'This is my Body' and 'This is my Blood'. The passage is a catechetical summary, not the complete set of words of the traditional Roman Canon.",
+      "originalDraftFR": "Il renvoie aux paroles du Christ à la dernière Cène : « Ceci est mon Corps » et « Ceci est mon Sang ». Ce passage est un résumé catéchétique, non l'intégralité des paroles du Canon romain traditionnel.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q600"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q601",
+      "turnId": "SPX-1905-S-601-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is the host before consecration?",
+      "questionFR": "Qu'est-ce que l'hostie avant la consécration ?",
+      "originalDraftEN": "It is bread. The Eucharistic change described by the Catechism has not yet taken place.",
+      "originalDraftFR": "C'est du pain. Le changement eucharistique décrit par le Catéchisme n'a pas encore eu lieu.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q601"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q602",
+      "turnId": "SPX-1905-S-602-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is the consecrated host?",
+      "questionFR": "Qu'est-ce que l'hostie consacrée ?",
+      "originalDraftEN": "After consecration it is truly the Body of Jesus Christ under the appearances of bread.",
+      "originalDraftFR": "Après la consécration, elle est véritablement le Corps de Jésus-Christ sous les apparences du pain.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q602"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q603",
+      "turnId": "SPX-1905-S-603-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is in the chalice before consecration?",
+      "questionFR": "Que contient le calice avant la consécration ?",
+      "originalDraftEN": "The Catechism describes wine mixed with a few drops of water.",
+      "originalDraftFR": "Le Catéchisme décrit du vin auquel on a ajouté quelques gouttes d'eau.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q603"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q604",
+      "turnId": "SPX-1905-S-604-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is present in the chalice after consecration?",
+      "questionFR": "Qu'est-ce qui est présent dans le calice après la consécration ?",
+      "originalDraftEN": "The true Blood of Jesus Christ under the appearances of wine.",
+      "originalDraftFR": "Le vrai Sang de Jésus-Christ sous les apparences du vin.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q604"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q605",
+      "turnId": "SPX-1905-S-605-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "RENEWAL_OF_LAST_SUPPER_MIRACLE_CATECHETICAL_NOT_REPEAT_CALVARY"
+      ],
+      "questionEN": "When does the Eucharistic conversion take place?",
+      "questionFR": "Quand se produit la conversion eucharistique ?",
+      "originalDraftEN": "The Catechism places it at the consecration, when the priest pronounces Christ's words at Mass.",
+      "originalDraftFR": "Le Catéchisme la situe à la consécration, lorsque le prêtre prononce les paroles du Christ à la messe.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q605"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q606",
+      "turnId": "SPX-1905-S-606-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "HISTORICAL_RENOVATION_LANGUAGE_SOURCE_MEANING_REVIEW"
+      ],
+      "questionEN": "What is consecration in the Eucharistic context?",
+      "questionFR": "Qu'est-ce que la consécration dans le contexte eucharistique ?",
+      "originalDraftEN": "The Catechism describes the priest's sacramental act, using Christ's words, by which bread and wine become His Body and Blood, in continuation of the mystery of the Last Supper.",
+      "originalDraftFR": "Le Catéchisme décrit l'acte sacramentel du prêtre qui, par les paroles du Christ, fait que le pain et le vin deviennent son Corps et son Sang, dans la continuité du mystère de la dernière Cène.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q606"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q607",
+      "turnId": "SPX-1905-S-607-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "BILINGUAL_CORRECTION_AVAILABLE_UNAPPROVED",
+        "PERIOD_REGISTER_VARIANT_UNAPPROVED",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "FIRST_TURN_ADDS_SUBSTANCE_AND_SPECIES_MISSING_FROM_Q607_ALONE"
+      ],
+      "questionEN": "What does the Church call the change of bread and wine into Christ's Body and Blood?",
+      "questionFR": "Comment l'Église appelle-t-elle le changement du pain et du vin au Corps et au Sang du Christ ?",
+      "originalDraftEN": "Transubstantiation: the conversion of the substance of bread and wine into Christ's Body and Blood while the sensible appearances remain.",
+      "originalDraftFR": "La transsubstantiation : conversion de la substance du pain et du vin au Corps et au Sang du Christ, tandis que demeurent les apparences sensibles.",
+      "correctionEN": "The Catechism calls this conversion transubstantiation: the substance of bread and wine is changed into Christ's Body and Blood, while the species—the perceptible appearances—remain.",
+      "correctionFR": "Le Catéchisme appelle ce changement la transsubstantiation : la substance du pain et du vin est changée au Corps et au Sang du Christ, tandis que les espèces, c'est-à-dire les apparences sensibles, demeurent.",
+      "periodEN": "The Church gives to this conversion the name of transubstantiation. The substance of bread and wine is changed into the Body and Blood of Our Lord, while their sensible appearances remain.",
+      "periodFR": "L’Église donne à cette conversion le nom de transsubstantiation. La substance du pain et du vin est changée au Corps et au Sang de Notre-Seigneur, tandis que demeurent leurs apparences sensibles.",
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q596",
+        "PX1905-Q607",
+        "PX1905-Q609",
+        "PX1905-Q610"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q608",
+      "turnId": "SPX-1905-S-608-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Who gives the consecration its power?",
+      "questionFR": "Qui donne à la consécration sa puissance ?",
+      "originalDraftEN": "The Catechism attributes the efficacy of Christ's words to Jesus Christ Himself, who is almighty God.",
+      "originalDraftFR": "Le Catéchisme attribue l'efficacité des paroles du Christ à Jésus-Christ Lui-même, Dieu tout-puissant.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q608"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q609",
+      "turnId": "SPX-1905-S-609-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_SUBSTANCE_SPECIES",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Does bread or wine remain after consecration?",
+      "questionFR": "Reste-t-il du pain ou du vin après la consécration ?",
+      "originalDraftEN": "Not in substance: the Catechism says only their species, or sensible appearances, remain.",
+      "originalDraftFR": "Non quant à la substance : le Catéchisme dit que seules demeurent leurs espèces, ou apparences sensibles.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q609"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q610",
+      "turnId": "SPX-1905-S-610-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_SUBSTANCE_SPECIES",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What does the Catechism mean by Eucharistic species?",
+      "questionFR": "Que signifie le terme « espèces eucharistiques » dans le Catéchisme ?",
+      "originalDraftEN": "Their quantity and sensible qualities—appearance, colour and taste—which remain after the change of substance.",
+      "originalDraftFR": "Leur quantité et leurs qualités sensibles — aspect, couleur et goût — qui subsistent après le changement de substance.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q610"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q611",
+      "turnId": "SPX-1905-S-611-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_SUBSTANCE_SPECIES",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "How can Eucharistic appearances remain without the substance of bread and wine?",
+      "questionFR": "Comment les apparences eucharistiques subsistent-elles sans la substance du pain et du vin ?",
+      "originalDraftEN": "The Catechism regards this as a miracle sustained by God's omnipotence.",
+      "originalDraftFR": "Le Catéchisme y voit un miracle soutenu par la toute-puissance de Dieu.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q611"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q612",
+      "turnId": "SPX-1905-S-612-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Is Christ's Body alone under the host and His Blood alone under the wine?",
+      "questionFR": "N'y a-t-il que le Corps du Christ sous l'hostie et que son Sang sous l'espèce du vin ?",
+      "originalDraftEN": "No. Under each species the whole living Jesus Christ is present: Body, Blood, Soul and Divinity.",
+      "originalDraftFR": "Non. Sous chaque espèce est présent Jésus-Christ vivant tout entier : Corps, Sang, Âme et Divinité.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q612"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q613",
+      "turnId": "SPX-1905-S-613-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Why is the whole Christ present in both host and chalice?",
+      "questionFR": "Pourquoi le Christ tout entier est-il présent dans l'hostie et le calice ?",
+      "originalDraftEN": "Because the risen Christ is living and immortal: where His Body is present, His Blood, Soul and Divinity are united to it, and likewise where His Blood is present.",
+      "originalDraftFR": "Parce que le Christ ressuscité est vivant et immortel : là où son Corps est présent, son Sang, son Âme et sa Divinité lui sont unis, et de même là où son Sang est présent.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q613"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q614",
+      "turnId": "SPX-1905-S-614-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Does Eucharistic presence remove Christ from heaven?",
+      "questionFR": "La présence eucharistique retire-t-elle le Christ du ciel ?",
+      "originalDraftEN": "No. The Catechism says He remains in heaven while also being present in the Most Blessed Sacrament.",
+      "originalDraftFR": "Non. Le Catéchisme dit qu'Il demeure au ciel tout en étant présent dans le Très Saint Sacrement.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q614"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q615",
+      "turnId": "SPX-1905-S-615-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Is Christ present in every consecrated host in the world?",
+      "questionFR": "Le Christ est-Il présent dans toutes les hosties consacrées du monde ?",
+      "originalDraftEN": "Yes. The Catechism teaches His real presence in every consecrated host.",
+      "originalDraftFR": "Oui. Le Catéchisme enseigne sa présence réelle dans chaque hostie consacrée.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q615"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q616",
+      "turnId": "SPX-1905-S-616-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "How can the same Christ be present in all consecrated hosts?",
+      "questionFR": "Comment le même Christ peut-Il être présent dans toutes les hosties consacrées ?",
+      "originalDraftEN": "The Catechism answers by appealing to God's omnipotence: nothing is impossible to Him.",
+      "originalDraftFR": "Le Catéchisme répond en invoquant la toute-puissance de Dieu : rien ne Lui est impossible.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q616"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q617",
+      "turnId": "SPX-1905-E-617-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Does breaking the consecrated host divide Christ's Body?",
+      "questionFR": "La fraction de l'hostie consacrée divise-t-elle le Corps du Christ ?",
+      "originalDraftEN": "No. The Eucharistic appearances of bread are broken; the Body of Jesus Christ is not divided.",
+      "originalDraftFR": "Non. Ce sont les apparences eucharistiques du pain qui se brisent ; le Corps de Jésus-Christ n'est pas divisé.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q617"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q618",
+      "turnId": "SPX-1905-E-618-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Where is Christ's Body when the consecrated host is divided?",
+      "questionFR": "Où se trouve le Corps du Christ lorsqu'on divise l'hostie consacrée ?",
+      "originalDraftEN": "Christ's Body remains whole under each portion of the divided consecrated host.",
+      "originalDraftFR": "Le Corps du Christ demeure tout entier sous chacune des parties de l'hostie consacrée divisée.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q618"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q619",
+      "turnId": "SPX-1905-E-619-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "BILINGUAL_CORRECTION_AVAILABLE_UNAPPROVED",
+        "PERIOD_REGISTER_VARIANT_UNAPPROVED",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "Q641_NEEDED_FOR_WHILE_SPECIES_REMAIN_QUALIFIER"
+      ],
+      "questionEN": "Is the whole Christ present even in a small particle of a host?",
+      "questionFR": "Le Christ est-il présent tout entier même dans une petite parcelle d'hostie ?",
+      "originalDraftEN": "The same Jesus Christ is present under a large host and under a particle of it, while the Eucharistic species remain.",
+      "originalDraftFR": "Le même Jésus-Christ est présent sous une grande hostie et sous une parcelle de celle-ci, tant que subsistent les espèces eucharistiques.",
+      "correctionEN": "The whole Christ is present under a consecrated host and under each of its particles, for as long as the sacramental species endure.",
+      "correctionFR": "Le Christ tout entier est présent sous l'hostie consacrée et sous chacune de ses parcelles, tant que subsistent les espèces sacramentelles.",
+      "periodEN": "The whole Christ is present under the consecrated host, and likewise under each of its particles, so long as the sacramental species remain.",
+      "periodFR": "Le Christ tout entier est présent sous l’hostie consacrée et pareillement sous chacune de ses parcelles, aussi longtemps que demeurent les espèces sacramentelles.",
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q619",
+        "PX1905-Q641"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q620",
+      "turnId": "SPX-1905-E-620-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_TABERNACLE_ADORATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Why is the Blessed Eucharist reserved in churches?",
+      "questionFR": "Pourquoi conserve-t-on la sainte Eucharistie dans les églises ?",
+      "originalDraftEN": "So the faithful may adore Christ truly present there and so Holy Communion may be brought to the sick as needed.",
+      "originalDraftFR": "Pour que les fidèles puissent adorer le Christ réellement présent et pour porter la sainte Communion aux malades selon leurs besoins.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q620"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q621",
+      "turnId": "SPX-1905-E-621-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_TABERNACLE_ADORATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Why do Catholics adore the Eucharist?",
+      "questionFR": "Pourquoi les catholiques adorent-ils l'Eucharistie ?",
+      "originalDraftEN": "Because the Eucharist contains Jesus Christ Himself, truly, really and substantially present, to whom divine adoration is due.",
+      "originalDraftFR": "Parce que l'Eucharistie contient Jésus-Christ Lui-même, présent véritablement, réellement et substantiellement, à qui revient l'adoration divine.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q621"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q622",
+      "turnId": "SPX-1905-E-622-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_INSTITUTION_FRUITS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "When did Christ institute the Eucharist?",
+      "questionFR": "Quand le Christ a-t-il institué l'Eucharistie ?",
+      "originalDraftEN": "At the Last Supper with His disciples on the evening before His Passion.",
+      "originalDraftFR": "Lors de la dernière Cène avec ses disciples, le soir précédant sa Passion.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q622"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q623",
+      "turnId": "SPX-1905-E-623-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_INSTITUTION_FRUITS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "For what three purposes did Christ institute the Eucharist?",
+      "questionFR": "Pour quelles trois fins le Christ a-t-il institué l'Eucharistie ?",
+      "originalDraftEN": "The Catechism names the sacrifice of the New Law, food for souls, and a perpetual memorial of His Passion and death, pledging His love and eternal life.",
+      "originalDraftFR": "Le Catéchisme indique le sacrifice de la Nouvelle Loi, la nourriture des âmes et le mémorial perpétuel de sa Passion et de sa mort, gage de son amour et de la vie éternelle.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q623"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q624",
+      "turnId": "SPX-1905-E-624-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_INSTITUTION_FRUITS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Why did Christ use the appearances of bread and wine?",
+      "questionFR": "Pourquoi le Christ a-t-il choisi les espèces du pain et du vin ?",
+      "originalDraftEN": "The Eucharist was to nourish our souls, so Christ fittingly gave it under the appearances of food and drink.",
+      "originalDraftFR": "L'Eucharistie devait nourrir nos âmes ; le Christ l'a donc convenablement donnée sous les apparences d'un aliment et d'une boisson.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q624"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q625",
+      "turnId": "SPX-1905-E-625-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_INSTITUTION_FRUITS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What are the principal effects of worthy Holy Communion?",
+      "questionFR": "Quels sont les principaux effets d'une sainte Communion reçue dignement ?",
+      "originalDraftEN": "It preserves and increases sanctifying grace, remits venial sins and protects against mortal sin, and brings spiritual consolation.",
+      "originalDraftFR": "Elle conserve et accroît la grâce sanctifiante, remet les péchés véniels, préserve du péché mortel et apporte une consolation spirituelle.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q625"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q626",
+      "turnId": "SPX-1905-E-626-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_INSTITUTION_FRUITS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What other fruits does worthy Communion bring?",
+      "questionFR": "Quels autres fruits apporte la Communion digne ?",
+      "originalDraftEN": "It weakens disordered passions, increases charity toward God and neighbour, helps conform our actions to Christ, and pledges future glory and bodily resurrection.",
+      "originalDraftFR": "Elle affaiblit les passions désordonnées, accroît la charité envers Dieu et le prochain, aide à conformer nos actes au Christ et donne un gage de la gloire future et de la résurrection du corps.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q626"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q627",
+      "turnId": "SPX-1905-E-627-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-EUCHARIST_INSTITUTION_FRUITS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "FOLLOWUP_Q628_MIDNIGHT_FAST_HISTORICAL"
+      ],
+      "questionEN": "Do the Eucharist's fruits depend on how it is received?",
+      "questionFR": "Les fruits de l'Eucharistie dépendent-ils des dispositions du communiant ?",
+      "originalDraftEN": "The Catechism teaches that its marvelous effects are received when the necessary dispositions are present.",
+      "originalDraftFR": "Le Catéchisme enseigne que ses merveilleux effets sont reçus lorsque les dispositions nécessaires sont présentes.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q627"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q628",
+      "turnId": "SPX-1905-E-628-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_WORTHINESS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "MIDNIGHT_FAST_HISTORICAL"
+      ],
+      "questionEN": "What three things does the 1905 Catechism require for worthy Communion?",
+      "questionFR": "Quelles trois choses le Catéchisme de 1905 exige-t-il pour communier dignement ?",
+      "originalDraftEN": "It names being in God's grace, the Eucharistic fast as then prescribed from midnight, and knowing Whom one receives while approaching with devotion. Its fasting rule is historical, not the universal rule in force today.",
+      "originalDraftFR": "Il nomme l'état de grâce, le jeûne eucharistique alors prescrit depuis minuit et la connaissance de Celui qu'on reçoit avec dévotion. La règle du jeûne est historique, non la règle universelle actuellement en vigueur.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q628"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q629",
+      "turnId": "SPX-1905-E-629-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_WORTHINESS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What does being in a state of grace mean here?",
+      "questionFR": "Que signifie ici être en état de grâce ?",
+      "originalDraftEN": "In the Catechism's account, it means having a conscience free from mortal sin. An individual's culpability is not established by outward appearances.",
+      "originalDraftFR": "Dans cet enseignement, cela signifie avoir la conscience libre de péché mortel. L'apparence extérieure ne permet pas d'établir la culpabilité d'une personne.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q629"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q630",
+      "turnId": "SPX-1905-E-630-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_WORTHINESS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "INDIVIDUAL_CONSCIENCE_ASSESSMENT_AND_PASTORAL_EXCEPTIONS"
+      ],
+      "questionEN": "What does the Catechism say someone conscious of mortal sin should do before Communion?",
+      "questionFR": "Que recommande le Catéchisme à une personne consciente d'un péché mortel avant la Communion ?",
+      "originalDraftEN": "It teaches that such a person must ordinarily make a good sacramental Confession before receiving Communion. Questions about an individual's spiritual state should be discussed with a confessor.",
+      "originalDraftFR": "Il enseigne qu'une telle personne doit ordinairement faire une bonne confession sacramentelle avant la Communion. Les questions concernant l'état spirituel personnel doivent être abordées avec un confesseur.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q630"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q631",
+      "turnId": "SPX-1905-E-631-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_WORTHINESS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "MORTAL_SIN_CULPABILITY_IS_NOT_TO_BE_ASSIGNED_TO_VISITOR"
+      ],
+      "questionEN": "Why does this Catechism insist on confession before Communion despite perfect contrition?",
+      "questionFR": "Pourquoi ce Catéchisme insiste-t-il sur la confession avant la Communion malgré une contrition parfaite ?",
+      "originalDraftEN": "It appeals to the Church's discipline requiring sacramental confession before Communion when one is conscious of mortal sin. This short historical formulation is not a substitute for applicable current norms and pastoral guidance.",
+      "originalDraftFR": "Il invoque la discipline de l'Église exigeant la confession sacramentelle avant la Communion lorsqu'on a conscience d'un péché mortel. Cette brève formulation historique ne remplace pas les normes applicables ni le conseil pastoral.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q631"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q632",
+      "turnId": "SPX-1905-E-632-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_WORTHINESS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "FOLLOWUP_Q633_REQUIRES_Q628_FOR_MIDNIGHT_FAST",
+        "AVOID_PERSONAL_SIN_VERDICT"
+      ],
+      "questionEN": "Does unworthy Communion cease to be the reception of Christ?",
+      "questionFR": "Une Communion indigne cesse-t-elle d'être la réception du Christ ?",
+      "originalDraftEN": "The Catechism says that Christ is truly received, but the fruit of grace is obstructed by deliberate grave sin; it calls such reception sacrilegious. This classification cannot be used to declare a particular person's guilt or eternal fate.",
+      "originalDraftFR": "Le Catéchisme dit que le Christ est réellement reçu, mais que le fruit de grâce est empêché par le péché grave délibéré ; il qualifie une telle réception de sacrilège. Cette classification ne permet pas de juger la culpabilité ou la destinée éternelle d'une personne.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q632"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q633",
+      "turnId": "SPX-1905-E-633-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_FAST_HISTORICAL",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "BILINGUAL_CORRECTION_AVAILABLE_UNAPPROVED",
+        "HISTORICAL_COMMENTARY_MUST_REMAIN_OUT_OF_CHARACTER",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "MIDNIGHT_FAST_SOURCE_FROM_Q628_NOT_Q633_ALONE",
+        "FAST_RULE_NO_LONGER_CURRENT"
+      ],
+      "questionEN": "What Eucharistic fast did the 1905 Catechism prescribe?",
+      "questionFR": "Quel jeûne eucharistique le Catéchisme de 1905 prescrivait-il ?",
+      "originalDraftEN": "It describes the natural fast, then required from midnight, broken by taking food or drink. The discipline subsequently changed; this statement must not be treated as today's rule.",
+      "originalDraftFR": "Il décrit le jeûne naturel, alors exigé depuis minuit, interrompu par la prise d'aliments ou de boissons. Cette discipline a changé et ne doit pas être présentée comme la règle actuelle.",
+      "correctionEN": "The 1905 Catechism prescribed a natural fast from midnight before Communion. It describes the fast as broken by taking food or drink as such. This is a historical rule, not a statement of today's discipline.",
+      "correctionFR": "Le Catéchisme de 1905 prescrivait un jeûne naturel depuis minuit avant la communion. Il le considère rompu lorsque l'on prend des aliments ou des boissons comme tels. Il s'agit d'une règle historique, non de la discipline actuelle.",
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": {
+        "en": "The 1905 Catechism prescribed a natural fast beginning at midnight before Holy Communion. Its explanation of that fast belongs to the historical discipline of the period; it must not be presented as the current general rule.",
+        "fr": "Le Catéchisme de 1905 prescrivait avant la sainte communion un jeûne naturel commençant à minuit. Cette explication relève de la discipline de son époque ; elle ne saurait être présentée comme la règle générale en vigueur aujourd’hui."
+      },
+      "supportedSourceQuestionIds": [
+        "PX1905-Q628",
+        "PX1905-Q633"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q634",
+      "turnId": "SPX-1905-E-634-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_FAST_HISTORICAL",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "OLD_EUCHARISTIC_FAST_1905_ONLY"
+      ],
+      "questionEN": "Did the 1905 fasting rule distinguish accidental swallowing from eating or drinking?",
+      "questionFR": "La règle de jeûne de 1905 distinguait-elle l'ingestion accidentelle de manger ou boire ?",
+      "originalDraftEN": "Yes. It says swallowing a little food remaining between the teeth or a few drops of water while washing does not have the character of taking food or drink. This is historical catechetical discussion, not individualized fasting advice.",
+      "originalDraftFR": "Oui. Il précise qu'avaler un reste minime entre les dents ou quelques gouttes d'eau durant la toilette n'a pas le caractère de manger ou boire. C'est un exposé historique, non un conseil personnalisé sur le jeûne.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q634"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q635",
+      "turnId": "SPX-1905-E-635-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_FAST_HISTORICAL",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "HISTORICAL_FAST_EXEMPTION"
+      ],
+      "questionEN": "What exceptions to the Communion fast did the 1905 Catechism mention?",
+      "questionFR": "Quelles exceptions au jeûne eucharistique le Catéchisme de 1905 mentionnait-il ?",
+      "originalDraftEN": "It mentions those gravely ill and in danger of death, and special papal permissions for prolonged illness, calling Communion of the dying Viaticum. These exemptions reflect the discipline of its period.",
+      "originalDraftFR": "Il mentionne les malades en danger de mort et des permissions pontificales particulières en cas de maladie prolongée, nommant viatique la Communion des mourants. Ces exceptions reflètent la discipline de l'époque.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q635"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q636",
+      "turnId": "SPX-1905-E-636-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-b-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What does it mean to know Whom one receives in Communion?",
+      "questionFR": "Que signifie connaître Celui qu'on reçoit dans la Communion ?",
+      "originalDraftEN": "It means understanding and firmly believing the Church's teaching about the Eucharist, rather than treating Communion as ordinary food.",
+      "originalDraftFR": "Cela signifie comprendre et croire fermement l'enseignement de l'Église sur l'Eucharistie, plutôt que d'y voir un aliment ordinaire.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q636"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q637",
+      "turnId": "SPX-1905-E-637-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "PRACTICAL_DEVOTION_NOT_PERSONAL_CONSCIENCE_JUDGMENT"
+      ],
+      "questionEN": "What does receiving Communion with devotion mean?",
+      "questionFR": "Que signifie communier avec dévotion ?",
+      "originalDraftEN": "The Catechism recommends humility, modesty, preparation beforehand and thanksgiving afterward.",
+      "originalDraftFR": "Le Catéchisme recommande l'humilité, la modestie, la préparation avant et l'action de grâce après.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q637"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q638",
+      "turnId": "SPX-1905-E-638-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "How does the Catechism propose preparing before Holy Communion?",
+      "questionFR": "Comment le Catéchisme propose-t-il de se préparer à la Communion ?",
+      "originalDraftEN": "It recommends reflecting on Who Christ is and who we are, and making acts of faith, hope, charity, sorrow, adoration, humility and desire to receive Him.",
+      "originalDraftFR": "Il recommande de considérer qui est le Christ et qui nous sommes, puis de faire des actes de foi, d'espérance, de charité, de contrition, d'adoration, d'humilité et de désir de Le recevoir.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q638"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q639",
+      "turnId": "SPX-1905-E-639-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What should thanksgiving after Communion include?",
+      "questionFR": "Que doit comprendre l'action de grâce après la Communion ?",
+      "originalDraftEN": "Remain recollected in Christ's presence and make acts of faith, hope, love, adoration, thanks, self-offering and petition for necessary graces for oneself and others.",
+      "originalDraftFR": "Demeurer recueilli dans la présence du Christ et faire des actes de foi, d'espérance, d'amour, d'adoration, de reconnaissance, d'offrande et de demande de grâces pour soi et autrui.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q639"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q640",
+      "turnId": "SPX-1905-E-640-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "Q641_DISTINGUISHES_SACRAMENTAL_SPECIES_PRESENCE_FROM_SANCTIFYING_GRACE"
+      ],
+      "questionEN": "How should the rest of the day after Communion be spent?",
+      "questionFR": "Comment vivre le reste de la journée après la Communion ?",
+      "originalDraftEN": "The Catechism encourages recollection where possible, works of piety and especially diligent fulfilment of the duties of one's state in life.",
+      "originalDraftFR": "Le Catéchisme encourage le recueillement dans la mesure du possible, les œuvres de piété et surtout l'accomplissement soigneux des devoirs de son état.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q640"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q641",
+      "turnId": "SPX-1905-E-641-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "Q642_DESCRIBES_HISTORICAL_LATIN_RITE_PRACTICE_NOT_GENERAL_TODAY"
+      ],
+      "questionEN": "How long does Christ's Eucharistic presence remain after Communion?",
+      "questionFR": "Combien de temps dure la présence eucharistique du Christ après la Communion ?",
+      "originalDraftEN": "The Catechism distinguishes His Real Presence, lasting as long as the sacramental species remain, from His gracious indwelling, which remains unless one loses sanctifying grace.",
+      "originalDraftFR": "Le Catéchisme distingue sa Présence réelle, qui demeure tant que subsistent les espèces sacramentelles, de sa présence par la grâce, qui demeure tant que la grâce sanctifiante n'est pas perdue.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q641"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q642",
+      "turnId": "SPX-1905-E-642-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "HISTORICAL_LATIN_COMMUNION_PRACTICE_NOT_GENERAL_CURRENT_LAW"
+      ],
+      "questionEN": "How does the 1905 Catechism describe the posture for receiving Communion?",
+      "questionFR": "Comment le Catéchisme de 1905 décrit-il l'attitude pour recevoir la Communion ?",
+      "originalDraftEN": "It describes kneeling, modestly raising the head, opening the mouth and extending the tongue slightly to receive the sacred host. This reflects the historical Latin practice described, not all valid contemporary forms.",
+      "originalDraftFR": "Il décrit une posture à genoux, la tête légèrement relevée, la bouche ouverte et la langue un peu avancée pour recevoir l'hostie. C'est la pratique latine historique décrite, non l'ensemble des formes valides actuelles.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q642"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q643",
+      "turnId": "SPX-1905-E-643-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "COMMUNION_PATEN_CLOTH_HISTORICAL_DISCIPLINE"
+      ],
+      "questionEN": "Why did communicants use a Communion cloth or paten?",
+      "questionFR": "Pourquoi employait-on une nappe ou un plateau de Communion ?",
+      "originalDraftEN": "The cloth or paten was held to catch the sacred host if it should fall. The text describes a customary means of Eucharistic reverence.",
+      "originalDraftFR": "La nappe ou le plateau était tenu pour recueillir l'hostie sacrée si elle venait à tomber. Le texte décrit ainsi une pratique de révérence eucharistique.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q643"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q644",
+      "turnId": "SPX-1905-E-644-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "OLD_RITUAL_PRACTICE_AVOID_CURRENT_UNIVERSAL_ADVICE"
+      ],
+      "questionEN": "What does the historical Catechism advise after receiving the sacred host?",
+      "questionFR": "Que conseille le Catéchisme historique après la réception de l'hostie ?",
+      "originalDraftEN": "It instructs the communicant to swallow the host promptly and to avoid spitting for a time, reflecting reverence for the sacramental species.",
+      "originalDraftFR": "Il demande au communiant d'avaler rapidement l'hostie et d'éviter de cracher pendant un certain temps, par révérence envers les espèces sacramentelles.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q644"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q645",
+      "turnId": "SPX-1905-E-645-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_REVERENCE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "OLD_RITUAL_PRACTICE",
+        "FOLLOWUP_Q646_HISTORICAL_OWN_PARISH_RULE"
+      ],
+      "questionEN": "What did the Catechism say if the host adhered to the palate?",
+      "questionFR": "Que recommandait le Catéchisme si l'hostie restait collée au palais ?",
+      "originalDraftEN": "It recommended loosening the host gently with the tongue, not with the finger, as part of its historical Communion discipline.",
+      "originalDraftFR": "Il recommandait de dégager doucement l'hostie avec la langue plutôt qu'avec le doigt, dans le cadre de la discipline historique de la Communion.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q645"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q646",
+      "turnId": "SPX-1905-E-646-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_PRECEPT_HISTORICAL",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "PARISH_BASED_PASCHAL_COMMUNION_HISTORICAL"
+      ],
+      "questionEN": "When did the 1905 Catechism say Catholics were obliged to receive Communion?",
+      "questionFR": "Quand le Catéchisme de 1905 disait-il que les catholiques devaient communier ?",
+      "originalDraftEN": "It speaks of annual Easter Communion in one's parish and Communion in danger of death. The parish specification reflects historical discipline; current requirements must be checked separately.",
+      "originalDraftFR": "Il parle de la Communion annuelle à Pâques dans sa paroisse et de la Communion en danger de mort. La précision paroissiale relève de la discipline historique ; les règles actuelles doivent être vérifiées séparément.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q646"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q647",
+      "turnId": "SPX-1905-E-647-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_PRECEPT_HISTORICAL",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "FIRST_COMMUNION_DISCIPLINE_CONTEXT_1910_QUAM_SINGULARI"
+      ],
+      "questionEN": "At what age does the Easter Communion precept begin to bind according to the 1905 text?",
+      "questionFR": "À quel âge le précepte de la Communion pascale commence-t-il selon le texte de 1905 ?",
+      "originalDraftEN": "It begins when a child is capable of receiving Communion with the requisite dispositions; its application belongs to pastoral judgment.",
+      "originalDraftFR": "Il commence lorsque l'enfant est capable de communier avec les dispositions nécessaires ; son application relève du discernement pastoral.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q647"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q648",
+      "turnId": "SPX-1905-E-648-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_PRECEPT_HISTORICAL",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "FIRST_COMMUNION_PERSONAL_CULPABILITY_NOT_INFERABLE"
+      ],
+      "questionEN": "How does the historical Catechism speak about unjustified postponement of First Communion?",
+      "questionFR": "Comment le Catéchisme historique parle-t-il du report injustifié de la première Communion ?",
+      "originalDraftEN": "It seriously warns against culpably withholding Communion from a child capable of receiving it, and against parents' negligent failure to prepare the child. The text cannot determine an individual family's moral responsibility.",
+      "originalDraftFR": "Il met sévèrement en garde contre le refus coupable de faire communier un enfant capable de le faire et contre la négligence des parents à le préparer. Ce texte ne suffit pas pour juger de la responsabilité morale d'une famille particulière.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q648"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q649",
+      "turnId": "SPX-1905-E-649-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_FREQUENCY",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "PASTORAL_CONSCIENCE_SCOPE_HOLD",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "THE_1905_TEXT_PRECEDES_DEC_1905_FREQUENT_COMMUNION_DECREE"
+      ],
+      "questionEN": "Does the Catechism encourage frequent Holy Communion?",
+      "questionFR": "Le Catéchisme encourage-t-il la Communion fréquente ?",
+      "originalDraftEN": "Yes. It calls frequent Communion an excellent practice, provided the recipient approaches with the required dispositions.",
+      "originalDraftFR": "Oui. Il présente la Communion fréquente comme une excellente pratique, pourvu qu'on y apporte les dispositions nécessaires.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q649"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q650",
+      "turnId": "SPX-1905-E-650-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-COMMUNION_FREQUENCY",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "DEFERENCE_TO_CONFESSOR_DESCRIBES_1905_TEXT_NOT_FIXED_NUMERICAL_LIMIT"
+      ],
+      "questionEN": "How often did the 1905 Catechism advise receiving Communion?",
+      "questionFR": "À quelle fréquence le Catéchisme de 1905 conseillait-il de communier ?",
+      "originalDraftEN": "It recommended the greatest frequency that a devout and learned confessor judged suitable for the person. Its account reflects pastoral practice of the period rather than a fixed numerical limit.",
+      "originalDraftFR": "Il conseillait la fréquence la plus grande qu'un confesseur pieux et instruit jugeait convenable. Cet exposé reflète une pratique pastorale de l'époque plutôt qu'une limite numérique fixe.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q650"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q651",
+      "turnId": "SPX-1905-E-651-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_WHAT_IS_SACRIFICE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "HISTORICAL_THEOLOGICAL_LANGUAGE_OF_GENERAL_SACRIFICE"
+      ],
+      "questionEN": "Is the Eucharist only a sacrament, or also a sacrifice?",
+      "questionFR": "L'Eucharistie est-elle seulement un sacrement, ou également un sacrifice ?",
+      "originalDraftEN": "It is both: the sacrament of Christ's Body and Blood and the enduring sacrifice of the New Law, entrusted by Him to the Church for offering through priests.",
+      "originalDraftFR": "Elle est les deux : le sacrement du Corps et du Sang du Christ et le sacrifice permanent de la Nouvelle Loi, confié par Lui à l'Église pour être offert par les prêtres.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q596",
+        "PX1905-Q651"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q652",
+      "turnId": "SPX-1905-E-652-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_WHAT_IS_SACRIFICE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "BILINGUAL_CORRECTION_AVAILABLE_UNAPPROVED",
+        "PERIOD_REGISTER_VARIANT_UNAPPROVED",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "DRAFT_CHANGE_OR_DESTRUCTION_OVERSHOOTS_ORIGINAL_DESTRUCTION_IN_SOME_MANNER"
+      ],
+      "questionEN": "How does this Catechism define sacrifice in general?",
+      "questionFR": "Comment ce Catéchisme définit-il le sacrifice en général ?",
+      "originalDraftEN": "It defines it as offering a visible thing to God, with a sacrificial change or destruction, to acknowledge His supreme dominion over us and all creation. This is a historical catechetical definition.",
+      "originalDraftFR": "Il le définit comme l'offrande à Dieu d'une réalité visible, avec une transformation ou destruction sacrificielle, pour reconnaître son souverain domaine sur nous et la création. C'est une définition catéchétique historique.",
+      "correctionEN": "In the Catechism's general explanation, sacrifice consists of offering something perceptible to God and destroying it in some manner, to acknowledge His supreme dominion over us and all things.",
+      "correctionFR": "Dans l'explication générale du Catéchisme, le sacrifice consiste à offrir à Dieu une chose sensible et à la détruire d'une certaine manière, afin de reconnaître son souverain domaine sur nous et sur toutes choses.",
+      "periodEN": "Sacrifice is an offering made to God of some sensible thing, with its destruction in some manner, thereby acknowledging His sovereign dominion over us and over all creatures.",
+      "periodFR": "Le sacrifice est l’offrande faite à Dieu d’une chose sensible, avec sa destruction d’une certaine manière, pour reconnaître ainsi son souverain domaine sur nous et sur toutes les créatures.",
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q652"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q653",
+      "turnId": "SPX-1905-E-653-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_WHAT_IS_SACRIFICE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What is the sacrifice of the New Law called?",
+      "questionFR": "Comment appelle-t-on le sacrifice de la Nouvelle Loi ?",
+      "originalDraftEN": "The Holy Mass.",
+      "originalDraftFR": "La sainte Messe.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q653"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q654",
+      "turnId": "SPX-1905-E-654-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_WHAT_IS_SACRIFICE",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "FOLLOWUP_SAME_PRIEST_AND_VICTIM_NEEDS_Q660_PLUS_Q655"
+      ],
+      "questionEN": "What is the Holy Mass according to the longer Catechism?",
+      "questionFR": "Qu'est-ce que la sainte Messe selon le grand Catéchisme ?",
+      "originalDraftEN": "The sacrifice of the Body and Blood of Jesus Christ, offered upon the altar under the appearances of bread and wine in memorial of His sacrifice on the Cross.",
+      "originalDraftFR": "Le sacrifice du Corps et du Sang de Jésus-Christ, offert sur l'autel sous les espèces du pain et du vin en mémoire de son sacrifice sur la Croix.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q654"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q655",
+      "turnId": "SPX-1905-E-655-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_CALVARY_RELATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "BILINGUAL_CORRECTION_AVAILABLE_UNAPPROVED",
+        "PERIOD_REGISTER_VARIANT_UNAPPROVED",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "OPENING_SAME_PRIEST_AND_VICTIM_NEEDS_Q660_PLUS_Q655"
+      ],
+      "questionEN": "Is the Sacrifice of the Mass the same sacrifice as Calvary?",
+      "questionFR": "Le sacrifice de la Messe est-il le même que celui du Calvaire ?",
+      "originalDraftEN": "Substantially yes: Jesus Christ is the same Priest and Victim; the mode of offering differs. The Catechism insists on their intimate and essential relation.",
+      "originalDraftFR": "Substantiellement oui : Jésus-Christ est le même Prêtre et la même Victime ; le mode d'offrande diffère. Le Catéchisme insiste sur leur relation intime et essentielle.",
+      "correctionEN": "Yes, substantially. The same Jesus Christ who offered Himself on the Cross is offered upon the altar through priests, His ministers; the manner of offering differs. Christ remains the first and principal offerer.",
+      "correctionFR": "Oui, substantiellement. Le même Jésus-Christ qui s'est offert sur la Croix est offert sur l'autel par le ministère des prêtres ; le mode d'offrande diffère. Le Christ demeure le premier et principal offrant.",
+      "periodEN": "The Sacrifice of the Mass is substantially the same as that of Calvary. Jesus Christ, who offered Himself upon the Cross, is offered upon the altar by the ministry of the priests; the manner of offering is different.",
+      "periodFR": "Le Sacrifice de la Messe est substantiellement le même que celui du Calvaire. Jésus-Christ, qui s’est offert sur la Croix, est offert sur l’autel par le ministère des prêtres ; seul diffère le mode de l’offrande.",
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q655",
+        "PX1905-Q660"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q656",
+      "turnId": "SPX-1905-E-656-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_CALVARY_RELATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "How does the offering of Mass differ from Christ's sacrifice on the Cross?",
+      "questionFR": "En quoi l'offrande de la Messe diffère-t-elle du sacrifice du Christ sur la Croix ?",
+      "originalDraftEN": "On Calvary Christ offered Himself with the shedding of His Blood and merited redemption; in the Mass He is offered without a new shedding of blood and applies the fruits of that one Passion.",
+      "originalDraftFR": "Au Calvaire le Christ s'est offert dans l'effusion de son Sang et a mérité la rédemption ; à la Messe Il est offert sans nouvelle effusion de sang et applique les fruits de cette unique Passion.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q656"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q657",
+      "turnId": "SPX-1905-E-657-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_CALVARY_RELATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "PRECISION_REWRITE_REVIEW",
+      "reviewReasons": [
+        "THEOLOGICAL_TERMS_REQUIRE_EXACT_CLAIM_REVIEW",
+        "BILINGUAL_CORRECTION_AVAILABLE_UNAPPROVED",
+        "PERIOD_REGISTER_VARIANT_UNAPPROVED",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "SACRAMENTAL_WORDS_VERSUS_CONCOMITANCE_DISTINCTION_MUST_BE_RETAINED"
+      ],
+      "questionEN": "How does the Mass visibly represent Christ's sacrifice on the Cross?",
+      "questionFR": "Comment la Messe représente-t-elle visiblement le sacrifice du Christ sur la Croix ?",
+      "originalDraftEN": "The separate consecration under the appearances of bread and wine signifies the separation of Christ's Body and Blood on the Cross, while the whole living Christ is present under both species.",
+      "originalDraftFR": "La consécration séparée sous les espèces du pain et du vin signifie la séparation du Corps et du Sang du Christ sur la Croix, tandis que le Christ vivant tout entier est présent sous les deux espèces.",
+      "correctionEN": "The Mass represents the shedding of Christ's Blood on the Cross: by the words of Consecration His Body is made present under the species of bread and His Blood under the species of wine. Yet, by concomitance and the hypostatic union, the whole living Christ is present under each species.",
+      "correctionFR": "La Messe représente l'effusion du Sang du Christ sur la Croix : par les paroles de la consécration, son Corps est rendu présent sous l'espèce du pain et son Sang sous celle du vin. Pourtant, par concomitance et en raison de l'union hypostatique, le Christ vivant tout entier est présent sous chacune des espèces.",
+      "periodEN": "The separate consecration signifies the shedding of Christ’s Blood upon the Cross. By virtue of the words of consecration His Body is under the species of bread, and His Blood under those of wine; yet by concomitance and the hypostatic union the whole living Christ is present under either species.",
+      "periodFR": "La consécration séparée représente l’effusion du Sang du Christ sur la Croix. En vertu des paroles de la consécration, son Corps est sous l’espèce du pain et son Sang sous celle du vin ; cependant, par concomitance et en raison de l’union hypostatique, le Christ vivant tout entier est présent sous chacune des espèces.",
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q657"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q658",
+      "turnId": "SPX-1905-E-658-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_CALVARY_RELATION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "If Calvary is the one sacrifice, why do Catholics also speak of the Sacrifice of the Mass?",
+      "questionFR": "Si le Calvaire est l'unique sacrifice, pourquoi parler aussi du Sacrifice de la Messe ?",
+      "originalDraftEN": "Christ's single sacrifice on Calvary accomplished redemption and won its merits; the Mass is among the means He instituted for applying those merits. It does not add a second, independent redemption.",
+      "originalDraftFR": "L'unique sacrifice du Christ au Calvaire a accompli la rédemption et mérité ses fruits ; la Messe est l'un des moyens qu'Il a institués pour nous appliquer ces mérites. Elle n'ajoute pas une seconde rédemption indépendante.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q658"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q659",
+      "turnId": "SPX-1905-E-659-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_ENDS_AND_SAINTS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "What are the four ends of the Sacrifice of the Mass?",
+      "questionFR": "Quelles sont les quatre fins du Sacrifice de la Messe ?",
+      "originalDraftEN": "Adoration of God (latreutic), thanksgiving (Eucharistic), propitiation for sin and suffrage for the departed (propitiatory), and petition for needed graces (impetratory).",
+      "originalDraftFR": "L'adoration de Dieu (latreutique), l'action de grâce (eucharistique), la propitiation pour les péchés et le suffrage des défunts (propitiatoire), et la demande des grâces nécessaires (impétratoire).",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q659"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q660",
+      "turnId": "SPX-1905-E-660-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_ENDS_AND_SAINTS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Who offers the Sacrifice of the Mass?",
+      "questionFR": "Qui offre le Sacrifice de la Messe ?",
+      "originalDraftEN": "Jesus Christ is the first and principal offerer; the ordained priest serves as His minister and offers the sacrifice to the eternal Father in Christ's name.",
+      "originalDraftFR": "Jésus-Christ est le premier et principal offrant ; le prêtre ordonné agit comme son ministre et offre le sacrifice au Père éternel au nom du Christ.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q660"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q661",
+      "turnId": "SPX-1905-E-661-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_ENDS_AND_SAINTS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Who instituted the Sacrifice of the Mass?",
+      "questionFR": "Qui a institué le Sacrifice de la Messe ?",
+      "originalDraftEN": "Jesus Christ instituted it when He instituted the Eucharist and commanded that it be done in memory of His Passion.",
+      "originalDraftFR": "Jésus-Christ l'a institué lorsqu'Il a institué l'Eucharistie et ordonné de faire cela en mémoire de sa Passion.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q661"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q662",
+      "turnId": "SPX-1905-E-662-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_ENDS_AND_SAINTS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "To whom is the Holy Mass offered?",
+      "questionFR": "À qui offre-t-on la sainte Messe ?",
+      "originalDraftEN": "The Sacrifice of the Mass is offered to God alone.",
+      "originalDraftFR": "Le Sacrifice de la Messe est offert à Dieu seul.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q662"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q663",
+      "turnId": "SPX-1905-E-663-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_ENDS_AND_SAINTS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "If Mass is offered to God alone, how can a Mass honour the Virgin Mary or a saint?",
+      "questionFR": "Si la Messe est offerte à Dieu seul, comment peut-elle honorer la Vierge Marie ou un saint ?",
+      "originalDraftEN": "A Mass in honour of Mary or the saints remains a sacrifice offered to God alone. We thank God for His gifts to them and seek His graces through their intercession.",
+      "originalDraftFR": "Une Messe en l'honneur de Marie ou des saints demeure un sacrifice offert à Dieu seul. Nous remercions Dieu des dons qu'Il leur a faits et demandons ses grâces par leur intercession.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q662",
+        "PX1905-Q663"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q664",
+      "turnId": "SPX-1905-E-664-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_ENDS_AND_SAINTS",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "STANDARD_SOURCE_TRANSLATION_VOICE_REVIEW"
+      ],
+      "originalReviewFlags": [],
+      "questionEN": "Who shares in the fruits of the Mass?",
+      "questionFR": "Qui participe aux fruits de la Messe ?",
+      "originalDraftEN": "The whole Church shares in them, and in a particular way the priest, those assisting at Mass and those for whom it is applied, whether living or deceased.",
+      "originalDraftFR": "Toute l'Église y participe, et d'une manière particulière le prêtre, ceux qui assistent à la Messe et ceux pour qui elle est appliquée, vivants ou défunts.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q664"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q665",
+      "turnId": "SPX-1905-E-665-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_HEARING_DEVOTION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "WAVE_1_FIRST_40",
+      "lane": "SOURCE_TRANSLATION_REVIEW",
+      "reviewReasons": [
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "OUTWARD_MODESTY_AND_INTERIOR_DEVOTION_DISTINCT"
+      ],
+      "questionEN": "What dispositions help someone attend Mass fruitfully?",
+      "questionFR": "Quelles dispositions aident à assister fructueusement à la Messe ?",
+      "originalDraftEN": "The Catechism names two: outward modesty and reverence, and inward devotion of the heart.",
+      "originalDraftFR": "Le Catéchisme en nomme deux : la modestie et la révérence extérieures, et la dévotion intérieure du cœur.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q665"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    },
+    {
+      "id": "PX1905-Q666",
+      "turnId": "SPX-1905-E-666-T1",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "arcId": "SPX-ARC-MASS_HEARING_DEVOTION",
+      "sourceClass": "PAPALLY_PRESCRIBED_1905_CATECHISM_NOT_PERSONAL_AUTOGRAPH",
+      "priority": "BACKLOG_AFTER_FIRST_40",
+      "lane": "HISTORICAL_PASTORAL_HOLD",
+      "reviewReasons": [
+        "DATED_DISCIPLINE_OR_RITE_MUST_BE_1905_ONLY",
+        "PRIOR_SOURCE_SCOPE_REVIEW_FLAGS"
+      ],
+      "originalReviewFlags": [
+        "LITURGICAL_POSTURE_HISTORICAL_AND_LOCAL_NOT_UNIVERSAL",
+        "SECOND_SOURCE_Q667_OUTSIDE_100_QUESTION_COHORT"
+      ],
+      "questionEN": "How does this historical Catechism describe outward reverence at Mass?",
+      "questionFR": "Comment ce Catéchisme historique décrit-il la révérence extérieure à la Messe ?",
+      "originalDraftEN": "It mentions modest dress, silence and recollection, and a customary pattern of kneeling except when standing for the two Gospels. This is not a universal posture rubric for every contemporary Mass, including every 1962-form local custom.",
+      "originalDraftFR": "Il mentionne une tenue modeste, le silence et le recueillement, ainsi qu'un usage de s'agenouiller sauf pour les deux Évangiles. Ce n'est pas une rubrique de posture universelle pour toutes les Messes actuelles ni pour toutes les coutumes locales de la forme de 1962.",
+      "correctionEN": null,
+      "correctionFR": null,
+      "periodEN": null,
+      "periodFR": null,
+      "outOfCharacterNote": null,
+      "supportedSourceQuestionIds": [
+        "PX1905-Q666"
+      ],
+      "originalDigitalWitness": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "originalPrintQuestionsNumbered": false,
+      "approval": {
+        "sourceClaim": "NOT_SIGNED_OFF",
+        "english": "NOT_SIGNED_OFF",
+        "french": "NOT_SIGNED_OFF",
+        "historicalVoice": "NOT_SIGNED_OFF",
+        "pastoralHistoricalScope": "NOT_SIGNED_OFF"
+      },
+      "published": false,
+      "denzingerRequired": false
+    }
+  ]
+}

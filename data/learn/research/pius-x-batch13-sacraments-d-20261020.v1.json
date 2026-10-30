@@ -1,0 +1,519 @@
+{
+  "schema": "AO_SPX_1905_BATCH13_PART_V1",
+  "part": "D",
+  "created": "2026-10-20",
+  "status": "RESEARCH_DRAFT_NOT_APPROVED",
+  "followupPolicy": "SAME_SOURCE_QUESTION_SECOND_VISITOR_INTENT",
+  "records": [
+    {
+      "id": "SPX-1905-I-797",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q797",
+        "originalQuestionItalian": "In qual modo la Chiesa ci rimette la pena temporale per mezzo delle indulgenze?",
+        "relatedQuestionId": "PX1905-Q798",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How does the Catechism explain the spiritual treasury behind indulgences?",
+            "fr": "Comment le Catéchisme explique-t-il le trésor spirituel des indulgences ?"
+          },
+          "response": {
+            "en": "It speaks of the superabundant merits or satisfactions of Jesus Christ, the Blessed Virgin Mary and the saints, shared through the Church's spiritual treasury.",
+            "fr": "Il parle des mérites ou satisfactions surabondants de Jésus-Christ, de la Bienheureuse Vierge Marie et des saints, communiqués par le trésor spirituel de l'Église."
+          },
+          "supports": [
+            "PX1905-Q797"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does this treasury replace Christ as the source of redemption?",
+            "fr": "Ce trésor remplace-t-il le Christ comme source de rédemption ?"
+          },
+          "response": {
+            "en": "No. The Church's treasury is grounded in Christ's saving merits; the saints' participation is not a rival redemption.",
+            "fr": "Non. Le trésor de l'Église repose sur les mérites salvifiques du Christ ; la participation des saints n'est pas une rédemption concurrente."
+          },
+          "supports": [
+            "PX1905-Q797"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-798",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q798",
+        "originalQuestionItalian": "Chi ha il potere di concedere le indulgenze?",
+        "relatedQuestionId": "PX1905-Q799",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Who could grant indulgences under the 1905 account?",
+            "fr": "Qui pouvait accorder des indulgences selon l'exposé de 1905 ?"
+          },
+          "response": {
+            "en": "The Catechism identifies the Pope for the universal Church and bishops in their dioceses according to faculties granted by the Pope. Present-day rules and grants must be checked separately.",
+            "fr": "Le Catéchisme désigne le Pape pour l'Église universelle et les évêques dans leurs diocèses selon les facultés concédées par le Pape. Les règles et concessions actuelles doivent être vérifiées séparément."
+          },
+          "supports": [
+            "PX1905-Q798"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Can a visitor assume every old indulgence is still in force?",
+            "fr": "Un fidèle peut-il supposer que toute ancienne indulgence demeure en vigueur ?"
+          },
+          "response": {
+            "en": "No. The 1905 source establishes historical teaching, not the current authorized list of grants.",
+            "fr": "Non. La source de 1905 atteste un enseignement historique, non la liste actuelle des concessions autorisées."
+          },
+          "supports": [
+            "PX1905-Q798"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-799",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q799",
+        "originalQuestionItalian": "Di quante specie sono le indulgenze?",
+        "relatedQuestionId": "PX1905-Q800",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What are the two kinds of indulgence?",
+            "fr": "Quelles sont les deux sortes d'indulgence ?"
+          },
+          "response": {
+            "en": "Plenary and partial indulgences.",
+            "fr": "Les indulgences plénières et partielles."
+          },
+          "supports": [
+            "PX1905-Q799"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does the distinction concern forgiven sin itself?",
+            "fr": "La distinction concerne-t-elle le pardon de la faute elle-même ?"
+          },
+          "response": {
+            "en": "No. It concerns the remission of temporal punishment after guilt has been forgiven.",
+            "fr": "Non. Elle concerne la remise des peines temporelles après le pardon de la faute."
+          },
+          "supports": [
+            "PX1905-Q799"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-800",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q800",
+        "originalQuestionItalian": "Qual’è l’indulgenza plenaria?",
+        "relatedQuestionId": "PX1905-Q801",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is a plenary indulgence?",
+            "fr": "Qu'est-ce qu'une indulgence plénière ?"
+          },
+          "response": {
+            "en": "It is the remission of all temporal punishment remaining due to sins already forgiven. The Catechism describes its significance for final purification, not a way to verify an individual's spiritual condition.",
+            "fr": "C'est la remise de toute la peine temporelle encore due pour des péchés déjà pardonnés. Le Catéchisme décrit son importance pour la purification finale, non un moyen de vérifier l'état spirituel d'une personne."
+          },
+          "supports": [
+            "PX1905-Q800"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Can we know with certainty that a named person obtained one fully?",
+            "fr": "Peut-on savoir avec certitude qu'une personne déterminée l'a pleinement obtenue ?"
+          },
+          "response": {
+            "en": "The historical definition does not prove an individual's fulfillment of every condition; such claims require restraint.",
+            "fr": "La définition historique ne prouve pas qu'une personne a rempli toutes les conditions ; une telle conclusion demande de la retenue."
+          },
+          "supports": [
+            "PX1905-Q800"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-801",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q801",
+        "originalQuestionItalian": "Qual’è l’indulgenza parziale?",
+        "relatedQuestionId": "PX1905-Q802",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does a partial indulgence remit?",
+            "fr": "Que remet une indulgence partielle ?"
+          },
+          "response": {
+            "en": "It remits part, rather than all, of the temporal punishment due to forgiven sins.",
+            "fr": "Elle remet une partie, plutôt que la totalité, de la peine temporelle due à des péchés pardonnés."
+          },
+          "supports": [
+            "PX1905-Q801"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is it the same as partial forgiveness of an unforgiven mortal sin?",
+            "fr": "Équivaut-elle à un pardon partiel d'un péché mortel non pardonné ?"
+          },
+          "response": {
+            "en": "No. The definition concerns temporal punishment remaining after forgiveness of guilt.",
+            "fr": "Non. La définition concerne la peine temporelle subsistant après le pardon de la faute."
+          },
+          "supports": [
+            "PX1905-Q801"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-802",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q802",
+        "originalQuestionItalian": "Che cosa intende di fare la Chiesa nel concedere le indulgenze?",
+        "relatedQuestionId": "PX1905-Q803",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Church grant indulgences?",
+            "fr": "Pourquoi l'Église accorde-t-elle des indulgences ?"
+          },
+          "response": {
+            "en": "According to the Catechism, they help believers with temporal satisfaction through works of piety and charity, succeeding some of the strict public penitential disciplines of earlier centuries.",
+            "fr": "Selon le Catéchisme, elles aident les fidèles pour la satisfaction temporelle par des œuvres de piété et de charité, dans la continuité de certaines disciplines pénitentielles rigoureuses des premiers siècles."
+          },
+          "supports": [
+            "PX1905-Q802"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does receiving an indulgence replace Christian charity?",
+            "fr": "Recevoir une indulgence remplace-t-il la charité chrétienne ?"
+          },
+          "response": {
+            "en": "No. The teaching specifically connects indulgences with pious and charitable works.",
+            "fr": "Non. L'enseignement relie expressément les indulgences aux œuvres pieuses et charitables."
+          },
+          "supports": [
+            "PX1905-Q802"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-803",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q803",
+        "originalQuestionItalian": "Che cosa s’intende per indulgenza di quaranta o cento giorni, ovvero di sette anni, e simili?",
+        "relatedQuestionId": "PX1905-Q804",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What did the old wording 'forty days' or 'seven years' of indulgence mean?",
+            "fr": "Que signifiaient les anciennes expressions « quarante jours » ou « sept ans » d'indulgence ?"
+          },
+          "response": {
+            "en": "The 1905 text compares such grants to the equivalent duration of ancient canonical penances; it does not mean a fixed number of days removed from Purgatory. This dated numerical classification is no longer used in the modern grants.",
+            "fr": "Le texte de 1905 les compare à une durée équivalente d'anciennes pénitences canoniques ; cela ne signifie pas un nombre fixe de jours retranchés au Purgatoire. Cette classification numérique ancienne n'est plus utilisée dans les concessions modernes."
+          },
+          "supports": [
+            "PX1905-Q803"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Could I subtract seven years from a soul's time in Purgatory?",
+            "fr": "Puis-je soustraire sept ans au séjour d'une âme au Purgatoire ?"
+          },
+          "response": {
+            "en": "No. The old number referred to historical penitential discipline, not a measurable duration in Purgatory.",
+            "fr": "Non. Le chiffre ancien renvoyait à une discipline pénitentielle historique, non à une durée mesurable au Purgatoire."
+          },
+          "supports": [
+            "PX1905-Q803"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-804",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q804",
+        "originalQuestionItalian": "Che conto dobbiamo fare delle indulgenze?",
+        "relatedQuestionId": "PX1905-Q805",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Catechism value indulgences?",
+            "fr": "Pourquoi le Catéchisme attache-t-il de l'importance aux indulgences ?"
+          },
+          "response": {
+            "en": "It presents them as a means of spiritual benefit, helping satisfy temporal punishment and orient the faithful toward heaven.",
+            "fr": "Il les présente comme un moyen de bien spirituel, aidant à satisfaire aux peines temporelles et orientant les fidèles vers le ciel."
+          },
+          "supports": [
+            "PX1905-Q804"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Should indulgences become a competition to collect quantities?",
+            "fr": "Les indulgences doivent-elles devenir une compétition de quantité ?"
+          },
+          "response": {
+            "en": "The source speaks of spiritual benefit, not a game or a measurable score of holiness.",
+            "fr": "La source parle d'un bien spirituel, non d'un jeu ni d'un score mesurable de sainteté."
+          },
+          "supports": [
+            "PX1905-Q804"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-805",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q805",
+        "originalQuestionItalian": "Che cosa si ricerca per acquistare le indulgenze?",
+        "relatedQuestionId": "PX1905-Q806",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What conditions did the 1905 Catechism give for gaining indulgences?",
+            "fr": "Quelles conditions le Catéchisme de 1905 donnait-il pour obtenir des indulgences ?"
+          },
+          "response": {
+            "en": "It names the state of grace, observance of the prescribed works, and intention to gain the indulgence, with repentance for the faults concerned. More detailed current conditions depend on the indulgence and applicable Church norms.",
+            "fr": "Il nomme l'état de grâce, l'accomplissement des œuvres prescrites et l'intention d'obtenir l'indulgence, avec le repentir des fautes concernées. Les conditions actuelles détaillées dépendent de l'indulgence et des normes ecclésiastiques applicables."
+          },
+          "supports": [
+            "PX1905-Q805"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does merely finding an old indulgenced prayer guarantee its benefit today?",
+            "fr": "Retrouver une ancienne prière indulgenciée garantit-il son bénéfice aujourd'hui ?"
+          },
+          "response": {
+            "en": "No. Current grants and their conditions need independent verification.",
+            "fr": "Non. Les concessions actuelles et leurs conditions demandent une vérification distincte."
+          },
+          "supports": [
+            "PX1905-Q805"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-I-806",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q806",
+        "originalQuestionItalian": "Le indulgenze possono applicarsi anche alle anime del purgatorio?",
+        "relatedQuestionId": "PX1905-Q807",
+        "section": "INDULGENCES_DOCTRINE_AND_HISTORICAL_DISCIPLINE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Can indulgences be applied to the departed?",
+            "fr": "Peut-on appliquer les indulgences aux défunts ?"
+          },
+          "response": {
+            "en": "The historical Catechism says they may be applied to souls in Purgatory when the authority granting them provides for that application.",
+            "fr": "Le Catéchisme historique dit qu'elles peuvent être appliquées aux âmes du Purgatoire lorsque l'autorité qui les concède le prévoit."
+          },
+          "supports": [
+            "PX1905-Q806"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is every grant automatically applicable to the dead?",
+            "fr": "Toute concession s'applique-t-elle automatiquement aux défunts ?"
+          },
+          "response": {
+            "en": "No. The wording expressly depends on what the grant allows.",
+            "fr": "Non. Le texte le fait dépendre expressément de ce que la concession permet."
+          },
+          "supports": [
+            "PX1905-Q806"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ]
+}

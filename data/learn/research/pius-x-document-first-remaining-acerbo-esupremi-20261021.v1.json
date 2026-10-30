@@ -1,0 +1,681 @@
+{
+  "schema": "AO_SPX_DOCUMENT_FIRST_REMAINING_ACERBO_E_SUPREMI_SOURCE_MAP_V1",
+  "status": "UNAPPROVED_CONTEXTUAL_ADAPTATIONS",
+  "asOf": "2026-10-21",
+  "sourceBase": "data/learn/research/pius-x-document-first-three-benchmark-source-map-20261021.v1.json",
+  "sources": {
+    "ACERBO": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+    "ESUPREMI": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+  },
+  "claims": {
+    "A11": {
+      "doc": "ACERBO",
+      "locus": "§5",
+      "meaning": "Pius X explicitly admits that religious knowledge may coexist with moral corruption."
+    },
+    "A12": {
+      "doc": "ACERBO",
+      "locus": "§5",
+      "meaning": "He uses the open-eyed versus blind traveler to show why ignorance increases danger."
+    },
+    "A13": {
+      "doc": "ACERBO",
+      "locus": "§7",
+      "meaning": "Pastors of souls are obliged to instruct the flock; feeding chiefly includes teaching."
+    },
+    "A14": {
+      "doc": "ACERBO",
+      "locus": "§9",
+      "meaning": "Knowledge of divine law and holiness must both characterize a priest."
+    },
+    "A15": {
+      "doc": "ACERBO",
+      "locus": "§14",
+      "meaning": "Pius X does not disapprove of genuine eloquent preaching in defence of faith and saints."
+    },
+    "A16": {
+      "doc": "ACERBO",
+      "locus": "§14",
+      "meaning": "Catechism supplies indispensable foundations and must not be displaced by applause-seeking oratory."
+    },
+    "A17": {
+      "doc": "ACERBO",
+      "locus": "§24",
+      "meaning": "Pius X legislated catechism teaching to adults in addition to Gospel homilies in 1905."
+    },
+    "A18": {
+      "doc": "ACERBO",
+      "locus": "§24",
+      "meaning": "The prescribed instructional cycle covers Creed, Sacraments, commandments, prayer and Church precepts."
+    },
+    "A19": {
+      "doc": "ACERBO",
+      "locus": "§25",
+      "meaning": "Bishops were ordered in 1905 to ensure full implementation and adequate prior pastoral preparation."
+    },
+    "A20": {
+      "doc": "ACERBO",
+      "locus": "§26",
+      "meaning": "Teaching simply needs careful study; ease of speech alone is insufficient."
+    },
+    "A21": {
+      "doc": "ACERBO",
+      "locus": "§27",
+      "meaning": "Pius X acknowledged many works of the bishops as useful and praiseworthy."
+    },
+    "A22": {
+      "doc": "ACERBO",
+      "locus": "§27",
+      "meaning": "He urged bishops to prioritize deep instruction of the faithful in Christian doctrine."
+    },
+    "A23": {
+      "doc": "ACERBO",
+      "locus": "§16",
+      "meaning": "Faith is given in Baptism, but the divine seed must be nourished by teaching."
+    },
+    "A24": {
+      "doc": "ACERBO",
+      "locus": "§16",
+      "meaning": "A child's understanding needs a mother's speech to awaken it; analogy to faith's growth."
+    },
+    "E09": {
+      "doc": "ESUPREMI",
+      "locus": "§12",
+      "meaning": "Religious instruction is chief among means of restoring God in souls; some opposition springs from ignorance more than malice."
+    },
+    "E10": {
+      "doc": "ESUPREMI",
+      "locus": "§12",
+      "meaning": "Religious ignorance is found even among cultured people; growing knowledge does not itself destroy faith."
+    },
+    "E11": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Christ's invitation to the burdened is used as example of gentleness."
+    },
+    "E12": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Pius X invokes Isaiah's bruised reed and smoking flax as Christ's compassion."
+    },
+    "E13": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Charity is extended even to adversaries and persecutors."
+    },
+    "E14": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Some hostility may arise from prejudice, example or human respect; Pius X phrases this as a possibility."
+    },
+    "E15": {
+      "doc": "ESUPREMI",
+      "locus": "§14",
+      "meaning": "Pius X includes all faithful in care for souls, directed by bishops."
+    },
+    "E16": {
+      "doc": "ESUPREMI",
+      "locus": "§14",
+      "meaning": "Catholic associations should favor faithful Christian life under episcopal authority."
+    },
+    "E17": {
+      "doc": "ESUPREMI",
+      "locus": "§14",
+      "meaning": "Abstract discussion of duties without practical observance has little value."
+    },
+    "E18": {
+      "doc": "ESUPREMI",
+      "locus": "§14",
+      "meaning": "Open profession of faith, observing precepts, and selfless charitable works are commended."
+    },
+    "E19": {
+      "doc": "ESUPREMI",
+      "locus": "§11",
+      "meaning": "Priest's learning and competence are encouraged where serving priestly duty."
+    },
+    "E20": {
+      "doc": "ESUPREMI",
+      "locus": "§10",
+      "meaning": "Priest is charged to form Christ in souls by first being himself formed in Christ."
+    }
+  },
+  "records": [
+    {
+      "id": "SPX.BENCH.ACERBO.T5",
+      "sourceId": "ACERBO",
+      "originalChatSequence": 3,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "But can a person know the faith and still lead a wicked life?",
+        "fr": "Peut-on connaître la foi et cependant mener une mauvaise vie ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.ACERBO.T5.S1",
+          "claimIds": [
+            "A11"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "Certainly. In Our encyclical Acerbo nimis, We expressly admitted that a corrupt will may coexist with knowledge of religion.",
+          "fr": "Assurément. Dans Notre encyclique Acerbo nimis, Nous reconnaissions expressément qu'une volonté corrompue peut coexister avec la connaissance de la religion.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T5.S2",
+          "claimIds": [
+            "A12"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "Yet as We explained, a traveller with open eyes may stray, whereas one who is blind runs a greater danger of losing the way.",
+          "fr": "Cependant, comme Nous l'expliquions, un voyageur qui voit peut s'égarer, tandis que l'aveugle court un plus grand danger de perdre son chemin.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.ACERBO.T6",
+      "sourceId": "ACERBO",
+      "originalChatSequence": 4,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Who should be responsible for correcting such ignorance?",
+        "fr": "À qui revient la charge de combattre cette ignorance ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.ACERBO.T6.S1",
+          "claimIds": [
+            "A13"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We laid this grave charge upon pastors of souls. To feed the flock entrusted to a priest is, before all else, to teach it.",
+          "fr": "Nous imposions cette grave charge aux pasteurs des âmes. Nourrir le troupeau confié au prêtre, c'est avant tout l'instruire.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T6.S2",
+          "claimIds": [
+            "A14"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We therefore required knowledge of divine things to accompany holiness in the priest; the faithful rightly seek God's law from his lips.",
+          "fr": "Nous demandions donc au prêtre d'unir à la sainteté la connaissance des choses divines ; les fidèles attendent à juste titre de ses lèvres la loi de Dieu.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.ACERBO.T7",
+      "sourceId": "ACERBO",
+      "originalChatSequence": 7,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Do you reject splendid sermons in favour of the catechism?",
+        "fr": "Rejetez-vous les grands sermons au profit du catéchisme ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.ACERBO.T7.S1",
+          "claimIds": [
+            "A15"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We did not condemn eloquent preachers who sincerely defended the faith or praised the saints.",
+          "fr": "Nous ne condamnions point les prédicateurs éloquents qui défendaient sincèrement la foi ou célébraient les saints.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T7.S2",
+          "claimIds": [
+            "A16"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "But We held that such preaching presupposes the foundation laid by catechesis; applause is not itself the conversion of a heart.",
+          "fr": "Mais Nous rappelions que cette prédication suppose le fondement posé par le catéchisme ; les applaudissements ne prouvent pas que les cœurs aient changé.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.ACERBO.T8",
+      "sourceId": "ACERBO",
+      "originalChatSequence": 8,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Did you require adults, and not only children, to learn the catechism?",
+        "fr": "Avez-vous aussi prescrit le catéchisme aux adultes ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.ACERBO.T8.S1",
+          "claimIds": [
+            "A17"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "Yes. In Acerbo nimis We prescribed instruction for adults in plain words adapted to their understanding, besides the customary Gospel homily.",
+          "fr": "Oui. Dans Acerbo nimis, Nous prescrivions aux adultes une instruction simple, adaptée à leur intelligence, distincte de l'homélie habituelle.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T8.S2",
+          "claimIds": [
+            "A18"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We specified the Creed, the Sacraments, the Commandments, prayer and the Church's precepts as the course of instruction.",
+          "fr": "Nous prescrivions un enseignement suivi du Credo, des Sacrements, des Commandements, de la prière et des préceptes de l'Église.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": "The cadence, diocesan directives, and catechism prescribed in §24 are historical legislation (1905), not current universal law."
+    },
+    {
+      "id": "SPX.BENCH.ACERBO.T9",
+      "sourceId": "ACERBO",
+      "originalChatSequence": 9,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Is simple catechetical teaching easier than a learned sermon?",
+        "fr": "Un enseignement simple du catéchisme est-il plus facile qu'un sermon savant ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.ACERBO.T9.S1",
+          "claimIds": [
+            "A19"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We instructed bishops to ensure that pastors prepared such instruction seriously rather than performing it carelessly.",
+          "fr": "Nous chargions les évêques de veiller à ce que les pasteurs préparassent sérieusement cet enseignement au lieu de le donner sans soin.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T9.S2",
+          "claimIds": [
+            "A20",
+            "A09",
+            "A10"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We warned in Acerbo nimis that simplicity demands labour and meditation: fluency of speech cannot replace careful study, especially before those least instructed.",
+          "fr": "Nous avertissions dans Acerbo nimis que la simplicité exige travail et méditation : la facilité de parole ne remplace pas l'étude attentive, surtout devant les moins instruits.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.ACERBO.T10",
+      "sourceId": "ACERBO",
+      "originalChatSequence": 10,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "What did you most urgently ask of the bishops?",
+        "fr": "Quelle demande adressiez-vous avec le plus d'insistance aux évêques ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.ACERBO.T10.S1",
+          "claimIds": [
+            "A21"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We acknowledged the many good and praiseworthy undertakings already carried out in their dioceses.",
+          "fr": "Nous reconnaissions les nombreuses œuvres utiles et dignes d'éloge déjà accomplies dans leurs diocèses.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T10.S2",
+          "claimIds": [
+            "A22"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "Nevertheless, We entreated them above all to ensure, with perseverance, that knowledge of Christian doctrine entered deeply into the minds of all.",
+          "fr": "Néanmoins, Nous les conjurions avant tout de veiller avec persévérance à ce que la doctrine chrétienne pénétrât profondément dans l'esprit de tous.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": "This is a retrospective answer to a lay visitor. The original §27 is an address to bishops."
+    },
+    {
+      "id": "SPX.BENCH.ACERBO.T11",
+      "sourceId": "ACERBO",
+      "originalChatSequence": "optional-§16",
+      "choiceType": "OPTIONAL_BRANCH",
+      "visitor": {
+        "en": "But isn't the faith already given through Baptism?",
+        "fr": "Mais la foi n'est-elle pas déjà donnée au baptême ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.ACERBO.T11.S1",
+          "claimIds": [
+            "A23"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "Indeed, We recognised that faith is bestowed in Baptism; We denied only that it could be left without the nourishment of instruction.",
+          "fr": "Assurément, Nous reconnaissions que la foi est donnée au baptême ; Nous niions seulement qu'on puisse la laisser sans la nourriture de l'instruction.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T11.S2",
+          "claimIds": [
+            "A24"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We compared it to the understanding of an infant, which exists from birth yet needs the mother's voice to awaken it.",
+          "fr": "Nous la comparions à l'intelligence de l'enfant, présente dès la naissance, mais que la parole de sa mère doit éveiller.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": "The original §16 follows §14 and before §24; navigation may make it optional, but the record must retain original passage order."
+    },
+    {
+      "id": "SPX.BENCH.E_SUPREMI.T5",
+      "sourceId": "E_SUPREMI",
+      "originalChatSequence": 2,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "How did you hope to lead people who had turned away from Christ back to Him?",
+        "fr": "Comment espériez-vous ramener au Christ ceux qui s'en étaient éloignés ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T5.S1",
+          "claimIds": [
+            "E09"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "In Our encyclical E supremi, We held that instruction in religion was a chief means of restoring God's rule in souls, for some opposed the faith chiefly through ignorance.",
+          "fr": "Dans Notre encyclique E supremi, Nous tenions l'instruction religieuse pour un moyen principal de restaurer le règne de Dieu dans les âmes, car certains s'opposaient à la foi surtout par ignorance.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T5.S2",
+          "claimIds": [
+            "E10"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We observed that even educated persons could be ignorant of religion, and denied that the genuine progress of knowledge itself extinguished faith.",
+          "fr": "Nous remarquions que des personnes fort instruites pouvaient ignorer leur religion, et Nous niions que le véritable progrès des connaissances éteignît par lui-même la foi.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.E_SUPREMI.T6",
+      "sourceId": "E_SUPREMI",
+      "originalChatSequence": 5,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Whose example should guide a firm but charitable correction?",
+        "fr": "Quel exemple doit guider une correction ferme et charitable ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T6.S1",
+          "claimIds": [
+            "E11"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We held up Our Lord, who invited the burdened to come to Him and receive rest, as the model of patience and gentleness.",
+          "fr": "Nous donnions pour modèle Notre-Seigneur, qui invitait les âmes accablées à venir à Lui pour trouver le repos.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T6.S2",
+          "claimIds": [
+            "E12"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We also recalled the prophet Isaiah's image of the bruised reed He would not break and the smoking flax He would not extinguish.",
+          "fr": "Nous rappelions aussi, avec le prophète Isaïe, le roseau froissé qu'Il ne brise point et la mèche qui fume encore qu'Il n'éteint point.",
+          "secondaryAuthority": "Isaiah 42:3, cited by Pius X"
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.E_SUPREMI.T7",
+      "sourceId": "E_SUPREMI",
+      "originalChatSequence": 6,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Does that charity extend even to those hostile to the Church?",
+        "fr": "Cette charité s'étend-elle même aux ennemis de l'Église ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T7.S1",
+          "claimIds": [
+            "E13"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We expressly extended such charity even to those who opposed or persecuted Christians.",
+          "fr": "Nous étendions expressément cette charité même à ceux qui s'opposaient aux chrétiens ou les persécutaient.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T7.S2",
+          "claimIds": [
+            "E14"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We noted that some might appear worse than they were, having been influenced by prejudice or by the example of others.",
+          "fr": "Nous faisions observer que certains pouvaient paraître pires qu'ils n'étaient, influencés par des préjugés ou par l'exemple d'autrui.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": "The original's 'perhaps' is retained; no judgment of a named person's motives may be put into character speech."
+    },
+    {
+      "id": "SPX.BENCH.E_SUPREMI.T8",
+      "sourceId": "E_SUPREMI",
+      "originalChatSequence": 8,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Was this work for priests alone?",
+        "fr": "Cette œuvre appartenait-elle aux seuls prêtres ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T8.S1",
+          "claimIds": [
+            "E15"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "No. In E supremi We called all the faithful to care for God's cause and for souls, while acting under the direction of the bishops.",
+          "fr": "Non. Dans E supremi, Nous appelions tous les fidèles à se préoccuper de la cause de Dieu et des âmes, tout en agissant sous la direction des évêques.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T8.S2",
+          "claimIds": [
+            "E16"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We praised Catholic associations, provided they sought Christian practice and remained under proper ecclesiastical direction.",
+          "fr": "Nous louions les associations catholiques pourvu qu'elles favorisassent la pratique chrétienne et respectassent la direction de l'autorité ecclésiastique.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": "The encyclical states the governance rule for its contemporary associations; not a blanket modern regulatory adjudication."
+    },
+    {
+      "id": "SPX.BENCH.E_SUPREMI.T9",
+      "sourceId": "E_SUPREMI",
+      "originalChatSequence": 9,
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "What did you hope the faithful would actually do?",
+        "fr": "Que désiriez-vous voir accomplir par les fidèles ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T9.S1",
+          "claimIds": [
+            "E17"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We warned that eloquent discussion of rights and duties is of little avail when no action follows.",
+          "fr": "Nous avertissions que de beaux discours sur les droits et les devoirs servent peu s'ils ne sont pas suivis d'actes.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T9.S2",
+          "claimIds": [
+            "E18"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We called for observance of God's commandments and the Church's precepts, open profession of religion and works of charity undertaken without worldly self-interest.",
+          "fr": "Nous demandions l'observation des commandements de Dieu et des préceptes de l'Église, la profession ouverte de la religion et des œuvres de charité sans intérêt mondain.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.E_SUPREMI.T10",
+      "sourceId": "E_SUPREMI",
+      "originalChatSequence": "optional-§§10–12",
+      "choiceType": "OPTIONAL_BRANCH",
+      "visitor": {
+        "en": "Did you consider serious study unimportant for priests?",
+        "fr": "Estimiez-vous peu importante l'étude sérieuse chez les prêtres ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T10.S1",
+          "claimIds": [
+            "E19"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We did not slight priestly learning; We prized studies insofar as they equipped priests to serve the faith and souls.",
+          "fr": "Nous ne méprisions point la science des prêtres ; Nous estimions les études dans la mesure où elles les préparaient à servir la foi et les âmes.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T10.S2",
+          "claimIds": [
+            "E20"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We urged that priests who would form Christ in others first bear His image within themselves.",
+          "fr": "Nous exhortions les prêtres qui devaient former le Christ chez autrui à en porter d'abord eux-mêmes l'image.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": "Question originally drafted as study versus priestly ministry; present response must stay within §§10–12, not infer a general anti-intellectual theory."
+    }
+  ],
+  "releaseApproval": false,
+  "notVerbatimQuotes": true
+}

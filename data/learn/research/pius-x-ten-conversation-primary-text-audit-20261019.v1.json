@@ -1,0 +1,612 @@
+{
+  "schema": "AO_PIUS_X_TEN_PILOT_PRELIMINARY_ORIGINAL_TEXT_CLAIM_AUDIT_V1",
+  "date": "2026-10-19",
+  "status": "SOURCE_FIRST_DIALOGUE_V2_PROPOSITION_RECONCILIATION_NO_INDEPENDENT_CERTIFICATION",
+  "methodology": "Each of 30 content turns compared by proposition against source text available on the Vatican's published historical document pages, Museo San Pio X's 1905/Salzano digital transcriptions, or the translated Quam singulari reprint. No facsimile-level autographic collation or bilingual native-editor certification. Negative boundary sentences are metadata decisions, not attributed as spoken by St Pius X. Post-audit source-first voice editing of all 23 character drafts made no new original-language quotation claim; retargeted Communion-day follow-up explicitly to Q508.",
+  "evidenceSources": [
+    "The Holy See: E supremi §§1–4",
+    "Museo San Pio X: 1905 catechism Q527–533 and Q667–669",
+    "Museo San Pio X: Salzano Q506–508 and Q541–543",
+    "The Holy See: Tra le sollecitudini §§1–5",
+    "The Holy See: Pascendi §§6–13, 39–40",
+    "The Holy See: Acerbo nimis §§15, 24–26",
+    "The Holy See: Haerent animo §§15–20",
+    "Quam singulari translated decree rules 1–4, explicit papal approval"
+  ],
+  "counts": {
+    "families": 10,
+    "assessedTurnGroups": 30,
+    "localisedDraftTexts": 60,
+    "sourceBoundAvatarTurns": 23,
+    "outOfCharacterSourceLimits": 7,
+    "independentlyApprovedByTheologian": 0,
+    "voiceCertified": 0,
+    "translationCertified": 0,
+    "runtimeApproved": 0,
+    "sourceFirstVoiceEditedTurns": 23,
+    "approvedCharacterTexts": 0
+  },
+  "releaseRules": [
+    "No new claim outside the named primary passage is silently upgraded to a papal assertion.",
+    "Anachronistic temporal/legal judgments and editorial source insufficiency are non-character notes.",
+    "The two intentionally held personal cases (#11/12) remain outside the playable ten.",
+    "Source text supports thematic propositions; no exact historical spoken quotation is claimed.",
+    "Independent theological and bilingual reviewer decisions must follow this audit."
+  ],
+  "records": [
+    {
+      "turnId": "SPX-PILOT-01-T1",
+      "sourceRef": "SPX-PILOT-01",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLocus": "§§1–3",
+      "sourceWitnessClass": "AUTHORED_PAPAL_FIRST_PERSON",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Reluctance, tears, unworthiness and the difficulty of succeeding Leo XIII",
+        "Acceptance of the charge understood as divine providence"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-01-T2",
+      "sourceRef": "SPX-PILOT-01",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLocus": "§4",
+      "sourceWitnessClass": "AUTHORED_PAPAL_FIRST_PERSON",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Programme explicitly named as the restoration of all things in Christ"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-01-T3",
+      "sourceRef": "SPX-PILOT-01",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLocus": "§§1–4",
+      "sourceWitnessClass": "AUTHORED_PAPAL_FIRST_PERSON",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The historical text describes reluctance without independently establishing a scene of formal conclave refusal"
+      ],
+      "assessment": "EDITORIAL_SCOPE_LIMIT",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETAIN_AS_NON_CHARACTER_DOCUMENTARY_NOTE",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-02-T1",
+      "sourceRef": "SPX-PILOT-02",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "sourceLocus": "Q669",
+      "sourceWitnessClass": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Rosary and other devotions during Mass do not impede fruitful participation when one attends as far as possible to the sacrifice"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Papally approved 1905 longer catechism digital transcription, not a documented spontaneous papal answer"
+    },
+    {
+      "turnId": "SPX-PILOT-02-T2",
+      "sourceRef": "SPX-PILOT-02",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "sourceLocus": "Q667",
+      "sourceWitnessClass": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The catechism advises uniting intentions with the priest, following his actions, and meditating on Christ's Passion"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Papally approved 1905 longer catechism digital transcription, not a documented spontaneous papal answer"
+    },
+    {
+      "turnId": "SPX-PILOT-02-T3",
+      "sourceRef": "SPX-PILOT-02",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "sourceLocus": "Q667, Q669",
+      "sourceWitnessClass": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The source lists several ways of assisting devoutly, not a single compulsory private devotion"
+      ],
+      "assessment": "SOURCE_BOUNDED_CLARIFICATION",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Papally approved 1905 longer catechism digital transcription, not a documented spontaneous papal answer"
+    },
+    {
+      "turnId": "SPX-PILOT-03-T1",
+      "sourceRef": "SPX-PILOT-03",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "sourceLocus": "Q542–543",
+      "sourceWitnessClass": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Thought that arises unbidden is distinct from willfully dwelling on or consenting to it"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Sarto Salzano transcription with editorial question numbering, not a published autographic English/French dialogue"
+    },
+    {
+      "turnId": "SPX-PILOT-03-T2",
+      "sourceRef": "SPX-PILOT-03",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "sourceLocus": "Q543",
+      "sourceWitnessClass": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "A bad thought becomes sinful when the will accepts or delights in it; no individual case is decided"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Sarto Salzano transcription with editorial question numbering, not a published autographic English/French dialogue"
+    },
+    {
+      "turnId": "SPX-PILOT-03-T3",
+      "sourceRef": "SPX-PILOT-03",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "sourceLocus": "Q541–543",
+      "sourceWitnessClass": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The text defines acts of thought and consent but does not record the visitor's actual interior choice or guilt"
+      ],
+      "assessment": "EDITORIAL_SCOPE_LIMIT",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETAIN_AS_NON_CHARACTER_DOCUMENTARY_NOTE",
+      "sourceAttributionCaveat": "Sarto Salzano transcription with editorial question numbering, not a published autographic English/French dialogue"
+    },
+    {
+      "turnId": "SPX-PILOT-04-T1",
+      "sourceRef": "SPX-PILOT-04",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "sourceLocus": "Q506",
+      "sourceWitnessClass": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "After Communion Sarto recommends silence, adoration, gratitude, self-offering, resolutions and petitions"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Sarto Salzano transcription with editorial question numbering, not a published autographic English/French dialogue"
+    },
+    {
+      "turnId": "SPX-PILOT-04-T2",
+      "sourceRef": "SPX-PILOT-04",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "sourceLocus": "Salzano editorial Q508; museum transcription f.9",
+      "sourceWitnessClass": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "On the day of Holy Communion, the Salzano manuscript instructs avoidance of idleness, practising good works and prayer, visiting churches and avoiding worldly noise and dissipations."
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETARGETED_FROM_REPETITIVE_Q506_THANKSGIVING_TO_DISTINCT_Q508_COMMUNION_DAY_INSTRUCTION; AWAIT_INDEPENDENT_SOURCE_AND_TRANSLATION_APPROVAL",
+      "sourceAttributionCaveat": "Sarto Salzano transcription with editorial question numbering, not a published autographic English/French dialogue"
+    },
+    {
+      "turnId": "SPX-PILOT-04-T3",
+      "sourceRef": "SPX-PILOT-04",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "sourceLocus": "Q507",
+      "sourceWitnessClass": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "A period recommendation to remain in church for approximately half an hour is not evidence by itself of current universally binding law"
+      ],
+      "assessment": "EDITORIAL_TEMPORAL_LIMIT",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETAIN_AS_NON_CHARACTER_DOCUMENTARY_NOTE",
+      "sourceAttributionCaveat": "Sarto Salzano transcription with editorial question numbering, not a published autographic English/French dialogue"
+    },
+    {
+      "turnId": "SPX-PILOT-05-T1",
+      "sourceRef": "SPX-PILOT-05",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "sourceLocus": "Q527–528, Q532",
+      "sourceWitnessClass": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Sanctifying habitual grace inheres in the soul and makes one just and God's adopted child",
+        "Actual grace enlightens the mind and moves and strengthens the will"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Papally approved 1905 longer catechism digital transcription, not a documented spontaneous papal answer"
+    },
+    {
+      "turnId": "SPX-PILOT-05-T2",
+      "sourceRef": "SPX-PILOT-05",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "sourceLocus": "Q533",
+      "sourceWitnessClass": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "God's grace does not destroy human freedom"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Papally approved 1905 longer catechism digital transcription, not a documented spontaneous papal answer"
+    },
+    {
+      "turnId": "SPX-PILOT-05-T3",
+      "sourceRef": "SPX-PILOT-05",
+      "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "sourceLocus": "Q527–528, Q532",
+      "sourceWitnessClass": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The distinction is abiding sanctifying grace versus help for good acts"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Papally approved 1905 longer catechism digital transcription, not a documented spontaneous papal answer"
+    },
+    {
+      "turnId": "SPX-PILOT-06-T1",
+      "sourceRef": "SPX-PILOT-06",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "sourceLocus": "§§1–3",
+      "sourceWitnessClass": "AUTHORED_PAPAL_MOTU_PROPRIO",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The stated aim of sacred music is divine glory and sanctification",
+        "Gregorian chant is presented as inherited Roman song and principal model"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-06-T2",
+      "sourceRef": "SPX-PILOT-06",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "sourceLocus": "§4",
+      "sourceWitnessClass": "AUTHORED_PAPAL_MOTU_PROPRIO",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Classical polyphony is explicitly recognised and suitable for solemn worship"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-06-T3",
+      "sourceRef": "SPX-PILOT-06",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "sourceLocus": "§§1–7",
+      "sourceWitnessClass": "AUTHORED_PAPAL_MOTU_PROPRIO",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The motu proprio's historical liturgical legal provisions cannot establish current enforceability or individual choir culpability"
+      ],
+      "assessment": "EDITORIAL_TEMPORAL_LIMIT",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETAIN_AS_NON_CHARACTER_DOCUMENTARY_NOTE",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-07-T1",
+      "sourceRef": "SPX-PILOT-07",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§6–8, 11–13, 39–40",
+      "sourceWitnessClass": "AUTHORED_PAPAL_ENCYCLICAL",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The document attacks a connected doctrinal system involving agnosticism, religious sentiment and mutable dogma"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-07-T2",
+      "sourceRef": "SPX-PILOT-07",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§39–40",
+      "sourceWitnessClass": "AUTHORED_PAPAL_ENCYCLICAL",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Religious sentiment alone is contrasted with objective religious truth and intellectual knowledge"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-07-T3",
+      "sourceRef": "SPX-PILOT-07",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§39–40",
+      "sourceWitnessClass": "AUTHORED_PAPAL_ENCYCLICAL",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "The named Modernist system is not evidence that every modern scholar or individual living person adheres to it"
+      ],
+      "assessment": "EDITORIAL_PERSON_SPECIFIC_LIMIT",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETAIN_AS_NON_CHARACTER_DOCUMENTARY_NOTE",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-08-T1",
+      "sourceRef": "SPX-PILOT-08",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "sourceLocus": "§§15–17, 24–26",
+      "sourceWitnessClass": "AUTHORED_PAPAL_ENCYCLICAL",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Adult ignorance motivates systematic catechesis in clear, well prepared instruction adapted to hearers"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-08-T2",
+      "sourceRef": "SPX-PILOT-08",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "sourceLocus": "§24",
+      "sourceWitnessClass": "AUTHORED_PAPAL_ENCYCLICAL",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Adult catechetical instruction is explicitly additional to the ordinary Sunday Gospel homily"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-08-T3",
+      "sourceRef": "SPX-PILOT-08",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "sourceLocus": "§§18–25",
+      "sourceWitnessClass": "AUTHORED_PAPAL_ENCYCLICAL",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Historic diocesan catechetical mandates do not alone establish binding parish schedules today"
+      ],
+      "assessment": "EDITORIAL_TEMPORAL_LIMIT",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETAIN_AS_NON_CHARACTER_DOCUMENTARY_NOTE",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-09-T1",
+      "sourceRef": "SPX-PILOT-09",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourceLocus": "§§15–16",
+      "sourceWitnessClass": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Priests are urged to meditate daily despite serious ministerial work, lest spiritual attention wane"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-09-T2",
+      "sourceRef": "SPX-PILOT-09",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourceLocus": "§§15–16, 20",
+      "sourceWitnessClass": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Meditation sustains spiritual union with God and the discernment needed for pastoral care"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-09-T3",
+      "sourceRef": "SPX-PILOT-09",
+      "sourceDocumentUrl": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourceLocus": "§§15–20",
+      "sourceWitnessClass": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Addressed specifically to clergy, not a source for assessing a particular lay person's conscience"
+      ],
+      "assessment": "EDITORIAL_ROLE_LIMIT",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "RETAIN_AS_NON_CHARACTER_DOCUMENTARY_NOTE",
+      "sourceAttributionCaveat": "Original text/source locus identified; edited English/French speech is not itself original wording"
+    },
+    {
+      "turnId": "SPX-PILOT-10-T1",
+      "sourceRef": "SPX-PILOT-10",
+      "sourceDocumentUrl": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+      "sourceLocus": "Rules 1, 3–4; papal approval",
+      "sourceWitnessClass": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Sacred Congregation issued the decree with explicit papal approval",
+        "The use of reason begins commonly around seven but varies; appropriate understanding and devotion required"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Quam singulari is a Congregation decree papally approved, not authored as a first-person papal encyclical"
+    },
+    {
+      "turnId": "SPX-PILOT-10-T2",
+      "sourceRef": "SPX-PILOT-10",
+      "sourceDocumentUrl": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+      "sourceLocus": "Rule 2",
+      "sourceWitnessClass": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Full catechism mastery is not a prerequisite and instruction should continue later"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Quam singulari is a Congregation decree papally approved, not authored as a first-person papal encyclical"
+    },
+    {
+      "turnId": "SPX-PILOT-10-T3",
+      "sourceRef": "SPX-PILOT-10",
+      "sourceDocumentUrl": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+      "sourceLocus": "Rules 1, 3–4",
+      "sourceWitnessClass": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT",
+      "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
+      "sourceSupportedPropositions": [
+        "Age of discretion is not an automatic seventh-birthday eligibility rule"
+      ],
+      "assessment": "DOCUMENTARY_PARAPHRASE",
+      "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
+      "wordForWordHistoricTranslationCertified": false,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "independentTheologicalApproval": false,
+      "independentVoiceApproval": false,
+      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "sourceAttributionCaveat": "Quam singulari is a Congregation decree papally approved, not authored as a first-person papal encyclical"
+    }
+  ]
+}

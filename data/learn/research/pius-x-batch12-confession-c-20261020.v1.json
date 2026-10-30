@@ -1,0 +1,519 @@
+{
+  "schema": "AO_SPX_1905_BATCH12_PART_V1",
+  "part": "C",
+  "created": "2026-10-20",
+  "status": "BILINGUAL_DOCUMENTARY_DRAFT_NOT_CERTIFIED",
+  "followupPolicy": "SAME_QUESTION_DISTINCT_PASTORAL_INTENT",
+  "records": [
+    {
+      "id": "SPX-1905-P-737",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q737",
+        "originalQuestionItalian": "Che cosa si deve fare per correggere gli abiti cattivi?",
+        "relatedQuestionId": "PX1905-Q738",
+        "section": "AMENDMENT_HABITS_OCCASIONS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How can a Christian work against a persistent bad habit?",
+            "fr": "Comment un chrétien peut-il combattre une mauvaise habitude persistante ?"
+          },
+          "response": {
+            "en": "The Catechism recommends vigilance, prayer, frequent Confession, a stable spiritual guide and putting the guide's practical counsel into effect.",
+            "fr": "Le Catéchisme recommande la vigilance, la prière, la confession fréquente, un guide spirituel stable et la mise en pratique de ses conseils."
+          },
+          "supports": [
+            "PX1905-Q737"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What if I have tried and failed before?",
+            "fr": "Que faire si j'ai déjà essayé et échoué ?"
+          },
+          "response": {
+            "en": "The source proposes sustained means and guidance, not treating one setback as proof that amendment is impossible.",
+            "fr": "La source propose des moyens persévérants et un accompagnement, sans considérer un échec comme la preuve que l'amendement est impossible."
+          },
+          "supports": [
+            "PX1905-Q737"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-738",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q738",
+        "originalQuestionItalian": "Che cosa s’intende per occasioni pericolose di peccare?",
+        "relatedQuestionId": "PX1905-Q739",
+        "section": "AMENDMENT_HABITS_OCCASIONS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is a dangerous occasion of sin?",
+            "fr": "Qu'est-ce qu'une occasion dangereuse de pécher ?"
+          },
+          "response": {
+            "en": "A circumstance involving time, place, company or things that, through its nature or one's weakness, tends to lead one into sin.",
+            "fr": "Une circonstance de temps, de lieu, de fréquentation ou de chose qui, par sa nature ou notre faiblesse, tend à nous entraîner au péché."
+          },
+          "supports": [
+            "PX1905-Q738"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is the same situation equally dangerous for everyone?",
+            "fr": "La même situation est-elle également dangereuse pour tout le monde ?"
+          },
+          "response": {
+            "en": "Not necessarily. The definition expressly considers each person's particular weakness.",
+            "fr": "Pas nécessairement. La définition tient expressément compte de la faiblesse particulière de chacun."
+          },
+          "supports": [
+            "PX1905-Q738"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-739",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q739",
+        "originalQuestionItalian": "Siamo noi gravemente obbligati a schivare tutte le occasioni pericolose?",
+        "relatedQuestionId": "PX1905-Q740",
+        "section": "AMENDMENT_HABITS_OCCASIONS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Which occasions of sin must be especially avoided?",
+            "fr": "Quelles occasions de péché faut-il spécialement éviter ?"
+          },
+          "response": {
+            "en": "The Catechism identifies proximate occasions: circumstances that ordinarily lead someone into mortal sin.",
+            "fr": "Le Catéchisme désigne les occasions prochaines : les circonstances qui entraînent habituellement quelqu'un au péché mortel."
+          },
+          "supports": [
+            "PX1905-Q739"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does this mean withdrawing from every ordinary activity?",
+            "fr": "Cela signifie-t-il se retirer de toute activité ordinaire ?"
+          },
+          "response": {
+            "en": "No. The source specifies occasions that ordinarily lead to grave sin, not all routine situations that carry some risk.",
+            "fr": "Non. La source précise les occasions qui mènent habituellement au péché grave, et non toutes les situations ordinaires comportant un risque."
+          },
+          "supports": [
+            "PX1905-Q739"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-740",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q740",
+        "originalQuestionItalian": "Che cosa deve fare chi non può fuggire qualche occasione di peccato?",
+        "relatedQuestionId": "PX1905-Q741",
+        "section": "AMENDMENT_HABITS_OCCASIONS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What if an occasion of temptation cannot be avoided?",
+            "fr": "Que faire si une occasion de tentation ne peut pas être évitée ?"
+          },
+          "response": {
+            "en": "The Catechism advises telling the confessor and following his counsel rather than pretending an unavoidable circumstance can simply be removed.",
+            "fr": "Le Catéchisme conseille d'en parler au confesseur et de suivre son avis, plutôt que de faire comme si toute circonstance inévitable pouvait être supprimée."
+          },
+          "supports": [
+            "PX1905-Q740"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Should someone abandon a necessary responsibility without counsel?",
+            "fr": "Faut-il abandonner une responsabilité nécessaire sans conseil ?"
+          },
+          "response": {
+            "en": "The passage instead directs a person facing an unavoidable circumstance to seek pastoral guidance.",
+            "fr": "Le passage oriente au contraire celui qui fait face à une circonstance inévitable vers un conseil pastoral."
+          },
+          "supports": [
+            "PX1905-Q740"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-741",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q741",
+        "originalQuestionItalian": "Quali considerazioni servono per fare il proponimento?",
+        "relatedQuestionId": "PX1905-Q742",
+        "section": "AMENDMENT_HABITS_OCCASIONS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What motives can help strengthen a resolution to amend?",
+            "fr": "Quels motifs peuvent fortifier le propos d'amendement ?"
+          },
+          "response": {
+            "en": "The Catechism proposes the motives used for contrition: reverence for God's justice and love of His infinite goodness.",
+            "fr": "Le Catéchisme propose les motifs employés pour la contrition : le respect de la justice divine et l'amour de son infinie bonté."
+          },
+          "supports": [
+            "PX1905-Q741"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Must amendment be motivated only by fear?",
+            "fr": "L'amendement doit-il être motivé seulement par la crainte ?"
+          },
+          "response": {
+            "en": "No. The source mentions both fear of divine justice and love of God's goodness.",
+            "fr": "Non. La source mentionne aussi bien la crainte de la justice divine que l'amour de la bonté de Dieu."
+          },
+          "supports": [
+            "PX1905-Q741"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-742",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q742",
+        "originalQuestionItalian": "Dopo di esservi ben disposto alla confessione con l’esame, col dolore e col proponimento, che cosa farete?",
+        "relatedQuestionId": "PX1905-Q743",
+        "section": "INTEGRITY_OF_CONFESSION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What comes after examination, sorrow and purpose of amendment?",
+            "fr": "Que faire après l'examen, la contrition et le ferme propos ?"
+          },
+          "response": {
+            "en": "The penitent goes to the confessor, declares sins and seeks sacramental absolution.",
+            "fr": "Le pénitent se présente au confesseur, avoue ses péchés et demande l'absolution sacramentelle."
+          },
+          "supports": [
+            "PX1905-Q742"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is preparing privately the same as receiving absolution?",
+            "fr": "Se préparer en privé revient-il à recevoir l'absolution ?"
+          },
+          "response": {
+            "en": "No. The Catechism treats going to the priest and seeking absolution as the next sacramental step.",
+            "fr": "Non. Le Catéchisme considère le recours au prêtre et la demande d'absolution comme l'étape sacramentelle suivante."
+          },
+          "supports": [
+            "PX1905-Q742"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-743",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q743",
+        "originalQuestionItalian": "Di quali peccati siamo obbligati a confessarci?",
+        "relatedQuestionId": "PX1905-Q744",
+        "section": "INTEGRITY_OF_CONFESSION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Which sins does the Catechism say must be confessed?",
+            "fr": "Quels péchés faut-il confesser selon le Catéchisme ?"
+          },
+          "response": {
+            "en": "It requires the confession of mortal sins and recommends, without the same obligation, confessing venial sins too.",
+            "fr": "Il exige l'aveu des péchés mortels et recommande, sans la même obligation, celui des péchés véniels."
+          },
+          "supports": [
+            "PX1905-Q743"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Are venial sins required in exactly the same way?",
+            "fr": "Les péchés véniels sont-ils requis exactement de la même manière ?"
+          },
+          "response": {
+            "en": "No. The historical answer distinguishes obligation regarding mortal sins from the benefit of confessing venial ones.",
+            "fr": "Non. La réponse historique distingue l'obligation concernant les péchés mortels de l'utilité de confesser les péchés véniels."
+          },
+          "supports": [
+            "PX1905-Q743"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-744",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q744",
+        "originalQuestionItalian": "Quali sono le condizioni che deve avere l’accusa dei peccati o confessione?",
+        "relatedQuestionId": "PX1905-Q745",
+        "section": "INTEGRITY_OF_CONFESSION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What five qualities should the confession of sins have?",
+            "fr": "Quelles cinq qualités doit présenter l'aveu des péchés ?"
+          },
+          "response": {
+            "en": "The Catechism lists humility, completeness, sincerity, prudence and brevity.",
+            "fr": "Le Catéchisme énumère l'humilité, l'intégralité, la sincérité, la prudence et la brièveté."
+          },
+          "supports": [
+            "PX1905-Q744"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does completeness mean adding every irrelevant detail?",
+            "fr": "L'intégralité oblige-t-elle à ajouter chaque détail inutile ?"
+          },
+          "response": {
+            "en": "No. Prudence and brevity are named alongside completeness.",
+            "fr": "Non. La prudence et la brièveté figurent avec l'intégralité."
+          },
+          "supports": [
+            "PX1905-Q744"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-745",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q745",
+        "originalQuestionItalian": "Che vuol dire: l’accusa deve esser umile?",
+        "relatedQuestionId": "PX1905-Q746",
+        "section": "INTEGRITY_OF_CONFESSION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does a humble confession mean?",
+            "fr": "Que signifie confesser ses péchés humblement ?"
+          },
+          "response": {
+            "en": "The Catechism asks the penitent to acknowledge responsibility without pride or self-justifying speech, in the presence of a confessor.",
+            "fr": "Le Catéchisme demande au pénitent de reconnaître sa responsabilité sans orgueil ni paroles d'autojustification, devant le confesseur."
+          },
+          "supports": [
+            "PX1905-Q745"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Must humility mean being humiliated by a confessor?",
+            "fr": "L'humilité signifie-t-elle devoir être humilié par le confesseur ?"
+          },
+          "response": {
+            "en": "No. The passage concerns one's honest disposition; it does not authorize mistreatment.",
+            "fr": "Non. Le passage concerne la disposition honnête du pénitent ; il n'autorise aucune maltraitance."
+          },
+          "supports": [
+            "PX1905-Q745"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-746",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q746",
+        "originalQuestionItalian": "Che vuol dire: l’accusa dev’essere intiera?",
+        "relatedQuestionId": "PX1905-Q747",
+        "section": "INTEGRITY_OF_CONFESSION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does an integral confession require?",
+            "fr": "Que demande l'intégralité de la confession ?"
+          },
+          "response": {
+            "en": "The text says one should acknowledge all mortal sins remembered since the last good confession, including their number and circumstances when necessary.",
+            "fr": "Le texte demande d'avouer tous les péchés mortels dont on a conscience depuis la dernière bonne confession, avec leur nombre et les circonstances nécessaires."
+          },
+          "supports": [
+            "PX1905-Q746"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does a lapse of memory automatically make a confession bad?",
+            "fr": "Un oubli rend-il automatiquement la confession mauvaise ?"
+          },
+          "response": {
+            "en": "No. The source later explicitly distinguishes an honestly forgotten grave sin from deliberate concealment.",
+            "fr": "Non. La source distingue ensuite expressément un péché grave honnêtement oublié d'une dissimulation volontaire."
+          },
+          "supports": [
+            "PX1905-Q746"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ]
+}

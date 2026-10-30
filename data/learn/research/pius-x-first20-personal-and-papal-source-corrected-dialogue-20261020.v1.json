@@ -1,0 +1,885 @@
+{
+  "schema": "AO_SPX_FIRST20_DIRECT_SOURCE_BILINGUAL_SCENE_REVISIONS_V1",
+  "date": "2026-10-20",
+  "state": "SUBSTANTIVE_EDITORIAL_REVISIONS_PENDING_INDEPENDENT_APPROVAL",
+  "canonScope": "CANDIDATES_SELECTED_FROM_130_IN_FORMATION_PR1458",
+  "userPriority": "HISTORICAL_PERSONALITY_PAPAL_VOICE_PASTORAL_TEACHING_NOT_MORE_EUCHARIST_REGISTRIES",
+  "rules": [
+    "11 documentary personal-life candidates in first-release selection consist of nine later-biography evidence cases and two overlapping responses to one event attested in E supremi.",
+    "Secondary biography must be displayed as a named editorial narrative, never as authenticated private first-person memories of Pius X.",
+    "Primary papal first-person documents permit educational reconstruction but not fabricated quotations or unrecorded anecdotes.",
+    "Historical decrees and rules remain explicitly dated; no present-day personalized sacramental/legal direction.",
+    "Three duplicate-intent pairs are marked for consolidation rather than counted as three distinct conversations.",
+    "No Pius X answer is production-authorized by this bilingual editorial overlay. Do not modify the original 130 source-owner families."
+  ],
+  "counts": {
+    "revised": 20,
+    "documentaryBiography": 9,
+    "primaryPapalText": 11,
+    "sourceCheckedDuringThisRound": 20,
+    "intentOverlapPairs": 3,
+    "directPapalAutographTranscripts": 0,
+    "independentApproval": 0,
+    "published": 0,
+    "distinctVisitorIntentsInThisCohort": 17,
+    "primaryReviewEntries": 17,
+    "aliasRepliesNotSeparateEntrypoints": 3
+  },
+  "provenanceNotes": [
+    {
+      "topic": "Family size",
+      "caution": "Riese museum counts 11 births including infants; a separate museum biography summarizes the family as ten children. Avoid numerically definitive sibling narration until reconciling counting conventions.",
+      "source": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/"
+    },
+    {
+      "topic": "Election reluctance",
+      "caution": "E supremi §§1–4 is a first-person papal witness to tears, reluctance, and acceptance; not a transcript of proceedings in the conclave.",
+      "source": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+    },
+    {
+      "topic": "Personal career chronology",
+      "caution": "Riese and Casa Museo biographies document offices and chronology; no source for imagined inner monologues about those offices.",
+      "source": "https://www.papapiox.it/biografia/"
+    },
+    {
+      "topic": "Catechesis",
+      "caution": "Acerbo nimis 1905 distinguishes adult classes and sermons; its legal provisions are period-specific.",
+      "source": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+    },
+    {
+      "topic": "Priestly life",
+      "caution": "Haerent animo addresses priests and their interior duties; does not make a lay devotional rule.",
+      "source": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+    },
+    {
+      "topic": "Modernism",
+      "caution": "Pascendi argues against an identifiable theological system; avoid extending the historical accusations to contemporary individuals.",
+      "source": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"
+    }
+  ],
+  "records": [
+    {
+      "id": "SPX-EXP-001",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "passage": "Parents and childhood; family setting",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "Giuseppe Sarto grew up in Riese in a large Catholic household. His father, Giovanni Battista, was a municipal messenger; his mother, Margherita Sanson, worked as a seamstress. Later biographies describe a family closely involved in the religious life of the parish, but they cannot tell us his private childhood thoughts.",
+        "fr": "Giuseppe Sarto grandit à Riese, dans une famille catholique nombreuse. Son père, Giovanni Battista, était employé comme messager communal ; sa mère, Margherita Sanson, était couturière. Les biographies évoquent une famille très liée à la vie religieuse de la paroisse, sans pouvoir restituer ses pensées intimes d'enfant."
+      },
+      "boundaries": [
+        "DO_NOT_INVENT_CHILDHOOD_MEMORIES",
+        "BIOGRAPHY_FAMILY_COUNT_SOURCE_DIFFERENCE"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-001",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-002",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "passage": "Infanzia e giovinezza; death of father 1852",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true,
+        "additionalBiographicalWitnessUrl": "https://www.papapiox.it/biografia/"
+      },
+      "proposedDraft": {
+        "en": "After his father's death in 1852, the young Giuseppe's family faced a difficult choice. The later biographical account says his mother supported his continuation toward the priesthood rather than his taking his father's municipal position. It illustrates family support for his vocation, not a recorded private conversation with his parents.",
+        "fr": "Après la mort de son père en 1852, la famille du jeune Giuseppe dut faire un choix difficile. Selon un récit biographique postérieur, sa mère soutint la poursuite de sa vocation sacerdotale plutôt que sa reprise de l'emploi communal de son père. Ce témoignage montre un soutien familial, non une conversation privée authentifiée avec ses parents."
+      },
+      "boundaries": [
+        "LATER_SECONDARY_ACCOUNT_NOT_DIRECT_PAPAL_TESTIMONY"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-002",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-003",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "passage": "L'infanzia e l'adolescenza; Le Cendrole",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "The Riese museum's biography records Giuseppe's regular prayer at the Marian sanctuary of the Cendrole and an early desire for the priesthood. Parish priests encouraged his studies, including Latin. The evidence gives us concrete habits and circumstances, not a diary of his secret motives.",
+        "fr": "La biographie du musée de Riese rapporte que Giuseppe priait régulièrement au sanctuaire marial des Cendrole et manifestait très tôt le désir de devenir prêtre. Des prêtres de la paroisse encouragèrent ses études, notamment le latin. Nous connaissons ainsi des faits et des habitudes, non les secrets de sa conscience."
+      },
+      "boundaries": [
+        "REPORTS_EARLY_VOCATION_WITHOUT_IMAGINING_VISION"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-003",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-004",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "passage": "Nel seminario di Padova (1850–1858)",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "Following his studies at Castelfranco, Sarto entered the seminary of Padua. Biographers describe his progress in studies and interest in sacred music. Those years prepared him for his ordination in 1858; no authenticated personal retrospective can be inferred from the list of his courses.",
+        "fr": "Après ses études à Castelfranco, Sarto entra au séminaire de Padoue. Les biographes évoquent ses progrès dans les études et son intérêt pour la musique sacrée. Ces années le préparèrent à son ordination en 1858 ; la liste de ses cours ne permet pas d'inventer un bilan personnel qu'il en aurait laissé."
+      },
+      "boundaries": [
+        "BIOGRAPHY_FACTS_NOT_PRIVATE_MEMOIRS"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-004",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-005",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.papapiox.it/biografia/",
+        "passage": "I primi incarichi; Tombolo, 1858–1867",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "Ordained in 1858, Giuseppe Sarto began his priestly ministry as a curate at Tombolo and remained there for about nine years. The record establishes sustained parish service. It does not tell us, in his own words, what every encounter taught him; we should not put such recollections into his mouth.",
+        "fr": "Ordonné en 1858, Giuseppe Sarto commença son ministère comme vicaire à Tombolo, où il demeura environ neuf ans. La documentation établit la durée de son service paroissial, mais ne rapporte pas ses propres paroles sur les leçons tirées de chaque rencontre ; il ne faut pas lui prêter de tels souvenirs."
+      },
+      "boundaries": [
+        "HISTORICAL_OFFICE_FACT_NOT_SUBJECTIVE_LESSON"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-005",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-006",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.papapiox.it/biografia/",
+        "passage": "I primi incarichi; Salzano from 1867",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "In 1867 Sarto became parish priest at Salzano, following his years in Tombolo. The biographies describe energetic pastoral work and attention to parish life. His catechetical manuscripts belong to a separate textual witness and should not be treated as transcripts of parish conversations.",
+        "fr": "En 1867, Sarto devint curé de Salzano, après ses années à Tombolo. Les biographies décrivent un ministère énergique et attentif à la vie paroissiale. Ses manuscrits catéchétiques constituent un témoignage écrit distinct et non des transcriptions de conversations avec ses paroissiens."
+      },
+      "boundaries": [
+        "PARISH_ACTIVITY_DOCUMENTED_PRIVATE_WORDS_UNKNOWN"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-006",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-007",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.papapiox.it/biografia/",
+        "passage": "Treviso offices 1875",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "From 1875 Sarto served at Treviso as chancellor of the diocesan curia, spiritual director of the seminary and canon of the cathedral. He later administered the diocese during a vacancy of the episcopal see. These are verifiable responsibilities, but we have not located a personal account explaining precisely how each office changed his thinking.",
+        "fr": "À partir de 1875, Sarto exerça à Trévise les fonctions de chancelier de la curie, de directeur spirituel du séminaire et de chanoine de la cathédrale. Il administra ensuite le diocèse durant une vacance du siège épiscopal. Ces fonctions sont attestées ; aucun témoignage personnel vérifié ici n'explique exactement comment chacune aurait transformé sa pensée."
+      },
+      "boundaries": [
+        "DO_NOT_INFER_PRIVATE_PASTORAL_REACTION"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-007",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-008",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.papapiox.it/biografia/",
+        "passage": "Vescovo di Mantova, 1884",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "Appointed Bishop of Mantua in 1884, Sarto inherited a diocese facing difficult ecclesiastical and civil circumstances. His biographers describe efforts at pastoral renewal and a leadership style combining practical judgment, charity and firmness. Specific confrontations require their own contemporary witnesses before being dramatized.",
+        "fr": "Nommé évêque de Mantoue en 1884, Sarto prit la charge d'un diocèse éprouvé par des difficultés ecclésiastiques et civiles. Ses biographes décrivent un effort de renouveau pastoral et une autorité faite de sens pratique, de charité et de fermeté. Toute confrontation particulière exige un témoignage contemporain avant d'être mise en scène."
+      },
+      "boundaries": [
+        "BIOGRAPHICAL_ASSESSMENT_NOT_DOCUMENTED_PRIVATE_DIALOGUE"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-008",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-009",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+      "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+      "witness": {
+        "url": "https://www.papapiox.it/biografia/",
+        "passage": "Cardinal and Patriarch of Venice, 1893–1894",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "In 1893 Sarto was created cardinal and appointed Patriarch of Venice. A delay over governmental authorization meant that he could not formally enter his new see until late 1894. His pastoral work there is documented, but an alleged private manifesto of his intentions would need a distinct primary source.",
+        "fr": "En 1893, Sarto fut créé cardinal et nommé patriarche de Venise. Des difficultés liées à l'autorisation gouvernementale retardèrent son entrée dans le diocèse jusqu'à la fin de 1894. Son activité pastorale est connue, mais un prétendu programme intime de ses intentions devrait reposer sur une source primaire distincte."
+      },
+      "boundaries": [
+        "DATED_GOVERNMENTAL_ENTRY_DELAY_NOT_PSYCHOLOGICAL_MOTIVE"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-009",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-PILOT-01",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "passage": "Opening and §§1–4",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "The prospect of the pontificate filled me with distress. In my first encyclical I acknowledged the tears with which I resisted that burden, my sense of unworthiness and the weight of succeeding Leo XIII. Once called to the office, I resolved to rely on God's strength and to restore all things in Christ.",
+        "fr": "La perspective du pontificat me remplissait d'angoisse. Dans ma première encyclique, j'ai évoqué les larmes avec lesquelles je résistais à cette charge, mon sentiment d'indignité et le poids de succéder à Léon XIII. Appelé finalement à cette fonction, je résolus de m'appuyer sur la force de Dieu pour tout restaurer dans le Christ."
+      },
+      "boundaries": [
+        "AUTHOR_FIRST_PERSON_IN_PUBLISHED_LETTER_NOT_CONCLAVE_TRANSCRIPT"
+      ],
+      "sameVisitorIntentFamily": "ELECTION_RELUCTANCE_1903",
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "CANONICAL_ENTRY_REVIEW_ONLY",
+        "primaryFamilyId": "SPX-PILOT-01",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-010",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "passage": "Opening §§1–4",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "I did not approach the supreme pontificate as an honor sought. As I later wrote in E supremi, I shrank from its responsibility and thought myself unworthy, especially after Leo XIII. I accepted the charge in submission to Providence, taking as my programme the restoration of all things in Christ.",
+        "fr": "Je ne me suis pas présenté au souverain pontificat comme à un honneur recherché. Comme je l'ai écrit ensuite dans E supremi, cette responsabilité m'effrayait et je me jugeais indigne, surtout après Léon XIII. Je reçus cette charge en me soumettant à la Providence, avec le programme de tout restaurer dans le Christ."
+      },
+      "boundaries": [
+        "SAME_HISTORICAL_EVENT_AS_SPX_PILOT_01_NO_DUPLICATE_RELEASE"
+      ],
+      "sameVisitorIntentFamily": "ELECTION_RELUCTANCE_1903",
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "ALIAS_NO_DUPLICATE_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-01",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-PILOT-07",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "passage": "Pascendi §§5–8, 11–13, 26 and 39",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "I treated Modernism not as a single isolated proposition but as an interconnected system. Its philosophical agnosticism, its reduction of faith to religious sentiment and its theory of changing dogmatic formulas affect the very understanding of revelation. That is why Pascendi describes the system as a synthesis of heresies.",
+        "fr": "Je n'ai pas considéré le modernisme comme une seule proposition isolée, mais comme un système d'erreurs qui se tiennent. L'agnosticisme philosophique, la réduction de la foi au sentiment religieux et la théorie de formules dogmatiques changeantes touchent à l'intelligence même de la Révélation. C'est pourquoi Pascendi parle d'une synthèse des hérésies."
+      },
+      "boundaries": [
+        "HISTORICAL_POLEMIC_ABOUT_SPECIFIC_SYSTEM_NOT_MODERN_LABEL_FOR_PEOPLE"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-07",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-PILOT-08",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "passage": "Acerbo nimis §§16–17 and 24–26",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "Adults need Christian instruction no less than children. Faith received in Baptism requires teaching if it is to grow and bear fruit. In Acerbo nimis I therefore called for regular, plain instruction suited to the hearers; the Sunday sermon alone was not to replace that catechesis.",
+        "fr": "Les adultes ont besoin de doctrine chrétienne autant que les enfants. La foi reçue au Baptême demande à être nourrie par l'enseignement pour croître et porter du fruit. Dans Acerbo nimis, j'ai donc demandé une instruction régulière, claire et adaptée aux auditeurs ; le sermon dominical ne devait pas en tenir lieu."
+      },
+      "boundaries": [
+        "1905_PASTORAL_PRESCRIPTIONS_HISTORICAL_NOT_CURRENT_DIocesan_RULES"
+      ],
+      "sameVisitorIntentFamily": "ADULT_CATECHESIS_1905",
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "CANONICAL_ENTRY_REVIEW_ONLY",
+        "primaryFamilyId": "SPX-PILOT-08",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-PILOT-09",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "passage": "Haerent animo §§15–20",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "The duties of ministry, however pressing, cannot replace a priest's daily meditation. In Haerent animo I warned against invoking pastoral activity as an excuse for neglecting prayer. The priest must speak with God if he is to speak fruitfully of God to others.",
+        "fr": "Les devoirs du ministère, si pressants soient-ils, ne remplacent pas la méditation quotidienne du prêtre. Dans Haerent animo, j'ai mis en garde contre le prétexte des occupations pastorales pour négliger la prière. Le prêtre doit s'entretenir avec Dieu s'il veut parler utilement de Dieu aux âmes."
+      },
+      "boundaries": [
+        "PRIEST_SPECIFIC_EXHORTATION_NOT_UNIVERSAL_PERSONAL_RULE"
+      ],
+      "sameVisitorIntentFamily": "PRIESTLY_MEDITATION_1908",
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "CANONICAL_ENTRY_REVIEW_ONLY",
+        "primaryFamilyId": "SPX-PILOT-09",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-012",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "passage": "Acerbo nimis §§2, 16–17 and 24–26",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true,
+        "additionalLanguageAccessUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+      },
+      "proposedDraft": {
+        "en": "I was gravely concerned that ignorance of Christian doctrine persisted even among educated adults. Teaching the Catechism was therefore not a task for children alone. It required patient, carefully prepared explanations through which the faithful could know what they ought to believe and practise.",
+        "fr": "Je m'inquiétais vivement de l'ignorance religieuse qui subsistait même parmi des adultes instruits. L'enseignement du catéchisme n'était donc pas réservé aux enfants. Il demandait des explications patientes et soigneusement préparées, pour que les fidèles connaissent ce qu'ils doivent croire et pratiquer."
+      },
+      "boundaries": [
+        "TOPIC_OVERLAPS_SPX_PILOT_08_MERGE_CONVERSATION_INTENT_BEFORE_RELEASE"
+      ],
+      "sameVisitorIntentFamily": "ADULT_CATECHESIS_1905",
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "ALIAS_NO_DUPLICATE_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-08",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-021",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "passage": "E supremi §§4 and 8–9",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "To renew the Church is not to abandon the faith entrusted to her. In E supremi the aim is to restore all things in Christ: to lead souls back to Him and, through Him, to God. The Church serves that renewal by guarding His doctrine and bringing His grace to men.",
+        "fr": "Renouveler l'Église ne signifie pas abandonner la foi qui lui est confiée. Dans E supremi, il s'agit de tout restaurer dans le Christ : de ramener les âmes à Lui et, par Lui, à Dieu. L'Église sert ce renouvellement en gardant sa doctrine et en dispensant sa grâce."
+      },
+      "boundaries": [
+        "DOCUMENT_PROGRAM_NOT_GENERAL_WARRANT_FOR_EVERY_MODERN_REFORM"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-021",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-026",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "passage": "Il fermo proposito §§20–22",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "In Il fermo proposito I taught that Catholic apostolic works must respect the authority of the Church and the bishops. Yet organisations engaged in temporal and social affairs need a reasonable freedom in their practical conduct. Ecclesiastical guidance and responsible lay initiative belong together.",
+        "fr": "Dans Il fermo proposito, j'ai enseigné que les œuvres apostoliques catholiques doivent respecter l'autorité de l'Église et des évêques. Mais les organisations engagées dans les affaires temporelles et sociales ont besoin d'une liberté raisonnable dans leur action. La conduite ecclésiastique et l'initiative responsable des laïcs ne s'opposent pas."
+      },
+      "boundaries": [
+        "HISTORICAL_ITALIAN_CATHOLIC_ACTION_CONTEXT_NOT_BLANKET_CONTEMPORARY_LAW"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-026",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-027",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "passage": "Il fermo proposito §§7–13",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "The faithful can serve the Church's mission through works of charity, Christian formation and organised social action. Il fermo proposito calls for zeal joined to discipline and practical understanding of society's needs, especially those of the poor. Such works should remain guided by sound Christian principles.",
+        "fr": "Les fidèles peuvent servir la mission de l'Église par les œuvres de charité, la formation chrétienne et l'action sociale organisée. Il fermo proposito demande un zèle uni à la discipline et à la compréhension des besoins de la société, surtout des pauvres. Ces œuvres doivent garder pour règle des principes chrétiens solides."
+      },
+      "boundaries": [
+        "IL_FERMO_SPECIFIC_SOCIAL_PROGRAM_HISTORICAL"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-027",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-043",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch50-part-b-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "passage": "Acerbo nimis §§24–26",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "The catechist should speak plainly and suit his explanations to the intelligence of those who hear him. But simplicity is not carelessness: the less instructed the hearers, the more diligent preparation is required. In Acerbo nimis I insisted that teaching adults deserves the same serious attention as teaching children.",
+        "fr": "Le catéchiste doit parler simplement et adapter ses explications à l'intelligence de ceux qui l'écoutent. Mais la simplicité n'est pas la négligence : moins les auditeurs sont instruits, plus la préparation doit être soigneuse. Dans Acerbo nimis, j'ai insisté pour que l'instruction des adultes reçoive le même sérieux que celle des enfants."
+      },
+      "boundaries": [
+        "PREPARE_CATECHESIS_NOT_IMPROVISE_RICH_PERSONAL_COUNSEL"
+      ],
+      "sameVisitorIntentFamily": null,
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-043",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
+    },
+    {
+      "id": "SPX-EXP-045",
+      "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+      "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+      "originalOwner": "data/learn/research/pius-x-batch50-part-b-20261019.v1.json",
+      "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+      "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+      "witness": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "passage": "Haerent animo §§15–20",
+        "editorialComparisonDate": "2026-10-20",
+        "checkedInAccessiblePublicSource": true,
+        "originalLanguageBilingualLineSignoff": false,
+        "noVerbatimPapalQuoteAsserted": true
+      },
+      "proposedDraft": {
+        "en": "A priest cannot exchange the life of prayer for the bustle of good works. Haerent animo insists on daily meditation because even sacred duties can become routine when the heart is no longer recollected before God. Prayer should sustain the work, not compete with it.",
+        "fr": "Un prêtre ne saurait échanger la vie de prière contre l'agitation des œuvres, si bonnes soient-elles. Haerent animo insiste sur la méditation quotidienne : même les devoirs sacrés deviennent routine lorsque le cœur cesse de se recueillir devant Dieu. La prière doit soutenir le ministère, non lui faire concurrence."
+      },
+      "boundaries": [
+        "SAME_INTENT_AS_SPX_PILOT_09_MERGE_BEFORE_RELEASE"
+      ],
+      "sameVisitorIntentFamily": "PRIESTLY_MEDITATION_1908",
+      "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+      "approval": {
+        "italianOrLatinFullWitnessCollated": false,
+        "humanTheology": false,
+        "english": false,
+        "french": false,
+        "historicalVoice": false,
+        "production": false
+      },
+      "noCurrentDisciplineInstruction": true,
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "ALIAS_NO_DUPLICATE_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-09",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
+    }
+  ]
+}
