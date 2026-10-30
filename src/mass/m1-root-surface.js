@@ -56,7 +56,9 @@ function attachResumeAction(win,flow){
    }finally{if(button.isConnected)button.disabled=false}
  };
  button.addEventListener("click",onResume);
- return ()=>{button.removeEventListener("click",onResume);button.remove();message.remove()};
+ const release=()=>{button.removeEventListener("click",onResume);button.remove();message.remove()};
+ release.button=button;
+ return release;
 }
 const original=(node,attr)=>node?.hasAttribute(attr)?node.getAttribute(attr):null;
 function restore(node,attr,old){if(!node)return;if(old==null)node.removeAttribute(attr);else node.setAttribute(attr,old)}
@@ -101,14 +103,26 @@ export function activateM1MassRoot(win=globalThis){
  backdrop.dataset.aoM1Root="true";flow.dataset.aoM1Root="true";
  if(header)header.dataset.aoM1HostHeader="";
  doc.documentElement.dataset.aoM1MassRoot="true";
+ // The host installs/moves its Start action during an asynchronous
+ // preflight refresh. Bind Resume only after that SAME action row exists,
+ // and rebind if the source preflight re-renders it.
+ let releaseResume=attachResumeAction(win,flow);
  const observer=typeof win.MutationObserver==="function"?new win.MutationObserver(()=>{
   const style=win.getComputedStyle?.(backdrop);
   if(!backdrop.isConnected||backdrop.hidden||backdrop.getAttribute("aria-hidden")==="true"||
-     style?.display==="none"||win?.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)
-   deactivateM1MassRoot(win);
+     style?.display==="none"||win?.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected){
+    deactivateM1MassRoot(win);return;
+  }
+  if(releaseResume&&!releaseResume.button?.isConnected){
+    releaseResume();releaseResume=null;
+  }
+  if(!releaseResume){
+    releaseResume=attachResumeAction(win,flow);
+    const entry=records.get(doc);
+    if(entry)entry.releaseResume=releaseResume;
+  }
  }):null;
- observer?.observe(backdrop,{attributes:true,attributeFilter:["class","style","hidden","aria-hidden"]});
- const releaseResume=attachResumeAction(win,flow);
+ observer?.observe(backdrop,{attributes:true,attributeFilter:["class","style","hidden","aria-hidden"],childList:true,subtree:true});
  records.set(doc,{backdrop,flow,header,attrs,block,observer,releaseResume});
  try{flow.focus({preventScroll:true})}catch{}
  return true;
