@@ -222,8 +222,13 @@ for(const row of manifest.rosary_mystery_context){
   assert.equal(actual.slot,row.editorial_slot,'Rosary scene reuse mismatch '+context);
   assert.equal(actual.publicationReady,false);
 }
-assert.equal(traditionalResolve('pray.holy_name_litany').slot,null,
-  'Holy Name Litany lacks a specific image-bearing blueprint slot; update audit if remedied');
+const holyName=traditionalResolve('pray.holy_name_litany');
+assert.equal(holyName.slot,'COV-devotion_consecration_christ_king');
+assert.equal(holyName.fit,'APPROVED_CHRIST_PORTRAIT_CONTEXTUAL_REUSE_NOT_EXACT_HOLY_NAME_DEPICTION');
+assert.equal(holyName.publicationReady,false);
+assert.equal(holyName.assetUrl,null);
+assert.ok(slots.get(holyName.slot).works.some(w=>w.eligible&&w.editorial==='USER_APPROVED'&&w.title==='Salvator Mundi'),
+  'Holy Name must inherit an affirmatively approved Christ portrait, not a new or rejected candidate');
 for(const f of ['src/pray/presentation-runtime.js','src/pray/novena-runtime.js','src/pray/traditional-pray-runtime.js']){
   const source=readFileSync(f,'utf8');
   assert.ok(source.includes('stampArtworkRuntimeIdentity'),
