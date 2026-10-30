@@ -1,0 +1,33 @@
+name: Current nine-route bilingual phone matrix
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "tests/ui-nine-route-phone-review.mjs"
+      - ".github/workflows/ui-nine-route-phone-review.yml"
+      - "docs/design/UI-NINE-ROUTE-PHONE-REVIEW-20261030.md"
+  workflow_dispatch:
+
+jobs:
+  bilingual-phone-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Capture 320/390/430 EN/FR real-app screens
+        run: node tests/ui-nine-route-phone-review.mjs
+      - name: Preserve screenshots and defect measurements even on failures
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ui-nine-route-phone-review
+          path: artifacts/ui-nine-route-phone-review/
+          if-no-files-found: warn
+          retention-days: 30
