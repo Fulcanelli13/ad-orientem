@@ -148,6 +148,53 @@ const F07_STYLE=`
  #aoPray435930 .aoF07CrownText strong{font-size:15px;line-height:1.2}
  #aoPray435930 .aoF07CrownText span{font-size:11px}
 }
+
+/* Devotional presentation: diagram and words, not cards and UI pills.
+   Keep the full source-owned crown, accessible buttons and reading cursor. */
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand,
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoCard{
+ border:0!important;border-radius:0!important;
+ box-shadow:none!important;background:transparent!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand{
+ padding:3px 0!important;margin:0 0 4px!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyChapterChips button,
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRecitation button,
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyDock button,
+#aoPray435930 .aoF07MercyComplete button{
+ border:0!important;border-radius:0!important;
+ background:transparent!important;box-shadow:none!important;
+ color:var(--muted,#b8aea0)!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyChapterChips button[aria-current="step"],
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRecitation button[aria-pressed="true"]{
+ border-bottom:1px solid var(--liturgical,#cbb28b)!important;
+ color:var(--text,#e9e1d5)!important;font-weight:550;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyDock{
+ border:0!important;box-shadow:none!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyDock button[data-p435930-mercy-finish]{
+ color:var(--liturgical,#cbb28b)!important;
+ font-weight:550!important;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercySource{
+ display:block;margin:15px 0 5px;padding:0;border:0;background:transparent;
+ font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--muted,#aaa394);
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercySource>summary{
+ min-height:34px;display:flex;align-items:center;
+ font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+ opacity:.65;cursor:pointer;list-style:none;
+}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercySource>summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercySource>a{
+ display:inline-block;padding:5px 0;color:var(--muted,#aaa394);
+ font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+ text-decoration:underline;text-underline-offset:3px;
+}
 `;
 export function installChapletF07Styles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-chaplet-f07-style"))return;
