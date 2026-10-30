@@ -8,11 +8,22 @@ export const PRELIMINARY_R49_ROME=1022;
 const COLS=["id","name","country","locality","affiliation","group","lat","lng","url","other_url","precision"];
 const tidy=s=>String(s??"").trim();
 const searchKey=s=>tidy(s).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+// Exact source-affiliation names are identity hints for Explore filtering and
+// neutral monograms, not proof of canonical standing or a particular Mass.
+const REPORTED_INSTITUTION_LABELS=Object.freeze({
+  "CANONS OF ST JOHN CANTIUS":"CANONS_ST_JOHN_CANTIUS",
+  "CAPUCINS DE MORGON":"CAPUCHINS_MORGON",
+  "FRATERNITÉ DE LA TRANSFIGURATION":"TRANSFIGURATION",
+  "ORATORIANS":"ORATORIAN",
+  "CARMÉLITES":"CARMELITE",
+  "BÉNÉDICTINES":"BENEDICTINE",
+  "DOMINICAINS":"DOMINICAN",
+});
 function providerGroup(affiliation,group){
-  if(group==="SSPX")return "SSPX";
-  if(group==="UNKNOWN")return "OTHER";
   const x=tidy(affiliation).toUpperCase();
   if(["FSSP","ICKSP","IBP","AASJMV"].includes(x))return x;
+  if(Object.hasOwn(REPORTED_INSTITUTION_LABELS,x))return REPORTED_INSTITUTION_LABELS[x];
+  if(group==="SSPX")return "SSPX";
   if(x.startsWith("DIOCESAN"))return "DIOCESAN";
   return "OTHER";
 }
@@ -49,7 +60,7 @@ export function projectPreliminaryR49(json){
     const label=tidy(affiliation)||"Affiliation unverified";
     return Object.freeze({
       item_id:"tlm:r49:"+id,source_id:id,lens:"tlm",kind:"TLM_VENUE",
-      community_id,preliminary_group:group,
+      community_id,preliminary_group:group,affiliation_scope:"SOURCE_LABEL_ONLY",
       eyebrow:label,
       status:group==="ROME"?"SOURCE-REPORTED":group==="SSPX"?"SSPX · SEPARATE":"UNCLASSIFIED",
       title:name,
