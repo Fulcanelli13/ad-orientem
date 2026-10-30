@@ -17,12 +17,12 @@
     "operational_groups": 989,
     "q2": 548,
     "rights": 441,
-    "with_reference": 938,
-    "without_reference": 51,
-    "direct_title_scenes": 300,
-    "links": 1044,
+    "with_reference": 980,
+    "without_reference": 9,
+    "direct_title_scenes": 305,
+    "links": 1086,
     "exact_canonical_id": 160,
-    "added_2nd_pass": 193
+    "newly_tagged_final_multilingual": 42
   },
   "policy": {
     "preserveOriginalIDs": true,
@@ -6398,7 +6398,8 @@
       "review_flags": [
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
         "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
-        "NON_BIBLICAL_GRECO_ROMAN_MYTH"
+        "NON_BIBLICAL_GRECO_ROMAN_MYTH",
+        "NON_BIBLICAL_CLASSICAL_MYTHOLOGY_NO_DIRECT_REFERENCE"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -6446,7 +6447,8 @@
       "review_flags": [
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
         "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
-        "NON_BIBLICAL_GRECO_ROMAN_MYTH"
+        "NON_BIBLICAL_GRECO_ROMAN_MYTH",
+        "NON_BIBLICAL_CLASSICAL_MYTHOLOGY_NO_DIRECT_REFERENCE"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -6466,7 +6468,8 @@
       "review_flags": [
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
         "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
-        "NON_BIBLICAL_GRECO_ROMAN_MYTH"
+        "NON_BIBLICAL_GRECO_ROMAN_MYTH",
+        "NON_BIBLICAL_CLASSICAL_MYTHOLOGY_NO_DIRECT_REFERENCE"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -7478,12 +7481,20 @@
       "source_record": "REVIEW::commons:15973724",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Charles_de_La_Fosse_-_L%27Assomption_vers_1680.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Apocalypse 12:1",
+          "relationship": "TYPOLOGICAL_DOCTRINAL_NOT_LITERAL_SCENE",
+          "event_or_theme_key": "assumption-mary",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -7612,12 +7623,20 @@
       "source_record": "REVIEW::commons:158309",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_010.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Acts 12:6–11",
+          "relationship": "DIRECT_BIBLICAL_SCENE",
+          "event_or_theme_key": "angel-releases-peter",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "DIRECT_TITLE_SCENE_IMAGE_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -7658,12 +7677,20 @@
       "source_record": "REVIEW::commons:22175187",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Maria_Crespi_(Italian_(Bolognese)_-_Bernard_Tolomei_and_the_Plague_in_Siena_-_Google_Art_Project.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 25:35–40",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "mercy-plague",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -8430,12 +8457,20 @@
       "source_record": "REVIEW::commons:46751791",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Claudio_Coello-la_virgen_el_ni%C3%B1o_virtudes_teologales-prado.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "1 Corinthians 13:13",
+          "relationship": "THEOLOGICAL_VIRTUES_ALLEGORY_NOT_LITERAL_SCENE",
+          "event_or_theme_key": "faith-hope-charity",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -8949,12 +8984,20 @@
       "source_record": "REVIEW::commons:14574674",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:El_ap%C3%B3stol_Santiago_y_sus_disc%C3%ADpulos_adorando_a_la_Virgen_del_Pilar.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Luke 1:42",
+          "relationship": "POST_BIBLICAL_MARIAN_VISION_CONTEXT",
+          "event_or_theme_key": "pilar",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -8968,12 +9011,20 @@
       "source_record": "REVIEW::commons:31702502",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_(II)_-_El_Nacimiento_de_la_Virgen%2C_1650-1660.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Luke 1:28",
+          "relationship": "MARIAN_TRADITION_NOT_SCRIPTURAL_BIRTH_EVENT",
+          "event_or_theme_key": "birth-of-mary",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -8987,12 +9038,20 @@
       "source_record": "REVIEW::commons:151440",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Aert_de_Gelder_003.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Esther 5:1",
+          "relationship": "BIBLICAL_EVENT_OR_PERSON_CONTEXT",
+          "event_or_theme_key": "esther-prepares",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -9060,12 +9119,20 @@
       "source_record": "REVIEW::commons:77411491",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Hans_III_Jordaens_-_Finding_of_Moses.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Exodus 2:1–10",
+          "relationship": "DIRECT_BIBLICAL_SCENE",
+          "event_or_theme_key": "moses-found",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "DIRECT_TITLE_SCENE_IMAGE_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -9703,12 +9770,20 @@
       "source_record": "REVIEW::commons:157990",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_039.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 6:6",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "andreas-corsini-prayer",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -9888,12 +9963,20 @@
       "source_record": "REVIEW::commons:52088798",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_(1575-1642)_-_Sint_Andreas_Corsini_(1639)_-_Bologna_Pinacoteca_Nazionale_-_26-04-2012_9-29-09.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 6:6",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "andreas-corsini-prayer",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -9907,12 +9990,20 @@
       "source_record": "REVIEW::commons:11823870",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042_mod_2.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 1:18–25",
+          "relationship": "BIBLICAL_PERSON_CANDIDATE_UNVERIFIED_VARIANT",
+          "event_or_theme_key": "joseph",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -10013,12 +10104,20 @@
       "source_record": "REVIEW::commons:160383",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_049.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Hebrews 12:1–2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "rufina",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -10032,12 +10131,20 @@
       "source_record": "REVIEW::commons:158345",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_043.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "John 2:1–11",
+          "relationship": "DIRECT_BIBLICAL_SCENE",
+          "event_or_theme_key": "wedding-cana",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "DIRECT_TITLE_SCENE_IMAGE_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -11452,12 +11559,20 @@
       "source_record": "REVIEW::commons:72899640",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(1577-1640)_Het_dispuut_-_Sint-Pauluskerk_(Antwerpen)_19-08-2018.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "2 Timothy 4:2",
+          "relationship": "POST_BIBLICAL_CHURCH_TEACHING_THEME",
+          "event_or_theme_key": "preaching-dispute",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -12750,12 +12865,20 @@
       "source_record": "REVIEW::commons:158343",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_042.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Hebrews 12:1–2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "saint-witness",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -13090,12 +13213,20 @@
       "source_record": "REVIEW::commons:34313474",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:De_aanbidding_der_koningen_Rijksmuseum_SK-A-4188.jpeg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 2:1–12",
+          "relationship": "DIRECT_BIBLICAL_SCENE",
+          "event_or_theme_key": "adoration-magi",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "DIRECT_TITLE_SCENE_IMAGE_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -13922,12 +14053,20 @@
       "source_record": "REVIEW::commons:135860201",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:L%27Exposition_du_corps_de_saint_Bonaventure_-_Francisco_de_Zurbar%C3%A1n_-_Mus%C3%A9e_du_Louvre_Peintures_MI_205.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Romans 6:4",
+          "relationship": "POST_BIBLICAL_CHRISTIAN_BURIAL_THEME",
+          "event_or_theme_key": "burial",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -14728,12 +14867,20 @@
       "source_record": "REVIEW::commons:155916727",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Carlo_Maratta_-_The_Vision_of_Joachim_and_Anne.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Luke 1:28",
+          "relationship": "MARIAN_TRADITION_NOT_SCRIPTURAL_EVENT",
+          "event_or_theme_key": "joachim-anne",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -14882,12 +15029,20 @@
       "source_record": "REVIEW::commons:12241941",
       "canon_artwork_id": null,
       "source_url": "https://commons.wikimedia.org/wiki/File:Theodoor_Boeyermans_(1620-1678)_De_extase_van_de_heilige_Rosalia_van_Palermo_-_Palais_des_Beaux_Arts_de_Lille_25-11-2010_14-15-22.jpg",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "2 Corinthians 12:2–4",
+          "relationship": "POST_BIBLICAL_SAINT_MYSTICISM_THEME",
+          "event_or_theme_key": "rosalia-ecstasy",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -15069,7 +15224,8 @@
       "review_flags": [
         "MISSING_TITLE_IN_OPERATIONAL_MASTER",
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "HISTORICAL_PRAYER_KEEP_WITH_MISSING_ARTWORK_IDENTITY_DO_NOT_GUESS"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -15089,7 +15245,8 @@
       "review_flags": [
         "MISSING_TITLE_IN_OPERATIONAL_MASTER",
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "HISTORICAL_PRAYER_KEEP_WITH_MISSING_ARTWORK_IDENTITY_DO_NOT_GUESS"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -18268,7 +18425,8 @@
       "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
       "review_flags": [
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "SECULAR_OR_NON_SCRIPTURAL_SUBJECT_NO_FORCED_REFERENCE"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20391,12 +20549,20 @@
       "source_record": "REVIEW::rijks:20026333",
       "canon_artwork_id": null,
       "source_url": "https://id.rijksmuseum.nl/20026333",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "2 Timothy 4:2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "dominic-preaching",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20464,12 +20630,20 @@
       "source_record": "REVIEW::kmska:3wkhic",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/3wkhic",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 4:1–11",
+          "relationship": "POST_BIBLICAL_SAINT_TEMPTATION_PARALLEL",
+          "event_or_theme_key": "anthony-abbot-temptation",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20483,12 +20657,20 @@
       "source_record": "REVIEW::rijks:20026400",
       "canon_artwork_id": null,
       "source_url": "https://id.rijksmuseum.nl/20026400",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 4:1–11",
+          "relationship": "POST_BIBLICAL_SAINT_TEMPTATION_PARALLEL",
+          "event_or_theme_key": "anthony-abbot-temptation",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20502,12 +20684,20 @@
       "source_record": "REVIEW::rijks:200108287",
       "canon_artwork_id": null,
       "source_url": "https://id.rijksmuseum.nl/200108287",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 4:1–11",
+          "relationship": "POST_BIBLICAL_SAINT_TEMPTATION_PARALLEL",
+          "event_or_theme_key": "anthony-abbot-temptation",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20551,7 +20741,8 @@
       "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
       "review_flags": [
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "SECULAR_OR_NON_SCRIPTURAL_SUBJECT_NO_FORCED_REFERENCE"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20781,12 +20972,20 @@
       "source_record": "REVIEW::kmska:515i7j",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/515i7j",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Hebrews 12:1–2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "holy-witness",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20800,12 +20999,20 @@
       "source_record": "REVIEW::kmska:n84ifr",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/n84ifr",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Hebrews 12:1–2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "holy-witness",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -20926,12 +21133,20 @@
       "source_record": "REVIEW::rijks:200510275",
       "canon_artwork_id": null,
       "source_url": "https://id.rijksmuseum.nl/200510275",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Hebrews 12:1–2",
+          "relationship": "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT",
+          "event_or_theme_key": "holy-witness",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -21762,12 +21977,20 @@
       "source_record": "REVIEW::kmska:583xgo",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/583xgo",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Mark 16:17–18",
+          "relationship": "POST_BIBLICAL_SAINT_MIRACLE_THEME",
+          "event_or_theme_key": "saint-miracle",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -21781,12 +22004,20 @@
       "source_record": "REVIEW::rijks:20028147",
       "canon_artwork_id": null,
       "source_url": "https://id.rijksmuseum.nl/20028147",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "2 Corinthians 11:2",
+          "relationship": "POST_BIBLICAL_SAINT_MYSTICAL_ESPOUSAL_THEME",
+          "event_or_theme_key": "mystical-marriage",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22106,12 +22337,20 @@
       "source_record": "REVIEW::kmska:5z83z7",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/5z83z7",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 5:10–12",
+          "relationship": "POST_BIBLICAL_MARTYRDOM_THEME",
+          "event_or_theme_key": "sebastian-imprisonment",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22179,12 +22418,20 @@
       "source_record": "REVIEW::kmska:4efmgq",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/4efmgq",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Luke 1:42",
+          "relationship": "POST_BIBLICAL_MARIAN_VISION_CONTEXT",
+          "event_or_theme_key": "bernard-marian-vision",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22198,12 +22445,20 @@
       "source_record": "REVIEW::kmska:dr55cj",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/dr55cj",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Luke 1:42",
+          "relationship": "POST_BIBLICAL_MARIAN_VISION_CONTEXT",
+          "event_or_theme_key": "bernard-marian-vision",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22579,12 +22834,20 @@
       "source_record": "REVIEW::kmska:jaemx6",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/jaemx6",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 5:10–12",
+          "relationship": "POST_BIBLICAL_MARTYRDOM_THEME",
+          "event_or_theme_key": "saint-martyrdom",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22598,12 +22861,20 @@
       "source_record": "REVIEW::kmska:ahksg5",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/ahksg5",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 5:10–12",
+          "relationship": "POST_BIBLICAL_MARTYRDOM_THEME",
+          "event_or_theme_key": "saint-martyrdom",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22617,12 +22888,20 @@
       "source_record": "REVIEW::kmska:8s45sr",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/8s45sr",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 5:10–12",
+          "relationship": "POST_BIBLICAL_MARTYRDOM_THEME",
+          "event_or_theme_key": "saint-martyrdom",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22715,12 +22994,20 @@
       "source_record": "REVIEW::kmska:88e48c",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/88e48c",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Mark 16:17–18",
+          "relationship": "POST_BIBLICAL_SAINT_MIRACLE_THEME",
+          "event_or_theme_key": "saint-miracle",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22734,12 +23021,20 @@
       "source_record": "REVIEW::kmska:mzq7rv",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/mzq7rv",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Mark 16:17–18",
+          "relationship": "POST_BIBLICAL_SAINT_MIRACLE_THEME",
+          "event_or_theme_key": "saint-miracle",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -22862,12 +23157,20 @@
       "source_record": "REVIEW::kmska:yzurn8",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/yzurn8",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 5:10–12",
+          "relationship": "POST_BIBLICAL_MARTYRDOM_THEME",
+          "event_or_theme_key": "saint-martyrdom",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -23109,12 +23412,20 @@
       "source_record": "REVIEW::kmska:0wfc2h",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/0wfc2h",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "John 19:17–30",
+          "relationship": "POST_BIBLICAL_LITURGICAL_REENACTMENT",
+          "event_or_theme_key": "good-friday-procession",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -23133,7 +23444,8 @@
       "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
       "review_flags": [
         "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "SECULAR_OR_NON_SCRIPTURAL_SUBJECT_NO_FORCED_REFERENCE"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -24768,12 +25080,20 @@
       "source_record": "REVIEW::kmska:4c6snk",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/4c6snk",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 25:35–40",
+          "relationship": "POST_BIBLICAL_SAINT_CHARITY_THEME",
+          "event_or_theme_key": "st-martin-charity",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -25168,12 +25488,20 @@
       "source_record": "REVIEW::smk:KMS3922",
       "canon_artwork_id": null,
       "source_url": "https://open.smk.dk/en/artwork/image/KMS3922",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Tobias 12:15–21",
+          "relationship": "DIRECT_BIBLICAL_SCENE",
+          "event_or_theme_key": "raphael-departure",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "DIRECT_TITLE_SCENE_IMAGE_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -25531,12 +25859,20 @@
       "source_record": "REVIEW::nga:41597",
       "canon_artwork_id": null,
       "source_url": "https://www.nga.gov/artworks/41597",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Mark 16:16",
+          "relationship": "POST_BIBLICAL_HISTORICAL_BAPTISM_THEME",
+          "event_or_theme_key": "clovis-baptism",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -27009,12 +27345,20 @@
       "source_record": "REVIEW::kmska:ffs6nn",
       "canon_artwork_id": null,
       "source_url": "http://kmska.be/collection/work/data/ffs6nn",
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "2 Corinthians 12:2–4",
+          "relationship": "POST_BIBLICAL_SAINT_MYSTICISM_THEME",
+          "event_or_theme_key": "john-cross-vision",
+          "evidence_basis": "MULTILINGUAL_TITLE_CONTEXT_TRIAGE_ONLY",
+          "editorial_note": "The biblical text is contextual unless relationship explicitly states a biblical scene; confirm image before placement"
+        }
+      ],
       "subject_tags": [],
-      "status": "UNMATCHED_SOURCE_IDENTIFICATION_REQUIRED",
+      "status": "CONTEXTUAL_OR_TITLE_MATCH_EDITORIAL_QA_REQUIRED",
       "review_flags": [
-        "NEEDS_EXACT_SUBJECT_IDENTIFICATION",
-        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA"
+        "ALL_SCRIPTURE_LINKS_PROVISIONAL_UNTIL_VISUAL_QA",
+        "TITLE_OR_TRANSLATION_EVIDENCE_REQUIRES_VISUAL_QA"
       ],
       "calendar_day_links": [],
       "editorial_decisions_mutated": false,
@@ -27054,6 +27398,11 @@
     "method": "Non-certifying subject patterns applied only to previously unmatched records",
     "new_refs_recorded": 193,
     "nonbiblical_and_unidentified_not_forced": true,
-    "production_changes": 0
+    "production_changes": 0,
+    "final_multilingual_triage": {
+      "newly_tagged": 42,
+      "remaining_unmatched": 9,
+      "policy": "Leave nonbiblical mythology, missing identity and unrelated secular subject unmatched rather than fabricate Scripture passages."
+    }
   }
 }

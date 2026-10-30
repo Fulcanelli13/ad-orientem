@@ -1,7 +1,9 @@
-# Sacred Art operational Scripture index (30 October 2026)
+# Sacred Art operational Scripture index · 30 Oct 2026
 
-The frozen 989 operational groups consist of 548 photo-QA and 441 rights/alternative groups. **938/989** now carry one or more Scripture citations, **51** remain unmatched, **1044** typed relationships have been collected, and **300** groups have direct biblical scene hypotheses. These are provisional, title-based relationships only, not visually verified links.
+Frozen physical artwork groups **989** = Q2 **548** + rights/alternative **441**, all with stable source IDs in original order. Scripture candidates assigned to **980**, with **9** correctly unmatched because no reliable biblical reference is available. **1086** typed passage links; **305** title-identified direct scenes pending image QA.
 
-The separate canonical 383 registry has complete typed Scripture coverage. The 989 overlay preserves all group identifiers (including the user-review Q2 548 in their fixed order), exactly inherits known canonical IDs, and treats other titles as research suggestions. Post-biblical saints, dogmatic subjects, and traditional stations are **not** represented as exact Gospel events. Unmatched mythological and unclear artworks remain explicitly unmatched.
+The original 383 canonical records have a separate 100% indexed Scripture registry; operational records inheriting them by exact artwork ID remain distinguished from provisional title-only subjects. Most links are unverified image hypotheses. Post-biblical saints, visions, historic events, dogmatic subjects, and medieval stations are explicitly distinguished from literal Gospel events. No visual, rights or publication certification is inferred.
 
-Every Calendar mapping field is empty. The next crosswalk should join 1962 feast/day/Gospel context and enforce all previous human Class I, Sunday, Prayer and art decisions before any suggested placement. Nothing is published or rights-cleared by this research output.
+The remaining unmatched cases include Greco-Roman myths, secular allegories and two Prayer-approved identifiers with **no identified artwork or source** (w4-ricci and w7-altomonte). Do not invent Bible tags until those are identified, and preserve the user's keep choices.
+
+All `calendar_day_links` empty. Next join is exact 1962 Calendar day/feast/Gospel matched to artwork ID, with user's existing selections prioritized and multiple legitimate placements permitted. No production change.
