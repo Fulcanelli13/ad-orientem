@@ -4,8 +4,11 @@ import {
   HOME_PRESENTATION_VERSION,
   buildHomeViewModel,
   readNativeMassResume,
-  renderHomeToString,
+  renderHomeToString as renderApprovedHomeToString,
 } from "../src/home/presentation.js";
+const renderHomeToString=(state,win={})=>renderApprovedHomeToString(state,{
+  ...win,location:{search:"?aoTodayH4=0"}
+});
 
 const proper={
   name:"Holy Rosary",
@@ -88,6 +91,8 @@ assert.match(feriaHtml,/<h1 class="aoEditorialTitle">Feria<\/h1>/);
 assert.match(feriaHtml,/Mass of the preceding Sunday/);
 assert.doesNotMatch(feriaHtml,/<h1 class="aoEditorialTitle">Mass of the preceding Sunday<\/h1>/,
   "H2 must not confuse the selected Proper with the observed feria");
+const approvedHome=renderApprovedHomeToString(base,r17Win);
+assert.match(approvedHome,/homeScreen aoTodayV2 aoTodayH4/,"Approved H4 is the default Home");
 const en=renderHomeToString(base,r17Win);
 assert.match(en,new RegExp(`data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}"`));
 assert.match(en,/Holy Rosary/);
