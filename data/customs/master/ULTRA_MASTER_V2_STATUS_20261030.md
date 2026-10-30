@@ -10,6 +10,19 @@ A pointer-by-pointer audit resolved **3,703 / 3,703 original JSON pointers**, wi
 
 The published catalogue remains **36**; the research register does not license new Calendar publications.
 
+## Original printed source verification — same-core pairs (30 October, second pass)
+
+The [14-pair printed-witness audit](./customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json) identifies **6 exact hosted-excerpt counterparts in a scanned printed edition of _Your Home, A Church in Miniature_**, across **4 distinct printed pages** (print pp. 25, 34, 46, 65; PDF zero-index pages 26, 35, 47, 66). This printed scan is not merely another hosted site, and both are **one underlying textual witness**, not independent attestations. The primary original print edition year was **not established from the inspected title pages**.
+
+- **REL-004 and REL-015:** Rev. Alphonse Westhoff, original p.25: family Easter baptismal-vow renewal, with prior parish acquisition of Easter water. The household may bring water home but does not perform the priest's blessing.
+- **REL-007:** Maria Augusta Trapp, original p.34: a **first-person** Holy Saturday village/new-fire account, with lanterns bringing blessed light into her family's household. The previously screened Weiser group does not by itself prove two independent eyewitnesses.
+- **REL-011 and REL-014:** Rev. J. Albert Le Blanc, original p.65: Louisiana French burial-earth gesture, and pre-All-Saints grave cleaning and whitewashing near St Ann's, Mamou. Distinguish the **separate Mexican funeral gesture** at original p.42, where the priest casts earth first; and keep grave care distinct from cemetery blessing.
+- **REL-012:** Ann Michna, original p.46: Slovak parish-organist baking and distribution of oblatky. Differentiate the Slovak honeyed family-use step and the **Polish** oplatek sharing described later in the same scanned book.
+
+A further [McLoughlin introductory source statement](https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=927) acknowledges earlier writings of Therese Mueller, P. Stewart Craig and the Family Life Bureau. The ledger flags book-level dependency risk for REL-006, REL-016 and REL-017 but **does not assert passage-level copying**.
+
+**Source:** [scanned printed volume](https://distantreader.org/stacks/pamphlets/pdf/005195891.pdf). **Counts:** six pairs have one verified printed-side passage; eight do not yet have a newly inspected original printed-side passage; **zero** pairs have newly verified, side-by-side independent original-book attestation. Original book-pair comparison remains necessary for all 14 before asserting independent corroboration. Existing draft PR, 36 published customs, all primary observation IDs, zero mergers, no indulgence or Calendar changes preserved.
+
 ## Latest adjudication checkpoint — all 79 cross-book cases now action-reviewed (30 October)
 
 **79/79 original dedup caseboard review units now have research-level action/identity-boundary or source-dependence decisions** in the [single working index](./customs-ultra-master-v2-single-working-relationship-index-20261030.v1.json). This is an identity *comparison* milestone, **not 79 canonically distinct customs or human-approved identities**.
