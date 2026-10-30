@@ -34,6 +34,12 @@ try{
    assert.equal(await crown.getAttribute("data-total"),"62","The canonical five decades have 62 events by default");
    assert.equal(await page.locator(base+"[data-ao-mercy-bead-navigation]").count(),1,"The existing bead/decade navigator remains the owner");
    assert.ok((await page.locator(base+".aoMercyLine.aoMercyPrayer p").innerText()).length>15,"Full source prayer remains visible");
+   const firstPrayer=await page.locator(base+".aoMercyLine.aoMercyPrayer p").evaluate(el=>{
+    const r=el.getBoundingClientRect();
+    return {top:r.top,pixels:Math.max(0,Math.min(r.bottom,innerHeight-70)-Math.max(0,r.top)),height:innerHeight};
+   });
+   assert.ok(firstPrayer.pixels>=12,
+    "F07 first canonical prayer must appear above the app dock at "+width+"px: "+JSON.stringify(firstPrayer));
    await page.screenshot({path:resolve(output,"mercy-crown-opening-"+width+".png"),animations:"disabled"});
    const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
    await large.click();
