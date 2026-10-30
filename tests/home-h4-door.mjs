@@ -126,6 +126,15 @@ assert.equal((html.match(/data-home-calendar-date="2026-11-01"/g)||[]).length,1)
 assert.equal((html.match(/data-home-calendar-date="2026-11-02"/g)||[]).length,1);
 assert.equal((html.match(/data-home-daily-catechism/g)||[]).length,0,"No Catechism on Home");
 assert.equal((html.match(/data-home-dyk-open/g)||[]).length,1,"One Did You Know Home box");
+assert.match(html,/<\/section><section class="aoH4DiscoveryStandalone"[^>]*><button[^>]*data-home-dyk-open/,
+  "Did You Know is a standalone section immediately below This week");
+assert.ok(html.indexOf('class="aoTodayV2CalendarGlance"')<html.indexOf('class="aoH4DiscoveryStandalone"'),
+  "This week must precede Discovery");
+assert.ok(html.indexOf('class="aoH4DiscoveryStandalone"')<html.indexOf('class="aoTodayV2Below"'),
+  "Discovery must precede Read");
+const readFragment=html.slice(html.indexOf('class="aoH4Read"'));
+assert.doesNotMatch(readFragment,/data-home-dyk-open/,"Did You Know must not be inside Read");
+assert.equal((readFragment.match(/data-action="gospel"/g)||[]).length,1,"Read keeps its Gospel entry");
 assert.match(html,/DID YOU KNOW\?/,"English affirmative discovery heading");
 assert.match(h4HomeView({...vm,language:"fr"},model),/LE SAVIEZ-VOUS \?/,"French discovery heading");
 assert.equal((html.match(/data-action="gospel"/g)||[]).length,1);
