@@ -11,9 +11,10 @@ test("all eight canonical Hours have a reusable date/Hour selection, without a y
  assert.deepEqual(OFFICE_BETA_HOURS,ANNUAL_OFFICE_HOURS);
  assert.equal(OFFICE_BETA_HOURS.length,8);
  const available=officeBetaImplementedHours();
- assert.equal(available.length,2);
+ assert.equal(available.length,3);
  assert.deepEqual(available.map(x=>x.key),["advent-i-2026-first-vespers",
-  "advent-i-2026-saturday-compline"]);
+  "advent-i-2026-saturday-compline",
+  "advent-i-2026-ferial-tuesday-compline"]);
  assert.ok(Object.isFrozen(available));
  assert.ok(Object.isFrozen(available[0]));
 });
@@ -45,10 +46,20 @@ test("Saturday Compline is separately appointed for November 28, not automatical
  assert.equal(r.entry.rightsApproved,false);
  assert.equal(r.entry.completeHourCertified,false);
 });
+test("Tuesday Advent I ferial Compline is explicitly appointed, not guessed for an arbitrary weekday",()=>{
+ const r=reviewOfficeBetaSelection({date:"2026-12-01",hour:"COMPLINE"});
+ assert.equal(r.status,"SOURCE_FIRST_RESEARCH_PREVIEW_AVAILABLE");
+ assert.equal(r.entry.officeDate,"2026-12-01");
+ assert.equal(r.entry.assembly,"FERIAL_TUESDAY_COMPLINE_2026_SOURCE_FIRST");
+ assert.equal(r.entry.rightsApproved,false);
+ assert.equal(r.entry.publishable,false);
+ assert.equal(r.published,false);
+});
 test("date/Hour combinations not implemented do not silently render any Office",()=>{
  for(const args of [
   {date:"2026-11-28",hour:"LAUDS"},
   {date:"2026-11-29",hour:"VESPERS"},
+  {date:"2026-12-02",hour:"COMPLINE"},
   {date:"2026-10-30",hour:"VESPERS"},
   {date:"2027-11-27",hour:"VESPERS"}
  ]){
