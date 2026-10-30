@@ -27,7 +27,11 @@
     "historical_customs_unresolved": 130,
     "active_drafts_total": 145,
     "exact_browser_verified": 0,
-    "publication_authorized": 0
+    "publication_authorized": 0,
+    "historical_source_view_route_implemented_in_private_branch": 1,
+    "historical_source_handoff_payloads": 26,
+    "historical_source_browser_verified": 0,
+    "historical_source_editorially_approved": 0
   },
   "ready_for_browser_testing": [
     {
@@ -234,5 +238,51 @@
     "new_draft_text_fr_has_question_prefix": true,
     "direct_passthrough_to_home_forbidden": true,
     "required_prepublication_transform": "Strip the drafting question stem and terminal question mark to yield one independent affirmative statement; review French elisions, punctuation and grammatical subjects individually. Do not repeat a Did You Know heading within its fact body."
+  },
+  "exact_historical_source_route_r18": {
+    "status": "PRIVATE_CANONICAL_HOME_SOURCE_SHEET_CODE_COMMITTED_BUT_BROWSER_UNTESTED",
+    "private_owner_repository": "Fulcanelli13/folio-core",
+    "private_owner_branch": "research/did-you-know-discovery-r01-20261028",
+    "source_route": "src/home/discovery-historical-source-route.js",
+    "home_dispatch": "src/home/browser-entry.js",
+    "responsive_style": "src/home/today-v2-styles.js",
+    "test": "tests/discovery-exact-historical-source-r18.mjs",
+    "npm_script": "test:discovery-r18",
+    "accepted_destination_shape": {
+      "type": "route",
+      "id": "home.historical-source",
+      "factId": "<exact card ID>",
+      "historical_context": {
+        "observation_ids": [
+          "<source ID(s)>"
+        ],
+        "printed_pages": [
+          "<printed folio numbers>"
+        ],
+        "source_url": "<allowlisted historical source URL>",
+        "scope": {
+          "en": "<historically scoped sentence>",
+          "fr": "<phrase de portée historique>"
+        }
+      }
+    },
+    "compiled_deck_inclusion": "NONE_UNTIL_SEPARATE_EDITORIAL_APPROVAL",
+    "handoff_file": "data/research/did-you-know/dyk-26-historical-home-route-handoff.v1.json",
+    "proposed_selected_payloads": 26,
+    "compiler_routes_browser_accepted": 0,
+    "editorial_approvals": 0,
+    "production_publications": 0,
+    "protects": [
+      "exact selected card identity",
+      "allowlisted original source",
+      "valid family-matched observation IDs",
+      "printed folio",
+      "explicit bilingual historical scope",
+      "textContent not HTML",
+      "Escape/backdrop close",
+      "focus restoration",
+      "Home-only and no Calendar identity inference"
+    ],
+    "limits": "Code and unit-test file committed to private source owner. Browser render, CI execution and clickthrough acceptance are not yet observed; no new fact has entered the private 612-fact preview bank."
   }
 }
