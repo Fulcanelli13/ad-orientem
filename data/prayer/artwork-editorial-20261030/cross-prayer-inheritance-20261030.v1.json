@@ -23,8 +23,8 @@
     "unreviewed_23_not_imported": 23,
     "q2_accepted_b01_b05": 114,
     "scene_family_count": 21,
-    "added_reuse_edges": 101,
-    "slots_touched": 44,
+    "added_reuse_edges": 105,
+    "slots_touched": 48,
     "remaining_without_explicit_approved_or_locked_candidate": [
       "COV-novena.st_therese"
     ],
@@ -35,7 +35,7 @@
     "scope_guardrail_removals": 22,
     "luminous_five_with_approved_choices": 5,
     "luminous_five_runtime_ids_joined": 0,
-    "added_reuse_edges_approved": 89,
+    "added_reuse_edges_approved": 93,
     "added_reuse_edges_needing_approval": 12
   },
   "scene_families": [
@@ -1133,6 +1133,42 @@
       "from_slot": "STG-pray.rosary-07",
       "rule": "USER_Q2_BATCH_01_ORDER_31_FIVE_WOUNDS_CONTEXT",
       "kind": "CONTEXTUAL_USER_AUTHORIZED",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
+    },
+    {
+      "target_slot": "STG-pray.five_wounds-02",
+      "artwork_id": "CANONICAL::cma-97147",
+      "title": "The Crucifixion",
+      "from_slot": "STG-pray.five_wounds-01",
+      "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+      "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
+    },
+    {
+      "target_slot": "STG-pray.five_wounds-03",
+      "artwork_id": "CANONICAL::cma-97147",
+      "title": "The Crucifixion",
+      "from_slot": "STG-pray.five_wounds-01",
+      "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+      "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
+    },
+    {
+      "target_slot": "COV-pray.precious_blood",
+      "artwork_id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "title": "The Lance Thrust",
+      "from_slot": "STG-pray.precious_blood-07",
+      "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+      "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
+      "approval_evidence": "POSITIVE_DECISION_FOUND"
+    },
+    {
+      "target_slot": "COV-pray.little_crown",
+      "artwork_id": "CANONICAL::cma-143644",
+      "title": "Adoration of the Shepherds",
+      "from_slot": "STG-pray.little_crown-01",
+      "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+      "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
       "approval_evidence": "POSITIVE_DECISION_FOUND"
     }
   ],
@@ -4070,7 +4106,7 @@
   "approval_exactness_fix": {
     "date": "2026-10-30",
     "policy": "Only explicit positive decision states, not substring matches. Quarantine cross-pool edges inferred from unapproved candidates; never delete or misstate human decisions.",
-    "active_cross_edges": 89,
+    "active_cross_edges": 93,
     "quarantined_cross_edges": [
       {
         "slot_id": "HERO-09",
@@ -4147,5 +4183,47 @@
     ],
     "quarantined_count": 12,
     "unreviewed_blueprint_candidates_remain_research_only": true
+  },
+  "additional_scenes_inherited_from_user_q2": {
+    "date": "2026-10-30",
+    "existing_candidate_edges_reclassified_not_new_artworks": [
+      {
+        "target_slot": "STG-pray.five_wounds-02",
+        "artwork_id": "CANONICAL::cma-97147",
+        "title": "The Crucifixion",
+        "from_slot": "STG-pray.five_wounds-01",
+        "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+        "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
+        "approval_evidence": "POSITIVE_DECISION_FOUND"
+      },
+      {
+        "target_slot": "STG-pray.five_wounds-03",
+        "artwork_id": "CANONICAL::cma-97147",
+        "title": "The Crucifixion",
+        "from_slot": "STG-pray.five_wounds-01",
+        "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+        "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
+        "approval_evidence": "POSITIVE_DECISION_FOUND"
+      },
+      {
+        "target_slot": "COV-pray.precious_blood",
+        "artwork_id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+        "title": "The Lance Thrust",
+        "from_slot": "STG-pray.precious_blood-07",
+        "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+        "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
+        "approval_evidence": "POSITIVE_DECISION_FOUND"
+      },
+      {
+        "target_slot": "COV-pray.little_crown",
+        "artwork_id": "CANONICAL::cma-143644",
+        "title": "Adoration of the Shepherds",
+        "from_slot": "STG-pray.little_crown-01",
+        "rule": "USER_EXPLICIT_CROSS_PRAYER_REUSE_Q2_POSITIVE_SOURCE",
+        "kind": "CONTEXTUAL_APPROVED_SCENE_INHERITANCE",
+        "approval_evidence": "POSITIVE_DECISION_FOUND"
+      }
+    ],
+    "rule": "Prior approved Crucifixion can contextualize individual wounds but cannot be misrepresented as a right-foot or left-hand closeup; no new approval invented."
   }
 }
