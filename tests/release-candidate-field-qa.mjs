@@ -271,33 +271,24 @@ try{
     // supported phone width.
     assert.equal(await page.locator("[data-ao-app-surface='mass']").count(),0,
       "Mass is not a fifth ribbon tab");
-    const massNav=page.locator(".homeScreen [data-home-h4-begin]").first();
-    await massNav.waitFor({state:"visible",timeout:15000});
-    await page.waitForFunction(()=>Boolean(document.querySelector(
-      ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
-    await massNav.click();
-    await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
-    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
-    assert.equal(await visible(page,"#ao-mass-flow-v1 .aoMassFlowBackdrop"),true);
-    await assertViewportFit(page,"Mass preflight",viewport.width);
-    await assertNoLegacyLeak(page,"Mass preflight",viewport.width);
-
-    const preflight=await page.evaluate(()=>({
-      count:document.querySelectorAll("#ao-mass-flow-v1").length,
-      nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
-      legacyReader:document.documentElement.dataset.aoMassReaderUi==="LEGACY",
-    }));
-    assert.equal(preflight.count,1,viewport.width+"px Mass routing duplicated the preflight root");
-    assert.equal(preflight.nativeMounted,false,viewport.width+"px fresh Mass entry bypassed preflight");
-    assert.equal(preflight.legacyReader,false,viewport.width+"px fresh Mass entry exposed legacy reader ownership");
-
-    // M1 is a full app-shell destination, not a dismissible setup sheet.
-    // The old × is intentionally hidden; use the permanent Today tab.
-    await openSurface(page,"home",viewport.width);
-    await page.waitForFunction(()=>document.documentElement.dataset.aoM1MassRoot!=="true",
-      null,{timeout:5000});
+    const massNav=page.locator(".homeScreen [data-home-h4-begin], .homeScreen [data-resume-mass]").first();
+    assert.equal(await massNav.count(),1,
+      viewport.width+"px Home lost the sole canonical Mass entry");
+    // Today owns Mass preparation: its Change sheet exposes the R17 choice
+    // model without starting the liturgy or entering an obsolete Mass tab.
+    const change=page.locator(".homeScreen [data-home-h4-change]");
+    await change.click();
+    await page.waitForSelector(".aoH4ChoiceDialog",{state:"visible",timeout:10000});
+    await assertViewportFit(page,"H4 Mass choices",viewport.width);
+    await assertNoLegacyLeak(page,"H4 Mass choices",viewport.width);
+    assert.ok(await page.locator(".aoH4ChoiceDialog [data-h4-option]").count()>=3,
+      viewport.width+"px R17 choice controls unavailable");
+    assert.equal(await page.locator("#ao-r17-native-reader-preview").count(),0,
+      "Opening choices must not start the R17 Mass");
+    await page.locator(".aoH4ChoiceDialog [data-h4-sheet-close]").first().click();
+    await page.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
     assert.equal(await visible(page,".homeScreen"),true,
-      viewport.width+"px Today was not restored after leaving Mass");
+      viewport.width+"px closing choices must return to Today");
 
     if(consoleErrors.length||failedResources.length)console.log("RC field QA resource diagnostics",JSON.stringify({viewport:viewport.width,consoleErrors,failedResources},null,2));
     assert.deepEqual(pageErrors,[],viewport.width+"px assembled app emitted page errors");
@@ -307,7 +298,7 @@ try{
     await context.close();
   }
 
-  console.log("RC field QA PASS — 320/360/390/430px assembled shell, four destinations plus Today-only Mass routing, Mass preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
+  console.log("RC field QA PASS — 320/360/390/430px assembled shell, four destinations plus Today-only Mass routing, H4 Mass choice geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
