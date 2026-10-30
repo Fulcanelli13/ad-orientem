@@ -1,0 +1,876 @@
+{
+  "schema": "AO_PRAYER_RUNTIME_EDITORIAL_ART_PARITY_V1",
+  "date": "2026-10-30",
+  "source_commit": "0f36e26980feadd8dea8f80e76a6e25c383381ad",
+  "purpose": "Explicitly bridge observed Prayer runtime stage states to candidate editorial artwork slots; no production image activation",
+  "sources": [
+    {
+      "path": "src/pray/presentation-runtime.js",
+      "blob_sha": "320c2ab89d0be935648759e91b294b1388d3e4bc"
+    },
+    {
+      "path": "src/pray/novena-corpus.js",
+      "blob_sha": "a6563c6bf6d46b32db34f44b5a6f4fec4d4a6137"
+    },
+    {
+      "path": "src/pray/novena-corpus-v4.js",
+      "blob_sha": "5376ef1f9c0e36d573de579892209fb0dd660606"
+    },
+    {
+      "path": "src/pray/rosary-mystery-context.v1.js",
+      "blob_sha": "a15da8cc259ff0e6a71e97a04347153351094660"
+    },
+    {
+      "path": "src/pray/traditional-pray-runtime.js",
+      "blob_sha": "ee9181b97093f240e528f9ef8bcf999cfffdcea3"
+    },
+    {
+      "path": "src/pray/traditional-pray-data.js",
+      "blob_sha": "5b5a586c0f4aa76913b20cf24a7e78da2ab1875d"
+    },
+    {
+      "path": "src/pray/guided-daily-cards.js",
+      "blob_sha": "16ecafd13f40aaa949437bc43796578f4c6bd67a"
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+      "blob_sha": "482ccd73625a8cec461bc7e3a70dc22709ff86c9"
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/cross-prayer-inheritance-20261030.v1.json",
+      "blob_sha": "f8daff353568100983196a1bfca2796022b033cf"
+    }
+  ],
+  "scope_warning": "Not all interactive Prayer screens and donor-owned Rosary/chaplet bead steps are enumerated. A candidate at an editorial slot is NOT an actually rendered image.",
+  "summary": {
+    "verified_novena_families": 16,
+    "novena_day_screens": 144,
+    "novena_guided_day_stage_states": 648,
+    "stations": 14,
+    "benediction_stages": 7,
+    "seven_last_words_runtime_stages": 7,
+    "penitential_psalms": 7,
+    "forty_hours": 6,
+    "adoration_visit_stages": 7,
+    "adoration_holy_hour_stages": 8,
+    "adoration_four_ends_stages": 5,
+    "morning_prayer_steps": 11,
+    "evening_prayer_steps": 13,
+    "nightly_examen_steps": 5,
+    "rosary_context_mysteries": 20,
+    "optional_luminous_semantic_artwork_families": 5,
+    "direct_editorial_slot_lookup_gaps": 0,
+    "production_artwork_runtime_wiring_verified": false,
+    "reader_ui_image_coverage_certified": false
+  },
+  "runtime_stage_to_editorial_slot": {
+    "benediction": [
+      {
+        "runtime_stage_id": "exposition",
+        "editorial_slot": "STG-pray.benediction-01",
+        "exact_scene_exception": false,
+        "fallback_only": false
+      },
+      {
+        "runtime_stage_id": "adoration",
+        "editorial_slot": "STG-pray.benediction-01",
+        "exact_scene_exception": false,
+        "fallback_only": false
+      },
+      {
+        "runtime_stage_id": "hymn",
+        "editorial_slot": "STG-pray.benediction-02",
+        "exact_scene_exception": false,
+        "fallback_only": false
+      },
+      {
+        "runtime_stage_id": "prayer",
+        "editorial_slot": "COV-pray.benediction",
+        "exact_scene_exception": false,
+        "fallback_only": true
+      },
+      {
+        "runtime_stage_id": "blessing",
+        "editorial_slot": "STG-pray.benediction-03",
+        "exact_scene_exception": true,
+        "fallback_only": false
+      },
+      {
+        "runtime_stage_id": "praises",
+        "editorial_slot": "STG-pray.benediction-04",
+        "exact_scene_exception": false,
+        "fallback_only": false
+      },
+      {
+        "runtime_stage_id": "reposition",
+        "editorial_slot": "STG-pray.benediction-04",
+        "exact_scene_exception": false,
+        "fallback_only": false
+      }
+    ],
+    "stations": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-pray.stations-01"
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-pray.stations-02"
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-pray.stations-03"
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-pray.stations-04"
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "STG-pray.stations-05"
+      },
+      {
+        "runtime_index": 5,
+        "editorial_slot": "STG-pray.stations-06"
+      },
+      {
+        "runtime_index": 6,
+        "editorial_slot": "STG-pray.stations-07"
+      },
+      {
+        "runtime_index": 7,
+        "editorial_slot": "STG-pray.stations-08"
+      },
+      {
+        "runtime_index": 8,
+        "editorial_slot": "STG-pray.stations-09"
+      },
+      {
+        "runtime_index": 9,
+        "editorial_slot": "STG-pray.stations-10"
+      },
+      {
+        "runtime_index": 10,
+        "editorial_slot": "STG-pray.stations-11"
+      },
+      {
+        "runtime_index": 11,
+        "editorial_slot": "STG-pray.stations-12"
+      },
+      {
+        "runtime_index": 12,
+        "editorial_slot": "STG-pray.stations-13"
+      },
+      {
+        "runtime_index": 13,
+        "editorial_slot": "STG-pray.stations-14"
+      }
+    ],
+    "seven_words": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-pray.seven_words-01"
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-pray.seven_words-02"
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-pray.seven_words-03"
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-pray.seven_words-04"
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "STG-pray.seven_words-05"
+      },
+      {
+        "runtime_index": 5,
+        "editorial_slot": "STG-pray.seven_words-06"
+      },
+      {
+        "runtime_index": 6,
+        "editorial_slot": "STG-pray.seven_words-07"
+      }
+    ],
+    "penitential_psalms": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-pray.penitential_psalms-01"
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-pray.penitential_psalms-02"
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-pray.penitential_psalms-03"
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-pray.penitential_psalms-04"
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "STG-pray.penitential_psalms-05"
+      },
+      {
+        "runtime_index": 5,
+        "editorial_slot": "STG-pray.penitential_psalms-06"
+      },
+      {
+        "runtime_index": 6,
+        "editorial_slot": "STG-pray.penitential_psalms-07"
+      }
+    ],
+    "forty_hours": [
+      {
+        "runtime_index": 0,
+        "logical_stage": "arrive",
+        "editorial_slot": "COV-pray.forty_hours",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 1,
+        "logical_stage": "adore",
+        "editorial_slot": "COV-pray.forty_hours",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 2,
+        "logical_stage": "prayer_aids",
+        "editorial_slot": "COV-pray.forty_hours",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 3,
+        "logical_stage": "public_devotion",
+        "editorial_slot": "COV-pray.forty_hours",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 4,
+        "logical_stage": "benediction",
+        "editorial_slot": "COV-pray.benediction",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 5,
+        "logical_stage": "leave",
+        "editorial_slot": "COV-pray.forty_hours",
+        "fallback_only": true
+      }
+    ],
+    "adoration_visit": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-pray.adoration-01",
+        "fallback_only": false
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-pray.adoration-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-pray.adoration-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-pray.adoration-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "STG-pray.adoration-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 5,
+        "editorial_slot": "STG-pray.adoration-01",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 6,
+        "editorial_slot": "STG-pray.adoration-01",
+        "fallback_only": true
+      }
+    ],
+    "adoration_holy_hour": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-pray.rosary-07",
+        "fallback_only": false
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "COV-pray.adoration",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "COV-pray.adoration",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "COV-pray.adoration",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "COV-pray.adoration",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 5,
+        "editorial_slot": "COV-pray.adoration",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 6,
+        "editorial_slot": "COV-pray.adoration",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 7,
+        "editorial_slot": "COV-pray.adoration",
+        "fallback_only": true
+      }
+    ],
+    "adoration_four_ends": [
+      {
+        "runtime_index": 0,
+        "editorial_slot": "STG-pray.adoration.four_ends-01",
+        "fallback_only": false
+      },
+      {
+        "runtime_index": 1,
+        "editorial_slot": "STG-pray.adoration.four_ends-02",
+        "fallback_only": false
+      },
+      {
+        "runtime_index": 2,
+        "editorial_slot": "STG-pray.adoration.four_ends-03",
+        "fallback_only": false
+      },
+      {
+        "runtime_index": 3,
+        "editorial_slot": "STG-pray.adoration.four_ends-04",
+        "fallback_only": false
+      },
+      {
+        "runtime_index": 4,
+        "editorial_slot": "COV-pray.adoration.four_ends",
+        "fallback_only": true
+      }
+    ],
+    "nightly_examen": [
+      {
+        "runtime_index": 0,
+        "logical_stage": "recollect",
+        "editorial_slot": "COV-daily.nightly_examen",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 1,
+        "logical_stage": "god",
+        "editorial_slot": "COV-daily.nightly_examen",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 2,
+        "logical_stage": "neighbour",
+        "editorial_slot": "COV-daily.nightly_examen",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 3,
+        "logical_stage": "self",
+        "editorial_slot": "COV-daily.nightly_examen",
+        "fallback_only": true
+      },
+      {
+        "runtime_index": 4,
+        "logical_stage": "resolve",
+        "editorial_slot": "COV-sacrament_act_of_contrition",
+        "fallback_only": true
+      }
+    ],
+    "morning_daily": [
+      {
+        "runtime_index": 0,
+        "prayer_id": "foundations_sign_of_cross",
+        "editorial_slot": "COV-foundations_sign_of_cross"
+      },
+      {
+        "runtime_index": 1,
+        "prayer_id": "sacrament_come_holy_spirit",
+        "editorial_slot": "COV-sacrament_come_holy_spirit"
+      },
+      {
+        "runtime_index": 2,
+        "prayer_id": "foundations_our_father",
+        "editorial_slot": "COV-foundations_our_father"
+      },
+      {
+        "runtime_index": 3,
+        "prayer_id": "foundations_hail_mary",
+        "editorial_slot": "COV-foundations_hail_mary"
+      },
+      {
+        "runtime_index": 4,
+        "prayer_id": "foundations_apostles_creed",
+        "editorial_slot": "COV-foundations_apostles_creed"
+      },
+      {
+        "runtime_index": 5,
+        "prayer_id": "foundations_act_of_faith",
+        "editorial_slot": "COV-foundations_act_of_faith"
+      },
+      {
+        "runtime_index": 6,
+        "prayer_id": "foundations_act_of_hope",
+        "editorial_slot": "COV-foundations_act_of_hope"
+      },
+      {
+        "runtime_index": 7,
+        "prayer_id": "foundations_act_of_love",
+        "editorial_slot": "COV-foundations_act_of_love"
+      },
+      {
+        "runtime_index": 8,
+        "prayer_id": "sacrament_act_of_contrition",
+        "editorial_slot": "COV-sacrament_act_of_contrition"
+      },
+      {
+        "runtime_index": 9,
+        "prayer_id": "foundations_guardian_angel",
+        "editorial_slot": "COV-foundations_guardian_angel"
+      },
+      {
+        "runtime_index": 10,
+        "prayer_id": "foundations_glory_be",
+        "editorial_slot": "COV-foundations_glory_be"
+      }
+    ],
+    "evening_daily": [
+      {
+        "runtime_index": 0,
+        "prayer_id": "foundations_sign_of_cross",
+        "editorial_slot": "COV-foundations_sign_of_cross"
+      },
+      {
+        "runtime_index": 1,
+        "prayer_id": "sacrament_come_holy_spirit",
+        "editorial_slot": "COV-sacrament_come_holy_spirit"
+      },
+      {
+        "runtime_index": 2,
+        "prayer_id": "foundations_our_father",
+        "editorial_slot": "COV-foundations_our_father"
+      },
+      {
+        "runtime_index": 3,
+        "prayer_id": "foundations_hail_mary",
+        "editorial_slot": "COV-foundations_hail_mary"
+      },
+      {
+        "runtime_index": 4,
+        "prayer_id": "foundations_apostles_creed",
+        "editorial_slot": "COV-foundations_apostles_creed"
+      },
+      {
+        "runtime_index": 5,
+        "prayer_id": "foundations_act_of_faith",
+        "editorial_slot": "COV-foundations_act_of_faith"
+      },
+      {
+        "runtime_index": 6,
+        "prayer_id": "foundations_act_of_hope",
+        "editorial_slot": "COV-foundations_act_of_hope"
+      },
+      {
+        "runtime_index": 7,
+        "prayer_id": "foundations_act_of_love",
+        "editorial_slot": "COV-foundations_act_of_love"
+      },
+      {
+        "runtime_index": 8,
+        "prayer_id": "pray.nightly_examen",
+        "editorial_slot": "COV-daily.nightly_examen"
+      },
+      {
+        "runtime_index": 9,
+        "prayer_id": "sacrament_act_of_contrition",
+        "editorial_slot": "COV-sacrament_act_of_contrition"
+      },
+      {
+        "runtime_index": 10,
+        "prayer_id": "dead_de_profundis",
+        "editorial_slot": "COV-dead_de_profundis"
+      },
+      {
+        "runtime_index": 11,
+        "prayer_id": "marian_hail_holy_queen",
+        "editorial_slot": "COV-marian_hail_holy_queen"
+      },
+      {
+        "runtime_index": 12,
+        "prayer_id": "foundations_glory_be",
+        "editorial_slot": "COV-foundations_glory_be"
+      }
+    ]
+  },
+  "novena_guided": [
+    {
+      "novena_id": "holy_ghost",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.holy_ghost",
+      "preferred_day_slot": "STG-novena.holy_ghost-01",
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "christmas",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.christmas",
+      "preferred_day_slot": "STG-novena.christmas-01",
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "corpus_christi",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.corpus_christi",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "sacred_heart",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.sacred_heart",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "immaculate_conception",
+      "days": 9,
+      "per_day_guided_stages": 5,
+      "total_guided_day_stage_states": 45,
+      "cover_slot": "COV-novena.immaculate_conception",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "annunciation",
+      "days": 9,
+      "per_day_guided_stages": 6,
+      "total_guided_day_stage_states": 54,
+      "cover_slot": "COV-novena.annunciation",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "assumption",
+      "days": 9,
+      "per_day_guided_stages": 6,
+      "total_guided_day_stage_states": 54,
+      "cover_slot": "COV-novena.assumption",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "seven_sorrows",
+      "days": 9,
+      "per_day_guided_stages": 6,
+      "total_guided_day_stage_states": 54,
+      "cover_slot": "COV-novena.seven_sorrows",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "st_joseph",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.st_joseph",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "holy_souls",
+      "days": 9,
+      "per_day_guided_stages": 5,
+      "total_guided_day_stage_states": 45,
+      "cover_slot": "COV-novena.holy_souls",
+      "preferred_day_slot": "STG-novena.holy_souls-01",
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "perpetual_help",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.perpetual_help",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "st_therese",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.st_therese",
+      "preferred_day_slot": "STG-novena.st_therese-01",
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "EXACT_SAINT_IMAGE_NOT_CLEARED"
+    },
+    {
+      "novena_id": "christ_the_king",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.christ_the_king",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "immaculate_heart",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.immaculate_heart",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "st_michael",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.st_michael",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    },
+    {
+      "novena_id": "st_anthony_nine_tuesdays",
+      "days": 9,
+      "per_day_guided_stages": 4,
+      "total_guided_day_stage_states": 36,
+      "cover_slot": "COV-novena.st_anthony_nine_tuesdays",
+      "preferred_day_slot": null,
+      "art_placement_policy": "Reuse approved cover or approved scene-appropriate day image; do not assume separate artwork for every microstage",
+      "publication_gate": "IMAGE_SOURCE_AND_READER_PARITY_UNVERIFIED"
+    }
+  ],
+  "rosary_mystery_context": [
+    {
+      "context_key": "joy1",
+      "editorial_slot": "STG-pray.rosary-02",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "joy2",
+      "editorial_slot": "STG-pray.rosary-03",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "joy3",
+      "editorial_slot": "STG-pray.rosary-04",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "joy4",
+      "editorial_slot": "STG-pray.rosary-05",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "joy5",
+      "editorial_slot": "STG-pray.rosary-06",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "lum1",
+      "editorial_slot": "SEM-rosary.baptism_of_christ",
+      "reader_status": "SEMANTIC_USER_APPROVED_RUNTIME_JOIN_PENDING"
+    },
+    {
+      "context_key": "lum2",
+      "editorial_slot": "SEM-rosary.wedding_at_cana",
+      "reader_status": "SEMANTIC_USER_APPROVED_RUNTIME_JOIN_PENDING"
+    },
+    {
+      "context_key": "lum3",
+      "editorial_slot": "SEM-rosary.proclamation_of_kingdom",
+      "reader_status": "SEMANTIC_USER_APPROVED_RUNTIME_JOIN_PENDING"
+    },
+    {
+      "context_key": "lum4",
+      "editorial_slot": "SEM-rosary.transfiguration",
+      "reader_status": "SEMANTIC_USER_APPROVED_RUNTIME_JOIN_PENDING"
+    },
+    {
+      "context_key": "lum5",
+      "editorial_slot": "SEM-rosary.institution_of_eucharist",
+      "reader_status": "SEMANTIC_USER_APPROVED_RUNTIME_JOIN_PENDING"
+    },
+    {
+      "context_key": "sor1",
+      "editorial_slot": "STG-pray.rosary-07",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "sor2",
+      "editorial_slot": "STG-pray.rosary-08",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "sor3",
+      "editorial_slot": "STG-pray.rosary-09",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "sor4",
+      "editorial_slot": "STG-pray.rosary-10",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "sor5",
+      "editorial_slot": "STG-pray.rosary-11",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "glo1",
+      "editorial_slot": "STG-pray.rosary-12",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "glo2",
+      "editorial_slot": "STG-pray.rosary-13",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "glo3",
+      "editorial_slot": "STG-pray.rosary-14",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "glo4",
+      "editorial_slot": "STG-pray.rosary-15",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    },
+    {
+      "context_key": "glo5",
+      "editorial_slot": "STG-pray.rosary-16",
+      "reader_status": "MYSTERY_CONTEXT_ID_OBSERVED_DONOR_PLAYER_STEP_JOIN_PENDING"
+    }
+  ],
+  "unmapped_or_undercounted_runtime_surfaces": [
+    {
+      "route": "pray.rosary",
+      "note": "Donor AO_ROSARY_V381 steps() generates opening, mystery and bead states; no stable 267-blueprint join or all-bead artwork count yet"
+    },
+    {
+      "route": "chaplets",
+      "note": "Five chaplet families have editorial pools but actual bead/player IDs and counts remain to be extracted from donor runtime"
+    },
+    {
+      "route": "pray.angelus",
+      "note": "Donor has dynamically rendered prayer units; editorial Angelus-01..09 are thematic sections, not proven 1:1 runtime units"
+    },
+    {
+      "route": "pray.litany_saints",
+      "note": "Historical litany sections are dynamically loaded; staged -01..06 sections not yet mapped by exact reader-stage IDs"
+    },
+    {
+      "route": "pray.confession",
+      "note": "Path, examination, rite and after-care substeps are dynamic; four narrative blueprint stages not an exact card census"
+    },
+    {
+      "route": "pray.sacred_hymns",
+      "note": "Hymn and canticle selection screens are not covered by route-stage map"
+    },
+    {
+      "route": "pray.holy_name_litany",
+      "note": "Separate traditional litany route is not separately mapped to an art-bearing blueprint slot"
+    },
+    {
+      "route": "pray.dying_companion",
+      "note": "Dying companion is a separate traditional runtime route; its states are not identical to Good Death cover"
+    },
+    {
+      "route": "pray.meal_prayers",
+      "note": "Meal prayer subdivisions and after-meals prayers need runtime parity check"
+    },
+    {
+      "route": "pray.communion_treasury",
+      "note": "Before/after Communion text collections need exact prayer row joins"
+    },
+    {
+      "route": "pray.sacred_heart",
+      "note": "Litany/consecration/tab subdivisions need exact prayer row joins"
+    }
+  ],
+  "research_blockers": [
+    {
+      "slot_id": "STG-pray.benediction-03",
+      "reason": "Contextual cover inheritance exists, but no approved depiction of actual Eucharistic blessing"
+    },
+    {
+      "slot_id": "COV-novena.st_therese",
+      "reason": "No exact approved and rights-cleared Thérèse painting; day pool contains contextual Marian/Child paintings, not saint portrait"
+    }
+  ],
+  "rendering_observation": {
+    "reviewed_modules": [
+      {
+        "path": "src/pray/presentation-runtime.js",
+        "has_editorial_import": false,
+        "has_img_markup": false
+      },
+      {
+        "path": "src/pray/novena-runtime.js",
+        "has_editorial_import": false,
+        "has_img_markup": false
+      },
+      {
+        "path": "src/pray/traditional-pray-runtime.js",
+        "has_editorial_import": false,
+        "has_img_markup": false
+      }
+    ],
+    "conclusion": "Inspected module sources contain no image markup or artwork-editorial registry imports. Rosary delegates to separate donor artwork handling. This is static-source evidence only, not rendered-browser verification."
+  },
+  "validation": {
+    "no_published_images_asserted": true,
+    "no_merge_or_deploy_requested": true,
+    "missing_editorship_slots": [],
+    "full_parity_status": "OPEN"
+  }
+}
