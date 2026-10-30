@@ -92,7 +92,7 @@ assert.equal(preview.saint_relic_site_associations,71);
 assert.equal(preview.new_site_candidates,39);
 assert.equal(preview.exceptional_sacred_object_groupings,15);
 assert.equal(preview.production_pins_created,0);
-assert.equal(published.relics.length,123,"Original 122 plus one sourced Père Laval relic at existing Sainte-Croix Place");
+assert.equal(published.relics.length,127,"Original 122 plus five sourced later Place relic records");
 assert.ok(published.relics.some(x=>x.id==="relic:MU:jacques-desire-laval-sainte-croix"&&
   x.place_id==="place:MU:pere-laval-sainte-croix"&&
   x.source_claim==="LOCATION_AND_VENERATION_ATTESTED"));
