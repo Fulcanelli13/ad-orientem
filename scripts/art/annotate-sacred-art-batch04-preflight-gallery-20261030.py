@@ -69,8 +69,11 @@ if "native-qa-status-v1" not in html:
     for old,new in replacements.items():
         assert old in html,("MISSING_HTML_REWRITE_ANCHOR",old)
         html=html.replace(old,new,1)
-    # The first status replacement only sees one occurrence. Download filter
-    # and accepted-count are separate occurrences and are also hold-aware.
+    # Force every selection consumer, including CSV download and imported
+    # browser-local approvals, to exclude sources whose native SHA changed.
+    html=re.sub(r'approved\[x\.id\]&&x\.available(?!&&!x\.nativeSourceHold)',
+                'approved[x.id]&&x.available&&!x.nativeSourceHold',html)
+    assert not re.search(r'approved\[x\.id\]&&x\.available(?!&&!x\.nativeSourceHold)',html)
     assert 'data.filter(x=>approved[x.id]&&x.available&&!x.nativeSourceHold)' in html
     assert 'const yes=approved[x.id]&&x.available&&!x.nativeSourceHold;' in html
     assert 'if(!x||!x.available||x.nativeSourceHold)return;' in html
