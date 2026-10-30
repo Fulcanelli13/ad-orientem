@@ -217,6 +217,39 @@ try{
     await h4.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light",null,{timeout:10000});
     await auditH4(prefix+" H4 light");
     await h4.screenshot({path:resolve(output,prefix+"-h4-door-light.png"),fullPage:true});
+    // Change is a modal presentation over the one R17 source-owned preflight.
+    await h4.waitForFunction(()=>Boolean(globalThis.AO_R17_BROWSER_ENTRY?.installed),null,{timeout:15000});
+    await h4.locator("[data-home-h4-change]").click();
+    await h4.waitForSelector(".aoH4ChoiceDialog[open]",{state:"visible",timeout:10000});
+    const choicesBefore=await h4.evaluate(()=>({
+      owner:globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight,
+      modal:document.querySelector(".aoH4ChoiceDialog"),
+      focused:document.activeElement?.dataset?.h4Option
+    }));
+    assert.ok(choicesBefore.owner,"H4 Change must read authoritative preflight");
+    assert.ok(choicesBefore.modal,"H4 Change must open an actual dialog");
+    assert.equal(choicesBefore.focused,"form","H4 Change must focus a field");
+    const modalWidth=await h4.evaluate(()=>{
+      const box=document.querySelector(".aoH4ChoiceDialog")?.getBoundingClientRect();
+      return {left:box?.left,right:box?.right,viewport:innerWidth,
+        options:document.querySelectorAll(".aoH4ChoiceDialog [data-h4-option]").length};
+    });
+    assert.ok(modalWidth.left>=-1&&modalWidth.right<=modalWidth.viewport+1,
+      prefix+" H4 Change sheet overflow: "+JSON.stringify(modalWidth));
+    assert.equal(modalWidth.options,5,prefix+" Change must not duplicate Mass preflight inputs");
+    await h4.locator('[data-h4-option="readerMode"]').selectOption("MISSAL");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.readerMode==="MISSAL");
+    await h4.locator('[data-h4-option="readerLanguage"]').selectOption("fr");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience?.language==="fr");
+    await h4.locator('[data-h4-option="beforeMass"]').selectOption("prepare");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience?.before==="prepare");
+    await h4.locator('[data-h4-option="afterMass"]').selectOption("thanksgiving");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience?.after==="thanksgiving");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-change-light.png")});
+    await h4.locator(".aoH4SheetBottom [data-h4-sheet-close]").click();
+    await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
+    assert.match(await h4.locator(".aoH4Primary small").innerText(),/Missal|Missel/,
+      "H4 Begin must reflect the source preflight reader selection");
     await h4.locator("[data-home-h4-readings]").click();
     await h4.waitForSelector(".aoMassTextsOverlay",{state:"visible",timeout:10000});
     await h4.locator("[data-mass-texts-close]").click();
