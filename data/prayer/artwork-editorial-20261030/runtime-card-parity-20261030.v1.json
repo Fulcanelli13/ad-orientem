@@ -81,7 +81,12 @@
     "verified_approved_cross_prayer_reuses": 93,
     "quarantined_cross_prayer_reuses": 12,
     "holy_name_litany_contextual_approved_pool_mapped": true,
-    "holy_name_litany_actual_artwork_published": false
+    "holy_name_litany_actual_artwork_published": false,
+    "chaplet_cover_and_stage_slots_with_approved_artwork": 26,
+    "chaplet_cover_and_stage_slot_total": 26,
+    "chaplet_bespoke_photograph_display_verified": 0,
+    "chaplet_affirmative_approval_audit_gate": "node tests/prayer-chaplet-artwork-contract.mjs",
+    "chaplet_photo_qa_gated": true
   },
   "runtime_stage_to_editorial_slot": {
     "benediction": [
@@ -1044,5 +1049,9 @@
     "quarantine": "12 inferred cross-prayer placements derived from unapproved sources set eligible:false",
     "locked_mnac_hero": "Seven Sorrows: approved user-final image with unresolved canonical ID, cannot publish without photo QA",
     "new_verified_user_reuse_in_chaplets": 4
+  },
+  "verification_notes": {
+    "chaplet_coverage": "All 26 editorial slots have at least one affirmatively approved work. This does not imply five working chaplet bead players or 26 cleared photographs.",
+    "holy_name": "Already-approved Salvator Mundi reused contextually for Holy Name Litany; exact Holy Name imagery and photo QA remain open."
   }
 }
