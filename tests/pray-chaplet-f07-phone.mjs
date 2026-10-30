@@ -41,10 +41,12 @@ try{
    assert.ok(firstPrayer.pixels>=28,
     "F07 first canonical prayer must show at least one readable line above the app dock at "+width+"px: "+JSON.stringify(firstPrayer));
    await page.screenshot({path:resolve(output,"mercy-crown-opening-"+width+".png"),animations:"disabled"});
-   const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
+   const large=page.locator(base+'[data-p435930-mercy-chapter="4"]');
    await large.click();
    assert.equal(await crown.getAttribute("data-position"),"4");
    const pilot=page.locator(base+'.aoMercyReader[data-ao-f07-chaplet="crown-v1"]');
+   assert.equal(await pilot.locator('.aoMercyStrand .aoMercyBeadButton').count(),11,
+    "The original large bead and ten smaller beads must remain directly selectable");
    assert.equal(await pilot.locator('.aoF07MercyChapterChips button').count(),7,
     "Opening, five decades and Closing are one compact chapter rail");
    assert.equal(await pilot.locator('.aoF07MercyDock output').innerText(),'5 / 62');
@@ -77,7 +79,7 @@ try{
    });
    assert.ok(overflow.document<=1&&overflow.mount<=1,"No 320/390 horizontal overflow: "+JSON.stringify(overflow));
    // Complete all source prayers without inventing additional text.
-   await pilot.locator('[data-p435930-mercy-jump="59"]').click();
+   await pilot.locator('[data-p435930-mercy-chapter="59"]').click();
    assert.equal(await crown.getAttribute('data-position'),'59');
    assert.equal(await pilot.locator('.aoMercyLine.aoMercyPrayer .aoF07MercyRole-Response').count(),1);
    await pilot.locator('[data-p435930-mercy-next]').click();
