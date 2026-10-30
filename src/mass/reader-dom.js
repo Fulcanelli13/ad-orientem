@@ -3195,6 +3195,7 @@ export function createReaderDomAdapter({
       button.type="button";
       button.dataset.scholaEventSelect=item.id;
       const unavailable=(item.manualOnly===true ||
+        item.musicWindow?.status==="SOURCE_ANCHORS_UNVERIFIED" ||
         item.id==="BENEDICTUS_CONTINUOUS" ||
         (["ORGAN_OPTION","LOCAL_OPTION"].includes(item.kind) &&
           item.localPlan?.selected!==true) ||
@@ -3218,6 +3219,12 @@ export function createReaderDomAdapter({
                 item.organPermission?.status!=="SOLO_POTENTIALLY_PERMITTED"
                 ?"Organ permission not verified · not playing observed"
               :"Reference only · not heard or timed");
+      // Optional music: a printed cue or broad card is never an observation.
+      if(item.musicWindow){
+        detail.textContent+=" · "+item.musicWindow.note;
+        if(item.musicWindow.status==="SOURCE_ANCHORS_UNVERIFIED")
+          detail.textContent+=" · Exact source anchor unavailable in this presentation";
+      }
       button.append(detail);
       if(item.id===current?.scholaEventSelection?.id)
         button.setAttribute("aria-current","true");
