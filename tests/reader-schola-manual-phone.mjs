@@ -421,6 +421,23 @@ try{
    await profilePicker.selectOption(createdProfile);
    await page.waitForFunction(()=>
      document.querySelector('[data-schola-ordinary-setting="KYRIE"]')?.value==="Mass VIII");
+   assert.equal(await panel.locator("[data-schola-local-sanctus]").inputValue(),
+     "POLYPHONIC","Profile switch lost the independently saved Sanctus performance");
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState()
+     ?.sanctusPerformance),"POLYPHONIC","Controller and profile preference drifted");
+   // Space-containing Ordinary titles must remain typeable; do not trim the
+   // field during each keyboard input.
+   const gloriaField=panel.locator('[data-schola-ordinary-setting="GLORIA"]');
+   await gloriaField.fill("");
+   await gloriaField.pressSequentially("Mass VIII", {delay:5});
+   assert.equal(await gloriaField.inputValue(),"Mass VIII",
+     "Editor erased spaces during ordinary music typing");
+   await gloriaField.blur();
+   await page.waitForFunction(()=>JSON.parse(
+     localStorage.getItem("ao-schola-profile-library-v2")||"{}")
+       .profiles?.find(p=>p.id===JSON.parse(
+         localStorage.getItem("ao-schola-profile-library-v2")||"{}").activeProfileId)
+       ?.ordinarySettings?.GLORIA==="Mass VIII");
    const panelBounds=await panel.locator(".ao-schola-programme-fields").evaluate(el=>{
      const r=el.getBoundingClientRect();
      return {left:r.left,right:r.right,viewport:innerWidth,scroll:el.scrollHeight,
