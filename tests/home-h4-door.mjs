@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {h4Enabled,h4HomeView,verifiedH4WeekColour} from "../src/home/today-h4-view.js";
+import {composeMassTextsSheet} from "../src/mass/mass-texts-sheet.js";
 import {h4ChoicesMarkup,rememberH4Choices} from "../src/home/today-h4-change-sheet.js";
 import {createSettingsDonorState} from "../src/settings/donor-state.js";
 import {renderSettingsToString} from "../src/settings/presentation.js";
@@ -141,8 +142,20 @@ const h7Facts=h4HomeView(vm,model,{ordoFacts:{
   status:"SOURCE_PROPER",gloria:false,credo:true,
   preface:{status:"MATCH",heading:"Praefatio Communis"},
   introitIncipit:"Si iniquitátes observáveris Dómine"
-},properSections:[{en:"Introit",fr:"Introït"},{en:"Gospel",fr:"Évangile"}]});
+},properSections:[{id:"INTROIT",label:"Introit"},{id:"GOSPEL",label:"Gospel"}]});
 assert.match(h7Facts,/Praefatio Communis/,"Certified Preface must appear in H7 door");
+assert.match(h7Facts,/data-home-h4-reading-slot="GOSPEL"/,
+  "Clicking Gospel must target the native bilingual Gospel slot");
+const translatedProper={introit:{lat:"Si iniquitátes observáveris",en:"If Thou, O Lord",fr:"Si vous gardez"}};
+const enSlots=composeMassTextsSheet({proper:translatedProper,language:"en",sourceReady:true});
+const frSlots=composeMassTextsSheet({proper:translatedProper,language:"fr",sourceReady:true});
+assert.equal(enSlots.sections.find(x=>x.id==="INTROIT")?.status,"READY");
+assert.equal(frSlots.sections.find(x=>x.id==="INTROIT")?.status,"READY");
+assert.equal(enSlots.sections.find(x=>x.id==="COLLECT_SET")?.status,"MISSING",
+  "Raw missing Collect must not become a phantom door row");
+assert.equal(frSlots.sections.find(x=>x.id==="GOSPEL")?.status,"MISSING",
+  "Bilingual Gospel absent from source must stay unavailable");
+
 assert.match(h7Facts,/<small>Gloria<\/small><b[^>]*>Not said<\/b>/,"Only certified Gloria decision may display");
 assert.match(h7Facts,/<small>Credo<\/small><b[^>]*>Said<\/b>/,"Only certified Credo decision may display");
 assert.doesNotMatch(h7Facts,/data-home-h4-readings[^>]*><span>Epistle<\/span>/,
