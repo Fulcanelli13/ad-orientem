@@ -23,11 +23,12 @@ try{
  for(const [width,height] of [[390,844],[320,568]]){
   const page=await browser.newPage({viewport:{width,height},isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native&aoMassAccessM1=1",
    {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
-  await page.waitForSelector('#ao-global-ribbon [data-ao-app-surface="mass"]',{state:"visible",timeout:25000});
-  await page.locator('#ao-global-ribbon [data-ao-app-surface="mass"]').click();
+  // Mass is reached from Today, not from a removed permanent ribbon tab.
+  await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:25000});
+  await page.locator('.homeScreen [data-home-mass-entry]').click();
   await page.waitForSelector('[data-m1-choice="mass"]',{state:"visible",timeout:25000});
   const open=page.locator("[data-mass-texts-open]");
   assert.equal(await open.count(),1,"One source-owned Mass texts entry, no duplicate");
@@ -61,7 +62,7 @@ try{
   await page.waitForSelector('.aoMassTextsSheet',{state:"visible",timeout:10000});
   const en=await inspect("Mass texts");
   await page.screenshot({path:resolve(out,width+"-dark-en.png")});
-  // The integrated permanent Mass tab must give the nested source-text
+  // The contextual Mass preflight must give the nested source-text
   // dialog first refusal on Escape; closing it must retain the Mass root.
   await page.keyboard.press("Escape");
   await page.waitForSelector('.aoMassTextsOverlay',{state:"detached",timeout:10000});
