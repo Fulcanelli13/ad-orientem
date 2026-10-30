@@ -1,0 +1,336 @@
+{
+  "schema": "AO_FINDER_SELECTED_PHOTO_STAGE_V1",
+  "status": "APP_FILES_UPDATED",
+  "attempted": 20,
+  "verified": 10,
+  "exceptions": [
+    {
+      "place_id": "place:PL:gietrzwald-basilica",
+      "file": "File:Sanctuary in Gietrzwałd, 2025, KsP.jpg",
+      "reason": "ValueError: Unsupported/oversized/undersized original"
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "file": "File:Rome - Italy (November 2025) - 194.jpg",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "file": "File:Basilique Notre Dame Victoires - Paris II (FR75) - 2026-04-11 - 1.jpg",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "file": "File:Basilique Notre Dame Perpétuel Secours - Paris XI (FR75) - 2024-11-23 - 4.jpg",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "file": "File:Chapelle des Grottes de Saint-Antoine (Brive-la-Gaillarde).jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "file": "File:Basilique de Saint-Laurent-sur-Sèvre01.jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "file": "File:Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+      "reason": "ValueError: Unsupported/oversized/undersized original"
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "file": "File:StPaul.jpg",
+      "reason": "ValueError: Unsupported/oversized/undersized original"
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "file": "File:Basilica di Santa Maria Maggiore - Roma.jpg",
+      "reason": "ValueError: Unsupported/oversized/undersized original"
+    },
+    {
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "file": "File:Church of the Holy Sepulchre (29430612918).jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    }
+  ],
+  "media_records": [
+    {
+      "item": {
+        "place_id": "place:LT:siluva-apparition-chapel",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-85c2ec349e3a53dcf51b8c.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:1._%C5%A0iluvos_koply%C4%8Dia,_priekis.JPG",
+        "source_sha1": "60c30dcedc7c7ac2219be8839cfc8e65616a40b4",
+        "derivative_sha256": "60930e22b6c209fc173db1cbf7582a4d3138f62c79b3f42b31e03ad566e37a4e",
+        "credit": "Vilensija",
+        "license": "CC-BY-SA-3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 960,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Holy Virgin Mary’s Apparition Chapel, Šiluva",
+        "alt_fr": "Photographie de Holy Virgin Mary’s Apparition Chapel, Šiluva",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:FR:cathedrale-notre-dame-le-puy",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-703a1b158e5d29ac8fa2ed.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:F-Le-Puy-Notre-Dame-1.jpg",
+        "source_sha1": "513dbe8cf47332807ffee4685423345c68c6358e",
+        "derivative_sha256": "d979460ebe82eaadd36208d9969d4af0611d7d59f19731bfcdd72ac96181ffad",
+        "credit": "SchiDD",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 790,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Cathédrale Notre-Dame de l’Annonciation du Puy-en-Velay",
+        "alt_fr": "Photographie de Cathédrale Notre-Dame de l’Annonciation du Puy-en-Velay",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:FR:basilique-saint-martin-tours",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-270fc724ddc78525f73972.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tours,_Saint_Martin.JPG",
+        "source_sha1": "a7a2031749d92058b00d10dc16e34a1518b08c2c",
+        "derivative_sha256": "21a3c13360f8a01a6e3b98c52d48923b273ab02d9013cfd78bbb5acc74de1a17",
+        "credit": "Parsifall",
+        "license": "CC-BY-SA-3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 960,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Basilique Saint-Martin de Tours",
+        "alt_fr": "Photographie de Basilique Saint-Martin de Tours",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-c56c5e7a921c0c9d992501.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Basilique_Sainte-Marie-Madeleine-bjs180808-01.jpg",
+        "source_sha1": "1165b8f1b77afdc0721deb05722a2cf5e789fe6b",
+        "derivative_sha256": "804df1066e03d926c92d646a1065d49aabb7bc5c5229c27e7cfce9adad03a2b7",
+        "credit": "Bjs",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 854,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+        "alt_fr": "Photographie de Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-1cc35c8312739a538fb791.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Beno%C3%AEt_-France.JPG",
+        "source_sha1": "f65ee0ec26861e7cc1b1e95fd3687a8d1f2a8de5",
+        "derivative_sha256": "5b6f842ccc555f77de09203afeb7bdbf2116b9ce5fe07ce365d29acf91ca9a6f",
+        "credit": "Gilbertus",
+        "license": "CC-BY-SA-3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 1006,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Abbaye de Fleury — Saint-Benoît-sur-Loire",
+        "alt_fr": "Photographie de Abbaye de Fleury — Saint-Benoît-sur-Loire",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:ES:santiago-compostela-cathedral",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-d552f2029b6b3cb05afbc0.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Santiago_cathedral_2021.jpg",
+        "source_sha1": "9df01e31367be942574086de8f93a68bf864b910",
+        "derivative_sha256": "a7a2ce0bf381debca2e6b2a8e6209fd5033a6c55e7583b672cf4f59eafe6fa79",
+        "credit": "Fernando",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1024,
+        "height": 1280,
+        "orientation": "portrait",
+        "alt_en": "Photograph of Catedral de Santiago de Compostela",
+        "alt_fr": "Photographie de Catedral de Santiago de Compostela",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:ES:basilica-del-pilar-zaragoza",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-fff616032afe53120b8b05.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cathedral-Basilica_of_Our_Lady_of_the_Pillar_in_Zaragoza_at_sunrise.jpg",
+        "source_sha1": "2ff590392125b69d1e2b2408d34c6162d26ba74c",
+        "derivative_sha256": "9270cdaee866a46606cd7b5ee6d5b028b9a7fc7327a200cae7878640ff7d2dee",
+        "credit": "Kateryna Baiduzha",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 748,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Basílica de Nuestra Señora del Pilar",
+        "alt_fr": "Photographie de Basílica de Nuestra Señora del Pilar",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:ES:santo-toribio-liebana",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-c57133f152ec2767b80c12.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Santo_Toribio_Exterior.jpg",
+        "source_sha1": "90ce958aca51f2722327ba41723e32d99095b782",
+        "derivative_sha256": "2f81c6c1f509a413c10b44da06302d7abf68076ff344d209706b10dc5bde67d3",
+        "credit": "Dbascones",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 720,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Monasterio de Santo Toribio de Liébana",
+        "alt_fr": "Photographie de Monasterio de Santo Toribio de Liébana",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:ES:carmel-alba-tormes",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-0740bf7f2d66b60b6a5451.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iglesia_del_Monasterio_de_la_Anunciaci%C3%B3n,_Alba_de_Tormes.jpg",
+        "source_sha1": "a9ce1c46917694062744603a1332fca1dfac3193",
+        "derivative_sha256": "5ec2beeef3d8c02dd9a0afcd1f98ba9b22ad1bd3f0475851cb38ce0d59ce7690",
+        "credit": "Jl FilpoC",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 1280,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Monasterio de la Anunciación — Carmelitas Descalzas",
+        "alt_fr": "Photographie de Monasterio de la Anunciación — Carmelitas Descalzas",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    },
+    {
+      "item": {
+        "place_id": "place:PS:nativity-bethlehem",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-ab64a5521293783ac2eab9.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_the_Nativity_(7703592746).jpg",
+        "source_sha1": "d001c6d97af5fa90ce099c23dacbc560f3dd614f",
+        "derivative_sha256": "2c5b7b45cfda709b2f2ef0476a5718b3b5d2865948403c7499d5a6045bd27fa2",
+        "credit": "Neil Ward",
+        "license": "CC-BY-2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 850,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Church of the Nativity — shared Christian sanctuary",
+        "alt_fr": "Photographie de Church of the Nativity — shared Christian sanctuary",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1
+    }
+  ],
+  "new_files_in_app_tree": 10,
+  "verified_visible_in_running_app": 0,
+  "scheduled_from_frozen_review": 20,
+  "already_released_in_window": 0,
+  "batch_index": 3,
+  "frozen_offset": 40
+}
