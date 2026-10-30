@@ -342,7 +342,21 @@ try{
   // leaving the donor flow node mounted. Only click an actionable close
   // control; in either case require the backdrop no longer to be visible.
   const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
-  if(await massFlowClose.isVisible())await massFlowClose.click();
+  if(await massFlowClose.isVisible()){
+    try{
+      await massFlowClose.click({timeout:1500});
+    }catch(error){
+      // A cinematic can retire the Mass preflight between isVisible() and
+      // click(). This is a valid completed transition, not a visual failure.
+      // Do not swallow a click error while the preflight is still visible.
+      const retired=await page.waitForFunction(()=>{
+        const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+        return !backdrop||!backdrop.getClientRects().length||
+          getComputedStyle(backdrop).visibility==="hidden";
+      },null,{timeout:2500}).then(()=>true,()=>false);
+      if(!retired)throw error;
+    }
+  }
   await page.waitForFunction(()=>{
     const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
     return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
