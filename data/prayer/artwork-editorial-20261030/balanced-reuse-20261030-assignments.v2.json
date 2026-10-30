@@ -9,9 +9,9 @@
   },
   "stats": {
     "blueprint_image_slots": 267,
-    "covered_with_at_least_one_eligible_candidate": 266,
-    "with_any_defensible_candidate": 266,
-    "empty": 1,
+    "covered_with_at_least_one_eligible_candidate": 267,
+    "with_any_defensible_candidate": 267,
+    "empty": 0,
     "weak_only": 0,
     "below_minimum_after_pruning": 29,
     "pruned_weak_edges": 31,
@@ -19,12 +19,16 @@
     "user_accepted_later": 107,
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1572,
+    "artwork_edges_after_consolidation": 1672,
     "explicit_user_acceptances_never_auto_pruned": true,
     "cross_prayer_inherited_new_edges": 100,
     "cross_prayer_staged_candidate_slots": 267,
     "cross_prayer_exact_scene_gaps": 1,
-    "cross_prayer_not_publication_ready": true
+    "cross_prayer_not_publication_ready": true,
+    "exact_benediction_image_unresolved": 1,
+    "st_therese_only_research_image_unapproved": 1,
+    "runtime_reader_stage_parity_verified": false,
+    "publication_ready_images_verified": 0
   },
   "locked": [
     {
@@ -25431,5 +25435,6 @@
     "unresolved_semantic_edges": 16,
     "artwork_edges_after_consolidation": 1572,
     "explicit_user_acceptances_never_auto_pruned": true
-  }
+  },
+  "quality_vs_coverage_note": "267/267 EDITORIAL candidate coverage includes a CONTEXTUAL nonliteral carryover for actual Benediction, and unapproved Thérèse aux roses without resolved source rights. It does not imply 267 released images or 267 actual reader cards. Preserve exact-scene gap and rights blockers."
 }
