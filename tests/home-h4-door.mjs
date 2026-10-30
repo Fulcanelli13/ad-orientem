@@ -26,7 +26,7 @@ const sourceState={language:"en",selectedDate:"2026-10-30",resolving:false,
     day:{main:{id:":feria:4:g",title:"Feria",rank:4,color:"Green"},
       tempora:[{id:"tempora:Pent22-5:4:g"}]},
     proper:{status:"ready",data:{name:"Feria",sourcePath:"Tempora/Pent22-5",
-      introit:{lat:"Ps 129:3-4\\nSi iniquitátes observáveris, Dómine, Dómine, quis sustinébit?"}}}}};
+      introit:{lat:"Ps 129:3-4\nSi iniquitátes observáveris, Dómine, Dómine, quis sustinébit?"}}}}};
 const sourceVM=buildHomeViewModel(sourceState,{});
 assert.match(sourceVM.contextualObservanceName,/Friday after the Twenty-second Sunday after Pentecost/);
 assert.match(sourceVM.massIntroit,/^Si iniquitátes observáveris/);
