@@ -80,6 +80,16 @@ try{
  await page.waitForSelector("#aoPray435930.open [data-p435930-family='daily']",{timeout:15000});
  await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
  await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
+ // The default nine-door Prayer discovery may offer an explicit Angelus
+ // recitation entry. Unlike the direct Home shortcut, that catalogue path
+ // requires the user's real "Begin prayer" action before opening the SAME
+ // canonical card reader. The legacy grouped rollback opens it directly.
+ const begin=page.locator("#aoPray435930.open [data-p435930-pilot-angelus-begin]");
+ if(await begin.count()){
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930?.state?.()?.view),
+   "angelus","Catalogue Angelus entry escaped its canonical reader owner");
+  await begin.click();
+ }
  await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{timeout:15000});
  const fromPrayers=await read();
  assert.deepEqual(fromHome,fromPrayers,"Home and Prayers render different Angelus reader owners/models");
