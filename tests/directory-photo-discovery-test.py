@@ -8,6 +8,86 @@ spec=importlib.util.spec_from_file_location("discover_open_place_media",p)
 mod=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
 
+class CanonicalPlaceDiscoveryTests(unittest.TestCase):
+    def test_current_canonical_places_use_frozen_ids_not_new_venues(self):
+        geo = mod.ROOT / "data/geography/seed-registry.v1.json"
+        rows = mod.source_rows(geo)
+        self.assertGreaterEqual(len(rows), 530)
+        self.assertEqual(len(rows), len({r["id"] for r in rows}))
+        self.assertEqual([r["id"] for r in rows], sorted(r["id"] for r in rows))
+        self.assertTrue(all(r["id"].startswith("place:") for r in rows))
+        hannover = next(r for r in rows if r["id"] == "place:DE:basilika-st-clemens-hannover")
+        self.assertEqual(hannover["precision"], "building")
+        self.assertEqual(hannover["country"], "DE")
+        self.assertEqual(hannover["locality"], "Hannover")
+        self.assertEqual(hannover["locality_source"], "CANONICAL_PLACE_ADDRESS_NOT_FILE_ID")
+        self.assertTrue(hannover["url"].startswith("https://"))
+        self.assertEqual(hannover["source_owner"], "CANONICAL_PLACES_NO_VENUE_PROMOTION")
+
+    def test_explicit_wikidata_id_is_only_read_when_canonical(self):
+        place = {"geo": {"source_ref": "wikidata:Q123456"}, "place_id": "place:DE:demo"}
+        self.assertEqual(mod.canonical_wikidata_qid(place), "Q123456")
+        place["wikidata_id"] = "Q321"
+        self.assertEqual(mod.canonical_wikidata_qid(place), "Q321")
+        place["wikidata_id"] = "https://example.com/Q321"
+        self.assertEqual(mod.canonical_wikidata_qid(place), "Q123456")  # Source ref is still explicit.
+
+        place["geo"]["source_ref"] = "legacy-source:Q123456"
+        self.assertIsNone(mod.canonical_wikidata_qid(place))
+
+    def test_canonical_rows_never_silently_promote_nearby_site(self):
+        def fake(qid="Q123456", lat=48.0):
+            return {"schema": "EXPLORE_GEOGRAPHY_SEED_V1",
+                "places": [{"place_id": "place:FR:test-church", "name": {"official": "Saint Joseph Church"},
+                  "place_type": "church", "mappable": True,
+                  "geo": {"lat": lat, "lng": 2.0, "precision": "site",
+                          "source_ref": "wikidata:" + qid,
+                          "source_url": "https://www.wikidata.org/wiki/" + qid},
+                  "address": {"country_code": "FR", "city": "Paris"}}]}
+        rows = mod.canonical_place_rows(fake())
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["wikidata_id"], "Q123456")
+        class Client:
+            def __init__(self, coord): self.actions = []; self.coord = coord
+            def request(self, params, endpoint=None):
+                self.actions.append(params["action"])
+                self.assert_endpoint = endpoint
+                if params["action"] != "wbgetentities":
+                    raise AssertionError("Explicit canonical QID should not search by name")
+                point = {"latitude": self.coord, "longitude": 2.0,
+                         "globe": "http://www.wikidata.org/entity/Q2"}
+                def claim(value, kind):
+                    return {"mainsnak": {"snaktype": "value",
+                            "datavalue": {"type": kind, "value": value}}}
+                return {"entities": {"Q123456": {
+                    "labels": {"en": {"value": "Saint Joseph Church"}},
+                    "aliases": {}, "sitelinks": {},
+                    "claims": {"P625": [claim(point, "globecoordinate")],
+                               "P18": [claim("Saint Joseph Church.jpg", "string")],
+                               "P373": [claim("Saint Joseph Church Paris", "string")]}}}}
+        near = Client(48.0002)
+        evidence, selected = mod.wikidata_photo_identity(near, rows[0])
+        self.assertEqual(near.actions, ["wbgetentities"])
+        self.assertEqual(evidence["identity_method"], "EXPLICIT_CANONICAL_QID")
+        self.assertEqual(selected["qid"], "Q123456")
+        self.assertEqual(selected["category"], "Saint Joseph Church Paris")
+        self.assertEqual(selected["image"], "Saint Joseph Church.jpg")
+        far = Client(48.002)
+        evidence, selected = mod.wikidata_photo_identity(far, rows[0])
+        self.assertIsNone(selected)
+        self.assertEqual(evidence["state"], "NO_GEO_NAME_CORROBORATED_IDENTITY")
+        self.assertEqual(far.actions, ["wbgetentities"])
+
+    def test_duplicate_canonical_place_ids_fail_closed(self):
+        record = {"place_id": "place:FR:duplicate", "name": {"official": "Example Church"},
+                  "geo": {"lat": 45.0, "lng": 2.0, "precision": "site",
+                          "source_url": "https://example.org/church"},
+                  "address": {"country_code": "FR", "city": "Test"}}
+        with self.assertRaisesRegex(ValueError, "identity"):
+            mod.canonical_place_rows({"schema": "EXPLORE_GEOGRAPHY_SEED_V1",
+                                     "places": [record, dict(record)]})
+
+
 class PhotoDiscoveryTests(unittest.TestCase):
     def test_source_frozen(self):
         rows=mod.source_rows(mod.R49)
