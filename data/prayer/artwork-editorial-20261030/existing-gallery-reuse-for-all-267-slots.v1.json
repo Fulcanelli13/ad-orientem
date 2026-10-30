@@ -26,13 +26,13 @@
     "existing_rights_queue": 441,
     "human_previous_rejections_excluded": 136,
     "slots_evaluated": 267,
-    "slots_with_direct_title_candidates": 155,
-    "slots_with_any_existing_reuse": 240,
-    "slots_below_minimum": 42,
-    "slots_with_no_title_match": 27,
-    "proposed_reuse_edges": 1157,
-    "direct_subject_edges": 572,
-    "pre_existing_human_accepted_reuse_edges": 703
+    "slots_with_direct_title_candidates": 176,
+    "slots_with_any_existing_reuse": 262,
+    "slots_below_minimum": 25,
+    "slots_with_no_title_match": 5,
+    "proposed_reuse_edges": 1275,
+    "direct_subject_edges": 653,
+    "pre_existing_human_accepted_reuse_edges": 742
   },
   "slots": [
     {
@@ -495,13 +495,166 @@
         "CHR-MAGI",
         "CHR-BAPTISM"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 8,
+      "direct_title_candidates": 8,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "PRAYER::visit--murillo-magi",
+          "title": "Adoration of the Magi",
+          "artist": "Bartolomé Esteban Murillo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg/960px-Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-MAGI",
+          "all_subjects": [
+            "CHR-MAGI"
+          ],
+          "score": 144,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "CANONICAL::cma-127746",
+          "title": "Baptism of Christ",
+          "artist": "Jacopo Tintoretto (Italian, 1518–1594)",
+          "source_url": "https://clevelandart.org/art/1950.400",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://openaccess-cdn.clevelandart.org/1950.400/1950.400_web.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-BAPTISM",
+          "all_subjects": [
+            "CHR-BAPTISM"
+          ],
+          "score": 144,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "CANONICAL::met-440393",
+          "title": "The Baptism of Christ",
+          "artist": "Jacopo Bassano (Jacopo da Ponte)",
+          "source_url": "https://www.metmuseum.org/art/collection/search/440393",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP276931.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-BAPTISM",
+          "all_subjects": [
+            "CHR-BAPTISM"
+          ],
+          "score": 144,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+          "title": "Adoration of the Magi",
+          "artist": "Peter Paul Rubens",
+          "source_url": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-MAGI",
+          "all_subjects": [
+            "CHR-MAGI"
+          ],
+          "score": 135,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "REVIEW::commons:34140055",
+          "title": "Adoration of the Magi",
+          "artist": "Workshop of Peter Paul Rubens",
+          "source_url": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG/960px-%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-MAGI",
+          "all_subjects": [
+            "CHR-MAGI"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "REVIEW::commons:28933083",
+          "title": "Adoration of the Magi",
+          "artist": "Anton Kern",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_%28ca.1730%29.jpg/960px-Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_%28ca.1730%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-MAGI",
+          "all_subjects": [
+            "CHR-MAGI"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "REVIEW::commons:115220164",
+          "title": "Adoration of the Magi",
+          "artist": "Denys Calvaert",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Denys_Calvaert_-_Adoration_of_the_Magi.jpg/960px-Denys_Calvaert_-_Adoration_of_the_Magi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-MAGI",
+          "all_subjects": [
+            "CHR-MAGI"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-03",
+          "artwork_id": "REVIEW::commons:56890177",
+          "title": "Adoration of the Magi",
+          "artist": "Jean-Baptiste de Faudran",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg/960px-Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-MAGI",
+          "all_subjects": [
+            "CHR-MAGI"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "HERO-04",
@@ -1376,10 +1529,10 @@
         "CHR-ENTRY-JERUSALEM"
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
-      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
-      "direct_title_candidates": 2,
-      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
+      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
+      "pool_count": 1,
+      "direct_title_candidates": 1,
+      "research_hold_state": "EXISTING_REUSE_NOT_AT_BLUEPRINT_MINIMUM",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
         {
@@ -1388,25 +1541,6 @@
           "title": "Christ's Entry into Jerusalem",
           "artist": "Adriaen van Nieulandt",
           "source_url": "https://open.smk.dk/en/artwork/image/KMSSP256",
-          "source_queue": "RIGHTS_OR_ALTERNATIVE",
-          "photo_preview_url": null,
-          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "subject_match": "CHR-ENTRY-JERUSALEM",
-          "all_subjects": [
-            "CHR-ENTRY-JERUSALEM"
-          ],
-          "score": 109,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
-          "artwork_previously_human_accepted": false,
-          "word_or_station_exact_iconography_verified": false
-        },
-        {
-          "slot_id": "HERO-08",
-          "artwork_id": "REVIEW::walters:39318",
-          "title": "Christ Weeping Over Jerusalem",
-          "artist": "Ary Scheffer",
-          "source_url": "https://purl.thewalters.org/art/37.111",
           "source_queue": "RIGHTS_OR_ALTERNATIVE",
           "photo_preview_url": null,
           "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
@@ -1533,10 +1667,10 @@
         "CHR-CRUCIFIX"
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
-      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
-      "direct_title_candidates": 2,
-      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
+      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
+      "pool_count": 1,
+      "direct_title_candidates": 1,
+      "research_hold_state": "EXISTING_REUSE_NOT_AT_BLUEPRINT_MINIMUM",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
         {
@@ -1547,25 +1681,6 @@
           "source_url": "https://clevelandart.org/art/1916.786",
           "source_queue": "PHOTO_QA_OR_REPAIR",
           "photo_preview_url": "https://openaccess-cdn.clevelandart.org/1916.786/1916.786_web.jpg",
-          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
-          "subject_match": "CHR-CRUCIFIX",
-          "all_subjects": [
-            "CHR-CRUCIFIX"
-          ],
-          "score": 142,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
-          "artwork_previously_human_accepted": true,
-          "word_or_station_exact_iconography_verified": false
-        },
-        {
-          "slot_id": "HERO-10",
-          "artwork_id": "CANONICAL::cma-97181",
-          "title": "Preparation for the Crucifixion",
-          "artist": "",
-          "source_url": "https://clevelandart.org/art/1916.816",
-          "source_queue": "PHOTO_QA_OR_REPAIR",
-          "photo_preview_url": "https://openaccess-cdn.clevelandart.org/1916.816/1916.816_web.jpg",
           "source_gate": "EXISTING_GALLERY_PHOTO_QA",
           "subject_match": "CHR-CRUCIFIX",
           "all_subjects": [
@@ -1593,13 +1708,51 @@
         "CHR-DEPOSITION",
         "MAR-SORROWS"
       ],
-      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
-      "direct_title_candidates": 0,
+      "pool_count": 4,
+      "direct_title_candidates": 2,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "HERO-11",
+          "artwork_id": "CANONICAL::met-438338",
+          "title": "The Burial of Christ",
+          "artist": "Annibale Carracci",
+          "source_url": "https://www.metmuseum.org/art/collection/search/438338",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP312834.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-11",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
         {
           "slot_id": "HERO-11",
           "artwork_id": "CANONICAL::cma-94846",
@@ -1910,13 +2063,52 @@
       "eligible_subjects": [
         "CHR-ASCENSION"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 2,
+      "direct_title_candidates": 2,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "HERO-13",
+          "artwork_id": "CANONICAL::ART-rtus-olffort-scension-ntwerp-osary-cycle",
+          "title": "Ascension — Antwerp Rosary cycle",
+          "artist": "Artus Wolffort",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ASCENSION",
+          "all_subjects": [
+            "CHR-ASCENSION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "HERO-13",
+          "artwork_id": "CANONICAL::met-436835",
+          "title": "The Ascension of Christ",
+          "artist": "Hans Süss von Kulmbach",
+          "source_url": "https://www.metmuseum.org/art/collection/search/436835",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ASCENSION",
+          "all_subjects": [
+            "CHR-ASCENSION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "HERO-14",
@@ -1930,13 +2122,33 @@
       "eligible_subjects": [
         "SPR-PENTECOST"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "pool_count": 1,
+      "direct_title_candidates": 1,
+      "research_hold_state": "EXISTING_REUSE_NOT_AT_BLUEPRINT_MINIMUM",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "HERO-14",
+          "artwork_id": "CANONICAL::ART-ean-estout-entecost",
+          "title": "Pentecost",
+          "artist": "Jean Restout",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "SPR-PENTECOST",
+          "all_subjects": [
+            "SPR-PENTECOST"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "HERO-15",
@@ -10288,13 +10500,109 @@
       "eligible_subjects": [
         "CHR-FINDING"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 5,
+      "direct_title_candidates": 5,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.rosary-06",
+          "artwork_id": "CANONICAL::met-436672",
+          "title": "Christ among the Doctors",
+          "artist": "Abraham Hondius",
+          "source_url": "https://www.metmuseum.org/art/collection/search/436672",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 135,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-06",
+          "artwork_id": "REVIEW::commons:98817605",
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Giovanni Battista Cima da Conegliano",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg/960px-Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-06",
+          "artwork_id": "REVIEW::commons:98001263",
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Dirck van Baburen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/960px-Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-06",
+          "artwork_id": "CANONICAL::nga-41661",
+          "title": "Christ among the Doctors [obverse]",
+          "artist": "Bernard van Orley",
+          "source_url": "https://www.nga.gov/artworks/41661",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 112,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-06",
+          "artwork_id": "REVIEW::kmska:9roxqg",
+          "title": "Jezus en de schriftgeleerden",
+          "artist": "Schilder: Meester van Hoogstraeten",
+          "source_url": "http://kmska.be/collection/work/data/9roxqg",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 112,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.rosary-07",
@@ -10424,13 +10732,109 @@
       "eligible_subjects": [
         "CHR-SCOURGING"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 5,
+      "direct_title_candidates": 5,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.rosary-08",
+          "artwork_id": "REVIEW::commons:15216589",
+          "title": "Christ at the Column",
+          "artist": "Caravaggio",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Christ_at_the_Column-Caravaggio_(c._1607).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Christ_at_the_Column-Caravaggio_%28c._1607%29.jpg/960px-Christ_at_the_Column-Caravaggio_%28c._1607%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 127,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-08",
+          "artwork_id": "REVIEW::walters:4153",
+          "title": "Altarpiece with the Passion of Christ: Flagellation",
+          "artist": "German",
+          "source_url": "https://purl.thewalters.org/art/37.670",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-08",
+          "artwork_id": "REVIEW::nga:227488",
+          "title": "Christ Gathering His Garments after the Flagellation",
+          "artist": "Juan Correa",
+          "source_url": "https://www.nga.gov/artworks/227488",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-08",
+          "artwork_id": "CANONICAL::ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+          "title": "Scourging at the Pillar — Antwerp Rosary cycle",
+          "artist": "Peter Paul Rubens",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Flagellation-of-christ-%20Rubens.jpg",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-08",
+          "artwork_id": "CANONICAL::nga-41696",
+          "title": "The Flagellation of Christ",
+          "artist": "Bachiacca",
+          "source_url": "https://www.nga.gov/artworks/41696",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.rosary-09",
@@ -10908,13 +11312,52 @@
       "eligible_subjects": [
         "CHR-ASCENSION"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "pool_count": 2,
+      "direct_title_candidates": 2,
+      "research_hold_state": "EXISTING_REUSE_NOT_AT_BLUEPRINT_MINIMUM",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.rosary-13",
+          "artwork_id": "CANONICAL::ART-rtus-olffort-scension-ntwerp-osary-cycle",
+          "title": "Ascension — Antwerp Rosary cycle",
+          "artist": "Artus Wolffort",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ASCENSION",
+          "all_subjects": [
+            "CHR-ASCENSION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.rosary-13",
+          "artwork_id": "CANONICAL::met-436835",
+          "title": "The Ascension of Christ",
+          "artist": "Hans Süss von Kulmbach",
+          "source_url": "https://www.metmuseum.org/art/collection/search/436835",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ASCENSION",
+          "all_subjects": [
+            "CHR-ASCENSION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.rosary-14",
@@ -10928,13 +11371,33 @@
       "eligible_subjects": [
         "SPR-PENTECOST"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "pool_count": 1,
+      "direct_title_candidates": 1,
+      "research_hold_state": "EXISTING_REUSE_NOT_AT_BLUEPRINT_MINIMUM",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.rosary-14",
+          "artwork_id": "CANONICAL::ART-ean-estout-entecost",
+          "title": "Pentecost",
+          "artist": "Jean Restout",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "SPR-PENTECOST",
+          "all_subjects": [
+            "SPR-PENTECOST"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.rosary-15",
@@ -11869,8 +12332,8 @@
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
-      "direct_title_candidates": 2,
+      "pool_count": 4,
+      "direct_title_candidates": 4,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -11910,6 +12373,44 @@
           "fit_class": "DIRECT_SUBJECT_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.five_wounds-01",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.five_wounds-01",
+          "artwork_id": "REVIEW::commons:22003615",
+          "title": "The Deposition",
+          "artist": "Francesco Solimena",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg/960px-Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
       ]
@@ -12653,13 +13154,109 @@
       "eligible_subjects": [
         "CHR-SCOURGING"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 5,
+      "direct_title_candidates": 5,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.precious_blood-03",
+          "artwork_id": "REVIEW::commons:15216589",
+          "title": "Christ at the Column",
+          "artist": "Caravaggio",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Christ_at_the_Column-Caravaggio_(c._1607).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Christ_at_the_Column-Caravaggio_%28c._1607%29.jpg/960px-Christ_at_the_Column-Caravaggio_%28c._1607%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 127,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-03",
+          "artwork_id": "REVIEW::walters:4153",
+          "title": "Altarpiece with the Passion of Christ: Flagellation",
+          "artist": "German",
+          "source_url": "https://purl.thewalters.org/art/37.670",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-03",
+          "artwork_id": "REVIEW::nga:227488",
+          "title": "Christ Gathering His Garments after the Flagellation",
+          "artist": "Juan Correa",
+          "source_url": "https://www.nga.gov/artworks/227488",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-03",
+          "artwork_id": "CANONICAL::ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+          "title": "Scourging at the Pillar — Antwerp Rosary cycle",
+          "artist": "Peter Paul Rubens",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Flagellation-of-christ-%20Rubens.jpg",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.precious_blood-03",
+          "artwork_id": "CANONICAL::nga-41696",
+          "title": "The Flagellation of Christ",
+          "artist": "Bachiacca",
+          "source_url": "https://www.nga.gov/artworks/41696",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-SCOURGING",
+          "all_subjects": [
+            "CHR-SCOURGING"
+          ],
+          "score": 110,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.precious_blood-04",
@@ -13667,13 +14264,90 @@
       "eligible_subjects": [
         "CHR-FINDING"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 4,
+      "direct_title_candidates": 4,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+          "artwork_id": "CANONICAL::met-436672",
+          "title": "Christ among the Doctors",
+          "artist": "Abraham Hondius",
+          "source_url": "https://www.metmuseum.org/art/collection/search/436672",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 135,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+          "artwork_id": "REVIEW::commons:98817605",
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Giovanni Battista Cima da Conegliano",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg/960px-Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+          "artwork_id": "REVIEW::commons:98001263",
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Dirck van Baburen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/960px-Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+          "artwork_id": "CANONICAL::nga-41661",
+          "title": "Christ among the Doctors [obverse]",
+          "artist": "Bernard van Orley",
+          "source_url": "https://www.nga.gov/artworks/41661",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 112,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-prayer.seven_sorrows_chaplet-04",
@@ -13883,13 +14557,90 @@
       "eligible_subjects": [
         "CHR-DEPOSITION"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 4,
+      "direct_title_candidates": 4,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+          "artwork_id": "REVIEW::commons:22003615",
+          "title": "The Deposition",
+          "artist": "Francesco Solimena",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg/960px-Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+          "artwork_id": "REVIEW::kmska:0rpylv",
+          "title": "Kruisafneming",
+          "artist": "Peter Paul Rubens",
+          "source_url": "http://kmska.be/collection/work/data/0rpylv",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 111,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+          "artwork_id": "REVIEW::walters:16411",
+          "title": "The Deposition from the Cross",
+          "artist": "Johann Michael Rottmayr",
+          "source_url": "https://purl.thewalters.org/art/37.788",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 111,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
@@ -13903,13 +14654,90 @@
       "eligible_subjects": [
         "CHR-ENTOMB"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 4,
+      "direct_title_candidates": 4,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+          "artwork_id": "CANONICAL::met-438338",
+          "title": "The Burial of Christ",
+          "artist": "Annibale Carracci",
+          "source_url": "https://www.metmuseum.org/art/collection/search/438338",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP312834.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+          "artwork_id": "REVIEW::commons:67344360",
+          "title": "De graflegging van Christus",
+          "artist": "Adriaen van der Werff",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_(OK)_-_Museum_Boijmans_Van_Beuningen.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg/960px-Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+          "artwork_id": "REVIEW::commons:184527366",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "artist": "Titian",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg/960px-Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+          "artwork_id": "REVIEW::commons:78104681",
+          "title": "The Entombment of Christ",
+          "artist": "Kamal-ol-molk",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ_by_Kamal-ol-molk_(after_Titian).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/The_Entombment_of_Christ_by_Kamal-ol-molk_%28after_Titian%29.jpg/960px-The_Entombment_of_Christ_by_Kamal-ol-molk_%28after_Titian%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-novena.holy_ghost",
@@ -15003,13 +15831,51 @@
         "MAR-SORROWS",
         "CHR-DEPOSITION"
       ],
-      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 5,
-      "direct_title_candidates": 0,
+      "pool_count": 9,
+      "direct_title_candidates": 4,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "COV-novena.seven_sorrows",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.seven_sorrows",
+          "artwork_id": "REVIEW::commons:22003615",
+          "title": "The Deposition",
+          "artist": "Francesco Solimena",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg/960px-Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
         {
           "slot_id": "COV-novena.seven_sorrows",
           "artwork_id": "CANONICAL::cma-94846",
@@ -15065,6 +15931,44 @@
           "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.seven_sorrows",
+          "artwork_id": "REVIEW::kmska:0rpylv",
+          "title": "Kruisafneming",
+          "artist": "Peter Paul Rubens",
+          "source_url": "http://kmska.be/collection/work/data/0rpylv",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 111,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.seven_sorrows",
+          "artwork_id": "REVIEW::walters:16411",
+          "title": "The Deposition from the Cross",
+          "artist": "Johann Michael Rottmayr",
+          "source_url": "https://purl.thewalters.org/art/37.788",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 111,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         },
         {
@@ -15930,13 +16834,71 @@
       "eligible_subjects": [
         "MAR-HEART"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 3,
+      "direct_title_candidates": 3,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "COV-novena.immaculate_heart",
+          "artwork_id": "PRAYER::heart-mary--primary",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg/960px-Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "MAR-HEART",
+          "all_subjects": [
+            "MAR-HEART"
+          ],
+          "score": 140,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.immaculate_heart",
+          "artwork_id": "CANONICAL::B02-HEART-MARY-MORLETE",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "MAR-HEART",
+          "all_subjects": [
+            "MAR-HEART"
+          ],
+          "score": 131,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.immaculate_heart",
+          "artwork_id": "PRAYER::heart-mary--kupelwieser",
+          "title": "The Heart of Mary",
+          "artist": "Leopold Kupelwieser",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Immaculate_Heart_of_Mary.jpg",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "MAR-HEART",
+          "all_subjects": [
+            "MAR-HEART"
+          ],
+          "score": 108,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-novena.st_michael",
@@ -15950,13 +16912,147 @@
       "eligible_subjects": [
         "ANG-MICHAEL"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 7,
+      "direct_title_candidates": 7,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "COV-novena.st_michael",
+          "artwork_id": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+          "title": "Archangel Michael Defeating Satan",
+          "artist": "Guido Reni",
+          "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/GuidoReni_MichaelDefeatsSatan.jpg/960px-GuidoReni_MichaelDefeatsSatan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.st_michael",
+          "artwork_id": "CANONICAL::met-437729",
+          "title": "Saint Michael the Archangel",
+          "artist": "Ignacio de Ries",
+          "source_url": "https://www.metmuseum.org/art/collection/search/437729",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-26763-001.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.st_michael",
+          "artwork_id": "REVIEW::commons:3098509",
+          "title": "Jacopo vignali, san michele arcangelo libera le anime del purgatorio",
+          "artist": "Jacopo Vignali",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg/960px-Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.st_michael",
+          "artwork_id": "REVIEW::commons:30774976",
+          "title": "Saint Michael expelling Lucifer and the Rebellious Angels",
+          "artist": "Workshop of Peter Paul Rubens",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg/960px-Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.st_michael",
+          "artwork_id": "REVIEW::commons:118105360",
+          "title": "Saint Michael the Archangel",
+          "artist": "Pieter van Lint",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg/960px-Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.st_michael",
+          "artwork_id": "REVIEW::commons:118823142",
+          "title": "The Archangel Michael \" \"",
+          "artist": "Giuseppe Cesari",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg/960px-Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-novena.st_michael",
+          "artwork_id": "REVIEW::commons:131068203",
+          "title": "The Archangel Michael overthrowing Lucifer",
+          "artist": "Francesco Maffei",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Archangel_Michael_overthrowing_Lucifer.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/The_Archangel_Michael_overthrowing_Lucifer.jpg/960px-The_Archangel_Michael_overthrowing_Lucifer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-novena.st_anthony_nine_tuesdays",
@@ -16499,8 +17595,8 @@
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 3,
-      "direct_title_candidates": 3,
+      "pool_count": 5,
+      "direct_title_candidates": 5,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -16558,6 +17654,44 @@
           "score": 120,
           "fit_class": "DIRECT_SUBJECT_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.montfort_consecration-02",
+          "artwork_id": "REVIEW::commons:77218618",
+          "title": "Saint Peter penitent",
+          "artist": "Guercino",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg/960px-Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 120,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.montfort_consecration-02",
+          "artwork_id": "REVIEW::smk:KMSST155",
+          "title": "Saint Peter Penitent",
+          "artist": "Girolamo Troppa",
+          "source_url": "https://open.smk.dk/en/artwork/image/KMSST155",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 103,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -17186,8 +18320,8 @@
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 3,
-      "direct_title_candidates": 3,
+      "pool_count": 5,
+      "direct_title_candidates": 5,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -17207,6 +18341,25 @@
           "score": 143,
           "fit_class": "DIRECT_SUBJECT_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-programme.first_saturday",
+          "artwork_id": "PRAYER::heart-mary--primary",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg/960px-Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "MAR-HEART",
+          "all_subjects": [
+            "MAR-HEART"
+          ],
+          "score": 140,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -17245,6 +18398,25 @@
           "score": 134,
           "fit_class": "DIRECT_SUBJECT_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-programme.first_saturday",
+          "artwork_id": "CANONICAL::B02-HEART-MARY-MORLETE",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "MAR-HEART",
+          "all_subjects": [
+            "MAR-HEART"
+          ],
+          "score": 131,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -18093,13 +19265,32 @@
         "MAR-MERCY",
         "LIFE-POPE"
       ],
-      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 4,
-      "direct_title_candidates": 0,
+      "pool_count": 5,
+      "direct_title_candidates": 1,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "COV-mass_devotion_leonine",
+          "artwork_id": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+          "title": "Archangel Michael Defeating Satan",
+          "artist": "Guido Reni",
+          "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/GuidoReni_MichaelDefeatsSatan.jpg/960px-GuidoReni_MichaelDefeatsSatan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
         {
           "slot_id": "COV-mass_devotion_leonine",
           "artwork_id": "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
@@ -19146,10 +20337,10 @@
         "CHR-HOLYFACE",
         "PEN-PETER"
       ],
-      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
-      "direct_title_candidates": 0,
+      "pool_count": 4,
+      "direct_title_candidates": 2,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -19189,6 +20380,44 @@
           "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.adoration.four_ends-03",
+          "artwork_id": "REVIEW::commons:77218618",
+          "title": "Saint Peter penitent",
+          "artist": "Guercino",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg/960px-Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 120,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.adoration.four_ends-03",
+          "artwork_id": "REVIEW::smk:KMSST155",
+          "title": "Saint Peter Penitent",
+          "artist": "Girolamo Troppa",
+          "source_url": "https://open.smk.dk/en/artwork/image/KMSST155",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 103,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
       ]
@@ -20449,8 +21678,8 @@
             "CHR-THORNS"
           ],
           "score": 87,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20468,8 +21697,8 @@
             "CHR-THORNS"
           ],
           "score": 87,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -20528,8 +21757,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20547,8 +21776,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -20607,8 +21836,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20626,8 +21855,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -20687,8 +21916,8 @@
             "MAR-SORROWS"
           ],
           "score": 99,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20706,8 +21935,8 @@
             "MAR-SORROWS"
           ],
           "score": 90,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20725,8 +21954,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -20785,8 +22014,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20804,8 +22033,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -20865,8 +22094,8 @@
             "CHR-HOLYFACE"
           ],
           "score": 98,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20884,8 +22113,8 @@
             "CHR-HOLYFACE"
           ],
           "score": 98,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20903,8 +22132,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -20963,8 +22192,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -20982,8 +22211,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21042,8 +22271,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21061,8 +22290,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21121,8 +22350,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21140,8 +22369,8 @@
             "CHR-CROSSBEAR"
           ],
           "score": 86,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21163,7 +22392,7 @@
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 3,
-      "direct_title_candidates": 3,
+      "direct_title_candidates": 1,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21200,8 +22429,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21219,8 +22448,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21242,7 +22471,7 @@
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 3,
-      "direct_title_candidates": 3,
+      "direct_title_candidates": 1,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21279,8 +22508,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21298,8 +22527,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21321,7 +22550,7 @@
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 3,
-      "direct_title_candidates": 3,
+      "direct_title_candidates": 1,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21359,8 +22588,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21378,8 +22607,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "RELATED_PASSION_IMAGE_NOT_EXACT_STATION",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21398,13 +22627,90 @@
         "EXACT_STATION_13",
         "CHR-DEPOSITION"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 4,
+      "direct_title_candidates": 4,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.stations-13",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.stations-13",
+          "artwork_id": "REVIEW::commons:22003615",
+          "title": "The Deposition",
+          "artist": "Francesco Solimena",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg/960px-Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.stations-13",
+          "artwork_id": "REVIEW::kmska:0rpylv",
+          "title": "Kruisafneming",
+          "artist": "Peter Paul Rubens",
+          "source_url": "http://kmska.be/collection/work/data/0rpylv",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 111,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.stations-13",
+          "artwork_id": "REVIEW::walters:16411",
+          "title": "The Deposition from the Cross",
+          "artist": "Johann Michael Rottmayr",
+          "source_url": "https://purl.thewalters.org/art/37.788",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 111,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.stations-14",
@@ -21419,13 +22725,90 @@
         "EXACT_STATION_14",
         "CHR-ENTOMB"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 4,
+      "direct_title_candidates": 4,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.stations-14",
+          "artwork_id": "CANONICAL::met-438338",
+          "title": "The Burial of Christ",
+          "artist": "Annibale Carracci",
+          "source_url": "https://www.metmuseum.org/art/collection/search/438338",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP312834.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.stations-14",
+          "artwork_id": "REVIEW::commons:67344360",
+          "title": "De graflegging van Christus",
+          "artist": "Adriaen van der Werff",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_(OK)_-_Museum_Boijmans_Van_Beuningen.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg/960px-Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.stations-14",
+          "artwork_id": "REVIEW::commons:184527366",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "artist": "Titian",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg/960px-Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.stations-14",
+          "artwork_id": "REVIEW::commons:78104681",
+          "title": "The Entombment of Christ",
+          "artist": "Kamal-ol-molk",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ_by_Kamal-ol-molk_(after_Titian).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/The_Entombment_of_Christ_by_Kamal-ol-molk_%28after_Titian%29.jpg/960px-The_Entombment_of_Christ_by_Kamal-ol-molk_%28after_Titian%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-pray.seven_words",
@@ -21613,10 +22996,10 @@
       "eligible_subjects": [
         "CHR-CRUCIFIX"
       ],
-      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 2,
-      "direct_title_candidates": 2,
+      "direct_title_candidates": 0,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21634,8 +23017,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21653,8 +23036,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21676,7 +23059,7 @@
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 3,
-      "direct_title_candidates": 3,
+      "direct_title_candidates": 1,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21713,8 +23096,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21732,8 +23115,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21752,10 +23135,10 @@
         "CHR-CRUCIFIX",
         "MAR-SORROWS"
       ],
-      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 4,
-      "direct_title_candidates": 2,
+      "direct_title_candidates": 0,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21773,8 +23156,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21792,8 +23175,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21811,8 +23194,8 @@
             "MAR-SORROWS"
           ],
           "score": 99,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21830,8 +23213,8 @@
             "MAR-SORROWS"
           ],
           "score": 90,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21850,10 +23233,10 @@
         "CHR-CRUCIFIX",
         "NAT-NIGHT"
       ],
-      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 2,
-      "direct_title_candidates": 2,
+      "direct_title_candidates": 0,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21871,8 +23254,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21890,8 +23273,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21910,10 +23293,10 @@
         "WORD_THIRST",
         "CHR-CRUCIFIX"
       ],
-      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 2,
-      "direct_title_candidates": 2,
+      "direct_title_candidates": 0,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21931,8 +23314,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -21950,8 +23333,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -21971,10 +23354,10 @@
         "CHR-CRUCIFIX",
         "CHR-SIDE"
       ],
-      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
       "pool_count": 4,
-      "direct_title_candidates": 2,
+      "direct_title_candidates": 0,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -21994,8 +23377,8 @@
             "CHR-SIDE"
           ],
           "score": 163,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -22015,8 +23398,8 @@
             "CHR-SIDE"
           ],
           "score": 129,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         },
@@ -22035,7 +23418,7 @@
           ],
           "score": 106,
           "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -22053,8 +23436,8 @@
             "CHR-SIDE"
           ],
           "score": 97,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -22075,11 +23458,49 @@
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
+      "pool_count": 4,
       "direct_title_candidates": 2,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.seven_words-07",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.seven_words-07",
+          "artwork_id": "REVIEW::commons:22003615",
+          "title": "The Deposition",
+          "artist": "Francesco Solimena",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg/960px-Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
         {
           "slot_id": "STG-pray.seven_words-07",
           "artwork_id": "CANONICAL::cma-97147",
@@ -22094,8 +23515,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -22113,8 +23534,8 @@
             "CHR-CRUCIFIX"
           ],
           "score": 117,
-          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -22133,13 +23554,32 @@
         "CHR-DEPOSITION",
         "MAR-SORROWS"
       ],
-      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
-      "direct_title_candidates": 0,
+      "pool_count": 3,
+      "direct_title_candidates": 1,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.seven_words-08",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
         {
           "slot_id": "STG-pray.seven_words-08",
           "artwork_id": "CANONICAL::cma-94846",
@@ -22154,8 +23594,8 @@
             "MAR-SORROWS"
           ],
           "score": 99,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -22173,8 +23613,8 @@
             "MAR-SORROWS"
           ],
           "score": 90,
-          "fit_class": "WEAK_REUSE_CANDIDATE",
-          "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "GENERAL_CRUCIFIXION_NOT_EXACT_LAST_WORD",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         }
@@ -22490,13 +23930,90 @@
         "CHR-ENTOMB",
         "CHR-DEPOSITION"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 4,
+      "direct_title_candidates": 4,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.tenebrae-03",
+          "artwork_id": "CANONICAL::met-438338",
+          "title": "The Burial of Christ",
+          "artist": "Annibale Carracci",
+          "source_url": "https://www.metmuseum.org/art/collection/search/438338",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP312834.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.tenebrae-03",
+          "artwork_id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "title": "Descent from the Cross — Prado Passion series",
+          "artist": "Giandomenico Tiepolo",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-DEPOSITION",
+          "all_subjects": [
+            "CHR-DEPOSITION"
+          ],
+          "score": 134,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.tenebrae-03",
+          "artwork_id": "REVIEW::commons:67344360",
+          "title": "De graflegging van Christus",
+          "artist": "Adriaen van der Werff",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_(OK)_-_Museum_Boijmans_Van_Beuningen.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg/960px-Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.tenebrae-03",
+          "artwork_id": "REVIEW::commons:184527366",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "artist": "Titian",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg/960px-Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-ENTOMB",
+          "all_subjects": [
+            "CHR-ENTOMB"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-prayer.sacred_heart",
@@ -23081,8 +24598,8 @@
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 4,
-      "direct_title_candidates": 3,
+      "pool_count": 6,
+      "direct_title_candidates": 5,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -23107,6 +24624,25 @@
         },
         {
           "slot_id": "COV-marian_consecration_immaculate_heart",
+          "artwork_id": "PRAYER::heart-mary--primary",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg/960px-Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "MAR-HEART",
+          "all_subjects": [
+            "MAR-HEART"
+          ],
+          "score": 140,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-marian_consecration_immaculate_heart",
           "artwork_id": "CANONICAL::met-437423",
           "title": "The Immaculate Conception",
           "artist": "Guido Reni",
@@ -23121,6 +24657,25 @@
           "score": 137,
           "fit_class": "DIRECT_SUBJECT_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-marian_consecration_immaculate_heart",
+          "artwork_id": "CANONICAL::B02-HEART-MARY-MORLETE",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "MAR-HEART",
+          "all_subjects": [
+            "MAR-HEART"
+          ],
+          "score": 131,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
         },
@@ -24131,13 +25686,147 @@
       "eligible_subjects": [
         "ANG-MICHAEL"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 7,
+      "direct_title_candidates": 7,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "COV-devotion_prayer_st_michael",
+          "artwork_id": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+          "title": "Archangel Michael Defeating Satan",
+          "artist": "Guido Reni",
+          "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/GuidoReni_MichaelDefeatsSatan.jpg/960px-GuidoReni_MichaelDefeatsSatan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-devotion_prayer_st_michael",
+          "artwork_id": "CANONICAL::met-437729",
+          "title": "Saint Michael the Archangel",
+          "artist": "Ignacio de Ries",
+          "source_url": "https://www.metmuseum.org/art/collection/search/437729",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-26763-001.jpg",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 143,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-devotion_prayer_st_michael",
+          "artwork_id": "REVIEW::commons:3098509",
+          "title": "Jacopo vignali, san michele arcangelo libera le anime del purgatorio",
+          "artist": "Jacopo Vignali",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg/960px-Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-devotion_prayer_st_michael",
+          "artwork_id": "REVIEW::commons:30774976",
+          "title": "Saint Michael expelling Lucifer and the Rebellious Angels",
+          "artist": "Workshop of Peter Paul Rubens",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg/960px-Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-devotion_prayer_st_michael",
+          "artwork_id": "REVIEW::commons:118105360",
+          "title": "Saint Michael the Archangel",
+          "artist": "Pieter van Lint",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg/960px-Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-devotion_prayer_st_michael",
+          "artwork_id": "REVIEW::commons:118823142",
+          "title": "The Archangel Michael \" \"",
+          "artist": "Giuseppe Cesari",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg/960px-Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-devotion_prayer_st_michael",
+          "artwork_id": "REVIEW::commons:131068203",
+          "title": "The Archangel Michael overthrowing Lucifer",
+          "artist": "Francesco Maffei",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Archangel_Michael_overthrowing_Lucifer.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/The_Archangel_Michael_overthrowing_Lucifer.jpg/960px-The_Archangel_Michael_overthrowing_Lucifer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "ANG-MICHAEL",
+          "all_subjects": [
+            "ANG-MICHAEL"
+          ],
+          "score": 128,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-devotion_memorare_st_joseph",
@@ -25310,13 +26999,109 @@
       "eligible_subjects": [
         "CHR-FINDING"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 5,
+      "direct_title_candidates": 5,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+          "artwork_id": "CANONICAL::met-436672",
+          "title": "Christ among the Doctors",
+          "artist": "Abraham Hondius",
+          "source_url": "https://www.metmuseum.org/art/collection/search/436672",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 135,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+          "artwork_id": "REVIEW::commons:98817605",
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Giovanni Battista Cima da Conegliano",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg/960px-Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+          "artwork_id": "REVIEW::commons:98001263",
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Dirck van Baburen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/960px-Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 129,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+          "artwork_id": "CANONICAL::nga-41661",
+          "title": "Christ among the Doctors [obverse]",
+          "artist": "Bernard van Orley",
+          "source_url": "https://www.nga.gov/artworks/41661",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 112,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+          "artwork_id": "REVIEW::kmska:9roxqg",
+          "title": "Jezus en de schriftgeleerden",
+          "artist": "Schilder: Meester van Hoogstraeten",
+          "source_url": "http://kmska.be/collection/work/data/9roxqg",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "CHR-FINDING",
+          "all_subjects": [
+            "CHR-FINDING"
+          ],
+          "score": 112,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.st_joseph_seven_sorrows-08",
@@ -25725,13 +27510,90 @@
       "eligible_subjects": [
         "SNT-MARTYRS"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 4,
+      "direct_title_candidates": 4,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.litany_saints-04",
+          "artwork_id": "REVIEW::commons:81902276",
+          "title": "Martyrdom of Saint Catherine",
+          "artist": "Simon Vouet",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Simon_Vouet%2C_Martyre_de_Sainte-Catherine_(avant_restauration).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Simon_Vouet%2C_Martyre_de_Sainte-Catherine_%28avant_restauration%29.jpg/960px-Simon_Vouet%2C_Martyre_de_Sainte-Catherine_%28avant_restauration%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "SNT-MARTYRS",
+          "all_subjects": [
+            "SNT-MARTYRS"
+          ],
+          "score": 132,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.litany_saints-04",
+          "artwork_id": "CANONICAL::ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "title": "Martyrdom of Saint Stephen",
+          "artist": "Juan de Juanes",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Martirio%20de%20San%20Esteban%2C%20de%20Juan%20de%20Juanes%20(Museo%20del%20Prado).jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "SNT-MARTYRS",
+          "all_subjects": [
+            "SNT-MARTYRS"
+          ],
+          "score": 123,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.litany_saints-04",
+          "artwork_id": "REVIEW::met:436039",
+          "title": "The Martyrdom of Saint Barbara",
+          "artist": "Lucas Cranach the Elder",
+          "source_url": "https://www.metmuseum.org/art/collection/search/436039",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "SNT-MARTYRS",
+          "all_subjects": [
+            "SNT-MARTYRS"
+          ],
+          "score": 123,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.litany_saints-04",
+          "artwork_id": "REVIEW::met:436990",
+          "title": "The Martyrdom of Saint Lawrence; (reverse) Giving Drink to the Thirsty",
+          "artist": "Master of the Acts of Mercy",
+          "source_url": "https://www.metmuseum.org/art/collection/search/436990",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "SNT-MARTYRS",
+          "all_subjects": [
+            "SNT-MARTYRS"
+          ],
+          "score": 123,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.litany_saints-05",
@@ -26084,7 +27946,7 @@
       ],
       "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 3,
+      "pool_count": 6,
       "direct_title_candidates": 0,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
@@ -26143,6 +28005,63 @@
           "score": 106,
           "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-dead_de_profundis",
+          "artwork_id": "REVIEW::commons:98814117",
+          "title": "King David playing the harp among angels \" \"",
+          "artist": "Hendrick ter Brugghen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg/960px-Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-dead_de_profundis",
+          "artwork_id": "REVIEW::commons:31507039",
+          "title": "king David.",
+          "artist": "Matthias Stom",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Stomer_Le_roi_David.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Stomer_Le_roi_David.jpg/960px-Stomer_Le_roi_David.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-dead_de_profundis",
+          "artwork_id": "REVIEW::rijks:20027909",
+          "title": "King David",
+          "artist": "Aert de Gelder",
+          "source_url": "https://id.rijksmuseum.nl/20027909",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 81,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
         }
@@ -26321,7 +28240,7 @@
       ],
       "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 4,
+      "pool_count": 7,
       "direct_title_candidates": 4,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
@@ -26401,6 +28320,63 @@
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": false,
           "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-pray.penitential_psalms",
+          "artwork_id": "REVIEW::commons:98814117",
+          "title": "King David playing the harp among angels \" \"",
+          "artist": "Hendrick ter Brugghen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg/960px-Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-pray.penitential_psalms",
+          "artwork_id": "REVIEW::commons:31507039",
+          "title": "king David.",
+          "artist": "Matthias Stom",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Stomer_Le_roi_David.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Stomer_Le_roi_David.jpg/960px-Stomer_Le_roi_David.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "COV-pray.penitential_psalms",
+          "artwork_id": "REVIEW::rijks:20027909",
+          "title": "King David",
+          "artist": "Aert de Gelder",
+          "source_url": "https://id.rijksmuseum.nl/20027909",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 81,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
         }
       ]
     },
@@ -26417,13 +28393,71 @@
         "PEN-DAVID",
         "NAT-NIGHT"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 3,
       "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.penitential_psalms-01",
+          "artwork_id": "REVIEW::commons:98814117",
+          "title": "King David playing the harp among angels \" \"",
+          "artist": "Hendrick ter Brugghen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg/960px-Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.penitential_psalms-01",
+          "artwork_id": "REVIEW::commons:31507039",
+          "title": "king David.",
+          "artist": "Matthias Stom",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Stomer_Le_roi_David.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Stomer_Le_roi_David.jpg/960px-Stomer_Le_roi_David.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.penitential_psalms-01",
+          "artwork_id": "REVIEW::rijks:20027909",
+          "title": "King David",
+          "artist": "Aert de Gelder",
+          "source_url": "https://id.rijksmuseum.nl/20027909",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 81,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.penitential_psalms-02",
@@ -26497,10 +28531,10 @@
         "PEN-PETER",
         "CHR-MIRACLE"
       ],
-      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
-      "direct_title_candidates": 0,
+      "pool_count": 4,
+      "direct_title_candidates": 2,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
@@ -26525,6 +28559,25 @@
         },
         {
           "slot_id": "STG-pray.penitential_psalms-03",
+          "artwork_id": "REVIEW::commons:77218618",
+          "title": "Saint Peter penitent",
+          "artist": "Guercino",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg/960px-Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 120,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.penitential_psalms-03",
           "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
           "title": "Miracle of Loaves and Fishes",
           "artist": "Giovanni Lanfranco",
@@ -26541,6 +28594,25 @@
           "evidence": "TITLE_SUBJECT_MATCH_NOT_IMAGE_VERIFIED",
           "artwork_previously_human_accepted": true,
           "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.penitential_psalms-03",
+          "artwork_id": "REVIEW::smk:KMSST155",
+          "title": "Saint Peter Penitent",
+          "artist": "Girolamo Troppa",
+          "source_url": "https://open.smk.dk/en/artwork/image/KMSST155",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 103,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
         }
       ]
     },
@@ -26556,13 +28628,71 @@
       "eligible_subjects": [
         "PEN-DAVID"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 3,
       "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.penitential_psalms-04",
+          "artwork_id": "REVIEW::commons:98814117",
+          "title": "King David playing the harp among angels \" \"",
+          "artist": "Hendrick ter Brugghen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg/960px-Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.penitential_psalms-04",
+          "artwork_id": "REVIEW::commons:31507039",
+          "title": "king David.",
+          "artist": "Matthias Stom",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Stomer_Le_roi_David.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Stomer_Le_roi_David.jpg/960px-Stomer_Le_roi_David.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.penitential_psalms-04",
+          "artwork_id": "REVIEW::rijks:20027909",
+          "title": "King David",
+          "artist": "Aert de Gelder",
+          "source_url": "https://id.rijksmuseum.nl/20027909",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 81,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.penitential_psalms-05",
@@ -26737,11 +28867,49 @@
       ],
       "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
-      "pool_count": 2,
+      "pool_count": 4,
       "direct_title_candidates": 0,
       "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
       "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.penitential_psalms-07",
+          "artwork_id": "REVIEW::commons:98814117",
+          "title": "King David playing the harp among angels \" \"",
+          "artist": "Hendrick ter Brugghen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg/960px-Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.penitential_psalms-07",
+          "artwork_id": "REVIEW::commons:31507039",
+          "title": "king David.",
+          "artist": "Matthias Stom",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Stomer_Le_roi_David.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Stomer_Le_roi_David.jpg/960px-Stomer_Le_roi_David.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
         {
           "slot_id": "STG-pray.penitential_psalms-07",
           "artwork_id": "HERO::new:jules-breton-song-of-the-lark-artic-94841",
@@ -27036,13 +29204,109 @@
         "PEN-PETER",
         "PEN-DAVID"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
-      "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "coverage_state": "HAS_DIRECT_TITLE_MATCH",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 5,
+      "direct_title_candidates": 2,
+      "research_hold_state": "NO_NEW_RESEARCH_JUSTIFIED_AT_THIS_STAGE",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.confession-02",
+          "artwork_id": "REVIEW::commons:77218618",
+          "title": "Saint Peter penitent",
+          "artist": "Guercino",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg/960px-Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 120,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.confession-02",
+          "artwork_id": "REVIEW::smk:KMSST155",
+          "title": "Saint Peter Penitent",
+          "artist": "Girolamo Troppa",
+          "source_url": "https://open.smk.dk/en/artwork/image/KMSST155",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-PETER",
+          "all_subjects": [
+            "PEN-PETER"
+          ],
+          "score": 103,
+          "fit_class": "DIRECT_SUBJECT_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.confession-02",
+          "artwork_id": "REVIEW::commons:98814117",
+          "title": "King David playing the harp among angels \" \"",
+          "artist": "Hendrick ter Brugghen",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg/960px-Hendrick_ter_Brugghen_-_King_David_playing_the_harp_among_angels_-_M.Ob.529_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.confession-02",
+          "artwork_id": "REVIEW::commons:31507039",
+          "title": "king David.",
+          "artist": "Matthias Stom",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Stomer_Le_roi_David.jpg",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "photo_preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Stomer_Le_roi_David.jpg/960px-Stomer_Le_roi_David.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 98,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.confession-02",
+          "artwork_id": "REVIEW::rijks:20027909",
+          "title": "King David",
+          "artist": "Aert de Gelder",
+          "source_url": "https://id.rijksmuseum.nl/20027909",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "subject_match": "PEN-DAVID",
+          "all_subjects": [
+            "PEN-DAVID"
+          ],
+          "score": 81,
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "evidence": "EXPLICIT_ART_TITLE_SUBJECT_NOT_INDEPENDENTLY_IMAGE_VERIFIED",
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.confession-03",
@@ -27992,5 +30256,13 @@
         }
       ]
     }
-  ]
+  ],
+  "quality_audit_v2": {
+    "subject_classifier_expansion": true,
+    "source_archived_gallery_only": true,
+    "all_existing_human_prayer_rejections_excluded": true,
+    "numbered_stations_and_last_words_exactness_reclassification": true,
+    "production_edits": 0,
+    "updated_slots": 43
+  }
 }
