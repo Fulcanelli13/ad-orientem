@@ -119,6 +119,19 @@ try{
         bell:api.getNativeEventState()?.bell?.label??null,
         shellWidth:shell?.getBoundingClientRect().width??0};
      },cue);
+     // The focus tracker updates on the next animation frame after scroll.
+     // Read the new native state only after giving that frame its chance;
+     // a source paragraph's mere presence is not evidence of activation.
+     await page.waitForFunction(id=>{
+       const a=window.__AO_PHONE_PREVIEW;
+       return a.getActiveCue()===id&&a.getNativeEventState()?.nativeCueId===id;
+     },cue,{timeout:1700}).catch(()=>{});
+     const focused=await page.evaluate(()=>{
+       const a=window.__AO_PHONE_PREVIEW,st=a.getNativeEventState();
+       return {active:a.getActiveCue(),nativeCue:st?.nativeCueId??null,
+         minister:st?.sacredMinister?.actor??null,bell:st?.bell?.label??null};
+     });
+     Object.assign(sampled,focused);
      assert(sampled.rendered&&sampled.sourceIds.includes(cue)&&sampled.text.length>0,
        form+"/"+family+" failed to render source-owned "+cue);
      assert(sampled.shellWidth<=viewport.width+1,"Cue rendered horizontal overflow "+cue);
@@ -137,6 +150,7 @@ try{
       assert(png.length>4000,"Rendered Host-source screenshot suspiciously empty");
      }
     }
+    assert(samples.some(x=>x.sourceCueActivated),form+"/"+family+" source scroll never reached a native cue");
     const epistle=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const card=api.model.cards.find(c=>(c.blocks??[]).some(b=>
