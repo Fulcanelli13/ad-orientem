@@ -45,7 +45,7 @@ button:disabled{opacity:.47;cursor:not-allowed}.primary{background:#e6eeeb;color
 <select id="filter" aria-label="Filter reviews"><option value="all">All</option><option value="open">Unresolved</option><option value="resolved">Resolved</option><option value="missing">Missing previews</option></select>
 </div><div id="stats" class="muted"></div></header>
 <main>
-<p class="note">Image identity and copyright are separate release checks. No decision here deletes records, alters previously locked choices, imports to Queue 1 or publishes an image. Embedded previews work offline. Remote fallbacks may fail; those photographs remain pending visual review.</p>
+<p class="note">Only groups with EVERY photograph embedded are shown for review. Incomplete comparisons are hidden and remain in the recovery queue; no guessing or external source links required. Images are for comparison only; source-file rights and original-byte checks remain separate release gates. No decision here changes prior approvals or publishes artwork.</p>
 <div id="groups" class="groups"></div></main>
 <script>
 "use strict";
@@ -57,7 +57,7 @@ const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;"
 const byId=new Map(groups.map(g=>[g.id,g]));
 function persist(){try{localStorage.setItem(LOCK,JSON.stringify(decisions))}catch(e){}}
 function setDecision(id,status,preferred){
- const g=byId.get(id);if(!g)return;
+ const g=byId.get(id);if(!g||!g.fullyEmbedded)return;
  if(status==="SAME_WORK_KEEP_PREFERRED"&&!g.members.some(m=>m.id===preferred&&m.preview))return;
  if(status==="NOT_DUPLICATE_KEEP_ALL")preferred="";
  decisions[id]={status,preferred:preferred||"",decidedAt:new Date().toISOString(),memberIds:g.members.map(m=>m.id)};
@@ -80,12 +80,14 @@ function render(){
  const term=document.querySelector("#search").value.toLowerCase().trim();
  const filter=document.querySelector("#filter").value;
  let found=groups.filter(g=>{
+ if(!g.fullyEmbedded)return false;
  const d=decisions[g.id];
  const searchable=(g.title+" "+g.reason+" "+g.members.map(m=>m.title+" "+m.artist+" "+m.id).join(" ")).toLowerCase();
  return (!term||searchable.includes(term))&&(filter==="all"||filter==="open"&&!d||filter==="resolved"&&d||filter==="missing"&&g.members.some(m=>!m.preview));
  });
- const decided=groups.filter(g=>decisions[g.id]).length, separated=groups.filter(g=>decisions[g.id]?.status==="NOT_DUPLICATE_KEEP_ALL").length;
- document.querySelector("#stats").textContent=decided+" / "+groups.length+" groups decided · "+separated+" marked not duplicate · "+payload.reviewedCards+" previously displayed artworks protected";
+ const reviewable=groups.filter(g=>g.fullyEmbedded);
+ const decided=reviewable.filter(g=>decisions[g.id]).length, separated=reviewable.filter(g=>decisions[g.id]?.status==="NOT_DUPLICATE_KEEP_ALL").length;
+ document.querySelector("#stats").textContent=decided+" / "+reviewable.length+" complete groups decided · "+(groups.length-reviewable.length)+" incomplete groups withheld · "+separated+" marked not duplicate · "+payload.reviewedCards+" previously displayed artworks protected";
  document.querySelector("#groups").innerHTML=found.length?found.map(g=>{
  const d=decisions[g.id];
  return '<section class="group '+(d?"resolved":"")+'"><div class="group-header"><div><span class="tag">'+esc(g.confidence)+'</span><h2>'+esc(g.title)+'</h2><p class="muted">'+esc(g.reason)+' · '+g.members.length+' candidate records</p></div><small>'+esc(g.id)+'</small></div><div class="candidates">'+
@@ -100,7 +102,7 @@ function render(){
 document.querySelector("#filter").onchange=render;
 document.querySelector("#search").oninput=render;
 document.querySelector("#export").onclick=()=>{
- const results=groups.filter(g=>decisions[g.id]).map(g=>({groupId:g.id,confidence:g.confidence,reviewDecision:decisions[g.id].status,preferredMemberId:decisions[g.id].preferred,memberIds:g.members.map(m=>m.id),sourceUrls:g.members.map(m=>m.sourceUrl||""),decidedAt:decisions[g.id].decidedAt}));
+ const results=groups.filter(g=>g.fullyEmbedded&&decisions[g.id]).map(g=>({groupId:g.id,confidence:g.confidence,reviewDecision:decisions[g.id].status,preferredMemberId:decisions[g.id].preferred,memberIds:g.members.map(m=>m.id),sourceUrls:g.members.map(m=>m.sourceUrl||""),decidedAt:decisions[g.id].decidedAt}));
  const out={schema:"AO_SACRED_ART_DUPLICATE_REVIEW_DECISIONS_V1",registrySnapshot:payload.snapshot,source:"SACRED_ART_DUPLICATE_REVIEW_20261030",exportedAt:new Date().toISOString(),totalGroups:groups.length,resolvedGroups:results.length,decisions:results};
  const blob=new Blob([JSON.stringify(out,null,2)],{type:"application/json"}),a=document.createElement("a"),u=URL.createObjectURL(blob);
  a.href=u;a.download="Ad_Orientem_Duplicate_Review_Decisions.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);
@@ -114,7 +116,7 @@ document.querySelector("#importFile").onchange=async e=>{
  let count=0;
  for(const d of data.decisions){
  const g=byId.get(d.groupId);
- if(!g||JSON.stringify(d.memberIds)!==JSON.stringify(g.members.map(m=>m.id)))continue;
+ if(!g||!g.fullyEmbedded||JSON.stringify(d.memberIds)!==JSON.stringify(g.members.map(m=>m.id)))continue;
  if(d.reviewDecision!=="NOT_DUPLICATE_KEEP_ALL"&&d.reviewDecision!=="SAME_WORK_KEEP_PREFERRED")continue;
  if(d.reviewDecision==="SAME_WORK_KEEP_PREFERRED"&&!g.members.some(m=>m.id===d.preferredMemberId&&m.preview))continue;
  decisions[g.id]={status:d.reviewDecision,preferred:d.reviewDecision==="NOT_DUPLICATE_KEEP_ALL"?"":d.preferredMemberId,memberIds:d.memberIds,decidedAt:d.decidedAt||new Date().toISOString()};count++;
