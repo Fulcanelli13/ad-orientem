@@ -2,7 +2,7 @@
   "schema": "AO_DYK_SOURCE_FIRST_EDITORIAL_BATCH_V1",
   "version": "1.0.0",
   "created": "2026-10-30",
-  "status": "CORRECTED_GLOSSARY_AND_MASS_ONLY_CUSTOMS_MOVED_TO_ULTRAMASTER_SOURCE",
+  "status": "GLOSSARY_MASS_RESEARCH_ACTIVE_WITH_9_LEGACY_SEMANTIC_DUPLICATES_DEFERRED",
   "purpose": "Bilingual glossary and Mass drafts; canonical Customs examples deferred because DYK Customs must mine the 3,703-observation Ultra-Master instead.",
   "owns_runtime": false,
   "publication_authorized": false,
@@ -18,35 +18,14 @@
     "review_en_fr_independently": true
   },
   "counts": {
-    "active_total": 24,
-    "glossary": 19,
+    "active_total": 15,
+    "glossary": 10,
     "mass_ceremonial": 5,
     "customs_ultramaster": 0,
-    "deferred_canonical_customs_examples": 16
+    "deferred_canonical_customs_examples": 16,
+    "deferred_legacy_semantic_duplicates": 9
   },
   "facts": [
-    {
-      "id": "DYK-SF01-017",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that Solemn Mass is defined by the roles of the celebrant, deacon and subdeacon, not just by the amount of singing?",
-        "fr": "Saviez-vous que la messe solennelle se distingue par les fonctions du célébrant, du diacre et du sous-diacre, et non par la seule quantité de chant ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-001-150.v1.json",
-        "record_id": "G049",
-        "source_ids": [
-          "MR62-ORDINARY"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G049"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
     {
       "id": "DYK-SF01-018",
       "category": "glossary",
@@ -158,28 +137,6 @@
       "human_gate": "Factual, translation and duplicate review"
     },
     {
-      "id": "DYK-SF01-023",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that sedilia are seats for the celebrant and sacred ministers, rather than the bishop's cathedra?",
-        "fr": "Saviez-vous que les sedilia sont des sièges destinés au célébrant et aux ministres sacrés, et non la cathèdre de l'évêque ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-151-300.v1.json",
-        "record_id": "G185",
-        "source_ids": [
-          "SRC-P16-SEDILIA-CATHEDRA"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G185"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
       "id": "DYK-SF01-024",
       "category": "glossary",
       "text": {
@@ -197,28 +154,6 @@
       "deep_link": {
         "owner": "glossary",
         "record_id": "G187"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
-      "id": "DYK-SF01-025",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that the purificator and corporal are different linens with different functions at Mass?",
-        "fr": "Saviez-vous que le purificatoire et le corporal sont deux linges distincts qui remplissent des fonctions différentes à la messe ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-151-300.v1.json",
-        "record_id": "G188",
-        "source_ids": [
-          "MR62-ORDINARY"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G188"
       },
       "state": "EDITORIAL_DRAFT_NOT_APPROVED",
       "human_gate": "Factual, translation and duplicate review"
@@ -246,72 +181,6 @@
       "human_gate": "Factual, translation and duplicate review"
     },
     {
-      "id": "DYK-SF01-027",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that the cruets used for wine and water are service vessels, distinct from the sacred chalice?",
-        "fr": "Saviez-vous que les burettes destinées au vin et à l'eau sont des récipients de service, distincts du calice sacré ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-151-300.v1.json",
-        "record_id": "G193",
-        "source_ids": [
-          "MR62-ORDINARY"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G193"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
-      "id": "DYK-SF01-028",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that the thurible burns incense, while a separate vessel called the incense boat holds it beforehand?",
-        "fr": "Saviez-vous que l'encens brûle dans l'encensoir, tandis qu'un autre récipient, la navette, le contient auparavant ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-151-300.v1.json",
-        "record_id": "G194",
-        "source_ids": [
-          "SRC-HIST-CENSER"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G194"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
-      "id": "DYK-SF01-029",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that the incense boat is often boat-shaped and traditionally accompanies the thurible with a small spoon?",
-        "fr": "Saviez-vous que la navette à encens, souvent en forme de petit bateau, accompagne traditionnellement l'encensoir avec une cuillère ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-151-300.v1.json",
-        "record_id": "G195",
-        "source_ids": [
-          "SRC-OCONNELL-MASS-GENERAL-1962"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G195"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
       "id": "DYK-SF01-030",
       "category": "glossary",
       "text": {
@@ -329,28 +198,6 @@
       "deep_link": {
         "owner": "glossary",
         "record_id": "G197"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
-      "id": "DYK-SF01-031",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that the dalmatic is the deacon's outer vestment at Solemn Mass, distinct from the priest's chasuble?",
-        "fr": "Saviez-vous que la dalmatique est l'ornement extérieur du diacre à la messe solennelle, distinct de la chasuble du prêtre ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-151-300.v1.json",
-        "record_id": "G201",
-        "source_ids": [
-          "SRC-HIST-VESTMENTS-CE"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G201"
       },
       "state": "EDITORIAL_DRAFT_NOT_APPROVED",
       "human_gate": "Factual, translation and duplicate review"
@@ -395,50 +242,6 @@
       "deep_link": {
         "owner": "glossary",
         "record_id": "G213"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
-      "id": "DYK-SF01-034",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that older Latin liturgical practice used consecrated altar stones containing relics?",
-        "fr": "Saviez-vous que l'ancienne pratique liturgique latine utilisait des pierres d'autel consacrées contenant des reliques ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-151-300.v1.json",
-        "record_id": "G219",
-        "source_ids": [
-          "SRC-HIST-ALTAR-STONE"
-        ]
-      },
-      "scope": "PROFILE_1962",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G219"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Factual, translation and duplicate review"
-    },
-    {
-      "id": "DYK-SF01-035",
-      "category": "glossary",
-      "text": {
-        "en": "Did you know that a ciborium can mean an architectural canopy above an altar, not only a vessel holding the Hosts?",
-        "fr": "Saviez-vous que le mot ciborium peut désigner un baldaquin architectural au-dessus de l'autel, et pas seulement un vase destiné aux hosties ?"
-      },
-      "source": {
-        "owner": "data/glossary/concepts-301-450.v1.json",
-        "record_id": "G416",
-        "source_ids": [
-          "SRC-P16-RETABLE-CIBORIUM"
-        ]
-      },
-      "scope": "HISTORICAL",
-      "deep_link": {
-        "owner": "glossary",
-        "record_id": "G416"
       },
       "state": "EDITORIAL_DRAFT_NOT_APPROVED",
       "human_gate": "Factual, translation and duplicate review"
@@ -937,5 +740,242 @@
       "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
     }
   ],
-  "supersession_note": "2026-10-30 user editorial correction: 39 Calendar Customs are NOT the Customs DYK discovery pool. Customs DYK drafts are now sourced from research/customs-multibook-bulk150-20261026 and the full 3,703-observation corpus; see dyk-ultramaster-batch01.v1.json. All prior draft examples preserved below but excluded from the active candidate set."
+  "supersession_note": "2026-10-30 user editorial correction: 39 Calendar Customs are NOT the Customs DYK discovery pool. Customs DYK drafts are now sourced from research/customs-multibook-bulk150-20261026 and the full 3,703-observation corpus; see dyk-ultramaster-batch01.v1.json. All prior draft examples preserved below but excluded from the active candidate set.",
+  "deferred_legacy_semantic_duplicates": [
+    {
+      "id": "DYK-SF01-017",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that Solemn Mass is defined by the roles of the celebrant, deacon and subdeacon, not just by the amount of singing?",
+        "fr": "Saviez-vous que la messe solennelle se distingue par les fonctions du célébrant, du diacre et du sous-diacre, et non par la seule quantité de chant ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-001-150.v1.json",
+        "record_id": "G049",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G049"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "Same identifying distinction; no substantially additional discovery.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-023",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that sedilia are seats for the celebrant and sacred ministers, rather than the bishop's cathedra?",
+        "fr": "Saviez-vous que les sedilia sont des sièges destinés au célébrant et aux ministres sacrés, et non la cathèdre de l'évêque ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G185",
+        "source_ids": [
+          "SRC-P16-SEDILIA-CATHEDRA"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G185"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "Same object comparison and functional distinction.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-025",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the purificator and corporal are different linens with different functions at Mass?",
+        "fr": "Saviez-vous que le purificatoire et le corporal sont deux linges distincts qui remplissent des fonctions différentes à la messe ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G188",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G188"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "New statement is less informative than earlier functional distinction.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-027",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the cruets used for wine and water are service vessels, distinct from the sacred chalice?",
+        "fr": "Saviez-vous que les burettes destinées au vin et à l'eau sont des récipients de service, distincts du calice sacré ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G193",
+        "source_ids": [
+          "MR62-ORDINARY"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G193"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "Same distinction with older version adding offertory and lavabo.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-028",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the thurible burns incense, while a separate vessel called the incense boat holds it beforehand?",
+        "fr": "Saviez-vous que l'encens brûle dans l'encensoir, tandis qu'un autre récipient, la navette, le contient auparavant ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G194",
+        "source_ids": [
+          "SRC-HIST-CENSER"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G194"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "Same two-object comparison.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-029",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the incense boat is often boat-shaped and traditionally accompanies the thurible with a small spoon?",
+        "fr": "Saviez-vous que la navette à encens, souvent en forme de petit bateau, accompagne traditionnellement l'encensoir avec une cuillère ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G195",
+        "source_ids": [
+          "SRC-OCONNELL-MASS-GENERAL-1962"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G195"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "Same specific physical details.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-031",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that the dalmatic is the deacon's outer vestment at Solemn Mass, distinct from the priest's chasuble?",
+        "fr": "Saviez-vous que la dalmatique est l'ornement extérieur du diacre à la messe solennelle, distinct de la chasuble du prêtre ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G201",
+        "source_ids": [
+          "SRC-HIST-VESTMENTS-CE"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G201"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "Same vestment identity; existing material is more differentiated.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-034",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that older Latin liturgical practice used consecrated altar stones containing relics?",
+        "fr": "Saviez-vous que l'ancienne pratique liturgique latine utilisait des pierres d'autel consacrées contenant des reliques ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-151-300.v1.json",
+        "record_id": "G219",
+        "source_ids": [
+          "SRC-HIST-ALTAR-STONE"
+        ]
+      },
+      "scope": "PROFILE_1962",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G219"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "No additional historically qualified detail in new version.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    },
+    {
+      "id": "DYK-SF01-035",
+      "category": "glossary",
+      "text": {
+        "en": "Did you know that a ciborium can mean an architectural canopy above an altar, not only a vessel holding the Hosts?",
+        "fr": "Saviez-vous que le mot ciborium peut désigner un baldaquin architectural au-dessus de l'autel, et pas seulement un vase destiné aux hosties ?"
+      },
+      "source": {
+        "owner": "data/glossary/concepts-301-450.v1.json",
+        "record_id": "G416",
+        "source_ids": [
+          "SRC-P16-RETABLE-CIBORIUM"
+        ]
+      },
+      "scope": "HISTORICAL",
+      "deep_link": {
+        "owner": "glossary",
+        "record_id": "G416"
+      },
+      "state": "DEFERRED_AS_LEGACY_SEMANTIC_DUPLICATE_RESEARCH_TRIAGE",
+      "human_gate": "Factual, translation and duplicate review",
+      "reversible": true,
+      "publication_authorized": false,
+      "defer_reason": "Same two senses of the term.",
+      "review_registry": "data/research/did-you-know/dyk-legacy-18-claim-semantic-triage.v1.json"
+    }
+  ],
+  "semantic_reconciliation_note": "9 of 18 exact glossary-source matches were redundant at claim level; preserved in deferred_legacy_semantic_duplicates. 9 with distinct factual claims are retained. Nonpublishing researcher triage, subject to human source and language review; legacy private owners unchanged."
 }
