@@ -53,7 +53,12 @@ assert.equal(indulgences.original_observation_indulgence_mentions.length,5);
 for(const c of indulgences.historic_grant_cases)assert.equal(c.can_appear_as_current_grant,false);
 for(const x of indulgences.screening_by_identity){assert.equal(x.universal_indulgence_attached_to_this_custom,false);assert.equal(x.historical_1962_raccolta_verified,false);}
 assert.equal(coverage.progress.evidence_directly_linked_to_group.not_directly_linked,3295);
-assert.equal(coverage.progress.historical_indulgence_original_grants_verified.done,0);
+assert.equal(coverage.progress.historical_indulgence_original_grants_verified.done,1);
+assert.equal(indulgences.counts.original_grants_verified_for_historical_cases,1);
+const facsimile=get("customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json");
+assert.equal(facsimile.summary.primary_instrument_facsimiles_seen,1);
+assert.equal(facsimile.cases.filter(x=>x.original_instrument_facsimile_seen).length,1);
+assert.ok(facsimile.cases.find(x=>x.review_key==="HIST-IND-003").sources.some(x=>x.pdf_page_one_based===5));
 assert.equal(coverage.release_freeze,"RESEARCH_ONLY");
 
 const wave=get("customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json");
@@ -68,4 +73,12 @@ const waves=get("customs-ultra-master-v2-bulk-reconciliation-waves-3295.v1.json"
 assert.equal(waves.batches.length,17);
 assert.equal(waves.batches.flatMap(x=>x.source_evidence_ids).length,3295);
 assert.deepEqual(new Set(waves.batches.flatMap(x=>x.source_evidence_ids)),unassigned);
-console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 linked evidence/3295 separately indexed, 465 identities, 0 unpublished grants, zero canonical writes");
+for(const [number,expected] of [[2,200],[3,200]]){
+ const waveDoc=get("customs-ultra-master-v2-wave"+String(number).padStart(2,"0")+"-200-source-scope-screen.v1.json");
+ assert.equal(waveDoc.rows.length,expected);
+ assert.equal(new Set(waveDoc.rows.map(x=>x.evidence_id)).size,expected);
+ assert.ok(waveDoc.rows.every(x=>unassigned.has(x.evidence_id)&&x.original_source_id_verified&&!x.app_publication_allowed&&!x.distinct_custom_identity_approved));
+ assert.ok(waveDoc.rows.every(x=>x.original_source_record.repo_path&&x.original_source_record.json_pointer));
+}
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,600);
+console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 linked evidence/3295 separately indexed, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
