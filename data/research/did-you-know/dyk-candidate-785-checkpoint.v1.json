@@ -1,0 +1,66 @@
+{
+  "schema": "AO_DYK_CANDIDATE_785_CHECKPOINT_V1",
+  "as_of": "2026-10-30",
+  "status": "UNAPPROVED_RESEARCH_POOL_ONLY",
+  "definitions": {
+    "source_observation": "Evidence pointer; not a DYK fact",
+    "candidate_fact": "An EN/FR source-backed proposition or paragraph that may become an editorial discovery; not necessarily an independent or curious finished Home item",
+    "approved_card": "Requires fact-by-fact accuracy, novelty, clarity, EN/FR and live destination checks, currently 0 newly approved."
+  },
+  "candidate_counts": {
+    "existing_research_customs": 130,
+    "existing_research_glossary": 10,
+    "existing_research_mass": 5,
+    "new_glossary_source_backed_microfacts": 440,
+    "new_glossary_additional_contextual_insights": 200,
+    "total_research_candidate_records": 785,
+    "newly_authorized_for_home": 0,
+    "newly_published": 0
+  },
+  "high_priority": {
+    "historical_customs_existing": 130,
+    "liturgical_devotional_glossary_microfacts": 327,
+    "additional_liturgy_devotion_context_seeds": 200,
+    "existing_mass": 5,
+    "other_glossary_deferred_formation_reserve": 113,
+    "existing_glossary_not_in_priority_breakdown": 10
+  },
+  "source_files": [
+    "data/research/did-you-know/dyk-ultramaster-batch01.v1.json",
+    "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json",
+    "data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json",
+    "data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json",
+    "data/research/did-you-know/dyk-source-first-batch01.v1.json",
+    "data/research/did-you-know/dyk-source-backed-glossary-expansion-440.v1.json",
+    "data/research/did-you-know/dyk-glossary-second-insights-200.v1.json"
+  ],
+  "source_owner": "Canonical 450 glossary concepts and existing 3703 Customs observations; active historical Pitre/Weiser original source-claim validation remains separate from evidence pointer validation.",
+  "integrity_rule": "Nondestructive: retain all earlier 145 research drafts, 612 older branch-preview cards and 12-per-day cap. Counts exclude older preview and archival pools because semantic overlaps remain unreconciled.",
+  "validation": {
+    "structural_gate": "node tests/dyk-785-expansion-gates.mjs",
+    "semantic_dedupe_with_older_bank": "NOT_DONE",
+    "novelty_of_additional_200": "NOT_CERTIFIED",
+    "translation_editorial": "NOT_DONE",
+    "source_folio_checks_for_new_glossary": "UPSTREAM_DEFINITION_SOURCE_OWNED_NOT_INDEPENDENTLY_RECHECKED",
+    "browser_clickthrough": "NOT_DONE"
+  },
+  "next_batch_contract": {
+    "min_candidate_count": 100,
+    "preferred_sources": [
+      "Francis X. Weiser full 1025 research observations",
+      "Giuseppe Pitre full 718 research observations",
+      "other 1960 Customs observations",
+      "1962 Mass gesture/cue/music research"
+    ],
+    "do_not_expand": "Generic doctrine glossary until source-first Customs/Mass topical balance improves",
+    "goals": [
+      "One genuinely distinct claim per new record",
+      "EN and FR finished source-bounded factual text",
+      "Exact original observation IDs, original pages or line locator, author and historical regional scope",
+      "Reconcile with the older 612 preview cards before release"
+    ],
+    "no_new_Customs_Atlas": true,
+    "no_local_tradition_made_universal": true,
+    "indulgences_require_separate_primary_work_check": true
+  }
+}
