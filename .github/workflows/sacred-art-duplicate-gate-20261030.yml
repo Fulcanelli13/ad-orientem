@@ -41,7 +41,7 @@ jobs:
             throw Error('Reviewer missing decisions or offline images');
           if(summary.previousApprovalsChanged!==0||summary.queue1Promotions!==0||summary.productionMutations!==0)
             throw Error('Unsafe approval or queue mutation');
-          const inline=html.match(/<script>([\\s\\S]*?)<\\/script>/)?.[1];
+          const inline=html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
           if(!inline)throw Error('No inline review JS');
           new Script(inline,{filename:'sacred-art-duplicate-review-inline.js'});
           const idx=JSON.parse(readFileSync('data/calendar/sacred-art-master-v2/duplicate-review-groups-20261030.v1.json','utf8'));
