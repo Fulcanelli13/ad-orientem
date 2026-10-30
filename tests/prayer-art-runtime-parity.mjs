@@ -11,6 +11,7 @@ const directory='data/prayer/artwork-editorial-20261030/';
 const read=name=>JSON.parse(readFileSync(directory+name,'utf8'));
 const manifest=read('runtime-card-parity-20261030.v1.json');
 const approved=read('missing-art-approved-only-20261030.v1.json');
+const canonicalBridge=read('balanced-reuse-20261030-live-prayer-48-bridge.v1.json');
 const overlay=read('cross-prayer-inheritance-20261030.v1.json');
 const ledger=read('balanced-reuse-20261030-assignments.v2.json');
 const slots=new Map(ledger.slots.map(s=>[s.slot_id,s]));
@@ -46,7 +47,8 @@ assert.equal(countFunction('fourSteps'),5);
 for(const [key,n] of Object.entries({
   benediction:7,penitential_psalms:7,seven_words:7,forty_hours:6,
   adoration_visit:7,adoration_holy_hour:8,adoration_four_ends:5,
-  morning_daily:11,evening_daily:13,nightly_examen:5
+  morning_daily:11,evening_daily:13,nightly_examen:5,
+  first_friday:5,first_saturday:6,confession_macro:4
 })){assert.equal(manifest.runtime_stage_to_editorial_slot[key]?.length,n,'Runtime mapping cardinality '+key)}
 assert.deepEqual(
   manifest.runtime_stage_to_editorial_slot.morning_daily.map(x=>x.prayer_id),
@@ -136,6 +138,20 @@ for(const [group,mode] of [
     const actual=presentationResolve('adoration',row.runtime_index,{mode});
     assert.equal(actual.slot,row.editorial_slot,'Adoration runtime artwork ID mismatch '+mode+' '+row.runtime_index);
   }
+}
+for(const [group,view] of [['first_friday','firstFriday'],['first_saturday','firstSaturday'],['confession_macro','confession']]){
+  for(const row of manifest.runtime_stage_to_editorial_slot[group]){
+    const actual=presentationResolve(view,row.runtime_index);
+    assert.equal(actual.slot,row.editorial_slot,'Macro art slot mismatch '+group+' '+row.runtime_index);
+  }
+}
+assert.equal(canonicalBridge.prayers.length,48);
+assert.equal(canonicalBridge.summary.with_candidate,48);
+for(const prayer of canonicalBridge.prayers){
+  const actual=presentationResolve('prayerOnly',0,{prayerId:prayer.prayer_id});
+  const expected=prayer.prayer_id==='litany_loreto_current'?'COV-litany_loreto_1962':prayer.cover_slot;
+  assert.equal(actual.slot,expected,'Canonical direct/shared prayer artwork mismatch '+prayer.prayer_id);
+  assert.ok(prayer.paintings?.length>0,'Canonical prayer has no painting pool '+prayer.prayer_id);
 }
 for(const row of manifest.runtime_stage_to_editorial_slot.nightly_examen){
   const actual=traditionalResolve('pray.nightly_examen',{examenStep:row.runtime_index});
