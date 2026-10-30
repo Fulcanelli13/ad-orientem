@@ -537,7 +537,7 @@ try{
         const {publishedMissalRubricsForParagraph}=await import("/src/mass/reader-missal-rubrics.js");
         const registry=await (await fetch("/data/presentation/reader-rubric-events.v1.json")).json();
         const api=window.__AO_PHONE_PREVIEW,expected=new Set(),found=new Set();
-        const missing=[],uncertified=[];
+        const missing=[],uncertified=[],bellLeak=[];
         for(const card of api.model.cards){
           if(!api.showSequence(card.sequence))continue;
           await new Promise(done=>requestAnimationFrame(done));
@@ -559,6 +559,13 @@ try{
             const rowRendered=!!row && row.getBoundingClientRect().width>0 &&
               getComputedStyle(row).display!=="none";
             for(const event of events){
+              // Missal-only printed server bell directions are NEVER a LIVE
+              // instruction or evidence that any physical bell was rung.
+              if(event.kind==="BELL"){
+                if(idNodes.some(el=>el.dataset.rubricId===event.id))
+                  bellLeak.push({card:card.title,id:event.id});
+                continue;
+              }
               expected.add(event.id);
               const sourceWitness=printedSource && event.kind!=="STATE" &&
                 rowRendered && sourceText.length>0 && sourceCues.has(event.sourceCueId);
@@ -584,7 +591,7 @@ try{
             }
           }
         }
-        return {expected:expected.size,found:found.size,missing,uncertified};
+        return {expected:expected.size,found:found.size,missing,uncertified,bellLeak};
       });
       assert.ok(rubricParity.expected>=45,
         "Full ordinary LIVE 1962 rubric source audit lost registry coverage: "+
@@ -593,6 +600,8 @@ try{
         "Published source-backed rubrics missing from LIVE DOM");
       assert.deepEqual(rubricParity.uncertified,[],
         "LIVE displayed a rubric absent from the source registry");
+      assert.deepEqual(rubricParity.bellLeak,[],
+        "Missal-only server bell direction leaked into LIVE");
       console.log("PASS Gloria/Credo source cues, single-icon chrome, 34px Schola and published 1962 rubric parity",{
         schola:presentation.schola,published:rubricParity
       });
