@@ -1,0 +1,49 @@
+name: Divine Office Advent I private browser preview — no publication
+on:
+  pull_request:
+    paths:
+      - 'previews/advent-i-first-vespers-2026-research.html'
+      - 'src/office/**'
+      - 'tests/divine-office-advent-first-vespers-browser-visual.mjs'
+      - 'tests/fixtures/office/advent-i-preview-*.json'
+      - 'tests/fixtures/office/advent-i-preview-ordinary.txt'
+      - 'data/office/research/advent-i-2026-universal-commemoration.json'
+      - '.github/workflows/office-advent-i-visual-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# The draft PR does NOT publish to Pages or the public app.
+# Public repo's standard GitHub Actions runner; no paid API/storage.
+jobs:
+  verify-private-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate visual harness and Compline engine syntax before browser setup
+        run: |
+          node --check tests/divine-office-advent-first-vespers-browser-visual.mjs
+          node --check src/office/saturday-compline-2026-pilot.js
+      - name: Install existing pinned-capability browser test dependency
+        run: npm install --no-audit --no-fund
+      - name: Install headless Chromium for visual capture
+        run: npx playwright install --with-deps chromium
+      - name: Verify real browser preview and screenshots, including live pinned sources
+        env:
+          AO_OFFICE_LIVE_SOURCES: '1'
+        run: node tests/divine-office-advent-first-vespers-browser-visual.mjs
+      - name: Preserve temporary review screenshots and validation receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: advent-i-2026-first-vespers-browser-review
+          path: artifacts/divine-office-advent-i-preview/
+          if-no-files-found: warn
+          retention-days: 7
