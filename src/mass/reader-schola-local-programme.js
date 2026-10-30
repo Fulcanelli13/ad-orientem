@@ -42,10 +42,17 @@ function performanceOf(value){
 }
 function profileOf(value,id){
  const v=object(value);
+ const ordinarySettings=ordinaryOf(v.ordinarySettings);
+ const candidates=verifiedSelectionsOf(v.ordinarySelections);
+ const ordinarySelections={};
+ for(const movement of SCHOLA_ORDINARY_SETTING_IDS){
+  const indexed=resolveKyrialeChoice(movement,candidates[movement]);
+  ordinarySelections[movement]=indexed&&ordinarySettings[movement]===indexed.title
+   ?indexed.id:"";
+ }
  return freeze({id,name:clean(v.name)||"Local programme",
   parishLabel:clean(v.parishLabel),choices:choicesOf(v.choices),
-  ordinarySettings:ordinaryOf(v.ordinarySettings),
-  ordinarySelections:verifiedSelectionsOf(v.ordinarySelections),
+  ordinarySettings,ordinarySelections:freeze(ordinarySelections),
   sanctusPerformance:performanceOf(v.sanctusPerformance)});
 }
 function wrap(profiles,activeProfileId){
