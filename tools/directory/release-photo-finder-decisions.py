@@ -49,7 +49,7 @@ def load_json(p):
  return json.loads(Path(p).read_text(encoding="utf-8"))
 def norm_commons(title):
  if (not isinstance(title,str) or not title.startswith("File:")
-     or len(title)>265 or any(x in title for x in ("\0","\n","\r","..","|","#","?"))):
+     or len(title)>265 or any(x in title for x in ("\0","\n","\r","/","|","#","?"))):
   raise ValueError("Invalid Commons title")
  return "https://commons.wikimedia.org/wiki/"+urllib.parse.quote(
     title.replace(" ","_"),safe=":/_(),-")
