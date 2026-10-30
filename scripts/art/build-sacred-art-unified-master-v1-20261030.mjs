@@ -214,6 +214,26 @@ function append(item){
  item.productionApproved=false;
  master.push(item);
 }
+const archivedVerified=load("sacred-art-phase1-canonical383-111-official-source-verification-20261030.v1.json").rows;
+const archivedUrlById=new Map(archivedVerified.filter(x=>x.verification.publishedObjectSourceIdentityConfirmed||
+ x.verification.publishedSourceFilePageResolved).map(x=>[x.canonicalArtworkId,x.archivedPage]));
+const sourceObjectPage=u=>{
+ const s=String(u||"").trim();
+ if(/^File:/i.test(s))return "https://commons.wikimedia.org/wiki/"+encodeURIComponent(s).replace(/%3A/i,":");
+ if(!/^https?:\/\//i.test(s))return "";
+ try{const p=new URL(s);
+  return /\/wiki\/File:/i.test(p.pathname)||
+   /\/art\/collection\/search\/\d+/i.test(p.pathname)||
+   /\/art\/\d/i.test(p.pathname)||
+   /\/artworks\/\d+/i.test(p.pathname)||
+   /\/objects\/\d+/i.test(p.pathname)||
+   /\/collection\/work\/data\//i.test(p.pathname)?s:"";
+ }catch{return "";}
+};
+const bestCanonSource=(r,audit,cand)=>[
+ r.source_page,archivedUrlById.get(r.artwork_id),
+ cand?.source?.objectUrl,audit?.source_url,audit?.commons_file_title
+].map(sourceObjectPage).find(Boolean)||"";
 const canWorkIds=new Set();
 for(const r of canon){
  const cand=candidateIds.get(r.artwork_id),audit=licenseByCanon.get(r.artwork_id);
@@ -223,7 +243,7 @@ for(const r of canon){
   title:r.title,artist:r.artist||"",dateOrPeriod:cand?.dated||"",
   medium:cand?.medium||"",museum:cand?.museum||"",
   accession:cand?.source?.objectId||"",
-  sourceId:"",sourceUrl:r.source_page||audit?.source_url||cand?.source?.objectUrl||"",
+  sourceId:"",sourceUrl:bestCanonSource(r,audit,cand),
   sourceFieldState:r.source_page?"CANONICAL_PAGE":"ARCHIVED_OR_RESEARCH_CANDIDATE_PAGE_NOT_CANONICAL_FIELD",
   exactOriginalSha:r.prior_source_sha256||audit?.recorded_archive_image_sha256||"",
   originalUserDecision:r.editorial_state,editorialStatus:r.editorial_state,
