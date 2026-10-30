@@ -1,0 +1,134 @@
+name: Directory canonical Places Wikidata Commons Openverse photo intake
+on:
+  pull_request:
+    paths:
+      - tools/directory/discover-open-place-media.py
+      - tests/directory-photo-discovery-test.py
+      - .github/workflows/directory-canonical-place-photo-discovery.yml
+      - docs/DIRECTORY-CANONICAL-PLACE-PHOTO-PIPELINE.md
+  workflow_dispatch:
+    inputs:
+      wave:
+        description: "Exterior first, interior/altar on a separate pass"
+        type: choice
+        options: [exterior, interior]
+        default: exterior
+        required: true
+      offset:
+        description: "Sorted canonical Place row offset"
+        type: number
+        required: true
+        default: 0
+      limit:
+        description: "Canonical Places to screen (1..100), metadata only"
+        type: number
+        required: true
+        default: 50
+permissions:
+  contents: write
+concurrency:
+  group: directory-canonical-free-photo-intake
+  cancel-in-progress: false
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate both legacy R49 and new canonical Place paths
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/discover-open-place-media.py
+          python tests/directory-photo-discovery-test.py -v
+          node tests/production-tree-hygiene.mjs
+  metadata-only-acquisition:
+    if: github.event_name == 'workflow_dispatch'
+    needs: contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check canonical batch bounds before external requests
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+          WAVE: ${{ inputs.wave }}
+        run: |
+          python - <<'PY'
+          import os, importlib.util, pathlib
+          p=pathlib.Path("tools/directory/discover-open-place-media.py")
+          spec=importlib.util.spec_from_file_location("ao_photo",p)
+          module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+          rows=module.source_rows(pathlib.Path("data/geography/seed-registry.v1.json"))
+          start=int(os.environ["OFFSET"]);limit=int(os.environ["LIMIT"])
+          assert 0<=start<len(rows) and 1<=limit<=100 and start+limit<=len(rows)
+          assert os.environ["WAVE"] in ("exterior","interior")
+          assert len({r["id"] for r in rows})==len(rows)
+          print("SCREEN_CANDIDATES",limit,"OF",len(rows),"CANONICAL_PLACES")
+          PY
+      - name: Discover source metadata only; no image downloads or automatic approval
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+          WAVE: ${{ inputs.wave }}
+        run: |
+          mkdir -p /tmp/ao-canonical-photo-intake
+          python tools/directory/discover-open-place-media.py \
+            --source data/geography/seed-registry.v1.json \
+            --offset "$OFFSET" --limit "$LIMIT" --wave "$WAVE" \
+            --openverse-budget 10 --openverse-per-venue 1 --delay 1.5 \
+            --output "/tmp/ao-canonical-photo-intake/canonical-$WAVE-$OFFSET-$LIMIT.json"
+      - name: Fail closed if every source request failed
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+          WAVE: ${{ inputs.wave }}
+        run: |
+          python - <<'PY'
+          import json,os,pathlib
+          f=pathlib.Path("/tmp/ao-canonical-photo-intake")/("canonical-"+os.environ["WAVE"]+"-"+os.environ["OFFSET"]+"-"+os.environ["LIMIT"]+".json")
+          d=json.loads(f.read_text())
+          assert d["source_schema"]=="EXPLORE_GEOGRAPHY_SEED_V1"
+          assert d["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
+          assert d["image_downloads"]==d["publications"]==0
+          assert d["processed"]==int(os.environ["LIMIT"])
+          assert all(v["source_owner"]=="CANONICAL_PLACES_NO_VENUE_PROMOTION" and v["canonical_place_id"]==v["source_id"] for v in d["venues"])
+          if all(v["errors"].get("WIKIDATA") and v["errors"].get("COMMONS_GEOSEARCH") and v["errors"].get("EXTERIOR") for v in d["venues"]):
+              raise RuntimeError("Wikidata and Commons unavailable across entire batch; do not register false photo gaps")
+          print("CANONICAL_DISCOVERY_RESEARCH_ONLY",d["pilot_metrics"])
+          PY
+      - name: Permanently record compact research evidence in separate research branch
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+          WAVE: ${{ inputs.wave }}
+        run: |
+          set -euo pipefail
+          branch=research/canonical-place-photo-candidates
+          git fetch origin "refs/heads/$branch:refs/remotes/origin/$branch" || true
+          if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+            git switch -C "$branch" "origin/$branch"
+          else
+            git switch -c "$branch"
+          fi
+          target=data/directory/research/canonical-place-photo-candidates
+          mkdir -p "$target"
+          cp "/tmp/ao-canonical-photo-intake/canonical-$WAVE-$OFFSET-$LIMIT.json" "$target/canonical-$WAVE-$OFFSET-$LIMIT.json"
+          git add "$target/canonical-$WAVE-$OFFSET-$LIMIT.json"
+          if git diff --cached --quiet; then
+            echo "No new research metadata"
+            exit 0
+          fi
+          git -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com \
+            commit -m "Archive canonical Place $WAVE photo source metadata $OFFSET-$LIMIT (unapproved)"
+          git push origin "HEAD:refs/heads/$branch"
