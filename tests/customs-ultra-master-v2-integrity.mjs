@@ -80,5 +80,13 @@ for(const [number,expected] of [[2,200],[3,200]]){
  assert.ok(waveDoc.rows.every(x=>unassigned.has(x.evidence_id)&&x.original_source_id_verified&&!x.app_publication_allowed&&!x.distinct_custom_identity_approved));
  assert.ok(waveDoc.rows.every(x=>x.original_source_record.repo_path&&x.original_source_record.json_pointer));
 }
-assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,600);
+const wave4=get("customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json");
+assert.equal(wave4.rows.length,200);
+assert.equal(wave4.counts.source_native_type_available,68);
+assert.equal(wave4.counts.requires_actual_passage_type_screen,132);
+assert.equal(wave4.rows.filter(x=>!x.semantic_source_type_available).length,132);
+assert.ok(wave4.rows.every(x=>unassigned.has(x.evidence_id)&&x.original_source_id_verified&&!x.app_publication_allowed));
+const firstFour=[...wave.rows,...get("customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json").rows,...get("customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json").rows,...wave4.rows];
+assert.equal(new Set(firstFour.map(x=>x.evidence_id)).size,800);
+assert.equal(coverage.progress.evidence_only_source_scope_first_pass.done,800);
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 linked evidence/3295 separately indexed, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
