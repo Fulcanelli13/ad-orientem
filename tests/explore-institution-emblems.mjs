@@ -6,7 +6,7 @@ import {
 import { exploreMapFeatures, MASS_MAP_GROUP_COLORS } from "../src/find/map-runtime.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
-  ["FSSP","IBP","ICKSP","SSPX"].sort(),
+  ["FSSP","IBP","ICKSP","SSPX","AASJMV"].sort(),
   "Only institutions with a sourced emblem may receive one");
 assert.equal(massInstitutionEmblem("diocesan"),null,
   "A diocesan venue is not the Holy See and must use a neutral identity");
