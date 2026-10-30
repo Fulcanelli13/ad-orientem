@@ -106,10 +106,32 @@ const CSS = `
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryNamedTimeline .aoDevoStop{padding:5px 8px!important}
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard .aoRosaryPrayerScroll{font-size:19px}
 }
-/* iPhone SE height: the optional artwork should not push the first prayer
-   entirely beneath the native dock; long canonical prayers still scroll. */
-@media(max-width:359px) and (max-height:650px){
- #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .pbShell>.lab-rosary-hero{display:none!important}
+/* Rosary R2 visual review: give the source-owned opening prayer priority
+   over large decorative chrome, without removing any navigation or beads. */
+@media(max-width:399px){
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .lab-view-head{
+  padding-block:7px!important;min-height:0!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryNamedTimeline{
+  margin-block:3px!important;min-height:0!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard{
+  padding:10px 12px 9px!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard > h2.aoDevoCardTitle{
+  margin-bottom:6px!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard .aoRosaryPrayerScroll,
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard.aoRosaryPrayerScroll{
+  min-height:min(145px,27dvh)!important;max-height:min(37dvh,310px)!important;
+  padding:7px 5px min(12dvh,92px) 3px!important;
+ }
+}
+/* At 320px the small decorative emblem consumes a whole prayer line.
+   Keep the artwork slot/source association; remove only the display of the
+   optional emblem on short phones. Crucially, no direct-child assumption. */
+@media(max-width:359px) and (max-height:740px){
+ #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .lab-rosary-hero{display:none!important}
  #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard{
   padding:8px 10px!important
  }
