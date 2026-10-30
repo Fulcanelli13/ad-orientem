@@ -40,6 +40,12 @@ try{
    await donor.locator("[data-lab-rosary-today]").click();
    await page.waitForFunction(()=>document.querySelector(
     '#aoPrayerBookRoot.open[data-ao-rosary-r2="v1"]'),null,{timeout:14000});
+   // Focus is applied in a requestAnimationFrame by the canonical active-card
+   // module. Do not measure an unmarked opening prayer in an earlier frame.
+   await page.waitForFunction(()=>Boolean(document.querySelector(
+    '#aoPrayerBookRoot.open .aoRosaryActiveCard .aoDevoParagraph[data-ao-devo-active="true"]')),
+    null,{timeout:10000});
+   await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
    const baseline=await page.evaluate(()=>{
     const r=document.querySelector("#aoPrayerBookRoot.open");
     const shell=r?.querySelector(".pbShell");
