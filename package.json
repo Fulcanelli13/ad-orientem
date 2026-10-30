@@ -5,7 +5,7 @@
   "scripts": {
     "test:quiet-devotional-progression": "node tests/quiet-devotional-progression.mjs",
     "test:mercy-beads": "node tests/mercy-bead-navigation.mjs && node tests/pray-chaplet-f07-contract.mjs && node tests/pray-chaplet-f07-variants-contract.mjs",
-    "test:angelus-folio": "node tests/angelus-folio-contract.mjs && node tests/pray-cruciform-navigation.mjs && node tests/pray-design-pilot-contract.mjs",
+    "test:angelus-folio": "node tests/angelus-folio-contract.mjs && node tests/pray-cruciform-navigation.mjs && node tests/pray-design-pilot-contract.mjs && node tests/pray-card-art-bindings.mjs",
     "test:formation-integrated-corrections": "node tests/formation-integrated-owner-corrections.mjs",
     "test:wave1": "node tests/wave01-contracts.mjs",
     "test:b005": "node tests/b005-low-objective.mjs",
