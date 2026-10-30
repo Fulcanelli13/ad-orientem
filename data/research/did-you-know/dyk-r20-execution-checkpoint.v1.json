@@ -1,0 +1,100 @@
+{
+  "schema": "AO_DYK_R20_RECONCILIATION_CHECKPOINT_V1",
+  "date": "2026-10-30",
+  "status": "1001_FIRST_PASS_CLASSIFIED_ZERO_FINAL",
+  "counts": {
+    "total": 1001,
+    "source_first_216": 216,
+    "older_145": 145,
+    "definitions_440": 440,
+    "contextual_200": 200,
+    "private_home_preview": 612,
+    "glossary_unique_entry_ids": 440,
+    "definition_source_ids_already_in_home": 343,
+    "contextual_exact_EN_home": 142,
+    "contextual_same_source_home_variants": 14,
+    "contextual_source_not_in_home": 44,
+    "featured_for_review": 168,
+    "final_approved": 0,
+    "published_new": 0,
+    "triaged": 1001,
+    "by_status": {
+      "FEATURED_FOR_REVIEW": 168,
+      "HOLD_SOURCE_OR_SCOPE": 23,
+      "RESERVE_FOR_BALANCE": 100,
+      "CONSOLIDATE_WITH_RELATED": 42,
+      "LEARN_GLOSSARY_REFERENCE_ONLY": 440,
+      "EXACT_HOME_PREVIEW_ALIAS": 142,
+      "SAME_SOURCE_HOME_VARIANT": 14,
+      "LEARN_REFERENCE_OR_MASS_RESERVE": 20,
+      "CONSOLIDATE_OR_SPREAD_FESTIVAL": 33,
+      "HOLD_SCOPE_OR_QUALITY": 19
+    },
+    "by_batch": {
+      "ORIGINAL_145": {
+        "FEATURED_FOR_REVIEW": 74,
+        "HOLD_SOURCE_OR_SCOPE": 14,
+        "RESERVE_FOR_BALANCE": 15,
+        "CONSOLIDATE_WITH_RELATED": 42
+      },
+      "GLOSSARY_DEFINITIONS_440": {
+        "LEARN_GLOSSARY_REFERENCE_ONLY": 440
+      },
+      "GLOSSARY_CONTEXTUAL_200": {
+        "EXACT_HOME_PREVIEW_ALIAS": 142,
+        "SAME_SOURCE_HOME_VARIANT": 14,
+        "HOLD_SOURCE_OR_SCOPE": 9,
+        "RESERVE_FOR_BALANCE": 7,
+        "LEARN_REFERENCE_OR_MASS_RESERVE": 20,
+        "FEATURED_FOR_REVIEW": 8
+      },
+      "SOURCE_FIRST_216": {
+        "RESERVE_FOR_BALANCE": 78,
+        "FEATURED_FOR_REVIEW": 86,
+        "CONSOLIDATE_OR_SPREAD_FESTIVAL": 33,
+        "HOLD_SCOPE_OR_QUALITY": 19
+      }
+    },
+    "incorrect_older_assumed_ids_corrected": 5
+  },
+  "known_legacy_target_corrections": [
+    {
+      "source": "DYK-SF01-019",
+      "proposed": "DYK-R05-G066",
+      "corrected": "DYK-R06-G066"
+    },
+    {
+      "source": "DYK-SF01-020",
+      "proposed": "DYK-R05-G075",
+      "corrected": null
+    },
+    {
+      "source": "DYK-SF01-022",
+      "proposed": "DYK-R05-G198",
+      "corrected": "DYK-R05-G182"
+    },
+    {
+      "source": "DYK-SF01-024",
+      "proposed": "DYK-R05-G187",
+      "corrected": "DYK-R06-G187"
+    },
+    {
+      "source": "DYK-SF01-026",
+      "proposed": "DYK-R05-G189",
+      "corrected": "DYK-R06-G189"
+    }
+  ],
+  "notes": [
+    "612 private preview Home cards are a separate pool, not additive to 1001 research records.",
+    "440 glossary definitions are Learn/reference seed records and 200 context variants belong to those same 440 glossary source entries.",
+    "142 contextual English statements exactly match Home preview statements; 14 additional contextual source IDs match Home while wording varies.",
+    "Featured means editorial candidate, not signed-off published card.",
+    "Revisit 145 initial generated English copy: many start with 'Did you know that' and require removal of question-style wrapper before Home display.",
+    "No live Home import is implied; existing 612 preview and 12/day remain unchanged."
+  ],
+  "files": [
+    "dyk-r20-unified-1001-first-pass-ledger.v1.json",
+    "dyk-r20-glossary-640-dedupe-crosswalk.v1.json",
+    "dyk-r20-execution-checkpoint.v1.json"
+  ]
+}
