@@ -2933,13 +2933,16 @@ function renderMercy(){
      esc(mode==='individual'?L('Alone','Seul'):L('With others','À plusieurs'))+'</button>').join('')+'</div></div>';
  // Direct decade beads and source-true prayer scrolling are the only routine
  // navigation. A final explicit Finish does not add another prayer or arrow.
- const dock=index===steps.length-1?
-  '<footer class="aoF07MercyDock"><output aria-label="'+
-   esc(L('Prayer position','Position de la prière'))+'">'+(index+1)+' / '+steps.length+'</output>'+
-   '<button type="button" class="aoF07MercyDockNext" data-p435930-mercy-finish>'+
-    esc(L('Finish chaplet','Terminer le chapelet'))+'</button></footer>':'';
+ const dock=CHAPLET_F07_PILOT_ENABLED?
+  '<footer class="aoF07MercyDock">'+
+   '<button type="button" class="aoF07MercyDockPrev" data-p435930-mercy-prev aria-label="'+esc(L('Previous prayer','Prière précédente'))+'" '+(index===0?'disabled':'')+'>‹</button>'+
+   '<output aria-label="'+esc(L('Prayer position','Position de la prière'))+'">'+(index+1)+' / '+steps.length+'</output>'+
+   (index===steps.length-1?
+    '<button type="button" class="aoF07MercyDockNext" data-p435930-mercy-finish>'+esc(L('Finish','Terminer'))+'</button>':
+    '<button type="button" class="aoF07MercyDockNext" data-p435930-mercy-next>'+esc(L('Next','Suivant'))+' ›</button>')+
+   '</footer>':'';
 
- return `${head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Five decades · St Faustina, 1935','Cinq dizaines · Sainte Faustine, 1935'))}<main class="aoP435930Body aoMercyReader" data-ao-mercy-deck="chapters-v1" data-ao-mercy-bead-reader="quiet-v1" ${CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-chaplet="crown-v1"':''}><details class="aoMercyOptional aoBatch02MercyOpenings" data-ao-mercy-opening-options><summary>${esc(L('Optional prayers before the Chaplet · St Faustina','Prières facultatives avant le chapelet · sainte Faustine'))}</summary><p>${esc(L('These are additional opening devotions, not new rosary beads. The original prayer wording is available at the official source; modern English translations are not reproduced without permission or independent reuse rights. French and Latin are not fabricated.','Ces prières préliminaires sont facultatives et ne constituent pas de nouveaux grains. Le texte se consulte dans sa source officielle ; aucune traduction française ou latine n’est inventée.'))}</p>${MERCY_OPTIONAL_OPENINGS.map(x=>`<p><a href="${esc(x.source)}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a> · ${esc(x.diary)} <small>EN · ${esc(L('source-only','lien vers la source'))}</small></p>`).join('')}</details>${CHAPLET_F07_PILOT_ENABLED?renderMercyF07Crown(steps,index,{french:fr}):""}${CHAPLET_F07_PILOT_ENABLED?recitation+chapterChips:""}${mercyBeadNavHTML(steps,index,{french:fr})}<section class="aoDevoCard" data-ao-devo-card="${esc(activeChapter.id)}"><header class="aoDevoCardHead"><h2 class="aoDevoCardTitle">${esc(activeChapter.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(activeChapter.title)}">${prayerParagraphs}</div></section>${CHAPLET_F07_PILOT_ENABLED?dock:""}<p class="aoMercyNote">${esc(note)}</p>${MERCY.guide==='guided'?'<p class="aoMercyHelp">'+esc(L('Contemplate the sorrowful Passion of Our Lord and pray for the whole world. Continue at your own pace.','Méditez la douloureuse Passion de Notre-Seigneur et priez pour le monde entier. Avancez à votre rythme.'))+'</p>':''}<details class="aoMercyOptional" data-ao-mercy-options ${MERCY.optionsOpen?"open":""}><summary>${esc(L("Prayer options","Options de prière"))}<small>${esc(L("Guidance and concluding prayer","Guide et prière finale"))}</small></summary><div class="aoMercyOptions"><button type="button" data-p435930-mercy-guide aria-pressed="${MERCY.guide==='guided'}">${esc(L('Guided explanation','Explication guidée'))}</button><button type="button" data-p435930-mercy-closing aria-pressed="${MERCY.includeClosing}">${esc(L('Optional concluding prayer','Prière finale facultative'))}</button></div></details><details class="aoMercySource"><summary>${esc(L("Notes & sources","Notes et sources"))}</summary><a href="${esc(MERCY_WITNESSES[language])}" target="_blank" rel="noopener noreferrer">${esc(L('Original published prayer sequence','Texte et ordre publiés'))} ↗</a></details></main>`;
+ return `${head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Five decades · St Faustina, 1935','Cinq dizaines · Sainte Faustine, 1935'))}<main class="aoP435930Body aoMercyReader" data-ao-mercy-deck="chapters-v1" data-ao-mercy-bead-reader="quiet-v1" ${CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-chaplet="crown-v1"':''}><details class="aoMercyOptional aoBatch02MercyOpenings" data-ao-mercy-opening-options><summary>${esc(L('Optional prayers before the Chaplet · St Faustina','Prières facultatives avant le chapelet · sainte Faustine'))}</summary><p>${esc(L('These are additional opening devotions, not new rosary beads. The original prayer wording is available at the official source; modern English translations are not reproduced without permission or independent reuse rights. French and Latin are not fabricated.','Ces prières préliminaires sont facultatives et ne constituent pas de nouveaux grains. Le texte se consulte dans sa source officielle ; aucune traduction française ou latine n’est inventée.'))}</p>${MERCY_OPTIONAL_OPENINGS.map(x=>`<p><a href="${esc(x.source)}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a> · ${esc(x.diary)} <small>EN · ${esc(L('source-only','lien vers la source'))}</small></p>`).join('')}</details>${CHAPLET_F07_PILOT_ENABLED?renderMercyF07Crown(steps,index,{french:fr}):""}${CHAPLET_F07_PILOT_ENABLED?recitation+chapterChips:""}${mercyBeadNavHTML(steps,index,{french:fr})}<section class="aoDevoCard" data-ao-devo-card="${esc(activeChapter.id)}"><header class="aoDevoCardHead"><h2 class="aoDevoCardTitle">${esc(activeChapter.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(activeChapter.title)}">${CHAPLET_F07_PILOT_ENABLED?'<p class="aoF07MercyRubric">'+esc(note)+'</p>':''}${prayerParagraphs}</div></section>${CHAPLET_F07_PILOT_ENABLED?dock:""}<p class="aoMercyNote">${esc(note)}</p>${MERCY.guide==='guided'?'<p class="aoMercyHelp">'+esc(L('Contemplate the sorrowful Passion of Our Lord and pray for the whole world. Continue at your own pace.','Méditez la douloureuse Passion de Notre-Seigneur et priez pour le monde entier. Avancez à votre rythme.'))+'</p>':''}<details class="aoMercyOptional" data-ao-mercy-options ${MERCY.optionsOpen?"open":""}><summary>${esc(L("Prayer options","Options de prière"))}<small>${esc(L("Guidance and concluding prayer","Guide et prière finale"))}</small></summary><div class="aoMercyOptions"><button type="button" data-p435930-mercy-guide aria-pressed="${MERCY.guide==='guided'}">${esc(L('Guided explanation','Explication guidée'))}</button><button type="button" data-p435930-mercy-closing aria-pressed="${MERCY.includeClosing}">${esc(L('Optional concluding prayer','Prière finale facultative'))}</button></div></details><details class="aoMercySource"><summary>${esc(L("Notes & sources","Notes et sources"))}</summary><a href="${esc(MERCY_WITNESSES[language])}" target="_blank" rel="noopener noreferrer">${esc(L('Original published prayer sequence','Texte et ordre publiés'))} ↗</a></details></main>`;
 }
 function renderRosaryMethods(){
  const allowed=['ordinary','dominican','montfort','montfort_short','scriptural'];
@@ -3266,20 +3269,29 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     if(CHAPLET_F07_PILOT_ENABLED){
       const crown=m.querySelector('[data-ao-f07-crown]');
       if(crown)crown.outerHTML=renderMercyF07Crown(steps,i,{french:isFr()});
-      // Focus changes originate in the original prayer-scrolling engine.
-      // Reconcile only the end affordance in-place; rerendering the whole
-      // chapter here would interrupt the canonical reading position.
-      let finish=m.querySelector('.aoF07MercyDock');
-      if(i===steps.length-1&&!finish){
-        finish=document.createElement('footer');
-        finish.className='aoF07MercyDock';
-        finish.innerHTML='<output aria-label="'+
-          esc(L('Prayer position','Position de la prière'))+'">'+(i+1)+' / '+steps.length+'</output>'+
-          '<button type="button" class="aoF07MercyDockNext" data-p435930-mercy-finish>'+
-          esc(L('Finish chaplet','Terminer le chapelet'))+'</button>';
-        m.querySelector('.aoMercyReader .aoDevoCard')?.insertAdjacentElement('afterend',finish);
-      }else if(i!==steps.length-1&&finish){
-        finish.remove();
+      // The source paragraph scroll is authoritative. Keep the shared bottom
+      // navigation and one italic instruction aligned without rerendering.
+      const dock=m.querySelector('.aoF07MercyDock');
+      if(dock){
+        const prev=dock.querySelector('[data-p435930-mercy-prev]');
+        if(prev)prev.disabled=i===0;
+        const output=dock.querySelector('output');
+        if(output)output.textContent=(i+1)+' / '+steps.length;
+        const next=dock.querySelector('[data-p435930-mercy-next],[data-p435930-mercy-finish]');
+        if(next){
+          const last=i===steps.length-1;
+          next.removeAttribute('data-p435930-mercy-next');
+          next.removeAttribute('data-p435930-mercy-finish');
+          next.setAttribute(last?'data-p435930-mercy-finish':'data-p435930-mercy-next','');
+          next.textContent=last?L('Finish','Terminer'):L('Next','Suivant')+' ›';
+        }
+      }
+      const rubric=m.querySelector('.aoF07MercyRubric');
+      if(rubric){
+        const group=steps[i].group;
+        rubric.textContent=group==='large-bead'?L('Pray once on the large bead.','Récitez une fois sur le gros grain.'):
+          group==='small-bead'?L('Pray on each of the ten small beads.','Récitez sur chacun des dix petits grains.'):
+          group==='conclusion'?L('Repeat three times.','Répétez trois fois.'):'';
       }
     }
 
@@ -3611,6 +3623,13 @@ function onClick(e){
       const mode=b.dataset.p435930MercyRecite;
       if(!['individual','group'].includes(mode))return;
       setRecitationMode(mode);return render();
+    }
+    if(b.hasAttribute('data-p435930-mercy-prev')||b.hasAttribute('data-p435930-mercy-next')){
+      const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
+      const direction=b.hasAttribute('data-p435930-mercy-prev')?-1:1;
+      const next=MERCY.step+direction;
+      if(next<0||next>=steps.length)return;
+      MERCY.finished=false;MERCY.step=next;return render();
     }
     if(b.hasAttribute('data-p435930-mercy-finish')){
       if(MERCY.step!==divineMercySteps({includeClosing:MERCY.includeClosing}).length-1)return;
