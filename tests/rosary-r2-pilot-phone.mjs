@@ -77,11 +77,14 @@ try{
      text:shell?.querySelector(".aoRosaryActiveCard")?.innerText?.trim()?.length||0
     };
    });
+   console.log("ROSARY_R2_PHONE_DIAGNOSTICS "+JSON.stringify({width,height,...baseline}));
+   await page.screenshot({path:resolve(artifacts,"rosary-r2-"+width+"x"+height+"-opening.png"),animations:"disabled"});
    assert.equal(baseline.roots,1,"One canonical Rosary donor only");
    assert.ok(baseline.count>60&&baseline.chapters>=7,"Original steps and named chapters missing");
    assert.equal(baseline.firstMystery,"I","R2 must use Roman mystery pills");
    assert.equal(baseline.current,1,"Exactly one current chapter");
-   assert.ok(baseline.nativeBeads>0&&baseline.caption===1,"Original bead controls and one R2 caption");
+   assert.ok(baseline.nativeBeads>0&&baseline.caption===1,
+    "Original bead controls and one R2 caption: "+JSON.stringify(baseline));
    assert.equal(baseline.openingPill,"Opening","Opening pill must not repeat its title");
    assert.equal(baseline.dockCount,1,"Native Previous/Next row must be one R2 phone dock");
    assert.equal(baseline.rowChildren,2,"Dock must preserve only the native two navigation buttons");
@@ -92,7 +95,6 @@ try{
    assert.ok(baseline.prayerAboveDock>=18,"The first actual prayer must be readable before scrolling at "+
      width+"x"+height+": "+JSON.stringify(baseline));
    assert.ok(baseline.overflow<=2,"Phone horizontal overflow");
-   await page.screenshot({path:resolve(artifacts,"rosary-r2-"+width+"x"+height+"-opening.png"),animations:"disabled"});
    await donor.locator("[data-lab-rosary-next]").click();
    await page.waitForFunction(before=>window.AO_ROSARY_V381?.state?.()?.step===before+1,
      baseline.step,{timeout:10000});
