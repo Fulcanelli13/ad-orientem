@@ -96,7 +96,7 @@ for(const [key,value] of Object.entries({
   assert.equal(x[key]+postReviewAdmissions.length+(key==="published_custom_attestations"?postReviewAttestationEnrichments.length:0),value,key+" drifted beyond approved post-review admissions");
   continue;
  }
- assert.equal(x[key]+(key==="published_relic_site_claims"?1:0),value,key+" changed beyond permitted post-snapshot source-backed Père Laval relic");
+ assert.equal(x[key]+(key==="published_relic_site_claims"?5:0),value,key+" changed beyond five later source-backed Place relic holdings");
 }
 const knownCustomIds=new Set(C.customs.map(c=>c.custom_id));
 assert.equal(knownCustomIds.size,C.customs.length);
