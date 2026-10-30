@@ -1,0 +1,312 @@
+{
+  "schema": "AO_DYK_PITRE_STORY_EDITORIAL_TIER_V1",
+  "date": "2026-10-30",
+  "status": "SOURCE_BOUND_HISTORY_STORY_COPY_EDITORIAL_RESEARCH_ONLY",
+  "original_source_proposal_file": "data/research/did-you-know/dyk-pitre-12-festival-stories.v1.json",
+  "description": "Rewrites 12 prior source-composite Pitrè festival proposals as short declarative EN/FR text; curates 8 distinct-feature family leads and 4 reserves. No extra active 145-card count, no historical custom promotion.",
+  "counts": {
+    "original_story_proposals": 12,
+    "feature": 8,
+    "reserve": 4,
+    "added_active_fact_records": 0,
+    "independently_verified_1900_authors": 0,
+    "approved": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "proposal_id": "DYK-STORY-PITRE-01",
+      "festival_family": "ST_JOSEPH_SICILIAN_TOWNS",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "Saint Joseph tables in several Sicilian towns set places for guests representing the Holy Family; some households invited people in need.",
+        "fr": "Dans plusieurs villes siciliennes, les tables de saint Joseph accueillaient des convives figurant la Sainte Famille ; certains foyers invitaient des personnes démunies."
+      },
+      "claim_scope_note": "Do not describe all town guests as poor; roles varied by locality.",
+      "underlying_source_fact_ids": [
+        "DYK-UM01-021",
+        "DYK-UM01-022",
+        "DYK-UM01-023"
+      ],
+      "original_observation_ids": [
+        "PIT1900-IT-008",
+        "PIT1900-IT-026",
+        "PIT1900-IT-036"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-02",
+      "festival_family": "ST_JOSEPH_SICILIAN_TOWNS",
+      "editorial_tier": "RESERVE",
+      "display_statement": {
+        "en": "At Ribera's old Saint Joseph festival, laurel boughs entered town on horseback and great decorative loaves hung on walls.",
+        "fr": "Lors de l'ancienne fête de saint Joseph à Ribera, des branches de laurier entraient en ville à cheval et de grands pains décoratifs ornaient les murs."
+      },
+      "claim_scope_note": "Linked theatrical refusal-of-lodging detail retained in original observation, omitted for brevity.",
+      "underlying_source_fact_ids": [
+        "DYK-UM01-025",
+        "DYK-UM01-026",
+        "DYK-UM01-028"
+      ],
+      "original_observation_ids": [
+        "PIT1900-IT-011",
+        "PIT1900-IT-017",
+        "PIT1900-IT-002"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-03",
+      "festival_family": "ST_JOSEPH_SICILIAN_TOWNS",
+      "editorial_tier": "RESERVE",
+      "display_statement": {
+        "en": "Pitrè described Saint Joseph celebrations at Canicattini on 19 March and, historically, on the first Sunday of September.",
+        "fr": "Pitrè décrivait à Canicattini des fêtes de saint Joseph le 19 mars et, autrefois, le premier dimanche de septembre."
+      },
+      "claim_scope_note": "Do not imply current second feast is officially observed.",
+      "underlying_source_fact_ids": [
+        "DYK-UM01-030"
+      ],
+      "original_observation_ids": [
+        "PIT1900-IT-024"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-04",
+      "festival_family": "PALERMO_ST_ROSALIA",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "Palermo's old Saint Rosalia celebrations combined a monumental triumphal cart with a distinct procession of her relics.",
+        "fr": "Les anciennes fêtes de sainte Rosalie à Palerme comprenaient un char triomphal monumental et une procession distincte de ses reliques."
+      },
+      "claim_scope_note": "Two festival components, not necessarily the same single procession.",
+      "underlying_source_fact_ids": [
+        "DYK-UM02-027",
+        "DYK-UM02-029",
+        "DYK-UM03-026"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-009",
+        "PIT1900-NEW-021",
+        "PIT1900-NEW-005"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-05",
+      "festival_family": "PALERMO_ST_ROSALIA",
+      "editorial_tier": "RESERVE",
+      "display_statement": {
+        "en": "During historical Saint Rosalia celebrations, spectators watched fireworks from lantern-decorated boats in Palermo's gulf.",
+        "fr": "Lors d'anciennes fêtes de sainte Rosalie, des spectateurs regardaient les feux d'artifice depuis des barques ornées de lanternes dans le golfe de Palerme."
+      },
+      "claim_scope_note": "Civic festivities and cultural context, not official liturgy.",
+      "underlying_source_fact_ids": [
+        "DYK-UM02-028"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-018"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-06",
+      "festival_family": "PALERMO_COSMAS_DAMIAN",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "In an old Palermo procession, fishermen carried Saints Cosmas and Damian while children bore small flower-topped water jugs.",
+        "fr": "Lors d'une ancienne procession à Palerme, des pêcheurs portaient les saints Côme et Damien tandis que des enfants tenaient de petites cruches d'eau ornées de fleurs."
+      },
+      "claim_scope_note": "Statue/litter should be understood, not the saints bodily; avoid miraculous-water inference.",
+      "underlying_source_fact_ids": [
+        "DYK-UM02-034",
+        "DYK-UM02-035"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-045",
+        "PIT1900-NEW-048"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-07",
+      "festival_family": "PALERMO_COSMAS_DAMIAN",
+      "editorial_tier": "RESERVE",
+      "display_statement": {
+        "en": "Festival stalls in old Palermo offered sweets shaped like Saints Cosmas and Damian alongside painted scenes from their lives.",
+        "fr": "Lors d'anciennes fêtes à Palerme, des étals proposaient des friandises en forme des saints Côme et Damien et des scènes peintes de leur vie."
+      },
+      "claim_scope_note": "Market context; not universally permitted liturgical iconography or Mass action.",
+      "underlying_source_fact_ids": [
+        "DYK-UM02-032",
+        "DYK-UM03-033"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-033",
+        "PIT1900-NEW-037"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-08",
+      "festival_family": "PIAZZA_ARMERINA_ASSUMPTION",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "At Piazza Armerina, a decorated Marian banner passed in an Assumption procession, while a separate cavalcade portrayed Count Roger's entry.",
+        "fr": "À Piazza Armerina, une bannière mariale ornée paraissait dans la procession de l'Assomption, tandis qu'une cavalcade distincte représentait l'entrée du comte Roger."
+      },
+      "claim_scope_note": "Do not certify the local Count Roger legend as independent history.",
+      "underlying_source_fact_ids": [
+        "DYK-UM03-037",
+        "DYK-UM03-038",
+        "DYK-UM02-038"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-059",
+        "PIT1900-NEW-063",
+        "PIT1900-NEW-062"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-09",
+      "festival_family": "GANGI_HOLY_SPIRIT",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "In Gangi, a historical Holy Spirit feast followed seven Thursday celebrations and involved nine confraternities.",
+        "fr": "À Gangi, une ancienne fête du Saint-Esprit succédait à sept jeudis de célébrations et réunissait neuf confréries."
+      },
+      "claim_scope_note": "Historical local sequence, not a 1962 liturgical octave or current universal practice.",
+      "underlying_source_fact_ids": [
+        "DYK-UM02-040",
+        "DYK-UM03-040"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-073",
+        "PIT1900-NEW-070"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-10",
+      "festival_family": "GRATTERI_ST_JAMES",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "At Gratteri, Saint James's statue visited homes and orchards; grape clusters were tied to its silver staff.",
+        "fr": "À Gratteri, la statue de saint Jacques visitait maisons et vergers ; des grappes de raisin étaient attachées à son bâton d'argent."
+      },
+      "claim_scope_note": "Reported source context; not confirmation of accompanying folk beliefs.",
+      "underlying_source_fact_ids": [
+        "DYK-UM02-042",
+        "DYK-UM02-043",
+        "DYK-UM02-044"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-075",
+        "PIT1900-NEW-078",
+        "PIT1900-NEW-080"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-11",
+      "festival_family": "GERACI_BLESSED_SACRAMENT",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "At a historical Eucharistic festival in Geraci Siculo, shepherds rode in a cavalcade carrying ribboned displays of animal-shaped cheeses.",
+        "fr": "Lors d'une ancienne fête eucharistique à Geraci Siculo, les bergers défilaient à cheval avec des présentoirs ornés de rubans et de fromages en forme d'animaux."
+      },
+      "claim_scope_note": "A popular celebration associated with the Blessed Sacrament, not an attested official Eucharistic liturgical rite.",
+      "underlying_source_fact_ids": [
+        "DYK-UM02-046",
+        "DYK-UM02-048"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-085",
+        "PIT1900-NEW-095"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    },
+    {
+      "proposal_id": "DYK-STORY-PITRE-12",
+      "festival_family": "MARINEO_ST_CYRUS",
+      "editorial_tier": "FEATURE",
+      "display_statement": {
+        "en": "A Saint Cyrus festival in Marineo staged a street drama with townspeople dressed as soldiers, hermits, angels and allegorical virtues and vices.",
+        "fr": "Lors d'une fête de saint Cyr à Marineo, une représentation de rue réunissait des habitants déguisés en soldats, ermites, anges, vertus et vices personnifiés."
+      },
+      "claim_scope_note": "Historical staged drama, not required Roman ceremony.",
+      "underlying_source_fact_ids": [
+        "DYK-UM03-049",
+        "DYK-UM03-050"
+      ],
+      "original_observation_ids": [
+        "PIT1900-NEW-116",
+        "PIT1900-NEW-119"
+      ],
+      "source_original_scan_page_anchored": true,
+      "single_author_corroboration_boundary": "ONE_1900_PITRE_COMPILATION_NOT_INDEPENDENT_AUTHORS",
+      "approved": false,
+      "french_reviewed": false,
+      "route_verified": false,
+      "published": false
+    }
+  ]
+}
