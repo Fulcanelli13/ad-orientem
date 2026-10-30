@@ -1,0 +1,29 @@
+{
+  "schema": "AO_SACRED_ART_COMMONS_305_WORK_QID_SUMMARY_V1",
+  "at": "2026-10-30T04:44:36.157Z",
+  "upstreamAudit": "data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json",
+  "researchLedger": "data/calendar/sacred-art-phase1-commons-305-structured-work-leads-20261030.v1.json",
+  "counts": {
+    "sourceCards": 305,
+    "upstreamVerifiedSourceFilePages": 305,
+    "mediaInfoEntitiesResolved": 305,
+    "mediaInfoMissing": 0,
+    "queryFailures": 0,
+    "upstreamUnverifiedNotQueried": 0,
+    "sourceFilesWithP6243SpecificArtworkId": 0,
+    "distinctP6243ArtworkQIds": 0,
+    "sameWikidataWorkIdMultipleFileSourceGroups": 0,
+    "sourceFilesWithDepictsOnlyButNotP6243": 0,
+    "sourceFilesWithCopyrightStatusStatement": 0,
+    "sourceFilesWithCopyrightLicenceStatement": 0,
+    "exactMuseumPhysicalPaintingMatchesEstablished": 0,
+    "canonical383NewIdentityLinks": 0,
+    "photoRightsCertified": 0,
+    "originalPhotosVisuallyCertified": 0,
+    "productionImports": 0
+  },
+  "sameWorkMediaGroups": [],
+  "statementsNotCertifiedAsMuseumPhysicalObject": true,
+  "sourcePhotoLicenseAndVisualStillUncertified": true,
+  "productionMutation": false
+}
