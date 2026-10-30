@@ -24,7 +24,7 @@
     "case_pairs_with_one_original_printed_passage_verified": 6,
     "case_pairs_without_new_printed_passage": 8,
     "unique_original_printed_page_anchors": 4,
-    "original_printed_source_pages_examined_this_pass": 7,
+    "original_printed_source_pages_examined_this_pass": 8,
     "case_pairs_with_both_independently_verified_original_printed_pages": 0,
     "new_source_independence_certifications": 0,
     "original_caseboard_total": 79,
@@ -225,7 +225,9 @@
       "canonical_custom_approved": false,
       "indulgence_grant_verified": false,
       "calendar_publication_allowed": false,
-      "next_gate": "Locate one original printed source before weighing independence; hosted reprints are not independent attestation."
+      "next_gate": "Locate one original printed source before weighing independence; hosted reprints are not independent attestation.",
+      "book_level_dependency_warning": "McLoughlin explicitly acknowledges earlier Therese Mueller liturgical-family work in her introductory source discussion; this is not an exact-action copying proof.",
+      "book_level_dependency_evidence_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=927"
     },
     {
       "case_id": "CC3WORK-REL-007",
@@ -636,7 +638,9 @@
       "canonical_custom_approved": false,
       "indulgence_grant_verified": false,
       "calendar_publication_allowed": false,
-      "next_gate": "Locate one original printed source before weighing independence; hosted reprints are not independent attestation."
+      "next_gate": "Locate one original printed source before weighing independence; hosted reprints are not independent attestation.",
+      "book_level_dependency_warning": "McLoughlin explicitly acknowledges earlier Therese Mueller liturgical-family work in her introductory source discussion; this is not an exact-action copying proof.",
+      "book_level_dependency_evidence_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=927"
     },
     {
       "case_id": "CC3WORK-REL-017",
@@ -679,7 +683,9 @@
       "canonical_custom_approved": false,
       "indulgence_grant_verified": false,
       "calendar_publication_allowed": false,
-      "next_gate": "Locate one original printed source before weighing independence; hosted reprints are not independent attestation."
+      "next_gate": "Locate one original printed source before weighing independence; hosted reprints are not independent attestation.",
+      "book_level_dependency_warning": "McLoughlin explicitly acknowledges earlier Therese Mueller liturgical-family work in her introductory source discussion; this is not an exact-action copying proof.",
+      "book_level_dependency_evidence_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=927"
     },
     {
       "case_id": "CC3WORK-REL-040",
@@ -723,6 +729,20 @@
       "indulgence_grant_verified": false,
       "calendar_publication_allowed": false,
       "next_gate": "Locate one original printed source before weighing independence; hosted reprints are not independent attestation."
+    }
+  ],
+  "additional_dependency_evidence": [
+    {
+      "source_work": "Helen McLoughlin — Family Customs: Easter to Pentecost (1956)",
+      "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=927",
+      "evidence": "Author's explanatory introduction acknowledges prior household-liturgical sources including Therese Mueller, P. Stewart Craig and Your Home, A Church in Miniature. Shows book-level source dependence exposure, not proof of borrowing of specific Easter-egg, Regina Caeli or Pentecost-rose passages.",
+      "affected_case_ids": [
+        "CC3WORK-REL-006",
+        "CC3WORK-REL-016",
+        "CC3WORK-REL-017"
+      ],
+      "implication": "PRIOR_BOOK_ACKNOWLEDGED_SPECIFIC_PASSAGE_DERIVATION_UNPROVED",
+      "new_independent_corroboration": false
     }
   ]
 }
