@@ -12,7 +12,7 @@ function providerGroup(affiliation,group){
   if(group==="SSPX")return "SSPX";
   if(group==="UNKNOWN")return "OTHER";
   const x=tidy(affiliation).toUpperCase();
-  if(x==="FSSP"||x==="ICKSP"||x==="IBP")return x;
+  if(["FSSP","ICKSP","IBP","AASJMV"].includes(x))return x;
   if(x.startsWith("DIOCESAN"))return "DIOCESAN";
   return "OTHER";
 }
