@@ -70,7 +70,7 @@ def candidates(row):
             ("https://upload.wikimedia.org/wikipedia/commons/thumb/"+h[0]+"/"+h[:2]+"/"+q+"/330px-"+q,"commons_exact_file_330"),
             ("https://upload.wikimedia.org/wikipedia/commons/"+h[0]+"/"+h[:2]+"/"+q,"commons_exact_original"),
         ])
-    return [(u,s) for u,s in dict(urls).items()] if False else list(dict.fromkeys(urls))
+    return list(dict.fromkeys(urls))
 
 def recover(job):
     card,row,batch=job
@@ -117,7 +117,7 @@ for batch,n in (("02",200),("03",171)):
     with (ROOT/("first-look-photo-review-batch-"+batch+".csv")).open(encoding="utf-8-sig",newline="") as f:
         rows={x["physical_work_group"]:x for x in csv.DictReader(f)}
     if set(rows)!={c["id"] for c in cards}:raise RuntimeError("CSV versus HTML identity drift")
-    before=sum(bool(c.get("preview","").startswith("data:image/")) for c in cards)
+    before=sum(bool((c.get("preview") or "").startswith("data:image/")) for c in cards)
     need=[(c,rows[c["id"]],batch) for c in cards if not (c.get("preview") or "").startswith("data:image/")]
     print("PHOTO_RECOVERY_BATCH",batch,"existing",before,"missing",len(need),flush=True)
     with ThreadPoolExecutor(max_workers=5) as pool:
@@ -136,7 +136,7 @@ for batch,n in (("02",200),("03",171)):
         else:
             c["available"]=False
             manifest["stillMissing"].append(detail)
-    after=sum(bool(c.get("preview","").startswith("data:image/")) for c in cards)
+    after=sum(bool((c.get("preview") or "").startswith("data:image/")) for c in cards)
     if after<before or after-before!=len([r for r in results if r[1]]):
         raise RuntimeError("Preview preservation/count invariant failed")
     payload=json.dumps(cards,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c").replace(">","\\u003e")
