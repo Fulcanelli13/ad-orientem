@@ -4,9 +4,11 @@
 const L=(fr,en,french)=>fr?french:en;
 const labelled=(value,choices)=>choices[value]??value??"—";
 
+// M1 is now the standard Mass entry. ?aoMassAccessM1=0 restores the
+// original preflight presentation without touching any saved R17 Mass.
 export function m1AccessPreviewRequested(win=globalThis){
-  try{return new URLSearchParams(win?.location?.search||"").get("aoMassAccessM1")==="1";}
-  catch{return false;}
+  try{return new URLSearchParams(win?.location?.search||"").get("aoMassAccessM1")!=="0";}
+  catch{return true;}
 }
 
 export function m1AccessRows(selection,{fr=false,optionalRites=false}={}){

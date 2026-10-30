@@ -149,7 +149,11 @@ export function createAppHostAdapter(win = globalThis) {
           if(!opened)return false;
           // M1 is an opt-in *shell presentation* of this same host-resolved
           // preflight, not another celebration selection or reader entry.
-          if(m1RootPreviewRequested(win)&&!activateM1MassRoot(win))return false;
+          // Presentation is not the source-open contract: if the host has
+          // explicitly opened its original preflight but its optional M1
+          // wrapper cannot yet mount, retain the usable preflight rather than
+          // announcing a failed Mass entry or jumping into R17.
+          if(m1RootPreviewRequested(win))activateM1MassRoot(win);
           return true;
         });
       }

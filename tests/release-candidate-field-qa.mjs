@@ -277,9 +277,11 @@ try{
     assert.equal(preflight.nativeMounted,false,viewport.width+"px fresh Mass entry bypassed preflight");
     assert.equal(preflight.legacyReader,false,viewport.width+"px fresh Mass entry exposed legacy reader ownership");
 
-    await page.locator("#ao-mass-flow-v1 [data-ao-close]").last().click();
-    await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
+    // M1 is a root destination, not a dismissible modal. Return using the
+    // canonical five-tab ribbon, retaining the same preflight source owner.
     await openSurface(page,"home",viewport.width);
+    await page.waitForFunction(()=>document.documentElement.dataset.aoM1MassRoot!=="true",
+      null,{timeout:5000});
 
     if(consoleErrors.length||failedResources.length)console.log("RC field QA resource diagnostics",JSON.stringify({viewport:viewport.width,consoleErrors,failedResources},null,2));
     assert.deepEqual(pageErrors,[],viewport.width+"px assembled app emitted page errors");
