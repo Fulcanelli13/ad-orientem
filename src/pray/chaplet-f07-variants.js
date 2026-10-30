@@ -120,6 +120,11 @@ const STYLES=`
 #aoPray435930 .aoF07VariantDot-response{border-radius:1px;transform:rotate(45deg)}
 #aoPray435930 .aoF07VariantDot[data-f07-status="passed"]{background:var(--liturgical,#c6ad83);opacity:.46}
 #aoPray435930 .aoF07VariantDot[data-f07-status="current"]{background:var(--liturgical,#c6ad83);border-color:var(--text,#fff2db);opacity:1;box-shadow:0 0 0 2px rgba(195,158,100,.2)}
+/* Five Wounds has both EN/FR and Home controls. Keep each in the right
+   header column, rather than letting Home fall into a new left-hand row. */
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head>div{grid-row:1/span 2}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head>.aoP435930SessionLanguage{grid-column:3;grid-row:1}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head>.aoP435930Home{grid-column:3;grid-row:2}
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"]>header{display:none}
 #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"]>header{display:none}
 #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"]>.aoLittleCrownIntro{display:none}
