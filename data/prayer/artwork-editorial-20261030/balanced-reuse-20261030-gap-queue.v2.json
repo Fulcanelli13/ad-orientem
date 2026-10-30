@@ -3,30 +3,19 @@
   "counts": {
     "blueprint_image_slots": 267,
     "covered_with_at_least_one_eligible_candidate": 263,
-    "with_any_defensible_candidate": 259,
+    "with_any_defensible_candidate": 263,
     "empty": 4,
-    "weak_only": 4,
-    "below_minimum_after_pruning": 33,
-    "pruned_weak_edges": 32,
+    "weak_only": 0,
+    "below_minimum_after_pruning": 31,
+    "pruned_weak_edges": 31,
     "user_accepted_first_five": 114,
     "user_accepted_later": 107,
-    "locked_covers": 5,
+    "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1545,
+    "artwork_edges_after_consolidation": 1548,
     "explicit_user_acceptances_never_auto_pruned": true
   },
   "items": [
-    {
-      "slot_id": "HERO-08",
-      "door": "Pray home",
-      "label": "Palm Sunday",
-      "priority": "A",
-      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
-      "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
-      "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
-    },
     {
       "slot_id": "HERO-10",
       "door": "Pray home",
@@ -36,18 +25,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
-    },
-    {
-      "slot_id": "HERO-14",
-      "door": "Pray home",
-      "label": "Pentecost",
-      "priority": "A",
-      "why": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA",
-      "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 1,
-      "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "HERO-17",
@@ -58,7 +36,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "HERO-18",
@@ -69,18 +47,7 @@
       "eligible_distinct_works": 11,
       "adequate_fit_distinct_works": 11,
       "minimum": 10,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
-    },
-    {
-      "slot_id": "HERO-20",
-      "door": "Pray home",
-      "label": "All Saints",
-      "priority": "A",
-      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 2,
-      "adequate_fit_distinct_works": 0,
-      "minimum": 2,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "HERO-21",
@@ -88,10 +55,10 @@
       "label": "All Souls",
       "priority": "A",
       "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
-      "eligible_distinct_works": 4,
-      "adequate_fit_distinct_works": 4,
+      "eligible_distinct_works": 5,
+      "adequate_fit_distinct_works": 5,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "DOOR-D1",
@@ -102,7 +69,7 @@
       "eligible_distinct_works": 6,
       "adequate_fit_distinct_works": 4,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "DOOR-D9",
@@ -113,7 +80,7 @@
       "eligible_distinct_works": 11,
       "adequate_fit_distinct_works": 11,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "COV-foundations_morning_offering",
@@ -124,7 +91,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-daily.morning",
@@ -135,7 +102,7 @@
       "eligible_distinct_works": 6,
       "adequate_fit_distinct_works": 4,
       "minimum": 6,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "COV-daily.evening",
@@ -146,7 +113,7 @@
       "eligible_distinct_works": 5,
       "adequate_fit_distinct_works": 4,
       "minimum": 6,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-sacrament_come_holy_spirit",
@@ -157,7 +124,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-traditional_veni_sancte_sequence",
@@ -168,7 +135,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.rosary-03",
@@ -179,7 +146,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.rosary-10",
@@ -190,7 +157,7 @@
       "eligible_distinct_works": 5,
       "adequate_fit_distinct_works": 4,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "STG-pray.rosary-13",
@@ -201,7 +168,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.rosary-14",
@@ -212,7 +179,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-novena.holy_ghost",
@@ -223,7 +190,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-novena.holy_ghost-01",
@@ -234,7 +201,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 5,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-novena.sacred_heart",
@@ -245,7 +212,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-novena.st_therese",
@@ -256,7 +223,7 @@
       "eligible_distinct_works": 0,
       "adequate_fit_distinct_works": 0,
       "minimum": 3,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
     },
     {
       "slot_id": "COV-novena.immaculate_heart",
@@ -267,7 +234,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-novena.st_anthony_nine_tuesdays",
@@ -278,7 +245,7 @@
       "eligible_distinct_works": 0,
       "adequate_fit_distinct_works": 0,
       "minimum": 3,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
     },
     {
       "slot_id": "COV-programme.first_friday",
@@ -289,7 +256,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-benediction_o_salutaris",
@@ -300,7 +267,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-pray.adoration",
@@ -311,7 +278,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 4,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.adoration-02",
@@ -322,7 +289,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-pray.benediction",
@@ -333,7 +300,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.benediction-02",
@@ -344,7 +311,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.benediction-03",
@@ -355,7 +322,7 @@
       "eligible_distinct_works": 0,
       "adequate_fit_distinct_works": 0,
       "minimum": 2,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
     },
     {
       "slot_id": "COV-pray.forty_hours",
@@ -366,7 +333,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-sacred_heart_aspiration_trust",
@@ -377,7 +344,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.seven_words-01",
@@ -388,7 +355,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "STG-pray.seven_words-04",
@@ -399,7 +366,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "STG-pray.seven_words-05",
@@ -410,7 +377,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "STG-pray.seven_words-06",
@@ -421,7 +388,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "VALIDATE_EXISTING_CONTEXTUAL_FIT_FIRST"
     },
     {
       "slot_id": "COV-prayer.sacred_heart",
@@ -432,7 +399,7 @@
       "eligible_distinct_works": 2,
       "adequate_fit_distinct_works": 2,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-devotion_st_anthony_lost_items",
@@ -443,7 +410,7 @@
       "eligible_distinct_works": 0,
       "adequate_fit_distinct_works": 0,
       "minimum": 2,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "EXACT_SUBJECT_RESEARCH_AFTER_EXISTING_GALLERY_SEARCH"
     },
     {
       "slot_id": "STG-pray.st_joseph_seven_sorrows-01",
@@ -454,29 +421,29 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-pray.litany_saints",
       "door": "D8 Saints & Angels",
       "label": "Cover",
       "priority": "B",
-      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 0,
+      "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "STG-pray.litany_saints-06",
       "door": "D8 Saints & Angels",
       "label": "Virgins and widows; all saints",
       "priority": "B",
-      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
+      "why": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED",
       "eligible_distinct_works": 1,
-      "adequate_fit_distinct_works": 0,
+      "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-church_prayer_for_pope",
@@ -487,18 +454,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 2,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
-    },
-    {
-      "slot_id": "COV-pray.for_priests",
-      "door": "D9 Life & Intentions",
-      "label": "Cover",
-      "priority": "B",
-      "why": "ONLY_WEAK_CANDIDATES_RESEARCH_REQUIRED",
-      "eligible_distinct_works": 4,
-      "adequate_fit_distinct_works": 0,
-      "minimum": 3,
-      "action": "SEARCH_EXISTING_GALLERY_THEN_TARGETED_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     },
     {
       "slot_id": "COV-prayer.good_death",
@@ -509,7 +465,7 @@
       "eligible_distinct_works": 1,
       "adequate_fit_distinct_works": 1,
       "minimum": 3,
-      "action": "CHECK_EXISTING_POOL_AND_IDENTITY_BEFORE_ANY_NEW_RESEARCH"
+      "action": "BELOW_TARGET_OPTIONAL_RESEARCH_IF_STRONG_ENOUGH_FOR_DEPLOY"
     }
   ],
   "unmapped_approved": [
@@ -609,5 +565,78 @@
       "title": "The Wedding at Cana \" \"",
       "origin": "BATCHES_06_11_USER_APPROVED"
     }
-  ]
+  ],
+  "editorial_second_pass": {
+    "policy": "Previously approved All Saints context reinstated; nonliteral Mass scenes excluded from Eucharistic rites; approved first-Saturday images mapped to current cover slot without destroying historical IDs.",
+    "changes": [
+      {
+        "slot": "HERO-20",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "APPROVED_ALL_SAINTS_SUBJECT"
+      },
+      {
+        "slot": "DOOR-D8",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "COV-pray.litany_saints",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "STG-pray.litany_saints-06",
+        "title": "Paradise",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "COV-pray.for_priests",
+        "title": "The Mass of Saint Gregory the Great",
+        "status": "PROMOTED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "COV-programme.first_saturday",
+        "title": "The Heart of Mary",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "COV-programme.first_saturday",
+        "title": "The Heart of Mary",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "COV-prayer.sacred_heart",
+        "title": "The Heart of Jesus",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "COV-prayer.sacred_heart",
+        "title": "The Heart of Jesus",
+        "status": "ALREADY_PRESENT"
+      },
+      {
+        "slot": "HERO-08",
+        "title": "Entry into Jerusalem",
+        "status": "ADDED",
+        "fit": "DIRECT_SUBJECT_CANDIDATE"
+      },
+      {
+        "slot": "HERO-21",
+        "title": "Angel Frees the Souls",
+        "status": "ADDED",
+        "fit": "CONTEXTUAL_REUSE_CANDIDATE"
+      },
+      {
+        "slot": "HERO-14",
+        "title": "Pentecost",
+        "status": "ADDED",
+        "fit": "DIRECT_SUBJECT_CANDIDATE"
+      }
+    ]
+  }
 }
