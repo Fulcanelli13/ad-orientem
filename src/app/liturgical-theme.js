@@ -44,7 +44,19 @@ export function liturgicalInk(tokens){
   return (contrastRatio(LIGHT_INK,accent)??0)>(contrastRatio(dark,accent)??0)?LIGHT_INK:dark;
 }
 
-export function appThemeCssValues(theme){
+export function appThemeCssValues(theme,appearance="dark"){
+  if(appearance==="light"){
+    const accents=Object.freeze({NEUTRAL:"#3E7A57",WHITE:"#596573",RED:"#9B2C24",GREEN:"#356E49",VIOLET:"#62478D",ROSE:"#995577",BLACK:"#30363E",GOLD:"#846023"});
+    const accent=accents[theme?.key]??accents.NEUTRAL;
+    return Object.freeze({
+      "--bg":"#F6F2EA","--surface-1":"#FFFFFF","--surface-2":"#EFE8DC",
+      "--text":"#1E242B","--muted":"#56606A","--border":"rgba(30,36,43,.18)",
+      "--liturgical":accent,
+      "--liturgical-border":`color-mix(in srgb, ${accent} 38%, transparent)`,
+      "--liturgical-soft":`color-mix(in srgb, ${accent} 9%, transparent)`,
+      "--ao-liturgical-accent-text":accent,"--liturgical-ink":"#FFFFFF",
+    });
+  }
   const tokens=theme?.tokens??NEUTRAL;
   const accent=tokens.accent??NEUTRAL.accent;
   // The foundation remains dark in every liturgical colour.
@@ -68,23 +80,38 @@ export function installAppLiturgicalTheme({win=globalThis}={}){
   const doc=win?.document,store=win?.AO_RUNTIME_V8?.store,html=doc?.documentElement;
   if(!html?.style?.setProperty||typeof store?.getState!=="function")return null;
   let current=null,release=null,disposed=false;
+  const systemLight=win?.matchMedia?.("(prefers-color-scheme: light)")??null;
+  function appearanceChoice(){
+    let stored=null;
+    try{stored=win?.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.appearance?.mode??null;}catch{}
+    if(!stored)try{stored=JSON.parse(win?.localStorage?.getItem?.("ao2:preferences:v1")||"null")?.appearance?.mode;}catch{}
+    return ["auto","dark","light"].includes(stored)?stored:"dark";
+  }
   function sync(state=store.getState()){
     if(disposed)return null;
     const theme=resolveAppLiturgicalTheme(state);
+    const choice=appearanceChoice();
+    const effective=choice==="auto"?(systemLight?.matches?"light":"dark"):choice;
     // Avoid repaints on unrelated store updates; update only when the
     // resolved day or colour changes.
-    if(current?.key===theme.key&&current?.date===theme.date&&current?.source===theme.source)return current;
-    for(const [name,value] of Object.entries(appThemeCssValues(theme))){
+    if(current?.key===theme.key&&current?.date===theme.date&&current?.source===theme.source&&current?.appearanceChoice===choice&&current?.appearance===effective)return current;
+    for(const [name,value] of Object.entries(appThemeCssValues(theme,effective))){
       html.style.setProperty(name,value);
     }
     if(html.dataset){
       html.dataset.aoLiturgicalTheme=theme.key;
       html.dataset.aoLiturgicalThemeSource=theme.source;
       html.dataset.aoLiturgicalThemeOwner=APP_LITURGICAL_THEME_VERSION;
+      html.dataset.aoAppearanceV1=effective;
+      html.dataset.aoAppearanceChoiceV1=choice;
     }
-    current=theme;
+    try{html.style.colorScheme=effective;}catch{}
+    current=Object.freeze({...theme,appearance:effective,appearanceChoice:choice});
     return current;
   }
+  // A device-theme change affects Auto only. Same owner, no second storage key.
+  const handleDeviceAppearance=()=>sync();
+  systemLight?.addEventListener?.("change",handleDeviceAppearance);
   sync();
   if(typeof store.subscribe==="function"){
     const unsub=store.subscribe(next=>sync(next));
@@ -97,6 +124,7 @@ export function installAppLiturgicalTheme({win=globalThis}={}){
     dispose(){
       disposed=true;
       release?.();
+      systemLight?.removeEventListener?.("change",handleDeviceAppearance);
       release=null;
       if(win.AO_APP_LITURGICAL_THEME_V1===api)delete win.AO_APP_LITURGICAL_THEME_V1;
     },

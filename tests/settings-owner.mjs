@@ -54,6 +54,9 @@ assert.doesNotMatch(css,/z-index:2147483(?:250|400)/,"Settings must not invent a
 assert.match(css,/min-height:var\(--ao-control-h,44px\)/,"Settings compact controls must converge on the canonical touch target");
 assert.match(css,/\.aoSetRowText b\{[^}]*var\(--ao-font-ui/,"Settings utility rows regressed to decorative display typography");
 
+const display=renderSettingsToString(fakeWin,{route:"/settings/accessibility"});
+assert.match(display,/data-pref-path="appearance\.mode"/,"Missing Settings-owned Auto\/Dark\/Light control");
+assert.equal(prefs.appearance.mode,"dark","Existing installs retain a dark default until the user chooses otherwise");
 const mass=renderSettingsToString(fakeWin,{route:"/settings/mass",live:true});
 assert.match(mass,/data-pref-path="mass\.defaultExperience"/);
 assert.match(mass,/data-pref-path="mass\.defaultForm"/);
