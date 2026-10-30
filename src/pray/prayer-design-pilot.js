@@ -351,6 +351,10 @@ function installStyles(){
     "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04NextTime{font:italic 17px/1.4 var(--ao-font-display,Georgia,serif);color:#d9cbbb;margin:3px 0 20px}",
     "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04CompleteReturn{width:100%;min-height:50px;border:0;border-radius:25px;background:#f0e8dc;color:#241b17;font:700 15px/1.2 var(--ao-font-ui,system-ui,sans-serif)}",
     "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04CompleteAgain{min-height:44px;padding:8px 20px;background:transparent;border:0;color:#d9cbbb;font:600 14px/1.2 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow{display:inline-flex!important;align-items:center;gap:6px;max-width:100%;min-height:26px;width:max-content;margin:0 0 9px;padding:4px 10px;border:1px solid #b77d74!important;border-radius:16px;background:rgba(206,132,117,.22)!important;color:#f6c7b9!important;font:600 12px/1.1 var(--ao-font-ui,system-ui,sans-serif)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow .aoFolioIncarnationIcon{width:16px;height:16px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardScroll .aoF04InlineBow{flex-shrink:0}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow:not(.is-active){display:none!important}",
   ].join("\n");
   const style=document.createElement("style");style.id="ao-prayer-design-pilot-css";style.textContent=css;document.head.appendChild(style);
 }
