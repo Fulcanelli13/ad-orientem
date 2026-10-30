@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R22_V1",
   "date": "2026-10-30",
-  "current_status": "R29_131_OF_189_DIRECT_SOURCE_TEXT_CHECKED_8_GLOSSARY_EXACT_COPIES_TRIAGED_0_FINAL_APPROVALS",
+  "current_status": "R30_189_OF_189_LEXICALLY_SCREENED_AGAINST_612_PRIVATE_PREVIEWS_131_PRIMARY_SOURCE_CHECKED_0_APPROVED",
   "active_owners": {
     "complete_record_ledger": "dyk-r22-1001-current-master-index.v1.json",
     "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
@@ -22,7 +22,9 @@
     "r27_pitre_14_facsimile_hold_queue": "dyk-r27-pitre-14-high-priority-original-page-holds.v1.json",
     "r28_27_weiser_direct_facsimile_check": "dyk-r28-weiser-27-original-page-audit.v1.json",
     "r29_eight_weiser_original_printed_page_audit": "dyk-r29-eight-weiser-direct-page-review.v1.json",
-    "r29_glossary_lineage_pitre_quote_audit": "dyk-r29-glossary-lineage-and-pitre-quoted-excerpt-review.v1.json"
+    "r29_glossary_lineage_pitre_quote_audit": "dyk-r29-glossary-lineage-and-pitre-quoted-excerpt-review.v1.json",
+    "r30_private_612_crossbank_ledger": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028:data/discovery/research/r30-dyk-189-vs-612-lexical-crossbank.v1.json",
+    "r30_public_bank_screen_summary": "dyk-r30-189-vs-612-private-bank-screen-summary.v1.json"
   },
   "overall": {
     "generated_candidate_records": 1001,
@@ -88,7 +90,20 @@
     "r29_pitre_Noto_original_text_requoted_in_modern_scholarship": 1,
     "r29_pitre_original_page_images_newly_checked": 0,
     "r29_bilingual_statements_revised": 9,
-    "total_bilingual_statements_corrected_in_r23_r24_r25_r26_r27_r28_r29": 127
+    "total_bilingual_statements_corrected_in_r23_r24_r25_r26_r27_r28_r29": 127,
+    "r30_shortlist_crossbank_lexical_screened": 189,
+    "r30_crossbank_legacy_preview_count": 612,
+    "r30_crossbank_exact_en_matches": 0,
+    "r30_crossbank_exact_fr_matches": 0,
+    "r30_crossbank_source_id_matches": 0,
+    "r30_crossbank_English_jaccard_gt_eq_03": 0,
+    "r30_crossbank_low_similarity_topical_flags": 5,
+    "r30_crossbank_five_manual_topical_triages_preliminary": 5,
+    "r30_crossbank_independent_semantic_approvals": 0,
+    "r30_glossary_exact_copy_home_holds": 8,
+    "r30_internal_mothering_sunday_duplicate_hold": 1,
+    "r30_provisional_max_home_nonrepetitive_shortlist": 180,
+    "r30_new_original_Pitre_page_images_checked": 0
   },
   "adjudication": {
     "reviewed": 74,
@@ -136,7 +151,7 @@
     "final_189_independent_english_french_signoff": "0_APPROVED_189_PENDING",
     "pitre_49_provenance_not_certification": "49_CROSSWALKED_0_ORIGINAL_FACSIMILE_IMAGES_REOPENED",
     "weiser_original_images_r26": "14_CLAIMS_10_PRINTED_PAGES_DIRECTLY_INSPECTED",
-    "full_612_home_preview_semantic_comparison": "PENDING",
+    "full_612_home_preview_semantic_comparison": "189_X_612_LEXICAL_SCREEN_COMPLETE_5_PRELIM_TOPICAL_TRIAGES_0_FINAL_SEMANTIC_APPROVALS",
     "french_editorial_189": "0_FINAL_APPROVED_189_PENDING",
     "r27_pitre_original_facsimile_review": "14_PREVIOUSLY_UNVERIFIED_PAGE_IMAGES_HELD_5_ADDITIONAL_RISKS",
     "original_page_weiser_r27": "20_CARDS_10_ORIGINAL_PRINTED_PAGES_CHECKED",
@@ -147,7 +162,9 @@
     "original_Pitre_14_image_holds": "14_PRIOR_IMAGE_UNVERIFIED_NO_NEW_ORIGINAL_IMAGE_RECHECK",
     "r29_glossary_exact_duplicates": "8_GLOSSARY_EXPLANATION_IDENTICAL_EN_FR_NOT_EIGHT_NEW_FACTS",
     "home_bank_612_semantic_uniqueness": "NOT_STARTED_NEEDED_FOR_RELEASE",
-    "independent_english_french_final_signoff": "0_APPROVED_189_PENDING"
+    "independent_english_french_final_signoff": "0_APPROVED_189_PENDING",
+    "r30_189_home_composition": "8_GLOSSARY_COPY_HOLDS_1_MOTHERING_DUPLICATE_HOLD_180_PROVISIONAL_MAX_NOT_APPROVED",
+    "Pitre_primary_1900_rechecks": "49_PENDING_OF_ORIGINAL_168_14_UPSTREAM_FACSIMILE_HOLDS"
   },
   "notes": [
     "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
@@ -160,6 +177,7 @@
     "R26: 49/49 Pitrè shortlist source IDs, folios and scan-page references reconciled against retained repository observation packets; original facsimiles NOT reopened, so this is not an addition to 76 direct source checks. R21 Ribera lead restored to Ribera-only; two additional claims narrowed. Separately 14 Weiser claims corrected after direct page-image checks (10 distinct printed folios). Independent EN/FR signoff, home semantic comparison and publication remain blocked.",
     "R27 directly inspected original Weiser scanned printed pages for 20 more pre-existing bilingual shortlist cards and refined all 20 EN/FR drafts; fixes include young men not children at Philippine All Saints, boy Gabriel in the Annunciation pageant, Polish Corpus Christi page locator 265, and Sunday-after-Ascension Pantheon roses. Pitrè 14 explicit facsimile holds and 5 other scope-sensitive cases were prioritized but NOT counted as source-checked, because remote original text navigation timed out. No releases.",
     "R28: 27 additional original Weiser printed-page screenshot reviews; 27 EN/FR drafts corrected. 123/189 direct claim-source correspondence checked (102/168 original, 66 remain). Saint Anthony ship-mast detail not substantiated on cited Weiser p327 and held. Mothering Sunday pair explicitly flagged near-duplicate. Pitrè 14 original-image holds remain because original 21.7-MB PDF cannot be opened/read in current tools (Commons page is available but actual file blocked). No release or final approvals.",
-    "R29: eight final non-held Weiser cards checked directly against 10 original printed folios; corrections include 1851 Boston Christmas gifts, Holy Ghost Hole white dove disc (not live dove), Good Friday buns and Pentecost dawn prayer. Basque ship-mast St Anthony claim remains unverified/mis-cited. Eight glossary-derived entries are verbatim copies of canonical glossary explanations, so 5 prefer Learn; 3 Home-rewrite proposals pending semantic novelty. Pitrè Noto Saint Conrad quote independently located within a University of Catania dissertation reproducing original Italian; corrected inaccurate white-clothing claim, without certifying the original Pitrè facsimile. No final approvals/releases."
+    "R29: eight final non-held Weiser cards checked directly against 10 original printed folios; corrections include 1851 Boston Christmas gifts, Holy Ghost Hole white dove disc (not live dove), Good Friday buns and Pentecost dawn prayer. Basque ship-mast St Anthony claim remains unverified/mis-cited. Eight glossary-derived entries are verbatim copies of canonical glossary explanations, so 5 prefer Learn; 3 Home-rewrite proposals pending semantic novelty. Pitrè Noto Saint Conrad quote independently located within a University of Catania dissertation reproducing original Italian; corrected inaccurate white-clothing claim, without certifying the original Pitrè facsimile. No final approvals/releases.",
+    "R30: used actual four 612-card unpublished Home preview shards in PRIVATE folio-core research branch to lexically screen all 189 source-first EN/FR shortlist statements: 0 exact EN, 0 exact FR, 0 shared source IDs, 0 English token similarity >=0.3, 5 weak topical neighbours preliminarily adjudicated as distinct or related, not final semantic clearance. Private detailed evidence ledger retained only in folio-core (do not leak preview records into public). All eight glossary cards are exact explanation copies and not independently eligible for Home until distinct rewrites; one of two Mothering Sunday variants held; provisional maximum 180 nonrepetitive Home candidates, none approved/published. All 49 Pitrè historical source claims still await full original verification; 14 facsimile page holds. No source-check numerator increase (131/189)."
   ]
 }
