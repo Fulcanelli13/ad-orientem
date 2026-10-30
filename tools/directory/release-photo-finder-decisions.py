@@ -241,6 +241,27 @@ def verify_and_stage(tasks,out_dir,*,apply=False,metadata_loader=None,downloader
    json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  return report
 
+def frozen_original_schedule(covers,gallery):
+ """Keep b1/b2/... slices aligned to the original user export and 40-cover baseline.
+
+ Existing independently approved covers must never be overwritten; only remove
+ photo-Finder-produced items from the snapshot used for indexing.
+ """
+ base_covers={**covers,"items":[i for i in covers["items"]
+   if i.get("source_place_ref")!="PHOTO_FINDER_2026-10-30_R1"]}
+ base_gallery={**gallery,"items":[i for i in gallery["items"]
+   if not (str(i.get("media_id") or "").startswith("pf-")
+     and "Photo Finder editorial selection" in str(i.get("review_method") or ""))]}
+ return base_covers,base_gallery
+
+def already_released(item,covers,gallery):
+ if item["role"]=="cover":
+  return any(x.get("status")=="APPROVED" and x["place_id"]==item["place_id"]
+      for x in covers["items"])
+ return any(x.get("status")=="APPROVED" and
+     x.get("source_sha1")==item["sha1"] and x.get("place_id")==item["place_id"]
+     for x in gallery["items"])
+
 def main():
  p=argparse.ArgumentParser()
  p.add_argument("--plan",action="store_true")
@@ -252,8 +273,11 @@ def main():
  a=p.parse_args()
  with CREDITS.open(encoding="utf-8-sig",newline="") as f:
   rows=list(csv.DictReader(f))
+ covers_now=load_json(COVERS)
+ gallery_now=load_json(GALLERY)
+ covers_origin,gallery_origin=frozen_original_schedule(covers_now,gallery_now)
  src=source_status(rows,load_json(DECISIONS),load_json(PLACES),
-                   load_json(COVERS),load_json(GALLERY))
+                   covers_origin,gallery_origin)
  tasks=[x for x in src["tasks"] if a.role=="all" or x["role"]==a.role]
  if a.plan:
   print(json.dumps({"schema":"AO_FINDER_20261030_INTAKE_PLAN_V1",
@@ -272,7 +296,16 @@ def main():
  if a.offset<0 or not 1<=a.limit<=CAP or a.offset>=len(tasks):
   p.error("Choose a valid nonempty bounded slice: --offset N --limit 1..20")
  if not a.output_dir:p.error("--output-dir required for live source verification")
- result=verify_and_stage(tasks[a.offset:a.offset+a.limit],a.output_dir,apply=a.apply)
+ scheduled=tasks[a.offset:a.offset+a.limit]
+ pending=[t for t in scheduled if not already_released(t,covers_now,gallery_now)]
+ if not pending:
+  p.error("All tasks in selected frozen window have already been released")
+ result=verify_and_stage(pending,a.output_dir,apply=a.apply)
+ result["scheduled_from_frozen_review"]=len(scheduled)
+ result["already_released_in_window"]=len(scheduled)-len(pending)
+ report_file=a.output_dir/"verification-report.json"
+ report_file.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(json.dumps({k:result[k] for k in
-   ("status","attempted","verified","new_files_in_app_tree","verified_visible_in_running_app")}))
+   ("status","attempted","scheduled_from_frozen_review","already_released_in_window",
+    "verified","new_files_in_app_tree","verified_visible_in_running_app")}))
 if __name__=="__main__":main()
