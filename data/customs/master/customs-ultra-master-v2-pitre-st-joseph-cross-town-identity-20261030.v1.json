@@ -13,7 +13,9 @@
     "new_distinct_customs": 0,
     "new_identity_mergers": 0,
     "new_indulgence_grants": 0,
-    "calendar_publications": 0
+    "calendar_publications": 0,
+    "named_local_collector_attributions_linked": 1,
+    "source_observations_with_new_collector_lineage": 15
   },
   "owner_comparisons": [
     {
@@ -26,7 +28,7 @@
         "PIT1900-IT-049"
       ],
       "relation": "CANDIDATE_SHARED_HOUSEHOLD_FEEDING_CORE_WITH_LOCAL_VARIANTS_NOT_CERTIFIED_ATTESTATIONS",
-      "review_reason": "The four Pitrè local descriptions report representational poor-person hospitality but have one author and different guest counts and ritual components.",
+      "review_reason": "Four places are discussed in Pitrè's 1900 edited compilation; Santa Croce Camerina's portion is historically attributed to local collector Giovanni Cannizzaro. Shared feast and hosting elements are not independent publications, and guests, dates, dishes and pageant roles differ.",
       "approval": false
     },
     {
@@ -61,7 +63,7 @@
     }
   ],
   "cross_book_independence": {
-    "pitre_town_descriptions": "SAME_1900_AUTHOR_NO_INDEPENDENT_WITNESSES_CREATED",
+    "pitre_town_descriptions": "ONE_1900_PUBLISHED_COMPILATION; SANTA_CROCE_LOCAL_COLLECTOR_GIOVANNI_CANNIZZARO_IDENTIFIED_BY_HISTORICAL_SOCIETY; ORIGINAL_LETTERS_NOT_READ; OTHER_TOWN_COLLECTORS_NOT_ESTABLISHED",
     "weiser_1956": "DIFFERENT_AUTHOR_BUT_NO_INDEPENDENT_ATTESTATION_CERTIFIED",
     "weiser_1958_provisional_groups": "SOURCE_TO_SOURCE_DETAILED_FOLIO_COMPARISON_PENDING"
   },
@@ -845,5 +847,6 @@
     "Verify historic versus current locality observance and who participates",
     "Check any claimed indulgence by its exact primary grant instrument and conditions"
   ],
-  "release_freeze": "RESEARCH_ONLY_NO_MERGE_NO_CALENDAR_OR_PUBLICATION_UPDATE"
+  "release_freeze": "RESEARCH_ONLY_NO_MERGE_NO_CALENDAR_OR_PUBLICATION_UPDATE",
+  "source_lineage_followup": "customs-ultra-master-v2-pitre-cannizzaro-witness-lineage-20261030.v1.json"
 }
