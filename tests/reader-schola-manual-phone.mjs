@@ -461,6 +461,14 @@ try{
      return p?.ordinarySelections?.KYRIE==="MASS_08" &&
        p?.ordinarySelections?.CREDO==="CREDO_03";
    });
+   // The local plan writes storage before the queued DOM update. Assert the
+   // settled selection rather than racing the old custom field render.
+   await page.waitForFunction(()=>{
+     const field=document.querySelector('[data-schola-ordinary-setting="KYRIE"]');
+     const picker=document.querySelector('[data-schola-kyriale-choice="CREDO"]');
+     return field?.value==="Mass VIII · De Angelis" &&
+       field.hidden===true && picker?.value==="CREDO_03";
+   });
    assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').inputValue(),
      "Mass VIII · De Angelis");
    assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').isDisabled(),true,
