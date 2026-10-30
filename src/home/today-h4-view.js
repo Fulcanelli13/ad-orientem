@@ -28,8 +28,14 @@ export function h4Enabled(win=globalThis){
   // reversible query-only rollback while the production transition settles.
   try{return new URLSearchParams(win?.location?.search??"").get("aoTodayH4")!=="0"}catch{return true}
 }
-export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={}){
+export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
+  const verifiedOrdo=ordoFacts?.status==="SOURCE_PROPER";
+  const ordoFlag=(key)=>verifiedOrdo&&typeof ordoFacts[key]==="boolean"
+    ?(ordoFacts[key]?say("Said","Dit"):say("Not said","Non dit")):"—";
+  const prefaceText=verifiedOrdo&&ordoFacts.preface?.status==="MATCH"&&ordoFacts.preface.heading
+    ?ordoFacts.preface.heading:"—";
+  const introitExcerpt=verifiedOrdo?ordoFacts.introitIncipit:null;
   const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"><span class="w">'+esc(d.day)+'</span><b class="n">'+esc(d.number)+'</b><i class="aoWeekColour" data-home-week-colour="'+esc(d.date)+'" aria-hidden="true"></i></button>').join("");
   // Keep actual formulary identity ahead of the Calendar's attested weekday context.
   // The latter is never mislabelled as an appointed Sunday Mass.
@@ -104,8 +110,8 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={})
   '<h2>'+esc(vm.observedTitle)+'</h2><p class="ver">'+esc(vm.dateTitle)+'</p>'+
   '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span></div></div><div class="dr"></div>'+
   (subtitle?'<p class="why">'+esc(subtitle)+'</p>':"")+
-  '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="no">—</b></div><div><small>Credo</small><b class="no">—</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="no">—</b></div></div>'+
-  (vm.massIntroit?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus</span><p lang="la"><span class="drop">'+esc(vm.massIntroit.slice(0,1))+'</span>'+esc(vm.massIntroit.slice(1))+'</p></div>':"")+
+  '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
+  (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
   '<span class="rb">'+esc(say("The Proper","Le Propre"))+'</span>'+
   ['Introit','Collect','Epistle','Gospel','Offertory','Communion'].map(x=>'<button type="button" class="lrow" data-home-h4-readings><span>'+esc(x)+'</span><span class="ch" aria-hidden="true">›</span></button>').join("")+
   (vm.formularies.length?'<span class="rb">'+esc(say("Other Masses permitted","Autres messes permises"))+'</span>'+vm.formularies.map(x=>'<button class="lrow" type="button" data-formulary="'+x.index+'"><span>'+esc(x.label)+'</span><span class="ch">›</span></button>').join(""):"")+
