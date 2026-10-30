@@ -22,7 +22,7 @@ const selected=[];
 for(const x of manifest.entries){
  const row=items.get(x.media_id);
  assert.ok(row,"Missing exact P77 approved gallery row "+x.media_id);
- assert.ok(canonical.has(x.place_id)&&!already.has(x.place_id));
+ assert.ok(canonical.has(x.place_id),"Gallery item must retain exact canonical Place");
  assert.equal(row.place_id,x.place_id);
  assert.equal(row.source_url,x.source_url);
  assert.equal(row.source_sha1,x.source_sha1);
@@ -75,9 +75,13 @@ for(const row of selected){
  const profile=profiles.find(p=>p.place_id===row.place_id);
  assert.ok(profile,"No exact Place profile for "+row.place_id);
  assert.equal(profile.gallery.some(p=>p.media_id===row.media_id),true);
- if(row.display_role==="HERO"){
+ if(already.has(row.place_id)){
+   const cover=hero.items.find(x=>x.place_id===row.place_id);
+   assert.equal(profile.media?.asset_path,cover?.asset_path,
+     "Independent later approved cover must take precedence over historical P77 gallery hero");
+ }else if(row.display_role==="HERO"){
    assert.equal(profile.media?.asset_path,row.asset_path,
-     "P77 hero photo missing from actual Place card "+row.place_id);
+     "P77 fallback hero photo missing from actual Place card "+row.place_id);
  }else{
    assert.equal(profile.media,null,
      "Secondary architecture image illegally promoted to Place hero "+row.place_id);
