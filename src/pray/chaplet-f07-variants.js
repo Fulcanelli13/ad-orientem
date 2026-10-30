@@ -342,7 +342,10 @@ const STYLES=`
   padding:5px 9px;margin:0
  }
  #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayerTop{
-  min-height:0
+  position:relative;min-height:20px;padding-right:46px
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownLanguage{
+  position:absolute;right:0;top:-3px
  }
  #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownAspiration{
   font-size:15px;line-height:1.25;margin:2px auto 3px
@@ -351,6 +354,10 @@ const STYLES=`
   font-size:19px;line-height:1.45
  }
 }
+/* Keep the Aa menu at the prayer-card heading, not in a second band
+   above the circle; its 44px choices remain touch accessible. */
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayerTop{position:relative}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownLanguage{z-index:8}
 #aoPray435930 .aoF07LittleCrownPrompt{display:flex;align-items:baseline;gap:7px;min-width:0;text-align:center;flex-wrap:wrap;justify-content:center}
 #aoPray435930 .aoF07LittleCrownPrompt strong{font:400 16px/1.2 var(--ao-font-liturgical,Georgia,serif);color:var(--text,#f3e8da)}
 #aoPray435930 .aoF07LittleCrownPrompt small{font:400 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
