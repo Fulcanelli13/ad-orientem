@@ -1,3 +1,4 @@
+import {prayerDoorArtSlot} from "./art-slot-map.v1.js";
 /**
  * Prayer discovery + Angelus presentation (default; explicitly reversible).
  *
@@ -135,7 +136,9 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     const family=all[tile.id];
     const label=tile.id==="library"?L("Essential Prayers","Prières essentielles"):family.title;
     const target=family.direct?' data-p435930-own="'+esc(family.direct)+'"':' data-p435930-family="'+esc(tile.id)+'"';
-    return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+'" style="grid-column:'+tile.col+';grid-row:'+tile.row+'"'+target+' aria-label="'+esc(label)+'">'+
+    const slot=prayerDoorArtSlot(tile.id);
+    const artLink=slot?' data-ao-art-slot-id="'+esc(slot.slotId)+'" data-ao-art-rotation="'+esc(slot.rotation)+'" data-ao-art-binding="unassigned"':'';
+    return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+'" style="grid-column:'+tile.col+';grid-row:'+tile.row+'"'+target+artLink+' aria-label="'+esc(label)+'">'+
       '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true})+'</span>'+
       '<span class="aoPrayPilotTileCaption">'+esc(label)+'</span></button>';
   };
