@@ -39,7 +39,13 @@ try{
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
 
-  await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
+  // This historical, full-app visual acceptance suite asserts the 9-card
+  // grouped Prayer hub and the direct Angelus Folio path. Those remain the
+  // supported rollback layout. The new DEFAULT 9-tile Prayer discovery and
+  // optional Angelus entry are certified separately by
+  // tests/pray-design-pilot-phone.mjs at 320px and 390px.
+  await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native&aoPrayerPilot=0",
+    {waitUntil:"domcontentloaded",timeout:90000});
 
   // Original v43.43 loader ownership: same boot/async DOM, exact Marian and
   // Four Evangelists masks, no additional spinner or second overlay.
@@ -338,19 +344,37 @@ try{
   });
   console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
-  // A transition may have hidden the preflight after its screenshot while
-  // leaving the donor flow node mounted. Only click an actionable close
-  // control; in either case require the backdrop no longer to be visible.
-  const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
-  if(await massFlowClose.isVisible())await massFlowClose.click();
-  await page.waitForFunction(()=>{
-    const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-    return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
-  },null,{timeout:5000});
-  await page.locator("[data-ao-app-surface='home']").click();
+  // M1 is a permanent Mass root, not a dismissible dialog. Leaving via the
+  // shell's Today tab is the supported action. The old close/hidden-backdrop
+  // assertion would erroneously fail a correct M1 implementation.
+  const permanentMassRoot=await page.evaluate(()=>
+    document.documentElement.dataset.aoM1MassRoot==="true");
+  if(permanentMassRoot){
+    await page.locator("[data-ao-app-surface='home']").click();
+    await page.waitForFunction(()=>
+      document.documentElement.dataset.aoM1MassRoot!=="true",null,{timeout:5000});
+  }else{
+    const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
+    if(await massFlowClose.isVisible())await massFlowClose.click();
+    await page.waitForFunction(()=>{
+      const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+      return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
+    },null,{timeout:5000});
+    await page.locator("[data-ao-app-surface='home']").click();
+  }
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
-  await page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']").click();
+  // A previously selected Month/Year lens may be retained across tabs.
+  // Select Today through its public control before opening Day & sources.
+  // Never force-click a hidden Read/Reflect row.
+  const dayLink=page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']");
+  if(!await dayLink.isVisible()){
+    const todayLens=page.locator(".homeScreen .aoTodayV2Tabs [data-home-calendar-today]");
+    await todayLens.waitFor({state:"visible",timeout:10000});
+    await todayLens.click();
+    await dayLink.waitFor({state:"visible",timeout:10000});
+  }
+  await dayLink.click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
     const el=document.getElementById("ao-cinema-transition");
@@ -510,6 +534,24 @@ try{
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
   await waitForFxSettled();
   await assertHomeHidden("PRAY");
+  // An open modular shell can precede its asynchronous Home catalogue render.
+  // Test the completed 9-door Home, not an intermediate empty mount.
+  const prayHubReady=await page.waitForFunction(()=>
+    document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length===9,
+    null,{timeout:12000}).then(()=>true,()=>false);
+  if(!prayHubReady){
+    const trace=await page.evaluate(()=>({
+      route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+      owner:globalThis.AO_PRAY_APP_V1?.status?.(),
+      state:globalThis.AO_PRAY_V435930?.state?.()?.view,
+      mount:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView,
+      classes:document.getElementById("aoPray435930")?.className,
+      open:document.getElementById("aoPray435930")?.classList.contains("open"),
+      html:document.querySelector("#aoPray435930 .aoP435930Mount")?.innerHTML?.slice(0,1000),
+      errors,
+    }));
+    throw new Error("PRAY hub failed to render nine doors: "+JSON.stringify(trace));
+  }
   assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost hierarchical Back");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-home]").count(),1,"PRAY root lost explicit global Home");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root regressed to ambiguous Close instead of Home");
@@ -1684,7 +1726,10 @@ try{
   // Wide-browser regression: preserve the integrated v3.4.10 composition — 820px PRAY shell, 760px content measure, two-column hub.
   const wideContext=await browser.newContext({viewport:{width:1440,height:960},deviceScaleFactor:1,hasTouch:false,locale:"en-GB"});
   const wide=await wideContext.newPage();
-  await wide.goto("http://127.0.0.1:4186/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+  // The wide two-column Prayer regression also targets the supported grouped
+  // rollback. Default nine-tile mosaic desktop/phone acceptance is separate.
+  await wide.goto("http://127.0.0.1:4186/index.html?aoPrayerPilot=0",
+    {waitUntil:"domcontentloaded",timeout:90000});
   await wide.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true&&globalThis.AO_PRAY_APP_V1?.status?.().installed===true,null,{timeout:30000});
   await wide.locator("[data-ao-app-surface='pray']").click();
   await wide.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});

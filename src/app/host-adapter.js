@@ -69,7 +69,15 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     hardHome() {
-      // Root-mode Mass is a shell destination; drop its presentation on navigation.
+      // M1 is only a presentation of the source-owned Mass preflight.
+      // Close that preflight via its original close control before removing M1:
+      // simply dropping the M1 root styling leaves its host backdrop visible
+      // above Home, although the shell already reports "home".
+      const massBackdrop=win?.document?.querySelector?.("#ao-mass-flow-v1 .aoMassFlowBackdrop[data-ao-m1-root='true']");
+      if(massBackdrop&&!massBackdrop.hidden){
+        const nativeClose=massBackdrop.querySelector("[data-ao-close]");
+        if(nativeClose)nativeClose.click();
+      }
       deactivateM1MassRoot(win);
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
@@ -153,9 +161,12 @@ export function createAppHostAdapter(win = globalThis) {
             opened=style?.display !== "none" && style?.visibility !== "hidden";
           }
           if(!opened)return false;
-          // M1 is an opt-in *shell presentation* of this same host-resolved
-          // preflight, not another celebration selection or reader entry.
-          if(m1RootPreviewRequested(win)&&!activateM1MassRoot(win))return false;
+          // A fresh tab visit always starts at the Mass overview, never in
+          // the last chooser. Reset only the UI; keep every resolved choice.
+          if(m1RootPreviewRequested(win)){
+            win?.AO_R17_BROWSER_ENTRY?.resetPreflightView?.();
+            if(!activateM1MassRoot(win))return false;
+          }
           return true;
         });
       }

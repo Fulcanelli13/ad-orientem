@@ -367,10 +367,8 @@ export function mountFullMassPreflight({
           massTexts.disabled=true;
           const legacy=getResolvedMass();
           const chosen=selectionFor(legacy);
-          // The prepared session is the exact same resolved Proper R17 would
-          // receive on Begin, including All Souls II/III, observance choices,
-          // alternate source and form-dependent commemorations. Never preview
-          // the host's potentially stale first/formless Proper as certified.
+          // Preview the exact prepared Proper used on Begin Mass. This
+          // includes All Souls II/III and source-owned commemorations.
           Promise.resolve().then(()=>onPrepareMassTexts?.())
             .then(prepared=>{
               const proper=prepared?.session?.resolvedMass?.proper?.data??null;
@@ -906,6 +904,15 @@ export function mountFullMassPreflight({
     composeRitesFor,
     openCategory,
     refresh,
+    // Returning to the Mass tab resets presentation only. The source-owned
+    // celebration, Proper, ceremony and reader preferences remain untouched.
+    resetView(){
+      folioStep="overview";
+      m1Focus=null;
+      root?.querySelector("[data-mass-calendar-details]")?.removeAttribute("open");
+      refresh();
+      return true;
+    },
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
