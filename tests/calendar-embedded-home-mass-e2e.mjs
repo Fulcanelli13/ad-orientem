@@ -91,6 +91,32 @@ try{
   await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light");
   const lightCard=await dayCard.evaluate(el=>getComputedStyle(el).backgroundColor);
   assert.notEqual(lightCard,dayTheme.card,"Embedded Day must follow light appearance");
+  const lightContrast=await dayRoot.evaluate(root=>{
+    const lum=value=>{
+      const channels=(String(value).match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
+      if(channels.length!==3)return NaN;
+      const linear=channels.map(x=>{const c=x/255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4;});
+      return .2126*linear[0]+.7152*linear[1]+.0722*linear[2];
+    };
+    const samples=[
+      [".aoCalModTop h1",".aoCalModTop"],
+      [".aoCalV2NextMajor strong",".aoCalV2NextMajor"],
+      [".aoCalPracticeCard h4",".aoCalPracticeCard"],
+      [".aoCalDaySources summary",".aoCalV2Hero"],
+      [".aoCalV2Context .aoCalV2TextLink",".aoCalV2Context"]
+    ];
+    return samples.map(([textSelector,surfaceSelector])=>{
+      const text=root.querySelector(textSelector),surface=root.querySelector(surfaceSelector);
+      if(!text||!surface)return {textSelector,missing:true};
+      const ink=lum(getComputedStyle(text).color),paper=lum(getComputedStyle(surface).backgroundColor);
+      return {textSelector,ratio:(Math.max(ink,paper)+.05)/(Math.min(ink,paper)+.05)};
+    });
+  });
+  for(const sample of lightContrast){
+    assert.equal(sample.missing,undefined,"Missing light Day component: "+JSON.stringify(sample));
+    assert.ok(sample.ratio>=4.5,
+      "Light Calendar text loses readable contrast: "+JSON.stringify(lightContrast));
+  }
   await page.screenshot({path:resolve(shots,"today-day-light-"+width+".png"),fullPage:true});
   await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("appearance.mode","dark"));
   await page.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="dark");
