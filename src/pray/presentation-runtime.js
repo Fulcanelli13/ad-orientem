@@ -3136,6 +3136,10 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     m.querySelectorAll('.aoMercyPrayer').forEach(el=>el.classList.remove('aoMercyPrayer'));
     paragraph.classList.add('aoMercyPrayer');
     updateMercyBeadNav(m,steps,i,{french:isFr()});
+    if(CHAPLET_F07_PILOT_ENABLED){
+      const crown=m.querySelector('[data-ao-f07-crown]');
+      if(crown)crown.outerHTML=renderMercyF07Crown(steps,i,{french:isFr()});
+    }
 
    }
   });
