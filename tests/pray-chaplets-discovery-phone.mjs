@@ -421,7 +421,9 @@ try{
    await page.setViewportSize({width,height:width===320?568:844});
    await page.goto("http://127.0.0.1:"+server.address().port+
     "/index.html?aoPrayerPilot=0&aoChapletF07Pilot=1",{waitUntil:"domcontentloaded",timeout:90000});
-   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:40000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.five_wounds",{returnContext:null}));
    const pilot=rootSel+' .aoFiveWounds[data-ao-f07-variant="five-wounds"]';
    assert.equal(await page.locator(pilot+' .aoF07WoundsCross').count(),1);
