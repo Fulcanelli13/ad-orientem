@@ -117,7 +117,7 @@ try{
      const descriptions=visible(".aoP435930ModuleDescription");
      const labels=visible(".aoPrayPilotTileCaption");
      const intro=visible(".aoPrayPilotIntro");
-     const search=visible("[data-p435930-pilot-search]");
+     const search=visible(".aoPrayPilotSearch");
      return {pilot,root:!!root,tiles:tiles.length,
        tileHeights:tiles.map(el=>el.getBoundingClientRect().height),
        labels:labels.map(font),intro:intro.map(font),
