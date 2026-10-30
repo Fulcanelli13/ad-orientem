@@ -184,6 +184,14 @@ assert.equal(provenance.ordinarySelections.CREDO,"");
 assert.equal(normalizeScholaLocalProgramme({profiles:[
  {id:"p1",ordinarySettings:{KYRIE:"Mass VIII"},ordinarySelections:{KYRIE:"MASS_08",GLORIA:"MASS_17"}}
 ]}).ordinarySelections.GLORIA,"","Invalid persisted movement ID must be discarded");
+assert.equal(normalizeScholaLocalProgramme({profiles:[
+ {id:"p1",ordinarySettings:{KYRIE:"Custom local Kyrie"},
+  ordinarySelections:{KYRIE:"MASS_08"}}
+]}).ordinarySelections.KYRIE,"","Catalogue ID with mismatched title must lose provenance");
+assert.equal(normalizeScholaLocalProgramme({profiles:[
+ {id:"p1",ordinarySettings:{KYRIE:"Mass VIII · De Angelis"},
+  ordinarySelections:{KYRIE:"MASS_08"}}
+]}).ordinarySelections.KYRIE,"MASS_08","Exact source selection must survive reload");
 assert.equal(readScholaLocalProgramme(storage).observedSinging,false);
 
 console.log("PASS saved local programme, five optional event IDs, no ritual overrides, organ prohibition remains visible");
