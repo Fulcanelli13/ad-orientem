@@ -1,42 +1,38 @@
-# Prayer art: existing gallery reuse before new research
+# Ad Orientem Prayer artwork · existing-gallery assignment pass (30 October 2026)
 
-Pinned source: 275 editorial blueprint slots (267 image-bearing), 548 Q2 gallery works and 441 existing rights-alternative records. Previous 136 **Prayer-only** rejections were excluded. This is a **title-derived provisional reuse assignment proposal**, not a claim of visual certification, sufficient rights, or final adoption.
+This is the **latest state**, replacing the initial 240/267 title-tag trial. Do not quote the earlier counts or treat the original 131 “no explicit route” as missing paintings.
 
-Totals: 240/267 slots with at least one existing candidate, 155 with a direct title subject, 42 below the blueprint minimum, 27 with no match. Total 1157 proposal relationships.
+## Current candidate coverage
+- 275 editorial blueprint slots; 267 image-bearing, **265/267 with at least one candidate** from the existing 989 artwork groups
+- Original **131** “no explicit assignment” slots: **129 now have existing-artwork reuse candidates**
+- **176/267** image-bearing slots with an explicit subject identifiable in at least one painting title
+- **23** pools below their editorial minimum counts (these are *candidate pool* deficits, **not** certified new-artwork research needs)
+- **2** remaining without suitable existing titles: **St Anthony of Padua Nine Tuesdays cover** (`COV-novena.st_anthony_nine_tuesdays`) and **prayer for lost items** (`COV-devotion_st_anthony_lost_items`)
+- **1,280** provisional painting-to-slot relationships; each still needs exact visual subject, quality and rights checks
 
-## Important rules
-- Reuse existing artworks first; no acquisition or research started.
-- Holy Thursday, Palm Sunday, seven Words and numbered Stations require exact scene check before final fit; generic Crucifixion works are not exact depictions of all seven Words.
-- Exact 12-number Stations in prior art rights queue may supply specific station scenes, but photo and rights remain unapproved.
-- The source blueprint lists editorial pools, **not verified live screen or card IDs**. Validate against app runtime before claiming every Prayer card is illustrated.
-- All existing accepted choices remain preserved, and any explicit rejection for Prayer is excluded.
-- New suggestions are not user accepted until reviewed, and no production source was mutated.
+## Reuse examples already present in the source archive
+- Twelve separately titled San Polo *Via Crucis* paintings (rights/alternative queue) provide Stations 1–12. Station 13 can use a genuine Deposition; Station 14 can use an Entombment rather than a generic Crucifixion.
+- Palm Sunday hero now uses *Christ's Entry into Jerusalem*, **not** a generic image of Christ weeping over Jerusalem.
+- The Assumption, Immaculate Conception, St Michael, Nativity, Ascension, Pentecost, Rosary mysteries, *Pietà*, and Calvary all have existing source records.
+- **Adoration of the Mystic Lamb**, explicitly accepted by the user for Benediction, and **The Virgin Adoring the Host** offer contextual reuse for otherwise unassigned Eucharistic stages. They are **not** asserted to depict an exposed monstrance or the actual rite of Benediction; that exact imagery may still be absent.
+- General Crucifixions are not asserted to depict the precise events of all Seven Last Words, or the individual falls of the Stations.
 
-## Remaining no-title-match slots
-- HERO-03 · Epiphany (A)
-- HERO-13 · Ascension (A)
-- HERO-14 · Pentecost (A)
-- STG-pray.rosary-06 · Finding in the Temple (A)
-- STG-pray.rosary-08 · Scourging at the Pillar (A)
-- STG-pray.rosary-13 · The Ascension (A)
-- STG-pray.rosary-14 · Descent of the Holy Ghost (A)
-- STG-pray.precious_blood-03 · Scourging (B)
-- STG-prayer.seven_sorrows_chaplet-03 · The loss of the Child in the Temple (B)
-- STG-prayer.seven_sorrows_chaplet-06 · Jesus taken down from the Cross (B)
-- STG-prayer.seven_sorrows_chaplet-07 · Jesus laid in the tomb (B)
-- COV-novena.immaculate_heart · Cover (B)
-- COV-novena.st_michael · Cover (B)
-- COV-novena.st_anthony_nine_tuesdays · Cover (B)
-- COV-benediction_versicles · Card vignette (C)
-- STG-pray.adoration-02 · In stillness (exposition) (A)
-- STG-pray.benediction-01 · Exposition · O Salutaris (B)
-- STG-pray.stations-13 · Jesus is taken down from the Cross (A)
-- STG-pray.stations-14 · Jesus is laid in the tomb (A)
-- STG-pray.tenebrae-03 · Tenebrae of Holy Saturday (A)
-- COV-devotion_prayer_st_michael · Card vignette (B)
-- COV-devotion_st_anthony_lost_items · Card vignette (C)
-- STG-pray.st_joseph_seven_sorrows-07 · Loss of the Child · finding in the Temple (B)
-- STG-pray.litany_saints-04 · Martyrs (B)
-- STG-pray.penitential_psalms-01 · Domine, ne in furore (B)
-- STG-pray.penitential_psalms-04 · Miserere (B)
-- STG-pray.confession-02 · Contrition (B)
+## Approvals safely carried forward
+- Batches 1–5: 250 reviewed, 114 accepted for Prayer, 136 marked *not relevant to Prayer only*. The latter are excluded from *new* Prayer reuse proposals, **not** globally rejected from the sacred gallery or Calendar.
+- Batches 6–11: reconstructed from the **exact** unified review HTML rule as displayed to the user. **107 artworks were shown and accepted by the user**. Another 191 were not shown and therefore **not rejected**. These are stored in `data/prayer/artwork-editorial-20261030/approved-unified-b06-b11-from-user-message.v1.json` for reproducibility.
+- The reuse suggestions in this pass can include works that were not displayed in those original reviews, as well as existing rights-hold research paintings. They are **new provisional matches**, not a silent extension of the user's earlier approval.
+- Every original human choice stays intact, and none of these records has been released into production.
+
+## Source limitations
+The 275-slot normalized blueprint from `Ad_Orientem_Art_Matching_Map.xlsx` has not been independently reconciled with **every actual live Prayer card ID**, so 265/267 describes blueprint slot candidate coverage, not a guarantee that the app currently renders a painting on every card. Exact iconographic fit, native file selection and €0-compatible photo rights must be validated before promotion. Source works from `RIGHTS_OR_ALTERNATIVE` remain held. Existing source counts reflect the frozen 548 Q2 and 441 rights/alternative research groups; they are not a count of 989 visually approved paintings.
+
+## Sequence
+1. Assign from the existing gallery (this branch; provisional candidate registry).
+2. Reconcile 275 editorial slots against the actual app card/stage identifiers; choose exact painting and image for each.
+3. Assess genuine gaps *after* removing forced/repetitive matches and checking source/rights.
+4. Only then initiate narrow artwork research.
+
+Files:
+- `data/prayer/artwork-editorial-20261030/existing-gallery-reuse-for-all-267-slots.v1.json`
+- `data/prayer/artwork-editorial-20261030/existing-gallery-reuse-slot-coverage.v1.csv`
+- `data/prayer/artwork-editorial-20261030/existing-gallery-reuse-proposed-edges.v1.csv`
