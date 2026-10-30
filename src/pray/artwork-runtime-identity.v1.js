@@ -4,7 +4,9 @@
  * A slot is a candidate pool, not a certified pixel asset or approval for
  * every specific devotional stage. Explicit user scopes remain decisive.
  */
-export const PRAYER_ART_RUNTIME_IDENTITY_VERSION="2026-10-30-v1";
+import {resolveChapletArtworkStage} from "./chaplet-artwork-stage-contract.v1.js";
+
+export const PRAYER_ART_RUNTIME_IDENTITY_VERSION="2026-10-30-v2";
 
 const ROSARY={
  joyful:["02","03","04","05","06"],
@@ -43,6 +45,7 @@ const devotional=(id)=>id==="litany_loreto_current"?"COV-litany_loreto_1962":id=
 
 export function resolveArtworkRuntimeIdentity(input={}){
  const owner=String(input.owner||"presentation");
+ if(owner==="chaplet")return resolveChapletArtworkStage({id:input.id,stage:input.stage,bead:input.bead});
  if(owner==="novena"){
   const id=String(input.id||""),screen=String(input.screen||"overview"),day=index(Number(input.day)-1,9),stage=index(input.stage,6);
   if(!id||screen==="overview")return result("novena:overview",null,"NOT_AN_IMAGE_BEARING_PRAYER_CARD");
