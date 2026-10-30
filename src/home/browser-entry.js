@@ -471,6 +471,13 @@ export function createHomeOwner(win=globalThis){
       (win?.queueMicrotask?.bind(win)||queueMicrotask)(jump);
       return;
     }
+    const calendarGlossary=target?.closest?.("[data-home-calendar-glossary]");
+    if(calendarGlossary){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const button=win?.document?.querySelector?.("#ao-calendar-modular-root [data-cal-glossary]");
+      button?.click?.();
+      return;
+    }
     const backToday=target?.closest?.("[data-home-calendar-today]");
     if(backToday){event.preventDefault?.();event.stopImmediatePropagation?.();showHomeToday();return}
     const calendar=target?.closest?.("[data-home-calendar]");
