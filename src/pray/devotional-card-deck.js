@@ -199,7 +199,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
     const sign=line.querySelector(".ao-liturgical-speaker");
     const words=line.querySelector("span:last-child");
     line.style.setProperty("display","grid","important");
-    line.style.setProperty("grid-template-columns","38px 23px minmax(0,1fr)","important");
+    line.style.setProperty("grid-template-columns","38px 30px minmax(0,1fr)","important");
     line.style.setProperty("column-gap","6px","important");
     line.style.setProperty("align-items","start","important");
     role.style.setProperty("grid-column","1","important");
