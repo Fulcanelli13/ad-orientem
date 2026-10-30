@@ -112,6 +112,10 @@ try{
    console.log("F04 actual viewport layout",width,JSON.stringify(hourCard));
    assert.ok(hourCard.height>=hourCard.viewport*.72,
     "F04 Angelus must fill available phone viewport, not leave a blank half-screen: "+JSON.stringify(hourCard));
+   assert.ok(hourCard.y>=44&&hourCard.y<=100,
+    "F04 entry must start below Prayer header after switching recitation mode: "+JSON.stringify(hourCard));
+   assert.ok(hourCard.contentTop>=hourCard.y,
+    "F04 hour-card heading must not be clipped by an inherited scroll position: "+JSON.stringify(hourCard));
    assert.ok(hourCard.bottomGap>=-2&&hourCard.bottomGap<=4,
     "F04 entry content must be anchored at card bottom, not stranded above blank space: "+JSON.stringify(hourCard));
    assert.doesNotMatch(hourCard.text,/A pause for prayer|existing named cards/,
