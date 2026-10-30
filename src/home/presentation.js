@@ -2,6 +2,8 @@ import { removeExcludedLegacyHomeArtwork } from "./legacy-art-exclusions.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { calendarObservanceAlias } from "../calendar/observance-title.js";
+import { latinIntroitIncipit } from "../calendar/ordo-mass-facts.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { TODAY_V2_CSS } from "./today-v2-styles.js";
 import { buildTodayV2Sections, renderTodayV2Sections } from "./today-v2-sections.js";
@@ -75,16 +77,9 @@ function observedClassLabel(rank,language){
     /^(I|II|III|IV)(?:\s+(?:class|classe))?$/i.exec(raw)?.[1]?.toUpperCase();
   return roman?(language==="fr"?roman+"ᵉ classe":roman+" class"):raw;
 }
-function introitIncipit(proper){
-  // The Latin incipit comes exclusively from the resolved Proper; a
-  // Gregorian title or historical feast association is never guessed.
-  const raw=proper?.introit?.lat;
-  if(typeof raw!=="string")return null;
-  const first=raw.split(/\r?\n/).map(s=>s.trim()).find(Boolean)||"";
-  if(!first)return null;
-  if(first.length<=90)return first;
-  return first.slice(0,90).replace(/\s+\S*$/,"").trim()+"…";
-}
+// Reuse the Calendar's source-owned incipit parser, which strips citation
+// lines like "Ps 129:3-4" instead of presenting those as Latin text.
+function introitIncipit(proper){return latinIntroitIncipit(proper?.introit);}
 function gospelRef(text){return text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).find(x=>/\b\d{1,3}:\d/.test(x))??null;}
 function excerpt(text,reference,max=220){
   const joined=text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)
@@ -120,6 +115,9 @@ export function buildHomeViewModel(state,win=globalThis){
   const properTitle=resolvedForSelection&&proper?
     ((language==="fr"?(proper.nameFr||proper.name):proper.name)||"").trim(): "";
   const massFormularyName=properTitle&&properTitle!==observedTitle?properTitle:null;
+  // Observed weekday context is not a separate Mass-formulary claim.
+  // Only the canonical Calendar's source-verified observance alias may provide it.
+  const contextualObservanceName=resolvedForSelection&&proper?calendarObservanceAlias(resolution,language):null;
   const massIntroit=resolvedForSelection?introitIncipit(proper):null;
   const formularies=day?.massOptions?.length>1?day.massOptions.map(o=>({index:o.index,label:o.label||o.title||`${tr(language,"formulary")} ${o.index+1}`,selected:o.index===day.formularyIndex})):[];
   return{
@@ -129,7 +127,7 @@ export function buildHomeViewModel(state,win=globalThis){
     // DD/MM/YYYY formatter used by date inputs, storage and ICS paths.
     dateLong:formatDisplayDate(date),
     dateTitle:new Intl.DateTimeFormat(locale,{weekday:"long",day:"numeric",month:"long"}).format(date),
-    celebration,observedTitle,massFormularyName,massIntroit,resolvedForSelection,rank:observedClassLabel(rankValue,language),
+    celebration,observedTitle,massFormularyName,contextualObservanceName,massIntroit,resolvedForSelection,rank:observedClassLabel(rankValue,language),
     colour:language==="fr"?(colourMapFr[rawColour]||rawColour):rawColour,
     loading:Boolean(state.resolving),calendarFailed,
     properStatus:resolution?.proper?.status==="ready"?"ready":resolution?.proper?.status==="failed"?"failed":"idle",
