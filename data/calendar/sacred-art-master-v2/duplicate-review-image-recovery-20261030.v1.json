@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_DUPLICATE_RECOVERY_V1",
-  "asOf": "2026-10-30T08:46:09.776681+00:00",
+  "asOf": "2026-10-30T08:48:03.415373+00:00",
   "sourcePagesAttempted": 11,
   "images": [
     {
@@ -69,20 +69,10 @@
       "memberIds": [
         "HERO::LOCAL-BENSON-SALVATOR"
       ],
-      "recovered": true,
-      "reason": "RECOVERED_EXACT_SOURCE",
-      "imageUrl": "https://www.christies.com/img/LotImages/2019/CKS/2019_CKS_17346_0102_000(italian_school_18th_century_ceiling_painting_with_scenes_of_music_danc052121).jpg?mode=max",
-      "originalDimensions": [
-        2181,
-        3200
-      ],
-      "reviewDimensions": [
-        573,
-        840
-      ],
-      "downloadSha256": "1c8f35a9cec8ab99e14f4b1b6f3134fa9e27a195d2915f5a8e2979b6a6864a7d",
-      "thumbnailSha256": "5679bea8ae18577688d920ef113d1c3a279ad67151f1853a7b9e1d2fad32b32a",
-      "thumbnailBytes": 129895
+      "recovered": false,
+      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
+      "attempted": 0,
+      "lastErrors": []
     },
     {
       "sourceUrl": "https://www.wallraf.museum/2017-11-17-honthorst/",
