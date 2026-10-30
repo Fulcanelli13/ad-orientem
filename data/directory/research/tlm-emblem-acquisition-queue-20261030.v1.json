@@ -1,0 +1,393 @@
+{
+  "schema": "AO_TLM_EMBLEM_ACQUISITION_QUEUE_V1",
+  "date": "2026-10-30",
+  "read_only_overlay_of": [
+    "data/directory/communities.v1.json",
+    "data/directory/tlm-user-classification-taxonomy.v1.json (CL27 branch)",
+    "data/directory/research/cl2-unified-20261026 (CL2 branch)",
+    "src/find/institution-emblems.js"
+  ],
+  "note": "Research queue, not an institution master. A source-listed affiliation does not by itself establish ownership, ecclesial position, Una Cum, Mass rite, or exact celebrant. Image copyright and institutional insignia restrictions are separate.",
+  "summary": {
+    "total_groups": 34,
+    "draft_exact_images": 5,
+    "held": 29,
+    "official_candidates": 7
+  },
+  "groups": [
+    {
+      "group_code": "AASJMV",
+      "display_name": "Personal Apostolic Administration of Saint John Mary Vianney",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "EXACT_CANDIDATE_IN_DRAFT",
+      "type": "INSTITUTE",
+      "source": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_the_Administration_of_Campos.svg",
+      "license": "CC BY-SA 4.0",
+      "rights": "AUTHOR_LICENCE_IDENTIFIED__INSTITUTIONAL_INSIGNIA_REVIEW_PENDING",
+      "note": "Exact Administration of Campos; vector art by Versaldi. Draft emblem rendering only, not release-approved."
+    },
+    {
+      "group_code": "BENEDICTINE",
+      "display_name": "Benedictine",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "FAMILY_LEVEL_SYMBOL_ONLY",
+      "type": "ORDER_FAMILY",
+      "source": "https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_the_Order_of_Saint_Benedict_(simple).svg",
+      "license": null,
+      "rights": "COMMUNITY_SPECIFIC_IMAGE_REQUIRED",
+      "note": "Benedictine PAX cannot identify each monastery."
+    },
+    {
+      "group_code": "CANONS_ST_JOHN_CANTIUS",
+      "display_name": "Canons Regular of St. John Cantius",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "OFFICIAL_SITE_BRANDING_CANDIDATE",
+      "type": "INSTITUTE",
+      "source": "https://www.canons-regular.org/",
+      "license": null,
+      "rights": "UNDETERMINED",
+      "note": "Official footer uses crest.png; need exact original image URL, permission/reuse terms and identity review."
+    },
+    {
+      "group_code": "CAPUCHINS_MORGON",
+      "display_name": "CAPUCHINS_MORGON",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "OFFICIAL_SITE_BRANDING_CANDIDATE",
+      "type": "INSTITUTE",
+      "source": "https://capucins-morgon.fr/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Capuchins of Morgon; distinguish from general Franciscan symbols."
+    },
+    {
+      "group_code": "CARMELITE",
+      "display_name": "CARMELITE",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "SOURCE_IDENTITY_NOT_YET_VERIFIED",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "CISTERCIAN",
+      "display_name": "CISTERCIAN",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "FAMILY_LEVEL_SYMBOL_ONLY",
+      "type": "ORDER_FAMILY",
+      "source": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_the_Cistercian_Order.svg",
+      "license": null,
+      "rights": "COMMUNITY_SPECIFIC_IMAGE_REQUIRED",
+      "note": "General order badge not automatically an individual abbey's arms."
+    },
+    {
+      "group_code": "CMRI",
+      "display_name": "Congregation of Mary Immaculate Queen",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "INSTITUTIONAL_ARMS_FOUND_RIGHTS_PENDING",
+      "type": "INSTITUTE",
+      "source": "https://donaldsuniform.com/collections/congregation-of-mary-immaculate-queen",
+      "license": null,
+      "rights": "THIRD_PARTY_IMAGE_RIGHTS_NOT_CLEARED",
+      "note": "Vendor's CMRI Spokane crest is identifiable; not the arms of Bishop Pivarunas. Must verify with institute itself."
+    },
+    {
+      "group_code": "CSPV",
+      "display_name": "Congregation of Saint Pius V",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_VERIFIED_STANDALONE_EMBLEM",
+      "type": "INSTITUTE",
+      "source": "https://stpiusvchapel.org/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Distinguish SSPV vs CSPV; don't assume shared emblem."
+    },
+    {
+      "group_code": "DIOCESAN",
+      "display_name": "Diocesan clergy",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "DIOCESAN_UNSPECIFIED",
+      "display_name": "DIOCESAN_UNSPECIFIED",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "DOMINICAN",
+      "display_name": "Dominican",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "FAMILY_LEVEL_SYMBOL_ONLY",
+      "type": "ORDER_FAMILY",
+      "source": "https://commons.wikimedia.org/wiki/File:Shield_of_Dominican_Order.svg",
+      "license": "PD-self",
+      "rights": "GENERIC_ORDER_ARM_NOT_EXACT_COMMUNITY",
+      "note": "Never label a distinct traditional Dominican community or FSVF with universal order heraldry without community-specific evidence."
+    },
+    {
+      "group_code": "FSSP",
+      "display_name": "Priestly Fraternity of Saint Peter",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "EXACT_CANDIDATE_IN_DRAFT",
+      "type": "INSTITUTE",
+      "source": "https://commons.wikimedia.org/wiki/File:FSSP_emblem.svg",
+      "license": "CC BY-SA 4.0",
+      "rights": "INSTITUTIONAL_INSIGNIA_REVIEW_PENDING",
+      "note": "Existing four-emblem source asset."
+    },
+    {
+      "group_code": "FSVF",
+      "display_name": "Fraternity of Saint Vincent Ferrer",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "IDENTITY_CANDIDATE_RIGHTS_PENDING",
+      "type": "INSTITUTE",
+      "source": "https://www.chemere.org/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Use Fraternity of St Vincent Ferrer arms, not Dominican generic arms; prior Logo_FSVF.jpg Commons link not independently verified."
+    },
+    {
+      "group_code": "IBP",
+      "display_name": "Institute of the Good Shepherd",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "EXACT_CANDIDATE_IN_DRAFT",
+      "type": "INSTITUTE",
+      "source": "https://commons.wikimedia.org/wiki/File:Ibp-institutdubonpasteur-logo.svg",
+      "license": "CC BY-SA 4.0",
+      "rights": "INSTITUTIONAL_INSIGNIA_REVIEW_PENDING",
+      "note": "Existing four-emblem source asset."
+    },
+    {
+      "group_code": "ICKSP",
+      "display_name": "Institute of Christ the King Sovereign Priest",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "EXACT_CANDIDATE_IN_DRAFT",
+      "type": "INSTITUTE",
+      "source": "https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_the_Institute_of_Christ_the_King_Sovereign_Priest.svg",
+      "license": "CC BY-SA 3.0",
+      "rights": "INSTITUTIONAL_INSIGNIA_REVIEW_PENDING",
+      "note": "Existing four-emblem source asset."
+    },
+    {
+      "group_code": "IMBC",
+      "display_name": "IMBC",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "OFFICIAL_SITE_BRANDING_CANDIDATE",
+      "type": "INSTITUTE",
+      "source": "https://www.sodalitium.biz/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Commons upload previously flagged potential copyright violation; require original owner source."
+    },
+    {
+      "group_code": "INDEPENDENT",
+      "display_name": "Independent clergy/community",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "INDEPENDENT_CLERGY",
+      "display_name": "INDEPENDENT_CLERGY",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "LAY_ASSOCIATION",
+      "display_name": "LAY_ASSOCIATION",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "MILITIA_TEMPLI",
+      "display_name": "MILITIA_TEMPLI",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "OFFICIAL_INSIGNIA_SPECIFICATION",
+      "type": "INSTITUTE",
+      "source": "https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/",
+      "license": null,
+      "rights": "GRAPHIC_REUSE_PENDING",
+      "note": "Organisation specifies octagonal red cross; not interchangeable with unrelated Templar marks."
+    },
+    {
+      "group_code": "NORBERTINE",
+      "display_name": "Premonstratensian / Norbertine",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "FAMILY_LEVEL_SYMBOL_ONLY",
+      "type": "ORDER_FAMILY",
+      "source": "https://commons.wikimedia.org/wiki/File:COA_Premonstratensians.svg",
+      "license": "PD",
+      "rights": "GENERIC_ORDER_ARM_NOT_EXACT_COMMUNITY",
+      "note": "Premonstratensian family arms, not a particular abbey."
+    },
+    {
+      "group_code": "ORATORIAN",
+      "display_name": "Oratorian",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "FAMILY_LEVEL_OR_LOCAL_CANDIDATE",
+      "type": "ORDER_FAMILY",
+      "source": "https://www.philadelphiaoratory.org/",
+      "license": null,
+      "rights": "COMMUNITY_SPECIFIC_IMAGE_REQUIRED",
+      "note": "Philadelphia arms are local and cannot stand for every Oratorian house."
+    },
+    {
+      "group_code": "OTHER",
+      "display_name": "Other",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "PREMONSTRATENSIAN",
+      "display_name": "PREMONSTRATENSIAN",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "FAMILY_LEVEL_SYMBOL_ONLY",
+      "type": "ORDER_FAMILY",
+      "source": "https://commons.wikimedia.org/wiki/File:COA_Premonstratensians.svg",
+      "license": "PD",
+      "rights": "GENERIC_ORDER_ARM_NOT_EXACT_COMMUNITY",
+      "note": "Same Premonstratensian family as NORBERTINE; do not count as a second institute."
+    },
+    {
+      "group_code": "RCI",
+      "display_name": "Roman Catholic Institute",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_VERIFIED_STANDALONE_EMBLEM",
+      "type": "INSTITUTE",
+      "source": "https://romancatholicinstitute.org/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Keep separate from IMBC and individual clergy."
+    },
+    {
+      "group_code": "RELIGIOUS_COMMUNITY",
+      "display_name": "RELIGIOUS_COMMUNITY",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    },
+    {
+      "group_code": "SJM",
+      "display_name": "SJM",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "OFFICIAL_SITE_BRANDING_CANDIDATE",
+      "type": "INSTITUTE",
+      "source": "https://www.sjm-online.org/sjm-logo-transparent/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Servi Jesu et Mariae specific logo found on official site."
+    },
+    {
+      "group_code": "SMMD",
+      "display_name": "Société des Missionnaires de la Miséricorde Divine",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "OFFICIAL_BRANDING_CANDIDATE",
+      "type": "INSTITUTE",
+      "source": "https://misericordedivine.fr/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Exact organisation source available; image file and reuse require review."
+    },
+    {
+      "group_code": "SSPV",
+      "display_name": "Society of Saint Pius V",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_VERIFIED_STANDALONE_EMBLEM",
+      "type": "INSTITUTE",
+      "source": "https://sspv.org/",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Do not use unrelated episcopal arms."
+    },
+    {
+      "group_code": "SSPX",
+      "display_name": "Society of Saint Pius X",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "EXACT_CANDIDATE_IN_DRAFT",
+      "type": "INSTITUTE",
+      "source": "https://commons.wikimedia.org/wiki/File:Society_of_Saint_Pius_X_logo.svg",
+      "license": "CC0 vectorisation",
+      "rights": "ORIGINAL_AUTHOR_AND_INSIGNIA_REVIEW_PENDING",
+      "note": "Existing four-emblem source asset."
+    },
+    {
+      "group_code": "SSPX_RESISTANCE",
+      "display_name": "SSPX_RESISTANCE",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_UNIVERSAL_EMBLEM",
+      "type": "RESEARCH_FAMILY",
+      "source": null,
+      "license": null,
+      "rights": "NOT_APPLICABLE",
+      "note": "Umbrella directory label, not a single organisation; identify specific community before artwork."
+    },
+    {
+      "group_code": "TRANSFIGURATION",
+      "display_name": "TRANSFIGURATION",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "OFFICIAL_SITE_BRANDING_CANDIDATE",
+      "type": "INSTITUTE",
+      "source": "https://transfiguration.over-blog.com/2017/03/qui-sommes-nous.html",
+      "license": null,
+      "rights": "PENDING",
+      "note": "Fraternité de la Transfiguration specific badge needs exact original."
+    },
+    {
+      "group_code": "UNA_VOCE",
+      "display_name": "UNA_VOCE",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "PROTECTED_FEDERATION_LOGO",
+      "type": "LAY_FEDERATION",
+      "source": "https://unavoce.ru/pdf/FIUV_Revised_Statutes.pdf",
+      "license": null,
+      "rights": "TRADEMARK_OR_PERMISSION_REVIEW_REQUIRED",
+      "note": "Do not treat every coetus or traditional Mass venue as a federation-owned site."
+    },
+    {
+      "group_code": "UNKNOWN",
+      "display_name": "Unknown",
+      "source_owner": "CL27 taxonomy or CL2 source-affiliation evidence",
+      "state": "NO_GROUP_EMBLEM_BY_DESIGN",
+      "type": "SOURCE_LABEL",
+      "source": null,
+      "license": null,
+      "rights": "NOT_VERIFIED",
+      "note": "Resolve exact organisation or community-specific arms before any map icon."
+    }
+  ]
+}
