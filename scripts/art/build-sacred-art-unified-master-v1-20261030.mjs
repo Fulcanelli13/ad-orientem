@@ -230,10 +230,16 @@ const sourceObjectPage=u=>{
    /\/collection\/work\/data\//i.test(p.pathname)?s:"";
  }catch{return "";}
 };
-const bestCanonSource=(r,audit,cand)=>[
- r.source_page,archivedUrlById.get(r.artwork_id),
- cand?.source?.objectUrl,audit?.source_url,audit?.commons_file_title
-].map(sourceObjectPage).find(Boolean)||"";
+const bestCanonSource=(r,audit,cand)=>{
+ const matches=accept.filter(x=>x.canonical383.status==="CONFIRMED_IDENTITY"&&
+ x.canonical383.artworkId===r.artwork_id).map(x=>x.review.originalSourceUrl);
+ const metId=String(audit?.museum_api||"").match(/collectionapi\.metmuseum\.org\/public\/collection\/v1\/objects\/(\d+)/i);
+ const metUrl=metId?"https://www.metmuseum.org/art/collection/search/"+metId[1]:"";
+ const reviewed=first200.filter(x=>x.canonicalId===r.artwork_id).map(x=>x.objectUrl);
+ return [r.source_page,archivedUrlById.get(r.artwork_id),
+  cand?.source?.objectUrl,...matches,...reviewed,metUrl,
+  audit?.source_url,audit?.commons_file_title].map(sourceObjectPage).find(Boolean)||"";
+};
 const canWorkIds=new Set();
 for(const r of canon){
  const cand=candidateIds.get(r.artwork_id),audit=licenseByCanon.get(r.artwork_id);
