@@ -376,6 +376,11 @@ try{
    const succession=page.locator("[data-ao-all-souls-succession-details]");
    if(await succession.evaluate(el=>el.open))
      throw Error("NOV02_HOME_PREFLIGHT_ADVANCED_CONTROLS_NOT_COLLAPSED");
+   // The guided preflight mounts these controls inside its Celebration panel,
+   // which is hidden until the original Folio navigation is used. Enter the
+   // visible stage rather than bypassing a legitimate UI visibility contract.
+   await page.locator('[data-folio-goto="celebration"]:visible').first().click();
+   await succession.waitFor({state:"visible",timeout:15000});
    await succession.locator("summary").click();
    await page.locator('[data-ao-all-souls-succession="previous"]')
      .selectOption("IMMEDIATE");
