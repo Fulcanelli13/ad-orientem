@@ -93,17 +93,21 @@ try{
     throw error;
    }
    const title=await exact.innerText();
-   assert.match(title,/St\\.? John Cantius Church/i,"Search must find the exact Chicago church, not an affiliated venue");
+   assert.match(title,/St\.? John Cantius Church/i,"Search must find the exact Chicago church, not an affiliated venue");
+   const approvedPhoto=exact.locator(".aoTlmVenueVisual > img");
+   assert.equal(await approvedPhoto.count(),1,
+    "Exact Chicago church must display its approved Place photograph, not an affiliation emblem");
+   assert.match(await approvedPhoto.getAttribute("src"),/assets\/approved\/place-media\/US-st-john-cantius-chicago\.webp$/);
    await exact.click();
    const preview=page.locator(".aoExploreQuickPreview");
    await preview.waitFor({state:"visible",timeout:12000});
    assert.equal(await preview.locator('[data-explore-expand-detail]').count(),1);
-   assert.match(await preview.innerText(),/St\\.? John Cantius Church/i);
+   assert.match(await preview.innerText(),/St\.? John Cantius Church/i);
    await captures("01-preview");
    await preview.locator('[data-explore-expand-detail]').click();
    const expanded=page.locator(".aoTlmChurchProfile");
    await expanded.waitFor({state:"visible",timeout:12000});
-   assert.match(await expanded.locator("h2").innerText(),/St\\.? John Cantius Church/i);
+   assert.match(await expanded.locator("h2").innerText(),/St\.? John Cantius Church/i);
    assert.equal(await expanded.locator(".aoTlmProfileSpotlight").count(),1);
    assert.equal(await expanded.locator(".aoTlmProfileAffiliation").count(),1);
    assert.equal(await expanded.locator(".aoTlmProfileSourceDisclosure").count(),1);
