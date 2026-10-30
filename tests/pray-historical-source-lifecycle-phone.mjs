@@ -13,8 +13,9 @@ const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=u
 const server=http.createServer(async(req,res)=>{
  try{const name=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname),full=resolve(root,"."+name);
   if(full!==root&&!full.startsWith(root+sep)){res.writeHead(403);return res.end();}
+  const bytes=await readFile(full);
   res.writeHead(200,{"content-type":mime[extname(full)]||"application/octet-stream","cache-control":"no-store"});
-  res.end(await readFile(full));
+  res.end(bytes);
  }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e.message||e));}
 });
 await new Promise((done,fail)=>{server.once("error",fail);server.listen(4299,"127.0.0.1",done)});
