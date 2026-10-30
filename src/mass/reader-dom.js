@@ -17,7 +17,7 @@ import { CUE_SURFACE, resolveCueSurface, sourceActionRubricLabel } from "./reade
 import { nextScholaMusicEvent } from "./reader-schola-event-timeline.js";
 import { installSourceCueRailTracker } from "./reader-rail-anchors.js";
 import {SCHOLA_OPTIONAL_EVENT_IDS} from "./reader-schola-local-programme.js";
-import {KYRIALE_SOURCE,kyrialeChoicesForMovement} from "./reader-kyriale-catalogue.js";
+import {kyrialeChoicesForMovement} from "./reader-kyriale-catalogue.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -616,6 +616,7 @@ const SHELL_STYLE = `
  display:none!important;pointer-events:none!important
 }
 .ao-schola-programme-fields p{margin:0;color:var(--ao-muted)}
+.ao-schola-programme-fields a{color:var(--ao-mass-accent-text);font-size:11px;text-decoration:underline;text-underline-offset:2px}
 .ao-schola-programme-fields label{display:grid;gap:3px;color:var(--ao-text)}
 .ao-schola-programme-fields input[type="text"],
 .ao-schola-programme-fields select{min-height:36px;width:100%;padding:6px;color:var(--ao-text);
