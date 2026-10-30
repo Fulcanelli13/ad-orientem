@@ -1,0 +1,60 @@
+name: Sacred Art canonical 383 archival provenance recovery (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-canonical-archive-provenance-20261030.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-canonical-archive-provenance
+  cancel-in-progress: false
+
+jobs:
+  exact-archive-provenance-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 383 canonical baseline and frozen editorial lineage
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Scan dated research archives by exact canonical ID and photo SHA
+        run: node scripts/art/recover-canonical383-archival-provenance-20261030.mjs
+      - name: Verify research-only scan
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const j=JSON.parse(readFileSync('data/calendar/sacred-art-phase1-canonical383-archive-provenance-20261030.v1.json','utf8'));
+          const c=j.summary;
+          if(c.canonicalRecords!==383||c.originalCanonicalSourcePagePresent!==94||
+            c.originalCanonicalSourcePageMissing!==289||
+            c.newCanonical383To856ConfirmedIdentityLinks!==0||
+            c.photoRightsCertifications!==0||c.photoVisualCertifications!==0||
+            c.productionImports!==0||j.records.length!==383||
+            j.records.some(r=>r.canonicalIdentityPromoted!==false||
+              r.photoRightsApproved!==false||r.imageCertified!==false||
+              r.productionMutation!==false)||j.release.productionMutation!==false)
+            throw Error('Archive provenance validation gate failed');
+          console.log(JSON.stringify(c,null,2));
+          NODE
+      - name: Commit source-preserving metadata evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-canonical383-archive-provenance-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): recover frozen canonical 383 archive provenance [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
