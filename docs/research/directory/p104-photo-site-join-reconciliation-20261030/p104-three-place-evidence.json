@@ -1,0 +1,295 @@
+{
+  "schema": "AO_DIRECTORY_PHOTO_P104_THREE_EXACT_PLACE_RECONCILIATION_V1",
+  "as_of": "2026-10-30",
+  "state": "RESEARCH_PROPOSAL_FOR_SACRED_PLACES_OWNER_NOT_CANONICAL_RELEASE",
+  "baseline": {
+    "places": 529,
+    "approved_place_covers": 36,
+    "directory_links": 22,
+    "source_assignments": 385,
+    "wrong_site_rejections": 90,
+    "subjects_corrob_research_only": 83,
+    "assignment_holds": 212,
+    "photo_originals_independently_hashed": 11,
+    "photo_originals_unverified": 20
+  },
+  "summary": {
+    "candidate_places": 3,
+    "duplicate_canonical_places_detected": 0,
+    "link_ready_for_owner_review": 1,
+    "r49_geo_or_venue_holds": 2,
+    "places_created_in_production": 0,
+    "directory_links_created_in_production": 0,
+    "photos_published": 0
+  },
+  "evidence": [
+    {
+      "type": "owner_boundary",
+      "note": "Sacred Places owner controls canonical seed-registry, shrine source registry, crosswalk and release-chain. This photography audit offers evidence; do not create parallel competing canonical Places."
+    },
+    {
+      "type": "geodetic_rule",
+      "note": "R49 source marker is not authoritative geometry. A >150m discrepancy blocks linking/release until the owner reconciles the frozen operational pin."
+    },
+    {
+      "type": "blandford_rite_policy",
+      "note": "Parish and diocese confirm building; public parish schedule lacks independently verified Traditional Mass. Do not infer current TLM service or publish schedule."
+    },
+    {
+      "type": "photo_policy",
+      "note": "No image release without original 100%-pixel quality, rights, source attribution and explicit editorial clearance."
+    }
+  ],
+  "candidates": [
+    {
+      "photo_contact_id": 61,
+      "photo_original_sha1": "905abcea4ecfd7e99a909f693a7e38eb51a86522",
+      "photo_preview_role": "PREFERRED_EXTERIOR_PREVIEW",
+      "physical_anchor_id": "RG-58B096C9EE65",
+      "proposed_place": {
+        "place_id": "place:DE:basilika-st-clemens-hannover",
+        "name": {
+          "official": "Propsteikirche Basilika St. Clemens, Hannover",
+          "aliases": [
+            "Basilika St. Clemens",
+            "St. Clement's Basilica, Hanover"
+          ]
+        },
+        "place_type": "basilica",
+        "geo_area_ids": [
+          "geo:country:DE"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 52.373,
+          "lng": 9.72681,
+          "precision": "site",
+          "geocoding_source": "OTHER",
+          "source_url": "https://www.visit-a-church.info/sacred-buildings/church/detail/1526608833421?lang=en",
+          "source_ref": "independent:visit-a-church:1526608833421",
+          "matched_country_code": "DE",
+          "verified_at": "2026-10-30"
+        },
+        "address": {
+          "line1": "Platz an der Basilika 1",
+          "line2": null,
+          "postal_code": "30169",
+          "city": "Hannover",
+          "region": "Lower Saxony",
+          "country_code": "DE",
+          "country": "Germany",
+          "formatted": "Platz an der Basilika 1, 30169, Hannover, Germany"
+        },
+        "source_ids": [
+          "AO-PHOTO-P104-61-SITE",
+          "AO-PHOTO-P104-61-GEO"
+        ]
+      },
+      "proposed_sources": [
+        {
+          "id": "AO-PHOTO-P104-61-SITE",
+          "title": "Photo P104 official site identity — Propsteikirche Basilika St. Clemens, Hannover",
+          "issuer": "Basilika St Clemens official church",
+          "directness": "OFFICIAL_CHURCH",
+          "url": "https://www.st-clemens-hannover.de/anfahrt/",
+          "contribution": "Exact physical church at Platz an der Basilika 1, 30169 Hannover; not approval of a photograph or Mass schedule."
+        },
+        {
+          "id": "AO-PHOTO-P104-61-GEO",
+          "title": "Photo P104 independent site geolocation — Propsteikirche Basilika St. Clemens, Hannover",
+          "issuer": "Visit-a-Church geographic building register",
+          "directness": "SECONDARY",
+          "url": "https://www.visit-a-church.info/sacred-buildings/church/detail/1526608833421?lang=en",
+          "contribution": "Geographic marker for named worship building 52.373,9.72681; preserve provenance. Source-specific, not postcode centroid."
+        }
+      ],
+      "frozen_venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+      "frozen_r49_venue_present": true,
+      "legacy_r49_pin": {
+        "lat": 52.3729921,
+        "lng": 9.7268294,
+        "precision": "building"
+      },
+      "frozen_r49_to_source_building_distance_m": 1.6,
+      "proposed_link": {
+        "link_id": "link:directory-place:DE:basilika-st-clemens-hannover",
+        "venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+        "place_id": "place:DE:basilika-st-clemens-hannover",
+        "relationship": "LOCATED_AT",
+        "confidence": "CONFIRMED",
+        "source_ids": [
+          "AO-PHOTO-P104-61-SITE",
+          "AO-PHOTO-P104-61-GEO",
+          "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland"
+        ]
+      },
+      "status": "READY_FOR_CANONICAL_PLACE_AND_EXACT_LINK_OWNER_REVIEW",
+      "exception_or_why_safe": "One physical Baroque basilica at number 1, not nearby administrative office at number 2. Traditional Latin Sunday Mass at 13:30 is listed by the basilica; do not alter operational times in this PR.",
+      "official_traditional_mass_source": "https://www.st-clemens-hannover.de/gottesdienste/",
+      "exact_preview_only_not_full_original_visual_approval": true,
+      "source_photo_approved": false,
+      "production_place_created": false,
+      "production_link_created": false,
+      "production_schedule_added": false,
+      "production_photo_published": false
+    },
+    {
+      "photo_contact_id": 71,
+      "photo_original_sha1": "f67972deb17cd65db5ec2b3315567570569998f6",
+      "photo_preview_role": "PREFERRED_EXTERIOR_PREVIEW",
+      "physical_anchor_id": "RG-0573EEA7D76E",
+      "proposed_place": {
+        "place_id": "place:DE:kapelle-hl-bruder-konrad-kolbermoor",
+        "name": {
+          "official": "Kapelle Hl. Bruder Konrad, Kolbermoor",
+          "aliases": [
+            "FSSPX Kapelle Hl. Bruder Konrad",
+            "Bruder Konrad Chapel, Kolbermoor"
+          ]
+        },
+        "place_type": "chapel",
+        "geo_area_ids": [
+          "geo:country:DE"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 47.85249,
+          "lng": 12.05936,
+          "precision": "site",
+          "geocoding_source": "OTHER",
+          "source_url": "https://mapcarta.com/W114455016",
+          "source_ref": "openstreetmap:way:114455016",
+          "matched_country_code": "DE",
+          "verified_at": "2026-10-30"
+        },
+        "address": {
+          "line1": "Theodor-Fontane-Straße 7",
+          "line2": null,
+          "postal_code": "83059",
+          "city": "Kolbermoor",
+          "region": "Bavaria",
+          "country_code": "DE",
+          "country": "Germany",
+          "formatted": "Theodor-Fontane-Straße 7, 83059, Kolbermoor, Germany"
+        },
+        "source_ids": [
+          "AO-PHOTO-P104-71-SITE",
+          "AO-PHOTO-P104-71-GEO"
+        ]
+      },
+      "proposed_sources": [
+        {
+          "id": "AO-PHOTO-P104-71-SITE",
+          "title": "Photo P104 official site identity — Kapelle Hl. Bruder Konrad, Kolbermoor",
+          "issuer": "SSPX official chapel directory",
+          "directness": "OFFICIAL_CHURCH",
+          "url": "https://map.fsspx.org/de/places/kapelle-hl-bruder-konrad",
+          "contribution": "Exact physical church at Theodor-Fontane-Straße 7, 83059 Kolbermoor; not approval of a photograph or Mass schedule."
+        },
+        {
+          "id": "AO-PHOTO-P104-71-GEO",
+          "title": "Photo P104 independent site geolocation — Kapelle Hl. Bruder Konrad, Kolbermoor",
+          "issuer": "OpenStreetMap way 114455016 via Mapcarta",
+          "directness": "SECONDARY",
+          "url": "https://mapcarta.com/W114455016",
+          "contribution": "Geographic marker for named worship building 47.85249,12.05936; preserve provenance. Source-specific, not postcode centroid."
+        }
+      ],
+      "frozen_venue_id": "SSPXMAP:OPE-002331",
+      "frozen_r49_venue_present": true,
+      "legacy_r49_pin": {
+        "lat": 47.84178,
+        "lng": 12.04237,
+        "precision": "SOURCE_MARKER_UNASSESSED"
+      },
+      "frozen_r49_to_source_building_distance_m": 1739.5,
+      "proposed_link": null,
+      "status": "HOLD_LEGACY_R49_GEO_MARKER_DISAGREEMENT",
+      "exception_or_why_safe": "R49 pin at 47.84178,12.04237 is ~1.74 km from independent building named OSM way 114455016. Official address Th.-Fontane-Str. 7 versus OSM Glasberg 9a discrepancy; do not treat R49 marker as site geolocation and do not silently overwrite it. Correct in the Directory owner workflow.",
+      "official_traditional_mass_source": "https://map.fsspx.org/de/places/kapelle-hl-bruder-konrad",
+      "exact_preview_only_not_full_original_visual_approval": true,
+      "source_photo_approved": false,
+      "production_place_created": false,
+      "production_link_created": false,
+      "production_schedule_added": false,
+      "production_photo_published": false
+    },
+    {
+      "photo_contact_id": 195,
+      "photo_original_sha1": "d7c7524559edea69e0f3b0b54f2d83e5fde87f3a",
+      "photo_preview_role": "PREFERRED_EXTERIOR_PREVIEW",
+      "physical_anchor_id": "RG-0B11C840F55E",
+      "proposed_place": {
+        "place_id": "place:GB:our-lady-of-lourdes-st-cecilia-blandford-forum",
+        "name": {
+          "official": "Church of Our Lady of Lourdes and St Cecilia, Blandford Forum",
+          "aliases": [
+            "Our Lady of Lourdes & St Cecilia",
+            "Blandford Catholic Church"
+          ]
+        },
+        "place_type": "church",
+        "geo_area_ids": [
+          "geo:country:GB"
+        ],
+        "mappable": true,
+        "geo": {
+          "lat": 50.860163889,
+          "lng": -2.166302778,
+          "precision": "site",
+          "geocoding_source": "OTHER",
+          "source_url": "https://commons.wikimedia.org/wiki/Category:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Blandford_Forum",
+          "source_ref": "wikidata:Q137888395;commons:church-of-our-lady-of-lourdes-blandford",
+          "matched_country_code": "GB",
+          "verified_at": "2026-10-30"
+        },
+        "address": {
+          "line1": "Whitecliff Mill Street",
+          "line2": null,
+          "postal_code": "DT11 7BN",
+          "city": "Blandford Forum",
+          "region": "Dorset",
+          "country_code": "GB",
+          "country": "United Kingdom",
+          "formatted": "Whitecliff Mill Street, DT11 7BN, Blandford Forum, United Kingdom"
+        },
+        "source_ids": [
+          "AO-PHOTO-P104-195-SITE",
+          "AO-PHOTO-P104-195-GEO"
+        ]
+      },
+      "proposed_sources": [
+        {
+          "id": "AO-PHOTO-P104-195-SITE",
+          "title": "Photo P104 official site identity — Church of Our Lady of Lourdes and St Cecilia, Blandford Forum",
+          "issuer": "Plymouth Diocese",
+          "directness": "OFFICIAL_CHURCH",
+          "url": "https://www.plymouth-diocese.org.uk/church/blandford-forum-lady-lourdes-st-cecilia/",
+          "contribution": "Exact physical church at Whitecliff Mill Street, DT11 7BN Blandford Forum; not approval of a photograph or Mass schedule."
+        },
+        {
+          "id": "AO-PHOTO-P104-195-GEO",
+          "title": "Photo P104 independent site geolocation — Church of Our Lady of Lourdes and St Cecilia, Blandford Forum",
+          "issuer": "Wikimedia Commons / Wikidata Q137888395",
+          "directness": "SECONDARY",
+          "url": "https://commons.wikimedia.org/wiki/Category:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Blandford_Forum",
+          "contribution": "Geographic marker for named worship building 50.860163889,-2.166302778; preserve provenance. Source-specific, not postcode centroid."
+        }
+      ],
+      "frozen_venue_id": "AO-B34-L-GB-52D1803A1F95",
+      "frozen_r49_venue_present": false,
+      "legacy_r49_pin": null,
+      "frozen_r49_to_source_building_distance_m": null,
+      "proposed_link": null,
+      "status": "HOLD_NO_CURRENT_R49_OPERATIONAL_VENUE_AND_TLM_TIMES_UNVERIFIED",
+      "exception_or_why_safe": "The named church can be geolocated from Commons' Wikidata-backed building marker and parish official address, but frozen research venue is absent from R49. No current Traditional Mass is independently confirmed. Do not create operational schedule or Directory link.",
+      "official_traditional_mass_source": "https://lms.org.uk/list-of-churches",
+      "exact_preview_only_not_full_original_visual_approval": true,
+      "source_photo_approved": false,
+      "production_place_created": false,
+      "production_link_created": false,
+      "production_schedule_added": false,
+      "production_photo_published": false
+    }
+  ]
+}
