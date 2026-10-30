@@ -18,7 +18,7 @@ assert.ok(s.shrines.length>=216);
 assert.ok(s.pilgrimages.length>=206);
 assert.ok(geo.places.length>=220);
 assert.equal(featured.items.length,20);
-assert.equal(media.items.length,31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Expanded verified sanctuary corpus includes original eighteen plus six new photos");
+assert.ok(media.items.length>=31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Expanded verified sanctuary corpus includes original eighteen plus six new photos");
 assert.ok(EXPLORE_DATA_URLS.illustratedPlaceGuides.endsWith("/data/shrines/illustrated-place-guides-ireland.v1.json"));
 const ids=new Set(["place:IE:knock-shrine","place:IE:lough-derg-station-island"]);
 let count=0;
