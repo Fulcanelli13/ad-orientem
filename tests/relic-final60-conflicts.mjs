@@ -34,7 +34,7 @@ assert.equal(disputes.dossiers.length,2);
 assert.equal(disputes.schema,"SACRED_ATLAS_CONTESTED_BODILY_ATTRIBUTIONS_REVIEW_V1");
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:shrine.shrines,pilgrimages:shrine.pilgrimages,routes:shrine.routes,temporalLinks:shrine.temporalLinks,sources:sources.sources,places:geography.places}).pass,true);
-assert.deepEqual([geography.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length],[LIVE.places,257,240,LIVE.sources,122]);
+assert.deepEqual([geography.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length],[LIVE.places,257,240,LIVE.sources,123]);
 const map=new Map(geography.places.map(p=>[p.place_id,p]));
 const relics=new Map(sacred.relics.map(r=>[r.id,r]));
 for(const d of disputes.dossiers){
@@ -67,4 +67,4 @@ const projected=projectExploreDataset({geography,sacredPhenomena:sacred});
 const markers=exploreMapFeatures(projected.byLens.relics);
 assert.equal(markers.length,new Set(projected.byLens.relics.filter(x=>x.map_publishable).map(x=>x.place_id)).size);
 assert.equal(markers.filter(x=>x.properties.item_id==="relics:relic:IT:montecassino-abbey").length,1);
-console.log("PASS final relic census: 60 additional deduplicated subject leads (40 source-reviewed, 20 with no institutional source yet), 2 competing-custody dossiers, Montecassino published with 1 Place marker, 122 relic records");
+console.log("PASS final relic census: 60 additional deduplicated subject leads (40 source-reviewed, 20 with no institutional source yet), 2 competing-custody dossiers, Montecassino published with 1 Place marker, 123 relic records");
