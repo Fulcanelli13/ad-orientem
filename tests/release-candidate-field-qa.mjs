@@ -146,14 +146,14 @@ async function openSurface(page,surface,width){
     // Settings is contextual, never an extra permanent destination.
     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   }else if(surface==="calendar"){
-    // PR #1023 made Calendar a canonical in-page Today view. Many contextual
-    // date links exist, so use the unique Month tab rather than an ambiguous
-    // [data-home-calendar] locator or retired sixth shell destination.
+    // H4 owns Calendar inside Home. On the Today door open the date; on
+    // repeated visits use its Calendar-only view selector (not retired tabs).
     await page.locator("[data-ao-app-surface='home']").first().click();
-    await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
-    const month=page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]');
-    assert.equal(await month.count(),1,width+"px Today lost its Month tab");
-    await month.click();
+    await page.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:10000});
+    const month=page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]');
+    assert.equal(await month.count(),1,width+"px H4 Calendar lost Month navigation");
+    if(await month.isVisible())await month.click();
+    else await page.locator(".aoTodayH4 .aoH4DateOpen").click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
     assert.equal(await nav.count(),1,width+"px missing "+surface+" top-level navigation control");
@@ -170,6 +170,15 @@ async function openSurface(page,surface,width){
       width+"px embedded Calendar unexpectedly replaced the Today app surface");
     assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
       width+"px Month lost its canonical Calendar body");
+    const year=page.locator('.aoH4CalendarViews [data-home-calendar-view="year"]');
+    await year.click();
+    await page.waitForSelector('.aoTodayH4 [data-ao-liturgical-clock="v1"] .aoClockDial',
+      {state:"visible",timeout:15000});
+    assert.equal(await year.getAttribute("aria-current"),"page",
+      width+"px Liturgical Year active selector missing");
+    await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
+    await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
+      {state:"visible",timeout:15000});
   }else if(surface==="pray"){
     await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
     await page.waitForSelector("#aoPray435930.open",{state:"visible",timeout:10000});
