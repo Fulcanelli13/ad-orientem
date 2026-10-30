@@ -465,6 +465,9 @@ const STYLES=`
 #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownCircle{
  width:min(100%,282px)
 }
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"]{
+ gap:4px
+}
 #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayerText{
  line-height:1.5
 }
