@@ -10,6 +10,25 @@ A pointer-by-pointer audit resolved **3,703 / 3,703 original JSON pointers**, wi
 
 The published catalogue remains **36**; the research register does not license new Calendar publications.
 
+## Latest checkpoint — source scope, owner decisions and release boundaries
+
+| Measure | Current research result | What this does **not** mean |
+|---|---:|---|
+| Original evidence-only source IDs linked | **3,295 / 3,295** | Not new distinct customs |
+| CatholicCulture hosted action scopes | **132 / 132** across 29 hosted articles | Original printed folios not all rechecked |
+| Authorship-conflict cases | **9**, all from Trapp Holy Thursday-hosted item | Not 9 independent Trapp witnesses |
+| Action-to-owner comparison edges | **42** across 14 existing owner IDs | Not 42 canonically approved relationships |
+| Description-level same-core action findings | **6** | Do not merge or mint a new identity |
+| Explicit no-merge actor/object/date vetoes | **11** | Retain distinct variants, roles or objects |
+| Human-approved new custom identities | **0** | The 36 existing published customs remain |
+| Original historical indulgence facsimiles identified | **1 / 4** | Current grant for each attached custom not established |
+
+[132 hosted source-action findings](./customs-ultra-master-v2-132-hosted-passage-identity-review-20261030.v1.json) and [42 exact action-to-owner review decisions](./customs-ultra-master-v2-42-action-identity-edges-20261030.v1.json) are research-layer additions. The historic 40-record and 70-record ledgers remain **earlier snapshots**; their 92 and 62 unreviewed counts are **not current**. All 132 hosted actions now have source-passaged scope classifications. The 9 unresolved Trapp article authorship credits, original book-pair independence and precise place/time/actor still bar human identity certification.
+
+The Saint Peter fishing-festival case was corrected in the 132 source ledger and Wave 04: the **priest's boat blessing** is ministerial; the subsequent **Yorkshire fishermen's fork supper** is a distinct reported community meal. The Trapp Holy Thursday family bread-and-wine supper is not Eucharistic consecration; Newland's 12-candle home Stations exercise is not official Tenebrae or automatically indulgenced Stations. Existing 1962 or current liturgical authority requires independent primary verification.
+
+**Next:** review the remaining unpaired source-to-owner action evidence across Weiser/Pitrè/regional inventories; explicitly determine local variance vs genuinely distinct historical customs; obtain remaining original indulgence instruments and map concessions to exactly described indulgenced works. Maintain publication freeze, zero cost and draft PR #1723.
+
 ## Existing research is not being discarded
 
 The authoritative corpus remains at:
@@ -121,11 +140,11 @@ All **17/17** previously planned evidence-only reconciliation waves have now bee
 
 **Deduplication:** [79-case cross-book review board](./customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json) integrates **26 existing McLoughlin action families** (70 exact source observations), **41 manual description comparisons** and **12 locally bounded cluster reviews** (34 existing provisional group memberships); all input observation IDs and 465-registry owner/group candidate IDs checked. These **79 are review units, not unique custom IDs, not 79 new independent witnesses**. Negative lexical pairs, ministerial actions, derivative same-author evidence and differing feast dates remain distinguishable. **Zero canonical merges or final identity approvals**.
 
-**Next work:** Resolve the 132 source-passage classifications; use already examined 79 action-level comparison cases to propose *verified* existing owner/variant mappings only after precise act, actor, occasion and original witness comparison; audit high-priority Pitrè and Weiser source/facsimile fidelity; verify original historical indulgence instruments for St Joseph, Breton pardons and Frauendreißiger; decide how the source corpus maps to truly distinct regional, widespread and universal Catholic customs. Current 1 Caravaca 1998 primary grant remains publication-gated.
+**Historical checkpoint (superseded):** At this stage, the next work was to resolve the 132 source-passage classifications; use already examined 79 action-level comparison cases to propose *verified* existing owner/variant mappings only after precise act, actor, occasion and original witness comparison; audit high-priority Pitrè and Weiser source/facsimile fidelity; verify original historical indulgence instruments for St Joseph, Breton pardons and Frauendreißiger; decide how the source corpus maps to truly distinct regional, widespread and universal Catholic customs. Current 1 Caravaca 1998 primary grant remains publication-gated.
 
 The 36 published Customs and Calendar remain unchanged. The status is first-pass source integration complete, **not** editorial registry reconciliation complete.
 
-## 30 October — first 40 CatholicCulture passage-level identity screens
+## 30 October — first 40 CatholicCulture passage-level identity screens (historical checkpoint)
 
 Six hosted source passages were read directly: Trapp Christmas Eve (12 actions), Berger Assumption herbs (8), Berger St Joseph table (6), Newland Advent wreath (6), Newland domestic Easter Vigil (4), and Newland family Rogation procession (4). The 40 exact source IDs are anchored to the CatholicCulture hosted passage lines in [the passage evidence ledger](./customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json), and Wave 04 was updated accordingly. **92 of 132 CatholicCulture entries remain lexical-only**, 40 now source-passage reviewed; neither method counts as original printed-book facsimile certification.
 
@@ -133,7 +152,7 @@ Six hosted source passages were read directly: Trapp Christmas Eve (12 actions),
 
 **Liturgical hold:** Newland explicitly says the private Easter Vigil prayers are reused out of their liturgical context; **no authorized Roman Ritual blessing and no substitution for the church rite is inferred**. No canonical merges, indulgence approvals or Calendar publication.
 
-## 30 October — 70 directly inspected CatholicCulture action observations, exact-work indulgence guards
+## 30 October — 70 directly inspected CatholicCulture action observations, exact-work indulgence guards (historical checkpoint)
 
 A further **30 action passages from six Mary Reed Newland chapters** have been inspected and added to the canonical 70-record hosted-passage ledger. The original 40-record file remains a historical snapshot. Current **70/132 are passage-reviewed, 62/132 still lexical-only; 12 source articles**; 20 tentative existing-master owner leads, none approved. The other **3,163** evidence-only source records already carried native provisional types. Full original book facsimiles for the 70 source passages were not examined.
 
