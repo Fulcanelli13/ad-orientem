@@ -49,7 +49,9 @@ const FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEM
 const locale=language=>String(language).toLowerCase().startsWith("fr")?"fr":"en";
 function approved(events,cue,ids){
   if(!CUE.test(String(cue??""))||!Array.isArray(events)||!events.length)return false;
-  const actions=events.filter(e=>e?.kind!=="STATE");
+  // Separately printed server bell directions and persistent states do not
+   // count as parts of the priest-only abbreviated source rubric.
+   const actions=events.filter(e=>e?.kind!=="STATE"&&e?.kind!=="BELL");
   return actions.length===ids.length&&actions.every((e,i)=>
     e?.id===ids[i]&&e?.sourceCueId===cue&&e?.sourceId==="MR62_RITUS"&&
     e?.owner==="PUBLISHED_R17_MISSAL_INLINE"&&
