@@ -8,7 +8,7 @@
 import {readFileSync,writeFileSync} from "node:fs";
 import {createHash} from "node:crypto";
 const input="data/calendar/sacred-art-accepted-856-to-canonical-383-20261029.v1.json";
-const output="data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v1.json";
+const output="data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json";
 const crosswalk=JSON.parse(readFileSync(input,"utf8"));
 const source=crosswalk.records.filter(r=>r.sourceId.startsWith("commons:")&&r.canonical383.status==="NO_CONFIRMED_IDENTITY")
  .sort((a,b)=>Number(a.sourceId.split(":")[1])-Number(b.sourceId.split(":")[1]));
