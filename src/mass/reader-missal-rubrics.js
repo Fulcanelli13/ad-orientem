@@ -85,6 +85,27 @@ const APPROVED_MISSAL_PRIEST_STATES=Object.freeze({
 // One already-canonical 1962 action lacks an accurate pictogram and a
 // published R17 event. Reuse its immutable gesture-matrix ID as *text only*;
 // never invent a rubric-event identity or count it among the 52 R17 actions.
+// Exact existing VIII.6 server-bell source rows. These are printed ceremonial
+// directions, NOT signals that the server rang a bell while a reader scrolled.
+// The 1962 text permits either three rings or a continuous ring at each
+// elevation; no local pattern is selected or simulated by this presentation.
+const APPROVED_MISSAL_BELL_DIRECTIONS=Object.freeze({
+ "AO.RUB.C0161.02":Object.freeze({
+  label:"WARNING BELL",
+  en:"A little before the Consecration, the server signals the faithful with the small altar bell.",
+  fr:"Peu avant la consécration, le servant avertit les fidèles par un signal de sonnette.",
+ }),
+ "AO.RUB.C0174.03":Object.freeze({
+  label:"ELEVATION BELL · HOST",
+  en:"At the elevation of the Host, the server rings the bell three times, or continuously until the Host is replaced upon the corporal.",
+  fr:"À l’élévation de la sainte Hostie, le servant sonne trois fois, ou de façon continue jusqu’à ce que l’Hostie soit reposée sur le corporal.",
+ }),
+ "AO.RUB.C0181.03":Object.freeze({
+  label:"ELEVATION BELL · CHALICE",
+  en:"At the elevation of the Chalice, the server rings the bell three times, or continuously until the Chalice is replaced upon the corporal.",
+  fr:"À l’élévation du calice, le servant sonne trois fois, ou de façon continue jusqu’à ce que le calice soit reposé sur le corporal.",
+ }),
+});
 const MINOR_MATRIX_ID="GM.P.C0204.01";
 function exactMinorMatrix(matrix){
  if(matrix?.schema!=="ao-mass-gesture-matrix-v1" ||
@@ -153,6 +174,21 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
   candidates.push(...rows.map(x=>({id:x.id,cueId,order:x.order,
    label:x.label,sourceUrl:source.url,kind:"STATE"})));
  }
+ // The reader's THREE already sourced VIII.6 bell rows may be explained in
+ // MISSAL at their exact source cue; they never activate an audio effect,
+ // encode an observed server action, or choose a local ringing pattern.
+ for(const cueId of ids){
+  const rows=registry.items.filter(x=>x.cueId===cueId&&
+   Object.hasOwn(APPROVED_MISSAL_BELL_DIRECTIONS,x.id)&&
+   x.actor==="SERVER"&&x.kind==="BELL"&&x.displayPrimary===false&&
+   x.authorityClass==="1962_NORMATIVE_WITH_LOCAL_PATTERN"&&
+   x.sources?.includes("MR62_RITUS")&&
+   x.presentationOwner==="reader-transients"&&
+   Number.isInteger(x.order)&&
+   x.label===APPROVED_MISSAL_BELL_DIRECTIONS[x.id].label);
+  candidates.push(...rows.map(x=>({id:x.id,cueId,order:x.order,
+   label:x.label,sourceUrl:source.url,kind:"BELL"})));
+ }
  // The C0204 action belongs at the exact omnis honor et gloria paragraph.
  // A bare source anchor, a draft matrix row or a synthetic paragraph cannot
  // confer this certification. This remains descriptive, never observed now.
@@ -164,10 +200,13 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
  const positioned=new Map(ids.map((id,i)=>[id,i]));
  return frozen(candidates.sort((a,b)=>
      positioned.get(a.cueId)-positioned.get(b.cueId)||a.order-b.order)
-   .filter(x=>ACTIONS[x.label] || (x.kind==="STATE"&&APPROVED_MISSAL_PRIEST_STATES[x.id]))
+   .filter(x=>ACTIONS[x.label] || (x.kind==="STATE"&&APPROVED_MISSAL_PRIEST_STATES[x.id]) || (x.kind==="BELL"&&APPROVED_MISSAL_BELL_DIRECTIONS[x.id]))
    .map(x=>frozen({
-     id:x.id,sourceCueId:x.cueId,actor:"PRIEST",
-     shortAction:x.label,displayText:x.kind==="STATE" ? APPROVED_MISSAL_PRIEST_STATES[x.id][isFrench?"fr":"en"] : ACTIONS[x.label][isFrench?1:0],
+     id:x.id,sourceCueId:x.cueId,actor:x.kind==="BELL"?"SERVER":"PRIEST",
+     shortAction:x.label,displayText:x.kind==="BELL"
+       ? APPROVED_MISSAL_BELL_DIRECTIONS[x.id][isFrench?"fr":"en"]
+       : x.kind==="STATE" ? APPROVED_MISSAL_PRIEST_STATES[x.id][isFrench?"fr":"en"]
+       : ACTIONS[x.label][isFrench?1:0],
      kind:x.kind??"ACTION",
      latinTrigger:x.triggerLat??null,order:x.order,
      sourceId:"MR62_RITUS",
