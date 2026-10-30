@@ -1109,6 +1109,47 @@ const PRAYER_BOOK_RECONCILIATION_CSS="\n/* Prayer-wide correction to Claude's 18
 #aoPray435930 .aoLittleCrownPrayerText{
   text-shadow:none!important;
 }
+
+/* The canonical Rosary has a separate donor root. Keep its bead/mystery
+   structure and artwork intact but remove dashboard framing and pills. */
+#aoPrayerBookRoot .pbShell .lab-prayer-sheet,
+#aoPrayerBookRoot .pbShell .pbFlowCard,
+#aoPrayerBookRoot .pbShell .aoRosaryActiveCard{
+ border:0!important;border-radius:0!important;
+ background:transparent!important;box-shadow:none!important;
+ padding:9px 5px 14px!important;
+}
+#aoPrayerBookRoot .pbShell .lab-view-head{
+ padding-top:6px!important;padding-bottom:8px!important;
+}
+#aoPrayerBookRoot .pbShell .r29-head-recitation button,
+#aoPrayerBookRoot .pbShell .lab-recitation-mode button,
+#aoPrayerBookRoot .pbShell .aoP435930RosaryBar button,
+#aoPrayerBookRoot .pbShell .r23-overview-open{
+ min-height:44px!important;
+ padding:5px 9px!important;
+ border:0!important;border-radius:0!important;
+ background:transparent!important;box-shadow:none!important;
+ font:500 12px/1.25 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:0!important;text-transform:none!important;
+}
+#aoPrayerBookRoot .pbShell .r29-head-recitation button.active,
+#aoPrayerBookRoot .pbShell .r29-head-recitation button[aria-pressed="true"],
+#aoPrayerBookRoot .pbShell .lab-recitation-mode button.active{
+ border-bottom:1px solid var(--liturgical,#bda77e)!important;
+ color:var(--text,#eee4d7)!important;
+}
+#aoPrayerBookRoot .pbShell .lab-prayer-sheet a[target="_blank"],
+#aoPrayerBookRoot .pbShell .pbFlowCard a[target="_blank"]{
+ color:var(--muted,#b8afa1)!important;
+ font:400 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;
+ text-decoration:underline;text-underline-offset:3px;
+}
+#aoPrayerBookRoot .pbShell .pbFlipHint,
+#aoPrayerBookRoot .pbShell .lab-flip-hint{
+ color:var(--muted,#b8afa1)!important;
+ font-size:10px!important;opacity:.7;
+}
 /* Source material is rehomed by the render-time adapter, never discarded. */\n@media(max-width:390px){\n #aoPray435930 .aoP435930Mount:not([data-ao-pray-view=\"home\"]):not([data-ao-pray-view=\"family\"]) .aoP435930Body{padding-top:10px!important}\n #aoPray435930 .aoP435930Head{padding:5px 8px 6px!important}\n #aoPray435930 .aoP435930Head h1{font-size:18px!important}\n}\n";
 
 export function installPrayPresentationStyles(doc=globalThis.document){
