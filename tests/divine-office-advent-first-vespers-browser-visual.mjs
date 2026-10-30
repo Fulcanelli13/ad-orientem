@@ -447,7 +447,7 @@ try{
  assert.equal(await dp.locator("#next").isDisabled(),true);
  record("2026-12-01 ferial Tuesday Compline, 42 source blocks, PS11/12/15 + seasonal Marian antiphon",{
   passed:true,newDistinctRawLeaves:9,allPsalmsVisible:true,
-  12_6bPreserved:true,noDateFallback:true
+  psalm12Verse6bPreserved:true,noDateFallback:true
  });
  await dp.locator("#office-date").fill("2026-11-28");
  await dp.locator("#office-date").dispatchEvent("change");
