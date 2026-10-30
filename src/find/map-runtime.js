@@ -49,6 +49,7 @@ export function boundedWorldMapOptions(viewport=null){
 // Electric outline/selection palette; actual institute identity is the emblem sprite.
 export const MASS_MAP_GROUP_COLORS=Object.freeze({
   FSSP:"#00E5FF",ICKSP:"#BC65FF",SSPX:"#347CFF",IBP:"#FF9D24",
+  AASJMV:"#21CFB7",
   DIOCESAN:"#A3FF12",OTHER:"#93A3B9",
 });
 export function massMapProviderGroup(value){
@@ -63,6 +64,7 @@ const POINT_COLOR=["match",["get","provider_group"],
   "ICKSP",MASS_MAP_GROUP_COLORS.ICKSP,
   "SSPX",MASS_MAP_GROUP_COLORS.SSPX,
   "IBP",MASS_MAP_GROUP_COLORS.IBP,
+  "AASJMV",MASS_MAP_GROUP_COLORS.AASJMV,
   "DIOCESAN",MASS_MAP_GROUP_COLORS.DIOCESAN,
   MASS_MAP_GROUP_COLORS.OTHER];
 
