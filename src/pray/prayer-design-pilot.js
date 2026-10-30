@@ -172,6 +172,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
       '<p data-ao-pilot-empty hidden>'+esc(L("No matching prayers or devotions.","Aucune prière ni dévotion correspondante."))+'</p></div>'+
       '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
+      '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon")+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
     '</main>';
 }
 export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual'}){
@@ -215,7 +216,12 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotNativeIcon{width:46%;height:46%;max-width:116px;max-height:116px;opacity:.9}",
     "#aoPray435930 .aoPrayPilotTileCaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:24px 8px 8px;font:600 14px/1.13 var(--ao-font-display,Georgia,serif);text-shadow:0 1px 3px #000}",
     "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:22px;padding:40px 13px 12px}",
-    "#aoPray435930 .aoPrayPilotArtNote{max-width:570px;margin:8px auto 0;padding:0 12px;font-size:11px;line-height:1.45;color:var(--muted,#aaa);text-align:center}",
+    "#aoPray435930 .aoPrayPilotCustoms{display:flex;align-items:center;gap:10px;min-height:48px;margin:12px auto 0;padding:10px 14px;width:calc(100% - 32px);max-width:564px;border:1px solid var(--border,#4c4841);border-radius:12px;background:var(--surface-1,#18202a);color:var(--text,#f3ead7);text-align:left;cursor:pointer}",
+    "#aoPray435930 .aoPrayPilotCustoms:focus-visible{outline:3px solid var(--liturgical,#c9ae76);outline-offset:2px}",
+    "#aoPray435930 .aoPrayPilotCustomsIcon{flex:0 0 26px;width:26px;height:26px}",
+    "#aoPray435930 .aoPrayPilotCustoms span{display:flex;min-width:0;flex-direction:column;gap:3px}",
+    "#aoPray435930 .aoPrayPilotCustoms b{font:600 15px/1.2 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayPilotCustoms small{font:400 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aaa)}",
     "#aoPray435930 .aoPrayPilotResults{padding:4px 16px 24px}",
     "#aoPray435930 .aoPrayPilotResults[hidden],#aoPray435930 .aoPrayPilotMosaic[hidden],#aoPray435930 .aoPrayPilotResult[hidden]{display:none!important}",
     "#aoPray435930 .aoPrayPilotFacets{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 12px}",
