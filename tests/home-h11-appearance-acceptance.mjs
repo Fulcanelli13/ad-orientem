@@ -37,7 +37,7 @@ try{
     const page=await context.newPage(),errors=[];
     page.on("pageerror",error=>errors.push(String(error?.message??error)));
     const prefix=size.width===390?"390":"320";
-    await page.goto("http://127.0.0.1:4381/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+    await page.goto("http://127.0.0.1:4381/index.html?aoTodayH4=0",{waitUntil:"domcontentloaded",timeout:90000});
     await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:30000});
     await page.waitForFunction(()=>{
       const boot=document.getElementById("ao-cinema-boot");
@@ -177,7 +177,7 @@ try{
     // not the supplied prototype harness. The production H3 remains default.
     const h4=await context.newPage(),h4Errors=[];
     h4.on("pageerror",error=>h4Errors.push(String(error?.message??error)));
-    await h4.goto("http://127.0.0.1:4381/index.html?aoTodayH4=1",{waitUntil:"domcontentloaded",timeout:90000});
+    await h4.goto("http://127.0.0.1:4381/index.html",{waitUntil:"domcontentloaded",timeout:90000});
     await h4.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:30000});
     await h4.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed),null,{timeout:30000});
     // A painted Home behind the cinematic boot is not a screenshot of Home.
