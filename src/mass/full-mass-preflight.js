@@ -73,6 +73,7 @@ export function mountFullMassPreflight({
   subscribeCalendarState=null,
   onOpenCalendar=null,
   onOpenPrayerRoute=null,
+  onPrepareMassTexts=null,
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
@@ -362,14 +363,30 @@ export function mountFullMassPreflight({
         const massTexts=e.target?.closest?.("[data-mass-texts-open]");
         if(massTexts){
           e.preventDefault();e.stopPropagation();
+          if(massTexts.disabled)return;
+          massTexts.disabled=true;
           const legacy=getResolvedMass();
           const chosen=selectionFor(legacy);
-          openMassTextsSheet(doc,{
-            proper:legacy?.proper?.data??null,date:legacy?.date??"",
-            title:chosen.actualTitle||chosen.kindLabel,
-            language:chosen.readerLanguage,
-            sourceReady:root.dataset.aoProperReady==="true",opener:massTexts,
-          });
+          // The prepared session is the exact same resolved Proper R17 would
+          // receive on Begin, including All Souls II/III, observance choices,
+          // alternate source and form-dependent commemorations. Never preview
+          // the host's potentially stale first/formless Proper as certified.
+          Promise.resolve().then(()=>onPrepareMassTexts?.())
+            .then(prepared=>{
+              const proper=prepared?.session?.resolvedMass?.proper?.data??null;
+              openMassTextsSheet(doc,{
+                proper,date:legacy?.date??"",title:chosen.actualTitle||chosen.kindLabel,
+                language:chosen.readerLanguage,
+                sourceReady:root.dataset.aoProperReady==="true"&&Boolean(proper),
+                opener:massTexts,
+              });
+            })
+            .catch(()=>{
+              openMassTextsSheet(doc,{date:legacy?.date??"",
+                title:chosen.actualTitle||chosen.kindLabel,
+                language:chosen.readerLanguage,sourceReady:false,opener:massTexts});
+            })
+            .finally(()=>{if(massTexts.isConnected)massTexts.disabled=false;});
           return;
         }
         const calendarButton=e.target?.closest?.("[data-mass-calendar-open]");
