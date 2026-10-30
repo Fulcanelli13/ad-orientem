@@ -166,7 +166,7 @@ const empty=(reason)=>freeze({schema:"ao-schola-music-itinerary-v1",supported:fa
  * the place of the 1958 organ-permission resolver.
  */
 export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerformance="UNSPECIFIED",
- resolvedMass=null}={}){
+ resolvedMass=null,massPlan=null}={}){
  const selected=String(form??"").toUpperCase();
  if(selected==="LOW")return empty("LOW_MASS_HAS_NO_SCHOLA");
  if(!SUNG.has(selected))return empty("UNSUPPORTED_SUNG_FORM");
@@ -193,6 +193,11 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
   if(spec.needs && !available.has(spec.needs))continue;
   if(spec.trackId&&!available.has(spec.trackId))continue;
   if(requiem && (spec.needs==="GLORIA"||spec.needs==="CREDO"||spec.omitForRequiem))continue;
+  // Funeral Absolution (and other plan-owned endings) may suppress the
+  // Last Gospel altogether. Never retain its music or recessional event
+  // merely because the underlying immutable source cards contain it.
+  if(massPlan?.normalLastGospel===false &&
+     (spec.id==="LAST_GOSPEL"||spec.id==="RECESSIONAL_ORGAN_OPTION"))continue;
   if(spec.performance && spec.performance!==setting)continue;
   const sourceCards=bySource.get(spec.at.section)??[];
   if(!sourceCards.length){unresolved.push(freeze({id:spec.id,reason:"MISSING_CANONICAL_SOURCE_SECTION"}));continue;}
