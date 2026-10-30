@@ -153,6 +153,14 @@ try{
     "F04 first-card posture chip must be attached to the card, not stranded above navigation");
    assert.ok(await page.locator(base+' [data-ao-angelus-recitation="group"] .aoF04VoiceRole').count()>=2,
     "F04 grouped prayer must visually identify LEADER and ALL without rewriting canonical lines");
+   const groupRow=await page.locator(base+' [data-ao-angelus-recitation="group"] .aoAngelusDialogueLine').first().evaluate(node=>{
+    const label=node.querySelector(".aoF04VoiceRole")?.getBoundingClientRect();
+    const phrase=node.querySelector("span:last-child")?.getBoundingClientRect();
+    return {roleTop:label?.top,phraseTop:phrase?.top,
+     overflow:node.scrollWidth-node.clientWidth};
+   });
+   assert.ok(Math.abs(groupRow.roleTop-groupRow.phraseTop)<18&&groupRow.overflow<=2,
+    "F04 LEADER/ALL must occupy the same compact prayer row without horizontal overflow: "+JSON.stringify(groupRow));
 
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0);
 
