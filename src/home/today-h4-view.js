@@ -5,6 +5,7 @@ import { H7_SANCTUARY_CSS } from "./h7-sanctuary-authoritative-css.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
 import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
+import { calendarDisciplineForDate } from "../calendar/intelligence.js";
 // Display only verified liturgical colours; never infer them from the season.
 export function verifiedH4WeekColour(resolved,date){
   if(resolved?.status!=="ready"||resolved.date!==date||!resolved.day?.main)return null;
@@ -30,6 +31,14 @@ export function h4Enabled(win=globalThis){
 }
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null,properSections=[]}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
+  const discipline=calendarDisciplineForDate(vm.dateIso,{fr})?.today?.key;
+  // Contemporary discipline is distinct from historic 1962 fasts and local norms.
+  const dayMarks=[];
+  if(discipline==="fast-abstinence")dayMarks.push(say("Fast & abstinence","Jeûne et abstinence"));
+  else if(discipline==="friday")dayMarks.push(say("Friday penance","Pénitence du vendredi"));
+  if(new Date(vm.dateIso+"T12:00:00").getDay()===0)
+    dayMarks.push(say("Sunday obligation","Obligation dominicale"));
+  const marksMarkup=dayMarks.map(x=>'<span class="mk k">'+esc(x)+'</span>').join("");
   const verifiedOrdo=ordoFacts?.status==="SOURCE_PROPER";
   const ordoFlag=(key)=>verifiedOrdo&&typeof ordoFacts[key]==="boolean"
     ?(ordoFacts[key]?say("Said","Dit"):say("Not said","Non dit")):"—";
@@ -90,7 +99,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<div class="aoTodayV2HeroActions tx"><button class="date" type="button" data-home-calendar data-home-calendar-view="picker" data-home-calendar-date="'+esc(vm.dateIso)+'"><span class="eb">'+esc(vm.isToday?say("Today","Aujourd’hui"):say("Selected","Jour choisi"))+'</span><b>'+esc(vm.dateTitle)+'</b><span aria-hidden="true">⌄</span></button>'+
   '<span class="rb">'+esc([vm.weekday,vm.rank,vm.colour].filter(Boolean).join(" · "))+'</span>'+
   '<h1>'+esc(vm.observedTitle)+'</h1>'+properIdentity.replace('class="aoH4Formulary"','class="aoH4Formulary ml"')+
-  '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span></div>'+
+  '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span>'+marksMarkup+'</div>'+
   '<section class="aoTodayV2Mass"><button type="button" class="btn glass aoH7Enter" data-home-h7-enter>'+
   '<span><b>'+esc(say("Enter the Mass","Entrer dans la messe"))+'</b><small lang="la">'+esc(vm.massIntroit||say("Mass of the day","Messe du jour"))+'</small></span>'+
   '<span class="ar" aria-hidden="true">›</span></button></section></div></section>'+
@@ -108,7 +117,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<button type="button" class="ib back" data-home-h7-back aria-label="'+esc(say("Back","Retour"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></div>'+
   '<div class="body door"><div class="dhead"><span class="rb">'+esc([vm.weekday,vm.rank,vm.colour].filter(Boolean).join(" · "))+'</span><span class="cr">✠</span>'+
   '<h2>'+esc(vm.observedTitle)+'</h2><p class="ver">'+esc(vm.dateTitle)+'</p>'+
-  '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span></div></div><div class="dr"></div>'+
+  '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span>'+marksMarkup+'</div></div><div class="dr"></div>'+
   (subtitle?'<p class="why">'+esc(subtitle)+'</p>':"")+
   '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
   (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
