@@ -21,6 +21,7 @@ import "./pray-formation-organisational-map.mjs";
 import { readFileSync } from "node:fs";
 import {
   APP_SURFACES,
+  APP_RIBBON_SURFACES,
   APP_ROUTE_SURFACES,
   NON_MASS_DONOR_CONTRACT,
   createAppHostAdapter,
@@ -29,11 +30,14 @@ import {
 } from "../src/app/index.js";
 import { installAppShellBridge } from "../src/app/browser-entry.js";
 
-assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "find"]);
+assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "find"],"Mass stays a routable app domain");
+assert.deepEqual(APP_RIBBON_SURFACES, ["home", "pray", "learn", "find"],"Mass belongs to Today, not the permanent tab bar");
 assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "find", "calendar", "settings", "apostolate"]);
-assert.equal(APP_SURFACES.includes("find"), true, "Explore/Find is not a permanent ribbon surface");
-assert.equal(APP_SURFACES.includes("settings"), false, "Settings still consumes a permanent ribbon slot");
-assert.equal(APP_SURFACES.includes("calendar"), false, "Full Calendar still consumes a permanent ribbon slot");
+assert.equal(APP_RIBBON_SURFACES.includes("find"), true, "Explore/Find is not a permanent ribbon surface");
+assert.equal(APP_RIBBON_SURFACES.includes("mass"),false,"Duplicate Mass permanent icon returned");
+assert.equal(normalizeAppSurface("mass"),"mass","Removing ribbon icon must not remove routable Mass");
+assert.equal(APP_RIBBON_SURFACES.includes("settings"), false, "Settings still consumes a permanent ribbon slot");
+assert.equal(APP_RIBBON_SURFACES.includes("calendar"), false, "Full Calendar still consumes a permanent ribbon slot");
 assert.equal(normalizeAppSurface("calendar"),"calendar","Calendar must remain directly routable");
 assert.equal(APP_SURFACES.includes("sources"), false);
 assert.equal(APP_SURFACES.includes("formation"), false, "Formation became a second canonical surface");
@@ -398,7 +402,11 @@ function host({ route = "home", confirm = true } = {}) {
   const calendarSlot=buttons.find(x=>x.dataset.aoAppSecondary==="calendar");
   assert.equal(calendarSlot?.hidden,true,"Calendar standalone ribbon slot remains visible");
   assert.equal(calendarSlot?.dataset.aoAppSurface,undefined,"Hidden Calendar still owns a permanent tab");
-  assert.equal(buttons.filter(x=>!!x.dataset.aoAppSurface).length,5,"Expected exactly five permanent destinations");
+  const massSlot=buttons.find(x=>x.dataset.aoAppSecondary==="mass");
+   assert.equal(massSlot?.hidden,true,"Mass standalone ribbon slot remains visible");
+   assert.equal(massSlot?.dataset.aoAppSurface,undefined,"Hidden Mass still owns a permanent tab");
+   assert.equal(massSlot?.attributes?.["aria-hidden"],"true","Retired Mass must not remain in the accessibility tree");
+   assert.equal(buttons.filter(x=>!!x.dataset.aoAppSurface).length,4,"Expected exactly four permanent destinations");
   assert.match(appEntrySource,/language==="fr"\?"Aujourd’hui":"Today"/,"Today ribbon lost its French label");
   assert.match(appEntrySource,/ribbonLanguage=language/,"Today label does not update on language changes");
   const learnButton=buttons.find(x=>x.dataset.aoAppSurface==="learn");

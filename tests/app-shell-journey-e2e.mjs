@@ -99,7 +99,12 @@ try{
   assert.equal(cold.homeSuppressed,"false","Home was suppressed while Home owned the surface");
   assert.equal(cold.donorHomeEnricherVisible,false,"donor Coming Up/Daily Catechism remained visible under modular Home");
 
-  assert.equal(await page.locator("[data-ao-app-surface]").count(),5,"Five permanent destinations required");
+  assert.equal(await page.locator("[data-ao-app-surface]").count(),4,"Four permanent destinations required");
+   assert.deepEqual(await page.locator("#ao-global-ribbon [data-ao-app-surface]").evaluateAll(nodes=>nodes.map(n=>n.dataset.aoAppSurface)),
+     ["home","pray","learn","find"],"Permanent ribbon should be Today, Pray, Formation, Explore");
+   assert.equal(await page.locator("#ao-global-ribbon [data-ao-app-surface='mass']").count(),0,"Mass survived as a permanent tab");
+   assert.equal(await page.locator("#ao-global-ribbon [data-ao-app-secondary='mass']").isVisible(),false,
+     "Retired Mass donor slot must not be displayed");
    assert.equal(await page.locator("[data-ao-app-surface='calendar']").count(),0,"Calendar still occupies a ribbon tab");
    assert.equal(await page.locator("[data-ao-app-surface='home']").getAttribute("aria-label"),"Today");
   // Calendar was deliberately embedded in Today by PR #1023. Preserve

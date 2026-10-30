@@ -21,7 +21,7 @@ import { createPresentationFxBridge } from "./presentation-fx.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
 import {
-  APP_SURFACES,
+  APP_RIBBON_SURFACES,
   NON_MASS_DONOR_CONTRACT,
   createAppHostAdapter,
   createAppShellController,
@@ -78,8 +78,8 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     if(!style)return;
     style.id="ao-app-surface-isolation";
     style.textContent='html[data-ao-home-suppressed="true"] .homeScreen{display:none!important}'+
-      '#ao-global-ribbon .aoGlobalRibbonInner{grid-template-columns:repeat(5,minmax(0,1fr))!important}'+
-      '#ao-global-ribbon [data-ao-app-secondary="calendar"]{display:none!important}'+
+      '#ao-global-ribbon .aoGlobalRibbonInner{grid-template-columns:repeat(4,minmax(0,1fr))!important}'+
+      '#ao-global-ribbon [data-ao-app-secondary="calendar"],#ao-global-ribbon [data-ao-app-secondary="mass"]{display:none!important}'+
       '.aoHomeCalendarAccess{display:flex;justify-content:flex-end;margin:4px 0 0}'+
       '.aoHomeCalendarAction{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:7px 11px;border:1px solid var(--ao-rule,rgba(201,173,120,.25));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);font:500 13px/1.35 var(--ao-font-ui,system-ui,sans-serif)}'+
       '.aoHomeCalendarAction .aoHomeAssetIcon{width:19px;height:19px;display:inline-block;color:var(--liturgical,#c9ad78)}'+
@@ -130,7 +130,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     const active = controller.getActive?.();
     syncHomeIsolation(active);
     for (const button of nav.querySelectorAll("[data-ao-app-surface]")) {
-      const current = button.dataset?.aoAppSurface === active || (active === "calendar" && button.dataset?.aoAppSurface === "home");
+      const current = button.dataset?.aoAppSurface === active || ((active === "calendar" || active === "mass") && button.dataset?.aoAppSurface === "home");
       button.classList?.toggle?.("active", current);
       button.setAttribute?.("aria-current", current ? "page" : "false");
     }
@@ -271,17 +271,17 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
       // deliberately reuses that physical slot for Explore; Settings remains
       // available as a utility overlay from Home and contextual controls.
       const surface = rawSurface==="settings" ? "find" : rawSurface;
-      if(surface==="calendar"){
-        // Calendar remains fully routable via Today, Coming Up, and deep links.
-        // Retire only its *permanent ribbon slot*, not its existing owner.
-        button.dataset.aoAppSecondary="calendar";
+      if(surface==="calendar" || surface==="mass"){
+        // Calendar and Mass stay fully routable from Today and their contextual
+        // entrances. Only their redundant permanent slots are retired.
+        button.dataset.aoAppSecondary=surface;
         button.hidden=true;
         button.removeAttribute?.("data-ao-app-surface");
         button.removeAttribute?.("data-ao-ribbon");
         button.setAttribute?.("aria-hidden","true");
         continue;
       }
-      if (!surface || !APP_SURFACES.includes(surface)) continue;
+      if (!surface || !APP_RIBBON_SURFACES.includes(surface)) continue;
       button.dataset.aoAppSurface = surface;
       const assetId=canonicalAssetIdForSurface(surface);
       if(assetId){
@@ -293,7 +293,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
       adopted += 1;
     }
 
-    state.visibleOwner = adopted === APP_SURFACES.length;
+    state.visibleOwner = adopted === APP_RIBBON_SURFACES.length;
     if (doc.documentElement?.dataset) {
       doc.documentElement.dataset.aoAppShellOwner = state.visibleOwner
         ? "AO_APP_SHELL_V1"
@@ -461,8 +461,8 @@ export function installAppShellBridge({
           reason: state.blocked ? "APP_SHELL_BLOCKED" : "APP_SHELL_NOT_READY",
         }));
       }
-      // Preserve explicit-only resume while ordinary Mass ribbon/Follow Mass
-      // commands always open the resolved preparation flow.
+      // Explicit Resume remains separate from ordinary Today/Calendar Mass
+      // entry. Neither requires a permanent Mass ribbon button.
       return state.presentationFx?.navigate?.(surface, () => state.controller.go(surface,options)) ?? state.controller.go(surface,options);
     },
     getActive() {

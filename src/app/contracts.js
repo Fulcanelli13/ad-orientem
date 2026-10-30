@@ -8,6 +8,11 @@ export const APP_SURFACES = Object.freeze([
 
 // Settings remains a routable utility overlay, but it no longer consumes one
 // of the six permanent navigation slots.
+// The permanent ribbon is deliberately smaller than the navigable app.
+// Mass remains a route (including LIVE/Resume) but is entered from Today or
+// a Calendar context, not through a duplicate permanent icon.
+export const APP_RIBBON_SURFACES = Object.freeze(["home", "pray", "learn", "find"]);
+
 export const APP_ROUTE_SURFACES = Object.freeze([...APP_SURFACES, "calendar", "settings", "apostolate"]);
 
 const APP_SURFACE_SET = new Set(APP_ROUTE_SURFACES);
