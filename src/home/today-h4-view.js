@@ -28,7 +28,7 @@ export function h4Enabled(win=globalThis){
   // reversible query-only rollback while the production transition settles.
   try{return new URLSearchParams(win?.location?.search??"").get("aoTodayH4")!=="0"}catch{return true}
 }
-export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null}={}){
+export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null,properSections=[]}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
   const verifiedOrdo=ordoFacts?.status==="SOURCE_PROPER";
   const ordoFlag=(key)=>verifiedOrdo&&typeof ordoFacts[key]==="boolean"
@@ -113,7 +113,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
   (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
   '<span class="rb">'+esc(say("The Proper","Le Propre"))+'</span>'+
-  ['Introit','Collect','Epistle','Gospel','Offertory','Communion'].map(x=>'<button type="button" class="lrow" data-home-h4-readings><span>'+esc(x)+'</span><span class="ch" aria-hidden="true">›</span></button>').join("")+
+  properSections.map(x=>'<button type="button" class="lrow" data-home-h4-readings><span>'+esc(fr?x.fr:x.en)+'</span><span class="ch" aria-hidden="true">›</span></button>').join("")+
   (vm.formularies.length?'<span class="rb">'+esc(say("Other Masses permitted","Autres messes permises"))+'</span>'+vm.formularies.map(x=>'<button class="lrow" type="button" data-formulary="'+x.index+'"><span>'+esc(x.label)+'</span><span class="ch">›</span></button>').join(""):"")+
   '<span class="rb">'+esc(say("Your Mass","Votre messe"))+'</span><button type="button" class="lrow" data-home-h4-change><span>'+esc(selectedChoices)+'</span><small>'+esc(say("Change","Modifier"))+'</small><span class="ch" aria-hidden="true">›</span></button>'+
   '</div><div class="endsp"></div></div><div class="foot">'+mainAction.replace('class="aoH4Primary"','class="aoH4Primary btn"')+
