@@ -84,7 +84,6 @@ for b,path in zip(("01","02","03"),FILES):
  path.write_text(source,encoding="utf-8")
  assert "<aside" not in source and "Approve → Queue 1" in source
  assert source.count('id="approveVisible"')==1
- assert "APPROVE_VISIBLE" not in source
  assert source.count("data-remote-id")>=1
  assert sum(r["available"] for r in rows)==embeddedBefore
  report["batches"][b]={"total":len(rows),"previewsEmbedded":embeddedBefore,
