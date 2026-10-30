@@ -1688,6 +1688,41 @@ button.ao-schola-control{cursor:pointer}
   font:600 9px/1.1 var(--ao-font-ui,system-ui,sans-serif);
   letter-spacing:.025em;text-transform:uppercase
 }
+/* Prayer-first Mass chrome: retain all three controls and their accessible
+   labels, but stop presenting Catch Up / Music / Music Plan as competing pills.
+   Their 44px interactive hit areas and source-owned behaviour remain intact. */
+.ao-section-catchup{display:none!important}
+.ao-state-music-jump,
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-state-music-jump{
+  width:44px;min-width:44px;min-height:44px;padding:0;
+  border:0;border-radius:0;background:transparent;box-shadow:none;
+  font-size:0;letter-spacing:0;color:var(--ao-mass-accent-text)
+}
+.ao-state-music-jump::before{
+  content:"♫";font:400 20px/1 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-state-music-jump:focus-visible{
+  outline:2px solid var(--ao-mass-accent-text);outline-offset:-3px;border-radius:5px
+}
+.ao-schola-programme summary{
+  min-width:44px;min-height:40px;justify-content:center;padding:0;
+  border:0;border-radius:0;background:transparent;color:var(--ao-mass-accent-text);
+  font-size:0;letter-spacing:0
+}
+.ao-schola-programme summary::after{
+  content:"⋯";font:600 22px/1 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-schola-programme summary:focus-visible{
+  outline:2px solid var(--ao-mass-accent-text);outline-offset:-2px;border-radius:5px
+}
+/* An unobserved upcoming chant is a quiet text forecast, not a bottom card. */
+.ao-schola-dock[data-upcoming-only="true"]{
+  border:0;box-shadow:none;background:transparent
+}
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-programme{
+  top:1px;right:1px
+}
+
 `;
 
 function esc(value){
