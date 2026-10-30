@@ -33,13 +33,14 @@ async function inspect(row){
    const title=clear((html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)||[])[1]);
    const main=clear(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi," ").replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi," "));
    const numberFound=new RegExp("Accession\\s+Number\\b[\\s\\S]{0,330}?\\b"+escapeRegex(id)+"(?![\\w.])","i").test(main);
-   const titleMatched=norm(h1)===norm(row.title);
+   const titleMatched=norm(h1)===norm(row.title)||norm(title).includes(norm(row.title));
    const officialHost=/^https:\/\/art\.thewalters\.org\/object\/[^/]+\/?/.test(res.url);
    const status=numberFound&&titleMatched&&officialHost?"OFFICIAL_PAGE_TITLE_AND_ACCESSION_CONFIRMED":"OFFICIAL_PAGE_REVIEW_NEEDED";
    return {sourceId:row.sourceId,frozenDecision:row.userDecision,batch:row.batch,
     sourceTitle:row.title,sourceArtist:row.artistAsReviewed,sourceAccession:id,
     originalSourceUrl:row.sourceObjectUrl,requestUrl:requested,returnedUrl:res.url,
     httpStatus:res.status,pageSha256:sha(html),status,
+    titleMatchingMethod:norm(h1)===norm(row.title)?"EXACT_HTML_H1":"OFFICIAL_HTML_TITLE_CONTAINS_REVIEWED_ARTWORK_TITLE",
     evidence:{titleH1:h1,htmlTitle:title,officialHost,titleNormalizedMatched:titleMatched,accessionLabelAndNumberMatched:numberFound},
     flags:[...(!numberFound?["ACCESSION_NOT_PRESENT_AS_LABEL"]:[]),
      ...(!titleMatched?["TITLE_VARIANT_OR_EXTRACTION_REVIEW"]:[]),
