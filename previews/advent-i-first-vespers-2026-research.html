@@ -96,7 +96,8 @@ import {buildAdventI2026ReadingFocus}
 import {reviewOfficeBetaSelection}
  from "../src/office/reader-beta-catalog.js";
 import {createSaturdayComplinePinnedReader,assembleSaturdayComplinePilot,
- createFerialTuesdayComplinePinnedReader,assembleFerialTuesdayComplinePilot}
+ createFerialTuesdayComplinePinnedReader,assembleFerialTuesdayComplinePilot,
+ createComplinePinnedReader,assembleDatedComplinePilot}
  from "../src/office/saturday-compline-2026-pilot.js";
 
 const status=document.getElementById("status");
@@ -142,16 +143,23 @@ async function refreshBetaSelection(){
    " components in Latin, English and French.";
   const saturday=entry.assembly==="SATURDAY_COMPLINE_2026_SOURCE_FIRST";
   const tuesday=entry.assembly==="FERIAL_TUESDAY_COMPLINE_2026_SOURCE_FIRST";
-  if(!saturday&&!tuesday)return;
+  const appointed=entry.assembly==="APPOINTED_COMPLINE_2026_SOURCE_FIRST";
+  if(!saturday&&!tuesday&&!appointed)return;
   try{
-   const source=(saturday?createSaturdayComplinePinnedReader:
-    createFerialTuesdayComplinePinnedReader)({
-     fetchSource:fetch.bind(globalThis)
-    });
-   const data=await (saturday?assembleSaturdayComplinePilot:
-    assembleFerialTuesdayComplinePilot)({reader:source});
-   const expected=saturday?
-    "SOURCE_FIRST_SATURDAY_COMPLINE_RESEARCH_NOT_CERTIFIED":
+   const source=appointed?
+    createComplinePinnedReader({fetchSource:fetch.bind(globalThis),
+     date:entry.civilDate}):
+    (saturday?createSaturdayComplinePinnedReader:
+     createFerialTuesdayComplinePinnedReader)({
+      fetchSource:fetch.bind(globalThis)
+     });
+   const data=appointed?
+    await assembleDatedComplinePilot({reader:source,date:entry.civilDate}):
+    await (saturday?assembleSaturdayComplinePilot:
+     assembleFerialTuesdayComplinePilot)({reader:source});
+   const expected=appointed?
+    "SOURCE_FIRST_APPOINTED_COMPLINE_RESEARCH_NOT_CERTIFIED":
+    saturday?"SOURCE_FIRST_SATURDAY_COMPLINE_RESEARCH_NOT_CERTIFIED":
     "SOURCE_FIRST_FERIAL_TUESDAY_COMPLINE_RESEARCH_NOT_CERTIFIED";
    if(data.status!==expected||
       data.civilDate!==entry.civilDate||
