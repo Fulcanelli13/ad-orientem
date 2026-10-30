@@ -51,6 +51,20 @@ All 15 Santa Croce OCR source IDs `PIT1900-IT-034` through `PIT1900-IT-048` reta
 
 **Further evidence targets:** Pitrè 1900 pp.450 and 456–459 original images; the extant Cannizzaro correspondence (if preserved); and Antonino Uccello, `Pani e dolci di Sicilia`, pp.75–78 as a *potential* later witness after original textual inspection. Guastella's separate original 1876 book `Canti popolari del circondario di Modica` has also been identified and its bibliographic provenance checked: its search snippet documents several **different** Joseph-feast observances in other towns, not automatically the Santa Croce table. The published 2003 Guastella–Pitrè correspondence collection is now a source-dependency lead; no letter texts were examined. These three book/correspondence leads and their no-independence-certification controls are preserved in the provenance register. No new indulgence, Calendar item, registry ID or publication is authorized.
 
+## 30 October — first single master source-to-identity routing (bulk checkpoint)
+
+The [single 3,295-to-465-to-79 working relationship index](./customs-ultra-master-v2-single-working-relationship-index-20261030.v1.json) is the consolidated **research work queue**. It does **not** replace original observations, revoke approvals, assert final distinct counts or silently merge any identities. It links the 17 source-screening wave files and the previous 465 registry records without minting new IDs.
+
+- **3,295 / 3,295** previously evidence-only source observations now have stable wave/row pointers and a normalized identity-review **lane**: 1,091 regional variant/parent; 604 action owner; 549 author-proposal hold; 442 historical/context; 437 rite/ministerial; 132 hosted owner; 39 source-dependence; 1 exact indulgenced-work review.
+- **465 existing identity records** are mirrored with unaltered status: 57 original master identities, 408 provisional research groups (of which 219 were previously marked potentially distinct historical actions, **not 219 unique confirmed customs**).
+- **79 dedup review cases** are integrated by exact ID: 26 McLoughlin-family groups, 41 action comparisons (including explicit false-match vetoes), 12 regional/institutional scope cases. Their existing source relationships are not merged or approved.
+- **222 distinct evidence-only source observations** now have explicit prior review connections spanning the 79-case board, 42 hosted owner comparisons and 43 Pitrè St Joseph action comparisons; overlaps are counted once. **3,073** source observations still lack an explicitly reviewed identity link.
+- **50 machine-generated lexical search leads** against 38 existing owner titles were staged separately under explicit `SEARCH_HINT_ONLY_NOT_OWNER_LINK` markers. Token-overlap scores are **not historical attestation, actor/date agreement, corroboration, or identity approval** and must never be included in the 222 evidence-backed count.
+
+**Progress interpretation:** 100% of source observations are source-screened and identity-worklane-routed; **222/3,295** have an exact prior human research comparison. The remaining 3,073 are **not** identity-adjudicated. The 219 potentially distinct provisional groups are an investigative inventory, not a final distinct-custom total. This is materially different from claiming that 3,295 customs or 408 groups have been merged.
+
+**Next non-circular operating sequence:** review candidate links *inside this one working index*, starting with the 50 lexical search leads and 79 existing cases for acceptance, role veto or variant decision; then process the remaining 3,073 in 200–300-record **identity** batches prioritized by repeated action families and 219 provisional potentially distinct groups. Promote only independently supported matches, preserve independent regional variants, and update one canonical decision field rather than starting new micro-ledgers. The indulgence work register remains a separate, exact-grant gate. Nothing proceeds to the Calendar without human editorial approval.
+
 ## Existing research is not being discarded
 
 The authoritative corpus remains at:
