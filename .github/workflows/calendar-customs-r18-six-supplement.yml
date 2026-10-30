@@ -1,0 +1,27 @@
+name: Calendar R18 first-six research reviewer supplement
+on:
+  pull_request:
+    paths:
+      - "src/calendar/customs-r18-six-editorial-supplement.js"
+      - "src/calendar/calendar-runtime.js"
+      - "tests/calendar-customs-r18-six-supplement.mjs"
+      - ".github/workflows/calendar-customs-r18-six-supplement.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  six-supplement-release-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and 35-public / 17-review contract
+        run: |
+          node --check src/calendar/customs-r18-six-editorial-supplement.js
+          node --check src/calendar/calendar-runtime.js
+          node tests/calendar-customs-r18-six-supplement.mjs
+          node tests/calendar-customs-r18-eleven-editorial-only.mjs
+          node tests/calendar-customs-context.mjs
+          node tests/calendar-customs-search.mjs
