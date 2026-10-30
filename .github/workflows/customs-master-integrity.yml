@@ -5,6 +5,7 @@ on:
     paths:
       - "data/customs/master/**"
       - "tests/customs-master-integrity.mjs"
+      - "tests/customs-ultra-master-v2-integrity.mjs"
       - "tests/customs-full-registry-census.mjs"
       - "tests/customs-wave-a-bulk-reconciliation.mjs"
       - "tests/customs-a1-evidence-indulgence-gate.mjs"
@@ -174,3 +175,7 @@ jobs:
         run: |
           node --check tests/customs-existing22-bilingual-variants-gate.mjs
           node tests/customs-existing22-bilingual-variants-gate.mjs
+      - name: Verify all 3,703 preserved source observations, 17 source screens, 79 dedup cases and bounded indulgence claims
+        run: |
+          node --check tests/customs-ultra-master-v2-integrity.mjs
+          node tests/customs-ultra-master-v2-integrity.mjs
