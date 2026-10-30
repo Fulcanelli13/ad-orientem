@@ -113,12 +113,19 @@ try{
       await page.locator('.aoHeritageEditorialPreview [data-explore-expand-place]').tap();
       await page.locator('.aoExplorePlaceEditorial').waitFor({state:"visible"});
       assert.ok((await page.locator('.aoExplorePlaceChapters [data-explore-place-jump]').count())>=2);
-      assert.ok((await page.locator('.aoExploreStoryChapter').count())>=2,
-        "Featured Lourdes place must show at least origin and pilgrimage evidence paragraphs");
+      // The published illustrated guide owns the origin introduction. The
+      // Place reader deliberately avoids repeating it as an ORIGIN story chapter.
+      assert.ok((await page.locator('.aoExploreEditorialOpening p').count())>=1,
+        "Featured Lourdes must retain the separate sourced historical opening");
+      const historicalSource=await page.locator('.aoExploreEditorialOpening a').getAttribute('href');
+      assert.ok(historicalSource?.startsWith("https://"),
+        "Sourced historical opening must link to its own original evidence");
+      assert.ok((await page.locator('.aoExploreStoryChapter[data-story-kind="PILGRIMAGE"]').count())>=1,
+        "Featured Lourdes must retain its separately sourced pilgrimage chapter");
       const links=await page.locator('.aoExploreStoryEvidence a').evaluateAll(nodes=>
         nodes.map(el=>({height:el.getBoundingClientRect().height,href:el.getAttribute('href')})));
-      assert.ok(links.length>=2&&links.every(link=>link.height>=44&&link.href.startsWith("https://")),
-        "Story evidence must be independently clickable at a full phone touch target");
+      assert.ok(links.length>=1&&links.every(link=>link.height>=44&&link.href.startsWith("https://")),
+        "Pilgrimage story evidence must be independently clickable at a full phone touch target");
       await page.locator('[data-explore-place-jump="calendar"]').tap();
       assert.equal(await page.locator('[data-explore-place-chapter="calendar"]').count(),1,
         "Canonical Calendar relationship must remain in Place reader");

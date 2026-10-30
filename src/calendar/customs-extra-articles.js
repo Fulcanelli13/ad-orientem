@@ -1,5 +1,5 @@
-/* Editor-reviewed Calendar prose for 24 identities already PUBLISHED in canonical SOT-07.
- * This is a source-bounded read-model projection. No new customs, Mass
+/* Calendar prose for 24 existing published identities plus PENT-001 regional single-record release proposal.
+ * The PENT-001 draft affects canonical Customs only after PR approval/merge. No new Mass
  * rites, local ceremonies, bookings or geography are published.
  * Acceptance register: data/customs/calendar-copy-acceptance.v1.json
  * The research master remains draft and its 14 NOT_APPROVED identities stay excluded.
@@ -1218,6 +1218,54 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
         "id": "DPP-2001",
         "title": "Directory on Popular Piety and the Liturgy",
         "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      }
+    ]
+  },
+  {
+    "id": "PENT-001",
+    "title": {
+      "en": "Zielone Świątki — traditional Pentecost greenery in Poland",
+      "fr": "Zielone Świątki — feuillages traditionnels de Pentecôte en Pologne"
+    },
+    "description": {
+      "en": "In historical Polish Pentecost customs, families decorated houses, gates and farmyards with spring branches and greenery. Practices varied locally and are less common today.",
+      "fr": "Dans d'anciens usages polonais de Pentecôte, les familles ornaient maisons, portails et cours de ferme de branches et de feuillages printaniers. Les formes variaient selon les lieux et sont devenues moins courantes."
+    },
+    "history": {
+      "en": "Polish State Forests and regional museums document the older rural practice of majenie: decorating homes, gates, farmyards and sometimes churches at Zielone Świątki. It combined the Christian Pentecost occasion with older springtime and agricultural folk associations; no continuous practice in every locality is established.",
+      "fr": "Les Forêts d’État polonaises et des musées régionaux documentent l’ancien usage rural du majenie : orner les maisons, portails, fermes et parfois les églises à Zielone Świątki. Cet usage associait la Pentecôte chrétienne à des traditions populaires printanières et agricoles plus anciennes ; sa continuité dans chaque localité n’est pas établie."
+    },
+    "meaning": {
+      "en": "A historically attested seasonal decoration associated with Pentecost in Polish folk life, not a prescribed Roman Catholic ceremony.",
+      "fr": "Une décoration saisonnière historiquement attestée dans la culture populaire polonaise de Pentecôte, et non une cérémonie catholique romaine prescrite."
+    },
+    "practice": {
+      "en": "Where this local household tradition is known, greenery obtained responsibly may be used as a voluntary seasonal decoration. Do not cut saplings or gather branches without permission.",
+      "fr": "Là où cet usage familial local est connu, on peut employer librement des feuillages obtenus de manière responsable. Ne pas couper de jeunes arbres ni prélever de branches sans autorisation."
+    },
+    "caution": {
+      "en": "This regional household decoration is neither a prescribed Roman Pentecost practice nor a priestly blessing; do not attribute magical protection to the branches.",
+      "fr": "Cette décoration domestique régionale n'est ni une pratique prescrite de la Pentecôte romaine ni une bénédiction sacerdotale ; ne prêter aux branches aucun pouvoir magique de protection."
+    },
+    "occasion": {
+      "en": "Pentecost, a movable feast; not a scheduled public ceremony",
+      "fr": "Pentecôte, fête mobile ; aucune cérémonie publique programmée"
+    },
+    "scope": {
+      "en": "Poland — historically documented rural household and farmstead custom; modern participation varies by locality.",
+      "fr": "Pologne — ancien usage rural attesté dans les foyers et les fermes ; la pratique actuelle varie selon les localités."
+    },
+    "editorialCopyStatus": "CALENDAR_REGIONAL_ARTICLE_RELEASE_REVIEW",
+    "sources": [
+      {
+        "id": "LASYPANSTWOWE-PENTECOST-GREENERY",
+        "title": "Polish State Forests — Zielone Świątki historical greenery",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich"
+      },
+      {
+        "id": "LASYPANSTWOWE-BIRCH-GREENERY",
+        "title": "Polish State Forests — birch customs and Pentecost decorations",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/brzoza-przytul-sie-do-bialej-pani"
       }
     ]
   }

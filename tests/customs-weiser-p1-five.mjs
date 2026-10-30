@@ -20,7 +20,7 @@ const specs=[
  ["EAST-001","DE",["MUNICH-FREISING-EMMAUSGANG"]],
  ["MARI-002","US",["CATHCULTURE-MARY-GARDEN"]]
 ];
-assert.deepEqual([atlas.customs.length,atlas.attestations.length,sources.sources.length,extensions.extensions.length,negative.entries.length,p1.entries.length],[38,97,108,22,7,5]);
+assert.deepEqual([atlas.customs.length,atlas.attestations.length,sources.sources.length,extensions.extensions.length,negative.entries.length,p1.entries.length],[39,98,110,22,7,5]);
 assert.equal(p0.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
 assert.equal(p1.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
 for(const [id,country,ids] of specs){
@@ -52,7 +52,7 @@ assert.equal(audit.pass,true);
 assert.equal(audit.mapCandidates.length,58,"national custom attestation cannot create a place pin");
 const raw=projectTraditionItems({customs:atlas.customs,attestations:atlas.attestations,places:geography.places,geoAreas:geography.geoAreas,sources:sources.sources,guidance:[...p0.entries,...p1.entries]});
 const cards=groupTraditionsForBrowse(raw);
-assert.equal(cards.length,38);
+assert.equal(cards.length,39);
 for(const [id] of specs){
  const card=cards.find(row=>row.source_id===id);
  assert.equal(card?.kind,"CANONICAL_CUSTOM",id+" missing Atlas folio");
@@ -78,4 +78,4 @@ for(const year of [2026,2027,2030]){
  }
  assert.equal(v384Events(v384Dates(year).holySaturday).filter(row=>row.key==="holy-saturday").length,1);
 }
-console.log("PASS P1 Weiser five: 38 customs, 97 attestations, 108 sources, 22 SOT extensions; 5 bilingual folios, 58 untouched published map pins, bounded Calendar handoffs and no Mass reader changes");
+console.log("PASS P1 Weiser five: 39 customs, 98 attestations, 110 sources, 22 SOT extensions; 5 bilingual folios, 58 untouched published map pins, bounded Calendar handoffs and no Mass reader changes");

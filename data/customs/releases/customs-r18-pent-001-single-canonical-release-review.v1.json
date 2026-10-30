@@ -1,0 +1,147 @@
+{
+  "schema": "AO_R18_SINGLE_RECORD_CANONICAL_RELEASE_REVIEW_V1",
+  "review_date": "2026-10-30",
+  "target_branch": "main",
+  "record_id": "PENT-001",
+  "origin_review_key": "CUSTOMS-R18-14",
+  "source_review_blob_sha": "2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c",
+  "editorial_decision": "SOURCE_BOUNDED_ARTICLE_WITH_FINAL_OWNER_APPROVAL_FOR_SINGLE_PUBLICATION",
+  "reason": "Distinct voluntary Polish household greenery at Pentecost. Verified institutional text supports historically regional action; no automatic modern continuity, new rite, blessing or celebrant role.",
+  "publication_semantics": "PUBLISHED in PR seed is the proposed canonical state ONLY IF THIS PR IS MERGED; current production main remains at 35.",
+  "new_source_ids": [
+    "LASYPANSTWOWE-PENTECOST-GREENERY",
+    "LASYPANSTWOWE-BIRCH-GREENERY"
+  ],
+  "proposed_scope": {
+    "geo": "Poland, historically documented regional domestic customs",
+    "liturgical_context": "Pentecost, movable date resolved exclusively by canonical 1962 Calendar",
+    "not": "Roman Mass rubric, sacramental blessing, mandatory devotion, recurring local event, verified current programme",
+    "automatic_calendar_reminder": false,
+    "automatic_calendar_recommendation": false
+  },
+  "article_qa": {
+    "eight_fields_en_fr_verified": true,
+    "title_history_meaning_practice_caution_scope_cross_checked": true,
+    "source_claim_bounded": true,
+    "photo_rights_not_in_scope": true,
+    "historical_tense_and_current_continuity_explicit": true,
+    "independent_regional_museum_source_crosscheck": true,
+    "edit_renders_title_en_fr_movable_without_scheduling": true
+  },
+  "release_gates": {
+    "id_collision_check": "REQUIRED",
+    "source_links": "REQUIRED",
+    "bilingual_article": "REQUIRED",
+    "regional_scope": "REQUIRED",
+    "canonical_seed_parity": "REQUIRED",
+    "date_nonactivation": "REQUIRED",
+    "unrelated_published_35_no_regressions": "REQUIRED",
+    "user_final_merge_approval": "GIVEN_ON_2026-10-30"
+  },
+  "live_change_now": false,
+  "rollback": "Do not merge PR or revert its exact merge commit. No production data has been changed at proposal stage.",
+  "excluded_from_this_release": [
+    "CUSTOMS-R18-03",
+    "CUSTOMS-R18-04",
+    "CUSTOMS-R18-05",
+    "CUSTOMS-R18-07",
+    "CUSTOMS-R18-08",
+    "CUSTOMS-R18-09",
+    "CUSTOMS-R18-13",
+    "CUSTOMS-R18-15",
+    "CUSTOMS-R18-16",
+    "CUSTOMS-R18-17"
+  ],
+  "source_urls": [
+    "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+    "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/brzoza-przytul-sie-do-bialej-pani"
+  ],
+  "authorizations": {
+    "human_final_copy_signoff": true,
+    "automatic_merge_allowed": false,
+    "annual_local_event_allowed": false,
+    "indulgences_allowed": false
+  },
+  "editorial_review_20261030": {
+    "status": "SOURCE_CLAIMS_CORROBORATED_AND_FINAL_OWNER_APPROVAL_RECORDED",
+    "independent_institutional_crosscheck": {
+      "name": "Muzeum im. Jacka Malczewskiego w Radomiu",
+      "url": "https://www.muzeum-radom.pl/wydarzenia/zielone-swiatki-w-tradycji-ziemianskiej/3194",
+      "role": "Independent Polish regional museum confirms rural majenie, birch branches, homes, farmsteads and older agrarian folk beliefs; no current universal Catholic rite."
+    },
+    "primary_crosscheck": [
+      {
+        "name": "Polish State Forests — Zielone Świątki",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+        "supports": [
+          "historical houses and gates",
+          "sometimes churches",
+          "declining continuity",
+          "warnings about uncontrolled collection"
+        ]
+      },
+      {
+        "name": "Polish State Forests — Brzoza",
+        "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/brzoza-przytul-sie-do-bialej-pani",
+        "supports": [
+          "birch branches as Pentecost decorations",
+          "distinguish Corpus Christi decorations"
+        ]
+      }
+    ],
+    "claim_decisions": [
+      {
+        "claim": "Historical household and farmyard Pentecost greenery in Poland",
+        "decision": "CORROBORATED",
+        "notes": "Forestry agency and regional museum agree on the historic practice."
+      },
+      {
+        "claim": "Association with rural agrarian and springtime folklore",
+        "decision": "CORROBORATED_WITH_BOUNDARY",
+        "notes": "Historically associated with folk practices; no protection or magical efficacy endorsed."
+      },
+      {
+        "claim": "Modern continuity",
+        "decision": "VARIES_NOT_UNIVERSAL",
+        "notes": "Do not infer an event or established practice in each parish or town."
+      },
+      {
+        "claim": "1962 Roman rubric, universal blessing or required custom",
+        "decision": "EXCLUDED_NOT_ESTABLISHED",
+        "notes": "Historical home decoration, not Mass or Office rubrics."
+      },
+      {
+        "claim": "Church indulgence attached to decoration",
+        "decision": "EXCLUDED_NOT_ESTABLISHED",
+        "notes": "No validated grant or conditions."
+      },
+      {
+        "claim": "Environmental permission",
+        "decision": "RECOMMENDED_PRACTICE_NOT_HISTORICAL_RUBRIC",
+        "notes": "Do not encourage cutting young trees or collecting branches without permission."
+      }
+    ],
+    "final_copy_changes": "Explicit historical tense, named Zielone Świątki, independent museum support, distinction between Pentecost association and older folk beliefs, responsible collection, exact EN/FR parity.",
+    "reviewer_role": "Source-led editorial review remains separate from the project owner's explicit final approval on 2026-10-30, recorded on PR #2033.",
+    "human_final_approval": {
+      "en": true,
+      "fr": true,
+      "claims": true
+    },
+    "no_scheduled_event": true,
+    "no_publication_before_approval": true
+  },
+  "final_owner_approval": {
+    "date": "2026-10-30",
+    "reviewer": "Fulcanelli13",
+    "channel": "Explicit project-owner approval in ChatGPT; contemporaneously documented in PR #2033 conversation",
+    "approved_article_head_sha": "434cd5d9ea4f633e3bb84f3aa6d4d8ff2e927fdc",
+    "content_sha256": {
+      "final_en": "ddd9055341b2c191243eaff115555d7c662d65a7030957c83fa8dd56bf399f44",
+      "final_fr": "bacda8676d826dc890bf7a2276c90594897dfa2b6a0224116ab0e74cf60fd331",
+      "final_claims": "b1e4c14e199256dd1a3dd3bd52de156c41de064eb5a721c54461427b6cfa23ce"
+    },
+    "scope": "Only PENT-001: final EN copy, final FR copy, historical claims. No approval for other R18 dossiers.",
+    "requires_checks_and_canonical_safeguards": true
+  }
+}

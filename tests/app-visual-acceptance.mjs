@@ -338,8 +338,15 @@ try{
   });
   console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
-  await page.locator("#ao-mass-flow-v1 [data-ao-close]").last().click();
-  await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
+  // A transition may have hidden the preflight after its screenshot while
+  // leaving the donor flow node mounted. Only click an actionable close
+  // control; in either case require the backdrop no longer to be visible.
+  const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
+  if(await massFlowClose.isVisible())await massFlowClose.click();
+  await page.waitForFunction(()=>{
+    const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+    return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
+  },null,{timeout:5000});
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 

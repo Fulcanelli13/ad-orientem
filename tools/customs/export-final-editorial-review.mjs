@@ -7,6 +7,7 @@ const md=s=>String(s??"").replaceAll("|","\\|").replaceAll("\n"," ").trim();
 export function renderReviewPacket(){
   const decision=read("data/customs/editorial-final-acceptance.v1.json");
   const source=read("data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json");
+  const singleRelease=read("data/customs/releases/customs-r18-pent-001-single-canonical-release-review.v1.json");
   const issues=validationErrors(decision);
   if(issues.length)throw new Error(issues.join("; "));
   const reviewed=new Map(source.records.map(x=>[x.custom_id,x]));
@@ -14,13 +15,16 @@ export function renderReviewPacket(){
     Number(b.priority==="CRITICAL_SCOPE")-Number(a.priority==="CRITICAL_SCOPE")||
     a.custom_id.localeCompare(b.custom_id));
   const lines=["# Ad Orientem — customs: final EN/FR editorial acceptance packet",
-    "","Generated from the **existing published Calendar articles**. This is a review view, not a new Calendar, custom or approval.",
-    "","**35 published article texts; 13 scope-critical; 22 standard. No final human EN/FR approval has been recorded unless explicitly shown on a line.**",
+    "","Generated from the canonical Calendar article candidate texts. This is a review view; the PENT-001 proposal remains an unmerged draft until explicit final approval.",
+    "","**"+rows.length+" proposed canonical article texts including one PENT-001 regional pilot; 13 previous scope-critical, 22 previous standard, one new regional. No final human EN/FR approval has been recorded unless explicitly shown on a line.**",
     "","Existing scoped editorial acceptances remain valid in their own register. This packet requests an additional final copy and historical-claim signoff, and it is not a human-signoff substitute.",
     "","A reviewer must inspect each EN and FR field and the cited evidence, record actual decisions, their identity and date, and use the current SHA-256 fingerprint below. Text changes invalidate prior decisions.",
     "","---"];
   for(let i=0;i<rows.length;i++){
-    const row=rows[i],a=articleFor(row.custom_id),e=reviewed.get(row.custom_id);
+    const row=rows[i],a=articleFor(row.custom_id),e=reviewed.get(row.custom_id)||
+      (row.custom_id===singleRelease.record_id?{
+        claim_boundary:singleRelease.reason+" "+singleRelease.proposed_scope.not+"; original 35-record 2026-10-23 review deliberately kept immutable."
+      }:null);
     if(!a||!e)throw new Error("Missing text or evidence "+row.custom_id);
     lines.push("","## "+(i+1)+". "+row.custom_id+" — "+a.title.en,
       "","**Priority:** "+row.priority+"  ",

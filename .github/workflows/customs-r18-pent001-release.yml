@@ -1,0 +1,37 @@
+name: Customs R18 PENT-001 single-record release candidate
+on:
+  pull_request:
+    paths:
+      - 'data/customs/customs-atlas-seed.v1.json'
+      - 'data/customs/source-registry.v1.json'
+      - 'data/customs/customs-temporal-projection.v1.json'
+      - 'data/customs/customs-fr-canonical-copy.v1.json'
+      - 'data/customs/editorial-final-acceptance.v1.json'
+      - 'data/customs/releases/customs-r18-pent-001-single-canonical-release-review.v1.json'
+      - 'src/calendar/customs-extra-articles.js'
+      - 'src/customs/year-led-library.js'
+      - 'tests/customs-r18-pent001-canonical-release.mjs'
+      - '.github/workflows/customs-r18-pent001-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-calendar-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Bilingual, regional, source and publication safety
+        run: |
+          node tests/customs-r18-pent001-canonical-release.mjs
+          node tests/customs-atlas-contracts.mjs
+          node tests/customs-35-editorial-first-pass.mjs
+          node tests/customs-bilingual-scope-parity.mjs
+          node tests/customs-final-editorial-acceptance.mjs
+          node tests/calendar-customs-context.mjs
+          node tests/calendar-customs-search.mjs
+          node tests/customs-living-library.mjs
+          node tests/customs-seasonal-home-year.mjs
+          node tests/my-customs-prayers.mjs

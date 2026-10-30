@@ -5,7 +5,7 @@ import {calendarPracticeEvents} from "../src/calendar/intelligence.js";
 import {v384Dates} from "../src/calendar/traditional-year-v384.js";
 const seed=JSON.parse(readFileSync(new URL("../data/customs/customs-atlas-seed.v1.json",import.meta.url),"utf8"));
 const licensed=new Set(seed.customs.filter(c=>c.publication_state==="PUBLISHED").map(c=>c.custom_id));
-assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,35);
+assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,36);
 for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
   assert.ok(licensed.has(id),"An unpublished custom cannot appear: "+id);
   const a=calendarCustomArticle(id);

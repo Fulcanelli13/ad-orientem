@@ -42,6 +42,7 @@ export const CUSTOMS_YEAR_LIBRARY_SECTIONS=Object.freeze([
     "fr": "Pâques et Rogations",
     "ids": [
       "EAST-001",
+      "PENT-001",
       "ROGA-001"
     ]
   },

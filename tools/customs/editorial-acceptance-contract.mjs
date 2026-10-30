@@ -21,7 +21,7 @@ export function validationErrors(manifest){
   const errors=[],ids=publishedIds(),publicSet=new Set(ids);
   if(manifest.schema!=="AO_CUSTOMS_FINAL_HUMAN_EDITORIAL_SIGNOFF_V1")errors.push("Wrong schema");
   if(manifest.policy?.source_retrieval_not_final_editorial_approval!==true)errors.push("Missing evidence/approval separation");
-  if(!Array.isArray(manifest.records)||manifest.records.length!==35)return [...errors,"Expected exactly 35 published rows"];
+  if(!Array.isArray(manifest.records)||manifest.records.length!==ids.length)return [...errors,"Expected exactly "+ids.length+" published rows"];
   const seen=new Set();
   for(const row of manifest.records){
     const id=row.custom_id;
