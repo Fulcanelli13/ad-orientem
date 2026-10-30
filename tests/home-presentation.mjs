@@ -67,7 +67,8 @@ assert.equal(vm.massFormularyName,"Holy Rosary","Actual selected Mass must be na
 assert.equal(vm.massIntroit,"Gaudeamus","Latin Introit incipit must be derived from the Proper");
 assert.equal(vm.resolvedForSelection,true);
 assert.equal(vm.rank,"II class","Day rank must come from 1962 observed-day authority");
-assert.equal(vm.dateLong,"Wednesday 7 October","Today must show a natural English date");
+assert.equal(vm.dateLong,"07/10/2026","Existing date model must retain global input/display format");
+assert.equal(vm.dateTitle,"Wednesday 7 October","Today must show a natural English date");
 assert.equal(vm.formularyLabel,"Formulary 2/2");
 assert.equal(vm.commemorationLabel,"Commemorations · St Mark");
 assert.equal(vm.gospelReference,"Luke 1:26");
