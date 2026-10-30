@@ -41,7 +41,8 @@ for(const record of audit.records){
 assert.match(cards.get("DYK-UM01-011").statement.en,/children repeated the priest's sermon to their father/);
 assert.match(cards.get("DYK-UM01-012").statement.en,/three times over a fresh loaf/);
 assert.match(cards.get("DYK-UM01-001").statement.en,/Forefather/);
-assert.doesNotMatch(cards.get("DYK-UM01-001").statement.en,/didukh/i);
+assert.match(cards.get("DYK-UM01-001").statement.en,/didukh/i);
+assert.ok(cards.get("DYK-UM01-001").r24_source_review.secondary_lexical_witness.url.includes("encyclopediaofukraine.com"));
 assert.match(cards.get("DYK-UM03-017").statement.en,/Saint Thomas's Day on 21 December/);
 assert.match(cards.get("DYK-UM01-017").statement.en,/Easter walks/);
 assert.match(cards.get("DYK-UM01-018").statement.en,/All Souls' Day/);
