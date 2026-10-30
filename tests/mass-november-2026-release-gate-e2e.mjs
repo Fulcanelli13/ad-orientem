@@ -363,6 +363,9 @@ try{
      rt.resolver.formularies.set(date,number-1);
      await rt.controller.home.resolve(date);
      globalThis.AO_CELEBRATION_API.openPreflight();
+     // Fresh Home-to-Mass entry resets only the presentation. The selected
+     // source Proper, form and R17 checkpoint remain untouched.
+     globalThis.AO_R17_BROWSER_ENTRY.resetPreflightView();
    },originalNumber);
    await page.waitForFunction(number=>{
      const st=globalThis.AO_RUNTIME_V8?.store?.getState?.();
@@ -376,6 +379,11 @@ try{
    const succession=page.locator("[data-ao-all-souls-succession-details]");
    if(await succession.evaluate(el=>el.open))
      throw Error("NOV02_HOME_PREFLIGHT_ADVANCED_CONTROLS_NOT_COLLAPSED");
+   // The source controls are under the current Mass chooser. They must
+   // be visible before asserting or editing the Ritus XIV circumstance.
+   const massChoice=page.locator('[data-m1-choice="mass"]');
+   if(await massChoice.isVisible())await massChoice.click();
+   else await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
    await succession.locator("summary").click();
    await page.locator('[data-ao-all-souls-succession="previous"]')
      .selectOption("IMMEDIATE");
