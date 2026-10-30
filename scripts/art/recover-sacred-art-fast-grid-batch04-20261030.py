@@ -236,7 +236,6 @@ def main():
                       '"reviewed_original_sha256","review_batch","reviewed_exact_image_url"')
     html=html.replace('x.sourceUrl,x.sourcePhotoFingerprint,x.sourceOriginalSha256,"01"',
                       'x.sourceUrl,x.sourcePhotoFingerprint,x.sourceOriginalSha256,"04",x.exactImageUrl')
-    html=html.replace(',"01"].map(esc)',',"04",x.exactImageUrl].map(esc)') if False else html
     html=html.replace("sacred-art-queue1-reviewed-approvals-batch01.csv",
                       "sacred-art-queue1-reviewed-approvals-batch04.csv")
     html=html.replace("Everything else stays in Queue 2.", "Everything else stays in Queue 2; unrecovered photos are excluded.")
