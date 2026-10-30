@@ -5,7 +5,7 @@
   "method": "Source-native exact ID joins against separately preserved regional-action records; ethnographic inventories, regional community descriptions and Pitrè OCR queue are observations, not independent customs. Source original page not newly read.",
   "counts": {
     "source_record_ids_checked": 200,
-    "source_native_kind_recorded": 182,
+    "source_native_kind_recorded": 200,
     "original_primary_pages_newly_checked": 0,
     "distinct_identities_approved": 0,
     "indulgence_grants_approved": 0,
@@ -17,12 +17,11 @@
     "external_source_observations_pitre_original_1900_new_ocr": 18
   },
   "lanes": {
-    "REGIONAL_ACTION_COMPONENT_PARENT_OWNER_CHECK": 131,
+    "REGIONAL_ACTION_COMPONENT_PARENT_OWNER_CHECK": 134,
     "CIVIC_FESTIVE_OR_REGIONAL_CONTEXT_CHECK": 10,
-    "HISTORICAL_ACTION_PERIOD_CHECK": 30,
-    "REGIONAL_RITE_OR_MINISTERIAL_AUTHORITY_CHECK": 8,
-    "FOLK_BELIEF_HISTORICAL_CONTEXT_NOT_ENDORSED": 3,
-    "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING": 18
+    "HISTORICAL_ACTION_PERIOD_CHECK": 42,
+    "REGIONAL_RITE_OR_MINISTERIAL_AUTHORITY_CHECK": 11,
+    "FOLK_BELIEF_HISTORICAL_CONTEXT_NOT_ENDORSED": 3
   },
   "rows": [
     {
@@ -4944,8 +4943,8 @@
       "source_id": "PIT1900-NEW-001",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Three-, four-, and then five-day formats of the historical festino, with the five-day form dated to 1743",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_CHRONOLOGY",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/0"
@@ -4964,15 +4963,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 3,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-002",
       "source_id": "PIT1900-NEW-002",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Street singers repeat their assigned novena songs for nine consecutive days at the same houses and times",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "POPULAR_DEVOTIONAL_PRACTICE",
+      "provisional_lane": "REGIONAL_ACTION_COMPONENT_PARENT_OWNER_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/1"
@@ -4991,15 +4993,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 12,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-003",
       "source_id": "PIT1900-NEW-003",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Novena singers collect small payments on the eve of the saint's feast",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_SOCIAL_DETAIL",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/2"
@@ -5018,15 +5023,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 12,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-004",
       "source_id": "PIT1900-NEW-004",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "A documented street-novena verse refers to plague reports from Malta and the saint's attributed protection",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "FOLK_BELIEF_NOT_ENDORSED",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/3"
@@ -5045,15 +5053,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 12,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-005",
       "source_id": "PIT1900-NEW-005",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "The former monumental triumphal cart was constructed in the weeks before the July festival",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "PROCESSIONAL_OBJECT",
+      "provisional_lane": "REGIONAL_RITE_OR_MINISTERIAL_AUTHORITY_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/4"
@@ -5072,15 +5083,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 13,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-006",
       "source_id": "PIT1900-NEW-006",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "The cart's wooden carriage was historically taken to the Cala on St John's day before assembly",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_PREPARATION",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/5"
@@ -5099,15 +5113,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 13,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-007",
       "source_id": "PIT1900-NEW-007",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Cart picture-panels presented episodes of the saint's legendary life, including the hunter's reported discovery",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "ICONOGRAPHIC_COMPONENT",
+      "provisional_lane": "REGIONAL_ACTION_COMPONENT_PARENT_OWNER_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/6"
@@ -5126,15 +5143,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 13,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-008",
       "source_id": "PIT1900-NEW-008",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "A decorated tier of the historical cart accommodated musicians in ceremonial clothing",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "MUSICAL_CIVIC_COMPONENT",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/7"
@@ -5153,15 +5173,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 14,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-009",
       "source_id": "PIT1900-NEW-009",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "A crowned, white-clad figure of St Rosalia stood high above the historical triumphal cart",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "ICONOGRAPHIC_COMPONENT",
+      "provisional_lane": "REGIONAL_ACTION_COMPONENT_PARENT_OWNER_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/8"
@@ -5180,15 +5203,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 14,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-010",
       "source_id": "PIT1900-NEW-010",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Smaller allegorical carts were paraded along the Cassaro and Strada Nuova on consecutive days",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_CIVIC_SPECTACLE",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/9"
@@ -5207,15 +5233,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 16,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-011",
       "source_id": "PIT1900-NEW-011",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Bareback horse races were held on the second through fourth days in the older festival programme",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_CIVIC_SPECTACLE",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/10"
@@ -5234,15 +5263,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 17,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-012",
       "source_id": "PIT1900-NEW-012",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "An older practice of racing horses ridden by poor foundling jockeys was abandoned in favour of riderless racing",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_VARIANT",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/11"
@@ -5261,15 +5293,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 17,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-013",
       "source_id": "PIT1900-NEW-013",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "An 1895 petition requested restoration of the older five-day municipal festino and its spectacles",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_CHRONOLOGY",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/12"
@@ -5288,15 +5323,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 19,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-014",
       "source_id": "PIT1900-NEW-014",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "A restored triumphal cart travelled via Via Libertà in the 1896 celebration rather than the earlier Cassaro route",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_VARIANT",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/13"
@@ -5315,15 +5353,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 20,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-015",
       "source_id": "PIT1900-NEW-015",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Cathedral solemn Vespers shifted from the fourth festival day to the second in Pitrè's period",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_LITURGICAL_CONTEXT",
+      "provisional_lane": "REGIONAL_RITE_OR_MINISTERIAL_AUTHORITY_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/14"
@@ -5342,15 +5383,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 22,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-016",
       "source_id": "PIT1900-NEW-016",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "The Cathedral was densely illuminated for Vespers in the historical festival",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_LITURGICAL_CONTEXT",
+      "provisional_lane": "REGIONAL_RITE_OR_MINISTERIAL_AUTHORITY_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/15"
@@ -5369,15 +5413,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 28,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-017",
       "source_id": "PIT1900-NEW-017",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "The city commissioned a large scenographic fireworks display with a selected theme",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_CIVIC_SPECTACLE",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/16"
@@ -5396,15 +5443,18 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 28,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     },
     {
       "evidence_id": "external_source_observations_pitre_original_1900_new_ocr:PIT1900-NEW-018",
       "source_id": "PIT1900-NEW-018",
       "source_bucket": "external_source_observations_pitre_original_1900_new_ocr",
       "source_label": "Spectators watched the fireworks from boats in the gulf adorned with canopies and coloured lanterns",
-      "source_type_as_recorded": "NO_NATIVE_CLASS",
-      "provisional_lane": "ORIGINAL_PASSAGE_AND_FOLIO_SCOPE_PENDING",
+      "source_type_as_recorded": "HISTORICAL_CIVIC_SPECTACLE",
+      "provisional_lane": "HISTORICAL_ACTION_PERIOD_CHECK",
       "original_pointer": {
         "path": "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
         "json_pointer": "/records/17"
@@ -5423,7 +5473,10 @@
       "roman_ritual_1962_authority_certified": false,
       "indulgence_grant_certified": false,
       "calendar_published": false,
-      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs"
+      "next_gate": "Compare source action and ritual actor to master/variant under exact geography and occasion, and inspect cited primary passage; do not inflate regional complex parts into separate customs",
+      "original_source_reported_original_page_verified": true,
+      "original_printed_page": 31,
+      "pre_existing_facsimile_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
     }
   ]
 }
