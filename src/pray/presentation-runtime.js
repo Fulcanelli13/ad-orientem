@@ -1800,7 +1800,6 @@ function eucharisticWitnessTreasury(){
 function renderAdoration(){
  if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('Enter prayer without a prescribed duration','Entrer en prière sans durée imposée'))}
   <main class="aoP435930Body aoAdorationChooser" data-ao-adoration-chooser="quiet-v2">
-   <p class="aoAdorationChooserIntroduction">${esc(L('Choose the form suited to where you are.','Choisissez la forme adaptée au lieu où vous vous trouvez.'))}</p>
    <div class="aoAdorationPrimaryGrid">
     <button type="button" data-p435930-ador-mode="visit">
      <small>${esc(L('AT THE TABERNACLE','DEVANT LE TABERNACLE'))}</small>
@@ -1813,8 +1812,7 @@ function renderAdoration(){
      <span>${esc(L('Be still. Prayers and guidance are available only when wanted.','Demeurez en silence. Prières et aide restent facultatives.'))}</span>
     </button>
    </div>
-   <details class="aoAdorationMethodsDisclosure" data-ao-adoration-methods>
-    <summary>${esc(L('Guided forms and Eucharistic prayers','Formes guidées et prières eucharistiques'))}</summary>
+   <section class="aoAdorationMethodsRow" aria-label="${esc(L("Guided forms and Eucharistic prayers","Formes guidées et prières eucharistiques"))}">
     <div class="aoP435930BigGrid">
      <button type="button" data-p435930-ador-mode="holy">
       <b>${esc(L('Guided Holy Hour','Heure Sainte guidée'))}</b>
@@ -1833,12 +1831,8 @@ function renderAdoration(){
       <span>${esc(L('A voluntary Sacred Heart night watch at home, without treating the image as the Blessed Sacrament.','Veillée facultative du Sacré-Cœur au foyer, sans confondre image et Saint-Sacrement.'))}</span>
      </button>
     </div>
-   </details>
+   </section>
    <p class="aoAdorationChooserAfterword">${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
-   ${adorationReturnFromBenediction?`<button type="button" class="aoP435930Secondary aoAdorationPublicRiteLink" data-p435930-go-ben>
-     ${esc(L('Return to public Benediction','Revenir à la bénédiction eucharistique'))}
-     <small>${esc(L('Includes optional Christ the King procession and prayers','Avec procession et prières facultatives du Christ-Roi'))}</small>
-   </button>`:''}
   </main>`;
  if(ADOR.quiet)return `${head(L('Silent Adoration','Adoration silencieuse'),L('No prescribed duration','Sans durée imposée'))}
  <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen" role="dialog" aria-modal="true" aria-labelledby="aoAdorationQuietTitle" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-quiet="true">
