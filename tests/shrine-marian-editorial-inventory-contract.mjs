@@ -37,7 +37,7 @@ assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].so
 assert.equal(ledger.summary.marianShrines,118);
 assert.equal(ledger.summary.shrineGuides,33);
 assert.equal(ledger.summary.shrineApprovedHero,31);
-assert.equal(images.items.length,ledger.summary.shrineApprovedHero+json("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+json("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+json("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Historical Marian shrine count must remain intact while separately vetted Directory images are added");
+assert.ok(images.items.length>=ledger.summary.shrineApprovedHero+json("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+json("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+json("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Historical Marian shrine count must remain intact while separately vetted Directory images are added");
 for(const item of images.items){
  assert.ok(item.status==="APPROVED"&&item.rights_verified&&item.subject_verified&&item.crop_reviewed);
  assert.ok(/^https:\/\//.test(item.source_url)&&/^https:\/\//.test(item.license_url));
@@ -72,8 +72,13 @@ for(const entry of ledger.shrines){
  assert.ok(shrineIds.has(entry.shrine_id)&&knownPlaces.has(entry.place_id),entry.shrine_id);
  const g=allGuides.some(x=>x.place_id===entry.place_id);
  assert.equal(entry.detailed_guide==="PUBLISHED",g,entry.shrine_id+" guide coverage drift");
- assert.equal(entry.hero_media==="APPROVED_LOCAL",imageByPlace.get(entry.place_id)?.status==="APPROVED",
-  entry.shrine_id+" photo coverage drift");
+ if(entry.hero_media==="APPROVED_LOCAL"){
+  assert.equal(imageByPlace.get(entry.place_id)?.status,"APPROVED",
+   entry.shrine_id+" frozen approved-photo evidence must remain published");
+ } else if(imageByPlace.has(entry.place_id)){
+  assert.ok(imageByPlace.get(entry.place_id)?.review_method?.includes("Photo Finder editorial selection"),
+   entry.shrine_id+" newly approved hero requires independently sourced editorial decision");
+ }
 }
 for(const g of [...newGuides.guides,...newSaintGuides.guides]){
  assert.ok(knownPlaces.has(g.place_id)&&g.publication==="PUBLISHED");

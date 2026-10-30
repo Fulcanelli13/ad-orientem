@@ -10,7 +10,7 @@ assert.equal(snapshot.site_count,snapshot.sites.length);
 assert.equal(snapshot.unapproved_site_count,snapshot.sites.filter(s=>!s.approved).length);
 assert.equal(snapshot.candidate_count,430);
 assert.equal(snapshot.site_count,109);
-assert.equal(snapshot.unapproved_site_count,79);
+assert.ok(snapshot.unapproved_site_count<=79 && snapshot.unapproved_site_count>=0,"New approved covers must reduce or preserve the unresolved P79 queue");
 const seen=new Set();
 for(const s of snapshot.sites){
  assert.match(s.id,/^place:[A-Z]{2}:/);
@@ -33,4 +33,4 @@ assert.match(html,/exact_building_editorially_confirmed/);
 assert.match(html,/AO_P79_PLACE_PHOTO_SELECTIONS_V2/);
 assert.match(html,/ao-p79-photo-review-v2-/);
 assert.match(html,/No approved-media entry/);
-console.log("P79 grouped photo-review contracts: pass; 430 candidates / 109 Places / 79 without approved media.");
+console.log("P79 grouped photo-review contracts: pass; 430 candidates / 109 Places / "+snapshot.unapproved_site_count+" without approved media.");

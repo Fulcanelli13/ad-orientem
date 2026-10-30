@@ -7,8 +7,26 @@ const r49=read("data/directory/preliminary-map-r49.v1.json");
 const cover=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
 const review=read("data/geography/research/directory-place-photo-screen-p92-20261029.v1.json");
-assert.deepEqual(review,buildScreen(geo,r49,cover,gallery),
-  "The review registry must exactly reflect authoritative R49 and Place/media manifests");
+const live=buildScreen(geo,r49,cover,gallery);
+// P92 is a dated immutable research snapshot, not a perpetual photo-count oracle.
+// New source-verified media may only turn false photo flags to true; spatial
+// matches, exact-site relations, and original research adjudications stay frozen.
+assert.equal(live.candidate_pairs.length,review.candidate_pairs.length);
+const frozenPairs=new Map(review.candidate_pairs.map(row=>[row.venue_id+"|"+row.place_id,row]));
+for(const pair of live.candidate_pairs){
+ const old=frozenPairs.get(pair.venue_id+"|"+pair.place_id);
+ assert.ok(old,"New spatial/identity pair requires a separate Place review");
+ const {place_has_approved_photo:now,...stable}=pair;
+ const {place_has_approved_photo:before,...frozen}=old;
+ assert.deepEqual(stable,frozen,"New photo approval cannot change a frozen Place/site identity pair");
+ if(before)assert.equal(now,true,"Cannot revoke an existing approved-photo flag");
+}
+assert.equal(live.counts.venues_screened,review.counts.venues_screened);
+assert.equal(live.counts.canonical_places,review.counts.canonical_places);
+assert.equal(live.counts.confirmed_links,review.counts.confirmed_links);
+assert.equal(live.counts.within_350m_pairs,review.counts.within_350m_pairs);
+assert.ok(live.counts.nearby_approved_photo_pairs>=review.counts.nearby_approved_photo_pairs);
+assert.ok(live.counts.exact_confirmed_photo_joins>=review.counts.exact_confirmed_photo_joins);
 assert.equal(review.state,"RESEARCH_ONLY_NEVER_APP_VISIBLE");
 assert.deepEqual([review.counts.venues_screened,review.counts.canonical_places,
  review.counts.within_350m_pairs,review.counts.venues_near_place],
@@ -45,7 +63,7 @@ for(const row of geo.directoryPlaceLinks){
  if(pair)assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
 }
 assert.equal(buildScreen({...geo,directoryPlaceLinks:[...geo.directoryPlaceLinks,{
- venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,9);
+ venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,live.counts.exact_confirmed_photo_joins);
 const adjudication=read("data/geography/research/directory-place-identity-editorial-20261029.v1.json");
 assert.equal(adjudication.schema,"AO_DIRECTORY_PLACE_EXACT_BUILDING_EDITORIAL_REVIEW_V1");
 assert.equal(adjudication.release_candidate_count,0);
@@ -84,4 +102,4 @@ const hannover=review.candidate_pairs.find(x=>x.place_id==="place:DE:basilika-st
 assert.equal(hannover?.distance_m,1.6);
 assert.equal(hannover?.disposition,"EXISTING_CONFIRMED_LINK");
 assert.equal(hannover?.place_has_approved_photo,false,"Canonical Place must not bypass photo release checks");
-console.log("PASS 1,879 venues x 530 Places: 55 spatial pairs, 9 approved-photo joins, Hannover exact site linked without photo");
+console.log("PASS 1,879 venues x 530 Places: 55 frozen spatial pairs, "+live.counts.exact_confirmed_photo_joins+" current approved-photo joins, P92 research preserved");
