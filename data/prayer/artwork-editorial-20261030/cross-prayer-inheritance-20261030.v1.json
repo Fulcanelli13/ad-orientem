@@ -1,0 +1,3659 @@
+{
+  "schema": "AO_PRAYER_ALL_MODULES_CROSS_PRAYER_INHERITANCE_V1",
+  "date": "2026-10-30",
+  "source_files": [
+    "balanced-reuse-20261030-assignments.v2.json",
+    "decision-ledger-b01-b05.v1.json",
+    "missing-art-approved-only-20261030.v1.json"
+  ],
+  "contract": [
+    "An artwork approved for a liturgical event can be reused at every other matching event across Rosary, Stations, chaplets, novenas, and Prayer; missing checkbox does not mean rejection.",
+    "Preserve explicit not_relevant, reject, scope-only and final-cover locks; never reinterpret different scenes as identical.",
+    "An approved work may have many route edges; same work identity must stay exact, never substitute a different painting with the same artist/subject.",
+    "Scene matches are editorial reuse, not photograph/rights approval, and never proof of live reader card parity.",
+    "An exact-scene gap can temporarily inherit a contextual artwork only as an explicitly marked, unpublished editorial fallback.",
+    "Do not invent new approvals or violate the user's €0 and frame-free/no-low-quality-photo requirements."
+  ],
+  "summary": {
+    "original_image_bearing_blueprint_slots": 267,
+    "staged_editorial_slots_with_at_least_one_candidate": 267,
+    "source_scope": "267 image-bearing editorial blueprint slots, NOT all live runtime cards",
+    "approved_new_oct30_25": 25,
+    "rejected_18_not_imported": 18,
+    "unreviewed_23_not_imported": 23,
+    "q2_accepted_b01_b05": 114,
+    "scene_family_count": 21,
+    "added_reuse_edges": 100,
+    "slots_touched": 43,
+    "remaining_without_explicit_approved_or_locked_candidate": [
+      "COV-novena.st_therese"
+    ],
+    "exact_rite_benediction_still_unapproved": true,
+    "st_therese_image_approval_and_rights_still_unresolved": true,
+    "all_new_edges_research_only": true,
+    "production_images_published": 0
+  },
+  "scene_families": [
+    {
+      "scene": "annunciation",
+      "slot_ids": [
+        "STG-pray.rosary-02",
+        "STG-pray.angelus-05",
+        "COV-novena.annunciation"
+      ]
+    },
+    {
+      "scene": "nativity",
+      "slot_ids": [
+        "STG-pray.rosary-04",
+        "STG-pray.st_joseph_seven_sorrows-02",
+        "HERO-02"
+      ]
+    },
+    {
+      "scene": "presentation",
+      "slot_ids": [
+        "STG-pray.rosary-05",
+        "STG-prayer.seven_sorrows_chaplet-01",
+        "STG-pray.st_joseph_seven_sorrows-04"
+      ]
+    },
+    {
+      "scene": "finding_in_temple",
+      "slot_ids": [
+        "STG-pray.rosary-06",
+        "STG-prayer.seven_sorrows_chaplet-03",
+        "STG-pray.st_joseph_seven_sorrows-07"
+      ]
+    },
+    {
+      "scene": "agony_in_garden",
+      "slot_ids": [
+        "STG-pray.rosary-07",
+        "STG-pray.precious_blood-02"
+      ]
+    },
+    {
+      "scene": "scourging",
+      "slot_ids": [
+        "STG-pray.rosary-08",
+        "STG-pray.precious_blood-03"
+      ]
+    },
+    {
+      "scene": "crown_of_thorns",
+      "slot_ids": [
+        "STG-pray.rosary-09",
+        "STG-pray.precious_blood-04"
+      ]
+    },
+    {
+      "scene": "carrying_cross",
+      "slot_ids": [
+        "STG-pray.rosary-10",
+        "STG-pray.precious_blood-05",
+        "STG-pray.stations-02"
+      ]
+    },
+    {
+      "scene": "crucifixion",
+      "slot_ids": [
+        "STG-pray.rosary-11",
+        "STG-pray.precious_blood-06",
+        "STG-prayer.seven_sorrows_chaplet-05",
+        "STG-pray.stations-12"
+      ]
+    },
+    {
+      "scene": "resurrection",
+      "slot_ids": [
+        "STG-pray.rosary-12",
+        "STG-pray.angelus_regina-02",
+        "COV-pray.angelus_regina",
+        "HERO-12"
+      ]
+    },
+    {
+      "scene": "ascension",
+      "slot_ids": [
+        "STG-pray.rosary-13",
+        "HERO-13"
+      ]
+    },
+    {
+      "scene": "pentecost",
+      "slot_ids": [
+        "STG-pray.rosary-14",
+        "STG-novena.holy_ghost-01",
+        "COV-novena.holy_ghost",
+        "COV-sacrament_come_holy_spirit",
+        "HERO-14"
+      ]
+    },
+    {
+      "scene": "assumption",
+      "slot_ids": [
+        "STG-pray.rosary-15",
+        "COV-novena.assumption",
+        "HERO-19"
+      ]
+    },
+    {
+      "scene": "coronation",
+      "slot_ids": [
+        "STG-pray.rosary-16",
+        "STG-litany_loreto_1962-05"
+      ]
+    },
+    {
+      "scene": "circumcision",
+      "slot_ids": [
+        "STG-pray.precious_blood-01",
+        "STG-pray.st_joseph_seven_sorrows-03"
+      ]
+    },
+    {
+      "scene": "pierced_side",
+      "slot_ids": [
+        "STG-pray.precious_blood-07",
+        "STG-pray.five_wounds-05"
+      ]
+    },
+    {
+      "scene": "mary_meets_cross",
+      "slot_ids": [
+        "STG-pray.stations-04",
+        "STG-prayer.seven_sorrows_chaplet-04"
+      ]
+    },
+    {
+      "scene": "deposition",
+      "slot_ids": [
+        "STG-pray.stations-13",
+        "STG-prayer.seven_sorrows_chaplet-06"
+      ]
+    },
+    {
+      "scene": "entombment",
+      "slot_ids": [
+        "STG-pray.stations-14",
+        "STG-prayer.seven_sorrows_chaplet-07"
+      ]
+    },
+    {
+      "scene": "flight_egypt",
+      "slot_ids": [
+        "STG-prayer.seven_sorrows_chaplet-02",
+        "STG-pray.st_joseph_seven_sorrows-05"
+      ]
+    },
+    {
+      "scene": "last_supper",
+      "slot_ids": [
+        "HERO-09",
+        "STG-prayer.communion-01",
+        "COV-prayer.communion"
+      ]
+    }
+  ],
+  "explicitly_scoped_artwork_ids": {
+    "PRAYER::w1-kazimirowski": [
+      "COV-pray.divine_mercy",
+      "STG-pray.divine_mercy-01",
+      "STG-pray.five_wounds-05"
+    ],
+    "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes": [
+      "COV-foundations_grace_before_meals",
+      "COV-foundations_grace_after_meals"
+    ],
+    "CANONICAL::W07-007": [
+      "COV-prayer.lection"
+    ],
+    "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist": [
+      "STG-pray.rosary-12",
+      "STG-pray.angelus_regina-02",
+      "COV-pray.angelus_regina"
+    ],
+    "PRAYER::regina--primary": [
+      "STG-pray.rosary-12",
+      "STG-pray.angelus_regina-02",
+      "COV-pray.angelus_regina"
+    ]
+  },
+  "inherited_reuse_edges": [
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "PRAYER::angelus--murillo-annunciation",
+      "title": "The Annunciation (Prado)",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "CANONICAL::met-436791",
+      "title": "The Annunciation",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "CANONICAL::met-436502",
+      "title": "The Annunciation",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "CANONICAL::cma-127572",
+      "title": "The Annunciation",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "REVIEW::commons:55389333",
+      "title": "Annunciation",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "REVIEW::commons:22145562",
+      "title": "The Annunciation",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "REVIEW::commons:21885843",
+      "title": "The Annunciation",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "REVIEW::commons:74171702",
+      "title": "The Annunciation \" \"",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.annunciation",
+      "artwork_id": "REVIEW::commons:186817730",
+      "title": "The Annunciation \" \"",
+      "from_slot": "STG-pray.rosary-02",
+      "rule": "SHARED_EXACT_SCENE:annunciation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.rosary-04",
+      "artwork_id": "REVIEW::met:436781",
+      "title": "The Adoration of the Christ Child",
+      "from_slot": "HERO-02",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::commons:34140055",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::commons:28933083",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::commons:115220164",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::commons:56890177",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::commons:40907107",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::commons:52809691",
+      "title": "Adoration of the Magi .",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::commons:74483814",
+      "title": "The Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "artwork_id": "REVIEW::met:436781",
+      "title": "The Adoration of the Christ Child",
+      "from_slot": "HERO-02",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:34140055",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:28933083",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:115220164",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:56890177",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:40907107",
+      "title": "Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:52809691",
+      "title": "Adoration of the Magi .",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:51744278",
+      "title": "Nativity",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:74483814",
+      "title": "The Adoration of the Magi",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:31782068",
+      "title": "The Adoration of the Shepherds",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:23100292",
+      "title": "The Adoration of the Shepherds",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-02",
+      "artwork_id": "REVIEW::commons:93153411",
+      "title": "The Nativity or the Adoration of the Angels",
+      "from_slot": "STG-pray.rosary-04",
+      "rule": "SHARED_EXACT_SCENE:nativity",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-prayer.seven_sorrows_chaplet-01",
+      "artwork_id": "REVIEW::smk:KMS1168",
+      "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+      "from_slot": "STG-pray.rosary-05",
+      "rule": "SHARED_EXACT_SCENE:presentation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-04",
+      "artwork_id": "REVIEW::smk:KMS1168",
+      "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+      "from_slot": "STG-pray.rosary-05",
+      "rule": "SHARED_EXACT_SCENE:presentation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.precious_blood-05",
+      "artwork_id": "CANONICAL::nga-137505",
+      "title": "Christ Carrying the Cross",
+      "from_slot": "STG-pray.rosary-10",
+      "rule": "SHARED_EXACT_SCENE:carrying_cross",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-02",
+      "artwork_id": "CANONICAL::nga-137505",
+      "title": "Christ Carrying the Cross",
+      "from_slot": "STG-pray.rosary-10",
+      "rule": "SHARED_EXACT_SCENE:carrying_cross",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "artwork_id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "title": "The Lance Thrust",
+      "from_slot": "STG-pray.rosary-11",
+      "rule": "SHARED_EXACT_SCENE:crucifixion",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-12",
+      "artwork_id": "REVIEW::met:437172",
+      "title": "The Crucifixion",
+      "from_slot": "STG-pray.rosary-11",
+      "rule": "SHARED_EXACT_SCENE:crucifixion",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-12",
+      "artwork_id": "REVIEW::commons:115166028",
+      "title": "Crucifixion",
+      "from_slot": "STG-pray.rosary-11",
+      "rule": "SHARED_EXACT_SCENE:crucifixion",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-12",
+      "artwork_id": "REVIEW::cma:127664",
+      "title": "Crucifixion",
+      "from_slot": "STG-pray.rosary-11",
+      "rule": "SHARED_EXACT_SCENE:crucifixion",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-12",
+      "artwork_id": "REVIEW::commons:4965555",
+      "title": "French: La crucifixion",
+      "from_slot": "STG-pray.rosary-11",
+      "rule": "SHARED_EXACT_SCENE:crucifixion",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-12",
+      "artwork_id": "REVIEW::commons:33831598",
+      "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+      "from_slot": "STG-pray.rosary-11",
+      "rule": "SHARED_EXACT_SCENE:crucifixion",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-12",
+      "artwork_id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "title": "The Lance Thrust",
+      "from_slot": "STG-pray.rosary-11",
+      "rule": "SHARED_EXACT_SCENE:crucifixion",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-pray.angelus_regina",
+      "artwork_id": "REVIEW::commons:22002144",
+      "title": "The Resurrection",
+      "from_slot": "STG-pray.rosary-12",
+      "rule": "SHARED_EXACT_SCENE:resurrection",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-12",
+      "artwork_id": "REVIEW::commons:22002144",
+      "title": "The Resurrection",
+      "from_slot": "STG-pray.rosary-12",
+      "rule": "SHARED_EXACT_SCENE:resurrection",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-13",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.rosary-13::05",
+      "title": "The Ascension (after Leandro Bassano)",
+      "from_slot": "STG-pray.rosary-13",
+      "rule": "SHARED_EXACT_SCENE:ascension",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-13",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.rosary-13::06",
+      "title": "The Ascension of Christ",
+      "from_slot": "STG-pray.rosary-13",
+      "rule": "SHARED_EXACT_SCENE:ascension",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-novena.holy_ghost-01",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+      "title": "Pentecost",
+      "from_slot": "STG-pray.rosary-14",
+      "rule": "SHARED_EXACT_SCENE:pentecost",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-novena.holy_ghost",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+      "title": "Pentecost",
+      "from_slot": "STG-pray.rosary-14",
+      "rule": "SHARED_EXACT_SCENE:pentecost",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-sacrament_come_holy_spirit",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+      "title": "Pentecost",
+      "from_slot": "STG-pray.rosary-14",
+      "rule": "SHARED_EXACT_SCENE:pentecost",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-14",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+      "title": "Pentecost",
+      "from_slot": "STG-pray.rosary-14",
+      "rule": "SHARED_EXACT_SCENE:pentecost",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-19",
+      "artwork_id": "CANONICAL::nga-46470",
+      "title": "The Assumption of the Virgin",
+      "from_slot": "STG-pray.rosary-15",
+      "rule": "SHARED_EXACT_SCENE:assumption",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-19",
+      "artwork_id": "CANONICAL::nga-50280",
+      "title": "The Assumption of the Virgin",
+      "from_slot": "STG-pray.rosary-15",
+      "rule": "SHARED_EXACT_SCENE:assumption",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-litany_loreto_1962-05",
+      "artwork_id": "REVIEW::smk:KMSSP230",
+      "title": "The Coronation of the Virgin",
+      "from_slot": "STG-pray.rosary-16",
+      "rule": "SHARED_EXACT_SCENE:coronation",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.precious_blood-01",
+      "artwork_id": "REVIEW::commons:160384",
+      "title": "The Circumcision of Christ",
+      "from_slot": "STG-pray.st_joseph_seven_sorrows-03",
+      "rule": "SHARED_EXACT_SCENE:circumcision",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.precious_blood-01::01",
+      "title": "The Circumcision",
+      "from_slot": "STG-pray.precious_blood-01",
+      "rule": "SHARED_EXACT_SCENE:circumcision",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.precious_blood-01::02",
+      "title": "The Circumcision of Christ",
+      "from_slot": "STG-pray.precious_blood-01",
+      "rule": "SHARED_EXACT_SCENE:circumcision",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.precious_blood-01::05",
+      "title": "The Circumcision of Christ",
+      "from_slot": "STG-pray.precious_blood-01",
+      "rule": "SHARED_EXACT_SCENE:circumcision",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.st_joseph_seven_sorrows-03",
+      "artwork_id": "APPROVED_REVIEW::STG-pray.precious_blood-01::06",
+      "title": "The Circumcision of Christ",
+      "from_slot": "STG-pray.precious_blood-01",
+      "rule": "SHARED_EXACT_SCENE:circumcision",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.precious_blood-07",
+      "artwork_id": "PRAYER::historic:anthony van dyck:the lance thrust",
+      "title": "The Lance Thrust",
+      "from_slot": "STG-pray.five_wounds-05",
+      "rule": "SHARED_EXACT_SCENE:pierced_side",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-04",
+      "artwork_id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::01",
+      "title": "Via Crucis — Jesus encounters His Mother",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-04",
+      "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-04",
+      "artwork_id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
+      "title": "Jesus meets His Mother",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-04",
+      "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-04",
+      "artwork_id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04",
+      "title": "Solesmes — Fourth Station of the Way of the Cross",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-04",
+      "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-prayer.seven_sorrows_chaplet-04",
+      "artwork_id": "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+      "from_slot": "STG-pray.stations-04",
+      "rule": "SHARED_EXACT_SCENE:mary_meets_cross",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::commons:3110508",
+      "title": "La Pietà",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "rule": "SHARED_EXACT_SCENE:deposition",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::commons:15385030",
+      "title": "Lamentation of Christ",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "rule": "SHARED_EXACT_SCENE:deposition",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::commons:35629944",
+      "title": "Pietà",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "rule": "SHARED_EXACT_SCENE:deposition",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::commons:44220879",
+      "title": "The Lamentation",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "rule": "SHARED_EXACT_SCENE:deposition",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::commons:147368181",
+      "title": "The lamentation of Christ",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "rule": "SHARED_EXACT_SCENE:deposition",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::commons:45590714",
+      "title": "The lamentation over the dead Christ",
+      "from_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "rule": "SHARED_EXACT_SCENE:deposition",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "HERO-09",
+      "artwork_id": "REVIEW::nga:12130",
+      "title": "The Last Supper",
+      "from_slot": "COV-prayer.communion",
+      "rule": "SHARED_EXACT_SCENE:last_supper",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "STG-prayer.communion-01",
+      "artwork_id": "REVIEW::nga:12130",
+      "title": "The Last Supper",
+      "from_slot": "COV-prayer.communion",
+      "rule": "SHARED_EXACT_SCENE:last_supper",
+      "kind": "SCENE_IDENTICAL_USER_APPROVED_REUSE"
+    },
+    {
+      "target_slot": "COV-pray.litany_saints",
+      "artwork_id": "PRAYER::saints--vaneyck",
+      "title": "Adoration of the Mystic Lamb",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.litany_saints-06",
+      "artwork_id": "PRAYER::saints--vaneyck",
+      "title": "Adoration of the Mystic Lamb",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.divine_mercy-01",
+      "artwork_id": "PRAYER::w1-kazimirowski",
+      "title": "Divine Mercy (the original, 1934)",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "COV-foundations_grace_before_meals",
+      "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+      "title": "Miracle of Loaves and Fishes",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "COV-foundations_grace_after_meals",
+      "artwork_id": "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+      "title": "Miracle of Loaves and Fishes",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "COV-prayer.good_death",
+      "artwork_id": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "The Dream of Saint Joseph",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-prayer.good_death-01",
+      "artwork_id": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "The Dream of Saint Joseph",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "COV-prayer.good_death",
+      "artwork_id": "PRAYER::joseph--primary",
+      "title": "The Dream of Saint Joseph",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-prayer.good_death-01",
+      "artwork_id": "PRAYER::joseph--primary",
+      "title": "The Dream of Saint Joseph",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "COV-foundations_our_father",
+      "artwork_id": "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "title": "Miracle of Loaves and Fishes",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.five_wounds-05",
+      "artwork_id": "CANONICAL::W07-014",
+      "title": "The Incredulity of Saint Thomas",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.precious_blood-07",
+      "artwork_id": "CANONICAL::W07-014",
+      "title": "The Incredulity of Saint Thomas",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.confession-02",
+      "artwork_id": "CANONICAL::met-436839",
+      "title": "The Penitent Magdalen",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "HERO-11",
+      "artwork_id": "REVIEW::commons:163856846",
+      "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.rosary-12",
+      "artwork_id": "REVIEW::commons:163856846",
+      "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "HERO-11",
+      "artwork_id": "REVIEW::commons:163856843",
+      "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.rosary-12",
+      "artwork_id": "REVIEW::commons:163856843",
+      "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "HERO-11",
+      "artwork_id": "REVIEW::met:435725",
+      "title": "Christ's Descent into Hell",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::met:438427",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "artwork_id": "REVIEW::met:438427",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.seven_words-08",
+      "artwork_id": "REVIEW::met:438427",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::met:439553",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "artwork_id": "REVIEW::met:439553",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.seven_words-08",
+      "artwork_id": "REVIEW::met:439553",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.stations-13",
+      "artwork_id": "REVIEW::met:437342",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "artwork_id": "REVIEW::met:437342",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.seven_words-08",
+      "artwork_id": "REVIEW::met:437342",
+      "title": "The Lamentation",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.adoration-01",
+      "artwork_id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "title": "Adoration of the Magi",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.rosary-04",
+      "artwork_id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "title": "Adoration of the Magi",
+      "from_slot": null,
+      "rule": "VERBATIM_Q2_USER_INSTRUCTION",
+      "kind": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT"
+    },
+    {
+      "target_slot": "STG-pray.benediction-03",
+      "artwork_id": "PRAYER::adoration--primary",
+      "title": "The Virgin Adoring the Host",
+      "from_slot": "COV-pray.benediction",
+      "rule": "SAME_BENEDICTION_PRAYER_COVER_CARRYOVER_NOT_A_DEPICTION_OF_THE_BLESSING",
+      "kind": "CONTEXTUAL_APPROVED_TEMPORARY_CARRYOVER"
+    }
+  ],
+  "additional_semantic_slots_under_runtime_join": [
+    {
+      "slot": "SEM-rosary.wedding_at_cana",
+      "title": "The Wedding at Cana",
+      "artist": "Adam van Noort",
+      "candidate_key": "SEM-rosary.wedding_at_cana::01",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.wedding_at_cana",
+      "title": "Marriage at Cana",
+      "artist": "Gaetano Gandolfi",
+      "candidate_key": "SEM-rosary.wedding_at_cana::03",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.wedding_at_cana",
+      "title": "The Marriage at Cana",
+      "artist": "James Tissot",
+      "candidate_key": "SEM-rosary.wedding_at_cana::05",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.proclamation_of_kingdom",
+      "title": "The Sermon on the Mount",
+      "artist": "Carl Bloch",
+      "candidate_key": "SEM-rosary.proclamation_of_kingdom::01",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.transfiguration",
+      "title": "The Transfiguration",
+      "artist": "Peter Paul Rubens",
+      "candidate_key": "SEM-rosary.transfiguration::01",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.transfiguration",
+      "title": "The Transfiguration",
+      "artist": "Ludovico Carracci",
+      "candidate_key": "SEM-rosary.transfiguration::02",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.transfiguration",
+      "title": "The Transfiguration",
+      "artist": "Domenico Pugliani",
+      "candidate_key": "SEM-rosary.transfiguration::04",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.institution_of_eucharist",
+      "title": "La Petite Cène",
+      "artist": "Philippe de Champaigne",
+      "candidate_key": "SEM-rosary.institution_of_eucharist::01",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.institution_of_eucharist",
+      "title": "The Last Supper",
+      "artist": "Valentin de Boulogne",
+      "candidate_key": "SEM-rosary.institution_of_eucharist::02",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.institution_of_eucharist",
+      "title": "The Last Supper",
+      "artist": "Artus Wolffort and workshop",
+      "candidate_key": "SEM-rosary.institution_of_eucharist::03",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.institution_of_eucharist",
+      "title": "The Last Supper",
+      "artist": "Jacob Jordaens",
+      "candidate_key": "SEM-rosary.institution_of_eucharist::04",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    },
+    {
+      "slot": "SEM-rosary.institution_of_eucharist",
+      "title": "The Last Supper",
+      "artist": "Frans Walschartz",
+      "candidate_key": "SEM-rosary.institution_of_eucharist::06",
+      "approved": true,
+      "runtime_card_id": "NOT_YET_VERIFIED"
+    }
+  ],
+  "coverage": [
+    {
+      "slot_id": "HERO-01",
+      "label": "Advent",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-02",
+      "label": "Christmastide",
+      "eligible_editorial_candidates": 23,
+      "approved_or_locked_candidates": 23,
+      "scene_family": [
+        "nativity"
+      ],
+      "new_reuse_count": 11,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-03",
+      "label": "Epiphany",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-04",
+      "label": "Time after Epiphany",
+      "eligible_editorial_candidates": 10,
+      "approved_or_locked_candidates": 10,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-05",
+      "label": "Septuagesima",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-06",
+      "label": "Lent",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-07",
+      "label": "Passiontide",
+      "eligible_editorial_candidates": 10,
+      "approved_or_locked_candidates": 10,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-08",
+      "label": "Palm Sunday",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-09",
+      "label": "Holy Thursday",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "last_supper"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-10",
+      "label": "Good Friday",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-11",
+      "label": "Holy Saturday",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 3,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-12",
+      "label": "Easter & Paschaltide",
+      "eligible_editorial_candidates": 11,
+      "approved_or_locked_candidates": 11,
+      "scene_family": [
+        "resurrection"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-13",
+      "label": "Ascension",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [
+        "ascension"
+      ],
+      "new_reuse_count": 2,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-14",
+      "label": "Pentecost",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [
+        "pentecost"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-15",
+      "label": "Trinity Sunday",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-16",
+      "label": "Corpus Christi",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-17",
+      "label": "Sacred Heart",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-18",
+      "label": "Time after Pentecost",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-19",
+      "label": "Assumption",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "assumption"
+      ],
+      "new_reuse_count": 2,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-20",
+      "label": "All Saints",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-21",
+      "label": "All Souls",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-22",
+      "label": "Christ the King",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "HERO-23",
+      "label": "Immaculate Conception",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D1",
+      "label": "Daily Prayer",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D2",
+      "label": "Essential Prayers",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D3",
+      "label": "Rosary & Chaplets",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D4",
+      "label": "Novenas & Journeys",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D5",
+      "label": "Holy Eucharist",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D6",
+      "label": "Our Lord",
+      "eligible_editorial_candidates": 10,
+      "approved_or_locked_candidates": 10,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D7",
+      "label": "Our Lady",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D8",
+      "label": "Saints & Angels",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 11,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "DOOR-D9",
+      "label": "Life & Intentions",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_morning_offering",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-weekday_benedictus",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.angelus",
+      "label": "Cover",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-01",
+      "label": "Angelus at dawn",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-02",
+      "label": "Angelus at noon",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-03",
+      "label": "Angelus at dusk",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-04",
+      "label": "Angelus on 25 March",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-05",
+      "label": "Announcement",
+      "eligible_editorial_candidates": 15,
+      "approved_or_locked_candidates": 15,
+      "scene_family": [
+        "annunciation"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-06",
+      "label": "Mary's Fiat",
+      "eligible_editorial_candidates": 16,
+      "approved_or_locked_candidates": 16,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-07",
+      "label": "Incarnation",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-08",
+      "label": "Intercession",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus-09",
+      "label": "Collect",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.angelus_regina",
+      "label": "Cover",
+      "eligible_editorial_candidates": 11,
+      "approved_or_locked_candidates": 11,
+      "scene_family": [
+        "resurrection"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-01",
+      "label": "Rejoice, Queen of Heaven",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-02",
+      "label": "He Is Risen",
+      "eligible_editorial_candidates": 13,
+      "approved_or_locked_candidates": 13,
+      "scene_family": [
+        "resurrection"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-03",
+      "label": "Pray for Us",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.angelus_regina-04",
+      "label": "Collect",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-daily.morning",
+      "label": "Cover",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-daily.evening",
+      "label": "Cover",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-daily.nightly_examen",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-daily.personal_rule",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_sign_of_cross",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_our_father",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_hail_mary",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 10,
+      "approved_or_locked_candidates": 10,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_glory_be",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_apostles_creed",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-sacrament_act_of_contrition",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_act_of_faith",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_act_of_hope",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_act_of_love",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_guardian_angel",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_grace_before_meals",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_grace_after_meals",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_prayer_of_adoration",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-mass_confiteor",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-sacrament_come_holy_spirit",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [
+        "pentecost"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-traditional_veni_sancte_sequence",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.rosary",
+      "label": "Cover",
+      "eligible_editorial_candidates": 16,
+      "approved_or_locked_candidates": 16,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-01",
+      "label": "Opening prayers",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-02",
+      "label": "The Annunciation",
+      "eligible_editorial_candidates": 15,
+      "approved_or_locked_candidates": 15,
+      "scene_family": [
+        "annunciation"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-03",
+      "label": "The Visitation",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-04",
+      "label": "The Nativity",
+      "eligible_editorial_candidates": 22,
+      "approved_or_locked_candidates": 22,
+      "scene_family": [
+        "nativity"
+      ],
+      "new_reuse_count": 2,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-05",
+      "label": "The Presentation",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "presentation"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-06",
+      "label": "Finding in the Temple",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "finding_in_temple"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-07",
+      "label": "Agony in the Garden",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "agony_in_garden"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-08",
+      "label": "Scourging at the Pillar",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "scourging"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-09",
+      "label": "Crowning with Thorns",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "crown_of_thorns"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-10",
+      "label": "Carrying of the Cross",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "carrying_cross"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-11",
+      "label": "The Crucifixion",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [
+        "crucifixion"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-12",
+      "label": "The Resurrection",
+      "eligible_editorial_candidates": 15,
+      "approved_or_locked_candidates": 15,
+      "scene_family": [
+        "resurrection"
+      ],
+      "new_reuse_count": 2,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-13",
+      "label": "The Ascension",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [
+        "ascension"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-14",
+      "label": "Descent of the Holy Ghost",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [
+        "pentecost"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-15",
+      "label": "The Assumption",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "assumption"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-16",
+      "label": "Coronation of Our Lady",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [
+        "coronation"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.rosary-17",
+      "label": "Closing prayers (Salve Regina)",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.divine_mercy",
+      "label": "Cover",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.divine_mercy-01",
+      "label": "Decades (shared pool)",
+      "eligible_editorial_candidates": 11,
+      "approved_or_locked_candidates": 11,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.five_wounds",
+      "label": "Cover",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-01",
+      "label": "Left foot",
+      "eligible_editorial_candidates": 17,
+      "approved_or_locked_candidates": 17,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-02",
+      "label": "Right foot",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-03",
+      "label": "Left hand",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-04",
+      "label": "Right hand",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.five_wounds-05",
+      "label": "Sacred side",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [
+        "pierced_side"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.precious_blood",
+      "label": "Cover",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-01",
+      "label": "Circumcision",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [
+        "circumcision"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-02",
+      "label": "Agony in Gethsemane",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "agony_in_garden"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-03",
+      "label": "Scourging",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "scourging"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-04",
+      "label": "Crowning with thorns",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "crown_of_thorns"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-05",
+      "label": "Way of the Cross",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "carrying_cross"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-06",
+      "label": "Crucifixion",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [
+        "crucifixion"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.precious_blood-07",
+      "label": "Piercing of the side",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "pierced_side"
+      ],
+      "new_reuse_count": 2,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.little_crown",
+      "label": "Cover",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.little_crown-01",
+      "label": "Beads (shared pool)",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.rosary_methods",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-prayer.seven_sorrows_chaplet",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-01",
+      "label": "The prophecy of Simeon",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [
+        "presentation"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-02",
+      "label": "The flight into Egypt",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [
+        "flight_egypt"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-03",
+      "label": "The loss of the Child in the Temple",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [
+        "finding_in_temple"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-04",
+      "label": "Mary meets Jesus carrying the Cross",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [
+        "mary_meets_cross"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-05",
+      "label": "The Crucifixion",
+      "eligible_editorial_candidates": 11,
+      "approved_or_locked_candidates": 11,
+      "scene_family": [
+        "crucifixion"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-06",
+      "label": "Jesus taken down from the Cross",
+      "eligible_editorial_candidates": 17,
+      "approved_or_locked_candidates": 17,
+      "scene_family": [
+        "deposition"
+      ],
+      "new_reuse_count": 3,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.seven_sorrows_chaplet-07",
+      "label": "Jesus laid in the tomb",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [
+        "entombment"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.holy_ghost",
+      "label": "Cover",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [
+        "pentecost"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-novena.holy_ghost-01",
+      "label": "Day images",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [
+        "pentecost"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.christmas",
+      "label": "Cover",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-novena.christmas-01",
+      "label": "Day images",
+      "eligible_editorial_candidates": 23,
+      "approved_or_locked_candidates": 23,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.corpus_christi",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.sacred_heart",
+      "label": "Cover",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.immaculate_conception",
+      "label": "Cover",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.annunciation",
+      "label": "Cover",
+      "eligible_editorial_candidates": 15,
+      "approved_or_locked_candidates": 15,
+      "scene_family": [
+        "annunciation"
+      ],
+      "new_reuse_count": 10,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.assumption",
+      "label": "Cover",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [
+        "assumption"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.seven_sorrows",
+      "label": "Cover",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.st_joseph",
+      "label": "Cover",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.holy_souls",
+      "label": "Cover",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-novena.holy_souls-01",
+      "label": "Day images",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.perpetual_help",
+      "label": "Cover",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.st_therese",
+      "label": "Cover",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 0,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-novena.st_therese-01",
+      "label": "Day images",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.christ_the_king",
+      "label": "Cover",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.immaculate_heart",
+      "label": "Cover",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.st_michael",
+      "label": "Cover",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.st_anthony_nine_tuesdays",
+      "label": "Cover",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-novena.holy_face_1887",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.montfort_consecration",
+      "label": "Cover",
+      "eligible_editorial_candidates": 10,
+      "approved_or_locked_candidates": 10,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-01",
+      "label": "Emptying of the spirit of the world",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-02",
+      "label": "Knowledge of self",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-03",
+      "label": "Knowledge of the Blessed Virgin",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-04",
+      "label": "Knowledge of Jesus Christ",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.montfort_consecration-05",
+      "label": "Act of consecration",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-programme.first_friday",
+      "label": "Cover",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-programme.first_friday-01",
+      "label": "Friday images",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-programme.first_saturday",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-programme.first_saturday-01",
+      "label": "Saturday images",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-adoration_anima_christi",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-adoration_spiritual_communion",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-benediction_o_salutaris",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-benediction_tantum_ergo",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-benediction_divine_praises",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-adoration_litany_blessed_sacrament",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-benediction_versicles",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-adoration_lord_i_am_not_worthy",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-mass_devotion_leonine",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 11,
+      "approved_or_locked_candidates": 11,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-benediction_adoremus_ps116",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.adoration.night",
+      "label": "Cover",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-01",
+      "label": "Prepare the home",
+      "eligible_editorial_candidates": 10,
+      "approved_or_locked_candidates": 10,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-02",
+      "label": "Unite with Christ",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-03",
+      "label": "Act of reparation",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-04",
+      "label": "Family and Church",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-05",
+      "label": "Spiritual Communion",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.night-06",
+      "label": "Entrust the night",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.adoration",
+      "label": "Cover",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration-01",
+      "label": "At the tabernacle (Visit)",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration-02",
+      "label": "In stillness (exposition)",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.adoration.four_ends",
+      "label": "Cover",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-01",
+      "label": "Adoration",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-02",
+      "label": "Thanksgiving",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-03",
+      "label": "Reparation",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.adoration.four_ends-04",
+      "label": "Petition",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.benediction",
+      "label": "Cover",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.benediction-01",
+      "label": "Exposition · O Salutaris",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.benediction-02",
+      "label": "Tantum Ergo · incensation",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.benediction-03",
+      "label": "The blessing",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.benediction-04",
+      "label": "Divine Praises · Adoremus",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.forty_hours",
+      "label": "Cover",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-prayer.communion",
+      "label": "Cover",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [
+        "last_supper"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.communion-01",
+      "label": "Before Communion",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [
+        "last_supper"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.communion-02",
+      "label": "After Communion",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-devotion_consecration_christ_king",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-sacred_heart_short_prayer",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-sacred_heart_aspiration_trust",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.stations",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-01",
+      "label": "Jesus is condemned to death",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-02",
+      "label": "Jesus takes up His Cross",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [
+        "carrying_cross"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-03",
+      "label": "Jesus falls the first time",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-04",
+      "label": "Jesus meets His Mother",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [
+        "mary_meets_cross"
+      ],
+      "new_reuse_count": 3,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-05",
+      "label": "Simon of Cyrene helps Jesus",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-06",
+      "label": "Veronica wipes the face of Jesus",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-07",
+      "label": "Jesus falls the second time",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-08",
+      "label": "Jesus consoles the women of Jerusalem",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-09",
+      "label": "Jesus falls the third time",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-10",
+      "label": "Jesus is stripped of His garments",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-11",
+      "label": "Jesus is nailed to the Cross",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-12",
+      "label": "Jesus dies on the Cross",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [
+        "crucifixion"
+      ],
+      "new_reuse_count": 6,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-13",
+      "label": "Jesus is taken down from the Cross",
+      "eligible_editorial_candidates": 13,
+      "approved_or_locked_candidates": 13,
+      "scene_family": [
+        "deposition"
+      ],
+      "new_reuse_count": 9,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.stations-14",
+      "label": "Jesus is laid in the tomb",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [
+        "entombment"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.seven_words",
+      "label": "Cover",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-01",
+      "label": "'Father, forgive them'",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-02",
+      "label": "'This day thou shalt be with me in Paradise'",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-03",
+      "label": "'Woman, behold thy son'",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-04",
+      "label": "'My God, why hast Thou forsaken me?'",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-05",
+      "label": "'I thirst'",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-06",
+      "label": "'It is consummated'",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-07",
+      "label": "'Into Thy hands I commend my spirit'",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.seven_words-08",
+      "label": "Historical conclusion",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 3,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.tenebrae",
+      "label": "Cover",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-01",
+      "label": "Tenebrae of Holy Thursday",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-02",
+      "label": "Tenebrae of Good Friday",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.tenebrae-03",
+      "label": "Tenebrae of Holy Saturday",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-prayer.sacred_heart",
+      "label": "Cover",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-marian_hail_holy_queen",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-marian_memorare",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 8,
+      "approved_or_locked_candidates": 8,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-weekday_magnificat",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-marian_consecration_immaculate_heart",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-sub_tuum",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-litany_loreto_1962",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-01",
+      "label": "Mother of Christ … Mother of our Creator",
+      "eligible_editorial_candidates": 16,
+      "approved_or_locked_candidates": 16,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-02",
+      "label": "Virgin most prudent … Virgin most faithful",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-03",
+      "label": "Mirror of justice … Morning star",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-04",
+      "label": "Health of the sick … Help of Christians",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-litany_loreto_1962-05",
+      "label": "Queen of Angels … Queen of peace",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [
+        "coronation"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-devotion_prayer_st_michael",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-devotion_memorare_st_joseph",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-devotion_st_anthony_lost_items",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-devotion_litany_st_joseph",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-devotion_ad_te_beate_ioseph",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.st_joseph_seven_sorrows",
+      "label": "Cover",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-01",
+      "label": "Doubt · the angel's message",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-02",
+      "label": "Poverty of the birth · the Nativity",
+      "eligible_editorial_candidates": 20,
+      "approved_or_locked_candidates": 20,
+      "scene_family": [
+        "nativity"
+      ],
+      "new_reuse_count": 8,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-03",
+      "label": "Circumcision · the Holy Name",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [
+        "circumcision"
+      ],
+      "new_reuse_count": 4,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-04",
+      "label": "Simeon's prophecy · salvation of souls",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "presentation"
+      ],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-05",
+      "label": "Flight into Egypt · the idols fall",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [
+        "flight_egypt"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-06",
+      "label": "Return from Egypt · life at Nazareth",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-07",
+      "label": "Loss of the Child · finding in the Temple",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [
+        "finding_in_temple"
+      ],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.st_joseph_seven_sorrows-08",
+      "label": "Antiphon and collect",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.litany_saints",
+      "label": "Cover",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-01",
+      "label": "Our Lady, angels and archangels",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-02",
+      "label": "Patriarchs, prophets, St John the Baptist, St Joseph",
+      "eligible_editorial_candidates": 9,
+      "approved_or_locked_candidates": 9,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-03",
+      "label": "Apostles and evangelists",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-04",
+      "label": "Martyrs",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-05",
+      "label": "Bishops, doctors, priests, monks and hermits",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.litany_saints-06",
+      "label": "Virgins and widows; all saints",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-church_prayer_for_pope",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 1,
+      "approved_or_locked_candidates": 1,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-foundations_eternal_rest",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-dead_de_profundis",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-dead_fidelium_deus",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-dead_eternal_rest_singular",
+      "label": "Card vignette",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.penitential_psalms",
+      "label": "Cover",
+      "eligible_editorial_candidates": 7,
+      "approved_or_locked_candidates": 7,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-01",
+      "label": "Domine, ne in furore",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-02",
+      "label": "Beati quorum",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-03",
+      "label": "Domine, ne in furore (II)",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-04",
+      "label": "Miserere",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-05",
+      "label": "Domine, exaudi",
+      "eligible_editorial_candidates": 2,
+      "approved_or_locked_candidates": 2,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-06",
+      "label": "De profundis",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.penitential_psalms-07",
+      "label": "Domine, exaudi (II)",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.confession",
+      "label": "Cover",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.confession-01",
+      "label": "Examination of conscience",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.confession-02",
+      "label": "Contrition",
+      "eligible_editorial_candidates": 6,
+      "approved_or_locked_candidates": 6,
+      "scene_family": [],
+      "new_reuse_count": 1,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.confession-03",
+      "label": "In the confessional",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-pray.confession-04",
+      "label": "After: penance and thanksgiving",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.for_priests",
+      "label": "Cover",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-pray.occasional_intercessions",
+      "label": "Cover",
+      "eligible_editorial_candidates": 12,
+      "approved_or_locked_candidates": 12,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-prayer.good_death",
+      "label": "Cover",
+      "eligible_editorial_candidates": 3,
+      "approved_or_locked_candidates": 3,
+      "scene_family": [],
+      "new_reuse_count": 2,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "STG-prayer.good_death-01",
+      "label": "Commendation of the dying",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 2,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-prayer.lection",
+      "label": "Cover",
+      "eligible_editorial_candidates": 5,
+      "approved_or_locked_candidates": 5,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    },
+    {
+      "slot_id": "COV-prayer.hymns",
+      "label": "Cover",
+      "eligible_editorial_candidates": 4,
+      "approved_or_locked_candidates": 4,
+      "scene_family": [],
+      "new_reuse_count": 0,
+      "publication_status": "PHOTO_LICENSE_IDENTITY_AND_READER_CARD_PARITY_PENDING"
+    }
+  ],
+  "remaining_gates": [
+    {
+      "slot_id": "STG-pray.benediction-03",
+      "type": "EXACT_RITE_ARTWORK_MISSING",
+      "contextual_fallback": "PRAYER::adoration--primary",
+      "note": "NOT an image of the actual Benediction blessing; all six rejected proposals remain rejected"
+    },
+    {
+      "slot_id": "COV-novena.st_therese",
+      "type": "EXACT_SAINT_PORTRAIT_UNAPPROVED_RIGHTS_AND_SOURCE_MISSING",
+      "candidate": "Thérèse aux roses (1925) by Céline Martin",
+      "note": "Research-only, no approved/source-ready image"
+    },
+    {
+      "scope": "ALL",
+      "type": "ACTUAL_RUNTIME_CARD_PARITY_UNVERIFIED",
+      "note": "267 is editorial blueprint, NOT proof of every live interactive card or bead image"
+    }
+  ]
+}
