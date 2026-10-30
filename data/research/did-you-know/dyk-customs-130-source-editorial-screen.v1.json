@@ -1,0 +1,2653 @@
+{
+  "schema": "AO_DYK_CUSTOMS_130_EDITORIAL_SOURCE_SCOPE_SCREEN_V1",
+  "date": "2026-10-30",
+  "status": "EVIDENCE_GROUNDED_RESEARCH_TRIAGE_NOT_EDITORIAL_SIGNOFF",
+  "input_files": [
+    "data/research/did-you-know/dyk-ultramaster-batch01.v1.json",
+    "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json",
+    "data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json",
+    "data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json"
+  ],
+  "customs_source_head": "9ad0f96e6d7768267c3d6d445b6d298799daa846",
+  "counts": {
+    "screened_records": 130,
+    "weiser": 70,
+    "pitre": 60,
+    "decision_groups": {
+      "PRIORITY_FACT_EDITORIAL_REVIEW": 27,
+      "REWRITE_OR_SOURCE_SPECIFICITY_HOLD": 8,
+      "SECONDARY_CULTURAL_CONTEXT_REVIEW": 28,
+      "FESTIVAL_STORY_CLUSTER_REVIEW": 59,
+      "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY": 8
+    },
+    "primary_evidence_stage": {
+      "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK": 25,
+      "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD": 20,
+      "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK": 10,
+      "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED": 50,
+      "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT": 25
+    },
+    "festival_family_counts": {
+      "ST_JOSEPH_SICILIAN_TOWNS": 10,
+      "PALERMO_ST_ROSALIA": 10,
+      "PALERMO_COSMAS_DAMIAN": 12,
+      "PIAZZA_ARMERINA_ASSUMPTION": 6,
+      "GANGI_HOLY_SPIRIT": 2,
+      "GRATTERI_ST_JAMES": 8,
+      "GERACI_BLESSED_SACRAMENT": 8,
+      "MARINEO_ST_CYRUS": 4
+    },
+    "approved": 0,
+    "published": 0
+  },
+  "method": "Every drafted Customs fact matched to its original action dossier, old Pitrè OCR line, screened Weiser printed page or Pitrè 1900 scanned original page. Classifications are reversible editorial priorities; page location is not independent historical corroboration. No public runtime changes.",
+  "editorial_policy": "Do not equate 130 source observations with 130 independent customary identities or automatically publishable interesting facts. Deduplicate narrative families, verify local period and original source, require EN/FR review and exact destination.",
+  "records": [
+    {
+      "draft_id": "DYK-UM01-001",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        116
+      ],
+      "source_action_as_recorded": "Ukrainian Christmas sheaf placed upright in the home, the didukh/forefather motif",
+      "festival_cluster": null,
+      "concerns": [
+        "RELIGIOUS_SCOPE_REVIEW"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-002",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        56
+      ],
+      "source_action_as_recorded": "German Advent picture calendar",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-003",
+      "source_family": "WEISER_1958",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        57
+      ],
+      "source_action_as_recorded": "Alpine Marian-image visits between homes in Advent",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": "The fact names Adnet specifically from an independent parish, but Weiser itself speaks more broadly of Alpine Marian visits; separate contemporary parish witness from historical Weiser scope.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-004",
+      "source_family": "WEISER_1958",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        58
+      ],
+      "source_action_as_recorded": "Herbergsuchen lodging-search devotional drama",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": "A contemporary Austrian parish supports this variant, not a single universal Herbergsuchen schedule. Distinguish local reenactment from original historical story.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-005",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        74
+      ],
+      "source_action_as_recorded": "Christkind gift-giving announced with a bell",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-006",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        96
+      ],
+      "source_action_as_recorded": "Large Alpine Nativity dioramas",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-007",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        124
+      ],
+      "source_action_as_recorded": "Polish szopka Nativity tableaux and children's plays",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-008",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        185
+      ],
+      "source_action_as_recorded": "French Canadian Mi-Carême meal and gathering",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-009",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        188
+      ],
+      "source_action_as_recorded": "Holy Week household cleaning before the Triduum",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-010",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        248
+      ],
+      "source_action_as_recorded": "Pentecost decorating the home or church with greenery",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-011",
+      "source_family": "WEISER_1958",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        16
+      ],
+      "source_action_as_recorded": "A family meal conversation in which children recount and discuss Sunday's sermon",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": "The author may recommend discussing the sermon with children; verify whether this is actual historical practice before presenting it as a customary discovery.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-012",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        16
+      ],
+      "source_action_as_recorded": "A household signs new Sunday bread before cutting it",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-013",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        57
+      ],
+      "source_action_as_recorded": "Boys circulate a statue of St Joseph nightly to different houses before Christmas",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-014",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        184
+      ],
+      "source_action_as_recorded": "Central European Lenten pretzels distributed to poor persons",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-015",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        294
+      ],
+      "source_action_as_recorded": "Spanish Immaculate Conception Eve balconies decorated with flowers, flags and lit candles",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-016",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        76
+      ],
+      "source_action_as_recorded": "French family réveillon after Midnight Mass",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-017",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        221
+      ],
+      "source_action_as_recorded": "Easter Sunday processions or mounted Osterritt rides in parts of Germany and Austria",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-018",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        314
+      ],
+      "source_action_as_recorded": "All Souls pastries known as Huesos de Santo and panellets in parts of Spain",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-019",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        265
+      ],
+      "source_action_as_recorded": "Historical Corpus Christi processions include children dressed as angels and flower-strewing",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-020",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        92
+      ],
+      "source_action_as_recorded": "Cradle with Christ Child figure is rocked to carols in historic German/Austrian communities",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-021",
+      "source_family": "PITRE_1900",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 16819,
+      "source_action_as_recorded": "Invite three poor people to represent Joseph Mary and Jesus at a household votive meal",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": "One Pitrè authored report, not independently verified continued practice; do not promote to Roman-liturgical norm.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-022",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 16993,
+      "source_action_as_recorded": "Seat an elderly person, woman and child representing the Holy Family at the bread table",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-023",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 17063,
+      "source_action_as_recorded": "Invite three especially poor residents to a votive household feast representing the Holy Family",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-024",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 17216,
+      "source_action_as_recorded": "Households host sets of four to thirty poor guests known as vicchiareddi at the Joseph feast",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-025",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 16840,
+      "source_action_as_recorded": "Hang large cudduri loaves on the household walls",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-026",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 16900,
+      "source_action_as_recorded": "Stage a dramatic refusal of shelter at a closed inn door for the costumed Holy Family",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-027",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 17010,
+      "source_action_as_recorded": "Auction donated food and produce after the church ceremony for the festival cause",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-028",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 16760,
+      "source_action_as_recorded": "Appoint festival officers to collect laurel boughs outside town and enter on horseback",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-029",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 17137,
+      "source_action_as_recorded": "Extend hospitality from the ceremonial guests to other poor visitors at the votive house",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM01-030",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+      "evidence_stage": "PITRE_ORIGINAL_1900_OCR_LINE_IN_LEGACY_ROW_NOT_ITS_INDIVIDUAL_FOLIO_CHECK",
+      "evidence_locator": 16972,
+      "source_action_as_recorded": "Observe two local Joseph feasts, 19 March and the first Sunday of September",
+      "festival_cluster": "ST_JOSEPH_SICILIAN_TOWNS",
+      "concerns": [
+        "INDIVIDUAL_SOURCE_SCAN_FOLIO_RECHECK",
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-001",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        178
+      ],
+      "source_action_as_recorded": "English Laetare/Mothering Sunday visits to mother church and family, with flowers or simnel cake",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-002",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        341
+      ],
+      "source_action_as_recorded": "Swedish and Scandinavian St Lucy candle-crowned procession/breakfast custom",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-003",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        270
+      ],
+      "source_action_as_recorded": "Martinmas thanksgiving Mass followed by village harvest feast",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-004",
+      "source_family": "WEISER_1958",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        56
+      ],
+      "source_action_as_recorded": "Children leave letters to the Christ Child near St Nicholas Eve or the Nativity crib",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": "Source action is specifically letters near Saint Nicholas Eve / the Nativity crib. Tighten the generic 'Christmas season' chronology and destination.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-005",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        73
+      ],
+      "source_action_as_recorded": "A Christmas Eve domestic meal with fish and regional abstinence/fasting customs",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-006",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        74
+      ],
+      "source_action_as_recorded": "Household finishes work and tidies ahead of Christmas Eve",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "UNSUPPORTED_DETAIL_REMOVED_IN_EXISTING_DRAFT"
+      ],
+      "claim_correction_or_hold_reason": "Corrected unsupported reconciliation language against printed-folio action summary (work completed and home tidied); now reassess curiosity.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-007",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        110
+      ],
+      "source_action_as_recorded": "Children brought Christmas gifts to a Boston parish crib for later distribution to the poor",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-008",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        206
+      ],
+      "source_action_as_recorded": "Hot cross buns eaten on Good Friday and historically also during Lent in Britain/Ireland",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "RELIGIOUS_SCOPE_REVIEW"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-009",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        212
+      ],
+      "source_action_as_recorded": "Early Latin Easter greeting Surrexit Dominus vere with historic social response",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-010",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        235
+      ],
+      "source_action_as_recorded": "Children roll or play games with hard-boiled Easter eggs",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-011",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        236
+      ],
+      "source_action_as_recorded": "Easter lilies decorate American churches and households for Easter",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-012",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        253
+      ],
+      "source_action_as_recorded": "Praying at dawn on a hilltop on Pentecost in some European communities",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-013",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        299
+      ],
+      "source_action_as_recorded": "Some communities decorate candles before Candlemas priestly blessing and take them home",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-014",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        313
+      ],
+      "source_action_as_recorded": "Polish All Souls households leave a place/portion symbolically for deceased and distribute food to poor",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "RELIGIOUS_SCOPE_REVIEW"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-015",
+      "source_family": "WEISER_1958",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        270
+      ],
+      "source_action_as_recorded": "Harvest wreaths/processions and thanksgiving associated with Assumption in some Hungarian and Polish regions",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS"
+      ],
+      "claim_correction_or_hold_reason": "Harvest procession is attached to Assumption in dossier's action summary, but printed page 270 may concern a broader harvest cycle; confirm immediate primary printed passage before fixing Marian feast linkage.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-016",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_PRINTED_FOLIO_PRIOR_CHECK",
+      "evidence_locator": [
+        305
+      ],
+      "source_action_as_recorded": "Harvest seeds or grape offerings are blessed on Nativity of Our Lady (8 September) regionally",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "RELIGIOUS_SCOPE_REVIEW"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-017",
+      "source_family": "WEISER_1958",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        123,
+        123
+      ],
+      "source_action_as_recorded": "Twelve Holy Evenings of Christmastide in the household",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": "Dossier indexes twelve Holy Evenings but has no independently inspected original folio. Read original page 123 and identify region and activities before retaining.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-018",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        27
+      ],
+      "source_action_as_recorded": "Monday household or personal prayers for the Holy Souls",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-019",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        27
+      ],
+      "source_action_as_recorded": "Tuesday devotion to the holy angels",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-020",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        28
+      ],
+      "source_action_as_recorded": "Wednesday devotion to Saint Joseph",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-021",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        29
+      ],
+      "source_action_as_recorded": "Thursday devotion to the Blessed Sacrament",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "RELIGIOUS_SCOPE_REVIEW",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-022",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        29
+      ],
+      "source_action_as_recorded": "First Friday Sacred Heart observance",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-023",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        29
+      ],
+      "source_action_as_recorded": "Saturday Marian devotions",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-024",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        32
+      ],
+      "source_action_as_recorded": "Ember-day harvest thanksgiving",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-025",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+      "evidence_stage": "ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD",
+      "evidence_locator": [
+        36
+      ],
+      "source_action_as_recorded": "Ember-day almsgiving",
+      "festival_cluster": null,
+      "concerns": [
+        "NO_INDEPENDENT_SECOND_WITNESS",
+        "SOURCE_PAGE_DIRECT_REVIEW_PENDING"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-026",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 12,
+      "source_action_as_recorded": "Street singers repeat their assigned novena songs for nine consecutive days at the same houses and times",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-027",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 14,
+      "source_action_as_recorded": "A crowned, white-clad figure of St Rosalia stood high above the historical triumphal cart",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-028",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 31,
+      "source_action_as_recorded": "Spectators watched the fireworks from boats in the gulf adorned with canopies and coloured lanterns",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-029",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 33,
+      "source_action_as_recorded": "The last-day procession involved St Rosalia's relics together with confraternities, clergy and civic representatives",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-030",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 36,
+      "source_action_as_recorded": "A municipal master mason used a bell to signal halts in the procession",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-031",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 72,
+      "source_action_as_recorded": "The church displayed numerous votive tablets recounting injuries and reported favours",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-032",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 73,
+      "source_action_as_recorded": "Festival vendors sold edible saints' figurines and confectionery at makeshift stalls",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-033",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 77,
+      "source_action_as_recorded": "A sudden ringing of church bells announced the emergence of the saints' statues",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-034",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 79,
+      "source_action_as_recorded": "Fishermen and fishmongers of the Kalsa were privileged to carry the saints' heavy litter",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-035",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 80,
+      "source_action_as_recorded": "Two congregations led hundreds of children carrying small flower-topped water jugs",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-036",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 84,
+      "source_action_as_recorded": "The saints' litter was spun repeatedly in rapid circles in the Kalsa district",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-037",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 559,
+      "source_action_as_recorded": "The extraordinary 'festa grande' was described as recurring on irregular cycles of five, ten or fifteen years rather than every August",
+      "festival_cluster": "PIAZZA_ARMERINA_ASSUMPTION",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-038",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 559,
+      "source_action_as_recorded": "A ceremonial horse cavalcade represented Count Roger's entry, with a senior participant carrying a copy of the banner",
+      "festival_cluster": "PIAZZA_ARMERINA_ASSUMPTION",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-039",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 560,
+      "source_action_as_recorded": "In the annual procession a senior lawyer announced stops using a silver bell",
+      "festival_cluster": "PIAZZA_ARMERINA_ASSUMPTION",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-040",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 122,
+      "source_action_as_recorded": "The Holy Spirit celebration fell at Pentecost after seven preceding Thursdays treated as separate festival observances.",
+      "festival_cluster": "GANGI_HOLY_SPIRIT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-041",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 124,
+      "source_action_as_recorded": "Sixteen strong men carried a life-size image of St James on their shoulders beneath its small canopy.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-042",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 124,
+      "source_action_as_recorded": "The patron's image stopped at each household seeking offerings in money, grain, beans, oil, wine or eggs.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-043",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 124,
+      "source_action_as_recorded": "The image also visited rural growers who wanted the patron's presence among orchards and gardens.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-044",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 125,
+      "source_action_as_recorded": "Visitors offered selected grape clusters, tying them to the silver staff of the saint's image.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-045",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 126,
+      "source_action_as_recorded": "The third Sunday of each month honoured the Blessed Sacrament under sponsorship of a different local social or occupational group.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-046",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 126,
+      "source_action_as_recorded": "The third Sunday of June was assigned to shepherds, whose celebration uniquely featured a mounted cavalcade.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-047",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 127,
+      "source_action_as_recorded": "The remaining dairy paste was modelled into birds, little horses and other figurines for children.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-048",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 128,
+      "source_action_as_recorded": "Younger shepherds carried ribboned umbrella-shaped frames holding small animal-shaped caciocavalli.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-049",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 133,
+      "source_action_as_recorded": "A large first-day procession brought devotees bearing individually lighted candles.",
+      "festival_cluster": "MARINEO_ST_CYRUS",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM02-050",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 135,
+      "source_action_as_recorded": "A banner sent by emigrants in America was added to the mounted offering procession.",
+      "festival_cluster": "MARINEO_ST_CYRUS",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-001",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 220,
+      "source_action_as_recorded": "First wearing new clothes on Easter",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-002",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 245,
+      "source_action_as_recorded": "Eating birds at an Ascension feast",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-003",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 245,
+      "source_action_as_recorded": "Ascension bird-shaped pastries distributed to customers",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-004",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 245,
+      "source_action_as_recorded": "Ascension climbing hills and family picnics",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-005",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 257,
+      "source_action_as_recorded": "Shamrock as symbolic Trinity flower",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-006",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 257,
+      "source_action_as_recorded": "Trinity symbolism with pansy and Trinitaria flowers",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-007",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 257,
+      "source_action_as_recorded": "Eye-in-triangle Trinity images in homes and roadside shrines",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-008",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 303,
+      "source_action_as_recorded": "Historical Annunciation dowries for poor girls",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-009",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 312,
+      "source_action_as_recorded": "Eight household Holy Soul Nights after All Souls",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-010",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 312,
+      "source_action_as_recorded": "Family charitable portions during Soul Nights",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-011",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 313,
+      "source_action_as_recorded": "Beans, peas and lentils as All Souls alms",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-012",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 313,
+      "source_action_as_recorded": "Austrian soul breads to children in exchange for prayers",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-013",
+      "source_family": "WEISER_1958",
+      "decision": "DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 327,
+      "source_action_as_recorded": "Invoking Saint Anthony for lost possessions",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-014",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 334,
+      "source_action_as_recorded": "Outdoor Alpine Angelus on Peter and Paul feast",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-015",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 250,
+      "source_action_as_recorded": "Singing Veni Creator for retreats, councils and important undertakings",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_START_PAGE_CORRECTED_TO_249"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-016",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 22,
+      "source_action_as_recorded": "Vernacular recitation of portions of the Breviary by laypeople",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-017",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 58,
+      "source_action_as_recorded": "Farmer circles buildings with incense and holy water while family prays Rosary",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-018",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 118,
+      "source_action_as_recorded": "Edible Christmas-tree pastry ornaments taken down and shared with children",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-019",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 118,
+      "source_action_as_recorded": "Scandinavian boar- or goat-shaped Christmas bread reserved until St Canute feast",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-020",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 45,
+      "source_action_as_recorded": "Extraordinary weather processions",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_START_PAGE_CORRECTED_TO_44"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-021",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 159,
+      "source_action_as_recorded": "Farewell to the Alleluia before Lent",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-022",
+      "source_family": "WEISER_1958",
+      "decision": "REWRITE_OR_SOURCE_SPECIFICITY_HOLD",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 242,
+      "source_action_as_recorded": "Pantheon Ascensiontide rose shower",
+      "festival_cluster": null,
+      "concerns": [
+        "FEAST_LABEL_AMBIGUITY"
+      ],
+      "claim_correction_or_hold_reason": "Pantheon rose-petal source review labels an Ascensiontide context although later custom may be understood as Pentecost. Need exact original folio/ceremony date before adding feast links.",
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-023",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 252,
+      "source_action_as_recorded": "Medieval Pentecost Holy Ghost Hole and lowered dove",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-024",
+      "source_family": "WEISER_1958",
+      "decision": "SECONDARY_CULTURAL_CONTEXT_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 258,
+      "source_action_as_recorded": "Shrines vowed to the Trinity after epidemics",
+      "festival_cluster": null,
+      "concerns": [
+        "SOURCE_START_PAGE_CORRECTED_TO_257"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-025",
+      "source_family": "WEISER_1958",
+      "decision": "PRIORITY_FACT_EDITORIAL_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
+      "evidence_stage": "SOURCE_ACTION_SCREENED_PRINTED_LEAF_OR_ADJACENT",
+      "evidence_locator": 76,
+      "source_action_as_recorded": "Placing the Christ Child in the crib after Christmas Mass",
+      "festival_cluster": null,
+      "concerns": [],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-026",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 13,
+      "source_action_as_recorded": "The former monumental triumphal cart was constructed in the weeks before the July festival",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-027",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 22,
+      "source_action_as_recorded": "Cathedral solemn Vespers shifted from the fourth festival day to the second in Pitrè's period",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-028",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 33,
+      "source_action_as_recorded": "Named confraternities made public wax offerings; a chaplain said Mass in the saint's chapel for them",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-029",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 34,
+      "source_action_as_recorded": "Confraternity platforms representing other patron saints preceded St Rosalia's silver reliquary",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-030",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 36,
+      "source_action_as_recorded": "The reliquary route alternated groups of Palermo quarters between successive years",
+      "festival_cluster": "PALERMO_ST_ROSALIA",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-031",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 71,
+      "source_action_as_recorded": "Pitrè distinguishes restrictions on the public procession from continuation of the feast inside the church",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-032",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 73,
+      "source_action_as_recorded": "Petitioners used a vernacular invocation addressing the paired saints as healers",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-033",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 74,
+      "source_action_as_recorded": "Ornately assembled fruit stalls included watercolour scenes of the saints' procession and martyrdom",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-034",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 76,
+      "source_action_as_recorded": "Fishermen and their families travelled from the fishing quarters and nearby communities for the statues' exit",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-035",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 80,
+      "source_action_as_recorded": "The litter bearers wore white clothing, a red waist sash, a yellow headscarf and bare feet",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-036",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 86,
+      "source_action_as_recorded": "The statues returned to their church around midnight accompanied by bells",
+      "festival_cluster": "PALERMO_COSMAS_DAMIAN",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-037",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 558,
+      "source_action_as_recorded": "The Marian banner was covered with worked silver and devotional jewels",
+      "festival_cluster": "PIAZZA_ARMERINA_ASSUMPTION",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-038",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 559,
+      "source_action_as_recorded": "The last-day procession carried the Marian banner behind confraternities and their standing patron-saint statues",
+      "festival_cluster": "PIAZZA_ARMERINA_ASSUMPTION",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-039",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 560,
+      "source_action_as_recorded": "Before suppression of religious houses, nuns arranged temporary altars as stopping places and hosted civic representatives",
+      "festival_cluster": "PIAZZA_ARMERINA_ASSUMPTION",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-040",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 120,
+      "source_action_as_recorded": "Nine confraternities participated, said to number roughly four hundred members each in the described observance.",
+      "festival_cluster": "GANGI_HOLY_SPIRIT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-041",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 125,
+      "source_action_as_recorded": "Bearers were supplied with wine from small barrels during the rounds.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-042",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 125,
+      "source_action_as_recorded": "When passing the Franciscan convent the bearers ran the saint's image across its square towards the church door.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-043",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 126,
+      "source_action_as_recorded": "Households prepared festival gifts by milking their animals and cooking a soft dairy mixture.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-044",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 127,
+      "source_action_as_recorded": "A trumpet signal announced the shepherds' mounted procession after the traditional midday waiting point.",
+      "festival_cluster": "GRATTERI_ST_JAMES",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-045",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 128,
+      "source_action_as_recorded": "Older shepherds carried ribbon-tied bunches of wax instead of the dairy display frames.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-046",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 129,
+      "source_action_as_recorded": "At town squares youths recited occasional verses honouring the Eucharist as the cavalcade passed under arches and falling flowers.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-047",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 133,
+      "source_action_as_recorded": "Confraternities marched with banners differentiated by their habit colours.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-048",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 135,
+      "source_action_as_recorded": "At a designated procession halt a costumed child playing an angel was carried along a rope toward the statue, recited a hymn or prayer, and withdrew.",
+      "festival_cluster": "GERACI_BLESSED_SACRAMENT",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-049",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 136,
+      "source_action_as_recorded": "The Dimostranza presented scenes of a saint's life in public streets and squares using local, nonprofessional performers.",
+      "festival_cluster": "MARINEO_ST_CYRUS",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "draft_id": "DYK-UM03-050",
+      "source_family": "PITRE_1900",
+      "decision": "FESTIVAL_STORY_CLUSTER_REVIEW",
+      "status": "RESEARCH_EDITORIAL_TRIAGE_NOT_APPROVED",
+      "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "evidence_stage": "ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED",
+      "evidence_locator": 137,
+      "source_action_as_recorded": "The sacred dramatization included mounted and walking figures representing soldiers, hermits, angels, demons and personified virtues and vices.",
+      "festival_cluster": "MARINEO_ST_CYRUS",
+      "concerns": [
+        "PITRE_SINGLE_AUTHOR_NOT_MULTIPLE_INDEPENDENT_TOWN_WITNESSES",
+        "NOT_CURRENT_1962_RUBRIC_OR_2026_OBSERVANCE"
+      ],
+      "claim_correction_or_hold_reason": null,
+      "fr_native_review_done": false,
+      "claim_verified_for_publication": false,
+      "destination_verified": false,
+      "publication_authorized": false
+    }
+  ]
+}
