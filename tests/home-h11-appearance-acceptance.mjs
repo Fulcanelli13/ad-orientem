@@ -74,12 +74,54 @@ try{
       assert.equal(state.primary,1,label+" must have exactly one Mass entry or Resume action");
       return state;
     };
+    // H3 Today editorial migration: the existing source-owned sections now
+    // consume shared cards/rows. Do not replace Prayer or Calendar actions.
+    const editorial=async label=>{
+      const info=await page.evaluate(()=>{
+        const home=document.querySelector(".homeScreen.aoTodayV2");
+        const card=home.querySelector(".aoTodayV2CalendarGlance");
+        const reflect=home.querySelector(".aoTodayV2ReadReflect");
+        const custom=home.querySelector(".aoTodayV2CustomSpotlight");
+        const background=el=>getComputedStyle(el).backgroundColor;
+        return {token:getComputedStyle(home).getPropertyValue("--ao-tcm-card-radius").trim(),
+          calendar:background(card),reflection:background(reflect),
+          custom:custom?background(custom):null,
+          radius:getComputedStyle(card).borderRadius,
+          appointmentNote:card.querySelector(".aoTodayV2GlanceNote")?.textContent||"",
+          calendarRows:card.querySelectorAll(".aoTodayV2Event.aoTcmRow").length,
+          readRows:reflect.querySelectorAll(".aoTodayV2EditorialRow.aoTcmRow").length,
+          saint:reflect.querySelectorAll('[data-home-calendar-view="day"]').length,
+          gospel:reflect.querySelectorAll('[data-action="gospel"]').length,
+          catechism:reflect.querySelectorAll("[data-home-daily-catechism]").length,
+          scripture:reflect.querySelectorAll("[data-home-scripture]").length,
+          prayer:home.querySelectorAll('[data-home-cu-route="pray.rosary"]').length,
+          footer:home.querySelectorAll(".aoTodayExploreFoot button").length,
+          footerColumns:getComputedStyle(home.querySelector(".aoTodayExploreFoot")).gridTemplateColumns,
+          totalWidth:document.documentElement.scrollWidth,viewport:innerWidth};
+      });
+      assert.equal(info.token,"18px",label+" missing shared kit");
+      assert.equal(info.radius,"18px",label+" calendar card has not migrated");
+      assert.equal(info.calendar,info.reflection,label+" editorial cards should share a surface");
+      if(info.custom)assert.equal(info.custom,info.calendar,label+" optional Customs card must share surface");
+      assert.ok(info.calendarRows<=2,label+" upcoming calendar must not invent additional dates");
+      assert.equal(info.readRows,4,label+" reflection rows changed");
+      assert.deepEqual([info.saint,info.gospel,info.catechism,info.scripture,info.prayer,info.footer],
+        [1,1,1,1,1,2],label+" changed an existing route");
+      assert.match(info.appointmentNote,/calendar appointments|dates annoncées/i,
+        label+" removed the observed-date caveat");
+      assert.ok(info.totalWidth<=info.viewport+2,label+" horizontal overflow");
+      return info;
+    };
     assert.equal((await mode("dark")).effective,"dark");
     await inspect(prefix+" dark Today");
+    const darkEditorial=await editorial(prefix+" dark Today");
     await page.screenshot({path:resolve(output,prefix+"-today-dark.png")});
     const light=await mode("light");
     assert.equal(light.bg,"#F6F2EA","Light appearance must use the shared foundation");
     await inspect(prefix+" light Today");
+    const lightEditorial=await editorial(prefix+" light Today");
+    assert.notEqual(lightEditorial.calendar,darkEditorial.calendar,
+      "Calendar/Reflection card backgrounds must respond to light/dark appearance");
     await page.screenshot({path:resolve(output,prefix+"-today-light.png")});
 
     // A real Settings control must exist; an appearance mode is not merely CSS.
@@ -99,6 +141,9 @@ try{
 
     await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("general.uiLanguage","fr"));
     await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayV2")?.dataset?.homeLanguage==="fr");
+    assert.match(await page.locator(".aoTodayV2ReadReflect .aoTodayV2SectionHead h2").innerText(),
+      /Lire et méditer/,"Today reflection heading is not French");
+    await editorial(prefix+" French Today");
     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
     await page.waitForSelector('.aoTodayV2[data-ao-home-calendar-view="picker"] #ao-calendar-modular-root',{state:"attached",timeout:30000});
     await page.screenshot({path:resolve(output,prefix+"-month-light-fr.png")});
