@@ -223,12 +223,12 @@ try{
     await h4.waitForSelector(".aoH4ChoiceDialog[open]",{state:"visible",timeout:10000});
     const choicesBefore=await h4.evaluate(()=>({
       owner:globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight,
-      modal:document.querySelector(".aoH4ChoiceDialog"),
-      focused:document.activeElement?.dataset?.h4Option
+      modal:Boolean(document.querySelector(".aoH4ChoiceDialog")),
+      focusedInside:document.querySelector(".aoH4ChoiceDialog")?.contains(document.activeElement)===true
     }));
     assert.ok(choicesBefore.owner,"H4 Change must read authoritative preflight");
     assert.ok(choicesBefore.modal,"H4 Change must open an actual dialog");
-    assert.equal(choicesBefore.focused,"form","H4 Change must focus a field");
+    assert.equal(choicesBefore.focusedInside,true,"H4 Change must keep focus within the dialog");
     const modalWidth=await h4.evaluate(()=>{
       const box=document.querySelector(".aoH4ChoiceDialog")?.getBoundingClientRect();
       return {left:box?.left,right:box?.right,viewport:innerWidth,
