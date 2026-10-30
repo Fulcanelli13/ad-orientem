@@ -1543,10 +1543,7 @@ function renderConfession(){
   const choices=Object.values(CONFESSION_PATHS).map(p=>`<button type="button" data-p435930-conf-path="${esc(p.id)}" aria-pressed="${CONF.path===p.id}" class="${CONF.path===p.id?'selected':''}">
    <strong>${esc(isFr()?p.titleFr:p.titleEn)}</strong>
    <span>${esc(isFr()?p.descriptionFr:p.descriptionEn)}</span></button>`).join('');
-  body=`${guideNow(L('What kind of Confession?','Quelle préparation à la confession ?'),L('Select the situation that fits. The length of time since your last Confession does not automatically mean you need a general Confession.','Choisissez votre situation. Une longue absence ne signifie pas automatiquement qu’une confession générale est nécessaire.'))}
-  <div class="aoP435930ConfPathCards" role="group" aria-label="${esc(L('Confession preparation path','Parcours de préparation'))}">${choices}</div>
-  <div class="aoP435930Checklist"><label><span>${esc(L('Time since last good Confession (optional)','Depuis votre dernière bonne confession (facultatif)'))}</span><input type="text" autocomplete="off" data-p435930-since value="${esc(CONF.since)}" placeholder="${esc(L('e.g. 3 weeks / several years','p. ex. 3 semaines / plusieurs années'))}"></label></div>
-  ${callout(esc(L('This time estimate remains only in this session. The app never asks you to enter, mark or save sins.','Cette indication n’existe que pendant cette session. L’application ne demande jamais de saisir, cocher ou enregistrer vos péchés.')),'privacy')}
+  body=`<div class="aoP435930ConfPathCards" role="group" aria-label="${esc(L('Confession preparation path','Parcours de préparation'))}">${choices}</div>
   ${guidePrayers([{id:'sacrament_come_holy_spirit',kicker:L('Prayer for light','Prière pour demander la lumière')}])}`;
  }
  if(CONF.stage===1)body=confessionExaminationView(ex);
@@ -1565,6 +1562,7 @@ function renderConfession(){
   ${pos===cards.length-1?`<button class="aoP435930Danger" type="button" data-p435930-conf-clear>${esc(L('Clear this preparation now','Effacer cette préparation maintenant'))}</button>`:''}`;
  }
  const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
+    <p>${esc(L('Privacy: no sins or examination answers are entered or stored.','Confidentialité : aucun péché ni réponse à un examen n’est saisi ou enregistré.'))}</p>
    <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
    ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(isFr()&&src.urlFr?src.urlFr:src.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&src.labelFr?src.labelFr:src.label)} ↗</a>`).join('')}</details>`;
  // Preserve all three canonical Confession paths and their original private
@@ -1603,8 +1601,8 @@ function renderConfession(){
  // user action; traversing the app must never imply sacramental absolution.
  const navigation=stageBoundary?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):CONF.stage===2?L('After Confession · when ready','Après la confession · lorsque vous êtes prêt'):CONF.stage===0?L('Begin examination','Commencer l’examen'):L('Continue to next section','Passer à la section suivante'))}</button></div>`:'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
- const initialProgress=CONF.stage===0?devotionalProgressMarkup({index:0,total:stages.length,language:lang(),unit:'stage'}):'';
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
