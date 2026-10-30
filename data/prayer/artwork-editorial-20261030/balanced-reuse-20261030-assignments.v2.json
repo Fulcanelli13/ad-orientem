@@ -21,7 +21,7 @@
     "unresolved_semantic_edges": 16,
     "artwork_edges_after_consolidation": 1651,
     "explicit_user_acceptances_never_auto_pruned": true,
-    "cross_prayer_inherited_new_edges": 101,
+    "cross_prayer_inherited_new_edges": 89,
     "cross_prayer_staged_candidate_slots": 267,
     "cross_prayer_exact_scene_gaps": 1,
     "cross_prayer_not_publication_ready": true,
@@ -31,7 +31,12 @@
     "publication_ready_images_verified": 0,
     "scope_guardrail_removed_edges": 22,
     "luminous_optional_families_with_approved_art": 5,
-    "luminous_optional_stable_runtime_card_mapping": 0
+    "luminous_optional_stable_runtime_card_mapping": 0,
+    "cross_prayer_inherited_unverified_edges": 12,
+    "cross_prayer_inherited_verified_edges": 89,
+    "cross_prayer_inherited_total_staged_edges": 101,
+    "original_blueprint_unreviewed_edges_still_eligible": 954,
+    "artwork_count_note": "Staged candidate != approved. Never match USER_APPROVED by substring (NEW_CANDIDATE_NOT_USER_APPROVED is negative). All nonapproved suggestions need positive source evidence before use. "
   },
   "locked": [
     {
@@ -1264,14 +1269,15 @@
           "title": "The Last Supper",
           "artist": "Sebastiano Ricci",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://www.nga.gov/artworks/12130",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:last_supper; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:last_supper; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "COV-prayer.communion",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:last_supper"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:last_supper",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -2041,28 +2047,30 @@
           "title": "The Assumption of the Virgin",
           "artist": "Nicolas Poussin",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://www.nga.gov/artworks/46470",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:assumption; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:assumption; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.rosary-15",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:assumption"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:assumption",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         },
         {
           "id": "CANONICAL::nga-50280",
           "title": "The Assumption of the Virgin",
           "artist": "Michel Sittow",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://www.nga.gov/artworks/50280",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:assumption; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:assumption; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.rosary-15",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:assumption"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:assumption",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -10356,14 +10364,15 @@
           "title": "The Circumcision of Christ",
           "artist": "Francisco de Zurbarán",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_050.jpg",
-          "gate": "EXISTING_GALLERY_PHOTO_QA",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:circumcision; research-only, no publication clearance",
+          "gate": "EXISTING_GALLERY_PHOTO_QA;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:circumcision; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.st_joseph_seven_sorrows-03",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:circumcision"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:circumcision",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -10666,14 +10675,15 @@
           "title": "Christ Carrying the Cross",
           "artist": "Cornelis van Poelenburch",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://www.nga.gov/artworks/137505",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:carrying_cross; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:carrying_cross; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.rosary-10",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:carrying_cross"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:carrying_cross",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -10858,14 +10868,15 @@
           "title": "The Lance Thrust",
           "artist": "Anthony van Dyck",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:pierced_side; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:pierced_side; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.five_wounds-05",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:pierced_side"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:pierced_side",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         },
         {
           "id": "CANONICAL::W07-014",
@@ -11323,14 +11334,15 @@
           "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
           "artist": "Frantz Clein",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://open.smk.dk/en/artwork/image/KMS1168",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:presentation; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:presentation; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.rosary-05",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:presentation"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:presentation",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -11595,14 +11607,15 @@
           "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
           "artist": "Giandomenico Tiepolo",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IV_-_Jesus_meets_his_mother_by_Giandomenico_Tiepolo.jpg",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:mary_meets_cross; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:mary_meets_cross; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.stations-04",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -17318,14 +17331,15 @@
           "title": "The Last Supper",
           "artist": "Sebastiano Ricci",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://www.nga.gov/artworks/12130",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:last_supper; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:last_supper; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "COV-prayer.communion",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:last_supper"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:last_supper",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -17799,14 +17813,15 @@
           "title": "Christ Carrying the Cross",
           "artist": "Cornelis van Poelenburch",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://www.nga.gov/artworks/137505",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:carrying_cross; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:carrying_cross; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.rosary-10",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:carrying_cross"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:carrying_cross",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -20995,14 +21010,15 @@
           "title": "The Coronation of the Virgin",
           "artist": "Cornelis Schut",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://open.smk.dk/en/artwork/image/KMSSP230",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:coronation; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:coronation; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.rosary-16",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:coronation"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:coronation",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -22107,14 +22123,15 @@
           "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
           "artist": "Frantz Clein",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "editorial": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
           "source": "https://open.smk.dk/en/artwork/image/KMS1168",
-          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
-          "eligible": true,
-          "flag": "SHARED_EXACT_SCENE:presentation; research-only, no publication clearance",
+          "gate": "EXISTING_RESEARCH_RIGHTS_PENDING;EXPLICIT_ARTWORK_APPROVAL_MISSING",
+          "eligible": false,
+          "flag": "SHARED_EXACT_SCENE:presentation; research-only, no publication clearance; QUARANTINED_FROM_APPROVED_REUSE_20261030",
           "origin": "EXISTING_GALLERY_REUSE_V1+CROSS_PRAYER_INHERITANCE_20261030",
           "cross_prayer_source_stage": "STG-pray.rosary-05",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:presentation"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:presentation",
+          "approval_evidence": "NOT_FOUND_IN_EXPLICIT_DECISIONS"
         }
       ]
     },
@@ -25172,7 +25189,9 @@
       "production_images_published": 0,
       "scope_guardrail_removals": 22,
       "luminous_five_with_approved_choices": 5,
-      "luminous_five_runtime_ids_joined": 0
+      "luminous_five_runtime_ids_joined": 0,
+      "cross_prayer_approved_edges": 89,
+      "cross_prayer_quarantined_edges": 12
     }
   },
   "stats_before_cross_prayer_inheritance": {
