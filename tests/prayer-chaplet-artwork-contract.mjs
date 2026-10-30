@@ -67,6 +67,10 @@ for(const family of families){
   if(explicit.length)counts[family.route].slotsWithApprovedStagePlacements++;
   else counts[family.route].stagesWithoutApprovedPlacement.push(item.id);
  }
+ assert.equal(counts[family.route].stagesWithoutApprovedPlacement.length,0,
+  "A chaplet cover/stage lost all affirmatively approved artwork: "+family.route);
+ assert.equal(counts[family.route].slotsWithApprovedStagePlacements,ids.length,
+  "Every chaplet scene should have an affirmatively approved artwork pool, not merely an unreviewed candidate");
  assert.equal(family.beadCountKnown,false);
  assert.equal(family.publicationReady,false);
  const invalid=resolveArtworkRuntimeIdentity({owner:"chaplet",id:family.route,stage:"invented_fifteenth_sorrow"});
