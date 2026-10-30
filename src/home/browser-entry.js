@@ -435,7 +435,7 @@ export function createHomeOwner(win=globalThis){
         if(section){
           sheet.root.querySelectorAll(".aoMassTextsSection").forEach(node=>node.open=false);
           section.open=true;
-          section.scrollIntoView?.({block:"start",behavior:"instant"});
+          section.scrollIntoView?.({block:"start",behavior:"auto"});
           section.querySelector("summary")?.focus?.({preventScroll:true});
         }
       }
