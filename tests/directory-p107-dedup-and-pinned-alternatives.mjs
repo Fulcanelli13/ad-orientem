@@ -1,0 +1,74 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import {createHash} from "node:crypto";
+const load=p=>JSON.parse(fs.readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const lead=load("data/directory/research/p104-new-brighton-missing-venue-discovery-lead.json");
+const fed=load("data/directory/generated/v19/icksp-federated.v1.json");
+const r49=load("data/directory/preliminary-map-r49.v1.json");
+const geo=load("data/geography/seed-registry.v1.json");
+const media=load("data/geography/approved-place-media.v1.json");
+const src=load("data/directory/research/p107-four-commons-original-alternatives.v1.json");
+assert.equal(lead.status,"RECONCILED_EXISTING_SITE_PUBLICLY_LISTED_NOT_NEW_VENUE");
+assert.equal(lead.reconciliation.existing_icksp_federated_record_id,"ICKSP-STG-076");
+const nb=fed.records.filter(x=>x.u==="ICKSP-STG-076");
+assert.equal(nb.length,1,"Never create duplicate New Brighton");
+assert.equal(nb[0].l,"New Brighton");
+assert.equal(nb[0].cc,"GB");
+assert.equal(nb[0].a.includes("CH45 9LT"),true);
+assert.equal(nb[0].su,lead.official_identity_url);
+assert.equal(lead.reconciliation.no_new_venue_to_create,true);
+assert.equal(lead.reconciliation.no_live_schedule_update_by_this_research,true);
+assert.ok(lead.reconciliation.existing_app_listing_url.startsWith("https://adorientem.church/find/"));
+assert.equal(lead.reconciliation.address_mismatch,"POSTCODE_CONFLICT_HOLD_VERIFY_CANONICAL_ENTRY");
+assert.ok(lead.reconciliation.published_address.includes("CH45 2PG"));
+assert.ok(lead.reconciliation.official_address.includes("CH45 9LT"));
+assert.ok(!geo.directoryPlaceLinks.some(x=>x.venue_id==="ICKSP-STG-076"),"STG record not a canonical Place bridge without production ID");
+assert.equal(geo.places.length,529);
+assert.equal(geo.directoryPlaceLinks.length,22);
+assert.equal(media.items.length,40);
+const keys=Object.fromEntries(r49.columns.map((x,i)=>[x,i]));
+assert.equal(r49.records.filter(x=>x[keys.name]?.toLowerCase().includes("peter")&&x[keys.locality]?.toLowerCase().includes("new brighton")).length,0,"R49 omission remains historical evidence only");
+assert.equal(src.schema,"AO_P107_FOUR_PINNED_COMMONS_ALTERNATIVE_ORIGINALS_V1");
+assert.equal(src.records.length,4);
+assert.equal(src.records.filter(r=>r.selected_for_native_acquisition).length,1);
+assert.equal(src.records.find(r=>r.row===309).visual_screening,"PRIMARY_CANDIDATE_SOURCE_PINNED");
+assert.equal(src.records.find(r=>r.row===315).visual_screening,"REJECT_WRONG_SUBJECT_FOR_EXTERIOR");
+assert.equal(src.records.find(r=>r.row===320).visual_screening,"REJECT_WEAK_FOR_PRIMARY");
+assert.equal(src.records.find(r=>r.row===322).visual_screening,"REJECT_INTRUSIVE_VEHICLES");
+assert.deepEqual(src.records.map(x=>x.row).sort((a,b)=>a-b),[309,315,320,322]);
+for(const r of src.records){
+ assert.match(r.source_sha1,/^[a-f0-9]{40}$/i);
+ assert.ok(r.source_bytes>100000);
+ assert.ok(r.width>=1000&&r.height>=1000);
+ assert.ok(r.license.startsWith("CC-BY-SA-"));
+ assert.ok(r.license_url.startsWith("https://creativecommons.org/licenses/by-sa/"));
+ assert.ok(r.source_page.startsWith("https://commons.wikimedia.org/wiki/File:"));
+ assert.ok(geo.places.some(p=>p.place_id===r.place_id));
+ assert.ok(!media.items.some(p=>p.place_id===r.place_id),"Four previous visual holds must remain unpublished");
+}
+const stagedPath="data/directory/research/p107-four-webp-stage-audit.v1.json";
+const stagedFull=new URL("../"+stagedPath,import.meta.url);
+if(fs.existsSync(stagedFull)){
+ const audit=load(stagedPath);
+ assert.equal(audit.schema,"AO_P107_FOUR_HASH_VERIFIED_ALTERNATIVE_STAGING_V1");
+ assert.deepEqual(audit.counts,{originals_sha1_verified:1,native_decodes:1,uncropped_webps_staged:1,candidates_screened:4,editorially_rejected_before_download:3,media_approved:0,published:0});
+ const digest=d=>createHash("sha256").update(d).digest("hex");
+ assert.equal(digest(fs.readFileSync(new URL("../"+audit.contact_sheet,import.meta.url))),audit.contact_sheet_sha256);
+ assert.equal(audit.records.length,1);
+ for(const r of src.records.filter(r=>r.selected_for_native_acquisition)){
+  const x=audit.records.find(x=>x.row===r.row);
+  assert.ok(x);
+  assert.equal(x.place_id,r.place_id);
+  assert.equal(x.original_sha1_verified,r.source_sha1);
+  assert.equal(x.original_bytes,r.source_bytes);
+  assert.deepEqual(x.original_dimensions,[r.width,r.height]);
+  assert.equal(digest(fs.readFileSync(new URL("../"+x.original_path,import.meta.url))),x.original_sha256);
+  const webp=fs.readFileSync(new URL("../"+x.staged_path,import.meta.url));
+  assert.equal(digest(webp),x.staged_sha256);
+  assert.ok(webp.toString("ascii",0,4)==="RIFF"&&webp.toString("ascii",8,12)==="WEBP");
+  assert.equal(x.no_crop,true);
+  assert.equal(x.visual_editorial_review,"PENDING_INDIVIDUAL_IMAGE_INSPECTION");
+  assert.equal(x.published,false);
+ }
+}
+console.log("P107 PASS: New Brighton existing site, postcode mismatch retained, four images visually screened, only Jihlava staged, zero publication");
