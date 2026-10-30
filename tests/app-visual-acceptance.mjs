@@ -194,20 +194,29 @@ try{
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
-    todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
-    todayV2Sections:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2Zone,.aoTodayV2Below .aoTodayV2Zone").length,
-    todayV2Glance:document.querySelectorAll(".aoTodayV2CalendarGlance").length,
-    prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
-    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2CalendarGlance [data-home-calendar]").length,
+    todayH4:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Door").length,
+    prayer:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2PrayerThroughDay").length,
+    thisWeek:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance").length,
+    discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone").length,
+    read:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2ReadReflect").length,
+    prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayH4 .aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayH4 .aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
+    discoveryAfterWeekBeforeRead:(()=>{const week=document.querySelector(".aoTodayH4 .aoTodayV2CalendarGlance");const discovery=document.querySelector(".aoTodayH4 .aoH4DiscoveryStandalone");const read=document.querySelector(".aoTodayH4 .aoTodayV2ReadReflect");return Boolean(week&&discovery&&read&&(week.compareDocumentPosition(discovery)&Node.DOCUMENT_POSITION_FOLLOWING)&&(discovery.compareDocumentPosition(read)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
+    datedCalendarEntry:document.querySelectorAll('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]').length,
+    h4CalendarLinks:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance [data-home-calendar]").length,
+    catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===2 &&
-    homeAudit.todayV2Glance===1 && homeAudit.todayV2CalendarLinks>=1,
-    "H1.1 must render Prayer and Read/Reflect, one Calendar summary and working Calendar links: "+JSON.stringify(homeAudit));
-  assert.equal(homeAudit.prayerBeforeCalendar,true,"H1.1 requires the prayer entry before Calendar context");
+  assert.ok(homeAudit.todayH4===1 && homeAudit.prayer===1 &&
+    homeAudit.thisWeek===1 && homeAudit.discovery===1 && homeAudit.read===1 &&
+    homeAudit.datedCalendarEntry===1 && homeAudit.h4CalendarLinks>=1,
+    "H4 must show the Mass door, Pray, This week, standalone Did you know, Read, and Calendar: "+JSON.stringify(homeAudit));
+  assert.equal(homeAudit.prayerBeforeCalendar,true,"H4 requires Pray before This week");
+  assert.equal(homeAudit.discoveryAfterWeekBeforeRead,true,
+    "H4 Did you know must stand alone beneath This week and above Read");
+  assert.equal(homeAudit.catechism,0,"H4 must not reintroduce Catechism on Home");
   assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
@@ -265,50 +274,48 @@ try{
     assert.equal(s.display,"none",surface+" exposed Home beneath the active surface");
   };
 
-  // Today v2 is the production Home owner. The old v43 celebration/Coming Up
-  // classes were retired; certify the rendered editorial sections and entry points.
+  // H4 is the canonical Today door: protect real content hierarchy instead
+  // of the removed Today V2/H1.1 micro-season and navigation tabs.
   const homeParity=await page.evaluate(()=>({
-    context:document.querySelectorAll(".homeScreen .aoTodayV2SeasonMicro").length,
-    sections:document.querySelectorAll(".homeScreen .aoTodayV2PrayerThroughDay .aoTodayV2Zone,.homeScreen .aoTodayV2Below .aoTodayV2Zone").length,
-    prayerFeature:document.querySelectorAll(".homeScreen .aoTodayV2PrayerFeature [data-home-cu-route]").length,
-    prayerShortcuts:document.querySelectorAll(".homeScreen .aoTodayV2PrayerShortcuts [data-home-cu-route]").length,
-    gospel:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-action='gospel']").length,
-    scripture:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-scripture]").length,
-    catechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
-    calendar:document.querySelectorAll(".homeScreen .aoTodayV2CalendarGlance [data-home-calendar-date]").length,
-    year:document.querySelectorAll('.homeScreen .aoTodayV2SeasonMicro[data-home-calendar-view="year"]').length,
-    upcoming:document.querySelectorAll('.homeScreen .aoTodayV2Tabs [data-home-calendar-view="picker"]').length,
-    upcomingDates:document.querySelectorAll('.homeScreen .aoTodayV2CalendarGlance [data-home-calendar-date]').length,
-    contextHeight:document.querySelector(".homeScreen .aoTodayV2SeasonMicro")?.getBoundingClientRect().height??0,
-    seasonControlStyle:(()=>{
-      const el=document.querySelector(".homeScreen .aoTodayV2SeasonMicro");
-      if(!el)return null;
-      const st=getComputedStyle(el),parent=getComputedStyle(el.parentElement);
-      return {height:st.height,minHeight:st.minHeight,display:st.display,visibility:st.visibility,
-        transform:st.transform,zoom:st.zoom,parentDisplay:parent.display,parentTransform:parent.transform,
-        rect:el.getBoundingClientRect().toJSON(),clientRects:el.getClientRects().length};
-    })(),
+    massDoor:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Door").length,
+    dateEntry:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view='picker']").length,
+    weekCells:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Week [data-date]").length,
+    prayer:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Prayer").length,
+    prayerShortcuts:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2PrayerShortcuts button").length,
+    thisWeek:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance").length,
+    upcomingDates:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance [data-home-calendar-date]").length,
+    discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone").length,
+    dyk:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-open],.homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-entry]").length,
+    read:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2ReadReflect").length,
+    gospel:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2ReadReflect [data-action='gospel']").length,
+    catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
+    oldTabs:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2Tabs").length,
+    choices:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
+    dateEntryHeight:document.querySelector(".homeScreen.aoTodayH4 .aoH4DateOpen")?.getBoundingClientRect().height??0,
     horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
-    massEntry:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
+    massEntry:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-mass-entry]").length,
     obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
     unresolvedArt:document.querySelectorAll(".homeScreen .aoSaintArtCard .aoSaintArtPlaceholder").length,
   }));
-  assert.equal(homeParity.context,1,"Today v2 lost its hero liturgical-season link");
-  assert.equal(homeParity.sections,2,"H1.1 retains Prayer and Read/Reflect across the homepage hierarchy");
-  assert.equal(homeParity.prayerFeature,1,"Today v2 lost its featured prayer entry");
-  assert.equal(homeParity.prayerShortcuts,3,"Today v2 lost the three prayer shortcuts");
-  assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");
-  assert.equal(homeParity.scripture,1,"Today v2 lost Scripture navigation");
-  assert.equal(homeParity.catechism,1,"Today v2 lost the Daily Catechism entry");
-  assert.ok(homeParity.calendar>=1,"Calendar at a glance must retain source-qualified upcoming date links");
-  assert.equal(homeParity.year,1,"The season link must still open the canonical Liturgical Year");
-  assert.equal(homeParity.upcoming,1,"The header Month tab replaces redundant Coming next CTA");
-  assert.ok(homeParity.upcomingDates>=1,"Upcoming dates must preserve Calendar Day entry");
-  assert.ok(homeParity.contextHeight>=44,"The compact season control must meet the 44px touch target: "+JSON.stringify(homeParity.seasonControlStyle));
-  assert.ok(homeParity.horizontalOverflow<=1,"Home decluttering introduced horizontal overflow");
-  assert.equal(homeParity.massEntry,1,"Home does not expose a canonical Follow Mass entry");
-  assert.equal(homeParity.obsoleteYearWheel,0,"Calendar dashboard leaked onto Home");
-  assert.equal(homeParity.unresolvedArt,0,"Home displayed an unapproved artwork placeholder");
+  assert.equal(homeParity.massDoor,1,"H4 lost its sole Mass door");
+  assert.equal(homeParity.dateEntry,1,"H4 lost its canonical dated Calendar entry");
+  assert.equal(homeParity.weekCells,7,"H4 must retain the seven-day rail");
+  assert.equal(homeParity.prayer,1,"H4 must show one featured prayer");
+  assert.equal(homeParity.prayerShortcuts,3,"H4 must retain Rosary, Confession and Adoration");
+  assert.equal(homeParity.thisWeek,1,"H4 lost This week");
+  assert.ok(homeParity.upcomingDates>=1,"This week lost date-linked observances");
+  assert.equal(homeParity.discovery,1,"Did you know must remain a standalone section");
+  assert.ok(homeParity.dyk>=1,"Did you know must remain actionable");
+  assert.equal(homeParity.read,1,"H4 lost its minimal Read section");
+  assert.equal(homeParity.gospel,1,"H4 lost Gospel of the Mass");
+  assert.equal(homeParity.catechism,0,"H4 must not put Catechism back on the homepage");
+  assert.equal(homeParity.oldTabs,0,"Retired Today V2 tabs must not return");
+  assert.equal(homeParity.choices,1,"H4 Mass ceremony choices are missing");
+  assert.ok(homeParity.dateEntryHeight>=44,"H4 Calendar needs a 44px touch target");
+  assert.ok(homeParity.horizontalOverflow<=1,"H4 has horizontal phone overflow");
+  assert.equal(homeParity.massEntry,1,"H4 lacks a canonical Begin Mass entry");
+  assert.equal(homeParity.obsoleteYearWheel,0,"Old decorative year wheel leaked onto H4");
+  assert.equal(homeParity.unresolvedArt,0,"H4 displayed an unapproved artwork placeholder");
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
