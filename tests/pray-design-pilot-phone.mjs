@@ -100,9 +100,16 @@ try{
    const hourCard=await page.locator(base+" .aoPrayPilotAngelusHero").evaluate(node=>({
     height:node.getBoundingClientRect().height,
     viewport:window.innerHeight,
+    clientHeight:document.documentElement.clientHeight,
+    vvHeight:window.visualViewport?.height,
+    y:node.getBoundingClientRect().y,
+    contentTop:node.querySelector(".aoPrayPilotAngelusContent").getBoundingClientRect().top,
+    contentHeight:node.querySelector(".aoPrayPilotAngelusContent").getBoundingClientRect().height,
+    computedHeight:getComputedStyle(node).height,
     bottomGap:node.getBoundingClientRect().bottom-node.querySelector(".aoPrayPilotAngelusContent").getBoundingClientRect().bottom,
     text:node.innerText
    }));
+   console.log("F04 actual viewport layout",width,JSON.stringify(hourCard));
    assert.ok(hourCard.height>=hourCard.viewport*.72,
     "F04 Angelus must fill available phone viewport, not leave a blank half-screen: "+JSON.stringify(hourCard));
    assert.ok(hourCard.bottomGap>=-2&&hourCard.bottomGap<=4,
