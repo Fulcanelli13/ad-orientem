@@ -31,6 +31,9 @@ export function h4Enabled(win=globalThis){
 }
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null,properSections=[]}={}){
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
+  const litColour=({"green":"green","vert":"green","white":"white","blanc":"white",
+    "red":"red","rouge":"red","violet":"violet","purple":"violet",
+    "black":"black","noir":"black","rose":"rose"})[String(vm.colour||"").toLowerCase()]||"none";
   const discipline=calendarDisciplineForDate(vm.dateIso,{fr})?.today?.key;
   // Contemporary discipline is distinct from historic 1962 fasts and local norms.
   const dayMarks=[];
@@ -81,7 +84,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const gospelSub=model.gospelReference||say("Available when the Proper resolves","Disponible après résolution du Propre");
 
   return '<style data-ao-today-v2-style>'+TODAY_H4_CSS+'\n'+H7_SANCTUARY_CSS+'</style>'+
-  '<main class="homeScreen aoTodayV2 aoTodayH4 aoH7Screens" data-home-language="'+vm.language+'" data-ao-home-presentation-owner="modular-home-presentation-v1">'+
+  '<main class="homeScreen aoTodayV2 aoTodayH4 aoH7Screens lc-'+esc(litColour)+'" data-home-language="'+vm.language+'" data-ao-home-presentation-owner="modular-home-presentation-v1">'+
   '<div class="aoH4CalendarBack"><button type="button" data-home-calendar-today aria-label="'+esc(say("Back to Home","Retour à l’accueil"))+'">←</button><strong>'+esc(say("Calendar","Calendrier"))+'</strong><button type="button" class="aoH4CalendarHelp" data-home-calendar-glossary aria-label="'+esc(say("Terms and definitions","Termes et définitions"))+'">?</button></div>'+
   '<nav class="aoH4CalendarViews" aria-label="'+esc(say("Calendar views","Vues du calendrier"))+'">'+
   '<button type="button" data-home-calendar data-home-calendar-view="day">'+esc(say("Day","Jour"))+'</button>'+
