@@ -378,8 +378,13 @@ function compactExploreItemSheet(vm){
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
   if(isMass&&eligibleDirectoryImage(item.cover_media,item.place_id)){
     const m=item.cover_media;
-    html+='<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(lang==="fr"?m.alt_fr:m.alt_en)+'">'
-      +'<small class="aoTlmPreviewPhotoCredit">'+esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a> · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original photo","Photo originale"))+'</a></small>';
+    const emblem=massInstitutionEmblem(item.community_id);
+    html+='<div class="aoTlmPreviewPhotographic">'+
+      '<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(lang==="fr"?m.alt_fr:m.alt_en)+'">'+
+      (emblem?'<span class="aoTlmPreviewEmblem" aria-label="'+esc(L(lang,"Institute emblem","Emblème de l’institut"))+'"><img src="'+esc(emblem.image)+'" alt="" loading="lazy" decoding="async"></span>':'')+
+      '</div>'+
+      '<details class="aoTlmPreviewPhotoCredit"><summary>'+esc(L(lang,"Photograph & credit","Photographie et crédit"))+'</summary><div>'+
+      esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a> · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original photograph","Photographie originale"))+'</a></div></details>';
   }
   if(isMass&&!eligibleDirectoryImage(item.cover_media,item.place_id))
     html+=renderDirectoryIdentityFallback(item,lang,"preview");
