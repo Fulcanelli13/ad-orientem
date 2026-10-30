@@ -41,6 +41,13 @@ for(const lang of ["la","en","fr"]){
   import.meta.url),"utf8"));
  assert.equal(feriaFixtures[lang].sourceRevision,PIN);
 }
+const adventWeekComplineFixtures={};
+for(const lang of ["la","en","fr"]){
+ adventWeekComplineFixtures[lang]=JSON.parse(readFileSync(new URL(
+  "../tests/fixtures/office/advent-i-week-compline-"+lang+".json",
+  import.meta.url),"utf8"));
+ assert.equal(adventWeekComplineFixtures[lang].sourceRevision,PIN);
+}
 const ordinary=readFileSync(new URL(
  "../tests/fixtures/office/advent-i-preview-ordinary.txt",import.meta.url),"utf8");
 const witness=JSON.parse(readFileSync(new URL(
@@ -89,6 +96,9 @@ function originalSourceFixture(url){
  const ff=feriaFixtures[lang];
  const tm=/^Psalterium\/Psalmorum\/Psalm(11|12|15)$/u.exec(id);
  if(tm&&ff.psalms[tm[1]])return ff.psalms[tm[1]].text;
+ const wm=/^Psalterium\/Psalmorum\/Psalm(4|90|133|33|60|69|70|76|85)$/u.exec(id);
+ if(wm&&adventWeekComplineFixtures[lang].psalms[wm[1]])
+  return adventWeekComplineFixtures[lang].psalms[wm[1]].text;
  const sections={...(f.sections[id]??{}),...(cf.sections[id]??{})};
  if(!Object.keys(sections).length)
   throw Error("OFFICE_VISUAL_SOURCE_NOT_IN_FINITE_FIXTURE:"+path);
@@ -449,6 +459,44 @@ try{
   passed:true,newDistinctRawLeaves:9,allPsalmsVisible:true,
   psalm12Verse6bPreserved:true,noDateFallback:true
  });
+ // Verify each newly appointed Compline date against its first actual Psalm.
+ // St Andrew (Monday II class) deliberately uses Sunday Psalm 4.
+ for(const [date,firstPsalm] of [
+  ["2026-11-29","Psalm4"],
+  ["2026-11-30","Psalm4"],
+  ["2026-12-02","Psalm33"],
+  ["2026-12-03","Psalm69"],
+  ["2026-12-04","Psalm76"],
+  ["2026-12-05","Psalm87"]
+ ]){
+  await dp.locator("#office-date").fill(date);
+  await dp.locator("#office-date").dispatchEvent("change");
+  await dp.locator("#reader").waitFor({state:"visible",timeout:60000});
+  assert.match(await dp.locator("#office-subtitle").innerText(),
+   /2026 .* universal calendar|2026 · universal calendar/);
+  assert.equal(await dp.locator("#bar").getAttribute("aria-valuemax"),"42");
+  let seen=false;
+  for(let i=0;i<25;i++){
+   const source=await dp.locator("#card .ref").innerText();
+   if(source.includes("/"+firstPsalm+"#")){
+    seen=true;
+    if(date==="2026-11-30")await shot(dp,"26-desktop-1440-st-andrew-sunday-psalm4");
+    if(date==="2026-12-02")await shot(dp,"27-desktop-1440-wednesday-psalm33");
+    break;
+   }
+   if(await dp.locator("#next").isDisabled())break;
+   await dp.locator("#next").click();
+  }
+  assert.ok(seen,date+" missing its distinct appointed Psalm: "+firstPsalm);
+ }
+ assert.equal(dhits.size,76,
+  "full week should share 49 previous leaves plus only 27 new pinned psalm leaves");
+ // The Immaculate Conception is a first-class feast, never silently treated
+ // as ordinary Tuesday Compline just because the weekday matches.
+ await dp.locator("#office-date").fill("2026-12-08");
+ await dp.locator("#office-date").dispatchEvent("change");
+ assert.equal(await dp.locator("#reader").isHidden(),true);
+ assert.match(await dp.locator("#status").innerText(),/Not yet implemented/);
  await dp.locator("#office-date").fill("2026-11-28");
  await dp.locator("#office-date").dispatchEvent("change");
  await dp.locator("#reader").waitFor({state:"visible",timeout:10000});
@@ -464,9 +512,9 @@ try{
  await dp.locator("#office-date").dispatchEvent("change");
  assert.equal(await dp.locator("#reader").isVisible(),true);
  assert.match(await dp.locator("#card").innerText(),/Opening|Deus|adjutórium/);
- assert.equal(dhits.size,49,"switching pilots must reuse prior pinned source sessions");
+ assert.equal(dhits.size,76,"switching pilots must reuse prior pinned source sessions");
  await shot(dp,"19-desktop-1440-office-beta-date-hour-picker");
- assert.equal(dhits.size,49);
+ assert.equal(dhits.size,76);
  assert.deepEqual(dperrors,[]);
  record("1440px desktop responsive bilingual layout",{
   passed:true,sourceURLs:dhits.size});
