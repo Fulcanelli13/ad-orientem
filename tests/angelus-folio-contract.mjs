@@ -45,8 +45,8 @@ assert.ok(deck.includes('for(let i=0;i<3;i++)'),"Gloria must be repeated 3x, not
 assert.ok(deck.includes('recitationMode==="group"'),"Appendix group mode missing");
 assert.ok(deck.includes('if(guided)'),"Guided context missing");
 assert.ok(deck.includes('unit.dataset.aoDevoCue="profound-bow"'),"Individual Mode lost Incarnation focus cue");
-assert.ok(deck.includes('i===active?"1":Math.abs(i-active)===1?".38":".18"'),
- "Angelus current/near/far text illumination regression");
+assert.ok(deck.includes('i===active?"1":Math.abs(i-active)===1?".45":".40"'),
+ "Angelus current/near/far text illumination must preserve readable 40–45% inactive text");
 assert.ok(deck.includes("ensureDevotionalReadingRunway"),"Short Angelus cards must allow second paragraph illumination");
 
 assert.ok(runtime.includes('data-p435930-angelus-settings'),"Discrete settings icon missing");
