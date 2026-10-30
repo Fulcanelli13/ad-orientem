@@ -172,8 +172,11 @@ def recover(record):
                       "artist":record["artist"],"sourceUrl":record["sourcePage"],
                       "module":"","priorRightsEvidence":record["sourceRightsEvidence"],
                       "rightsLabel":record["sourceRightsTerms"],
-                      "sourcePhotoFingerprint":record["preExistingSelectedPhotoFingerprint"] or "",
-                      "sourceOriginalSha256":record["preExistingOriginalSha256"] or "",
+                      "sourcePhotoFingerprint":photo["downloadedSha256"],
+                      "sourceOriginalSha256":photo["downloadedSha256"],
+                      "archivedOriginalSha256":record["preExistingOriginalSha256"] or "",
+                      "exactImageUrl":final,
+                      "imageDownloadRole":role,
                       "preview":preview,"available":True,"error":""}
                 return result,card
             except Exception as e:
@@ -226,8 +229,14 @@ def main():
     payload=json.dumps(cards,ensure_ascii=False,separators=(",",":")).replace("<",r"\u003c").replace(">",r"\u003e")
     html=template.replace("__DATA__",payload)
     html=html.replace("BATCH 01","BATCH 04").replace("Batch 01","Batch 04")
-    html=html.replace("ao-sacred-art-fast-grid-b01-v1","ao-sacred-art-fast-grid-b04-v1")
-    html=html.replace(',"01"].map(esc)',',"04"].map(esc)')
+    html=html.replace("ao-sacred-art-fast-grid-b01-v1","ao-sacred-art-fast-grid-b04-v2")
+    # Export the byte hash and exact museum file URL of the photo the user saw.
+    # This is a source-bound visual QA decision, NOT a certified release.
+    html=html.replace('"historical_original_sha256","review_batch"',
+                      '"reviewed_original_sha256","review_batch","reviewed_exact_image_url"')
+    html=html.replace('x.sourceUrl,x.sourcePhotoFingerprint,x.sourceOriginalSha256,"01"',
+                      'x.sourceUrl,x.sourcePhotoFingerprint,x.sourceOriginalSha256,"04",x.exactImageUrl')
+    html=html.replace(',"01"].map(esc)',',"04",x.exactImageUrl].map(esc)') if False else html
     html=html.replace("sacred-art-queue1-reviewed-approvals-batch01.csv",
                       "sacred-art-queue1-reviewed-approvals-batch04.csv")
     html=html.replace("Everything else stays in Queue 2.", "Everything else stays in Queue 2; unrecovered photos are excluded.")
