@@ -30,6 +30,7 @@ import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calen
 import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
 import { approvedClassIHeroMarkup, approvedClassIHeroCss } from "./approved-class-i-heroes-2026.js";
+import { EMBEDDED_DAY_TCM_CSS } from "./embedded-day-tcm.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -1841,7 +1842,7 @@ function open({embeddedIn=null,onClose=null}={}){
 .aoCalV2PrintOptions .aoCalV2TextLink{margin-top:0!important;text-align:left}
 .aoCalV2PrintOptions summary:focus-visible{outline:2px solid var(--liturgical,#c7ae6d);outline-offset:2px}
 @media(max-width:430px){.aoCalV2Hero .aoCalDayScriptureActions{grid-template-columns:1fr}.aoCalV2Hero .aoCalV2Commemorations{padding:12px}.aoCalV2Hero .aoCalDayScripture{padding:12px}}
-${calendarScriptureStyles()}${SANCTORAL_DAY_CSS}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();loadCalendarRubricalClaims();loadCalendarColourClaims();loadCalendarTransferClaims();
+${calendarScriptureStyles()}${SANCTORAL_DAY_CSS}${EMBEDDED_DAY_TCM_CSS}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();loadCalendarRubricalClaims();loadCalendarColourClaims();loadCalendarTransferClaims();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();
   // Embedding the Calendar in Today or Mass must be observational when the
   // selected 1962 day is already resolved. revealDate() dispatches
