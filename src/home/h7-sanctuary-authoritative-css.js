@@ -218,10 +218,10 @@ body.w320 .grid button{height:48px}
 .aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc button{flex:0 0 150px!important;min-height:104px!important;border-radius:16px!important;border:1px solid var(--ln)!important;background:var(--sf)!important;color:var(--ink)!important;text-align:left!important;padding:12px!important;display:flex!important;flex-direction:column!important;gap:0!important}
 .aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc strong{font:500 17px/1.2 var(--serif)!important;margin:8px 0 auto!important}
 .aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc small{font:12.5px/1.3 var(--sans)!important;color:var(--mu)!important;margin-top:6px!important}
-.aoH7Screens .aoH7HomeView .aoH4Read.card{border:1px solid var(--ln)!important;border-radius:16px!important;background:var(--sf)!important;overflow:hidden!important}
-.aoH7Screens .aoH7HomeView .aoH4Read.card button.row{min-height:58px!important;padding:8px 14px!important;border:0!important;background:transparent!important;color:var(--ink)!important;display:flex!important;align-items:center!important;gap:12px!important;text-align:left!important}
-.aoH7Screens .aoH7HomeView .aoH4Read.card button.row strong{font:500 16px/1.25 var(--serif)!important}
-.aoH7Screens .aoH7HomeView .aoH4Read.card button.row small{font:13px/1.3 var(--sans)!important;color:var(--mu)!important}
+.aoH7Screens .aoH7HomeView .aoH4Read{border:1px solid var(--ln)!important;border-radius:16px!important;background:var(--sf)!important;overflow:hidden!important}
+.aoH7Screens .aoH7HomeView .aoH4Read button.row{min-height:58px!important;padding:8px 14px!important;border:0!important;background:transparent!important;color:var(--ink)!important;display:flex!important;align-items:center!important;gap:12px!important;text-align:left!important}
+.aoH7Screens .aoH7HomeView .aoH4Read button.row strong{font:500 16px/1.25 var(--serif)!important}
+.aoH7Screens .aoH7HomeView .aoH4Read button.row small{font:13px/1.3 var(--sans)!important;color:var(--mu)!important}
 .aoH7Screens .aoH7HomeView .aoH4DiscoveryStandalone{margin:26px var(--g) 0!important;padding:0!important}
 .aoH7Screens .aoH7DoorView .foot>.btn{display:flex!important;min-height:56px!important;width:100%!important;padding:8px 10px 8px 18px!important;border:0!important;border-radius:16px!important;background:var(--sage)!important;color:var(--onsage)!important;text-align:left!important}
 .aoH7Screens .aoH7DoorView .foot>.btn>span:first-child{flex:1;min-width:0}
