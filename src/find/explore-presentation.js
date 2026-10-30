@@ -517,6 +517,19 @@ function massEmblemCredits(language){
       "Diocesan and unidentified listings use neutral map symbols, not Holy See or assumed institute arms. Institutional emblems identify source-reported ministry only, not the church owner or a verified Mass. Copyright licences do not waive separate insignia or trademark rights; commercial clearance remains outstanding.",
       "Les fiches diocésaines ou sans affiliation déterminée utilisent des repères neutres, non les armes du Saint-Siège ni celles d’un institut supposé. Les emblèmes signalent seulement le ministère indiqué par la source, pas le propriétaire de l’église ni une messe vérifiée. La licence d’auteur ne lève pas les droits propres aux insignes et marques ; la validation commerciale reste nécessaire."))+'</p></div></details>';
 }
+// Display source-present community identities, not just the first four emblem holders.
+// Research-only CL2/CL27 codes do not become public affiliations through this filter.
+function availableTlmCommunityIds(vm,aff=[]){
+  const present=new Set([...arr(vm.items).filter(item=>item?.kind==="TLM_VENUE").map(item=>String(item.community_id??"").toUpperCase()),
+    ...arr(aff).map(id=>String(id??"").toUpperCase())].filter(Boolean));
+  const priority=["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV","CMRI","SSPV","CSPV","RCI","FSVF",
+    "CANONS_ST_JOHN_CANTIUS","SMMD","BENEDICTINE","DOMINICAN","ORATORIAN","NORBERTINE","INDEPENDENT","OTHER","UNKNOWN"];
+  const sorted=[...present].sort((a,b)=>{
+    const ia=priority.indexOf(a),ib=priority.indexOf(b);
+    return (ia<0?priority.length:ia)-(ib<0?priority.length:ib)||a.localeCompare(b);
+  });
+  return sorted.length?sorted:["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"];
+}
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
@@ -531,7 +544,7 @@ function tlmFilters(vm){
     if(vm.view==="map")html+='</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
-    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV","OTHER"]){
+    for(const id of availableTlmCommunityIds(vm,aff)){
       const emblem=massInstitutionEmblem(id);
       html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'
         +(emblem?'<img src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':'')
@@ -553,7 +566,7 @@ function tlmFilters(vm){
     +'</div>';
   html+='<details class="aoExploreAdvancedFilters"><summary>'+esc(L(vm.language,"More filters","Plus de filtres"))+'</summary>';
   html+='<section><small>'+esc(L(vm.language,"COMMUNITY / PROVIDER","COMMUNAUTÉ / INSTITUT"))+'</small><div class="aoFindAffiliations">';
-  for(const id of ["DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV","OTHER"])html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
+  for(const id of availableTlmCommunityIds(vm,aff))html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
   html+='</div></section><section><small>'+esc(L(vm.language,"COMMUNION STATUS","STATUT DE COMMUNION"))+'</small><div>';
   html+=pill("unaCum","ANY",L(vm.language,"Any status","Tout statut"),f.unaCum||"ANY")+pill("unaCum","YES","Una cum",f.unaCum||"ANY")+pill("unaCum","NO","Non-una cum",f.unaCum||"ANY")+pill("unaCum","UNKNOWN",L(vm.language,"Unknown","Inconnu"),f.unaCum||"ANY");
   html+='</div></section><section><small>'+esc(L(vm.language,"LITURGY","LITURGIE"))+'</small><div>'+pill("liturgy","ANY",L(vm.language,"Any liturgy","Toute liturgie"),f.liturgy||"ANY")+pill("liturgy","1962","1962",f.liturgy||"ANY")+pill("liturgy","PRE_1955","Pre-1955",f.liturgy||"ANY")+pill("liturgy","DOMINICAN","Dominican",f.liturgy||"ANY")+'</div></section><section><small>'+esc(L(vm.language,"MASS TYPE","TYPE DE MESSE"))+'</small><div>';
