@@ -1,0 +1,1077 @@
+{
+  "schema": "AO_DYK_R32_PITRE_49_PER_PAGE_PUBLIC_SCAN_LOCATOR_AND_OFFSET_AUDIT_V1",
+  "date": "2026-10-30",
+  "status": "49_TARGETED_VIEWER_LINKS_RECONCILED_PAGE_CONTENT_UNVERIFIED",
+  "source": {
+    "work": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+    "commons_file_page": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+    "source_web_citation": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+    "known_file_page_count": 632,
+    "known_file_size_bytes": 22757530,
+    "file_is_public_domain": true,
+    "observed_evidence": "The Commons file page has a native PDF 'Go to page' viewer, with page=2 functioning through its own next-page link. Arbitrary original page=151 retrieval through the current web client was blocked; the constructed target URLs are not represented as opened original pages.",
+    "source_of_recorded_print_and_scan_numbers": "R26 49-case provenance crosswalk, derived from earlier source packets"
+  },
+  "counts": {
+    "original_pitre_shortlist": 49,
+    "priority_zero_prior_image_unverified": 14,
+    "priority_one_locale_text_risk_excluding_P0": 5,
+    "priority_two": 30,
+    "distinct_recorded_scan_pages": 43,
+    "offset_bands": [
+      {
+        "offset": 66,
+        "cards": 2,
+        "first_printed_page": 12,
+        "last_printed_page": 14
+      },
+      {
+        "offset": 62,
+        "cards": 28,
+        "first_printed_page": 31,
+        "last_printed_page": 136
+      },
+      {
+        "offset": 58,
+        "cards": 19,
+        "first_printed_page": 293,
+        "last_printed_page": 560
+      }
+    ],
+    "freshly_verified_image_pages": 0,
+    "freshly_verified_original_pitre_claims": 0,
+    "final_approvals": 0,
+    "published": 0
+  },
+  "method": {
+    "indexing": "Use each research packet's recorded 1-based PDF scan page exactly, not a universal offset; the source packet groups have three offset bands +66, +62, +58.",
+    "warning": "Different offsets may arise from the scan's preliminary matter, inserted plates, page mapping decisions or packet errors. No conclusion possible without viewing actual numbered page images and checking printed folio on image.",
+    "recheck_procedure": [
+      "Open indicated Commons PDF page preview in a browser and verify the printed page numeral in the image; if mismatched, try neighboring scan pages and record corrected scanned index.",
+      "Read complete Italian paragraph, not just short OCR anchor, including headings to confirm the festival location.",
+      "Check EN/FR assertions separately (actor, place, date, object, scope) and note historical-only 1900 status.",
+      "Flag separately independent corroboration, full 612-bank semantic review and browser route checks.",
+      "Only after step 1 and 2 update source.original_page_image_verified and increment direct original-source claim count."
+    ],
+    "privacy": "No private 612 Home preview text or IDs in this public research file."
+  },
+  "records": [
+    {
+      "id": "DYK-UM01-021",
+      "record_source": "dyk-ultramaster-batch01.v1.json",
+      "original_observation_id": "PIT1900-IT-008",
+      "printed_page": 443,
+      "legacy_scan_page_1based": 501,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "priority": "P1_SCOPING_OR_PARAGRAPH_RISK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=501",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MULTI_TOWN_CLAIM_USED_SINGLE_RIBERA_SOURCE",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM01-025",
+      "record_source": "dyk-ultramaster-batch01.v1.json",
+      "original_observation_id": "PIT1900-IT-011",
+      "printed_page": 444,
+      "legacy_scan_page_1based": 502,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=502",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM01-026",
+      "record_source": "dyk-ultramaster-batch01.v1.json",
+      "original_observation_id": "PIT1900-IT-017",
+      "printed_page": 445,
+      "legacy_scan_page_1based": 503,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=503",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM01-027",
+      "record_source": "dyk-ultramaster-batch01.v1.json",
+      "original_observation_id": "PIT1900-IT-031",
+      "printed_page": 448,
+      "legacy_scan_page_1based": 506,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Canicattini (Syracuse), Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=506",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM01-028",
+      "record_source": "dyk-ultramaster-batch01.v1.json",
+      "original_observation_id": "PIT1900-IT-002",
+      "printed_page": 441,
+      "legacy_scan_page_1based": 499,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Ribera, Agrigento, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=499",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM01-030",
+      "record_source": "dyk-ultramaster-batch01.v1.json",
+      "original_observation_id": "PIT1900-IT-024",
+      "printed_page": 447,
+      "legacy_scan_page_1based": 505,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Canicattini (Syracuse), Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=505",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-026",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-002",
+      "printed_page": 12,
+      "legacy_scan_page_1based": 78,
+      "scan_minus_print_delta": 66,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=78",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "EARLY_VOLUME_PLUS_66_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-027",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-009",
+      "printed_page": 14,
+      "legacy_scan_page_1based": 80,
+      "scan_minus_print_delta": 66,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=80",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "EARLY_VOLUME_PLUS_66_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-028",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-018",
+      "printed_page": 31,
+      "legacy_scan_page_1based": 93,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=93",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-031",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-030",
+      "printed_page": 72,
+      "legacy_scan_page_1based": 134,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=134",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-032",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-033",
+      "printed_page": 73,
+      "legacy_scan_page_1based": 135,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=135",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-034",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-045",
+      "printed_page": 79,
+      "legacy_scan_page_1based": 141,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=141",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-035",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-048",
+      "printed_page": 80,
+      "legacy_scan_page_1based": 142,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P1_SCOPING_OR_PARAGRAPH_RISK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=142",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-036",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-054",
+      "printed_page": 84,
+      "legacy_scan_page_1based": 146,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=146",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-038",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-062",
+      "printed_page": 559,
+      "legacy_scan_page_1based": 617,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Piazza Armerina, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=617",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-039",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-068",
+      "printed_page": 560,
+      "legacy_scan_page_1based": 618,
+      "scan_minus_print_delta": 58,
+      "locality": [
+        "Piazza Armerina, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=618",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-040",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-073",
+      "printed_page": 122,
+      "legacy_scan_page_1based": 184,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Gangi, Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=184",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-042",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-075",
+      "printed_page": 124,
+      "legacy_scan_page_1based": 186,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Gratteri, Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=186",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-043",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-078",
+      "printed_page": 124,
+      "legacy_scan_page_1based": 186,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Gratteri, Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=186",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-044",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-080",
+      "printed_page": 125,
+      "legacy_scan_page_1based": 187,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Gratteri, Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=187",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-045",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-084",
+      "printed_page": 126,
+      "legacy_scan_page_1based": 188,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Geraci Siculo, Palermo, Sicily"
+      ],
+      "priority": "P1_SCOPING_OR_PARAGRAPH_RISK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=188",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-046",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-085",
+      "printed_page": 126,
+      "legacy_scan_page_1based": 188,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Geraci Siculo, Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=188",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-048",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-095",
+      "printed_page": 128,
+      "legacy_scan_page_1based": 190,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Geraci Siculo, Palermo, Sicily"
+      ],
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=190",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM02-050",
+      "record_source": "dyk-ultramaster-batch02b-pitre.v1.json",
+      "original_observation_id": "PIT1900-NEW-110",
+      "printed_page": 135,
+      "legacy_scan_page_1based": 197,
+      "scan_minus_print_delta": 62,
+      "locality": [
+        "Marineo, Palermo, Sicily"
+      ],
+      "priority": "P1_SCOPING_OR_PARAGRAPH_RISK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=197",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-028",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-020",
+      "printed_page": 33,
+      "legacy_scan_page_1based": 95,
+      "scan_minus_print_delta": 62,
+      "locality": "Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=95",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-031",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-028",
+      "printed_page": 71,
+      "legacy_scan_page_1based": 133,
+      "scan_minus_print_delta": 62,
+      "locality": "Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=133",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-033",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-037",
+      "printed_page": 74,
+      "legacy_scan_page_1based": 136,
+      "scan_minus_print_delta": 62,
+      "locality": "Palermo, Sicily",
+      "priority": "P1_SCOPING_OR_PARAGRAPH_RISK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=136",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-037",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-059",
+      "printed_page": 558,
+      "legacy_scan_page_1based": 616,
+      "scan_minus_print_delta": 58,
+      "locality": "Piazza Armerina, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=616",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-039",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-067",
+      "printed_page": 560,
+      "legacy_scan_page_1based": 618,
+      "scan_minus_print_delta": 58,
+      "locality": "Piazza Armerina, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=618",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-040",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-070",
+      "printed_page": 120,
+      "legacy_scan_page_1based": 182,
+      "scan_minus_print_delta": 62,
+      "locality": "Gangi, Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=182",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-043",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-087",
+      "printed_page": 126,
+      "legacy_scan_page_1based": 188,
+      "scan_minus_print_delta": 62,
+      "locality": "Geraci Siculo, Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=188",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-045",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-096",
+      "printed_page": 128,
+      "legacy_scan_page_1based": 190,
+      "scan_minus_print_delta": 62,
+      "locality": "Geraci Siculo, Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=190",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-046",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-097",
+      "printed_page": 129,
+      "legacy_scan_page_1based": 191,
+      "scan_minus_print_delta": 62,
+      "locality": "Geraci Siculo, Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=191",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-048",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-111",
+      "printed_page": 135,
+      "legacy_scan_page_1based": 197,
+      "scan_minus_print_delta": 62,
+      "locality": "Marineo, Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=197",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-UM03-049",
+      "record_source": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+      "original_observation_id": "PIT1900-NEW-116",
+      "printed_page": 136,
+      "legacy_scan_page_1based": 198,
+      "scan_minus_print_delta": 62,
+      "locality": "Marineo, Palermo, Sicily",
+      "priority": "P2_COMPLETE_PRIMARY_IMAGE_RECHECK",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=198",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-015",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-015",
+      "printed_page": 89,
+      "legacy_scan_page_1based": 151,
+      "scan_minus_print_delta": 62,
+      "locality": "Our Lady of Loreto — Altavilla",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=151",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-017",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-017",
+      "printed_page": 90,
+      "legacy_scan_page_1based": 152,
+      "scan_minus_print_delta": 62,
+      "locality": "Our Lady of Loreto — Altavilla",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=152",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-025",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-025",
+      "printed_page": 102,
+      "legacy_scan_page_1based": 164,
+      "scan_minus_print_delta": 62,
+      "locality": "Holy Crucifix — Monreale",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=164",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-029",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-029",
+      "printed_page": 105,
+      "legacy_scan_page_1based": 167,
+      "scan_minus_print_delta": 62,
+      "locality": "Holy Crucifix — Monreale",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=167",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-037",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-037",
+      "printed_page": 114,
+      "legacy_scan_page_1based": 176,
+      "scan_minus_print_delta": 62,
+      "locality": "Holy Crucifix — multiple Palermo-area towns",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=176",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "MIDDLE_VOLUME_PLUS_62_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-054",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-054",
+      "printed_page": 293,
+      "legacy_scan_page_1based": 351,
+      "scan_minus_print_delta": 58,
+      "locality": "St Sebastian — Francofonte",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=351",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-061",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-061",
+      "printed_page": 302,
+      "legacy_scan_page_1based": 360,
+      "scan_minus_print_delta": 58,
+      "locality": "St Conrad — Noto/Avola",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=360",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-072",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-072",
+      "printed_page": 312,
+      "legacy_scan_page_1based": 370,
+      "scan_minus_print_delta": 58,
+      "locality": "St George/St Peter — Modica",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=370",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-085",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-085",
+      "printed_page": 389,
+      "legacy_scan_page_1based": 447,
+      "scan_minus_print_delta": 58,
+      "locality": "Holy Crucifix — Santa Margherita",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=447",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-098",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-098",
+      "printed_page": 402,
+      "legacy_scan_page_1based": 460,
+      "scan_minus_print_delta": 58,
+      "locality": "Our Lady delle Mortelle — Villafranca",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=460",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "DISTINGUISH_CORRECT_VILLAFRANCA_MORTELLE_FROM_CAMP0BELLO_MADONNA_DEL_AIUTO",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-111",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-111",
+      "printed_page": 416,
+      "legacy_scan_page_1based": 474,
+      "scan_minus_print_delta": 58,
+      "locality": "St Angelo — Licata/Muxaro",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=474",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-122",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-122",
+      "printed_page": 430,
+      "legacy_scan_page_1based": 488,
+      "scan_minus_print_delta": 58,
+      "locality": "Our Lady del Monte — Racalmuto",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=488",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-129",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-129",
+      "printed_page": 436,
+      "legacy_scan_page_1based": 494,
+      "scan_minus_print_delta": 58,
+      "locality": "Our Lady dell'Udienza — Sambuca/Menfi",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=494",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-152",
+      "record_source": "dyk-customs-pitre-new-feasts-04c.v1.json",
+      "original_observation_id": "PIT1900-W05-OBS-152",
+      "printed_page": 485,
+      "legacy_scan_page_1based": 543,
+      "scan_minus_print_delta": 58,
+      "locality": "Our Lady of Miracles — Alcamo/Collesano",
+      "priority": "P0_PREVIOUSLY_UNVERIFIED_IMAGE",
+      "commons_page_preview_url": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=543",
+      "original_book_pdf_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "original_1900_page_preview_opened_this_pass": false,
+      "actual_rendered_page_number_confirmed": false,
+      "italian_content_checked_this_pass": false,
+      "source_claim_certified": false,
+      "flagged": [
+        "R27_PRIOR_ORIGINAL_IMAGE_NOT_VERIFIED",
+        "PRIOR_SOURCE_FACSIMILE_NOT_VERIFIED",
+        "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN",
+        "LATE_VOLUME_PLUS_58_SCAN_OFFSET_REQUIRES_VISUAL_CONFIRMATION"
+      ]
+    }
+  ],
+  "release_authorized": false
+}
