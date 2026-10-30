@@ -8,7 +8,8 @@
     "Only record images of exact subject and approved composition; reject frames and gallery surrounds",
     "Retain title/source/photographer/rights/crop verification in the canonical Sacred Art asset pipeline before release",
     "Missing assets retain existing semantic icons; NO stock imagery",
-    "A gallery title-cue match is not human editorial approval for this card."
+    "A gallery title-cue match is not human editorial approval for this card.",
+    "Candidate Commons file-page URL is a research locator only, not the certified original file, asset URL or permission for this prayer slot."
   ],
   "statistics": {
     "prayer_vignette_slots": 48,
@@ -16,7 +17,9 @@
     "unassigned": 9,
     "production_ready": 0,
     "primary_master_identity_candidates": 32,
-    "gallery_delta_identity_candidates": 20
+    "gallery_delta_identity_candidates": 20,
+    "slots_with_specific_commons_file_candidates": 4,
+    "slots_needing_new_wikimedia_candidate": 5
   },
   "queue": [
     {
@@ -45,7 +48,8 @@
         "commons-morlete-sacred-heart-1759",
         "new:jules-breton-song-of-the-lark-artic-94841"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-weekday_benedictus",
@@ -73,7 +77,8 @@
         "new:jules-breton-song-of-the-lark-artic-94841",
         "met-437738"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_sign_of_cross",
@@ -103,7 +108,8 @@
         "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
         "cma-136507"
       ],
-      "combined_candidate_count": 3
+      "combined_candidate_count": 3,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_our_father",
@@ -124,7 +130,8 @@
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_hail_mary",
@@ -167,7 +174,8 @@
         "cma-127572",
         "met-438724"
       ],
-      "combined_candidate_count": 9
+      "combined_candidate_count": 9,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_glory_be",
@@ -196,7 +204,8 @@
         "khm:GG-838",
         "cma-136507"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_apostles_creed",
@@ -230,7 +239,8 @@
         "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
         "cma-136507"
       ],
-      "combined_candidate_count": 4
+      "combined_candidate_count": 4,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-sacrament_act_of_contrition",
@@ -259,7 +269,8 @@
         "nga:34956",
         "met-436839"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_act_of_faith",
@@ -285,7 +296,8 @@
       "combined_candidate_identity_ids": [
         "W07-014"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_act_of_hope",
@@ -311,7 +323,8 @@
       "combined_candidate_identity_ids": [
         "new:jules-breton-song-of-the-lark-artic-94841"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_act_of_love",
@@ -337,7 +350,8 @@
       "combined_candidate_identity_ids": [
         "commons-morlete-sacred-heart-1759"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_guardian_angel",
@@ -362,7 +376,8 @@
       "combined_candidate_identity_ids": [
         "ART-ietro-da-ortona-he-uardian-ngel"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_grace_before_meals",
@@ -384,7 +399,8 @@
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_grace_after_meals",
@@ -406,7 +422,8 @@
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_prayer_of_adoration",
@@ -434,7 +451,8 @@
         "met-438434",
         "W07-014"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-mass_confiteor",
@@ -463,7 +481,8 @@
         "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
         "met-437722"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-sacrament_come_holy_spirit",
@@ -488,7 +507,8 @@
       "combined_candidate_identity_ids": [
         "ART-ean-estout-entecost"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-traditional_veni_sancte_sequence",
@@ -513,7 +533,8 @@
       "combined_candidate_identity_ids": [
         "ART-ean-estout-entecost"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-adoration_anima_christi",
@@ -541,7 +562,8 @@
         "ART-nthony-van-yck-he-ance-hrust",
         "met-437977"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-adoration_spiritual_communion",
@@ -569,7 +591,8 @@
         "W07-014",
         "met-437977"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-benediction_o_salutaris",
@@ -597,7 +620,8 @@
         "met-438434",
         "ART-arlo-rivelli-aint-homas-quinas"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-benediction_tantum_ergo",
@@ -626,7 +650,8 @@
         "met-438434",
         "ART-arlo-rivelli-aint-homas-quinas"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-benediction_divine_praises",
@@ -655,7 +680,8 @@
         "khm:GG-838",
         "cma-136507"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-adoration_litany_blessed_sacrament",
@@ -681,7 +707,8 @@
       "combined_candidate_identity_ids": [
         "met-438434"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-benediction_versicles",
@@ -705,7 +732,8 @@
       "combined_candidate_identity_ids": [
         "met-438434"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-adoration_lord_i_am_not_worthy",
@@ -736,7 +764,8 @@
         "met-436199",
         "met-437977"
       ],
-      "combined_candidate_count": 4
+      "combined_candidate_count": 4,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-mass_devotion_leonine",
@@ -762,7 +791,8 @@
       "combined_candidate_identity_ids": [
         "ART-uido-eni-rchangel-ichael-efeating-atan"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-benediction_adoremus_ps116",
@@ -787,7 +817,8 @@
       "combined_candidate_identity_ids": [
         "met-438434"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-devotion_consecration_christ_king",
@@ -811,7 +842,8 @@
       "combined_candidate_identity_ids": [
         "LOCAL-BENSON-SALVATOR"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-sacred_heart_short_prayer",
@@ -836,7 +868,8 @@
       "combined_candidate_identity_ids": [
         "commons-morlete-sacred-heart-1759"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-sacred_heart_aspiration_trust",
@@ -860,7 +893,8 @@
       "combined_candidate_identity_ids": [
         "commons-morlete-sacred-heart-1759"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-marian_hail_holy_queen",
@@ -874,14 +908,23 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
+      "wikimedia_search_state": "SPECIFIC_COMMONS_FILE_IDENTIFIED__EDITORIAL_AND_IMAGE_QA_PENDING",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": [
+        {
+          "title": "Assumption and Coronation of the Virgin",
+          "artist": "Peter Paul Rubens",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Coronation-of-the-Virgin.jpg",
+          "rights_page_assessment": "Commons identifies this as public-domain two-dimensional artwork reproduction; verify final file and jurisdiction",
+          "editorial_fit": "Marian royalty theme; not yet a specific Salve Regina visual approval"
+        }
+      ]
     },
     {
       "slot_id": "COV-marian_memorare",
@@ -913,7 +956,8 @@
         "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
         "fondazione-zeri:47818"
       ],
-      "combined_candidate_count": 4
+      "combined_candidate_count": 4,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-weekday_magnificat",
@@ -946,7 +990,8 @@
         "fondazione-zeri:47818",
         "ART-aphael-and-iulio-omano-he-isitation"
       ],
-      "combined_candidate_count": 4
+      "combined_candidate_count": 4,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-marian_consecration_immaculate_heart",
@@ -979,7 +1024,8 @@
         "met-437423",
         "cma-135659"
       ],
-      "combined_candidate_count": 4
+      "combined_candidate_count": 4,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-sub_tuum",
@@ -1004,7 +1050,8 @@
       "combined_candidate_identity_ids": [
         "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-litany_loreto_1962",
@@ -1032,7 +1079,8 @@
         "met-437423",
         "cma-135659"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-litany_loreto_current",
@@ -1060,7 +1108,8 @@
         "met-437423",
         "cma-135659"
       ],
-      "combined_candidate_count": 2
+      "combined_candidate_count": 2,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-devotion_prayer_st_michael",
@@ -1084,7 +1133,8 @@
       "combined_candidate_identity_ids": [
         "ART-uido-eni-rchangel-ichael-efeating-atan"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-devotion_memorare_st_joseph",
@@ -1098,14 +1148,23 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
+      "wikimedia_search_state": "SPECIFIC_COMMONS_FILE_IDENTIFIED__EDITORIAL_AND_IMAGE_QA_PENDING",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": [
+        {
+          "title": "Virgin and Child with Saint Joseph",
+          "artist": "Anonymous Netherlandish painter",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Virgin_and_Child_with_Saint_Joseph_MET_DT3084.jpg",
+          "rights_page_assessment": "Verify public domain and museum file provenance",
+          "editorial_fit": "St Joseph with the Holy Family; different subject from specific Memorare iconography"
+        }
+      ]
     },
     {
       "slot_id": "COV-devotion_st_anthony_lost_items",
@@ -1118,14 +1177,23 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
+      "wikimedia_search_state": "SPECIFIC_COMMONS_FILE_IDENTIFIED__EDITORIAL_AND_IMAGE_QA_PENDING",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": [
+        {
+          "title": "Saint Anthony of Padua and the Child Jesus",
+          "artist": "Jacques-Ignace Parrocel",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_Pierre_de_Luxembourg_030_St_Antoine_de_Padoue_et_l%27enfant_J%C3%A9sus.jpg",
+          "rights_page_assessment": "Photograph by Finoskov, CC BY-SA 4.0 indicated by Commons; crop and photographic surface must be visually reviewed",
+          "editorial_fit": "Traditional representation of St Anthony; verify no frame or exhibition surroundings"
+        }
+      ]
     },
     {
       "slot_id": "COV-devotion_litany_st_joseph",
@@ -1140,14 +1208,23 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
+      "wikimedia_search_state": "SPECIFIC_COMMONS_FILE_IDENTIFIED__EDITORIAL_AND_IMAGE_QA_PENDING",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": [
+        {
+          "title": "Virgin and Child with Saint Joseph",
+          "artist": "Anonymous Netherlandish painter",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Virgin_and_Child_with_Saint_Joseph_MET_DT3084.jpg",
+          "rights_page_assessment": "Verify public domain and museum file provenance",
+          "editorial_fit": "St Joseph with Holy Family, suitable possible litany imagery"
+        }
+      ]
     },
     {
       "slot_id": "COV-devotion_ad_te_beate_ioseph",
@@ -1172,7 +1249,8 @@
       "combined_candidate_identity_ids": [
         "2020.263.8"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-church_prayer_for_pope",
@@ -1192,7 +1270,8 @@
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-foundations_eternal_rest",
@@ -1217,7 +1296,8 @@
       "combined_candidate_identity_ids": [
         "souls::1"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-dead_de_profundis",
@@ -1243,7 +1323,8 @@
       "combined_candidate_identity_ids": [
         "souls::1"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-dead_fidelium_deus",
@@ -1268,7 +1349,8 @@
       "combined_candidate_identity_ids": [
         "souls::1"
       ],
-      "combined_candidate_count": 1
+      "combined_candidate_count": 1,
+      "wikimedia_candidates": []
     },
     {
       "slot_id": "COV-dead_eternal_rest_singular",
@@ -1289,7 +1371,8 @@
       "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
       "gallery_candidate_identity_ids": [],
       "combined_candidate_identity_ids": [],
-      "combined_candidate_count": 0
+      "combined_candidate_count": 0,
+      "wikimedia_candidates": []
     }
   ],
   "editorial_gallery_companion": "data/pray/artwork-candidate-gallery-delta-20261030.v1.json"
