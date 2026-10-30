@@ -417,7 +417,7 @@ function csv(rows,columns){
   let s=Array.isArray(v)?v.join(" | "):typeof v==="object"?JSON.stringify(v):String(v);
   return /[",\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;
  };
- return "\uFEFF"+columns.join(",")+"\n"+rows.map(r=>columns.map(k=>quote(r[k])).join(",")).join("\n")+"\n";
+ return "\uFEFF"+columns.join(",")+"\n"+rows.map(r=>columns.map(k=>quote(r[k])).join(",")).join("\n")+(rows.length?"\n":"");
 }
 const masterRows=master.map(x=>({
  record_id:x.recordId,physical_work_group:x.workGroupId,record_type:x.recordKind,
