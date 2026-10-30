@@ -611,13 +611,8 @@ export function mountFullMassPreflight({
       // Only their visible labels follow the Mass-language selection.
       const startAction=folio.querySelector("[data-folio-host-actions] [data-ao-start-live]");
       if(startAction)startAction.textContent=l("Start Mass →","Commencer la messe →");
-      for(const action of folio.querySelectorAll("[data-folio-host-actions] .aoFlowActions button:not([data-ao-start-live])")){
-        const label=(action.textContent||"").trim();
-        if(/^(Save as defaults|Enregistrer comme choix habituels)$/i.test(label))
-          action.textContent=l("Save as defaults","Enregistrer comme choix habituels");
-        if(/^(Mass Details|Mass details|Détails de la messe)$/i.test(label))
-          action.textContent=l("Mass details","Détails de la messe");
-      }
+      // Do not imply a Save as defaults control exists. Existing secondary
+      // host actions remain under their original ownership.
     }
     word("[data-folio-back]","Back","Retour");
     word("[data-folio-next]",folioStep==="reader"?"Review Mass":"Continue",folioStep==="reader"?"Voir le résumé":"Continuer");
