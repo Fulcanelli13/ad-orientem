@@ -10,7 +10,7 @@ const f=Object.fromEntries(["la","en","fr"].map(l=>[l,JSON.parse(
  readFileSync(new URL("../tests/fixtures/office/advent-i-saturday-compline-"+l+".json",
  import.meta.url),"utf8"))]));
 const direct={
- sourceRevision:PIN,
+ sourceRevision:PIN,weekday:"Sabbato",
  async section(path,name,language){
   const text=f[language]?.sections?.[path]?.[name];
   if(!Array.isArray(text))throw Error("FIXTURE_SOURCE_MISSING:"+language+":"+path+"#"+name);
@@ -78,7 +78,7 @@ test("missing French Saturday antiphon, Marian collect or psalm blocks the whole
   },psalm:direct.psalm},
   {section:direct.section,psalm:async(n,l)=>l==="fr"&&n===87?"":direct.psalm(n,l)}
  ]){
-  const out=await assemble({reader:{sourceRevision:PIN,...breakReader}});
+  const out=await assemble({reader:{sourceRevision:PIN,weekday:"Sabbato",...breakReader}});
   assert.equal(out.status,"WITHHELD");
   assert.equal(out.blocks.length,0);
   assert.equal(out.published,false);
