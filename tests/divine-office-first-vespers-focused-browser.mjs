@@ -110,9 +110,9 @@ try{
   assert.ok(overflow<=1,"overflow "+overflow+" at "+viewport.width);
   await save(page,String(viewport.width)+"-vespers-opening");
   await page.locator('[data-mode="en"]').click();
-  assert.match(await page.locator("#card").innerText(),/English/);
+  assert.match(await page.locator("#card").innerText(),/English/i);
   await page.locator('[data-mode="la"]').click();
-  assert.doesNotMatch(await page.locator("#card").innerText(),/Français|English/);
+  assert.doesNotMatch(await page.locator("#card").innerText(),/Français|English/i);
   await page.locator('[data-mode="fr"]').click();
   await page.locator('[data-view="whole"]').click();
   assert.equal(await page.locator("#bar").getAttribute("aria-valuemax"),"38");
