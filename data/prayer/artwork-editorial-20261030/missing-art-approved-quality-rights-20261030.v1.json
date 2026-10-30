@@ -6,7 +6,7 @@
     "reviewed": 25,
     "rights_basis_identified": 22,
     "rights_not_cleared": 3,
-    "low_source_resolution": 8,
+    "low_source_resolution": 9,
     "visual_native_pass": 0,
     "production_ready": 0
   },
@@ -18,28 +18,48 @@
       "artist": "Jacopo Tintoretto",
       "approved": true,
       "source_original": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
-      "source_for_photo_qa": "https://commons.wikimedia.org/wiki/File:Jacopo_tintorettto,_circoncisione,_1583-87,_01.jpg",
+      "source_for_photo_qa": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
       "suggested_file": null,
       "rights_status": "COMMONS_CC_BY_3_0_PHOTOGRAPH_SAILKO_ATTRIBUTION_REQUIRED",
       "license_gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING",
       "original_pixels": [
-        2016,
-        1900
+        1385,
+        976
       ],
-      "quality_status": "PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
+      "quality_status": "LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
       "photo_identity_status": "SOURCE_PAGE_VERIFIED",
-      "risk": "Same Scuola Grande di San Rocco work; source photo 2016×1900, CC BY 3.0 by Sailko. High-ISO 6400 exposure; check noise, focus, glare, frame and exact composition before publication.",
+      "risk": "Original work-cropped 1385×976 remains the QA reference, not publication-ready. Tested 2016×1900 Sailko color photo: visible chapel architectural surrounds and doorway obscure lower artwork; poor tonal/glare fidelity. Reject as replacement despite higher pixel count. A separate 1841×1670 cropped book image (Tintoretto-Circoncisione-Grande di San Rocco.jpg) still needs quality and reproduction-jurisdiction review; 2878×2063 Pallucchini image is black-and-white and unsuitable.",
       "publication_hold": true,
       "same_artwork_photo_source_repair": {
-        "url": "https://commons.wikimedia.org/wiki/File:Jacopo_tintorettto%2C_circoncisione%2C_1583-87%2C_01.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Jacopo_tintorettto,_circoncisione,_1583-87,_01.jpg",
         "pixels": [
           2016,
           1900
         ],
-        "rights": "CC_BY_3_0_SAILKO_PHOTOGRAPH_ATTRIBUTION_AND_MODIFICATION_NOTICE_REQUIRED",
-        "source_note": "Same Tintoretto Circumcision in Scuola Grande di San Rocco, not new artwork; 2.42MB instead of 544KB",
-        "status": "SAME_WORK_SOURCE_LICENSE_CONFIRMED_NATIVE_VISUAL_QA_PENDING"
-      }
+        "rights": "COMMONS_CC_BY_3_0_SAILKO_CREDIT_REQUIRED",
+        "source_note": "Visually inspected via original file: surrounding architecture, glaring low-left area, and chapel doorway over the artwork's lower centre. This is a real photograph of the same work but unacceptable as an Ad Orientem painting reproduction.",
+        "status": "VISUAL_REJECT_ARCHITECTURE_DOORWAY_GLARE"
+      },
+      "other_same_work_photo_sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circoncisione-Grande_di_San_Rocco.jpg",
+          "pixels": [
+            1841,
+            1670
+          ],
+          "status": "CANDIDATE_NOT_VERIFIED_BOOK_REPRODUCTION_CROP_AND_JURISDICTION",
+          "rights": "COMMONS_PD_ART_TAG_PHOTOGRAPH_FROM_BOOK_UNREVIEWED"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Pallucchini_Tintoretto_588.jpg",
+          "pixels": [
+            2878,
+            2063
+          ],
+          "status": "VISUAL_REJECT_BLACK_AND_WHITE",
+          "rights": "COMMONS_PD_ART_TAG"
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.precious_blood-01",
@@ -604,13 +624,14 @@
     "date": "2026-10-30",
     "same_artwork_only": true,
     "no_new_artistic_choices": true,
-    "alternate_sources_verified": 3,
-    "free_alternate_sources_with_licence_conditions": 2,
+    "alternate_sources_verified": 2,
+    "free_alternate_sources_with_licence_conditions": 1,
     "source_repair_unresolved": 6,
     "all_original_photo_visual_certifications_pending": true,
-    "note": "Source-level rights check only; 1 same-work higher-resolution candidate (Tintoretto), 2 new exact/suggested-file rights paths (Gentileschi and Rubens Transfiguration), and 1 rejected false same-work match (Rubens Genoa vs Vienna). All publication holds remain and no native-image visual certification has occurred.",
+    "note": "Source-level rights verification plus a focused visual original-file check. Tintoretto higher-resolution photographed source rejected for architecture/doorway/glare; Genoa Rubens rejected as a distinct painting from approved Vienna modello. Gentileschi and Rubens Nancy have exact/suggested file rights bases but are not publication-ready. All publication holds remain; 0 native-photo visual passes.",
     "original_two_same_work_claim_corrected": true,
-    "work_identity_correction": "The Genoa Rubens 1912×3072 photo is NOT the user-approved Vienna modello; removed from valid upgrades and explicitly blocked."
+    "work_identity_correction": "The Genoa Rubens 1912×3072 photo is NOT the user-approved Vienna modello; removed from valid upgrades and explicitly blocked.",
+    "tinoretto_full_photo_visual_rejected": true
   },
   "source_corrections_2026_10_30": {
     "verified_at": "2026-10-30",
@@ -626,6 +647,7 @@
       "https://commons.wikimedia.org/wiki/File:Circoncisione_di_Gesù_-_O._Gentileschi.png",
       "https://commons.wikimedia.org/wiki/File:La_transfiguration_Pierre_Paul_Rubens_0678.JPG"
     ],
-    "publication_hold": true
+    "publication_hold": true,
+    "source_image_visual_rejections": 2
   }
 }
