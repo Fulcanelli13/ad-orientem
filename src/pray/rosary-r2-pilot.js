@@ -62,6 +62,11 @@ const CSS = `
  display:block!important;font:500 12px/1.2 var(--ao-font-liturgical,Georgia,serif)!important;
  overflow:hidden;text-overflow:ellipsis;white-space:nowrap!important;max-width:132px
 }
+/* Opening and conclusion have a named pill; never repeat their label twice. */
+#aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryNamedTimeline .aoDevoStop[data-ao-rosary-r2-role="opening"] .aoDevoStopTitle,
+#aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryNamedTimeline .aoDevoStop[data-ao-rosary-r2-role="conclusion"] .aoDevoStopTitle{
+ display:none!important
+}
 #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryActiveCard{
  border-radius:12px!important;background:var(--surface-1,#151c24)!important;
  border:1px solid var(--border,rgba(255,255,255,.13))!important
@@ -72,6 +77,25 @@ const CSS = `
 #aoPrayerBookRoot[data-ao-rosary-r2="v1"] .aoRosaryR2NativePosition{
  display:block;max-width:100%;margin:0 0 5px;text-align:center;
  color:var(--muted,#aeb2b8);font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)
+}
+/* Reuse and pin the donor's real controls, never duplicate or rewire them. */
+#aoPrayerBookRoot[data-ao-rosary-r2="v1"] [data-ao-rosary-r2-dock="v1"]{
+ position:fixed!important;bottom:max(6px,env(safe-area-inset-bottom))!important;
+ left:max(10px,calc((100vw - 740px)/2))!important;
+ right:max(10px,calc((100vw - 740px)/2))!important;
+ margin:0!important;padding:8px!important;box-sizing:border-box!important;
+ display:flex!important;gap:8px!important;align-items:stretch!important;
+ background:var(--bg,#10151a)!important;
+ border:1px solid var(--border,rgba(255,255,255,.16))!important;
+ border-radius:15px!important;z-index:100!important;
+ box-shadow:0 -6px 22px rgba(0,0,0,.22)
+}
+#aoPrayerBookRoot[data-ao-rosary-r2="v1"] .pbShell{
+ padding-bottom:max(110px,calc(100px + env(safe-area-inset-bottom)))!important
+}
+#aoPrayerBookRoot[data-ao-rosary-r2="v1"] [data-ao-rosary-r2-dock="v1"] [data-lab-rosary-next],
+#aoPrayerBookRoot[data-ao-rosary-r2="v1"] [data-ao-rosary-r2-dock="v1"] [data-lab-rosary-prev]{
+ flex:1 1 0!important;min-width:0!important;min-height:48px!important
 }
 #aoPrayerBookRoot[data-ao-rosary-r2="v1"] [data-lab-rosary-next],
 #aoPrayerBookRoot[data-ao-rosary-r2="v1"] [data-lab-rosary-prev]{
@@ -106,8 +130,10 @@ export function applyRosaryR2Pilot({root,steps,index,chapters,french=false}={}){
   if(!ch)continue;
   const symbol=Number.isInteger(ch.mi)&&ch.mi>=0
    ? ROMANS[ch.mi]||String(ch.mi+1)
-   : ch.id==="opening"?(french?"Début":"Open")
-   : ch.id==="conclusion"?(french?"Fin":"End"):"·";
+   : ch.id==="opening"?(french?"Début":"Opening")
+   : ch.id==="conclusion"?(french?"Fin":"Closing"):"·";
+  button.dataset.aoRosaryR2Role=ch.id==="opening"?"opening":
+   ch.id==="conclusion"?"conclusion":"mystery";
   const number=button.querySelector(".aoDevoStopNumber");
   if(number)number.textContent=symbol;
   button.setAttribute("aria-label",ch.title);
@@ -124,6 +150,13 @@ export function applyRosaryR2Pilot({root,steps,index,chapters,french=false}={}){
   }
   caption.textContent=model.cueLabel||model.chapterTitle;
  }
+ // Both controls remain native donor buttons, with their original listeners.
+ // Only identify their shared row as a visual dock.
+ const prev=shell.querySelector("[data-lab-rosary-prev]");
+ const next=shell.querySelector("[data-lab-rosary-next]");
+ const originalRow=prev?.parentElement===next?.parentElement?next?.parentElement:null;
+ if(originalRow&&originalRow!==shell)
+   originalRow.dataset.aoRosaryR2Dock="v1";
  shell.dataset.aoRosaryR2Chapter=model.chapterId;
  shell.dataset.aoRosaryR2CanonicalStep=String(index);
  return true;
