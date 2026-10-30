@@ -10,6 +10,27 @@ const normal=s=>T(s).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCas
 const validUrl=s=>/^https?:\/\/[^\s<>"']+$/i.test(s);
 const https=s=>/^https:\/\/[^\s<>"']+$/i.test(s);
 const unique=a=>[...new Set(a)];
+
+// Explicit adjudications of divergent *existing* R49 site pins. Keep original
+// source records immutable and preserve the selected venue's item/source ID.
+// A church building is corroborated; a precise visitor entrance is NOT.
+// Never infer a new coordinate from the postal address or another venue.
+const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
+ "RG-956BB24E14EA":Object.freeze({
+  sourceId:"LMD:maternal-heart-of-mary-church-lewisham-australia",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W1072172027", // OSM exact FSSP church building
+   "https://maternalheart.org/contact-us/", // parish address, Charles O'Neill Way
+  ]),
+ }),
+ "RG-4279040C75AD":Object.freeze({
+  sourceId:"LMD:crypt-chapel-of-our-lady-of-sorrows-geraldton-australia",
+  evidence:Object.freeze([
+   "https://towerbells.org/data/AUGRLNSF.HTM", // Cathedral Avenue, independent building location
+   "https://www.geraldtondiocese.org.au/parishes/geraldton-parishes",
+  ]),
+ }),
+});
 const family=(aff,mapAffiliation)=>{
  const group=mapAffiliation?.(aff,"UNKNOWN");
  return T(group)||"OTHER";
@@ -55,7 +76,14 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
   const linked=exact.sort((a,b)=>
    Number(Boolean(b.geo?.precision==="building"))-Number(Boolean(a.geo?.precision==="building")));
   const selected=linked[0]??null;
-  const source_links=unique([...(linked.flatMap(item=>(item.source_links??[]).map(s=>s.url))),
+  const review=REVIEWED_SITE_GEO_SOURCES[anchor]??null;
+  const siteGeoSource=review?linked.find(x=>x.source_id===review.sourceId):null;
+  if(review&&(!selected||!sourceIds.includes(review.sourceId)||
+     !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
+     !Number.isFinite(siteGeoSource.geo.lng)||review.evidence.some(x=>!https(x))))
+    throw new Error("Unverifiable CL2 site coordinate adjudication: "+anchor);
+  const source_links=unique([...(review?.evidence??[]),
+    ...(linked.flatMap(item=>(item.source_links??[]).map(s=>s.url))),
     ...sourceUrls].filter(url=>https(url))).slice(0,12).map((url,i)=>Object.freeze({
      id:anchor+"-source-"+i,title:i===0?"Original listing":"Additional research source",
      issuer:"CL2 physical-site sources",url
@@ -66,7 +94,19 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    for(const a of linked)claimed.add(a.item_id);
    absorbedAliasRows+=Math.max(0,linked.length-1);
    matched++;
+   // Transfer the independently corroborated *existing source point* only,
+   // never the source's venue identity, timetable or implied entrance accuracy.
+   const siteGeo=review?Object.freeze({...selected.geo,
+    lat:siteGeoSource.geo.lat,lng:siteGeoSource.geo.lng,
+    precision:"source_marker_unassessed",approximate:true,
+    source_ref:review.sourceId,source_url:review.evidence[0],
+    review_scope:"PHYSICAL_CHURCH_NOT_ENTRANCE",
+   }):selected.geo;
    result.push(Object.freeze({...selected,
+    ...(review?{
+     geo:siteGeo,address:Object.freeze({formatted:T(description)}),
+     note:T(selected.note)+" Site marker cross-checked against the church building, not a verified entrance.",
+    }:{}),
     physical_group_id:anchor,source_ids:Object.freeze([...sourceIds]),
     physical_site_source:"CL2_MASTER",source_links:Object.freeze(source_links),
     search_text,affiliation_scope:"SOURCE_LABEL_ONLY",

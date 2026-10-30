@@ -39,6 +39,41 @@ assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-lis
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
+// Two geographically divergent R49 aliases retain the canonical selected
+// church identity, but use an independently corroborated existing source pin.
+for(const [group,canonical,corrected,evidence,expectedAddress] of [
+ ["RG-956BB24E14EA","AO-WORLD-R35-AU-01-06",
+  "LMD:maternal-heart-of-mary-church-lewisham-australia",
+  "https://mapcarta.com/W1072172027","Charles O'Neill"],
+ ["RG-4279040C75AD","AO-WORLD-R35-AU-02-20",
+  "LMD:crypt-chapel-of-our-lady-of-sorrows-geraldton-australia",
+  "https://towerbells.org/data/AUGRLNSF.HTM","Cathedral Avenue"],
+]){
+ const item=world.find(x=>x.physical_group_id===group);
+ const original=published.find(x=>x.source_id===canonical);
+ const alternate=published.find(x=>x.source_id===corrected);
+ assert.ok(item&&original&&alternate,"Only existing source-backed alias points may be selected");
+ assert.equal(item.item_id,original.item_id,"Canonical source identity must not change");
+ assert.equal(item.source_id,canonical);
+ assert.equal(item.geo.lat,alternate.geo.lat);
+ assert.equal(item.geo.lng,alternate.geo.lng);
+ assert.equal(item.geo.source_ref,corrected);
+ assert.equal(item.geo.source_url,evidence);
+ assert.equal(item.geo.review_scope,"PHYSICAL_CHURCH_NOT_ENTRANCE");
+ assert.equal(item.geo.precision,"source_marker_unassessed");
+ assert.equal(item.geo.approximate,true);
+ assert.equal(item.map_state,"PROVISIONAL");
+ assert.equal(item.map_publishable,true);
+ assert.ok(item.source_ids.includes(canonical)&&item.source_ids.includes(corrected));
+ assert.ok(item.source_links.some(x=>x.url===evidence));
+ assert.match(item.address.formatted,new RegExp(expectedAddress,"i"));
+ assert.deepEqual(published.find(x=>x.source_id===canonical),original,
+   "Frozen R49 source must not be modified by the read-model adjudication");
+}
+const unadjudicated=world.find(x=>x.physical_group_id==="RG-9DE31147B6ED");
+assert.ok(unadjudicated,"Galway source group must remain present");
+assert.equal(unadjudicated.geo.source_ref,undefined,
+ "Galway geometry stays under review; never infer an unsupported override");
 const newUs=newSites.find(x=>x.title==="St Philomena Catholic Church"&&x.subtitle.includes("US"));
 assert.ok(newUs,"Unlocated research-listed CMRI-directory chapel must remain searchable");
 assert.ok(filterPreliminaryR49(world,{query:"St Philomena Catholic Church"}).some(x=>x.item_id===newUs.item_id));
@@ -52,6 +87,7 @@ assert.equal(vm.addressOnly,735);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
 assert.match(html,/735/);
-assert.match(html,/address only/);
+assert.match(html,/list only · no map pin/);
+assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
 console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 735 additional searchable list-only sites, 3 separate published additions");
