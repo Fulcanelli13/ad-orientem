@@ -61,7 +61,9 @@ try{
     const prayerBox=activePrayer?.getBoundingClientRect();
     const prayerAboveDock=prayerBox&&dockBox
       ?Math.max(0,Math.min(prayerBox.bottom,dockBox.top)-Math.max(0,prayerBox.top)):0;
-    return {
+    const hero=shell?.querySelector(".lab-rosary-hero");
+    const heroVisible=Boolean(hero&&getComputedStyle(hero).display!=="none"&&hero.getClientRects().length);
+    return {heroVisible,prayerTop:prayerBox?.top??null,
      roots:document.querySelectorAll("#aoPrayerBookRoot.open").length,
      step:window.AO_ROSARY_V381?.state?.()?.step,
      count:window.AO_ROSARY_V381?.steps?.()?.length,
@@ -99,8 +101,12 @@ try{
      baseline.nextBottom<=baseline.viewportHeight-1&&baseline.prevBottom<=baseline.viewportHeight-1,
      "Both native controls must remain visible above the mobile safe-area dock: "+JSON.stringify(baseline));
    assert.ok(baseline.nextHeight>=44&&baseline.text>15,"Source prayer and Next action must remain usable");
-   assert.ok(baseline.prayerAboveDock>=18,"The first actual prayer must be readable before scrolling at "+
+   assert.ok(baseline.prayerAboveDock>=42,"R2 compact opening must show a meaningful portion of real prayer text above the fixed dock at "+
      width+"x"+height+": "+JSON.stringify(baseline));
+   assert.ok(baseline.prayerTop!==null&&baseline.prayerTop<=baseline.viewportHeight*.76,
+     "R2 compact opening must not spend the phone viewport on decorative chrome: "+JSON.stringify(baseline));
+   if(width===320)assert.equal(baseline.heroVisible,false,
+     "R2 short-phone optional emblem must not displace source-owned opening prayer");
    assert.ok(baseline.overflow<=2,"Phone horizontal overflow");
    await donor.locator("[data-lab-rosary-next]").click();
    await page.waitForFunction(before=>window.AO_ROSARY_V381?.state?.()?.step===before+1,
