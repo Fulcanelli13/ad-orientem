@@ -266,7 +266,7 @@ export function renderLiturgicalClock({
   return '<section class="aoClock" data-ao-liturgical-clock="v1" data-year-start="'+E(year.start)+'" aria-label="'+E(L(fr,"Liturgical Clock","Horloge liturgique"))+'">'
   +'<div class="aoClockHeader">'
   +'<div class="aoClockYearNav"><button type="button" data-cal-clock-year="-1" aria-label="'+E(L(fr,"Previous liturgical year","Année liturgique précédente"))+'">‹</button><strong>'+E(year.label)+'</strong><button type="button" data-cal-clock-year="1" aria-label="'+E(L(fr,"Next liturgical year","Année liturgique suivante"))+'">›</button></div>'
-  +(todayDate>=year.start&&todayDate<=year.end?"":'<button type="button" class="aoClockReturnToday" data-cal-clock-today>'+E(L(fr,"Today","Aujourd’hui"))+'</button>')+'</div>'
+   +'</div>'
   +'<div class="aoClockMain"><div class="aoClockDial" data-verified-days="'+daily.verified+'" data-total-days="'+daily.total+'" style="--ao-clock-daily-gradient:'+E(daily.gradient)+'"><div class="aoClockDailyTrack" aria-hidden="true"></div><svg viewBox="0 0 600 600" role="group" aria-label="'+E(L(fr,"Liturgical seasons and verified major celebrations","Temps liturgiques et grandes célébrations vérifiées"))+'">'
   +'<circle cx="300" cy="300" r="297" fill="none" stroke="var(--liturgical)" stroke-width="1.5"/><circle cx="300" cy="300" r="258" fill="none" stroke="var(--liturgical)" stroke-width="2"/>'
   +monthParts+monthBoundaryTicks+seasonPaths+subdivisions
