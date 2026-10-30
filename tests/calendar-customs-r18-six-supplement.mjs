@@ -10,9 +10,10 @@ import {
 
 const runtime=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 const main=calendarCustomArticleIds();
-assert.equal(main.length,35,"Review-only merge must not add any published Customs");
-assert.equal(new Set(main).size,35);
-assert.equal(calendarR18ElevenEditorialReviewRecords().length,11);
+assert.ok([35,36].includes(main.length),"Only the reviewed PENT-001 individual release may extend 35 public Customs");
+assert.equal(main.includes("PENT-001"),main.length===36,"PENT-001 is the only permitted additional publication");
+assert.equal(new Set(main).size,main.length);
+assert.equal(calendarR18ElevenEditorialReviewRecords().length,main.includes("PENT-001")?10:11);
 assert.match(R18_SIX_SOURCE_BLOB,/^[0-9a-f]{40}$/);
 assert.equal(R18_SIX_SOURCE_BLOB,"743308a8ba76c9251d7303143c95ef6a43a5c7f4",
   "Historic six source pack is pinned by the reviewed exact blob");
@@ -64,9 +65,9 @@ const mockHtml=calendarR18SixEditorialSupplementMarkup({publishedIds:mock});
 assert.equal((mockHtml.match(/data-cal-r18-six-review-key=/g)||[]).length,4);
 assert.ok(mockHtml.includes('data-cal-r18-six-count="4"'));
 assert.equal(calendarR18SixReviewRecords({publishedIds:mock,includePromoted:true}).length,6);
-assert.equal(calendarR18ElevenEditorialReviewRecords().length,11);
-assert.equal((calendarR18ElevenEditorialReviewMarkup().match(/data-cal-r18-eleven-key=/g)||[]).length,11);
+assert.equal(calendarR18ElevenEditorialReviewRecords().length,main.includes("PENT-001")?10:11);
+assert.equal((calendarR18ElevenEditorialReviewMarkup().match(/data-cal-r18-eleven-key=/g)||[]).length,main.includes("PENT-001")?10:11);
 assert.ok(runtime.includes('get("customsR18Eleven")==="review"'));
 assert.ok(runtime.includes('r18ElevenEditorialReviewEnabled()?calendarR18SixEditorialSupplementMarkup({fr:isFr}):""'));
 assert.ok(!runtime.includes("calendarR18SixEditorialSupplementMarkup({fr:isFr}):''"));
-console.log("PASS opt-in Calendar R18 review: 11 prior + 6 additional EN/FR source dossiers; 12 links, 35 published unchanged, no event/rite/adoption leakage");
+console.log("PASS opt-in Calendar R18 review: "+main.length+" public, "+calendarR18ElevenEditorialReviewRecords().length+" later pending, six original pending; 12 source links and no event/rite/adoption leakage");
