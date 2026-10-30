@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./reader-kyriale-notation-offline.mjs";
 import {normalizeScholaLocalProgramme,readScholaLocalProgramme,updateScholaLocalProgramme,
  applyScholaLocalProgramme,SCHOLA_OPTIONAL_EVENT_IDS} from "../src/mass/reader-schola-local-programme.js";
 import {KYRIALE_MASSES,KYRIALE_CREDOS,KYRIALE_SOURCE,
