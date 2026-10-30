@@ -7,12 +7,14 @@
  * reusable across dates/Hours; unavailable dates never fall back to a
  * reconstructed Proper, Mass calendar, or Divinum Officium CGI output.
  */
+import {ADVENT_I_COMPLINE_APPOINTMENTS}
+ from "./compline-advent-2026-appointments.js";
 export const OFFICE_BETA_CATALOG_SCHEMA="ao.office.beta-catalog.v1";
 export const OFFICE_BETA_HOURS=Object.freeze([
  "MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"
 ]);
-// Three explicitly appointed research assemblies now exist; only two
-// source-first Compline dates are currently implemented. No annual roster.
+// Exactly one First Vespers and eight separately reviewed Advent I
+// Compline dates exist as research pilots. No generated annual calendar.
 // This is NOT an approved, live, or published liturgical Office.
 const ENTRIES=Object.freeze([
  Object.freeze({
@@ -53,7 +55,22 @@ const ENTRIES=Object.freeze([
   precedenceResearchOnly:true,completeHourCertified:false,
   translationsApproved:false,rightsApproved:false,
   publishable:false,published:false
- })
+ }),
+ ...ADVENT_I_COMPLINE_APPOINTMENTS
+  .filter(a=>a.date!=="2026-11-28"&&a.date!=="2026-12-01")
+  .map(a=>Object.freeze({
+   key:"advent-2026-"+a.date+"-compline",
+   civilDate:a.date,officeDate:a.date,
+   hour:"COMPLINE",officePart:null,
+   label:a.label,assembly:"APPOINTED_COMPLINE_2026_SOURCE_FIRST",
+   appointedPsalmDay:a.psalmDay,officeClass:a.officeClass,
+   marianSection:a.marianSection,recitation:"SOLO",minister:"BELOW_DEACON",
+   sourceRevision:"126a07f91ede04664108abb6fb20ace3f4de14b9",
+   languages:Object.freeze(["la","en","fr"]),
+   precedenceResearchOnly:true,completeHourCertified:false,
+   translationsApproved:false,rightsApproved:false,
+   publishable:false,published:false
+  }))
 ]);
 function validDate(s){
  if(typeof s!=="string"||!/^\d{4}-\d\d-\d\d$/u.test(s))return false;
