@@ -97,7 +97,6 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
   const emblem=massInstitutionEmblem(group);
   const sourceLabel=String(item?.eyebrow??"").trim();
   const sourceIsNamed=Boolean(sourceLabel)&&!(/^(other|unknown|unclassified(?:\s*\(.*\))?|affiliation unverified|friendly community\s*[-—]\s*unclassified)$/i.test(sourceLabel));
-  const isGeneric=!group||["OTHER","UNKNOWN","DIOCESAN","DIOCESAN_UNSPECIFIED","INDEPENDENT","INDEPENDENT_CLERGY","RELIGIOUS_COMMUNITY"].includes(group);
   const useNamed=Boolean(!emblem&&sourceIsNamed&&group!=="DIOCESAN"&&group!=="DIOCESAN_UNSPECIFIED");
   const label=useNamed?sourceLabel:
     emblem?.label||(group==="DIOCESAN"||group==="DIOCESAN_UNSPECIFIED"
