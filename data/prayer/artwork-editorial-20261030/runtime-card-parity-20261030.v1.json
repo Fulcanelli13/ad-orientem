@@ -68,7 +68,13 @@
     "confession_macro_stages": 4,
     "canonical_prayers_with_candidates": 48,
     "canonical_direct_blueprint_slots": 47,
-    "canonical_current_loreto_reuses_1962_slot": 1
+    "canonical_current_loreto_reuses_1962_slot": 1,
+    "rosary_donor_step_range_per_five_decades": [
+      73,
+      81
+    ],
+    "rosary_step_generator_source_verified": true,
+    "rosary_hero_art_opening_closing_unverified": true
   },
   "runtime_stage_to_editorial_slot": {
     "benediction": [
@@ -882,7 +888,8 @@
   "unmapped_or_undercounted_runtime_surfaces": [
     {
       "route": "pray.rosary",
-      "note": "Donor AO_ROSARY_V381 steps() generates opening, mystery and bead states; no stable 267-blueprint join or all-bead artwork count yet"
+      "note": "Rosary step generator inspected: 73/78 Standard and 76/81 Devotional steps per five-decade set (Fatima omitted/included). 5 mystery mi values inherited by decade prayers; actual donor image visibility and opening/closing images not certified.",
+      "status": "GENERATOR_COUNTED_VISUAL_PARITY_OPEN"
     },
     {
       "route": "chaplets",
@@ -971,5 +978,54 @@
   },
   "runtime_identity_source": "src/pray/artwork-runtime-identity.v1.js",
   "verified_nonvisual_integration": "src/pray/presentation-runtime.js;src/pray/novena-runtime.js;src/pray/traditional-pray-runtime.js",
-  "canonical_prayer_bridge": "balanced-reuse-20261030-live-prayer-48-bridge.v1.json"
+  "canonical_prayer_bridge": "balanced-reuse-20261030-live-prayer-48-bridge.v1.json",
+  "rosary_donor_runtime": {
+    "source_path": "ao-packed-04392ad5e156c05227d9.js",
+    "blob_sha": "94f701f0a5347d5fd55bd3e292574925c49ee42a",
+    "function": "labRosarySteps(set)",
+    "exposed_api": "window.AO_ROSARY_V381.steps()",
+    "five_decade_stage_totals": [
+      {
+        "form": "standard",
+        "fatima": true,
+        "opening": 7,
+        "per_decade": 14,
+        "closing": 1,
+        "total": 78
+      },
+      {
+        "form": "standard",
+        "fatima": false,
+        "opening": 7,
+        "per_decade": 13,
+        "closing": 1,
+        "total": 73
+      },
+      {
+        "form": "devotional",
+        "fatima": true,
+        "opening": 3,
+        "per_decade": 14,
+        "closing": 8,
+        "total": 81
+      },
+      {
+        "form": "devotional",
+        "fatima": false,
+        "opening": 3,
+        "per_decade": 13,
+        "closing": 8,
+        "total": 76
+      }
+    ],
+    "supported_mystery_sets": [
+      "joyful",
+      "sorrowful",
+      "glorious",
+      "luminous"
+    ],
+    "stage_identity_rule": "Opening/conclusion have no mi, so inherit COV-pray.rosary; mystery introductions and decade prayers carry mi=0..4 and inherit STG-pray.rosary-02..16 or the five SEM-rosary luminous candidate pools.",
+    "visual_caveat": "The donor hero-art decorator explicitly clears mystery background when mi is null, therefore no opening/closing hero is currently demonstrated. Even where mi exists, photo rights/quality and DOM visibility are unverified.",
+    "source_status": "INSPECTED_BUNDLE_STEP_GENERATOR_NOT_BROWSER_RENDER_VERIFICATION"
+  }
 }
