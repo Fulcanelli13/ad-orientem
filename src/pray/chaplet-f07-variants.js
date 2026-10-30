@@ -181,6 +181,8 @@ const STYLES=`
 #aoPray435930 .aoF07LittleCrownCentre strong{font:400 29px/1.1 var(--ao-font-liturgical,Georgia,serif);color:var(--text,#f3e8da);white-space:nowrap}
 #aoPray435930 .aoF07LittleCrownCentre strong span{font:400 12px/1.1 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
 #aoPray435930 .aoF07LittleCrownCentre>span{font:400 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
+#aoPray435930 .aoF07LittleCrownTools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;margin:0 0 1px}
+#aoPray435930 .aoF07LittleCrownTools>small{font:600 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em;color:var(--liturgical,#cbb28b)}
 #aoPray435930 .aoF07LittleCrownPrompt{display:flex;align-items:baseline;gap:7px;min-width:0;text-align:center;flex-wrap:wrap;justify-content:center}
 #aoPray435930 .aoF07LittleCrownPrompt strong{font:400 16px/1.2 var(--ao-font-liturgical,Georgia,serif);color:var(--text,#f3e8da)}
 #aoPray435930 .aoF07LittleCrownPrompt small{font:400 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
