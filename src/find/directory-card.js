@@ -66,7 +66,9 @@ export function attachApprovedDirectoryMedia(items,{directoryPlaceLinks=[],appro
     if(!placeId)return item;
     const covers=A(approved).filter(img=>eligibleDirectoryImage(img,placeId));
     const photos=A(gallery).filter(img=>eligibleDirectoryImage(img,placeId));
-    if(!covers.length&&!photos.length)return item;
+    // An exact canonical Place link exists even before its photo passes rights review.
+    // Preserve the link for the Directory/Explore model without publishing any unapproved media.
+    if(!covers.length&&!photos.length)return {...item,place_id:placeId};
     return {...item,place_id:placeId,cover_media:covers[0]??photos[0],gallery_media:photos};
   });
 }
