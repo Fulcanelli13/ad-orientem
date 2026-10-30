@@ -1,0 +1,179 @@
+{
+  "schema": "ad-orientem.pius-x-daily-prayer-editorial-collation.b22.v1",
+  "created": "2026-10-28",
+  "research_pr": 1785,
+  "publication": {
+    "approved": false,
+    "displayEnabled": false,
+    "acceptedDefaultCount": 0,
+    "doNotModifyLiveCanonical": true
+  },
+  "primary_hierarchy": "Saint Pius X Catechism exact edition > translated historical edition after original check > other preconciliar manuals as optional complete prayers",
+  "source_witnesses": [
+    {
+      "id": "piusx-1905-it-appendix",
+      "edition": "Compendio della dottrina cristiana; Tipografia Vaticana, Roma, 1905",
+      "language": "it",
+      "type": "original_appendix",
+      "printPage": 396,
+      "scanPage": 408,
+      "transcription": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/408",
+      "printImage": "https://commons.wikimedia.org/wiki/File:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu",
+      "transcriptStatus": "PROOFREAD_WIKISOURCE_PAGE",
+      "originalImageStatus": "AVAILABLE_NOT_INDEPENDENTLY_INSPECTED_B22",
+      "openingPrayerVariant": "Appendix transcription has 'tutte la mie azioni'; Catechismo Maggiore Q974 has 'tutte le mie azioni'. Do not silently normalize; compare original printed glyphs before clearing."
+    },
+    {
+      "id": "piusx-1905-it-greater",
+      "edition": "Catechismo maggiore, parte quinta, capo VIII, Q972–985, 1905",
+      "language": "it",
+      "type": "catechetical_practice_guidance",
+      "questions": [
+        972,
+        973,
+        974,
+        983,
+        984,
+        985
+      ],
+      "transcription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quinta/Capo_VIII",
+      "mirror": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "role": "Q984 recommends at night the same prayers as morning, an examen and repentance; Q985 adds the before-sleep act. Do not replace the distinct shorter evening appendix or confuse Q983 (Angelus) with Q984 (evening)."
+    },
+    {
+      "id": "piusx-1913-fr-revised",
+      "edition": "Catéchisme de la doctrine chrétienne, authorized French edition of revised catechism, Paris 1913",
+      "language": "fr",
+      "type": "revised_edition_french",
+      "scanPages": [
+        117,
+        118
+      ],
+      "pdf": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
+      "transcriptStatus": "B21_PRIOR_IMAGE_REVIEW; B22_PDF_TEXT_EXTRACTION_CORROBORATES_CORE_ORDER",
+      "imageStatus": "B22_SCREENSHOT_RETRIEVAL_FAILED",
+      "role": "Appendix explicitly adds Gloria in morning, Credo and three theological acts in evening, then examen and contrition; De profundis and invocations begin a distinct adjacent devotional grouping."
+    },
+    {
+      "id": "piusx-1914-en-hagan-lead",
+      "edition": "Catechism of Christian doctrine, published by order of Pope Pius X, English translation Rev. John Hagan, Dublin: M. H. Gill, 1914 (152 pp.)",
+      "language": "en",
+      "type": "unverified_english_source_lead",
+      "catalogue": "https://catalogue.nli.ie/Record/vtls000760522",
+      "textStatus": "CATALOGUE_ONLY_NO_SCANNED_PRAYER_APPENDIX_VERIFIED",
+      "sourceEditionRelation": "UNRESOLVED; determine whether the English book reproduces 1905 original, revised catechism or different appendix before matching stages",
+      "noPublicEnglishWording": true
+    }
+  ],
+  "first_editorial_review": [
+    {
+      "id": "B22-1",
+      "edition": "piusx-1905-it",
+      "period": "morning",
+      "kind": "SOURCE_ORDER",
+      "requiredForEditionClaim": true,
+      "decision": "UNREVIEWED",
+      "components": [
+        "sign-of-cross",
+        "daily-prayer",
+        "our-father",
+        "hail-mary",
+        "creed",
+        "faith",
+        "hope",
+        "charity",
+        "salve-regina",
+        "guardian-angel"
+      ],
+      "note": "Gloria is not in appendix's printed morning recitation list; greater-catechism Q974 lists only through theological acts.",
+      "componentsScope": "ALL_PRINTED_ROUTINE_STAGES"
+    },
+    {
+      "id": "B22-2",
+      "edition": "piusx-1905-it",
+      "period": "evening",
+      "kind": "SOURCE_ORDER",
+      "requiredForEditionClaim": true,
+      "decision": "UNREVIEWED",
+      "components": [
+        "daily-prayer",
+        "our-father",
+        "hail-mary",
+        "glory-be",
+        "contrition",
+        "jesus-joseph-mary-1",
+        "jesus-joseph-mary-2",
+        "jesus-joseph-mary-3"
+      ],
+      "note": "Do not insert Credo and theological acts as if they are in the 1905 Evening Appendix. Q984 broader daily practice separately recommends same morning prayers and examen.",
+      "componentsScope": "ALL_PRINTED_ROUTINE_STAGES"
+    },
+    {
+      "id": "B22-3",
+      "edition": "piusx-1913-fr",
+      "period": "morning",
+      "kind": "SOURCE_ORDER",
+      "requiredForEditionClaim": true,
+      "decision": "UNREVIEWED",
+      "components": [
+        "sign-of-cross",
+        "daily-prayer",
+        "our-father",
+        "hail-mary",
+        "glory-be",
+        "creed",
+        "faith",
+        "hope",
+        "charity",
+        "salve-regina",
+        "guardian-angel"
+      ],
+      "note": "Preserve complete combined morning prayer; no duplicate offerings/acts as separate additions.",
+      "componentsScope": "ALL_PRINTED_ROUTINE_STAGES"
+    },
+    {
+      "id": "B22-4",
+      "edition": "piusx-1913-fr",
+      "period": "evening",
+      "kind": "SOURCE_ORDER",
+      "requiredForEditionClaim": true,
+      "decision": "UNREVIEWED",
+      "components": [
+        "daily-prayer",
+        "our-father",
+        "hail-mary",
+        "glory-be",
+        "creed",
+        "faith",
+        "hope",
+        "charity",
+        "examen",
+        "contrition"
+      ],
+      "supplementsOutsideCore": [
+        "de-profundis",
+        "jesus-joseph-mary"
+      ],
+      "note": "The printed evening rubric explicitly adds examen followed by contrition; adjacent De profundis is titled for souls in Purgatory.",
+      "componentsScope": "PRIMARY_PRINTED_ROUTINE_ONLY",
+      "supplementGrouping": "ADJACENT_EXTRA_DEVOTIONS_NOT_REQUIRED_BY_EVENING_RUBRIC"
+    }
+  ],
+  "orthographyIssue": {
+    "id": "B22-O1",
+    "witness": "piusx-1905-it-appendix",
+    "uncertainPhrase": "tutte la mie azioni",
+    "comparisonReading": "tutte le mie azioni",
+    "status": "ORIGINAL_IMAGE_REQUIRED_FOR_FINAL_CHOICE",
+    "editorialPolicy": "Retain diplomatic transcription with anomaly noted; do not silently normalize or attribute corrected reading to appendix."
+  },
+  "releaseHolds": [
+    "User stage/order editorial acceptance",
+    "1905 original page direct image comparison of orthography",
+    "1913 French proofread independently against print images",
+    "English source-era complete daily prayer text edition identification and page verification",
+    "Source/territory rights assessment for text reproduction",
+    "No automatic approval from exclusion-based reviewer"
+  ],
+  "note": "This is a research decision ledger only. Do not import into the public bundle or alter approved-manifest release switches."
+}

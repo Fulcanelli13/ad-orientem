@@ -1,0 +1,345 @@
+{
+  "schema": "ad-orientem.daily-prayer-duplication-adjudication.v1",
+  "batch": "B03",
+  "date": "2026-10-27",
+  "sources": [
+    "Baltimore 1888/89",
+    "With God 1911",
+    "Young Man's Guide 1910",
+    "Blessed Be God 1925"
+  ],
+  "basis": "Historical Wikisource Daily Prayer chapter complete prayer passages compared by topic, incipit, wording and closing; NOT original scanned facsimile certification",
+  "scope": {
+    "clusters_reviewed": 17,
+    "source_occurrences_in_reviewed_clusters": 41,
+    "result_classes": {
+      "TWO_PERIOD_SPECIFIC_TEXTS": 1,
+      "SHARED_SHORT_ASPIRATION": 1,
+      "SHARED_PRAYER_WITH_LAYOUT_VARIANTS": 1,
+      "TWO_SUBSTANTIVE_OFFERING_FORMS": 1,
+      "SAME_BIBLICAL_PSALM_TRANSLATION_VARIANTS": 1,
+      "SHARED_INSTRUCTION_NOT_PRAYER": 1,
+      "SAME_PRAYER_REPEATED_IN_BOOK": 1,
+      "SHARED_EVENING_ACT_OF_LOVE": 1,
+      "SHARED_BEDTIME_COMMENDATION": 1,
+      "SHARED_NIGHT_INVOCATION": 1,
+      "TWO_DIFFERENT_CONTEXTUAL_CONTRITIONS": 2,
+      "SHARED_OPENING_DISTINCT_INTERCESSIONS": 1,
+      "SHARED_TRADITIONAL_COLLECT_WITH_TRANSLATION_VARIANTS": 1,
+      "SHARED_ACT_OF_CONTRITION_MINOR_EDITION_VARIANTS": 1,
+      "SHARED_MEMORARE_MINOR_PRINT_VARIANTS": 1,
+      "SHARED_NIGHT_COLLECT": 1
+    },
+    "print_scan_certified": 0,
+    "production_changes": 0
+  },
+  "clusters": [
+    {
+      "result": "TWO_PERIOD_SPECIFIC_TEXTS",
+      "tabs": "two morning/evening contexts, not four source tabs",
+      "finding": "LAS1911 and YMG1910 morning Adoration and Thanksgiving use the same web transcription; LAS1911 and YMG1910 evening Adoration uses the same shorter day-end formula. Morning and evening are not the same prayer.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.047",
+        "AO.DAILY.B01.059",
+        "AO.DAILY.B01.068",
+        "AO.DAILY.B01.080"
+      ],
+      "count": 4,
+      "incipit_fingerprint": "almighty and eternal god i adore thee",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_SHORT_ASPIRATION",
+      "tabs": "one shared invocation",
+      "finding": "Identical Trinitarian aspiration appears in the morning and evening sequences of both Lasance books; do not count it four times.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.046",
+        "AO.DAILY.B01.058",
+        "AO.DAILY.B01.067",
+        "AO.DAILY.B01.079"
+      ],
+      "count": 4,
+      "incipit_fingerprint": "blessed be the holy trinity one god",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_PRAYER_WITH_LAYOUT_VARIANTS",
+      "tabs": "one guardian-angel text with citations",
+      "finding": "Baltimore, With God, and Young Man's Guide show the same four-line Angel of God verse; layout and punctuation differ, not the devotional substance.",
+      "locators": [
+        "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.033",
+        "AO.DAILY.B01.056",
+        "AO.DAILY.B01.077"
+      ],
+      "count": 3,
+      "incipit_fingerprint": "angel of god my guardian dear",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "TWO_SUBSTANTIVE_OFFERING_FORMS",
+      "tabs": "Apostleship historical forms may warrant two tabs",
+      "finding": "With God and Young Man's Guide Morning Offerings align closely, with monthly papal intention. Blessed Be God 1925 instead includes reparation for sins and intentions of the Apostleship. Modern canonical USCCB form has further changes.",
+      "locators": [
+        "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.004",
+        "AO.DAILY.B01.078",
+        "AO.DAILY.B01.087"
+      ],
+      "count": 3,
+      "incipit_fingerprint": "o jesus through the immaculate heart of mary",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SAME_BIBLICAL_PSALM_TRANSLATION_VARIANTS",
+      "tabs": "one Psalm 129 family, source-accurate text witnesses",
+      "finding": "All three print Vulgate Psalm 129 and related departed prayers, but the wording differs (e.g. 'voice of my supplication' versus 'supplications') and bundled prayers differ. Do not conflate the psalm with appended versicles or collect.",
+      "locators": [
+        "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.014",
+        "AO.DAILY.B01.066",
+        "AO.DAILY.B01.086"
+      ],
+      "count": 3,
+      "incipit_fingerprint": "out of the depths i have cried to thee",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_INSTRUCTION_NOT_PRAYER",
+      "tabs": "no competing prayer tabs; historical rubric separately",
+      "finding": "Same examination directions in Lasance 1910 and 1911, chiefly punctuation and line-break variants; these are instructions rather than a stand-alone prayer. Do not count as historical prayer body.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.060",
+        "AO.DAILY.B01.081"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "here examine your conscience on the faults of the da",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SAME_PRAYER_REPEATED_IN_BOOK",
+      "tabs": "one aspiration, reusable in morning/evening",
+      "finding": "Baltimore prints same 'Holy, Holy, Holy' aspiration at the opening of its lay Morning form and close of its Evening form.",
+      "locators": [
+        "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+        "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.020",
+        "AO.DAILY.B01.045"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "holy holy holy lord god of hosts",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_EVENING_ACT_OF_LOVE",
+      "tabs": "one evening Act of Love",
+      "finding": "Lasance 1910 and 1911 evening text shares same complete Act of Love, including perseverance petition.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.062",
+        "AO.DAILY.B01.083"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "i love thee my lord and my god",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_BEDTIME_COMMENDATION",
+      "tabs": "one commending formula",
+      "finding": "Last bedtime line in both Lasance editions is the same. Not the same text as the longer antiphon/collect.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.090",
+        "AO.DAILY.B01.093"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "lord into thy hands i commend my spirit",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_NIGHT_INVOCATION",
+      "tabs": "one invocation",
+      "finding": "The same nighttime invocation appears in Lasance 1910 and 1911; accompanying guardian-angel prayer should be stored as a separate prayer unit.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.065",
+        "AO.DAILY.B01.085"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "may the blessed virgin mary st joseph and all the sa",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "TWO_DIFFERENT_CONTEXTUAL_CONTRITIONS",
+      "tabs": "morning and evening alternative forms",
+      "finding": "Within the Young Man's Guide alone, morning Contrition concludes with avoidance of occasions and doing God's will; evening form asks for perseverance in a firmer resolve. Shared incipit was a misleading duplicate signal.",
+      "locators": [
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.073",
+        "AO.DAILY.B01.082"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "my god i am truly sorry for having sinned",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_OPENING_DISTINCT_INTERCESSIONS",
+      "tabs": "two alternative intercessory prayers",
+      "finding": "Blessed Be God and Baltimore begin with the Pope/Church but their subsequent petitions and recipients differ. They should not be merged simply because opening words match.",
+      "locators": [
+        "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+        "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.013",
+        "AO.DAILY.B01.041"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "o god hear my prayers on behalf of our holy father",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_TRADITIONAL_COLLECT_WITH_TRANSLATION_VARIANTS",
+      "tabs": "one collect family with edition witnesses",
+      "finding": "Blessed Be God and Lasance Young Man's Guide print closely related collects for the departed, with different connective words and endings. This remains distinct from the De Profundis Psalm.",
+      "locators": [
+        "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.015",
+        "AO.DAILY.B01.091"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "o god the creator and redeemer of all the faithful",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_ACT_OF_CONTRITION_MINOR_EDITION_VARIANTS",
+      "tabs": "one historical Contrition text family",
+      "finding": "Baltimore morning and Blessed Be God evening forms match in substantive wording ('loss of heaven and pains of hell' + confession/penance/amendment). Minor punctuation and final Amen do not warrant separate tabs. Modern canonical form is different.",
+      "locators": [
+        "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+        "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.012",
+        "AO.DAILY.B01.030"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "o my god i am heartily sorry for having offended",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "TWO_DIFFERENT_CONTEXTUAL_CONTRITIONS",
+      "tabs": "morning and evening alternative forms",
+      "finding": "With God morning and evening forms begin alike but close with different resolutions: morning emphasizes God's will; evening explicit firm resolve with grace. Do not collapse.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.052",
+        "AO.DAILY.B01.061"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "o my god i am truly sorry for having sinned",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_MEMORARE_MINOR_PRINT_VARIANTS",
+      "tabs": "one Memorare",
+      "finding": "Lasance evening texts share the Memorare; variations include 'any one' versus 'anyone' and typographic punctuation, not a different devotional formula.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.063",
+        "AO.DAILY.B01.084"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "remember o most gracious virgin mary",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    },
+    {
+      "result": "SHARED_NIGHT_COLLECT",
+      "tabs": "one Visita quaesumus (Lasance witnesses)",
+      "finding": "Lasance's 1910 and 1911 versions give the same substantive English night collect, ending 'world without end. Amen.' Compare separate Blessed Be God and Key of Heaven renderings as edition variants.",
+      "locators": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ],
+      "occurrence_ids": [
+        "AO.DAILY.B01.089",
+        "AO.DAILY.B01.092"
+      ],
+      "count": 2,
+      "incipit_fingerprint": "visit we beseech thee o lord this habitation",
+      "verification": "WEB_FULL_PRAYER_PASS_DONE_PRINT_SCAN_PENDING",
+      "editorial_status": "RECOMMENDATION_NOT_APPROVED"
+    }
+  ],
+  "guardrails": [
+    "Comparisons only apply to listed occurrences and cannot be used to infer complete books were fully mined.",
+    "Shared opening does not imply identical prayer. Morning and evening use separate texts when endings differ.",
+    "Historical manuals may place Confiteor and prayer-style absolution outside Mass: preserve private-use actor semantics; never simulate a priest's absolution.",
+    "Do not publish historical indulgence tallies as current grants.",
+    "Do not merge individual psalms, antiphons, versicles, and collects into a single misleading reusable prayer."
+  ]
+}

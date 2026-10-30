@@ -1,0 +1,618 @@
+{
+  "schema": "ad-orientem.daily-prayer-presets-proposed-b11.v1",
+  "batch": "B11",
+  "date": "2026-10-27",
+  "source_readiness": "These are editorial preset compositions drawing on exact prayer witnesses and existing canonical IDs. A given historical book's 'complete routine' would require edition-faithful original ordering; none of these Ad Orientem composites is falsely attributed to a historical manual.",
+  "presets": [
+    {
+      "id": "morning-short-en",
+      "lang": "en",
+      "period": "morning",
+      "name": "Short",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "Shared canonical text; verify historical-era textual witness on release."
+        },
+        {
+          "stage": "adoration-thanksgiving",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-morning-adoration-thanksgiving"
+          },
+          "required": true,
+          "notes": "One short complete prayer."
+        },
+        {
+          "stage": "morning-offering",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b10-bbg-1925-apostleship-morning-offering"
+          },
+          "required": true,
+          "notes": "B10 editorial recommended, not user-approved."
+        },
+        {
+          "stage": "our-father",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_our_father"
+          },
+          "required": false,
+          "notes": "Optional; historic common-prayers source exists but canonical version modern provenance."
+        },
+        {
+          "stage": "guardian-angel",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_guardian_angel"
+          },
+          "required": false,
+          "notes": "Optional; Baltimore printed p.54 witness verified; canonical English may differ in capitalization."
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "No full-ritual historical-book attribution; composed by Ad Orientem from sourced prayers."
+    },
+    {
+      "id": "morning-complete-en",
+      "lang": "en",
+      "period": "morning",
+      "name": "Complete",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "Shared canonical text; verify historical-era textual witness on release."
+        },
+        {
+          "stage": "adoration-thanksgiving",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-morning-adoration-thanksgiving"
+          },
+          "required": true,
+          "notes": "One short complete prayer."
+        },
+        {
+          "stage": "morning-offering",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b10-bbg-1925-apostleship-morning-offering"
+          },
+          "required": true,
+          "notes": "B10 editorial recommended, not user-approved."
+        },
+        {
+          "stage": "faith",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-morning-faith"
+          },
+          "required": true,
+          "notes": "Completes the faith component of the three theological acts."
+        },
+        {
+          "stage": "hope",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-morning-hope"
+          },
+          "required": true,
+          "notes": "Full 1911 pp137–138 checked on original images B11; wording preserved."
+        },
+        {
+          "stage": "charity",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-morning-love"
+          },
+          "required": true,
+          "notes": "Full 1911 p138 checked on original image B11."
+        },
+        {
+          "stage": "supplication",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "moran-1883-morning-grace"
+          },
+          "required": false,
+          "notes": "One complete Moran 1883 prayer."
+        },
+        {
+          "stage": "our-father",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_our_father"
+          },
+          "required": false,
+          "notes": "Optional; historic common-prayers source exists but canonical version modern provenance."
+        },
+        {
+          "stage": "guardian-angel",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_guardian_angel"
+          },
+          "required": false,
+          "notes": "Optional; Baltimore printed p.54 witness verified; canonical English may differ in capitalization."
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "Core historical acts are fully image checked; historical-source canonical common prayer wording and jurisdictional rights review still pending."
+    },
+    {
+      "id": "evening-short-en",
+      "lang": "en",
+      "period": "evening",
+      "name": "Short",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "Shared."
+        },
+        {
+          "stage": "adoration-thanksgiving-prayer-for-light",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-evening-adoration-thanksgiving-light"
+          },
+          "required": true,
+          "notes": "A single prayer with three functions; never duplicated."
+        },
+        {
+          "stage": "guided-examination",
+          "witness": {
+            "type": "guided-editorial-control",
+            "id": "daily-evening-examen"
+          },
+          "required": true,
+          "notes": "Questions/reflection are not historical vocal prayer. No sins storage/score by default."
+        },
+        {
+          "stage": "contrition",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-evening-contrition"
+          },
+          "required": true,
+          "notes": "Short complete act, distinct from Morning text."
+        },
+        {
+          "stage": "bedtime-protection",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "moran-1883-evening-visita-quaesumus"
+          },
+          "required": true,
+          "notes": "Traditional collect, one complete prayer; does not advance on timer."
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "Guided examen is editorial content and no scores or personal sins are stored."
+    },
+    {
+      "id": "evening-complete-en",
+      "lang": "en",
+      "period": "evening",
+      "name": "Complete",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "Shared."
+        },
+        {
+          "stage": "presence",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-bbg-evening-presence"
+          },
+          "required": true,
+          "notes": "Longer distinct presence act."
+        },
+        {
+          "stage": "thanksgiving",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-bbg-evening-thanksgiving"
+          },
+          "required": true,
+          "notes": "With optional non-verbal pause cue from 1925 source."
+        },
+        {
+          "stage": "prayer-for-light",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b12-baltimore-evening-examination-light"
+          },
+          "required": true,
+          "notes": "Baltimore Manual printed p.82 full body and recitation boundary directly compared with source page image on 2026-10-28; still awaiting editorial default decision and territorial reproduction/reuse rights review."
+        },
+        {
+          "stage": "guided-examination",
+          "witness": {
+            "type": "guided-editorial-control",
+            "id": "daily-evening-examen"
+          },
+          "required": true,
+          "notes": "Script not yet approved."
+        },
+        {
+          "stage": "contrition",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-evening-contrition"
+          },
+          "required": true,
+          "notes": "May optionally swap for B09 Moran long Contrition."
+        },
+        {
+          "stage": "act-of-love",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b11-lasance-evening-love"
+          },
+          "required": false,
+          "notes": "Complete act; distinct optional."
+        },
+        {
+          "stage": "faithful-departed",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "moran-1883-evening-for-faithful-departed"
+          },
+          "required": false,
+          "notes": "Proper collect, not De Profundis."
+        },
+        {
+          "stage": "night-prayer",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-lasance-alphonsus-night"
+          },
+          "required": false,
+          "notes": "Historical attribution in 1911 book only."
+        },
+        {
+          "stage": "salva-nos",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "moran-1883-evening-salva-nos"
+          },
+          "required": false,
+          "notes": "Antiphon."
+        },
+        {
+          "stage": "visita",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "moran-1883-evening-visita-quaesumus"
+          },
+          "required": true,
+          "notes": "Collect; can accompany antiphon."
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_EDITORIAL_AND_RIGHTS_REVIEW",
+      "hold_notes": "All historical prayer forms in this proposal now have complete body and original-page checks. Canonical common prayer wording/provenance, legal reuse and user editorial approval remain outstanding."
+    },
+    {
+      "id": "morning-short-fr",
+      "lang": "fr",
+      "period": "morning",
+      "name": "Court",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "French shared prayer version still must be checked against actual historical source."
+        },
+        {
+          "stage": "thanksgiving-offering",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "fr-1905-morning-thanks-offering"
+          },
+          "required": true,
+          "notes": "One complete combined historical French prayer; do not repeat at two stages."
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "Uses combined French historical Thanksgiving/Offering once."
+    },
+    {
+      "id": "morning-complete-fr",
+      "lang": "fr",
+      "period": "morning",
+      "name": "Complet",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "French shared prayer version still must be checked against actual historical source."
+        },
+        {
+          "stage": "thanksgiving-offering",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "fr-1905-morning-thanks-offering"
+          },
+          "required": true,
+          "notes": "One complete combined historical French prayer; do not repeat at two stages."
+        },
+        {
+          "stage": "faith",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "fr-1905-morning-act-faith"
+          },
+          "required": false,
+          "notes": "Complete profile enabled"
+        },
+        {
+          "stage": "hope",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "fr-1905-morning-act-hope"
+          },
+          "required": false,
+          "notes": "Complete profile enabled"
+        },
+        {
+          "stage": "charity",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "fr-1905-morning-act-charity"
+          },
+          "required": false,
+          "notes": "Complete profile enabled"
+        },
+        {
+          "stage": "supplication",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "fr-1905-morning-supplication"
+          },
+          "required": false,
+          "notes": "Complete profile enabled"
+        },
+        {
+          "stage": "resolution",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "fr-1905-morning-resolution"
+          },
+          "required": false,
+          "notes": "Complete profile enabled"
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "All FR stages historically checked, but shared sign-of-cross and rights gate open."
+    },
+    {
+      "id": "evening-short-fr",
+      "lang": "fr",
+      "period": "evening",
+      "name": "Court",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "Historical French form to compare to canonical current."
+        },
+        {
+          "stage": "thanksgiving",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-thanksgiving"
+          },
+          "required": true,
+          "notes": "Full historical source form."
+        },
+        {
+          "stage": "light",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-light"
+          },
+          "required": true,
+          "notes": "Distinct petition before examen."
+        },
+        {
+          "stage": "guided-examination",
+          "witness": {
+            "type": "guided-editorial-control",
+            "id": "daily-evening-examen"
+          },
+          "required": true,
+          "notes": "Reflection; no made-up old prayer body."
+        },
+        {
+          "stage": "contrition",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-contrition"
+          },
+          "required": true,
+          "notes": "Full French original."
+        },
+        {
+          "stage": "night-protection",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-bedtime"
+          },
+          "required": true,
+          "notes": "Includes Marian/angelic invocation; one paragraph."
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "No English translations manufactured."
+    },
+    {
+      "id": "evening-complete-fr",
+      "lang": "fr",
+      "period": "evening",
+      "name": "Complet",
+      "steps": [
+        {
+          "stage": "sign-of-cross",
+          "witness": {
+            "type": "canonical-prayer-id",
+            "id": "foundations_sign_of_cross"
+          },
+          "required": true,
+          "notes": "Historical French form to compare to canonical current."
+        },
+        {
+          "stage": "adoration",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-adoration"
+          },
+          "required": false,
+          "notes": "Full historical source form."
+        },
+        {
+          "stage": "thanksgiving",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-thanksgiving"
+          },
+          "required": true,
+          "notes": "Full historical source form."
+        },
+        {
+          "stage": "light",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-light"
+          },
+          "required": true,
+          "notes": "Distinct petition before examen."
+        },
+        {
+          "stage": "guided-examination",
+          "witness": {
+            "type": "guided-editorial-control",
+            "id": "daily-evening-examen"
+          },
+          "required": true,
+          "notes": "Reflection; no made-up old prayer body."
+        },
+        {
+          "stage": "contrition",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-contrition"
+          },
+          "required": true,
+          "notes": "Full French original."
+        },
+        {
+          "stage": "resolution",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-resolution"
+          },
+          "required": false,
+          "notes": "Full historical source."
+        },
+        {
+          "stage": "intercession",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-intercession"
+          },
+          "required": false,
+          "notes": "One combined living/dead prayer."
+        },
+        {
+          "stage": "night-protection",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-bedtime"
+          },
+          "required": true,
+          "notes": "Includes Marian/angelic invocation; one paragraph."
+        },
+        {
+          "stage": "visita",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-evening-visita"
+          },
+          "required": false,
+          "notes": "A separate collect."
+        },
+        {
+          "stage": "saints",
+          "witness": {
+            "type": "historical-form-id",
+            "id": "b09-fr1905-prayer-all-saints"
+          },
+          "required": false,
+          "notes": "Optional conclusion"
+        }
+      ],
+      "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "Some 1905 printed combined texts include period language; editorial suitability review."
+    }
+  ],
+  "flow_behavior": {
+    "text_navigation": "manual-next-only",
+    "do_not_truncate_complete_prayer": true,
+    "hidden_timer_by_default": true,
+    "timer_models": [
+      "elapsed",
+      "gentle-target",
+      "silent-meditation"
+    ],
+    "timer_cannot_auto_advance": true,
+    "privacy": "Session analytics and personal examen/sins OFF by default; do not store sins text.",
+    "user_formulation_preferences": "saved by stage and language; default choices proposed only",
+    "combined_forms": "one form can satisfy several stages but only renders once per recitation",
+    "complementary_night_prayers": "Salva nos, Visita and St Alphonsus may be selected together, not exclusive textual variants"
+  },
+  "b11_update": "B11 image-checked 14 complete original English texts from 8 print-page images (including full Lasance morning Hope and Charity); proposed Morning Complete EN no longer held for those forms.",
+  "b12_update": "The English Complete Evening prayer-for-light hold now has a complete 1888 historical text from a proofread period-page transcription, not original-image-certified. All draft presets now have source-form IDs (besides existing shared canonicals/editorial examen).",
+  "b20_update": "On 2026-10-28 the Baltimore 1888 English Complete Evening separate prayer for light was verified directly against its original printed p.82 image. All eight proposed routine historical form IDs have complete checked source bodies; no editorial default or public source release is approved."
+}
