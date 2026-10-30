@@ -106,6 +106,11 @@ export function renderTlmChurchProfile(item,language="en"){
    '<strong>'+E(introLabel)+'</strong></div></div>'+
    '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
   '</header></div>';
+ // The original Directory's own statement of evidence/scope is substantive.
+ // Do not lose it when replacing the legacy generic detail reader.
+ const originalSummary=T(language==="fr"&&item?.summary_fr?item.summary_fr:item?.summary);
+ if(originalSummary&&!originalSummary.startsWith("Provisional venue pin."))
+  html+='<p class="aoTlmProfileSourceLead">'+E(originalSummary)+'</p>';
  // Provisional source labels are useful for identification, not ecclesial proof.
  if(!v.ministries.length)html+='<p class="aoTlmProfileListedNote" data-tlm-source-affiliation="'+E(item?.community_id)+'">'+
  E(L(language,"Affiliation is source-reported; it does not establish any specific Mass, rite, missal or ecclesial status.",
@@ -214,6 +219,8 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 @media(max-width:560px){.aoTlmChurchProfile{width:100%;max-width:none;max-height:90dvh;padding:12px 13px max(30px,env(safe-area-inset-bottom));border-radius:18px 18px 0 0}.aoTlmProfilePanel{padding:12px}.aoTlmProfileIdentityGrid{gap:7px}.aoTlmProfileDatum{padding:9px 8px}.aoTlmProfileDatum strong{font-size:12px}.aoTlmProfileSchedule{flex-direction:column;gap:4px}.aoTlmProfileSchedule>span{max-width:none}}
 @media(prefers-reduced-motion:reduce){.aoTlmChurchProfile{scroll-behavior:auto}}
 
+.aoTlmProfileSourceLead{margin:15px 0 4px;padding:10px 13px;border-left:2px solid #ceb27c;background:#1c2b3638;border-radius:0 9px 9px 0;font:500 12px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:#dfd5c2}
+@media(max-width:560px){.aoTlmProfileSourceLead{font-size:11px;padding:9px 10px}}
 /* Editorial church-profile layout: photographic cover and distinct ministry
  * insignia, with text-first provenance and no unverified status inference. */
 .aoTlmChurchProfile{width:min(100%,920px);max-width:920px;max-height:min(94dvh,1000px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;padding:0 21px 28px;border-radius:20px;box-shadow:0 24px 85px #04080ca0}
