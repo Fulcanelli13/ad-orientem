@@ -2,7 +2,7 @@ import { removeExcludedLegacyHomeArtwork } from "./legacy-art-exclusions.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
-import { calendarObservanceAlias } from "../calendar/observance-title.js";
+import { calendarObservanceAlias, verifiedFerialSundayMassName } from "../calendar/observance-title.js";
 import { latinIntroitIncipit } from "../calendar/ordo-mass-facts.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { TODAY_V2_CSS } from "./today-v2-styles.js";
@@ -126,7 +126,8 @@ export function buildHomeViewModel(state,win=globalThis){
   const observedTitle=resolvedForSelection?(day?.main?.title||celebration):celebration;
   const properTitle=resolvedForSelection&&proper?
     ((language==="fr"?(proper.nameFr||proper.name):proper.name)||"").trim(): "";
-  const massFormularyName=properTitle&&properTitle!==observedTitle?properTitle:null;
+  const massFormularyName=properTitle&&properTitle!==observedTitle?properTitle:
+    resolvedForSelection&&proper?verifiedFerialSundayMassName(resolution,language):null;
   // Observed weekday context is not a separate Mass-formulary claim.
   // Only the canonical Calendar's source-verified observance alias may provide it.
   const contextualObservanceName=resolvedForSelection&&proper?calendarObservanceAlias(resolution,language):null;
