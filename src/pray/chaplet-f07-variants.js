@@ -379,6 +379,72 @@ const STYLES=`
 @media(max-width:359px){#aoPray435930 .aoF07LittleCrownCircle{width:min(100%,282px)}
  #aoPray435930 .aoF07LittleCrownPrompt{gap:3px}
  #aoPray435930 .aoF07LittleCrownPrompt small{font-size:9px}}
+/* F07 editorial pass V1 — preserve the existing host/nav and source engines,
+   but give the four Claude-inspired chaplets one quiet reading hierarchy. */
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"],.aoPreciousBlood[data-ao-f07-variant="precious-blood"],.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head{
+ padding:7px 10px 8px!important;gap:7px;align-items:center;
+}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"],.aoPreciousBlood[data-ao-f07-variant="precious-blood"],.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head>div{padding-top:0}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"],.aoPreciousBlood[data-ao-f07-variant="precious-blood"],.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head h1{
+ font-size:clamp(17px,4.75vw,22px);line-height:1.08;margin:2px 0 0;letter-spacing:-.012em
+}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"],.aoPreciousBlood[data-ao-f07-variant="precious-blood"],.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head small{
+ font-size:9px;line-height:1;letter-spacing:.13em
+}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"],.aoPreciousBlood[data-ao-f07-variant="precious-blood"],.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head p{
+ font-size:10px;line-height:1.15;margin:2px 0 0
+}
+#aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"],.aoPreciousBlood[data-ao-f07-variant="precious-blood"],.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head button{
+ width:38px;height:38px
+}
+/* The source/meditation details remain accessible; the actual action dock
+   comes last in visual order and stays in reach while a long prayer scrolls. */
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"]{
+ display:flex;flex-direction:column;min-height:calc(94dvh - 86px)
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsSource{
+ order:8;margin:9px 0 5px
+}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsActions{
+ order:10;position:sticky;bottom:0;z-index:18;margin-top:auto;
+ padding:8px 3px max(8px,env(safe-area-inset-bottom));
+ background:var(--surface-1,#0c1418)
+}
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"]{
+ display:flex;flex-direction:column;min-height:calc(94dvh - 86px)
+}
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodProvenance{
+ order:10;margin:5px 0 4px
+}
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodActions{
+ order:12;position:sticky;bottom:0;z-index:18;margin-top:auto;
+ padding:8px 2px max(8px,env(safe-area-inset-bottom));
+ background:var(--surface-1,#0c1418)
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"]{
+ min-height:calc(94dvh - 86px)
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownPrompt{
+ display:none
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownSource{
+ order:10;margin:7px 0 4px
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownActions{
+ order:12;position:sticky;bottom:0;z-index:18;margin-top:auto;
+ padding:8px 3px max(8px,env(safe-area-inset-bottom));
+ background:var(--surface-1,#0c1418);border-top:1px solid var(--border,rgba(210,190,150,.23))
+}
+@media(max-width:359px){
+ #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"],
+ #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"],
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"]{
+  min-height:calc(94dvh - 72px)
+ }
+ #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayer{
+  margin-top:0
+ }
+}
 #aoPray435930 .aoF07JumpDisclosure{margin:3px 0 7px}
 #aoPray435930 .aoF07JumpDisclosure>summary{min-height:44px;display:flex;align-items:center;justify-content:center;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#bbb3a7);cursor:pointer}
 #aoPray435930 .aoF07JumpDisclosure>nav{padding-bottom:8px}
