@@ -120,9 +120,20 @@ try{
     transition:gospel,controls:[],count:0,
     note:"H4 Gospel canonical route verified; not the removed standalone Home Scripture shortcut",
   };
-  // The independent Scripture reader may still be entered contextually from
-  // Mass or Formation. Do not falsely claim this H4 button opens the obsolete
-  // Home Scripture overlay or bypasses the canonical Gospel route.
+  // Retain the independent Scripture reader's actual mounted-control audit.
+  // This is a direct capability check, NOT a claim that H4's Gospel link
+  // opens the retired standalone Home Scripture shortcut.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
+  const scriptureOpened=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.open?.({})===true);
+  assert.equal(scriptureOpened,true,"Canonical Scripture reader cannot open independently");
+  await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open),true,
+    "Canonical Scripture overlay is not active");
+  const scripture=await capture("scripture","#ao-scripture-overlay",
+    {ok:scriptureOpened,route:"direct-capability-audit"});
+  assert.ok(scripture.mounted&&scripture.count>0,
+    "Scripture overlay has no usable controls");
+  await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.close());
   report.missing=[...misses].map(([path,count])=>({path,count}));
   const destination=resolve(root,"artifacts/control-audit/visible-controls.v1.json");
   await mkdir(resolve(root,"artifacts/control-audit"),{recursive:true});
