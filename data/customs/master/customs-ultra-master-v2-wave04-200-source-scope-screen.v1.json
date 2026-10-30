@@ -3,18 +3,18 @@
   "as_of": "2026-10-30",
   "wave": 4,
   "source_wave": "data/customs/master/customs-ultra-master-v2-bulk-reconciliation-waves-3295.v1.json#batches/3",
-  "method": "Exact source-record join in preserved individual input files. Chaney original claim characterization retained; CatholicCulture 132-row lookup ledger contains only lexical status, not source semantics, so 132 expressly stay unresolved for passage-level examination.; October 30: 40 of the 132 originally lexical-only hosted CatholicCulture source descriptions were directly checked against six actual hosted passages; original print facsimiles not inspected. Historical initial 68 source-native types remain unchanged.",
+  "method": "Exact source-record join in preserved individual input files. Chaney original claim characterization retained; CatholicCulture 132-row lookup ledger contains only lexical status, not source semantics, so 132 expressly stay unresolved for passage-level examination.; October 30: 40 of the 132 originally lexical-only hosted CatholicCulture source descriptions were directly checked against six actual hosted passages; original print facsimiles not inspected. Historical initial 68 source-native types remain unchanged.; six further Newland hosted source chapters added, with source-specific caution about family Tenebrae-inspired Stations, devotional candles, derivative Jesse tree, and liturgical blessing roles.",
   "counts": {
     "source_records_checked": 200,
     "source_native_type_available": 68,
-    "requires_actual_passage_type_screen": 92,
+    "requires_actual_passage_type_screen": 62,
     "original_ids_verified": 200,
     "new_page_image_verifications": 0,
     "canonical_ids_created": 0,
     "indulgence_grants_certified": 0,
     "publication_changes": 0,
-    "source_passage_type_verified_in_hosted_reproductions": 40,
-    "source_semantic_class_available_total": 108
+    "source_passage_type_verified_in_hosted_reproductions": 70,
+    "source_semantic_class_available_total": 138
   },
   "source_bucket_counts": {
     "weiser_handbook_granular_details": 17,
@@ -25,8 +25,8 @@
     "POSSIBLE_NESTED_VARIANT_ACTION_REVIEW": 14,
     "REPORTED_FOLKLORE_OR_HISTORICAL_CONTEXT": 2,
     "RITE_PRAYER_SACRAMENTAL_OWNER_REVIEW": 5,
-    "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED": 40,
-    "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY": 92,
+    "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED": 70,
+    "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY": 62,
     "AUTHOR_PROPOSAL_NOT_AUTOMATIC_HISTORICAL_CUSTOM": 31,
     "POTENTIAL_HOUSEHOLD_OR_COMMUNITY_PRACTICE_REVIEW": 15,
     "SOURCE_DEPENDENCY_AND_DERIVATIVE_CLAIM_REVIEW": 1
@@ -534,11 +534,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
         "hosted_line": 163,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -567,11 +568,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
         "hosted_line": 164,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -600,11 +602,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
         "hosted_line": 165,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -633,11 +636,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
         "hosted_line": 166,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -666,11 +670,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
         "hosted_line": 171,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -699,11 +704,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
         "hosted_line": 169,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -732,11 +738,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 145,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -765,11 +772,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 145,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -798,11 +806,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 152,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -831,11 +840,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 145,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -864,11 +874,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 155,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -897,11 +908,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 168,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -930,11 +942,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 184,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -963,11 +976,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
         "hosted_line": 186,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1171,11 +1185,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
         "hosted_line": 142,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1204,11 +1219,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
         "hosted_line": 149,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1237,11 +1253,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
         "hosted_line": 162,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1270,11 +1287,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
         "hosted_line": 173,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1303,11 +1321,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
         "hosted_line": 173,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1336,11 +1355,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
         "hosted_line": 175,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1348,17 +1368,17 @@
       "source_id": "CCEX26-NEWLAND-0273-01",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Present voluntary Advent self-denial as a gift to the Christ Child",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_ADVENT_SELF_DENIAL_DEVOTION",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/85"
       },
-      "original_online_line": null,
+      "original_online_line": 126,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1366,24 +1386,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+        "hosted_line": 126,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0273-02",
       "source_id": "CCEX26-NEWLAND-0273-02",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Give up household desserts or treats on selected Advent days",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_FAMILY_ADVENT_FAST_OPTION",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/86"
       },
-      "original_online_line": null,
+      "original_online_line": 139,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1391,24 +1420,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+        "hosted_line": 139,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0273-03",
       "source_id": "CCEX26-NEWLAND-0273-03",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Offer household chores done without complaint as Advent sacrifices",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_FAMILY_CHORE_SACRIFICE_OPTION",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/87"
       },
-      "original_online_line": null,
+      "original_online_line": 139,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1416,24 +1454,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+        "hosted_line": 139,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0273-04",
       "source_id": "CCEX26-NEWLAND-0273-04",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Count daily acts of Advent self-denial with beans in a gift box",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "FAMILY_PENANCE_TRACKER_VARIANT",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/88"
       },
-      "original_online_line": null,
+      "original_online_line": 141,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1441,24 +1488,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+        "hosted_line": 141,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0273-05",
       "source_id": "CCEX26-NEWLAND-0273-05",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Set aside quiet family craft-and-conversation time for Advent recollection",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "FAMILY_RECOLLECTION_WITH_CRAFTS",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/89"
       },
-      "original_online_line": null,
+      "original_online_line": 145,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1466,24 +1522,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+        "hosted_line": 145,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0273-06",
       "source_id": "CCEX26-NEWLAND-0273-06",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Make a Christ candle as a family Advent meditation project",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "CHRIST_CANDLE_RELATED_PREPARATION",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/90"
       },
-      "original_online_line": null,
+      "original_online_line": 147,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1491,24 +1556,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+        "hosted_line": 147,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0274-01",
       "source_id": "CCEX26-NEWLAND-0274-01",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Make a decorated Christ candle for Christmas Eve",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "REPORTED_GERMAN_CHRIST_CANDLE_WITH_NEWLAND_ADAPTATION",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/100"
       },
-      "original_online_line": null,
+      "original_online_line": 134,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1516,24 +1590,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+        "hosted_line": 134,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0274-02",
       "source_id": "CCEX26-NEWLAND-0274-02",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Cover a German-style Christ candle with a Marian blue mantle",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "REPORTED_GERMAN_CHRIST_CANDLE_MARIAN_MANTLE_VARIANT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/101"
       },
-      "original_online_line": null,
+      "original_online_line": 134,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1541,24 +1624,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+        "hosted_line": 134,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0274-03",
       "source_id": "CCEX26-NEWLAND-0274-03",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Design candle imagery tracing Adam and Eve to the Nativity",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_BIBLICAL_CANDLE_DECORATION_VARIANT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/102"
       },
-      "original_online_line": null,
+      "original_online_line": 136,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1566,24 +1658,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+        "hosted_line": 136,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0274-04",
       "source_id": "CCEX26-NEWLAND-0274-04",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Read Genesis and other biblical passages while preparing the Christ candle",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_SCRIPTURE_CATECHESIS_COMPONENT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/103"
       },
-      "original_online_line": null,
+      "original_online_line": 138,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1591,24 +1692,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+        "hosted_line": 138,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0274-05",
       "source_id": "CCEX26-NEWLAND-0274-05",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Light the Christ candle on Christmas Eve at midnight",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "CHRIST_CANDLE_DOMESTIC_LIGHTING",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/104"
       },
-      "original_online_line": null,
+      "original_online_line": 134,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1616,7 +1726,16 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+        "hosted_line": 134,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0277-01",
@@ -1819,11 +1938,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
         "hosted_line": 161,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1852,11 +1972,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
         "hosted_line": 161,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1885,11 +2006,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
         "hosted_line": 183,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1918,11 +2040,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
         "hosted_line": 185,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -1930,17 +2053,17 @@
       "source_id": "CCEX26-NEWLAND-0433-01",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Make a home Advent calendar with opening picture-and-Scripture doors",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_ADVENT_CALENDAR_SCRIPTURAL_DOORS_OPTION",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/81"
       },
-      "original_online_line": null,
+      "original_online_line": 126,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1948,24 +2071,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+        "hosted_line": 126,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0433-02",
       "source_id": "CCEX26-NEWLAND-0433-02",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Read the Advent calendar Scripture at evening prayers",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "ADVENT_CALENDAR_HOME_SCRIPTURE_PRAYER_COMPONENT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/82"
       },
-      "original_online_line": null,
+      "original_online_line": 126,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1973,24 +2105,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+        "hosted_line": 126,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0433-03",
       "source_id": "CCEX26-NEWLAND-0433-03",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Mark daily Advent mortifications on a homemade calendar",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "ADVENT_CALENDAR_PENANCE_COUNTER_VARIANT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/83"
       },
-      "original_online_line": null,
+      "original_online_line": 126,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -1998,24 +2139,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+        "hosted_line": 126,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0433-04",
       "source_id": "CCEX26-NEWLAND-0433-04",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Make a paper Christmas-tree Advent calendar with one decoration per day",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_PAPER_TREE_ADVENT_CALENDAR_CRAFT",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/84"
       },
-      "original_online_line": null,
+      "original_online_line": 127,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2023,24 +2173,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+        "hosted_line": 127,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0911-01",
       "source_id": "CCEX26-NEWLAND-0911-01",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Construct a twelve-candle family Stations candelabrum",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_TENEBRAE_INSPIRED_STATIONS_CRAFT_NOT_TENEBRAE_RITE",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/110"
       },
-      "original_online_line": null,
+      "original_online_line": 140,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2048,24 +2207,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+        "hosted_line": 140,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0911-02",
       "source_id": "CCEX26-NEWLAND-0911-02",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Use a purple-bean counter for children's Lenten self-denial",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_CHILDRENS_LENT_BEAN_SACRIFICE_COUNTER",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/111"
       },
-      "original_online_line": null,
+      "original_online_line": 135,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2073,24 +2241,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+        "hosted_line": 135,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0911-03",
       "source_id": "CCEX26-NEWLAND-0911-03",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Veil household sacred pictures with purple cloth for Passiontide",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_HOME_PASSIONTIDE_IMAGE_VEILING_COMPONENT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/112"
       },
-      "original_online_line": null,
+      "original_online_line": 138,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2098,24 +2275,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+        "hosted_line": 138,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0911-04",
       "source_id": "CCEX26-NEWLAND-0911-04",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Extinguish one candle after each family Stations meditation",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_DOMESTIC_STATIONS_CANDLE_EXTINGUISHING",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/113"
       },
-      "original_online_line": null,
+      "original_online_line": 148,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2123,24 +2309,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+        "hosted_line": 148,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-0911-05",
       "source_id": "CCEX26-NEWLAND-0911-05",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Put out the last light at the twelfth Station to represent Christ's death",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_TWELFTH_STATION_FINAL_DARKNESS_SYMBOL",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/114"
       },
-      "original_online_line": null,
+      "original_online_line": 149,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2148,24 +2343,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+        "hosted_line": 149,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1065-01",
       "source_id": "CCEX26-NEWLAND-1065-01",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Prepare a home Paschal candle during Lent",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "DOMESTIC_EASTER_CANDLE_CRAFT_NOT_CHURCH_PASCHAL_RITE",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/105"
       },
-      "original_online_line": null,
+      "original_online_line": 137,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2173,24 +2377,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+        "hosted_line": 137,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1065-02",
       "source_id": "CCEX26-NEWLAND-1065-02",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Mark the candle with cross, Alpha, Omega and year",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "DOMESTIC_CANDLE_SYMBOLS_BORROWED_FROM_VIGIL_RITE",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/106"
       },
-      "original_online_line": null,
+      "original_online_line": 140,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2198,24 +2411,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+        "hosted_line": 140,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1065-03",
       "source_id": "CCEX26-NEWLAND-1065-03",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Decorate the candle with pelican, phoenix, lamb, grapes and wheat symbols",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "AUTHOR_DOMESTIC_SALVATION_SYMBOL_PAINTING",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/107"
       },
-      "original_online_line": null,
+      "original_online_line": 141,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2223,24 +2445,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+        "hosted_line": 141,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1065-04",
       "source_id": "CCEX26-NEWLAND-1065-04",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Insert five cloves into a home Paschal candle as a devotional image",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "FIVE_CLOVES_SYMBOLIC_DOMESTIC_INSERTION",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/108"
       },
-      "original_online_line": null,
+      "original_online_line": 147,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2248,24 +2479,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+        "hosted_line": 147,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1065-05",
       "source_id": "CCEX26-NEWLAND-1065-05",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Have the first child awake light the candle on Easter morning",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "FAMILY_EASTER_CANDLE_LIGHTING_COMPONENT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/109"
       },
-      "original_online_line": null,
+      "original_online_line": 137,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2273,7 +2513,16 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+        "hosted_line": 137,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1214-01",
@@ -2355,17 +2604,17 @@
       "source_id": "CCEX26-NEWLAND-1215-01",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Create Jesse-tree ornaments representing biblical salvation history",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "JESSE_TREE_REPORTED_THIRD_PARTY_IDEA_LOCAL_ADAPTATION",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/95"
       },
-      "original_online_line": null,
+      "original_online_line": 152,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2373,24 +2622,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+        "hosted_line": 152,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1215-02",
       "source_id": "CCEX26-NEWLAND-1215-02",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Add individual patron-saint symbols made by children to the Jesse tree",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "JESSE_TREE_PATRON_SAINT_SYMBOL_FAMILY_VARIANT",
       "source_lookup_route_as_recorded": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/96"
       },
-      "original_online_line": null,
+      "original_online_line": 157,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2398,24 +2656,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+        "hosted_line": 157,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1215-03",
       "source_id": "CCEX26-NEWLAND-1215-03",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Search Scripture together for ornament themes and biblical figures",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "JESSE_TREE_BIBLICAL_CATECHESIS_COMPONENT",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/97"
       },
-      "original_online_line": null,
+      "original_online_line": 153,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2423,24 +2690,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+        "hosted_line": 153,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1215-04",
       "source_id": "CCEX26-NEWLAND-1215-04",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Conduct a household tree blessing described in the source, with formula authority unverified",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "DOMESTIC_TREE_BLESSING_TEXT_AUTHORITY_HOLD",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/98"
       },
-      "original_online_line": null,
+      "original_online_line": 163,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2448,24 +2724,33 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+        "hosted_line": 163,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1215-05",
       "source_id": "CCEX26-NEWLAND-1215-05",
       "source_bucket": "external_source_observations_catholicculture_excerpts",
       "source_label": "Rehearse Advent songs and the O Antiphons during Jesse-tree preparation",
-      "source_type_as_recorded": null,
+      "source_type_as_recorded": "ADVENT_CAROLS_AND_O_ANTIPHONS_AT_HOME",
       "source_lookup_route_as_recorded": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
-      "preliminary_lane": "ACTION_SCOPE_UNRESOLVED_LEXICAL_REVIEW_ONLY",
-      "semantic_source_type_available": false,
+      "preliminary_lane": "HOSTED_PASSAGE_ACTION_SCOPE_REVIEWED_NOT_IDENTITY_APPROVED",
+      "semantic_source_type_available": true,
       "original_source_record": {
         "repo_path": "data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json",
         "json_pointer": "/records/99"
       },
-      "original_online_line": null,
+      "original_online_line": 232,
       "original_printed_page": null,
-      "original_source_url": null,
+      "original_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
       "original_observation_relation": null,
       "original_source_id_verified": true,
       "new_original_page_verified_this_pass": false,
@@ -2473,7 +2758,16 @@
       "final_custom_identity_approved": false,
       "original_indulgence_grant_verified": false,
       "app_publication_allowed": false,
-      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding"
+      "next_gate": "Read source's actual passage and determine action semantics; lexical match or absent match is not an identity finding",
+      "passsage_hosted_source_verified": true,
+      "source_scope_evidence": {
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+        "hosted_line": 232,
+        "original_printed_book_facsimile_verified": false,
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
+      }
     },
     {
       "evidence_id": "external_source_observations_catholicculture_excerpts:CCEX26-NEWLAND-1218-01",
@@ -2551,11 +2845,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
         "hosted_line": 135,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2584,11 +2879,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
         "hosted_line": 153,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2617,11 +2913,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
         "hosted_line": 156,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2650,11 +2947,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
         "hosted_line": 156,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2808,11 +3106,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 128,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2841,11 +3140,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 127,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2874,11 +3174,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 134,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2907,11 +3208,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 135,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2940,11 +3242,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 136,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -2973,11 +3276,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 136,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -3006,11 +3310,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 137,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -3039,11 +3344,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 137,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -3072,11 +3378,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 138,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -3105,11 +3412,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 138,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -3138,11 +3446,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 139,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
@@ -3171,11 +3480,12 @@
       "next_gate": "Precise action/minister/geography and originality reconciliation, with human-authorized owner review before any canonical use",
       "passsage_hosted_source_verified": true,
       "source_scope_evidence": {
-        "review_file": "data/customs/master/customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json",
+        "review_file": "data/customs/master/customs-ultra-master-v2-70-hosted-passage-identity-review-20261030.v1.json",
         "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
         "hosted_line": 141,
         "original_printed_book_facsimile_verified": false,
-        "existing_owner_link_approved": false
+        "existing_owner_link_approved": false,
+        "liturgical_1962_rubric_verified": false
       }
     },
     {
