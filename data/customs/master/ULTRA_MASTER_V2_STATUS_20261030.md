@@ -10,6 +10,31 @@ A pointer-by-pointer audit resolved **3,703 / 3,703 original JSON pointers**, wi
 
 The published catalogue remains **36**; the research register does not license new Calendar publications.
 
+## Indulgences first — current source-grounded work programme (30 October)
+
+Identity cross-book adjudication is **parked**. Work now concentrates on present-day indulgence *grants and prescribed works* and how they relate to previously recorded customs, without new provenance rabbit holes.
+
+The [single bilingual authoritative work crosswalk](./customs-ultra-master-v2-1999-33-concessions-and-2026-exact-work-routes.v1.json) now contains:
+
+- **4 general concessions + all 33 particular concession headings** from the Apostolic Penitentiary's authentic 1999 fourth Latin `Enchiridion indulgentiarum` (one numbered heading can contain numerous exact work clauses);
+- **31 fully EN/FR exact-work or conditional work-to-surface routes**, including **14 existing-owner relationship edges to 10 distinct existing Customs owner IDs**; all original 465 screened identities remain untouched;
+- two source-verified **separate decrees**: **29 June 2002 Divine Mercy** (perpetual) and **10 January 2026–10 January 2027 Saint Francis jubilee** (time-limited);
+- source text, exact-work summary, grant class, prescribed conditions, negative-equivalence guard, and destination surface per route; no automatic blanket indulgence for objects, customary names, processions or local feasts.
+
+The existing [465-record indulgence audit](./customs-ultra-master-v2-indulgence-work-audit.v1.json) links to the expanded registry. The **earlier seven normative seeds remain an earlier subset**, not a false assertion that the 1999 Enchiridion has only seven concessions. The four historical claim families remain preserved: St Joseph First Wednesday, Breton pardons, Caravaca Vera Cruz (signed 1998 concession) and Bavarian Frauendreißiger. Historical grants are **not** silently projected forward after the 1967 revision.
+
+**Immediate 2026 editorial application, using the official 1999 norm:**
+
+1. **November 1–8:** prayerful cemetery visit with prayer for the dead — concession 29 §1 1°, plenary indulgence *only for the departed*, subject to the normal conditions. This is not a grave-decoration/candle-placement grant.
+2. **November 2:** church/oratory visit with Our Father and Creed — concession 29 §1 2°, plenary *only for the departed*; any alternate date requires the specified Ordinary's consent. Not every All Souls prayer is this work.
+3. **Any day:** pious cemetery prayer or Requiem aeternam — concession 29 §2 partial *for the departed*.
+4. **Ordinary devotional life:** Angelus/Regina caeli, Rosary, Scripture reading, approved litanies, Eucharistic adoration and works of mercy have separate clearly documented precise concession conditions; they are not indulgenced by opening their associated app screens.
+5. **Through 10 January 2027:** the Year of Saint Francis temporary indulgence needs a qualifying place, pilgrimage and exact prayers; not all Franciscan churches or visits should be auto-labelled.
+
+The 1962 Calendar remains a **presentation/route layer**, not a mechanism to replace current indulgence law or assume historic grants continue. Do not assign a current grant to a 1962 rubric merely because the feast name matches. Planned user-facing fields are `work / partial-or-plenary / exact conditions / primary grant / date and scope / exceptions`, EN/FR, linked from the relevant Prayer, Customs, Calendar, Mass or Explore surface.
+
+**Publication:** research branch only; current 36 published Customs unchanged, zero new runtime indulgence claims, no Calendar runtime changes. App release still requires final legal-liturgical editorial approval of exact displayed work and any place-specific status; this does not reopen the 79-case identity board.
+
 ## Original edition locator and text-dependence pass — eight remaining pairs (30 October)
 
 The [existing 14-pair printed-source audit](./customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json) now has **eight case-specific second-pass locators**, including edition metadata, source URLs, explanatory source-scope boundaries, and explicit unresolved original-page checks. These **do not create a second 14-pair ledger** and do not claim eight new original print inspections.
