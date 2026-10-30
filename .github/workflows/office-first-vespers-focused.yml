@@ -1,0 +1,67 @@
+name: Divine Office — focused First Vespers private reader
+on:
+  pull_request:
+    paths:
+      - 'src/office/**'
+      - 'tests/divine-office-advent-first-vespers-*.mjs'
+      - 'tests/divine-office-advent-i-collect-ending-1960-research.mjs'
+      - 'tests/divine-office-at-reference-resolver.mjs'
+      - 'tests/divine-office-reviewed-hour-handoff.mjs'
+      - 'tests/divine-office-first-vespers-focused-browser.mjs'
+      - 'tests/fixtures/office/advent-i-preview-*'
+      - 'tests/fixtures/office/advent-i-2026-collect-dialogue-source-sections.json'
+      - 'data/office/research/advent-i-2026-universal-commemoration.json'
+      - 'previews/advent-i-first-vespers-2026-research.html'
+      - '.github/workflows/office-first-vespers-focused.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax of extracted source-first modules and acceptance tests
+        run: |
+          for file in src/office/*.js; do node --check "$file"; done
+          node --check tests/divine-office-first-vespers-focused-browser.mjs
+      - name: Verify exact source, rubrics, source integrity and focus fidelity
+        run: |
+          node --test tests/divine-office-advent-first-vespers-private-preview.mjs
+          node --test tests/divine-office-advent-first-vespers-rubric-plan.mjs
+          node --test tests/divine-office-advent-first-vespers-source-sequence.mjs
+          node --test tests/divine-office-advent-first-vespers-universal-commemoration.mjs
+          node --test tests/divine-office-advent-first-vespers-assembled-research.mjs
+          node --test tests/divine-office-advent-i-collect-ending-1960-research.mjs
+          node --test tests/divine-office-at-reference-resolver.mjs
+          node --test tests/divine-office-reviewed-hour-handoff.mjs
+  chromium-private-reader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing test dependency
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Real mobile and desktop Vespers verification, no deployment
+        run: node tests/divine-office-first-vespers-focused-browser.mjs
+      - name: Retain private test screenshots and receipt briefly
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: advent-i-first-vespers-focused-private-chromium
+          path: artifacts/office-advent-i-vespers-focused/
+          if-no-files-found: warn
+          retention-days: 7
