@@ -76,6 +76,24 @@ export function prayerPilotAliases(L){
     }
   };
 }
+// Preserve all six canonical families through the nine editorial doors.
+// Route identities and source-owned readers remain unchanged.
+const LEGACY_FAMILY_BRIDGES=Object.freeze({
+ intentions:"penance",ourlord:"passion",novenas:"devotions"
+});
+export function resolvedPrayerPilotFamilies(L,families){
+ const aliases=prayerPilotAliases(L);
+ for(const [door,canonical] of Object.entries(LEGACY_FAMILY_BRIDGES)){
+  const seen=new Set(aliases[door].items.map(item=>item[1]));
+  const additions=[];
+  for(const item of families?.[canonical]?.items||[]){
+   if(seen.has(item[1]))continue;
+   seen.add(item[1]);additions.push(item);
+  }
+  aliases[door]={...aliases[door],items:[...aliases[door].items,...additions]};
+ }
+ return {...families,...aliases};
+}
 const MOSAIC=[
   {id:"chaplets",col:"1/5",row:"1/6",large:true},
   {id:"marian",col:"5/7",row:"1/4"},
@@ -112,7 +130,7 @@ export function filterPilotDiscovery(root,value){
   if(empty)empty.hidden=count!==0;
 }
 export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
-  const all={...families,...prayerPilotAliases(L)};
+  const all=resolvedPrayerPilotFamilies(L,families);
   const makeTile=tile=>{
     const family=all[tile.id];
     const label=tile.id==="library"?L("Essential Prayers","Prières essentielles"):family.title;
