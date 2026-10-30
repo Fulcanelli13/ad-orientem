@@ -19,7 +19,7 @@
     "user_accepted_later": 107,
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1561,
+    "artwork_edges_after_consolidation": 1572,
     "explicit_user_acceptances_never_auto_pruned": true
   },
   "locked": [
@@ -7476,7 +7476,27 @@
           "gate": "EXISTING_GALLERY_PHOTO_QA",
           "eligible": true,
           "flag": "",
-          "origin": "EXISTING_GALLERY_REUSE_V1"
+          "origin": "EXISTING_GALLERY_REUSE_V1",
+          "additional_explicit_user_approval": {
+            "review": "MISSING_ART_APPROVALS_20261030",
+            "candidate_key": "STG-pray.rosary-03::06",
+            "source": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Visitation",
+            "visual_gate": "NATIVE_PHOTO_UNVERIFIED",
+            "licence_gate": "RIGHTS_NOT_CLEARED"
+          }
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-03::01",
+          "title": "The Visitation",
+          "artist": "Philippe de Champaigne",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.rosary-03::01"
         }
       ]
     },
@@ -8535,6 +8555,32 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-13::05",
+          "title": "The Ascension (after Leandro Bassano)",
+          "artist": "David Teniers",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.rosary-13::05"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-13::06",
+          "title": "The Ascension of Christ",
+          "artist": "Pietro Perugino",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Pietro_Perugino_-_The_Ascension_of_Christ_-_WGA17257.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.rosary-13::06"
         }
       ]
     },
@@ -8563,7 +8609,27 @@
           "gate": "EXISTING_GALLERY_PHOTO_QA",
           "eligible": true,
           "flag": "",
-          "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED"
+          "origin": "EXISTING_GALLERY_REUSE_V1+BATCHES_01_05_EXPLICIT_ACCEPTED",
+          "additional_explicit_user_approval": {
+            "review": "MISSING_ART_APPROVALS_20261030",
+            "candidate_key": "STG-pray.rosary-14::01",
+            "source": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+            "visual_gate": "LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+            "licence_gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING"
+          }
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+          "title": "Pentecost",
+          "artist": "Mateo Cerezo",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.rosary-14::06"
         }
       ]
     },
@@ -9865,6 +9931,58 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::01",
+          "title": "The Circumcision",
+          "artist": "Jacopo Tintoretto",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::01"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::02",
+          "title": "The Circumcision of Christ",
+          "artist": "Pieter van Lint",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_The_Circumcision_of_Christ.Jpeg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::02"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::05",
+          "title": "The Circumcision of Christ",
+          "artist": "Peter Paul Rubens",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::05"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::06",
+          "title": "The Circumcision of Christ",
+          "artist": "Orazio Gentileschi",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://www.meisterdrucke.jp/fine-art-prints/Orazio-Gentileschi/1198610/",
+          "gate": "RIGHTS_NOT_CLEARED;NATIVE_PHOTO_UNVERIFIED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-pray.precious_blood-01::06"
         }
       ]
     },
@@ -11007,6 +11125,45 @@
           "eligible": true,
           "flag": "",
           "origin": "EXISTING_GALLERY_REUSE_V1"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::01",
+          "title": "Via Crucis — Jesus encounters His Mother",
+          "artist": "Giandomenico Tiepolo",
+          "fit": "EXACT SCENE / EXISTING",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
+          "gate": "RIGHTS_NOT_CLEARED;NATIVE_PHOTO_UNVERIFIED",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::01"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
+          "title": "Jesus meets His Mother",
+          "artist": "Théophile Lybaert",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_meets_His_Mother.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;MODERATE_SOURCE_RESOLUTION_NATIVE_QA_PENDING",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::03"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04",
+          "title": "Solesmes — Fourth Station of the Way of the Cross",
+          "artist": "Attributed in Commons filename to Delacroix",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Solesmes_(Nord,_Fr)_chemin_de_Croix_par_Delacroix,_station_04.jpg",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING",
+          "eligible": true,
+          "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
+          "origin": "UPLOADED_APPROVAL_JSON_20261030",
+          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::04"
         }
       ]
     },
@@ -23807,5 +23964,17 @@
     "saint_therese_existing_title": "Thérèse aux roses (1925)",
     "editorial_rule": "No silent activation of excluded works, no false production completeness claim",
     "rereview_scope": "Existing gallery only; no acquisition"
+  },
+  "followup_user_decision_overlay": {
+    "source_file": "AO_Prayer_Missing_Art_Approvals_20261030.json",
+    "approved_only_ledger": "data/prayer/artwork-editorial-20261030/missing-art-approved-only-20261030.v1.json",
+    "qa_ledger": "data/prayer/artwork-editorial-20261030/missing-art-approved-quality-rights-20261030.v1.json",
+    "accepted": 25,
+    "unaccepted_not_imported": 41,
+    "existing_matched": 2,
+    "new_slot_edges": 11,
+    "semantic_unmapped": 12,
+    "publication_status": "ALL_HELD_FOR_NATIVE_IMAGE_RIGHTS_AND_VISUAL_QA",
+    "previous_approvals_remain_untouched": true
   }
 }
