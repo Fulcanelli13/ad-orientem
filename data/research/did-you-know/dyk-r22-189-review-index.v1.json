@@ -263,5 +263,23 @@
     "additional_locale_or_text_risks": 5,
     "new_direct_source_checks": 0,
     "no_composition_change": true
+  },
+  "r28_weiser_direct_primary_page": {
+    "owner": "dyk-r28-weiser-27-original-page-audit.v1.json",
+    "new_direct_page_checked": 27,
+    "distinct_printed_pages": 29,
+    "total_source_checked": 123,
+    "original_168_checked": 102,
+    "original_168_remaining": 66
+  },
+  "r28_unresolved_claim_holds": {
+    "mismatch_id": "DYK-H04-W-B-160",
+    "reason": "Claim not on cited Weiser printed page 327",
+    "known_near_duplicate_pair": [
+      "DYK-H04-W-A-103",
+      "DYK-UM02-001"
+    ],
+    "original_pitre_facsimile_held": 14,
+    "composed_review_count_unchanged": 189
   }
 }
