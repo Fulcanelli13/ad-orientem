@@ -1,0 +1,54 @@
+name: Sacred Art one-click review correction · all 3 batches (€0)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-fast-grid-final-ui-20261030.yml
+      - scripts/art/patch-sacred-art-fast-grids-20261030.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ao-sacred-art-fast-grid-final-ui
+  cancel-in-progress: false
+
+jobs:
+  update-one-click-review-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch all 3 already-generated galleries without re-downloading or throttling Commons
+        run: python scripts/art/patch-sacred-art-fast-grids-20261030.py
+      - name: Verify untouched earlier image bytes, no premature approvals
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('data/calendar/sacred-art-master-v2/fast-grid-click-review-ui-proof-20261030.v1.json').read_text())
+          assert set(j['batches'])=={'01','02','03'}
+          assert [j['batches'][b]['total'] for b in ['01','02','03']]==[73,200,171]
+          assert [j['batches'][b]['previewsEmbedded'] for b in ['01','02','03']]==[73,171,40]
+          assert [j['batches'][b]['browserRemoteFallbacks'] for b in ['01','02','03']]==[0,29,131]
+          assert j['photoApprovals']==0 and j['productionMutations']==0 and j['feeEur']==0
+          assert j['previousEmbeddedImagesPreserved'] is True
+          PY
+      - name: Commit corrected user experience and audit on the existing research branch
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem sacred-art review"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_FAST_GRID_REVIEW_BATCH01_20261030.html docs/SACRED_ART_FAST_GRID_REVIEW_BATCH02_20261030.html docs/SACRED_ART_FAST_GRID_REVIEW_BATCH03_20261030.html data/calendar/sacred-art-master-v2/fast-grid-click-review-ui-proof-20261030.v1.json
+          git diff --cached --check
+          git commit -m "feat(sacred-art): one-click bulk visual review and image-fallback state [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
