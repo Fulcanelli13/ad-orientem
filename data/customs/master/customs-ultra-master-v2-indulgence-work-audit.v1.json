@@ -5955,7 +5955,7 @@
     }
   ],
   "pending_catalogue_research": [
-    "Complete 1999 Enchiridion works inventory (seven tracked seeds not exhaustive).",
+    "Full 1999 Enchiridion 33-heading index and four general concessions completed in linked bilingual work registry; verify precise prayer- and place-level eligibility when publishing, not another bulk source search.",
     "Recover original named 1962/Raccolta and local concessions from primary official texts.",
     "For each historical case, compare grant date, beneficiary, work, place, duration, conditions and current law.",
     "Keep all regional local claims as contextual notes until grant is proven."
@@ -6037,5 +6037,26 @@
       "blanket_plenary_indulgence_claim_allowed": false,
       "editorial_route": "RITUAL_ROLE_AND_GRANT_HOLD; not user-facing indulgence statement"
     }
-  ]
+  ],
+  "current_normative_extension": {
+    "work_registry": "data/customs/master/customs-ultra-master-v2-1999-33-concessions-and-2026-exact-work-routes.v1.json",
+    "purpose": "Single authoritative expanded normative index; the seven earlier seeds here are retained as historical shortlist, not total coverage.",
+    "general_concessions_indexed": 4,
+    "particular_concessions_indexed": 33,
+    "exact_work_routes_en_fr": 31,
+    "exact_work_routes_with_existing_owner": 14,
+    "extra_papal_decrees": [
+      "AP-2002-DIVINE-MERCY",
+      "AP-2026-FRANCIS-YEAR"
+    ],
+    "current_2026_11_01_to_08_priority": [
+      "ENCH1999-29 §1 1°: cemetery prayer, plenary for departed",
+      "ENCH1999-29 §1 2°: qualifying 2 November church/oratory visit, plenary for departed",
+      "ENCH1999-29 §2: devout prayers for the departed, partial"
+    ],
+    "historical_4_case_grants_remain_separate": true,
+    "pre_1967_grants_not_carried_forward_automatically": true,
+    "existing_seven_seed_count_is_not_full_1999_concession_count": true,
+    "publication_approval": false
+  }
 }
