@@ -1,0 +1,312 @@
+{
+  "schema": "AO_DYK_R25_ROMAN_MASS_15_DIRECT_TEXT_AUDIT_V1",
+  "date": "2026-10-30",
+  "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+  "original_review_owner": "dyk-r21-168-integrated-bilingual-review.v1.json",
+  "status": "FIFTEEN_PRIMARY_1962_TEXT_CORRESPONDENCE_CHECKED_NOT_APPROVED",
+  "counts": {
+    "checked": 15,
+    "roman_canon": 12,
+    "mass_gesture": 3,
+    "bilingual_revised": 15,
+    "original_168_checked_cumulative": 41,
+    "original_168_remaining": 127,
+    "overall_189_source_text_checked": 62,
+    "final_approved": 0,
+    "published": 0
+  },
+  "obligations": [
+    "Do not merge liturgically distinct mementos, crosses, elevations or priest gestures.",
+    "Do not infer an icon cue or faithful posture from an editorial fact.",
+    "Source text crosscheck is not independent English/French final signoff.",
+    "Conditional forms and exceptions require separate runtime verification.",
+    "Do not publish without browser and novelty clearance."
+  ],
+  "rows": [
+    {
+      "id": "DYK-M04-CANON-001",
+      "action_id": "AO.CANON.R62.001",
+      "roman_section": "VIII.1",
+      "source_line_span": [
+        297,
+        298
+      ],
+      "claim_before": {
+        "en": "At the opening of the 1962 Roman Canon, the priest raises his hands and eyes, then bows profoundly before praying.",
+        "fr": "À l'ouverture du Canon romain de 1962, le prêtre élève les mains et les yeux, puis s'incline profondément avant de prier."
+      },
+      "claim_after": {
+        "en": "At the start of Te igitur, the priest extends, slightly raises and joins his hands, lifts and lowers his eyes, and bows profoundly before the altar.",
+        "fr": "Au début du Te igitur, le prêtre étend, élève légèrement et joint les mains, lève puis baisse les yeux, et s'incline profondément devant l'autel."
+      },
+      "precision_rationale": "Opening actions occur in sequence; not simultaneously or at all Te igitur phrases.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-006",
+      "action_id": "AO.CANON.R62.006",
+      "roman_section": "VIII.3",
+      "source_line_span": [
+        301,
+        304
+      ],
+      "claim_before": {
+        "en": "The Memento of the living includes an interval in which the priest commemorates particular people quietly.",
+        "fr": "Le Memento des vivants comprend un moment où le prêtre fait mémoire de personnes particulières en silence."
+      },
+      "claim_after": {
+        "en": "During the Memento of the living, the priest joins his hands and briefly commemorates those for whom he intends to pray, before resuming with hands extended.",
+        "fr": "Pendant le Memento des vivants, le prêtre joint les mains et fait brièvement mémoire de ceux pour qui il veut prier, avant de poursuivre les mains étendues."
+      },
+      "precision_rationale": "Retains separate living Memento and the brief personal memorial; source does not require announcing names.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-008",
+      "action_id": "AO.CANON.R62.008",
+      "roman_section": "VIII.4",
+      "source_line_span": [
+        305,
+        309
+      ],
+      "claim_before": {
+        "en": "The Communicantes of the Roman Canon has proper forms on certain appointed days.",
+        "fr": "Le Communicantes du Canon romain possède des textes propres pour certains jours déterminés."
+      },
+      "claim_after": {
+        "en": "The 1962 Roman Canon uses a proper Communicantes on certain appointed feasts, while retaining the ordinary text on other days.",
+        "fr": "Dans le Canon romain de 1962, certaines fêtes possèdent un Communicantes propre ; les autres jours conservent le texte ordinaire."
+      },
+      "precision_rationale": "Conditional proper text is not a separate action; exact appointed days governed by prescribed rubrics.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-013",
+      "action_id": "AO.CANON.R62.013",
+      "roman_section": "VIII.4",
+      "source_line_span": [
+        315,
+        316
+      ],
+      "claim_before": {
+        "en": "At benedictam, adscriptam and ratam in Quam oblationem, the priest traces three crosses over both offerings.",
+        "fr": "Aux mots benedictam, adscriptam et ratam du Quam oblationem, le prêtre trace trois croix au-dessus des deux oblats."
+      },
+      "claim_after": {
+        "en": "At benedictam, adscriptam and ratam in Quam oblationem, the priest makes three successive crosses over the Host and chalice together.",
+        "fr": "Aux mots benedictam, adscriptam et ratam du Quam oblationem, le prêtre trace successivement trois croix sur l'hostie et le calice réunis."
+      },
+      "precision_rationale": "Three crosses over both offerings precede distinct Host-only and chalice-only signs.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-014",
+      "action_id": "AO.CANON.R62.014",
+      "roman_section": "VIII.4",
+      "source_line_span": [
+        315,
+        316
+      ],
+      "claim_before": {
+        "en": "In Quam oblationem, the priest traces a cross over the Host at Corpus and another over the chalice at Sanguis—two distinct actions in the Roman Canon.",
+        "fr": "Dans le Quam oblationem, le prêtre trace une croix sur l'hostie au mot Corpus, puis une autre sur le calice au mot Sanguis : deux gestes distincts du Canon romain."
+      },
+      "claim_after": {
+        "en": "Later in Quam oblationem, the priest traces one cross over the Host at Corpus and another over the chalice at Sanguis, after the three earlier crosses.",
+        "fr": "Plus loin dans le Quam oblationem, le prêtre trace une croix sur l'hostie au mot Corpus, puis une sur le calice au mot Sanguis, après les trois croix précédentes."
+      },
+      "precision_rationale": "The cross over Host and the cross over chalice are separate, sequential gestures from the earlier three.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-021",
+      "action_id": "AO.CANON.R62.021",
+      "roman_section": "VIII.4",
+      "source_line_span": [
+        317,
+        321
+      ],
+      "claim_before": {
+        "en": "The priest says fregit (« he broke ») during the Consecration narrative, but he does not break the Host at that moment.",
+        "fr": "Le prêtre prononce fregit (« il rompit ») dans le récit de la consécration, mais il ne rompt pas l'hostie à cet instant."
+      },
+      "claim_after": {
+        "en": "During the account of the Last Supper, the priest says fregit ('he broke') while holding the Host; he does not actually break it until the Fraction later in Mass.",
+        "fr": "Dans le récit de la Cène, le prêtre dit fregit (« il rompit ») en tenant l'hostie, sans la rompre à ce moment : la fraction a lieu plus tard dans la messe."
+      },
+      "precision_rationale": "Distinguishes the Latin narrative from actual Fraction during the Communion rite.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-026",
+      "action_id": "AO.CANON.R62.026",
+      "roman_section": "VIII.5",
+      "source_line_span": [
+        321,
+        322
+      ],
+      "claim_before": {
+        "en": "After consecrating the Host, the priest ordinarily keeps thumb and forefinger together except when handling a consecrated Host, until the ablution.",
+        "fr": "Après la consécration de l'hostie, le prêtre garde normalement le pouce et l'index joints, sauf pour manier une hostie consacrée, jusqu'à l'ablution."
+      },
+      "claim_after": {
+        "en": "After consecrating the Host, the priest keeps his thumbs and forefingers joined except when touching a consecrated Host, until the washing of his fingers.",
+        "fr": "Après la consécration de l'hostie, le prêtre garde les pouces et les index joints, sauf lorsqu'il touche une hostie consacrée, jusqu'à l'ablution des doigts."
+      },
+      "precision_rationale": "Applies after the Host's consecration as persistent priest discipline, not a posture imposed on the faithful.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-041",
+      "action_id": "AO.CANON.R62.041",
+      "roman_section": "IX.1",
+      "source_line_span": [
+        335,
+        337
+      ],
+      "claim_before": {
+        "en": "At Supplices te rogamus, the priest bows profoundly at the altar's center with hands joined.",
+        "fr": "Au Supplices te rogamus, le prêtre s'incline profondément au centre de l'autel, les mains jointes."
+      },
+      "claim_after": {
+        "en": "At Supplices te rogamus, the priest bows profoundly with his joined hands resting on the altar.",
+        "fr": "Au Supplices te rogamus, le prêtre s'incline profondément, les mains jointes appuyées sur l'autel."
+      },
+      "precision_rationale": "Specifies the priest's joined hands rest on altar, distinct from the later altar kiss.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-042",
+      "action_id": "AO.CANON.R62.042",
+      "roman_section": "IX.1",
+      "source_line_span": [
+        335,
+        338
+      ],
+      "claim_before": {
+        "en": "The Canon includes another altar kiss at ex hac altaris participatione in Supplices te rogamus.",
+        "fr": "Le Canon comporte un autre baiser de l'autel aux mots ex hac altaris participatione du Supplices te rogamus."
+      },
+      "claim_after": {
+        "en": "At the words ex hac altaris participatione in Supplices te rogamus, the priest kisses the altar before making separate crosses over the Host and chalice.",
+        "fr": "Aux mots ex hac altaris participatione du Supplices te rogamus, le prêtre baise l'autel avant de tracer une croix sur l'hostie puis une autre sur le calice."
+      },
+      "precision_rationale": "Conserves kiss then separate species signs; source attribution must not slide to another Canon section.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-050",
+      "action_id": "AO.CANON.R62.050",
+      "roman_section": "IX.3",
+      "source_line_span": [
+        343,
+        346
+      ],
+      "claim_before": {
+        "en": "At Nobis quoque peccatoribus, the priest briefly raises his voice and strikes his breast once—inside an otherwise quiet Canon.",
+        "fr": "Au Nobis quoque peccatoribus, le prêtre élève brièvement la voix et se frappe une fois la poitrine, au sein d'un Canon autrement dit à voix basse."
+      },
+      "claim_after": {
+        "en": "At Nobis quoque peccatoribus, the priest strikes his breast once and says those words in a slightly raised voice; he continues the prayer quietly.",
+        "fr": "Au Nobis quoque peccatoribus, le prêtre se frappe une fois la poitrine et prononce ces mots d'une voix légèrement élevée ; il poursuit la prière à voix basse."
+      },
+      "precision_rationale": "Brief audible exception within otherwise silent Canon is not all of Nobis quoque.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-058",
+      "action_id": "AO.CANON.R62.058",
+      "roman_section": "IX.3",
+      "source_line_span": [
+        348,
+        355
+      ],
+      "claim_before": {
+        "en": "The small elevation at the end of the Roman Canon is not the same gesture as the greater elevations after each Consecration.",
+        "fr": "La petite élévation à la fin du Canon romain n'est pas le même geste que les grandes élévations après chaque consécration."
+      },
+      "claim_after": {
+        "en": "At omnis honor et gloria, the priest slightly raises the chalice with the consecrated Host above it; this small elevation differs from the major elevations after the Consecrations.",
+        "fr": "Aux mots omnis honor et gloria, le prêtre élève légèrement le calice en tenant l'hostie consacrée au-dessus ; cette petite élévation diffère des grandes élévations après les consécrations."
+      },
+      "precision_rationale": "Minor elevation occurs after five preceding crosses in Per ipsum; distinct action.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-060",
+      "action_id": "AO.CANON.R62.060",
+      "roman_section": "X.1",
+      "source_line_span": [
+        353,
+        356
+      ],
+      "claim_before": {
+        "en": "The final Per omnia saecula saeculorum of the Canon is said audibly rather than in the earlier low voice.",
+        "fr": "Le Per omnia saecula saeculorum qui conclut le Canon est dit à voix audible et non à voix basse comme auparavant."
+      },
+      "claim_after": {
+        "en": "After the small elevation, the priest replaces the Host, covers the chalice and genuflects; he then says or sings Per omnia saecula saeculorum audibly.",
+        "fr": "Après la petite élévation, le prêtre repose l'hostie, recouvre le calice et fait la génuflexion ; il dit ou chante ensuite Per omnia saecula saeculorum d'une voix audible."
+      },
+      "precision_rationale": "Direct Latin rubric explicitly permits saying intelligibly or singing. Avoid implying Low Mass chant universally.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-SF01-037",
+      "action_id": "GM.P.C0161.01",
+      "roman_section": null,
+      "source_line_span": [
+        311,
+        314
+      ],
+      "claim_before": {
+        "en": "The 1962 Roman Mass prescribes a specific moment during the Canon when the priest holds his hands over the offerings.",
+        "fr": "La messe romaine de 1962 prévoit un moment précis du Canon où le prêtre étend les mains sur les offrandes."
+      },
+      "claim_after": {
+        "en": "At Hanc igitur in the Roman Canon, the priest holds both hands extended over the offerings while praying; he joins them at the conclusion.",
+        "fr": "Au Hanc igitur du Canon romain, le prêtre tient les mains étendues au-dessus des offrandes pendant la prière, puis les joint à la conclusion."
+      },
+      "precision_rationale": "Hands-over-oblations are tied to Hanc igitur, not other moments with extended hands.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-SF01-038",
+      "action_id": "GM.P.C0174.02",
+      "roman_section": null,
+      "source_line_span": [
+        319,
+        322
+      ],
+      "claim_before": {
+        "en": "After consecrating the Host, the priest genuflects, elevates it, then genuflects again.",
+        "fr": "Après la consécration de l'Hostie, le prêtre fait une génuflexion, l'élève, puis fait de nouveau une génuflexion."
+      },
+      "claim_after": {
+        "en": "Immediately after the Consecration of the Host, the priest genuflects in adoration, rises and shows it to the people, places it on the corporal, and genuflects again.",
+        "fr": "Aussitôt après la consécration de l'hostie, le prêtre fait la génuflexion en adoration, se relève et la montre aux fidèles, la repose sur le corporal et fait de nouveau la génuflexion."
+      },
+      "precision_rationale": "Full order includes placement before second genuflection, and cues must not be collapsed.",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-SF01-040",
+      "action_id": "GM.P.C0273.01",
+      "roman_section": null,
+      "source_line_span": [
+        426,
+        440
+      ],
+      "claim_before": {
+        "en": "The priest genuflects at 'Et Verbum caro factum est' when the Last Gospel is read.",
+        "fr": "Le prêtre fait une génuflexion aux mots « Et Verbum caro factum est » lors de la lecture du Dernier Évangile."
+      },
+      "claim_after": {
+        "en": "At the words Et Verbum caro factum est in the Last Gospel of the traditional Roman Mass, the priest genuflects and then rises to continue the reading.",
+        "fr": "Aux mots Et Verbum caro factum est du dernier Évangile de la messe romaine traditionnelle, le prêtre fait la génuflexion, puis se relève pour poursuivre la lecture."
+      },
+      "precision_rationale": "Condition this claim to the usual Last Gospel text from John, rather than exceptional forms; reader route remains unverified.",
+      "publication_authorized": false
+    }
+  ]
+}
