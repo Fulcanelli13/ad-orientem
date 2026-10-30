@@ -22,7 +22,7 @@ assert.equal(geo.places.length,LIVE.places);
 assert.equal(sh.shrines.length,257);
 assert.equal(sh.pilgrimages.length,240);
 assert.equal(sources.sources.length,LIVE.sources);
-assert.equal(sacred.relics.length,122);
+assert.equal(sacred.relics.length,123);
 const idset=new Set(),pmap=new Map(geo.places.map(p=>[p.place_id,p]));
 const sid=new Set(),selectionIds=new Set(selection.site_decisions.map(x=>x.selection_id));
 for(const group of manifest.sites){
@@ -64,4 +64,4 @@ assert.equal(rome.length,3,"Original Holy Crown/Cross/Nail remain independent re
 assert.equal(points.filter(p=>rome.some(x=>x.item_id===p.properties.item_id)).length,1,"Original multi-object relic sites must not flood the pin map");
 const remaining=selection.site_decisions.filter(x=>!x.existing_place_id&&!manifest.sites.some(g=>g.selection_ids.includes(x.selection_id)));
 assert.ok(remaining.length===0,"All 39 originally shortlisted new Places are now mapped");
-console.log("PASS 39 principal relic destinations, 43 saint associations, one marker per Place, 122 relic records, 216 shrines, 206 pilgrimages");
+console.log("PASS 39 principal relic destinations, 43 saint associations, one marker per Place, 123 relic records, 216 shrines, 206 pilgrimages");
