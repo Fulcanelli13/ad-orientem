@@ -54,6 +54,18 @@ function nextDynamic(state,win,settings,now){
   let active=null;
   try{active=api?.activeDynamic?.(state,settings,now)??null}catch{}
   if(active){
+    // The rule provider may surface an evening devotion before its scheduled
+    // hour. A future Angelus is "Next · 18:00", never "Now" at 15:52.
+    const fixedAngelusMinutes={"angelus.morning":360,"angelus.noon":720,"angelus.evening":1080};
+    const due=fixedAngelusMinutes[active.id];
+    if(Number.isFinite(due)&&mins(now)<due){
+      return Object.freeze({
+        id:active.id,kind:"route",role:L(state,"Next","Ensuite"),
+        when:L(state,"Later","Plus tard"),due,title:active.title,
+        sub:L(state,"At the appointed hour","À l’heure prévue"),
+        icon:dynamicIcon(active.id),route:active.route??"pray.angelus_regina",done:false,
+      });
+    }
     return Object.freeze({
       id:active.id,kind:"dynamic",role:L(state,"Now","Maintenant"),when:L(state,"Now","Maintenant"),
       title:active.title,sub:L(state,"Appropriate for this moment","Pour ce moment de la journée"),
