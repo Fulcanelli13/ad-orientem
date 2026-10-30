@@ -3026,8 +3026,58 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
+// Shared Prayer folio contract: provenance remains complete, but belongs
+// inside a quiet Aa -> ⓘ Source menu rather than beneath the prayer.
+// Move original DOM nodes (not copies) to preserve source ownership.
+function reconcilePrayerBookSettings(m){
+ if(view==='home'||view==='family')return;
+ const header=m.querySelector('.aoP435930Head');
+ if(!header)return;
+ const sourceSelector=[
+  '.aoP435930Source','.aoP435930SourceNote','.aoP435930SourceLink',
+  '.aoP435930FeastSource','.aoP435930SourceWitnessNote',
+  '.aoP435930SourceLanguageNotice','.aoP435930GuideLinks',
+  '.aoP435930ConfSources','.aoP435930History',
+  '.aoPriestsSource','.aoOccasionalSource','.aoJosephSevenSource',
+  '.aoBatch02OptionalSources','.aoRosarySourceCurrent',
+  '.aoFiveWoundsSource','.aoPreciousBloodProvenance',
+  '.aoLittleCrownSource','.aoMercySource'
+ ].join(',');
+ const sources=[...m.querySelectorAll(sourceSelector)];
+ let parents=sources.filter(node=>!sources.some(other=>other!==node&&other.contains(node)));
+ const ownOptions=m.querySelector('.aoF07ReaderLanguage .aoF07LanguageOptions,.aoF07BloodLanguage .aoF07BloodLanguageOptions,.aoF07LittleCrownLanguage .aoF07LittleCrownLanguageOptions');
+ if(ownOptions&&parents.length){
+  const sourceNotes=document.createElement('details');
+  sourceNotes.className='aoPrayerBookSources';
+  sourceNotes.innerHTML='<summary>ⓘ '+esc(L('Sources','Sources'))+'</summary>';
+  parents.forEach(node=>sourceNotes.append(node));
+  ownOptions.append(sourceNotes);
+  parents=[];
+ }
+ const lang=header.querySelector('.aoP435930SessionLanguage');
+ const settings=header.querySelector('.aoFolioSettingsTrigger');
+ if(!parents.length&&!lang&&!settings)return;
+ const wrap=document.createElement('details');
+ wrap.className='aoPrayerBookMenu';
+ wrap.innerHTML='<summary aria-label="'+esc(L('Prayer settings, language and references','Paramètres, langue et références'))+
+  '">Aa</summary><div class="aoPrayerBookMenuPanel"></div>';
+ const panel=wrap.querySelector('.aoPrayerBookMenuPanel');
+ if(settings)panel.append(settings);
+ if(lang)panel.append(lang);
+ if(parents.length){
+  const notes=document.createElement('details');
+  notes.className='aoPrayerBookSources';
+  notes.innerHTML='<summary aria-label="'+esc(L('Source notes','Notes de source'))+'">ⓘ '+
+   esc(L('Sources','Sources'))+'</summary>';
+  for(const source of parents)notes.append(source);
+  panel.append(notes);
+ }
+ const home=header.querySelector('.aoP435930Home');
+ if(home)home.before(wrap);else header.append(wrap);
+ header.classList.add('aoPrayerBookHead');
+}
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='littleCrown')html=renderLittleCrown();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='montfort')html=renderMontfortB26();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
- ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
+ ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;reconcilePrayerBookSettings(m);if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
  if(view==='adoration'&&ADOR.quiet){
