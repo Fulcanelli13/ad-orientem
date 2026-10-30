@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+// Retain the existing Schola test command; include session observation gates.
+import "./reader-schola-performance-ledger.mjs";
 import {readFileSync} from "node:fs";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
  nextScholaMusicEvent} from "../src/mass/reader-schola-event-timeline.js";
