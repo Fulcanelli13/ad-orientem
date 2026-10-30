@@ -2664,6 +2664,7 @@ export function createReaderDomAdapter({
   let rootChangeListener=null;
   let rootInputListener=null;
   let rootKeydownListener=null;
+  let kyrialeNotationViewer=null;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let selectedFaithfulRowId=null;
   let scholaCollapsed=false;
@@ -3489,6 +3490,8 @@ export function createReaderDomAdapter({
   }
 
   function unbind(){
+    kyrialeNotationViewer?.destroy();
+    kyrialeNotationViewer=null;
     sourceRailTracker?.destroy();
     sourceRailTracker=null;
     if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
@@ -3533,6 +3536,8 @@ export function createReaderDomAdapter({
     root.addEventListener?.("input",rootInputListener);
     rootChangeListener=event=>{
       const programmeTarget=event.target;
+      if(programmeTarget?.matches?.('[data-schola-kyriale-choice],[data-schola-profile-select],[data-schola-ordinary-setting]'))
+        kyrialeNotationViewer?.close();
       if(programmeTarget?.matches?.("[data-schola-profile-select]")){
         onScholaLocalProgrammeChange?.({kind:"profileSelect",value:programmeTarget.value});return;
       }
@@ -3585,6 +3590,17 @@ export function createReaderDomAdapter({
     };
     root.addEventListener?.("change",rootChangeListener);
     rootClickListener=event => {
+      const scoreTrigger=event.target?.closest?.("[data-schola-score-open]");
+      if(scoreTrigger && !scoreTrigger.hidden && !scoreTrigger.disabled){
+        const movement=scoreTrigger.dataset.scholaScoreOpen;
+        const plan=typeof scholaLocalProgramme==="function"?scholaLocalProgramme():scholaLocalProgramme;
+        const score=offlineKyrialeResearchScore(movement,plan?.ordinarySelections?.[movement]);
+        if(score){
+          kyrialeNotationViewer??=createKyrialeNotationViewer({document:root.ownerDocument});
+          void kyrialeNotationViewer.open(score,{trigger:scoreTrigger});
+        }
+        return;
+      }
       if(event.target?.closest?.("[data-schola-profile-create]")){
         const field=root.querySelector("[data-schola-profile-new]");
         const name=field?.value?.trim();
