@@ -55,15 +55,18 @@
       "method": "Original record source_kind/claim_type native fields, not inferred identity; no primary page-image certifications this pass."
     },
     "evidence_only_source_scope_first_pass": {
-      "done": 600,
+      "done": 800,
       "total": 3295,
-      "unprocessed": 2695,
+      "unprocessed": 2495,
       "wave_files": [
         "customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json",
         "customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json",
-        "customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json"
+        "customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json"
       ],
-      "not_final_identity_mapping": true
+      "not_final_identity_mapping": true,
+      "source_type_provisionally_routed": 668,
+      "source_type_unresolved_requires_passage": 132
     }
   },
   "direct_source_index_completeness": {
