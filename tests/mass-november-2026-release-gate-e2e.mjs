@@ -263,14 +263,20 @@ try{
      out.available=await container.count()===1&&
        await container.evaluate(el=>!el.hidden);
      if(!out.available)throw Error("NOV02_NATIVE_FORMULARY_UI_NOT_VISIBLE");
-     const tab=page.locator('[data-folio-goto="celebration"]').first();
-     if(await tab.isVisible())await tab.click();
+     // The live M1 presentation uses choice rows, not the hidden legacy
+     // wizard tabs. Go through the actual visible Mass/Reader controls while
+     // retaining all six source-to-reader readiness assertions below.
+     const m1=await page.locator('[data-m1-choice="mass"]').count()===1;
+     if(m1)await page.locator('[data-m1-choice="mass"]').click();
+     else await page.locator('[data-folio-goto="celebration"]').first().click();
      for(const massNumber of [1,2,3]){
        const input=container.locator('[data-ao-all-souls-mass][value="'+massNumber+'"]');
        await input.check();
-       const readerTab=page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]');
-       await readerTab.click();
        for(const mode of ["MISSAL","LIVE"]){
+         if(m1){
+           await page.locator('[data-folio-overview-button]').click();
+           await page.locator('[data-m1-choice="reader"]').click();
+         }else await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
          await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
          const output=await page.evaluate(async()=>{
            const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
@@ -282,11 +288,15 @@ try{
          });
          out.cases.push({massNumber,requestedMode:mode,...output});
        }
-       if(massNumber!==3)await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+       if(massNumber!==3){
+         if(m1)await page.locator('[data-m1-choice="mass"]').click();
+         else await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+       }
      }
      // Ritus XIV is a separate, explicitly observed SAME-PRIEST
      // circumstance; the choice of Mass II alone proves none of it.
-     await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+     if(m1)await page.locator('[data-m1-choice="mass"]').click();
+     else await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
      await container.locator('[data-ao-all-souls-mass][value="2"]').check();
      const successionDetails=container.locator("[data-ao-all-souls-succession-details]");
      if(await successionDetails.evaluate(el=>el.open))
