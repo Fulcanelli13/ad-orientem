@@ -991,18 +991,24 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
             row["categories"][kind] = shortlist
         row["openverse_queries"] = 0
         row["openverse_budget_exhausted"] = bounded_openverse.remaining == 0
-        try:
-            before = bounded_openverse.used
-            alternatives, query_count = openverse_discovery(
-                bounded_openverse, venue, max_queries=min(
-                    openverse_per_venue, bounded_openverse.remaining))
-            row["openverse_queries"] = bounded_openverse.used-before
-            for kind in active_roles:
-                row["categories"][kind] = merge_photo_candidates(
-                    row["categories"][kind], alternatives[kind])
-        except (urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TimeoutError) as exc:
-            row["openverse_queries"] = bounded_openverse.used-before
-            row["errors"]["OPENVERSE"] = type(exc).__name__ + ": " + str(exc)[:160]
+        # Spend the limited free Openverse request budget only on true Commons gaps.
+        # Having an eligible Commons image does not approve its subject or rights.
+        row["openverse_skipped_commons_present"] = any(
+            acquisition_eligible(photo)
+            for kind in active_roles for photo in row["categories"][kind])
+        if not row["openverse_skipped_commons_present"]:
+            try:
+                before = bounded_openverse.used
+                alternatives, query_count = openverse_discovery(
+                    bounded_openverse, venue, max_queries=min(
+                        openverse_per_venue, bounded_openverse.remaining))
+                row["openverse_queries"] = bounded_openverse.used-before
+                for kind in active_roles:
+                    row["categories"][kind] = merge_photo_candidates(
+                        row["categories"][kind], alternatives[kind])
+            except (urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TimeoutError) as exc:
+                row["openverse_queries"] = bounded_openverse.used-before
+                row["errors"]["OPENVERSE"] = type(exc).__name__ + ": " + str(exc)[:160]
         results.append(row)
         print("STAGED", venue["id"], {k: len(v) for k, v in row["categories"].items()}, flush=True)
     methods = {}
@@ -1029,6 +1035,8 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
             row.get("wikidata_identity_research", {}).get("state") ==
             "GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY" for row in results),
         "venues_with_openverse_error": sum("OPENVERSE" in row["errors"] for row in results),
+        "venues_with_commons_eligible_skipping_openverse": sum(row["openverse_skipped_commons_present"] for row in results),
+        "canonical_places_with_explicit_wikidata_qid": sum(bool(venue.get("wikidata_id")) for venue in subset),
         "openverse_api_queries": bounded_openverse.used,
         "openverse_request_budget": openverse_budget,
         "venues_skipped_due_to_openverse_budget": sum(row["openverse_budget_exhausted"] for row in results),
