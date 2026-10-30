@@ -5,8 +5,14 @@ const L=(fr,en,french)=>fr?french:en;
 const labelled=(value,choices)=>choices[value]??value??"—";
 
 export function m1AccessPreviewRequested(win=globalThis){
-  try{return new URLSearchParams(win?.location?.search||"").get("aoMassAccessM1")==="1";}
-  catch{return false;}
+  // M1 is the default in the real application. Keep an explicit, zero-state
+  // rollback for field diagnostics; synthetic host mocks without a location
+  // continue to use the historical preparation surface.
+  if(!win?.location)return false;
+  try{
+    const query=new URLSearchParams(win.location.search||"");
+    return query.get("aoMassAccessM1")!=="0"&&query.get("aoMassRootM1")!=="0";
+  }catch{return false;}
 }
 
 export function m1AccessRows(selection,{fr=false,optionalRites=false}={}){
