@@ -458,6 +458,22 @@ const STYLES=`
   background:transparent;border-top:0
  }
 }
+/* F07 c1: at 390px the full Our Father ended immediately above the
+   app tab bar, pushing Next below the fold. Keep all 15 direct 48px
+   targets nonoverlapping (282px diameter / 116px bead radius); save room
+   by using the prototype's 20px / 1.5 scripture-reading rhythm. */
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoF07LittleCrownCircle{
+ width:min(100%,282px)
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownPrayerText{
+ line-height:1.5
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownActions{
+ order:10
+}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownSource{
+ order:12
+}
 #aoPray435930 .aoF07JumpDisclosure{margin:3px 0 7px}
 #aoPray435930 .aoF07JumpDisclosure>summary{min-height:44px;display:flex;align-items:center;justify-content:center;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#bbb3a7);cursor:pointer}
 #aoPray435930 .aoF07JumpDisclosure>nav{padding-bottom:8px}
