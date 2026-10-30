@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/prayer-art-runtime-parity-20261030.yml'
       - 'tests/prayer-art-runtime-parity.mjs'
+      - 'tests/prayer-chaplet-artwork-contract.mjs'
       - 'src/pray/**'
       - 'data/prayer/artwork-editorial-20261030/**'
   workflow_dispatch:
@@ -22,3 +23,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Inspect runtime stage coverage without publishing imagery
         run: node tests/prayer-art-runtime-parity.mjs
+      - name: Verify five chaplet stage pools and positive-only approval states
+        run: node tests/prayer-chaplet-artwork-contract.mjs
