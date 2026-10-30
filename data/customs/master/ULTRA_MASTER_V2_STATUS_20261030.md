@@ -65,6 +65,16 @@ The [single 3,295-to-465-to-79 working relationship index](./customs-ultra-maste
 
 **Next non-circular operating sequence:** review candidate links *inside this one working index*, starting with the 50 lexical search leads and 79 existing cases for acceptance, role veto or variant decision; then process the remaining 3,073 in 200–300-record **identity** batches prioritized by repeated action families and 219 provisional potentially distinct groups. Promote only independently supported matches, preserve independent regional variants, and update one canonical decision field rather than starting new micro-ledgers. The indulgence work register remains a separate, exact-grant gate. Nothing proceeds to the Calendar without human editorial approval.
 
+## 30 October — 50 owner-search decisions, single-index workflow
+
+The first 50 owner-search leads in the [single working index](./customs-ultra-master-v2-single-working-relationship-index-20261030.v1.json) now carry individually written action-level dispositions. The candidate links were retrieved by lexical match, but **all 50 were manually reviewed at the recorded source-action-description level**, with explicit 1962 ritual-authority holds, actor/object/date distinctions and source-dependency notes. Their printed source folios were not reread in this pass and no independent attestations were certified.
+
+Results: **28 descriptions of the same action core** (pending independent verification); **11 associated components or variants**; **9 priestly/ritual authority holds**; **1 folklore context hold**; **1 explicit false-match veto**. The false candidate `WFF92-EWTN-066` is a generic Easter Monday family spring walk and **must not** be linked automatically to the devotional Emmaus walk `EAST-001`. The 9 ritual holds include Saint Blaise throat blessings and other named priestly services; domestic crafts cannot silently acquire their priestly formulas or authority.
+
+There are now **222 evidence-only observations with existing explicit reviewed source/owner or caseboard comparisons**, plus **50 more with new description-level candidate adjudications** = **272 distinct observations with some identity-comparison work / 3,295**. The latter 50 are **not promoted to real owner links**; therefore the strict 222/3,295 source-to-owner/caseboard relationship count remains unchanged. The other **3,023** evidence-only observations still have no such comparison. All **465** registry records and **79** pre-existing dedup review cases remain preserved with unaltered identity approval status.
+
+Next task must re-use the same master index for true cross-record identity decisions, prioritizing distinct action families and their variants rather than multiplying stand-alone research files; count verified underlying witnesses, not copied author reports. No publication, grant or Calendar changes.
+
 ## Existing research is not being discarded
 
 The authoritative corpus remains at:
