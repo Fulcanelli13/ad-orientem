@@ -951,7 +951,7 @@ export function mountFullMassPreflight({
     },
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
-      chosenForm:activeForm(),formChangeAllowed:selectionFor(getResolvedMass()).formChangeAllowed,date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
+      chosenForm:activeForm(),formChangeAllowed:(()=>{try{return selectionFor(getResolvedMass()).formChangeAllowed}catch{return false}})(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep,
       m1Preview,m1Focus}),
     dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
