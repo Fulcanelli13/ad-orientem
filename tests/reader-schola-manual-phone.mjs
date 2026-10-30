@@ -514,6 +514,9 @@ try{
      ".ao-kyriale-score-overlay:not([hidden]) [data-kyriale-score-viewport] svg")!==null,
      null,{timeout:15000});
    assert.equal(await scoreSheet.getAttribute("aria-modal"),"true");
+   assert.equal(await scoreSheet.evaluate(node=>node.localName),"dialog",
+     "Score viewer must own native browser top layer above the LIVE Mass ribbon");
+   assert.equal(await scoreSheet.evaluate(node=>node.open),true);
    assert.match(await scoreSheet.locator("[data-kyriale-score-title]").textContent(),/Kyrie VIII/);
    assert.match(await scoreSheet.locator("[data-kyriale-score-status]").textContent(),/Offline SVG notation/);
    assert.match(await scoreSheet.locator("[data-kyriale-score-source]").getAttribute("href"),/id=1184/);
