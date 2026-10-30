@@ -297,6 +297,12 @@ const STYLES=`
 /* The original 320x568 browser capture put the first prayer at y=595 and
    the sticky Prayer heading intercepted bead 14. Keep the full 282px
    fifteen-bead circle and 48px hit targets; reclaim *chrome* instead. */
+/* A sticky title can still cover the upper-right bead after native
+   scrollIntoView on iOS/Chromium. Crown reading has direct 48px tap points,
+   so its title must scroll with the document rather than mask those points. */
+#aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Head{
+ position:relative!important;top:auto!important
+}
 #aoPray435930:has(.aoLittleCrown[data-ao-f07-variant="little-crown"]) .aoP435930Mount{
  scroll-padding-top:78px
 }
