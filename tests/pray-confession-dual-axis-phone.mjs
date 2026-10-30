@@ -33,9 +33,9 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-conf-path]").count(),3);
  assert.equal(await page.locator(timeline).count(),0,"Path chooser is not a prayer card timeline");
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").isDisabled(),true);
- assert.equal(await page.locator(sel+" [data-p435930-since]").count(),1,
-  "Only the optional time since last Confession belongs in the preparation screen");
- assert.equal(await page.locator(sel+" input").count(),1,"Confession screen collects sensitive sin answers");
+ assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,
+  "The rejected elapsed-since-Confession field must not return to the opening");
+ assert.equal(await page.locator(sel+" input").count(),0,"No private answers or time estimates are collected");
 
  const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
  const togglePrayerLanguage=async()=>{
@@ -47,11 +47,9 @@ try{
  };
  assert.equal(await locale.count(),1,"Confession should share the devotional EN/FR header control");
  assert.equal((await locale.innerText()).trim(),"EN");
- await page.locator(sel+" [data-p435930-since]").fill("three weeks");
  await togglePrayerLanguage();
  assert.equal((await locale.innerText()).trim(),"FR");
- assert.equal(await page.locator(sel+" [data-p435930-since]").inputValue(),"three weeks",
-  "Switching language may not discard the private session-only time estimate");
+
  assert.match(await page.locator(sel+" [data-p435930-conf-path='regular']").innerText(),/Confession rapide/);
  await page.screenshot({path:resolve(captures,"confession-390-chooser-fr.png"),animations:"disabled"});
  await togglePrayerLanguage();
