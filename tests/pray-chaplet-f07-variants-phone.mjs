@@ -40,8 +40,13 @@ try{
     assert.equal(await band.locator(c.kind==="little-crown"?".aoF07LittleCrownBead":
       c.kind==="five-wounds"?".aoF07WoundPoint":c.kind==="precious-blood"?".aoF07BloodSegment":".aoF07VariantDot").count(),c.dots);
     if(c.kind==="five-wounds"){
-     assert.equal(await page.locator(prefix+" .aoF07ReaderLanguage summary").count(),1,
+     assert.equal(await page.locator(prefix+" .aoF07ReaderLanguage > summary").count(),1,
       "F07 w1 must own one discreet Aa language menu");
+     const sourceDisclosure=page.locator(prefix+" .aoF07ReaderLanguage .aoPrayerBookSources");
+     assert.equal(await sourceDisclosure.count(),1,
+      "F07 source evidence remains inside Aa, never beside the prayer");
+     assert.equal(await sourceDisclosure.evaluate(el=>el.open),false,
+      "Historical references must remain closed during recitation");
      const header=page.locator(prefix+" .aoP435930Head .aoP435930Home");
      assert.equal(await header.count(),1,"Home shortcut must remain reachable");
      assert.ok(await header.isVisible(),"Home shortcut must stay visible");
@@ -64,7 +69,7 @@ try{
       "No duplicate hidden fifteen-bead navigation sheet");
      assert.equal(await page.locator(prefix+".aoF07JumpDisclosure").count(),0);
      assert.equal(await band.locator('.aoF07LittleCrownCentre[aria-valuenow="1"]').count(),1);
-     assert.equal(await page.locator(prefix+".aoF07LittleCrownLanguage summary").count(),1,
+     assert.equal(await page.locator(prefix+".aoF07LittleCrownLanguage > summary").count(),1,
       "Quiet Aa menu replaces LATIN pill in the pilot");
     }
     const text=page.locator(prefix+c.prayer).first();
