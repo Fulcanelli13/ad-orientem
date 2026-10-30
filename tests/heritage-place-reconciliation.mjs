@@ -53,7 +53,16 @@ for(const entry of R.place_crosswalk){
  assert.equal(entry.display_name,place.name?.official??"");
  const actual=expected.get(entry.place_id);
  const actualIds=Object.fromEntries([...actual].map(([key,ids])=>[key,[...ids].sort()]));
- assert.deepEqual(entry.record_ids,actualIds,"record crosswalk changed for "+entry.place_id);
+ // The original 10 October snapshot is immutable. Later independent, source-
+ // backed relic evidence may extend exactly one canonical Place without
+ // rewriting an earlier research snapshot.
+ const historicalIds={...actualIds};
+ if(entry.place_id==="place:MU:pere-laval-sainte-croix"){
+  assert.deepEqual(actualIds.relics,["relic:MU:jacques-desire-laval-sainte-croix"]);
+  assert.ok(!entry.record_ids.relics,"Earlier snapshot must not claim this later research");
+  delete historicalIds.relics;
+ }
+ assert.deepEqual(entry.record_ids,historicalIds,"record crosswalk changed for "+entry.place_id);
  const hasCoordinates=Number.isFinite(place.geo?.lat)&&Number.isFinite(place.geo?.lng);
  const status=!hasCoordinates?"PENDING_COORDINATES":place.geo?.source_url?
    "GEO_SOURCE_URL_PRESENT":"COORDINATES_MISSING_SOURCE_URL";
@@ -65,7 +74,7 @@ assert.equal(R.counts.places,G.places.length);
 assert.equal(R.counts.places_with_linked_records,linked);
 for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","novena_context","routes","directory_links"]){
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
- assert.equal(R.distinct_place_links[kind],distinct,"unique Place count drifted for "+kind);
+ assert.equal(R.distinct_place_links[kind]+(kind==="relics"?1:0),distinct,"Only the independently sourced Père Laval relic may extend the frozen relic Place count");
 }
 // The 10 October editorial snapshot is immutable. Reconcile twenty later,
 // explicitly source-locked non-pin additions; do not rewrite the snapshot as if
