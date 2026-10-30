@@ -65,7 +65,17 @@ try{
    assert.equal(await crown.getAttribute('data-position'),'4');
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
    assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/);
-   await page.locator(base+".aoDevoCardScroll").evaluate(el=>{el.scrollTop+=200});
+   // Scroll to the *next source paragraph*, rather than adding an
+   // arbitrary 200px which may still lie inside the long first offering.
+   const scrollResult=await page.locator(base+".aoDevoCardScroll").evaluate(el=>{
+     const second=el.querySelector('[data-ao-mercy-step="5"]');
+     if(!second)throw new Error("Missing canonical second decade prayer");
+     el.scrollTop=Math.max(0,second.offsetTop-el.offsetTop-el.clientHeight*.35);
+     return {top:el.scrollTop,max:el.scrollHeight-el.clientHeight,
+       second:second.offsetTop,visible:el.clientHeight};
+   });
+   assert.ok(scrollResult.top>0&&scrollResult.max>=scrollResult.top,
+    "Mercy canonical prayer text must actually scroll: "+JSON.stringify(scrollResult));
    await page.waitForFunction(()=>{
     const root=document.querySelector("#aoPray435930.open");
     const cursor=Number(root?.querySelector("[data-ao-f07-crown]")?.dataset.position);
