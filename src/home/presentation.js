@@ -179,7 +179,18 @@ export function renderHomeToString(state,win=globalThis){
   // Artwork is mounted into its own DOM island by renderHome.
   // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
-  if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage,choices:win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null,ordoFacts:calendarOrdoMassFacts(state.resolution,{language:vm.language})});
+  const properSections=proper?[
+    ["introit","Introit","Introït"],["collect","Collect","Collecte"],
+    ["epistle","Epistle","Épître"],["lesson","Lesson","Leçon"],
+    ["gospel","Gospel","Évangile"],["offertory","Offertory","Offertoire"],
+    ["communion","Communion","Communion"],
+  ].filter(([key])=>{
+    const value=proper[key];
+    return typeof value==="string"?Boolean(value.trim()):
+      Array.isArray(value)?value.length>0:
+      Boolean(value&&typeof value==="object"&&Object.keys(value).length);
+  }).map(([,en,french])=>({en,fr:french})):[];
+  if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage,properSections,choices:win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null,ordoFacts:calendarOrdoMassFacts(state.resolution,{language:vm.language})});
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
     resume.stepNumber?String(resume.stepNumber):"",
