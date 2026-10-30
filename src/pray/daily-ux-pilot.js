@@ -34,7 +34,7 @@ export function renderDailyBookPills({edition,L,esc}){
  ).join("");
  const editionChoice=(id,en,fr)=>'<button type="button" data-tp381-personal-action="edition" data-tp381-personal-value="'+id+'" aria-pressed="'+String(edition===id)+'">'+esc(L(en,fr))+'</button>';
  return '<section class="aoDailyBookSelector" aria-label="'+esc(L("Prayer-book source","Livre de prières d’origine"))+'" data-ao-daily-book-family="piusx">'+
-  '<span class="aoDailyBookLabel">'+esc(L("Choose the prayer-book version","Choisir la version du livre"))+'</span>'+
+  '<span class="aoDailyBookLabel">'+esc(L("Prayer-book version","Version du livre de prières"))+'</span>'+
   '<div class="aoDailyBookEditions" role="group" aria-label="'+esc(L("St Pius X editions","Éditions de saint Pie X"))+'">'+
    editionChoice("1913","St Pius X · 1913","St Pie X · 1913")+editionChoice("1905","St Pius X · 1905","St Pie X · 1905")+
   '</div>'+
