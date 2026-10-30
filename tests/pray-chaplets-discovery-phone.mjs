@@ -578,6 +578,23 @@ try{
    await page.locator(crownPilot+' [data-p435930-crown-language="en"]').click();
    assert.equal(await page.locator(crownPilot+' .aoLittleCrownPrayerText').getAttribute('lang'),'en');
    assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   // Report the actual tap hit-test after a language-rerender. The 390px
+   // failure named the sticky title as an interceptor; do not force click.
+   const crownHit=await page.evaluate(()=>{
+    const node=document.querySelector('#aoPray435930.open [data-p435930-crown-bead="14"]');
+    const head=document.querySelector('#aoPray435930.open .aoP435930Head');
+    const scroll=document.querySelector('#aoPray435930.open .aoP435930Mount');
+    const b=node.getBoundingClientRect(),h=head.getBoundingClientRect();
+    const x=b.left+b.width/2,y=b.top+b.height/2;
+    const atop=document.elementFromPoint(x,y);
+    return {bead:[b.x,b.y,b.width,b.height],header:[h.x,h.y,h.width,h.height],
+      headerPosition:getComputedStyle(head).position,headerZ:getComputedStyle(head).zIndex,
+      hit:atop?.outerHTML?.slice(0,200),scrollTop:scroll?.scrollTop,
+      scrollHeight:scroll?.scrollHeight,viewport:innerHeight,
+      actualOwner:node?.closest('.aoF07LittleCrownCircle')?.outerHTML?.slice(0,120)};
+   });
+   console.log("F07-CROWN-HIT "+width+" "+JSON.stringify(crownHit));
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-pre-last-"+width+".png"),animations:"disabled"});
    await page.locator(crownPilot+' [data-p435930-crown-bead="14"]').click();
    assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'15');
    assert.equal(await page.locator(crownPilot+' [data-p435930-crown-finish]').count(),1);
