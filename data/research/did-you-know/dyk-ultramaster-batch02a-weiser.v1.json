@@ -1,0 +1,970 @@
+{
+  "schema": "AO_DYK_ULTRAMASTER_SOURCE_DRAFT_V1",
+  "batch": "02A",
+  "date": "2026-10-30",
+  "status": "NONPUBLISHING_EDITORIAL_RESEARCH",
+  "counts": {
+    "total": 25,
+    "WEISER_1958": 25,
+    "approved": 0,
+    "published": 0
+  },
+  "source_branch": "research/customs-multibook-bulk150-20261026",
+  "source_head_sha": "1ba95d918c9043ec4915dfce84866ac237f1d371",
+  "warning": "Historical evidence and author suggestions are not universal Catholic practices. Reconcile against prior DYK rotation before approving.",
+  "facts": [
+    {
+      "id": "DYK-UM02-001",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that English Mothering Sunday visits sometimes included simnel cake as well as visits to one's family and mother church.",
+        "fr": "Saviez-vous que en Angleterre, les visites familiales du dimanche de la mi-Carême étaient parfois accompagnées d'un simnel cake et d'une visite à l'église-mère."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-014",
+        "observation_ids": [
+          "WEI58-14-013"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          178
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "England"
+        ],
+        "preliminary_scope": "DISTINCT_HISTORIC_REGIONAL_CANDIDATE",
+        "note": "Not exclusively Catholic",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-002",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Saint Lucy's candlelight celebrations became a distinctive Scandinavian December tradition.",
+        "fr": "Saviez-vous que les célébrations de sainte Lucie à la lumière des bougies sont devenues une tradition caractéristique du mois de décembre en Scandinavie."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-017",
+        "observation_ids": [
+          "WEI58-28-024"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          341
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Sweden Norway pre-Reformation and later"
+        ],
+        "preliminary_scope": "DISTINCT_REGIONAL_SAINTS_DAY_CANDIDATE",
+        "note": "Post-Reformation and regional variations",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-003",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that some European Martinmas gatherings combined religious thanksgiving with a communal harvest feast.",
+        "fr": "Saviez-vous que certaines fêtes européennes de la Saint-Martin associaient une action de grâce religieuse à un repas communautaire des récoltes."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-019",
+        "observation_ids": [
+          "WEI58-22-008"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          270
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": true
+      },
+      "scope": {
+        "geography": [
+          "France Germany Holland England and central Europe"
+        ],
+        "preliminary_scope": "RITUAL_OR_LOCAL_EVENT_BOUNDARY",
+        "note": "No universal Thanksgiving Mass",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-004",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser recorded a custom of children writing letters to the Christ Child during the Christmas season.",
+        "fr": "Saviez-vous que Weiser a relevé une coutume où des enfants écrivaient des lettres à l'Enfant Jésus pendant la période de Noël."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-021",
+        "observation_ids": [
+          "WEI58-05-004"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          56
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Europe/Americas; varies"
+        ],
+        "preliminary_scope": "RELATED_REGIONAL_COMPONENT",
+        "note": "Exact locale requires source check",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-005",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that meatless Christmas Eve meals were part of household traditions in some Central and Northern European regions.",
+        "fr": "Saviez-vous que le repas sans viande de la veille de Noël faisait partie des traditions de certains foyers d'Europe centrale et septentrionale."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-022",
+        "observation_ids": [
+          "WEI58-06-006"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          73
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Central and Northern Europe"
+        ],
+        "preliminary_scope": "REGIONAL_FAMILY_CONTEXT",
+        "note": "Not current fasting law",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-006",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser described Christmas Eve households finishing preparations and seeking reconciliation.",
+        "fr": "Saviez-vous que Weiser a décrit des foyers achevant leurs préparatifs et cherchant la réconciliation la veille de Noël."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-023",
+        "observation_ids": [
+          "WEI58-06-011"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          74
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "European households"
+        ],
+        "preliminary_scope": "HISTORICAL_HOUSEHOLD_CONTEXT",
+        "note": "Author reported",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-007",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser described nineteenth-century Boston children bringing Christmas gifts for the poor to a parish crib.",
+        "fr": "Saviez-vous que Weiser relatait comment, au XIXe siècle, des enfants de Boston apportaient des cadeaux de Noël destinés aux pauvres à la crèche d'une paroisse."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-024",
+        "observation_ids": [
+          "WEI58-08-024"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          110
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Holy Trinity Catholic parish, Boston (1851)"
+        ],
+        "preliminary_scope": "HISTORICALLY_LOCAL_EVENT",
+        "note": "Specific Boston example",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-008",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that hot cross buns were associated with Good Friday in historical English and Irish food customs.",
+        "fr": "Saviez-vous que les hot cross buns étaient associés au Vendredi saint dans les anciennes traditions alimentaires d'Angleterre et d'Irlande."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-025",
+        "observation_ids": [
+          "WEI58-15-032"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          206
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "England and Ireland"
+        ],
+        "preliminary_scope": "CULTURAL_CONTEXT_SUPERSTITION_HOLD",
+        "note": "Cultural usage; no magical claim",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-009",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that the traditional Latin Easter greeting Surrexit Dominus vere means 'The Lord has truly risen'?",
+        "fr": "Saviez-vous que la salutation pascale traditionnelle Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité » ?"
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-026",
+        "observation_ids": [
+          "WEI58-16-005"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          212
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Early Latin Christian practice"
+        ],
+        "preliminary_scope": "HISTORICAL_GREETING_CANDIDATE",
+        "note": "Historical liturgical/devotional phrase",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-010",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that rolling hard-boiled eggs was among the games played in some European Easter celebrations.",
+        "fr": "Saviez-vous que faire rouler des œufs durs figurait parmi les jeux de certaines célébrations pascales européennes."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-027",
+        "observation_ids": [
+          "WEI58-17-016"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          235
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "European families"
+        ],
+        "preliminary_scope": "RELATED_VARIANT_NO_AUTOMERGE",
+        "note": "Regional social custom",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-011",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Easter lilies became seasonal decorations in some American churches and homes.",
+        "fr": "Saviez-vous que les lis de Pâques sont devenus des décorations saisonnières dans certaines églises et maisons américaines."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-028",
+        "observation_ids": [
+          "WEI58-17-019"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          236
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "US; horticultural origin outside Europe"
+        ],
+        "preliminary_scope": "SEASONAL_SYMBOL_CONTEXT",
+        "note": "Not all periods or places",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-012",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser reported some communities gathering on hills for dawn prayer at Pentecost.",
+        "fr": "Saviez-vous que Weiser évoquait des communautés se rassemblant sur des hauteurs pour prier à l'aube de la Pentecôte."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-029",
+        "observation_ids": [
+          "WEI58-19-018"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          253
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Several European Christian regions"
+        ],
+        "preliminary_scope": "HISTORICAL_REGIONAL_PRAYER_CANDIDATE",
+        "note": "Historical regional report",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-013",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that in some Central and Eastern European communities, candles were decorated before the Candlemas blessing.",
+        "fr": "Saviez-vous que dans certaines communautés d'Europe centrale et orientale, les cierges étaient ornés avant leur bénédiction à la Chandeleur."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-031",
+        "observation_ids": [
+          "WEI58-25-007"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          299
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Eastern and Central European Catholic communities"
+        ],
+        "preliminary_scope": "EXISTING_CUSTOM_EXPANSION_REVIEW",
+        "note": "Regional; blessing belongs to minister",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-014",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser described Polish All Souls traditions involving an empty place at table as well as gifts of food to the poor.",
+        "fr": "Saviez-vous que Weiser décrivait en Pologne, pour la commémoration des défunts, des usages comprenant une place vide à table et des dons alimentaires aux pauvres."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-032",
+        "observation_ids": [
+          "WEI58-26-025"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          313
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Poland"
+        ],
+        "preliminary_scope": "FOLK_NARRATIVE_CHARITY_SPLIT",
+        "note": "Separate charity from folkloric interpretations",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-015",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that harvest wreaths and processions were associated with the Assumption in some Hungarian and Polish traditions.",
+        "fr": "Saviez-vous que des couronnes et cortèges de la moisson étaient associés à l'Assomption dans certaines traditions hongroises et polonaises."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-035",
+        "observation_ids": [
+          "WEI58-22-007"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          270
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Hungary and Poland historical"
+        ],
+        "preliminary_scope": "REGIONAL_VARIANT_IDENTITY_REVIEW",
+        "note": "Historical local practice",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-016",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Weiser's historical survey mentions regional seed blessings connected to the Nativity of Our Lady on 8 September.",
+        "fr": "Saviez-vous que l'étude historique de Weiser mentionne des bénédictions régionales de semences liées à la Nativité de Notre-Dame, le 8 septembre."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-037",
+        "observation_ids": [
+          "WEI58-25-023"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          305
+        ],
+        "original_page_checked_prior": true,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Northern and Central European churches"
+        ],
+        "preliminary_scope": "RITUAL_TEXT_AND_AUTHORITY_HOLD",
+        "note": "Ritual text and authorization pending",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-017",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that some Central and Eastern European households observed special evenings during the twelve days of Christmas.",
+        "fr": "Saviez-vous que dans certains foyers d'Europe centrale et orientale, les douze jours de Noël comportaient des soirées particulières."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-038",
+        "observation_ids": [
+          "WEI58-10-002",
+          "WEI58-10-003"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          123,
+          123
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Central and Eastern Europe",
+          "Poland"
+        ],
+        "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+        "note": "Historically reported, optional",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-018",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Monday was associated with personal prayers for the Holy Souls in some Catholic devotional schedules.",
+        "fr": "Saviez-vous que le lundi était associé à des prières pour les âmes du purgatoire dans certains usages de dévotion catholiques."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-041",
+        "observation_ids": [
+          "WEI58-02-004"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          27
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Latin Catholic"
+        ],
+        "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+        "note": "Optional weekly association",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-019",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Tuesday could be set aside for a voluntary devotion to the holy angels.",
+        "fr": "Saviez-vous que le mardi pouvait être consacré à une dévotion facultative envers les saints anges."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-042",
+        "observation_ids": [
+          "WEI58-02-005"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          27
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Latin votive usage"
+        ],
+        "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+        "note": "Optional weekly association",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-020",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Wednesday has been associated with devotion to Saint Joseph in Catholic tradition.",
+        "fr": "Saviez-vous que le mercredi est associé à la dévotion envers saint Joseph dans la tradition catholique."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-043",
+        "observation_ids": [
+          "WEI58-02-006"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          28
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Latin Catholic"
+        ],
+        "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+        "note": "Optional weekly association",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-021",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Thursday has been associated with a special devotion to the Blessed Sacrament.",
+        "fr": "Saviez-vous que le jeudi est associé à une dévotion particulière envers le Saint-Sacrement."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-044",
+        "observation_ids": [
+          "WEI58-02-007"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          29
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Roman Catholic"
+        ],
+        "preliminary_scope": "RITE_OR_LITURGY_BOUNDARY_CHECK",
+        "note": "Do not infer ministerial rite",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-022",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that First Fridays have long been linked to devotion to the Sacred Heart of Jesus.",
+        "fr": "Saviez-vous que les premiers vendredis du mois sont depuis longtemps liés à la dévotion au Sacré-Cœur de Jésus."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-045",
+        "observation_ids": [
+          "WEI58-02-008"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          29
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Roman Catholic"
+        ],
+        "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+        "note": "Indulgences and promises excluded",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-023",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that Saturday has traditionally been associated with devotion to the Blessed Virgin Mary.",
+        "fr": "Saviez-vous que le samedi est traditionnellement associé à la dévotion envers la Bienheureuse Vierge Marie."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-046",
+        "observation_ids": [
+          "WEI58-02-009"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          29
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Roman Catholic"
+        ],
+        "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+        "note": "Not a personal obligation",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-024",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that the Ember Days were historically connected not only with penance but also thanksgiving for the harvest.",
+        "fr": "Saviez-vous que les Quatre-Temps étaient historiquement liés non seulement à la pénitence, mais aussi à l'action de grâce pour les récoltes."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-047",
+        "observation_ids": [
+          "WEI58-03-003"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          32
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Roman liturgical tradition"
+        ],
+        "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+        "note": "Historical not present fasting law",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    },
+    {
+      "id": "DYK-UM02-025",
+      "domain": "customs_historical_research",
+      "source_family": "WEISER_1958",
+      "text": {
+        "en": "Did you know that charitable almsgiving appears in Weiser's account of older Ember Day observances.",
+        "fr": "Saviez-vous que l'aumône figure dans la description par Weiser d'anciennes pratiques des Quatre-Temps."
+      },
+      "claim_mode": "HISTORICAL_SOURCE_BOUNDED",
+      "source": {
+        "record_owner": "data/customs/master/customs-multibook-bulk150-20261026.v1.json",
+        "record_id": "BULK150-048",
+        "observation_ids": [
+          "WEI58-03-004"
+        ],
+        "author": "Francis X. Weiser",
+        "work": "Handbook of Christian Feasts and Customs",
+        "year": 1958,
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          36
+        ],
+        "original_page_checked_prior": false,
+        "independent_witness_checked": false
+      },
+      "scope": {
+        "geography": [
+          "Catholic Europe"
+        ],
+        "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+        "note": "Historical; no universal obligation",
+        "historical_only": true,
+        "not_universal_law": true
+      },
+      "editorial_status": "DRAFT_SOURCE_SCOPE_AND_FR_REVIEW_PENDING",
+      "publication_authorized": false,
+      "link_status": "UNRESOLVED_EXISTING_MODULE"
+    }
+  ]
+}
