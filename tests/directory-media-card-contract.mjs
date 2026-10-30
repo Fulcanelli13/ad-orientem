@@ -135,7 +135,7 @@ const baseMap=projectPreliminaryR49(readRegistry("data/directory/preliminary-map
 const fullMap=projectPublishedProvisionalMassSites(
   baseMap,readRegistry("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 assert.equal(fullMap.length,1882,"The map's 1,879 + 3 known visual slots must be accounted for");
-const logoGroups=new Set(["FSSP","ICKSP","SSPX","IBP"]);
+const logoGroups=new Set(["FSSP","ICKSP","SSPX","IBP","AASJMV"]);
 const visualCount={emblem:0,neutral:0};
 for(const venue of fullMap){
   const fallback=renderDirectoryIdentityFallback(venue,"en");
@@ -150,5 +150,5 @@ for(const venue of fullMap){
     visualCount.neutral++;
   }
 }
-assert.deepEqual(visualCount,{emblem:1186,neutral:696});
+assert.deepEqual(visualCount,{emblem:1191,neutral:691});
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
