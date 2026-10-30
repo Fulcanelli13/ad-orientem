@@ -224,6 +224,43 @@ assert.equal(josephTowns.counts.new_identity_mergers,0);
 assert.equal(josephTowns.counts.new_indulgence_grants,0);
 assert.equal(josephTowns.counts.calendar_publications,0);
 assert.equal(josephTowns.release_freeze,"RESEARCH_ONLY_NO_MERGE_NO_CALENDAR_OR_PUBLICATION_UPDATE");
+// Named historical collector under Pitrè is a dependency attribution, not a new published witness.
+const cannizzaroLineage=get("customs-ultra-master-v2-pitre-cannizzaro-witness-lineage-20261030.v1.json");
+assert.equal(cannizzaroLineage.counts.previously_existing_pitre_source_observations_with_new_lineage_metadata,15);
+assert.equal(cannizzaroLineage.reclassified_exact_existing_source_ids.length,15);
+assert.equal(new Set(cannizzaroLineage.reclassified_exact_existing_source_ids.map(x=>x.id)).size,15);
+assert.equal(josephTowns.source_lineage_followup,"customs-ultra-master-v2-pitre-cannizzaro-witness-lineage-20261030.v1.json");
+assert.equal(josephTowns.counts.named_local_collector_attributions_linked,1);
+assert.equal(josephTowns.counts.source_observations_with_new_collector_lineage,15);
+const santaCroceRows=pitreWave13.rows.filter(x=>x.source_scope==="Santa Croce Camerina, Ragusa, Sicily"&&x.source_id.startsWith("PIT1900-IT-"));
+assert.equal(santaCroceRows.length,15);
+for(const row of cannizzaroLineage.reclassified_exact_existing_source_ids){
+ const original=pitreById.get(row.id);
+ assert.ok(original,"Cannizzaro pointer unresolved "+row.id);
+ assert.equal(original.source_scope,"Santa Croce Camerina, Ragusa, Sicily");
+ assert.equal(row.evidence_id,original.evidence_id);
+ assert.equal(row.action,original.action_or_component);
+ assert.equal(row.original_ocr_line,original.source_line);
+ assert.equal(row.existing_original_source_json_pointer,original.original_record.json_pointer);
+ assert.equal(row.source_passage_approval_for_current_practice,false);
+ assert.equal(row.ritual_ministerial_authority_approved,false);
+ assert.equal(row.indulgence_claim_verified,false);
+}
+assert.equal(cannizzaroLineage.source_lineage.historical_society_report.pdf_page_index_zero_based,128);
+assert.equal(cannizzaroLineage.source_lineage.historical_society_report.inspected_page_image,true);
+assert.equal(cannizzaroLineage.source_lineage.published_compilation.individual_original_publication_checked,false);
+assert.equal(cannizzaroLineage.counts.original_1900_folio_pages_freshly_verified,0);
+assert.equal(cannizzaroLineage.counts.independent_publications_proven_for_original_custom,0);
+assert.equal(cannizzaroLineage.counts.new_source_observations_created,0);
+assert.equal(cannizzaroLineage.counts.new_identity_merges,0);
+assert.equal(cannizzaroLineage.counts.new_current_indulgence_claims,0);
+assert.equal(cannizzaroLineage.counts.new_calendar_publications,0);
+assert.equal(cannizzaroLineage.publication_allowed,false);
+for(const row of cannizzaroLineage.research_decisions){
+ assert.ok(row.source_ids.every(x=>pitreById.has(x)));
+ assert.ok(row.source_ids.every(x=>x.startsWith("PIT1900-IT-")));
+ if(row.owner_candidate)assert.ok(mids.has(row.owner_candidate));
+}
 const erroneousEasterPair=dedup.description_pair_edges.find(r=>r.review_id==="CC3WORK-REL-041");
 assert.equal(erroneousEasterPair.action_core_relation_as_reviewed,"FALSE_LEXICAL_MATCH_UNRELATED_CAKE_AND_EASTER_FIRE");
 assert.equal(erroneousEasterPair.canonical_merge_authorized,false);
