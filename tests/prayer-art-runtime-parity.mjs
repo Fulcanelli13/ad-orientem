@@ -93,6 +93,45 @@ assert.equal(dayScreens,144);
 assert.equal(guideStates,648);
 const rosaryKeys=Object.keys(ROSARY_MYSTERY_CONTEXT_V1).sort();
 assert.equal(rosaryKeys.length,20);
+
+const bundle=readFileSync('ao-packed-04392ad5e156c05227d9.js','utf8');
+const beginning=bundle.indexOf('function labRosarySteps(set)');
+const ending=bundle.indexOf('function labRosaryDevotionalStep(',beginning);
+assert.ok(beginning>=0&&ending>beginning,'Actual Rosary step generator missing from bundle');
+const donor=bundle.slice(beginning,ending);
+for(const token of [
+  "const ids=labRosaryIds(set),steps=[]",
+  "steps.push({kind:'mystery',id,mi,phase:'decade'})",
+  "for(let bead=1;bead<=10;bead++)",
+  "S.rosaryFatima!==false",
+  "if(S.rosaryForm==='devotional')",
+  "steps.push({kind:'conclusion',phase:'conclusion'})",
+  "prayer('sign','conclusion',{finalCross:true})"
+])assert.ok(donor.includes(token),'Rosary donor step generator drifted: '+token);
+const rosaryDonorScenarios=[
+  {form:'standard',fatima:true,opening:7,closing:1},
+  {form:'standard',fatima:false,opening:7,closing:1},
+  {form:'devotional',fatima:true,opening:3,closing:8},
+  {form:'devotional',fatima:false,opening:3,closing:8}
+];
+for(const check of rosaryDonorScenarios){
+  const perDecade=1+1+10+1+(check.fatima?1:0);
+  const total=check.opening+5*perDecade+check.closing;
+  const row=manifest.rosary_donor_runtime.five_decade_stage_totals.find(x=>x.form===check.form&&x.fatima===check.fatima);
+  assert.ok(row,'Missing generated Rosary scenario '+check.form);
+  assert.equal(total,row.total,'Donor-derived Rosary step length mismatch');
+  assert.equal(perDecade,row.per_decade);
+  for(const set of ['joyful','sorrowful','glorious','luminous']){
+    // Every decade step carries mi and inherits that mystery image. All
+    // opening and concluding prayers inherit the Rosary cover candidate.
+    assert.equal(presentationResolve('rosary',0,{set,mystery:null}).slot,'COV-pray.rosary');
+    for(let mi=0;mi<5;mi++){
+      assert.ok(presentationResolve('rosary',0,{set,mystery:mi}).slot,
+        'Rosary decade image stage missing '+set+' / '+mi);
+    }
+  }
+}
+
 assert.deepEqual(manifest.rosary_mystery_context.map(x=>x.context_key).sort(),rosaryKeys);
 for(const x of manifest.rosary_mystery_context){
   if(x.context_key.startsWith('lum')){
