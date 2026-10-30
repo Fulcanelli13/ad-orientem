@@ -342,7 +342,8 @@
     "original_1900_folio_pages_freshly_verified": 0,
     "new_identity_merges": 0,
     "new_current_indulgence_claims": 0,
-    "new_calendar_publications": 0
+    "new_calendar_publications": 0,
+    "new_verified_independent_historical_action_matches": 0
   },
   "next_primary_checks": [
     "Directly inspect original 1900 book p.450 and pp.456–459, map each of 15 OCR observations to page and paragraph",
@@ -350,5 +351,50 @@
     "Inspect original Antonino Uccello Pani e dolci di Sicilia pp.75–78 before treating as independent later attestation",
     "Check sacred-representation / priestly blessing distinctions against the relevant approved ritual books, not descriptive folklore"
   ],
-  "publication_allowed": false
+  "publication_allowed": false,
+  "secondary_scholarship_leads": [
+    {
+      "work": "Serafino Amabile Guastella, Canti popolari del circondario di Modica",
+      "publication_year": 1876,
+      "publisher": "Lutri & Secagno figli",
+      "bibliographic_catalog_url": "https://openlibrary.org/books/OL23427891M/Canti_popolari_del_circondario_di_Modica",
+      "digitized_original_url": "https://www.giovannimodicascala.it/media/audio/01-canti-della-contea-1/Guastella_CantiPopolariConteaDiModica_1876.pdf",
+      "earlier_than_pitre_1900": true,
+      "online_original_text_search_snippet_checked": true,
+      "pdf_page_image_checked": false,
+      "original_exact_page_not_found": true,
+      "initial_snippet_locations": [
+        "Chiaramonte",
+        "Francofonte",
+        "Siracusa",
+        "Modica",
+        "Rosolini"
+      ],
+      "historical_source_relation": "SEPARATE_1876_PUBLISHED_AUTHOR_DISTINCT_LOCAL_ACTION_DESCRIPTIONS_NOT_SAME_SANTA_CROCE_CUSTOM_CORROBORATION",
+      "correspondence_between_guastella_and_pitre_not_ruled_out": true,
+      "same_custom_independent_attestation_certified": false
+    },
+    {
+      "work": "Antonino Uccello, Pani e dolci di Sicilia",
+      "publication_year": 1976,
+      "publisher": "Sellerio, Palermo",
+      "public_catalog_source": "https://www.comune.barcellona-pozzo-di-gotto.me.it/wp-content/uploads/schede/biblioteca/sezione_sicilia.pdf",
+      "original_pages_cited_by_later_chapter": [
+        75,
+        76,
+        77,
+        78
+      ],
+      "original_book_directly_read": false,
+      "independent_1970s_observation_certified": false,
+      "source_type": "BIBLIOGRAPHIC_LEAD_SEPARATE_FROM_1900_PITRE"
+    },
+    {
+      "work": "G. Brafa Misicoro (ed.), Lettere di Serafino Amabile Guastella a Giuseppe Pitrè. Carteggio epistolare (1873–1898)",
+      "publication_year": 2003,
+      "bibliographic_source": "https://www.istitutoeuroarabo.it/DM/serafino-amabile-guastella-autore-di-testi-musicali/",
+      "original_correspondence_scanned": false,
+      "independence_note": "KNOWN_AUTHORIAL_CORRESPONDENCE_CAN_SIGNAL_DERIVATION; CONTENT_AND_CANNIZZARO_CONNECTION_UNCHECKED"
+    }
+  ]
 }
