@@ -1,20 +1,18 @@
-# Ad Orientem · 383 canonical Sacred Art paintings — Scripture tags
+# Canonical Sacred Art → Bible passages · Research register (30 October 2026)
 
-Source: frozen Oct 29 curatorial 383 registry in `archive/sacred-art-master-20261030-v2`, unchanged in this branch. All prior editorial locks, source-photo provenance and publication gates remain untouched.
+Source: canonical **383** painting registry, archived Oct 30; all original IDs and art approvals frozen.
 
-## Verified completeness of research output
+## Coverage
+- **383/383** paintings indexed and tagged with at least one scriptural reference
+- **458** artwork–Scripture relationships (many-to-many)
+- **150** paintings have title-evidenced direct biblical scene(s), but images not independently confirmed
+- **5** ambiguities require image review (e.g. feeding 5,000 vs 4,000; St Joseph dreams)
+- **0** left without Scripture references
 
-- **383** canonical paintings / distinct stable artwork IDs
-- **381** with one or more typed biblical citations
-- **150** direct scene title matches (still require image QA)
-- **455** artwork-to-passage relationship rows
-- **2** without defensible Bible references: `C32:guidoreni042jpg`, `C34:franciscodezurbaran046jpg`
+## Curation
+References are typed by relationship. A post-biblical saint or apparition **never** becomes an exact biblical scene; Assumption, Immaculate Conception and other devotional images use typology/doctrinal passages rather than fabricated Gospel narratives. The early Stations include elements that are devotional tradition rather than written Gospel events. Composite paintings may have multiple distinct references; event identity must precede any final Calendar matching.
 
-These are title-derived suggestions, not inspected-painting certificates. Direct scene, biblical person, doctrinal typology and later historical saint/vision are **different relationship types**. The four non-biblical Stations do not have their 'event' fabricated as written Gospel. Some composite paintings have multiple distinct references. Luke 7's unnamed sinner is not declared Mary Magdalene.
+Two opaque filenames were identified against the individual Commons object pages: `Guido Reni 042.jpg` depicts St Joseph; `Francisco de Zurbarán 046.jpg` is St Luke painting before Christ on the Cross. Identity sources have been attached to those rows, with source subjects kept separate from canonical titles.
 
-## Calendar next
-
-Each artwork record contains `calendar_day_links: []`. The Calendar crosswalk can join `artwork_id` to feast / Sunday proper and per-day Gospel identity later, with the user's historical artwork approvals always outranking inferred verse overlap. Do not auto-assign, change production assets or replace a user's selection from this Scripture index.
-
-- JSON: `data/calendar/sacred-art-canonical383-scripture-tags-20261030.v1.json`
-- CSV: `data/calendar/sacred-art-canonical383-scripture-links-20261030.csv`
+## Calendar crosswalk policy
+Leave `calendar_day_links: []` until the Calendar pass. Join by stable artwork ID, verified exact biblical scene, 1962 day/feast/Gospel context, and precedence of historic user-approved Class I/Sunday/module heroes. No automatic publication, date assignment, historical art approval change or image rights promotion.

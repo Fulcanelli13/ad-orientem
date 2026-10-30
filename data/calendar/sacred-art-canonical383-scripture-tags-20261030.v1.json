@@ -25,23 +25,22 @@
   },
   "counts": {
     "artworks": 383,
-    "with_at_least_one_scripture_reference": 381,
+    "with_at_least_one_scripture_reference": 383,
     "with_direct_scene_tag": 150,
-    "without_reference": 2,
-    "scripture_relations": 455,
+    "without_reference": 0,
+    "scripture_relations": 458,
     "by_status": {
-      "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION": 226,
+      "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION": 228,
       "DIRECT_SCENE_TITLE_MATCH_REQUIRES_IMAGE_QA": 150,
-      "AMBIGUOUS_SCENE_REQUIRES_IMAGE_QA": 5,
-      "UNMATCHED_NEEDS_RESEARCH": 2
+      "AMBIGUOUS_SCENE_REQUIRES_IMAGE_QA": 5
     },
     "by_relationship": {
       "POST_BIBLICAL_SAINT_THEMATIC_CONTEXT": 126,
-      "DEVOTIONAL_COMPOSITION_CONTEXT": 24,
+      "DEVOTIONAL_COMPOSITION_CONTEXT": 25,
       "DIRECT_BIBLICAL_SCENE": 156,
       "DOCTRINAL_ICONOGRAPHY_NOT_LITERAL_SCENE": 4,
       "DOCTRINAL_CONTEXT_NOT_LITERAL_SCENE": 4,
-      "BIBLICAL_PERSON_CONTEXT": 64,
+      "BIBLICAL_PERSON_CONTEXT": 66,
       "BIBLICAL_VISION_OR_ICONOGRAPHY": 2,
       "DEVOTIONAL_DOCTRINAL_NOT_LITERAL_SCENE": 3,
       "TYPOLOGICAL_DOCTRINAL_NOT_LITERAL_SCENE": 27,
@@ -68,8 +67,6 @@
       "NO_SPECIFIC_BIBLICAL_EVENT": 47,
       "DOCTRINAL_SUBJECT_NOT_BIBLICAL_NARRATIVE": 16,
       "IMAGE_REVIEW_NEEDED_TO_DISAMBIGUATE_EVENT": 4,
-      "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG": 2,
-      "SOURCE_TITLE_INSUFFICIENT_FOR_PERSON_OR_SCENE_IDENTIFICATION": 2,
       "STATION_TRADITION_NOT_EXPLICIT_GOSPEL_SCENE": 5,
       "TWO_DISTINCT_FEEDINGS_MUST_NOT_BE_CONFLATED": 1,
       "HISTORICAL_ART_EDITORIAL_LOCK_PRESERVED": 10,
@@ -2425,19 +2422,31 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Matthew 1:18–25",
+          "relationship": "BIBLICAL_PERSON_CONTEXT",
+          "event_or_theme_key": "person-saint-joseph",
+          "evidence_basis": "WIKIMEDIA_FILE_PAGE_TITLE_AND_DEPICTS",
+          "editorial_note": "The Commons file page identifies Guido Reni 042 as Saint Joseph (Hl. Josef). This is a portrait; it is not asserted to depict Joseph's dream."
+        }
+      ],
       "subject_tags": [
-        "SOURCE:SUBJECT_REVIEW_REQUIRED"
+        "SOURCE:SUBJECT_REVIEW_REQUIRED",
+        "ART_TO_SCRIPTURE:PERSON"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG",
-        "SOURCE_TITLE_INSUFFICIENT_FOR_PERSON_OR_SCENE_IDENTIFICATION"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
-      "production_release_changed": false
+      "production_release_changed": false,
+      "resolved_subject_from_source": {
+        "label": "Saint Joseph (portrait)",
+        "evidence_url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+        "evidence_type": "WIKIMEDIA_FILE_PAGE_TITLE_AND_DEPICTS",
+        "source_verified_date": "2026-10-30"
+      }
     },
     {
       "artwork_id": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
@@ -9398,19 +9407,38 @@
       "source_subject": "needs_subject_identification",
       "editorial_state_as_found": "UNREVIEWED",
       "source_page_as_found": null,
-      "scripture_links": [],
+      "scripture_links": [
+        {
+          "reference": "Luke 1:1–4",
+          "relationship": "BIBLICAL_PERSON_CONTEXT",
+          "event_or_theme_key": "person-luke-evangelist",
+          "evidence_basis": "WIKIMEDIA_FILE_PAGE_TITLE_AND_DEPICTS",
+          "editorial_note": "The Commons source describes Saint Luke as painter before Christ on the Cross; devotional composition, not a Gospel event of Luke painting a crucifixion."
+        },
+        {
+          "reference": "John 19:17–30",
+          "relationship": "DEVOTIONAL_COMPOSITION_CONTEXT",
+          "event_or_theme_key": "christ-crucified-meditation",
+          "evidence_basis": "WIKIMEDIA_FILE_PAGE_TITLE_AND_DEPICTS",
+          "editorial_note": "Crucified Christ appears in a devotional image with St Luke; do not portray St Luke's painting as an event recorded in this Gospel."
+        }
+      ],
       "subject_tags": [
-        "SOURCE:SUBJECT_REVIEW_REQUIRED"
+        "SOURCE:SUBJECT_REVIEW_REQUIRED",
+        "ART_TO_SCRIPTURE:PERSON"
       ],
-      "match_status": "UNMATCHED_NEEDS_RESEARCH",
-      "review_flags": [
-        "NO_DEFENSIBLE_SPECIFIC_SCRIPTURE_TAG",
-        "SOURCE_TITLE_INSUFFICIENT_FOR_PERSON_OR_SCENE_IDENTIFICATION"
-      ],
+      "match_status": "CONTEXTUAL_MATCH_REQUIRES_EDITORIAL_CONFIRMATION",
+      "review_flags": [],
       "calendar_day_links": [],
       "relation_to_calendar": "NOT_ASSIGNED_YET",
       "artwork_approval_changed": false,
-      "production_release_changed": false
+      "production_release_changed": false,
+      "resolved_subject_from_source": {
+        "label": "Saint Luke as a painter before Christ on the Cross",
+        "evidence_url": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg",
+        "evidence_type": "WIKIMEDIA_FILE_PAGE_TITLE_AND_DEPICTS",
+        "source_verified_date": "2026-10-30"
+      }
     },
     {
       "artwork_id": "W02-017",
@@ -11288,13 +11316,23 @@
       "Both feedings of the multitude kept distinct; Lanfranco work flagged for visual disambiguation",
       "Multiple distinct components added to composite Passion/Resurrection/Emmaus work",
       "Redundant literal duplicate citation relationships collapsed",
-      "Two legacy-image records lacking subjects remain untagged rather than fabricating Bible references"
+      "Two legacy-image records lacking subjects remain untagged rather than fabricating Bible references",
+      "Resolved two opaque legacy filenames to exact documented works on Commons and assigned contextual references without altering original titles/IDs or claiming biblical episodes"
     ],
-    "untagged_artwork_ids": [
-      "C32:guidoreni042jpg",
-      "C34:franciscodezurbaran046jpg"
-    ],
+    "untagged_artwork_ids": [],
     "calendar_assignments_created": 0,
-    "artwork_approval_changes": 0
+    "artwork_approval_changes": 0,
+    "recovered_two_source_pages": [
+      {
+        "id": "C32:guidoreni042jpg",
+        "subject": "Saint Joseph (portrait)",
+        "source": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg"
+      },
+      {
+        "id": "C34:franciscodezurbaran046jpg",
+        "subject": "Saint Luke as a painter before Christ on the Cross",
+        "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg"
+      }
+    ]
   }
 }
