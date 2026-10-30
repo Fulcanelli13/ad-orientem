@@ -1,0 +1,172 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B46_BATCH14_SOURCE_PARITY_V1",
+  "asOf": "2026-10-31",
+  "status": "ADDITIVE_RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "continuity": {
+    "previous": "B45 P767–816, 50 families, six source-fidelity corrections, five provenance repairs; no certified records",
+    "scope": "P817–846 existing batch14 only; no new canonical IDs or repetition of B45",
+    "originalEnglishChanoine": "STILL_BLOCKED"
+  },
+  "draftsRead": [
+    "pius-x-batch14-sacraments-a-20261020.v1.json",
+    "pius-x-batch14-sacraments-b-20261020.v1.json",
+    "pius-x-batch14-sacraments-c-20261020.v1.json"
+  ],
+  "coverage": {
+    "range": "P817–846",
+    "familiesInspected": 30,
+    "existingBilingualPairsInspected": 30,
+    "substantiveCorrections": 5,
+    "attributionTranslationRepairs": 2,
+    "retainedWithoutRewrite": 23,
+    "humanCertifications": 0
+  },
+  "sourceWitnesses": [
+    {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q817–846",
+      "class": "1905 Italian online transcription, print not collated; papally adopted catechism, not verbatim personal Pius X speech"
+    },
+    {
+      "url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20230325-motu-proprio-vos-estis-lux-mundi-aggiornato.html",
+      "loci": "2023 articles 3–5",
+      "class": "later safeguarding norm, not 1905 wording"
+    },
+    {
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "loci": "canons 1055–1057",
+      "class": "later Latin canonical cross-reference, not historic speech"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "SPX-1905-O-823",
+      "kind": "HISTORICAL_GRAVITY_RESTORATION_WITH_SAFEGUARD",
+      "issue": "Existing answer replaces the original's explicit 'very grave sin' judgment with the less precise phrase 'strong moral language'. The existing safeguarding boundary must remain.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism calls contempt and insults directed against priests as ministers of Christ a very grave sin, invoking Christ's words about those who despise His messengers. This historical moral statement does not prohibit reporting abuse, seeking protection or holding a priest accountable for misconduct.",
+        "fr": "Le Catéchisme de 1905 qualifie de péché très grave le mépris et les injures dirigés contre les prêtres en tant que ministres du Christ, en rappelant les paroles du Christ sur ceux qui méprisent ses envoyés. Cet enseignement moral historique n'interdit ni de signaler des abus, ni de rechercher une protection, ni de demander des comptes à un prêtre pour ses fautes."
+      },
+      "sourceLoci": [
+        "PX1905-Q823",
+        "VOS_ESTIS_LUX_MUNDI_2023_ART_3_4_5"
+      ],
+      "evidenceClass": "HISTORICAL_SOURCE_PARAPHRASE_PLUS_LATER_SAFEGUARD_DISTINCT",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_SAFEGUARD_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-O-827",
+      "kind": "HISTORICAL_GRAVITY_OMISSION",
+      "issue": "Existing draft says 'grave danger' but does not report that Q827 explicitly calls entering the ecclesiastical state without vocation a grave wrong and danger of perdition.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism calls entering the ecclesiastical state without a divine vocation a grave wrong that places a person in spiritual danger. This is its historical general warning, not a judgment that an app can make about an individual vocation.",
+        "fr": "Le Catéchisme de 1905 qualifie l'entrée dans l'état ecclésiastique sans vocation divine de faute grave qui met la personne en danger spirituel. C'est un avertissement général historique, non un jugement qu'une application peut porter sur une vocation individuelle."
+      },
+      "sourceLoci": [
+        "PX1905-Q827",
+        "PX1905-Q826"
+      ],
+      "evidenceClass": "HISTORICAL_SOURCE_PARAPHRASE_WITH_EDITORIAL_DISCERNMENT_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_PASTORAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-O-828",
+      "kind": "HISTORICAL_PARENTAL_CULPABILITY_OMISSION",
+      "issue": "Current 'strongly rejects' underreports the explicit historical attribution of very grave fault to parents who push a child into clergy for worldly motives without vocation.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism calls it a very grave fault for parents to press their children into the ecclesiastical state for worldly reasons when they have no vocation. It insists that the choice of a minister belongs to God's calling, not family ambition; discernment of a particular case still requires competent pastoral judgment.",
+        "fr": "Le Catéchisme de 1905 qualifie de faute très grave le fait, pour des parents, de pousser leurs enfants vers l'état ecclésiastique par intérêt temporel alors qu'ils n'ont pas de vocation. Il rappelle que le choix d'un ministre relève de l'appel de Dieu et non de l'ambition familiale ; le discernement d'un cas particulier exige néanmoins un jugement pastoral compétent."
+      },
+      "sourceLoci": [
+        "PX1905-Q828",
+        "PX1905-Q829"
+      ],
+      "evidenceClass": "HISTORICAL_SOURCE_PARAPHRASE_WITH_EDITORIAL_INDIVIDUAL_CASE_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_VOICE_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-M-839",
+      "kind": "HISTORICAL_RITE_DISTINCTION_OMISSION",
+      "issue": "Current answer distinguishes blessing and consent but omits Q839's explicit assertion that the blessing is not necessary to constitute the sacrament, within the Latin catechism's framework.",
+      "proposedOpening": {
+        "en": "In the 1905 Latin catechism's account, the priest's nuptial blessing is not what constitutes the sacrament: the spouses' mutual consent does so. The blessing solemnly confirms their union in the Church's name and invokes God's blessing. This is a historical Latin-rite explanation, not a complete treatment of every Catholic marriage rite.",
+        "fr": "Dans l'exposé du catéchisme latin de 1905, la bénédiction nuptiale du prêtre n'est pas ce qui constitue le sacrement : c'est le consentement mutuel des époux. La bénédiction sanctionne solennellement leur union au nom de l'Église et invoque la bénédiction de Dieu. Il s'agit d'une explication historique du rite latin, non d'un exposé de tous les rites catholiques du mariage."
+      },
+      "sourceLoci": [
+        "PX1905-Q837",
+        "PX1905-Q838",
+        "PX1905-Q839"
+      ],
+      "evidenceClass": "HISTORICAL_LATIN_RITE_PARAPHRASE_WITH_EASTERN_RITE_SCOPE_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_CANONICAL_RITE_TRANSLATION_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-M-844",
+      "kind": "HISTORICAL_LICEITY_CONDITION_OMISSION",
+      "issue": "Current answer substitutes vague 'proper spiritual disposition' for the 1905 source's explicit state of grace and its warning concerning sacrilege; do not confuse liceity with validity.",
+      "proposedOpening": {
+        "en": "For lawful celebration, the 1905 Catechism requires freedom from the impediments it then classified as impedient, instruction in the principal truths of religion, and being in the state of grace; it warns of sacrilege otherwise. This describes the discipline and moral formulation of that period, not a modern test for the validity of an individual marriage.",
+        "fr": "Pour célébrer licitement le mariage, le Catéchisme de 1905 exige l'absence des empêchements alors qualifiés de prohibitifs, l'instruction dans les principales vérités de la religion et l'état de grâce ; il avertit autrement du sacrilège. Cela décrit la discipline et la formulation morale de l'époque, non un critère actuel pour décider de la validité d'un mariage particulier."
+      },
+      "sourceLoci": [
+        "PX1905-Q843",
+        "PX1905-Q844",
+        "PX1905-Q845"
+      ],
+      "evidenceClass": "HISTORICAL_SOURCE_PARAPHRASE_WITH_CANONICAL_VALIDITY_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_CANONICAL_DOCTRINAL_TRANSLATION_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "attributionOnly": [
+    {
+      "id": "SPX-1905-O-817",
+      "issue": "The historical account of direct institution of episcopacy/presbyterate and mediated institution of diaconate must not be used as a standalone modern theology of the sacrament.",
+      "proposed": {
+        "en": "Keep existing historical framing; any comparison with contemporary sacramental teaching must be explicitly later editorial cross-reference.",
+        "fr": "Conserver la contextualisation historique ; toute comparaison avec la doctrine sacramentelle actuelle doit être explicitement signalée comme référence éditoriale postérieure."
+      },
+      "loci": [
+        "PX1905-Q817"
+      ],
+      "kind": "HISTORICAL_PERIOD_SCOPE_ONLY"
+    },
+    {
+      "id": "SPX-1905-O-832",
+      "issue": "Q832 calls Christ–Church union indissoluble; 'enduring' is weaker, although not demonstrably false.",
+      "proposed": {
+        "en": "Prefer 'indissoluble union' when quoting the 1905 catechetical image; no need to replace the otherwise accurate response.",
+        "fr": "Préférer « union indissoluble » pour restituer l'image catéchétique de 1905 ; ne pas remplacer le reste de la réponse, qui est exact."
+      },
+      "loci": [
+        "PX1905-Q832"
+      ],
+      "kind": "NARROW_TRANSLATION_PRECISION"
+    }
+  ],
+  "retainWithoutRewrite": "Other 23 existing families in P817–846 are broadly consistent with source; avoid speculative rewrite.",
+  "chanoine": {
+    "newProposals": 0,
+    "originalEnglishWitnessBlocked": true,
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ],
+    "persona": "Fictional Chanoine voice distinct from Pius X historical documentary persona"
+  },
+  "nextQueue": [
+    "Human review B45/B46 11 substantive bilingual deltas and seven attribution/translation-only repairs, not certified",
+    "Continue original draft source parity P847–855 in batch14 c/d and P856 onward only where canonical IDs and historical sources are accessible",
+    "Printed 1905 Italian facsimile collation remains outstanding; do not present online transcription as collated original",
+    "Preserve original Chanoine English witness hold and clinical CSE142–143 holds",
+    "No production routing or publication before human certification"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "safeguardingApproved": false,
+    "claimCertified": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}
