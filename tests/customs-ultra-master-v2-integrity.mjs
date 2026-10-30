@@ -876,7 +876,7 @@ for(const d of printAudit.records){
   const p=d.original_print_scan;checkedPrintPages.add(p.pdf_zero_based_page);
   assert.ok([26,35,47,66].includes(p.pdf_zero_based_page));
   assert.equal(p.digital_scan_url,printAudit.printed_volume.digitized_pdf);
-  assert.ok(p.section.length>12 && p.chapter_contributor.length>8);
+  assert.ok(p.section.length>12 && p.printed_chapter_contributor.length>8);
   assert.equal(p.edition_date_in_this_scan,"NOT_VERIFIED");
   assert.equal(p.match_status,"EXACT_PASSAGE_VERIFIED_IN_PRINT_SCAN");
  }
