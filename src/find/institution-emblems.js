@@ -27,10 +27,10 @@ export const MASS_INSTITUTION_EMBLEMS=Object.freeze({
   }),
   AASJMV:Object.freeze({
     label:"AASJMV",
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Administration_of_Campos.svg",
-    source:"https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_the_Administration_of_Campos.svg",
-    rights:"CC BY-SA 4.0; Versaldi, vector uploader Vornak. Institutional insignia rights independently protected",
-    licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0/",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Bras%C3%A3o_da_Administra%C3%A7%C3%A3o_apost%C3%B3lica_de_Campos.jpg",
+    source:"https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_da_Administra%C3%A7%C3%A3o_apost%C3%B3lica_de_Campos.jpg",
+    rights:"CC BY-SA 3.0; Kaiser Guilherme II. Institutional insignia rights independently protected",
+    licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0/",
     reviewBeforeCommercialRelease:true,
   }),
   IBP:Object.freeze({
