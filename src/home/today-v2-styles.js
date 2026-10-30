@@ -255,7 +255,13 @@ html[data-ao-appearance-v1="light"] .aoTodayV2Frontispiece:not(.aoTodayV2ArtMiss
 .aoTodayV2 .aoTodayV2Tabs{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin:0 13px 3px;padding:3px;min-height:44px;border:1px solid var(--border);border-radius:24px;background:var(--surface-1)}
 .aoTodayV2 .aoTodayV2Tabs button{min-height:36px;border:0;border-radius:20px;padding:3px 4px;text-transform:none;letter-spacing:0;font:500 14px/1.2 var(--ao-font-body,Georgia,serif);color:var(--muted)}
 .aoTodayV2 .aoTodayV2Tabs button[aria-current="page"]{color:var(--text);background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--liturgical-border);border:0}
-.aoTodayV2 .dateNavigator{padding:0 8px 2px;margin:0;border:0}
+/* Today date is navigation, not hidden metadata: always show it above the week. */
+.aoTodayV2 .aoTodayV2Header>.dateNavigator{display:grid!important;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;min-height:50px;padding:2px 8px 4px;margin:0;border:0;visibility:visible!important}
+.aoTodayV2 .dateNavigator>.iconButton{width:44px;min-width:44px;height:44px;min-height:44px;display:grid;place-items:center}
+.aoTodayV2 .dateNavigator>.dateTitle{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:2px 4px;border:0;background:transparent;color:var(--text);text-align:center;white-space:normal}
+.aoTodayV2 .dateNavigator>.dateTitle span{font:700 10px/1.1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--muted)}
+.aoTodayV2 .dateNavigator>.dateTitle b{font:500 19px/1.15 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
+@media(max-width:359px){.aoTodayV2 .dateNavigator>.dateTitle b{font-size:17px}}
 .aoTodayV2 .dateRail{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;padding:0 12px 7px;overflow:visible;background:var(--bg)}
 .aoTodayV2 .dateRail .dayCell{min-width:0;min-height:55px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:12px;padding:3px 0;background:transparent;color:var(--muted);font:500 12px/1.1 var(--ao-font-ui,system-ui,sans-serif)}
 .aoTodayV2 .dateRail .dayCell span{font:600 10px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.03em}
