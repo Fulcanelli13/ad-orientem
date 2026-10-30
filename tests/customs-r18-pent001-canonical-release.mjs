@@ -78,6 +78,26 @@ for(const part of ["final_en","final_fr","final_claims"]){
  assert.equal(accepted[part].reviewer,null);
  assert.equal(accepted[part].content_sha256,null);
 }
+// Human publication remains blocked even when three independent institutional
+// sources support the narrow historical account.
+const editorial=release.editorial_review_20261030;
+assert.equal(editorial.status,"SOURCE_CLAIMS_CORROBORATED_EDITORIAL_COPY_REVISED_NOT_HUMAN_SIGNED");
+assert.match(editorial.independent_institutional_crosscheck.url,/^https:\/\/www\.muzeum-radom\.pl\//);
+assert.equal(editorial.primary_crosscheck.length,2);
+assert.equal(editorial.claim_decisions.length,6);
+assert.ok(editorial.claim_decisions.every(x=>x.decision));
+assert.deepEqual(editorial.human_final_approval,{en:false,fr:false,claims:false});
+assert.equal(editorial.no_scheduled_event,true);
+assert.equal(editorial.no_publication_before_approval,true);
+assert.equal(release.release_gates.user_final_merge_approval,"NOT_YET_GIVEN");
+assert.ok(/historical Polish Pentecost customs/i.test(article.description.en),
+ "English overview must avoid implying universal present-day practice");
+assert.ok(/d'anciens usages polonais/i.test(article.description.fr),
+ "French overview must use historical rather than universal present-tense wording");
+assert.ok(/older springtime and agricultural folk associations/.test(article.history.en));
+assert.ok(/traditions populaires printanières et agricoles/.test(article.history.fr));
+assert.ok(/without permission/.test(article.practice.en));
+assert.ok(/sans autorisation/.test(article.practice.fr));
 assert.equal(release.authorizations.human_final_copy_signoff,false);
 assert.equal(release.authorizations.automatic_merge_allowed,false);
 assert.equal(release.live_change_now,false);
