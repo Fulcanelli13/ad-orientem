@@ -204,7 +204,7 @@ export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,reci
         '<div class="aoPrayPilotAngelusContent">'+
           '<div class="aoPrayPilotHourLine">'+bell+'<span>'+esc(hourMark)+'</span></div>'+
           '<h2>'+esc(regina?"Regina Cæli":L("The Angelus","L’Angélus"))+'</h2>'+
-          '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The Angel of the Lord declared unto Mary.","L’Ange du Seigneur apporta l’annonce à Marie."))+'</p>'+
+          '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The bell calls us to remember the Incarnation.","La cloche nous invite à nous souvenir de l’Incarnation."))+'</p>'+
           '<div class="aoPrayPilotBells" aria-hidden="true">'+dots+'</div>'+
           '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+bell+esc(L("Begin","Commencer"))+'</button>'+
           '<div class="aoPrayPilotRecitation" role="group" aria-label="'+esc(L("Recitation","Récitation"))+'">'+
@@ -278,6 +278,16 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotMiniProgress{height:3px;border-radius:2px;background:var(--border,#444);margin-top:6px;overflow:hidden}",
     "#aoPray435930 .aoPrayPilotMiniProgress i{display:block;height:100%;background:var(--liturgical,#c9a47b)}",
     "#aoPray435930 .aoPrayPilotMiniChevron{font-size:22px;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoTimeline{position:sticky;top:56px!important;min-height:42px!important;max-height:42px!important;padding:0 14px!important;gap:0!important;border:0!important;background:var(--bg,#12100f)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStops{display:flex!important;gap:8px!important;align-items:center!important;justify-content:stretch!important;max-width:none!important;width:100%!important;overflow:visible!important;padding:0!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop{flex:1 1 0!important;min-width:0!important;width:auto!important;height:44px!important;min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;outline-offset:-3px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop::before{content:'';display:block;height:4px;width:100%;border-radius:3px;background:var(--border,rgba(255,255,255,.23));opacity:.85}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop.active::before{background:var(--liturgical,#c9ae76)!important;opacity:1}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop:has(~.aoDevoStop.active)::before{background:color-mix(in srgb,var(--liturgical,#c9ae76) 55%,var(--border,#504d49))}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStopNumber,#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStopTitle{display:none!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardTitle{font-size:clamp(23px,6vw,29px)!important}",
+    "#aoPray435930 .aoPrayPilotAngelusHero{background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.18) 38%,rgba(10,7,5,.86) 72%,rgba(10,7,5,.94) 100%),linear-gradient(170deg,#c49a63 0%,#7a5434 45%,#2a1a10 100%)!important}",
+    "@media(max-width:359px){#aoPray435930 .aoPrayPilotAngelusHero h2{font-size:34px!important}#aoPray435930 .aoPrayPilotAngelusContent{padding-inline:16px!important}}",
     "#aoPray435930 .aoPrayPilotTileCaption{padding:26px 9px 8px;font:600 14px/1.15 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font:600 20px/1.15 var(--ao-font-display,Georgia,serif);padding:40px 12px 12px}",
     "#aoPray435930 .aoPrayPilotTileInfo{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.45);box-shadow:0 0 0 1px rgba(255,255,255,.35);color:#fff;font:italic 600 13px/1 Georgia,serif}",
