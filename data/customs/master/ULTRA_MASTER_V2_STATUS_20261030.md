@@ -10,6 +10,19 @@ A pointer-by-pointer audit resolved **3,703 / 3,703 original JSON pointers**, wi
 
 The published catalogue remains **36**; the research register does not license new Calendar publications.
 
+## Calendar and Prayer indulgence UI — first implementation (30 October)
+
+The first display integration now exists on **draft PR #1723** (not yet merged or deployed):
+
+- `src/indulgences/work-presentation.js` is the shared compact **EN/FR source-grounded renderer**. It projects seven selected exact works out of the 31 route dossier entries and ten 2026 dated cues. Its generated records are checked against the original JSON documents by `tests/indulgence-calendar-prayer-surface.mjs`; this is not a new independent indulgence ledger.
+- `src/calendar/calendar-runtime.js` renders an **Indulgenced works** section only for the exact researched date: eight cemetery dates **1–8 November 2026**, a separate church/oratory visit on **2 November**, and the solemn public **Te Deum** on **31 December**. The two 2 November options remain separate and the general one-plenary-per-day limitation is shown.
+- `src/pray/presentation-runtime.js` presents the precise work and conditions for **Angelus/Regina Caeli** (partial), **Rosary** (five decades and setting), **Stations of the Cross** (legitimately erected stations), and **Eucharistic Adoration** (30 minutes for plenary). The Rosary's external player has a separate idempotent presentation hook; the quiet Adoration screen is not interrupted.
+- Each note gives the **grant classification, required act, non-equivalence caveat, and official 1999 Enchiridion source**. Mere app navigation, prayer-card opening or attendance at a feast is never recorded as fulfilment of the work.
+- Shared styling uses existing app visual variables, with phone-safe padding and an optional expandable source section. The UI never changes the 1962 Mass calendar, alters rubrics, or creates an indulgence grant.
+- The integrity workflow now syntax-checks both existing UI owners and the new module, verifies exact English/French display text against source records and ensures unsupported dates or unrelated prayers do not receive an indulgence note.
+
+**Boundary:** This is code staged in the research PR, not a live release. The 36 already published customs stay untouched; the 465 owner register and historical-local grant holds remain authoritative. Release requires successful CI and visual review; exact work compliance is not inferred from any user session.
+
 ## Indulgences first — current source-grounded work programme (30 October)
 
 Identity cross-book adjudication is **parked**. Work now concentrates on present-day indulgence *grants and prescribed works* and how they relate to previously recorded customs, without new provenance rabbit holes.
