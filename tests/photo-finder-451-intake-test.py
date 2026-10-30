@@ -33,6 +33,32 @@ class PhotoFinderTests(unittest.TestCase):
   self.assertEqual(len(p["tasks"])+len(p["holds"])+len(p["skips"]),972)
   self.assertEqual(set(x["place_id"] for x in p["tasks"]+p["holds"]+p["skips"]).issubset(
     set(x["place_id"] for x in self.places["places"])),True)
+ def test_frozen_cover_windows_survive_successful_previous_batches(self):
+  c,g=mod.frozen_original_schedule(self.covers,self.gallery)
+  self.assertEqual(len(c["items"]),40)
+  self.assertEqual(len(self.covers["items"])-len(c["items"]),12)
+  frozen=mod.source_status(self.rows,self.decisions,self.places,c,g)
+  covers=[x for x in frozen["tasks"] if x["role"]=="cover"]
+  self.assertEqual(len(covers),348)
+  first=covers[:20]
+  second=covers[20:40]
+  self.assertEqual(len(first),20)
+  self.assertEqual(len(second),20)
+  self.assertEqual(len(set(x["place_id"] for x in first+second)),40)
+  already=[x for x in first if mod.already_released(x,self.covers,self.gallery)]
+  self.assertEqual(len(already),12)
+  self.assertTrue(all(not mod.already_released(x,self.covers,self.gallery) for x in second))
+  # A later release may never change the original offset window.
+  later=copy.deepcopy(self.covers)
+  new_id=second[0]["place_id"]
+  later["items"].append({"place_id":new_id,"status":"APPROVED",
+    "source_place_ref":"PHOTO_FINDER_2026-10-30_R1"})
+  cc,gg=mod.frozen_original_schedule(later,self.gallery)
+  later_window=[x for x in mod.source_status(
+    self.rows,self.decisions,self.places,cc,gg)["tasks"] if x["role"]=="cover"][20:40]
+  self.assertEqual([x["place_id"] for x in second],
+                   [x["place_id"] for x in later_window])
+  self.assertTrue(mod.already_released(second[0],later,self.gallery))
  def test_older_licences_not_misrepresented(self):
   for c in ["CC-BY-2.0","CC-BY-2.5","CC-BY-SA-2.5"]:
    self.assertIn(c,mod.stage.LICENSES)

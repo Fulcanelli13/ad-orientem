@@ -22,7 +22,7 @@ const workflows=readdirSync(workflowDir).filter(name=>/\.ya?ml$/i.test(name));
 const reviewBranchMutationWorkflows=new Map([
   ["directory-snapshot-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
   ["directory-geocode-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
-  ["photo-finder-release-first20.yml",/branches:\s*\n\s*-\s*["\']research\/photo-finder-release-20261030-\*["\']/i],
+  ["photo-finder-release-covers.yml",/branches:\s*\n\s*-\s*["\']research\/photo-finder-release-20261030-b\*["\']/i],
   ["directory-icksp-research-geocode.yml",/branches:\s*\n\s*-\s*["']directory\/icksp-quality-\*["']/i],
 ]);
 for(const name of workflows){
@@ -33,13 +33,20 @@ for(const name of workflows){
   if(reviewBranchGuard){
     assert.match(source,reviewBranchGuard,
       name+" must remain scoped to its designated Directory review branch family");
-    if(name==="photo-finder-release-first20.yml"){
-      assert.match(source,/github\.ref == 'refs\/heads\/research\/photo-finder-release-20261030-b1'/);
-      assert.match(source,/\.release-first20/);
-      assert.match(source,/--role cover --offset 0 --limit 20/);
+    if(name==="photo-finder-release-covers.yml"){
+      assert.match(source,/github\.repository == 'Fulcanelli13\/ad-orientem'/);
+      for(const batch of [2,3,4,5]){
+        assert.ok(source.includes("research/photo-finder-release-20261030-b"+batch+") batch="+batch),
+          "Every allowed batch branch requires a fixed numeric offset");
+      }
+      assert.match(source,/\.release-cover-batch/);
+      assert.match(source,/VERIFY_USER_SELECTED_COVERS_BATCH_/);
+      assert.match(source,/--role cover --offset "\$AO_PHOTO_OFFSET" --limit 20/);
       assert.match(source,/--apply/);
       assert.match(source,/git add -- assets\/approved\/place-media\/pf-\*\.webp/);
       assert.match(source,/git add -- data\/geography\/approved-place-media\.v1\.json/);
+      assert.match(source,/releases\/b/);
+      assert.match(source,/verification-report\.json/);
       assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
       assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
     }
