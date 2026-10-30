@@ -655,4 +655,69 @@ assert.equal(singleWorkingIndex.guard.merges_approved,0);
 assert.equal(singleWorkingIndex.guard.grants_approved,0);
 assert.equal(singleWorkingIndex.guard.calendar_publications,0);
 
+
+
+// Identity decisions: 30 existing dedup cases now have actionable research-level boundary gates.
+assert.equal(singleWorkingIndex.identity_boundary_review.batch_id,"IDENTITY-BOUNDARY-30-20261030");
+assert.equal(singleWorkingIndex.identity_boundary_review.description_scope_adjudications,30);
+assert.equal(singleWorkingIndex.identity_boundary_review.remaining_dedup_caseboards_not_adjudicated_at_this_depth,49);
+assert.equal(singleWorkingIndex.counts.dedup_description_boundary_adjudications,30);
+assert.equal(singleWorkingIndex.counts.dedup_action_scope_remaining,49);
+assert.equal(singleWorkingIndex.counts.dedup_hardened_false_merge_vetoes,15);
+assert.equal(singleWorkingIndex.counts.dedup_related_nonidentical_pair_boundaries,12);
+assert.equal(singleWorkingIndex.counts.dedup_regional_role_day_boundaries,3);
+const boundaryCases=singleWorkingIndex.dedup_case_decisions.filter(x=>x.identity_boundary_adjudication);
+assert.equal(boundaryCases.length,30);
+const existingCaseIds=new Set(singleWorkingIndex.dedup_case_decisions.map(x=>x.id));
+assert.equal(existingCaseIds.size,79);
+let falseEq=0,related=0,regional=0;
+for(const c of boundaryCases){
+ const a=c.identity_boundary_adjudication;
+ assert.equal(a.adjudication_batch,"IDENTITY-BOUNDARY-30-20261030");
+ assert.equal(a.review_scope,"DESCRIPTION_LEVEL_ACTION_IDENTITY_BOUNDARY_ONLY");
+ assert.equal(a.prior_board_relation,c.relation);
+ assert.equal(a.prior_board_status,c.status);
+ assert.equal(a.primary_source_provenance.length,c.subjects.length);
+ assert.deepEqual(a.primary_source_provenance.map(x=>x.id),c.subjects);
+ assert.ok(a.action_comparison.length>20 && a.disposition_reason.length>35);
+ assert.ok(a.discriminating_axis.length>10);
+ for(const p of ["automatic_same_identity_merge_allowed","canonical_merged","new_distinct_custom_certified",
+  "independent_witness_certified","both_original_full_source_pages_verified",
+  "liturgical_1962_authority_certified","active_indulgence_certified","calendar_release_authorized",
+  "human_editorial_approval"]) assert.equal(a[p],false,"Unapproved identity/gate changed "+c.id);
+ for(const s of a.primary_source_provenance){
+  assert.ok(["ORIGINAL_EVIDENCE_ONLY","EXISTING_WORKING_OWNER","PRE_EXISTING_FAMILY_REVIEW"].includes(s.kind),"Unsupported provenance "+c.id);
+  if(s.kind==="ORIGINAL_EVIDENCE_ONLY"){
+   assert.ok(sourceIndexById.has(s.id),"Unknown evidence subject "+s.id);
+   const row=sourceIndexById.get(s.id);
+   assert.equal(row.e,s.original_evidence_id);
+   assert.equal(row.a,s.source_description);
+   assert.equal(row.w,s.source_wave);
+   assert.equal(row.n,s.source_wave_row);
+  }else if(s.kind==="EXISTING_WORKING_OWNER") assert.ok(mids.has(s.id));
+  else assert.ok(existingCaseIds.has(s.id));
+ }
+ if(c.status==="EXPLICIT_NO_SAME_IDENTITY"){
+  falseEq++;assert.equal(a.actionable_disposition,"SEPARATE_DESCRIPTION_IDENTITIES");
+ } else if(c.status==="DISTINCT_ROLE_OR_VARIANT_HOLD"){
+  related++;assert.notEqual(a.actionable_disposition,"SEPARATE_DESCRIPTION_IDENTITIES");
+ } else {
+  regional++;assert.equal(c.type,"REGIONAL_CLUSTER");
+  assert.ok(["EPIPHANY_HOME","SPANISH_IMMACULATE","CANDLEMAS_CANDLE"].includes(c.id));
+ }
+}
+assert.equal(falseEq,15);assert.equal(related,12);assert.equal(regional,3);
+const stillOpen=singleWorkingIndex.dedup_case_decisions.filter(x=>!x.identity_boundary_adjudication);
+assert.equal(stillOpen.length,49);
+assert.equal(stillOpen.filter(x=>x.status==="SAME_CORE_DESCRIPTION_SOURCE_INDEPENDENCE_HOLD").length,14);
+assert.equal(stillOpen.filter(x=>x.status==="MEMBERSHIP_VERIFIED_IDENTITY_NOT_APPROVED").length,26);
+assert.equal(stillOpen.filter(x=>x.status==="VARIANT_OR_RITUAL_BOUNDARY_HOLD").length,9);
+assert.equal(singleWorkingIndex.dedup_case_decisions.find(x=>x.id==="CC3WORK-REL-041").identity_boundary_adjudication.actionable_disposition,"SEPARATE_DESCRIPTION_IDENTITIES");
+assert.equal(singleWorkingIndex.dedup_case_decisions.find(x=>x.id==="CC3WORK-REL-018").identity_boundary_adjudication.actionable_disposition,"SPECIFIC_VARIANT_UNDER_CANDIDATE");
+assert.equal(singleWorkingIndex.dedup_case_decisions.find(x=>x.id==="EPIPHANY_HOME").identity_boundary_adjudication.actionable_disposition,"REGIONAL_ROLE_BOUNDARY");
+assert.equal(singleWorkingIndex.guard.published_customs_unchanged,36);
+assert.equal(singleWorkingIndex.guard.merges_approved,0);
+assert.equal(singleWorkingIndex.guard.grants_approved,0);
+assert.equal(singleWorkingIndex.guard.calendar_publications,0);
+
 console.log("PASS Customs Ultra-Master v2: all 3,703 retained, 408 direct group links, 3295/3295 evidence-only source ID screens, 465 identities, one Caravaca 1998 signed grant facsimile, zero public indulgence or canonical writes");
