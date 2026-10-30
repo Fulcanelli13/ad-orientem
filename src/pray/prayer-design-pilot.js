@@ -178,25 +178,29 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon",{preferEmbedded:true})+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
     '</main>';
 }
+// F04 ritual-of-the-hour presentation. Recitation and card progression
+// remain owned by the canonical Angelus donor; this is entry chrome only.
 export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual'}){
-  const regina=form==="regina";
+  const regina=form==="regina",hour=new Date().getHours();
+  const hourMark=hour<11?L("MORNING · 06:00","MATIN · 06:00"):
+    hour<17?L("MIDDAY · 12:00","MIDI · 12:00"):L("EVENING · 18:00","SOIR · 18:00");
+  const bell='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 17h12l-2-3V9a4 4 0 0 0-8 0v5zM10 20h4"/></svg>';
+  const dots=[3,3,3,9].map(n=>'<span class="aoPrayPilotBellsGroup">'+Array.from({length:n},()=>'<i></i>').join("")+'</span>').join("");
   return head(regina?"Regina Cæli":"Angelus",L("Prayer of the hour","Prière de l'heure"))+
     '<main class="aoP435930Body aoPrayPilotAngelusEntry">'+
       '<section class="aoPrayPilotAngelusHero">'+
-        '<div class="aoPrayPilotAngelusSymbol" aria-hidden="true">'+moduleIcon("pray.angelus_regina")+'</div>'+
-        '<small>'+esc(L("A pause for prayer","Une pause pour prier"))+'</small>'+
-        '<h2>'+(regina?"Regina Cæli":"Angelus")+'</h2>'+
-        '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The Angel of the Lord declared unto Mary.","L'Ange du Seigneur apporta l'annonce à Marie."))+'</p>'+
-        '<div class="aoPrayPilotEntryMeta">'+esc(regina?L("Eastertide · stand according to local custom","Temps pascal · debout selon la coutume locale"):posture)+'</div>'+
-      '</section>'+
-      '<div class="aoPrayPilotAngelusActions">'+
-        '<div class="aoPrayPilotRecitation" role="group" aria-label="'+esc(L("Recitation","Récitation"))+'">'+
-          '<button type="button" data-p435930-pilot-angelus-recitation="individual" aria-pressed="'+String(recitation!=='group')+'">'+esc(L("Alone","Seul"))+'</button>'+
-          '<button type="button" data-p435930-pilot-angelus-recitation="group" aria-pressed="'+String(recitation==='group')+'">'+esc(L("With others","Avec d’autres"))+'</button>'+
+        '<div class="aoPrayPilotAngelusContent">'+
+          '<div class="aoPrayPilotHourLine">'+bell+'<span>'+esc(hourMark)+'</span></div>'+
+          '<h2>'+esc(regina?"Regina Cæli":L("The Angelus","L’Angélus"))+'</h2>'+
+          '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The Angel of the Lord declared unto Mary.","L’Ange du Seigneur apporta l’annonce à Marie."))+'</p>'+
+          '<div class="aoPrayPilotBells" aria-hidden="true">'+dots+'</div>'+
+          '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+bell+esc(L("Begin","Commencer"))+'</button>'+
+          '<div class="aoPrayPilotRecitation" role="group" aria-label="'+esc(L("Recitation","Récitation"))+'">'+
+            '<button type="button" data-p435930-pilot-angelus-recitation="individual" aria-pressed="'+String(recitation!=='group')+'">'+esc(L("Alone","Seul"))+'</button>'+
+            '<button type="button" data-p435930-pilot-angelus-recitation="group" aria-pressed="'+String(recitation==='group')+'">'+esc(L("With others","En groupe"))+'</button>'+
+          '</div>'+
         '</div>'+
-        '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+esc(L("Begin prayer","Commencer la prière"))+'</button>'+
-        '<p>'+esc(L("The existing named cards, prayer text, language faces and exact gesture cues are preserved.","Les cartes, textes, langues et gestes existants sont conservés."))+'</p>'+
-      '</div>'+
+      '</section>'+
     '</main>';
 }
 function installStyles(){
@@ -257,6 +261,19 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font:600 20px/1.15 var(--ao-font-display,Georgia,serif);padding:40px 12px 12px}",
     "#aoPray435930 .aoPrayPilotTileInfo{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.45);box-shadow:0 0 0 1px rgba(255,255,255,.35);color:#fff;font:italic 600 13px/1 Georgia,serif}",
     "@media(max-width:359px){#aoPray435930 .aoPrayPilotTop h2{font-size:25px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}}"
+    "#aoPray435930 .aoPrayPilotAngelusEntry{display:flex;flex-direction:column;min-height:100%;padding:0}",
+    "#aoPray435930 .aoPrayPilotAngelusHero{flex:1;position:relative;min-height:calc(100dvh - 130px);display:flex;align-items:stretch;justify-content:flex-end;padding:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18) 38%,rgba(10,7,5,.86) 72%,rgba(10,7,5,.94)),linear-gradient(160deg,#68513c,#15131a)}",
+    "#aoPray435930 .aoPrayPilotAngelusContent{display:flex;flex-direction:column;justify-content:flex-end;width:100%;padding:24px 16px 22px;color:#f4eee6}",
+    "#aoPray435930 .aoPrayPilotHourLine{display:flex;align-items:center;gap:8px;color:#e9c9a0;font:600 12px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.14em;text-transform:uppercase}",
+    "#aoPray435930 .aoPrayPilotAngelusHero h2{font:600 40px/1.05 var(--ao-font-display,Georgia,serif);letter-spacing:.005em;margin:10px 0 6px}",
+    "#aoPray435930 .aoPrayPilotAngelusHero p{font:italic 17px/1.45 var(--ao-font-display,Georgia,serif);max-width:30ch;margin:0;color:#e6ddd2}",
+    "#aoPray435930 .aoPrayPilotBells{display:flex;align-items:center;gap:10px;margin-top:18px;color:#e9c9a0}",
+    "#aoPray435930 .aoPrayPilotBellsGroup{display:flex;gap:4px}",
+    "#aoPray435930 .aoPrayPilotBellsGroup i{display:block;width:7px;height:7px;border:1.5px solid currentColor;border-radius:50%;opacity:.75}",
+    "#aoPray435930 .aoPrayPilotBegin{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;margin-top:18px;border:0;border-radius:27px;background:#f4eee6;color:#1a1410;font:600 16px/1 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoPrayPilotRecitation{display:flex;align-self:center;justify-content:center;gap:0;margin:12px 0 0;padding:3px;width:auto;border-radius:18px;background:rgba(255,255,255,.12)}",
+    "#aoPray435930 .aoPrayPilotRecitation button{min-height:32px;padding:0 14px;border:0;border-radius:16px;font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);color:#f4eee6}",
+    "#aoPray435930 .aoPrayPilotRecitation button[aria-pressed=true]{background:rgba(255,255,255,.22);color:#f4eee6;box-shadow:none}",
   ].join("\n");
   const style=document.createElement("style");style.id="ao-prayer-design-pilot-css";style.textContent=css;document.head.appendChild(style);
 }
