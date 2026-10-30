@@ -2929,8 +2929,9 @@ function renderMercy(){
  const chapterChips='<nav class="aoF07MercyChapterChips" aria-label="'+esc(L('Chaplet sections','Étapes du chapelet'))+'">'+
    chapters.map((c,i)=>'<button type="button" data-p435930-mercy-jump="'+c.start+'" '+
     (i===chapterIndex?'aria-current="step" ':'')+'aria-label="'+esc(c.title)+'">'+
-    esc(i===0?L('Opening','Ouverture'):i===chapters.length-1?L('Closing','Conclusion'):
-      /^decade/i.test(c.id)?['I','II','III','IV','V'][i-1]||String(i):c.title)+'</button>').join('')+'</nav>';
+    esc(c.id==='opening'?L('Opening','Ouverture'):c.id==='conclusion'?L('Closing','Conclusion'):
+      c.id==='optional-conclusion'?L('Optional','Facultative'):
+      /^decade/i.test(c.id)?['I','II','III','IV','V'][Number(c.id.split('-')[1])-1]||String(i):c.title)+'</button>').join('')+'</nav>';
  const recitation='<div class="aoF07MercyRecitation"><span>'+
     esc(item.decade?L('DECADE','DIZAINE')+' '+['I','II','III','IV','V'][item.decade-1]:
       item.group==='opening'?L('OPENING','OUVERTURE'):L('CLOSING','CONCLUSION'))+
