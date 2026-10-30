@@ -108,7 +108,7 @@ export function createHomeOwner(win=globalThis){
     };
     for(const dot of dots){
       const date=dot.dataset.homeWeekColour;
-      if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(date??""))continue;
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(date??""))continue;
       if(weekColourCache.has(date)){apply(date,weekColourCache.get(date));continue;}
       const selected=current?.resolution?.date===date?
         verifiedH4WeekColour(current.resolution,date):null;
