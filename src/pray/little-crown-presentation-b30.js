@@ -22,6 +22,9 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
  const latinToggle='<button type="button" data-p435930-crown-latin aria-pressed="'+String(latin)+'" aria-label="'+
    esc(latin?L("Return to vernacular","Revenir à la langue vernaculaire"):L("Pray in Latin","Prier en latin"))+'">'+
    esc(latin?"EN / FR":"LATIN")+'</button>';
+ const beadNavigator='<nav aria-label="'+esc(L("The fifteen beads","Les quinze grains"))+'">'+
+  group(L("Jesus · Mary · Joseph","Jésus · Marie · Joseph"),0,3)+
+  group(L("Twelve years of the Holy Childhood","Douze années de la Sainte Enfance"),3,15)+'</nav>';
  return head(L("Little Crown of the Infant Jesus","Petite Couronne de l’Enfant-Jésus"),
   L("Three Our Fathers · twelve Hail Marys","Trois Notre Père · douze Je vous salue Marie"))+
   '<main class="aoP435930Body aoLittleCrown" data-ao-little-crown-reader '+(f07Band?'data-ao-f07-variant="little-crown"':'')+'>'+
@@ -31,14 +34,13 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
   '<div class="aoLittleCrownProgress" role="progressbar" aria-label="'+esc(L("Chaplet progress","Progression du chapelet"))+
   '" aria-valuemin="0" aria-valuemax="15" aria-valuenow="'+(position+1)+'"><span style="width:'+
   Math.round((position+1)/15*100)+'%"></span></div>'+
-  (f07Band?f07Band+'<details class="aoF07JumpDisclosure"><summary>'+esc(L("Choose a bead","Choisir un grain"))+'</summary>':'')+
-  '<nav aria-label="'+esc(L("The fifteen beads","Les quinze grains"))+'">'+
-  group(L("Jesus · Mary · Joseph","Jésus · Marie · Joseph"),0,3)+
-  group(L("Twelve years of the Holy Childhood","Douze années de la Sainte Enfance"),3,15)+'</nav>'+(f07Band?'</details>':'')+
+  (f07Band?f07Band:beadNavigator)+
+
   '<article class="aoLittleCrownPrayer" tabindex="0"><div class="aoLittleCrownPrayerTop"><small>'+
   esc((position+1)+' / 15 · '+(step.group==="holy-family"?L("Our Father","Notre Père"):L("Hail Mary","Je vous salue Marie")))+
   '</small>'+latinToggle+'</div><p class="aoLittleCrownAspiration" lang="'+esc(langCode)+'">'+esc(step.aspiration)+
   '</p><p class="aoLittleCrownPrayerText" lang="'+esc(langCode)+'">'+nl(step.prayerText)+'</p></article>'+
+  (f07Band?'<details class="aoF07JumpDisclosure"><summary>'+esc(L("Choose a bead","Choisir un grain"))+'</summary>'+beadNavigator+'</details>':'')+
   '<footer class="aoLittleCrownActions">'+prev+next+'</footer>'+
   '<details class="aoLittleCrownSource"><summary>'+esc(L("Historical form & sources","Forme historique et sources"))+
   '</summary><p>'+esc(L("The 1940 English devotional witness documents three Our Fathers for the Holy Family and twelve Hail Marys for the twelve years of Our Lord’s childhood. The Incarnation aspiration precedes each bead.",
