@@ -31,6 +31,7 @@ import {
 
 export const VERSION = "final-app-shell-owner-v3";
 installAppDesignSystem(globalThis);
+installTodayCalendarMassKit(globalThis);
 installDateFormat(globalThis);
 installContextualStudyBridge(globalThis);
 
