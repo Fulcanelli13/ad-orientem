@@ -69,7 +69,15 @@ try{
    await memo.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library","search must open the real canonical Library");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-   await page.locator(base+' [data-p435930-family="marian"]').click();
+   // Nine editorial doors retain the old canonical items without extra engines.
+    for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],["novenas","pray.holy_name_litany"]]){
+     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+     await page.locator(base+' [data-p435930-family="'+door+'"]').click();
+     assert.equal(await page.locator(base+' [data-p435930-own="'+route+'"],'+base+' [data-p435930-external="'+route+'"]').count(),1,
+      "R1.1 editorial door "+door+" lost canonical route "+route);
+    }
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+    await page.locator(base+' [data-p435930-family="marian"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Our Lady is a discovery family, not a new reader engine");
    await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
