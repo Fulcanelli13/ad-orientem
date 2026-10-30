@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R22_V1",
   "date": "2026-10-30",
-  "current_status": "R31_133_OF_189_DIRECT_SOURCE_TEXT_CHECKED_189_X_612_REFRESHED_0_FINAL_APPROVALS",
+  "current_status": "R32_49_PITRE_ORIGINAL_PAGE_VIEWERS_LINKED_43_SCAN_PAGES_UNCONFIRMED_133_OF_189_PRIMARY_CORRESPONDENCE",
   "active_owners": {
     "complete_record_ledger": "dyk-r22-1001-current-master-index.v1.json",
     "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
@@ -28,7 +28,8 @@
     "r31_glossary_distinct_witness_check": "dyk-r31-three-distinct-glossary-discovery-source-rewrites.v1.json",
     "r31_private_post_rewrite_612_screen": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028:data/discovery/research/r31-dyk-189-v-612-post-rewrite-lexical-refresh.v1.json",
     "r31_public_crossbank_refresh": "dyk-r31-post-rewrite-189-vs-612-public-summary.v1.json",
-    "r31_Pitre_primary_access_log": "dyk-r31-pitre-1900-primary-facsimile-access-status.v1.json"
+    "r31_Pitre_primary_access_log": "dyk-r31-pitre-1900-primary-facsimile-access-status.v1.json",
+    "r32_pitre_original_page_viewer_manifest": "dyk-r32-pitre-49-individual-original-page-viewer-and-offset-audit.v1.json"
   },
   "overall": {
     "generated_candidate_records": 1001,
@@ -121,7 +122,16 @@
     "r31_pitre_original_source_claims_pending": 49,
     "r31_pitre_upstream_14_folio_holds": 14,
     "r31_bilingual_statements_revised": 3,
-    "total_bilingual_statements_corrected_in_r23_r24_r25_r26_r27_r28_r29_r31": 130
+    "total_bilingual_statements_corrected_in_r23_r24_r25_r26_r27_r28_r29_r31": 130,
+    "r32_Pitre_original_page_viewer_links_created": 49,
+    "r32_distinct_Pitre_scan_pages_targeted": 43,
+    "r32_previous_unverified_original_image_first_priority": 14,
+    "r32_5_other_locality_paragraph_flags": 5,
+    "r32_original_scan_offset_plus66": 2,
+    "r32_original_scan_offset_plus62": 28,
+    "r32_original_scan_offset_plus58": 19,
+    "r32_Pitre_page_images_newly_read": 0,
+    "r32_direct_source_verification_increment": 0
   },
   "adjudication": {
     "reviewed": 74,
@@ -184,7 +194,10 @@
     "r30_189_home_composition": "8_GLOSSARY_COPY_HOLDS_1_MOTHERING_DUPLICATE_HOLD_180_PROVISIONAL_MAX_NOT_APPROVED",
     "Pitre_primary_1900_rechecks": "49_PENDING_OF_ORIGINAL_168_14_UPSTREAM_FACSIMILE_HOLDS",
     "r31_home_composition": "5_GLOSSARY_VERBATIM_COPY_HOLDS_1_MOTHERING_DUPLICATE_HOLD_183_PROVISIONAL_MAX_NOT_APPROVED",
-    "r31_pitre_original_image_access": "ALTERNATIVE_FULL_VIEW_SOURCE_FOUND_IN_GOOGLE_BOOKS_BUT_49_DIRECT_WITNESSES_STILL_PENDING_14_IMAGE_HOLDS"
+    "r31_pitre_original_image_access": "ALTERNATIVE_FULL_VIEW_SOURCE_FOUND_IN_GOOGLE_BOOKS_BUT_49_DIRECT_WITNESSES_STILL_PENDING_14_IMAGE_HOLDS",
+    "r32_Pitre_1900_original_folio_read": "49_PAGE_VIEWERS_LINKED_43_DISTINCT_SCAN_PAGES_0_VISUALLY_CONFIRMED",
+    "r32_Pitre_scan_offset_reconciliation": "+66_FIRST_2_+62_MIDDLE_28_+58_LATE_19_PER_PAGE_VISUAL_PAGE_NUMBER_PENDING",
+    "r32_Pitre_priority_order": "14_PRIOR_FACSIMILE_UNVERIFIED_5_OTHER_RISKS_30_DEFAULT"
   },
   "notes": [
     "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
@@ -199,6 +212,7 @@
     "R28: 27 additional original Weiser printed-page screenshot reviews; 27 EN/FR drafts corrected. 123/189 direct claim-source correspondence checked (102/168 original, 66 remain). Saint Anthony ship-mast detail not substantiated on cited Weiser p327 and held. Mothering Sunday pair explicitly flagged near-duplicate. Pitrè 14 original-image holds remain because original 21.7-MB PDF cannot be opened/read in current tools (Commons page is available but actual file blocked). No release or final approvals.",
     "R29: eight final non-held Weiser cards checked directly against 10 original printed folios; corrections include 1851 Boston Christmas gifts, Holy Ghost Hole white dove disc (not live dove), Good Friday buns and Pentecost dawn prayer. Basque ship-mast St Anthony claim remains unverified/mis-cited. Eight glossary-derived entries are verbatim copies of canonical glossary explanations, so 5 prefer Learn; 3 Home-rewrite proposals pending semantic novelty. Pitrè Noto Saint Conrad quote independently located within a University of Catania dissertation reproducing original Italian; corrected inaccurate white-clothing claim, without certifying the original Pitrè facsimile. No final approvals/releases.",
     "R30: used actual four 612-card unpublished Home preview shards in PRIVATE folio-core research branch to lexically screen all 189 source-first EN/FR shortlist statements: 0 exact EN, 0 exact FR, 0 shared source IDs, 0 English token similarity >=0.3, 5 weak topical neighbours preliminarily adjudicated as distinct or related, not final semantic clearance. Private detailed evidence ledger retained only in folio-core (do not leak preview records into public). All eight glossary cards are exact explanation copies and not independently eligible for Home until distinct rewrites; one of two Mothering Sunday variants held; provisional maximum 180 nonrepetitive Home candidates, none approved/published. All 49 Pitrè historical source claims still await full original verification; 14 facsimile page holds. No source-check numerator increase (131/189).",
-    "R31: 3 verbatim glossary Home drafts replaced with source-specific EN/FR discoveries: 1960 rubrics (1962 use) Greater/Lesser Litanies, 1551 Council of Trent teaching on Extreme Unction via James 5, and secondary Catholic Encyclopedia history of O salutaris Hostia (last 2 stanzas of Verbum supernum prodiens). 2 primary textual checks added: 133/189 checked, 56 remain, 49 of those Pitrè unverified. Re-screened ALL CURRENT 189 vs private 612 previews: no exact EN/FR/source-id collisions, 5 topical lexical neighbours, 0 semantic final signoffs. Five exact glossary copies remain, one intra-shortlist Mothering Sunday hold: maximum 183 nonrepetitive draft Home candidates, none approved. Access alternatives to 1900 Pitrè recorded, zero newly verified original page images."
+    "R31: 3 verbatim glossary Home drafts replaced with source-specific EN/FR discoveries: 1960 rubrics (1962 use) Greater/Lesser Litanies, 1551 Council of Trent teaching on Extreme Unction via James 5, and secondary Catholic Encyclopedia history of O salutaris Hostia (last 2 stanzas of Verbum supernum prodiens). 2 primary textual checks added: 133/189 checked, 56 remain, 49 of those Pitrè unverified. Re-screened ALL CURRENT 189 vs private 612 previews: no exact EN/FR/source-id collisions, 5 topical lexical neighbours, 0 semantic final signoffs. Five exact glossary copies remain, one intra-shortlist Mothering Sunday hold: maximum 183 nonrepetitive draft Home candidates, none approved. Access alternatives to 1900 Pitrè recorded, zero newly verified original page images.",
+    "R32: discovered native Wikimedia Commons PDF 'Go to page' viewer for public-domain Pitrè 1900 632-page original PDF; 49 research cards now each carry explicit print-page and 1-based original-scan-page metadata plus corresponding Commons page-viewer URL. Grouped 43 distinct targeted scan pages and three pre-existing offset bands (+66 for 2, +62 for 28, +58 for 19). Arbitrary target-page images could not be opened by this tool, so no scan-page numeral/content certified, no direct source count increment, 14 prior facsimile holds and all 49 Pitrè primary checks remain outstanding. Added regression gate prohibiting automatic certification from links alone."
   ]
 }
