@@ -24,8 +24,10 @@ try {
   const errors=[];
   page.on("pageerror",e=>errors.push(String(e.message)));
   await page.goto("http://127.0.0.1:4194/index.html?aoCatechismGuidedPreview=1",{waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().installed && typeof globalThis.AO_TRADITIONAL_CATECHISM?.openQuestion==="function",null,{timeout:30000});
+  await page.waitForFunction(()=>typeof globalThis.AO_TRADITIONAL_CATECHISM?.openQuestion==="function",null,{timeout:30000});
   await page.locator('[data-ao-app-surface="learn"]').tap();
+  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().installed===true
+    &&globalThis.AO_LEARN_APP_V1?.status?.().open===true,null,{timeout:30000});
   await page.locator('[data-ao-learn-family="foundations"]').tap();
   await page.locator('[data-ao-learn-module="learn.catechism"]').tap();
   await page.locator("#ao-cate-root").waitFor({state:"visible",timeout:30000});

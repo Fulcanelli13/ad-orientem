@@ -22,6 +22,7 @@ on:
       - "tests/home-h11-appearance-acceptance.mjs"
       - "tests/explore-medallion-visual-acceptance.mjs"
       - "tests/home-pray-single-reader-e2e.mjs"
+      - "tests/formation-first-use-loading.mjs"
       - "tests/catechism-guided-mode-e2e.mjs"
       - "tests/mass-visual-acceptance.mjs"
       - "tests/reader-phone-curated65.mjs"
@@ -58,6 +59,7 @@ jobs:
       # promptly without spending CI time on unrelated Mass captures.
       - run: node tests/home-h11-appearance-acceptance.mjs
       - run: node tests/explore-medallion-visual-acceptance.mjs
+      - run: node tests/formation-first-use-loading.mjs
       # Preserve existing Mass visual and source/compatibility checks after
       # Explore; neither Mass reader ownership nor its release is modified.
       - run: node tests/mass-phase12-curated65-contract.mjs
