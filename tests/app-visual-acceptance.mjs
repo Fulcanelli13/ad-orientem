@@ -338,31 +338,30 @@ try{
   });
   console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
-  // A transition may have hidden the preflight after its screenshot while
-  // leaving the donor flow node mounted. Only click an actionable close
-  // control; in either case require the backdrop no longer to be visible.
-  const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
-  if(await massFlowClose.isVisible()){
-    try{
-      await massFlowClose.click({timeout:1500});
-    }catch(error){
-      // A cinematic can retire the Mass preflight between isVisible() and
-      // click(). This is a valid completed transition, not a visual failure.
-      // Do not swallow a click error while the preflight is still visible.
-      const retired=await page.waitForFunction(()=>{
-        const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-        return !backdrop||!backdrop.getClientRects().length||
-          getComputedStyle(backdrop).visibility==="hidden";
-      },null,{timeout:2500}).then(()=>true,()=>false);
-      if(!retired)throw error;
+  // M1 presents the preflight as a full Mass page and deliberately hides
+  // the old host modal's close button. Return through the visible global
+  // navigation instead; only the legacy sheet uses its native close action.
+  const m1FullPage=await page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop[data-ao-m1-root='true']").isVisible();
+  if(!m1FullPage){
+    const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
+    if(await massFlowClose.isVisible()){
+      try{await massFlowClose.click({timeout:1500})}
+      catch(error){
+        const retired=await page.waitForFunction(()=>{
+          const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+          return !backdrop||!backdrop.getClientRects().length||
+            getComputedStyle(backdrop).visibility==="hidden";
+        },null,{timeout:2500}).then(()=>true,()=>false);
+        if(!retired)throw error;
+      }
     }
   }
+  await page.locator("[data-ao-app-surface='home']").click();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
   await page.waitForFunction(()=>{
     const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
     return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
   },null,{timeout:5000});
-  await page.locator("[data-ao-app-surface='home']").click();
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
   await page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']").click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
