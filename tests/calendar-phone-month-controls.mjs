@@ -262,8 +262,15 @@ try{
 
      // Historical source-linked search/return QA (#1571). The corpus may grow:
      // compare the actual registry-derived count, not the old 35-item snapshot.
+     // The asynchronous date/neighbor renderer may replace the Day DOM
+     // after the first screenshot. Use the current catalogue and expand it
+     // through its actual summary before interacting with the search input.
+     await catalogue.waitFor({state:"visible",timeout:15000});
+     if(await catalogue.getAttribute("open")===null)
+       await catalogue.locator(":scope > summary").click();
      const allPublished=await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count();
      const search=catalogue.locator("[data-cal-custom-search]");
+     await search.waitFor({state:"visible",timeout:15000});
      assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),
        "2026-11-02","Search must begin on the chosen All Souls date");
      await search.fill("woods HOLE");
