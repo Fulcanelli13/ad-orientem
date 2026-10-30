@@ -58,6 +58,11 @@ try{
   assert.equal(v.startCount,1,"Exactly one original Begin Mass action");
   assert.equal(v.readerMounted,false,"Mass tab must not skip source preflight");
   assert.ok(v.documentWidth<=v.viewport+1,"Mass root horizontal overflow");
+  // The host's crossfade can linger after selector readiness. Capture the
+  // settled root, not a translucent outgoing Home frame.
+  await page.waitForTimeout(1100);
+  assert.equal(await page.locator("[data-folio-overview-button]").isVisible(),false,
+    "Overview must not repeat Your Mass as a useless back button");
   await page.screenshot({path:resolve(artifact,width+"-mass-root.png")});
   await page.locator('#ao-global-ribbon [data-ao-app-surface="home"]').click();
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:15000});
