@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import { buildTodayV2Sections, renderTodayV2Sections } from "../src/home/today-v2-sections.js";
-import { renderHomeToString } from "../src/home/presentation.js";
+import { renderHomeToString as renderApprovedHomeToString } from "../src/home/presentation.js";
+const renderHomeToString=(state,win={})=>renderApprovedHomeToString(state,{
+  ...win,location:{search:"?aoTodayH4=0"}
+});
 import { TODAY_V2_CSS } from "../src/home/today-v2-styles.js";
 
 const selectedDate="2026-10-10";
