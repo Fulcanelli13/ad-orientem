@@ -1,3 +1,4 @@
+import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 // Preliminary R49 venue snapshot. Source-affiliation groupings are editorial,
 // never proof of a particular Canon's una-cum commemoration or active timetable.
 export const PRELIMINARY_R49_URL=new URL("../../data/directory/preliminary-map-r49.v1.json",import.meta.url).href;
@@ -160,8 +161,13 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     // The base 1,879-place map must still load if the optional release is
     // unavailable or malformed. No unsupported additional point is displayed.
   }
-  cache=extended;
-  return extended;
+  // The 2,579-site CL2 master is now the complete directory foundation.
+  // A missing/corrupt index is a visible load failure, never a silently
+  // truncated 1,879-site worldwide result.
+  const full=await fetchImpl(CL2_PHYSICAL_SITE_INDEX_URL,{headers:{accept:"application/json"}});
+  if(!full?.ok)throw new Error("CL2 worldwide physical-site index unavailable: HTTP "+full?.status);
+  cache=projectCL2PhysicalDirectory(extended,await full.json(),{mapAffiliation:providerGroup});
+  return cache;
 }
 export function filterPreliminaryR49(items,{query="",directoryGroup="ALL",affiliations=[]}={}){
   const q=searchKey(query),group=tidy(directoryGroup).toUpperCase();
