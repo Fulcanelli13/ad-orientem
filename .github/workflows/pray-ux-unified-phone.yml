@@ -37,14 +37,14 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Use local Chromium for real mobile DOM checks
         run: npx playwright install --with-deps chromium
+      - name: F07 Three source-specific chaplets source and mobile acceptance
+        run: node tests/pray-chaplet-f07-variants-contract.mjs && node tests/pray-chaplet-f07-variants-phone.mjs
       - name: Screen all Prayer direct-entry routes at 320px and 390px
         run: node tests/pray-ux-direct-route-mobile-audit.mjs
       - name: Reader pilot F01/F03 source-owned mobile acceptance
         run: node tests/pray-reader-design-pilot-phone.mjs
       - name: F07 Divine Mercy crown pilot and canonical step acceptance
         run: node tests/pray-chaplet-f07-phone.mjs
-      - name: F07 Three source-specific chaplets source and mobile acceptance
-        run: node tests/pray-chaplet-f07-variants-contract.mjs && node tests/pray-chaplet-f07-variants-phone.mjs
       - name: Pilot Discovery and Angelus mobile visual acceptance
         run: node tests/pray-design-pilot-phone.mjs
       - name: Temporary route matrix and representative visual captures
