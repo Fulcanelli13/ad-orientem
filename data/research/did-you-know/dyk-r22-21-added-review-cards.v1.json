@@ -29,7 +29,7 @@
             "PIT1900-IT-049"
           ],
           "printed_pages": [
-            454
+            464
           ],
           "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
           "scope": {
@@ -45,7 +45,7 @@
           "PIT1900-IT-049"
         ],
         "printed_pages": [
-          454
+          464
         ],
         "original_record_id": null,
         "canonical_action_id": null,
@@ -66,7 +66,7 @@
           "original_facsimile_rechecked_for_this_claim": false,
           "independent_source_corroboration_certified": false,
           "review_group": "SJ-PIT-01",
-          "original_1900_printed_page": 454,
+          "original_1900_printed_page": 464,
           "original_scan_pdf_page_1based": 512,
           "italian_text_layer_anchor": "vicchiareddiy ne sfama",
           "original_page_image_reviewed": true,
@@ -100,9 +100,11 @@
           "printed_page_actual": 464
         },
         "printed_page_mismatch_discovered": {
-          "review_card_declared": 454,
-          "original_text_layer_page": 464,
-          "requires_source_observation_pointer_reconciliation": true
+          "corrected_in_card": true,
+          "source_observation_original_page_locator": 454,
+          "verified_printed_page": 464,
+          "source_observation_ledger_requires_erratum": true,
+          "original_scan_pdf_page_1based_unchanged": 512
         }
       },
       "r23_source_fidelity_revision": {
@@ -112,7 +114,13 @@
         },
         "rationale": "Pitrè p. 464 (not p. 454 in the card) says each Pachino family fed and gifted 4, 6, up to 30 vicchiareddi; generic poverty identity should not be imposed.",
         "revision_date": "2026-10-30",
-        "not_editorial_signoff": true
+        "not_editorial_signoff": true,
+        "source_locator_erratum": {
+          "old_printed_page": 454,
+          "new_printed_page": 464,
+          "source_original_ocr_line": 17216,
+          "old_provenance_retained_in_r23_audit": true
+        }
       }
     },
     {
