@@ -363,6 +363,27 @@ try{
     await h4.screenshot({path:resolve(output,prefix+"-h4-calendar-light.png")});
     await h4.locator(".aoH4CalendarBack [data-home-calendar-today]").click();
     await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",{state:"visible",timeout:10000});
+    // A cold Home click must lazy-load the exact source-owned glossary entry,
+    // not open Daily Catechism, an empty Learn hub, or a generic glossary.
+    await h4.waitForSelector(".homeScreen.aoTodayH4 [data-home-dyk-entry]",
+      {state:"visible",timeout:20000});
+    const dykId=await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]")
+      .getAttribute("data-home-dyk-entry");
+    assert.match(dykId,/^G\\d{3}$/);
+    await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]").click();
+    await h4.waitForFunction(id=>
+      globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,
+      dykId,{timeout:30000});
+    await h4.keyboard.press("Escape");
+    await h4.waitForFunction(()=>
+      globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===null,
+      null,{timeout:10000});
+    await h4.keyboard.press("Escape");
+    await h4.waitForFunction(()=>
+      globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
+      null,{timeout:10000});
+    assert.equal(await h4.locator(".homeScreen.aoTodayH4").count(),1,
+      "Closing exact DYK source must return to the same Home");
     assert.equal(h4Errors.length,0,prefix+" H4 page errors: "+JSON.stringify(h4Errors));
     await h4.close();
     await context.close();
