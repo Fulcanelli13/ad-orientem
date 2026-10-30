@@ -35,7 +35,7 @@ assert.equal((html.match(/data-action="gospel"/g)||[]).length,1);
 assert.doesNotMatch(html,/verify the observed|strongly french-attested|Today\/Month\/Year/i);
 assert.doesNotMatch(html,/data-home-find|data-home-scripture/,"H4 five-block Home must not duplicate other permanent tabs");
 const fail=h4HomeView({...vm,properStatus:"failed"},model);
-assert.match(fail,/data-home-h4-begin" disabled/,"Source-incomplete H4 must fail closed");
+assert.match(fail,/data-home-h4-begin disabled/,"Source-incomplete H4 must fail closed");
 const resumable=h4HomeView(vm,model,{resume:{date:"2026-10-30",stepNumber:11}});
 assert.match(resumable,/data-resume-mass/);
 assert.doesNotMatch(resumable,/data-home-h4-begin/,"Resuming must not create a second start");
