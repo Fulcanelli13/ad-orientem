@@ -38,6 +38,18 @@ const actual=renderPilotDiscovery({
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+assert.doesNotMatch(actual,/aoPrayPilotMiniProgress/,
+ "R1.1 Continue may not fabricate the prototype's sample Montfort progress");
+const withSavedProgress=renderPilotDiscovery({
+ head:title=>"<header>"+title+"</header>",L,esc,
+ DATA:{prayers:{}},families,assetIcon:()=>"<span></span>",
+ resume:{completed:12}
+});
+assert.match(withSavedProgress,/data-p435930-own="pray.montfort_consecration"/,
+ "A real Montfort session must be resumable from the Prayer home");
+assert.match(withSavedProgress,/12 of 33 completed/,
+ "Continue displays exact saved completed days, not a fabricated current day");
+
 assert.match(actual,/>Doors<\/div>/,"R1.1 Discovery retains the Doors label ahead of the mosaic");
 assert.match(actual,/>Prayer<\/h2>/,"R1.1 main heading is Prayer");
 assert.doesNotMatch(actual,/Enter into prayer|Choose a door or search/,"Rejected explanatory copy must be removed");
