@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {h4Enabled,h4HomeView,verifiedH4WeekColour} from "../src/home/today-h4-view.js";
-import {h4ChoicesMarkup} from "../src/home/today-h4-change-sheet.js";
+import {h4ChoicesMarkup,rememberH4Choices} from "../src/home/today-h4-change-sheet.js";
+import {createSettingsDonorState} from "../src/settings/donor-state.js";
 import {buildHomeViewModel} from "../src/home/presentation.js";
 assert.equal(h4Enabled({location:{search:""}}),false,"H4 must not replace production until approved");
 assert.equal(h4Enabled({location:{search:"?aoTodayH4=1"}}),true,"H4 preview opt-in missing");
@@ -58,7 +59,32 @@ assert.match(modal,/data-h4-different-mass/,"Other Mass must use canonical resol
 assert.match(modal,/value="SOLEMN" selected/,"Source preflight ceremony must populate sheet");
 assert.match(modal,/value="MISSAL" selected/,"Source preflight reader must populate sheet");
 assert.match(modal,/value="fr" selected/,"Source preflight language must populate sheet");
-assert.doesNotMatch(modal,/remember these choices/i,"Do not advertise unsupported full-form persistence");
+assert.match(modal,/data-h4-remember/,"Remember must be a deliberate Settings-backed action");
+// Opt-in persistence belongs to Settings, not Home or a second localStorage key.
+const memory=new Map();
+const ls={getItem:k=>memory.has(k)?memory.get(k):null,
+  setItem:(k,v)=>memory.set(k,String(v)),
+  removeItem:k=>memory.delete(k),get length(){return memory.size;},
+  key:i=>[...memory.keys()][i]??null};
+const savedWin={localStorage:ls,
+  AO_R17_BROWSER_ENTRY:{status:()=>({fullMassPreflight:{
+    chosenForm:"SOLEMN",readerMode:"MISSAL",
+    experience:{language:"fr",before:"prepare",after:"thanksgiving"}}})}};
+savedWin.AO_SETTINGS_DONOR_V4359=createSettingsDonorState(savedWin);
+assert.equal(savedWin.AO_SETTINGS_DONOR_V4359.snapshot().preferences.mass.todayChoices,null,
+  "Current-Mass edits are not implicitly remembered");
+const saved=rememberH4Choices(savedWin);
+assert.deepEqual({ok:saved.ok,persistent:saved.persistent},{ok:true,persistent:true});
+assert.deepEqual(createSettingsDonorState(savedWin).snapshot().preferences.mass.todayChoices,{
+  form:"SOLEMN",readerMode:"MISSAL",readerLanguage:"fr",beforeMass:"prepare",afterMass:"thanksgiving"
+},"All five usual Mass choices must survive a donor reinitialisation");
+savedWin.AO_R17_BROWSER_ENTRY={status:()=>({fullMassPreflight:{chosenForm:"INVALID",
+  readerMode:"LIVE",experience:{language:"en",before:"none",after:"none"}}})};
+assert.equal(rememberH4Choices(savedWin).ok,false,"Never persist an invalid ceremony");
+savedWin.AO_SETTINGS_DONOR_V4359.setPath("mass.todayChoices",{form:"SOLEMN",
+  readerMode:"INVALID",readerLanguage:"fr",beforeMass:"prepare",afterMass:"thanksgiving"});
+assert.equal(savedWin.AO_SETTINGS_DONOR_V4359.snapshot().preferences.mass.todayChoices,null,
+  "Settings must reject malformed remembered choices");
 const modalFr=h4ChoicesMarkup({chosenForm:"LOW",formChangeAllowed:false,readerMode:"LIVE",
   experience:{language:"fr",before:"none",after:"full"}},{language:"fr"});
 assert.match(modalFr,/Une autre messe est célébrée/);
