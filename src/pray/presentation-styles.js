@@ -1103,6 +1103,53 @@ const PRAYER_BOOK_NESTED_SOURCE_CSS=String.raw`
  background:transparent!important;border:0!important;
  box-shadow:none!important;
 }
+
+/* Adoration chooser: guided routes are visible, but never larger than the
+   two primary modes. The actual prayer remains the primary screen. */
+#aoPray435930 .aoAdorationChooserIntroduction{display:none!important}
+#aoPray435930 .aoAdorationMethodsRow{margin:12px 0 0;padding:0 8px}
+#aoPray435930 .aoAdorationMethodsRow>.aoP435930BigGrid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+}
+#aoPray435930 .aoAdorationMethodsRow button{
+ min-width:0;min-height:68px;padding:11px 9px;
+ border:1px solid var(--border,rgba(210,185,144,.16));
+ border-radius:6px;background:transparent;box-shadow:none;
+ text-align:left;
+}
+#aoPray435930 .aoAdorationMethodsRow button b{
+ display:block;font:500 15px/1.3 var(--ao-font-liturgical,Georgia,serif);
+}
+#aoPray435930 .aoAdorationMethodsRow button span{
+ display:block;margin-top:4px;color:var(--muted,#b8b0a5);
+ font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoAdorationChooserAfterword{
+ margin:14px 12px 2px!important;
+ font:italic 400 12px/1.5 var(--ao-font-liturgical,Georgia,serif)!important;
+ color:var(--muted,#b8b0a5)!important;
+}
+#aoPray435930 .aoPrayerBookMenuPanel .aoMercyOptional{
+ margin:6px 0;padding:5px 0;border:0!important;border-radius:0!important;
+ background:transparent!important;box-shadow:none!important;
+ font:400 12px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoPrayerBookMenuPanel .aoMercyOptional>summary{
+ min-height:35px;padding:6px 1px;cursor:pointer;
+ color:var(--muted,#b8b0a5);
+}
+#aoPray435930 .aoPrayerBookMenuPanel .aoMercyOptional a{
+ display:inline-block;padding:4px 0;font-size:12px;
+}
+#aoPray435930 .aoPrayerBookMenuPanel [data-p435930-mercy-recite]{
+ min-height:35px;padding:5px 9px;margin:2px 4px 4px 0;
+ background:transparent;border:0;border-bottom:1px solid transparent;
+ border-radius:0;color:var(--muted,#b8b0a5);
+ font:500 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoPrayerBookMenuPanel [data-p435930-mercy-recite][aria-pressed="true"]{
+ border-bottom-color:var(--liturgical,#bfa580);color:var(--text,#eee);
+}
 `;
 
 export function installPrayPresentationStyles(doc=globalThis.document){
