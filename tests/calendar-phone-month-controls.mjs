@@ -1,4 +1,4 @@
-// UI-only 320/390/430 acceptance for Today's canonical inline Calendar month.
+// UI-only 320/390/430 acceptance for canonical H4 Sanctuary Calendar month.
 // No Mass entry, translations, date resolver, Ordo identity, or month data edits.
 import assert from "node:assert/strict";
 import http from "node:http";
@@ -46,7 +46,7 @@ try{
      await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.close?.());
      await page.locator(".homeScreen.aoTodayV2").waitFor({state:"visible",timeout:20000});
    }
-   await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
+   await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
    const cal=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await cal.locator('.aoCalV2MonthGrid').waitFor({state:"visible",timeout:40000});
    const metrics=await page.evaluate(()=>{
@@ -71,6 +71,8 @@ try{
      state:el.querySelector("[data-cal-month-status]")?.textContent?.trim()||"",
     };
    });
+   assert.equal(await cal.locator('[data-cal-today]').count(),0,
+     "Calendar must not duplicate Home's Today navigation");
    assert.equal(metrics.calendarView,"picker");
    assert.equal(metrics.gridCount,42,"Never suppress unresolved liturgical days");
    assert.equal(metrics.tabDisplay,"flex","Month views must stay on one horizontal rail");
@@ -84,8 +86,8 @@ try{
      "Month categories wrapped, hiding the calendar dates: "+JSON.stringify(metrics.tabs));
    assert.ok(metrics.tabs.every(x=>x.height>=44&&x.font>=12&&x.whiteSpace==="nowrap"),
      "Month categories are unreadable or too small: "+JSON.stringify(metrics.tabs));
-   assert.ok(metrics.nav.length===3&&metrics.nav.every(x=>x.height>=44&&x.font>=13),
-     "Previous/Today/Next controls too small: "+JSON.stringify(metrics.nav));
+   assert.ok(metrics.nav.length===2&&metrics.nav.every(x=>x.height>=44&&x.font>=13),
+     "Previous/Next controls too small: "+JSON.stringify(metrics.nav));
    assert.equal(await cal.locator(".aoCalHybridOverview").count(),1,
      "The main Month view must integrate both principal observances and devotional practices");
    assert.equal(await cal.locator(".aoCalHybridMajorSection").count(),1,
@@ -300,7 +302,7 @@ try{
      assert.deepEqual(beforeReturn,["2026-11-02","2026-11-02"],
        "Reading unrelated customs must preserve the selected and resolved Mass date");
      assert.equal(await cal.getAttribute("data-ao-calendar-view"),"day");
-     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
+     await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
      await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")
        ?.dataset.aoCalendarView==="picker",null,{timeout:15000});
      assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),
