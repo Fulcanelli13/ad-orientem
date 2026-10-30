@@ -7,7 +7,10 @@ on:
       - "src/mass/m1-root-surface.js"
       - "src/mass/full-mass-preflight-styles.js"
       - "src/mass/m1-access-overview.js"
+      - "src/mass/mass-texts-sheet.js"
       - "tests/m1-mass-access.mjs"
+      - "tests/mass-texts-sheet.mjs"
+      - "tests/mass-texts-sheet-phone-e2e.mjs"
       - "tests/m1-mass-access-phone-e2e.mjs"
       - "tests/m1-mass-root-phone-e2e.mjs"
       - "tests/mass-november-2026-release-gate-e2e.mjs"
@@ -27,9 +30,11 @@ jobs:
           node-version: "22"
       - run: npm install --no-audit --no-fund
       - run: node tests/m1-mass-access.mjs
+      - run: node tests/mass-texts-sheet.mjs
       - run: node tests/full-mass-preflight.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/m1-mass-access-phone-e2e.mjs
+      - run: node tests/mass-texts-sheet-phone-e2e.mjs
       - run: node tests/m1-mass-root-phone-e2e.mjs
       # Independent readiness evidence: the broad R17 phone suite may stop
       # earlier on unrelated Schola tests, hiding the All Souls result.
@@ -44,5 +49,6 @@ jobs:
           path: |
             artifacts/m1-mass-access/
             artifacts/m1-mass-root/
+            artifacts/mass-texts-sheet/
           if-no-files-found: ignore
           retention-days: 7

@@ -1051,6 +1051,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
          onOpenPrayerRoute:openFolioPrayer,
+         // Reuse the resolved R17 preparation without opening or saving a reader.
+         onPrepareMassTexts:()=>state.controller?.prepare?.(),
 
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
          getAllSoulsMassChoice:selectedAllSoulsMass,

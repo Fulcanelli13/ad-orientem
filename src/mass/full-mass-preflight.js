@@ -2,6 +2,7 @@
 // Ceremony FORM and the liturgical CELEBRATION are different axes. The latter
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
+import {openMassTextsSheet} from "./mass-texts-sheet.js";
 import {m1AccessPreviewRequested,paintM1AccessRows,m1AccessRows,m1SelectedIntroit} from "./m1-access-overview.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
@@ -72,6 +73,7 @@ export function mountFullMassPreflight({
   subscribeCalendarState=null,
   onOpenCalendar=null,
   onOpenPrayerRoute=null,
+  onPrepareMassTexts=null,
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
@@ -273,6 +275,7 @@ export function mountFullMassPreflight({
         '<aside class="aoMassFolioIdentity"><small data-folio-date></small>'+
         '<p class="aoMassFolioKicker" data-folio-kind></p><h2 data-folio-celebration></h2>'+
         '<p class="aoMassFolioSeason" data-folio-season></p>'+ 
+         '<button type="button" data-mass-texts-open class="aoMassTextsOpen"></button>'+ 
          '<p data-m1-introit class="aoM1ActualIntroit" hidden></p>'+
         '<dl class="aoMassFolioSelections"><div><dt data-folio-label-ceremony></dt><dd data-folio-value-ceremony></dd></div>'+
         '<div><dt data-folio-label-reader></dt><dd data-folio-value-reader></dd></div></dl>'+
@@ -357,6 +360,33 @@ export function mountFullMassPreflight({
       }
 
       root.addEventListener("click",e=>{
+        const massTexts=e.target?.closest?.("[data-mass-texts-open]");
+        if(massTexts){
+          e.preventDefault();e.stopPropagation();
+          if(massTexts.disabled)return;
+          massTexts.disabled=true;
+          const legacy=getResolvedMass();
+          const chosen=selectionFor(legacy);
+          // Preview the exact prepared Proper used on Begin Mass. This
+          // includes All Souls II/III and source-owned commemorations.
+          Promise.resolve().then(()=>onPrepareMassTexts?.())
+            .then(prepared=>{
+              const proper=prepared?.session?.resolvedMass?.proper?.data??null;
+              openMassTextsSheet(doc,{
+                proper,date:legacy?.date??"",title:chosen.actualTitle||chosen.kindLabel,
+                language:chosen.readerLanguage,
+                sourceReady:root.dataset.aoProperReady==="true"&&Boolean(proper),
+                opener:massTexts,
+              });
+            })
+            .catch(()=>{
+              openMassTextsSheet(doc,{date:legacy?.date??"",
+                title:chosen.actualTitle||chosen.kindLabel,
+                language:chosen.readerLanguage,sourceReady:false,opener:massTexts});
+            })
+            .finally(()=>{if(massTexts.isConnected)massTexts.disabled=false;});
+          return;
+        }
         const calendarButton=e.target?.closest?.("[data-mass-calendar-open]");
         if(calendarButton){
           e.preventDefault();e.stopPropagation();
@@ -571,6 +601,7 @@ export function mountFullMassPreflight({
     word("[data-folio-celebration]",displayTitle,displayTitle);
     word("[data-folio-season]",[context.actual?.colour||context.calendar?.colour,context.season].filter(Boolean).join(" · "),
       [context.actual?.colour||context.calendar?.colour,context.season].filter(Boolean).join(" · "));
+    word("[data-mass-texts-open]","Mass texts","Textes de la messe");
     word("[data-folio-label-ceremony]",l("Ceremony","Cérémonie"),l("Ceremony","Cérémonie"));
     word("[data-folio-label-reader]",l("Follow","Lecture"),l("Follow","Lecture"));
     word("[data-folio-value-ceremony]",summary.formLabel,summary.formLabel);
