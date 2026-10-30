@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_DUPLICATE_RECOVERY_V1",
-  "asOf": "2026-10-30T08:53:56.475315+00:00",
+  "asOf": "2026-10-30T09:10:33.130289+00:00",
   "sourcePagesAttempted": 11,
   "images": [
     {
@@ -87,15 +87,24 @@
       "thumbnailBytes": 132894
     },
     {
-      "sourceUrl": "https://www.christies.com/en/lot/lot-6223948",
+      "sourceUrl": "https://www.christies.com/en/lot/lot-6238407",
       "memberIds": [
         "HERO::LOCAL-BENSON-SALVATOR"
       ],
-      "recovered": false,
-      "reason": "EXACT_SOURCE_IMAGE_NOT_RECOVERED",
-      "attempted": 0,
-      "alternateTried": false,
-      "lastErrors": []
+      "recovered": true,
+      "reason": "RECOVERED_EXACT_SOURCE",
+      "imageUrl": "https://www.christies.com/img/LotImages/2019/CKS/2019_CKS_17292_0004_000(ambrosius_benson_salvator_mundi121010).jpg?mode=max",
+      "originalDimensions": [
+        2987,
+        3200
+      ],
+      "reviewDimensions": [
+        784,
+        840
+      ],
+      "downloadSha256": "c0a29f05b9866ee76d44fd70aa7621c85dce673afa1eaec2cb951bc9d5f9d2c2",
+      "thumbnailSha256": "3e94b109bd8a3156f94439b6410d80c89c3e5d648723e3aa8557a50154259aa5",
+      "thumbnailBytes": 120996
     },
     {
       "sourceUrl": "https://www.wallraf.museum/2017-11-17-honthorst/",
@@ -118,14 +127,6 @@
       "downloadSha256": "d747f35646ab42f40012c87d3430298118d290620a0c2ab9f21e4d736a380846",
       "thumbnailSha256": "1b76db63b9818fb280cd78c60016224cbdc4e408bed70c61e7b8f8457cac7641",
       "thumbnailBytes": 98725
-    },
-    {
-      "sourceUrl": "",
-      "memberIds": [
-        "PRAYER::historic:anthony van dyck:the lance thrust"
-      ],
-      "recovered": false,
-      "reason": "NO_EXACT_PHOTO_SOURCE"
     },
     {
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg",
@@ -234,7 +235,7 @@
       "thumbnailBytes": 70102
     }
   ],
-  "noSource": 1,
+  "noSource": 0,
   "queue1Promotions": 0,
   "licenceCertifications": 0,
   "publicationMutations": 0,
