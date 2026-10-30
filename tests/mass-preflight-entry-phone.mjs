@@ -5,6 +5,8 @@ import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
+// Explicit legacy rollback QA. Default Mass/Resume is exercised separately
+// by m1-mass-default-resume-phone-e2e.mjs against the same app.
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",
  ".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg"};
@@ -25,7 +27,7 @@ try{
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
   const errors=[];
   page.on("pageerror",e=>errors.push(String(e.message)));
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native&aoMassAccessM1=0",{waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
   await page.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed&&globalThis.AO_CELEBRATION_API?.openPreflight),null,{timeout:30000});
   const entry=page.locator(".homeScreen [data-home-mass-entry]");
