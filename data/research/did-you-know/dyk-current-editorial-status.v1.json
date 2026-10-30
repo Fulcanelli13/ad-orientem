@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R22_V1",
   "date": "2026-10-30",
-  "current_status": "R23_21_NEW_SOURCE_TEXT_CORRESPONDENCE_CHECKED_13_COPY_CORRECTIONS_189_SHORTLIST_ZERO_FINAL_APPROVALS",
+  "current_status": "R24_47_OF_189_SOURCE_TEXT_CORRESPONDENCE_CHECKED_26_LEGACY_WEISER_FOLIO_CHECKED_0_FINAL_APPROVED",
   "active_owners": {
     "complete_record_ledger": "dyk-r22-1001-current-master-index.v1.json",
     "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
@@ -12,7 +12,8 @@
     "r22_full_provenance_base": "dyk-r21-unified-1001-consolidation-master.v1.json",
     "r22_distinct_selection": "dyk-r22-49-restored-distinct-editorial-selection.v1.json",
     "added_bilingual_drafts": "dyk-r22-21-added-review-cards.v1.json",
-    "r23_source_claim_fidelity_audit": "dyk-r23-21-source-fidelity-audit.v1.json"
+    "r23_source_claim_fidelity_audit": "dyk-r23-21-source-fidelity-audit.v1.json",
+    "r24_legacy_weiser_original_folio_audit": "dyk-r24-26-weiser-facsimile-review.v1.json"
   },
   "overall": {
     "generated_candidate_records": 1001,
@@ -35,7 +36,13 @@
     "latest_roman_1962_primary_text_checks": 7,
     "latest_pitre_original_text_layer_checked": 7,
     "latest_pitre_facsimile_images_rechecked": 0,
-    "latest_bilingual_draft_corrections": 13
+    "latest_bilingual_draft_corrections": 13,
+    "original_168_source_folio_checked": 26,
+    "original_168_remaining_source_folio_review": 142,
+    "overall_source_text_correspondence_checked": 47,
+    "original_168_bilingual_statements_corrected_r24": 26,
+    "r24_original_weiser_pages_reviewed": 18,
+    "total_bilingual_statements_corrected_in_r23_r24": 39
   },
   "adjudication": {
     "reviewed": 74,
@@ -73,13 +80,18 @@
     "exact_1962_Mass_gesture_source_view": "2_SOURCE_CUE_LINKS_PENDING",
     "source_claim_review_of_14_new_historical_cards": "PENDING_RECHECK",
     "source_text_correspondence_for_21_new_cards": "COMPLETE_21_OF_21_AFTER_THIRTEEN_CORRECTIONS",
-    "pitre_upstream_page_pointer": "PACHINO_PRINTED_464_CARD_FIXED_UPSTREAM_454_ERRATUM_PENDING"
+    "pitre_upstream_page_pointer": "PACHINO_PRINTED_464_CARD_FIXED_UPSTREAM_454_ERRATUM_PENDING",
+    "original_168_source_specific_review": "26_CHECKED_142_REMAIN",
+    "bilingual_189_editorial_signoff": "0_APPROVED_189_PENDING",
+    "existing_home_previews_semantic_novelty": "612_EXISTING_PREVIEW_ITEMS_NEED_FULL_COMPARISON",
+    "r24_folio_image_review": "WEISER_26_CARDS_18_DISTINCT_PRINTED_PAGES_COMPLETE"
   },
   "notes": [
     "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
     "Twelve bilingual composite wording drafts are optional replacements of original records, not 12 new research facts; nine are inside the 168-card review pack and three stay reserve.",
     "All original source observations remain intact; triage is not human signoff or proof of historical continuity.",
     "R22 restored-distinct work: 21 promoted to first-pass bilingual review, 28 retained as independent reserves. The 189 review is composed from the prior 168 plus 21 added cards, not new generated source records.",
-    "R23 source-text review reconciled 21/21 latest cards to cited witnesses, with 13 corrected EN/FR descriptions; none have independent editorial French signoff, full Home novelty signoff or publication authorization."
+    "R23 source-text review reconciled 21/21 latest cards to cited witnesses, with 13 corrected EN/FR descriptions; none have independent editorial French signoff, full Home novelty signoff or publication authorization.",
+    "R24 checked 26 original R21 bilingual shortlist descriptions against 18 original Weiser printed pages; all 26 received source-aligned EN/FR wording. Historical recertification, independent French signoff and actual Home publication remain pending."
   ]
 }
