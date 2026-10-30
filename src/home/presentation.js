@@ -167,7 +167,7 @@ export function renderHomeToString(state,win=globalThis){
   // Artwork is mounted into its own DOM island by renderHome.
   // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
-  if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage});
+  if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage,choices:win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null});
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
     resume.stepNumber?String(resume.stepNumber):"",
