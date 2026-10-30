@@ -1,6 +1,6 @@
 {
   "schema": "AO_CUSTOMS_ULTRA_MASTER_V2_SINGLE_RELATIONSHIP_WORKING_INDEX",
-  "revision": "2026-10-30-79-case-action-boundary-completion",
+  "revision": "2026-10-30-79-action-review-plus-14-primary-print-source-audit",
   "source_pin": "PR #1723; branch research/customs-multibook-bulk150-20261026; 17 screened wave files and 465 identity register",
   "methodology": "Conservative one-to-many source-to-working-owner reconciliation. Every evidence-only observation is routed to an editorial work lane. Only relationships explicitly described in the pre-existing 79-case board are attached here. Source locator w/n points to the original reviewed wave row (w is 1-based, n is 0-based). Description-level links, negative matches and tentative regional clusters are not canonical merges or independent-source certification. The earlier 42 exact hosted action comparisons and 43 Pitre St Joseph observations are connected as separate provenance-preserving research cohorts; their reviews must not be added to 79 dedup cases or counted as new approved customs. 50 previously unreviewed machine-generated owner-search hints have now undergone manual SOURCE-LABEL-level triage, with written reasons distinguishing action-core, material component, rite role, folklore and false lexical matches. None is promoted to a confirmed source-to-owner relationship; the 222 exact prior review links remain the correct owner-link coverage count. Original folios and source independence must still be checked. Weiser 250 batch: every selected source action triaged using original category and description, with 76 curated action/variant/negative owner comparisons; no original facsimiles, independent witnesses, or final approved owner links. Regional/Pitrè bulk 250: 100 Pitrè 1900, 50 Pitrè Palermo retrospective, 50 Sicily Holy Week, 25 Berga Patum and 25 Alenquer Epiphany records are grouped into historically named *regional complexes*, using original wave evidence pointers and action/rite/civic/folklore distinctions. Complexes are NOT canonical customs. 21 explicit role/feast/object owner comparisons are description-level and do not certify identity, author independence, ritually approved actions or indulgences. Household 250 follow-on pass: 250 previously unreviewed source-description observations selected from Chaney, McLoughlin, Kelly and Mueller screen waves, excluding prior caseboard/lexical/Weiser/Pitre reviews; each is compared for plausible action owner, variants and ministerial boundaries. Proposed owner edges remain unapproved and without fresh primary folio verification. Nonmatches are explicitly held, not classified as new customs. Fourth coherent review: 300 previously unreviewed Stokes/three-family-books source-description observations from waves 7/8, with action-specific owner leads, negative equivalence vetoes and source-pair comparisons. No original folio reread, independent corroboration certification, merger or publication. Added a 300-observation original-source-description cohort spanning Hynes family proposals and named Basque Besta Berri, Breton pardons and La Sanch complexes. Multiple details may describe one historical event or different local variants; exact original locations, source pointers and rite roles are preserved, not merged. Identity-boundary 30: re-review previous 15 false-equivalence pair labels, 12 component/scope pairs, and 3 regional rite/feast clusters; record exact actors, objects, dates and scope along with original case source pointers. This is operational anti-merge/parent-variant gating at SOURCE DESCRIPTION level, not original folio reread, independent source certification, canonical uniqueness approval or Calendar authorization. Same-core source review: compare all 14 provisional same-described-action pairs to 11 hosted CatholicCulture activity excerpts with printed-work attributions; keep copying/independence unresolved, separate action lifecycle stages and protect the shared CC3WORK-2026-085 Christmas candle source record. No original book facsimile certification or publication.",
   "guard": {
@@ -69,7 +69,10 @@
     "dedup_cases_with_action_boundary_or_source_review": 79,
     "dedup_cases_awaiting_deeper_work": 0,
     "dedup_family_action_boundaries_reviewed": 26,
-    "dedup_regional_action_boundaries_reviewed": 9
+    "dedup_regional_action_boundaries_reviewed": 9,
+    "same_core_exact_printed_first_side_cases": 6,
+    "same_core_unique_printed_page_anchors": 4,
+    "same_core_case_pairs_pending_second_original_page_comparison": 14
   },
   "routing_counts": {
     "PRACTICE_ACTION_OWNER_REVIEW": 604,
@@ -6654,6 +6657,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-001",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -6705,6 +6721,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-002",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -6809,6 +6838,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-004",
+        "one_side_exact_printed_excerpt_verified": true,
+        "scan_pdf_page": 26,
+        "printed_chapter_author": null,
+        "source_level": "ONE_SIDE_PRINT_FACSIMILE_EXACT_PASSAGE_PLUS_HOSTED_EXCERPT",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -6912,6 +6954,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-006",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": true,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -6965,6 +7020,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-007",
+        "one_side_exact_printed_excerpt_verified": true,
+        "scan_pdf_page": 35,
+        "printed_chapter_author": null,
+        "source_level": "ONE_SIDE_PRINT_FACSIMILE_EXACT_PASSAGE_PLUS_HOSTED_EXCERPT",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7016,6 +7084,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-008",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7172,6 +7253,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-011",
+        "one_side_exact_printed_excerpt_verified": true,
+        "scan_pdf_page": 66,
+        "printed_chapter_author": null,
+        "source_level": "ONE_SIDE_PRINT_FACSIMILE_EXACT_PASSAGE_PLUS_HOSTED_EXCERPT",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7223,6 +7317,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-012",
+        "one_side_exact_printed_excerpt_verified": true,
+        "scan_pdf_page": 47,
+        "printed_chapter_author": null,
+        "source_level": "ONE_SIDE_PRINT_FACSIMILE_EXACT_PASSAGE_PLUS_HOSTED_EXCERPT",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7274,6 +7381,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-013",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7325,6 +7445,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-014",
+        "one_side_exact_printed_excerpt_verified": true,
+        "scan_pdf_page": 66,
+        "printed_chapter_author": null,
+        "source_level": "ONE_SIDE_PRINT_FACSIMILE_EXACT_PASSAGE_PLUS_HOSTED_EXCERPT",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7376,6 +7509,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-015",
+        "one_side_exact_printed_excerpt_verified": true,
+        "scan_pdf_page": 26,
+        "printed_chapter_author": null,
+        "source_level": "ONE_SIDE_PRINT_FACSIMILE_EXACT_PASSAGE_PLUS_HOSTED_EXCERPT",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7427,6 +7573,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-016",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": true,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -7478,6 +7637,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-017",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": true,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -8677,6 +8849,19 @@
         "calendar_publication_allowed": false,
         "editorial_approval": false,
         "required_next_gate": "Verify both original printed passages, their references and possible copying; verify regional context and actor before accepting any canonical owner or two independent attestations."
+      },
+      "primary_print_witness_review": {
+        "audit_path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+        "case_id": "CC3WORK-REL-040",
+        "one_side_exact_printed_excerpt_verified": false,
+        "scan_pdf_page": null,
+        "printed_chapter_author": null,
+        "source_level": "HOSTED_EXCERPT_ONLY_PRINT_FACSIMILE_NOT_LOCATED",
+        "book_level_prior_author_acknowledgment": false,
+        "both_printed_source_pages_compared": false,
+        "independent_attestation_certified": false,
+        "canonical_merge_authorized": false,
+        "calendar_publication_authorized": false
       }
     },
     {
@@ -67519,5 +67704,17 @@
     "canonical_merges_approved": 0,
     "new_customs_published": 0,
     "note": "The earlier 30-case and 14-pair ledgers preserve their own snapshot counters. All 79 caseboard units now have research-level action/scope review. No case is a human-certified independent custom identity."
+  },
+  "printed_witness_review": {
+    "id": "PRINT-WITNESS-14-20261030",
+    "path": "data/customs/master/customs-ultra-master-v2-14-pairs-printed-source-audit-20261030.v1.json",
+    "case_pairs_covered": 14,
+    "one_side_printed_passage_found": 6,
+    "remaining_without_any_printed_passage_found": 8,
+    "distinct_original_page_anchors": 4,
+    "both_original_printed_source_pages_compared": 0,
+    "new_independent_corroborations": 0,
+    "prior_book_level_dependency_risk_cases": 3,
+    "do_not_count_hosted_reprint_as_second_witness": true
   }
 }
