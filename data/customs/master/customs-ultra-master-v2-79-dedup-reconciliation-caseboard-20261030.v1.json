@@ -1,0 +1,1344 @@
+{
+  "schema": "AO_CUSTOMS_ULTRA_MASTER_V2_EVIDENCE_BACKED_DEDUP_CASEBOARD",
+  "as_of": "2026-10-30",
+  "purpose": "Consolidate prior genuine action-description comparisons into a single master review surface; distinguish evidence-verified membership, proposed action equivalence, source dependence, rite ownership and publication authority.",
+  "methodology": {
+    "family_clusters": "26 existing McLoughlin family action clusters; all 70 original observation IDs checked; all proposed owner/group IDs checked against 465-registry, not same custom certification.",
+    "description_pairs": "41 previously manually compared descriptions; verifies left source-action IDs against original three-books register; semantic findings are prior editorial review, not independently reverified original book facsimiles.",
+    "provisional_clusters": "12 existing regional/institutional clusters checked against all 465 known registry IDs, prevent same occasion/feast collapsing separate acts.",
+    "source_independence_not_assumed": true,
+    "no_automatic_merging": true
+  },
+  "counts": {
+    "family_clusters": 26,
+    "original_family_observations_accounted_for": 70,
+    "source_action_pairs": 41,
+    "source_action_pair_decisions": {
+      "SAME_DESCRIBED_ACTION_CORE": 7,
+      "FALSE_LEXICAL_MATCH_DISTINCT_FEAST": 1,
+      "SAME_DEVOTIONAL_CORE_TIME_VARIANT": 1,
+      "RELATED_DISTINCT_OCCASION": 1,
+      "SAME_DECORATIVE_CORE": 1,
+      "RELATED_SAME_FEAST_DIFFERENT_OBJECT": 1,
+      "RELATED_COMPONENT_OF_GRAVE_VISITING_CUSTOM": 1,
+      "SAME_ACTION_GESTURE_REGION_NOT_ADJUDICATED": 1,
+      "SAME_REPORTED_COMMUNITY_ACTION_CORE": 1,
+      "SAME_REGIONAL_DESCRIBED_ACTION": 1,
+      "SAME_PRAYER_ACTION_CORE": 1,
+      "SAME_DECORATIVE_ACTION_CORE": 1,
+      "POTENTIAL_SPECIFIC_VARIANT_OF_GENERIC_OWNER": 1,
+      "RELATED_READING_CUSTOM_DIFFERENT_CALENDAR_SCOPE": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_PARTICIPANTS": 1,
+      "FALSE_LEXICAL_MATCH_UNRELATED_TOPIC": 1,
+      "FALSE_LEXICAL_MATCH_UNRELATED_CRAFT": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_OBJECT": 1,
+      "FALSE_LEXICAL_MATCH_DISTINCT_ACTION": 1,
+      "RELATED_WATER_DIFFERENT_LITURGICAL_DATE": 1,
+      "RELATED_GRAVE_BLESSING_DIFFERENT_DATE": 1,
+      "RELATED_COMPONENT_DIFFERENT_CEREMONY": 1,
+      "RELATED_CRAFT_VARIANT": 1,
+      "RELATED_BROAD_ACTION_FAMILY": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_DEVOTIONAL_OBJECT": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_FEAST": 1,
+      "SHARED_HOSPITALITY_THEME_DISTINCT_ACTION": 1,
+      "RELATED_EASTER_FEAST_COMPONENT": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_BLESSING_OBJECT": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_MODEL_SUBJECT": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_PRAYER_OCCASION": 1,
+      "FALSE_LEXICAL_MATCH_DIFFERENT_DEVOTION": 1,
+      "FALSE_LEXICAL_MATCH_DISTINCT_OBJECT_AND_FEAST": 1,
+      "RELATED_MEMORIAL_INTENTION_DIFFERENT_TRIGGER": 1,
+      "SAME_REPORTED_ACTION_CORE": 1
+    },
+    "provisional_cluster_cases": 12,
+    "provisional_group_memberships": 34,
+    "cross_source_independence_newly_certified": 0,
+    "distinct_custom_identities_newly_certified": 0,
+    "merge_operations_approved": 0,
+    "customs_published": 0
+  },
+  "review_priority": {
+    "same_core_or_variant_first": "Compare actors, exact action, occasion, geography and actual textual dependence; same generic action can have separate local variants",
+    "false_lexical_matches": "Keep negative edges to prevent future bad automatic clustering",
+    "rite_boundaries": "Priest blessings, 1962 rites and lay customs must have distinct owner pointers",
+    "region": "Geographical overlap never establishes globally observed custom"
+  },
+  "family_action_groups": [
+    {
+      "review_id": "MCL54-CLUSTER-001",
+      "action_family_label": "Family Advent wreath making, lighting and seasonal transition",
+      "included_observation_ids": [
+        "MCL54-EWTN-001",
+        "MCL54-EWTN-002",
+        "MCL54-EWTN-003",
+        "MCL54-EWTN-004",
+        "MCL54-EWTN-005",
+        "MCL54-EWTN-006",
+        "MCL54-EWTN-007",
+        "MCL54-EWTN-008",
+        "MCL54-EWTN-009"
+      ],
+      "source_action_count": 9,
+      "proposed_master_links": [
+        {
+          "id": "ADVT-001",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "proposed_provisional_group_links": [
+        {
+          "id": "CAT-WEISER-A-023",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "The Advent wreath has an established master identity. Details are variants, not extra customs automatically.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-002",
+      "action_family_label": "Stir-up Sunday communal plum pudding ceremony",
+      "included_observation_ids": [
+        "MCL54-EWTN-010",
+        "MCL54-EWTN-011",
+        "MCL54-EWTN-012",
+        "MCL54-EWTN-013"
+      ],
+      "source_action_count": 4,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "Practical family custom reported by author, separate from generic Christmas pudding recipe.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-003",
+      "action_family_label": "Children's Advent good-deed manger and Christmas Infant figure",
+      "included_observation_ids": [
+        "MCL54-EWTN-014",
+        "MCL54-EWTN-015"
+      ],
+      "source_action_count": 2,
+      "proposed_master_links": [
+        {
+          "id": "ADVT-002",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-004",
+      "action_family_label": "Blessed wheat seeded at Advent and grown beside crib",
+      "included_observation_ids": [
+        "MCL54-EWTN-016",
+        "MCL54-EWTN-017"
+      ],
+      "source_action_count": 2,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "Author calls this Hungarian, but historical independent regional corroboration needed.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-005",
+      "action_family_label": "Advent family prayers, seasonal versicles and hymn singing",
+      "included_observation_ids": [
+        "MCL54-EWTN-018",
+        "MCL54-EWTN-019",
+        "MCL54-EWTN-020",
+        "MCL54-EWTN-021",
+        "MCL54-EWTN-022"
+      ],
+      "source_action_count": 5,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-006",
+      "action_family_label": "St Nicholas early gifts, cookies, carols and charitable giving",
+      "included_observation_ids": [
+        "MCL54-EWTN-023",
+        "MCL54-EWTN-024",
+        "MCL54-EWTN-025",
+        "MCL54-EWTN-026",
+        "MCL54-EWTN-027",
+        "MCL54-EWTN-028"
+      ],
+      "source_action_count": 6,
+      "proposed_master_links": [
+        {
+          "id": "SNIC-001",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-007",
+      "action_family_label": "Mary Candle, Immaculate Conception Marian altar and symbolic veiling",
+      "included_observation_ids": [
+        "MCL54-EWTN-029",
+        "MCL54-EWTN-030",
+        "MCL54-EWTN-031",
+        "MCL54-EWTN-032",
+        "MCL54-EWTN-033"
+      ],
+      "source_action_count": 5,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-008",
+      "action_family_label": "Swedish Saint Lucy saffron cat-shaped buns",
+      "included_observation_ids": [
+        "MCL54-EWTN-034"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [
+        {
+          "id": "CAT-WEISER-B-179",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "Food tradition related by feast to Lucy wreath/breakfast but not the same action.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-009",
+      "action_family_label": "Dramatizing Advent Gospel scenes and Nativity journey",
+      "included_observation_ids": [
+        "MCL54-EWTN-035",
+        "MCL54-EWTN-036"
+      ],
+      "source_action_count": 2,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-010",
+      "action_family_label": "Creating domestic Nativity figures and personalized crib banners",
+      "included_observation_ids": [
+        "MCL54-EWTN-037",
+        "MCL54-EWTN-038",
+        "MCL54-EWTN-039"
+      ],
+      "source_action_count": 3,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [
+        {
+          "id": "CAT-WEISER-A-045",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "Overlaps broad Nativity displays, but unique child-name banners are an author adaptation.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-011",
+      "action_family_label": "Seven-window Advent House of Great O Antiphons",
+      "included_observation_ids": [
+        "MCL54-EWTN-040",
+        "MCL54-EWTN-041",
+        "MCL54-EWTN-042"
+      ],
+      "source_action_count": 3,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-012",
+      "action_family_label": "Children's Jesse Tree and Salvation-History ornaments",
+      "included_observation_ids": [
+        "MCL54-EWTN-043",
+        "MCL54-EWTN-044",
+        "MCL54-EWTN-045",
+        "MCL54-EWTN-046"
+      ],
+      "source_action_count": 4,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-013",
+      "action_family_label": "French Christmas brioche",
+      "included_observation_ids": [
+        "MCL54-EWTN-047"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-014",
+      "action_family_label": "German symbolic Christstollen",
+      "included_observation_ids": [
+        "MCL54-EWTN-048"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [
+        {
+          "id": "CAT-WEISER-A-064",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-015",
+      "action_family_label": "Greek Christmas Melachrino and hidden child or coin",
+      "included_observation_ids": [
+        "MCL54-EWTN-049",
+        "MCL54-EWTN-053",
+        "MCL54-EWTN-054"
+      ],
+      "source_action_count": 3,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-016",
+      "action_family_label": "Historic Christian blessed bread after early Eucharistic assemblies",
+      "included_observation_ids": [
+        "MCL54-EWTN-050"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [
+        {
+          "id": "FOOD-001",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "Historical paragraph not automatically proof of any exact ancient formula.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-017",
+      "action_family_label": "Byzantine blessed bread taken home",
+      "included_observation_ids": [
+        "MCL54-EWTN-051"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "Cross-rite comparison, not Roman Ritual prescription.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-018",
+      "action_family_label": "Lay parent's proposed blessing of festive bread",
+      "included_observation_ids": [
+        "MCL54-EWTN-052"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "Formula requires separate ecclesiastical authority audit; not approved ritual text.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-019",
+      "action_family_label": "Italian Christmas Eve Cassata dessert",
+      "included_observation_ids": [
+        "MCL54-EWTN-055"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-020",
+      "action_family_label": "English manger-shaped Christmas mince pie",
+      "included_observation_ids": [
+        "MCL54-EWTN-056"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [
+        {
+          "id": "CAT-WEISER-A-068",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-021",
+      "action_family_label": "Gingerbread boy Christ Child origin assertion",
+      "included_observation_ids": [
+        "MCL54-EWTN-057"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "A historical origin claim, not distinct ritual/custom evidence.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-022",
+      "action_family_label": "Decorating Christmas home with Marian image and vigil lights",
+      "included_observation_ids": [
+        "MCL54-EWTN-058"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-023",
+      "action_family_label": "Irish-style Christmas house candle lit after Angelus",
+      "included_observation_ids": [
+        "MCL54-EWTN-059"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [
+        {
+          "id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-024",
+      "action_family_label": "Christmas Eve crib procession, Martyrology, Gospel and home prayers",
+      "included_observation_ids": [
+        "MCL54-EWTN-060",
+        "MCL54-EWTN-061",
+        "MCL54-EWTN-062",
+        "MCL54-EWTN-063",
+        "MCL54-EWTN-064",
+        "MCL54-EWTN-065",
+        "MCL54-EWTN-066"
+      ],
+      "source_action_count": 7,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [
+        {
+          "id": "CAT-WEISER-A-032",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-025",
+      "action_family_label": "Christmas tree and domestic crib blessing occasions",
+      "included_observation_ids": [
+        "MCL54-EWTN-067",
+        "MCL54-EWTN-069",
+        "MCL54-EWTN-070"
+      ],
+      "source_action_count": 3,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [],
+      "original_research_disposition": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "original_summary_note": "",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    },
+    {
+      "review_id": "MCL54-CLUSTER-026",
+      "action_family_label": "Paradise-tree origin attribution quoted from Weiser",
+      "included_observation_ids": [
+        "MCL54-EWTN-068"
+      ],
+      "source_action_count": 1,
+      "proposed_master_links": [],
+      "proposed_provisional_group_links": [
+        {
+          "id": "CAT-WEISER-A-051",
+          "matched_existing_registry": true,
+          "relation": "RESEARCH_LEAD_ONLY"
+        }
+      ],
+      "original_research_disposition": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "original_summary_note": "Explicitly sourced by McLoughlin from Weiser; not independent corroboration of origin.",
+      "source_independence": "SAME_AUTHOR_OR_DERIVATIVE_NOT_INDEPENDENTLY_VERIFIED",
+      "original_coverage_valid": true,
+      "verified_distinct_customs": 0,
+      "merge_approved": false
+    }
+  ],
+  "description_pair_edges": [
+    {
+      "review_id": "CC3WORK-REL-001",
+      "left_source_id": "CC3WORK-2026-070",
+      "left_action": "Mark a family Paschal candle with five cloves in cross form",
+      "right_source_id": "CCEX26-NEWLAND-1065-04",
+      "right_action": "Insert five cloves into a home Paschal candle as a devotional image",
+      "action_core_relation_as_reviewed": "SAME_DESCRIBED_ACTION_CORE",
+      "reason": "Both describe fitting five cloves into a family Paschal candle; source dependence and exact construction differ or remain unknown.",
+      "source_url": "https://sophiainstitute.com/saintmaker-liturgical-life/moveable-feasts/easter/easter-sunday/",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-002",
+      "left_source_id": "CC3WORK-2026-006",
+      "left_action": "Give Easter eggs decorated in red or gold with Resurrection symbols",
+      "right_source_id": "STOKES55-EWTN-094",
+      "right_action": "Easter eggs decorated with Resurrection symbols",
+      "action_core_relation_as_reviewed": "SAME_DESCRIBED_ACTION_CORE",
+      "reason": "Both describe decorating Easter eggs with specifically Christian Resurrection symbols; color or application details vary.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=229",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-003",
+      "left_source_id": "CC3WORK-2026-012",
+      "left_action": "Make an Easter Wreath of Victory from laurel and flowers",
+      "right_source_id": "CAT-WEISER-A-053",
+      "right_action": "Christmas laurel wreath with victory symbolism",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DISTINCT_FEAST",
+      "reason": "A laurel Easter victory wreath is not the described Christmas laurel wreath, even if the materials and victory language resemble each other.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=230",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-004",
+      "left_source_id": "CC3WORK-2026-133",
+      "left_action": "Renew baptismal vows together as a family at Easter dinner",
+      "right_source_id": "MUE55-EWTN-073",
+      "right_action": "Renew baptismal vows collectively before Easter",
+      "action_core_relation_as_reviewed": "SAME_DEVOTIONAL_CORE_TIME_VARIANT",
+      "reason": "Both report a family renewal of baptismal vows during the Easter period; one specifically places it at dinner and the other before Easter.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1068",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-005",
+      "left_source_id": "CC3WORK-2026-133",
+      "left_action": "Renew baptismal vows together as a family at Easter dinner",
+      "right_source_id": "KEL59-EWTN-068",
+      "right_action": "Renew baptismal vows at the home altar on the baptism anniversary",
+      "action_core_relation_as_reviewed": "RELATED_DISTINCT_OCCASION",
+      "reason": "The Kelly rite is a baptism-anniversary family home-altar observance, rather than the fixed Easter family dinner renewal.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1068",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-006",
+      "left_source_id": "CC3WORK-2026-025",
+      "left_action": "Paint Easter eggs with a victory banner or Chi-Rho emblem",
+      "right_source_id": "MUE55-EWTN-086",
+      "right_action": "Paint Easter eggs with crosses and other symbols of Christ's victory",
+      "action_core_relation_as_reviewed": "SAME_DESCRIBED_ACTION_CORE",
+      "reason": "Painting Easter eggs with a Cross or Chi-Rho is a more specific variant of Christian victory motifs described in the earlier Mueller action.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=238",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-007",
+      "left_source_id": "CC3WORK-2026-122",
+      "left_action": "Retain a lantern of fire from the Holy Saturday Vigil for household devotion",
+      "right_source_id": "CAT-WEISER-B-025",
+      "right_action": "Taking home Easter Vigil blessed fire by lantern",
+      "action_core_relation_as_reviewed": "SAME_DESCRIBED_ACTION_CORE",
+      "reason": "Both report carrying the newly blessed Easter fire away from the Vigil by lantern to the home; distinct source independence unverified.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=791",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-008",
+      "left_source_id": "CC3WORK-2026-057",
+      "left_action": "Set a carved white dove above the Pentecost altar decorations",
+      "right_source_id": "STOKES55-EWTN-107",
+      "right_action": "Pentecost altar decorated in red with dove",
+      "action_core_relation_as_reviewed": "SAME_DECORATIVE_CORE",
+      "reason": "Both describe a home Pentecost devotional altar including a dove, with the later source specifying a carved white image.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1327",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-009",
+      "left_source_id": "CC3WORK-2026-055",
+      "left_action": "Arrange seven roses on the Pentecost family table to teach the gifts of the Spirit",
+      "right_source_id": "MUE55-EWTN-096",
+      "right_action": "Arrange a paper tableau with dove seven gifts and cosmos symbols for Pentecost",
+      "action_core_relation_as_reviewed": "RELATED_SAME_FEAST_DIFFERENT_OBJECT",
+      "reason": "Seven red roses on the Pentecost table differ from a paper tableau displaying the seven gifts, though both teach those gifts.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1327",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-010",
+      "left_source_id": "CC3WORK-2026-082",
+      "left_action": "Visit local cemetery with flowers on All Souls and care for family graves",
+      "right_source_id": "CAT-WEISER-B-130",
+      "right_action": "Cleaning and decorating graves before All Souls",
+      "action_core_relation_as_reviewed": "RELATED_COMPONENT_OF_GRAVE_VISITING_CUSTOM",
+      "reason": "All Souls cemetery visits with flowers and maintaining relatives' graves overlap cleaning/decorating graves, but visiting and tending are separable actions.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=902",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-011",
+      "left_source_id": "CC3WORK-2026-100",
+      "left_action": "Add a handful of earth to a coffin after marking a cross over it",
+      "right_source_id": "STOKES55-EWTN-159",
+      "right_action": "Louisiana funeral attendees cast earth on coffin",
+      "action_core_relation_as_reviewed": "SAME_ACTION_GESTURE_REGION_NOT_ADJUDICATED",
+      "reason": "Casting earth upon a coffin overlaps the reported Louisiana funeral action, but the first book's geographic context is different or incompletely resolved.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=819",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-012",
+      "left_source_id": "CC3WORK-2026-120",
+      "left_action": "Slovak organists bake Christmas oblatky wafers for parish households",
+      "right_source_id": "STOKES55-EWTN-021",
+      "right_action": "Slovak honeyed Christmas oblatky distributed",
+      "action_core_relation_as_reviewed": "SAME_REPORTED_COMMUNITY_ACTION_CORE",
+      "reason": "Both describe Slovak Christmas oblatky distribution to families; the Family Life Bureau report specifies organists and one per household member.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=798",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-013",
+      "left_source_id": "CC3WORK-2026-085",
+      "left_action": "Keep a special Christ candle at family meals through the twelve days of Christmas",
+      "right_source_id": "CHANEY55-EWTN-099",
+      "right_action": "Some families light central Christ candle each of twelve Christmas days",
+      "action_core_relation_as_reviewed": "SAME_DESCRIBED_ACTION_CORE",
+      "reason": "A central Christ candle lit during the twelve days at family meals is the same described household action type, with independent borrowing unassessed.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=478",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-014",
+      "left_source_id": "CC3WORK-2026-109",
+      "left_action": "Louisiana families clean and whitewash cemetery tombs before All Saints",
+      "right_source_id": "STOKES55-EWTN-123",
+      "right_action": "Louisiana French clean and flower graves before All Saints",
+      "action_core_relation_as_reviewed": "SAME_REGIONAL_DESCRIBED_ACTION",
+      "reason": "Both report Louisiana households cleaning or decorating family graves for All Saints; source independence of the two publications unknown.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=820",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-015",
+      "left_source_id": "CC3WORK-2026-131",
+      "left_action": "Obtain newly blessed Easter water for use in family Easter prayers",
+      "right_source_id": "MUE55-EWTN-075",
+      "right_action": "Carry newly blessed Easter water home in a specially decorated bottle",
+      "action_core_relation_as_reviewed": "SAME_DESCRIBED_ACTION_CORE",
+      "reason": "Both involve obtaining newly blessed Easter water from church and taking it home; Mueller specifies the vessel decoration.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1068",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-016",
+      "left_source_id": "CC3WORK-2026-066",
+      "left_action": "Sing Regina Caeli as an Easter family hymn and seasonal devotion",
+      "right_source_id": "MUE55-EWTN-089",
+      "right_action": "Recite the Easter Sequence and Regina Coeli as domestic Easter devotion",
+      "action_core_relation_as_reviewed": "SAME_PRAYER_ACTION_CORE",
+      "reason": "Both place Regina Caeli in the household Easter devotional setting, while Mueller also includes the Easter sequence.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=928",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-017",
+      "left_source_id": "CC3WORK-2026-060",
+      "left_action": "Decorate the home Cenacle with red roses for Pentecost",
+      "right_source_id": "MUE55-EWTN-095",
+      "right_action": "Decorate the Pentecost devotional setting with red roses",
+      "action_core_relation_as_reviewed": "SAME_DECORATIVE_ACTION_CORE",
+      "reason": "Both describe displaying red roses at a household Pentecost devotional setting; model Cenacle is an optional component.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1327",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-018",
+      "left_source_id": "CC3WORK-2026-030",
+      "left_action": "Ukrainian pysanky eggs carry wax-resist Easter symbolic ornamentation",
+      "right_source_id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "right_action": "Decorating Easter eggs: pisanki and pysanky",
+      "action_core_relation_as_reviewed": "POTENTIAL_SPECIFIC_VARIANT_OF_GENERIC_OWNER",
+      "reason": "Ukrainian pysanky wax-resist decoration fits the candidate Easter-egg craft family, but no canonical identity or exhaustive variant scope is proven.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=238",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-019",
+      "left_source_id": "CC3WORK-2026-129",
+      "left_action": "Read and discuss the next day's Sunday Mass texts on Saturday evening",
+      "right_source_id": "MUE55-EWTN-055",
+      "right_action": "Study the next day's Lenten Mass text in the evening before attending Mass",
+      "action_core_relation_as_reviewed": "RELATED_READING_CUSTOM_DIFFERENT_CALENDAR_SCOPE",
+      "reason": "Reading the next day's Mass texts before Sunday is a wider Saturday practice than reading next day's Lenten propers.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=781",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-020",
+      "left_source_id": "CC3WORK-2026-098",
+      "left_action": "Wear mourning dress varying by closeness of kinship",
+      "right_source_id": "FRSAN23-005",
+      "right_action": "Women penitents wear mourning black with a lace mantilla",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_PARTICIPANTS",
+      "reason": "Kinship-based mourning clothes of a family bereavement are different from the black costume of Roussillon penitential-procession participants.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=819",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-021",
+      "left_source_id": "CC3WORK-2026-077",
+      "left_action": "A 1956 source repeats an unverified story about St Patrick and Tara fire rite",
+      "right_source_id": "CCEX26-NEWLAND-1215-04",
+      "right_action": "Conduct a household tree blessing described in the source, with formula authority unverified",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_UNRELATED_TOPIC",
+      "reason": "The unverified St Patrick Tara fire legend does not attest a household Christmas-tree blessing formula.",
+      "source_url": "https://sophiainstitute.com/saintmaker-liturgical-life/moveable-feasts/easter/easter-sunday/",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-022",
+      "left_source_id": "CC3WORK-2026-035",
+      "left_action": "Frame hand-painted Easter window pictures with colored construction paper",
+      "right_source_id": "PT-PCI26-A-028",
+      "right_action": "Frame the painted signs with dotted border marks",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_UNRELATED_CRAFT",
+      "reason": "Framing children's painted Easter window images does not attest the painted sign-border marks of a Portuguese seasonal practice.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=240",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-023",
+      "left_source_id": "CC3WORK-2026-102",
+      "left_action": "Display a photograph and holy image in glass-framed grave memorial boxes",
+      "right_source_id": "CAT-WEISER-B-100",
+      "right_action": "Historical decorated glass reliquary display",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_OBJECT",
+      "reason": "Grave memorial boxes carrying a photograph and holy image are not decorated glass reliquaries containing relic-related objects.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=819",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-024",
+      "left_source_id": "CC3WORK-2026-121",
+      "left_action": "Parish organists visit homes distributing one oblatka per family member before Christmas",
+      "right_source_id": "MUE55-EWTN-034",
+      "right_action": "Describe the parish's Epiphany house-blessing performed in four directions from church or tower where homes are too numerous to visit",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DISTINCT_ACTION",
+      "reason": "The house-to-house Christmas oblatky distribution by Slovak organists differs from a parish-wide Epiphany blessing oriented toward homes.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=798",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-025",
+      "left_source_id": "CC3WORK-2026-071",
+      "left_action": "Bring freshly blessed Easter water home for family devotions",
+      "right_source_id": "CHANEY55-EWTN-141",
+      "right_action": "Families bring blessed Epiphany water home for day of feast",
+      "action_core_relation_as_reviewed": "RELATED_WATER_DIFFERENT_LITURGICAL_DATE",
+      "reason": "Both bring blessed water home, but Easter Vigil water differs in season and source ritual context from Epiphany water.",
+      "source_url": "https://sophiainstitute.com/saintmaker-liturgical-life/moveable-feasts/easter/easter-sunday/",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-026",
+      "left_source_id": "CC3WORK-2026-111",
+      "left_action": "Lead a priestly cemetery procession on November 1 before blessing graves",
+      "right_source_id": "CAT-WEISER-B-129",
+      "right_action": "Priestly grave blessing on All Souls",
+      "action_core_relation_as_reviewed": "RELATED_GRAVE_BLESSING_DIFFERENT_DATE",
+      "reason": "Priestly grave blessings during Louisiana's All Saints cemetery event and All Souls blessing are related but may have different date and locale.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=820",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-027",
+      "left_source_id": "CC3WORK-2026-132",
+      "left_action": "Light preserved baptismal candles at the Easter family table",
+      "right_source_id": "CCEX26-NEWLAND-0300-02",
+      "right_action": "Hold blessed candles during a home renewal of baptismal promises",
+      "action_core_relation_as_reviewed": "RELATED_COMPONENT_DIFFERENT_CEREMONY",
+      "reason": "Lighting baptismal candles at Easter dinner may accompany a household renewal of baptismal promises, but holding candles for the renewal is a different gesture.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1068",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-028",
+      "left_source_id": "CC3WORK-2026-089",
+      "left_action": "Adapt child's dolls into figures for a homemade Bethlehem crib",
+      "right_source_id": "MCL54-CLUSTER-010",
+      "right_action": "Creating domestic Nativity figures and personalized crib banners",
+      "action_core_relation_as_reviewed": "RELATED_CRAFT_VARIANT",
+      "reason": "Using children's dolls for a Nativity home-crib figure is a proposed variant within the broader making and personalizing Nativity figures.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=477",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-029",
+      "left_source_id": "CC3WORK-2026-087",
+      "left_action": "Design and construct a home Nativity crib with children's assistance",
+      "right_source_id": "MCL54-CLUSTER-010",
+      "right_action": "Creating domestic Nativity figures and personalized crib banners",
+      "action_core_relation_as_reviewed": "RELATED_BROAD_ACTION_FAMILY",
+      "reason": "Constructing a domestic crib is broader than making individual figurines or personalized banners; do not treat all the components as the same individual custom.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=477",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-030",
+      "left_source_id": "CC3WORK-2026-044",
+      "left_action": "Use Ascension crown Pentecost dove and Trinity triangle on a symbolic triptych",
+      "right_source_id": "CAT-WEISER-B-070",
+      "right_action": "Eye-in-triangle Trinity images in homes and roadside shrines",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_DEVOTIONAL_OBJECT",
+      "reason": "A Trinity triangle on a family Ascension-Pentecost triptych differs from an eye-in-triangle image displayed in homes and roadside shrines.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=242",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-031",
+      "left_source_id": "CC3WORK-2026-002",
+      "left_action": "Fasten a white triumph ribbon bearing an Alleluia emblem to the Easter cross",
+      "right_source_id": "CANDIDATE-STPATRICK-RIBBON",
+      "right_action": "St Patrick's ribbon cross",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_FEAST",
+      "reason": "White triumph ribbon on a family's Easter Cross of Victory is not the St Patrick's ribbon cross tradition.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=229",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-032",
+      "left_source_id": "CC3WORK-2026-119",
+      "left_action": "Poor guests receive prayers and practical hospitality in Irish homes",
+      "right_source_id": "CHANEY55-EWTN-102",
+      "right_action": "Irish Christmas light in window historically associated with hospitality",
+      "action_core_relation_as_reviewed": "SHARED_HOSPITALITY_THEME_DISTINCT_ACTION",
+      "reason": "Hospitality toward poor visitors in an Irish home and Christmas-window light symbolism express related ideals but are different primary actions.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=811",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-033",
+      "left_source_id": "CC3WORK-2026-049",
+      "left_action": "Serve Easter bread cake eggs and lamb as festive family foods",
+      "right_source_id": "CCEX26-TRAPP-0391-01",
+      "right_action": "Serve blessed Easter foods at the festive family breakfast",
+      "action_core_relation_as_reviewed": "RELATED_EASTER_FEAST_COMPONENT",
+      "reason": "Serving an Easter menu of bread cake eggs and lamb may overlap blessed Easter breakfast foods, but the blessing and meal menu remain separate.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=927",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-034",
+      "left_source_id": "CC3WORK-2026-050",
+      "left_action": "Request a priestly blessing of food or use a clearly distinct domestic meal prayer",
+      "right_source_id": "MCL54-EWTN-065",
+      "right_action": "Domestic crib blessing using family responses and a proposed prayer text",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_BLESSING_OBJECT",
+      "reason": "A request to bless Easter food or say household table grace is not the family blessing of a domestic Nativity crib.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=927",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-035",
+      "left_source_id": "CC3WORK-2026-058",
+      "left_action": "Make a cardboard Cenacle representing the apostles' upper room",
+      "right_source_id": "CHANEY55-EWTN-034",
+      "right_action": "Make Nativity figures from cardboard cutouts",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_MODEL_SUBJECT",
+      "reason": "A cardboard Pentecost Cenacle depicting apostles is different from cardboard Nativity figures for a Christmas crib.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1327",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-036",
+      "left_source_id": "CC3WORK-2026-105",
+      "left_action": "Different household groups take turns praying the Rosary during a wake",
+      "right_source_id": "CCEX26-TRAPP-0789-09",
+      "right_action": "Take turns praying before the reserved Sacrament at the altar of repose",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_PRAYER_OCCASION",
+      "reason": "Family Rosary turns during a wake differ from adoration prayer before the reserved Sacrament at the Holy Thursday altar of repose.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=828",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-037",
+      "left_source_id": "CC3WORK-2026-115",
+      "left_action": "Hold an overnight cemetery prayer vigil when priest unavailable",
+      "right_source_id": "WFF92-EWTN-028",
+      "right_action": "Pray an adapted family Tenebrae devotion when church service is unavailable",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DIFFERENT_DEVOTION",
+      "reason": "An All Souls overnight cemetery vigil is not an adapted domestic Tenebrae service in Holy Week.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=820",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-038",
+      "left_source_id": "CC3WORK-2026-038",
+      "left_action": "Decorate an Easter altar hanging with a Lumen Christi symbol",
+      "right_source_id": "CAT-WEISER-B-086",
+      "right_action": "Hanging blessed Corpus Christi wreaths at home or by fields",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_DISTINCT_OBJECT_AND_FEAST",
+      "reason": "An Easter home-altar hanging bearing Lumen Christi is not a blessed Corpus Christi wreath hung at houses or fields.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=241",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "PRESERVE_AS_DISTINCT_ACTIONS"
+    },
+    {
+      "review_id": "CC3WORK-REL-039",
+      "left_source_id": "CC3WORK-2026-101",
+      "left_action": "Request memorial Masses on anniversaries of a relative's death",
+      "right_source_id": "PT-PCI26-A-041",
+      "right_action": "Use some Epiphany alms to request Masses for deceased souls",
+      "action_core_relation_as_reviewed": "RELATED_MEMORIAL_INTENTION_DIFFERENT_TRIGGER",
+      "reason": "Anniversary memorial Mass requests and using Epiphany charitable alms to request Masses both support prayer for dead but involve different occasions and transactions.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=819",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "KEEP_RELATED_NOT_EQUAL_BY_DEFAULT"
+    },
+    {
+      "review_id": "CC3WORK-REL-040",
+      "left_source_id": "CC3WORK-2026-085",
+      "left_action": "Keep a special Christ candle at family meals through the twelve days of Christmas",
+      "right_source_id": "CHANEY55-EWTN-100",
+      "right_action": "Family places Christmas Christ candle at dinner table for meals",
+      "action_core_relation_as_reviewed": "SAME_DESCRIBED_ACTION_CORE",
+      "reason": "Both describe placing a family Christ candle at Christmas-season dinner meals, not a distinct second ceremony for each author's sentence.",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=478",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    },
+    {
+      "review_id": "CC3WORK-REL-041",
+      "left_source_id": "CC3WORK-2026-075",
+      "left_action": "Prepare Easter spice-ring cake around the family's devotional candle",
+      "right_source_id": "STOKES55-EWTN-089",
+      "right_action": "New Easter fire carried home in lantern",
+      "action_core_relation_as_reviewed": "SAME_REPORTED_ACTION_CORE",
+      "reason": "An Easter fire carried home from a church Vigil is reported in both books, but the McLoughlin text has a material and devotional-specific context.",
+      "source_url": "https://sophiainstitute.com/saintmaker-liturgical-life/moveable-feasts/easter/easter-sunday/",
+      "original_description_pair_checked": true,
+      "independent_witness_certified": false,
+      "canonical_merge_authorized": false,
+      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+    }
+  ],
+  "regional_or_institutional_cluster_cases": [
+    {
+      "review_id": "SEVILLE_SEISES",
+      "provisional_ids": [
+        "CAT-WEISER-B-083",
+        "CAT-WEISER-B-109"
+      ],
+      "original_cluster_relation": "SAME_LOCAL_INSTITUTION_MULTIPLE_FEAST_CONTEXTS",
+      "action_scope_reason": "Local Seises dance at Corpus Christi and Immaculate Conception may belong to one Seville practice with separate occurrences; never two automatic global customs.",
+      "required_role_calendar_gate": "REGIONAL_SITE_AND_LITURGICAL_AUTHORITY_REVIEW",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "POLISH_CORPUS_WREATHS",
+      "provisional_ids": [
+        "CAT-WEISER-B-085",
+        "CAT-WEISER-B-086"
+      ],
+      "original_cluster_relation": "ONE_OBJECT_LIFECYCLE_POSSIBLE",
+      "action_scope_reason": "Priestly blessing of flower wreaths and keeping the blessed wreaths later are different stages of one regional object tradition; minister blessing not assumed lay-performable.",
+      "required_role_calendar_gate": "LOCAL_BLESSING_AUTHORITY_AND_OBJECT_IDENTITY",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "EPIPHANY_HOME",
+      "provisional_ids": [
+        "CAT-WEISER-A-089",
+        "CAT-WEISER-A-090"
+      ],
+      "original_cluster_relation": "DISTINCT_MINISTERIAL_VS_HOUSEHOLD_ACTIONS",
+      "action_scope_reason": "Priestly house blessing and Magi initials/chalking at the door may be linked seasonally but involve distinct ministerial and household practices.",
+      "required_role_calendar_gate": "RITUAL_PRIEST_LAY_ROLE_AND_DATE",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "EASTER_HOME_LIGHT",
+      "provisional_ids": [
+        "CAT-WEISER-B-024",
+        "CAT-WEISER-B-025"
+      ],
+      "original_cluster_relation": "LINKED_TWO_STEP_LOCAL_PROCESS",
+      "action_scope_reason": "Extinguishing household fires and bringing home the Easter Vigil blessed fire can form a single local sequence; confirm place and permitted transport instead of asserting two separate universal customs.",
+      "required_role_calendar_gate": "LOCAL_RITUAL_FIRE_HANDLING",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "ADVENT_IMAGE_ROUND",
+      "provisional_ids": [
+        "CAT-WEISER-A-027",
+        "CAT-WEISER-A-028",
+        "CAT-WEISER-A-029"
+      ],
+      "original_cluster_relation": "THREE_DIFFERENT_ACTION_VARIANTS",
+      "action_scope_reason": "Marian-image relay, Saint Joseph image visits and Herbergsuchen lodging play share Advent hospitality themes but involve different image, roles and enactment; no combined automatic identity.",
+      "required_role_calendar_gate": "REGIONAL_IMAGE_AND_PLAY_DIFFERENTIATION",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "CANDLEMAS_CANDLE",
+      "provisional_ids": [
+        "CAT-WEISER-B-113",
+        "CAT-WEISER-B-133"
+      ],
+      "original_cluster_relation": "SEPARATE_LITURGICAL_AND_HOME_ACTIONS",
+      "action_scope_reason": "Candlemas candle blessing/decorating and All Souls family prayer with an already blessed candle occur on different dates with distinct actions.",
+      "required_role_calendar_gate": "1962_CANDLE_BLESSING_AND_HOUSEHOLD_USE",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "ALL_SOULS_ALMS",
+      "provisional_ids": [
+        "CAT-WEISER-B-140",
+        "CAT-WEISER-B-141",
+        "CAT-WEISER-B-143",
+        "CAT-WEISER-B-144",
+        "CAT-WEISER-B-145",
+        "CAT-WEISER-B-147"
+      ],
+      "original_cluster_relation": "MULTIPLE_COUNTRY_AND_ACTION_VARIANTS",
+      "action_scope_reason": "All Souls family portions, bread alms, food charities and hospitality to orphaned children share charitable intention but are country/food/action variants; no single unqualified new custom.",
+      "required_role_calendar_gate": "LOCAL_CHARITY_AND_SUPERSTITION_SCREEN",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "EASTER_EGGS",
+      "provisional_ids": [
+        "CAT-WEISER-B-017",
+        "CAT-WEISER-B-038",
+        "CAT-WEISER-B-039",
+        "CAT-WEISER-B-040",
+        "CAT-WEISER-B-041"
+      ],
+      "original_cluster_relation": "DECORATION_GIFT_AND_GAMES_DISTINCT",
+      "action_scope_reason": "Egg dyeing, coloured designs, gifts, rolling and hunts do not all describe the same action; retain related subtypes rather than indiscriminately merge.",
+      "required_role_calendar_gate": "CRAFT_GIFT_GAMES_WITH_BLESSING_SEPARATE",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "LENTEN_PRETZELS",
+      "provisional_ids": [
+        "CAT-WEISER-A-107",
+        "CAT-WEISER-A-108"
+      ],
+      "original_cluster_relation": "SAME_FOOD_DIFFERENT_USES",
+      "action_scope_reason": "Prayerful symbolism of Lenten pretzels and giving pretzels to the poor can be two uses of the same food with a distinct charity action.",
+      "required_role_calendar_gate": "REGIONAL_FORM_AND_ALMS_WITNESSES",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "SPANISH_IMMACULATE",
+      "provisional_ids": [
+        "CAT-WEISER-B-107",
+        "CAT-WEISER-B-108"
+      ],
+      "original_cluster_relation": "DISTINCT_PROCESSION_VS_HOUSE_DECOR",
+      "action_scope_reason": "Spanish Immaculate Conception novenas/processions and household balcony decoration share a feast but are distinct actions.",
+      "required_role_calendar_gate": "LOCAL_RITUAL_VS_DOMESTIC",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "ALL_SOULS_GRAVES",
+      "provisional_ids": [
+        "CAT-WEISER-B-129",
+        "CAT-WEISER-B-130",
+        "CAT-WEISER-B-131",
+        "CAT-WEISER-B-135",
+        "CAT-WEISER-B-137"
+      ],
+      "original_cluster_relation": "CLERIC_BLESSING_VS_LAY_CARE_AND_REGIONS",
+      "action_scope_reason": "Blessing of graves by clergy, grave cleaning, lanterns and Brazilian/Philippine observances are not one homogeneous ritual; link selectively to cemetery visit existing owner.",
+      "required_role_calendar_gate": "CEMETERY_LAW_LOCAL_AND_ROLE",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    },
+    {
+      "review_id": "CANDLEMAS_CRIB",
+      "provisional_ids": [
+        "CAT-WEISER-B-116"
+      ],
+      "original_cluster_relation": "OPTIONAL_DOMESTIC_CYCLE_NOT_LITURGICAL_SEASON",
+      "action_scope_reason": "Keeping the Christmas crib up until Candlemas is an optional local household custom, not a universal definition of liturgical Christmastide.",
+      "required_role_calendar_gate": "CALENDAR_FEAST_VS_POPULAR_CUSTOM",
+      "existing_registry_ids_verified": true,
+      "canonical_merge_authorized": false,
+      "local_dates_conflated": false
+    }
+  ]
+}
