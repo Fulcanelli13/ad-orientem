@@ -38,6 +38,11 @@ const actual=renderPilotDiscovery({
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+assert.match(actual,/>Doors<\/div>/,"R1.1 Discovery retains the Doors label ahead of the mosaic");
+assert.match(actual,/>Prayer<\/h2>/,"R1.1 main heading is Prayer");
+assert.doesNotMatch(actual,/Enter into prayer|Choose a door or search/,"Rejected explanatory copy must be removed");
+assert.equal((actual.match(/class="aoPrayPilotTileInfo"/g)||[]).length,9,"Nine prototype-style info badges remain");
+assert.doesNotMatch(actual,/aoPrayPilotTileSymbol/,"Unreleased art must not be replaced with icon-heavy tiles");
 const placement=JSON.parse(readFileSync(new URL("../data/pray/art-placement-slots-20261030.v1.json",import.meta.url),"utf8"));
 assert.equal(placement.schema,"AO_ART_MATCHING_MAP_NORMALIZED_V1");
 assert.equal(placement.counts.slots,275);
@@ -103,6 +108,12 @@ const regina=renderPilotAngelusEntry({
  head:title=>"<header>"+title+"</header>",L,esc,form:"regina",posture:"Stand · Eastertide",moduleIcon:()=>"<i></i>"
 });
 assert.match(angelus,/data-p435930-pilot-angelus-begin/);
+assert.match(angelus,/aoPrayPilotBells/,"F04 hour card exposes grouped moment dots");
+assert.match(angelus,/aoPrayPilotHourLine/,"F04 hour card exposes the time-of-prayer eyebrow");
+assert.ok(angelus.indexOf('data-p435930-pilot-angelus-begin')<
+  angelus.indexOf('data-p435930-pilot-angelus-recitation'),"F04 Begin appears above the compact mode switch");
+assert.doesNotMatch(angelus,/A pause for prayer|The existing named cards|Kneel · ordinary days/,
+  "F04 entry does not display source/implementation or posture text");
 for(const mode of ["individual","group"])assert.match(angelus,new RegExp('data-p435930-pilot-angelus-recitation="'+mode+'"'));
 assert.match(angelus,/aria-pressed="true">Alone/,"Individual is the default presentation");
 assert.match(angelus,/Angelus/);
