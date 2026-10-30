@@ -162,6 +162,8 @@ export function mountFullMassPreflight({
   // Validate against the existing preflight before changing its in-memory state.
   function setTodayChoice(key,value){
     if(disposed)return false;
+    // First reconcile date changes so refresh cannot erase a new choice.
+    refresh();
     let legacy=null;try{legacy=getResolvedMass()}catch{}
     if(!legacy)return false;
     const current=selectionFor(legacy);
