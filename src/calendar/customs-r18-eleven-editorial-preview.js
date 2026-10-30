@@ -879,8 +879,8 @@ export function calendarR18ElevenEditorialReviewMarkup({fr=false,publishedIds=ca
      '</div></details>';
  }).join("");
  return '<section class="aoCalR18ElevenEditorialPreview" data-cal-r18-eleven-editorial-preview data-cal-r18-published-count="'+h(publishedIds.length)+'">'+
-   '<div class="aoCalV2SectionTitle"><div><small>'+h(fr?"EXAMEN ÉDITORIAL · '+h(candidates.length)+' DOSSIERS NON PUBLIÉS":"EDITORIAL REVIEW · '+h(candidates.length)+' UNPUBLISHED DOSSIERS")+'</small>'+
+   '<div class="aoCalV2SectionTitle"><div><small>'+h(fr?"EXAMEN ÉDITORIAL":"EDITORIAL REVIEW")+' · '+h(candidates.length)+' '+h(fr?"DOSSIERS NON PUBLIÉS":"UNPUBLISHED DOSSIERS")+'</small>'+
    '<h3>'+h(fr?"Textes comparés anglais / français":"Side-by-side English / French copy")+'</h3></div></div>'+
-   '<p>'+h(fr?"Aperçu réservé au paramètre de vérification. Les '+h(publishedIds.length)+' coutumes publiées et les recommandations du calendrier restent inchangées.":"Explicit review-parameter preview only. The '+h(publishedIds.length)+' published Customs and Calendar recommendations remain unchanged.")+'</p>'+
+   '<p>'+h(fr?"Aperçu réservé au paramètre de vérification. Les ":"Explicit review-parameter preview only. The ")+h(publishedIds.length)+' '+h(fr?"coutumes publiées et les recommandations du calendrier restent inchangées.":"published Customs and Calendar recommendations remain unchanged.")+'</p>'+
    '<div class="aoCalR18ElevenItems">'+cards+'</div></section>';
 }
