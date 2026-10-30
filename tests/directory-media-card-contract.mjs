@@ -100,7 +100,7 @@ assert.match(diocesanCard,/aoTlmVenueGlyph/);
 assert.match(diocesanCard,/Diocesan church/);
 assert.doesNotMatch(diocesanCard,/Emblem_Holy_See/);
 const unknown={...item,community_id:"OTHER",eyebrow:"Independent / unknown"};
-assert.match(renderDirectoryVenueCard(unknown,"fr"),/Église \/ chapelle/);
+assert.match(renderDirectoryVenueCard(unknown,"fr"),/Selon la source : Independent \/ unknown/);
 assert.doesNotMatch(renderDirectoryVenueCard(unknown,"fr"),/FSSP_emblem/);
 const cmriSource={...item,community_id:"OTHER",eyebrow:"CMRI directory / affiliated clergy"};
 const cmriCard=renderDirectoryVenueCard(cmriSource,"en");
