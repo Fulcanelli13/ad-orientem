@@ -12,12 +12,13 @@
     "user_accepted_later": 107,
     "locked_covers": 6,
     "unresolved_semantic_edges": 16,
-    "artwork_edges_after_consolidation": 1640,
+    "artwork_edges_after_consolidation": 1651,
     "explicit_user_acceptances_never_auto_pruned": true,
     "cross_prayer_inherited_new_edges": 101,
     "scope_guardrail_removed_edges": 22,
     "luminous_optional_mysteries_with_approved_art": 5,
-    "luminous_optional_mysteries_with_stable_runtime_card_ids": 0
+    "luminous_optional_mysteries_with_stable_runtime_card_ids": 0,
+    "editorial_stage_artwork_eligible_edges_actual": 1600
   },
   "truth_note": "Source-title candidate coverage only, not image-rights or every actual live-card coverage; updated: after approved cross-prayer inheritance, 267/267 have editorial candidate records; Benediction blessing is only a contextual inherited image (exact image still missing), Thérèse cover is research-only, no publication rights or runtime parity certified.",
   "empty_scenes": [],
@@ -446,5 +447,6 @@
     }
   ],
   "reconciled_overlay_file": "data/prayer/artwork-editorial-20261030/cross-prayer-inheritance-20261030.v1.json",
-  "staged_editorial_test_command": "node scripts/prayer-art-cross-prayer-audit.mjs"
+  "staged_editorial_test_command": "node scripts/prayer-art-cross-prayer-audit.mjs",
+  "historical_count_discrepancy": "Earlier gap-queue source began at 1561 edges while authoritative assignment registry began at 1572 (11-edge difference); latest reconciled count is copied from current assignment registry, not recomputed from stale gap-queue baseline."
 }
