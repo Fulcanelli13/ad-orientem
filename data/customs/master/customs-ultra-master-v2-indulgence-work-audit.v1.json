@@ -22,7 +22,8 @@
     "explicit_source_labels_mentioning_indulgence": 5,
     "original_grants_verified_for_historical_cases": 1,
     "new_public_indulgence_assertions": 0,
-    "original_signed_facsimiles_found": 1
+    "original_signed_facsimiles_found": 1,
+    "historical_custom_specific_exact_work_non_equivalence_checks": 4
   },
   "caution": "No indulgence is attached to a customs identity simply by its title, date, place or historical folklore description; the prescribed work and all current conditions must be met. Research matching does not record that any individual has gained an indulgence. Caravaca has a reproduced signed 1998 grant facsimile, but release of its exact concession to public Calendar remains gated; three other cases have no original grant instrument found.",
   "current_grant_work_seeds": [
@@ -5958,5 +5959,83 @@
     "Recover original named 1962/Raccolta and local concessions from primary official texts.",
     "For each historical case, compare grant date, beneficiary, work, place, duration, conditions and current law.",
     "Keep all regional local claims as contextual notes until grant is proven."
+  ],
+  "current_work_exactness_exclusions": [
+    {
+      "source_action_ids": [
+        "CCEX26-NEWLAND-0911-01",
+        "CCEX26-NEWLAND-0911-04",
+        "CCEX26-NEWLAND-0911-05"
+      ],
+      "historical_practice": "Newland's twelve-candle domestic Stations candelabrum, extinguishing one candle for each of the first 12 Stations",
+      "candidate_concession": "ENCH1999-13",
+      "normative_provision": "Concession 13: exercise must take place before legitimately erected Way of the Cross, ordinarily fourteen crosses and movement between the stations; specific exceptions for the legitimately impeded and approved equivalent fourteen-station devotions.",
+      "normative_text_url": "https://www.vatican.va/content/dam/wss/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "normative_text_section": "13, In memoria Passionis et Mortis Domini",
+      "source_practice_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+      "source_practice_lines": [
+        139,
+        149
+      ],
+      "exact_prescribed_work_proved": false,
+      "source_has_only_twelve_candles": true,
+      "blanket_plenary_indulgence_claim_allowed": false,
+      "editorial_route": "NON_EQUIVALENT_AUTOMATIC_CROSSWALK; no current grant should be attached to this twelve-candle home custom; a separately performed qualifying Way of the Cross is evaluated on its own."
+    },
+    {
+      "source_action_ids": [
+        "CCEX26-TRAPP-0381-05"
+      ],
+      "historical_practice": "Trapp family Christmas Eve household Rosary",
+      "candidate_concession": "ENCH1999-17",
+      "normative_provision": "Concession 17: plenary indulgence for Rosary in specified communal or family setting, with stated five-decade continuity and meditation conditions; other circumstances partial.",
+      "normative_text_url": "https://www.vatican.va/content/dam/wss/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "normative_text_section": "17, Preces ad Beatissimam Virginem Mariam",
+      "source_practice_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "source_practice_lines": [
+        135,
+        136
+      ],
+      "exact_five_decades_and_meditation_proved": false,
+      "blanket_plenary_indulgence_claim_allowed": false,
+      "editorial_route": "CONDITIONAL_EXACT_PRAYER_ONLY; no indulgence for Christmas gift-room custom as a whole"
+    },
+    {
+      "source_action_ids": [
+        "CCEX26-NEWLAND-0433-02"
+      ],
+      "historical_practice": "Reading Advent calendar verses during the evening household prayers",
+      "candidate_concession": "ENCH1999-30",
+      "normative_provision": "Concession 30: plenary indulgence for devout spiritual reading of Sacred Scripture for at least half an hour; shorter reading may qualify for partial under relevant conditions.",
+      "normative_text_url": "https://www.vatican.va/content/dam/wss/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "normative_text_section": "30, Sacrae Scripturae lectio",
+      "source_practice_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+      "source_practice_lines": [
+        125,
+        127
+      ],
+      "at_least_half_hour_proved": false,
+      "blanket_plenary_indulgence_claim_allowed": false,
+      "editorial_route": "CONDITIONAL_SCRIPTURE_WORK_ONLY; Advent calendar construction has no attached indulgence by this reference"
+    },
+    {
+      "source_action_ids": [
+        "CCEX26-NEWLAND-0300-01",
+        "CCEX26-NEWLAND-0300-02"
+      ],
+      "historical_practice": "Private Easter Vigil reproduction and domestic baptismal promises with blessed candles",
+      "candidate_concession": "NONE_BY_MERE_IMITATION_OF_EASTER_VIGIL_RITE",
+      "normative_provision": "Historical private family adaptation cannot be treated as Church's authorized Easter Vigil or sacramental rite, nor automatically qualify for a liturgy-specific grant.",
+      "normative_text_url": "https://www.vatican.va/content/dam/wss/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "normative_text_section": "13 (distinguishes actual liturgical action from other devotions); no general equivalent granted",
+      "source_practice_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
+      "source_practice_lines": [
+        143,
+        161
+      ],
+      "exact_prescribed_liturgical_work_proved": false,
+      "blanket_plenary_indulgence_claim_allowed": false,
+      "editorial_route": "RITUAL_ROLE_AND_GRANT_HOLD; not user-facing indulgence statement"
+    }
   ]
 }
