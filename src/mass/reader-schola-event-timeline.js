@@ -1,4 +1,5 @@
 import {resolve1962OrganPermission} from "./reader-rite-music-authority.js";
+import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 // Source-first, read-only Schola event itinerary for the existing curated
 // LIVE Mass cards. Musical windows are not evidence of observed singing.
 // Source blocks and exact curated IDs, never historical numeric card slots,
@@ -127,7 +128,7 @@ export function organAuthorityForScholaEvent(event,resolvedMass){
  if(event?.kind!=="ORGAN_OPTION")return null;
  const plan=resolvedMass?.provenance?.organ1962??null;
  const verified=plan?.verified===true&&plan.source==="LITURGICAL_PLAN_1962";
- const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;
+ const requiem=isExplicitRequiemMass({session:{resolvedMass}});
  const season=verified&&KNOWN_SEASONS.has(String(plan?.season??"").toUpperCase())
    ?String(plan.season).toUpperCase():null;
  const base=freeze({authority:"EXISTING_1958_ORGAN_PERMISSION",
@@ -183,7 +184,7 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
   arr.push({card,index});bySource.set(source,arr);bySection.set(String(card.sectionId),index);
  });
  const available=new Set(tracks.map(t=>typeof t==="string"?t:t?.id).filter(Boolean));
- const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;
+ const requiem=isExplicitRequiemMass({session:{resolvedMass}});
  const styles=new Set(["GREGORIAN","POLYPHONIC"]);
  const setting=styles.has(sanctusPerformance)?sanctusPerformance:"UNSPECIFIED";
  const events=[],unresolved=[];
