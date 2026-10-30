@@ -241,8 +241,8 @@ try{
     assert.equal(release.active,"home",viewport.width+"px cold launch did not land on Home");
     assert.deepEqual(
       [...new Set(release.destinations)],
-      ["home","mass","pray","learn","find"],
-      viewport.width+"px five-destination ribbon contract changed",
+      ["home","pray","learn","find"],
+      viewport.width+"px four-destination ribbon contract changed (Mass opens from Today)",
     );
 
     await assertViewportFit(page,"Home cold launch",viewport.width);
@@ -260,7 +260,12 @@ try{
     // Mass entry is included without starting a liturgy: RC geometry must prove
     // that the production selection/preflight surface itself still fits every
     // supported phone width.
-    const massNav=page.locator("[data-ao-app-surface='mass']").first();
+    assert.equal(await page.locator("[data-ao-app-surface='mass']").count(),0,
+      "Mass is not a fifth ribbon tab");
+    const massNav=page.locator(".homeScreen [data-home-h4-begin]").first();
+    await massNav.waitFor({state:"visible",timeout:15000});
+    await page.waitForFunction(()=>Boolean(document.querySelector(
+      ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
     await massNav.click();
     await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
@@ -293,7 +298,7 @@ try{
     await context.close();
   }
 
-  console.log("RC field QA PASS — 320/360/390/430px assembled shell, five destinations plus embedded Calendar routing, Mass preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
+  console.log("RC field QA PASS — 320/360/390/430px assembled shell, four destinations plus Today-only Mass routing, Mass preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));

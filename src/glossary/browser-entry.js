@@ -281,6 +281,16 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   function onKey(e){if(e.key!=="Escape")return;if(state.detailId){state.detailId=null;render()}else back()}
+  // Contextual details may remove the focused × button on Escape. Capture at
+  // document level while the contextual sheet is open, so the next Escape can
+  // still return to its Home trigger without requiring a mouse click.
+  function onContextKey(e){
+    if(e.key!=="Escape"||state.origin!=="context"||!state.open)return;
+    e.preventDefault?.();e.stopPropagation?.();
+    onKey(e);
+    if(state.open&&!state.detailId)
+      root(win)?.querySelector?.("[data-gloss-back]")?.focus?.({preventScroll:true});
+  }
 
   function back(){
     if(state.view==="context"){close(false);return true}
@@ -301,6 +311,8 @@ export function createGlossaryRuntime(win=globalThis){
       while(scrollNode&&!(scrollNode.scrollHeight>scrollNode.clientHeight+2))scrollNode=scrollNode.parentElement;
       state.contextReturn={trigger,scrollNode,scrollTop:scrollNode?.scrollTop??0};
     }else state.contextReturn=null;
+    win.document?.removeEventListener?.("keydown",onContextKey,true);
+    if(opts.origin==="context")win.document?.addEventListener?.("keydown",onContextKey,true);
     state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.latinStage=null;state.query=String(opts.query||"");state.detailId=null;state.detailType="concept";state.contextIds=[];state.origin=String(opts.origin||"learn");
     ensureRoot();attach();state.loading=!state.loaded;render();
     await load();
@@ -341,6 +353,7 @@ export function createGlossaryRuntime(win=globalThis){
 
   function close(returnToLearn=false){
     ++openEpoch;
+    win.document?.removeEventListener?.("keydown",onContextKey,true);
     const returning=state.origin==="context"?state.contextReturn:null;
     const n=root(win);try{n?.querySelector?.(":focus")?.blur?.()}catch{}n?.remove?.();
     state.open=false;state.detailId=null;state.detailType="concept";state.query="";state.contextIds=[];state.latinStage=null;

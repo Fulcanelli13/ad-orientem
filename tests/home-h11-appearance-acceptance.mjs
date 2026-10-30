@@ -37,7 +37,7 @@ try{
     const page=await context.newPage(),errors=[];
     page.on("pageerror",error=>errors.push(String(error?.message??error)));
     const prefix=size.width===390?"390":"320";
-    await page.goto("http://127.0.0.1:4381/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+    await page.goto("http://127.0.0.1:4381/index.html?aoTodayH4=0",{waitUntil:"domcontentloaded",timeout:90000});
     await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:30000});
     await page.waitForFunction(()=>{
       const boot=document.getElementById("ao-cinema-boot");
@@ -109,6 +109,9 @@ try{
           saint:reflect.querySelectorAll('[data-home-calendar-view="day"]').length,
           gospel:reflect.querySelectorAll('[data-action="gospel"]').length,
           catechism:reflect.querySelectorAll("[data-home-daily-catechism]").length,
+          dykInsideRead:reflect.querySelectorAll("[data-home-dyk-open]").length,
+          dykStandalone:home.querySelectorAll(".aoTodayV2DiscoveryStandalone [data-home-dyk-open]").length,
+          dykAfterWeek:card.nextElementSibling?.classList.contains("aoTodayV2DiscoveryStandalone")===true,
           scripture:reflect.querySelectorAll("[data-home-scripture]").length,
           prayer:home.querySelectorAll('[data-home-cu-route="pray.rosary"]').length,
           footer:home.querySelectorAll(".aoTodayExploreFoot button").length,
@@ -120,9 +123,10 @@ try{
       assert.equal(info.calendar,info.reflection,label+" editorial cards should share a surface");
       if(info.custom)assert.equal(info.custom,info.calendar,label+" optional Customs card must share surface");
       assert.ok(info.calendarRows<=2,label+" upcoming calendar must not invent additional dates");
-      assert.equal(info.readRows,4,label+" reflection rows changed");
-      assert.deepEqual([info.saint,info.gospel,info.catechism,info.scripture,info.prayer,info.footer],
-        [1,1,1,1,1,2],label+" changed an existing route");
+      assert.equal(info.readRows,3,label+" reflection rows exclude Catechism");
+      assert.deepEqual([info.saint,info.gospel,info.catechism,info.dykInsideRead,info.dykStandalone,info.scripture,info.prayer,info.footer],
+        [1,1,0,0,1,1,1,2],label+" Did You Know is an independent card, not a Read item");
+      assert.equal(info.dykAfterWeek,true,label+" Did You Know must immediately follow the week section");
       assert.match(info.appointmentNote,/calendar appointments|dates annoncées/i,
         label+" removed the observed-date caveat");
       assert.ok(info.totalWidth<=info.viewport+2,label+" horizontal overflow");
@@ -169,6 +173,227 @@ try{
 
     assert.equal(errors.length,0,"Unexpected H1.1 browser errors: "+JSON.stringify(errors));
     console.log("PASS H1.1 "+prefix+"px dark/light/auto Settings and embedded Calendar: "+JSON.stringify(light));
+    // H4 is a review-only source projection; test it on the genuine app,
+    // not the supplied prototype harness. The production H3 remains default.
+    const h4=await context.newPage(),h4Errors=[];
+    h4.on("pageerror",error=>h4Errors.push(String(error?.message??error)));
+    await h4.goto("http://127.0.0.1:4381/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+    await h4.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:30000});
+    await h4.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed),null,{timeout:30000});
+    // A painted Home behind the cinematic boot is not a screenshot of Home.
+    // Require the real startup overlay to finish before any H4 captures.
+    await h4.waitForFunction(()=>{
+      const boot=document.getElementById("ao-cinema-boot");
+      if(!boot||!boot.isConnected)return true;
+      const style=getComputedStyle(boot);
+      return style.display==="none"||style.visibility==="hidden"||Number(style.opacity)<.02;
+    },null,{timeout:60000});
+    await h4.waitForFunction(()=>Boolean(document.querySelector(
+      ".homeScreen.aoTodayH4 [data-home-dyk-entry]")),null,{timeout:20000});
+    assert.equal(await h4.locator("[data-home-daily-catechism]").count(),0,
+      "H4 must not show Catechism");
+    const auditH4=async label=>{
+      const r=await h4.evaluate(()=>{
+        const home=document.querySelector(".homeScreen.aoTodayH4");
+        const hero=home?.querySelector(".aoH4Door");
+        const art=hero?.querySelector("[data-ao-home-art-slot] img");
+        const button=home?.querySelector("[data-home-h4-begin], [data-resume-mass]");
+        const date=home?.querySelector(".aoH4DateOpen");
+        return {
+          width:innerWidth,documentWidth:document.documentElement.scrollWidth,
+          date:date?.textContent?.trim()??"",
+          week:home?.querySelectorAll(".aoH4Week .dayCell").length,
+          selected:home?.querySelectorAll(".aoH4Week .dayCell.selected").length,
+          massCards:home?.querySelectorAll(".aoH4Door").length,
+          beginOrResume:home?.querySelectorAll("[data-home-h4-begin], [data-resume-mass]").length,
+          change:home?.querySelectorAll("[data-home-h4-change]").length,
+          reading:home?.querySelectorAll("[data-home-h4-readings]").length,
+          prayer:home?.querySelectorAll(".aoH4Prayer").length,
+          rosary:home?.querySelectorAll(".aoH4Chips button").length,
+          events:home?.querySelectorAll(".aoH4Upcoming .aoTodayV2Event").length,
+          read:home?.querySelectorAll(".aoH4Read button").length,
+          dykInsideRead:home?.querySelectorAll(".aoH4Read [data-home-dyk-entry]").length,
+          dykStandalone:home?.querySelectorAll(".aoH4DiscoveryStandalone [data-home-dyk-entry]").length,
+          dykAfterWeek:home?.querySelector(".aoTodayV2CalendarGlance")?.nextElementSibling?.classList.contains("aoH4DiscoveryStandalone")===true,
+          dykBeforeRead:home?.querySelector(".aoH4DiscoveryStandalone")?.nextElementSibling?.classList.contains("aoTodayV2Below")===true,
+          hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
+          oldExplore:home?.querySelectorAll(".aoTodayExploreFoot").length,
+          artwork:!!art,buttonVisible:!!button&&getComputedStyle(button).display!=="none",
+          firstFoldActionBottom:button?.getBoundingClientRect().bottom??null,
+          ribbonTop:document.getElementById("ao-global-ribbon")?.getBoundingClientRect().top??null,
+          initialScrollTop:document.scrollingElement?.scrollTop??0,
+        };
+      });
+      assert.ok(r.documentWidth<=r.width+2,label+" H4 document overflow: "+JSON.stringify(r));
+      assert.ok(r.date.length>=10,label+" H4 date not visible");
+      assert.deepEqual([r.week,r.selected,r.massCards,r.beginOrResume,r.change,r.reading,r.prayer,r.rosary,r.read,r.dykInsideRead,r.dykStandalone,r.hiddenOldTabs,r.oldExplore],
+        [7,1,1,1,1,1,1,3,1,0,1,0,0],label+" H4 layout contract");
+      assert.equal(r.dykAfterWeek,true,label+" standalone Did You Know must follow This week");
+      assert.equal(r.dykBeforeRead,true,label+" Read must follow standalone Did You Know");
+      assert.ok(r.events<=2,label+" H4 upcoming copied unsourced dates");
+      assert.equal(r.buttonVisible,true,label+" Mass door hidden");
+      assert.equal(r.initialScrollTop,0,label+" H4 first-fold audit must start at scroll 0");
+      assert.ok(r.ribbonTop!=null&&r.firstFoldActionBottom<=r.ribbonTop+2,
+        label+" H4 Begin/Resume must be visible above fixed ribbon without scrolling: "+JSON.stringify(r));
+      return r;
+    };
+    await h4.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.setPath?.("appearance.mode","dark"));
+    await h4.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="dark",null,{timeout:10000});
+    await auditH4(prefix+" H4 dark");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-door-dark.png"),fullPage:true});
+    await h4.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.setPath?.("appearance.mode","light"));
+    await h4.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light",null,{timeout:10000});
+    await auditH4(prefix+" H4 light");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-door-light.png"),fullPage:true});
+    // Change is a modal presentation over the one R17 source-owned preflight.
+    await h4.waitForFunction(()=>Boolean(globalThis.AO_R17_BROWSER_ENTRY?.installed),null,{timeout:15000});
+    await h4.locator("[data-home-h4-change]").click();
+    await h4.waitForSelector(".aoH4ChoiceDialog[open]",{state:"visible",timeout:10000});
+    const choicesBefore=await h4.evaluate(()=>({
+      owner:globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight,
+      modal:Boolean(document.querySelector(".aoH4ChoiceDialog")),
+      focusedInside:document.querySelector(".aoH4ChoiceDialog")?.contains(document.activeElement)===true
+    }));
+    assert.ok(choicesBefore.owner,"H4 Change must read authoritative preflight");
+    assert.ok(choicesBefore.modal,"H4 Change must open an actual dialog");
+    assert.equal(choicesBefore.focusedInside,true,"H4 Change must keep focus within the dialog");
+    const modalWidth=await h4.evaluate(()=>{
+      const box=document.querySelector(".aoH4ChoiceDialog")?.getBoundingClientRect();
+      return {left:box?.left,right:box?.right,viewport:innerWidth,
+        options:document.querySelectorAll(".aoH4ChoiceDialog [data-h4-option]").length};
+    });
+    assert.ok(modalWidth.left>=-1&&modalWidth.right<=modalWidth.viewport+1,
+      prefix+" H4 Change sheet overflow: "+JSON.stringify(modalWidth));
+    assert.equal(modalWidth.options,5,prefix+" Change must not duplicate Mass preflight inputs");
+    await h4.locator('[data-h4-option="readerMode"]').selectOption("MISSAL");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.readerMode==="MISSAL");
+    await h4.locator('[data-h4-option="readerLanguage"]').selectOption("fr");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience?.language==="fr");
+    await h4.locator('[data-h4-option="beforeMass"]').selectOption("prepare");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience?.before==="prepare");
+    await h4.locator('[data-h4-option="afterMass"]').selectOption("thanksgiving");
+    await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience?.after==="thanksgiving");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-change-light.png")});
+    await h4.locator("[data-h4-remember]").click();
+    await h4.waitForFunction(()=>{
+      const value=globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.mass?.todayChoices;
+      return value?.readerMode==="MISSAL"&&value?.readerLanguage==="fr"&&
+        value?.beforeMass==="prepare"&&value?.afterMass==="thanksgiving";
+    },null,{timeout:10000});
+    assert.match(await h4.locator("[data-h4-save-status]").innerText(),
+      /saved|enregistrés/i,"Remember must report a real Settings write");
+    // New page in the same browser context verifies persisted Settings defaults,
+    // not merely preflight state held by the original live tab.
+    const remembered=await context.newPage();
+    await remembered.goto("http://127.0.0.1:4381/index.html?aoTodayH4=1",
+      {waitUntil:"domcontentloaded",timeout:90000});
+    await remembered.waitForFunction(()=>Boolean(
+      globalThis.AO_R17_BROWSER_ENTRY?.installed&&globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()),
+      null,{timeout:30000});
+    const restored=await remembered.evaluate(()=>({
+      stored:globalThis.AO_SETTINGS_DONOR_V4359.snapshot().preferences.mass.todayChoices,
+      current:globalThis.AO_R17_BROWSER_ENTRY.status().fullMassPreflight,
+    }));
+    assert.equal(restored.stored.readerMode,"MISSAL",prefix+" remembered reader");
+    assert.equal(restored.current.readerMode,"MISSAL",prefix+" R17 must load remembered reader");
+    assert.equal(restored.current.experience.language,"fr",prefix+" remembered translation");
+    assert.equal(restored.current.experience.before,"prepare",prefix+" remembered preparation");
+    assert.equal(restored.current.experience.after,"thanksgiving",prefix+" remembered thanksgiving");
+    await remembered.locator(".homeScreen [data-home-settings]").click();
+    await remembered.waitForSelector('#ao-settings-modular-root [data-settings-route="/settings/mass"]',
+      {state:"visible",timeout:15000});
+    await remembered.locator('#ao-settings-modular-root [data-settings-route="/settings/mass"]').click();
+    await remembered.waitForSelector('#ao-settings-modular-root [data-pref-clear-today]',
+      {state:"visible",timeout:15000});
+    await remembered.locator('#ao-settings-modular-root [data-pref-clear-today]').click();
+    await remembered.waitForFunction(()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()
+      ?.preferences?.mass?.todayChoices===null,null,{timeout:10000});
+    await remembered.close();
+    await h4.locator(".aoH4SheetBottom [data-h4-sheet-close]").click();
+    await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
+    await h4.waitForFunction(()=>document.activeElement?.matches?.(
+      ".homeScreen.aoTodayH4 [data-home-h4-change]"),null,{timeout:10000});
+    assert.match(await h4.locator(".aoH4Primary small").innerText(),/Missal|Missel/,
+      "H4 Begin must reflect the source preflight reader selection");
+    // Escape is an independent dismissal path. The native dialog must restore
+    // focus to the fresh Home trigger after the canonical Home repaint.
+    await h4.locator("[data-home-h4-change]").click();
+    await h4.waitForSelector(".aoH4ChoiceDialog[open]",{state:"visible",timeout:10000});
+    await h4.keyboard.press("Escape");
+    await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
+    await h4.waitForFunction(()=>document.activeElement?.matches?.(
+      ".homeScreen.aoTodayH4 [data-home-h4-change]"),null,{timeout:10000});
+    // The no-art state must collapse the illustration, not leave a decorative
+    // placeholder or bury the single Begin/Resume door beneath the phone ribbon.
+    await h4.evaluate(()=>{
+      scrollTo({top:0,behavior:"instant"});
+      document.querySelector(".aoH4Door")?.classList.add("aoTodayV2ArtMissing");
+    });
+    // The presentation bridge animates Home with transient filter:blur().
+    // Never accept a blurred frame as no-art visual evidence.
+    await h4.waitForFunction(()=>{
+      const node=document.querySelector(".aoH4Door");
+      if(!node)return false;
+      const style=getComputedStyle(node);
+      return style.filter==="none"&&Number(style.opacity)>.99;
+    },null,{timeout:10000});
+    await h4.waitForTimeout(650);
+    const noArt=await h4.evaluate(()=>{
+      const art=document.querySelector(".aoH4Door .aoTodayV2Art");
+      const door=document.querySelector(".aoH4Door");
+      const action=door?.querySelector("[data-home-h4-begin], [data-resume-mass]");
+      const ribbon=document.querySelector("#ao-global-ribbon");
+      const rect=action?.getBoundingClientRect(),nav=ribbon?.getBoundingClientRect();
+      return {display:art?getComputedStyle(art).display:null,
+        door:door?.getBoundingClientRect().height,
+        actionTop:rect?.top,actionBottom:rect?.bottom,ribbonTop:nav?.top,
+        documentWidth:document.documentElement.scrollWidth,viewport:innerWidth};
+    });
+    assert.equal(noArt.display,"none",prefix+" H4 no-art must collapse image block");
+    assert.ok(noArt.documentWidth<=noArt.viewport+2,prefix+" H4 no-art overflow: "+JSON.stringify(noArt));
+    assert.ok(noArt.actionBottom<=noArt.ribbonTop+2,
+      prefix+" H4 no-art Mass entry must remain above the phone ribbon: "+JSON.stringify(noArt));
+    const settledNoArt=await h4.evaluate(()=>{
+      const hero=document.querySelector(".aoH4Door");
+      const screen=document.querySelector(".homeScreen.aoTodayH4");
+      return {heroFilter:getComputedStyle(hero).filter,screenFilter:getComputedStyle(screen).filter,
+        top:document.scrollingElement?.scrollTop};
+    });
+    assert.deepEqual(settledNoArt,{heroFilter:"none",screenFilter:"none",top:0},
+      prefix+" no-art capture must be settled and at the initial viewport");
+    await h4.screenshot({path:resolve(output,prefix+"-h4-no-art-light.png")});
+    await h4.evaluate(()=>document.querySelector(".aoH4Door")?.classList.remove("aoTodayV2ArtMissing"));
+    await h4.locator("[data-home-h4-readings]").click();
+    await h4.waitForSelector(".aoMassTextsOverlay",{state:"visible",timeout:10000});
+    await h4.locator("[data-mass-texts-close]").click();
+    await h4.locator(".aoH4DateOpen").click();
+    await h4.waitForSelector(".aoTodayH4[data-ao-home-calendar-view='picker'] #ao-calendar-modular-root",{state:"attached",timeout:25000});
+    await h4.screenshot({path:resolve(output,prefix+"-h4-calendar-light.png")});
+    await h4.locator(".aoH4CalendarBack [data-home-calendar-today]").click();
+    await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",{state:"visible",timeout:10000});
+    // A cold Home click must lazy-load the exact source-owned glossary entry,
+    // not open Daily Catechism, an empty Learn hub, or a generic glossary.
+    await h4.waitForSelector(".homeScreen.aoTodayH4 [data-home-dyk-entry]",
+      {state:"visible",timeout:20000});
+    const dykId=await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]")
+      .getAttribute("data-home-dyk-entry");
+    assert.match(dykId,/^G\d{3}$/);
+    await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]").click();
+    await h4.waitForFunction(id=>
+      globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,
+      dykId,{timeout:30000});
+    await h4.keyboard.press("Escape");
+    await h4.waitForFunction(()=>
+      globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===null,
+      null,{timeout:10000});
+    await h4.keyboard.press("Escape");
+    await h4.waitForFunction(()=>
+      globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
+      null,{timeout:10000});
+    assert.equal(await h4.locator(".homeScreen.aoTodayH4").count(),1,
+      "Closing exact DYK source must return to the same Home");
+    assert.equal(h4Errors.length,0,prefix+" H4 page errors: "+JSON.stringify(h4Errors));
+    await h4.close();
     await context.close();
   }
 }finally{

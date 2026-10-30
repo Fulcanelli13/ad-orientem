@@ -2,9 +2,13 @@ import { removeExcludedLegacyHomeArtwork } from "./legacy-art-exclusions.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { calendarObservanceAlias, verifiedFerialSundayMassName } from "../calendar/observance-title.js";
+import { latinIntroitIncipit } from "../calendar/ordo-mass-facts.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { TODAY_V2_CSS } from "./today-v2-styles.js";
 import { buildTodayV2Sections, renderTodayV2Sections } from "./today-v2-sections.js";
+import { h4Enabled, h4HomeView } from "./today-h4-view.js";
+import { hydrateHomeDidYouKnow } from "./did-you-know-glossary.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
 
@@ -74,15 +78,20 @@ function observedClassLabel(rank,language){
     /^(I|II|III|IV)(?:\s+(?:class|classe))?$/i.exec(raw)?.[1]?.toUpperCase();
   return roman?(language==="fr"?roman+"ᵉ classe":roman+" class"):raw;
 }
+// Reuse Calendar's source-owned parser for citations and full texts.
+// Home additionally retains genuine one-word Latin incipits (e.g. "Gaudeamus")
+// supported by its existing contract; a reference or placeholder is not one.
 function introitIncipit(proper){
-  // The Latin incipit comes exclusively from the resolved Proper; a
-  // Gregorian title or historical feast association is never guessed.
-  const raw=proper?.introit?.lat;
-  if(typeof raw!=="string")return null;
-  const first=raw.split(/\r?\n/).map(s=>s.trim()).find(Boolean)||"";
-  if(!first)return null;
-  if(first.length<=90)return first;
-  return first.slice(0,90).replace(/\s+\S*$/,"").trim()+"…";
+  const parsed=latinIntroitIncipit(proper?.introit);
+  if(parsed)return parsed;
+  const latin=proper?.introit?.lat??proper?.introit?.la;
+  if(typeof latin!=="string")return null;
+  const lines=latin.trim().split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+  if(lines.length!==1)return null;
+  const word=lines[0];
+  return /^[\p{L}][\p{L}\p{M}\u2019-]*\.?$/u.test(word)&&
+    !/^(?:introitus|introit|psalmus|psalm|ps|sourceplaceholder|feria)$/iu.test(word)
+      ?word:null;
 }
 function gospelRef(text){return text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).find(x=>/\b\d{1,3}:\d/.test(x))??null;}
 function excerpt(text,reference,max=220){
@@ -118,7 +127,11 @@ export function buildHomeViewModel(state,win=globalThis){
   const observedTitle=resolvedForSelection?(day?.main?.title||celebration):celebration;
   const properTitle=resolvedForSelection&&proper?
     ((language==="fr"?(proper.nameFr||proper.name):proper.name)||"").trim(): "";
-  const massFormularyName=properTitle&&properTitle!==observedTitle?properTitle:null;
+  const massFormularyName=properTitle&&properTitle!==observedTitle?properTitle:
+    resolvedForSelection&&proper?verifiedFerialSundayMassName(resolution,language):null;
+  // Observed weekday context is not a separate Mass-formulary claim.
+  // Only the canonical Calendar's source-verified observance alias may provide it.
+  const contextualObservanceName=resolvedForSelection&&proper?calendarObservanceAlias(resolution,language):null;
   const massIntroit=resolvedForSelection?introitIncipit(proper):null;
   const formularies=day?.massOptions?.length>1?day.massOptions.map(o=>({index:o.index,label:o.label||o.title||`${tr(language,"formulary")} ${o.index+1}`,selected:o.index===day.formularyIndex})):[];
   return{
@@ -128,7 +141,7 @@ export function buildHomeViewModel(state,win=globalThis){
     // DD/MM/YYYY formatter used by date inputs, storage and ICS paths.
     dateLong:formatDisplayDate(date),
     dateTitle:new Intl.DateTimeFormat(locale,{weekday:"long",day:"numeric",month:"long"}).format(date),
-    celebration,observedTitle,massFormularyName,massIntroit,resolvedForSelection,rank:observedClassLabel(rankValue,language),
+    celebration,observedTitle,massFormularyName,contextualObservanceName,massIntroit,resolvedForSelection,rank:observedClassLabel(rankValue,language),
     colour:language==="fr"?(colourMapFr[rawColour]||rawColour):rawColour,
     loading:Boolean(state.resolving),calendarFailed,
     properStatus:resolution?.proper?.status==="ready"?"ready":resolution?.proper?.status==="failed"?"failed":"idle",
@@ -166,6 +179,7 @@ export function renderHomeToString(state,win=globalThis){
   // Artwork is mounted into its own DOM island by renderHome.
   // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
+  if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage,choices:win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null});
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
     resume.stepNumber?String(resume.stepNumber):"",
@@ -221,5 +235,8 @@ export function renderHome(root,state,win=globalThis){
     if(!hasArt)slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
   }
   reconcileTodayHero(root);
+  // Nonblocking source-owned Gospel/Glossary discovery hydration. This never
+  // consumes draft DYK research items or creates a second fact database.
+  hydrateHomeDidYouKnow(root,win);
   return true;
 }

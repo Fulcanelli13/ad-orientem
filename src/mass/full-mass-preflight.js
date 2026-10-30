@@ -61,6 +61,7 @@ export function mountFullMassPreflight({
   getResolvedMass,
   getDefaultForm=()=> "sung",
   getDefaultReaderMode=()=> "LIVE",
+  getDefaultExperience=()=>null,
   language=()=> "en",
   getCelebrationApi=()=>globalThis.AO_CELEBRATION_API,
   onBeforeCategoryChange=()=>{},
@@ -80,7 +81,15 @@ export function mountFullMassPreflight({
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   const m1Preview=m1AccessPreviewRequested(doc.defaultView);
   let m1Focus=null;
-  let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
+  // Optional usual choices come exclusively from Settings; changes made in
+  // this preflight remain session-local until explicitly remembered.
+  let storedExperience=null;
+  try{storedExperience=getDefaultExperience()}catch{}
+  let folioStep="overview",
+    experience=storedExperience&&typeof storedExperience==="object"
+      ?normalizeFolioExperience(storedExperience,language())
+      :{before:"none",after:"none",language:null},
+    prayerOpening=false;
   let allSoulsSuccession=null;
   const successionFor=legacy=>{
     const massNumber=getAllSoulsMassChoice(legacy);
@@ -157,6 +166,33 @@ export function mountFullMassPreflight({
       readerLanguage:selectedExperience().language,
       allSoulsSuccession:successionFor(legacy),
       beforeMass:selectedExperience().before,afterMass:selectedExperience().after});
+  }
+  // H4 is a presentation of these selections, not a new preferences owner.
+  // Validate against the existing preflight before changing its in-memory state.
+  function setTodayChoice(key,value){
+    if(disposed)return false;
+    // First reconcile date changes so refresh cannot erase a new choice.
+    refresh();
+    let legacy=null;try{legacy=getResolvedMass()}catch{}
+    if(!legacy)return false;
+    const current=selectionFor(legacy);
+    if(key==="form"){
+      if(!current.formChangeAllowed||!MASS_FORMS.includes(value))return false;
+      selected=value;explicit=true;
+    }else if(key==="readerMode"){
+      if(!["LIVE","MISSAL"].includes(value))return false;
+      selectedMode=value;explicitMode=true;
+    }else if(key==="readerLanguage"){
+      if(!["en","fr"].includes(value))return false;
+      experience.language=value;
+    }else if(key==="beforeMass"){
+      if(!["none","prepare","full"].includes(value))return false;
+      experience.before=value;
+    }else if(key==="afterMass"){
+      if(!["none","thanksgiving","full"].includes(value))return false;
+      experience.after=value;
+    }else return false;
+    refresh();return true;
   }
   function openCategory(kind){
     if(kind==="SOURCE_DATE"){onOpenSourceProper();return true;}
@@ -911,6 +947,7 @@ export function mountFullMassPreflight({
   refresh();
   return Object.freeze({
     selectionFor,
+    setTodayChoice,
     composeRitesFor,
     openCategory,
     refresh,
@@ -925,7 +962,7 @@ export function mountFullMassPreflight({
     },
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
-      chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
+      chosenForm:activeForm(),formChangeAllowed:(()=>{try{return selectionFor(getResolvedMass()).formChangeAllowed}catch{return false}})(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep,
       m1Preview,m1Focus}),
     dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}

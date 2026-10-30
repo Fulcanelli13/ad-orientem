@@ -125,6 +125,21 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
   }
   if(vm.route==="/settings/mass"){
     const church=p.mass.defaultProfileId?profiles.find(x=>x.id===p.mass.defaultProfileId)?.name:L("Standard 1962 practice","Pratique standard de 1962");
+    const today=p.mass.todayChoices;
+    const label=(value,mapping)=>mapping[value]||value;
+    const remembered=today?section(L("REMEMBERED TODAY CHOICES","CHOIX MÉMORISÉS POUR LA MESSE"),
+      infoRow(L("Defaults saved from Today","Choix enregistrés depuis Aujourd’hui"),
+        [
+          label(today.form,{LOW:L("Low","Basse"),MISSA_CANTATA_SIMPLE:L("Sung without incense","Chantée sans encens"),
+            MISSA_CANTATA_INCENSE:L("Sung with incense","Chantée avec encens"),SOLEMN:L("Solemn","Solennelle")}),
+          today.readerMode==="MISSAL"?L("Missal","Missel"):"LIVE",
+          today.readerLanguage?.toUpperCase(),
+          label(today.beforeMass,{none:L("No preparation","Sans préparation"),prepare:L("Brief preparation","Préparation brève"),full:L("Full preparation","Préparation complète")}),
+          label(today.afterMass,{none:L("No thanksgiving","Sans action de grâces"),thanksgiving:L("Brief thanksgiving","Action de grâces brève"),full:L("Full thanksgiving","Action de grâces complète")}),
+        ].join(" · "))+
+      row(L("Forget remembered choices","Effacer les choix mémorisés"),
+        L("Restore the ordinary Mass defaults above","Rétablir les préférences habituelles ci-dessus"),
+        "",'data-pref-clear-today=""')):"";
     return shell(L("Mass","Messe"),
       section(L("MASS","MESSE"),
         seg(L("How I usually follow Mass","Ma façon habituelle de suivre la Messe"),"mass.defaultExperience",[["simple","Simple","Simple"],["missal","Missal","Missel"],["live","LIVE","LIVE"]])+
@@ -135,6 +150,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         routeRow(L("Usual church","Église habituelle"),church,"/settings/local-customs")+
         seg(L("Preparation length","Durée de la préparation"),"mass.preparationDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]])+
         seg(L("Thanksgiving length","Durée de l’action de grâces"),"mass.thanksgivingDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]]))+
+      remembered+
       note(`<strong>${esc(L("Future sessions only","Pour les sessions futures seulement"))}</strong><br>${esc(L("These choices are used when you start a new Mass. They will not change a Mass already in progress.","Ces choix sont utilisés lorsque vous commencez une nouvelle Messe. Ils ne modifient pas une Messe déjà en cours."))}`));
   }
   if(vm.route==="/settings/prayer"){

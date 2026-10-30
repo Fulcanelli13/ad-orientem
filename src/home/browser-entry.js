@@ -1,3 +1,7 @@
+import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
+import { ensureLearnModule } from "../learn/lazy-module-registry.js";
+import { verifiedH4WeekColour } from "./today-h4-view.js";
+import { openH4ChoicesSheet,closeH4ChoicesSheet } from "./today-h4-change-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 
@@ -90,6 +94,41 @@ export function createHomeOwner(win=globalThis){
   let inlineCalendarView=null;
   let inlineCalendarRestoring=false;
   let requestedDailyHonours=false;
+  const weekColourCache=new Map(),weekColourPending=new Map();
+  function hydrateH4WeekColours(current){
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4");
+    if(!screen)return;
+    const dots=[...screen.querySelectorAll("[data-home-week-colour]")];
+    const apply=(date,col)=>{
+      const latest=win?.document?.querySelector?.(".homeScreen.aoTodayH4");
+      if(!latest)return;
+      for(const dot of latest.querySelectorAll("[data-home-week-colour]")){
+        if(dot.dataset.homeWeekColour!==date)continue;
+        if(col){dot.style.setProperty("--ao-h4-day-colour",col);dot.dataset.verifiedColour=col;}
+        else {dot.style.removeProperty("--ao-h4-day-colour");delete dot.dataset.verifiedColour;}
+      }
+    };
+    for(const dot of dots){
+      const date=dot.dataset.homeWeekColour;
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(date??""))continue;
+      if(weekColourCache.has(date)){apply(date,weekColourCache.get(date));continue;}
+      const selected=current?.resolution?.date===date?
+        verifiedH4WeekColour(current.resolution,date):null;
+      if(selected){weekColourCache.set(date,selected);apply(date,selected);continue;}
+      if(weekColourPending.has(date))continue;
+      const resolver=runtime(win)?.resolver;
+      if(typeof resolver?.resolveDay!=="function")continue;
+      const task=Promise.resolve().then(()=>resolver.resolveDay(date))
+        .then(resolved=>{
+          const colour=verifiedH4WeekColour(resolved,date);
+          weekColourCache.set(date,colour);
+          apply(date,colour);
+        })
+        .catch(()=>{weekColourCache.set(date,null);apply(date,null);})
+        .finally(()=>weekColourPending.delete(date));
+      weekColourPending.set(date,task);
+    }
+  }
 
   function ensureRetiredEnricherWatch(){
     if(retiredEnricherObserver)return;
@@ -266,6 +305,10 @@ export function createHomeOwner(win=globalThis){
     const retry=target?.closest?.("[data-home-shortcut-retry]");
     if(retry){
       event.preventDefault?.();
+      if(retry.dataset?.homeShortcutRetry==="home.did-you-know"){
+        const exact=win?.document?.querySelector?.(".homeScreen [data-home-dyk-entry]");
+        if(exact&&!exact.disabled){exact.click();return;}
+      }
       void openRoute(retry.dataset?.homeShortcutRetry,{trigger:retry});
       return;
     }
@@ -283,6 +326,63 @@ export function createHomeOwner(win=globalThis){
           try{win?.console?.error?.("Mass resume unavailable",error)}catch{}
           showRouteError("mass.resume",resumeMass);
         });
+      return;
+    }
+    const h4Begin=target?.closest?.("[data-home-h4-begin]");
+    if(h4Begin){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      if(h4Begin.disabled)return;
+      const current=state(win);
+      if(current?.route!=="home"||current?.resolving||
+         current?.resolution?.proper?.status!=="ready"||
+         (current.resolution.date&&current.resolution.date!==current.selectedDate)){
+        showRouteError("mass.unavailable",h4Begin);return;
+      }
+      h4Begin.disabled=true;
+      void Promise.resolve(win?.AO_R17_BROWSER_ENTRY?.startFromToday?.())
+        .then(result=>{
+          if(result?.ok===true){clearRouteError();return;}
+          showRouteError("mass.begin",h4Begin);
+        }).catch(error=>{
+          try{win?.console?.error?.("Today R17 Mass entry rejected",error)}catch{}
+          showRouteError("mass.begin",h4Begin);
+        }).finally(()=>{if(h4Begin.isConnected)h4Begin.disabled=false});
+      return;
+    }
+    const h4Change=target?.closest?.("[data-home-h4-change]");
+    if(h4Change){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      // The Change sheet is a presentation of R17's one existing preflight.
+      // Alternative Mass/Proper selection still goes through the host resolver.
+      const opened=openH4ChoicesSheet(win,{
+        onOtherMass:()=>{void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});},
+        onDone:()=>{
+          if(state(win)?.route!=="home")return;
+          // The modal is now removed and Home re-paints from canonical R17 state.
+          // Restore keyboard focus to the fresh Change trigger, not the detached
+          // button that opened the dialog (and do not scroll the phone viewport).
+          if(paint(state(win))){
+            const trigger=win?.document?.querySelector?.(".homeScreen.aoTodayH4 [data-home-h4-change]");
+            try{trigger?.focus?.({preventScroll:true});}catch{trigger?.focus?.();}
+          }
+        },
+      });
+      if(!opened)void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});
+      return;
+    }
+    const h4Readings=target?.closest?.("[data-home-h4-readings]");
+    if(h4Readings){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const current=state(win),resolved=current?.resolution;
+      const proper=resolved?.proper?.status==="ready"&&
+        (!resolved.date||resolved.date===current.selectedDate)?resolved.proper.data:null;
+      const fr=current?.language==="fr";
+      const title=fr?(proper?.nameFr||proper?.name||resolved?.day?.main?.title):
+        (proper?.name||resolved?.day?.main?.title);
+      const sheet=openMassTextsSheet(win.document,{
+        proper,language:fr?"fr":"en",date:current?.selectedDate,
+        title,sourceReady:Boolean(proper),opener:h4Readings});
+      if(!sheet)showRouteError("mass.readings",h4Readings);
       return;
     }
     const massEntry=target?.closest?.("[data-home-mass-entry]");
@@ -391,6 +491,26 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("find",{trigger:find,routeId:"find"});
       return;
     }
+    const dyk=target?.closest?.("[data-home-dyk-open]");
+    if(dyk){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const entryId=dyk.dataset?.homeDykEntry;
+      if(!/^G\d{3}$/.test(String(entryId??""))||dyk.disabled){
+        showRouteError("home.did-you-know",dyk);return;
+      }
+      // The source-owning bilingual Glossary opens the exact cited concept;
+      // no generic Learn hub and no independent Home fact detail.
+      void Promise.resolve().then(()=>ensureLearnModule("learn.glossary",win))
+        .then(()=>win?.AO_GLOSSARY_V1?.open?.({entryId,origin:"context",trigger:dyk}))
+        .then(opened=>{
+          if(opened===true){clearRouteError();return;}
+          showRouteError("home.did-you-know",dyk);
+        }).catch(error=>{
+          try{win?.console?.error?.("Did You Know source unavailable",error)}catch{}
+          showRouteError("home.did-you-know",dyk);
+        });
+      return;
+    }
     const daily=target?.closest?.("[data-home-daily-catechism]");
     if(daily){
       event.preventDefault?.();
@@ -480,6 +600,7 @@ export function createHomeOwner(win=globalThis){
     const rendered=renderHome(appRoot,next,win);
     if(!rendered)return false;
     markOwner();
+    hydrateH4WeekColours(next);
     // Lazy on resolved Home only. Calendar and Home reuse the exact same
     // read model and network request; no second modern saint resolver.
     if(!requestedDailyHonours&&next?.resolution?.day?.main&&!next?.resolving){
@@ -504,7 +625,7 @@ export function createHomeOwner(win=globalThis){
       }
       return false;
     }
-    unsubscribe=store.subscribe(next=>{if(next?.route==="home")paint(next);});
+    unsubscribe=store.subscribe(next=>{if(next?.route==="home")paint(next);else closeH4ChoicesSheet(win);});
     paint(store.getState());
     return true;
   }
@@ -552,6 +673,7 @@ export function createHomeOwner(win=globalThis){
   }
 
   function dispose(){
+    closeH4ChoicesSheet(win);
     try{unsubscribe?.();}catch{}
     unsubscribe=null;
     if(retryTimer&&typeof win?.clearTimeout==="function")win.clearTimeout(retryTimer);
