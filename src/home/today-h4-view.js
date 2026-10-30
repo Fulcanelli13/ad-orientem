@@ -67,7 +67,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null}={})
   return '<style data-ao-today-v2-style>'+TODAY_H4_CSS+'</style>'+
   '<main class="homeScreen aoTodayV2 aoTodayH4" data-home-language="'+vm.language+'" data-ao-home-presentation-owner="modular-home-presentation-v1">'+
   '<header class="aoH4Bar"><span class="aoH4Wordmark">AD ORIENTEM</span><button class="aoH4Utility" type="button" data-home-settings aria-label="'+esc(say("Settings","Réglages"))+'">⚙</button></header>'+
-  '<div class="aoH4CalendarBack"><button type="button" data-home-calendar-today aria-label="'+esc(say("Back to Today","Retour à aujourd’hui"))+'">←</button><strong>'+esc(say("Calendar","Calendrier"))+'</strong></div>'+
+  '<div class="aoH4CalendarBack"><button type="button" data-home-calendar-today aria-label="'+esc(say("Back to Home","Retour à l’accueil"))+'">←</button><strong>'+esc(say("Calendar","Calendrier"))+'</strong><button type="button" class="aoH4CalendarHelp" data-home-calendar-glossary aria-label="'+esc(say("Terms and definitions","Termes et définitions"))+'">?</button></div>'+
   '<nav class="aoH4CalendarViews" aria-label="'+esc(say("Calendar views","Vues du calendrier"))+'">'+
   '<button type="button" data-home-calendar data-home-calendar-view="day">'+esc(say("Day","Jour"))+'</button>'+
   '<button type="button" data-home-calendar data-home-calendar-view="picker">'+esc(say("Month","Mois"))+'</button>'+
