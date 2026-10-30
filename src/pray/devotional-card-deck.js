@@ -139,19 +139,27 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
  const timeline=create(doc,"nav","aoDevoTimeline");
  timeline.setAttribute("aria-label",language==="fr"?"Chronologie des prières":"Prayer timeline");
  const stops=create(doc,"div","aoDevoStops"),viewport=create(doc,"div","aoDevoCardViewport");
+ const f04=Boolean(mount.querySelector('[data-ao-f04-timeline="segments"]'));
  const cards=[];
  plan.forEach((entry,i)=>{
   const stop=create(doc,"button","aoDevoStop");stop.type="button";stop.dataset.aoDevoJump=String(i);
   stop.setAttribute("aria-label",String(i+1)+": "+entry.title);
   stop.append(create(doc,"span","aoDevoStopNumber",String(i+1).padStart(2,"0")),
    create(doc,"span","aoDevoStopTitle",entry.title));
+  if(f04){
+   const dots=create(doc,"span","aoF04DotGroup");
+   dots.setAttribute("aria-hidden","true");
+   for(let n=0;n<3;n++)dots.append(create(doc,"i","aoF04Dot"));
+   stop.append(dots);
+  }
   stops.append(stop);
   const card=create(doc,"section","aoDevoCard");
   card.dataset.aoDevoCard=entry.id;card.dataset.aoDevoIndex=String(i);
   card.setAttribute("aria-label",entry.title);
   const header=create(doc,"header","aoDevoCardHead");
-  header.append(create(doc,"small","aoDevoCardNumber",String(i+1)+" / "+plan.length),
-   create(doc,"h2","aoDevoCardTitle",entry.title),
+  header.append(create(doc,"small","aoDevoCardNumber",
+    f04?String(i+1)+" "+(language==="fr"?"SUR":"OF")+" "+plan.length:String(i+1)+" / "+plan.length),
+   create(doc,"h2","aoDevoCardTitle",f04?entry.title.replace(/^The /,""):entry.title),
    create(doc,"p","aoDevoCardLatin",entry.latin));
   if(guided){
    const hints=form==="angelus"?{
@@ -178,13 +186,26 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
    });
   }
   collectParagraphs(body,entry.id);
+  if(f04&&recitationMode==="group"){
+   for(const line of body.querySelectorAll("[data-ao-angelus-voice]")){
+    const all=line.dataset.aoAngelusVoice==="response";
+    const role=create(doc,"span","aoF04VoiceRole",
+     all?(language==="fr"?"TOUS":"ALL"):(language==="fr"?"GUIDE":"LEADER"));
+    role.setAttribute("aria-hidden","true");
+    line.prepend(role);
+   }
+  }
   card.append(header,body);viewport.append(card);cards.push(card);
  });
  timeline.append(stops);
  host.replaceChildren(timeline,viewport);host.dataset.aoDevotionalDeck="v1";
  // F04 bottom navigation is one more view of this SAME source-owned go()
  // cursor. No duplicate card index, liturgical text or completion state.
- const f04=Boolean(mount.querySelector('[data-ao-f04-timeline="segments"]'));
+ if(f04){
+  const posture=mount.querySelector(".aoFolioPostureNote");
+  const first=cards[0]?.querySelector(".aoDevoCardHead");
+  if(posture&&first)first.append(posture);
+ }
  const dock=f04?create(doc,"nav","aoDevoF04Dock"):null;
  const previous=dock?create(doc,"button","aoDevoF04Previous","‹"):null;
  const position=dock?create(doc,"span","aoDevoF04Position"):null;
@@ -195,11 +216,32 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   previous.setAttribute("aria-label",language==="fr"?"Moment précédent":"Previous moment");
   next.type="button";next.dataset.aoF04Next="";
   next.setAttribute("aria-label",language==="fr"?"Moment suivant":"Next moment");
+  position.setAttribute("aria-live","polite");
   dock.append(previous,position,next);host.append(dock);
+ }
+ const completion=f04?create(doc,"section","aoDevoF04Complete"):null;
+ const nextHourLabel=completion?create(doc,"p","aoF04NextTime"):null;
+ if(completion){
+  completion.hidden=true;
+  completion.setAttribute("aria-label",language==="fr"?"Prière terminée":"Prayer completed");
+  completion.append(
+   create(doc,"span","aoF04CompleteSymbol","✦"),
+   create(doc,"small","aoF04CompleteEyebrow",language==="fr"?"PRIÈRE ACHEVÉE":"THE PRAYER ENDS"),
+   create(doc,"h2","aoF04CompleteAmen","Amen"),
+   nextHourLabel
+  );
+  const returnButton=create(doc,"button","aoF04CompleteReturn",
+   language==="fr"?"Retour aux prières quotidiennes":"Return to Daily Prayer");
+  returnButton.type="button";returnButton.dataset.p435930Family="daily";
+  const replayButton=create(doc,"button","aoF04CompleteAgain",
+   language==="fr"?"Prier de nouveau":"Pray again");
+  replayButton.type="button";replayButton.dataset.aoF04Again="";
+  completion.append(returnButton,replayButton);
+  host.append(completion);
  }
  host.classList.add("aoDevoDeck");
  originalAppendix?.remove();
- let index=0,lastParagraph=null,lastCue=null,raf=0;
+ let index=0,lastParagraph=null,lastCue=null,raf=0,finished=false;
  function focus(){
   raf=0;const body=cards[index]?.querySelector(".aoDevoCardScroll");
   if(!visible(body))return;
@@ -226,9 +268,29 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   }
  }
  const queue=()=>{if(!raf)raf=requestAnimationFrame(focus)};
+ function finish(){
+  if(!completion||finished)return false;
+  finished=true;
+  onCue(null,{card:plan[index],paragraph:null});
+  timeline.hidden=true;viewport.hidden=true;if(dock)dock.hidden=true;
+  completion.hidden=false;
+  const hour=doc.defaultView?.Date?new doc.defaultView.Date().getHours():new Date().getHours();
+  const nextHour=[6,12,18].find(h=>h>hour),tomorrow=nextHour===undefined;
+  const time=String(tomorrow?6:nextHour).padStart(2,"0")+":00";
+  const formName=form==="regina"?"Regina Cæli":language==="fr"?"Angélus":"Angelus";
+  nextHourLabel.textContent=language==="fr"
+   ?"Prochain "+formName+" à "+time+(tomorrow?" demain":"")
+   :"Next "+formName+" at "+time+(tomorrow?" tomorrow":"");
+  completion.querySelector(".aoF04CompleteReturn")?.focus({preventScroll:true});
+  return true;
+ }
  function go(target,{initial=false}={}){
   const nextIndex=Math.max(0,Math.min(cards.length-1,Number(target)||0));
-  if(!initial&&nextIndex===index)return false;
+  if(!initial&&nextIndex===index&&!finished)return false;
+  if(finished){
+   finished=false;completion.hidden=true;
+   timeline.hidden=false;viewport.hidden=false;if(dock)dock.hidden=false;
+  }
   index=nextIndex;lastParagraph=null;lastCue=null;
   // A transient Incarnation bow cannot leak into the next prayer card.
   onCue(null,{card:plan[index],paragraph:null});
@@ -239,7 +301,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   });
   updateDevotionalProgress(timeline,{index,total:plan.length,language});
   if(dock){
-   previous.disabled=index===0;next.disabled=index===plan.length-1;
+   previous.disabled=index===0;next.disabled=false;
    position.textContent=language==="fr"?"Moment "+(index+1)+" sur "+plan.length:
     "Moment "+(index+1)+" of "+plan.length;
   }
@@ -281,10 +343,15 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   go(index+(e.key==="ArrowRight"?1:-1));
  });
  host.addEventListener("click",e=>{
+  if(e.target.closest("[data-ao-f04-again]")){
+   e.preventDefault();go(0,{initial:true});return;
+  }
   const previousClick=e.target.closest("[data-ao-f04-previous]");
   const nextClick=e.target.closest("[data-ao-f04-next]");
   if(previousClick||nextClick){
-   e.preventDefault();go(index+(nextClick?1:-1));return;
+   e.preventDefault();
+   if(nextClick&&index===plan.length-1){finish();return;}
+   go(index+(nextClick?1:-1));return;
   }
   if(e.target.closest("[data-p435930-card-flip]")){
    const currentBody=cards[index]?.querySelector(".aoDevoCardScroll");
@@ -301,7 +368,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   queue();
  },{passive:true});
  go(initialIndex,{initial:true});
- const api=Object.freeze({schema:DEVOTIONAL_CARD_SCHEMA,plan,current:()=>index,go,cards:()=>cards.length,sync:queue});
+ const api=Object.freeze({schema:DEVOTIONAL_CARD_SCHEMA,plan,current:()=>index,finished:()=>finished,go,finish,cards:()=>cards.length,sync:queue});
  host.__aoDevotionalDeck=api;
  return api;
 }
