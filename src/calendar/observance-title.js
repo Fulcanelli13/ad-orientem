@@ -129,6 +129,33 @@ function sourceFeriaTitle(resolution, language){
   return null;
 }
 
+// A weekday's canonical observed ID is not proof of its appointed Mass
+// formulary. Publish the inherited Sunday name ONLY if the resolved Proper
+// itself points to that Sunday's source file. In the source corpus,
+// e.g. Pent22-5 contains a feria heading, while Pent22-0 owns the Mass texts.
+export function verifiedFerialSundayMassName(resolution, language="en"){
+  if(resolution?.status!=="ready"||resolution?.proper?.status!=="ready")return null;
+  const date=String(resolution?.date??"");
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date))return null;
+  const dow=new Date(date+"T12:00:00Z").getUTCDay();
+  if(dow<1||dow>5||!/^:feria:4:[wvgrbp]$/i.test(String(resolution.day?.main?.id??"")))return null;
+  const candidates=(resolution.day?.tempora??[]).filter(x=>
+    /^tempora:Pent\d+-[1-5]:4:[wvgrbp]$/i.test(String(x?.id??"")));
+  if(candidates.length!==1)return null;
+  const match=/^tempora:Pent(\d+)-([1-5]):4:([wvgrbp])$/i.exec(candidates[0].id);
+  if(!match||Number(match[2])!==dow)return null;
+  const n=Number(match[1]);
+  if(n<1||n>24)return null;
+  const expected="tempora/pent"+n+"-0";
+  // The source-owned resolver may reuse the Sunday file for a IV-class feria;
+  // its sourcePath, not week proximity or the Introit text, licenses this name.
+  const resolved=String(resolution.proper.data?.sourcePath??"").toLowerCase();
+  if(resolved!==expected)return null;
+  const fr=language==="fr",ordinal=(fr?ORDINAL_FR:ORDINAL_EN)[n];
+  return ordinal?(fr?"Messe du "+ordinal+" dimanche après la Pentecôte":
+    "Mass of the "+ordinal+" Sunday after Pentecost"):null;
+}
+
 export function calendarObservanceAlias(resolution, language = "en") {
   if (!resolution || resolution.status === "failed" || !resolution.day?.main) return null;
   const id = String(resolution.day.main.id || "");
