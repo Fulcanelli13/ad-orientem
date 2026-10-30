@@ -93,7 +93,7 @@ class PhotoFinderTests(unittest.TestCase):
    self.assertEqual(report["verified"],0)
    self.assertEqual(len(report["exceptions"]),1)
  def test_legal_commons_filename_with_double_dot(self):
-  self.assertIn("Nazaré..jpg",mod.norm_commons("File:Basílica de Nossa Senhora de Nazaré..jpg"))
+  self.assertIn("Nazar%C3%A9..jpg",mod.norm_commons("File:Basílica de Nossa Senhora de Nazaré..jpg"))
   with self.assertRaisesRegex(ValueError,"Invalid Commons title"):
    mod.norm_commons("File:../elsewhere/image.jpg")
 
