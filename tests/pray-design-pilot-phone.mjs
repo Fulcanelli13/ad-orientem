@@ -150,6 +150,26 @@ try{
     "F04 progress track should render as four-pixel rules rather than boxed numbers: "+JSON.stringify(timeline));
 
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0);
+
+   const dock=page.locator(base+" [data-ao-f04-timeline=segments] .aoDevoF04Dock");
+   assert.equal(await dock.count(),1,"F04 moment must expose one canonical Previous/Next dock");
+   const dockPosition=await dock.evaluate(node=>({
+    top:node.getBoundingClientRect().top,bottom:node.getBoundingClientRect().bottom,
+    viewportHeight:innerHeight,
+    prevDisabled:node.querySelector("[data-ao-f04-previous]")?.disabled,
+    nextDisabled:node.querySelector("[data-ao-f04-next]")?.disabled,
+    label:node.querySelector(".aoDevoF04Position")?.textContent
+   }));
+   assert.ok(dockPosition.top>180&&dockPosition.bottom<=dockPosition.viewportHeight-60,
+    "F04 dock must stay above app navigation in phone viewport: "+JSON.stringify(dockPosition));
+   assert.ok(dockPosition.prevDisabled&&!dockPosition.nextDisabled,
+    "F04 first card must correctly expose Previous/Next state");
+   await page.locator(base+" [data-ao-f04-next]").click();
+   assert.match(await dock.locator(".aoDevoF04Position").innerText(),/2 (?:of|sur) [45]/,
+    "F04 Next must navigate the canonical card cursor");
+   await page.locator(base+" [data-ao-f04-previous]").click();
+   assert.match(await dock.locator(".aoDevoF04Position").innerText(),/1 (?:of|sur) [45]/,
+    "F04 Previous must return to the original canonical card");
    await page.screenshot({path:resolve(output,"angelus-cards-"+width+".png"),animations:"disabled"});
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus_regina",{returnContext:null}));
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
