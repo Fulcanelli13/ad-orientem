@@ -504,7 +504,7 @@ try{
     donorAvailable:globalThis.AO_HOME_APP_V1?.status?.().donorHomeAvailable??false,
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
-    prayNow:document.querySelectorAll(".aoTodayV2Below .aoTodayV2PrayNow [data-home-cu-route='pray.rosary']").length,
+    prayNow:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2PrayNow [data-home-cu-route='pray.rosary']").length,
     scripture:document.querySelectorAll(".aoTodayV2Below [data-home-scripture]").length,
     gospel:document.querySelectorAll(".aoTodayV2Below [data-action='gospel']").length,
     catechism:document.querySelectorAll(".aoTodayV2Below [data-home-daily-catechism]").length,
