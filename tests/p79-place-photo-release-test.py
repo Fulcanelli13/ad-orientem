@@ -94,7 +94,7 @@ class ReviewReleaseTests(unittest.TestCase):
     def test_no_network_metadata_and_bytes_are_verified_before_staging(self):
         review,row=self.chose()
         selected=self.select(review)
-        payload=b"fake-immutable-image"
+        payload=b"fake-immutable-image"*80
         digest=hashlib.sha1(payload).hexdigest()
         selected[0]["sha1"]=digest
         real_convert=mod.stager.convert_original
