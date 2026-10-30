@@ -22,6 +22,7 @@ const workflows=readdirSync(workflowDir).filter(name=>/\.ya?ml$/i.test(name));
 const reviewBranchMutationWorkflows=new Map([
   ["directory-snapshot-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
   ["directory-geocode-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
+  ["photo-finder-release-first20.yml",/branches:\s*\n\s*-\s*["\']research\/photo-finder-release-20261030-\*["\']/i],
   ["directory-icksp-research-geocode.yml",/branches:\s*\n\s*-\s*["']directory\/icksp-quality-\*["']/i],
 ]);
 for(const name of workflows){
@@ -32,6 +33,16 @@ for(const name of workflows){
   if(reviewBranchGuard){
     assert.match(source,reviewBranchGuard,
       name+" must remain scoped to its designated Directory review branch family");
+    if(name==="photo-finder-release-first20.yml"){
+      assert.match(source,/github\.ref == 'refs\/heads\/research\/photo-finder-release-20261030-b1'/);
+      assert.match(source,/\.release-first20/);
+      assert.match(source,/--role cover --offset 0 --limit 20/);
+      assert.match(source,/--apply/);
+      assert.match(source,/git add -- assets\/approved\/place-media\/pf-\*\.webp/);
+      assert.match(source,/git add -- data\/geography\/approved-place-media\.v1\.json/);
+      assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+      assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
+    }
     if(name==="directory-icksp-research-geocode.yml"){
       assert.match(source,/branches:[ \t]*\n[ \t]*-[ \t]*["']directory\/icksp-quality-\*["'][ \t]*\n[ \t]*paths:[ \t]*\n[ \t]*-[ \t]*["']data\/directory\/\.icksp-research-geocode-request["']/i,
         name+" must be triggered only by the ICKSP geocode request marker on review branches");
