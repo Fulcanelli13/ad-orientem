@@ -20,7 +20,7 @@ try{
  for(const width of [320,390]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoMassAccessM1=1&aoMassRootM1=1&aoR17Reader=native",
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
     {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
   await page.waitForSelector('#ao-global-ribbon [data-ao-app-surface="mass"]',{state:"visible",timeout:20000});
