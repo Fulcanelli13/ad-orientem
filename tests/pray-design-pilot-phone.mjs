@@ -97,6 +97,15 @@ try{
    assert.equal(await group.getAttribute("aria-pressed"),"true");
    assert.equal(await page.evaluate(()=>localStorage.getItem("ao-prayer-recitation-mode")),"group",
     "Group recitation must reuse the existing saved preference, not create a second engine");
+   const hourCard=await page.locator(base+" .aoPrayPilotAngelusHero").evaluate(node=>({
+    height:node.getBoundingClientRect().height,
+    viewport:window.innerHeight,
+    text:node.innerText
+   }));
+   assert.ok(hourCard.height>=hourCard.viewport*.72,
+    "F04 Angelus must fill available phone viewport, not leave a blank half-screen: "+JSON.stringify(hourCard));
+   assert.doesNotMatch(hourCard.text,/A pause for prayer|existing named cards/,
+    "F04 hour card must not show developer explanation");
    await page.screenshot({path:resolve(output,"angelus-entry-"+width+".png"),animations:"disabled"});
    await page.locator(base+" [data-p435930-pilot-angelus-begin]").click();
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
