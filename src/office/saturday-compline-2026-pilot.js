@@ -8,8 +8,8 @@
  * It does NOT assert independent completeness, translation fidelity or rights.
  */
 import {DIVINUM_OFFICIUM_PIN as PIN} from "../app/source-transport-compat.js";
-import {parseAdventPreviewSourceSections}
- from "./advent-first-vespers-bounded-preview-reader.js";
+import {parsePinnedOfficeSectionHeadings}
+ from "./pinned-section-heading-parser.js";
 import {planWeeklyComplinePsalter,COMPLINE_MARIAN_SOURCE_SECTIONS}
  from "./weekday-compline-psalter-plan.js";
 import {reviewAdventIComplineAppointment}
@@ -101,7 +101,7 @@ export function createComplinePinnedReader({fetchSource,weekday=null,date=null}=
    throw Error("COMPLINE_SECTION_NOT_ALLOWED");
   // Some original-language leaves have conditional variant headings; the
   // parser chooses the exact unqualified source name, never a silent variant.
-  const map=parseAdventPreviewSourceSections(await raw(path,language),
+  const map=parsePinnedOfficeSectionHeadings(await raw(path,language),
    new Set([name]));
   const lines=map.get(name);
   if(!lines?.length)throw Error("COMPLINE_SOURCE_SECTION_MISSING:"+name);
