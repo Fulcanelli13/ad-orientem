@@ -2801,7 +2801,7 @@ function renderPreciousBlood(){
  Math.round((s.phase+1)/9*100)+'%"></span></div>'+ (CHAPLET_F07_PILOT_ENABLED?renderF07PreciousBlood(s.phase,s.bead,{french:fr}):'')+
  contents+(CHAPLET_F07_PILOT_ENABLED?'<details class="aoF07JumpDisclosure"><summary>'+esc(L('Choose a mystery','Choisir un mystère'))+'</summary>'+nav+'</details>':'')+'<footer class="aoPreciousBloodActions">'+previous+next+'</footer>'+history+'</main>';
 }
-function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Band:CHAPLET_F07_PILOT_ENABLED?renderF07LittleCrown(LITTLE_CROWN.index,{french:isFr()}):""})}
+function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Render:CHAPLET_F07_PILOT_ENABLED?renderF07LittleCrown:null})}
 function renderFiveWounds(){
  const index=Math.max(0,Math.min(29,FIVE_WOUNDS.index));FIVE_WOUNDS.index=index;
  const langCode=FIVE_WOUNDS.latin?'la':(isFr()?'fr':'en');
@@ -3354,6 +3354,15 @@ function onClick(e){
    }
  }
  if(view==='littleCrown'){
+   // F07 c1's Aa menu only changes the original session language or Latin
+   // flag. The canonical bead cursor and source prayers are untouched.
+   if(CHAPLET_F07_PILOT_ENABLED&&b.hasAttribute('data-p435930-crown-language')){
+     const choice=b.dataset.p435930CrownLanguage;
+     if(!['en','fr','la'].includes(choice))return;
+     if(choice==='la')LITTLE_CROWN.latin=true;
+     else{LITTLE_CROWN.latin=false;praySessionLanguage=choice}
+     return render();
+   }
    if(b.hasAttribute('data-p435930-crown-bead')){
      const n=Number(b.dataset.p435930CrownBead);
      if(Number.isInteger(n)&&n>=0&&n<15){LITTLE_CROWN.index=n;return render()}
