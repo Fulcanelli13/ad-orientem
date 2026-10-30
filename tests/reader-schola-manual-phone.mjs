@@ -379,6 +379,63 @@ try{
      card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
      cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
    })),priestBeforeMusicPick,"Rejoining expected music moved priest focus");
+
+   // Named profiles are part of the shipped MUSIC PLAN panel and must be
+   // usable at 320/390px. No profile operation can move the priest's card.
+   const profileBefore=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   }));
+   const panel=page.locator("[data-schola-local-panel]");
+   await panel.locator("summary").click();
+   await panel.locator("[data-schola-profile-new]").fill("Sung Sunday");
+   await panel.locator("[data-schola-profile-create]").click();
+   await page.waitForFunction(()=>
+     document.querySelector("[data-schola-profile-select]")?.options.length===2);
+   const profilePicker=panel.locator("[data-schola-profile-select]");
+   const createdProfile=await profilePicker.inputValue();
+   assert.notEqual(createdProfile,"p1","New profile did not become active");
+   await panel.locator('[data-schola-ordinary-setting="KYRIE"]').fill("Mass VIII");
+   await panel.locator('[data-schola-ordinary-setting="CREDO"]').fill("Credo III");
+   await panel.locator("[data-schola-local-sanctus]").selectOption("POLYPHONIC");
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()
+     ?.sanctusPerformance==="POLYPHONIC");
+   const savedProfile=await page.evaluate(()=>{
+     const key="ao-schola-profile-library-v2";
+     const library=JSON.parse(localStorage.getItem(key)||"{}");
+     const active=(library.profiles??[]).find(p=>p.id===library.activeProfileId);
+     return {id:library.activeProfileId,name:active?.name,
+       kyrie:active?.ordinarySettings?.KYRIE,
+       credo:active?.ordinarySettings?.CREDO,
+       sanctus:active?.sanctusPerformance,
+       v1StillReadable:Boolean(localStorage.getItem("ao-schola-local-programme-v1"))};
+   });
+   assert.equal(savedProfile.name,"Sung Sunday");
+   assert.equal(savedProfile.kyrie,"Mass VIII");
+   assert.equal(savedProfile.credo,"Credo III");
+   assert.equal(savedProfile.sanctus,"POLYPHONIC");
+   assert.equal(savedProfile.v1StillReadable,true);
+   await profilePicker.selectOption("p1");
+   await page.waitForFunction(()=>
+     document.querySelector('[data-schola-ordinary-setting="KYRIE"]')?.value==="");
+   await profilePicker.selectOption(createdProfile);
+   await page.waitForFunction(()=>
+     document.querySelector('[data-schola-ordinary-setting="KYRIE"]')?.value==="Mass VIII");
+   const panelBounds=await panel.locator(".ao-schola-programme-fields").evaluate(el=>{
+     const r=el.getBoundingClientRect();
+     return {left:r.left,right:r.right,viewport:innerWidth,scroll:el.scrollHeight,
+       client:el.clientHeight};
+   });
+   assert.ok(panelBounds.left>=-1&&panelBounds.right<=width+1,
+     "Parish programme editor exceeds phone width: "+JSON.stringify(panelBounds));
+   await page.screenshot({path:resolve(out,"schola-parish-profile-"+width+".png"),
+     animations:"disabled"});
+   await panel.locator("summary").click();
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   })),profileBefore,"Switching parish profiles moved the priest reader");
+
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
    assert.equal(overflow,false,"Schola controls overflow narrow phone");
    assert.deepEqual(errors,[],"Runtime page errors");
