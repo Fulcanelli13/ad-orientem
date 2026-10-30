@@ -98,18 +98,28 @@ const relatedPlaceIds=new Set([
  ...g.directoryPlaceLinks.map(x=>x.place_id),
  ...n.links.map(x=>x.place_id).filter(Boolean)
 ]);
-const orphanIds=g.places.filter(x=>!relatedPlaceIds.has(x.place_id)).map(x=>x.place_id).sort();
+// This source-only reachability audit is a frozen 10 October snapshot of 261
+// Places, not a live census. New source-backed Places have been published since
+// then; do not pretend they were each reviewed in that historical audit.
+const currentPlaceIds=new Set(g.places.map(x=>x.place_id));
+const currentUnlinkedIds=g.places.filter(x=>!relatedPlaceIds.has(x.place_id)).map(x=>x.place_id).sort();
 const reviewedIds=audit.orphaned_place_profile_candidates.map(x=>x.place_id).sort();
-assert.deepEqual(orphanIds,reviewedIds,"unlinked Place records changed: reconcile with Explore audit, not new duplicate imports");
-assert.equal(g.places.length,audit.summary.geographical_place_profile_count);
-assert.equal(g.places.length-orphanIds.length,audit.summary.geographical_place_profiles_with_known_lens_relationship);
+assert.equal(audit.summary.geographical_place_profiles_with_known_lens_relationship+reviewedIds.length,
+ audit.summary.geographical_place_profile_count,"historical reachability audit arithmetic drift");
+assert.equal(audit.summary.source_level_orphan_place_records_at_baseline,reviewedIds.length);
+assert.ok(reviewedIds.every(id=>currentPlaceIds.has(id)),
+ "historically reviewed Place disappeared from the canonical current registry");
 assert.ok(audit.orphaned_place_profile_candidates.every(x=>x.current_resolution==="DISCOVERABLE_VIA_VERIFIED_RELATED_PLACE"));
 const officialLinks=json("data/geography/related-places.v1.json").relationships;
 const linkedPlaceIds=new Set(officialLinks.flatMap(link=>[link.source_place_id,link.target_place_id]));
-assert.ok(orphanIds.every(id=>linkedPlaceIds.has(id)),"historically unlinked places must be recoverable through official relationship links");
+assert.ok(reviewedIds.every(id=>linkedPlaceIds.has(id)),
+ "the two historically reviewed unlinked Places must retain their verified related-place links");
 assert.ok(officialLinks.every(link=>/^https:\/\//.test(link.source_url)),"linked places require original institutional sources");
-assert.equal(audit.summary.geographical_place_profiles_with_related_place_discovery,g.places.length);
-assert.equal(audit.summary.source_level_orphan_place_records,0);
+assert.equal(audit.summary.geographical_place_profiles_with_related_place_discovery,
+ audit.summary.geographical_place_profile_count,"historical audit should preserve its own coverage claim");
+assert.equal(audit.summary.source_level_orphan_place_records,0,
+ "historical source-audit assertion only; NOT a statement about current Places");
+const newlyUnreviewedIds=currentUnlinkedIds.filter(id=>!reviewedIds.includes(id));
 assert.equal(audit.summary.conditional_home_fallbacks_current,0);
 for(const id of ["RCH-004","RCH-011"])
  assert.equal(findings.get(id).current_resolution.status,"REMEDIATED_ON_MAIN");
@@ -123,5 +133,9 @@ console.log(JSON.stringify({
  audited_route_ids:audit.routes.length,
  audited_content_kinds:audit.kind_entry_points.length,
  verified_browser_interactions:0,
- confidence:"SOURCE_TRACE_ONLY"
+ confidence:"SOURCE_TRACE_ONLY",
+ current_place_profiles:g.places.length,
+ current_place_profiles_without_a_listed_lens_relationship:currentUnlinkedIds.length,
+ current_source_only_unreviewed_place_ids:newlyUnreviewedIds.length,
+ current_place_browser_reachability_verified:false
 },null,2));
