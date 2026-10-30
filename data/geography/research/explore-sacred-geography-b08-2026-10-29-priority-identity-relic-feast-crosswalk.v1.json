@@ -1,0 +1,428 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B08_V1",
+  "research_date": "2026-10-29",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "c6357b4bbabf15dbf5611e9abb8344a75a127a83",
+    "main_place_count": 516,
+    "previous_b07_place_count": 512,
+    "delta_since_b07": 4,
+    "prior_philippines_checkpoint": "347 Places / 20 verified research / 4 provisional / 1 held / 1 Quiapo enrichment: historical, not additive",
+    "prior_latest_batch": "B07",
+    "r70_candidate_count": 750,
+    "source_queue": "sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "concurrent_registry_advance": "Main advanced from 512 to 516 during this research execution. Four unrelated new canonical Places: place:PL:lichen-marian-basilica, place:MX:ocotlan-basilica-tlaxcala, place:US:san-francisco-de-asis-ranchos-taos, place:AR:catamarca-cathedral-valle. These are not B08 promotions."
+  },
+  "counts": {
+    "dossiers": 10,
+    "existing_canonical_crosswalks": 2,
+    "source_verified_new_research_or_enrichment": 3,
+    "physical_identity_reconciliation": 3,
+    "provisional_or_held": 2,
+    "new_canonical_places": 0,
+    "new_coordinates": 0,
+    "new_routes": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "candidate_id": "SG-INV-0604",
+      "name": "Saint Anne's National Shrine, Kattimahana",
+      "country": "LK",
+      "status": "SOURCE_VERIFIED_IDENTITY_JURISDICTION_GAZETTE;ECCLESIASTICAL_DECREE_HELD",
+      "canonical_place_id": null,
+      "summary_en": "Kattimahana is a distinct Catholic St Anne pilgrimage shrine in Dummalasuriya, not Talawila. Sri Lanka's official Gazette of 16 August 2024 explicitly calls it the 'Kurunegala (North-Western) Catholic Diocese's 129th Annual Feast of Kattimahana St. Anna National Shrine', with festival on 24–25 August 2024. A parliamentary 2018 Department of Christian Religious Affairs report also lists Kattimahana under Kurunegala and distinguishes Talawila under Chilaw. This materially resolves the prior jurisdiction ambiguity in favour of Kurunegala for these official records, notwithstanding a conflicting secondary GCatholic listing. The original ecclesiastical national-shrine decree is not in hand.",
+      "summary_fr": "Kattimahana est un sanctuaire catholique de sainte Anne à Dummalasuriya, distinct de Talawila. La Gazette officielle du Sri Lanka du 16 août 2024 le désigne expressément comme sanctuaire national relevant du diocèse catholique de Kurunegala et annonce la fête des 24 et 25 août 2024. Un rapport parlementaire de 2018 classe aussi Kattimahana sous Kurunegala, mais Talawila sous Chilaw. Ces pièces officielles éclaircissent la contradiction de juridiction, malgré un annuaire secondaire divergent. Le décret ecclésiastique original érigeant le sanctuaire national reste introuvable.",
+      "evidence": [
+        {
+          "url": "https://documents.gov.lk/view/gz/2024/8/2024-08-16%28I-I%29E.pdf",
+          "issuer": "Government Gazette of Sri Lanka",
+          "tier": "PRIMARY",
+          "support": "Official 2024 pilgrimage notice explicitly naming Kurunegala Catholic Diocese and national shrine"
+        },
+        {
+          "url": "https://www.parliament.lk/uploads/documents/paperspresented/performance-report-department-of-christian-religious-affairs-2018.pdf",
+          "issuer": "Sri Lankan Parliament / Department of Christian Religious Affairs",
+          "tier": "PRIMARY",
+          "support": "2018 funding table: Kattimahana under Kurunegala, Talawila under Chilaw"
+        },
+        {
+          "url": "https://gcatholic.org/churches/asia/6505",
+          "issuer": "GCatholic",
+          "tier": "SECONDARY_CONFLICT",
+          "support": "Conflicting Chilaw jurisdiction; not authoritative"
+        }
+      ],
+      "feast": "Documented 2024 August feast 24–25 August; do not extrapolate exact dates to 2026",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Government Gazette confirms organized Catholic pilgrimage festival and application of Pilgrimage Ordinance in August 2024; current hours not checked",
+      "holds": [
+        "Original episcopal/national-shrine decree not recovered",
+        "2026 feast and visitor schedule not verified",
+        "No coordinates or public walking route added"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0609",
+      "name": "Our Lady of Fatima, Karachi — parish versus cathedral altar",
+      "country": "PK",
+      "status": "EXISTING_CANONICAL_PARISH;SEPARATE_HISTORICAL_ALTAR_RECONCILED;SHRINE_TITLE_HELD",
+      "canonical_place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "summary_en": "The live registry already has Our Lady of Fatima Catholic Church in Karachi as a parish. The Sanctuary of Fatima's worldwide archive separately catalogues an 'Altar de Nª Sª de Fátima' at St Patrick's Cathedral, Shahrah-e-Iraq, Karachi. That is an altar within a different church, not evidence that the existing Fatima parish has been decreed a shrine, and not a warrant for a new independent sanctuary pin. The archive entry does not establish the altar's present visitor condition.",
+      "summary_fr": "Le registre canonique comprend déjà l'église paroissiale Notre-Dame de Fátima de Karachi. L'archive mondiale du sanctuaire de Fátima répertorie séparément un « Altar de Nª Sª de Fátima » à la cathédrale Saint-Patrick, Shahrah-e-Iraq. Cet autel se trouve dans une autre église ; il ne prouve ni le statut de sanctuaire de la paroisse existante ni la nécessité d'un nouveau point cartographique. L'état actuel de l'autel et les visites restent à confirmer.",
+      "evidence": [
+        {
+          "url": "https://www.fatima.pt/en/locations/altar-n-s-fatima-karachi",
+          "issuer": "Sanctuary of Fatima, Portugal",
+          "tier": "PRIMARY",
+          "support": "Historic worldwide Fatima archive entry explicitly says ALTAR at St Patrick's Cathedral"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/geography/seed-registry.v1.json",
+          "issuer": "Ad Orientem canonical registry",
+          "tier": "CANONICAL_REGISTRY",
+          "support": "Existing parish ID verified by direct repository read"
+        }
+      ],
+      "feast": "Our Lady of Fatima devotion; no independent shrine feast verified",
+      "relics": "None verified",
+      "visitor": "No contemporary altar visitor programme independently confirmed",
+      "holds": [
+        "No formal shrine decree for the Karachi Fatima parish",
+        "Determine whether cathedral altar remains present",
+        "Do not treat cathedral altar as separate stand-alone Place"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "name": "Claimed Our Lady of Fatima Shrine, Dili",
+      "country": "TL",
+      "status": "HELD_EXACT_DILI_SHRINE_NOT_ESTABLISHED;THREE_DISTINCT_FATIMA_FEATURES_IDENTIFIED",
+      "canonical_place_id": null,
+      "summary_en": "The candidate title 'Shrine of Our Lady of Fatima, Dili' is not established by a current diocesan shrine decree. The Sanctuary of Fatima's worldwide catalogue separately lists a church under ambiguous 'Suai-Dili', a Fatima grotto at Balide mission, and a pilgrim-statue grotto in Manatuto, whose devotional history traces a Fatima niche to 1936. These are distinct locations; the catalogue's diocesan label Dili is not proof that the Suai church is physically in Dili. No Dili shrine, opening schedule or coordinates are certified.",
+      "summary_fr": "Le titre « Sanctuaire Notre-Dame de Fátima, Díli » n'est pas étayé par un décret diocésain actuel. Le répertoire mondial du sanctuaire de Fátima distingue une église indiquée « Suai-Dili », une grotte mariale de la mission de Balide et une grotte de la Vierge pèlerine à Manatuto, où la dévotion est attestée dès les années 1930. Ce sont des lieux différents ; la mention du diocèse de Díli ne situe pas l'église de Suai dans la ville de Díli. Aucun sanctuaire autonome, horaire ni point cartographique n'est certifié.",
+      "evidence": [
+        {
+          "url": "https://www.fatima.pt/pt/locations/igreja-n-s-fatima-suai-dili",
+          "issuer": "Sanctuary of Fatima, Portugal",
+          "tier": "PRIMARY",
+          "support": "Church classified under Suai-Dili; ambiguity between diocese and locality"
+        },
+        {
+          "url": "https://www.fatima.pt/en/locations/gruta-n-s-fatima-na-missao-balide",
+          "issuer": "Sanctuary of Fatima, Portugal",
+          "tier": "PRIMARY",
+          "support": "Distinct grotto at Balide mission"
+        },
+        {
+          "url": "https://www.fatima.pt/en/locations/gruta-virgem-peregrina-n-s-fatima",
+          "issuer": "Sanctuary of Fatima, Portugal",
+          "tier": "PRIMARY",
+          "support": "Distinct Manatuto grotto; historic 1933–1936 devotion"
+        }
+      ],
+      "feast": "Fatima Marian devotion; no candidate-specific annual feast established",
+      "relics": "No relic claim",
+      "visitor": "Historic devotional features documented, present access not confirmed",
+      "holds": [
+        "Dili diocesan primary shrine designation absent",
+        "Suai, Balide and Manatuto must not be collapsed into one pin",
+        "No coordinates or routes created"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "name": "Rabban Hormizd Monastery, Alqosh",
+      "country": "IQ",
+      "status": "PHYSICAL_IDENTITY_AND_HERITAGE_VERIFIED;CURRENT_ACCESS_HELD",
+      "canonical_place_id": null,
+      "summary_en": "The Chaldean Patriarchate's Jubilee 2025 pastoral letter identifies Rabban Hormizd as a pilgrimage heritage site. Mesopotamia Heritage's detailed site documentation establishes that the historic mountain monastery is physically separate from the Monastery of Our Lady of the Seeds, completed on the plain in 1858 under Patriarch Joseph VI Audo. The old complex contains the founder's burial tradition and monastic/patriarchal tombs, but individual relic authenticity and contemporary access have not been certified. The documentation's historical site coordinates were not imported into the canonical map.",
+      "summary_fr": "La lettre pastorale du patriarcat chaldéen pour le Jubilé 2025 mentionne Rabban Hormizd parmi les lieux de pèlerinage patrimonial. L'inventaire de Mesopotamia Heritage distingue formellement le monastère ancien accroché à la montagne de Notre-Dame-des-Moissons, achevé dans la plaine en 1858 sous le patriarche Joseph VI Audo. Le site ancien conserve la tradition du tombeau du fondateur et des sépultures monastiques et patriarcales ; l'authenticité de chaque relique et l'accès actuel ne sont pas certifiés. Aucune coordonnée n'a été ajoutée à la carte canonique.",
+      "evidence": [
+        {
+          "url": "https://chaldeanpatriarchate.com/2024/12/10/pastoral-letter-for-the-holy-year-2025-the-jubilee-is-a-spiritual-opportunity-for-new-beginnings-for-the-church-and-for-all-humanity/",
+          "issuer": "Chaldean Catholic Patriarchate",
+          "tier": "PRIMARY",
+          "support": "Pastoral identification as a pilgrimage heritage destination"
+        },
+        {
+          "url": "https://www.mesopotamiaheritage.org/en/monuments/le-monastere-de-rabban-hormizd/",
+          "issuer": "Mesopotamia Heritage",
+          "tier": "HERITAGE_FIELD_DOCUMENTATION",
+          "support": "Physical mountain monastery, historical chapels and tombs"
+        },
+        {
+          "url": "https://www.mesopotamiaheritage.org/en/monuments/le-monastere-notre-dame-des-moissons/",
+          "issuer": "Mesopotamia Heritage",
+          "tier": "HERITAGE_FIELD_DOCUMENTATION",
+          "support": "Separate plain monastery completed 1858; distinct historical and physical identity"
+        }
+      ],
+      "feast": "Rabban Hormizd founder devotion; exact local liturgical date not independently established",
+      "relics": "Historic founder and patriarchal tombs described; no current ecclesiastical inventory verified",
+      "visitor": "No present public access, safety, or opening hours certified",
+      "holds": [
+        "No travel recommendation or route",
+        "Current custodial access remains unknown",
+        "Do not merge mountain and plain monasteries"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0629",
+      "name": "Mirinae Catholic Shrine, Anseong",
+      "country": "KR",
+      "status": "SOURCE_VERIFIED_DIOCESAN_RELIC_EVIDENCE;RESEARCH_ONLY",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Suwon's own shrine page verifies Mirinae as the burial place of Saint Andrew Kim Tae-gon and describes several separate chapels, tombs, public Masses and 09:00–17:00 shrine access. Diocesan news dated 26 October 2022 reports authentication certificates for relics identified as Saint Andrew Kim's vertebra and Saint Perpetua's remains, and the planned transfer of his jawbone to the memorial church. The precise identity of which Saint Perpetua is represented was explicitly unresolved in diocesan reporting. The shrine's diocesan webpage gives street number 416 while the Korean bishops' directory gives 420; both are preserved pending entrance-level reconciliation.",
+      "summary_fr": "La présentation officielle du diocèse de Suwon confirme que Mirinae conserve la tombe de saint André Kim Tae-gon, plusieurs églises et sépultures, des messes publiques et un accès indiqué de 9 h à 17 h. Des nouvelles diocésaines du 26 octobre 2022 relatent des certificats d'authenticité pour une vertèbre attribuée à saint André Kim et des restes attribués à sainte Perpétue, ainsi que le transfert prévu de la mâchoire du martyr. L'identité précise de la sainte Perpétue concernée demeure incertaine. Le diocèse indique le numéro 416, l'annuaire épiscopal le 420 : les deux adresses sont conservées en attente de vérification de l'entrée.",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/9",
+          "issuer": "Diocese of Suwon",
+          "tier": "PRIMARY",
+          "support": "Shrine identity, saint's tomb, constituent chapels, access and Mass programme"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/87011",
+          "issuer": "Diocese of Suwon",
+          "tier": "PRIMARY",
+          "support": "2022 relic certificates and transfer details"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/87008",
+          "issuer": "Diocese of Suwon",
+          "tier": "PRIMARY",
+          "support": "Relic locations and uncertainty over identity of Saint Perpetua"
+        },
+        {
+          "url": "https://missa.cbck.or.kr/Shrines",
+          "issuer": "Catholic Bishops' Conference of Korea",
+          "tier": "PRIMARY",
+          "support": "2026 shrine directory address 420, differing from diocesan 416"
+        }
+      ],
+      "feast": "Saint Andrew Kim Tae-gon and Korean martyrs; site-specific annual feast not confirmed",
+      "relics": "Diocesan 2022 authentication of Saint Andrew Kim vertebra and Perpetua-labelled relic; current full inventory still needs onsite confirmation",
+      "visitor": "Diocesan shrine page lists daily 09:00–17:00; Sunday and weekday Masses, subject to change",
+      "holds": [
+        "Confirm current location of each relic after 2022 transfers",
+        "Do not identify which Saint Perpetua without stronger evidence",
+        "416 versus 420 address/entrance discrepancy",
+        "Do not duplicate constituent chapels as independent Places"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "name": "Our Lady Mother of Divine Providence National Shrine, Cupey",
+      "country": "PR",
+      "status": "PROVISIONAL_GROUNDS_ACTIVITY_EVIDENCED;MAIN_BUILDING_COMPLETION_HELD",
+      "canonical_place_id": null,
+      "summary_en": "The Cupey Alto national shrine project is distinct from the historic Marian image in San Juan Cathedral. A first-hand visitor description reports accessible outdoor Stations of the Cross and park grounds, while a public 6 October 2026 repost of the San Juan Archdiocese's liturgical announcements advertises a Rosary gathering and Mass at the Cupey sanctuary on 10 October 2026. This materially strengthens evidence of use of the grounds, but the primary archdiocesan announcement and completed status of the proposed main sanctuary building were not independently obtained. Do not equate functioning outdoor grounds with a finished basilica.",
+      "summary_fr": "Le projet de sanctuaire national de Cupey Alto est distinct de l'image mariale conservée à la cathédrale de San Juan. Un compte rendu de visite décrit des stations du chemin de croix et un parc accessibles ; une republication datée du 6 octobre 2026 d'annonces liturgiques de l'archidiocèse signale un rassemblement du Rosaire et une messe le 10 octobre au sanctuaire. Cela renforce la preuve d'usage des terrains, sans confirmer directement l'annonce archidiocésaine originale ni l'achèvement de l'édifice principal. L'accès au parc ne prouve pas l'achèvement d'une basilique.",
+      "evidence": [
+        {
+          "url": "https://www.puertoricodaytrips.com/santuario-de-la-virgen/",
+          "issuer": "Puerto Rico Day Trips",
+          "tier": "VISITOR_REPORT",
+          "support": "First-hand description of outdoor Stations and accessible grounds"
+        },
+        {
+          "url": "https://www.findglocal.com/PR/San-Juan/1302397079925007/Celebraciones-Lit%C3%BArgicas-Arquidi%C3%B3cesis-de-San-Juan-de-PR",
+          "issuer": "Mirror of San Juan Archdiocese liturgical announcements",
+          "tier": "SECONDARY_MIRROR",
+          "support": "6 October 2026 post advertising 10 October Rosary festival and Mass"
+        },
+        {
+          "url": "https://gcatholic.org/churches/centralamerica/4934",
+          "issuer": "GCatholic",
+          "tier": "SECONDARY_DIRECTORY",
+          "support": "Cupey site identity, distinct from cathedral"
+        }
+      ],
+      "feast": "Our Lady Mother of Divine Providence; Rosary gathering 10 October 2026 advertised, not proof of annual feast",
+      "relics": "No relics established; cathedral Marian image is elsewhere",
+      "visitor": "Outdoor grounds reported accessible; current schedule and main church completion not independently certified",
+      "holds": [
+        "Obtain original 2026 archdiocesan event notice",
+        "Verify whether main sanctuary building was finished/consecrated",
+        "Current official shrine site inaccessible",
+        "Do not confuse cathedral image with Cupey"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "name": "Claimed Our Lady of Lourdes Shrine, Tianjin",
+      "country": "CN",
+      "status": "HELD_NO_AUTHENTICATED_PRIMARY_SITE_IDENTITY",
+      "canonical_place_id": null,
+      "summary_en": "Targeted English- and Chinese-language searches did not establish a diocesan or custodial record for a distinct Our Lady of Lourdes shrine in Tianjin. The independently listed Tianjin Wanghailou church is dedicated to Our Lady of Victory, not Lourdes; a known Lourdes church at Tangmuqiao belongs to Shanghai, not Tianjin. Neither is evidence for the candidate. No pin, identity substitution, visitor hours or shrine status can be approved.",
+      "summary_fr": "Des recherches ciblées en anglais et en chinois n'ont pas permis d'identifier un sanctuaire Notre-Dame de Lourdes à Tianjin dans une source diocésaine ou gestionnaire. L'église Wanghailou de Tianjin est dédiée à Notre-Dame de la Victoire, et l'église Notre-Dame de Lourdes de Tangmuqiao se trouve à Shanghai. Aucune ne confirme le lieu recherché. Ni point cartographique, ni substitution d'identité, ni horaires, ni titre de sanctuaire ne sont proposés.",
+      "evidence": [
+        {
+          "url": "https://gcatholic.org/churches/asia/1890",
+          "issuer": "GCatholic",
+          "tier": "SECONDARY_NEGATIVE_COMPARATOR",
+          "support": "Tianjin Wanghailou is Our Lady of Victory, not Lourdes"
+        },
+        {
+          "url": "https://au.trip.com/travel-guide/attraction/shanghai/our-lady-of-lourdes-church-tangmuqiao-catholic-diocese-of-shanghai-143326083/",
+          "issuer": "Trip.com citing Shanghai attraction",
+          "tier": "SECONDARY_NEGATIVE_COMPARATOR",
+          "support": "Tangmuqiao Lourdes church is in Shanghai, not Tianjin"
+        }
+      ],
+      "feast": "None established",
+      "relics": "None established",
+      "visitor": "No verified shrine visitor evidence",
+      "holds": [
+        "Locate Tianjin diocesan/custodial Chinese primary record or leave candidate held",
+        "Do not substitute Wanghailou or Shanghai's Lourdes church"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0674",
+      "name": "Tắc Sậy Pilgrimage Centre — Blessed Francis Xavier Trương Bửu Diệp",
+      "country": "VN",
+      "status": "SOURCE_VERIFIED_LITURGICAL_MEMORIAL_ENRICHMENT",
+      "canonical_place_id": null,
+      "summary_en": "The Dicastery for the Causes of Saints records Blessed Francis Xavier Trương Bửu Diệp's beatification on 2 July 2026 in Cà Mau and explicitly gives his liturgical memorial as 12 March. Vatican News independently confirms that the ceremony took place at Tắc Sậy pilgrimage centre and that his burial is associated with the shrine. The memorial date is not the beatification anniversary and must not be represented as a universal 1962-calendar feast. The present tomb/relic custody and chapel geometry remain held.",
+      "summary_fr": "Le Dicastère pour les Causes des Saints atteste la béatification du bienheureux François-Xavier Trương Bửu Diệp le 2 juillet 2026 à Cà Mau et indique explicitement sa mémoire liturgique au 12 mars. Vatican News confirme la cérémonie au centre de pèlerinage de Tắc Sậy et l'association du tombeau au sanctuaire. Le 12 mars ne doit être confondu ni avec l'anniversaire de la béatification ni avec une fête universelle du calendrier de 1962. La localisation actuelle du tombeau et l'inventaire des reliques restent à contrôler.",
+      "evidence": [
+        {
+          "url": "https://www.causesanti.va/it/santi-e-beati/francesco-saverio-tru-o-ng-buu-diep.html",
+          "issuer": "Dicastery for the Causes of Saints",
+          "tier": "PRIMARY",
+          "support": "Official beatification date and liturgical memorial 12 March"
+        },
+        {
+          "url": "https://www.vaticannews.va/en/church/news/2026-07/cardinal-tagle-vietnam-blessed-father-francis-xavier-diep-martyr.html",
+          "issuer": "Vatican News",
+          "tier": "PRIMARY",
+          "support": "Beatification at Tắc Sậy and historic burial association"
+        }
+      ],
+      "feast": "12 March liturgical memorial recorded by Dicastery; beatification 2 July 2026",
+      "relics": "Burial association established; current custody and physical chapel unverified",
+      "visitor": "Major public beatification ceremony 2 July 2026 documented; routine hours not certified",
+      "holds": [
+        "Check exact current tomb/relic placement",
+        "No automatic addition to 1962 universal sanctoral",
+        "Separate event grounds from permanent church"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0680",
+      "name": "Church of Our Lady of Lourdes, Singapore",
+      "country": "SG",
+      "status": "EXISTING_CANONICAL_IDENTITY_RECONCILED;PARISH_ENRICHMENT_ONLY",
+      "canonical_place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "summary_en": "The unmatched R70 candidate is already the canonical Catholic parish at 50 Ophir Road, Singapore. The parish's own current website provides worship, Tamil and English Masses, Rosary, Divine Mercy, confession, Eucharistic adoration and visitor conduct. This is a functioning parish dedicated to Lourdes, not independently proven to hold a separate national shrine decree. Reuse the existing Place ID; do not add a pin.",
+      "summary_fr": "La fiche R70 non rapprochée correspond déjà à la paroisse catholique canonique du 50 Ophir Road à Singapour. Son site officiel publie les messes en anglais et tamoul, le Rosaire, la Divine Miséricorde, les confessions, l'adoration et les règles de visite. Il s'agit d'une paroisse dédiée à Lourdes ; aucun décret de sanctuaire national distinct n'a été établi. Réutiliser l'identifiant existant sans nouveau point.",
+      "evidence": [
+        {
+          "url": "https://ourladyoflourdes.sg/",
+          "issuer": "Church of Our Lady of Lourdes, Singapore",
+          "tier": "PRIMARY",
+          "support": "Custodial website, address, Mass and devotions"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/geography/seed-registry.v1.json",
+          "issuer": "Ad Orientem canonical registry",
+          "tier": "CANONICAL_REGISTRY",
+          "support": "Existing canonical identity confirmed"
+        }
+      ],
+      "feast": "Our Lady of Lourdes dedication; no independent local solemnity date certified",
+      "relics": "None verified",
+      "visitor": "Official parish page provides current liturgical programme and visiting guidelines; recheck before travel",
+      "holds": [
+        "No duplicate Place",
+        "Do not classify parish as a formally decreed national shrine"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0681",
+      "name": "Church of the Nativity of the Blessed Virgin Mary, Hougang",
+      "country": "SG",
+      "status": "EXISTING_CANONICAL_IDENTITY_RECONCILED;HERITAGE_ENRICHMENT_ONLY",
+      "canonical_place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "summary_en": "The unmatched R70 candidate is already the canonical Hougang Catholic church. Singapore's National Heritage Board documents the historic building, two side chapels, five priestly tombs in the nave and the Marian statue gifted by Sultan Ibrahim of Johor. A Singapore Catholic parish's February 2026 bulletin independently lists a March 2026 penitential service at this church, supporting active liturgical use. These tombs must not be labelled relics of canonized saints. Preserve the existing Place ID.",
+      "summary_fr": "La fiche R70 correspond déjà à l'église catholique canonique de Hougang. Le National Heritage Board de Singapour décrit l'édifice historique, deux chapelles latérales, les tombes de cinq prêtres dans la nef et la statue mariale offerte par le sultan Ibrahim de Johor. Un bulletin paroissial catholique de février 2026 annonce un office pénitentiel dans cette église en mars 2026, attestant son usage liturgique. Les sépultures des prêtres ne sont pas des reliques de saints canonisés. Conserver l'identifiant existant.",
+      "evidence": [
+        {
+          "url": "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-the-nativity-of-the-blessed-virgin-mary",
+          "issuer": "Singapore National Heritage Board",
+          "tier": "GOVERNMENT_HERITAGE_PRIMARY",
+          "support": "Official protected-monument history, chapels, priest tombs, Marian statue"
+        },
+        {
+          "url": "https://stanne.catholic.sg/wp-content/uploads/2026/02/28-February-1-March-2026.pdf",
+          "issuer": "St Anne's Catholic Church, Singapore",
+          "tier": "CATHOLIC_PARISH_PRIMARY",
+          "support": "2026 district penitential service at Nativity church"
+        }
+      ],
+      "feast": "Nativity of Blessed Virgin Mary 8 September; exact parish observance not checked",
+      "relics": "Five priestly tombs documented, not authenticated saints' relics",
+      "visitor": "2026 penitential service documented; current routine visitor hours not independently certified",
+      "holds": [
+        "No duplicate Place",
+        "No independent shrine title",
+        "Do not convert historical priest tombs into saint-relic claims"
+      ]
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Find original San Juan Archdiocese 2026 Cupey liturgy announcement and certify whether the principal shrine building is complete"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "task": "Locate original Chinese Tianjin diocesan source; otherwise retain no-identity hold"
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "task": "Identify whether Dili has an independently decreed Fatima shrine; keep Suai, Balide and Manatuto separate"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Seek original national shrine decree and current 2026 Kattimahana feast schedule; retain official Kurunegala evidence"
+    },
+    {
+      "candidate_id": "SG-INV-0629",
+      "task": "Reconcile Mirinae 416/420 address and current placement of certified relics"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Check Chaldean custodial access notices for Rabban Hormizd; no travel route"
+    },
+    {
+      "candidate_id": "SG-INV-0609",
+      "task": "Verify whether Karachi's cathedral Fatima altar survives and whether parish has any shrine decree"
+    },
+    {
+      "candidate_id": "SG-INV-0674",
+      "task": "Verify current Tắc Sậy tomb and relic custody without conflating beatification grounds"
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "task": "Nishizaka Saint Philip church relic custody and feature reconciliation"
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "task": "Trà Kiệu main church and Bửu Châu physical feature separation"
+    }
+  ],
+  "guards": [
+    "No canonical ID creation or mutation",
+    "No new coordinates or walking routes",
+    "No publication, merge, deployment, or fees",
+    "No inferred shrine decree from parish dedication",
+    "No automatic certification from research findings",
+    "Preserve source evidence and earlier editorial decisions"
+  ]
+}

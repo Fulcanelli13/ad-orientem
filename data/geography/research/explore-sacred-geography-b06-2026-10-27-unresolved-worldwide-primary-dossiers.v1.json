@@ -1,0 +1,529 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B06_V1",
+  "research_date": "2026-10-27",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "main_place_count": 512,
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_duplicate_ids": 0,
+    "prior_b05_main_place_count": 498,
+    "delta_since_b05_baseline": 14,
+    "prior_latest_research_batch": "B05",
+    "philippines_checkpoint": "347 Places, 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment: historical checkpoint only, not added to current totals",
+    "worldwide_candidate_queue_historical": 750,
+    "note": "Canonical Place count is not a count of published new research; B06 is research-only. 11 high-priority inherited leads investigated without reopening B03-B05 dossiers."
+  },
+  "counts": {
+    "distinct_new_research_dossiers": 11,
+    "source_verified_research_dossiers": 9,
+    "provisional_research_dossiers": 2,
+    "canonical_existing_identity_mappings": 11,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "candidate_id": "SG-INV-0720",
+      "name": "Sanctuary of Our Lady of the Conception of Muxima (Mama Muxima)",
+      "country": "AO",
+      "status": "SOURCE_VERIFIED_ACTIVE_SANCTUARY_NEW_CONSTRUCTION_HELD",
+      "summary_en": "The historic Catholic sanctuary of Our Lady of the Conception at Muxima is an active Marian pilgrimage destination in the Diocese of Viana, Angola. Pope Leo XIV prayed inside the existing sanctuary and led the Rosary on its esplanade on 19 April 2026. The Holy See explicitly described a separate new sanctuary project as under construction. A March 2026 episcopal-conference article had called a Muxima basilica recently completed; these statements cannot be reconciled into a certified single building or completion date without architectural and custodial evidence. The Marian image and Rosary are devotional evidence, not relic claims.",
+      "summary_fr": "Le sanctuaire catholique historique de Notre-Dame-de-la-Conception de Muxima est un lieu de pèlerinage marial actif dans le diocèse de Viana, en Angola. Le 19 avril 2026, le pape Léon XIV y a prié dans le sanctuaire existant avant de réciter le Rosaire sur l'esplanade. Le Saint-Siège décrit expressément un projet de nouveau sanctuaire encore en construction. Un article de la conférence épiscopale de mars 2026 évoquait au contraire une basilique récemment achevée : il serait prématuré d'en déduire une identité physique unique ou une date certaine d'achèvement. L'image mariale et le Rosaire relèvent de la dévotion, non de reliques corporelles.",
+      "evidence": [
+        {
+          "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/04/19/260419c.html",
+          "issuer": "Holy See Press Office",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "support": "Papal visit to existing sanctuary, Marian image, adoration and outdoor Rosary, 19 April 2026"
+        },
+        {
+          "url": "https://www.vatican.va/content/leo-xiv/en/speeches/2026/april/documents/20260419-angola-rosario-muxima.html",
+          "issuer": "Holy See",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "support": "Explicitly describes new shrine as under construction, 19 April 2026"
+        },
+        {
+          "url": "https://www.ceast.ao/2026/03/02/santuario-da-muxima-ascende-a-centro-de-devocao-da-africa-subsaariana/",
+          "issuer": "Angolan Episcopal Conference CEAST",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "support": "March 2026 description of recently completed basilica; needs physical reconciliation"
+        }
+      ],
+      "feast": "Marian title Our Lady of the Conception; annual feast timetable not independently established",
+      "devotions": "Rosary, Marian veneration, Eucharistic adoration documented during papal visit",
+      "relics": "No bodily relics verified",
+      "visitor": "Historic sanctuary received the Pope in April 2026; ordinary opening hours not verified",
+      "holds": [
+        "Historic church, basilica/new sanctuary and esplanade need separate physical identification",
+        "Conflicting construction/completion claims March-April 2026",
+        "No current general visitor timetable certified"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0712",
+      "name": "National Marian Shrine of Our Lady of Africa, Subukia",
+      "country": "KE",
+      "status": "SOURCE_VERIFIED_NATIONAL_CATHOLIC_SHRINE",
+      "summary_en": "The National Marian Shrine at Subukia, in the Catholic Diocese of Nakuru, hosts Kenya's annual national day of prayer and pilgrimage. Vatican News documented bishops, clergy and thousands of pilgrims there in October 2025. In May 2026 the Kenya Conference of Catholic Bishops designated Subukia as the country's pilgrimage site for the special Jubilee of Saint Francis of Assisi. This establishes contemporary Catholic use and national institutional standing; exact building and grounds geometry, permanent opening hours and bodily relics remain unverified.",
+      "summary_fr": "Le sanctuaire marial national de Subukia, dans le diocèse catholique de Nakuru, accueille la journée nationale de prière et de pèlerinage du Kenya. Vatican News y a décrit la présence des évêques, du clergé et de milliers de pèlerins en octobre 2025. En mai 2026, la conférence épiscopale kényane l'a désigné comme lieu national de pèlerinage pour le jubilé spécial de saint François d'Assise. L'usage catholique actuel et le statut institutionnel sont donc attestés ; les limites physiques du site, les horaires permanents et d'éventuelles reliques restent à vérifier.",
+      "evidence": [
+        {
+          "url": "https://www.vaticannews.va/en/church/news/2025-10/dedication-of-kenya-to-mary-mother-of-god-as-bishops-lead-pilgr.html",
+          "issuer": "Vatican News",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "support": "October 2025 national prayer day and episcopal Marian dedication"
+        },
+        {
+          "url": "https://www.aciafrica.org/news/21651/visit-and-benefit-kenyas-catholic-bishops-designate-subukia-shrine-pilgrimage-site-for-jubilee-of-st-francis",
+          "issuer": "ACI Africa reporting Kenya bishops",
+          "tier": "CATHOLIC_NEWS_EPISCOPAL_REPORT",
+          "support": "6 May 2026 bishops' pilgrimage designation"
+        }
+      ],
+      "feast": "National Prayer Day October 2025 documented; no universal feast inferred",
+      "devotions": "Marian prayer, Eucharist, national pilgrimages",
+      "relics": "No bodily relics verified",
+      "visitor": "Active national pilgrimage in 2025–2026; daily hours not established",
+      "holds": [
+        "Exact church versus outdoor sanctuary footprint",
+        "Permanent pilgrim opening hours not verified"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0608",
+      "name": "National Marian Shrine, Church of St Mary and St Joseph, Mariamabad",
+      "country": "PK",
+      "status": "SOURCE_VERIFIED_CUSTODIAN_WITH_HISTORICAL_QUALIFICATION",
+      "summary_en": "The Catholic Church of Saint Mary and Saint Joseph in Mariamabad, Sheikhupura District, Punjab, serves as Pakistan's National Marian Shrine. Its custodial website traces the church to 1898, a Lourdes-inspired grotto to 1927 and national-shrine recognition to 1949; these dates are custodian statements pending original decrees. Vatican News interviewed its rector in August 2025 and documented the major pilgrimage for the Nativity of Mary on 8 September. The shrine publishes Mass, Rosary and novena schedules and visitor information. The church and grotto belong to one pilgrimage complex, not automatically separate Places.",
+      "summary_fr": "L'église catholique Sainte-Marie-et-Saint-Joseph de Mariamabad, dans le district de Sheikhupura au Pendjab, constitue le sanctuaire marial national du Pakistan. Son site d'accueil fait remonter l'église à 1898, la grotte inspirée de Lourdes à 1927 et la reconnaissance nationale à 1949 ; ces dates demeurent des affirmations du sanctuaire en l'absence des décrets originaux. Vatican News a interrogé son recteur en août 2025 et décrit le grand pèlerinage de la Nativité de Marie, le 8 septembre. Le sanctuaire publie des horaires de messes, de Rosaire, de neuvaines et de visite. L'église et la grotte forment un même ensemble de pèlerinage.",
+      "evidence": [
+        {
+          "url": "https://www.marianshrinepk.com/",
+          "issuer": "National Marian Shrine Mariamabad",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "Church identity, custodian history, Mass and devotional timetable"
+        },
+        {
+          "url": "https://www.marianshrinepk.com/visit/",
+          "issuer": "National Marian Shrine Mariamabad",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "Visitor address, opening information and pilgrimage reception"
+        },
+        {
+          "url": "https://www.vaticannews.va/fr/eglise/news/2025-08/pakistan-mariamabad-chretiens-musulmans-pelerinage-jubilaire-foi.html",
+          "issuer": "Vatican News",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "support": "Rector, national shrine and September 8 pilgrimage"
+        }
+      ],
+      "feast": "Nativity of the Blessed Virgin Mary, 8 September, annual national pilgrimage",
+      "devotions": "Mass, Rosary, novena, grotto prayer",
+      "relics": "No bodily relics verified",
+      "visitor": "Custodian publishes 04:00–20:00 general access; reconfirm before publishing live hours",
+      "holds": [
+        "1898/1927/1949 custodian dates lack original decree collation",
+        "Church and grotto physical unit not mapped",
+        "Visitor times subject to change"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0473",
+      "name": "La Divina Pastora Roman Catholic Church and pilgrimage shrine, Siparia",
+      "country": "TT",
+      "status": "SOURCE_VERIFIED_ARCHDIOCESAN_CUSTODIAN",
+      "summary_en": "La Divina Pastora Roman Catholic Church, 7 La Pastora Street in Siparia, is an active Marian pilgrimage church of the Archdiocese of Port of Spain. The archdiocesan Catholic News traces its Capuchin mission to the mid-eighteenth century and describes the venerated wooden image of Mary as the Divine Shepherdess. A pilgrimage Mass and procession were documented on Good Shepherd Sunday, 11 May 2025, and the archbishop celebrated the feast in April 2026. Parish pages provide Mass and office information, but their priest names and some hours differ; do not publish one unverified consolidated timetable. The statue is a devotional image, not a relic.",
+      "summary_fr": "L'église catholique La Divina Pastora, au 7 La Pastora Street à Siparia, est un lieu de pèlerinage marial de l'archidiocèse de Port of Spain. Le journal catholique archidiocésain rattache la mission des capucins au milieu du XVIIIe siècle et décrit la statue de bois vénérée de la Vierge, la Divine Bergère. Une messe et une procession sont attestées le dimanche du Bon Pasteur, 11 mai 2025, puis une célébration présidée par l'archevêque en avril 2026. Les pages paroissiales donnent des horaires et des noms de prêtres parfois divergents : aucun horaire composite ne doit être publié sans contrôle. La statue est une image de dévotion, non une relique.",
+      "evidence": [
+        {
+          "url": "https://catholictt.org/sacred-site-siparia/",
+          "issuer": "Catholic News, Archdiocese of Port of Spain",
+          "tier": "ARCHDIOCESAN_PRIMARY",
+          "support": "Parish history and pilgrim site, visitor information"
+        },
+        {
+          "url": "https://catholictt.org/2025/05/22/la-divina-pastora-celebrates-feast-day/",
+          "issuer": "Catholic News",
+          "tier": "ARCHDIOCESAN_PRIMARY",
+          "support": "11 May 2025 feast Mass and procession"
+        },
+        {
+          "url": "https://catholictt.org/2026/04/22/archbishop-challenges-faithful-see-christ-in-the-breaking-of-the-bread/",
+          "issuer": "Catholic News",
+          "tier": "ARCHDIOCESAN_PRIMARY",
+          "support": "April 2026 archbishop's Marian feast Mass"
+        },
+        {
+          "url": "https://catholictt.org/siparia/",
+          "issuer": "Archdiocesan parish directory",
+          "tier": "ARCHDIOCESAN_PRIMARY",
+          "support": "Address and alternative schedule"
+        }
+      ],
+      "feast": "Good Shepherd Sunday / fourth Sunday of Easter in local practice; verify annually",
+      "devotions": "Marian image, Mass, Rosary and annual procession",
+      "relics": "Venerated wooden Marian image; no bodily relics verified",
+      "visitor": "Parish directory and sacred-site pages provide hours but disagree; do not certify a schedule",
+      "holds": [
+        "Conflicting priest and Mass schedules on archdiocesan pages",
+        "Do not assume annual procession route as walking-map geometry"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0727",
+      "name": "Sanctuary of Our Lady of Yagma, Ouagadougou",
+      "country": "BF",
+      "inherited_queue_country_code": "HV",
+      "status": "SOURCE_VERIFIED_WITH_INHERITED_COUNTRY_CODE_ERROR",
+      "summary_en": "Our Lady of Yagma is an active Catholic Marian sanctuary on the northern edge of Ouagadougou, Burkina Faso. The national Catholic portal identifies its rector, chaplains and weekday and Sunday Mass schedule. The Burkinabè government's 8 February 2026 report confirms an archbishop-led pilgrimage Eucharist opening commemorations of 125 years of evangelization in Ouagadougou. The inherited queue's country code 'HV' is not Burkina Faso's ISO code; this research corrects the descriptive country to BF without changing its candidate ID. The sanctuary, basilica and grounds require exact physical reconciliation before mapping.",
+      "summary_fr": "Notre-Dame de Yagma est un sanctuaire marial catholique actif au nord de Ouagadougou, au Burkina Faso. Le portail catholique national identifie son recteur, ses chapelains et ses horaires de messes en semaine et le dimanche. Le gouvernement burkinabè relate la célébration eucharistique du pèlerinage du 8 février 2026, présidée par l'archevêque, à l'ouverture des 125 ans de l'évangélisation de Ouagadougou. Le code pays « HV » de la liste héritée n'est pas le code ISO du Burkina Faso : la fiche de recherche indique BF sans modifier l'identifiant du candidat. Sanctuaire, basilique et terrains doivent être distingués physiquement avant cartographie.",
+      "evidence": [
+        {
+          "url": "https://catholique.bf/paroisses/1432-yagma",
+          "issuer": "Catholic Church Burkina Faso portal",
+          "tier": "NATIONAL_CATHOLIC_PRIMARY",
+          "support": "Sanctuary clergy and Mass schedules"
+        },
+        {
+          "url": "https://gouvernement.gov.bf/actualites/burkina-yagma-2026-les-fideles-catholiques-celebrent-les-125-ans-devangelisation-de-ouagadougou/",
+          "issuer": "Government of Burkina Faso",
+          "tier": "OFFICIAL_CIVIL",
+          "support": "8 February 2026 pilgrimage, archbishop's Mass"
+        }
+      ],
+      "feast": "Annual pilgrimage evidenced 8 February 2026; no universal Marian feast inferred",
+      "devotions": "Mass, Marian pilgrimage, Rosary",
+      "relics": "No bodily relics verified",
+      "visitor": "Catholic portal lists Mass times; verify current schedules before live publication",
+      "holds": [
+        "Inherited HV country code is erroneous; no ID changes",
+        "Sanctuary church versus basilica/grounds physical mapping",
+        "Minor-basilica decree not checked"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0689",
+      "name": "National Shrine of Mary Queen of Peace, Ozernoye",
+      "country": "KZ",
+      "status": "SOURCE_VERIFIED_CATHOLIC_NATIONAL_SHRINE",
+      "summary_en": "The National Shrine of Mary Queen of Peace in Ozernoye, North Kazakhstan, is a Catholic pilgrimage centre associated with the descendants of Polish deportees. Kazakhstan's Catholic Church documented the 26th Catholic Youth Festival at the shrine on 13–17 August 2025. The national tourism authority describes the village church, Marian statue and memorial features, and separately locates a memorial cross about twelve kilometres away. The story of a fish-filled lake appearing in 1941 belongs to local devotional history and should not be asserted as a scientifically verified miracle. Do not merge the distant cross with the church.",
+      "summary_fr": "Le sanctuaire national Marie-Reine-de-la-Paix d'Ozernoye, au nord du Kazakhstan, est un lieu de pèlerinage catholique lié à l'histoire des descendants de Polonais déportés. L'Église catholique du Kazakhstan a relaté la 26e rencontre des jeunes catholiques, du 13 au 17 août 2025, au sanctuaire. L'organisme national de tourisme distingue l'église, la statue mariale et les monuments du village d'une croix commémorative située à environ douze kilomètres. Le récit du lac poissonneux apparu en 1941 appartient à la mémoire dévotionnelle locale et ne doit pas être présenté comme miracle scientifiquement établi. La croix éloignée n'est pas la même construction.",
+      "evidence": [
+        {
+          "url": "https://catholic-kazakhstan.org/26-i-prazdnik-katolicheskoi-molodezhi-v-ozernom/",
+          "issuer": "Catholic Church in Kazakhstan",
+          "tier": "NATIONAL_CATHOLIC_PRIMARY",
+          "support": "August 2025 national shrine youth pilgrimage"
+        },
+        {
+          "url": "https://kazakhstan.travel/en/attractions/607",
+          "issuer": "Kazakhstan national tourism authority",
+          "tier": "OFFICIAL_CIVIL",
+          "support": "Village, 2011 national title, church and separate memorial cross"
+        }
+      ],
+      "feast": "August youth pilgrimage 2025 documented; formal patronal feast not independently verified",
+      "devotions": "Marian prayer, youth pilgrimage, prayers for peace",
+      "relics": "No bodily relics verified",
+      "visitor": "Pilgrimage events confirmed; current daily opening hours not verified",
+      "holds": [
+        "Exact church, statue and altar map identities",
+        "Remote memorial cross must not be merged into church pin",
+        "1941 event is received devotional narrative, not miracle certification"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0722",
+      "name": "Ngome Marian Shrine, Our Lady Tabernacle of the Most High",
+      "country": "ZA",
+      "status": "SOURCE_VERIFIED_CUSTODIAN_APPARITION_CAUTION",
+      "summary_en": "Ngome Marian Shrine is an active Catholic Marian pilgrimage place in the Diocese of Eshowe, KwaZulu-Natal. The shrine's own website records diocesan participation in a May 2024 Marian celebration and pilgrim reception. An older custodial account states that Bishop Mansuet Biyase blessed an outdoor altar and publicly supported the site as a place of prayer in October 1992. These facts support Catholic devotional use, not formal supernatural authentication of reported visions to Sister Reinolda May OSB. A current shrine webpage incorrectly calls the sister 'St Reinolda'; no canonization was established. The seven springs, church and outdoor altar require physical reconciliation.",
+      "summary_fr": "Le sanctuaire marial de Ngome est un lieu de pèlerinage catholique actif dans le diocèse d'Eshowe, au KwaZulu-Natal. Son site décrit une célébration mariale diocésaine en mai 2024 et l'accueil des pèlerins. Une ancienne chronique du sanctuaire rapporte qu'en octobre 1992 l'évêque Mansuet Biyase bénit l'autel extérieur et encouragea le lieu comme espace de prière. Ces faits attestent une dévotion catholique, non la reconnaissance surnaturelle des visions attribuées à sœur Reinolda May OSB. Une page du sanctuaire l'appelle à tort « St Reinolda » ; aucune canonisation n'a été établie. Les sources, l'église et l'autel extérieur demandent une vérification physique.",
+      "evidence": [
+        {
+          "url": "https://ngomemarianshrine.co.za/",
+          "issuer": "Ngome Marian Shrine custodians",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "Shrine identity, diocesan 2024 event and pilgrimage"
+        },
+        {
+          "url": "https://ngome.wordpress.com/status/",
+          "issuer": "Ngome shrine historical custodian account",
+          "tier": "CUSTODIAN_HISTORICAL",
+          "support": "1992 bishop's blessing and status of reported visions"
+        }
+      ],
+      "feast": "May 2024 Marian celebration attested; annual fixed feast not certified",
+      "devotions": "Marian pilgrimages, outdoor Mass, prayer at springs",
+      "relics": "No bodily relics verified",
+      "visitor": "Pilgrimage invitations documented; ordinary hours not verified",
+      "holds": [
+        "No decree authenticating reported apparitions established",
+        "Incorrect 'St Reinolda' designation on shrine page; do not repeat",
+        "Church, springs and outdoor altar geometry unverified"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0677",
+      "name": "Our Lady of Lourdes Marian Grotto, Sendangsono",
+      "country": "ID",
+      "status": "SOURCE_VERIFIED_ARCHDIOCESAN_PILGRIMAGE",
+      "summary_en": "Sendangsono is a Catholic Marian grotto and pilgrimage landscape in Banjaroyo, Kalibawang, Kulon Progo, within the Archdiocese of Semarang and associated with Our Lady of Lourdes Parish, Promasan. The archdiocese reports that Jesuit Fr Frans van Lith baptized 171 Javanese people here on 14 December 1904, and records pilgrim gatherings at the grotto in October 2025 and June 2026. Stations of the Cross, Rosary and the spring belong to the devotional complex; the baptismal history does not imply a Marian apparition. A parish article also reports the tomb of Barnabas Sarikromo, which needs independent physical and biographical verification before a relic or grave marker is certified.",
+      "summary_fr": "Sendangsono est une grotte mariale et un ensemble de pèlerinage catholique à Banjaroyo, Kalibawang, Kulon Progo, dans l'archidiocèse de Semarang, lié à la paroisse Notre-Dame-de-Lourdes de Promasan. L'archidiocèse rapporte que le jésuite Frans van Lith y baptisa 171 Javanais le 14 décembre 1904 et atteste des rassemblements de pèlerins en octobre 2025 et juin 2026. Chemin de Croix, Rosaire et source appartiennent à l'ensemble dévotionnel ; cette histoire baptismale n'implique aucune apparition mariale. Un article paroissial évoque aussi la tombe de Barnabas Sarikromo, à confirmer indépendamment avant toute certification de tombe ou de reliques.",
+      "evidence": [
+        {
+          "url": "https://kas.or.id/misdinar-gedangan-melakukan-study-rohani-bethlehem-van-java/",
+          "issuer": "Archdiocese of Semarang",
+          "tier": "ARCHDIOCESAN_PRIMARY",
+          "support": "1904 baptismal history and shrine, tomb report"
+        },
+        {
+          "url": "https://kas.or.id/syukur-budaya-ekologis-novena-laudato-si-periode-ke-9/",
+          "issuer": "Archdiocese of Semarang",
+          "tier": "ARCHDIOCESAN_PRIMARY",
+          "support": "12 October 2025 pilgrimage at Sendangsono"
+        },
+        {
+          "url": "https://kas.or.id/merawat-tempat-ziarah-menenun-jejaring-pelayanan/",
+          "issuer": "Archdiocese of Semarang",
+          "tier": "ARCHDIOCESAN_PRIMARY",
+          "support": "June 2026 pilgrimage-site custodial meeting"
+        },
+        {
+          "url": "https://parokiklaten.kas.or.id/berita/2025/umat-santo-yusuf-jebugan-berziarah-ke-sendangsono-pererat-iman-dan-solidaritas",
+          "issuer": "Klaten Catholic parish",
+          "tier": "PARISH_PRIMARY",
+          "support": "November 2025 Rosary and Stations pilgrimage"
+        }
+      ],
+      "feast": "No exact annual Marian feast date verified",
+      "devotions": "Rosary, Stations of the Cross, grotto and spring pilgrimage",
+      "relics": "Reported Barnabas Sarikromo grave requires independent physical confirmation; no relic designation inferred",
+      "visitor": "2025 pilgrimages verified; no daily hours certified",
+      "holds": [
+        "Grotto, spring, Stations and grave are separate features within one site",
+        "No apparition claim",
+        "Exact entrance and visitor schedule not verified"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0682",
+      "name": "Our Lady of Aitara pilgrimage sanctuary, Soibada",
+      "country": "TL",
+      "status": "PROVISIONAL_NATIONAL_TITLE_PRIMARY_DIOCESAN_CONFIRMATION_PENDING",
+      "summary_en": "Our Lady of Aitara is an active Marian pilgrimage destination at Soibada in Timor-Leste. On 16 October 2026 Timor Post reported that a Salesian parish priest from Baucau was accompanying pilgrims to Aitara, providing unusually recent evidence of living Catholic use. A Catholic directory describes a national shrine in the Diocese of Baucau, but the original diocesan decree, current custodial church record, feast programme and exact building or grotto identity have not been established. Reported Marian apparitions belong to local tradition unless a competent Church judgment is identified.",
+      "summary_fr": "Notre-Dame d'Aitara est un lieu de pèlerinage marial actif à Soibada, au Timor oriental. Le 16 octobre 2026, Timor Post a relaté le départ de pèlerins accompagnés par un prêtre salésien de Baucau, preuve récente d'un usage catholique vivant. Un annuaire catholique la qualifie de sanctuaire national du diocèse de Baucau, mais ni le décret diocésain, ni l'autorité responsable, ni le programme de la fête, ni l'identité précise de l'édifice ou de la grotte n'ont été établis. Les récits d'apparitions relèvent de la tradition locale sans jugement ecclésiastique retrouvé.",
+      "evidence": [
+        {
+          "url": "https://timorpost.com/munisipiu/tp-68470/peregrinu-sira-fiar-ba-iha-nossa-senhora-aitara/",
+          "issuer": "Timor Post, quoting Catholic parish priest",
+          "tier": "LOCAL_REPORTING_WITH_CLERGY",
+          "support": "15–16 October 2026 Catholic pilgrimage to Soibada"
+        },
+        {
+          "url": "https://gcatholic.org/churches/asia/6446",
+          "issuer": "GCatholic directory",
+          "tier": "SECONDARY_CATHOLIC_DIRECTORY",
+          "support": "National-shrine claim and Baucau jurisdiction, not original decree"
+        }
+      ],
+      "feast": "October 2026 pilgrimage confirmed; fixed patronal date not established",
+      "devotions": "Marian pilgrimage and prayer",
+      "relics": "No bodily relics verified",
+      "visitor": "Pilgrims active October 2026; hours and access not certified",
+      "holds": [
+        "National-shrine title not supported by original decree",
+        "Exact sanctuary building and map feature unknown",
+        "Apparition narratives not authenticated"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0717",
+      "name": "Proposed national shrine of Blessed Marie-Clémentine Anuarite, Isiro",
+      "country": "CD",
+      "status": "PROVISIONAL_NEW_SHRINE_UNDER_CONSTRUCTION",
+      "summary_en": "Isiro in the Diocese of Isiro-Niangara is a major Catholic pilgrimage centre honouring Blessed Marie-Clémentine Anuarite Nengapeta, martyred in 1964 and beatified in 1985. On 1 December 2025 the Congolese bishops announced the start of construction of a new national sanctuary. This is evidence of an active cult and a building project, not evidence that a new national-shrine church is completed, open or identical to an existing commemorative site or tomb. The original construction plan, present worship location, actual burial/relic custody and 2026 visitor access remain unverified.",
+      "summary_fr": "Isiro, dans le diocèse d'Isiro-Niangara, est un haut lieu de pèlerinage catholique en l'honneur de la bienheureuse Marie-Clémentine Anuarite Nengapeta, martyrisée en 1964 et béatifiée en 1985. Le 1er décembre 2025, les évêques congolais ont annoncé le lancement de la construction d'un nouveau sanctuaire national. Cela atteste une dévotion et un chantier, non l'achèvement ni l'ouverture de l'édifice, ni son identité avec un lieu de commémoration ou une tombe préexistants. Plans, lieu actuel de culte, garde des reliques et accès des visiteurs en 2026 restent à confirmer.",
+      "evidence": [
+        {
+          "url": "https://www.aciafrica.org/news/18991/dr-congos-catholic-bishops-launch-construction-of-national-shrine-honoring-blessed-anuarite",
+          "issuer": "ACI Africa reporting CENCO",
+          "tier": "CATHOLIC_NEWS_EPISCOPAL_REPORT",
+          "support": "1 December 2025 bishops' construction announcement"
+        },
+        {
+          "url": "https://acp.cd/anglais/haut-uele-building-of-the-anuarite-nengapeta-shrine-to-begin-soon/",
+          "issuer": "Agence Congolaise de Presse",
+          "tier": "OFFICIAL_CIVIL",
+          "support": "December 2025 government/Church ceremony and funding"
+        }
+      ],
+      "feast": "Blessed Anuarite commemorated on 1 December in local Catholic celebrations",
+      "devotions": "Pilgrimage Mass, prayers honouring martyr",
+      "relics": "Relic or tomb location not established; do not infer from project",
+      "visitor": "Commemoration active in Isiro; new sanctuary visitor access unverified",
+      "holds": [
+        "National sanctuary was announced as construction, not certified completed",
+        "Distinguish pre-existing commemorative church/site and future building",
+        "Exact relic custody and physical location unknown"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0745",
+      "name": "Chapel of Our Lady of Compassion and Resting Place of Venerable Suzanne Aubert, Island Bay",
+      "country": "NZ",
+      "status": "SOURCE_VERIFIED_CUSTODIAN_AND_HERITAGE_TITLE_CORRECTION",
+      "summary_en": "The Chapel of Our Lady of Compassion at 2 Rhine Street, Island Bay, Wellington, adjoins the resting place of Venerable Meri Hōhepa Suzanne Aubert (1835–1926), founder of the Sisters of Compassion. The sisters confirm that her remains rest there, and Heritage New Zealand registered the chapel and resting place as a Category 1 Historic Place effective 12 May 2025. Catholic commemorations of her death centenary occurred in October 2026. The inherited queue calls her 'Blessed', but custodial and Catholic sources still call her 'Venerable'; do not present a beatification or liturgical feast as accomplished. The adjacent crypt and chapel belong to one heritage complex, not two duplicate Places.",
+      "summary_fr": "La chapelle Notre-Dame-de-la-Compassion, au 2 Rhine Street à Island Bay (Wellington), jouxte le tombeau de la vénérable Meri Hōhepa Suzanne Aubert (1835–1926), fondatrice des Sœurs de la Compassion. La congrégation confirme que sa dépouille y repose ; Heritage New Zealand a classé la chapelle et le lieu de sépulture en catégorie 1, avec effet au 12 mai 2025. Des commémorations catholiques du centenaire de sa mort ont eu lieu en octobre 2026. La liste héritée l'appelle « bienheureuse », alors que les sources catholiques et les religieuses maintiennent « vénérable » : ne pas annoncer de béatification ni de fête liturgique. La crypte attenante et la chapelle constituent un seul ensemble patrimonial.",
+      "evidence": [
+        {
+          "url": "https://www.compassion.org.nz/history/our-founder/pilgrimage-in-wellington",
+          "issuer": "Sisters of Compassion",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "Actual resting place in chapel complex"
+        },
+        {
+          "url": "https://www.heritage.org.nz/list-details/9873/TheChapelofOurLadyofCompassionandtheRestingPlaceofSuzanneAubert",
+          "issuer": "Heritage New Zealand",
+          "tier": "OFFICIAL_CIVIL",
+          "support": "Official historic listing, chapel, crypt, 2017 reinterment and location"
+        },
+        {
+          "url": "https://www.compassion.org.nz/compassion-news-events/events/national-centennial-mass-4-october-2026-copy",
+          "issuer": "Sisters of Compassion",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "4 October 2026 Mass and current Venerable title"
+        }
+      ],
+      "feast": "Death anniversary 1 October; centennial Mass 4 October 2026; no liturgical feast as Blessed",
+      "devotions": "Prayer at the resting place, commemorative Masses and pilgrim visits",
+      "relics": "Custodians and heritage authority identify her bodily remains in the adjoining resting place; not canonically designated saint's relics",
+      "visitor": "Heritage site and worship active; exact current chapel opening hours not certified",
+      "holds": [
+        "Inherited 'Blessed' title is inaccurate; Venerable remains current",
+        "No duplicate Place for adjacent crypt",
+        "Visitor hours not verified"
+      ]
+    }
+  ],
+  "canonical_duplicate_prevention": [
+    {
+      "candidate_id": "SG-INV-0372",
+      "canonical_place_id": "place:VA:saint-peter-vatican",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "St Peter's Basilica and apostolic tomb; canonical Place already exists"
+    },
+    {
+      "candidate_id": "SG-INV-0726",
+      "canonical_place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Kumasi cathedral already exists"
+    },
+    {
+      "candidate_id": "SG-INV-0449",
+      "canonical_place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Belmopan Guadalupe church already exists; shrine title requires separate verification"
+    },
+    {
+      "candidate_id": "SG-INV-0566",
+      "canonical_place_id": "place:PS:nativity-bethlehem",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Church of the Nativity already exists; inherited country code PS retained in canonical"
+    },
+    {
+      "candidate_id": "SG-INV-0544",
+      "canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Holy Sepulchre already exists; inherited queue uses different country code"
+    },
+    {
+      "candidate_id": "SG-INV-0474",
+      "canonical_place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Laventille Fatima shrine already exists"
+    },
+    {
+      "candidate_id": "SG-INV-0414",
+      "canonical_place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Rigaud sanctuary already exists"
+    },
+    {
+      "candidate_id": "SG-INV-0673",
+      "canonical_place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "La Vang national shrine already exists"
+    },
+    {
+      "candidate_id": "SG-INV-0450",
+      "canonical_place_id": "place:HN:suyapa-basilica",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Suyapa basilica already exists"
+    },
+    {
+      "candidate_id": "SG-INV-0460",
+      "canonical_place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Atalaya basilica already exists"
+    },
+    {
+      "candidate_id": "SG-INV-0633",
+      "canonical_place_id": "place:PH:manaoag-rosary-basilica",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE",
+      "note": "Manaoag basilica already exists"
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Kattimahana original Kurunegala/Chilaw diocesan jurisdiction and shrine decree"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Cupey Puerto Rico official completion and public access status"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Rabban Hormizd current Chaldean custodial access versus Our Lady of Seeds"
+    },
+    {
+      "candidate_id": "SG-INV-0720",
+      "task": "Muxima historic sanctuary versus new basilica/new sanctuary construction conflict"
+    },
+    {
+      "candidate_id": "SG-INV-0717",
+      "task": "Isiro Anuarite project versus existing commemorative church/tomb; relic custody"
+    },
+    {
+      "candidate_id": "SG-INV-0682",
+      "task": "Aitara original Baucau diocesan national shrine status and exact sanctuary identity"
+    },
+    {
+      "candidate_id": "SG-INV-0456",
+      "task": "Matagalpa Guadalupe shrine vs canonical Ermita Guadalupe exact identity"
+    },
+    {
+      "candidate_id": "SG-INV-0609",
+      "task": "Karachi Our Lady of Fatima shrine claim vs existing parish canonical identity"
+    },
+    {
+      "candidate_id": "SG-INV-0727",
+      "task": "Correct HV/BF inherited country-code mismatch in a future approved source cleanup only"
+    },
+    {
+      "candidate_id": "SG-INV-0745",
+      "task": "Correct inherited Blessed/Venerable title in a future approved source cleanup only"
+    }
+  ],
+  "guards": [
+    "Preserve canonical Place IDs and all published records",
+    "No new coordinates or walking routes",
+    "No inferred miracles, apparitions, relics or 1962 Mass schedules",
+    "Existing canonical identity mappings are not evidence of newly published sites",
+    "No merge, deployment, paid services or publication"
+  ]
+}
