@@ -1,4 +1,4 @@
-import { requiemAgnusVariantsForResolvedMass } from "./reader-requiem-conditions.js";
+import { isExplicitRequiemMass, requiemAgnusVariantsForResolvedMass } from "./reader-requiem-conditions.js";
 // Native Schola state for certified sung forms. Low Mass is a structural absence; Solemn shares the recovered sung Schola donor.
 // The opening intonations of Gloria and Credo belong to the celebrant,
 // even though their trailing donor syllables were catalogued SCHOLA_PUBLIC.
@@ -77,7 +77,15 @@ export function buildNativeScholaTracks({sungCorpus,properSlots,prepared,frenchO
     supported:false,reason:"SCHOLA_NOT_CERTIFIED_FOR_"+(form||"UNKNOWN_FORM"),tracks:Object.freeze([])
   });
   if(!sungCorpus?.blocks)throw new TypeError("Verified Sung corpus required for Schola");
-  const tracks=TRACK_SPECS.map(spec=>{
+  // The resolved Requiem, not a civil date or a selected music setting,
+  // suppresses Gloria and Credo. Match the prayer cards and the independent
+  // Schola itinerary; hidden tracks must not remain selectable or cue-driven.
+  const resolvedMass=prepared?.session?.resolvedMass;
+  const requiem=isExplicitRequiemMass(prepared);
+  const tracks=TRACK_SPECS.filter(spec=>
+    !(spec.id==="GLORIA"&&(requiem||resolvedMass?.provenance?.gloria===false)) &&
+    !(spec.id==="CREDO"&&(requiem||resolvedMass?.provenance?.credo===false))
+  ).map(spec=>{
     const segments=spec.kind==="ORDINARY"
       ? ordinarySegments(sungCorpus,spec.macroId,{
           language:prepared?.readerPreferences?.language??"en",frenchOrdinary,
