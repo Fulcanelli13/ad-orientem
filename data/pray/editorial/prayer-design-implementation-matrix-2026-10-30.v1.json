@@ -34,7 +34,20 @@
     "rotation_rules": 11,
     "source_primary_artworks": 22,
     "source_gallery_records": 383,
-    "source_art_note": "Identity-approved is not slot-approved and neither is release-cleared"
+    "source_art_note": "Identity-approved is not slot-approved and neither is release-cleared",
+    "roadmap_source": "PREVIOUSLY_AGREED_WAVES_NOT_SCREEN_ORDER",
+    "current_implementation_priority": "W2_F07_VISUAL_CORRECTIONS",
+    "wave1_merged_foundation_prs": [
+      2008,
+      2010,
+      2020
+    ],
+    "wave2_merged_f07_prs": [
+      2041,
+      2048,
+      2054
+    ],
+    "wave2_rosary_merged_pr": 2057
   },
   "global_contract": [
     "Mass-centred prayer companion; no detached duplicate engines or route regressions",
@@ -43,11 +56,14 @@
     "Text first, discreet source/provenance controls; preserve authentic historical 1962/form variants, language faces and ℣/℟",
     "Full canonical Rosary reader and 5/15 support; 15 traditional mysteries by default where the user's rule applies",
     "Compact progress and touch targets; no numeric-box ribbons, oversized method/source pills or gratuitous helper copy",
-    "Art may be re-used across covers and within prayers; slot/subject/painting fit, rights and visual quality reviewed separately",
-    "No framed reproductions, no unapproved photo publication or invented art bindings; zero-cost storage only",
     "Calendar recommendations must come from canonical calendar source and real saved continuation state",
     "Actual 320×568 and 390×844 screenshots compared against prototypes; green CI alone never constitutes editorial acceptance",
-    "Keep draft PR #2079 (F04/Discovery) and draft PR #2104 (Rosary spacing) unmerged and non-publishing"
+    "Keep draft PR #2079 (F04/Discovery) and draft PR #2104 (Rosary spacing) unmerged and non-publishing",
+    "Preserve user-approved three-wave roadmap and F07→Rosary→Stations→Novenas execution order; the 18-screen screenshot index does not override it.",
+    "Wave 1's already-merged F00–F05 foundation is not a new development phase; its visual defects remain REVISE and can be corrected in existing owners.",
+    "Art may be reused across covers and stages but is explicitly deferred from reader-release dependency; separate art subject matching, copyright, quality and editorial clearance are required before display.",
+    "No framed reproductions or invented image assignments; zero-cost image sourcing and preservation only.",
+    "No repeated user approval requests for the same prototypes/strategy; only explicit original decisions determine publication and editorial closure."
   ],
   "rows": [
     {
@@ -67,11 +83,15 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "DRAFT_IMPLEMENTATION__NEEDS_VISUAL_COMPARE",
+        "assessment": "MERGED_FOUNDATION__REVIEW_SCREEN_REVISE",
         "review_prs": [
           2079
         ],
-        "priority": "P0"
+        "priority": "W1_ALREADY_MERGED__RECORDED_VISUAL_REPAIR",
+        "agreed_roadmap_phase": "W1",
+        "merged_foundation_prs": [
+          2008
+        ]
       },
       "correction_requirements": [
         "Exact p1 Calendar and saved-Continue hierarchy (no dummy progress)",
@@ -558,11 +578,15 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "DRAFT_IMPLEMENTATION__NEEDS_VISUAL_COMPARE",
+        "assessment": "MERGED_FOUNDATION__REVIEW_SCREEN_REVISE",
         "review_prs": [
           2079
         ],
-        "priority": "P0"
+        "priority": "W1_ALREADY_MERGED__RECORDED_VISUAL_REPAIR",
+        "agreed_roadmap_phase": "W1",
+        "merged_foundation_prs": [
+          2008
+        ]
       },
       "correction_requirements": [
         "Full-height hour painting with time/season and moment dots",
@@ -813,11 +837,15 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "DRAFT_IMPLEMENTATION__NEEDS_VISUAL_COMPARE",
+        "assessment": "MERGED_FOUNDATION__REVIEW_SCREEN_REVISE",
         "review_prs": [
           2079
         ],
-        "priority": "P0"
+        "priority": "W1_ALREADY_MERGED__RECORDED_VISUAL_REPAIR",
+        "agreed_roadmap_phase": "W1",
+        "merged_foundation_prs": [
+          2008
+        ]
       },
       "correction_requirements": [
         "5 Angelus or 4 Regina source cards, not invented card counts",
@@ -1070,11 +1098,15 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "OPT_IN_DRAFT__NEEDS_VISUAL_COMPARE",
+        "assessment": "MERGED_SOURCE_OWNED_R2_PILOT__DRAFT_VISUAL_FIX__REVISE",
         "review_prs": [
           2104
         ],
-        "priority": "P1"
+        "priority": "W2_AFTER_F07__ROSARY_R2",
+        "agreed_roadmap_phase": "W2_F06",
+        "merged_foundation_prs": [
+          2057
+        ]
       },
       "correction_requirements": [
         "Remove redundant cross/empty dot rail, reading-options strip and wasted opening space",
@@ -1366,11 +1398,15 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "OPT_IN_DRAFT__NEEDS_VISUAL_COMPARE",
+        "assessment": "MERGED_SOURCE_OWNED_R2_PILOT__DRAFT_VISUAL_FIX__REVISE",
         "review_prs": [
           2104
         ],
-        "priority": "P1"
+        "priority": "W2_AFTER_F07__ROSARY_R2",
+        "agreed_roadmap_phase": "W2_F06",
+        "merged_foundation_prs": [
+          2057
+        ]
       },
       "correction_requirements": [
         "Replace poor accordion with quiet Traditional · 15 mysteries · Simple Change line",
@@ -1655,9 +1691,14 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2041,
+          2054
+        ]
       },
       "correction_requirements": [
         "m1 pictorial home with small crown thumbnail and time chip",
@@ -1738,9 +1779,14 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2041,
+          2054
+        ]
       },
       "correction_requirements": [
         "Exact decade crown position and bead count",
@@ -1821,9 +1867,14 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2048,
+          2054
+        ]
       },
       "correction_requirements": [
         "Replace 30-dot position box with five-point wound cross",
@@ -1955,9 +2006,14 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2048,
+          2054
+        ]
       },
       "correction_requirements": [
         "Same w1 layout throughout guided mode",
@@ -2088,9 +2144,13 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2048
+        ]
       },
       "correction_requirements": [
         "Seven-segment source-owned progress, no dotted step box",
@@ -2242,9 +2302,13 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2048
+        ]
       },
       "correction_requirements": [
         "Remove seven large number boxes",
@@ -2397,9 +2461,13 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2048
+        ]
       },
       "correction_requirements": [
         "15-bead circle is primary, at least 48px tap targets",
@@ -2479,9 +2547,13 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_OPT_IN_SOURCE_OWNED_BASELINE__VISUAL_REVISE",
         "review_prs": [],
-        "priority": "P2"
+        "priority": "W2_NEXT__F07_VISUAL_CORRECTION",
+        "agreed_roadmap_phase": "W2_F07",
+        "merged_foundation_prs": [
+          2048
+        ]
       },
       "correction_requirements": [
         "Returning to bead preserves identical c1 screen",
@@ -2559,9 +2631,13 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_FOUNDATION__REVIEW_SCREEN_REVISE",
         "review_prs": [],
-        "priority": "P3"
+        "priority": "W1_ALREADY_MERGED__RECORDED_VISUAL_REPAIR",
+        "agreed_roadmap_phase": "W1",
+        "merged_foundation_prs": [
+          2020
+        ]
       },
       "correction_requirements": [
         "Small Morning/Evening switch and Choose a prayer sheet",
@@ -2640,9 +2716,13 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_FOUNDATION__REVIEW_SCREEN_REVISE",
         "review_prs": [],
-        "priority": "P3"
+        "priority": "W1_ALREADY_MERGED__RECORDED_VISUAL_REPAIR",
+        "agreed_roadmap_phase": "W1",
+        "merged_foundation_prs": [
+          2020
+        ]
       },
       "correction_requirements": [
         "Same daily-rule grammar with evening twilight progression",
@@ -2720,9 +2800,13 @@
         "original_engine_must_remain": true
       },
       "implementation": {
-        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "assessment": "MERGED_FOUNDATION__REVIEW_SCREEN_REVISE",
         "review_prs": [],
-        "priority": "P3"
+        "priority": "W1_ALREADY_MERGED__RECORDED_VISUAL_REPAIR",
+        "agreed_roadmap_phase": "W1",
+        "merged_foundation_prs": [
+          2010
+        ]
       },
       "correction_requirements": [
         "Compact form cards for 1962 and current, avoid conflation",
@@ -2871,7 +2955,9 @@
       "implementation": {
         "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
         "review_prs": [],
-        "priority": "P3"
+        "priority": "W3_LATER__SOURCE_SPECIFIC_REDESIGN",
+        "agreed_roadmap_phase": "W3",
+        "merged_foundation_prs": []
       },
       "correction_requirements": [
         "Two tall image mode cards, not text blocks",
@@ -3124,7 +3210,9 @@
       "implementation": {
         "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
         "review_prs": [],
-        "priority": "P3"
+        "priority": "W3_LATER__SOURCE_SPECIFIC_REDESIGN",
+        "agreed_roadmap_phase": "W3",
+        "merged_foundation_prs": []
       },
       "correction_requirements": [
         "First design F12 prototype; do not invent approval",
@@ -3227,5 +3315,107 @@
         "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
       }
     }
-  ]
+  ],
+  "strategy_reconciliation": {
+    "reconciled_date": "2026-10-30",
+    "issue": "The first matrix incorrectly invented P0 Discovery -> P1 Rosary -> P2 F07 -> P3 Daily/Litany ordering. This contradicted earlier explicit user decisions. This is an evidence-only view of the original 18 REVISE screens, not a replacement roadmap or another approval request.",
+    "source": "Prior Ad Orientem Prayer strategy conversations 2026-10-29/30, Create Prayer Inventory plan, Claude UI/UX Master v3.0, the R1.1/R2/F03/F04/F05/F07/F09/F10 prototype reviews and already-merged PRs.",
+    "immutable_decisions": [
+      "Approved architecture: source-owned presentation replacement, no second reader engines, no restart of research or corpus acquisition.",
+      "Approved Discovery direction 1C: 9 named doors, calendar/real continuation, search and one-tap original routes; artwork-info ⓘ; homepage shortcut goes directly into Angelus while entry from Prayer shows Begin card.",
+      "Approved overall Wave 1 scope: Discovery / Angelus / Single Prayer / Loreto / Morning & Evening. Implementations already merged; the 2026-10-30 screenshots require visual corrections, not rebuilding this wave.",
+      "Approved subsequent sequence after F05: F07 chaplet visual/release acceptance first, then Claude Rosary R2, Stations, Novenas. Montfort/monthly retains its source-specific workflow.",
+      "Wave 3: Adoration, Benediction and Confession preserve separate function/sequence/privacy requirements.",
+      "Artwork was explicitly deferred by the user to avoid blocking presentation work. Artwork slots/matches stay research-only; do not require art assignment before reader improvements or fabricate artwork approval.",
+      "No repeat 18-screen approval solicitation. Retain original verbatim decisions and implement outstanding corrections against Claude references."
+    ],
+    "roadmap": [
+      {
+        "order": 1,
+        "id": "W1",
+        "name": "Discovery + everyday prayer",
+        "state": "FOUNDATION_MERGED__VISUAL_CORRECTIONS_OPEN",
+        "merged_prs": [
+          2008,
+          2010,
+          2020
+        ],
+        "families": [
+          "F00",
+          "F01 Prayer card",
+          "F02 Antiphon, hymn & psalm",
+          "F03 Litany",
+          "F04 Ritual of the hour",
+          "F05 Daily rule"
+        ],
+        "action": "Fix recorded R1.1/F04/F05/F03 visual discrepancies in existing readers, in parallel with active Wave 2; no full discovery restart or new review exercise."
+      },
+      {
+        "order": 2,
+        "id": "W2_F07",
+        "name": "Chaplet F07 faithful prototype correction",
+        "state": "SOURCE_OWNED_BASELINE_MERGED__8_VISUAL_SCREENS_REVISE",
+        "merged_prs": [
+          2041,
+          2048,
+          2054
+        ],
+        "families": [
+          "F07 Chaplet"
+        ],
+        "action": "NEXT: Divine Mercy, Five Wounds, Precious Blood and Little Crown layouts from Claude F07, original decisions and exact bead sequences; 8 REVISE images."
+      },
+      {
+        "order": 3,
+        "id": "W2_F06",
+        "name": "Rosary Claude R2 adaptation",
+        "state": "SOURCE_OWNED_PILOT_MERGED__DRAFT_MOBILE_FIX_OPEN",
+        "merged_prs": [
+          2057
+        ],
+        "draft_prs": [
+          2104
+        ],
+        "families": [
+          "F06 Rosary"
+        ],
+        "action": "After F07: refine one existing 5/15-decade canonical donor, Scripture/method selector and compact mystery/active prayer visuals; preserve opt-in gating."
+      },
+      {
+        "order": 4,
+        "id": "W2_F08",
+        "name": "Stations of the Cross",
+        "state": "RETAIN_EXISTING_SOURCE_OWNED_READER",
+        "families": [
+          "F08 Way of meditation"
+        ],
+        "action": "After Rosary: adapt existing stations reader with exact source sequence, posture and optional Stabat Mater."
+      },
+      {
+        "order": 5,
+        "id": "W2_F09",
+        "name": "Novenas and Montfort/monthly",
+        "state": "RETAIN_SOURCE_OWNED_19_PROGRAMMES",
+        "families": [
+          "F09 Journey"
+        ],
+        "action": "After Stations: day/stage navigation, source-specific variations, genuine progress; no generic 9-day template or invented missing French."
+      },
+      {
+        "order": 6,
+        "id": "W3",
+        "name": "Adoration / Benediction / Confession",
+        "state": "LATER_PRESENTATION_WAVE",
+        "families": [
+          "F10 Eucharistic presence",
+          "F11 Rite companion",
+          "F12 Examination"
+        ],
+        "action": "Respect private Adoration versus public Benediction, Four Ends order, historical rites, Confession privacy."
+      }
+    ],
+    "artwork_track": "SEPARATE_AND_DEFERRED_PER_USER__NOT_A_PRECONDITION",
+    "priorities_source": "Previously approved wave and F07→Rosary→Stations→Novenas sequence, not the ordering of the 18-screen screenshot list.",
+    "current_next_action": "Apply existing Claude F07 corrections to the current source-owned chaplet components; do not solicit a new round of decisions on all 18 screens."
+  }
 }
