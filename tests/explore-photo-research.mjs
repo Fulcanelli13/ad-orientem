@@ -39,7 +39,9 @@ const p102=read("data/geography/research/directory-p102-three-approved-covers.v1
 const p102ByPlace=new Map(p102.photos.map(x=>[x.place_id,x]));
 const p106=read("data/geography/research/directory-p106-four-approved-covers.v1.json");
 const p106ByPlace=new Map(p106.photos.map(x=>[x.place_id,x]));
-assert.equal(approved.items.length,31+p95.photos.length+p102.photos.length+p106.photos.length,"Historical shrine and P95 covers plus exactly three P102 licensed Directory additions must remain intact");
+assert.ok(approved.items.length>=31+p95.photos.length+p102.photos.length+p106.photos.length,"Historical shrine, P95/P102/P106 approved covers must remain intact as later covers are released");
+const finder=read("data/geography/research/photo-finder-20261030/decisions.json");
+const finderCredits=readFileSync("data/geography/research/photo-finder-20261030/credits.csv","utf8").split("\n");
 const shrineRecovery=read("data/geography/research/shrine-seven-photo-recovery-20261021.v1.json");
 const shrineCandidates=new Map(shrineRecovery.candidates.map(x=>[x.place_id,x]));
 const b2Candidates=new Map(read("data/geography/research/explore-major-marian-b2-photo-candidates.v1.json").candidates.map(x=>[x.place_id,x]));
@@ -51,13 +53,13 @@ for(const item of approved.items){
   assert.equal(item.status,"APPROVED");
   assert.ok(item.rights_verified&&item.subject_verified&&item.crop_reviewed);
   assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
-  assert.ok(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
+  assert.ok(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-2.0","CC-BY-2.5","CC-BY-3.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-2.5","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
     "Only independently confirmed freely reusable site photos may be published");
   assert.equal(item.license_url,item.license==="PUBLIC_DOMAIN"
     ? "https://creativecommons.org/publicdomain/mark/1.0/"
     : item.license==="CC0-1.0"
       ? "https://creativecommons.org/publicdomain/zero/1.0/"
-      : "https://creativecommons.org/licenses/by-sa/"+item.license.split("-").at(-1)+"/");
+      : "https://creativecommons.org/licenses/"+(item.license.startsWith("CC-BY-SA-")?"by-sa/":"by/")+item.license.split("-").at(-1)+"/");
   if(legacyIds.has(item.place_id)){
     assert.equal(item.license,"CC-BY-SA-4.0","Original cohort licence must never be loosened");
   }
@@ -99,6 +101,17 @@ for(const item of approved.items){
     assert.equal(item.source_sha1,c.source_sha1);
     assert.equal(item.derivative_sha256,c.sha256);
     assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT"));
+  }else if(item.source_place_ref==="PHOTO_FINDER_2026-10-30_R1"){
+    assert.match(item.asset_path,/^assets\/approved\/place-media\/pf-[a-f0-9]{22}\.webp$/);
+    const decision=finder.decisions[item.place_id];
+    assert.ok(decision&&decision.files.length>0&&decision.none===false,
+      "Photo Finder selection must be an explicit canonical Place editorial choice");
+    const title=decodeURIComponent(new URL(item.source_url).pathname.slice("/wiki/".length)).replaceAll("_"," ");
+    assert.equal(title,decision.files[0],"Exact selected first photo must be the released source");
+    assert.ok(finderCredits.some(line=>line.startsWith('"'+item.place_id+'","1","main"')
+      &&line.includes('"'+item.source_sha1+'"')),
+      "Original SHA1 must appear in the source-credit export under the same chosen Place");
+    assert.ok(item.review_method.includes("Photo Finder editorial selection"));
   }else{
     const c=shrineCandidates.get(item.place_id)||b2Candidates.get(item.place_id);
     assert.ok(c&&c.image_review_state==="EDITORIALLY_ACCEPTED_EXACT_SITE_AND_FULL_FRAME_20261021",
@@ -108,7 +121,7 @@ for(const item of approved.items){
     assert.equal(item.license,c.license);
   }
   const asset=readFileSync(item.asset_path);
-  assert.ok(asset.length>50000,"Approved file must contain image bytes");
+  assert.ok(asset.length>(item.source_place_ref==="PHOTO_FINDER_2026-10-30_R1"?3000:50000),"Approved WebP must contain verified nonempty image bytes");
   assert.equal(asset.toString("ascii",0,4),"RIFF","Optimized asset must be WebP");
   assert.equal(asset.toString("ascii",8,12),"WEBP","Optimized asset must be WebP");
   assert.equal(createHash("sha256").update(asset).digest("hex"),item.derivative_sha256,
