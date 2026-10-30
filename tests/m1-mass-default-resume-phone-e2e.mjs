@@ -100,6 +100,17 @@ try{
   await boot(resumedPage,"/index.html?aoR17Reader=native");
   await resumedPage.locator('#ao-global-ribbon [data-ao-app-surface="mass"]').click();
   await resumedPage.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-choice="mass"]',{state:"visible",timeout:15000});
+  console.log("M1_RESUME_DIAGNOSTIC",JSON.stringify(await resumedPage.evaluate(()=>({
+    api:!!window.AO_R17_BROWSER_ENTRY,
+    resumable:window.AO_R17_BROWSER_ENTRY?.hasResumable?.(),
+    checkpoint:JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"null")?.readerPosition?.sectionId,
+    checkpointState:JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"null")?.state,
+    hostActions:document.querySelectorAll("[data-folio-host-actions]").length,
+    actionGroups:document.querySelectorAll("[data-folio-host-actions] .aoFlowActions").length,
+    resumeButton:document.querySelectorAll("[data-ao-m1-resume-mass]").length,
+    m1Root:document.documentElement.dataset.aoM1MassRoot,
+    shell:window.AO_APP_SHELL_V1?.status?.()?.active
+  }))));
   await resumedPage.waitForSelector("[data-ao-m1-resume-mass]",{state:"visible",timeout:8000});
   assert.equal(await resumedPage.locator("[data-ao-start-live]").count(),1,
     "Saved session must never replace the fresh Mass Start action");
