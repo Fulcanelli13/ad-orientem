@@ -74,5 +74,15 @@ export const TODAY_H4_CSS=`
 .aoTodayH4 .aoH4CalendarBack strong{font:500 20px/1.2 var(--h4-serif)}
 .aoTodayH4 .aoH4CalendarInline:not([hidden]){display:block}
 @media(max-width:359px){.homeScreen.aoTodayV2.aoTodayH4{--h4-gap:12px}.aoTodayH4 .aoH4Bar{height:44px}.aoTodayH4 .aoH4DateOpen strong{font-size:23px}.aoTodayH4 .dateRail.aoH4Week .dayCell{height:46px}.aoTodayH4 .aoH4Door .aoLiturgicalDayKicker{display:none!important}.aoTodayH4 .aoH4Door .aoTodayV2Art{height:76px!important;max-height:76px!important}.aoTodayH4 .aoH4Door .aoTodayV2ArtSource{height:76px!important;max-height:76px!important;aspect-ratio:auto!important}.aoTodayH4 .aoH4MassBody{padding:12px 16px 0}.aoTodayH4 .aoH4MassBody h1{font-size:29px}.aoTodayH4 .aoH4Acts{margin:0 -16px}.aoTodayH4 .aoH4Acts button{font-size:13px}}
+
+/* Home's source-owned Did You Know teaser; a full Discovery corpus is still gated. */
+.aoTodayV2 .aoHomeDYK{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:5px!important;min-width:0;width:100%;text-align:left!important;padding:15px 16px!important;min-height:112px!important;border:1px solid var(--ao-rule,var(--border,rgba(225,210,180,.2)))!important;border-radius:14px!important;background:var(--ao-surface-1,var(--surface-1,#161e25))!important;color:var(--ao-text-primary,var(--text,#f2ebe0))!important;white-space:normal!important}
+.aoTodayV2 .aoHomeDYK:disabled{opacity:1!important;cursor:default}
+.aoTodayV2 .aoHomeDYKLabel{font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--liturgical,#c9ad78)}
+.aoTodayV2 .aoHomeDYK strong{font:500 19px/1.2 var(--ao-font-display,Georgia,serif)!important;margin:2px 0!important}
+.aoTodayV2 .aoHomeDYK [data-home-dyk-fact]{font:400 14px/1.45 var(--ao-font-body,Georgia,serif)!important;color:var(--ao-text-secondary,var(--muted,#bbc0bf))!important;margin:0!important;overflow-wrap:anywhere}
+.aoTodayV2 .aoHomeDYKSource{font:600 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#c9ad78);margin-top:6px}
+.aoTodayV2 .aoHomeDYK:not(:disabled):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
+
 @media(prefers-reduced-motion:reduce){.aoTodayH4 *{scroll-behavior:auto!important;transition:none!important}}
 `;
