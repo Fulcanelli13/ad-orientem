@@ -830,7 +830,8 @@ function reconcileTraditionalPrayerSettings(m){
   '">Aa</summary><div class="aoPrayerBookMenuPanel"></div>';
  const body=menu.querySelector('.aoPrayerBookMenuPanel');
  const languages=nodes.filter(n=>n.matches('.aoTP381Lang,.aoDailyBookSelector,.aoDailyReadingOptions'));
- const references=nodes.filter(n=>!n.matches('.aoTP381Lang'));
+ // Text edition, reading depth and language are active settings, not provenance.
+ const references=nodes.filter(n=>!languages.includes(n));
  languages.forEach(n=>body.append(n));
  if(references.length){
   const info=document.createElement('details');
