@@ -86,6 +86,18 @@ try{
     };
    });
    console.log("ROSARY_R2_PHONE_DIAGNOSTICS "+JSON.stringify({width,height,...baseline}));
+   if(width===320&&height===568){
+    const boxes=await page.locator("#aoPrayerBookRoot.open .pbShell").evaluate(shell=>{
+     const elements=[...shell.querySelectorAll("*")].filter(el=>
+      el.className&&typeof el.className==="string"&&
+      /lab-|pb|rosary|Rosary|aoDevo/i.test(el.className));
+     return elements.map(el=>{const r=el.getBoundingClientRect();
+      return {tag:el.tagName,cls:el.className.slice(0,110),top:Math.round(r.top),
+       height:Math.round(r.height),display:getComputedStyle(el).display};
+     }).filter(x=>x.height>10&&x.top>=0&&x.top<560).slice(0,95);
+    });
+    console.log("ROSARY_R2_OPENING_STACK "+JSON.stringify(boxes));
+   }
    await page.screenshot({path:resolve(artifacts,"rosary-r2-"+width+"x"+height+"-opening.png"),animations:"disabled"});
    assert.equal(baseline.roots,1,"One canonical Rosary donor only");
    assert.ok(baseline.count>60&&baseline.chapters>=7,"Original steps and named chapters missing");
