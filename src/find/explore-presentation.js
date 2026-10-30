@@ -1,6 +1,6 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
-import { renderDirectoryVenueCard,eligibleDirectoryImage,renderDirectoryGallery } from "./directory-card.js";
+import { renderDirectoryVenueCard,eligibleDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
@@ -380,6 +380,8 @@ function compactExploreItemSheet(vm){
     html+='<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(lang==="fr"?m.alt_fr:m.alt_en)+'">'
       +'<small class="aoTlmPreviewPhotoCredit">'+esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a> · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original photo","Photo originale"))+'</a></small>';
   }
+  if(isMass&&!eligibleDirectoryImage(item.cover_media,item.place_id))
+    html+=renderDirectoryIdentityFallback(item,lang,"preview");
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
   if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
     "Check the source for current Mass times, exact entrance and the status of individual celebrations.",
@@ -419,6 +421,8 @@ function detailSheet(vm){
       +(changes?'<span class="aoTlmPhotoChanges"> · '+esc(changes)+'</span>':'')
       +'</figcaption></figure>';
   }
+  if(item.kind==="TLM_VENUE"&&!eligibleDirectoryImage(item.cover_media,item.place_id))
+    html+=renderDirectoryIdentityFallback(item,vm.language,"detail");
   if(item.kind==="TLM_VENUE")html+=renderDirectoryGallery(item,vm.language);
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+esc(L(vm.language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
   if(item.summary)html+='<p class="aoExploreLead">'+esc(translatedSummary(item,vm.language))+'</p>';
