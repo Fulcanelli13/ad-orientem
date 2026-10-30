@@ -94,10 +94,17 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
     ?L(language,"Diocesan church","Église diocésaine")
     :L(language,"Church / chapel","Église / chapelle"));
   const mode=["card","preview","detail"].includes(variant)?variant:"card";
+  // Preserve source-reported labels for the CL2 "other"/unresolved families.
+  // A directory listing is not proof of ownership, institution, ecclesial status
+  // or Una Cum. Do not substitute any other institute's heraldry.
+  const asListed=String(item?.eyebrow??"").trim();
+  const qualifiedSource=(group==="OTHER"||group==="UNKNOWN")&&asListed&&
+    !/^(other|unknown|unclassified|affiliation unverified)$/i.test(asListed)
+      ?L(language,"Listed as: ","Selon la source : ")+asListed.slice(0,72):"";
   return '<span class="aoTlmVenueIdentity aoTlmVenueIdentity--'+mode+'" data-visual-kind="'+(emblem?"emblem":"neutral")+'">'
     +(emblem?'<img src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':
       '<span class="aoTlmVenueGlyph">'+churchGlyph+'</span>')
-    +'<small>'+E(label)+'</small></span>';
+    +'<small>'+E(qualifiedSource||label)+'</small></span>';
 }
 
 export function renderDirectoryVenueCard(item,language="en"){
