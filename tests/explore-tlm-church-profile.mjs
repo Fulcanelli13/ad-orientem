@@ -121,4 +121,13 @@ const presentation=readFileSync(new URL("../src/find/explore-presentation.js",im
 const runtime=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
 assert.match(presentation,/if\(item.kind==="TLM_VENUE"\)return renderTlmChurchProfile/);
 assert.match(runtime,/DIRECTORY_CARD_STYLE\+TLM_CHURCH_PROFILE_STYLE/);
+
+const previewSource=readFileSync(new URL("../src/find/explore-presentation.js",import.meta.url),"utf8");
+const directoryCardSource=readFileSync(new URL("../src/find/directory-card.js",import.meta.url),"utf8");
+assert.match(previewSource,/aoTlmPreviewPhotographic/);
+assert.match(previewSource,/aoTlmPreviewEmblem/);
+assert.match(previewSource,/aoTlmPreviewPhotoCredit/);
+assert.match(directoryCardSource,/DIRECTORY_PREVIEW_EDITORIAL_STYLE/);
+assert.match(directoryCardSource,/DIRECTORY_VISUAL_FALLBACK_STYLE\+DIRECTORY_PREVIEW_EDITORIAL_STYLE/);
+
 console.log("Expanded TLM church-profile contract: passed");
