@@ -441,6 +441,57 @@ try{
        .profiles?.find(p=>p.id===JSON.parse(
          localStorage.getItem("ao-schola-profile-library-v2")||"{}").activeProfileId)
        ?.ordinarySettings?.GLORIA==="Mass VIII");
+   // Source-indexed Kyriale catalogue is movement-specific, preserves the
+   // local custom fallback and never changes the priest/Schola clock.
+   const kyrieMenu=panel.locator('[data-schola-kyriale-choice="KYRIE"]');
+   const gloriaMenu=panel.locator('[data-schola-kyriale-choice="GLORIA"]');
+   const credoMenu=panel.locator('[data-schola-kyriale-choice="CREDO"]');
+   assert.equal(await kyrieMenu.locator("option").count(),20,
+     "Expected 18 source-indexed Mass Kyries plus custom/none");
+   assert.equal(await credoMenu.locator("option").count(),8,
+     "Expected six source-indexed Credos plus custom/none");
+   assert.equal(await gloriaMenu.locator('option[value="MASS_17"]').count(),0,
+     "Kyriale Mass XVII does not supply a Gloria");
+   assert.equal(await panel.locator('a[href="https://media.churchmusicassociation.org/pdf/kyriale.pdf"]').count(),1);
+   await kyrieMenu.selectOption("MASS_08");
+   await credoMenu.selectOption("CREDO_03");
+   await page.waitForFunction(()=>{
+     const v=JSON.parse(localStorage.getItem("ao-schola-profile-library-v2")||"{}");
+     const p=v.profiles?.find(x=>x.id===v.activeProfileId);
+     return p?.ordinarySelections?.KYRIE==="MASS_08" &&
+       p?.ordinarySelections?.CREDO==="CREDO_03";
+   });
+   assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').inputValue(),
+     "Mass VIII · De Angelis");
+   assert.equal(await panel.locator('[data-schola-ordinary-setting="KYRIE"]').isDisabled(),true,
+     "A source-indexed label must not be editable until custom is chosen");
+   const selectedSource=await page.evaluate(()=>{
+     const v=JSON.parse(localStorage.getItem("ao-schola-profile-library-v2")||"{}");
+     const p=v.profiles?.find(x=>x.id===v.activeProfileId);
+     return {kyrie:p?.ordinarySelections?.KYRIE,credo:p?.ordinarySelections?.CREDO,
+       kyrieLabel:p?.ordinarySettings?.KYRIE,credoLabel:p?.ordinarySettings?.CREDO};
+   });
+   assert.deepEqual(selectedSource,{
+     kyrie:"MASS_08",credo:"CREDO_03",
+     kyrieLabel:"Mass VIII · De Angelis",credoLabel:"Credo III"});
+   console.log("SCHOLA_KYRIALE_PHONE="+JSON.stringify({width,...selectedSource}));
+   await page.screenshot({path:resolve(out,"schola-kyriale-source-"+width+".png"),
+     animations:"disabled"});
+   await kyrieMenu.selectOption("CUSTOM");
+   await panel.locator('[data-schola-ordinary-setting="KYRIE"]').fill("Local polyphonic Kyrie");
+   await panel.locator('[data-schola-ordinary-setting="KYRIE"]').blur();
+   await page.waitForFunction(()=>{
+     const v=JSON.parse(localStorage.getItem("ao-schola-profile-library-v2")||"{}");
+     const p=v.profiles?.find(x=>x.id===v.activeProfileId);
+     return p?.ordinarySelections?.KYRIE==="" &&
+       p?.ordinarySettings?.KYRIE==="Local polyphonic Kyrie";
+   });
+   await profilePicker.selectOption("p1");
+   await profilePicker.selectOption(createdProfile);
+   await page.waitForFunction(()=>document.querySelector(
+     '[data-schola-kyriale-choice="CREDO"]')?.value==="CREDO_03");
+   assert.equal(await kyrieMenu.inputValue(),"CUSTOM",
+     "Custom Kyrie lost its distinction from verified source on profile switch");
    const panelBounds=await panel.locator(".ao-schola-programme-fields").evaluate(el=>{
      const r=el.getBoundingClientRect();
      return {left:r.left,right:r.right,viewport:innerWidth,scroll:el.scrollHeight,
