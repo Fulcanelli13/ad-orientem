@@ -1,0 +1,60 @@
+name: Sacred Art compact canonical 383 source repair priorities (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-canonical-source-repair-20261030.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-canonical-source-repair
+  cancel-in-progress: false
+
+jobs:
+  build-289-source-repair-queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate protected editorial decisions
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Derive compact archival source repair queue
+        run: node scripts/art/prepare-canonical383-source-repair-queue-20261030.mjs
+      - name: Preserve 383 canonical register and source decisions
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const d=JSON.parse(readFileSync('data/calendar/sacred-art-phase1-canonical383-source-repair-priorities-20261030.v1.json','utf8'));
+          const x=d.stats;
+          if(d.rows.length!==289||x.totalCanonical383!==383||
+            x.originalSourcePageAlreadyPresent!==94||x.sourcePageMissing!==289||
+            x.newExactAccepted856SourceMatches!==0||x.sourcePagesWrittenToCanonical!==0||
+            x.photoRightsCertified!==0||x.productionImported!==0||
+            d.release.canon383Untouched!==true||
+            d.release.sourcePagesAutofilled!==0||d.release.productionMutation!==false||
+            d.rows.some(r=>r.canonical383UpdateAllowed!==false||
+               r.photoRightsApproved!==false||r.nativePhotoCertified!==false))
+            throw Error("Frozen source and rights/production gate failed");
+          console.log(JSON.stringify(x,null,2));
+          NODE
+      - name: Commit concise source repair evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-canonical383-source-repair-priorities-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): stage 289 canonical source provenance repairs [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029

@@ -1,0 +1,5918 @@
+{
+  "schema": "AO_SACRED_ART_COMMONS_WIKIDATA_MUSEUM_ACCESSION_CANDIDATES_V1",
+  "generatedAt": "2026-10-30T05:10:01.312Z",
+  "provenance": {
+    "commonsLedger": "sacred-art-phase1-commons-305-structured-work-leads-20261030.v2.json",
+    "museumLedger": "sacred-art-phase1-museum-479-accession-audit-20261029.v1.json",
+    "canonicalCrosswalk": "sacred-art-accepted-856-to-canonical-383-20261029.v1.json",
+    "wikidataEndpoint": "https://www.wikidata.org/w/api.php",
+    "batches": [
+      {
+        "batch": 1,
+        "requested": 25,
+        "received": 25,
+        "httpStatus": 200,
+        "sha256": "7410d0cd7a94007fb2eb932062afbc58a502eea46b985ae60f22850148ca460b"
+      },
+      {
+        "batch": 2,
+        "requested": 25,
+        "received": 25,
+        "httpStatus": 200,
+        "sha256": "c7b5e46572ebb5aef0b942b64bf2cf6f9deacbda4c2b3d84a134b6541372265a"
+      },
+      {
+        "batch": 3,
+        "requested": 25,
+        "received": 25,
+        "httpStatus": 200,
+        "sha256": "a8b1216992d96362296396adf7ec3db8a2a0f02976c96d6392a80b7b2882e2f8"
+      },
+      {
+        "batch": 4,
+        "requested": 25,
+        "received": 25,
+        "httpStatus": 200,
+        "sha256": "7e639eab16a4e7e234f808292ac76e45e72bcc2980725a9b68bad4f738ec730c"
+      },
+      {
+        "batch": 5,
+        "requested": 25,
+        "received": 25,
+        "httpStatus": 200,
+        "sha256": "029f7876d8d8ba17447f4cf32b681061e2eebb9757e4518932ab021c5cf27ced"
+      },
+      {
+        "batch": 6,
+        "requested": 25,
+        "received": 25,
+        "httpStatus": 200,
+        "sha256": "890421cfc071dd72e88654cbb16778d26b1353a185a15f46fee125d741f22d3d"
+      },
+      {
+        "batch": 7,
+        "requested": 25,
+        "received": 25,
+        "httpStatus": 200,
+        "sha256": "86499d770a212b10ba90ef3268673206be2834330b80b133cb6e775dadddf17d"
+      },
+      {
+        "batch": 8,
+        "requested": 17,
+        "received": 17,
+        "httpStatus": 200,
+        "sha256": "bd4cb1ecd02b1e789d0d822b27e9169a1e41c2b05416289ce44eb80c50d61438"
+      }
+    ]
+  },
+  "rules": [
+    "P6243 provides an artwork-entity research lead, NOT proof of physical object identity",
+    "P217 inventory number and P195 collection are independent Wikidata statements, not museum official claims",
+    "Normalized accession alone is weak; even institution plus accession needs official corroboration of the Wikidata-artwork link",
+    "P180 depicts and P921 subject excluded from artwork identity join",
+    "Do not merge whole/part panels, copies, after, workshop objects or different photographs",
+    "Frozen editorial choices, canonical 383 and photograph-rights gates all remain unchanged"
+  ],
+  "summary": {
+    "sourceCards": 305,
+    "sourceFilesWithQid": 195,
+    "distinctQids": 192,
+    "qidsResolved": 192,
+    "qidFetchErrors": 0,
+    "commonsToMuseumAccessionCandidateEdges": 5,
+    "collectionAndAccessionCandidateEdges": 3,
+    "accessionOnlyCandidateEdges": 2,
+    "sourceFilesWithMuseumCandidates": 5,
+    "existingCanonicalLinks": 72,
+    "newCanonical383Links": 0,
+    "publicationApproved": 0,
+    "photoRightsCertified": 0,
+    "productionImports": 0
+  },
+  "records": [
+    {
+      "sourceId": "commons:147914",
+      "reviewedTitle": "Philip Baptizes the Moor",
+      "originalDecision": "IMPORT",
+      "workQid": "Q19926394",
+      "qidResolved": true,
+      "workTitle": "Philip Baptizes the Moor",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q1880444"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Gerrit Claesz. Bleker 002.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:148290",
+      "reviewedTitle": "Joseph Selling Wheat to the People",
+      "originalDecision": "IMPORT",
+      "workQid": "Q111821942",
+      "qidResolved": true,
+      "workTitle": "Joseph Gives Corn to His Brothers",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q4859590",
+          "label": "Barber Institute of Fine Arts"
+        }
+      ],
+      "creatorQids": [
+        "Q809318"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bartholomeus Breenbergh 002.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:149912",
+      "reviewedTitle": "The Angel Is Opening Christ's Tomb",
+      "originalDecision": "IMPORT",
+      "workQid": "Q132240423",
+      "qidResolved": true,
+      "workTitle": "The Angel Is Opening Christ's Tomb",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q840886",
+          "label": "Museum of Fine Arts, Budapest"
+        }
+      ],
+      "creatorQids": [
+        "Q552910"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Benjamin Gerritsz. Cuyp 002.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:150920",
+      "reviewedTitle": "Parable of the Unforgiving Servant",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119997047",
+      "qidResolved": true,
+      "workTitle": "Parable of the Unforgiving Servant",
+      "wikidataInventoryNumbers": [
+        "Gal.-Nr. 419"
+      ],
+      "collections": [
+        {
+          "qid": "Q653002",
+          "label": "Staatliche Kunstsammlungen Dresden"
+        }
+      ],
+      "creatorQids": [
+        "Q551695"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Domenico Fetti 001.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:151440",
+      "reviewedTitle": "Esther's toilet (Esther 5:1)",
+      "originalDecision": "IMPORT",
+      "workQid": "Q66057965",
+      "qidResolved": true,
+      "workTitle": "Esther's toilet",
+      "wikidataInventoryNumbers": [
+        "GK I 5255"
+      ],
+      "collections": [
+        {
+          "qid": "Q132783",
+          "label": "Hermitage Museum"
+        },
+        {
+          "qid": "Q531772",
+          "label": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg"
+        },
+        {
+          "qid": "Q451555",
+          "label": "Sanssouci Picture Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q19034"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Aert de Gelder 003.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:153011",
+      "reviewedTitle": "Dutch: De aanbidding van de herders | The Adoration of the Shepherds",
+      "originalDecision": "IMPORT",
+      "workQid": "Q87765748",
+      "qidResolved": true,
+      "workTitle": "The Adoration of the Shepherds",
+      "wikidataInventoryNumbers": [
+        "529"
+      ],
+      "collections": [
+        {
+          "qid": "Q1783956",
+          "label": "Nantes Museum of Arts"
+        }
+      ],
+      "creatorQids": [
+        "Q949627"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Gerard van Honthorst — Adoration of the Shepherds.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:153725",
+      "reviewedTitle": "Presentation of the Virgin \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21723110",
+      "qidResolved": true,
+      "workTitle": "Presentation of the Virgin",
+      "wikidataInventoryNumbers": [
+        "ГЭ-1777"
+      ],
+      "collections": [
+        {
+          "qid": "Q132783",
+          "label": "Hermitage Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q1378723"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Eustache Le Sueur 001.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:157996",
+      "reviewedTitle": "Peter and Paul",
+      "originalDecision": "IMPORT",
+      "workQid": "Q111822063",
+      "qidResolved": true,
+      "workTitle": "Peter and Paul",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q150066",
+          "label": "Pinacoteca di Brera"
+        }
+      ],
+      "creatorQids": [
+        "Q109061"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Guido Reni 044.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:158343",
+      "reviewedTitle": "Ss. Prokulus, Firmus, }Rusticus of Verona and an Angel",
+      "originalDecision": "IMPORT",
+      "workQid": "Q107378356",
+      "qidResolved": true,
+      "workTitle": "Ss. Prokulus, Firmus, Rusticus of Verona and an Angel",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q1081902",
+          "label": "Bergamo Cathedral"
+        }
+      ],
+      "creatorQids": [
+        "Q506483"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Sebastiano Ricci 042.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:160383",
+      "reviewedTitle": "Hl. Rufina von Sevilla",
+      "originalDecision": "IMPORT",
+      "workQid": "Q77992354",
+      "qidResolved": true,
+      "workTitle": "Saint Rufina",
+      "wikidataInventoryNumbers": [
+        "NGI.962"
+      ],
+      "collections": [
+        {
+          "qid": "Q2018379",
+          "label": "National Gallery of Ireland"
+        }
+      ],
+      "creatorQids": [
+        "Q209615"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Francisco de Zurbarán 049.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:160384",
+      "reviewedTitle": "The Circumcision of Christ",
+      "originalDecision": "IMPORT",
+      "workQid": "Q87464944",
+      "qidResolved": true,
+      "workTitle": "Circumcision",
+      "wikidataInventoryNumbers": [
+        "562",
+        "MG 1326"
+      ],
+      "collections": [
+        {
+          "qid": "Q1952944",
+          "label": "Museum of Grenoble"
+        }
+      ],
+      "creatorQids": [
+        "Q209615"
+      ],
+      "wikidataWorkImageFileNames": [
+        "La Circoncision, par Francisco de Zurbarán.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:160399",
+      "reviewedTitle": "The Virgin of the Immaculate Conception",
+      "originalDecision": "IMPORT",
+      "workQid": "Q85139311",
+      "qidResolved": true,
+      "workTitle": "The Immaculate Conception",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q6033277",
+          "label": "Museo Diocesano de Arte Antiguo (Sigüenza)"
+        }
+      ],
+      "creatorQids": [
+        "Q209615"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Francisco de Zurbarán 065.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:638360",
+      "reviewedTitle": "The bearing of Christ's body to the grave \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q24064586",
+      "qidResolved": true,
+      "workTitle": "The entombment",
+      "wikidataInventoryNumbers": [
+        "8233"
+      ],
+      "collections": [
+        {
+          "qid": "Q260913",
+          "label": "Centraal Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q380708"
+      ],
+      "wikidataWorkImageFileNames": [
+        "The Entombment by Dirck van Baburen Centraal Museum 8233.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:1755068",
+      "reviewedTitle": "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+      "originalDecision": "IMPORT",
+      "workQid": "Q17325184",
+      "qidResolved": true,
+      "workTitle": "The incredulity of St Thomas",
+      "wikidataInventoryNumbers": [
+        "SK-A-1965",
+        "06470"
+      ],
+      "collections": [
+        {
+          "qid": "Q190804",
+          "label": "Rijksmuseum"
+        },
+        {
+          "qid": "Q4360916",
+          "label": "Museum Gouda"
+        }
+      ],
+      "creatorQids": [
+        "Q759831"
+      ],
+      "wikidataWorkImageFileNames": [
+        "De ongelovige thomas.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:3110508",
+      "reviewedTitle": "La Pietà",
+      "originalDecision": "IMPORT",
+      "workQid": "Q64651954",
+      "qidResolved": true,
+      "workTitle": "Pietà",
+      "wikidataInventoryNumbers": [
+        "PE 74"
+      ],
+      "collections": [
+        {
+          "qid": "Q1236032",
+          "label": "Condé Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q334262"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Guercino Pietà 2.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:3112547",
+      "reviewedTitle": "Lot and his daughters",
+      "originalDecision": "IMPORT",
+      "workQid": "Q18572414",
+      "qidResolved": true,
+      "workTitle": "Lot and His Daughters",
+      "wikidataInventoryNumbers": [
+        "INV 75"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q334262"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Guercino Loth e- le figlie.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:4965555",
+      "reviewedTitle": "French: La crucifixion",
+      "originalDecision": "IMPORT_WITH_CORRECTIONS",
+      "workQid": "Q107612014",
+      "qidResolved": true,
+      "workTitle": "La crucifixion",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q314814"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Champaigne La Crucifixion.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:6516198",
+      "reviewedTitle": "Judith and Her Maidservant with the Head of Holofernes",
+      "originalDecision": "IMPORT",
+      "workQid": "Q29053305",
+      "qidResolved": true,
+      "workTitle": "Judith and Her Maidservant with the Head of Holofernes",
+      "wikidataInventoryNumbers": [
+        "1949.52"
+      ],
+      "collections": [
+        {
+          "qid": "Q403080",
+          "label": "Wadsworth Atheneum Museum of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q367360"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Orazio Gentileschi - Judith and Her Maidservant with the Head of Holofernes.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:6942827",
+      "reviewedTitle": "Saint Onuphrius",
+      "originalDecision": "IMPORT",
+      "workQid": "Q27701697",
+      "qidResolved": true,
+      "workTitle": "Saint Onuphrius",
+      "wikidataInventoryNumbers": [
+        "P003027"
+      ],
+      "collections": [
+        {
+          "qid": "Q160112",
+          "label": "Museo del Prado"
+        }
+      ],
+      "creatorQids": [
+        "Q3081834"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Collantes, Francisco - St Onuphrius - 17th c.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:7644268",
+      "reviewedTitle": "Salome with the Head of Saint John the Baptist",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20891392",
+      "qidResolved": true,
+      "workTitle": "Salome with the Head of Saint John the Baptist",
+      "wikidataInventoryNumbers": [
+        "2003.117.1"
+      ],
+      "collections": [
+        {
+          "qid": "Q1700481",
+          "label": "Minneapolis Institute of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q2294631"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Onorio Marinari - Salome with the Head of Saint John the Baptist - 2003.117.1 - Minneapolis Institute of Arts.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:9734560",
+      "reviewedTitle": "Saint Peter Martyr with Saints Nicholas and Benedict",
+      "originalDecision": "IMPORT",
+      "workQid": "Q3947826",
+      "qidResolved": true,
+      "workTitle": "Saint Peter Martyr with Saints Nicholas and Benedict",
+      "wikidataInventoryNumbers": [
+        "177"
+      ],
+      "collections": [
+        {
+          "qid": "Q150066",
+          "label": "Pinacoteca di Brera"
+        }
+      ],
+      "creatorQids": [
+        "Q8453"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Cima da conegliano, san pietro martire e santi 01.jpg"
+      ],
+      "museumAccessionCandidates": [
+        {
+          "museumSourceId": "kmska:ny9mxd",
+          "museum": "kmska",
+          "museumVerifiedAccession": "177",
+          "wikidataInventory": "177",
+          "accessionNormalizedMatch": true,
+          "collectionAgrees": false,
+          "collectionEvidence": [
+            {
+              "qid": "Q150066",
+              "label": "Pinacoteca di Brera"
+            }
+          ],
+          "reviewTitle": "Heilige Nicolaas van Myra",
+          "museumCanonical383AlreadyLinked": false,
+          "existingCanonicalArtworkId": null,
+          "assessment": "WIKIDATA_ACCESSION_ONLY_UNCORROBORATED_COLLECTION",
+          "canonical383NewIdentityLink": false,
+          "photoRightsCertified": false
+        }
+      ],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:10289552",
+      "reviewedTitle": "A miracle by Saint Benedict",
+      "originalDecision": "IMPORT",
+      "workQid": "Q104581613",
+      "qidResolved": true,
+      "workTitle": "A Miracle by Saint Benedict",
+      "wikidataInventoryNumbers": [
+        "44.987.3.6"
+      ],
+      "collections": [
+        {
+          "qid": "Q1535963",
+          "label": "Musée des Beaux-Arts de Strasbourg"
+        }
+      ],
+      "creatorQids": [
+        "Q332494"
+      ],
+      "wikidataWorkImageFileNames": [
+        "A miracle by Saint Benedict mg 0167.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:11005776",
+      "reviewedTitle": "Immaculate Conception",
+      "originalDecision": "IMPORT",
+      "workQid": "Q24254906",
+      "qidResolved": true,
+      "workTitle": "Immaculate Conception",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q5871254",
+          "label": "Focus-Abengoa Foundation"
+        }
+      ],
+      "creatorQids": [
+        "Q297"
+      ],
+      "wikidataWorkImageFileNames": [
+        "20090211 NP Inmaculada.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:12241941",
+      "reviewedTitle": "Theodoor Boeyermans (1620-1678) De extase van de heilige Rosalia van Palermo - Palais des Beaux Arts de Lille 25-11-2010 14-15-22",
+      "originalDecision": "IMPORT",
+      "workQid": "Q72299012",
+      "qidResolved": true,
+      "workTitle": "The extasy of the holy Saint Rosalie of Palermo",
+      "wikidataInventoryNumbers": [
+        "P 194"
+      ],
+      "collections": [
+        {
+          "qid": "Q2628596",
+          "label": "Palais des Beaux-Arts de Lille"
+        }
+      ],
+      "creatorQids": [
+        "Q2001362"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Theodoor Boeyermans (1620-1678) De extase van de heilige Rosalia van Palermo - Palais des Beaux Arts de Lille 25-11-2010 14-15-22.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:14607985",
+      "reviewedTitle": "French: Saint Clément retrouve sa famille \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q47357796",
+      "qidResolved": true,
+      "workTitle": "Saint Clément retrouve sa famille",
+      "wikidataInventoryNumbers": [
+        "453.b"
+      ],
+      "collections": [
+        {
+          "qid": "Q1535963",
+          "label": "Musée des Beaux-Arts de Strasbourg"
+        }
+      ],
+      "creatorQids": [
+        "Q338410"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bernardino Fungai-Saint Clément retrouvant sa famille.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15177655",
+      "reviewedTitle": "Baptism of Christ-Francesco Albani-MBA Lyon A170-IMG 0339",
+      "originalDecision": "IMPORT",
+      "workQid": "Q115676667",
+      "qidResolved": true,
+      "workTitle": "The Baptism of Christ",
+      "wikidataInventoryNumbers": [
+        "A 170"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        },
+        {
+          "qid": "Q511",
+          "label": "Museum of Fine Arts of Lyon"
+        }
+      ],
+      "creatorQids": [
+        "Q358147"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Baptism of Christ-Francesco Albani-MBA Lyon A170-IMG 0339.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15179213",
+      "reviewedTitle": "French: La Prédication de saint Jean Baptiste | Predication of Saint John the Baptist",
+      "originalDecision": "IMPORT",
+      "workQid": "Q115676343",
+      "qidResolved": true,
+      "workTitle": "Predication of Saint John the Baptist",
+      "wikidataInventoryNumbers": [
+        "A 127"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        },
+        {
+          "qid": "Q511",
+          "label": "Museum of Fine Arts of Lyon"
+        }
+      ],
+      "creatorQids": [
+        "Q358147"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Predicatin of Saint John the Baptist-Francesco Albani-MBA Lyon A127-IMG 0346.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15216589",
+      "reviewedTitle": "Christ at the Column",
+      "originalDecision": "IMPORT",
+      "workQid": "Q931837",
+      "qidResolved": true,
+      "workTitle": "Christ at the Column",
+      "wikidataInventoryNumbers": [
+        "955.8"
+      ],
+      "collections": [
+        {
+          "qid": "Q3086934",
+          "label": "Musée des Beaux-Arts de Rouen"
+        }
+      ],
+      "creatorQids": [
+        "Q42207"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Christ at the Column-Caravaggio (c. 1607).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15385030",
+      "reviewedTitle": "Lamentation of Christ",
+      "originalDecision": "IMPORT",
+      "workQid": "Q17651293",
+      "qidResolved": true,
+      "workTitle": "The Dead Christ Mourned ('The Three Maries')",
+      "wikidataInventoryNumbers": [
+        "NG2923"
+      ],
+      "collections": [
+        {
+          "qid": "Q180788",
+          "label": "National Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q7824"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Annibale Carracci - Lamentation of Christ - WGA4436.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15385045",
+      "reviewedTitle": "Polish: Święte niewiasty u grobu Chrystusa | Holy Women at Christ' s Tomb \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q18590147",
+      "qidResolved": true,
+      "workTitle": "Holy Women at Christ' s Tomb",
+      "wikidataInventoryNumbers": [
+        "ГЭ-92"
+      ],
+      "collections": [
+        {
+          "qid": "Q132783",
+          "label": "Hermitage Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q7824"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Annibale Carracci - Holy Women at Christ' s Tomb - WGA4454.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15394047",
+      "reviewedTitle": "German: Landschaft mit dem Heiligen Christophorus | Landscape with St Christopher",
+      "originalDecision": "IMPORT",
+      "workQid": "Q29047663",
+      "qidResolved": true,
+      "workTitle": "Landscape with St Christopher",
+      "wikidataInventoryNumbers": [
+        "1707"
+      ],
+      "collections": [
+        {
+          "qid": "Q165631",
+          "label": "Gemäldegalerie Berlin"
+        }
+      ],
+      "creatorQids": [
+        "Q367360"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Orazio Gentileschi - Landscape with St Christopher - WGA8576.jpg",
+        "Gentileschi - Landschaft mit dem Heiligen Christophorus, um 1605-10, 1707.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15395385",
+      "reviewedTitle": "Ecstasy of St Margaret of Cortona",
+      "originalDecision": "IMPORT",
+      "workQid": "Q85758544",
+      "qidResolved": true,
+      "workTitle": "Ecstasy of Saint Margaret of Cortona",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q29286",
+          "label": "Palazzo Pitti"
+        }
+      ],
+      "creatorQids": [
+        "Q447730"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Giovanni Lanfranco - Ecstasy of St Margaret of Cortona - WGA12453.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15494917",
+      "reviewedTitle": "Mary Magdalene Taken up to Heaven",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21731115",
+      "qidResolved": true,
+      "workTitle": "Mary Magdalene Taken up to Heaven",
+      "wikidataInventoryNumbers": [
+        "ГЭ-113"
+      ],
+      "collections": [
+        {
+          "qid": "Q132783",
+          "label": "Hermitage Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q320118"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Domenichino - Mary Magdalene Taken up to Heaven - WGA06400.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:15502272",
+      "reviewedTitle": "French: David avec la tête de Goliath et deux soldats | David With the Head of Goliath and two Soldiers \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21711467",
+      "qidResolved": true,
+      "workTitle": "David With the Head of Goliath and two Soldiers",
+      "wikidataInventoryNumbers": [
+        "415 (1930.119)"
+      ],
+      "collections": [
+        {
+          "qid": "Q176251",
+          "label": "Thyssen-Bornemisza Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q1337275"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Valentin de Boulogne - David with the Head of Goliath and Two Soldiers - WGA24236.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:17580152",
+      "reviewedTitle": "Christ's charge to Peter",
+      "originalDecision": "IMPORT",
+      "workQid": "Q106583175",
+      "qidResolved": true,
+      "workTitle": "Christ's Charge to Peter",
+      "wikidataInventoryNumbers": [
+        "P93"
+      ],
+      "collections": [
+        {
+          "qid": "Q1327919",
+          "label": "Wallace Collection"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Peter Paul Rubens - Christ's Charge to Peter.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:18495123",
+      "reviewedTitle": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+      "originalDecision": "IMPORT",
+      "workQid": "Q55766735",
+      "qidResolved": true,
+      "workTitle": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+      "wikidataInventoryNumbers": [
+        "160"
+      ],
+      "collections": [
+        {
+          "qid": "Q377500",
+          "label": "Royal Museums of Fine Arts of Belgium"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Rubens e bottega, l'intercessione della vergine e di san francesco arrestano la folgore divina, 01.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:18495258",
+      "reviewedTitle": "The Martyrdom of St Livinus",
+      "originalDecision": "IMPORT",
+      "workQid": "Q111235332",
+      "qidResolved": true,
+      "workTitle": "The Martyrdom of St Livinus",
+      "wikidataInventoryNumbers": [
+        "161"
+      ],
+      "collections": [
+        {
+          "qid": "Q377500",
+          "label": "Royal Museums of Fine Arts of Belgium"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "The Martyrdom of St Livinus by Rubens.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:18589500",
+      "reviewedTitle": "The Virgin of Consolation",
+      "originalDecision": "IMPORT",
+      "workQid": "Q17496102",
+      "qidResolved": true,
+      "workTitle": "Virgin of Consolation",
+      "wikidataInventoryNumbers": [
+        "RF 2113"
+      ],
+      "collections": [
+        {
+          "qid": "Q845468",
+          "label": "Strasbourg Museum of Modern and Contemporary Art"
+        }
+      ],
+      "creatorQids": [
+        "Q483992"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bouguereau - Virgin of Consolation.jpg",
+        "Bouguereau, Vierge consolatrice, 1877 (5590351734).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:18639849",
+      "reviewedTitle": "Belshazzar's feast",
+      "originalDecision": "IMPORT",
+      "workQid": "Q131400118",
+      "qidResolved": true,
+      "workTitle": "Belshazzar's feast",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [],
+      "wikidataWorkImageFileNames": [
+        "Bartholomäus Strobl dJ (Umkreis) Gastmahl des Königs Balthasar.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:21147124",
+      "reviewedTitle": "Swedish: Aposteln Paulus | Apostle Paul \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q18601293",
+      "qidResolved": true,
+      "workTitle": "Apostle Paul",
+      "wikidataInventoryNumbers": [
+        "NM 7087"
+      ],
+      "collections": [
+        {
+          "qid": "Q842858",
+          "label": "Nationalmuseum"
+        },
+        {
+          "qid": "Q117293919",
+          "label": "Gustaf Adolf Sparre collection"
+        }
+      ],
+      "creatorQids": [
+        "Q430783"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Apostle Paul (Jan Lievens) - Nationalmuseum - 132629.tif"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:21160685",
+      "reviewedTitle": "Saint Jerome",
+      "originalDecision": "IMPORT",
+      "workQid": "Q46953675",
+      "qidResolved": true,
+      "workTitle": "Saint Jerome",
+      "wikidataInventoryNumbers": [
+        "2002.61"
+      ],
+      "collections": [
+        {
+          "qid": "Q2970522",
+          "label": "Cincinnati Art Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q314814"
+      ],
+      "wikidataWorkImageFileNames": [
+        "'Saint Jerome' by Philippe de Champaigne, c. 1648, Cincinnati Art Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:21885843",
+      "reviewedTitle": "The Annunciation",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20180562",
+      "qidResolved": true,
+      "workTitle": "The Annunciation",
+      "wikidataInventoryNumbers": [
+        "W1899-1-1"
+      ],
+      "collections": [
+        {
+          "qid": "Q510324",
+          "label": "Philadelphia Museum of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q1374436"
+      ],
+      "wikidataWorkImageFileNames": [
+        "The Annunciation, Philadelphia Museum of Art, W1899-1-1-pma, by Henry Ossawa Tanner.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:21976208",
+      "reviewedTitle": "Saint Dominic de Guzmán",
+      "originalDecision": "IMPORT",
+      "workQid": "Q23935055",
+      "qidResolved": true,
+      "workTitle": "Saint Dominic de Guzmán",
+      "wikidataInventoryNumbers": [
+        "113243-000"
+      ],
+      "collections": [
+        {
+          "qid": "Q861252",
+          "label": "Museu Nacional d'Art de Catalunya"
+        }
+      ],
+      "creatorQids": [
+        "Q518898"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Juan de Valdés Leal - Saint Dominic de Guzmán - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:21984822",
+      "reviewedTitle": "Mystic marriage of Saint Catherine",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28777931",
+      "qidResolved": true,
+      "workTitle": "Mystic marriage of Saint Catherine",
+      "wikidataInventoryNumbers": [
+        "PC 99"
+      ],
+      "collections": [
+        {
+          "qid": "Q333906",
+          "label": "Capitoline Museums"
+        }
+      ],
+      "creatorQids": [
+        "Q544264"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Denis Calvaert - Mystic marriage of Saint Catherine - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22002144",
+      "reviewedTitle": "The Resurrection",
+      "originalDecision": "IMPORT",
+      "workQid": "Q23929203",
+      "qidResolved": true,
+      "workTitle": "The Resurrection",
+      "wikidataInventoryNumbers": [
+        "DPG195"
+      ],
+      "collections": [
+        {
+          "qid": "Q1241163",
+          "label": "Dulwich Picture Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q506483"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Ricci, Sebastiano - The Resurrection - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22002234",
+      "reviewedTitle": "St Francis in Meditation",
+      "originalDecision": "IMPORT",
+      "workQid": "Q23928700",
+      "qidResolved": true,
+      "workTitle": "Saint Francis in Meditation",
+      "wikidataInventoryNumbers": [
+        "DPG269"
+      ],
+      "collections": [
+        {
+          "qid": "Q1241163",
+          "label": "Dulwich Picture Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q380553"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Carracci, Lodovico - St Francis in Meditation - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22003615",
+      "reviewedTitle": "The Deposition",
+      "originalDecision": "IMPORT",
+      "workQid": "Q27980484",
+      "qidResolved": true,
+      "workTitle": "The Deposition",
+      "wikidataInventoryNumbers": [
+        "GG_3507"
+      ],
+      "collections": [
+        {
+          "qid": "Q95569",
+          "label": "Kunsthistorisches Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q736065"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Francesco Solimena - The Deposition - Google Art Project.jpg",
+        "Francesco Solimena, , Kunsthistorisches Museum Wien, Gemäldegalerie - Kreuzabnahme - GG 3507 - Kunsthistorisches Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22145562",
+      "reviewedTitle": "The Annunciation",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20354516",
+      "qidResolved": true,
+      "workTitle": "The Annunciation",
+      "wikidataInventoryNumbers": [
+        "KMS7976"
+      ],
+      "collections": [
+        {
+          "qid": "Q671384",
+          "label": "Statens Museum for Kunst"
+        }
+      ],
+      "creatorQids": [
+        "Q736065"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Francesco Solimena - The Annunciation - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [
+        {
+          "museumSourceId": "smk:KMS7976",
+          "museum": "smk",
+          "museumVerifiedAccession": "KMS7976",
+          "wikidataInventory": "KMS7976",
+          "accessionNormalizedMatch": true,
+          "collectionAgrees": true,
+          "collectionEvidence": [
+            {
+              "qid": "Q671384",
+              "label": "Statens Museum for Kunst"
+            }
+          ],
+          "reviewTitle": "Bebudelsen",
+          "museumCanonical383AlreadyLinked": false,
+          "existingCanonicalArtworkId": null,
+          "assessment": "WIKIDATA_COLLECTION_AND_ACCESSION_LEAD",
+          "canonical383NewIdentityLink": false,
+          "photoRightsCertified": false
+        }
+      ],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22151874",
+      "reviewedTitle": "The Translation of Saint Rita of Cascia",
+      "originalDecision": "IMPORT",
+      "workQid": "Q23929162",
+      "qidResolved": true,
+      "workTitle": "The Translation of Saint Rita of Cascia",
+      "wikidataInventoryNumbers": [
+        "DPG263"
+      ],
+      "collections": [
+        {
+          "qid": "Q1241163",
+          "label": "Dulwich Picture Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q41554"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Poussin, Nicolas - The Translation of Saint Rita of Cascia - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22175187",
+      "reviewedTitle": "Bernard Tolomei and the Plague in Siena",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20180077",
+      "qidResolved": true,
+      "workTitle": "Blessed Bernard Tolomei Interceding for the Cessation of the Plague in Siena",
+      "wikidataInventoryNumbers": [
+        "86.PC.463"
+      ],
+      "collections": [
+        {
+          "qid": "Q731126",
+          "label": "J. Paul Getty Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q528620"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Giuseppe Maria Crespi (Italian (Bolognese) - Bernard Tolomei and the Plague in Siena - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22177903",
+      "reviewedTitle": "Christ Cleansing the Temple",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20178182",
+      "qidResolved": true,
+      "workTitle": "Christ Cleansing the Temple",
+      "wikidataInventoryNumbers": [
+        "69.PA.27"
+      ],
+      "collections": [
+        {
+          "qid": "Q731126",
+          "label": "J. Paul Getty Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q472391"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bernardino Mei (Italian (Sienese) - Christ Cleansing the Temple - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22178536",
+      "reviewedTitle": "The Way to Calvary",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20180050",
+      "qidResolved": true,
+      "workTitle": "The Way to Calvary",
+      "wikidataInventoryNumbers": [
+        "83.PC.373"
+      ],
+      "collections": [
+        {
+          "qid": "Q731126",
+          "label": "J. Paul Getty Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q320118"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Domenichino (Domenico Zampieri) - The Way to Calvary - 83.PC.373 - J. Paul Getty Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22181179",
+      "reviewedTitle": "The Angel Taking Leave of Tobit and His Family",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20179717",
+      "qidResolved": true,
+      "workTitle": "The Angel Taking Leave of Tobit and His Family",
+      "wikidataInventoryNumbers": [
+        "72.PA.17"
+      ],
+      "collections": [
+        {
+          "qid": "Q731126",
+          "label": "J. Paul Getty Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q1357477"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jan Victors (Dutch, 1619 - after 1676) - The Angel Taking Leave of Tobit and His Family - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22491766",
+      "reviewedTitle": "Christ and the Samaritan Woman",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28776020",
+      "qidResolved": true,
+      "workTitle": "Christ and the Samaritan Woman",
+      "wikidataInventoryNumbers": [
+        "3823",
+        "975/21"
+      ],
+      "collections": [
+        {
+          "qid": "Q840886",
+          "label": "Museum of Fine Arts, Budapest"
+        },
+        {
+          "qid": "Q1053735",
+          "label": "Munich Central Collecting Point"
+        }
+      ],
+      "creatorQids": [
+        "Q7824"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Annibale Carracci - Christ and the Samaritan Woman - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:22918343",
+      "reviewedTitle": "A Glory of the Virgin with the Archangel Gabriel and Saints Eusebius, Roch, and Sebastian",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20880979",
+      "qidResolved": true,
+      "workTitle": "A Glory of the Virgin with the Archangel Gabriel and Saints Eusebius, Roch, and Sebastian",
+      "wikidataInventoryNumbers": [
+        "M.90.155"
+      ],
+      "collections": [
+        {
+          "qid": "Q1641836",
+          "label": "Los Angeles County Museum of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q506483"
+      ],
+      "wikidataWorkImageFileNames": [
+        "A Glory of the Virgin with the Archangel Gabriel and Saints Eusebius, Roch, and Sebastian LACMA M.90.155.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:23100292",
+      "reviewedTitle": "The Adoration of the Shepherds",
+      "originalDecision": "IMPORT",
+      "workQid": "Q104535318",
+      "qidResolved": true,
+      "workTitle": "Adoration of the Shepherds (Luke 2:16-17)",
+      "wikidataInventoryNumbers": [
+        "M.Ob.1698 MNW"
+      ],
+      "collections": [
+        {
+          "qid": "Q153306",
+          "label": "National Museum in Warsaw"
+        }
+      ],
+      "creatorQids": [
+        "Q261496"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Barent Fabritius - Adoration of the Shepherds (Luke 2-16-17) - M.Ob.1698 MNW - National Museum in Warsaw.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:23602078",
+      "reviewedTitle": "Madonna and Child",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28782681",
+      "qidResolved": true,
+      "workTitle": "Madonna and Child",
+      "wikidataInventoryNumbers": [
+        "841P1"
+      ],
+      "collections": [
+        {
+          "qid": "Q705557",
+          "label": "Art Gallery of South Australia"
+        }
+      ],
+      "creatorQids": [
+        "Q736065"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Francesco Solimena - Madonna and Child - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:23623952",
+      "reviewedTitle": "Denial of Saint Peter \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q104720999",
+      "qidResolved": true,
+      "workTitle": "Denial of Saint Peter",
+      "wikidataInventoryNumbers": [
+        "MNK XII-A-874"
+      ],
+      "collections": [
+        {
+          "qid": "Q195311",
+          "label": "National Museum in Kraków"
+        }
+      ],
+      "creatorQids": [
+        "Q380708"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Baburen Denial of Saint Peter.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:26597275",
+      "reviewedTitle": "French: Le Miracle de saint Just | The Miracle of Saint Justus \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q18822429",
+      "qidResolved": true,
+      "workTitle": "The Miracle of Saint Justus",
+      "wikidataInventoryNumbers": [
+        "Bx E 455",
+        "Bx M 6067"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        },
+        {
+          "qid": "Q954222",
+          "label": "Musée des Beaux-Arts de Bordeaux"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Pierre Paul RUBENS, \"Le Miracle de saint Just.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:27133019",
+      "reviewedTitle": "French: L'adoration des bergers. | L'adoration des bergers.",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117357451",
+      "qidResolved": true,
+      "workTitle": "L'adoration des bergers.",
+      "wikidataInventoryNumbers": [
+        "843.1.1"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q3766396"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Coppola-Adoration des bergers.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:27249173",
+      "reviewedTitle": "Saint François d'Assise en méditation",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117353588",
+      "qidResolved": true,
+      "workTitle": "Saint François d'Assise en méditation",
+      "wikidataInventoryNumbers": [
+        "825.1.129"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q334262"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Guerchin-saint François.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:27291889",
+      "reviewedTitle": "Saint Jean l'évangéliste à Patmos",
+      "originalDecision": "IMPORT",
+      "workQid": "Q115669869",
+      "qidResolved": true,
+      "workTitle": "Saint Jean l'évangéliste à Patmos",
+      "wikidataInventoryNumbers": [
+        "837.1.51"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q271676"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Le-Brun-Saint-Jean.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:27337190",
+      "reviewedTitle": "St Catherine of Alexandria",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117288047",
+      "qidResolved": true,
+      "workTitle": "St Catherine of Alexandria",
+      "wikidataInventoryNumbers": [
+        "892.4.8"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q240483"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Henri Lehmann - St Catherine of Alexandria - WGA12636.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:27911465",
+      "reviewedTitle": "The martyrdom of Saint Catherine of Alexandria",
+      "originalDecision": "IMPORT",
+      "workQid": "Q29272032",
+      "qidResolved": true,
+      "workTitle": "The Martyrdom of S. Catherine",
+      "wikidataInventoryNumbers": [
+        "D 65 8"
+      ],
+      "collections": [
+        {
+          "qid": "Q2628596",
+          "label": "Palais des Beaux-Arts de Lille"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Lille Pdba rubens catherine.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:29825829",
+      "reviewedTitle": "San Agustín entre Cristo y la Virgen",
+      "originalDecision": "IMPORT",
+      "workQid": "Q111342312",
+      "qidResolved": true,
+      "workTitle": "Saint Augustine with Christ and Virgin Mary",
+      "wikidataInventoryNumbers": [
+        "0685"
+      ],
+      "collections": [
+        {
+          "qid": "Q1322403",
+          "label": "Royal Academy of Fine Arts of San Fernando"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Pedro Pablo Rubens - San Agustín entre Cristo y la Virgen - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:29858581",
+      "reviewedTitle": "Saint Justa and Saint Rufina",
+      "originalDecision": "IMPORT",
+      "workQid": "Q127950268",
+      "qidResolved": true,
+      "workTitle": "Saint Justa and Saint Rufina",
+      "wikidataInventoryNumbers": [
+        "CE7125"
+      ],
+      "collections": [
+        {
+          "qid": "Q6974501",
+          "label": "Museum of Romanticism"
+        }
+      ],
+      "creatorQids": [
+        "Q593642"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Antonio Mª Esquivel - Saint Justa and Saint Rufina - Google Art Project.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:30161777",
+      "reviewedTitle": "Dutch: De H. Bonaventura lezend in een boek | Saint Bonaventura reading in a book",
+      "originalDecision": "IMPORT",
+      "workQid": "Q73122306",
+      "qidResolved": true,
+      "workTitle": "Saint Bonaventura reading in a book",
+      "wikidataInventoryNumbers": [
+        "P 71"
+      ],
+      "collections": [
+        {
+          "qid": "Q2628596",
+          "label": "Palais des Beaux-Arts de Lille"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Lille PdBA rubens st bonaventure.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:30774976",
+      "reviewedTitle": "Saint Michael expelling Lucifer and the Rebellious Angels",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21711519",
+      "qidResolved": true,
+      "workTitle": "Saint Michael expelling Lucifer and the Rebellious Angels",
+      "wikidataInventoryNumbers": [
+        "348 (1930.98)"
+      ],
+      "collections": [
+        {
+          "qid": "Q176251",
+          "label": "Thyssen-Bornemisza Museum"
+        }
+      ],
+      "creatorQids": [],
+      "wikidataWorkImageFileNames": [
+        "Peter Paul Rubens - Saint Michael expelling Lucifer and the Rebellious Angels, 1622.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:31448209",
+      "reviewedTitle": "Mary Magdalen in extasy",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119820313",
+      "qidResolved": true,
+      "workTitle": "Mary Magdalen in extasy",
+      "wikidataInventoryNumbers": [
+        "BA 90"
+      ],
+      "collections": [
+        {
+          "qid": "Q83013",
+          "label": "Musée des beaux-arts de Marseille"
+        }
+      ],
+      "creatorQids": [
+        "Q2701472"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Ludovicus Finson - Mary Magdalen in extasy.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:31507039",
+      "reviewedTitle": "king David.",
+      "originalDecision": "IMPORT",
+      "workQid": "Q87712838",
+      "qidResolved": true,
+      "workTitle": "King David",
+      "wikidataInventoryNumbers": [
+        "BA 108"
+      ],
+      "collections": [
+        {
+          "qid": "Q83013",
+          "label": "Musée des beaux-arts de Marseille"
+        }
+      ],
+      "creatorQids": [
+        "Q949627"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Longchamp029b Som David.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:31584203",
+      "reviewedTitle": "Abraham sacrifices the ram instead of Isaac, the Lord renews his promise to Abraham (Genesis 22:13-18)",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117226105",
+      "qidResolved": true,
+      "workTitle": "Abraham sacrifices the ram instead of Isaac, the Lord renews his promise to Abraham (Genesis 22:13-18)",
+      "wikidataInventoryNumbers": [
+        "GG 242"
+      ],
+      "collections": [
+        {
+          "qid": "Q678082",
+          "label": "Herzog Anton Ulrich Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q430783"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Abraham sacrifices the ram instead of Isaac, by Jan Lievens.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:31702502",
+      "reviewedTitle": "El Nacimiento de la Virgen",
+      "originalDecision": "IMPORT",
+      "workQid": "Q27748993",
+      "qidResolved": true,
+      "workTitle": "The Birth of the Virgin",
+      "wikidataInventoryNumbers": [
+        "P007854"
+      ],
+      "collections": [
+        {
+          "qid": "Q160112",
+          "label": "Museo del Prado"
+        }
+      ],
+      "creatorQids": [
+        "Q625228"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Erasmus Quellinus (II) - El Nacimiento de la Virgen, 1650-1660.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:31782068",
+      "reviewedTitle": "The Adoration of the Shepherds",
+      "originalDecision": "IMPORT",
+      "workQid": "Q26705664",
+      "qidResolved": true,
+      "workTitle": "The Adoration of the Shepherds",
+      "wikidataInventoryNumbers": [
+        "NG6270"
+      ],
+      "collections": [
+        {
+          "qid": "Q180788",
+          "label": "National Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q109061"
+      ],
+      "wikidataWorkImageFileNames": [
+        "The Adoration of the Shepherds by Guido Reni.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:32806008",
+      "reviewedTitle": "Christ and Canaanite woman",
+      "originalDecision": "IMPORT_WITH_CORRECTIONS",
+      "workQid": "Q19966561",
+      "qidResolved": true,
+      "workTitle": "Christ and the Canaanite Woman",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q21194396",
+          "label": "Palazzo del Comune"
+        }
+      ],
+      "creatorQids": [
+        "Q7824"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Annibale Carracci, Cristo e la Cananea, 1595, Parma.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:33831598",
+      "reviewedTitle": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q30335941",
+      "qidResolved": true,
+      "workTitle": "Crucifixion of Christ",
+      "wikidataInventoryNumbers": [
+        "364"
+      ],
+      "collections": [
+        {
+          "qid": "Q165631",
+          "label": "Gemäldegalerie Berlin"
+        }
+      ],
+      "creatorQids": [
+        "Q7824"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Annibale Carracci Crocifissione Berlino.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:34140055",
+      "reviewedTitle": "Adoration of the Magi",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21730469",
+      "qidResolved": true,
+      "workTitle": "Adoration of the Magi",
+      "wikidataInventoryNumbers": [
+        "ГЭ-494"
+      ],
+      "collections": [
+        {
+          "qid": "Q132783",
+          "label": "Hermitage Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "'Adoration of the Magi', workshop of Peter Paul Rubens, The Hermitage.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:34312593",
+      "reviewedTitle": "Abraham Leaves Harran",
+      "originalDecision": "IMPORT",
+      "workQid": "Q17334268",
+      "qidResolved": true,
+      "workTitle": "Abraham leaves Haran for Egypt",
+      "wikidataInventoryNumbers": [
+        "SK-A-3377"
+      ],
+      "collections": [
+        {
+          "qid": "Q190804",
+          "label": "Rijksmuseum"
+        }
+      ],
+      "creatorQids": [
+        "Q705079"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Francesco Bassano - Abraham vertrekt uit Haran.jpg"
+      ],
+      "museumAccessionCandidates": [
+        {
+          "museumSourceId": "rijks:20026562",
+          "museum": "rijks",
+          "museumVerifiedAccession": "SK-A-3377",
+          "wikidataInventory": "SK-A-3377",
+          "accessionNormalizedMatch": true,
+          "collectionAgrees": true,
+          "collectionEvidence": [
+            {
+              "qid": "Q190804",
+              "label": "Rijksmuseum"
+            }
+          ],
+          "reviewTitle": "Abraham Leaves Haran",
+          "museumCanonical383AlreadyLinked": false,
+          "existingCanonicalArtworkId": null,
+          "assessment": "WIKIDATA_COLLECTION_AND_ACCESSION_LEAD",
+          "canonical383NewIdentityLink": false,
+          "photoRightsCertified": false
+        }
+      ],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:34313474",
+      "reviewedTitle": "The Adoration of the Kings \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q17338549",
+      "qidResolved": true,
+      "workTitle": "The adoration of the magi",
+      "wikidataInventoryNumbers": [
+        "SK-A-4188"
+      ],
+      "collections": [
+        {
+          "qid": "Q190804",
+          "label": "Rijksmuseum"
+        }
+      ],
+      "creatorQids": [
+        "Q437233"
+      ],
+      "wikidataWorkImageFileNames": [
+        "De aanbidding der koningen Rijksmuseum SK-A-4188.jpeg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:34908869",
+      "reviewedTitle": "La conversion de saint Paul",
+      "originalDecision": "IMPORT",
+      "workQid": "Q111748099",
+      "qidResolved": true,
+      "workTitle": "The conversion of Paul",
+      "wikidataInventoryNumbers": [
+        "RH.LB 2012 005"
+      ],
+      "collections": [
+        {
+          "qid": "Q775644",
+          "label": "Rubenshuis"
+        }
+      ],
+      "creatorQids": [],
+      "wikidataWorkImageFileNames": [
+        "Rubens-Rubenshuis-saint Paul.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:35629944",
+      "reviewedTitle": "Pietà",
+      "originalDecision": "IMPORT",
+      "workQid": "Q19905177",
+      "qidResolved": true,
+      "workTitle": "The Lamentation",
+      "wikidataInventoryNumbers": [
+        "2008.72"
+      ],
+      "collections": [
+        {
+          "qid": "Q160236",
+          "label": "Metropolitan Museum of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q320118"
+      ],
+      "wikidataWorkImageFileNames": [
+        "The Lamentation MET DP159526.jpg"
+      ],
+      "museumAccessionCandidates": [
+        {
+          "museumSourceId": "met:439553",
+          "museum": "met",
+          "museumVerifiedAccession": "2008.72",
+          "wikidataInventory": "2008.72",
+          "accessionNormalizedMatch": true,
+          "collectionAgrees": true,
+          "collectionEvidence": [
+            {
+              "qid": "Q160236",
+              "label": "Metropolitan Museum of Art"
+            }
+          ],
+          "reviewTitle": "The Lamentation",
+          "museumCanonical383AlreadyLinked": false,
+          "existingCanonicalArtworkId": null,
+          "assessment": "WIKIDATA_COLLECTION_AND_ACCESSION_LEAD",
+          "canonical383NewIdentityLink": false,
+          "photoRightsCertified": false
+        }
+      ],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:35803726",
+      "reviewedTitle": "St. Peter",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21722721",
+      "qidResolved": true,
+      "workTitle": "St Peter",
+      "wikidataInventoryNumbers": [
+        "ГЭ-3392"
+      ],
+      "collections": [
+        {
+          "qid": "Q132783",
+          "label": "Hermitage Museum"
+        },
+        {
+          "qid": "Q66000362",
+          "label": "Pyotr Semyonov-Tyan-Shansky collection"
+        }
+      ],
+      "creatorQids": [
+        "Q775008"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Simon de Vos - St. Peter.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:35965504",
+      "reviewedTitle": "Christ and the Adulterous Woman",
+      "originalDecision": "IMPORT",
+      "workQid": "Q129257420",
+      "qidResolved": true,
+      "workTitle": "Christ and the Adulterous Woman",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q938154",
+          "label": "St Bavo's Cathedral"
+        }
+      ],
+      "creatorQids": [
+        "Q2750021"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Antoon van den Heuvel - Christ and the Adulterous Woman.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:36083223",
+      "reviewedTitle": "Good Samaritan \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q105465424",
+      "qidResolved": true,
+      "workTitle": "Good Samaritan",
+      "wikidataInventoryNumbers": [
+        "1839.2"
+      ],
+      "collections": [
+        {
+          "qid": "Q3086934",
+          "label": "Musée des Beaux-Arts de Rouen"
+        }
+      ],
+      "creatorQids": [
+        "Q332494"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Rouen MdBA giordano samaritain.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:36083702",
+      "reviewedTitle": "French: Saint Sébastien soigné par Irène | Saint Sebastian tended by Saint Irene",
+      "originalDecision": "IMPORT",
+      "workQid": "Q105444136",
+      "qidResolved": true,
+      "workTitle": "Saint Sebastian tended by Saint Irene",
+      "wikidataInventoryNumbers": [
+        "1853.6"
+      ],
+      "collections": [
+        {
+          "qid": "Q3086934",
+          "label": "Musée des Beaux-Arts de Rouen"
+        }
+      ],
+      "creatorQids": [
+        "Q2979648"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Nicolas Régnier - Saint Sébastien soigné par Irène et sa servante - Rouen.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:36519834",
+      "reviewedTitle": "The Doubting Thomas",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119805091",
+      "qidResolved": true,
+      "workTitle": "The Doubting Thomas",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q330139"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Abraham Janssens - The Doubting Thomas.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:38035750",
+      "reviewedTitle": "St. John the Baptist Preaching",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20880999",
+      "qidResolved": true,
+      "workTitle": "St. John the Baptist Preaching",
+      "wikidataInventoryNumbers": [
+        "90.2"
+      ],
+      "collections": [
+        {
+          "qid": "Q1641836",
+          "label": "Los Angeles County Museum of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q332494"
+      ],
+      "wikidataWorkImageFileNames": [
+        "'Saint John the Baptist Preaching' by Luca Giordano, LACMA.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:40907107",
+      "reviewedTitle": "Adoration of the Magi",
+      "originalDecision": "IMPORT",
+      "workQid": "Q120741152",
+      "qidResolved": true,
+      "workTitle": "Anbetung der Könige",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q982384"
+      ],
+      "wikidataWorkImageFileNames": [
+        "'The Adoration of the Magi' by Massimo Stanzione.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:41102135",
+      "reviewedTitle": "Christ and the Woman of Samaria",
+      "originalDecision": "IMPORT",
+      "workQid": "Q75868742",
+      "qidResolved": true,
+      "workTitle": "Christ and the Woman of Samaria",
+      "wikidataInventoryNumbers": [
+        "52.9.127"
+      ],
+      "collections": [
+        {
+          "qid": "Q1459878",
+          "label": "North Carolina Museum of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q360010"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Christ and the Woman of Samaria - Pierre Mignard - Google Cultural Institute.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:44750556",
+      "reviewedTitle": "Christ in the Garden of Gethsemane",
+      "originalDecision": "IMPORT",
+      "workQid": "Q122228408",
+      "qidResolved": true,
+      "workTitle": "Christ in the Garden of Gethsemane",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q169542",
+          "label": "Hamburger Kunsthalle"
+        }
+      ],
+      "creatorQids": [
+        "Q186202"
+      ],
+      "wikidataWorkImageFileNames": [
+        "1753 Tiepolo Christus in Gethsemane anagoria.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:45227477",
+      "reviewedTitle": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "originalDecision": "IMPORT",
+      "workQid": "Q22329683",
+      "qidResolved": true,
+      "workTitle": "Crucifixion with the Virgin Mary, St John and St Mary Magdalene",
+      "wikidataInventoryNumbers": [
+        "INV 1766",
+        "MR 988"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q150679"
+      ],
+      "wikidataWorkImageFileNames": [
+        "CrucifixionVanDyckLouvre.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:45590714",
+      "reviewedTitle": "The lamentation over the dead Christ",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20891048",
+      "qidResolved": true,
+      "workTitle": "The Lamentation",
+      "wikidataInventoryNumbers": [
+        "66.47"
+      ],
+      "collections": [
+        {
+          "qid": "Q1700481",
+          "label": "Minneapolis Institute of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q507279"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Alessandro Turchi (called Orbetto) - The Lamentation - 66.47 - Minneapolis Institute of Arts.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:46455862",
+      "reviewedTitle": "Lille PdBA Lievens st francois",
+      "originalDecision": "IMPORT",
+      "workQid": "Q72603553",
+      "qidResolved": true,
+      "workTitle": "Saint François en prières",
+      "wikidataInventoryNumbers": [
+        "P 1930"
+      ],
+      "collections": [
+        {
+          "qid": "Q2628596",
+          "label": "Palais des Beaux-Arts de Lille"
+        }
+      ],
+      "creatorQids": [
+        "Q430783"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Lille PdBA Lievens st francois.JPG"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:46751791",
+      "reviewedTitle": "Claudio Coello-la virgen el niño virtudes teologales-prado",
+      "originalDecision": "IMPORT",
+      "workQid": "Q27752013",
+      "qidResolved": true,
+      "workTitle": "The Virgin and Child between the Theological Virtues and Saints",
+      "wikidataInventoryNumbers": [
+        "P000660"
+      ],
+      "collections": [
+        {
+          "qid": "Q160112",
+          "label": "Museo del Prado"
+        }
+      ],
+      "creatorQids": [
+        "Q332466"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Claudio Coello-la virgen el niño virtudes teologales-prado.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:47476137",
+      "reviewedTitle": "St. Sebastian",
+      "originalDecision": "IMPORT",
+      "workQid": "Q112861658",
+      "qidResolved": true,
+      "workTitle": "St. Sebastian",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q442484"
+      ],
+      "wikidataWorkImageFileNames": [
+        "'St. Sebastian' by Cornelis van Haarlem, c. 1591.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:48327231",
+      "reviewedTitle": "Christ and the Samaritan Woman",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20182670",
+      "qidResolved": true,
+      "workTitle": "Christ and the Samaritan Woman",
+      "wikidataInventoryNumbers": [
+        "73.PA.71"
+      ],
+      "collections": [
+        {
+          "qid": "Q731126",
+          "label": "J. Paul Getty Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q516941"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Alessandro Magnasco - Christ and the Samaritan Woman - 73.PA.71 - J. Paul Getty Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:48327311",
+      "reviewedTitle": "The Mass of Saint Gregory the Great",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20181364",
+      "qidResolved": true,
+      "workTitle": "The Mass of Saint Gregory the Great",
+      "wikidataInventoryNumbers": [
+        "69.PB.11"
+      ],
+      "collections": [
+        {
+          "qid": "Q731126",
+          "label": "J. Paul Getty Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q367858"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Adriaen Ysenbrandt - The Mass of Saint Gregory the Great - 69.PB.11 - J. Paul Getty Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:48454996",
+      "reviewedTitle": "Risen Christ",
+      "originalDecision": "IMPORT",
+      "workQid": "Q22945654",
+      "qidResolved": true,
+      "workTitle": "Risen Christ",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q6974470",
+          "label": "MUŻA"
+        }
+      ],
+      "creatorQids": [
+        "Q109061"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Risen Christ - Guido Reni.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:48577448",
+      "reviewedTitle": "The Last Supper",
+      "originalDecision": "IMPORT",
+      "workQid": "Q77978424",
+      "qidResolved": true,
+      "workTitle": "The Last Supper",
+      "wikidataInventoryNumbers": [
+        "NGI.67"
+      ],
+      "collections": [
+        {
+          "qid": "Q2018379",
+          "label": "National Gallery of Ireland"
+        }
+      ],
+      "creatorQids": [
+        "Q447730"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Ultima Cena - Lanfranco.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:50061474",
+      "reviewedTitle": "Jesus Being Tempted by the Pharisees.",
+      "originalDecision": "IMPORT",
+      "workQid": "Q116939680",
+      "qidResolved": true,
+      "workTitle": "Jesus Being Tempted by the Pharisees.",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q363823"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Eckersberg, CW - Jesus fristes af farisæerne - 1843.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:50072987",
+      "reviewedTitle": "Jesus in Emmaus.",
+      "originalDecision": "IMPORT",
+      "workQid": "Q116939774",
+      "qidResolved": true,
+      "workTitle": "Jesus in Emmaus.",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q363823"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Eckersberg, CW - Kristus i Emmaus - 1833.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:52586101",
+      "reviewedTitle": "Judith and Holofernes",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117468510",
+      "qidResolved": true,
+      "workTitle": "Judith and Holofernes",
+      "wikidataInventoryNumbers": [
+        "2020.34.1"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q3071917"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Giuditta e Oloferne - Vitale.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:52809691",
+      "reviewedTitle": "Adoration of the Magi .",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119807537",
+      "qidResolved": true,
+      "workTitle": "Adoration of the Magi.",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q270658"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jordaens Adoration of the Magi.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:54677503",
+      "reviewedTitle": "Madonna and Child with St Louis of Toulouse",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28101268",
+      "qidResolved": true,
+      "workTitle": "Madonna and Child with St Louis of Toulouse",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q335022"
+      ],
+      "wikidataWorkImageFileNames": [
+        "David Teniers - Madonna and Child with St Louis of Toulouse 292N08715 5WW4T.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:56247842",
+      "reviewedTitle": "Le Mariage de sainte Catherine",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117226959",
+      "qidResolved": true,
+      "workTitle": "Le  Mariage  de  sainte  Catherine",
+      "wikidataInventoryNumbers": [
+        "837.1.69"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q9440"
+      ],
+      "wikidataWorkImageFileNames": [
+        "PeinturesMuséeFabre041.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:56247851",
+      "reviewedTitle": "Christ healing the sick on the shore of the Sea of Galilee",
+      "originalDecision": "IMPORT",
+      "workQid": "Q35706153",
+      "qidResolved": true,
+      "workTitle": "Christ healing the sick on the shore of the Sea of Galilee",
+      "wikidataInventoryNumbers": [
+        "2012.19.12"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q65398"
+      ],
+      "wikidataWorkImageFileNames": [
+        "PeinturesMuséeFabre048.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:56247854",
+      "reviewedTitle": "French: Sainte Marie l'Égyptienne | Saint Mary of Egypt",
+      "originalDecision": "IMPORT",
+      "workQid": "Q15917669",
+      "qidResolved": true,
+      "workTitle": "Saint Mary of Egypt",
+      "wikidataInventoryNumbers": [
+        "837.1.27"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q297838"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Ribera-marie-égyptienne-musée-Fabre.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:56459032",
+      "reviewedTitle": "Judith with the head of Holofernes",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28829844",
+      "qidResolved": true,
+      "workTitle": "Judith with the Head of Holophernes",
+      "wikidataInventoryNumbers": [
+        "M.Ob.972",
+        "M.Ob.972 MNW"
+      ],
+      "collections": [
+        {
+          "qid": "Q153306",
+          "label": "National Museum in Warsaw"
+        }
+      ],
+      "creatorQids": [
+        "Q951849"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Nuvolone Judith with the head of Holofernes.jpg",
+        "Carlo Francesco Nuvolone - Judith with the head of Holofernes - M.Ob.972 - National Museum in Warsaw.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:56890177",
+      "reviewedTitle": "Adoration of the Magi",
+      "originalDecision": "IMPORT",
+      "workQid": "Q131405961",
+      "qidResolved": true,
+      "workTitle": "Adoration of the Magi",
+      "wikidataInventoryNumbers": [
+        "RF 1982 17",
+        "L 82.2"
+      ],
+      "collections": [
+        {
+          "qid": "Q83013",
+          "label": "Musée des beaux-arts de Marseille"
+        }
+      ],
+      "creatorQids": [
+        "Q50278363"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Faudran Jean-Baptiste - Adoration des mages.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:57025090",
+      "reviewedTitle": "Saint Jerome",
+      "originalDecision": "IMPORT",
+      "workQid": "Q26699376",
+      "qidResolved": true,
+      "workTitle": "Saint Jerome",
+      "wikidataInventoryNumbers": [
+        "NG11"
+      ],
+      "collections": [
+        {
+          "qid": "Q180788",
+          "label": "National Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q109061"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Guido Reni, Saint Jerome.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:60643816",
+      "reviewedTitle": "Apparition of the Virgin of the Pilar",
+      "originalDecision": "IMPORT",
+      "workQid": "Q33258904",
+      "qidResolved": true,
+      "workTitle": "Apparition of the Virgin of the Pilar",
+      "wikidataInventoryNumbers": [
+        "266145-000"
+      ],
+      "collections": [
+        {
+          "qid": "Q861252",
+          "label": "Museu Nacional d'Art de Catalunya"
+        }
+      ],
+      "creatorQids": [
+        "Q5432"
+      ],
+      "wikidataWorkImageFileNames": [
+        "L'Aparició de la Mare de Déu del Pilar, Francisco de Goya, 1775-1785.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:65493548",
+      "reviewedTitle": "The coronation of the Virgin",
+      "originalDecision": "IMPORT",
+      "workQid": "Q47414075",
+      "qidResolved": true,
+      "workTitle": "Coronation of the Virgin",
+      "wikidataInventoryNumbers": [
+        "L-R 81.2021"
+      ],
+      "collections": [
+        {
+          "qid": "Q49133",
+          "label": "Museum of Fine Arts Boston"
+        },
+        {
+          "qid": "Q47404068",
+          "label": "Susan and Matthew Weatherbie Collection"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "13. Coronation of the Virgin Peter Paul Rubens.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:65644346",
+      "reviewedTitle": "St Jerome in the Desert Listening to the Trumpet of Judgment",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117292341",
+      "qidResolved": true,
+      "workTitle": "St Jerome in the Desert Listening to the Trumpet of Judgment",
+      "wikidataInventoryNumbers": [
+        "835.4.1"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q718975"
+      ],
+      "wikidataWorkImageFileNames": [
+        "PeinturesMuséeFabre113 Vincent St Jérôme 1777.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:65762009",
+      "reviewedTitle": "Jacob Seeking the Forgiveness of Esau",
+      "originalDecision": "IMPORT",
+      "workQid": "Q27895721",
+      "qidResolved": true,
+      "workTitle": "Jacob Seeking the Forgiveness of Esau",
+      "wikidataInventoryNumbers": [
+        "79.330"
+      ],
+      "collections": [
+        {
+          "qid": "Q1117704",
+          "label": "Musée d'Art d'Indianapolis"
+        }
+      ],
+      "creatorQids": [
+        "Q1357477"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jan Victors - Jacob Seeking the Forgiveness of Esau - 79.330 - Indianapolis Museum of Art.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:65788956",
+      "reviewedTitle": "Hagar to Abraham with Sarah",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117307743",
+      "qidResolved": true,
+      "workTitle": "Hagar to Abraham with Sarah",
+      "wikidataInventoryNumbers": [
+        "2015.21.1"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q647934"
+      ],
+      "wikidataWorkImageFileNames": [
+        "PeinturesMuséeFabre157 Vien Agar1749.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:65879554",
+      "reviewedTitle": "Augustins - Le Martyre de Saint André - Sébastien Bourdon 2004 1 52",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21764211",
+      "qidResolved": true,
+      "workTitle": "Martyrdom of Saint Andrew",
+      "wikidataInventoryNumbers": [
+        "2004 1 52"
+      ],
+      "collections": [
+        {
+          "qid": "Q2711480",
+          "label": "Musée des Augustins"
+        }
+      ],
+      "creatorQids": [
+        "Q553795"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Augustins - Le Martyre de Saint André - Sébastien Bourdon 2004 1 52.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:66304372",
+      "reviewedTitle": "Christus und der Zinsgroschen",
+      "originalDecision": "IMPORT",
+      "workQid": "Q30094545",
+      "qidResolved": true,
+      "workTitle": "Christ and the Moneylender",
+      "wikidataInventoryNumbers": [
+        "7233"
+      ],
+      "collections": [
+        {
+          "qid": "Q812285",
+          "label": "Bavarian State Painting Collections"
+        }
+      ],
+      "creatorQids": [
+        "Q334262"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Guercino (Giovanni Francesco Barbie (Art des) - Christus und der Zinsgroschen - 7233 - Bavarian State Painting Collections.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:66770415",
+      "reviewedTitle": "Longchamp117 David St Roch 1780",
+      "originalDecision": "IMPORT",
+      "workQid": "Q3464047",
+      "qidResolved": true,
+      "workTitle": "Saint Roch interceding with the Virgin",
+      "wikidataInventoryNumbers": [
+        "D 2009.0.24"
+      ],
+      "collections": [
+        {
+          "qid": "Q83013",
+          "label": "Musée des beaux-arts de Marseille"
+        }
+      ],
+      "creatorQids": [
+        "Q83155"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jacques-Louis David - St Roch Asking the Virgin Mary to Heal Victims of the Plague - WGA06045.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:67344015",
+      "reviewedTitle": "Jezus, Maria en Jozef in de werkplaats",
+      "originalDecision": "IMPORT",
+      "workQid": "Q19928459",
+      "qidResolved": true,
+      "workTitle": "Jesus, Mary and Joseph in the workshop",
+      "wikidataInventoryNumbers": [
+        "2901 (OK)"
+      ],
+      "collections": [
+        {
+          "qid": "Q679527",
+          "label": "Museum Boijmans Van Beuningen"
+        }
+      ],
+      "creatorQids": [
+        "Q528620"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Giuseppe Maria Crespi - Jezus, Maria en Jozef in de werkplaats - 2901 (OK) - Museum Boijmans Van Beuningen.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:67344360",
+      "reviewedTitle": "De graflegging van Christus",
+      "originalDecision": "IMPORT",
+      "workQid": "Q19927996",
+      "qidResolved": true,
+      "workTitle": "The entombment of Christ",
+      "wikidataInventoryNumbers": [
+        "1967 (OK)"
+      ],
+      "collections": [
+        {
+          "qid": "Q679527",
+          "label": "Museum Boijmans Van Beuningen"
+        }
+      ],
+      "creatorQids": [
+        "Q368053"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Adriaen van der Werff - De graflegging van Christus - 1967 (OK) - Museum Boijmans Van Beuningen.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:67344367",
+      "reviewedTitle": "Heilige Hiëronymus, boete doend",
+      "originalDecision": "IMPORT",
+      "workQid": "Q19925185",
+      "qidResolved": true,
+      "workTitle": "Saint Jerome",
+      "wikidataInventoryNumbers": [
+        "2435 (OK)"
+      ],
+      "collections": [
+        {
+          "qid": "Q679527",
+          "label": "Museum Boijmans Van Beuningen"
+        }
+      ],
+      "creatorQids": [
+        "Q437233"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hendrick ter Brugghen - Heilige Hiëronymus, boete doend - 2435 (OK) - Museum Boijmans Van Beuningen.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:69998866",
+      "reviewedTitle": "The Finding of Moses",
+      "originalDecision": "IMPORT",
+      "workQid": "Q125936473",
+      "qidResolved": true,
+      "workTitle": "The Finding of Moses",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q2848156"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Andries Cornelis Lens - The finding of Moses.jpeg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:71404328",
+      "reviewedTitle": "French: Jésus Christ servi par les anges",
+      "originalDecision": "IMPORT",
+      "workQid": "Q106306692",
+      "qidResolved": true,
+      "workTitle": "Jésus-Christ servi par les anges",
+      "wikidataInventoryNumbers": [
+        "MG 2"
+      ],
+      "collections": [
+        {
+          "qid": "Q1952944",
+          "label": "Museum of Grenoble"
+        },
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q358147"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Francesco Albani - Jésus-Christ servi par les anges.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:72332251",
+      "reviewedTitle": "The four evangelists",
+      "originalDecision": "IMPORT",
+      "workQid": "Q57217784",
+      "qidResolved": true,
+      "workTitle": "The four Evangelists",
+      "wikidataInventoryNumbers": [
+        "GK I 7580"
+      ],
+      "collections": [
+        {
+          "qid": "Q451555",
+          "label": "Sanssouci Picture Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Peter Paul Rubens - The four Evangelists (1614).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:72899640",
+      "reviewedTitle": "Peter Paul Rubens (1577-1640) Het dispuut - Sint-Pauluskerk (Antwerpen) 19-08-2018",
+      "originalDecision": "IMPORT",
+      "workQid": "Q109266105",
+      "qidResolved": true,
+      "workTitle": "Real Presence in the Holy Sacrament",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q2272511",
+          "label": "St. Paul's Church"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Peter Paul Rubens (1577-1640) Het dispuut - Sint-Pauluskerk (Antwerpen) 19-08-2018.jpg",
+        "Disputa over het Heilig Sacrament, Peter Paul Rubens, 17de eeuw, Sint-Pauluskerk Antwerpen.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:73513075",
+      "reviewedTitle": "French: Le Christ au désert servi par les anges",
+      "originalDecision": "IMPORT",
+      "workQid": "Q106594995",
+      "qidResolved": true,
+      "workTitle": "Le Christ au désert servi par les anges",
+      "wikidataInventoryNumbers": [
+        "MG 171"
+      ],
+      "collections": [
+        {
+          "qid": "Q1952944",
+          "label": "Museum of Grenoble"
+        }
+      ],
+      "creatorQids": [
+        "Q1066580"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Charles de La Fosse - Christ au désert.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74082929",
+      "reviewedTitle": "The Denial of Saint Peter \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q17152781",
+      "qidResolved": true,
+      "workTitle": "The Denial of Saint Peter",
+      "wikidataInventoryNumbers": [
+        "1969.3"
+      ],
+      "collections": [
+        {
+          "qid": "Q239303",
+          "label": "Art Institute of Chicago"
+        }
+      ],
+      "creatorQids": [
+        "Q437233"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hendrick Terbrugghen - The Denial of Saint Peter - 1969.3 - Art Institute of Chicago.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74171477",
+      "reviewedTitle": "The Vision of Saint Francis \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20274214",
+      "qidResolved": true,
+      "workTitle": "The Vision of Saint Francis",
+      "wikidataInventoryNumbers": [
+        "2010.274"
+      ],
+      "collections": [
+        {
+          "qid": "Q239303",
+          "label": "Art Institute of Chicago"
+        }
+      ],
+      "creatorQids": [
+        "Q380553"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Lodovico Carracci - The Vision of Saint Francis - 2010.274 - Art Institute of Chicago.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74171702",
+      "reviewedTitle": "The Annunciation \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20264228",
+      "qidResolved": true,
+      "workTitle": "The Annunciation",
+      "wikidataInventoryNumbers": [
+        "1971.876"
+      ],
+      "collections": [
+        {
+          "qid": "Q239303",
+          "label": "Art Institute of Chicago"
+        }
+      ],
+      "creatorQids": [
+        "Q1442507"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Frans Francken, II - The Annunciation - 1971.876 - Art Institute of Chicago.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74197376",
+      "reviewedTitle": "Christ Receiving the Children \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20268027",
+      "qidResolved": true,
+      "workTitle": "Christ Receiving the Children",
+      "wikidataInventoryNumbers": [
+        "1959.57"
+      ],
+      "collections": [
+        {
+          "qid": "Q239303",
+          "label": "Art Institute of Chicago"
+        }
+      ],
+      "creatorQids": [
+        "Q553795"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Sébastien Bourdon - Christ Receiving the Children - 1959.57 - Art Institute of Chicago.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74197382",
+      "reviewedTitle": "The Wedding at Cana \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20273974",
+      "qidResolved": true,
+      "workTitle": "The Wedding at Cana",
+      "wikidataInventoryNumbers": [
+        "1956.129"
+      ],
+      "collections": [
+        {
+          "qid": "Q239303",
+          "label": "Art Institute of Chicago"
+        }
+      ],
+      "creatorQids": [
+        "Q528620"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Giuseppe Maria Crespi - The Wedding at Cana - 1956.129 - Art Institute of Chicago.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74405911",
+      "reviewedTitle": "The Stigmatization of Saint Francis \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28093481",
+      "qidResolved": true,
+      "workTitle": "The Stigmatization of Saint Francis",
+      "wikidataInventoryNumbers": [
+        "BF.2008.11"
+      ],
+      "collections": [
+        {
+          "qid": "Q1565911",
+          "label": "Museum of Fine Arts, Houston"
+        }
+      ],
+      "creatorQids": [
+        "Q367360"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Orazio Gentileschi - The Stigmatization of Saint Francis - Google Art Project.jpg",
+        "Orazio Gentileschi - The Stigmatization of Saint Francis - BF.2008.11 - Museum of Fine Arts.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74414199",
+      "reviewedTitle": "Saint Constantia's Vision before the Tomb of Saints Agnes and Emerentiana \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28039247",
+      "qidResolved": true,
+      "workTitle": "Saint Constantia's Vision before the Tomb of Saints Agnes and Emerentiana",
+      "wikidataInventoryNumbers": [
+        "BF.1982.13"
+      ],
+      "collections": [
+        {
+          "qid": "Q1565911",
+          "label": "Museum of Fine Arts, Houston"
+        }
+      ],
+      "creatorQids": [
+        "Q333323"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Pietro da Cortona - Saint Constantia's Vision before the Tomb of Saints Agnes and Emerentiana - Google Art Project.jpg",
+        "Pietro da Cortona - Saint Constantia's Vision before the Tomb of Saints Agnes and Emerentiana - BF.1982.13 - Museum of Fine Arts.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74425088",
+      "reviewedTitle": "Saint Paul Writing His Epistles \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28038961",
+      "qidResolved": true,
+      "workTitle": "Saint Paul Writing His Epistles",
+      "wikidataInventoryNumbers": [
+        "BF.1991.4"
+      ],
+      "collections": [
+        {
+          "qid": "Q1565911",
+          "label": "Museum of Fine Arts, Houston"
+        }
+      ],
+      "creatorQids": [
+        "Q1337275"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Probably Valentin de Boulogne - Saint Paul Writing His Epistles - Google Art Project.jpg",
+        "Valentin de Boulogne - Saint Paul Writing His Epistles - BF.1991.4 - Museum of Fine Arts.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74433871",
+      "reviewedTitle": "Laban Searching the Belongings of Jacob",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28041870",
+      "qidResolved": true,
+      "workTitle": "Laban Searching the Belongings of Jacob",
+      "wikidataInventoryNumbers": [
+        "80.16"
+      ],
+      "collections": [
+        {
+          "qid": "Q1565911",
+          "label": "Museum of Fine Arts, Houston"
+        }
+      ],
+      "creatorQids": [
+        "Q553795"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Sébastien Bourdon - Laban Searching the Belongings of Jacob - 80.16 - Museum of Fine Arts.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:74483814",
+      "reviewedTitle": "The Adoration of the Magi",
+      "originalDecision": "IMPORT",
+      "workQid": "Q28039000",
+      "qidResolved": true,
+      "workTitle": "The Adoration of the Magi",
+      "wikidataInventoryNumbers": [
+        "BF.1989.4"
+      ],
+      "collections": [
+        {
+          "qid": "Q1565911",
+          "label": "Museum of Fine Arts, Houston"
+        },
+        {
+          "qid": "Q131311259",
+          "label": "Sarah Campbell Blaffer Foundation"
+        }
+      ],
+      "creatorQids": [
+        "Q732468"
+      ],
+      "wikidataWorkImageFileNames": [
+        "François Lemoyne - The Adoration of the Magi - BF.1989.4 - Museum of Fine Arts.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:75000039",
+      "reviewedTitle": "The Way to Calvary",
+      "originalDecision": "IMPORT",
+      "workQid": "Q20180050",
+      "qidResolved": true,
+      "workTitle": "The Way to Calvary",
+      "wikidataInventoryNumbers": [
+        "83.PC.373"
+      ],
+      "collections": [
+        {
+          "qid": "Q731126",
+          "label": "J. Paul Getty Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q320118"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Domenichino (Domenico Zampieri) - The Way to Calvary - 83.PC.373 - J. Paul Getty Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:75593187",
+      "reviewedTitle": "Beaux-Arts de Carcassonne - La séparation de Saint Pierre et de Saint Paul 1671 - Giovanni Lanfranco 106x144",
+      "originalDecision": "IMPORT",
+      "workQid": "Q78508506",
+      "qidResolved": true,
+      "workTitle": "Separation of Saints Peter and Paul",
+      "wikidataInventoryNumbers": [
+        "MV 7714",
+        "INV 331",
+        "MR 307",
+        "D.890.4.45"
+      ],
+      "collections": [
+        {
+          "qid": "Q2946",
+          "label": "Palace of Versailles"
+        },
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        },
+        {
+          "qid": "Q3330195",
+          "label": "Musée des Beaux-Arts de Carcassonne"
+        }
+      ],
+      "creatorQids": [
+        "Q447730"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Beaux-Arts de Carcassonne - La séparation de Saint Pierre et de Saint Paul 1671 - Giovanni Lanfranco 106x144.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:75930307",
+      "reviewedTitle": "German: Taufe Christi | Baptism of Christ \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q60644929",
+      "qidResolved": true,
+      "workTitle": "Baptism of Christ",
+      "wikidataInventoryNumbers": [
+        "220"
+      ],
+      "collections": [
+        {
+          "qid": "Q658725",
+          "label": "Staatliche Kunsthalle Karlsruhe"
+        }
+      ],
+      "creatorQids": [
+        "Q442484"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Cornelis van Haarlem - Baptism of Christ kunstobjekt 00030.jpg",
+        "Cornelis Cornelisz. van Haarlem - Taufe Christi - 220 - Staatliche Kunsthalle Karlsruhe.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:76108907",
+      "reviewedTitle": "David with Goliath's head before Saul (1 Samuel 17:57-58)",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21406179",
+      "qidResolved": true,
+      "workTitle": "David with the Head of Goliath before Saul",
+      "wikidataInventoryNumbers": [
+        "G 1958.37"
+      ],
+      "collections": [
+        {
+          "qid": "Q194626",
+          "label": "Kunstmuseum Basel"
+        },
+        {
+          "qid": "Q2284748",
+          "label": "Jacques Goudstikker collection"
+        }
+      ],
+      "creatorQids": [
+        "Q5598"
+      ],
+      "wikidataWorkImageFileNames": [
+        "David con la cabeza de Goliat delante de Saúl, por Rembrandt.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:77411491",
+      "reviewedTitle": "Finding of Moses",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119579269",
+      "qidResolved": true,
+      "workTitle": "Finding of Moses",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q1438676"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hans III Jordaens - Finding of Moses.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:77711121",
+      "reviewedTitle": "Saint Ursula \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q62424729",
+      "qidResolved": true,
+      "workTitle": "Saint Ursula",
+      "wikidataInventoryNumbers": [
+        "1929.6.152"
+      ],
+      "collections": [
+        {
+          "qid": "Q1192305",
+          "label": "Smithsonian American Art Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q822982"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bernardo Cavallino - Saint Ursula - 1929.6.152 - Smithsonian American Art Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:77845550",
+      "reviewedTitle": "The Martyrdom of Saint Bartholomew",
+      "originalDecision": "IMPORT",
+      "workQid": "Q131465943",
+      "qidResolved": true,
+      "workTitle": "The Martyrdom of Saint Bartholomew",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q721166"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bartolomeo Manfredi - The Martyrdom of Saint Bartholomew.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:78104681",
+      "reviewedTitle": "The Entombment of Christ",
+      "originalDecision": "IMPORT",
+      "workQid": "Q116317795",
+      "qidResolved": true,
+      "workTitle": "The Entombment of Christ (after Titian)",
+      "wikidataInventoryNumbers": [
+        "192"
+      ],
+      "collections": [
+        {
+          "qid": "Q5964764",
+          "label": "Library, Museum and Document Center of Iran Parliament"
+        }
+      ],
+      "creatorQids": [
+        "Q1659496"
+      ],
+      "wikidataWorkImageFileNames": [
+        "The Entombment of Christ by Kamal-ol-molk (after Titian).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:78990209",
+      "reviewedTitle": "Veil of Veronica",
+      "originalDecision": "IMPORT",
+      "workQid": "Q71586436",
+      "qidResolved": true,
+      "workTitle": "Veil of Veronica",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q209615"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Zurbarán - Veronica's Veil, Delenda 38.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:80057027",
+      "reviewedTitle": "Dutch: Het martelaarschap van de H. George | The Martyrdom of St George",
+      "originalDecision": "IMPORT",
+      "workQid": "Q57564174",
+      "qidResolved": true,
+      "workTitle": "The Martyrdom of St George",
+      "wikidataInventoryNumbers": [
+        "Bx E 24",
+        "Bx M 7078"
+      ],
+      "collections": [
+        {
+          "qid": "Q954222",
+          "label": "Musée des Beaux-Arts de Bordeaux"
+        },
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Peter Paul Rubens - Het martelaarschap van de Heilige Joris - Bx E 24 - Bordeaux Beaux-arts museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:80087092",
+      "reviewedTitle": "The Stoning of Saint Stephen",
+      "originalDecision": "IMPORT",
+      "workQid": "Q27955584",
+      "qidResolved": true,
+      "workTitle": "The Stoning of Saint Stephen",
+      "wikidataInventoryNumbers": [
+        "NG 2281"
+      ],
+      "collections": [
+        {
+          "qid": "Q2051997",
+          "label": "National Galleries Scotland"
+        }
+      ],
+      "creatorQids": [
+        "Q310285"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Adam Elsheimer - Steinigung des heiligen Stephanus (Edinburgh).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:81902276",
+      "reviewedTitle": "Martyrdom of Saint Catherine",
+      "originalDecision": "IMPORT",
+      "workQid": "Q92998803",
+      "qidResolved": true,
+      "workTitle": "Martyrdom of Saint Catherine",
+      "wikidataInventoryNumbers": [
+        "44.2019.1.1"
+      ],
+      "collections": [
+        {
+          "qid": "Q1535963",
+          "label": "Musée des Beaux-Arts de Strasbourg"
+        }
+      ],
+      "creatorQids": [
+        "Q317920"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Simon Vouet, Martyre de Sainte-Catherine (après restauration).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:85066300",
+      "reviewedTitle": "The Sacrifice of Isaac \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q79176867",
+      "qidResolved": true,
+      "workTitle": "The Sacrifice of Isaac",
+      "wikidataInventoryNumbers": [
+        "1987.36"
+      ],
+      "collections": [
+        {
+          "qid": "Q745866",
+          "label": "Dallas Museum of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q18516602"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jan Lievens - The Sacrifice of Isaac - 1987.36 - Dallas Museum of Art.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:85666930",
+      "reviewedTitle": "Jacques Blanchard - Saint Jérôme écrivant",
+      "originalDecision": "IMPORT",
+      "workQid": "Q81193760",
+      "qidResolved": true,
+      "workTitle": "Saint Jérôme écrivant",
+      "wikidataInventoryNumbers": [
+        "MG 4292"
+      ],
+      "collections": [
+        {
+          "qid": "Q1952944",
+          "label": "Museum of Grenoble"
+        }
+      ],
+      "creatorQids": [
+        "Q385845"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jacques Blanchard - Saint Jérôme écrivant.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:87808145",
+      "reviewedTitle": "Jesus in the house of Martha and Mary",
+      "originalDecision": "IMPORT",
+      "workQid": "Q120198477",
+      "qidResolved": true,
+      "workTitle": "Jesus in the house of Martha and Mary",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q367970",
+        "Q625228"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Adriaen van Utrecht and Erasmus Quellinus (II) - Jesus in the house of Martha and Mary.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:87865020",
+      "reviewedTitle": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q99437584",
+      "qidResolved": true,
+      "workTitle": "The Virgin in Prayer",
+      "wikidataInventoryNumbers": [
+        "44.2019.2.11"
+      ],
+      "collections": [
+        {
+          "qid": "Q1535963",
+          "label": "Musée des Beaux-Arts de Strasbourg"
+        }
+      ],
+      "creatorQids": [
+        "Q1345289"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Vierge en oraison (Il Sassoferrato).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:89059784",
+      "reviewedTitle": "Birth of St John the Baptist",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21728347",
+      "qidResolved": true,
+      "workTitle": "Birth of St John the Baptist",
+      "wikidataInventoryNumbers": [
+        "ГЭ-2607"
+      ],
+      "collections": [
+        {
+          "qid": "Q132783",
+          "label": "Hermitage Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q332494"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Birth of St John the Baptist (Giordano).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:92327030",
+      "reviewedTitle": "Judith beheading Holofernes",
+      "originalDecision": "IMPORT",
+      "workQid": "Q120376773",
+      "qidResolved": true,
+      "workTitle": "Judith beheading Holofernes",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q97458555"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bartolomeo Mendozzi - Judith beheading Holofernes.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:93153411",
+      "reviewedTitle": "The Nativity or the Adoration of the Angels",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119578422",
+      "qidResolved": true,
+      "workTitle": "The Nativity or the Adoration of the Angels",
+      "wikidataInventoryNumbers": [
+        "Bx E 35"
+      ],
+      "collections": [
+        {
+          "qid": "Q954222",
+          "label": "Musée des Beaux-Arts de Bordeaux"
+        }
+      ],
+      "creatorQids": [
+        "Q951884"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Gerard Seghers - The Nativity or the Adoration of the Angels.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:94250927",
+      "reviewedTitle": "Dutch: De extase van de heilige Rosalia van Palermo | The extasy of the holy Saint Rosalie of Palermo \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q72299012",
+      "qidResolved": true,
+      "workTitle": "The extasy of the holy Saint Rosalie of Palermo",
+      "wikidataInventoryNumbers": [
+        "P 194"
+      ],
+      "collections": [
+        {
+          "qid": "Q2628596",
+          "label": "Palais des Beaux-Arts de Lille"
+        }
+      ],
+      "creatorQids": [
+        "Q2001362"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Theodoor Boeyermans (1620-1678) De extase van de heilige Rosalia van Palermo - Palais des Beaux Arts de Lille 25-11-2010 14-15-22.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:94830142",
+      "reviewedTitle": "The raising of Lazarus \" \"",
+      "originalDecision": "IMPORT_WITH_CORRECTIONS",
+      "workQid": "Q116731365",
+      "qidResolved": true,
+      "workTitle": "The Raising of Lazarus",
+      "wikidataInventoryNumbers": [
+        "FA000001"
+      ],
+      "collections": [
+        {
+          "qid": "Q2790574",
+          "label": "Brighton Museum & Art Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q430783"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jan Lievens (1607–1674) The Raising of Lazarus 1631 oil on canvas 107x114 cm (42.1 × 44.8 in) Art Gallery and Museum Brighton.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:95483554",
+      "reviewedTitle": "The Conversion of Paul",
+      "originalDecision": "IMPORT",
+      "workQid": "Q50979834",
+      "qidResolved": true,
+      "workTitle": "The Conversion of Paul",
+      "wikidataInventoryNumbers": [
+        "1266"
+      ],
+      "collections": [
+        {
+          "qid": "Q840886",
+          "label": "Museum of Fine Arts, Budapest"
+        }
+      ],
+      "creatorQids": [
+        "Q544264"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Denys Calvaert - The Conversion of Saint Paul.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:95779188",
+      "reviewedTitle": "Abraham and Isaac before the Sacrifice",
+      "originalDecision": "IMPORT",
+      "workQid": "Q101113046",
+      "qidResolved": true,
+      "workTitle": "Abraham and Isaac before the Sacrifice",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q1357477"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Jan Victors - Abraham and Isaac before the Sacrifice 41884-7.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:97129311",
+      "reviewedTitle": "Saint Alexius in a brown wrap, holding a staff",
+      "originalDecision": "IMPORT",
+      "workQid": "Q105416131",
+      "qidResolved": true,
+      "workTitle": "Saint Alexius in a brown wrap, holding a staff",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q334262"
+      ],
+      "wikidataWorkImageFileNames": [
+        "(giovanni francesco barbieri called guercino saint alexius in a brown w084015).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:98001144",
+      "reviewedTitle": "The Sacrifice of Abraham \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q55421511",
+      "qidResolved": true,
+      "workTitle": "The Sacrifice of Abraham",
+      "wikidataInventoryNumbers": [
+        "NG.M.03738"
+      ],
+      "collections": [
+        {
+          "qid": "Q1132918",
+          "label": "National Museum of Art, Architecture and Design"
+        }
+      ],
+      "creatorQids": [
+        "Q528620"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Giuseppe Maria Crespi - The Sacrifice of Abraham - Google Art Project.jpg",
+        "Giuseppe Maria Crespi - The Sacrifice of Abraham - NG.M.03738 - National Museum of Art, Architecture and Design.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:98001263",
+      "reviewedTitle": "Christ among the Doctors \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q55429850",
+      "qidResolved": true,
+      "workTitle": "Christ among the Doctors",
+      "wikidataInventoryNumbers": [
+        "NG.M.00109"
+      ],
+      "collections": [
+        {
+          "qid": "Q1132918",
+          "label": "National Museum of Art, Architecture and Design"
+        }
+      ],
+      "creatorQids": [
+        "Q380708"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Dirck van Baburen - Christ among the Doctors - Kristus som barn i tempelet - IMG 9627-nasjonalmuseet oslo (cropped).jpg",
+        "Dirck van Baburen - Christ among the Doctors - NG.M.00109 - National Museum of Art, Architecture and Design.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:98812395",
+      "reviewedTitle": "Jacob and Rachel \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q104536617",
+      "qidResolved": true,
+      "workTitle": "Jacob and Rachel",
+      "wikidataInventoryNumbers": [
+        "M.Ob.693 MNW"
+      ],
+      "collections": [
+        {
+          "qid": "Q153306",
+          "label": "National Museum in Warsaw"
+        }
+      ],
+      "creatorQids": [
+        "Q585926"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Antoine Coypel - Jacob and Rachel - M.Ob.693 MNW - National Museum in Warsaw.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:98813505",
+      "reviewedTitle": "Jacob blessing the sons of Joseph \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q22115493",
+      "qidResolved": true,
+      "workTitle": "Jacob blessing the sons of Joseph",
+      "wikidataInventoryNumbers": [
+        "M.Ob.37",
+        "M.Ob.37 MNW"
+      ],
+      "collections": [
+        {
+          "qid": "Q153306",
+          "label": "National Museum in Warsaw"
+        }
+      ],
+      "creatorQids": [
+        "Q1357477"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Victors Jacob blessing.JPG",
+        "Jan Victors - Jacob blessing the sons of Joseph - M.Ob.37 - National Museum in Warsaw.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:98814117",
+      "reviewedTitle": "King David playing the harp among angels \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q104534335",
+      "qidResolved": true,
+      "workTitle": "King David playing the harp among angels",
+      "wikidataInventoryNumbers": [
+        "M.Ob.529 MNW"
+      ],
+      "collections": [
+        {
+          "qid": "Q153306",
+          "label": "National Museum in Warsaw"
+        }
+      ],
+      "creatorQids": [
+        "Q437233"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hendrick ter Brugghen - King David playing the harp among angels - M.Ob.529 MNW - National Museum in Warsaw.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:98814200",
+      "reviewedTitle": "Mourning of Christ (Matthew 27:59–61; Mark 15:46–47; Luke 23:53–56; John 19:38–42) \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q22684013",
+      "qidResolved": true,
+      "workTitle": "Lamentation",
+      "wikidataInventoryNumbers": [
+        "M.Ob.1680",
+        "M.Ob.1680 MNW"
+      ],
+      "collections": [
+        {
+          "qid": "Q153306",
+          "label": "National Museum in Warsaw"
+        }
+      ],
+      "creatorQids": [
+        "Q330139"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Janssens Lamentation.jpg",
+        "Abraham Janssens I - Mourning of Christ (Matthew 27-59–61, Mark 15-46–47, Luke 23-53–56, John 19-38–42) - M.Ob.1680 - National Museum in Warsaw.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:98817605",
+      "reviewedTitle": "Christ among the Doctors \" \"",
+      "originalDecision": "IMPORT_WITH_CORRECTIONS",
+      "workQid": "Q104532139",
+      "qidResolved": true,
+      "workTitle": "Christ among the Doctors",
+      "wikidataInventoryNumbers": [
+        "M.Ob.625 MNW"
+      ],
+      "collections": [
+        {
+          "qid": "Q153306",
+          "label": "National Museum in Warsaw"
+        }
+      ],
+      "creatorQids": [
+        "Q8453"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Giovanni Battista Cima da Conegliano - Christ among the Doctors - M.Ob.625 MNW - National Museum in Warsaw.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:101279127",
+      "reviewedTitle": "Collection Motais de Narbonne - Jacob et Rachel au puits (1720) - François Lemoyne (71)",
+      "originalDecision": "IMPORT",
+      "workQid": "Q121592934",
+      "qidResolved": true,
+      "workTitle": "Jacob and Rachel at the well",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q732468"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Collection Motais de Narbonne - Jacob et Rachel au puits (1720) - François Lemoyne (71).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:103072768",
+      "reviewedTitle": "The Mystical Marriage of Saint Catherine",
+      "originalDecision": "IMPORT",
+      "workQid": "Q117226959",
+      "qidResolved": true,
+      "workTitle": "Le  Mariage  de  sainte  Catherine",
+      "wikidataInventoryNumbers": [
+        "837.1.69"
+      ],
+      "collections": [
+        {
+          "qid": "Q1519002",
+          "label": "Musée Fabre"
+        }
+      ],
+      "creatorQids": [
+        "Q9440"
+      ],
+      "wikidataWorkImageFileNames": [
+        "PeinturesMuséeFabre041.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:105396010",
+      "reviewedTitle": "Dutch: Jacob verwijt Laban zijn bedrog met Lea | Jacob reproaching Laban for giving him Leah in place of Rachel",
+      "originalDecision": "IMPORT",
+      "workQid": "Q26707871",
+      "qidResolved": true,
+      "workTitle": "Jacob reproaching Laban",
+      "wikidataInventoryNumbers": [
+        "NG4164"
+      ],
+      "collections": [
+        {
+          "qid": "Q180788",
+          "label": "National Gallery"
+        }
+      ],
+      "creatorQids": [
+        "Q437233"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hendrick ter Brugghen - Jacob Reproaching Laban - WGA22181.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:105545006",
+      "reviewedTitle": "Saint John the Baptist Pointing to Christ in a Landscape \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q106863051",
+      "qidResolved": true,
+      "workTitle": "Saint John the Baptist Pointing to Christ in a Landscape",
+      "wikidataInventoryNumbers": [
+        "1999.250"
+      ],
+      "collections": [
+        {
+          "qid": "Q3783572",
+          "label": "Harvard Art Museums"
+        },
+        {
+          "qid": "Q809600",
+          "label": "Fogg Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q538998"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Carlo Maratti - Saint John the Baptist Pointing to Christ in a Landscape - 1999.250 - Fogg Museum.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:112754850",
+      "reviewedTitle": "French: Saint Louis en prière, vénérant la couronne d'épines",
+      "originalDecision": "IMPORT",
+      "workQid": "Q109689872",
+      "qidResolved": true,
+      "workTitle": "Saint Louis en prière, vénérant la couronne d'épines",
+      "wikidataInventoryNumbers": [
+        "2020.1.130"
+      ],
+      "collections": [
+        {
+          "qid": "Q64549730",
+          "label": "Musée du Grand Siècle"
+        },
+        {
+          "qid": "Q109663013",
+          "label": "collection Pierre Rosenberg"
+        }
+      ],
+      "creatorQids": [
+        "Q271676"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Charles Le Brun - Saint Louis en prière, vénérant la couronne d'épines.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:115165737",
+      "reviewedTitle": "Saint Martin dividing his cloak",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119997182",
+      "qidResolved": true,
+      "workTitle": "Saint Martin dividing his cloak",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q1438676"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hans Jordaens (III) - Saint Martin dividing his cloak.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:115166028",
+      "reviewedTitle": "Crucifixion",
+      "originalDecision": "IMPORT",
+      "workQid": "Q119997170",
+      "qidResolved": true,
+      "workTitle": "Crucifixion",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q1438676"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hans Jordaens (III) - The Crucifixion.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:115218532",
+      "reviewedTitle": "The Mystical Marriage of Saint Catherine",
+      "originalDecision": "IMPORT",
+      "workQid": "Q110903428",
+      "qidResolved": true,
+      "workTitle": "The Mystical Marriage of Saint Catherine",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [],
+      "wikidataWorkImageFileNames": [
+        "Denys Calvaert (Studio) - The mystic marriage of Saint Catherine.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:115220164",
+      "reviewedTitle": "Adoration of the Magi",
+      "originalDecision": "IMPORT",
+      "workQid": "Q110904262",
+      "qidResolved": true,
+      "workTitle": "Adoration of the Magi",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q544264"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Denys Calvaert - Adoration of the Magi.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:118105360",
+      "reviewedTitle": "Saint Michael the Archangel",
+      "originalDecision": "IMPORT",
+      "workQid": "Q121007987",
+      "qidResolved": true,
+      "workTitle": "Saint Michael the Archangel",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q2353679"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Pieter van Lint - Saint Michael the Archangel.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:118105448",
+      "reviewedTitle": "Saint Barbara",
+      "originalDecision": "IMPORT",
+      "workQid": "Q121007969",
+      "qidResolved": true,
+      "workTitle": "Saint Barbara",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q2353679"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Pieter van Lint - Saint Barbara.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:118823142",
+      "reviewedTitle": "The Archangel Michael \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q112195281",
+      "qidResolved": true,
+      "workTitle": "The Archangel Michael",
+      "wikidataInventoryNumbers": [
+        "2020.53"
+      ],
+      "collections": [
+        {
+          "qid": "Q1700481",
+          "label": "Minneapolis Institute of Art"
+        }
+      ],
+      "creatorQids": [
+        "Q933026"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Cavaliere d'Arpino - The Archangel Michael - 2020.53 - Minneapolis Institute of Art.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:119445771",
+      "reviewedTitle": "Lot and His Daughters \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q112626451",
+      "qidResolved": true,
+      "workTitle": "Lot and His Daughters",
+      "wikidataInventoryNumbers": [
+        "AB-100"
+      ],
+      "collections": [
+        {
+          "qid": "Q15638014",
+          "label": "Leiden Collection"
+        }
+      ],
+      "creatorQids": [
+        "Q329811"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Abraham Bloemaert - Lot and His Daughters - National Gallery London NG6701.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:122353227",
+      "reviewedTitle": "The Meeting of Saints Joachim and Anne at the Golden Gate in Jerusalem \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q50988798",
+      "qidResolved": true,
+      "workTitle": "Meeting of Anne and Joachim at the Golden Gate in Jerusalem",
+      "wikidataInventoryNumbers": [
+        "766"
+      ],
+      "collections": [
+        {
+          "qid": "Q840886",
+          "label": "Museum of Fine Arts, Budapest"
+        }
+      ],
+      "creatorQids": [
+        "Q822982"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bernardo Cavallino - Meeting of Anne and Joachim at the Golden Gate in Jerusalem.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:122357346",
+      "reviewedTitle": "The Denial of St. Peter",
+      "originalDecision": "IMPORT",
+      "workQid": "Q120489778",
+      "qidResolved": true,
+      "workTitle": "The Denial of St. Peter",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q290549",
+          "label": "Museo di Capodimonte"
+        }
+      ],
+      "creatorQids": [
+        "Q822982"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Bernardo Cavallino - The Denial of St. Peter.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:123828337",
+      "reviewedTitle": "Spanish: Santa Apolonia | Saint Apollonia \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q6034540",
+      "qidResolved": true,
+      "workTitle": "Saint Apollonia",
+      "wikidataInventoryNumbers": [
+        "MI 724"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q209615"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Sainte Apolline - Francisco de Zurbarán - Musée du Louvre Peintures MI 724.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:125969408",
+      "reviewedTitle": "David with the head of Goliath",
+      "originalDecision": "IMPORT",
+      "workQid": "Q105396837",
+      "qidResolved": true,
+      "workTitle": "David with the head of Goliath",
+      "wikidataInventoryNumbers": [
+        "1996.6.1",
+        "1996-6-1"
+      ],
+      "collections": [
+        {
+          "qid": "Q1955739",
+          "label": "Musée des Beaux-Arts de Dijon"
+        }
+      ],
+      "creatorQids": [
+        "Q2979648"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Nicolas Régnier - David triomphant tenant la tête de Goliath.jpg",
+        "Nicolas Régnier - David with the head of Goliath.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:131068203",
+      "reviewedTitle": "The Archangel Michael overthrowing Lucifer",
+      "originalDecision": "IMPORT",
+      "workQid": "Q21711392",
+      "qidResolved": true,
+      "workTitle": "The Archangel Michael overthrowing Lucifer",
+      "wikidataInventoryNumbers": [
+        "274 (1977.62)"
+      ],
+      "collections": [
+        {
+          "qid": "Q176251",
+          "label": "Thyssen-Bornemisza Museum"
+        }
+      ],
+      "creatorQids": [
+        "Q3289164"
+      ],
+      "wikidataWorkImageFileNames": [
+        "The Archangel Michael overthrowing Lucifer.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:146550068",
+      "reviewedTitle": "French: La Nativité | Nativity \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q29649272",
+      "qidResolved": true,
+      "workTitle": "Nativity",
+      "wikidataInventoryNumbers": [
+        "RF 2502"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q1823098"
+      ],
+      "wikidataWorkImageFileNames": [
+        "La Nativité - Musée du Louvre Peintures RF 2502.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:146843118",
+      "reviewedTitle": "Tête de saint Paul décapité - Sebastián de Llanos Valdés - Musée du Louvre Peintures RF 1955 24",
+      "originalDecision": "IMPORT",
+      "workQid": "Q29654447",
+      "qidResolved": true,
+      "workTitle": "head of St Paul",
+      "wikidataInventoryNumbers": [
+        "RF 1955-24",
+        "RF 1955 24"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q332047"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Tête de saint Paul décapité - Sebastián de Llanos Valdés - Musée du Louvre Peintures RF 1955 24.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:148537247",
+      "reviewedTitle": "Massacre of the Innocents \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q15691130",
+      "qidResolved": true,
+      "workTitle": "Massacre of the Innocents",
+      "wikidataInventoryNumbers": [
+        "572"
+      ],
+      "collections": [
+        {
+          "qid": "Q812285",
+          "label": "Bavarian State Painting Collections"
+        }
+      ],
+      "creatorQids": [
+        "Q5599"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Peter Paul Rubens - The Massacre of the Innocent (Pinatkothek).jpg"
+      ],
+      "museumAccessionCandidates": [
+        {
+          "museumSourceId": "kmska:gwtztk",
+          "museum": "kmska",
+          "museumVerifiedAccession": "572",
+          "wikidataInventory": "572",
+          "accessionNormalizedMatch": true,
+          "collectionAgrees": false,
+          "collectionEvidence": [
+            {
+              "qid": "Q812285",
+              "label": "Bavarian State Painting Collections"
+            }
+          ],
+          "reviewTitle": "Ecce Homo",
+          "museumCanonical383AlreadyLinked": false,
+          "existingCanonicalArtworkId": null,
+          "assessment": "WIKIDATA_ACCESSION_ONLY_UNCORROBORATED_COLLECTION",
+          "canonical383NewIdentityLink": false,
+          "photoRightsCertified": false
+        }
+      ],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:155871266",
+      "reviewedTitle": "The Virgin and an Angel with the Crow of Thorns and the three Marys at the Sepulchre",
+      "originalDecision": "IMPORT",
+      "workQid": "Q106299721",
+      "qidResolved": true,
+      "workTitle": "Adoration of the Thorn Crown",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q538998"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Visitazione al Sepolcro con la Vergine e le tre Marie.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:155916727",
+      "reviewedTitle": "The Vision of Joachim and Anne",
+      "originalDecision": "IMPORT",
+      "workQid": "Q133394259",
+      "qidResolved": true,
+      "workTitle": "The Vision of Joachim and Anne",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [
+        "Q538998"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Carlo Maratta - The Vision of Joachim and Anne.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:158771859",
+      "reviewedTitle": "Christ Appears to the Three Marys",
+      "originalDecision": "IMPORT",
+      "workQid": "Q26221612",
+      "qidResolved": true,
+      "workTitle": "Christ Appears to the Three Marys",
+      "wikidataInventoryNumbers": [
+        "INV 5356",
+        "MR 1849"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q59894"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Apparition de Jésus aux trois Marie - Laurent de La Hyre - Musée du Louvre Peintures INV 5356 ; MR 1849.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:161200952",
+      "reviewedTitle": "The return of the prodigal son",
+      "originalDecision": "IMPORT",
+      "workQid": "Q133305185",
+      "qidResolved": true,
+      "workTitle": "The return of the prodigal son",
+      "wikidataInventoryNumbers": [],
+      "collections": [],
+      "creatorQids": [],
+      "wikidataWorkImageFileNames": [
+        "Erasmus Quellinus - The return of the prodigal son.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:163758319",
+      "reviewedTitle": "Christ Driving the Money Changers from the Temple \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q116285241",
+      "qidResolved": true,
+      "workTitle": "Christ Driving the Money Changers from the Temple",
+      "wikidataInventoryNumbers": [
+        "1206 LM"
+      ],
+      "collections": [
+        {
+          "qid": "Q1798475",
+          "label": "Westphalian State Museum of Art and Cultural History"
+        }
+      ],
+      "creatorQids": [
+        "Q380708"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Dirck van Baburen - Christ Driving the Money Changers from the Temple.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:163982639",
+      "reviewedTitle": "French: Laban cherchant ses idoles dans les bagages de Jacob | Laban Searching Jacob's Baggage for the Stolen Idols \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q29850017",
+      "qidResolved": true,
+      "workTitle": "Laban Searching Jacob's Baggage for the Stolen Idols",
+      "wikidataInventoryNumbers": [
+        "INV 5354",
+        "MR 1848"
+      ],
+      "collections": [
+        {
+          "qid": "Q3044768",
+          "label": "Department of Paintings of the Louvre"
+        }
+      ],
+      "creatorQids": [
+        "Q59894"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Laban cherchant ses idoles dans les bagages de Jacob - Laurent de La Hyre - Musée du Louvre Peintures INV 5354 ; MR 1848.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:164570525",
+      "reviewedTitle": "German: Die Auffindung des Heilige Sebastian | Saint Sebastian tended by Saint Irene \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q6119715",
+      "qidResolved": true,
+      "workTitle": "Saint Sebastian tended by Saint Irene",
+      "wikidataInventoryNumbers": [
+        "2046"
+      ],
+      "collections": [
+        {
+          "qid": "Q165631",
+          "label": "Gemäldegalerie Berlin"
+        }
+      ],
+      "creatorQids": [],
+      "wikidataWorkImageFileNames": [
+        "Nachahmer, Georges de La Tour (1593 - 1652) - The Finding of St. Sebastian - 2046 - Gemäldegalerie.jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    },
+    {
+      "sourceId": "commons:186817730",
+      "reviewedTitle": "The Annunciation \" \"",
+      "originalDecision": "IMPORT",
+      "workQid": "Q106861924",
+      "qidResolved": true,
+      "workTitle": "The Annunciation",
+      "wikidataInventoryNumbers": [],
+      "collections": [
+        {
+          "qid": "Q63120118",
+          "label": "Stadsmuseum De Hofstadt"
+        }
+      ],
+      "creatorQids": [
+        "Q437233"
+      ],
+      "wikidataWorkImageFileNames": [
+        "Hendrick ter Brugghen - The Annunciation (1629).jpg"
+      ],
+      "museumAccessionCandidates": [],
+      "originalCanonical383Status": "NO_CONFIRMED_IDENTITY",
+      "originalCanonical383ArtworkId": null,
+      "canonical383NewIdentityLink": false,
+      "photoRightsCertified": false,
+      "originalPhotoCertified": false,
+      "productionMutation": false
+    }
+  ],
+  "productionMutation": false
+}

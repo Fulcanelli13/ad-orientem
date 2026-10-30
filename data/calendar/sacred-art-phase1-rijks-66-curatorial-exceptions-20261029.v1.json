@@ -1,0 +1,563 @@
+{
+  "schema": "AO_SACRED_ART_RIJKS_66_ATTRIBUTION_AND_COMPOSITE_REVIEW_V1",
+  "asOf": "2026-10-29",
+  "sourceReport": "data/calendar/sacred-art-phase1-rijks-66-official-linked-art-report-20261029.v1.json",
+  "sourceReportBlobSha": "063fbd5b31341739c7539a32083d47e5489dd7ca",
+  "counts": {
+    "authorMetadataReview": 28,
+    "compositeOrPanelWorkTypeReview": 4,
+    "confirmedCanonical383NewLinks": 0,
+    "photoApprovals": 0,
+    "productionImports": 0
+  },
+  "caveats": [
+    "28 source artist fields are empty/anonymous/underspecified compared with museum source; these are not 28 mutually exclusive or necessarily changed authored paintings",
+    "Rijksmuseum member_of sets are generic collection groupings (all 66), not evidence of 66 physical ensembles; no automatic parent merging",
+    "No photo rights, full native visual or object uniqueness certified"
+  ],
+  "artistReviewQueue": [
+    {
+      "sourceId": "rijks:200108285",
+      "accession": "SK-A-4252",
+      "reviewedTitle": "Ecce Homo",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: copy after Jheronimus Bosch",
+        "schilder: kopie naar Jheronimus Bosch",
+        "copy after Jheronimus Bosch",
+        "kopie naar Jheronimus Bosch"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200108285",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:200108287",
+      "accession": "SK-A-3240",
+      "reviewedTitle": "De verzoeking van de heilige Antonius de Heremiet",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: manner of Jheronimus Bosch",
+        "schilder: manier van Jheronimus Bosch",
+        "manier van Jheronimus Bosch",
+        "manner of Jheronimus Bosch"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200108287",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:200109014",
+      "accession": "SK-A-2516",
+      "reviewedTitle": "De opwekking van Lazarus",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: after Peter Paul Rubens",
+        "schilder: naar Peter Paul Rubens",
+        "after Peter Paul Rubens",
+        "naar Peter Paul Rubens"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200109014",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:200109178",
+      "accession": "SK-A-1425",
+      "reviewedTitle": "De heilige Sebastiaan",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Juan Carreño de Miranda",
+        "schilder: toegeschreven aan Juan Carreño de Miranda",
+        "attributed to Juan Carreño de Miranda",
+        "toegeschreven aan Juan Carreño de Miranda"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200109178",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:200109427",
+      "accession": "SK-A-3903",
+      "reviewedTitle": "De heilige Hieronymus in zijn studeercel bij kaarslicht",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Aertgen Claesz van Leyden, Leiden",
+        "schilder: toegeschreven aan Aertgen Claesz. van Leyden, Leiden",
+        "attributed to Aertgen Claesz van Leyden",
+        "toegeschreven aan Aertgen Claesz. van Leyden"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200109427",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:200109463",
+      "accession": "SK-A-2129",
+      "reviewedTitle": "Het laatste avondmaal",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: circle of Master of the Amsterdam Death of the Virgin",
+        "schilder: omgeving van Meester van de Amsterdamse Dood van Maria",
+        "circle of Master of the Amsterdam Death of the Virgin",
+        "omgeving van Meester van de Amsterdamse Dood van Maria"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200109463",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:200111837",
+      "accession": "SK-A-1533",
+      "reviewedTitle": "Christ and the Woman of Canaan",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: Pieter Lastman (signed by artist)",
+        "schilder: Pieter Lastman (eigenhandig gesigneerd)",
+        "Pieter Lastman (eigenhandig gesigneerd)",
+        "Pieter Lastman (signed by artist)"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200111837",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:200111840",
+      "accession": "SK-A-3480",
+      "reviewedTitle": "Centre Panel of a Triptych with the Raising of Lazarus",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Aertgen Claesz van Leyden",
+        "schilder: toegeschreven aan Aertgen Claesz. van Leyden",
+        "attributed to Aertgen Claesz van Leyden",
+        "toegeschreven aan Aertgen Claesz. van Leyden"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/200111840",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20015869",
+      "accession": "SK-A-216",
+      "reviewedTitle": "Johannes de Doper",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Matthias Stom",
+        "schilder: toegeschreven aan Matthias Stom",
+        "attributed to Matthias Stom",
+        "toegeschreven aan Matthias Stom"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20015869",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20025870",
+      "accession": "SK-A-1599-1",
+      "reviewedTitle": "Altarpiece Wing with the Circumcision. On the outside are John the Baptist with the Lamb of God",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "anonymous",
+      "officialCreatorTexts": [
+        "painter: anonymous, Northern Netherlands",
+        "schilder: anoniem, Noordelijke Nederlanden",
+        "anoniem",
+        "anonymous"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20025870",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20026188",
+      "accession": "SK-A-3123",
+      "reviewedTitle": "De heilige Hieronymus in zijn studeervertrek",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: workshop of Marinus van Reymerswale",
+        "schilder: atelier van Marinus van Reymerswale",
+        "painter: attributed to Marinus van Reymerswale",
+        "schilder: toegeschreven aan Marinus van Reymerswale",
+        "attributed to Marinus van Reymerswale",
+        "toegeschreven aan Marinus van Reymerswale"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20026188",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20026246",
+      "accession": "SK-A-801",
+      "reviewedTitle": "De verkondiging aan de herders",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: Cornelis Saftleven (signed by artist)",
+        "schilder: Cornelis Saftleven (eigenhandig gesigneerd)",
+        "Cornelis Saftleven (eigenhandig gesigneerd)",
+        "Cornelis Saftleven (signed by artist)"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20026246",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20026333",
+      "accession": "SK-A-996",
+      "reviewedTitle": "De verheerlijking van de heilige Dominicus",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: copy after Francesco Solimena",
+        "schilder: kopie naar Francesco Solimena",
+        "copy after Francesco Solimena",
+        "kopie naar Francesco Solimena"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20026333",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20026419",
+      "accession": "SK-A-3441",
+      "reviewedTitle": "De heilige Dominicus",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "anonymous",
+      "officialCreatorTexts": [
+        "painter: anonymous, Venice",
+        "schilder: anoniem, Venetië",
+        "anoniem",
+        "anonymous"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20026419",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20026562",
+      "accession": "SK-A-3377",
+      "reviewedTitle": "Abraham Leaves Haran",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Francesco II Bassano",
+        "schilder: toegeschreven aan Francesco II Bassano",
+        "attributed to Francesco II Bassano",
+        "toegeschreven aan Francesco II Bassano"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20026562",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20027096",
+      "accession": "SK-A-469",
+      "reviewedTitle": "De graflegging",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: workshop of Adriaen van der Werff",
+        "schilder: atelier van Adriaen van der Werff",
+        "atelier van Adriaen van der Werff",
+        "workshop of Adriaen van der Werff"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20027096",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20027536",
+      "accession": "SK-A-2336",
+      "reviewedTitle": "Christ Appearing to Mary Magdalen as a Gardener (Noli me Tangere)",
+      "originalUserChoice": "IMPORT_WITH_CORRECTIONS",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: workshop of Peter Paul Rubens",
+        "schilder: atelier van Peter Paul Rubens",
+        "atelier van Peter Paul Rubens",
+        "workshop of Peter Paul Rubens"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20027536",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20027782",
+      "accession": "SK-A-1224",
+      "reviewedTitle": "Christ as Saviour of the World",
+      "originalUserChoice": "IMPORT_WITH_CORRECTIONS",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: after Anthony van Dyck",
+        "schilder: naar Anthony van Dyck",
+        "after Anthony van Dyck",
+        "naar Anthony van Dyck"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20027782",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20027869",
+      "accession": "SK-A-91",
+      "reviewedTitle": "Salome ontvangt het hoofd van Johannes de Doper",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: circle of Rembrandt van Rijn",
+        "schilder: omgeving van Rembrandt van Rijn",
+        "circle of Rembrandt van Rijn",
+        "omgeving van Rembrandt van Rijn"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20027869",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20027933",
+      "accession": "SK-A-3995",
+      "reviewedTitle": "De heilige Hieronymus",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Bernardino da Brescia",
+        "schilder: toegeschreven aan Bernardino da Brescia",
+        "attributed to Bernardino da Brescia",
+        "toegeschreven aan Bernardino da Brescia"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20027933",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20028147",
+      "accession": "SK-A-596",
+      "reviewedTitle": "Het mystieke huwelijk van de heilige Rosa da Lima",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Lazzaro Baldi",
+        "schilder: toegeschreven aan Lazzaro Baldi",
+        "attributed to Lazzaro Baldi",
+        "toegeschreven aan Lazzaro Baldi"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20028147",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20028245",
+      "accession": "SK-A-727",
+      "reviewedTitle": "De evangelist Johannes op Patmos",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: circle of Carlo Maratta",
+        "schilder: omgeving van Carlo Maratta",
+        "circle of Carlo Maratta",
+        "omgeving van Carlo Maratta"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20028245",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20028504",
+      "accession": "SK-A-3116",
+      "reviewedTitle": "De heilige Dionysius de Areopagiet in gebed",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "anonymous",
+      "officialCreatorTexts": [
+        "painter: anonymous, Avignon",
+        "schilder: anoniem, Avignon",
+        "anoniem",
+        "anonymous"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20028504",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20029060",
+      "accession": "SK-C-310",
+      "reviewedTitle": "Maria in gebed",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Caesar van Everdingen",
+        "schilder: toegeschreven aan Caesar Boëtius van Everdingen",
+        "attributed to Caesar van Everdingen",
+        "toegeschreven aan Caesar Boëtius van Everdingen"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20029060",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20029335",
+      "accession": "SK-A-1483",
+      "reviewedTitle": "Christ with Crown of Thorns",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: copy after Lucas van Leyden",
+        "schilder: kopie naar Lucas van Leyden",
+        "copy after Lucas van Leyden",
+        "kopie naar Lucas van Leyden"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20029335",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20029336",
+      "accession": "SK-A-1484",
+      "reviewedTitle": "De maagd Maria",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: copy after Lucas van Leyden",
+        "schilder: kopie naar Lucas van Leyden",
+        "copy after Lucas van Leyden",
+        "kopie naar Lucas van Leyden"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20029336",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20060344",
+      "accession": "SK-A-4909",
+      "reviewedTitle": "De heilige Paulus",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: attributed to Macrino d' Alba",
+        "schilder: toegeschreven aan Macrino d' Alba",
+        "attributed to Macrino d' Alba",
+        "toegeschreven aan Macrino d' Alba"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20060344",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    },
+    {
+      "sourceId": "rijks:20078354",
+      "accession": "SK-A-5009",
+      "reviewedTitle": "Salomé met het hoofd van Johannes de Doper",
+      "originalUserChoice": "IMPORT",
+      "originalArtist": "Attribution not identified",
+      "officialCreatorTexts": [
+        "painter: Jan Adam Kruseman (signed by artist), Haarlem",
+        "schilder: Jan Adam Kruseman (eigenhandig gesigneerd), Haarlem",
+        "Jan Adam Kruseman (eigenhandig gesigneerd)",
+        "Jan Adam Kruseman (signed by artist)"
+      ],
+      "officialUri": "https://id.rijksmuseum.nl/20078354",
+      "action": "CURATOR_REVIEW_SOURCE_AUTHORSHIP_AND_QUALIFIER_NO_AUTOMATIC_CHANGE",
+      "originalReviewProtected": true,
+      "physicalArtworkCertified": false
+    }
+  ],
+  "physicalObjectReviewQueue": [
+    {
+      "sourceId": "rijks:200108254",
+      "accession": "SK-A-1577",
+      "title": "Abraham Entertaining the Three Angels",
+      "officialWorkTypes": [
+        "painting",
+        "schilderij",
+        "wall decoration",
+        "kamerbeschildering"
+      ],
+      "editorialChoice": "IMPORT",
+      "sourceUrl": "https://id.rijksmuseum.nl/200108254",
+      "action": "REVIEW_PHYSICAL_PANEL_ENSEMBLE_WALL_DECORATION_AS_NON_DUPLICATIVE_WORK_STRUCTURE",
+      "userChoiceProtected": true
+    },
+    {
+      "sourceId": "rijks:200109463",
+      "accession": "SK-A-2129",
+      "title": "Het laatste avondmaal",
+      "officialWorkTypes": [
+        "painting",
+        "schilderij",
+        "zijpaneel"
+      ],
+      "editorialChoice": "IMPORT",
+      "sourceUrl": "https://id.rijksmuseum.nl/200109463",
+      "action": "REVIEW_PHYSICAL_PANEL_ENSEMBLE_WALL_DECORATION_AS_NON_DUPLICATIVE_WORK_STRUCTURE",
+      "userChoiceProtected": true
+    },
+    {
+      "sourceId": "rijks:200111840",
+      "accession": "SK-A-3480",
+      "title": "Centre Panel of a Triptych with the Raising of Lazarus",
+      "officialWorkTypes": [
+        "triptych",
+        "triptiek",
+        "painting",
+        "schilderij"
+      ],
+      "editorialChoice": "IMPORT",
+      "sourceUrl": "https://id.rijksmuseum.nl/200111840",
+      "action": "REVIEW_PHYSICAL_PANEL_ENSEMBLE_WALL_DECORATION_AS_NON_DUPLICATIVE_WORK_STRUCTURE",
+      "userChoiceProtected": true
+    },
+    {
+      "sourceId": "rijks:20025870",
+      "accession": "SK-A-1599-1",
+      "title": "Altarpiece Wing with the Circumcision. On the outside are John the Baptist with the Lamb of God",
+      "officialWorkTypes": [
+        "painting",
+        "schilderij",
+        "zijpaneel"
+      ],
+      "editorialChoice": "IMPORT",
+      "sourceUrl": "https://id.rijksmuseum.nl/20025870",
+      "action": "REVIEW_PHYSICAL_PANEL_ENSEMBLE_WALL_DECORATION_AS_NON_DUPLICATIVE_WORK_STRUCTURE",
+      "userChoiceProtected": true
+    }
+  ],
+  "release": {
+    "frozenChoicesUnchanged": true,
+    "canonicalArtwork383Unchanged": true,
+    "productionMutation": false
+  }
+}

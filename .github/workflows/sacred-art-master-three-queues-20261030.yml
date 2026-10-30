@@ -1,0 +1,83 @@
+name: Sacred Art master register + 3 queues bulk build (zero cost)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-master-three-queues-20261030.yml
+      - scripts/art/build-sacred-art-unified-master-v1-20261030.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-master-three-queues
+  cancel-in-progress: false
+
+jobs:
+  build-single-artwork-register:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - name: Checkout original 22-module editorial decisions (never rewrite)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: upstream-main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate all frozen review decisions and 383 original artworks
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Assemble complete master CSV and exclusive three queues
+        run: node scripts/art/build-sacred-art-unified-master-v1-20261030.mjs
+      - name: Assert frozen choices and full coverage; no automatic pristine/photo approval
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const base='data/calendar/sacred-art-master-v1/';
+          const j=JSON.parse(readFileSync(base+'master.json','utf8'));
+          const s=JSON.parse(readFileSync(base+'summary.json','utf8'));
+          const c=s.counts;
+          if(c.totalUserReviewDecisions!==2455||
+             c.acceptedUserReviewChoices!==856||
+             c.rejectedUserReviewChoices!==1599||
+             c.canonicalRecords!==383||
+             c.oldResearchCandidates!==281||
+             c.lockedModuleHeroAssignments!==22||
+             c.prayerSections!==31||
+             c.queueReadyToPublish!==0||
+             c.newQualityApprovalsGranted!==0||
+             c.newPhotoPublicationApprovals!==0||
+             c.sourceDecisionsModified!==0||
+             c.feeEur!==0||
+             c.queuePhotoQaOrRepair+c.queueRightsOrAlternative!==c.operationalWorkGroups||
+             j.registry.length!==c.registryRecords||
+             j.operationalWorks.length!==c.operationalWorkGroups||
+             j.registry.filter(x=>x.recordKind==='REVIEW'&&x.originalUserDecision==='REJECT').length!==1599||
+             j.registry.filter(x=>x.recordKind==='REVIEW'&&x.isOperationalCandidate).length!==856||
+             j.registry.filter(x=>x.recordKind==='HERO').length!==22||
+             j.operationalWorks.some(x=>x.productionReleased||x.userPhotoQualityApproval||
+             x.exactPhotoRightsCertifiedForSelectedBytes)||
+             j.release.productionMutation!==false)throw Error('Master, 3 queue, or rights gates invalid');
+          console.log(JSON.stringify(c,null,2));
+          NODE
+      - name: Commit permanent machine-readable master + Excel CSVs (not Actions artifacts)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem sacred-art audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-master-v1/
+          git diff --cached --check
+          git commit -m "research(sacred-art): preserve complete master and 3 rights/quality queues [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029

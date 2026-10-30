@@ -1,0 +1,1251 @@
+{
+  "schema": "AO_SACRED_ART_PHASE1_IDENTITY_TRIAGE_V1",
+  "asOf": "2026-10-29",
+  "authority": "Institutional accessions/object records and published museum object identity. Human source-image decisions remain immutable.",
+  "scope": "34 same-normalized-title-and-artist collision groups among 2455 review cards",
+  "counts": {
+    "groups": 34,
+    "PARENT_COMPONENT": 1,
+    "DISTINCT_INVENTORY_RECORDS_NO_MERGE": 28,
+    "ENSEMBLE_COMPONENT": 2,
+    "DISTINCT_WORK_INSTITUTIONAL_EVIDENCE": 2,
+    "SAME_PHYSICAL_WORK_MULTIPLE_IMAGE_SOURCES": 1,
+    "editorialDecisionsModified": 0,
+    "deletedReviewRecords": 0,
+    "productionImports": 0
+  },
+  "policy": {
+    "uniqueImageSourceNotPhysicalWork": true,
+    "distinctMuseumAccessionObjectsMayStillBeEnsembleRelated": true,
+    "retainUserChoicePerExactReviewImage": true,
+    "neverPropagateRejectAcrossDistinctObjects": true,
+    "doNotInterpretCopyrightFromTitleOrArtist": true
+  },
+  "groups": [
+    {
+      "groupNumber": 1,
+      "titleArtistCandidate": "altarpiece with the passion of christ|master of the schlagl altarpiece german",
+      "sourceRows": [
+        {
+          "sourceId": "cma:128838",
+          "decision": "REJECT",
+          "accession": "1951.453",
+          "objectUrl": "https://clevelandart.org/art/1951.453",
+          "title": "Altarpiece with The Passion of Christ",
+          "artistAsImported": "Master of the Schlägl Altarpiece (German)",
+          "batch": "PRIOR60"
+        },
+        {
+          "sourceId": "cma:128839",
+          "decision": "REJECT",
+          "accession": "1951.453.a",
+          "objectUrl": "https://clevelandart.org/art/1951.453.a",
+          "title": "Altarpiece with The Passion of Christ",
+          "artistAsImported": "Master of the Schlägl Altarpiece (German)",
+          "batch": "PRIOR60"
+        }
+      ],
+      "identityDisposition": "PARENT_COMPONENT",
+      "evidenceBasis": "PUBLISHED_INSTITUTIONAL_OBJECT_PAGE_OR_OBJECT_SPECIFIC_COMMONS_METADATA",
+      "evidenceUrls": [
+        "https://www.clevelandart.org/art/1951.453",
+        "https://www.clevelandart.org/art/1951.453.a"
+      ],
+      "explanation": "The complete Schlägl Passion altarpiece record 1951.453 and its panel 1951.453.a are related whole/part representations.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 2,
+      "titleArtistCandidate": "aanbidding door de herders|schilder jan cossiers",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:0csw4p",
+          "decision": "IMPORT",
+          "accession": "40",
+          "objectUrl": "http://kmska.be/collection/work/data/0csw4p",
+          "title": "Aanbidding door de herders",
+          "artistAsImported": "Schilder: Jan Cossiers",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:4opepv",
+          "decision": "IMPORT",
+          "accession": "37",
+          "objectUrl": "http://kmska.be/collection/work/data/4opepv",
+          "title": "Aanbidding door de herders",
+          "artistAsImported": "Schilder: Jan Cossiers",
+          "batch": "B3"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "http://kmska.be/collection/work/data/0csw4p",
+        "http://kmska.be/collection/work/data/4opepv"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 3,
+      "titleArtistCandidate": "annunciatie|schilder simone martini",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:1nudkd",
+          "decision": "REJECT",
+          "accession": "258",
+          "objectUrl": "http://kmska.be/collection/work/data/1nudkd",
+          "title": "Annunciatie",
+          "artistAsImported": "Schilder: Simone Martini",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:1pcp6p",
+          "decision": "REJECT",
+          "accession": "257",
+          "objectUrl": "http://kmska.be/collection/work/data/1pcp6p",
+          "title": "Annunciatie",
+          "artistAsImported": "Schilder: Simone Martini",
+          "batch": "B3"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "http://kmska.be/collection/work/data/1nudkd",
+        "http://kmska.be/collection/work/data/1pcp6p"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 4,
+      "titleArtistCandidate": "aanbidding door de herders|schilder jacob jordaens i",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:4sqlxg",
+          "decision": "REJECT",
+          "accession": "928",
+          "objectUrl": "http://kmska.be/collection/work/data/4sqlxg",
+          "title": "Aanbidding door de herders",
+          "artistAsImported": "Schilder: Jacob Jordaens I",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:u4kls1",
+          "decision": "REJECT",
+          "accession": "221",
+          "objectUrl": "http://kmska.be/collection/work/data/u4kls1",
+          "title": "Aanbidding door de herders",
+          "artistAsImported": "Schilder: Jacob Jordaens I",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:jtq97f",
+          "decision": "IMPORT",
+          "accession": "5101",
+          "objectUrl": "http://kmska.be/collection/work/data/jtq97f",
+          "title": "Aanbidding door de herders",
+          "artistAsImported": "Schilder: Jacob Jordaens I",
+          "batch": "B4R"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "http://kmska.be/collection/work/data/4sqlxg",
+        "http://kmska.be/collection/work/data/u4kls1",
+        "http://kmska.be/collection/work/data/jtq97f"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 5,
+      "titleArtistCandidate": "madonna|dieric bouts",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:4yx1ca",
+          "decision": "REJECT",
+          "accession": "28",
+          "objectUrl": "http://kmska.be/collection/work/data/4yx1ca",
+          "title": "Madonna",
+          "artistAsImported": "Dieric Bouts",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:aa7rsi",
+          "decision": "REJECT",
+          "accession": "5130",
+          "objectUrl": "http://kmska.be/collection/work/data/aa7rsi",
+          "title": "Madonna",
+          "artistAsImported": "Dieric Bouts",
+          "batch": "B4R"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "http://kmska.be/collection/work/data/4yx1ca",
+        "http://kmska.be/collection/work/data/aa7rsi"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 6,
+      "titleArtistCandidate": "madonna|schilder anonieme meester zuid nederlands 1ste helft 16de eeuw",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:5og4th",
+          "decision": "REJECT",
+          "accession": "463",
+          "objectUrl": "http://kmska.be/collection/work/data/5og4th",
+          "title": "Madonna",
+          "artistAsImported": "Schilder: Anonieme Meester, Zuid-Nederlands, 1ste helft 16de eeuw",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:xhsw1n",
+          "decision": "REJECT",
+          "accession": "5016",
+          "objectUrl": "http://kmska.be/collection/work/data/xhsw1n",
+          "title": "Madonna",
+          "artistAsImported": "Schilder: Anonieme Meester, Zuid-Nederlands, 1ste helft 16de eeuw",
+          "batch": "B4R"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "http://kmska.be/collection/work/data/5og4th",
+        "http://kmska.be/collection/work/data/xhsw1n"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 7,
+      "titleArtistCandidate": "aanbidding door de koningen|schilder meester van de aanbidding te antwerpen",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:7v3wb4",
+          "decision": "IMPORT",
+          "accession": "208",
+          "objectUrl": "http://kmska.be/collection/work/data/7v3wb4",
+          "title": "Aanbidding door de koningen",
+          "artistAsImported": "Schilder: Meester van de Aanbidding te Antwerpen",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:z5h6lf",
+          "decision": "REJECT",
+          "accession": "208-210",
+          "objectUrl": "http://kmska.be/collection/work/data/z5h6lf",
+          "title": "Aanbidding door de koningen",
+          "artistAsImported": "Schilder: Meester van de Aanbidding te Antwerpen",
+          "batch": "B3"
+        }
+      ],
+      "identityDisposition": "ENSEMBLE_COMPONENT",
+      "evidenceBasis": "PUBLISHED_INSTITUTIONAL_OBJECT_PAGE_OR_OBJECT_SPECIFIC_COMMONS_METADATA",
+      "evidenceUrls": [
+        "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-4"
+      ],
+      "explanation": "Inventory 208 identifies a panel within triptych 208-210; different review decisions belong to those different presentations.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 8,
+      "titleArtistCandidate": "aanbidding van het lam gods|jan van eyck",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:9r1vzf",
+          "decision": "REJECT",
+          "accession": "413",
+          "objectUrl": "http://kmska.be/collection/work/data/9r1vzf",
+          "title": "Aanbidding van het Lam Gods",
+          "artistAsImported": "Jan van Eyck",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:k2plhq",
+          "decision": "REJECT",
+          "accession": "413-424",
+          "objectUrl": "http://kmska.be/collection/work/data/k2plhq",
+          "title": "Aanbidding van het Lam Gods",
+          "artistAsImported": "Jan van Eyck",
+          "batch": "B3"
+        }
+      ],
+      "identityDisposition": "ENSEMBLE_COMPONENT",
+      "evidenceBasis": "PUBLISHED_INSTITUTIONAL_OBJECT_PAGE_OR_OBJECT_SPECIFIC_COMMONS_METADATA",
+      "evidenceUrls": [
+        "https://kmska.be/nl/meesterwerk/aanbidding-van-het-lam-gods-0",
+        "https://kmska.be/nl/meesterwerk/aanbidding-van-het-lam-gods-1"
+      ],
+      "explanation": "Inventory 413 is the panel record and 413-424 the associated ensemble record.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 9,
+      "titleArtistCandidate": "annunciatie|schilder meester van de aanbidding te antwerpen",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:9tct5i",
+          "decision": "IMPORT",
+          "accession": "209bis",
+          "objectUrl": "http://kmska.be/collection/work/data/9tct5i",
+          "title": "Annunciatie",
+          "artistAsImported": "Schilder: Meester van de Aanbidding te Antwerpen",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:hyinp7",
+          "decision": "REJECT",
+          "accession": "210bis",
+          "objectUrl": "http://kmska.be/collection/work/data/hyinp7",
+          "title": "Annunciatie",
+          "artistAsImported": "Schilder: Meester van de Aanbidding te Antwerpen",
+          "batch": "B3"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "http://kmska.be/collection/work/data/9tct5i",
+        "http://kmska.be/collection/work/data/hyinp7"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 10,
+      "titleArtistCandidate": "marteling van de heilige georgius de grote|schilder michiel coxie i",
+      "sourceRows": [
+        {
+          "sourceId": "kmska:l8c3jg",
+          "decision": "REJECT",
+          "accession": "372",
+          "objectUrl": "http://kmska.be/collection/work/data/l8c3jg",
+          "title": "Marteling van de heilige Georgius de Grote",
+          "artistAsImported": "Schilder: Michiel Coxie I",
+          "batch": "B3"
+        },
+        {
+          "sourceId": "kmska:qdf0rm",
+          "decision": "REJECT",
+          "accession": "374",
+          "objectUrl": "http://kmska.be/collection/work/data/qdf0rm",
+          "title": "Marteling van de heilige Georgius de Grote",
+          "artistAsImported": "Schilder: Michiel Coxie I",
+          "batch": "B3"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "http://kmska.be/collection/work/data/l8c3jg",
+        "http://kmska.be/collection/work/data/qdf0rm"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 11,
+      "titleArtistCandidate": "the crucifixion|bernardo daddi",
+      "sourceRows": [
+        {
+          "sourceId": "met:436072",
+          "decision": "REJECT",
+          "accession": "41.190.12",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/436072",
+          "title": "The Crucifixion",
+          "artistAsImported": "Bernardo Daddi",
+          "batch": "B4R"
+        },
+        {
+          "sourceId": "met:438423",
+          "decision": "REJECT",
+          "accession": "1999.532",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/438423",
+          "title": "The Crucifixion",
+          "artistAsImported": "Bernardo Daddi",
+          "batch": "B4R"
+        },
+        {
+          "sourceId": "nga:46101",
+          "decision": "REJECT",
+          "accession": "1961.9.2",
+          "objectUrl": "https://www.nga.gov/artworks/46101",
+          "title": "The Crucifixion",
+          "artistAsImported": "Bernardo Daddi",
+          "batch": "B7"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.metmuseum.org/art/collection/search/436072",
+        "https://www.metmuseum.org/art/collection/search/438423",
+        "https://www.nga.gov/artworks/46101"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 12,
+      "titleArtistCandidate": "madonna and child|simon vouet",
+      "sourceRows": [
+        {
+          "sourceId": "nga:206070",
+          "decision": "IMPORT",
+          "accession": "2016.20.1",
+          "objectUrl": "https://www.nga.gov/artworks/206070",
+          "title": "Madonna and Child",
+          "artistAsImported": "Simon Vouet",
+          "batch": "B5R"
+        },
+        {
+          "sourceId": "commons:123291491",
+          "decision": "REJECT",
+          "accession": null,
+          "objectUrl": "https://commons.wikimedia.org/wiki/File:Vierge_au_rameau_de_ch%C3%AAne%2C_dite_Madone_Hesselin_-_Simon_Vouet_-_Mus%C3%A9e_du_Louvre_Peintures_RF_2004_19.jpg",
+          "title": "Madonna and child",
+          "artistAsImported": "Simon Vouet",
+          "batch": "B11"
+        }
+      ],
+      "identityDisposition": "DISTINCT_WORK_INSTITUTIONAL_EVIDENCE",
+      "evidenceBasis": "PUBLISHED_INSTITUTIONAL_OBJECT_PAGE_OR_OBJECT_SPECIFIC_COMMONS_METADATA",
+      "evidenceUrls": [
+        "https://www.nga.gov/artworks/206070",
+        "https://commons.wikimedia.org/wiki/File:Vierge_au_rameau_de_ch%C3%AAne%2C_dite_Madone_Hesselin_-_Simon_Vouet_-_Mus%C3%A9e_du_Louvre_Peintures_RF_2004_19.jpg"
+      ],
+      "explanation": "NGA acquisition number 2016.20.1 and Louvre painting RF 2004-19 are different museum collection objects, notwithstanding their generic shared title and artist.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 13,
+      "titleArtistCandidate": "madonna of the goldfinch|giovanni battista tiepolo",
+      "sourceRows": [
+        {
+          "sourceId": "nga:12138",
+          "decision": "IMPORT",
+          "accession": "1943.4.40",
+          "objectUrl": "https://www.nga.gov/artworks/12138",
+          "title": "Madonna of the Goldfinch",
+          "artistAsImported": "Giovanni Battista Tiepolo",
+          "batch": "B5R"
+        },
+        {
+          "sourceId": "nga:101678",
+          "decision": "IMPORT",
+          "accession": "1997.60.1",
+          "objectUrl": "https://www.nga.gov/artworks/101678",
+          "title": "Madonna of the Goldfinch",
+          "artistAsImported": "Giovanni Battista Tiepolo",
+          "batch": "B5R"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.nga.gov/artworks/12138",
+        "https://www.nga.gov/artworks/101678"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 14,
+      "titleArtistCandidate": "madonna and child|sandro botticelli",
+      "sourceRows": [
+        {
+          "sourceId": "nga:23",
+          "decision": "REJECT",
+          "accession": "1937.1.21",
+          "objectUrl": "https://www.nga.gov/artworks/23",
+          "title": "Madonna and Child",
+          "artistAsImported": "Sandro Botticelli",
+          "batch": "B5R"
+        },
+        {
+          "sourceId": "walters:10081",
+          "decision": "REJECT",
+          "accession": "37.434",
+          "objectUrl": "https://purl.thewalters.org/art/37.434",
+          "title": "Madonna and Child",
+          "artistAsImported": "Sandro Botticelli",
+          "batch": "B6"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.nga.gov/artworks/23",
+        "https://purl.thewalters.org/art/37.434"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 15,
+      "titleArtistCandidate": "madonna and child|bartolomeo montagna",
+      "sourceRows": [
+        {
+          "sourceId": "nga:170",
+          "decision": "REJECT",
+          "accession": "1939.1.29",
+          "objectUrl": "https://www.nga.gov/artworks/170",
+          "title": "Madonna and Child",
+          "artistAsImported": "Bartolomeo Montagna",
+          "batch": "B5R"
+        },
+        {
+          "sourceId": "walters:1742",
+          "decision": "REJECT",
+          "accession": "37.1036",
+          "objectUrl": "https://purl.thewalters.org/art/37.1036",
+          "title": "Madonna and Child",
+          "artistAsImported": "Bartolomeo Montagna",
+          "batch": "B6"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.nga.gov/artworks/170",
+        "https://purl.thewalters.org/art/37.1036"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 16,
+      "titleArtistCandidate": "madonna and child|giovanni bellini",
+      "sourceRows": [
+        {
+          "sourceId": "nga:496",
+          "decision": "REJECT",
+          "accession": "1939.1.352",
+          "objectUrl": "https://www.nga.gov/artworks/496",
+          "title": "Madonna and Child",
+          "artistAsImported": "Giovanni Bellini",
+          "batch": "B5R"
+        },
+        {
+          "sourceId": "met:435641",
+          "decision": "IMPORT",
+          "accession": "08.183.1",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/435641",
+          "title": "Madonna and Child",
+          "artistAsImported": "Giovanni Bellini",
+          "batch": "B9"
+        },
+        {
+          "sourceId": "met:435644",
+          "decision": "REJECT",
+          "accession": "49.7.2",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/435644",
+          "title": "Madonna and Child",
+          "artistAsImported": "Giovanni Bellini",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.nga.gov/artworks/496",
+        "https://www.metmuseum.org/art/collection/search/435641",
+        "https://www.metmuseum.org/art/collection/search/435644"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 17,
+      "titleArtistCandidate": "virgin and child|anthony van dyck",
+      "sourceRows": [
+        {
+          "sourceId": "walters:22581",
+          "decision": "IMPORT",
+          "accession": "37.234",
+          "objectUrl": "https://purl.thewalters.org/art/37.234",
+          "title": "Virgin and Child",
+          "artistAsImported": "Anthony van Dyck",
+          "batch": "B6"
+        },
+        {
+          "sourceId": "met:436261",
+          "decision": "IMPORT",
+          "accession": "51.33.1",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/436261",
+          "title": "Virgin and Child",
+          "artistAsImported": "Anthony van Dyck",
+          "batch": "B9"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://purl.thewalters.org/art/37.234",
+        "https://www.metmuseum.org/art/collection/search/436261"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 18,
+      "titleArtistCandidate": "the virgin in prayer|sassoferrato",
+      "sourceRows": [
+        {
+          "sourceId": "walters:15971",
+          "decision": "REJECT",
+          "accession": "37.1861",
+          "objectUrl": "https://purl.thewalters.org/art/37.1861",
+          "title": "The Virgin In Prayer",
+          "artistAsImported": "Sassoferrato",
+          "batch": "B6"
+        },
+        {
+          "sourceId": "walters:19792",
+          "decision": "REJECT",
+          "accession": "37.1823",
+          "objectUrl": "https://purl.thewalters.org/art/37.1823",
+          "title": "The Virgin in Prayer",
+          "artistAsImported": "Sassoferrato",
+          "batch": "B6"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://purl.thewalters.org/art/37.1861",
+        "https://purl.thewalters.org/art/37.1823"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 19,
+      "titleArtistCandidate": "the adoration of the magi|scarsellino",
+      "sourceRows": [
+        {
+          "sourceId": "walters:31826",
+          "decision": "IMPORT",
+          "accession": "37.1922",
+          "objectUrl": "https://purl.thewalters.org/art/37.1922",
+          "title": "The Adoration of the Magi",
+          "artistAsImported": "Scarsellino",
+          "batch": "B6"
+        },
+        {
+          "sourceId": "walters:4395",
+          "decision": "REJECT",
+          "accession": "37.442",
+          "objectUrl": "https://purl.thewalters.org/art/37.442",
+          "title": "The Adoration of the Magi",
+          "artistAsImported": "Scarsellino",
+          "batch": "B6"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://purl.thewalters.org/art/37.1922",
+        "https://purl.thewalters.org/art/37.442"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 20,
+      "titleArtistCandidate": "the adoration of the magi|veneto byzantine",
+      "sourceRows": [
+        {
+          "sourceId": "walters:40575",
+          "decision": "REJECT",
+          "accession": "37.1079",
+          "objectUrl": "https://purl.thewalters.org/art/37.1079",
+          "title": "The Adoration of the Magi",
+          "artistAsImported": "Veneto-Byzantine",
+          "batch": "B6"
+        },
+        {
+          "sourceId": "walters:8384",
+          "decision": "REJECT",
+          "accession": "37.1051",
+          "objectUrl": "https://purl.thewalters.org/art/37.1051",
+          "title": "The Adoration of the Magi",
+          "artistAsImported": "Veneto-Byzantine",
+          "batch": "B6"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://purl.thewalters.org/art/37.1079",
+        "https://purl.thewalters.org/art/37.1051"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 21,
+      "titleArtistCandidate": "christ pantokrator|russian",
+      "sourceRows": [
+        {
+          "sourceId": "walters:40130",
+          "decision": "REJECT",
+          "accession": "37.1183",
+          "objectUrl": "https://purl.thewalters.org/art/37.1183",
+          "title": "Christ Pantokrator",
+          "artistAsImported": "Russian",
+          "batch": "B6"
+        },
+        {
+          "sourceId": "walters:585",
+          "decision": "REJECT",
+          "accession": "37.1065B",
+          "objectUrl": "https://purl.thewalters.org/art/37.1065B",
+          "title": "Christ Pantokrator",
+          "artistAsImported": "Russian",
+          "batch": "B6"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://purl.thewalters.org/art/37.1183",
+        "https://purl.thewalters.org/art/37.1065B"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 22,
+      "titleArtistCandidate": "the annunciation|fra filippo lippi",
+      "sourceRows": [
+        {
+          "sourceId": "nga:12133",
+          "decision": "REJECT",
+          "accession": "1943.4.35",
+          "objectUrl": "https://www.nga.gov/artworks/12133",
+          "title": "The Annunciation",
+          "artistAsImported": "Fra Filippo Lippi",
+          "batch": "B7"
+        },
+        {
+          "sourceId": "met:436899",
+          "decision": "REJECT",
+          "accession": "43.98.2",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/436899",
+          "title": "The Annunciation",
+          "artistAsImported": "Fra Filippo Lippi",
+          "batch": "B9"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.nga.gov/artworks/12133",
+        "https://www.metmuseum.org/art/collection/search/436899"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 23,
+      "titleArtistCandidate": "madonna and child enthroned with saints|master of the panzano triptych",
+      "sourceRows": [
+        {
+          "sourceId": "walters:16766",
+          "decision": "REJECT",
+          "accession": "37.1037",
+          "objectUrl": "https://purl.thewalters.org/art/37.1037",
+          "title": "Madonna and Child Enthroned with Saints",
+          "artistAsImported": "Master of the Panzano Triptych",
+          "batch": "B7"
+        },
+        {
+          "sourceId": "walters:8187",
+          "decision": "REJECT",
+          "accession": "37.728",
+          "objectUrl": "https://purl.thewalters.org/art/37.728",
+          "title": "Madonna and Child Enthroned with Saints",
+          "artistAsImported": "Master of the Panzano Triptych",
+          "batch": "B7"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://purl.thewalters.org/art/37.1037",
+        "https://purl.thewalters.org/art/37.728"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 24,
+      "titleArtistCandidate": "virgin and child|hans memling",
+      "sourceRows": [
+        {
+          "sourceId": "met:437057",
+          "decision": "REJECT",
+          "accession": "32.100.59",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/437057",
+          "title": "Virgin and Child",
+          "artistAsImported": "Hans Memling",
+          "batch": "B9"
+        },
+        {
+          "sourceId": "met:437060",
+          "decision": "REJECT",
+          "accession": "32.100.58",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/437060",
+          "title": "Virgin and Child",
+          "artistAsImported": "Hans Memling",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.metmuseum.org/art/collection/search/437057",
+        "https://www.metmuseum.org/art/collection/search/437060"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 25,
+      "titleArtistCandidate": "the holy family|joos van cleve",
+      "sourceRows": [
+        {
+          "sourceId": "met:436797",
+          "decision": "REJECT",
+          "accession": "41.190.19",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/436797",
+          "title": "The Holy Family",
+          "artistAsImported": "Joos van Cleve",
+          "batch": "B9"
+        },
+        {
+          "sourceId": "met:436793",
+          "decision": "REJECT",
+          "accession": "32.100.57",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/436793",
+          "title": "The Holy Family",
+          "artistAsImported": "Joos van Cleve",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://www.metmuseum.org/art/collection/search/436797",
+        "https://www.metmuseum.org/art/collection/search/436793"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 26,
+      "titleArtistCandidate": "saint teresa of avila interceding for souls in purgatory|peter paul rubens",
+      "sourceRows": [
+        {
+          "sourceId": "met:437542",
+          "decision": "IMPORT",
+          "accession": "17.190.19",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/437542",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "artistAsImported": "Peter Paul Rubens",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "commons:45282804",
+          "decision": "IMPORT",
+          "accession": null,
+          "objectUrl": "https://commons.wikimedia.org/wiki/File:Avilai.jpg",
+          "title": "Saint Teresa of Ávila Interceding for Souls in Purgatory",
+          "artistAsImported": "Peter Paul Rubens",
+          "batch": "B11"
+        }
+      ],
+      "identityDisposition": "SAME_PHYSICAL_WORK_MULTIPLE_IMAGE_SOURCES",
+      "evidenceBasis": "PUBLISHED_INSTITUTIONAL_OBJECT_PAGE_OR_OBJECT_SPECIFIC_COMMONS_METADATA",
+      "evidenceUrls": [
+        "https://www.metmuseum.org/art/collection/search/437542",
+        "https://commons.wikimedia.org/wiki/File:Avilai.jpg"
+      ],
+      "explanation": "Commons image lists Met accession 17.190.19 and object 437542. Met attribution is Workshop of Peter Paul Rubens, unlike frozen reviewer metadata.",
+      "nextAction": "Link distinct source-image choices to one physical-work identity without overwriting review decisions.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 27,
+      "titleArtistCandidate": "de graflegging|attribution not identified",
+      "sourceRows": [
+        {
+          "sourceId": "rijks:20027096",
+          "decision": "IMPORT",
+          "accession": "SK-A-469",
+          "objectUrl": "https://id.rijksmuseum.nl/20027096",
+          "title": "De graflegging",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:20027738",
+          "decision": "REJECT",
+          "accession": "SK-A-2857",
+          "objectUrl": "https://id.rijksmuseum.nl/20027738",
+          "title": "De graflegging",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://id.rijksmuseum.nl/20027096",
+        "https://id.rijksmuseum.nl/20027738"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 28,
+      "titleArtistCandidate": "de verloochening van petrus|attribution not identified",
+      "sourceRows": [
+        {
+          "sourceId": "rijks:20026738",
+          "decision": "REJECT",
+          "accession": "SK-A-2093",
+          "objectUrl": "https://id.rijksmuseum.nl/20026738",
+          "title": "De verloochening van Petrus",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:200107933",
+          "decision": "REJECT",
+          "accession": "SK-A-3137",
+          "objectUrl": "https://id.rijksmuseum.nl/200107933",
+          "title": "De verloochening van Petrus",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://id.rijksmuseum.nl/20026738",
+        "https://id.rijksmuseum.nl/200107933"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 29,
+      "titleArtistCandidate": "johannes de doper|attribution not identified",
+      "sourceRows": [
+        {
+          "sourceId": "rijks:20015869",
+          "decision": "IMPORT",
+          "accession": "SK-A-216",
+          "objectUrl": "https://id.rijksmuseum.nl/20015869",
+          "title": "Johannes de Doper",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:20026723",
+          "decision": "REJECT",
+          "accession": "SK-A-3382",
+          "objectUrl": "https://id.rijksmuseum.nl/20026723",
+          "title": "Johannes de Doper",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://id.rijksmuseum.nl/20015869",
+        "https://id.rijksmuseum.nl/20026723"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 30,
+      "titleArtistCandidate": "de verzoeking van de heilige antonius de heremiet|attribution not identified",
+      "sourceRows": [
+        {
+          "sourceId": "rijks:200108287",
+          "decision": "IMPORT",
+          "accession": "SK-A-3240",
+          "objectUrl": "https://id.rijksmuseum.nl/200108287",
+          "title": "De verzoeking van de heilige Antonius de Heremiet",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:200108290",
+          "decision": "REJECT",
+          "accession": "SK-A-1795",
+          "objectUrl": "https://id.rijksmuseum.nl/200108290",
+          "title": "De verzoeking van de heilige Antonius de Heremiet",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://id.rijksmuseum.nl/200108287",
+        "https://id.rijksmuseum.nl/200108290"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 31,
+      "titleArtistCandidate": "maria met kind|attribution not identified",
+      "sourceRows": [
+        {
+          "sourceId": "rijks:20025755",
+          "decision": "REJECT",
+          "accession": "SK-A-3448",
+          "objectUrl": "https://id.rijksmuseum.nl/20025755",
+          "title": "Maria met kind",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:20025790",
+          "decision": "REJECT",
+          "accession": "SK-A-3399",
+          "objectUrl": "https://id.rijksmuseum.nl/20025790",
+          "title": "Maria met kind",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:20026214",
+          "decision": "REJECT",
+          "accession": "SK-A-3388",
+          "objectUrl": "https://id.rijksmuseum.nl/20026214",
+          "title": "Maria met kind",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:200107816",
+          "decision": "REJECT",
+          "accession": "SK-A-2567",
+          "objectUrl": "https://id.rijksmuseum.nl/200107816",
+          "title": "Maria met kind",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:200108470",
+          "decision": "REJECT",
+          "accession": "SK-A-247",
+          "objectUrl": "https://id.rijksmuseum.nl/200108470",
+          "title": "Maria met kind",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:20026290",
+          "decision": "REJECT",
+          "accession": "SK-A-3124",
+          "objectUrl": "https://id.rijksmuseum.nl/20026290",
+          "title": "Maria met kind",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://id.rijksmuseum.nl/20025755",
+        "https://id.rijksmuseum.nl/20025790",
+        "https://id.rijksmuseum.nl/20026214",
+        "https://id.rijksmuseum.nl/200107816",
+        "https://id.rijksmuseum.nl/200108470",
+        "https://id.rijksmuseum.nl/20026290"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 32,
+      "titleArtistCandidate": "crucifixion|attribution not identified",
+      "sourceRows": [
+        {
+          "sourceId": "rijks:20026596",
+          "decision": "REJECT",
+          "accession": "SK-A-2548",
+          "objectUrl": "https://id.rijksmuseum.nl/20026596",
+          "title": "Crucifixion",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:20028056",
+          "decision": "REJECT",
+          "accession": "SK-A-1508",
+          "objectUrl": "https://id.rijksmuseum.nl/20028056",
+          "title": "Crucifixion",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://id.rijksmuseum.nl/20026596",
+        "https://id.rijksmuseum.nl/20028056"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 33,
+      "titleArtistCandidate": "madonna and child|attribution not identified",
+      "sourceRows": [
+        {
+          "sourceId": "rijks:200109430",
+          "decision": "REJECT",
+          "accession": "SK-A-3739",
+          "objectUrl": "https://id.rijksmuseum.nl/200109430",
+          "title": "Madonna and Child",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        },
+        {
+          "sourceId": "rijks:200110492",
+          "decision": "REJECT",
+          "accession": "SK-A-4045",
+          "objectUrl": "https://id.rijksmuseum.nl/200110492",
+          "title": "Madonna and Child",
+          "artistAsImported": "Attribution not identified",
+          "batch": "B10"
+        }
+      ],
+      "identityDisposition": "DISTINCT_INVENTORY_RECORDS_NO_MERGE",
+      "evidenceBasis": "DISTINCT_CATALOGUE_ACCESSION_NUMBERS_IN_FROZEN_SOURCE_BATCH",
+      "evidenceUrls": [
+        "https://id.rijksmuseum.nl/200109430",
+        "https://id.rijksmuseum.nl/200110492"
+      ],
+      "explanation": "Different institutional accession identifiers for different object records, despite shared title and artist; possible greater ensemble membership is not assessed by this field.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    },
+    {
+      "groupNumber": 34,
+      "titleArtistCandidate": "veil of veronica|francisco de zurbaran",
+      "sourceRows": [
+        {
+          "sourceId": "commons:74425075",
+          "decision": "REJECT",
+          "accession": null,
+          "objectUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_-_Veil_of_Veronica_-_BF.1980.9_-_Museum_of_Fine_Arts.jpg",
+          "title": "Veil of Veronica",
+          "artistAsImported": "Francisco de Zurbarán",
+          "batch": "B11"
+        },
+        {
+          "sourceId": "commons:78990209",
+          "decision": "IMPORT",
+          "accession": null,
+          "objectUrl": "https://commons.wikimedia.org/wiki/File:Zurbar%C3%A1n_-_Veronica%27s_Veil%2C_Delenda_38.jpg",
+          "title": "Veil of Veronica",
+          "artistAsImported": "Francisco de Zurbarán",
+          "batch": "B11"
+        }
+      ],
+      "identityDisposition": "DISTINCT_WORK_INSTITUTIONAL_EVIDENCE",
+      "evidenceBasis": "PUBLISHED_INSTITUTIONAL_OBJECT_PAGE_OR_OBJECT_SPECIFIC_COMMONS_METADATA",
+      "evidenceUrls": [
+        "https://emuseum.mfah.org/objects/22064/veil-of-veronica",
+        "https://commons.wikimedia.org/wiki/File:Zurbar%C3%A1n_-_Veronica%27s_Veil,_Delenda_38.jpg"
+      ],
+      "explanation": "Zurbaran Veil of Veronica works have distinct material dimensions and provenance: MFA Houston BF.1980.9 107.3×79.4 cm, while the Christie’s-source Delenda 38 work is documented 101.6×83.2 cm.",
+      "nextAction": "Preserve every individual source record and editorial choice; only create reversible work/ensemble relations.",
+      "decisionsChanged": 0,
+      "productionImports": 0
+    }
+  ]
+}

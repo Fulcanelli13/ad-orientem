@@ -1,0 +1,131 @@
+{
+  "schema": "AO_SACRED_ART_B13_ACCEPTED_REMOVED_SOURCE_REPAIR_V1",
+  "asOf": "2026-10-29",
+  "scope": "Four original B13 user IMPORT choices excluded by later automated quality screener",
+  "sourceOfUserAuthority": "data/calendar/sacred-art-editorial-b13-final-decisions-20261029.v1.json",
+  "sourceScreener": "data/calendar/sacred-art-b13-french-250-final-editorial-screener-20261029.v2.json",
+  "counts": {
+    "approvedPreserved": 4,
+    "photoRepairOrReplacementCandidates": 4,
+    "confirmedCopyrightFalsePositives": 1,
+    "originalUserDecisionsModified": 0,
+    "autoApprovedReplacementImages": 0,
+    "productionImports": 0
+  },
+  "rules": {
+    "newSourceRequiresSamePhysicalObjectProof": true,
+    "finalNativeVisualQARequired": true,
+    "rightsCannotBeInferredFromPublicDomainPainting": true,
+    "doNotTransferChoiceToLaterReplacementSourceId": true
+  },
+  "cases": [
+    {
+      "reviewedChoice": {
+        "sourceId": "commons:123828337",
+        "batch": "B13",
+        "decision": "IMPORT",
+        "originalTitle": "Spanish: Santa Apolonia | Saint Apollonia \" \"",
+        "originalArtistAsPresented": "Francisco de Zurbarán",
+        "userChoicePreserved": true,
+        "sourceBatchSha256": "2cc8695e6a34b24e88aa7ad6b290111134659e5d9f3a3fd5a1a0566f5cb09fe8"
+      },
+      "sourceId": "commons:123828337",
+      "issue": "FRAMED_REPRODUCTION",
+      "physicalArtwork": {
+        "institution": "Musée du Louvre",
+        "accession": "MI 724",
+        "artistFromInstitution": "Francisco de Zurbarán",
+        "museumObjectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010064908"
+      },
+      "recommendedPhotoSource": "https://commons.wikimedia.org/wiki/File:Sainte_Apolline_-_Francisco_de_Zurbar%C3%A1n_-_Mus%C3%A9e_du_Louvre_Peintures_MI_724.jpg",
+      "recommendedPhotoIdentityEvidence": "Commons file has MI 724 and no 'avec cadre' suffix, 1908×3345 pixels; actual native edge, colour and exact-photo rights must still be verified.",
+      "rightGate": "EXACT_CANDIDATE_FILE_RIGHTS_NOT_RECHECKED",
+      "photoGate": "ALTERNATE_SAME_OBJECT_CANDIDATE_NOT_CERTIFIED",
+      "nextAction": "Compare approved frame-containing original with unframed MI 724 candidate at full resolution, preserve whole pigment, check photo-specific reuse rights and selected derivative hash.",
+      "productionEligible": false
+    },
+    {
+      "reviewedChoice": {
+        "sourceId": "commons:81902276",
+        "batch": "B13",
+        "decision": "IMPORT",
+        "originalTitle": "Martyrdom of Saint Catherine",
+        "originalArtistAsPresented": "Simon Vouet",
+        "userChoicePreserved": true,
+        "sourceBatchSha256": "2cc8695e6a34b24e88aa7ad6b290111134659e5d9f3a3fd5a1a0566f5cb09fe8"
+      },
+      "sourceId": "commons:81902276",
+      "issue": "PRE_RESTORATION_PHOTO",
+      "physicalArtwork": {
+        "institution": "Musée des Beaux-Arts de Strasbourg",
+        "accession": "44.2019.1.1",
+        "artistFromInstitution": "Simon Vouet",
+        "museumObjectUrl": "https://www.musees.strasbourg.eu/-/le-martyre-de-sainte-catherine-de-simon-vouet"
+      },
+      "recommendedPhotoSource": "https://commons.wikimedia.org/wiki/File:Simon_Vouet,_Martyre_de_Sainte-Catherine_(apr%C3%A8s_restauration).jpg",
+      "recommendedPhotoIdentityEvidence": "A post-restoration-labeled Commons file exists, but its upload history disputes whether current pixels truly show the restored state; cannot treat label alone as validation.",
+      "rightGate": "RESTORED_IMAGE_REUSE_TERMS_NEED_FILE_LEVEL_CHECK",
+      "photoGate": "RESTORED_STATE_DISPUTED_HOLD",
+      "nextAction": "Determine current restored appearance from the Strasbourg museum's documented image; validate exact pixels/version of candidate and rights before photo source substitution.",
+      "productionEligible": false
+    },
+    {
+      "reviewedChoice": {
+        "sourceId": "commons:163856846",
+        "batch": "B13",
+        "decision": "IMPORT",
+        "originalTitle": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
+        "originalArtistAsPresented": "DCHNwam",
+        "userChoicePreserved": true,
+        "sourceBatchSha256": "2cc8695e6a34b24e88aa7ad6b290111134659e5d9f3a3fd5a1a0566f5cb09fe8"
+      },
+      "sourceId": "commons:163856846",
+      "issue": "DETAIL_ONLY_SOURCE",
+      "physicalArtwork": {
+        "institution": "Musée des Beaux-Arts de Strasbourg",
+        "accession": "MBA 235",
+        "artistFromInstitution": "After Peter Paul Rubens (d'après Rubens)",
+        "museumObjectUrl": "https://pop.culture.gouv.fr/notice/joconde/00190023042"
+      },
+      "recommendedPhotoSource": "https://commons.wikimedia.org/wiki/File:54a_Pierre-Paul_Rubens,_Le_Christ_triomphant_de_la_Mort_et_du_P%C3%A9ch%C3%A9,_vers_1615-16.jpg",
+      "existingSeparatelyApprovedSourceId": "commons:163856843",
+      "recommendedPhotoIdentityEvidence": "Original 54d file explicitly says 'détail'; 54a has the whole-work title and is independently user IMPORT approved. Both have same Strasbourg category, but exact whole composition still needs native photo verification.",
+      "rightGate": "EXACT_COMMONS_IMAGE_RIGHTS_REQUIRE_INDEPENDENT_REVIEW",
+      "photoGate": "FULL_VERSION_APPROVED_SEPARATELY_BUT_NOT_CERTIFIED",
+      "nextAction": "Prefer independent full-image approved source for overall composition after identity and photographic-quality checks; retain detail approval as a separate use case, not equivalent to whole-work acceptance.",
+      "productionEligible": false
+    },
+    {
+      "reviewedChoice": {
+        "sourceId": "commons:85666930",
+        "batch": "B13",
+        "decision": "IMPORT",
+        "originalTitle": "Jacques Blanchard - Saint Jérôme écrivant",
+        "originalArtistAsPresented": "Jvillafruela",
+        "userChoicePreserved": true,
+        "sourceBatchSha256": "2cc8695e6a34b24e88aa7ad6b290111134659e5d9f3a3fd5a1a0566f5cb09fe8"
+      },
+      "sourceId": "commons:85666930",
+      "issue": "PHOTOGRAPHER_MISLABELED_AS_ARTIST_AND_RIGHTS_FALSE_POSITIVE",
+      "physicalArtwork": {
+        "institution": "Musée de Grenoble",
+        "accession": "MG 4292",
+        "artistFromInstitution": "Jacques Blanchard",
+        "museumObjectUrl": "https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm"
+      },
+      "recommendedPhotoSource": "https://commons.wikimedia.org/wiki/File:Jacques_Blanchard_-_Saint_J%C3%A9r%C3%B4me_%C3%A9crivant.jpg",
+      "recommendedPhotoIdentityEvidence": "The source image attributes painting to Jacques Blanchard but identifies Commons uploader/photographer Jvillafruela; local B13 artist field incorrectly recorded uploader as painter.",
+      "rightGate": "PHOTOGRAPH_CC_BY_SA_4_0_NOT_PUBLIC_DOMAIN",
+      "photoGate": "PHOTO_NATIVE_QUALITY_NOT_CERTIFIED",
+      "licenseDetails": {
+        "photoCopyrightHolder": "Jérôme Villafruela (Commons user Jvillafruela)",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "conditions": "Attribution, license link, indicate edits, ShareAlike for adaptations",
+        "sourceEvidence": "https://commons.wikimedia.org/wiki/File:Jacques_Blanchard_-_Saint_J%C3%A9r%C3%B4me_%C3%A9crivant.jpg"
+      },
+      "nextAction": "Correct artwork artist field to Jacques Blanchard in normalized candidate only. Place the photograph on rights hold pending compliance or an alternative truly PD/CC0 photo of MG 4292. Do not override frozen user choice.",
+      "productionEligible": false
+    }
+  ]
+}

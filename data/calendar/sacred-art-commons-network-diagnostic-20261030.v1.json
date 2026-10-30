@@ -1,0 +1,42 @@
+{
+  "schema": "AO_COMMONS_NETWORK_DIAGNOSTIC_20261030",
+  "at": "2026-10-30T04:37:36.792Z",
+  "oneFilePageId": 22151874,
+  "sourceIdentityPromoted": 0,
+  "sourceImagesDownloaded": 0,
+  "dataReadOnly": true,
+  "results": [
+    {
+      "label": "actionApi",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&formatversion=2&prop=imageinfo&pageids=22151874&iiprop=sha1%7Csize%7Cmime",
+      "httpStatus": 200,
+      "mime": "application/json; charset=utf-8",
+      "bytesSampled": 322,
+      "responsePrefix": "{\"batchcomplete\":true,\"query\":{\"pages\":[{\"pageid\":22151874,\"ns\":6,\"title\":\"File:Poussin, Nicolas - The Translation of Saint Rita of Cascia - Google Art Project.jpg\",\"imagerepository\":\"local\",\"imageinf"
+    },
+    {
+      "label": "filePage",
+      "url": "https://commons.wikimedia.org/wiki/File:Poussin%2C_Nicolas_-_The_Translation_of_Saint_Rita_of_Cascia_-_Google_Art_Project.jpg",
+      "httpStatus": 200,
+      "mime": "text/html; charset=UTF-8",
+      "bytesSampled": 500,
+      "responsePrefix": "<!DOCTYPE html>\n<html class=\"client-nojs vector-feature-language-in-header-disabled vector-feature-language-in-main-menu-disabled vector-feature-language-in-main-page-header-disabled vector-feature-pa"
+    },
+    {
+      "label": "wikibaseFile",
+      "url": "https://commons.wikimedia.org/wiki/Special:EntityData/M22151874.json",
+      "httpStatus": 200,
+      "mime": "application/json; charset=UTF-8",
+      "bytesSampled": 500,
+      "responsePrefix": "{\"entities\":{\"M22151874\":{\"pageid\":22151874,\"ns\":6,\"title\":\"File:Poussin, Nicolas - The Translation of Saint Rita of Cascia - Google Art Project.jpg\",\"lastrevid\":1062812425,\"modified\":\"2025-07-29T16:5"
+    },
+    {
+      "label": "mediawikiApiViaWikimedia",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&meta=siteinfo",
+      "httpStatus": 200,
+      "mime": "application/json; charset=utf-8",
+      "bytesSampled": 500,
+      "responsePrefix": "{\"batchcomplete\":\"\",\"query\":{\"general\":{\"mainpage\":\"Main Page\",\"base\":\"https://commons.wikimedia.org/wiki/Main_Page\",\"sitename\":\"Wikimedia Commons\",\"logo\":\"//commons.wikimedia.org/static/images/projec"
+    }
+  ]
+}

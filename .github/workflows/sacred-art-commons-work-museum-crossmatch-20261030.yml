@@ -1,0 +1,63 @@
+name: Sacred Art Commons work-QID museum crossmatch (research only)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-commons-work-museum-crossmatch-20261030.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-commons-work-museum-crossmatch
+  cancel-in-progress: false
+
+jobs:
+  accession-evidence-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify frozen editorial decisions and source lineage
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Compare 192 Wikidata artwork QIDs to the 479 accepted museum records
+        run: node scripts/art/crossmatch-commons-work-qids-museum-accessions-20261030.mjs
+      - name: Validate research-only evidence before committing
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const p='data/calendar/sacred-art-phase1-commons-wikidata-museum-work-crosswalk-20261030.v1.json';
+          const j=JSON.parse(readFileSync(p,'utf8'));
+          const s=j.summary;
+          if(s.sourceCards!==305 || s.sourceFilesWithQid!==195 ||
+            s.distinctQids!==192 || s.existingCanonicalLinks!==72 ||
+            s.newCanonical383Links!==0 || s.publicationApproved!==0 ||
+            s.photoRightsCertified!==0 || s.productionImports!==0 ||
+            j.productionMutation!==false ||
+            j.records.some(r=>r.canonical383NewIdentityLink!==false ||
+              r.photoRightsCertified!==false || r.productionMutation!==false) ||
+            j.records.flatMap(r=>r.museumAccessionCandidates)
+              .some(x=>x.canonical383NewIdentityLink!==false ||
+                x.photoRightsCertified!==false))
+            throw Error("Publication or canonical-identity protection failed");
+          console.log("Research-only crossmatch ready",JSON.stringify(s,null,2));
+          NODE
+      - name: Commit accession-candidate evidence only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-commons-wikidata-museum-work-crosswalk-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): accession crosswalk from Commons work QIDs [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029

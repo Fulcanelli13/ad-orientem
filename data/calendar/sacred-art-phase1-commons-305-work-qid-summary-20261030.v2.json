@@ -1,0 +1,60 @@
+{
+  "schema": "AO_SACRED_ART_COMMONS_305_WORK_QID_SUMMARY_V1",
+  "at": "2026-10-30T04:47:27.358Z",
+  "upstreamAudit": "data/calendar/sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json",
+  "researchLedger": "data/calendar/sacred-art-phase1-commons-305-structured-work-leads-20261030.v2.json",
+  "counts": {
+    "sourceCards": 305,
+    "upstreamVerifiedSourceFilePages": 305,
+    "mediaInfoEntitiesResolved": 305,
+    "mediaInfoMissing": 0,
+    "queryFailures": 0,
+    "upstreamUnverifiedNotQueried": 0,
+    "sourceFilesWithP6243SpecificArtworkId": 195,
+    "distinctP6243ArtworkQIds": 192,
+    "sameWikidataWorkIdMultipleFileSourceGroups": 3,
+    "sourceFilesWithDepictsOnlyButNotP6243": 16,
+    "sourceFilesWithCopyrightStatusStatement": 246,
+    "sourceFilesWithCopyrightLicenceStatement": 51,
+    "exactMuseumPhysicalPaintingMatchesEstablished": 0,
+    "canonical383NewIdentityLinks": 0,
+    "photoRightsCertified": 0,
+    "originalPhotosVisuallyCertified": 0,
+    "productionImports": 0
+  },
+  "sameWorkMediaGroups": [
+    {
+      "wikidataWorkId": "Q72299012",
+      "sourceIds": [
+        "commons:12241941",
+        "commons:94250927"
+      ],
+      "relation": "MULTIPLE_COMMONS_MEDIA_FILES_REFER_TO_SAME_WIKIDATA_ARTWORK_ENTITY",
+      "confirmPhysicalIdentityAgainstMuseumAnd_CANONICAL383": true,
+      "noAutomaticArtworkMerge": true
+    },
+    {
+      "wikidataWorkId": "Q20180050",
+      "sourceIds": [
+        "commons:22178536",
+        "commons:75000039"
+      ],
+      "relation": "MULTIPLE_COMMONS_MEDIA_FILES_REFER_TO_SAME_WIKIDATA_ARTWORK_ENTITY",
+      "confirmPhysicalIdentityAgainstMuseumAnd_CANONICAL383": true,
+      "noAutomaticArtworkMerge": true
+    },
+    {
+      "wikidataWorkId": "Q117226959",
+      "sourceIds": [
+        "commons:56247842",
+        "commons:103072768"
+      ],
+      "relation": "MULTIPLE_COMMONS_MEDIA_FILES_REFER_TO_SAME_WIKIDATA_ARTWORK_ENTITY",
+      "confirmPhysicalIdentityAgainstMuseumAnd_CANONICAL383": true,
+      "noAutomaticArtworkMerge": true
+    }
+  ],
+  "statementsNotCertifiedAsMuseumPhysicalObject": true,
+  "sourcePhotoLicenseAndVisualStillUncertified": true,
+  "productionMutation": false
+}

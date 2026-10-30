@@ -1,0 +1,192 @@
+{
+  "schema": "AO_KMSKA_OFFICIAL_ENDPOINT_PROBE_20261029_V1",
+  "at": "2026-10-29T20:56:08.743Z",
+  "readOnly": true,
+  "source": "data/calendar/sacred-art-phase1-museum-479-accession-audit-20261029.v1.json",
+  "sampleSize": 3,
+  "recordsAwaitingAuthoritativeVerification": 89,
+  "objectsVerifiedByThisProbe": 0,
+  "blockedPromotion": true,
+  "results": [
+    {
+      "sourceId": "kmska:0csw4p",
+      "accession": "40",
+      "reviewedTitle": "Aanbidding door de herders",
+      "requests": [
+        {
+          "requestUrl": "https://datahub.kmska.be/api/v1/data/0csw4p.json",
+          "error": "TypeError: fetch failed",
+          "elapsedMs": 339,
+          "containsInventoryNumber": false,
+          "containsTitle": false
+        },
+        {
+          "requestUrl": "https://datahub.kmska.be/api/v1/data/0csw4p",
+          "error": "TypeError: fetch failed",
+          "elapsedMs": 274,
+          "containsInventoryNumber": false,
+          "containsTitle": false
+        },
+        {
+          "requestUrl": "https://kmska.be/collection/work/data/0csw4p",
+          "status": 404,
+          "finalUrl": "http://resolver.kmska.be/collection/work/data/0csw4p",
+          "contentType": "text/html",
+          "bytesRead": 169,
+          "title": "404 Not Found",
+          "containsInventoryNumber": true,
+          "containsTitle": false,
+          "dataShape": null,
+          "textSample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.14.1</center>\r\n</body>\r\n</html>\r\n",
+          "elapsedMs": 962
+        },
+        {
+          "requestUrl": "https://productionbackend.kmska.be/meesterwerk/40",
+          "status": 200,
+          "finalUrl": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-herders-0",
+          "contentType": "text/html; charset=utf-8",
+          "bytesRead": 12000,
+          "title": "Aanbidding door de herders",
+          "containsInventoryNumber": false,
+          "containsTitle": true,
+          "dataShape": null,
+          "textSample": "<!DOCTYPE html><html lang=\"nl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/fb1dcd54b6df37ac.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/126acce611cc7b99.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-b2873ebab1ed4f7c.js\"/><link rel=\"preload\" href=\"https://www.googletagmanager.com/gtm.js?id=GTM-TSP5VPB\" as=\"script\"/><link rel=\"preload\" href=\"https://webchat.digitalcx.com/webchat.js\" as=\"script\" crossorigin=\"\"/><title>Aanbidding door de herders</title><meta name=\"description\" content=\"Aanbidding door de herders\"/><meta property=\"og:title\" content=\"Aanbidding door de herders\"/><meta property=\"o",
+          "elapsedMs": 1355
+        },
+        {
+          "requestUrl": "https://kmska.be/nl/meesterwerk/40",
+          "status": 200,
+          "finalUrl": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-herders-0",
+          "contentType": "text/html; charset=utf-8",
+          "bytesRead": 12000,
+          "title": "Aanbidding door de herders",
+          "containsInventoryNumber": false,
+          "containsTitle": true,
+          "dataShape": null,
+          "textSample": "<!DOCTYPE html><html lang=\"nl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/fb1dcd54b6df37ac.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/126acce611cc7b99.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-b2873ebab1ed4f7c.js\"/><link rel=\"preload\" href=\"https://www.googletagmanager.com/gtm.js?id=GTM-TSP5VPB\" as=\"script\"/><link rel=\"preload\" href=\"https://webchat.digitalcx.com/webchat.js\" as=\"script\" crossorigin=\"\"/><title>Aanbidding door de herders</title><meta name=\"description\" content=\"Aanbidding door de herders\"/><meta property=\"og:title\" content=\"Aanbidding door de herders\"/><meta property=\"o",
+          "elapsedMs": 707
+        }
+      ]
+    },
+    {
+      "sourceId": "kmska:7v3wb4",
+      "accession": "208",
+      "reviewedTitle": "Aanbidding door de koningen",
+      "requests": [
+        {
+          "requestUrl": "https://datahub.kmska.be/api/v1/data/7v3wb4.json",
+          "error": "TypeError: fetch failed",
+          "elapsedMs": 176,
+          "containsInventoryNumber": false,
+          "containsTitle": false
+        },
+        {
+          "requestUrl": "https://datahub.kmska.be/api/v1/data/7v3wb4",
+          "error": "TypeError: fetch failed",
+          "elapsedMs": 177,
+          "containsInventoryNumber": false,
+          "containsTitle": false
+        },
+        {
+          "requestUrl": "https://kmska.be/collection/work/data/7v3wb4",
+          "status": 404,
+          "finalUrl": "http://resolver.kmska.be/collection/work/data/7v3wb4",
+          "contentType": "text/html",
+          "bytesRead": 169,
+          "title": "404 Not Found",
+          "containsInventoryNumber": false,
+          "containsTitle": false,
+          "dataShape": null,
+          "textSample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.14.1</center>\r\n</body>\r\n</html>\r\n",
+          "elapsedMs": 175
+        },
+        {
+          "requestUrl": "https://productionbackend.kmska.be/meesterwerk/208",
+          "status": 200,
+          "finalUrl": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-3",
+          "contentType": "text/html; charset=utf-8",
+          "bytesRead": 12000,
+          "title": "Aanbidding door de koningen",
+          "containsInventoryNumber": false,
+          "containsTitle": true,
+          "dataShape": null,
+          "textSample": "<!DOCTYPE html><html lang=\"nl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/fb1dcd54b6df37ac.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/126acce611cc7b99.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-b2873ebab1ed4f7c.js\"/><link rel=\"preload\" href=\"https://www.googletagmanager.com/gtm.js?id=GTM-TSP5VPB\" as=\"script\"/><link rel=\"preload\" href=\"https://webchat.digitalcx.com/webchat.js\" as=\"script\" crossorigin=\"\"/><title>Aanbidding door de koningen</title><meta name=\"description\" content=\"Aanbidding door de koningen\"/><meta property=\"og:title\" content=\"Aanbidding door de koningen\"/><meta property",
+          "elapsedMs": 441
+        },
+        {
+          "requestUrl": "https://kmska.be/nl/meesterwerk/208",
+          "status": 200,
+          "finalUrl": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-3",
+          "contentType": "text/html; charset=utf-8",
+          "bytesRead": 12000,
+          "title": "Aanbidding door de koningen",
+          "containsInventoryNumber": false,
+          "containsTitle": true,
+          "dataShape": null,
+          "textSample": "<!DOCTYPE html><html lang=\"nl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/fb1dcd54b6df37ac.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/126acce611cc7b99.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-b2873ebab1ed4f7c.js\"/><link rel=\"preload\" href=\"https://www.googletagmanager.com/gtm.js?id=GTM-TSP5VPB\" as=\"script\"/><link rel=\"preload\" href=\"https://webchat.digitalcx.com/webchat.js\" as=\"script\" crossorigin=\"\"/><title>Aanbidding door de koningen</title><meta name=\"description\" content=\"Aanbidding door de koningen\"/><meta property=\"og:title\" content=\"Aanbidding door de koningen\"/><meta property",
+          "elapsedMs": 436
+        }
+      ]
+    },
+    {
+      "sourceId": "kmska:9tct5i",
+      "accession": "209bis",
+      "reviewedTitle": "Annunciatie",
+      "requests": [
+        {
+          "requestUrl": "https://datahub.kmska.be/api/v1/data/9tct5i.json",
+          "error": "TypeError: fetch failed",
+          "elapsedMs": 352,
+          "containsInventoryNumber": false,
+          "containsTitle": false
+        },
+        {
+          "requestUrl": "https://datahub.kmska.be/api/v1/data/9tct5i",
+          "error": "TypeError: fetch failed",
+          "elapsedMs": 262,
+          "containsInventoryNumber": false,
+          "containsTitle": false
+        },
+        {
+          "requestUrl": "https://kmska.be/collection/work/data/9tct5i",
+          "status": 404,
+          "finalUrl": "http://resolver.kmska.be/collection/work/data/9tct5i",
+          "contentType": "text/html",
+          "bytesRead": 169,
+          "title": "404 Not Found",
+          "containsInventoryNumber": false,
+          "containsTitle": false,
+          "dataShape": null,
+          "textSample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.14.1</center>\r\n</body>\r\n</html>\r\n",
+          "elapsedMs": 175
+        },
+        {
+          "requestUrl": "https://productionbackend.kmska.be/meesterwerk/209bis",
+          "status": 200,
+          "finalUrl": "https://kmska.be/nl/meesterwerk/annunciatie",
+          "contentType": "text/html; charset=utf-8",
+          "bytesRead": 12000,
+          "title": "Annunciatie",
+          "containsInventoryNumber": false,
+          "containsTitle": true,
+          "dataShape": null,
+          "textSample": "<!DOCTYPE html><html lang=\"nl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/fb1dcd54b6df37ac.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/126acce611cc7b99.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-b2873ebab1ed4f7c.js\"/><link rel=\"preload\" href=\"https://www.googletagmanager.com/gtm.js?id=GTM-TSP5VPB\" as=\"script\"/><link rel=\"preload\" href=\"https://webchat.digitalcx.com/webchat.js\" as=\"script\" crossorigin=\"\"/><title>Annunciatie</title><meta name=\"description\" content=\"Annunciatie\"/><meta property=\"og:title\" content=\"Annunciatie\"/><meta property=\"og:description\" content=\"Annunciatie\"/><meta p",
+          "elapsedMs": 449
+        },
+        {
+          "requestUrl": "https://kmska.be/nl/meesterwerk/209bis",
+          "status": 200,
+          "finalUrl": "https://kmska.be/nl/meesterwerk/annunciatie",
+          "contentType": "text/html; charset=utf-8",
+          "bytesRead": 12000,
+          "title": "Annunciatie",
+          "containsInventoryNumber": false,
+          "containsTitle": true,
+          "dataShape": null,
+          "textSample": "<!DOCTYPE html><html lang=\"nl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/fb1dcd54b6df37ac.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/126acce611cc7b99.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-b2873ebab1ed4f7c.js\"/><link rel=\"preload\" href=\"https://www.googletagmanager.com/gtm.js?id=GTM-TSP5VPB\" as=\"script\"/><link rel=\"preload\" href=\"https://webchat.digitalcx.com/webchat.js\" as=\"script\" crossorigin=\"\"/><title>Annunciatie</title><meta name=\"description\" content=\"Annunciatie\"/><meta property=\"og:title\" content=\"Annunciatie\"/><meta property=\"og:description\" content=\"Annunciatie\"/><meta p",
+          "elapsedMs": 466
+        }
+      ]
+    }
+  ]
+}

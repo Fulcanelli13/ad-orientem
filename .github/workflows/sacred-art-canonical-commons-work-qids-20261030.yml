@@ -1,0 +1,61 @@
+name: Sacred Art canonical Commons source-photo work-QID audit (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-canonical-commons-work-qids-20261030.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-canonical-commons-work-qids
+  cancel-in-progress: false
+
+jobs:
+  compare-commons-source-work-qids:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify frozen user choices and canonical 383
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Resolve original canonical Commons source file and artwork identities
+        run: node scripts/art/crossmatch-canonical-commons-work-qids-20261030.mjs
+      - name: Validate no identity or photo-rights promotions
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync} from "node:fs";
+          const j=JSON.parse(readFileSync("data/calendar/sacred-art-phase1-canonical383-commons-work-qid-crosswalk-20261030.v1.json","utf8"));
+          const c=j.counts;
+          if(c.canonicalMasterRecords!==383||c.canonicalCommonsSourcePages<1||
+            c.canonicalCommonsSourcePages>383||c.acceptedCommonsWorkQidSources!==195||
+            c.existingCanonicalSourceLinks!==72||c.newConfirmedCanonical383Links!==0||
+            c.exactPhotoRightsCertified!==0||c.originalNativePhotosCertified!==0||
+            c.productionImports!==0||j.release.productionMutation!==false||
+            j.candidates.some(x=>x.certifiedNewCanonicalIdentity!==false||x.photoApproved!==false||
+            x.productionMutation!==false)||j.canonicalCommonsPhotoPages.some(x=>
+            x.newCanonical383Link!==false||x.rightsCertified!==false||
+            x.visualCertified!==false||x.productionMutation!==false))
+            throw Error("Canonical Commons source photo no-promotion gate failed");
+          console.log(JSON.stringify(c,null,2));
+          NODE
+      - name: Commit research ledger without production modification
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-canonical383-commons-work-qid-crosswalk-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): canonical Commons photo P6243 crosswalk [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029

@@ -1,0 +1,65 @@
+name: Sacred Art Wave 2 · 493 source-rights bulk audit (€0)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-wave2-493-sources-20261030.yml
+      - scripts/art/bulk-source-audit-493-wave2-20261030.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ao-sacred-art-wave2-source-493
+  cancel-in-progress: false
+
+jobs:
+  rights-metadata-and-original-reproduction-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate original approvals and rejections
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Audit 142 museum-source originals and 351 Commons files
+        run: node scripts/art/bulk-source-audit-493-wave2-20261030.mjs
+      - name: Validate same 73 protected from repeat review
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const report=JSON.parse(readFileSync('data/calendar/sacred-art-master-v1/wave2-493-official-source-audit-20261030.v1.json','utf8'));
+          const s=report.counts;
+          if(s.originalFirstPhotoReviewPreserved!==73||
+           s.officialObjectPhotoAuditRequested!==142||
+           s.officialObjectPhotoAuditCompleted!==142||
+           s.commonsRightsAuditRequested!==351||
+           s.commonsRightsAuditCompleted!==351||
+           s.totalSourceGroupsProcessed!==493||
+           s.titleIdentityAutoMerges!==0||
+           s.historicalDecisionsChanged!==0||
+           s.photoPristineCertified!==0||
+           s.fileRightsFinallyCertified!==0||
+           s.productionImports!==0||s.feesEur!==0||
+           new Set(report.results.map(x=>x.group)).size!==493||
+           report.release.old73ReviewUnchanged!==true||report.release.appRelease!==false)
+             throw Error('Second-wave full audit or immutable review validation failed');
+          console.log(JSON.stringify(s,null,2));
+          NODE
+      - name: Commit permanent source audit in Git
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem sacred-art audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-master-v1/wave2-493-official-source-audit-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): preserve 493-source Wave 2 image/rights audit [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029

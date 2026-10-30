@@ -1,0 +1,68 @@
+name: Sacred Art SMK Copenhagen 54 official collection metadata (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-smk-54-official-20261029.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-smk-54-official-source
+  cancel-in-progress: false
+
+jobs:
+  reconcile-54-smk-records:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate 2455 original source decisions and 383 master protection
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Reconcile official SMK KMS/KMSSP/KMSST inventory records
+        run: node scripts/art/reconcile-smk-54-official-20261029.mjs
+      - name: Preserve evidence and verify release gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const path='data/calendar/sacred-art-phase1-smk-54-official-object-report-20261029.v1.json';
+          const o=JSON.parse(readFileSync(path,'utf8'));
+          const c=o.counts;
+          if(o.rows.length!==54 || c.frozenSourceCards!==54 ||
+             c.originalConditionalImportCount!==2 ||
+             c.confirmedOfficialIdsAndTitles+c.officialResponseButUnresolved+c.officialFetchFailures!==54 ||
+             o.rows.some(r=>r.frozenAccession!==r.sourceId.slice(4) ||
+               r.userDecisionModified!==false ||
+               r.physicalArtworkUniquenessCertified!==false ||
+               r.canonical383Linked!==false ||
+               r.exactOriginalPhotographCertified!==false ||
+               r.photographicRightsCertified!==false ||
+               r.nativeImageVisuallyInspected!==false ||
+               r.productionMutation!==false) ||
+             c.newlyEstablishedCanonical383Links!==0 ||
+             c.productionImports!==0 || o.release.productionMutation!==false)
+            throw Error('SMK official research result violates frozen 54-source/release gate');
+          console.log(JSON.stringify(c,null,2));
+          NODE
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-smk-54-official-object-report-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Research report unchanged'
+            exit 0
+          fi
+          git commit -m "research(sacred-art): preserve SMK 54 official source verification [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029

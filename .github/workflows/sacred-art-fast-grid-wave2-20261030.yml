@@ -1,0 +1,60 @@
+name: Sacred Art Batches 02–03 · fast one-click embedded review grids (€0)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-fast-grid-wave2-20261030.yml
+      - scripts/art/build-sacred-art-fast-grid-wave2-20261030.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ao-sacred-art-fast-grid-wave2
+  cancel-in-progress: false
+
+jobs:
+  build-self-contained-reviewers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet Pillow==11.3.0
+      - name: Validate previous wave frozen source decisions
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Download and embed 371 lawful-source preview candidates in self-contained galleries
+        run: python -u scripts/art/build-sacred-art-fast-grid-wave2-20261030.py
+      - name: Verify no auto approvals or duplicate reviews
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          m=json.loads(pathlib.Path('data/calendar/sacred-art-master-v2/fast-grid-371-embedded-photo-proof-20261030.v1.json').read_text())
+          assert m['batchedReviewCount']==371 and len(m['images'])==371
+          assert len({x['group'] for x in m['images']})==371
+          assert m['previewsEmbedded']+m['previewsMissing']==371
+          assert m['productionReleases']==0 and m['humanPhotoApprovals']==0
+          assert m['reusedFirst73']==False and m['userEditorialDecisionsChanged']==0
+          for batch in ['02','03']:
+            html=pathlib.Path('docs/SACRED_ART_FAST_GRID_REVIEW_BATCH'+batch+'_20261030.html').read_text()
+            assert 'Approve → Queue 1' in html and '<aside' not in html
+            assert 'missing previews' in html and 'Return to Queue 2' in html
+          print(m['previewsEmbedded'],'embedded previews;',m['previewsMissing'],'missing and retained in Queue2')
+          PY
+      - name: Commit galleries and image retrieval audit in Git (not temporary artifacts)
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem sacred-art review"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_FAST_GRID_REVIEW_BATCH02_20261030.html docs/SACRED_ART_FAST_GRID_REVIEW_BATCH03_20261030.html data/calendar/sacred-art-master-v2/fast-grid-371-embedded-photo-proof-20261030.v1.json
+          git diff --cached --check
+          git commit -m "feat(sacred-art): 371 one-click review tiles with embedded previews [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029

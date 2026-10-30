@@ -1,0 +1,66 @@
+name: Sacred Art 856 vs 383 full identity-candidate screening (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-856-to-383-bulk-identity-20261030.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-856-to-383-bulk-identity
+  cancel-in-progress: false
+
+jobs:
+  screen-full-accepted-to-canonical-registry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Protect locked 383 artwork and frozen 2455 editorial decisions
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Generate complete 856 vs 383 review queue (no approvals)
+        run: node scripts/art/triage-accepted-856-to-canonical-383-20261030.mjs
+      - name: Validate every candidate is unpromoted
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync} from "node:fs";
+          const p="data/calendar/sacred-art-phase1-856-to-383-exhaustive-candidate-triage-20261030.v1.json";
+          const j=JSON.parse(readFileSync(p,"utf8")),c=j.counts;
+          if(c.accepted!==856||c.canonicalMaster!==383||
+             c.canonicalSourceCardsAlreadyLinked!==72||c.notCanonicallyLinked!==784||
+             j.unlinkedRows.length!==784||j.acceptedCanonicalAlreadyLinked.length!==72||
+             c.existingCommonsSameWorkMediaGroups!==3||c.commonsToMuseumWorkFamilies!==3||
+             c.accessionCollisionFamiliesExplicitlyExcluded!==2||
+             c.newCanonical383Links!==0||c.distinctConfirmedNewPhysicalWorks!==0||
+             c.licensingCertifications!==0||c.publicationApprovals!==0||
+             c.productionMutations!==0||j.release.productionMutation!==false||
+             new Set(j.unlinkedRows.map(x=>x.sourceId)).size!==784||
+             j.unlinkedRows.some(x=>x.confirmedNewCanonical383Link!==false ||
+               x.imageRightsCertified!==false||x.photoVisualApproved!==false||
+               x.publicationEligible!==false||x.productionMutation!==false))
+            throw Error("Frozen identity or no-publish gate failed");
+          console.log("All 784 unlinked records screened as non-release candidates");
+          console.log(JSON.stringify(c,null,2));
+          NODE
+      - name: Commit auditable 784-row exception and lead queue
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-856-to-383-exhaustive-candidate-triage-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): screen all 784 unlinked accepted artwork cards [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
