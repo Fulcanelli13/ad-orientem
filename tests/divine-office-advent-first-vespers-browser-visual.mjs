@@ -34,6 +34,13 @@ for(const lang of ["la","en","fr"]){
   import.meta.url),"utf8"));
  assert.equal(complineFixtures[lang].sourceRevision,PIN);
 }
+const feriaFixtures={};
+for(const lang of ["la","en","fr"]){
+ feriaFixtures[lang]=JSON.parse(readFileSync(new URL(
+  "../tests/fixtures/office/advent-i-feria-iii-compline-"+lang+".json",
+  import.meta.url),"utf8"));
+ assert.equal(feriaFixtures[lang].sourceRevision,PIN);
+}
 const ordinary=readFileSync(new URL(
  "../tests/fixtures/office/advent-i-preview-ordinary.txt",import.meta.url),"utf8");
 const witness=JSON.parse(readFileSync(new URL(
@@ -79,6 +86,9 @@ function originalSourceFixture(url){
  const cf=complineFixtures[lang];
  const pm=/^Psalterium\/Psalmorum\/Psalm(87|102|233)$/u.exec(id);
  if(pm&&cf.psalms[pm[1]])return cf.psalms[pm[1]];
+ const ff=feriaFixtures[lang];
+ const tm=/^Psalterium\/Psalmorum\/Psalm(11|12|15)$/u.exec(id);
+ if(tm&&ff.psalms[tm[1]])return ff.psalms[tm[1]].text;
  const sections={...(f.sections[id]??{}),...(cf.sections[id]??{})};
  if(!Object.keys(sections).length)
   throw Error("OFFICE_VISUAL_SOURCE_NOT_IN_FINITE_FIXTURE:"+path);
@@ -405,6 +415,43 @@ try{
  }
  assert.ok(found.has("psalm")&&found.has("marian"));
  assert.equal(await dp.locator("#next").isDisabled(),true);
+ // Ferial Tuesday (1 December) is a distinct, pinned 42-block Compline
+ // appointment. All other weekday profiles remain source plans only.
+ await dp.locator("#office-date").fill("2026-12-01");
+ await dp.locator("#office-date").dispatchEvent("change");
+ await dp.locator("#reader").waitFor({state:"visible",timeout:60000});
+ assert.match(await dp.locator("#office-title").innerText(),/Tuesday Compline/);
+ assert.match(await dp.locator("#office-subtitle").innerText(),/Tuesday, 1 December 2026/);
+ assert.equal(await dp.locator("#bar").getAttribute("aria-valuemax"),"42");
+ assert.equal(dhits.size,49,"Tuesday should add only nine Psalm leaves to existing source identities");
+ await shot(dp,"23-desktop-1440-tuesday-compline-opening");
+ let tuesdayPsalm=false,tuesdayPsalm6b=false,tuesdayMarian=false;
+ for(let k=0;k<46;k++){
+  const ref=await dp.locator("#card .ref").innerText();
+  if(ref.includes("Psalm11")&&!tuesdayPsalm){
+   tuesdayPsalm=true;
+   await shot(dp,"24-desktop-1440-tuesday-compline-psalm11");
+  }
+  if(ref.includes("Psalm12")){
+   if((await dp.locator("#card").innerText()).includes("12:6b"))tuesdayPsalm6b=true;
+  }
+  if(ref.includes("Mariaant")&&!tuesdayMarian){
+   tuesdayMarian=true;
+   await shot(dp,"25-desktop-1440-tuesday-compline-alma-redemptoris");
+  }
+  if(await dp.locator("#next").isDisabled())break;
+  await dp.locator("#next").click();
+ }
+ assert.ok(tuesdayPsalm&&tuesdayPsalm6b&&tuesdayMarian,
+  "Tuesday Psalms, final 12:6b row and Marian antiphon must all appear");
+ assert.equal(await dp.locator("#next").isDisabled(),true);
+ record("2026-12-01 ferial Tuesday Compline, 42 source blocks, PS11/12/15 + seasonal Marian antiphon",{
+  passed:true,newDistinctRawLeaves:9,allPsalmsVisible:true,
+  12_6bPreserved:true,noDateFallback:true
+ });
+ await dp.locator("#office-date").fill("2026-11-28");
+ await dp.locator("#office-date").dispatchEvent("change");
+ await dp.locator("#reader").waitFor({state:"visible",timeout:10000});
  await dp.locator('[data-view="focus"]').click();
  await dp.locator("#office-hour").selectOption("VESPERS");
  await dp.waitForFunction(()=>document.querySelector("#office-title")?.textContent?.includes("First Vespers"),null,{timeout:15000});
@@ -417,9 +464,9 @@ try{
  await dp.locator("#office-date").dispatchEvent("change");
  assert.equal(await dp.locator("#reader").isVisible(),true);
  assert.match(await dp.locator("#card").innerText(),/Opening|Deus|adjutórium/);
- assert.equal(dhits.size,40,"switching pilots must reuse prior pinned source sessions");
+ assert.equal(dhits.size,49,"switching pilots must reuse prior pinned source sessions");
  await shot(dp,"19-desktop-1440-office-beta-date-hour-picker");
- assert.equal(dhits.size,40);
+ assert.equal(dhits.size,49);
  assert.deepEqual(dperrors,[]);
  record("1440px desktop responsive bilingual layout",{
   passed:true,sourceURLs:dhits.size});
