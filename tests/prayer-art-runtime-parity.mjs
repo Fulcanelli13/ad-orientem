@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import { NOVENA_CORPUS_V4 } from '../src/pray/novena-corpus-v4.js';
 import { DAILY_GUIDED_STEPS, NIGHTLY_EXAMEN_CARDS } from '../src/pray/guided-daily-cards.js';
 import { ROSARY_MYSTERY_CONTEXT_V1 } from '../src/pray/rosary-mystery-context.v1.js';
+import { resolveArtworkRuntimeIdentity } from '../src/pray/artwork-runtime-identity.v1.js';
 
 const directory='data/prayer/artwork-editorial-20261030/';
 const read=name=>JSON.parse(readFileSync(directory+name,'utf8'));
@@ -113,6 +114,67 @@ for(const file of ['src/pray/presentation-runtime.js','src/pray/novena-runtime.j
   assert.ok(!source.includes('runtime-card-parity-20261030.v1.json'),
     'Reader route art manifest activation requires separate human-approved visual QA');
 }
+
+const presentationResolve=(view,step,extra={})=>resolveArtworkRuntimeIdentity({owner:'presentation',view,step,...extra});
+const traditionalResolve=(route,extra={})=>resolveArtworkRuntimeIdentity({owner:'traditional',route,...extra});
+for(const [group,view] of [
+  ['benediction','benediction'],['stations','stations'],
+  ['penitential_psalms','penitential'],['seven_words','sevenWords'],
+  ['forty_hours','fortyHours']
+]){
+  for(const row of manifest.runtime_stage_to_editorial_slot[group]){
+    const idx=row.runtime_index??manifest.runtime_stage_to_editorial_slot[group].indexOf(row);
+    const actual=presentationResolve(view,idx);
+    assert.equal(actual.slot,row.editorial_slot,'Nonvisual runtime artwork ID mismatch '+group+' step '+idx);
+    assert.equal(actual.publicationReady,false);
+  }
+}
+for(const [group,mode] of [
+  ['adoration_visit','visit'],['adoration_holy_hour','holy'],['adoration_four_ends','four']
+]){
+  for(const row of manifest.runtime_stage_to_editorial_slot[group]){
+    const actual=presentationResolve('adoration',row.runtime_index,{mode});
+    assert.equal(actual.slot,row.editorial_slot,'Adoration runtime artwork ID mismatch '+mode+' '+row.runtime_index);
+  }
+}
+for(const row of manifest.runtime_stage_to_editorial_slot.nightly_examen){
+  const actual=traditionalResolve('pray.nightly_examen',{examenStep:row.runtime_index});
+  assert.equal(actual.slot,row.editorial_slot,'Examen art slot mismatch '+row.runtime_index);
+}
+for(const [group,part] of [['morning_daily','morning'],['evening_daily','evening']]){
+  for(const row of manifest.runtime_stage_to_editorial_slot[group]){
+    const actual=traditionalResolve('pray.morning_evening',{
+      daypart:part,dailyStep:row.runtime_index,stepPrayerId:row.prayer_id
+    });
+    assert.equal(actual.slot,row.editorial_slot,'Canonical shared prayer mismatch '+part+' '+row.runtime_index);
+  }
+}
+for(const row of manifest.novena_guided){
+  const n=NOVENA_CORPUS_V4[row.novena_id],nSteps=stages(n);
+  const expected=row.preferred_day_slot||row.cover_slot;
+  for(let day=1;day<=9;day++)for(let stage=0;stage<nSteps;stage++){
+    const actual=resolveArtworkRuntimeIdentity({
+      owner:'novena',id:row.novena_id,screen:'day',day,stage,mode:'guided'
+    });
+    assert.equal(actual.slot,expected,'Novena runtime art mismatch '+row.novena_id+' '+day+'/'+stage);
+    assert.equal(actual.publicationReady,false);
+  }
+}
+const sets={joy:'joyful',sor:'sorrowful',glo:'glorious',lum:'luminous'};
+for(const row of manifest.rosary_mystery_context){
+  const context=row.context_key,set=sets[context.slice(0,3)],mystery=Number(context.slice(3))-1;
+  const actual=presentationResolve('rosary',0,{set,mystery});
+  assert.equal(actual.slot,row.editorial_slot,'Rosary scene reuse mismatch '+context);
+  assert.equal(actual.publicationReady,false);
+}
+assert.equal(traditionalResolve('pray.holy_name_litany').slot,null,
+  'Holy Name Litany lacks a specific image-bearing blueprint slot; update audit if remedied');
+for(const f of ['src/pray/presentation-runtime.js','src/pray/novena-runtime.js','src/pray/traditional-pray-runtime.js']){
+  const source=readFileSync(f,'utf8');
+  assert.ok(source.includes('stampArtworkRuntimeIdentity'),
+    'Nonvisual runtime marker missing in '+f);
+}
+
 console.log(JSON.stringify({
   gate:'EDITORIAL_RUNTIME_SLOT_LOOKUP_ONLY',
   novena_families:16,
