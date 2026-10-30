@@ -252,8 +252,68 @@ def frozen_id_locality_hint(source_id, country):
     return token
 
 
+def canonical_wikidata_qid(place):
+    """Use only explicitly identified Wikidata QIDs; never infer from a nearby pin."""
+    direct = place.get("wikidata_id") or place.get("wikidata_qid")
+    if isinstance(direct, str) and re.fullmatch(r"Q[1-9]\\d*", direct):
+        return direct
+    ref = str((place.get("geo") or {}).get("source_ref") or "")
+    match = re.search(r"(?:wikidata:|wikidata\\.org/(?:wiki/|entity/))(Q[1-9]\\d*)(?:\\b|$)", ref, re.I)
+    return match.group(1).upper() if match else None
+
+
+def canonical_place_rows(payload):
+    """Direct canonical Place intake, never an invented or parallel venue master."""
+    if payload.get("schema") != "EXPLORE_GEOGRAPHY_SEED_V1":
+        raise ValueError("Canonical Places registry required")
+    places = payload.get("places")
+    if not isinstance(places, list) or not places:
+        raise ValueError("Empty/malformed canonical Place registry")
+    rows, seen = [], set()
+    for place in places:
+        if not isinstance(place, dict):
+            raise ValueError("Malformed canonical Place")
+        place_id = place.get("place_id")
+        name = (place.get("name") or {}).get("official")
+        address = place.get("address") or {}
+        geo = place.get("geo") or {}
+        country = address.get("country_code")
+        lat, lng = geo.get("lat"), geo.get("lng")
+        source_url = geo.get("source_url")
+        if (not isinstance(place_id, str) or not place_id.startswith("place:")
+                or place_id in seen or not isinstance(name, str) or not name.strip()
+                or not isinstance(country, str) or not re.fullmatch(r"[A-Z]{2}", country)
+                or not isinstance(source_url, str) or not source_url.startswith("https://")):
+            raise ValueError("Canonical Place identity, geo source or country invalid")
+        seen.add(place_id)
+        if (place.get("mappable") is False or not isinstance(lat, (int, float))
+                or not isinstance(lng, (int, float)) or not -90 <= lat <= 90
+                or not -180 <= lng <= 180):
+            continue  # Never geosearch an unlocated or deliberately hidden Place.
+        precision = str(geo.get("precision") or "").lower()
+        if precision not in ("site", "complex_anchor", "address", "street", "locality"):
+            raise ValueError("Unrecognised canonical Place geospatial precision")
+        # An independently sourced named site is at least as precise as an
+        # R49 building marker; a complex anchor is NOT a precise photo match.
+        effective = {"site": "building", "complex_anchor": "street",
+                     "address": "address", "street": "street", "locality": "street"}[precision]
+        rows.append({
+            "id": place_id, "name": name, "country": country,
+            "locality": str(address.get("city") or "")[:120],
+            "locality_source": "CANONICAL_PLACE_ADDRESS_NOT_FILE_ID",
+            "url": source_url, "lat": lat, "lng": lng, "precision": effective,
+            "original_place_precision": precision,
+            "wikidata_id": canonical_wikidata_qid(place),
+            "source_owner": "CANONICAL_PLACES_NO_VENUE_PROMOTION",
+        })
+    rows.sort(key=lambda x: x["id"])
+    return rows
+
+
 def source_rows(source: Path):
     payload = json.loads(source.read_text(encoding="utf-8"))
+    if payload.get("schema") == "EXPLORE_GEOGRAPHY_SEED_V1":
+        return canonical_place_rows(payload)
     if payload.get("schema") != "AO_PRELIMINARY_TLM_MAP_R49":
         raise ValueError("Expected frozen R49 physical venue snapshot, not arbitrary leads")
     names = payload.get("columns") or []
@@ -358,8 +418,9 @@ def wikidata_photo_identity(client, venue):
     short_name = re.sub(r"\s*\([^)]*\)", "", name).strip()
     if short_name != name and len(short_name) >= 8:
         variants.append(short_name)
-    ids = []
-    for variant in variants:
+    direct_qid = venue.get("wikidata_id")
+    ids = [direct_qid] if direct_qid and re.fullmatch(r"Q[1-9]\\d*", direct_qid) else []
+    for variant in ([] if ids else variants):
         results = client.request({
             "action": "wbsearchentities", "format": "json", "language": "en",
             "type": "item", "search": variant, "limit": 7,
@@ -388,6 +449,8 @@ def wikidata_photo_identity(client, venue):
             continue
         distance = min(geo_distance_m(latlng, (x["latitude"], x["longitude"])) for x in coordinates)
         tolerance = WIKIDATA_DISTANCE_M.get(str(venue.get("precision")).lower(), 250)
+        if direct_qid:
+            tolerance = min(tolerance, 100)  # Explicit QID still requires local building corroboration.
         if distance > tolerance:
             continue
         labels = [v.get("value", "") for v in entity.get("labels", {}).values()]
@@ -411,6 +474,7 @@ def wikidata_photo_identity(client, venue):
     image = next((v for v in claim_values(entity, "P18") if isinstance(v, str)), None)
     return {
         "state": "GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY", "wikidata_id": qid,
+        "identity_method": "EXPLICIT_CANONICAL_QID" if direct_qid else "GEO_AND_NAME_SEARCH",
         "wikidata_url": "https://www.wikidata.org/wiki/" + qid,
         "distance_m": distance, "name_score": round(-minus_score, 3),
         "image_property": image, "commons_category": category,
@@ -492,7 +556,7 @@ def relevant_commons_subcategories(client, category):
     return selected
 
 def structured_discovery(client, venue):
-    """One Wikidata identity search, then P18 and Commons category, as available.
+    """Use explicit canonical QID when present; otherwise search by name, then P18/category.
 
     One item is provisionally matched to an R49 pin by name AND coordinates.
     Even then, no user-visible photo may be published on this evidence alone.
@@ -883,6 +947,7 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
         raise ValueError("Unknown photo discovery wave")
     active_roles = WAVES[wave]
     rows = source_rows(source)
+    source_schema = json.loads(source.read_text(encoding="utf-8"))["schema"]
     selected_indices = list(indices) if indices is not None else list(range(offset, min(offset+limit, len(rows))))
     if not selected_indices or len(selected_indices) > MAX_BATCH or len(set(selected_indices)) != len(selected_indices):
         raise ValueError("Invalid/duplicate batch source indices")
@@ -894,6 +959,8 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
     for venue in subset:
         row = {
             "source_id": venue["id"], "name": venue["name"],
+            "source_owner": venue.get("source_owner", "FROZEN_R49_VENUE"),
+            "canonical_place_id": venue["id"] if source_schema == "EXPLORE_GEOGRAPHY_SEED_V1" else None,
             "country": venue["country"], "locality": venue["locality"],
             "locality_source": venue.get("locality_source", "UNSPECIFIED"),
             "venue_source_url": venue["url"], "categories": {}, "errors": {},
@@ -981,7 +1048,7 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
     payload = {
         "schema": "AO_DIRECTORY_OPEN_PHOTO_CANDIDATES_V1",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "source_schema": "AO_PRELIMINARY_TLM_MAP_R49",
+        "source_schema": source_schema,
         "offset": offset, "processed": len(results),
         "selected_source_indices": selected_indices,
         "source_countries_in_sample": sorted({row["country"] for row in results}),
@@ -1018,8 +1085,9 @@ def main():
         ap.error("Openverse per-venue requests must be 0..2")
     if not 0 <= args.openverse_budget <= 40:
         ap.error("Openverse quota must be 0..40 requests per batch")
-    if not 0 <= args.offset < 1879 or not 1 <= args.limit <= MAX_BATCH or args.offset+args.limit > 1879:
-        ap.error("Offset 0..1878 and limit 1..500 required")
+    total = len(source_rows(args.source))
+    if not 0 <= args.offset < total or not 1 <= args.limit <= MAX_BATCH or args.offset+args.limit > total:
+        ap.error(f"Offset and limit must fit {total} source records (limit <= 500)")
     try:
         indices = [int(x.strip()) for x in args.indices.split(",")] if args.indices else None
     except ValueError:
