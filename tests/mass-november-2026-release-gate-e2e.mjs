@@ -274,7 +274,8 @@ try{
        await input.check();
        for(const mode of ["MISSAL","LIVE"]){
          if(m1){
-           await page.locator('[data-folio-overview-button]').click();
+           const back=page.locator('[data-folio-overview-button]');
+           if(await back.isVisible())await back.click();
            await page.locator('[data-m1-choice="reader"]').click();
          }else await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
          await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
