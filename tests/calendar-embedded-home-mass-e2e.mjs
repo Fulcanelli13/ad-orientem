@@ -33,7 +33,7 @@ try{
  browser=await chromium.launch({headless:true});
  for(const width of [390,320,1280]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:width<600,hasTouch:width<600,locale:"en-GB"});
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoTodayH4=0&aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
   // Do not visually certify a Home that is still behind the cinematic splash.
   await page.waitForFunction(()=>{
