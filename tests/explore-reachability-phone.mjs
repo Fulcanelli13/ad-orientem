@@ -4,9 +4,13 @@ import {readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
-import {PRELIMINARY_R49_TOTAL,PRELIMINARY_R49_ROME,PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
-const APPROVED_MAP_TOTAL=PRELIMINARY_R49_TOTAL+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
-const APPROVED_ROME_TOTAL=PRELIMINARY_R49_ROME+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
+import {PRELIMINARY_R49_ROME,PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
+import {CL2_PHYSICAL_SITE_COUNT} from "../src/find/cl2-physical-directory.js";
+// CL2 absorbs 35 duplicate R49 source rows into physical-site groups (6 Rome,
+// 28 SSPX, 1 unknown). The unlocated 735 remain searchable and have no pins.
+const WORLDWIDE_DIRECTORY_TOTAL=CL2_PHYSICAL_SITE_COUNT+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
+const RECONCILED_ROME_TOTAL=1016+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
+const RECONCILED_SSPX_TOTAL=704;
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -214,13 +218,13 @@ try{
      "Unverified preliminary venue markers must not expose a timetable filter");
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ALL"]').tap();
    await page.waitForFunction(expected=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===expected,
-     APPROVED_MAP_TOTAL,{timeout:12000});
+     WORLDWIDE_DIRECTORY_TOTAL,{timeout:12000});
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="SSPX"]').tap();
-   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===732,
+   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===RECONCILED_SSPX_TOTAL,
      null,{timeout:12000});
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ROME"]').tap();
    await page.waitForFunction(expected=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===expected,
-     APPROVED_ROME_TOTAL,{timeout:12000});
+     RECONCILED_ROME_TOTAL,{timeout:12000});
    const provider=page.locator('#ao-find-modular-root .aoTlmProviderStrip [data-find-affiliation="FSSP"]');
    assert.equal(await provider.count(),1,"Institute filtering must be visible beside the map, not inside a hidden disclosure");
    await provider.tap();
@@ -230,7 +234,7 @@ try{
    assert.ok(fssp<=PRELIMINARY_R49_ROME,"FSSP filter incorrectly adds venues");
    await page.locator('#ao-find-modular-root .aoTlmProviderStrip [data-find-affiliation="FSSP"]').tap();
    await page.waitForFunction(expected=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===expected,
-     APPROVED_ROME_TOTAL,{timeout:12000});
+     RECONCILED_ROME_TOTAL,{timeout:12000});
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ALL"]').tap();
    await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
      snapshot.count,{timeout:12000});
