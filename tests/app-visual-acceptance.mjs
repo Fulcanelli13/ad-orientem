@@ -195,6 +195,8 @@ try{
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
+    h4:document.querySelectorAll(".homeScreen.aoTodayH4").length,
+    h4ReadGospel:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Read [data-action='gospel']").length,
     todayV2Sections:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2Zone,.aoTodayV2Below .aoTodayV2Zone").length,
     todayV2Glance:document.querySelectorAll(".aoTodayV2CalendarGlance").length,
     prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
@@ -204,9 +206,15 @@ try{
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===2 &&
+  // The default H4 homeowner keeps Pray and Read separately, but does not
+  // retain the legacy two-.aoTodayV2Zone H1.1 markup. Require both H4
+  // sections explicitly rather than weakening the coverage to one zone.
+  const homeSectionsOk=homeAudit.h4===1
+    ?homeAudit.todayV2Sections===1 && homeAudit.h4ReadGospel===1
+    :homeAudit.todayV2Sections===2;
+  assert.ok(homeAudit.todayV2===1 && homeSectionsOk &&
     homeAudit.todayV2Glance===1 && homeAudit.todayV2CalendarLinks>=1,
-    "H1.1 must render Prayer and Read/Reflect, one Calendar summary and working Calendar links: "+JSON.stringify(homeAudit));
+    "Home must render Pray and Read, one Calendar summary and working Calendar links: "+JSON.stringify(homeAudit));
   assert.equal(homeAudit.prayerBeforeCalendar,true,"H1.1 requires the prayer entry before Calendar context");
   assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
