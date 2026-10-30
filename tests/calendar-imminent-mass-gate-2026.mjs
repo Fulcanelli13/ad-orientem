@@ -26,7 +26,7 @@ let browser;
 try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({serviceWorkers:"block"});
- await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
+ await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoTodayH4=0&aoR17Reader=native",
    {waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>Boolean(
    globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate&&
