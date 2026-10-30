@@ -38,8 +38,8 @@ try{
     const r=el.getBoundingClientRect();
     return {top:r.top,pixels:Math.max(0,Math.min(r.bottom,innerHeight-70)-Math.max(0,r.top)),height:innerHeight};
    });
-   assert.ok(firstPrayer.pixels>=12,
-    "F07 first canonical prayer must appear above the app dock at "+width+"px: "+JSON.stringify(firstPrayer));
+   assert.ok(firstPrayer.pixels>=28,
+    "F07 first canonical prayer must show at least one readable line above the app dock at "+width+"px: "+JSON.stringify(firstPrayer));
    await page.screenshot({path:resolve(output,"mercy-crown-opening-"+width+".png"),animations:"disabled"});
    const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
    await large.click();
