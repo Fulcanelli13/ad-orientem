@@ -351,7 +351,16 @@ export function createHomeOwner(win=globalThis){
       // Alternative Mass/Proper selection still goes through the host resolver.
       const opened=openH4ChoicesSheet(win,{
         onOtherMass:()=>{void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});},
-        onDone:()=>{if(state(win)?.route==="home")paint(state(win));},
+        onDone:()=>{
+          if(state(win)?.route!=="home")return;
+          // The modal is now removed and Home re-paints from canonical R17 state.
+          // Restore keyboard focus to the fresh Change trigger, not the detached
+          // button that opened the dialog (and do not scroll the phone viewport).
+          if(paint(state(win))){
+            const trigger=win?.document?.querySelector?.(".homeScreen.aoTodayH4 [data-home-h4-change]");
+            try{trigger?.focus?.({preventScroll:true});}catch{trigger?.focus?.();}
+          }
+        },
       });
       if(!opened)void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});
       return;
