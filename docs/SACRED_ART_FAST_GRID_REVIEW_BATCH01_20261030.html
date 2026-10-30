@@ -38,7 +38,7 @@ main{padding:21px max(18px,4vw);max-width:1600px;margin:auto}
 <h1>One-click painting review</h1>
 <p class="muted">See the painting. If pristine, click <b>Approve → Queue 1</b>. Everything else stays in Queue 2. No side panels, explanations or extra forms. Unavailable images cannot be approved until they display.</p>
 <div class="toolbar">
-<button class="primary" id="download">Export Queue 1 approvals (.csv)</button>
+<button class="primary" id="approveVisible">Approve all displayed</button><button class="primary" id="download">Export Queue 1 approvals (.csv)</button>
 <button id="upload">Import earlier review CSV</button><input type="file" id="import" accept=".csv,text/csv" hidden>
 <button id="clear">Reset local approvals</button>
 </div>
@@ -68,7 +68,9 @@ document.querySelector("#gallery").innerHTML=matches.map(x=>{
  const yes=approved[x.id]&&x.available;
  return '<article class="card '+(yes?"ready":"pending")+'">'+
   '<div class="photo">'+(x.available?'<img src="'+x.preview+'" alt="'+safe(x.title)+'">':
-   '<div class="unavailable">Image could not be retrieved.<p>Remains in Queue 2.</p></div>')+'</div>'+
+   '<div class="unavailable">'+
+     (x.remotePreview?'<img class="remote-preview" data-remote-id="'+safe(x.id)+'" loading="lazy" src="'+safe(x.remotePreview)+'" alt="'+safe(x.title)+'" style="display:block;max-height:185px;max-width:100%;margin:auto">':'')+
+     '<p>Image not cached. If it loads, approval unlocks; otherwise stays in Queue 2.</p></div>')+'</div>'+
   '<div class="card-body"><strong>'+safe(x.title)+'</strong><small>'+safe(x.artist)+'</small>'+
   '<small>'+safe(x.module||"Sacred Art")+'</small>'+
   '<div class="links">'+(x.sourceUrl?'<a href="'+safe(x.sourceUrl)+'" target="_blank" rel="noopener">Source image</a>':"")+'</div>'+
@@ -77,12 +79,34 @@ document.querySelector("#gallery").innerHTML=matches.map(x=>{
     '<button class="move" data-action="approve" data-id="'+safe(x.id)+'" '+(!x.available?"disabled":"")+
     '>Approve → Queue 1</button>')+'</div></article>'
 }).join("");
+document.querySelectorAll("img[data-remote-id]").forEach(img=>{
+  const id=img.dataset.remoteId;
+  const accept=()=>{
+   const row=data.find(x=>x.id===id);
+   if(row&&!row.available&&img.naturalWidth>0){
+    row.available=true;row.preview=img.src;render();
+   }
+  };
+  img.addEventListener("load",accept,{once:true});
+  img.addEventListener("error",()=>{img.style.display="none"},{once:true});
+  if(img.complete && img.naturalWidth>0)accept();
+});
 document.querySelectorAll("#gallery button[data-action]").forEach(b=>b.onclick=()=>{
 if(b.dataset.action==="approve")mark(b.dataset.id);else undo(b.dataset.id);
 });
 }
 document.querySelector("#filter").onchange=render;
 document.querySelector("#search").oninput=render;
+document.querySelector("#approveVisible").onclick=()=>{
+  const filter=document.querySelector("#filter").value,term=document.querySelector("#search").value.toLowerCase().trim();
+  for(const x of data){
+   if(!x.available)continue;
+   if(term && !(x.title+" "+x.artist+" "+x.module).toLowerCase().includes(term))continue;
+   if(filter==="MISSING" || filter==="QUEUE1" && !approved[x.id])continue;
+   approved[x.id]=true;
+  }
+  persist();render();
+};
 document.querySelector("#download").onclick=()=>{
 const rows=[["work_group","title","artist","review_decision","source_url","source_photo_fingerprint","historical_original_sha256","review_batch"].join(",")];
 const esc=x=>'"'+String(x??"").replace(/"/g,'""')+'"';
