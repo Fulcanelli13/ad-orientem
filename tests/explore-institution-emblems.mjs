@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49} from "../src/find/preliminary-directory-r49.js";
 import {
   MASS_EMBLEM_GROUPS,MASS_INSTITUTION_EMBLEMS,massInstitutionEmblem,
   massInstitutionImageId,registerMassInstitutionImages,
@@ -25,6 +27,21 @@ for(const group of MASS_EMBLEM_GROUPS){
   assert.equal(item.reviewBeforeCommercialRelease,true);
   assert.match(MASS_MAP_GROUP_COLORS[group],/^#[0-9a-fA-F]{6}$/);
 }
+
+// Source-reported affiliation, not ecclesial proof. All current R49 records
+// get either their exact-source provider emblem or the neutral church fallback.
+const r49=JSON.parse(readFileSync(new URL("../data/directory/preliminary-map-r49.v1.json",import.meta.url),"utf8"));
+const provisionalSites=projectPreliminaryR49(r49);
+const pictured=provisionalSites.filter(item=>massInstitutionEmblem(item.community_id));
+const neutral=provisionalSites.filter(item=>!massInstitutionEmblem(item.community_id));
+assert.equal(provisionalSites.length,1879);
+assert.equal(pictured.length,1191,"Do not lose source-identifiable institute emblems");
+assert.equal(neutral.length,688,"Do not fabricate institute logos for other sources");
+assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX").length,732);
+assert.equal(provisionalSites.filter(x=>x.community_id==="FSSP").length,307);
+assert.equal(provisionalSites.filter(x=>x.community_id==="ICKSP").length,128);
+assert.equal(provisionalSites.filter(x=>x.community_id==="IBP").length,19);
+assert.equal(provisionalSites.filter(x=>x.community_id==="AASJMV").length,5);
 
 const mapped=exploreMapFeatures([
   {item_id:"tlm:r49:diocese",lens:"tlm",community_id:"DIOCESAN",
