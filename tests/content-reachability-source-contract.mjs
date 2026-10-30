@@ -137,5 +137,5 @@ console.log(JSON.stringify({
  current_place_profiles:g.places.length,
  current_place_profiles_without_a_listed_lens_relationship:currentUnlinkedIds.length,
  current_source_only_unreviewed_place_ids:newlyUnreviewedIds.length,
- currently_unreachable_public_places_claimed:0
+ current_place_browser_reachability_verified:false
 },null,2));
