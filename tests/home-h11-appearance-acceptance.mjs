@@ -109,7 +109,9 @@ try{
           saint:reflect.querySelectorAll('[data-home-calendar-view="day"]').length,
           gospel:reflect.querySelectorAll('[data-action="gospel"]').length,
           catechism:reflect.querySelectorAll("[data-home-daily-catechism]").length,
-          dyk:reflect.querySelectorAll("[data-home-dyk-open]").length,
+          dykInsideRead:reflect.querySelectorAll("[data-home-dyk-open]").length,
+          dykStandalone:home.querySelectorAll(".aoTodayV2DiscoveryStandalone [data-home-dyk-open]").length,
+          dykAfterWeek:card.nextElementSibling?.classList.contains("aoTodayV2DiscoveryStandalone")===true,
           scripture:reflect.querySelectorAll("[data-home-scripture]").length,
           prayer:home.querySelectorAll('[data-home-cu-route="pray.rosary"]').length,
           footer:home.querySelectorAll(".aoTodayExploreFoot button").length,
@@ -122,8 +124,9 @@ try{
       if(info.custom)assert.equal(info.custom,info.calendar,label+" optional Customs card must share surface");
       assert.ok(info.calendarRows<=2,label+" upcoming calendar must not invent additional dates");
       assert.equal(info.readRows,3,label+" reflection rows exclude Catechism");
-      assert.deepEqual([info.saint,info.gospel,info.catechism,info.dyk,info.scripture,info.prayer,info.footer],
-        [1,1,0,1,1,1,2],label+" Did You Know replaces Catechism");
+      assert.deepEqual([info.saint,info.gospel,info.catechism,info.dykInsideRead,info.dykStandalone,info.scripture,info.prayer,info.footer],
+        [1,1,0,0,1,1,1,2],label+" Did You Know is an independent card, not a Read item");
+      assert.equal(info.dykAfterWeek,true,label+" Did You Know must immediately follow the week section");
       assert.match(info.appointmentNote,/calendar appointments|dates annoncées/i,
         label+" removed the observed-date caveat");
       assert.ok(info.totalWidth<=info.viewport+2,label+" horizontal overflow");
@@ -209,7 +212,10 @@ try{
           rosary:home?.querySelectorAll(".aoH4Chips button").length,
           events:home?.querySelectorAll(".aoH4Upcoming .aoTodayV2Event").length,
           read:home?.querySelectorAll(".aoH4Read button").length,
-          dyk:home?.querySelectorAll(".aoH4Read [data-home-dyk-entry]").length,
+          dykInsideRead:home?.querySelectorAll(".aoH4Read [data-home-dyk-entry]").length,
+          dykStandalone:home?.querySelectorAll(".aoH4DiscoveryStandalone [data-home-dyk-entry]").length,
+          dykAfterWeek:home?.querySelector(".aoTodayV2CalendarGlance")?.nextElementSibling?.classList.contains("aoH4DiscoveryStandalone")===true,
+          dykBeforeRead:home?.querySelector(".aoH4DiscoveryStandalone")?.nextElementSibling?.classList.contains("aoTodayV2Below")===true,
           hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
           oldExplore:home?.querySelectorAll(".aoTodayExploreFoot").length,
           artwork:!!art,buttonVisible:!!button&&getComputedStyle(button).display!=="none",
@@ -220,8 +226,10 @@ try{
       });
       assert.ok(r.documentWidth<=r.width+2,label+" H4 document overflow: "+JSON.stringify(r));
       assert.ok(r.date.length>=10,label+" H4 date not visible");
-      assert.deepEqual([r.week,r.selected,r.massCards,r.beginOrResume,r.change,r.reading,r.prayer,r.rosary,r.read,r.dyk,r.hiddenOldTabs,r.oldExplore],
-        [7,1,1,1,1,1,1,3,2,1,0,0],label+" H4 layout contract");
+      assert.deepEqual([r.week,r.selected,r.massCards,r.beginOrResume,r.change,r.reading,r.prayer,r.rosary,r.read,r.dykInsideRead,r.dykStandalone,r.hiddenOldTabs,r.oldExplore],
+        [7,1,1,1,1,1,1,3,1,0,1,0,0],label+" H4 layout contract");
+      assert.equal(r.dykAfterWeek,true,label+" standalone Did You Know must follow This week");
+      assert.equal(r.dykBeforeRead,true,label+" Read must follow standalone Did You Know");
       assert.ok(r.events<=2,label+" H4 upcoming copied unsourced dates");
       assert.equal(r.buttonVisible,true,label+" Mass door hidden");
       assert.equal(r.initialScrollTop,0,label+" H4 first-fold audit must start at scroll 0");
