@@ -27,24 +27,43 @@ const shell=(type,position,total,heading,subheading,groups,{french=false,phase="
  '<strong>'+esc(heading)+'</strong><span>'+esc(subheading)+'</span></div>'+
  '<div class="aoF07VariantSegments" aria-hidden="true">'+groups.join("")+'</div></section>';
 
+// Claude F07 w1 cross is a *view* of the five source-owned groups, not
+// a second 30-step controller. Direct wound navigation stays in the existing
+// presentation runtime and its five-wound event handler.
 export function renderF07FiveWounds(position,{french=false}={}){
  if(FIVE_WOUNDS_CHAPLET_V1.length!==30||FIVE_WOUNDS_WOUNDS_V1.length!==5)
   throw new TypeError("Canonical Five Wounds structure changed");
  assertCursor(position,29);
  const selected=FIVE_WOUNDS_CHAPLET_V1[position];
  const labels=FIVE_WOUNDS_WOUNDS_V1;
- const grouped=labels.map((w,i)=>{
+ for(let i=0;i<5;i++){
   const entries=FIVE_WOUNDS_CHAPLET_V1.filter(x=>x.group===i);
-  if(entries.length!==6||entries.filter(x=>x.kind==="gloria").length!==5||entries[5].kind!=="ave")
+  if(entries.length!==6||entries.slice(0,5).some(x=>x.kind!=="gloria")||entries[5].kind!=="ave")
    throw new TypeError("Five Wounds source grouping has changed");
-  return group(french?w.fr:w.en,entries.map((x,j)=>
-   dot((french?"Plaie ":"Wound ")+(i+1)+" · "+(x.kind==="ave"?(french?"Ave Maria":"Hail Mary"):
-    (french?"Gloria ":"Glory Be ")+(j+1)),x===selected,i*6+j<position,x.kind)),w.id);
- });
- const title=french?labels[selected.group].fr:labels[selected.group].en;
+ }
+ // Coordinates: left/right feet, left/right hands, sacred side.
+ const points=[[38,73],[50,73],[10,23],[76,23],[52,42]];
+ const spots=labels.map((w,i)=>{
+  const [cx,cy]=points[i];
+  const status=i===selected.group?"current":i<selected.group?"passed":"upcoming";
+  return '<circle class="aoF07WoundPoint" data-f07-wound-status="'+status+
+   '" cx="'+cx+'" cy="'+cy+'" r="'+(i===selected.group?4.6:3.7)+'"><title>'+
+    esc(french?w.fr:w.en)+'</title></circle>';
+ }).join("");
+ const shortNames=french?["PIED GAUCHE","PIED DROIT","MAIN GAUCHE","MAIN DROITE","CÔTÉ SACRÉ"]:
+  ["LEFT FOOT","RIGHT FOOT","LEFT HAND","RIGHT HAND","SACRED SIDE"];
  const prayer=selected.kind==="ave"?translate("Je vous salue Marie","Hail Mary",french):
-  translate("Gloire au Père","Glory Be",french)+" "+(selected.bead+1)+" / 5";
- return shell("five-wounds",position,30,title,translate("Méditez cette plaie","Meditate on this wound",french)+" · "+prayer+" · "+(position+1)+" / 30",grouped,{french,phase:String(selected.group+1)});
+  translate("Gloire au Père","Glory Be",french);
+ const beadNote=selected.kind==="ave"?translate("Une prière à Notre-Dame des Douleurs","One for Our Lady of Sorrows",french):
+  (selected.bead+1)+" "+translate("sur","of",french)+" 5";
+ const aria=translate("Les cinq plaies","Five Wounds",french)+": "+(french?labels[selected.group].fr:labels[selected.group].en);
+ return '<section class="aoF07FiveWoundsBand" data-f07-variant="five-wounds" data-f07-position="'+position+
+  '" data-f07-total="30" data-f07-phase="'+(selected.group+1)+'" aria-label="'+esc(aria)+'">'+
+  '<svg class="aoF07WoundsCross" viewBox="0 0 86 84" role="img" aria-label="'+esc(aria)+'">'+
+   '<path class="aoF07WoundsCrossLine" d="M43 4 V81 M6 23 H80"/>'+spots.join("")+'</svg>'+
+  '<div class="aoF07FiveWoundsMeta"><small>'+esc(shortNames[selected.group])+'</small>'+
+   '<strong>'+esc(prayer)+'</strong><span>'+esc(beadNote)+'</span></div>'+
+  '</section>';
 }
 
 export function renderF07PreciousBlood(phase,bead,{french=false}={}){
@@ -133,6 +152,45 @@ const STYLES=`
 #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodProgress,
 #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodBeads,
 #aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"] .aoLittleCrownProgress{display:none}
+/* F07 w1: five wounds are five liturgical meditation points, not 30
+   dashboard dots. Native source-owned controls remain responsible for jumps. */
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"]{position:relative}
+#aoPray435930 .aoF07FiveWoundsTop{display:flex;align-items:flex-start;gap:5px;min-width:0;margin:5px 0 2px}
+#aoPray435930 .aoF07FiveWoundsBand{display:grid;grid-template-columns:84px minmax(0,1fr);align-items:center;flex:1;min-width:0;gap:12px;background:transparent;border:0;margin:0;padding:0;box-sizing:border-box}
+#aoPray435930 .aoF07WoundsCross{display:block;width:84px;height:84px;overflow:visible;flex:none}
+#aoPray435930 .aoF07WoundsCrossLine{fill:none;stroke:var(--muted,#d9cfbc);stroke-width:1.35;opacity:.8}
+#aoPray435930 .aoF07WoundPoint{fill:var(--surface-1,#261f1a);stroke:var(--text,#eee3d5);stroke-width:1.6}
+#aoPray435930 .aoF07WoundPoint[data-f07-wound-status="passed"]{fill:var(--text,#e9ddd0);opacity:.8}
+#aoPray435930 .aoF07WoundPoint[data-f07-wound-status="current"]{fill:#b95b54;stroke:#df938b;stroke-width:1.5}
+#aoPray435930 .aoF07FiveWoundsMeta{min-width:0;display:flex;flex-direction:column;gap:4px;font-family:var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoF07FiveWoundsMeta small{font:600 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;color:var(--liturgical,#b95b54)}
+#aoPray435930 .aoF07FiveWoundsMeta strong{font-size:23px;font-weight:400;line-height:1.15;color:var(--text,#f3e6d7)}
+#aoPray435930 .aoF07FiveWoundsMeta span{font:400 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
+#aoPray435930 .aoF07WoundChips{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;white-space:nowrap;padding:2px 0 8px;margin:1px 0 3px;min-width:0}
+#aoPray435930 .aoF07WoundChips::-webkit-scrollbar{display:none}
+#aoPray435930 .aoF07WoundChips button{display:inline-flex;align-items:center;flex:0 0 auto;justify-content:center;min-height:32px;height:32px;padding:0 10px;border-radius:999px;border:1px solid var(--border,rgba(210,190,150,.28));background:transparent;color:var(--muted,#b8aea0);font:500 11px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:0;text-transform:none}
+#aoPray435930 .aoF07WoundChips button[aria-current="step"]{border-color:var(--text,#f2e4d7);color:var(--text,#f2e4d7);background:rgba(210,190,150,.13)}
+#aoPray435930 .aoF07WoundChips button:focus-visible{outline:2px solid var(--liturgical,#c6ad83);outline-offset:2px}
+#aoPray435930 .aoF07ReaderLanguage{position:relative;flex:0 0 auto;z-index:3}
+#aoPray435930 .aoF07ReaderLanguage>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;border:1px solid var(--border,rgba(210,190,150,.28));border-radius:50%;font:500 12px var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b8aea0)}
+#aoPray435930 .aoF07ReaderLanguage>summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoF07ReaderLanguage>button{display:block;position:absolute;right:0;top:43px;min-height:44px;min-width:132px;z-index:4;border-radius:10px;border:1px solid var(--border,rgba(210,190,150,.28));background:var(--surface-2,#292520);color:var(--text,#eee);padding:8px 12px;font:500 13px var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsPrayerTop button[data-p435930-five-latin]{display:none}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsPrayer{margin:5px 0 0}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsActions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding:8px 3px;background:transparent;border:0}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsActions>button{min-height:44px;letter-spacing:0;font-family:var(--ao-font-ui,system-ui,sans-serif);text-transform:none;border-radius:999px}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoF07WoundPrevious{width:44px;min-width:44px;padding:0;border:1px solid var(--border,rgba(210,190,150,.28));background:transparent;color:var(--text,#eee);font-size:23px}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoF07WoundNext{width:auto;min-width:98px;padding:0 22px;background:var(--text,#eee2d4);color:#201b17;border:0;font-size:13px}
+#aoPray435930 .aoF07WoundDockCount{font:500 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b9b2a7);letter-spacing:.02em;flex:1;text-align:center}
+#aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsSource{margin-top:0}
+@media(max-width:390px){
+ #aoPray435930 .aoF07FiveWoundsTop{gap:3px}
+ #aoPray435930 .aoF07FiveWoundsBand{grid-template-columns:78px minmax(0,1fr);gap:7px}
+ #aoPray435930 .aoF07WoundsCross{width:78px;height:78px}
+ #aoPray435930 .aoF07FiveWoundsMeta strong{font-size:20px}
+ #aoPray435930 .aoF07ReaderLanguage>summary{min-width:34px;height:34px}
+ #aoPray435930 .aoF07WoundChips{padding-bottom:6px}
+}
 #aoPray435930 .aoF07JumpDisclosure{margin:3px 0 7px}
 #aoPray435930 .aoF07JumpDisclosure>summary{min-height:44px;display:flex;align-items:center;justify-content:center;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#bbb3a7);cursor:pointer}
 #aoPray435930 .aoF07JumpDisclosure>nav{padding-bottom:8px}
