@@ -1,0 +1,53 @@
+{
+  "schema": "AO_PRAYER_WAVE1_ANGELUS_ROSARY_DEVICE_REVIEW_V1",
+  "date": "2026-10-28",
+  "status": "PRELIMINARY_VISUAL_AND_BROWSER_REVIEW_NOT_RELEASE",
+  "browser_suite": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40701100147",
+  "feature_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1863",
+  "widths_checked": [
+    320,
+    390,
+    1440
+  ],
+  "photographic_primaries_reselected": 0,
+  "files_source_modified": 0,
+  "production_images_enabled": 0,
+  "cost_eur": 0,
+  "screenshot_archive": {
+    "folder": "assets/staged/prayer-wave1-angelus-rosary-device-qa-20261028/",
+    "files_count": 12,
+    "checksum_file": "assets/staged/prayer-wave1-angelus-rosary-device-qa-20261028/SCREENSHOT-SHA256.txt",
+    "storage": "Git research feature branch; not expiring Actions artifact sole copy"
+  },
+  "visual_findings": [
+    {
+      "module": "angelus",
+      "full_painting": "PRELIMINARY_ACCEPTABLE",
+      "collapsed_320": "Compact disclosure after posture, visible first Latin-vernacular prayer; no overlap",
+      "collapsed_390": "First prayer text still visible; opening artwork not visually dominant",
+      "expanded_390": "Mary, angel, cherubs, dove, lily stem, lectern signature, basket visible in full; natural aspect with no CSS cover",
+      "expanded_1440": "Artwork centered with source credit; expanded state requires scrolling to prayer below on desktop, expected for explicit optional preview",
+      "remaining": "Met native V3 exact boundary/painted loss, tone and attribution clearance; verify on live device",
+      "status": "HOLD_FINAL_PHOTO_SIGNOFF"
+    },
+    {
+      "module": "rosary",
+      "full_painting": "PRELIMINARY_ACCEPTABLE",
+      "collapsed_320": "Original suggested-mystery CTA, reading options and alternate mystery chooser all precede compact photo disclosure",
+      "collapsed_390": "No interruption of prayer-first Rosary entry hierarchy",
+      "expanded_390": "Complete Lotto work, all fifteen roundels and central group shown without crop; white backing outside the arched painting still visible in source",
+      "expanded_1440": "Natural portrait artwork visible, tall but only after user expands; attribution and lower imagery scrollable",
+      "source_limit": "Yorck source has white backdrop around shaped altarpiece; this is not a physical museum frame but should be assessed for visual harmony without changing painted pixels.",
+      "remaining": "Confirm single-image public-domain/compilation reuse notice, colour against credible source, real phone device signoff",
+      "status": "HOLD_FINAL_PHOTO_SIGNOFF"
+    }
+  ],
+  "test_correction": {
+    "issue": "Initial 320px Rosary screenshot was captured while app startup curtain obscured the actual Prayer screen even though underlying DOM tests passed",
+    "resolution": "Explicit check for completed boot and inactive loading director plus elementFromPoint hit test on source-owned Rosary start control; new 320px screenshot clearly displays canonical Rosary chooser",
+    "regression_guard_added": true,
+    "screenshot_replaced_in_git": true
+  },
+  "no_change_to": "Prayer text, mystery engine, seasonal Regina Cæli, Morning/Evening atmosphere, previously approved art, 117 decisions, Morlete Ruiz exception",
+  "next_gate": "Editorial photographic approval then separate main production activation; do not merge research-only images as default live artwork."
+}
