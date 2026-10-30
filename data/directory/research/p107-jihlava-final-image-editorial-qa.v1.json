@@ -1,0 +1,68 @@
+{
+  "schema": "AO_P107_JIHLAVA_EXTERIOR_FINAL_VISUAL_QA_V1",
+  "date": "2026-10-30",
+  "site": "place:CZ:st-ignatius-jihlava",
+  "directory_venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius",
+  "status": "PRIMARY_EDITORIAL_ACCEPTED_RELEASE_IN_SEPARATE_PR",
+  "source_p107_audit": "data/directory/research/p107-four-webp-stage-audit.v1.json",
+  "candidate": {
+    "row": 309,
+    "place_id": "place:CZ:st-ignatius-jihlava",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_(8686).jpg",
+    "exact_download_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_%288686%29.jpg",
+    "photographer": "Gampe",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "original_path": "docs/research/directory/p107-alternative-originals-20261030/309-alternate-original.jpg",
+    "original_sha1_verified": "a61c6ec7df0680fc9cd37c802ce0e10346694367",
+    "original_sha256": "abaa284d7cfcbbc78e05cdfb1cf73bc7fe2b37bf2334a3c6d2886a6a3dc3c25d",
+    "original_bytes": 4197924,
+    "original_dimensions": [
+      3000,
+      4000
+    ],
+    "staged_path": "assets/staged/directory-p107/309-alternate-full-frame.webp",
+    "staged_sha256": "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+    "staged_bytes": 154206,
+    "staged_dimensions": [
+      1050,
+      1400
+    ],
+    "native_jpeg_decode": true,
+    "no_crop": true,
+    "source_licence_verified_on_commons_page": true,
+    "visual_editorial_review": "PENDING_INDIVIDUAL_IMAGE_INSPECTION",
+    "rights_and_derivative_publication_gate": "PENDING",
+    "published": false
+  },
+  "visual_assessment": "Actual final source-pinned 1050x1400 WebP visually inspected: complete well-lit cream Baroque church facade and twin steeples against dramatic cloud sky, good sharpness and legible architectural details. Unobtrusive small pedestrians and one streetlamp at side; no frame or watermark. Superior to P105 overcast, low-contrast source. Good for mobile contain-fit primary.",
+  "checks": {
+    "exact_physical_structure": true,
+    "original_sha1_approved_source": true,
+    "original_sha256_preserved": true,
+    "derivative_sha256_verified": true,
+    "full_frame_no_crop": true,
+    "building_name_source_exact": true,
+    "source_page_author_license_checked": true,
+    "required_credit": "Gampe",
+    "required_license": "CC-BY-SA-4.0",
+    "required_license_link": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "needs_final_card_regression": true,
+    "not_published_in_research_pr": true
+  },
+  "held": [
+    {
+      "row": 315,
+      "reason": "Alternative is an indoor statue, not cemetery church exterior"
+    },
+    {
+      "row": 320,
+      "reason": "Alternative has overcast building and snow covering most of front"
+    },
+    {
+      "row": 322,
+      "reason": "Alternative cars and roadway obscure Pau foreground"
+    }
+  ],
+  "publication": "NO_NEW_APPROVED_MEDIA_IN_THIS_RESEARCH_PR"
+}
