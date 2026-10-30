@@ -181,6 +181,7 @@ export function createSettingsOwner(win=globalThis){
         });
         return;
       }
+      if(button.dataset.prefClearToday!==undefined){event.preventDefault();mutate(()=>donor.setPath("mass.todayChoices",null));return;}
       if(button.dataset.prefPath&&button.dataset.prefValue!==undefined){event.preventDefault();mutate(()=>donor.setPath(button.dataset.prefPath,button.dataset.prefValue));return;}
       if(button.dataset.prefToggle){event.preventDefault();mutate(()=>donor.togglePath(button.dataset.prefToggle));return;}
       if(button.dataset.profileDefault!==undefined){event.preventDefault();mutate(()=>donor.setPath("mass.defaultProfileId",null));return;}
