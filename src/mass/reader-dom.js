@@ -3017,7 +3017,13 @@ export function createReaderDomAdapter({
           const selected=selectedPlan.ordinarySelections?.[id]||
             (selectedPlan.ordinarySettings?.[id]?"CUSTOM":"");
           if(picker.value!==selected)picker.value=selected;
-          if(field)field.disabled=Boolean(selected&&selected!=="CUSTOM");
+          if(field){
+            const indexed=Boolean(selected&&selected!=="CUSTOM");
+            field.disabled=indexed;
+            // A catalogue title already appears in its <select>; a second
+            // disabled copy wastes a whole line on narrow mobile screens.
+            field.hidden=indexed;
+          }
         }
         if(field&&field.value!==(selectedPlan.ordinarySettings?.[id]??""))
           field.value=selectedPlan.ordinarySettings?.[id]??"";
