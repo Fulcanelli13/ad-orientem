@@ -416,6 +416,65 @@ try{
    assert.equal(await page.locator(night+' [data-ao-devo-card="close"]').count(),1);
    await page.locator(night+' [data-p435930-night-finish]').tap();
    assert.equal(await page.locator(aRoot).count(),1,"Finish returns to established Adoration chooser");
+   // F07 Claude c1: exercise the actual opt-in circular Little Crown,
+   // not the legacy two-strip default reader.
+   await page.setViewportSize({width,height:width===320?568:844});
+   await page.goto("http://127.0.0.1:"+server.address().port+
+    "/index.html?aoPrayerPilot=0&aoChapletF07Pilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.little_crown",{returnContext:null}));
+   const crownPilot=rootSel+' .aoLittleCrown[data-ao-f07-variant="little-crown"]';
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCircle').count(),1);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownBead').count(),15);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownBead.family').count(),3);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownBead:not(.family)').count(),12);
+   assert.equal(await page.locator(crownPilot+' [data-p435930-crown-bead="0"].active').count(),1);
+   assert.equal(await page.locator(crownPilot+' .aoF07JumpDisclosure').count(),0);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownAspiration').innerText(),/And the Word was made Flesh/);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownPrayerText').innerText(),/Our Father/);
+   const openingC1=await page.evaluate(()=>{
+    const r=document.querySelector('#aoPray435930.open .aoLittleCrown[data-ao-f07-variant="little-crown"]');
+    const p=r.querySelector('.aoLittleCrownPrayerText').getBoundingClientRect();
+    const nav=r.querySelector('.aoLittleCrownActions').getBoundingClientRect();
+    const port=document.querySelector('#aoPray435930.open .aoP435930Mount').getBoundingClientRect();
+    const dots=[...r.querySelectorAll('.aoF07LittleCrownBead')].map(b=>b.getBoundingClientRect());
+    return {prayerAboveDock:Math.max(0,Math.min(p.bottom,nav.top,port.bottom)-Math.max(p.top,port.top)),
+      minimumHitbox:Math.min(...dots.map(d=>Math.min(d.width,d.height))),
+      overlapPairs:dots.reduce((sum,d,i)=>sum+dots.slice(i+1).filter(e=>
+       Math.hypot(d.x+d.width/2-e.x-e.width/2,d.y+d.height/2-e.y-e.height/2)<47.5).length,0),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(openingC1.minimumHitbox>=48&&openingC1.overlapPairs===0&&openingC1.overflow<=1,
+    "Little Crown c1 circular controls must be accessible and unclipped: "+JSON.stringify(openingC1));
+   assert.ok(openingC1.prayerAboveDock>=20,
+    "Prayer text must remain visible with the c1 circle: "+JSON.stringify(openingC1));
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-opening-"+width+".png"),animations:"disabled"});
+   await page.locator(crownPilot+' [data-p435930-crown-bead="3"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownPrayerText').innerText(),/Hail Mary/);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownAspiration').innerText(),/And the Word was made Flesh/);
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-guided-"+width+".png"),animations:"disabled"});
+   await page.locator(crownPilot+' .aoF07LittleCrownLanguage summary').click();
+   await page.locator(crownPilot+' [data-p435930-crown-language="la"]').click();
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownAspiration').innerText(),/Et Verbum caro factum est/);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownPrayerText').innerText(),/Ave Maria/);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   await page.locator(crownPilot+' .aoF07LittleCrownLanguage summary').click();
+   await page.locator(crownPilot+' [data-p435930-crown-language="fr"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoLittleCrownPrayerText').getAttribute('lang'),'fr');
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-french-"+width+".png"),animations:"disabled"});
+   await page.locator(crownPilot+' .aoF07LittleCrownLanguage summary').click();
+   await page.locator(crownPilot+' [data-p435930-crown-language="en"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoLittleCrownPrayerText').getAttribute('lang'),'en');
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   await page.locator(crownPilot+' [data-p435930-crown-bead="14"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'15');
+   assert.equal(await page.locator(crownPilot+' [data-p435930-crown-finish]').count(),1);
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-return-"+width+".png"),animations:"disabled"});
+   console.log("PASS F07 Claude c1 Little Crown "+width+"px: 15 source beads, 48px targets, aspiration, direct taps and EN/FR/LA");
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}
