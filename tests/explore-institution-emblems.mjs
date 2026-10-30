@@ -6,11 +6,12 @@ import {
 import { exploreMapFeatures, MASS_MAP_GROUP_COLORS } from "../src/find/map-runtime.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
-  ["DIOCESAN","FSSP","IBP","ICKSP","SSPX"].sort(),
+  ["FSSP","IBP","ICKSP","SSPX"].sort(),
   "Only institutions with a sourced emblem may receive one");
-assert.ok(massInstitutionEmblem("diocesan").image.includes("Emblem_Holy_See"),
-  "Diocesan markers must have the Holy See crossed keys/tiara");
-assert.match(massInstitutionEmblem("DIOCESAN").disclaimer,/endorsement/i);
+assert.equal(massInstitutionEmblem("diocesan"),null,
+  "A diocesan venue is not the Holy See and must use a neutral identity");
+assert.equal(massInstitutionImageId("DIOCESAN"),null,
+  "Neutral diocesan pins must not register the Holy See arms");
 assert.equal(massInstitutionEmblem("OTHER"),null,
   "Never invent a logo for unspecified providers");
 assert.equal(massInstitutionImageId("UNKNOWN"),null);
