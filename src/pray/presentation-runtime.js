@@ -2734,7 +2734,9 @@ function renderPreciousBlood(){
  const steps=PRECIOUS_BLOOD_MYSTERIES_V1.map((m,i)=>
   '<button type="button" data-p435930-blood-mystery="'+i+'" '+
    (s.phase===i+1?'aria-current="step"':'')+' aria-label="'+esc(fr?m.fr:m.en)+'" title="'+esc(fr?m.fr:m.en)+'">'+
-   '<span aria-hidden="true">'+String(i+1)+'</span></button>').join('');
+   '<span aria-hidden="true">'+String(i+1)+'</span>'+
+   (CHAPLET_F07_PILOT_ENABLED?'<strong class="aoF07BloodStepName">'+esc(fr?m.fr:m.en)+'</strong>':'')+
+   '</button>').join('');
  const nav='<nav class="aoPreciousBloodRail" aria-label="'+esc(L("Seven mysteries","Sept mystères"))+'">'+steps+'</nav>';
  let contents='';
  if(s.phase===0){
@@ -2755,7 +2757,8 @@ function renderPreciousBlood(){
    :kind==="gloria"?L("Glory Be","Gloire au Père"):L("Historical response","Répons historique");
   const hasEngMeditation=Boolean(mystery.meditationEn);
   const meditation=hasEngMeditation?'<details class="aoPreciousBloodMeditation" '+(s.showMeditation?'open':'')+
-   '><summary>'+esc(L("Read the 1910 meditation (historical English)","Méditation de 1910 (anglais historique)"))+
+   '><summary>'+esc(CHAPLET_F07_PILOT_ENABLED?L("ⓘ Historical meditation · 1910","ⓘ Méditation historique · 1910"):
+   L("Read the 1910 meditation (historical English)","Méditation de 1910 (anglais historique)"))+
    '</summary><p lang="en">'+esc(mystery.meditationEn)+'</p></details>':'';
   const prayerNote=kind==='versicle'
    ?'<small class="aoPreciousBloodLang">'+esc(prayer.language==='la'?L("Original Latin","Latin original"):L("Historical English","Anglais historique"))+'</small>':'';
