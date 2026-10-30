@@ -13,7 +13,7 @@
     "total_groups": 41,
     "draft_exact_images": 5,
     "held": 36,
-    "official_candidates": 8,
+    "official_candidates": 7,
     "cl2_distinct_affiliation_labels": 138,
     "cl2_venue_source_rows": 2687
   },
@@ -481,7 +481,8 @@
     "distinct_source_labels": 138,
     "venue_source_rows": 2687,
     "disposition_row_counts": {
-      "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC": 2095,
+      "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC": 1481,
+      "NAMED_NEUTRAL_IDENTITY_NO_UNIVERSAL_EMBLEM": 614,
       "UNRESOLVED_SOURCE_LABEL": 358,
       "ASSOCIATION_ONLY_NOT_OPERATOR": 95,
       "SOURCE_NAME_REQUIRES_INSTITUTION_REVIEW": 115,
@@ -498,7 +499,7 @@
         "source_affiliation": "Diocesan",
         "venue_source_rows": 588,
         "candidate_group_code": "DIOCESAN",
-        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+        "disposition": "NAMED_NEUTRAL_IDENTITY_NO_UNIVERSAL_EMBLEM"
       },
       {
         "source_affiliation": "FSSP",
@@ -570,7 +571,7 @@
         "source_affiliation": "Diocesan / Una Voce (unassessed)",
         "venue_source_rows": 16,
         "candidate_group_code": "DIOCESAN",
-        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+        "disposition": "NAMED_NEUTRAL_IDENTITY_NO_UNIVERSAL_EMBLEM"
       },
       {
         "source_affiliation": "CMRI",
@@ -684,7 +685,7 @@
         "source_affiliation": "Carmélites",
         "venue_source_rows": 4,
         "candidate_group_code": "CARMELITE",
-        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+        "disposition": "NAMED_NEUTRAL_IDENTITY_NO_UNIVERSAL_EMBLEM"
       },
       {
         "source_affiliation": "Premonstratensian",
@@ -726,7 +727,7 @@
         "source_affiliation": "Independent",
         "venue_source_rows": 3,
         "candidate_group_code": "INDEPENDENT",
-        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+        "disposition": "NAMED_NEUTRAL_IDENTITY_NO_UNIVERSAL_EMBLEM"
       },
       {
         "source_affiliation": "Monastic",
@@ -774,7 +775,7 @@
         "source_affiliation": "Diocese São José dos Campos",
         "venue_source_rows": 2,
         "candidate_group_code": "DIOCESAN",
-        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+        "disposition": "NAMED_NEUTRAL_IDENTITY_NO_UNIVERSAL_EMBLEM"
       },
       {
         "source_affiliation": "Dominicaines Contemplatives",
@@ -882,7 +883,7 @@
         "source_affiliation": "Carmelite",
         "venue_source_rows": 1,
         "candidate_group_code": "CARMELITE",
-        "disposition": "NAMED_SOURCE_CANDIDATE_NOT_PUBLIC"
+        "disposition": "NAMED_NEUTRAL_IDENTITY_NO_UNIVERSAL_EMBLEM"
       },
       {
         "source_affiliation": "CARMELITE NUNS | Owner-listed",
