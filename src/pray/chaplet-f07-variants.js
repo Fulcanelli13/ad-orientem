@@ -101,7 +101,7 @@ export function renderF07LittleCrown(position,{french=false}={}){
  (french?"Année de l’Enfance ":"Year of the Holy Childhood ")+(position-2);
  const subtitle=position<3?translate("Notre Père","Our Father",french):
   translate("Je vous salue Marie","Hail Mary",french);
- return shell("little-crown",position,15,title,subtitle+" · "+(position+1)+" / 15",groups,{french,phase:current.group});
+ return shell("little-crown",position,15,title,subtitle+" · "+(position+1)+" / 15 · "+translate("Aspiration de l’Incarnation avant chaque grain","Incarnation aspiration before every bead",french),groups,{french,phase:current.group});
 }
 
 const STYLES=`
@@ -121,6 +121,8 @@ const STYLES=`
 #aoPray435930 .aoF07VariantDot[data-f07-status="passed"]{background:var(--liturgical,#c6ad83);opacity:.46}
 #aoPray435930 .aoF07VariantDot[data-f07-status="current"]{background:var(--liturgical,#c6ad83);border-color:var(--text,#fff2db);opacity:1;box-shadow:0 0 0 2px rgba(195,158,100,.2)}
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"]>header{display:none}
+#aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"]>header{display:none}
+#aoPray435930 .aoLittleCrown[data-ao-f07-variant="little-crown"]>.aoLittleCrownIntro{display:none}
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsProgress,
 #aoPray435930 .aoFiveWounds[data-ao-f07-variant="five-wounds"] .aoFiveWoundsBeads,
 #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodProgress,
