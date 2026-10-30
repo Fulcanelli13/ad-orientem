@@ -117,3 +117,95 @@ assert.match(runtime,/function angelusExactPosture\(\)/,"the real posture owner 
 assert.match(runtime,/installAngelusCardDeck\(/,"the real five\/four-card engine remains");
 assert.match(runtime,/if\(PRAYER_PILOT_ENABLED&&x.matches\('\[data-p435930-pilot-search\]'\)\)/);
 console.log("Prayer presentation pilot source contract: passed");
+
+// Research-only Sacred Art candidate joins; no implied rights or release.
+
+const heroJoin=JSON.parse(readFileSync(new URL("../data/pray/artwork-candidate-join-20261030.v1.json",import.meta.url),"utf8"));
+const galleryDelta=JSON.parse(readFileSync(new URL("../data/pray/artwork-candidate-gallery-delta-20261030.v1.json",import.meta.url),"utf8"));
+assert.equal(heroJoin.statistics.slots_total,275);
+assert.equal(heroJoin.statistics.artworks_user_approved_identity,22);
+assert.equal(heroJoin.statistics.slots_with_proposals,147);
+assert.equal(heroJoin.statistics.candidate_links,207);
+assert.equal(galleryDelta.statistics.total_gallery_records,383);
+assert.equal(galleryDelta.statistics.newly_classified_gallery_identities,35);
+assert.equal(galleryDelta.statistics.candidate_links_added,262);
+assert.equal(galleryDelta.statistics.combined_slots_with_candidates,228);
+assert.equal(galleryDelta.statistics.combined_candidate_links,469);
+assert.equal(galleryDelta.statistics.combined_doors_with_candidates,9);
+const idSource=new Map([...heroJoin.artwork_identity_index.map(a=>[a.artwork_id,a]),...galleryDelta.artwork_candidate_index.map(a=>[a.artwork_id,a])]);
+assert.equal(idSource.size,57,"Artwork references must deduplicate primary and gallery identities");
+const sourceSlots=new Map(placement.slots.map(s=>[s.id,s]));
+for(const joined of [heroJoin,galleryDelta]){
+ assert.equal(joined.slot_proposals.length,275);
+ assert.deepEqual(joined.slot_proposals.map(s=>s.slot_id),placement.slots.map(s=>s.id));
+ for(const slot of joined.slot_proposals){
+  const source=sourceSlots.get(slot.slot_id);
+  assert.ok(source);
+  for(const proposal of slot.proposals){
+   assert.ok(idSource.has(proposal.artwork_id),"Unknown proposed artwork");
+   assert.ok(proposal.matched_subject_codes.length>0,"Empty title/subject cue");
+   assert.ok(proposal.matched_subject_codes.every(code=>source.eligible_subjects.includes(code)),"Invalid controlled subject for "+slot.slot_id);
+   assert.equal(proposal.slot_placement_editorially_approved,false);
+   assert.equal(proposal.release_eligible,false);
+  }
+ }
+}
+assert.ok(heroJoin.artwork_identity_index.every(x=>x.publication_eligible===false));
+assert.ok(galleryDelta.artwork_candidate_index.every(x=>x.release_eligible===false));
+assert.equal(heroJoin.statistics.production_ready,0);
+assert.equal(galleryDelta.statistics.production_ready,0);
+
+// Nine-door static editorial shortlist, fail-closed photograph gates.
+
+const doorReviewHtml=readFileSync(new URL("../assets/editorial/prayer-nine-door-artwork-one-click-20261030.html",import.meta.url),"utf8");
+const doorReviewDataMatch=doorReviewHtml.match(/const data=(\[[^\n]+\]);\nconst groups=/);
+assert.ok(doorReviewDataMatch,"Nine-door review has embedded pinned data");
+const doorReviewRows=JSON.parse(doorReviewDataMatch[1]);
+assert.equal(doorReviewRows.length,25,"One visible candidate card per real slot × painting pair");
+assert.equal(new Set(doorReviewRows.map(x=>x.slot)).size,9,"All nine doors need an inspectable candidate");
+assert.equal(new Set(doorReviewRows.map(x=>x.slot+"::"+x.id)).size,25,"No duplicate candidate cards for the same slot");
+assert.ok(doorReviewRows.every(x=>x.image?.startsWith("https://")),"Never place an invented or missing preview on a card");
+assert.ok(doorReviewRows.every(x=>x.source?.startsWith("https://")),"Each card has a verifiable source page");
+assert.ok(doorReviewRows.every(x=>x.sha===null||/^[a-f0-9]{64}$/i.test(x.sha)),"Pinned original checksums must be valid or absent");
+assert.equal(doorReviewRows.filter(x=>x.archived).length,15,"Archived originals used for primary gallery proof");
+assert.ok(doorReviewHtml.includes('localStorage.setItem(KEY'),"Selections must persist locally");
+assert.ok(doorReviewHtml.includes('SCHEMA="AO_PRAY_NINE_DOOR_VISUAL_DECISIONS_V1"'),"Review export schema frozen");
+assert.ok(doorReviewHtml.includes('rightsFinalCleared:false,photoQualityFinalCleared:false,productionApproved:false'),"Never promote visual choices to publication automatically");
+assert.ok(doorReviewHtml.includes('if(state==="VISUAL_APPROVED"&&!ok.has(pair(x)))'),"Do not approve a failed image load");
+assert.ok(doorReviewHtml.includes('not a duplicate'),"Distinct painting adjudication remains available");
+
+// Exercise research / visual-approval queues with a complete browser export.
+
+const {mkdtempSync,writeFileSync,rmSync}=await import("node:fs");
+const {tmpdir}=await import("node:os");
+const {join:joinReview}=await import("node:path");
+const {spawnSync:runReviewImporter}=await import("node:child_process");
+const tempNineDoorReviewDir=mkdtempSync(joinReview(tmpdir(),"ao-pray-nine-door-"));
+const importerPath=new URL("../scripts/art/import-pray-nine-door-visual-decisions-20261030.mjs",import.meta.url).pathname;
+try{
+ const fixture={schema:"AO_PRAY_NINE_DOOR_VISUAL_DECISIONS_V1",
+  decisions:doorReviewRows.map(row=>({slotId:row.slot,artworkId:row.id,decision:"RESEARCH",
+   imageShown:false,distinct:false,chosenAt:null,productionApproved:false,
+   rightsFinalCleared:false,photoQualityFinalCleared:false}))};
+ const input=joinReview(tempNineDoorReviewDir,"choices.json");
+ const invoke=()=>runReviewImporter(process.execPath,[importerPath,input],{encoding:"utf8"});
+ writeFileSync(input,JSON.stringify(fixture));
+ let tested=invoke();
+ assert.equal(tested.status,0,tested.stderr);
+ let queues=JSON.parse(tested.stdout);
+ assert.equal(queues.counts.research,25);
+ assert.equal(queues.counts.publicationReady,0);
+ fixture.decisions[0].decision="VISUAL_APPROVED";fixture.decisions[0].imageShown=true;
+ writeFileSync(input,JSON.stringify(fixture));
+ tested=invoke();
+ assert.equal(tested.status,0,tested.stderr);
+ queues=JSON.parse(tested.stdout);
+ assert.equal(queues.counts.visualApproved,1);
+ assert.equal(queues.counts.research,24);
+ assert.equal(queues.queues.ready_for_publication.length,0);
+ assert.equal(queues.queues.visually_approved_pending_exact_rights_photo_qa_and_crop.length,1);
+ fixture.decisions[0].rightsFinalCleared=true;
+ writeFileSync(input,JSON.stringify(fixture));
+ tested=invoke();
+ assert.notEqual(tested.status,0,"Browser export cannot certify file-specific rights");
+}finally{rmSync(tempNineDoorReviewDir,{recursive:true,force:true})}
