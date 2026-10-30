@@ -48,7 +48,7 @@
       "FALSE_LEXICAL_MATCH_DIFFERENT_DEVOTION": 1,
       "FALSE_LEXICAL_MATCH_DISTINCT_OBJECT_AND_FEAST": 1,
       "RELATED_MEMORIAL_INTENTION_DIFFERENT_TRIGGER": 1,
-      "SAME_REPORTED_ACTION_CORE": 1
+      "FALSE_LEXICAL_MATCH_UNRELATED_CAKE_AND_EASTER_FIRE": 1
     },
     "provisional_cluster_cases": 12,
     "provisional_group_memberships": 34,
@@ -1197,13 +1197,14 @@
       "left_action": "Prepare Easter spice-ring cake around the family's devotional candle",
       "right_source_id": "STOKES55-EWTN-089",
       "right_action": "New Easter fire carried home in lantern",
-      "action_core_relation_as_reviewed": "SAME_REPORTED_ACTION_CORE",
-      "reason": "An Easter fire carried home from a church Vigil is reported in both books, but the McLoughlin text has a material and devotional-specific context.",
+      "action_core_relation_as_reviewed": "FALSE_LEXICAL_MATCH_UNRELATED_CAKE_AND_EASTER_FIRE",
+      "reason": "Left source describes baking an Easter spice-ring cake around a household devotional candle; right source describes carrying newly blessed Easter fire home in a lantern. Distinct actions, objects and rites. Earlier same-core label was an erroneous cross-row assignment; no common custom may be inferred from this pair.",
       "source_url": "https://sophiainstitute.com/saintmaker-liturgical-life/moveable-feasts/easter/easter-sunday/",
       "original_description_pair_checked": true,
       "independent_witness_certified": false,
       "canonical_merge_authorized": false,
-      "editorial_gate": "CHECK_DERIVATION_AND_VARIANT_BOUNDARIES"
+      "editorial_gate": "NEGATIVE_EDGE_PRESERVE_DISTINCT_ACTION_AND_OBJECT",
+      "correction_note": "2026-10-30 source-label consistency erratum; preserve both source IDs and original witness records, do not imply original printed folios were newly checked"
     }
   ],
   "regional_or_institutional_cluster_cases": [
