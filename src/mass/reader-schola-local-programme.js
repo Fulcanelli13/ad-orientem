@@ -1,3 +1,4 @@
+import {canonicalKyrialeSelection,resolveKyrialeChoice} from "./reader-kyriale-catalogue.js";
 // Personal parish programmes extend the existing Schola plan without
 // changing the 1962 Proper, Gregorian source texts, event or priest clocks.
 export const SCHOLA_LOCAL_PROGRAMME_STORAGE_KEY="ao-schola-local-programme-v1";
@@ -30,6 +31,12 @@ function ordinaryOf(input){
  for(const id of SCHOLA_ORDINARY_SETTING_IDS)result[id]=clean(source[id]);
  return freeze(result);
 }
+function verifiedSelectionsOf(value){
+ const source=object(value),result={};
+ for(const id of SCHOLA_ORDINARY_SETTING_IDS)
+  result[id]=canonicalKyrialeSelection(source[id],id);
+ return freeze(result);
+}
 function performanceOf(value){
  return PERFORMANCES.has(value)?value:"UNSPECIFIED";
 }
@@ -38,6 +45,7 @@ function profileOf(value,id){
  return freeze({id,name:clean(v.name)||"Local programme",
   parishLabel:clean(v.parishLabel),choices:choicesOf(v.choices),
   ordinarySettings:ordinaryOf(v.ordinarySettings),
+  ordinarySelections:verifiedSelectionsOf(v.ordinarySelections),
   sanctusPerformance:performanceOf(v.sanctusPerformance)});
 }
 function wrap(profiles,activeProfileId){
@@ -49,6 +57,7 @@ function wrap(profiles,activeProfileId){
   // reads the currently selected profile's v1 fields.
   parishLabel:active.parishLabel,choices:active.choices,
   ordinarySettings:active.ordinarySettings,
+  ordinarySelections:active.ordinarySelections,
   sanctusPerformance:active.sanctusPerformance,
   editorialStatus:"PERSONAL_LOCAL_UNVERIFIED",observedSinging:false});
 }
@@ -88,7 +97,22 @@ function updatedProfile(current,change){
  if(kind==="profileRename" && typeof change.value==="string" && clean(change.value))
   return {...active,name:clean(change.value)};
  if(kind==="ordinarySetting"&&ORDINARY_SET.has(id)&&typeof change.value==="string")
-  return {...active,ordinarySettings:{...active.ordinarySettings,[id]:clean(change.value)}};
+  return {...active,ordinarySettings:{...active.ordinarySettings,[id]:clean(change.value)},
+   // Explicit custom typing demotes catalogue provenance; never preserve a
+   // verified ID after the user changes the printed setting's title.
+   ordinarySelections:{...active.ordinarySelections,[id]:""}};
+ if(kind==="ordinarySelection"&&ORDINARY_SET.has(id)&&typeof change.value==="string"){
+  if(change.value==="CUSTOM")
+   return {...active,ordinarySelections:{...active.ordinarySelections,[id]:""}};
+  if(change.value===""){
+   return {...active,ordinarySelections:{...active.ordinarySelections,[id]:""},
+    ordinarySettings:{...active.ordinarySettings,[id]:""}};
+  }
+  const found=resolveKyrialeChoice(id,change.value);
+  if(!found)return null;
+  return {...active,ordinarySelections:{...active.ordinarySelections,[id]:found.id},
+   ordinarySettings:{...active.ordinarySettings,[id]:found.title}};
+ }
  if(kind==="sanctusPerformance"&&PERFORMANCES.has(change.value))
   return {...active,sanctusPerformance:change.value};
  if(["eventSelected","eventTitle"].includes(kind)&&OPTION_SET.has(id)){
@@ -145,13 +169,21 @@ export function applyScholaLocalProgramme(itinerary,programme){
  return freeze({...itinerary,localProgrammeStatus:"PERSONAL_PLAN_NOT_PERFORMANCE",
   localParishLabel:selected.parishLabel,localProfileId:selected.activeProfileId,
   localOrdinarySettings:selected.ordinarySettings,
+  localOrdinarySelections:selected.ordinarySelections,
   events:freeze(itinerary.events.map(event=>{
    const ordinarySetting=selected.ordinarySettings[event.trackId]||
     selected.ordinarySettings[event.id]||null;
    const choice=selected.choices[event.id];
    if(!choice){
+    const movement=event.trackId==="SANCTUS_BENEDICTUS"?"SANCTUS_BENEDICTUS":
+      event.trackId||event.id;
+    const source=resolveKyrialeChoice(movement,selected.ordinarySelections[movement]);
     return ordinarySetting?freeze({...event,localOrdinary:freeze({
-     title:ordinarySetting,status:"PERSONAL_UNVERIFIED_SETTING",observed:false
+     title:ordinarySetting,
+     status:source?"SOURCE_EDITION_INDEXED_NOT_OBSERVED":"PERSONAL_UNVERIFIED_SETTING",
+     catalogueId:source?.id??null,
+     sourceUrl:source?.sourceUrl??null,
+     observed:false
     })}):event;
    }
    const blocked=event.kind==="ORGAN_OPTION" &&
