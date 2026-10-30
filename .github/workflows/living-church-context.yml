@@ -1,0 +1,32 @@
+name: Living Church source-owned visitor context
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/learn/living-church-context.js"
+      - "tests/living-church-context.mjs"
+      - "docs/product/LIVING-CHURCH-P0-CROSS-PIPELINE-BLUEPRINT-20261018.md"
+      - ".github/workflows/living-church-context.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  source-owned-context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax check context owner
+        run: node --check src/learn/living-church-context.js
+      - name: Source authority, context and return acceptance
+        run: node tests/living-church-context.mjs
