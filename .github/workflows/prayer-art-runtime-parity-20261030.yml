@@ -1,0 +1,24 @@
+name: Prayer artwork runtime parity (draft research)
+
+on:
+  push:
+    branches:
+      - research/prayer-existing-artwork-coverage-first-20261030
+    paths:
+      - '.github/workflows/prayer-art-runtime-parity-20261030.yml'
+      - 'tests/prayer-art-runtime-parity.mjs'
+      - 'src/pray/**'
+      - 'data/prayer/artwork-editorial-20261030/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  editorial-card-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect runtime stage coverage without publishing imagery
+        run: node tests/prayer-art-runtime-parity.mjs
