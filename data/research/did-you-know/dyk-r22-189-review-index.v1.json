@@ -312,5 +312,35 @@
     "provisional_home_maximum": 180,
     "final_approved": 0,
     "published": 0
+  },
+  "r31_distinct_glossary_source_rewrites": {
+    "owner": "dyk-r31-three-distinct-glossary-discovery-source-rewrites.v1.json",
+    "revised": [
+      "DYK-GI-G094",
+      "DYK-GI-G311",
+      "DYK-GI-G038"
+    ],
+    "new_primary_text_checked": 2,
+    "new_secondary_hymn_text_checked": 1,
+    "previous_8_exact_copies_now_5": true,
+    "source_direct_claims_cumulative": 133,
+    "source_remaining": 56,
+    "independent_editorial_approvals": 0
+  },
+  "r31_189_v_612_post_rewrite_refresh": {
+    "public_owner": "dyk-r31-post-rewrite-189-vs-612-public-summary.v1.json",
+    "private_owner": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028:data/discovery/research/r31-dyk-189-v-612-post-rewrite-lexical-refresh.v1.json",
+    "full_189_rechecked": true,
+    "all_612_previews_compared": true,
+    "exact_en_fr_source_id_collisions": 0,
+    "English_low_confidence_flags": 5,
+    "manual_semantic_final_approvals": 0,
+    "provisional_nonrepetitive_home_max": 183
+  },
+  "r31_original_Pitre_source_status": {
+    "owner": "dyk-r31-pitre-1900-primary-facsimile-access-status.v1.json",
+    "unverified_original_claims": 49,
+    "upstream_original_image_holds": 14,
+    "new_primary_Pitre_pages_rechecked": 0
   }
 }
