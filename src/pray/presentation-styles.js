@@ -1071,6 +1071,38 @@ const PRAYER_BOOK_NESTED_SOURCE_CSS=String.raw`
 #aoPray435930 .aoLittleCrownActions button{
   min-height:48px!important;
 }
+
+/* Confession opening: the three paths read as plain selection rows,
+   not three competing dashboard cards or a privacy questionnaire. */
+#aoPray435930 .aoP435930ConfPathCards{
+ display:grid!important;grid-template-columns:1fr!important;
+ gap:0!important;background:transparent!important;
+ border:0!important;box-shadow:none!important;
+}
+#aoPray435930 .aoP435930ConfPathCards>button{
+ display:flex;flex-direction:column;align-items:flex-start;
+ min-height:48px!important;padding:13px 8px!important;
+ border:0!important;border-bottom:1px solid var(--border,rgba(240,228,212,.13))!important;
+ border-radius:0!important;background:transparent!important;
+ box-shadow:none!important;text-align:left!important;
+}
+#aoPray435930 .aoP435930ConfPathCards>button[aria-pressed="true"]{
+ border-left:2px solid var(--liturgical,#bb9b77)!important;
+ padding-left:12px!important;
+}
+#aoPray435930 .aoP435930ConfPathCards>button strong{
+ font:500 16px/1.35 var(--ao-font-liturgical,Georgia,serif)!important;
+ letter-spacing:0!important;text-transform:none!important;
+}
+#aoPray435930 .aoP435930ConfPathCards>button span{
+ font:400 12px/1.45 var(--ao-font-ui,system-ui,sans-serif)!important;
+ color:var(--muted,#b5ad9e)!important;
+ margin-top:2px!important;
+}
+#aoPray435930 .aoP435930ConfNavShell{
+ background:transparent!important;border:0!important;
+ box-shadow:none!important;
+}
 `;
 
 export function installPrayPresentationStyles(doc=globalThis.document){
