@@ -4,6 +4,7 @@ import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js"
 import { formatDisplayDate } from "../app/date-format.js";
 import { calendarObservanceAlias, verifiedFerialSundayMassName } from "../calendar/observance-title.js";
 import { latinIntroitIncipit, calendarOrdoMassFacts } from "../calendar/ordo-mass-facts.js";
+import { composeMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { TODAY_V2_CSS } from "./today-v2-styles.js";
 import { buildTodayV2Sections, renderTodayV2Sections } from "./today-v2-sections.js";
@@ -179,17 +180,15 @@ export function renderHomeToString(state,win=globalThis){
   // Artwork is mounted into its own DOM island by renderHome.
   // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
-  const properSections=currentProper?[
-    ["introit","Introit","Introït"],["collect","Collect","Collecte"],
-    ["epistle","Epistle","Épître"],["lesson","Lesson","Leçon"],
-    ["gospel","Gospel","Évangile"],["offertory","Offertory","Offertoire"],
-    ["communion","Communion","Communion"],
-  ].filter(([key])=>{
-    const value=currentProper[key];
-    return typeof value==="string"?Boolean(value.trim()):
-      Array.isArray(value)?value.length>0:
-      Boolean(value&&typeof value==="object"&&Object.keys(value).length);
-  }).map(([,en,french])=>({en,fr:french})):[];
+  // The preview and native R17 reader must agree on the identical bilingual
+  // text slots: do not infer available orations from raw fields.
+  const preview=currentProper?composeMassTextsSheet({
+    proper:currentProper,language:vm.language,date:vm.dateIso,
+    title:vm.observedTitle,sourceReady:vm.resolvedForSelection,
+  }):null;
+  const properSections=(preview?.sections??[])
+    .filter(section=>section.status==="READY")
+    .map(section=>({id:section.id,label:section.label}));
   if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage,properSections,choices:win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null,ordoFacts:calendarOrdoMassFacts(state.resolution,{language:vm.language})});
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
