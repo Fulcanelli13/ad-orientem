@@ -113,8 +113,10 @@ const ONLY_APPOINTED_RESEARCH=Object.freeze({
  publishable:false,published:false
 });
 function reviewOfficeBetaSelection({date,hour}={}){
- const valid=typeof date==="string"&&/^\\d{4}-\\d\\d-\\d\\d$/u.test(date) &&
-  new Date(date+"T12:00:00Z").toISOString().slice(0,10)===date;
+ const parsed=typeof date==="string"&&/^\d{4}-\d\d-\d\d$/u.test(date)?
+  new Date(date+"T12:00:00Z"):null;
+ const valid=parsed!==null&&!Number.isNaN(parsed.valueOf())&&
+  parsed.toISOString().slice(0,10)===date;
  if(!valid||!Object.hasOwn(titleByHour,hour))
   return {status:"NOT_AVAILABLE",reason:"INVALID_DATE_OR_CANONICAL_HOUR",canPreview:false};
  if(date!==ONLY_APPOINTED_RESEARCH.civilDate||hour!=="VESPERS")
