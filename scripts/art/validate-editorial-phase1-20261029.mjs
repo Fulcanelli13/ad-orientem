@@ -918,4 +918,83 @@ if(master.phase1WaltersOfficialVerification.frozenSourceCards!==42 ||
  fail("Walters museum verification or 479/479 master counts drifted");
 console.log("PASS Walters 42/42 official CSV object IDs + accessions + titles + PURLs, 38 live pages, 4 blocked, 7 altarpiece panels; all 479 museum records checked and no publication.");
 
+
+const commons305 = load("sacred-art-phase1-commons-305-official-file-audit-20261030.v2.json");
+const commons305Frozen = crosswalk.records.filter(r =>
+  r.sourceId.startsWith("commons:") && r.canonical383.status === "NO_CONFIRMED_IDENTITY");
+const commonsFrozenById = new Map(commons305Frozen.map(r=>[r.sourceId,r]));
+const cc = commons305.counts;
+if(commons305Frozen.length!==305 || commons305.rows.length!==305 ||
+   cc.acceptedUnlinkedCommonsSourceCards!==305 || cc.frozenImports!==299 ||
+   cc.frozenImportsWithCorrections!==6 ||
+   cc.officialCurrentFilePageAndMediaVerified!==305 ||
+   cc.deletedOrMissingFilePages!==0 || cc.officialPageHasNoCurrentFile!==0 ||
+   cc.officialApiRequestUnresolved!==0 || cc.otherUnresolved!==0 ||
+   cc.originalSourceFilenameEqualsOfficialCurrentName!==305 ||
+   cc.potentialRenamedOrChangedSourceFilename!==0 ||
+   cc.currentCommonsMediaSha1Available!==305 ||
+   cc.uniqueCurrentMediaSha1!==305 ||
+   cc.exactMediaByteDuplicatesInside305!==0 ||
+   cc.noArtistField!==4 || cc.noCreditField!==1 ||
+   cc.originalFilesVisuallyInspected!==0 ||
+   cc.physicalWorkIdentityCertifiedNew!==0 ||
+   cc.canonical383LinkedNew!==0 ||
+   cc.photoRightsClearedForApp!==0 || cc.productionImports!==0)
+  fail("Commons 305 official file identity counts/release status mismatch");
+const commonsSha1s=new Set(),commonsAudited=new Set();
+for(const r of commons305.rows){
+ const frozen=commonsFrozenById.get(r.sourceId);
+ const review=byId.get(r.sourceId);
+ const image=r.official?.fileCurrent;
+ if(!frozen || !review || commonsAudited.has(r.sourceId) ||
+    frozen.review.decision!==r.originalDecision ||
+    frozen.review.title!==r.originalReviewedTitle ||
+    frozen.review.artistAsPresented!==r.originalArtist ||
+    frozen.review.originalSourceUrl!==r.originalSourceUrl ||
+    frozen.batch!==r.originalBatch ||
+    frozen.canonical383.status!==r.originalCanonical383IdentityStatus ||
+    frozen.canonical383.artworkId!==r.originalCanonical383ArtworkId ||
+    review.decision!==r.originalDecision ||
+    r.status!=="COMMONS_FILE_PAGEID_AND_ORIGINAL_MEDIA_METADATA_VERIFIED" ||
+    r.exactCommonsFilePageIdentityCertified!==true ||
+    r.evidence.pageIdExact!==true ||
+    r.evidence.originalSourceFilenameMatchesCurrentTitle!==true ||
+    r.official?.pageId!==Number(r.sourceId.slice(8)) ||
+    r.official?.namespace!==6 ||
+    !image?.sha1 || !/^[a-f0-9]{40}$/i.test(image.sha1) ||
+    typeof image.width!=="number" || typeof image.height!=="number" ||
+    !image.mime?.startsWith("image/") ||
+    r.uniquePhysicalWorkCertified!==false ||
+    r.photographQualityCertified!==false ||
+    r.imageRightsCertified!==false ||
+    r.canonical383LinkNew!==false || r.productionMutation!==false)
+    fail("Commons source file evidence/immutable editor decision mismatch "+r.sourceId);
+  commonsAudited.add(r.sourceId);
+  commonsSha1s.add(image.sha1);
+}
+if(commonsAudited.size!==305 || commonsSha1s.size!==305 ||
+   commons305.exactFileSha1DuplicateGroups.length!==0 ||
+   commons305.release.frozenUserDecisionsUnmodified!==true ||
+   commons305.release.canonical383Protected!==true ||
+   commons305.release.sourcePhotoRightsApproved!==false ||
+   commons305.release.sourcePhotosVisuallyApproved!==false ||
+   commons305.release.uniqueNewPhysicalPaintingsPromoted!==false ||
+   commons305.release.productionMutation!==false)
+ fail("Commons 305 file hashes/editorial/release guards changed");
+const mc=master.phase1CommonsFileIdentityVerification;
+if(mc.sourceCards!==305 || mc.imports!==299 || mc.conditionalImports!==6 ||
+   mc.exactFilePageIdAndImageMetadataVerified!==305 ||
+   mc.originalSourceFilenameMatchesCurrentFileTitle!==305 ||
+   mc.existingFileMediaSha1!==305 || mc.uniqueFileSha1!==305 ||
+   mc.exactSourceMediaByteDuplicateGroupsInside305!==0 ||
+   mc.missingArtistExtmetadata!==4 || mc.missingCreditExtmetadata!==1 ||
+   mc.officialMuseumBackedSourceIdentityPreviouslyCompleted!==479 ||
+   mc.acceptedToCanonical383LinkedSourceCardsStill!==72 ||
+   mc.acceptedToCanonical383UnlinkedSourceCardsStill!==784 ||
+   mc.actualNewPhysicalArtworkIdentityConfirmed!==0 ||
+   mc.photographRightsCleared!==0 || mc.canonical383NewLinks!==0 ||
+   mc.productionImports!==0 || mc.productionMutation!==false)
+ fail("Commons 305 file verification master summary drifted");
+console.log("PASS Commons 305/305 official file page IDs + SHA1+filename; 299 imports, 6 conditional; 0 exact byte duplicates, 0 approvals.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
