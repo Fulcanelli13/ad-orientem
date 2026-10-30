@@ -2,8 +2,8 @@
   "schema": "AO_DYK_SOURCE_FIRST_EDITORIAL_BATCH_V1",
   "version": "1.0.0",
   "created": "2026-10-30",
-  "status": "DRAFT_NONPUBLISHING",
-  "purpose": "Original bilingual Did You Know statements grounded in existing Ad Orientem canonical registries, for human review before rotation or distribution",
+  "status": "CORRECTED_GLOSSARY_AND_MASS_ONLY_CUSTOMS_MOVED_TO_ULTRAMASTER_SOURCE",
+  "purpose": "Bilingual glossary and Mass drafts; canonical Customs examples deferred because DYK Customs must mine the 3,703-observation Ultra-Master instead.",
   "owns_runtime": false,
   "publication_authorized": false,
   "deduplication_status": "PENDING_AGAINST_EXISTING_DYK_53_AND_195_CANDIDATES",
@@ -18,377 +18,13 @@
     "review_en_fr_independently": true
   },
   "counts": {
-    "total": 40,
-    "customs": 16,
+    "active_total": 24,
     "glossary": 19,
-    "mass_ceremonial": 5
+    "mass_ceremonial": 5,
+    "customs_ultramaster": 0,
+    "deferred_canonical_customs_examples": 16
   },
   "facts": [
-    {
-      "id": "DYK-SF01-001",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that bedside holy-water fonts are documented in French Catholic homes?",
-        "fr": "Saviez-vous que des bénitiers de chevet sont attestés dans des foyers catholiques français ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "DOM-002",
-        "source_ids": [
-          "MUCEM-BENITIER"
-        ]
-      },
-      "scope": "FRENCH_CATHOLIC_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "DOM-002"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-002",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that the traditional blessing after childbirth was a voluntary thanksgiving, not a mandatory purification?",
-        "fr": "Saviez-vous que les relevailles étaient une action de grâce facultative après une naissance, et non une purification obligatoire ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "LIFE-002",
-        "source_ids": [
-          "RIT-1878",
-          "SCHOLA-RELEVAILLES"
-        ]
-      },
-      "scope": "FRENCH_CATHOLIC_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "LIFE-002"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-003",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that ex-votos left at shrines express gratitude rather than an attempt to obtain favours by magic?",
-        "fr": "Saviez-vous que les ex-voto déposés dans les sanctuaires expriment la reconnaissance, et non une tentative d'obtenir des faveurs par magie ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "DEV-009",
-        "source_ids": [
-          "LAGHET-EXVOTO",
-          "ALTOETTING-EXVOTO"
-        ]
-      },
-      "scope": "FRENCH_CATHOLIC_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "DEV-009"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-004",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that Catholic families have traditionally kept Candlemas candles at home after their blessing?",
-        "fr": "Saviez-vous que des familles catholiques conservaient traditionnellement chez elles les cierges bénits de la Chandeleur ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "DOM-011",
-        "source_ids": [
-          "ECF-CHANDLEUR-HOME"
-        ]
-      },
-      "scope": "FRENCH_CATHOLIC_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "DOM-011"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-005",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that blessed Palm Sunday branches have traditionally adorned crucifixes in Catholic homes?",
-        "fr": "Saviez-vous que des rameaux bénits le dimanche des Rameaux ornaient traditionnellement les crucifix de certaines maisons catholiques ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "DOM-013",
-        "source_ids": [
-          "ECF-RAMEAUX-HOME",
-          "DPP-2001"
-        ]
-      },
-      "scope": "FRENCH_CATHOLIC_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "DOM-013"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-006",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that the traditional blessing of throats in honour of Saint Blaise uses two crossed candles blessed for that purpose?",
-        "fr": "Saviez-vous que la bénédiction traditionnelle des gorges en l'honneur de saint Blaise emploie deux cierges croisés, bénits à cette intention ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "BLSS-001",
-        "source_ids": [
-          "ROMR-BLAISE-1956",
-          "SCHOLA-BLAISE-LATIN",
-          "BOOK-BLESSINGS-BLAISE",
-          "ORDO-BLAISE-1962"
-        ]
-      },
-      "scope": "TRADITIONAL_ROMAN_PRACTICE",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "BLSS-001"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-007",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that the Sicilian tradition of Saint Joseph's table combines a feast-day meal with care for people in need?",
-        "fr": "Saviez-vous que la tradition sicilienne de la table de saint Joseph associe le repas de fête à l'aide apportée aux personnes dans le besoin ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "SJOS-001",
-        "source_ids": [
-          "BR-DIOCESE-STJOSEPH-2026"
-        ]
-      },
-      "scope": "LOCAL_REGIONAL_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "SJOS-001"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-008",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that in parts of Catholic Europe people bring herbs and flowers for blessing on the Assumption?",
-        "fr": "Saviez-vous que, dans certaines régions de l'Europe catholique, on apporte des herbes et des fleurs à bénir pour l'Assomption ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "BLSS-002",
-        "source_ids": [
-          "DPP-ASSUMPTION-HERBS-181",
-          "RIT-ASSUMPTION-WELLER",
-          "PARISH-ASSUMPTION-HERBS-NEWTON"
-        ]
-      },
-      "scope": "LOCAL_REGIONAL_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "BLSS-002"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-009",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that some Catholics bring wine for a priest's blessing on Saint John the Evangelist's feast, 27 December?",
-        "fr": "Saviez-vous que certains catholiques font bénir du vin par un prêtre le 27 décembre, fête de saint Jean l'Évangéliste ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "BLSS-003",
-        "source_ids": [
-          "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
-          "UK-PARISH-STJOHN-WINE"
-        ]
-      },
-      "scope": "TRADITIONAL_ROMAN_PRACTICE",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "BLSS-003"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-010",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that in several Central and Eastern European Catholic traditions, families bring Easter foods to be blessed?",
-        "fr": "Saviez-vous que, dans plusieurs traditions catholiques d'Europe centrale et orientale, les familles apportent leurs aliments de Pâques pour les faire bénir ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "BLSS-004",
-        "source_ids": [
-          "RIT-EASTER-FOOD-WELLER",
-          "US-DIOCESE-EASTER-BASKETS",
-          "DPP-2001"
-        ]
-      },
-      "scope": "LOCAL_REGIONAL_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "BLSS-004"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-011",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that one traditional Advent family custom is to add straw to an empty manger after acts of kindness or prayer?",
-        "fr": "Saviez-vous qu'une coutume familiale de l'Avent consiste à ajouter de la paille à une crèche vide après un acte de charité ou une prière ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "ADVT-002",
-        "source_ids": [
-          "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
-        ]
-      },
-      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "ADVT-002"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-012",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that Polish families share an unconsecrated Christmas wafer, called opłatek, as a sign of goodwill and reconciliation?",
-        "fr": "Saviez-vous que des familles polonaises partagent à Noël une feuille de pain non consacrée, appelée opłatek, en signe de paix et de réconciliation ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "XMAS-001",
-        "source_ids": [
-          "SJV-VERMONT-OPLATKI"
-        ]
-      },
-      "scope": "LOCAL_REGIONAL_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "XMAS-001"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-013",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that visiting seven altars of repose on Holy Thursday is a devotional custom, not a universal requirement?",
-        "fr": "Saviez-vous que la visite de sept reposoirs le Jeudi saint est une coutume de dévotion, et non une obligation universelle ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "HTHU-001",
-        "source_ids": [
-          "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"
-        ]
-      },
-      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "HTHU-001"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-014",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that families may mark the Rogation days with a private walk and prayers for the harvest, distinct from an official procession?",
-        "fr": "Saviez-vous qu'une famille peut marquer les Rogations par une promenade de prière pour les récoltes, distincte d'une procession liturgique ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "ROGA-001",
-        "source_ids": [
-          "NEWLAND-ROGATION-FAMILY-1956"
-        ]
-      },
-      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "ROGA-001"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-015",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that some Catholic communities decorate Corpus Christi procession routes with carpets of flowers?",
-        "fr": "Saviez-vous que certaines communautés catholiques décorent de tapis de fleurs le parcours des processions de la Fête-Dieu ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "CORP-001",
-        "source_ids": [
-          "UNESCO-CORPUS-FLOWER-CARPETS",
-          "VATICAN-DPP-CORPUS-FLOWERS-162"
-        ]
-      },
-      "scope": "LOCAL_REGIONAL_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "CORP-001"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
-    {
-      "id": "DYK-SF01-016",
-      "category": "customs",
-      "text": {
-        "en": "Did you know that some Polish Pentecost traditions decorate houses and gates with fresh greenery?",
-        "fr": "Saviez-vous que, dans certaines traditions polonaises de la Pentecôte, on décore les maisons et les portails de verdure fraîche ?"
-      },
-      "source": {
-        "owner": "data/customs/customs-atlas-seed.v1.json",
-        "record_id": "PENT-001",
-        "source_ids": [
-          "LASYPANSTWOWE-PENTECOST-GREENERY",
-          "LASYPANSTWOWE-BIRCH-GREENERY"
-        ]
-      },
-      "scope": "LOCAL_REGIONAL_CUSTOM",
-      "deep_link": {
-        "owner": "calendar_customs",
-        "record_id": "PENT-001"
-      },
-      "state": "EDITORIAL_DRAFT_NOT_APPROVED",
-      "human_gate": "Historical/local scope, source and FR editorial signoff"
-    },
     {
       "id": "DYK-SF01-017",
       "category": "glossary",
@@ -933,5 +569,373 @@
       "state": "EDITORIAL_DRAFT_NOT_APPROVED",
       "human_gate": "Independent rubrical/form and FR editorial review"
     }
-  ]
+  ],
+  "deferred_canonical_customs_illustrations": [
+    {
+      "id": "DYK-SF01-001",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that bedside holy-water fonts are documented in French Catholic homes?",
+        "fr": "Saviez-vous que des bénitiers de chevet sont attestés dans des foyers catholiques français ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DOM-002",
+        "source_ids": [
+          "MUCEM-BENITIER"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DOM-002"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-002",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that the traditional blessing after childbirth was a voluntary thanksgiving, not a mandatory purification?",
+        "fr": "Saviez-vous que les relevailles étaient une action de grâce facultative après une naissance, et non une purification obligatoire ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "LIFE-002",
+        "source_ids": [
+          "RIT-1878",
+          "SCHOLA-RELEVAILLES"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "LIFE-002"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-003",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that ex-votos left at shrines express gratitude rather than an attempt to obtain favours by magic?",
+        "fr": "Saviez-vous que les ex-voto déposés dans les sanctuaires expriment la reconnaissance, et non une tentative d'obtenir des faveurs par magie ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DEV-009",
+        "source_ids": [
+          "LAGHET-EXVOTO",
+          "ALTOETTING-EXVOTO"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DEV-009"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-004",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that Catholic families have traditionally kept Candlemas candles at home after their blessing?",
+        "fr": "Saviez-vous que des familles catholiques conservaient traditionnellement chez elles les cierges bénits de la Chandeleur ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DOM-011",
+        "source_ids": [
+          "ECF-CHANDLEUR-HOME"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DOM-011"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-005",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that blessed Palm Sunday branches have traditionally adorned crucifixes in Catholic homes?",
+        "fr": "Saviez-vous que des rameaux bénits le dimanche des Rameaux ornaient traditionnellement les crucifix de certaines maisons catholiques ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "DOM-013",
+        "source_ids": [
+          "ECF-RAMEAUX-HOME",
+          "DPP-2001"
+        ]
+      },
+      "scope": "FRENCH_CATHOLIC_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "DOM-013"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-006",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that the traditional blessing of throats in honour of Saint Blaise uses two crossed candles blessed for that purpose?",
+        "fr": "Saviez-vous que la bénédiction traditionnelle des gorges en l'honneur de saint Blaise emploie deux cierges croisés, bénits à cette intention ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-001",
+        "source_ids": [
+          "ROMR-BLAISE-1956",
+          "SCHOLA-BLAISE-LATIN",
+          "BOOK-BLESSINGS-BLAISE",
+          "ORDO-BLAISE-1962"
+        ]
+      },
+      "scope": "TRADITIONAL_ROMAN_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-001"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-007",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that the Sicilian tradition of Saint Joseph's table combines a feast-day meal with care for people in need?",
+        "fr": "Saviez-vous que la tradition sicilienne de la table de saint Joseph associe le repas de fête à l'aide apportée aux personnes dans le besoin ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "SJOS-001",
+        "source_ids": [
+          "BR-DIOCESE-STJOSEPH-2026"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "SJOS-001"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-008",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that in parts of Catholic Europe people bring herbs and flowers for blessing on the Assumption?",
+        "fr": "Saviez-vous que, dans certaines régions de l'Europe catholique, on apporte des herbes et des fleurs à bénir pour l'Assomption ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-002",
+        "source_ids": [
+          "DPP-ASSUMPTION-HERBS-181",
+          "RIT-ASSUMPTION-WELLER",
+          "PARISH-ASSUMPTION-HERBS-NEWTON"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-002"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-009",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that some Catholics bring wine for a priest's blessing on Saint John the Evangelist's feast, 27 December?",
+        "fr": "Saviez-vous que certains catholiques font bénir du vin par un prêtre le 27 décembre, fête de saint Jean l'Évangéliste ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-003",
+        "source_ids": [
+          "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+          "UK-PARISH-STJOHN-WINE"
+        ]
+      },
+      "scope": "TRADITIONAL_ROMAN_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-003"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-010",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that in several Central and Eastern European Catholic traditions, families bring Easter foods to be blessed?",
+        "fr": "Saviez-vous que, dans plusieurs traditions catholiques d'Europe centrale et orientale, les familles apportent leurs aliments de Pâques pour les faire bénir ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "BLSS-004",
+        "source_ids": [
+          "RIT-EASTER-FOOD-WELLER",
+          "US-DIOCESE-EASTER-BASKETS",
+          "DPP-2001"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "BLSS-004"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-011",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that one traditional Advent family custom is to add straw to an empty manger after acts of kindness or prayer?",
+        "fr": "Saviez-vous qu'une coutume familiale de l'Avent consiste à ajouter de la paille à une crèche vide après un acte de charité ou une prière ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "ADVT-002",
+        "source_ids": [
+          "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
+        ]
+      },
+      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "ADVT-002"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-012",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that Polish families share an unconsecrated Christmas wafer, called opłatek, as a sign of goodwill and reconciliation?",
+        "fr": "Saviez-vous que des familles polonaises partagent à Noël une feuille de pain non consacrée, appelée opłatek, en signe de paix et de réconciliation ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "XMAS-001",
+        "source_ids": [
+          "SJV-VERMONT-OPLATKI"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "XMAS-001"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-013",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that visiting seven altars of repose on Holy Thursday is a devotional custom, not a universal requirement?",
+        "fr": "Saviez-vous que la visite de sept reposoirs le Jeudi saint est une coutume de dévotion, et non une obligation universelle ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "HTHU-001",
+        "source_ids": [
+          "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"
+        ]
+      },
+      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "HTHU-001"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-014",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that families may mark the Rogation days with a private walk and prayers for the harvest, distinct from an official procession?",
+        "fr": "Saviez-vous qu'une famille peut marquer les Rogations par une promenade de prière pour les récoltes, distincte d'une procession liturgique ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "ROGA-001",
+        "source_ids": [
+          "NEWLAND-ROGATION-FAMILY-1956"
+        ]
+      },
+      "scope": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "ROGA-001"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-015",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that some Catholic communities decorate Corpus Christi procession routes with carpets of flowers?",
+        "fr": "Saviez-vous que certaines communautés catholiques décorent de tapis de fleurs le parcours des processions de la Fête-Dieu ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "CORP-001",
+        "source_ids": [
+          "UNESCO-CORPUS-FLOWER-CARPETS",
+          "VATICAN-DPP-CORPUS-FLOWERS-162"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "CORP-001"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    },
+    {
+      "id": "DYK-SF01-016",
+      "category": "customs",
+      "text": {
+        "en": "Did you know that some Polish Pentecost traditions decorate houses and gates with fresh greenery?",
+        "fr": "Saviez-vous que, dans certaines traditions polonaises de la Pentecôte, on décore les maisons et les portails de verdure fraîche ?"
+      },
+      "source": {
+        "owner": "data/customs/customs-atlas-seed.v1.json",
+        "record_id": "PENT-001",
+        "source_ids": [
+          "LASYPANSTWOWE-PENTECOST-GREENERY",
+          "LASYPANSTWOWE-BIRCH-GREENERY"
+        ]
+      },
+      "scope": "LOCAL_REGIONAL_CUSTOM",
+      "deep_link": {
+        "owner": "calendar_customs",
+        "record_id": "PENT-001"
+      },
+      "state": "DEFERRED_SECONDARY_CANONICAL_EXAMPLE",
+      "human_gate": "Not in active Customs DYK intake: research source must be Ultra-Master; preserved for provenance and optional cross-reference only."
+    }
+  ],
+  "supersession_note": "2026-10-30 user editorial correction: 39 Calendar Customs are NOT the Customs DYK discovery pool. Customs DYK drafts are now sourced from research/customs-multibook-bulk150-20261026 and the full 3,703-observation corpus; see dyk-ultramaster-batch01.v1.json. All prior draft examples preserved below but excluded from the active candidate set."
 }
