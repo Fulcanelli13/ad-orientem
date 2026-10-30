@@ -338,16 +338,24 @@ try{
   });
   console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
-  // A transition may have hidden the preflight after its screenshot while
-  // leaving the donor flow node mounted. Only click an actionable close
-  // control; in either case require the backdrop no longer to be visible.
-  const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
-  if(await massFlowClose.isVisible())await massFlowClose.click();
-  await page.waitForFunction(()=>{
-    const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-    return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
-  },null,{timeout:5000});
-  await page.locator("[data-ao-app-surface='home']").click();
+  // M1 is a permanent Mass root, not a dismissible dialog. Leaving via the
+  // shell's Today tab is the supported action. The old close/hidden-backdrop
+  // assertion would erroneously fail a correct M1 implementation.
+  const permanentMassRoot=await page.evaluate(()=>
+    document.documentElement.dataset.aoM1MassRoot==="true");
+  if(permanentMassRoot){
+    await page.locator("[data-ao-app-surface='home']").click();
+    await page.waitForFunction(()=>
+      document.documentElement.dataset.aoM1MassRoot!=="true",null,{timeout:5000});
+  }else{
+    const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
+    if(await massFlowClose.isVisible())await massFlowClose.click();
+    await page.waitForFunction(()=>{
+      const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+      return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
+    },null,{timeout:5000});
+    await page.locator("[data-ao-app-surface='home']").click();
+  }
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
   await page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']").click();
