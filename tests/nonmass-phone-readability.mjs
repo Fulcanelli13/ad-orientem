@@ -100,9 +100,9 @@ try{
        mount:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView,
        classes:document.getElementById("aoPray435930")?.className,
        renderedDoors:document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length,
-       errors
+       visibleOwner:globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner??null
      }));
-     throw Error("Formation -> Pray navigation did not render nine doors: "+JSON.stringify(state));
+     throw Error("Formation -> Pray navigation did not render nine doors: "+JSON.stringify({...state,errors}));
    }
    await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:4500});
    const prayer=await page.evaluate(()=>{
