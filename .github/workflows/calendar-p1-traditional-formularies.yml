@@ -1,0 +1,53 @@
+name: Research P1 traditional formularies
+on:
+  pull_request:
+    paths:
+      - 'data/calendar/p1-*.json'
+      - 'tests/calendar-p1-traditional-formulary-research.mjs'
+      - 'tests/calendar-p1-internal-missal-link-resolution.mjs'
+      - 'tests/calendar-p1-live-1962-source-discovery.mjs'
+      - 'tests/calendar-p1-doctor-common-inheritance.mjs'
+      - 'src/calendar/p1-doctor-common-inheritance.js'
+      - 'src/calendar/p1-paschal-alternate-source-composition.js'
+      - 'tests/calendar-p1-paschal-alternate-source-composition.mjs'
+      - 'tests/calendar-p1-partial-common-source-reconciliation.mjs'
+      - 'src/calendar/p1-partial-common-source-reconciliation.js'
+      - 'src/calendar/p1-papal-martyr-source-composition.js'
+      - 'tests/calendar-p1-papal-martyr-source-composition.mjs'
+      - 'src/calendar/p1-internal-missal-link-resolution.js'
+      - '.github/workflows/calendar-p1-traditional-formularies.yml'
+  push:
+    branches:
+      - research/1224-traditional-formularies
+jobs:
+  research-invariants:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/calendar-p1-traditional-formulary-research.mjs
+      - run: node tests/calendar-p1-internal-missal-link-resolution.mjs
+      - run: node tests/calendar-p1-doctor-common-inheritance.mjs
+      - run: node tests/calendar-p1-paschal-alternate-source-composition.mjs
+      - run: node tests/calendar-p1-partial-common-source-reconciliation.mjs
+      - run: node tests/calendar-p1-papal-martyr-source-composition.mjs
+      - run: node tests/calendar-traditional-formulary-sources.mjs
+      - run: node tests/calendar-traditional-adjudication.mjs
+  app-source-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect actual in-app 1962 Oct 9 and future year source IDs
+        run: node tests/calendar-p1-live-1962-source-discovery.mjs
