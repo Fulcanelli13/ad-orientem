@@ -55,12 +55,17 @@ try{
     });
    }
    await page.locator(".aoHeritageMassShortcut").click();
+   // The state changes to TLM before the async 2,582-record directory render
+   // finishes. Wait for the actual new lens DOM before selecting List; counting
+   // buttons on the old Heritage DOM silently skips the view transition.
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm",null,{timeout:25000});
+   await page.locator('.aoFindBody[data-explore-lens="tlm"]').waitFor({state:"visible",timeout:60000});
    const list=page.locator('[data-find-filter="view"][data-find-filter-value="list"]');
-   if(await list.count())await list.click();
+   assert.equal(await list.count(),1,"TLM view must expose a real List control");
+   await list.click();
    // The view toggle repaints asynchronously. Never type into a retiring
    // map search input: its input event can be superseded by list rendering.
-   await page.locator('.aoFindBody[data-find-view="list"]').waitFor({state:"visible",timeout:20000});
+   await page.locator('.aoFindBody[data-find-view="list"][data-explore-lens="tlm"]').waitFor({state:"visible",timeout:30000});
    await page.locator(".aoTlmVenueCard").first().waitFor({state:"visible",timeout:20000});
    const search=page.locator("#ao-find-modular-root [data-find-query]");
    await search.fill("Cantius");
