@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CHAPLET_ARTWORK_FAMILIES,resolveChapletArtworkStage} from "../src/pray/chaplet-artwork-stage-contract.v1.js";
 import {resolveArtworkRuntimeIdentity} from "../src/pray/artwork-runtime-identity.v1.js";
+import {isEditorialArtworkPlacementApproved,isUserApprovedPhotographPublishable} from "../src/pray/artwork-approval-policy.v1.js";
 
 /** Guard approval decisions and five chaplet identities. This does NOT certify images. */
 const dir="data/prayer/artwork-editorial-20261030/";
@@ -12,6 +13,11 @@ const b611=read("approved-unified-b06-b11-from-user-message.v1.json");
 const newApproved=read("missing-art-approved-only-20261030.v1.json");
 const overlay=read("cross-prayer-inheritance-20261030.v1.json");
 const slots=new Map(registry.slots.map(s=>[s.slot_id,s]));
+assert.equal(isEditorialArtworkPlacementApproved({id:"unapproved",eligible:true,editorial:"NEW_CANDIDATE_NOT_USER_APPROVED"}),false);
+assert.equal(isEditorialArtworkPlacementApproved({id:"approved",eligible:true,editorial:"USER_APPROVED"}),true);
+assert.equal(isEditorialArtworkPlacementApproved({id:"maybe",eligible:true,editorial:"USER_APPROVED_CROSS_PRAYER_REUSE"}),false);
+assert.equal(isUserApprovedPhotographPublishable({id:"approved",eligible:true,editorial:"USER_APPROVED"}),false);
+assert.equal(isEditorialArtworkPlacementApproved({id:"rejected",eligible:false,editorial:"USER_APPROVED"}),false);
 const affirm=new Set([
  "USER_APPROVED",
  "USER_APPROVED_EXISTING_SAINTS_SELECTION",
