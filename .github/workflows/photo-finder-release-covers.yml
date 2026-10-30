@@ -34,6 +34,19 @@ jobs:
             research/photo-finder-release-20261030-b3) batch=3 ;;
             research/photo-finder-release-20261030-b4) batch=4 ;;
             research/photo-finder-release-20261030-b5) batch=5 ;;
+            research/photo-finder-release-20261030-b6) batch=6 ;;
+            research/photo-finder-release-20261030-b7) batch=7 ;;
+            research/photo-finder-release-20261030-b8) batch=8 ;;
+            research/photo-finder-release-20261030-b9) batch=9 ;;
+            research/photo-finder-release-20261030-b10) batch=10 ;;
+            research/photo-finder-release-20261030-b11) batch=11 ;;
+            research/photo-finder-release-20261030-b12) batch=12 ;;
+            research/photo-finder-release-20261030-b13) batch=13 ;;
+            research/photo-finder-release-20261030-b14) batch=14 ;;
+            research/photo-finder-release-20261030-b15) batch=15 ;;
+            research/photo-finder-release-20261030-b16) batch=16 ;;
+            research/photo-finder-release-20261030-b17) batch=17 ;;
+            research/photo-finder-release-20261030-b18) batch=18 ;;
             *) echo 'Unapproved photo batch branch' >&2; exit 1 ;;
           esac
           test "$(cat data/geography/research/photo-finder-20261030/.release-cover-batch)" = "VERIFY_USER_SELECTED_COVERS_BATCH_${batch}_2026-10-30"
@@ -57,7 +70,7 @@ jobs:
           path=pathlib.Path('/tmp/ao-photo-finder-batch/verification-report.json')
           a=json.loads(path.read_text())
           assert a['schema']=='AO_FINDER_SELECTED_PHOTO_STAGE_V1'
-          assert a['scheduled_from_frozen_review']==20, 'Frozen schedule unexpectedly changed'
+          assert a['scheduled_from_frozen_review']==(8 if int(os.environ['AO_PHOTO_BATCH'])==18 else 20), 'Frozen schedule unexpectedly changed'
           assert 1<=a['attempted']<=20
           assert 1<=a['verified']<=20, 'No verified photos; do not declare a release'
           assert a['new_files_in_app_tree']==a['verified']

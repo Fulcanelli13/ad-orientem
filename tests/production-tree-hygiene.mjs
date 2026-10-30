@@ -35,7 +35,7 @@ for(const name of workflows){
       name+" must remain scoped to its designated Directory review branch family");
     if(name==="photo-finder-release-covers.yml"){
       assert.match(source,/github\.repository == 'Fulcanelli13\/ad-orientem'/);
-      for(const batch of [2,3,4,5]){
+      for(const batch of Array.from({length:17},(_,i)=>i+2)){
         assert.ok(source.includes("research/photo-finder-release-20261030-b"+batch+") batch="+batch),
           "Every allowed batch branch requires a fixed numeric offset");
       }
