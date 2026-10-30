@@ -1,0 +1,40 @@
+{
+  "schema": "ao.catena.mixed-excerpt-speaker-ownership.v1",
+  "date": "2026-10-21",
+  "status": "research_only__source_text_unchanged",
+  "sourcePointer": "catena.matthew.26.26:12",
+  "problem": "One canonical segment inherits Father label 'Lanfranc' although the text switches explicitly to 'PSEUDO-DIONYSIUS.' midway. A single Messenger author bubble would falsely attribute the second paragraph.",
+  "fullFragmentCharacterLength": 530,
+  "splitCharacterOffset": 215,
+  "units": [
+    {
+      "range": {
+        "start": 0,
+        "endExclusive": 215
+      },
+      "printedAttribution": "Lanfranc",
+      "attributionOrigin": "canonical_segment_father_label",
+      "firstWords": "When the host is broken",
+      "lastWords": "out of His sideh?",
+      "publicationStatus": "blocked_pending_work_citation_review"
+    },
+    {
+      "range": {
+        "start": 215,
+        "endExclusive": 530
+      },
+      "printedAttribution": "Pseudo-Dionysius",
+      "attributionOrigin": "explicit_inline_citation_PSEUDO-DIONYSIUS._(Eccl._Hier._3._in_fin.)",
+      "firstWords": "PSEUDO-DIONYSIUS. (Eccl. Hier. 3. in fin.)",
+      "lastWords": "gave to his disciples.",
+      "publicationStatus": "blocked_pending_identity_and_work_review"
+    }
+  ],
+  "policy": [
+    "Canonical Catena original text must not be rewritten or split destructively.",
+    "Speaker ownership by first inherited author is valid only before the explicit inline attribution marker.",
+    "Any source-owned renderer must use validated source substring boundaries and a clearly attributed display, not automatic one-bubble attribution.",
+    "Pseudo-Dionysius is a transmitted editorial author label, not the historical Dionysius the Areopagite with independently certified authorship.",
+    "One fragment may contribute multiple source-owner units, but none is yet approved for publication."
+  ]
+}

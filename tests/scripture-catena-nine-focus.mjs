@@ -1,0 +1,53 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const D="data/scripture/catena/research/full-corpus-pass-20261021/";
+const read=f=>JSON.parse(readFileSync(D+f,"utf8"));
+const full=read("matthew-nine-focused-original-work-signoff.v1.json");
+const ext=read("matthew-external-work-loci.v1.json");
+const prior=read("matthew-first-30-source-context-adjudication.v1.json");
+const E=new Map(ext.records.map(x=>[x.sourcePointer,x]));
+const P=new Map(prior.records.map(x=>[x.sourcePointer,x]));
+assert.equal(full.schema,"ao.catena.matthew-nine-focused-original-work-signoff.v1");
+assert.deepEqual(full.counts,{total30:30,externallyLocated18:18,focused9:9,blockedContextEscalations8:8,humanApprovals:0,publicationApprovals:0});
+const expectedRanks=[2,3,4,9,12,22,23,25,29];
+assert.deepEqual(full.rows.map(x=>x.rank),expectedRanks);
+const chunks=new Map();
+for(const filename of ["matthew-01-04","matthew-09-12","matthew-13-16","matthew-25-28"]){
+ const obj=JSON.parse(readFileSync("data/scripture/catena/chunks/"+filename+".json","utf8"));
+ for(const x of obj.pericopes)chunks.set(x.id,x);
+}
+for(const row of full.rows){
+ const a=P.get(row.sourcePointer),b=E.get(row.sourcePointer);
+ assert.ok(a&&b);
+ assert.equal(a.rank,row.rank);assert.equal(b.rank,row.rank);
+ assert.equal(a.AIContextAssessment,"direct");
+ assert.equal(row.canonicalSourceEvidencePhrase,a.sourceEvidencePhrase);
+ assert.equal(row.modernEditorialQuestion,a.originalEditorialQuestion);
+ assert.equal(row.translationURL,b.externalWorkTextURL);
+ assert.equal(row.verifiedWholeWorkLocus,b.workLocus);
+ assert.equal(row.inheritedFatherLabel,a.inheritedFatherLabel);
+ const [id,ix]=row.sourcePointer.split(":");
+ const orig=chunks.get(id)?.segments?.[Number(ix)];
+ assert.ok(orig,"canonical fragment exists");
+ assert.equal(orig.father,row.inheritedFatherLabel);
+ assert.ok(orig.text.includes(row.canonicalSourceEvidencePhrase),"Catena evidence must be exact");
+ assert.ok(row.parallelEnglishTextAnchor.length>=16);
+ assert.ok(/^https:\/\/www\.newadvent\.org\/fathers\/\d+\.htm$/.test(row.translationURL));
+ const evidence=row.externalEnglishWitness;
+ assert.equal(evidence.checkedOn,"2026-10-22");
+ assert.equal(evidence.verbatimOnlineEnglishSearchAnchor,row.parallelEnglishTextAnchor);
+ assert.equal(evidence.onlineSearchAnchorObserved,true);
+ assert.equal(evidence.wholeWorkLocationObserved,true);
+ assert.equal(evidence.originalGreekOrLatinCompared,false);
+ assert.equal(evidence.criticalEditionChecked,false);
+ assert.equal(evidence.attestedHumanEditor,false);
+ assert.equal(evidence.status,"online_English_anchor_and_section_checked_for_editor_navigation_only");
+ assert.ok(evidence.checkedSection?.length>=10);
+ assert.equal(row.humanEditorialSignoff,false);
+ assert.equal(row.independentTextCriticalAuthentication,false);
+ assert.equal(row.permissionToPublish,false);
+ assert.equal(row.sourceReviewStatus,"external_English_passage_located_AI_checked_not_original_language_certified");
+}
+assert.equal(full.rows.find(x=>x.rank===2).verifiedWholeWorkLocus,"Homily 44, section 5");
+assert.equal(full.rows.find(x=>x.rank===22).verifiedWholeWorkLocus,"Homily 47, section 1");
+console.log("PASS: 9 precise English-passage matches, corrected original sections, 0 human approvals");
