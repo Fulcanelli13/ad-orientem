@@ -5,6 +5,8 @@ on:
     paths:
       - "src/pray/internal-route-owner.js"
       - "src/pray/presentation-runtime.js"
+      - "src/pray/chaplet-f07-pilot.js"
+      - "tests/pray-chaplet-f07-phone.mjs"
       - "src/pray/prayer-reader-design-pilot.js"
       - "tests/pray-reader-design-pilot-phone.mjs"
       - "src/pray/prayer-design-pilot.js"
@@ -36,6 +38,8 @@ jobs:
         run: node tests/pray-ux-direct-route-mobile-audit.mjs
       - name: Reader pilot F01/F03 source-owned mobile acceptance
         run: node tests/pray-reader-design-pilot-phone.mjs
+      - name: F07 Divine Mercy crown pilot and canonical step acceptance
+        run: node tests/pray-chaplet-f07-phone.mjs
       - name: Pilot Discovery and Angelus mobile visual acceptance
         run: node tests/pray-design-pilot-phone.mjs
       - name: Temporary route matrix and representative visual captures
@@ -47,5 +51,6 @@ jobs:
             artifacts/pray-ux-unified/
             artifacts/prayer-design-pilot/
             artifacts/prayer-reader-design-pilot/
+            artifacts/pray-chaplet-f07/
           if-no-files-found: ignore
           retention-days: 3
