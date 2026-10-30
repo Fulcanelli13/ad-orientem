@@ -193,7 +193,7 @@ def run():
                    2 if x.get("advisoryFlags") else 3)
     rows=sorted(outcomes,key=lambda x:(rank(x),x["physicalWorkGroup"]))
     with REVIEW.open("w",newline="",encoding="utf-8") as f:
-        writer=csv.writer(f)
+        writer=csv.writer(f,lineterminator="\n")
         writer.writerow(["stable_group_id","triage_priority","museum","original_sha256","source_url",
                          "status","advisory_flags","native_dimensions","manual_quality_approved","release_authorized"])
         for r in rows:
