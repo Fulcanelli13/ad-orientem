@@ -4,6 +4,24 @@ import {mkdir,readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+// Guard the shipped single-source bead Scripture presentation. Historical
+// duplicate selectors silently overrode accessible 44px links/disclosures.
+const prayStyles=await readFile(new URL("../src/pray/presentation-styles.js",import.meta.url),"utf8");
+const scriptureStyle=prayStyles.split("/* Guided Rosary:")[1]
+  ?.split("#aoPrayerBookRoot .aoRosaryGuidedBeadMeditation")[0]??"";
+assert.ok(scriptureStyle,"Canonical Guided Rosary Scripture CSS missing");
+for(const selector of [
+ ".aoRosaryBeadScripture{",
+ ".aoRosaryBeadScriptureActions :is(a,button){",
+ ".aoRosaryBeadSourceNotice{",
+]){
+ assert.equal(scriptureStyle.split(selector).length-1,1,
+   "Duplicate Guided Rosary Scripture source style: "+selector);
+}
+assert.match(scriptureStyle,/\.aoRosaryBeadSourceNotice>summary\{[^}]*min-height:44px/);
+assert.match(scriptureStyle,/\.aoRosaryBeadScriptureActions :is\(a,button\)\{[^}]*min-height:44px/);
+assert.doesNotMatch(scriptureStyle,/\.aoRosaryEnglishSwitch button\{/,
+  "Do not restore an obsolete second translation button family");
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const captures=resolve(root,"artifacts/rosary-canonical-phone-controls");
 await mkdir(captures,{recursive:true});
