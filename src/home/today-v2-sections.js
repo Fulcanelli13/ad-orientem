@@ -163,12 +163,14 @@ export function renderTodayV2Sections(model,vm){
     <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
     <p class="aoTodayV2GlanceNote">${esc(glanceNote)}</p>
   </section>
+  <section class="aoTodayV2DiscoveryStandalone" aria-label="${esc(txt("Did you know?","Le saviez-vous ?"))}">
+    ${homeDidYouKnowMarkup(language)}
+  </section>
   ${renderSeasonalCustomsSpotlight(spotlight,language)}
   <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
     <section class="aoTodayV2Zone aoTodayV2ReadReflect aoTcmCard"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Read & reflect","Lire et méditer"))}</h2></div></div>
       ${row(saintTitle,saintDetail,'data-home-calendar data-home-calendar-view="day"')}
       ${row(txt("The Gospel of the Mass","Évangile de la messe"),gospelDetail,'data-action="gospel"')}
-      ${homeDidYouKnowMarkup(language)}
       ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
     </section>
   </div>`;
