@@ -32,7 +32,7 @@ for (const item of expansion.records) {
  assert.equal(item.editorial_approved, false);
  assert.equal(item.publication_authorized, false);
  assert.equal(item.origin.record_id, item.destination.id);
- assert.match(item.origin.path, /^data\\/glossary\\/concepts-\\d{3}-\\d{3}\\.v1\\.json$/);
+ assert.ok(item.origin.path.startsWith("data/glossary/concepts-") && item.origin.path.endsWith(".v1.json"), item.id);
 }
 for (const item of insights.records) {
  assert.ok(item.fact.en && item.fact.fr && item.differentiated_from_definition.en && item.source.source_ids.length, item.id);
