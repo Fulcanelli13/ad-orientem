@@ -1,19 +1,22 @@
 {
   "schema": "AO_PRAYER_CARD_WIKIMEDIA_GAP_QUEUE_V1",
   "created": "2026-10-30",
-  "purpose": "48 existing source-owned Prayer vignette slots awaiting exact artwork, licensed image, visual review and placement approval; generated from canonical research, not a parallel art master.",
+  "purpose": "48 existing source-owned Prayer vignette slots using BOTH existing approved-identity and 383-gallery title-cue candidate joins. All proposals remain research-only until image quality, rights and slot placement verification.",
   "policy": [
     "No invented Wikimedia image URL",
     "Do not interpret proposed painting identity as approval for a slot",
     "Only record images of exact subject and approved composition; reject frames and gallery surrounds",
     "Retain title/source/photographer/rights/crop verification in the canonical Sacred Art asset pipeline before release",
-    "Missing assets retain existing semantic icons; NO stock imagery"
+    "Missing assets retain existing semantic icons; NO stock imagery",
+    "A gallery title-cue match is not human editorial approval for this card."
   ],
   "statistics": {
     "prayer_vignette_slots": 48,
-    "with_editorial_proposals": 32,
-    "unassigned": 16,
-    "production_ready": 0
+    "with_editorial_proposals": 39,
+    "unassigned": 9,
+    "production_ready": 0,
+    "primary_master_identity_candidates": 32,
+    "gallery_delta_identity_candidates": 20
   },
   "queue": [
     {
@@ -32,11 +35,17 @@
       ],
       "candidate_count": 2,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "commons-morlete-sacred-heart-1759",
+        "new:jules-breton-song-of-the-lark-artic-94841"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-weekday_benedictus",
@@ -52,11 +61,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "met-437738"
+      ],
+      "combined_candidate_identity_ids": [
+        "new:jules-breton-song-of-the-lark-artic-94841",
+        "met-437738"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-foundations_sign_of_cross",
@@ -72,11 +89,21 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+        "cma-136507"
+      ],
+      "combined_candidate_identity_ids": [
+        "khm:GG-838",
+        "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+        "cma-136507"
+      ],
+      "combined_candidate_count": 3
     },
     {
       "slot_id": "COV-foundations_our_father",
@@ -90,11 +117,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-foundations_hail_mary",
@@ -114,11 +144,30 @@
       ],
       "candidate_count": 4,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "ART-aphael-and-iulio-omano-he-isitation",
+        "met-436791",
+        "met-436502",
+        "cma-127572",
+        "met-438724"
+      ],
+      "combined_candidate_identity_ids": [
+        "ART-hilippe-de-hampaigne-he-nnunciation",
+        "souls::1",
+        "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+        "fondazione-zeri:47818",
+        "ART-aphael-and-iulio-omano-he-isitation",
+        "met-436791",
+        "met-436502",
+        "cma-127572",
+        "met-438724"
+      ],
+      "combined_candidate_count": 9
     },
     {
       "slot_id": "COV-foundations_glory_be",
@@ -135,11 +184,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "cma-136507"
+      ],
+      "combined_candidate_identity_ids": [
+        "khm:GG-838",
+        "cma-136507"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-foundations_apostles_creed",
@@ -158,11 +215,22 @@
       ],
       "candidate_count": 2,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+        "cma-136507"
+      ],
+      "combined_candidate_identity_ids": [
+        "ART-eter-aul-ubens-esurrection-of-hrist",
+        "khm:GG-838",
+        "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+        "cma-136507"
+      ],
+      "combined_candidate_count": 4
     },
     {
       "slot_id": "COV-sacrament_act_of_contrition",
@@ -179,11 +247,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "met-436839"
+      ],
+      "combined_candidate_identity_ids": [
+        "nga:34956",
+        "met-436839"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-foundations_act_of_faith",
@@ -198,11 +274,18 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "W07-014"
+      ],
+      "combined_candidate_identity_ids": [
+        "W07-014"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-foundations_act_of_hope",
@@ -219,11 +302,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "new:jules-breton-song-of-the-lark-artic-94841"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-foundations_act_of_love",
@@ -240,11 +328,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "commons-morlete-sacred-heart-1759"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-foundations_guardian_angel",
@@ -260,11 +353,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "ART-ietro-da-ortona-he-uardian-ngel"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-foundations_grace_before_meals",
@@ -279,11 +377,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-foundations_grace_after_meals",
@@ -298,11 +399,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-foundations_prayer_of_adoration",
@@ -318,11 +422,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "W07-014"
+      ],
+      "combined_candidate_identity_ids": [
+        "met-438434",
+        "W07-014"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-mass_confiteor",
@@ -339,11 +451,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "met-437722"
+      ],
+      "combined_candidate_identity_ids": [
+        "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+        "met-437722"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-sacrament_come_holy_spirit",
@@ -359,11 +479,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "ART-ean-estout-entecost"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-traditional_veni_sancte_sequence",
@@ -379,11 +504,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "ART-ean-estout-entecost"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-adoration_anima_christi",
@@ -398,11 +528,20 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "ART-nthony-van-yck-he-ance-hrust",
+        "met-437977"
+      ],
+      "combined_candidate_identity_ids": [
+        "ART-nthony-van-yck-he-ance-hrust",
+        "met-437977"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-adoration_spiritual_communion",
@@ -417,11 +556,20 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "W07-014",
+        "met-437977"
+      ],
+      "combined_candidate_identity_ids": [
+        "W07-014",
+        "met-437977"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-benediction_o_salutaris",
@@ -437,11 +585,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "ART-arlo-rivelli-aint-homas-quinas"
+      ],
+      "combined_candidate_identity_ids": [
+        "met-438434",
+        "ART-arlo-rivelli-aint-homas-quinas"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-benediction_tantum_ergo",
@@ -458,11 +614,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "ART-arlo-rivelli-aint-homas-quinas"
+      ],
+      "combined_candidate_identity_ids": [
+        "met-438434",
+        "ART-arlo-rivelli-aint-homas-quinas"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-benediction_divine_praises",
@@ -479,11 +643,19 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "cma-136507"
+      ],
+      "combined_candidate_identity_ids": [
+        "khm:GG-838",
+        "cma-136507"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-adoration_litany_blessed_sacrament",
@@ -500,11 +672,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "met-438434"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-benediction_versicles",
@@ -519,11 +696,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "met-438434"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-adoration_lord_i_am_not_worthy",
@@ -537,11 +719,24 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "ART-ean-ouvenet-aising-of-azarus",
+        "met-436199",
+        "met-437977"
+      ],
+      "combined_candidate_identity_ids": [
+        "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "ART-ean-ouvenet-aising-of-azarus",
+        "met-436199",
+        "met-437977"
+      ],
+      "combined_candidate_count": 4
     },
     {
       "slot_id": "COV-mass_devotion_leonine",
@@ -558,11 +753,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "ART-uido-eni-rchangel-ichael-efeating-atan"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-benediction_adoremus_ps116",
@@ -578,11 +778,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "met-438434"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-devotion_consecration_christ_king",
@@ -597,11 +802,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "LOCAL-BENSON-SALVATOR"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-sacred_heart_short_prayer",
@@ -617,11 +827,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "commons-morlete-sacred-heart-1759"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-sacred_heart_aspiration_trust",
@@ -636,11 +851,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "commons-morlete-sacred-heart-1759"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-marian_hail_holy_queen",
@@ -654,11 +874,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-marian_memorare",
@@ -678,11 +901,19 @@
       ],
       "candidate_count": 4,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "met-438434",
+        "souls::1",
+        "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+        "fondazione-zeri:47818"
+      ],
+      "combined_candidate_count": 4
     },
     {
       "slot_id": "COV-weekday_magnificat",
@@ -701,11 +932,21 @@
       ],
       "candidate_count": 3,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "ART-aphael-and-iulio-omano-he-isitation"
+      ],
+      "combined_candidate_identity_ids": [
+        "souls::1",
+        "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+        "fondazione-zeri:47818",
+        "ART-aphael-and-iulio-omano-he-isitation"
+      ],
+      "combined_candidate_count": 4
     },
     {
       "slot_id": "COV-marian_consecration_immaculate_heart",
@@ -723,11 +964,22 @@
       ],
       "candidate_count": 2,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "combined_candidate_identity_ids": [
+        "B02-HEART-MARY-MORLETE",
+        "met-438434",
+        "met-437423",
+        "cma-135659"
+      ],
+      "combined_candidate_count": 4
     },
     {
       "slot_id": "COV-sub_tuum",
@@ -743,11 +995,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-litany_loreto_1962",
@@ -762,11 +1019,20 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "combined_candidate_identity_ids": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-litany_loreto_current",
@@ -781,11 +1047,20 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "combined_candidate_identity_ids": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "combined_candidate_count": 2
     },
     {
       "slot_id": "COV-devotion_prayer_st_michael",
@@ -800,11 +1075,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "ART-uido-eni-rchangel-ichael-efeating-atan"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-devotion_memorare_st_joseph",
@@ -818,11 +1098,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-devotion_st_anthony_lost_items",
@@ -835,11 +1118,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-devotion_litany_st_joseph",
@@ -854,11 +1140,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-devotion_ad_te_beate_ioseph",
@@ -872,11 +1161,18 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [
+        "2020.263.8"
+      ],
+      "combined_candidate_identity_ids": [
+        "2020.263.8"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-church_prayer_for_pope",
@@ -889,11 +1185,14 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     },
     {
       "slot_id": "COV-foundations_eternal_rest",
@@ -909,11 +1208,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "souls::1"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-dead_de_profundis",
@@ -930,11 +1234,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "souls::1"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-dead_fidelium_deus",
@@ -950,11 +1259,16 @@
       ],
       "candidate_count": 1,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "EXISTING_ARTWORK_IDENTITY_MATCHES__IMAGE_SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [
+        "souls::1"
+      ],
+      "combined_candidate_count": 1
     },
     {
       "slot_id": "COV-dead_eternal_rest_singular",
@@ -968,11 +1282,15 @@
       "candidate_identity_ids": [],
       "candidate_count": 0,
       "publication_state": "NO_RELEASE_CLEARED_VIGNETTE",
-      "wikimedia_search_state": "NOT_STARTED",
+      "wikimedia_search_state": "MISSING_ARTWORK_IDENTITY__SEARCH_NOT_STARTED",
       "verified_original_url": null,
       "rights_and_visual_qa": "PENDING",
       "source_slot_registry": "data/pray/art-placement-slots-20261030.v1.json",
-      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json"
+      "editorial_candidate_source": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "gallery_candidate_identity_ids": [],
+      "combined_candidate_identity_ids": [],
+      "combined_candidate_count": 0
     }
-  ]
+  ],
+  "editorial_gallery_companion": "data/pray/artwork-candidate-gallery-delta-20261030.v1.json"
 }
