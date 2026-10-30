@@ -1,0 +1,113 @@
+{
+  "schema": "AO_CUSTOMS_ULTRA_MASTER_V2_HISTORICAL_GRANT_SOURCE_RECHECK",
+  "date": "2026-10-30",
+  "scope": "Four existing claim clusters: primary facsimile where available, otherwise explicit historic/source-report limits; no generalization to customs identity.",
+  "summary": {
+    "clusters": 4,
+    "primary_instrument_facsimiles_seen": 1,
+    "original_instruments_still_missing": 3,
+    "new_blanket_indulgences_claimed": 0,
+    "calendar_changes": 0
+  },
+  "normative_legal_guard": "1967 Indulgentiarum doctrina and 1999 Enchiridion apply independently; old privileges are not assumed present; post-1967 particular grants require their precise own conditions and status.",
+  "cases": [
+    {
+      "review_key": "HIST-IND-001",
+      "title": "St Joseph first Wednesday devotion",
+      "finding": "Oblates of St Joseph history reports indulgences granted in 1921 at request of Sisters of St Joseph of Philadelphia, augmented in 1933. This is not the primary decree or a proof of present applicability.",
+      "evidence_grade": "INSTITUTIONAL_SECONDARY_HISTORY",
+      "original_instrument_facsimile_seen": false,
+      "scope_boundaries": "special St Joseph devotion on the first Wednesday, not all St Joseph customs or all Wednesdays",
+      "sources": [
+        {
+          "url": "https://www.osjusa.org/st-joseph-in-liturgy-part-b",
+          "kind": "religious_institute_historical_article"
+        }
+      ],
+      "next_step": "Retrieve 1921 and 1933 Apostolic Penitentiary or Raccolta rescripts, exact prayers/acts, eligible persons, temporal conditions and subsequent revision."
+    },
+    {
+      "review_key": "HIST-IND-002",
+      "title": "Breton pardons",
+      "finding": "French cultural heritage inventory distinguishes medieval pardons with papal indulgence bulls from later patronal festivals called pardons even without a bull; there is no universal grant attached to the name.",
+      "evidence_grade": "PRIMARY_HERITAGE_HISTORIOGRAPHY_NOT_A_SPECIFIC_GRANT",
+      "original_instrument_facsimile_seen": false,
+      "scope_boundaries": "named chapel, date and work; majority of local chapels historically had no such grant according to inventory",
+      "sources": [
+        {
+          "url": "https://pci-lab.fr/fiche-d-inventaire/fiche/396-les-pardons-et-tromenies-en-bretagne",
+          "kind": "French_intangible_heritage_inventory"
+        },
+        {
+          "url": "https://www.culture.gouv.fr/thematiques/patrimoine-culturel-immateriel/vivre-le-patrimoine-culturel-immateriel/reportages/la-bretagne-terre-des-pardons",
+          "kind": "French_Ministry_of_Culture"
+        }
+      ],
+      "next_step": "Choose a named chapel and recover its actual papal bull or diocesan published concession with prescribed work and dates; do not apply universally."
+    },
+    {
+      "review_key": "HIST-IND-003",
+      "title": "Caravaca Vera Cruz Sanctuary",
+      "finding": "1998 signed Apostolic Penitentiary Latin concession (Prot. N. 2/98/I) reproduced as a facsimile with English translation on page 5 (zero-based PDF page 4) of a Murcia regional-government religious-tourism brochure. Diocese of Cartagena and shrine confraternity confirm listed works and continuing concession. This is a specific indulgenced work, not every Caravaca festival or object.",
+      "evidence_grade": "PRIMARY_SIGNED_GRANT_FACSIMILE_PUBLISHED_BY_REGIONAL_GOVERNMENT_PLUS_DIOCESAN_CORROBORATION",
+      "original_instrument_facsimile_seen": true,
+      "grant_date": "1998-01-09",
+      "issuer": "Apostolic Penitentiary, by mandate of the Supreme Pontiff",
+      "protocol_number": "2/98/I",
+      "grant_form": "PLENARY",
+      "stated_duration": "in perpetuum",
+      "historical_qualifying_occasions": [
+        "3 May celebration at sanctuary",
+        "14 September Exaltation of Cross at sanctuary",
+        "devout group pilgrimage to sanctuary",
+        "once yearly on personally selected day",
+        "solemn jubilee opening/closing every seven years",
+        "solemn jubilee-year liturgy presided over by diocesan bishop"
+      ],
+      "historical_prescribed_work": "Devout participation in a celebration at the Sanctuary of the Santísima y Vera Cruz of Caravaca or at least Our Father or Creed, with proper visit; consult original wording",
+      "historical_conditions": [
+        "contrition",
+        "sacramental confession",
+        "Holy Communion",
+        "prayer for intentions of Supreme Pontiff"
+      ],
+      "scope_boundaries": "sanctuary-specific; no automatic qualification by ownership of a Caravaca cross or attendance at unrelated customs; do not confuse pilgrimage with tourism",
+      "sources": [
+        {
+          "url": "https://www.caminodecaravacadelacruz.es/webs/murciaturistica/folletos/1/PTMDOC_2_3122017.pdf",
+          "kind": "regional_government_publication_facsimile_and_translation",
+          "pdf_page_one_based": 5
+        },
+        {
+          "url": "https://diocesisdecartagena.org/blog/caravaca-de-la-cruz-abre-los-brazos-al-mundo-en-un-nuevo-ano-jubilar/",
+          "kind": "diocesan_account_of_decree_read_in_2024"
+        },
+        {
+          "url": "https://www.peregrinosacaravaca.com/informacion/",
+          "kind": "shrine_brotherhood_current_information"
+        }
+      ],
+      "current_publication_status": "HOLD_PENDING_FINAL_ECCLESIASTICAL_APPLICABILITY_AND_EXACT_WORK_COPY_REVIEW",
+      "next_step": "Check Latin scan against translation; confirm the current diocesan instructions and no superseding rescript; editorial signoff for the exact act/occasion/conditions before Calendar display."
+    },
+    {
+      "review_key": "HIST-IND-004",
+      "title": "Maria Thalkirchen Frauendreißiger",
+      "finding": "Shrine website reports that Pius VI granted a plenary indulgence in 1780 and describes pilgrimage, devotion, confession, Mass and prayer for the Pope. It describes observance during 15 August–14 September. Original 1780 instrument not retrieved; post-1967 continuity cannot be inferred solely from an 18th-century privilege.",
+      "evidence_grade": "SHRINE_FIRST_PARTY_HISTORICAL_CLAIM_NOT_ORIGINAL_GRANT",
+      "original_instrument_facsimile_seen": false,
+      "scope_boundaries": "Maria Thalkirchen local pilgrimage in Frauendreißiger, not the Marian season universally",
+      "sources": [
+        {
+          "url": "https://www.mariathalkirchen.de/index.php?id=127",
+          "kind": "shrine_claim_and_devotional_conditions"
+        },
+        {
+          "url": "https://www.mariathalkirchen.de/index.php?id=164",
+          "kind": "shrine_historical_context"
+        }
+      ],
+      "next_step": "Obtain 1780 Pius VI text and local ordinariate's current promulgation/confirmation; date range, qualifying acts and current status require authoritative reconciliation."
+    }
+  ]
+}
