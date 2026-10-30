@@ -1,0 +1,96 @@
+{
+  "schema": "AO_P107_FOUR_PINNED_COMMONS_ALTERNATIVE_ORIGINALS_V1",
+  "date": "2026-10-30",
+  "state": "CANDIDATE_NATIVE_ACQUISITION_NO_PUBLICATION",
+  "source_standard": "Commons file description pages, page-specific published SHA-1; original bytes and dimensions must match prior to any derivative generation",
+  "source_revision_policy": "Hash verification is mandatory; if Commons source changes, fail closed. Never replace with an unpinned near match.",
+  "p105_existing_research_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2028",
+  "new_brighton_reconciliation": "data/directory/research/p104-new-brighton-missing-venue-discovery-lead.json",
+  "records": [
+    {
+      "row": 309,
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "filename": "Church of Saint Ignatius of Loyola in Jihlava (8686).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_(8686).jpg",
+      "source_sha1": "a61c6ec7df0680fc9cd37c802ce0e10346694367",
+      "source_bytes": 4197924,
+      "width": 3000,
+      "height": 4000,
+      "creator": "Gampe",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "point_of_view": [
+        49.39665,
+        15.590778
+      ],
+      "photo_site": "Jihlava Church of St Ignatius, not adjacent Jesuit seminary",
+      "review_intent": "Compare this alternate façade to dark-grey sky P105 row 309, avoid premature approval"
+    },
+    {
+      "row": 315,
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "filename": "Friedhofskirche Altötting 2.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_2.jpg",
+      "source_sha1": "3d9efbc3569d078ce64e75aa75fb531d436e1a48",
+      "source_bytes": 3506999,
+      "width": 3024,
+      "height": 4032,
+      "creator": "Ricardalovesmonuments",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "point_of_view": [
+        48.228056,
+        12.678889
+      ],
+      "photo_site": "Cemetery church St Michael, NOT distinct nearby Gnadenkapelle",
+      "review_intent": "Assess portrait composition as alternative to P105 cemetery-wide view; no Gnadenkapelle substitution"
+    },
+    {
+      "row": 320,
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "filename": "Fontaine-lès-Dijon (21) Basilique Saint-Bernard - Extérieur - 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_(21)_Basilique_Saint-Bernard_-_Ext%C3%A9rieur_-_01.jpg",
+      "source_sha1": "50495340a7948103ca9e98417420ecb69b1b3276",
+      "source_bytes": 650716,
+      "width": 2100,
+      "height": 1400,
+      "creator": "GO69",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "point_of_view": [
+        47.345962,
+        5.015877
+      ],
+      "photo_site": "Standalone Basilica Saint-Bernard, distinct from birth-site château tower",
+      "review_intent": "Prefer basilica-only architecture to P105 whole complex photo; check full church framing"
+    },
+    {
+      "row": 322,
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "filename": "Pauchapellestlouisdegonzague.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pauchapellestlouisdegonzague.jpg",
+      "source_sha1": "631e9861c01b8afc500d33f78229353050973c15",
+      "source_bytes": 3855884,
+      "width": 2304,
+      "height": 3072,
+      "creator": "Florent Pécassou",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "point_of_view": [
+        43.295889,
+        -0.365722
+      ],
+      "photo_site": "Pau Saint-Louis-de-Gonzague church, not Corsican funerary chapel",
+      "review_intent": "Compare with bollard-obstructed P100/P94 source; inspect for further obstructions"
+    }
+  ],
+  "quality_policy": {
+    "all_four_originals_verified_before_stage": true,
+    "all_derivatives_full_frame_no_crop": true,
+    "each_requires_visual_qa": true,
+    "each_requires_independent_photo_and_licence_qa": true,
+    "newly_published_covers": 0,
+    "photo_media_registry_changed": false,
+    "zero_cost": true
+  }
+}
