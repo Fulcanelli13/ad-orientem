@@ -42,6 +42,12 @@ function attachResumeAction(win,flow){
    message.hidden=true;message.textContent="";
    try{
      const result=await shell?.navigate?.("mass",{resume:true});
+     if(result?.ok===true){
+       // Reader ownership changed explicitly. R17 mounts outside the host
+       // backdrop, so the backdrop observer alone cannot guarantee cleanup.
+       deactivateM1MassRoot(win);
+       return;
+     }
      if(result?.ok!==true){
        if(!mass.hasResumable())button.hidden=true;
        message.textContent=fr
