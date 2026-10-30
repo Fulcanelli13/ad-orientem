@@ -11,7 +11,8 @@ export const OFFICE_BETA_CATALOG_SCHEMA="ao.office.beta-catalog.v1";
 export const OFFICE_BETA_HOURS=Object.freeze([
  "MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"
 ]);
-// Only two *research* assemblies for this date are currently implemented.
+// Three explicitly appointed research assemblies now exist; only two
+// source-first Compline dates are currently implemented. No annual roster.
 // This is NOT an approved, live, or published liturgical Office.
 const ENTRIES=Object.freeze([
  Object.freeze({
@@ -33,6 +34,19 @@ const ENTRIES=Object.freeze([
   hour:"COMPLINE",officePart:null,
   label:"Saturday Compline · Eve of Advent I",
   assembly:"SATURDAY_COMPLINE_2026_SOURCE_FIRST",
+  recitation:"SOLO",minister:"BELOW_DEACON",
+  sourceRevision:"126a07f91ede04664108abb6fb20ace3f4de14b9",
+  languages:Object.freeze(["la","en","fr"]),
+  precedenceResearchOnly:true,completeHourCertified:false,
+  translationsApproved:false,rightsApproved:false,
+  publishable:false,published:false
+ }),
+ Object.freeze({
+  key:"advent-i-2026-ferial-tuesday-compline",
+  civilDate:"2026-12-01",officeDate:"2026-12-01",
+  hour:"COMPLINE",officePart:null,
+  label:"Tuesday Compline · First Week of Advent",
+  assembly:"FERIAL_TUESDAY_COMPLINE_2026_SOURCE_FIRST",
   recitation:"SOLO",minister:"BELOW_DEACON",
   sourceRevision:"126a07f91ede04664108abb6fb20ace3f4de14b9",
   languages:Object.freeze(["la","en","fr"]),
