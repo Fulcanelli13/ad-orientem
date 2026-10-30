@@ -178,6 +178,8 @@ const STYLES=`
 #aoPray435930 .aoF07BloodJump>nav button{display:flex;gap:10px;align-items:center;justify-content:flex-start;width:100%;min-height:44px;border:0;background:transparent;color:var(--text,#efe5d7);font:400 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-align:left;border-radius:6px;padding:6px 10px}
 #aoPray435930 .aoF07BloodJump>nav button[aria-current="step"]{background:rgba(203,181,143,.15)}
 #aoPray435930 .aoF07BloodJump>nav button span{font:500 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#cbb28b)}
+#aoPray435930 .aoF07BloodJump>nav button strong{min-width:0;white-space:normal;font:400 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--text,#eee8de)}
+#aoPray435930 .aoF07BloodJump>nav button[aria-current="step"] strong{font-weight:600}
 #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodActions{order:11;display:flex;align-items:center;justify-content:space-between;gap:8px}
 #aoPray435930 .aoPreciousBlood[data-ao-f07-variant="precious-blood"] .aoPreciousBloodActions>button{min-height:48px;border-radius:999px;font:500 13px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:0}
 #aoPray435930 .aoF07BloodPrevious{min-width:48px;width:48px;padding:0;border:1px solid var(--border,rgba(203,181,143,.35));background:transparent;color:var(--text,#fff);font-size:23px!important}
