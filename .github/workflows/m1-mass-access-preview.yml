@@ -1,4 +1,4 @@
-name: M1 Mass access — preview phone acceptance
+name: M1 Mass access — default and Resume phone acceptance
 on:
   pull_request:
     paths:
@@ -10,6 +10,7 @@ on:
       - "tests/m1-mass-access.mjs"
       - "tests/m1-mass-access-phone-e2e.mjs"
       - "tests/m1-mass-root-phone-e2e.mjs"
+      - "tests/m1-mass-default-resume-phone-e2e.mjs"
       - ".github/workflows/m1-mass-access-preview.yml"
   workflow_dispatch:
 permissions:
@@ -17,7 +18,7 @@ permissions:
 jobs:
   m1-phone:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,6 +30,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node tests/m1-mass-access-phone-e2e.mjs
       - run: node tests/m1-mass-root-phone-e2e.mjs
+      - run: node tests/m1-mass-default-resume-phone-e2e.mjs
       - run: node tests/mass-preflight-entry-phone.mjs
       - run: node tests/full-mass-preflight-phone-e2e.mjs
       - uses: actions/upload-artifact@v4
@@ -38,5 +40,6 @@ jobs:
           path: |
             artifacts/m1-mass-access/
             artifacts/m1-mass-root/
+            artifacts/m1-mass-default-resume/
           if-no-files-found: ignore
           retention-days: 7
