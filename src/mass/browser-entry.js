@@ -1051,6 +1051,9 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
          onOpenPrayerRoute:openFolioPrayer,
+         // Preview uses the same exact form/Proper/commemoration decision as Begin.
+         // prepare() composes without entering the reader or saving a checkpoint.
+         onPrepareMassTexts:()=>state.controller?.prepare?.(),
 
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
          getAllSoulsMassChoice:selectedAllSoulsMass,
