@@ -77,7 +77,25 @@ assert.equal(ledger.change(baseline,{
 assert.equal(ledger.project(baseline).events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")
  .performance.status,"STARTED_OBSERVED");
 assert.equal(ledger.project(baseline).events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")
- .performance.eligible,false,"Menu cannot bypass the manual-release ownership");
+ .performance.eligible,true,"Post-Chalice release must unlock explicit observed FINISH");
+assert.equal(ledger.change(baseline,{eventId:"BENEDICTUS_AFTER_CHALICE",action:"FINISH"}).ok,true,
+ "After manual release, the visitor must be able to mark Benedictus finished");
+assert.equal(ledger.project(baseline).events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")
+ .performance.status,"FINISHED_OBSERVED");
+assert.equal(ledger.change(baseline,{eventId:"BENEDICTUS_AFTER_CHALICE",action:"RESET"}).ok,true,
+ "Undo must preserve the already-authorized release for correcting an observation");
+assert.equal(ledger.project(baseline).events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")
+ .performance.status,"EXPECTED_NOT_OBSERVED");
+assert.equal(ledger.project(baseline).events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")
+ .performance.eligible,true,"Undo must not force a second ritual release");
+assert.equal(ledger.change(baseline,{eventId:"BENEDICTUS_AFTER_CHALICE",action:"START"}).ok,true,
+ "Explicit re-marking is permitted only after the same Mass's verified release");
+assert.equal(ledger.change(baseline,{eventId:"BENEDICTUS_AFTER_CHALICE",action:"FINISH"}).ok,true);
+const unreleased=createScholaPerformanceLedger();
+assert.equal(unreleased.change(baseline,{eventId:"BENEDICTUS_AFTER_CHALICE",action:"FINISH"}).reason,
+ "BENEDICTUS_MANUAL_RELEASE_REQUIRED");
+assert.equal(unreleased.change(baseline,{eventId:"BENEDICTUS_AFTER_CHALICE",action:"START"}).reason,
+ "BENEDICTUS_MANUAL_RELEASE_REQUIRED");
 assert.equal(ledger.change(baseline,{eventId:"SYNTHETIC_HYMN",action:"START"}).reason,
  "NOT_IN_THIS_MASS");
 assert.equal(ledger.change(make([],false),{eventId:"KYRIE",action:"START"}).reason,
