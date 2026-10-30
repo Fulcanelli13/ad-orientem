@@ -46,6 +46,11 @@ try{
     const rail=shell?.querySelector(".aoRosaryNamedTimeline");
     const stage=shell?.querySelector(".lab-bead-stage");
     const next=shell?.querySelector("[data-lab-rosary-next]");
+    const prev=shell?.querySelector("[data-lab-rosary-prev]");
+    const dock=shell?.querySelector('[data-ao-rosary-r2-dock="v1"]');
+    const dockBox=dock?.getBoundingClientRect();
+    const prevBox=prev?.getBoundingClientRect();
+    const nextBox=next?.getBoundingClientRect();
     return {
      roots:document.querySelectorAll("#aoPrayerBookRoot.open").length,
      step:window.AO_ROSARY_V381?.state?.()?.step,
@@ -56,6 +61,13 @@ try{
      current:rail?.querySelectorAll('[aria-current="step"]').length||0,
      firstMystery:rail?.querySelectorAll(".aoDevoStopNumber")[1]?.textContent,
      nextHeight:next?.getBoundingClientRect().height||0,
+     dockCount:shell?.querySelectorAll('[data-ao-rosary-r2-dock="v1"]').length||0,
+     dockBottom:dockBox?.bottom??null,dockTop:dockBox?.top??null,
+     prevTop:prevBox?.top??null,nextTop:nextBox?.top??null,
+     prevBottom:prevBox?.bottom??null,nextBottom:nextBox?.bottom??null,
+     rowChildren:dock?.querySelectorAll(":scope > button").length??0,
+     openingPill:rail?.querySelector('[data-ao-rosary-r2-role="opening"]')?.innerText?.trim(),
+     viewportHeight:innerHeight,
      overflow:document.documentElement.scrollWidth-innerWidth,
      text:shell?.querySelector(".aoRosaryActiveCard")?.innerText?.trim()?.length||0
     };
@@ -65,6 +77,12 @@ try{
    assert.equal(baseline.firstMystery,"I","R2 must use Roman mystery pills");
    assert.equal(baseline.current,1,"Exactly one current chapter");
    assert.ok(baseline.nativeBeads>0&&baseline.caption===1,"Original bead controls and one R2 caption");
+   assert.equal(baseline.openingPill,"Opening","Opening pill must not repeat its title");
+   assert.equal(baseline.dockCount,1,"Native Previous/Next row must be one R2 phone dock");
+   assert.equal(baseline.rowChildren,2,"Dock must preserve only the native two navigation buttons");
+   assert.ok(baseline.nextTop>=0&&baseline.prevTop>=0&&
+     baseline.nextBottom<=baseline.viewportHeight-1&&baseline.prevBottom<=baseline.viewportHeight-1,
+     "Both native controls must remain visible above the mobile safe-area dock: "+JSON.stringify(baseline));
    assert.ok(baseline.nextHeight>=44&&baseline.text>15,"Source prayer and Next action must remain usable");
    assert.ok(baseline.overflow<=2,"Phone horizontal overflow");
    await page.screenshot({path:resolve(artifacts,"rosary-r2-"+width+"-opening.png"),animations:"disabled"});
