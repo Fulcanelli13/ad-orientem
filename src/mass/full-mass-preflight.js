@@ -873,6 +873,15 @@ export function mountFullMassPreflight({
     composeRitesFor,
     openCategory,
     refresh,
+    // Returning to the Mass tab resets presentation only. The source-owned
+    // celebration, Proper, ceremony and reader preferences remain untouched.
+    resetView(){
+      folioStep="overview";
+      m1Focus=null;
+      root?.querySelector("[data-mass-calendar-details]")?.removeAttribute("open");
+      refresh();
+      return true;
+    },
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
