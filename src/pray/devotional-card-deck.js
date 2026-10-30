@@ -350,7 +350,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
     const body=card.querySelector(".aoDevoCardScroll");
     if(body){body.scrollTop=0;delete body.dataset.aoFocusRunway}
    });
-   go(0,{initial:true});return;
+   go(0);return;
   }
   const previousClick=e.target.closest("[data-ao-f04-previous]");
   const nextClick=e.target.closest("[data-ao-f04-next]");
