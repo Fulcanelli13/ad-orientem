@@ -6,6 +6,11 @@ on:
       - "data/customs/master/**"
       - "tests/customs-master-integrity.mjs"
       - "tests/customs-ultra-master-v2-integrity.mjs"
+      - "tests/indulgence-calendar-prayer-surface.mjs"
+      - "src/indulgences/work-presentation.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/pray/presentation-runtime.js"
+      - "data/calendar/indulgences-2026-dated-exact-work-cues.v1.json"
       - "tests/customs-full-registry-census.mjs"
       - "tests/customs-wave-a-bulk-reconciliation.mjs"
       - "tests/customs-a1-evidence-indulgence-gate.mjs"
@@ -175,6 +180,13 @@ jobs:
         run: |
           node --check tests/customs-existing22-bilingual-variants-gate.mjs
           node tests/customs-existing22-bilingual-variants-gate.mjs
+      - name: Verify bilingual exact-work indulgence presentation on Calendar and Prayer
+        run: |
+          node --check src/indulgences/work-presentation.js
+          node --check src/calendar/calendar-runtime.js
+          node --check src/pray/presentation-runtime.js
+          node --check tests/indulgence-calendar-prayer-surface.mjs
+          node tests/indulgence-calendar-prayer-surface.mjs
       - name: Verify all 3,703 preserved source observations, 17 source screens, 79 dedup cases and bounded indulgence claims
         run: |
           node --check tests/customs-ultra-master-v2-integrity.mjs
