@@ -21,6 +21,7 @@ import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
 import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay, calendarInseparableApostlesClaimForDay, calendarOmittedFeastClaimForDay } from "./rubrical-claim-citations.js";
 import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
+import {indulgenceCalendarCuesForDate,renderIndulgenceContext,installIndulgenceContextStyles} from "../indulgences/work-presentation.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -845,6 +846,7 @@ function daySurface(selected,r){
       <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
     </section>
     ${practiceContext(selected,r)}
+    ${renderIndulgenceContext(indulgenceCalendarCuesForDate(selected),{language:fr()?"fr":"en",placement:"calendar"})}
     <section class="aoCalV2WeekSection">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("IN CONTEXT","EN CONTEXTE"))}</small><h3>${esc(L("This week","Cette semaine"))}</h3></div><button class="aoCalV2Today" type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button></div>
       ${compactWeek(selected)}
@@ -1218,6 +1220,7 @@ async function openCalendarGlossary(){
 }
 function paint(){
   const r=root();if(!r)return false;
+  installIndulgenceContextStyles(globalThis.document);
   const body=r.querySelector("[data-cal-body]");if(!body)return false;
   const selected=state()?.selectedDate||"",isSameDay=calendarView==="day"&&r.dataset.aoCalendarPaintDate===selected&&r.dataset.aoCalendarPaintView==="day";
   // Date/week-cache subscriptions may repaint after a person expands this
