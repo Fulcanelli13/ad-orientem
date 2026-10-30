@@ -45,6 +45,12 @@
     },
     "genuine_unique_historical_custom_total": {
       "status": "NOT_YET_ESTABLISHED"
+    },
+    "first_200_unlinked_source_type_screen": {
+      "done": 200,
+      "total": 3295,
+      "remaining": 3095,
+      "method": "Original record source_kind/claim_type native fields, not inferred identity; no primary page-image certifications this pass."
     }
   },
   "direct_source_index_completeness": {
@@ -460,5 +466,20 @@
       "volume": 0,
       "method": "Only after master source ownership, bilingual article, rite/law, regional date, editorial approvals and canonical CI. Reuse Calendar/Learn/My Customs."
     }
-  ]
+  ],
+  "first_bulk_stage": {
+    "path": "data/customs/master/customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json",
+    "source_families": {
+      "Weiser 1956 family": 111,
+      "Weiser 1958 Handbook": 89
+    },
+    "lanes": {
+      "Household/community practice review": 115,
+      "Rite/prayer/sacramental owner review": 39,
+      "Historical folklore/context": 23,
+      "Author proposal not attested custom": 22,
+      "Indulgence source check": 1
+    },
+    "no_canonical_article_or_legal_grant_approved": true
+  }
 }
