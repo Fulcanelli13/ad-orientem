@@ -193,6 +193,21 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
      all?(language==="fr"?"TOUS":"ALL"):(language==="fr"?"GUIDE":"LEADER"));
     role.setAttribute("aria-hidden","true");
     line.prepend(role);
+    // The legacy Angelus CSS contains display/flex declarations which may
+    // arrive after pilot styles. Keep the three live reading columns stable
+    // even when those styles win the cascade on narrow mobile viewports.
+    const sign=line.querySelector(".ao-liturgical-speaker");
+    const words=line.querySelector("span:last-child");
+    line.style.setProperty("display","grid","important");
+    line.style.setProperty("grid-template-columns","38px 23px minmax(0,1fr)","important");
+    line.style.setProperty("column-gap","6px","important");
+    line.style.setProperty("align-items","start","important");
+    role.style.setProperty("grid-column","1","important");
+    role.style.setProperty("grid-row","1","important");
+    sign?.style.setProperty("grid-column","2","important");
+    sign?.style.setProperty("grid-row","1","important");
+    words?.style.setProperty("grid-column","3","important");
+    words?.style.setProperty("grid-row","1","important");
    }
   }
   card.append(header,body);viewport.append(card);cards.push(card);
