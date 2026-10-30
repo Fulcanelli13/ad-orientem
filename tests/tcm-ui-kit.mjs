@@ -36,7 +36,7 @@ const state={route:"home",selectedDate:"2026-10-30",resolving:false,
    id:"tempora:Pent22-5:4:g",title:"Feria",rank:4,color:"Green"}},
   proper:{status:"idle"}}};
 for(const language of ["en","fr"]){
- const html=renderHomeToString({...state,language});
+ const html=renderHomeToString({...state,language},{location:{search:"?aoTodayH4=0"}});
  assert.match(html,/class="aoTodayV2Tabs aoTcmLens"/);
  assert.match(html,/data-home-calendar-view="picker"/);
  assert.match(html,/data-home-calendar-view="year"/);
