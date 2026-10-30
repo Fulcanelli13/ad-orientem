@@ -23,7 +23,7 @@ const position=Object.freeze({
  SEDEPRIVATIONIST:["Sedeprivationist","Sédéprivationniste"],
  OTHER_POSITION:["Other stated position","Autre position déclarée"],
 });
-const translateCode=(v,lang)=>T(v)==="UNKNOWN"||!T(v)?unknown(lang):E(human(v));
+const translateCode=(v,lang)=>T(v)==="UNKNOWN"||!T(v)?unknown(lang):human(v);
 const dated=d=>/^\d{4}-\d{2}-\d{2}/.test(T(d))?T(d).slice(0,10):null;
 const isUnavailable=item=>["DIRECTORY_LISTED_UNVERIFIED","OFFICIAL_LISTED_MASS_TIMES_UNCONFIRMED"].includes(T(item?.raw?.venue?.publication_state))
  ||["SCHEDULE UNVERIFIED","OFFICIAL · TIMES UNCONFIRMED"].includes(T(item?.status));
@@ -112,7 +112,16 @@ export function renderTlmChurchProfile(item,language="en"){
   const raw=T(s?.payload?.raw);
   const type=T(s?.mass_type)&&T(s.mass_type)!=="UNKNOWN"?human(s.mass_type):L(language,"Mass (type unspecified)","Messe (type non précisé)");
   const checked=dated(s?.verification?.checked_at),state=T(s?.verification?.state);
-  html+='<article class="aoTlmProfileSchedule"><div><small>'+E(m.community)+' · '+E(type)+'</small><strong>'+E(raw||L(language,"Refer to official timetable","Voir les horaires officiels"))+'</strong></div><span>'+
+  // Use a celebration-specific rite and edition when expressly recorded.
+  // Never classify a scheduled Mass from the building or a different ministry.
+  const use=s?.liturgical_usage??s?.payload?.liturgical_usage??{};
+  const rite=T(use?.family)||T(s?.rite);
+  const books=T(use?.books)||T(s?.missal_edition);
+  const rubrics=T(use?.rubrical_basis)||T(s?.rubrical_basis);
+  const edition=[rite&&(codes[rite]||human(rite)),books&&human(books),rubrics&&human(rubrics)].filter(Boolean);
+  html+='<article class="aoTlmProfileSchedule"><div><small>'+E(m.community)+' · '+E(type)+'</small>'+
+   (edition.length?'<span class="aoTlmProfileScheduleEdition">'+E(edition.join(" · "))+' · '+E(L(language,"specific celebration","célébration précise"))+'</span>':'')+
+   '<strong>'+E(raw||L(language,"Refer to official timetable","Voir les horaires officiels"))+'</strong></div><span>'+
    E([checked?L(language,"Checked","Vérifié")+" "+checked:null,state?human(state):null].filter(Boolean).join(" · "))+'</span></article>';
  }
  html+='<p class="aoTlmProfileCaution">'+E(L(language,"Schedules are source assertions, not live availability. Confirm feast days, exceptions and any changes before travelling.",
@@ -161,6 +170,7 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 .aoTlmProfileDatum strong{font:600 14px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:#f5e7ce;overflow-wrap:anywhere}
 .aoTlmProfileDatum span{font:10px/1.45 var(--ao-font-ui,system-ui,sans-serif);color:#a4b5ba}
 .aoTlmProfileSchedule{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #d0b77a22}
+.aoTlmProfileScheduleEdition{display:block;margin:3px 0;color:#e7c691;font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .aoTlmProfileSchedule div{min-width:0}.aoTlmProfileSchedule small{display:block;font:10px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#d1b581}
 .aoTlmProfileSchedule strong{display:block;font:500 13px/1.6 var(--ao-font-ui,system-ui,sans-serif);color:#eee3d3;white-space:pre-line;overflow-wrap:anywhere}
 .aoTlmProfileSchedule>span{font:10px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#a9b2b8;max-width:140px;flex:none}
