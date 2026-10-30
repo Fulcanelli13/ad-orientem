@@ -1,0 +1,71 @@
+{
+  "schema": "AO_SACRED_PLACES_P105_HANNOVER_CLEMENS_EXACT_PLACE_V1",
+  "date": "2026-10-30",
+  "status": "PENDING_MERGE_OWNER_RELEASE",
+  "baseline": {
+    "places": 529,
+    "sources": 844,
+    "crosswalk": 529,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 22
+  },
+  "proposed": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 23
+  },
+  "new_places": 1,
+  "confirmed_directory_links_added": 1,
+  "published_new": [
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+      "link_id": "link:directory-place:DE:basilika-st-clemens-hannover",
+      "source_ids": [
+        "AO-PHOTO-P104-61-SITE",
+        "AO-PHOTO-P104-61-GEO"
+      ],
+      "photo_research_contact_id": 61,
+      "physical_photo_anchor_id": "RG-58B096C9EE65",
+      "source_site_url": "https://www.st-clemens-hannover.de/anfahrt/",
+      "source_geo_url": "https://www.visit-a-church.info/sacred-buildings/church/detail/1526608833421?lang=en",
+      "source_geo_ref": "independent:visit-a-church:1526608833421",
+      "coordinates": [
+        52.373,
+        9.72681
+      ],
+      "legacy_r49_pin_distance_m": 1.6,
+      "existing_r49_pin_precision": "building",
+      "identity_evidence": "Official Catholic basilica/diocese identify Platz an der Basilika 1, 30169 Hannover; independent Visit-a-Church church-building coordinates 52.373,9.72681; frozen FSSP R49 basilica venue coordinates 52.3729921,9.7268294 (1.6 m away). These identify the SAME physical church; avoid conflating address Goethestraße 33 for parish offices with the worship building.",
+      "existing_frozen_venue": true,
+      "new_mass_schedule_rows": 0,
+      "media_status": "RESEARCH_ONLY_NOT_APPROVED",
+      "approved_photo": false,
+      "published_photo": false
+    }
+  ],
+  "research_holds": [
+    {
+      "photo_id": 71,
+      "reason": "SSPX Kolbermoor frozen map marker ~1739.5 m from independently named physical chapel; investigate before exact link.",
+      "no_new_link": true
+    },
+    {
+      "photo_id": 195,
+      "reason": "Blandford site verified, but no R49 operational venue and current Traditional Mass times unverified; do not create link.",
+      "no_new_link": true
+    }
+  ],
+  "policy": {
+    "preserve_original_venue_id": true,
+    "do_not_promote_candidate_image": true,
+    "schedule_or_calendar_claims_added": 0,
+    "source_marker_not_treated_as_building_proof": true,
+    "zero_cost": true,
+    "earlier_P104_immutable": true
+  }
+}
