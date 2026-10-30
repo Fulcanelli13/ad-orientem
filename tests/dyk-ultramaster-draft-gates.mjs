@@ -114,18 +114,27 @@ assert.equal(legacy.reconciliation_phase.publication_count,0);
 
 const customsScreen=load("dyk-customs-130-source-editorial-screen.v1.json");
 const pitreStories=load("dyk-pitre-12-festival-stories.v1.json");
+const folioAudit=load("dyk-weiser-14-original-folio-adjudication.v1.json");
+assert.equal(folioAudit.verified.length,14);
+assert.equal(folioAudit.holds.length,8);
+assert.equal(folioAudit.counts.approved,0);
+assert.equal(folioAudit.counts.published,0);
+const folioIndex=new Set(folioAudit.verified.map(x=>x.draft_id));
+assert.equal(folioIndex.size,14);
+const heldIndex=new Map(folioAudit.holds.map(x=>[x.draft_id,x]));
+assert.equal(heldIndex.size,8);
+
 const historical=facts.filter(x=>["WEISER_1958","PITRE_1900"].includes(x.source_family));
 assert.equal(historical.length,130);
 assert.equal(customsScreen.records.length,130);
 assert.equal(customsScreen.counts.weiser,70);
 assert.equal(customsScreen.counts.pitre,60);
-assert.equal(customsScreen.counts.source_page_narrow_action_or_original_page_checked,116);
-assert.equal(customsScreen.counts.source_pages_still_needing_specific_individual_weiser_link,14);
+assert.equal(customsScreen.counts.source_page_narrow_action_or_original_page_checked,130);
+assert.equal(customsScreen.counts.source_pages_still_needing_specific_individual_weiser_link,0);
 assert.deepEqual(customsScreen.counts.decision_groups,{
- PRIORITY_FACT_EDITORIAL_REVIEW:27,
- REWRITE_OR_SOURCE_SPECIFICITY_HOLD:8,
- SECONDARY_CULTURAL_CONTEXT_REVIEW:28,
- FESTIVAL_STORY_CLUSTER_REVIEW:59,
+ PRIORITY_FACT_EDITORIAL_REVIEW:31,
+ SECONDARY_CULTURAL_CONTEXT_REVIEW:31,
+ FESTIVAL_STORY_CLUSTER_REVIEW:60,
  DEFER_LOW_CURIOSITY_OR_GROUP_WEEKDAY:8,
 });
 const caseIds=new Set(customsScreen.records.map(x=>x.draft_id));
@@ -133,7 +142,24 @@ assert.equal(caseIds.size,130);
 for(const f of historical)assert.ok(caseIds.has(f.id),f.id+" lacks editorial source review");
 assert.equal(customsScreen.records.filter(x=>x.source_family==="PITRE_1900").length,60);
 assert.equal(customsScreen.records.filter(x=>x.evidence_stage==="ORIGINAL_PITRE_FOLIO_LOCATED_AND_IMAGE_REVIEWED").length,60);
-assert.equal(customsScreen.records.filter(x=>x.evidence_stage==="ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD").length,14);
+assert.equal(customsScreen.records.filter(x=>x.evidence_stage==="ORIGINAL_WEISER_FOLIO_NOT_CHECKED_IN_RECORD").length,0);
+for(const id of folioIndex){
+ const row=customsScreen.records.find(x=>x.draft_id===id);
+ assert.ok(row);
+ assert.equal(row.evidence_stage,"WEISER_ORIGINAL_PRINTED_FOLIO_DIRECTLY_CHECKED_20261030");
+ const source=folioAudit.verified.find(x=>x.draft_id===id);
+ assert.deepEqual(row.evidence_locator.printed_folios_checked,source.printed_pages);
+ assert.ok(source.page_image_checked);
+ assert.equal(source.claim_and_french_approved,false);
+}
+for(const [id,held] of heldIndex){
+ const row=customsScreen.records.find(x=>x.draft_id===id);
+ assert.equal(row.source_precision_hold_resolved_20261030,true);
+ assert.equal(row.decision,held.new_triage);
+ assert.ok(row.remaining_publication_gates.length>0);
+}
+assert.equal(customsScreen.counts.source_precision_holds_resolved_in_direct_page_pass,8);
+
 assert.equal(pitreStories.candidates.length,12);
 assert.equal(pitreStories.counts.net_addition_to_active_fact_pool,0);
 assert.equal(pitreStories.counts.approved,0);
