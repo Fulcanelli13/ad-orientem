@@ -124,7 +124,7 @@ const prepared={
   schema:"ao-mass-entry-prepared-v1",
   session:{
     resolvedMass,
-    plan:(withGoodFriday||withEasterVigil||withCandlemas||followingActions.length>0||requestedForm==="SOLEMN"||requestedForm==="LOW")
+    plan:(params.get("matrix")==="1"||withGoodFriday||withEasterVigil||withCandlemas||followingActions.length>0||requestedForm==="SOLEMN"||requestedForm==="LOW")
       ? compileMassPlan(resolvedMass)
       : {
       kind:"MASS",
@@ -145,6 +145,18 @@ const prepared={
   },
 };
 
+if(params.get("matrix")==="1"){
+  // Test-fixture-only metadata: compile the source-owned Mass plan.
+  window.__AO_FOUR_FORM_SCENARIO=Object.freeze({
+    form:requestedForm,family:fixtureRequiem?"REQUIEM":"VOTIVE",
+    planKind:prepared.session.plan?.kind??null,
+    overlayGraphs:[...(prepared.session.plan?.overlayGraphs??[])],
+    blessingAllowed:prepared.session.plan?.blessingAllowed,
+    ordinaryPeacePrayerAllowed:prepared.session.plan?.ordinaryPeacePrayerAllowed,
+    dismissal:prepared.session.plan?.dismissal,
+    syntheticProper:true,
+  });
+}
 try{
   if(params.get("production")==="1"){
     // Exercise the actual app entry/default-card selection, not a mock mode.
