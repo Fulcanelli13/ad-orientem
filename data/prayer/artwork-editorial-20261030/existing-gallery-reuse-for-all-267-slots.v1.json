@@ -27,12 +27,12 @@
     "human_previous_rejections_excluded": 136,
     "slots_evaluated": 267,
     "slots_with_direct_title_candidates": 176,
-    "slots_with_any_existing_reuse": 262,
-    "slots_below_minimum": 25,
-    "slots_with_no_title_match": 5,
-    "proposed_reuse_edges": 1275,
+    "slots_with_any_existing_reuse": 265,
+    "slots_below_minimum": 23,
+    "slots_with_no_title_match": 2,
+    "proposed_reuse_edges": 1280,
     "direct_subject_edges": 653,
-    "pre_existing_human_accepted_reuse_edges": 742
+    "pre_existing_human_accepted_reuse_edges": 745
   },
   "slots": [
     {
@@ -19145,13 +19145,33 @@
       "eligible_subjects": [
         "EUC-MONSTRANCE"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 1,
       "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "research_hold_state": "EXISTING_CONTEXTUAL_REUSE_FOUND_EXACT_MONSTRANCE_ICONOGRAPHY_STILL_UNVERIFIED",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "COV-benediction_versicles",
+          "artwork_id": "PRAYER::saints--vaneyck",
+          "title": "Adoration of the Mystic Lamb",
+          "artist": "Hubert and Jan van Eyck",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "subject_match": "EUC-MYSTICAL-LAMB",
+          "evidence": "USER_APPROVED_FOR_BENEDICTION_IN_BATCH1_BUT_NOT_LITERAL_MONSTRANCE",
+          "source_url": null,
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "all_subjects": [
+            "EUC-MYSTICAL-LAMB"
+          ],
+          "score": 80,
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-adoration_lord_i_am_not_worthy",
@@ -20136,13 +20156,52 @@
       "eligible_subjects": [
         "EUC-MONSTRANCE"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
       "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
+      "pool_count": 2,
       "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "research_hold_state": "EXISTING_CONTEXTUAL_REUSE_FOUND_EXACT_MONSTRANCE_ICONOGRAPHY_STILL_UNVERIFIED",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.adoration-02",
+          "artwork_id": "PRAYER::adoration--primary",
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "subject_match": "EUC-HOST-ADORATION",
+          "evidence": "EXISTING_GALLERY_TITLE_DIRECTLY_SHOWS_ADORATION_OF_HOST_NOT_EXPOSITION_RITE; RIGHTS_UNRESOLVED",
+          "source_url": null,
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "all_subjects": [
+            "EUC-HOST-ADORATION"
+          ],
+          "score": 80,
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.adoration-02",
+          "artwork_id": "PRAYER::saints--vaneyck",
+          "title": "Adoration of the Mystic Lamb",
+          "artist": "Hubert and Jan van Eyck",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "subject_match": "EUC-MYSTICAL-LAMB",
+          "evidence": "USER_APPROVED_FOR_BENEDICTION_IN_BATCH1_BUT_NOT_LITERAL_MONSTRANCE",
+          "source_url": null,
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "all_subjects": [
+            "EUC-MYSTICAL-LAMB"
+          ],
+          "score": 80,
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "COV-pray.adoration.four_ends",
@@ -20592,13 +20651,52 @@
       "eligible_subjects": [
         "EUC-MONSTRANCE"
       ],
-      "coverage_state": "NO_EXISTING_SUBJECT_MATCH",
-      "pool_count_state": "BELOW_MINIMUM_POOL_COUNT",
-      "pool_count": 0,
+      "coverage_state": "CONTEXTUAL_ONLY_NOT_EXACT",
+      "pool_count_state": "MINIMUM_CANDIDATE_COUNT_MET",
+      "pool_count": 2,
       "direct_title_candidates": 0,
-      "research_hold_state": "NEEDS_GALLERY_RESEARCH_IF_OTHER_EXISTING_SOURCES_EXHAUSTED",
+      "research_hold_state": "EXISTING_CONTEXTUAL_REUSE_FOUND_EXACT_MONSTRANCE_ICONOGRAPHY_STILL_UNVERIFIED",
       "existing_placements": [],
-      "new_existing_artwork_suggestions": []
+      "new_existing_artwork_suggestions": [
+        {
+          "slot_id": "STG-pray.benediction-01",
+          "artwork_id": "PRAYER::saints--vaneyck",
+          "title": "Adoration of the Mystic Lamb",
+          "artist": "Hubert and Jan van Eyck",
+          "source_queue": "PHOTO_QA_OR_REPAIR",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "subject_match": "EUC-MYSTICAL-LAMB",
+          "evidence": "USER_APPROVED_FOR_BENEDICTION_IN_BATCH1_BUT_NOT_LITERAL_MONSTRANCE",
+          "source_url": null,
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_GALLERY_PHOTO_QA",
+          "all_subjects": [
+            "EUC-MYSTICAL-LAMB"
+          ],
+          "score": 80,
+          "artwork_previously_human_accepted": true,
+          "word_or_station_exact_iconography_verified": false
+        },
+        {
+          "slot_id": "STG-pray.benediction-01",
+          "artwork_id": "PRAYER::adoration--primary",
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "source_queue": "RIGHTS_OR_ALTERNATIVE",
+          "fit_class": "CONTEXTUAL_REUSE_CANDIDATE",
+          "subject_match": "EUC-HOST-ADORATION",
+          "evidence": "EXISTING_GALLERY_TITLE_DIRECTLY_SHOWS_ADORATION_OF_HOST_NOT_EXPOSITION_RITE; RIGHTS_UNRESOLVED",
+          "source_url": null,
+          "photo_preview_url": null,
+          "source_gate": "EXISTING_RESEARCH_RIGHTS_PENDING",
+          "all_subjects": [
+            "EUC-HOST-ADORATION"
+          ],
+          "score": 80,
+          "artwork_previously_human_accepted": false,
+          "word_or_station_exact_iconography_verified": false
+        }
+      ]
     },
     {
       "slot_id": "STG-pray.benediction-02",
@@ -30264,5 +30362,16 @@
     "numbered_stations_and_last_words_exactness_reclassification": true,
     "production_edits": 0,
     "updated_slots": 43
+  },
+  "quality_audit_v3": {
+    "contextual_eucharistic_reuses": 3,
+    "user_approved_mystic_lamb_reused": true,
+    "no_claim_of_montrance_visual_fit": true,
+    "anthony_of_padua_not_confused_with_abbot": true,
+    "remaining_no_route_ids": [
+      "COV-novena.st_anthony_nine_tuesdays",
+      "COV-devotion_st_anthony_lost_items"
+    ],
+    "new_art_research_not_started": true
   }
 }
