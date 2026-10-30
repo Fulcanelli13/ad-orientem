@@ -33,6 +33,25 @@ const sourceVM=buildHomeViewModel(sourceState,{});
 assert.match(sourceVM.contextualObservanceName,/Friday after the Twenty-second Sunday after Pentecost/);
 assert.match(sourceVM.massIntroit,/^Si iniquitátes observáveris/);
 assert.doesNotMatch(sourceVM.massIntroit,/^Ps /);
+assert.equal(sourceVM.massFormularyName,null,
+  "Feria's weekday source alone is NOT proof of the inherited Sunday Mass");
+const inherited={...sourceState,resolution:{...sourceState.resolution,
+  proper:{...sourceState.resolution.proper,data:{
+    ...sourceState.resolution.proper.data,sourcePath:"Tempora/Pent22-0"}}}};
+const inheritedVm=buildHomeViewModel(inherited,{});
+assert.equal(inheritedVm.observedTitle,"Feria","Keep IV-class observed celebration");
+assert.equal(inheritedVm.massFormularyName,"Mass of the 22nd Sunday after Pentecost",
+  "Only canonical inherited Sunday Proper may name the formulary");
+assert.match(h4HomeView({...inheritedVm,week:vm.week},model),
+  /Mass of the 22nd Sunday after Pentecost/,
+  "Actual Sunday formulary must be present in Mass door");
+const inheritedFr=buildHomeViewModel({...inherited,language:"fr"},{});
+assert.equal(inheritedFr.massFormularyName,"Messe du vingt-deuxième dimanche après la Pentecôte");
+const mismatched=buildHomeViewModel({...inherited,resolution:{
+  ...inherited.resolution,proper:{status:"ready",data:{
+    ...inherited.resolution.proper.data,sourcePath:"Tempora/Pent23-0"}}}},{});
+assert.equal(mismatched.massFormularyName,null,
+  "Never infer a different inherited Sunday from the week label");
 const sourceHtml=h4HomeView({...sourceVM,week:vm.week},model);
 assert.match(sourceHtml,/Friday after the Twenty-second Sunday after Pentecost/);
 assert.match(sourceHtml,/Si iniquitátes observáveris/);
