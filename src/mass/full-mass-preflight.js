@@ -158,6 +158,31 @@ export function mountFullMassPreflight({
       allSoulsSuccession:successionFor(legacy),
       beforeMass:selectedExperience().before,afterMass:selectedExperience().after});
   }
+  // H4 is a presentation of these selections, not a new preferences owner.
+  // Validate against the existing preflight before changing its in-memory state.
+  function setTodayChoice(key,value){
+    if(disposed)return false;
+    let legacy=null;try{legacy=getResolvedMass()}catch{}
+    if(!legacy)return false;
+    const current=selectionFor(legacy);
+    if(key==="form"){
+      if(!current.formChangeAllowed||!MASS_FORMS.includes(value))return false;
+      selected=value;explicit=true;
+    }else if(key==="readerMode"){
+      if(!["LIVE","MISSAL"].includes(value))return false;
+      selectedMode=value;explicitMode=true;
+    }else if(key==="readerLanguage"){
+      if(!["en","fr"].includes(value))return false;
+      experience.language=value;
+    }else if(key==="beforeMass"){
+      if(!["none","prepare","full"].includes(value))return false;
+      experience.before=value;
+    }else if(key==="afterMass"){
+      if(!["none","thanksgiving","full"].includes(value))return false;
+      experience.after=value;
+    }else return false;
+    refresh();return true;
+  }
   function openCategory(kind){
     if(kind==="SOURCE_DATE"){onOpenSourceProper();return true;}
     const choices={CALENDAR:"[data-ao-select-day]",VOTIVE:'[data-ao-open="votive"]',
@@ -911,6 +936,7 @@ export function mountFullMassPreflight({
   refresh();
   return Object.freeze({
     selectionFor,
+    setTodayChoice,
     composeRitesFor,
     openCategory,
     refresh,
@@ -925,7 +951,7 @@ export function mountFullMassPreflight({
     },
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
-      chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
+      chosenForm:activeForm(),formChangeAllowed:selectionFor(getResolvedMass()).formChangeAllowed,date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep,
       m1Preview,m1Focus}),
     dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
