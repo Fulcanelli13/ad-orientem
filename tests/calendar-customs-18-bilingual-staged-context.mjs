@@ -1,0 +1,76 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {calendarStagedCustomsMonth,calendarStagedHouseholdCustomsOnDate,CUSTOMS_RESEARCH_PROJECTION_VERSION} from "../src/calendar/customs-research-preview.js";
+import {v384Dates} from "../src/calendar/traditional-year-v384.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const model=read("data/calendar/customs-18-bilingual-staged-context-20261029.v1.json");
+const master=read("data/customs/master/working-master.v1.json");
+const owners=read("data/customs/master/customs-all47-owner-action-comparisons-20261029.v1.json");
+assert.equal(CUSTOMS_RESEARCH_PROJECTION_VERSION,"customs-research-18-calendar-preview-v1");
+assert.equal(model.schema,"AO_CALENDAR_CUSTOMS_18_BILINGUAL_STAGED_CONTEXT_V1");
+assert.equal(model.state,"CALENDAR_SHAPED_RESEARCH_PREVIEW_NOT_PUBLISHED");
+assert.equal(model.summary.bilingual_candidates,18);
+assert.equal(model.summary.source_refs,34);
+assert.equal(model.summary.local_event_contexts,9);
+assert.equal(model.summary.source_only_household_contexts,9);
+assert.equal(model.summary.season_only,4);
+assert.equal(model.summary.wrong_owner_claims_excluded,2);
+assert.equal(model.summary.live_calendar_changes,0);
+const original=master.records.filter(r=>r.publication_state==="NOT_APPROVED");
+assert.equal(original.length,18);
+assert.deepEqual(new Set(model.records.map(x=>x.candidate_id)),new Set(original.map(x=>x.id)));
+for(const item of model.records){
+ const source=original.find(r=>r.id===item.candidate_id);
+ assert.ok(source);
+ assert.equal(item.status,"RESEARCH_CANDIDATE_NOT_PUBLISHED");
+ assert.deepEqual(item.title,{en:source.name_en,fr:source.name_fr});
+ assert.deepEqual(item.description,{en:source.description_en,fr:source.description_fr});
+ assert.deepEqual(item.history,{en:source.history_en,fr:source.history_fr});
+ assert.deepEqual(item.optional_practice,{en:source.practice_en,fr:source.practice_fr});
+ assert.deepEqual(item.caution,{en:source.caution_en,fr:source.caution_fr});
+ assert.equal(item.calendar_context.original_1962_feast_resolver_owns_date,true);
+ assert.equal(item.calendar_context.local_event_confirmed,false);
+ assert.equal(item.calendar_context.region_conditional,true);
+ assert.equal(item.calendar_context.calendar_event_automatically_published,false);
+ assert.equal(item.calendar_context.user_notification_enabled,false);
+ assert.equal(item.editorial.ready_for_publication,false);
+ assert.equal(item.editorial.identity_approved,false);
+ assert.equal(item.editorial.indulgence_work_confirmed,false);
+ assert.equal(item.editorial.user_review_ballot_required,false);
+ assert.deepEqual(new Set(item.source_ids),new Set(item.original_source_claims.map(x=>x.source_id)));
+ for(const id of item.excluded_false_owner_claims){
+  const check=owners.records.find(r=>r.group_id===id&&r.prior_proposed_owner===item.candidate_id);
+  assert.equal(check?.prior_owner_match_vetoed,true);
+ }
+}
+const month=(id,options)=>calendarStagedCustomsMonth(id,model,options);
+const day=(id,options)=>calendarStagedHouseholdCustomsOnDate(id,model,options);
+assert.equal(day("2026-03-17").some(x=>x.custom_id==="CANDIDATE-STPATRICK-RIBBON"),true);
+assert.equal(day("2026-12-04").some(x=>x.custom_id==="CUST-BARBARA-BRANCHES"),true);
+assert.equal(day("2026-12-24").length,4);
+assert.equal(day("2026-12-24").some(x=>x.custom_id==="CUST-XMAS-POLISH-HAY"),true);
+assert.equal(day("2026-06-23").length,0,"Bonfire is a local event, not a scheduled service");
+assert.equal(day("2026-08-14").length,0,"Assumption town processions not asserted to be operating");
+assert.equal(day("2026-04-05").some(x=>x.custom_id==="CUST-EASTER-MALTESE-IRXOXT"),false);
+assert.equal(day("2026-04-05").some(x=>x.custom_id==="CANDIDATE-EASTER-EGG-CRAFT"),true);
+assert.equal(day("2027-03-28").some(x=>x.custom_id==="CANDIDATE-EASTER-EGG-CRAFT"),true);
+assert.equal(day("2026-05-24").some(x=>x.custom_id==="CUST-PENTECOST-POLISH-GREENERY"),true);
+assert.equal(day("2027-05-16").some(x=>x.custom_id==="CUST-PENTECOST-POLISH-GREENERY"),true);
+assert.equal(v384Dates(2026).easter,"2026-04-05");
+assert.equal(v384Dates(2026).pentecost,"2026-05-24");
+assert.equal(month("2026-08").filter(x=>x.local_event_required).length,3);
+assert.equal(month("2026-12").some(x=>x.custom_id==="CUST-XMAS-QUEBEC-GUIGNOLEE"&&x.representative_anchor===null),true);
+assert.equal(month("2023-11").some(x=>x.custom_id==="CUST-ADVT-HERBERGSUCHE"),false,"2023 Advent begins in December");
+assert.equal(month("2026-11").some(x=>x.custom_id==="CUST-ADVT-HERBERGSUCHE"),true,"2026 Advent begins in November");
+assert.equal(month("2026-12",{fr:true}).find(x=>x.custom_id==="CUST-XMAS-POLISH-HAY").title,"Foin sous la nappe de la veille de Noël");
+for(const m of ["2026-01","2026-03","2026-04","2026-05","2026-06","2026-08","2026-11","2026-12"]){
+ const rows=month(m);
+ assert.ok(rows.every(x=>x.publication_state==="RESEARCH_PREVIEW_NOT_PUBLISHED"));
+ assert.ok(rows.every(x=>x.is_calendar_liturgy===false&&x.is_current_parish_announcement===false&&x.local_event_confirmed===false));
+ assert.ok(rows.every(x=>x.source_refs.length>=1&&x.geographic_scope.length>=1));
+}
+assert.throws(()=>month("2026-13"),TypeError);
+assert.throws(()=>day("2026-02-30"),TypeError);
+assert.throws(()=>calendarStagedCustomsMonth("2026-12",{records:model.records.slice(0,17)}),TypeError);
+console.log("PASS: 18 complete bilingual Customs Calendar research contexts, 34 source links; all canonical IDs intact, vetoed owner links excluded.");
+console.log("PASS: 1962 year Easter/Pentecost date resolver, 2026/2027; no local events fabricated, no rank/rubric or indulgence changes and no preview publications.");

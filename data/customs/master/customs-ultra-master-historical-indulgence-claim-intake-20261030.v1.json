@@ -1,0 +1,70 @@
+{
+  "schema": "AO_CUSTOMS_ULTRA_MASTER_HISTORICAL_INDULGENCE_CLAIM_INTAKE_V1",
+  "as_of": "2026-10-30",
+  "source_method": "Bulk scan of original 3703 source/detail research labels plus scoped extra R18 source. Six relevant source labels clustered into four grant-investigation families; a Jubilee marriage blessing label was excluded as a false-positive to avoid inventing an indulgence.",
+  "summary": {
+    "observation_text_label_hits_related_to_grants": 5,
+    "grant_investigation_clusters": 4,
+    "extra_r18_local_grant_lead": 1,
+    "source_text_scan_is_not_full_folio_text_search": true,
+    "grants_verified_from_original_historical_decrees": 0,
+    "grants_approved_for_application": 0
+  },
+  "no_claim_without_primary_source": true,
+  "no_current_applicability_from_historical_record": true,
+  "clusters": [
+    {
+      "review_key": "HIST-IND-001",
+      "source_observation_ids": [
+        "WEI58-DETAIL-C-021"
+      ],
+      "practice": "St Joseph First Wednesday devotion",
+      "location": "Weiser 1958 ch 2, printed p 28",
+      "source_pointer": "data/customs/master/comprehensive-customs-working-catalogue.v1.json#/handbook_granular_source_details/198",
+      "claim_type": "LATER_HISTORICAL_INDULGENCE_MENTION",
+      "to_verify": "Original source wording and particular dated concession, work and conditions",
+      "claim_status": "UNVERIFIED_HISTORICAL_GRANT"
+    },
+    {
+      "review_key": "HIST-IND-002",
+      "source_observation_ids": [
+        "FRPCI20-PARDON-067",
+        "FRPCI20-PARDON-069"
+      ],
+      "practice": "Breton pardon chapel visit / prayer and sacramental preparation",
+      "location": "French PCI source lines 224, 228",
+      "source_pointer": "data/customs/master/comprehensive-customs-working-catalogue.v1.json#/external_source_observations_france_pci_brittany",
+      "source_url": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "claim_type": "HISTORICALLY_REPORTED_LOCAL_CHAPEL_INDULGENCE",
+      "to_verify": "Exact conceding authority and decree, named chapel, day/work and confession/Communion requirements",
+      "claim_status": "SOURCE_REPORTED_NO_PRIMARY_GRANT"
+    },
+    {
+      "review_key": "HIST-IND-003",
+      "source_observation_ids": [
+        "SPREG26-C-036",
+        "SPREG26-C-037"
+      ],
+      "practice": "Caravaca Vera Cruz sanctuary pilgrimage / jubilee",
+      "location": "Municipal tourism source lines 104, 116",
+      "source_pointer": "data/customs/master/comprehensive-customs-working-catalogue.v1.json#/external_source_observations_spain_elche_berga_caravaca",
+      "source_url": "https://nueva.turismocaravaca.com/en/the-cross-of-caravaca",
+      "claim_type": "HISTORICAL_PAPAL_JUBILEE_OR_SANCTUARY_GRANT",
+      "to_verify": "Primary papal decree, designated jubilee years, eligible shrine visits and conditions",
+      "claim_status": "TOURISM_SOURCE_NOT_PRIMARY_GRANT"
+    },
+    {
+      "review_key": "HIST-IND-004",
+      "source_observation_ids": [
+        "CUSTOMS-R18-17"
+      ],
+      "practice": "Bavarian Frauendreißiger Marian pilgrimage period",
+      "location": "Maria Thalkirchen historic grant report",
+      "source_pointer": "data/customs/customs-r18-eleven-editorial-publication-lanes.v1.json",
+      "source_url": "https://www.mariathalkirchen.de/index.php?id=127",
+      "claim_type": "REPORTED_PAPAL_1780_INDULGENCE",
+      "to_verify": "Locate Pius VI original grant, conditions, beneficiary and historical or current applicability",
+      "claim_status": "SHRINE_REPORTED_ORIGINAL_GRANT_NOT_VERIFIED"
+    }
+  ]
+}

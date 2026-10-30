@@ -1,0 +1,59 @@
+name: Customs multibook 150 action-dossier audit
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/customs/master/customs-multibook-bulk150-20261026.v1.json"
+      - "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json"
+      - "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json"
+      - "data/customs/master/customs-thirty-action-identity-reconciliation-20261026.v1.json"
+      - "data/customs/master/customs-first18-direct-source-scope-audit-20261026.v1.json"
+      - "tests/customs-first18-direct-source-scope-audit.mjs"
+      - "tests/customs-thirty-action-identity-reconciliation.mjs"
+      - "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json"
+      - "tests/customs-first18-source-scope-evidence.mjs"
+      - "data/customs/master/working-master.v1.json"
+      - "data/customs/master/customs-r18-controlled-calendar-handoff-20261026.v1.json"
+      - "data/customs/master/customs-r18-preliminary-editorial-dispositions-20261026.v1.json"
+      - "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json"
+      - "data/customs/master/customs-r18-final-source-recheck-release-gates-20261026.v1.json"
+      - "tests/customs-r18-final-source-release-gates.mjs"
+      - "docs/CUSTOMS_R18_SOURCE_RECHECK_AND_RELEASE_ORDER_20261026.md"
+      - "tests/customs-r18-bilingual-candidate-pack.mjs"
+      - "docs/CUSTOMS_R18_BILINGUAL_RELEASE_REVIEW_20261026.md"
+      - "tests/customs-r18-preliminary-editorial-dispositions.mjs"
+      - "docs/CUSTOMS_R18_EDITORIAL_DISPOSITIONS_20261026.md"
+      - "tests/customs-r18-controlled-calendar-handoff.mjs"
+      - "docs/CUSTOMS_R18_CONTROLLED_CALENDAR_HANDOFF_20261026.md"
+      - "tests/customs-multibook-bulk150.mjs"
+      - ".github/workflows/customs-multibook-bulk150.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-and-ownership:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Preserve 150 original-action links and unpublished status
+        run: |
+          node --check tests/customs-multibook-bulk150.mjs
+          node tests/customs-multibook-bulk150.mjs
+          node --check tests/customs-thirty-action-identity-reconciliation.mjs
+          node tests/customs-thirty-action-identity-reconciliation.mjs
+          node --check tests/customs-first18-source-scope-evidence.mjs
+          node tests/customs-first18-source-scope-evidence.mjs
+          node --check tests/customs-first18-direct-source-scope-audit.mjs
+          node tests/customs-first18-direct-source-scope-audit.mjs
+          node --check tests/customs-r18-controlled-calendar-handoff.mjs
+          node tests/customs-r18-controlled-calendar-handoff.mjs
+          node --check tests/customs-r18-preliminary-editorial-dispositions.mjs
+          node tests/customs-r18-preliminary-editorial-dispositions.mjs
+          node --check tests/customs-r18-bilingual-candidate-pack.mjs
+          node tests/customs-r18-bilingual-candidate-pack.mjs
+          node --check tests/customs-r18-final-source-release-gates.mjs
+          node tests/customs-r18-final-source-release-gates.mjs

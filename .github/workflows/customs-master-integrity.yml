@@ -5,7 +5,37 @@ on:
     paths:
       - "data/customs/master/**"
       - "tests/customs-master-integrity.mjs"
+      - "tests/customs-ultra-master-v2-integrity.mjs"
+      - "tests/indulgence-calendar-prayer-surface.mjs"
+      - "src/indulgences/work-presentation.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/pray/presentation-runtime.js"
+      - "data/calendar/indulgences-2026-dated-exact-work-cues.v1.json"
       - "tests/customs-full-registry-census.mjs"
+      - "tests/customs-wave-a-bulk-reconciliation.mjs"
+      - "tests/customs-a1-evidence-indulgence-gate.mjs"
+      - "tests/customs-a23-258-and-primary-facsimile-gate.mjs"
+      - "tests/customs-weiser-original-page-sweep-20261029.mjs"
+      - "tests/customs-a1-final66-and-identity-board-gate.mjs"
+      - "tests/customs-a23-96-original-page-audit-gate.mjs"
+      - "tests/customs-a23-second61-source-gates.mjs"
+      - "tests/customs-408-complete-source-disposition-gates.mjs"
+      - "tests/customs-all408-bulk-review-and-identity-gates.mjs"
+      - "tests/customs-existing22-bilingual-variants-gate.mjs"
+      - "data/customs/master/customs-existing22-bilingual-calendar-variants-20261029.v1.json"
+      - "tests/customs-calendar-40-bilingual-content-preview.mjs"
+      - "data/customs/master/customs-22-existing-owner-bilingual-variants-20261029.v1.json"
+      - "data/customs/master/customs-calendar-bilingual-content-40-20261029.v1.json"
+      - "docs/CUSTOMS_CALENDAR_40_BILINGUAL_CONTENT_PREVIEW_20261029.html"
+      - "data/customs/master/customs-all408-consolidated-editorial-decision-ledger-20261029.v1.json"
+      - "data/customs/master/customs-all47-owner-action-comparisons-20261029.v1.json"
+      - "data/customs/master/customs-12-clusters-action-scope-review-20261029.v1.json"
+      - "docs/CUSTOMS_ALL_408_SINGLE_BULK_EDITORIAL_REVIEW_20261029.html"
+      - "data/calendar/customs-18-bilingual-staged-context-20261029.v1.json"
+      - "src/calendar/customs-research-preview.js"
+      - "tests/calendar-customs-18-bilingual-staged-context.mjs"
+      - "tests/calendar-customs-40-dynamic-day-preview.mjs"
+      - "data/customs/indulgence-grant-research-seed-20261029.v1.json"
       - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
       - ".github/workflows/customs-master-integrity.yml"
@@ -96,3 +126,68 @@ jobs:
         run: |
           node --check tests/customs-calendar-five-release-candidates.mjs
           node tests/customs-calendar-five-release-candidates.mjs
+      - name: Verify consolidated 408-group bulk review queue and 3703 source-row nonpromotion
+        run: |
+          node --check tests/customs-wave-a-bulk-reconciliation.mjs
+          node tests/customs-wave-a-bulk-reconciliation.mjs
+      - name: Verify A1 all-150 evidence dossiers and source-bound indulgence seed
+        run: |
+          node --check tests/customs-a1-evidence-indulgence-gate.mjs
+          node tests/customs-a1-evidence-indulgence-gate.mjs
+      - name: Verify all 408 full-queue groups, twelve original facsimiles, 23 grant cases
+        run: |
+          node --check tests/customs-a23-258-and-primary-facsimile-gate.mjs
+          node tests/customs-a23-258-and-primary-facsimile-gate.mjs
+      - name: Verify 72 new direct original Weiser source-image checks, 84 cumulative, 66 pending
+        run: |
+          node --check tests/customs-weiser-original-page-sweep-20261029.mjs
+          node tests/customs-weiser-original-page-sweep-20261029.mjs
+      - name: Verify full A1 150 original-source action checks and publication-safe identity board
+        run: |
+          node --check tests/customs-a1-final66-and-identity-board-gate.mjs
+          node tests/customs-a1-final66-and-identity-board-gate.mjs
+      - name: Verify 96 first-hand A2/A3 source screens with 162 remaining and no fabricated approvals
+        run: |
+          node --check tests/customs-a23-96-original-page-audit-gate.mjs
+          node tests/customs-a23-96-original-page-audit-gate.mjs
+      - name: Verify second A2/A3 61 primary-page checks and 307 cumulative groups
+        run: |
+          node --check tests/customs-a23-second61-source-gates.mjs
+          node tests/customs-a23-second61-source-gates.mjs
+      - name: Verify all 408 source-review dispositions with one disclosed scan failure
+        run: |
+          node --check tests/customs-408-complete-source-disposition-gates.mjs
+          node tests/customs-408-complete-source-disposition-gates.mjs
+      - name: Verify all 408 editorial cases, 47 owner matches, 12 clusters, and offline review export
+        run: |
+          node --check tests/customs-all408-bulk-review-and-identity-gates.mjs
+          node tests/customs-all408-bulk-review-and-identity-gates.mjs
+      - name: Verify 18 bilingual Calendar-shaped customs and 1962 movable feast safety
+        run: |
+          node --check src/calendar/customs-research-preview.js
+          node --check tests/calendar-customs-18-bilingual-staged-context.mjs
+          node tests/calendar-customs-18-bilingual-staged-context.mjs
+      - name: Verify 40 bilingual Calendar contents with twelve existing owners and no new publication
+        run: |
+          node --check tests/customs-calendar-40-bilingual-content-preview.mjs
+          node tests/customs-calendar-40-bilingual-content-preview.mjs
+      - name: Verify date-aware Customs variant research projection with 1962 calendar anchors
+        run: |
+          node --check src/calendar/customs-research-preview.js
+          node --check tests/calendar-customs-40-dynamic-day-preview.mjs
+          node tests/calendar-customs-40-dynamic-day-preview.mjs
+      - name: Verify 22 bilingual Calendar content variants under 12 existing published Customs
+        run: |
+          node --check tests/customs-existing22-bilingual-variants-gate.mjs
+          node tests/customs-existing22-bilingual-variants-gate.mjs
+      - name: Verify bilingual exact-work indulgence presentation on Calendar and Prayer
+        run: |
+          node --check src/indulgences/work-presentation.js
+          node --check src/calendar/calendar-runtime.js
+          node --check src/pray/presentation-runtime.js
+          node --check tests/indulgence-calendar-prayer-surface.mjs
+          node tests/indulgence-calendar-prayer-surface.mjs
+      - name: Verify all 3,703 preserved source observations, 17 source screens, 79 dedup cases and bounded indulgence claims
+        run: |
+          node --check tests/customs-ultra-master-v2-integrity.mjs
+          node tests/customs-ultra-master-v2-integrity.mjs

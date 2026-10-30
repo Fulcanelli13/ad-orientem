@@ -1,0 +1,1218 @@
+{
+  "schema": "AO_CUSTOMS_R18_CONTROLLED_CALENDAR_HANDOFF_20261026_V1",
+  "date": "2026-10-26",
+  "branch_owner": "research/customs-multibook-bulk150-20261026",
+  "purpose": "Exact-keyed, nonpublishing release review crosswalk for the eighteen source-bounded distinct-action proposals; not an 18-item Calendar import",
+  "source_files": [
+    "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+    "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+    "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+    "data/customs/master/customs-thirty-action-identity-reconciliation-20261026.v1.json"
+  ],
+  "existing_release_owners": [
+    "research/customs-identity-consolidation-cohort01-20261024",
+    "PR #1642",
+    "PR #1720"
+  ],
+  "policies": {
+    "only_publication_surface": "EXISTING_AD_ORIENTEM_1962_CALENDAR",
+    "do_not_create_second_calendar_or_customs_atlas": true,
+    "do_not_modify_published_calendar_or_mass_pray_sacred_places": true,
+    "do_not_increment_the_35_stored_published_identity_count": true,
+    "no_canonical_ids_assigned": true,
+    "source_retrieval_does_not_equal_editorial_approval": true,
+    "context_suggestions_only_after_human_approval": true,
+    "never_convert_dated_local_event_to_annual_schedule": true,
+    "cross_confessional_cultural_heritage_not_a_roman_rite": true,
+    "priest_rite_cannot_be_inferred_from_popular_custom": true,
+    "no_auto_publish": true
+  },
+  "counts": {
+    "candidate_source_claims_scoped": 18,
+    "existing_unapproved_master_profile_matches": 17,
+    "source_observation_not_in_bilingual_profile_snapshot": 1,
+    "unmatched_other_unpublished_profile_not_in_this_18": [
+      "CUST-XMAS-KASHUBIAN-ANIMAL-CARE"
+    ],
+    "missing_bilingual_description_pairs": 1,
+    "human_approved_canonical_identities": 0,
+    "human_approved_calendar_items": 0,
+    "calendar_runtime_changes": 0
+  },
+  "release_gates_order": [
+    "EXACT_KEY_AND_EXISTING_OWNER",
+    "IDENTITY_DISTINCTNESS",
+    "SOURCE_CLAIM_AND_INDEPENDENCE",
+    "RITUAL_MINISTER_AND_GEOGRAPHY",
+    "COMPLETE_BILINGUAL_ARTICLE",
+    "EXISTING_CALENDAR_DAY_ANCHOR",
+    "HUMAN_APPROVAL",
+    "RUNTIME_DATE_AND_BROWSER_QA"
+  ],
+  "records": [
+    {
+      "release_key": "CUSTOMS-R18-01",
+      "review_key": "MASTER:CANDIDATE-STPATRICK-RIBBON",
+      "title_en": "St Patrick's ribbon cross",
+      "working_master_id": "CANDIDATE-STPATRICK-RIBBON",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "HISTORICAL_HOUSEHOLD_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/",
+        "bounded_claim_type": "MUSEUM_HISTORICAL_ACTION",
+        "risk_flag": "HISTORICAL_DATE_COPY_CORRECTED_PENDING_FINAL_EDITORIAL",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "17 March",
+        "kind": "REVIEW_DATE",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Historical Irish household practice, with regional designs.",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "SNIC-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "HISTORICAL_DATE_PRECISION_RECONCILED_NMI_1681_GALWAY_1680S"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-02",
+      "review_key": "MASTER:CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "title_en": "The Irish Christmas candle",
+      "working_master_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "OPTIONAL_HOUSEHOLD_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.duchas.ie/en/cbes/4758582/4756445/4934128",
+        "bounded_claim_type": "ARCHIVAL_REGIONAL_TESTIMONY",
+        "risk_flag": "ALTERNATE_WITNESS_ADDED",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "24–25 December; local duration varies",
+        "kind": "REVIEW_DATE",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Irish households; distinct local witnesses include Adare in Limerick and Annascaul in Kerry.",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "KILKENNY_SCHOOL_TIPPERARY_INFORMANT_ADDRESS_CONFIRMED_NO_ORIGIN_INFERENCE"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-03",
+      "review_key": "MASTER:CANDIDATE-STJOHN-BONFIRE",
+      "title_en": "St John Baptist's community bonfire",
+      "working_master_id": "CANDIDATE-STJOHN-BONFIRE",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "LOCAL_EVENT_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+        "bounded_claim_type": "DIOCESAN_DATED_EVENT",
+        "risk_flag": "SCOPE_ONLY",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Nativity of St John Baptist, 24 June; eve commonly 23 June",
+        "kind": "REVIEW_DATE",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Named French parish examples in Saint-André-les-Alpes and Oloron-Sainte-Marie; their forms remain distinct.",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "2026_06_20_OLORON_EVENT_MUST_NOT_AUTOSCHEDULE_06_24",
+        "MASTER_CALENDAR_AUDIT_LOCAL_EVENT_REQUIRED_FALSE_NEEDS_CORRECTION"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-04",
+      "review_key": "MASTER:CANDIDATE-EASTER-EGG-CRAFT",
+      "title_en": "Decorating Easter eggs: pisanki and pysanky",
+      "working_master_id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "MIXED_CONFESSIONAL_HERITAGE_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "bounded_claim_type": "INTERNATIONAL_HERITAGE_PLUS_MUSEUM",
+        "risk_flag": "MIXED_TRADITION_SCOPE",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Easter season; no independently established universal Holy Saturday decorating time",
+        "kind": "REVIEW_DATE",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Polish and Ukrainian traditions, including diaspora communities; names, motifs and religious settings vary.",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "BLSS-004"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "POLISH_UKRAINIAN_AND_CROSS_CONFESSIONAL_VARIANTS_NEED_EXPLICIT_SEPARATION"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-05",
+      "review_key": "MASTER:CUST-ADVT-HERBERGSUCHE",
+      "title_en": "Herbergsuche — Advent Marian-image visits between households",
+      "working_master_id": "CUST-ADVT-HERBERGSUCHE",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "PARISH_DEPENDENT_HOUSEHOLD_VISIT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+        "bounded_claim_type": "CATHOLIC_PARISH_DIRECT",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Advent; individual parish house-visit itinerary, not a universal fixed nine-day programme",
+        "kind": "PARISH_LOCAL_ADVENT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Austria, regional Catholic parishes",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "ADVT-003"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "IMAGE_RELAY_NOT_STAGED_LODGING_DRAMA"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-06",
+      "review_key": "MASTER:CUST-XMAS-POLISH-HAY",
+      "title_en": "Christmas Eve hay beneath the tablecloth",
+      "working_master_id": "CUST-XMAS-POLISH-HAY",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "REGIONAL_HOUSEHOLD_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+        "bounded_claim_type": "POLISH_GOVERNMENT_HERITAGE",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "24 December, Christmas Eve in Polish households",
+        "kind": "FIXED_DAY_CONTEXT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Poland",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "ADVT-002",
+          "XMAS-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-07",
+      "review_key": "MASTER:CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "title_en": "La guignolée — French Canadian Christmas alms collection",
+      "working_master_id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "LOCAL_CHARITABLE_CAMPAIGN",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://ssvp-mtl.org/fr/guignolee",
+        "bounded_claim_type": "CHARITY_ORGANIZER_DIRECT",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Christmas-season charity drive; actual annual dates locally announced",
+        "kind": "CHRISTMAS_SEASON_LOCAL_CAMPAIGN",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Québec, Canada",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-08",
+      "review_key": "MASTER:CUST-XMAS-POLISH-KOLEDNICI",
+      "title_en": "Polish kolędnicy — Christmas visiting carollers",
+      "working_master_id": "CUST-XMAS-POLISH-KOLEDNICI",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "LOCAL_VISITING_PERFORMANCE",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+        "bounded_claim_type": "POLISH_EDUCATIONAL_HERITAGE",
+        "risk_flag": "REGIONAL_COMPONENT_REVIEW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Christmas cycle; dates and troupe forms differ across regions",
+        "kind": "CHRISTMAS_SEASON_LOCAL",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Poland",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "EPIP-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-09",
+      "review_key": "MASTER:CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "title_en": "Hungarian betlehemezés Nativity visiting plays",
+      "working_master_id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "LOCAL_VISITING_PERFORMANCE",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+        "bounded_claim_type": "CATHOLIC_LEXICON_DIRECT",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Christmas season, local dates",
+        "kind": "CHRISTMAS_SEASON_LOCAL",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Hungary",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "ADVT-003"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-10",
+      "review_key": "MASTER:CUST-BARBARA-BRANCHES",
+      "title_en": "St Barbara branches — Barbarazweige",
+      "working_master_id": "CUST-BARBARA-BRANCHES",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "REGIONAL_HOUSEHOLD_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.erzdioezese-wien.at/heilige-barbara",
+        "bounded_claim_type": "ARCHDIOCESAN_DEVOTION_DIRECT",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Traditional observance 4 December; voluntary domestic symbolism, not a Mass rite",
+        "kind": "FIXED_DAY_CONTEXT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Austria and some Central European communities",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-11",
+      "review_key": "MASTER:CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "title_en": "Provençal Christmas pain calendal and the poor person's portion",
+      "working_master_id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "REGIONAL_MEAL_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+        "bounded_claim_type": "REGIONAL_PUBLIC_HERITAGE",
+        "risk_flag": "COPY_CAVEAT_REQUIRED",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "24 December, traditional Provençal Gros Souper; local family observance",
+        "kind": "FIXED_DAY_CONTEXT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Provence, France",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "EPIP-002"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "HERITAGE_FOLKLORE_MIRACLE_CLAIM_NOT_ENDORSED"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-12",
+      "review_key": "MASTER:CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "title_en": "Three Kings gifts left in children's shoes",
+      "working_master_id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "REGIONAL_HOUSEHOLD_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+        "bounded_claim_type": "NATIONAL_TOURISM_DIRECT",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Evening of 5 January into 6 January; Spanish household custom",
+        "kind": "FIXED_NIGHT_SPAN",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Spain, regional Spanish-speaking extensions not automatically assumed",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "SNIC-001",
+          "EPIP-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-13",
+      "review_key": "MASTER:CUST-EASTER-MALTESE-IRXOXT",
+      "title_en": "L-Irxoxt — Maltese running procession with the Risen Christ",
+      "working_master_id": "CUST-EASTER-MALTESE-IRXOXT",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "LOCAL_PROCESSION_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477",
+        "bounded_claim_type": "GOVERNMENT_AND_LOCAL_REPORT",
+        "risk_flag": "LOCALLY_DATED_ACTION",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Easter Sunday, only parishes with actual announced procession",
+        "kind": "MOVABLE_FEAST_LOCAL_EVENT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Named parishes in Malta and Gozo",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "MARI-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "LOCAL_PROCESSION_NOT_MASS_RUBRIC"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-14",
+      "review_key": "MASTER:CUST-PENTECOST-POLISH-GREENERY",
+      "title_en": "Pentecost greenery decorating Polish homes",
+      "working_master_id": "CUST-PENTECOST-POLISH-GREENERY",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "REGIONAL_HOUSEHOLD_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+        "bounded_claim_type": "PUBLIC_FORESTRY_HERITAGE",
+        "risk_flag": "SOURCE_STRENGTHENING_REQUIRED",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Pentecost, movable feast resolved by Calendar",
+        "kind": "MOVABLE_FEAST_CONTEXT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Poland, documented near Kraków",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "CORP-001",
+          "BLSS-002"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "SECONDARY_HERITAGE_SOURCE_STRENGTHENING_REQUIRED"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-15",
+      "review_key": "MASTER:CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "title_en": "Tivoli's Inchinata procession",
+      "working_master_id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "LOCAL_PROCESSION_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/",
+        "bounded_claim_type": "DIOCESAN_DATED_EVENT",
+        "risk_flag": "LOCALLY_DATED_ACTION",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "Evening 14 August and morning 15 August; Tivoli local Assumption observance",
+        "kind": "LOCAL_FIXED_DAY_SPAN",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Tivoli, Lazio, Italy",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "MARI-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "2026_DIOCESAN_DATES_NOT_PERPETUAL_PARISH_SCHEDULE"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-16",
+      "review_key": "MASTER:CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "title_en": "Faradda di li Candareri — Sassari's Marian offering procession",
+      "working_master_id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "LOCAL_PROCESSION_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+        "bounded_claim_type": "CITY_OFFICIAL_DATED_EVENT",
+        "risk_flag": "LOCALLY_DATED_ACTION",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "14 August local procession associated with Assumption, not a universal Marian vigil rite",
+        "kind": "LOCAL_FIXED_DAY_CONTEXT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Sassari, Sardinia, Italy",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "MARI-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "2026_CITY_EVENT_NOT_PERPETUAL_PARISH_SCHEDULE"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-17",
+      "review_key": "MASTER:CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "title_en": "Frauendreißiger — thirty days of Marian devotion",
+      "working_master_id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "intake_observation_id": null,
+      "bilingual_copy_ref": "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_NOT_APPROVED",
+      "suggested_surface_class": "SHRINE_DEPENDENT_PERIOD_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.mariathalkirchen.de/index.php?id=164",
+        "bounded_claim_type": "SHRINE_DIRECT_PROGRAM",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": "15 August–14 September in cited Bavarian diocesan and pilgrimage accounts",
+        "kind": "LOCAL_FIXED_RANGE_CONTEXT",
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "Bavaria, Germany; named pilgrimage churches",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "DEV-001"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "SHRINE_PROGRAM_CANNOT_OVERRIDE_1962_PROPERS"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    },
+    {
+      "release_key": "CUSTOMS-R18-18",
+      "review_key": "OBSERVATION:BULK150-018",
+      "title_en": "Provençal Christmas réveillon after midnight",
+      "working_master_id": null,
+      "intake_observation_id": "BULK150-018",
+      "bilingual_copy_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+      "copy_readiness": "BILINGUAL_DRAFT_MISSING_DESCRIPTION",
+      "suggested_surface_class": "REGIONAL_MEAL_CONTEXT",
+      "release_decision": "HUMAN_REVIEW_PENDING",
+      "source_scope_evidence": {
+        "primary_review_ref": "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json",
+        "verified_claim_url": "https://www.culture.gouv.fr/Media/Thematiques/Patrimoine-culturel-immateriel/Files/Fiches-inventaire-du-PCI/Les-fetes-de-Noel-en-Provence",
+        "bounded_claim_type": "FRENCH_MINISTRY_PDF_ORIGINAL_PAGE",
+        "risk_flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "all_article_sources_checked": false,
+        "source_independence_certified": false
+      },
+      "calendar_context_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "hint_en": null,
+        "kind": null,
+        "calendar_owns_date": true,
+        "ical_or_recurring_parish_event_authorized": false,
+        "fixed_date_is_only_context": true,
+        "user_location_is_not_inferred": true,
+        "new_calendar_engine_requested": false
+      },
+      "geography_review": {
+        "source_ref": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+        "description": "France",
+        "no_universal_scope_implied": true,
+        "needs_human_approval": true
+      },
+      "identity_links": {
+        "related_not_same_action_ids": [
+          "CUST-XMAS-PROVENCAL-PAIN-CALENDAL"
+        ],
+        "proposed_canonical_id": null
+      },
+      "blockers": [
+        "CANONICAL_DISTINCTNESS_HUMAN_SIGNOFF",
+        "SOURCE_CLAIM_AND_INDEPENDENCE_HUMAN_SIGNOFF",
+        "RITE_AND_MINISTERIAL_SCOPE_HUMAN_SIGNOFF",
+        "EN_FR_COPY_HUMAN_SIGNOFF",
+        "REGION_AND_EXISTING_1962_CALENDAR_ANCHOR_HUMAN_SIGNOFF",
+        "RUNTIME_BROWSER_DATE_INTEGRITY_QA",
+        "MISSING_EN_FR_DESCRIPTION_DRAFT",
+        "CALENDAR_CONTEXT_NOT_DEFINED",
+        "BILINGUAL_DESCRIPTIVE_INTRO_MISSING",
+        "CALENDAR_CONTEXT_NOT_YET_MAPPED",
+        "REGIONAL_FOOD_CUSTOM_NOT_LITURGICAL_FAST_DISPENSATION"
+      ],
+      "signoffs": {
+        "canonical_identity": false,
+        "source_scope": false,
+        "rite_and_minister": false,
+        "bilingual_en": false,
+        "bilingual_fr": false,
+        "geography_and_date": false,
+        "calendar_release": false,
+        "runtime_qa": false
+      },
+      "publication": {
+        "state": "STAGED_RESEARCH_ONLY",
+        "approved_for_existing_calendar": false,
+        "new_public_article": false
+      }
+    }
+  ]
+}

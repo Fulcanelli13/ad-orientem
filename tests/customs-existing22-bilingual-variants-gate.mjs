@@ -1,0 +1,37 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const root="data/customs/master/";
+const variant=read(root+"customs-existing22-bilingual-calendar-variants-20261029.v1.json");
+const owner=read(root+"customs-all47-owner-action-comparisons-20261029.v1.json");
+const ledger=read(root+"customs-all408-consolidated-editorial-decision-ledger-20261029.v1.json");
+const canonical=read("data/customs/customs-atlas-seed.v1.json").customs;
+assert.equal(variant.schema,"AO_CUSTOMS_EXISTING_OWNER_22_BILINGUAL_VARIANT_CARDS_V1");
+assert.equal(variant.variants.length,22);
+assert.equal(variant.counts.bilingual_variants,22);
+assert.equal(variant.counts.distinct_existing_published_owners,12);
+assert.equal(variant.counts.new_custom_ids,0);
+assert.equal(variant.counts.calendar_published,0);
+const owners=new Map(owner.records.filter(x=>x.action_relationship_classification.startsWith("OWNER_")).map(x=>[x.group_id,x]));
+const canon=new Map(canonical.map(x=>[x.custom_id,x]));
+const source=new Map(ledger.records.map(x=>[x.provisional_group_id,x]));
+assert.equal(owners.size,22);
+assert.equal(new Set(variant.variants.map(x=>x.variant_id)).size,22);
+assert.equal(new Set(variant.variants.map(x=>x.source_group_id)).size,22);
+for(const v of variant.variants){
+ const link=owners.get(v.source_group_id),s=source.get(v.source_group_id),c=canon.get(v.existing_published_custom_id);
+ assert.ok(link&&s&&c);
+ assert.equal(link.prior_proposed_owner,v.existing_published_custom_id);
+ assert.equal(c.publication_state,"PUBLISHED");
+ assert.deepEqual(v.source_observation_ids,s.source_observation_ids);
+ assert.equal(v.source_printed_page,s.corrected_or_checked_source_printed_page);
+ assert.ok(v.display_en.length>55);
+ assert.ok(v.display_fr.length>55);
+ assert.equal(v.calendar_context_inherit_existing_owner,true);
+ assert.equal(v.new_canonical_identity_created,false);
+ assert.equal(v.approved_for_live_publication,false);
+ assert.deepEqual(v.indulgence_grants,[]);
+}
+assert.equal(canonical.filter(x=>x.publication_state==="PUBLISHED").length,35);
+assert.equal(canonical.filter(x=>x.publication_state==="CONTEXT_ONLY").length,3);
+console.log("PASS: 22 bilingual custom variants assigned to 12 existing published identities; no duplicate customs, Calendar publication or indulgence.");

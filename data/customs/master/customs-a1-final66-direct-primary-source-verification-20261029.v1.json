@@ -1,0 +1,2228 @@
+{
+  "schema": "AO_CUSTOMS_A1_LAST66_ORIGINAL_WEISER_SOURCE_ACTION_SWEEP_V1",
+  "as_of": "2026-10-29",
+  "status": "66_SOURCE_ACTION_PASSAGES_DIRECTLY_CHECKED_FROM_ORIGINAL_PRINTED_PAGE_IMAGES_NOT_FINAL_IDENTITY_CERTIFICATION",
+  "source_id": "WEISER-HANDBOOK-1958",
+  "method": "Source screenshot of scanned printed page, and where required adjoining printed page, used to check each narrow observation. This does not certify all text on any folio, the independence of secondary sources, the current continuation of a custom, or identity distinctness.",
+  "previous_integrity_data": [
+    "data/customs/master/customs-a1-150-evidence-and-indulgence-triage-20261029.v1.json",
+    "data/customs/master/customs-a1-12-verified-weiser-facsimile-20261029.v1.json",
+    "data/customs/master/customs-weiser-direct-primary-page-sweep-20261029.v1.json"
+  ],
+  "summary": {
+    "remaining_A1_source_action_screens": 66,
+    "previous_A1_source_action_screens": 84,
+    "cumulative_A1_source_action_screens": 150,
+    "A1_total_groups": 150,
+    "direct_original_page_image_claim_checks_in_this_pass": 66,
+    "documented_index_or_start_page_discrepancies": 12,
+    "regional_or_rite_boundary_review_cases": 12,
+    "initial_metadata_distinct_identity_certifications": 0,
+    "canonical_identities_approved": 0,
+    "new_indulgences_published": 0,
+    "calendar_publications": 0
+  },
+  "disposition_counts": {
+    "HISTORICAL_DOMESTIC": 3,
+    "HISTORICAL_REGIONAL_DEVOTION": 2,
+    "HISTORICAL_DEVOTION_RITE_BOUNDARY": 1,
+    "HISTORICAL_PARISH_CHARITY": 1,
+    "HISTORICAL_LOCAL_CUSTOM": 1,
+    "HISTORICAL_FOOD_WITH_SUPERSTITION": 1,
+    "HISTORICAL_GREETING": 2,
+    "HISTORICAL_SEASONAL_GAME": 1,
+    "HISTORICAL_EASTER_DECORATION": 1,
+    "HISTORICAL_SPANISH_LOCAL_DECORATION": 1,
+    "HISTORICAL_REGIONAL_FOOD": 1,
+    "HISTORICAL_LUCIA_LIGHT": 1,
+    "HISTORICAL_HARVEST_PROCESSION": 1,
+    "HISTORICAL_LITURGICAL_PARTICIPATION": 1,
+    "RITUAL_BLESSING_OTHER_OWNER": 2,
+    "HISTORICAL_VOLUNTARY_PENANCE": 1,
+    "HISTORICAL_WEEKLY_DEVOTION": 1,
+    "LITURGICAL_HISTORY_ENRICHMENT": 1,
+    "HISTORICAL_CHRISTMAS_HOUSEHOLD": 1,
+    "HISTORICAL_CANDLEMAS_CONTEXT": 1,
+    "HISTORICAL_RITUAL_DRAMA": 1,
+    "EXISTING_CUSTOM_COMPONENT": 1,
+    "HISTORICAL_CHARITY": 1,
+    "HISTORICAL_LOCAL_REPOSITORY_DECOR": 1,
+    "HISTORICAL_DOMESTIC_EASTER_PREP": 1,
+    "EXISTING_CUSTOM_REGIONAL_VARIANT": 1,
+    "HISTORICAL_OTHER_RITE_DEAD": 1,
+    "HISTORICAL_BLESSED_FOOD_VARIANT": 1,
+    "HISTORICAL_DEAD_PRAYER_CONTEXT": 1,
+    "HISTORICAL_NAME_DAY_VARIANT": 1,
+    "LABEL_SCOPE_OVERCLAIM": 1,
+    "HISTORICAL_PILGRIMAGE_VARIANT": 1,
+    "EXISTING_CUSTOM_USAGE_VARIANT": 1,
+    "HISTORICAL_REGIONAL_PALM_VISIT": 1,
+    "EXISTING_CUSTOM_LOCAL_VARIANT": 1,
+    "HISTORICAL_DOMESTIC_BLESSED_EGG": 1,
+    "EXISTING_CUSTOM_REGION_VARIANT": 1,
+    "HISTORICAL_PRIESTLY_BLESSING": 1,
+    "HISTORICAL_SAINT_BLAISE_FOOD": 1,
+    "RITUAL_BLESSING_REGIONAL_VARIANT": 1,
+    "EXISTING_CUSTOM_OBJECT_VARIANT": 1,
+    "LITURGICAL_DEVOTIONAL_CONTEXT": 1,
+    "HISTORICAL_PUBLIC_NOVENA": 1,
+    "HISTORICAL_MORAVIAN_CRIB": 1,
+    "HISTORICAL_YULE_LOG": 1,
+    "HISTORICAL_CHRISTMAS_SYMBOLISM": 1,
+    "HISTORICAL_CHRISTMAS_DECOR": 2,
+    "LEGEND_ONLY_WITH_HISTORIC_DECOR": 1,
+    "HISTORICAL_GREETING_CARDS": 1,
+    "HISTORICAL_FOLK_GIFT": 1,
+    "HISTORICAL_ENGLISH_FOOD": 1,
+    "HISTORICAL_ROMAN_SHRINE_DEVOTION": 1,
+    "HISTORICAL_GIFT": 1,
+    "RITUAL_PRAY_OTHER_OWNER": 1,
+    "HISTORICAL_LENT_CHURCH_FURNISHING": 1,
+    "HISTORICAL_MID_LENT_FOLK": 1,
+    "HISTORICAL_DOMESTIC_MEAL": 1,
+    "RITUAL_HISTORY_BOUNDARY": 1,
+    "PRAY_OWNER_DEVOTION": 1,
+    "HISTORICAL_GOOD_FRIDAY_HOME": 1
+  },
+  "corrections": [
+    {
+      "id": "CAT-WEISER-A-024",
+      "old": [
+        56
+      ],
+      "passage_page": 55
+    },
+    {
+      "id": "CAT-WEISER-A-031",
+      "old": [
+        73
+      ],
+      "passage_page": 74
+    },
+    {
+      "id": "CAT-WEISER-A-043",
+      "old": [
+        92
+      ],
+      "passage_page": 91
+    },
+    {
+      "id": "CAT-WEISER-B-146",
+      "old": [
+        314
+      ],
+      "passage_page": 313
+    },
+    {
+      "id": "CAT-WEISER-A-089",
+      "old": [
+        150
+      ],
+      "passage_page": 149
+    },
+    {
+      "id": "CAT-WEISER-A-093",
+      "old": [
+        153
+      ],
+      "passage_page": 152
+    },
+    {
+      "id": "CAT-WEISER-B-007",
+      "old": [
+        195
+      ],
+      "passage_page": 194
+    },
+    {
+      "id": "CAT-WEISER-B-042",
+      "old": [
+        236
+      ],
+      "passage_page": 235
+    },
+    {
+      "id": "CAT-WEISER-A-026",
+      "old": [
+        57
+      ],
+      "passage_page": 56
+    },
+    {
+      "id": "CAT-WEISER-A-050",
+      "old": [
+        98
+      ],
+      "passage_page": 97
+    },
+    {
+      "id": "CAT-WEISER-A-112",
+      "old": [
+        185
+      ],
+      "passage_page": 184
+    },
+    {
+      "id": "CAT-WEISER-B-022",
+      "old": [
+        213
+      ],
+      "passage_page": 212
+    }
+  ],
+  "records": [
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-001",
+      "provisional_group_id": "CAT-WEISER-A-024",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-05-004"
+      ],
+      "original_indexed_printed_pages": [
+        56
+      ],
+      "direct_primary_pdf_page_printed": 55,
+      "direct_primary_pdf_page_zero_index": 72,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          56
+        ],
+        "new_claim_page": 55,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Children place letters for the Christ Child on the eve of Saint Nicholas; source distinguishes the South American December 16–24 practice",
+      "historical_type_provisional": "HISTORICAL_DOMESTIC",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-002",
+      "provisional_group_id": "CAT-WEISER-A-028",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-05-009"
+      ],
+      "original_indexed_printed_pages": [
+        57
+      ],
+      "direct_primary_pdf_page_printed": 57,
+      "direct_primary_pdf_page_zero_index": 74,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Boys take a Saint Joseph statue between homes on nine Advent nights, with prayers and procession on December 24",
+      "historical_type_provisional": "HISTORICAL_REGIONAL_DEVOTION",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-003",
+      "provisional_group_id": "CAT-WEISER-A-031",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-06-006"
+      ],
+      "original_indexed_printed_pages": [
+        73
+      ],
+      "direct_primary_pdf_page_printed": 74,
+      "direct_primary_pdf_page_zero_index": 91,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          73
+        ],
+        "new_claim_page": 74,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "The Christmas Eve festive family meal traditionally includes fish under the historical abstinence regime; not a current universal rule",
+      "historical_type_provisional": "HISTORICAL_DOMESTIC",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-004",
+      "provisional_group_id": "CAT-WEISER-A-043",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-07-012"
+      ],
+      "original_indexed_printed_pages": [
+        92
+      ],
+      "direct_primary_pdf_page_printed": 91,
+      "direct_primary_pdf_page_zero_index": 108,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          92
+        ],
+        "new_claim_page": 91,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Kindelwiegen rocking of Christ Child cradle originated in church ceremonies and persisted domestically after church prohibition; later local scope needed",
+      "historical_type_provisional": "HISTORICAL_DEVOTION_RITE_BOUNDARY",
+      "identity_owner_comparison_target": "RITE_VS_DOMESTIC",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-005",
+      "provisional_group_id": "CAT-WEISER-A-057",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-024"
+      ],
+      "original_indexed_printed_pages": [
+        110
+      ],
+      "direct_primary_pdf_page_printed": 110,
+      "direct_primary_pdf_page_zero_index": 127,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Children offer gifts with prayers and hymns; parish priest distributes offerings to poor, described in Boston Holy Trinity history",
+      "historical_type_provisional": "HISTORICAL_PARISH_CHARITY",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-006",
+      "provisional_group_id": "CAT-WEISER-A-104",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-14-013"
+      ],
+      "original_indexed_printed_pages": [
+        178
+      ],
+      "direct_primary_pdf_page_printed": 178,
+      "direct_primary_pdf_page_zero_index": 195,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Mothering Sunday visits to mother church and one's mother, with flowers and simnel cakes on Laetare Sunday; English background",
+      "historical_type_provisional": "HISTORICAL_LOCAL_CUSTOM",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-007",
+      "provisional_group_id": "CAT-WEISER-B-016",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-032"
+      ],
+      "original_indexed_printed_pages": [
+        206
+      ],
+      "direct_primary_pdf_page_printed": 206,
+      "direct_primary_pdf_page_zero_index": 223,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Hot cross buns historically appear on Good Friday, but alleged efficacy against disease, fire, shipwreck is unendorsed folklore",
+      "historical_type_provisional": "HISTORICAL_FOOD_WITH_SUPERSTITION",
+      "identity_owner_comparison_target": "FOLKLORE_BOUNDARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-008",
+      "provisional_group_id": "CAT-WEISER-B-021",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-16-005"
+      ],
+      "original_indexed_printed_pages": [
+        212
+      ],
+      "direct_primary_pdf_page_printed": 212,
+      "direct_primary_pdf_page_zero_index": 229,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "An early Latin Easter greeting Surrexit Dominus vere is recorded with Deo gratias response, distinct from Eastern greeting formulae",
+      "historical_type_provisional": "HISTORICAL_GREETING",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-009",
+      "provisional_group_id": "CAT-WEISER-B-040",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-17-016"
+      ],
+      "original_indexed_printed_pages": [
+        235
+      ],
+      "direct_primary_pdf_page_printed": 235,
+      "direct_primary_pdf_page_zero_index": 252,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Easter egg rolling and pecking games are documented in several countries; not themselves prayers or blessed objects",
+      "historical_type_provisional": "HISTORICAL_SEASONAL_GAME",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-010",
+      "provisional_group_id": "CAT-WEISER-B-043",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-17-019"
+      ],
+      "original_indexed_printed_pages": [
+        236
+      ],
+      "direct_primary_pdf_page_printed": 236,
+      "direct_primary_pdf_page_zero_index": 253,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Easter lily floral use in American churches and households is historically explained; no liturgical requirement",
+      "historical_type_provisional": "HISTORICAL_EASTER_DECORATION",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-011",
+      "provisional_group_id": "CAT-WEISER-B-062",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-19-018"
+      ],
+      "original_indexed_printed_pages": [
+        253
+      ],
+      "direct_primary_pdf_page_printed": 253,
+      "direct_primary_pdf_page_zero_index": 270,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Whitsunday dawn ascents to hilltops for prayer are attested in European districts; dewy grass magical beliefs are separate",
+      "historical_type_provisional": "HISTORICAL_REGIONAL_DEVOTION",
+      "identity_owner_comparison_target": "FOLKLORE_BOUNDARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-012",
+      "provisional_group_id": "CAT-WEISER-B-108",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-24-021"
+      ],
+      "original_indexed_printed_pages": [
+        294
+      ],
+      "direct_primary_pdf_page_printed": 294,
+      "direct_primary_pdf_page_zero_index": 311,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Northern Spanish balconies are decorated with flowers, carpets, flags and candles for the Immaculate Conception vigil",
+      "historical_type_provisional": "HISTORICAL_SPANISH_LOCAL_DECORATION",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-013",
+      "provisional_group_id": "CAT-WEISER-B-146",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-26-027"
+      ],
+      "original_indexed_printed_pages": [
+        314
+      ],
+      "direct_primary_pdf_page_printed": 313,
+      "direct_primary_pdf_page_zero_index": 330,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          314
+        ],
+        "new_claim_page": 313,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Huesos de Santo in northern Spain and Madrid, panellets in Catalonia, are All Souls pastries, separately named from charity breads",
+      "historical_type_provisional": "HISTORICAL_REGIONAL_FOOD",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-014",
+      "provisional_group_id": "CAT-WEISER-B-178",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-28-024"
+      ],
+      "original_indexed_printed_pages": [
+        341
+      ],
+      "direct_primary_pdf_page_printed": 341,
+      "direct_primary_pdf_page_zero_index": 358,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Source connects Saint Lucy December 13 to home candles and fires in Scandinavia, while retaining older solstice folklore context",
+      "historical_type_provisional": "HISTORICAL_LUCIA_LIGHT",
+      "identity_owner_comparison_target": "FOLKLORE_BOUNDARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-015",
+      "provisional_group_id": "CAT-WEISER-B-091",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-22-007"
+      ],
+      "original_indexed_printed_pages": [
+        270
+      ],
+      "direct_primary_pdf_page_printed": 270,
+      "direct_primary_pdf_page_zero_index": 287,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Hungarian harvest produce delegation at Assumption and Polish wreath processions are historically reported, not a universal Assumption blessing",
+      "historical_type_provisional": "HISTORICAL_HARVEST_PROCESSION",
+      "identity_owner_comparison_target": "LOCAL_VARIANT_REVIEW",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-016",
+      "provisional_group_id": "CAT-WEISER-B-113",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-25-007"
+      ],
+      "original_indexed_printed_pages": [
+        299
+      ],
+      "direct_primary_pdf_page_printed": 299,
+      "direct_primary_pdf_page_zero_index": 316,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Decorated wax candles brought for the priestly Candlemas blessing in regional communities; do not duplicate the Roman-rite blessing",
+      "historical_type_provisional": "HISTORICAL_LITURGICAL_PARTICIPATION",
+      "identity_owner_comparison_target": "BLSS_CANDLEMAS",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-017",
+      "provisional_group_id": "CAT-WEISER-B-123",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-25-023"
+      ],
+      "original_indexed_printed_pages": [
+        305
+      ],
+      "direct_primary_pdf_page_printed": 305,
+      "direct_primary_pdf_page_zero_index": 322,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Seed-grain blessing on Nativity of Mary September 8 is recorded in central/eastern Europe and referenced to Roman Ritual formula",
+      "historical_type_provisional": "RITUAL_BLESSING_OTHER_OWNER",
+      "identity_owner_comparison_target": "RITUAL_BLESSING",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-018",
+      "provisional_group_id": "CAT-WEISER-A-005",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-01-008"
+      ],
+      "original_indexed_printed_pages": [
+        17
+      ],
+      "direct_primary_pdf_page_printed": 17,
+      "direct_primary_pdf_page_zero_index": 34,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Sunday lamp or candle placed before image of the Trinity is directly attested; separate neighbouring Sunday good-fortune superstitions",
+      "historical_type_provisional": "HISTORICAL_DOMESTIC",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-019",
+      "provisional_group_id": "CAT-WEISER-A-006",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-02-002"
+      ],
+      "original_indexed_printed_pages": [
+        23
+      ],
+      "direct_primary_pdf_page_printed": 23,
+      "direct_primary_pdf_page_zero_index": 40,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Wednesday abstinence as a voluntary practice associated with Saint Joseph is distinguished from ancient mandatory weekly fasts",
+      "historical_type_provisional": "HISTORICAL_VOLUNTARY_PENANCE",
+      "identity_owner_comparison_target": "DISCIPLINE_NOT_OBLIGATION",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-020",
+      "provisional_group_id": "CAT-WEISER-A-009",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-02-006"
+      ],
+      "original_indexed_printed_pages": [
+        28
+      ],
+      "direct_primary_pdf_page_printed": 28,
+      "direct_primary_pdf_page_zero_index": 45,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Wednesday special devotion to Saint Joseph documented; historical first-Wednesday indulgence mentioned but no current grant follows",
+      "historical_type_provisional": "HISTORICAL_WEEKLY_DEVOTION",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-021",
+      "provisional_group_id": "CAT-WEISER-A-014",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-03-003"
+      ],
+      "original_indexed_printed_pages": [
+        32
+      ],
+      "direct_primary_pdf_page_printed": 32,
+      "direct_primary_pdf_page_zero_index": 49,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Ember-day seasonal thanksgiving and imploring the harvest blessing appear in history of Ember liturgy, not a distinct home ritual",
+      "historical_type_provisional": "LITURGICAL_HISTORY_ENRICHMENT",
+      "identity_owner_comparison_target": "EMBER_CALENDAR_RITE",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-022",
+      "provisional_group_id": "CAT-WEISER-A-070",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-10-002",
+        "WEI58-10-003"
+      ],
+      "original_indexed_printed_pages": [
+        123
+      ],
+      "direct_primary_pdf_page_printed": 123,
+      "direct_primary_pdf_page_zero_index": 140,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Christmas week evenings with family Rosary, other devotions and carols are described; Polish holy evenings named on continuation p124",
+      "historical_type_provisional": "HISTORICAL_CHRISTMAS_HOUSEHOLD",
+      "identity_owner_comparison_target": "PRAY_ROSARY_CONTEXT",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-023",
+      "provisional_group_id": "CAT-WEISER-B-116",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-25-012"
+      ],
+      "original_indexed_printed_pages": [
+        300
+      ],
+      "direct_primary_pdf_page_printed": 300,
+      "direct_primary_pdf_page_zero_index": 317,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Cribs and decorations customarily put away on Candlemas as the end of popular Christmas season; not an extension of 1962 Christmastide",
+      "historical_type_provisional": "HISTORICAL_CANDLEMAS_CONTEXT",
+      "identity_owner_comparison_target": "CRIB_001_RESEARCH",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-024",
+      "provisional_group_id": "CAT-WEISER-A-089",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-12-009"
+      ],
+      "original_indexed_printed_pages": [
+        150
+      ],
+      "direct_primary_pdf_page_printed": 149,
+      "direct_primary_pdf_page_zero_index": 166,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          150
+        ],
+        "new_claim_page": 149,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Priestly Epiphany home blessing with Magnificat holy-water sprinkling and incense appears on preceding source page; lay chalking separate",
+      "historical_type_provisional": "RITUAL_BLESSING_OTHER_OWNER",
+      "identity_owner_comparison_target": "EPIP_003_RESEARCH",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-025",
+      "provisional_group_id": "CAT-WEISER-GAP-014",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-DETAIL-B-017"
+      ],
+      "original_indexed_printed_pages": [
+        196
+      ],
+      "direct_primary_pdf_page_printed": 196,
+      "direct_primary_pdf_page_zero_index": 213,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Mexico and Latin America priest-presided Last Supper reenactment with twelve participants described, distinct from mandatory Holy Thursday liturgy",
+      "historical_type_provisional": "HISTORICAL_RITUAL_DRAMA",
+      "identity_owner_comparison_target": "HOLY_THURSDAY_RITE_BOUNDARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-026",
+      "provisional_group_id": "CAT-WEISER-A-023",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-05-003"
+      ],
+      "original_indexed_printed_pages": [
+        55
+      ],
+      "direct_primary_pdf_page_printed": 55,
+      "direct_primary_pdf_page_zero_index": 72,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Named John or Joan given first right to light family Advent-wreath candles in some regions; narrower variant of Advent-wreath custom",
+      "historical_type_provisional": "EXISTING_CUSTOM_COMPONENT",
+      "identity_owner_comparison_target": "ADVT-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-027",
+      "provisional_group_id": "CAT-WEISER-A-093",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-12-019"
+      ],
+      "original_indexed_printed_pages": [
+        153
+      ],
+      "direct_primary_pdf_page_printed": 152,
+      "direct_primary_pdf_page_zero_index": 169,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          153
+        ],
+        "new_claim_page": 152,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "French Magi cake charity for poor persons and education of children starts on preceding page; distinct from ordinary galette eating",
+      "historical_type_provisional": "HISTORICAL_CHARITY",
+      "identity_owner_comparison_target": "EPIP-002",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-028",
+      "provisional_group_id": "CAT-WEISER-B-007",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-016"
+      ],
+      "original_indexed_printed_pages": [
+        195
+      ],
+      "direct_primary_pdf_page_printed": 194,
+      "direct_primary_pdf_page_zero_index": 211,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          195
+        ],
+        "new_claim_page": 194,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Holy Thursday repositoria called monumento in Latin lands decorated with candles and flowers and visited by faithful; local ritual boundary",
+      "historical_type_provisional": "HISTORICAL_LOCAL_REPOSITORY_DECOR",
+      "identity_owner_comparison_target": "HTHU-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-029",
+      "provisional_group_id": "CAT-WEISER-B-017",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-035"
+      ],
+      "original_indexed_printed_pages": [
+        207
+      ],
+      "direct_primary_pdf_page_printed": 207,
+      "direct_primary_pdf_page_zero_index": 224,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Holy Saturday house preparations include painting eggs and cooking Easter bread; regional timing and no imposed rite",
+      "historical_type_provisional": "HISTORICAL_DOMESTIC_EASTER_PREP",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-030",
+      "provisional_group_id": "CAT-WEISER-B-033",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-16-029"
+      ],
+      "original_indexed_printed_pages": [
+        223
+      ],
+      "direct_primary_pdf_page_printed": 223,
+      "direct_primary_pdf_page_zero_index": 240,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "French-Canadian Easter Monday Emmaus visit to grandparents is an explicitly described regional form of Easter Monday walk",
+      "historical_type_provisional": "EXISTING_CUSTOM_REGIONAL_VARIANT",
+      "identity_owner_comparison_target": "EAST-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-031",
+      "provisional_group_id": "CAT-WEISER-B-034",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-16-030"
+      ],
+      "original_indexed_printed_pages": [
+        224
+      ],
+      "direct_primary_pdf_page_printed": 224,
+      "direct_primary_pdf_page_zero_index": 241,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Slavic Easter Thursday prayers and commemoration of dead are recorded; do not impose on universal Roman-rite calendar",
+      "historical_type_provisional": "HISTORICAL_OTHER_RITE_DEAD",
+      "identity_owner_comparison_target": "OTHER_RITE_OR_LOCAL",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-032",
+      "provisional_group_id": "CAT-WEISER-B-044",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-17-023"
+      ],
+      "original_indexed_printed_pages": [
+        238
+      ],
+      "direct_primary_pdf_page_printed": 238,
+      "direct_primary_pdf_page_zero_index": 255,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Paska Easter breads marked by cross are listed among regional foods, with priestly blessing as separate work",
+      "historical_type_provisional": "HISTORICAL_BLESSED_FOOD_VARIANT",
+      "identity_owner_comparison_target": "BLSS-004",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-033",
+      "provisional_group_id": "CAT-WEISER-B-128",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-26-005"
+      ],
+      "original_indexed_printed_pages": [
+        309
+      ],
+      "direct_primary_pdf_page_printed": 309,
+      "direct_primary_pdf_page_zero_index": 326,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Seventh and thirtieth day after death with Mass for deceased recorded historically; funeral law and local usage not inferred",
+      "historical_type_provisional": "HISTORICAL_DEAD_PRAYER_CONTEXT",
+      "identity_owner_comparison_target": "PRAY_DEAD",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-034",
+      "provisional_group_id": "CAT-WEISER-B-177",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-28-018"
+      ],
+      "original_indexed_printed_pages": [
+        338
+      ],
+      "direct_primary_pdf_page_printed": 338,
+      "direct_primary_pdf_page_zero_index": 355,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Former European celebration of Saint Anne feast for women named Anne with parades and balls; not a universal saint feast ritual",
+      "historical_type_provisional": "HISTORICAL_NAME_DAY_VARIANT",
+      "identity_owner_comparison_target": "NDAY-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-035",
+      "provisional_group_id": "CAT-WEISER-A-092",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-12-014"
+      ],
+      "original_indexed_printed_pages": [
+        151
+      ],
+      "direct_primary_pdf_page_printed": 151,
+      "direct_primary_pdf_page_zero_index": 168,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "SOURCE_SUPPORTS_CAROL_NOT_SPECIFIC_PORTUGUESE_HOUSE_VISIT",
+      "narrowed_action_description_en": "Weiser prints Portuguese Os Reis devotional carol and separately describes star-carolling in Austria Bavaria and Slavic lands; no direct attestation here of Portuguese house-to-house Os Reis practice",
+      "historical_type_provisional": "LABEL_SCOPE_OVERCLAIM",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-036",
+      "provisional_group_id": "CAT-WEISER-B-097",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-23-014"
+      ],
+      "original_indexed_printed_pages": [
+        282
+      ],
+      "direct_primary_pdf_page_printed": 282,
+      "direct_primary_pdf_page_zero_index": 299,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Early Christians visit martyr tombs especially on anniversary and hold vigils; related to general pilgrimage, not separate universal command",
+      "historical_type_provisional": "HISTORICAL_PILGRIMAGE_VARIANT",
+      "identity_owner_comparison_target": "DEV-006",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-037",
+      "provisional_group_id": "CAT-WEISER-A-076",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-10-014"
+      ],
+      "original_indexed_printed_pages": [
+        130
+      ],
+      "direct_primary_pdf_page_printed": 130,
+      "direct_primary_pdf_page_zero_index": 147,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Blessed Saint John wine used for meals, weddings, journeys and the dying; uses belong under existing wine-blessing owner",
+      "historical_type_provisional": "EXISTING_CUSTOM_USAGE_VARIANT",
+      "identity_owner_comparison_target": "BLSS-003",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-038",
+      "provisional_group_id": "CAT-WEISER-B-003",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-005"
+      ],
+      "original_indexed_printed_pages": [
+        190
+      ],
+      "direct_primary_pdf_page_printed": 190,
+      "direct_primary_pdf_page_zero_index": 207,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Families visiting relatives graves during old Palm Sunday churchyard procession, with later cemetery visit tradition in France England",
+      "historical_type_provisional": "HISTORICAL_REGIONAL_PALM_VISIT",
+      "identity_owner_comparison_target": "PALM_SUNDAY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-039",
+      "provisional_group_id": "CAT-WEISER-B-018",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-037"
+      ],
+      "original_indexed_printed_pages": [
+        208
+      ],
+      "direct_primary_pdf_page_printed": 208,
+      "direct_primary_pdf_page_zero_index": 225,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "In many regions priests went house to house Holy Saturday to bless Easter foods; locale-dependent alternative to bringing baskets to church",
+      "historical_type_provisional": "EXISTING_CUSTOM_LOCAL_VARIANT",
+      "identity_owner_comparison_target": "BLSS-004",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-040",
+      "provisional_group_id": "CAT-WEISER-B-042",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-17-018"
+      ],
+      "original_indexed_printed_pages": [
+        236
+      ],
+      "direct_primary_pdf_page_printed": 235,
+      "direct_primary_pdf_page_zero_index": 252,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          236
+        ],
+        "new_claim_page": 235,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Shared blessed Easter egg cut by father at breakfast attested for Slavic households, passage on preceding printed page",
+      "historical_type_provisional": "HISTORICAL_DOMESTIC_BLESSED_EGG",
+      "identity_owner_comparison_target": "BLSS-004",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-041",
+      "provisional_group_id": "CAT-WEISER-B-101",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-24-004"
+      ],
+      "original_indexed_printed_pages": [
+        289
+      ],
+      "direct_primary_pdf_page_printed": 289,
+      "direct_primary_pdf_page_zero_index": 306,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Assumption field procession led by priests praying for harvest in Austria and elsewhere is one geographical variant of Marian procession",
+      "historical_type_provisional": "EXISTING_CUSTOM_REGION_VARIANT",
+      "identity_owner_comparison_target": "MARI-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-042",
+      "provisional_group_id": "CAT-WEISER-B-105",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-24-014"
+      ],
+      "original_indexed_printed_pages": [
+        291
+      ],
+      "direct_primary_pdf_page_printed": 291,
+      "direct_primary_pdf_page_zero_index": 308,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Assumption afternoon boats and sea blessing in Portugal and other Latin coastal communities; depends on actual local minister",
+      "historical_type_provisional": "HISTORICAL_PRIESTLY_BLESSING",
+      "identity_owner_comparison_target": "ASSUMPTION_LOCAL",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-043",
+      "provisional_group_id": "CAT-WEISER-B-149",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-27-002"
+      ],
+      "original_indexed_printed_pages": [
+        317
+      ],
+      "direct_primary_pdf_page_printed": 317,
+      "direct_primary_pdf_page_zero_index": 334,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Saint Blaise blessed sticks of bread eaten by people with sore throats are reported, distinct from official crossed-candle throat blessing",
+      "historical_type_provisional": "HISTORICAL_SAINT_BLAISE_FOOD",
+      "identity_owner_comparison_target": "BLSS-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-044",
+      "provisional_group_id": "CAT-WEISER-B-150",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-27-004"
+      ],
+      "original_indexed_printed_pages": [
+        318
+      ],
+      "direct_primary_pdf_page_printed": 318,
+      "direct_primary_pdf_page_zero_index": 335,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Italian priest may touch the throat with oil-dipped wick while invoking Blaise; source begins on p317 and continues p318",
+      "historical_type_provisional": "RITUAL_BLESSING_REGIONAL_VARIANT",
+      "identity_owner_comparison_target": "BLSS-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-045",
+      "provisional_group_id": "CAT-WEISER-B-173",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-28-012"
+      ],
+      "original_indexed_printed_pages": [
+        336
+      ],
+      "direct_primary_pdf_page_printed": 336,
+      "direct_primary_pdf_page_zero_index": 353,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Blessed Christopher medals carried by travellers or in vehicles described, distinct from church's blessing of vehicles",
+      "historical_type_provisional": "EXISTING_CUSTOM_OBJECT_VARIANT",
+      "identity_owner_comparison_target": "SCHR-001",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-046",
+      "provisional_group_id": "CAT-WEISER-A-013",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-03-002"
+      ],
+      "original_indexed_printed_pages": [
+        33
+      ],
+      "direct_primary_pdf_page_printed": 33,
+      "direct_primary_pdf_page_zero_index": 50,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Ember days stressed as prayer for priestly vocations and sanctification; not a new priest ordination rite",
+      "historical_type_provisional": "LITURGICAL_DEVOTIONAL_CONTEXT",
+      "identity_owner_comparison_target": "EMBER_CALENDAR_RITE",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-047",
+      "provisional_group_id": "CAT-WEISER-A-026",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-05-007"
+      ],
+      "original_indexed_printed_pages": [
+        57
+      ],
+      "direct_primary_pdf_page_printed": 56,
+      "direct_primary_pdf_page_zero_index": 73,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          57
+        ],
+        "new_claim_page": 56,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Latin American nine-day novena del Niño before Christmas is described as decorated church prayers and carols, not a mandatory private novena",
+      "historical_type_provisional": "HISTORICAL_PUBLIC_NOVENA",
+      "identity_owner_comparison_target": "PRAY_NOVENAS",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-048",
+      "provisional_group_id": "CAT-WEISER-A-046",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-003"
+      ],
+      "original_indexed_printed_pages": [
+        96
+      ],
+      "direct_primary_pdf_page_printed": 96,
+      "direct_primary_pdf_page_zero_index": 113,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Moravian putz landscaping nativity display from Bethlehem Pennsylvania and visiting custom documented",
+      "historical_type_provisional": "HISTORICAL_MORAVIAN_CRIB",
+      "identity_owner_comparison_target": "CHRISTMAS_CRIB",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-049",
+      "provisional_group_id": "CAT-WEISER-A-050",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-009"
+      ],
+      "original_indexed_printed_pages": [
+        98
+      ],
+      "direct_primary_pdf_page_printed": 97,
+      "direct_primary_pdf_page_zero_index": 114,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          98
+        ],
+        "new_claim_page": 97,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Christmas or Yule log carried and lit ceremonially in homes with origin debated; document explicitly rejects proof of pre-sixteenth-century Christmas-log custom",
+      "historical_type_provisional": "HISTORICAL_YULE_LOG",
+      "identity_owner_comparison_target": "FOLKLORE_ORIGIN_HOLD",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-050",
+      "provisional_group_id": "CAT-WEISER-A-052",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-014"
+      ],
+      "original_indexed_printed_pages": [
+        104
+      ],
+      "direct_primary_pdf_page_printed": 104,
+      "direct_primary_pdf_page_zero_index": 121,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Holly thorns and red berries used as Christian Christmas symbolism in northern Europe, distinct from protective magic claims",
+      "historical_type_provisional": "HISTORICAL_CHRISTMAS_SYMBOLISM",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-051",
+      "provisional_group_id": "CAT-WEISER-A-053",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-017"
+      ],
+      "original_indexed_printed_pages": [
+        106
+      ],
+      "direct_primary_pdf_page_printed": 106,
+      "direct_primary_pdf_page_zero_index": 123,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Laurel/bay as seasonal decoration and triumph symbolism and later door-wreath welcome recorded",
+      "historical_type_provisional": "HISTORICAL_CHRISTMAS_DECOR",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-052",
+      "provisional_group_id": "CAT-WEISER-A-054",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-018"
+      ],
+      "original_indexed_printed_pages": [
+        106
+      ],
+      "direct_primary_pdf_page_printed": 106,
+      "direct_primary_pdf_page_zero_index": 123,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Rosemary Christmastide association and flight-to-Egypt legend reported; no factual claim of legendary actions or protective power",
+      "historical_type_provisional": "LEGEND_ONLY_WITH_HISTORIC_DECOR",
+      "identity_owner_comparison_target": "FOLKLORE_BOUNDARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-053",
+      "provisional_group_id": "CAT-WEISER-A-055",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-021"
+      ],
+      "original_indexed_printed_pages": [
+        107
+      ],
+      "direct_primary_pdf_page_printed": 107,
+      "direct_primary_pdf_page_zero_index": 124,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Poinsettias used for Christmas decoration; Mexican Holy Night origin legend described explicitly as legend",
+      "historical_type_provisional": "HISTORICAL_CHRISTMAS_DECOR",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-054",
+      "provisional_group_id": "CAT-WEISER-A-056",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-022"
+      ],
+      "original_indexed_printed_pages": [
+        108
+      ],
+      "direct_primary_pdf_page_printed": 108,
+      "direct_primary_pdf_page_zero_index": 125,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Christmas cards described as nineteenth-century social communication, with later explicitly religious designs; not intrinsically a Catholic rite",
+      "historical_type_provisional": "HISTORICAL_GREETING_CARDS",
+      "identity_owner_comparison_target": "GENERAL_SOCIAL_CUSTOM",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-055",
+      "provisional_group_id": "CAT-WEISER-A-060",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-08-027"
+      ],
+      "original_indexed_printed_pages": [
+        112
+      ],
+      "direct_primary_pdf_page_printed": 112,
+      "direct_primary_pdf_page_zero_index": 129,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Befana gifts to children in Italian Epiphany folklore; figure is legendary gift-giver, not doctrine",
+      "historical_type_provisional": "HISTORICAL_FOLK_GIFT",
+      "identity_owner_comparison_target": "FOLKLORE_BOUNDARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-056",
+      "provisional_group_id": "CAT-WEISER-A-068",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-09-013"
+      ],
+      "original_indexed_printed_pages": [
+        120
+      ],
+      "direct_primary_pdf_page_printed": 120,
+      "direct_primary_pdf_page_zero_index": 137,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Manger-shaped English mince pies with image of Child dated by Weiser to pre-Reformation custom, now largely historic",
+      "historical_type_provisional": "HISTORICAL_ENGLISH_FOOD",
+      "identity_owner_comparison_target": "GENERAL_CULINARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-057",
+      "provisional_group_id": "CAT-WEISER-A-072",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-10-006"
+      ],
+      "original_indexed_printed_pages": [
+        124
+      ],
+      "direct_primary_pdf_page_printed": 124,
+      "direct_primary_pdf_page_zero_index": 141,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Santo Bambino of Ara Coeli: Roman children pray and declaim poems before the Child's image during Christmas cycle",
+      "historical_type_provisional": "HISTORICAL_ROMAN_SHRINE_DEVOTION",
+      "identity_owner_comparison_target": "SHRINE_LOCAL",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-058",
+      "provisional_group_id": "CAT-WEISER-A-084",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-11-011"
+      ],
+      "original_indexed_printed_pages": [
+        140
+      ],
+      "direct_primary_pdf_page_printed": 140,
+      "direct_primary_pdf_page_zero_index": 157,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "French étrennes New Year gifts documented from old Roman strenae, not inherently a Catholic devotion",
+      "historical_type_provisional": "HISTORICAL_GIFT",
+      "identity_owner_comparison_target": "GENERAL_SOCIAL_CUSTOM",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-059",
+      "provisional_group_id": "CAT-WEISER-A-101",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-13-020"
+      ],
+      "original_indexed_printed_pages": [
+        167
+      ],
+      "direct_primary_pdf_page_printed": 167,
+      "direct_primary_pdf_page_zero_index": 184,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Forty Hours before Lent introduced as Eucharistic reparation for carnival, with Benediction and exposition; belongs to Adoration/Pray",
+      "historical_type_provisional": "RITUAL_PRAY_OTHER_OWNER",
+      "identity_owner_comparison_target": "PRAY_ADORATION",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-060",
+      "provisional_group_id": "CAT-WEISER-A-102",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-14-009"
+      ],
+      "original_indexed_printed_pages": [
+        176
+      ],
+      "direct_primary_pdf_page_printed": 176,
+      "direct_primary_pdf_page_zero_index": 193,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Hunger cloth used in England France Germany over sanctuary during Lent, with local and historical variations; not an obligatory 1962 covering",
+      "historical_type_provisional": "HISTORICAL_LENT_CHURCH_FURNISHING",
+      "identity_owner_comparison_target": "LITURGICAL_CUSTOMS",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-061",
+      "provisional_group_id": "CAT-WEISER-A-112",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-14-027"
+      ],
+      "original_indexed_printed_pages": [
+        185
+      ],
+      "direct_primary_pdf_page_printed": 184,
+      "direct_primary_pdf_page_zero_index": 201,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          185
+        ],
+        "new_claim_page": 184,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Mid-Lent well and fountain decoration mentioned as Italian regional spring custom on p184–185, not a universal Catholic blessing",
+      "historical_type_provisional": "HISTORICAL_MID_LENT_FOLK",
+      "identity_owner_comparison_target": "FOLKLORE_BOUNDARY",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-062",
+      "provisional_group_id": "CAT-WEISER-B-010",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-021"
+      ],
+      "original_indexed_printed_pages": [
+        197
+      ],
+      "direct_primary_pdf_page_printed": 197,
+      "direct_primary_pdf_page_zero_index": 214,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Holy Thursday green herb soup spinach and salads under Green Thursday name documented in central Europe",
+      "historical_type_provisional": "HISTORICAL_DOMESTIC_MEAL",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-063",
+      "provisional_group_id": "CAT-WEISER-B-011",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-024"
+      ],
+      "original_indexed_printed_pages": [
+        200
+      ],
+      "direct_primary_pdf_page_printed": 200,
+      "direct_primary_pdf_page_zero_index": 217,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Holy Sepulchre devotional shrine tableaux and local Good Friday burial displays; author explicitly says not incorporated in Roman liturgy as universal work",
+      "historical_type_provisional": "RITUAL_HISTORY_BOUNDARY",
+      "identity_owner_comparison_target": "HOLY_WEEK_RITE",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-064",
+      "provisional_group_id": "CAT-WEISER-B-013",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-027"
+      ],
+      "original_indexed_printed_pages": [
+        202
+      ],
+      "direct_primary_pdf_page_printed": 202,
+      "direct_primary_pdf_page_zero_index": 219,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Three Hours devotion initiated in Lima, with seven last words and sermons/hymns/prayers; do not treat as prescribed Good Friday liturgy",
+      "historical_type_provisional": "PRAY_OWNER_DEVOTION",
+      "identity_owner_comparison_target": "PRAY_PASSION",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-065",
+      "provisional_group_id": "CAT-WEISER-B-015",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-15-030"
+      ],
+      "original_indexed_printed_pages": [
+        205
+      ],
+      "direct_primary_pdf_page_printed": 205,
+      "direct_primary_pdf_page_zero_index": 222,
+      "adjacent_source_page_verified_for_claim": false,
+      "source_locator_correction": null,
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Good Friday voluntary quiet, simple meals and reduced entertainment alongside rigid fasting described; superstition separate",
+      "historical_type_provisional": "HISTORICAL_GOOD_FRIDAY_HOME",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-A1-FINAL66-066",
+      "provisional_group_id": "CAT-WEISER-B-022",
+      "inherited_1958_source_observation_ids": [
+        "WEI58-16-006"
+      ],
+      "original_indexed_printed_pages": [
+        213
+      ],
+      "direct_primary_pdf_page_printed": 212,
+      "direct_primary_pdf_page_zero_index": 229,
+      "adjacent_source_page_verified_for_claim": true,
+      "source_locator_correction": {
+        "old": [
+          213
+        ],
+        "new_claim_page": 212,
+        "correction_status": "ORIGINAL_INDEX_POINTER_IS_ADJACENT_TO_NARROW_ACTION_PASSAGE"
+      },
+      "source_verification": "ORIGINAL_WEISER_1958_PRINTED_PAGE_IMAGE_CHECKED",
+      "source_document_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "claim_evaluation": "PRIMARY_SOURCE_PASSAGE_SUPPORTS_NARROW_HISTORIC_CLAIM",
+      "narrowed_action_description_en": "Polish Easter Wesołego Alleluja greeting is printed on preceding page, distinct from Latin Surrexit Dominus vere",
+      "historical_type_provisional": "HISTORICAL_GREETING",
+      "identity_owner_comparison_target": "NO_AUTOMATIC_OWNER",
+      "historical_calendar_topic_only": true,
+      "exact_1962_calendar_context_editorially_approved": false,
+      "source_period_current_continuity_verified": false,
+      "independent_nonWeiser_witness_rechecked_in_this_pass": false,
+      "original_full_page_exhaustiveness_certified": false,
+      "distinct_identity_signed_off": false,
+      "exact_indulgenced_work_approved": false,
+      "indulgence_grant_ids": [],
+      "en_fr_editorial_copy_accepted": false,
+      "publication_authorized": false
+    }
+  ]
+}

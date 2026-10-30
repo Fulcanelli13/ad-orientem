@@ -1,0 +1,852 @@
+{
+  "schema": "AO_CUSTOMS_ULTRA_MASTER_V2_PITRE_ST_JOSEPH_CROSS_TOWN_ACTION_RELATIONSHIP_RESEARCH",
+  "as_of": "2026-10-30",
+  "source_author": "Giuseppe Pitrè",
+  "source_work": "Feste patronali in Sicilia (1900)",
+  "original_data_source": "customs-ultra-master-v2-wave13-200-source-scope-screen.v1.json",
+  "methodology": "Source-native comparisons of action descriptions and original OCR line pointers (not fresh facsimile reading). 43 observations are reclassified by their action relation; they remain one Pitrè authored source, not 43 customs and not four independent town witnesses. The prior source classification and originals remain unchanged.",
+  "counts": {
+    "unique_pitre_observations_screened": 43,
+    "regional_action_review_families": 7,
+    "independently_verified_primary_source_facsimiles_in_this_pass": 0,
+    "new_verified_independent_authors": 0,
+    "new_distinct_customs": 0,
+    "new_identity_mergers": 0,
+    "new_indulgence_grants": 0,
+    "calendar_publications": 0,
+    "named_local_collector_attributions_linked": 1,
+    "source_observations_with_new_collector_lineage": 15
+  },
+  "owner_comparisons": [
+    {
+      "owner_id": "SJOS-001",
+      "owner_label": "St Joseph's table and gifts to the poor",
+      "external_evidence_ids": [
+        "PIT1900-IT-008",
+        "PIT1900-IT-026",
+        "PIT1900-IT-036",
+        "PIT1900-IT-049"
+      ],
+      "relation": "CANDIDATE_SHARED_HOUSEHOLD_FEEDING_CORE_WITH_LOCAL_VARIANTS_NOT_CERTIFIED_ATTESTATIONS",
+      "review_reason": "Four places are discussed in Pitrè's 1900 edited compilation; Santa Croce Camerina's portion is historically attributed to local collector Giovanni Cannizzaro. Shared feast and hosting elements are not independent publications, and guests, dates, dishes and pageant roles differ.",
+      "approval": false
+    },
+    {
+      "owner_id": "SJOS-001",
+      "external_evidence_ids": [
+        "WEI-FAM56-106"
+      ],
+      "relation": "THEMATIC_HOUSEHOLD_JOSEPH_FEAST_ONLY",
+      "review_reason": "Weiser 1956 source observation is a generic suggested family celebration, not proof of the Pitrè Sicilian three-person votive-table form; printed p.91 is an index locator, not a page freshly checked in this pass.",
+      "approval": false
+    },
+    {
+      "owner_id": "CAT-WEISER-B-157",
+      "external_evidence_ids": [
+        "PIT1900-IT-011",
+        "PIT1900-IT-025",
+        "PIT1900-IT-037"
+      ],
+      "relation": "SIMILAR_BREAD_OBJECT_NOT_SPECIFIC_FRITELLI_MATCH",
+      "review_reason": "Decorated Sicilian Joseph breads and the Weiser fritelli/festival-breads provisional group require exact recipe, venue, recipient and original folio comparison before variant linking.",
+      "approval": false
+    },
+    {
+      "owner_id": "CAT-WEISER-B-158",
+      "external_evidence_ids": [
+        "PIT1900-IT-020",
+        "PIT1900-IT-052"
+      ],
+      "relation": "NO_MATCH_PROCESSION_VS_PILGRIMAGE_LAMB_MEAL",
+      "review_reason": "Statue processions in Ribera/Raccuia are not automatically Weiser's pilgrimage followed by a lamb meal.",
+      "approval": false
+    }
+  ],
+  "cross_book_independence": {
+    "pitre_town_descriptions": "ONE_1900_PUBLISHED_COMPILATION; SANTA_CROCE_LOCAL_COLLECTOR_GIOVANNI_CANNIZZARO_IDENTIFIED_BY_HISTORICAL_SOCIETY; ORIGINAL_LETTERS_NOT_READ; OTHER_TOWN_COLLECTORS_NOT_ESTABLISHED",
+    "weiser_1956": "DIFFERENT_AUTHOR_BUT_NO_INDEPENDENT_ATTESTATION_CERTIFIED",
+    "weiser_1958_provisional_groups": "SOURCE_TO_SOURCE_DETAILED_FOLIO_COMPARISON_PENDING"
+  },
+  "review_groups": [
+    {
+      "review_id": "SJ-PIT-01",
+      "action_family": "Household table with representative poor guests",
+      "source_observation_ids": [
+        "PIT1900-IT-008",
+        "PIT1900-IT-026",
+        "PIT1900-IT-036",
+        "PIT1900-IT-049"
+      ],
+      "provisional_existing_master_owner": "SJOS-001",
+      "proposed_relationship": "SHARED_DESCRIBED_HOSTING_CORE_REGIONAL_VARIANTS",
+      "editorial_reason": "Holy Family representation and hosting poor guests recur at Ribera, Canicattini, Santa Croce and Pachino; participant number and exact object differ. One author is not four independent corroborating sources.",
+      "observations": [
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-008",
+          "original_source_id": "PIT1900-IT-008",
+          "reported_action": "Invite three poor people to represent Joseph Mary and Jesus at a household votive meal",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16819,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/7"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-026",
+          "original_source_id": "PIT1900-IT-026",
+          "reported_action": "Seat an elderly person, woman and child representing the Holy Family at the bread table",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 16993,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/25"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-036",
+          "original_source_id": "PIT1900-IT-036",
+          "reported_action": "Invite three especially poor residents to a votive household feast representing the Holy Family",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17063,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/35"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-049",
+          "original_source_id": "PIT1900-IT-049",
+          "reported_action": "Households host sets of four to thirty poor guests known as vicchiareddi at the Joseph feast",
+          "reported_locality": "Pachino, Syracuse, Sicily",
+          "reported_feast": "St Joseph, March",
+          "original_ocr_line_anchor": 17216,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/48"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        }
+      ],
+      "original_facsimile_checked_for_this_comparison": false,
+      "cross_book_source_independence_established": false,
+      "present_day_prevalence_confirmed": false,
+      "valid_1962_ritual_authority_confirmed": false,
+      "custom_identity_merge_approved": false,
+      "indulgence_grant_confirmed": false,
+      "calendar_publication_allowed": false
+    },
+    {
+      "review_id": "SJ-PIT-02",
+      "action_family": "Food, prayer and table objects",
+      "source_observation_ids": [
+        "PIT1900-IT-010",
+        "PIT1900-IT-011",
+        "PIT1900-IT-012",
+        "PIT1900-IT-013",
+        "PIT1900-IT-014",
+        "PIT1900-IT-025",
+        "PIT1900-IT-028",
+        "PIT1900-IT-029",
+        "PIT1900-IT-037",
+        "PIT1900-IT-038",
+        "PIT1900-IT-045"
+      ],
+      "provisional_existing_master_owner": "SJOS-001",
+      "proposed_relationship": "COMPONENTS_NOT_ELEVEN_NEW_CUSTOMS",
+      "editorial_reason": "Table preparation, regionally specific breads, shared meals and prayers are distinguishable steps and objects within the local Joseph hospitality reports; do not manufacture standalone universal observances.",
+      "observations": [
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-010",
+          "original_source_id": "PIT1900-IT-010",
+          "reported_action": "Expose a linen-covered votive table on St Joseph's day",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16833,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/9"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PREPARATION_OBJECT_OR_MATERIAL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-011",
+          "original_source_id": "PIT1900-IT-011",
+          "reported_action": "Hang large cudduri loaves on the household walls",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16840,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/10"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PREPARATION_OBJECT_OR_MATERIAL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-012",
+          "original_source_id": "PIT1900-IT-012",
+          "reported_action": "Serve a first mixed dish to the three guests at a separate table",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16849,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/11"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-013",
+          "original_source_id": "PIT1900-IT-013",
+          "reported_action": "Offer the three guests seasoned sour-orange pieces as a ritual introductory food",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16854,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/12"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PREPARATION_OBJECT_OR_MATERIAL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-014",
+          "original_source_id": "PIT1900-IT-014",
+          "reported_action": "Then serve samples of dishes displayed at the house votive table",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16857,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/13"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-025",
+          "original_source_id": "PIT1900-IT-025",
+          "reported_action": "Prepare three large and several small ring breads for a devotion held on the nineteenth of the month",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 16989,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/24"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PREPARATION_OBJECT_OR_MATERIAL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-028",
+          "original_source_id": "PIT1900-IT-028",
+          "reported_action": "Distribute three larger breads to poor Holy Family figures and smaller breads to family clergy and friends",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 16996,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/27"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-029",
+          "original_source_id": "PIT1900-IT-029",
+          "reported_action": "Say an Our Father and Hail Mary before eating the Joseph bread",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 16999,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/28"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-037",
+          "original_source_id": "PIT1900-IT-037",
+          "reported_action": "Prepare enormous buccellati and vegetable pies for the three guests' table",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17069,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/36"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PREPARATION_OBJECT_OR_MATERIAL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-038",
+          "original_source_id": "PIT1900-IT-038",
+          "reported_action": "Set an image of the Holy Family with lights and elaborate food display",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17080,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/37"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PREPARATION_OBJECT_OR_MATERIAL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-045",
+          "original_source_id": "PIT1900-IT-045",
+          "reported_action": "Serve the invited Holy Family guests a local maccu dish at the votive meal",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17124,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/44"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        }
+      ],
+      "original_facsimile_checked_for_this_comparison": false,
+      "cross_book_source_independence_established": false,
+      "present_day_prevalence_confirmed": false,
+      "valid_1962_ritual_authority_confirmed": false,
+      "custom_identity_merge_approved": false,
+      "indulgence_grant_confirmed": false,
+      "calendar_publication_allowed": false
+    },
+    {
+      "review_id": "SJ-PIT-03",
+      "action_family": "Dramatised seeking of shelter",
+      "source_observation_ids": [
+        "PIT1900-IT-016",
+        "PIT1900-IT-017",
+        "PIT1900-IT-018",
+        "PIT1900-IT-040",
+        "PIT1900-IT-043",
+        "PIT1900-IT-044"
+      ],
+      "provisional_existing_master_owner": null,
+      "proposed_relationship": "LOCAL_PAGEANT_VARIANT_RITUAL_ROLE_VETO",
+      "editorial_reason": "Staged Holy Family clothing, refusal of shelter and welcome are distinct enactments tied to local feasts. A lay person playing Joseph giving a dramatic blessing is not a priestly liturgical blessing.",
+      "observations": [
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-016",
+          "original_source_id": "PIT1900-IT-016",
+          "reported_action": "Dress an elderly man young woman and boy as the Holy Family with a group dressed as apostles",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16880,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/15"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_SACRED_REPRESENTATION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-017",
+          "original_source_id": "PIT1900-IT-017",
+          "reported_action": "Stage a dramatic refusal of shelter at a closed inn door for the costumed Holy Family",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16900,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/16"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_SACRED_REPRESENTATION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-018",
+          "original_source_id": "PIT1900-IT-018",
+          "reported_action": "A host ceremonially welcomes the Holy Family group into his house for food",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16914,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/17"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_SACRED_REPRESENTATION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-040",
+          "original_source_id": "PIT1900-IT-040",
+          "reported_action": "Costume three invited poor residents as Joseph Mary and Jesus",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17094,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/39"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_SACRED_REPRESENTATION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-043",
+          "original_source_id": "PIT1900-IT-043",
+          "reported_action": "Pretend to refuse shelter until the Joseph figure demands entry",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17108,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/42"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_SACRED_REPRESENTATION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-044",
+          "original_source_id": "PIT1900-IT-044",
+          "reported_action": "The man representing Joseph gives a popular-formula domestic blessing as a staged gesture, not a priest's rite",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17114,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/43"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_SACRED_REPRESENTATION"
+        }
+      ],
+      "original_facsimile_checked_for_this_comparison": false,
+      "cross_book_source_independence_established": false,
+      "present_day_prevalence_confirmed": false,
+      "valid_1962_ritual_authority_confirmed": false,
+      "custom_identity_merge_approved": false,
+      "indulgence_grant_confirmed": false,
+      "calendar_publication_allowed": false
+    },
+    {
+      "review_id": "SJ-PIT-04",
+      "action_family": "Festival alms and food auctions",
+      "source_observation_ids": [
+        "PIT1900-IT-019",
+        "PIT1900-IT-021",
+        "PIT1900-IT-030",
+        "PIT1900-IT-031",
+        "PIT1900-IT-032",
+        "PIT1900-IT-046",
+        "PIT1900-IT-047",
+        "PIT1900-IT-048"
+      ],
+      "provisional_existing_master_owner": "SJOS-001",
+      "proposed_relationship": "CHARITY_COMPONENT_AND_FUNDRAISING_SEPARATE",
+      "editorial_reason": "Distribution of food to representative poor guests must be distinguished from public auction of donated goods for festival finance and distribution to festival workers.",
+      "observations": [
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-019",
+          "original_source_id": "PIT1900-IT-019",
+          "reported_action": "After the dramatic meal distribute decorated breads to the guest representatives",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16923,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/18"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-021",
+          "original_source_id": "PIT1900-IT-021",
+          "reported_action": "Distribute bread and laurel from the stràgula to festival workers after celebrations",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16952,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/20"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-030",
+          "original_source_id": "PIT1900-IT-030",
+          "reported_action": "Offer seasonal food and agricultural produce to Saint Joseph during his March feast",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 17003,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/29"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-031",
+          "original_source_id": "PIT1900-IT-031",
+          "reported_action": "Auction donated food and produce after the church ceremony for the festival cause",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 17010,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/30"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-032",
+          "original_source_id": "PIT1900-IT-032",
+          "reported_action": "Repeat offerings during the first Sunday in September, with particular wheat contributions",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 17020,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/31"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_VARIANT_OR_DATE"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-046",
+          "original_source_id": "PIT1900-IT-046",
+          "reported_action": "Extend hospitality from the ceremonial guests to other poor visitors at the votive house",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17137,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/45"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-047",
+          "original_source_id": "PIT1900-IT-047",
+          "reported_action": "Gather donated wheat poultry bread and other goods for the festival auction",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17143,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/46"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-048",
+          "original_source_id": "PIT1900-IT-048",
+          "reported_action": "Auction household donations beside the church for the saint's festival fund",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17149,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/47"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL"
+        }
+      ],
+      "original_facsimile_checked_for_this_comparison": false,
+      "cross_book_source_independence_established": false,
+      "present_day_prevalence_confirmed": false,
+      "valid_1962_ritual_authority_confirmed": false,
+      "custom_identity_merge_approved": false,
+      "indulgence_grant_confirmed": false,
+      "calendar_publication_allowed": false
+    },
+    {
+      "review_id": "SJ-PIT-05",
+      "action_family": "Processions, Mass and ministerial acts",
+      "source_observation_ids": [
+        "PIT1900-IT-001",
+        "PIT1900-IT-002",
+        "PIT1900-IT-007",
+        "PIT1900-IT-020",
+        "PIT1900-IT-027",
+        "PIT1900-IT-033",
+        "PIT1900-IT-041",
+        "PIT1900-IT-052"
+      ],
+      "provisional_existing_master_owner": null,
+      "proposed_relationship": "LOCAL_PUBLIC_RITE_ACTOR_AND_DATE_SEPARATE",
+      "editorial_reason": "Local festival processions, attendance at Mass and blessing of poor guests are not automatically lay household customs. Raccuia's procession after Easter is not the March observance.",
+      "observations": [
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-001",
+          "original_source_id": "PIT1900-IT-001",
+          "reported_action": "Observe the local ceremonial Entry of Laurel on Sunday before 19 March",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16751,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/0"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PROCESSIONAL_ACTION_OR_COMPONENT"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-002",
+          "original_source_id": "PIT1900-IT-002",
+          "reported_action": "Appoint festival officers to collect laurel boughs outside town and enter on horseback",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16760,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/1"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-007",
+          "original_source_id": "PIT1900-IT-007",
+          "reported_action": "Stage the torchlit eve procession of the patronal festival",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16801,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/6"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PROCESSIONAL_ACTION_OR_COMPONENT"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-020",
+          "original_source_id": "PIT1900-IT-020",
+          "reported_action": "Escort the St Joseph statue in a town procession followed by the stràgula",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16947,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/19"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PROCESSIONAL_ACTION_OR_COMPONENT"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-027",
+          "original_source_id": "PIT1900-IT-027",
+          "reported_action": "Attend a sung Mass before distribution of the Joseph breads",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 16995,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/26"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "REPORTED_DEVOTIONAL_ACTION"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-033",
+          "original_source_id": "PIT1900-IT-033",
+          "reported_action": "Carry Saint Joseph's statue with ceremonial banner play at the patronal September celebration",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 17030,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/32"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "PROCESSIONAL_ACTION_OR_COMPONENT"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-041",
+          "original_source_id": "PIT1900-IT-041",
+          "reported_action": "Have the three invited guests first hear Mass and receive a special church blessing",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17099,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/40"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "BLESSING_OR_RITUAL_APPROVAL_NOT_CHECKED"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-052",
+          "original_source_id": "PIT1900-IT-052",
+          "reported_action": "Hold a secondary Joseph procession on the third Sunday after Easter",
+          "reported_locality": "Raccuia, Messina, Sicily",
+          "reported_feast": "St Joseph, third Sunday after Easter in reported custom",
+          "original_ocr_line_anchor": 17226,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/51"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_VARIANT_OR_DATE"
+        }
+      ],
+      "original_facsimile_checked_for_this_comparison": false,
+      "cross_book_source_independence_established": false,
+      "present_day_prevalence_confirmed": false,
+      "valid_1962_ritual_authority_confirmed": false,
+      "custom_identity_merge_approved": false,
+      "indulgence_grant_confirmed": false,
+      "calendar_publication_allowed": false
+    },
+    {
+      "review_id": "SJ-PIT-06",
+      "action_family": "Local feast-date scope",
+      "source_observation_ids": [
+        "PIT1900-IT-024",
+        "PIT1900-IT-035",
+        "PIT1900-IT-050"
+      ],
+      "provisional_existing_master_owner": null,
+      "proposed_relationship": "HISTORICAL_DATE_VARIANTS_NOT_CALENDAR_RULES",
+      "editorial_reason": "Local historical feast dates in September and July and three-day market/festival sequences do not modify the universal March 19 calendar date.",
+      "observations": [
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-024",
+          "original_source_id": "PIT1900-IT-024",
+          "reported_action": "Observe two local Joseph feasts, 19 March and the first Sunday of September",
+          "reported_locality": "Canicattini (Syracuse), Sicily",
+          "reported_feast": "St Joseph (19 March; historically first September Sunday)",
+          "original_ocr_line_anchor": 16972,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/23"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_VARIANT_OR_DATE"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-035",
+          "original_source_id": "PIT1900-IT-035",
+          "reported_action": "Observe a three-day Joseph festival with two initial market days and principal 19 March observance",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17049,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/34"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_VARIANT_OR_DATE"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-050",
+          "original_source_id": "PIT1900-IT-050",
+          "reported_action": "Celebrate another three-day patronal Joseph festival on 15 July as well as 19 March",
+          "reported_locality": "Spadafora San Martino, Messina, Sicily",
+          "reported_feast": "St Joseph, March and July",
+          "original_ocr_line_anchor": 17219,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/49"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "HISTORICAL_VARIANT_OR_DATE"
+        }
+      ],
+      "original_facsimile_checked_for_this_comparison": false,
+      "cross_book_source_independence_established": false,
+      "present_day_prevalence_confirmed": false,
+      "valid_1962_ritual_authority_confirmed": false,
+      "custom_identity_merge_approved": false,
+      "indulgence_grant_confirmed": false,
+      "calendar_publication_allowed": false
+    },
+    {
+      "review_id": "SJ-PIT-07",
+      "action_family": "Reported folk beliefs and unsafe gestures",
+      "source_observation_ids": [
+        "PIT1900-IT-015",
+        "PIT1900-IT-022",
+        "PIT1900-IT-039"
+      ],
+      "provisional_existing_master_owner": null,
+      "proposed_relationship": "DO_NOT_ENDORSE_OR_INSTRUCT",
+      "editorial_reason": "Gun firing at dish presentation, alleged therapeutic laurel and warnings over food consumption are descriptions, not endorsed Catholic rites or instructions.",
+      "observations": [
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-015",
+          "original_source_id": "PIT1900-IT-015",
+          "reported_action": "Householder fires a gun at each successive dish presented to the guests",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16862,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/14"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-022",
+          "original_source_id": "PIT1900-IT-022",
+          "reported_action": "Ascribe stomach-curative efficacy to laurel infusions from the stràgula",
+          "reported_locality": "Ribera, Agrigento, Sicily",
+          "reported_feast": "St Joseph, 19 March and preceding days",
+          "original_ocr_line_anchor": 16955,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/21"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED"
+        },
+        {
+          "evidence_id": "external_source_observations_pitre_original_1900_ocr:PIT1900-IT-039",
+          "original_source_id": "PIT1900-IT-039",
+          "reported_action": "Report warning that food may not be taken before the three guests' symbolic blessing",
+          "reported_locality": "Santa Croce Camerina, Ragusa, Sicily",
+          "reported_feast": "St Joseph, 17–19 March",
+          "original_ocr_line_anchor": 17084,
+          "original_record_pointer": {
+            "repo_path": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+            "json_pointer": "/records/38"
+          },
+          "source_record_id_matched": true,
+          "source_classification_as_reported": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED"
+        }
+      ],
+      "original_facsimile_checked_for_this_comparison": false,
+      "cross_book_source_independence_established": false,
+      "present_day_prevalence_confirmed": false,
+      "valid_1962_ritual_authority_confirmed": false,
+      "custom_identity_merge_approved": false,
+      "indulgence_grant_confirmed": false,
+      "calendar_publication_allowed": false
+    }
+  ],
+  "unresolved_gates": [
+    "Check original Pitrè 1900 folio image against OCR-line anchors",
+    "Compare named published editions and identify whether Weiser borrowed an account",
+    "Distinguish local non-clerical drama from approved Roman Ritual or parish sacramentals",
+    "Verify historic versus current locality observance and who participates",
+    "Check any claimed indulgence by its exact primary grant instrument and conditions"
+  ],
+  "release_freeze": "RESEARCH_ONLY_NO_MERGE_NO_CALENDAR_OR_PUBLICATION_UPDATE",
+  "source_lineage_followup": "customs-ultra-master-v2-pitre-cannizzaro-witness-lineage-20261030.v1.json"
+}

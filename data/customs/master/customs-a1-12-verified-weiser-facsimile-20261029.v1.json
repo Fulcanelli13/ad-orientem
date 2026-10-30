@@ -1,0 +1,437 @@
+{
+  "schema": "AO_CUSTOMS_A1_12_WEISER_PRIMARY_FACSIMILE_SOURCE_CHECKS_V1",
+  "as_of": "2026-10-29",
+  "status": "TWELVE_DIRECT_PRINTED_PAGE_SCANS_CHECKED; NO_FULL_FOLIO_EXHAUSTIVENESS",
+  "purpose": "Resolve first twelve evidence-priority Weiser practices against printed original pages, retain regional and ritual qualifications, and correct source pointers without overwriting inherited research IDs.",
+  "primary_pdf_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+  "pdf_index_rule": "zero_indexed_pdf_page = printed_page +17 (within checked chapter spans)",
+  "summary": {
+    "source_witnesses_checked": 12,
+    "start_page_corrections": 2,
+    "passage_starts_preceding_original_pointer": 1,
+    "unchanged_pointer_support": 9,
+    "new_approved_canonical_identities": 0,
+    "new_calendar_dates_approved": 0,
+    "new_indulgence_grant_matches": 0,
+    "source_based_historic_temporal_associations": 12,
+    "fixed_month_day_contexts": 3
+  },
+  "original_printed_source_page_corrections": [
+    {
+      "id": "CAT-WEISER-A-029",
+      "previous": 58,
+      "verified_start": 57
+    },
+    {
+      "id": "CAT-WEISER-A-111",
+      "previous": 185,
+      "verified_start": 184
+    }
+  ],
+  "notes": [
+    "The source image itself is the original primary witness for the limited described action; scanned source excerpts are paraphrased, not fully reproduced.",
+    "No original pages or complete 28-chapter text are being certified exhaustively.",
+    "Weiser's 1958 reports can describe pre-Christian practices; historical report does not imply Catholic endorsement or continuous practice.",
+    "A different parish source may record an identically named but distinct local Advent custom.",
+    "Page-number corrections are append-only: leave original source registry IDs intact until downstream crosswalk reconciliation.",
+    "Source-supported historical occasion is not the same as a current parish event. Fixed Gregorian hints are restricted to the historically reported Latin-context cases."
+  ],
+  "cases": [
+    {
+      "provisional_group_id": "CAT-WEISER-A-061",
+      "source_observation_ids": [
+        "WEI58-09-001"
+      ],
+      "working_label": "Ukrainian didukh Christmas sheaf",
+      "prior_original_printed_page": 116,
+      "verified_printed_page_start": 116,
+      "pdf_page_zero_index": 133,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "Ukrainian Christmas Eve family brings a wheat sheaf into the house and sets it upright; includes folklore language not to be endorsed as doctrine",
+      "scope_disposition": "EASTERN_CATHOLIC_REGIONAL_HISTORICAL_CONTEXT",
+      "limits_en": "Do not label universal 1962 Roman-rite practice",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_REGIONAL_HOLY_EVE",
+        "when": "Ukrainian Christmas Eve (calendar usage varies)",
+        "calendar_owner": "OTHER_RITE_OR_LOCAL_CALENDAR",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": true,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-027",
+      "source_observation_ids": [
+        "WEI58-05-008"
+      ],
+      "working_label": "Alpine Marian-image visits between homes in Advent",
+      "prior_original_printed_page": 57,
+      "verified_printed_page_start": 57,
+      "pdf_page_zero_index": 74,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "Alpine households carry an image of the expectant Blessed Virgin from house to house over nine evenings",
+      "scope_disposition": "ALPINE_ADVENT_HOME_IMAGE_RELAY",
+      "limits_en": "Separate from Saint Joseph image-relay and Herbergsuchen dramatic play",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_ADVENT_NINE_EVENINGS",
+        "when": "Nine evenings before Christmas in the region described",
+        "calendar_owner": "CALENDAR_SEASON_OR_LOCAL_OBSERVANCE",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": true,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-029",
+      "source_observation_ids": [
+        "WEI58-05-010"
+      ],
+      "working_label": "Herbergsuchen lodging-search devotional drama",
+      "prior_original_printed_page": 58,
+      "verified_printed_page_start": 57,
+      "pdf_page_zero_index": 74,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "PRINTED_PAGE_START_CORRECTION",
+      "source_support_paraphrase_en": "German Herbergsuchen is a dramatic representation of Mary and Joseph seeking lodging, described on page 57; page 58 continues with Posada comparison",
+      "scope_disposition": "GERMAN_ADVENT_DRAMATIC_PLAY",
+      "limits_en": "Do not collapse into Austrian parish Mary-image house relay or Spanish Posadas",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_ADVENT_PLAY",
+        "when": "Advent lodging-seeking dramatic performance; local date not specified",
+        "calendar_owner": "CALENDAR_SEASON_OR_LOCAL_OBSERVANCE",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": true,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-025",
+      "source_observation_ids": [
+        "WEI58-05-006"
+      ],
+      "working_label": "German Advent picture calendar",
+      "prior_original_printed_page": 56,
+      "verified_printed_page_start": 56,
+      "pdf_page_zero_index": 73,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "Advent picture calendars of German origin have windows opened by children in anticipation of Christmas",
+      "scope_disposition": "GERMAN_ADVENT_CALENDAR_HOUSEHOLD",
+      "limits_en": "Historical description; not a universal requirement",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_DECEMBER_PREPARATION",
+        "when": "December picture-calendar windows leading to Christmas Eve",
+        "calendar_owner": "CALENDAR_SEASON",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": false,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-033",
+      "source_observation_ids": [
+        "WEI58-06-008"
+      ],
+      "working_label": "Christkind gift-giving announced with a bell",
+      "prior_original_printed_page": 74,
+      "verified_printed_page_start": 74,
+      "pdf_page_zero_index": 91,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "A Christmas Eve gift-giving scene reports a bell announcing Christkind-associated presents and family singing at the crib",
+      "scope_disposition": "REGIONAL_CHRISTKIND_CHRISTMAS_EVE",
+      "limits_en": "Differentiate from other regional St Nicholas gift practices",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_CHRISTMAS_EVE",
+        "when": "Christmas Eve, within the described central-European context",
+        "calendar_owner": "CALENDAR_FEAST_CONTEXT",
+        "fixed_gregorian_date": "12-24",
+        "locally_scheduled": false,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-045",
+      "source_observation_ids": [
+        "WEI58-08-002"
+      ],
+      "working_label": "Large Alpine Nativity dioramas",
+      "prior_original_printed_page": 96,
+      "verified_printed_page_start": 95,
+      "pdf_page_zero_index": 112,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "PASSAGE_START_PRECEDES_POINTER",
+      "source_support_paraphrase_en": "Description of elaborate mountain-region Christmas cribs begins on printed page 95 and continues on 96",
+      "scope_disposition": "ALPINE_CHRISTMAS_CRIB_REGIONAL",
+      "limits_en": "Do not infer 1962 rubrical direction from domestic crib design",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_ADVENT_THROUGH_CHRISTMAS",
+        "when": "Winter Advent evenings preparing and enlarging a Christmas crib",
+        "calendar_owner": "CALENDAR_SEASON",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": false,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-B-001",
+      "source_observation_ids": [
+        "WEI58-15-002"
+      ],
+      "working_label": "Holy Week household cleaning before the Triduum",
+      "prior_original_printed_page": 188,
+      "verified_printed_page_start": 188,
+      "pdf_page_zero_index": 205,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "Traditional Easter cleaning in the three days after Palm Sunday is described in multiple countries, including decoration in Poland",
+      "scope_disposition": "HOLY_WEEK_HOUSEHOLD_CUSTOM",
+      "limits_en": "Historical report is not a universal liturgical rule",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_HOLY_WEEK_POST_PALM",
+        "when": "Monday through Wednesday after Palm Sunday as described",
+        "calendar_owner": "CALENDAR_LITURGICAL_DAY_RELATION",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": false,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-071",
+      "source_observation_ids": [
+        "WEI58-10-004"
+      ],
+      "working_label": "Polish szopka Nativity tableaux and children's plays",
+      "prior_original_printed_page": 124,
+      "verified_printed_page_start": 124,
+      "pdf_page_zero_index": 141,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "Northern Slavic szopka puppet theatre and children's Christmas drama described on printed page 124",
+      "scope_disposition": "SLAVIC_CHRISTMAS_PUPPET_PERFORMANCE",
+      "limits_en": "Unrelated UNESCO Krakow cribs may be comparative, not same identity",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_CHRISTMAS_CYCLE",
+        "when": "Christmas festivities and visiting drama, locally variable",
+        "calendar_owner": "CALENDAR_SEASON_OR_LOCAL_OBSERVANCE",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": true,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-111",
+      "source_observation_ids": [
+        "WEI58-14-026"
+      ],
+      "working_label": "French Canadian Mi-Carême meal and gathering",
+      "prior_original_printed_page": 185,
+      "verified_printed_page_start": 184,
+      "pdf_page_zero_index": 201,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "PRINTED_PAGE_START_CORRECTION",
+      "source_support_paraphrase_en": "Mid-Lent is described on printed page 184 as a joyous meal and home entertainment in France and Canada, but the passage does not isolate a specific French-Canadian region",
+      "scope_disposition": "FRANCE_AND_CANADA_MID_LENT",
+      "limits_en": "Do not overstate region or uninterrupted contemporary continuity",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_MID_LENT",
+        "when": "Mid-Lent / around Laetare Sunday; the source describes France and Canada",
+        "calendar_owner": "CALENDAR_LITURGICAL_WEEK",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": true,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-A-037",
+      "source_observation_ids": [
+        "WEI58-06-015"
+      ],
+      "working_label": "French family réveillon after Midnight Mass",
+      "prior_original_printed_page": 76,
+      "verified_printed_page_start": 76,
+      "pdf_page_zero_index": 93,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "French family réveillon meal after Midnight Mass explicitly described",
+      "scope_disposition": "FRANCE_CHRISTMAS_AFTER_MIDNIGHT_MASS",
+      "limits_en": "Not a required act of Mass participation",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_CHRISTMAS_MIDNIGHT_MASS_AFTER",
+        "when": "Following Midnight Mass at Christmas, locally described French domestic meal",
+        "calendar_owner": "CALENDAR_FEAST_CONTEXT",
+        "fixed_gregorian_date": "12-25",
+        "locally_scheduled": false,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-B-057",
+      "source_observation_ids": [
+        "WEI58-19-003"
+      ],
+      "working_label": "Pentecost decorating the home or church with greenery",
+      "prior_original_printed_page": 248,
+      "verified_printed_page_start": 248,
+      "pdf_page_zero_index": 265,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "Home and church decoration with flowers and greenery linked to Pentecost, including a Polish name",
+      "scope_disposition": "PENTECOST_GREENERY_REGIONAL",
+      "limits_en": "Historical description not a specific modern parish announcement",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_PENTECOST",
+        "when": "Pentecost Sunday",
+        "calendar_owner": "CALENDAR_MOVABLE_FEAST",
+        "fixed_gregorian_date": null,
+        "locally_scheduled": false,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-B-092",
+      "source_observation_ids": [
+        "WEI58-22-008"
+      ],
+      "working_label": "Martinmas thanksgiving Mass followed by village harvest feast",
+      "prior_original_printed_page": 270,
+      "verified_printed_page_start": 270,
+      "pdf_page_zero_index": 287,
+      "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "verification_type": "SAMPLED_DIRECT_ORIGINAL_PAGE_IMAGE_REVIEW",
+      "result": "ORIGINAL_PASSAGE_PRESENT",
+      "source_support_paraphrase_en": "Saint Martin feast November 11 is described as combining churchgoing with local harvest festivities",
+      "scope_disposition": "MARTINMAS_LOCAL_HARVEST_FEAST",
+      "limits_en": "Festival social activities not automatically indulgenced or a universal liturgical obligation",
+      "full_original_page_exhaustively_verified": false,
+      "independent_secondary_source_currently_rechecked": false,
+      "identity_merge_approved": false,
+      "calendar_observance_approved": false,
+      "current_indulgence_grant_associated": false,
+      "review_method": "Original page-image screenshot manually examined 2026-10-29; page-number offset verified using printed page 12 on PDF page index 29",
+      "primary_source_temporal_evidence": {
+        "temporal_type": "HISTORIC_ST_MARTIN_DAY",
+        "when": "Saint Martin of Tours feast / Martinmas",
+        "calendar_owner": "CALENDAR_FEAST_CONTEXT",
+        "fixed_gregorian_date": "11-11",
+        "locally_scheduled": false,
+        "source_firsthand_verified": true,
+        "calendar_runtime_enabled": false,
+        "final_current_1962_application_approved": false,
+        "indulgence_grant_inferred": false
+      }
+    }
+  ]
+}

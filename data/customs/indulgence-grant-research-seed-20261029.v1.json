@@ -1,0 +1,1002 @@
+{
+  "schema": "AO_CUSTOMS_INDULGENCE_AUTHORITY_AND_CROSSWALK_RESEARCH_V1",
+  "as_of": "2026-10-29",
+  "status": "RESEARCH_ONLY_NOT_IN_CALENDAR_RUNTIME",
+  "purpose": "Separate authoritative current grant definitions from historical Catholic customs, with precise work/occasion/conditions and no grant attribution by resemblance.",
+  "source_scope": {
+    "primary_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+    "primary_edition": "1999 fourth edition, web-hosted by Holy See",
+    "exhaustiveness": "23 STRUCTURED GRANT CASES FROM SELECT CONCESSIONS_NOT_ENTIRE_ENCHIRIDION_AND_NOT_ALL_LATER_DECREES",
+    "current_special_decrees_screen": "NOT_COMPLETE",
+    "raccolta_historical_edition": "SEPARATE_UNREVIEWED",
+    "authority_checks": {
+      "official_document_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "norms": "Norms 17–20",
+      "concessions": [
+        "1",
+        "2",
+        "3",
+        "7",
+        "13",
+        "14",
+        "17",
+        "21",
+        "22",
+        "26",
+        "28",
+        "29",
+        "33"
+      ],
+      "status": "DIRECT_ONLINE_LATIN_TEXT_CHECKED",
+      "later_decrees_complete": false
+    }
+  },
+  "general_plenary_conditions": {
+    "id": "EI99_GENERAL_NORMS_17_20",
+    "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+    "refs": [
+      "Normae N. 17 §§1–2",
+      "Normae N. 18 §§1–2",
+      "Normae N. 19",
+      "Normae N. 20 §§1–5"
+    ],
+    "conditions_en": [
+      "Perform the precise indulgenced work with the requisite devout disposition",
+      "Have at least the general intention to gain the indulgence and perform the prescribed work in the required manner and time",
+      "Be baptized, not excommunicated, in the state of grace at least at the end of the prescribed work, and—specifically for a plenary indulgence—have complete detachment from all sin, even venial sin",
+      "Sacramental confession",
+      "Eucharistic Communion",
+      "Prayer for the intentions of the Supreme Pontiff"
+    ],
+    "temporal_note_en": "The three sacramental/prayer conditions may be fulfilled on days before or after the work; Communion and prayer for the Pope's intentions are fittingly made on the day of the indulgenced work. See the norms for detailed application.",
+    "frequency_note_en": "Ordinarily one plenary indulgence per day, apart from the exception at the point of death; one sacramental confession may serve several plenary indulgences but each plenary indulgence requires its own Communion and prayer for the Pope's intentions.",
+    "incomplete_conditions_note_en": "If the required complete disposition or plenary conditions are lacking, the grant may be partial under Norm N.7, subject to the other norms and exceptions.",
+    "source_text_check": "PRIMARY_LATIN_WITNESS_DIRECTLY_RECHECKED_2026_10_29",
+    "citation_correction": "The previous reference to Norms 7–10 was erroneous: those norms primarily discuss diocesan/eparchial competence. The ordinary plenary conditions, eligibility, and frequency are set out in Norms 17–20."
+  },
+  "grants": [
+    {
+      "grant_id": "EI99-7-1-2",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "7 §1, 2°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly recite the stanzas of Tantum ergo during solemn reposition of the Most Blessed Sacrament after the Mass of the Lord's Supper",
+      "title_en": "Holy Thursday Tantum ergo",
+      "occasion_or_frequency": "Holy Thursday",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Solemn reposition after the Mass in Cena Domini; mere visits to altars of repose do not constitute this specific prescribed work"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-7-1-3",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "7 §1, 3°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly take part in a solemn Eucharistic procession, whether inside or outside a church",
+      "title_en": "Solemn Eucharistic procession",
+      "occasion_or_frequency": "When a genuine solemn Eucharistic procession occurs; particularly Corpus Christi",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Floral carpets and devotional decorations are not in themselves the specified participation"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-29-1-1",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "29 §1, 1°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly visit a cemetery and pray, even mentally, for the departed",
+      "title_en": "Prayer at a cemetery, 1–8 November",
+      "occasion_or_frequency": "1–8 November",
+      "beneficiary": "ONLY_SOULS_IN_PURGATORY",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "The place must be a cemetery and the prayer must be for the departed"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-29-1-2",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "29 §1, 2°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly visit a church or oratory and recite the Our Father and Creed there",
+      "title_en": "All Souls church visit",
+      "occasion_or_frequency": "All Souls' Day, or an authorised substitute day under the Ordinary's consent",
+      "beneficiary": "ONLY_SOULS_IN_PURGATORY",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Prescribed church/oratory visit and both prayers; a generic All Souls prayer is insufficient"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-33-1-5",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "33 §1, 5°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly visit a parish church and there recite the Our Father and Creed",
+      "title_en": "Parish church feast or Portiuncula visit",
+      "occasion_or_frequency": "Titular solemnity of the parish church or 2 August",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "The grant applies to the qualifying parish church visit, not merely a village fair, patronal procession or local celebration"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-33-1-4",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "33 §1, 4°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly visit a shrine constituted by competent ecclesiastical authority, and there recite the Our Father and Creed",
+      "title_en": "Visit an officially established shrine",
+      "occasion_or_frequency": "The shrine's titular solemnity; once in a year on a chosen day; or on a group pilgrimage",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Official shrine status and one of the specific occasions must be established; not any destination bearing a religious name"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-26-1-1",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "26 §1, 1°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly participate in solemn singing or recitation of Veni Creator in a church or oratory",
+      "title_en": "Veni Creator on 1 January or Pentecost",
+      "occasion_or_frequency": "1 January or Pentecost",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Public solemn recitation or singing in church/oratory; a private casual recitation is not the specified plenary work"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-26-1-2",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "26 §1, 2°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly participate in solemn singing or recitation of the Te Deum in a church or oratory, giving thanks for the year's benefits",
+      "title_en": "Te Deum on 31 December",
+      "occasion_or_frequency": "31 December",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Public solemn recitation or singing in church/oratory, with thanksgiving purpose"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-7-1-1",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "7 §1, 1°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly visit the Most Blessed Sacrament to adore for at least half an hour",
+      "title_en": "Eucharistic adoration for half an hour",
+      "occasion_or_frequency": "Any day",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "A mere church visit or tour does not fulfil the specified work"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-1-FIRST-CONSECRATION",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "1",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Members of the family devoutly recite an approved prayer before an image of the Sacred Heart or Holy Family on the day the family is first consecrated",
+      "title_en": "First family consecration to Sacred Heart or Holy Family",
+      "occasion_or_frequency": "Day of the family's first consecration",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Priest or deacon conducts the rite if possible; not every family enthronement or later renewal is the first consecration",
+        "Members of the family are the specified beneficiaries"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-1-ANNIVERSARY",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "1",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PARTIAL",
+      "prescribed_work_en": "The anniversary observance described in the family consecration concession",
+      "title_en": "Family consecration anniversary",
+      "occasion_or_frequency": "Anniversary of the family consecration",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": null,
+      "special_conditions": [
+        "Do not call an anniversary plenary on the basis of the first consecration grant"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-2-CHRIST-KING",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "2",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Publicly recite Iesu dulcissime, Redemptor, the act of dedication of mankind to Christ the King",
+      "title_en": "Public Christ the King act of dedication",
+      "occasion_or_frequency": "Solemnity of Our Lord Jesus Christ, King of the Universe",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "The same act receives a partial indulgence in other circumstances",
+        "The difference between the 1999 law's Christ the King solemnity and the 1962 calendar date must be resolved, not assumed"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-3-SACRED-HEART",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "3",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Publicly recite Iesu dulcissime, the Sacred Heart act of reparation",
+      "title_en": "Public Sacred Heart act of reparation",
+      "occasion_or_frequency": "Solemnity of the Most Sacred Heart of Jesus",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "The public act on the solemnity is specified; private recitation in other circumstances is partial, not this plenary grant"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-13-GOOD-FRIDAY",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "13, 1°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly take part in the adoration of the Cross during the solemn Good Friday liturgical action",
+      "title_en": "Good Friday veneration of the Cross",
+      "occasion_or_frequency": "Good Friday",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "A privately held devotional crucifix or self-directed ceremony is not automatically the prescribed liturgical action"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-13-STATIONS",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "13, 2°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly make the Stations of the Cross at legitimately erected Stations, meditating on the Passion and death of Christ",
+      "title_en": "Stations of the Cross",
+      "occasion_or_frequency": "Any day",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Fourteen properly erected crosses are required; movement from station to station, or the leader alone moving where a congregation cannot, under the specified provisions",
+        "Source also sets out approved alternatives for legitimately impeded faithful"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-17-ROSARY",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "17 §1, 1°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Devoutly recite at least five continuous decades of the Rosary with meditation on the mysteries in a church/oratory, family, religious community, association, or assembled group",
+      "title_en": "Five-decade Rosary in church, family or group",
+      "occasion_or_frequency": "Any day",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "Five decades must be continuous and mysteries meditated upon",
+        "Public recitation must announce the mysteries according to approved local practice; other settings may receive partial indulgence"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-22-NOVENA",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "22, 1°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PARTIAL",
+      "prescribed_work_en": "Devoutly take part in an approved public novena exercise",
+      "title_en": "Participation in a public novena",
+      "occasion_or_frequency": "When the public novena is held",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": null,
+      "special_conditions": [
+        "A family custom mentioning nine days is not by itself evidence of an approved publicly celebrated novena"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-28-BAPTISM-RENEWAL",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "28 §1",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PLENARY",
+      "prescribed_work_en": "Renew baptismal promises with an approved formula during the Easter Vigil celebration or on the anniversary of one's Baptism",
+      "title_en": "Baptismal promises renewed",
+      "occasion_or_frequency": "Easter Vigil or baptism anniversary",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
+      "special_conditions": [
+        "A general seasonal custom is not an automatic act of baptismal renewal"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-17-ANGELUS",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "17 §2, 2°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PARTIAL",
+      "prescribed_work_en": "Devoutly recite Angelus with its versicles and prayer at dawn, noon or evening, or Regina caeli and the customary prayer during Easter time",
+      "title_en": "Angelus or Regina caeli",
+      "occasion_or_frequency": "Daily at the customary hours; Regina caeli in Easter time",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": null,
+      "special_conditions": [
+        "Relevant to Pray's existing Angelus reader, not to generic Marian decoration customs"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-29-CEMETERY-PARTIAL",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "29 §2, 1°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PARTIAL",
+      "prescribed_work_en": "Devoutly visit a cemetery and pray, even mentally, for the departed",
+      "title_en": "Cemetery prayer for deceased outside plenary period",
+      "occasion_or_frequency": "Any day, with the plenary provision separately specified for 1–8 November",
+      "beneficiary": "ONLY_SOULS_IN_PURGATORY",
+      "usual_conditions_ref": null,
+      "special_conditions": [
+        "This concession is applicable only to the souls in Purgatory"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-29-REQUIEM-PARTIAL",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "29 §2, 2°",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PARTIAL",
+      "prescribed_work_en": "Devoutly recite the invocation Requiem aeternam, or Lauds or Vespers of the Office of the Dead",
+      "title_en": "Requiem aeternam for the departed",
+      "occasion_or_frequency": "Any day",
+      "beneficiary": "ONLY_SOULS_IN_PURGATORY",
+      "usual_conditions_ref": null,
+      "special_conditions": [
+        "The concession is applied only to souls in Purgatory; exact devotional work, not all prayers for the dead"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-14-OBJECT-PARTIAL",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "14 §2",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PARTIAL",
+      "prescribed_work_en": "Devoutly use a cross, crucifix, rosary, scapular or medal duly blessed by a priest or deacon",
+      "title_en": "Devout use of blessed devotional objects",
+      "occasion_or_frequency": "Any day",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": null,
+      "special_conditions": [
+        "The named objects do not include every blessed household item, candle, palm or vessel; do not generalise"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    },
+    {
+      "grant_id": "EI99-21-SAINT-DAY-PRAYER",
+      "authority": "Apostolic Penitentiary",
+      "law": "Enchiridion Indulgentiarum, fourth edition (1999)",
+      "exact_concession": "21 §1",
+      "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "grant_type": "PARTIAL",
+      "prescribed_work_en": "On the saint's calendar memorial, devoutly say a prayer in the saint's honour taken from the Missal or otherwise lawfully approved",
+      "title_en": "Prayer on a saint's calendar memorial",
+      "occasion_or_frequency": "On the saint's memorial as registered by the relevant calendar",
+      "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
+      "usual_conditions_ref": null,
+      "special_conditions": [
+        "A patronal fair or name-day gift alone is not the prescribed prayer"
+      ],
+      "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
+      "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
+      "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
+    }
+  ],
+  "canonical_customs_crosswalk": [
+    {
+      "custom_id": "DOM-002",
+      "publication_state": "PUBLISHED",
+      "title": "Domestic holy-water font / bénitier de chevet",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DOM-006",
+      "publication_state": "PUBLISHED",
+      "title": "Family consecration to the Sacred Heart",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-1-FIRST-CONSECRATION",
+        "EI99-1-ANNIVERSARY"
+      ],
+      "work_match_type": "FIRST_VS_ANNIVERSARY_MUST_BE_DISTINGUISHED",
+      "guardrail": "Family first consecration requires the exact rite and prayer before the relevant image; anniversary is partial.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DOM-007",
+      "publication_state": "PUBLISHED",
+      "title": "Intronement of a Sacred Heart image in the home",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-1-FIRST-CONSECRATION"
+      ],
+      "work_match_type": "ENTHRONEMENT_NOT_AUTOMATICALLY_FIRST_FAMILY_CONSECRATION",
+      "guardrail": "Intronement of an image alone is not enough; verify first consecration and prescribed prayer.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "LIFE-002",
+      "publication_state": "PUBLISHED",
+      "title": "Relevailles / blessing after childbirth",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DEV-001",
+      "publication_state": "PUBLISHED",
+      "title": "May as the month of Mary",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DEV-006",
+      "publication_state": "PUBLISHED",
+      "title": "Pilgrimage to a shrine or holy place",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-33-1-4"
+      ],
+      "work_match_type": "SHRINE_STATUS_AND_WORK_NOT_AUTOMATIC",
+      "guardrail": "Only an officially established qualifying shrine visit with the required prayers and eligible occasion matches.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DEV-007",
+      "publication_state": "CONTEXT_ONLY",
+      "title": "Regional pardons and shrine anniversaries",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DEV-009",
+      "publication_state": "PUBLISHED",
+      "title": "Ex-votos",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DEV-010",
+      "publication_state": "PUBLISHED",
+      "title": "Votive candle at a shrine",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-7-1-1"
+      ],
+      "work_match_type": "CANDLE_NOT_HALF_HOUR_ADORATION",
+      "guardrail": "Lighting a shrine candle alone does not establish thirty minutes' Eucharistic adoration.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DEAD-001",
+      "publication_state": "PUBLISHED",
+      "title": "Prayerful cemetery visit",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-29-1-1",
+        "EI99-29-CEMETERY-PARTIAL"
+      ],
+      "work_match_type": "PRESCRIBED_WORK_COMPONENT_POSSIBLY_MATCHED; CEMETERY_PARTIAL_YEAR_ROUND",
+      "guardrail": "The custom includes a cemetery visit and prayer, but the date and all conditions require individual verification. Outside 1–8 November qualifying cemetery visits can receive a partial indulgence under a distinct concession.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DEAD-003",
+      "publication_state": "PUBLISHED",
+      "title": "Prayer for the dead on 2 November",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-29-1-2",
+        "EI99-29-REQUIEM-PARTIAL"
+      ],
+      "work_match_type": "SAME_DAY_NOT_SAME_WORK; SPECIFIC_REQUIEM_OR_OFFICE_NOT_GENERIC_PRAYER",
+      "guardrail": "All Souls generic prayer does not establish a church/oratory visit and Pater + Credo. Must recite exact invocation or Office of the Dead as specified.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "BELL-004",
+      "publication_state": "CONTEXT_ONLY",
+      "title": "Glas / death bell",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "FOOD-001",
+      "publication_state": "CONTEXT_ONLY",
+      "title": "Pain bénit",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DOM-003",
+      "publication_state": "PUBLISHED",
+      "title": "Using holy water at home",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DOM-011",
+      "publication_state": "PUBLISHED",
+      "title": "Keeping blessed Candlemas candles at home",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "DOM-013",
+      "publication_state": "PUBLISHED",
+      "title": "Keeping blessed Palm Sunday branches at home",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "BLSS-001",
+      "publication_state": "PUBLISHED",
+      "title": "St Blaise — blessing of throats",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "NDAY-001",
+      "publication_state": "PUBLISHED",
+      "title": "Baptismal patron's name day",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-21-SAINT-DAY-PRAYER"
+      ],
+      "work_match_type": "SAINT_MEMORIAL_PRAYER_NOT_NAME_DAY_GIFT",
+      "guardrail": "The prescribed approved saint prayer and calendar memorial are required.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "PATR-001",
+      "publication_state": "PUBLISHED",
+      "title": "French fête patronale / village patronal celebration",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-33-1-5",
+        "EI99-21-SAINT-DAY-PRAYER"
+      ],
+      "work_match_type": "PATRONAL_CONTEXT_NOT_SAME_WORK; PATRONAL_FESTIVAL_NOT_SAINT_PRAYER",
+      "guardrail": "A local fête patronale is not the qualifying parish-church visit with Our Father and Creed. An approved prayer on the saint's memorial is distinct from festivities.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "MARI-001",
+      "publication_state": "PUBLISHED",
+      "title": "French Assumption Marian processions",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "SJOS-001",
+      "publication_state": "PUBLISHED",
+      "title": "St Joseph's table and gifts to the poor",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "SANT-001",
+      "publication_state": "PUBLISHED",
+      "title": "St Anthony's Bread / Pain des pauvres",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "SCHR-001",
+      "publication_state": "PUBLISHED",
+      "title": "St Christopher — vehicles and travellers' blessing",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "SNIC-001",
+      "publication_state": "PUBLISHED",
+      "title": "St Nicholas's visit and small gifts to children",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "BLSS-002",
+      "publication_state": "PUBLISHED",
+      "title": "Assumption — blessing of herbs, flowers and fruits",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "BLSS-003",
+      "publication_state": "PUBLISHED",
+      "title": "St John the Evangelist — blessing of wine",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "BLSS-004",
+      "publication_state": "PUBLISHED",
+      "title": "Holy Saturday — blessing of Easter foods",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "ADVT-001",
+      "publication_state": "PUBLISHED",
+      "title": "Family Advent wreath and Sunday candle prayer",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "ADVT-002",
+      "publication_state": "PUBLISHED",
+      "title": "Advent manger straw after acts of charity",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "ADVT-003",
+      "publication_state": "PUBLISHED",
+      "title": "Las Posadas — Holy Family lodging procession",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "XMAS-001",
+      "publication_state": "PUBLISHED",
+      "title": "Sharing opłatek on Polish Christmas Eve",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "HTHU-001",
+      "publication_state": "PUBLISHED",
+      "title": "Holy Thursday visits to altars of repose",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-7-1-2"
+      ],
+      "work_match_type": "REPOSITORY_VISIT_NOT_TANTUM_ERGO_AT_REPOSITION",
+      "guardrail": "Visits to altars of repose are distinct from devout Tantum ergo during the solemn reposition after Mass.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "ROGA-001",
+      "publication_state": "PUBLISHED",
+      "title": "Family Rogation walk and prayer for the harvest",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "EPIP-001",
+      "publication_state": "PUBLISHED",
+      "title": "German Epiphany star singers / Sternsinger",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "EPIP-002",
+      "publication_state": "PUBLISHED",
+      "title": "French Galette des Rois and the poor person's portion",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "CORP-001",
+      "publication_state": "PUBLISHED",
+      "title": "Corpus Christi flower carpets and window decorations",
+      "review_status": "POTENTIAL_INTERSECTION_NOT_INDULGENCE_GRANTED",
+      "candidate_grants": [
+        "EI99-7-1-3"
+      ],
+      "work_match_type": "FLOWERS_NOT_EUCHARISTIC_PROCESSION",
+      "guardrail": "Making flowers/carpet decorations is not necessarily participating in the solemn Eucharistic procession.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "EAST-001",
+      "publication_state": "PUBLISHED",
+      "title": "Easter Monday Emmaus walk",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    },
+    {
+      "custom_id": "MARI-002",
+      "publication_state": "PUBLISHED",
+      "title": "Mary garden — flowers and herbs dedicated to Our Lady",
+      "review_status": "NOT_YET_SCREENED_FOR_PRECISE_WORK",
+      "candidate_grants": [],
+      "work_match_type": "NONE_ASSERTED",
+      "guardrail": "Do not infer an indulgence from the custom name or date.",
+      "conditions_verified_for_custom": false,
+      "publication_authorized": false
+    }
+  ],
+  "counts": {
+    "grant_records": 23,
+    "canonical_customs_checked_for_identity": 38,
+    "potential_intersection_only": 10,
+    "actual_indulgence_work_links_published": 0
+  },
+  "notes": [
+    "The first-nine base remains and previous general-norm citation was corrected to Norms 17–20.",
+    "This registry is a source-verified 1999 concession seed, not a complete certification of later temporary/local 2026 decrees.",
+    "Current liturgical grant feast day cannot automatically be mapped to a 1962 feast date where solemnity classification or transfer differs.",
+    "Partial grants do not require the three ordinary plenary conditions, but the work, intention and basic eligibility still matter."
+  ]
+}

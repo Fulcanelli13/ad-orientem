@@ -1,0 +1,596 @@
+{
+  "schema": "AO_CUSTOMS_FIRST18_SOURCE_SCOPE_EVIDENCE_REVIEW_20261026_V1",
+  "as_of": "2026-10-26",
+  "input": "data/customs/master/customs-thirty-action-identity-reconciliation-20261026.v1.json",
+  "scope": "18 potential distinct action identities in first30: web source claim-scope checks, not full textual authority review or finished source-independent canonicals",
+  "counts": {
+    "scope_support_found": 18,
+    "complete_primary_claim_and_copy_signed_off": 0,
+    "claim_and_scope_cautions_explicit": 18,
+    "new_unique_customs_approved": 0,
+    "calendar_publication_approved": 0
+  },
+  "policy": {
+    "no_new_ids": true,
+    "no_automated_editorial_signatures": true,
+    "no_canonically_certified_source_independence": true,
+    "does_not_amend_source_master": true,
+    "web_access_failure_not_negative_evidence": true,
+    "approved_liturgical_1962_rites": 0
+  },
+  "records": [
+    {
+      "review_key": "MASTER:CANDIDATE-STPATRICK-RIBBON",
+      "title_en": "St Patrick's ribbon cross",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "MUSEUM_HISTORICAL_ACTION",
+        "verified_url": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/",
+        "url_already_in_master": true,
+        "supports_claim_en": "Galway City Museum documents Thomas Dineley's 1680s report, homemade Irish crosses, later children's ribbon/card badges and the custom's decline by the late 1930s."
+      },
+      "source_specific_risk": {
+        "flag": "HISTORICAL_DATE_COPY_CORRECTED_PENDING_FINAL_EDITORIAL",
+        "explanation_en": "The research master, the exact 18-profile snapshot, the 30-unit editorial packet and the human-readable review sheet now consistently say 'in the 1680s' instead of unsupported 1681. Galway City Museum cites Thomas Dineley's 1680s report; no uninterrupted modern usage is presumed."
+      },
+      "existing_master_identity_reference": "CANDIDATE-STPATRICK-RIBBON",
+      "original_linked_urls_preserved": [
+        "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/St-Patrick",
+        "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "title_en": "The Irish Christmas candle",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "ARCHIVAL_REGIONAL_TESTIMONY",
+        "verified_url": "https://www.duchas.ie/en/cbes/4758582/4756445/4934128",
+        "url_already_in_master": false,
+        "supports_claim_en": "A Kilkenny school-collection witness describes a Christmas candle at the window honouring Mary and Joseph; other independent regional school entries show local differences."
+      },
+      "source_specific_risk": {
+        "flag": "ALTERNATE_WITNESS_ADDED",
+        "explanation_en": "The original linked Dúchas record did not pass web security verification; record an inspectable parallel witness. Historic folklore locality, candle safety and no spirit efficacy claims."
+      },
+      "existing_master_identity_reference": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "original_linked_urls_preserved": [
+        "https://www.duchas.ie/en/cbes/4922029/4920129/4948861",
+        "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CANDIDATE-STJOHN-BONFIRE",
+      "title_en": "St John Baptist's community bonfire",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "DIOCESAN_DATED_EVENT",
+        "verified_url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+        "url_already_in_master": true,
+        "supports_claim_en": "Diocese of Bayonne announces a Saint John parish bonfire on 20 June 2026 at Oloron with Mass, meal, bonfire and prayers."
+      },
+      "source_specific_risk": {
+        "flag": "SCOPE_ONLY",
+        "explanation_en": "2026 local June 20 event is not proof of a June 23/24 yearly performance or an authorized priestly fire-blessing formula."
+      },
+      "existing_master_identity_reference": "CANDIDATE-STJOHN-BONFIRE",
+      "original_linked_urls_preserved": [
+        "https://pop.culture.gouv.fr/notice/merimee/IA04002601",
+        "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CANDIDATE-EASTER-EGG-CRAFT",
+      "title_en": "Decorating Easter eggs: pisanki and pysanky",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "INTERNATIONAL_HERITAGE_PLUS_MUSEUM",
+        "verified_url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "url_already_in_master": true,
+        "supports_claim_en": "UNESCO records Ukrainian wax-resist pysanka decoration across religious communities; Polish Radom museum independently documents pisanki and regional ornament techniques."
+      },
+      "source_specific_risk": {
+        "flag": "MIXED_TRADITION_SCOPE",
+        "explanation_en": "Neither UNESCO listing nor Polish museum makes decoration exclusively Roman Catholic or equivalent to the 1962 food blessing; distinguish Ukrainian and Polish crafts."
+      },
+      "existing_master_identity_reference": "CANDIDATE-EASTER-EGG-CRAFT",
+      "original_linked_urls_preserved": [
+        "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "https://americanhistory.si.edu/collections/object/nmah_1175123",
+        "https://www.muzeum-radom.pl/terminy/plastyka-obrzedowa/361"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-ADVT-HERBERGSUCHE",
+      "title_en": "Herbergsuche — Advent Marian-image visits between households",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "CATHOLIC_PARISH_DIRECT",
+        "verified_url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+        "url_already_in_master": true,
+        "supports_claim_en": "Austrian Catholic parish directly describes a Marian image or statue moving between households each Advent evening with prayer at transfer."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "One regional Marian-image relay; not proof of the different staged inn-search play or a fixed universal Advent novena."
+      },
+      "existing_master_identity_reference": "CUST-ADVT-HERBERGSUCHE",
+      "original_linked_urls_preserved": [
+        "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-POLISH-HAY",
+      "title_en": "Christmas Eve hay beneath the tablecloth",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "POLISH_GOVERNMENT_HERITAGE",
+        "verified_url": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+        "url_already_in_master": true,
+        "supports_claim_en": "Poland's Ministry of Culture explicitly records hay beneath the white Christmas Eve tablecloth symbolizing Christ born in the stable."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "Distinct from Advent good-deed manger-straw; heritage description is not proof of a required rite or folkloric divination."
+      },
+      "existing_master_identity_reference": "CUST-XMAS-POLISH-HAY",
+      "original_linked_urls_preserved": [
+        "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+        "https://www.lasy.gov.pl/pl/informacje/aktualnosci/podlazniczka-i-diduch-czyli-tradycje-i-swiateczne-zwyczaje"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "title_en": "La guignolée — French Canadian Christmas alms collection",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "CHARITY_ORGANIZER_DIRECT",
+        "verified_url": "https://ssvp-mtl.org/fr/guignolee",
+        "url_already_in_master": true,
+        "supports_claim_en": "Society of St Vincent de Paul Montreal dates its organized Quebec guignolée to 1861 and explains modern pre-Christmas food and fundraising collections."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "The historical Catholic charitable origin does not make all modern civic campaigns parish liturgy or establish each year's exact collection date."
+      },
+      "existing_master_identity_reference": "CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "original_linked_urls_preserved": [
+        "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=234696&methode=consulter&type=bien",
+        "https://ssvp-mtl.org/fr/guignolee"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-POLISH-KOLEDNICI",
+      "title_en": "Polish kolędnicy — Christmas visiting carollers",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "POLISH_EDUCATIONAL_HERITAGE",
+        "verified_url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+        "url_already_in_master": true,
+        "supports_claim_en": "Polish educational material documents kolędnicy, carolling and related regional Christmas performers."
+      },
+      "source_specific_risk": {
+        "flag": "REGIONAL_COMPONENT_REVIEW",
+        "explanation_en": "Distinguish visiting carollers, portable szopka plays, other regional dramatic groups and German Epiphany star-singer fundraising; no uniform script."
+      },
+      "existing_master_identity_reference": "CUST-XMAS-POLISH-KOLEDNICI",
+      "original_linked_urls_preserved": [
+        "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "title_en": "Hungarian betlehemezés Nativity visiting plays",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "CATHOLIC_LEXICON_DIRECT",
+        "verified_url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+        "url_already_in_master": true,
+        "supports_claim_en": "Hungarian Catholic Lexicon explicitly describes betlehemezés as Christmas Nativity drama, with shepherds, singing and multiple folk variants."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "Hungarian historical ethnographic archive was intermittently unavailable, but Catholic lexicon confirms distinct named tradition; no date-fixed parish performances."
+      },
+      "existing_master_identity_reference": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "original_linked_urls_preserved": [
+        "https://mek.oszk.hu/02100/02115/html/1-713.html",
+        "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-BARBARA-BRANCHES",
+      "title_en": "St Barbara branches — Barbarazweige",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "ARCHDIOCESAN_DEVOTION_DIRECT",
+        "verified_url": "https://www.erzdioezese-wien.at/heilige-barbara",
+        "url_already_in_master": true,
+        "supports_claim_en": "Archdiocese of Vienna describes cutting cherry or apple branches on 4 December, setting them in water and hoping for blooms at Christmas."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "Saint's historical biography is uncertain, bloom is natural rather than a predictive oracle; voluntary household act not Roman Mass rubric."
+      },
+      "existing_master_identity_reference": "CUST-BARBARA-BRANCHES",
+      "original_linked_urls_preserved": [
+        "https://www.erzdioezese-wien.at/heilige-barbara"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "title_en": "Provençal Christmas pain calendal and the poor person's portion",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "REGIONAL_PUBLIC_HERITAGE",
+        "verified_url": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+        "url_already_in_master": true,
+        "supports_claim_en": "Official Var tourism description places cross-scored round pain calendal at the Gros Souper, with one of three portions designated for the poor."
+      },
+      "source_specific_risk": {
+        "flag": "COPY_CAVEAT_REQUIRED",
+        "explanation_en": "The same local heritage source describes a third portion 'pour les miracles' as folklore; retain as reported expression only, never promise miraculous benefits. Distinct from post-midnight réveillon."
+      },
+      "existing_master_identity_reference": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "original_linked_urls_preserved": [
+        "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+        "https://provence-alpes-cotedazur.com/decouvrir/les-destinations/la-provence/la-veillee-de-noel/"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "title_en": "Three Kings gifts left in children's shoes",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "NATIONAL_TOURISM_DIRECT",
+        "verified_url": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+        "url_already_in_master": true,
+        "supports_claim_en": "Spain's official tourism press page documents children's shoes for gifts on the evening of 5 January and Epiphany celebration on 6 January."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "Gifts attributed to Magi are a popular representation, not Scripture's claim of literal present-day deliveries or universal Catholic obligation."
+      },
+      "existing_master_identity_reference": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "original_linked_urls_preserved": [
+        "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+        "https://www.spain.info/en/top/christmas-madrid/"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-EASTER-MALTESE-IRXOXT",
+      "title_en": "L-Irxoxt — Maltese running procession with the Risen Christ",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "GOVERNMENT_AND_LOCAL_REPORT",
+        "verified_url": "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477",
+        "url_already_in_master": true,
+        "supports_claim_en": "Times of Malta documents statue bearers running in particular Easter celebrations; Maltese public service describes traditional Easter l-Irxoxt processions in Gozo."
+      },
+      "source_specific_risk": {
+        "flag": "LOCALLY_DATED_ACTION",
+        "explanation_en": "Running is a subset of local processions, not a required Mass act; no perennial parish schedule inferred from dated coverage."
+      },
+      "existing_master_identity_reference": "CUST-EASTER-MALTESE-IRXOXT",
+      "original_linked_urls_preserved": [
+        "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
+        "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-PENTECOST-POLISH-GREENERY",
+      "title_en": "Pentecost greenery decorating Polish homes",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "PUBLIC_FORESTRY_HERITAGE",
+        "verified_url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+        "url_already_in_master": true,
+        "supports_claim_en": "Polish State Forests describe Zielone Świątki and its seasonal greenery customs in the Pentecost context."
+      },
+      "source_specific_risk": {
+        "flag": "SOURCE_STRENGTHENING_REQUIRED",
+        "explanation_en": "Forestry cultural account does not certify ecclesiastical ritual authority; archived original photo may need independent detailed caption verification."
+      },
+      "existing_master_identity_reference": "CUST-PENTECOST-POLISH-GREENERY",
+      "original_linked_urls_preserved": [
+        "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+        "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "title_en": "Tivoli's Inchinata procession",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "DIOCESAN_DATED_EVENT",
+        "verified_url": "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/",
+        "url_already_in_master": true,
+        "supports_claim_en": "Tivoli-Palestrina diocese explicitly announces 2026 Inchinata observances for 14-15 August including processional meeting and renewed image bow."
+      },
+      "source_specific_risk": {
+        "flag": "LOCALLY_DATED_ACTION",
+        "explanation_en": "The program is a 2026 local diocesan celebration, not the 1962 universal Mass rite, and its future event schedule cannot be projected."
+      },
+      "existing_master_identity_reference": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "original_linked_urls_preserved": [
+        "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/",
+        "https://www.comune.tivoli.rm.it/informazione/le-manifestazioni-ricorrenti/"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "title_en": "Faradda di li Candareri — Sassari's Marian offering procession",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "CITY_OFFICIAL_DATED_EVENT",
+        "verified_url": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+        "url_already_in_master": true,
+        "supports_claim_en": "Sassari municipal administration documents the 14 August 2026 Faradda with gremi and large wooden candelieri carried through the city."
+      },
+      "source_specific_risk": {
+        "flag": "LOCALLY_DATED_ACTION",
+        "explanation_en": "Distinct from small liturgical candles or their blessings; dates and ceremony are city-bound and official 2026 schedule does not create a perpetual time."
+      },
+      "existing_master_identity_reference": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "original_linked_urls_preserved": [
+        "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+        "https://idese.cultura.gov.it/en/place/discesa-dei-candelieri-la-faradda/"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "MASTER:CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "title_en": "Frauendreißiger — thirty days of Marian devotion",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "SHRINE_DIRECT_PROGRAM",
+        "verified_url": "https://www.mariathalkirchen.de/index.php?id=164",
+        "url_already_in_master": true,
+        "supports_claim_en": "St Maria Thalkirchen shrine labels Frauendreißiger from 15 August to 14 September and displays the associated Marian shrine dates."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "Contemporary shrine devotions, Masses and indulgences cannot be mechanically imposed on 1962 calendar propers or globally scheduled."
+      },
+      "existing_master_identity_reference": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "original_linked_urls_preserved": [
+        "https://www2.erzbistum-muenchen.de/news/bistum/Gottesdienste-und-Kraeutersegnungen-zu-Mariae-Himmelfahrt-48941.news",
+        "https://www.mariathalkirchen.de/index.php?id=164"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-018",
+      "title_en": "Provençal Christmas réveillon after midnight",
+      "decision": "SOURCE_SCOPE_CHECKED_EDITORIAL_PENDING",
+      "source_support": {
+        "type": "FRENCH_MINISTRY_PDF_ORIGINAL_PAGE",
+        "verified_url": "https://www.culture.gouv.fr/Media/Thematiques/Patrimoine-culturel-immateriel/Files/Fiches-inventaire-du-PCI/Les-fetes-de-Noel-en-Provence",
+        "url_already_in_master": true,
+        "supports_claim_en": "French Ministry of Culture heritage inventory, printed page 4 (PDF page 4), expressly differentiates meatless pre-midnight Gros Souper from richer post-midnight réveillon."
+      },
+      "source_specific_risk": {
+        "flag": "CLAIM_SUBSTANTIATED_NARROW",
+        "explanation_en": "Treat as regional Provençal heritage and food practice, not a dispensation from applicable fasting obligations or an additional Mass action."
+      },
+      "existing_master_identity_reference": null,
+      "original_linked_urls_preserved": [
+        "https://www.culture.gouv.fr/Media/Thematiques/Patrimoine-culturel-immateriel/Files/Fiches-inventaire-du-PCI/Les-fetes-de-Noel-en-Provence"
+      ],
+      "unverified_claims": [
+        "Any more specific historic-origin dating than directly documented",
+        "Universal Roman 1962 rite or ministerial formula not independently established",
+        "Evergreen local parish event schedule not presumed"
+      ],
+      "identity_not_duplicate_final_approval": false,
+      "source_claims_final_human_approval": false,
+      "english_french_final_approval": false,
+      "liturgical_1962_authority_approved": false,
+      "calendar_date_publication_approved": false,
+      "new_custom_id": null,
+      "publication_state": "RESEARCH_ONLY"
+    }
+  ]
+}

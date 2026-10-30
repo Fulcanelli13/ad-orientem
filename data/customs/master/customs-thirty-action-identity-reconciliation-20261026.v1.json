@@ -1,0 +1,731 @@
+{
+  "schema": "AO_CUSTOMS_THIRTY_ACTION_IDENTITY_RECONCILIATION_V1",
+  "as_of": "2026-10-26",
+  "research_owner": "research/customs-identity-consolidation-cohort01-20261024; source master is authoritative",
+  "input_file": "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json",
+  "method": "Editorially reasoned source/action comparisons using previous bounded witnesses; classifications are route recommendations, NOT attested claims of unique identity or formal approval.",
+  "status": "REVIEW_PROPOSALS_NOT_HUMAN_AUTHORIZED",
+  "counts": {
+    "distinct_candidate_proposals": 18,
+    "enrich_existing_proposals": 3,
+    "regional_variant_component_proposals": 2,
+    "historical_cultural_context": 7,
+    "evidence_or_rite_hold": 0,
+    "approved_new_customs": 0,
+    "publication_changes": 0
+  },
+  "decisions_reference": {
+    "distinct": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+    "enrich": "PROPOSE_ENRICH_EXISTING_IDENTITY",
+    "component": "REGIONAL_COMPONENT_OR_VARIANT",
+    "context": "HISTORICAL_CULTURAL_CONTEXT",
+    "hold": "EVIDENCE_OR_RITE_HOLD"
+  },
+  "guards": {
+    "human_signature_absent": true,
+    "no_reused_master_id_writes": true,
+    "no_deletions": true,
+    "no_automatic_minting": true,
+    "no_universal_parish_event_inference": true,
+    "no_1962_rite_authorization_by_reference": true,
+    "history_and_culture_may_remain_nondevotional": true
+  },
+  "records": [
+    {
+      "review_key": "MASTER:CANDIDATE-STPATRICK-RIBBON",
+      "working_title_en": "St Patrick's ribbon cross",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "SNIC-001"
+      ],
+      "action_identity_rationale_en": "St Patrick ribbon crosses are household badge-making, not Saint Patrick's liturgical feast itself; keep historic 1681 and museum 1930s decline bounded.",
+      "calendar_and_locality_rule_en": "17 March contextual only; no presumed dispensation or parish event",
+      "outstanding_editorial_gate_en": "Identity/modern adoption versus documented historic wearing",
+      "original_source_urls": [
+        "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/St-Patrick",
+        "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "working_title_en": "The Irish Christmas candle",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Irish Christmas window or table candle has direct Dúchas family testimony and is not the church's liturgical candle rite.",
+      "calendar_and_locality_rule_en": "24–25 December optional household suggestion; family duration varies",
+      "outstanding_editorial_gate_en": "Verify Irish-region witness and avoid deceased-spirit folklore as doctrine",
+      "original_source_urls": [
+        "https://www.duchas.ie/en/cbes/4922029/4920129/4948861",
+        "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CANDIDATE-STJOHN-BONFIRE",
+      "working_title_en": "St John Baptist's community bonfire",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Named French parish feux de la Saint-Jean are specific local gatherings rather than universal bonfire rubrics.",
+      "calendar_and_locality_rule_en": "23–24 June informational context; only dated diocesan announcements establish an actual parish gathering",
+      "outstanding_editorial_gate_en": "Priest blessing/minister role; 2026 local scheduling not transferable",
+      "original_source_urls": [
+        "https://pop.culture.gouv.fr/notice/merimee/IA04002601",
+        "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CANDIDATE-EASTER-EGG-CRAFT",
+      "working_title_en": "Decorating Easter eggs: pisanki and pysanky",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "BLSS-004"
+      ],
+      "action_identity_rationale_en": "Making Polish pisanki and Ukrainian pysanky is an egg-decorating craft, distinct in action from a priestly Easter food blessing.",
+      "calendar_and_locality_rule_en": "Easter or family preparations; no universal Holy Saturday instruction",
+      "outstanding_editorial_gate_en": "Cross-Christian provenance; separate Polish and Ukrainian methods without overstating equivalence",
+      "original_source_urls": [
+        "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "https://americanhistory.si.edu/collections/object/nmah_1175123",
+        "https://www.muzeum-radom.pl/terminy/plastyka-obrzedowa/361"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-ADVT-HERBERGSUCHE",
+      "working_title_en": "Herbergsuche — Advent Marian-image visits between households",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "ADVT-003"
+      ],
+      "action_identity_rationale_en": "A travelling Marian image received in Austrian Advent households is a distinct observed action from Mexican Las Posadas performances.",
+      "calendar_and_locality_rule_en": "Advent seasonal context only; participating parishes set transfer days",
+      "outstanding_editorial_gate_en": "Separate statue relay from local staged Herbergsuche lodging play",
+      "original_source_urls": [
+        "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-POLISH-HAY",
+      "working_title_en": "Christmas Eve hay beneath the tablecloth",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "ADVT-002",
+        "XMAS-001"
+      ],
+      "action_identity_rationale_en": "Christmas Eve hay below a Polish tablecloth is separate from Advent good-deed straw or sharing opłatek.",
+      "calendar_and_locality_rule_en": "24 December household custom in Polish local context",
+      "outstanding_editorial_gate_en": "Exclude divination claims and avoid collapsing shared straw symbolism",
+      "original_source_urls": [
+        "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+        "https://www.lasy.gov.pl/pl/informacje/aktualnosci/podlazniczka-i-diduch-czyli-tradycje-i-swiateczne-zwyczaje"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-KASHUBIAN-ANIMAL-CARE",
+      "working_title_en": "Christmas Eve care for livestock and birds",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "HISTORICAL_CULTURAL_CONTEXT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Kashubian livestock care is independently described as regional rural Christmas folklore, but a claim of Catholic devotion or a reproducible special rite is not yet supported.",
+      "calendar_and_locality_rule_en": "Christmas Eve heritage context only, not prescriptive devotional guidance",
+      "outstanding_editorial_gate_en": "Check agricultural evidence; avoid folkloric talking animals or unsuitable feeding",
+      "original_source_urls": [
+        "https://www.gov.pl/web/rolnictwo/woj-pomorskie1",
+        "https://www.gov.pl/web/kultura/zlozylismy-wniosek-o-wpisanie-wigilii-na-liste-unesco"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "working_title_en": "La guignolée — French Canadian Christmas alms collection",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Québec's guignolée has a charitable house-to-house collection action, including church-linked Vincentian history, distinct from liturgical offertory.",
+      "calendar_and_locality_rule_en": "Christmas-season campaign with actual local charity dates only",
+      "outstanding_editorial_gate_en": "Later civic forms need separate scope; no required donation",
+      "original_source_urls": [
+        "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=234696&methode=consulter&type=bien",
+        "https://ssvp-mtl.org/fr/guignolee"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-POLISH-KOLEDNICI",
+      "working_title_en": "Polish kolędnicy — Christmas visiting carollers",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "EPIP-001"
+      ],
+      "action_identity_rationale_en": "Polish kolędnicy visit homes singing and dramatizing Christmas, not the same institution as German Epiphany Sternsinger charity.",
+      "calendar_and_locality_rule_en": "Christmas-cycle regional context, not a universal fixed daily schedule",
+      "outstanding_editorial_gate_en": "Split dramatic troupes and related Polish szopka as local variants",
+      "original_source_urls": [
+        "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "working_title_en": "Hungarian betlehemezés Nativity visiting plays",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "ADVT-003"
+      ],
+      "action_identity_rationale_en": "Hungarian betlehemezés is a regional Nativity visiting drama with distinct documentation; shared Nativity story does not merge it with Las Posadas.",
+      "calendar_and_locality_rule_en": "Christmas period in named Hungarian communities, without invented event times",
+      "outstanding_editorial_gate_en": "Keep actor/puppet subtypes as variants unless separately evidenced",
+      "original_source_urls": [
+        "https://mek.oszk.hu/02100/02115/html/1-713.html",
+        "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-BARBARA-BRANCHES",
+      "working_title_en": "St Barbara branches — Barbarazweige",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Barbara cherry or apple branches placed in water are a documented household action around 4 December, not a church blessing.",
+      "calendar_and_locality_rule_en": "4 December traditional contextual suggestion with voluntary home practice",
+      "outstanding_editorial_gate_en": "Branch bloom is natural growth, not divination of future favour",
+      "original_source_urls": [
+        "https://www.erzdioezese-wien.at/heilige-barbara"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "working_title_en": "Provençal Christmas pain calendal and the poor person's portion",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "EPIP-002"
+      ],
+      "action_identity_rationale_en": "Pain calendal is the ritualized Christmas Eve Provençal loaf and charitable portion; similar language about the poor in an Epiphany cake is not identical action.",
+      "calendar_and_locality_rule_en": "24 December Provençal Gros Souper context, no priestly Eucharistic-bread claim",
+      "outstanding_editorial_gate_en": "Verify regional bread preparation and keep dinner versus post-Midnight-Mass réveillon distinct",
+      "original_source_urls": [
+        "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+        "https://provence-alpes-cotedazur.com/decouvrir/les-destinations/la-provence/la-veillee-de-noel/"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "working_title_en": "Three Kings gifts left in children's shoes",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "SNIC-001",
+        "EPIP-001"
+      ],
+      "action_identity_rationale_en": "Spanish Three Kings gifts in shoes on 5–6 January are a gift-exchange custom, not Saint Nicholas visiting or German charity star-singers.",
+      "calendar_and_locality_rule_en": "5 January evening–6 January household context; separately verify any cavalcade schedule",
+      "outstanding_editorial_gate_en": "Present Magi gift-bringer as festive representation, not Gospel fact",
+      "original_source_urls": [
+        "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+        "https://www.spain.info/en/top/christmas-madrid/"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-EASTER-MALTESE-IRXOXT",
+      "working_title_en": "L-Irxoxt — Maltese running procession with the Risen Christ",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "MARI-001"
+      ],
+      "action_identity_rationale_en": "Maltese L-Irxoxt's brief statue-running component in named Resurrection processions has a distinct local action.",
+      "calendar_and_locality_rule_en": "Easter Sunday context only; attendance tied to current parish announcements",
+      "outstanding_editorial_gate_en": "Not an act prescribed within Mass; distinguish procession from festival publicity",
+      "original_source_urls": [
+        "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
+        "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-PENTECOST-POLISH-GREENERY",
+      "working_title_en": "Pentecost greenery decorating Polish homes",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "CORP-001",
+        "BLSS-002"
+      ],
+      "action_identity_rationale_en": "Polish Zielone Świątki branches for home and gates belong to Pentecost, not Corpus flower carpets or Assumption herb blessings.",
+      "calendar_and_locality_rule_en": "Pentecost movable date from canonical calendar; country-specific non-ritual suggestion",
+      "outstanding_editorial_gate_en": "Folk supernatural protection claims excluded",
+      "original_source_urls": [
+        "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+        "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "working_title_en": "Tivoli's Inchinata procession",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "MARI-001"
+      ],
+      "action_identity_rationale_en": "Tivoli's ceremonial meeting and bow of two images is a named diocesan tradition distinct from generic French Assumption processions.",
+      "calendar_and_locality_rule_en": "14–15 August local context only, never a universal processional route",
+      "outstanding_editorial_gate_en": "Check institutional calendar annually; avoid projecting medieval legendary origins",
+      "original_source_urls": [
+        "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/",
+        "https://www.comune.tivoli.rm.it/informazione/le-manifestazioni-ricorrenti/"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "working_title_en": "Faradda di li Candareri — Sassari's Marian offering procession",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "MARI-001"
+      ],
+      "action_identity_rationale_en": "Sassari's votive guild candle-structure procession is a specific city and civic-religious complex, not the Roman Assumption liturgy.",
+      "calendar_and_locality_rule_en": "14 August Sassari local context, with official event notices for occurrence",
+      "outstanding_editorial_gate_en": "Avoid treating decorative wooden candlesticks as priestly blessing of candles",
+      "original_source_urls": [
+        "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+        "https://idese.cultura.gov.it/en/place/discesa-dei-candelieri-la-faradda/"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "MASTER:CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "working_title_en": "Frauendreißiger — thirty days of Marian devotion",
+      "origin_kind": "EXISTING_UNPUBLISHED_WORKING_IDENTITY",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "DEV-001"
+      ],
+      "action_identity_rationale_en": "Bavarian Frauendreißiger spans Assumption–Holy Cross as a named local Marian shrine devotion; it is not Mary's month of May.",
+      "calendar_and_locality_rule_en": "15 August–14 September association only; shrine services require live announcements",
+      "outstanding_editorial_gate_en": "No transfer of modern shrine indulgences or propers into 1962",
+      "original_source_urls": [
+        "https://www2.erzbistum-muenchen.de/news/bistum/Gottesdienste-und-Kraeutersegnungen-zu-Mariae-Himmelfahrt-48941.news",
+        "https://www.mariathalkirchen.de/index.php?id=164"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-001",
+      "working_title_en": "Ukrainian didukh at Christmas",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "HISTORICAL_CULTURAL_CONTEXT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Ukrainian didukh is documented in Ukrainian Catholic and ethnographic sources, but deserves its own Eastern Christian/cultural context rather than a universal Latin-Roman household instruction.",
+      "calendar_and_locality_rule_en": "Christmas within the community's own liturgical calendar; no automatic Gregorian date",
+      "outstanding_editorial_gate_en": "Eastern calendar, historical ancestral interpretations and local tradition",
+      "original_source_urls": [
+        "https://stnicholasucp.ca/our-faith/nativity-theophany/",
+        "https://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CC%5CH%5CChristmas.htm"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-002",
+      "working_title_en": "German Advent picture calendar",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "HISTORICAL_CULTURAL_CONTEXT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "ADVT-001",
+        "ADVT-002"
+      ],
+      "action_identity_rationale_en": "The German picture Advent calendar is a broad cross-confessional material/countdown tradition; historical Catholic exclusivity is not proven.",
+      "calendar_and_locality_rule_en": "Advent cultural/household history; no new feast or obligation",
+      "outstanding_editorial_gate_en": "Keep distinct from wreath/manger; ask whether catalogue includes cross-confessional adaptations",
+      "original_source_urls": [
+        "https://www.knauf-museum.de/sonderausstellung/archiv/sonderausstellungen/123-adventskalender-im-wandel-der-zeit-11-november-2007-06-januar-2008",
+        "https://www.stadtmuseum-ffb.de/ffb-museum/web.nsf/id/li_fdis9tuczr.html"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-003",
+      "working_title_en": "Advent visitation of a travelling Marian image",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "PROPOSE_ENRICH_EXISTING_IDENTITY",
+      "proposed_enrichment_owner_id": "CUST-ADVT-HERBERGSUCHE",
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Adnet's travelling Advent Marian image has the same core action as the already staged Herbergsuche Marian-image household relay, with a separate Austrian parish witness.",
+      "calendar_and_locality_rule_en": "Use same local Advent season pointer owned by Herbergsuche; no second card",
+      "outstanding_editorial_gate_en": "Append Adnet locality and independent source only; do not merge separate lodging drama",
+      "original_source_urls": [
+        "https://www.adnet.gv.at/Ab_8_12_Herbergsuche_15",
+        "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-004",
+      "working_title_en": "Herbergsuche — Advent Marian-image visits between households",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "PROPOSE_ENRICH_EXISTING_IDENTITY",
+      "proposed_enrichment_owner_id": "CUST-ADVT-HERBERGSUCHE",
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "The Großpetersdorf wording and linked source repeat the existing Herbergsuche working-master text, not a new action.",
+      "calendar_and_locality_rule_en": "Existing Herbergsuche record, no additional feast mapping",
+      "outstanding_editorial_gate_en": "Deduplicate identical paragraph; maintain a distinction between procession relay and drama",
+      "original_source_urls": [
+        "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-005",
+      "working_title_en": "Christkind bell announcing gifts",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "REGIONAL_COMPONENT_OR_VARIANT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "SNIC-001"
+      ],
+      "action_identity_rationale_en": "The small Christkind bell is a component of local Christmas gift exchange, with only one scoped parish witness; it does not establish a second independent ceremony.",
+      "calendar_and_locality_rule_en": "24 December household gift-exchange context only",
+      "outstanding_editorial_gate_en": "Resolve the broader Christkind gift practice parent before deciding whether this is a sub-entry",
+      "original_source_urls": [
+        "https://www.dioezese-linz.at/pfarre/4502/wirindeinernaehe/pfarre/pionierpfarre/article/192692.html"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-006",
+      "working_title_en": "Large Alpine Nativity scenes and Tyrolean crèche making",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "HISTORICAL_CULTURAL_CONTEXT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "CRIB-001"
+      ],
+      "action_identity_rationale_en": "Tyrolean scenic crib construction is a regional material/artistic variation of Nativity displays, not the distinct decision about keeping a crib until Candlemas.",
+      "calendar_and_locality_rule_en": "Christmas Nativity material-culture context; no prescribed construction date",
+      "outstanding_editorial_gate_en": "Do not merge Tyrolean style into Polish szopka theater or assume CRIB-001 is a parent of all cribs",
+      "original_source_urls": [
+        "https://www.tiroler-landesmuseen.at/ausstellung/weihnachtswunder/",
+        "https://www.tiroler-landesmuseen.at/ausstellung/dauerausstellungen-im-volkskunstmuseum/"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-007",
+      "working_title_en": "Polish house-to-house Nativity play with a portable szopka",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "REGIONAL_COMPONENT_OR_VARIANT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "CUST-XMAS-POLISH-KOLEDNICI"
+      ],
+      "action_identity_rationale_en": "House-to-house Polish portable-szopka Nativity performance can form a dramatic subtype of Polish visiting kolędnicy; the Kraków architectural szopka is distinct.",
+      "calendar_and_locality_rule_en": "Existing Polish Christmas visiting context, not a second universal feast event",
+      "outstanding_editorial_gate_en": "Keep performed puppet portable Nativity versus display craft distinct in detail; verify independent subtype identity",
+      "original_source_urls": [
+        "https://zpe.gov.pl/a/koledujmy-malemu---tradycje-bozego-narodzenia/D7H4WpTHy",
+        "https://ich.unesco.org/en/RL/nativityscene-szopka-tradition-in-krakow-01362"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-008",
+      "working_title_en": "Acadian Mi-Carême masked visits",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "HISTORICAL_CULTURAL_CONTEXT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Acadian/Québec Mi-Carême masked visiting and games are attested folk festivity linked to Lent, not a Catholic devotional rite or fasting exemption.",
+      "calendar_and_locality_rule_en": "Mid-Lent heritage context; never an automatic parish ceremony",
+      "outstanding_editorial_gate_en": "Do not promote masquerade as devotional act; actual surviving local events need current data",
+      "original_source_urls": [
+        "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=4&methode=consulter&type=imma",
+        "https://www.canada.ca/en/atlantic-canada-opportunities/news/2018/12/centre-de-la-mi-careme-to-expand-cultural-programming-and-extend-tourism-season.html"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-009",
+      "working_title_en": "Holy Week cleaning and Easter household preparation in Poland",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "HISTORICAL_CULTURAL_CONTEXT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Polish Holy Week household cleaning is well-attested family/seasonal material culture, but no specifically ecclesiastical action distinct from ordinary preparation is established.",
+      "calendar_and_locality_rule_en": "Holy Week contextual history, not a required Easter purification rite",
+      "outstanding_editorial_gate_en": "Avoid prescribing superstitious penalties and ordinary household work as Mass rubrics",
+      "original_source_urls": [
+        "https://www.muzeum-radom.pl/wydarzenia/wielki-tydzien/2946"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-010",
+      "working_title_en": "Pentecost greenery decorating Polish homes",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "PROPOSE_ENRICH_EXISTING_IDENTITY",
+      "proposed_enrichment_owner_id": "CUST-PENTECOST-POLISH-GREENERY",
+      "related_not_same_action_ids": [],
+      "action_identity_rationale_en": "Zielone Świątki greenery material and source repeat the already researched Polish Pentecost greenery master identity.",
+      "calendar_and_locality_rule_en": "Same movable Pentecost context, no duplicate card",
+      "outstanding_editorial_gate_en": "Use additional local evidence to enrich the existing profile, not mint another custom",
+      "original_source_urls": [
+        "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+        "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-018",
+      "working_title_en": "Provençal Christmas réveillon after midnight",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "PROPOSE_DISTINCT_BOUNDARIED_CUSTOM",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "CUST-XMAS-PROVENCAL-PAIN-CALENDAL"
+      ],
+      "action_identity_rationale_en": "The post-Midnight-Mass Provençal réveillon is a distinct meal timing/social act from the earlier Christmas Eve Gros Souper bread custom.",
+      "calendar_and_locality_rule_en": "Christmas Eve/night context; date does not make fasting exemption claims",
+      "outstanding_editorial_gate_en": "Distinguish pre-Mass Gros Souper and after-Mass meal; reconcile family ownership but retain different actions",
+      "original_source_urls": [
+        "https://www.culture.gouv.fr/Media/Thematiques/Patrimoine-culturel-immateriel/Files/Fiches-inventaire-du-PCI/Les-fetes-de-Noel-en-Provence"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    },
+    {
+      "review_key": "OBSERVATION:BULK150-019",
+      "working_title_en": "Martinmas end-of-harvest village celebrations",
+      "origin_kind": "SOURCED_ACTION_NOT_CERTIFIED_DISTINCT",
+      "identity_route_proposed": "HISTORICAL_CULTURAL_CONTEXT",
+      "proposed_enrichment_owner_id": null,
+      "related_not_same_action_ids": [
+        "PATR-001"
+      ],
+      "action_identity_rationale_en": "Martinmas harvest meals and lantern festivities vary substantially by German and Polish locale and are described as social/agrarian heritage rather than a single attested universal rite.",
+      "calendar_and_locality_rule_en": "11 November Saint Martin local heritage context only",
+      "outstanding_editorial_gate_en": "Separate roast goose, lantern walk, guild harvest gatherings and any actually announced parish Mass",
+      "original_source_urls": [
+        "https://samorzad.gov.pl/web/gmina-chodziez/dziedzictwo-kulturowe-szanse-i-wyzwania-dla-samorzadow",
+        "https://zpe.gov.pl/a/przeczytaj/D16PYBAfj"
+      ],
+      "proposed_approved_canonical_id": null,
+      "canonical_identity_human_approved": false,
+      "source_claims_human_approved": false,
+      "liturgical_authority_human_approved": false,
+      "bilingual_copy_human_approved": false,
+      "calendar_publication_human_approved": false,
+      "publication_state": "RESEARCH_ONLY_PRELIMINARY_ACTION_COMPARISON"
+    }
+  ]
+}

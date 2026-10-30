@@ -1,0 +1,567 @@
+{
+  "schema": "AO_CUSTOMS_ULTRA_MASTER_V2_COVERAGE_AND_PUBLICATION_GATE",
+  "date": "2026-10-30",
+  "source_files": [
+    "data/customs/master/customs-ultra-master-v2-identity-register-465.v1.json",
+    "data/customs/master/customs-ultra-master-v2-3703-reference-crosswalk.v1.json",
+    "data/customs/master/customs-ultra-master-v2-indulgence-work-audit.v1.json",
+    "data/customs/master/customs-ultra-master-v2-historical-grant-source-recheck-20261030.v1.json",
+    "data/customs/master/customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json"
+  ],
+  "progress": {
+    "source_evidence_pointer_integrity": {
+      "done": 3703,
+      "total": 3703,
+      "meaning": "All original JSON pointers resolve and observation IDs match; not proof of page-image transcription."
+    },
+    "provisional_groups_with_explicit_source": {
+      "done": 408,
+      "total": 408,
+      "source_edges": 409,
+      "meaning": "Groups are research actions/variants, not 408 newly approved customs."
+    },
+    "evidence_directly_linked_to_group": {
+      "done": 408,
+      "total": 3703,
+      "not_directly_linked": 3295,
+      "meaning": "This is direct group routing, not all source observations' broader semantic relationships."
+    },
+    "canonical_published_in_main": {
+      "done": 36,
+      "research_master": 57,
+      "context_only": 3,
+      "unpublished_working_master": 18
+    },
+    "historical_indulgence_original_grants_verified": {
+      "done": 1,
+      "reported_clusters": 4,
+      "original_label_leads": 5,
+      "definition": "One signed 1998 primary-instrument facsimile and translation reproduced by regional government (Caravaca); other three original instruments still absent. No Customs publication approval."
+    },
+    "modern_norm_work_seed_screen": {
+      "known_work_categories": 7,
+      "conditional_links": 8,
+      "complete_enchiridion_catalogue": false
+    },
+    "editorial_approval_new_from_this_work": {
+      "done": 0
+    },
+    "genuine_unique_historical_custom_total": {
+      "status": "NOT_YET_ESTABLISHED"
+    },
+    "first_200_unlinked_source_type_screen": {
+      "done": 200,
+      "total": 3295,
+      "remaining": 3095,
+      "method": "Original record source_kind/claim_type native fields, not inferred identity; no primary page-image certifications this pass.",
+      "historical_wave01_snapshot_only": true,
+      "remaining_at_completion": 0
+    },
+    "evidence_only_source_scope_first_pass": {
+      "done": 3295,
+      "total": 3295,
+      "unprocessed": 0,
+      "wave_files": [
+        "customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave02-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave03-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave04-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave05-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave06-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave07-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave08-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave09-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave10-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave11-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave12-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave13-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave14-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave15-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave16-200-source-scope-screen.v1.json",
+        "customs-ultra-master-v2-wave17-95-source-scope-screen.v1.json"
+      ],
+      "not_final_identity_mapping": true,
+      "source_type_provisionally_routed": 3295,
+      "source_type_unresolved_requires_passage": 0,
+      "source_id_exact_matches": 3295,
+      "original_page_images_newly_certified_by_this_wave_set": 0,
+      "meaning": "All 3,295 evidence-only source IDs linked exactly once. 3,163 had initial source-native characterization; 132 further CatholicCulture action descriptions have now been assigned hosted-passage-level scope across 29 articles. Nine attribution conflicts remain; original printed facsimile and independence not certified. Completion of classification is not unique-custom or canonical owner approval.",
+      "source_native_type_initial": 3163,
+      "hosted_source_passage_reclassified": 132,
+      "hosted_article_groups_reviewed": 29
+    },
+    "evidence_only_to_approved_practice_relationships": {
+      "done": 0,
+      "total": 3295,
+      "status": "42 SOURCE-DESCRIPTION EDGES REVIEWED, ZERO HUMAN-APPROVED OWNER MERGES",
+      "note": "17 source-type waves and 79 dedup case units are not 3295 certified semantic practice/variant dispositions."
+    },
+    "dedup_action_review_caseboard": {
+      "family_clusters": 26,
+      "description_pair_comparisons": 41,
+      "institutional_or_regional_cases": 12,
+      "total_review_units": 79,
+      "approved_canonical_merges": 0,
+      "source_independence_newly_verified": 0,
+      "pairs_with_reinspected_hosted_source": 3,
+      "new_owner_action_comparison_edges": 42,
+      "newly_adjudicated_owner_ids": 0,
+      "description_level_core_matches_without_canonical_merge": 6,
+      "explicit_no_merge_vetoes_added": 11
+    },
+    "catholicculture_132_hosted_passage_review": {
+      "total": 132,
+      "actual_hosted_passages_checked": 132,
+      "remaining": 0,
+      "book_original_facsimiles_newly_checked": 0,
+      "source_article_groups_checked": 29,
+      "existing_master_owner_leads_not_final": 20,
+      "new_customs_certified": 0,
+      "reference_file": "customs-ultra-master-v2-132-hosted-passage-identity-review-20261030.v1.json",
+      "attribution_conflict_rows": 9,
+      "still_requires_original_book_facsimile_or_authorship_review": true,
+      "action_to_owner_comparison_edges": 42,
+      "action_to_owner_source_records_reviewed": 42,
+      "existing_owner_identities_examined": 14,
+      "negative_or_separate_actor_edges": 11,
+      "positive_exact_description_core_matches": 6,
+      "owner_relationship_editorially_reviewed_not_approved": true,
+      "action_owner_review_path": "customs-ultra-master-v2-42-action-identity-edges-20261030.v1.json"
+    },
+    "exact_work_indulgence_non_equivalence_checks": {
+      "done": 4,
+      "claims_published": 0,
+      "source": "customs-ultra-master-v2-indulgence-work-audit.v1.json",
+      "specific_stations_caution": "Twelve-candle home Stations cannot be treated as the 14-cross legitimately erected Way of the Cross prescribed by Enchiridion concession 13."
+    }
+  },
+  "direct_source_index_completeness": {
+    "printed_page_populated": 1315,
+    "scan_page_populated": 636,
+    "direct_url_populated": 992,
+    "note": "These are fields on the 3703-row *index*, not proof that original research lacks source URLs or folios. Follow original JSON pointers before marking unavailable."
+  },
+  "shared_observation_edges": [
+    {
+      "id": "weiser_handbook_granular_details:WEI58-DETAIL-B-115",
+      "group": [
+        "CAT-WEISER-GAP-024",
+        "CAT-WEISER-GAP-025"
+      ]
+    }
+  ],
+  "research_bucket_coverage": [
+    {
+      "bucket": "weiser_handbook_1958_original",
+      "total": 568,
+      "direct_group": 348,
+      "evidence_only": 220,
+      "index_has_printed_page": 568,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "BULK_IDENTITY_RELATIONSHIP_REVIEW",
+      "priority": 3,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "weiser_handbook_granular_details",
+      "total": 340,
+      "direct_group": 60,
+      "evidence_only": 280,
+      "index_has_printed_page": 340,
+      "index_has_scan_page": 340,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "BULK_IDENTITY_RELATIONSHIP_REVIEW",
+      "priority": 2,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_new_ocr",
+      "total": 293,
+      "direct_group": 0,
+      "evidence_only": 293,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 1,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_mueller_kelly",
+      "total": 204,
+      "direct_group": 0,
+      "evidence_only": 204,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 204,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 4,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_stokes",
+      "total": 198,
+      "direct_group": 0,
+      "evidence_only": 198,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 5,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_chaney",
+      "total": 170,
+      "direct_group": 0,
+      "evidence_only": 170,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 6,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_spain_elche_berga_caravaca",
+      "total": 145,
+      "direct_group": 0,
+      "evidence_only": 145,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 7,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_portugal_pci",
+      "total": 140,
+      "direct_group": 0,
+      "evidence_only": 140,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 8,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_three_family_books",
+      "total": 133,
+      "direct_group": 0,
+      "evidence_only": 133,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 9,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_catholicculture_excerpts",
+      "total": 132,
+      "direct_group": 0,
+      "evidence_only": 132,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 132,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 10,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave05",
+      "total": 132,
+      "direct_group": 0,
+      "evidence_only": 132,
+      "index_has_printed_page": 132,
+      "index_has_scan_page": 132,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "BULK_IDENTITY_RELATIONSHIP_REVIEW",
+      "priority": 11,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_ocr",
+      "total": 129,
+      "direct_group": 0,
+      "evidence_only": 129,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 129,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 12,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_wff_hynes",
+      "total": 125,
+      "direct_group": 0,
+      "evidence_only": 125,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 125,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 13,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_italy_local_feasts_wave02",
+      "total": 114,
+      "direct_group": 0,
+      "evidence_only": 114,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 14,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "weiser_family_1956_full_scan",
+      "total": 111,
+      "direct_group": 0,
+      "evidence_only": 111,
+      "index_has_printed_page": 111,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "BULK_IDENTITY_RELATIONSHIP_REVIEW",
+      "priority": 15,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_italy_four_unesco",
+      "total": 110,
+      "direct_group": 0,
+      "evidence_only": 110,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 110,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 16,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_pitre_palermo_1950",
+      "total": 110,
+      "direct_group": 0,
+      "evidence_only": 110,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 110,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 17,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave04",
+      "total": 105,
+      "direct_group": 0,
+      "evidence_only": 105,
+      "index_has_printed_page": 105,
+      "index_has_scan_page": 105,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "BULK_IDENTITY_RELATIONSHIP_REVIEW",
+      "priority": 18,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_italy_sicily_holy_week",
+      "total": 96,
+      "direct_group": 0,
+      "evidence_only": 96,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 96,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 19,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_france_sanch",
+      "total": 86,
+      "direct_group": 0,
+      "evidence_only": 86,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 86,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 20,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_france_pci_brittany",
+      "total": 71,
+      "direct_group": 0,
+      "evidence_only": 71,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 21,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_mcloughlin",
+      "total": 70,
+      "direct_group": 0,
+      "evidence_only": 70,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 22,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_france_pci_besta",
+      "total": 56,
+      "direct_group": 0,
+      "evidence_only": 56,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 23,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave09",
+      "total": 51,
+      "direct_group": 0,
+      "evidence_only": 51,
+      "index_has_printed_page": 51,
+      "index_has_scan_page": 51,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "BULK_IDENTITY_RELATIONSHIP_REVIEW",
+      "priority": 24,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "external_source_observations_pitre_original_1900_wave08",
+      "total": 8,
+      "direct_group": 0,
+      "evidence_only": 8,
+      "index_has_printed_page": 8,
+      "index_has_scan_page": 8,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "BULK_IDENTITY_RELATIONSHIP_REVIEW",
+      "priority": 25,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    },
+    {
+      "bucket": "weiser_handbook_1958_page_addenda",
+      "total": 6,
+      "direct_group": 0,
+      "evidence_only": 6,
+      "index_has_printed_page": 0,
+      "index_has_scan_page": 0,
+      "index_has_url": 0,
+      "phase": "IDENTITY_RELATION_SCREEN",
+      "original_source_data_retained": true,
+      "next_action": "NO_STRUCTURED_PRINTED_PAGE_IN_SOURCE_INDEX_CHECK_ORIGINAL_WEB_SOURCE",
+      "priority": 26,
+      "reporting_claim": "Coverage and evidence routing, not accepted unique customs."
+    }
+  ],
+  "release_freeze": "RESEARCH_ONLY",
+  "next_gates": [
+    {
+      "priority": 1,
+      "task": "Cross-source relationship pass",
+      "volume": 3295,
+      "method": "Work by the 26 source buckets; stage identity/variant/other-module links as hypotheses and verify action-level equivalence before assigning owner. Never turn an unlinked observation into a new custom by default."
+    },
+    {
+      "priority": 2,
+      "task": "Primary text validation",
+      "volume": 3703,
+      "method": "Prioritize 150–300 high-signal action passages per pass by original page or web line. Distinguish OCR/text location, original scanned page and independent Catholic witness. Avoid rescanning already certified pages."
+    },
+    {
+      "priority": 3,
+      "task": "Indulgence grants",
+      "volume": 4,
+      "method": "Recover 4 original historical legal instruments and full work+conditions; expand search beyond five explicit source-label matches. Separate 1962 historical status from post-1967 current law."
+    },
+    {
+      "priority": 4,
+      "task": "Universal vs regional scope classification",
+      "volume": 465,
+      "method": "Source-supported global Catholic practice / widespread Catholic optional / regional local / cultural non-exclusive / prayer or formal rite owner / unresolved; never manufacture universal observance."
+    },
+    {
+      "priority": 5,
+      "task": "Review and publication",
+      "volume": 0,
+      "method": "Only after master source ownership, bilingual article, rite/law, regional date, editorial approvals and canonical CI. Reuse Calendar/Learn/My Customs."
+    }
+  ],
+  "first_bulk_stage": {
+    "path": "data/customs/master/customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json",
+    "source_families": {
+      "Weiser 1956 family": 111,
+      "Weiser 1958 Handbook": 89
+    },
+    "lanes": {
+      "Household/community practice review": 115,
+      "Rite/prayer/sacramental owner review": 39,
+      "Historical folklore/context": 23,
+      "Author proposal not attested custom": 22,
+      "Indulgence source check": 1
+    },
+    "no_canonical_article_or_legal_grant_approved": true
+  }
+}

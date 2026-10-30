@@ -1,0 +1,23 @@
+name: Customs Strategy D relationship and editorial guard
+on:
+  pull_request:
+    paths:
+      - 'data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json'
+      - 'data/customs/master/customs-strategy-d-unified-shortlist30-20261026.v1.json'
+      - 'data/customs/master/customs-r18-final-source-recheck-release-gates-20261026.v1.json'
+      - 'data/customs/master/working-master.v1.json'
+      - 'data/customs/master/customs-consolidation-phase1-408-decisions-priority50.v1.json'
+      - 'tests/customs-strategy-d-cohort-gates.mjs'
+      - '.github/workflows/customs-strategy-d-relationship.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/customs-strategy-d-cohort-gates.mjs

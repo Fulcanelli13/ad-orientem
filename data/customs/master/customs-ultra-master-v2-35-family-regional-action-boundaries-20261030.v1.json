@@ -1,0 +1,1781 @@
+{
+  "schema": "AO_CUSTOMS_V2_35_FAMILY_REGIONAL_ACTION_BOUNDARY_ADJUDICATION",
+  "as_of": "2026-10-30",
+  "source_pin": {
+    "pr": 1723,
+    "branch": "research/customs-multibook-bulk150-20261026",
+    "prior_head": "2db24c69ca5763c301b80593c209533bb140d906",
+    "caseboard": "customs-ultra-master-v2-79-dedup-reconciliation-caseboard-20261030.v1.json",
+    "mcloughlin_intake": "mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+    "weiser_source_review": "customs-all408-consolidated-editorial-decision-ledger-20261029.v1.json"
+  },
+  "scope": "Action-boundary adjudication based on already recorded hosted transcriptions and previously screened Weiser original printed passages; no new direct original page/facsimile verification is claimed.",
+  "counts": {
+    "cases": 35,
+    "family_cases": 26,
+    "family_witness_rows": 70,
+    "regional_cases": 9,
+    "regional_group_rows": 28,
+    "newly_verified_independent_authors": 0,
+    "newly_verified_original_facsimiles": 0,
+    "new_canonical_identities": 0,
+    "canonical_merges": 0,
+    "indulgences_granted": 0,
+    "calendar_publications": 0
+  },
+  "status": "RESEARCH_ONLY_EDITORIAL_SIGNOFF_PENDING",
+  "publication_guards": {
+    "existing_published_customs": 36,
+    "source_independence_certified": false,
+    "church_ritual_authority_certified": false,
+    "human_identity_approval": false,
+    "automatic_identity_merges": false,
+    "new_calendar_publication": false
+  },
+  "family_decisions": [
+    {
+      "case_id": "MCL54-CLUSTER-001",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "EXISTING_OWNER_WITH_COMPONENTS",
+      "action_boundary": "Wreath construction, different materials, successive candle-lighting, prayer and Christmas reuse are stages or variants of ADVT-001, not nine independent customs. The father-led household blessing must not be promoted to a prescribed priestly rite.",
+      "next_evidence_gate": "Verify the source and rubric for the household blessing separately; preserve wreath material and Christmas transition as variants.",
+      "possible_existing_owners": [
+        "ADVT-001"
+      ],
+      "possible_provisional_groups": [
+        "CAT-WEISER-A-023"
+      ],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-001",
+          "action": "Circular evergreen Advent wreath with four coloured candles",
+          "claim_type": "REPORTED_WIDER_PRACTICE",
+          "reported_scope": "German-origin practice as reported by the author",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            112,
+            116
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-002",
+          "action": "Household members construct fresh Advent wreath together annually",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            116,
+            118
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-003",
+          "action": "A new silver star added to an Advent wreath during each evening prayer",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            117,
+            117
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-004",
+          "action": "Paper greenery substituted in city homes or metal-hoop wreaths in rural homes",
+          "claim_type": "AUTHOR_SUGGESTED_ADAPTATION",
+          "reported_scope": "McLoughlin's suggested home adaptation, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            118,
+            119
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-005",
+          "action": "Father-led family blessing and holy-water sprinkling of Advent wreath",
+          "claim_type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            119,
+            128
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-006",
+          "action": "Children light successive Advent candles with each week's family collect",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            128,
+            145
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-007",
+          "action": "Keeping an Advent candle lit at family meals or evening prayers",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            133,
+            133
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-008",
+          "action": "Changing Advent wreath to white candles and Christmas decorations",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            149,
+            149
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-009",
+          "action": "Retaining the decorated Christmas wreath in the home until Epiphany",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            149,
+            149
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-002",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "ONE_SOURCE_BOUNDED_CYCLE",
+      "action_boundary": "Pudding preparation, collective stirring, collect or wish, storage, and Christmas presentation are stages of a single reported Stir-up Sunday family food cycle; distinguish devotion from a recipe or folklore.",
+      "next_evidence_gate": "Check historical English regional evidence and whether the family's timing or flaming presentation is independently attested.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-010",
+          "action": "Preparing and collectively stirring a plum pudding early in Advent",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            151,
+            155
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-011",
+          "action": "Each person makes a wish then prays the Advent collect while stirring pudding",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            151,
+            155
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-012",
+          "action": "Storing steamed Advent pudding until Christmas feast",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            155,
+            155
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-013",
+          "action": "Serving Christmas plum pudding ceremonially with burning spirit",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            155,
+            155
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-003",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "EXISTING_OWNER_WITH_COMPONENTS",
+      "action_boundary": "Placing straw for good deeds and placing the Infant figure at Christmas complete the same children's Advent good-deed manger programme linked to ADVT-002.",
+      "next_evidence_gate": "Audit independent testimony only for any claimed regional or historical extension.",
+      "possible_existing_owners": [
+        "ADVT-002"
+      ],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-014",
+          "action": "Individual Advent mangers receive straw for children's charitable acts",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            167,
+            169
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-015",
+          "action": "Child finds a Christ Child figure placed into personal manger on Christmas",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            169,
+            169
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-004",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "ONE_REGIONAL_SOURCE_BOUNDED_CYCLE",
+      "action_boundary": "Planting wheat at Advent and displaying the green shoots at the crib form one attributed Hungarian household cycle, not two new customs. The adjective 'blessed' does not verify a minister or blessing formula.",
+      "next_evidence_gate": "Seek a Hungarian original witness and verify any blessing actor and formula before treating the source attribution as independent.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-016",
+          "action": "Hungarian custom of planting blessed wheat seed per Advent sacrifice",
+          "claim_type": "REPORTED_REGIONAL_TRADITION",
+          "reported_scope": "Hungarian practice as attributed by McLoughlin",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            170,
+            170
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-017",
+          "action": "Placing Advent-grown green wheat shoots beside Christmas crib until Epiphany",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            170,
+            170
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-005",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "ONE_DEVOTIONAL_FAMILY_MULTIPLE_FORMS",
+      "action_boundary": "Morning, noon and evening versicles, collects, hymns and instrumental accompaniment are forms of family Advent prayer; they are not five autonomous historical customs.",
+      "next_evidence_gate": "Keep the exact prayer and music usage in a domestic prayer-content lane and verify text rights and rubrical status before release.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-018",
+          "action": "Evening household prayers drawn from Mass collects prophetic readings and Advent hymns",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            172,
+            174
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-019",
+          "action": "Before morning and noon meals, Advent Lauds versicle with family response",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            178,
+            182
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-020",
+          "action": "Before evening meals, Advent Vespers versicle with family response",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            185,
+            190
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-021",
+          "action": "Singing Rorate Caeli and O Come Emmanuel within household Advent devotions",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            191,
+            191
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-022",
+          "action": "Children accompany seasonal hymns on a small household organ",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            192,
+            192
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-006",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "MULTIPLE_ACTIONS_SHARE_FEAST",
+      "action_boundary": "St Nicholas stockings or gifts fit SNIC-001; sharing gifts with poor children, baking spiced cookies, holding a family party and singing are related but actor/object-distinct practices, not a single universal St Nicholas rite.",
+      "next_evidence_gate": "Compare the food, gift-sharing and party customs to Weiser and regional witness claims before creating separate candidates.",
+      "possible_existing_owners": [
+        "SNIC-001"
+      ],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-023",
+          "action": "Children hang stockings on Saint Nicholas Eve and receive bishop-themed gifts",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            224,
+            226
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-024",
+          "action": "Separating children's feast gifts among Saint Nicholas, Christmas and Epiphany",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            225,
+            226
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-025",
+          "action": "Children give part of their Saint Nicholas gifts to poorer children at Christmas",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            227,
+            227
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-026",
+          "action": "Family Saint Nicholas feast party with Dutch spiced cookies and Bishopwyn",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            228,
+            239
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-027",
+          "action": "Speculaas-style spiced Saint Nicholas cookies formed into saint and animal shapes",
+          "claim_type": "RECIPE_ASSOCIATED_WITH_FEAST",
+          "reported_scope": "Dutch recipe in Florence Berger's Cooking for Christ, adopted by McLoughlin family",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            233,
+            238
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-028",
+          "action": "Singing Advent hymns and lighting Advent wreath at Saint Nicholas family party",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            239,
+            239
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-007",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "ONE_AUTHOR_HOUSEHOLD_DEVOTION_WITH_COMPONENTS",
+      "action_boundary": "Mary Candle veiling, Marian altar symbolism, Infant image, Immaculate Conception prayers, and candle lighting are related elements of an author-described domestic arrangement, not five approved customs.",
+      "next_evidence_gate": "Verify whether any specific Marian candle or symbolic veil is separately historically attested; preserve author adaptations.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-029",
+          "action": "Mary Candle veiled in white beside domestic Marian altar before Christmas",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            241,
+            244
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-030",
+          "action": "Mystical Rose symbolism marked with red rose and blue veil on Marian altar",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            242,
+            242
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-031",
+          "action": "Infant Jesus figure initially concealed by mantle on Advent Mary candle",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            244,
+            246
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-032",
+          "action": "Family recitation of Magnificat and Marian hymns on Immaculate Conception",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            246,
+            246
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-033",
+          "action": "Candle with white or blue ribbon burned by Our Lady's image at meals and prayers",
+          "claim_type": "REPORTED_WIDER_PRACTICE",
+          "reported_scope": "Other families according to McLoughlin",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            247,
+            247
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-008",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "SEPARATE_FOOD_FROM_FEAST_RITUAL",
+      "action_boundary": "St Lucy saffron buns constitute food preparation; a St Lucy wreath, procession or breakfast is not identical merely because it shares the feast.",
+      "next_evidence_gate": "Compare against CAT-WEISER-B-179 without merging its separate wreath or ceremonial roles.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [
+        "CAT-WEISER-B-179"
+      ],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-034",
+          "action": "Swedish saffron Saint Lucy cat-shaped buns made on December 13",
+          "claim_type": "REPORTED_REGIONAL_TRADITION",
+          "reported_scope": "Swedish feast-day food as adapted in a US Catholic home",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            249,
+            253
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-009",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "ONE_PERFORMANCE_FAMILY",
+      "action_boundary": "Advent Gospel dramatization and accompanying sung Annunciation or Bethlehem scenes are expressive forms of one teaching/performance family, not two independently witnessed customs.",
+      "next_evidence_gate": "Distinguish the author's pedagogical recommendations from a documented local Nativity play tradition.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-035",
+          "action": "Children enact daily Advent Gospel stories as household or school dramas",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            254,
+            256
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-036",
+          "action": "Dramatic singing about Annunciation or Bethlehem journey in children's performance",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "Corpus Christi School, New York",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            256,
+            257
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-010",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "BROAD_NATIVITY_DISPLAY_PLUS_AUTHOR_CRAFT",
+      "action_boundary": "Making crib figures and displaying a Nativity scene fall within a broad domestic crib practice; child-name portrait banners are an additional author adaptation, not proof of a separate traditional institution.",
+      "next_evidence_gate": "Compare to CAT-WEISER-A-045 and verify historical banner attestations separately.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [
+        "CAT-WEISER-A-045"
+      ],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-037",
+          "action": "Family crafts Nativity figures from wood, soap, pastry or plaster",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            276,
+            278
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-038",
+          "action": "Family entrance-hall Nativity scene displayed for guests",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            278,
+            279
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-039",
+          "action": "Children place their names or portrait banners around Christmas crib",
+          "claim_type": "AUTHOR_SUGGESTED_ADAPTATION",
+          "reported_scope": "McLoughlin's suggested home adaptation, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            279,
+            279
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-011",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "ONE_AUTHORED_TEACHING_DEVICE",
+      "action_boundary": "Opening seven O-Antiphon windows over December 17–23 and revealing the final Mother-and-Child image are successive actions of one authored Advent House devotion.",
+      "next_evidence_gate": "Keep liturgical O Antiphons separate from the author's home teaching object; no new Calendar rite.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-040",
+          "action": "Seven-window Advent House reveals successive O Antiphon symbols December 17–23",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            280,
+            283
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-041",
+          "action": "Daily opening Advent House windows during family morning O Antiphon prayers",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            281,
+            283
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-042",
+          "action": "December 23 Advent House door reveals Mother and Christ Child image",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            283,
+            283
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-012",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "ONE_TREE_WITH_SYMBOL_VARIANTS",
+      "action_boundary": "Prophets, ancestors of Christ, Fall imagery and other biblical ornaments are symbol choices attached to one Jesse-tree activity, not four separate customs.",
+      "next_evidence_gate": "Check derivation from prior Jesse-tree writers and classify Newland parallels as possibly derivative.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-043",
+          "action": "Children make devotional Christmas tree ornaments featuring saints and Nativity figures",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            298,
+            301
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-044",
+          "action": "Christmas tree ornaments feature biblical prophets and Advent characters",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            300,
+            300
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-045",
+          "action": "Jesse-tree-style ancestors of Christ represented by small dressed dolls",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            301,
+            301
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-046",
+          "action": "Symbols of Adam and Eve's Fall added to the domestic Jesse tree",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            301,
+            301
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-013",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "RECIPE_OR_FOOD_CLAIM_ONLY",
+      "action_boundary": "Making French Christmas brioche in family cooking is a source-described feast food; a recipe does not itself establish a distinct Catholic devotional custom.",
+      "next_evidence_gate": "Require a culturally specific ritual use or independent observance witness before canonical candidate creation.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-047",
+          "action": "French brioche prepared for Christmas in family cooking",
+          "claim_type": "RECIPE_ASSOCIATED_WITH_FEAST",
+          "reported_scope": "French bread as cooked by McLoughlin family",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            302,
+            305
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-014",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "SPECIFIC_FOOD_VARIANT_EXISTING_GROUP",
+      "action_boundary": "Christstollen with swaddled-Infant symbolism is a specific German food representation related to CAT-WEISER-A-064, not an independent custom by author repetition.",
+      "next_evidence_gate": "Check Weiser source dependence and separate bread symbolism from the act of baking.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [
+        "CAT-WEISER-A-064"
+      ],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-048",
+          "action": "German Christstollen loaf shaped with swaddled Christ symbolism",
+          "claim_type": "RECIPE_ASSOCIATED_WITH_FEAST",
+          "reported_scope": "German food associated with Christmas",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            303,
+            319
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-015",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "FOOD_CYCLE_WITH_OPTIONAL_SYMBOLS",
+      "action_boundary": "The Greek Christmas Melachrino recipe and the inserted coin are related food customs; substitution of a Christ Child figurine is a different symbolic option, not automatically an independently attested Greek tradition.",
+      "next_evidence_gate": "Verify Greek regional provenance and separate the author's suggested figurine alternative from the reported coin usage.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-049",
+          "action": "Greek Melachrino spiced cake for Christmas feast",
+          "claim_type": "RECIPE_ASSOCIATED_WITH_FEAST",
+          "reported_scope": "Greek Christmas cooking",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            303,
+            320
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-053",
+          "action": "Greek custom of inserting a silver coin into Melachrino cake",
+          "claim_type": "REPORTED_REGIONAL_TRADITION",
+          "reported_scope": "Greek practice per McLoughlin",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            320,
+            320
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-054",
+          "action": "Replacing silver coin with a small Christ Child figurine inside Christmas cake",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            320,
+            320
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-016",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "HISTORICAL_RITE_CONTEXT_NOT_NEW_CUSTOM",
+      "action_boundary": "Historical blessed offertory bread following early Eucharistic assemblies is comparative context; it is not new evidence for a 1962 Roman blessing formula or the exact scope of FOOD-001.",
+      "next_evidence_gate": "Request a primary liturgical-historical source before attaching any ancient office or formula.",
+      "possible_existing_owners": [
+        "FOOD-001"
+      ],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-050",
+          "action": "Historical offertory blessed bread taken home separately from Eucharist",
+          "claim_type": "HISTORICAL_OR_ORIGIN_CLAIM",
+          "reported_scope": "Early Christian practice described by McLoughlin; needs primary ritual source",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            310,
+            310
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-017",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "CROSS_RITE_BREAD_HOLD",
+      "action_boundary": "Blessed bread taken home from Byzantine liturgy is a different rite and ministerial provenance from Roman household bread customs.",
+      "next_evidence_gate": "Do not transfer Byzantine rite authority or terminology to a Roman-rite Mass or Calendar card.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-051",
+          "action": "Eastern Christian blessed bread collected after Byzantine liturgy",
+          "claim_type": "COMPARATIVE_RITE_CONTEXT",
+          "reported_scope": "McLoughlin's family visits to Byzantine liturgy",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            310,
+            310
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-018",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "AUTHOR_LAY_BLESSING_HOLD",
+      "action_boundary": "A lay parent's proposed holy-water sprinkling and bread prayer is an author household recommendation, not independently established clerical blessing or approved 1962 blessing text.",
+      "next_evidence_gate": "Check ecclesiastical authority and appropriate lay wording before considering any app prayer text.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-052",
+          "action": "Lay parent sprinkles homemade festive bread with holy water and prays blessing",
+          "claim_type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+          "reported_scope": "McLoughlin's suggested home adaptation, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            311,
+            314
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-019",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "RECIPE_OR_FOOD_CLAIM_ONLY",
+      "action_boundary": "Christmas Eve cassata is a reported Italian feast dessert or recipe, not on this evidence alone a separate historically Catholic liturgical custom.",
+      "next_evidence_gate": "Find a specific locality and ritual purpose beyond ordinary seasonal food preparation.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-055",
+          "action": "Italian Cassata dessert prepared for Christmas Eve",
+          "claim_type": "RECIPE_ASSOCIATED_WITH_FEAST",
+          "reported_scope": "Italian recipe adapted by McLoughlin household",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            326,
+            326
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-020",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "SPECIFIC_FOOD_SHAPE_VARIANT",
+      "action_boundary": "English manger-shaped mince pies relate to CAT-WEISER-A-068 as a regional presentation of a festive food; shape alone does not establish a new independent devotion.",
+      "next_evidence_gate": "Check Weiser and regional historical wording before asserting symbolism as standard.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [
+        "CAT-WEISER-A-068"
+      ],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-056",
+          "action": "Oblong Christmas mince pie decorated as Christ's manger",
+          "claim_type": "RECIPE_ASSOCIATED_WITH_FEAST",
+          "reported_scope": "English-origin symbolic Christmas pie prepared by McLoughlin household",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            333,
+            334
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-021",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "UNVERIFIED_ORIGIN_CLAIM_NOT_ACTION",
+      "action_boundary": "The claim that gingerbread boys originated as Christ Child figures is an etymological or origin assertion, not an observed devotional action.",
+      "next_evidence_gate": "Retain as a source claim awaiting historical verification; exclude from custom-identity totals.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-057",
+          "action": "Claim that gingerbread boy figures originally represent the Christ Child",
+          "claim_type": "HISTORICAL_OR_ORIGIN_CLAIM",
+          "reported_scope": "Author's unverified interpretation; not an independent action",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            335,
+            335
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-022",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "DOMESTIC_DECOR_BUNDLE",
+      "action_boundary": "A Marian image, evergreen mantel and vigil lights comprise a domestic Christmas decoration arrangement rather than independently attested rites for each object.",
+      "next_evidence_gate": "Keep the separate household lighting action distinguished from official candle blessing or prescribed vigil.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-058",
+          "action": "Evergreen mantel with Madonna and Child, vigil lights, and white dining candle",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            336,
+            337
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-023",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "EXISTING_CANDLE_CANDIDATE_VARIANT",
+      "action_boundary": "Lighting a Christmas Eve candle after the Angelus is one household action potentially related to CANDIDATE-IRISH-CHRISTMAS-CANDLE; an author's Irish-style description is not independent proof of Irish regional continuity.",
+      "next_evidence_gate": "Check Irish primary testimony and avoid conflating the Angelus prayer with candle lighting or Christmas Vigil rites.",
+      "possible_existing_owners": [
+        "CANDIDATE-IRISH-CHRISTMAS-CANDLE"
+      ],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-059",
+          "action": "Christmas Eve householder lights an Irish-style candle after the Angelus",
+          "claim_type": "REPORTED_REGIONAL_TRADITION",
+          "reported_scope": "Irish custom as described/adapted by a US family",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            337,
+            337
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-024",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "ONE_COMPOSITE_HOUSEHOLD_VIGIL_DIFFERENT_ACTION_ROLES",
+      "action_boundary": "Infant procession, lighting tree, Martyrology, Magnificat, Nativity Gospel, proposed crib blessing and Adeste Fideles are stages or optional elements of a composite domestic Christmas Eve vigil. They must not be claimed as seven prescribed rites.",
+      "next_evidence_gate": "Keep household reading and songs separate from liturgical Martyrology proclamation and ecclesiastical crib-blessing authority.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [
+        "CAT-WEISER-A-032"
+      ],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-060",
+          "action": "Children process with candles and Infant Jesus image to domestic crib",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            341,
+            341
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-061",
+          "action": "Household darkens room, then father lights Christmas tree and Christ candle",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            341,
+            341
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-062",
+          "action": "Roman Martyrology Nativity proclamation read in the family home",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            346,
+            349
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-063",
+          "action": "Household Magnificat sung or recited following Christmas crib procession",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            353,
+            361
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-064",
+          "action": "Family reads Luke's Nativity Gospel beside Christmas crib",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            366,
+            370
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-065",
+          "action": "Domestic crib blessing using family responses and a proposed prayer text",
+          "claim_type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            373,
+            383
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-066",
+          "action": "Christmas Eve household Mass collect and concluding Adeste Fideles",
+          "claim_type": "AUTHOR_FAMILY_PRACTICE",
+          "reported_scope": "McLoughlin household testimony, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            384,
+            389
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-025",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "adjudication": "DIFFERENT_BLESSING_OBJECTS_AND_DATES",
+      "action_boundary": "Christmas tree blessing, crib blessing and their timing are object-distinct domestic actions, not one unspecified approved Christmas blessing; proposed lay formulas need independent authority screening.",
+      "next_evidence_gate": "Check permissions for lay-led forms and keep tree and crib prayers in separate owner lanes.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-067",
+          "action": "Family blessing of Christmas tree before its first illumination",
+          "claim_type": "REPORTED_WIDER_PRACTICE",
+          "reported_scope": "Families as reported by McLoughlin",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            392,
+            393
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-069",
+          "action": "Families bless Christmas tree on Eve and crib on Christmas morning",
+          "claim_type": "REPORTED_WIDER_PRACTICE",
+          "reported_scope": "Some families as described by McLoughlin",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            398,
+            399
+          ],
+          "printed_1954_original_verified": false
+        },
+        {
+          "id": "MCL54-EWTN-070",
+          "action": "Household Christmas tree blessing text proposed for lay use",
+          "claim_type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+          "reported_scope": "McLoughlin's suggested home adaptation, US",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            399,
+            413
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    },
+    {
+      "case_id": "MCL54-CLUSTER-026",
+      "kind": "FAMILY",
+      "original_caseboard_relation": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "adjudication": "DERIVATIVE_ORIGIN_CLAIM_NOT_WITNESS",
+      "action_boundary": "McLoughlin's Paradise-tree explanation expressly relies on Weiser; this quotation is not a second independent witness to the origin claim or a new observed practice.",
+      "next_evidence_gate": "Retain dependency on Weiser's CAT-WEISER-A-051 group and verify origin history separately.",
+      "possible_existing_owners": [],
+      "possible_provisional_groups": [
+        "CAT-WEISER-A-051"
+      ],
+      "source_witnesses": [
+        {
+          "id": "MCL54-EWTN-068",
+          "action": "Paradise tree decorated with apples and symbolic pastry or wafers",
+          "claim_type": "HISTORICAL_OR_ORIGIN_CLAIM",
+          "reported_scope": "Medieval custom historical claim quoted from Francis X Weiser, not independent corroboration",
+          "hosted_url": "https://www.ewtn.com/catholicism/library/family-advent-customs-10412",
+          "hosted_lines": [
+            394,
+            398
+          ],
+          "printed_1954_original_verified": false
+        }
+      ]
+    }
+  ],
+  "regional_decisions": [
+    {
+      "case_id": "SEVILLE_SEISES",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "SAME_LOCAL_INSTITUTION_MULTIPLE_FEAST_CONTEXTS",
+      "adjudication": "SAME_LOCAL_TRADITION_DIFFERENT_FEAST_OCCURRENCES",
+      "action_boundary": "Corpus Christi and December 8 Seises dances belong to the Seville Cathedral institutional tradition, but two feast occurrences must remain visible; no global observance or authorized new rite inferred.",
+      "next_evidence_gate": "Verify Cathedral-specific historical permissions, chronology and whether dances differ on each feast.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-B-083",
+          "action": "Seville boys' Corpus Christi dance",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            265
+          ],
+          "source_scope": "HISTORICAL_LOCAL_INSTITUTIONAL",
+          "source_narrow_claim": "Seville Cathedral boy-choristers' Eucharistic dances, described as local and also performed at some other feasts",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-21-017"
+          ],
+          "geographic_claims": [
+            "Seville Cathedral Spain"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-109",
+          "action": "Seville Los Seises dance on the Immaculate Conception",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            294
+          ],
+          "source_scope": "ORIGINAL_PASSAGE_RITUAL_BOUNDARY_NOT_CALENDAR_CUSTOM",
+          "source_narrow_claim": "Seville cathedral Los Seises Eucharistic dance on December 8 is a separate occasion of the same local dance tradition; compare Corpus Christi entry.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-24-022"
+          ],
+          "geographic_claims": [
+            "Seville, Spain"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "POLISH_CORPUS_WREATHS",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "ONE_OBJECT_LIFECYCLE_POSSIBLE",
+      "adjudication": "ONE_BLESSED_OBJECT_LIFECYCLE_TWO_ACTORS",
+      "action_boundary": "The Polish Corpus Christi priestly wreath blessing and subsequent home/field hanging concern the same object but distinct ministerial and lay acts; retaining both edges avoids ritual-role confusion.",
+      "next_evidence_gate": "Verify blessing text and scope independently; keep any household use historical and regional.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-B-085",
+          "action": "Blessing Corpus Christi flower wreaths",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            265
+          ],
+          "source_scope": "ORIGINAL_PASSAGE_RITUAL_BOUNDARY_NOT_CALENDAR_CUSTOM",
+          "source_narrow_claim": "Polish Corpus Christi flower wreaths are blessed by priest and taken home, a local practice separate from general decorating.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-21-019"
+          ],
+          "geographic_claims": [
+            "Poland"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-086",
+          "action": "Hanging blessed Corpus Christi wreaths at home or by fields",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            266
+          ],
+          "source_scope": "HISTORIC_ACTION_IN_PRIMARY_SOURCE",
+          "source_narrow_claim": "Polish priests bless Corpus Christi flower wreaths, hung later in homes and fields; source passage begins on p265 rather than indexed reference p266.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-21-020"
+          ],
+          "geographic_claims": [
+            "Poland"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "EASTER_HOME_LIGHT",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "LINKED_TWO_STEP_LOCAL_PROCESS",
+      "adjudication": "LOCAL_TWO_STEP_HOUSEHOLD_SEQUENCE",
+      "action_boundary": "Extinguishing household fires and later transporting Easter Vigil fire in a lantern can be two dependent stages of a local Easter home-lighting sequence, not two automatic global customs.",
+      "next_evidence_gate": "Check locale, parish authorization and safety before interpreting historical fire transport as current practice.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-B-024",
+          "action": "Household fires extinguished before Easter Vigil",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            217
+          ],
+          "source_scope": "HISTORICAL_HOUSEHOLD_CUSTOM",
+          "source_narrow_claim": "Household lights and fires extinguished in anticipation of reception of Easter Vigil blessed fire",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-16-013"
+          ],
+          "geographic_claims": [
+            "European regional Catholic households"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-025",
+          "action": "Taking home Easter Vigil blessed fire by lantern",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            217
+          ],
+          "source_scope": "HISTORICAL_HOUSEHOLD_DEVOTION_RITE_BOUNDARY",
+          "source_narrow_claim": "Taking home flames of blessed Easter fire in lanterns, after the parish Vigil; dependent on local parish permission",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-16-014"
+          ],
+          "geographic_claims": [
+            "Some central European Catholic regions"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "ADVENT_IMAGE_ROUND",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "THREE_DIFFERENT_ACTION_VARIANTS",
+      "adjudication": "THREE_DIFFERENT_REGIONAL_DEVOTIONAL_ACTIONS",
+      "action_boundary": "The Marian image relay, St Joseph image visits, and Herbergsuchen lodging drama have different objects, participants and enactments; a common Advent-hospitality theme cannot merge them.",
+      "next_evidence_gate": "Verify site-level provenance and relationship to Posadas without equating regional distinct practices.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-A-027",
+          "action": "Alpine Marian-image visits between homes in Advent",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            57
+          ],
+          "source_scope": "ALPINE_ADVENT_HOME_IMAGE_RELAY",
+          "source_narrow_claim": "Alpine households carry an image of the expectant Blessed Virgin from house to house over nine evenings",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-05-008"
+          ],
+          "geographic_claims": [
+            "Alpine Europe"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-A-028",
+          "action": "Nine-night visits of an image of Saint Joseph",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            57
+          ],
+          "source_scope": "HISTORICAL_REGIONAL_DEVOTION",
+          "source_narrow_claim": "Boys take a Saint Joseph statue between homes on nine Advent nights, with prayers and procession on December 24",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-05-009"
+          ],
+          "geographic_claims": [
+            "Alpine Europe"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-A-029",
+          "action": "Herbergsuchen lodging-search devotional drama",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            58
+          ],
+          "source_scope": "GERMAN_ADVENT_DRAMATIC_PLAY",
+          "source_narrow_claim": "German Herbergsuchen is a dramatic representation of Mary and Joseph seeking lodging, described on page 57; page 58 continues with Posada comparison",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-05-010"
+          ],
+          "geographic_claims": [
+            "German-speaking areas"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "ALL_SOULS_ALMS",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "MULTIPLE_COUNTRY_AND_ACTION_VARIANTS",
+      "adjudication": "COUNTRY_SPECIFIC_CHARITY_AND_FOLKLORE_SPLIT",
+      "action_boundary": "Bread alms, legumes, Polish commemorative meals and Hungarian orphan hospitality share charity intention but differ in foods, beneficiaries and local practices; spirit-food interpretations remain folklore, not Catholic doctrine.",
+      "next_evidence_gate": "Compare each regional action and its beneficiary; keep soul-night chronology separate from a fictitious church-created All Souls octave.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-B-140",
+          "action": "Family charitable portions during Soul Nights",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            312
+          ],
+          "source_scope": "NARROW_HISTORICAL_ACTION_PRESENT_ON_OR_ADJACENT_TO_SCANNED_PAGE",
+          "source_narrow_claim": "Philippine novena and door-to-door song, Central European eight Holy Soul Nights, charity and prayer; no Church-created All Souls octave.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-021"
+          ],
+          "geographic_claims": [
+            "Central European Catholic homes"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-141",
+          "action": "All Souls soul bread given to poor and children",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            313
+          ],
+          "source_scope": "HISTORICAL_CHARITABLE_FOOD",
+          "source_narrow_claim": "All Souls breads and pastries distributed to children and poor; folk theory about the dead is contextual",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-022"
+          ],
+          "geographic_claims": [
+            "France Belgium Central Europe and elsewhere"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-143",
+          "action": "Beans, peas and lentils as All Souls alms",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            313
+          ],
+          "source_scope": "NARROW_HISTORICAL_ACTION_PRESENT_ON_OR_ADJACENT_TO_SCANNED_PAGE",
+          "source_narrow_claim": "All Saints woven cakes, All Souls beans/peas/charitable food and Austrian soul bread; pre-Christian spirit-food explanations not Catholic doctrine.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-024"
+          ],
+          "geographic_claims": [
+            "Western European Catholic households"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-144",
+          "action": "Polish empty chair and food charity for All Souls",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            313
+          ],
+          "source_scope": "HISTORICAL_FOOD_WITH_FOLKLORE",
+          "source_narrow_claim": "Polish empty place and meal for departed with portions later given to poor; never endorse food being consumed by spirits",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-025"
+          ],
+          "geographic_claims": [
+            "Poland"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-145",
+          "action": "Austrian soul breads to children in exchange for prayers",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            313
+          ],
+          "source_scope": "NARROW_HISTORICAL_ACTION_PRESENT_ON_OR_ADJACENT_TO_SCANNED_PAGE",
+          "source_narrow_claim": "All Saints woven cakes, All Souls beans/peas/charitable food and Austrian soul bread; pre-Christian spirit-food explanations not Catholic doctrine.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-026"
+          ],
+          "geographic_claims": [
+            "Alpine Austria"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-147",
+          "action": "Inviting Hungarian orphans to All Souls family meals",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            314
+          ],
+          "source_scope": "ORIGINAL_PASSAGE_ATTESTS_NARROW_HISTORICAL_ACTION",
+          "source_narrow_claim": "Hungarian family meals on All Saints and All Souls include invitation of orphaned children, with gifts.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-028"
+          ],
+          "geographic_claims": [
+            "Hungary"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "EASTER_EGGS",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "DECORATION_GIFT_AND_GAMES_DISTINCT",
+      "adjudication": "DISTINCT_EGG_DECORATION_GIFT_AND_GAME_ACTIONS",
+      "action_boundary": "Dyeing or decorating eggs, gifting them, rolling them, and egg hunts are different actions; regional colour/painting variants may be subtypes, and none implies ecclesiastical blessing or indulgence.",
+      "next_evidence_gate": "Trace explicitly religious symbols and regional witnesses separately from games and household craft.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-B-017",
+          "action": "Holy Saturday family Easter egg dyeing and baking",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            207
+          ],
+          "source_scope": "HISTORICAL_DOMESTIC_EASTER_PREP",
+          "source_narrow_claim": "Holy Saturday house preparations include painting eggs and cooking Easter bread; regional timing and no imposed rite",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-15-035"
+          ],
+          "geographic_claims": [
+            "Central Europe"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-038",
+          "action": "Giving decorated Easter eggs to children and household staff",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            234
+          ],
+          "source_scope": "HISTORICAL_DOMESTIC_GIFTS",
+          "source_narrow_claim": "Easter eggs given to children and workers; historical distinction from egg blessing rite",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-17-012"
+          ],
+          "geographic_claims": [
+            "Medieval and central/northern European households"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-039",
+          "action": "Red or coloured Easter eggs in regional celebrations",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            234
+          ],
+          "source_scope": "HISTORICAL_REGIONAL_DECORATION",
+          "source_narrow_claim": "Red, green and regional decorated eggs; Easter symbol values coexist with folk good-luck motifs",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-17-013"
+          ],
+          "geographic_claims": [
+            "Eastern Christianity and Central Europe"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-040",
+          "action": "Easter egg rolling and associated games",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            235
+          ],
+          "source_scope": "HISTORICAL_SEASONAL_GAME",
+          "source_narrow_claim": "Easter egg rolling and pecking games are documented in several countries; not themselves prayers or blessed objects",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-17-016"
+          ],
+          "geographic_claims": [
+            "European families"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-041",
+          "action": "Easter egg hunt traditions",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            235
+          ],
+          "source_scope": "HISTORIC_ACTION_IN_PRIMARY_SOURCE",
+          "source_narrow_claim": "Easter egg hunting and egg games are family customs, not indulgenced works merely by taking place at Easter.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-17-017"
+          ],
+          "geographic_claims": [
+            "France, Germany, Austria"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "LENTEN_PRETZELS",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "SAME_FOOD_DIFFERENT_USES",
+      "adjudication": "ONE_FOOD_TWO_DISTINCT_SOCIAL_ACTIONS",
+      "action_boundary": "Lenten pretzel symbolism and giving pretzels to poor persons refer to the same food type but distinct explanation and charitable action; one cannot automatically certify the other.",
+      "next_evidence_gate": "Verify specific historical loci and alms practice, not just the bread's purported symbolism.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-A-107",
+          "action": "Lenten pretzels symbolizing crossed praying arms",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            184
+          ],
+          "source_scope": "HISTORICAL_FOOD_SYMBOLISM",
+          "source_narrow_claim": "Lenten pretzel image of crossed praying arms and the brachiola explanation begins on page 183",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-14-022"
+          ],
+          "geographic_claims": [
+            "Roman/European historical explanation"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-A-108",
+          "action": "Lenten pretzels distributed as alms",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            184
+          ],
+          "source_scope": "HISTORICAL_CHARITABLE_PRACTICE",
+          "source_narrow_claim": "Pretzels distributed to poor people during Lent, directly attested",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-14-023"
+          ],
+          "geographic_claims": [
+            "Central Europe"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "ALL_SOULS_GRAVES",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "CLERIC_BLESSING_VS_LAY_CARE_AND_REGIONS",
+      "adjudication": "MULTIPLE_CEMETERY_ACTIONS_CLERIC_LAY_BOUNDARY",
+      "action_boundary": "Priestly grave blessing, lay grave care, candles, Brazilian cemetery prayer and Philippine repair/novena have distinct roles and geography; possible links to a cemetery-visit owner do not erase these differences.",
+      "next_evidence_gate": "Separate authorized priest blessing from devotional visiting, local vigil candles and regional novena.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-B-129",
+          "action": "Priestly grave blessing on All Souls",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            310
+          ],
+          "source_scope": "HISTORIC_RITE_OR_PRAYER_BOUNDARY",
+          "source_narrow_claim": "Historical priest blessing graves on All Souls with holy water amid processions and prayers, linked to cemetery observance.",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-008"
+          ],
+          "geographic_claims": [
+            "Roman Catholic parishes locally"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-130",
+          "action": "Cleaning and decorating graves before All Souls",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            311
+          ],
+          "source_scope": "HISTORICAL_DEVOTIONAL_PRACTICE",
+          "source_narrow_claim": "Cleaning and decorating graves before the feasts; paragraph begins on prior printed page 310",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-010"
+          ],
+          "geographic_claims": [
+            "Catholic European communities"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-131",
+          "action": "All Souls graveside lanterns and votive candles",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            311
+          ],
+          "source_scope": "HISTORICAL_DEVOTIONAL_PRACTICE",
+          "source_narrow_claim": "Protected lighted candles and little lanterns placed at graves for All Saints eve and the night",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-011"
+          ],
+          "geographic_claims": [
+            "Central European Catholic countries"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-135",
+          "action": "Brazilian All Souls cemetery visit and candles",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            312
+          ],
+          "source_scope": "HISTORICAL_REGIONAL_DEVOTION",
+          "source_narrow_claim": "Brazilian All Souls cemetery visitation, candles and prayers described on preceding page 311",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-015"
+          ],
+          "geographic_claims": [
+            "Brazil"
+          ]
+        },
+        {
+          "id": "CAT-WEISER-B-137",
+          "action": "Philippine grave repair preceding All Souls novena",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            312
+          ],
+          "source_scope": "HISTORICAL_REGIONAL_DEVOTION",
+          "source_narrow_claim": "Philippine nine-day All Souls cemetery novena and grave maintenance, specifically described",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-26-017"
+          ],
+          "geographic_claims": [
+            "Philippines"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CANDLEMAS_CRIB",
+      "kind": "REGIONAL_CLUSTER",
+      "original_caseboard_relation": "OPTIONAL_DOMESTIC_CYCLE_NOT_LITURGICAL_SEASON",
+      "adjudication": "OPTIONAL_HOUSEHOLD_CYCLE_NOT_LITURGICAL_SEASON",
+      "action_boundary": "Putting the crib away on Candlemas is a historically described popular household choice; it does not extend the 1962 Roman liturgical Christmas season to February 2.",
+      "next_evidence_gate": "Retain as optional local domestic timing, not a universal Calendar season rule.",
+      "source_witnesses": [
+        {
+          "id": "CAT-WEISER-B-116",
+          "action": "Taking down Christmas crib on Candlemas",
+          "source_book": "Weiser 1958 Handbook",
+          "printed_pages": [
+            300
+          ],
+          "source_scope": "HISTORICAL_CANDLEMAS_CONTEXT",
+          "source_narrow_claim": "Cribs and decorations customarily put away on Candlemas as the end of popular Christmas season; not an extension of 1962 Christmastide",
+          "original_printed_passage_previously_reviewed": true,
+          "primary_source_observation_ids": [
+            "WEI58-25-012"
+          ],
+          "geographic_claims": [
+            "European Catholic and other households"
+          ]
+        }
+      ]
+    }
+  ]
+}

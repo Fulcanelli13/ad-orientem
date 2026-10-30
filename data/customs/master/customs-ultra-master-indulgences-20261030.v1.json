@@ -1,0 +1,206 @@
+{
+  "schema": "AO_CUSTOMS_ULTRA_MASTER_WORK_SPECIFIC_INDULGENCES_V1",
+  "as_of": "2026-10-30",
+  "principle": "Indulgences attach to precisely specified works under applicable grants, not automatically to names of customs, festivals, objects or dates.",
+  "legal_periods": {
+    "modern": {
+      "1999_Enchiridion": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "1967_reform": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html"
+    },
+    "historical_1962_and_raccolta": {
+      "status": "PRIMARY_GRANT_COMPARISON_NOT_COMPLETED",
+      "may_not_be_presented_as_current": true
+    }
+  },
+  "counts": {
+    "modern_normative_work_entries": 7,
+    "conditional_custom_to_work_links": 8,
+    "historical_local_claims_unverified": 1,
+    "individually_approved_customs_grants": 0,
+    "a1_150_grant_approvals": 0,
+    "a2_a3_258_grant_approvals": 0
+  },
+  "modern_work_concessions": [
+    {
+      "grant_id": "ENCH1999-01",
+      "epoch": "1999_ENCHIRIDION",
+      "concession": "1",
+      "work": "Family consecration to Sacred Heart or Holy Family",
+      "scope": "First family consecration plenary; anniversary partial",
+      "conditions": "Use approved consecration prayer before image; priest/deacon if possible",
+      "authoritative_text": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "current_norm_read": true,
+      "grants_obtained_by_any_user_not_asserted": true,
+      "historical_raccolta_crosscheck": "PENDING"
+    },
+    {
+      "grant_id": "ENCH1999-07",
+      "epoch": "1999_ENCHIRIDION",
+      "concession": "7 §1",
+      "work": "Eucharistic adoration, Holy Thursday Tantum ergo, solemn Eucharistic procession",
+      "scope": "Plenary for specified work",
+      "conditions": "Exact prescribed context, participation, time where applicable",
+      "authoritative_text": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "current_norm_read": true,
+      "grants_obtained_by_any_user_not_asserted": true,
+      "historical_raccolta_crosscheck": "PENDING"
+    },
+    {
+      "grant_id": "ENCH1999-13",
+      "epoch": "1999_ENCHIRIDION",
+      "concession": "13",
+      "work": "Way of the Cross",
+      "scope": "Plenary for prescribed exercise",
+      "conditions": "Not any Passion walk, pageant or procession",
+      "authoritative_text": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "current_norm_read": true,
+      "grants_obtained_by_any_user_not_asserted": true,
+      "historical_raccolta_crosscheck": "PENDING"
+    },
+    {
+      "grant_id": "ENCH1999-17",
+      "epoch": "1999_ENCHIRIDION",
+      "concession": "17",
+      "work": "Rosary recitation",
+      "scope": "Plenary under specified recitation settings",
+      "conditions": "Specific prayer and setting, not every Marian celebration",
+      "authoritative_text": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "current_norm_read": true,
+      "grants_obtained_by_any_user_not_asserted": true,
+      "historical_raccolta_crosscheck": "PENDING"
+    },
+    {
+      "grant_id": "ENCH1999-29",
+      "epoch": "1999_ENCHIRIDION",
+      "concession": "29",
+      "work": "Cemetery prayer and All Souls church visit",
+      "scope": "Plenary or partial, as exact work and date specify",
+      "conditions": "1–8 Nov cemetery prayer; All Souls church visit with Our Father and Creed; applicable to souls in Purgatory",
+      "authoritative_text": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "current_norm_read": true,
+      "grants_obtained_by_any_user_not_asserted": true,
+      "historical_raccolta_crosscheck": "PENDING"
+    },
+    {
+      "grant_id": "ENCH1999-30",
+      "epoch": "1999_ENCHIRIDION",
+      "concession": "30",
+      "work": "Devout reading or listening to Sacred Scripture",
+      "scope": "Plenary or partial under specified duration",
+      "conditions": "At least 30 minutes for plenary; text and spiritual-reading conditions",
+      "authoritative_text": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "current_norm_read": true,
+      "grants_obtained_by_any_user_not_asserted": true,
+      "historical_raccolta_crosscheck": "PENDING"
+    },
+    {
+      "grant_id": "ENCH1999-33",
+      "epoch": "1999_ENCHIRIDION",
+      "concession": "33",
+      "work": "Visits to certain sacred places",
+      "scope": "Plenary for qualifying sacred-place visit",
+      "conditions": "Required place, feast/day/pilgrimage and Pater noster/Credo; not generic tourism",
+      "authoritative_text": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "current_norm_read": true,
+      "grants_obtained_by_any_user_not_asserted": true,
+      "historical_raccolta_crosscheck": "PENDING"
+    }
+  ],
+  "conditionally_related_customs": [
+    {
+      "identity_id": "DOM-006",
+      "grant_id": "ENCH1999-01",
+      "condition": "Initial family consecration or anniversary; never a claim for merely owning an image",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    },
+    {
+      "identity_id": "DOM-007",
+      "grant_id": "ENCH1999-01",
+      "condition": "Only if prescribed family consecration itself occurs; enthronement alone is insufficient",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    },
+    {
+      "identity_id": "DEAD-001",
+      "grant_id": "ENCH1999-29",
+      "condition": "Cemetery visit and prayer for the dead, with relevant November date restrictions",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    },
+    {
+      "identity_id": "DEAD-003",
+      "grant_id": "ENCH1999-29",
+      "condition": "Qualifying All Souls church visit with Pater and Credo; or specified other prayers for the dead",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    },
+    {
+      "identity_id": "HTHU-001",
+      "grant_id": "ENCH1999-07",
+      "condition": "Holy Thursday Tantum ergo in solemn reposition; merely visiting altars is not sufficient",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    },
+    {
+      "identity_id": "CORP-001",
+      "grant_id": "ENCH1999-07",
+      "condition": "Devout participation in solemn Eucharistic procession, not laying flower carpets",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    },
+    {
+      "identity_id": "DEV-006",
+      "grant_id": "ENCH1999-33",
+      "condition": "Correctly designated sanctuary or sacred place with qualifying date, prayers or group pilgrimage",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    },
+    {
+      "identity_id": "PATR-001",
+      "grant_id": "ENCH1999-33",
+      "condition": "Qualifying parish church visit on titular feast with Pater and Credo; patronal festivities alone do not suffice",
+      "status": "NORMATIVE_CONDITIONAL_WORK_RELATIONSHIP_NOT_CUSTOM_GRANT",
+      "human_canonical_claim_approval": false,
+      "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "regime": "POST_1967_1999"
+    }
+  ],
+  "historical_grant_claim_queue": [
+    {
+      "claim_id": "FRAUENDREISSIGER-1780",
+      "related_review_key": "CUSTOMS-R18-17",
+      "claimed_grantor": "Pius VI",
+      "claimed_year": 1780,
+      "reporting_site": "https://www.mariathalkirchen.de/index.php?id=127",
+      "primary_grant_decree_retrieved": false,
+      "conditions_verified": false,
+      "still_applicable_today_verified": false,
+      "claim_status": "HISTORICAL_REPORT_ONLY_NOT_AN_ACTIVE_GRANTED_INDULGENCE"
+    }
+  ],
+  "bulk_research_inputs": [
+    "data/customs/master/customs-a1-150-evidence-and-indulgence-triage-20261029.v1.json",
+    "data/customs/master/customs-a2-a3-258-source-calendar-indulgence-review-20261029.v1.json"
+  ],
+  "next_tasks": [
+    "Search each source observation for historical indulgence/grant language with original page references, not only title keywords",
+    "Locate exact original decree, local faculties or Raccolta concession and distinguish validity as of 1962 from post-1967 grants",
+    "Map exact prescribed work to verified customs and regional variants; label required date, prayer, place and sacramental conditions",
+    "Certify record by record only after source corroboration; never change Calendar or promise spiritual benefit from a research lead"
+  ]
+}
