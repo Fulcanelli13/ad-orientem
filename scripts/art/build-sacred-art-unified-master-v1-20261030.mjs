@@ -465,7 +465,7 @@ const toQueueRow=x=>({
  priority_score:x.priorityScore,native_original_verified:false,
  human_pristine_approved:false,approved_in_app:false});
 const toQueue=(arr)=>arr.map(toQueueRow).sort((a,b)=>
- b.priority_score-a.priority_score||a.title.localeCompare(b.title));
+ b.priority_score-a.priority_score||String(a.title||"").localeCompare(String(b.title||"")));
 const firstReview=toQueue(queues.PHOTO_QA_OR_REPAIR.filter(x=>x.readyForUserPristineQualityReview))
  .slice(0,200).map((x,i)=>({
  batch_position:i+1,...x,user_photo_decision:"",
