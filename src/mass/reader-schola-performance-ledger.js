@@ -11,10 +11,10 @@ const statuses=freeze({
  SKIP:"SKIPPED_BY_USER",RESET:DEFAULT
 });
 export const SCHOLA_PERFORMANCE_ACTIONS=freeze([...ACTIONS]);
-function reason(event,{manualRelease=false}={}){
+function reason(event,{releasedBenedictus=false}={}){
  if(!event||!ELIGIBLE.has(event.kind))return "NOT_A_MUSIC_PERFORMANCE";
  if(event.id==="BENEDICTUS_CONTINUOUS")return "CONTINUOUS_WITH_SANCTUS";
- if(event.id==="BENEDICTUS_AFTER_CHALICE" && !manualRelease)
+ if(event.id==="BENEDICTUS_AFTER_CHALICE" && !releasedBenedictus)
   return "BENEDICTUS_MANUAL_RELEASE_REQUIRED";
  if(event.manualOnly && event.id!=="BENEDICTUS_AFTER_CHALICE")
   return "MANUAL_CEREMONY_GATE";
@@ -34,6 +34,10 @@ function sourceEvent(itinerary,id){
 }
 export function createScholaPerformanceLedger(){
  const records=new Map();
+ // A guarded, user-triggered post-Chalice release belongs to this Mass only.
+ // Its authorization survives Undo so a visitor may correct a mistaken
+ // START without having to replay the already-completed release ceremony.
+ const releasedBenedictus=new Set();
  let sequence=0;
  function project(itinerary,{selectedEventId=null}={}){
   if(!itinerary?.supported)return freeze({
@@ -43,7 +47,7 @@ export function createScholaPerformanceLedger(){
   });
   const counts={expected:0,started:0,finished:0,skipped:0};
   const events=freeze(itinerary.events.map(event=>{
-   const blocked=reason(event);
+   const blocked=reason(event,{releasedBenedictus:releasedBenedictus.has(event.id)});
    const record=records.get(event.id);
    const status=record?.status??DEFAULT;
    if(!blocked)counts[status==="STARTED_OBSERVED"?"started":
@@ -68,13 +72,17 @@ export function createScholaPerformanceLedger(){
   if(!ACTIONS.has(kind))return freeze({ok:false,reason:"INVALID_ACTION"});
   const event=sourceEvent(itinerary,id);
   if(!event)return freeze({ok:false,reason:"NOT_IN_THIS_MASS"});
-  const blocked=reason(event,{manualRelease});
-  if(blocked)return freeze({ok:false,reason:blocked});
-  // Delayed polyphonic Benedictus is owned by the existing post-Chalice
-  // manual-release button, which separately verifies the actual boundary.
-  if(event.id==="BENEDICTUS_AFTER_CHALICE" &&
-    (manualRelease!==true||kind!=="START"))
+  // An initial delayed Benedictus START is accepted only from the existing
+  // guarded post-Chalice choir release, never from ordinary priest navigation.
+  // Once released, the visitor may explicitly FINISH, Undo or re-mark START;
+  // none of those transitions automatically advances the music or priest.
+  const released=releasedBenedictus.has(id);
+  if(event.id==="BENEDICTUS_AFTER_CHALICE" && !released &&
+     (manualRelease!==true||kind!=="START"))
     return freeze({ok:false,reason:"BENEDICTUS_MANUAL_RELEASE_REQUIRED"});
+  const blocked=reason(event,{releasedBenedictus:released||
+    (event.id==="BENEDICTUS_AFTER_CHALICE"&&manualRelease===true&&kind==="START")});
+  if(blocked)return freeze({ok:false,reason:blocked});
   const previous=records.get(id)?.status??DEFAULT;
   if(kind==="START"&&previous!==DEFAULT||
      kind==="FINISH"&&previous!=="STARTED_OBSERVED"||
@@ -82,6 +90,8 @@ export function createScholaPerformanceLedger(){
      kind==="RESET"&&previous===DEFAULT)
     return freeze({ok:false,reason:"INVALID_STATUS_TRANSITION"});
   sequence+=1;
+  if(event.id==="BENEDICTUS_AFTER_CHALICE" && kind==="START" && manualRelease===true)
+    releasedBenedictus.add(id);
   if(kind==="RESET")records.delete(id);
   else records.set(id,freeze({status:statuses[kind],sequence,
    source:"EXPLICIT_USER_ACTION"}));
