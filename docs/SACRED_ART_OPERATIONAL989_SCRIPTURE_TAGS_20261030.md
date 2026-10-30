@@ -1,13 +1,7 @@
-# Operational Sacred Art → Scripture, 989 stable work-groups
+# Sacred Art operational Scripture index (30 October 2026)
 
-Created 30 October 2026. Source is the archived v2 operational master: **548 Q2 Photo QA + 441 Rights/Alternative**, 989 distinct physical-work-group IDs. The 383 canonical paintings remain a distinct, stronger Scripture index.
+The frozen 989 operational groups consist of 548 photo-QA and 441 rights/alternative groups. **938/989** now carry one or more Scripture citations, **51** remain unmatched, **1044** typed relationships have been collected, and **300** groups have direct biblical scene hypotheses. These are provisional, title-based relationships only, not visually verified links.
 
-- Group-level Scripture candidates: **745 of 989**
-- Unmatched source/subject cases: **244**
-- Direct event identified from titles: **219** (not image verified)
-- Exact canonical artwork-ID inheritance: **160**
-- Scripture relations: **822**
+The separate canonical 383 registry has complete typed Scripture coverage. The 989 overlay preserves all group identifiers (including the user-review Q2 548 in their fixed order), exactly inherits known canonical IDs, and treats other titles as research suggestions. Post-biblical saints, dogmatic subjects, and traditional stations are **not** represented as exact Gospel events. Unmatched mythological and unclear artworks remain explicitly unmatched.
 
-Rows are ordered as Q2 548 followed by the 441 rights/alternative queue. The Q2 IDs can join directly to the user Prayer Review Batch 1–11 JSON decisions. Title-only matches are not physical-work merges. Post-biblical saints and doctrine are typed context, not literal Gospel events. Incompletely identified photographs must be researched. All Calendar day link arrays are empty for the next phase.
-
-Research only: no image rights, gallery approval, historical artwork choice or app release changed.
+Every Calendar mapping field is empty. The next crosswalk should join 1962 feast/day/Gospel context and enforce all previous human Class I, Sunday, Prayer and art decisions before any suggested placement. Nothing is published or rights-cleared by this research output.
