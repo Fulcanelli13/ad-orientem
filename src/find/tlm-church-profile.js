@@ -77,22 +77,39 @@ export function renderTlmChurchProfile(item,language="en"){
  const contact=venue?.contact??{};
  const hasPhoto=eligibleDirectoryImage(item?.cover_media,item?.place_id);
  const address=T(venue?.address?.formatted)||[venue?.address?.line1,venue?.address?.postal_code,venue?.address?.city,venue?.address?.country_code].map(T).filter(Boolean).join(", ");
- let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet aoTlmChurchProfile" role="dialog" aria-modal="true" aria-label="'+E(item?.title)+'" data-tlm-church-profile="'+E(item?.source_id)+'">';
- html+='<header class="aoTlmProfileHeading"><div><small>'+E(L(language,"TRADITIONAL MASS · CHURCH PROFILE","MESSE TRADITIONNELLE · FICHE D’ÉGLISE"))+'</small><h2>'+E(item?.title)+'</h2><p>'+E(item?.subtitle)+'</p>'+
- (venue?.diocese?.name?'<p>'+E(venue.diocese.name)+'</p>':'')+'</div><button type="button" data-find-close-detail aria-label="'+E(L(language,"Close","Fermer"))+'">×</button></header>';
- html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+E(L(language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
- if(hasPhoto){const m=item.cover_media;
-  html+='<figure class="aoTlmProfileHero"><img loading="lazy" decoding="async" src="'+E(m.asset_path)+'" alt="'+E(language==="fr"?m.alt_fr:m.alt_en)+'"><figcaption>'+E(m.credit)+' · '+
-   link(m.license_url,m.license)+' · '+link(m.source_url,L(language,"Original photograph","Photographie originale"))+'</figcaption></figure>';
- }else html+=renderDirectoryIdentityFallback(item,language,"detail");
  const listedAffiliation=T(item?.eyebrow)||T(item?.community_id)||unknown(language);
  const listedEmblem=massInstitutionEmblem(item?.community_id);
- // R49 map records retain their source-reported affiliation even when no
- // canonical Directory ministry or independently verified rite was imported.
- if(!v.ministries.length)html+='<section class="aoTlmProfileListedAffiliation" data-tlm-source-affiliation="'+E(item?.community_id)+'">'+
-  (hasPhoto&&listedEmblem?'<img src="'+E(listedEmblem.image)+'" loading="lazy" decoding="async" alt="">':'')+
-  '<div><small>'+E(L(language,"Affiliation · according to the directory source","Affiliation · selon la source de l’annuaire"))+'</small>'+
-  '<strong>'+E(listedAffiliation)+'</strong><span>'+E(L(language,"Reported identity only; not a verified Mass, rite, missal or canonical status","Identité signalée uniquement ; ni messe, rite, missel ou statut canonique vérifié"))+'</span></div></section>';
+ const one=v.ministries.length===1?v.ministries[0]:null;
+ // Emblems identify a reported ministry, never the building's ownership
+ // or the ecclesial position / Una Cum of a particular celebration.
+ const introEmblem=!v.ministries.length?listedEmblem:one?massInstitutionEmblem(one.raw?.community_id):null;
+ const introLabel=one?one.community:v.ministries.length>1?
+   L(language,"Multiple ministries","Plusieurs ministères"):listedAffiliation;
+ const preliminary=Boolean(item?.preliminary_group)||T(item?.map_state)==="PROVISIONAL"||v.unverified;
+ const statusText=preliminary?L(language,"Provisional venue · check source","Lieu provisoire · consulter la source"):
+   T(item?.status)||L(language,"Consult original sources","Consulter les sources originales");
+ let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet aoTlmChurchProfile" role="dialog" aria-modal="true" aria-label="'+E(item?.title)+'" data-tlm-church-profile="'+E(item?.source_id)+'">';
+ html+='<nav class="aoTlmProfileChrome" aria-label="'+E(L(language,"Church profile navigation","Navigation de la fiche"))+'">'+
+  '<button type="button" data-explore-collapse-detail>'+E(L(language,"← Back to preview","← Retour à l’aperçu"))+'</button>'+
+  '<button type="button" class="aoTlmProfileClose" data-find-close-detail aria-label="'+E(L(language,"Close","Fermer"))+'">×</button></nav>';
+ html+='<div class="aoTlmProfileSpotlight"><div class="aoTlmProfileMedia">';
+ if(hasPhoto){const m=item.cover_media;
+  html+='<figure class="aoTlmProfileHero"><img loading="lazy" decoding="async" src="'+E(m.asset_path)+'" alt="'+E(language==="fr"?m.alt_fr:m.alt_en)+'"><figcaption><details class="aoTlmProfileCredits"><summary>'+E(L(language,"Photograph & credit","Photographie et crédit"))+'</summary><div>'+
+   E(m.credit)+' · '+link(m.license_url,m.license)+' · '+link(m.source_url,L(language,"Original photograph","Photographie originale"))+'</div></details></figcaption></figure>';
+ }else html+=renderDirectoryIdentityFallback(item,language,"detail");
+ html+='</div><header class="aoTlmProfileHeading"><small>'+E(L(language,"TRADITIONAL MASS · CHURCH PROFILE","MESSE TRADITIONNELLE · FICHE D’ÉGLISE"))+'</small>'+
+  '<h2>'+E(item?.title)+'</h2><p class="aoTlmProfileLocation">'+E(item?.subtitle)+'</p>'+
+  (venue?.diocese?.name?'<p class="aoTlmProfileDiocese">'+E(venue.diocese.name)+'</p>':'')+
+  '<div class="aoTlmProfileAffiliation">'+
+   (introEmblem?'<img src="'+E(introEmblem.image)+'" alt="" loading="lazy" decoding="async">':'')+
+   '<div><small>'+E(v.ministries.length?L(language,"Ministry / community","Ministère / communauté"):L(language,"Affiliation · source-reported","Affiliation · selon la source"))+'</small>'+
+   '<strong>'+E(introLabel)+'</strong></div></div>'+
+   '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
+  '</header></div>';
+ // Provisional source labels are useful for identification, not ecclesial proof.
+ if(!v.ministries.length)html+='<p class="aoTlmProfileListedNote" data-tlm-source-affiliation="'+E(item?.community_id)+'">'+
+ E(L(language,"Affiliation is source-reported; it does not establish any specific Mass, rite, missal or ecclesial status.",
+  "L’affiliation provient de la source et ne prouve ni messe particulière, ni rite, missel ou statut ecclésial."))+'</p>';
  html+='<section class="aoTlmProfilePanel" aria-label="'+E(L(language,"Liturgical and ecclesial identity","Identité liturgique et ecclésiale"))+'">';
  html+='<h3>'+E(L(language,"Liturgy & ecclesial identity","Liturgie et identité ecclésiale"))+'</h3>';
  if(!v.ministries.length)html+='<p>'+E(L(language,"No independently verified ministry-level liturgical classification is attached to this directory record.","Aucune classification liturgique de ministère vérifiée indépendamment n’est associée à cette fiche."))+'</p>';
@@ -146,11 +163,12 @@ export function renderTlmChurchProfile(item,language="en"){
  if(values(contact.phone).length)html+=detail(L(language,"Telephone","Téléphone"),values(contact.phone).join(" · "),null);
  if(values(contact.email).length)html+=detail("Email",values(contact.email).join(" · "),null);
  if(item?.place_id)html+='<button type="button" data-explore-open-place="'+E(item.place_id)+'">'+E(L(language,"Explore this exact Place · history, relics, prayers","Explorer ce lieu exact · histoire, reliques, prières"))+'</button>';
- html+='</section><section class="aoTlmProfilePanel"><h3>'+E(L(language,"Original sources & verification","Sources originales et vérification"))+'</h3>';
+ html+='</section><section class="aoTlmProfileSourceSection"><details class="aoTlmProfileSourceDisclosure"><summary>'+
+  E(L(language,"Sources & verification","Sources et vérification"))+' <span aria-hidden="true">⌄</span></summary><div class="aoTlmProfileSourceContent">';
  if(sourceLinks.length)html+='<div class="aoTlmProfileSources">'+sourceLinks.map(s=>link(s.url,s.title||s.issuer||L(language,"Source","Source"))).join("")+'</div>';
  else html+='<p>'+E(L(language,"Source link not yet verified","Lien source non vérifié"))+'</p>';
  html+='<p class="aoTlmProfileCaution">'+E(L(language,"An institute's declared policy and a particular celebration's practice are distinct. Unknown fields remain unknown.",
-    "La politique déclarée d’un institut et la pratique d’une célébration particulière sont distinctes. Les champs inconnus demeurent inconnus."))+'</p></section>';
+    "La politique déclarée d’un institut et la pratique d’une célébration particulière sont distinctes. Les champs inconnus demeurent inconnus."))+'</p></div></details>';
  return html+'</section></div>';
 }
 export const TLM_CHURCH_PROFILE_STYLE=String.raw`
@@ -195,4 +213,55 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 .aoTlmProfileAddress{overflow-wrap:anywhere}
 @media(max-width:560px){.aoTlmChurchProfile{width:100%;max-width:none;max-height:90dvh;padding:12px 13px max(30px,env(safe-area-inset-bottom));border-radius:18px 18px 0 0}.aoTlmProfilePanel{padding:12px}.aoTlmProfileIdentityGrid{gap:7px}.aoTlmProfileDatum{padding:9px 8px}.aoTlmProfileDatum strong{font-size:12px}.aoTlmProfileSchedule{flex-direction:column;gap:4px}.aoTlmProfileSchedule>span{max-width:none}}
 @media(prefers-reduced-motion:reduce){.aoTlmChurchProfile{scroll-behavior:auto}}
+
+/* Editorial church-profile layout: photographic cover and distinct ministry
+ * insignia, with text-first provenance and no unverified status inference. */
+.aoTlmChurchProfile{width:min(100%,920px);max-width:920px;max-height:min(94dvh,1000px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;padding:0 21px 28px;border-radius:20px;box-shadow:0 24px 85px #04080ca0}
+.aoTlmProfileChrome{position:sticky;top:0;z-index:6;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;background:#14212bee;border-bottom:1px solid #d0b77a22;backdrop-filter:blur(12px)}
+.aoTlmProfileChrome button{min-height:44px;border:0;background:transparent;color:#e9d6ae;font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoTlmProfileChrome .aoTlmProfileClose{width:44px;border-radius:50%;background:#263440;font-size:24px}
+.aoTlmProfileChrome button:focus-visible,.aoTlmProfileSourceDisclosure summary:focus-visible,.aoTlmProfileCredits summary:focus-visible{outline:2px solid #e8c48b;outline-offset:2px}
+.aoTlmProfileSpotlight{display:grid;grid-template-columns:minmax(0,41fr) minmax(0,59fr);gap:22px;align-items:stretch;padding:19px 0 18px;border-bottom:1px solid #d0b77a33}
+.aoTlmProfileSpotlight>*,.aoTlmProfileHeading{min-width:0}
+.aoTlmProfileMedia{display:flex;flex-direction:column;min-width:0}
+.aoTlmProfileSpotlight .aoTlmVenueIdentity--detail{height:100%;min-height:235px;margin:0}
+.aoTlmProfileSpotlight .aoTlmProfileHero{margin:0;display:flex;flex-direction:column;min-width:0;flex:1}
+.aoTlmProfileSpotlight .aoTlmProfileHero img{display:block;width:100%;height:100%;min-height:235px;max-height:340px;object-fit:contain;background:#09131d;border-radius:12px}
+.aoTlmProfileSpotlight .aoTlmProfileHero figcaption{margin:4px 2px 0}
+.aoTlmProfileHeading{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:6px 0;gap:0}
+.aoTlmProfileHeading h2{font:600 clamp(25px,3.8vw,38px)/1.12 var(--ao-font-display,Georgia,serif);margin:9px 0 10px;color:#f4e6cb;overflow-wrap:anywhere}
+.aoTlmProfileHeading>small{font:650 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:#d8bc83;letter-spacing:.12em}
+.aoTlmProfileHeading p{font:12px/1.45 var(--ao-font-ui,system-ui,sans-serif);color:#abbcc5;margin:3px 0}
+.aoTlmProfileAffiliation{display:flex;align-items:center;gap:12px;max-width:100%;margin:17px 0 13px;padding:11px 13px;border:1px solid #d0b77a33;border-radius:12px;background:#26333c}
+.aoTlmProfileAffiliation img{width:48px;height:48px;object-fit:contain;flex:none}
+.aoTlmProfileAffiliation div{display:flex;flex-direction:column;min-width:0;gap:4px}
+.aoTlmProfileAffiliation small{font:600 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);color:#d0b789;letter-spacing:.035em}
+.aoTlmProfileAffiliation strong{font:600 16px/1.25 var(--ao-font-display,Georgia,serif);color:#f5e6cd;overflow-wrap:anywhere}
+.aoTlmProfileVerification{display:inline-flex;align-items:center;max-width:100%;gap:7px;padding:5px 9px;border:1px solid #a1bec13a;border-radius:999px;color:#c0d9da!important;font:600 10px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important;overflow-wrap:anywhere}
+.aoTlmProfileVerification:before{content:'';width:6px;height:6px;flex:none;border-radius:50%;background:#90b9ae}
+.aoTlmProfileVerification.is-provisional{color:#d9bea2!important;border-color:#caad7847}
+.aoTlmProfileVerification.is-provisional:before{background:#d5b47e}
+.aoTlmProfileListedNote{font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#bdc5c5;padding:0 3px;margin:14px 0}
+.aoTlmProfileSourceSection{margin:15px 0 0;border:1px solid #c6ad7b35;border-radius:12px;overflow:hidden;background:#111e28}
+.aoTlmProfileSourceDisclosure summary{list-style:none;min-height:48px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;cursor:pointer;color:#dbc79e;font:600 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTlmProfileSourceDisclosure summary::-webkit-details-marker,.aoTlmProfileCredits summary::-webkit-details-marker{display:none}
+.aoTlmProfileSourceContent{padding:0 15px 14px;border-top:1px solid #d0b77a22}
+.aoTlmProfileCredits{font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif);color:#bec6c5}
+.aoTlmProfileCredits summary{min-height:27px;cursor:pointer;color:#bbbdba}
+.aoTlmProfileCredits>div{padding:5px 0 3px}
+@media(max-width:560px){
+ .aoTlmChurchProfile{width:100%;max-width:none;max-height:94dvh;padding:0 13px max(30px,env(safe-area-inset-bottom));border-radius:19px 19px 0 0}
+ .aoTlmProfileChrome{padding:8px 0}
+ .aoTlmProfileSpotlight{grid-template-columns:minmax(0,1fr);gap:12px;padding:12px 0 14px}
+ .aoTlmProfileSpotlight .aoTlmProfileHero img{height:auto;min-height:0;max-height:220px}
+ .aoTlmProfileSpotlight .aoTlmVenueIdentity--detail{min-height:150px}
+ .aoTlmProfileHeading{padding:0 3px}
+ .aoTlmProfileHeading h2{font-size:clamp(24px,7vw,30px);margin:6px 0}
+ .aoTlmProfileAffiliation{margin:10px 0 8px;padding:9px 11px}
+ .aoTlmProfileAffiliation img{width:40px;height:40px}
+}
+@media(max-width:359px){
+ .aoTlmChurchProfile{padding-inline:11px}
+ .aoTlmProfileSpotlight .aoTlmProfileHero img{max-height:185px}
+}
 `;
