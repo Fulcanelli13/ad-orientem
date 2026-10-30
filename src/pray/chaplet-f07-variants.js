@@ -60,7 +60,7 @@ export function renderF07FiveWounds(position,{french=false}={}){
  return '<section class="aoF07FiveWoundsBand" data-f07-variant="five-wounds" data-f07-position="'+position+
   '" data-f07-total="30" data-f07-phase="'+(selected.group+1)+'" aria-label="'+esc(aria)+'">'+
   '<svg class="aoF07WoundsCross" viewBox="0 0 86 84" role="img" aria-label="'+esc(aria)+'">'+
-   '<path class="aoF07WoundsCrossLine" d="M43 4 V81 M6 23 H80"/>'+spots.join("")+'</svg>'+
+   '<path class="aoF07WoundsCrossLine" d="M43 4 V81 M6 23 H80"/>'+spots+'</svg>'+
   '<div class="aoF07FiveWoundsMeta"><small>'+esc(shortNames[selected.group])+'</small>'+
    '<strong>'+esc(prayer)+'</strong><span>'+esc(beadNote)+'</span></div>'+
   '</section>';
