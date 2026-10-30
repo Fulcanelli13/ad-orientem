@@ -81,11 +81,14 @@
         "customs-ultra-master-v2-wave17-95-source-scope-screen.v1.json"
       ],
       "not_final_identity_mapping": true,
-      "source_type_provisionally_routed": 3163,
-      "source_type_unresolved_requires_passage": 132,
+      "source_type_provisionally_routed": 3203,
+      "source_type_unresolved_requires_passage": 92,
       "source_id_exact_matches": 3295,
       "original_page_images_newly_certified_by_this_wave_set": 0,
-      "meaning": "Complete nonduplicative partition of evidence-only source IDs with exact links into previously retained source records. 132 CatholicCulture action entries have only source-label/lexical contextual evidence and need passage-level class review. This is not final independent custom identification or official rite verification."
+      "meaning": "3,295/3,295 exact source-ID joins; 3,163 pre-existing source-native claim types + 40 action categories confirmed against six hosted full passages; 92 CatholicCulture entries still only label-level. No final identity or rite certification.",
+      "source_native_type_initial": 3163,
+      "hosted_source_passage_reclassified": 40,
+      "hosted_article_groups_reviewed": 6
     },
     "evidence_only_to_approved_practice_relationships": {
       "done": 0,
@@ -100,6 +103,16 @@
       "total_review_units": 79,
       "approved_canonical_merges": 0,
       "source_independence_newly_verified": 0
+    },
+    "catholicculture_132_hosted_passage_review": {
+      "total": 132,
+      "actual_hosted_passages_checked": 40,
+      "remaining": 92,
+      "book_original_facsimiles_newly_checked": 0,
+      "source_article_groups_checked": 6,
+      "existing_master_owner_leads_not_final": 0,
+      "new_customs_certified": 0,
+      "reference_file": "customs-ultra-master-v2-40-hosted-passage-identity-review-20261030.v1.json"
     }
   },
   "direct_source_index_completeness": {
