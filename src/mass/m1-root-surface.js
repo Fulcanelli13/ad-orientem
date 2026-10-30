@@ -57,7 +57,17 @@ export function activateM1MassRoot(win=globalThis){
  const onEscape=e=>{
   if(e.key!=="Escape"||doc.documentElement.dataset.aoM1MassRoot!=="true")return;
   if(win?.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)return;
-  // A genuine nested sheet/dialog gets its own Escape before the Mass root.
+  // The source-owned Mass texts sheet is nested inside this permanent
+  // root. Consume its Escape at the window capture boundary before the
+  // historical host's document key listener can dismiss the whole preflight.
+  // Use the sheet's own Back control so it restores focus to its opener.
+  const texts=doc.querySelector?.(".aoMassTextsOverlay .aoMassTextsSheet[aria-modal='true']");
+  if(texts){
+   e.preventDefault();e.stopImmediatePropagation();
+   texts.querySelector?.("[data-mass-texts-close]")?.click();
+   return;
+  }
+  // Other genuine modal/dialog owners retain their own Escape action.
   const dialog=doc.querySelector?.('[role="dialog"][aria-modal="true"],dialog[open]');
   if(dialog&&!dialog.hidden)return;
   e.preventDefault();e.stopImmediatePropagation();resetOverview();
