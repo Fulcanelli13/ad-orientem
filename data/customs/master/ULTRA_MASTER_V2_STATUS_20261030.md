@@ -83,3 +83,20 @@ Normative official references:
 The existing 408-group expert ledger remains intact. This v2 pass advances **referential integrity and genuine gap reporting**, not human editorial source certification, independent verification of all source images, or the number of public articles.
 
 **No separate Customs Atlas. No paid infrastructure. No fabricated indulgences or local events.**
+
+
+## 30 October — bulk evidence screen wave 01
+
+The first 200 of 3,295 evidence-only records were examined against their original source-record fields: 111 Weiser *Religious Customs in the Family* and 89 Weiser 1958 *Handbook*. Every original pointer resolved. This is **source-native first-pass semantics**, not an original-page image read or final Catholic identity adjudication.
+
+Preliminary source-type routing:
+
+| Route | Count |
+|---|---:|
+| Potential household/community practice | 115 |
+| Rite, prayer or sacramental ownership review | 39 |
+| Reported folklore / historical context | 23 |
+| Author's proposal, not automatically a historical custom | 22 |
+| Indulgence-specific source review | 1 |
+
+**200 / 3,295 first-pass source classifications complete; 3,095 remain in the 17-wave source queue.** Zero new canonical identities, zero primary-grant validations, zero new published Customs. [Wave 01 audited 200-record file](./customs-ultra-master-v2-wave01-200-source-scope-screen.v1.json).
