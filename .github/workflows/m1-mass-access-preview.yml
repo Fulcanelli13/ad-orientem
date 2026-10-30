@@ -3,10 +3,13 @@ on:
   pull_request:
     paths:
       - "src/mass/full-mass-preflight.js"
+      - "src/app/host-adapter.js"
+      - "src/mass/m1-root-surface.js"
       - "src/mass/full-mass-preflight-styles.js"
       - "src/mass/m1-access-overview.js"
       - "tests/m1-mass-access.mjs"
       - "tests/m1-mass-access-phone-e2e.mjs"
+      - "tests/m1-mass-root-phone-e2e.mjs"
       - ".github/workflows/m1-mass-access-preview.yml"
   workflow_dispatch:
 permissions:
@@ -25,12 +28,15 @@ jobs:
       - run: node tests/full-mass-preflight.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/m1-mass-access-phone-e2e.mjs
+      - run: node tests/m1-mass-root-phone-e2e.mjs
       - run: node tests/mass-preflight-entry-phone.mjs
       - run: node tests/full-mass-preflight-phone-e2e.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: m1-phone-review
-          path: artifacts/m1-mass-access/
+          path: |
+            artifacts/m1-mass-access/
+            artifacts/m1-mass-root/
           if-no-files-found: ignore
           retention-days: 7
