@@ -1,16 +1,16 @@
 /**
- * Prayer discovery + Angelus presentation pilot (opt-in).
+ * Prayer discovery + Angelus presentation (default; explicitly reversible).
  *
  * This file is PRESENTATION ONLY. It does not alter any canonical prayer,
  * devotional event stream, ritual posture, seasonal resolver or saved progress.
- * Enable on a preview deployment with ?aoPrayerPilot=1.
+ * The nine-door landing is on by default. ?aoPrayerPilot=0 restores the legacy hub.
  * Artwork is intentionally not invented: the mosaic uses native Ad Orientem
  * semantic icons until approved art identities and crops are wired separately.
  */
 export const PRAYER_DESIGN_PILOT_SCHEMA="ao-prayer-discovery-angelus-pilot-v1";
 export function prayerPilotEnabled(win){
-  try{return new URLSearchParams(win.location.search).get("aoPrayerPilot")==="1"}
-  catch{return false}
+  try{return new URLSearchParams(win.location.search).get("aoPrayerPilot")!=="0"}
+  catch{return true}
 }
 export function prayerPilotAliases(L){
   return {
@@ -76,6 +76,24 @@ export function prayerPilotAliases(L){
     }
   };
 }
+// Preserve all six canonical families through the nine editorial doors.
+// Route identities and source-owned readers remain unchanged.
+const LEGACY_FAMILY_BRIDGES=Object.freeze({
+ intentions:"penance",ourlord:"passion",novenas:"devotions"
+});
+export function resolvedPrayerPilotFamilies(L,families){
+ const aliases=prayerPilotAliases(L);
+ for(const [door,canonical] of Object.entries(LEGACY_FAMILY_BRIDGES)){
+  const seen=new Set(aliases[door].items.map(item=>item[1]));
+  const additions=[];
+  for(const item of families?.[canonical]?.items||[]){
+   if(seen.has(item[1]))continue;
+   seen.add(item[1]);additions.push(item);
+  }
+  aliases[door]={...aliases[door],items:[...aliases[door].items,...additions]};
+ }
+ return {...families,...aliases};
+}
 const MOSAIC=[
   {id:"chaplets",col:"1/5",row:"1/6",large:true},
   {id:"marian",col:"5/7",row:"1/4"},
@@ -112,13 +130,13 @@ export function filterPilotDiscovery(root,value){
   if(empty)empty.hidden=count!==0;
 }
 export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
-  const all={...families,...prayerPilotAliases(L)};
+  const all=resolvedPrayerPilotFamilies(L,families);
   const makeTile=tile=>{
     const family=all[tile.id];
     const label=tile.id==="library"?L("Essential Prayers","Prières essentielles"):family.title;
     const target=family.direct?' data-p435930-own="'+esc(family.direct)+'"':' data-p435930-family="'+esc(tile.id)+'"';
     return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+'" style="grid-column:'+tile.col+';grid-row:'+tile.row+'"'+target+' aria-label="'+esc(label)+'">'+
-      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+assetIcon(family.assetId,"aoPrayPilotNativeIcon")+'</span>'+
+      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true})+'</span>'+
       '<span class="aoPrayPilotTileCaption">'+esc(label)+'</span></button>';
   };
   const routes=new Map();
@@ -154,7 +172,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
       '<p data-ao-pilot-empty hidden>'+esc(L("No matching prayers or devotions.","Aucune prière ni dévotion correspondante."))+'</p></div>'+
       '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
-      '<p class="aoPrayPilotArtNote">'+esc(L("Pilot: approved paintings and crops are not yet bound. These tiles use existing app icons, not invented artwork.","Prototype : les tableaux et cadrages approuvés ne sont pas encore reliés. Les icônes proviennent de l'application."))+'</p>'+
+      '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon",{preferEmbedded:true})+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
     '</main>';
 }
 export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual'}){
@@ -198,7 +216,12 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotNativeIcon{width:46%;height:46%;max-width:116px;max-height:116px;opacity:.9}",
     "#aoPray435930 .aoPrayPilotTileCaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:24px 8px 8px;font:600 14px/1.13 var(--ao-font-display,Georgia,serif);text-shadow:0 1px 3px #000}",
     "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:22px;padding:40px 13px 12px}",
-    "#aoPray435930 .aoPrayPilotArtNote{max-width:570px;margin:8px auto 0;padding:0 12px;font-size:11px;line-height:1.45;color:var(--muted,#aaa);text-align:center}",
+    "#aoPray435930 .aoPrayPilotCustoms{display:flex;align-items:center;gap:10px;min-height:48px;margin:12px auto 0;padding:10px 14px;width:calc(100% - 32px);max-width:564px;border:1px solid var(--border,#4c4841);border-radius:12px;background:var(--surface-1,#18202a);color:var(--text,#f3ead7);text-align:left;cursor:pointer}",
+    "#aoPray435930 .aoPrayPilotCustoms:focus-visible{outline:3px solid var(--liturgical,#c9ae76);outline-offset:2px}",
+    "#aoPray435930 .aoPrayPilotCustomsIcon{flex:0 0 26px;width:26px;height:26px}",
+    "#aoPray435930 .aoPrayPilotCustoms span{display:flex;min-width:0;flex-direction:column;gap:3px}",
+    "#aoPray435930 .aoPrayPilotCustoms b{font:600 15px/1.2 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayPilotCustoms small{font:400 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aaa)}",
     "#aoPray435930 .aoPrayPilotResults{padding:4px 16px 24px}",
     "#aoPray435930 .aoPrayPilotResults[hidden],#aoPray435930 .aoPrayPilotMosaic[hidden],#aoPray435930 .aoPrayPilotResult[hidden]{display:none!important}",
     "#aoPray435930 .aoPrayPilotFacets{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 12px}",

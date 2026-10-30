@@ -28,7 +28,7 @@ try{
   const errors=[];page.on("pageerror",err=>errors.push(err.message));
   try{
    const origin="http://127.0.0.1:"+server.address().port;
-   await page.goto(origin+"/index.html?aoPrayerPilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.goto(origin+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:25000});
@@ -36,6 +36,7 @@ try{
    const base="#aoPray435930.open";
    const mosaic=page.locator(base+" [data-ao-pray-pilot-mosaic]");
    assert.equal(await mosaic.locator(".aoPrayPilotTile").count(),9,"nine real discovery doors");
+   assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
     const tiles=[...node.querySelectorAll(".aoPrayPilotTile")].map(x=>({
@@ -69,7 +70,15 @@ try{
    await memo.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library","search must open the real canonical Library");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-   await page.locator(base+' [data-p435930-family="marian"]').click();
+   // Nine editorial doors retain the old canonical items without extra engines.
+    for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],["novenas","pray.holy_name_litany"]]){
+     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+     await page.locator(base+' [data-p435930-family="'+door+'"]').click();
+     assert.equal(await page.locator(base+' [data-p435930-own="'+route+'"],'+base+' [data-p435930-external="'+route+'"]').count(),1,
+      "R1.1 editorial door "+door+" lost canonical route "+route);
+    }
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+    await page.locator(base+' [data-p435930-family="marian"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Our Lady is a discovery family, not a new reader engine");
    await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
@@ -93,9 +102,22 @@ try{
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0,
     "direct homepage Angelus entry must skip the cinematic introduction");
    assert.deepEqual(errors,[],"Uncaught pilot JavaScript errors at "+width+": "+errors.join("; "));
-   console.log("PASS "+width+"px: nine-door discovery, canonical search, Marian handoff, Angelus entry and direct bypass");
+   console.log("PASS "+width+"px: DEFAULT nine-door discovery, canonical search, Marian handoff, Angelus entry and direct bypass");
   }finally{await page.close()}
  }
+ // Explicit rollback restores the existing six-family hub, not a new owner.
+ const rollback=await browser.newPage({viewport:{width:320,height:568},deviceScaleFactor:1,isMobile:true,hasTouch:true});
+ try{
+  const origin="http://127.0.0.1:"+server.address().port;
+  await rollback.goto(origin+"/index.html?aoPrayerPilot=0",{waitUntil:"domcontentloaded",timeout:90000});
+  await rollback.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
+  assert.equal(await rollback.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+  const base="#aoPray435930.open";
+  assert.equal(await rollback.locator(base+" [data-ao-pray-pilot-mosaic]").count(),0,"legacy rollback must not show mosaic");
+  assert.ok(await rollback.locator(base+" .aoP435930RootGroup").count()>=3,"legacy rollback must show original grouped Prayer destinations");
+  await rollback.screenshot({path:resolve(output,"legacy-rollback-320.png"),animations:"disabled"});
+  console.log("PASS 320px: explicit legacy Prayer landing rollback");
+ }finally{await rollback.close()}
 }finally{
  await browser?.close();
  await new Promise(resolveClose=>server.close(resolveClose));

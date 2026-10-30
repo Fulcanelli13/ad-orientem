@@ -30,7 +30,9 @@ try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"fr-FR",serviceWorkers:"block"});
  const errors=[];page.on("pageerror",e=>errors.push(String(e?.message??e)));
- await page.goto("http://127.0.0.1:4282/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ // The original 23-route six-family inventory is checked with explicit rollback;
+ // nine-door default reachability has a separate phone acceptance.
+ await page.goto("http://127.0.0.1:4282/index.html?aoPrayerPilot=0",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:15000});

@@ -1,12 +1,13 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
- PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,
+ PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,resolvedPrayerPilotFamilies,
  renderPilotDiscovery,renderPilotAngelusEntry
 } from "../src/pray/prayer-design-pilot.js";
 
 assert.equal(PRAYER_DESIGN_PILOT_SCHEMA,"ao-prayer-discovery-angelus-pilot-v1");
-assert.equal(prayerPilotEnabled({location:{search:""}}),false);
+assert.equal(prayerPilotEnabled({location:{search:""}}),true);
+assert.equal(prayerPilotEnabled({location:{search:"?from=home"}}),true);
 assert.equal(prayerPilotEnabled({location:{search:"?aoPrayerPilot=1"}}),true);
 assert.equal(prayerPilotEnabled({location:{search:"?aoPrayerPilot=0"}}),false);
 
@@ -20,11 +21,23 @@ const families={
 };
 const aliases=prayerPilotAliases(L);
 assert.deepEqual(Object.keys(aliases).sort(),["intentions","marian","novenas","ourlord","saints"]);
+const bridged=resolvedPrayerPilotFamilies(L,{
+ ...families,
+ penance:{items:[["own","pray.confession","Confession","Prepare"],["own","pray.penitential_psalms","Seven Penitential Psalms","Source prayer"]]},
+ passion:{items:[["own","pray.stations","Stations","Fourteen"],["own","pray.tenebrae","Office of Tenebrae","Triduum"]]},
+ devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"]]}
+});
+for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],["novenas","pray.holy_name_litany"]]){
+ assert.ok(bridged[door].items.some(item=>item[1]===route),"Nine-door discovery buried original route "+route);
+}
+assert.equal(bridged.ourlord.items.filter(item=>item[1]==="pray.stations").length,1);
+assert.equal(bridged.novenas.items.filter(item=>item[1]==="pray.novenas").length,1);
 const actual=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L,esc,DATA:{prayers:{foundations_hail_mary:{title:"Hail Mary",titleFr:"Je vous salue Marie"}}},
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+assert.match(actual,/data-p435930-my-customs/,"personal Prayer destination remains reachable");
 for(const id of ["chaplets","marian","daily","novenas","eucharistic","ourlord","saints","intentions"])
  assert.match(actual,new RegExp('data-p435930-family="'+id+'"'));
 assert.match(actual,/data-p435930-own="pray.library"/);
@@ -33,7 +46,7 @@ assert.match(actual,/data-p435930-pilot-search/);
 assert.equal((actual.match(/data-p435930-pilot-facet="/g)||[]).length,5,"R1.1 has four form filters plus Latin availability");
 assert.match(actual,/data-pilot-form="prayer"/);
 assert.match(actual,/data-pilot-latin="false"/);
-assert.match(actual,/approved paintings and crops are not yet bound/);
+assert.doesNotMatch(actual,/Pilot: approved paintings/,"public Prayer hub must not display prototype implementation notes");
 
 const angelus=renderPilotAngelusEntry({
  head:title=>"<header>"+title+"</header>",L,esc,form:"angelus",posture:"Kneel · ordinary days",moduleIcon:()=>"<i></i>"
