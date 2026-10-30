@@ -36,6 +36,7 @@ try{
    const base="#aoPray435930.open";
    const mosaic=page.locator(base+" [data-ao-pray-pilot-mosaic]");
    assert.equal(await mosaic.locator(".aoPrayPilotTile").count(),9,"nine real discovery doors");
+   assert.equal(await mosaic.locator("img").count(),0,"Uncleared photos must never be published in the default Prayer mosaic");
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
@@ -55,6 +56,17 @@ try{
    });
    assert.ok(overflow.document<=1&&overflow.content<=1,"Discovery must not overflow: "+JSON.stringify(overflow));
    const search=page.locator(base+" [data-p435930-pilot-search]");
+   // The existing source-owned routes must match English, French and
+   // traditional ligature spellings without introducing new reader owners.
+   await search.fill("Prières du matin");
+   assert.equal(await page.locator(base+' [data-p435930-external="pray.morning_evening"]').isVisible(),true,
+    "French edition label must find existing Morning & Evening reader in English UI");
+   await search.fill("Saint Rosaire");
+   assert.equal(await page.locator(base+' [data-p435930-own="pray.rosary"]').isVisible(),true,
+    "French Rosary title must find original bead reader");
+   await search.fill("Regina Caeli");
+   assert.equal(await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').isVisible(),true,
+    "Plain Caeli must find source-owned Cæli title");
    await search.fill("Memorare");
    assert.equal(await mosaic.isVisible(),false,"search should replace mosaic temporarily");
    const memo=page.locator(base+" [data-p435930-pilot-prayer]").filter({hasText:"Memorare"}).first();
