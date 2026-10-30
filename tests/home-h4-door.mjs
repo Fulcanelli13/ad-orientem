@@ -136,6 +136,19 @@ assert.ok(html.indexOf('class="aoH4DiscoveryStandalone"')<html.indexOf('class="a
 const readFragment=html.slice(html.indexOf('class="aoH4Read"'));
 assert.doesNotMatch(readFragment,/data-home-dyk-open/,"Did You Know must not be inside Read");
 assert.equal((readFragment.match(/data-action="gospel"/g)||[]).length,1,"Read keeps its Gospel entry");
+// H7 Sanctuary Prototype 1 is the visual authority for Home AND the distinct Mass door.
+assert.match(html,/class="aoH7HomeView home"/,"H7 Home must be an independent screen");
+assert.match(html,/class="celebrationBlock aoTodayV2Frontispiece hero aoH7Hero"/,
+  "H7 original full-bleed art hero, not an H4 card");
+assert.match(html,/data-home-h7-enter/,"Home must enter the distinct Sanctuary Mass door");
+assert.match(html,/class="aoH7DoorView" hidden/,"Mass door exists but is not duplicated on Home");
+assert.match(html,/data-home-h7-back/,"Mass door must return to Home");
+assert.match(html,/class="body door"/,"H7 Sanctuary's missal body must be retained");
+assert.match(html,/class="dhead"/,"Mass door must have H7's centered title and rubric");
+assert.match(html,/class="ordo"/,"Mass door must keep the H7 Ordo position");
+assert.match(html,/class="foot"/,"Mass door must keep the fixed Begin action");
+assert.doesNotMatch(html,/Fra Angelico|The Tribute Money/,
+  "Claude's illustration fixtures must never enter production liturgical data");
 assert.match(html,/class="aoH4CalendarViews"/,"Calendar must retain its own view selector");
 assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\s\S]*data-home-calendar-view="day">Day/);
 assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\s\S]*data-home-calendar-view="picker">Month/);
