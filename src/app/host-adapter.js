@@ -1,4 +1,5 @@
 import { NON_MASS_DONOR_CONTRACT } from "./contracts.js";
+import { activateM1MassRoot,deactivateM1MassRoot,m1RootPreviewRequested } from "../mass/m1-root-surface.js";
 
 function settingsApi(win) {
   return win?.AO_SETTINGS_APP_V1 ?? null;
@@ -68,6 +69,8 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     hardHome() {
+      // Root-mode Mass is a shell destination; drop its presentation on navigation.
+      deactivateM1MassRoot(win);
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
@@ -134,13 +137,20 @@ export function createAppHostAdapter(win = globalThis) {
         // Mass-selection backdrop has mounted and is visible. Explicit false
         // or structured failure results must still fail closed.
         return Promise.resolve(celebration.openPreflight()).then(value => {
-          if (openedSuccessfully(value)) return true;
-          if (value !== undefined) return false;
-          const backdrop = win?.document?.querySelector?.("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-          if (!backdrop || backdrop.isConnected !== true || backdrop.hidden === true ||
-              backdrop.getAttribute?.("aria-hidden") === "true") return false;
-          const style = win?.getComputedStyle?.(backdrop);
-          return style?.display !== "none" && style?.visibility !== "hidden";
+          let opened=openedSuccessfully(value);
+          if(!opened&&value!==undefined)return false;
+          if(!opened){
+            const backdrop = win?.document?.querySelector?.("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+            if (!backdrop || backdrop.isConnected !== true || backdrop.hidden === true ||
+                backdrop.getAttribute?.("aria-hidden") === "true") return false;
+            const style = win?.getComputedStyle?.(backdrop);
+            opened=style?.display !== "none" && style?.visibility !== "hidden";
+          }
+          if(!opened)return false;
+          // M1 is an opt-in *shell presentation* of this same host-resolved
+          // preflight, not another celebration selection or reader entry.
+          if(m1RootPreviewRequested(win)&&!activateM1MassRoot(win))return false;
+          return true;
         });
       }
       if (domain === "pray") {
