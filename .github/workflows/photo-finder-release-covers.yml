@@ -1,0 +1,104 @@
+name: Photo Finder guarded verified cover batches
+on:
+  push:
+    branches:
+      - 'research/photo-finder-release-20261030-b*'
+    paths:
+      - 'data/geography/research/photo-finder-20261030/.release-cover-batch'
+permissions:
+  contents: write
+concurrency:
+  group: ao-photo-finder-covers-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verified-selected-covers:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && startsWith(github.ref, 'refs/heads/research/photo-finder-release-20261030-b')
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact reviewed batch and independent review branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$GITHUB_REF_NAME" in
+            research/photo-finder-release-20261030-b2) batch=2 ;;
+            research/photo-finder-release-20261030-b3) batch=3 ;;
+            research/photo-finder-release-20261030-b4) batch=4 ;;
+            research/photo-finder-release-20261030-b5) batch=5 ;;
+            *) echo 'Unapproved photo batch branch' >&2; exit 1 ;;
+          esac
+          test "$(cat data/geography/research/photo-finder-20261030/.release-cover-batch)" = "VERIFY_USER_SELECTED_COVERS_BATCH_${batch}_2026-10-30"
+          echo "AO_PHOTO_BATCH=$batch" >> "$GITHUB_ENV"
+          echo "AO_PHOTO_OFFSET=$(( (batch - 1) * 20 ))" >> "$GITHUB_ENV"
+          node tests/production-tree-hygiene.mjs
+          python tests/photo-finder-451-intake-test.py -v
+          python tools/directory/release-photo-finder-decisions.py --plan
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Source-verify and prepare approved Place media in bounded window
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/directory/release-photo-finder-decisions.py \
+            --role cover --offset "$AO_PHOTO_OFFSET" --limit 20 \
+            --output-dir /tmp/ao-photo-finder-batch \
+            --apply
+          python - <<'PY'
+          import json,os,pathlib
+          path=pathlib.Path('/tmp/ao-photo-finder-batch/verification-report.json')
+          a=json.loads(path.read_text())
+          assert a['schema']=='AO_FINDER_SELECTED_PHOTO_STAGE_V1'
+          assert a['scheduled_from_frozen_review']==20, 'Frozen schedule unexpectedly changed'
+          assert 1<=a['attempted']<=20
+          assert 1<=a['verified']<=20, 'No verified photos; do not declare a release'
+          assert a['new_files_in_app_tree']==a['verified']
+          assert a['verified_visible_in_running_app']==0
+          for row in a['media_records']:
+            media=row['item']
+            assert row['rank']==1 and media['status']=='APPROVED'
+            assert media['rights_verified'] and media['subject_verified'] and media['crop_reviewed']
+            assert media['asset_path'].startswith('assets/approved/place-media/pf-')
+            assert len(media['source_sha1'])==40 and len(media['derivative_sha256'])==64
+          n=int(os.environ['AO_PHOTO_BATCH'])
+          a['batch_index']=n
+          a['frozen_offset']=(n-1)*20
+          for row in a['media_records']:
+            row.pop('local',None)
+          out=pathlib.Path('data/geography/research/photo-finder-20261030/releases')
+          out.mkdir(parents=True,exist_ok=True)
+          dest=out/f'b{n}-verification-report.json'
+          dest.write_text(json.dumps(a,ensure_ascii=False,indent=2)+'\n')
+          print('FROZEN_WINDOW',n,'VERIFIED_ASSETS',a['verified'],'HELD_EXCEPTIONS',len(a['exceptions']))
+          PY
+      - name: Commit exact verified files and persistent exception report to this review branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Ad Orientem verified photograph release'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/geography/approved-place-media.v1.json
+          git add -- "data/geography/research/photo-finder-20261030/releases/b${AO_PHOTO_BATCH}-verification-report.json"
+          git add -- assets/approved/place-media/pf-*.webp
+          python - <<'PY'
+          import json,os,subprocess
+          n=int(os.environ['AO_PHOTO_BATCH'])
+          a=json.load(open(f'data/geography/research/photo-finder-20261030/releases/b{n}-verification-report.json'))
+          expected={'data/geography/approved-place-media.v1.json',
+                    f'data/geography/research/photo-finder-20261030/releases/b{n}-verification-report.json'}
+          expected.update(row['item']['asset_path'] for row in a['media_records'])
+          staged=set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())
+          assert staged==expected,{'unexpected':list(staged-expected),'missing':list(expected-staged)}
+          print('EXACT_STAGED_ASSETS',len(a['media_records']))
+          PY
+          git diff --cached --check
+          git commit -m "Geography: release user-reviewed Photo Finder cover batch ${AO_PHOTO_BATCH}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
