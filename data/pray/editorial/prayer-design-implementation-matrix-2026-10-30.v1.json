@@ -1,0 +1,3231 @@
+{
+  "schema": "AO_PRAYER_DESIGN_IMPLEMENTATION_MATRIX_V1",
+  "created_date": "2026-10-30",
+  "owner": "Prayer unified visual editorial programme",
+  "review_scope": "18 original 2026-10-30 screens; no automatic acceptance",
+  "source_decisions": {
+    "path": "data/pray/editorial/prayer-visual-decisions-2026-10-30.v1.json",
+    "blob_sha": "5cb7bd4884b5a1d0fb172b876ed44007b6139ff8"
+  },
+  "source_art": {
+    "path": "data/pray/art-placement-slots-20261030.v1.json",
+    "blob_sha": "36ad07bdeb0dc58707a336d078702e5ec13d8b60",
+    "source_workbook": "Ad_Orientem_Art_Matching_Map.xlsx",
+    "source_workbook_sha256": "db97b5cdffecd369e405ae4ccea1a9580a64942e06f949654589268cbbee73d7"
+  },
+  "candidate_registers": [
+    {
+      "path": "data/pray/artwork-candidate-join-20261030.v1.json",
+      "blob_sha": "a49a551a6d7da43318dc1536796123e9f1b81833"
+    },
+    {
+      "path": "data/pray/artwork-candidate-gallery-delta-20261030.v1.json",
+      "blob_sha": "63da0915cc0fe693d6a4f193ba3615bb03a8d87c"
+    }
+  ],
+  "ledger": {
+    "total_screens": 18,
+    "revise": 18,
+    "editorially_approved": 0,
+    "art_total_slots": 275,
+    "art_assigned": 0,
+    "art_live_eligible": 0,
+    "subject_vocabulary_size": 101,
+    "rotation_rules": 11,
+    "source_primary_artworks": 22,
+    "source_gallery_records": 383,
+    "source_art_note": "Identity-approved is not slot-approved and neither is release-cleared"
+  },
+  "global_contract": [
+    "Mass-centred prayer companion; no detached duplicate engines or route regressions",
+    "Original 18 reviewer decisions are immutable source-of-truth and all remain REVISE until explicit user approval",
+    "Exact Claude design references are targets, not proof of implemented visual parity",
+    "Text first, discreet source/provenance controls; preserve authentic historical 1962/form variants, language faces and ℣/℟",
+    "Full canonical Rosary reader and 5/15 support; 15 traditional mysteries by default where the user's rule applies",
+    "Compact progress and touch targets; no numeric-box ribbons, oversized method/source pills or gratuitous helper copy",
+    "Art may be re-used across covers and within prayers; slot/subject/painting fit, rights and visual quality reviewed separately",
+    "No framed reproductions, no unapproved photo publication or invented art bindings; zero-cost storage only",
+    "Calendar recommendations must come from canonical calendar source and real saved continuation state",
+    "Actual 320×568 and 390×844 screenshots compared against prototypes; green CI alone never constitutes editorial acceptance",
+    "Keep draft PR #2079 (F04/Discovery) and draft PR #2104 (Rosary spacing) unmerged and non-publishing"
+  ],
+  "rows": [
+    {
+      "order": 1,
+      "id": "home",
+      "title": "Prayer discovery — nine-door landing",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "we need to do it IDENTICALLY AS claude's prototype 1C in r1.1 discovery... in that version it allows to continue praying etc, and it doesnt waste space telling user \"enter into rpayer\" etc",
+      "prototype": {
+        "file": "AO_Prayer_Prototype_R1.1_Discovery.html",
+        "screens": "1C p1–p3",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.hub",
+        "primary_code": "src/pray/prayer-design-pilot.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "DRAFT_IMPLEMENTATION__NEEDS_VISUAL_COMPARE",
+        "review_prs": [
+          2079
+        ],
+        "priority": "P0"
+      },
+      "correction_requirements": [
+        "Exact p1 Calendar and saved-Continue hierarchy (no dummy progress)",
+        "Exact p2 9-door mosaic and art-slot-aware tiles",
+        "Exact p3 door landing, filters and language badges",
+        "Remove instructional copy, icons and unapproved artwork",
+        "Audit all original canonical routes and source-backed Calendar handoffs"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "prayer-design-pilot/discovery-320.png",
+          "size_bytes": 79532,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-design-pilot/discovery-390.png",
+          "size_bytes": 177608,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "HERO-01",
+          "HERO-02",
+          "HERO-03",
+          "HERO-04",
+          "HERO-05",
+          "HERO-06",
+          "HERO-07",
+          "HERO-08",
+          "HERO-09",
+          "HERO-10",
+          "HERO-11",
+          "HERO-12",
+          "HERO-13",
+          "HERO-14",
+          "HERO-15",
+          "HERO-16",
+          "HERO-17",
+          "HERO-18",
+          "HERO-19",
+          "HERO-20",
+          "HERO-21",
+          "HERO-22",
+          "HERO-23",
+          "DOOR-D1",
+          "DOOR-D2",
+          "DOOR-D3",
+          "DOOR-D4",
+          "DOOR-D5",
+          "DOOR-D6",
+          "DOOR-D7",
+          "DOOR-D8",
+          "DOOR-D9"
+        ],
+        "slots": [
+          {
+            "id": "HERO-01",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "OT-PROPHET",
+              "JOS-DREAM",
+              "NAT-WINTER",
+              "NAT-NIGHT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-02",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-NATIVITY",
+              "CHR-CHILD",
+              "ANG-CHOIRS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-03",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-MAGI",
+              "CHR-BAPTISM"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-04",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-NAZARETH",
+              "CHR-PRESENT",
+              "CHR-MIRACLE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-05",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-TEACHING",
+              "LIFE-WORK",
+              "PEN-PRODIGAL"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-06",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-GETHSEMANE",
+              "PEN-PRODIGAL",
+              "PEN-PETER",
+              "CHR-TRANSFIG",
+              "NAT-VANITAS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-07",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-THORNS",
+              "CHR-CROSSBEAR",
+              "MAR-SORROWS",
+              "CHR-HOLYFACE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-08",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-CROSSBEAR"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-09",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "EUC-SUPPER",
+              "CHR-GETHSEMANE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-10",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-11",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-ENTOMB",
+              "CHR-DEPOSITION",
+              "MAR-SORROWS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-12",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-RESURRECT",
+              "CHR-APPEAR",
+              "NAT-SPRING",
+              "NAT-DAWN"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-13",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-ASCENSION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-14",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "SPR-PENTECOST"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "HERO-15",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "TRI-TRINITY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-16",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "EUC-MONSTRANCE",
+              "EUC-SUPPER"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-17",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-SACREDHEART"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-18",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-MIRACLE",
+              "CHR-SHEPHERD",
+              "CHR-TEACHING",
+              "NAT-HARVEST",
+              "LIFE-WORK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEK"
+          },
+          {
+            "id": "HERO-19",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "MAR-ASSUMPTION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-20",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "SNT-ALLSAINTS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-21",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "END-PURGATORY",
+              "END-CEMETERY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-22",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "CHR-KING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "HERO-23",
+            "position": "Hero",
+            "level": "Seasonal hero",
+            "eligible_subjects": [
+              "MAR-IMMACULATE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "DOOR-D1",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "NAT-DAWN",
+              "NAT-DUSK",
+              "LIFE-PRAYER",
+              "LIFE-WORK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "DOOR-D2",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "CHR-TEACHING",
+              "TRI-TRINITY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEK"
+          },
+          {
+            "id": "DOOR-D3",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "MAR-ROSARY",
+              "MAR-MADONNA",
+              "NAT-FLOWERS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEKDAY"
+          },
+          {
+            "id": "DOOR-D4",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "LIFE-PILGRIM",
+              "CHR-APPEAR"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEK"
+          },
+          {
+            "id": "DOOR-D5",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "EUC-SUPPER",
+              "EUC-MONSTRANCE",
+              "NAT-HARVEST"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEKDAY"
+          },
+          {
+            "id": "DOOR-D6",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "CHR-KING",
+              "CHR-SACREDHEART",
+              "CHR-CRUCIFIX",
+              "CHR-RESURRECT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "DOOR-D7",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "MAR-MADONNA",
+              "MAR-CORONATION",
+              "MAR-IMMACULATE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-MONTH"
+          },
+          {
+            "id": "DOOR-D8",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "SNT-ALLSAINTS",
+              "ANG-GUARDIAN",
+              "ANG-MICHAEL",
+              "JOS-PORTRAIT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEKDAY"
+          },
+          {
+            "id": "DOOR-D9",
+            "position": "Door",
+            "level": "Door cover",
+            "eligible_subjects": [
+              "LIFE-FAMILY",
+              "LIFE-SICK",
+              "CHR-MIRACLE",
+              "END-PURGATORY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEK"
+          }
+        ],
+        "slot_count": 32,
+        "candidate_links_primary": 34,
+        "candidate_links_gallery": 35,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 2,
+      "id": "angelus_entry",
+      "title": "Angelus — entry",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "placement of pills/tabs for begining is very ugly... we have to do it exactly as AO_Prayer_F04_Ritual_of_the_Hour_Angelus.html ",
+      "prototype": {
+        "file": "AO_Prayer_F04_Ritual_of_the_Hour_Angelus.html",
+        "screens": "a1",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.angelus_regina",
+        "primary_code": "src/pray/prayer-design-pilot.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "DRAFT_IMPLEMENTATION__NEEDS_VISUAL_COMPARE",
+        "review_prs": [
+          2079
+        ],
+        "priority": "P0"
+      },
+      "correction_requirements": [
+        "Full-height hour painting with time/season and moment dots",
+        "One Begin pill followed by 32px Alone/With others control",
+        "No hero posture text or developer exposition",
+        "Actual seasonal form and posture remain canonical; no fake artwork"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "prayer-design-pilot/angelus-entry-320.png",
+          "size_bytes": 48682,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-design-pilot/angelus-entry-390.png",
+          "size_bytes": 75438,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.angelus",
+          "STG-pray.angelus-01",
+          "STG-pray.angelus-02",
+          "STG-pray.angelus-03",
+          "STG-pray.angelus-04",
+          "STG-pray.angelus-05",
+          "STG-pray.angelus-06",
+          "STG-pray.angelus-07",
+          "STG-pray.angelus-08",
+          "STG-pray.angelus-09",
+          "COV-pray.angelus_regina",
+          "STG-pray.angelus_regina-01",
+          "STG-pray.angelus_regina-02",
+          "STG-pray.angelus_regina-03",
+          "STG-pray.angelus_regina-04"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.angelus",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "LIFE-PRAYER",
+              "NAT-DAWN",
+              "NAT-MIDDAY",
+              "NAT-DUSK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-01",
+            "position": "Cover · morning",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "NAT-DAWN"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-02",
+            "position": "Cover · noon",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "NAT-MIDDAY",
+              "LIFE-WORK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-03",
+            "position": "Cover · evening",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "LIFE-PRAYER",
+              "NAT-DUSK",
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-04",
+            "position": "Feast override",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "STG-pray.angelus-05",
+            "position": "Card 1/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-06",
+            "position": "Card 2/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "MAR-PRAYING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-07",
+            "position": "Card 3/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "CHR-NATIVITY",
+              "SPR-DOVE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-08",
+            "position": "Card 4/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-MERCY",
+              "MAR-MADONNA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-09",
+            "position": "Card 5/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "CHR-RESURRECT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "COV-pray.angelus_regina",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-RESURRECT",
+              "CHR-APPEAR",
+              "MAR-CORONATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "STG-pray.angelus_regina-01",
+            "position": "Card 1/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-CORONATION",
+              "MAR-MADONNA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus_regina-02",
+            "position": "Card 2/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-RESURRECT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus_regina-03",
+            "position": "Card 3/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-APPEAR",
+              "MAR-MERCY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus_regina-04",
+            "position": "Card 4/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-RESURRECT",
+              "NAT-SPRING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 15,
+        "candidate_links_primary": 25,
+        "candidate_links_gallery": 37,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 3,
+      "id": "angelus_reader",
+      "title": "Angelus — source-owned reader",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "the top ribbon with 1-4 is absolutely horendous... i'd rather have a progress bar... i think we have to go towards AO_Prayer_F04_Ritual_of_the_Hour_Angelus.html",
+      "prototype": {
+        "file": "AO_Prayer_F04_Ritual_of_the_Hour_Angelus.html",
+        "screens": "a2–a4",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.angelus_regina",
+        "primary_code": "src/pray/devotional-card-deck.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "DRAFT_IMPLEMENTATION__NEEDS_VISUAL_COMPARE",
+        "review_prs": [
+          2079
+        ],
+        "priority": "P0"
+      },
+      "correction_requirements": [
+        "5 Angelus or 4 Regina source cards, not invented card counts",
+        "Grouped-dot current progress and 3 OF 5 eyebrow",
+        "℣/℟, readable inactive text, margin-aligned LEADER/ALL",
+        "Incarnation bow chip exactly on corresponding prayer phrase",
+        "Previous/Next/Amen with source-true next customary hour",
+        "Compare 320/390 screenshots to original a2–a4"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "prayer-design-pilot/angelus-cards-320.png",
+          "size_bytes": 23364,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-design-pilot/angelus-cards-390.png",
+          "size_bytes": 44563,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.angelus",
+          "STG-pray.angelus-01",
+          "STG-pray.angelus-02",
+          "STG-pray.angelus-03",
+          "STG-pray.angelus-04",
+          "STG-pray.angelus-05",
+          "STG-pray.angelus-06",
+          "STG-pray.angelus-07",
+          "STG-pray.angelus-08",
+          "STG-pray.angelus-09",
+          "COV-pray.angelus_regina",
+          "STG-pray.angelus_regina-01",
+          "STG-pray.angelus_regina-02",
+          "STG-pray.angelus_regina-03",
+          "STG-pray.angelus_regina-04"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.angelus",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "LIFE-PRAYER",
+              "NAT-DAWN",
+              "NAT-MIDDAY",
+              "NAT-DUSK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-01",
+            "position": "Cover · morning",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "NAT-DAWN"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-02",
+            "position": "Cover · noon",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "NAT-MIDDAY",
+              "LIFE-WORK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-03",
+            "position": "Cover · evening",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "LIFE-PRAYER",
+              "NAT-DUSK",
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-pray.angelus-04",
+            "position": "Feast override",
+            "level": "Time / feast variant",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-FEAST"
+          },
+          {
+            "id": "STG-pray.angelus-05",
+            "position": "Card 1/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-06",
+            "position": "Card 2/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "MAR-PRAYING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-07",
+            "position": "Card 3/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION",
+              "CHR-NATIVITY",
+              "SPR-DOVE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-08",
+            "position": "Card 4/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-MERCY",
+              "MAR-MADONNA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus-09",
+            "position": "Card 5/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "CHR-RESURRECT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "COV-pray.angelus_regina",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-RESURRECT",
+              "CHR-APPEAR",
+              "MAR-CORONATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "STG-pray.angelus_regina-01",
+            "position": "Card 1/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-CORONATION",
+              "MAR-MADONNA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus_regina-02",
+            "position": "Card 2/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-RESURRECT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus_regina-03",
+            "position": "Card 3/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-APPEAR",
+              "MAR-MERCY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.angelus_regina-04",
+            "position": "Card 4/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-RESURRECT",
+              "NAT-SPRING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 15,
+        "candidate_links_primary": 25,
+        "candidate_links_gallery": 37,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 4,
+      "id": "rosary_r2",
+      "title": "Holy Rosary — R2 active reader",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "lots of space wasted here",
+      "prototype": {
+        "file": "AO_Prayer_Prototype_R2_Readers.html",
+        "screens": "d1–d3",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.rosary",
+        "primary_code": "src/pray/rosary-r2-pilot.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "OPT_IN_DRAFT__NEEDS_VISUAL_COMPARE",
+        "review_prs": [
+          2104
+        ],
+        "priority": "P1"
+      },
+      "correction_requirements": [
+        "Remove redundant cross/empty dot rail, reading-options strip and wasted opening space",
+        "32px chapter chips and current mystery announcement",
+        "Mystery painting band and exact canonical Scripture, discreet source reference",
+        "Bead prayer with decade dots, d3 bead sheet and centred dock summary",
+        "Fifteen-mystery default and traditional day cue, retain donor 5/15 handling",
+        "No second Rosary state machine or invented artwork"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 × 568",
+          "path": "rosary-r2-phone/rosary-r2-320x568-opening.png",
+          "size_bytes": 65810,
+          "artifact_id": 12964851628
+        },
+        {
+          "label": "320 × 700",
+          "path": "rosary-r2-phone/rosary-r2-320x700-opening.png",
+          "size_bytes": 69695,
+          "artifact_id": 12964851628
+        },
+        {
+          "label": "390 × 844",
+          "path": "rosary-r2-phone/rosary-r2-390x844-opening.png",
+          "size_bytes": 84169,
+          "artifact_id": 12964851628
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.rosary",
+          "STG-pray.rosary-01",
+          "STG-pray.rosary-02",
+          "STG-pray.rosary-03",
+          "STG-pray.rosary-04",
+          "STG-pray.rosary-05",
+          "STG-pray.rosary-06",
+          "STG-pray.rosary-07",
+          "STG-pray.rosary-08",
+          "STG-pray.rosary-09",
+          "STG-pray.rosary-10",
+          "STG-pray.rosary-11",
+          "STG-pray.rosary-12",
+          "STG-pray.rosary-13",
+          "STG-pray.rosary-14",
+          "STG-pray.rosary-15",
+          "STG-pray.rosary-16",
+          "STG-pray.rosary-17",
+          "COV-pray.rosary_methods"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.rosary",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "MAR-ROSARY",
+              "MAR-MADONNA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEKDAY"
+          },
+          {
+            "id": "STG-pray.rosary-01",
+            "position": "Opening",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ROSARY",
+              "SNT-DOMINIC"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.rosary-02",
+            "position": "Joyful I",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-03",
+            "position": "Joyful II",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-VISITATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-04",
+            "position": "Joyful III",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-NATIVITY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-05",
+            "position": "Joyful IV",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-PRESENT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-06",
+            "position": "Joyful V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-FINDING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-07",
+            "position": "Sorrowful I",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-GETHSEMANE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-08",
+            "position": "Sorrowful II",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SCOURGING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-09",
+            "position": "Sorrowful III",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-THORNS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-10",
+            "position": "Sorrowful IV",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CROSSBEAR"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-11",
+            "position": "Sorrowful V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-12",
+            "position": "Glorious I",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-RESURRECT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-13",
+            "position": "Glorious II",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-ASCENSION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-14",
+            "position": "Glorious III",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "SPR-PENTECOST"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-15",
+            "position": "Glorious IV",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ASSUMPTION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-16",
+            "position": "Glorious V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-CORONATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-17",
+            "position": "Closing",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-CORONATION",
+              "MAR-MERCY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "COV-pray.rosary_methods",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "SNT-DOMINIC",
+              "MAR-ROSARY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          }
+        ],
+        "slot_count": 19,
+        "candidate_links_primary": 10,
+        "candidate_links_gallery": 19,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 5,
+      "id": "rosary_existing",
+      "title": "Holy Rosary — canonical opening",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "i hate when you put source and external links like that. they are supposed to be much more discrete... also the tab for change method is shit poor UI",
+      "prototype": {
+        "file": "AO_Prayer_Prototype_R2_Readers.html",
+        "screens": "d1 + method sheet",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.rosary_methods",
+        "primary_code": "src/pray/presentation-runtime.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "OPT_IN_DRAFT__NEEDS_VISUAL_COMPARE",
+        "review_prs": [
+          2104
+        ],
+        "priority": "P1"
+      },
+      "correction_requirements": [
+        "Replace poor accordion with quiet Traditional · 15 mysteries · Simple Change line",
+        "Method, 5/15 mysteries and reading depth in one bottom sheet",
+        "External/source links behind discreet ⓘ",
+        "Ready to pray is one concise card with standard Begin",
+        "Preserve canonical donor, Scripture references and language faces"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "rosary-methods-phone/rosary-prayer-first-320.png",
+          "size_bytes": 58800,
+          "artifact_id": 12964851628
+        },
+        {
+          "label": "390 px",
+          "path": "rosary-methods-phone/rosary-prayer-first-390.png",
+          "size_bytes": 67393,
+          "artifact_id": 12964851628
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.rosary",
+          "STG-pray.rosary-01",
+          "STG-pray.rosary-02",
+          "STG-pray.rosary-03",
+          "STG-pray.rosary-04",
+          "STG-pray.rosary-05",
+          "STG-pray.rosary-06",
+          "STG-pray.rosary-07",
+          "STG-pray.rosary-08",
+          "STG-pray.rosary-09",
+          "STG-pray.rosary-10",
+          "STG-pray.rosary-11",
+          "STG-pray.rosary-12",
+          "STG-pray.rosary-13",
+          "STG-pray.rosary-14",
+          "STG-pray.rosary-15",
+          "STG-pray.rosary-16",
+          "STG-pray.rosary-17",
+          "COV-pray.rosary_methods"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.rosary",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "MAR-ROSARY",
+              "MAR-MADONNA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-WEEKDAY"
+          },
+          {
+            "id": "STG-pray.rosary-01",
+            "position": "Opening",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ROSARY",
+              "SNT-DOMINIC"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.rosary-02",
+            "position": "Joyful I",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-03",
+            "position": "Joyful II",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-VISITATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-04",
+            "position": "Joyful III",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-NATIVITY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-05",
+            "position": "Joyful IV",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-PRESENT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-06",
+            "position": "Joyful V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-FINDING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-07",
+            "position": "Sorrowful I",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-GETHSEMANE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-08",
+            "position": "Sorrowful II",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SCOURGING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-09",
+            "position": "Sorrowful III",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-THORNS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-10",
+            "position": "Sorrowful IV",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CROSSBEAR"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-11",
+            "position": "Sorrowful V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-12",
+            "position": "Glorious I",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-RESURRECT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-13",
+            "position": "Glorious II",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-ASCENSION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-14",
+            "position": "Glorious III",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "SPR-PENTECOST"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-15",
+            "position": "Glorious IV",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-ASSUMPTION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-16",
+            "position": "Glorious V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-CORONATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SERIES"
+          },
+          {
+            "id": "STG-pray.rosary-17",
+            "position": "Closing",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-CORONATION",
+              "MAR-MERCY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "COV-pray.rosary_methods",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "SNT-DOMINIC",
+              "MAR-ROSARY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          }
+        ],
+        "slot_count": 19,
+        "candidate_links_primary": 10,
+        "candidate_links_gallery": 19,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 6,
+      "id": "f07_mercy_open",
+      "title": "Divine Mercy — F07 opening",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "maybe a bit more muted for the non activated prayers just to show more contrast",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "m1–m2",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.divine_mercy",
+        "primary_code": "src/pray/chaplet-f07-pilot.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "m1 pictorial home with small crown thumbnail and time chip",
+        "Crown diagram and 3-part outline",
+        "28px Opening/I–V/Closing row",
+        "Current prayer only full opacity; adjacent prayers muted and smaller",
+        "No duplicate source-owned prayer engine"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07/mercy-crown-opening-320.png",
+          "size_bytes": 35792,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07/mercy-crown-opening-390.png",
+          "size_bytes": 57498,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.divine_mercy",
+          "STG-pray.divine_mercy-01"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.divine_mercy",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-HOLYFACE",
+              "CHR-SIDE",
+              "CHR-CRUCIFIX"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.divine_mercy-01",
+            "position": "Decades I–V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "CHR-SIDE",
+              "CHR-HOLYFACE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          }
+        ],
+        "slot_count": 2,
+        "candidate_links_primary": 0,
+        "candidate_links_gallery": 4,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 7,
+      "id": "f07_mercy_decade",
+      "title": "Divine Mercy — F07 first decade",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "do you think we need to add paintings? not sure what to add, what do you suggest? also very crucial to have V. and R. here",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "m2–m3",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.divine_mercy",
+        "primary_code": "src/pray/chaplet-f07-pilot.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "Exact decade crown position and bead count",
+        "Visible ℣/℟ on small bead, large bead and closing, with ALL on response",
+        "Rubrics italic above prayer, not floating below",
+        "Standard dock and m3 completion",
+        "Paintings optional pending user decision"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07/mercy-crown-decade-320.png",
+          "size_bytes": 34626,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07/mercy-crown-decade-390.png",
+          "size_bytes": 51305,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.divine_mercy",
+          "STG-pray.divine_mercy-01"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.divine_mercy",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-HOLYFACE",
+              "CHR-SIDE",
+              "CHR-CRUCIFIX"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.divine_mercy-01",
+            "position": "Decades I–V",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "CHR-SIDE",
+              "CHR-HOLYFACE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          }
+        ],
+        "slot_count": 2,
+        "candidate_links_primary": 0,
+        "candidate_links_gallery": 4,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 8,
+      "id": "f07_five_open",
+      "title": "Five Wounds — F07 opening",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "this UI is shit... we need to do exactly as Claude's prototype... also we need to add paintings i think",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "w1",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.five_wounds",
+        "primary_code": "src/pray/chaplet-f07-variants.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "Replace 30-dot position box with five-point wound cross",
+        "32px horizontal wound chips, not radio stacks",
+        "Language via Aa reader menu",
+        "Wound-specific painting bands subject to approval",
+        "Standard Previous/Next"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/five-wounds-320-opening.png",
+          "size_bytes": 39113,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/five-wounds-390-opening.png",
+          "size_bytes": 48633,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.five_wounds",
+          "STG-pray.five_wounds-01",
+          "STG-pray.five_wounds-02",
+          "STG-pray.five_wounds-03",
+          "STG-pray.five_wounds-04",
+          "STG-pray.five_wounds-05"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.five_wounds",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "CHR-CRUCIFIX",
+              "SNT-FRANCIS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-01",
+            "position": "1/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "CHR-DEPOSITION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-02",
+            "position": "2/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "PEN-MAGDALENE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-03",
+            "position": "3/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "SNT-FRANCIS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-04",
+            "position": "4/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-APPEAR",
+              "CHR-SIDE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-05",
+            "position": "5/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "CHR-SACREDHEART"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 6,
+        "candidate_links_primary": 1,
+        "candidate_links_gallery": 9,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 9,
+      "id": "f07_five_guided",
+      "title": "Five Wounds — guided prayer",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "this UI is shit... we need to do exactly as Claude's prototype... also we need to add paintings i think.... look at how huge these fucking pills are... the UI is not consistent with other prayers",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "w1 guided",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.five_wounds",
+        "primary_code": "src/pray/chaplet-f07-variants.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "Same w1 layout throughout guided mode",
+        "Remove big radio columns, duplicate dot row and outlined controls",
+        "Single eyebrow, prayer title, count, one prayer card",
+        "Wound-specific art subject and standard navigation"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "five-wounds/five-wounds-guided-320.png",
+          "size_bytes": 46275,
+          "artifact_id": 12964024783
+        },
+        {
+          "label": "390 px",
+          "path": "five-wounds/five-wounds-guided-390.png",
+          "size_bytes": 53017,
+          "artifact_id": 12964024783
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.five_wounds",
+          "STG-pray.five_wounds-01",
+          "STG-pray.five_wounds-02",
+          "STG-pray.five_wounds-03",
+          "STG-pray.five_wounds-04",
+          "STG-pray.five_wounds-05"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.five_wounds",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "CHR-CRUCIFIX",
+              "SNT-FRANCIS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-01",
+            "position": "1/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "CHR-DEPOSITION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-02",
+            "position": "2/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "PEN-MAGDALENE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-03",
+            "position": "3/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX",
+              "SNT-FRANCIS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-04",
+            "position": "4/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-APPEAR",
+              "CHR-SIDE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.five_wounds-05",
+            "position": "5/5",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "CHR-SACREDHEART"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 6,
+        "candidate_links_primary": 1,
+        "candidate_links_gallery": 9,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 10,
+      "id": "f07_blood_open",
+      "title": "Precious Blood — F07 opening",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "dreadful... poor UI",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "w1 seven-shedding adaptation",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.precious_blood",
+        "primary_code": "src/pray/chaplet-f07-variants.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "Seven-segment source-owned progress, no dotted step box",
+        "Actual opening ℣/℟ then Glory Be",
+        "No Choose a mystery or LATIN pill",
+        "Standard compact dock"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/precious-blood-320-opening.png",
+          "size_bytes": 37757,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/precious-blood-390-opening.png",
+          "size_bytes": 54066,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.precious_blood",
+          "STG-pray.precious_blood-01",
+          "STG-pray.precious_blood-02",
+          "STG-pray.precious_blood-03",
+          "STG-pray.precious_blood-04",
+          "STG-pray.precious_blood-05",
+          "STG-pray.precious_blood-06",
+          "STG-pray.precious_blood-07"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.precious_blood",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "CHR-CRUCIFIX",
+              "NAT-VINE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-01",
+            "position": "1/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-PRESENT",
+              "CHR-CHILD"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-02",
+            "position": "2/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-GETHSEMANE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-03",
+            "position": "3/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SCOURGING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-04",
+            "position": "4/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-THORNS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-05",
+            "position": "5/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CROSSBEAR"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-06",
+            "position": "6/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-07",
+            "position": "7/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "NAT-VINE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 8,
+        "candidate_links_primary": 0,
+        "candidate_links_gallery": 9,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 11,
+      "id": "f07_blood_guided",
+      "title": "Precious Blood — guided step",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "dreadful... poor UI",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "w1 shedding guidance",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.precious_blood",
+        "primary_code": "src/pray/chaplet-f07-variants.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "Remove seven large number boxes",
+        "Seven named sheddings in bottom sheet",
+        "Title eyebrow and real prayer bead count",
+        "1910 historical meditation via quiet ⓘ",
+        "Seven source-matched painting bands, not auto-publish"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "precious-blood/precious-blood-full-guided-320.png",
+          "size_bytes": 42597,
+          "artifact_id": 12964388286
+        },
+        {
+          "label": "390 px",
+          "path": "precious-blood/precious-blood-full-guided-390.png",
+          "size_bytes": 59771,
+          "artifact_id": 12964388286
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.precious_blood",
+          "STG-pray.precious_blood-01",
+          "STG-pray.precious_blood-02",
+          "STG-pray.precious_blood-03",
+          "STG-pray.precious_blood-04",
+          "STG-pray.precious_blood-05",
+          "STG-pray.precious_blood-06",
+          "STG-pray.precious_blood-07"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.precious_blood",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "CHR-CRUCIFIX",
+              "NAT-VINE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-01",
+            "position": "1/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-PRESENT",
+              "CHR-CHILD"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-02",
+            "position": "2/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-GETHSEMANE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-03",
+            "position": "3/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SCOURGING"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-04",
+            "position": "4/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-THORNS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-05",
+            "position": "5/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CROSSBEAR"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-06",
+            "position": "6/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CRUCIFIX"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.precious_blood-07",
+            "position": "7/7",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-SIDE",
+              "NAT-VINE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 8,
+        "candidate_links_primary": 0,
+        "candidate_links_gallery": 9,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 12,
+      "id": "f07_little_open",
+      "title": "Little Crown — F07 opening",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "dreadful... poor UI",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "c1",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.little_crown",
+        "primary_code": "src/pray/chaplet-f07-variants.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "15-bead circle is primary, at least 48px tap targets",
+        "Current bead indicated in rubric red, count centre",
+        "Full aspiration and prayer below",
+        "No duplicate LATIN pill or dotted position box",
+        "Standard dock"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/little-crown-320-opening.png",
+          "size_bytes": 40316,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/little-crown-390-opening.png",
+          "size_bytes": 61395,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.little_crown",
+          "STG-pray.little_crown-01"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.little_crown",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-CHILD",
+              "CHR-NATIVITY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.little_crown-01",
+            "position": "Beads 1–15",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CHILD",
+              "CHR-NATIVITY",
+              "CHR-NAZARETH"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          }
+        ],
+        "slot_count": 2,
+        "candidate_links_primary": 4,
+        "candidate_links_gallery": 4,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 13,
+      "id": "f07_little_return",
+      "title": "Little Crown — navigation return",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "dreadful poor UI",
+      "prototype": {
+        "file": "AO_Prayer_F07_Chaplet.html",
+        "screens": "c1 return",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.little_crown",
+        "primary_code": "src/pray/chaplet-f07-variants.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P2"
+      },
+      "correction_requirements": [
+        "Returning to bead preserves identical c1 screen",
+        "Circle directly selects canonical bead, no second navigation surface",
+        "No duplicate source/progress rows"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-chaplet-f07-variants/little-crown-320-return.png",
+          "size_bytes": 38732,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-chaplet-f07-variants/little-crown-390-return.png",
+          "size_bytes": 59787,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.little_crown",
+          "STG-pray.little_crown-01"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.little_crown",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "CHR-CHILD",
+              "CHR-NATIVITY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.little_crown-01",
+            "position": "Beads 1–15",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-CHILD",
+              "CHR-NATIVITY",
+              "CHR-NAZARETH"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          }
+        ],
+        "slot_count": 2,
+        "candidate_links_primary": 4,
+        "candidate_links_gallery": 4,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 14,
+      "id": "morning",
+      "title": "Morning Prayer — historical prayer-book version",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "fucking pills are too big and shouldnt be that high... don't give fucking source like that it ruins prayer experience... these have to be masked and discrete",
+      "prototype": {
+        "file": "AO_Prayer_Redesign_Morning_Evening.html",
+        "screens": "m1,m7",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "daily.morning",
+        "primary_code": "src/pray/presentation-runtime.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P3"
+      },
+      "correction_requirements": [
+        "Small Morning/Evening switch and Choose a prayer sheet",
+        "Source texts selectable via quiet Text · St Pius X ▾ inside card",
+        "ⓘ Source and Latin parallel, no citation pills in reading body",
+        "Dawn-sunrise sky progression, sun-dot, step title and next prayer name",
+        "Keep exact historical texts and language provenance"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "daily/morning-320.png",
+          "size_bytes": 81816,
+          "artifact_id": 12962188573
+        },
+        {
+          "label": "390 px",
+          "path": "daily/morning-390.png",
+          "size_bytes": 94595,
+          "artifact_id": 12962188573
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-daily.morning",
+          "STG-daily.morning-01"
+        ],
+        "slots": [
+          {
+            "id": "COV-daily.morning",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "NAT-DAWN",
+              "LIFE-PRAYER",
+              "LIFE-WORK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-daily.morning-01",
+            "position": "Steps 1–11",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "NAT-DAWN"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 2,
+        "candidate_links_primary": 3,
+        "candidate_links_gallery": 0,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 15,
+      "id": "evening",
+      "title": "Evening Prayer — historical prayer-book version",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "fucking pills are too big and shouldnt be that high... don't give fucking source like that it ruins prayer experience... these have to be masked and discrete",
+      "prototype": {
+        "file": "AO_Prayer_Redesign_Morning_Evening.html",
+        "screens": "e10,el",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "daily.evening",
+        "primary_code": "src/pray/presentation-runtime.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P3"
+      },
+      "correction_requirements": [
+        "Same daily-rule grammar with evening twilight progression",
+        "Source choice in quiet Text menu, not body pills",
+        "Choose a prayer sheet with session position ticks",
+        "No intrusive source or Latin attribution body text"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "daily/evening-320.png",
+          "size_bytes": 83007,
+          "artifact_id": 12962188573
+        },
+        {
+          "label": "390 px",
+          "path": "daily/evening-390.png",
+          "size_bytes": 112798,
+          "artifact_id": 12962188573
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-daily.evening",
+          "STG-daily.evening-01"
+        ],
+        "slots": [
+          {
+            "id": "COV-daily.evening",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "NAT-DUSK",
+              "NAT-NIGHT",
+              "LIFE-PRAYER"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-TIME"
+          },
+          {
+            "id": "STG-daily.evening-01",
+            "position": "Steps 1–13",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "NAT-DUSK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 2,
+        "candidate_links_primary": 1,
+        "candidate_links_gallery": 0,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 16,
+      "id": "loreto",
+      "title": "Litany of Loreto — 1962 era",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "poor UI",
+      "prototype": {
+        "file": "AO_Prayer_F03_Litany.html",
+        "screens": "l1–l3",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "litany_loreto_1962",
+        "primary_code": "src/pray/presentation-runtime.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P3"
+      },
+      "correction_requirements": [
+        "Compact form cards for 1962 and current, avoid conflation",
+        "One row small Alone/With others and EN/FR/LA controls",
+        "Two-column Invocation/Response with bold response, no table header",
+        "Scrolling section navigation and l3 finish",
+        "Preserve authentic 1962-era source witness"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "prayer-reader-design-pilot/loreto-1962-320.png",
+          "size_bytes": 35394,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "prayer-reader-design-pilot/loreto-1962-390.png",
+          "size_bytes": 56682,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-litany_loreto_1962",
+          "STG-litany_loreto_1962-01",
+          "STG-litany_loreto_1962-02",
+          "STG-litany_loreto_1962-03",
+          "STG-litany_loreto_1962-04",
+          "STG-litany_loreto_1962-05",
+          "COV-litany_loreto_current"
+        ],
+        "slots": [
+          {
+            "id": "COV-litany_loreto_1962",
+            "position": "Vignette",
+            "level": "Prayer card vignette",
+            "eligible_subjects": [
+              "MAR-CORONATION",
+              "MAR-IMMACULATE",
+              "NAT-FLOWERS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          },
+          {
+            "id": "STG-litany_loreto_1962-01",
+            "position": "Titles · Mother",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-MADONNA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-litany_loreto_1962-02",
+            "position": "Titles · Virgin",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-PRAYING",
+              "MAR-ANNUNCIATION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-litany_loreto_1962-03",
+            "position": "Titles · Symbols",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-IMMACULATE",
+              "NAT-FLOWERS",
+              "NAT-DAWN",
+              "NAT-SEA"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-litany_loreto_1962-04",
+            "position": "Titles · Help",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-MERCY",
+              "LIFE-SICK"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-litany_loreto_1962-05",
+            "position": "Titles · Queen",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-CORONATION",
+              "SNT-ALLSAINTS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "COV-litany_loreto_current",
+            "position": "Vignette",
+            "level": "Prayer card vignette",
+            "eligible_subjects": [
+              "MAR-CORONATION",
+              "MAR-IMMACULATE",
+              "NAT-FLOWERS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SEASON"
+          }
+        ],
+        "slot_count": 7,
+        "candidate_links_primary": 7,
+        "candidate_links_gallery": 10,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 17,
+      "id": "adoration",
+      "title": "Adoration — Prayer route",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "awful UI",
+      "prototype": {
+        "file": "AO_Prayer_Redesign_Adoration.html",
+        "screens": "c1,p1,v1,f1",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.adoration",
+        "primary_code": "src/pray/presentation-runtime.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P3"
+      },
+      "correction_requirements": [
+        "Two tall image mode cards, not text blocks",
+        "Guided Four Ends/Holy Hour/treasury/night modes immediately discoverable",
+        "Presence screen and stillness without forced completion",
+        "Visit path and four-end cross, each source-owned",
+        "Public Benediction priority one quiet footer, not intrusive box",
+        "Do not conflate private home devotion with Eucharistic exposition"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-ux-unified/route-pray-adoration-320.png",
+          "size_bytes": 46057,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-ux-unified/route-pray-adoration-390.png",
+          "size_bytes": 47673,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.adoration.night",
+          "STG-pray.adoration.night-01",
+          "STG-pray.adoration.night-02",
+          "STG-pray.adoration.night-03",
+          "STG-pray.adoration.night-04",
+          "STG-pray.adoration.night-05",
+          "STG-pray.adoration.night-06",
+          "COV-pray.adoration",
+          "STG-pray.adoration-01",
+          "STG-pray.adoration-02",
+          "COV-pray.adoration.four_ends",
+          "STG-pray.adoration.four_ends-01",
+          "STG-pray.adoration.four_ends-02",
+          "STG-pray.adoration.four_ends-03",
+          "STG-pray.adoration.four_ends-04"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.adoration.night",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "NAT-CANDLE",
+              "NAT-NIGHT",
+              "LIFE-FAMILY",
+              "EUC-MONSTRANCE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.night-01",
+            "position": "1/6",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "NAT-CANDLE",
+              "LIFE-FAMILY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.night-02",
+            "position": "2/6",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-GETHSEMANE",
+              "NAT-NIGHT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.night-03",
+            "position": "3/6",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-HOLYFACE",
+              "CHR-SACREDHEART"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.night-04",
+            "position": "4/6",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "LIFE-FAMILY",
+              "MAR-MERCY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.night-05",
+            "position": "5/6",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-APPEAR",
+              "EUC-COMMUNION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.night-06",
+            "position": "6/6",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "ANG-GUARDIAN",
+              "NAT-NIGHT"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "COV-pray.adoration",
+            "position": "Cover",
+            "level": "Hub cover",
+            "eligible_subjects": [
+              "EUC-MONSTRANCE",
+              "LIFE-CHURCH",
+              "NAT-CANDLE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.adoration-01",
+            "position": "Place 1",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "LIFE-CHURCH",
+              "NAT-CANDLE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "STG-pray.adoration-02",
+            "position": "Place 2",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "EUC-MONSTRANCE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-SESSION"
+          },
+          {
+            "id": "COV-pray.adoration.four_ends",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "EUC-MONSTRANCE",
+              "ANG-CHOIRS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.four_ends-01",
+            "position": "1/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "EUC-MONSTRANCE",
+              "ANG-CHOIRS"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.four_ends-02",
+            "position": "2/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "ANG-CHOIRS",
+              "NAT-SKY"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.four_ends-03",
+            "position": "3/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "CHR-HOLYFACE",
+              "PEN-PETER"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.adoration.four_ends-04",
+            "position": "4/4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "MAR-MERCY",
+              "CHR-MIRACLE"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 15,
+        "candidate_links_primary": 7,
+        "candidate_links_gallery": 7,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    },
+    {
+      "order": 18,
+      "id": "confession",
+      "title": "Confession — Prayer route",
+      "editorial_status": "REVISE",
+      "editorial_note_verbatim": "ugly UI",
+      "prototype": {
+        "file": null,
+        "screens": "F12 prototype NOT YET APPROVED OR CREATED",
+        "approved": false
+      },
+      "source_ownership": {
+        "route": "pray.confession",
+        "primary_code": "src/pray/presentation-runtime.js",
+        "original_engine_must_remain": true
+      },
+      "implementation": {
+        "assessment": "EXISTING_READER__EDITORIAL_REDESIGN_PENDING",
+        "review_prs": [],
+        "priority": "P3"
+      },
+      "correction_requirements": [
+        "First design F12 prototype; do not invent approval",
+        "Four-segment minimal progress, named stage eyebrow",
+        "Quick/returning/general as short list rows",
+        "No free-text elapsed-confession query on opening; no sins stored",
+        "Remove stray Mass-tab icon and use standard dock"
+      ],
+      "evidence_original": [
+        {
+          "label": "320 px",
+          "path": "pray-ux-unified/route-pray-confession-320.png",
+          "size_bytes": 48296,
+          "artifact_id": 12962469218
+        },
+        {
+          "label": "390 px",
+          "path": "pray-ux-unified/route-pray-confession-390.png",
+          "size_bytes": 59240,
+          "artifact_id": 12962469218
+        }
+      ],
+      "art": {
+        "slot_ids": [
+          "COV-pray.confession",
+          "STG-pray.confession-01",
+          "STG-pray.confession-02",
+          "STG-pray.confession-03",
+          "STG-pray.confession-04"
+        ],
+        "slots": [
+          {
+            "id": "COV-pray.confession",
+            "position": "Cover",
+            "level": "Module cover",
+            "eligible_subjects": [
+              "PEN-PRODIGAL",
+              "CHR-SHEPHERD",
+              "PEN-CONFESSION"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.confession-01",
+            "position": "Section 1",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "NAT-CANDLE",
+              "PEN-MAGDALENE",
+              "SNT-JEROME"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.confession-02",
+            "position": "Section 2",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "PEN-PETER",
+              "PEN-DAVID"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.confession-03",
+            "position": "Section 3",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "PEN-CONFESSION",
+              "CHR-SHEPHERD"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          },
+          {
+            "id": "STG-pray.confession-04",
+            "position": "Section 4",
+            "level": "Stage image",
+            "eligible_subjects": [
+              "PEN-PRODIGAL",
+              "NAT-DAWN"
+            ],
+            "publication_status": "NO_ARTWORK_ASSIGNED",
+            "assigned_count": 0,
+            "rotation": "R-STAGE"
+          }
+        ],
+        "slot_count": 5,
+        "candidate_links_primary": 4,
+        "candidate_links_gallery": 2,
+        "assignment_status": "NOT_ASSIGNED",
+        "publication_status": "NO_ARTWORK_RELEASE_CLEARED",
+        "caveat": "Many-to-many subject matches are research suggestions; placement, crop, quality, rights and user approval remain separate"
+      }
+    }
+  ]
+}
