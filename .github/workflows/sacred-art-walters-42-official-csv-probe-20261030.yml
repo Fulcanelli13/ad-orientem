@@ -1,0 +1,52 @@
+name: Sacred Art Walters official CSV schema probe (€0 research)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-walters-42-official-csv-probe-20261030.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-walters-csv-probe
+  cancel-in-progress: false
+
+jobs:
+  inspect-official-static-art-and-relationships:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce frozen choices and locked canonical artwork master
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Inspect official Walters source CSV schema and 3 accession examples
+        run: node scripts/art/probe-walters-official-csv-20261030.mjs
+      - name: Check research-only gates and commit schema evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const r=JSON.parse(readFileSync('data/calendar/sacred-art-phase1-walters-official-csv-probe-20261030.v1.json','utf8'));
+          if(r.frozenSourceRecords!==42 || r.originalConditionalSelections!==2 ||
+            r.officialSourceRecordsCertified!==0 || r.originalUserDecisionsChanged!==false ||
+            r.physicalUniquenessCertified!==false || r.photographsCertified!==false ||
+            r.productionMutation!==false)throw Error('Walters probe release gate invalid');
+          console.log('Walters art and relationship CSV probe preserved.');
+          NODE
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-walters-official-csv-probe-20261030.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): record Walters official CSV schema and sample identity [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
