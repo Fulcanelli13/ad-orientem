@@ -1,0 +1,40 @@
+name: Sacred Atlas objects — one-click browser retriever
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tools/sacred-atlas-objects-bulk-retriever.html"
+      - "tests/sacred-atlas-objects-bulk-retriever.mjs"
+      - "tests/sacred-atlas-objects-bulk-retriever-browser.mjs"
+      - ".github/workflows/sacred-atlas-objects-bulk-retriever.yml"
+permissions:
+  contents: read
+jobs:
+  source-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/sacred-atlas-objects-bulk-retriever.mjs
+  browser-mock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/sacred-atlas-objects-bulk-retriever-browser.mjs
+      - name: Preserve mock phone screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-object-retriever-mock-phone
+          path: artifacts/atlas-object-retriever/
+          if-no-files-found: warn
+          retention-days: 7
