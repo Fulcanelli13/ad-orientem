@@ -46,6 +46,10 @@ test("Both means true Latin plus current vernacular; unavailable sources are nev
  assert.match(card,/lang="la"/);
  assert.match(card,/lang="fr"/);
  assert.ok(card.includes(escape(rec.la.slice(0,20))));
+ assert.ok(rec.titleFr,"French title must be source-owned");
+ assert.ok(card.includes("<h3>"+escape(rec.titleFr)+"</h3>"),"Both + French must display the canonical French title");
+ const englishBilingual=claudeHolyCard({id:"foundations_hail_mary",p:rec,face:"both",vernacular:"en",esc:escape});
+ assert.ok(englishBilingual.includes("<h3>"+escape(rec.title)+"</h3>"),"Both + English retains the English title");
  const eng=PRAY_CANONICAL_DATA_V435930.prayers.marian_consecration_immaculate_heart;
  const englishOnly=claudeHolyCard({id:"marian_consecration_immaculate_heart",p:eng,face:"both",vernacular:"fr",esc:escape});
  assert.doesNotMatch(englishOnly,/aoClaudeHolyLatinText/);
