@@ -22,11 +22,11 @@ Historical assignments and user-led decisions remain in PR #2110, which is too d
 - Optional Luminous **Wedding at Cana**: previously approved Sebastiano Ricci and Giuseppe Maria Crespi *as semantic proposals*. Do not invent a live card ID.
 - Optional Luminous **Institution of the Eucharist**: previously approved Lanfranco semantic association; **Philippe de Champaigne's La Petite Cène** explicitly preferred to da Siena. Do not count an optional mystery as a missing part of the traditional fifteen-mystery Rosary.
 
-## Exactly two serious remaining subject/image gaps in this eleven-group set
-1. **Benediction — the actual sign of the Cross with the monstrance**: no verified suitable oil painting surfaced among the six images in the research file. Five are photos/prints of other subjects or a comparable ceremonial moment; one is a 1948 illustration. Ingres's already-approved devotional cover remains, but it is **not** a literal painting of the blessing. Reader liturgy and full stages must not be sacrificed to force a painting.
-2. **St Thérèse novena cover**: exact historical figure subject exists, but Céline Martin's `Thérèse aux roses` painting remains copyright-restricted under ordinary France 70-pma term. Alternative Józef Mehoffer's 1929 oil painting is of the correct saint and its original artwork is PD; Commons photograph is marked **CC BY-SA 4.0**, which is a real €0 licence but **not** the user's strict PD/CC0 policy. Find a separately PD/CC0 licensed photograph or an admissible narrowly scoped exception; do not misrepresent the licence.
-
-Optional Luminous Proclamation and Transfiguration retain six art proposals each but do not block the canonical traditional Rosary.
+## 31 October explicit user decisions — no unsolved editorial subject gaps in the eleven-group batch
+1. **Benediction:** user chose Hubert/Jan van Eyck *The Adoration of the Mystic Lamb* (Ghent Altarpiece lower central panel) for thematic heavenly/Eucharistic adoration. The oil painting depicts the Lamb amid the saints, **not the priest giving Benediction**. It does not replace the already user-approved Ingres *The Virgin Adoring the Host* cover. Permanent source file: `assets/prayer/user-approved/benediction-mystic-lamb.webp`; Commons faithful public-domain two-dimensional art reproduction, 2725×1577. Display only during the Benediction adoration stage, not the moment of liturgical blessing.
+2. **St Thérèse of Lisieux:** user chose the exact Commons historical photographic portrait [Therese_lisieux_portrait.jpg](https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg), original 362×498, explicitly marked PD in France and the US. It is archived permanently at `assets/prayer/user-approved/st-therese-lisieux-historical-portrait.webp`, with no artificial upscaling. Novena entry screen updated. The previous `Thérèse aux roses` painting by Céline Martin remains unresolved copyright and is not used.
+3. Both image hashes and source records are preserved in `assets/prayer/user-approved/source-provenance.v1.json`; workflow that briefly required `contents: write` was removed after collecting sources to preserve repository read-only CI security.
+4. This closes the **two editorial subject gaps**, not all technical rights/image QA across the broader app. One external separate programme remains held: **Rauth fourteen copyright-claimed photographs** (PR #2125).
 
 ## Four identified no-cost image sources (needs native-file QA)
 1. Philippe de Champaigne, **La Petite Cène** (Louvre INV 1125), 2816×2112 Commons file released into PD by photographer Tangopaso; verify native photograph crop/frame. [Original Commons PD-self photograph](https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg). Do not substitute French RMN photo credited to Hervé Lewandowski, marked permission required.
@@ -39,10 +39,10 @@ Photo copyrights and artistic approval remain separate. Do not automatically ena
 ## Complete Stations programme
 Peter Rauth 14 painted canvases (Edinburgh, 1871–74) **prioritized by user** over visually poor Feuerstein Commons set and San Polo Tiepolo. See [PR #2125](https://github.com/Fulcanelli13/ad-orientem/pull/2125) for the 14 official native photos (13 ≥900 px short side, one 886 px), 14 old restoration photos (far too small), per-source hashes and legal evidence. **0/14 are certified PD/CC0 photos**, so stage release is blocked; preserve existing individual approved paintings rather than hotlinking ©2019 gallery as if free.
 
-## Order for execution
+## Order for remaining execution
 1. Keep existing stage approvals and app structure intact; skip redundant painting review for subjects already editorially solved.
-2. Acquire and crop/grade the **four PD / public-domain-asserted** sources above, without assuming every licence reaches the app's global policy; log the original licence and native image QA.
-3. Resolve the two true gaps (Benediction exact blessing and St Thérèse). Optional Luminous associations are secondary; traditional fifteen-mystery Rosary must not be disrupted.
+2. Finish native photo review for the other previously approved artworks. The user-chosen van Eyck and historical St Thérèse sources are now permanently archived and reader-scoped.
+3. **Do not reopen Benediction or St Thérèse for artistic research** unless the user requests a change. Optional Luminous associations remain secondary; traditional fifteen-mystery Rosary must not be disrupted.
 4. Separately settle 14 Rauth photo rights (not artist rights); don't merge a draft that simply indexes copyrighted photo links.
 5. Before activation, verify exact card/scene, French/English layout, mobility, original Rosary bead-by-bead scripture structure, users' rejections, image crop/clarity, attribution and rights. Never auto-enable on editorial approval alone.
 
