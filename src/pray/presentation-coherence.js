@@ -32,6 +32,8 @@ function viewOf(root){return root?.querySelector('.aoP435930Mount')?.dataset.aoP
 function needsRecitation(root){
   const v=viewOf(root);if(['rosary','angelus','confession','firstFriday','firstSaturday','fsMeditation'].includes(v))return false;
   if(v==='stations'&&root.querySelector('[data-ao-stations-options] [data-p435930-seg="individual"]'))return false;
+  // F02/F03 source-authentic Choir follows focus beats, not synthetic role labels.
+  if(v==='library'&&root.querySelector('[data-ao-choir-prayer]'))return false;
   if(v==='library')return !!root.querySelector('.aoP435930Prayer');
   return !!root.querySelector('.aoP435930Prayer,.aoP435930LitCard,.aoP435930AppendixFlip');
 }

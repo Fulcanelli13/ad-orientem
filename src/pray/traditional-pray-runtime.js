@@ -1,4 +1,7 @@
 import "./traditional-pray-styles.js";
+import {choirLitanyLineParts} from "./choir-source-beats.js";
+import {installChoirContinuousFocus} from "./choir-continuous-focus.js";
+import "./choir-family-styles.js";
 import {dailyUxPilotEnabled,renderDailyUxContinuous,renderDailyBookPills,renderDailyReaderOptions} from "./daily-ux-pilot.js";
 import "./traditional-pray-direct-b16-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
@@ -119,6 +122,7 @@ function prayerRows(rows){
 
 const DAILY_UX_PILOT_ENABLED=dailyUxPilotEnabled(globalThis.location?.search);
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null,MASS_HANDOFF_BUSY=false;
+let CHOIR_FULL_FOCUS_DISPOSE=null;
 let S={dailyTimerOpen:false,dailyLength:"standard",litanyMode:"full",litanyStep:0,mealStep:0,mealForm:"short",examenContrition:"standard",hopeFrenchEdition:"published",route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,goodDeathJosephEdition:"1909",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
 
 
@@ -406,7 +410,7 @@ function renderHymns(){
   const core=HYMN_KEYS.slice(0,3);
   const direct=`<section class="aoPrayHymnsDirect" data-ao-hymns-direct="true"><p>${esc(L("Choose a principal hymn directly","Choisir directement une hymne principale"))}</p><nav class="aoPrayHymnsDirectChoices" aria-label="${esc(L("Principal historic hymns","Hymnes historiques principales"))}">${core.map(id=>{const item=hymnById(id);return `<button type="button" data-tp381-hymn="${esc(id)}" aria-pressed="${id===key}" ${id===key?'aria-current="true"':''}>${esc(item.title)}</button>`}).join("")}</nav></section>`;
   const browse=`<details class="aoTP381SecondaryOptions" data-ao-hymn-catalogue><summary>${esc(L("Eight additional seasonal Office hymn texts","Huit autres hymnes de l’Office selon les temps liturgiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical Office usage is recorded for each witness. This is not an automatic Office calendar or a substitute for the prescribed texts.","L’usage historique est indiqué pour chaque témoin. Il ne s’agit pas d’un calendrier automatique de l’Office ni d’un remplacement des textes prescrits."))}</p><div class="aoTP381PrayerList">${HYMN_KEYS.slice(3).map(id=>{const item=hymnById(id);return `<button type="button" data-tp381-hymn="${esc(id)}" aria-current="${id===key?"true":"false"}"><span><b>${esc(item.title)}</b><small>${esc(L(item.subtitle,item.subtitleFr))}</small></span></button>`}).join("")}</div></div></details>`;
-  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody">${direct}${card}${browse}${options}</main>`;
+  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-choir-route="hymns">${direct}${card}${browse}${options}</main>`;
 }
 
 function traditionalContextGuide(kind){
@@ -434,8 +438,14 @@ function traditionalContextGuide(kind){
 const HOLY_NAME_SECTION_LABELS=Object.freeze([["Opening invocations","Invocations initiales"],["The Holy Trinity","La Sainte Trinité"],["Names and attributes of Jesus","Noms et titres de Jésus"],["Deliver us, O Jesus","Délivrez-nous, ô Jésus"],["Lamb of God","Agneau de Dieu"],["Versicles and responses","Versets et réponses"],["Concluding prayer","Oraison finale"]]);
 function holyNameSections(value){return String(value||"").trim().split(/\n\s*\n/).map(part=>part.trim()).filter(Boolean)}
 function litanyVerseMarkup(raw){
-  return String(raw||"").split(/\n/).map(line=>
-    `<p class="aoTP381LitanyLine">${line.trim()?esc(line):"&#160;"}</p>`).join("");
+  return String(raw||"").split(/\n/).map(line=>{
+    if(!line.trim())return '<div class="aoChoirStanzaSpace" aria-hidden="true"></div>';
+    // One prayer response is one focus unit; no synthetic ℣/℟ markers.
+    return choirLitanyLineParts(line).map(part=>
+      '<p class="aoTP381LitanyLine aoChoirRouteBeat'+
+        (part.kind==='response'?' aoChoirResponse':'')+
+      '">'+esc(part.raw.trim())+'</p>').join('');
+  }).join("");
 }
 function renderHolyName(){
   const vern=isFr()?HOLY_NAME_LITANY_V381.fr:HOLY_NAME_LITANY_V381.en,latin=HOLY_NAME_LITANY_V381.la;
@@ -444,11 +454,11 @@ function renderHolyName(){
   const guided=aligned&&S.litanyMode==="guided",step=Math.max(0,Math.min(6,Number(S.litanyStep)||0));
   const current=guided?(isFr()?frParts[step]:enParts[step]):vern,currentLatin=guided?laParts[step]:latin;
   const title=guided?L(...HOLY_NAME_SECTION_LABELS[step]):L(HOLY_NAME_LITANY_V381.title,HOLY_NAME_LITANY_V381.titleFr);
-  const text=`<article class="aoTP381PrayerCard"><h3>${esc(title)}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${guided?litanyVerseMarkup(current):nl(current)}</span><span data-face-la hidden>${guided?litanyVerseMarkup(currentLatin):nl(currentLatin)}</span></button></article>`;
+  const text=`<article class="aoTP381PrayerCard"><h3>${esc(title)}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${litanyVerseMarkup(current)}</span><span data-face-la hidden>${litanyVerseMarkup(currentLatin)}</span></button></article>`;
   const card=guided?`<section class="aoDevoCard" data-ao-devo-card="holy-name-${step+1}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${text}</div></section>`:text;
   const mode=aligned?`<div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Litany view","Présentation des litanies"))}"><button type="button" data-tp381-litany-mode="full" aria-pressed="${!guided}">${esc(L("Full text","Texte intégral"))}</button><button type="button" data-tp381-litany-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button></div>`:"";
   const guidance=`<details class="aoTP381SecondaryOptions" data-ao-holy-name-options><summary>${esc(L("Reading options and guide","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique, avec témoins latin et français. Touchez la prière pour remplacer le français par le latin."))}</p>${mode}${traditionalContextGuide("holyName")}</div></details>`;
-  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">${card}${guidance}<div class="aoTP381SecondaryOptions" data-ao-holy-name-music><p>${esc(L("For chanting, the Institute publishes separate Downside and Solesmes settings; these are musical references, not new litany invocations. No score files are redistributed.","Pour le chant, l’Institut propose des éditions de Downside et de Solesmes ; ce sont des témoins musicaux, non des invocations supplémentaires. Aucune partition n’est redistribuée."))}</p>${source("ICKSP · Sacred Music · Holy Name Litany settings","https://www.institute-christ-king.org/resources/sacred-music")}<button type="button" class="aoP435930Secondary" data-tp381-golden-arrow>${esc(L("Related prayer · Golden Arrow","Prière associée · Flèche d’Or"))}</button></div>${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
+  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-choir-route="holy-name">${card}${guidance}<div class="aoTP381SecondaryOptions" data-ao-holy-name-music><p>${esc(L("For chanting, the Institute publishes separate Downside and Solesmes settings; these are musical references, not new litany invocations. No score files are redistributed.","Pour le chant, l’Institut propose des éditions de Downside et de Solesmes ; ce sont des témoins musicaux, non des invocations supplémentaires. Aucune partition n’est redistribuée."))}</p>${source("ICKSP · Sacred Music · Holy Name Litany settings","https://www.institute-christ-king.org/resources/sacred-music")}<button type="button" class="aoP435930Secondary" data-tp381-golden-arrow>${esc(L("Related prayer · Golden Arrow","Prière associée · Flèche d’Or"))}</button></div>${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
 }
 function renderNightlyExamen(){
  const steps=NIGHTLY_EXAMEN_CARDS,step=clampPrayerCardStep(S.examenStep,steps.length),item=steps[step];
@@ -828,6 +838,7 @@ function render(){
   // A route change or Full Text mode must not inherit another reader’s stage owner.
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
+  CHOIR_FULL_FOCUS_DISPOSE?.();CHOIR_FULL_FOCUS_DISPOSE=null;
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
@@ -921,6 +932,9 @@ function render(){
   }
   injectGlossaryAction();
   m.scrollTop=0;
+  if(S.screen==="module"&&S.route==="pray.holy_name_litany"&&S.litanyMode!=="guided")
+    CHOIR_FULL_FOCUS_DISPOSE=installChoirContinuousFocus(m);
+
   queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.({preventScroll:true})});
   return true;
 }
