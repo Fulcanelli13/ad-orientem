@@ -30,6 +30,27 @@ assert.equal(audit.automaticReassignments,0);
 assert.equal(audit.publicScores,0);
 assert.equal(audit.printed1961NoteByNoteVerified,0);
 assert.equal(audit.full1962MassRoleVerified,0);
+const residual=read("data/research/mass-music-m10-residual45-priority.v1.json");
+assert.equal(residual.schema,"ao-mass-music-m10-remaining45-research-queue-v1");
+assert.equal(residual.count,45);
+assert.equal(residual.distinctOriginalScoreIds,28);
+assert.equal(residual.preGospelOccurrences,43);
+assert.deepEqual(residual.byRole,{tr:17,al:16,gr:10,of:1,co:1});
+assert.equal(residual.editorialApproval,false);
+assert.equal(residual.automaticScoreReassignment,false);
+assert.equal(residual.records.length,45);
+assert.equal(new Set(residual.records.map(x=>x.id)).size,28);
+assert.ok(residual.records.every(x=>x.declaredMissingInPrintedBook===false));
+assert.ok(residual.records.every(x=>x.scoreRejected===false));
+assert.ok(residual.records.every(x=>x.readyForPublicReader===false));
+const unresolved=batches.flatMap(b=>b.records).filter(x=>x.alternativeCount===0);
+assert.deepEqual(
+ residual.records.map(x=>[x.id,x.sourcePath,x.sourceBlobSha,x.originalScoreSha256])
+ .sort((a,b)=>a.join(":").localeCompare(b.join(":"))),
+ unresolved.map(x=>[x.id,x.sourcePath,x.sourceBlobSha,x.originalScoreSha256])
+ .sort((a,b)=>a.join(":").localeCompare(b.join(":"))),
+ "45 unresolved source records must remain complete and source-identical"
+);
 const all=batches.flatMap(b=>b.records);
 assert.equal(all.length,99);
 const alternativeFor=(sourceId,path)=>all.find(e=>e.id===sourceId&&e.sourcePath===path);
