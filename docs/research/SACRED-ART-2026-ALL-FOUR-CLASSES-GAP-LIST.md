@@ -29,6 +29,14 @@ Existing accepted source cards **walters:18326** (Benedetto Coda, *Saint Claire 
 
 Other title collisions are *not* new exact matches: Sebastian without Fabian, John the Baptist versus de la Salle, William of Aquitaine versus William of Vercelli, Jerome of Stridon versus Jerome Emiliani, Clare versus Claret, St Nicholas of Myra versus Tolentino, Martin of Tours versus Pope Martin I, Pius VI versus Pius X, and apostle portraits versus dedications of their basilicas. See `data/calendar/sacred-art-2026-existing-source-matches-batch5.v1.json`.
 
+### Batch 6 — three partial feast links recovered from older archives (no increase in complete-date matches)
+
+- **22 January, Sts Vincent and Anastasius:** accepted Met source `met:435847` (Frei Carlos, *Saint Vincent, Patron Saint of Lisbon*, accession 58.145.2) may depict Vincent of Saragossa, but that identity still needs confirmation. Anastasius is absent. Accepted *source* only, no canonical 383 ID or approved image.
+- **10 July, Seven Holy Brothers, Rufina and Secunda:** W60 legacy `File:SevenBrothers.jpg` exists, but is **not** validated as the Roman seven brothers rather than another seven-brothers subject; it also does not cover Roman Rufina and Secunda. Previously excluded *Justa and Rufina* of Seville remains a different pair, **not** a valid substitute.
+- **28 July, Nazarius, Celsus, Victor I and Innocent I:** W60 contains `File:St. Nazarius and St. Celsus Met DP891050.jpg` and `File:Nazarius Celsus.jpg`. Both name two of the saints, not Victor I or Innocent I; they may duplicate one original. Preserve filenames and verify original identities/rights only when authorized.
+
+There are now **three newly recorded partial feast research associations**, separate from the existing Sebastian-only partial on 20 January. No direct exact full-feast match was newly established: **53/131** Class III sanctoral dates have complete-subject candidates; **78/131** remain without them. No user approvals, file-rights assertions, new downloads or production rotation. Structured evidence: `data/calendar/sacred-art-2026-partial-groups-existing-archive-batch6.v1.json`.
+
 ### Current 78 unlinked Class III sanctoral dates
 
 **01 (9)** — 16 St. Marcellus I; 20 Sts. Fabian & Sebastian; 22 Sts. Vincent & Anastasius; 23 St. Raymond of Peñafort; 24 St. Timothy; 26 St. Polycarp; 28 St. Peter Nolasco; 30 St. Martina; 31 St. John Bosco.
