@@ -31,3 +31,20 @@ assert.equal(w.photoRights,"NOT_VERIFIED_PER_FILE");
 if(w.artist.includes("Lybaert"))assert.equal(w.decision.status,"EXPLICITLY_REJECTED");
 }}
 console.log("PASS 11 subjects, 66 candidates, 12 preserved approvals, 1 rejection, 6 nonpaintings, 1 modern-copyright hold, 46 unreviewed proposals; zero unlicensed photo releases");
+
+const direct=JSON.parse(readFileSync("data/prayer/artwork-editorial-20261031/user-direct-benediction-therese-selections.v1.json","utf8"));
+assert.equal(direct.decisions.length,2);
+const benediction=direct.decisions.find(y=>y.slot==="STG-pray.benediction-03");
+const therese=direct.decisions.find(y=>y.slot==="COV-novena.st_therese");
+assert.ok(benediction);
+assert.ok(therese);
+assert.equal(benediction.userEditorial,"APPROVED_THEMATIC_SCENE");
+assert.equal(benediction.fit,"HEAVENLY_EUCHARISTIC_ADORATION_NOT_LITERAL_BENEDICTION_ACT");
+assert.match(benediction.primarySource,/Ghent_Altarpiece/);
+assert.equal(therese.userEditorial,"FINAL_PHOTOGRAPH_APPROVED");
+assert.deepEqual(therese.sourceImagePixels,[362,498]);
+assert.match(therese.primarySource,/Therese_lisieux_portrait\.jpg/);
+assert.equal(idx.get("STG-pray.benediction-03").currentEditorialChoice.status,"USER_APPROVED_THEMATIC");
+assert.equal(idx.get("COV-novena.st_therese").currentEditorialChoice.status,"USER_FINAL_PHOTO_APPROVED");
+assert.equal(x.totals.exactBenedictionPaintingStillMissing,false);
+console.log("PASS user-direct Benediction Mystic Lamb and exact historical St Therese selection; old approvals preserved");
