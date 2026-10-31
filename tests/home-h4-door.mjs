@@ -202,7 +202,7 @@ assert.match(resumable,/data-resume-mass/);
 assert.doesNotMatch(resumable,/data-home-h4-begin/,"Resuming must not create a second start");
 const fr=h4HomeView({...vm,language:"fr",dateTitle:"vendredi 30 octobre"},model);
 assert.match(fr,/Commencer la messe/);
-assert.match(fr,/Lectures/);
+assert.match(fr,/<h2>Lire<\/h2>/,"Approved H7 Read section uses the original French label");
 assert.match(fr,/Rosaire/);
 assert.match(fr,/Cette semaine/);
 console.log("PASS H4 Today door: original Mass, canonical events, Rosary once, 18:00 next, fail closed, Resume, bilingual");
