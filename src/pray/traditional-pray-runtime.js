@@ -60,6 +60,29 @@ const nl=v=>esc(v).replace(/\n/g,"<br>");
 // Subdivide source text without changing words, line breaks or language ownership.
 const prayerParagraphs=v=>String(v??"").split(/\n\s*\n/).filter(x=>x.trim())
   .map(x=>'<p class="aoTP381TextParagraph">'+nl(x)+'</p>').join("");
+// Hours readers keep exact source wording and provide natural, independent
+// focus paragraphs. Do not change the canonical prayer, edition or recitation.
+function hoursParagraphs(value){
+ const original=String(value??"");
+ const matches=[...original.matchAll(/[.;!?]\s+(?=\S)|\n\s*\n/g)];
+ const parts=[];let pos=0;
+ while(pos<original.length){
+  const remaining=original.length-pos;
+  if(remaining<190){parts.push(original.slice(pos));break}
+  const candidates=matches.map(m=>m.index+m[0].length)
+   .filter(end=>end>pos+58&&end<pos+255);
+  const next=candidates.find(end=>end-pos>=105)||candidates.at(-1);
+  if(!next){parts.push(original.slice(pos));break}
+  parts.push(original.slice(pos,next));pos=next;
+ }
+ if(parts.join("")!==original||parts.some(x=>!x.trim()))
+  return '<p class="aoTP381TextParagraph">'+nl(original)+'</p>';
+ return parts.map(part=>{
+  const text=part.trim();
+  const collective=/^(?:Holy Mary|Sainte Marie|Sancta Maria)\b/i.test(text);
+  return '<p class="aoTP381TextParagraph'+(collective?' aoHoursCollective':'')+'">'+nl(text)+'</p>';
+ }).join('');
+}
 const data=()=>globalThis.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{}};
 const isFr=()=>String(S?.route??"").startsWith("mass.")&&["en","fr"].includes(OPEN_OPTS?.language)
   ? OPEN_OPTS.language==="fr"
@@ -103,16 +126,17 @@ function prayerTitle(p,id){
   if(!p)return id;
   return isFr()?(p.titleFr||p.title||id):(p.title||id);
 }
-function prayerCard(id,{focusParagraphs=false}={}){
+function prayerCard(id,{focusParagraphs=false,hoursFamily=false}={}){
  const isHope=id==="foundations_act_of_hope"&&isFr();
  const traditional=isHope&&S.hopeFrenchEdition==="traditional";
  const p=traditional?B01_FRENCH_HOPE_TRADITION:data().prayers?.[id];
  if(!p)return `<div class="aoTP381Fail">${esc(L("This canonical prayer is unavailable in the current corpus.","Cette prière canonique n’est pas disponible dans le corpus actuel."))}</div>`;
  const vern=isFr()?(p.fr||p.en||p.la):(p.en||p.fr||p.la),latin=p.la||"",both=!!(vern&&latin);
  const prov=p.provenance||{};
+ const showHours=v=>hoursFamily?hoursParagraphs(v):focusParagraphs?prayerParagraphs(v):nl(v);
  const choice=isHope?`<nav class="aoTP381Tabs" role="group" data-ao-b01-hope-versions aria-label="Version de l'acte d'espérance"><button type="button" data-tp381-b01-hope="published" aria-pressed="${!traditional}" class="${traditional?"":"active"}">Compendium · 2005</button><button type="button" data-tp381-b01-hope="traditional" aria-pressed="${traditional}" class="${traditional?"active":""}">Traditionnel · français</button></nav>`:"";
  const notice=isHope?`<p class="aoTP381Intro" data-ao-b01-hope-source-status>${esc(traditional?"Cette prière française complète est une version traditionnelle indépendante, non la transcription du Compendium de 2005.":"Cette formulation reproduit le témoin français publié dans le Compendium (2005), y compris « Dans cette foi » ; choisir « Traditionnel » pour une autre version authentiquement attestée.")}</p>`:"";
- return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${focusParagraphs?prayerParagraphs(vern):nl(vern)}</span><span data-face-la hidden>${focusParagraphs?prayerParagraphs(latin):nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
+ return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${showHours(vern)}</span><span data-face-la hidden>${showHours(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
 }
 function prayerRows(rows){
   return `<div class="aoTP381PrayerList">${rows.map(([id,title,note])=>`<button type="button" ${id.includes(".")?`data-tp381-route="${esc(id)}"`:`data-tp381-prayer="${esc(id)}"`}><span><b>${esc(title)}</b><small>${esc(note)}</small></span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
@@ -301,10 +325,10 @@ function dailyStageBody(row){
  return (row.kind==="examination"||row.kind==="personal-examen")
    ?row.editorial===true?`<p class="aoTP381TextParagraph">${esc(row.cue||L("Examine your conscience before God in silence.","Examinez votre conscience devant Dieu en silence."))}</p>`:`<p>${esc(L("Review the day before God: your duties towards Him, your neighbour, and yourself. This is a brief daily examen, not sacramental Confession.","Revoyez la journée devant Dieu : vos devoirs envers Lui, le prochain et vous-même. Il s’agit d’un bref examen quotidien, non d’une Confession sacramentelle."))}</p><button type="button" class="aoTP381GuideSubroute" data-tp381-daily-examen>${esc(L("Open guided nightly examination","Ouvrir l’examen du soir guidé"))}</button>`
    :row.kind==="personal-prayer"?personalDailyPrayerCard(row,dailyReadingPlan(),{esc,L,prayerParagraphs,source})
-   :row.kind==="personal-legacy"?prayerCard(row.legacyId,{focusParagraphs:true})
+   :row.kind==="personal-legacy"?prayerCard(row.legacyId,{focusParagraphs:true,hoursFamily:true})
    :row.kind==="approved-source-prayer"?dailyApprovedPrayerCard(row)
    :row.kind==="silence"?`<p class="aoTP381TextParagraph">${esc(row.cue||L("Pause in silence.","Recueillez-vous en silence."))}</p>`
-   :prayerCard(row.id,{focusParagraphs:true});
+   :prayerCard(row.id,{focusParagraphs:true,hoursFamily:true});
 }
 function renderDailyGuided(rows){
  const total=rows.length,step=clampPrayerCardStep(S.dailyStep,total);
