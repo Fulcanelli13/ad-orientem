@@ -51,7 +51,7 @@ try{
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/general");
   assert.equal(await page.locator('[data-pref-path="general.uiLanguage"]').count(),0,
     "App language must be owned by Language & Text, not duplicated in General");
-  await page.locator("[data-pref-toggle='general.hapticsEnabled']").click();
+  await page.locator('[data-pref-path="general.hapticsEnabled"][data-pref-value="true"]').click();
   await page.locator("[data-settings-back]").click();
 
   await page.locator('[data-settings-route="/settings/language-reading"]').click();
@@ -61,8 +61,8 @@ try{
   await page.locator("[data-settings-back]").click();
 
   await page.locator('[data-settings-route="/settings/accessibility"]').click();
-  await page.locator('[data-pref-select="accessibility.textScale"]').selectOption("large");
-  await page.locator('[data-pref-select="accessibility.motion"]').selectOption("reduced");
+  await page.locator('[data-pref-path="accessibility.textScale"][data-pref-value="large"]').click();
+  await page.locator('[data-pref-path="accessibility.motion"][data-pref-value="reduced"]').click();
   await page.waitForFunction(()=>document.documentElement.dataset.aoTextScaleV1==="large"&&document.documentElement.dataset.aoMotionV1==="reduced");
   await page.locator("[data-settings-back]").click();
 
@@ -77,9 +77,12 @@ try{
 
   await page.locator('[data-settings-route="/settings/prayer"]').click();
   await page.locator('[data-pref-path="prayer.recitationMode"][data-pref-value="group"]').click();
+  await page.locator('[data-pref-path="prayer.rosary.fatimaPrayer"][data-pref-value="false"]').click();
+  await page.locator('[data-pref-family="2"]').click();
   await page.locator('[data-pref-path="prayer.stations.mode"][data-pref-value="simple"]').click();
-  await page.locator('[data-pref-toggle="prayer.stations.stabatMater"]').click();
+  await page.locator('[data-pref-path="prayer.stations.stabatMater"][data-pref-value="true"]').click();
   const earlyPrayer=await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.prayer);
+  assert.equal(earlyPrayer.rosary.fatimaPrayer,false);
   assert.equal(earlyPrayer.recitationMode,"group");
   assert.equal(earlyPrayer.stations.mode,"simple");
   assert.equal(earlyPrayer.stations.stabatMater,true);
@@ -173,6 +176,7 @@ try{
   assert.equal(stored.accessibility.motion,"reduced");
   assert.equal(stored.mass.defaultExperience,"missal");
   assert.equal(stored.mass.defaultForm,"low");
+  assert.equal(stored.prayer.rosary.fatimaPrayer,false);
   assert.equal(stored.prayer.recitationMode,"group");
   assert.equal(stored.prayer.stations.mode,"simple");
   assert.equal(stored.prayer.stations.stabatMater,true);
@@ -195,6 +199,7 @@ try{
   assert.equal(reloaded.preferences.general.uiLanguage,"fr");
   assert.equal(reloaded.preferences.accessibility.textScale,"large");
   assert.equal(reloaded.preferences.mass.defaultForm,"low");
+  assert.equal(reloaded.preferences.prayer.rosary.fatimaPrayer,false);
   assert.equal(reloaded.preferences.prayer.recitationMode,"group");
   assert.equal(reloaded.profiles.length,1);
   assert.deepEqual(ariaWarnings,[]);

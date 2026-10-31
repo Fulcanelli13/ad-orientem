@@ -95,13 +95,13 @@ try{
 
    const settingsOpen=await page.evaluate(()=>window.AO_SETTINGS_APP_V1.open("/settings/accessibility"));
    assert.equal(settingsOpen,true,"Settings overlay unavailable");
-   await page.locator('#ao-settings-modular-root [data-pref-select="accessibility.textScale"]')
+   await page.locator('#ao-settings-modular-root [data-pref-path="accessibility.textScale"][data-pref-value="large"]')
     .waitFor({state:"visible",timeout:15000});
-   await page.locator('#ao-settings-modular-root [data-pref-select="accessibility.textScale"]').focus();
-   await page.locator('#ao-settings-modular-root [data-pref-select="accessibility.textScale"]')
-    .selectOption("large");
+   await page.locator('#ao-settings-modular-root [data-pref-path="accessibility.textScale"][data-pref-value="large"]').focus();
+   await page.locator('#ao-settings-modular-root [data-pref-path="accessibility.textScale"][data-pref-value="large"]')
+    .click();
    const focus=await page.evaluate(()=>({
-    focused:document.activeElement?.dataset?.prefSelect||null,
+    focused:document.activeElement?.dataset?.prefPath||null,
     route:window.AO_SETTINGS_APP_V1.status().route,
     inside:document.querySelector("#ao-settings-modular-root")?.contains(document.activeElement)
    }));
@@ -110,7 +110,7 @@ try{
    assert.equal(focus.route,"/settings/accessibility");
    assert.equal(focus.inside,true);
    const first=page.locator("#ao-settings-modular-root button:not([disabled])").first();
-   const last=page.locator("#ao-settings-modular-root select:not([disabled])").last();
+   const last=page.locator("#ao-settings-modular-root button:not([disabled])").last();
    // The final focusable in this page may not be a select. Resolve the actual
    // first and last element according to Settings' keyboard trap selector.
    const edges=await page.evaluate(()=>{

@@ -1,5 +1,6 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { DEFAULT_PREFERENCES } from "./donor-state.js";
+import { PREFERENCES_BOOK_CSS } from "./preferences-book-css.js";
 
 export const SETTINGS_PRESENTATION_VERSION="modular-settings-presentation-v4359.6";
 
@@ -63,41 +64,59 @@ html[data-ao-settings-surface="open"] #ao-global-ribbon{z-index:var(--ao-z-globa
 #${rootId} .aoSetSource{padding:12px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09))}#${rootId} .aoSetSource:last-child{border-bottom:0}#${rootId} .aoSetSource summary{cursor:pointer;min-height:var(--ao-control-h,44px);display:flex;align-items:center;font:650 var(--ao-type-ui-sm,12px)/1.25 var(--ao-font-ui,system-ui,sans-serif)}#${rootId} .aoSetSource p{margin:8px 0 0;color:var(--muted,#b3bac0);font-size:var(--ao-type-ui-sm,12px);line-height:1.45}#${rootId} .aoSetSourceKey{padding:10px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09));color:var(--muted,#b3bac0);font-size:var(--ao-type-ui-sm,12px)}#${rootId} .aoSetSourceKey:last-child{border-bottom:0}
 @media(max-width:430px){#${rootId} .aoSetWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}#${rootId} .aoSetRow{padding:11px}#${rootId} .aoSetSegments{max-width:54vw}#${rootId} .aoSetSelect{max-width:52vw}#${rootId} .aoSetRowText b{font-size:.86rem}}
 @media(max-width:350px){#${rootId} .aoSetWrap{padding-left:7px;padding-right:7px}#${rootId} .aoSetRow{grid-template-columns:minmax(0,1fr);gap:8px}#${rootId} .aoSetSegments{max-width:none;justify-content:flex-start}#${rootId} .aoSetSelect{max-width:100%;width:100%}#${rootId} .aoSetSwitch{justify-self:start}}
-`;
+`+PREFERENCES_BOOK_CSS;
 }
 
-export function renderSettingsToString(win=globalThis,{route="/settings",live=false,updateCheck="idle"}={}){
+export function renderSettingsToString(win=globalThis,{route="/settings",live=false,updateCheck="idle",familyOpen=1,resetAsk=false}={}){
   const vm=buildSettingsViewModel(win,{route,live,updateCheck}),p=vm.preferences,profiles=vm.profiles,fr=vm.language==="fr";
   const L=(en,frText)=>fr?(frText||en):en;
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   const icon=(id,cls="aoSetInlineIcon")=>{const u=resolveCanonicalAssetUrl(id);return u?`<span class="${cls}" aria-hidden="true" data-ao-asset-id="${id}" style="-webkit-mask:url('${esc(u)}') center/contain no-repeat;mask:url('${esc(u)}') center/contain no-repeat"></span>`:"";};
   const path=(obj,key)=>String(key).split(".").reduce((v,k)=>v?.[k],obj);
-  const header=(title,landing=false)=>`<header class="aoSetTop">${landing?`<span></span>`:`<button type="button" data-settings-back aria-label="${esc(L("Back","Retour"))}">${icon("ao-ui-back","aoSetTopIcon")}</button>`}<div class="aoSetTitle"><small>${esc(L("SETTINGS","RÉGLAGES"))}</small><strong>${esc(title)}</strong></div><button type="button" data-settings-close aria-label="${esc(L("Close","Fermer"))}">${icon("ao-ui-close","aoSetTopIcon")}</button></header>`;
-  const section=(title,body)=>`<section class="aoSetSection"><h2>${esc(title)}</h2><div class="aoSetGroup">${body}</div></section>`;
-  const row=(title,sub,end="",attrs="")=>`<button type="button" class="aoSetRow" ${attrs}><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><span class="aoSetRowEnd">${end}</span></button>`;
-  const routeRow=(title,sub,r)=>row(title,sub,icon("ao-ui-next"),`data-settings-route="${esc(r)}"`);
-  const infoRow=(title,sub,end="")=>`<div class="aoSetRow aoSetInfoRow" data-settings-info><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><span class="aoSetRowEnd">${end}</span></div>`;
-  const seg=(label,key,items)=>{const active=path(p,key),structural=vm.live&&["mass.defaultExperience","mass.defaultForm","mass.defaultProfileId"].includes(key);return `<div class="aoSetRow"><span class="aoSetRowText"><b>${esc(label)}</b></span><span class="aoSetSegments">${items.map(([v,en,frt])=>`<button type="button" data-pref-path="${esc(key)}" data-pref-value="${esc(v)}"${structural?' data-setting-structural=""':''} class="${active===v?"active":""}" aria-pressed="${active===v}">${esc(L(en,frt))}</button>`).join("")}</span></div>`;};
-  const toggle=(title,sub,key)=>{const on=Boolean(path(p,key));return `<button type="button" class="aoSetRow" data-pref-toggle="${esc(key)}" aria-pressed="${on}"><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><span class="aoSetSwitch ${on?"on":""}" aria-hidden="true"><i></i></span></button>`;};
-  const select=(title,sub,key,items)=>{const active=path(p,key);return `<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><select class="aoSetSelect" data-pref-select="${esc(key)}">${items.map(([v,en,frt])=>`<option value="${esc(v)}"${active===v?" selected":""}>${esc(L(en,frt))}</option>`).join("")}</select></label>`;};
-  const note=text=>`<div class="aoSetNote">${text}</div>`;
-  const shell=(title,body,landing=false)=>`${header(title,landing)}<main class="aoSetWrap">${body}</main><style>${settingsCss("ao-settings-modular-root")}</style>`;
+  const SECTIONS=[
+    ["I","Reading","Lecture","Appearance, text, contrast and paintings","Apparence, texte, contraste et peintures","/settings/accessibility"],
+    ["II","Languages","Langues","App, translation and Latin","Application, traductions et latin","/settings/language-reading"],
+    ["III","Holy Mass","Sainte Messe","Defaults for every new Mass","Choix pour chaque nouvelle Messe","/settings/mass"],
+    ["IV","My churches","Mes églises","Customs of the churches you attend","Usages des églises que vous fréquentez","/settings/local-customs"],
+    ["V","Prayer","Prière","Nine traditional prayer families","Neuf familles de prières","/settings/prayer"],
+    ["VI","On this device","Sur cet appareil","Screen, vibration, resume, reminders","Écran, vibrations, reprise, rappels","/settings/general"],
+    ["VII","Your data","Vos données","What is kept, and clearing it","Données conservées et suppression","/settings/privacy-data"],
+    ["VIII","About & sources","À propos et sources","Version, editions, art and licences","Version, éditions, art et licences","/settings/about-sources"]
+  ];
+  const sectionIndex=SECTIONS.findIndex(s=>s[5]===vm.route),current=SECTIONS[sectionIndex];
+  const header=(title,landing=false)=>'<header class="aoSetTop">'+
+    (landing?'<span class="aoPrefHeadStub" aria-hidden="true"></span>':
+      '<button type="button" data-settings-back aria-label="'+esc(L("Back","Retour"))+'">‹</button>')+
+    '<div class="aoSetTitle"><strong>'+esc(L("Preferences","Préférences"))+'</strong></div>'+
+    '<button type="button" data-settings-close aria-label="'+esc(L("Close","Fermer"))+'">×</button></header>';
+  const section=(title,body)=>'<section class="aoSetSection"><h2>'+esc(title)+'</h2><div class="aoSetGroup">'+body+'</div></section>';
+  const row=(title,sub,end="",attrs="")=>'<button type="button" class="aoSetRow" '+attrs+'><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetRowEnd">'+end+'</span></button>';
+  const routeRow=(title,sub,r)=>row(title,sub,'<span aria-hidden="true">☞</span>','data-settings-route="'+esc(r)+'"');
+  const infoRow=(title,sub,end="")=>'<div class="aoSetRow aoSetInfoRow" data-settings-info><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetRowEnd">'+end+'</span></div>';
+  const seg=(label,key,items)=>{const active=path(p,key);return '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(label)+'</b></span><span class="aoSetSegments" role="group" aria-label="'+esc(label)+'">'+items.map(([v,en,frt])=>
+    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+esc(v)+'" class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
+  const toggle=(title,sub,key)=>'<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetSegments" role="group" aria-label="'+esc(title)+'">'+[[true,L("On","Oui")],[false,L("Off","Non")]].map(([v,label])=>
+    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+v+'" class="'+(path(p,key)===v?'active':'')+'" aria-pressed="'+(path(p,key)===v)+'">'+esc(label)+'</button>').join("")+'</span></div>';
+  // A native select is never used on the Preferences surface; even long choices
+  // remain ordinary words underlined in the verified liturgical colour.
+  const select=(title,sub,key,items)=>'<div class="aoPrefSelectGroup">'+seg(title,key,items)+(sub?'<p class="aoSetNote">'+esc(sub)+'</p>':"")+'</div>';
+  const note=text=>'<div class="aoSetNote">'+text+'</div>';
+  const shell=(title,body,landing=false)=>{
+    const next=sectionIndex>=0&&sectionIndex<7?SECTIONS[sectionIndex+1]:null;
+    const chapter=current?'<div class="aoPrefChapter"><span class="n">'+current[0]+'</span><h2>'+esc(L(current[1],current[2]))+'</h2></div>':"";
+    const ribbon='<button class="aoPrefRibbon" type="button" data-settings-contents aria-expanded="false" aria-label="'+esc(L("Contents","Sommaire"))+'"></button>';
+    const menu='<nav class="aoPrefDrop" data-settings-toc hidden aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-book-route="'+t[5]+'" class="'+(t===current?'current':'')+'"><span class="n">'+t[0]+'</span>'+esc(L(t[1],t[2]))+'</button>').join("")+'</nav>';
+    const foot='<footer class="aoPrefFoot"><span>'+esc(current?current[0]+" · "+L(current[1],current[2]):L("Contents","Sommaire"))+'</span>'+
+      (next?'<button type="button" data-settings-route="'+next[5]+'">'+esc(L("Next","Suite"))+' <b>'+next[0]+' ›</b></button>':'<span>✠</span>')+'</footer>';
+    return '<div class="aoPrefBook" data-ao-preferences-book="r1">'+header(title,landing)+ribbon+menu+
+      '<main class="aoSetWrap">'+chapter+body+'</main>'+foot+'<style>'+settingsCss("ao-settings-modular-root")+'</style></div>';
+  };
 
   if(vm.route==="/settings"||vm.route==="main"){
-    return shell(L("Settings","Réglages"),
-      section(L("APP & UPDATES","APPLICATION & MISES À JOUR"),
-        row(L("Installed app & sources","Application installée & sources"),
-          L("Version, site address, safe update and source information","Version, adresse du site, mise à jour et sources"),
-          icon("ao-ui-next"),'data-settings-route="/settings/about-sources" data-settings-sources'))+
-      section(L("APP","APPLICATION"),
-        routeRow(L("General","Général"),L("Vibration, screen and resume options","Vibration, écran et reprise"),"/settings/general")+
-        routeRow(L("Display & Accessibility","Affichage & accessibilité"),L("Text size, animations, contrast and artwork","Taille du texte, animations, contraste et œuvres"),"/settings/accessibility")+
-        routeRow(L("Language & Text","Langue & textes"),L("App language and translation language","Langue de l’application et langue des traductions"),"/settings/language-reading"))+
-      section(L("MASS & PRAYER","MESSE & PRIÈRE"),
-        routeRow(L("Mass","Messe"),L("Choices used when you start a new Mass","Choix utilisés lorsque vous commencez une nouvelle Messe"),"/settings/mass")+
-        routeRow(L("Local Church & Customs","Église locale & usages"),L("Save the usual practices at a particular church","Enregistrer les usages habituels d’une église"),"/settings/local-customs")+
-        routeRow(L("Prayer & Devotions","Prière & dévotions"),L("Choose how the Rosary, Stations and Angelus behave","Choisir le comportement du Rosaire, du Chemin de Croix et de l’Angélus"),"/settings/prayer"))+
-      section(L("DATA","DONNÉES"),routeRow(L("Privacy & Data","Confidentialité & données"),L("Clear saved progress or restore defaults","Effacer la progression ou rétablir les réglages"),"/settings/privacy-data")),true);
+    return shell(L("Preferences","Préférences"),
+      '<div class="aoPrefCover"><h1>'+esc(L("Preferences","Préférences"))+'</h1><p class="aoSetIntro">'+
+      esc(L("These are your defaults. Inside a prayer, Aa changes them for that sitting only.","Voici vos choix habituels. Dans chaque prière, Aa les modifie seulement pour cette séance."))+'</p></div>'+
+      '<nav class="aoPrefContents" aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-route="'+t[5]+'"'+(t[5]==="/settings/about-sources"?' data-settings-sources':"")+'><span class="n">'+t[0]+'</span><span class="t">'+esc(L(t[1],t[2]))+'<small>'+esc(L(t[3],t[4]))+'</small></span><span class="f" aria-hidden="true">›</span></button>').join("")+'</nav>',true);
   }
   if(vm.route==="/settings/general"){
     return shell(L("General","Général"),
@@ -107,21 +126,25 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         toggle(L("Remember where I stopped","Mémoriser où je me suis arrêté"),L("Offer to continue an unfinished Mass or prayer.","Proposer de reprendre une Messe ou une prière inachevée."),"general.offerResume")));
   }
   if(vm.route==="/settings/accessibility"){
-    return shell(L("Display & Accessibility","Affichage & accessibilité"),
-      section(L("DISPLAY","AFFICHAGE"),
-        select(L("Text size","Taille du texte"),"","accessibility.textScale",[["system","Use device setting","Réglage de l’appareil"],["small","Small","Petite"],["standard","Normal","Normale"],["large","Large","Grande"],["extra_large","Extra large","Très grande"]])+
-        select(L("Animations","Animations"),"","accessibility.motion",[["system","Use device setting","Réglage de l’appareil"],["standard","Standard","Standard"],["reduced","Fewer animations","Moins d’animations"]])+
-        select(L("Text contrast","Contraste du texte"),"","accessibility.contrast",[["system","Use device setting","Réglage de l’appareil"],["standard","Standard","Standard"],["high","Higher contrast","Contraste renforcé"]])+
-        seg(L("Appearance","Apparence"),"appearance.mode",[["auto","Use device","Selon l’appareil"],["dark","Dark","Sombre"],["light","Light","Clair"]])+ 
-        seg(L("Sacred artwork","Art sacré"),"appearance.sacredArt",[["full","Full","Complet"],["subtle","Subtle","Discret"],["minimal","Minimal","Minimal"]])));
+    const opts=p.accessibility;
+    const fs={system:"19px",small:"17px",standard:"19px",large:"21.5px",extra_large:"24px"}[opts.textScale]||"19px";
+    const specimen='<div class="aoPrefSpecimen'+(p.appearance.sacredArt==="subtle"?' quiet':p.appearance.sacredArt==="minimal"?' none':'')+
+      (opts.contrast==="high"?' strong':'')+'" style="--ao-pref-spec-size:'+fs+'"><div class="aoPrefSpecimenInner">'+
+      '<div class="aoPrefSpecimenPlate" aria-hidden="true"></div><div class="aoPrefSpecimenText"><span class="past">'+esc(L("Behold the handmaid of the Lord.","Voici la servante du Seigneur."))+'</span><div><i>℣</i> '+esc(L("And the Word was made flesh.","Et le Verbe s’est fait chair."))+'</div><div><i>℟</i> '+esc(L("And dwelt among us.","Et il a habité parmi nous."))+'</div></div></div><div class="aoPrefSpecimenCaption"><span>'+esc(L("Specimen","Exemple"))+'</span><i>'+esc(L("Follows your choices","Suit vos préférences"))+'</i></div></div>';
+    return shell(L("Reading","Lecture"),specimen+
+      select(L("Appearance","Apparence"),"","appearance.mode",[["auto","As the device","Selon l’appareil"],["dark","Night","Nuit"],["light","Vellum","Vélin"]])+
+      select(L("Size of text","Taille du texte"),"","accessibility.textScale",[["system","As the device","Selon l’appareil"],["small","Small","Petite"],["standard","Usual","Normale"],["large","Large","Grande"],["extra_large","Largest","Très grande"]])+
+      select(L("Contrast","Contraste"),L("Stronger keeps prayed lines darker as well","Le contraste renforcé conserve une meilleure lisibilité des lignes précédentes"),"accessibility.contrast",[["system","As the device","Selon l’appareil"],["standard","Usual","Normal"],["high","Stronger","Renforcé"]])+
+      select(L("Paintings","Peintures"),L("One setting for the whole app: Mass, prayer and Home","Un seul choix pour toute l’application : Messe, prière et accueil"),"appearance.sacredArt",[["full","Full","Complètes"],["subtle","Quiet","Discrètes"],["minimal","None","Aucune"]])+
+      select(L("Movement","Mouvement"),"","accessibility.motion",[["system","As the device","Selon l’appareil"],["standard","Usual","Normal"],["reduced","Less","Réduit"]]));
   }
   if(vm.route==="/settings/language-reading"){
-    return shell(L("Language & Text","Langue & textes"),
-      section(L("LANGUAGE","LANGUE"),
-        seg(L("App language","Langue de l’application"),"general.uiLanguage",[["en","English","Anglais"],["fr","Français","Français"]])+
-        toggle(L("Use app language for translations","Utiliser la langue de l’application pour les traductions"),L("Keeps translations in the same language as the app unless another is chosen below.","Conserve les traductions dans la langue de l’application sauf choix contraire."),"reading.vernacularFollowsUiLanguage")+
-        seg(L("Translation language","Langue de traduction"),"reading.vernacular",[["en","English","Anglais"],["fr","Français","Français"]]))+
-      note(esc(L("Latin remains available for liturgical text. Simple, Missal and LIVE keep their distinct reading behaviour; this setting changes translation and explanation language only.","Le latin reste disponible pour le texte liturgique. Simple, Missel et LIVE gardent leur fonctionnement propre ; ce réglage change seulement la langue des traductions et explications."))));
+    return shell(L("Languages","Langues"),
+      seg(L("Language of the app","Langue de l’application"),"general.uiLanguage",[["en","English","Anglais"],["fr","Français","Français"]])+
+      seg(L("Translation beside the Latin","Traduction à côté du latin"),"reading.vernacularFollowsUiLanguage",[[true,"Same as the app","Comme l’application"],[false,"Choose language","Choisir la langue"]])+
+      (p.reading.vernacularFollowsUiLanguage?"":seg(L("Translation language","Langue de traduction"),"reading.vernacular",[["en","English","Anglais"],["fr","Français","Français"]]))+
+      seg(L("Latin","Latin"),"reading.latinDisplay",[["with","With the translation","Avec la traduction"],["only","Latin only","Latin seulement"],["off","Translation only","Traduction seulement"]])+
+      note(esc(L("These are saved language preferences. Prayer and Mass readers retain their own source-faithful language options in Aa and Your Mass.","Il s’agit des préférences linguistiques enregistrées. Les lecteurs de prière et de Messe conservent leurs options propres dans Aa et Votre Messe."))));
   }
   if(vm.route==="/settings/mass"){
     const church=p.mass.defaultProfileId?profiles.find(x=>x.id===p.mass.defaultProfileId)?.name:L("Standard 1962 practice","Pratique standard de 1962");
@@ -140,34 +163,50 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       row(L("Forget remembered choices","Effacer les choix mémorisés"),
         L("Restore the ordinary Mass defaults above","Rétablir les préférences habituelles ci-dessus"),
         "",'data-pref-clear-today=""')):"";
-    return shell(L("Mass","Messe"),
+    return shell(L("Holy Mass","Sainte Messe"),
       section(L("MASS","MESSE"),
         seg(L("How I usually follow Mass","Ma façon habituelle de suivre la Messe"),"mass.defaultExperience",[["simple","Simple","Simple"],["missal","Missal","Missel"],["live","LIVE","LIVE"]])+
-        seg(L("Usual Mass form","Forme habituelle de Messe"),"mass.defaultForm",[["sung","Sung","Chantée"],["low","Low","Basse"]])+
+        seg(L("Ceremony","Cérémonie"),"mass.defaultForm",[["low","Low","Basse"],["sung","Sung","Chantée"],["sung_incense","Sung with incense","Chantée avec encens"],["solemn","Solemn","Solennelle"]])+
         seg(L("Participation during Mass","Participation pendant la Messe"),"mass.responseEmphasis",[["quiet","Mostly quiet","Plutôt silencieux"],["responses","Join responses","Participer aux réponses"]])+
         toggle(L("Remember my place in Mass","Mémoriser ma place dans la Messe"),"","mass.resumeEnabled")+
         toggle(L("Offer thanksgiving after Mass","Proposer l’action de grâces après la Messe"),"","mass.offerThanksgivingAfterMass")+
         routeRow(L("Usual church","Église habituelle"),church,"/settings/local-customs")+
-        seg(L("Preparation length","Durée de la préparation"),"mass.preparationDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]])+
-        seg(L("Thanksgiving length","Durée de l’action de grâces"),"mass.thanksgivingDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]]))+
+        seg(L("Preparation before Mass","Préparation avant la Messe"),"mass.preparationDepth",[["none","None","Aucune"],["standard","Brief","Brève"],["full","Full","Complète"]])+
+        seg(L("Thanksgiving after Mass","Action de grâces après la Messe"),"mass.thanksgivingDepth",[["none","None","Aucune"],["standard","Brief","Brève"],["full","Full","Complète"]]))+
       remembered+
-      note(`<strong>${esc(L("Future sessions only","Pour les sessions futures seulement"))}</strong><br>${esc(L("These choices are used when you start a new Mass. They will not change a Mass already in progress.","Ces choix sont utilisés lorsque vous commencez une nouvelle Messe. Ils ne modifient pas une Messe déjà en cours."))}`));
+      note(`<strong>${esc(L("Future sessions only","Pour les sessions futures seulement"))}</strong><br>${esc(L("These are the same choices as Your Mass. They apply from the next Mass and will not change a Mass already in progress.","Ce sont les mêmes choix que Votre Messe. Ils s’appliquent à la prochaine Messe sans modifier celle qui est en cours."))}`));
   }
   if(vm.route==="/settings/prayer"){
-    return shell(L("Prayer & Devotions","Prière & dévotions"),
-      section(L("PRAYER","PRIÈRE"),
-        seg(L("Prayer mode","Mode de prière"),"prayer.recitationMode",[["individual","Individual","Individuelle"],["group","In a group","En groupe"]]))+
-      section(L("ROSARY","ROSAIRE"),
+    const fam=[
+      ["I",L("Hours","Heures"),"Angelus · morning · evening",
+        seg(L("Angelus or Regina Cæli","Angélus ou Regina Cæli"),"prayer.angelus.seasonalForm",[["auto","By the season","Selon le temps"],["angelus","Angelus","Angélus"],["regina_caeli","Regina Cæli","Regina Cæli"]])+
+        toggle(L("Concluding prayers","Prières finales"),"","prayer.angelus.traditionalConclusion")],
+      ["II",L("Beads","Chapelets"),L("Rosary and chaplets","Rosaire et chapelets"),
+        seg(L("Recitation","Récitation"),"prayer.recitationMode",[["individual","Individual","Individuelle"],["group","Together","En groupe"]])+
+        toggle(L("A verse before each Ave","Un verset avant chaque Ave"),"","prayer.rosary.verseBeforeAve")+
+        toggle(L("Scripture before each mystery","Écriture avant chaque mystère"),"","prayer.rosary.scriptureCues")+
         toggle(L("Fatima prayer","Prière de Fatima"),"","prayer.rosary.fatimaPrayer")+
-        toggle(L("Scripture passages","Passages de l’Écriture"),"","prayer.rosary.scriptureCues")+
-        toggle(L("Commentary","Commentaire"),"","prayer.rosary.commentary")+
-        select(L("Sacred artwork","Art sacré"),"","prayer.rosary.sacredArt",[["inherit","Use main artwork setting","Utiliser le réglage principal"],["full","Full","Complet"],["subtle","Subtle","Discret"],["off","Off","Désactivé"]]))+
-      section(L("STATIONS","CHEMIN DE CROIX"),
-        seg(L("Mode","Mode"),"prayer.stations.mode",[["guided","Guided","Guidé"],["simple","Simple","Simple"]])+
-        toggle("Stabat Mater",L("Include between stations","Inclure entre les stations"),"prayer.stations.stabatMater"))+
-      section(L("ANGELUS","ANGÉLUS"),
-        seg(L("Seasonal form","Forme saisonnière"),"prayer.angelus.seasonalForm",[["auto","Automatic","Automatique"],["angelus","Angelus","Angélus"],["regina_caeli","Regina Cæli","Regina Cæli"]])+
-        toggle(L("Include the traditional concluding prayers","Inclure les prières conclusives traditionnelles"),"","prayer.angelus.traditionalConclusion")));
+        toggle(L("Commentary","Commentaire"),"","prayer.rosary.commentary")],
+      ["III",L("Ways","Chemins"),L("Stations · Seven Last Words","Chemin de Croix · Sept Paroles"),
+        seg(L("Stations reading","Lecture du Chemin de Croix"),"prayer.stations.mode",[["guided","Guided","Guidée"],["simple","Simple","Simple"]])+
+        toggle("Stabat Mater",L("Between stations","Entre les stations"),"prayer.stations.stabatMater")],
+      ["IV",L("Novenas","Neuvaines"),L("Novenas and programmes","Neuvaines et programmes"),
+        seg(L("Show each day as","Présenter chaque jour en"),"prayer.novenas.layout",[["stages","Stages","Étapes"],["page","One page","Une page"]])],
+      ["V",L("Litanies","Litanies"),L("Litanies and psalms","Litanies et psaumes"),
+        seg(L("The response","La réponse"),"prayer.litanies.responsePlacement",[["bar","In the choir bar","Dans le chœur"],["inline","After each line","Après chaque ligne"]])],
+      ["VI",L("Eucharistic","Eucharistie"),L("Visits and adoration","Visites et adoration"),
+        seg(L("Silent time offered","Temps de silence proposé"),"prayer.eucharistic.silentMinutes",[["5","5 min","5 min"],["10","10 min","10 min"],["15","15 min","15 min"],["30","30 min","30 min"]])],
+      ["VII",L("Rites","Rites"),L("Benediction · Confession","Bénédiction · Confession"),
+        seg(L("Rite text","Texte du rite"),"prayer.rites.textLanguage",[["both","Latin with translation","Latin et traduction"],["en","Translation only","Traduction uniquement"]])],
+      ["VIII",L("The dead","Défunts"),L("Memento and intercessions","Memento et intercessions"),
+        routeRow(L("Your names","Vos intentions"),L("Manage saved names under Your data","Gérer les noms enregistrés dans Vos données"),"/settings/privacy-data")],
+      ["IX",L("Essentials","Essentiels"),L("The holy cards","Les cartes de prière"),
+        seg(L("Plates on the cards","Peintures sur les cartes"),"prayer.essentials.artRotation",[["daily","Change daily","Changer chaque jour"],["fixed","Keep one","Garder la même"]])]
+    ];
+    return shell(L("Prayer","Prière"),
+      note(esc(L("All nine prayer families appear here. Options not yet connected to a particular prayer reader are saved without changing its sourced text.","Les neuf familles de prières sont réunies ici. Les choix pas encore reliés à un lecteur sont enregistrés sans modifier ses textes de source.")))+
+      fam.map(([n,t,desc,body],i)=>'<div class="aoPrefFamily"><button type="button" data-pref-family="'+i+'" aria-expanded="'+(i===familyOpen)+'"><span class="n">'+n+'</span><span class="t">'+esc(t)+'<small>'+esc(desc)+'</small></span><span aria-hidden="true">'+(i===familyOpen?"⌄":"›")+'</span></button>'+
+        (i===familyOpen?'<div class="aoPrefFamilyBody">'+body+'</div>':"")+'</div>').join(""));
   }
   if(vm.route==="/settings/local-customs"){
     return shell(L("Local Church & Customs","Église locale & usages"),
@@ -181,11 +220,12 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
   if(vm.route.startsWith("/settings/local-customs/")){
     const id=decodeURIComponent(vm.route.split("/").pop()),pr=profiles.find(x=>x.id===id);
     if(!pr)return shell(L("Local Church & Customs","Église locale & usages"),`<div class="aoSetEmpty">${esc(L("Profile not found.","Profil introuvable."))}</div>`);
-    const customSelect=(title,key,items)=>{const active=pr.customs?.[key];return `<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(title)}</b></span><select class="aoSetSelect" data-profile-id="${esc(id)}" data-profile-key="${esc(key)}">${items.map(([v,en,frt])=>`<option value="${esc(v)}"${active===v?" selected":""}>${esc(L(en,frt))}</option>`).join("")}</select></label>`;};
+    const customSelect=(title,key,items)=>{const active=pr.customs?.[key];return '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(title)+'</b></span><span class="aoSetSegments" role="group" aria-label="'+esc(title)+'">'+
+      items.map(([v,en,frt])=>'<button type="button" data-profile-id="'+esc(id)+'" data-profile-key="'+esc(key)+'" data-profile-value="'+esc(v)+'" class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
     const unspecified=[["unspecified","Not specified","Non précisé"]];
     return shell(pr.name,
       section(L("CHURCH","ÉGLISE"),`<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(L("Church name","Nom de l’église"))}</b></span><input class="aoSetProfileName" data-profile-name="${esc(id)}" value="${esc(pr.name)}"></label>`+
-        toggle(L("Use as my usual church","Utiliser comme mon église habituelle"),"","__profile_default__").replace('data-pref-toggle="__profile_default__"',`data-profile-use-default="${esc(id)}"`).replace(`aria-pressed="false"`,`aria-pressed="${p.mass.defaultProfileId===id}"`).replace("aoSetSwitch ","aoSetSwitch "+(p.mass.defaultProfileId===id?"on ":"")))+
+        '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(L("Use as my usual church","Utiliser comme mon église habituelle"))+'</b></span><span class="aoSetSegments"><button type="button" data-profile-use-default="'+esc(id)+'" aria-pressed="'+(p.mass.defaultProfileId===id)+'" class="'+(p.mass.defaultProfileId===id?'active':'')+'">'+esc(L("Use","Choisir"))+'</button></span></div>')+
       section(L("LOCAL CUSTOMS","USAGES LOCAUX"),
         customSelect(L("Holy Communion","Sainte Communion"),"communionPractice",[...unspecified,["usually_offered","Usually distributed","Habituellement distribuée"],["usually_not_offered","Usually not distributed","Habituellement non distribuée"]])+
         customSelect(L("Incense at Sung Mass","Encens à la Messe chantée"),"incensePractice",[...unspecified,["usually_used","Usually used","Habituellement utilisé"],["usually_not_used","Usually not used","Habituellement non utilisé"]])+
@@ -200,18 +240,26 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       section(L("DATA","DONNÉES"),row(L("Delete profile","Supprimer le profil"),"",icon("ao-ui-close"),`class="aoSetDanger" data-profile-delete="${esc(id)}"`)));
   }
   if(vm.route==="/settings/privacy-data"){
-    const dataRow=(en,frt,a,danger=false,disabled=false)=>row(L(en,frt),"",danger?icon("ao-ui-close"):"",`${danger?'class="aoSetDanger" ':''}data-data-action="${a}"${disabled?" disabled":""}`);
-    return shell(L("Privacy & Data","Confidentialité & données"),
-      section(L("DATA","DONNÉES"),
-        dataRow("Clear unfinished Mass","Effacer la Messe inachevée","clear-mass",false,vm.live)+
-        dataRow("Clear prayer sessions","Effacer les sessions de prière","clear-prayer")+
-        dataRow("Restore default settings","Rétablir les réglages par défaut","reset-preferences")+
-        dataRow("Delete saved churches","Supprimer les églises enregistrées","reset-profiles")+
-        dataRow("Clear learning progress","Effacer la progression d’apprentissage","clear-progress")+
-        dataRow("Clear bookmarks","Effacer les favoris","clear-bookmarks")+
-        dataRow("Clear temporary downloaded files","Effacer les fichiers temporaires téléchargés","clear-cache")+
-        dataRow("Reset the whole app","Réinitialiser toute l’application","reset-all",true))+
-      note(`<strong>${esc(L("Privacy","Confidentialité"))}</strong><br>${esc(L("Selections made during an examination of conscience are temporary and are not stored as a persistent list of sins.","Les sélections faites pendant un examen de conscience sont temporaires et ne sont pas enregistrées comme liste persistante de péchés."))}`));
+    const dataRow=(en,french,act,disabled=false)=>row(L(en,french),"",'<span aria-hidden="true">☞</span>','data-data-action="'+act+'"'+(disabled?" disabled":""));
+    const group=(title,body)=>'<div class="aoPrefDataGroup"><h3>'+esc(title)+'</h3>'+body+'</div>';
+    return shell(L("Your data","Vos données"),
+      note(esc(L("These controls clear saved information on this device. Each action has its own confirmation.","Ces contrôles effacent les informations conservées sur cet appareil. Chaque action demande confirmation.")))+
+      group(L("Progress","Progression"),
+        dataRow("An unfinished Mass","Une Messe inachevée","clear-mass",vm.live)+
+        dataRow("Prayer sessions","Sessions de prière","clear-prayer")+
+        dataRow("Learning progress","Progression de formation","clear-progress")+
+        dataRow("Bookmarks","Signets","clear-bookmarks"))+
+      group(L("Your lists","Vos listes"),
+        dataRow("Saved churches","Églises enregistrées","reset-profiles"))+
+      group(L("Storage","Stockage"),
+        dataRow("Temporary downloaded files","Fichiers temporaires téléchargés","clear-cache"))+
+      '<div class="aoPrefReset">'+(resetAsk?
+        '<p>'+esc(L("This cannot be undone. Your saved preferences, church profiles and supported session data will be cleared.","Cette opération est irréversible. Vos préférences, églises et données de séance prises en charge seront effacées."))+'</p>'+
+        '<button type="button" data-settings-reset-confirm'+(vm.live?' disabled':'')+'>'+esc(L("Yes, begin again","Oui, tout recommencer"))+' ☞</button>'+
+        '<button type="button" data-settings-reset-cancel>'+esc(L("Keep everything","Tout conserver"))+' ☞</button>':
+        '<p>'+esc(L("Begin again: return preferences, lists and saved progress to their initial state.","Tout recommencer : rétablir les préférences, les listes et la progression à leur état initial."))+'</p>'+
+        '<button type="button" data-settings-reset-ask'+(vm.live?' disabled':'')+'>'+esc(L("Begin again…","Tout recommencer…"))+' ☞</button>')+'</div>'+
+      note(esc(L("An examination of conscience is never stored as a persistent list of sins.","Un examen de conscience n’est jamais enregistré comme une liste permanente de péchés."))));
   }
   if(vm.route==="/settings/about-sources"||vm.route==="about-sources"){
     const sourceFamilies=fr?[
@@ -305,7 +353,6 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       note(esc(updateExplanation)));
     return shell(L("About & Sources","À propos & sources"),
       `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
-      updateBox+
       section(L("SOURCES","SOURCES"),sourceDetails+methodology)+
       section(L("ABOUT","À PROPOS"),
         infoRow(L("1962 Roman Mass","Messe romaine de 1962"),L("The app keeps the 1962 Mass itself separate from local church practices and private prayers.","L’application garde la Messe de 1962 elle-même distincte des usages locaux et des prières privées."),icon("ao-ui-sources"))+
@@ -315,7 +362,8 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         infoRow(L("Artwork sources & rights","Sources & droits des œuvres"),L("Artwork keeps a record of where it came from and how it may be used.","Les œuvres gardent une indication de leur origine et de leurs conditions d’utilisation."),icon("ao-ui-info"))+
         infoRow(L("Acknowledgements & licences","Remerciements & licences"),L("Third-party texts and artworks retain their individual source/licence notices.","Les textes et œuvres tiers conservent leurs notices de source/licence propres."),icon("ao-ui-info"))+
 
-        routeRow(L("Privacy & Data","Confidentialité & données"),L("Review storage and clear saved progress.","Consulter le stockage et effacer la progression."),"/settings/privacy-data")));
+        routeRow(L("Privacy & Data","Confidentialité & données"),L("Review storage and clear saved progress.","Consulter le stockage et effacer la progression."),"/settings/privacy-data"))+
+      updateBox);
   }
   return renderSettingsToString(win,{route:"/settings",live});
 }

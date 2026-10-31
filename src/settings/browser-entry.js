@@ -27,6 +27,7 @@ export function createSettingsOwner(win=globalThis){
   win.AO_SETTINGS_DONOR_V4359=donor;
   let route="/settings",routeHistory=[],returnSurface="home",previousFocus=null,unsubscribe=null,legacyObserver=null,releaseObserver=null;
   let checkingUpdates=false,applyingUpdate=false,updateCheck="idle";
+  let familyOpen=1,resetAsk=false;
 
   const root=()=>win?.document?.getElementById?.("ao-settings-modular-root")||null;
   const isLive=()=>Boolean(liveGuards()?.status?.().live);
@@ -49,14 +50,18 @@ export function createSettingsOwner(win=globalThis){
     // the *same preference* rather than silently dumping the user onto body.
     const previous=win.document?.activeElement;
     const focusFields=["prefPath","prefValue","prefToggle","prefSelect","settingsRoute",
-      "settingsBack","settingsClose","settingsCheckUpdate","settingsApplyUpdate","profileId","profileKey","profileName"];
+      "settingsBack","settingsClose","settingsCheckUpdate","settingsApplyUpdate","profileId","profileKey","profileName","prefFamily","settingsContents"];
     const activeFields=previous&&r.contains(previous)
       ?focusFields.filter(key=>previous.dataset?.[key]!==undefined)
         .map(key=>[key,previous.dataset[key]]):[];
     r.dataset.aoSettingsOwner="AO_SETTINGS_APP_V1";
     r.dataset.aoSettingsPresentationOwner=SETTINGS_PRESENTATION_VERSION;
     r.dataset.aoSettingsRoute=route;
-    r.innerHTML=renderSettingsToString(win,{route,live:isLive(),updateCheck:checkingUpdates?"checking":updateCheck});
+    const scrollY=r.querySelector(".aoSetWrap")?.scrollTop??0;
+    const menuOpen=r.querySelector("[data-settings-contents]")?.getAttribute("aria-expanded")==="true";
+    r.innerHTML=renderSettingsToString(win,{route,live:isLive(),updateCheck:checkingUpdates?"checking":updateCheck,familyOpen,resetAsk});
+    const scroller=r.querySelector(".aoSetWrap");if(scroller)scroller.scrollTop=scrollY;
+    if(menuOpen){const menu=r.querySelector("[data-settings-toc]"),ribbon=r.querySelector("[data-settings-contents]");if(menu)menu.hidden=false;if(ribbon)ribbon.setAttribute("aria-expanded","true");}
     if(activeFields.length){
       const candidate=[...r.querySelectorAll("button,input,select,textarea")]
         .find(el=>activeFields.every(([key,value])=>el.dataset?.[key]===value));
@@ -96,7 +101,7 @@ export function createSettingsOwner(win=globalThis){
       if(win.document.activeElement&&r.contains(win.document.activeElement))try{win.document.activeElement.blur?.();}catch{}
       r.remove?.();
     }
-    release();routeHistory=[];
+    release();routeHistory=[];resetAsk=false;
     if(win.document?.documentElement?.dataset){delete win.document.documentElement.dataset.aoSettingsSurface;win.document.documentElement.dataset.aoSettingsOwner="AO_SETTINGS_APP_V1";}
     if(restoreSurface){
       const target=surface||returnSurface||"home";
@@ -111,7 +116,8 @@ export function createSettingsOwner(win=globalThis){
   function go(next,{remember=true}={}){
     const target=normalizeSettingsRoute(next);
     if(remember&&root()&&target!==route)routeHistory.push(route);
-    route=target;paint();
+    route=target;resetAsk=false;paint();
+    const panel=root()?.querySelector(".aoSetWrap");if(panel)panel.scrollTop=0;
     (win.queueMicrotask?.bind(win)||queueMicrotask)(()=>root()?.querySelector?.("[data-settings-back],[data-settings-close]")?.focus?.());
     return true;
   }
@@ -129,7 +135,7 @@ export function createSettingsOwner(win=globalThis){
       const current=shell()?.getActive?.();
       returnSurface=current&&current!=="settings"?current:(isLive()?"mass":"home");
     }
-    routeHistory=[];route=normalizeSettingsRoute(target);suppressHistorical();
+    routeHistory=[];route=normalizeSettingsRoute(target);resetAsk=false;suppressHistorical();
     let r=root();
     if(!r){
       r=doc.createElement("section");r.id="ao-settings-modular-root";r.dataset.aoAssetId=canonicalAssetIdForSurface("settings")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");doc.body.appendChild(r);bind(r);
@@ -144,11 +150,62 @@ export function createSettingsOwner(win=globalThis){
   }
   function confirmAction(message){try{return typeof win.confirm==="function"&&win.confirm(message)===true;}catch{return false;}}
   function bind(r){
+    // Page turn is deliberate. Vertical scrolling never advances a chapter.
+    // Form controls and the independently scrollable contents ribbon do not
+    // initiate a page turn.
+    const bookRoutes=["/settings","/settings/accessibility","/settings/language-reading",
+      "/settings/mass","/settings/local-customs","/settings/prayer",
+      "/settings/general","/settings/privacy-data","/settings/about-sources"];
+    function turnChapter(delta){
+      const i=bookRoutes.indexOf(route),next=i+delta;
+      if(i<0||next<0||next>=bookRoutes.length)return false;
+      go(bookRoutes[next]);return true;
+    }
+    let bookTouch=null;
+    r.addEventListener("pointerdown",event=>{
+      const elem=event.target;
+      if(!elem?.closest?.(".aoSetWrap")||elem.closest?.("button,input,select,textarea,a,[contenteditable],[data-settings-toc]")){
+        bookTouch=null;return;
+      }
+      bookTouch={x:event.clientX,y:event.clientY,id:event.pointerId};
+    });
+    r.addEventListener("pointerup",event=>{
+      const start=bookTouch;bookTouch=null;
+      if(!start||event.pointerId!==start.id)return;
+      const dx=event.clientX-start.x,dy=event.clientY-start.y;
+      if(Math.abs(dx)<70||Math.abs(dx)<=Math.abs(dy)*1.45)return;
+      turnChapter(dx<0?1:-1);
+    });
+    r.addEventListener("pointercancel",()=>{bookTouch=null;});
     r.addEventListener("click",event=>{
       const button=event.target?.closest?.("button");if(!button)return;
       if(button.dataset.settingsClose!==undefined){event.preventDefault();close();return;}
+      if(button.dataset.settingsContents!==undefined){
+        event.preventDefault();
+        const menu=r.querySelector("[data-settings-toc]");
+        if(menu){menu.hidden=!menu.hidden;button.setAttribute("aria-expanded",String(!menu.hidden));}
+        return;
+      }
+      if(button.dataset.prefFamily!==undefined){
+        event.preventDefault();
+        const selected=Number(button.dataset.prefFamily);
+        familyOpen=familyOpen===selected?-1:selected;
+        paint();return;
+      }
+      if(button.dataset.settingsResetAsk!==undefined){
+        event.preventDefault();if(isLive())return;
+        resetAsk=true;paint();return;
+      }
+      if(button.dataset.settingsResetCancel!==undefined){
+        event.preventDefault();resetAsk=false;paint();return;
+      }
+      if(button.dataset.settingsResetConfirm!==undefined){
+        event.preventDefault();
+        if(!resetAsk||isLive())return;
+        resetAsk=false;mutate(()=>donor.clearData("reset-all"));return;
+      }
       if(button.dataset.settingsBack!==undefined){event.preventDefault();back();return;}
-      if(button.dataset.settingsRoute){event.preventDefault();go(button.dataset.settingsRoute);return;}
+      if(button.dataset.settingsRoute||button.dataset.settingsBookRoute){event.preventDefault();go(button.dataset.settingsRoute||button.dataset.settingsBookRoute);return;}
       if(button.dataset.settingsCheckUpdate!==undefined){
         event.preventDefault();
         if(checkingUpdates||applyingUpdate)return;
@@ -182,10 +239,15 @@ export function createSettingsOwner(win=globalThis){
         return;
       }
       if(button.dataset.prefClearToday!==undefined){event.preventDefault();mutate(()=>donor.setPath("mass.todayChoices",null));return;}
-      if(button.dataset.prefPath&&button.dataset.prefValue!==undefined){event.preventDefault();mutate(()=>donor.setPath(button.dataset.prefPath,button.dataset.prefValue));return;}
+      if(button.dataset.prefPath&&button.dataset.prefValue!==undefined){event.preventDefault();const raw=button.dataset.prefValue;const v=raw==="true"?true:raw==="false"?false:raw;mutate(()=>donor.setPath(button.dataset.prefPath,v));return;}
       if(button.dataset.prefToggle){event.preventDefault();mutate(()=>donor.togglePath(button.dataset.prefToggle));return;}
       if(button.dataset.profileDefault!==undefined){event.preventDefault();mutate(()=>donor.setPath("mass.defaultProfileId",null));return;}
       if(button.dataset.profileAdd!==undefined){event.preventDefault();const id=donor.createProfile(donor.snapshot().preferences.general.uiLanguage==="fr"?"Profil d’église":"Church profile");go("/settings/local-customs/"+encodeURIComponent(id));return;}
+      if(button.dataset.profileId&&button.dataset.profileKey&&button.dataset.profileValue!==undefined){
+        event.preventDefault();
+        mutate(()=>donor.updateProfile(button.dataset.profileId,button.dataset.profileKey,button.dataset.profileValue));
+        return;
+      }
       if(button.dataset.profileUseDefault){event.preventDefault();const snap=donor.snapshot(),id=button.dataset.profileUseDefault;mutate(()=>donor.setPath("mass.defaultProfileId",snap.preferences.mass.defaultProfileId===id?null:id));return;}
       if(button.dataset.profileDelete){event.preventDefault();if(confirmAction(donor.snapshot().preferences.general.uiLanguage==="fr"?"Supprimer ce profil ?":"Delete this profile?")){donor.deleteProfile(button.dataset.profileDelete);go("/settings/local-customs");}return;}
       if(button.dataset.dataAction){event.preventDefault();if(!confirmAction(donor.snapshot().preferences.general.uiLanguage==="fr"?"Êtes-vous sûr ?":"Are you sure?"))return;mutate(()=>donor.clearData(button.dataset.dataAction));return;}
@@ -199,7 +261,12 @@ export function createSettingsOwner(win=globalThis){
       const el=event.target;if(el?.dataset?.profileName)mutate(()=>donor.renameProfile(el.dataset.profileName,el.value));
     });
     r.addEventListener("keydown",event=>{
-      if(event.key==="Escape"){event.preventDefault();back();return;}
+      if(event.key==="Escape"){event.preventDefault();const menu=r.querySelector("[data-settings-toc]");if(menu&&!menu.hidden){menu.hidden=true;r.querySelector("[data-settings-contents]")?.setAttribute("aria-expanded","false");return;}if(resetAsk){resetAsk=false;paint();return;}back();return;}
+      if(["ArrowLeft","ArrowRight"].includes(event.key)){
+        if(event.target?.closest?.("button,input,select,textarea,[contenteditable],[data-settings-toc]"))return;
+        if(turnChapter(event.key==="ArrowRight"?1:-1))event.preventDefault();
+        return;
+      }
       if(event.key!=="Tab")return;
       // Settings is a real aria-modal dialog. Never move focus into the
       // dimmed app while the overlay is open, including after preference paint.
