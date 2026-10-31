@@ -3,6 +3,7 @@ import {test} from "node:test";
 import {readFileSync} from "node:fs";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
 import {claudeChoirSourceUnits,claudeChoirFootFor} from "../src/pray/claude-choir-fixed-foot.js";
+import {syncClaudeChoirBar} from "../src/pray/claude-choir-reader.js";
 const f=readFileSync("tests/fixtures/claude-prayer/choir.app-ui.js","utf8");
 const css=readFileSync("tests/fixtures/claude-prayer/choir.app-ui.css","utf8");
 test("Claude's fixed choir bar and its toggle are pinned from literal HTML source",()=>{
@@ -39,4 +40,32 @@ test("Kyrie/Christe and genuine source versicles do not acquire invented respons
  assert.ok(units.every(u=>u.kind!=="pair"));
  assert.equal(units.map(u=>u.raw).join(""),all);
  assert.equal(claudeChoirSourceUnits(""),null);
+});
+
+test("Stable fixed response never replays animation on repeated focus/scroll updates",()=>{
+ const response={textContent:"pray for us"};
+ let reflows=0,ringStarts=0;
+ const bar={
+  hidden:false,
+  classList:{remove(){},add(name){if(name==="ring")ringStarts++;}},
+  querySelector(selector){return selector===".aoClaudeChoirResponseText"?response:null;},
+  get offsetWidth(){reflows++;return 100;}
+ };
+ const card={querySelector(selector){return selector===".aoClaudeChoirResponse"?bar:null;}};
+ const element={matches(selector){return selector===".aoClaudeChoirBeat";},dataset:{aoChoirAnswer:"pray for us"}};
+ assert.equal(syncClaudeChoirBar(card,element),true);
+ assert.equal(syncClaudeChoirBar(card,element),true);
+ assert.equal(reflows,0);
+ assert.equal(ringStarts,0);
+ element.dataset.aoChoirAnswer="have mercy on us";
+ assert.equal(syncClaudeChoirBar(card,element),true);
+ assert.equal(response.textContent,"have mercy on us");
+ assert.equal(reflows,1);
+ assert.equal(ringStarts,1);
+ assert.equal(syncClaudeChoirBar(card,element),true);
+ assert.equal(ringStarts,1);
+ element.dataset.aoChoirAnswer="";
+ assert.equal(syncClaudeChoirBar(card,element),false);
+ assert.equal(bar.hidden,true);
+ assert.equal(ringStarts,1);
 });
