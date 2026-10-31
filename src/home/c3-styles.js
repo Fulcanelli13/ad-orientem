@@ -39,4 +39,13 @@ export const HOME_C3_CSS=String.raw`/* C3 Living Gallery extends (does not repla
 .aoH7Screens .aoC3ArtDialog a{color:var(--sage)}
 .aoH7Screens .aoC3ArtDialog button{min-height:44px;border:1px solid var(--ln);background:var(--sf2);color:var(--ink);padding:0 16px;margin:10px 0;border-radius:8px}
 @media(max-width:359px){.aoH7Screens .aoH7HomeView .aoH7Hero[data-c3-orientation="portrait"]{height:530px!important}.aoH7Screens .aoC3PrayerSlide,.aoH7Screens .aoH7HomeView .aoC3PrayerAction,.aoH7Screens .aoH7HomeView .aoH4Prayer.np.aoC3PrayerAction{min-height:196px!important}.aoH7Screens .aoH4Upcoming.wkc .aoC3UpcomingCard{flex-basis:142px}}
+
+/* C3 nested Week controls must override inherited H7 general button dimensions. */
+.aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc .aoC3UpcomingCard>.aoC3Info{
+ position:absolute!important;right:0!important;top:0!important;z-index:6!important;
+ display:grid!important;place-items:center!important;flex:none!important;min-width:44px!important;
+ width:44px!important;height:44px!important;min-height:44px!important;
+ padding:0!important;border:0!important;border-radius:0!important;background:transparent!important
+}
+.aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc .aoC3UpcomingCard>.aoC3Info[hidden]{display:none!important}
 `;
