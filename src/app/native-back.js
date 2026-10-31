@@ -25,7 +25,15 @@ export function createAppNativeBackBridge({win=globalThis,shell}={}){
   }
   function record(surface){
     if(disposed||handling||!ACCEPT.has(surface))return false;
-    if(expected&&surface===expected){expected=null;return false}
+    if(expected){
+      // Reopening Learn/Explore/Apostolate via the canonical shell makes a
+      // transient hard-Home pass before the destination mounts. That is not
+      // a user-initiated page turn and MUST NOT become a new history entry.
+      if(surface===expected){expected=null;return false}
+      if(surface==="home")return false;
+      // A different concrete owner took over: abandon stale restoration.
+      expected=null;
+    }
     const current=history.state?.[KEY];
     if(current?.session===session&&current.surface===surface)return false;
     if(!armed){
