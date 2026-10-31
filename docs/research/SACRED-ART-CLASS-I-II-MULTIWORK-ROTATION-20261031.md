@@ -14,6 +14,15 @@ The 2026 Calendar source has **53 Class I and 76 Class II observed principal dat
 
 These numbers count **dated research links**, not fully cleared live artworks or true missing pictures. The other 93 days are not 93 missing painting originals. Some have prior selected works outside the 383 collection; many seasonal/sunday dates have unverified subject matches requiring Gospel/source checking.
 
+## Complete preserved-catalogue reverse index
+
+The second committed source, `data/calendar/sacred-art-2026-all383-artwork-reverse-index.v1.json`, accounts for **every one of 383 active archived catalogue IDs**, not just the selected-date paintings:
+
+- **79 unique catalogue artwork IDs** currently join to at least one 2026 Class I/II date, producing 85 links because some paintings relate to more than one feast/date.
+- **304 artwork IDs** are not joined to Class I/II in this conservative exact-subject pass. This is **not** 304 missing associations or unacquired artworks: most should be considered against the Class III/IV sanctoral, devotions, Rosary, biblical scenes, or other modules, or need precise Scripture checking.
+- Of the **107 historically approved** catalogue artworks, **28** have Class I/II candidate links; the remaining **79** are not automatically discarded and require a whole-programme map.
+- The reverse index retains source evidence, historical ratings, linked dates and each 1962 principal ID. No image rights or final app publication were granted.
+
 ## Latest editorial precedence
 
 Preserve every frozen approval and rejection. A later date-specific direction outranks an older date-primary suggestion, but does not retroactively remove an artwork's global rating.
