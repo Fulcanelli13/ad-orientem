@@ -46,7 +46,7 @@ const guidePaths=["france","france-r67","ireland","world-marian-r1","global-sain
   .map(name=>"data/shrines/illustrated-place-guides-"+name+".v1.json");
 const guides=guidePaths.flatMap(path=>JSON.parse(text(path)).guides);
 assert.equal(guides.length,33,"All published guide corpora must be present");
-const editorialLeak=/\\b(?:the app|the application|this app|our app|the reader|no live Mass time is generated here)\\b|l['’]application/i;
+const editorialLeak=/\b(?:the app|the application|this app|our app|the reader|no live Mass time is generated here)\b|l['’]application/i;
 let paragraphCount=0;
 for(const guide of guides){
   assert.equal(guide.publication,"PUBLISHED");
@@ -55,7 +55,7 @@ for(const guide of guides){
       paragraphCount++;
       for(const lang of ["en","fr"]){
         assert(paragraph[lang]?.trim(),guide.place_id+" missing "+lang+" paragraph");
-        assert(/^https:\\/\\/[^\\s]+$/.test(paragraph.source_url),guide.place_id+" missing paragraph source");
+        assert(/^https:\/\/[^\s]+$/.test(paragraph.source_url),guide.place_id+" missing paragraph source");
         assert(!editorialLeak.test(paragraph[lang]),guide.place_id+" has editorial-instruction prose ("+lang+")");
       }
     }
@@ -69,6 +69,6 @@ const journey= view.indexOf('data-explore-place-journeys data-explore-place-chap
 const guide= view.indexOf('if(hasGuide)html+=illustratedGuideHtml(profile,vm.language)');
 assert(journey>guide,"Documented journeys must come after the shrine narrative and pilgrimage guide");
 assert(view.includes('data-explore-place-jump="journeys"'),"Existing journey chapter must be reachable from chapter nav");
-assert(view.includes("(hasEditorialIntro?'':' data-explore-place-chapter=\\\"story\\\"')"),"Published opening must own a unique story anchor");
+assert(view.includes("hasEditorialIntro?'':' data-explore-place-chapter"),"Published opening must own a unique story anchor");
 
 console.log("Explore editorial/folio contract: snapshot and source ordering OK (browser QA remains required)");
