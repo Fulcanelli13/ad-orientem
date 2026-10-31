@@ -352,7 +352,6 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       note(esc(updateExplanation)));
     return shell(L("About & Sources","À propos & sources"),
       `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
-      updateBox+
       section(L("SOURCES","SOURCES"),sourceDetails+methodology)+
       section(L("ABOUT","À PROPOS"),
         infoRow(L("1962 Roman Mass","Messe romaine de 1962"),L("The app keeps the 1962 Mass itself separate from local church practices and private prayers.","L’application garde la Messe de 1962 elle-même distincte des usages locaux et des prières privées."),icon("ao-ui-sources"))+
@@ -362,7 +361,8 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         infoRow(L("Artwork sources & rights","Sources & droits des œuvres"),L("Artwork keeps a record of where it came from and how it may be used.","Les œuvres gardent une indication de leur origine et de leurs conditions d’utilisation."),icon("ao-ui-info"))+
         infoRow(L("Acknowledgements & licences","Remerciements & licences"),L("Third-party texts and artworks retain their individual source/licence notices.","Les textes et œuvres tiers conservent leurs notices de source/licence propres."),icon("ao-ui-info"))+
 
-        routeRow(L("Privacy & Data","Confidentialité & données"),L("Review storage and clear saved progress.","Consulter le stockage et effacer la progression."),"/settings/privacy-data")));
+        routeRow(L("Privacy & Data","Confidentialité & données"),L("Review storage and clear saved progress.","Consulter le stockage et effacer la progression."),"/settings/privacy-data"))+
+      updateBox);
   }
   return renderSettingsToString(win,{route:"/settings",live});
 }
