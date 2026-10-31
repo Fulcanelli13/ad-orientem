@@ -59,7 +59,8 @@
     "Research leads from museum pages may have no image bytes acquired yet, so they are never marked usable.",
     "Sunday source claims in the earlier 102-date matrix have NOT been verified against actual appointed Gospel texts.",
     "All release-certified image counts in this new master are zero by design until a separate production release attestation establishes verified exact work, chosen bytes, rights, and quality.",
-    "Historic 10-date Class I registry still includes Ugolino Holy Thursday; user's later preference for Champaigne La Petite Cène must be reconciled before publishing a new hero. This master preserves historic evidence but does not silently overwrite."
+    "Historic 10-date Class I registry still includes Ugolino Holy Thursday; user's later preference for Champaigne La Petite Cène must be reconciled before publishing a new hero. This master preserves historic evidence but does not silently overwrite.",
+    "Holy Thursday older 19 Oct Ugolino choice is preserved in historicalPrimaryBeforeLaterUserPreference; newer user expresses explicit preference for Champaigne La Petite Cène. Do not infer free image rights from a Louvre painting accession."
   ],
   "rotationContract": {
     "displayWhen": "ONLY PUBLISHED RELEASE_ATTESTED LOCAL IMAGE FILES",
@@ -1190,16 +1191,15 @@
       "observedPrincipalId": "tempora:Quad6-4r:1:w",
       "observedTitle": "Holy Thursday",
       "selectedPrimary": {
-        "artist": "Ugolino da Siena",
-        "title": "The Last Supper",
-        "artworkId": "met-459131",
-        "editorialBasis": "APPROVED_DATE_SPECIFIC_20261019",
-        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
-        "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/459131",
-        "provenance": "main/src/calendar/approved-class-i-heroes-2026.js",
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "editorialBasis": "LATER_USER_EXPRESSED_STRONG_PREFERENCE_20261030",
+        "iconographicRole": "FEAST_EUCHARISTIC_SUBJECT",
+        "sourceObjectUrl": "https://collections.louvre.fr/ark:/53355/cl010062615",
+        "provenance": "Later user preference over Ugolino, with existing approval on 2026-05-27",
         "publicationCertified": false,
-        "date": "2026-04-02",
-        "principalId": "tempora:Quad6-4r:1:w"
+        "assignmentStatus": "DATE_PRIMARY_RECONCILIATION_REQUIRED_BEFORE_RUNTIME"
       },
       "exactSubjectCatalogueCandidates": [
         {
@@ -1223,7 +1223,20 @@
         "doNotRotateUnapprovedOrUnlicensed": true,
         "doNotTreatThematicMatchesAsExact": true,
         "releaseCertifiedWorks": 0
-      }
+      },
+      "historicalPrimaryBeforeLaterUserPreference": {
+        "artist": "Ugolino da Siena",
+        "title": "The Last Supper",
+        "artworkId": "met-459131",
+        "editorialBasis": "APPROVED_DATE_SPECIFIC_20261019",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/459131",
+        "provenance": "main/src/calendar/approved-class-i-heroes-2026.js",
+        "publicationCertified": false,
+        "date": "2026-04-02",
+        "principalId": "tempora:Quad6-4r:1:w"
+      },
+      "editorialWarning": "Ugolino is a preserved historic 19 Oct choice, but user subsequently rejected its aesthetic for Last Supper and preferred Champaigne. Never rotate or display Ugolino as approved Holy Thursday default without new instruction."
     },
     {
       "date": "2026-04-03",
@@ -3599,7 +3612,7 @@
         "artworkId": "cma-135659",
         "editorialBasis": "USER_DATE_APPROVED_20261027",
         "iconographicRole": "FEAST_SUBJECT_EXACT",
-        "sourceObjectUrl": "https://www.clevelandart.org/art/1968.22",
+        "sourceObjectUrl": null,
         "provenance": "USER_DATE_DECISION_20261027",
         "publicationCertified": false,
         "editorial": "USER_DATE_APPROVED_20261027",
