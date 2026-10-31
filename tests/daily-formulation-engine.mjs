@@ -319,7 +319,7 @@ assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.profiles).length
 const standardGuard=runtime.slice(runtime.indexOf("function releasedDailySequenceFor(length)"),runtime.indexOf("function dailyReadingPlan()"));
 assert.ok(standardGuard.includes('if(length==="standard")return {mode:"canonical",rows:baseline,length};'),
  "Standard must always return unchanged canonical rows even after a future source release");
-assert.ok(runtime.includes(':prayerCard(row.id,{focusParagraphs:true});'),
+assert.ok(runtime.includes(':prayerCard(row.id,{focusParagraphs:true,hoursFamily:true});'),
  "Canonical cards must directly render canonical source text, not a second variant path");
 assert.ok(!runtime.includes("dailyFormulationPrayerCard(")&&!runtime.includes("dailyReleasedFormOptions("),
  "Do not keep an alternate historical rendering path for canonical card IDs");

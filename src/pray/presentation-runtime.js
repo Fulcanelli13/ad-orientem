@@ -11,6 +11,10 @@ import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
+import "./horarium-hours-styles.js";
+import "./claude-horarium-styles.js";
+import {claudeHorariumHourFromClock,claudeHorariumClock,claudeHorariumStrokes,syncClaudeHorariumStrokes} from "./claude-horarium-clock.js";
+import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import "./adoration-folio-styles.js";
@@ -330,6 +334,7 @@ let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false
 const stationReaderMode=()=>STATIONS.publicPosture?'guided':S.stations.mode;
 const stationRecitation=()=>STATIONS.publicPosture?'group':S.stations.recitation;
 let ANGELUS_CARD_INDEX=0,angelusOptionsOpen=false;
+let CLAUDE_ANGELUS_HOUR=claudeHorariumHourFromClock(new Date().getHours());
 let TEN={day:0,hour:'MATINS',step:0,face:'vernacular',guided:true,model:null,loading:false,error:null,epoch:0,ceremony:freshTenebraeCeremony()};
 let lastStationsFxStep=null;
 let angelusRitualObserver=null,lastAngelusRitualCard=null;
@@ -637,6 +642,28 @@ function prayerBlock(id,opts={}){
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
+ if(id==='mass_devotion_leonine'&&!opts.record){
+  const chosen=p[lang()]?lang():p.en?'en':p.la?'la':null;
+  if(!chosen)return callout(esc(L('Leonine prayers are not available.','Les prières léonines ne sont pas disponibles.')),'warn');
+  const hasLatin=!!p.la&&chosen!=='la';
+  const markup=face=>{
+   const stages=leonineSourceSections(p[face]);
+   if(!stages)return '<p class="aoHoursLeonineParagraph">'+esc(p[face]||'')+'</p>';
+   return stages.map(stage=>
+    '<section class="aoHoursLeonineSection" data-ao-hours-leonine-index="'+stage.index+'">'+
+    '<h4>'+esc(isFr()?stage.label.fr:stage.label.en)+'</h4>'+
+    stage.paragraphs.map(p=>'<p class="aoHoursLeonineParagraph'+
+      (p.role==='versicle'?' aoHoursLeonineVerse':p.role==='response'?' aoHoursLeonineResponse':'')+
+      '">'+esc(p.text.trim())+'</p>').join('')+'</section>'
+   ).join('');
+  };
+  return '<article class="aoP435930Prayer aoP435930HoursLeonine" data-ao-hours-family="leonine">'+
+   languageNotice+'<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
+   (hasLatin?'<button type="button" class="aoHoursLeonineLang" data-p435930-hours-flip aria-pressed="false" aria-label="'+esc(L('Read in Latin','Lire en latin'))+'">Latin</button>':'')+'</div>'+
+   '<div class="aoHoursLeonineFaces aoP435930Text" data-ao-pray-semantic="1"><div data-face-v lang="'+chosen+'">'+markup(chosen)+'</div>'+
+   (hasLatin?'<div data-face-la lang="la" hidden>'+markup('la')+'</div>':'')+'</div>'+
+   originCapsule+sourceLine(p)+'</article>';
+ }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
 }
 function selectedDateKey(){
@@ -825,14 +852,19 @@ function angelusGuideMarkup(form){
  const related=`<section class="aoAngelusGuideSection" data-ao-b01-august-queen><h3>${esc(L("Related Marian devotion","Dévotion mariale associée"))}</h3><p>${esc(L("August Queen of Heaven is a separate prayer, not an Angelus or Regina Cæli response.","L’Auguste Reine des Cieux est une prière distincte, et non un répons de l’Angélus ou du Regina Cæli."))} <a href="${esc(B01_AUGUST_QUEEN_SOURCE.url)}" target="_blank" rel="noopener noreferrer">${esc(L("ICKSP · August Queen prayer","ICKSP · Prière de l’Auguste Reine"))} ↗</a></p></section>`;
  return `<details class="aoP435930GuideInfo aoAngelusGuide" data-ao-devotional-guide="${esc(form)}"><summary>${esc(L('Guide · history, meaning & practice','Guide · histoire, sens et pratique'))}</summary><div class="aoAngelusGuideBody">${sections.map(entry=>`<section class="aoAngelusGuideSection"><h3>${esc(entry.heading)}</h3><p>${esc(entry.body)} <a href="${esc(entry.source.url)}" target="_blank" rel="noopener noreferrer">${esc(entry.source.label)} ↗</a></p></section>`).join('')}${related}</div></details>`;
 }
-function angelusDialogueHTML(parts){
- return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+function angelusDialogueHTML(parts,{sourceVersicles=false,collective=false}={}){
+ // Only authentic source versicles receive ℣/℟. A familiar prayer's
+ // communal continuation is indented and independently illuminated.
+ return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}${collective&&part.role==='response'?' aoHoursCollective':''}" data-ao-angelus-voice="${part.role}">${sourceVersicles?`<span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span>`:''}<span>${esc(part.text)}</span></span>`).join('')}</span>`;
 }
 function angelusUtterance(text,type){
- if(S.rosary.recitation!=='group')return nl(text);
- if(type==='hail'||type==='collect'){
-  const prayer=angelusCommunalParts(text,type);
-  if(prayer)return angelusDialogueHTML(prayer);
+ if(type==='hail'){
+  const prayer=angelusCommunalParts(text,'hail');
+  if(prayer)return angelusDialogueHTML(prayer,{collective:S.rosary.recitation==='group'});
+ }
+ if(type==='collect'&&S.rosary.recitation==='group'){
+  const prayer=angelusCommunalParts(text,'collect');
+  if(prayer)return angelusDialogueHTML(prayer,{collective:true});
  }
  if(type!=='vr')return nl(text);
  const lines=String(text||'').replace(/\r/g,'').split('\n').map(x=>x.trim()).filter(Boolean);
@@ -841,7 +873,7 @@ function angelusUtterance(text,type){
    role:i===0?'leader':'response',
    text:line.replace(i===0?/^(?:℣|V)\.?\s*/i:/^(?:℟|R)\.?\s*/i,'').trim()
  })):[];
- return parts.length===2?angelusDialogueHTML(parts):nl(text);
+ return parts.length===2?angelusDialogueHTML(parts,{sourceVersicles:true}):nl(text);
 }
 function renderAngelus(){
  if(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY){
@@ -865,7 +897,7 @@ function renderAngelus(){
   const incarnation=form==='angelus'&&u.type==='vr'&&/(Word was made flesh|Verbum caro factum est|Verbe s[’']est fait chair)/i.test(u.text+' '+la);
   return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${angelusUtterance(u.text,u.type)}</span><span data-face-la hidden>${angelusUtterance(la,u.type)}</span></button></article>`;
  }).join('');
- return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
+ return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader" data-ao-hours-family="ritual" data-ao-hours-owner="${form}" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<div class="aoClaudeHorariumShell" data-ao-claude-horarium="true">${claudeHorariumClock(CLAUDE_ANGELUS_HOUR)}${claudeHorariumStrokes(Math.max(0,ANGELUS_CARD_INDEX-1))}</div><details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
 }
 function normalizeRosaryPrefs(raw=S.rosary){
  return Object.freeze({
@@ -2924,15 +2956,16 @@ function installLibraryParagraphFocus(m,id){
  // versicles, responses and stanza breaks. Reuse its semantic output instead
  // of reparsing the prayer and erasing V./R. ownership.
  window.AO_PRAY_COHERENCE_V435930?.decorate?.();
+ const leonine=!!card.querySelector(".aoP435930HoursLeonine");
  const lines=card.querySelectorAll(
-  ".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
+  leonine?".aoHoursLeonineParagraph":".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
  );
  lines.forEach(line=>line.classList.add("aoLibraryLine"));
  const p=P(id);
  const title=p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière');
  const reader=installSequentialDevotionalReader({
   mount:m,kind:"library",chapters:[{id,title}],
-  activeIndex:0,paragraphSelector:".aoLibraryLine",
+  activeIndex:0,paragraphSelector:leonine?".aoHoursLeonineParagraph":".aoLibraryLine",
   timelineLabel:L('Prayer timeline','Parcours de la prière')
  });
  // A one-card prayer has no meaningful chapter navigation or positional
@@ -2982,6 +3015,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    onCardChange:(_card,index)=>{
     // Opening sacred artwork belongs only to prayer entry, never card changes.
     ANGELUS_CARD_INDEX=index;
+    syncClaudeHorariumStrokes(m,Math.max(0,index-1));
    },
    onCue:cue=>{
     const active=cue==='profound-bow';
@@ -3473,9 +3507,36 @@ function onClick(e){
   }
   return;
  }
+ if(b.hasAttribute('data-p435930-angelus-hour')&&view==='angelus'){
+  const hour=Number(b.dataset.p435930AngelusHour);
+  if(![6,12,18].includes(hour))return;
+  CLAUDE_ANGELUS_HOUR=hour;
+  const shell=mount()?.querySelector('[data-ao-claude-horarium]');
+  if(shell)shell.innerHTML=claudeHorariumClock(hour)+claudeHorariumStrokes(Math.max(0,ANGELUS_CARD_INDEX-1));
+  return;
+ }
  if(b.dataset.p435930External){
   e.preventDefault?.();
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
+  return;
+ }
+ if(b.matches('[data-p435930-hours-flip]')){
+  const card=b.closest('.aoP435930HoursLeonine');
+  const vern=card?.querySelector('[data-face-v]'),latin=card?.querySelector('[data-face-la]');
+  if(!vern||!latin)return;
+  const before=latin.hidden?vern:latin,after=latin.hidden?latin:vern;
+  const sourceParts=[...before.querySelectorAll('.aoHoursLeonineParagraph')];
+  const active=sourceParts.find(x=>x.dataset.aoDevoActive==='true')||sourceParts[0];
+  const idx=sourceParts.indexOf(active);
+  const oldTop=active?.getBoundingClientRect().top,scroll=card.closest('.aoDevoCardScroll');
+  before.hidden=true;after.hidden=false;
+  const nextParts=[...after.querySelectorAll('.aoHoursLeonineParagraph')];
+  const target=nextParts[Math.min(Math.max(idx,0),nextParts.length-1)];
+  if(scroll&&target&&oldTop!=null)scroll.scrollTop+=target.getBoundingClientRect().top-oldTop;
+  const showingLatin=after===latin;
+  b.textContent=showingLatin?(isFr()?'Français':'English'):'Latin';
+  b.setAttribute('aria-pressed',String(showingLatin));
+  b.setAttribute('aria-label',showingLatin?L('Read in vernacular','Lire en langue vernaculaire'):L('Read in Latin','Lire en latin'));
   return;
  }
  if(b.matches('[data-p435930-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
