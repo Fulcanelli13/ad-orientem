@@ -25,12 +25,12 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1867);
+assert.equal(world.filter(x=>x.map_publishable).length,1872);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,715);
+assert.equal(newSites.length,710);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -42,9 +42,22 @@ assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-lis
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Twenty separately reviewed physical site or address references may be shown
+// Twenty-five separately reviewed physical site or address references may be shown
 // provisionally. A site marker does NOT verify a Mass or precise entrance.
 for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
+ ["RG-00D589BAB16C","ao-fssp-church-of-st-mary-538-broadway-providence-ri-02909-usa",
+  "Church of St Mary",41.81761,-71.4367,"osm:way:314290719","site"],
+ ["RG-04C900D93BC2","AO-EUR-GB-006",
+  "Bournemouth Oratory",50.72097,-1.87861,"osm:way:128316070","site"],
+ ["RG-4D711E72B9F0","DIO-GB-EASTANGLIA-NORWICH-CATHEDRAL",
+  "Cathedral of St John the Baptist, Norwich",52.62902,1.28381,"osm:way:97370578","site"],
+ ["RG-40584CA8DAE1","AO-B33-L-US-D5047631A0B7",
+  "Our Lady of Clear Creek Abbey",36.03363,-95.19587,"osm:way:242465722","site",
+  "MONASTERY_COMPLEX_NOT_CHURCH_ENTRANCE"],
+ ["RG-16C25083C6C7","ao-icksp-st-mary-oratory-517-elm-st-rockford-il-61102-6",
+  "St. Mary Oratory",42.27224,-89.09816,"geonames:4909682","site",
+  "CHURCH_SITE_NOT_VERIFIED_ENTRANCE"],
+
  ["RG-2E1FB8361143","AO-B35-L-GB-BF86E1483C54",
   "St Mary's Church",53.38963,-2.5889,"osm:way:749035677","site"],
  ["RG-3E26F1928075","AO-B36-L-GB-7FBD70FF3B8C",
@@ -108,6 +121,16 @@ for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
  assert.equal(mapped.actions.length,0);
  assert.ok(mapped.source_links.length>=2&&mapped.source_links.every(l=>l.url.startsWith("https://")));
 }
+
+const rockford=additional.find(x=>x.physical_group_id==="RG-16C25083C6C7");
+assert.equal(rockford.address.formatted,"126 S Winnebago St, Rockford, IL 61102");
+assert.ok(rockford.subtitle.includes("126 S Winnebago St"));
+assert.ok(!rockford.subtitle.includes("517 Elm St"),"Never direct visitors to mailing address");
+assert.ok(rockford.search_text.includes("517 elm st"),"Retain source-master alias for research search");
+assert.match(rockford.note,/mailing address/);
+const clearCreek=additional.find(x=>x.physical_group_id==="RG-40584CA8DAE1");
+assert.match(clearCreek.facts.find(f=>f.label==="Map position").value,/monastery complex/);
+assert.equal(clearCreek.geo.review_scope,"MONASTERY_COMPLEX_NOT_CHURCH_ENTRANCE");
 
 // Two geographically divergent R49 aliases retain the canonical selected
 // church identity, but use an independently corroborated existing source pin.
