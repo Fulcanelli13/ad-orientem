@@ -67,5 +67,5 @@ test("F11 Forty Hours and Tenebrae retain original source and public/local limit
  assert.match(runtime,/loadTenebraeHour\(/);
  assert.match(runtime,/The app never asks a lay person to perform the public blessing/);
  assert.match(runtime,/not a parish timetable or a replacement for the clergy/);
- assert.match(runtime,/No seasonal Alleluia has been assumed/);
+ assert.match(runtime,/no seasonal Alleluia has been assumed/);
 });
