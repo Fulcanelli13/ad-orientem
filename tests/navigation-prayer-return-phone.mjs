@@ -50,6 +50,12 @@ try{
     // Exact Stations card and its paragraph-scrolling region survive real Back.
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations")),true);
     await prayer.locator('[data-p435930-station-step="5"]').click();
+    const sessionToggle=prayer.locator('[data-p435930-session-language]');
+    const initialPrayerLanguage=(await sessionToggle.innerText()).trim();
+    await sessionToggle.click();
+    const selectedPrayerLanguage=(await sessionToggle.innerText()).trim();
+    assert.notEqual(selectedPrayerLanguage,initialPrayerLanguage,
+      "Reader language control did not change language");
     await page.waitForFunction(()=>document.querySelector('#aoPray435930 .aoP435930Mount')?.dataset.aoPrayView==="stations");
     assert.equal(await prayer.locator('[data-p435930-station-step="5"]').getAttribute("aria-current"),"step");
     const stationsScroll=await page.evaluate(()=>{
@@ -60,6 +66,8 @@ try{
     await toBack(page);
     assert.equal(await mount.getAttribute("data-ao-pray-view"),"stations");
     assert.equal(await prayer.locator('[data-p435930-station-step="5"]').getAttribute("aria-current"),"step");
+    assert.equal((await prayer.locator('[data-p435930-session-language]').innerText()).trim(),
+      selectedPrayerLanguage,"Prayer session language lost on browser Back");
     assert.equal(await prayer.locator("[data-ao-devo-card='station-6']").count(),1);
     await page.waitForTimeout(180);
     const afterStations=await page.evaluate(()=>document.querySelector("#aoPray435930 [data-ao-devo-card='station-6'] .aoDevoCardScroll")?.scrollTop);
@@ -75,6 +83,9 @@ try{
     assert.equal(await mount.getAttribute("data-ao-pray-view"),"angelus");
     assert.equal(await prayer.locator('[data-ao-devo-jump="2"]').getAttribute("aria-current"),"step");
     assert.ok(await prayer.locator(".aoDevoParagraph").count()>0,"Angelus paragraphs disappeared");
+    await page.waitForFunction(()=>Boolean(document.querySelector(
+      "#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph[data-ao-devo-active='true']"
+    )),null,{timeout:10000});
 
     // Library: previous selected prayer reopens with its own local focus scroll.
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library"));
