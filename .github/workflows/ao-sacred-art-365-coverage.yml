@@ -4,6 +4,8 @@ on:
     paths:
       - 'data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json'
       - 'data/calendar/sacred-art-2026-class-i-ii-multiwork-crosswalk.v1.json'
+      - 'data/calendar/sacred-art-2026-accepted-source-match-batch1.v1.json'
+      - 'data/calendar/sacred-art-2026-museum-multiwork-match-batch2.v1.json'
       - 'tests/sacred-art-365-class-coverage-audit.mjs'
       - '.github/workflows/ao-sacred-art-365-coverage.yml'
   workflow_dispatch:
