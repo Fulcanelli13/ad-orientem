@@ -39,7 +39,7 @@ function normalizeLicense(v){
  return {compatible:false,kind:s||"UNSPECIFIED",reason:"Not a verified CC0/CC BY/CC BY-SA photograph licence"};
 }
 function overlapScore(t,p){
- const need=tokens(searchableName(t.subject_title)+" "+t.site_title);
+ const need=tokens(searchableName(t)+" "+t.site_title);
  const have=tokens(p.title+" "+(p.imageinfo?.[0]?.extmetadata?.ObjectName?.value||"")+" "+(p.imageinfo?.[0]?.extmetadata?.ImageDescription?.value||""));
  if(!need.size)return 0;
  let match=0;for(const w of need)if(have.has(w))match++;
@@ -89,6 +89,15 @@ function candidate(t,p){
   visual_identity_verified:false,photo_bytes_downloaded:false,original_sha256:null,
   underlying_artwork_rights_cleared:false,attribution_ready:false,publishable:false,published:false
  };
+}
+if(process.argv.includes("--selftest")){
+ const sampleTarget={subject_title:"Saint Anthony's tongue reliquary",site_title:"Basilica di Sant'Antonio, Padova",copyright_caution:null,known_candidate_file:"File:La-lingua-di-sant-antonio.jpg"};
+ const samplePage={pageid:117432749,title:"File:La-lingua-di-sant-antonio.jpg",imageinfo:[{width:960,height:1280,mime:"image/jpeg",url:"https://upload.wikimedia.org/wikipedia/commons/example.jpg",extmetadata:{LicenseShortName:{value:"CC BY-SA 4.0"},Artist:{value:"Elmiralaleh"},ImageDescription:{value:"La lingua di Sant Antonio, Padova"}}}]};
+ const result=candidate(sampleTarget,samplePage);
+ if(result.commons_pageid!==117432749||!result.preliminary_free_photo_candidate||!Number.isFinite(result.textual_relevance_score))throw Error("Candidate matching regression");
+ if(result.publishable||result.underlying_artwork_rights_cleared||result.visual_identity_verified)throw Error("Research candidate must stay unpublished");
+ console.log("PASS: exact title candidate, CC BY-SA, metadata, provenance, no premature publication");
+ process.exit(0);
 }
 const output=[];let cursor=0;
 async function worker(){
@@ -155,5 +164,5 @@ const data={
 };
 await mkdir(dirname(destination),{recursive:true});
 await writeFile(destination,JSON.stringify(data,null,2)+"\n");
-console.log("Batch 001 stats:",JSON.stringify(stats));
+console.log("Batch "+batchId+" stats:",JSON.stringify(stats));
 if(stats.source_file_candidates_returned===0){console.error("ZERO COMMONS FILES RETURNED: service/API/search error, not cleared photo inventory");process.exitCode=2;}
