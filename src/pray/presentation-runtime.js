@@ -3444,7 +3444,7 @@ function onClick(e){
     PRIESTS.latin=!PRIESTS.latin;return render();
   }
  }
- if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;navStack=[];return render()}
+ if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;MERCY.finished=false;navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-methods')){view='rosaryMethods';navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-customize')){
   ROSARY_CHOOSER.optionsOpen=!ROSARY_CHOOSER.optionsOpen;
