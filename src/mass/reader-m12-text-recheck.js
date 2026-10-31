@@ -64,7 +64,10 @@ export function auditM12OriginalScoreText({ledger,residual15,m07Batches}={}){
       r.userApproved!==false||r.publicReader!==false)
    return denied("SOURCE_OCCURRENCE_OR_EDITORIAL_HOLD_INVALID");
   const overlap=longestShared(r.donorLatin,s.normalizedScoreText);
-  if(JSON.stringify(overlap)!==JSON.stringify(r.commonText))return denied("SHARED_LATIN_SPAN_NOT_REPRODUCIBLE");
+  const shared={words:overlap.words,donorStartWord:overlap.donorStart,
+   scoreStartWord:overlap.scoreStart,text:overlap.text};
+  if(JSON.stringify(shared)!==JSON.stringify(r.commonText))
+   return denied("SHARED_LATIN_SPAN_NOT_REPRODUCIBLE");
   const c=overlap.words>=8?classes[0]:overlap.words>=4?classes[1]:classes[2];
   if(r.evidenceClass!==c)return denied("LATIN_EVIDENCE_CLASS_INFLATED");
   count[c]++;
