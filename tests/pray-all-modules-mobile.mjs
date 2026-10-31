@@ -225,7 +225,7 @@ try{
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  assert.equal(await page.locator(conf+" [data-p435930-since]").count(),0,"Time estimate must only appear on preparation card");
  assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0,"Do not record sins");
- assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2);
+ assert.ok(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count()>=2,"Original Vatican doctrine and canon-law sources must remain visible");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.close());
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
  assert.equal(await page.locator(conf+" [data-p435930-conf-path][aria-pressed='true']").count(),0,
