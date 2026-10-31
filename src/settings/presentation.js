@@ -113,20 +113,10 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
   };
 
   if(vm.route==="/settings"||vm.route==="main"){
-    return shell(L("Settings","Réglages"),
-      section(L("APP & UPDATES","APPLICATION & MISES À JOUR"),
-        row(L("Installed app & sources","Application installée & sources"),
-          L("Version, site address, safe update and source information","Version, adresse du site, mise à jour et sources"),
-          icon("ao-ui-next"),'data-settings-route="/settings/about-sources" data-settings-sources'))+
-      section(L("APP","APPLICATION"),
-        routeRow(L("General","Général"),L("Vibration, screen and resume options","Vibration, écran et reprise"),"/settings/general")+
-        routeRow(L("Display & Accessibility","Affichage & accessibilité"),L("Text size, animations, contrast and artwork","Taille du texte, animations, contraste et œuvres"),"/settings/accessibility")+
-        routeRow(L("Language & Text","Langue & textes"),L("App language and translation language","Langue de l’application et langue des traductions"),"/settings/language-reading"))+
-      section(L("MASS & PRAYER","MESSE & PRIÈRE"),
-        routeRow(L("Mass","Messe"),L("Choices used when you start a new Mass","Choix utilisés lorsque vous commencez une nouvelle Messe"),"/settings/mass")+
-        routeRow(L("Local Church & Customs","Église locale & usages"),L("Save the usual practices at a particular church","Enregistrer les usages habituels d’une église"),"/settings/local-customs")+
-        routeRow(L("Prayer & Devotions","Prière & dévotions"),L("Choose how the Rosary, Stations and Angelus behave","Choisir le comportement du Rosaire, du Chemin de Croix et de l’Angélus"),"/settings/prayer"))+
-      section(L("DATA","DONNÉES"),routeRow(L("Privacy & Data","Confidentialité & données"),L("Clear saved progress or restore defaults","Effacer la progression ou rétablir les réglages"),"/settings/privacy-data")),true);
+    return shell(L("Preferences","Préférences"),
+      '<div class="aoPrefCover"><h1>'+esc(L("Preferences","Préférences"))+'</h1><p class="aoSetIntro">'+
+      esc(L("These are your defaults. Inside a prayer, Aa changes them for that sitting only.","Voici vos choix habituels. Dans chaque prière, Aa les modifie seulement pour cette séance."))+'</p></div>'+
+      '<nav class="aoPrefContents" aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-route="'+t[5]+'"><span class="n">'+t[0]+'</span><span class="t">'+esc(L(t[1],t[2]))+'<small>'+esc(L(t[3],t[4]))+'</small></span><span class="f" aria-hidden="true">›</span></button>').join("")+'</nav>',true);
   }
   if(vm.route==="/settings/general"){
     return shell(L("General","Général"),
@@ -136,21 +126,25 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         toggle(L("Remember where I stopped","Mémoriser où je me suis arrêté"),L("Offer to continue an unfinished Mass or prayer.","Proposer de reprendre une Messe ou une prière inachevée."),"general.offerResume")));
   }
   if(vm.route==="/settings/accessibility"){
-    return shell(L("Display & Accessibility","Affichage & accessibilité"),
-      section(L("DISPLAY","AFFICHAGE"),
-        select(L("Text size","Taille du texte"),"","accessibility.textScale",[["system","Use device setting","Réglage de l’appareil"],["small","Small","Petite"],["standard","Normal","Normale"],["large","Large","Grande"],["extra_large","Extra large","Très grande"]])+
-        select(L("Animations","Animations"),"","accessibility.motion",[["system","Use device setting","Réglage de l’appareil"],["standard","Standard","Standard"],["reduced","Fewer animations","Moins d’animations"]])+
-        select(L("Text contrast","Contraste du texte"),"","accessibility.contrast",[["system","Use device setting","Réglage de l’appareil"],["standard","Standard","Standard"],["high","Higher contrast","Contraste renforcé"]])+
-        seg(L("Appearance","Apparence"),"appearance.mode",[["auto","Use device","Selon l’appareil"],["dark","Dark","Sombre"],["light","Light","Clair"]])+ 
-        seg(L("Sacred artwork","Art sacré"),"appearance.sacredArt",[["full","Full","Complet"],["subtle","Subtle","Discret"],["minimal","Minimal","Minimal"]])));
+    const opts=p.accessibility;
+    const fs={system:"19px",small:"17px",standard:"19px",large:"21.5px",extra_large:"24px"}[opts.textScale]||"19px";
+    const specimen='<div class="aoPrefSpecimen'+(p.appearance.sacredArt==="subtle"?' quiet':p.appearance.sacredArt==="minimal"?' none':'')+
+      (opts.contrast==="high"?' strong':'')+'" style="--ao-pref-spec-size:'+fs+'"><div class="aoPrefSpecimenInner">'+
+      '<div class="aoPrefSpecimenPlate" aria-hidden="true"></div><div class="aoPrefSpecimenText"><span class="past">'+esc(L("Behold the handmaid of the Lord.","Voici la servante du Seigneur."))+'</span><div><i>℣</i> '+esc(L("And the Word was made flesh.","Et le Verbe s’est fait chair."))+'</div><div><i>℟</i> '+esc(L("And dwelt among us.","Et il a habité parmi nous."))+'</div></div></div><div class="aoPrefSpecimenCaption"><span>'+esc(L("Specimen","Exemple"))+'</span><i>'+esc(L("Follows your choices","Suit vos préférences"))+'</i></div></div>';
+    return shell(L("Reading","Lecture"),specimen+
+      select(L("Appearance","Apparence"),"","appearance.mode",[["auto","As the device","Selon l’appareil"],["dark","Night","Nuit"],["light","Vellum","Vélin"]])+
+      select(L("Size of text","Taille du texte"),"","accessibility.textScale",[["system","As the device","Selon l’appareil"],["small","Small","Petite"],["standard","Usual","Normale"],["large","Large","Grande"],["extra_large","Largest","Très grande"]])+
+      select(L("Contrast","Contraste"),L("Stronger keeps prayed lines darker as well","Le contraste renforcé conserve une meilleure lisibilité des lignes précédentes"),"accessibility.contrast",[["system","As the device","Selon l’appareil"],["standard","Usual","Normal"],["high","Stronger","Renforcé"]])+
+      select(L("Paintings","Peintures"),L("One setting for the whole app: Mass, prayer and Home","Un seul choix pour toute l’application : Messe, prière et accueil"),"appearance.sacredArt",[["full","Full","Complètes"],["subtle","Quiet","Discrètes"],["minimal","None","Aucune"]])+
+      select(L("Movement","Mouvement"),"","accessibility.motion",[["system","As the device","Selon l’appareil"],["standard","Usual","Normal"],["reduced","Less","Réduit"]]));
   }
   if(vm.route==="/settings/language-reading"){
-    return shell(L("Language & Text","Langue & textes"),
-      section(L("LANGUAGE","LANGUE"),
-        seg(L("App language","Langue de l’application"),"general.uiLanguage",[["en","English","Anglais"],["fr","Français","Français"]])+
-        toggle(L("Use app language for translations","Utiliser la langue de l’application pour les traductions"),L("Keeps translations in the same language as the app unless another is chosen below.","Conserve les traductions dans la langue de l’application sauf choix contraire."),"reading.vernacularFollowsUiLanguage")+
-        seg(L("Translation language","Langue de traduction"),"reading.vernacular",[["en","English","Anglais"],["fr","Français","Français"]]))+
-      note(esc(L("Latin remains available for liturgical text. Simple, Missal and LIVE keep their distinct reading behaviour; this setting changes translation and explanation language only.","Le latin reste disponible pour le texte liturgique. Simple, Missel et LIVE gardent leur fonctionnement propre ; ce réglage change seulement la langue des traductions et explications."))));
+    return shell(L("Languages","Langues"),
+      seg(L("Language of the app","Langue de l’application"),"general.uiLanguage",[["en","English","Anglais"],["fr","Français","Français"]])+
+      seg(L("Translation beside the Latin","Traduction à côté du latin"),"reading.vernacularFollowsUiLanguage",[[true,"Same as the app","Comme l’application"],[false,"Choose language","Choisir la langue"]])+
+      (p.reading.vernacularFollowsUiLanguage?"":seg(L("Translation language","Langue de traduction"),"reading.vernacular",[["en","English","Anglais"],["fr","Français","Français"]]))+
+      seg(L("Latin","Latin"),"reading.latinDisplay",[["with","With the translation","Avec la traduction"],["only","Latin only","Latin seulement"],["off","Translation only","Traduction seulement"]])+
+      note(esc(L("These are saved language preferences. Prayer and Mass readers retain their own source-faithful language options in Aa and Your Mass.","Il s’agit des préférences linguistiques enregistrées. Les lecteurs de prière et de Messe conservent leurs options propres dans Aa et Votre Messe."))));
   }
   if(vm.route==="/settings/mass"){
     const church=p.mass.defaultProfileId?profiles.find(x=>x.id===p.mass.defaultProfileId)?.name:L("Standard 1962 practice","Pratique standard de 1962");
