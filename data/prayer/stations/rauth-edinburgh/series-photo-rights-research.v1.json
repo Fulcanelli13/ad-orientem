@@ -50,6 +50,29 @@
       "sizing": "2019 native short side 886–1158 pixels, 2002 archive short side 300–480 pixels",
       "visualApproval": false,
       "sourcePhotosPermanentlyDownloaded": false
+    },
+    "exactNativePhotoVisualDiagnostics": {
+      "workflowRunId": 41195668732,
+      "metadataPath": "data/prayer/stations/rauth-edinburgh/native-14-photo-visual-diagnostics-20261031.v1.json",
+      "result": "14/14 originals unique source SHA256 and no severe machine-flagged exposure/edge problems; Station XIV 886 px width rather than advisory 900 px",
+      "metricCoverage": "Native photo decode, RGB statistics, entropy, edge variation, edge strips, source hash only",
+      "notVerified": [
+        "full-painted-surface crop",
+        "frame-free composition",
+        "perspective correction",
+        "colour fidelity to original canvas",
+        "per-file PD-Art originality",
+        "worldwide photographic-rights clearance"
+      ],
+      "publicationAllowed": false
+    },
+    "earlierIndependentlyLicensedChurchPhotosChecked": {
+      "wikimediaCommonsCategory": "https://commons.wikimedia.org/wiki/Category:Sacred_Heart,_Edinburgh",
+      "fileCount": 19,
+      "independentlyPhotographed2025": 18,
+      "license": "CC BY-SA 4.0",
+      "fullFourteenPaintingReproductionsVerified": false,
+      "reason": "Category inventory and file descriptions show church-location photographs, not individually identified Rauth station paintings; do not count 18 site photographs as 14 clear image replacements."
     }
   },
   "counts": {
@@ -65,7 +88,12 @@
     "sourcesReachable2019": 14,
     "sourcesReachableRestoration2002": 14,
     "nativePixelWidthPasses2019_900px": 13,
-    "nativePixelWidthPasses2002_900px": 0
+    "nativePixelWidthPasses2002_900px": 0,
+    "official2019ExactSourceHashesAudited": 14,
+    "official2019PhotosWithSevereNumericalVisualFlags": 0,
+    "official2019PhotosWithShortSideResolutionAdvisory": 1,
+    "official2019PhotosHumanFrameFreeCleared": 0,
+    "official2019PhotosHumanColourAndCompositionCleared": 0
   },
   "stations": [
     {
@@ -101,6 +129,13 @@
         "bytes": 21152,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -136,6 +171,13 @@
         "bytes": 62065,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -171,6 +213,13 @@
         "bytes": 35902,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -206,6 +255,13 @@
         "bytes": 19412,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -241,6 +297,13 @@
         "bytes": 16819,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -276,6 +339,13 @@
         "bytes": 49644,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -311,6 +381,13 @@
         "bytes": 17795,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -346,6 +423,13 @@
         "bytes": 37774,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -381,6 +465,13 @@
         "bytes": 22895,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -416,6 +507,13 @@
         "bytes": 42040,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -451,6 +549,13 @@
         "bytes": 41169,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -486,6 +591,13 @@
         "bytes": 41247,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -521,6 +633,13 @@
         "bytes": 56632,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "NONE",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     },
     {
@@ -556,6 +675,13 @@
         "bytes": 73845,
         "format": "JPEG",
         "rightsCleared": false
+      },
+      "exactSourceVisualDiagnostics": {
+        "sourceSHA256Verified": true,
+        "machineExposureAndEdgeCheck": "PASSED",
+        "reviewFlag": "SHORT_SIDE_BELOW_900_PX_ADVISORY",
+        "humanCompositionApproved": false,
+        "humanPhotoCopyrightApproved": false
       }
     }
   ],
