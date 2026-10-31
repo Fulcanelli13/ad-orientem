@@ -70,10 +70,21 @@ for(const [group,canonical,corrected,evidence,expectedAddress] of [
  assert.deepEqual(published.find(x=>x.source_id===canonical),original,
    "Frozen R49 source must not be modified by the read-model adjudication");
 }
-const unadjudicated=world.find(x=>x.physical_group_id==="RG-9DE31147B6ED");
-assert.ok(unadjudicated,"Galway source group must remain present");
-assert.equal(unadjudicated.geo.source_ref,undefined,
- "Galway geometry stays under review; never infer an unsupported override");
+const galway=world.find(x=>x.physical_group_id==="RG-9DE31147B6ED");
+const galwayAlt=published.find(x=>x.source_id==="ao-research-icksp-federated-v13-icksp-stg-125");
+assert.ok(galway&&galwayAlt,"Galway alias and original ICKSP site pin must remain present");
+assert.equal(galway.item_id,
+ "tlm:r49:LMD:seipeal-colaiste-naoi%e1%b9%81-muire-saint-marys-college-chapel-galway-ireland",
+ "Deduplication must preserve canonical source identity");
+assert.equal(galway.geo.lat,galwayAlt.geo.lat);
+assert.equal(galway.geo.lng,galwayAlt.geo.lng);
+assert.equal(galway.geo.source_ref,galwayAlt.source_id);
+assert.equal(galway.geo.source_url,"https://www.galwaymusiccentre.ie/contact-1");
+assert.equal(galway.geo.approximate,true);
+assert.equal(galway.geo.precision,"source_marker_unassessed");
+assert.equal(galway.geo.review_scope,"PHYSICAL_CHURCH_NOT_ENTRANCE");
+assert.equal(galway.map_state,"PROVISIONAL");
+assert.ok(galway.source_links.some(x=>x.url==="https://galway.icksp.ie/"));
 const newUs=newSites.find(x=>x.title==="St Philomena Catholic Church"&&x.subtitle.includes("US"));
 assert.ok(newUs,"Unlocated research-listed CMRI-directory chapel must remain searchable");
 assert.ok(filterPreliminaryR49(world,{query:"St Philomena Catholic Church"}).some(x=>x.item_id===newUs.item_id));

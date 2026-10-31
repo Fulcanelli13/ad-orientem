@@ -30,6 +30,14 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
    "https://www.geraldtondiocese.org.au/parishes/geraldton-parishes",
   ]),
  }),
+ "RG-9DE31147B6ED":Object.freeze({
+  sourceId:"ao-research-icksp-federated-v13-icksp-stg-125",
+  evidence:Object.freeze([
+   "https://www.galwaymusiccentre.ie/contact-1", // same college building: published main entrance + coordinates
+   "https://galway.icksp.ie/", // ICKSP: St Mary's College Chapel, St Mary's Road
+   "https://weekdaymasses.org.uk/en/area/galway/churches", // chapel left behind main college building
+  ]),
+ }),
 });
 const family=(aff,mapAffiliation)=>{
  const group=mapAffiliation?.(aff,"UNKNOWN");
