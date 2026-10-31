@@ -202,7 +202,21 @@ try{
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
  assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
    "The first card must not show a blank cinematic or a rating-4 painting");
- // The prayer begins directly when no final-approved reproduction exists.
+ // Claude's original hour cover is an explicit, nonautomatic opening,
+ // with no invented painting or observed bell sound. Begin reveals the
+ // source-owned announcement without altering chapter/card position.
+ const opening=page.locator("#aoPray435930 [data-ao-horarium-intro]");
+ assert.equal(await opening.count(),1,"Claude's Horarium opening plate is missing");
+ assert.equal(await page.locator("#aoPray435930 .aoClaudeHorariumPlate").count(),1);
+ assert.match(await opening.innerText(),/Angelus|Angélus/i);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1);
+ await page.screenshot({path:resolve(captures,"09-angelus-claude-hour-opening-390.png"),
+  fullPage:false,animations:"disabled"});
+ await page.locator("#aoPray435930 [data-p435930-angelus-begin]").click();
+ assert.equal(await opening.evaluate(el=>el.hidden),true,
+  "Begin must remove only the opening artwork placeholder");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1,
+  "Begin must not advance or replace the canonical source card");
  // Incarnation still receives its source-owned full posture cinematic.
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),5);
