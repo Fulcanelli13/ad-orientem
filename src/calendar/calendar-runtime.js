@@ -1388,6 +1388,7 @@ function calendarSanctuaryCss(){return `
 .aoTodayH4 #ao-calendar-modular-root .aoClockYearNav{border:none!important;border-radius:0!important}
 .aoTodayH4 #ao-calendar-modular-root .aoClockDial{width:100%!important;max-width:min(500px,calc(100vw - 40px))!important}
 .aoTodayH4 #ao-calendar-modular-root .aoClockUpcoming button{border:0!important;border-bottom:1px solid var(--sanctuary-rule)!important;border-radius:0!important;background:transparent!important}
+@media(max-width:430px){.aoTodayH4 #ao-calendar-modular-root[data-ao-calendar-embedded="true"] .aoCalModBody{padding:4px 10px 50px!important}}
 @media(max-width:359px){.aoTodayH4 #ao-calendar-modular-root[data-ao-calendar-embedded="true"] .aoCalModBody{padding:2px 10px 45px!important}.aoTodayH4 #ao-calendar-modular-root .aoCalV2MonthGrid button{height:56px!important;min-height:56px!important;padding:4px 2px!important}.aoTodayH4 #ao-calendar-modular-root .aoCalMonthName{font-size:10px!important;-webkit-line-clamp:2!important}}
 `;}
 function css(){
