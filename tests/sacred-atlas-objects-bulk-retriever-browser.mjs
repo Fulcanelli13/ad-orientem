@@ -56,7 +56,7 @@ try{
    save();render();
   });
   await page.route("https://upload.wikimedia.org/**",route=>route.fulfill({
-    status:200,contentType:"image/png",
+    status:200,contentType:"image/png",headers:{"Access-Control-Allow-Origin":"*"},
     body:Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/v40AAAAASUVORK5CYII=","base64")
   }));
   await page.locator("#contact").fill("testing@example.com");
