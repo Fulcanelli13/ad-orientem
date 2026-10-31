@@ -14,7 +14,7 @@ Audit date: 2026-10-31. Scope: research branch of PR #2121 only. **No production
 
 Previews of the exact Commons source pages were visually inspected for Stations I, II, III, V, VI, IX, X, XII. They depict the numbered painted scenes and no substantial ornamental frames are apparent at preview size. **This is limited preview evidence**: it does not verify pixel-level crop boundaries, colour casts, sharpness at mobile size, or exact archived WebP appearance. The other six archived derivatives were not visually examined here.
 
-| Station | Scene | Original image (px) | Source preview | Archive WebP visual QA | Publication |
+| Station | Scene | Archived derivative dimensions (px) | Source preview | Archive WebP visual QA | Publication |
 |---|---|---:|---|---|---|
 | I | Jesus condemned to death | 1920 × 2142 | [Sampled](https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_I_-_Jesus_is_sentenced_to_death_by_Giandomenico_Tiepolo.jpg) | Pending | Hold: CC BY-SA / approval |
 | II | Jesus takes up the Cross | 1920 × 2133 | [Sampled](https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_II_-_Jesus_carries_his_cross_by_Giandomenico_Tiepolo.jpg) | Pending | Hold: CC BY-SA / approval |
