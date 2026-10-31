@@ -1,0 +1,187 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B47_FINAL_MATRIMONY_SOURCE_PARITY_V1",
+  "asOf": "2026-11-01",
+  "status": "ADDITIVE_RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "continuity": {
+    "baseline": "21 October consolidated packet: 68 family contexts, 65 improved, 130 bilingual answer units, 64 complete packets awaiting human certification; one historical Chanoine English-source hold",
+    "previous": "B42-B44 P711-766; B45 P767-816; B46 P817-846; six B41 proposals found redundant and excluded",
+    "scope": "Only nine existing bilingual families P847-855 from batch14 part D, checked against Italian Q847-855; no newly invented canonical IDs",
+    "branch": "prototype/pius-x-standalone-study-20261021",
+    "sourceDraft": "data/learn/research/pius-x-batch14-sacraments-d-20261020.v1.json",
+    "previousLedger": "data/learn/research/pius-x-unattended-b46-batch14-orders-marriage-source-parity-20261031.v1.json"
+  },
+  "coverage": {
+    "distinctExistingFamiliesChecked": 9,
+    "bilingualOpeningFollowupPairsChecked": 9,
+    "substantiveProposedCorrections": 5,
+    "attributionOnlyRepairs": 1,
+    "retainWithoutRewrite": 3,
+    "newCanonicalIds": 0,
+    "humanCertifications": 0
+  },
+  "sources": [
+    {
+      "id": "PX1905",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Italian Q847-855, section Matrimony / Conditions and impediments",
+      "classification": "Original-language online transcription of historical catechism; printed 1905 original not collated; not an autograph or direct personal speech of Pius X"
+    },
+    {
+      "id": "CIC1983-1073-1082",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann1073-1082_fr.html",
+      "loci": "canons 1073, 1075, 1078",
+      "classification": "Later canonical cross-reference, French official text; not 1905"
+    },
+    {
+      "id": "CIC1983-1055-1062",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann1055-1062_fr.html",
+      "loci": "canons 1055-1060",
+      "classification": "Later canonical cross-reference, French official text; not 1905"
+    },
+    {
+      "id": "CIC1983-1108-1123",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann1108-1123_fr.html",
+      "loci": "canons 1108,1116,1117,1127 cross-reference where applicable",
+      "classification": "Later canonical cross-reference; 1127 located in adjacent section, not claimed in linked page"
+    },
+    {
+      "id": "CIC1983-1151-1155",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann1151-1155_fr.html",
+      "loci": "canons 1153-1154",
+      "classification": "Later safety/separation norm, not historical speech"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "SPX-1905-M-848",
+      "kind": "SUBSTANTIVE_OBLIGATION_OMITTED",
+      "sourceLoci": [
+        "PX1905-Q848"
+      ],
+      "existingIssue": "Opening discusses the purpose of marriage banns but omits Q848's explicit obligation for faithful to report known impediments to ecclesiastical authority.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism says that the faithful must disclose matrimonial impediments they know of to ecclesiastical authority. It connects that obligation with the parish publication of marriage banns, which helps uncover impediments before a wedding. This describes its historical discipline; any actual concern should be handled discreetly through competent Church authority.",
+        "fr": "Le Catéchisme de 1905 enseigne que les fidèles doivent signaler à l'autorité ecclésiastique les empêchements matrimoniaux dont ils ont connaissance. Il rattache cette obligation à la publication des bans par les curés, afin de découvrir les empêchements avant les noces. Il s'agit de sa discipline historique ; toute difficulté concrète doit être traitée discrètement auprès de l'autorité ecclésiastique compétente."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_PLUS_EDITORIAL_PRIVACY_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_CANONICAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-M-849",
+      "kind": "SUBSTANTIVE_DISPENSATION_SCOPE",
+      "sourceLoci": [
+        "PX1905-Q849"
+      ],
+      "existingIssue": "Current wording could imply the Church may dispense from every impediment, whereas the Italian explicitly limits the stated power to dispense to impediments the Church herself established.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism assigns the Church authority to establish matrimonial impediments and judge the validity of Christian marriages; it specifies that the Church can dispense from the impediments she herself has established. This is not a claim that divine-law impediments can be dispensed from. The competent authority and present legal categories must be checked under applicable canon law.",
+        "fr": "Le Catéchisme de 1905 attribue à l'Église le pouvoir d'établir des empêchements matrimoniaux et de juger de la validité du mariage chrétien ; il précise qu'elle peut dispenser des empêchements qu'elle a elle-même établis. Cela ne signifie pas qu'elle puisse dispenser des empêchements de droit divin. Il faut vérifier l'autorité compétente et les catégories juridiques actuelles selon le droit canonique applicable."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_PLUS_LATER_CANONICAL_SCOPE",
+      "laterLoci": [
+        "CIC1983-1075",
+        "CIC1983-1078"
+      ],
+      "gate": "READY_FOR_HUMAN_CANONICAL_TRANSLATION_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-M-853",
+      "kind": "SUBSTANTIVE_HISTORICAL_VERDICT_OMITTED",
+      "sourceLoci": [
+        "PX1905-Q853"
+      ],
+      "existingIssue": "Draft reports civil-only marriage failing the prescribed ecclesiastical form but omits the 1905 text's categorical conclusion that a civil-only contract is not a sacrament and is not true marriage, as formulated in that catechism. Must avoid applying this universally to non-Catholic Christians or exceptional forms.",
+      "proposedOpening": {
+        "en": "In its 1905 Catholic disciplinary framework, the Catechism says a civil contract alone is not the sacrament of Matrimony and does not constitute the true Christian marriage it requires. This reproduces its historical general formulation, not a judgment about the validity of a particular couple's union; baptism, Church membership, canonical form and any exceptions or dispensations must be examined by competent authority.",
+        "fr": "Dans le cadre disciplinaire catholique de 1905, le Catéchisme affirme que le seul contrat civil n'est pas le sacrement de Mariage et ne constitue pas le véritable mariage chrétien qu'il exige. Cette formulation générale historique ne juge pas la validité de l'union d'un couple particulier : le baptême, l'appartenance ecclésiale, la forme canonique et les éventuelles exceptions ou dispenses doivent être examinés par l'autorité compétente."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_WITH_EXPLICIT_CANONICAL_NON_GENERALIZATION",
+      "laterLoci": [
+        "CIC1983-1055",
+        "CIC1983-1108",
+        "CIC1983-1116"
+      ],
+      "gate": "READY_FOR_HUMAN_CANONICAL_DOCTRINAL_PASTORAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-M-854",
+      "kind": "SUBSTANTIVE_SEVERITY_OMITTED",
+      "sourceLoci": [
+        "PX1905-Q854"
+      ],
+      "existingIssue": "Current draft vaguely says 'severe moral language' but suppresses Q854's express 'continuous mortal sin' and illegitimacy formulation. A historically faithful paraphrase must separate the text's categorical period statement from any individual moral or canonical assessment.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism describes Catholic spouses living together with only a civil marriage, where the required ecclesiastical marriage is absent, as being in a continuing state of mortal sin and their union as illegitimate before God and the Church. That is the catechism's historical general language, not an app's finding of personal mortal culpability or a determination of any particular marriage's validity. Such judgments require examination of the relevant facts, law, knowledge and freedom.",
+        "fr": "Le Catéchisme de 1905 décrit les époux catholiques vivant ensemble avec le seul mariage civil, sans le mariage ecclésiastique alors requis, comme étant dans un état continu de péché mortel et leur union comme illégitime devant Dieu et l'Église. C'est le langage général historique du Catéchisme, non un jugement automatisé de culpabilité mortelle personnelle ni une décision sur la validité d'un mariage particulier. Il faut examiner les faits, le droit applicable, la connaissance et la liberté."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_PLUS_EDITORIAL_INDIVIDUAL_CULPABILITY_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_CANONICAL_PASTORAL_SAFEGUARD_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-M-855",
+      "kind": "SUBSTANTIVE_CIVIL_ACTS_SEQUENCE_OMITTED",
+      "sourceLoci": [
+        "PX1905-Q855"
+      ],
+      "existingIssue": "Draft mentions coordination with civil acts but omits original's specific general rule that ecclesiastical authority would not permit religious marriage unless civil-law formalities had at least been initiated.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism also requires attention to civil marriage formalities because they protect the legal rights of spouses and children. It says that, as a general rule at that time, ecclesiastical authority did not permit a religious marriage unless the civil-law procedures had already been begun. This describes the period's discipline; current sequencing depends on the law and ecclesiastical requirements of the place.",
+        "fr": "Le Catéchisme de 1905 demande aussi de tenir compte des formalités du mariage civil, qui protègent les droits juridiques des époux et des enfants. Il précise qu'en règle générale, à cette époque, l'autorité ecclésiastique ne permettait pas le mariage religieux tant que les démarches prévues par la loi civile n'avaient pas été commencées. C'est une discipline historique ; l'ordre actuel des démarches dépend du droit civil et des exigences ecclésiastiques du lieu."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_PLUS_EDITORIAL_PERIOD_SCOPE",
+      "laterLoci": [
+        "CIC1983-1059"
+      ],
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_LEGAL_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "attributionOnly": [
+    {
+      "id": "SPX-1905-M-851",
+      "kind": "LATER_SAFETY_REFERENCE_ONLY",
+      "issue": "Current answer's statement that civil divorce doctrine does not bar legal protection is a later pastoral/canonical safeguard, not a direct paraphrase of Q851.",
+      "proposed": {
+        "en": "Retain the original answer. Attribute its legal-protection qualification explicitly to later canon-law safeguarding context (1983 CIC canons 1153-1154), not to the 1905 question.",
+        "fr": "Conserver la réponse actuelle. Attribuer expressément sa précision sur la protection juridique au contexte canonique postérieur (CIC de 1983, canons 1153-1154), non à la question de 1905."
+      },
+      "sourceLoci": [
+        "PX1905-Q851",
+        "CIC1983-1153",
+        "CIC1983-1154"
+      ],
+      "gate": "READY_FOR_HUMAN_ATTRIBUTION_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "retainedWithoutRewrite": [
+    "SPX-1905-M-847",
+    "SPX-1905-M-850",
+    "SPX-1905-M-852"
+  ],
+  "chanoine": {
+    "newProposals": 0,
+    "originalEnglishWitness": "STILL_BLOCKED_NO_TEXT_RECONSTRUCTION",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ],
+    "persona": "Distinct fictional Chanoine persona; no historic Pius X verbatim speech attributed to Chanoine",
+    "latestChanoinePacket": "B39 reported in prior verified checkpoint; not independently retrieved in this pass"
+  },
+  "nextQueue": [
+    "Human doctrinal/canonical/translation review of B47 five proposed substantive openings and one attribution-only repair, without changing existing canonical drafts",
+    "Consolidate B43-B47 source-fidelity deltas; exclude six B41 proposals proven redundant",
+    "Check whether a later source-indexed catechism part contains Q856 onward; Q855 ends the sacrament part; do not invent IDs or texts",
+    "Collate online Italian transcription against printed 1905 facsimile before claiming verbatim original-source certification",
+    "Leave inaccessible original English Chanoine witness and CSE142-143 specialist cases blocked",
+    "No deployment, routing, certification or publication without human signoff"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "doctrinalApproved": false,
+    "personaVoiceApproved": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}
