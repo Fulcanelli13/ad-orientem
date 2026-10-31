@@ -95,7 +95,7 @@ assert.ok(artBriefs.sourceReferences.some(x=>x.id==="MR62_RITUS"&&
  x.role==="primary-normative"&&x.url.startsWith("https://")));
 const approveByCue=new Map(votes.items.map(x=>["AO.SM."+x.cueId,x.decision]));
 for(const brief of artBriefs.briefs){
- assert.ok(/^AO\\.SM\\.C\\d{4}$/.test(brief.cueId),brief.cueId);
+ assert.ok(/^AO\.SM\.C\d{4}$/.test(brief.cueId),brief.cueId);
  assert.ok(brief.section.startsWith("Ritus servandus "),brief.cueId);
  assert.ok(brief.requiredPose.length>=4&&brief.forbidden.length>=3,
   "Artwork needs positive and negative rubrical geometry: "+brief.cueId);
