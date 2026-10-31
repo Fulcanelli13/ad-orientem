@@ -7,7 +7,8 @@ import {resolveAspergesRiteContext,resolveAspergesFormula}
  from "../src/mass/reader-asperges.js";
 import {auditM05GabcRecord} from "../src/mass/reader-music-gabc-source-screen.js";
 import {resolveOrdinaryMassNotationHandoff,resolveNativeAspersionNotationHandoff,
- buildOfflineNotationResearchPayload,approvedMassNotationForLive}
+ buildOfflineNotationResearchPayload,openOfflineResearchScoreInExistingViewer,
+ approvedMassNotationForLive}
  from "../src/mass/reader-music-notation-handoff.js";
 
 const file=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
@@ -150,6 +151,29 @@ for(const preview of [solemn,ferial,collect,pater,ordinary,easter,ite]){
  }),null,"A research-only caller may never authorize a live score");
  if(source)assert.equal(source.sourceScreen.scoreRelease,"BLOCKED");
 }
+// The editorial-only adapter must pass the EXACT original viewer.open(score)
+// contract, but must not render a source outside a deliberate review session.
+const observed=[];
+const existingViewer={open:async (score,{trigger})=>{
+ observed.push({score,trigger});return true;
+}};
+const opened=await openOfflineResearchScoreInExistingViewer({
+ viewer:existingViewer,handoff:solemn,...screened("PREFACE_SOLEMN"),
+ editorialReview:true,trigger:"explicit-editor-click"
+});
+assert.equal(opened,true);
+assert.equal(observed.length,1);
+assert.equal(observed[0].score.scoreId,"GREGOBASE-4449");
+assert.equal(observed[0].trigger,"explicit-editor-click");
+assert.equal(await openOfflineResearchScoreInExistingViewer({
+ viewer:existingViewer,handoff:solemn,...screened("PREFACE_SOLEMN"),
+ editorialReview:false
+}),false);
+assert.equal(await openOfflineResearchScoreInExistingViewer({
+ viewer:existingViewer,handoff:passion,...screened("ASPERGES_NORMAL"),
+ editorialReview:true
+}),false);
+assert.equal(observed.length,1);
 // This source model DOES NOT fork the offline renderer: it passes the exact
 // data object shape expected by PR #2111's existing viewer.open(score).
 const contents=readFileSync(new URL("../src/mass/reader-music-notation-handoff.js",import.meta.url),"utf8");
