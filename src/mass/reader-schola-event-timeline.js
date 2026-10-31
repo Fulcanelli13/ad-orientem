@@ -1,6 +1,7 @@
 import {resolve1962OrganPermission} from "./reader-rite-music-authority.js";
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 import {sourceMusicMaterialGate} from "./reader-music-material-gate.js";
+import {projectMassSungDialogue} from "./reader-mass-sung-dialogue-pairs.js";
 // Source-first, read-only Schola event itinerary for the existing curated
 // LIVE Mass cards. Musical windows are not evidence of observed singing.
 // Source blocks and exact curated IDs, never historical numeric card slots,
@@ -231,6 +232,11 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
    ordinal:rank+1,card:asCard(chosen.card),cardIndex:chosen.index,
    sourceRef:spec.afterBlock??spec.at.block??spec.at.section,
    sourcePrecision:spec.precision??(spec.at.block?"SOURCE_BLOCK":"SOURCE_SECTION"),
+   // Reuse the original priest/minister + response source cue pairs.
+   // This is NOT notation, a tone choice or a report of heard singing.
+   sungDialogue:projectMassSungDialogue({
+     eventId:spec.id,form:selected,resolvedMass,massPlan,
+   }),
    // A chant/text cue is not proof of an approved melody or recording.
    musicMaterial:sourceMusicMaterialGate({
      eventId:spec.id,kind:spec.kind,
