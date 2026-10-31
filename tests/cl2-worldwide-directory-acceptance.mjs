@@ -34,10 +34,10 @@ assert.equal(diocesanQuality.counts.cl2_source_labelled_diocesan,584);
 assert.equal(diocesanQuality.counts.additional_b91_diocesan,3);
 assert.equal(diocesanQuality.counts.mapped,583);
 assert.equal(diocesanQuality.counts.missing,4);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,525);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,55);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,523);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,57);
 assert.equal(diocesanQuality.counts.by_coordinate_origin.B91_PUBLISHED_PROVISIONAL,3);
-assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,457);
+assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,455);
 const diocesanQualityByGroup=new Map(diocesanQuality.records.map(r=>[r.physical_group_id,r]));
 const blockedCoords=read("data/directory/research/diocesan-coordinate-blockers-20261031.v1.json");
 assert.equal(blockedCoords.items.length,4);
@@ -66,9 +66,9 @@ for(const row of diocesanQuality.records){
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:14,corrected_existing_site_pins:3});
-assert.equal(photoPins.pins.length,84);
-assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,84);
+assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:3});
+assert.equal(photoPins.pins.length,86);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,86);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
  assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
@@ -86,6 +86,8 @@ for(const [group,sourceId,lat,lng,ref,street] of [
  ["RG-368B7B3B5FA3","V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",44.95972,-93.12333,"nrhp:80002125","535 Thomas Avenue West"],
  ["RG-46B891B2CE6E","AO-AMER-R26-US-03-08",30.22659,-93.21666,"nrhp:94001201","935 Bilbo Street"],
  ["RG-48A5CF9C3C73","AO-AMER-R26-US-03-06",42.50094,-96.4069,"osm:node:354389830","1003 Douglas Street"],
+ ["RG-130C766CB4B6","AO-EUR-GB-011",52.954638,-1.1571735,"historicengland:1247533","Derby Road"],
+ ["RG-1484AB15A7A1","AO-AMER-R27-US-06-18",35.7775,-78.67016,"osm:way:553750193","715 Nazareth Street"],
 ]){
  const item=world.find(x=>x.physical_group_id===group);
  assert.ok(item,"Required corrected diocesan church building");
