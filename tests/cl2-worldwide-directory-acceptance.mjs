@@ -42,15 +42,15 @@ assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-lis
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Two exact-name, exact-site independent OSM building matches can be shown
-// provisionally while *Mass usage and precise entrances remain unverified*.
+// Ten separately reviewed physical site or address references may be shown
+// provisionally. A site marker does NOT verify a Mass or precise entrance.
 for(const [group,id,name,lat,lng,osm,precision="site"] of [
  ["RG-03C2AD02BC81","AO-B50-SSPV-US-FC03F5009C8",
   "Immaculate Heart of Mary Church",47.5244,-111.27331,"osm:node:9251507643","site"],
  ["RG-0611CE5E7367","AO-B51-FR-782F8A2B2031",
   "Monastère Saint-Benoît",43.41996,6.12229,"osm:node:12702212301","site"],
  ["RG-02EBA275AC72","AO-B50-CMRI-US-C169C047AC2",
-  "Most Holy Rosary Church",42.71278,-85.46250,"usgs:gnis:2572564","site"],
+  "Most Holy Rosary Church",42.71278,-85.46250,"usgs:gnis:2572764","site"],
  ["RG-03AE4CE86D2B","AO-B56-US-5EF870DC7969",
   "Blessed Sacrament Church — Martinez",38.016898,-122.130969,
   "churcheslist:blessed-sacrament-church-45","address"],
