@@ -1,0 +1,176 @@
+{
+  "schema": "AO_STATIONS_ARTISTIC_AND_PD_CC0_SOURCE_RESEARCH_V1",
+  "date": "2026-10-31",
+  "purpose": "Source-qualified, user-not-yet-approved shortlisting after explicit Lybaert rejection; protect exact scene, artistic taste and zero-cost PD/CC0 gates.",
+  "masterWorkbook": "Ad_Orientem_Art_Matching_Map_2026-10-31_Baroque_Source_Review.xlsx",
+  "baseline": {
+    "totalEditorialSlots": 267,
+    "editorialMapped": 200,
+    "editorialUnmapped": 67,
+    "stationsStillUnmapped": 6,
+    "artworksNewlyApproved": 0,
+    "newImageFilesProductionCleared": 0
+  },
+  "constraints": {
+    "hardRejectedArtists": [
+      "Théophile Lybaert",
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "hardRejectedWorkFamilies": [
+      "Théophile Lybaert — entire Stations cycle"
+    ],
+    "avoidMuseums": [
+      "Museo Nacional del Prado"
+    ],
+    "stylisticPreference": "High-quality, contemplative dark oil painting, especially Baroque chiaroscuro, not generic cycle coverage",
+    "originalFileRightsAllowed": [
+      "CC0",
+      "PUBLIC_DOMAIN"
+    ],
+    "costEUR": 0,
+    "framedPhotosNotAcceptable": true,
+    "sourceProofIsNotEditorialApproval": true
+  },
+  "slots": [
+    {
+      "slot": "STG-pray.stations-03",
+      "station": "III",
+      "scene": "First fall",
+      "status": "UNMAPPED",
+      "newSuitableOilArt": "NOT_ESTABLISHED",
+      "reason": "A generic Road to Calvary or unnumbered falling scene cannot be presented as a distinctly numbered first fall without approval; avoid duplicate images on adjacent stations."
+    },
+    {
+      "slot": "STG-pray.stations-07",
+      "station": "VII",
+      "scene": "Second fall",
+      "status": "UNMAPPED",
+      "newSuitableOilArt": "NOT_ESTABLISHED",
+      "reason": "Tiepolo 1748 exact etching exists but is not a user-approved oil painting; no dark oil painting with exact photographic rights established."
+    },
+    {
+      "slot": "STG-pray.stations-08",
+      "station": "VIII",
+      "scene": "Women of Jerusalem",
+      "status": "UNMAPPED",
+      "newSuitableOilArt": "NOT_ESTABLISHED",
+      "reason": "Exact encounter is required; generic Mater Dolorosa or women at the Cross not interchangeable."
+    },
+    {
+      "slot": "STG-pray.stations-09",
+      "station": "IX",
+      "scene": "Third fall",
+      "status": "UNMAPPED",
+      "newSuitableOilArt": "NOT_ESTABLISHED",
+      "reason": "Numbered third fall must remain distinct from first/second falls; no qualifying dark painting cleared."
+    },
+    {
+      "slot": "STG-pray.stations-10",
+      "station": "X",
+      "scene": "Christ stripped of garments",
+      "status": "RIGHTS_BLOCKED_SOURCE_FOUND",
+      "newSuitableOilArt": "NO_QUALIFYING_FREE_PHOTO",
+      "blockedWork": {
+        "artist": "Simone Barabino",
+        "name": "Christ Stripped of His Garments",
+        "date": "circa 1615–1620",
+        "medium": "Oil on canvas",
+        "collection": "Galleria Rizzi, Sestri Levante",
+        "workIdentitySource": "https://catalogo.fondazionezeri.unibo.it/entry/work/47632/Barabino%20Simone%2C%20Cristo%20spogliato%20delle%20sue%20vesti",
+        "commercialPhotoSource": "https://www.bridgemanimages.com/en/barabino-simone/christ-stripped-of-his-garments-oil-on-canvas-c-1615/painting/asset/4692096",
+        "photoPhotographer": "Luisa Ricciarini",
+        "price": "PAID_RIGHTS_AGENCY_PHOTO",
+        "photoFileUsable": false,
+        "notForApprovalShortlistUntilFreeImageLocated": true
+      },
+      "reason": "Art subject appears correct but only researched high-resolution photographic file is commercially licensed, contrary to €0 PD/CC0 policy."
+    },
+    {
+      "slot": "STG-pray.stations-11",
+      "station": "XI",
+      "scene": "Christ nailed to Cross",
+      "status": "EDITORIAL_REVIEW_PENDING",
+      "newSuitableOilArt": "EXACT_DARK_DEVOTIONAL_PAINTING",
+      "reviewCandidate": {
+        "artist": "Giovanni Battista Cremonini",
+        "name": "Christ Nailed to the Cross (recto)",
+        "date": "circa 1595",
+        "medium": "Oil on slate",
+        "collection": "Los Angeles County Museum of Art",
+        "accession": "M.2011.76a-b",
+        "objectSource": "https://collections.lacma.org/object/161458",
+        "sceneEvidence": "https://www.slam.org/accessibility/paintings-on-stone-science-and-the-sacred-1530-1800/",
+        "imageSource": "https://commons.wikimedia.org/wiki/File:'Christ_Nailed_to_the_Cross'_by_Giovanni_Battista_Cremonini,_LACMA.JPG",
+        "sourcePhotographer": "Commons uploader: Wmpearl, source marked Own work",
+        "nativeWidth": 2324,
+        "nativeHeight": 3212,
+        "photoFileSizeBytes": 865574,
+        "imageRights": "WIKIMEDIA_PUBLIC_DOMAIN_MARK_1_0; other jurisdiction caveat remains",
+        "directSceneMatch": "Nailing on ground, hammer, executioners, before elevation of Cross",
+        "artisticFit": "DARK_PALETTE_PLAUSIBLE_TO_USER_PREFERENCE_NOT_USER_APPROVED",
+        "frameFreePreview": "VISIBLE_CROP_APPEARS_TO_EXCLUDE_FRAME; UNCONFIRMED_NATIVE_QA",
+        "nativeChecksum": "NOT_COMPUTED",
+        "approval": "NOT_USER_APPROVED",
+        "photoQualityQA": "NOT_CLEARED",
+        "rightsJurisdictionQA": "NOT_CLEARED",
+        "publicationReady": false,
+        "assetUrl": null
+      },
+      "reason": "Exact moment, dark tonal treatment, original historical work and public-domain-marked Commons photograph; all editorial/native-image/worldwide-rights gates remain open."
+    }
+  ],
+  "otherReviewedSources": [
+    {
+      "work": "Antoon van den Heuvel — The Road to Calvary",
+      "museum": "Museum of Fine Arts Ghent",
+      "museumURL": "https://www.mskgent.be/en/collection/1935-bi",
+      "IIIF": "https://imagehub.mskgent.be/iiif/3/1384/manifest.json",
+      "rightsBasis": "MUSEUM_LABEL_PUBLIC_DOMAIN",
+      "sourceScene": "Christ collapsing, Simon and Veronica appear within a multi-event scene",
+      "action": "RETAIN_RESEARCH_ONLY",
+      "reason": "Not distinctively the first, second, or third numbered fall. No claim of exact Station assignment or user approval."
+    },
+    {
+      "work": "Gerard David — Christ Nailed to the Cross",
+      "museum": "National Gallery London",
+      "museumURL": "https://www.nationalgallery.org.uk/paintings/gerard-david-christ-nailed-to-the-cross",
+      "action": "REFERENCE_NOT_SHORTLISTED",
+      "reason": "Exact nailing scene but noticeably earlier, brighter Renaissance treatment than established dark Baroque preference; new image usage permissions not asserted."
+    }
+  ],
+  "preexistingApprovedSourceVerification": {
+    "slot": "STG-pray.stations-05",
+    "work": "Domenichino — The Way to Calvary",
+    "GettyAccession": "83.PC.373",
+    "museumURL": "https://www.getty.edu/art/collection/object/103RFK",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary,_c._1610_(Getty_Center).jpg",
+    "GettyLegal": "https://www.getty.edu/projects/open-content-program/faqs/",
+    "sceneEvidence": "https://artsandculture.google.com/asset/the-way-to-calvary-domenichino-domenico-zampieri/xgHg-b7no0EifA?hl=en",
+    "metadata": {
+      "width": 8797,
+      "height": 7032,
+      "fileSizeBytes": 21912969,
+      "format": "JPEG",
+      "GettyOpenContentRights": "CC0 confirmed as Getty programme for published eligible files",
+      "commonsPhotoRights": "Public Domain Mark 1.0 (faithful public-domain reproduction)"
+    },
+    "imageAvailableOnSource": true,
+    "nativeBytesFetchedIntoAppRepo": false,
+    "nativeVisualCroppingValidated": false,
+    "nativeSHA256": null,
+    "layoutScreenshotQA": false,
+    "productionReady": false,
+    "notes": "No false claim of photo-native colour/crop QA merely from metadata, preview, or the general Getty CC0 programme. Earlier user painting approval is already valid and unchanged."
+  },
+  "tally": {
+    "currentlyUnmappedStations": 6,
+    "sourceIdentitiesForThose": 2,
+    "viableExactSubjectPaintingForReview": 1,
+    "paidSourceExcluded": 1,
+    "remainingStationsWithoutQualifyingArtSource": 5,
+    "stationsApprovedInThisPass": 0,
+    "freePhotoFilesCertifiedInThisPass": 0,
+    "editorialCoverageChange": 0
+  }
+}
