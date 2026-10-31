@@ -43,6 +43,42 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-2447873BB8F5":Object.freeze({
+  sourceId:"AO-B41-LOC-IT-8584201FAF73",
+  name:"Seminario Internazionale San Filippo Neri",
+  country:"IT",addressNeedle:"Via di Gricigliano 52",
+  placeId:"place:IT:seminario-san-filippo-neri-sieci",
+  lat:43.8033638,lng:11.3799351,sourceRef:"osm:way:848071308",
+  sourceUrl:"https://www.openstreetmap.org/way/848071308",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W848071308",
+   "https://www.icrsp.org/Publicationsbis/Publications-italiennes/Bollettino68.pdf",
+  ]),
+ }),
+ "RG-54863B401267":Object.freeze({
+  sourceId:"AO-B40-LOC-BE-7CC60D5F039A",
+  name:"Chapelle Sainte-Rita",country:"BE",
+  addressNeedle:"Rue de la Savatte 10",
+  placeId:"place:BE:chapelle-sainte-rita-brasmenil",
+  lat:50.5357494,lng:3.5450717,sourceRef:"osm:way:962673284",
+  sourceUrl:"https://www.openstreetmap.org/way/962673284",
+  evidence:Object.freeze([
+   "https://icrspfrance.fr/?org=11499",
+   "https://streets.openalfa.be/streets/rue-de-la-savatte-brasmenil-peruwelz",
+  ]),
+ }),
+ "RG-B65-EF400B6F8E93":Object.freeze({
+  sourceId:"AO-RSCH-B65-EF400B6F8E93",
+  name:"Franziskanerkirche",country:"DE",
+  addressNeedle:"An den Neißewiesen 91",
+  placeId:"place:DE:franziskanerkirche-goerlitz-weinhuebel",
+  lat:51.1252861,lng:14.9862707,sourceRef:"osm:way:139932554",
+  sourceUrl:"https://www.openstreetmap.org/way/139932554",
+  evidence:Object.freeze([
+   "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+   "https://www.fssp.org/en/find-us/where-are-we/",
+  ]),
+ }),
  "RG-B65-AFB4955D79E8":Object.freeze({
   sourceId:"AO-RSCH-B65-AFB4955D79E8",name:"Kerzenkapelle",
   country:"DE",addressNeedle:"Kapellenplatz",placeId:"place:DE:kevelaer-kerzenkapelle",
