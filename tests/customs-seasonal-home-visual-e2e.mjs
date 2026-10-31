@@ -92,10 +92,17 @@ try{
       "Home Customs must derive its title from the same published Calendar owner");
     assert.equal(await page.locator(".homeScreen .aoTodayV2CustomSpotlight").count(),0,
       "Do not reintroduce retired expanded Customs panel into approved H4");
+    // H4 "This week" is an intentionally horizontal, scroll-snap carousel.
+    // Bring the selected tradition fully into its scrollport before testing
+    // horizontal clipping; a partly offscreen carousel item is not a page overflow.
+    await custom.scrollIntoViewIfNeeded();
     const bounds=await custom.evaluate(el=>{
       const b=el.getBoundingClientRect();
       return {left:b.left,right:b.right,width:b.width,viewport:innerWidth,
        docWidth:document.documentElement.scrollWidth,
+       scrollable:el.parentElement?.scrollWidth>el.parentElement?.clientWidth,
+       parentLeft:el.parentElement?.getBoundingClientRect().left,
+       parentRight:el.parentElement?.getBoundingClientRect().right,
        title:el.querySelector("strong")?.textContent?.trim()||"",
        caption:el.querySelector("small")?.textContent?.trim()||""};
     });
