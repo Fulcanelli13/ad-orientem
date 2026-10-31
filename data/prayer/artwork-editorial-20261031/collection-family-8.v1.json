@@ -9,7 +9,9 @@
     "slots": 22,
     "originalSourceEdges": 148,
     "deduplicatedReviewOptions": 133,
-    "excludedDoNotSuggest": 12
+    "excludedDoNotSuggest": 12,
+    "sourceLinksRecoveredByExactID": 19,
+    "sourceLinkSuggestionsUnverified": 0
   },
   "slots": [
     {
@@ -86,14 +88,22 @@
           ],
           "artist": "Guido Reni",
           "title": "Archangel Michael Defeating Satan",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -101,14 +111,22 @@
           ],
           "artist": "Ignacio de Ries",
           "title": "Saint Michael the Archangel",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437729"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -930,14 +948,22 @@
           ],
           "artist": "Workshop of Peter Paul Rubens",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:34140055"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -945,14 +971,22 @@
           ],
           "artist": "Anton Kern",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:28933083"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -960,14 +994,22 @@
           ],
           "artist": "Denys Calvaert",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:115220164"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -975,14 +1017,22 @@
           ],
           "artist": "Jean-Baptiste de Faudran",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:56890177"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1080,14 +1130,22 @@
           ],
           "artist": "Matthias Stom",
           "title": "Dutch: De aanbidding van de herders | The Adoration of the Shepherds",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_%E2%80%94_Adoration_of_the_Shepherds.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:153011"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1125,14 +1183,22 @@
           ],
           "artist": "Aertgen van Leyden",
           "title": "French: La Nativité | Nativity \" \"",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:La_Nativit%C3%A9_-_Mus%C3%A9e_du_Louvre_Peintures_RF_2502.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:146550068"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1170,14 +1236,22 @@
           ],
           "artist": "Philippe de Champaigne",
           "title": "The Adoration of the Shepherds",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_Shepherds-Philippe_de_Champaigne-MBA_Lyon_A52-IMG_0394.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:15177097"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1200,14 +1274,22 @@
           ],
           "artist": "Gerard Seghers",
           "title": "The Nativity or the Adoration of the Angels",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:93153411"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -1410,14 +1492,22 @@
           ],
           "artist": "Nicolas Labbé",
           "title": "Presentation of Jesus Christ at the Temple",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Nicolas_Labb%C3%A9-Pr%C3%A9sentation_au_temple.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:41334838"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1496,14 +1586,22 @@
           ],
           "artist": "Giovanni Battista Tiepolo",
           "title": "The Flight into Egypt",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438128",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:438128"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1511,14 +1609,22 @@
           ],
           "artist": "Sebastiano Ricci",
           "title": "The Flight into Egypt",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_026.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:158326"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1526,14 +1632,22 @@
           ],
           "artist": "Giovanni Battista Tiepolo",
           "title": "Tiepolo - The Rest on the Flight into Egypt, ca. 1720",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tiepolo_-_The_Rest_on_the_Flight_into_Egypt%2C_ca._1720.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:81858127"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -1612,14 +1726,22 @@
           ],
           "artist": "Giovanni Battista Tiepolo",
           "title": "The Flight into Egypt",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438128",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:438128"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1754,14 +1876,22 @@
           ],
           "artist": "Guercino",
           "title": "Saint Joseph with the Flowering Rod",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Joseph_with_the_Flowering_Rod.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:77218157"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1770,14 +1900,23 @@
           ],
           "artist": "Philippe de Champaigne",
           "title": "The Dream of Saint Joseph",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+              "PRAYER::joseph--primary"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1905,14 +2044,22 @@
           ],
           "artist": "Guido Reni",
           "title": "Archangel Michael Defeating Satan",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1920,14 +2067,22 @@
           ],
           "artist": "Ignacio de Ries",
           "title": "Saint Michael the Archangel",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437729"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
