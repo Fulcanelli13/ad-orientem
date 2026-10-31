@@ -146,6 +146,20 @@ try{
      atLastPhrase.cue,"Finishing choir track advanced priest cue");
    const sharedAdvance=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title);
    assert.equal(sharedAdvance,"Kyrie","Shared Schola manual correction moved the main Mass card");
+   // A delayed second Benedictus belongs to an explicitly selected
+   // polyphonic local practice. The source-first itinerary must not invent
+   // it for the default UNSPECIFIED or Gregorian setting.
+   const planBeforeRelease=page.locator("[data-schola-local-panel]");
+   await planBeforeRelease.locator("summary").click();
+   await planBeforeRelease.locator("[data-schola-local-sanctus]").selectOption("POLYPHONIC");
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()
+     ?.sanctusPerformance==="POLYPHONIC");
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     ?.events.some(e=>e.id==="BENEDICTUS_AFTER_CHALICE"));
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status),
+     "EXPECTED_NOT_OBSERVED","Selecting polyphony cannot itself prove Benedictus singing");
+   await planBeforeRelease.locator("summary").click();
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const sanctus=api.model.cards.find(card=>card.title==="Sanctus");
