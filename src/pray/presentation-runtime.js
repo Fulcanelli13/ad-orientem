@@ -655,11 +655,10 @@ function prayerBlock(id,opts={}){
    ).join('');
   };
   return '<article class="aoP435930Prayer aoP435930HoursLeonine" data-ao-hours-family="leonine">'+
-   languageNotice+'<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div></div>'+
-   (hasLatin?'<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Switch prayer language','Changer la langue de la prière'))+'">'+
-    '<span data-face-v class="aoP435930SemanticFace" data-ao-pray-semantic="1">'+markup(chosen)+'</span>'+
-    '<span data-face-la class="aoP435930SemanticFace" data-ao-pray-semantic="1" hidden>'+markup('la')+'</span></button>'
-    :'<div class="aoP435930Text aoP435930SemanticFace" data-ao-pray-semantic="1">'+markup(chosen)+'</div>')+
+   languageNotice+'<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
+   (hasLatin?'<button type="button" class="aoHoursLeonineLang" data-p435930-hours-flip aria-pressed="false" aria-label="'+esc(L('Read in Latin','Lire en latin'))+'">Latin</button>':'')+'</div>'+
+   '<div class="aoHoursLeonineFaces"><div data-face-v lang="'+chosen+'">'+markup(chosen)+'</div>'+
+   (hasLatin?'<div data-face-la lang="la" hidden>'+markup('la')+'</div>':'')+'</div>'+
    originCapsule+sourceLine(p)+'</article>';
  }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
@@ -3507,6 +3506,25 @@ function onClick(e){
  if(b.dataset.p435930External){
   e.preventDefault?.();
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
+  return;
+ }
+ if(b.matches('[data-p435930-hours-flip]')){
+  const card=b.closest('.aoP435930HoursLeonine');
+  const vern=card?.querySelector('[data-face-v]'),latin=card?.querySelector('[data-face-la]');
+  if(!vern||!latin)return;
+  const before=latin.hidden?vern:latin,after=latin.hidden?latin:vern;
+  const sourceParts=[...before.querySelectorAll('.aoHoursLeonineParagraph')];
+  const active=sourceParts.find(x=>x.dataset.aoDevoActive==='true')||sourceParts[0];
+  const idx=sourceParts.indexOf(active);
+  const oldTop=active?.getBoundingClientRect().top,scroll=card.closest('.aoDevoCardScroll');
+  before.hidden=true;after.hidden=false;
+  const nextParts=[...after.querySelectorAll('.aoHoursLeonineParagraph')];
+  const target=nextParts[Math.min(Math.max(idx,0),nextParts.length-1)];
+  if(scroll&&target&&oldTop!=null)scroll.scrollTop+=target.getBoundingClientRect().top-oldTop;
+  const showingLatin=after===latin;
+  b.textContent=showingLatin?(isFr()?'Français':'English'):'Latin';
+  b.setAttribute('aria-pressed',String(showingLatin));
+  b.setAttribute('aria-label',showingLatin?L('Read in vernacular','Lire en langue vernaculaire'):L('Read in Latin','Lire en latin'));
   return;
  }
  if(b.matches('[data-p435930-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
