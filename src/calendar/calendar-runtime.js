@@ -1547,6 +1547,12 @@ function paint(){
    const previousRubricSourcesOpen=isSameDay?body.querySelector(".aoCalDaySources")?.open===true:false;
   // Preserve an intentionally expanded printing control through the same-day
   // background cache/source re-paints, without leaking it to another date.
+  // Preserve reader-controlled Customs disclosures on same-day source repaint.
+  // These are presentation states and never alter the canonical Customs data.
+  const previousCustomsCatalogueOpen=isSameDay&&body.querySelector(".aoCalCustomCatalogue")?.open===true;
+  const previousCustomsSearch=isSameDay?body.querySelector("[data-cal-custom-search]")?.value||"":"";
+  const expandedCustomArticleIds=isSameDay?[...body.querySelectorAll(".aoCalCustomArticle[open][data-cal-custom-id]")].map(el=>el.dataset.calCustomId):[];
+  const expandedR18ReviewKeys=isSameDay?[...body.querySelectorAll("[data-cal-r18-eleven-key][open]")].map(el=>el.getAttribute("data-cal-r18-eleven-key")):[];
   const previousMonthToolsOpen=calendarView==="picker"&&body.querySelector(".aoCalV2MonthTools")?.open===true;
   const expandedOrdoDates=calendarView==="picker"?[...body.querySelectorAll(".aoCalOrdoEntry[open]")].map(el=>el.dataset.calOrdoDate):[];
   const previousPrintOptions=isSameDay?body.querySelector(".aoCalV2PrintOptions"):null;
@@ -1578,6 +1584,28 @@ function paint(){
   if(previousPrintOpen){
     const print=body.querySelector(".aoCalV2PrintOptions");
     if(print){print.open=true;if(hadPrintSummaryFocus)print.querySelector("summary")?.focus?.({preventScroll:true})}
+  }
+  if(previousCustomsCatalogueOpen){
+    const catalogue=body.querySelector(".aoCalCustomCatalogue");if(catalogue)catalogue.open=true;
+  }
+  for(const id of expandedCustomArticleIds){
+    for(const row of body.querySelectorAll(".aoCalCustomArticle[data-cal-custom-id]"))
+      if(row.dataset.calCustomId===id)row.open=true;
+  }
+  for(const key of expandedR18ReviewKeys){
+    for(const row of body.querySelectorAll("[data-cal-r18-eleven-key]"))
+      if(row.getAttribute("data-cal-r18-eleven-key")===key&&row.tagName==="DETAILS")row.open=true;
+  }
+  if(previousCustomsSearch){
+    const input=body.querySelector("[data-cal-custom-search]");
+    if(input){
+      input.value=previousCustomsSearch;
+      const query=normaliseCustomSearch(previousCustomsSearch);
+      for(const row of body.querySelectorAll("[data-cal-custom-item]"))
+        row.hidden=Boolean(query)&&!row.dataset.calCustomTerms?.includes(query);
+      for(const group of body.querySelectorAll("[data-cal-custom-year-group]"))
+        group.hidden=![...group.querySelectorAll("[data-cal-custom-item]")].some(row=>!row.hidden);
+    }
   }
   if(previousMonthToolsOpen){const tools=body.querySelector(".aoCalV2MonthTools");if(tools)tools.open=true}
   for(const id of expandedOrdoDates){const row=body.querySelector('[data-cal-ordo-date="'+id+'"]');if(row)row.open=true}

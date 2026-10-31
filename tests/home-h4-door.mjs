@@ -118,7 +118,10 @@ const modalFr=h4ChoicesMarkup({chosenForm:"LOW",formChangeAllowed:false,readerMo
 assert.match(modalFr,/Une autre messe est célébrée/);
 assert.match(modalFr,/data-h4-option="form" disabled/,"Good Friday must block illicit form change");
 
-assert.doesNotMatch(html,/data-home-h4-readings/,\n  "H7 must not invent unverified Proper rows when no approved readings are supplied");\nassert.match(h7Facts,/data-home-h4-readings/,\n  "H7 must expose native readings when source-certified Proper sections exist");
+assert.doesNotMatch(html,/data-home-h4-readings/,
+  "H7 must not invent unverified Proper rows when no approved readings are supplied");
+assert.match(h7Facts,/data-home-h4-readings/,
+  "H7 must expose native readings when source-certified Proper sections exist");
 assert.match(html,/data-home-cu-route="pray.angelus_regina"/);
 assert.match(html,/Next · 18:00/);
 assert.match(html,/MY RULE/);
