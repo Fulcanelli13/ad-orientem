@@ -43,6 +43,24 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-B30F94A20F69":Object.freeze({
+  sourceId:"AO-B38-LOC-BE-29F03868623",name:"Église Saint-Hubert",country:"BE",addressNeedle:"Verviers",placeId:null,
+  lat:50.57716,lng:5.86643,sourceRef:"osm:way:175896158",sourceUrl:"https://www.openstreetmap.org/way/175896158",
+  correctedAddress:"Place Hubert Delrez, 4802 Heusy, Verviers, Belgium",precision:"site",reviewScope:"HEUSY_SAINT_HUBERT_NOT_SAINT_ANTOINE_HUBERT",
+  evidence:Object.freeze(["https://mapcarta.com/W175896158","https://mapcarta.com/W158419717"]),
+ }),
+ "RG-C3F8A4083DC9":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-6D3B4F8F243",name:"Capilla de San Roque",country:"ES",addressNeedle:"Santiago de Compostela",placeId:null,
+  lat:42.88346,lng:-8.54177,sourceRef:"independent:sacristan-san-roque-santiago",sourceUrl:"https://sacristan.io/church/es/santiago-de-compostela/capela-de-san-roque",
+  correctedAddress:"Rúa de San Roque 4, 15704 Santiago de Compostela, Spain",precision:"site",reviewScope:"SANTIAGO_CHAPEL_NOT_SAN_ROQUE_MELIDE_OR_PONTEVEDRA",
+  evidence:Object.freeze(["https://sacristan.io/church/es/santiago-de-compostela/capela-de-san-roque"]),
+ }),
+ "RG-D1C52ADC007B":Object.freeze({
+  sourceId:"AO-B39-LOC-IT-2275C33A8E1A",name:"Chiesa della Madonna del Popolo",country:"IT",addressNeedle:"Romagnano Sesia",placeId:null,
+  lat:45.63336,lng:8.38364,sourceRef:"osm:way:256582212",sourceUrl:"https://www.openstreetmap.org/way/256582212",
+  correctedAddress:"Piazza della Libertà / Via Novara, 28078 Romagnano Sesia (NO), Italy",precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/es/W256582212","https://www.comune.romagnano-sesia.no.it/it-it/vivere-il-comune/cosa-vedere/chiesa-della-madonna-del-popolo-sec-xvii-2013-1-02d3a3be9fb7fe660a45147aae16fff6","https://catalogo.beniculturali.it/detail/ArchitecturalOrLandscapeHeritage/0100002461"]),
+ }),
  "RG-04ED0DAE5D46":Object.freeze({
   sourceId:"AO-B39-LOC-PL-8AFC063B0397",name:"Kościół Wniebowzięcia NMP",
   country:"PL",addressNeedle:"Kościelna 1",placeId:null,
@@ -671,7 +689,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
