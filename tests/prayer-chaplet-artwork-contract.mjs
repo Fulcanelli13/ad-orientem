@@ -36,7 +36,10 @@ assert.equal(newApproved.approved.length,25);
 assert.equal(q2.counts.accepted_for_prayer,114);
 assert.equal(b611.decisions.length,107);
 assert.equal(overlay.inherited_reuse_edges.length,105);
-assert.equal(activeCross.length,93);
+assert.equal(activeCross.length,92);
+const excludedLybaert=registry.slots.flatMap(s=>s.works.filter(w=>/Lybaert/i.test(w.artist||"")).map(w=>({slot:s.slot_id,...w})));
+assert.equal(excludedLybaert.length,2);
+for(const work of excludedLybaert){assert.equal(work.eligible,false);assert.equal(work.editorial,"USER_REJECTED_LATER_ARTISTIC_FIT");assert.equal(work.exclude_from_shortlist,true);}
 assert.equal(quarantined.length,12);
 for(const w of activeCross)assert.ok(approvedIds.has(w.id),"Cross-module reuse without affirmative user decision: "+w.slot+"/"+w.id);
 for(const w of quarantined){assert.equal(w.eligible,false,"Quarantined edge unexpectedly eligible: "+w.slot);assert.ok(!approvedIds.has(w.id),"Approved work wrongly quarantined: "+w.id);}
