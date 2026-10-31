@@ -119,11 +119,58 @@ assert.ok(paray.sacred_treasures.some(x=>x.id==="relic:FR:margaret-mary-paray"))
 assert.ok(paray.site_customs.some(x=>x.id==="DOM-006"));
 const parayHtml=render(paray.place_id);
 assert.ok(parayHtml.includes("aoExploreEditorialOpening"));
+
+// The published guide supplies the same original paragraph used as the opening.
+// Preserve it once, not twice on the same expanded Place page.
+const encodeText=value=>String(value).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+})[c]);
+const openingEnglish=encodeText(paray.editorial_intro.introduction.en);
+assert.equal(parayHtml.split(openingEnglish).length-1,1,
+  "The shared sourced sanctuary opening must not repeat inside the full guide");
+const frenchOnce=render(paray.place_id,"fr");
+const openingFrench=encodeText(paray.editorial_intro.introduction.fr);
+assert.equal(frenchOnce.split(openingFrench).length-1,1,
+  "French must not duplicate the original source paragraph either");
+
 assert.ok(parayHtml.includes("aoExplorePlaceCustoms"));
 assert.ok(parayHtml.includes("Family consecration"));
 assert.ok(parayHtml.includes('data-explore-place-jump="treasures"'));
 assert.ok(parayHtml.includes('data-explore-place-jump="customs"'));
 assert.ok(!parayHtml.includes("Read Saint biography"),"Saints editorial review stays held");
+
+const openingPosition=parayHtml.indexOf('class="aoExploreEditorialOpening"');
+const treasuresPosition=parayHtml.indexOf('data-explore-place-chapter="treasures"');
+const storyContinuation=parayHtml.indexOf('class="aoExplorePlaceOpening aoExploreSourcedStory"');
+assert(openingPosition>=0&&treasuresPosition>openingPosition,
+  "Sourced sacred objects must follow the established sanctuary introduction");
+if(storyContinuation>=0)assert(treasuresPosition<storyContinuation,
+  "Sacred objects should precede the long sourced historical continuation");
+assert.equal((parayHtml.match(/data-explore-place-chapter="story"/g)||[]).length,1,
+  "An illustrated Place must not emit duplicate jump anchors");
+assert.ok(!parayHtml.includes("TLM AT THIS EXACT PLACE"),
+  "A shrine without an exact Mass Directory link must not display an empty TLM accordion");
+const parayFrench=render(paray.place_id,"fr");
+assert.ok(parayFrench.includes('data-explore-place-chapter="treasures"'));
+assert.ok(parayFrench.includes("HISTOIRE ET DÉVOTION")||!parayFrench.includes("aoExploreSourcedStory"),
+  "French chapter continuation must retain French heading");
+const linkedJourney=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:projection.byLens.shrines,
+  filters:{heritageCategories:[]},selectedPlaceId:paray.place_id,
+  placeProfiles:profiles,expandPlace:true,journeys:[{
+    id:"test-sourced-route",name:"Sourced journey fixture",edition:"test",
+    destinationPlaceId:paray.place_id,destinationRelation:"DESTINATION_PLACE",
+    sources:[{url:"https://example.org/source"}],namedStages:[]
+  }]
+}));
+assert.ok(linkedJourney.includes('data-explore-place-jump="journeys"'),
+  "Sourced journeys need a visible chapter shortcut");
+assert.ok(linkedJourney.includes('data-explore-place-chapter="journeys"'),
+  "The journey shortcut must have a destination");
+assert.ok(linkedJourney.indexOf('data-explore-place-chapter="journeys"')>
+          linkedJourney.indexOf('data-explore-place-chapter="guide"'),
+  "Journeys must not precede the sanctuary story or the published guide");
+
 
 const anne=profile("place:FR:sainte-anne-d-auray");
 assert.ok(anne.editorial_intro);

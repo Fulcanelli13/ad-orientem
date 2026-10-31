@@ -645,11 +645,11 @@ export const HERITAGE_STYLE = String.raw`
 .aoExplorePlaceSheet .aoExploreTreasures>header{padding:0 0 19px}
 .aoExplorePlaceSheet .aoExploreTreasures>header h3,.aoExplorePlaceSheet .aoExplorePlaceCustoms>h3{font:500 clamp(24px,4vw,35px)/1.16 var(--ao-font-display,Georgia,serif);color:var(--ao-text-primary,#f4ede1);margin:10px 0;letter-spacing:-.02em}
 .aoExplorePlaceSheet .aoExploreTreasures>header p{margin:0;max-width:74ch;font:400 13px/1.66 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#aab4be)}
-.aoExplorePlaceSheet .aoExploreTreasureGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.aoExplorePlaceSheet .aoExploreTreasureGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px}
 .aoExplorePlaceSheet .aoExploreTreasureCard{min-width:0;display:flex;flex-direction:column;gap:11px;padding:22px 19px;border-radius:13px;border:1px solid var(--ao-rule,rgba(255,255,255,.12));background:radial-gradient(ellipse at 90% 0%,rgba(196,160,104,.1),transparent 55%),var(--ao-surface-1,#101923)}
 .aoExplorePlaceSheet .aoExploreTreasureKind{font:650 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.075em;text-transform:uppercase;color:var(--ao-liturgical-accent,#c9ad78)}
 .aoExplorePlaceSheet .aoExploreTreasureCard h4{font:500 clamp(19px,2.7vw,24px)/1.25 var(--ao-font-display,Georgia,serif);color:var(--ao-text-primary,#efe9dc);margin:0;overflow-wrap:anywhere}
-.aoExplorePlaceSheet .aoExploreTreasureCard>p{margin:0;color:var(--ao-text-muted,#bdc5cb);font:400 13px/1.65 var(--ao-font-body,Georgia,serif)}
+.aoExplorePlaceSheet .aoExploreTreasureCard>p{margin:0;max-width:72ch;color:var(--ao-text-muted,#bdc5cb);font:400 14px/1.68 var(--ao-font-body,Georgia,serif)}
 .aoExplorePlaceSheet .aoExploreTreasureCard>.aoExploreTreasureNotice{border-left:2px solid rgba(201,173,120,.45);padding-left:10px;font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
 .aoExplorePlaceSheet .aoExploreTreasureActions{margin-top:auto;padding-top:12px;border-top:1px solid var(--ao-rule,rgba(255,255,255,.1));display:flex;align-items:center;justify-content:space-between;gap:11px;flex-wrap:wrap}
 .aoExplorePlaceSheet .aoExploreTreasureActions>button,.aoExplorePlaceSheet .aoExplorePlaceCustoms>button{border:1px solid var(--ao-liturgical-border,rgba(201,173,120,.42));background:transparent;border-radius:999px;color:var(--ao-liturgical-accent,#c9ad78);padding:9px 12px;font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);min-height:42px;cursor:pointer}

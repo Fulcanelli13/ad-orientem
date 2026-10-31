@@ -54,7 +54,7 @@ export function compactHeritagePlaceSheet(vm){
   const primary=preferred??related[0]??null;
   const synopsis=sacredPlaceSynopsis(p,{maxLength:250,language:vm.language,preferredCategory:preferred});
   const area=shortArea(p);
-  let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview'+(p.editorial_feature?' aoHeritageEditorialPreview':'')+'" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
+  let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview'+(p.editorial_feature?' aoHeritageEditorialPreview':'')+'" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-approved-place-photo="'+(p.media?'yes':'no')+'" data-explore-place-owner="'+esc(p.place_id)+'">';
   html+='<button type="button" class="aoHeritageSheetHandle" data-explore-sheet-toggle aria-label="'+L(vm.language,"Open full place details","Ouvrir la fiche complète du lieu")+'"></button>';
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
   html+='<span class="aoHeritageCardKicker">'+(vm.journeyOpen?L(vm.language,"PILGRIMAGE PLACE","LIEU DE PÈLERINAGE")+' · ':(p.editorial_feature?L(vm.language,"IN FOCUS","À DÉCOUVRIR")+' · ':""))+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
