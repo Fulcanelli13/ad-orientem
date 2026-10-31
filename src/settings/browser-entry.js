@@ -150,6 +150,33 @@ export function createSettingsOwner(win=globalThis){
   }
   function confirmAction(message){try{return typeof win.confirm==="function"&&win.confirm(message)===true;}catch{return false;}}
   function bind(r){
+    // Page turn is deliberate. Vertical scrolling never advances a chapter.
+    // Form controls and the independently scrollable contents ribbon do not
+    // initiate a page turn.
+    const bookRoutes=["/settings","/settings/accessibility","/settings/language-reading",
+      "/settings/mass","/settings/local-customs","/settings/prayer",
+      "/settings/general","/settings/privacy-data","/settings/about-sources"];
+    function turnChapter(delta){
+      const i=bookRoutes.indexOf(route),next=i+delta;
+      if(i<0||next<0||next>=bookRoutes.length)return false;
+      go(bookRoutes[next]);return true;
+    }
+    let bookTouch=null;
+    r.addEventListener("pointerdown",event=>{
+      const elem=event.target;
+      if(!elem?.closest?.(".aoSetWrap")||elem.closest?.("button,input,select,textarea,a,[contenteditable],[data-settings-toc]")){
+        bookTouch=null;return;
+      }
+      bookTouch={x:event.clientX,y:event.clientY,id:event.pointerId};
+    });
+    r.addEventListener("pointerup",event=>{
+      const start=bookTouch;bookTouch=null;
+      if(!start||event.pointerId!==start.id)return;
+      const dx=event.clientX-start.x,dy=event.clientY-start.y;
+      if(Math.abs(dx)<70||Math.abs(dx)<=Math.abs(dy)*1.45)return;
+      turnChapter(dx<0?1:-1);
+    });
+    r.addEventListener("pointercancel",()=>{bookTouch=null;});
     r.addEventListener("click",event=>{
       const button=event.target?.closest?.("button");if(!button)return;
       if(button.dataset.settingsClose!==undefined){event.preventDefault();close();return;}
@@ -235,6 +262,11 @@ export function createSettingsOwner(win=globalThis){
     });
     r.addEventListener("keydown",event=>{
       if(event.key==="Escape"){event.preventDefault();const menu=r.querySelector("[data-settings-toc]");if(menu&&!menu.hidden){menu.hidden=true;r.querySelector("[data-settings-contents]")?.setAttribute("aria-expanded","false");return;}if(resetAsk){resetAsk=false;paint();return;}back();return;}
+      if(["ArrowLeft","ArrowRight"].includes(event.key)){
+        if(event.target?.closest?.("button,input,select,textarea,[contenteditable],[data-settings-toc]"))return;
+        if(turnChapter(event.key==="ArrowRight"?1:-1))event.preventDefault();
+        return;
+      }
       if(event.key!=="Tab")return;
       // Settings is a real aria-modal dialog. Never move focus into the
       // dimmed app while the overlay is open, including after preference paint.
