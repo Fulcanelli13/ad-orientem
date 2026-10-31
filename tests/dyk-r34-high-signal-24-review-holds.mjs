@@ -21,10 +21,22 @@ assert.equal(selection.counts.original_189_review_count,189);
 assert.equal(cards.size,189);
 assert.equal(selection.records.filter(x=>x.lane==="all-souls-november-2").length,7);
 assert.equal(selection.counts.all_souls_bilingual_pilot_rewrites,7);
+assert.equal(selection.pilot_destination_readiness.total,7);
+assert.equal(selection.pilot_destination_readiness.without_candidate_in_app_destination,4);
+assert.equal(selection.pilot_destination_readiness.declared_research_route_needing_browser_validation,3);
+assert.equal(selection.pilot_destination_readiness.exact_in_app_browser_approved,0);
+
 assert.equal(selection.pilot_existing_612_preview_comparison.legacy_preview_count,612);
 assert.equal(selection.pilot_existing_612_preview_comparison.final_semantic_editorial_approval,false);
 for(const entry of selection.records.filter(x=>x.lane==="all-souls-november-2")){
   const copy=entry.pilot_home_copy;
+  const destination=entry.pilot_destination_audit;
+  assert.ok(destination,"Missing route audit: "+entry.id);
+  assert.equal(destination.exact_in_app_route_verified,false);
+  assert.equal(destination.publishable_deep_link,false);
+  assert.equal(destination.source_url_browser_verified,false);
+  assert.ok(destination.source_level_url?.startsWith("https://"));
+
   const canon=cards.get(entry.id);
   assert.ok(copy,"Missing hand-edited All Souls copy: "+entry.id);
   for(const lang of ["en","fr"]){
