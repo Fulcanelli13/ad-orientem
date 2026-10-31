@@ -66,7 +66,9 @@ try{
    await page.locator(base+'[data-p435930-mercy-jump="59"]').click();
    const finalAction=page.locator(base+'[data-p435930-mercy-finish]');
    assert.equal(await finalAction.isVisible(),false,"Finish must remain hidden before the last Holy God");
-   await page.locator(base+'.aoMercyLine[data-ao-mercy-step="61"]').scrollIntoViewIfNeeded();
+   // On a tall phone all three closing prayers may fit without scrolling.
+   // Tapping the exact final source paragraph must focus it and unlock Finish.
+   await page.locator(base+'.aoMercyLine[data-ao-mercy-step="61"]').click();
    await page.waitForFunction(()=>
     document.querySelector('#aoPray435930.open [data-p435930-mercy-finish]')?.hidden===false,
     null,{timeout:8000});
