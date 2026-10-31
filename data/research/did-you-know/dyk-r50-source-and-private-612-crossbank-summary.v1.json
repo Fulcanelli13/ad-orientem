@@ -6,36 +6,37 @@
     "repo": "Fulcanelli13/folio-core",
     "branch": "research/did-you-know-discovery-r01-20261028",
     "path": "data/discovery/research/r32-dyk-corrected500-v612-private-lexical-audit.v1.json",
-    "private_review_commit": "606b85c763d917ea3e093c24f9cbe9094a66fa06",
+    "private_review_commit": "fd7c89cbb866cdf0d24f9e127e76fa554260c8bc",
     "total_private": 612,
     "eligible_research": 500,
     "exact_english_collision_count": 0,
     "exact_french_collision_count": 0,
     "exact_source_id_collision_count": 0,
-    "above_025_lexical_overlap_count": 3,
+    "above_025_lexical_overlap_count": 0,
     "above_035_lexical_overlap_count": 0,
     "selected_random_50_above_025_count": 0,
     "manual_semantic_approved": false,
     "private_texts_not_copied_here": true,
-    "corrected_en_fr_after_revisions": 21,
-    "next_recheck_required_after_new_overlay": true
+    "corrected_en_fr_after_revisions": 23,
+    "next_recheck_required_after_new_overlay": false,
+    "effective_500_after_three_overlaps": true
   },
   "three_non_sample_overlaps": [
     {
       "research_id": "DYK-H04-W-B-176",
-      "status": "RESEARCH_EDITORIAL_REPLACEMENT_OR_REWRITE_STAGED",
+      "status": "RESOLVED_BY_R33_EDITED_EFFECTIVE_500",
       "reason": "Pilgrimage facts about Sainte-Anne-de-Beaupré overlap a private place-specific discovery; distinct angle or replacement needed.",
       "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
     },
     {
       "research_id": "DYK-H04-W-B-153",
-      "status": "RESEARCH_EDITORIAL_REPLACEMENT_OR_REWRITE_STAGED",
+      "status": "RESOLVED_BY_R33_EDITED_EFFECTIVE_500",
       "reason": "Lough Derg penitential-pilgrimage claim substantially overlaps private sanctuary discovery; narrow to a distinctive source action or replace.",
       "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
     },
     {
       "research_id": "DYK-GI-G319",
-      "status": "RESEARCH_EDITORIAL_REPLACEMENT_OR_REWRITE_STAGED",
+      "status": "RESOLVED_BY_R33_EDITED_EFFECTIVE_500",
       "reason": "Ciborium-veil comparison shares wording about differing veils with private glossary-derived concepts; distinguish the reserved-vessel practice and avoid glossary restatement.",
       "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
     }
@@ -45,7 +46,7 @@
     "drawn": 50,
     "original_raw_draw_still_preserved": true,
     "one_glossary_failure_replaced_transparently": true,
-    "revisions": 21,
+    "revisions": 23,
     "direct_weiser_folio_checks": 27,
     "other_external_source_reviews": 7,
     "original_pitre_folio_images_unavailable_for_fresh_check": true,
@@ -68,7 +69,11 @@
       "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW": 3,
       "DIRECT_1962_RITUS_SERVANDUS_SCREEN_CONFIRMED": 1
     },
-    "fixed_50_untouched_by_r33": true
+    "fixed_50_untouched_by_r33": true,
+    "remaining_specific_1930_national_archives_caption": false,
+    "hungarian_lexicon_actor_puppet_original_source_confirmed": true,
+    "original_pitre_ocr_reconciled_count": 9,
+    "three_crossbank_overlaps_resolved_without_changing_50_draw": true
   },
   "release": {
     "all_500_automatically_editorial_approved": false,
