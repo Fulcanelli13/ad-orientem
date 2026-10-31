@@ -19,11 +19,11 @@ def source():
  match=re.search(r"const TARGETS=(\[.*?\]);",s)
  blocks=re.search(r"const BLOCKED_MISMATCHES=new Set\((\[.*?\])\);",s)
  if not match or not blocks: raise ValueError("Missing B14 source identifiers")
- seeds={int(x["n"]):x for x in json.loads(match.group(1))}
+ seeds={x["id"]:x for x in json.loads(match.group(1))}
  banned=set(json.loads(blocks.group(1)))
  if len(rows)!=147 or len(seeds)!=147 or len(set(r["subject_id"] for r in rows))!=147: raise ValueError("Canonical ID count failed")
  if sum(bool(r["previous_approval_protected"]) for r in rows)!=8: raise ValueError("Historic KEEP decision count changed")
- if any(seeds[r["queue_n"]]["id"]!=r["subject_id"] for r in rows): raise ValueError("B12/B14 crosswalk mismatch")
+ if any(r["subject_id"] not in seeds for r in rows): raise ValueError("B12/B14 immutable subject ID crosswalk mismatch")
  return rows,seeds,banned
 def get(url,as_json=False):
  last=None
@@ -112,7 +112,7 @@ def main():
    original_binary_downloaded=False,original_sha256=None,identity_verified=False,underlying_art_rights_cleared=False,
    visual_quality_approved=False,editorial_approved=False,published=False)
    try:
-    c,err=candidates(t,seeds[n],blocked);row["candidates"]=c;row["errors"]+=err
+    c,err=candidates(t,seeds[t["subject_id"]],blocked);row["candidates"]=c;row["errors"]+=err
     eligible=next((x for x in c if x["eligible_metadata"] and x["original_url"]),None)
     if eligible:
      binary=get(eligible["original_url"])
