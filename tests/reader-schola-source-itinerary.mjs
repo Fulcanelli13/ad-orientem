@@ -11,6 +11,7 @@ import "./reader-mass-m08-bulk-score-qa.mjs";
 import "./reader-mass-m09-1962-latin-line-screen.mjs";
 import "./reader-mass-m09-sequence-eligibility.mjs";
 import "./reader-mass-m10-weak-reassignment.mjs";
+import "./reader-mass-m11-source-role-recovery.mjs";
 import {readFileSync} from "node:fs";
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
