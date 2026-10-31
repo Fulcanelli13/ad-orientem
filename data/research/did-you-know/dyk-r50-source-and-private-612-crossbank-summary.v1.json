@@ -6,7 +6,7 @@
     "repo": "Fulcanelli13/folio-core",
     "branch": "research/did-you-know-discovery-r01-20261028",
     "path": "data/discovery/research/r32-dyk-corrected500-v612-private-lexical-audit.v1.json",
-    "private_review_commit": "3123e9319a88e68d3406bce14f54e50458306f42",
+    "private_review_commit": "606b85c763d917ea3e093c24f9cbe9094a66fa06",
     "total_private": 612,
     "eligible_research": 500,
     "exact_english_collision_count": 0,
@@ -16,7 +16,8 @@
     "above_035_lexical_overlap_count": 0,
     "selected_random_50_above_025_count": 0,
     "manual_semantic_approved": false,
-    "private_texts_not_copied_here": true
+    "private_texts_not_copied_here": true,
+    "corrected_en_fr_after_revisions": 21
   },
   "three_non_sample_overlaps": [
     {
@@ -40,13 +41,29 @@
     "drawn": 50,
     "original_raw_draw_still_preserved": true,
     "one_glossary_failure_replaced_transparently": true,
-    "revisions": 19,
+    "revisions": 21,
     "direct_weiser_folio_checks": 27,
-    "other_external_source_reviews": 6,
+    "other_external_source_reviews": 7,
     "original_pitre_folio_images_unavailable_for_fresh_check": true,
     "remaining_original_pitre_evidence_must_be_accurately_categorized": true,
     "still_unresolved_specific_1930_national_archives_caption": true,
-    "source_lexical_screen_not_a_semantic_approval": true
+    "source_lexical_screen_not_a_semantic_approval": true,
+    "pitre_prior_evidence_records_reconciled": 9,
+    "current_tier_distribution": {
+      "DIRECT_FACSIMILE_PAGE_CHECKED": 31,
+      "CANICATTINI_FAMILY_TABLE_PRIOR_SCAN": 1,
+      "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED": 4,
+      "DIRECT_TWO_PRIMARY_OR_PARISH_SOURCES_CONFIRMED": 1,
+      "SOURCE_PAGE_IMAGE_CHECKED_CLAIM_SUPPORTED": 3,
+      "NATIONAL_ARCHIVE_PHOTO_CAPTION_NOT_RECHECKED": 1,
+      "DIRECT_RITUAL_PRAYERBOOK_SOURCE_CONFIRMED": 1,
+      "DIRECT_DIOCESAN_2026_SOURCE_CONFIRMED": 1,
+      "ORIGINAL_OCR_QUOTED_PRIOR_FACSIMILE_CHECK": 1,
+      "DIRECT_1962_RUBRICS_SCREEN_CONFIRMED": 1,
+      "PARTIAL_CATHOLIC_LEXICON_SECONDARY_CONFIRMED": 1,
+      "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW": 3,
+      "DIRECT_1962_RITUS_SERVANDUS_SCREEN_CONFIRMED": 1
+    }
   },
   "release": {
     "all_500_automatically_editorial_approved": false,
