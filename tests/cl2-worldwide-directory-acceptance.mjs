@@ -70,13 +70,14 @@ const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.js
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
 assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:24});
 assert.equal(photoPins.pins.length,107);
-assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,86);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,107);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
  assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
  assert.ok(venue.source_ids.includes(pin.source_id),"Photo pin source identity differs from CL2");
  assert.equal(venue.geo.lat,pin.lat,"Photo Finder pin latitude differs from Explore");
  assert.equal(venue.geo.lng,pin.lon,"Photo Finder pin longitude differs from Explore");
+  assert.equal(pin.lon,pin.lng,"Never mix lon and lng across photo and Explore consumers");
  assert.match(pin.source_url,/^https:\/\//);
  assert.ok(pin.review_scope,"Photo Finder requires explicit site/entrance precision disclosure");
 }
