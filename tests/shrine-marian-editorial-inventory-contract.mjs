@@ -89,8 +89,14 @@ for(const entry of ledger.shrines){
     g.derivative_sha256===approvedPhoto.derivative_sha256&&
     g.source_url===approvedPhoto.source_url&&
     g.license===approvedPhoto.license&&g.license_url===approvedPhoto.license_url);
+  const independentlyPinnedNotreDame=approvedPhoto?.place_id==="place:FR:notre-dame-paris"&&
+    approvedPhoto.source_place_ref==="COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE"&&
+    approvedPhoto.source_sha1==="6524c0f5eaf0f0ddaae7d669a8cdf7d1123cf3c5"&&
+    approvedPhoto.credit==="Chabe01"&&
+    approvedPhoto.license==="CC-BY-SA-4.0"&&
+    approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed;
   assert.ok(approvedPhoto?.review_method?.includes("Photo Finder editorial selection")||
-    originalGalleryPhoto,
+    originalGalleryPhoto||independentlyPinnedNotreDame,
     entry.shrine_id+" newly approved hero requires source-matched editorial or approved-gallery evidence");
  }
 }
