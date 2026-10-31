@@ -199,7 +199,7 @@ try{
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{state:"attached",timeout:12000});
  // Two navigation axes: timeline moves named cards, card-local scroll focuses
  // V/R paragraphs; native Prayer texts and translation controls stay intact.
- await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
+ await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{state:"attached",timeout:12000});
  assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
    "The first card must not show a blank cinematic or a rating-4 painting");
  // Claude's original hour cover is an explicit, nonautomatic opening,
@@ -210,9 +210,14 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoClaudeHorariumPlate").count(),1);
  assert.match(await opening.innerText(),/Angelus|Angélus/i);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1);
+ const ritualGrid=page.locator("#aoPray435930 .aoAngelusRitualGrid");
+ assert.equal(await ritualGrid.evaluate(el=>getComputedStyle(el).display),"none",
+  "The canonical five-stage reader must remain mounted but hidden during Claude's hour-first opening");
  await page.screenshot({path:resolve(captures,"09-angelus-claude-hour-opening-390.png"),
   fullPage:false,animations:"disabled"});
  await page.locator("#aoPray435930 [data-p435930-angelus-begin]").click();
+ assert.notEqual(await ritualGrid.evaluate(el=>getComputedStyle(el).display),"none",
+  "Begin must reveal the original source-owned stage rail without advancing it");
  assert.equal(await opening.evaluate(el=>el.hidden),true,
   "Begin must remove only the opening artwork placeholder");
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1,
