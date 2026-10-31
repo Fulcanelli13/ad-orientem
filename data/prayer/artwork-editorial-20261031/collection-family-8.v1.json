@@ -11,7 +11,8 @@
     "deduplicatedReviewOptions": 133,
     "excludedDoNotSuggest": 12,
     "sourceLinksRecoveredByExactID": 19,
-    "sourceLinkSuggestionsUnverified": 0
+    "sourceLinkSuggestionsUnverified": 0,
+    "pradoPhotoSourceQuarantines": 1
   },
   "slots": [
     {
@@ -2362,14 +2363,21 @@
           ],
           "artist": "Juan de Juanes",
           "title": "Martyrdom of Saint Stephen",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:Martirio%20de%20San%20Esteban%2C%20de%20Juan%20de%20Juanes%20(Museo%20del%20Prado).jpg",
+          "sourcePage": null,
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Martirio%20de%20San%20Esteban%2C%20de%20Juan%20de%20Juanes%20(Museo%20del%20Prado).jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
         },
         {
           "sourceIDs": [
