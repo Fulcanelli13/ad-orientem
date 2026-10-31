@@ -61,6 +61,24 @@ try{
     return {document:document.documentElement.scrollWidth-innerWidth,mount:(mount?.scrollWidth||0)-(mount?.clientWidth||0)};
    });
    assert.ok(overflow.document<=1&&overflow.mount<=1,"No 320/390 horizontal overflow: "+JSON.stringify(overflow));
+   // Navigation position is not proof a prayer was recited. Only an explicit
+   // click on Finish after the last source paragraph can complete the chaplet.
+   await page.locator(base+'[data-p435930-mercy-jump="59"]').click();
+   const finalAction=page.locator(base+'[data-p435930-mercy-finish]');
+   assert.equal(await finalAction.isVisible(),false,"Finish must remain hidden before the last Holy God");
+   await page.locator(base+'.aoMercyLine[data-ao-mercy-step="61"]').scrollIntoViewIfNeeded();
+   await page.waitForFunction(()=>
+    document.querySelector('#aoPray435930.open [data-p435930-mercy-finish]')?.hidden===false,
+    null,{timeout:8000});
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0,
+    "Simply reaching the final text must not mark the chaplet complete");
+   await finalAction.click();
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),1,
+    "Finish after the final source event must reveal completion");
+   await page.locator(base+'[data-p435930-mercy-again]').click();
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
+   assert.equal(await page.locator(base+'[data-ao-f07-crown]').getAttribute('data-position'),'0',
+    "Pray again must restart the same canonical 62-event sequence");
    assert.deepEqual(errors,[],"No uncaught F07 pilot errors");
    console.log("PASS F07 "+width+"px: source 62 events, 55-bead crown, decade jump, full prayer, no overflow");
   }finally{await page.close()}
