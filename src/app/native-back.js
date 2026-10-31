@@ -89,7 +89,7 @@ export function createAppNativeBackBridge({win=globalThis,shell}={}){
   return Object.freeze({
     version:APP_NATIVE_BACK_VERSION,installed:true,
     record,
-    status:()=>Object.freeze({armed,index,active:active(),handling}),
+    status:()=>Object.freeze({installed:!disposed,version:APP_NATIVE_BACK_VERSION,armed,index,active:active(),handling}),
     dispose(){
       if(disposed)return;disposed=true;
       win.removeEventListener?.("popstate",onPop);
