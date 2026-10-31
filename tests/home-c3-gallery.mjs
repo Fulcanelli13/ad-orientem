@@ -17,7 +17,8 @@ assert.ok(prayer.includes('hidden aria-hidden="true"'));
 assert.ok(!prayer.includes("Montfort · 33"),"No fictional progress on Home");
 
 const french=c3PrayerMarkup({fr:true,attrs:'data-home-cu-route="pray.library"',role:"Prière",title:"Livre de prières",description:"Aujourd’hui"});
-assert.ok(french.includes("Toutes les prières"));assert.ok(french.includes("Choisir une prière"));
+assert.ok(french.includes("Confession"));assert.ok(french.includes("Choisir une prière"));
+assert.equal((french.match(/data-home-cu-route="pray.library"/g)||[]).length,1,"The active Prayer Library route must not repeat as a carousel alternative");
 assert.equal((french.match(/class="aoC3PrayerSlide"/g)||[]).length,4);
 const escaped=c3PrayerMarkup({attrs:'data-home-cu-route="pray.library"',title:'<script>alert("x")</script>'});
 assert.ok(!escaped.includes("<script>"),"Untrusted source title escaped");
