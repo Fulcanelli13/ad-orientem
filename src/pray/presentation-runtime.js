@@ -3569,22 +3569,15 @@ function onClick(e){
    MERCY.finished=false;return backToParent();
   }
   if(b.hasAttribute('data-p435930-mercy-chapter')){
-      const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
-      const n=Number(b.dataset.p435930MercyChapter);
-      if(!Number.isInteger(n)||n<0||n>=steps.length)return;
-      MERCY.finished=false;MERCY.step=n;return render();
-    }
-    if(b.hasAttribute('data-p435930-mercy-recite')){
-      const mode=b.dataset.p435930MercyRecite;
-      if(!['individual','group'].includes(mode))return;
-      setRecitationMode(mode);return render();
-    }
-    if(b.hasAttribute('data-p435930-mercy-finish')){
-      if(MERCY.step!==divineMercySteps({includeClosing:MERCY.includeClosing}).length-1)return;
-      MERCY.finished=true;return render();
-    }
-    if(b.hasAttribute('data-p435930-mercy-again')){MERCY.finished=false;MERCY.step=0;return render()}
-    if(b.hasAttribute('data-p435930-mercy-return')){MERCY.finished=false;return backToParent()}
+   const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
+   const n=Number(b.dataset.p435930MercyChapter);
+   if(!CHAPLET_F07_PILOT_ENABLED||!Number.isInteger(n)||n<0||n>=steps.length)return;
+   MERCY.finished=false;MERCY.step=n;return render();
+  }
+  if(b.hasAttribute('data-p435930-mercy-recite')){
+   const mode=b.dataset.p435930MercyRecite;
+   if(!CHAPLET_F07_PILOT_ENABLED||!['individual','group'].includes(mode))return;
+   setRecitationMode(mode);return render();
   }
   if(b.hasAttribute('data-p435930-mercy-jump')){
    const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
