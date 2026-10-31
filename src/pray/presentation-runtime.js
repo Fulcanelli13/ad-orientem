@@ -6,7 +6,7 @@ import "./precious-blood-chaplet-styles.js";
 import "./priestly-intercessions-styles.js";
 import "./occasional-intercessions-styles.js";
 import "./first-monthly-direct-prayers-styles.js";
-import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY } from "./confession-paths.js";
+import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY, CONFESSION_TRADITIONAL_PASTORAL_WITNESSES } from "./confession-paths.js";
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
@@ -1496,9 +1496,15 @@ function confessionSingleCard(card,pos,count,context){
  const body=card.kind==="questions"
   ?`<ul class="aoP435930ConfQuestions">${card.questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ul>`
   :`<p>${esc(isFr()?card.bodyFr:card.bodyEn)}</p>`;
- return `<section class="aoP435930ConfOneCard" data-ao-confession-card="${esc(card.id)}" data-conf-${esc(context)}-step="${pos}" aria-label="${esc(L('Confession step','Étape de la confession'))+' '+(pos+1)}">
+ const speaker=card.role==='priest'?L('PRIEST · EXPLANATION ONLY','PRÊTRE · EXPLICATION SEULEMENT'):
+  card.role==='penitent'?L('PENITENT · BEFORE ENTERING','PÉNITENT · AVANT D’ENTRER'):
+  card.role==='guide'?L('PREPARATION · PUT THE PHONE AWAY','PRÉPARATION · RANGEZ LE TÉLÉPHONE'):'';
+ const role=speaker?`<small class="aoP435930ConfSpeaker" data-ao-confession-speaker="${esc(card.role)}">${esc(speaker)}</small>`:'';
+ const latin=card.role==='priest'&&card.latin
+  ?`<p class="aoP435930ConfPriestLatin" lang="la" data-ao-confession-latin-excerpt="priest-only">${esc(card.latin)}</p>`:'';
+ return `<section class="aoP435930ConfOneCard" data-ao-confession-card="${esc(card.id)}" data-conf-${esc(context)}-step="${pos}" aria-label="${esc(L('Confession step','Étape de la confession')+' '+(pos+1))}">
    <small>${esc(L('Step','Étape'))} · ${pos+1} / ${count}</small>
-   <h2 tabindex="-1">${esc(title)}</h2>${body}
+   ${role}<h2 tabindex="-1">${esc(title)}</h2>${body}${latin}
    </section>`;
 }
 function confessionContritionPicker(kicker){
@@ -1563,7 +1569,8 @@ function renderConfession(){
  }
  const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
    <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
-   ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(isFr()&&src.urlFr?src.urlFr:src.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&src.labelFr?src.labelFr:src.label)} ↗</a>`).join('')}</details>`;
+   ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(isFr()&&src.urlFr?src.urlFr:src.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&src.labelFr?src.labelFr:src.label)} ↗</a>`).join('')}
+   ${CONFESSION_TRADITIONAL_PASTORAL_WITNESSES.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer">${esc(src.label)} ↗</a>`).join('')}</details>`;
  // Preserve all three canonical Confession paths and their original private
  // question texts. The source model owns the step sequence; this wrapper
  // supplies only the shared card shell and local paragraph-focus viewport.
