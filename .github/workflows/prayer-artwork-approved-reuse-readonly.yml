@@ -13,6 +13,8 @@ on:
       - 'data/prayer/artwork-editorial-20261031/collection-family-*.v1.json'
       - 'data/prayer/artwork-editorial-20261031/curated-research-proposal-matches-for-last-23.v1.json'
       - 'tests/prayer-artwork-complete-candidate-collection-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/provisional-one-choice-per-267-art-position.v1.json'
+      - 'tests/prayer-artwork-provisional-267-assignment-contract.mjs'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
   workflow_dispatch:
 permissions:
@@ -28,4 +30,4 @@ jobs:
         with:
           node-version: '22'
       - name: Source-linked art mapping validation
-        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs tests/prayer-artwork-complete-candidate-collection-contract.mjs
+        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs tests/prayer-artwork-complete-candidate-collection-contract.mjs tests/prayer-artwork-provisional-267-assignment-contract.mjs
