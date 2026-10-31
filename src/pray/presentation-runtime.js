@@ -12,6 +12,8 @@ import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import "./horarium-hours-styles.js";
+import "./claude-horarium-styles.js";
+import {claudeHorariumHourFromClock,claudeHorariumClock,claudeHorariumStrokes,syncClaudeHorariumStrokes} from "./claude-horarium-clock.js";
 import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
@@ -332,6 +334,7 @@ let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false
 const stationReaderMode=()=>STATIONS.publicPosture?'guided':S.stations.mode;
 const stationRecitation=()=>STATIONS.publicPosture?'group':S.stations.recitation;
 let ANGELUS_CARD_INDEX=0,angelusOptionsOpen=false;
+let CLAUDE_ANGELUS_HOUR=claudeHorariumHourFromClock(new Date().getHours());
 let TEN={day:0,hour:'MATINS',step:0,face:'vernacular',guided:true,model:null,loading:false,error:null,epoch:0,ceremony:freshTenebraeCeremony()};
 let lastStationsFxStep=null;
 let angelusRitualObserver=null,lastAngelusRitualCard=null;
@@ -894,7 +897,7 @@ function renderAngelus(){
   const incarnation=form==='angelus'&&u.type==='vr'&&/(Word was made flesh|Verbum caro factum est|Verbe s[’']est fait chair)/i.test(u.text+' '+la);
   return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${angelusUtterance(u.text,u.type)}</span><span data-face-la hidden>${angelusUtterance(la,u.type)}</span></button></article>`;
  }).join('');
- return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader" data-ao-hours-family="ritual" data-ao-hours-owner="${form}" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<div class="aoHoursBellLine" aria-label="${esc(L("Traditional prayer hours: six, noon, six","Heures traditionnelles : six heures, midi, dix-huit heures"))}"><span aria-hidden="true">✣</span> 6 · 12 · 18 <span aria-hidden="true">✣</span></div><details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
+ return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader" data-ao-hours-family="ritual" data-ao-hours-owner="${form}" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<div class="aoClaudeHorariumShell" data-ao-claude-horarium="true">${claudeHorariumClock(CLAUDE_ANGELUS_HOUR)}${claudeHorariumStrokes(Math.max(0,ANGELUS_CARD_INDEX-1))}</div><details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
 }
 function normalizeRosaryPrefs(raw=S.rosary){
  return Object.freeze({
@@ -3012,6 +3015,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    onCardChange:(_card,index)=>{
     // Opening sacred artwork belongs only to prayer entry, never card changes.
     ANGELUS_CARD_INDEX=index;
+    syncClaudeHorariumStrokes(m,Math.max(0,index-1));
    },
    onCue:cue=>{
     const active=cue==='profound-bow';
@@ -3501,6 +3505,14 @@ function onClick(e){
     e.preventDefault?.();
     void openExternalFamilyRoute(card,card.dataset.p435930External,familyId);
   }
+  return;
+ }
+ if(b.hasAttribute('data-p435930-angelus-hour')&&view==='angelus'){
+  const hour=Number(b.dataset.p435930AngelusHour);
+  if(![6,12,18].includes(hour))return;
+  CLAUDE_ANGELUS_HOUR=hour;
+  const shell=mount()?.querySelector('[data-ao-claude-horarium]');
+  if(shell)shell.innerHTML=claudeHorariumClock(hour)+claudeHorariumStrokes(Math.max(0,ANGELUS_CARD_INDEX-1));
   return;
  }
  if(b.dataset.p435930External){
