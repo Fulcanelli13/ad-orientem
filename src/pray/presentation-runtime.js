@@ -1487,6 +1487,22 @@ function decorateRosary(){
     applyRosaryR2Pilot({root:r,steps:info.steps,index:info.index,chapters,french:isFr()});
  }
 }
+// The canonical PrayerBook can finish repainting the active first bead after
+// its Today click reaches the document capture listener. A single immediate
+// decoration can therefore run against the outgoing preparation sheet. Retry
+// presentation attachment only; never restart, advance or rewrite the donor.
+function ensureRosaryActiveDecoration(attempt=0){
+ const r=rosaryDonorRoot(),shell=r?.querySelector?.('.pbShell');
+ if(!r?.classList?.contains('open'))return false;
+ if(shell?.dataset?.aoRosaryExactDonor==='v3.4.14')return true;
+ const info=rosaryLiveInfo();
+ if(info?.state?.set&&info.steps?.length&&shell?.querySelector?.('[data-lab-rosary-next]')){
+  decorateRosary();
+  if(shell?.dataset?.aoRosaryExactDonor==='v3.4.14')return true;
+ }
+ if(attempt<40)setTimeout(()=>ensureRosaryActiveDecoration(attempt+1),50);
+ return false;
+}
 function confessionModeLabel(path){
  const p=confessionPath(path);
  return p?esc(isFr()?p.titleFr:p.titleEn):esc(L("Choose your preparation","Choisissez votre préparation"));
@@ -3817,7 +3833,12 @@ document.addEventListener('click',e=>{
  const d=e.target.closest?.('[data-p435930-rosary-depth]');if(d){S.rosary.mode=d.dataset.p435930RosaryDepth==='guided'?'guided':'simple';save();setTimeout(decorateRosary,0)}
  const m=e.target.closest?.('[data-p435930-recitation]');if(m){S.rosary.recitation=m.dataset.p435930Recitation==='group'?'group':'individual';save();try{localStorage.setItem('ao-prayer-recitation-mode',S.rosary.recitation)}catch{};setTimeout(decorateRosary,0)}
  const step=e.target.closest?.('[data-lab-rosary-next],[data-lab-rosary-prev],[data-v401-rosary-jump],[data-ao-rosary-bead],[data-lab-rosary-today],[data-pb-rosary-set],[data-lab-rosary-change],[data-pb-rosary-change]');
- if(step){if(step.matches?.('[data-lab-rosary-change],[data-pb-rosary-change]'))lastRosaryRitualKey='';setTimeout(decorateRosary,0)}
+ if(step){
+  if(step.matches?.('[data-lab-rosary-change],[data-pb-rosary-change]'))lastRosaryRitualKey='';
+  setTimeout(decorateRosary,0);
+  if(step.matches?.('[data-lab-rosary-today]'))
+   setTimeout(()=>ensureRosaryActiveDecoration(),30);
+ }
 },true);
 // Route old PRAY entry points through the final shared owner. No Mass route is intercepted.
 document.addEventListener('click',e=>{
