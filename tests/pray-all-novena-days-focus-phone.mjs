@@ -76,7 +76,9 @@ try{
  for(const id of Object.keys(NOVENA_CORPUS_V4)){
   const corpus=NOVENA_CORPUS_V4[id];
   const pattern=corpus.pattern||(id==="immaculate_conception"?"OPENING_DAY_COMMON_CLOSE":"STANDARD");
-  const chapters=novenaStageChapters({pattern,sharedClosing:!!corpus.sharedClosingText});
+  // A source with no common prayers cannot produce a synthetic common-prayer chapter.
+  const chapters=novenaStageChapters({pattern,sharedClosing:!!corpus.sharedClosingText,
+   commonRequired:Array.isArray(corpus.commonPrayers)?corpus.commonPrayers.length>0:true});
   assert.equal(await page.evaluate(id=>window.AO_NOVENAS_V3.open({novenaId:id,returnContext:null}),id),true,
     "Cannot open novena "+id);
   await page.locator("#aoPray435930.open [data-n1-mode='guided']").evaluate(el=>el.click());
