@@ -94,7 +94,11 @@
         "final_english_signoff": false,
         "final_french_signoff": false,
         "novelty_against_private_612_approved": false,
-        "exact_destination_browser_verified": false
+        "exact_destination_browser_verified": false,
+        "nearest_original_612_token_jaccard": 0.0909,
+        "private_preview_exact_collisions": 0,
+        "private_preview_source_id_collisions": 0,
+        "semantic_novelty_status": "SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED"
       },
       "pilot_display_window": "2026-11-01_TO_2026-11-02_EDITORIAL_CANDIDATE_ONLY"
     },
@@ -119,7 +123,11 @@
         "final_english_signoff": false,
         "final_french_signoff": false,
         "novelty_against_private_612_approved": false,
-        "exact_destination_browser_verified": false
+        "exact_destination_browser_verified": false,
+        "nearest_original_612_token_jaccard": 0.0909,
+        "private_preview_exact_collisions": 0,
+        "private_preview_source_id_collisions": 0,
+        "semantic_novelty_status": "SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED"
       },
       "pilot_display_window": "2026-11-01_TO_2026-11-02_EDITORIAL_CANDIDATE_ONLY"
     },
@@ -144,7 +152,11 @@
         "final_english_signoff": false,
         "final_french_signoff": false,
         "novelty_against_private_612_approved": false,
-        "exact_destination_browser_verified": false
+        "exact_destination_browser_verified": false,
+        "nearest_original_612_token_jaccard": 0.0645,
+        "private_preview_exact_collisions": 0,
+        "private_preview_source_id_collisions": 0,
+        "semantic_novelty_status": "SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED"
       },
       "pilot_display_window": "2026-11-01_TO_2026-11-02_EDITORIAL_CANDIDATE_ONLY"
     },
@@ -169,7 +181,11 @@
         "final_english_signoff": false,
         "final_french_signoff": false,
         "novelty_against_private_612_approved": false,
-        "exact_destination_browser_verified": false
+        "exact_destination_browser_verified": false,
+        "nearest_original_612_token_jaccard": 0.0769,
+        "private_preview_exact_collisions": 0,
+        "private_preview_source_id_collisions": 0,
+        "semantic_novelty_status": "SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED"
       },
       "pilot_display_window": "2026-11-01_TO_2026-11-02_EDITORIAL_CANDIDATE_ONLY"
     },
@@ -194,7 +210,11 @@
         "final_english_signoff": false,
         "final_french_signoff": false,
         "novelty_against_private_612_approved": false,
-        "exact_destination_browser_verified": false
+        "exact_destination_browser_verified": false,
+        "nearest_original_612_token_jaccard": 0.1,
+        "private_preview_exact_collisions": 0,
+        "private_preview_source_id_collisions": 0,
+        "semantic_novelty_status": "SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED"
       },
       "pilot_display_window": "2026-11-01_TO_2026-11-02_EDITORIAL_CANDIDATE_ONLY"
     },
@@ -219,7 +239,11 @@
         "final_english_signoff": false,
         "final_french_signoff": false,
         "novelty_against_private_612_approved": false,
-        "exact_destination_browser_verified": false
+        "exact_destination_browser_verified": false,
+        "nearest_original_612_token_jaccard": 0.0417,
+        "private_preview_exact_collisions": 0,
+        "private_preview_source_id_collisions": 0,
+        "semantic_novelty_status": "SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED"
       },
       "pilot_display_window": "2026-11-01_TO_2026-11-02_EDITORIAL_CANDIDATE_ONLY"
     },
@@ -244,7 +268,11 @@
         "final_english_signoff": false,
         "final_french_signoff": false,
         "novelty_against_private_612_approved": false,
-        "exact_destination_browser_verified": false
+        "exact_destination_browser_verified": false,
+        "nearest_original_612_token_jaccard": 0.125,
+        "private_preview_exact_collisions": 0,
+        "private_preview_source_id_collisions": 0,
+        "semantic_novelty_status": "SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED"
       },
       "pilot_display_window": "2026-11-01_TO_2026-11-02_EDITORIAL_CANDIDATE_ONLY"
     },
@@ -470,5 +498,14 @@
       "release_authorized": false
     }
   ],
-  "pilot_note": "November 2 proposed rewrites are prepared in this selection overlay, not published to the running Home. Strictly distinguish the All Saints evening Candlemas candle from the November 2 liturgical date."
+  "pilot_note": "November 2 proposed rewrites are prepared in this selection overlay, not published to the running Home. Strictly distinguish the All Saints evening Candlemas candle from the November 2 liturgical date.",
+  "pilot_existing_612_preview_comparison": {
+    "source_repo": "Fulcanelli13/folio-core",
+    "ref": "research/did-you-know-discovery-r01-20261028",
+    "ledger": "data/discovery/research/r31-dyk-189-v-612-post-rewrite-lexical-refresh.v1.json",
+    "legacy_preview_count": 612,
+    "finding": "No exact EN/FR/source-ID collision among seven pre-rewrite originals; nearest English token overlap ranges 0.0417–0.125. Full edited-copy semantic signoff not claimed.",
+    "manual_targeted_sweep": "Reviewed 612 actual English preview statements for explicit All Souls, All Saints, departed, Roman Canon, Rosary, Candlemas, soul bread and related terms. No exact duplicate claim identified; broad thematic overlaps on Rosary/octaves remain distinct.",
+    "final_semantic_editorial_approval": false
+  }
 }
