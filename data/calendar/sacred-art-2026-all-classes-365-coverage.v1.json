@@ -74,11 +74,12 @@
       "identifiableExternalArtSourceOnly": 0,
       "withoutExistingSourceOrPrimary": 130,
       "additionalUnlinked856ExactSubjectDateCandidates": 16,
-      "identifiedDateSubjectOrCatalogueCandidates": 53,
-      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 112,
+      "identifiedDateSubjectOrCatalogueCandidates": 56,
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 109,
       "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 0,
       "additionalLegacyNamedFileExactSubjectDates": 1,
-      "remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters": 78
+      "remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters": 75,
+      "additionalBreviarium83ExactSubjectDates": 3
     },
     "IV": {
       "total": 71,
@@ -3420,8 +3421,35 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalBreviariumSourceLeads": [
+        {
+          "breviarumPlateId": "plate-tojetti-lourdes",
+          "artist": "Virgilio Tojetti",
+          "title": "Our Lady of Lourdes",
+          "commonsFile": "Virgilio Tojetti 1877 Our Lady of Lourdes.jpg",
+          "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Virgilio_Tojetti_1877_Our_Lady_of_Lourdes.jpg",
+          "sourceSha1": "5aa283cddce24b806957738389e31f3ec29760c5",
+          "commonsNativePixels": [
+            825,
+            960
+          ],
+          "commonsFileBytes": 79950,
+          "commonsHistoricalLicenceMetadata": "Public domain",
+          "artisticIntakeTier": "SECONDARY_VISUAL_REVIEW",
+          "sourceQualityGate": "REPLACE_INSUFFICIENT_NATIVE_PHOTO",
+          "sourceResearchOnly": true,
+          "priorWorkPhysicalIdentityVerified": false,
+          "canonical383ArtworkId": null,
+          "newFeastEditorialApproval": false,
+          "fullNativePhotoCropVerified": false,
+          "exactImageRightsForAppVerified": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "sourceMatchingStatus": "BREVIARIUM_83_EXISTING_COMMONS_PLATE_EXACT_FEAST_SUBJECT_RESEARCH_ONLY",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-02-12",
@@ -5383,8 +5411,35 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalBreviariumSourceLeads": [
+        {
+          "breviarumPlateId": "plate-scheffer-monica",
+          "artist": "Ary Scheffer",
+          "title": "Saints Augustine and Monica",
+          "commonsFile": "Scheffer Saint Augustine and Saint Monica.jpg",
+          "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Scheffer_Saint_Augustine_and_Saint_Monica.jpg",
+          "sourceSha1": "c31e882a9e69e70b15ce2c64d4f9daa484f5b4b3",
+          "commonsNativePixels": [
+            556,
+            691
+          ],
+          "commonsFileBytes": 315807,
+          "commonsHistoricalLicenceMetadata": "Public domain",
+          "artisticIntakeTier": "SECONDARY_VISUAL_REVIEW",
+          "sourceQualityGate": "REPLACE_INSUFFICIENT_NATIVE_PHOTO",
+          "sourceResearchOnly": true,
+          "priorWorkPhysicalIdentityVerified": false,
+          "canonical383ArtworkId": null,
+          "newFeastEditorialApproval": false,
+          "fullNativePhotoCropVerified": false,
+          "exactImageRightsForAppVerified": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "sourceMatchingStatus": "BREVIARIUM_83_EXISTING_COMMONS_PLATE_EXACT_FEAST_SUBJECT_RESEARCH_ONLY",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-05-05",
@@ -7642,8 +7697,35 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalBreviariumSourceLeads": [
+        {
+          "breviarumPlateId": "plate-tiepolo-cajetan",
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "Saint Cajetan's Vision of the Holy Family",
+          "commonsFile": "(Venice) Saint Cajetan's Vision of the Holy Family by Giambattista Tiepolo - Gallerie Accademia.jpg",
+          "sourceFilePage": "https://commons.wikimedia.org/wiki/File:(Venice)_Saint_Cajetan%27s_Vision_of_the_Holy_Family_by_Giambattista_Tiepolo_-_Gallerie_Accademia.jpg",
+          "sourceSha1": "de30dcab0e87a0ad151db804eba18e48eb6af5b8",
+          "commonsNativePixels": [
+            6662,
+            11944
+          ],
+          "commonsFileBytes": 67432957,
+          "commonsHistoricalLicenceMetadata": "Public domain",
+          "artisticIntakeTier": "PRIORITY_PHOTOGRAPHIC_QA",
+          "sourceQualityGate": "LARGE_IMAGE_METADATA_ONLY_UNTIL_FREE_STORAGE_AND_REUSE",
+          "sourceResearchOnly": true,
+          "priorWorkPhysicalIdentityVerified": false,
+          "canonical383ArtworkId": null,
+          "newFeastEditorialApproval": false,
+          "fullNativePhotoCropVerified": false,
+          "exactImageRightsForAppVerified": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "sourceMatchingStatus": "BREVIARIUM_83_EXISTING_COMMONS_PLATE_EXACT_FEAST_SUBJECT_RESEARCH_ONLY",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-08-08",
