@@ -60,9 +60,9 @@ for(const row of selected.strictExactSaintResearch){
   }
 }
 assert.equal(j.summary.III.additionalUnlinked856ExactSubjectDateCandidates,16);
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,56);
-assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,109);
-assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length).length,75);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,67);
+assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,98);
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,64);
 assert.equal(selected.partialOrExcludedGroupOrDifferentSaint.find(x=>x.date==="2026-07-10").entries.length,1);
 assert.ok(!map.get("2026-07-10").additionalAcceptedSourceLeads,"Seville Rufina is not Roman Rufina or Secunda");
 assert.ok(map.get("2026-01-20").partialOrExcludedAcceptedSourceLeads.length>=4);
@@ -103,7 +103,7 @@ assert.equal(batch4.counts.newAcceptedSourceOnlyMatchedDates,3);
 assert.equal(batch4.counts.newLegacyNamedFileOnlyMatchedDates,1);
 assert.equal(batch4.counts.nowUnmatchedClassIIISanctoral,79);
 assert.equal(j.summary.III.additionalLegacyNamedFileExactSubjectDates,1);
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,75);
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,64);
 assert.equal(batch4.rows.length,7);
 for(const row of batch4.rows){
   const d=map.get(row.date);
@@ -154,8 +154,8 @@ assert.equal(map.get("2026-01-22").partialOrExcludedAcceptedSourceLeads[0].sourc
 assert.equal(map.get("2026-07-10").partialGroupLegacyNamedFileLeads[0].historicalFile,"File:SevenBrothers.jpg");
 assert.equal(map.get("2026-07-28").partialGroupLegacyNamedFileLeads.length,2);
 assert.ok(map.get("2026-07-10").partialOrExcludedAcceptedSourceLeads.some(x=>x.sourceCardId==="commons:29858581"));
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,56,"partial group matches never add dates; Batch 7 added three exact subjects");
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,75);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,67,"partial group matches never add dates; Batch 7 and 8 added exact subjects");
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,64);
 
 
 const batch7=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-breviarium-existing-subject-match-batch7.v1.json",import.meta.url),"utf8"));
@@ -182,6 +182,43 @@ assert.deepEqual(batch7.rows.map(x=>x.date),["2026-02-11","2026-05-04","2026-08-
 assert.ok(batch7.rows[0].works[0].commonsNativePixels[0]<1000,"Lourdes needs new photo QA");
 assert.ok(batch7.rows[1].works[0].commonsNativePixels[0]<1000,"Monica needs new photo QA");
 assert.ok(batch7.rows[2].works[0].commonsNativePixels[0]>6000,"Tiepolo is large but must not be auto-published");
+
+const batch8=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-exact-sanctoral-research-batch8.v1.json",import.meta.url),"utf8"));
+assert.equal(batch8.counts.unique2026FeastDates,11);
+assert.equal(batch8.counts.distinctResearchSourceRecords,12);
+assert.equal(batch8.counts.toIdentifiedSubjectDates,67);
+assert.equal(batch8.counts.toUnmatchedSanctoralDates,64);
+assert.equal(batch8.counts.newUserEditorialApprovals,0);
+assert.equal(batch8.counts.newCanonical383ArtworkIds,0);
+assert.equal(batch8.counts.newLiveAppImages,0);
+assert.equal(j.summary.III.additionalNewExternalExactSubjectDates,11);
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllSourceRegistries,64);
+const q8=new Set();
+for(const row of batch8.rows) {
+  const observed=map.get(row.date);
+  assert.equal(observed.observedPrincipalId,row.principalId);
+  assert.equal(observed.rank,"III");
+  assert.ok(!observed.linkedCatalogueArt.length);
+  assert.ok(!observed.additionalAcceptedSourceLeads?.length);
+  assert.ok(row.candidateSources.length>=1);
+  assert.equal(row.appReleaseCertified,false);
+  assert.equal(row.newDateUserApproval,false);
+  assert.deepEqual(observed.additionalNewMuseumLeads.map(x=>x.researchSourceId),row.candidateSources.map(x=>x.researchSourceId));
+  for(const lead of row.candidateSources) {
+    assert.ok(!q8.has(lead.researchSourceId),"duplicate source identity in Batch 8");
+    q8.add(lead.researchSourceId);
+    assert.equal(lead.artworkOriginalAcquired,false);
+    assert.equal(lead.finalFeastArtworkUserApproval,false);
+    assert.equal(lead.homeRotationEligible,false);
+    assert.equal(lead.exactPhotoLicenceVerified,false);
+    assert.equal(lead.nativeFramelessMobileHeroQA,false);
+    assert.ok(lead.sourceObjectUrl.startsWith("https://"));
+  }
+}
+assert.equal(q8.size,12);
+assert.equal(map.get("2026-05-05").additionalNewMuseumLeads.length,2,"distinct Pius V paintings remain separate");
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,64);
+
 const everyArt=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json",import.meta.url),"utf8"));
 assert.equal(everyArt.counts.canonicalArtworkIds,383);
 assert.equal(everyArt.counts.canonicalIdsLinkedAnyClass,178);
