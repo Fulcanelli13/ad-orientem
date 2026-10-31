@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   acquire-and-commit:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/fix/explore-reuse-approved-gallery-as-covers-20261031'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
