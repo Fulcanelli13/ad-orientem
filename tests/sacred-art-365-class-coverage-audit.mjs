@@ -123,5 +123,5 @@ assert.equal(raphael.historicalW72Score,5);
 assert.equal(raphael.editorial,"UNREVIEWED");
 assert.ok(map.get("2026-02-12").additionalLegacyNamedFileLeads[0].sourceFile.includes("Masucci"));
 assert.ok(map.get("2026-06-05").identityUncertaintyWarnings.join(" ").includes("not sure who this chap is"));
-assert.ok(map.get("2026-02-04").identityUncertaintyWarnings.join(" ").includes("same physical original"));
+assert.ok(map.get("2026-02-04").identityUncertaintyWarnings.join(" ").includes("may depict one original"));
 console.log("Sacred Art 2026: 365 exact dates, four-class reporting, anti-confusion and external reuse gates PASS");
