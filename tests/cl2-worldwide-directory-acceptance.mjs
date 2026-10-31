@@ -264,7 +264,7 @@ for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"
  assert.equal(item.affiliation_scope,"SOURCE_LABEL_ONLY");
 }
 const operatorHoldGroups=new Set(["RG-19BD1D3D4E73","RG-2577094CF7E4","RG-3E135A9E5C09","RG-AE6B9D48B695"]);
-assert.ok([...operatorHoldGroups].every(id=>diocesan.find(x=>x.physical_group_id===id)?.geo.review_scope.includes("NOT_DIOCESAN_PHOTO_QUEUE")));
+assert.ok([...operatorHoldGroups].every(id=>diocesan.find(x=>x.physical_group_id===id)?.geo.review_scope && /NOT_(?:LATIN_)?DIOCESAN_PHOTO_QUEUE/.test(diocesan.find(x=>x.physical_group_id===id).geo.review_scope)));
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
@@ -274,10 +274,10 @@ for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
  ["RG-261733295B4C","AO-B39-LOC-IT-B7E3416FBF04","Cappella della Madonna di Pompignano",39.8976619,18.2139344,"unavoce:google-place:ae1bcf27ad68348","site","UNAVOCE_LINKED_CHAPEL_PLACE_NOT_DESTROYED_SPECCHIA_SITE"],
  ["RG-2181DD7D9F32","AO-B38-LOC-ES-370B93FA6BC","Capilla de la Adoración Permanente",38.992969,-1.851937,"independent:iglesiacercademi:oratorio-carmen-albacete","site","CARMELITE_THIRD_ORDER_ORATORY_DIOCESAN_ADORATION_NOT_OLD_OCTAVIO_CUARTERO"],
  ["RG-97D731A26655","AO-B39-LOC-PL-8AB74ADAA7D6","Kaplica Najświętszego Serca Jezusowego w Szpitalu Powiatowym",52.3251,17.5734,"address:sprawdzadres:wrzesnia-slowackiego-2","address","HOSPITAL_BUILDING_NOT_INTERIOR_CHAPEL_POSITION"],
- ["RG-19BD1D3D4E73","AO-B39-LOC-HU-CEAC77F2EE49","Árpád-házi Szent Erzsébet Ferences-Templom",47.23139,16.62503,"site","miserend:1328"],
- ["RG-2577094CF7E4","AO-B39-LOC-PL-AD5AB9333B4F","Kościół Trójcy Świętej Ormiański",50.29152,18.66781,"site","osm:way:187038655"],
- ["RG-3E135A9E5C09","AO-B38-LOC-ES-43049BF2ACE","Monasterio de Santa María de la Rábida",37.20756,-6.92614,"site","osm:way:205028699"],
- ["RG-AE6B9D48B695","AO-B39-LOC-HU-F6266E99F5B3","Szent József Jezsuita Templom",46.25193,20.14357,"site","osm:way:1418288454"],
+ ["RG-19BD1D3D4E73","AO-B39-LOC-HU-CEAC77F2EE49","Árpád-házi Szent Erzsébet Ferences-Templom",47.23139,16.62503,"miserend:1328","site","FRANCISCAN_ORDER_OPERATED_NOT_DIOCESAN_PHOTO_QUEUE"],
+ ["RG-2577094CF7E4","AO-B39-LOC-PL-AD5AB9333B4F","Kościół Trójcy Świętej Ormiański",50.29152,18.66781,"osm:way:187038655","site","ARMENIAN_CATHOLIC_ORDINARIATE_NOT_LATIN_DIOCESAN_PHOTO_QUEUE"],
+ ["RG-3E135A9E5C09","AO-B38-LOC-ES-43049BF2ACE","Monasterio de Santa María de la Rábida",37.20756,-6.92614,"osm:way:205028699","site","FRANCISCAN_FRIARY_NOT_DIOCESAN_PHOTO_QUEUE"],
+ ["RG-AE6B9D48B695","AO-B39-LOC-HU-F6266E99F5B3","Szent József Jezsuita Templom",46.25193,20.14357,"osm:way:1418288454","site","JESUIT_ORDER_OPERATED_NOT_DIOCESAN_PHOTO_QUEUE"],
  ["RG-A768309560A6","AO-B39-LOC-SK-F3A4F0DCE391","Kaplnka Svätého Leonarda",48.420389,17.375139,"heritage:pamiatkynaslovensku:leonarda-dolany","site","PEZINOK_SAINT_LEONARD_NOT_LEVOCA_SAINT_LEONARD_OR_SEBASTIAN"],
  ["RG-1EDB76F4B57B","AO-B38-LOC-ES-61C6D5A95E5","Iglesia del Salvador",39.85656,-4.02675,"osm:way:113958010","site","TOLEDO_MOSQUE_CHURCH_NOT_TALAVERA_OR_MADRIDEJOS"],
  ["RG-B30F94A20F69","AO-B38-LOC-BE-29F03868623","Église Saint-Hubert",50.57716,5.86643,"osm:way:175896158","site","HEUSY_SAINT_HUBERT_NOT_SAINT_ANTOINE_HUBERT"],
