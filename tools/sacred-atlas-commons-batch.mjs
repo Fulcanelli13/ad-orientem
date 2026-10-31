@@ -10,10 +10,12 @@
 import {readFile,writeFile,mkdir} from "node:fs/promises";
 import {dirname} from "node:path";
 
-const source="data/geography/research/sacred-atlas-commons-batch-001.manifest.json";
-const destination="data/geography/research/sacred-atlas-commons-batch-001.results.json";
+const batchId=process.argv[2]||"001";
+if(!/^00[123]$/.test(batchId))throw Error("Only manifests 001–003 are authorized");
+const source=`data/geography/research/sacred-atlas-commons-batch-${batchId}.manifest.json`;
+const destination=`data/geography/research/sacred-atlas-commons-batch-${batchId}.results.json`;
 const manifest=JSON.parse(await readFile(source,"utf8"));
-if(manifest.total_targets!==100||manifest.targets.length!==100)throw Error("Expected exactly 100 targets");
+if(manifest.batch_id!==batchId||manifest.total_targets!==manifest.targets.length||manifest.targets.length<1||manifest.targets.length>100)throw Error("Invalid batch manifest");
 const API="https://commons.wikimedia.org/w/api.php";
 const UA="AdOrientemSacredAtlasResearch/1.0 (https://github.com/Fulcanelli13/ad-orientem)";
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -128,7 +130,7 @@ async function worker(){
    record.state="COMMONS_QUERY_FAILED";record.error=String(e?.message||e).slice(0,250);
   }
   output[index]=record;
-  if((index+1)%10===0)console.log("Completed target index "+(index+1)+"/100");
+  if((index+1)%10===0)console.log("Completed target index "+(index+1)+"/"+manifest.total_targets);
   await sleep(350);
  }
 }
@@ -143,7 +145,7 @@ const stats={
  exact_visual_identity_verified:0,underlying_artwork_rights_cleared:0,publication_approved:0
 };
 const data={
- schema:"AO_SACRED_ATLAS_COMMONS_BATCH_RESULTS_V1",batch_id:"001",
+ schema:"AO_SACRED_ATLAS_COMMONS_BATCH_RESULTS_V1",batch_id:batchId,
  generated_at:new Date().toISOString(),manifest_path:source,
  rights_policy:"Research-only metadata. A Commons photo licence does not establish the legal status of a photographed statue, relic container, mosaic or modern artwork. Editorial round-one KEEP decisions are unchanged. A plausible title match is NOT visual verification.",
  stats,results:output
@@ -151,4 +153,4 @@ const data={
 await mkdir(dirname(destination),{recursive:true});
 await writeFile(destination,JSON.stringify(data,null,2)+"\n");
 console.log("Batch 001 stats:",JSON.stringify(stats));
-if(stats.query_failures===100)process.exitCode=2;
+if(stats.query_failures===manifest.total_targets)process.exitCode=2;
