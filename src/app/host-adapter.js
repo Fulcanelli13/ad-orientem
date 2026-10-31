@@ -220,15 +220,18 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     openSettings() {
-      // Settings is modular and fail-closed. Close Learn before mounting the
-      // Settings overlay so only one non-Mass state owns the visible surface.
+      // Formation is intentionally unmounted under Settings. Carry only a
+      // one-use return receipt from the live owner, never a parallel route.
+      const current=win?.AO_APP_SHELL_V1?.getActive?.();
+      const returnReceipt=current==="learn"
+        ?win?.AO_LEARN_APP_V1?.captureSettingsReturn?.()??null:null;
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const api = settingsApi(win);
       if (typeof api?.open !== "function") return false;
       try {
-        const opened = api.open();
+        const opened = api.open("/settings",{returnReceipt});
         return opened && typeof opened.then === "function"
           ? Promise.resolve(opened).then(openedSuccessfully).catch(error => {
               try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
