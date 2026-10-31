@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 43,
+    "new_site_pins": 45,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -612,6 +612,28 @@
       "source_ref": "odtur:12019",
       "source_url": "https://odtur.pl/atrakcje/katowice-kosciol-pw-ss-jana-i-pawla-meczennikow-w-katowicach-12019.html",
       "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-938EAA84BA0A",
+      "source_id": "AO-B39-LOC-IT-A5B23CB1B0E5",
+      "name": "Chiesa dei SS Cirillo e Metodio",
+      "lat": 41.789059,
+      "lng": 12.344535,
+      "source_ref": "turismoroma:158912",
+      "source_url": "https://www.turismoroma.it/it/node/158912",
+      "review_scope": "OFFICIAL_MUNICIPAL_SITE_POSITION_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-A0933DE542C7",
+      "source_id": "AO-B38-LOC-ES-E7A90BC3DB7",
+      "name": "Iglesia Cripta del Santísimo Cristo",
+      "lat": 43.46081,
+      "lng": -3.80701,
+      "source_ref": "osm:node:7704619785",
+      "source_url": "https://www.openstreetmap.org/node/7704619785",
+      "review_scope": "CRYPT_CHURCH_SITE_NOT_CATHEDRAL_ENTRANCE",
       "place_id": null
     }
   ]
