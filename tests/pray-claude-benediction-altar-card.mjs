@@ -23,6 +23,12 @@ test("Seven base stages and Blessing V own the rail; the public rite stage owner
  const html=claudeBenedictionRail(stages,4,{esc});
  assert.equal((html.match(/data-p435930-ben-step=/g)||[]).length,7);
  assert.match(html,/class="cu key" aria-current="step"/);
+ // Advancing to Divine Praises must never claim that the priest's
+ // external blessing was completed by the app.
+ const afterBlessing=claudeBenedictionRail(stages,5,{esc});
+ assert.match(afterBlessing,/data-p435930-ben-step="4" class=" key"/);
+ assert.doesNotMatch(afterBlessing,/data-p435930-ben-step="4" class="dn key"/);
+
  assert.match(runtime,/claudeBenedictionRail\(stages,i,\{esc\}\)/);
  assert.match(runtime,/aoClaudeAltarCard/);
  assert.match(runtime,/const plateCaption=baseIndex>=0/);
