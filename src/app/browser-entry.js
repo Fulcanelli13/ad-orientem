@@ -474,6 +474,9 @@ export function installAppShellBridge({
     getActive() {
       return state.controller?.getActive?.() ?? null;
     },
+    getPendingTarget() {
+      return state.controller?.getPendingTarget?.() ?? null;
+    },
     syncSurface(surface) {
       if (!state.controller) return false;
       const normalized = normalizeAppSurface(surface);
