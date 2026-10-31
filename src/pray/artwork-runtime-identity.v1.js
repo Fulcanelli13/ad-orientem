@@ -46,6 +46,31 @@ const devotional=(id)=>id==="litany_loreto_current"?"COV-litany_loreto_1962":id=
 export function resolveArtworkRuntimeIdentity(input={}){
  const owner=String(input.owner||"presentation");
  if(owner==="chaplet")return resolveChapletArtworkStage({id:input.id,stage:input.stage,bead:input.bead});
+ if(owner==="angelusUnit"){
+  // The blueprint has additional time-of-day and feast slots; those are not
+  // individual prayer units. Resolve only the actual theological utterance,
+  // using canonical Latin, and let the three Hail Marys inherit their verses.
+  const form=input.form==="regina"?"regina":"angelus";
+  const cover=form==="regina"?"COV-pray.angelus_regina":"COV-pray.angelus";
+  const kind=String(input.type||"");
+  const first=String(input.latinText||"").replace(/\r/g,"").split("\n")[0].trim();
+  const key="angelus:"+form+":unit-"+(index(input.unitIndex,30)??"unknown");
+  const exact=form==="angelus"
+    ?(/Angelus Domini nuntiavit/i.test(first)?"STG-pray.angelus-05"
+      :/Ecce ancilla Domini/i.test(first)?"STG-pray.angelus-06"
+      :/Et Verbum caro factum est/i.test(first)?"STG-pray.angelus-07"
+      :/Ora pro nobis, sancta Dei Genetrix/i.test(first)?"STG-pray.angelus-08":null)
+    :(/Regina c[æa]eli,? lætare/i.test(first)?"STG-pray.angelus_regina-01"
+      :/Resurrexit|Gaude et lætare/i.test(first)?"STG-pray.angelus_regina-02":null);
+  if(kind==="collect")return result(key,form==="regina"?"STG-pray.angelus_regina-04":"STG-pray.angelus-09","CANONICAL_COLLECT_STAGE");
+  if(kind==="vr")return result(key,exact||cover,exact?"EXACT_LATIN_INVOCATION_STAGE":"UNMATCHED_VERSE_COVER_CONTEXTUAL");
+  if(kind==="hail"&&form==="angelus"){
+    const prior=String(input.previousSlot||"");
+    const approvedInheritance=["STG-pray.angelus-05","STG-pray.angelus-06","STG-pray.angelus-07"].includes(prior);
+    return result(key,approvedInheritance?prior:cover,approvedInheritance?"HAIL_MARY_INHERITS_PRECEDING_INVOCATION":"HAIL_MARY_CONTEXT_NOT_RESOLVED");
+  }
+  return result(key,cover,"FORM_COVER_CONTEXTUAL_NO_EXACT_UNIT");
+ }
  if(owner==="novena"){
   const id=String(input.id||""),screen=String(input.screen||"overview"),day=index(Number(input.day)-1,9),stage=index(input.stage,6);
   if(!id||screen==="overview")return result("novena:overview",null,"NOT_AN_IMAGE_BEARING_PRAYER_CARD");
