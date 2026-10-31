@@ -124,6 +124,7 @@ try{
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  assert.equal((await state()).id,"contrition-penance");
  assert.equal(await page.locator(sel+" [data-ao-confession-act]").count(),1);
+ await page.screenshot({path:resolve(captures,"confession-390-act-of-contrition.png"),animations:"disabled"});
  await page.locator(sel+" [data-p435930-conf-contrition='piusx']").tap();
  assert.equal(await page.locator(sel+" [data-p435930-conf-contrition='piusx']").getAttribute("aria-pressed"),"true","Contrition selection must respond on the actual prayer card");
  await page.locator(sel+" [data-p435930-conf-contrition='standard']").tap();
@@ -131,6 +132,7 @@ try{
  await page.locator(timeline+" [data-ao-devo-chapter='7']").tap();
  assert.equal((await state()).id,"priest-absolution");
  assert.equal(await page.locator(sel+" [data-ao-confession-latin-excerpt='priest-only']").count(),1);
+ await page.screenshot({path:resolve(captures,"confession-390-priest-absolution-guide.png"),animations:"disabled"});
  await page.locator(timeline+" [data-ao-devo-chapter='8']").tap();
  assert.equal((await state()).id,"leave-confessional");
  await page.locator(sel+" [data-p435930-conf-next]").tap();
@@ -160,6 +162,11 @@ try{
   assert.equal(x.stops,count);assert.equal(x.id,id);assert.ok(x.active>=1,
    "Canonical exam step has no illuminated paragraph after paint");
   assert.equal(await page.locator(sel+" .aoP435930ConfOneCard input").count(),0,"Never record answers to examination questions");
+  if(path==="returning"){
+    await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+    assert.equal(await page.locator(sel+" .aoP435930ConfQuestions li").count(),7,"Extended commandment must preserve two original prompts and five additions");
+    await page.screenshot({path:resolve(captures,"returning-expanded-examination-320.png"),animations:"disabled"});
+  }
   await open();
  }
  assert.deepEqual(errors,[],"Browser errors: "+errors.join(" | "));
