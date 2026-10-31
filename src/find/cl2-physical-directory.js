@@ -43,6 +43,76 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-A39E87B5A30C":Object.freeze({
+  sourceId:"AO-EUR-GB-008",name:"Brompton Oratory (The London Oratory)",
+  country:"GB",addressNeedle:"Brompton Road",placeId:null,
+  lat:51.49714,lng:-0.16964,sourceRef:"osm:way:851727368",
+  sourceUrl:"https://www.openstreetmap.org/way/851727368",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W851727368",
+   "https://www.bromptonoratory.co.uk/regular-mass-service-times",
+  ]),
+ }),
+ "RG-DA2F4D212252":Object.freeze({
+  sourceId:"ORD-GB-OXFORD-ORATORY-ST-ALOYSIUS",
+  name:"Oxford Oratory — St Aloysius Gonzaga",
+  country:"GB",addressNeedle:"25 Woodstock Road",placeId:null,
+  lat:51.75935,lng:-1.26183,sourceRef:"osm:way:65699768",
+  sourceUrl:"https://www.openstreetmap.org/way/65699768",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W65699768",
+   "https://www.oxfordoratory.org.uk/mass-times.php",
+  ]),
+ }),
+ "RG-FC7B994D657F":Object.freeze({
+  sourceId:"DIO-GB-WESTMINSTER-SPANISHPLACE-ST-JAMES",
+  name:"St James's Church, Spanish Place",
+  country:"GB",addressNeedle:"22 George Street",placeId:null,
+  lat:51.51819,lng:-0.15256,sourceRef:"osm:way:160404637",
+  sourceUrl:"https://www.openstreetmap.org/way/160404637",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W160404637",
+   "https://parish.rcdow.org.uk/spanishplace/contact/",
+  ]),
+ }),
+ "RG-EC5A4BA48BF9":Object.freeze({
+  sourceId:"ORD-GB-BIRMINGHAM-ORATORY-IMMACULATE-CONCEPTION",
+  name:"Birmingham Oratory — Immaculate Conception",
+  country:"GB",addressNeedle:"141 Hagley Road",placeId:null,
+  lat:52.4723,lng:-1.9288,sourceRef:"historicengland:1076349",
+  sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1076349",
+  attribution:"Historic England list entry 1076349 · church and Oratory ensemble",
+  reviewScope:"CHURCH_AND_ORATORY_COMPLEX_NOT_ENTRANCE",
+  evidence:Object.freeze([
+   "https://britishlistedbuildings.co.uk/101076349-the-church-of-the-immaculate-conception-the-oratory-the-oratory-priests-house-and-the-former-oratory-school-buildings-ward",
+   "https://birminghamoratory.org.uk/contact/",
+  ]),
+ }),
+ "RG-D40A53ED496A":Object.freeze({
+  sourceId:"AO-EUR-GB-018",
+  name:"Corpus Christi Catholic, Maiden Lane - Shrine of the Blessed Sacrament",
+  country:"GB",addressNeedle:"Maiden Lane",placeId:null,
+  lat:51.5109,lng:-0.1225,sourceRef:"historicengland:1238978",
+  sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1238978",
+  attribution:"Historic England list entry 1238978 · church and presbytery",
+  reviewScope:"CHURCH_AND_PRESBYTERY_SITE_NOT_ENTRANCE",
+  evidence:Object.freeze([
+   "https://britishlistedbuildings.co.uk/101238978-corpus-christi-church-and-presbytery-st-jamess-ward",
+   "https://corpuschristimaidenlane.org.uk/contact/",
+  ]),
+ }),
+ "RG-EEE45B6A7403":Object.freeze({
+  sourceId:"AO-B34-L-GB-9D55FB39FDF9",name:"Buckfast Abbey",
+  country:"GB",addressNeedle:"Buckfastleigh",placeId:null,
+  lat:50.493,lng:-3.7756,sourceRef:"historicengland:1209774",
+  sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1209774",
+  attribution:"Historic England list entry 1209774 · Abbey Church of St Mary",
+  evidence:Object.freeze([
+   "https://gb.britishlistedbuildings.co.uk/101209774-church-of-st-mary-buckfast-abbey-buckfastleigh/maps",
+   "https://www.buckfast.org.uk/",
+  ]),
+ }),
+
  "RG-00D589BAB16C":Object.freeze({
   sourceId:"ao-fssp-church-of-st-mary-538-broadway-providence-ri-02909-usa",
   name:"Church of St Mary",country:"US",addressNeedle:"538 Broadway",
