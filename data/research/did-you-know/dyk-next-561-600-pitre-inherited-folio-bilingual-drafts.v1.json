@@ -371,8 +371,8 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "occasion": "St Joseph, 17–19 March",
       "statement": {
-        "en": "Maccu, a thick broad-bean preparation, was a named dish on the votive Saint Joseph menu at Santa Croce Camerina in Pitrè's account.",
-        "fr": "Le maccu, préparation épaisse à base de fèves, était un plat nommé du menu votif de saint Joseph à Santa Croce Camerina dans le récit de Pitrè."
+        "en": "Among the plates of Sicilian votive cooking documented at Santa Croce Camerina, Pitrè singles out maccu: a thick preparation of broad beans.",
+        "fr": "Parmi les plats de cuisine votive sicilienne décrits à Santa Croce Camerina, Pitrè nomme le maccu, une préparation épaisse de fèves."
       },
       "source": {
         "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
@@ -1446,6 +1446,9 @@
         "change": "SCOPE_PRECISION_REWRITE"
       }
     ],
-    "description": "Reword familiar Holy Family and St Paul nouns to focus unique actions; one source replacement where duplicated"
+    "description": "Reword familiar Holy Family and St Paul nouns to focus unique actions; one source replacement where duplicated",
+    "second_pass_rewrites": [
+      "DYK-G600-P-011"
+    ]
   }
 }
