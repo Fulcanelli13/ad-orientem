@@ -78,6 +78,40 @@ function delay(win,ms){
 }
 
 export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
+  // One-use, in-memory Back receipt owned by this Prayer entry; not a
+  // persisted session or a second navigation state machine.
+  let backReceipt=null;
+  function snapshotScroll(){
+    const m=root(win)?.querySelector(".aoP435930Mount");
+    if(!m)return null;
+    return {
+      mount:Math.max(0,Math.floor(m.scrollTop||0)),
+      cards:[...m.querySelectorAll("[data-ao-devo-card] .aoDevoCardScroll")].map((node,index)=>({
+        index,id:node.closest("[data-ao-devo-card]")?.dataset?.aoDevoCard||"",
+        top:Math.max(0,Math.floor(node.scrollTop||0))
+      }))
+    };
+  }
+  function restoreScroll(snapshot){
+    if(!snapshot)return;
+    const apply=()=>{
+      const m=root(win)?.querySelector(".aoP435930Mount");
+      if(!m||!root(win)?.classList?.contains("open"))return;
+      m.scrollTop=snapshot.mount||0;
+      for(const item of snapshot.cards||[]){
+        const nodes=[...m.querySelectorAll("[data-ao-devo-card] .aoDevoCardScroll")];
+        const node=nodes[item.index];
+        if(!node||node.closest("[data-ao-devo-card]")?.dataset?.aoDevoCard!==item.id)continue;
+        node.scrollTop=item.top;
+        node.dispatchEvent(new win.Event("scroll",{bubbles:true}));
+      }
+      m.dispatchEvent(new win.Event("scroll",{bubbles:true}));
+    };
+    // Restore after the reader's own queued render and focus-frame setup,
+    // so the normal paragraph focus/mute engine stays authoritative.
+    Promise.resolve().then(()=>win?.requestAnimationFrame?.(
+      ()=>win?.requestAnimationFrame?.(apply)));
+  }
   async function resolveDonor(){
     for(let i=0;i<=maxPolls;i++){
       const api=donor(win);
@@ -87,24 +121,42 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     return null;
   }
 
-  async function open(){
+  async function open({restoreReturn=false}={}){
+    const receipt=restoreReturn?backReceipt:null;
+    backReceipt=null; // Explicit Prayer entry always starts fresh.
     try{await ensurePrayReader({win});}catch(error){
       try{win?.console?.error?.("Prayer reader load failed",error);}catch{}
       return false;
     }
     const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
-    const opened=await Promise.resolve(api.open("pray.hub",{returnContext:null}));
-    if(opened!==true&&opened?.ok!==true)return false;
+    let opened=false;
+    if(receipt?.navigation&&typeof api.restoreHandoff==="function"){
+      try{opened=api.restoreHandoff(receipt.navigation)===true}catch{opened=false}
+    }
+    if(!opened){
+      const fresh=await Promise.resolve(api.open("pray.hub",{returnContext:null}));
+      opened=fresh===true||fresh?.ok===true;
+    }
+    if(!opened)return false;
     stamp(win);
+    if(receipt&&opened&&root(win)?.querySelector(".aoP435930Mount")?.dataset?.aoPrayView===receipt.navigation?.view)
+      restoreScroll(receipt.scroll);
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
     return true;
   }
 
-  function close(){
+  function close({preserveForBack=false}={}){
     const api=donor(win);
     if(typeof api?.close!=="function")return false;
-    api.close();
+    let captured=null;
+    if(preserveForBack&&typeof api.captureAppBackHandoff==="function"){
+      const navigation=api.captureAppBackHandoff();
+      if(navigation)captured={navigation,scroll:snapshotScroll()};
+    }
+    backReceipt=captured;
+    if(captured)api.close({silent:true,preserve:true});
+    else api.close();
     return true;
   }
 
@@ -122,6 +174,7 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
       routeOwner:win?.document?.documentElement?.dataset?.aoPrayRouteOwner??null,
       visibleOwner:node?.dataset?.aoPrayOwner??null,
       open:Boolean(node?.classList?.contains?.("open")),
+      returnAvailable:Boolean(backReceipt),
       donorState,
       presentationOwner:"AO_PRAY_V435930",
       presentationRoot:"aoPray435930",
