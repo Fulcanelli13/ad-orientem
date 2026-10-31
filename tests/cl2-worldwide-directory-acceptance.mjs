@@ -2,7 +2,7 @@
 // This proves one site per CL2 effective physical identity and that additional
 // source listings remain accessible without fabricated pins, times or status.
 import assert from "node:assert/strict";
-import {pendingRecords,overpassQuery,candidatesForSite} from "../tools/directory/diocesan-osm-candidate-scan.mjs";
+import {pendingRecords,reviewQueueRows,overpassQuery,candidatesForSite} from "../tools/directory/diocesan-osm-candidate-scan.mjs";
 
 import {readFileSync} from "node:fs";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49}
@@ -192,6 +192,17 @@ assert.equal(sampleCandidates.photo_approved,false);
 const osmReviewQueue=read("data/directory/research/diocesan-inherited-pin-review-queue-20261031.v1.json");
 assert.equal(osmReviewQueue.count,442);
 assert.equal(osmReviewQueue.rows.length,442);
+assert.deepEqual(
+ osmReviewQueue.rows.slice().sort((a,b)=>a.physical_group_id.localeCompare(b.physical_group_id)),
+ reviewQueueRows(diocesanQuality),
+ "Canonical review queue must reflect current coordinate, operator and photograph gates"
+);
+for(const key of Object.keys(osmReviewQueue.by_photo_gate)){
+ assert.equal(osmReviewQueue.by_photo_gate[key],
+  osmReviewQueue.rows.filter(r=>r.photo_gate===key).length,
+  "Review queue gate count must be derived, not copied from a stale earlier ledger");
+}
+
 assert.equal(new Set(osmReviewQueue.rows.map(r=>r.physical_group_id)).size,442);
 assert.ok(osmReviewQueue.rows.every(r=>!r.photo_approved&&r.review_status==="OSM_CANDIDATES_NOT_YET_FETCHED"));
 

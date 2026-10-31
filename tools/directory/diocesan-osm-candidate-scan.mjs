@@ -24,6 +24,16 @@ export function pendingRecords(ledger){
  r.precision==="source_marker_unassessed"&&Number.isFinite(r.lat)&&Number.isFinite(r.lng))
  .sort((a,b)=>a.physical_group_id.localeCompare(b.physical_group_id));
 }
+
+export function reviewQueueRows(ledger){
+ return pendingRecords(ledger).map(r=>({
+  physical_group_id:r.physical_group_id,source_id:r.source_ids[0],name:r.name,country:r.country,
+  source_description:r.source_description,lat:r.lat,lng:r.lng,
+  photo_gate:r.photo_gate,operator_scope:r.operator_scope,
+  review_status:"OSM_CANDIDATES_NOT_YET_FETCHED",photo_approved:false
+ }));
+}
+
 export function overpassQuery(records,radius=180){
  if(!Number.isInteger(radius)||radius<20||radius>300)throw Error("Invalid radius");
  if(!records.length||records.length>20)throw Error("Review at most 20 pins per public API request");

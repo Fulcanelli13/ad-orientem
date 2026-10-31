@@ -3,7 +3,7 @@
   "as_of": "2026-10-31",
   "provenance": {
     "branch": "feature/tlm-visual-fallback-20261030",
-    "audit_blob_sha": "ff6cf64b68cea89b3d5784157bef0c708b153339"
+    "audit_blob_sha": "ca3198a7bc834e21e3c4c7d7ed23ad81abff0ddb"
   },
   "policy": "Source-labelled diocesan is not independently verified operator ownership. Coordinates remain provisional. This is a screening queue, not source evidence, site verification, nor photograph approval. Exact building identity and acceptable licensed imagery must be independently reviewed.",
   "count": 442,
@@ -28,9 +28,9 @@
     "JP": 1
   },
   "by_photo_gate": {
-    "INHERITED_POINT_UNASSESSED": 423,
+    "INHERITED_POINT_UNASSESSED": 426,
     "OPERATOR_EXCLUDED": 7,
-    "OPERATOR_REQUIRES_REVIEW": 12
+    "OPERATOR_REQUIRES_REVIEW": 9
   },
   "rows": [
     {
@@ -3252,8 +3252,8 @@
       "source_description": "408 3rd St N, South St Paul, MN",
       "lat": 44.885038699999996,
       "lng": -93.0376383,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "operator_scope": "DIOCESAN_HOLY_TRINITY_PARISH_ORATORY",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -4474,8 +4474,8 @@
       "source_description": "Union, KY (locality only; street not established — source unverified)",
       "lat": 38.890606,
       "lng": -84.730325,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "operator_scope": "COVINGTON_DIOCESAN_HOLY_FAMILY_ORATORY",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -5137,8 +5137,8 @@
       "source_description": "30 Church St, Redding, CT 06896",
       "lat": 41.258399,
       "lng": -73.432513,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "operator_scope": "BRIDGEPORT_DIOCESAN_GEORGETOWN_ORATORY",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
