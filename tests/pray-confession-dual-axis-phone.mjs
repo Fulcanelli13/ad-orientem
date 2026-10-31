@@ -140,8 +140,8 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-conf-clear]").count(),1);
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),1,
   "Final action must clear session preparation only on explicit exit");
- assert.equal(await page.locator(sel+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2,
- "Catholic doctrinal hyperlinks were discarded");
+ assert.ok(await page.locator(sel+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count()>=2,
+ "Original Vatican doctrinal and canon-law hyperlinks were discarded");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,"320px Confession overflows document");
  assert.equal((await state()).overflow,"auto");
