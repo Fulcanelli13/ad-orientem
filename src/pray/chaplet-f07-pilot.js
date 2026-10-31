@@ -117,6 +117,65 @@ const F07_STYLE=`
 #aoPray435930 .aoF07MercyRecitation button[aria-pressed="true"]{color:var(--text,#eee);border-bottom:1px solid var(--liturgical,#cbb28b)}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyPhases{display:none}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyNote{display:none}
+
+/* On a 320×568 phone the prayer must begin above the app's 70px dock.
+   Keep the canonical crown, stage choices and navigation; reclaim only
+   spacing and legacy scroll padding. This does not change event ownership. */
+@media(max-width:359px) and (max-height:650px){
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"]{
+  padding-top:0!important;row-gap:0!important;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownBand{
+  grid-template-columns:58px minmax(0,1fr);gap:6px;
+  padding:0 5px;margin:0 0 2px;border-radius:0;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownDiagram{
+  width:58px;height:58px;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownText{
+  gap:1px;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownText strong{
+  font-size:15px;line-height:1.1;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07CrownText span{
+  font-size:10px;line-height:1.1;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyChapterChips{
+  margin:0;padding:0;gap:2px;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyChapterChips button{
+  min-height:25px;padding:2px 7px;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRecitation button{
+  min-height:25px;padding:2px 5px;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadNavigation{
+  position:relative;top:auto;gap:0;padding:0 0 2px;margin:0 0 2px;
+  border-bottom:0;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyBeadNavigation>.aoDevoProgress{
+  margin:0;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoCardHead{
+  padding:2px 8px!important;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoCardTitle{
+  margin:0;font-size:19px;line-height:1.2;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoCardScroll{
+  padding:1px 8px 60px!important;gap:0;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoF07MercyRubric{
+  margin:0 0 2px;line-height:1.2;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine{
+  padding:3px 5px!important;
+ }
+ #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine p{
+  margin-top:1px;line-height:1.38;
+ }
+}
 `;
 export function installChapletF07Styles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-chaplet-f07-style"))return;
