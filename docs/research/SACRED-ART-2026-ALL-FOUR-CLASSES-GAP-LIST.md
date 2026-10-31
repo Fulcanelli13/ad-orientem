@@ -477,6 +477,7 @@ These 59 are not genuine missing saints. A vetted seasonal fallback pool should 
 - **St Thérèse (3 Oct):** Céline Martin painting requires underlying artwork rights clearance and is not publishable by default. User's separate historical public-domain portrait photo is a non-painting candidate and does not legalize the Céline painting.
 - **St John of the Cross (24 Nov):** archival Céline Martin work carries separate artist-copyright concerns.
 - **Sts Philip and James (11 May):** one individual apostle is not a depiction of both saints.
+- **20 January, Saints Fabian & Sebastian:** three Saint Sebastian portrait/scene sources are already in the 383 archive (including Rubens). They are recorded separately as partial group-member candidates, not as a complete paired image of Fabian and Sebastian. This is not an artwork-less day.
 - **Sanctoral artworks acquired outside 383:** images found in B03/B14/B15/B16 and 2026 prayer-reuse modules must be joined by exact physical original before declaring genuine holes.
 
 ## Non-negotiable publication rule
