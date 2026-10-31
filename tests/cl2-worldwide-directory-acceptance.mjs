@@ -26,6 +26,41 @@ assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published 
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
 assert.equal(world.filter(x=>x.map_publishable).length,1914);
+const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
+assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
+assert.equal(diocesanQuality.records.length,587);
+assert.equal(new Set(diocesanQuality.records.map(x=>x.physical_group_id)).size,587);
+assert.equal(diocesanQuality.counts.cl2_source_labelled_diocesan,584);
+assert.equal(diocesanQuality.counts.additional_b91_diocesan,3);
+assert.equal(diocesanQuality.counts.mapped,583);
+assert.equal(diocesanQuality.counts.missing,4);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,525);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,55);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.B91_PUBLISHED_PROVISIONAL,3);
+assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,457);
+const diocesanQualityByGroup=new Map(diocesanQuality.records.map(r=>[r.physical_group_id,r]));
+const blockedCoords=read("data/directory/research/diocesan-coordinate-blockers-20261031.v1.json");
+assert.equal(blockedCoords.items.length,4);
+for(const row of blockedCoords.items){
+ const record=diocesanQualityByGroup.get(row.physical_group_id);
+ assert.ok(record&&record.lat===null&&record.lng===null);
+ assert.equal(record.photo_gate,"MISSING_COORDINATE");
+}
+for(const row of diocesanQuality.records){
+ assert.equal(row.photo_research_started,false,"The photo-search programme has not started");
+ assert.ok(row.photo_gate,"Never admit an unadjudicated diocesan photo position");
+ const isB91=row.coordinate_origin==="B91_PUBLISHED_PROVISIONAL";
+ const item=isB91?world.find(x=>x.source_id===row.physical_group_id):
+   world.find(x=>x.physical_group_id===row.physical_group_id);
+ assert.ok(item,"Coordinate audit record is not in canonical Explore");
+ if(row.coordinate_origin==="REVIEWED_SITE_OVERLAY"){
+  assert.equal(item.geo.lat,row.lat);
+  assert.equal(item.geo.lng,row.lng);
+  assert.equal(item.geo.source_ref,row.coordinate_ref);
+ }
+ if(row.lat===null)assert.equal(item.map_publishable,false);
+}
+
 // The external Photo Finder must consume exactly the approved runtime site
 // markers. Never regress to the frozen R49 snapshot or create photo-search
 // coordinates independently of Explore's canonical physical-site projection.
