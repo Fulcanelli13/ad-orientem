@@ -1,0 +1,44 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const dir="data/prayer/artwork-editorial-20261030/";
+const read=name=>JSON.parse(readFileSync(dir+name,"utf8"));
+const map=read("balanced-reuse-20261030-assignments.v2.json");
+const ledger=read("master-map-275-reconciliation-20261031.v1.json");
+const q2=read("decision-ledger-b01-b05.v1.json");
+const later=read("approved-unified-b06-b11-from-user-message.v1.json");
+const qa=read("missing-art-approved-quality-rights-20261030.v1.json");
+const positive=new Set(["USER_APPROVED","USER_APPROVED_EXISTING_SAINTS_SELECTION","USER_APPROVED_20261030_NEW_ARTWORK_REUSE","USER_FINAL_LOCKED"]);
+const approvedIds=new Set([
+ ...q2.records.filter(x=>x.prayer_editorial_status==="ACCEPTED_FOR_PRAYER_REVIEW").map(x=>x.artwork_id),
+ ...later.decisions.filter(x=>x.status==="ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW").map(x=>x.artwork_id),
+ ...map.slots.flatMap(s=>s.works.filter(w=>positive.has(w.editorial)).map(w=>w.id))
+]);
+const eligible=w=>w.eligible!==false&&(positive.has(w.editorial)||(w.editorial==="USER_APPROVED_CROSS_PRAYER_REUSE"&&approvedIds.has(w.id)));
+const rows=map.slots.map(s=>({id:s.slot_id,works:s.works.filter(eligible)}));
+assert.equal(new Set(rows.map(x=>x.id)).size,rows.length,"Duplicated canonical editorial slot ID");
+const c=ledger.scope;
+assert.equal(c.canonical_editorial_slots,rows.length);
+assert.equal(c.affirmatively_approved_slots,rows.filter(x=>x.works.length>0).length);
+assert.equal(c.zero_affirmative_slots,rows.filter(x=>x.works.length===0).length);
+assert.equal(c.approved_placement_edges,rows.reduce((n,x)=>n+x.works.length,0));
+assert.equal(c.distinct_concrete_work_ids,new Set(rows.flatMap(x=>x.works.map(w=>w.id).filter(Boolean))).size);
+assert.deepEqual(c.final_locked_unresolved_id_slots,rows.flatMap(x=>x.works.filter(w=>!w.id).map(w=>x.id)));
+assert.equal(c.workbook_positions,c.canonical_editorial_slots+c.noneditorial_rows);
+assert.equal(ledger.noneditorial_rows.length,c.noneditorial_rows);
+for(const row of ledger.noneditorial_rows)assert.ok(!rows.some(x=>x.id===row.id),"Alias or navigation miscounted as editorial slot: "+row.id);
+assert.ok(ledger.noneditorial_rows.some(x=>x.id==="COV-litany_loreto_current"));
+assert.ok(ledger.noneditorial_rows.some(x=>x.id==="STG-daily.morning-01"));
+assert.ok(ledger.noneditorial_rows.some(x=>x.id==="STG-daily.evening-01"));
+assert.equal(c.photo_files_production_cleared_by_this_audit,0);
+const types=qa.items.map(x=>{
+ const s=String(x.rights_status||"");
+ return /CC_BY|CC-BY/.test(s)?"CONDITIONAL":/TERMS_NOT_VERIFIED|UNCONFIRMED|NEED_EXACT_RECONCILIATION/.test(s)?"UNKNOWN":"PD_CC0_CLAIM";
+});
+assert.equal(qa.items.length,ledger.photo_source_review.approved_works_reviewed);
+assert.equal(types.filter(x=>x==="PD_CC0_CLAIM").length,ledger.photo_source_review.rights_basis_pd_cc0_claims);
+assert.equal(types.filter(x=>x==="CONDITIONAL").length,ledger.photo_source_review.rights_with_attribution_or_sharealike_excluded);
+assert.equal(types.filter(x=>x==="UNKNOWN").length,ledger.photo_source_review.rights_unknown_or_unverified);
+assert.equal(ledger.photo_source_review.production_ready,0);
+assert.deepEqual(ledger.publication_policy.strict_source_basis,["PUBLIC_DOMAIN","CC0_1_0"]);
+assert.equal(ledger.publication_policy.no_runtime_image_activated,true);
+console.log(JSON.stringify({gate:"MASTER_275_TO_267_SOURCE_PARITY_NO_IMAGE_RELEASE",slots:rows.length,approved:c.affirmatively_approved_slots,gaps:c.zero_affirmative_slots,edges:c.approved_placement_edges,workIds:c.distinct_concrete_work_ids,extra:c.noneditorial_rows,photoReady:0},null,2));
