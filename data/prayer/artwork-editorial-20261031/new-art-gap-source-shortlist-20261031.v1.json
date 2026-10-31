@@ -1,0 +1,93 @@
+{
+  "schema": "AO_PRAYER_ART_GAP_RESEARCH_SOURCES_20261031_V1",
+  "asOf": "2026-10-31",
+  "scope": "RESEARCH SHORTLIST AFTER 226/267 APPROVED MAPPING; NOT ADDITIONAL USER APPROVALS OR RELEASE",
+  "sourceFirstNoFees": true,
+  "records": [
+    {
+      "work": "The Apparition of the Christ Child to Saint Anthony of Padua",
+      "artist": "Antonio del Castillo y Saavedra",
+      "museum": "Museo de Bellas Artes de Córdoba",
+      "image": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "pixels": [
+        3400,
+        4477
+      ],
+      "claimedRights": "Wikimedia Commons PD-Art / Public Domain Mark; other-jurisdiction reuse and photo fidelity check pending",
+      "targets": [
+        "COV-novena.st_anthony_nine_tuesdays",
+        "COV-devotion_st_anthony_lost_items"
+      ],
+      "fit": "EXACT_SAINT_AND_CHILD",
+      "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "nativeQA": "PENDING",
+      "note": "Strong first €0 source for both same-saint prayer slots, but not publication-ready"
+    },
+    {
+      "work": "Saint Anthony of Padua and the Christ Child",
+      "artist": "Francisco Goya",
+      "museum": "Privately held; Linares Gallery provenance claimed on Commons",
+      "image": "https://commons.wikimedia.org/wiki/File:%27Saint_Anthony_of_Padua_and_the_Christ_Child%27_by_Francisco_Goya.jpg",
+      "pixels": [
+        2491,
+        3000
+      ],
+      "claimedRights": "Wikimedia Commons PD-Art / Public Domain Mark",
+      "targets": [
+        "COV-novena.st_anthony_nine_tuesdays",
+        "COV-devotion_st_anthony_lost_items"
+      ],
+      "fit": "EXACT_SAINT_AND_CHILD",
+      "status": "BACKUP_NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "nativeQA": "PENDING",
+      "note": "Check attribution/provenance and colour before selecting"
+    },
+    {
+      "work": "Saint Peter Penitent",
+      "artist": "Guercino",
+      "museum": "National Galleries of Scotland, NG39",
+      "image": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+      "pixels": [
+        1421,
+        1999
+      ],
+      "claimedRights": "Wikimedia Commons PD-Art / Public Domain Mark",
+      "targets": [
+        "STG-pray.penitential_psalms-03"
+      ],
+      "fit": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM_EVENT",
+      "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "nativeQA": "PENDING",
+      "note": "Prefer this higher resolution reference over the 600px and 477px captures"
+    },
+    {
+      "work": "King David",
+      "artist": "Aert de Gelder",
+      "museum": "Rijksmuseum Amsterdam, SK-A-2695",
+      "image": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+      "pixels": [
+        2920,
+        2540
+      ],
+      "claimedRights": "Wikimedia Commons PD-Art / Public Domain Mark (Rijksmuseum source)",
+      "targets": [
+        "STG-pray.penitential_psalms-01",
+        "STG-pray.penitential_psalms-04",
+        "STG-pray.penitential_psalms-07"
+      ],
+      "fit": "KING_DAVID_THEMATIC_NOT_IDENTIFIABLE_SPECIFIC_PENITENTIAL_PSALM",
+      "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "nativeQA": "PENDING",
+      "note": "Sufficient photo dimensions, but discern whether frame is visible and validate use as a thematic David portrait"
+    }
+  ],
+  "explicitRejects": [
+    {
+      "work": "King David",
+      "artist": "Matthias Stom",
+      "source": "https://commons.wikimedia.org/wiki/File:Stomer_Le_roi_David.jpg",
+      "reason": "The photographer Rvalette licenses Commons photo CC BY-SA 3.0, outside strict PD/CC0 policy and the scoped Tiepolo-14-only exception; do not automatically publish"
+    }
+  ],
+  "outstanding": "Native 1:1 photo-quality checks, exact attribution, any frames, source-rights jurisdiction, explicit future art editorial disposition and renderer/card join required. Do not change the 226/267 accepted-mapping count on research candidates."
+}
