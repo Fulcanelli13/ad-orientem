@@ -20,7 +20,8 @@ export function claudeBenedictionRail(stages,index,{esc}={}){
   const at=stages.findIndex(x=>x[0]===stage.id);
   if(at<0)return "";
   const active=current===stage.id;
-  const done=at<index;
+  // Stage V is the priest's external blessing, not an app-completed action.
+  const done=stage.id!=="blessing"&&at<index;
   return '<button type="button" data-p435930-ben-step="'+at+'" class="'+
    (active?'cu':done?'dn':'')+(stage.id==="blessing"?' key':'')+
    '" aria-current="'+(active?'step':'false')+'" aria-label="'+
