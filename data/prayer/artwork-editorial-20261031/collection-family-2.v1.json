@@ -11,7 +11,9 @@
     "originalSourceEdges": 95,
     "deduplicatedReviewOptions": 83,
     "excludedDoNotSuggest": 7,
-    "candidatesWithExplicitNoPublicationGate": 83
+    "candidatesWithExplicitNoPublicationGate": 83,
+    "sourceLinksRecoveredByExactID": 0,
+    "sourceLinkSuggestionsUnverified": 0
   },
   "slots": [
     {
@@ -211,7 +213,8 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -753,7 +756,8 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
