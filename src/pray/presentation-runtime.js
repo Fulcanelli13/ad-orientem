@@ -534,7 +534,7 @@ function head(title,sub=''){
   ['en','fr','la','both'].filter(key=>key==='both'?!!holyRecord.la&&!!(holyRecord.en||holyRecord.fr):!!holyRecord[key]).map(key=>
    '<button type="button" data-p435930-essential-language="'+key+'" aria-pressed="'+String(holyLang===key)+'">'+(key==='both'?esc(L('Both','Les deux')):key.toUpperCase())+'</button>').join('')+
   '</div><small>'+esc(L('Source','Source'))+'</small>'+
-  (praySourceURL(holyRecord)?'<a href="'+esc(praySourceURL(holyRecord))+'" target="_blank" rel="noopener noreferrer" class="aoClaudeHolySource">ⓘ '+esc(L('Historical witness','Témoin historique'))+'</a>':'')+
+  '<div class="aoClaudeHolySourcePanel">'+sourceLine(holyRecord)+'</div>'+
   '</div>':'';
  const trailing=settings+prayerLanguage+holyAa+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>${holyMenu}`;
