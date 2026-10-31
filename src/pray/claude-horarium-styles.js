@@ -53,7 +53,9 @@ export const CLAUDE_HORARIUM_STYLES=String.raw`
 }
 /* Source Claude Hours: opening arc/plate/3·3·3·9/Begin composition.
    The placeholder is CSS only until sacred art receives approval. */
-#aoPray435930 .aoClaudeHorariumOpening .aoClaudeHorariumClock{height:220px}
+/* 300×110 source SVG needs a wide aspect ratio: 220px at 390px width
+   clips VI and XVIII under the original preserveAspectRatio=slice rule. */
+#aoPray435930 .aoClaudeHorariumOpening .aoClaudeHorariumClock{height:150px}
 #aoPray435930 .aoClaudeHorariumReading .aoClaudeHorariumClock{height:120px}
 #aoPray435930 .aoClaudeHorariumIntro{
  padding:13px 22px 4px;display:flex;flex-direction:column;align-items:center;text-align:center;
