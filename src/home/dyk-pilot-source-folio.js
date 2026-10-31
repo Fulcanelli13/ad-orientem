@@ -75,12 +75,13 @@ export function dykPilotSourceFolioMarkup(model){
     '</p></div></article></div>';
 }
 export function createDykPilotSourceFolioOwner(win=globalThis,{loadSelection}={}){
-  let overlay=null,opener=null;
+  let overlay=null,opener=null,requestId=0;
   const read=loadSelection||(()=>win.fetch(SOURCE_URL).then(r=>{
     if(!r?.ok)throw Error("R34_SELECTION_UNAVAILABLE");
     return r.json();
   }));
   function close(){
+    requestId++;
     if(!overlay)return false;
     overlay.remove?.();overlay=null;
     try{opener?.focus?.({preventScroll:true})}catch{opener?.focus?.()}
@@ -88,10 +89,11 @@ export function createDykPilotSourceFolioOwner(win=globalThis,{loadSelection}={}
   }
   async function open({factId,language="en",trigger=null}={}){
     close();
+    const request=++requestId;
     let model=null;
     try{model=dykPilotSourceFolioModel(await Promise.resolve(read()),factId,language)}
     catch{return false}
-    if(!model||!win?.document?.body||typeof win.document.createElement!=="function")return false;
+    if(request!==requestId||!model||!win?.document?.body||typeof win.document.createElement!=="function")return false;
     const node=win.document.createElement("div");
     node.innerHTML=dykPilotSourceFolioMarkup(model);
     const shade=node.querySelector?.("[data-dyk-source-shade]");
