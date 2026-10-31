@@ -1558,7 +1558,7 @@ function renderConfession(){
   const cards=confessionRiteCards(CONF.path),pos=confessionStepAt(CONF.riteStep,cards.length);
   body=`${guideNow(L('Before you enter the confessional','Avant d\'entrer au confessionnal'),L('Review these simple steps, then put your phone away. The sacrament takes place with the priest, not in this app.','Relisez ces étapes, puis rangez votre téléphone. Le sacrement a lieu avec le prêtre, non dans cette application.'))}
   ${confessionSingleCard(cards[pos],pos,cards.length,"rite")}
-  ${pos===cards.length-1?confessionContritionPicker(L("Read before entering","À relire avant d’entrer")):""}
+  ${cards[pos]?.id==="contrition-penance"?confessionContritionPicker(L("Read before entering","À relire avant d’entrer")):""}
   ${callout(esc(L('No audio recording, transcript, stored sins or simulated absolution.','Aucun enregistrement audio, aucune transcription, aucun péché conservé, aucune absolution simulée.')),'privacy')}`;
  }
  if(CONF.stage===3){
@@ -1593,7 +1593,7 @@ function renderConfession(){
     <div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${body}</div>
   </section>`;
  }
- const optionalPrayers=CONF.stage===2&&cardSequence&&cardIndex===cardSequence.length-1?
+ const optionalPrayers=CONF.stage===2&&cardSequence&&cardSequence[cardIndex]?.id==='contrition-penance'?
  `<details class="aoP435930ConfHistoricalOptions" data-ao-batch03-conf-contrition><summary>${esc(L('Historical Act of Contrition · alternative source','Acte de contrition historique · source alternative'))}</summary>
  <p>${esc(L('The established canonical Act and optional St Pius X prayer are distinct sources. English and French renderings of the 1905 Italian original are editorial and not certified published translations. Read before entering; follow the priest during the sacrament.','L’acte canonique habituel et la prière facultative de saint Pie X proviennent de sources distinctes. Les versions française et anglaise du texte italien de 1905 sont éditoriales, non des traductions imprimées certifiées. Lisez-les avant d’entrer ; suivez le prêtre pendant le sacrement.'))}</p>
  <a href="${esc(CONFESSION_HISTORICAL_SOURCE_POLICY.piusX.source)}" target="_blank" rel="noopener noreferrer">${esc(L('St Pius X · 1905 original','Saint Pie X · original de 1905'))} ↗</a></details>`:
