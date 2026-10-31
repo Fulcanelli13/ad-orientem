@@ -55,7 +55,7 @@ artist=clean(ext.get("Artist",{}).get("value",""))
 license_name=clean(ext.get("LicenseShortName",{}).get("value",""))
 license_url=clean(ext.get("LicenseUrl",{}).get("value",""))
 if "Chabe01" not in artist: raise ValueError("Photographer is not pinned source author: "+artist)
-if "CC BY-SA 4.0"!=license_name or license_url!=LICENSE:
+if "CC BY-SA 4.0"!=license_name or license_url.rstrip("/")!=LICENSE.rstrip("/"):
     raise ValueError("Expected original CC BY-SA 4.0 licence: "+repr((license_name,license_url)))
 if image.get("mime")!="image/jpeg" or int(image.get("width",0))!=3492 or int(image.get("height",0))!=3212:
     raise ValueError("Unexpected original MIME / pixel identity")
