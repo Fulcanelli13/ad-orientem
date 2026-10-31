@@ -186,7 +186,11 @@ export function installSequentialDevotionalReader({
       // Litany invocations use .88/.76 falloff without hiding their
       // original order, while other readers retain their original .56/.30.
       const adjacent=Math.abs(i-found)===1;
-      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
+      // F01 holy cards: previous beats fade, forthcoming beats stay legible.
+      // Collective continuations follow the SAME activation rule as every beat.
+      const essential=kind==="library"&&p.classList.contains("aoP435930EssentialBeat");
+      const power=essential?(i===found?"1":i<found?".50":".82")
+        :canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65")
         :kind==="litany"?(adjacent?".88":".76"):(adjacent?".56":".30");
       p.style.setProperty("--ao-devo-focus",power);
@@ -249,6 +253,15 @@ export function installSequentialDevotionalReader({
       go(index+(dx<0?1:-1));
     }
   },{passive:true});
+  // Explicitly selecting a prayer paragraph changes the focus position,
+  // not the prayer text, language, chapter or completion status.
+  if(kind==="library")body.addEventListener("click",event=>{
+    const beat=event.target.closest?.(".aoP435930EssentialBeat");
+    if(!beat||!body.contains(beat))return;
+    const box=body.getBoundingClientRect(),rect=beat.getBoundingClientRect();
+    body.scrollTop+=rect.top-box.top-box.height*.40;
+    userScrolled=true;queue();
+  });
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
   doc.defaultView?.addEventListener("resize",()=>{
     if(!body.isConnected)return;
