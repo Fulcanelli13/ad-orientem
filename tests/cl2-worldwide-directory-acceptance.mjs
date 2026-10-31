@@ -25,12 +25,12 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1872);
+assert.equal(world.filter(x=>x.map_publishable).length,1878);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,710);
+assert.equal(newSites.length,704);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -42,9 +42,25 @@ assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-lis
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Twenty-five separately reviewed physical site or address references may be shown
+// Thirty-one separately reviewed physical site or address references may be shown
 // provisionally. A site marker does NOT verify a Mass or precise entrance.
 for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
+ ["RG-A39E87B5A30C","AO-EUR-GB-008",
+  "Brompton Oratory (The London Oratory)",51.49714,-0.16964,"osm:way:851727368"],
+ ["RG-DA2F4D212252","ORD-GB-OXFORD-ORATORY-ST-ALOYSIUS",
+  "Oxford Oratory — St Aloysius Gonzaga",51.75935,-1.26183,"osm:way:65699768"],
+ ["RG-FC7B994D657F","DIO-GB-WESTMINSTER-SPANISHPLACE-ST-JAMES",
+  "St James's Church, Spanish Place",51.51819,-0.15256,"osm:way:160404637"],
+ ["RG-EC5A4BA48BF9","ORD-GB-BIRMINGHAM-ORATORY-IMMACULATE-CONCEPTION",
+  "Birmingham Oratory — Immaculate Conception",52.4723,-1.9288,
+  "historicengland:1076349","site","CHURCH_AND_ORATORY_COMPLEX_NOT_ENTRANCE"],
+ ["RG-D40A53ED496A","AO-EUR-GB-018",
+  "Corpus Christi Catholic, Maiden Lane - Shrine of the Blessed Sacrament",
+  51.5109,-0.1225,"historicengland:1238978","site",
+  "CHURCH_AND_PRESBYTERY_SITE_NOT_ENTRANCE"],
+ ["RG-EEE45B6A7403","AO-B34-L-GB-9D55FB39FDF9",
+  "Buckfast Abbey",50.493,-3.7756,"historicengland:1209774"],
+
  ["RG-00D589BAB16C","ao-fssp-church-of-st-mary-538-broadway-providence-ri-02909-usa",
   "Church of St Mary",41.81761,-71.4367,"osm:way:314290719","site"],
  ["RG-04C900D93BC2","AO-EUR-GB-006",
