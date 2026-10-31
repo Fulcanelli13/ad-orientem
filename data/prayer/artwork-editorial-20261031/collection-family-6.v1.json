@@ -9,7 +9,9 @@
     "slots": 33,
     "originalSourceEdges": 161,
     "deduplicatedReviewOptions": 144,
-    "excludedDoNotSuggest": 10
+    "excludedDoNotSuggest": 10,
+    "sourceLinksRecoveredByExactID": 11,
+    "sourceLinkSuggestionsUnverified": 0
   },
   "slots": [
     {
@@ -57,7 +59,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -385,7 +388,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -540,14 +544,22 @@
           ],
           "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
           "title": "The Way to Calvary",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:22178536"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -555,14 +567,22 @@
           ],
           "artist": "Domenichino",
           "title": "The Way to Calvary",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary%2C_c._1610_(Getty_Center).jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:75000039"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -784,7 +804,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         }
       ],
       "imagePublicationAllowed": false
@@ -1171,7 +1192,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1233,7 +1255,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1303,14 +1326,22 @@
           ],
           "artist": "Hans Jordaens III",
           "title": "Crucifixion",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:115166028"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1325,7 +1356,8 @@
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1385,7 +1417,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1705,14 +1738,22 @@
           ],
           "artist": "Dirck van Baburen",
           "title": "The bearing of Christ's body to the grave \" \"",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:638360"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -1744,7 +1785,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1819,7 +1861,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1881,7 +1924,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1943,7 +1987,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1984,7 +2029,8 @@
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1992,14 +2038,22 @@
           ],
           "artist": "Juan de Valdés Leal",
           "title": "Pietà",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437862"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2029,7 +2083,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -2076,7 +2131,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -2123,7 +2179,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -2214,14 +2271,23 @@
           ],
           "artist": "",
           "title": "Pietà",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1915.407",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-94846"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2229,14 +2295,22 @@
           ],
           "artist": "Juan de Valdés Leal",
           "title": "Pietà",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437862"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2266,7 +2340,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -2353,14 +2428,22 @@
           ],
           "artist": "Juan de Valdés Leal",
           "title": "Pietà",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437862"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2390,7 +2473,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         }
       ],
       "imagePublicationAllowed": false
@@ -2424,14 +2508,22 @@
           ],
           "artist": "Annibale Carracci",
           "title": "The Burial of Christ",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438338",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-438338"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2476,7 +2568,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -2602,7 +2695,8 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -2704,14 +2798,22 @@
           ],
           "artist": "Dirck van Baburen",
           "title": "The bearing of Christ's body to the grave \" \"",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:638360"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2719,14 +2821,22 @@
           ],
           "artist": "Kamal-ol-molk",
           "title": "The Entombment of Christ",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ_by_Kamal-ol-molk_(after_Titian).jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:78104681"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
