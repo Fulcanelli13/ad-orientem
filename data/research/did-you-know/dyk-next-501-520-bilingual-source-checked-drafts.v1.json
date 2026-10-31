@@ -1,0 +1,777 @@
+{
+  "schema": "AO_DYK_NEXT_501_520_SOURCE_FOLIO_SCREENED_BILINGUAL_RESEARCH_V1",
+  "created": "2026-10-31",
+  "status": "RESEARCH_ONLY_NOT_MERGED_INTO_500_MASTER",
+  "facts_count": 20,
+  "sequence_from": 501,
+  "sequence_to": 520,
+  "original_500_review_separate": true,
+  "source_pool": "88 unused of 408 Weiser groups on pinned customs research branch",
+  "source_witness_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+  "source_method": "Each selected claim was visually screened against the indicated Weiser original printed page(s) from the 1958 first-edition scan. EN/FR are editorial new drafts, not independent historical corroboration.",
+  "quality": {
+    "unique_source_ids": true,
+    "manual_editorial_approval": false,
+    "private_612_semantic_clearance": false,
+    "release_authorized": false,
+    "semantic_vs_500_and_612_lexically_screened": true
+  },
+  "facts": [
+    {
+      "id": "DYK-G520-W-001",
+      "source_group_id": "CAT-WEISER-A-019",
+      "source_id": "WEI58-04-002",
+      "title": "Rogation blessings of fields",
+      "statement": {
+        "en": "During rural Rogation processions described by Weiser, a priest sprinkled fields, gardens and orchards with holy water as the congregation chanted the litanies.",
+        "fr": "Dans les processions rurales des Rogations décrites par Weiser, un prêtre aspergeait d'eau bénite champs, jardins et vergers tandis que les fidèles chantaient les litanies."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          44
+        ],
+        "pdf_pages_zero_based": [
+          61
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "rural Catholic regions",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-002",
+      "source_group_id": "CAT-WEISER-A-020",
+      "source_id": "WEI58-04-004",
+      "title": "Villages meet for Rogation High Mass",
+      "statement": {
+        "en": "In some European Rogation customs, neighbouring villages set out in separate processions and met at a principal church for the sermon and High Mass.",
+        "fr": "Dans certaines coutumes européennes des Rogations, des villages voisins partaient en processions distinctes et se rejoignaient à l'église principale pour le sermon et la grand-messe."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          44
+        ],
+        "pdf_pages_zero_based": [
+          61
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "European villages",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-003",
+      "source_group_id": "CAT-WEISER-A-092",
+      "source_id": "WEI58-12-014",
+      "title": "Portuguese Os Reis",
+      "statement": {
+        "en": "An old Portuguese Epiphany carol called Os Reis presented the Magi as bringing gold, myrrh and incense back to the Child whose gifts they themselves had received.",
+        "fr": "Un ancien chant portugais de l'Épiphanie, Os Reis, présentait les Mages offrant or, myrrhe et encens à l'Enfant dont ils avaient eux-mêmes reçu tous leurs biens."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          151
+        ],
+        "pdf_pages_zero_based": [
+          168
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Portuguese religious carol",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-004",
+      "source_group_id": "CAT-WEISER-B-005",
+      "source_id": "WEI58-15-009",
+      "title": "Palm Sunday Bože Rany",
+      "statement": {
+        "en": "Weiser describes Poles and Ukrainians gently touching one another with blessed willow branches on Palm Sunday in a custom called Boże Rany, referring to Christ's scourging.",
+        "fr": "Weiser décrit des Polonais et des Ukrainiens se touchant doucement avec des rameaux de saule bénis le dimanche des Rameaux, dans une coutume appelée Boże Rany évoquant la flagellation du Christ."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          192
+        ],
+        "pdf_pages_zero_based": [
+          209
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Poland and Ukraine",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-005",
+      "source_group_id": "CAT-WEISER-B-024",
+      "source_id": "WEI58-16-013",
+      "title": "Easter fire rekindles household",
+      "statement": {
+        "en": "Before the Easter Vigil in some European households, Weiser reports that every stove and lamp was extinguished. Boys then brought home glowing wood from the blessed Easter fire to rekindle the household hearth.",
+        "fr": "Avant la Vigile pascale, dans certains foyers européens, Weiser rapporte que tout foyer et toute lampe étaient éteints. Des garçons rapportaient ensuite des tisons du feu pascal béni pour rallumer le feu domestique."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          217
+        ],
+        "pdf_pages_zero_based": [
+          234
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "European historic households",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false,
+        "screen_note": "The distinctly documented extinguishing of ALL household lights and relay of burning logs, not merely transporting blessed fire in a lantern."
+      }
+    },
+    {
+      "id": "DYK-G520-W-006",
+      "source_group_id": "CAT-WEISER-B-052",
+      "source_id": "WEI58-18-011",
+      "title": "Ascension pageant flowers and symbolic wafers",
+      "statement": {
+        "en": "In a Bavarian Ascension pageant described by Weiser, a figure of the risen Christ was raised through a ceiling opening; flowers and wafer-shaped symbolic tokens then fell for children to collect.",
+        "fr": "Dans une représentation bavaroise de l'Ascension décrite par Weiser, une figure du Christ ressuscité montait par une ouverture du plafond ; fleurs et objets symboliques en forme d'hostie tombaient ensuite pour être recueillis par les enfants."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          244
+        ],
+        "pdf_pages_zero_based": [
+          261
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Moosburg, Bavaria; historical theatrical devotional practice, not Eucharistic wafers",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-007",
+      "source_group_id": "CAT-WEISER-UNIDX-014",
+      "source_id": "WEI58-DETAIL-D-042",
+      "title": "Christmas carols from Austrian church towers",
+      "statement": {
+        "en": "In Austria, Bavaria and other parts of central Europe, Christmas carols were played from church towers before Midnight Mass, their melodies sounding over the town during the winter night.",
+        "fr": "En Autriche, en Bavière et ailleurs en Europe centrale, des chants de Noël étaient joués depuis les clochers avant la messe de minuit, leurs mélodies se répandant dans la ville pendant la nuit d'hiver."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          75
+        ],
+        "pdf_pages_zero_based": [
+          92
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Austria, Bavaria and central Europe; traditional pre-Midnight-Mass music",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false,
+        "screen_note": "Replaces duplicated Polish Corpus Christi wreath entry; inherited catalog locator 76 corrected to original printed p75."
+      }
+    },
+    {
+      "id": "DYK-G520-W-008",
+      "source_group_id": "CAT-WEISER-B-109",
+      "source_id": "WEI58-24-022",
+      "title": "Seville Los Seises",
+      "statement": {
+        "en": "Weiser describes six boys performing the traditional Los Seises dance inside Seville Cathedral for the Immaculate Conception feast and its octave, singing hymns before the Blessed Sacrament.",
+        "fr": "Weiser décrit six garçons exécutant la danse traditionnelle des Los Seises dans la cathédrale de Séville pour l'Immaculée Conception et son octave, en chantant des hymnes devant le Saint-Sacrement."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          294
+        ],
+        "pdf_pages_zero_based": [
+          311
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Seville Cathedral; historical local cathedral custom",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-009",
+      "source_group_id": "CAT-WEISER-GAP-018",
+      "source_id": "WEI58-DETAIL-B-105",
+      "title": "Saint John's herbs blessed in German towns",
+      "statement": {
+        "en": "In a German Saint John's Day custom recorded by Weiser, people brought herbs called Johanneskraut to church for a special blessing. Popular claims about their supernatural healing powers remain folklore.",
+        "fr": "Dans une coutume allemande de la Saint-Jean rapportée par Weiser, on apportait à l'église des herbes appelées Johanneskraut pour une bénédiction spéciale. Les pouvoirs de guérison surnaturels qu'on leur prêtait relèvent du folklore."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          330
+        ],
+        "pdf_pages_zero_based": [
+          347
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "parts of Germany; local St John folk devotion distinct from liturgical rite",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false,
+        "screen_note": "Replaces duplicate French Nativity-of-Mary grapes; printed p330 contains exact Johanneskraut and blessing, inherited record pointer 331 was overbroad."
+      }
+    },
+    {
+      "id": "DYK-G520-W-010",
+      "source_group_id": "CAT-WEISER-B-150",
+      "source_id": "WEI58-27-004",
+      "title": "St Blaise Italian oil-wick variant",
+      "statement": {
+        "en": "For Saint Blaise, Weiser records an Italian local blessing in which the priest touched each person's throat with a wick dipped in blessed oil, rather than using the better-known crossed candles.",
+        "fr": "Pour saint Blaise, Weiser rapporte une bénédiction locale italienne où le prêtre touchait la gorge de chaque fidèle avec une mèche trempée dans l'huile bénite, au lieu des deux cierges croisés plus connus."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          317,
+          318
+        ],
+        "pdf_pages_zero_based": [
+          334,
+          335
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "certain Italian localities; historical blessing variant, not universal Roman rubric",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false,
+        "screen_note": "Specify precise local method distinct from existing Saint Blaise blessed-bread discovery."
+      }
+    },
+    {
+      "id": "DYK-G520-W-011",
+      "source_group_id": "CAT-WEISER-B-166",
+      "source_id": "WEI58-27-032",
+      "title": "French Saint John's Eve burning wheels",
+      "statement": {
+        "en": "In parts of France, Saint John's Eve bonfires included straw-covered wagon wheels lit with a blessed candle and rolled down hillsides; Weiser reports this as folklore, not a Church rite.",
+        "fr": "Dans certaines régions françaises, les feux de la Saint-Jean comprenaient des roues de charrette couvertes de paille, allumées avec un cierge béni puis lancées sur les pentes ; Weiser rapporte un usage populaire, non un rite de l'Église."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          330
+        ],
+        "pdf_pages_zero_based": [
+          347
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "parts of France; historical fire folklore",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-012",
+      "source_group_id": "CAT-WEISER-GAP-013",
+      "source_id": "WEI58-DETAIL-B-001",
+      "title": "Papal Golden Rose on Laetare",
+      "statement": {
+        "en": "Weiser describes popes carrying a Golden Rose after Mass on Laetare Sunday and, in later practice, blessing and presenting a gold rose to a church, shrine, city or distinguished recipient.",
+        "fr": "Weiser décrit les papes portant une Rose d'or après la messe du dimanche de Lætare puis, selon l'usage ultérieur, bénissant et offrant une rose d'or à une église, un sanctuaire, une ville ou un destinataire distingué."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          178
+        ],
+        "pdf_pages_zero_based": [
+          195
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "historical papal custom",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-013",
+      "source_group_id": "CAT-WEISER-UNIDX-012",
+      "source_id": "WEI58-DETAIL-D-040",
+      "title": "Christmas Eve Devil's Funeral bells",
+      "statement": {
+        "en": "Weiser records an old Christmas Eve bell custom in parts of Britain and Ireland: a solemn tolling before midnight abruptly became joyous pealing at twelve, nicknamed the 'Devil's funeral' in folklore.",
+        "fr": "Weiser rapporte un ancien usage des cloches de Noël dans certaines régions de Grande-Bretagne et d'Irlande : un glas solennel avant minuit cédait brusquement la place aux sonneries joyeuses de minuit, surnommées « funérailles du diable » dans le folklore."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          75
+        ],
+        "pdf_pages_zero_based": [
+          92
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "England, Ireland and Scotland; folklore interpretation not doctrine",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-014",
+      "source_group_id": "CAT-WEISER-GAP-003",
+      "source_id": "WEI58-ADD-2-040",
+      "title": "German Brandsonntag fire wheels",
+      "statement": {
+        "en": "In parts of southern Germany, the first Sunday of Lent was called Brandsonntag, 'Fire Sunday', because blazing wheels were rolled down hillsides in a seasonal folk custom.",
+        "fr": "Dans certaines régions du sud de l'Allemagne, le premier dimanche du Carême s'appelait Brandsonntag, « dimanche du feu », car on faisait rouler des roues enflammées sur les pentes selon une coutume saisonnière."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          161
+        ],
+        "pdf_pages_zero_based": [
+          178
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "southern Germany; pre-Christian seasonal folklore, not a Catholic liturgical direction",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-015",
+      "source_group_id": "CAT-WEISER-UNIDX-015",
+      "source_id": "WEI58-DETAIL-D-050",
+      "title": "Ocumare Venezuelan Nativity carol",
+      "statement": {
+        "en": "Weiser singles out a Christmas carol from Ocumare de la Costa in Venezuela that brings the Magi, shepherds, Saint Joseph, Mary, the ox and the mule into a lively Nativity scene.",
+        "fr": "Weiser cite un chant de Noël d'Ocumare de la Costa, au Venezuela, où les Mages, les bergers, saint Joseph, Marie, le bœuf et le mulet composent une scène vivante de la Nativité."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          86
+        ],
+        "pdf_pages_zero_based": [
+          103
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Ocumare de la Costa, Venezuela; local historic carol",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-016",
+      "source_group_id": "CAT-WEISER-UNIDX-017",
+      "source_id": "WEI58-DETAIL-D-093",
+      "title": "Dutch feast-pig savings pots",
+      "statement": {
+        "en": "In Dutch and some German Christmas customs described by Weiser, children saved small coins in pig-shaped earthenware pots, opened only at Christmas and nicknamed the 'feast pig'.",
+        "fr": "Dans des coutumes de Noël néerlandaises et de certaines régions allemandes rapportées par Weiser, les enfants économisaient des pièces dans des pots de terre en forme de cochon, ouverts seulement à Noël et surnommés « cochon de fête »."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          111
+        ],
+        "pdf_pages_zero_based": [
+          128
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Netherlands and parts of Germany; historical household savings",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-017",
+      "source_group_id": "CAT-WEISER-GAP-029",
+      "source_id": "WEI58-DETAIL-D-001",
+      "title": "Historic Advent fasting variation",
+      "statement": {
+        "en": "In 1025, Bishop Burchard of Worms prescribed an Advent fast excluding wine, ale, meat, fat and cheese; Weiser records that Advent fasting later varied widely.",
+        "fr": "En 1025, l’évêque Burchard de Worms prescrivit pour l’Avent un jeûne excluant vin, bière, viande, graisse et fromage ; Weiser indique que ce jeûne varia beaucoup par la suite."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          50
+        ],
+        "pdf_pages_zero_based": [
+          67
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Worms 1025; historical penitential discipline, not current law",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-018",
+      "source_group_id": "CAT-WEISER-B-013",
+      "source_id": "WEI58-15-027",
+      "title": "Good Friday Three Hours at Lima",
+      "statement": {
+        "en": "The Good Friday 'Three Hours' devotion, meditating on Christ's seven last words, was first performed at Lima in Peru in 1732 under the Jesuit Father Alphonso Messia, according to Weiser.",
+        "fr": "Selon Weiser, la dévotion du Vendredi saint dite des « Trois Heures », méditant les sept dernières paroles du Christ, fut célébrée pour la première fois à Lima, au Pérou, en 1732, sous la direction du jésuite Alphonse Messia."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          202
+        ],
+        "pdf_pages_zero_based": [
+          219
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "Peru; devotion history, not a mandatory Mass rite",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-019",
+      "source_group_id": "CAT-WEISER-B-034",
+      "source_id": "WEI58-16-030",
+      "title": "Slavic Easter Thursday remembrance of dead",
+      "statement": {
+        "en": "In some Slavic Easter-week customs, Thursday was devoted to praying for the departed: families attended Mass offered for the dead and adorned photographs of relatives at home or at their graves.",
+        "fr": "Dans certaines coutumes slaves de la semaine pascale, le jeudi était consacré à la prière pour les défunts : les familles assistaient à une messe célébrée pour eux et ornaient de fleurs leurs portraits à la maison ou près des tombes."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          224
+        ],
+        "pdf_pages_zero_based": [
+          241
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "some Slavic localities; historical non-universal observance",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G520-W-020",
+      "source_group_id": "CAT-WEISER-UNIDX-024",
+      "source_id": "WEI58-DETAIL-D-119",
+      "title": "Medieval English Christmas boar's-head procession",
+      "statement": {
+        "en": "In medieval English manor houses, the Christmas boar’s head entered in procession, carried by the chief cook with waiters, pages and minstrels to an old carol.",
+        "fr": "Dans les manoirs anglais médiévaux, la hure de sanglier de Noël entrait en procession, portée par le chef cuisinier avec des serviteurs, des pages et des ménestrels, au son d’un ancien chant."
+      },
+      "source": {
+        "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "original_edition": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+        "printed_pages": [
+          119
+        ],
+        "pdf_pages_zero_based": [
+          136
+        ],
+        "original_folio_image_visually_screened": true,
+        "source_record_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+        "original_source_branch": "research/customs-multibook-bulk150-20261026"
+      },
+      "scope": {
+        "note": "medieval English banquet custom, not liturgical celebration",
+        "historical_local_or_custom_only": true,
+        "never_universal_1962_rite_by_inference": true,
+        "independent_historical_attestation": false
+      },
+      "review": {
+        "english_editorial_final": false,
+        "french_editorial_final": false,
+        "semantic_against_500_and_612_final": false,
+        "publication_authorized": false
+      }
+    }
+  ],
+  "correction_round": {
+    "stage": "FIRST_20_500_BANK_CROSSCHECK",
+    "retired_source_group_claims": [
+      "CAT-WEISER-B-085",
+      "CAT-WEISER-B-124"
+    ],
+    "replacement_source_ids": [
+      "WEI58-DETAIL-D-042",
+      "WEI58-DETAIL-B-105"
+    ],
+    "other_reworded_ids": [
+      "DYK-G520-W-005",
+      "DYK-G520-W-010"
+    ],
+    "reason": "Avoid two actual semantic duplicates and sharpen the distinctive source action of two near neighbours",
+    "original_page_locator_corrections": [
+      {
+        "id": "DYK-G520-W-007",
+        "original_group_page_pointer": [
+          76
+        ],
+        "actual_claim_page": [
+          75
+        ]
+      },
+      {
+        "id": "DYK-G520-W-009",
+        "original_group_page_pointer": [
+          331
+        ],
+        "actual_claim_page": [
+          330
+        ]
+      }
+    ]
+  },
+  "crossbank_screen": {
+    "date": "2026-10-31",
+    "status": "AUTOMATED_EN_FR_SOURCE_LEXICAL_SCREEN_NOT_MANUAL_SEMANTIC_SIGNOFF",
+    "compared_against_effective_500": true,
+    "compared_against_private_unpublished_612": true,
+    "private_preview_text_retained_in_private_repo": true,
+    "exact_id_or_source_english_french_collisions": 0,
+    "token_similarity_jaccard_at_least_0_25": 0,
+    "internal_20_token_similarity_at_least_0_25": 0,
+    "initial_four_high_overlap_candidates_revised": 4,
+    "actual_semantic_duplicates_replaced": 2,
+    "unverified_semantic_equivalence_larger_corpus_possible": true,
+    "publication_authorized": false
+  }
+}
