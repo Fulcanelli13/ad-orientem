@@ -43,6 +43,24 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-368B7B3B5FA3":Object.freeze({
+  sourceId:"V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",name:"Church of Saint Agnes",country:"US",addressNeedle:"535 Thomas Ave",placeId:null,
+  lat:44.95972,lng:-93.12333,sourceRef:"nrhp:80002125",sourceUrl:"https://en.wikipedia.org/wiki/Church_of_St._Agnes_(Saint_Paul,_Minnesota)",
+  correctedAddress:"Church of Saint Agnes, 535 Thomas Avenue West, Saint Paul, MN 55103, USA",precision:"site",reviewScope:"HISTORIC_CHURCH_SITE_NOT_PARKING_OR_SCHOOL",
+  evidence:Object.freeze(["https://www.archspm.org/location/st-agnes-catholic-church/","https://en.wikipedia.org/wiki/Church_of_St._Agnes_(Saint_Paul,_Minnesota)"]),
+ }),
+ "RG-46B891B2CE6E":Object.freeze({
+  sourceId:"AO-AMER-R26-US-03-08",name:"Cathedral of the Immaculate Conception",country:"US",addressNeedle:"Lake Charles",placeId:null,
+  lat:30.22659,lng:-93.21666,sourceRef:"nrhp:94001201",sourceUrl:"https://en.wikipedia.org/wiki/Cathedral_of_the_Immaculate_Conception_(Lake_Charles,_Louisiana)",
+  correctedAddress:"Cathedral of the Immaculate Conception, 935 Bilbo Street, Lake Charles, LA 70601, USA",precision:"site",reviewScope:"CATHEDRAL_CHURCH_NOT_SEPARATE_SAINT_BERNADETTE_ORATORY",
+  evidence:Object.freeze(["https://www.lcdiocese.org/images/pdfs/2024-DOLC-Directory.pdf","https://en.wikipedia.org/wiki/Cathedral_of_the_Immaculate_Conception_(Lake_Charles,_Louisiana)"]),
+ }),
+ "RG-48A5CF9C3C73":Object.freeze({
+  sourceId:"AO-AMER-R26-US-03-06",name:"Cathedral of the Epiphany",country:"US",addressNeedle:"Sioux City",placeId:null,
+  lat:42.50094,lng:-96.4069,sourceRef:"osm:node:354389830",sourceUrl:"https://www.openstreetmap.org/node/354389830",
+  correctedAddress:"Cathedral of the Epiphany church, 1003 Douglas Street, Sioux City, IA 51105, USA",precision:"site",reviewScope:"CATHEDRAL_CHURCH_AT_1003_DOUGLAS_NOT_1000_OFFICE_NOT_SAINT_BONIFACE",
+  evidence:Object.freeze(["https://mapcarta.com/22046960","https://www.sccathedral.org/","https://www.scdiocese.org/parishfinder"]),
+ }),
  "RG-014B017E0591":Object.freeze({
   sourceId:"DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",name:"Sacred Heart of Jesus, Caterham",country:"GB",addressNeedle:"Caterham",placeId:null,
   lat:51.287381,lng:-0.08646362,sourceRef:"historicengland:1294941",sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1294941",
@@ -771,7 +789,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|nrhp:\d+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
