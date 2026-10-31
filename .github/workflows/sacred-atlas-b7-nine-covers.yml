@@ -1,0 +1,36 @@
+name: Sacred Atlas Batch 7 — nine verified new covers
+
+on:
+  push:
+    branches:
+      - release/sacred-atlas-b7-nine-verified-covers-20261031
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/geography/approved-place-media.v1.json"
+      - "data/geography/research/sacred-atlas-b7-nine-covers-integration-20261031.v1.json"
+      - "tests/sacred-atlas-b7-nine-covers.mjs"
+      - ".github/workflows/sacred-atlas-b7-nine-covers.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify original source checksums and no duplicate gallery cover
+        run: node tests/sacred-atlas-b7-nine-covers.mjs
+      - name: Verify existing 22-cover exact Place provenance
+        run: node tests/explore-approved-gallery-cover-reuse-20261031.mjs
+      - name: Validate P79 reviewer regenerated from exact source
+        run: node tools/directory/build-p79-place-photo-review.mjs --check
+      - name: Verify canonical Place gallery and photo release regression
+        run: |
+          node tests/explore-photo-research.mjs
+          node tests/explore-p77-reviewed-place-photos.mjs
