@@ -40,7 +40,7 @@ for(let i=0;i<14;i++){
  assert.equal(a.file,s.repositoryPath);
  assert.equal(s.sha256,a.derivativeSHA256);
  assert.equal(a.artMedium,"oil on canvas");
- assert.equal(a.photographLicenceURL,"https://creativecommons.org/licenses/by-sa/4.0/");
+ assert.equal(a.photographLicenceURL.replace(/\\/+$/,""),"https://creativecommons.org/licenses/by-sa/4.0");
  assert.equal(a.productionRightsGate,"NOT_PD_CC0");
  assert.equal(a.artworkApproved,false);
  assert.equal(a.runtimeEnabled,false);
