@@ -33,7 +33,9 @@ The 15 cases are therefore **not** acquisition instructions for 15 new melodies.
 
 - **6** have existing M05 GABC source candidates: festive greeting/response; solemn and ferial Preface dialogues including `Per omnia/Amen`; Easter octave double-Alleluia dismissal; Asperges me; Vidi aquam.
 - **1** has a partial candidate: the existing Pater noster **conclusion and response**, but **not the full Pater noster melodic formula**.
-- **11** still require the corresponding complete, original-edition score source (ferial greeting, full solemn/ferial Collect and Postcommunion formulas, variable Preface body, Gospel, regular Ite, Benedicamus, Requiescant and aspersion conclusion).
+- **2 new** complete leader/response source candidates: Ite VIII and Benedicamus VIII (1961 *Liber Usualis* p. 39–40), not yet assigned to any selected 1962 Mass.
+- **1 new partial** Gospel dialogue/title candidate (1961 *Liber Usualis* p. 106; **full Gospel example absent** in its own source transcription).
+- **8** still require full original-edition settings without an adequate standalone score candidate: ferial greeting, solemn/ferial Collect and Postcommunion formulas, variable Preface body, Requiescant in pace and aspersion conclusion.
 - **1** is deliberately not a sung-score target: the **Secret prayer text**.
 
 The **1962 Missal General Rubrics nn. 480–481** require the Secret prayers to be said silently, with only the final `Per omnia saecula saeculorum` aloud. Older or later ritual descriptions must not change this. The existing M05 Preface records already contain candidate `Per omnia / Amen` melodic pairs. Reference: https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html
@@ -42,15 +44,27 @@ The **1962 Missal General Rubrics nn. 480–481** require the Secret prayers to 
 
 Every M05 item above is still an **unapproved research candidate**. Neither GregoBase CC0 status nor a compatible Latin phrase approves pitches, printed-note fidelity, performance, audio, or public score rendering. Missing or partial material is not filled by heuristic interpolation.
 
+
+## B1. Four newly recovered direct 1961 source leads
+
+The original 1961 *Liber Usualis* GregoBase catalogue explicitly lists Mass **Ite VIII** (score [#832](https://gregobase.selapa.net/chant.php?id=832), p. 39) and Mass **Benedicamus VIII** ([#2901](https://gregobase.selapa.net/chant.php?id=2901), pp. 39–40), both with their sung **Deo gratias** response. Their original GABC source pages were directly read for these Latin texts. The choir's sung melody and actual selected 1962 Mass variant remain unverified; these are only **two specific Kyriale source candidates**, not coverage of every Mass dismissal variant.
+
+The original source [#4490](https://gregobase.selapa.net/chant.php?id=4490) (LU 1961 p. 106) contains **Dominus vobiscum / Et cum spiritu tuo**, the Gospel title and **Gloria tibi Domine**, but the transcriber expressly states that the Gospel reading itself and some punctuation symbols are *not entered*. The full proclamation and its endings therefore remain unavailable from that candidate; source-only partial coverage.
+
+The source also lists [#4488](https://gregobase.selapa.net/chant.php?id=4488), the older solemn **ad libitum** oration greeting (LU p. 100). Its rubric allows use without distinguishing festive/ferial Masses, but it is an *optional alternate greeting*, not a certified complete ferial oration, and we retain that distinction.
+
+A separate metadata-only index `data/research/mass-music-m12-new-1961-score-leads.v1.json` preserves the four exact GregoBase IDs, original folios, indexed source URLs, observed chant/response text, source incompleteness and hard publication holds. The downloadable GABCs were inspected but not recopied into the repository; no score has been checked note-for-note against a printed 1961 facsimile. **Do not confuse Kyriale Mass Benedicamus with the numerous Divine Office Benedicamus tones catalogued on later LU pages.**
+
 ## C. Durable code, tests and restrictions
 
 - `data/research/mass-music-m12-original-score-text-recheck.v1.json` — all 15 source occurrences, twelve source-GABC text-only snapshots, exact score and 1962 donor provenance, computed longest shared word positions, and all original editorial holds.
 - `src/mass/reader-m12-text-recheck.js` — fail-closed evidence audit, roles, source hashes, text-span reproduction, duplicate preservation and no-publication return.
-- `data/research/mass-music-m12-celebrant-special-rite-gaps.v1.json` — no-silent-Secret-error inventory with M05 source references and exact source exceptions.
+- `data/research/mass-music-m12-celebrant-special-rite-gaps.v1.json` — no-silent-Secret-error inventory with M05 and M12 source references and exact source exceptions.
+- `data/research/mass-music-m12-new-1961-score-leads.v1.json` — four additional directly inspected 1961 Gregorian source records (two complete dismissal/response pairs, one partial Gospel dialogue, one optional oration greeting).
 - `tests/reader-mass-m12-text-recheck.mjs` — checks archive identities, 6/3/6 text evidence, 15/14/12 cardinalities, seven conflicts, no false score approval, all nineteen voice-family holds and absence of automatic reader import.
 - Required `tests/reader-schola-source-itinerary.mjs` imports the M12 checks.
 
-**Publication and merge remain closed.** No score is selected for the public reader. Full selected-Mass Proper verification, printed 1961 notes, sources for the eleven missing requirements, final complete-collection editorial review and phone/offline CI remain necessary. M11 exact-head workflow status must also be independently confirmed.
+**Publication and merge remain closed.** No score is selected for the public reader. Full selected-Mass Proper verification, printed 1961 notes, source research for the eight remaining fully missing requirements, plus the incomplete Gospel and Pater noster, final complete-collection editorial review and phone/offline CI remain necessary. M11 exact-head workflow status must also be independently confirmed.
 
 ## D. Next focused music work
 
