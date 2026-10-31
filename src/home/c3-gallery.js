@@ -38,6 +38,7 @@ export function c3PrayerMarkup({fr=false,feature=null,attrs="",role="",title="",
       '<button type="button" class="'+(i===0?'aoH4Prayer np ':'')+'aoC3PrayerAction" '+s.action+'>'+
       '<span class="aoC3PrayerRole">'+esc(s.role)+'</span><strong>'+esc(s.title)+'</strong><small>'+esc(s.desc)+'</small>'+
       '<span class="aoC3Arrow" aria-hidden="true">›</span></button>'+
+      '<button class="aoC3Info" type="button" data-home-c3-info="prayer" aria-label="'+(fr?"À propos de ce tableau":"About this painting")+'" hidden><span>i</span></button>'+
       '</article>').join("")+
     '<nav class="aoC3PrayerPager" aria-label="'+(fr?"Choisir une prière":"Choose a prayer")+'">'+
     pages.map((s,i)=>'<button type="button" data-home-c3-prayer-step="'+i+'" aria-current="'+(i===0?'true':'false')+'" aria-label="'+esc((fr?"Afficher : ":"Show: ")+s.title)+'"><span></span></button>').join("")+
