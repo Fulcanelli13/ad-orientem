@@ -149,6 +149,9 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   function close({preserveForBack=false}={}){
     const api=donor(win);
     if(typeof api?.close!=="function")return false;
+    // The app shell resets hidden owners before entering a new destination.
+    // Do not erase a receipt captured on the earlier Prayer -> Formation hop.
+    if(!root(win)?.classList?.contains("open"))return true;
     let captured=null;
     if(preserveForBack&&typeof api.captureAppBackHandoff==="function"){
       const navigation=api.captureAppBackHandoff();
