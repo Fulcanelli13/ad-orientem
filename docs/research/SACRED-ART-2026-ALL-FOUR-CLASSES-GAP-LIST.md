@@ -7,9 +7,9 @@ The new four-class reverse index now connects 178 distinct 383-registry artwork 
 Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Earlier all383-artwork-reverse-index.v1.json remains historical I/II-only evidence, and never classifies the 205 unmatched artworks as needing replacement.
 
 ---
-## Latest matching checkpoint — Batch 7 (31 October 2026)
+## Latest matching checkpoint — Batch 8 (31 October 2026)
 
-**Current researched Class III subject identification: 56/165 dates (56/131 observed sanctoral dates).** This is 3 more than Batch 6's 53, and leaves **75 sanctoral dates with no exact subject lead** across the four existing corpora (383 canonical IDs, 856 previously accepted source cards, W60/W72 historic named-file and scored art sources, and the already-intaken 83 Breviarium Commons plates). The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
+**Current researched Class III subject identification: 67/165 dates (67/131 observed sanctoral dates).** This is 11 more than Batch 7's 56, with **64 sanctoral dates still without a named exact-subject painting lead**. Batch 8 adds a *separate new-research catalogue* of 12 paintings from public museum, national heritage and Commons documentation; none is an accepted original or editorially approved date hero. The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
 
 | Feast | Observation | Existing painting(s) | Safeguard |
 | --- | --- | --- | --- |
@@ -45,18 +45,38 @@ There are now **three newly recorded partial feast research associations**, sepa
 
 These **three** plates were already indexed in `data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json` and independently triaged in W2; no new discovery/download/approval happened. The 451-image legacy snapshot's **68 records outside the canonical 383 are all permanently rejected** and must not be reintroduced as art candidates. Distinguish these from the genuinely new but uncertified exact saint-subject *relationships*: **53→56/131** matched Class III sanctoral dates, **78→75** outstanding. The 383-artwork / 186-date-link reverse index is unchanged. See `data/calendar/sacred-art-2026-breviarium-existing-subject-match-batch7.v1.json`. Only your explicit editorial approval can release any new hero.
 
-### Current 75 unlinked Class III sanctoral dates
+### Batch 8 — 11 new exact-subject research dates; not existing accepted artwork (31 October 2026)
 
-**01 (9)** — 16 St. Marcellus I; 20 Sts. Fabian & Sebastian; 22 Sts. Vincent & Anastasius; 23 St. Raymond of Peñafort; 24 St. Timothy; 26 St. Polycarp; 28 St. Peter Nolasco; 30 St. Martina; 31 St. John Bosco.
-**02 (3)** — 06 St. Titus; 07 St. Romuald; 10 St. Scholastica.
+Eleven Class III subjects now have **12 newly found research candidate paintings** with museum catalogue, Italian national heritage, or Wikimedia file-page identities. These are **new research leads**, NOT part of the 383 canonical artworks, 856 accepted source cards or an implicit human approval. They have not been downloaded, reproduced or made Home-rotatable.
+
+| 2026 feast | Lead painting and artist | Source / key block |
+| --- | --- | --- |
+| 23 Jan — Raymond of Peñafort | Luigi Primo, *Saint Raymund of Pennafort Venerating the Child* | MSK Gent S-43, public domain museum IIIF, image QA pending |
+| 7 Feb — Romuald | Guercino, *Saint Romuald* | Ravenna, Commons 731×1188 low-resolution photo |
+| 10 Feb — Scholastica | Jean II Restout, *Death of Saint Scholastica* | Musée des Beaux-Arts de Tours, official Joconde 02650000281, rights/photo pending |
+| 5 May — Pius V | Giuseppe Maria Bartolini *Saint Pius V* and Giovanni Battista Bolognini *Madonna with Saint Pius V and Dominican saints* | Two distinct national catalogue paintings, ICCD 0800030085 and 0800017368; no photo clearance |
+| 1 Jun — Angela Merici | Giovanni Paolo Pellesina, *Vision of St Angela Merici* | ICCD 0500404726; nineteenth-century, photo pending |
+| 11 Jun — Barnabas | Carlo Bononi (attributed), *Saint Barnabas the Apostle* | ICCD 0800026115; inscription names saint, attribution remains conditional |
+| 18 Jul — Camillus de Lellis | Giovanni Battista Pittoni (attributed), *Saint Camillus in Glory* | ICCD 0800030522, official oil-canvas lead |
+| 10 Sep — Nicholas of Tolentino | Garofalo, *Saint Nicholas of Tolentino Reviving a Child* | Met 436444, not St Nicholas of Myra, native image QA pending |
+| 22 Sep — Thomas of Villanova | Murillo, *Saint Thomas of Villanova Giving Alms to the Poor* | Commons file 1000×1505, poor-resolution hold |
+| 10 Oct — Francis Borgia | Goya, *St Francis Borgia Helping a Dying Impenitent* | Valencia Cathedral; Commons photo 721×1016, full-original versus sketch collision requires review |
+| 19 Nov — Elizabeth of Hungary | Murillo, *Saint Elisabeth of Hungary Healing the Poor* | Hospital de la Santa Caridad, Seville; Commons 2736×2736 CC BY 3.0 photographer attribution and frame/crop hold |
+
+The 2026 dates are grounded in the observed 1962 DayResolver. No physical object identity is merged solely from a similar title; two Pius V paintings remain separate research objects. The canonical 383 reverse index retains 186 date relations unchanged, and the 68 permanently rejected old annex works stay excluded. New source object research is stored in `data/calendar/sacred-art-2026-exact-sanctoral-research-batch8.v1.json`. **Class III research subject leads 56→67/131; unmatched 75→64; production releases 0.**
+
+### Current 64 unlinked Class III sanctoral dates
+
+**01 (8)** — 16 St. Marcellus I; 20 Sts. Fabian & Sebastian; 22 Sts. Vincent & Anastasius; 24 St. Timothy; 26 St. Polycarp; 28 St. Peter Nolasco; 30 St. Martina; 31 St. John Bosco.
+**02 (1)** — 06 St. Titus.
 **04 (4)** — 14 St. Justin; 22 Sts. Soter & Caius; 24 St. Fidelis of Sigmaringen; 28 St. Paul of the Cross.
-**05 (8)** — 05 St. Pius V; 07 St. Stanislaus; 12 Sts. Nereus, Achilleus, Domitilla, & Pancras; 15 St. John Baptist de la Salle; 16 St. Ubaldus; 18 St. Venantius; 19 St. Peter Celestine; 20 St. Bernardine of Siena.
-**06 (8)** — 01 St. Angela Merici; 10 St. Margaret of Scotland; 11 St. Barnabas; 17 St. Gregory Barbarigo; 19 St. Julia of Falconieri; 22 St. Paulinus of Nola; 25 St. William; 26 Sts. John & Paul.
-**07 (8)** — 03 St. Irenaeus; 07 Sts. Cyril & Methodius; 10 Seven Holy Brothers and Sts. Rufina & Secunda; 15 St. Henry the Emperor; 18 Camillus de Lellis; 20 St. Jerome Emiliani; 23 St. Apollinaris; 28 Sts. Nazarius & Celsus, St. Victor I & St. Innocent I.
+**05 (7)** — 07 St. Stanislaus; 12 Sts. Nereus, Achilleus, Domitilla, & Pancras; 15 St. John Baptist de la Salle; 16 St. Ubaldus; 18 St. Venantius; 19 St. Peter Celestine; 20 St. Bernardine of Siena.
+**06 (6)** — 10 St. Margaret of Scotland; 17 St. Gregory Barbarigo; 19 St. Julia of Falconieri; 22 St. Paulinus of Nola; 25 St. William; 26 Sts. John & Paul.
+**07 (7)** — 03 St. Irenaeus; 07 Sts. Cyril & Methodius; 10 Seven Holy Brothers and Sts. Rufina & Secunda; 15 St. Henry the Emperor; 20 St. Jerome Emiliani; 23 St. Apollinaris; 28 Sts. Nazarius & Celsus, St. Victor I & St. Innocent I.
 **08 (6)** — 05 Dedication of the Basilica of St. Mary Major; 17 St. Hyacinth; 19 St. John Eudes; 21 St. Jane Frances de Chantal; 27 St. Joseph Calasance; 31 St. Raymond Nonnatus.
-**09 (8)** — 02 St. Stephen of Hungary; 03 St. Pius X; 05 St. Lawrence Justinian; 10 St. Nicholas of Tolentino; 12 Most Holy Name of Mary; 16 Sts. Cornelius & Cyprian; 22 St. Thomas of Villanova; 28 St. Wenceslaus.
-**10 (9)** — 08 St. Bridget of Sweden; 09 St. John Leonardi; 10 St. Francis Borgia; 13 St. Edward; 14 St. Callistus I; 16 St. Hedwig; 19 St. Peter of Alcantara; 20 St. John Cantius; 23 St. Anthony Mary Claret.
-**11 (9)** — 10 St. Andrew Avellino; 12 St. Martin I; 13 St. Didacus; 14 St. Josaphat; 17 St. Gregory the Wonderworker; 18 Dedication of the Basilicas of Sts. Peter & Paul; 19 St. Elizabeth of Hungary; 20 St. Felix of Valois; 26 St. Sylvester.
+**09 (6)** — 02 St. Stephen of Hungary; 03 St. Pius X; 05 St. Lawrence Justinian; 12 Most Holy Name of Mary; 16 Sts. Cornelius & Cyprian; 28 St. Wenceslaus.
+**10 (8)** — 08 St. Bridget of Sweden; 09 St. John Leonardi; 13 St. Edward; 14 St. Callistus I; 16 St. Hedwig; 19 St. Peter of Alcantara; 20 St. John Cantius; 23 St. Anthony Mary Claret.
+**11 (8)** — 10 St. Andrew Avellino; 12 St. Martin I; 13 St. Didacus; 14 St. Josaphat; 17 St. Gregory the Wonderworker; 18 Dedication of the Basilicas of Sts. Peter & Paul; 20 St. Felix of Valois; 26 St. Sylvester.
 **12 (3)** — 02 St. Vivian; 04 St. Peter Chrysologus; 11 St. Damasus I.
 
 **Historical baseline:** The 98-gap Class III table farther down this document is the previous strict-383-only snapshot. It is not an updated list of physically missing paintings. New source match records are in data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json and data/calendar/sacred-art-2026-existing-source-matches-batch5.v1.json, and dates remain grounded in data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json.
