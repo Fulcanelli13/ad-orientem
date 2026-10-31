@@ -43,7 +43,7 @@ try{
     for(const id of chapters){
       const route="/settings/"+id;
       await panel.locator('.aoPrefContents [data-settings-route="'+route+'"]').click();
-      await page.waitForFunction(r=>globalThis.AO_SETTINGS_APP_V1?.status?.().route===r,route);
+      await page.waitForFunction(r=>globalThis.AO_SETTINGS_APP_V1?.status?.().path===r,route);
       assert.equal(await panel.locator("[data-settings-close]").count(),1,"One close: "+id);
       assert.equal(await panel.locator(".aoPrefChapter").count(),1,"Chapter missing: "+id);
       assert.equal(await panel.locator("select").count(),0,"Native select in "+id);
@@ -88,7 +88,7 @@ try{
     await panel.locator('.aoPrefContents [data-settings-route="/settings/accessibility"]').click();
     await panel.locator("[data-settings-contents]").click();
     await panel.locator('[data-settings-book-route="/settings/about-sources"]').click();
-    await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1.status().route==="/settings/about-sources");
+    await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1.status().path==="/settings/about-sources");
     await panel.locator("[data-settings-close]").click();
     assert.equal(await page.locator("#ao-settings-modular-root").count(),0);
     assert.equal(await page.locator("#ao-global-painting-preference").count(),1);
