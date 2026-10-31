@@ -61,7 +61,7 @@ assert.equal(rotator.forVisit({...request,visitKey:"home-entry-1"}),first,"same 
 assert.equal(rotator.forVisit({...request,visitKey:"home-entry-2"}).physicalObjectId,"p2");
 assert.equal(rotator.forVisit({...request,visitKey:"home-entry-3"}).physicalObjectId,"p1");
 assert.equal(rotator.forVisit({...request,visitKey:"home-entry-3"}).imageInfo.artist,"A Artist");
-assert.equal(rotator.forVisit({date:iso,observedPrincipalId:"sancti:03-24:3:w",visitKey:"wrong",placements:candidates}),null);
+assert.equal(rotator.forVisit({date:iso,observedPrincipalId:"sancti:03-27:3:w",visitKey:"wrong",placements:candidates}),null);
 assert.equal(rotator.forVisit({date:iso,observedPrincipalId:principal,visitKey:"none",placements:[]}),null);
 assert.throws(()=>rotator.forVisit({...request,visitKey:""}),/visitKey/);
 const fails=createHomeArtworkVisitRotator({storage:{getItem(){throw Error("privacy mode")},setItem(){throw Error("privacy mode")}}});
