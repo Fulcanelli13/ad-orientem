@@ -47,7 +47,7 @@ const REVIEWED_NEW_SITE_PINS=Object.freeze({
   sourceId:"AO-B41-LOC-IT-8584201FAF73",
   name:"Seminario Internazionale San Filippo Neri",
   country:"IT",addressNeedle:"Via di Gricigliano 52",
-  placeId:"place:IT:seminario-san-filippo-neri-sieci",
+  placeId:null,
   lat:43.8033638,lng:11.3799351,sourceRef:"osm:way:848071308",
   sourceUrl:"https://www.openstreetmap.org/way/848071308",
   evidence:Object.freeze([
@@ -59,7 +59,7 @@ const REVIEWED_NEW_SITE_PINS=Object.freeze({
   sourceId:"AO-B40-LOC-BE-7CC60D5F039A",
   name:"Chapelle Sainte-Rita",country:"BE",
   addressNeedle:"Rue de la Savatte 10",
-  placeId:"place:BE:chapelle-sainte-rita-brasmenil",
+  placeId:null,
   lat:50.5357494,lng:3.5450717,sourceRef:"osm:way:962673284",
   sourceUrl:"https://www.openstreetmap.org/way/962673284",
   evidence:Object.freeze([
@@ -71,7 +71,7 @@ const REVIEWED_NEW_SITE_PINS=Object.freeze({
   sourceId:"AO-RSCH-B65-EF400B6F8E93",
   name:"Franziskanerkirche",country:"DE",
   addressNeedle:"An den Neißewiesen 91",
-  placeId:"place:DE:franziskanerkirche-goerlitz-weinhuebel",
+  placeId:null,
   lat:51.1252861,lng:14.9862707,sourceRef:"osm:way:139932554",
   sourceUrl:"https://www.openstreetmap.org/way/139932554",
   evidence:Object.freeze([
@@ -186,7 +186,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    unmapped++;
    if(newPin&&(!sourceIds.includes(newPin.sourceId)||T(name)!==newPin.name||
      country!==newPin.country||!T(description).includes(newPin.addressNeedle)||
-     !newPin.placeId.startsWith("place:"+country+":")||
+     (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
      !/^osm:way:\d+$/.test(newPin.sourceRef)||
@@ -218,7 +218,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     ]),sections:Object.freeze([]),actions:Object.freeze([]),
     source_links:Object.freeze(source_links),
     note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+
-     (newPin?" Physical church footprint independently matched to "+newPin.placeId+"; the entrance and Mass use are unverified.":""),
+     (newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":""),
     search_text,
    }));
   }
