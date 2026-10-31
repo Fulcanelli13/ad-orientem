@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Research-only Wikimedia Commons original-image acquisition; never publish."""
+"""Research-only Wikimedia Commons original-image acquisition; never publish.
+
+    Critical B15 QA rule: generic keyword search may record metadata leads, but
+    original bytes are downloaded ONLY for exact-file seeds screened in B14.
+    The first broad-search run found 12 wrong matches among 23 downloads.
+    """
 import argparse,csv,hashlib,html,io,json,re,time,urllib.parse,urllib.request,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -83,7 +88,7 @@ def candidates(target,seed,blocked):
   need=toks(target["subject_title"]+" "+target["site"])
   match=len(need & toks(title+" "+desc))/max(1,len(need))
   seedmatch=title in chosen
-  ok=compatible(lic) and i.get("mime")=="image/jpeg" and min(i.get("width",0),i.get("height",0))>=1200 and bool(author) and (seedmatch or match>=0.15)
+  ok=compatible(lic) and i.get("mime")=="image/jpeg" and min(i.get("width",0),i.get("height",0))>=1200 and bool(author) and seedmatch
   out.append(dict(title=title,commons_page="https://commons.wikimedia.org/wiki/"+urllib.parse.quote(title.replace(" ","_")),
   original_url=i.get("url"),commons_sha1=i.get("sha1"),width=i.get("width"),height=i.get("height"),
   license_declaration=lic,author=author,description=desc,seed_match=seedmatch,text_match=round(match,3),eligible_metadata=ok))
@@ -97,6 +102,7 @@ def main():
  a=p.parse_args()
  rows,seeds,blocked=source()
  if a.selftest:
+  assert all(not (t.get("seeds") or []) or isinstance(t.get("seeds"),list) for t in seeds.values())
   assert [len(rows[i:i+25]) for i in range(0,147,25)]==[25,25,25,25,25,22]
   assert all(not t["file_downloaded"] for t in rows)
   print("PASS 147 IDs, 8 KEEP, 6 batches, 0 publication",flush=True)
