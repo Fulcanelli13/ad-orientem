@@ -18,8 +18,8 @@ export function homeDidYouKnowMarkup(language="en"){
   const fr=language==="fr";
   return '<button type="button" class="aoHomeDYK" data-home-dyk-open disabled aria-disabled="true">'+
     '<span class="aoHomeDYKLabel">'+(fr?"LE SAVIEZ-VOUS ?":"DID YOU KNOW?")+'</span>'+
-    '<strong data-home-dyk-title>'+(fr?"Une découverte liturgique":"A liturgical discovery")+'</strong>'+
-    '<small data-home-dyk-fact role="status">'+(fr?"Chargement d’une notice sourcée…":"Loading a source-backed discovery…")+'</small>'+
+    '<span class="aoHomeDYKSubject" data-home-dyk-title>'+(fr?"Une découverte liturgique":"A liturgical discovery")+'</span>'+
+    '<strong data-home-dyk-fact role="status">'+(fr?"Chargement d’une notice sourcée…":"Loading a source-backed discovery…")+'</strong>'+
     '<span class="aoHomeDYKSource" data-home-dyk-source></span></button>';
 }
 export function homeDidYouKnowSelect(entries,date){
@@ -30,7 +30,8 @@ export function homeDidYouKnowSelect(entries,date){
   if(entry?.status!=="SOURCE_OWNER_LOCKED"||entry?.definition_status!=="SOURCE_BACKED"||
     !Array.isArray(entry.source_ids)||!entry.source_ids.length||
     !safeText(entry.labels?.en)||!safeText(entry.labels?.fr)||
-    !safeText(entry.short_definition?.en)||!safeText(entry.short_definition?.fr))
+    !safeText(entry.short_definition?.en)||!safeText(entry.short_definition?.fr)||
+    !safeText(entry.explanation?.en)||!safeText(entry.explanation?.fr))
     return null;
   return entry;
 }
@@ -57,7 +58,8 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
     if(!button.isConnected||button.closest(".homeScreen")?.dataset?.homeLanguage!==(fr?"fr":"en"))return;
     if(!entry)throw Error("GLOSSARY_ENTRY_NOT_VERIFIED");
     button.querySelector("[data-home-dyk-title]").textContent=fr?entry.labels.fr:entry.labels.en;
-    button.querySelector("[data-home-dyk-fact]").textContent=fr?entry.short_definition.fr:entry.short_definition.en;
+    // The fact is the sourced explanatory observation, never the dictionary definition.
+    button.querySelector("[data-home-dyk-fact]").textContent=fr?entry.explanation.fr:entry.explanation.en;
     button.querySelector("[data-home-dyk-source]").textContent=fr?"Glossaire · Voir la notion ›":"Glossary · Read the term ›";
     button.dataset.homeDykEntry=entry.id;
     button.disabled=false;button.removeAttribute("aria-disabled");
