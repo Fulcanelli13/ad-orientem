@@ -78,4 +78,22 @@ for(const x of institutional.workDateLinks){
 assert.ok(institutional.workDateLinks.find(x=>x.entryId==="B20-01")?.acceptedSourceCardAlias==="nga:72037","deduplicate Ribera martyrdom against accepted 856");
 assert.ok(institutional.workDateLinks.find(x=>x.entryId==="B20-02")?.acceptedSourceCardAlias==="cma:111479","deduplicate Coypel against accepted 856");
 assert.ok(institutional.workDateLinks.find(x=>x.entryId==="B22-03")?.role.startsWith("TENTATIVE"),"Matthias is not exact");
+const classI=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-classi-selected-museum-object-match-batch3.v1.json",import.meta.url),"utf8"));
+assert.equal(classI.statistics.datePaintingSourceRelationships,14);
+assert.equal(classI.statistics.distinctClassIDatesWithResearch,13);
+assert.equal(classI.statistics.distinctClassIDatesWithPhysicalObjectResearchVerified,11);
+assert.equal(j.summary.I.daysWithExplicitSelectedPaintingPhysicalObjectResearch,11);
+assert.equal(j.days.filter(x=>x.rank==="I"&&!x.linkedCatalogueArt.length&&x.selectedPaintingPhysicalSourceLeads?.some(q=>q.physicalOriginalObjectVerified)).length,9);
+for(const link of classI.records){
+  const d=map.get(link.date);
+  assert.equal(d.rank,"I");
+  assert.equal(d.observedPrincipalId,link.principalId);
+  assert.equal(link.productionMasterCertified,false);
+  assert.equal(link.photoRightsForCommercialAppApproved,false);
+  assert.equal(link.productionMobileCropApproved,false);
+  assert.ok(d.selectedPaintingPhysicalSourceLeads.some(y=>y.sourceRecordId===link.sourceRecordId));
+}
+assert.ok(classI.records.find(x=>x.sourceRecordId==="B11-01").status.includes("REUSE_BLOCKED"),"Tissot museum photo not app-licensed");
+assert.equal(classI.records.find(x=>x.sourceRecordId==="B18-02").physicalOriginalObjectVerified,false,"Carracci exact object unresolved");
+assert.equal(classI.records.find(x=>x.sourceRecordId==="B11-09").physicalOriginalObjectVerified,false,"Sacchi physical accession unresolved");
 console.log("Sacred Art 2026: 365 exact dates, four-class reporting, anti-confusion and external reuse gates PASS");
