@@ -90,17 +90,49 @@ try{
       "Visible route has no controls: "+name+" "+JSON.stringify(info));
   }
   await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
-  const scriptureControl=page.locator("[data-home-scripture]").first();
-  await scriptureControl.waitFor({state:"visible",timeout:12000});
-  // This is an observational inventory, not a physical-touch acceptance.
-  // The startup cinematic can temporarily intercept Playwright hit testing
-  // after a multi-route crawl; click the mounted control's own handler.
-  await scriptureControl.evaluate(button=>button.click());
+  // H4 intentionally removed the former Home Scripture shortcut. The
+  // source-owned "Gospel of the Mass" control is its real Scripture doorway.
+  // Inventory the canonical route actually launched, not a retired selector.
+  const gospelControl=page.locator('.homeScreen.aoTodayH4 [data-action="gospel"]').first();
+  await gospelControl.waitFor({state:"visible",timeout:12000});
+  await page.evaluate(()=>{
+    window.__AO_INVENTORY_GOSPEL_ROUTE=null;
+    window.addEventListener("ao:canonical-route",event=>{
+      if(event.detail?.input==="gospel")
+        window.__AO_INVENTORY_GOSPEL_ROUTE={
+          canonicalId:event.detail.canonicalId??null,
+          ok:event.detail.result===true||event.detail.result?.ok===true,
+          reason:event.detail.result?.reason??null,
+        };
+    });
+  });
+  // This inventory is observational: invoking the existing button handler is
+  // deliberate; the independent phone tests own physical hit-target coverage.
+  await gospelControl.evaluate(button=>button.click());
+  await page.waitForFunction(()=>window.__AO_INVENTORY_GOSPEL_ROUTE!==null,
+    null,{timeout:12000});
+  const gospel=await page.evaluate(()=>window.__AO_INVENTORY_GOSPEL_ROUTE);
+  assert.ok(gospel.canonicalId,"Gospel of the Mass has no canonical route");
+  assert.equal(gospel.ok,true,"H4 Gospel link rejected: "+JSON.stringify(gospel));
+  report.surfaces.gospel={
+    name:"gospel",selector:'.homeScreen.aoTodayH4 [data-action="gospel"]',
+    mounted:true,active:await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()||null),
+    transition:gospel,controls:[],count:0,
+    note:"H4 Gospel canonical route verified; not the removed standalone Home Scripture shortcut",
+  };
+  // Retain the independent Scripture reader's actual mounted-control audit.
+  // This is a direct capability check, NOT a claim that H4's Gospel link
+  // opens the retired standalone Home Scripture shortcut.
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
+  const scriptureOpened=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.open?.({})===true);
+  assert.equal(scriptureOpened,true,"Canonical Scripture reader cannot open independently");
   await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
-  const scripture=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true);
-  assert.equal(scripture,true,"Actual Home Scripture control did not open the reader");
-  const s=await capture("scripture","#ao-scripture-overlay",{ok:scripture,route:"home-overlay"});
-  assert.ok(s.mounted&&s.count>0,"Scripture overlay has no usable controls");
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open),true,
+    "Canonical Scripture overlay is not active");
+  const scripture=await capture("scripture","#ao-scripture-overlay",
+    {ok:scriptureOpened,route:"direct-capability-audit"});
+  assert.ok(scripture.mounted&&scripture.count>0,
+    "Scripture overlay has no usable controls");
   await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.close());
   report.missing=[...misses].map(([path,count])=>({path,count}));
   const destination=resolve(root,"artifacts/control-audit/visible-controls.v1.json");

@@ -69,10 +69,14 @@ try{
     massMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
-    prayNow:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2PrayNow [data-home-cu-route='pray.rosary']").length,
-    scripture:document.querySelectorAll(".aoTodayV2Below [data-home-scripture]").length,
-    gospel:document.querySelectorAll(".aoTodayV2Below [data-action='gospel']").length,
-    catechism:document.querySelectorAll(".aoTodayV2Below [data-home-daily-catechism]").length,
+    rosary:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Chips [data-home-cu-static='rosary'],.homeScreen.aoTodayH4 .aoH4Chips [data-home-cu-route='pray.rosary']").length,
+    scripture:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-scripture]").length,
+    gospel:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Read [data-action='gospel']").length,
+    catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
+    discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-open]").length,
+    begin:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-begin]").length,
+    resume:document.querySelectorAll(".homeScreen.aoTodayH4 [data-resume-mass]").length,
+    change:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
@@ -89,10 +93,14 @@ try{
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
   assert.equal(cold.enrichersOwner,"modular-home-enrichers-v1","cold Home did not use modular enrichers");
   assert.equal(cold.modularEnrichers,1,"Today v2 must have one canonical editorial enricher owner");
-  assert.equal(cold.prayNow,1,"Today must retain the real Rosary Prayer Now route");
-  assert.equal(cold.scripture,1,"Today must retain the canonical Scripture reader route");
-  assert.equal(cold.gospel,1,"Today must retain its appointed Gospel route");
-  assert.equal(cold.catechism,1,"Today must retain its daily Catechism route");
+  assert.equal(cold.rosary,1,"H4 must show the personal-rule Rosary exactly once");
+  assert.equal(cold.scripture,0,"H4 must not restore the retired Home Scripture shortcut");
+  assert.equal(cold.gospel,1,"H4 Read must keep the appointed Gospel route");
+  assert.equal(cold.catechism,0,"H4 must not restore the retired Home Catechism");
+  assert.equal(cold.discovery,1,"H4 must show one standalone Did You Know below This week");
+  assert.equal(cold.begin,1,"H4 must expose exactly one source-gated Begin Mass");
+  assert.equal(cold.resume,0,"A cold Home without a saved Mass must not claim Resume");
+  assert.equal(cold.change,1,"H4 Mass choices must have one discreet Change control");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
   assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
   assert.equal(cold.releaseAuthority,"AO_APP_SHELL_V1");
@@ -107,9 +115,11 @@ try{
      "Retired Mass donor slot must not be displayed");
    assert.equal(await page.locator("[data-ao-app-surface='calendar']").count(),0,"Calendar still occupies a ribbon tab");
    assert.equal(await page.locator("[data-ao-app-surface='home']").getAttribute("aria-label"),"Today");
-  // Calendar was deliberately embedded in Today by PR #1023. Preserve
-  // the source-owned month rather than navigating to a retired sixth surface.
-  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
+  // H4's dated Calendar entry replaces retired Today V2 tabs. Calendar must
+  // remain source-owned and embedded under Today, never a sixth surface.
+  const calendarEntry=page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]');
+  assert.equal(await calendarEntry.count(),1,"H4 lost its dated Calendar entry");
+  await calendarEntry.click();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',{state:"visible",timeout:15000});
   const calendarOwnership=await page.evaluate(()=>({
     owner:document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root")?.dataset?.aoCalendarOwner??null,
@@ -126,8 +136,13 @@ try{
   assert.equal(calendarOwnership.homeSuppressed,"false","Embedded Calendar incorrectly suppressed Today");
   assert.notEqual(calendarOwnership.homeDisplay,"none","Today must remain the active visual surface");
 
-  await page.locator("[data-ao-app-surface='mass']").click();
+  await page.locator("[data-home-calendar-today]").click();
   await page.waitForFunction(()=>!document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root"),null,{timeout:10000});
+  // This synthetic Mass fixture injects a resolved celebration after entering
+  // its shell. Do not invent a permanent Mass ribbon tab or bypass the source
+  // gate of the real H4 Begin button tested elsewhere.
+  const massShell=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("mass"));
+  assert.equal(massShell?.ok,true,"Test fixture could not enter Mass shell");
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
 
   const setup=await page.evaluate(async({iconKeys,excludedIconKeys})=>{
@@ -435,7 +450,7 @@ try{
   });
 
   const readerHome=page.locator("#ao-r17-native-reader-preview [data-reader-home]");
-  assert.equal(await readerHome.count(),1,"LIVE first ribbon lost its Home control");
+  assert.equal(await readerHome.count(),1,"LIVE native reader lost its Home control");
   await readerHome.click();
   await page.waitForFunction(()=>globalThis.__AO_APP_JOURNEY_CONFIRMS===1,null,{timeout:5000});
   const retained=await page.evaluate(()=>({
@@ -509,10 +524,14 @@ try{
     donorAvailable:globalThis.AO_HOME_APP_V1?.status?.().donorHomeAvailable??false,
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
-    prayNow:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2PrayNow [data-home-cu-route='pray.rosary']").length,
-    scripture:document.querySelectorAll(".aoTodayV2Below [data-home-scripture]").length,
-    gospel:document.querySelectorAll(".aoTodayV2Below [data-action='gospel']").length,
-    catechism:document.querySelectorAll(".aoTodayV2Below [data-home-daily-catechism]").length,
+    rosary:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Chips [data-home-cu-static='rosary'],.homeScreen.aoTodayH4 .aoH4Chips [data-home-cu-route='pray.rosary']").length,
+    scripture:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-scripture]").length,
+    gospel:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Read [data-action='gospel']").length,
+    catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
+    discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-open]").length,
+    begin:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-begin]").length,
+    resume:document.querySelectorAll(".homeScreen.aoTodayH4 [data-resume-mass]").length,
+    change:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
     donorHomeEnricherVisible:[...document.querySelectorAll(".aoComingUpV4323,.aoDailyCateHome")].some(node=>{
       const style=getComputedStyle(node);
       return node.isConnected&&!node.hidden&&style.display!=="none"&&style.visibility!=="hidden";
@@ -527,10 +546,16 @@ try{
   assert.equal(homeOwnership.presentationAttached,true,"modular Home presentation is not subscribed to runtime state");
   assert.equal(homeOwnership.enrichersOwner,"modular-home-enrichers-v1","Home transition did not restore modular enrichers");
   assert.equal(homeOwnership.modularEnrichers,1,"Home transition lost Today v2 editorial owner");
-  assert.equal(homeOwnership.prayNow,1,"Home return lost Rosary Pray Now");
-  assert.equal(homeOwnership.scripture,1,"Home return lost the Scripture reader");
+  assert.equal(homeOwnership.rosary,1,"Home return lost its personal-rule Rosary");
+  assert.equal(homeOwnership.scripture,0,"Home return revived the retired Scripture shortcut");
   assert.equal(homeOwnership.gospel,1,"Home return lost the appointed Gospel");
-  assert.equal(homeOwnership.catechism,1,"Home return lost the daily Catechism");
+  assert.equal(homeOwnership.catechism,0,"Home return revived the retired daily Catechism");
+  assert.equal(homeOwnership.discovery,1,"Home return lost standalone Did You Know");
+  // A deliberately suspended Mass replaces the fresh Begin door with one
+  // explicit Resume action. Do not create two competing Mass entry controls.
+  assert.equal(homeOwnership.begin,0,"Suspended Mass must not expose a competing fresh Begin");
+  assert.equal(homeOwnership.resume,1,"Home return lost the checkpoint's Resume Mass door");
+  assert.equal(homeOwnership.change,1,"Home return lost discreet Mass choices");
   assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
   assert.equal(homeOwnership.homeSuppressed,"false","Home suppression survived return to Home");

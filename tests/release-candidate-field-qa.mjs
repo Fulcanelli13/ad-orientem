@@ -146,13 +146,15 @@ async function openSurface(page,surface,width){
     // Settings is contextual, never an extra permanent destination.
     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   }else if(surface==="calendar"){
-    // PR #1023 made Calendar a canonical in-page Today view. Many contextual
-    // date links exist, so use the unique Month tab rather than an ambiguous
-    // [data-home-calendar] locator or retired sixth shell destination.
+    // H4 keeps Calendar embedded under Today. Its dated Calendar opener
+    // replaces the old Month tab, and is distinct from contextual event links
+    // and the retired sixth shell destination.
     await page.locator("[data-ao-app-surface='home']").first().click();
     await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
-    const month=page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]');
-    assert.equal(await month.count(),1,width+"px Today lost its Month tab");
+    const month=page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]');
+    assert.equal(await month.count(),1,width+"px H4 lost its dated Calendar entry");
+    assert.ok(await month.evaluate(el=>el.getBoundingClientRect().height)>=44,
+      width+"px H4 Calendar opener is below the phone touch target");
     await month.click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
@@ -257,36 +259,55 @@ try{
       }
     }
 
-    // Mass entry is included without starting a liturgy: RC geometry must prove
-    // that the production selection/preflight surface itself still fits every
-    // supported phone width.
+    // H4's sole Begin Mass action enters the source-verified native R17
+    // reader directly. Ceremony/reader choices live in its separate Change
+    // sheet; the retired mass-flow preflight MUST NOT be required here.
     assert.equal(await page.locator("[data-ao-app-surface='mass']").count(),0,
-      "Mass is not a fifth ribbon tab");
+      "Mass must not become a fifth ribbon tab");
+    assert.equal(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count(),1,
+      "H4 must expose the canonical Mass choices separately from Begin");
     const massNav=page.locator(".homeScreen [data-home-h4-begin]").first();
     await massNav.waitFor({state:"visible",timeout:15000});
     await page.waitForFunction(()=>Boolean(document.querySelector(
       ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
     await massNav.click();
-    await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:20000});
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
-    assert.equal(await visible(page,"#ao-mass-flow-v1 .aoMassFlowBackdrop"),true);
-    await assertViewportFit(page,"Mass preflight",viewport.width);
-    await assertNoLegacyLeak(page,"Mass preflight",viewport.width);
-
-    const preflight=await page.evaluate(()=>({
-      count:document.querySelectorAll("#ao-mass-flow-v1").length,
-      nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+    await assertViewportFit(page,"Native Mass reader",viewport.width);
+    await assertNoLegacyLeak(page,"Native Mass reader",viewport.width);
+    const started=await page.evaluate(()=>({
+      nativeCount:document.querySelectorAll("#ao-r17-native-reader-preview").length,
+      nativeVisible:Boolean(document.getElementById("ao-r17-native-reader-preview")?.getClientRects().length),
+      preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")?.getClientRects().length),
       legacyReader:document.documentElement.dataset.aoMassReaderUi==="LEGACY",
     }));
-    assert.equal(preflight.count,1,viewport.width+"px Mass routing duplicated the preflight root");
-    assert.equal(preflight.nativeMounted,false,viewport.width+"px fresh Mass entry bypassed preflight");
-    assert.equal(preflight.legacyReader,false,viewport.width+"px fresh Mass entry exposed legacy reader ownership");
+    assert.equal(started.nativeCount,1,viewport.width+"px H4 did not start one R17 Mass reader");
+    assert.equal(started.nativeVisible,true,viewport.width+"px R17 is hidden after Begin");
+    assert.equal(started.preflightVisible,false,viewport.width+"px H4 reopened the retired preflight");
+    assert.equal(started.legacyReader,false,viewport.width+"px H4 opened a legacy Mass reader");
 
-    // M1 is a full app-shell destination, not a dismissible setup sheet.
-    // The old × is intentionally hidden; use the permanent Today tab.
-    await openSurface(page,"home",viewport.width);
-    await page.waitForFunction(()=>document.documentElement.dataset.aoM1MassRoot!=="true",
-      null,{timeout:5000});
+    // LIVE owns the screen and hides the global ribbon. Exit through R17's
+    // actual Home action, never through the deliberately hidden ribbon.
+    assert.equal(await visible(page,"#ao-global-ribbon"),false,
+      viewport.width+"px LIVE Mass must suppress the global ribbon");
+    const prompts=[];
+    const confirmLeave=async dialog=>{
+      prompts.push(dialog.message());
+      await dialog.accept();
+    };
+    page.on("dialog",confirmLeave);
+    await page.locator("#ao-r17-native-reader-preview [data-reader-home]").click();
+    const afterMass=page.locator("#ao-r17-native-reader-preview .aoReaderAfterMassChoice");
+    if(await afterMass.count()){
+      await afterMass.locator("[data-ao-return-home]").click();
+    }
+    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"&&
+      document.documentElement.dataset.aoM1MassRoot!=="true"&&
+      !document.getElementById("ao-r17-native-reader-preview"),null,{timeout:15000});
+    page.off("dialog",confirmLeave);
+    assert.equal(prompts.length,1,viewport.width+"px exiting LIVE Mass must ask once");
+    assert.match(prompts[0],/Mass is in progress\. Leave the Mass follower\?/,
+      viewport.width+"px LIVE Mass confirmation text changed");
     assert.equal(await visible(page,".homeScreen"),true,
       viewport.width+"px Today was not restored after leaving Mass");
 
