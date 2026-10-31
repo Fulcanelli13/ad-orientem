@@ -129,11 +129,18 @@ try{
     assert.ok(snapshot.bounds.left>=-1&&snapshot.bounds.right<=spec.width+1,
       "Source rubric paragraph clipped horizontally");
     if(cue!=="AO.SM.C0204"){
-     const expected=cue==="AO.SM.C0155"
-      ?spec.lang==="fr"?/tête légèrement inclinée/:/head slightly bowed/
-      :spec.lang==="fr"?/yeux fixés sur le Saint-Sacrement/:/eyes fixed on the Blessed Sacrament/;
+     // The complete priest hand/head/eye instructions are the MISSAL's
+     // traditional red rubrics. LIVE deliberately retains only the short
+     // source-owned orientation beside its existing approved action rails.
+     const expected=spec.mode==="MISSAL"
+      ? cue==="AO.SM.C0155"
+        ?spec.lang==="fr"?/tête légèrement inclinée/:/head slightly bowed/
+        :spec.lang==="fr"?/yeux fixés sur le Saint-Sacrement/:/eyes fixed on the Blessed Sacrament/
+      : cue==="AO.SM.C0155"
+        ?spec.lang==="fr"?/Commémoration silencieuse des vivants/:/Silent commemoration of the living/
+        :spec.lang==="fr"?/Commémoration silencieuse des défunts/:/Silent commemoration of the dead/;
      assert.match(snapshot.primary,expected,
-      spec.mode+" "+cue+" omitted prescribed priest movement");
+      spec.mode+" "+cue+" wrong FULL MISSAL versus SHORT LIVE source rubric");
      assert.equal(snapshot.rowKind,"RUBRIC","Memento lost source RUBRIC owner");
      assert.equal(snapshot.duplicateInline,0,"Source Memento rubric duplicated as a new event");
      if(spec.mode==="MISSAL")
