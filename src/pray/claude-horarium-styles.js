@@ -2,7 +2,7 @@
  * Claude Hours v4.6 original .hor and .strokes layout, adapted ONLY to
  * the established Ad Orientem Angelus reader; review harness is excluded.
  */
-export const CLAUDE_HORARIUM_STYLES=String.raw\`
+export const CLAUDE_HORARIUM_STYLES=String.raw`
 #aoPray435930 [data-ao-hours-owner]{
  --hor-ink:var(--text,#ede4d3);
  --hor-ink2:var(--muted,#bfb4a1);
@@ -64,7 +64,7 @@ export const CLAUDE_HORARIUM_STYLES=String.raw\`
 @media(prefers-reduced-motion:reduce){
  #aoPray435930 .aoClaudeHorariumStrokes *{transition:none}
 }
-\`;
+`;
 export function installClaudeHorariumStyles(doc=globalThis.document){
  if(!doc?.head)return false;
  if(doc.getElementById("ao-claude-horarium-css"))return true;
