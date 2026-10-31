@@ -25,12 +25,12 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1857);
+assert.equal(world.filter(x=>x.map_publishable).length,1863);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,725);
+assert.equal(newSites.length,719);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -42,9 +42,22 @@ assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-lis
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Ten separately reviewed physical site or address references may be shown
+// Sixteen separately reviewed physical site or address references may be shown
 // provisionally. A site marker does NOT verify a Mass or precise entrance.
 for(const [group,id,name,lat,lng,osm,precision="site"] of [
+ ["RG-01F176BB1074","AO-B35-L-GB-91CDCC69A421",
+  "Westminster Cathedral",51.49582,-0.13952,"osm:way:10810446","site"],
+ ["RG-02AEBA830666","AO-B34-L-GB-D2A6AB6CE828",
+  "Downside Abbey",51.2557,-2.49561,"osm:way:208920439","site"],
+ ["RG-126045360426","AO-B34-L-GB-C9EB4357C73A",
+  "Belmont Abbey",52.03933,-2.75637,"osm:way:66739205","site"],
+ ["RG-233BF6946735","AO-B35-L-GB-202B59F268FE",
+  "St Michael's Abbey",51.29716,-0.74965,"osm:way:512065892","site"],
+ ["RG-119C7FEEF74A","AO-B33-L-FR-F0AF6F2DC54B",
+  "Abbaye Sainte-Madeleine du Barroux",44.15182,5.09845,"osm:way:85350528","site"],
+ ["RG-3991DD293F9C","AO-B51-FR-92914B534B3A",
+  "Abbaye Notre-Dame de l’Annonciation du Barroux",
+  44.15639,5.11822,"osm:way:337377568","site"],
  ["RG-03C2AD02BC81","AO-B50-SSPV-US-FC03F5009C8",
   "Immaculate Heart of Mary Church",47.5244,-111.27331,"osm:node:9251507643","site"],
  ["RG-0611CE5E7367","AO-B51-FR-782F8A2B2031",
@@ -140,12 +153,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1857);
-assert.equal(vm.addressOnly,725);
+assert.equal(vm.mapped,1863);
+assert.equal(vm.addressOnly,719);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/725/);
+assert.match(html,/719/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 725 list-only plus 10 source-backed site/address markers, 3 separate published additions");
+console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 719 list-only plus 10 source-backed site/address markers, 3 separate published additions");

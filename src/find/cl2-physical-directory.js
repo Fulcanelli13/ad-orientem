@@ -43,6 +43,67 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-01F176BB1074":Object.freeze({
+  sourceId:"AO-B35-L-GB-91CDCC69A421",name:"Westminster Cathedral",
+  country:"GB",addressNeedle:"London",placeId:"place:GB:westminster-cathedral",
+  lat:51.49582,lng:-0.13952,sourceRef:"osm:way:10810446",
+  sourceUrl:"https://www.openstreetmap.org/way/10810446",
+  evidence:Object.freeze([
+   "https://mapcarta.com/36313110",
+   "https://westminstercathedral.org.uk/",
+  ]),
+ }),
+ "RG-02AEBA830666":Object.freeze({
+  sourceId:"AO-B34-L-GB-D2A6AB6CE828",name:"Downside Abbey",
+  country:"GB",addressNeedle:"Radstock",placeId:null,
+  lat:51.2557,lng:-2.49561,sourceRef:"osm:way:208920439",
+  sourceUrl:"https://www.openstreetmap.org/way/208920439",
+  evidence:Object.freeze([
+   "https://mapcarta.com/36304310",
+   "https://downsideabbey.co.uk/",
+  ]),
+ }),
+ "RG-126045360426":Object.freeze({
+  sourceId:"AO-B34-L-GB-C9EB4357C73A",name:"Belmont Abbey",
+  country:"GB",addressNeedle:"Hereford",placeId:null,
+  lat:52.03933,lng:-2.75637,sourceRef:"osm:way:66739205",
+  sourceUrl:"https://www.openstreetmap.org/way/66739205",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W66739205",
+   "https://www.belmontabbey.org.uk/",
+  ]),
+ }),
+ "RG-233BF6946735":Object.freeze({
+  sourceId:"AO-B35-L-GB-202B59F268FE",name:"St Michael's Abbey",
+  country:"GB",addressNeedle:"Farnborough",placeId:null,
+  lat:51.29716,lng:-0.74965,sourceRef:"osm:way:512065892",
+  sourceUrl:"https://www.openstreetmap.org/way/512065892",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W512065892",
+   "https://farnboroughabbey.org/visiting",
+  ]),
+ }),
+ "RG-119C7FEEF74A":Object.freeze({
+  sourceId:"AO-B33-L-FR-F0AF6F2DC54B",name:"Abbaye Sainte-Madeleine du Barroux",
+  country:"FR",addressNeedle:"1201 chemin des Rabassières",
+  placeId:null,lat:44.15182,lng:5.09845,sourceRef:"osm:way:85350528",
+  sourceUrl:"https://www.openstreetmap.org/way/85350528",
+  evidence:Object.freeze([
+   "https://mapcarta.com/fr/W85350528",
+   "https://www.barroux.org/",
+  ]),
+ }),
+ "RG-3991DD293F9C":Object.freeze({
+  sourceId:"AO-B51-FR-92914B534B3A",
+  name:"Abbaye Notre-Dame de l’Annonciation du Barroux",
+  country:"FR",addressNeedle:"750 chemin des Ambrosis",
+  placeId:null,lat:44.15639,lng:5.11822,sourceRef:"osm:way:337377568",
+  sourceUrl:"https://www.openstreetmap.org/way/337377568",
+  evidence:Object.freeze([
+   "https://mapcarta.com/fr/W337377568",
+   "https://annonciation.fr/",
+  ]),
+ }),
  "RG-03C2AD02BC81":Object.freeze({
   sourceId:"AO-B50-SSPV-US-FC03F5009C8",name:"Immaculate Heart of Mary Church",
   country:"US",addressNeedle:"2200 Smelter Ave",placeId:null,
