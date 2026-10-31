@@ -30,7 +30,7 @@ const missingFR=compactHeritagePlaceSheet(vm(noPhoto,"fr"));
 assert.match(missingEN,/data-approved-place-photo="no"/);
 assert.match(missingFR,/data-approved-place-photo="no"/);
 assert(!missingEN.includes("aoHeritagePlaceThumb"),"No approved image means no empty image element");
-assert(missingEN.includes(noPhoto.name),"Do not replace a full sacred Place name with abbreviated text");
+assert(missingEN.includes(noPhoto.name.replaceAll("\u0027","&#039;")),"Do not replace a full sacred Place name with abbreviated text");
 assert(!missingEN.includes("<img"),"No image means no speculative sacred image");
 assert(missingEN.includes('data-explore-expand-place'),"Same action opens the full Place sheet");
 const approvedCover=approved.find(x=>x.status==="APPROVED"&&x.rights_verified===true
