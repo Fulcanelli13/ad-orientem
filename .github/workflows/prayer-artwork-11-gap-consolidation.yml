@@ -29,3 +29,12 @@ jobs:
         with:
           node-version: 22
       - run: node tests/prayer-art-11-gap-66-candidates-policy.mjs
+      - name: Assert selected public-domain WebP artwork files exist
+        run: |
+          test -s assets/prayer/user-approved/benediction-mystic-lamb.webp
+          test -s assets/prayer/user-approved/st-therese-lisieux-historical-portrait.webp
+          node -e 'const x=require("./assets/prayer/user-approved/source-provenance.v1.json");if(x.images.length!==2)process.exit(1);console.log("Two exact archived public-domain images present")'
+      - name: Locate actual St Therese novena routes without changing them
+        run: |
+          git ls-files 'src/*' | grep -Ei 'novena|devotion' | head -45 || true
+          git grep -n -i -e 'lisieux' -e 'therese' -e 'thérèse' -- 'src/**' | head -45 || true
