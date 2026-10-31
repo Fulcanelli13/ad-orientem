@@ -190,7 +190,8 @@ export function installSequentialDevotionalReader({
       // Upcoming words stay legible; the indentation of collective replies
       // is not a permanent muted state.
       const choir=kind==="library"&&p.classList.contains("aoChoirBeat");
-      const power=choir?(i===found?"1":i<found?".54":".80")
+      const choirRoute=(kind==="hymns"||kind==="holyName");
+      const power=choir||choirRoute?(i===found?"1":i<found?".54":".80")
         :canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65")
         :kind==="litany"?(adjacent?".88":".76"):(adjacent?".56":".30");
