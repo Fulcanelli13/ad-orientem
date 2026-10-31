@@ -69,6 +69,49 @@ export const CHOIR_F02_F03_CSS=String.raw`
  font-style:normal;
 }
 #aoPray435930 .aoChoirPrayer .aoP435930Source{margin-top:30px}
+/* Existing historical hymn and Litany reader owners retain their sources,
+ * source-book selector, seven cards, full-text mode and language toggles. */
+#aoPray435930 [data-ao-choir-route="hymns"] .aoTP381HymnStanza{
+ margin:0 0 clamp(20px,4vh,32px);padding:0;
+}
+#aoPray435930 [data-ao-choir-route="hymns"] .aoTP381HymnStanza .aoTP381TextParagraph{
+ margin:0 0 9px!important;
+ font:400 clamp(18px,4.6vw,23px)/1.58 var(--ao-font-liturgical,Georgia,serif)!important;
+}
+#aoPray435930 [data-ao-choir-route="hymns"] .aoDevoCardScroll .aoTP381PrayerCard{
+ max-width:630px;margin-inline:auto;
+}
+#aoPray435930 [data-ao-choir-route="holy-name"] .aoTP381LitanyLine{
+ display:block;margin:0 0 10px!important;
+ font:400 clamp(18px,4.5vw,22px)/1.65 var(--ao-font-liturgical,Georgia,serif)!important;
+}
+#aoPray435930 [data-ao-choir-route="holy-name"] .aoTP381LitanyLine.aoChoirResponse{
+ margin:0 0 19px clamp(9px,3.6vw,21px)!important;
+ padding:7px 10px 9px 13px!important;
+ border-left:2px solid var(--liturgical-border,rgba(199,174,109,.36))!important;
+ background:var(--liturgical-soft,rgba(199,174,109,.045))!important;
+ border-radius:0 6px 6px 0;
+}
+#aoPray435930 [data-ao-choir-route="holy-name"] .aoTP381LitanyLine.aoChoirResponse[data-ao-devo-active="true"]{
+ opacity:1!important;border-left-color:var(--liturgical,#d7bb84)!important;
+}
+#aoPray435930 [data-ao-choir-route="saints"] .aoP435930LitanyLine{
+ margin-bottom:9px!important;line-height:1.65;
+}
+#aoPray435930 [data-ao-choir-route="saints"] .aoP435930LitanyLine.aoChoirResponse{
+ display:block;margin:0 0 17px clamp(10px,3vw,20px)!important;
+ padding:8px 12px!important;background:var(--liturgical-soft,rgba(199,174,109,.045))!important;
+ border-left:2px solid var(--liturgical-border,rgba(199,174,109,.36));
+}
+#aoPray435930 [data-ao-choir-route="saints"] .aoP435930LitanyLine.aoChoirResponse[data-ao-devo-active="true"]{
+ opacity:1!important;border-left-color:var(--liturgical,#d7bb84);
+}
+#aoPray435930 [data-ao-choir-route="penitential"] .aoP435930GuidedScripture{
+ max-width:61ch;margin-inline:auto;line-height:1.78;
+}
+#aoPray435930 [data-ao-choir-route="penitential"] .aoP435930GuidedScripture p{
+ margin-bottom:clamp(15px,3vh,26px);
+}
 @media(max-width:359px){
  #aoPray435930 .aoChoirPrayer{padding-inline:11px}
  #aoPray435930 .aoChoirBeat{font-size:18px}
