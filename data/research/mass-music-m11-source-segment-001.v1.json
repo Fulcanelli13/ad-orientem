@@ -197,7 +197,8 @@
       "expectedBlobSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
       "sourceShaVerified": true,
       "roleSegmentCounts": {
-        "GRADUAL": 3
+        "GRADUAL": 3,
+        "COMMUNION": 1
       },
       "matches": [
         {
@@ -256,9 +257,14 @@
           "id": "GREGOBASE-391",
           "originalRole": "co",
           "donor": "benedicimus deum coeli et coram omnibus viventibus confitebimur ei quia fecit nobiscum misericordiam suam",
-          "sourceTextMatches": 0,
-          "sourceSegments": [],
-          "classification": "NO_EXACT_SOURCE_LINE"
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "COMMUNION"
+            }
+          ],
+          "classification": "COMMUNION"
         }
       ]
     }
