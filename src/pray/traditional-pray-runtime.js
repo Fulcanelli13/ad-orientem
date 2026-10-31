@@ -62,7 +62,7 @@ const prayerParagraphs=v=>String(v??"").split(/\n\s*\n/).filter(x=>x.trim())
   .map(x=>'<p class="aoTP381TextParagraph">'+nl(x)+'</p>').join("");
 // Hours readers keep exact source wording and provide natural, independent
 // focus paragraphs. Do not change the canonical prayer, edition or recitation.
-function hoursParagraphs(value){
+function hoursParagraphs(value,id=""){
  const original=String(value??"");
  const matches=[...original.matchAll(/[.;!?]\s+(?=\S)|\n\s*\n/g)];
  const parts=[];let pos=0;
@@ -74,6 +74,18 @@ function hoursParagraphs(value){
   const next=candidates.find(end=>end-pos>=105)||candidates.at(-1);
   if(!next){parts.push(original.slice(pos));break}
   parts.push(original.slice(pos,next));pos=next;
+ }
+ // In communal Hail Mary recitation the response has its own focus,
+ // even when a short phrase would otherwise be grouped with the first half.
+ if(id==="foundations_hail_mary"){
+  for(let i=0;i<parts.length;i++){
+   const found=parts[i].search(/\b(?:Holy Mary|Sainte Marie|Sancta Maria)\b/i);
+   if(found>0){
+    const a=parts[i].slice(0,found),b=parts[i].slice(found);
+    parts.splice(i,1,a,b);
+    break;
+   }
+  }
  }
  if(parts.join("")!==original||parts.some(x=>!x.trim()))
   return '<p class="aoTP381TextParagraph">'+nl(original)+'</p>';
@@ -133,7 +145,7 @@ function prayerCard(id,{focusParagraphs=false,hoursFamily=false}={}){
  if(!p)return `<div class="aoTP381Fail">${esc(L("This canonical prayer is unavailable in the current corpus.","Cette prière canonique n’est pas disponible dans le corpus actuel."))}</div>`;
  const vern=isFr()?(p.fr||p.en||p.la):(p.en||p.fr||p.la),latin=p.la||"",both=!!(vern&&latin);
  const prov=p.provenance||{};
- const showHours=v=>hoursFamily?hoursParagraphs(v):focusParagraphs?prayerParagraphs(v):nl(v);
+ const showHours=v=>hoursFamily?hoursParagraphs(v,id):focusParagraphs?prayerParagraphs(v):nl(v);
  const choice=isHope?`<nav class="aoTP381Tabs" role="group" data-ao-b01-hope-versions aria-label="Version de l'acte d'espérance"><button type="button" data-tp381-b01-hope="published" aria-pressed="${!traditional}" class="${traditional?"":"active"}">Compendium · 2005</button><button type="button" data-tp381-b01-hope="traditional" aria-pressed="${traditional}" class="${traditional?"active":""}">Traditionnel · français</button></nav>`:"";
  const notice=isHope?`<p class="aoTP381Intro" data-ao-b01-hope-source-status>${esc(traditional?"Cette prière française complète est une version traditionnelle indépendante, non la transcription du Compendium de 2005.":"Cette formulation reproduit le témoin français publié dans le Compendium (2005), y compris « Dans cette foi » ; choisir « Traditionnel » pour une autre version authentiquement attestée.")}</p>`:"";
  return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${showHours(vern)}</span><span data-face-la hidden>${showHours(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
@@ -234,7 +246,7 @@ function dailyApprovedPrayerCard(row){
   ?`<nav class="aoDailyFormulationChoices" role="group" aria-label="${esc(L("Prayer formulation","Formulation de la prière"))}">${options.map(item=>`<button type="button" data-tp381-approved-daily-form="${esc(row.slotId)}::${esc(item.id)}" aria-pressed="${selectedIds.has(item.id)}">${esc(item.title)}</button>`).join("")}</nav>`
   :"";
  return `${choices}<article class="aoTP381PrayerCard" data-ao-daily-formulation="${esc(row.witnessId)}">
- <h3>${esc(row.title)}</h3><div class="aoTP381Reader">${prayerParagraphs(row.text)}</div>
+ <h3>${esc(row.title)}</h3><div class="aoTP381Reader">${hoursParagraphs(row.text,row.id)}</div>
  ${source(row.sourceLabel,row.sourceUrl)}</article>`;
 }
 function dailyApprovedSequenceList(rows){
@@ -324,7 +336,7 @@ function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false
 function dailyStageBody(row){
  return (row.kind==="examination"||row.kind==="personal-examen")
    ?row.editorial===true?`<p class="aoTP381TextParagraph">${esc(row.cue||L("Examine your conscience before God in silence.","Examinez votre conscience devant Dieu en silence."))}</p>`:`<p>${esc(L("Review the day before God: your duties towards Him, your neighbour, and yourself. This is a brief daily examen, not sacramental Confession.","Revoyez la journée devant Dieu : vos devoirs envers Lui, le prochain et vous-même. Il s’agit d’un bref examen quotidien, non d’une Confession sacramentelle."))}</p><button type="button" class="aoTP381GuideSubroute" data-tp381-daily-examen>${esc(L("Open guided nightly examination","Ouvrir l’examen du soir guidé"))}</button>`
-   :row.kind==="personal-prayer"?personalDailyPrayerCard(row,dailyReadingPlan(),{esc,L,prayerParagraphs,source})
+   :row.kind==="personal-prayer"?personalDailyPrayerCard(row,dailyReadingPlan(),{esc,L,prayerParagraphs:hoursParagraphs,source})
    :row.kind==="personal-legacy"?prayerCard(row.legacyId,{focusParagraphs:true,hoursFamily:true})
    :row.kind==="approved-source-prayer"?dailyApprovedPrayerCard(row)
    :row.kind==="silence"?`<p class="aoTP381TextParagraph">${esc(row.cue||L("Pause in silence.","Recueillez-vous en silence."))}</p>`
@@ -482,9 +494,9 @@ function renderNightlyExamen(){
  const pChoice=standaloneResolve?`<nav class="aoTP381Tabs aoExamenContritionChoices" role="group" data-ao-examen-contrition-choices aria-label="${esc(L("Act of Contrition text","Texte de l’acte de contrition"))}"><button type="button" data-tp381-b01-contrition="standard" aria-pressed="${S.examenContrition!=="piusx"}" class="${S.examenContrition!=="piusx"?"active":""}">${esc(L("Established Act","Acte habituel"))}</button><button type="button" data-tp381-b01-contrition="piusx" aria-pressed="${S.examenContrition==="piusx"}" class="${S.examenContrition==="piusx"?"active":""}">${esc(L("St Pius X · 1905","Saint Pie X · 1905"))}</button></nav>`:"";
  const selected=S.examenContrition==="piusx"?B01_PIUS_X_1905_CONTRITION:null;
  const prayer=standaloneResolve?pChoice+(selected?
-   sourcedPrayerCard(selected,L(selected.title,selected.titleFr),{focusParagraphs:true})+
+   sourcedPrayerCard(selected,L(selected.title,selected.titleFr),{focusParagraphs:true,hoursFamily:true})+
    `<p class="aoTP381Intro" data-ao-b01-contrition-source-status>${esc(L("English and French are editorial renderings of the 1905 Italian Catechism, not certified printed translations.","L’anglais et le français sont des traductions éditoriales du catéchisme italien de 1905, et non des éditions imprimées certifiées."))}</p>`+source("St Pius X · Italian catechism · 1905",selected.provenance.url)
-   :prayerCard("sacrament_act_of_contrition",{focusParagraphs:true})):"";
+   :prayerCard("sacrament_act_of_contrition",{focusParagraphs:true,hoursFamily:true})):"";
  const after=step===steps.length
   ?S.returnToDaily
     ?`<button type="button" data-tp381-examen-return>${esc(L("Continue Evening Prayer","Poursuivre les prières du soir"))}</button>`
@@ -509,9 +521,9 @@ function renderMealPrayers(){
  const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("The existing abridged composite remains the default, with two independently sourced alternatives: the short Baltimore Catechism Grace and complete 1888 Baltimore Manual thanksgiving. Neither historical English witness supplies an original French or Latin translation; the displayed French variants are editorial.","La forme brève composite existante reste par défaut. Deux options distinctes : le Catéchisme de Baltimore (forme brève) et le Manuel de 1888 (action de grâces complète). Leurs versions françaises sont des traductions éditoriales ; aucun latin historique n’est supposé."))}</p>${source("Baltimore Manual · 1888 · Grace after Meals",B01_FULL_GRACE_1888.provenance.url)}${source("Baltimore Catechism No. 3 · short Grace after Meals",B01_SHORT_GRACE_CATECHISM.provenance.url)}</div></details>`;
  return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${card}${context}</main>`;
 }
-function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={}){
+function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false,hoursFamily=false}={}){
   const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
-  const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):focusParagraphs?prayerParagraphs(v):nl(v);
+  const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):hoursFamily?hoursParagraphs(v):focusParagraphs?prayerParagraphs(v):nl(v);
   return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${show(vern)}</span><span data-face-la hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader">${show(vern||latin)}</div>`}</article>`;
 }
 const HEART_STAGES=Object.freeze(["litany","reparation","golden_arrow","consecration"]);
