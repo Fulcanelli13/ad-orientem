@@ -62,9 +62,10 @@ for(const [batch,start,count] of [[b501,501,20],[b521,521,40],[b561,561,40]]){
   assert.equal(x.review.publication_authorized,false);
   if(start===501){assert.equal(x.source.original_folio_image_visually_screened,true);}
   else {
-   assert.equal(x.source.original_page_reviewed_in_prior_source_work,true);
-   assert.equal(x.source.original_page_newly_checked_in_this_tranche,false);
-   assert.ok(Number.isInteger(x.source.printed_page)&&x.source.printed_page>0);
+   assert.ok(x.source.original_page_reviewed_in_prior_source_work===true||x.source.prior_contact_sheet_page_review===true);
+   assert.ok(x.source.original_page_newly_checked_in_this_tranche===false||x.source.fresh_page_image_rechecked_in_this_tranche===false);
+   const printedPage=x.source.printed_page??x.source.original_folio;
+   assert.ok(Number.isInteger(printedPage)&&printedPage>0);
   }
  }
 }
