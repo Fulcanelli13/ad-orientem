@@ -35,6 +35,8 @@ on:
       - 'data/prayer/artwork-editorial-20261031/remaining-28-source-identities-20261031.v1.json'
       - 'data/prayer/artwork-editorial-20261031/commons-exact-pageid-wave10-20261031.v1.json'
       - 'data/prayer/artwork-editorial-20261031/remaining-23-source-identities-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/museum-commons-legacy-source-wave11-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/remaining-17-source-identities-20261031.v1.json'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
   workflow_dispatch:
 permissions:
