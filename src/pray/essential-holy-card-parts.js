@@ -72,7 +72,7 @@ function naturalPrayerParts(original){
  const marks=[];
  for(let i=0;i<original.length-1;i++){
   const c=original[i],next=original[i+1];
-  if(!/[\s]/.test(next))continue;
+  if(c!=="\n"&&!/[\s]/.test(next))continue;
   let strength=0;
   if(c==="\n")strength=4;
   else if(/[.!?]/.test(c)){
@@ -91,8 +91,9 @@ function naturalPrayerParts(original){
   const remain=original.length-pos;
   if(remain<=200){slices.push(original.slice(pos));break}
   const inRange=marks.filter(m=>m.end>pos+60&&m.end<=pos+195);
+  const hard=marks.find(m=>m.strength===4&&m.end>pos&&m.end<=pos+195);
   const candidates=inRange.filter(m=>m.strength>=2);
-  let chosen=(candidates.length?candidates:inRange).at(-1);
+  let chosen=hard||(candidates.length?candidates:inRange).at(-1);
   if(!chosen)chosen=marks.find(m=>m.end>pos+60&&m.end<=pos+290);
   if(!chosen){slices.push(original.slice(pos));break}
   slices.push(original.slice(pos,chosen.end));
