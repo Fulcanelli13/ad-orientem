@@ -1,5 +1,5 @@
 {
-  "schema": "AO_SACRED_ATLAS_B16_SIX_USER_ZIPS_138_SUBJECT_QA_20261101_V1",
+  "schema": "AO_SACRED_ATLAS_B16_SIX_ZIPS_PLUS_GITHUB_SOURCE_QA_20261101_V2",
   "as_of": "2026-11-01",
   "source_user_uploads": [
     "AO_Atlas_B16_Checkpoint.json",
@@ -12,10 +12,10 @@
   ],
   "stats": {
     "subjects_attempted": 138,
-    "downloaded_jpeg_images": 14,
-    "distinct_subjects_with_download": 9,
-    "targets_without_download": 129,
-    "source_named_original_images": 5,
+    "downloaded_jpeg_images": 16,
+    "distinct_subjects_with_download": 10,
+    "targets_without_download": 128,
+    "source_named_original_images": 7,
     "relevant_low_resolution_files": 2,
     "incorrect_photos": 7,
     "incorrect_subjects": 4,
@@ -25,7 +25,10 @@
     "download_errors_http403": 7,
     "previous_KEEP_in_run": 4,
     "zero_editorial_approvals": 0,
-    "zero_published": 0
+    "zero_published": 0,
+    "no_search_candidates_in_browser": 109,
+    "candidates_but_no_file_in_browser": 20,
+    "candidates_but_no_file_after_github_recovery": 19
   },
   "verification": [
     "Six ZIP CRC tests passed; all fourteen JPG files decoded.",
@@ -33,7 +36,8 @@
     "Checkpoint completed IDs match exactly 138 ZIP subject IDs; unresolved IDs match exactly 129 subjects without saved binary.",
     "Checkpoint completed means attempted, not photograph acquired.",
     "Only five images are named-source originals; the other nine are unverified search-derived images, seven clearly wrong.",
-    "No publication or user approval is inferred; B15 images not overwritten."
+    "No publication or user approval is inferred; B15 images not overwritten.",
+    "Two extra original JPEGs of St Martin Tours tomb/crypt reliquary recovered from GitHub Actions; five other GitHub originals exactly duplicate images already in six user ZIPs. Their source SHA1, SHA256 and dimensions validated."
   ],
   "subject_statuses": [
     {
@@ -738,8 +742,8 @@
       "place_id": "place:FR:basilique-saint-martin-tours",
       "requested_subject": "Tomb and relics of St Martin of Tours",
       "prior_KEEP_unchanged": false,
-      "downloaded_photo_count": 0,
-      "result_status": "NO_FILE_SAVED_IN_B16",
+      "downloaded_photo_count": 2,
+      "result_status": "RELEVANT_UNAPPROVED_RESEARCH",
       "photo_quality_approved": false,
       "editorial_approved": false,
       "publication_allowed": false
@@ -1931,7 +1935,48 @@
       "rights_approved": false,
       "editorial_approved": false,
       "published": false
+    },
+    {
+      "queue_n": 68,
+      "source_file_title": "File:Tombeau de Saint-Martin de Tours.jpg",
+      "sha256": "c96b1f401fc8a7df85f0109c2cf416204c4e56386cfc7faf3970333a0b9c1d83",
+      "viewed_pixels": {
+        "width": 4288,
+        "height": 2848
+      },
+      "review_status": "EXACT_TOURS_CRYPT_TOMB_PHOTO_RESEARCH",
+      "source_is_explicit_named_file": true,
+      "pixel_bytes_sha256_matched": true,
+      "commons_manifest_sha1_matched": true,
+      "subject_identity_approved": false,
+      "rights_approved": false,
+      "editorial_approved": false,
+      "published": false
+    },
+    {
+      "queue_n": 68,
+      "source_file_title": "File:Tours - basilique Saint-Martin, crypte (05).jpg",
+      "sha256": "5608581ccf0eba0b3888781ea56367b6afd3558f7b4ed7fa8ba690fb17ba3726",
+      "viewed_pixels": {
+        "width": 3264,
+        "height": 2448
+      },
+      "review_status": "EXACT_TOURS_CRYPT_RELIQUARY_DARK_RESEARCH",
+      "source_is_explicit_named_file": true,
+      "pixel_bytes_sha256_matched": true,
+      "commons_manifest_sha1_matched": true,
+      "subject_identity_approved": false,
+      "rights_approved": false,
+      "editorial_approved": false,
+      "published": false
     }
   ],
-  "follow_up": "Research physical custodian references for 109 no-result subjects and repair download-host failures separately for 20 searched but unsaved; protect existing KEEP, no broad keyword promotion."
+  "follow_up": "128 subjects without a B16 image; 109 no search candidates in browser, 19 with candidate results but unsaved after Tours recovery. Never approve or publish generic search previews.",
+  "github_additional_source": {
+    "run_id": 41233387108,
+    "archive_name": "AO_Atlas_B16_GitHub_exact_source_0.zip",
+    "two_new_unique_files_for_queue_68": true,
+    "shared_with_browser_other_five_named_originals": 5,
+    "original_and_manifest_sha_checks_passed": true
+  }
 }
