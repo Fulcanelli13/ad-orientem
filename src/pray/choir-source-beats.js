@@ -50,11 +50,17 @@ function sourceLinePieces(line,id,kind,stanza){
  // A long source line with sentences may be divided at punctuation alone.
  const chunks=[];let pos=0;
  if(whole.trim().length>175){
-  const cuts=[...whole.matchAll(/[.!?;:]\s+(?=\S)/g)]
-   .map(m=>m.index+m[0].length).filter(n=>n>0&&n<whole.length);
+  // Some Latin/French canticle witnesses are printed as a single sentence
+  // with comma-separated biblical clauses. Prefer major punctuation, then
+  // source-owned commas rather than leaving a 900-character text wall.
+  const strong=[...whole.matchAll(/[.!?;:]\s+(?=\S)/g)]
+   .map(m=>m.index+m[0].length);
+  const soft=[...whole.matchAll(/,\s+(?=\S)/g)]
+   .map(m=>m.index+m[0].length);
   while(whole.length-pos>175){
-   const candidates=cuts.filter(n=>n>pos+55&&n<=pos+195);
-   const cut=candidates.at(-1);
+   const candidates=strong.filter(n=>n>pos+55&&n<=pos+195);
+   const commas=soft.filter(n=>n>pos+55&&n<=pos+195);
+   const cut=(candidates.length?candidates:commas).at(-1);
    if(!cut)break;
    chunks.push(whole.slice(pos,cut));pos=cut;
   }
