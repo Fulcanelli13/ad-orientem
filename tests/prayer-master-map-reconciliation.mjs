@@ -41,4 +41,12 @@ assert.equal(types.filter(x=>x==="UNKNOWN").length,ledger.photo_source_review.ri
 assert.equal(ledger.photo_source_review.production_ready,0);
 assert.deepEqual(ledger.publication_policy.strict_source_basis,["PUBLIC_DOMAIN","CC0_1_0"]);
 assert.equal(ledger.publication_policy.no_runtime_image_activated,true);
+assert.ok(Array.isArray(ledger.editorialHardRejections));
+const lybaert=ledger.editorialHardRejections.find(x=>x.artist==="Théophile Lybaert");
+assert.ok(lybaert,"User rejection of entire Lybaert Stations cycle must be durable");
+assert.equal(lybaert.userDecision,"EXPLICIT_REJECTION_ARTISTIC_FIT");
+assert.equal(lybaert.mustNotBeSuggested,true);
+assert.equal(lybaert.mustNotBeAutomaticallyMatched,true);
+assert.equal(lybaert.licenseDoesNotOverrideRejection,true);
+
 console.log(JSON.stringify({gate:"MASTER_275_TO_267_SOURCE_PARITY_NO_IMAGE_RELEASE",slots:rows.length,approved:c.affirmatively_approved_slots,gaps:c.zero_affirmative_slots,edges:c.approved_placement_edges,workIds:c.distinct_concrete_work_ids,extra:c.noneditorial_rows,photoReady:0},null,2));
