@@ -322,7 +322,7 @@
     "test:dyk-r34-h4": "node tests/dyk-r34-pilot-source-folio.mjs && node tests/dyk-r34-h4-review-e2e.mjs",
     "test:dyk-priority24": "node tests/dyk-r34-priority24-editorial-readiness.mjs",
     "test:dyk-released-feed": "node tests/dyk-h7-released-feed-contract.mjs",
-    "test:dyk-growth-500": "node tests/dyk-500-growth-310-contract.mjs && node tests/dyk-500-growth-364-contract.mjs && node tests/dyk-500-growth-414-contract.mjs"
+    "test:dyk-growth-500": "node tests/dyk-500-growth-310-contract.mjs && node tests/dyk-500-growth-364-contract.mjs && node tests/dyk-500-growth-414-contract.mjs && node tests/dyk-500-composed-research-contract.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
