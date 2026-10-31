@@ -174,6 +174,13 @@ export const EXPLORE_MAP_FIRST_V2_STYLE = `
  .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"] .aoHeritageCardEmpty{
    grid-column:1;
  }
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageCardEmpty{
+   grid-column:2;grid-row:4;min-width:0;margin:2px 0 4px;
+   overflow-wrap:anywhere;line-height:1.45;
+ }
+ .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"] .aoHeritageCardEmpty{
+   grid-column:1;
+ }
  .aoHeritageSurface .aoHeritagePreview h2{
    display:block;-webkit-line-clamp:unset;overflow:visible;
    white-space:normal;overflow-wrap:anywhere;text-wrap:pretty;
