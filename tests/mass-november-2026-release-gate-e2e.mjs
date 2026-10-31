@@ -416,7 +416,7 @@ try{
                if(mode==="LIVE"){
                  const scroll=api.root.querySelector(".ao-prayer-card");
                  const row=[...scroll.querySelectorAll(".ao-reader-paragraph")]
-                   .find(n=>String(n.dataset.sourceCueIds??"").split(/\\s+/)
+                   .find(n=>String(n.dataset.sourceCueIds??"").split(" ")
                      .includes("AO.SM.C0072"));
                  if(!scroll||!row)throw Error("NOV02_C0072_SOURCE_ROW_MISSING");
                  const scrollTop=row.getBoundingClientRect().top-
