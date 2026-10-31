@@ -124,4 +124,23 @@ assert.equal(raphael.editorial,"UNREVIEWED");
 assert.ok(map.get("2026-02-12").additionalLegacyNamedFileLeads[0].sourceFile.includes("Masucci"));
 assert.ok(map.get("2026-06-05").identityUncertaintyWarnings.join(" ").includes("not sure who this chap is"));
 assert.ok(map.get("2026-02-04").identityUncertaintyWarnings.join(" ").includes("may depict one original"));
+const everyArt=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json",import.meta.url),"utf8"));
+assert.equal(everyArt.counts.canonicalArtworkIds,383);
+assert.equal(everyArt.counts.canonicalIdsLinkedAnyClass,178);
+assert.equal(everyArt.counts.canonicalIdsNoObservedClassLink,205);
+assert.equal(everyArt.counts.dateWorkLinks,186);
+assert.deepEqual(Object.fromEntries(["I","II","III","IV"].map(k=>[k,everyArt.counts.perRank[k].links])),{I:65,II:42,III:79,IV:0});
+assert.equal(everyArt.counts.worksOnMoreThanOneDate,8);
+assert.equal(new Set(everyArt.artworks.map(x=>x.artworkId)).size,383);
+for(const art of everyArt.artworks){
+  assert.equal(art.publicationStatus,"NO_NEW_RELEASE_APPROVED");
+  for(const linked of art.allFourClasses2026DateLinks){
+    assert.equal(linked.homeRotationEligible,false);
+    assert.equal(linked.photoReleaseCertified,false);
+    assert.equal(linked.dateSpecificUserApproval,false);
+    const matched=map.get(linked.date);
+    assert.equal(matched.observedPrincipalId,linked.observedPrincipalId);
+    assert.ok(matched.linkedCatalogueArt.some(x=>x.artworkId===art.artworkId));
+  }
+}
 console.log("Sacred Art 2026: 365 exact dates, four-class reporting, anti-confusion and external reuse gates PASS");
