@@ -6,6 +6,7 @@ on:
       - research/stations-san-polo-oil-paintings-20261031
     paths:
       - 'scripts/san_polo_image_quality_qa.py'
+      - 'tests/prayer-san-polo-oil-archive.mjs'
       - '.github/workflows/san-polo-image-quality-qa.yml'
   pull_request:
     branches:
@@ -14,6 +15,7 @@ on:
       - 'scripts/san_polo_image_quality_qa.py'
       - '.github/workflows/san-polo-image-quality-qa.yml'
       - 'data/prayer/stations/san-polo-tiepolo-oils-1747/**'
+      - 'tests/prayer-san-polo-oil-archive.mjs'
   workflow_dispatch:
 
 permissions:
