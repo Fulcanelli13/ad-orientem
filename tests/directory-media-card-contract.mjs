@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
-import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
+import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,renderDirectoryIdentityFallback,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const hash="a".repeat(64);
 const photo={
@@ -86,9 +88,32 @@ assert.match(html,/data-explore-item="tlm:public-venue-1"/);
 assert.match(html,/FSSP_emblem/);
 assert.match(renderDirectoryVenueCard(linked,"fr"),/Horaires non vérifiés indépendamment/);
 assert.doesNotMatch(renderDirectoryVenueCard(item,"en"),/FR-test\.webp/);
-assert.match(renderDirectoryVenueCard(item,"en"),/aoTlmVenueGlyph/);
+const institutionalCard=renderDirectoryVenueCard(item,"en");
+assert.match(institutionalCard,/data-visual-kind="emblem"/);
+assert.match(institutionalCard,/aoTlmVenueIdentity--card/);
+assert.match(institutionalCard,/FSSP_emblem/);
+assert.doesNotMatch(institutionalCard,/Emblem_Holy_See/);
+const diocesan={...item,community_id:"DIOCESAN",eyebrow:"Diocesan"};
+const diocesanCard=renderDirectoryVenueCard(diocesan,"en");
+assert.match(diocesanCard,/data-visual-kind="neutral"/);
+assert.match(diocesanCard,/aoTlmVenueGlyph/);
+assert.match(diocesanCard,/Diocesan church/);
+assert.doesNotMatch(diocesanCard,/Emblem_Holy_See/);
+const unknown={...item,community_id:"OTHER",eyebrow:"Independent / unknown"};
+assert.match(renderDirectoryVenueCard(unknown,"fr"),/Selon la source : Independent \/ unknown/);
+assert.doesNotMatch(renderDirectoryVenueCard(unknown,"fr"),/FSSP_emblem/);
+const cmriSource={...item,community_id:"OTHER",eyebrow:"CMRI directory / affiliated clergy"};
+const cmriCard=renderDirectoryVenueCard(cmriSource,"en");
+assert.match(cmriCard,/Listed as: CMRI directory \/ affiliated clergy/);
+assert.doesNotMatch(cmriCard,/FSSP_emblem|Society_of_Saint_Pius_X_logo/);
+const unsafeSource={...item,community_id:"OTHER",eyebrow:'<img src=x onerror="alert(1)">'};
+assert.match(renderDirectoryVenueCard(unsafeSource,"en"),/&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt;/);
+assert.doesNotMatch(renderDirectoryVenueCard(unsafeSource,"en"),/<img src=x/);
+assert.match(renderDirectoryVenueCard(linked,"en"),/data-visual-kind="photo"/);
+assert.doesNotMatch(renderDirectoryVenueCard(linked,"en"),/aoTlmVenueIdentity--card/);
 assert.match(DIRECTORY_CARD_STYLE,/aoTlmPreviewPhoto/);
 assert.match(DIRECTORY_CARD_STYLE,/aoTlmDetailPhoto/);
+assert.match(DIRECTORY_CARD_STYLE,/aoTlmVenueIdentity--preview/);
 const malicious={...item,title:'<img src=x onerror="alert(1)">'};
 assert.doesNotMatch(renderDirectoryVenueCard(malicious),/<img src=x/);
 assert.match(renderDirectoryVenueCard(malicious),/onerror=&quot;alert\(1\)&quot;/);
@@ -97,4 +122,39 @@ const vm=buildExploreViewModel({language:"en",lens:"tlm",items:[linked],view:"li
 assert.match(renderExploreToString(vm),/aoTlmVenueCard/);
 const vm2=buildExploreViewModel({language:"fr",lens:"tlm",items:[linked],view:"map",selectedId:item.item_id,filters:{directoryGroup:"ALL"}});
 assert.match(renderExploreToString(vm2),/aoTlmPreviewPhoto/);
-console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, safe preview");
+const noPhotoMap=buildExploreViewModel({language:"en",lens:"tlm",items:[item],view:"map",selectedId:item.item_id,filters:{directoryGroup:"ALL"}});
+assert.match(renderExploreToString(noPhotoMap),/aoTlmVenueIdentity--preview/);
+assert.match(renderExploreToString(noPhotoMap),/FSSP_emblem/);
+const diocesanMap=buildExploreViewModel({language:"fr",lens:"tlm",items:[diocesan],view:"map",selectedId:item.item_id,filters:{directoryGroup:"ALL"}});
+assert.match(renderExploreToString(diocesanMap),/Église diocésaine/);
+
+// Complete visual identity is independent from photograph availability.
+// Cover every one of the actual lightweight map records, not a small showcase subset.
+const readRegistry=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
+const baseMap=projectPreliminaryR49(readRegistry("data/directory/preliminary-map-r49.v1.json"));
+const fullMap=projectPublishedProvisionalMassSites(
+  baseMap,readRegistry("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+assert.equal(fullMap.length,1882,"The map's 1,879 + 3 known visual slots must be accounted for");
+const logoGroups=new Set(["FSSP","ICKSP","SSPX","IBP","AASJMV"]);
+const visualCount={emblem:0,named:0,neutral:0};
+for(const venue of fullMap){
+  const fallback=renderDirectoryIdentityFallback(venue,"en");
+  const card=renderDirectoryVenueCard(venue,"en");
+  assert.match(card,/aoTlmVenueVisual/,"Every listed venue must have its visual area");
+  if(logoGroups.has(venue.community_id)){
+    assert.match(fallback,/data-visual-kind="emblem"/);
+    visualCount.emblem++;
+  }else if(fallback.includes('data-visual-kind="named"')){
+    assert.match(fallback,/aoTlmVenueNamedMark/);
+    assert.match(fallback,/Listed as: /,"Named monogram must disclose source-only affiliation");
+    assert.doesNotMatch(fallback,/<img /,"Uncleared source labels must not acquire a logo");
+    visualCount.named++;
+  }else{
+    assert.match(fallback,/data-visual-kind="neutral"/);
+    assert.match(fallback,/aoTlmVenueGlyph/);
+    visualCount.neutral++;
+  }
+}
+assert.deepEqual(visualCount,{emblem:1188,named:61,neutral:633},
+  "All 1,882 original R49 and approved additions have an honest emblem, source-named monogram or neutral church symbol");
+console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");

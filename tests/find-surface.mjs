@@ -115,7 +115,8 @@ assert.match(FIND_MAP_RUNTIME.style,/openfreemap/);
 assert.ok(FIND_MAP_RUNTIME.style.includes("/styles/dark"));
 assert.equal(massMapProviderGroup("SSPX"),"SSPX");
 assert.equal(massMapProviderGroup("UNRECOGNISED_GROUP"),"OTHER");
-assert.equal(Object.keys(MASS_MAP_GROUP_COLORS).length,6);
+assert.deepEqual(Object.keys(MASS_MAP_GROUP_COLORS).sort(),["AASJMV","DIOCESAN","FSSP","IBP","ICKSP","OTHER","SSPX"].sort(),
+  "The AASJMV institute already has an evidence-backed map category");
 const mapItems=[{
   lens:"tlm",item_id:"tlm:example-sspx",title:"Source-backed SSPX",
   community_id:"SSPX",map_publishable:true,

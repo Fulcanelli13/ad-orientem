@@ -26,7 +26,9 @@ assert.equal(filterPreliminaryR49(records).length,1879,
   "Worldwide Mass map must include every provisional source-backed venue by default");
 assert.equal(exploreMapFeatures(records).length,1879);
 assert.ok(rome.every(x=>x.preliminary_group==="ROME"));
-assert.ok(sspx.every(x=>x.community_id==="SSPX"));
+assert.equal(sspx.filter(x=>x.community_id==="SSPX").length,729);
+assert.equal(sspx.filter(x=>x.community_id==="SSPX_SISTERS").length,3,
+  "Exact Sisters of the SSPX source names must not be collapsed into generic SSPX institute identity");
 assert.ok(rome.every(x=>x.map_publishable&&x.geo.approximate));
 assert.ok(records.every(x=>x.source_links.length>0&&x.source_links.every(y=>/^https?:\/\/[^\s]+$/.test(y.url))));
 assert.ok(records.every(x=>x.actions.length===0&&x.sections.length===0),"Unverified timetables/directions must not appear");
@@ -59,4 +61,4 @@ assert.equal((heritage.match(/data-find-filter-value="tlm"/g)||[]).length,1,"One
 assert.ok(heritage.indexOf("Find a traditional Mass")>=0);
 const invalid=structuredClone(raw);invalid.records[1][0]=invalid.records[0][0];
 assert.throws(()=>validateR49Snapshot(invalid),/duplicate/);
-console.log("PASS R49 1,876 provisional source-backed pins, 1,019 Rome-recognised, 732 SSPX, 125 unknown; safe map-first filters and entry");
+console.log("PASS R49 historical baseline: 1,879 provisional source-backed pins, 1,022 Rome-classified, 732 SSPX-family (including 3 explicitly named sisters), 125 unknown; full CL2 worldwide integration separately gated");

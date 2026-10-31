@@ -1,6 +1,7 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
-import { renderDirectoryVenueCard,eligibleDirectoryImage,renderDirectoryGallery } from "./directory-card.js";
+import { renderDirectoryVenueCard,eligibleDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
+import {renderTlmChurchProfile} from "./tlm-church-profile.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
@@ -377,9 +378,16 @@ function compactExploreItemSheet(vm){
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
   if(isMass&&eligibleDirectoryImage(item.cover_media,item.place_id)){
     const m=item.cover_media;
-    html+='<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(lang==="fr"?m.alt_fr:m.alt_en)+'">'
-      +'<small class="aoTlmPreviewPhotoCredit">'+esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a> · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original photo","Photo originale"))+'</a></small>';
+    const emblem=massInstitutionEmblem(item.community_id);
+    html+='<div class="aoTlmPreviewPhotographic">'+
+      '<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(lang==="fr"?m.alt_fr:m.alt_en)+'">'+
+      (emblem?'<span class="aoTlmPreviewEmblem" aria-label="'+esc(L(lang,"Institute emblem","Emblème de l’institut"))+'"><img src="'+esc(emblem.image)+'" alt="" loading="lazy" decoding="async"></span>':'')+
+      '</div>'+
+      '<details class="aoTlmPreviewPhotoCredit"><summary>'+esc(L(lang,"Photograph & credit","Photographie et crédit"))+'</summary><div>'+
+      esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a> · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original photograph","Photographie originale"))+'</a></div></details>';
   }
+  if(isMass&&!eligibleDirectoryImage(item.cover_media,item.place_id))
+    html+=renderDirectoryIdentityFallback(item,lang,"preview");
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
   if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
     "Check the source for current Mass times, exact entrance and the status of individual celebrations.",
@@ -404,6 +412,7 @@ function compactExploreItemSheet(vm){
 }
 function detailSheet(vm){
   const item=vm.selected;if(!item)return "";
+  if(item.kind==="TLM_VENUE")return renderTlmChurchProfile(item,vm.language);
   let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet'+(item.kind==="CANONICAL_CUSTOM"?' aoExploreTraditionSheet':'')+'" role="dialog" aria-modal="true"'+(item.kind==="CANONICAL_CUSTOM"?' data-explore-custom-id="'+esc(item.source_id)+'"':'')+'>';
   html+='<header><div><small>'+esc((vm.language==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(translatedTitle(item,vm.language)||"")+'</h2>';
   const subtitle=vm.language==="fr"?(item.kind==="CANONICAL_CUSTOM"?item.subtitle_fr:item.subtitle_fr||item.subtitle):item.subtitle;
@@ -419,6 +428,8 @@ function detailSheet(vm){
       +(changes?'<span class="aoTlmPhotoChanges"> · '+esc(changes)+'</span>':'')
       +'</figcaption></figure>';
   }
+  if(item.kind==="TLM_VENUE"&&!eligibleDirectoryImage(item.cover_media,item.place_id))
+    html+=renderDirectoryIdentityFallback(item,vm.language,"detail");
   if(item.kind==="TLM_VENUE")html+=renderDirectoryGallery(item,vm.language);
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+esc(L(vm.language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
   if(item.summary)html+='<p class="aoExploreLead">'+esc(translatedSummary(item,vm.language))+'</p>';
@@ -508,8 +519,52 @@ function massEmblemCredits(language){
         +esc(L(language,"Original image licence","Licence de l’image"))+'</a></p>';
     }).join("")
     +'<p>'+esc(L(language,
-      "The Holy See arms identify diocesan listings editorially. Neither Holy See endorsement nor oversight of the listed Mass is implied. Copyright licences do not waive separate insignia or trademark rights. Commercial clearance remains outstanding.",
-      "Les armes du Saint-Siège identifient les fiches diocésaines dans cette carte, sans impliquer son approbation ni son contrôle. Les licences d’auteur ne lèvent pas les droits distincts attachés aux insignes ou aux marques. La validation commerciale reste à effectuer."))+'</p></div></details>';
+      "Diocesan and unidentified listings use neutral map symbols, not Holy See or assumed institute arms. Institutional emblems identify source-reported ministry only, not the church owner or a verified Mass. Copyright licences do not waive separate insignia or trademark rights; commercial clearance remains outstanding.",
+      "Les fiches diocésaines ou sans affiliation déterminée utilisent des repères neutres, non les armes du Saint-Siège ni celles d’un institut supposé. Les emblèmes signalent seulement le ministère indiqué par la source, pas le propriétaire de l’église ni une messe vérifiée. La licence d’auteur ne lève pas les droits propres aux insignes et marques ; la validation commerciale reste nécessaire."))+'</p></div></details>';
+}
+// Display source-present community identities, not just the first four emblem holders.
+// Research-only CL2/CL27 codes do not become public affiliations through this filter.
+function availableTlmCommunityIds(vm,aff=[]){
+  const present=new Set([...arr(vm.tlmAvailableCommunities?.length?vm.tlmAvailableCommunities:vm.items.filter(item=>item?.kind==="TLM_VENUE").map(item=>item.community_id)).map(id=>String(id??"").toUpperCase()),
+    ...arr(aff).map(id=>String(id??"").toUpperCase())].filter(Boolean));
+  const priority=["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV","CMRI","SSPV","CSPV","RCI","FSVF",
+    "CANONS_ST_JOHN_CANTIUS","SMMD","BENEDICTINE","DOMINICAN","ORATORIAN","NORBERTINE","INDEPENDENT","OTHER","UNKNOWN"];
+  const sorted=[...present].sort((a,b)=>{
+    const ia=priority.indexOf(a),ib=priority.indexOf(b);
+    return (ia<0?priority.length:ia)-(ib<0?priority.length:ib)||a.localeCompare(b);
+  });
+  return sorted.length?sorted:["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"];
+}
+// Show reader-facing community names; stable source codes remain in data attributes.
+function tlmCommunityLabel(id,lang){
+ const names={
+  DIOCESAN:["Diocesan","Diocésain"],OTHER:["Other","Autres"],UNKNOWN:["Unclassified","Non classés"],
+  CANONS_ST_JOHN_CANTIUS:["Canons of St John Cantius","Chanoines de Saint-Jean-de-Cantius"],
+  SSPX_SISTERS:["SSPX Sisters","Sœurs FSSPX"],
+  CAPUCHINS_MORGON:["Capuchins of Morgon","Capucins de Morgon"],
+  CARMELITE:["Carmelites","Carmélites"],
+  BENEDICTINE:["Benedictines","Bénédictins"],
+  BENEDICTINES_BELLAIGUE:["Benedictines of Bellaigue","Bénédictins de Bellaigue"],
+  DOMINICAN:["Dominicans","Dominicains"],
+  DOMINICAINES_FANJEAUX:["Dominican Sisters of Fanjeaux","Dominicaines de Fanjeaux"],
+  DOMINICANS_AVRILLE:["Dominicans of Avrillé","Dominicains d’Avrillé"],
+  ORATORIAN:["Oratorians","Oratoriens"],
+  TRANSFIGURATION:["Fraternity of the Transfiguration","Fraternité de la Transfiguration"],
+  PREMONSTRATENSIAN:["Premonstratensians","Prémontrés"],
+  MOSTEIRO_SANTA_CRUZ:["Santa Cruz monastery","Monastère Santa Cruz"],
+  INDEPENDENT:["Independent listing","Fiche indépendante"],
+  SJM:["Servants of Jesus and Mary","Serviteurs de Jésus et de Marie"],
+  SMMD:["Missionaries of Divine Mercy","Missionnaires de la Miséricorde divine"],
+ };
+ const text=names[id];
+ return text?text[lang==="fr"?1:0]:id.replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+}
+function tlmInstituteButton(id,aff,lang){
+ const emblem=massInstitutionEmblem(id);
+ return '<button type="button" data-find-affiliation="'+esc(id)+'" class="'+(aff.includes(id)?"active":"")+
+  '" aria-pressed="'+String(aff.includes(id))+'">'+
+  (emblem?'<img src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':"")+
+  esc(tlmCommunityLabel(id,lang))+'</button>';
 }
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
@@ -524,14 +579,21 @@ function tlmFilters(vm){
     html+='</div>';
     if(vm.view==="map")html+='</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
+    const available=availableTlmCommunityIds(vm,aff);
+    const primary=new Set(["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV"]);
+    const first=available.filter(id=>primary.has(id)||aff.includes(id));
+    const other=available.filter(id=>!first.includes(id));
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
-    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"]){
-      const emblem=massInstitutionEmblem(id);
-      html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'
-        +(emblem?'<img src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':'')
-        +esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id==="OTHER"?L(vm.language,"Other","Autres"):id)+'</button>';
+    for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
+    html+='</div>';
+    if(other.length){
+      html+='<details class="aoTlmMoreInstitutes"><summary>'+
+        esc(L(vm.language,"Other communities","Autres communautés"))+' ('+other.length+')</summary>'+
+        '<div class="aoFindAffiliations">';
+      for(const id of other)html+=tlmInstituteButton(id,aff,vm.language);
+      html+='</div></details>';
     }
-    html+='</div></div>';
+    html+='</div>';
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",
       "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
@@ -547,7 +609,7 @@ function tlmFilters(vm){
     +'</div>';
   html+='<details class="aoExploreAdvancedFilters"><summary>'+esc(L(vm.language,"More filters","Plus de filtres"))+'</summary>';
   html+='<section><small>'+esc(L(vm.language,"COMMUNITY / PROVIDER","COMMUNAUTÉ / INSTITUT"))+'</small><div class="aoFindAffiliations">';
-  for(const id of ["DIOCESAN","FSSP","ICKSP","SSPX","IBP","OTHER"])html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
+  for(const id of availableTlmCommunityIds(vm,aff))html+=tlmInstituteButton(id,aff,vm.language);
   html+='</div></section><section><small>'+esc(L(vm.language,"COMMUNION STATUS","STATUT DE COMMUNION"))+'</small><div>';
   html+=pill("unaCum","ANY",L(vm.language,"Any status","Tout statut"),f.unaCum||"ANY")+pill("unaCum","YES","Una cum",f.unaCum||"ANY")+pill("unaCum","NO","Non-una cum",f.unaCum||"ANY")+pill("unaCum","UNKNOWN",L(vm.language,"Unknown","Inconnu"),f.unaCum||"ANY");
   html+='</div></section><section><small>'+esc(L(vm.language,"LITURGY","LITURGIE"))+'</small><div>'+pill("liturgy","ANY",L(vm.language,"Any liturgy","Toute liturgie"),f.liturgy||"ANY")+pill("liturgy","1962","1962",f.liturgy||"ANY")+pill("liturgy","PRE_1955","Pre-1955",f.liturgy||"ANY")+pill("liturgy","DOMINICAN","Dominican",f.liturgy||"ANY")+'</div></section><section><small>'+esc(L(vm.language,"MASS TYPE","TYPE DE MESSE"))+'</small><div>';
@@ -563,6 +625,7 @@ export function buildExploreViewModel({
   atlasFacets=null,
   loadedProviders=[],
   unavailableProviders=[],
+  tlmAvailableCommunities=[],
   view="list",
   filters={},
   saintsRelease=null,
@@ -597,6 +660,7 @@ export function buildExploreViewModel({
     atlasFacets,
     loadedProviders:arr(loadedProviders),
     unavailableProviders:arr(unavailableProviders),
+    tlmAvailableCommunities:arr(tlmAvailableCommunities),
     view,
     filters,
     journeyOpen:Boolean(journeyOpen),
@@ -699,7 +763,9 @@ export function renderExploreToString(vm){
   :L(vm.language,"places connected to saints","lieux associés aux saints")):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped&&vm.mapped<vm.items.length)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
-  if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
+  if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(vm.lens==="tlm"
+    ?L(vm.language,"list only · no map pin","en liste seulement · sans repère sur la carte")
+    :L(vm.language,"address only","adresse seule"))+'</span>';
   if(vm.lens==="tlm"&&vm.view==="map")html+='<span class="aoTlmViewportContext" data-tlm-viewport-count aria-live="polite">'+esc(L(vm.language,"In this view: …","Dans cette vue : …"))+'</span>';
   if(vm.lens==="tlm"){
     const listed=vm.items.filter(x=>x.status==="SCHEDULE UNVERIFIED").length;
@@ -713,7 +779,7 @@ export function renderExploreToString(vm){
       vm.mapped
         ?L(vm.language,"Loading source-backed map points…","Chargement des points cartographiques sourcés…")
         :vm.addressOnly
-          ?L(vm.language,"These records have canonical addresses, but no publishable coordinates yet. Use List for full access.","Ces fiches ont des adresses canoniques, mais pas encore de coordonnées publiables. Utilisez Liste pour tout consulter.")
+          ?L(vm.language,"These source listings have no publishable coordinates. Some contain only a locality or country. Use List to view them.","Ces fiches sourcées n’ont pas de coordonnées publiables. Certaines ne donnent qu’une localité ou un pays. Consultez-les en Liste.")
           :L(vm.language,"No publishable map points in this lens yet.","Aucun point cartographique publiable dans ce volet pour le moment.")
     )+'</span></div></div>';
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
@@ -721,7 +787,7 @@ export function renderExploreToString(vm){
       html+='<details class="aoMapLegend" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'"><summary>'+esc(L(vm.language,"Map symbols","Symboles de la carte"))+'</summary>'
         +'<span class="aoMapLegendLabel">'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"Source affiliation","Affiliation selon les sources"):L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
         +massLegendItem("FSSP","FSSP")+massLegendItem("ICKSP","ICKSP")
-        +massLegendItem("SSPX","SSPX")+massLegendItem("IBP","IBP")
+        +massLegendItem("SSPX","SSPX")+massLegendItem("IBP","IBP")+massLegendItem("AASJMV","AASJMV")
         +massLegendItem("DIOCESAN",L(vm.language,"Diocesan","Diocésain"))
         +massLegendItem("OTHER",L(vm.language,"Other / unknown","Autre / inconnu"))
         +'<small>'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"All pins provisional; exact entrances and Mass times are not verified.","Tous les repères sont provisoires ; entrées exactes et horaires des messes non vérifiés."):L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
