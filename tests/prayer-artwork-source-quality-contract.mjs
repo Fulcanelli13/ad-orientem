@@ -8,17 +8,19 @@ const attribution=rd("artist-attribution-source-resolution-wave01.v1.json");
 const sourceQA=rd("priority-photo-source-and-licence-qa-wave01.v1.json");
 const metWave02=rd("met-source-verification-wave02-20261031.v1.json");
 const subjectWave03=rd("subject-source-verification-wave03-20261031.v1.json");
+const commonsWave04=rd("commons-pageid-exact-source-wave04-20261031.v1.json");
 const provisional=rd("provisional-one-choice-per-267-art-position.v1.json");
 test("1506 proposed original artwork placements are never released, including exact-ID photo-source recoveries",()=>{
  const x=index.qaState;assert.equal(x.candidatePlacementRelationships,1506);
  assert.equal(x.originalMissingSourcePage,329);
  assert.equal(x.sourceLinksRestoredByExactArtworkID,140);
  assert.equal(x.sourceLinksAddedByDirectMuseumAndCommonsVerification,2);
- assert.equal(x.nowStillWithoutSourcePages,157);
+ assert.equal(x.nowStillWithoutSourcePages,125);
+ assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave04,32);
  assert.equal(x.sourceLinksVerifiedBySubjectSourceWave03,11);
- assert.equal(x.nowWithSourcePages,1349);
+ assert.equal(x.nowWithSourcePages,1381);
  assert.equal(x.sourceLinksVerifiedByMetWave02,36);
- assert.equal(x.distinctSourceLessCandidateIdentities,59);
+ assert.equal(x.distinctSourceLessCandidateIdentities,51);
  assert.equal(x.pradoPhotoSourcesExcluded,17);
  assert.equal(x.unverifiedNameOnlySourceAlternatives,0);
  assert.equal(x.confirmedNewUserArtworkApprovals,0);
@@ -38,8 +40,8 @@ test("1506 proposed original artwork placements are never released, including ex
   }
  }
  assert.equal(active,1506);
- assert.equal(linked,1349);
- assert.equal(remaining,157);
+ assert.equal(linked,1381);
+ assert.equal(remaining,125);
  assert.equal(anonymous,41);
  assert.equal(unresolvedAnonymous,4);
 });
@@ -118,4 +120,29 @@ test("wave 3 subject sources keep photo, rights, aspect-ratio and release gates 
    if(painting.sourceIDs.includes("PRAYER::w1-kazimirowski"))assert.equal(painting.sourcePage,mercy.link);
   }
  }
+});
+
+test("wave 4 eight verified Commons page IDs propagate 32 source links while no artwork is published",()=>{
+ assert.equal(commonsWave04.counts.uniqueOriginalFilePages,8);
+ assert.equal(commonsWave04.counts.sourcePlacementLinksRecovered,32);
+ assert.equal(commonsWave04.counts.sourceLinkedCandidatePlacementsNow,1381);
+ assert.equal(commonsWave04.counts.sourceUnlinkedCandidatePlacementsNow,125);
+ for(const gate of Object.values(commonsWave04.safety))assert.equal(gate,false);
+ const ids=new Set();let found=0;
+ for(const original of commonsWave04.records){
+  assert.ok(!ids.has(original.commonsPageId));ids.add(original.commonsPageId);
+  assert.equal(original.sourceArtworkID,"REVIEW::commons:"+original.commonsPageId);
+  assert.ok(original.sourcePage.includes("commons.wikimedia.org/wiki/File:"));
+  assert.equal(original.identityVerification,"EXACT_COMMONS_PAGE_ID_CONFIRMED_ON_FILE_PAGE_INFORMATION");
+  assert.equal(original.nativeFileDimensions.length,2);
+  for(const sl of original.placements){
+   const options=index.shards.flatMap(meta=>rd("collection-family-"+meta.family+".v1.json").slots)
+    .filter(item=>item.slot===sl).flatMap(item=>item.reviewCollection);
+   const row=options.find(x=>x.sourceIDs.includes(original.sourceArtworkID) && x.sourcePage===original.sourcePage);
+   assert.ok(row,"Missing verified source link in "+sl);
+   assert.equal(row.productionEnabled,false);
+   found++;
+  }
+ }
+ assert.equal(found,32);
 });
