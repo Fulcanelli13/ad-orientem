@@ -87,9 +87,25 @@ try{
    await nv.locator("[data-p435930-rosary-begin]").click();
    const rosary=page.locator("#aoPrayerBookRoot.open");
    await rosary.locator("[data-lab-rosary-today]").click();
-   await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.steps?.()?.length>60&&
-    document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']"),
-    null,{timeout:20000});
+   const rosaryState=()=>page.evaluate(()=>{
+    const r=document.querySelector("#aoPrayerBookRoot"),shell=r?.querySelector(".pbShell"),
+     api=window.AO_ROSARY_V381;
+    return {rootOpen:r?.classList.contains("open"),sourceReady:!!api,
+     sourceSet:api?.state?.()?.set,sourceStep:api?.state?.()?.step,
+     count:api?.steps?.()?.length||0,method:api?.getMethod?.(),
+     exact:shell?.dataset.aoRosaryExactDonor||null,
+     view:shell?.querySelector(".aoRosaryActiveCard")?.dataset.aoRosaryCanonicalStep||null,
+     html:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView||null,
+     err:document.querySelector("#aoPrayerBookRoot")?.innerText?.slice(0,250)||""};
+   });
+   try{
+    await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.steps?.()?.length>60&&
+     document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']"),
+     null,{timeout:20000});
+   }catch(e){
+    console.error("P5 ROSARY START DIAGNOSTIC "+width+" "+language+" "+JSON.stringify(await rosaryState()));
+    throw e;
+   }
    for(let i=0;i<7;i++)await rosary.locator("[data-lab-rosary-next]").click();
    await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.step===7,null,{timeout:12000});
    // Contemplation cards correctly do not have prayer paragraph scroll.
