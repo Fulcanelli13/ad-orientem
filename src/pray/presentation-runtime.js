@@ -215,7 +215,7 @@ function semanticRails(){
  }else if(view==='confession'){
    // The phone accompanies preparation only. The sign-of-cross cue belongs
    // to the first rehearsal card, not to every card or an implied live rite.
-   if(CONF.stage===2&&CONF.riteStep===0)left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('Before entering','Avant d’entrer'),{channel:'transient'});
+   if(CONF.stage===2&&confessionRiteCards(CONF.path)[CONF.riteStep]?.id==='cross-and-blessing')left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('Before entering','Avant d’entrer'),{channel:'transient'});
    right=semanticRailChip(
      'ao-rich-confession',
      L('Confession','Confession'),
