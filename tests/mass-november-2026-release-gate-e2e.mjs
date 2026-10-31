@@ -232,7 +232,7 @@ try{
  check((b.additionalErrors??[]).length===0,
   "NOV02_ADDITIONAL_SOURCE_BUILD_ERRORS:"+JSON.stringify(b.additionalErrors));
  const massUi=await (async()=>{
-   const out={cases:[],error:null,available:false};
+   const out={cases:[],visualCases:[],orationCases:[],rubricCases:[],error:null,available:false};
    try{
      const changed=await page.evaluate(async()=>await globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate(
        "2026-11-02",{forceLoader:false,prefetch:false}));
@@ -288,6 +288,251 @@ try{
              sourceProof:mass?.proper?.data?.allSoulsSourceProof??null};
          });
          out.cases.push({massNumber,requestedMode:mode,...output});
+
+         // Visual proof uses the actual selected Nov 2 source Proper and
+         // the same native R17 reader as production, NOT a synthetic Requiem
+         // fixture. Keep each snapshot independently keyed by m1/m2/m3,
+         // mode, language and viewport; no device certification implied.
+         for(const language of ["en","fr"]){
+           const real=await page.evaluate(async language=>{
+             if(!globalThis.AO_R17_BROWSER_ENTRY.selectTodayOption("readerLanguage",language))
+               throw Error("NOV02_READER_LANGUAGE_NOT_SELECTABLE:"+language);
+             const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+             // The actual production bridge supplies the locked, audited
+             // canonical icon bank. A bare native mount has no resolver and
+             // falsely yields an iconless visual "pass".
+             const {mountR17Preview}=await import("/src/mass/browser-entry.js");
+             const mounted=await mountR17Preview({doc:document,prepared});
+             if(mounted.uiOwner!=="R17_NATIVE_PRODUCTION")
+               throw Error("NOV02_NOT_PRODUCTION_READER_OWNER");
+             const api=mounted.preview;
+             const proper=api.model?.properSource??null;
+             const sourceCards=(api.model?.cards??[]).filter(c=>
+               String(c.sourceSectionId??c.sectionId)==="AO.CARD.006");
+             const sequenceCard=sourceCards.find(c=>
+               /Dies\s+ir/i.test(JSON.stringify(c.paragraphs??[])))??sourceCards[0];
+             if(!sequenceCard||!api.showSection(sequenceCard.sectionId))
+               throw Error("NOV02_READER_TRACT_SEQUENCE_NOT_VISIBLE");
+             const proof={
+               sourcePath:proper,
+               requestedLanguage:language,
+               actualLanguage:prepared?.readerPreferences?.language??null,
+               requestedMode:prepared?.readerPreferences?.mode??null,
+               cardCount:api.model?.cards?.length??0,
+               sourceCard:sequenceCard.sourceSectionId??sequenceCard.sectionId,
+               displayedCard:api.getCurrentCard()?.sectionId??null,
+               curated:api.root.dataset.r17CuratedReview,
+               overlay:(prepared?.session?.resolvedMass?.overlays??[]).includes("REQUIEM"),
+             };
+             // Inspect the exact approved source rubric and its artwork on
+             // the actual cue-bearing card. The Sequence can legitimately
+             // have no priest gesture; never invent one for that chant.
+             const rubricCard=(api.model?.cards??[]).find(card=>
+               (card.paragraphs??[]).some(p=>(p.sourceCueIds??[])
+                 .includes("AO.SM.C0072")));
+             if(!rubricCard||!api.showSection(rubricCard.sectionId))
+               throw Error("NOV02_APPROVED_COLLECT_RUBRIC_CARD_MISSING");
+             const approvedArt=api.root.querySelector(
+               '.ao-approved-priest-head-bow-rubric-art[data-approved-priest-head-bow-event="AO.RUB.C0072.01"]');
+             const sourceRubric=api.root.querySelector(
+               '.ao-live-rubric-action[data-rubric-id="AO.RUB.C0072.01"],'+
+               '.ao-missal-rubric-action[data-rubric-id="AO.RUB.C0072.01"]');
+             const artUrl=approvedArt?.style.maskImage||approvedArt?.style.webkitMaskImage||"";
+             proof.approvedRubric={
+               card:rubricCard.sectionId,
+               iconPresent:Boolean(approvedArt&&artUrl.includes("head_bow.svg")),
+               sourceRubricPresent:Boolean(sourceRubric),
+               iconUrl:artUrl.slice(0,180),
+             };
+             if(!proof.approvedRubric.iconPresent||
+                !proof.approvedRubric.sourceRubricPresent)
+               throw Error("NOV02_APPROVED_GESTURE_RUBRIC_NOT_RENDERED:"+
+                 JSON.stringify(proof.approvedRubric));
+             // Preserve this exact cue-owning card for a photographic
+             // LIVE icon / Missal rubrical comparison, not the hymn card.
+             globalThis.__AO_NOV02_RUBRIC_CARD=rubricCard.sectionId;
+             // Continue existing Sequence image contract, now with production
+             // icons actually enabled. This test's rubric inspection is
+             // isolated from the screenshot's source-card selection.
+             if(!api.showSection(sequenceCard.sectionId))
+               throw Error("NOV02_SEQUENCE_RESTORE_FAILED");
+             globalThis.__AO_NOV02_NATIVE_PROOF=api;
+             return proof;
+           },language);
+           try{
+             if(real.sourcePath!=="Sancti/11-02m"+massNumber||
+                real.actualLanguage!==language||real.requestedMode!==mode||
+                real.sourceCard!=="AO.CARD.006"||
+                real.displayedCard==null||!real.overlay||
+                real.cardCount<30)
+               throw Error("NOV02_NATIVE_READER_IDENTITY_MISMATCH:"+JSON.stringify(real));
+             for(const width of [320,390]){
+               await page.setViewportSize({width,height:844});
+               await page.waitForSelector("#ao-r17-native-reader-preview .ao-reader-paragraph",
+                 {state:"visible",timeout:20000});
+               const visual=await page.evaluate(()=>{
+                 const root=document.getElementById("ao-r17-native-reader-preview");
+                 const shell=root?.querySelector("[data-ao-reader-shell]");
+                 const paragraph=root?.querySelector(".ao-reader-paragraph");
+                 return {
+                   width:root?.getBoundingClientRect()?.width??0,
+                   overflow:root?Math.max(0,root.scrollWidth-root.clientWidth):Infinity,
+                   mode:shell?.dataset?.mode??null,
+                   paragraphText:paragraph?.innerText?.trim()?.slice(0,140)??"",
+                   paragraphCount:root?.querySelectorAll(".ao-reader-paragraph")?.length??0,
+                   unscopedSequenceNote:root?.querySelector(".ao-prayer-body")
+                     ?.innerText?.includes("May be omitted at Daily Mass")===true,
+                   hasHymnOpening:root?.querySelector(".ao-prayer-body")
+                     ?.innerText?.includes("Dreaded day, that day of ire")===true,
+                 };
+               });
+               if(visual.width!==width||visual.overflow>1||
+                  visual.mode!==mode||visual.paragraphCount<1||
+                  !visual.paragraphText||visual.unscopedSequenceNote||
+                  (language==="en"&&!visual.hasHymnOpening))
+                 throw Error("NOV02_NATIVE_DIES_IRAE_TRANSLATION_ALIGNMENT_FAILED:"+JSON.stringify({real,visual}));
+               const filename="all-souls-m"+massNumber+"-"+mode.toLowerCase()+
+                 "-"+language+"-"+width+".png";
+               await page.screenshot({path:resolve(dir,filename),fullPage:false});
+               out.visualCases.push({...real,viewport:width,filename,...visual});
+             }
+             // The earlier sequence screenshots are shared across all three
+             // authentic source formularies. These additional captures prove
+             // the DISTINCT appointed Collect, Secret and Postcommunion are
+             // actually rendered at their own original source cards.
+             await page.setViewportSize({width:390,height:844});
+             const exactRubric=await page.evaluate(async()=>{
+               const api=globalThis.__AO_NOV02_NATIVE_PROOF;
+               const card=globalThis.__AO_NOV02_RUBRIC_CARD;
+               if(!api.showSection(card))throw Error("NOV02_CUE_RUBRIC_REOPEN_FAILED");
+               const shell=api.root.querySelector("[data-ao-reader-shell]");
+               const mode=shell?.dataset.mode;
+               const frame=()=>new Promise(done=>
+                 requestAnimationFrame(()=>requestAnimationFrame(done)));
+               await frame();
+               // A card jump is not a liturgical cue. Move the actual LIVE
+               // reading line to the existing Oremus cue before taking the
+               // approved gesture photograph. Missal remains a static book.
+               if(mode==="LIVE"){
+                 const scroll=api.root.querySelector(".ao-prayer-card");
+                 const row=[...scroll.querySelectorAll(".ao-reader-paragraph")]
+                   .find(n=>String(n.dataset.sourceCueIds??"").split(" ")
+                     .includes("AO.SM.C0072"));
+                 if(!scroll||!row)throw Error("NOV02_C0072_SOURCE_ROW_MISSING");
+                 const scrollTop=row.getBoundingClientRect().top-
+                   scroll.getBoundingClientRect().top+scroll.scrollTop;
+                 scroll.scrollTop=Math.max(0,scrollTop-scroll.clientHeight*.39);
+                 await frame();
+                 // C0070 can remain the separate ceremony focus owner
+                 // while the publication-bearing C0072 rubric is visible.
+                 // Do not forge a change in the priest's observed cue just
+                 // to photograph his exact source-linked head-bow artwork.
+                 // Validate its original paragraph and screen visibility
+                 // below; source placement, not simulated priest movement,
+                 // is the evidence this screenshot is intended to capture.
+               }
+               const rubric=api.root.querySelector(
+                 '[data-rubric-id="AO.RUB.C0072.01"]');
+               const icon=api.root.querySelector(
+                 '[data-approved-priest-head-bow-event="AO.RUB.C0072.01"]');
+               if(!rubric||!icon)
+                 throw Error("NOV02_CUE_RUBRIC_ART_NOT_VISIBLE_IN_SOURCE_DOM");
+               const style=getComputedStyle(rubric);
+               const imageStyle=getComputedStyle(icon);
+               const iconVisible=mode==="LIVE"&&imageStyle.display!=="none"&&
+                 !icon.hidden&&icon.getBoundingClientRect().width>=24;
+               const rubricText=rubric.textContent?.trim()??"";
+               const sourceRow=[...api.root.querySelectorAll(".ao-reader-paragraph")]
+                 .find(row=>String(row.dataset.sourceCueIds??"").split(" ")
+                   .includes("AO.SM.C0072")&&row.contains(rubric));
+               const sourceVisible=Boolean(sourceRow&&
+                 sourceRow.getBoundingClientRect().bottom>0 &&
+                 sourceRow.getBoundingClientRect().top<innerHeight);
+               const caption=rubric.querySelector(".ao-approved-inline-rubric-copy");
+               const captionStyle=caption?getComputedStyle(caption):null;
+               const captionVisuallyHidden=captionStyle?.position==="absolute"&&
+                 caption.getBoundingClientRect().width<=2;
+               if(!rubricText||!caption||!icon||!sourceVisible||
+                  (mode==="LIVE"&&(!iconVisible||!captionVisuallyHidden))||
+                  (mode==="MISSAL"&&(captionVisuallyHidden||
+                    !rubricText.toLowerCase().includes("priest")&&
+                    !rubricText.toLowerCase().includes("prêtre"))))
+                 throw Error("NOV02_APPROVED_RUBRIC_ICON_OR_PRINT_INVALID:"+
+                   JSON.stringify({mode,iconVisible,captionVisuallyHidden,rubricText}));
+               return {card,mode,iconVisible,captionVisuallyHidden,
+                 sourceVisible,sourceCueIds:sourceRow?.dataset.sourceCueIds??null,
+                 activeCue:api.getActiveCue(),sourceRubricId:rubric.dataset.rubricId,
+                 text:rubricText,iconAsset:icon.dataset.approvedAsset??null};
+             });
+             // All ordinary approved cue glyphs use the same displayed
+             // 32px unit, including on a narrow phone and in the Missal.
+             // The tile/badge container can differ for major ceremonies,
+             // but not the SVG glyph size. No image-upscaling exceptions.
+             for(const width of [320,390]){
+               await page.setViewportSize({width,height:844});
+               const sizes=await page.evaluate(()=>{
+                 const root=document.getElementById("ao-r17-native-reader-preview");
+                 const selectors={
+                   inline:'.ao-approved-priest-head-bow-rubric-art[data-approved-priest-head-bow-event="AO.RUB.C0072.01"]',
+                   faithful:'[data-icon-slot="posture-top"]',
+                   priest:'[data-icon-slot="priest-position"]',
+                   rail:'.ao-rail .ao-icon-mask',
+                 };
+                 return Object.fromEntries(Object.entries(selectors).map(([key,selector])=>{
+                   const el=root?.querySelector(selector);
+                   const css=el?getComputedStyle(el):null;
+                   return [key,css?{width:parseFloat(css.width),
+                     height:parseFloat(css.height)}:null];
+                 }));
+               });
+               if(Object.entries(sizes).some(([key,x])=>
+                 !x||x.width!==32||x.height!==32))
+                 throw Error("NOV02_APPROVED_ICON_FAMILY_NONUNIFORM:"+JSON.stringify({
+                   mode,language,width,massNumber,sizes}));
+             }
+             await page.setViewportSize({width:390,height:844});
+             const rubricFilename="all-souls-m"+massNumber+"-c0072-rubric-"+
+               mode.toLowerCase()+"-"+language+"-390.png";
+             await page.screenshot({path:resolve(dir,rubricFilename),fullPage:false});
+             out.rubricCases.push({massNumber,mode,language,filename:rubricFilename,...exactRubric});
+             for(const oration of [
+               {name:"collect",source:"AO.CARD.004",slot:"COLLECT_SET"},
+               {name:"secret",source:"AO.CARD.011",slot:"SECRET_SET"},
+               {name:"postcommunion",source:"AO.CARD.027",slot:"POSTCOMMUNION_SET"},
+             ]){
+               const selection=await page.evaluate(({source,slot})=>{
+                 const api=globalThis.__AO_NOV02_NATIVE_PROOF;
+                 const candidates=(api?.model?.cards??[]).filter(card=>
+                   String(card.sourceSectionId??card.sectionId)===source);
+                 const chosen=candidates.find(card=>(card.paragraphs??[])
+                   .some(p=>String(p.id??"").startsWith(slot+".")));
+                 if(!chosen)throw Error("NOV02_APPOINTED_ORATION_SOURCE_CARD_MISSING:"+source+":"+slot);
+                 if(!api.showSection(chosen.sectionId))
+                   throw Error("NOV02_APPOINTED_ORATION_NOT_RENDERED:"+chosen.sectionId);
+                 const body=api.root.querySelector(".ao-prayer-body");
+                 const text=body?.innerText?.trim()??"";
+                 return {source,slot,card:chosen.sectionId,
+                   paragraphCount:api.root.querySelectorAll(".ao-reader-paragraph").length,
+                   excerpt:text.slice(0,220),
+                   overflow:Math.max(0,api.root.scrollWidth-api.root.clientWidth)};
+               },oration);
+               if(selection.paragraphCount<1||selection.excerpt.length<15||selection.overflow>1)
+                 throw Error("NOV02_ORATION_NATIVE_DISPLAY_INCOMPLETE:"+JSON.stringify(selection));
+               const filename="all-souls-m"+massNumber+"-"+oration.name+"-"+
+                 mode.toLowerCase()+"-"+language+"-390.png";
+               await page.screenshot({path:resolve(dir,filename),fullPage:false});
+               out.orationCases.push({massNumber,mode,language,filename,...selection});
+             }
+           }finally{
+             await page.evaluate(()=>{
+               try{globalThis.__AO_NOV02_NATIVE_PROOF?.destroy?.()}finally{
+                 delete globalThis.__AO_NOV02_NATIVE_PROOF;
+                 delete globalThis.__AO_NOV02_RUBRIC_CARD;
+               }
+             });
+           }
+         }
+
        }
        if(massNumber!==3){
          if(m1)await page.locator('[data-m1-choice="mass"]').click();
@@ -449,6 +694,36 @@ try{
        "NOV02_NATIVE_ALTERNATE_SOURCE_PROOF_MISSING:"+row.massNumber);
  }
  check(massUi.cases.length===6,"NOV02_NATIVE_SIX_FORMULARY_MODE_COMBINATIONS_INCOMPLETE");
+ check(massUi.visualCases?.length===24,
+  "NOV02_NATIVE_ALL_MASSES_BOTH_MODES_LANGUAGES_PHONES_NOT_CAPTURED");
+ check(massUi.orationCases?.length===36,
+  "NOV02_APPOINTED_ORATIONS_NATIVE_PHONE_CAPTURES_INCOMPLETE");
+ check(massUi.rubricCases?.length===12 &&
+   massUi.rubricCases.every(x=>x.sourceRubricId==="AO.RUB.C0072.01"&&
+     x.iconAsset==="you:head_bow"&&x.text),
+   "NOV02_APPROVED_SOURCE_RUBRIC_PHOTOGRAPHIC_EVIDENCE_INCOMPLETE");
+ check(massUi.rubricCases.filter(x=>x.mode==="LIVE").every(x=>
+   x.iconVisible&&x.captionVisuallyHidden&&x.sourceVisible&&
+   x.sourceCueIds?.split(" ").includes("AO.SM.C0072")),
+   "NOV02_LIVE_APPROVED_GESTURE_ICON_NOT_SOURCE_ANCHORED_OR_VISIBLE");
+ check(massUi.rubricCases.filter(x=>x.mode==="MISSAL").every(x=>
+   !x.captionVisuallyHidden&&x.text),
+   "NOV02_MISSAL_SOURCE_RUBRIC_TEXT_NOT_PRINTED");
+
+ for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+   for(const language of ["en","fr"]){
+     for(const mode of ["LIVE","MISSAL"]){
+       const cases=(massUi.orationCases??[]).filter(c=>
+         c.slot===slot&&c.language===language&&c.mode===mode);
+       check(cases.length===3&&new Set(cases.map(c=>c.massNumber)).size===3,
+         "NOV02_DISTINCT_ORATIONS_NATIVE_CASES_MISSING:"+slot+":"+language+":"+mode);
+     }
+   }
+ }
+
+ check((massUi.visualCases??[]).every(row=>row.sourcePath==="Sancti/11-02m"+
+   row.filename.match(/all-souls-m([123])-/)?.[1]&&row.overlay&&row.overflow<=1),
+   "NOV02_NATIVE_AUTHENTIC_PHONE_VISUAL_PROOF_INCOMPLETE");
  check(massUi.succession?.decision?.contextualStatus==="EXPLICIT_CIRCUMSTANCES" &&
    massUi.succession?.decision?.massNumber===2,
    "NOV02_RITUS_XIV_PREPARED_PROVENANCE_MISSING");

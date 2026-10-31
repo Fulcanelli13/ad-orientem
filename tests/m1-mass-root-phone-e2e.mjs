@@ -20,7 +20,7 @@ try{
  for(const width of [320,390]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native&aoMassAccessM1=1",
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoTodayH4=0&aoR17Reader=native&aoMassAccessM1=1",
     {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
   // Mass is now a contextual root reached through Today; the Mass ribbon tab is retired.

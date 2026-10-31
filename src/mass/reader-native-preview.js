@@ -471,7 +471,7 @@ export async function prepareNativeReaderPreview({
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
         : curatedOrdinary)
     : String(model.presentationMode??"").toUpperCase()==="MISSAL"
-      ? projectGranularMissalCards(model)
+      ? projectGranularMissalCards(model,{language:prepared?.readerPreferences?.language??"en"})
       : model;
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
   if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
@@ -2960,6 +2960,7 @@ export async function mountNativeReaderPreview({
       cards:readerModel?.cards.filter(visibleCardAllowed),
       form:prepared.session.resolvedMass.form,
       resolvedMass:prepared.session.resolvedMass,
+      massPlan:prepared.session.plan,
       tracks:ready.scholaState?.trackIds??[],
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
     }),scholaLocalProgramme),{selectedEventId:selectedScholaEvent?.id??null}),
@@ -2969,6 +2970,7 @@ export async function mountNativeReaderPreview({
         cards:readerModel?.cards.filter(visibleCardAllowed),
         form:prepared.session.resolvedMass.form,
         resolvedMass:prepared.session.resolvedMass,
+        massPlan:prepared.session.plan,
         tracks:ready.scholaState?.trackIds??[],
         sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
       }),scholaLocalProgramme);
@@ -3001,6 +3003,7 @@ export async function mountNativeReaderPreview({
         cards:readerModel?.cards.filter(visibleCardAllowed),
         form:prepared.session.resolvedMass.form,
         resolvedMass:prepared.session.resolvedMass,
+        massPlan:prepared.session.plan,
         tracks:ready.scholaState?.trackIds??[],
         sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
       }),scholaLocalProgramme);
@@ -3053,6 +3056,7 @@ export async function mountNativeReaderPreview({
           cards:readerModel?.cards.filter(visibleCardAllowed),
           form:prepared.session.resolvedMass.form,
           resolvedMass:prepared.session.resolvedMass,
+          massPlan:prepared.session.plan,
           tracks:ready.scholaState?.trackIds??[],
           sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
         }),scholaLocalProgramme);
@@ -3442,6 +3446,7 @@ export async function mountNativeReaderPreview({
       cards:readerModel?.cards.filter(visibleCardAllowed),
       form:prepared.session.resolvedMass.form,
       resolvedMass:prepared.session.resolvedMass,
+      massPlan:prepared.session.plan,
       tracks:ready.scholaState?.trackIds??[],
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
     }),scholaLocalProgramme)),

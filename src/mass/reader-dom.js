@@ -1295,6 +1295,20 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action{
   display:block;margin:1px 0;
 }
+/* An exact approved source-gesture pictogram is the LIVE instruction.
+   Preserve the original published rubric as accessible text (and show it in
+   the red-ink MISSAL), but do not print a duplicate caption beside the icon.
+   Only tagged original-rubric artwork receives this treatment. */
+.ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[data-approved-inline-icon="true"]{
+  display:inline-flex;align-items:center;min-height:31px;
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[data-approved-inline-icon="true"]
+  .ao-approved-inline-rubric-copy{
+  position:absolute!important;width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;white-space:nowrap!important;
+  border:0!important;
+}
 /* Four exact, current-actor, current-subaction icons may replace their
    duplicate short line in LIVE only. The complete sourced rubric remains
    in MISSAL and the same source-linked node remains in the LIVE DOM. */
@@ -1694,6 +1708,77 @@ button.ao-schola-control{cursor:pointer}
   font:600 9px/1.1 var(--ao-font-ui,system-ui,sans-serif);
   letter-spacing:.025em;text-transform:uppercase
 }
+/* Prayer-first Mass chrome: retain all three controls and their accessible
+   labels, but stop presenting Catch Up / Music / Music Plan as competing pills.
+   Their 44px interactive hit areas and source-owned behaviour remain intact. */
+.ao-section-catchup{display:none!important}
+.ao-state-music-jump,
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-state-music-jump{
+  width:44px;min-width:44px;min-height:44px;padding:0;
+  border:0;border-radius:0;background:transparent;box-shadow:none;
+  font-size:0;letter-spacing:0;color:var(--ao-mass-accent-text)
+}
+.ao-state-music-jump::before{
+  content:"♫";font:400 20px/1 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-state-music-jump:focus-visible{
+  outline:2px solid var(--ao-mass-accent-text);outline-offset:-3px;border-radius:5px
+}
+.ao-schola-programme summary{
+  min-width:44px;min-height:40px;justify-content:center;padding:0;
+  border:0;border-radius:0;background:transparent;color:var(--ao-mass-accent-text);
+  font-size:0;letter-spacing:0
+}
+.ao-schola-programme summary::after{
+  content:"⋯";font:600 22px/1 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-schola-programme summary:focus-visible{
+  outline:2px solid var(--ao-mass-accent-text);outline-offset:-2px;border-radius:5px
+}
+/* An unobserved upcoming chant is a quiet text forecast, not a bottom card. */
+.ao-schola-dock[data-upcoming-only="true"]{
+  border:0;box-shadow:none;background:transparent
+}
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-programme{
+  top:1px;right:1px
+}
+
+/* Canonical Mass cue-art sizing. Previous separate desktop / 320px rules
+   ranged from 27 to 52px for ordinary posture, gesture and priest art.
+   Keep ONE 32px glyph unit in the existing 48/52px cue surfaces, regardless
+   of the approved source asset or reading mode. This changes no SVG asset,
+   source cue, gesture identity, actor lane or cinematic timing. */
+.ao-reader-shell{--ao-cue-art-size:32px}
+.ao-reader-shell .ao-state-cell>.ao-icon-mask,
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-icon-mask:not(.ao-missal-gesture-icon),
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-missal-gesture-icon,
+.ao-reader-shell .ao-rail .ao-icon-mask,
+.ao-reader-shell
+  :is(.ao-approved-finger-rubric-art,.ao-approved-priest-gesture-rubric-art,.ao-approved-priest-head-bow-rubric-art){
+  width:var(--ao-cue-art-size);height:var(--ao-cue-art-size);
+  min-width:var(--ao-cue-art-size);min-height:var(--ao-cue-art-size);
+  max-width:var(--ao-cue-art-size);max-height:var(--ao-cue-art-size);
+  flex:0 0 var(--ao-cue-art-size);
+  mask-position:center;-webkit-mask-position:center;
+  mask-size:contain;-webkit-mask-size:contain;
+  background-size:contain;background-position:center
+}
+/* The secondary Missal priest-action badge carries the same 32px artwork,
+   in a 40px touch-free frame. The major mark retains emphasis in its
+   container, not an arbitrarily oversized drawing. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge{
+  width:40px;height:40px;right:1px;top:1px
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge[data-major="true"]{
+  width:44px;height:44px;right:0;top:0
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge .ao-icon-mask{
+  width:var(--ao-cue-art-size);height:var(--ao-cue-art-size);
+  min-width:var(--ao-cue-art-size);min-height:var(--ao-cue-art-size);
+  max-width:var(--ao-cue-art-size);max-height:var(--ao-cue-art-size);
+  flex:0 0 var(--ao-cue-art-size)
+}
+
 `;
 
 function esc(value){
@@ -4747,7 +4832,17 @@ export function createReaderDomAdapter({
                   icon.setAttribute("aria-hidden","true");
                   icon.style.webkitMaskImage=`url("${art.imageUrl}")`;
                   icon.style.maskImage=`url("${art.imageUrl}")`;
-                  text.prepend(icon);
+                  // In LIVE the approved pictogram replaces the visible short
+                  // duplicate, never the underlying certified source rubric.
+                  // Missal continues to print the exact translated direction.
+                  const copy=doc.createElement("span");
+                  copy.className="ao-approved-inline-rubric-copy";
+                  copy.textContent=short;
+                  text.textContent="";
+                  text.dataset.approvedInlineIcon="true";
+                  text.setAttribute("aria-label",short);
+                  text.title=short;
+                  text.append(icon,copy);
                 }
                 if(isFingerStart && event.sourceUrl){
                   const detail=doc.createElement("details");

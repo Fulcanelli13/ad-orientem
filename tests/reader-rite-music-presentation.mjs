@@ -85,6 +85,18 @@ assert.ok(markup.includes('data-role="rite-music" hidden'),
 assert.ok(markup.includes('data-role="organ-permission" hidden'),
   "Organ permission is not a live instrument monitor");
 
+/* Mass chrome must not compete with prayer: control semantics and the
+   44px keyboard/touch targets survive the visual de-emphasis. */
+assert.match(markup,/data-role="section-jump" aria-label="Catch up with the priest/);
+assert.match(markup,/data-schola-events-open aria-label="Find Schola chant/);
+assert.match(markup,/summary aria-label="Edit your local Schola music plan"/);
+assert.match(markup,/\.ao-section-catchup\{display:none!important\}/);
+assert.match(markup,/\.ao-state-music-jump::before\{\s*content:"♫"/);
+assert.match(markup,/\.ao-schola-programme summary::after\{\s*content:"⋯"/);
+assert.match(markup,/min-width:44px;min-height:44px/);
+assert.match(markup,/\.ao-schola-programme summary:focus-visible/);
+
+
 const organ=(args)=>project1962ReaderOrganNote(args);
 for(const id of ["GF-OPEN-010","GF-LESS-110","GF-PASS-320","GF-VEN-600","GF-END-910"]){
   const note=organ({riteId:"GOOD_FRIDAY",stageId:id});

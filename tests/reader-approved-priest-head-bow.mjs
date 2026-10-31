@@ -54,7 +54,12 @@ assert.deepEqual(canonical.gaps.filter(x=>x.meaningId==="priest.action.bow_head"
  ["priest.action.bow_head"],"Priest action rail remains text-only until separately approved");
 assert.ok(dom.includes("approvedPriestHeadBowRubricArt(event)"));
 assert.ok(dom.includes("icon.dataset.approvedPriestHeadBowEvent=event.id"));
-assert.ok(dom.includes("text.textContent=short"));
+assert.ok(dom.includes('copy.textContent=short;'),
+  "Approved head-bow rubric wording must remain accessible");
+assert.ok(dom.includes('text.setAttribute("aria-label",short)'),
+  "Approved head-bow icon must retain its source-owned accessible label");
+assert.ok(dom.includes('text.append(icon,copy);'),
+  "Published gesture artwork and rubrical text must remain together");
 for(const id of ["AO.RUB.C0117.02","AO.RUB.C0263.02","AO.RUB.C0174.06"]){
  assert.equal(approvedPriestHeadBowRubricArt({id}),null,"Other approved gestures must stay independent");
 }
