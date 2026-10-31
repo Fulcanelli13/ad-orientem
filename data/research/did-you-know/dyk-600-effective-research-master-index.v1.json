@@ -48,7 +48,17 @@
     "novel_100_internal_overlap_at_or_above_025": 0,
     "similarity_method": "NFKD accent removal, stopwords, limited plural stemming; max EN/FR token-set Jaccard",
     "automatic_lexical_check_not_semantic_or_source_signoff": true,
-    "manual_semantic_and_quality_review_all_600_complete": false
+    "manual_semantic_and_quality_review_all_600_complete": false,
+    "private_verification": {
+      "repo": "Fulcanelli13/folio-core",
+      "branch": "research/did-you-know-discovery-r01-20261028",
+      "path": "data/discovery/research/r33-dyk-new100-to-600-v500-and-612-private-lexical-audit.v1.json",
+      "commit": "b8adaf69b6ab79252e404ced68cad0d69c475fd6",
+      "preview_text_not_published": true,
+      "scope": "new100 against earlier effective500 and all 612 private previews"
+    },
+    "new100_highest_similarity": 0.24,
+    "new100_internal_overlap_at_or_above_025": 0
   },
   "publication_gate": {
     "publication_authorized": false,
