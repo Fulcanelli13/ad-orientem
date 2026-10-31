@@ -61,6 +61,7 @@ export function createAppNativeBackBridge({win=globalThis,shell}={}){
       if(entry.surface===origin)return;
       expected=entry.surface;
       const result=await nav()?.navigate?.(entry.surface);
+      if(result?.ok===true){expected=null;return;}
       if(result?.ok!==true){
         expected=null;
         // LIVE Mass cancellation must not be bypassed by browser Back.
