@@ -68,7 +68,7 @@ def main() -> None:
     assert len(entries) == 14
     assert [x["number"] for x in entries] == list(range(1, 15))
     assert len({x["commonsFileTitle"] for x in entries}) == 14
-    assert "Lybaert" not in json.dumps(manifest)
+    assert "Lybaert" not in json.dumps(entries)
     all_meta = query_imageinfo([x["commonsFileTitle"] for x in entries])
     staged = []
     fingerprints = set()
