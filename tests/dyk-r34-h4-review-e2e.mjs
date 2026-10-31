@@ -29,7 +29,7 @@ try{
   const errors=[];page.on("pageerror",e=>errors.push(String(e)));
   try{
    await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
-   await page.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:45000});
+   await page.waitForSelector(".homeScreen.aoH7Screens .aoH7HomeView",{state:"visible",timeout:45000});
    await page.waitForFunction(()=>{
     const splash=document.querySelector("#ao-cinema-boot");
     if(splash?.isConnected&&getComputedStyle(splash).display!=="none"&&
@@ -39,13 +39,13 @@ try{
     return state?.route==="home"&&!state.resolving;
    },null,{timeout:45000});
    assert.equal(await page.locator(".homeScreen [data-dyk-r34-review]").count(),0,
-    "Normal H4 must not display unpublished R34 discoveries");
+    "Default H7 Home must not display unpublished R34 discoveries");
    assert.equal(await page.locator(".homeScreen [data-home-dyk-open]").count(),1,
     "Public six-card Discovery must remain intact");
 
    await page.goto(origin+"/index.html?aoR17Reader=native&aoDykR34Review=1",
     {waitUntil:"domcontentloaded",timeout:60000});
-   await page.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:45000});
+   await page.waitForSelector(".homeScreen.aoH7Screens .aoH7HomeView",{state:"visible",timeout:45000});
    const review=page.locator(".homeScreen [data-dyk-r34-review]");
    await review.waitFor({state:"visible",timeout:45000});
    assert.equal(await page.locator(".homeScreen [data-home-dyk-open]").count(),1,
@@ -73,6 +73,23 @@ try{
         });
     },id);
     assert.equal(url,expected,"Original source PDF page link wrong for "+id);
+    const secondary=dialog.locator("a[data-dyk-second-source]");
+    if(id==="DYK-M04-CANON-047"){
+      assert.equal(url.endsWith("#page=13"),true,"Memento of the living opens VIII.3");
+      assert.equal(await secondary.count(),1,"Dual Canon fact requires departed source");
+      assert.equal((await secondary.getAttribute("href")).endsWith("#page=16"),true,
+        "Memento of departed opens IX.2");
+    }else assert.equal(await secondary.count(),0,"Other facts must not invent a second source");
+    // From Close, reverse-Tab must reach the last source link, including
+    // the departed Memento when the fact has two citations.
+    await dialog.locator("[data-dyk-source-close]").focus();
+    await page.keyboard.press("Shift+Tab");
+    const lastSource=id==="DYK-M04-CANON-047"?secondary:dialog.locator("a[data-dyk-original-source]");
+    assert.equal(await lastSource.evaluate(el=>document.activeElement===el),true,
+      "Modal reverse focus must include its last cited source: "+id);
+    await page.keyboard.press("Tab");
+    assert.equal(await dialog.locator("[data-dyk-source-close]").evaluate(el=>document.activeElement===el),true,
+      "Modal forward focus must return to Close: "+id);
     const bounds=await dialog.evaluate(node=>{
       const box=node.getBoundingClientRect();
       return {left:box.left,right:box.right,viewport:innerWidth,
@@ -90,7 +107,7 @@ try{
    assert.equal(errors.length,0,"H4 source review page errors: "+errors.join(" | "));
   }finally{await page.close()}
  }
- console.log("PASS H4 R34 QA: normal Home unchanged, seven real opt-in source journeys at 390/1280px, exact PDF pages and focus restore");
+ console.log("PASS H7 R34 QA: normal Home unchanged, seven real opt-in source journeys at 390/1280px, exact PDF pages and focus restore");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
