@@ -34,10 +34,10 @@ assert.equal(diocesanQuality.counts.cl2_source_labelled_diocesan,584);
 assert.equal(diocesanQuality.counts.additional_b91_diocesan,3);
 assert.equal(diocesanQuality.counts.mapped,583);
 assert.equal(diocesanQuality.counts.missing,4);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,523);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,57);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,521);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,59);
 assert.equal(diocesanQuality.counts.by_coordinate_origin.B91_PUBLISHED_PROVISIONAL,3);
-assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,455);
+assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,453);
 const diocesanQualityByGroup=new Map(diocesanQuality.records.map(r=>[r.physical_group_id,r]));
 const blockedCoords=read("data/directory/research/diocesan-coordinate-blockers-20261031.v1.json");
 assert.equal(blockedCoords.items.length,4);
@@ -66,8 +66,8 @@ for(const row of diocesanQuality.records){
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:3});
-assert.equal(photoPins.pins.length,86);
+assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:5});
+assert.equal(photoPins.pins.length,88);
 assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,86);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
@@ -98,6 +98,26 @@ for(const [group,sourceId,lat,lng,ref,street] of [
  assert.ok(item.address.formatted.includes(street));
  assert.ok(item.geo.review_scope,"The specific physical-site identity must remain visible");
 }
+for(const [group,lat,lng,ref,scope] of [
+ ["RG-18B421A46625",51.71896,8.75581,"osm:way:255378538","CATHEDRAL_CHURCH_BUILDING_NOT_ENTRANCE"],
+ ["RG-2ACA16F334CA",43.68169,-70.29347,"osm:node:7170760600","DIOCESAN_ORATORY_CHURCH_BUILDING_NOT_ENTRANCE"],
+]){
+ const venue=world.find(x=>x.physical_group_id===group);
+ const audit=diocesanQualityByGroup.get(group);
+ const photoPin=photoPins.pins.find(p=>p.physical_group_id===group);
+ assert.ok(venue&&audit&&photoPin,"Reviewed site, ledger and photo coordinate index must agree");
+ assert.equal(venue.geo.lat,lat);
+ assert.equal(venue.geo.lng,lng);
+ assert.equal(venue.geo.source_ref,ref);
+ assert.equal(venue.geo.review_scope,scope);
+ assert.equal(audit.coordinate_origin,"REVIEWED_SITE_OVERLAY");
+ assert.equal(audit.photo_gate,"REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL");
+ assert.equal(audit.photo_research_started,false);
+ assert.equal(photoPin.lat,lat);
+ assert.equal(photoPin.lon,lng);
+}
+assert.equal(diocesanQualityByGroup.get("RG-2ACA16F334CA").operator_scope,
+ "DIOCESAN_ORATORY_CONFIRMED_BY_DIOCESE");
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);

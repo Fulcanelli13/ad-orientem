@@ -43,6 +43,30 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+  "RG-18B421A46625":Object.freeze({
+   sourceId:"AO-EUR-DE-082",name:"Paderborn Cathedral",country:"DE",
+   addressNeedle:"Paderborn",placeId:null,
+   lat:51.71896,lng:8.75581,precision:"site",
+   sourceRef:"osm:way:255378538",
+   sourceUrl:"https://www.openstreetmap.org/way/255378538",
+   correctedAddress:"Paderborn Cathedral, Domplatz, 33098 Paderborn, Germany",
+   reviewScope:"CATHEDRAL_CHURCH_BUILDING_NOT_ENTRANCE",
+   evidence:Object.freeze(["https://mapcarta.com/W255378538","https://www.kirchbau.de/300_datenblatt.php?id=893&name=keiner"]),
+  }),
+  "RG-2ACA16F334CA":Object.freeze({
+   sourceId:"AO-AMER-R28-US-37-03",name:"St. Joseph Oratory",country:"US",
+   addressNeedle:"673 Stevens",placeId:null,
+   lat:43.68169,lng:-70.29347,precision:"site",
+   sourceRef:"osm:node:7170760600",
+   sourceUrl:"https://www.openstreetmap.org/node/7170760600",
+   correctedAddress:"St. Joseph Oratory, 673 Stevens Avenue, Portland, ME 04103, USA",
+   reviewScope:"DIOCESAN_ORATORY_CHURCH_BUILDING_NOT_ENTRANCE",
+   evidence:Object.freeze([
+    "https://mapcarta.com/N7170760600",
+    "https://www.stjosephoratoryme.org/about",
+    "https://www.portlanddiocese.org/news/first-christmas-celebrations-held-at-diocese-of-portlands-st-joseph-oratory"
+   ]),
+  }),
  "RG-130C766CB4B6":Object.freeze({
   sourceId:"AO-EUR-GB-011",name:"Cathedral Church of St Barnabas",country:"GB",addressNeedle:"Nottingham",placeId:null,
   lat:52.954638,lng:-1.1571735,sourceRef:"historicengland:1247533",sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1247533",

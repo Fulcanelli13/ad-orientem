@@ -6,7 +6,7 @@
   "counts": {
     "new_site_pins": 67,
     "refined_existing_site_pins": 16,
-    "corrected_existing_site_pins": 3
+    "corrected_existing_site_pins": 5
   },
   "pins": [
     {
@@ -953,6 +953,28 @@
       "source_ref": "osm:way:553750193",
       "source_url": "https://www.openstreetmap.org/way/553750193",
       "review_scope": "CATHEDRAL_BUILDING_NOT_ADJACENT_PARISH_CENTER",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-18B421A46625",
+      "source_id": "AO-EUR-DE-082",
+      "name": "Paderborn Cathedral",
+      "lat": 51.71896,
+      "lon": 8.75581,
+      "source_ref": "osm:way:255378538",
+      "source_url": "https://www.openstreetmap.org/way/255378538",
+      "review_scope": "CATHEDRAL_CHURCH_BUILDING_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-2ACA16F334CA",
+      "source_id": "AO-AMER-R28-US-37-03",
+      "name": "St. Joseph Oratory",
+      "lat": 43.68169,
+      "lon": -70.29347,
+      "source_ref": "osm:node:7170760600",
+      "source_url": "https://www.openstreetmap.org/node/7170760600",
+      "review_scope": "DIOCESAN_ORATORY_CHURCH_BUILDING_NOT_ENTRANCE",
       "place_id": null
     }
   ]
