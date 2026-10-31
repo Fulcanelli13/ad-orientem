@@ -31,7 +31,15 @@ export function resolveApprovedPlaceMedia(records,placeId){
   // All files must be copied into the separately curated approved asset tree.
   const width=Number(record.width),height=Number(record.height);
   const orientation=height>width?"portrait":"landscape";
-  if(!/^assets\/(?:places|approved\/place-media)\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
+  const approvedCoverPath=/^assets\/(?:places|approved\/place-media)\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path);
+  // Do not duplicate previously vetted gallery binaries when the exact same
+  // file has been explicitly registered as an approved Place cover.
+  const reviewedGalleryCoverPath=record.source_place_ref==="APPROVED_GALLERY_COVER_REUSE_20261031"&&
+    /^assets\/approved\/place-gallery\/[a-zA-Z0-9_.-]+\.webp$/.test(path)&&
+    /^[-a-zA-Z0-9_]+$/.test(text(record.gallery_media_id))&&
+    /^[a-f0-9]{40}$/.test(text(record.source_sha1))&&
+    /^[a-f0-9]{64}$/.test(text(record.derivative_sha256));
+  if(!(approvedCoverPath||reviewedGalleryCoverPath)||
      !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
      !approvedLicenses[record.license]?.test(text(record.license_url))||
      !/^https:\/\/[^\s]+$/.test(text(record.source_url))||

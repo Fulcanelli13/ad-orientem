@@ -1,0 +1,27 @@
+name: Explore — approved gallery image reuse as Place covers
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/geography/approved-place-media.v1.json"
+      - "src/find/place-profiles.js"
+      - "tests/explore-approved-gallery-cover-reuse-20261031.mjs"
+      - ".github/workflows/explore-gallery-cover-reuse.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-exact-gallery-reuse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/explore-approved-gallery-cover-reuse-20261031.mjs
+      - run: node tests/explore-place-profiles.mjs
+      - run: node tests/explore-p77-reviewed-place-photos.mjs
