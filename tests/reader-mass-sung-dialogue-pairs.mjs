@@ -103,7 +103,8 @@ assert.equal(normal.toneSelection.status,"NOT_SOURCE_CERTIFIED");
 // The real event owner must carry the dialogue without creating new cards,
 // changing pre-existing 36 identities, or changing Schola progression.
 const reader=read("src/mass/reader-schola-event-timeline.js");
-assert.match(reader,/sungDialogue:projectMassSungDialogue\(/);
+assert.match(reader,/const sungDialogue=projectMassSungDialogue\(/);
+assert.match(reader,/sungDialogue,notationHandoff,/);
 assert.match(reader,/form:selected,resolvedMass,massPlan/);
 assert.doesNotMatch(read("src/mass/reader-mass-sung-dialogue-pairs.js"),
  /setTimeout|getUserMedia|\.play\(|\.advance\(/);
