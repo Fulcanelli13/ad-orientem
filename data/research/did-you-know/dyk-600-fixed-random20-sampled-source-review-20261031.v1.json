@@ -1,0 +1,277 @@
+{
+  "schema": "AO_DYK_600_FIXED_RANDOM20_SOURCE_REVIEW_20261031_V1",
+  "review_date": "2026-10-31",
+  "baseline": "data/research/did-you-know/dyk-600-effective-research-master-index.v1.json",
+  "population": "records 501–600 only; order 501–520 Weiser, 521–560 and 561–600 Pitrè",
+  "population_size": 100,
+  "fixed_draw": {
+    "seed": 20261031,
+    "algorithm": "LCG state=(1664525*state+1013904223) mod 2^32; Fisher-Yates in descending order, index=state mod (i+1)",
+    "sample_size": 20,
+    "sequence_order": [
+      565,
+      512,
+      521,
+      526,
+      517,
+      524,
+      506,
+      571,
+      562,
+      527,
+      583,
+      522,
+      508,
+      518,
+      509,
+      528,
+      516,
+      520,
+      541,
+      552
+    ],
+    "original_draw_never_redrawn": true,
+    "selection_before_corrections": true
+  },
+  "counts": {
+    "weiser_original_pdf_folio_reopened": 8,
+    "pitre_prior_original_scan_folio_and_anchor_reconciled": 12,
+    "pitre_new_original_page_image_checks": 0,
+    "sampled_copy_precision_rewrites": 3,
+    "sampled_scan_locator_repairs": 1,
+    "source_id_or_original_italian_anchor_mismatches_in_prior_ledgers": 0,
+    "new_public_h7_facts": 0
+  },
+  "original_sample_disposition": "NOT_20_OF_20_UNCHANGED_PASS_FOUR_REMEDIATIONS",
+  "effective_sample_disposition": "REPAIRED_FOR_RESEARCH_ONLY_WITH_INHERITED_PITRE_SOURCE_IMAGE_CAVEAT",
+  "publication_authorized": false,
+  "entire_new_100_final_editorial_approved": false,
+  "crossbank_dependency": {
+    "existing_full_100_vs_corrected500_and_private612_lexical_screen": "data/research/did-you-know/dyk-600-effective-research-master-index.v1.json",
+    "existing_lexical_threshold_025_hits": 0,
+    "independent_semantic_uniqueness_signoff": false,
+    "private_previews_must_remain_in_folio_core": true
+  },
+  "inspected_weiser_source": {
+    "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+    "pdf": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "printed_pages_reopened": [
+      50,
+      111,
+      119,
+      178,
+      202,
+      244,
+      294,
+      330
+    ],
+    "note": "Ascension context also inspected on p.243; these are firsthand page-image checks and claim-to-source comparisons, not independent historical corroborations"
+  },
+  "inherited_pitre_source": {
+    "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/customs-multibook-bulk150-20261026",
+    "verification_ledgers": [
+      "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+    ],
+    "note": "Matched 12 selected source IDs to original Italian locator anchors and page identifiers in previously visually inspected source registries; no original PDF page of those 12 was freshly opened during this audit."
+  },
+  "sample": [
+    {
+      "draw_slot": 1,
+      "sequence": 565,
+      "id": "DYK-G600-P-005",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 444,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 2,
+      "sequence": 512,
+      "id": "DYK-G520-W-012",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 178,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 3,
+      "sequence": 521,
+      "id": "DYK-G560-P-001",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 3,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 4,
+      "sequence": 526,
+      "id": "DYK-G560-P-006",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 17,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 5,
+      "sequence": 517,
+      "id": "DYK-G520-W-017",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 50,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 6,
+      "sequence": 524,
+      "id": "DYK-G560-P-004",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 14,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 7,
+      "sequence": 506,
+      "id": "DYK-G520-W-006",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 244,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 8,
+      "sequence": 571,
+      "id": "DYK-G600-P-011",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 451,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 9,
+      "sequence": 562,
+      "id": "DYK-G600-P-002",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 442,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 10,
+      "sequence": 527,
+      "id": "DYK-G560-P-007",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 20,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 11,
+      "sequence": 583,
+      "id": "DYK-G600-P-023",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 274,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 12,
+      "sequence": 522,
+      "id": "DYK-G560-P-002",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 13,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 13,
+      "sequence": 508,
+      "id": "DYK-G520-W-008",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 294,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 14,
+      "sequence": 518,
+      "id": "DYK-G520-W-018",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 202,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 15,
+      "sequence": 509,
+      "id": "DYK-G520-W-009",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 330,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 16,
+      "sequence": 528,
+      "id": "DYK-G560-P-008",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 32,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 17,
+      "sequence": 516,
+      "id": "DYK-G520-W-016",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 111,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 18,
+      "sequence": 520,
+      "id": "DYK-G520-W-020",
+      "source_audit": "WEISER_1958_PRINTED_FOLIO_REOPENED_VISUALLY_2026_10_31",
+      "printed_source_page": 119,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 19,
+      "sequence": 541,
+      "id": "DYK-G560-P-021",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 86,
+      "record_approved_for_publication": false
+    },
+    {
+      "draw_slot": 20,
+      "sequence": 552,
+      "id": "DYK-G560-P-032",
+      "source_audit": "PITRE_1900_ITALIAN_ANCHOR_AND_FOLIO_RECONCILED_TO_PRIOR_SCAN_LEDGER_NO_FRESH_IMAGE_CHECK",
+      "printed_source_page": 126,
+      "record_approved_for_publication": false
+    }
+  ],
+  "corrections": [
+    {
+      "id": "DYK-G520-W-017",
+      "kind": "COPY_SOURCE_PRECISION",
+      "reason": "Weiser p.50 names Bishop Burchard in 1025 and the specified Advent fast; move the modern 1962 explanatory comparison out of the discovery copy",
+      "source_page": 50
+    },
+    {
+      "id": "DYK-G520-W-020",
+      "kind": "COPY_SOURCE_PRECISION",
+      "reason": "Weiser p.119 identifies waiters, pages and minstrels accompanying the chief cook to an old carol; does not explicitly say the minstrels sang",
+      "source_page": 119
+    },
+    {
+      "id": "DYK-G600-P-011",
+      "kind": "SOURCE_SCOPE_COPY_PRECISION",
+      "reason": "Pitrè source-action ledger confirms local maccu dish for invited Holy Family guests; avoid adding an ingredient-level gloss not supported by that anchor",
+      "source_page": 451
+    },
+    {
+      "id": "DYK-G560-P-032",
+      "kind": "PDF_PAGE_LOCATOR_CORRECTION",
+      "reason": "Original 121-record verified source ledger puts Geraci original printed p.126 at scanned PDF page 188, not 191; the fact had conflicting locator keys",
+      "source_page": 126,
+      "before_pdf_page_1_based": 191,
+      "after_pdf_page_1_based": 188
+    }
+  ],
+  "remaining_gates": [
+    "Fresh visual inspection of 12 sampled Pitrè folios if the sample is to be declared fully firsthand-image verified",
+    "Editorial bilingual signoff and fact-specific links",
+    "Manual semantic duplicate review beyond the already-run lexical screen of all 600 vs 612 private previews",
+    "No permission to publish H7; historical local customs must not be presented as universal Roman rubrics"
+  ],
+  "next_action": "May continue drafting 601–700 as unpublished research if the same provenance labels and approval holds are preserved. Do not label 501–600 individually certified or approved for release."
+}
