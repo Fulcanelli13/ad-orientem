@@ -123,11 +123,13 @@ try{
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null})),true,
     "D4 must open the canonical public Benediction reader");
   const benRoot="#aoPray435930.open .aoP435930BenedictionReader";
-  await page.waitForSelector(benRoot+"[data-ao-benediction-dual-axis='true'] .aoDevoSequenceTimeline",{timeout:12000});
-  assert.equal(await page.locator(benRoot+" [data-ao-devo-chapter]").count(),7,
-    "Benediction must retain seven distinct original-source ritual stages");
-  assert.equal(await page.locator(benRoot+" .aoDevoStop[aria-current='step']").count(),1,
-    "Benediction must identify exactly one current stage");
+  await page.waitForSelector(benRoot+"[data-ao-benediction-dual-axis='true'] .aoClaudeRiteRail",{timeout:12000});
+  assert.equal(await page.locator(benRoot+" .aoClaudeRiteRail [data-p435930-ben-step]").count(),7,
+    "Benediction must expose seven original-source stages in Claude's Roman rail");
+  assert.equal(await page.locator(benRoot+" .aoClaudeRiteRail [aria-current='step']").count(),1,
+    "Claude's Roman rail must identify exactly one current stage");
+  assert.equal(await page.locator(benRoot+" .aoDevoSequenceTimeline").evaluate(el=>getComputedStyle(el).display),"none",
+    "Original horizontal stage controls must not duplicate the Roman rail");
   assert.equal(await page.locator(benRoot+"[data-ao-benediction-step='0'] [data-ao-devo-card='exposition']").count(),1,
     "Benediction must open at Exposition without silently advancing");
 
