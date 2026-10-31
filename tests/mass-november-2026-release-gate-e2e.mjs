@@ -232,7 +232,7 @@ try{
  check((b.additionalErrors??[]).length===0,
   "NOV02_ADDITIONAL_SOURCE_BUILD_ERRORS:"+JSON.stringify(b.additionalErrors));
  const massUi=await (async()=>{
-   const out={cases:[],error:null,available:false};
+   const out={cases:[],visualCases:[],error:null,available:false};
    try{
      const changed=await page.evaluate(async()=>await globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate(
        "2026-11-02",{forceLoader:false,prefetch:false}));
@@ -288,6 +288,80 @@ try{
              sourceProof:mass?.proper?.data?.allSoulsSourceProof??null};
          });
          out.cases.push({massNumber,requestedMode:mode,...output});
+
+         // Visual proof uses the actual selected Nov 2 source Proper and
+         // the same native R17 reader as production, NOT a synthetic Requiem
+         // fixture. Keep each snapshot independently keyed by m1/m2/m3,
+         // mode, language and viewport; no device certification implied.
+         for(const language of ["en","fr"]){
+           const real=await page.evaluate(async language=>{
+             if(!globalThis.AO_R17_BROWSER_ENTRY.selectTodayOption("readerLanguage",language))
+               throw Error("NOV02_READER_LANGUAGE_NOT_SELECTABLE:"+language);
+             const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+             const {mountNativeReaderPreview}=await import("/src/mass/reader-native-preview.js");
+             const api=await mountNativeReaderPreview({doc:document,prepared});
+             const proper=api.model?.properSource??null;
+             const sourceCards=(api.model?.cards??[]).filter(c=>
+               String(c.sourceSectionId??c.sectionId)==="AO.CARD.006");
+             const sequenceCard=sourceCards.find(c=>
+               /Dies\\s+ir/i.test(JSON.stringify(c.paragraphs??[])))??sourceCards[0];
+             if(!sequenceCard||!api.showSection(sequenceCard.sectionId))
+               throw Error("NOV02_READER_TRACT_SEQUENCE_NOT_VISIBLE");
+             const proof={
+               sourcePath:proper,
+               requestedLanguage:language,
+               actualLanguage:prepared?.readerPreferences?.language??null,
+               requestedMode:prepared?.readerPreferences?.mode??null,
+               cardCount:api.model?.cards?.length??0,
+               sourceCard:sequenceCard.sourceSectionId??sequenceCard.sectionId,
+               displayedCard:api.getCurrentCard()?.sectionId??null,
+               curated:api.root.dataset.r17CuratedReview,
+               overlay:(prepared?.session?.resolvedMass?.overlays??[]).includes("REQUIEM"),
+             };
+             globalThis.__AO_NOV02_NATIVE_PROOF=api;
+             return proof;
+           },language);
+           try{
+             if(real.sourcePath!=="Sancti/11-02m"+massNumber||
+                real.actualLanguage!==language||real.requestedMode!==mode||
+                real.sourceCard!=="AO.CARD.006"||
+                real.displayedCard==null||!real.overlay||
+                real.cardCount<30)
+               throw Error("NOV02_NATIVE_READER_IDENTITY_MISMATCH:"+JSON.stringify(real));
+             for(const width of [320,390]){
+               await page.setViewportSize({width,height:844});
+               await page.waitForSelector("#ao-r17-native-reader-preview .ao-reader-paragraph",
+                 {state:"visible",timeout:20000});
+               const visual=await page.evaluate(()=>{
+                 const root=document.getElementById("ao-r17-native-reader-preview");
+                 const shell=root?.querySelector("[data-ao-reader-shell]");
+                 const paragraph=root?.querySelector(".ao-reader-paragraph");
+                 return {
+                   width:root?.getBoundingClientRect()?.width??0,
+                   overflow:root?Math.max(0,root.scrollWidth-root.clientWidth):Infinity,
+                   mode:shell?.dataset?.mode??null,
+                   paragraphText:paragraph?.innerText?.trim()?.slice(0,140)??"",
+                   paragraphCount:root?.querySelectorAll(".ao-reader-paragraph")?.length??0,
+                 };
+               });
+               if(visual.width!==width||visual.overflow>1||
+                  visual.mode!==mode||visual.paragraphCount<1||
+                  !visual.paragraphText)
+                 throw Error("NOV02_NATIVE_READER_PHONE_VISUAL_INVALID:"+JSON.stringify({real,visual}));
+               const filename="all-souls-m"+massNumber+"-"+mode.toLowerCase()+
+                 "-"+language+"-"+width+".png";
+               await page.screenshot({path:resolve(dir,filename),fullPage:false});
+               out.visualCases.push({...real,viewport:width,filename,...visual});
+             }
+           }finally{
+             await page.evaluate(()=>{
+               try{globalThis.__AO_NOV02_NATIVE_PROOF?.destroy?.()}finally{
+                 delete globalThis.__AO_NOV02_NATIVE_PROOF;
+               }
+             });
+           }
+         }
+
        }
        if(massNumber!==3){
          if(m1)await page.locator('[data-m1-choice="mass"]').click();
@@ -449,6 +523,11 @@ try{
        "NOV02_NATIVE_ALTERNATE_SOURCE_PROOF_MISSING:"+row.massNumber);
  }
  check(massUi.cases.length===6,"NOV02_NATIVE_SIX_FORMULARY_MODE_COMBINATIONS_INCOMPLETE");
+ check(massUi.visualCases?.length===24,
+  "NOV02_NATIVE_ALL_MASSES_BOTH_MODES_LANGUAGES_PHONES_NOT_CAPTURED");
+ check((massUi.visualCases??[]).every(row=>row.sourcePath==="Sancti/11-02m"+
+   row.filename.match(/all-souls-m([123])-/)?.[1]&&row.overlay&&row.overflow<=1),
+   "NOV02_NATIVE_AUTHENTIC_PHONE_VISUAL_PROOF_INCOMPLETE");
  check(massUi.succession?.decision?.contextualStatus==="EXPLICIT_CIRCUMSTANCES" &&
    massUi.succession?.decision?.massNumber===2,
    "NOV02_RITUS_XIV_PREPARED_PROVENANCE_MISSING");
