@@ -37,6 +37,6 @@ assert.ok(art("2026-05-11").some(t=>t.includes("saint philip")),"Phillip group h
 assert.ok(map.get("2026-05-11").linkedCatalogueArt.every(a=>a.status==="PARTIAL_GROUP_ONLY"||a.status==="LEGACY_EXACT_TITLE_RESEARCH_LINK"));
 assert.ok(map.get("2026-09-15").additionalStudy.some(a=>a.title.includes("Seven Sorrows")),"Preserve Seven Sorrows approved module reuse");
 assert.ok(map.get("2026-10-07").additionalStudy.some(a=>a.title.includes("Madonna del Rosario")),"Preserve selected Lotto Rosary artwork");
-assert.ok(art("2026-10-03").some(t=>t.includes("therese")),"Research identity exists, but may be copyright-held");
+assert.ok(map.get("2026-10-03").linkedCatalogueArt.some(a=>a.status==="PAINTING_COPYRIGHT_RIGHTS_HOLD"),"Celine Martin identity is preserved but artwork rights remain held");
 assert.ok(j.days.filter(x=>x.rank==="IV").every(x=>!x.dateSelectedArt&&!x.linkedCatalogueArt.length),"No unapproved seasonal paintings auto-assigned");
 console.log("Sacred Art 2026: 365 exact dates, four-class reporting, anti-confusion and external reuse gates PASS");
