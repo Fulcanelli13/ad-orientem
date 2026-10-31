@@ -56,3 +56,18 @@ A Commons file's claimed CC license does **not** automatically confer rights ove
 Start with the 110 Marian sites lacking a precise subject (original image/statue, chapel, apparition marker), prioritizing principal world Marian destinations and the Indian Ocean/Ireland. Continue with the 127 relic identity records, distinguishing relic from tomb and reliquary. Then source-attest physical features for remaining site rows. This **precedes** mass photo acquisition. Do not mark a shrine image-complete merely because its exterior or a miscellaneous gallery photo exists.
 
 Production Explore integration and photo approvals belong to separate review: no image from this research PR is published directly. Changes are intended to be compatible with the existing map-first Sacred Atlas layout and avoid duplicate editorial approval queues.
+
+
+## 31 October 2026 — Round 1 user decisions recorded
+
+The user reviewed the **20 photographs shown in the first in-chat Sacred Atlas round** and chose **KEEP for all 20**, in the original order. This choice is binding as a *visual editorial preference*; it is **not** a certification of a particular Wikimedia Commons file, author, license or underlying sculptural rights. Never discard or redo these 20 earlier choices as though unreviewed.
+
+Authoritative append-only ledger: `data/geography/research/sacred-atlas-chat-photo-decisions-round1-20261031.v1.json`.
+
+Original review order: Knock Apparition Chapel; Lourdes Massabielle Grotto; Nevers Saint Bernadette's glass shrine; Padua Saint Anthony's tongue; Fátima original Marian statue; Jasna Góra Black Madonna; Guadalupe tilma; Loreto Madonna inside the Holy House; Altötting Black Madonna; Mariazell Magna Mater Austriae; Rocamadour Black Madonna; Drogheda Saint Oliver Plunkett's head; Old Goa Saint Francis Xavier's casket; Catholic Walsingham Marian statue; Chartres Notre-Dame du Pilier; Aparecida original Marian image; Sainte-Anne-de-Beaupré Saint Anne statue; Paray-le-Monial Apparitions Chapel; Banneux Chapel of the Virgin of the Poor; La Salette apparition memorial statuary.
+
+**Current state:** 20 KEEP / 0 replace / 0 reject. Eight decisions use exact research subject IDs already present in the subject inventory; twelve use stable Round-1 review IDs awaiting source inventory reconciliation. All twenty are bound to existing canonical Place IDs. None has a verified exact Commons original. The image-query strings from the in-chat cards are preserved to help identify the displayed candidates; queries are *not* unique source file IDs, so a subsequent search result must not be silently substituted for the reviewed photograph. All rights/identity/asset/publication flags remain false.
+
+Workflow: obtain the exact original Commons file identity for the user's approved displayed candidate, then verify the photograph's subject, physical site, resolution, legal license, photographer and underlying artwork rights, hash, crop and caption. **Preserve the KEEP vote throughout**. If the exact originally displayed photograph cannot be recovered, mark `EXACT_PREVIEW_IMAGE_UNRECOVERED` and seek user adjudication of a *replacement*, rather than treating the earlier approval as permission to choose another photograph. Existing previously approved Place media and all editorial decisions remain untouched.
+
+The branch's contract CI now checks this ledger. This research decision record does not itself publish any photograph. It also does not mean all images of these 20 shrines are complete: the approved preview identifies one principal subject, while other distinct subsite objects remain separate coverage work.
