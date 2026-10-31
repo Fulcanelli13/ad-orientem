@@ -1,16 +1,40 @@
 /**
- * F01 Prayer Card — display-only, source-owned clause boundaries.
- *
- * Every part is a substring of the canonical witness, and concatenating
- * parts reconstructs it byte-for-byte. No punctuation, wording, edition or
- * language is generated. Fail closed to one paragraph on witness changes.
+ * F01 source-exact Holy Cards — 32 canonical texts, one direct-route alias.
+ * All rendered parts reconstruct the original EN/FR/Latin face byte-for-byte.
  */
 export const ESSENTIAL_HOLY_CARD_IDS_V1=Object.freeze([
  "foundations_sign_of_cross",
  "foundations_our_father",
  "foundations_hail_mary",
  "foundations_glory_be",
- "foundations_apostles_creed"
+ "foundations_apostles_creed",
+ "sacrament_act_of_contrition",
+ "foundations_act_of_faith",
+ "foundations_act_of_hope",
+ "foundations_act_of_love",
+ "foundations_guardian_angel",
+ "foundations_grace_before_meals",
+ "foundations_grace_after_meals",
+ "foundations_morning_offering",
+ "foundations_prayer_of_adoration",
+ "mass_confiteor",
+ "marian_memorare",
+ "marian_consecration_immaculate_heart",
+ "adoration_anima_christi",
+ "adoration_spiritual_communion",
+ "benediction_versicles",
+ "adoration_lord_i_am_not_worthy",
+ "sacrament_come_holy_spirit",
+ "devotion_prayer_st_michael",
+ "devotion_memorare_st_joseph",
+ "devotion_consecration_christ_king",
+ "church_prayer_for_pope",
+ "sacred_heart_short_prayer",
+ "sacred_heart_aspiration_trust",
+ "foundations_eternal_rest",
+ "devotion_ad_te_beate_ioseph",
+ "dead_fidelium_deus",
+ "dead_eternal_rest_singular"
 ]);
 
 const STARTS=Object.freeze({
@@ -37,10 +61,53 @@ const STARTS=Object.freeze({
  })
 });
 
+const ABBREVIATION=/(?:St|S|N|Fr|Rev|Mr|Mrs|Dr|etc|℣|℟)\.$/i;
+
+/**
+ * Delimiter-only, no text editing. Prefer canonical newlines and sentence
+ * boundaries; for long prose choose clauses. Never impose V/R on ordinary
+ * prayers; authentic ℣/℟ already present in the source remain unmodified.
+ */
+function naturalPrayerParts(original){
+ const marks=[];
+ for(let i=0;i<original.length-1;i++){
+  const c=original[i],next=original[i+1];
+  if(!/[\s]/.test(next))continue;
+  let strength=0;
+  if(c==="\n")strength=4;
+  else if(/[.!?]/.test(c)){
+   if(c==="."&&ABBREVIATION.test(original.slice(Math.max(0,i-5),i+1)))continue;
+   strength=3;
+  }else if(c===";"||c===":")strength=2;
+  else if(c===",")strength=1;
+  if(!strength)continue;
+  let end=i+1;
+  while(end<original.length&&/\s/.test(original[end]))end++;
+  if(end>=original.length)continue;
+  marks.push({end,strength});
+ }
+ const slices=[];let pos=0;
+ while(pos<original.length){
+  const remain=original.length-pos;
+  if(remain<=200){slices.push(original.slice(pos));break}
+  const inRange=marks.filter(m=>m.end>pos+60&&m.end<=pos+195);
+  const candidates=inRange.filter(m=>m.strength>=2);
+  let chosen=(candidates.length?candidates:inRange).at(-1);
+  if(!chosen)chosen=marks.find(m=>m.end>pos+60&&m.end<=pos+290);
+  if(!chosen){slices.push(original.slice(pos));break}
+  slices.push(original.slice(pos,chosen.end));
+  pos=chosen.end;
+ }
+ if(slices.join("")!==original||slices.some(x=>!x.trim()))
+  return [{text:original,collective:false,uncertified:true}];
+ return slices.map(x=>({text:x,collective:false}));
+}
+
 export function essentialHolyCardParts(id,language,text){
  const original=String(text??"");
+ if(!ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)||!["en","fr","la"].includes(language)||!original)return null;
  const starts=STARTS[id]?.[language];
- if(!starts||!original)return null;
+ if(!starts)return Object.freeze(naturalPrayerParts(original).map(p=>Object.freeze(p)));
  if(!starts.length)return Object.freeze([{text:original,collective:false}]);
  const cuts=[0];let cursor=0;
  for(const anchor of starts){
@@ -52,8 +119,6 @@ export function essentialHolyCardParts(id,language,text){
  cuts.push(original.length);
  const parts=cuts.slice(0,-1).map((start,i)=>({
   text:original.slice(start,cuts[i+1]),
-  // A collective Hail Mary continuation is visually indented, never
-  // assigned an invented ℣/℟ marker. It receives normal independent focus.
   collective:id==="foundations_hail_mary"&&i===cuts.length-2
  }));
  if(parts.some(p=>!p.text.trim())||parts.map(p=>p.text).join("")!==original)
