@@ -58,6 +58,18 @@ try{
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",{timeout:16000});
     assert.equal(await page.locator("#aoPray435930.open").count(),0);
 
+    // Real module-to-module navigation performs a temporary internal Home
+    // reset. Browser Back must return to the actual previously visited module.
+    assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray"))).ok,true);
+    assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn"))).ok,true);
+    assert.equal(await page.evaluate(()=>history.state?.__aoNavigationV1?.surface),"learn");
+    await page.evaluate(()=>history.back());
+    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray"&&
+      globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:16000});
+    assert.equal(await page.locator("#aoPray435930.open").count(),1,
+      "Browser Back returned to phantom Home rather than previous Prayer module");
+    await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
+
     assert.deepEqual(errors,[],"Unexpected browser errors: "+errors.join(" | "));
     console.log("PASS native Back "+width+"px: Formation family -> Settings chapter -> Contents -> exact Formation -> Home; Prayer -> Home");
     await ctx.close();
