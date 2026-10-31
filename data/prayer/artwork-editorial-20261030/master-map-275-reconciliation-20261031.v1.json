@@ -9,14 +9,15 @@
     "noneditorial_rows": 8,
     "affirmatively_approved_slots": 162,
     "zero_affirmative_slots": 105,
-    "approved_placement_edges": 630,
-    "distinct_concrete_work_ids": 224,
+    "approved_placement_edges": 628,
+    "distinct_concrete_work_ids": 223,
     "final_locked_unresolved_id_slots": [
       "COV-pray.rosary",
       "COV-prayer.seven_sorrows_chaplet",
       "COV-pray.confession"
     ],
-    "photo_files_production_cleared_by_this_audit": 0
+    "photo_files_production_cleared_by_this_audit": 0,
+    "countingNote": "After direct artistic rejection, 2 Lybaert placement edges are inactive. Covered slot count unchanged because Seven Sorrows IV and Stations IV retain other approved artwork."
   },
   "noneditorial_rows": [
     {
@@ -120,5 +121,11 @@
       "licenseDoesNotOverrideRejection": true,
       "detailLedger": "data/prayer/artwork-editorial-20261030/stations-seven-pd-photo-source-candidates-20261031.v1.json"
     }
-  ]
+  ],
+  "priorToExplicitLybaertRejection": {
+    "approved_placement_edges": 630,
+    "distinct_concrete_work_ids": 224,
+    "recordedAt": "2026-10-31",
+    "meaning": "Historical count before user rejected entire Lybaert Stations cycle; not the currently eligible mapping."
+  }
 }
