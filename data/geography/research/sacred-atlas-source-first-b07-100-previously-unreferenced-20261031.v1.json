@@ -5,9 +5,9 @@
   "important_caveat": "100 triaged source-first site targets, NOT 100 newly authenticated objects or 100 licensed photographs",
   "totals": {
     "sites_triaged": 100,
-    "authority_documented_exact_subjects": 12,
-    "incomplete_exact_subjects": 88,
-    "commons_named_photo_leads": 6,
+    "authority_documented_exact_subjects": 14,
+    "incomplete_exact_subjects": 86,
+    "commons_named_photo_leads": 10,
     "original_candidate_images_accepted": 0,
     "publication_approvals": 0
   },
@@ -1210,13 +1210,49 @@
       "country": "PS",
       "place_type": "basilica",
       "owner_registry_status_at_intake": "NO_PRIOR_SOURCE_FIRST_REFERENCE",
-      "subject_identification_stage": "NEEDS_CUSTODIAN_OBJECT_RESEARCH",
-      "proposed_original_physical_subject": null,
-      "source_identity_evidence": [],
-      "known_object_distinctions": "No separately evidenced unique physical devotional object: shrine title/site type is not enough to infer a statue, relic, image or chapel-feature.",
-      "photo_candidate_count": 0,
-      "exact_commons_file_leads": [],
-      "next_step": "RESEARCH_CUSTODIAN_PRIMARY_PHYSICAL_OBJECT_THEN_FIND_PHOTO",
+      "subject_identification_stage": "PHYSICAL_SUBJECT_FROM_NAMED_AUTHORITATIVE_DESCRIPTION",
+      "proposed_original_physical_subject": "Exposed bare Rock of the Agony at the foot of the high altar of the Basilica of the Agony, Gethsemane; distinct from the outside Rock of the Apostles.",
+      "source_identity_evidence": [
+        {
+          "type": "FRANCISCAN_CUSTODY",
+          "url": "https://www.custodia.org/en/news/second-peregrination-to-gethsemane-the-silence-of-those-who-are-alone/",
+          "scope": "physical object identification only, not photo rights"
+        },
+        {
+          "type": "FRANCISCAN_CUSTODY",
+          "url": "https://www.custodia.org/en/news/gethsemane-light-transfiguration-darkness-agony/",
+          "scope": "physical object identification only, not photo rights"
+        }
+      ],
+      "known_object_distinctions": "Rock of Agony is traditional devotional site, not an authenticated portable relic; the Rock of the Apostles outside is different.",
+      "photo_candidate_count": 2,
+      "exact_commons_file_leads": [
+        {
+          "file_title": "File:Basilica of Gethsemane - Altar and bedrock.jpg",
+          "commons_file_url": "https://commons.wikimedia.org/wiki/File:Basilica_of_Gethsemane_-_Altar_and_bedrock.jpg",
+          "original_width": 2912,
+          "original_height": 4368,
+          "role": "EXACT_ROCK_AND_ALTAR_RECENT_SCENE",
+          "commons_claimed_reuse_license": "FILE_PAGE_TO_BE_CHECKED",
+          "quality_state": "FULL_RES_VISUAL_NOT_INSPECTED",
+          "source_identity_confirmed": false,
+          "photo_downloaded": false,
+          "photo_approved": false
+        },
+        {
+          "file_title": "File:The Basilica of Gethsemane (i.e., Church of All Nations or Church of the Agony). Int(erior), altar on 'Rock of Agony'. LOC matpc.02539.jpg",
+          "commons_file_url": "https://commons.wikimedia.org/wiki/File:The_Basilica_of_Gethsemane_(i.e.,_Church_of_All_Nations_or_Church_of_the_Agony)._Int(erior),_altar_on_%27Rock_of_Agony%27._LOC_matpc.02539.jpg",
+          "original_width": 4756,
+          "original_height": 6526,
+          "role": "ARCHIVAL_HISTORICAL_ROCK_VIEW_UPSCALED",
+          "commons_claimed_reuse_license": "FILE_PAGE_TO_BE_CHECKED",
+          "quality_state": "FULL_RES_VISUAL_NOT_INSPECTED",
+          "source_identity_confirmed": false,
+          "photo_downloaded": false,
+          "photo_approved": false
+        }
+      ],
+      "next_step": "VERIFY_EXACT_PHOTO_SCENE_VISUAL_QUALITY_AND_FILE_LEVEL_REUSE_TERMS",
       "editorial_decision": "UNREVIEWED_NEW_RESEARCH_ONLY",
       "existing_user_approvals": "UNCHANGED",
       "no_site_hero_substitution": true,
@@ -1254,13 +1290,49 @@
       "country": "PH",
       "place_type": "shrine",
       "owner_registry_status_at_intake": "NO_PRIOR_SOURCE_FIRST_REFERENCE",
-      "subject_identification_stage": "NEEDS_CUSTODIAN_OBJECT_RESEARCH",
-      "proposed_original_physical_subject": null,
-      "source_identity_evidence": [],
-      "known_object_distinctions": "No separately evidenced unique physical devotional object: shrine title/site type is not enough to infer a statue, relic, image or chapel-feature.",
-      "photo_candidate_count": 0,
-      "exact_commons_file_leads": [],
-      "next_step": "RESEARCH_CUSTODIAN_PRIMARY_PHYSICAL_OBJECT_THEN_FIND_PHOTO",
+      "subject_identification_stage": "PHYSICAL_SUBJECT_FROM_NAMED_AUTHORITATIVE_DESCRIPTION",
+      "proposed_original_physical_subject": "Baclaran's own venerated image of Our Mother of Perpetual Help, transferred through Germany, Ireland and Australia before reaching Baclaran in 1906, over the sanctuary's main altar—not identical to the historic fifteenth-century Roman original.",
+      "source_identity_evidence": [
+        {
+          "type": "SHRINE_CUSTODIAN",
+          "url": "https://www.baclaranchurch.org/about/architecture",
+          "scope": "physical object identification only, not photo rights"
+        },
+        {
+          "type": "SHRINE_CUSTODIAN_HISTORY",
+          "url": "https://www.baclaranchurch.org/about/history",
+          "scope": "physical object identification only, not photo rights"
+        }
+      ],
+      "known_object_distinctions": "Exclude generic two-dimensional reproductions of the fifteenth-century icon in Rome; 2019 altar renovation/reinstatement is historical, not today's installation.",
+      "photo_candidate_count": 2,
+      "exact_commons_file_leads": [
+        {
+          "file_title": "File:Nuestra Señora del Perpetuo Socorro de Baclaran, 2024.jpg",
+          "commons_file_url": "https://commons.wikimedia.org/wiki/File:Nuestra_Se%C3%B1ora_del_Perpetuo_Socorro_de_Baclaran,_2024.jpg",
+          "original_width": 1636,
+          "original_height": 1861,
+          "role": "EXACT_BACLARAN_ICON_2024_SEASONAL_REMOVAL",
+          "commons_claimed_reuse_license": "FILE_PAGE_TO_BE_CHECKED",
+          "quality_state": "FULL_RES_VISUAL_NOT_INSPECTED",
+          "source_identity_confirmed": false,
+          "photo_downloaded": false,
+          "photo_approved": false
+        },
+        {
+          "file_title": "File:Our Mother of Perpetual Help closeup 2023-06-14.jpg",
+          "commons_file_url": "https://commons.wikimedia.org/wiki/File:Our_Mother_of_Perpetual_Help_closeup_2023-06-14.jpg",
+          "original_width": 4000,
+          "original_height": 3000,
+          "role": "EXACT_BACLARAN_ICON_CLOSEUP",
+          "commons_claimed_reuse_license": "FILE_PAGE_TO_BE_CHECKED",
+          "quality_state": "FULL_RES_VISUAL_NOT_INSPECTED",
+          "source_identity_confirmed": false,
+          "photo_downloaded": false,
+          "photo_approved": false
+        }
+      ],
+      "next_step": "VERIFY_EXACT_PHOTO_SCENE_VISUAL_QUALITY_AND_FILE_LEVEL_REUSE_TERMS",
       "editorial_decision": "UNREVIEWED_NEW_RESEARCH_ONLY",
       "existing_user_approvals": "UNCHANGED",
       "no_site_hero_substitution": true,
