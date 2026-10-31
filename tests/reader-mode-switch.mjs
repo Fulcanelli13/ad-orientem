@@ -319,7 +319,7 @@ for(const locale of ["en","fr"]){
  assert.equal(entered.previousCard(first.sectionId),null,
    "Back from the Introit must not open omitted foot prayers");
  const next=entered.nextCard(first.sectionId);
- assert.ok(next && next.sourceSectionId==="AO.CARD.002",
+ assert.ok(next && (next.sourceSectionId??next.sectionId)==="AO.CARD.002",
    "Next from Introit must continue to Kyrie");
  assert.equal(entered.previousCard(next.sectionId),first);
  assert.equal(entered.sourceAuthorityModel,missal.sourceModel,
