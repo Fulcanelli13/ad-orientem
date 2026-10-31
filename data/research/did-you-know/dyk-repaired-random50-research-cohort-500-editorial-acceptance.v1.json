@@ -1,0 +1,62 @@
+{
+  "schema": "AO_DYK_REPAIRED_RANDOM50_500_RESEARCH_COHORT_EDITORIAL_ACCEPTANCE_V1",
+  "date": "2026-10-31",
+  "status": "ACCEPTED_FOR_NEXT_RESEARCH_PRODUCTION_NOT_APPROVED_FOR_APP_PUBLICATION",
+  "editorial_acceptance_scope": "Accept the revised, source-bounded, bilingual research-corpus cohort of 500 for continuing fact drafting under user-specified sample rule. No claim that each of the 500 was individually source-audited or publication-certified.",
+  "reproducibility": {
+    "seed": 20261031,
+    "original_raw_population": 500,
+    "original_draw_n": 50,
+    "original_draw_archive_path": "data/research/did-you-know/dyk-500-random50-editorial-source-audit-20261031.v1.json",
+    "repair_overlay_path": "data/research/did-you-know/dyk-r50-sample-remediation-and-weiser-primary-source-checks.v1.json",
+    "resolved_sample_path": "data/research/did-you-know/dyk-r50-corrected-50-record-review-edition.v1.json",
+    "original_draw_had_a_fail": true,
+    "failed_glossary_id": "DYK-GI-G074",
+    "replacement_id": "DYK-R50-W-P096-UKR-BREAD-CANDLE",
+    "draw_positions_preserved": true,
+    "no_claim_original_50_passed_unchanged": true
+  },
+  "reviewed_sample": {
+    "revised_record_slots": 50,
+    "editorial_source_text_or_cited_prior_folio_support_screened": 50,
+    "post_revision_copy_and_historical_scope_red_flags_unresolved": 0,
+    "source_claim_semantic_lexical_vs_612_at_or_above_025": 0,
+    "source_bank_exact_english_french_source_collisions": 0,
+    "corrected_copy_source_locator_actions": 23,
+    "exception_original_scan_images_not_individually_visualized_in_this_pass": 4,
+    "exception_ids": [
+      "DYK-H04-P-017",
+      "DYK-H04-P-061",
+      "DYK-H04-P-111",
+      "DYK-H04-P-119"
+    ],
+    "methodological_limitation": "For four Pitrè claims, original Italian OCR excerpts with exact folio and prior source actions support the statement; no new facsimile image verification is claimed. This is sufficient for editorial research-cohort acceptance only, not source-image certification or publishability."
+  },
+  "effective_500": {
+    "archival_original_rows": 500,
+    "archival_original_unmodified": true,
+    "retired_review_candidates": 3,
+    "source_distinct_replacements": 3,
+    "source_specific_rewrite_outside_sample": 1,
+    "effective_bilingual_review_slots": 500,
+    "not_500_individual_claim_signoffs": true,
+    "source_pointer_only_uninspected_outside_sample_remain": true
+  },
+  "other_gates": {
+    "private_612_lexical_screen_complete": true,
+    "private_612_semantic_human_individual_signoff_complete": false,
+    "original_pitre_image_certification_complete": false,
+    "editorial_release_english_final_for_all_500": false,
+    "editorial_release_french_final_for_all_500": false,
+    "app_source_routes_browser_verified_all": false,
+    "publication_authorized": false,
+    "h7_new_publications": 0
+  },
+  "next_research": {
+    "sequence_start": 501,
+    "sequence_end": 520,
+    "first_next_tranche_path": "data/research/did-you-know/dyk-next-501-520-bilingual-source-checked-drafts.v1.json",
+    "next_tranche_is_unapproved_research": true
+  },
+  "caveat": "Cohort acceptance is a statistical editorial decision on a corrected sample. The user's conditional approval is not interpreted as waiver of source provenance, semantic review, translation signoff, release or H7 runtime gates."
+}
