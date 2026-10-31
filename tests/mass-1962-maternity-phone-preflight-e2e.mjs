@@ -28,7 +28,7 @@ try{
  for(const width of [390,320]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true,locale:"fr-FR",serviceWorkers:"block"});
   const pageErrors=[];page.on("pageerror",e=>pageErrors.push(e.message));
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:80000});
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoTodayH4=0&aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:80000});
   await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate&&globalThis.AO_CELEBRATION_API?.openPreflight),null,{timeout:70000});
   const switched=await page.evaluate(async()=>await globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate("2026-10-11",{forceLoader:false,prefetch:false}));
   assert.equal(switched,true,"Calendar navigation failed for Oct 11");
@@ -39,6 +39,9 @@ try{
    return {massDate:c?.date,selectedDate:s?.selectedDate,main:s?.resolution?.day?.main?.title};});
   // We must verify the genuine host Mass date, not an injected preflight.
   assert.equal(resolved.massDate,"2026-10-11","Host Mass date did not follow selected 1962 Calendar day "+JSON.stringify(resolved));
+  // This scenario intentionally audits the original source-owned M1 preflight
+  // on the supported H3 rollback; production H4 Begin starts R17 directly.
+  // The actual H4 Mass handoff remains independently phone-tested.
   const open=page.locator(".homeScreen [data-home-mass-entry]");
   await open.waitFor({state:"visible",timeout:35000});
   await open.click();
