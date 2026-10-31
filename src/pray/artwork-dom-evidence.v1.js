@@ -7,6 +7,8 @@
  */
 export const PRAYER_ART_DOM_EVIDENCE_VERSION="2026-10-31-v1";
 
+const liveRoots=new WeakSet();
+
 const ART_SELECTORS=[
   "img[data-ao-prayer-art]",
   ".aoV401RosaryHero img",
@@ -39,7 +41,8 @@ export function inspectPrayerArtworkDom(root){
   const loaded=visible.filter(img=>img.complete===true&&Number(img.naturalWidth)>0&&Number(img.naturalHeight)>0);
   const cssLegacy=Boolean(root.style?.getPropertyValue?.("--r24-mystery-art"));
   const status=loaded.length?"VISIBLE_LEGACY_ART_UNCERTIFIED":
-    visible.length?"ARTWORK_NODE_UNLOADED_OR_BROKEN":
+    visible.some(img=>img.complete!==true)?"ARTWORK_LOADING_UNVERIFIED":
+    visible.length?"ARTWORK_BROKEN_UNVERIFIED":
     cssLegacy?"CSS_ART_UNVERIFIED":
     images.length?"ARTWORK_NODE_HIDDEN":"NO_ARTWORK_NODE";
   return Object.freeze({
@@ -49,6 +52,16 @@ export function inspectPrayerArtworkDom(root){
 }
 
 export function stampPrayerArtworkDomEvidence(root){
+  // Catch asynchronous native image loads without altering any element or UI.
+  // Capturing load/error on the stable reader root survives stage rerenders.
+  if(root?.addEventListener&&!liveRoots.has(root)){
+    const resample=event=>{
+      if(event.target?.matches?.(ART_SELECTORS))stampPrayerArtworkDomEvidence(root);
+    };
+    root.addEventListener("load",resample,true);
+    root.addEventListener("error",resample,true);
+    liveRoots.add(root);
+  }
   const evidence=inspectPrayerArtworkDom(root);
   if(root?.dataset){
     root.dataset.aoArtworkDomStatus=evidence.status;
