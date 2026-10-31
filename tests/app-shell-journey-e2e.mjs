@@ -425,7 +425,7 @@ try{
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings",null,{timeout:5000});
   await page.locator('#ao-settings-modular-root [data-settings-route="/settings/accessibility"]').click();
   const displayTarget=settingsOverLiveBefore.textScale==="large"?"standard":"large";
-  await page.locator('#ao-settings-modular-root [data-pref-select="accessibility.textScale"]').selectOption(displayTarget);
+  await page.locator('#ao-settings-modular-root [data-pref-path="accessibility.textScale"][data-pref-value="'+displayTarget+'"]').click();
   await page.waitForFunction(expected=>document.documentElement.dataset.aoTextScaleV1===expected,displayTarget,{timeout:5000});
 
   await page.locator("#ao-settings-modular-root [data-settings-close]").first().click();
