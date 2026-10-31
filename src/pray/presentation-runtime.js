@@ -12,6 +12,7 @@ import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import "./horarium-hours-styles.js";
+import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import "./adoration-folio-styles.js";
@@ -638,6 +639,29 @@ function prayerBlock(id,opts={}){
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
+ if(id==='mass_devotion_leonine'&&!opts.record){
+  const chosen=p[lang()]?lang():p.en?'en':p.la?'la':null;
+  if(!chosen)return callout(esc(L('Leonine prayers are not available.','Les prières léonines ne sont pas disponibles.')),'warn');
+  const hasLatin=!!p.la&&chosen!=='la';
+  const markup=face=>{
+   const stages=leonineSourceSections(p[face]);
+   if(!stages)return '<p class="aoHoursLeonineParagraph">'+esc(p[face]||'')+'</p>';
+   return stages.map(stage=>
+    '<section class="aoHoursLeonineSection" data-ao-hours-leonine-index="'+stage.index+'">'+
+    '<h4>'+esc(isFr()?stage.label.fr:stage.label.en)+'</h4>'+
+    stage.paragraphs.map(p=>'<p class="aoHoursLeonineParagraph'+
+      (p.role==='versicle'?' aoHoursLeonineVerse':p.role==='response'?' aoHoursLeonineResponse':'')+
+      '">'+esc(p.text.trim())+'</p>').join('')+'</section>'
+   ).join('');
+  };
+  return '<article class="aoP435930Prayer aoP435930HoursLeonine" data-ao-hours-family="leonine">'+
+   languageNotice+'<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div></div>'+
+   (hasLatin?'<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Switch prayer language','Changer la langue de la prière'))+'">'+
+    '<span data-face-v class="aoP435930SemanticFace" data-ao-pray-semantic="1">'+markup(chosen)+'</span>'+
+    '<span data-face-la class="aoP435930SemanticFace" data-ao-pray-semantic="1" hidden>'+markup('la')+'</span></button>'
+    :'<div class="aoP435930Text aoP435930SemanticFace" data-ao-pray-semantic="1">'+markup(chosen)+'</div>')+
+   originCapsule+sourceLine(p)+'</article>';
+ }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
 }
 function selectedDateKey(){
@@ -2930,15 +2954,16 @@ function installLibraryParagraphFocus(m,id){
  // versicles, responses and stanza breaks. Reuse its semantic output instead
  // of reparsing the prayer and erasing V./R. ownership.
  window.AO_PRAY_COHERENCE_V435930?.decorate?.();
+ const leonine=!!card.querySelector(".aoP435930HoursLeonine");
  const lines=card.querySelectorAll(
-  ".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
+  leonine?".aoHoursLeonineParagraph":".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
  );
  lines.forEach(line=>line.classList.add("aoLibraryLine"));
  const p=P(id);
  const title=p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière');
  const reader=installSequentialDevotionalReader({
   mount:m,kind:"library",chapters:[{id,title}],
-  activeIndex:0,paragraphSelector:".aoLibraryLine",
+  activeIndex:0,paragraphSelector:leonine?".aoHoursLeonineParagraph":".aoLibraryLine",
   timelineLabel:L('Prayer timeline','Parcours de la prière')
  });
  // A one-card prayer has no meaningful chapter navigation or positional
