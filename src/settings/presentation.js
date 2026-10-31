@@ -224,7 +224,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
     const unspecified=[["unspecified","Not specified","Non précisé"]];
     return shell(pr.name,
       section(L("CHURCH","ÉGLISE"),`<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(L("Church name","Nom de l’église"))}</b></span><input class="aoSetProfileName" data-profile-name="${esc(id)}" value="${esc(pr.name)}"></label>`+
-        '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(L("Use as my usual church","Utiliser comme mon église habituelle"))+'</b></span><span class="aoSetSegments"><button type="button" data-profile-use-default="'+esc(id)+'" aria-pressed="'+(p.mass.defaultProfileId===id)+'" class="'+(p.mass.defaultProfileId===id?'active':'')+'">'+esc(L("Use","Choisir"))+'</button></span></div>'+
+        '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(L("Use as my usual church","Utiliser comme mon église habituelle"))+'</b></span><span class="aoSetSegments"><button type="button" data-profile-use-default="'+esc(id)+'" aria-pressed="'+(p.mass.defaultProfileId===id)+'" class="'+(p.mass.defaultProfileId===id?'active':'')+'">'+esc(L("Use","Choisir"))+'</button></span></div>')+
       section(L("LOCAL CUSTOMS","USAGES LOCAUX"),
         customSelect(L("Holy Communion","Sainte Communion"),"communionPractice",[...unspecified,["usually_offered","Usually distributed","Habituellement distribuée"],["usually_not_offered","Usually not distributed","Habituellement non distribuée"]])+
         customSelect(L("Incense at Sung Mass","Encens à la Messe chantée"),"incensePractice",[...unspecified,["usually_used","Usually used","Habituellement utilisé"],["usually_not_used","Usually not used","Habituellement non utilisé"]])+
