@@ -5,9 +5,9 @@
   "important_caveat": "100 triaged source-first site targets, NOT 100 newly authenticated objects or 100 licensed photographs",
   "totals": {
     "sites_triaged": 100,
-    "authority_documented_exact_subjects": 17,
-    "incomplete_exact_subjects": 83,
-    "commons_named_photo_leads": 11,
+    "authority_documented_exact_subjects": 19,
+    "incomplete_exact_subjects": 81,
+    "commons_named_photo_leads": 13,
     "original_candidate_images_accepted": 0,
     "publication_approvals": 0
   },
@@ -27,13 +27,49 @@
       "country": "DE",
       "place_type": "chapel",
       "owner_registry_status_at_intake": "NO_PRIOR_SOURCE_FIRST_REFERENCE",
-      "subject_identification_stage": "NEEDS_CUSTODIAN_OBJECT_RESEARCH",
-      "proposed_original_physical_subject": null,
-      "source_identity_evidence": [],
-      "known_object_distinctions": "No separately evidenced unique physical devotional object: shrine title/site type is not enough to infer a statue, relic, image or chapel-feature.",
-      "photo_candidate_count": 0,
-      "exact_commons_file_leads": [],
-      "next_step": "RESEARCH_CUSTODIAN_PRIMARY_PHYSICAL_OBJECT_THEN_FIND_PHOTO",
+      "subject_identification_stage": "PHYSICAL_SUBJECT_FROM_NAMED_AUTHORITATIVE_DESCRIPTION",
+      "proposed_original_physical_subject": "The historic Candle Chapel (Kerzenkapelle) of Kevelaer, built 1643–1645 as first pilgrimage church, with devotional candles/votive interior. The original image of Mary is in SEPARATE Gnadenkapelle.",
+      "source_identity_evidence": [
+        {
+          "type": "SITE_CUSTODIAN_OR_MUNICIPAL_ARCHIVE",
+          "url": "https://www.kevelaer.de/leben-in-kevelaer/kevelaer-und-ortschaften/kevelaer/",
+          "scope": "Subject identity—not unrestricted image reuse"
+        },
+        {
+          "type": "SITE_CUSTODIAN_OR_MUNICIPAL_ARCHIVE",
+          "url": "https://www.kevelaer.de/leben-in-kevelaer/stadtarchiv/fotothek/kirche-und-wallfahrt/kerzenkapelle-st-michael-kapellenplatz/",
+          "scope": "Subject identity—not unrestricted image reuse"
+        }
+      ],
+      "known_object_distinctions": "This is a SITE/CANDLE INTERIOR photograph target only. The original Marian Gnadenbild must not be assigned to this Candle Chapel, where it is not housed.",
+      "photo_candidate_count": 2,
+      "exact_commons_file_leads": [
+        {
+          "file_title": "File:Kevelaer, Kerzenkapelle -- 2014 -- 00711.jpg",
+          "commons_file_url": "https://commons.wikimedia.org/wiki/File:Kevelaer,_Kerzenkapelle_--_2014_--_00711.jpg",
+          "original_width": 2885,
+          "original_height": 3854,
+          "role": "SITE_ARCHITECTURE_CANDIDATE_QUALITY_IMAGE",
+          "commons_claimed_reuse_license": "FILE_PAGE_LICENSE_REVIEW_PENDING",
+          "quality_state": "FULL_RES_VISUAL_NOT_INSPECTED",
+          "source_identity_confirmed": false,
+          "photo_downloaded": false,
+          "photo_approved": false
+        },
+        {
+          "file_title": "File:Kerzenkapelle Kevelaer.jpg",
+          "commons_file_url": "https://commons.wikimedia.org/wiki/File:Kerzenkapelle_Kevelaer.jpg",
+          "original_width": 4596,
+          "original_height": 3380,
+          "role": "CANDLE_CHAPEL_INTERIOR_CANDIDATE",
+          "commons_claimed_reuse_license": "FILE_PAGE_LICENSE_REVIEW_PENDING",
+          "quality_state": "FULL_RES_VISUAL_NOT_INSPECTED",
+          "source_identity_confirmed": false,
+          "photo_downloaded": false,
+          "photo_approved": false
+        }
+      ],
+      "next_step": "VISUAL_QUALITY_RIGHTS_AND_USER_REVIEW",
       "editorial_decision": "UNREVIEWED_NEW_RESEARCH_ONLY",
       "existing_user_approvals": "UNCHANGED",
       "no_site_hero_substitution": true,
@@ -93,13 +129,24 @@
       "country": "IN",
       "place_type": "basilica",
       "owner_registry_status_at_intake": "NO_PRIOR_SOURCE_FIRST_REFERENCE",
-      "subject_identification_stage": "NEEDS_CUSTODIAN_OBJECT_RESEARCH",
-      "proposed_original_physical_subject": null,
-      "source_identity_evidence": [],
-      "known_object_distinctions": "No separately evidenced unique physical devotional object: shrine title/site type is not enough to infer a statue, relic, image or chapel-feature.",
+      "subject_identification_stage": "PHYSICAL_SUBJECT_FROM_NAMED_AUTHORITATIVE_DESCRIPTION",
+      "proposed_original_physical_subject": "Original wooden statue of Our Lady of the Mount brought by Jesuits from Portugal to Bandra in the sixteenth century; enshrined at current basilica high altar.",
+      "source_identity_evidence": [
+        {
+          "type": "SITE_CUSTODIAN_OR_MUNICIPAL_ARCHIVE",
+          "url": "https://www.mountmarybasilicabandra.in/index.html",
+          "scope": "Subject identity—not unrestricted image reuse"
+        },
+        {
+          "type": "SITE_CUSTODIAN_OR_MUNICIPAL_ARCHIVE",
+          "url": "https://www.mountmarybasilicabandra.in/history.html",
+          "scope": "Subject identity—not unrestricted image reuse"
+        }
+      ],
+      "known_object_distinctions": "Exact historical venerated wooden statue, not generic Mount Mary altar/facade image.",
       "photo_candidate_count": 0,
       "exact_commons_file_leads": [],
-      "next_step": "RESEARCH_CUSTODIAN_PRIMARY_PHYSICAL_OBJECT_THEN_FIND_PHOTO",
+      "next_step": "FIND_EXACT_OBJECT_PHOTOGRAPH_THEN_RIGHTS_AND_VISUAL_QA",
       "editorial_decision": "UNREVIEWED_NEW_RESEARCH_ONLY",
       "existing_user_approvals": "UNCHANGED",
       "no_site_hero_substitution": true,
