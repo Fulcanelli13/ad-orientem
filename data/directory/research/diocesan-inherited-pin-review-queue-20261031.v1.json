@@ -3,7 +3,7 @@
   "as_of": "2026-10-31",
   "provenance": {
     "branch": "feature/tlm-visual-fallback-20261030",
-    "audit_blob_sha": "17a2dad67e1d24bf193093466b8e278a85e2cd8e"
+    "audit_blob_sha": "3ab5182a2f711d40db0b33ad655ebb3d62f9d088"
   },
   "policy": "Source-labelled diocesan is not independently verified operator ownership. Coordinates remain provisional. This is a screening queue, not source evidence, site verification, nor photograph approval. Exact building identity and acceptable licensed imagery must be independently reviewed.",
   "count": 434,
@@ -28,9 +28,9 @@
     "JP": 1
   },
   "by_photo_gate": {
-    "INHERITED_POINT_UNASSESSED": 418,
-    "OPERATOR_REQUIRES_REVIEW": 6,
-    "OPERATOR_EXCLUDED": 10
+    "INHERITED_POINT_UNASSESSED": 419,
+    "OPERATOR_REQUIRES_REVIEW": 4,
+    "OPERATOR_EXCLUDED": 11
   },
   "rows": [
     {
@@ -5137,8 +5137,8 @@
       "source_description": "Glen Ullin, ND (locality only; street not established — source unverified)",
       "lat": 46.942464,
       "lng": -101.883523,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "operator_scope": "BISMARCK_DIOCESE_ST_CLEMENT_HAYMARSH_ORATORY",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -5631,8 +5631,8 @@
       "source_description": "",
       "lat": 53.851128,
       "lng": 22.342471,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "operator_scope": "ELK_DISCALCED_CARMELITE_SISTERS_MONASTERY_CHAPEL",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
