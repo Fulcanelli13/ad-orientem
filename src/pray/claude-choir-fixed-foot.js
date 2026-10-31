@@ -21,6 +21,10 @@ export function claudeChoirSourceUnits(source){
   if(!body.trim()){section++;return Object.freeze({raw,kind:"gap",section,response:"",invocation:""});}
   if(/^\s*(?:℣|℟|V|R)\.\s/.test(body))
    return Object.freeze({raw,kind:"source-role",section,response:"",invocation:body});
+  // The Kyrie/Christe opening is a genuine dialogue in its own right.
+  // "Christ, hear us" must NOT become an invocation "Christ" and a footer.
+  if(section===0&&/^(?:Lord|Christ|Seigneur|Jésus-Christ|Kyrie|Christe)(?:[,.\s]|$)/i.test(body.trim()))
+   return Object.freeze({raw,kind:"full",section,response:"",invocation:body});
   const em=body.indexOf(" — ");
   const m=em>=0?null:RESPONSE.exec(body);
   const split=em>0?em:(m&&m.index>0?m.index:-1);
