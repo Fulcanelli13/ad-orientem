@@ -54,7 +54,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
     '<h3>'+esc(title||id)+'</h3></div></div>'+
    '<div class="aoClaudeHolyFace aoClaudeHolyBack"><div class="aoClaudeHolyOrn">✠</div>'+
     '<h4 lang="la">'+esc(latinIncipit)+'</h4>'+
-    '<div class="aoClaudeHolyBackScroll aoP435930Text" role="region" aria-label="'+esc(title||id)+'">'+latinBlock+paragraphs+'</div>'+
+    '<div class="aoClaudeHolyBackScroll aoP435930Text" data-ao-pray-semantic="1" role="region" aria-label="'+esc(title||id)+'">'+latinBlock+paragraphs+'</div>'+
     '<div class="aoClaudeHolyOrn aoClaudeHolyClosing">❦</div></div>'+
    '</div></div><div class="aoClaudeHolyHint">'+esc(flipped?'Tap to turn back · swipe for the next card':'Tap to turn the card over')+'</div></div>'+
    '</article>';
