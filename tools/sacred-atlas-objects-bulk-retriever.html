@@ -72,13 +72,13 @@ footer{color:#a8b4b8;font-size:12px;line-height:1.6;padding:24px 0 35px}
 </div>
 <section class="panel">
 <h2>Retrieve the entire collection</h2>
-<p class="descr">Enter an email to identify requests to Wikimedia, as in the original TLM Church Photo Finder. The single action validates the 68 pinned sources, searches for the remaining 179 subjects and then builds a ZIP of eligible photo candidates with full source metadata. If Commons returns HTTP 429, work stops, preserves progress and can be resumed. Nothing is automatically published.</p>
+<p class="descr"><strong>Already downloaded a 247-target JSON report?</strong> Import it below, then choose <strong>Download found photos (ZIP)</strong>. This recovers the existing 63 Commons candidates without repeating the 179 earlier searches. For unresolved sacred objects, <strong>Retrieve all</strong> runs a second, narrower Commons discovery pass and exports another research ZIP. A Wikimedia HTTP 429 stops safely. Nothing is automatically published.</p>
 <div class="actions">
 <div class="control"><label for="contact">Contact email for Wikimedia requests</label><input type="email" id="contact" autocomplete="email" placeholder="you@example.com" required></div>
 <div class="control"><label for="size">Photo download size</label><select id="size"><option value="1600">1600 px — recommended</option><option value="1200">1200 px — smaller ZIP</option><option value="2000">2000 px — larger images</option></select></div>
 <button id="start" class="primary">Retrieve all 247 targets + ZIP</button>
 <button id="pause" class="secondary" disabled>Stop safely</button>
-<button id="zip" class="secondary">Export currently retrieved ZIP</button>
+<button id="zip" class="secondary">Download found photos (ZIP)</button>
 <button id="report">Export full research JSON</button>
 <label for="restore" class="restoreBtn">Import your previous 247-target report<input id="restore" type="file" accept=".json,application/json" hidden></label>
 </div>
@@ -295,7 +295,15 @@ async function exportZip(email){
  report.downloaded=downloaded;
  report.attempted=total;
  report.unavailable=all.length-downloaded;
- report.all_candidates_accounted_for=rows.length-1===total+report.errors.filter(e=>e?.error?.startsWith("INVALID_DOWNLOAD_URL")).length;
+ const represented=new Set(rows.slice(1).map(row=>row[0]));
+ for(const x of all)if(!represented.has(x.id)){
+   const c=chosen(x);
+   const reason="NOT_ATTEMPTED_AFTER_STOP_OR_ZIP_BUDGET";
+   rejected.push([x.id,x.place,x.title,reason,"Request not sent; earlier work remains preserved"]);
+   rows.push([x.id,x.place,x.title,x.site,x.keep?"KEEP_UNCHANGED":"NO",c.title,c.page,c.sha1,c.author,c.lic,c.licurl,c.width+"x"+c.height,"","","FALSE","FALSE","FALSE",reason]);
+ }
+ report.all_candidates_accounted_for=rows.length-1===all.length;
+ report.unattempted=all.length-total-report.errors.filter(e=>e?.error?.startsWith("INVALID_DOWNLOAD_URL")).length;
  report.note="Every eligible Commons candidate is recorded even if its image fails to download. Unresolved sources are not copyright rejections.";
  zip.file("source_attribution_and_sha256.csv",csv(rows));
  zip.file("unresolved_sources.csv",csv(rejected));
