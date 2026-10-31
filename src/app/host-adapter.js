@@ -82,7 +82,10 @@ export function createAppHostAdapter(win = globalThis) {
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
-      try { win?.AO_PRAY_APP_V1?.close?.(); } catch {}
+      try {
+        const pending=win?.AO_APP_SHELL_V1?.getPendingTarget?.();
+        win?.AO_PRAY_APP_V1?.close?.({preserveForBack:Boolean(pending&&pending!=="home"&&pending!=="pray")});
+      } catch {}
       try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
@@ -125,7 +128,7 @@ export function createAppHostAdapter(win = globalThis) {
       return fallbackHome();
     },
 
-    openDomain(domain,{resume=false}={}) {
+    openDomain(domain,{resume=false,restorePrayer=false}={}) {
       if (!new Set(["mass", "pray", "learn", "find", "apostolate"]).has(domain)) return false;
       if (domain === "mass") {
         // The presence of a saved checkpoint never authorizes direct entry.
@@ -175,7 +178,7 @@ export function createAppHostAdapter(win = globalThis) {
         if (typeof modular?.open !== "function") return false;
         // PRAY has a modular final presentation owner. Never fall back to the
         // obsolete PrayerBook surface if that owner cannot open.
-        return Promise.resolve(modular.open()).then(openedSuccessfully);
+        return Promise.resolve(modular.open({restoreReturn:restorePrayer===true})).then(openedSuccessfully);
       }
       if (domain === "find" || domain === "apostolate") {
         // A first-use import installs the same modular domain owner as before.
