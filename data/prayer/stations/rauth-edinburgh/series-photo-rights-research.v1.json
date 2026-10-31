@@ -20,7 +20,7 @@
     "photoSource": "https://edinburghjesuit.org.uk/stationsofcross",
     "UKIPOGuidance": "https://www.gov.uk/government/publications/copyright-notice-digital-images-photographs-and-the-internet/copyright-notice-digital-images-photographs-and-the-internet",
     "UKParliament2025": "https://questions-statements.parliament.uk/written-questions/detail/2025-09-11/HL10446/",
-    "UKIPOInterpretation": "Faithful reproduction of public-domain two-dimensional paintings is unlikely to be an original new copyright under UK guidance, but photo-specific creativity and other jurisdictions matter; the gallery asserts ©2019; no automatic clearance.",
+    "UKIPOInterpretation": "Faithful reproduction of public-domain two-dimensional paintings is unlikely to be an original new copyright under UK guidance, but photo-specific creativity and other jurisdictions matter; the gallery asserts ©2019; no automatic clearance. A pre-2019 archival photograph also is not automatically in the public domain; legal status depends on image-specific originality and territorial rights.",
     "licenseLevel": "RESEARCH_ONLY_UNVERIFIED_PD_ART_CLAIM",
     "freeLicensingAlternative": "https://commons.wikimedia.org/wiki/Category:Sacred_Heart,_Edinburgh",
     "freeLicensingAlternativeStatus": "Auldcathy published 18 church photographs under CC BY-SA 4.0; these are building/interior photos, not established as fourteen complete clean close-ups of Rauth works; CC BY-SA is not PD/CC0.",
@@ -31,14 +31,28 @@
       "Native image quality and frameless cropping",
       "Editorial selection and current runtime mapping",
       "Preserve all earlier approved Stations assignments unless user explicitly chooses replacement"
-    ]
+    ],
+    "additionalArchive": {
+      "sourcePage": "https://www.geocities.ws/sharchive/stations.html",
+      "title": "Sacred Heart Edinburgh Stations restoration archive 1999–2002",
+      "historicalClaim": "Original parish restoration documentation includes individually linked photographs of all fourteen restored paintings; several captured in poor winter light",
+      "photoLicensing": "NO_PERMISSION_OR_PD_CC0_MARK_ESTABLISHED",
+      "originalImageBytesVerified": false,
+      "sourcePageLinkVerification": "All images explicitly linked in 2002 archive page; exact native content/resolution still unverified",
+      "ownerOfPhotographs": "Unidentified; not assumed to be Peter Tuffy",
+      "cannotPublishAutomatically": true
+    }
   },
   "counts": {
     "paintingsIdentified": 14,
     "individualOfficialPhotoReferences": 14,
     "photosPublicDomainOrCC0Confirmed": 0,
     "photosUnderSeparateExplicitFreeLicenseConfirmed": 0,
-    "photosActivated": 0
+    "photosActivated": 0,
+    "historical2002AlternativePhotoLinks": 14,
+    "independentPhotoCollections": 2,
+    "photosPDArtDetermined": 0,
+    "nativeQualityChecked": 0
   },
   "stations": [
     {
@@ -53,7 +67,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st1re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 2,
@@ -67,7 +86,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st2re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 3,
@@ -81,7 +105,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st3re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 4,
@@ -95,7 +124,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st4re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 5,
@@ -109,7 +143,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st5re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 6,
@@ -123,7 +162,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st6re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 7,
@@ -137,7 +181,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st7re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 8,
@@ -151,7 +200,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st8re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 9,
@@ -165,7 +219,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st9-jun01.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 10,
@@ -179,7 +238,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st10re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 11,
@@ -193,7 +257,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st11re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 12,
@@ -207,7 +276,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st12re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 13,
@@ -221,7 +295,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st13re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     },
     {
       "station": 14,
@@ -235,7 +314,12 @@
       "exactPhotoCreativeOriginalityAssessment": "PENDING",
       "userEditorialStatus": "REVIEW_CANDIDATE_PREFERRED_SERIES",
       "publicationStatus": "BLOCKED_PD_ART_NOT_YET_DEMONSTRATED",
-      "appAssetPath": null
+      "appAssetPath": null,
+      "archival2002SourceImageURL": "https://www.geocities.ws/sharchive/st14re.jpg",
+      "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
+      "archival2002FullImageAvailable": "UNVERIFIED",
+      "archival2002Resolution": "PENDING_NATIVE_READ",
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
     }
   ],
   "policy": {
@@ -244,6 +328,9 @@
     "noPaidLicences": true,
     "noContactWithRightsHolders": true,
     "previewOnly": true,
-    "appPublish": false
+    "appPublish": false,
+    "strictPDCC0PhotographsRequired": true,
+    "noAutomaticPDArtClearanceFromUKIPOGuidance": true,
+    "doNotPublishArchivedChurchPhotographsWithoutValidatedRights": true
   }
 }
