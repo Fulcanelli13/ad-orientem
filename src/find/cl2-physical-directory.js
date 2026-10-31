@@ -43,6 +43,18 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-014B017E0591":Object.freeze({
+  sourceId:"DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",name:"Sacred Heart of Jesus, Caterham",country:"GB",addressNeedle:"Caterham",placeId:null,
+  lat:51.287381,lng:-0.08646362,sourceRef:"historicengland:1294941",sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1294941",
+  correctedAddress:"Church of the Sacred Heart of Jesus, Essendene Road, Caterham, CR3 5PA, United Kingdom",precision:"site",reviewScope:"CHURCH_BUILDING_NOT_37_WHYTELEAFE_PRESBYTERY",
+  evidence:Object.freeze(["https://caterhamcatholic.co.uk/index.html","https://www.thewrennreport.co.uk/building/E60000278-16b67ed8-6a04-402c-b5fa-602b34d42018/church-of-the-sacred-heart-of-jesus"]),
+ }),
+ "RG-1A015C23D5BA":Object.freeze({
+  sourceId:"AO-AMER-R28-US-25-03",name:"St Boniface Catholic Church",country:"US",addressNeedle:"Sioux City",placeId:null,
+  lat:42.50055,lng:-96.41809,sourceRef:"osm:node:354389668",sourceUrl:"https://www.openstreetmap.org/node/354389668",
+  correctedAddress:"St. Boniface Church, 703 West 5th Street, Sioux City, IA 51103, USA",precision:"site",reviewScope:"ST_BONIFACE_WORSHIP_SITE_NOT_CATHEDRAL_OF_EPIPHANY_BUILDING",
+  evidence:Object.freeze(["https://www.openstreetmap.org/node/354389668"]),
+ }),
  "RG-261733295B4C":Object.freeze({
   sourceId:"AO-B39-LOC-IT-B7E3416FBF04",
   name:"Cappella della Madonna di Pompignano",country:"IT",addressNeedle:"Acquarica del Capo LE",placeId:null,
