@@ -1,3 +1,4 @@
+import { GLOBAL_PAINTING_PREFERENCE_CSS } from "./global-art-preference.js";
 export const SETTINGS_DONOR_VERSION="43.59.6";
 export const SETTINGS_KEYS=Object.freeze({"preferences":"ao2:preferences:v1","profiles":"ao2:local-profiles:v1","massSession":"ao2:mass-session:v2","preparation":"ao2:preparation-session:v3","thanksgiving":"ao2:thanksgiving-session:v3","prayerSession":"ao2:prayer-session:v1","notifications":"ao2:notifications:v1","progress":"ao2:progress:v1","migration":"ao2:migration-state:v1","bookmarks":"ao2:bookmarks:v1"});
 export const DEFAULT_PREFERENCES=Object.freeze({"schemaVersion":1,"general":{"uiLanguage":"en","hapticsEnabled":false,"keepAwakeDuringGuidedUse":true,"offerResume":true},"accessibility":{"textScale":"system","motion":"system","contrast":"system"},"appearance":{"mode":"dark","sacredArt":"full"},"reading":{"vernacularFollowsUiLanguage":true,"vernacular":"en","latinDisplay":"with"},"mass":{"defaultExperience":"simple","defaultForm":"sung","responseEmphasis":"quiet","resumeEnabled":true,"offerThanksgivingAfterMass":true,"defaultProfileId":null,"preparationDepth":"standard","thanksgivingDepth":"standard","todayChoices":null},"prayer":{"recitationMode":"individual","rosary":{"fatimaPrayer":true,"scriptureCues":true,"commentary":true,"sacredArt":"inherit","verseBeforeAve":true},"stations":{"mode":"guided","stabatMater":false},"angelus":{"seasonalForm":"auto","traditionalConclusion":false},"novenas":{"layout":"stages"},"litanies":{"responsePlacement":"bar"},"eucharistic":{"silentMinutes":"10"},"rites":{"textLanguage":"both"},"essentials":{"artRotation":"daily"}}});
@@ -97,6 +98,10 @@ export function createSettingsDonorState(win=globalThis){
 
   function syncEffects(){
     const p=preferences,html=win?.document?.documentElement;
+    // Keep one global artwork policy present even when Settings is closed.
+    try{const doc=win?.document;if(doc?.head&&doc?.createElement&&!doc.getElementById?.("ao-global-painting-preference")){
+      const style=doc.createElement("style");style.id="ao-global-painting-preference";style.textContent=GLOBAL_PAINTING_PREFERENCE_CSS;doc.head.appendChild(style);
+    }}catch{}
     if(html?.dataset){
       html.dataset.aoTextScaleV1=p.accessibility.textScale;
       html.dataset.aoMotionV1=p.accessibility.motion;
