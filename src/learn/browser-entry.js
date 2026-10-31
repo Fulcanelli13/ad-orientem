@@ -483,12 +483,15 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(!state.open)return null;
     const latin=state.child===LATIN_COURSE_ROUTE_ID
       ?win?.AO_LATIN_COURSE_V1?.status?.():null;
+    const latinReturn=state.child===LATIN_COURSE_ROUTE_ID
+      ?win?.AO_LATIN_COURSE_V1?.captureSettingsReturn?.()??null:null;
     return Object.freeze({
       family:state.family,lastFamily:state.lastFamily,
       query:state.discoveryQuery,reference:state.lastDiscoveryReference,
       launcher:state.lastLauncher,
       child:state.child===LATIN_COURSE_ROUTE_ID?LATIN_COURSE_ROUTE_ID:null,
-      lessonNumber:Number.isInteger(latin?.lesson)&&latin.lesson>0?latin.lesson:null
+      lessonNumber:Number.isInteger(latin?.lesson)&&latin.lesson>0?latin.lesson:null,
+      latinReturn
     });
   }
   async function restoreSettingsReturn(receipt){
@@ -502,11 +505,19 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.lastLauncher=typeof receipt.launcher==="string"?receipt.launcher:null;
     state.error="";
     showHub();
-    if(receipt.child===LATIN_COURSE_ROUTE_ID&&Number.isInteger(receipt.lessonNumber)){
-      // The course's canonical openLesson() selects the exact lesson. An
-      // uncommitted exercise response/phase is NOT restored or fabricated.
-      const opened=await openModule(LATIN_COURSE_ROUTE_ID,{lessonNumber:receipt.lessonNumber});
-      if(!opened){state.error=L(win,"The lesson could not be restored. Your Formation section is still available.","La leçon n’a pas pu être rétablie. Votre rubrique Formation reste accessible.");showHub();}
+    if(receipt.child===LATIN_COURSE_ROUTE_ID){
+      const opened=await openModule(LATIN_COURSE_ROUTE_ID,
+        Number.isInteger(receipt.lessonNumber)?{lessonNumber:receipt.lessonNumber}:{});
+      let restored=opened;
+      if(opened&&receipt.latinReturn){
+        restored=await win?.AO_LATIN_COURSE_V1?.restoreSettingsReturn?.(receipt.latinReturn);
+      }
+      if(!restored){
+        closeChild(win,LATIN_COURSE_ROUTE_ID);
+        state.child=null;
+        state.error=L(win,"The lesson could not be restored. Your Formation section is still available.","La leçon n’a pas pu être rétablie. Votre rubrique Formation reste accessible.");
+        showHub();
+      }
     }
     return true;
   }
