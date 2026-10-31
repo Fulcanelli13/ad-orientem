@@ -2354,7 +2354,8 @@ function restoreRosaryAppBackHandoff(receipt){
  if(api.getMethod?.()!==receipt.method&&api.setMethod?.(receipt.method)!==true)return false;
  if(api.state?.()?.set!==receipt.set&&api.setMysterySet?.(receipt.set,{step:0})!==true)return false;
  const steps=api.steps?.()||[];
- if(receipt.step>=steps.length||api.setStep(receipt.step)===false)return false;
+ if(receipt.step>=steps.length)return false;
+ if(api.state?.()?.step!==receipt.step&&api.setStep(receipt.step)===false)return false;
  ROSARY_FIFTEEN.active=receipt.fifteen===true;
  S.rosary={...S.rosary,...normalizeRosaryPrefs(receipt.prefs)};
  save();
