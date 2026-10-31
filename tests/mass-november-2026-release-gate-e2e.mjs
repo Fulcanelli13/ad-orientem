@@ -232,7 +232,7 @@ try{
  check((b.additionalErrors??[]).length===0,
   "NOV02_ADDITIONAL_SOURCE_BUILD_ERRORS:"+JSON.stringify(b.additionalErrors));
  const massUi=await (async()=>{
-   const out={cases:[],visualCases:[],error:null,available:false};
+   const out={cases:[],visualCases:[],orationCases:[],error:null,available:false};
    try{
      const changed=await page.evaluate(async()=>await globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate(
        "2026-11-02",{forceLoader:false,prefetch:false}));
@@ -357,6 +357,39 @@ try{
                  "-"+language+"-"+width+".png";
                await page.screenshot({path:resolve(dir,filename),fullPage:false});
                out.visualCases.push({...real,viewport:width,filename,...visual});
+             }
+             // The earlier sequence screenshots are shared across all three
+             // authentic source formularies. These additional captures prove
+             // the DISTINCT appointed Collect, Secret and Postcommunion are
+             // actually rendered at their own original source cards.
+             await page.setViewportSize({width:390,height:844});
+             for(const oration of [
+               {name:"collect",source:"AO.CARD.004",slot:"COLLECT_SET"},
+               {name:"secret",source:"AO.CARD.011",slot:"SECRET_SET"},
+               {name:"postcommunion",source:"AO.CARD.027",slot:"POSTCOMMUNION_SET"},
+             ]){
+               const selection=await page.evaluate(({source,slot})=>{
+                 const api=globalThis.__AO_NOV02_NATIVE_PROOF;
+                 const candidates=(api?.model?.cards??[]).filter(card=>
+                   String(card.sourceSectionId??card.sectionId)===source);
+                 const chosen=candidates.find(card=>(card.paragraphs??[])
+                   .some(p=>String(p.id??"").startsWith(slot+".")));
+                 if(!chosen)throw Error("NOV02_APPOINTED_ORATION_SOURCE_CARD_MISSING:"+source+":"+slot);
+                 if(!api.showSection(chosen.sectionId))
+                   throw Error("NOV02_APPOINTED_ORATION_NOT_RENDERED:"+chosen.sectionId);
+                 const body=api.root.querySelector(".ao-prayer-body");
+                 const text=body?.innerText?.trim()??"";
+                 return {source,slot,card:chosen.sectionId,
+                   paragraphCount:api.root.querySelectorAll(".ao-reader-paragraph").length,
+                   excerpt:text.slice(0,220),
+                   overflow:Math.max(0,api.root.scrollWidth-api.root.clientWidth)};
+               },oration);
+               if(selection.paragraphCount<1||selection.excerpt.length<15||selection.overflow>1)
+                 throw Error("NOV02_ORATION_NATIVE_DISPLAY_INCOMPLETE:"+JSON.stringify(selection));
+               const filename="all-souls-m"+massNumber+"-"+oration.name+"-"+
+                 mode.toLowerCase()+"-"+language+"-390.png";
+               await page.screenshot({path:resolve(dir,filename),fullPage:false});
+               out.orationCases.push({massNumber,mode,language,filename,...selection});
              }
            }finally{
              await page.evaluate(()=>{
@@ -530,6 +563,19 @@ try{
  check(massUi.cases.length===6,"NOV02_NATIVE_SIX_FORMULARY_MODE_COMBINATIONS_INCOMPLETE");
  check(massUi.visualCases?.length===24,
   "NOV02_NATIVE_ALL_MASSES_BOTH_MODES_LANGUAGES_PHONES_NOT_CAPTURED");
+ check(massUi.orationCases?.length===36,
+  "NOV02_APPOINTED_ORATIONS_NATIVE_PHONE_CAPTURES_INCOMPLETE");
+ for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+   for(const language of ["en","fr"]){
+     for(const mode of ["LIVE","MISSAL"]){
+       const cases=(massUi.orationCases??[]).filter(c=>
+         c.slot===slot&&c.language===language&&c.mode===mode);
+       check(cases.length===3&&new Set(cases.map(c=>c.massNumber)).size===3,
+         "NOV02_DISTINCT_ORATIONS_NATIVE_CASES_MISSING:"+slot+":"+language+":"+mode);
+     }
+   }
+ }
+
  check((massUi.visualCases??[]).every(row=>row.sourcePath==="Sancti/11-02m"+
    row.filename.match(/all-souls-m([123])-/)?.[1]&&row.overlay&&row.overflow<=1),
    "NOV02_NATIVE_AUTHENTIC_PHONE_VISUAL_PROOF_INCOMPLETE");
