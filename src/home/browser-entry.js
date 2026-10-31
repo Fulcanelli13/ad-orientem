@@ -559,6 +559,21 @@ export function createHomeOwner(win=globalThis){
     const dyk=target?.closest?.("[data-home-dyk-open]");
     if(dyk){
       event.preventDefault?.();event.stopImmediatePropagation?.();
+      // A fully released Discovery opens its exact in-app source sheet.
+      // Unapproved R34 facts are never assigned a public fact ID.
+      const publishedId=dyk.dataset?.homeDykFactId;
+      if(publishedId){
+        const date=dyk.dataset?.homeDykFactDate;
+        const language=dyk.closest(".homeScreen")?.dataset?.homeLanguage==="fr"?"fr":"en";
+        void import("./dyk-published-feed.js")
+          .then(m=>m.openDykPublishedSource(win,{id:publishedId,date,language,trigger:dyk}))
+          .then(opened=>{if(!opened)showRouteError("home.did-you-know",dyk);})
+          .catch(error=>{
+            try{win?.console?.error?.("Published Discovery source unavailable",error)}catch{}
+            showRouteError("home.did-you-know",dyk);
+          });
+        return;
+      }
       const entryId=dyk.dataset?.homeDykEntry;
       if(!/^G\d{3}$/.test(String(entryId??""))||dyk.disabled){
         showRouteError("home.did-you-know",dyk);return;
