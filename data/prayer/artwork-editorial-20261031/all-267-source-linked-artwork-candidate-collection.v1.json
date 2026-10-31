@@ -164,7 +164,11 @@
     "commonsWave09": "data/prayer/artwork-editorial-20261031/commons-exact-pageid-wave09-20261031.v1.json",
     "commonsWave10": "data/prayer/artwork-editorial-20261031/commons-exact-pageid-wave10-20261031.v1.json",
     "museumCommonsLegacyWave11": "data/prayer/artwork-editorial-20261031/museum-commons-legacy-source-wave11-20261031.v1.json",
-    "originalOwnerProvenanceWave12": "data/prayer/artwork-editorial-20261031/original-object-provenance-wave12-20261031.v1.json"
+    "originalOwnerProvenanceWave12": "data/prayer/artwork-editorial-20261031/original-object-provenance-wave12-20261031.v1.json",
+    "historicalUserDecisionProvenance": "data/prayer/artwork-editorial-20261031/historical-prayer-artwork-editorial-authority-20261031.v1.json",
+    "oct28VerbatimOriginal117": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+    "oct30Batches01To05OriginalUserReview": "data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json",
+    "oct30Batches06To11ApprovedAsPresented": "data/prayer/artwork-editorial-20261030/approved-unified-b06-b11-from-user-message.v1.json"
   },
   "qaState": {
     "status": "SOURCE_WAVE12_OWNER_PROVENANCE_DOCUMENTED_PHOTO_LICENSE_AND_CROP_PENDING",
@@ -219,6 +223,10 @@
     "wave11Ledger": "data/prayer/artwork-editorial-20261031/museum-commons-legacy-source-wave11-20261031.v1.json",
     "sourceLinksVerifiedByOriginalOwnerAndArchiveWave12": 5,
     "distinctOriginalsVerifiedInWave12": 4,
-    "wave12Ledger": "data/prayer/artwork-editorial-20261031/original-object-provenance-wave12-20261031.v1.json"
+    "wave12Ledger": "data/prayer/artwork-editorial-20261031/original-object-provenance-wave12-20261031.v1.json",
+    "userSourceDecisionLedgersNowImportedVerbatim": true,
+    "sourceDecisionPriorityRule": "ORIGINAL_USER_KEEP_REJECT_ELSEWHERE_BETTER_PHOTO_AND_VERBATIM_NOTES_ALWAYS_OVERRIDE_DERIVED_PROVISIONAL_PLACEMENTS",
+    "provisionalAssignmentsAreApprovals": false,
+    "reviewHTMLV1SupersededBecauseMissingHistoricalComments": true
   }
 }

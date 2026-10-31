@@ -39,6 +39,12 @@ on:
       - 'data/prayer/artwork-editorial-20261031/remaining-17-source-identities-20261031.v1.json'
       - 'data/prayer/artwork-editorial-20261031/original-object-provenance-wave12-20261031.v1.json'
       - 'data/prayer/artwork-editorial-20261031/remaining-13-source-identities-20261031.v1.json'
+      - 'data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json'
+      - 'data/calendar/prayer-module-original-31-review-catalog-20261028.v1.json'
+      - 'data/calendar/prayer-art-keeps-photo-source-gates-20261028.v1.json'
+      - 'data/prayer/artwork-editorial-20261030/**'
+      - 'data/prayer/artwork-editorial-20261031/historical-prayer-artwork-editorial-authority-20261031.v1.json'
+      - 'tests/prayer-artwork-historical-editorial-authority-contract.mjs'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
   workflow_dispatch:
 permissions:
@@ -54,4 +60,4 @@ jobs:
         with:
           node-version: '22'
       - name: Source-linked art mapping validation
-        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs tests/prayer-artwork-complete-candidate-collection-contract.mjs tests/prayer-artwork-provisional-267-assignment-contract.mjs tests/prayer-artwork-source-quality-contract.mjs
+        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs tests/prayer-artwork-complete-candidate-collection-contract.mjs tests/prayer-artwork-provisional-267-assignment-contract.mjs tests/prayer-artwork-source-quality-contract.mjs tests/prayer-artwork-historical-editorial-authority-contract.mjs

@@ -1,0 +1,146 @@
+{
+  "schema": "AO_PRAYER_SACRED_ART_23_KEEP_PHOTO_SOURCE_PROVENANCE_V1",
+  "asOf": "2026-10-28",
+  "source_context": "User's reconciled 30-pool Prayer art review and frozen Oct 28 decisions",
+  "historical_artwork_approvals_protected": 101,
+  "protected_placement_keeps": 30,
+  "protected_placement_rejections": 17,
+  "unique_kept_artworks": 23,
+  "github_tracked_artworks": 8,
+  "not_fully_checked_external_image_leads": 14,
+  "no_attached_image": 1,
+  "production_ready_from_this_audit": 0,
+  "notes": [
+    "Do not confuse a Git blob SHA with an independently recomputed SHA-256 of image file bytes.",
+    "The 8 Git-tracked records include four staged full-image files, three frame-boundary candidates and one preview-only file.",
+    "Prior source manifest details: Angelus unpainted oak perimeter; phone crop lilies risk and wide crop dove/lilies risk. Confession wide crop risks the dog. Adoration wide crop risks the Host and image source includes outer support.",
+    "The complete 23-row local photo QA board additionally keeps all per-artwork external reference URLs. It has not yet been imported as a GitHub-native record.",
+    "Separate source corpus B48 reports 358 provisional full-work photo sources among 383 active paintings as of Oct 24; that is not a certification of any of these 23 pictures.",
+    "All previously rejected placements must remain rejected and existing module hero selections are protected."
+  ],
+  "protected_hero_exceptions": [
+    {
+      "module": "Seven Sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "title": "Virgin of the Seven Sorrows",
+      "status": "FINAL_ARTWORK_APPROVAL_PRESERVED",
+      "photo_crosswalk": "PENDING"
+    }
+  ],
+  "tracked": [
+    {
+      "artwork_id": "morning--primary",
+      "label": "Jules Breton — The Song of the Lark",
+      "tier": "PREVIEW_ONLY",
+      "ref": "research/module-hero-rescue-20261026",
+      "path": "assets/staged/module-hero-preview-jpegs/morning-whole-preview.jpg",
+      "git_blob_sha": "668f7d10dc50b6a46c3362fcc372ad70d4d0ddad",
+      "bytes": 74349,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-rescue-20261026/assets/staged/module-hero-preview-jpegs/morning-whole-preview.jpg"
+    },
+    {
+      "artwork_id": "angelus--primary",
+      "label": "Philippe de Champaigne — The Annunciation",
+      "tier": "FRAME_BOUNDARY_CANDIDATE",
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "assets/staged/module-hero-institutional-frame-review-20261028/angelus-frame-boundary-candidate.jpg",
+      "git_blob_sha": "ac819353655d6c9ce31ad7222f2f8ee13583e722",
+      "bytes": 494647,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-institutional-frame-review-20261028/angelus-frame-boundary-candidate.jpg"
+    },
+    {
+      "artwork_id": "regina--primary",
+      "label": "Peter Paul Rubens — Resurrection of Christ",
+      "tier": "STAGED_WHOLE_IMAGE",
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "assets/staged/module-hero-masters/regina.jpg",
+      "git_blob_sha": "25bd905c5825381f17fe11e90ee8e5c5218ac16d",
+      "bytes": 4593377,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/regina.jpg"
+    },
+    {
+      "artwork_id": "confession--primary",
+      "label": "Bartolomé Esteban Murillo — The Return of the Prodigal Son",
+      "tier": "FRAME_BOUNDARY_CANDIDATE",
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "assets/staged/module-hero-institutional-frame-review-20261028/confession-frame-boundary-candidate.jpg",
+      "git_blob_sha": "90205bf9ebe14504c24c282d6e3c75f11f006e3d",
+      "bytes": 377005,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-institutional-frame-review-20261028/confession-frame-boundary-candidate.jpg"
+    },
+    {
+      "artwork_id": "adoration--primary",
+      "label": "Jean-Auguste-Dominique Ingres — The Virgin Adoring the Host",
+      "tier": "FRAME_BOUNDARY_CANDIDATE",
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "assets/staged/module-hero-institutional-frame-review-20261028/adoration-frame-boundary-candidate.jpg",
+      "git_blob_sha": "fdcb3e8e2d92d680a8361aed54cf71fbb8661890",
+      "bytes": 404400,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-institutional-frame-review-20261028/adoration-frame-boundary-candidate.jpg"
+    },
+    {
+      "artwork_id": "visit--primary",
+      "label": "Gerrit van Honthorst — The Adoration of the Shepherds",
+      "tier": "STAGED_WHOLE_IMAGE",
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "assets/staged/module-hero-masters/visit.jpg",
+      "git_blob_sha": "d21c497238aaa7c25fdd39e47cee07a0cd672702",
+      "bytes": 9588163,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/visit.jpg"
+    },
+    {
+      "artwork_id": "heart-jesus--primary",
+      "label": "Juan Patricio Morlete Ruiz — The Heart of Jesus",
+      "tier": "STAGED_WHOLE_IMAGE",
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+      "git_blob_sha": "53e7d0a5d1e01f7dc25855504ffd31f123551492",
+      "bytes": 2012474,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/heart-jesus.jpg"
+    },
+    {
+      "artwork_id": "scripture--primary",
+      "label": "Caravaggio — Saint Jerome Writing",
+      "tier": "STAGED_WHOLE_IMAGE",
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "assets/staged/module-hero-masters/scripture.jpg",
+      "git_blob_sha": "febd6551a6aadac1ceba0ba923c48076c5f9b988",
+      "bytes": 7423474,
+      "rights": "PENDING",
+      "frame_free_native_pixel": "PENDING",
+      "quality": "PENDING",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/scripture.jpg"
+    }
+  ],
+  "quality_gates": {
+    "licence_for_commercial_use": "PENDING",
+    "frameless_native_pixel_inspection": "PENDING",
+    "exact_object_identity": "PENDING",
+    "mobile_crop_and_colour": "PENDING",
+    "full_bytes_sha256": "PENDING",
+    "permanent_backup": "NOT_CERTIFIED"
+  },
+  "cost_eur": 0,
+  "app_production_changed": false
+}
