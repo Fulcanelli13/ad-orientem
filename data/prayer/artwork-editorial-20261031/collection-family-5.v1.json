@@ -11,7 +11,8 @@
     "deduplicatedReviewOptions": 129,
     "excludedDoNotSuggest": 20,
     "sourceLinksRecoveredByExactID": 20,
-    "sourceLinkSuggestionsUnverified": 7
+    "sourceLinkSuggestionsUnverified": 7,
+    "pradoPhotoSourceQuarantines": 1
   },
   "slots": [
     {
@@ -1683,14 +1684,21 @@
           ],
           "artist": "Peter Paul Rubens",
           "title": "Adoration of the Magi",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+          "sourcePage": null,
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
         },
         {
           "sourceIDs": [
