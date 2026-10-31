@@ -84,7 +84,7 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
   const date=state?.selectedDate??root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
   if(!button||!date||typeof win?.fetch!=="function")return false;
   const fr=button.closest(".homeScreen")?.dataset?.homeLanguage==="fr";
-  void loadEntries(win).then(entries=>{
+  const fallbackReady=loadEntries(win).then(entries=>{
     const entry=homeDidYouKnowSelect(entries,date);
     if(!button.isConnected||button.closest(".homeScreen")?.dataset?.homeLanguage!==(fr?"fr":"en"))return;
     if(!entry)throw Error("GLOSSARY_ENTRY_NOT_VERIFIED");
@@ -103,9 +103,9 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
   // A released R34 discovery can replace the published Glossary fallback
   // only when every source, EN/FR, semantic, date and destination gate passes.
   // No R34 candidate currently passes; ordinary H7 remains unchanged.
-  void loadDykPrioritySelection(win).then(data=>{
+  void fallbackReady.then(()=>loadDykPrioritySelection(win)).then(data=>{
     const row=dykPublishedPick(data,date);
-    if(!row||!button.isConnected||button.disabled)return;
+    if(!row||!button.isConnected)return;
     const currentDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
       root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
     if(currentDate!==date||button.closest(".homeScreen")?.dataset?.homeLanguage!==(fr?"fr":"en"))return;
@@ -120,6 +120,7 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
     delete button.dataset.homeDykEntry;
     button.dataset.homeDykFactId=row.id;
     button.dataset.homeDykFactDate=date;
+    button.disabled=false;button.removeAttribute("aria-disabled");
   }).catch(()=>{}); // Unapproved, malformed or unavailable master: retain Glossary.
   return true;
 }
