@@ -15,7 +15,8 @@
     "sourceLinksRecoveredByExactID": 42,
     "sourceLinkSuggestionsUnverified": 0,
     "museumDocumentedAnonymousPlacements": 14,
-    "unknownPainterOriginalIdentityOpen": 3
+    "unknownPainterOriginalIdentityOpen": 3,
+    "pradoPhotoSourceQuarantines": 4
   },
   "slots": [
     {
@@ -969,7 +970,7 @@
           ],
           "title": "Adoration of the Magi",
           "artist": "Peter Paul Rubens",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+          "sourcePage": null,
           "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "historicallyApprovedInOriginalLedger": true,
@@ -978,7 +979,13 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "BLOCKED_PRADO_PHOTO",
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          }
         },
         {
           "sourceIDs": [
@@ -1900,7 +1907,7 @@
           ],
           "title": "Christ Carrying the Cross",
           "artist": "Titian",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+          "sourcePage": null,
           "fit": "CONTEXTUAL_REUSE_CANDIDATE",
           "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
           "historicallyApprovedInOriginalLedger": false,
@@ -1909,7 +1916,13 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "BLOCKED_PRADO_PHOTO",
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          }
         },
         {
           "sourceIDs": [
@@ -4764,7 +4777,7 @@
           ],
           "title": "Christ Carrying the Cross",
           "artist": "Titian",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+          "sourcePage": null,
           "fit": "HUMAN_EXPLICIT",
           "sourceEditorialStatus": "USER_APPROVED",
           "historicallyApprovedInOriginalLedger": true,
@@ -4773,7 +4786,13 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "BLOCKED_PRADO_PHOTO",
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          }
         },
         {
           "sourceIDs": [
@@ -5992,7 +6011,7 @@
           ],
           "title": "Christ Carrying the Cross",
           "artist": "Titian",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+          "sourcePage": null,
           "fit": "CONTEXTUAL_REUSE_CANDIDATE",
           "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
           "historicallyApprovedInOriginalLedger": false,
@@ -6001,7 +6020,13 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "BLOCKED_PRADO_PHOTO",
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          }
         },
         {
           "sourceIDs": [
