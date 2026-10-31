@@ -61,22 +61,24 @@
     "III": {
       "total": 165,
       "datedPrimaryAssociations": 0,
-      "anyCatalogueIdentityCandidate": 33,
-      "noCatalogueIdentityCandidate": 132,
-      "selectedOrCandidate": 33,
-      "uncoveredByThisMapping": 132,
+      "anyCatalogueIdentityCandidate": 36,
+      "noCatalogueIdentityCandidate": 129,
+      "selectedOrCandidate": 36,
+      "uncoveredByThisMapping": 129,
       "specialSeasonalReuseRequired": 34,
       "marianSaturdayReuseRequired": 0,
       "sanctoralPrincipalCount": 131,
-      "sanctoralWithoutIdentified383Candidate": 98,
-      "uniqueArtIdLinks": 74,
-      "dateArtworkLinks": 75,
+      "sanctoralWithoutIdentified383Candidate": 95,
+      "uniqueArtIdLinks": 78,
+      "dateArtworkLinks": 79,
       "identifiableExternalArtSourceOnly": 0,
       "withoutExistingSourceOrPrimary": 130,
-      "additionalUnlinked856ExactSubjectDateCandidates": 12,
-      "identifiedDateSubjectOrCatalogueCandidates": 45,
-      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 120,
-      "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 0
+      "additionalUnlinked856ExactSubjectDateCandidates": 15,
+      "identifiedDateSubjectOrCatalogueCandidates": 52,
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 113,
+      "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 0,
+      "additionalLegacyNamedFileExactSubjectDates": 1,
+      "remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters": 79
     },
     "IV": {
       "total": 71,
@@ -573,1056 +575,1032 @@
         "title": "St. Paul, the First Hermit",
         "principalId": "sancti:01-15:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 2,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-16",
         "title": "St. Marcellus I",
         "principalId": "sancti:01-16:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-20",
         "title": "Sts. Fabian & Sebastian",
         "principalId": "sancti:01-20:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-22",
         "title": "Sts. Vincent & Anastasius",
         "principalId": "sancti:01-22:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-23",
         "title": "St. Raymond of Peñafort",
         "principalId": "sancti:01-23:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-24",
         "title": "St. Timothy",
         "principalId": "sancti:01-24:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-26",
         "title": "St. Polycarp",
         "principalId": "sancti:01-26:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-28",
         "title": "St. Peter Nolasco",
         "principalId": "sancti:01-28:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-30",
         "title": "St. Martina",
         "principalId": "sancti:01-30:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-01-31",
         "title": "St. John Bosco",
         "principalId": "sancti:01-31:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-04",
         "title": "St. Andrew Corsini",
         "principalId": "sancti:02-04:3:w",
-        "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "scope": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+        "additionalAcceptedSourceLeads": 2,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-05",
         "title": "St. Agatha",
         "principalId": "sancti:02-05:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-06",
         "title": "St. Titus",
         "principalId": "sancti:02-06:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-07",
         "title": "St. Romuald",
         "principalId": "sancti:02-07:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-10",
         "title": "St. Scholastica",
         "principalId": "sancti:02-10:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-11",
         "title": "Our Lady of Lourdes",
         "principalId": "sancti:02-11:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-12",
         "title": "Seven Holy Servite Founders",
         "principalId": "sancti:02-12:3:w",
-        "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "scope": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 1
       },
       {
         "date": "2026-02-19",
         "title": "Feria V after Ash Wednesday",
         "principalId": "tempora:Quadp3-4:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-20",
         "title": "Feria VI after Ash Wednesday",
         "principalId": "tempora:Quadp3-5:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-21",
         "title": "Saturday after Ash Wednesday",
         "principalId": "tempora:Quadp3-6:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-23",
         "title": "Feria II after the I Sunday of Lent",
         "principalId": "tempora:Quad1-1:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-02-26",
         "title": "Feria V after the I Sunday of Lent",
         "principalId": "tempora:Quad1-4:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-02",
         "title": "Feria II after the II Sunday of Lent",
         "principalId": "tempora:Quad2-1:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-03",
         "title": "Feria III after the II Sunday of Lent",
         "principalId": "tempora:Quad2-2:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-04",
         "title": "Feria IV after the II Sunday of Lent",
         "principalId": "tempora:Quad2-3:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-05",
         "title": "Feria V after the II Sunday of Lent",
         "principalId": "tempora:Quad2-4:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-06",
         "title": "Feria VI after the II Sunday of Lent",
         "principalId": "tempora:Quad2-5:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-07",
         "title": "Saturday after the II Sunday of Lent",
         "principalId": "tempora:Quad2-6:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-09",
         "title": "Feria II after the III Sunday of Lent",
         "principalId": "tempora:Quad3-1:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-10",
         "title": "Feria III after the III Sunday of Lent",
         "principalId": "tempora:Quad3-2:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-11",
         "title": "Feria IV after the III Sunday of Lent",
         "principalId": "tempora:Quad3-3:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-12",
         "title": "Feria V after the III Sunday of Lent",
         "principalId": "tempora:Quad3-4:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-13",
         "title": "Feria VI after the III Sunday of Lent",
         "principalId": "tempora:Quad3-5:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-14",
         "title": "Saturday after the III Sunday of Lent",
         "principalId": "tempora:Quad3-6:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-16",
         "title": "Feria II after the IV Sunday of Lent",
         "principalId": "tempora:Quad4-1:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-17",
         "title": "Feria III after the IV Sunday of Lent",
         "principalId": "tempora:Quad4-2:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-18",
         "title": "Feria IV after the IV Sunday of Lent",
         "principalId": "tempora:Quad4-3:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-20",
         "title": "Feria VI after the IV Sunday of Lent",
         "principalId": "tempora:Quad4-5:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-21",
         "title": "Saturday after the IV Sunday of Lent",
         "principalId": "tempora:Quad4-6:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-23",
         "title": "Feria II of Passion Week",
         "principalId": "tempora:Quad5-1:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-24",
         "title": "Feria III of Passion Week",
         "principalId": "tempora:Quad5-2:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-26",
         "title": "Feria V of Passion Week",
         "principalId": "tempora:Quad5-4:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-27",
         "title": "Feria VI of Passion Week",
         "principalId": "tempora:Quad5-5Feria:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-03-28",
         "title": "Saturday of Passion Week",
         "principalId": "tempora:Quad5-6:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-04-13",
         "title": "St. Hermenegild",
         "principalId": "sancti:04-13:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-04-14",
         "title": "St. Justin",
         "principalId": "sancti:04-14:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-04-22",
         "title": "Sts. Soter & Caius",
         "principalId": "sancti:04-22:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-04-24",
         "title": "St. Fidelis of Sigmaringen",
         "principalId": "sancti:04-24:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-04-28",
         "title": "St. Paul of the Cross",
         "principalId": "sancti:04-28:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-04-29",
         "title": "St. Peter of Verona",
         "principalId": "sancti:04-29:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-04",
         "title": "St. Monica",
         "principalId": "sancti:05-04:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-05",
         "title": "St. Pius V",
         "principalId": "sancti:05-05:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-07",
         "title": "St. Stanislaus",
         "principalId": "sancti:05-07:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-12",
         "title": "Sts. Nereus, Achilleus, Domitilla, & Pancras",
         "principalId": "sancti:05-12:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-15",
         "title": "St. John Baptist de la Salle",
         "principalId": "sancti:05-15:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-16",
         "title": "St. Ubaldus",
         "principalId": "sancti:05-16:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-18",
         "title": "St. Venantius",
         "principalId": "sancti:05-18:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-19",
         "title": "St. Peter Celestine",
         "principalId": "sancti:05-19:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-05-20",
         "title": "St. Bernardine of Siena",
         "principalId": "sancti:05-20:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-01",
         "title": "St. Angela Merici",
         "principalId": "sancti:06-01:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-05",
         "title": "St. Boniface",
         "principalId": "sancti:06-05:3:r",
-        "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "scope": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-06",
         "title": "St. Norbert",
         "principalId": "sancti:06-06:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 2,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-10",
         "title": "St. Margaret of Scotland",
         "principalId": "sancti:06-10:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-11",
         "title": "St. Barnabas",
         "principalId": "sancti:06-11:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-17",
         "title": "St. Gregory Barbarigo",
         "principalId": "sancti:06-17r:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-19",
         "title": "St. Julia of Falconieri",
         "principalId": "sancti:06-19:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-22",
         "title": "St. Paulinus of Nola",
         "principalId": "sancti:06-22:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-25",
         "title": "St. William",
         "principalId": "sancti:06-25:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-26",
         "title": "Sts. John & Paul",
         "principalId": "sancti:06-26:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-06-30",
         "title": "In Commemoratione Sancti Pauli Apostoli",
         "principalId": "sancti:06-30:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 2,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-03",
         "title": "St. Irenaeus",
         "principalId": "sancti:07-03r:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-07",
         "title": "Sts. Cyril & Methodius",
         "principalId": "sancti:07-07:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 1
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-08",
         "title": "St. Elizabeth of Portugal",
         "principalId": "sancti:07-08:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-10",
         "title": "Seven Holy Brothers and Sts. Rufina & Secunda",
         "principalId": "sancti:07-10:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-15",
         "title": "St. Henry the Emperor",
         "principalId": "sancti:07-15:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-18",
         "title": "Camillus de Lellis",
         "principalId": "sancti:07-18:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-20",
         "title": "St. Jerome Emiliani",
         "principalId": "sancti:07-20:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-23",
         "title": "St. Apollinaris",
         "principalId": "sancti:07-23:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-07-28",
         "title": "Sts. Nazarius & Celsus, St. Victor I & St. Innocent I",
         "principalId": "sancti:07-28:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
-      },
-      {
-        "date": "2026-07-31",
-        "title": "St. Ignatius Loyola",
-        "principalId": "sancti:07-31:3:w",
-        "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-05",
         "title": "Dedication of the Basilica of St. Mary Major",
         "principalId": "sancti:08-05:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-07",
         "title": "St. Cajetan",
         "principalId": "sancti:08-07:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-12",
         "title": "St. Clare",
         "principalId": "sancti:08-12:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-17",
         "title": "St. Hyacinth",
         "principalId": "sancti:08-17:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-19",
         "title": "St. John Eudes",
         "principalId": "sancti:08-19:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-21",
         "title": "St. Jane Frances de Chantal",
         "principalId": "sancti:08-21:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-27",
         "title": "St. Joseph Calasance",
         "principalId": "sancti:08-27:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-08-31",
         "title": "St. Raymond Nonnatus",
         "principalId": "sancti:08-31:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-02",
         "title": "St. Stephen of Hungary",
         "principalId": "sancti:09-02:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-03",
         "title": "St. Pius X",
         "principalId": "sancti:09-03:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 1
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-05",
         "title": "St. Lawrence Justinian",
         "principalId": "sancti:09-05:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-10",
         "title": "St. Nicholas of Tolentino",
         "principalId": "sancti:09-10:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-12",
         "title": "Most Holy Name of Mary",
         "principalId": "sancti:09-12:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-16",
         "title": "Sts. Cornelius & Cyprian",
         "principalId": "sancti:09-16:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-19",
         "title": "St. Januarius & Companions",
         "principalId": "sancti:09-19:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-22",
         "title": "St. Thomas of Villanova",
         "principalId": "sancti:09-22:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-09-28",
         "title": "St. Wenceslaus",
         "principalId": "sancti:09-28:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
-      },
-      {
-        "date": "2026-10-02",
-        "title": "Holy Guardian Angels",
-        "principalId": "sancti:10-02:3:w",
-        "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-06",
         "title": "St. Bruno",
         "principalId": "sancti:10-06:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 3,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-08",
         "title": "St. Bridget of Sweden",
         "principalId": "sancti:10-08:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-09",
         "title": "St. John Leonardi",
         "principalId": "sancti:10-09:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-10",
         "title": "St. Francis Borgia",
         "principalId": "sancti:10-10:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-13",
         "title": "St. Edward",
         "principalId": "sancti:10-13:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-14",
         "title": "St. Callistus I",
         "principalId": "sancti:10-14:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-16",
         "title": "St. Hedwig",
         "principalId": "sancti:10-16:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-19",
         "title": "St. Peter of Alcantara",
         "principalId": "sancti:10-19:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-20",
         "title": "St. John Cantius",
         "principalId": "sancti:10-20:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-10-23",
         "title": "St. Anthony Mary Claret",
         "principalId": "sancti:10-23r:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
-      },
-      {
-        "date": "2026-10-24",
-        "title": "St. Raphael the Archangel",
-        "principalId": "sancti:10-24:3:w",
-        "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-04",
         "title": "St. Charles Borromeo",
         "principalId": "sancti:11-04:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-10",
         "title": "St. Andrew Avellino",
         "principalId": "sancti:11-10:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-12",
         "title": "St. Martin I",
         "principalId": "sancti:11-12:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-13",
         "title": "St. Didacus",
         "principalId": "sancti:11-13:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-14",
         "title": "St. Josaphat",
         "principalId": "sancti:11-14:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-16",
         "title": "St. Gertrude the Great",
         "principalId": "sancti:11-16:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-17",
         "title": "St. Gregory the Wonderworker",
         "principalId": "sancti:11-17:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-18",
         "title": "Dedication of the Basilicas of Sts. Peter & Paul",
         "principalId": "sancti:11-18r:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-19",
         "title": "St. Elizabeth of Hungary",
         "principalId": "sancti:11-19:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-20",
         "title": "St. Felix of Valois",
         "principalId": "sancti:11-20:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-21",
         "title": "Presentation of the Blessed Virgin Mary",
         "principalId": "sancti:11-21:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-23",
         "title": "St. Clement I",
         "principalId": "sancti:11-23:3:r",
-        "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "scope": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+        "additionalAcceptedSourceLeads": 1,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-11-26",
         "title": "St. Sylvester",
         "principalId": "sancti:11-26:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-01",
         "title": "Feria III after I Sunday of Advent",
         "principalId": "tempora:Adv1-2:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-02",
         "title": "St. Vivian",
         "principalId": "sancti:12-02:3:r",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-04",
         "title": "St. Peter Chrysologus",
         "principalId": "sancti:12-04:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-05",
         "title": "Sabbato after I Sunday of Advent",
         "principalId": "tempora:Adv1-6:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-09",
         "title": "Feria IV after II Sunday of Advent",
         "principalId": "tempora:Adv2-3:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-10",
         "title": "Feria V after II Sunday of Advent",
         "principalId": "tempora:Adv2-4:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-11",
         "title": "St. Damasus I",
         "principalId": "sancti:12-11:3:w",
         "scope": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-12",
         "title": "Sabbato after II Sunday of Advent",
         "principalId": "tempora:Adv2-6:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-14",
         "title": "Feria II after III Sunday of Advent",
         "principalId": "tempora:Adv3-1:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       },
       {
         "date": "2026-12-15",
         "title": "Feria III after III Sunday of Advent",
         "principalId": "tempora:Adv3-2:3:v",
         "scope": "TEMPORAL_SEASONAL_REUSE_NEEDED",
-        "museumLeads": 0,
-        "reuseOrOtherLeads": 0
+        "additionalAcceptedSourceLeads": 0,
+        "additionalNamedFileLeads": 0
       }
     ],
     "IV": [
@@ -2210,7 +2188,9 @@
     "At least one unmatched group day already has a member-specific physical painting: 20 Jan has Saint Sebastian artworks but no verified exact joint Fabian/Sebastian composition. Separate partialGroupSaintPaintingLeads records preserve reuse without claiming group completion.",
     "Research Batch 1 matches 12 Class III dates to 17 previously accepted 856-source photos; source acceptance is not an artwork-to-feast approval, image rights, source SHA or live publication.",
     "Class II contextual anticipatory source choices and partial Group Saints do NOT count as complete exact date bindings.",
-    "Class I Batch 3 adds exact institution/object-accession research for existing selected paintings where B05/B11/B17/B18/B21 already document them. Does not establish user's exact approved photo pixels, app rights, or crop; the Morgan Tissot and Carracci All Souls remain blocked."
+    "Class I Batch 3 adds exact institution/object-accession research for existing selected paintings where B05/B11/B17/B18/B21 already document them. Does not establish user's exact approved photo pixels, app rights, or crop; the Morgan Tissot and Carracci All Souls remain blocked.",
+    "Batch4 uses W72 older human scores as recorded, not overriding canonical artwork editorial statuses or granting a feast-specific selection. Accepted-source KMSKA Boniface has explicit old human identity doubt.",
+    "Seven Servite Founders AIC Masucci exact named file and Commons CC0 identified; no photo native SHA or crop QA certified. All seven new subject dates remain editorial research only."
   ],
   "days": [
     {
@@ -3248,8 +3228,44 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:52088798",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Guido Reni (1575-1642) - Sint Andreas Corsini (1639) - Bologna Pinacoteca Nazionale - 26-04-2012 9-29-09",
+          "sourceArtistAsRecorded": "Guido Reni",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_(1575-1642)_-_Sint_Andreas_Corsini_(1639)_-_Bologna_Pinacoteca_Nazionale_-_26-04-2012_9-29-09.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "relation": "EXACT_SAINT_SUBJECT",
+          "editorialApprovalForFeast": false,
+          "photoRightsForProductionVerified": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "commons:157990",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "German: Hl. Andreas Corsini im Gebet",
+          "sourceArtistAsRecorded": "Guido Reni",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_039.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "relation": "EXACT_SAINT_SUBJECT",
+          "editorialApprovalForFeast": false,
+          "photoRightsForProductionVerified": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL",
+      "identityUncertaintyWarnings": [
+        "Two accepted photographs may depict one original by Guido Reni, or distinct Reni originals. Verify museum accessions/physical identity; do not rotate as two works until resolved."
+      ]
     },
     {
       "date": "2026-02-05",
@@ -3394,8 +3410,26 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalLegacyNamedFileLeads": [
+        {
+          "sourceType": "W60_LEGACY_NAMED_FILE",
+          "sourceFile": "File:Agostino Masucci - The Madonna with the Seven Founders of the Servite Order - 1977.485 - Art Institute of Chicago.jpg",
+          "title": "The Madonna with the Seven Founders of the Servite Order",
+          "artist": "Agostino Masucci",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agostino_Masucci_-_The_Madonna_with_the_Seven_Founders_of_the_Servite_Order_-_1977.485_-_Art_Institute_of_Chicago.jpg",
+          "sourceObjectId": "AIC 1977.485; museum object 94125",
+          "photoEvidence": "Commons file CC0 1.0, 2020 x 3000; exact accession in file metadata, but native QA/crop not performed",
+          "legacyFileExactMatched": true,
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "sourceMatchingStatus": "EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL",
+      "identityUncertaintyWarnings": [
+        "Previously recorded exact named Commons file in W60 legacy rule, not a new user visual choice."
+      ]
     },
     {
       "date": "2026-02-13",
@@ -6108,8 +6142,29 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "kmska:k2cikv",
+          "sourceSelection": "IMPORT_WITH_CORRECTIONS",
+          "sourceTitle": "Heilige Bonifatius van Mainz",
+          "sourceArtistAsRecorded": "Schilder: Albrecht De Vriendt",
+          "sourceCorrection": "not sure who this chap is",
+          "sourceObjectAccession": "1481",
+          "sourceObjectUrl": "http://kmska.be/collection/work/data/k2cikv",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "relation": "EXACT_SAINT_SUBJECT_WITH_USER_IDENTITY_UNCERTAINTY",
+          "editorialApprovalForFeast": false,
+          "photoRightsForProductionVerified": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL",
+      "identityUncertaintyWarnings": [
+        "User explicitly said 'not sure who this chap is' in earlier image review. Keep only as subject research until visual identity/approval confirmed."
+      ]
     },
     {
       "date": "2026-06-06",
@@ -7329,11 +7384,40 @@
       "observedTitle": "St. Ignatius Loyola",
       "role": "OBSERVED_PRINCIPAL",
       "dateSelectedArt": null,
-      "linkedCatalogueArt": [],
+      "linkedCatalogueArt": [
+        {
+          "artworkId": "W14-004",
+          "artist": "Peter Paul Rubens",
+          "title": "The Miracles of Saint Ignatius of Loyola (oil modello)",
+          "status": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
+          "editorial": "UNREVIEWED",
+          "sourceRecorded": true,
+          "completePhotoProvisional": true,
+          "photoReleaseCertified": false,
+          "historicalW72Score": 5,
+          "historicalW72Source": "W49_HISTORICAL_HUMAN"
+        },
+        {
+          "artworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Ignatius of Loyola",
+          "status": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
+          "editorial": "APPROVED_LOCKED",
+          "sourceRecorded": true,
+          "completePhotoProvisional": true,
+          "photoReleaseCertified": false,
+          "historicalW72Score": null,
+          "historicalW72Source": null
+        }
+      ],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "sourceMatchingStatus": "EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL",
+      "identityUncertaintyWarnings": [
+        "Distinct oil modello and altarpiece original likely; verify physical inventory before treating as two rotation choices. W72 historically rated W14-004 5 while canonical main list says UNREVIEWED: do not mutate either rating."
+      ]
     },
     {
       "date": "2026-08-01",
@@ -8783,11 +8867,28 @@
       "observedTitle": "Holy Guardian Angels",
       "role": "OBSERVED_PRINCIPAL",
       "dateSelectedArt": null,
-      "linkedCatalogueArt": [],
+      "linkedCatalogueArt": [
+        {
+          "artworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+          "artist": "Pietro da Cortona",
+          "title": "The Guardian Angel",
+          "status": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
+          "editorial": "APPROVED_LOCKED",
+          "sourceRecorded": true,
+          "completePhotoProvisional": true,
+          "photoReleaseCertified": false,
+          "historicalW72Score": null,
+          "historicalW72Source": null
+        }
+      ],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "sourceMatchingStatus": "EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL",
+      "identityUncertaintyWarnings": [
+        "The Guardian Angel depicts one angel, thematically exact to guardian angels in general; do not conflate a particular person with a named historical saint."
+      ]
     },
     {
       "date": "2026-10-03",
@@ -9222,11 +9323,39 @@
       "observedTitle": "St. Raphael the Archangel",
       "role": "OBSERVED_PRINCIPAL",
       "dateSelectedArt": null,
-      "linkedCatalogueArt": [],
+      "linkedCatalogueArt": [
+        {
+          "artworkId": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+          "artist": "Attribution not recorded",
+          "title": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+          "status": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
+          "editorial": "UNREVIEWED",
+          "sourceRecorded": true,
+          "completePhotoProvisional": true,
+          "photoReleaseCertified": false,
+          "historicalW72Score": 5,
+          "historicalW72Source": "W49_HISTORICAL_HUMAN"
+        }
+      ],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceAlternatives": [
+        {
+          "sourceCardId": "smk:KMS3922",
+          "artist": "Pieter Lastman",
+          "title": "The Angel Raphael Takes Leave of Old Tobit and his Son Tobias",
+          "objectUrl": "https://open.smk.dk/en/artwork/image/KMS3922",
+          "sourceArtworkAccession": "KMS3922",
+          "role": "CORRECT_RAPHAEL_SUBJECT_ALTERNATIVE_NOT_DATE_APPROVED",
+          "rotationEligible": false
+        }
+      ],
+      "sourceMatchingStatus": "EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL",
+      "identityUncertaintyWarnings": [
+        "Artwork image historically rated 5 in W72 for Raphael, canonical 383 editorial flag UNREVIEWED. Keep these two authorities separate. Pieter Lastman Tobit scene is a distinct contextual exact Raphael depiction, not already 5-star approved for this date."
+      ]
     },
     {
       "date": "2026-10-25",
@@ -9841,8 +9970,29 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:14607985",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "French: Saint Clément retrouve sa famille \" \"",
+          "sourceArtistAsRecorded": "Bernardino Fungai",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_Fungai-Saint_Cl%C3%A9ment_retrouvant_sa_famille.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "relation": "EXACT_SAINT_CLEMENT_LEGEND_SCENE",
+          "editorialApprovalForFeast": false,
+          "photoRightsForProductionVerified": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL",
+      "identityUncertaintyWarnings": [
+        "Bernardino Fungai depicts Clement of Rome reuniting with his family; verified artist/painting 453.b. Visual aesthetic and photo terms need independent approval."
+      ]
     },
     {
       "date": "2026-11-24",
