@@ -51,7 +51,7 @@ const REVIEWED_NEW_SITE_PINS=Object.freeze({
  }),
  "RG-0BB62E04774C":Object.freeze({
   sourceId:"AO-B39-LOC-PL-83A0BDB437C1",name:"Kościół Ducha Świętego",country:"PL",addressNeedle:"Krakowska 19",placeId:null,
-  lat:50.3461,lng:18.9278,sourceRef:"wikidata:Q11746238",sourceUrl:"https://www.wikidata.org/wiki/Q11746238",
+  lat:50.3461,lng:18.9278,sourceRef:"commons:object-location:bytom-holy-spirit",sourceUrl:"https://commons.wikimedia.org/wiki/Category:Holy_Spirit_Church_in_Bytom",
   correctedAddress:"ul. Krakowska 19, 41-902 Bytom, Poland",precision:"site",reviewScope:"CHURCH_FILIAL_NOT_MAIN_PARISH_SITE",
   evidence:Object.freeze(["https://fotopolska.eu/Bytom/b34897,Kosciol_kaplica_Swietego_Ducha_.html","https://commons.wikimedia.org/wiki/Category:Holy_Spirit_Church_in_Bytom","https://tradycja.org/"]),
  }),
@@ -623,7 +623,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|wikidata:Q\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
