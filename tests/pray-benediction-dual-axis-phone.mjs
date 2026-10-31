@@ -66,7 +66,7 @@ try{
   "Exactly seven Roman stages must be available in the ordinary rite");
  await navigateStep(2);
  assert.equal((await snapshot()).card,"hymn");
- const layout=await page.locator(rootSel+" [data-ao-rite-chant-stanza]").evaluateAll(rows=>rows.map(row=>{
+ const layout=await page.locator(rootSel+" [data-face-v]:not([hidden]) [data-ao-rite-chant-stanza]").evaluateAll(rows=>rows.map(row=>{
   const latin=row.querySelector(".aoRiteChantLatin")?.getBoundingClientRect();
   const vern=row.querySelector(".aoRiteChantVernacular")?.getBoundingClientRect();
   return {latinLeft:latin?.left,vernLeft:vern?.left,latinWidth:latin?.width,vernWidth:vern?.width};
