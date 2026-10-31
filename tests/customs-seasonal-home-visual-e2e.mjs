@@ -26,7 +26,7 @@ const cases=[
  {key:"palm-sunday",date:v384Dates(2026).palm,id:"DOM-013"},
  {key:"all-souls",date:"2026-11-02",id:"DEAD-001"},
 ];
-const report={schema:"AO_CUSTOMS_HOME_VISUAL_ACCEPTANCE_20261024_V1",run_date:"2026-10-24",branch_scope:"PR #1631 draft",source:"REAL_BOOTSTRAPPED_HOME_CHROMIUM",language:"en",cases:[],status:"unreviewed_screenshots"};
+const report={legacyHomeSnapshot:true,schema:"AO_CUSTOMS_HOME_VISUAL_ACCEPTANCE_20261024_V1",run_date:"2026-10-24",branch_scope:"PR #1631 draft",source:"REAL_BOOTSTRAPPED_HOME_CHROMIUM",language:"en",cases:[],status:"unreviewed_screenshots"};
 const origin="http://127.0.0.1:"+server.address().port;
 let browser;
 try{
@@ -36,7 +36,7 @@ try{
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error)));
   try{
-   await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
+   await page.goto(origin+"/index.html?aoR17Reader=native&aoTodayH4=0",{waitUntil:"domcontentloaded",timeout:60000});
    await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
    await page.waitForFunction(()=>{
     const splash=document.querySelector("#ao-cinema-boot");
