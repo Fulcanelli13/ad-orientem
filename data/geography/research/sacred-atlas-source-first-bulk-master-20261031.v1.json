@@ -3,7 +3,7 @@
   "as_of": "2026-10-31",
   "scope": "REFERENCE_QUEUE_NOT_PHOTOGRAPH_APPROVAL",
   "strategy": "Authority/custodian physical object definition → exact photographed scene → Commons/GLAM free-use author/licence → high-quality photo QA → user approval → permanent optimized archive",
-  "important_distinction": "530 canonical Places; 492 previous source-first reference records + 19 exact documented B07 targets (511); 33 apparition contexts and 81 additional B07 intake sites are not new verified object identities. No new photo passed publication.",
+  "important_distinction": "530 original canonical Places; 518 evidence-linked source-first reference IDs across 285 Places; other 245 Places have no separately documented focal sacred feature. B07/08 total 149 sites triaged but only 26 exact named features, all under unapproved photo holds.",
   "source_references": [
     {
       "path": "data/geography/seed-registry.v1.json",
@@ -68,17 +68,25 @@
       "verified_exact_physical_subject_references": 19,
       "commons_named_file_leads": 13,
       "unresolved_site_subjects": 81
+    },
+    {
+      "name": "B08_REMAINING_49_PILGRIMAGE_AND_BASILICA_SITES",
+      "path": "data/geography/research/sacred-atlas-source-first-b08-remainder-49-pilgrimage-sites-20261031.v1.json",
+      "count": 49,
+      "documented_physical_objects": 7,
+      "commons_file_leads": 5,
+      "still_unresolved": 42
     }
   ],
   "stats": {
     "canonical_places": 530,
-    "unique_places_with_evidence": 278,
-    "unique_places_without_object_refs": 252,
+    "unique_places_with_evidence": 285,
+    "unique_places_without_object_refs": 245,
     "relic_records": 127,
     "marian_shrines": 118,
     "guide_stops": 88,
     "precise_targets": 20,
-    "source_first_reference_rows": 511,
+    "source_first_reference_rows": 518,
     "apparition_contexts_excluded_from_photographic_objects": 33,
     "source_directness_currently_web_checked_relic_records": 19,
     "b01_precise_source_first_reuse": 5,
@@ -90,7 +98,11 @@
     "b07_sites_triaged": 100,
     "b07_new_evidenced_subjects": 19,
     "b07_held_for_authoritative_object_identity": 81,
-    "b07_commons_named_photo_leads": 13
+    "b07_commons_named_photo_leads": 13,
+    "b08_remaining_shrine_sites_triaged": 49,
+    "b08_new_exact_subject_evidence": 7,
+    "b08_unresolved": 42,
+    "b08_named_photo_leads": 5
   },
   "web_reviewed_original_sources": [
     {
