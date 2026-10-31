@@ -120,8 +120,6 @@ assert.match(modalFr,/data-h4-option="form" disabled/,"Good Friday must block il
 
 assert.doesNotMatch(html,/data-home-h4-readings/,
   "H7 must not invent unverified Proper rows when no approved readings are supplied");
-assert.match(h7Facts,/data-home-h4-readings/,
-  "H7 must expose native readings when source-certified Proper sections exist");
 assert.match(html,/data-home-cu-route="pray.angelus_regina"/);
 assert.match(html,/Next · 18:00/);
 assert.match(html,/MY RULE/);
@@ -146,6 +144,8 @@ const h7Facts=h4HomeView(vm,model,{ordoFacts:{
   preface:{status:"MATCH",heading:"Praefatio Communis"},
   introitIncipit:"Si iniquitátes observáveris Dómine"
 },properSections:[{id:"INTROIT",label:"Introit"},{id:"GOSPEL",label:"Gospel"}]});
+assert.match(h7Facts,/data-home-h4-readings/,
+  "H7 must expose native readings when source-certified Proper sections exist");
 assert.match(h7Facts,/Praefatio Communis/,"Certified Preface must appear in H7 door");
 assert.match(h7Facts,/data-home-h4-reading-slot="GOSPEL"/,
   "Clicking Gospel must target the native bilingual Gospel slot");
