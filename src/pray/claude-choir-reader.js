@@ -60,10 +60,15 @@ export function syncClaudeChoirBar(card,element,{inline=false}={}){
  bar.hidden=!show;
  if(show){
   const text=bar.querySelector(".aoClaudeChoirResponseText");
-  if(text.textContent!==answer)text.textContent=answer;
-  bar.classList.remove("ring");
-  void bar.offsetWidth;
-  bar.classList.add("ring");
+  // A stable refrain must not replay its animation every time the user
+  // changes paragraph focus or a scroll observer rechecks the same unit.
+  // Reanimate only when the actual source response changes.
+  if(text && text.textContent!==answer){
+   text.textContent=answer;
+   bar.classList.remove("ring");
+   void bar.offsetWidth;
+   bar.classList.add("ring");
+  }
  }
  return show;
 }
