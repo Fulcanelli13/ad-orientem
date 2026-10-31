@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,confessionRiteCards,confessionAfterCards,confessionPath,confessionStepAt,CONFESSION_TRADITIONAL_GUIDE_STEPS,CONFESSION_TRADITIONAL_PASTORAL_WITNESSES} from "../src/pray/confession-paths.js";
 assert.deepEqual(Object.keys(CONFESSION_PATHS),["regular","returning","general"]);
 assert.equal(confessionPath("general").id,"general");
@@ -73,4 +74,10 @@ assert.equal(confessionStepAt(3.8,14),3);
 assert.throws(()=>confessionExaminationCards("general",sourceSections.slice(1)),/ten original/);
 assert.throws(()=>confessionExaminationCards("unknown",sourceSections),/Unknown/);
 assert.throws(()=>confessionStepAt(0,0),/Empty/);
+const presentation=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
+assert.match(presentation,/data-ao-confession-speaker/,"Rite must label penitent versus priest");
+assert.match(presentation,/data-ao-confession-latin-excerpt="priest-only"/,"Latin formula must be priest-only explanatory content");
+assert.match(presentation,/cards\\[pos\\]\\?\\.id==="contrition-penance"\\?confessionContritionPicker/,"Act of Contrition must accompany the correct rehearsal step");
+assert.match(presentation,/cardSequence\\[cardIndex\\]\\?\\.id==='contrition-penance'/,"Historical contrition alternative must not appear after absolution");
+assert.doesNotMatch(presentation,/data-p435930-exam="/,"Never collect marked sins");
 console.log("Confession quick, returning and optional general guidance contracts passed (5/13/14 examinations plus 9 pre-confessional role-labelled and 3 aftercare cards)");
