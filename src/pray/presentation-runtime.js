@@ -534,7 +534,7 @@ function head(title,sub=''){
   '<button type="button" data-p435930-choir-response="inline" aria-pressed="'+String(CLAUDE_CHOIR_PREF.inline)+'">'+esc(L('Inline','Dans le texte'))+'</button></div>'+
   '<div class="aoClaudeChoirMenuTitle">'+esc(L('Language','Langue'))+'</div><div class="aoClaudeChoirMenuChoices">'+
   ['en','fr','la'].filter(l=>!!record[l]).map(l=>'<button type="button" data-p435930-choir-language="'+l+'" lang="'+l+'" aria-pressed="'+String((CLAUDE_CHOIR_PREF.language||lang())===l)+'">'+l.toUpperCase()+'</button>').join('')+'</div>'+
-  '<div class="aoClaudeChoirMenuSource">'+(praySourceURL(record)?'<a href="'+esc(praySourceURL(record))+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(L('Source and historical witness','Source et témoin historique'))+'">ⓘ '+esc(L('Source','Source'))+'</a>':'')+'</div></div>':'';
+  '<div class="aoClaudeChoirMenuSource">'+sourceLine(record)+'</div></div>':'';
  const trailing=settings+prayerLanguage+aa+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>${menu}`;
 }
