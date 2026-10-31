@@ -54,7 +54,7 @@ assert.doesNotMatch(prayer,/data-pref-path="prayer.rosary.sacredArt"/,"No second
 const other=renderSettingsToString(win,{route:"/settings/prayer",familyOpen:3});
 assert.match(other,/data-pref-path="prayer.novenas.layout"/);
 const privacy=renderSettingsToString(win,{route:"/settings/privacy-data",live:true});
-for(const x of ["Progress","Your lists","Storage","not stored as a persistent list of sins"])assert.ok(privacy.includes(x));
+for(const x of ["Progress","Your lists","Storage","never stored as a persistent list of sins"])assert.ok(privacy.includes(x));
 assert.match(privacy,/data-data-action="clear-mass" disabled/);
 assert.match(privacy,/data-settings-reset-ask disabled/);
 assert.doesNotMatch(privacy,/data-data-action="reset-all"/,"No direct irreversible reset");
@@ -83,7 +83,7 @@ for(const [path,value] of [["reading.latinDisplay","only"],["mass.defaultForm","
  assert.equal(path.split(".").reduce((p,k)=>p[k],donor.snapshot().preferences),value,"Lost validated preference "+path);
 }
 donor.setPath("mass.defaultForm","UNKNOWN");assert.equal(donor.snapshot().preferences.mass.defaultForm,"sung","Illegal Mass form must fail closed");
-for(const x of ["AO_SETTINGS_DONOR_V4359","data.settings","dataAction","AO_APP_LIVE_SESSION_GUARDS_V1","settingsResetConfirm","settingsContents","prefFamily"])
+for(const x of ["AO_SETTINGS_DONOR_V4359","settingsRoute","dataAction","AO_APP_LIVE_SESSION_GUARDS_V1","settingsResetConfirm","settingsContents","prefFamily"])
  assert.ok(readFileSync("src/settings/browser-entry.js","utf8").replaceAll(".","").toLowerCase().includes(x.replaceAll(".","").toLowerCase()),"Settings owner lost "+x);
 const host=readFileSync("src/app/host-adapter.js","utf8");
 assert.match(host,/AO_SETTINGS_APP_V1/);
