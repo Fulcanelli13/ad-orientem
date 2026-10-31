@@ -6,7 +6,7 @@ import "./precious-blood-chaplet-styles.js";
 import "./priestly-intercessions-styles.js";
 import "./occasional-intercessions-styles.js";
 import "./first-monthly-direct-prayers-styles.js";
-import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY } from "./confession-paths.js";
+import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY, CONFESSION_TRADITIONAL_PASTORAL_WITNESSES, CONFESSION_EXTENDED_EXAM_WITNESS, confessionExtendedSections } from "./confession-paths.js";
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
@@ -1521,7 +1521,7 @@ function confessionContritionPicker(kicker){
    '<h3>'+esc(L("Act of Contrition · private preparation","Acte de contrition · préparation personnelle"))+'</h3>'+chooser+note+prayer+'</section>';
 }
 function confessionExaminationView(ex){
- const cards=confessionExaminationCards(CONF.path,ex?.sections);
+ const cards=confessionExaminationCards(CONF.path,confessionExtendedSections(ex?.sections,{path:CONF.path,french:isFr()}));
  const pos=confessionStepAt(CONF.examStep,cards.length);
  const note=CONF.path==="regular"
   ?L("Four short groups cover all Ten Commandments. Pause to recall what you need to confess; no answers or sins are recorded.","Quatre groupes brefs couvrent les dix commandements. Prenez le temps de vous souvenir de ce que vous devez confesser ; aucune réponse ni aucun péché n'est enregistré.")
@@ -1569,7 +1569,7 @@ function renderConfession(){
  // supplies only the shared card shell and local paragraph-focus viewport.
  let cardSequence=null,cardIndex=0;
  if(CONF.stage===1&&path){
-  cardSequence=confessionExaminationCards(CONF.path,ex?.sections);
+  cardSequence=confessionExaminationCards(CONF.path,confessionExtendedSections(ex?.sections,{path:CONF.path,french:isFr()}));
   cardIndex=confessionStepAt(CONF.examStep,cardSequence.length);
  }else if(CONF.stage===2&&path){
   cardSequence=confessionRiteCards(CONF.path);
@@ -3062,7 +3062,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  });
  if(view==='confession'&&CONF.path&&CONF.stage>=1)queueMicrotask(()=>{
   const stage=CONF.stage,path=CONF.path;
-  const cards=stage===1?confessionExaminationCards(path,(isFr()?DATA.examFr:DATA.exam)?.sections):
+  const cards=stage===1?confessionExaminationCards(path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path,french:isFr()})):
     stage===2?confessionRiteCards(path):confessionAfterCards();
   const index=stage===1?CONF.examStep:stage===2?CONF.riteStep:CONF.afterStep;
   const chapters=cards.map(card=>({
@@ -3501,7 +3501,7 @@ function onClick(e){
    const selected=b.dataset.p435930ConfContrition;
    if(selected!=="standard"&&selected!=="piusx")return;
    const last=CONF.stage===1
-     ?confessionExaminationCards(CONF.path,(isFr()?DATA.examFr:DATA.exam)?.sections).length-1
+     ?confessionExaminationCards(CONF.path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path:CONF.path,french:isFr()})).length-1
      :confessionRiteCards(CONF.path).length-1;
    if((CONF.stage===1?CONF.examStep:CONF.riteStep)!==last)return;
    if(CONF.contrition===selected)return;
@@ -3533,7 +3533,7 @@ function onClick(e){
  if(b.matches('[data-p435930-conf-next]')){
    if(!CONF.path)return;
    if(CONF.stage===1){
-     const count=confessionExaminationCards(CONF.path,(isFr()?DATA.examFr:DATA.exam)?.sections).length;
+     const count=confessionExaminationCards(CONF.path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path:CONF.path,french:isFr()})).length;
      if(CONF.examStep<count-1){CONF.examStep++;return render();}
    }
    if(CONF.stage===2){
