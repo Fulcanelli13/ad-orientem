@@ -1,0 +1,24 @@
+name: Sacred Atlas — original-source safety, offline
+on:
+  pull_request:
+    paths:
+      - "data/geography/research/sacred-atlas-original-integrity-100-20261031*.json"
+      - "data/geography/research/sacred-atlas-after-2119-cover-backlog-388.v1.json"
+      - "tools/sacred-atlas-verify-originals-100.mjs"
+      - "tests/sacred-atlas-originals-rate-limit-safety.mjs"
+      - ".github/workflows/sacred-atlas-originals-offline-ci.yml"
+permissions:
+  contents: read
+jobs:
+  source-safety-no-network:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Assert original source queue, six verified receipts, rate-limit stop and zero publication
+        run: |
+          node tools/sacred-atlas-verify-originals-100.mjs --selftest
+          node tests/sacred-atlas-originals-rate-limit-safety.mjs
