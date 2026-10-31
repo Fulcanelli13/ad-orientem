@@ -137,7 +137,7 @@ for(const art of everyArt.artworks){
   for(const linked of art.allFourClasses2026DateLinks){
     assert.equal(linked.homeRotationEligible,false);
     assert.equal(linked.photoReleaseCertified,false);
-    assert.equal(linked.dateSpecificUserApproval,false);
+    assert.equal(linked.newDateApprovalIntroducedByThisMatchingPass,false);
     const matched=map.get(linked.date);
     assert.equal(matched.observedPrincipalId,linked.observedPrincipalId);
     assert.ok(matched.linkedCatalogueArt.some(x=>x.artworkId===art.artworkId));
