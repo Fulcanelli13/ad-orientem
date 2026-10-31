@@ -319,7 +319,8 @@
     "test:daily-personal-rule": "node tests/daily-personal-rule.mjs",
     "test:icksp-batch01-reconcile": "node tests/icksp-batch01-public-reconciliation.mjs",
     "test:pray-corpus-ownership": "node tests/prayer-corpus-ownership-wave01.mjs",
-    "test:pray-whole-novena-audit": "node tests/pray-whole-novena-component-audit.mjs && node tools/pray/audit-whole-novena-components.mjs --self-test"
+    "test:pray-whole-novena-audit": "node tests/pray-whole-novena-component-audit.mjs && node tools/pray/audit-whole-novena-components.mjs --self-test",
+    "test:dyk-pilot-browser": "node tests/dyk-r34-pilot-source-folio-browser.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
