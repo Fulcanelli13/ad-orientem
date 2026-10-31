@@ -37,7 +37,11 @@
     "cross_prayer_inherited_total_staged_edges": 105,
     "original_blueprint_unreviewed_edges_still_eligible": 954,
     "artwork_count_note": "Staged candidate != approved. Never match USER_APPROVED by substring (NEW_CANDIDATE_NOT_USER_APPROVED is negative). All nonapproved suggestions need positive source evidence before use. ",
-    "cross_prayer_reclassified_existing_candidate_edges": 4
+    "cross_prayer_reclassified_existing_candidate_edges": 4,
+    "approved_placement_edges_effective": 628,
+    "cross_prayer_active_after_newer_user_rejection": 92,
+    "rejected_older_approved_edges": 2,
+    "editorial_coverage_source_note": "Original retained 1651 staged candidates and historical approvals; Lybaert work is marked ineligible in its two exact slot edges. Approved-only effective snapshot 628 edges, 223 unique IDs, 162 covered slots; new cross-module master further adjusts for the previously rejected Ugolino Last Supper."
   },
   "locked": [
     {
@@ -11597,14 +11601,17 @@
           "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
           "title": "Jesus meets His Mother",
           "artist": "Théophile Lybaert",
-          "fit": "EXACT SCENE",
-          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "fit": "LATER_EXPLICIT_USER_REJECTION_OVERRIDES_OLDER_PLACEMENT",
+          "editorial": "USER_REJECTED_LATER_ARTISTIC_FIT",
           "source": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_meets_His_Mother.jpg",
           "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;MODERATE_SOURCE_RESOLUTION_NATIVE_QA_PENDING",
-          "eligible": true,
+          "eligible": false,
           "flag": "Human-approved artistic fit. NOT approved for publication; source rights/visual QA incomplete",
           "origin": "UPLOADED_APPROVAL_JSON_20261030",
-          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::03"
+          "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::03",
+          "editorial_before_later_rejection": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "exclude_from_shortlist": true,
+          "later_user_decision": "2026-10-31: Théophile Lybaert Stations cycle rejected as artistically unsuitable. Do not resurface."
         },
         {
           "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04",
@@ -17977,16 +17984,19 @@
           "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
           "title": "Jesus meets His Mother",
           "artist": "Théophile Lybaert",
-          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
-          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "LATER_EXPLICIT_USER_REJECTION_OVERRIDES_OLDER_PLACEMENT",
+          "editorial": "USER_REJECTED_LATER_ARTISTIC_FIT",
           "source": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_meets_His_Mother.jpg",
           "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;MODERATE_SOURCE_RESOLUTION_NATIVE_QA_PENDING",
-          "eligible": true,
+          "eligible": false,
           "flag": "SHARED_EXACT_SCENE:mary_meets_cross; research-only, no publication clearance",
           "origin": "UPLOADED_APPROVAL_JSON_20261030+CROSS_PRAYER_INHERITANCE_20261030",
           "candidate_key": "STG-prayer.seven_sorrows_chaplet-04::03",
           "cross_prayer_source_stage": "STG-prayer.seven_sorrows_chaplet-04",
-          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross"
+          "cross_prayer_reuse_rule": "SHARED_EXACT_SCENE:mary_meets_cross",
+          "editorial_before_later_rejection": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "exclude_from_shortlist": true,
+          "later_user_decision": "2026-10-31: Théophile Lybaert Stations cycle rejected as artistically unsuitable. Do not resurface."
         },
         {
           "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04",
@@ -25226,5 +25236,27 @@
     "artwork_edges_after_consolidation": 1572,
     "explicit_user_acceptances_never_auto_pruned": true
   },
-  "quality_vs_coverage_note": "267/267 EDITORIAL candidate coverage includes a CONTEXTUAL nonliteral carryover for actual Benediction, and unapproved Thérèse aux roses without resolved source rights. It does not imply 267 released images or 267 actual reader cards. Preserve exact-scene gap and rights blockers."
+  "quality_vs_coverage_note": "267/267 EDITORIAL candidate coverage includes a CONTEXTUAL nonliteral carryover for actual Benediction, and unapproved Thérèse aux roses without resolved source rights. It does not imply 267 released images or 267 actual reader cards. Preserve exact-scene gap and rights blockers.",
+  "effective_user_overrides": [
+    {
+      "artist": "Théophile Lybaert",
+      "workFamily": "Stations of the Cross",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "scope": "All Prayer artworks, all Stations and Seven Sorrows contexts",
+      "overriddenPlacementEdges": [
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-04",
+          "artworkId": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
+          "priorEditorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+        },
+        {
+          "slot": "STG-pray.stations-04",
+          "artworkId": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
+          "priorEditorial": "USER_APPROVED_CROSS_PRAYER_REUSE"
+        }
+      ],
+      "noAutomaticReactivation": true
+    }
+  ]
 }
