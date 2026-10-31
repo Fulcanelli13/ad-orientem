@@ -25,7 +25,7 @@ export function claudeHorariumClock(hour=12,language="en"){
  const bx=(1-t)**2*P[0][0]+2*(1-t)*t*P[1][0]+t*t*P[2][0];
  const by=(1-t)**2*P[0][1]+2*(1-t)*t*P[1][1]+t*t*P[2][1];
  const sky=SKY[h],id="ao-prayer-horarium-sky";
- const svg='<svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid slice" role="img" aria-label="\${french?"Heure de la journée":"Hour of the day"}">'+
+ const svg='<svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+(french?"Heure de la journée":"Hour of the day")+'">'+
   '<defs><linearGradient id="'+id+'" x1="0" y1="1" x2="0" y2="0">'+
   '<stop offset="0" stop-color="'+sky[1]+'" stop-opacity=".55"/>'+
   '<stop offset="1" stop-color="'+sky[0]+'" stop-opacity=".12"/></linearGradient></defs>'+
@@ -39,7 +39,7 @@ export function claudeHorariumClock(hour=12,language="en"){
    return '<text x="'+x+'" y="108" text-anchor="middle" font-family="IM Fell English SC,Georgia" font-size="13" fill="currentColor" fill-opacity="'+(hh===h?1:.5)+'">'+CLAUDE_HORARIUM_HOUR_LABELS[hh]+'</text>';
   }).join('')+'</svg>';
  return '<div class="aoClaudeHorariumClock" data-ao-claude-horarium-hour="'+h+'">'+svg+
-  '<div class="aoClaudeHorariumHourTargets" role="group" aria-label="\${french?"Heure de l’Angélus":"Angelus hour"}">'+
+  '<div class="aoClaudeHorariumHourTargets" role="group" aria-label="'+(french?"Heure de l’Angélus":"Angelus hour")+'">'+
   HOURS.map(hh=>'<button type="button" data-p435930-angelus-hour="'+hh+'" aria-pressed="'+String(h===hh)+'" aria-label="'+(french?(hh===6?"Six heures du matin":hh===12?"Midi":"Six heures du soir"):(hh===6?"Six in the morning":hh===12?"Noon":"Six in the evening"))+'">'+CLAUDE_HORARIUM_HOUR_LABELS[hh]+'</button>').join('')+
   '</div></div>';
 }
