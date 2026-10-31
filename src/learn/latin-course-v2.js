@@ -271,9 +271,67 @@ export function createLatinCourseRuntime(win=globalThis){
   function onClick(e){const t=e.target?.closest?.("button");if(!t)return;if(t.matches("[data-l2-home]")){close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}if(t.matches("[data-l2-back]")){if(state.screen==="lesson"){state.screen="stage";state.lesson=null}else if(state.screen==="stage"){state.screen="stages";state.stage=null;state.stageLessons=[]}else{const origin=entryOrigin,external=win?.AO_LEARN_APP_V1?.status?.()?.externalReturn;close();if(external)return;return returnToObservedModuleOrigin(win,origin,{close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()});}render();return}if(t.dataset.l2Stage){void loadStage(Number(t.dataset.l2Stage));return}if(t.dataset.l2Lesson){void openLesson(Number(t.dataset.l2Lesson));return}if(t.dataset.l2Phase){state.lessonPhase=["learn","read","practice","review"].includes(t.dataset.l2Phase)?t.dataset.l2Phase:"learn";render();return}if(t.dataset.l2Gloss){state.gloss={passageId:t.dataset.l2Passage||"",lemma:t.dataset.l2Gloss};render();return}const ex=currentExercise();if(!ex)return;if(t.dataset.l2Choice!==undefined){const i=Number(t.dataset.l2Choice);state.responses.set(ex.id,canonicalChoiceValue(ex,i));state.feedback.delete(ex.id);render();return}if(t.dataset.l2Token!==undefined){const i=Number(t.dataset.l2Token),tokens=canonicalTokens(ex.stimulus),prior=state.responses.get(ex.id)||{indices:[],canonical:[]},set=new Set(prior.indices||[]);set.has(i)?set.delete(i):set.add(i);const indices=[...set].sort((a,b)=>a-b);state.responses.set(ex.id,{indices,canonical:indices.map(x=>tokens[x]?.canonical).filter(Boolean)});state.feedback.delete(ex.id);render();return}if(t.matches("[data-l2-check]")){let response=state.responses.get(ex.id);if(ex.exerciseType==="token_select")response=response?.canonical||[];const r=gradeLatinExercise(ex,response);state.feedback.set(ex.id,{shown:true,graded:r.graded,correct:r.correct,selfCheck:r.selfCheck});render();return}if(t.matches("[data-l2-prev]")){state.exerciseIndex=Math.max(0,state.exerciseIndex-1);render();return}if(t.matches("[data-l2-next]")){state.exerciseIndex=Math.min((state.lesson?.exercises?.length||1)-1,state.exerciseIndex+1);render()}}
   let entryOrigin=null;
   async function open(){entryOrigin=captureObservedModuleOrigin(win,"learn");state.open=true;state.screen="stages";state.stage=null;state.stageLessons=[];state.lesson=null;state.error="";state.loading=true;ensureRoot();attach();render();try{await ensureCourse()}catch(e){state.error=String(e?.message||e)}state.loading=false;render();return true}
+  // In-memory, one-use Settings receipt. Responses and grading feedback remain
+  // source-owned maps in this same runtime; never copy them into router state.
+  function captureSettingsReturn(){
+    if(!state.open||!root())return null;
+    const gloss=state.gloss&&typeof state.gloss==="object"
+      ?{passageId:String(state.gloss.passageId||"").slice(0,120),
+        lemma:String(state.gloss.lemma||"").slice(0,120)}:null;
+    return Object.freeze({
+      screen:state.screen,stage:state.stage,
+      lessonNumber:state.lesson?.lesson??null,
+      lessonPhase:state.screen==="lesson"?state.lessonPhase:null,
+      exerciseIndex:state.exerciseIndex,gloss,
+      scrollTop:Math.max(0,Math.floor(root().scrollTop||0))
+    });
+  }
+  async function restoreSettingsReturn(receipt){
+    if(!state.open||!root()||!receipt||typeof receipt!=="object")return false;
+    const screen=receipt.screen;
+    if(!["stages","stage","lesson"].includes(screen))return false;
+    if(screen==="stage"){
+      const n=receipt.stage;
+      if(!Number.isInteger(n)||!state.course?.stages?.some(x=>x.stage===n))return false;
+      await loadStage(n);
+      if(state.error)return false;
+    }else if(screen==="lesson"){
+      const n=receipt.lessonNumber;
+      if(!Number.isInteger(n)||n<1||n>40)return false;
+      if(state.lesson?.lesson!==n)await openLesson(n);
+      if(state.lesson?.lesson!==n)return false;
+      const stage=state.course?.stages?.find(x=>Array.isArray(x.lessons)&&n>=x.lessons[0]&&n<=x.lessons[1]);
+      if(stage){
+        state.stage=stage.stage;
+        // The previous Stage Back destination must be real, not an empty list.
+        const [first,last]=stage.lessons;
+        try{
+          state.stageLessons=await Promise.all(
+            Array.from({length:last-first+1},(_,i)=>loadLesson(first+i)));
+        }catch{return false}
+      }
+      state.lessonPhase=["learn","read","practice","review"].includes(receipt.lessonPhase)
+        ?receipt.lessonPhase:"learn";
+      const count=state.lesson?.exercises?.length||0;
+      state.exerciseIndex=count&&Number.isInteger(receipt.exerciseIndex)
+        ?Math.min(count-1,Math.max(0,receipt.exerciseIndex)):0;
+      state.gloss=receipt.gloss&&typeof receipt.gloss==="object"
+        ?{passageId:String(receipt.gloss.passageId||"").slice(0,120),
+          lemma:String(receipt.gloss.lemma||"").slice(0,120)}:null;
+      state.screen="lesson";
+    }else{
+      state.screen="stages";
+    }
+    render();
+    const position=Number.isFinite(receipt.scrollTop)
+      ?Math.max(0,Math.floor(receipt.scrollTop)):0;
+    root().scrollTop=position;
+    win?.requestAnimationFrame?.(()=>{if(state.open&&root())root().scrollTop=position});
+    return true;
+  }
   function close(){state.open=false;const n=root();if(n)n.remove();state.screen="stages";state.stage=null;state.stageLessons=[];state.lesson=null;state.gloss=null;state.loading=false;return true}
   function status(){return Object.freeze({version:LATIN_COURSE_VERSION,installed:true,open:Boolean(state.open&&root()),screen:state.screen,stage:state.stage,lesson:state.lesson?.lesson??null,lessonPhase:state.screen==="lesson"?state.lessonPhase:null,language:langOf(win),cachedLessons:state.cache.size,canonicalResponses:state.responses.size,checkpoint:state.lesson?latinCheckpointStatus(state.lesson,state.feedback):null})}
-  return Object.freeze({version:LATIN_COURSE_VERSION,open,close,status,render,loadStage,openLesson});
+  return Object.freeze({version:LATIN_COURSE_VERSION,open,close,status,render,loadStage,openLesson,captureSettingsReturn,restoreSettingsReturn});
 }
 
 export function ensureLatinCourseRegistry(win=globalThis){
