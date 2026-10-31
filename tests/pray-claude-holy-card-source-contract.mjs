@@ -54,6 +54,18 @@ test("Both means true Latin plus current vernacular; unavailable sources are nev
  const englishOnly=claudeHolyCard({id:"marian_consecration_immaculate_heart",p:eng,face:"both",vernacular:"fr",esc:escape});
  assert.doesNotMatch(englishOnly,/aoClaudeHolyLatinText/);
 });
+test("Only the visible Holy Card face is exposed to screen readers",()=>{
+ const record=PRAY_CANONICAL_DATA_V435930.prayers.foundations_hail_mary;
+ const front=claudeHolyCard({id:"foundations_hail_mary",p:record,esc:escape,flipped:false});
+ assert.match(front,/aoClaudeHolyFront" aria-hidden="false"/);
+ assert.match(front,/aoClaudeHolyBack" aria-hidden="true"/);
+ const back=claudeHolyCard({id:"foundations_hail_mary",p:record,esc:escape,flipped:true});
+ assert.match(back,/aoClaudeHolyFront" aria-hidden="true"/);
+ assert.match(back,/aoClaudeHolyBack" aria-hidden="false"/);
+ assert.match(runtime,/querySelector\('\.aoClaudeHolyFront'\)\?\.setAttribute\('aria-hidden'/);
+ assert.match(runtime,/querySelector\('\.aoClaudeHolyBack'\)\?\.setAttribute\('aria-hidden'/);
+});
+
 test("F01 reader routes use the Claude object, not a flat sheet",()=>{
  assert.match(runtime,/claudeHolyCard\(\{id,p,face:chosen/);
  assert.match(runtime,/claudeHolyCardCase\(\{ids:ESSENTIAL_HOLY_CARD_IDS_V1/);
