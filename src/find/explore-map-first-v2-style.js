@@ -160,4 +160,46 @@ export const EXPLORE_MAP_FIRST_V2_STYLE = `
   .aoHeritageSurface .aoMapcnDiscoverRail,
   .aoHeritageSurface .aoMapcnDiscoverChevron{transition:none}
 }
+
+/* P0 phone preview: a Place with no approved site photograph should not
+   reserve the 110px photo column. Keep the original two-column treatment
+   wherever an actual licensed image exists. */
+@media(max-width:799px){
+ .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"]{
+   grid-template-columns:minmax(0,1fr);
+ }
+ .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"] .aoHeritageCardHeading,
+ .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"] h2,
+ .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"] .aoHeritageSynopsis,
+ .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"] .aoHeritageCardEmpty{
+   grid-column:1;
+ }
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageCardEmpty{
+   grid-column:2;grid-row:4;min-width:0;margin:2px 0 4px;
+   overflow-wrap:anywhere;line-height:1.45;
+ }
+ .aoHeritageSurface .aoHeritagePreview[data-approved-place-photo="no"] .aoHeritageCardEmpty{
+   grid-column:1;
+ }
+ .aoHeritageSurface .aoHeritagePreview h2{
+   display:block;-webkit-line-clamp:unset;overflow:visible;
+   white-space:normal;overflow-wrap:anywhere;text-wrap:pretty;
+ }
+ .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{
+   object-fit:contain;background:var(--ao-surface-2,#0d141c);
+ }
+}
+@media(min-width:800px){
+ .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{
+   object-fit:contain;background:var(--ao-surface-2,#0d141c);
+ }
+}
+@media(max-width:360px){
+ .aoHeritageSurface .aoHeritagePreview .aoHeritagePreviewActions{
+   grid-template-columns:minmax(0,1fr);
+ }
+ .aoHeritageSurface .aoHeritagePreview .aoHeritagePreviewActions>*{
+   min-width:0;white-space:normal;overflow-wrap:anywhere;
+ }
+}
 `;
