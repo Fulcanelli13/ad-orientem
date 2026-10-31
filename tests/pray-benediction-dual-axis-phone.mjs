@@ -41,6 +41,21 @@ try{
    :roman+" [data-p435930-ben-step='"+index+"']";
   await page.locator(target).tap();
  };
+ // Prototype Aa owns local rite configuration; the prayer must be visible
+ // immediately, without two large controls delaying the Roman altar card.
+ const settings=page.locator("#aoPray435930 .aoClaudeBenAa");
+ const options=page.locator("#aoPray435930 #aoBenOptions");
+ assert.equal(await settings.count(),1,"Claude's Aa must appear in the running header");
+ assert.equal(await options.evaluate(el=>el.hidden),true,
+  "The rite's editorial options must be closed on entry");
+ assert.equal(await page.locator(rootSel+" .aoClaudeAltarPlate").count(),1,
+  "The framed Claude plate is missing from the altar-card heading");
+ await settings.click();
+ assert.equal(await settings.getAttribute("aria-expanded"),"true");
+ assert.equal(await options.evaluate(el=>el.hidden),false);
+ await settings.click();
+ assert.equal(await settings.getAttribute("aria-expanded"),"false");
+ assert.equal(await options.evaluate(el=>el.hidden),true);
  const snapshot=()=>page.evaluate(()=>{
   const reader=document.querySelector("#aoPray435930.open .aoP435930BenedictionReader");
   const card=reader?.querySelector(".aoDevoCard"),scroll=card?.querySelector(".aoDevoCardScroll");
@@ -210,6 +225,8 @@ try{
  // Opt-in Christ the King celebration: procession before optional Royal Praises,
  // consecration of the human race before Tantum Ergo. Ordinary route above stays seven.
  await page.setViewportSize({width:390,height:844});
+ await settings.click();
+ assert.equal(await options.evaluate(el=>el.hidden),false);
  const feastDetails=page.locator(rootSel+" [data-ao-ben-feast-options]");
  assert.equal(await feastDetails.count(),1);
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast]").isChecked(),false,
