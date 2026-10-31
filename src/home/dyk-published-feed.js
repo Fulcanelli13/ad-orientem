@@ -31,8 +31,10 @@ export function dykPublishedCandidates(data,date){
       screen.exact_source_id_collision_count===0&&
       Array.isArray(row.publication_days)&&row.publication_days.includes(date)&&
       row.publication_days.every(validDate)&&
-      dest?.publishable_deep_link===true&&dest.exact_in_app_route_verified===true||
-      false;
+      ((row.pilot_home_copy&&dest?.publishable_deep_link===true&&
+          dest.exact_in_app_route_verified===true)||
+       (row.editorial_review_copy&&dest?.publishable===true&&
+          dest.verified_in_app===true));
  }).filter(row=>{
    const s=row.pilot_source_folio||row.editorial_source_reference;
    const url=s.url||s.source_url;
