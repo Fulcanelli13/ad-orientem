@@ -91,7 +91,9 @@ try{
     document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']"),
     null,{timeout:20000});
    for(let i=0;i<7;i++)await rosary.locator("[data-lab-rosary-next]").click();
-   await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.step===7,null,{timeout:12000});
+   await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.step===7&&
+    document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-canonical-step='7'] .aoRosaryPrayerScroll")!==null,
+    null,{timeout:12000});
    const before=await page.evaluate(()=>({
     method:globalThis.AO_ROSARY_V381.getMethod(),state:globalThis.AO_ROSARY_V381.state(),
     card:document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard")?.dataset.aoRosaryCanonicalStep,
