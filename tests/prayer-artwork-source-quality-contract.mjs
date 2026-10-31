@@ -12,7 +12,8 @@ test("1506 proposed original artwork placements are never released, including ex
  assert.equal(x.originalMissingSourcePage,329);
  assert.equal(x.sourceLinksRestoredByExactArtworkID,140);
  assert.equal(x.sourceLinksAddedByDirectMuseumAndCommonsVerification,2);
- assert.equal(x.nowStillWithoutSourcePages,187);
+ assert.equal(x.nowStillWithoutSourcePages,204);
+ assert.equal(x.pradoPhotoSourcesExcluded,17);
  assert.equal(x.unverifiedNameOnlySourceAlternatives,7);
  assert.equal(x.confirmedNewUserArtworkApprovals,0);
  assert.equal(x.publicReleaseEnabled,false);
@@ -31,8 +32,8 @@ test("1506 proposed original artwork placements are never released, including ex
   }
  }
  assert.equal(active,1506);
- assert.equal(linked,1319);
- assert.equal(remaining,187);
+ assert.equal(linked,1302);
+ assert.equal(remaining,204);
  assert.equal(anonymous,41);
  assert.equal(unresolvedAnonymous,4);
 });
