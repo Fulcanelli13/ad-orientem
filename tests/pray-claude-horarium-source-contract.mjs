@@ -38,6 +38,10 @@ test("Hours buttons, quadratic sun and bell groups reproduce actual Claude signa
  assert.equal((bars.match(/<i aria-hidden="true"><\/i>/g)||[]).length,18);
  assert.equal((bars.match(/data-ao-bell-group=/g)||[]).length,4);
  assert.match(bars,/class="cu" data-ao-bell-group="2"/);
+ const beforePrayer=claudeHorariumStrokes(-1);
+ assert.equal((beforePrayer.match(/data-ao-bell-group=/g)||[]).length,4);
+ assert.doesNotMatch(beforePrayer,/class="cu"/,
+  "The hour opening must not light a bell before the first prayer stage");
 });
 test("Claude hour-first opening is explicit and never invents a painting",()=>{
  assert.match(runtime,/data-ao-horarium-intro/);
@@ -54,7 +58,7 @@ test("Canonical Angelus remains season-owned and progresses only with user navig
  assert.match(runtime,/angelusSaturdayVespersDate===selectedDateKey\(\)/);
  assert.match(runtime,/installAngelusCardDeck\(/);
  assert.match(runtime,/onCardChange:\(_card,index\)=>/);
- assert.match(runtime,/syncClaudeHorariumStrokes\(m,Math.max\(0,index-1\)\)/);
+ assert.match(runtime,/syncClaudeHorariumStrokes\(m,index-1\)/);
  assert.match(runtime,/data-p435930-angelus-hour/);
  assert.match(runtime,/claudeHorariumClock\(CLAUDE_ANGELUS_HOUR,lang\(\)\)/);
  assert.match(styles,/height:150px/);
