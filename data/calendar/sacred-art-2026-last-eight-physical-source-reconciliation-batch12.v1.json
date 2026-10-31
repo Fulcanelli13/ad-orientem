@@ -1,0 +1,234 @@
+{
+  "schema": "AO_SACRED_ART_2026_LAST_EIGHT_PHYSICAL_SOURCE_RECONCILIATION_BATCH12_V1",
+  "asOf": "2026-10-31",
+  "intent": "Collect exact and complementary painted subject candidates for final user review, no app publication",
+  "counts": {
+    "previousMatchedClassIIISanctoral": 123,
+    "nowMatchedClassIIISanctoral": 126,
+    "priorUnmatchedClassIIISanctoral": 8,
+    "remainingStrictWholeFeastUnmatched": 5,
+    "fullyMatchedNewObservedDates": 3,
+    "exactSubjectPaintedSources": 4,
+    "newPartialSourceLeadsAcrossRemainingDates": 8,
+    "unmatchedDatesWithImprovedPartialEvidence": 5,
+    "rightsCleared": 0,
+    "userApprovals": 0,
+    "newDownloadedPhotos": 0,
+    "productionImagesChanged": 0
+  },
+  "fullDateResearch": [
+    {
+      "date": "2026-01-16",
+      "art": [
+        {
+          "id": "ICCD-1100252222-MARCELLO",
+          "artist": "Pietro Gaia",
+          "title": "Saint Emidius Consecrated Bishop by Pope Saint Marcellus",
+          "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1100252222",
+          "medium": "oil on canvas, 1590–1599",
+          "role": "EXACT_POPE_MARCELLUS_I_IN_GROUP_SCENE",
+          "hold": "Catalog specifically names San Marcello Papa. Physical setting Ascoli Piceno; accession photo full-frame and quality not inspected."
+        },
+        {
+          "id": "ICCD-1100254732-MARCELLO",
+          "artist": "Cesare Mariani",
+          "title": "Pope Saint Marcellus I",
+          "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1100254732",
+          "medium": "fresco painting, 1890",
+          "role": "EXACT_POPE_MARCELLUS_I_PORTRAIT",
+          "hold": "Ascoli Piceno cathedral mural not oil canvas; photo rights and crop remain unverified."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "art": [
+        {
+          "id": "CHIESA-THIENE-MAGANZA-1613-VINCENZO-ANASTASIO",
+          "artist": "Alessandro Maganza",
+          "title": "Enthroned Virgin with Child between Saints Vincent of Saragossa and Anastasius",
+          "url": "https://chieseitaliane.chiesacattolica.it/chieseitaliane/AccessoEsterno.do?idSessioneEsterna=112233445566778899&mode=ParrocchieMAP&sercd=3012",
+          "secondaryUrl": "https://www.museionline.info/veneto-musei-monumenti/chiesa-di-san-vincenzo-martire-thiene",
+          "medium": "altar painting, 1613",
+          "role": "EXACT_BOTH_FEAST_MARTYRS_IN_ONE_PAINTING",
+          "hold": "Church's official inventory confirms both saints kneeling with the Virgin; exact photography, legal rights, native full altarpiece crop not certified; artist painting not yet a canonical 383."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "art": [
+        {
+          "id": "VATICAN-KLONTZAS-TITUS-ICON-11",
+          "artist": "Georgios Klontzas",
+          "title": "Saint Titus, Bishop of Crete",
+          "url": "https://www.museivaticani.va/content/dam/museivaticani/pdf/collezioni/musei/pinacoteca/sala_icone_en.pdf",
+          "medium": "painted icon/panel, 1562–1608",
+          "role": "EXACT_TITUS_DISCIPLE_OF_PAUL_BISHOP_CRETE",
+          "hold": "Vatican Museums official Room XVIII catalogue item 11 names Titus, notes Latin vestments and signed back. Vatican museum photograph rights not established, not Western oil painting, aesthetic hold."
+        }
+      ]
+    }
+  ],
+  "partialDateResearch": [
+    {
+      "date": "2026-04-22",
+      "leads": [
+        {
+          "id": "CALCOGRAFICA-S-FN14487-CAJO-SOTERO",
+          "artist": "Giuseppe Sforza Perini after Luigi Agricola",
+          "title": "Saints Caius and Soter, Popes and Martyrs",
+          "url": "https://www.calcografica.it/stampe/inventario.php?id=S-FN14487",
+          "medium": "eighteenth-century etching on paper",
+          "scope": "BOTH_FEAST_SAINTS_BUT_NOT_PAINTED_ORIGINAL",
+          "hold": "Historically exact combined iconography, but etching is a PRINT, not a painting; do not close strict painted source coverage."
+        },
+        {
+          "id": "INSR-SOTER-SISTINE-CYCLE",
+          "artist": "Sandro Botticelli and workshop",
+          "title": "Pope Soter in Sistine Chapel Papal Cycle",
+          "url": "https://fototeca.insr.it/scheda-soggetto-fotografico/62b9e644b001da29fb55a485/",
+          "medium": "fresco, c. 1481",
+          "scope": "SOTER_ONLY_OF_TWO",
+          "hold": "Independent painting of one pope but not Caius. Original art could be style-exception; photographic copyright hold."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "leads": [
+        {
+          "id": "MILAN-OSSONA-PANCRAS-1660",
+          "artist": "Giovan Battista da Ossona / Giovan Battista Ferrario (attribution under research)",
+          "title": "Martyrdom of Saint Pancras",
+          "url": "https://www.lombardiabeniculturali.it/fotografie/schede/IMM-3a230-0001891/",
+          "medium": "oil painting, c. 1660 (historical attribution revised)",
+          "scope": "PANCRAS_ONLY_OF_FOUR_BUT_COMPLEMENTS_THREE_SAINT_POMARANCIO",
+          "hold": "Historic silver-gelatin photo belongs to separate archival record; institutional photo rights unknown. Recent scholarship questions Giovan Battista Ossona name. Does not depict Nereus, Achilleus and Domitilla in same original."
+        },
+        {
+          "id": "ZERI-12651-PANCRAS-BAPTISM",
+          "artist": "Bicci di Lorenzo",
+          "title": "Baptism of Saint Pancras",
+          "url": "https://catalogo.fondazionezeri.unibo.it/entry/work/12651/Bicci%20di%20Lorenzo%2C%20Battesimo%20di%20san%20Pancrazio",
+          "medium": "tempera painting on panel, fifteenth century",
+          "scope": "PANCRAS_ONLY_OF_FOUR",
+          "hold": "Alternate independent depiction at Museo Bandini, photo quality and rights unverified; does not complete four-member painting."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "leads": [
+        {
+          "id": "BRERA-0300158485-RUFINA-SECUNDA",
+          "artist": "Giovanni Battista Crespi (Cerano), Pier Francesco Mazzucchelli (Morazzone), Giulio Cesare Procaccini",
+          "title": "The Martyrdom of Saints Rufina and Secunda (Quadro delle tre mani)",
+          "url": "https://pinacotecabrera.org/collezioni/collezione-on-line/il-martirio-delle-sante-rufina-e-seconda-quadro-delle-tre-mani/",
+          "secondaryUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0300158485",
+          "medium": "oil on canvas, 1620–1624, 192×192 cm",
+          "scope": "ROMAN_RUFINA_AND_SECUNDA_ONLY_SEVEN_BROTHERS_ABSENT",
+          "hold": "Important: EXACT Roman Rufina and Secunda, NOT different Seville Justa and Rufina. The seven brothers are not included; historical SevenBrothers.jpg still identity-unverified. Photo rights and original crop pending."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "leads": [
+        {
+          "id": "ZERI-22049-VICTOR-I-ALTARPIECE",
+          "artist": "Nicola Filotesio (Cola dell'Amatrice)",
+          "title": "Madonna and Child with Pope Saint Victor I, Eustace, Andrew, and Cristanziano",
+          "url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/22049/Filotesio%20Nicola%20%28Cola%20dell%27Amatrice%29%2C%20Madonna%20con%20Bambino%20in%20trono%2C%20san%20Vittore%20I%20papa%2C%20sant%27Eustachio%2C%20sant%27Andrea%20e%20san%20Cristanziano",
+          "medium": "painted panel, 1514",
+          "scope": "POPE_VICTOR_I_ONLY_NAZARIUS_CELSUS_PARTIAL_FROM_BATCH6_AND_INNOCENT_I_ABSENT",
+          "hold": "Exact Pope Victor I not St Victor of Milan. Diocesan Museum Ascoli Piceno; still no Innocent I or complete combined feast painting. Art/photo rights unverified."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "leads": [
+        {
+          "id": "ZERI-49491-PETER-DEDICATION-PAINTED-CARTOON",
+          "artist": "Follower of Pietro da Cortona; alternatively attributed to Fabio Cristofani",
+          "title": "Pope Urban VIII Consecrates Saint Peter's Basilica",
+          "url": "https://catalogo.fondazionezeri.unibo.it/entry/work/51994/Berrettini%20Pietro%2C%20Papa%20Urbano%20VIII%20consacra%20la%20basilica%20di%20san%20Pietro",
+          "medium": "painted tapestry cartoon on cardboard, 1671, 305×500 cm",
+          "scope": "ST_PETERS_DEDICATION_ONLY_NO_ST_PAUL_OUTSIDE_WALLS",
+          "hold": "Physical painted preparatory cartoon at Palazzo Barberini inv 2261; photo archives 99432/99433 are reproductions of the same original. No evidence of St Paul's dedication depicted; cannot close joint feast."
+        },
+        {
+          "id": "VATICAN-BARBERINI-TAPESTRY-ST-PETER-DEDICATION",
+          "artist": "Barberini tapestry manufactory",
+          "title": "Urban VIII Dedicates Saint Peter's Basilica",
+          "url": "https://www.vaticannews.va/it/vaticano/news/2026-03/basilica-sanpietro-fabbrica-di-sanpietro-museivaticani-mostra.html",
+          "medium": "woven tapestry, 1671–1673",
+          "scope": "ST_PETERS_DEDICATION_ONLY_AND_NOT_PAINTED_ORIGINAL",
+          "hold": "Different physical art object from Barberini painted cartoon, Vatican Museums reproduction © Governatorato; tapestries are not oil paintings. Does not include St Paul Outside the Walls."
+        }
+      ]
+    }
+  ],
+  "strictGaps": [
+    {
+      "date": "2026-04-22",
+      "principalId": "sancti:04-22:3:r",
+      "title": "Sts. Soter & Caius",
+      "fullPaintingMatch": false,
+      "partialSourceIds": [
+        "CALCOGRAFICA-S-FN14487-CAJO-SOTERO",
+        "INSR-SOTER-SISTINE-CYCLE"
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "principalId": "sancti:05-12:3:r",
+      "title": "Sts. Nereus, Achilleus, Domitilla, & Pancras",
+      "fullPaintingMatch": false,
+      "partialSourceIds": [
+        "MILAN-OSSONA-PANCRAS-1660",
+        "ZERI-12651-PANCRAS-BAPTISM"
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "principalId": "sancti:07-10:3:r",
+      "title": "Seven Holy Brothers and Sts. Rufina & Secunda",
+      "fullPaintingMatch": false,
+      "partialSourceIds": [
+        "BRERA-0300158485-RUFINA-SECUNDA"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "principalId": "sancti:07-28:3:r",
+      "title": "Sts. Nazarius & Celsus, St. Victor I & St. Innocent I",
+      "fullPaintingMatch": false,
+      "partialSourceIds": [
+        "ZERI-22049-VICTOR-I-ALTARPIECE"
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "principalId": "sancti:11-18r:3:w",
+      "title": "Dedication of the Basilicas of Sts. Peter & Paul",
+      "fullPaintingMatch": false,
+      "partialSourceIds": [
+        "ZERI-49491-PETER-DEDICATION-PAINTED-CARTOON",
+        "VATICAN-BARBERINI-TAPESTRY-ST-PETER-DEDICATION"
+      ]
+    }
+  ],
+  "guards": [
+    "Do not auto-accept print, tapestry or sculpture as a painting",
+    "Do not represent multiple separate paintings as a single original depicting the whole multi-saint feast",
+    "Do not equate 22 Jan Vincent of Saragossa with another namesake or Roman Rufina and Secunda with Seville Justa and Rufina",
+    "Sistine pope series photographic material is not source rights certification",
+    "Vatican icon/photo rights are still unverified",
+    "When a new feast has multiple exact named originals, preserve them for user selection and later eligible approved rotation only",
+    "70 prior outside-383 new exact subject research dates remain distinct from 383 canonical original artworks",
+    "All 68 legacy excluded annex artworks remain permanently excluded",
+    "No photo downloaded, no paid licensing request, no owner contact, no new user editorial decisions"
+  ]
+}
