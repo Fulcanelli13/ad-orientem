@@ -23,10 +23,12 @@ try{
  for(const [width,height] of [[390,844],[320,568]]){
   const page=await browser.newPage({viewport:{width,height},isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native&aoMassAccessM1=1",
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoTodayH4=0&aoR17Reader=native&aoMassAccessM1=1",
    {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
-  // Mass is reached from Today, not from a removed permanent ribbon tab.
+  // Exercise the source-owned M1 chooser through its explicit H3 rollback;
+  // canonical H4 Begin Mass intentionally starts the R17 reader directly.
+  // The production H4 path is covered separately by H4/R17 visual acceptance.
   await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:25000});
   await page.locator('.homeScreen [data-home-mass-entry]').click();
   await page.waitForSelector('[data-m1-choice="mass"]',{state:"visible",timeout:25000});
