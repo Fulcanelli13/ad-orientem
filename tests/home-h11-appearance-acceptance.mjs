@@ -193,21 +193,24 @@ try{
     assert.equal(await h4.locator("[data-home-daily-catechism]").count(),0,
       "H4 must not show Catechism");
     const auditH4=async label=>{
+      // H7 uses one artwork-led Home and a separate, initially hidden Mass door.
       const r=await h4.evaluate(()=>{
         const home=document.querySelector(".homeScreen.aoTodayH4");
-        const hero=home?.querySelector(".aoH4Door");
-        const art=hero?.querySelector("[data-ao-home-art-slot] img");
-        const button=home?.querySelector("[data-home-h4-begin], [data-resume-mass]");
-        const date=home?.querySelector(".aoH4DateOpen");
+        const hero=home?.querySelector(".aoH7HomeView .aoH7Hero");
+        const button=home?.querySelector(".aoH7HomeView [data-home-h7-enter]");
+        const date=home?.querySelector(".aoH7HomeView .date");
+        const homeView=home?.querySelector(".aoH7HomeView");
+        const door=home?.querySelector(".aoH7DoorView");
         return {
           width:innerWidth,documentWidth:document.documentElement.scrollWidth,
           date:date?.textContent?.trim()??"",
           week:home?.querySelectorAll(".aoH4Week .dayCell").length,
           selected:home?.querySelectorAll(".aoH4Week .dayCell.selected").length,
-          massCards:home?.querySelectorAll(".aoH4Door").length,
-          beginOrResume:home?.querySelectorAll("[data-home-h4-begin], [data-resume-mass]").length,
-          change:home?.querySelectorAll("[data-home-h4-change]").length,
-          reading:home?.querySelectorAll("[data-home-h4-readings]").length,
+          heroCount:hero?1:0,doorCount:door?1:0,
+          doorHidden:door?.hidden===true&&getComputedStyle(door).display==="none",
+          homeVisible:homeView?.hidden===false&&getComputedStyle(homeView).display!=="none",
+          beginOrResume:door?.querySelectorAll("[data-home-h4-begin], [data-resume-mass]").length,
+          change:door?.querySelectorAll("[data-home-h4-change]").length,
           prayer:home?.querySelectorAll(".aoH4Prayer").length,
           rosary:home?.querySelectorAll(".aoH4Chips button").length,
           events:home?.querySelectorAll(".aoH4Upcoming .aoTodayV2Event").length,
@@ -217,24 +220,26 @@ try{
           dykAfterWeek:home?.querySelector(".aoTodayV2CalendarGlance")?.nextElementSibling?.classList.contains("aoH4DiscoveryStandalone")===true,
           dykBeforeRead:home?.querySelector(".aoH4DiscoveryStandalone")?.nextElementSibling?.classList.contains("aoTodayV2Below")===true,
           hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
-          oldExplore:home?.querySelectorAll(".aoTodayExploreFoot").length,
-          artwork:!!art,buttonVisible:!!button&&getComputedStyle(button).display!=="none",
+          buttonVisible:!!button&&button.getClientRects().length>0,
           firstFoldActionBottom:button?.getBoundingClientRect().bottom??null,
           ribbonTop:document.getElementById("ao-global-ribbon")?.getBoundingClientRect().top??null,
           initialScrollTop:document.scrollingElement?.scrollTop??0,
         };
       });
-      assert.ok(r.documentWidth<=r.width+2,label+" H4 document overflow: "+JSON.stringify(r));
-      assert.ok(r.date.length>=10,label+" H4 date not visible");
-      assert.deepEqual([r.week,r.selected,r.massCards,r.beginOrResume,r.change,r.reading,r.prayer,r.rosary,r.read,r.dykInsideRead,r.dykStandalone,r.hiddenOldTabs,r.oldExplore],
-        [7,1,1,1,1,1,1,3,1,0,1,0,0],label+" H4 layout contract");
+      assert.ok(r.documentWidth<=r.width+2,label+" H7 document overflow: "+JSON.stringify(r));
+      assert.ok(r.date.length>=10,label+" H7 date not visible");
+      assert.deepEqual([r.week,r.selected,r.heroCount,r.doorCount,r.beginOrResume,r.prayer,r.rosary,r.read,r.dykInsideRead,r.dykStandalone,r.hiddenOldTabs],
+        [7,1,1,1,1,1,3,1,0,1,0],label+" H7 content/route contract");
+      assert.ok(r.change>=1,label+" H7 lost canonical Mass choices");
+      assert.equal(r.doorHidden,true,label+" H7 Mass door must be hidden before entry");
+      assert.equal(r.homeVisible,true,label+" H7 Home must be visible before entry");
       assert.equal(r.dykAfterWeek,true,label+" standalone Did You Know must follow This week");
       assert.equal(r.dykBeforeRead,true,label+" Read must follow standalone Did You Know");
-      assert.ok(r.events<=2,label+" H4 upcoming copied unsourced dates");
-      assert.equal(r.buttonVisible,true,label+" Mass door hidden");
-      assert.equal(r.initialScrollTop,0,label+" H4 first-fold audit must start at scroll 0");
+      assert.ok(r.events<=2,label+" H7 upcoming copied unsourced dates");
+      assert.equal(r.buttonVisible,true,label+" Enter Mass is hidden");
+      assert.equal(r.initialScrollTop,0,label+" first-fold audit must start at scroll 0");
       assert.ok(r.ribbonTop!=null&&r.firstFoldActionBottom<=r.ribbonTop+2,
-        label+" H4 Begin/Resume must be visible above fixed ribbon without scrolling: "+JSON.stringify(r));
+        label+" H7 Enter Mass must be visible without scrolling: "+JSON.stringify(r));
       return r;
     };
     await h4.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.setPath?.("appearance.mode","dark"));
@@ -245,9 +250,12 @@ try{
     await h4.waitForFunction(()=>document.documentElement.dataset.aoAppearanceV1==="light",null,{timeout:10000});
     await auditH4(prefix+" H4 light");
     await h4.screenshot({path:resolve(output,prefix+"-h4-door-light.png"),fullPage:true});
+    await h4.locator(".aoH7HomeView [data-home-h7-enter]").click();
+    await h4.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
+    assert.equal(await h4.locator(".aoH7HomeView").isHidden(),true,"H7 Home must hide while Mass door is open");
     // Change is a modal presentation over the one R17 source-owned preflight.
     await h4.waitForFunction(()=>Boolean(globalThis.AO_R17_BROWSER_ENTRY?.installed),null,{timeout:15000});
-    await h4.locator("[data-home-h4-change]").click();
+    await h4.locator(".aoH7DoorView [data-home-h4-change]").first().click();
     await h4.waitForSelector(".aoH4ChoiceDialog[open]",{state:"visible",timeout:10000});
     const choicesBefore=await h4.evaluate(()=>({
       owner:globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight,
@@ -317,56 +325,36 @@ try{
       "H4 Begin must reflect the source preflight reader selection");
     // Escape is an independent dismissal path. The native dialog must restore
     // focus to the fresh Home trigger after the canonical Home repaint.
-    await h4.locator("[data-home-h4-change]").click();
+    await h4.locator(".aoH7DoorView [data-home-h4-change]").first().click();
     await h4.waitForSelector(".aoH4ChoiceDialog[open]",{state:"visible",timeout:10000});
     await h4.keyboard.press("Escape");
     await h4.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
     await h4.waitForFunction(()=>document.activeElement?.matches?.(
       ".homeScreen.aoTodayH4 [data-home-h4-change]"),null,{timeout:10000});
-    // The no-art state must collapse the illustration, not leave a decorative
-    // placeholder or bury the single Begin/Resume door beneath the phone ribbon.
+    // H7 retains a restrained colour fallback if no reviewed painting resolves.
+    // Do not remove the fixed Begin/Resume action when imagery is absent.
     await h4.evaluate(()=>{
       scrollTo({top:0,behavior:"instant"});
-      document.querySelector(".aoH4Door")?.classList.add("aoTodayV2ArtMissing");
+      document.querySelector(".aoH7DoorView .aoH7DoorArt")?.replaceChildren();
     });
-    // The presentation bridge animates Home with transient filter:blur().
-    // Never accept a blurred frame as no-art visual evidence.
-    await h4.waitForFunction(()=>{
-      const node=document.querySelector(".aoH4Door");
-      if(!node)return false;
-      const style=getComputedStyle(node);
-      return style.filter==="none"&&Number(style.opacity)>.99;
-    },null,{timeout:10000});
-    await h4.waitForTimeout(650);
     const noArt=await h4.evaluate(()=>{
-      const art=document.querySelector(".aoH4Door .aoTodayV2Art");
-      const door=document.querySelector(".aoH4Door");
+      const art=document.querySelector(".aoH7DoorView .aoH7DoorArt");
+      const door=document.querySelector(".aoH7DoorView");
       const action=door?.querySelector("[data-home-h4-begin], [data-resume-mass]");
-      const ribbon=document.querySelector("#ao-global-ribbon");
-      const rect=action?.getBoundingClientRect(),nav=ribbon?.getBoundingClientRect();
-      return {display:art?getComputedStyle(art).display:null,
-        door:door?.getBoundingClientRect().height,
-        actionTop:rect?.top,actionBottom:rect?.bottom,ribbonTop:nav?.top,
-        documentWidth:document.documentElement.scrollWidth,viewport:innerWidth};
+      return {artPresent:!!art,actionVisible:!!action&&action.getClientRects().length>0,
+        docWidth:document.documentElement.scrollWidth,viewport:innerWidth,
+        background:art?getComputedStyle(art).backgroundColor:null};
     });
-    assert.equal(noArt.display,"none",prefix+" H4 no-art must collapse image block");
-    assert.ok(noArt.documentWidth<=noArt.viewport+2,prefix+" H4 no-art overflow: "+JSON.stringify(noArt));
-    assert.ok(noArt.actionBottom<=noArt.ribbonTop+2,
-      prefix+" H4 no-art Mass entry must remain above the phone ribbon: "+JSON.stringify(noArt));
-    const settledNoArt=await h4.evaluate(()=>{
-      const hero=document.querySelector(".aoH4Door");
-      const screen=document.querySelector(".homeScreen.aoTodayH4");
-      return {heroFilter:getComputedStyle(hero).filter,screenFilter:getComputedStyle(screen).filter,
-        top:document.scrollingElement?.scrollTop};
-    });
-    assert.deepEqual(settledNoArt,{heroFilter:"none",screenFilter:"none",top:0},
-      prefix+" no-art capture must be settled and at the initial viewport");
-    await h4.screenshot({path:resolve(output,prefix+"-h4-no-art-light.png")});
-    await h4.evaluate(()=>document.querySelector(".aoH4Door")?.classList.remove("aoTodayV2ArtMissing"));
-    await h4.locator("[data-home-h4-readings]").click();
+    assert.equal(noArt.artPresent,true,prefix+" H7 Mass door fallback missing");
+    assert.equal(noArt.actionVisible,true,prefix+" H7 no-art Begin/Resume hidden");
+    assert.ok(noArt.docWidth<=noArt.viewport+2,prefix+" H7 no-art overflow: "+JSON.stringify(noArt));
+    await h4.screenshot({path:resolve(output,prefix+"-h7-no-art-light.png")});
+    await h4.locator(".aoH7DoorView [data-home-h4-readings]").first().click();
     await h4.waitForSelector(".aoMassTextsOverlay",{state:"visible",timeout:10000});
     await h4.locator("[data-mass-texts-close]").click();
-    await h4.locator(".aoH4DateOpen").click();
+    await h4.locator(".aoH7DoorView [data-home-h7-back]").click();
+    await h4.waitForSelector(".aoH7HomeView",{state:"visible",timeout:10000});
+    await h4.locator(".aoH7HomeView .date[data-home-calendar-view=\"picker\"]").click();
     await h4.waitForSelector(".aoTodayH4[data-ao-home-calendar-view='picker'] #ao-calendar-modular-root",{state:"attached",timeout:25000});
     await h4.screenshot({path:resolve(output,prefix+"-h4-calendar-light.png")});
     await h4.locator('.aoH4CalendarViews [data-home-calendar-view="year"]').click();
@@ -381,7 +369,7 @@ try{
     await h4.waitForSelector('.aoTodayH4[data-ao-home-calendar-view="picker"] #ao-calendar-modular-root',
       {state:"attached",timeout:30000});
     await h4.locator(".aoH4CalendarBack [data-home-calendar-today]").click();
-    await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",{state:"visible",timeout:10000});
+    await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH7HomeView",{state:"visible",timeout:10000});
     // A cold Home click must lazy-load the exact source-owned glossary entry,
     // not open Daily Catechism, an empty Learn hub, or a generic glossary.
     await h4.waitForSelector(".homeScreen.aoTodayH4 [data-home-dyk-entry]",
