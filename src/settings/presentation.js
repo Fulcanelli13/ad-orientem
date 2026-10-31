@@ -163,34 +163,49 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       row(L("Forget remembered choices","Effacer les choix mémorisés"),
         L("Restore the ordinary Mass defaults above","Rétablir les préférences habituelles ci-dessus"),
         "",'data-pref-clear-today=""')):"";
-    return shell(L("Mass","Messe"),
+    return shell(L("Holy Mass","Sainte Messe"),
       section(L("MASS","MESSE"),
         seg(L("How I usually follow Mass","Ma façon habituelle de suivre la Messe"),"mass.defaultExperience",[["simple","Simple","Simple"],["missal","Missal","Missel"],["live","LIVE","LIVE"]])+
-        seg(L("Usual Mass form","Forme habituelle de Messe"),"mass.defaultForm",[["sung","Sung","Chantée"],["low","Low","Basse"]])+
+        seg(L("Ceremony","Cérémonie"),"mass.defaultForm",[["low","Low","Basse"],["sung","Sung","Chantée"],["sung_incense","Sung with incense","Chantée avec encens"],["solemn","Solemn","Solennelle"]])+
         seg(L("Participation during Mass","Participation pendant la Messe"),"mass.responseEmphasis",[["quiet","Mostly quiet","Plutôt silencieux"],["responses","Join responses","Participer aux réponses"]])+
         toggle(L("Remember my place in Mass","Mémoriser ma place dans la Messe"),"","mass.resumeEnabled")+
         toggle(L("Offer thanksgiving after Mass","Proposer l’action de grâces après la Messe"),"","mass.offerThanksgivingAfterMass")+
         routeRow(L("Usual church","Église habituelle"),church,"/settings/local-customs")+
-        seg(L("Preparation length","Durée de la préparation"),"mass.preparationDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]])+
-        seg(L("Thanksgiving length","Durée de l’action de grâces"),"mass.thanksgivingDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]]))+
+        seg(L("Preparation before Mass","Préparation avant la Messe"),"mass.preparationDepth",[["none","None","Aucune"],["standard","Brief","Brève"],["full","Full","Complète"]])+
+        seg(L("Thanksgiving after Mass","Action de grâces après la Messe"),"mass.thanksgivingDepth",[["none","None","Aucune"],["standard","Brief","Brève"],["full","Full","Complète"]]))+
       remembered+
-      note(`<strong>${esc(L("Future sessions only","Pour les sessions futures seulement"))}</strong><br>${esc(L("These choices are used when you start a new Mass. They will not change a Mass already in progress.","Ces choix sont utilisés lorsque vous commencez une nouvelle Messe. Ils ne modifient pas une Messe déjà en cours."))}`));
+      note(`<strong>${esc(L("Future sessions only","Pour les sessions futures seulement"))}</strong><br>${esc(L("These are the same choices as Your Mass. They apply from the next Mass and will not change a Mass already in progress.","Ce sont les mêmes choix que Votre Messe. Ils s’appliquent à la prochaine Messe sans modifier celle qui est en cours."))}`));
   }
   if(vm.route==="/settings/prayer"){
-    return shell(L("Prayer & Devotions","Prière & dévotions"),
-      section(L("PRAYER","PRIÈRE"),
-        seg(L("Prayer mode","Mode de prière"),"prayer.recitationMode",[["individual","Individual","Individuelle"],["group","In a group","En groupe"]]))+
-      section(L("ROSARY","ROSAIRE"),
+    const fam=[
+      ["I",L("Hours","Heures"),"Angelus · morning · evening",
+        seg(L("Angelus or Regina Cæli","Angélus ou Regina Cæli"),"prayer.angelus.seasonalForm",[["auto","By the season","Selon le temps"],["angelus","Angelus","Angélus"],["regina_caeli","Regina Cæli","Regina Cæli"]])+
+        toggle(L("Concluding prayers","Prières finales"),"","prayer.angelus.traditionalConclusion")],
+      ["II",L("Beads","Chapelets"),L("Rosary and chaplets","Rosaire et chapelets"),
+        toggle(L("A verse before each Ave","Un verset avant chaque Ave"),"","prayer.rosary.verseBeforeAve")+
+        toggle(L("Scripture before each mystery","Écriture avant chaque mystère"),"","prayer.rosary.scriptureCues")+
         toggle(L("Fatima prayer","Prière de Fatima"),"","prayer.rosary.fatimaPrayer")+
-        toggle(L("Scripture passages","Passages de l’Écriture"),"","prayer.rosary.scriptureCues")+
-        toggle(L("Commentary","Commentaire"),"","prayer.rosary.commentary")+
-        select(L("Sacred artwork","Art sacré"),"","prayer.rosary.sacredArt",[["inherit","Use main artwork setting","Utiliser le réglage principal"],["full","Full","Complet"],["subtle","Subtle","Discret"],["off","Off","Désactivé"]]))+
-      section(L("STATIONS","CHEMIN DE CROIX"),
-        seg(L("Mode","Mode"),"prayer.stations.mode",[["guided","Guided","Guidé"],["simple","Simple","Simple"]])+
-        toggle("Stabat Mater",L("Include between stations","Inclure entre les stations"),"prayer.stations.stabatMater"))+
-      section(L("ANGELUS","ANGÉLUS"),
-        seg(L("Seasonal form","Forme saisonnière"),"prayer.angelus.seasonalForm",[["auto","Automatic","Automatique"],["angelus","Angelus","Angélus"],["regina_caeli","Regina Cæli","Regina Cæli"]])+
-        toggle(L("Include the traditional concluding prayers","Inclure les prières conclusives traditionnelles"),"","prayer.angelus.traditionalConclusion")));
+        toggle(L("Commentary","Commentaire"),"","prayer.rosary.commentary")],
+      ["III",L("Ways","Chemins"),L("Stations · Seven Last Words","Chemin de Croix · Sept Paroles"),
+        seg(L("Stations reading","Lecture du Chemin de Croix"),"prayer.stations.mode",[["guided","Guided","Guidée"],["simple","Simple","Simple"]])+
+        toggle("Stabat Mater",L("Between stations","Entre les stations"),"prayer.stations.stabatMater")],
+      ["IV",L("Novenas","Neuvaines"),L("Novenas and programmes","Neuvaines et programmes"),
+        seg(L("Show each day as","Présenter chaque jour en"),"prayer.novenas.layout",[["stages","Stages","Étapes"],["page","One page","Une page"]])],
+      ["V",L("Litanies","Litanies"),L("Litanies and psalms","Litanies et psaumes"),
+        seg(L("The response","La réponse"),"prayer.litanies.responsePlacement",[["bar","In the choir bar","Dans le chœur"],["inline","After each line","Après chaque ligne"]])],
+      ["VI",L("Eucharistic","Eucharistie"),L("Visits and adoration","Visites et adoration"),
+        seg(L("Silent time offered","Temps de silence proposé"),"prayer.eucharistic.silentMinutes",[["5","5 min","5 min"],["10","10 min","10 min"],["15","15 min","15 min"],["30","30 min","30 min"]])],
+      ["VII",L("Rites","Rites"),L("Benediction · Confession","Bénédiction · Confession"),
+        seg(L("Rite text","Texte du rite"),"prayer.rites.textLanguage",[["both","Latin with translation","Latin et traduction"],["en","Translation only","Traduction uniquement"]])],
+      ["VIII",L("The dead","Défunts"),L("Memento and intercessions","Memento et intercessions"),
+        routeRow(L("Your names","Vos intentions"),L("Manage saved names under Your data","Gérer les noms enregistrés dans Vos données"),"/settings/privacy-data")],
+      ["IX",L("Essentials","Essentiels"),L("The holy cards","Les cartes de prière"),
+        seg(L("Plates on the cards","Peintures sur les cartes"),"prayer.essentials.artRotation",[["daily","Change daily","Changer chaque jour"],["fixed","Keep one","Garder la même"]])]
+    ];
+    return shell(L("Prayer","Prière"),
+      note(esc(L("All nine prayer families appear here. Options not yet connected to a particular prayer reader are saved without changing its sourced text.","Les neuf familles de prières sont réunies ici. Les choix pas encore reliés à un lecteur sont enregistrés sans modifier ses textes de source.")))+
+      fam.map(([n,t,desc,body],i)=>'<div class="aoPrefFamily"><button type="button" data-pref-family="'+i+'" aria-expanded="'+(i===familyOpen)+'"><span class="n">'+n+'</span><span class="t">'+esc(t)+'<small>'+esc(desc)+'</small></span><span aria-hidden="true">'+(i===familyOpen?"⌄":"›")+'</span></button>'+
+        (i===familyOpen?'<div class="aoPrefFamilyBody">'+body+'</div>':"")+'</div>').join(""));
   }
   if(vm.route==="/settings/local-customs"){
     return shell(L("Local Church & Customs","Église locale & usages"),
