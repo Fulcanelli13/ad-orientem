@@ -390,6 +390,40 @@
         "source_url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1"
       },
       "note": "Concrete diocesan 2026 witness"
+    },
+    {
+      "id": "DYK-H04-P-017",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "At Altavilla's Loreto shrine, Pitrè recorded ex-votos shaped like wax heads, hearts and eyes, alongside painted tablets and pilgrims' long braids of hair.",
+        "fr": "Au sanctuaire de Lorette d'Altavilla, Pitrè a relevé des ex-voto en forme de têtes, de cœurs et d'yeux en cire, à côté de tableaux peints et de longues tresses de cheveux offertes par les pèlerins."
+      },
+      "source": {
+        "printed_pages": [
+          90
+        ],
+        "pdf_page_1based": [
+          152
+        ]
+      },
+      "note": "Particular wax shapes and hair braids attested in prior original OCR, image still uncertified."
+    },
+    {
+      "id": "DYK-H04-P-111",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "During Saint Angelo's feast at Licata, Pitrè described a musical oratorio performed in church about the martyrdom of the saint, with poetry and music composed by local artists.",
+        "fr": "Pour la fête de saint Ange à Licata, Pitrè décrivait un oratorio musical joué à l'église sur le martyre du saint, avec des vers et une musique composés par des artistes du lieu."
+      },
+      "source": {
+        "printed_pages": [
+          416
+        ],
+        "pdf_page_1based": [
+          474
+        ]
+      },
+      "note": "Source's unique narrative and local artistic authorship; Italian OCR page checked in prior research, image not new."
     }
   ],
   "original_folio_direct_checks": [
@@ -822,7 +856,7 @@
     "original_sample_unchanged_until_overlay": 50,
     "post_repair_review_sample": 50,
     "original_source_page_checks_this_pass": 27,
-    "correction_actions": 19,
+    "correction_actions": 21,
     "retired_glossary_records": 1,
     "specific_replacement_records": 1,
     "source_image_corroboration_independent_historiography": false,
@@ -830,7 +864,7 @@
     "all_50_finally_approved": false,
     "new_publications": 0,
     "additional_weak_but_previously_unflagged_discoveries_rewritten": 7,
-    "other_web_source_reviews": 6
+    "other_web_source_reviews": 7
   },
   "other_verified_source_checks": [
     {
@@ -879,6 +913,134 @@
       "source": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
       "locator": "1930 near Kraków",
       "notes": "PDF intermittent availability; actual photo caption not independently checked",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-047",
+      "result": "DIRECT_1962_RITUS_SERVANDUS_SCREEN_CONFIRMED",
+      "source": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "method": "CURRENT_TURN_ORIGINAL_RITUS_SERVANDUS_PDF_SCREENSHOT",
+      "locator": "IX.2, printed 16 / PDF zero-index 15",
+      "notes": "Canon after Consecration contains Memento etiam and silent naming of departed, distinct from Memento for the living earlier",
+      "publication_authorized": false
+    }
+  ],
+  "pitre_prior_source_evidence_reconciled": [
+    {
+      "id": "DYK-UM01-022",
+      "source_id": "PIT1900-IT-026",
+      "printed_page": 448,
+      "pdf_page_1based": 506,
+      "method": "CANICATTINI_FAMILY_TABLE_PRIOR_SCAN",
+      "note": "Earlier Pitrè 1900 wave01 canonical action; Italian text anchor of adult man, woman, child; scan checked in inherited research, not now",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-017",
+      "source_id": "PIT1900-W05-OBS-017",
+      "printed_page": 90,
+      "pdf_page_1based": 152,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p90 names wax ex-voto heads, hearts, eyes plus braids of hair. Prior study flags image not individually certified.",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-030",
+      "source_id": "PIT1900-IT-024",
+      "printed_page": 447,
+      "pdf_page_1based": 505,
+      "method": "ORIGINAL_OCR_QUOTED_PRIOR_FACSIMILE_CHECK",
+      "note": "Canicattini St Joseph 19 March and first Sunday September, OCR action and prior original page check.",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-061",
+      "source_id": "PIT1900-W05-OBS-061",
+      "printed_page": 302,
+      "pdf_page_1based": 360,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p302 shows Saint Conrad reliquary urn between rows of lit votive structures and kneeling devotees; drummer is earlier passage not independently checked now.",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-042",
+      "source_id": "PIT1900-NEW-082",
+      "printed_page": 125,
+      "pdf_page_1based": 187,
+      "method": "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW",
+      "note": "Pitrè first edition OCR and earlier original-page contact sheet checked, not independently redone now",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-111",
+      "source_id": "PIT1900-W05-OBS-111",
+      "printed_page": 416,
+      "pdf_page_1based": 474,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p416: in-church musical oratorio on Saint Angelo's martyrdom with local composer and poet",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-030",
+      "source_id": "PIT1900-NEW-026",
+      "printed_page": 36,
+      "pdf_page_1based": 98,
+      "method": "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW",
+      "note": "Pitrè p36 municipal master mason uses bell to signal halts; earlier page image checked",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-119",
+      "source_id": "PIT1900-W05-OBS-119",
+      "printed_page": 424,
+      "pdf_page_1based": 482,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p424 states second Sunday May in 1900 historical account; now date should not be projected to current year",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-050",
+      "source_id": "PIT1900-NEW-110",
+      "printed_page": 135,
+      "pdf_page_1based": 197,
+      "method": "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW",
+      "note": "Pitrè first edition p135 reports banner sent by emigrants in America for St Cyrus procession; original image contact sheet prior-researched",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
       "publication_authorized": false
     }
   ]
