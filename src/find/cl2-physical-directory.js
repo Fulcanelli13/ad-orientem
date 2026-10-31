@@ -43,6 +43,18 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-2181DD7D9F32":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-370B93FA6BC",name:"Capilla de la Adoración Permanente",country:"ES",addressNeedle:"Albacete",placeId:null,
+  lat:38.992969,lng:-1.851937,sourceRef:"independent:iglesiacercademi:oratorio-carmen-albacete",sourceUrl:"https://www.iglesiacercademi.com/albacete/oratorio-virgen-del-carmen/",
+  correctedAddress:"Oratorio de la Virgen del Carmen, Plaza Mateo Villora 2, 02001 Albacete, Spain",precision:"site",reviewScope:"CARMELITE_THIRD_ORDER_ORATORY_DIOCESAN_ADORATION_NOT_OLD_OCTAVIO_CUARTERO",
+  evidence:Object.freeze(["https://www.cofradiasyhermandades.es/fichadiocesis.php?dd=3","https://www.catholicchurchtimes.com/church/oratorio-de-la-virgen-del-carmen-albacete-1d558f9b-08c0-438a-a5b4-82410db44de5"]),
+ }),
+ "RG-97D731A26655":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-8AB74ADAA7D6",name:"Kaplica Najświętszego Serca Jezusowego w Szpitalu Powiatowym",country:"PL",addressNeedle:"Słowackiego 2",placeId:null,
+  lat:52.3251,lng:17.5734,sourceRef:"address:sprawdzadres:wrzesnia-slowackiego-2",sourceUrl:"https://sprawdzadres.pl/wielkopolskie/wrzesnia/slowackiego/2",
+  correctedAddress:"Szpital Powiatowy, ul. Słowackiego 2, 62-300 Września, Poland; chapel on ground floor, left of main hall",precision:"address",reviewScope:"HOSPITAL_BUILDING_NOT_INTERIOR_CHAPEL_POSITION",
+  evidence:Object.freeze(["https://szpitalwrzesnia.pl/strona/index.php/szpital/opieka-duszpasterska","https://gniezno.franciszkanie.pl/kancelaria-gn/srodowisko-tradycji-katolickiej/"]),
+ }),
  "RG-19BD1D3D4E73":Object.freeze({
   sourceId:"AO-B39-LOC-HU-CEAC77F2EE49",name:"Árpád-házi Szent Erzsébet Ferences-Templom",country:"HU",addressNeedle:"Szombathely",placeId:null,
   lat:47.23139,lng:16.62503,sourceRef:"miserend:1328",sourceUrl:"https://miserend.hu/templom/1328",
@@ -735,7 +747,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
