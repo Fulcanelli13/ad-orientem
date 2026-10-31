@@ -26,7 +26,11 @@
     "newResearchApproved": 0,
     "curatedFinalGaps": 23,
     "curatedCandidatePlacementProposals": 39,
-    "uniqueNewObjectIdentitiesBeyondLegacy": "NOT_CLAIMED_FROM_PLACEMENT_EDGES"
+    "uniqueNewObjectIdentitiesBeyondLegacy": "NOT_CLAIMED_FROM_PLACEMENT_EDGES",
+    "onePerPositionProvisionalAssignments": 267,
+    "awaitingFinalUserArtworkReview": 23,
+    "currentSourceApprovedOrInheritedArtSlotCount": 244,
+    "newArtworkApprovedByThisResearch": 0
   },
   "hardRules": [
     "The collection contains all historical source research edges, grouped with source IDs; excluded weak/rejected edges remain accessible for audit only, never automatically suggested",
@@ -37,7 +41,8 @@
     "Keep exact original-artwork identity distinct from artist/title duplicates; any several original source IDs require independent attribution/photo confirmation",
     "Source-page URL does not imply archive downloaded; image native quality, reproduction rights, framing, 320/390px cropping and renderer binding remain independently pending",
     "Generic family doors can rotate from approved child-route art; no generic-door image acquisition needed",
-    "No fees, paid storage, copyright-owner contact, live reader changes, or new art approval in this PR"
+    "No fees, paid storage, copyright-owner contact, live reader changes, or new art approval in this PR",
+    "There is one provisional assignment entry for each of 267 slots, but 23 entries are NOT user approved: never confuse completeness of candidate coverage with artistic approval or production release"
   ],
   "shards": [
     {
@@ -138,5 +143,8 @@
     "Improve 866px Ludovico Carracci All Souls hero native image",
     "Check all native artwork crop/frame/color quality and usage rights",
     "No public artwork changes until separate reviewed release and UI regression"
-  ]
+  ],
+  "sources": {
+    "onePerPositionProvisional": "data/prayer/artwork-editorial-20261031/provisional-one-choice-per-267-art-position.v1.json"
+  }
 }
