@@ -588,7 +588,7 @@ function tlmFilters(vm){
     html+='</div>';
     if(other.length){
       html+='<details class="aoTlmMoreInstitutes"><summary>'+
-        esc(L(vm.language,"More institutes","Autres instituts"))+' ('+other.length+')</summary>'+
+        esc(L(vm.language,"Other communities","Autres communautés"))+' ('+other.length+')</summary>'+
         '<div class="aoFindAffiliations">';
       for(const id of other)html+=tlmInstituteButton(id,aff,vm.language);
       html+='</div></details>';

@@ -117,6 +117,27 @@ for(const view of ["list","map"]){
   assert.doesNotMatch(html,/data-find-affiliation="IMBC"/,"Do not promote a research-only classification into published venue filters");
 }
 
+// Institute filter stays compact for a 320px phone; community names are
+// legible while stable source group codes are retained for search/filtering.
+for(const lang of ["en","fr"]){
+ const items=["FSSP","CANONS_ST_JOHN_CANTIUS","BENEDICTINE","SSPX_SISTERS"].map((id,j)=>({
+  kind:"TLM_VENUE",item_id:"test:"+j,source_id:"test:"+j,lens:"tlm",
+  title:"Test venue "+j,community_id:id,preliminary_group:"ROME",
+  search_text:"test",geo:null,map_publishable:false,source_links:[],
+ }));
+ const html=renderExploreToString(buildExploreViewModel({
+  lens:"tlm",items,view:"list",filters:{affiliations:[],directoryGroup:"ALL"},language:lang,
+ }));
+ assert.match(html,/class="aoTlmMoreInstitutes"/);
+ assert.match(html,/data-find-affiliation="CANONS_ST_JOHN_CANTIUS"/);
+ assert.match(html,/data-find-affiliation="BENEDICTINE"/);
+ assert.match(html,/data-find-affiliation="SSPX_SISTERS"/);
+ assert.doesNotMatch(html,/>CANONS_ST_JOHN_CANTIUS</);
+ assert.doesNotMatch(html,/>SSPX_SISTERS</);
+ assert.match(html,lang==="fr"?/Autres communautés/:/Other communities/);
+ assert.match(html,lang==="fr"?/Bénédictins/:/Benedictines/);
+ assert.match(html,lang==="fr"?/Chanoines de Saint-Jean-de-Cantius/:/Canons of St John Cantius/);
+}
 // Image load and cross-origin failures must not prevent clicking original markers.
 const loaded=new Map();
 class GoodImage{

@@ -1,13 +1,18 @@
 import assert from "node:assert/strict";
 import { countryCodeFromText } from "../tools/directory/lib/country-codes.mjs";
 import { parseFsspDirectoryHtml, buildFsspDataset } from "../tools/directory/import-fssp.mjs";
-import { parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
+import { ICKSP_US_URL, ICKSP_INTL_URL, parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
 import { discoverIbpIndex, buildIbpDataset, mergeIbpIndexWitness } from "../tools/directory/import-ibp.mjs";
 import { phoneCandidates } from "../tools/directory/lib/html-source-utils.mjs";
 
 assert.equal(countryCodeFromText("75002 Paris - France"),"FR");
 assert.equal(countryCodeFromText("2049 - Australia"),"AU");
 assert.equal(countryCodeFromText("Mauritius"),"MU");
+assert.equal(new URL(ICKSP_US_URL).hostname,"institute-christ-king.org",
+  "ICKSP index URL must remain a declared official origin, not a swallowed comment or defunct alias");
+assert.equal(new URL(ICKSP_INTL_URL).hostname,new URL(ICKSP_US_URL).hostname,
+  "Both independent source paths must use the same official domain");
+
 
 const fsspHtml=`
 <table>
