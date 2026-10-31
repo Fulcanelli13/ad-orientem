@@ -6,7 +6,7 @@
   "counts": {
     "new_site_pins": 67,
     "refined_existing_site_pins": 16,
-    "corrected_existing_site_pins": 13
+    "corrected_existing_site_pins": 16
   },
   "pins": [
     {
@@ -1063,6 +1063,39 @@
       "source_ref": "independent:st-thomas-ann-arbor-building",
       "source_url": "https://en.wikipedia.org/wiki/St._Thomas_the_Apostle_Catholic_Church_(Ann_Arbor,_Michigan)",
       "review_scope": "ANN_ARBOR_HISTORIC_PARISH_CHURCH_NOT_SCHOOL_OR_OFFICE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-E3F4A8F02E37",
+      "source_id": "AO-AMER-R27-US-10-14",
+      "name": "Most Holy Trinity",
+      "lat": 33.47143,
+      "lon": -81.96676,
+      "source_ref": "osm:way:385944485",
+      "source_url": "https://www.openstreetmap.org/way/385944485",
+      "review_scope": "MOST_HOLY_TRINITY_CATHOLIC_CHURCH_BUILDING_NOT_CEMETERY_OR_BELL_AUDITORIUM",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-84D250B1CFB3",
+      "source_id": "AO-AMER-R28-US-22-01",
+      "name": "Saint Paul the Apostle Catholic Church",
+      "lat": 40.90982,
+      "lon": -73.87986,
+      "source_ref": "osm:way:222072165",
+      "source_url": "https://www.openstreetmap.org/way/222072165",
+      "review_scope": "SAINT_PAUL_YONKERS_CATHOLIC_CHURCH_BUILDING_NOT_ADJACENT_SCHOOL",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-ABD010C7A5D7",
+      "source_id": "AO-AMER-R26-US-02-05",
+      "name": "Basilica of St Mary",
+      "lat": 34.232194,
+      "lon": -77.943306,
+      "source_ref": "independent:basilica-shrine-wilmington-building",
+      "source_url": "https://en.wikipedia.org/wiki/Basilica_Shrine_of_St._Mary_(Wilmington,_North_Carolina)",
+      "review_scope": "BASILICA_SHRINE_WILMINGTON_HISTORIC_CHURCH_NOT_ADJACENT_SCHOOL",
       "place_id": null
     }
   ]

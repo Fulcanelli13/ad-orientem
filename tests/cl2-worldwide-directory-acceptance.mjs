@@ -34,10 +34,10 @@ assert.equal(diocesanQuality.counts.cl2_source_labelled_diocesan,584);
 assert.equal(diocesanQuality.counts.additional_b91_diocesan,3);
 assert.equal(diocesanQuality.counts.mapped,583);
 assert.equal(diocesanQuality.counts.missing,4);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,513);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,67);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,510);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,70);
 assert.equal(diocesanQuality.counts.by_coordinate_origin.B91_PUBLISHED_PROVISIONAL,3);
-assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,445);
+assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,442);
 const diocesanQualityByGroup=new Map(diocesanQuality.records.map(r=>[r.physical_group_id,r]));
 const blockedCoords=read("data/directory/research/diocesan-coordinate-blockers-20261031.v1.json");
 assert.equal(blockedCoords.items.length,4);
@@ -66,8 +66,8 @@ for(const row of diocesanQuality.records){
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:13});
-assert.equal(photoPins.pins.length,96);
+assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:16});
+assert.equal(photoPins.pins.length,99);
 assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,86);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
@@ -128,7 +128,7 @@ const raritanGate=diocesanQualityByGroup.get("RG-18659A3C6ECE");
 assert.equal(raritanGate.photo_gate,"OPERATOR_EXCLUDED");
 assert.equal(raritanGate.operator_scope,"ORATORY_OF_ST_PHILIP_NERI_PASTORAL_CARE_CONFIRMED");
 assert.ok(raritanGate.operator_evidence.every(url=>url.startsWith("https://")));
-assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,5);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,14);
 for(const [id,lat,lng,ref,scope] of [["RG-3935C183A2BA",40.31467,-79.3817,"osm:way:432365179","HOLY_FAMILY_LATROBE_CHURCH_BUILDING_NOT_NEIGHBORING_PARISH"],["RG-7A75E8D68125",37.46075,-122.18033,"osm:way:114158255","NATIVITY_MENLO_PARK_HISTORIC_CHURCH_NOT_RECTORY"],["RG-DB7556C0C980",36.17539,-86.79166,"osm:way:893977074","ASSUMPTION_NASHVILLE_CHURCH_BUILDING_NOT_OFFICE"],["RG-9CF80257612A",41.83575,-87.65242,"osm:way:210167509","PERPETUAL_HELP_CHICAGO_PARISH_CHURCH_NOT_SCHOOL"],["RG-BE23723D6B4A",45.44299,10.9953,"osm:way:138811441","VERONA_SAN_GIOVANNI_IN_FORO_CHURCH_NOT_ANOTHER_PARISH"],["RG-63BC2CF66C4B",45.539346,10.226049,"independent:outdooractive-san-zeno-brescia","BRESCIA_SAN_ZENO_AL_FORO_CHURCH_NOT_ROMAN_FORUM"],["RG-0AD2B2092E4E",42.285056,-83.741389,"independent:st-thomas-ann-arbor-building","ANN_ARBOR_HISTORIC_PARISH_CHURCH_NOT_SCHOOL_OR_OFFICE"]]){
  const item=world.find(x=>x.physical_group_id===id),q=diocesanQualityByGroup.get(id),pin=photoPins.pins.find(p=>p.physical_group_id===id);
  assert.ok(item&&q&&pin,"Reviewed site must have a matching source-owned runtime church");
@@ -145,7 +145,7 @@ for(const [id,scope] of [["RG-B95EC4107AE0","CINCINNATI_ORATORY_OLD_ST_MARY_MINI
  assert.equal(q.operator_scope,scope);
  assert.equal(q.photo_research_started,false);
 }
-assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,13);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,14);
 for(const [id,scope] of [["RG-04C900D93BC2","BOURNEMOUTH_ORATORY_CONGREGATION_MINISTRY"],["RG-A39E87B5A30C","LONDON_ORATORY_CONGREGATION_CHURCH"],["RG-C3C6FBC2EB32","HOLY_LAND_FRANCISCAN_FRIARS_MONASTERY"],["RG-CCD4ECF228D3","ST_ANTHONY_FRANCISCAN_FRIARS_MONASTERY"],["RG-D108C0D7C168","DISCALCED_CARMELITE_NUNS_INFANT_JESUS_OF_PRAGUE"],["RG-DCA9FF61B20D","BENEDICTINES_OF_MARY_OUR_LADY_OF_EPHESUS_ABBEY"]]){
  const row=diocesanQualityByGroup.get(id);
  assert.equal(row.photo_gate,"OPERATOR_EXCLUDED");
@@ -154,6 +154,17 @@ for(const [id,scope] of [["RG-04C900D93BC2","BOURNEMOUTH_ORATORY_CONGREGATION_MI
  assert.equal(row.photo_research_started,false);
 }
 assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_REQUIRES_REVIEW,13);
+for(const [id,lat,lng,ref,scope] of [["RG-E3F4A8F02E37",33.47143,-81.96676,"osm:way:385944485","MOST_HOLY_TRINITY_CATHOLIC_CHURCH_BUILDING_NOT_CEMETERY_OR_BELL_AUDITORIUM"],["RG-84D250B1CFB3",40.90982,-73.87986,"osm:way:222072165","SAINT_PAUL_YONKERS_CATHOLIC_CHURCH_BUILDING_NOT_ADJACENT_SCHOOL"],["RG-ABD010C7A5D7",34.232194,-77.943306,"independent:basilica-shrine-wilmington-building","BASILICA_SHRINE_WILMINGTON_HISTORIC_CHURCH_NOT_ADJACENT_SCHOOL"]]){
+ const church=world.find(r=>r.physical_group_id===id),aud=diocesanQualityByGroup.get(id),pin=photoPins.pins.find(r=>r.physical_group_id===id);
+ assert.ok(church?.map_publishable&&aud&&pin,"Site precision crosswalk must exist");
+ assert.equal(church.geo.lat,lat);assert.equal(church.geo.lng,lng);
+ assert.equal(church.geo.source_ref,ref);assert.equal(church.geo.review_scope,scope);
+ assert.equal(aud.coordinate_origin,"REVIEWED_SITE_OVERLAY");assert.equal(aud.photo_gate,"REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL");
+ assert.equal(aud.photo_research_started,false);
+ assert.equal(pin.lat,lat);assert.equal(pin.lon,lng);
+}
+assert.equal(diocesanQualityByGroup.get("RG-3FF697320F55").photo_gate,"OPERATOR_EXCLUDED");
+assert.equal(diocesanQualityByGroup.get("RG-3FF697320F55").operator_scope,"NORbertine_CANONS_OF_ST_MICHAELS_ABBEY_MINISTRY".toUpperCase());
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);

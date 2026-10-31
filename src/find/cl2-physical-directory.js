@@ -43,6 +43,24 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+  "RG-E3F4A8F02E37":Object.freeze({
+    sourceId:"AO-AMER-R27-US-10-14",name:"Most Holy Trinity",country:"US",addressNeedle:"720 Telfair",placeId:null,
+    lat:33.47143,lng:-81.96676,precision:"site",sourceRef:"osm:way:385944485",sourceUrl:"https://www.openstreetmap.org/way/385944485",
+    correctedAddress:"Most Holy Trinity Catholic Church, 720 Telfair Street, Augusta, GA 30901, USA",reviewScope:"MOST_HOLY_TRINITY_CATHOLIC_CHURCH_BUILDING_NOT_CEMETERY_OR_BELL_AUDITORIUM",
+    evidence:Object.freeze(["https://mapcarta.com/W385944485","https://themostholytrinity.org/about-us","https://diosav.org/en/resources/life-is-sacred"]),
+  }),
+  "RG-84D250B1CFB3":Object.freeze({
+    sourceId:"AO-AMER-R28-US-22-01",name:"Saint Paul the Apostle Catholic Church",country:"US",addressNeedle:"602 McLean",placeId:null,
+    lat:40.90982,lng:-73.87986,precision:"site",sourceRef:"osm:way:222072165",sourceUrl:"https://www.openstreetmap.org/way/222072165",
+    correctedAddress:"St Paul the Apostle Catholic Church, 602 McLean Avenue, Yonkers, NY, USA",reviewScope:"SAINT_PAUL_YONKERS_CATHOLIC_CHURCH_BUILDING_NOT_ADJACENT_SCHOOL",
+    evidence:Object.freeze(["https://mapcarta.com/22617372","https://www.archny.org/places/st-paul-the-apostle-yonkers"]),
+  }),
+  "RG-ABD010C7A5D7":Object.freeze({
+    sourceId:"AO-AMER-R26-US-02-05",name:"Basilica of St Mary",country:"US",addressNeedle:"412 Ann",placeId:null,
+    lat:34.232194,lng:-77.943306,precision:"site",sourceRef:"independent:basilica-shrine-wilmington-building",sourceUrl:"https://en.wikipedia.org/wiki/Basilica_Shrine_of_St._Mary_(Wilmington,_North_Carolina)",
+    correctedAddress:"Basilica Shrine of St Mary, 412 Ann Street, Wilmington, NC 28401, USA",reviewScope:"BASILICA_SHRINE_WILMINGTON_HISTORIC_CHURCH_NOT_ADJACENT_SCHOOL",
+    evidence:Object.freeze(["https://en.wikipedia.org/wiki/Basilica_Shrine_of_St._Mary_(Wilmington,_North_Carolina)","https://www.basilicashrine.org/","https://dioceseofraleigh.org/"]),
+  }),
   "RG-3935C183A2BA":Object.freeze({sourceId:"AO-AMER-R26-US-05-16",name:"Holy Family",country:"US",addressNeedle:"1200 Ligonier",placeId:null,
    lat:40.31467,lng:-79.3817,precision:"site",sourceRef:"osm:way:432365179",sourceUrl:"https://www.openstreetmap.org/way/432365179",correctedAddress:"Holy Family Catholic Church, 1200 Ligonier St, Latrobe, PA 15650, USA",
    reviewScope:"HOLY_FAMILY_LATROBE_CHURCH_BUILDING_NOT_NEIGHBORING_PARISH",evidence:Object.freeze(["https://mapcarta.com/W432365179","https://www.holyfamilylatrobe.org/contact-us"])}),
