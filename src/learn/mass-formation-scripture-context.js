@@ -75,6 +75,6 @@ function renderMassFormationScriptureLinks(links,{french=false}={}){
  }).join("");
  return '<section class="aoMFBible" aria-label="'+(french?"Écriture en contexte":"Scripture in context")+
   '"><h2>'+(french?"Approfondir dans la Bible":"Explore the Bible passages")+'</h2><p>'+
-  (french?"Ces passages éclairent le thème étudié ; ils ne remplacent ni le Missel de 1962 ni les sources citées dans la leçon.":"These passages illuminate the lesson; they do not replace the 1962 Missal or the lesson’s cited sources.")+
+  (french?"Parallèles bibliques · distincts du Missel de 1962.":"Biblical parallels · not quotations from the 1962 Missal.")+
   '</p><ul>'+rows+'</ul></section>';
 }

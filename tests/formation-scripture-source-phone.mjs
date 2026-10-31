@@ -43,6 +43,9 @@ try{
    });
    assert.equal(state.reference,"1 Corinthians 11:23–32");
    assert.equal(state.originalUrl,state.source,"Original Catholic Bible citation was lost");
+   const sourceNote=await page.locator("#formation-scripture-phone-fixture .rrBibleHandoff small").innerText();
+   assert.ok(sourceNote.length<=80&&/not certified/i.test(sourceNote),
+     "Formation should retain source caution without another long reading panel");
    const trigger=page.locator("#formation-scripture-phone-fixture [data-ao-scripture-context]");
    await trigger.tap();
    const reader=page.locator("#ao-scripture-overlay");

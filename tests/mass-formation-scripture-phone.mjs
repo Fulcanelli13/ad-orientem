@@ -36,6 +36,11 @@ try{
      "MF06 must show four independent studied passages");
    const originalClaims=await lesson.locator(".aoMFClaim").count();
    assert.equal(originalClaims,3,"Published bilingual Mass explanations were replaced");
+   const intro=await lesson.locator(".aoMFBible > p").innerText();
+   assert.ok(intro.length<=85&&/not quotations/i.test(intro),
+     "Formation source limits must be concise and remain legible");
+   assert.equal(await lesson.locator(".aoMFBibleItem small").count(),4,
+     "Do not hide the distinct theological relationship of each passage");
    const origin=lesson.locator('[data-ao-mass-formation-anchor="MFS11"]');
    assert.equal(await origin.getAttribute("data-ao-scripture-context"),"Genesis 14:18–20");
    const size=await origin.evaluate(el=>({h:el.getBoundingClientRect().height,overflow:document.documentElement.scrollWidth-innerWidth}));
