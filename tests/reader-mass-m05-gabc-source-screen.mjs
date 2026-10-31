@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {resolveAspergesRiteContext,resolveAspergesFormula} from "../src/mass/reader-asperges.js";
 import {M05_SCORE_PARITY_SPECS,researchGabcPhrases,
  auditM05GabcRecord,permittedPublicGregorianScore}
  from "../src/mass/reader-music-gabc-source-screen.js";
@@ -81,6 +82,17 @@ for(const record of corpus.scores.filter(x=>x.scoreFamily==="ASPERGES")){
  assert.match(phrases[2],/sicuteratinprincipio/);
  assert.match(phrases[2],/amen/);
 }
+// The 1961 source contains Gloria Patri, but native Passiontide correctly
+// omits it. The source score is NOT a mandate to restore it on those Sundays.
+const passion=resolveAspergesRiteContext({date:"2026-03-22"});
+const pascha=resolveAspergesRiteContext({date:"2026-04-05"});
+const ordinary=resolveAspergesRiteContext({date:"2026-10-18"});
+assert.equal(resolveAspergesFormula(passion).formula,"ORDINARY");
+assert.equal(resolveAspergesFormula(passion).omitGloriaPatri,true);
+assert.equal(resolveAspergesFormula(pascha).formula,"PASCHAL");
+assert.equal(resolveAspergesFormula(pascha).omitGloriaPatri,false);
+assert.equal(resolveAspergesFormula(ordinary).formula,"ORDINARY");
+assert.equal(resolveAspergesFormula(ordinary).omitGloriaPatri,false);
 const paschal=corpus.scores.at(-1);
 assert.equal(M05_SCORE_PARITY_SPECS.DISMISSAL_ITE_I.coverage,
  "PASCHAL_DOUBLE_ALLELUIA_CANDIDATE_NOT_ORDINARY_ITE");
