@@ -4,11 +4,11 @@
   "scope": "Only original diocesan-source-labelled records, not a change to the worldwide venue master",
   "policy": "Institution/confraternity operator identity is distinct from diocesan jurisdiction; keep all existing pins provisional and all photo rights unresolved. In particular, the name Oratory does NOT imply a religious institute.",
   "summary": {
-    "reclassified": 4,
-    "newly_operator_excluded": 3,
-    "confirmed_diocesan_ministry_but_pin_held": 1,
-    "remaining_operator_pending": 6,
-    "operator_excluded_total": 18,
+    "reclassified": 6,
+    "newly_operator_excluded": 4,
+    "confirmed_diocesan_ministry_but_pin_held": 2,
+    "remaining_operator_pending": 4,
+    "operator_excluded_total": 19,
     "remaining_missing_building_pins": 4,
     "source_marker_unassessed": 434,
     "photo_approved": 0
@@ -82,6 +82,42 @@
       "pin_promoted": false,
       "photo_search_started": false,
       "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-E538853025E6",
+      "name": "St Clement Oratory",
+      "country": "US",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "BISMARCK_DIOCESE_ST_CLEMENT_HAYMARSH_ORATORY",
+      "diocesan_photo_gate": "INHERITED_POINT_UNASSESSED",
+      "independent_sources": [
+        "https://bismarckdiocese.com/oratory",
+        "https://bismarckdiocese.com/parishfinder",
+        "https://bismarckdiocese.com/news/provisions-for-the-latin-mass"
+      ],
+      "reason": "The Diocese of Bismarck lists St Clement Oratory under its own parish finder, says oversight transferred to the diocese in 2017, and regulates its traditional Mass in the 2021 diocesan decree. It is at Haymarsh (Glen Ullin postal area), not necessarily in Glen Ullin town; inherited point remains unassessed.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-FBA216861DF9",
+      "name": "Chapel of the Order of the Carmelite Sisters",
+      "country": "PL",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "ELK_DISCALCED_CARMELITE_SISTERS_MONASTERY_CHAPEL",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://karmel.elk.pl/o-nas/o-klasztorze.html",
+        "https://karmel.elk.pl/aktualnosci/uroczystosc-poswiecenia-kaplicy-i-zalozenie-klauzury-papieskiej-u-s-karmelitanek-w-witynach-k-elku.html",
+        "https://www.latinmassdir.org/country/pl/?communities=&days=&exclusive=&venue_status=&view=list"
+      ],
+      "reason": "The source label's Ełk Carmelite Sisters chapel matches the Discalced Carmelite nuns' own account of their Wityny monastery chapel, built and dedicated for the community. Do not treat the priest who celebrates Mass there as the chapel operator or claim exact chapel footprint.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
     }
   ],
   "remaining_operator_review": [
@@ -104,21 +140,9 @@
       "open_issue": "Independent exact operator/ministry needs evidence; keep out of diocesan-only photo matching"
     },
     {
-      "physical_group_id": "RG-E538853025E6",
-      "name": "St Clement Oratory",
-      "country": "US",
-      "open_issue": "Independent exact operator/ministry needs evidence; keep out of diocesan-only photo matching"
-    },
-    {
       "physical_group_id": "RG-EA8DB7E608E7",
       "name": "Venerável Ordem Terceira de Nossa Senhora do Monte Carmelo",
       "country": "BR",
-      "open_issue": "Independent exact operator/ministry needs evidence; keep out of diocesan-only photo matching"
-    },
-    {
-      "physical_group_id": "RG-FBA216861DF9",
-      "name": "Chapel of the Order of the Carmelite Sisters",
-      "country": "PL",
       "open_issue": "Independent exact operator/ministry needs evidence; keep out of diocesan-only photo matching"
     }
   ]
