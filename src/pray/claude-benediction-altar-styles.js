@@ -84,7 +84,7 @@ export const CLAUDE_ALTAR_CARD_CSS=String.raw`
  padding:0 4px;margin:0 0 12px;max-width:none;
 }
 #aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteChantPrayer .aoP435930PrayerHead{
- display:none;
+ display:none!important;
 }
 #aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteChantStanza{
  font-size:clamp(16px,4.2vw,18px);line-height:1.45;
@@ -99,6 +99,12 @@ export const CLAUDE_ALTAR_CARD_CSS=String.raw`
  #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeBenSettings{left:36px;right:6px;padding:7px}
  #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarHead{gap:8px;padding:8px}
  #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarPlate{flex-basis:38px;width:38px;height:50px}
+}
+/* Public Benediction is not a private Individual/Group recitation choice.
+   Keep that control within actual private prayer routes, not the altar card. */
+#aoPray435930:has(.aoP435930BenedictionReader) .aoP435930Seg[aria-label="Recitation"],
+#aoPray435930:has(.aoP435930BenedictionReader) .aoP435930Seg[aria-label="Récitation"]{
+ display:none!important;
 }
 /* Claude has ONE stage navigation: the Roman I–VII margin. Keep the underlying
    source-owned timeline mounted for focus/progress events, but do not show a
