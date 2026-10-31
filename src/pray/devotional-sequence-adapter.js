@@ -186,7 +186,13 @@ export function installSequentialDevotionalReader({
       // Litany invocations use .88/.76 falloff without hiding their
       // original order, while other readers retain their original .56/.30.
       const adjacent=Math.abs(i-found)===1;
-      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
+      // F02/F03: every invocation AND response becomes fully lit when reached.
+      // Upcoming words stay legible; the indentation of collective replies
+      // is not a permanent muted state.
+      const choir=kind==="library"&&p.classList.contains("aoChoirBeat");
+      const choirRoute=(kind==="hymns"||kind==="holyName");
+      const power=choir||choirRoute?(i===found?"1":i<found?".54":".80")
+        :canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65")
         :kind==="litany"?(adjacent?".88":".76"):(adjacent?".56":".30");
       p.style.setProperty("--ao-devo-focus",power);
@@ -249,6 +255,15 @@ export function installSequentialDevotionalReader({
       go(index+(dx<0?1:-1));
     }
   },{passive:true});
+  if(kind==="library")body.addEventListener("click",event=>{
+    const beat=event.target.closest?.(".aoChoirBeat");
+    if(!beat||!body.contains(beat))return;
+    // Focus-on-tap is opt-in to the actual source beat; never flips
+    // language, switches chapter, or marks prayer completion.
+    const box=body.getBoundingClientRect(),rect=beat.getBoundingClientRect();
+    body.scrollTop+=rect.top-box.top-box.height*.40;
+    userScrolled=true;queue();
+  });
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
   doc.defaultView?.addEventListener("resize",()=>{
     if(!body.isConnected)return;
