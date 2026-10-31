@@ -7,6 +7,9 @@ on:
     paths:
       - 'data/prayer/stations/san-polo-tiepolo-oils-1747/manifest.v1.json'
       - 'scripts/acquire_san_polo_oil_stations.py'
+      - 'tests/prayer-san-polo-oil-archive.mjs'
+      - 'data/prayer/stations/san-polo-tiepolo-oils-1747/research-stage-bindings.v1.json'
+      - 'docs/research/san-polo-oil-stations-gallery.html'
       - '.github/workflows/acquire-san-polo-oil-stations.yml'
   workflow_dispatch:
 
@@ -52,6 +55,8 @@ jobs:
               assert f['artworkApproved'] is False and f['runtimeEnabled'] is False
           print("RESEARCH ARCHIVE:", x["photographsAcquired"], "/14 oil paintings; blocked:", x["failedCount"], "; 0 published")
           PY
+      - name: Validate exact fourteen image bytes, scene slots, licence and zero live changes
+        run: node tests/prayer-san-polo-oil-archive.mjs
       - name: Commit every successfully acquired painting, even if other source files are rate-limited
         run: |
           git config user.name 'github-actions[bot]'
