@@ -41,6 +41,15 @@
       "sourcePageLinkVerification": "All images explicitly linked in 2002 archive page; exact native content/resolution still unverified",
       "ownerOfPhotographs": "Unidentified; not assumed to be Peter Tuffy",
       "cannotPublishAutomatically": true
+    },
+    "nativeReview": {
+      "date": "2026-10-31",
+      "workflowRunId": 41194168406,
+      "details": "data/prayer/stations/rauth-edinburgh/native-28-photo-metadata-20261031.v1.json",
+      "status": "ALL_28_DECODED_NATIVE_SOURCE_PIXELS_RIGHTS_AND_ARTISTIC_QA_UNVERIFIED",
+      "sizing": "2019 native short side 886–1158 pixels, 2002 archive short side 300–480 pixels",
+      "visualApproval": false,
+      "sourcePhotosPermanentlyDownloaded": false
     }
   },
   "counts": {
@@ -52,7 +61,11 @@
     "historical2002AlternativePhotoLinks": 14,
     "independentPhotoCollections": 2,
     "photosPDArtDetermined": 0,
-    "nativeQualityChecked": 0
+    "nativeQualityChecked": 28,
+    "sourcesReachable2019": 14,
+    "sourcesReachableRestoration2002": 14,
+    "nativePixelWidthPasses2019_900px": 13,
+    "nativePixelWidthPasses2002_900px": 0
   },
   "stations": [
     {
@@ -72,7 +85,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 902,
+        "height": 1280,
+        "bytes": 244328,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 300,
+        "height": 414,
+        "bytes": 21152,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 2,
@@ -91,7 +120,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1048,
+        "height": 1596,
+        "bytes": 320734,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 400,
+        "height": 533,
+        "bytes": 62065,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 3,
@@ -110,7 +155,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1149,
+        "height": 1712,
+        "bytes": 430242,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 480,
+        "height": 640,
+        "bytes": 35902,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 4,
@@ -129,7 +190,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1134,
+        "height": 1769,
+        "bytes": 456030,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 308,
+        "height": 450,
+        "bytes": 19412,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 5,
@@ -148,7 +225,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1158,
+        "height": 1775,
+        "bytes": 377807,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 322,
+        "height": 450,
+        "bytes": 16819,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 6,
@@ -167,7 +260,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1152,
+        "height": 1778,
+        "bytes": 359067,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 429,
+        "height": 609,
+        "bytes": 49644,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 7,
@@ -186,7 +295,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1143,
+        "height": 1754,
+        "bytes": 385790,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 313,
+        "height": 450,
+        "bytes": 17795,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 8,
@@ -205,7 +330,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1158,
+        "height": 1763,
+        "bytes": 441114,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 480,
+        "height": 640,
+        "bytes": 37774,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 9,
@@ -224,7 +365,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1152,
+        "height": 1751,
+        "bytes": 359761,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 321,
+        "height": 450,
+        "bytes": 22895,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 10,
@@ -243,7 +400,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1146,
+        "height": 1724,
+        "bytes": 365445,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 480,
+        "height": 640,
+        "bytes": 42040,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 11,
@@ -262,7 +435,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1155,
+        "height": 1760,
+        "bytes": 405494,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 400,
+        "height": 533,
+        "bytes": 41169,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 12,
@@ -281,7 +470,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1125,
+        "height": 1748,
+        "bytes": 430303,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 400,
+        "height": 533,
+        "bytes": 41247,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 13,
@@ -300,7 +505,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 1101,
+        "height": 1595,
+        "bytes": 293531,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 457,
+        "height": 629,
+        "bytes": 56632,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     },
     {
       "station": 14,
@@ -319,7 +540,23 @@
       "archival2002Rights": "NOT_ESTABLISHED; no explicit PD/CC0 or free-licence notice found",
       "archival2002FullImageAvailable": "UNVERIFIED",
       "archival2002Resolution": "PENDING_NATIVE_READ",
-      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED"
+      "photoChoice": "2019_OFFICIAL_FIRST_FOR_VISUAL_QA_2002_AS_FALLBACK_NOT_LICENSE_CLEARED",
+      "officialPhotographNative": {
+        "available": true,
+        "width": 886,
+        "height": 1280,
+        "bytes": 237411,
+        "format": "JPEG",
+        "rightsCleared": false
+      },
+      "archival2002Native": {
+        "available": true,
+        "width": 408,
+        "height": 583,
+        "bytes": 73845,
+        "format": "JPEG",
+        "rightsCleared": false
+      }
     }
   ],
   "policy": {
