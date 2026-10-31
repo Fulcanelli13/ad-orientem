@@ -683,7 +683,7 @@ try{
    const prayer=await page.evaluate(()=>{
      const root=document.querySelector("#aoPray435930.open"),card=root?.querySelector(".aoP435930Prayer");
      return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"",
-       source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeChoirMenuSource a")?.textContent?.trim()||""};
+       source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeChoirMenuSource .aoP435930Source")?.textContent?.trim()||""};
    });
    assert.ok(prayer.body.length>=25,"Blank or unrendered canonical prayer: "+id);
    const flip=page.locator("#aoPray435930.open .aoP435930Prayer [data-p435930-flip]");
