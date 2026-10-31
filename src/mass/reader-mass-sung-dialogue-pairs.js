@@ -2,6 +2,7 @@
 // Cue IDs belong to the pinned Sung corpus and existing reader projection.
 // No copied Latin, invented chant notation, actual singing, or tone inference.
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
+import {resolve1962DialogueToneFamily} from "./reader-mass-1962-tone-family.js";
 
 const freeze=Object.freeze;
 const SUNG_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
@@ -102,6 +103,8 @@ export function projectMassSungDialogue({
    (requiem||resolvedMass?.provenance?.gloria===false))return null;
  if((id==="CREDO"||id==="CREDO_INTONATION") &&
    (requiem||resolvedMass?.provenance?.credo===false))return null;
+ const rubric=resolve1962DialogueToneFamily(id,{resolvedMass,
+  toneContext:resolvedMass?.provenance?.musicToneContext??null});
  const exchanges=source.exchanges.map(exchange=>freeze({
   ...exchange,
   leaderRole:priestOrMinister(id,exchange.id,selected,requiem),
@@ -116,7 +119,13 @@ export function projectMassSungDialogue({
   exchanges:freeze(exchanges),contextCueIds:source.contextCueIds,
   dismissal:id==="DISMISSAL"?dismissalVariant({resolvedMass,massPlan,requiem}):null,
   toneSelection:freeze({
-   status:"NOT_SOURCE_CERTIFIED",
+   status:rubric?.status==="RUBRICAL_FAMILY_RESOLVED"
+     ?"RUBRICAL_FAMILY_RESOLVED_SCORE_PENDING":"NOT_SOURCE_CERTIFIED",
+   toneFamily:rubric?.family==="SOLEMN"||rubric?.family==="FERIAL"
+     ?rubric.family:null,
+   rubricalAuthority:rubric?.source??null,
+   rubricalReason:rubric?.reason??null,
+   matchedResponseFamily:rubric?.matchedResponseFamily??null,
    celebrant:"NOTATION_NOT_APPROVED",
    response:"NOTATION_NOT_APPROVED",
    match:"NOT_MUSICALLY_VERIFIED",
