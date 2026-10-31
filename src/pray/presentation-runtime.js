@@ -657,7 +657,7 @@ function prayerBlock(id,opts={}){
   return '<article class="aoP435930Prayer aoP435930HoursLeonine" data-ao-hours-family="leonine">'+
    languageNotice+'<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
    (hasLatin?'<button type="button" class="aoHoursLeonineLang" data-p435930-hours-flip aria-pressed="false" aria-label="'+esc(L('Read in Latin','Lire en latin'))+'">Latin</button>':'')+'</div>'+
-   '<div class="aoHoursLeonineFaces"><div data-face-v lang="'+chosen+'">'+markup(chosen)+'</div>'+
+   '<div class="aoHoursLeonineFaces aoP435930Text" data-ao-pray-semantic="1"><div data-face-v lang="'+chosen+'">'+markup(chosen)+'</div>'+
    (hasLatin?'<div data-face-la lang="la" hidden>'+markup('la')+'</div>':'')+'</div>'+
    originCapsule+sourceLine(p)+'</article>';
  }
