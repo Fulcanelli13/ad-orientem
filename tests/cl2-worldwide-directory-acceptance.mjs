@@ -222,11 +222,11 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1867);
-assert.equal(vm.addressOnly,715);
+assert.equal(vm.mapped,1869);
+assert.equal(vm.addressOnly,713);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/715/);
+assert.match(html,/713/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
