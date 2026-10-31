@@ -3,6 +3,7 @@
 // Stage order is furnished by each *native controller*, not guessed from
 // the editorial order of the music registry.
 import {resolveRiteMusicScene} from "./reader-rite-music-authority.js";
+import {sourceMusicMaterialGate} from "./reader-music-material-gate.js";
 
 const freeze=Object.freeze;
 const SILENT_STAGES=new Set(["GF-PASS-320","GF-END-910"]);
@@ -76,6 +77,13 @@ export function projectSpecialRiteMusicItinerary({
     stageId:id,stageIndex:i,
     sourceOwner:"EXISTING_NATIVE_RITE",sourceFile:e.sourceFile,
     sourcePaths:freeze(e.sourceFound.map(x=>x.path)),
+    musicMaterial:sourceMusicMaterialGate({
+      eventId:e.id,kind:e.kind,sourceOwner:"EXISTING_NATIVE_RITE",
+      sourceRef:e.sourceFound.map(x=>x.path),
+      sourceReferencePresent:e.sourceFound.length>0&&
+        e.sourceFound.every(x=>x.available===true),
+      condition:e.condition,
+    }),
     endBoundary:e.endBoundary,segmentScope:e.segmentScope??null,
     status:"EXPECTED_NOT_OBSERVED",actuallySinging:"UNKNOWN",
     independentFromMassSchola:true,
