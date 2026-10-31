@@ -1,0 +1,429 @@
+{
+  "schema": "AO_SACRED_ART_2026_EXACT_SANCTORAL_RESEARCH_BATCH8_V1",
+  "asOf": "2026-10-31",
+  "status": "NEW_RESEARCH_ONLY_NOT_EXISTING_ACCEPTED_ARCHIVE_NO_APP_APPROVAL",
+  "objectPolicy": "Exactly identified historical paintings or painted scenes depicting the principal 1962 feast subject. Sources are catalogues or Commons file pages. Museum title/metadata is not photo-rights or beauty certification; no automated upload or date hero publication.",
+  "counts": {
+    "fromIdentifiedSubjectDates": 56,
+    "toIdentifiedSubjectDates": 67,
+    "fromUnmatchedSanctoralDates": 75,
+    "toUnmatchedSanctoralDates": 64,
+    "sourcePagesReviewed": 12,
+    "unique2026FeastDates": 11,
+    "distinctResearchSourceRecords": 12,
+    "newUserEditorialApprovals": 0,
+    "newCanonical383ArtworkIds": 0,
+    "sourceOriginalFilesAcquired": 0,
+    "newLiveAppImages": 0
+  },
+  "rows": [
+    {
+      "date": "2026-01-23",
+      "principalId": "sancti:01-23:3:w",
+      "observedTitle": "St. Raymond of Peñafort",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "MSK-GENT-S43",
+          "artistAsCatalogued": "Luigi Primo",
+          "titleAsCatalogued": "Saint Raymund of Pennafort Venerating the Child",
+          "sourceObjectUrl": "https://www.mskgent.be/en/collection/s-43",
+          "sourceInstitution": "MSK Gent",
+          "sourceObjectAccession": "S-43",
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "MUSEUM_PUBLIC_DOMAIN_METADATA",
+          "sourceRelevanceNotes": "Baroque; museum inventory and IIIF manifest. Photograph and crop still not checked.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-02-07",
+      "principalId": "sancti:02-07:3:w",
+      "observedTitle": "St. Romuald",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "COMMONS-GUERCINO-ROMUALD",
+          "artistAsCatalogued": "Guercino",
+          "titleAsCatalogued": "Saint Romuald",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Guercino_san_Romualdo.jpg",
+          "sourceInstitution": "Ravenna Art Museum",
+          "sourceObjectAccession": null,
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": [
+            731,
+            1188
+          ],
+          "rightsEvidenceCategory": "COMMONS_PD_ART_METADATA",
+          "sourceRelevanceNotes": "Existing source photo is low resolution; verify original and find larger legitimate image.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-02-10",
+      "principalId": "sancti:02-10:3:w",
+      "observedTitle": "St. Scholastica",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "POP-JOCONDE-02650000281",
+          "artistAsCatalogued": "Jean II Restout",
+          "titleAsCatalogued": "Death of Saint Scholastica",
+          "sourceObjectUrl": "https://pop.culture.gouv.fr/notice/joconde/02650000281",
+          "sourceInstitution": "Musée des Beaux-Arts de Tours",
+          "sourceObjectAccession": null,
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "IMAGE_RIGHTS_UNKNOWN",
+          "sourceRelevanceNotes": "Official French painting record: 1730; death of saint, not a generic Benedict picture. Native photo not verified.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-05-05",
+      "principalId": "sancti:05-05:3:w",
+      "observedTitle": "St. Pius V",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "ICCD-0800030085",
+          "artistAsCatalogued": "Giuseppe Maria Bartolini",
+          "titleAsCatalogued": "Saint Pius V and the miraculous crucifix",
+          "sourceObjectUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800030085",
+          "sourceInstitution": "Faenza ecclesiastical collection",
+          "sourceObjectAccession": "0800030085",
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "CATALOGUE_METADATA_CC_BY_NOT_PHOTO_LICENSE",
+          "sourceRelevanceNotes": "1702 Baroque painting; apparent carved gilt frame; app photo rights and framing unverified.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        },
+        {
+          "researchSourceId": "ICCD-0800017368",
+          "artistAsCatalogued": "Giovanni Battista Bolognini the Elder",
+          "titleAsCatalogued": "Madonna and Dominican saints with Saint Pius V",
+          "sourceObjectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800017368",
+          "sourceInstitution": "Church of San Domenico",
+          "sourceObjectAccession": "0800017368",
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "CATALOGUE_METADATA_CC_BY_NOT_PHOTO_LICENSE",
+          "sourceRelevanceNotes": "Saint Pius V is named in the official iconographic subject, among several Dominican saints. Group composition, distinct original candidate.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-06-01",
+      "principalId": "sancti:06-01:3:w",
+      "observedTitle": "St. Angela Merici",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "ICCD-0500404726",
+          "artistAsCatalogued": "Giovanni Paolo Pellesina",
+          "titleAsCatalogued": "Vision of Saint Angela Merici",
+          "sourceObjectUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500404726",
+          "sourceInstitution": "Palazzo Allegri, Verona",
+          "sourceObjectAccession": "0500404726",
+          "mediumAsCatalogued": "painting on canvas",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "IMAGE_RIGHTS_UNKNOWN",
+          "sourceRelevanceNotes": "Nineteenth-century original; not the later 1931 work with potential author-copyright issues.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-06-11",
+      "principalId": "sancti:06-11:3:r",
+      "observedTitle": "St. Barnabas",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "ICCD-0800026115",
+          "artistAsCatalogued": "Carlo Bononi (attributed)",
+          "titleAsCatalogued": "Saint Barnabas the Apostle",
+          "sourceObjectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800026115",
+          "sourceInstitution": "Ferrara church collection",
+          "sourceObjectAccession": "0800026115",
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "CATALOGUE_METADATA_CC_BY_NOT_PHOTO_LICENSE",
+          "sourceRelevanceNotes": "1590s portrait identified by inscription; museum catalogue states attribution is provisional.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-07-18",
+      "principalId": "sancti:07-18:3:w",
+      "observedTitle": "Camillus de Lellis",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "ICCD-0800030522",
+          "artistAsCatalogued": "Giovanni Battista Pittoni (attributed)",
+          "titleAsCatalogued": "Saint Camillus de Lellis in Glory",
+          "sourceObjectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800030522",
+          "sourceInstitution": "Bologna church collection",
+          "sourceObjectAccession": "0800030522",
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "CATALOGUE_METADATA_CC_BY_NOT_PHOTO_LICENSE",
+          "sourceRelevanceNotes": "1746–60 Baroque painting, attribution proposed by cataloguer and needs verification.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-09-10",
+      "principalId": "sancti:09-10:3:w",
+      "observedTitle": "St. Nicholas of Tolentino",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "MET-436444",
+          "artistAsCatalogued": "Garofalo (Benvenuto Tisi)",
+          "titleAsCatalogued": "Saint Nicholas of Tolentino Reviving a Child",
+          "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/436444",
+          "sourceInstitution": "Metropolitan Museum of Art",
+          "sourceObjectAccession": "17.190.24",
+          "mediumAsCatalogued": "oil on canvas transferred from wood",
+          "observedSourcePixels": null,
+          "rightsEvidenceCategory": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_OBJECT",
+          "sourceRelevanceNotes": "Scene specifically depicts Nicholas of Tolentino (not Nicholas of Myra); high-resolution and crop QA pending.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-09-22",
+      "principalId": "sancti:09-22:3:w",
+      "observedTitle": "St. Thomas of Villanova",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "COMMONS-MURILLO-VILLANOVA",
+          "artistAsCatalogued": "Bartolomé Esteban Murillo",
+          "titleAsCatalogued": "Saint Thomas of Villanova Giving Alms to the Poor",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Esteban_Murillo_-_Santo_Tom%C3%A1s_de_Villanueva_dando_limosna.jpg",
+          "sourceInstitution": "Seville ecclesiastical painting collection",
+          "sourceObjectAccession": null,
+          "mediumAsCatalogued": "oil painting",
+          "observedSourcePixels": [
+            1000,
+            1505
+          ],
+          "rightsEvidenceCategory": "COMMONS_PD_ART_METADATA",
+          "sourceRelevanceNotes": "Exact saint subject, existing Commons image modest resolution; no frame or fidelity certification.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-10-10",
+      "principalId": "sancti:10-10:3:w",
+      "observedTitle": "St. Francis Borgia",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "COMMONS-GOYA-BORGIA",
+          "artistAsCatalogued": "Francisco Goya",
+          "titleAsCatalogued": "St Francis Borgia Helping a Dying Impenitent",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:St._Francis_Borgia_Helping_a_Dying_Impenitent_by_Goya.jpg",
+          "sourceInstitution": "Valencia Cathedral",
+          "sourceObjectAccession": null,
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": [
+            721,
+            1016
+          ],
+          "rightsEvidenceCategory": "COMMONS_PD_ART_METADATA",
+          "sourceRelevanceNotes": "Low-res image, photographer/source identity unclear; separate boceto photos must not be merged into the main original.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    },
+    {
+      "date": "2026-11-19",
+      "principalId": "sancti:11-19:3:w",
+      "observedTitle": "St. Elizabeth of Hungary",
+      "relationship": "EXACT_NAMED_FEAST_SUBJECT_CANDIDATE_NOT_USER_APPROVED",
+      "candidateSources": [
+        {
+          "researchSourceId": "COMMONS-MURILLO-ELISABETH",
+          "artistAsCatalogued": "Bartolomé Esteban Murillo",
+          "titleAsCatalogued": "Saint Elisabeth of Hungary Healing the Poor",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Santa_Isabel_de_Hungr%C3%ADa_curando_a_los_ti%C3%B1osos._Bartolom%C3%A9_Esteban_Murillo.jpg",
+          "sourceInstitution": "Hospital de la Santa Caridad, Seville",
+          "sourceObjectAccession": null,
+          "mediumAsCatalogued": "oil on canvas",
+          "observedSourcePixels": [
+            2736,
+            2736
+          ],
+          "rightsEvidenceCategory": "COMMONS_PHOTOGRAPHER_CC_BY_3_0_ATTRIBUTION_REQUIRED",
+          "sourceRelevanceNotes": "Exactly Elisabeth of Hungary. Photo is square despite taller physical painting; check visible frame and crop fidelity. Copyright to uploader under CC BY 3.0 requires credit.",
+          "sourceIdentityIndependentOf383Unproven": true,
+          "physicalOriginalMatchToOtherResearchUnverified": true,
+          "artworkOriginalAcquired": false,
+          "exactPhotoLicenceVerified": false,
+          "nativeFramelessMobileHeroQA": false,
+          "finalFeastArtworkUserApproval": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "completeSubjectIdentityFromInstitutionalTitle": true,
+      "newDateUserApproval": false,
+      "appReleaseCertified": false,
+      "homeRotationEligible": false
+    }
+  ],
+  "exclusions": [
+    {
+      "subject": "Pius V vs Pius VI",
+      "reason": "Accepted Guardi Pope Pius VI records are distinct pontiff and must never substitute"
+    },
+    {
+      "subject": "Saint Nicholas of Tolentino vs Nicholas of Myra",
+      "reason": "Do not reuse earlier St Nicholas of Myra-only painting"
+    },
+    {
+      "subject": "Saint Camillus pictorial source",
+      "reason": "Do not count anonymous low-res 360×479 portrait as a high quality alternative without original identification"
+    },
+    {
+      "subject": "Saint Angela Merici twentieth-century painting",
+      "reason": "Pegrassi painting dated 1931, artist died 1957; prefer research of older painting to avoid copyright assumption"
+    },
+    {
+      "subject": "Goya Francisco Borgia full painting vs sketch",
+      "reason": "Different photographed study (boceto) may be a separate physical original, do not collapse variants into one art ID"
+    },
+    {
+      "subject": "Murillo Elisabeth of Hungary Wellcome copy",
+      "reason": "Wellcome caption associates painting with Prado while source Commons identifies Hospital de la Caridad; record the actual Commons original as unverified until institution identity comparison"
+    }
+  ],
+  "safeguards": {
+    "newApproval": false,
+    "metadataLicenceNotPhotoLicence": true,
+    "photographicVersionsDoNotRepresentDistinctPaintings": true,
+    "sourceAttributionProvisionalKept": true,
+    "onlyHumanMayApprove": true,
+    "productionMutation": false,
+    "noPaidPermissions": true,
+    "noChangesTo383Or856": true
+  }
+}
