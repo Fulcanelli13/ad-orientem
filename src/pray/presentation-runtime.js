@@ -1612,9 +1612,9 @@ function benSungPrayer(id,kicker){
  const p=P(id),latin=p?.la||'',vern=p?.[lang()]||p?.en||'';
  const stanzas=benedictionSungStanzas(id,latin,vern);
  if(!stanzas)return prayerBlock(id,{kicker});
- const line=(la,v,i)=>'<section class="aoRiteChantStanza" data-ao-rite-chant-stanza="'+i+'">'+
-  '<p class="aoRiteChantLatin" lang="la">'+nl(la.trim())+'</p>'+
-  (v?'<p class="aoRiteChantVernacular" lang="'+lang()+'">'+nl(v.trim())+'</p>':'')+'</section>';
+ const line=(la,v,i)=>'<span class="aoRiteChantStanza" data-ao-rite-chant-stanza="'+i+'">'+
+  '<span class="aoRiteChantLatin" lang="la">'+nl(la.trim())+'</span>'+
+  (v?'<span class="aoRiteChantVernacular" lang="'+lang()+'">'+nl(v.trim())+'</span>':'')+'</span>';
  return '<article class="aoP435930Prayer aoRiteChantPrayer" data-ao-rite-sung="'+esc(id)+'">'+
   '<div class="aoP435930PrayerHead"><div><small>'+esc(kicker)+'</small><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div></div>'+
   '<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Latin only / bilingual chant','Chant latin seul / bilingue'))+'">'+
