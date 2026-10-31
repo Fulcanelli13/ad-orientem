@@ -10,7 +10,6 @@ on:
       - data/geography/research/sacred-atlas-commons-batch-002.manifest.json
       - data/geography/research/sacred-atlas-commons-batch-003.manifest.json
       - .github/workflows/sacred-atlas-commons-batch.yml
-  workflow_dispatch:
 
 permissions:
   contents: write
