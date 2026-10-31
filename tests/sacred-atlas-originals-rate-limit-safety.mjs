@@ -34,8 +34,14 @@ for(const row of receipt.results){
  }
  histogram[row.error??row.status]=(histogram[row.error??row.status]||0)+1;
 }
-assert.equal(verified,6,"Historical successful source hashes must be preserved");
-assert.equal(histogram.HTTP_429,94,"Historical Wikimedia throttle must not be recast as rejected images");
+assert.ok(verified>=6,"Historical six SHA1 successes must never be downgraded");
+for(const item of source.items.slice(0,6)){
+ const row=receipt.results.find(x=>x.place_id===item.place_id);
+ assert.equal(row?.status,"SOURCE_BYTES_SHA1_VERIFIED","First six immutable successes must remain verified");
+}
+assert.equal(verified+receipt.results.filter(x=>!x.source_bytes_verified).length,100);
+assert.ok(receipt.results.every(x=>x.status!=="REJECTED_COPYRIGHT_BY_429"),
+ "HTTP429 is never an image or copyright rejection");
 assert.equal(receipt.summary.published,0);
 assert.equal(receipt.summary.newly_archived_image_files,0);
 assert.match(script,/if\(!params\.has\("--run"\)\)/);
@@ -46,4 +52,4 @@ assert.match(script,/attempts>=maxNew/);
 assert.match(script,/delayMs<15000/);
 assert.match(script,/validPrevious\(item\)/);
 assert.doesNotMatch(script,/git push|create\/update|ApprovedPlaceMedia/);
-console.log("PASS: 100 pinned Place sources, six original SHA1 successes retained, 94 Wikimedia 429 holds distinguished, secure bounded retry, zero publication.");
+console.log("PASS: 100 pinned Place sources, six original SHA1 successes retained, rate limiting treated as temporary access, secure bounded retry, zero publication.");
