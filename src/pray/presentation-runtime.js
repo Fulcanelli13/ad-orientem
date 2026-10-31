@@ -3495,10 +3495,10 @@ function onClick(e){
    if(view!=="confession"||!CONF.path||![1,2].includes(CONF.stage))return;
    const selected=b.dataset.p435930ConfContrition;
    if(selected!=="standard"&&selected!=="piusx")return;
-   const last=CONF.stage===1
+   const targetIndex=CONF.stage===1
      ?confessionExaminationCards(CONF.path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path:CONF.path,french:isFr()})).length-1
-     :confessionRiteCards(CONF.path).length-1;
-   if((CONF.stage===1?CONF.examStep:CONF.riteStep)!==last)return;
+     :confessionRiteCards(CONF.path).findIndex(card=>card.id==='contrition-penance');
+   if(targetIndex<0||(CONF.stage===1?CONF.examStep:CONF.riteStep)!==targetIndex)return;
    if(CONF.contrition===selected)return;
    CONF.contrition=selected;return render();
  }
