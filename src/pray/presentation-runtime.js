@@ -757,7 +757,10 @@ function myCustomsDoor(){
 }
 function renderPrayHome(){
  const families=prayFamilies();
- if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({head,L,esc,DATA,families,assetIcon});
+ if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({
+  head,L,esc,DATA,families,assetIcon,
+  resume:{completed:MONTFORT.completed.filter(day=>Number.isInteger(day)&&day>=1&&day<=33).length}
+ });
  const door=id=>prayFamilyDoor(id,families[id]);
  const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
  const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
@@ -865,7 +868,7 @@ function renderAngelus(){
   const incarnation=form==='angelus'&&u.type==='vr'&&/(Word was made flesh|Verbum caro factum est|Verbe s[’']est fait chair)/i.test(u.text+' '+la);
   return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${angelusUtterance(u.text,u.type)}</span><span data-face-la hidden>${angelusUtterance(la,u.type)}</span></button></article>`;
  }).join('');
- return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
+ return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader"${PRAYER_PILOT_ENABLED?' data-ao-f04-timeline="segments"':''} data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
 }
 function normalizeRosaryPrefs(raw=S.rosary){
  return Object.freeze({
@@ -1540,10 +1543,7 @@ function renderConfession(){
   const choices=Object.values(CONFESSION_PATHS).map(p=>`<button type="button" data-p435930-conf-path="${esc(p.id)}" aria-pressed="${CONF.path===p.id}" class="${CONF.path===p.id?'selected':''}">
    <strong>${esc(isFr()?p.titleFr:p.titleEn)}</strong>
    <span>${esc(isFr()?p.descriptionFr:p.descriptionEn)}</span></button>`).join('');
-  body=`${guideNow(L('What kind of Confession?','Quelle préparation à la confession ?'),L('Select the situation that fits. The length of time since your last Confession does not automatically mean you need a general Confession.','Choisissez votre situation. Une longue absence ne signifie pas automatiquement qu’une confession générale est nécessaire.'))}
-  <div class="aoP435930ConfPathCards" role="group" aria-label="${esc(L('Confession preparation path','Parcours de préparation'))}">${choices}</div>
-  <div class="aoP435930Checklist"><label><span>${esc(L('Time since last good Confession (optional)','Depuis votre dernière bonne confession (facultatif)'))}</span><input type="text" autocomplete="off" data-p435930-since value="${esc(CONF.since)}" placeholder="${esc(L('e.g. 3 weeks / several years','p. ex. 3 semaines / plusieurs années'))}"></label></div>
-  ${callout(esc(L('This time estimate remains only in this session. The app never asks you to enter, mark or save sins.','Cette indication n’existe que pendant cette session. L’application ne demande jamais de saisir, cocher ou enregistrer vos péchés.')),'privacy')}
+  body=`<div class="aoP435930ConfPathCards" role="group" aria-label="${esc(L('Confession preparation path','Parcours de préparation'))}">${choices}</div>
   ${guidePrayers([{id:'sacrament_come_holy_spirit',kicker:L('Prayer for light','Prière pour demander la lumière')}])}`;
  }
  if(CONF.stage===1)body=confessionExaminationView(ex);
@@ -1562,6 +1562,7 @@ function renderConfession(){
   ${pos===cards.length-1?`<button class="aoP435930Danger" type="button" data-p435930-conf-clear>${esc(L('Clear this preparation now','Effacer cette préparation maintenant'))}</button>`:''}`;
  }
  const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
+    <p>${esc(L('Privacy: no sins or examination answers are entered or stored.','Confidentialité : aucun péché ni réponse à un examen n’est saisi ou enregistré.'))}</p>
    <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
    ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(isFr()&&src.urlFr?src.urlFr:src.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&src.labelFr?src.labelFr:src.label)} ↗</a>`).join('')}</details>`;
  // Preserve all three canonical Confession paths and their original private
@@ -1600,8 +1601,8 @@ function renderConfession(){
  // user action; traversing the app must never imply sacramental absolution.
  const navigation=stageBoundary?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):CONF.stage===2?L('After Confession · when ready','Après la confession · lorsque vous êtes prêt'):CONF.stage===0?L('Begin examination','Commencer l’examen'):L('Continue to next section','Passer à la section suivante'))}</button></div>`:'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
- const initialProgress=CONF.stage===0?devotionalProgressMarkup({index:0,total:stages.length,language:lang(),unit:'stage'}):'';
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -1799,7 +1800,6 @@ function eucharisticWitnessTreasury(){
 function renderAdoration(){
  if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('Enter prayer without a prescribed duration','Entrer en prière sans durée imposée'))}
   <main class="aoP435930Body aoAdorationChooser" data-ao-adoration-chooser="quiet-v2">
-   <p class="aoAdorationChooserIntroduction">${esc(L('Choose the form suited to where you are.','Choisissez la forme adaptée au lieu où vous vous trouvez.'))}</p>
    <div class="aoAdorationPrimaryGrid">
     <button type="button" data-p435930-ador-mode="visit">
      <small>${esc(L('AT THE TABERNACLE','DEVANT LE TABERNACLE'))}</small>
@@ -1812,8 +1812,7 @@ function renderAdoration(){
      <span>${esc(L('Be still. Prayers and guidance are available only when wanted.','Demeurez en silence. Prières et aide restent facultatives.'))}</span>
     </button>
    </div>
-   <details class="aoAdorationMethodsDisclosure" data-ao-adoration-methods>
-    <summary>${esc(L('Guided forms and Eucharistic prayers','Formes guidées et prières eucharistiques'))}</summary>
+   <section class="aoAdorationMethodsRow" aria-label="${esc(L("Guided forms and Eucharistic prayers","Formes guidées et prières eucharistiques"))}">
     <div class="aoP435930BigGrid">
      <button type="button" data-p435930-ador-mode="holy">
       <b>${esc(L('Guided Holy Hour','Heure Sainte guidée'))}</b>
@@ -1832,12 +1831,8 @@ function renderAdoration(){
       <span>${esc(L('A voluntary Sacred Heart night watch at home, without treating the image as the Blessed Sacrament.','Veillée facultative du Sacré-Cœur au foyer, sans confondre image et Saint-Sacrement.'))}</span>
      </button>
     </div>
-   </details>
+   </section>
    <p class="aoAdorationChooserAfterword">${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
-   ${adorationReturnFromBenediction?`<button type="button" class="aoP435930Secondary aoAdorationPublicRiteLink" data-p435930-go-ben>
-     ${esc(L('Return to public Benediction','Revenir à la bénédiction eucharistique'))}
-     <small>${esc(L('Includes optional Christ the King procession and prayers','Avec procession et prières facultatives du Christ-Roi'))}</small>
-   </button>`:''}
   </main>`;
  if(ADOR.quiet)return `${head(L('Silent Adoration','Adoration silencieuse'),L('No prescribed duration','Sans durée imposée'))}
  <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen" role="dialog" aria-modal="true" aria-labelledby="aoAdorationQuietTitle" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-quiet="true">
@@ -2948,8 +2943,55 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
+// Shared Prayer folio contract: provenance remains complete, but belongs
+// inside a quiet Aa -> ⓘ Source menu rather than beneath the prayer.
+// Move original DOM nodes (not copies) to preserve source ownership.
+function reconcilePrayerBookSettings(m){
+ if(view==='home'||view==='family')return;
+ const header=m.querySelector('.aoP435930Head');
+ if(!header)return;
+ const sourceSelector=[
+  '.aoP435930Source','.aoP435930SourceNote','.aoP435930SourceLink',
+  '.aoP435930FeastSource','.aoP435930SourceWitnessNote',
+  '.aoP435930SourceLanguageNotice','.aoP435930GuideLinks',
+  '.aoP435930ConfSources','.aoP435930History',
+  '.aoPriestsSource','.aoOccasionalSource','.aoJosephSevenSource',
+  '.aoBatch02OptionalSources','.aoRosarySourceCurrent',
+  '.aoFiveWoundsSource','.aoPreciousBloodProvenance',
+  '.aoLittleCrownSource','.aoMercySource'
+ ].join(',');
+ const sources=[...m.querySelectorAll(sourceSelector)];
+ const parents=sources.filter(node=>!sources.some(other=>other!==node&&other.contains(node)));
+ const lang=header.querySelector('.aoP435930SessionLanguage');
+ const settings=header.querySelector('.aoFolioSettingsTrigger');
+ if(!parents.length&&!lang&&!settings)return;
+ const wrap=document.createElement('details');
+ wrap.className='aoPrayerBookMenu';
+ wrap.innerHTML='<summary aria-label="'+esc(L('Prayer settings, language and references','Paramètres, langue et références'))+
+  '">Aa</summary><div class="aoPrayerBookMenuPanel"></div>';
+ const panel=wrap.querySelector('.aoPrayerBookMenuPanel');
+ if(settings)panel.append(settings);
+ if(lang)panel.append(lang);
+ if(parents.length){
+  const notes=document.createElement('details');
+  notes.className='aoPrayerBookSources';
+  notes.innerHTML='<summary aria-label="'+esc(L('Source notes','Notes de source'))+'">ⓘ '+
+   esc(L('Sources','Sources'))+'</summary>';
+  for(const source of parents)notes.append(source);
+  panel.append(notes);
+ }
+ const home=header.querySelector('.aoP435930Home');
+ if(home)home.before(wrap);else header.append(wrap);
+ header.classList.add('aoPrayerBookHead');
+}
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='littleCrown')html=renderLittleCrown();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='montfort')html=renderMontfortB26();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
- ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
+ ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;// Re-selecting Alone / With others re-renders the F04 hour-card without
+ // changing its route signature. Prevent the previous family's/focused button's
+ // scroll offset from clipping the hero title after this rerender.
+ lastRenderSignature=sig;
+ reconcilePrayerBookSettings(m);
+ if(moved||(PRAYER_PILOT_ENABLED&&view==='angelus'))
+  queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
  if(view==='adoration'&&ADOR.quiet){
@@ -2995,8 +3037,14 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     if(scene){
      let banner=scene.querySelector('.aoFolioIncarnationCue');
      if(active&&action&&!banner){
-      scene.querySelector('.aoDevoCardHead')?.insertAdjacentHTML('beforeend',
-       `<div class="aoFolioIncarnationCue" role="status">${assetIcon(action.iconAssetId,'aoFolioIncarnationIcon')}<span>${esc(action.label)}</span></div>`);
+      // F04 places the gesture next to its actual source-owned Et Verbum
+      // verse; the rollback reader retains the original header treatment.
+      const f04=Boolean(scene.closest('[data-ao-f04-timeline="segments"]'));
+      const cue=f04?scene.querySelector('.aoDevoCardScroll [data-ao-devo-cue="profound-bow"]'):null;
+      const anchor=cue||scene.querySelector('.aoDevoCardHead');
+      anchor?.insertAdjacentHTML(f04?'afterbegin':'beforeend',f04
+       ?`<span class="aoFolioIncarnationCue aoF04InlineBow" role="status">${assetIcon(action.iconAssetId,'aoFolioIncarnationIcon')}<span>${esc(action.label)}</span></span>`
+       :`<div class="aoFolioIncarnationCue" role="status">${assetIcon(action.iconAssetId,'aoFolioIncarnationIcon')}<span>${esc(action.label)}</span></div>`);
       banner=scene.querySelector('.aoFolioIncarnationCue');
      }
      scene.classList.toggle('aoFolioIncarnationActive',active&&!!action);

@@ -130,7 +130,7 @@ export function filterPilotDiscovery(root,value){
   const empty=root.querySelector("[data-ao-pilot-empty]");
   if(empty)empty.hidden=count!==0;
 }
-export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
+export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,resume=null}){
   const all=resolvedPrayerPilotFamilies(L,families);
   const makeTile=tile=>{
     const family=all[tile.id];
@@ -139,7 +139,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     const slot=prayerDoorArtSlot(tile.id);
     const artLink=slot?' data-ao-art-slot-id="'+esc(slot.slotId)+'" data-ao-art-rotation="'+esc(slot.rotation)+'" data-ao-art-binding="unassigned"':'';
     return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+'" style="grid-column:'+tile.col+';grid-row:'+tile.row+'"'+target+artLink+' aria-label="'+esc(label)+'">'+
-      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true})+'</span>'+
+      '<span class="aoPrayPilotTileInfo" aria-hidden="true">i</span>'+
       '<span class="aoPrayPilotTileCaption">'+esc(label)+'</span></button>';
   };
   const routes=new Map();
@@ -152,6 +152,18 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
   const routeForm=id=>/novena|montfort|first_friday|first_saturday/.test(id)?"novena"
     :/rosary|chaplet|five_wounds|little_crown|precious_blood|mercy/.test(id)?"chaplet"
     :/litany/.test(id)?"litany":"prayer";
+  // R1.1 Continue only when the canonical Montfort owner has saved progress.
+  // Never present prototype sample progress as the user's actual progress.
+  const completed=Number.isInteger(resume?.completed)&&resume.completed>0
+    ?Math.min(33,resume.completed):0;
+  const continueRow=completed
+    ?'<button type="button" class="aoPrayPilotMini" data-p435930-own="pray.montfort_consecration">'+
+      '<span class="aoPrayPilotMiniArt" aria-hidden="true"></span>'+
+      '<span class="aoPrayPilotMiniText"><small>'+esc(L("CONTINUE","REPRENDRE"))+'</small>'+
+      '<b>'+esc(L("Montfort · 33-day preparation","Montfort · préparation de 33 jours"))+'</b>'+
+      '<span>'+esc(L(completed+" of 33 completed",completed+" sur 33 accomplis"))+'</span>'+
+      '<span class="aoPrayPilotMiniProgress" aria-hidden="true"><i style="width:'+((completed/33)*100).toFixed(1)+'%"></i></span></span>'+
+      '<span class="aoPrayPilotMiniChevron" aria-hidden="true">›</span></button>':'';
   const routeRows=[...routes.values()].map(row=>
     '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+routeForm(row.id)+'" data-pilot-latin="false" data-pilot-searchable="'+esc([row.title,row.description].join(" "))+'"'+
     (row.owner==="external"?' data-p435930-external="':' data-p435930-own="')+esc(row.id)+'">'+
@@ -162,41 +174,45 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     '<b>'+esc(p.titleFr&&L("EN","FR")==="FR"?p.titleFr:p.title)+'</b>'+
     '<small>'+esc(L("Canonical prayer text","Texte canonique de prière"))+'</small></button>'
   ).join("");
-  return head(L("Pray","Prier"),L("Find a prayer or devotion","Trouvez une prière ou une dévotion"))+
+  return head(L("Pray","Prier"),"")+
     '<main class="aoP435930Body aoPrayPilotHome">'+
-      '<div class="aoPrayPilotTop"><h2>'+esc(L("Enter into prayer","Entrer en prière"))+'</h2>'+
+      '<div class="aoPrayPilotTop"><h2>'+esc(L("Prayer","Prière"))+'</h2>'+
       '<label class="aoPrayPilotSearch">'+assetIcon("ao-ui-search","aoPrayPilotSearchIcon")+
-      '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+
-      '<p class="aoPrayPilotIntro">'+esc(L("Choose a door or search the existing prayer library and readers.","Choisissez une porte ou recherchez les prières et les lecteurs existants."))+'</p></div>'+
+      '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+'</div>'+continueRow+
       '<div data-ao-pray-pilot-results class="aoPrayPilotResults" hidden>'+
       '<div class="aoPrayPilotFacets" role="group" aria-label="'+esc(L("Filter search results","Filtrer les résultats"))+'">'+
       [["prayer",L("Prayers","Prières")],["litany",L("Litanies","Litanies")],["chaplet",L("Chaplets","Chapelets")],["novena",L("Novenas","Neuvaines")],["la",L("Latin","Latin")]]
         .map(([id,label])=>'<button type="button" data-p435930-pilot-facet="'+id+'" aria-pressed="false">'+esc(label)+'</button>').join("")+
       '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
       '<p data-ao-pilot-empty hidden>'+esc(L("No matching prayers or devotions.","Aucune prière ni dévotion correspondante."))+'</p></div>'+
-      '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
+      '<div class="aoPrayPilotDoorLabel">'+esc(L("Doors","Portes"))+'</div>'+
+       '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
       '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon",{preferEmbedded:true})+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
     '</main>';
 }
+// F04 ritual-of-the-hour presentation. Recitation and card progression
+// remain owned by the canonical Angelus donor; this is entry chrome only.
 export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual'}){
-  const regina=form==="regina";
+  const regina=form==="regina",hour=new Date().getHours();
+  const hourMark=hour<11?L("MORNING · 06:00","MATIN · 06:00"):
+    hour<17?L("MIDDAY · 12:00","MIDI · 12:00"):L("EVENING · 18:00","SOIR · 18:00");
+  const bell='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 17h12l-2-3V9a4 4 0 0 0-8 0v5zM10 20h4"/></svg>';
+  const dots=[3,3,3,9].map(n=>'<span class="aoPrayPilotBellsGroup">'+Array.from({length:n},()=>'<i></i>').join("")+'</span>').join("");
   return head(regina?"Regina Cæli":"Angelus",L("Prayer of the hour","Prière de l'heure"))+
     '<main class="aoP435930Body aoPrayPilotAngelusEntry">'+
       '<section class="aoPrayPilotAngelusHero">'+
-        '<div class="aoPrayPilotAngelusSymbol" aria-hidden="true">'+moduleIcon("pray.angelus_regina")+'</div>'+
-        '<small>'+esc(L("A pause for prayer","Une pause pour prier"))+'</small>'+
-        '<h2>'+(regina?"Regina Cæli":"Angelus")+'</h2>'+
-        '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The Angel of the Lord declared unto Mary.","L'Ange du Seigneur apporta l'annonce à Marie."))+'</p>'+
-        '<div class="aoPrayPilotEntryMeta">'+esc(regina?L("Eastertide · stand according to local custom","Temps pascal · debout selon la coutume locale"):posture)+'</div>'+
-      '</section>'+
-      '<div class="aoPrayPilotAngelusActions">'+
-        '<div class="aoPrayPilotRecitation" role="group" aria-label="'+esc(L("Recitation","Récitation"))+'">'+
-          '<button type="button" data-p435930-pilot-angelus-recitation="individual" aria-pressed="'+String(recitation!=='group')+'">'+esc(L("Alone","Seul"))+'</button>'+
-          '<button type="button" data-p435930-pilot-angelus-recitation="group" aria-pressed="'+String(recitation==='group')+'">'+esc(L("With others","Avec d’autres"))+'</button>'+
+        '<div class="aoPrayPilotAngelusContent">'+
+          '<div class="aoPrayPilotHourLine">'+bell+'<span>'+esc(hourMark)+'</span></div>'+
+          '<h2>'+esc(regina?"Regina Cæli":L("The Angelus","L’Angélus"))+'</h2>'+
+          '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The bell calls us to remember the Incarnation.","La cloche nous invite à nous souvenir de l’Incarnation."))+'</p>'+
+          '<div class="aoPrayPilotBells" aria-hidden="true">'+dots+'</div>'+
+          '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+bell+esc(L("Begin","Commencer"))+'</button>'+
+          '<div class="aoPrayPilotRecitation" role="group" aria-label="'+esc(L("Recitation","Récitation"))+'">'+
+            '<button type="button" data-p435930-pilot-angelus-recitation="individual" aria-pressed="'+String(recitation!=='group')+'">'+esc(L("Alone","Seul"))+'</button>'+
+            '<button type="button" data-p435930-pilot-angelus-recitation="group" aria-pressed="'+String(recitation==='group')+'">'+esc(L("With others","En groupe"))+'</button>'+
+          '</div>'+
         '</div>'+
-        '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+esc(L("Begin prayer","Commencer la prière"))+'</button>'+
-        '<p>'+esc(L("The existing named cards, prayer text, language faces and exact gesture cues are preserved.","Les cartes, textes, langues et gestes existants sont conservés."))+'</p>'+
-      '</div>'+
+      '</section>'+
     '</main>';
 }
 function installStyles(){
@@ -248,7 +264,104 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotBegin{width:100%;min-height:52px;border:0;border-radius:999px;background:var(--liturgical,#c9ae76);color:#0d1520;font:600 16px/1.2 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotAngelusActions p{font:400 12px/1.45 var(--ao-font-display,Georgia,serif);color:var(--muted,#aaa);text-align:center}",
     "@media(max-width:359px){#aoPray435930 .aoPrayPilotMosaic{grid-auto-rows:37px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}#aoPray435930 .aoPrayPilotTop h2{font-size:25px}}",
-    "@media(prefers-reduced-motion:reduce){#aoPray435930 .aoPrayPilotTile{scroll-behavior:auto}}"
+    "@media(prefers-reduced-motion:reduce){#aoPray435930 .aoPrayPilotTile{scroll-behavior:auto}}",
+    "#aoPray435930 .aoPrayPilotTop{padding:4px 16px 0}",
+    "#aoPray435930 .aoPrayPilotTop h2{font:600 28px/1.15 var(--ao-font-display,Georgia,serif);margin:10px 0 12px}",
+    "#aoPray435930 .aoPrayPilotSearch{height:44px;min-height:44px;background:var(--chip,var(--surface-1,#18202a));margin-bottom:14px}",
+    "#aoPray435930 .aoPrayPilotDoorLabel{margin:20px 16px 10px;font:600 11px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayPilotMini{display:flex;align-items:center;gap:12px;min-height:60px;margin:0 16px 8px;padding:9px 10px 9px 9px;width:calc(100% - 32px);border:1px solid var(--border,#49433b);border-radius:12px;background:var(--surface-1,#25211d);color:var(--text,#f0e9df);text-align:left;cursor:pointer}",
+    "#aoPray435930 .aoPrayPilotMiniArt{flex:0 0 42px;height:42px;border-radius:8px;background:linear-gradient(140deg,#443c33,#222936)}",
+    "#aoPray435930 .aoPrayPilotMiniText{display:flex;flex:1;min-width:0;flex-direction:column;gap:2px}",
+    "#aoPray435930 .aoPrayPilotMiniText small{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.09em;color:var(--liturgical,#c9a47b)}",
+    "#aoPray435930 .aoPrayPilotMiniText b{font:600 15px/1.25 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayPilotMiniText>span:not(.aoPrayPilotMiniProgress){font:400 12.5px/1.3 system-ui,sans-serif;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayPilotMiniProgress{height:3px;border-radius:2px;background:var(--border,#444);margin-top:6px;overflow:hidden}",
+    "#aoPray435930 .aoPrayPilotMiniProgress i{display:block;height:100%;background:var(--liturgical,#c9a47b)}",
+    "#aoPray435930 .aoPrayPilotMiniChevron{font-size:22px;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoTimeline{position:sticky;top:56px!important;min-height:42px!important;max-height:42px!important;padding:0 14px!important;gap:0!important;border:0!important;background:var(--bg,#12100f)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStops{display:flex!important;gap:8px!important;align-items:center!important;justify-content:stretch!important;max-width:none!important;width:100%!important;overflow:visible!important;padding:0!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop{flex:1 1 0!important;min-width:0!important;width:auto!important;height:44px!important;min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;outline-offset:-3px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop::before{content:'';display:block;height:4px;width:100%;border-radius:3px;background:var(--border,rgba(255,255,255,.23));opacity:.85}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoProgress{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop.active::before{background:var(--liturgical,#c9ae76)!important;opacity:1}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop:has(~.aoDevoStop.active)::before{background:color-mix(in srgb,var(--liturgical,#c9ae76) 55%,var(--border,#504d49))}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStopNumber,#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStopTitle{display:none!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardTitle{font-size:clamp(23px,6vw,29px)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardScroll{height:calc(100dvh - 315px)!important;max-height:calc(100dvh - 315px)!important;min-height:190px!important;padding-bottom:18dvh!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Dock{position:fixed;bottom:64px;left:50%;transform:translateX(-50%);z-index:150;box-sizing:border-box;display:grid;grid-template-columns:44px minmax(0,1fr) 116px;gap:12px;align-items:center;width:min(100%,760px);height:60px;padding:7px 16px;background:var(--bg,#080c12);border-top:1px solid var(--border,rgba(255,255,255,.14))}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Previous{width:44px;height:44px;background:transparent;border:0;border-radius:22px;color:var(--text,#eee);font:400 27px/1 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Position{min-width:0;text-align:center;font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Next{min-height:44px;max-height:44px;border:0;border-radius:23px;background:var(--liturgical,#c9ae76);color:var(--bg,#17130f);font:600 14px/1.1 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Dock button:disabled{opacity:.32;cursor:default}",
+    "@media(max-width:359px){#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Dock{padding-inline:12px;gap:6px;grid-template-columns:44px minmax(0,1fr) 100px}#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Next{font-size:13px}}",
+    "#aoPray435930 .aoPrayPilotAngelusHero{background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.18) 38%,rgba(10,7,5,.86) 72%,rgba(10,7,5,.94) 100%),linear-gradient(170deg,#c49a63 0%,#7a5434 45%,#2a1a10 100%)!important}",
+    "@media(max-width:359px){#aoPray435930 .aoPrayPilotAngelusHero h2{font-size:34px!important}#aoPray435930 .aoPrayPilotAngelusContent{padding-inline:16px!important}}",
+    "#aoPray435930 .aoPrayPilotTileCaption{padding:26px 9px 8px;font:600 14px/1.15 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font:600 20px/1.15 var(--ao-font-display,Georgia,serif);padding:40px 12px 12px}",
+    "#aoPray435930 .aoPrayPilotTileInfo{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.45);box-shadow:0 0 0 1px rgba(255,255,255,.35);color:#fff;font:italic 600 13px/1 Georgia,serif}",
+    "@media(max-width:359px){#aoPray435930 .aoPrayPilotTop h2{font-size:25px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}}",
+    "#aoPray435930 .aoPrayPilotAngelusEntry{display:flex;flex-direction:column;min-height:100%;padding:0}",
+    "#aoPray435930 .aoPrayPilotAngelusHero{flex:1;position:relative;min-height:calc(100dvh - 130px);display:flex;align-items:stretch;justify-content:flex-end;padding:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18) 38%,rgba(10,7,5,.86) 72%,rgba(10,7,5,.94)),linear-gradient(160deg,#68513c,#15131a)}",
+    "#aoPray435930 .aoPrayPilotAngelusContent{display:flex;flex-direction:column;justify-content:flex-end;width:100%;padding:24px 16px 22px;color:#f4eee6}",
+    "#aoPray435930 .aoPrayPilotHourLine{display:flex;align-items:center;gap:8px;color:#e9c9a0;font:600 12px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.14em;text-transform:uppercase}",
+    "#aoPray435930 .aoPrayPilotAngelusHero h2{font:600 40px/1.05 var(--ao-font-display,Georgia,serif);letter-spacing:.005em;margin:10px 0 6px}",
+    "#aoPray435930 .aoPrayPilotAngelusHero p{font:italic 17px/1.45 var(--ao-font-display,Georgia,serif);max-width:30ch;margin:0;color:#e6ddd2}",
+    "#aoPray435930 .aoPrayPilotBells{display:flex;align-items:center;gap:10px;margin-top:18px;color:#e9c9a0}",
+    "#aoPray435930 .aoPrayPilotBellsGroup{display:flex;gap:4px}",
+    "#aoPray435930 .aoPrayPilotBellsGroup i{display:block;width:7px;height:7px;border:1.5px solid currentColor;border-radius:50%;opacity:.75}",
+    "#aoPray435930 .aoPrayPilotBegin{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;margin-top:18px;border:0;border-radius:27px;background:#f4eee6;color:#1a1410;font:600 16px/1 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoPrayPilotRecitation{display:flex;align-self:center;justify-content:center;gap:0;margin:12px 0 0;padding:3px;width:auto;border-radius:18px;background:rgba(255,255,255,.12)}",
+    "#aoPray435930 .aoPrayPilotRecitation button{min-height:32px;padding:0 14px;border:0;border-radius:16px;font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);color:#f4eee6}",
+    "#aoPray435930 .aoPrayPilotRecitation button[aria-pressed=true]{background:rgba(255,255,255,.22);color:#f4eee6;box-shadow:none}",
+    "#aoPray435930 .aoP435930Body.aoPrayPilotAngelusEntry{width:100%!important;max-width:none!important;min-height:calc(100dvh - 122px)!important;padding:0!important;margin:0!important;gap:0!important;display:flex!important;flex-direction:column!important}",
+    "#aoPray435930 .aoPrayPilotAngelusEntry .aoPrayPilotAngelusHero{flex:0 0 auto!important;width:100%;box-sizing:border-box;height:calc(100dvh - 122px)!important;min-height:calc(100dvh - 122px)!important;display:flex!important;flex-direction:column!important;justify-content:flex-end!important}",
+    "#aoPray435930 .aoPrayPilotAngelusEntry .aoPrayPilotAngelusContent{box-sizing:border-box}",
+    "/* F04 source-owned moment display; 44 px accessible targets with grouped dots, not a numbered ribbon. */",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments]{--f04-ink:#f3e9df;--f04-paper:#1b1513;--f04-accent:#cf9183;--f04-sage:#88ab91;background:var(--f04-paper)!important;color:var(--f04-ink)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoTimeline{justify-items:center!important;background:var(--f04-paper)!important;top:55px!important;min-height:50px!important;max-height:50px!important;padding:0 6px!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStops{width:auto!important;max-width:100%!important;justify-content:center!important;gap:6px!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop{flex:0 0 48px!important;width:48px!important;height:44px!important;min-height:44px!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop::before{display:none!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04DotGroup{display:flex!important;align-items:center;justify-content:center;gap:4px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04Dot{display:block;width:7px;height:7px;border-radius:50%;border:1.5px solid #756961;background:transparent;box-sizing:border-box}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop.active .aoF04Dot{background:var(--f04-accent);border-color:var(--f04-accent)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop:has(~.aoDevoStop.active) .aoF04Dot{background:var(--f04-ink);border-color:var(--f04-ink);opacity:.65}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardHead{text-align:left!important;padding:8px 20px 9px!important;border:0!important;background:var(--f04-paper)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardNumber{display:block;font:700 10px/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--f04-accent);margin-bottom:6px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardTitle{font:600 clamp(26px,7.5vw,32px)/1.1 var(--ao-font-display,Georgia,serif)!important;color:var(--f04-ink)!important;margin:0!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardLatin{display:none!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoFolioPostureNote{width:max-content;max-width:100%;margin:10px 0 0!important;padding:0!important;border:1px solid #7f665b!important;border-radius:22px;background:rgba(207,145,131,.13)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoFolioPostureNote summary{min-height:30px!important;padding:4px 12px!important;gap:7px!important;color:var(--f04-ink)!important;font:600 12px/1.25 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoFolioPostureNote p{font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);padding:0 10px 10px;margin:0;max-width:250px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardScroll{background:var(--f04-paper)!important;padding:12px 20px 22dvh!important;gap:16px!important;color:var(--f04-ink)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardScroll .aoP435930PrayerUnit button{color:var(--f04-ink)!important;line-height:1.62!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardScroll .ao-liturgical-speaker{color:var(--f04-sage)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoAngelusDialogueLine{flex-wrap:wrap;gap:5px 9px!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04VoiceRole{flex:0 0 100%;font:700 10px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--f04-accent);margin:2px 0 0 0}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoAngelusDialogueLine.response>span:last-child{font-weight:700}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Dock{grid-template-columns:44px minmax(0,1fr)!important;height:70px!important;gap:12px!important;padding:9px 18px!important;background:var(--f04-paper)!important;border-top:1px solid #3f3530!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Position{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Previous{border:1px solid #63524b!important;color:var(--f04-ink)!important;background:rgba(255,255,255,.04)!important;border-radius:50%!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Next{width:100%!important;min-width:0!important;max-width:none!important;background:#f0e8dc!important;color:#241b17!important;border-radius:25px!important;font:700 15px/1 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Complete{min-height:calc(100dvh - 186px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:20px 24px 74px;box-sizing:border-box;text-align:center;background:var(--f04-paper);color:var(--f04-ink)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Complete[hidden],#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoTimeline[hidden],#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardViewport[hidden],#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoF04Dock[hidden]{display:none!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04CompleteSymbol{font-size:38px;color:var(--f04-accent)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04CompleteEyebrow{font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;color:var(--f04-accent)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04CompleteAmen{font:600 42px/1.1 var(--ao-font-display,Georgia,serif);margin:4px 0;color:var(--f04-ink)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04NextTime{font:italic 17px/1.4 var(--ao-font-display,Georgia,serif);color:#d9cbbb;margin:3px 0 20px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04CompleteReturn{width:100%;min-height:50px;border:0;border-radius:25px;background:#f0e8dc;color:#241b17;font:700 15px/1.2 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04CompleteAgain{min-height:44px;padding:8px 20px;background:transparent;border:0;color:#d9cbbb;font:600 14px/1.2 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow{display:inline-flex!important;align-items:center;gap:6px;max-width:100%;min-height:26px;width:max-content;margin:0 0 9px;padding:4px 10px;border:1px solid #b77d74!important;border-radius:16px;background:rgba(206,132,117,.22)!important;color:#f6c7b9!important;font:600 12px/1.1 var(--ao-font-ui,system-ui,sans-serif)!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow .aoFolioIncarnationIcon{width:16px;height:16px}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoCardScroll .aoF04InlineBow{flex-shrink:0}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoF04InlineBow:not(.is-active){display:none!important}",
+    "/* F04 grouped prayer: role and ℣/℟ sit in a compact, single-row margin grid. */",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoAngelusDialogueLine{display:grid!important;grid-template-columns:38px 30px minmax(0,1fr)!important;grid-template-rows:auto;column-gap:6px!important;row-gap:0!important;align-items:start!important;padding:7px 0!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoF04VoiceRole{grid-column:1;grid-row:1;flex:none!important;width:auto!important;min-width:0;font:700 9px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.02em!important;margin:3px 0 0!important;white-space:nowrap}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoAngelusDialogueLine>.ao-liturgical-speaker{grid-column:2;grid-row:1;flex:none!important;margin:0}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments][data-ao-angelus-recitation=group] .aoAngelusDialogueLine>span:last-child{grid-column:3;grid-row:1;min-width:0}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop.active{background:transparent!important;box-shadow:none!important;border:0!important}",
+    "#aoPray435930 .aoP435930AngelusReader[data-ao-f04-timeline=segments] .aoDevoStop:focus-visible{outline:2px solid var(--f04-accent)!important;outline-offset:-4px}",
   ].join("\n");
   const style=document.createElement("style");style.id="ao-prayer-design-pilot-css";style.textContent=css;document.head.appendChild(style);
 }

@@ -87,30 +87,41 @@ try{
    assert.ok(formation.scrollWidth<=formation.innerWidth+1,"Formation overflow at "+width+"px");
    await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="pray"]').click();
-   await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
-   const prayer=await page.evaluate(()=>{
-    const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
-    const visible=selector=>[...document.querySelectorAll(selector)].filter(el=>{
-      const s=getComputedStyle(el),r=el.getBoundingClientRect();
-      return s.display!=="none"&&s.visibility!=="hidden"&&r.height>0&&r.width>0;
+   const modern=page.locator("#aoPray435930.open .aoPrayPilotHome");
+   if(await modern.count()){
+    await modern.waitFor({state:"visible",timeout:18000});
+    const metrics=await modern.evaluate(root=>{
+     const tiles=[...root.querySelectorAll(".aoPrayPilotMosaic .aoPrayPilotTile")];
+     return {tiles:tiles.length,
+      accessible:tiles.every(el=>el.tagName==="BUTTON"&&!!el.getAttribute("aria-label")),
+      textSizes:tiles.map(el=>parseFloat(getComputedStyle(el.querySelector(".aoPrayPilotTileCaption")).fontSize)),
+      search:!!root.querySelector("[data-p435930-pilot-search]"),
+      overflow:document.documentElement.scrollWidth-innerWidth};
     });
-    const kind=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind");
-    const descriptions=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription");
-    const font=el=>parseFloat(getComputedStyle(el).fontSize);
-    return {root:!!root,kind:kind.map(font),descriptions:descriptions.map(font),
-      scrollWidth:document.documentElement.scrollWidth,innerWidth,
-      rootButtons:[...root.querySelectorAll("button")].length};
-   });
-   assert.ok(prayer.kind.length>=4&&prayer.descriptions.length>=4,
-     "Prayer family list unavailable at "+width+"px");
-   assert.ok(prayer.kind.every(px=>px>=11),"Prayer category microtype still <11px: "+JSON.stringify(prayer));
-   assert.ok(prayer.descriptions.every(px=>px>=13),
-     "Prayer descriptions still below 13px: "+JSON.stringify(prayer));
-   assert.ok(prayer.scrollWidth<=prayer.innerWidth+1,"Prayer overflow at "+width+"px");
+    assert.equal(metrics.tiles,9,"The reviewed R1.1 Prayer discovery requires nine real doors");
+    assert.ok(metrics.accessible&&metrics.search,"Prayer discovery must expose navigable doors and search");
+    assert.ok(metrics.textSizes.every(size=>size>=12),"Nine-door captions too small: "+JSON.stringify(metrics));
+    assert.ok(metrics.overflow<=1,"Prayer discovery overflows at "+width+"px: "+JSON.stringify(metrics));
+   }else{
+    await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
+    const legacy=await page.evaluate(()=>{
+     const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
+     const visible=selector=>[...root.querySelectorAll(selector)].filter(el=>{
+      const st=getComputedStyle(el),rect=el.getBoundingClientRect();
+      return st.display!=="none"&&st.visibility!=="hidden"&&rect.height>0&&rect.width>0;
+     });
+     return {kinds:visible(".aoP435930ModuleKind").map(el=>parseFloat(getComputedStyle(el).fontSize)),
+      descriptions:visible(".aoP435930ModuleDescription").map(el=>parseFloat(getComputedStyle(el).fontSize)),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+    });
+    assert.ok(legacy.kinds.length>=4&&legacy.descriptions.length>=4,"Legacy prayer families missing");
+    assert.ok(legacy.kinds.every(n=>n>=11)&&legacy.descriptions.every(n=>n>=13),"Legacy prayer family labels unreadable");
+    assert.ok(legacy.overflow<=1,"Legacy Prayer page overflows");
+   }
    await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
    assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
    console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
-     prayer.kind.length+" Prayer family kinds, no viewport overflow");
+     "Prayer landing layout verified, no viewport overflow");
   }finally{await context.close();}
  }
 }finally{

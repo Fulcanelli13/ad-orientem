@@ -82,13 +82,14 @@ try{
      const lines=[...root.querySelectorAll(".aoP435930LitanyLine")];
      const styles=line?getComputedStyle(line):null;
      const p=line?.getBoundingClientRect(),v=mount.getBoundingClientRect();
-     const edition=root.querySelector("details.aoP435930Source");
+     const edition=mount.querySelector(".aoPrayerBookSources details.aoP435930Source");
+     const sourcesHidden=!!edition&&!edition.closest(".aoPrayerBookSources").open;
      const rail=root.querySelector(".aoDevoSequenceTimeline");
      return {font:parseFloat(styles?.fontSize||"0"),leading:parseFloat(styles?.lineHeight||"0"),
       opacity:lines.map(x=>Number(getComputedStyle(x).opacity)),lineCount:lines.length,
       gutter:getComputedStyle(scroll).paddingRight,visibleFirstLine:!!p&&p.top<v.bottom-18,
       readableMeasure:prayer?.getBoundingClientRect().width||0,
-      editionClosed:!!edition&&!edition.open,rail:!!rail,
+      editionClosed:!!edition&&!edition.open&&sourcesHidden,rail:!!rail,
       overflow:document.documentElement.scrollWidth-innerWidth};
     });
     const m=await measured();
