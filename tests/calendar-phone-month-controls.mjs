@@ -62,8 +62,13 @@ try{
        font:parseFloat(getComputedStyle(x).fontSize)}));
     const a=el.querySelector(".aoCalV2MonthGrid").getBoundingClientRect();
     const v=tabs.getBoundingClientRect();
+    const nativeViewTabs=el.querySelector(".aoCalV2Tabs");
+    const outerViewTabs=document.querySelector(".aoTodayH4 .aoH4CalendarViews");
     return {
      embedded:el.dataset.aoCalendarEmbedded,calendarView:el.dataset.aoCalendarView,
+     nativeViewTabsDisplay:nativeViewTabs?getComputedStyle(nativeViewTabs).display:null,
+     outerViewTabsDisplay:outerViewTabs?getComputedStyle(outerViewTabs).display:null,
+     outerViewTabsCount:outerViewTabs?.querySelectorAll("[data-home-calendar-view]").length??0,
      tabDisplay:getComputedStyle(tabs).display,tabs:rows,tabScrollWidth:tabs.scrollWidth,
      tabWidth:tabs.clientWidth,tabHeight:v.height,gridCount:el.querySelectorAll("[data-cal-pick-date]").length,
      gridTop:a.top,nav,overflow:document.documentElement.scrollWidth-innerWidth,
@@ -74,6 +79,13 @@ try{
    assert.equal(await cal.locator('[data-cal-today]').count(),0,
      "Calendar must not duplicate Home's Today navigation");
    assert.equal(metrics.calendarView,"picker");
+   assert.equal(metrics.embedded,"true");
+   assert.equal(metrics.nativeViewTabsDisplay,"none",
+     "Legacy sticky Calendar tabs must not duplicate or overlap H7 navigation");
+   assert.equal(metrics.outerViewTabsDisplay,"grid",
+     "Approved H7 Calendar view navigation must remain visible");
+   assert.equal(metrics.outerViewTabsCount,3,
+     "H7 must preserve exactly Day, Month and Liturgical Year");
    assert.equal(metrics.gridCount,42,"Never suppress unresolved liturgical days");
    assert.equal(metrics.tabDisplay,"flex","Month views must stay on one horizontal rail");
    assert.equal(metrics.tabs.length,3,"Month should offer only All, Temporale and Sanctorale");
