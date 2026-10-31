@@ -357,7 +357,13 @@ function renderMorningEvening(){
  const existingNav=`<nav class="aoDailyAccessNav" aria-label="${esc(L("Prayer navigation","Parcours des prières"))}"><button type="button" data-tp381-daily-mode="${guided?"list":direct?"list":"guided"}">${esc(guided?L("Choose a prayer","Choisir une prière"):direct?L("All prayers","Toutes les prières"):L("Pray in order","Prier dans l’ordre"))}</button></nav>`;
  const prefs=personalDailyPrefs();
  const editionPills=DAILY_UX_PILOT_ENABLED?renderDailyBookPills({edition:prefs.edition,L,esc}):"";
- const nav=DAILY_UX_PILOT_ENABLED&&!direct?renderDailyReaderOptions({mode:S.dailyMode,L,esc}):existingNav;
+ // Preserve the direct, one-tap prayer index alongside the collapsible layout options.
+ const nav=DAILY_UX_PILOT_ENABLED&&!direct?
+  '<div class="aoDailyAccessNav" data-ao-hours-direct-index>'+
+   '<button type="button" data-tp381-daily-mode="'+(guided?'list':'guided')+'">'+
+   esc(guided?L("Choose a prayer","Choisir une prière"):L("Pray in order","Prier dans l’ordre"))+
+   '</button></div>'+renderDailyReaderOptions({mode:S.dailyMode,L,esc})
+  :existingNav;
  const full=buildPersonalDailyPlan({daypart:S.daypart,prefs:{...prefs,length:"full",mode:"standard"}});
  const other=personalDailyOptions(S.daypart,prefs.language,prefs.edition).filter(row=>row.kind==="additional");
  const body=browse?dailyPersonalPrayerCatalog(full,other,{esc,L})
