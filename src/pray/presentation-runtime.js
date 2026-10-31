@@ -2815,7 +2815,8 @@ function renderPreciousBlood(){
  Math.round((s.phase+1)/9*100)+'%"></span></div>'+ (CHAPLET_F07_PILOT_ENABLED?renderF07PreciousBlood(s.phase,s.bead,{french:fr}):'')+
  contents+(CHAPLET_F07_PILOT_ENABLED?'<details class="aoF07JumpDisclosure"><summary>'+esc(L('Choose a mystery','Choisir un mystère'))+'</summary>'+nav+'</details>':'')+'<footer class="aoPreciousBloodActions">'+previous+next+'</footer>'+history+'</main>';
 }
-function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Band:CHAPLET_F07_PILOT_ENABLED?renderF07LittleCrown(LITTLE_CROWN.index,{french:isFr()}):""})}
+function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Band:CHAPLET_F07_PILOT_ENABLED
+ ?(interactiveBeads=>renderF07LittleCrown(LITTLE_CROWN.index,{french:isFr(),interactiveBeads})):""})}
 function renderFiveWounds(){
  const index=Math.max(0,Math.min(29,FIVE_WOUNDS.index));FIVE_WOUNDS.index=index;
  const langCode=FIVE_WOUNDS.latin?'la':(isFr()?'fr':'en');
