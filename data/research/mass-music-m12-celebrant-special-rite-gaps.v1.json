@@ -5,9 +5,11 @@
     "families": 19,
     "statusCounts": {
       "M05_SOURCE_CANDIDATE": 6,
-      "SOURCE_SCORE_REQUIRED": 11,
+      "SOURCE_SCORE_REQUIRED": 8,
       "SILENT_NOT_SUNG": 1,
-      "M05_PARTIAL_CANDIDATE": 1
+      "M05_PARTIAL_CANDIDATE": 1,
+      "M12_PARTIAL_SOURCE_CANDIDATE": 1,
+      "M12_SOURCE_CANDIDATE": 2
     }
   },
   "rubricalSources": [
@@ -177,27 +179,29 @@
       "id": "GOSPEL_PROCLAMATION",
       "event": "GOSPEL",
       "toneFamily": "GOSPEL_SPECIFIC",
-      "status": "SOURCE_SCORE_REQUIRED",
+      "status": "M12_PARTIAL_SOURCE_CANDIDATE",
       "existingM05Id": null,
-      "scope": "Full Gospel chant formula, initials, endings and dialogue; deacon at Solemn Mass, priest at Missa cantata",
+      "scope": "1961 source #4490 supplies Gospel greeting/title/Gloria tibi only; explicitly incomplete for recitation/ending and other evangelists. Full original printed formulas still required.",
       "sourceTextOnly": true,
       "notAnObservedPerformance": true,
       "printedNotesVerified": false,
       "userApproved": false,
-      "publicReader": false
+      "publicReader": false,
+      "existingM12Id": "GOSPEL_GREETING_AND_TITLE"
     },
     {
       "id": "ITE_MISSA_EST_REGULAR",
       "event": "DISMISSAL",
       "toneFamily": "SOURCE_SELECTED",
-      "status": "SOURCE_SCORE_REQUIRED",
+      "status": "M12_SOURCE_CANDIDATE",
       "existingM05Id": null,
-      "scope": "Normal Ite missa est and Deo gratias, including permitted Kyriale melody variants; do not use Easter double Alleluia",
+      "scope": "1961 source #832 Ite VIII plus Deo gratias, not all ordinary Ite melodies; source-selected Kyriale and selected Mass still required.",
       "sourceTextOnly": true,
       "notAnObservedPerformance": true,
       "printedNotesVerified": false,
       "userApproved": false,
-      "publicReader": false
+      "publicReader": false,
+      "existingM12Id": "DISMISSAL_ITE_REGULAR_VIII"
     },
     {
       "id": "ITE_MISSA_EST_EASTER_DOUBLE",
@@ -216,14 +220,15 @@
       "id": "BENEDICAMUS_DOMINO",
       "event": "DISMISSAL",
       "toneFamily": "PROCESSIONAL_ENDING",
-      "status": "SOURCE_SCORE_REQUIRED",
+      "status": "M12_SOURCE_CANDIDATE",
       "existingM05Id": null,
-      "scope": "Benedicamus Domino and Deo gratias; 1962 processional-ending rule rather than older no-Gloria heuristics",
+      "scope": "1961 source #2901 Benedicamus VIII plus Deo gratias; source-selected processional-ending and actual Kyriale compatibility not yet established.",
       "sourceTextOnly": true,
       "notAnObservedPerformance": true,
       "printedNotesVerified": false,
       "userApproved": false,
-      "publicReader": false
+      "publicReader": false,
+      "existingM12Id": "DISMISSAL_BENEDICAMUS_VIII"
     },
     {
       "id": "REQUIESCANT_IN_PACE",
@@ -284,5 +289,6 @@
     "allFamiliesComplete": false,
     "editorialCollectionApproved": false,
     "publicMusic": false
-  }
+  },
+  "sourceCandidateCorpusM12": "data/research/mass-music-m12-new-1961-score-leads.v1.json"
 }
