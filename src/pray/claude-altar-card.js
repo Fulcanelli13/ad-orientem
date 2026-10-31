@@ -28,6 +28,10 @@ export function claudeAltarBilingualRows({latin,vernacular,esc,language="en"}){
  // to the existing source reader; never manufacture translated wording.
  const lat=latin.split("\n"),v=vernacular.split("\n");
  if(lat.length!==v.length)return null;
+ // A source line may not be paired to a missing line in the other witness.
+ // Keep both original texts in the canonical fallback rather than presenting
+ // a visually aligned but structurally false Latin/vernacular edition.
+ if(lat.some((line,i)=>Boolean(line.trim())!==Boolean(v[i].trim())))return null;
  const result=lat.map((raw,i)=>{
   const vern=v[i],l=raw.trim();
   if(!l&&!vern.trim())return '<div class="aoClaudeAltarGap" aria-hidden="true"></div>';
