@@ -76,7 +76,13 @@ try{
  for(const id of Object.keys(NOVENA_CORPUS_V4)){
   const corpus=NOVENA_CORPUS_V4[id];
   const pattern=corpus.pattern||(id==="immaculate_conception"?"OPENING_DAY_COMMON_CLOSE":"STANDARD");
-  const chapters=novenaStageChapters({pattern,sharedClosing:!!corpus.sharedClosingText});
+  // The source owner omits an empty Common-prayers card when neither common
+  // prayers nor a shared closing witness exists. Keep test parity with
+  // novenaChapters() rather than demanding an invented liturgical stage.
+  const chapters=pattern==="SOURCE_REPEAT_ONLY"
+    ?[{id:"prepare"},{id:"repeat"},{id:"close"}]
+    :novenaStageChapters({pattern,sharedClosing:!!corpus.sharedClosingText,
+      commonRequired:!!(corpus.commonPrayers?.length||corpus.sharedClosingText)});
   assert.equal(await page.evaluate(id=>window.AO_NOVENAS_V3.open({novenaId:id,returnContext:null}),id),true,
     "Cannot open novena "+id);
   await page.locator("#aoPray435930.open [data-n1-mode='guided']").evaluate(el=>el.click());
