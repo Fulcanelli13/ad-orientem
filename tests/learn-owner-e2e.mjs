@@ -672,8 +672,8 @@ try{
   await assertFocusSafe("Learn -> Pray");
 
   // Calendar is now embedded in Today (PR #1023), not a standalone
-  // sixth app destination. Use the exact Month control, not the nine
-  // context-specific buttons sharing data-home-calendar.
+  // sixth app destination. H4 replaces the removed Month tab with one
+  // dated Calendar opener; contextual This week links remain separate.
   await openLearn();
   await page.locator("[data-ao-app-surface='home']").tap();
   await page.waitForFunction(()=>
@@ -681,7 +681,9 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]').tap();
+  const monthEntry=page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]');
+  assert.equal(await monthEntry.count(),1,"H4 must expose one date-to-Month entry");
+  await monthEntry.tap();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
     {state:"visible",timeout:15000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
@@ -690,7 +692,7 @@ try{
     "Embedded Calendar must preserve Today as the app surface");
   await assertNoMass("Learn -> Today -> Month");
   await assertFocusSafe("Learn -> Today -> Month");
-  await page.locator('.homeScreen.aoTodayH4 [data-home-calendar-today]').tap();
+  await page.locator("[data-home-calendar-today]").tap();
   await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
   assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,
     "Return from Month must restore Today without an orphaned Calendar");
