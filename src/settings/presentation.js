@@ -219,11 +219,12 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
   if(vm.route.startsWith("/settings/local-customs/")){
     const id=decodeURIComponent(vm.route.split("/").pop()),pr=profiles.find(x=>x.id===id);
     if(!pr)return shell(L("Local Church & Customs","Église locale & usages"),`<div class="aoSetEmpty">${esc(L("Profile not found.","Profil introuvable."))}</div>`);
-    const customSelect=(title,key,items)=>{const active=pr.customs?.[key];return `<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(title)}</b></span><select class="aoSetSelect" data-profile-id="${esc(id)}" data-profile-key="${esc(key)}">${items.map(([v,en,frt])=>`<option value="${esc(v)}"${active===v?" selected":""}>${esc(L(en,frt))}</option>`).join("")}</select></label>`;};
+    const customSelect=(title,key,items)=>{const active=pr.customs?.[key];return '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(title)+'</b></span><span class="aoSetSegments" role="group" aria-label="'+esc(title)+'">'+
+      items.map(([v,en,frt])=>'<button type="button" data-profile-id="'+esc(id)+'" data-profile-key="'+esc(key)+'" data-profile-value="'+esc(v)+'" class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
     const unspecified=[["unspecified","Not specified","Non précisé"]];
     return shell(pr.name,
       section(L("CHURCH","ÉGLISE"),`<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(L("Church name","Nom de l’église"))}</b></span><input class="aoSetProfileName" data-profile-name="${esc(id)}" value="${esc(pr.name)}"></label>`+
-        toggle(L("Use as my usual church","Utiliser comme mon église habituelle"),"","__profile_default__").replace('data-pref-toggle="__profile_default__"',`data-profile-use-default="${esc(id)}"`).replace(`aria-pressed="false"`,`aria-pressed="${p.mass.defaultProfileId===id}"`).replace("aoSetSwitch ","aoSetSwitch "+(p.mass.defaultProfileId===id?"on ":"")))+
+        '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(L("Use as my usual church","Utiliser comme mon église habituelle"))+'</b></span><span class="aoSetSegments"><button type="button" data-profile-use-default="'+esc(id)+'" aria-pressed="'+(p.mass.defaultProfileId===id)+'" class="'+(p.mass.defaultProfileId===id?'active':'')+'">'+esc(L("Use","Choisir"))+'</button></span></div>'+
       section(L("LOCAL CUSTOMS","USAGES LOCAUX"),
         customSelect(L("Holy Communion","Sainte Communion"),"communionPractice",[...unspecified,["usually_offered","Usually distributed","Habituellement distribuée"],["usually_not_offered","Usually not distributed","Habituellement non distribuée"]])+
         customSelect(L("Incense at Sung Mass","Encens à la Messe chantée"),"incensePractice",[...unspecified,["usually_used","Usually used","Habituellement utilisé"],["usually_not_used","Usually not used","Habituellement non utilisé"]])+
