@@ -1,0 +1,2575 @@
+{
+  "schema": "AO_SACRED_ATLAS_SITE_COVER_BATCH_001_V1",
+  "date": "2026-10-31",
+  "source_audit_path": "data/geography/research/sacred-atlas-site-cover-gaps-20261031.v1.json",
+  "total": 100,
+  "scope": "RESEARCH_AND_ACQUISITION_NOT_PRODUCTION_APPROVAL",
+  "selection_rule": "Priority landmark first, then reuse verified gallery images and prior Commons selections. No generic search if exact approved source exists.",
+  "sites": [
+    {
+      "batch_sequence": 1,
+      "place_id": "place:FR:notre-dame-paris",
+      "site_name": "Cathédrale Notre-Dame de Paris",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "FR",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.853,
+        "lng": 2.3499,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_NEW_2026_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": {
+        "commons_title": "File:Notre Dame de Paris, exterior, 2026.jpg",
+        "commons_page": "https://commons.wikimedia.org/wiki/File:Notre_Dame_de_Paris,_exterior,_2026.jpg",
+        "photographer": "Szczecinolog",
+        "date": "2026-09-17",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "width": 3360,
+        "height": 2520,
+        "status": "COMMONS_FILE_PAGE_SOURCE_CONFIRMED_PHYSICAL_SITE_AND_ORIGINAL_BYTES_QA_PENDING"
+      }
+    },
+    {
+      "batch_sequence": 2,
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "site_name": "Cathédrale Notre-Dame d’Amiens",
+      "aliases": [
+        "Amiens Cathedral"
+      ],
+      "site_type": "cathedral",
+      "country_code": "FR",
+      "city": "Amiens",
+      "coordinates": {
+        "lat": 49.89462,
+        "lng": 2.30208,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 3,
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "site_name": "Sanctuaire Notre-Dame de La Salette",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "FR",
+      "city": "La Salette-Fallavaux",
+      "coordinates": {
+        "lat": 44.85887,
+        "lng": 5.9786,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 4,
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "site_name": "Basilique du Sacré-Cœur de Montmartre — Paris",
+      "aliases": [
+        "Basilica of the Sacred Heart of Montmartre",
+        "Sacré-Cœur Basilica",
+        "Basilique du Vœu national"
+      ],
+      "site_type": "basilica",
+      "country_code": "FR",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8868,
+        "lng": 2.34303,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Le sacre coeur.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 5,
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "site_name": "Basilique Notre-Dame des Victoires, Paris",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "FR",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.86679,
+        "lng": 2.34096,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilique Notre Dame Victoires - Paris II (FR75) - 2026-04-11 - 1.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 6,
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "site_name": "Basilique Notre-Dame du Perpétuel-Secours, Paris",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "FR",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.86172,
+        "lng": 2.38701,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilique Notre Dame Perpétuel Secours - Paris XI (FR75) - 2024-11-23 - 4.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 7,
+      "place_id": "place:CD:notre-dame-du-congo-cathedral-kinshasa",
+      "site_name": "Cathédrale Notre-Dame du Congo, Kinshasa",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "CD",
+      "city": "Kinshasa",
+      "coordinates": {
+        "lat": -4.32384,
+        "lng": 15.29463,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:La cathédrale Notre-Dame de la paix de Bukavu.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "HOLD_WRONG_CITY_RESEARCH_CORRECT_SITE",
+      "identity_warnings": [
+        "Selected Bukavu cathedral is NOT Notre-Dame du Congo in Kinshasa. Do not download or publish this file for this Place."
+      ],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 8,
+      "place_id": "place:MU:saint-louis-cathedral-port-louis",
+      "site_name": "Cathédrale Saint-Louis — Port-Louis",
+      "aliases": [
+        "Saint Louis Cathedral Mauritius"
+      ],
+      "site_type": "cathedral",
+      "country_code": "MU",
+      "city": "Port Louis",
+      "coordinates": {
+        "lat": -20.16454,
+        "lng": 57.50646,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Port Louis, Saint Louis Cathedral.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "mu-port-louis-saint-louis-cathedral-2015",
+          "asset_path": "assets/approved/place-gallery/MU-port-louis-saint-louis-cathedral-2015.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Port_Louis,_Saint_Louis_Cathedral.jpg",
+          "credit": "Karsten Ratzke",
+          "license": "CC0-1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "source_sha1": "05eb7fcfee477bb5f430b5116e71fc554f11d05d",
+          "derivative_sha256": "dac6c5a35082cf48872a58e81fc1ae2c284664b7df42b0295109e2c98f95a796",
+          "width": 1280,
+          "height": 844,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 9,
+      "place_id": "place:MU:marie-reine-de-la-paix-port-louis",
+      "site_name": "Marie Reine de la Paix, Port-Louis",
+      "aliases": [],
+      "site_type": "pilgrimage_destination",
+      "country_code": "MU",
+      "city": "Port-Louis",
+      "coordinates": {
+        "lat": -20.1704,
+        "lng": 57.49628,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:MU-port-louis-kirche-maria.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "mu-marie-reine-de-la-paix-sanctuary-2019",
+          "asset_path": "assets/approved/place-gallery/MU-marie-reine-de-la-paix-sanctuary-2019.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:MU-port-louis-kirche-maria.jpg",
+          "credit": "Balou46",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "244370f72a2c1e2e22e0900a7894c7da425db5e1",
+          "derivative_sha256": "266ae8ca823ef97fbae8f64d464d610deef81e0adf4017bc24d02bb2054f7f72",
+          "width": 1280,
+          "height": 848,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 10,
+      "place_id": "place:IE:ballintubber-abbey-church",
+      "site_name": "Ballintubber Abbey Church",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "IE",
+      "city": "Ballintubber",
+      "coordinates": {
+        "lat": 53.75669,
+        "lng": -9.28287,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Ballintubber Abbey East Range 2007 08 12.jpg",
+      "gallery_source_count": 3,
+      "usable_gallery_assets": [
+        {
+          "media_id": "ie-ballintubber-eastern-sanctuary-elevation-2011",
+          "asset_path": "assets/approved/place-gallery/IE-ballintubber-east-elevation-2011.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ballintubber_Abbey_eastern_elevation.JPG",
+          "credit": "Laurel Lodged",
+          "license": "CC0-1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "source_sha1": "cb79e98f664936b5a7d052f9aaeab7b678a5fd1c",
+          "derivative_sha256": "908f86b8b5b60df1b482cf78ca672a1e011fb18b4d34ce476597f0d034de8f39",
+          "width": 1280,
+          "height": 960,
+          "chapter_id": "architecture",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        },
+        {
+          "media_id": "ie-ballintubber-cloister-remains-2011",
+          "asset_path": "assets/approved/place-gallery/IE-ballintubber-cloisters-2011.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ballintubber_Abbey_cloisters.JPG",
+          "credit": "Laurel Lodged",
+          "license": "CC0-1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "source_sha1": "fcb64de9ad0b5cd0f5426e0780cc30624098036c",
+          "derivative_sha256": "20cd58e75187fefbfc0374b1875c2fe83ed7daf8ef6c0f451aaad30597cee39f",
+          "width": 1280,
+          "height": 960,
+          "chapter_id": "architecture",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        },
+        {
+          "media_id": "ie-ballintubber-east-range-2007",
+          "asset_path": "assets/approved/place-gallery/IE-ballintubber-east-range-2007.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ballintubber_Abbey_East_Range_2007_08_12.jpg",
+          "credit": "Andreas F. Borchert",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "479edfb7a6516dc2715bdc08bbf94e682b6b1407",
+          "derivative_sha256": "3f49ac1bcf9a87c4a0044e67a466983bbc0192f8de69f8456f5688d420b72975",
+          "width": 1280,
+          "height": 853,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 11,
+      "place_id": "place:FR:abbatiale-sainte-foy-conques",
+      "site_name": "Abbatiale Sainte-Foy de Conques",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "FR",
+      "city": "Conques-en-Rouergue",
+      "coordinates": {
+        "lat": 44.59921,
+        "lng": 2.39807,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Abbaye Ste Foy à Conques (01).jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-046",
+          "asset_path": "assets/approved/place-gallery/p77-046.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Faith_abbey_church_in_Conques_(1).jpg",
+          "credit": "Krzysztof Golik",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "4f9c0227fd4712d2b3e84c4f7e05a3e91a85ddd4",
+          "derivative_sha256": "ee76b537c7c985e05e16aeee0fcb90f875302296c9721d91d744de700b12d75c",
+          "width": 841,
+          "height": 1280,
+          "chapter_id": "architecture",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 12,
+      "place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "site_name": "Basilica of Our Lady of Luján",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "AR",
+      "city": null,
+      "coordinates": {
+        "lat": -34.56444,
+        "lng": -59.12145,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica de Nuestra Senora de Lujan.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-028",
+          "asset_path": "assets/approved/place-gallery/p77-028.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Basilica_de_Nuestra_Senora_de_Lujan.jpg",
+          "credit": "Fernando bonsembiante (shifted & cropped by Rabanus Flavus )",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "8dd0ad47866d20c43b215f61fc6d8fa53e88be3e",
+          "derivative_sha256": "aeb809658aab4028e5e6c06fc296d3273c762eb911be03d1bbd754180c5794c5",
+          "width": 955,
+          "height": 1280,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 13,
+      "place_id": "place:AR:basilica-nuestra-senora-itati",
+      "site_name": "Basílica de Nuestra Señora de Itatí",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "AR",
+      "city": "Itatí",
+      "coordinates": {
+        "lat": -27.26916,
+        "lng": -58.24392,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basílica de Itati.JPG",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-067",
+          "asset_path": "assets/approved/place-gallery/p77-067.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_Itat%C3%AD_edit.jpg",
+          "credit": "Fernando",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "0e46d0a1de749ee923797b111bce4a57b22b12c5",
+          "derivative_sha256": "d4ea9ddf691bc60f27e4ec27d68171b0475d9f0def99bb2718845eac19d57345",
+          "width": 853,
+          "height": 1280,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 14,
+      "place_id": "place:ES:p48-sg-0114-122873003",
+      "site_name": "Basílica de Nuestra Señora de la Candelaria",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "Candelaria, Tenerife",
+      "coordinates": {
+        "lat": 28.35122,
+        "lng": -16.36991,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Candelaria Basilica.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-092",
+          "asset_path": "assets/approved/place-gallery/p77-092.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_de_la_Candelaria,_Candelaria,_Tenerife,_Espa%C3%B1a,_2012-12-12,_DD_02.jpg",
+          "credit": "Diego Delso",
+          "license": "CC-BY-SA-3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "source_sha1": "b88f21bb8976359dbc4b151eeffdd6e8e1a4e814",
+          "derivative_sha256": "09ccd91c46fb34251530f5e1fde4fac870fcbc687d70df18a0c50b9ea35cd536",
+          "width": 1280,
+          "height": 758,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 15,
+      "place_id": "place:DE:basilika-vierzehnheiligen",
+      "site_name": "Basilika Vierzehnheiligen",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "DE",
+      "city": "Bad Staffelstein",
+      "coordinates": {
+        "lat": 50.11567,
+        "lng": 11.05408,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Vierzehnheiligen Basilika Luftbild-20220304-RM-115017.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-080",
+          "asset_path": "assets/approved/place-gallery/p77-080.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Vierzehnheiligen_Basilika_Luftbild-20220304-RM-115017.jpg",
+          "credit": "Ermell",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "44275bbc0622af4b1d2a5c74b50bf2032ed27622",
+          "derivative_sha256": "5e0c1636a8e6fcb4cbf3e140ec914aa6878f66cceef5748215ff16d4d5c09de5",
+          "width": 1280,
+          "height": 958,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 16,
+      "place_id": "place:BE:p46-sg-0225-30163817",
+      "site_name": "Basilique Nationale du Sacré-Cœur de Koekelberg",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "BE",
+      "city": "Koekelberg, Brussels",
+      "coordinates": {
+        "lat": 50.86708,
+        "lng": 4.31705,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:1001 Basilica of the Sacred Heart in Brussels Photo by Giles Laurent.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-125",
+          "asset_path": "assets/approved/place-gallery/p77-125.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_Sacred_Heart.jpg",
+          "credit": "Markus Koljonen ( Dilaudid )",
+          "license": "CC-BY-SA-3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "source_sha1": "f1661fb3d41717bd79cb3be9256dfb50a079b5c9",
+          "derivative_sha256": "89c727578525a2a7750e86159308a5a617dddb1feb24ed64665be42f253c0ccd",
+          "width": 1280,
+          "height": 880,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 17,
+      "place_id": "place:BE:basilique-notre-dame-bon-secours-peruwelz",
+      "site_name": "Basilique Notre-Dame de Bon-Secours, Péruwelz",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "BE",
+      "city": "Péruwelz",
+      "coordinates": {
+        "lat": 50.49729,
+        "lng": 3.60733,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Bons-Secours 051122 (1).JPG",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-018",
+          "asset_path": "assets/approved/place-gallery/p77-018.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Basilique_Notre-Dame_de_Bon-Secours,_P%C3%A9ruwelz,_Belgium_(DSCF4924_crop).jpg",
+          "credit": "Trougnouf",
+          "license": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "source_sha1": "4dc6f60e88b81a7a8a285ed9c57dd7e96fb3f2ef",
+          "derivative_sha256": "f7245c6ebe3388135f01c953251762d65d3736fa244aecbc54adbd0d1cba4936",
+          "width": 936,
+          "height": 1280,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 18,
+      "place_id": "place:CZ:velehrad-assumption-cyril-methodius-basilica",
+      "site_name": "Bazilika Nanebevzetí Panny Marie a svatých Cyrila a Metoděje, Velehrad",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "CZ",
+      "city": "Velehrad",
+      "coordinates": {
+        "lat": 49.10351,
+        "lng": 17.39553,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Klášter cisterciáků (Velehrad) 1.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-051",
+          "asset_path": "assets/approved/place-gallery/p77-051.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Velehrad,_bazilika_od_severu.jpg",
+          "credit": "Palickap",
+          "license": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "source_sha1": "0e54d9086b50f75a8247e080f72b56e4d1f75fa2",
+          "derivative_sha256": "494717a9af6abfdd6194869fdd99517aae68809ee220be262609525fdf84176b",
+          "width": 1280,
+          "height": 958,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 19,
+      "place_id": "place:CZ:basilika-panny-marie-bolestne-bohosudov",
+      "site_name": "Bazilika Panny Marie Bolestné, Bohosudov",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "CZ",
+      "city": "Bohosudov, Krupka",
+      "coordinates": {
+        "lat": 50.68174,
+        "lng": 13.87192,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Mariaschein1.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-064",
+          "asset_path": "assets/approved/place-gallery/p77-064.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mariaschein1.jpg",
+          "credit": "SchiDD",
+          "license": "CC-BY-3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "source_sha1": "47ab0d14cb8bb32b63ee785062af72c1f273ff23",
+          "derivative_sha256": "2245ece452e989cfccbea56e80f60d1dd59507056c1e9fdb79a8e498ae3569a6",
+          "width": 1280,
+          "height": 954,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 20,
+      "place_id": "place:CZ:bazilika-svateho-vavrince-zdislavy-jablonne",
+      "site_name": "Bazilika sv. Vavřince a sv. Zdislavy, Jablonné v Podještědí",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "CZ",
+      "city": "Jablonné v Podještědí",
+      "coordinates": {
+        "lat": 50.76541,
+        "lng": 14.76219,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Church of saint Lawrence and Zdislava, Jablonné v Podještědí 2016-06 01.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-077",
+          "asset_path": "assets/approved/place-gallery/p77-077.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bazilika_sv._Vav%C5%99ince_a_sv._Zdislavy_(Jablonn%C3%A9_v_Podje%C5%A1t%C4%9Bd%C3%AD)_(016).jpg",
+          "credit": "Art Jarka",
+          "license": "CC-BY-SA-3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "source_sha1": "f82d4c0a29adf5d9efca9e2d0f64ebe5b0dd343e",
+          "derivative_sha256": "90505b40bd7564c990b429ce5b153ce97a5d1f2cbf05c35d254156b15db19946",
+          "width": 1280,
+          "height": 853,
+          "chapter_id": "architecture",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 21,
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "site_name": "Bazilika svatého Václava — Stará Boleslav",
+      "aliases": [
+        "Basilica of Saint Wenceslas, Stará Boleslav",
+        "St Wenceslas Basilica"
+      ],
+      "site_type": "basilica",
+      "country_code": "CZ",
+      "city": "Brandýs nad Labem-Stará Boleslav",
+      "coordinates": {
+        "lat": 50.1946992,
+        "lng": 14.6722622,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Kostel svatého Václava ve St. Boleslavi.JPG",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-060",
+          "asset_path": "assets/approved/place-gallery/p77-060.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Star%C3%A1_Boleslav,_Saint_Wenceslaus_church_2025_01.jpg",
+          "credit": "Pasztilla aka Attila Terbócs",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "20a54769528121dab9feea8bce3b9d307be93cdb",
+          "derivative_sha256": "16c7c0d37f6ef6863b9b3166641f108ab01582200c118d9f009210bc469c827d",
+          "width": 853,
+          "height": 1280,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 22,
+      "place_id": "place:AR:catamarca-cathedral-valle",
+      "site_name": "Catedral Basílica de Nuestra Señora del Valle — Catamarca",
+      "aliases": [
+        "Catedral Basílica del Santísimo Sacramento",
+        "Basilica of Our Lady of the Valley, Catamarca"
+      ],
+      "site_type": "cathedral",
+      "country_code": "AR",
+      "city": "San Fernando del Valle de Catamarca",
+      "coordinates": {
+        "lat": -28.46893,
+        "lng": -65.78019,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-068",
+          "asset_path": "assets/approved/place-gallery/p77-068.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Catamarca_-_San_Fernando_del_Valle_de_Catamarca_-_Catedral_de_Catamarca_01.jpg",
+          "credit": "Loco085",
+          "license": "CC-BY-SA-3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "source_sha1": "a742540eed0d69b236c979ea6a24f388d1e6825f",
+          "derivative_sha256": "fd36fc360744cb54e89e13b5ade1759c93016b345b40448da663fd17e86c396e",
+          "width": 1280,
+          "height": 849,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 23,
+      "place_id": "place:ES:ermita-virgen-rocio-almonte",
+      "site_name": "Ermita de Nuestra Señora del Rocío",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "ES",
+      "city": "El Rocío, Almonte",
+      "coordinates": {
+        "lat": 37.13071,
+        "lng": -6.48475,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Portugal2026 (55221618036).jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-062",
+          "asset_path": "assets/approved/place-gallery/p77-062.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:El_Rocio_church_R02.jpg",
+          "credit": "Marc Ryckaert",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "1e98c0ed848c6bfad4f926deb6a413bf769b78d8",
+          "derivative_sha256": "5f173696ef4b32c9d4a565225f7f4e8b9b05d47e9ee206b67cc84b8baf54197f",
+          "width": 1280,
+          "height": 856,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 24,
+      "place_id": "place:DE:p43-sg-0166-110413194",
+      "site_name": "Wallfahrtsbasilika Mariä Heimsuchung",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "DE",
+      "city": "Werl",
+      "coordinates": {
+        "lat": 51.5537144,
+        "lng": 7.9152898,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Werl, Wallfahrtsbasilika Mariä Heimsuchung .jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-065",
+          "asset_path": "assets/approved/place-gallery/p77-065.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Werl,_Wallfahrtsbasilika_Mari%C3%A4_Heimsuchung_.jpg",
+          "credit": "Dguendel",
+          "license": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "source_sha1": "c8f29275c0c681f00b82b2c7e507d4a406860b55",
+          "derivative_sha256": "29112cadc6224ff88d9a8fc260a948a76eacec88d28f1cc055c84c14d8826908",
+          "width": 1280,
+          "height": 854,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 25,
+      "place_id": "place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln",
+      "site_name": "Pfarr- und Wallfahrtskirche St. Theodul, Sachseln",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "CH",
+      "city": "Sachseln",
+      "coordinates": {
+        "lat": 46.86764,
+        "lng": 8.23997,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Kirche Sachseln.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-074",
+          "asset_path": "assets/approved/place-gallery/p77-074.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Katholische_Pfarr-_und_Wallfahrtskirche_St._Theodul.jpg",
+          "credit": "Geri340",
+          "license": "CC-BY-SA-3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "source_sha1": "ac4b57929d8ca82d269cf92b0427661f9516f81d",
+          "derivative_sha256": "939febfd0d4def811a7dd87ed1832bbde79426ae1a264d8f8523b020c2647876",
+          "width": 960,
+          "height": 1280,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 26,
+      "place_id": "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
+      "site_name": "Poutní kostel Jména Panny Marie, Křtiny",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "CZ",
+      "city": "Křtiny",
+      "coordinates": {
+        "lat": 49.2966,
+        "lng": 16.74265,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Křtiny Chrám Jména Panny Marie.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-078",
+          "asset_path": "assets/approved/place-gallery/p77-078.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kostel_Jm%C3%A9na_Panny_Marie,_poutn%C3%AD_are%C3%A1l_(K%C5%99tiny).JPG",
+          "credit": "Bjalek Michal",
+          "license": "CC-BY-SA-3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "source_sha1": "2196c560117bb94c8f3fa431c9187e31c02d72f7",
+          "derivative_sha256": "c2b4ddf0c09684e6a500d5d20d7f5f22aa68ac5178f7edd8f51026b2c9f2528b",
+          "width": 1280,
+          "height": 960,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 27,
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "site_name": "Real Monasterio de Santa María de Guadalupe",
+      "aliases": [
+        "Royal Monastery of Santa María de Guadalupe"
+      ],
+      "site_type": "monastery",
+      "country_code": "ES",
+      "city": "Guadalupe, Cáceres",
+      "coordinates": {
+        "lat": 39.45285,
+        "lng": -5.3275,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:10140 Guadalupe, Cáceres, Spain - panoramio (4).jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-057",
+          "asset_path": "assets/approved/place-gallery/p77-057.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Real_Monasterio_de_Santa_Mar%C3%ADa_de_Guadalupe._Fachada.jpg",
+          "credit": "José Luis Filpo Cabana",
+          "license": "CC-BY-3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "source_sha1": "88d7e4bfb134af2ef218724169f54187e95001db",
+          "derivative_sha256": "643bf854f30b8830dbbacbfe13b5d27f78dc6593697269ffe0c63508d4fcde34",
+          "width": 1280,
+          "height": 852,
+          "chapter_id": "architecture",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 28,
+      "place_id": "place:ES:p42-sg-inv-0118",
+      "site_name": "Santuario de Nuestra Señora de Regla",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "ES",
+      "city": "Chipiona",
+      "coordinates": {
+        "lat": 36.73004,
+        "lng": -6.43903,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Santuarioregla 201510002.jpg",
+      "gallery_source_count": 1,
+      "usable_gallery_assets": [
+        {
+          "media_id": "p77-place-090",
+          "asset_path": "assets/approved/place-gallery/p77-090.webp",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Santuario_de_Ntra_Sra_de_Regla_(Chipiona-C%C3%A1diz).jpg",
+          "credit": "JnCrlsMG",
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_sha1": "1238042ba95a782cbad13f03095b22b93a15bd57",
+          "derivative_sha256": "ce714fb5c65ae77cfb784f273c6199f676631582fe661798b396e4a13d24df45",
+          "width": 1280,
+          "height": 960,
+          "chapter_id": "place",
+          "kind": "PHOTO",
+          "rights_verified": true,
+          "subject_verified": true
+        }
+      ],
+      "action": "REUSE_EXISTING_APPROVED_GALLERY_AFTER_COVER_QA",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 29,
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "site_name": "Antico Santuario di San Gabriele dell'Addolorata",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Isola del Gran Sasso",
+      "coordinates": {
+        "lat": 42.5175938,
+        "lng": 13.6576909,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Santuario San Gabriele dell'Addolorata Abruzzo 03.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 30,
+      "place_id": "place:TH:assumption-cathedral-bangkok",
+      "site_name": "Assumption Cathedral, Bangkok",
+      "aliases": [
+        "อาสนวิหารอัสสัมชัญ"
+      ],
+      "site_type": "cathedral",
+      "country_code": "TH",
+      "city": "Bangkok",
+      "coordinates": {
+        "lat": 13.72311,
+        "lng": 100.51516,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Assumption Cathedral Bangkok 2023-10 อาสนวิหารอัสสัมชัญ.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 31,
+      "place_id": "place:DE:bamberger-dom",
+      "site_name": "Bamberger Dom St. Peter und St. Georg",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "DE",
+      "city": "Bamberg",
+      "coordinates": {
+        "lat": 49.89072,
+        "lng": 10.88253,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Bamberg Dom.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 32,
+      "place_id": "place:US:p42-sg-inv-0378",
+      "site_name": "Basilica and National Shrine of Our Lady of Consolation",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "US",
+      "city": "Carey, Ohio",
+      "coordinates": {
+        "lat": 40.95081,
+        "lng": -83.38721,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Carey Ohio Shrine Basilica Exterior Front-2.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 33,
+      "place_id": "place:PH:p42-sg-inv-0638",
+      "site_name": "Basilica and National Shrine of Our Lady of Mount Carmel",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "PH",
+      "city": "Quezon City",
+      "coordinates": {
+        "lat": 14.6142666,
+        "lng": 121.0305284,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Mount Carmel Shrine facade 2023-05-07.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 34,
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "site_name": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
+      "aliases": [
+        "Basilica of Our Lady of Altagracia",
+        "Catedral Basílica de Higüey",
+        "Basilique-cathédrale Notre-Dame de l'Altagracia"
+      ],
+      "site_type": "basilica",
+      "country_code": "DO",
+      "city": "Higüey",
+      "coordinates": {
+        "lat": 18.61551,
+        "lng": -68.71687,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:BasilicaAtHiguey 1000W.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 35,
+      "place_id": "place:AR:catedral-basilica-nuestra-senora-rosario",
+      "site_name": "Basílica Catedral Nuestra Señora del Rosario",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "AR",
+      "city": "Rosario",
+      "coordinates": {
+        "lat": -32.94747,
+        "lng": -60.63226,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:RosarioCathedral.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 36,
+      "place_id": "place:IT:basilica-san-domenico-siena",
+      "site_name": "Basilica Cateriniana di San Domenico",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Siena",
+      "coordinates": {
+        "lat": 43.3198022,
+        "lng": 11.3267559,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Italy, Siena, Basilica Cateriniana di San Domenico BW 2021-09-24 12-30-17 v1.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 37,
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "site_name": "Basilica Cattedrale di Catania",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "IT",
+      "city": "Catania",
+      "coordinates": {
+        "lat": 37.5026,
+        "lng": 15.0871,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Catania BW 2025-04-25 15-15-28.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 38,
+      "place_id": "place:MT:basilica-st-paul-rabat",
+      "site_name": "Basilica Collegiate Church of Saint Paul, Rabat",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "MT",
+      "city": "Rabat",
+      "coordinates": {
+        "lat": 35.88174,
+        "lng": 14.39938,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:St Paul Rabat.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 39,
+      "place_id": "place:ES:p44-sg-0115-1051808405",
+      "site_name": "Basílica de la Mare de Déu de Núria",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "Queralbs, Girona",
+      "coordinates": {
+        "lat": 42.39722,
+        "lng": 2.15344,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Santuari Nuria Façana.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 40,
+      "place_id": "place:ES:basilica-virgen-desamparados-valencia",
+      "site_name": "Basílica de la Virgen de los Desamparados",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "València",
+      "coordinates": {
+        "lat": 39.47625,
+        "lng": -0.37481,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:20211115.Valencia.-087.1.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 41,
+      "place_id": "place:ES:basilica-nuestra-senora-arantzazu-onati",
+      "site_name": "Basílica de Nuestra Señora de Arantzazu, Oñati",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "Oñati",
+      "coordinates": {
+        "lat": 42.97907,
+        "lng": -2.39847,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Santuario de Arantzazu (Guipúzcoa)-1.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 42,
+      "place_id": "place:ES:basilica-nuestra-senora-begona-bilbao",
+      "site_name": "Basílica de Nuestra Señora de Begoña, Bilbao",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "Bilbao",
+      "coordinates": {
+        "lat": 43.25876,
+        "lng": -2.91374,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Begoñako basilika - 27.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 43,
+      "place_id": "place:MX:p48-sg-0432-155296070",
+      "site_name": "Basílica de Nuestra Señora de la Soledad",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "MX",
+      "city": "Oaxaca de Juárez",
+      "coordinates": {
+        "lat": 17.0635,
+        "lng": -96.73016,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Iglesia de Nuestra Señora de la Soledad, Oaxaca. Agosto 2009.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 44,
+      "place_id": "place:CR:cartago-virgen-angeles",
+      "site_name": "Basílica de Nuestra Señora de los Ángeles, Cartago",
+      "aliases": [
+        "Basilica of Our Lady of the Angels, Cartago",
+        "Basílica de los Ángeles",
+        "Basilique Notre-Dame-des-Anges de Cartago"
+      ],
+      "site_type": "basilica",
+      "country_code": "CR",
+      "city": "Cartago",
+      "coordinates": {
+        "lat": 9.8641,
+        "lng": -83.91288,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica of Our Lady of the Angels, Cartago 01.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 45,
+      "place_id": "place:GT:basilica-santo-domingo-rosario-guatemala",
+      "site_name": "Basílica de Nuestra Señora del Rosario — Santo Domingo, Guatemala",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "GT",
+      "city": "Ciudad de Guatemala",
+      "coordinates": {
+        "lat": 14.63759,
+        "lng": -90.50654,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Santo Domingo Church in Guatemala City, 2024. 11.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 46,
+      "place_id": "place:VE:basilica-nuestra-senora-chiquinquira-maracaibo",
+      "site_name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá y San Juan de Dios",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "VE",
+      "city": "Maracaibo",
+      "coordinates": {
+        "lat": 10.643,
+        "lng": -71.61592,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basílica de Nuestra Señora de Chiquinquirá V.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 47,
+      "place_id": "place:ES:covadonga-basilica",
+      "site_name": "Basílica de Santa María la Real de Covadonga",
+      "aliases": [
+        "Basilica of Our Lady of Covadonga"
+      ],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "Covadonga",
+      "coordinates": {
+        "lat": 43.30886,
+        "lng": -5.05352,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basílica de Sta.Mª la Real de Covadonga - panoramio.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 48,
+      "place_id": "place:PT:basilica-sao-bento-porta-aberta",
+      "site_name": "Basílica de São Bento da Porta Aberta",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "PT",
+      "city": "São Bento, Terras de Bouro",
+      "coordinates": {
+        "lat": 41.6902311,
+        "lng": -8.2032744,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Sao Bento da Porta Aberta 06.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 49,
+      "place_id": "place:ES:p44-sg-0132-1241117725",
+      "site_name": "Basílica del Sant Crist de Balaguer",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "Balaguer, Lleida",
+      "coordinates": {
+        "lat": 41.79568,
+        "lng": 0.80608,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:El Sant Crist, Balaguer-2.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 50,
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "site_name": "Basílica del Santo Cristo Crucificado de Esquipulas",
+      "aliases": [
+        "Basilica of the Black Christ of Esquipulas",
+        "Cathedral Basilica of Esquipulas",
+        "Basilique du Christ noir d’Esquipulas"
+      ],
+      "site_type": "basilica",
+      "country_code": "GT",
+      "city": "Esquipulas",
+      "coordinates": {
+        "lat": 14.56175,
+        "lng": -89.35078,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Esquipulas basilica.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 51,
+      "place_id": "place:CO:basilica-senor-milagros-buga",
+      "site_name": "Basílica del Señor de los Milagros, Buga",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "CO",
+      "city": "Guadalajara de Buga",
+      "coordinates": {
+        "lat": 3.89723,
+        "lng": -76.30199,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:BASILICA DEL SEÑOR DE LOS MILAGROS DE BUGA.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 52,
+      "place_id": "place:EC:basilica-voto-nacional-quito",
+      "site_name": "Basílica del Voto Nacional — Quito",
+      "aliases": [
+        "Basilica of the National Vow"
+      ],
+      "site_type": "basilica",
+      "country_code": "EC",
+      "city": "Quito",
+      "coordinates": {
+        "lat": -0.21472,
+        "lng": -78.50735,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica del voto nacional.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 53,
+      "place_id": "place:IT:basilica-maria-consolazione-reggio-calabria",
+      "site_name": "Basilica di Maria SS.ma della Consolazione, Eremo",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Reggio Calabria",
+      "coordinates": {
+        "lat": 38.11595,
+        "lng": 15.67174,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica Eremo - panoramio.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 54,
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "site_name": "Basilica di San Nicola, Bari",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "IT",
+      "city": "Bari",
+      "coordinates": {
+        "lat": 41.130261,
+        "lng": 16.870281,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Bari BW 2016-10-19 13-35-11 stitch.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 55,
+      "place_id": "place:IT:santa-chiara-assisi",
+      "site_name": "Basilica di Santa Chiara, Assisi",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Assisi",
+      "coordinates": {
+        "lat": 43.06891,
+        "lng": 12.61709,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Assisi - basilica di Santa Chiara - 2026-09-30 22-29-40 001.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 56,
+      "place_id": "place:IT:basilica-santa-cristina-bolsena",
+      "site_name": "Basilica di Santa Cristina, Bolsena",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Bolsena",
+      "coordinates": {
+        "lat": 42.64341,
+        "lng": 11.98947,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Bolsena - Chiesa di Santa Cristina - Agosto 2015.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 57,
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "site_name": "Basilica di Santa Croce in Gerusalemme",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "IT",
+      "city": "Rome",
+      "coordinates": {
+        "lat": 41.88823,
+        "lng": 12.51586,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Rome - Italy (November 2025) - 194.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 58,
+      "place_id": "place:IT:basilica-santa-margherita-cortona",
+      "site_name": "Basilica di Santa Margherita da Cortona",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Cortona",
+      "coordinates": {
+        "lat": 43.27647,
+        "lng": 11.99237,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Cortona, basilica di santa margherita, esterno 01.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 59,
+      "place_id": "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "site_name": "Basilica di Santa Maria Maggiore, Bergamo",
+      "aliases": [
+        "Santuario Santa Maria Maggiore, Bergamo",
+        "Basilica of Saint Mary Major, Bergamo Città Alta"
+      ],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Bergamo",
+      "coordinates": {
+        "lat": 45.70321,
+        "lng": 9.66223,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:S Maria Maggiore view from Campanone.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 60,
+      "place_id": "place:PT:basilica-bom-jesus-monte-braga",
+      "site_name": "Basílica do Bom Jesus do Monte",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "PT",
+      "city": "Braga",
+      "coordinates": {
+        "lat": 41.55475,
+        "lng": -8.37693,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Bom Jesus do Monte, Braga (52567818478).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 61,
+      "place_id": "place:PE:basilica-nuestra-senora-merced-lima",
+      "site_name": "Basílica Menor de Nuestra Señora de la Merced, Lima",
+      "aliases": [
+        "Basílica de la Merced, Lima",
+        "Iglesia Nuestra Señora de la Merced, Lima"
+      ],
+      "site_type": "basilica",
+      "country_code": "PE",
+      "city": "Lima",
+      "coordinates": {
+        "lat": -12.04842,
+        "lng": -77.03252,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica de Nuestra Señora de la Merced. Lima, Perú.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 62,
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "site_name": "Basílica Nuestra Señora de la Monserrate",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "PR",
+      "city": "Hormigueros",
+      "coordinates": {
+        "lat": 18.1407181,
+        "lng": -67.1271593,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:BasilicaMenor-HormiguerosPR-02.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 63,
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "site_name": "Basilica of Notre-Dame d’Afrique, Algiers",
+      "aliases": [
+        "Basilica of Notre-Dame d'Afrique, Algiers"
+      ],
+      "site_type": "basilica",
+      "country_code": "DZ",
+      "city": null,
+      "coordinates": {
+        "lat": 36.80105,
+        "lng": 3.04262,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Bologhine, Algeria - panoramio (9).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 64,
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "site_name": "Basilica of Our Lady Help of Christians — Sheshan",
+      "aliases": [
+        "Sheshan Basilica",
+        "National Shrine of Our Lady of Sheshan",
+        "佘山进教之佑圣母大殿",
+        "Basilique de Notre-Dame de Sheshan"
+      ],
+      "site_type": "basilica",
+      "country_code": "CN",
+      "city": "Sheshan, Shanghai",
+      "coordinates": {
+        "lat": 31.09631,
+        "lng": 121.18795,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Shanghai - Basilique de She Shan - 33.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 65,
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "site_name": "Basilica of Our Lady of Deliverance, Popenguine",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "SN",
+      "city": null,
+      "coordinates": {
+        "lat": 14.55468,
+        "lng": -17.11152,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:PopenguineChurch.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 66,
+      "place_id": "place:MT:basilica-our-lady-mount-carmel-valletta",
+      "site_name": "Basilica of Our Lady of Mount Carmel, Valletta",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "MT",
+      "city": "Valletta",
+      "coordinates": {
+        "lat": 35.9002,
+        "lng": 14.5123,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica Our Lady of Mount Carmel (Valletta).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 67,
+      "place_id": "place:IN:basilica-our-lady-ransom-vallarpadam",
+      "site_name": "Basilica of Our Lady of Ransom, Vallarpadam",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IN",
+      "city": "Vallarpadam, Kochi",
+      "coordinates": {
+        "lat": 9.99013,
+        "lng": 76.25,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Vallarpadam Church,Cochin - panoramio.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 68,
+      "place_id": "place:PS:basilica-agony-gethsemane",
+      "site_name": "Basilica of the Agony (Church of All Nations), Gethsemane",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "PS",
+      "city": "East Jerusalem",
+      "coordinates": {
+        "lat": 31.77931,
+        "lng": 35.23977,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:All Nations church.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 69,
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "site_name": "Basilica of the Annunciation, Nazareth",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IL",
+      "city": null,
+      "coordinates": {
+        "lat": 32.70209,
+        "lng": 35.29779,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Nazaret Verkuendigungsbasilika BW 16.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 70,
+      "place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "site_name": "Basilica of the Immaculate Conception, Ouidah",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "BJ",
+      "city": "Ouidah",
+      "coordinates": {
+        "lat": 6.36063,
+        "lng": 2.08486,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Façade principale de la basilique de ouidah.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 71,
+      "place_id": "place:TW:wanjin-immaculate-conception-basilica",
+      "site_name": "Basilica of the Immaculate Conception, Wanjin",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "TW",
+      "city": "Wanluan, Pingtung",
+      "coordinates": {
+        "lat": 22.59508,
+        "lng": 120.61127,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:萬金天主教堂（萬金聖母聖殿）.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 72,
+      "place_id": "place:JO:memorial-moses-mount-nebo",
+      "site_name": "Basilica of the Memorial of Moses, Mount Nebo",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "JO",
+      "city": "Madaba",
+      "coordinates": {
+        "lat": 31.76797,
+        "lng": 35.72567,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Church of Saint Moses on Mount Nebo.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 73,
+      "place_id": "place:US:baltimore-basilica-assumption",
+      "site_name": "Basilica of the National Shrine of the Assumption — Baltimore",
+      "aliases": [
+        "Baltimore Basilica"
+      ],
+      "site_type": "basilica",
+      "country_code": "US",
+      "city": "Baltimore",
+      "coordinates": {
+        "lat": 39.29446,
+        "lng": -76.61612,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Baltimore Basilica, Baltimore, Maryland.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 74,
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "site_name": "Basilica of the National Shrine of the Immaculate Conception, Washington",
+      "aliases": [
+        "Basilica of the National Shrine of the Immaculate Conception, Washington DC"
+      ],
+      "site_type": "basilica",
+      "country_code": "US",
+      "city": null,
+      "coordinates": {
+        "lat": 38.93336,
+        "lng": -77.00069,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica of the National Shrine of the Immaculate Conception.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 75,
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "site_name": "Basilica of the Transfiguration, Mount Tabor",
+      "aliases": [
+        "Church of the Transfiguration, Mount Tabor"
+      ],
+      "site_type": "basilica",
+      "country_code": "IL",
+      "city": null,
+      "coordinates": {
+        "lat": 32.68627,
+        "lng": 35.39242,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Church of the Transfiguration (Mount Tabor), 2019 (01).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 76,
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "site_name": "Basilica Papale di San Paolo fuori le Mura",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Rome",
+      "coordinates": {
+        "lat": 41.858611,
+        "lng": 12.477222,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:StPaul.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 77,
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "site_name": "Basilica Papale di Santa Maria degli Angeli in Porziuncola",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Santa Maria degli Angeli, Assisi",
+      "coordinates": {
+        "lat": 43.05825,
+        "lng": 12.58035,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Bazylika Santa Maria degli Angeli Asyż.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 78,
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "site_name": "Basilica Papale di Santa Maria Maggiore",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Rome",
+      "coordinates": {
+        "lat": 41.89761,
+        "lng": 12.49846,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica di Santa Maria Maggiore - Roma.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 79,
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "site_name": "Basilica Sant'Agostino in Campo Marzio, Rome",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Roma",
+      "coordinates": {
+        "lat": 41.90106,
+        "lng": 12.47427,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Sant'Agostino, Rome.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 80,
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "site_name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Pagani",
+      "coordinates": {
+        "lat": 40.7423,
+        "lng": 14.6107,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Pagani-basi.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 81,
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "site_name": "Basilica Sant'Ambrogio, Milan",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Milano",
+      "coordinates": {
+        "lat": 45.4625,
+        "lng": 9.17583,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Milan Sant'Ambrogio 016 4923.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 82,
+      "place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "site_name": "Basílica Santuário de Nossa Senhora da Penha de França, Rio de Janeiro",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "BR",
+      "city": "Rio de Janeiro",
+      "coordinates": {
+        "lat": -22.84431,
+        "lng": -43.27509,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Igreja da Penha by Diego Baravelli III.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 83,
+      "place_id": "place:IT:santuario-madonna-delle-lacrime-siracusa",
+      "site_name": "Basilica Santuario della Madonna delle Lacrime, Siracusa",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Siracusa",
+      "coordinates": {
+        "lat": 37.07472,
+        "lng": 15.28552,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilica Santuario Madonna delle Lacrime di Siracusa (cropped).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 84,
+      "place_id": "place:IT:p43-sg-0094-144658381",
+      "site_name": "Basilica Santuario di San Giuseppe da Copertino",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Osimo",
+      "coordinates": {
+        "lat": 43.48651,
+        "lng": 13.48353,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Osimo - Chiesa di San Giuseppe da Copertino - 002.JPG",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 85,
+      "place_id": "place:IT:p42-sg-inv-0070",
+      "site_name": "Basilica Santuario di Santa Maria del Fonte",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Caravaggio, Bergamo",
+      "coordinates": {
+        "lat": 45.48125,
+        "lng": 9.63058,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Caravaggio Santuario.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 86,
+      "place_id": "place:IT:basilica-santuario-madonna-tindari",
+      "site_name": "Basilica Santuario Maria SS. del Tindari",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Tindari, Patti",
+      "coordinates": {
+        "lat": 38.14138,
+        "lng": 15.04643,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Sanctuary of Tindari 02.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 87,
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "site_name": "Basílica Santuario Nacional de Nuestra Señora de la Caridad del Cobre",
+      "aliases": [
+        "Our Lady of Charity of El Cobre",
+        "National Shrine of Our Lady of Charity",
+        "Basilique Notre-Dame-de-Charité d'El Cobre"
+      ],
+      "site_type": "basilica",
+      "country_code": "CU",
+      "city": "El Cobre",
+      "coordinates": {
+        "lat": 20.05075,
+        "lng": -75.94906,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:De extremo a extremo, Santuario Nacional de la Virgen del Cobre - panoramio.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 88,
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "site_name": "Basílica Santuario Nuestra Señora de los Milagros de Caacupé",
+      "aliases": [
+        "Basilica of Our Lady of Caacupé",
+        "Virgen de Caacupé Basilica",
+        "Basilique Notre-Dame des Miracles de Caacupé"
+      ],
+      "site_type": "basilica",
+      "country_code": "PY",
+      "city": "Caacupé",
+      "coordinates": {
+        "lat": -25.38609,
+        "lng": -57.1411,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basílica de Caacupé.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 89,
+      "place_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
+      "site_name": "Basílica-Parroquia Nuestra Señora de Atocha",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "ES",
+      "city": "Madrid",
+      "coordinates": {
+        "lat": 40.40559,
+        "lng": -3.6835,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:VIEW , ®'s - DiDi - RM - Ð 6k - ┼ , MADRID BASILICA de ATOCHA - panoramio (12).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 90,
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "site_name": "Basiliek Onze Lieve Vrouw — Sterre der Zee",
+      "aliases": [
+        "Onze-Lieve-Vrouwebasiliek Maastricht",
+        "Basilica of Our Lady Star of the Sea"
+      ],
+      "site_type": "basilica",
+      "country_code": "NL",
+      "city": "Maastricht",
+      "coordinates": {
+        "lat": 50.8475451,
+        "lng": 5.6932323,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Onze-Lieve-Vrouwebasiliek en Wachthuis, Maastricht, Netherlands - panoramio (6).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 91,
+      "place_id": "place:BE:basiliek-onze-lieve-vrouw-oostakker",
+      "site_name": "Basiliek Onze-Lieve-Vrouw Onbevlekte Ontvangenis, Oostakker",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "BE",
+      "city": "Oostakker (Ghent)",
+      "coordinates": {
+        "lat": 51.0828,
+        "lng": 3.76359,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Gent Bedevaartsoord Onze-Lieve-Vrouw van Lourdes en omgeving - 240073 - onroerenderfgoed.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 92,
+      "place_id": "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
+      "site_name": "Basiliek van Onze-Lieve-Vrouw van Scherpenheuvel",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "BE",
+      "city": "Scherpenheuvel-Zichem",
+      "coordinates": {
+        "lat": 50.98033,
+        "lng": 4.97878,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Scherpenheuvel, de Onze-Lieve-Vrouwebasiliek oeg42731 foto4 2015-06-08 15.33.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 93,
+      "place_id": "place:DE:p42-sg-inv-0181",
+      "site_name": "Basilika Mariä Himmelfahrt des Klosters Ettal",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "DE",
+      "city": "Ettal, Bavaria",
+      "coordinates": {
+        "lat": 47.56958,
+        "lng": 11.0947,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Abbazia di Ettal - Baviera.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 94,
+      "place_id": "place:AT:basilika-mariatrost-graz",
+      "site_name": "Basilika Mariatrost, Graz",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "AT",
+      "city": "Graz",
+      "coordinates": {
+        "lat": 47.10725,
+        "lng": 15.49156,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilika-mariatrost-hoch-10-2021.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 95,
+      "place_id": "place:DE:basilika-st-martin-weingarten",
+      "site_name": "Basilika St. Martin, Weingarten",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "DE",
+      "city": "Weingarten",
+      "coordinates": {
+        "lat": 47.8092,
+        "lng": 9.64461,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Aerial image of Weingarten Abbey (view from the southwest).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 96,
+      "place_id": "place:FR:basilique-ars",
+      "site_name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "FR",
+      "city": "Ars-sur-Formans",
+      "coordinates": {
+        "lat": 45.99238,
+        "lng": 4.82295,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Ars-sur-Formans Basilique Saint-Sixte Extérieur Dome 2.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 97,
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "site_name": "Basilique de la Visitation, Annecy",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "FR",
+      "city": "Annecy",
+      "coordinates": {
+        "lat": 45.89255,
+        "lng": 6.12763,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilique de la Visitation - 207.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 98,
+      "place_id": "place:CM:basilique-marie-reine-des-apotres-mvolye",
+      "site_name": "Basilique Marie-Reine-des-Apôtres de Mvolyé",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "CM",
+      "city": "Yaoundé",
+      "coordinates": {
+        "lat": 3.84231,
+        "lng": 11.50773,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Basilique Marie-Reine des apôtres de Mvolyé 2.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 99,
+      "place_id": "place:FR:basilique-notre-dame-buglose",
+      "site_name": "Basilique Notre-Dame de Buglose",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "FR",
+      "city": "Saint-Vincent-de-Paul, Landes",
+      "coordinates": {
+        "lat": 43.78422,
+        "lng": -0.99067,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:Saint-Vincent-de-Paul - Basilique Notre-Dame de Buglose - 25.jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 100,
+      "place_id": "place:FR:basilique-notre-dame-fourviere-lyon",
+      "site_name": "Basilique Notre-Dame de Fourvière",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "FR",
+      "city": "Lyon",
+      "coordinates": {
+        "lat": 45.76229,
+        "lng": 4.82259,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "SELECTED",
+      "prior_selected_commons_file": "File:France-003038 - Basilica of Notre-Dame de Fourvière (15939822990).jpg",
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "identity_warnings": [],
+      "candidate_override": null
+    }
+  ]
+}
