@@ -401,10 +401,32 @@ try{
              // the DISTINCT appointed Collect, Secret and Postcommunion are
              // actually rendered at their own original source cards.
              await page.setViewportSize({width:390,height:844});
-             const exactRubric=await page.evaluate(()=>{
+             const exactRubric=await page.evaluate(async()=>{
                const api=globalThis.__AO_NOV02_NATIVE_PROOF;
                const card=globalThis.__AO_NOV02_RUBRIC_CARD;
                if(!api.showSection(card))throw Error("NOV02_CUE_RUBRIC_REOPEN_FAILED");
+               const shell=api.root.querySelector("[data-ao-reader-shell]");
+               const mode=shell?.dataset.mode;
+               const frame=()=>new Promise(done=>
+                 requestAnimationFrame(()=>requestAnimationFrame(done)));
+               await frame();
+               // A card jump is not a liturgical cue. Move the actual LIVE
+               // reading line to the existing Oremus cue before taking the
+               // approved gesture photograph. Missal remains a static book.
+               if(mode==="LIVE"){
+                 const scroll=api.root.querySelector(".ao-prayer-card");
+                 const row=[...scroll.querySelectorAll(".ao-reader-paragraph")]
+                   .find(n=>String(n.dataset.sourceCueIds??"").split(/\\s+/)
+                     .includes("AO.SM.C0072"));
+                 if(!scroll||!row)throw Error("NOV02_C0072_SOURCE_ROW_MISSING");
+                 const scrollTop=row.getBoundingClientRect().top-
+                   scroll.getBoundingClientRect().top+scroll.scrollTop;
+                 scroll.scrollTop=Math.max(0,scrollTop-scroll.clientHeight*.39);
+                 await frame();
+                 if(api.getActiveCue()!=="AO.SM.C0072")
+                   throw Error("NOV02_C0072_SOURCE_FOCUS_NOT_ACTIVE:"+
+                     String(api.getActiveCue()));
+               }
                const rubric=api.root.querySelector(
                  '[data-rubric-id="AO.RUB.C0072.01"]');
                const icon=api.root.querySelector(
@@ -413,13 +435,22 @@ try{
                  throw Error("NOV02_CUE_RUBRIC_ART_NOT_VISIBLE_IN_SOURCE_DOM");
                const style=getComputedStyle(rubric);
                const imageStyle=getComputedStyle(icon);
-               const mode=api.root.querySelector("[data-ao-reader-shell]")?.dataset.mode;
                const iconVisible=mode==="LIVE"&&imageStyle.display!=="none"&&
                  !icon.hidden&&icon.getBoundingClientRect().width>=24;
                const rubricText=rubric.textContent?.trim()??"";
-               if(!rubricText||style.display==="none"&&!iconVisible)
-                 throw Error("NOV02_CUE_RUBRIC_HIDDEN:"+mode+":"+rubricText);
-               return {card,mode,iconVisible,sourceRubricId:rubric.dataset.rubricId,
+               const caption=rubric.querySelector(".ao-approved-inline-rubric-copy");
+               const captionStyle=caption?getComputedStyle(caption):null;
+               const captionVisuallyHidden=captionStyle?.position==="absolute"&&
+                 caption.getBoundingClientRect().width<=2;
+               if(!rubricText||!caption||!icon||
+                  (mode==="LIVE"&&(!iconVisible||!captionVisuallyHidden))||
+                  (mode==="MISSAL"&&(captionVisuallyHidden||
+                    !rubricText.toLowerCase().includes("priest")&&
+                    !rubricText.toLowerCase().includes("prêtre"))))
+                 throw Error("NOV02_APPROVED_RUBRIC_ICON_OR_PRINT_INVALID:"+
+                   JSON.stringify({mode,iconVisible,captionVisuallyHidden,rubricText}));
+               return {card,mode,iconVisible,captionVisuallyHidden,
+                 activeCue:api.getActiveCue(),sourceRubricId:rubric.dataset.rubricId,
                  text:rubricText,iconAsset:icon.dataset.approvedAsset??null};
              });
              const rubricFilename="all-souls-m"+massNumber+"-c0072-rubric-"+
@@ -633,8 +664,12 @@ try{
    massUi.rubricCases.every(x=>x.sourceRubricId==="AO.RUB.C0072.01"&&
      x.iconAsset==="you:head_bow"&&x.text),
    "NOV02_APPROVED_SOURCE_RUBRIC_PHOTOGRAPHIC_EVIDENCE_INCOMPLETE");
- check(massUi.rubricCases.filter(x=>x.mode==="LIVE").every(x=>x.iconVisible),
-   "NOV02_LIVE_APPROVED_GESTURE_ICON_NOT_VISIBLE");
+ check(massUi.rubricCases.filter(x=>x.mode==="LIVE").every(x=>
+   x.iconVisible&&x.captionVisuallyHidden&&x.activeCue==="AO.SM.C0072"),
+   "NOV02_LIVE_APPROVED_GESTURE_ICON_OR_CUE_NOT_VISIBLE");
+ check(massUi.rubricCases.filter(x=>x.mode==="MISSAL").every(x=>
+   !x.captionVisuallyHidden&&x.text),
+   "NOV02_MISSAL_SOURCE_RUBRIC_TEXT_NOT_PRINTED");
 
  for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
    for(const language of ["en","fr"]){
