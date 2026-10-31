@@ -72,6 +72,10 @@ try{
    await page.waitForFunction(()=>
     document.querySelector('#aoPray435930.open [data-p435930-mercy-finish]')?.hidden===false,
     null,{timeout:8000});
+   assert.equal(await finalAction.locator('xpath=ancestor::article').getAttribute('data-ao-mercy-step'),"61",
+    "Finish must remain attached to the actual last source prayer paragraph");
+   assert.equal(await finalAction.isVisible(),true,
+    "Finish must be visibly available when the last source prayer is focused");
    assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0,
     "Simply reaching the final text must not mark the chaplet complete");
    await finalAction.click();
