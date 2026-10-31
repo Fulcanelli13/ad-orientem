@@ -43,6 +43,20 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-A768309560A6":Object.freeze({
+  sourceId:"AO-B39-LOC-SK-F3A4F0DCE391",
+  name:"Kaplnka Svätého Leonarda",country:"SK",addressNeedle:"Doľany",placeId:null,
+  lat:48.420389,lng:17.375139,
+  sourceRef:"heritage:pamiatkynaslovensku:leonarda-dolany",
+  sourceUrl:"https://www.pamiatkynaslovensku.sk/dolany-kaplnka-sv-leonarda-a-floriana",
+  correctedAddress:"Kaplnka sv. Leonarda, Kalvária, Doľany, okres Pezinok, Slovakia",
+  precision:"site",reviewScope:"PEZINOK_SAINT_LEONARD_NOT_LEVOCA_SAINT_LEONARD_OR_SEBASTIAN",
+  evidence:Object.freeze([
+    "https://apsida.sk/c/8281/dolany-kaplnka",
+    "https://www.dokostola.sk/farnost/dolany",
+    "https://www.latinmassdir.org/trends/2025/sk/"
+  ]),
+ }),
  "RG-1EDB76F4B57B":Object.freeze({
   sourceId:"AO-B38-LOC-ES-61C6D5A95E5",name:"Iglesia del Salvador",country:"ES",addressNeedle:"",placeId:null,
   lat:39.85656,lng:-4.02675,sourceRef:"osm:way:113958010",
@@ -697,7 +711,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
