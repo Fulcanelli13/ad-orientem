@@ -62,6 +62,20 @@ for(const name of workflows){
       name+" review-branch promotion requires explicit contents: write");
     assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
       name+" must push only back to the triggering review branch");
+  }else if(name==="acquire-notre-dame-paris-cover.yml"){
+    // One pinned Notre-Dame Commons original may be acquired to an isolated
+    // review PR branch; never authorize arbitrary image acquisition or main.
+    assert.match(source,/github\.repository == 'Fulcanelli13\/ad-orientem'/);
+    assert.match(source,/github\.ref == 'refs\/heads\/fix\/explore-reuse-approved-gallery-as-covers-20261031'/);
+    assert.match(source,/branches:\s*\n\s*-\s*fix\/explore-reuse-approved-gallery-as-covers-20261031/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/);
+    assert.match(source,/python tools\/acquire-notre-dame-paris-2026-cover\.py/);
+    assert.match(source,/git add assets\/approved\/place-media\/FR-notre-dame-paris-2026\.webp data\/geography\/approved-place-media\.v1\.json/);
+    assert.match(source,/git push origin HEAD:fix\/explore-reuse-approved-gallery-as-covers-20261031/);
+    assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
+    assert.doesNotMatch(source,/branches:\s*[\s\S]{0,120}?(?:-\s*main\b)/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
   }else if(name==="directory-open-photo-discovery-batch.yml"){
     // Only this explicitly dispatched *metadata-only* collector may write one
     // fixed research branch. Never allow research-batch automation to push main,
