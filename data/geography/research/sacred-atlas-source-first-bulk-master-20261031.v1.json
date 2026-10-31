@@ -3,7 +3,7 @@
   "as_of": "2026-10-31",
   "scope": "REFERENCE_QUEUE_NOT_PHOTOGRAPH_APPROVAL",
   "strategy": "Authority/custodian physical object definition → exact photographed scene → Commons/GLAM free-use author/licence → high-quality photo QA → user approval → permanent optimized archive",
-  "important_distinction": "530 canonical physical sites are not 530 separately authenticated relics or object images; 353 source-first rows can overlap physically and must not be treated as 353 approved photos.",
+  "important_distinction": "530 physical canonical Places, 492 source-first rows (many per Place) and 33 non-photographable apparition contexts: 525 linked research records are NOT 525 individual verified object photos.",
   "source_references": [
     {
       "path": "data/geography/seed-registry.v1.json",
@@ -55,23 +55,30 @@
       "name": "B05_PRECISE_OBJECTS_20",
       "path": "data/geography/research/sacred-atlas-source-first-b05-precise-20-20261031.v1.json",
       "count": 20
+    },
+    {
+      "name": "B06_NONMARIAN_SHRINES_139",
+      "path": "data/geography/research/sacred-atlas-source-first-b06-nonmarian-shrines-139-20261031.v1.json",
+      "count": 139
     }
   ],
   "stats": {
     "canonical_places": 530,
-    "unique_places_with_evidence": 214,
-    "unique_places_without_object_refs": 316,
+    "unique_places_with_evidence": 259,
+    "unique_places_without_object_refs": 271,
     "relic_records": 127,
     "marian_shrines": 118,
     "guide_stops": 88,
     "precise_targets": 20,
-    "source_first_reference_rows": 353,
+    "source_first_reference_rows": 492,
     "apparition_contexts_excluded_from_photographic_objects": 33,
     "source_directness_currently_web_checked_relic_records": 19,
     "b01_precise_source_first_reuse": 5,
     "pub_approved": 0,
     "images_downloaded": 0,
-    "note": "19 canonical relic records in independently rechecked custodian groups; other entries preserve registered URLs without a fresh web verification. Site-only/subject-unspecified rows are unresolved research, not achieved image matches."
+    "note": "19 canonical relic records in independently rechecked custodian groups; other entries preserve registered URLs without a fresh web verification. Site-only/subject-unspecified rows are unresolved research, not achieved image matches.",
+    "nonmarian_shrine_source_rows": 139,
+    "nonmarian_owners_newly_linked": 45
   },
   "web_reviewed_original_sources": [
     {
