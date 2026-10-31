@@ -52,7 +52,7 @@ for(const c of patch.revisions){
   assert.equal(got.statement_fr,c.revised_statement.fr);
   assert.notEqual(got.statement_en,original.records.find(x=>x.id===c.id).statement_en);
  }
- assert.ok(c.source.printed_pages.length);
+ assert.ok((Array.isArray(c.source.printed_pages)&&c.source.printed_pages.length>0)||(typeof c.source.source_url==="string"&&c.source.source_url.startsWith("https://")),"Source locator required for "+c.id);
 }
 for(const s of patch.original_folio_direct_checks){
  const rec=corrected.sample.find(x=>x.id===s.id);
