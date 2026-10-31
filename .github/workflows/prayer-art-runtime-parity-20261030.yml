@@ -8,6 +8,7 @@ on:
       - '.github/workflows/prayer-art-runtime-parity-20261030.yml'
       - 'tests/prayer-art-runtime-parity.mjs'
       - 'tests/prayer-chaplet-artwork-contract.mjs'
+      - 'tests/prayer-art-dom-evidence.mjs'
       - 'src/pray/**'
       - 'data/prayer/artwork-editorial-20261030/**'
   workflow_dispatch:
@@ -25,3 +26,5 @@ jobs:
         run: node tests/prayer-art-runtime-parity.mjs
       - name: Verify five chaplet stage pools and positive-only approval states
         run: node tests/prayer-chaplet-artwork-contract.mjs
+      - name: Inspect live Prayer owners without claiming photograph release
+        run: node tests/prayer-art-dom-evidence.mjs && node --check src/pray/presentation-runtime.js && node --check src/pray/novena-runtime.js && node --check src/pray/traditional-pray-runtime.js
