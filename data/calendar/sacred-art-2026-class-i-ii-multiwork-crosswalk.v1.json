@@ -44,11 +44,15 @@
     "daysWithExactCatalogueCandidates": 36,
     "exactCatalogDateWorkLinks": 85,
     "classIWithSelected": 53,
-    "daysWithMultipleDistinctCatalogueMatches": 15,
     "externalLeads": 13,
-    "unmatchedClassISelectionIDs": 25
+    "unmatchedClassISelectionIDs": 25,
+    "daysWithMultipleCatalogueIDs": 15,
+    "sameArtistTitlePotentialAliasGroups": 2,
+    "candidateRecordsRequiringIdentityDeduplication": 4
   },
   "knownLimitations": [
+    "Superseded 2026-12-25 Carlo Dolci artwork ID is not carried onto the later approved Bernardo Cavallino original. The Cleveland Cavallino catalogue ID is cma-143644; 8 Dec Murillo is cma-135659.",
+    "Some catalogue IDs refer to the same physical work. Count multiple IDs as reviewable entries, NOT automatically as distinct rotating paintings; exact physical-object identifier is mandatory for published rotation.",
     "Curated exact-subject title list is deliberately conservative. Untitled/alternate-language/event-rich paintings may still be eligible after original-object checking.",
     "Older 2026-10-20 overlay is retained but later Oct 27 explicit feast choices override where recorded. No automatic rejection of prior user works.",
     "Current 383-work archival catalogue is research-only: a recorded exact source SHA does not establish photo rights, original identity, phone aesthetics or publication.",
@@ -860,7 +864,13 @@
           "completePaintingImageRecorded": true,
           "acquisitionEvidence": "B19_B25_EXACT_SHA_ARCHIVED",
           "physicalImageShaRecorded": true,
-          "homepageRotationReleaseCertified": false
+          "homepageRotationReleaseCertified": false,
+          "possibleSameObjectAliasIds": [
+            "met-438724"
+          ],
+          "mustVerifyDistinctPhysicalOriginal": true,
+          "verifiedKnownPhysicalAliasGroup": "met-438724",
+          "identityEvidence": "B50 same physical original: Met 438724"
         },
         {
           "artworkId": "cma-122338",
@@ -908,7 +918,11 @@
           "completePaintingImageRecorded": true,
           "acquisitionEvidence": "B19_B25_EXACT_SHA_ARCHIVED",
           "physicalImageShaRecorded": true,
-          "homepageRotationReleaseCertified": false
+          "homepageRotationReleaseCertified": false,
+          "possibleSameObjectAliasIds": [
+            "met-459055"
+          ],
+          "mustVerifyDistinctPhysicalOriginal": true
         },
         {
           "artworkId": "met-459055",
@@ -920,7 +934,11 @@
           "completePaintingImageRecorded": true,
           "acquisitionEvidence": "B19_B25_EXACT_SHA_ARCHIVED",
           "physicalImageShaRecorded": true,
-          "homepageRotationReleaseCertified": false
+          "homepageRotationReleaseCertified": false,
+          "possibleSameObjectAliasIds": [
+            "met-437490"
+          ],
+          "mustVerifyDistinctPhysicalOriginal": true
         },
         {
           "artworkId": "nga-46",
@@ -1028,7 +1046,13 @@
           "completePaintingImageRecorded": true,
           "acquisitionEvidence": "B19_B25_EXACT_SHA_ARCHIVED",
           "physicalImageShaRecorded": true,
-          "homepageRotationReleaseCertified": false
+          "homepageRotationReleaseCertified": false,
+          "possibleSameObjectAliasIds": [
+            "ART-hilippe-de-hampaigne-he-nnunciation"
+          ],
+          "mustVerifyDistinctPhysicalOriginal": true,
+          "verifiedKnownPhysicalAliasGroup": "met-438724",
+          "identityEvidence": "B50 same physical original: Met 438724"
         }
       ],
       "additionalInstitutionalResearchLeads": [],
@@ -3115,14 +3139,15 @@
       "selectedPrimary": {
         "artist": "Guido Reni",
         "title": "Saint Michael Defeating Satan",
-        "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+        "artworkId": null,
         "editorialBasis": "USER_DATE_APPROVED_20261027",
-        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "iconographicRole": "FEAST_SUBJECT_EXACT",
         "sourceObjectUrl": null,
         "provenance": "USER_DATE_DECISION_20261027",
         "publicationCertified": false,
         "editorial": "USER_DATE_APPROVED_20261027",
-        "note": "Specific 29 September decision; verify physical object/photo independently."
+        "note": "Specific 29 September decision; verify physical object/photo independently.",
+        "priorOverwriteCorrected": true
       },
       "exactSubjectCatalogueCandidates": [
         {
@@ -3573,12 +3598,13 @@
         "title": "The Immaculate Conception",
         "artworkId": "cma-135659",
         "editorialBasis": "USER_DATE_APPROVED_20261027",
-        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
-        "sourceObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+        "iconographicRole": "FEAST_SUBJECT_EXACT",
+        "sourceObjectUrl": "https://www.clevelandart.org/art/1968.22",
         "provenance": "USER_DATE_DECISION_20261027",
         "publicationCertified": false,
         "editorial": "USER_DATE_APPROVED_20261027",
-        "note": "Cleveland Museum of Art, explicitly approved for this date."
+        "note": "Cleveland Museum of Art, explicitly approved for this date.",
+        "priorOverwriteCorrected": true
       },
       "exactSubjectCatalogueCandidates": [
         {
@@ -3846,14 +3872,15 @@
       "selectedPrimary": {
         "artist": "Bernardo Cavallino",
         "title": "Adoration of the Shepherds",
-        "artworkId": "cma-143784",
+        "artworkId": "cma-143644",
         "editorialBasis": "USER_DATE_APPROVED_20261027",
-        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
-        "sourceObjectUrl": "https://clevelandart.org/art/1968.22",
+        "iconographicRole": "GOSPEL_SUBJECT_EXACT",
+        "sourceObjectUrl": null,
         "provenance": "USER_DATE_DECISION_20261027",
         "publicationCertified": false,
         "editorial": "USER_DATE_APPROVED_20261027",
-        "note": "Cleveland Museum of Art. Supersedes older Carlo Dolci class-I 2026 selection only."
+        "note": "Cleveland Museum of Art. Supersedes older Carlo Dolci class-I 2026 selection only.",
+        "priorOverwriteCorrected": true
       },
       "exactSubjectCatalogueCandidates": [
         {
