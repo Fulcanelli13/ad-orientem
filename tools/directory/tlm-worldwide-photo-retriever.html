@@ -88,22 +88,41 @@ function csv(rows){return rows.map(r=>r.map(csvCell).join(",")).join("\r\n")+"\r
 function safe(s){return normalize(s).replace(/\s+/g,"-").slice(0,60)||"site"}
 async function hash(buffer){try{const h=await crypto.subtle.digest("SHA-256",buffer);return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch{return ""}}
 function download(name,blob){const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),60000)}
-async function pack(sites){if(typeof JSZip==="undefined")throw Error("ZIP_LIBRARY_NOT_LOADED");const zip=new JSZip(),rows=[["site_id","site_name","country","source_affiliation","coordinate_gate","source_urls","research_status","commons_file","commons_page","original_sha1","author","license","license_url","width","height","research_file","download_sha256","exact_site_verified","rights_cleared","publication_approved","error"]],exceptions=[],records=[];let fetched=0,bytes=0;
-for(const s of sites){if(stopped)break;const state=saved[s.id]||{},candidate=state.candidates?.[0];const eligible=candidate&&candidate.score>=0.30?candidate:null;let path="",digest="",error="";
-if(eligible){try{let u=new URL(eligible.thumb||eligible.original);if(!["thumb.wikimedia.org","upload.wikimedia.org"].includes(u.hostname)||u.protocol!=="https:"||!u.pathname.startsWith("/wikipedia/commons/"))throw Error("INVALID_MEDIA_HOST");
-if(fetched>0)await sleep(500);let r=await fetch(u.toString(),{signal:AbortSignal.timeout(65000)});if(r.status===429||r.status===503){limit=r.headers.get("Retry-After")||"not supplied";throw Error("WIKIMEDIA_"+r.status+"_STOP")}if(!r.ok)throw Error("IMAGE_HTTP_"+r.status);
+async function pack(sites){if(typeof JSZip==="undefined")throw Error("ZIP_LIBRARY_NOT_LOADED");
+const zip=new JSZip(),rows=[["site_id","site_name","country","source_affiliation","coordinate_gate","source_urls","research_status","image_kind","commons_file","commons_page","original_sha1","author","license","license_url","width","height","research_file","download_sha256","exact_site_verified","rights_cleared","publication_approved","error"]],exceptions=[],records=[];
+let fetched=0,bytes=0;
+for(const s of sites){if(stopped)break;const state=saved[s.id]||{},source=state.candidates||[],picked=[],used=new Set;
+const wanted=$("mode").value==="all"?["exterior","interior","altar"]:["exterior"];
+for(const kind of wanted){const c=source.filter(x=>x.kind===kind&&x.score>=0.30&&!used.has(x.title)).sort((a,b)=>b.score-a.score)[0];
+if(c){picked.push(c);used.add(c.title)}}
+const downloaded=[],siteErrors=[];
+if(!picked.length)exceptions.push({id:s.id,error:"NO_ELIGIBLE_MATCH_OR_SCORE_BELOW_0.30"});
+for(const candidate of picked){if(stopped)break;let path="",digest="",error="";
+try{let u=new URL(candidate.thumb||candidate.original);if(!["thumb.wikimedia.org","upload.wikimedia.org"].includes(u.hostname)||u.protocol!=="https:"||!u.pathname.startsWith("/wikipedia/commons/"))throw Error("INVALID_MEDIA_HOST");
+if(fetched>0)await sleep(500);
+let r=await fetch(u.toString(),{signal:AbortSignal.timeout(65000)});
+if(r.status===429||r.status===503){limit=r.headers.get("Retry-After")||"not supplied";throw Error("WIKIMEDIA_"+r.status+"_STOP")}
+if(!r.ok)throw Error("IMAGE_HTTP_"+r.status);
 let dest=new URL(r.url);if(dest.protocol!=="https:"||!["thumb.wikimedia.org","upload.wikimedia.org"].includes(dest.hostname))throw Error("UNEXPECTED_IMAGE_REDIRECT");
-if(Number(r.headers.get("content-length")||0)>12000000)throw Error("IMAGE_OVER_12MB");let blob=await r.blob();if(blob.size>12000000)throw Error("IMAGE_OVER_12MB");let mime=(blob.type||r.headers.get("content-type")||"").split(";")[0].toLowerCase();if(!["image/jpeg","image/png","image/webp"].includes(mime))throw Error("UNSUPPORTED_MIME");if(bytes+blob.size>160000000)throw Error("ZIP_160MB_LIMIT");
-let buffer=await blob.arrayBuffer();digest=await hash(buffer);path="research_photos/"+String(s.i).padStart(4,"0")+"-"+safe(s.name)+"."+ (mime==="image/png"?"png":mime==="image/webp"?"webp":"jpg");zip.file(path,buffer);bytes+=blob.size;fetched++;
-}catch(e){error=String(e.message||e);exceptions.push({id:s.id,error});if(/WIKIMEDIA_(429|503)_STOP/.test(error)){stopped=true}}}
-else exceptions.push({id:s.id,error:"NO_ELIGIBLE_MATCH_OR_SCORE_BELOW_0.30"});
-rows.push([s.id,s.name,s.country,s.affiliation,s.quality?.gate||"UNKNOWN",s.sources.join("; "),state.status||"NOT_SCANNED",eligible?.title||"",eligible?.page||"",eligible?.sha1||"",eligible?.author||"",eligible?.lic||"",eligible?.licurl||"",eligible?.width||"",eligible?.height||"",path,digest,"FALSE","FALSE","FALSE",error]);
-records.push({site_id:s.id,name:s.name,country:s.country,address:s.address,source_ids:s.source_ids,source_urls:s.sources,source_affiliation:s.affiliation,quality_gate:s.quality?.gate||null,acquisition:state,download_file:path,sha256:digest,error,exact_site_verified:false,rights_cleared:false,publication_approved:false});
-if(stopped)break}
-zip.file("source_attribution_and_sha256.csv",csv(rows));zip.file("all_research_records.json",JSON.stringify({schema:"AO_TLM_2582_PHOTO_ACQUISITION_BATCH_V1",date:new Date().toISOString(),total_indexed_sites:SITES.length,not_publication_approved:true,records},null,2));zip.file("unresolved_sources.json",JSON.stringify(exceptions,null,2));zip.file("README.txt","Research candidates ONLY. No claimed exact building identity or rights approval. Retain source links, photographer/license data and SHA256. The user's API email is deliberately not stored.\n");
+if(Number(r.headers.get("content-length")||0)>12000000)throw Error("IMAGE_OVER_12MB");
+let blob=await r.blob();if(blob.size>12000000)throw Error("IMAGE_OVER_12MB");
+let mime=(blob.type||r.headers.get("content-type")||"").split(";")[0].toLowerCase();
+if(!["image/jpeg","image/png","image/webp"].includes(mime))throw Error("UNSUPPORTED_MIME");
+if(bytes+blob.size>160000000)throw Error("ZIP_160MB_LIMIT");
+let buffer=await blob.arrayBuffer();digest=await hash(buffer);
+path="research_photos/"+String(s.i).padStart(4,"0")+"-"+safe(s.name)+"-"+candidate.kind+"."+(mime==="image/png"?"png":mime==="image/webp"?"webp":"jpg");
+zip.file(path,buffer);bytes+=blob.size;fetched++;downloaded.push({kind:candidate.kind,file:path,sha256:digest,commons_file:candidate.title});
+}catch(e){error=String(e.message||e);exceptions.push({id:s.id,kind:candidate.kind,error});siteErrors.push(error);if(/WIKIMEDIA_(429|503)_STOP/.test(error)){stopped=true}}
+rows.push([s.id,s.name,s.country,s.affiliation,s.quality?.gate||"UNKNOWN",s.sources.join("; "),state.status||"NOT_SCANNED",candidate.kind,candidate.title,candidate.page,candidate.sha1,candidate.author,candidate.lic,candidate.licurl,candidate.width,candidate.height,path,digest,"FALSE","FALSE","FALSE",error]);}
+if(!picked.length)rows.push([s.id,s.name,s.country,s.affiliation,s.quality?.gate||"UNKNOWN",s.sources.join("; "),state.status||"NOT_SCANNED","","","","","","","","","","","","FALSE","FALSE","FALSE","NO_ELIGIBLE_MATCH"]);
+records.push({site_id:s.id,name:s.name,country:s.country,address:s.address,source_ids:s.source_ids,source_urls:s.sources,source_affiliation:s.affiliation,quality_gate:s.quality?.gate||null,acquisition:state,downloaded,errors:siteErrors,exact_site_verified:false,rights_cleared:false,publication_approved:false});}
+zip.file("source_attribution_and_sha256.csv",csv(rows));
+zip.file("all_research_records.json",JSON.stringify({schema:"AO_TLM_2582_PHOTO_ACQUISITION_BATCH_V1",date:new Date().toISOString(),total_indexed_sites:SITES.length,not_publication_approved:true,records},null,2));
+zip.file("unresolved_sources.json",JSON.stringify(exceptions,null,2));
+zip.file("README.txt","Research candidates ONLY. No claimed exact building identity or rights approval. Retain source links, photographer/license data and SHA256. The user's API email is deliberately not stored.\n");
 const name="AO_TLM_Photos_"+String(sites[0]?.i||0).padStart(4,"0")+"-"+String(sites[sites.length-1]?.i||0).padStart(4,"0")+".zip";
 let blob=await zip.generateAsync({type:"blob",compression:"DEFLATE",compressionOptions:{level:5}});download(name,blob);
-for(const r of records){const s=byId.get(r.site_id);if(s)update(s,{packaged:true,download_file:r.download_file||"",download_error:r.error||"",status:r.download_file?"RESEARCH_PHOTO_ZIPPED":r.error||"NO_ELIGIBLE_MATCH"})}
+for(const row of records){const s=byId.get(row.site_id);if(s)update(s,{packaged:true,download_file:row.downloaded[0]?.file||"",download_files:row.downloaded,download_error:row.errors.join("; "),status:row.downloaded.length?"RESEARCH_PHOTOS_ZIPPED":row.errors.length?"DOWNLOAD_ERROR":"NO_ELIGIBLE_MATCH"})}
 return {name,site_count:records.length,images:fetched,errors:exceptions.length,bytes:blob.size};}
 async function execute(runAll){if(busy)return;const email=$("email").value.trim();if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){setStatus("Enter your email for Wikimedia API identification first.");$("email").focus();return}
 if(typeof JSZip==="undefined"){setStatus("ZIP library unavailable. Check your internet connection; use Export complete research JSON instead.");return}
