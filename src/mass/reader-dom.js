@@ -1753,7 +1753,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-icon-mask:not(.ao-missal-gesture-icon),
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-missal-gesture-icon,
 .ao-reader-shell .ao-rail .ao-icon-mask,
-.ao-reader-shell .ao-live-inline-rubrics
+.ao-reader-shell
   :is(.ao-approved-finger-rubric-art,.ao-approved-priest-gesture-rubric-art,.ao-approved-priest-head-bow-rubric-art){
   width:var(--ao-cue-art-size);height:var(--ao-cue-art-size);
   min-width:var(--ao-cue-art-size);min-height:var(--ao-cue-art-size);
