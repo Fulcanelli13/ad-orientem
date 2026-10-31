@@ -62,7 +62,8 @@ try{
   tests+=5;
   await page.locator("#siteSearch").fill("");
   await page.locator("#siteFilter").selectOption("marianMissing");
-  await page.waitForSelector("#siteSelect option");
+  // <option> elements have no visible bounding box; wait for DOM attachment, not visibility.
+  await page.locator("#siteSelect option").first().waitFor({state:"attached"});
   const missing=await page.locator("#siteSelect option").count();
   assert.equal(missing,110);
   assert.equal(await page.locator("#searchArea .searchButton").count(),0,
