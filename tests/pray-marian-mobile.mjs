@@ -252,7 +252,8 @@ try{
  assert.equal(paragraphEnergy[0].opacity,1,"The current source versicle must be fully lit");
  assert.ok(paragraphEnergy.slice(1).every(x=>x.opacity<1&&x.opacity>=.5),
   "Upcoming response and Hail Mary text must mute legibly: "+JSON.stringify(paragraphEnergy));
- const authenticMarkers=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .ao-liturgical-speaker").count();
+ // Latin and vernacular faces both retain source ℣/℟ markup; only one face is visible.
+ const authenticMarkers=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .ao-liturgical-speaker").evaluateAll(nodes=>nodes.filter(n=>n.getClientRects().length>0).length);
  assert.equal(authenticMarkers,2,"Only the source V/R pair may carry liturgical speaker markers");
  // The retired Latin-cross overlay must not obscure or compete with prayer.
  assert.equal(await page.locator("#aoPray435930 .aoCrossPad").count(),0,
