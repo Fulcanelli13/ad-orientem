@@ -65,6 +65,11 @@ export const TODAY_H4_CSS=`
 .aoTodayH4 .aoH4Read button strong{display:block;font:500 16.5px/1.25 var(--h4-serif)}
 .aoTodayH4 .aoH4Read button small{display:block;font:400 13px/1.3 system-ui,sans-serif;color:var(--h4-muted);margin-top:3px}
 .aoTodayH4 .aoH4Read button .aoH4Arrow{margin-left:auto}
+.aoTodayH4 .aoH4CalendarViews{display:none;grid-template-columns:1fr 1fr minmax(0,1.7fr);gap:5px;margin:5px var(--h4-gap) 12px;padding:4px;border:1px solid var(--h4-line);border-radius:15px;background:var(--h4-surface)}
+.aoTodayH4[data-ao-home-calendar-view] .aoH4CalendarViews{display:grid}
+.aoTodayH4 .aoH4CalendarViews button{display:flex;min-width:0;min-height:44px;align-items:center;justify-content:center;padding:8px 5px;border:1px solid transparent;border-radius:11px;background:transparent;color:var(--h4-muted);font:600 12px/1.25 system-ui,sans-serif;text-align:center;white-space:normal}
+.aoTodayH4 .aoH4CalendarViews button[aria-current="page"]{background:color-mix(in srgb,var(--h4-accent) 18%,var(--h4-surface));border-color:var(--h4-accent);color:var(--h4-ink)}
+@media(max-width:359px){.aoTodayH4 .aoH4CalendarViews button{font-size:11.5px;padding:7px 3px}}
 .aoTodayH4 .aoH4CalendarInline{display:none}
 .aoTodayH4[data-ao-home-calendar-view] .aoH4CalendarInline{display:block}
 .aoTodayH4[data-ao-home-calendar-view] .aoH4TodayContent{display:none}
@@ -101,10 +106,19 @@ export const TODAY_H4_CSS=`
 .aoTodayV2 .aoHomeDYK{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:5px!important;min-width:0;width:100%;text-align:left!important;padding:15px 16px!important;min-height:112px!important;border:1px solid var(--ao-rule,var(--border,rgba(225,210,180,.2)))!important;border-radius:14px!important;background:var(--ao-surface-1,var(--surface-1,#161e25))!important;color:var(--ao-text-primary,var(--text,#f2ebe0))!important;white-space:normal!important}
 .aoTodayV2 .aoHomeDYK:disabled{opacity:1!important;cursor:default}
 .aoTodayV2 .aoHomeDYKLabel{font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--liturgical,#c9ad78)}
-.aoTodayV2 .aoHomeDYK strong{font:500 19px/1.2 var(--ao-font-display,Georgia,serif)!important;margin:2px 0!important}
-.aoTodayV2 .aoHomeDYK [data-home-dyk-fact]{font:400 14px/1.45 var(--ao-font-body,Georgia,serif)!important;color:var(--ao-text-secondary,var(--muted,#bbc0bf))!important;margin:0!important;overflow-wrap:anywhere}
+.aoTodayV2 .aoHomeDYK .aoHomeDYKSubject{font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;color:var(--ao-text-secondary,var(--muted,#bbc0bf))!important;margin:2px 0 0!important}
+.aoTodayV2 .aoHomeDYK [data-home-dyk-fact]{display:block;font:500 17px/1.44 var(--ao-font-body,Georgia,serif)!important;color:var(--ao-text-primary,var(--text,#f2ebe0))!important;margin:4px 0 0!important;overflow-wrap:anywhere}
 .aoTodayV2 .aoHomeDYKSource{font:600 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#c9ad78);margin-top:6px}
 .aoTodayV2 .aoHomeDYK:not(:disabled):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
+
+/* Sanctuary Calendar: discreet underlined view navigation, never a pill-shaped segmented card. */
+.aoTodayH4 .aoH4CalendarViews{grid-template-columns:1fr 1fr minmax(0,1.45fr);gap:0!important;margin:0 var(--h4-gap) 9px!important;padding:0!important;border:0!important;border-bottom:1px solid var(--h4-line)!important;border-radius:0!important;background:transparent!important}
+.aoTodayH4 .aoH4CalendarViews button{min-height:44px!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:0!important;padding:7px 3px!important;background:transparent!important;color:var(--h4-muted)!important;font:500 13px/1.15 var(--h4-serif)!important}
+.aoTodayH4 .aoH4CalendarViews button[aria-current="page"]{border-bottom-color:#d58275!important;background:transparent!important;color:var(--h4-ink)!important}
+.aoTodayH4 .aoH4CalendarBack{min-height:50px!important}
+.aoTodayH4 .aoH4CalendarBack strong{flex:1;min-width:0}
+.aoTodayH4 .aoH4CalendarBack .aoH4CalendarHelp{height:44px;width:44px;min-height:44px;border:0!important;border-radius:50%;background:transparent!important;color:var(--h4-muted)!important;font:500 18px/1 var(--h4-serif)}
+@media(max-width:359px){.aoTodayH4 .aoH4CalendarViews button{font-size:11.5px!important}}
 
 @media(prefers-reduced-motion:reduce){.aoTodayH4 *{scroll-behavior:auto!important;transition:none!important}}
 `;

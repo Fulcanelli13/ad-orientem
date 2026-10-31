@@ -1,3 +1,4 @@
+import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 // Preliminary R49 venue snapshot. Source-affiliation groupings are editorial,
 // never proof of a particular Canon's una-cum commemoration or active timetable.
 export const PRELIMINARY_R49_URL=new URL("../../data/directory/preliminary-map-r49.v1.json",import.meta.url).href;
@@ -8,12 +9,64 @@ export const PRELIMINARY_R49_ROME=1022;
 const COLS=["id","name","country","locality","affiliation","group","lat","lng","url","other_url","precision"];
 const tidy=s=>String(s??"").trim();
 const searchKey=s=>tidy(s).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+// Exact source-affiliation names are identity hints for Explore filtering and
+// neutral monograms, not proof of canonical standing or a particular Mass.
+// Exact label-to-filter hints from the existing 138-label CL2 affiliation audit.
+// Association-only directory membership does NOT become an institute identity.
+const REPORTED_INSTITUTION_LABELS=Object.freeze({
+  "SSPX": "SSPX",
+  "DIOCESAN": "DIOCESAN",
+  "FSSP": "FSSP",
+  "ICKSP": "ICKSP",
+  "SSPX / FSSPX": "SSPX",
+  "IBP": "IBP",
+  "CMRI": "CMRI",
+  "ICKSP / ICRSP": "ICKSP",
+  "ISTITUTO MATER BONI CONSILII": "IMBC",
+  "AASJMV": "AASJMV",
+  "FSSP AUSTRIA": "FSSP",
+  "BENEDICTINE": "BENEDICTINE",
+  "BÉNÉDICTINES": "BENEDICTINE",
+  "FRATERNITÉ DE LA TRANSFIGURATION": "TRANSFIGURATION",
+  "SOCIEDAD SACERDOTAL TRENTO": "SOCIEDAD_TRENTO",
+  "BENEDICTINE | OWNER-LISTED": "BENEDICTINE",
+  "CAPUCINS DE MORGON": "CAPUCHINS_MORGON",
+  "ORATORIANS": "ORATORIAN",
+  "CARMÉLITES": "CARMELITE",
+  "PREMONSTRATENSIAN": "PREMONSTRATENSIAN",
+  "ICKSP ITALY": "ICKSP",
+  "INDEPENDENT": "INDEPENDENT",
+  "MOSTEIRO DA SANTA CRUZ / RESISTANCE": "MOSTEIRO_SANTA_CRUZ",
+  "SSPX ITALY": "SSPX",
+  "CANONS OF ST JOHN CANTIUS": "CANONS_ST_JOHN_CANTIUS",
+  "CANONS REGULAR OF SAINT JOHN CANTIUS": "CANONS_ST_JOHN_CANTIUS",
+  "FSSP SWITZERLAND": "FSSP",
+  "MILITIA TEMPLI": "MILITIA_TEMPLI",
+  "SŒURS DE LA FRATERNITÉ SAINT PIE X": "SSPX_SISTERS",
+  "SSPX GREAT BRITAIN AND IRELAND": "SSPX",
+  "BÉNÉDICTINS DE BELLAIGUE": "BENEDICTINES_BELLAIGUE",
+  "CARMELITE": "CARMELITE",
+  "DOMINICAINES DE FANJEAUX": "DOMINICAINES_FANJEAUX",
+  "DOMINICAINS": "DOMINICAN",
+  "DOMINICAINS D AVRILLÉ": "DOMINICANS_AVRILLE",
+  "DOMINICAN": "DOMINICAN",
+  "FSSP GERMANY": "FSSP",
+  "FSSP SCOTLAND": "FSSP",
+  "FSSP SOUTH TYROL": "FSSP",
+  "FSSP UK AND IRELAND": "FSSP",
+  "ICKSP GREAT BRITAIN": "ICKSP",
+  "INSTITUTE OF SAINT PHILIP NERI": "INSTITUTE_ST_PHILIP_NERI",
+  "MOSTEIRO DA SANTA CRUZ & ASSOCIATED BENEDICTINES": "MOSTEIRO_SANTA_CRUZ",
+  "SERVI JESU ET MARIAE": "SJM",
+  "SOCIETY OF THE MISSIONARIES OF DIVINE MERCY": "SMMD",
+  "SŒURS DE LA FRATERNITÉ SAINT-PIE X": "SSPX_SISTERS"
+});
 function providerGroup(affiliation,group){
-  if(group==="SSPX")return "SSPX";
-  if(group==="UNKNOWN")return "OTHER";
   const x=tidy(affiliation).toUpperCase();
-  if(x==="FSSP"||x==="ICKSP"||x==="IBP")return x;
-  if(x.startsWith("DIOCESAN"))return "DIOCESAN";
+  if(["FSSP","ICKSP","IBP","AASJMV"].includes(x))return x;
+  if(Object.hasOwn(REPORTED_INSTITUTION_LABELS,x))return REPORTED_INSTITUTION_LABELS[x];
+  if(group==="SSPX")return "SSPX";
+  if(x==="DIOCESAN")return "DIOCESAN";
   return "OTHER";
 }
 function linkList(raw,limit=5){
@@ -49,7 +102,7 @@ export function projectPreliminaryR49(json){
     const label=tidy(affiliation)||"Affiliation unverified";
     return Object.freeze({
       item_id:"tlm:r49:"+id,source_id:id,lens:"tlm",kind:"TLM_VENUE",
-      community_id,preliminary_group:group,
+      community_id,preliminary_group:group,affiliation_scope:"SOURCE_LABEL_ONLY",
       eyebrow:label,
       status:group==="ROME"?"SOURCE-REPORTED":group==="SSPX"?"SSPX · SEPARATE":"UNCLASSIFIED",
       title:name,
@@ -149,8 +202,13 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     // The base 1,879-place map must still load if the optional release is
     // unavailable or malformed. No unsupported additional point is displayed.
   }
-  cache=extended;
-  return extended;
+  // The 2,579-site CL2 master is now the complete directory foundation.
+  // A missing/corrupt index is a visible load failure, never a silently
+  // truncated 1,879-site worldwide result.
+  const full=await fetchImpl(CL2_PHYSICAL_SITE_INDEX_URL,{headers:{accept:"application/json"}});
+  if(!full?.ok)throw new Error("CL2 worldwide physical-site index unavailable: HTTP "+full?.status);
+  cache=projectCL2PhysicalDirectory(extended,await full.json(),{mapAffiliation:providerGroup});
+  return cache;
 }
 export function filterPreliminaryR49(items,{query="",directoryGroup="ALL",affiliations=[]}={}){
   const q=searchKey(query),group=tidy(directoryGroup).toUpperCase();

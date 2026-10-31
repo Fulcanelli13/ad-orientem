@@ -1,6 +1,6 @@
 // Pure, source-derived summaries used by MapLibre's GeoJSON clustering.
 // Group membership is never inferred from proximity, juridical standing, or una-cum practice.
-export const MASS_CLUSTER_GROUPS=Object.freeze(["DIOCESAN","FSSP","ICKSP","SSPX","IBP","OTHER"]);
+export const MASS_CLUSTER_GROUPS=Object.freeze(["DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV","OTHER"]);
 export const CLUSTER_PAGE_SIZE=36;
 export function exploreClusterProperties(){
   return Object.fromEntries(MASS_CLUSTER_GROUPS.map(group=>[

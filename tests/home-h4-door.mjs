@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {h4Enabled,h4HomeView,verifiedH4WeekColour} from "../src/home/today-h4-view.js";
+import {composeMassTextsSheet} from "../src/mass/mass-texts-sheet.js";
 import {h4ChoicesMarkup,rememberH4Choices} from "../src/home/today-h4-change-sheet.js";
 import {createSettingsDonorState} from "../src/settings/donor-state.js";
 import {renderSettingsToString} from "../src/settings/presentation.js";
@@ -117,7 +118,8 @@ const modalFr=h4ChoicesMarkup({chosenForm:"LOW",formChangeAllowed:false,readerMo
 assert.match(modalFr,/Une autre messe est célébrée/);
 assert.match(modalFr,/data-h4-option="form" disabled/,"Good Friday must block illicit form change");
 
-assert.match(html,/data-home-h4-readings/);
+assert.doesNotMatch(html,/data-home-h4-readings/,
+  "H7 must not invent unverified Proper rows when no approved readings are supplied");
 assert.match(html,/data-home-cu-route="pray.angelus_regina"/);
 assert.match(html,/Next · 18:00/);
 assert.match(html,/MY RULE/);
@@ -136,6 +138,58 @@ assert.ok(html.indexOf('class="aoH4DiscoveryStandalone"')<html.indexOf('class="a
 const readFragment=html.slice(html.indexOf('class="aoH4Read"'));
 assert.doesNotMatch(readFragment,/data-home-dyk-open/,"Did You Know must not be inside Read");
 assert.equal((readFragment.match(/data-action="gospel"/g)||[]).length,1,"Read keeps its Gospel entry");
+// H7 Sanctuary Prototype 1 is the visual authority for Home AND the distinct Mass door.
+const h7Facts=h4HomeView(vm,model,{ordoFacts:{
+  status:"SOURCE_PROPER",gloria:false,credo:true,
+  preface:{status:"MATCH",heading:"Praefatio Communis"},
+  introitIncipit:"Si iniquitátes observáveris Dómine"
+},properSections:[{id:"INTROIT",label:"Introit"},{id:"GOSPEL",label:"Gospel"}]});
+assert.match(h7Facts,/data-home-h4-readings/,
+  "H7 must expose native readings when source-certified Proper sections exist");
+assert.match(h7Facts,/Praefatio Communis/,"Certified Preface must appear in H7 door");
+assert.match(h7Facts,/data-home-h4-reading-slot="GOSPEL"/,
+  "Clicking Gospel must target the native bilingual Gospel slot");
+const translatedProper={introit:{lat:"Si iniquitátes observáveris",en:"If Thou, O Lord",fr:"Si vous gardez"}};
+const enSlots=composeMassTextsSheet({proper:translatedProper,language:"en",sourceReady:true});
+const frSlots=composeMassTextsSheet({proper:translatedProper,language:"fr",sourceReady:true});
+assert.equal(enSlots.sections.find(x=>x.id==="INTROIT")?.status,"READY");
+assert.equal(frSlots.sections.find(x=>x.id==="INTROIT")?.status,"READY");
+assert.equal(enSlots.sections.find(x=>x.id==="COLLECT_SET")?.status,"MISSING",
+  "Raw missing Collect must not become a phantom door row");
+assert.equal(frSlots.sections.find(x=>x.id==="GOSPEL")?.status,"MISSING",
+  "Bilingual Gospel absent from source must stay unavailable");
+
+assert.match(h7Facts,/<small>Gloria<\/small><b[^>]*>Not said<\/b>/,"Only certified Gloria decision may display");
+assert.match(h7Facts,/<small>Credo<\/small><b[^>]*>Said<\/b>/,"Only certified Credo decision may display");
+assert.doesNotMatch(h7Facts,/data-home-h4-readings[^>]*><span>Epistle<\/span>/,
+  "Unavailable proper sections must not be invented");
+assert.match(h7Facts,/Read complete Introit/,"Partial incipit must not masquerade as full prayer text");
+const h7Withheld=h4HomeView(vm,model,{ordoFacts:{
+  status:"SOURCE_PROPER",gloria:null,credo:null,preface:{status:"SOURCE_CONFLICT",heading:null}
+}});
+assert.doesNotMatch(h7Withheld,/<small>Gloria<\/small><b[^>]*>Said<\/b>|<small>Credo<\/small><b[^>]*>Said<\/b>/,
+  "Unverified Ordo decisions must not publish affirmatively");
+assert.doesNotMatch(h7Withheld,/Praefatio Communis/,
+  "Preface conflict must remain withheld on Home");
+assert.match(html,/class="aoH7HomeView home"/,"H7 Home must be an independent screen");
+assert.match(html,/class="celebrationBlock aoTodayV2Frontispiece hero aoH7Hero"/,
+  "H7 original full-bleed art hero, not an H4 card");
+assert.match(html,/data-home-h7-enter/,"Home must enter the distinct Sanctuary Mass door");
+assert.match(html,/class="aoH7DoorView" hidden/,"Mass door exists but is not duplicated on Home");
+assert.match(html,/data-home-h7-back/,"Mass door must return to Home");
+assert.match(html,/class="body door"/,"H7 Sanctuary's missal body must be retained");
+assert.match(html,/class="dhead"/,"Mass door must have H7's centered title and rubric");
+assert.match(html,/class="ordo"/,"Mass door must keep the H7 Ordo position");
+assert.match(html,/class="foot"/,"Mass door must keep the fixed Begin action");
+assert.doesNotMatch(html,/Fra Angelico|The Tribute Money/,
+  "Claude's illustration fixtures must never enter production liturgical data");
+assert.match(html,/class="aoH4CalendarViews"/,"Calendar must retain its own view selector");
+assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\s\S]*data-home-calendar-view="day">Day/);
+assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\s\S]*data-home-calendar-view="picker">Month/);
+assert.match(html,/<nav class="aoH4CalendarViews"[^>]*>[\s\S]*data-home-calendar-view="year">Liturgical Year/);
+assert.match(html,/Liturgical Year/,"Year clock needs a visible labelled route");
+assert.match(h4HomeView({...vm,language:"fr"},model),/Année liturgique/,
+  "Year clock route must be bilingual");
 assert.match(html,/DID YOU KNOW\?/,"English affirmative discovery heading");
 assert.match(h4HomeView({...vm,language:"fr"},model),/LE SAVIEZ-VOUS \?/,"French discovery heading");
 assert.equal((html.match(/data-action="gospel"/g)||[]).length,1);
@@ -148,7 +202,7 @@ assert.match(resumable,/data-resume-mass/);
 assert.doesNotMatch(resumable,/data-home-h4-begin/,"Resuming must not create a second start");
 const fr=h4HomeView({...vm,language:"fr",dateTitle:"vendredi 30 octobre"},model);
 assert.match(fr,/Commencer la messe/);
-assert.match(fr,/Lectures/);
+assert.match(fr,/<h2>Lire<\/h2>/,"Approved H7 Read section uses the original French label");
 assert.match(fr,/Rosaire/);
 assert.match(fr,/Cette semaine/);
 console.log("PASS H4 Today door: original Mass, canonical events, Rosary once, 18:00 next, fail closed, Resume, bilingual");

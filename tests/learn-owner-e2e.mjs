@@ -671,9 +671,8 @@ try{
   await assertNoMass("Learn -> Pray");
   await assertFocusSafe("Learn -> Pray");
 
-  // Calendar remains embedded in the default H4 Today. Use its
-  // source-owned date opener and calendar return, never the retired H3
-  // .aoTodayV2Tabs selector (which is present only in rollback mode).
+  // Calendar is embedded in Home, not a sixth app destination.
+  // H7's dated Calendar entry replaces the retired H4 date opener.
   await openLearn();
   await page.locator("[data-ao-app-surface='home']").tap();
   await page.waitForFunction(()=>
@@ -681,8 +680,8 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  const monthEntry=page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]');
-  assert.equal(await monthEntry.count(),1,"H4 must expose one date-to-Month entry");
+  const monthEntry=page.locator('.homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view="picker"]');
+  assert.equal(await monthEntry.count(),1,"H7 must expose one dated Month entry");
   await monthEntry.tap();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
     {state:"visible",timeout:15000});
@@ -692,7 +691,7 @@ try{
     "Embedded Calendar must preserve Today as the app surface");
   await assertNoMass("Learn -> Today -> Month");
   await assertFocusSafe("Learn -> Today -> Month");
-  await page.locator('.homeScreen.aoTodayH4 [data-home-calendar-today]').tap();
+  await page.locator("[data-home-calendar-today]").tap();
   await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
   assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,
     "Return from Month must restore Today without an orphaned Calendar");

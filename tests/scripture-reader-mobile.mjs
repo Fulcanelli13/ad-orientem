@@ -23,7 +23,9 @@ try{
  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-US"});
  const page=await context.newPage(),pageErrors=[];
  page.on("pageerror",e=>pageErrors.push(String(e?.message??e)));
- await page.goto("http://127.0.0.1:4199/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ // Standalone Bible reader contract uses its original Home entry via explicit rollback.
+ // Current H7 Home enters Scripture through its canonical Gospel route.
+ await page.goto("http://127.0.0.1:4199/index.html?aoTodayH4=0",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true &&
    globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.installed===true,null,{timeout:30000});
  const entry=page.locator("[data-home-scripture]");
@@ -480,7 +482,7 @@ try{
   assert.ok(crossModule.some(row=>row.originModule==="novena"&&row.originId==="annunciation"));
   assert.equal(crossModule[0].originBead,2,"Saved Rosary record retains original exact bead");
   assert.deepEqual(pageErrors,[],"Unexpected cross-module workbench runtime errors");
-  await page.goto("http://127.0.0.1:4199/index.html?ao_scripture_research=1",
+  await page.goto("http://127.0.0.1:4199/index.html?ao_scripture_research=1&aoTodayH4=0",
     {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true &&
     globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.installed===true,null,{timeout:30000});

@@ -23,8 +23,8 @@ assert.doesNotMatch(preview,/class="aoExploreSections"/,"No detailed sections in
 const full=renderExploreToString(buildExploreViewModel({...base,expandDetail:true}));
 assert.match(full,/data-explore-collapse-detail/);
 assert.match(full,/aria-modal="true"/,"full source reader must remain modal");
-assert.match(full,/class="aoFindSources"/);
-assert.match(full,/target="_blank" rel="noopener"/);
+assert.match(full,/class="aoTlmProfileSourceDisclosure"/,"TLM sources live in the expanded sheet disclosure");
+assert.match(full,/target="_blank" rel="noopener noreferrer"/,"Original source links must remain clickable");
 assert.doesNotMatch(full,/data-explore-expand-detail/,"Full record must not retain preview action");
 assert.doesNotMatch(full,/SUNDAY 10:30/,"Must not invent Mass times");
 

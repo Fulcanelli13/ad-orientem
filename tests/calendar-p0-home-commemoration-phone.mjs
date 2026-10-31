@@ -1,3 +1,4 @@
+// Legacy Home parity runs through the explicit rollback; H7 has its own acceptance suite.
 // Production DayResolver, Calendar Day and Home show the SAME observed
 // 1962 commemorations. This catches raw source-ID leaks and split rendering.
 import assert from "node:assert/strict";
@@ -36,7 +37,7 @@ try{
   const errors=[];
   page.on("pageerror",x=>errors.push(String(x.message||x)));
   try{
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native&aoTodayH4=0",
     {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:50000});
    await page.locator('.homeScreen .aoTodayV2ReadReflect [data-home-calendar-view="day"]').click();
