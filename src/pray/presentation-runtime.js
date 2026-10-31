@@ -301,7 +301,7 @@ let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard",since:''}}
 let CONF=freshConfessionState();
-let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
+let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS},optionsOpen:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,nightStep:0,timer:null,timerEnd:0,quiet:false};
 const ADOR_FOUR_CHOICES_KEY="ao.pray.adoration-four-choices.v1";
 let ADOR_FOUR_CHOICES=null;
@@ -523,7 +523,8 @@ function head(title,sub=''){
  const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)
   ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
   :'';
- const trailing=settings+prayerLanguage+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
+ const benAa=view==='benediction'?`<button type="button" class="aoClaudeBenAa" data-p435930-ben-settings aria-controls="aoBenOptions" aria-expanded="${BEN.optionsOpen?'true':'false'}" aria-label="${esc(L('Rite settings and sources','Paramètres et sources du rite'))}">Aa</button>`:'';
+ const trailing=settings+benAa+prayerLanguage+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>`;
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
@@ -1670,6 +1671,15 @@ function benFeastOptions(){
 }
 function renderBenediction(){
  const stages=benStages(),i=Math.max(0,Math.min(stages.length-1,BEN.step)),id=stages[i][0],titles=stages.map(x=>L(x[1],x[2]));let body='';
+ // Decorative miniature follows Claude's exact .hd/.plate concept. It is
+ // NOT an invented painting or an approved work from the sacred-art bank.
+ const baseIndex=BEN_STAGES.findIndex(x=>x[0]===id);
+ const plateCode=['A','B','B','B','C','D','D'][baseIndex]||'';
+ const ordinalEn=['First','Second','Third','Fourth','Fifth','Sixth','Seventh'][baseIndex]||String(i+1);
+ const ordinalFr=['Première','Deuxième','Troisième','Quatrième','Cinquième','Sixième','Septième'][baseIndex]||String(i+1);
+ const plateCaption=plateCode
+  ?L(ordinalEn+' stage · plate '+plateCode,ordinalFr+' étape · planche '+plateCode)
+  :L('Additional local stage','Étape locale supplémentaire');
  if(id==='exposition')body=`${guideNow(L('Attend to the Exposition','Soyez attentif à l’exposition'),L('When the Blessed Sacrament is exposed, turn your attention to the altar. If O Salutaris is actually sung, pray or sing it with the church; otherwise follow what is used.','Lorsque le Saint-Sacrement est exposé, tournez votre attention vers l’autel. Si O Salutaris est effectivement chanté, priez-le ou chantez-le avec l’assemblée ; sinon, suivez ce qui est utilisé.'))}${benSungPrayer('benediction_o_salutaris',L('If sung here','Si chanté ici'))}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Stay here until the opening hymn or prayers have finished and the service settles into adoration.','Restez ici jusqu’à la fin du chant ou des prières d’ouverture et jusqu’à ce que l’office entre dans l’adoration.'))}`;
  if(id==='adoration')body=`${guideNow(L('Remain with the public rite','Restez avec le rite public'),L('Adore in silence or follow the Scripture, prayer or sacred music actually being used. Do not fill the interval simply because the app has more text.','Adorez en silence ou suivez l’Écriture, la prière ou la musique sacrée réellement utilisées. Ne remplissez pas l’intervalle simplement parce que l’application contient davantage de texte.'))}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when Tantum Ergo begins, or when the service clearly moves into the hymn immediately before Benediction.','Avancez lorsque commence Tantum Ergo, ou lorsque l’office passe clairement au chant qui précède immédiatement la bénédiction.'))}`;
 
@@ -1690,12 +1700,12 @@ function renderBenediction(){
  ${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
  if(id==='reposition')body=`${guideNow(L('Follow the Reposition','Suivez la reposition'),L('Follow the chant and movement actually used as the Blessed Sacrament is returned to the tabernacle. The app does not force Psalm 116 or another local custom.','Suivez le chant et le mouvement réellement utilisés lorsque le Saint-Sacrement est reporté au tabernacle. L’application n’impose ni le psaume 116 ni un autre usage local.'))}${guideCue(L('FINISH WHEN','TERMINEZ LORSQUE'),L('The Blessed Sacrament has been reposed and the public service has actually ended.','Le Saint-Sacrement a été replacé au tabernacle et l’office public est réellement terminé.'))}`;
  return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-rite-owner="benediction" data-ao-benediction-step="${i}" data-ao-benediction-celebration="${esc(BEN.celebration)}" data-ao-benediction-final="${i===stages.length-1}" data-ao-ben-extended="${stages.length>7}">
-  <div class="aoRiteOptionRow" data-ao-rite-options>${benFeastOptions()}${batch02SourceLinks('benediction-optional-local')}</div>
+  <div id="aoBenOptions" class="aoRiteOptionRow aoClaudeBenSettings" data-ao-rite-options role="group" aria-label="${esc(L('Rite settings and sources','Paramètres et sources du rite'))}" ${BEN.optionsOpen?'':'hidden'}>${benFeastOptions()}${batch02SourceLinks('benediction-optional-local')}</div>
  <div class="aoClaudeRiteLayout" data-ao-claude-altar="true">
   ${claudeBenedictionRail(stages,i,{esc})}
   <section class="aoDevoCard aoClaudeAltarCard" data-ao-devo-card="${esc(id)}" data-ao-altar-moment="${esc(id)}">
    <div class="aoClaudeAltarInner">
-    <header class="aoDevoCardHead aoClaudeAltarHead"><small class="aoDevoCardNumber">${i+1} / ${stages.length}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></header>
+    <header class="aoDevoCardHead aoClaudeAltarHead"><div class="aoClaudeAltarPlate" aria-hidden="true"><div class="aoClaudeAltarPlateArt"></div></div><div class="aoClaudeAltarHeading"><small class="aoDevoCardNumber">${esc(plateCaption)}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></div></header>
     <div class="aoDevoCardScroll aoClaudeAltarScroll" role="region" tabindex="0" aria-label="${esc(titles[i])}">${body}</div>
    </div>
   </section>
@@ -3265,6 +3275,16 @@ async function openExternalFamilyRoute(button,route,returnFamily){
  return false;
 }
 function onClick(e){
+ const benSettings=e.target.closest?.('[data-p435930-ben-settings]');
+ if(benSettings){
+  e.preventDefault();
+  BEN.optionsOpen=!BEN.optionsOpen;
+  const panel=mount()?.querySelector('#aoBenOptions');
+  if(panel)panel.hidden=!BEN.optionsOpen;
+  benSettings.setAttribute('aria-expanded',String(BEN.optionsOpen));
+  if(BEN.optionsOpen)panel?.querySelector('summary')?.focus?.({preventScroll:true});
+  return;
+ }
  const myCustoms=e.target.closest?.('[data-p435930-my-customs]');
  if(myCustoms){
    e.preventDefault();
