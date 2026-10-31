@@ -681,7 +681,7 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').tap();
+  await page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]').tap();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
     {state:"visible",timeout:15000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
@@ -690,7 +690,7 @@ try{
     "Embedded Calendar must preserve Today as the app surface");
   await assertNoMass("Learn -> Today -> Month");
   await assertFocusSafe("Learn -> Today -> Month");
-  await page.locator("[data-home-calendar-today]").tap();
+  await page.locator('.homeScreen.aoTodayH4 [data-home-calendar-today]').tap();
   await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
   assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,
     "Return from Month must restore Today without an orphaned Calendar");
