@@ -17,10 +17,12 @@
     "originalRightsBlocked": 1,
     "unreviewedProposals": 46,
     "preApprovedSemanticWorks": 3,
-    "exactBenedictionPaintingStillMissing": true,
+    "exactBenedictionPaintingStillMissing": false,
     "allTraditionalRosaryStageSubjectsAlreadyHavePaintings": true,
     "optionalLuminousLiveStageIdsUnresolved": true,
-    "photosCertifiedPD_CC0": 0
+    "photosCertifiedPD_CC0": 0,
+    "exactBenedictionRitualPaintingNotFoundButThematicArtChosen": true,
+    "userChosenArtForBenedictionAndTherese": 2
   },
   "priorityCorrection": "Five optional Luminous mysteries are NOT user traditional 15-Rosary source; do not let absent stable optional IDs block the traditional Rosary launch.",
   "knownRightsEvidence": [
@@ -100,7 +102,7 @@
       "section": "Exact rite and liturgy",
       "priority": "P1",
       "reason": "No exact blessing painting was in the 989-work Prayer reuse set. These are five witnessed representations of the blessing, but most are photographs or historical illustrations. This is an iconographic-reference round, NOT five publishable paintings.",
-      "sceneStatus": "OPEN_NO_ACTUAL_OIL_PAINTING_OF_RITE_FOUND",
+      "sceneStatus": "USER_SELECTED_VAN_EYCK_THEMATIC_LAMB_HEAVENLY_ADORATION_SOURCE_PD_ART_NATIVE_QA_PENDING",
       "candidateCount": 6,
       "existingHistoricalApprovedPaintings": [
         {
@@ -237,6 +239,14 @@
         "referenceOnly": 6,
         "blockedModernOriginal": 0,
         "unreviewed": 0
+      },
+      "currentEditorialChoice": {
+        "work": "Jan and Hubert van Eyck — Adoration of the Mystic Lamb",
+        "source": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+        "status": "USER_APPROVED_THEMATIC",
+        "notLiteralRite": true,
+        "photoRights": "COMMONS_PD_ART",
+        "imageNativeQA": "PENDING"
       }
     },
     {
@@ -655,7 +665,7 @@
       "section": "Saint portrait / novena",
       "priority": "P1",
       "reason": "The Saint is not an unknown subject in our collection. Choose the best fitting portrait; several photographs of church paintings may need replacement. Rights for modern paintings remain unresolved.",
-      "sceneStatus": "OPEN_CAN_REUSE_MeHOFFER_SUBJECT_PHOTO_RIGHTS_PENDING",
+      "sceneStatus": "USER_SELECTED_EXACT_PD_PHOTOGRAPH_LOW_RES_362x498_NATIVE_QA_PENDING",
       "candidateCount": 6,
       "existingHistoricalApprovedPaintings": [],
       "semanticPreviouslyApproved": [],
@@ -781,6 +791,17 @@
         "referenceOnly": 0,
         "blockedModernOriginal": 1,
         "unreviewed": 5
+      },
+      "currentEditorialChoice": {
+        "work": "Historical portrait of Saint Thérèse of Lisieux, pre-1897",
+        "source": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg",
+        "status": "USER_FINAL_PHOTO_APPROVED",
+        "photoRights": "PUBLIC_DOMAIN_COMMONS_FR_US",
+        "imageDimensions": [
+          362,
+          498
+        ],
+        "imageNativeQA": "PENDING"
       }
     },
     {
@@ -1843,5 +1864,7 @@
       "finding": "Céline Martin, creator of Thérèse aux roses, died 1959. Under ordinary French life+70 copyright term, her paintings remain protected through 2029 without exception; do not count this as a PD image.",
       "evidence": "https://archives.carmeldelisieux.fr/en/personnage/celine-martin/"
     }
-  ]
+  ],
+  "note": "Count reflects status of 66 old reviewed proposals; two NEW user decisions from 31 October are recorded in separate direct decision file and not silently inserted into old denominator.",
+  "userDirectDecisions": "data/prayer/artwork-editorial-20261031/user-direct-benediction-therese-selections.v1.json"
 }
