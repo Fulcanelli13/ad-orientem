@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/san_polo_image_quality_qa.py'
       - 'tests/prayer-san-polo-oil-archive.mjs'
+      - 'tests/prayer-san-polo-prior-approvals.mjs'
       - '.github/workflows/san-polo-image-quality-qa.yml'
   pull_request:
     branches:
@@ -16,6 +17,7 @@ on:
       - '.github/workflows/san-polo-image-quality-qa.yml'
       - 'data/prayer/stations/san-polo-tiepolo-oils-1747/**'
       - 'tests/prayer-san-polo-oil-archive.mjs'
+      - 'tests/prayer-san-polo-prior-approvals.mjs'
   workflow_dispatch:
 
 permissions:
@@ -37,3 +39,5 @@ jobs:
         run: python scripts/san_polo_image_quality_qa.py
       - name: Validate preexisting archive integrity and unpublished release flags
         run: node tests/prayer-san-polo-oil-archive.mjs
+      - name: Verify six remaining scene gaps, existing approvals and zero accidental activation
+        run: node tests/prayer-san-polo-prior-approvals.mjs
