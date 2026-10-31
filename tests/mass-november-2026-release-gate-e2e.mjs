@@ -304,7 +304,7 @@ try{
              const sourceCards=(api.model?.cards??[]).filter(c=>
                String(c.sourceSectionId??c.sectionId)==="AO.CARD.006");
              const sequenceCard=sourceCards.find(c=>
-               /Dies\\s+ir/i.test(JSON.stringify(c.paragraphs??[])))??sourceCards[0];
+               /Dies\s+ir/i.test(JSON.stringify(c.paragraphs??[])))??sourceCards[0];
              if(!sequenceCard||!api.showSection(sequenceCard.sectionId))
                throw Error("NOV02_READER_TRACT_SEQUENCE_NOT_VISIBLE");
              const proof={
