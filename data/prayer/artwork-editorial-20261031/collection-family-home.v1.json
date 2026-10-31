@@ -14,7 +14,9 @@
     "candidatesWithExplicitNoPublicationGate": 139,
     "sourceLinksRecoveredByExactID": 4,
     "sourceLinkSuggestionsUnverified": 0,
-    "sourceLinksRecoveredByMuseumExactOriginal": 2
+    "sourceLinksRecoveredByMuseumExactOriginal": 2,
+    "museumDocumentedAnonymousPlacements": 2,
+    "unknownPainterOriginalIdentityOpen": 0
   },
   "slots": [
     {
@@ -1381,7 +1383,15 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED",
-          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
         },
         {
           "sourceIDs": [
@@ -1805,7 +1815,15 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED",
-          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
         }
       ],
       "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
