@@ -25,6 +25,8 @@ on:
       - 'data/prayer/artwork-editorial-20261031/commons-pageid-exact-source-wave04-20261031.v1.json'
       - 'data/prayer/artwork-editorial-20261031/commons-pageid-ricci-wave05-20261031.v1.json'
       - 'data/prayer/artwork-editorial-20261031/remaining-50-unique-source-acquisition-queue-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/commons-exact-pageid-wave06-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/remaining-43-source-identity-queue-20261031.v1.json'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
   workflow_dispatch:
 permissions:
