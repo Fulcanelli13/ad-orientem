@@ -10,7 +10,8 @@
     "provisionalSeasonal": 11,
     "provisionalPrayer": 12,
     "selectedSourcesWithPhotoAcquired": 0,
-    "producedReleaseMutations": 0
+    "producedReleaseMutations": 0,
+    "explicitNoPublicationSlots": 267
   },
   "placements": [
     {
@@ -508,7 +509,8 @@
           "COV-daily.nightly_examen"
         ],
         "artwork": "NOT_STORED_AS_UNVERIFIED_NEW_WORK",
-        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY"
+        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY",
+        "productionEnabled": false
       },
       "otherArtCandidates": 6,
       "fullFamilySource": "collection-family-1.v1.json",
@@ -2246,7 +2248,8 @@
           "COV-novena.st_michael"
         ],
         "artwork": "NOT_STORED_AS_UNVERIFIED_NEW_WORK",
-        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY"
+        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY",
+        "productionEnabled": false
       },
       "otherArtCandidates": 12,
       "fullFamilySource": "collection-family-4.v1.json",
@@ -3591,7 +3594,8 @@
           "COV-novena.sacred_heart"
         ],
         "artwork": "NOT_STORED_AS_UNVERIFIED_NEW_WORK",
-        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY"
+        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY",
+        "productionEnabled": false
       },
       "otherArtCandidates": 9,
       "fullFamilySource": "collection-family-6.v1.json",
@@ -4219,7 +4223,8 @@
           "COV-marian_hail_holy_queen"
         ],
         "artwork": "NOT_STORED_AS_UNVERIFIED_NEW_WORK",
-        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY"
+        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY",
+        "productionEnabled": false
       },
       "otherArtCandidates": 11,
       "fullFamilySource": "collection-family-7.v1.json",
@@ -4917,7 +4922,8 @@
           "COV-prayer.good_death"
         ],
         "artwork": "NOT_STORED_AS_UNVERIFIED_NEW_WORK",
-        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY"
+        "approvalStatus": "PRIOR_APPROVED_CHILD_ART_ONLY",
+        "productionEnabled": false
       },
       "otherArtCandidates": 10,
       "fullFamilySource": "collection-family-9.v1.json",
@@ -5412,5 +5418,6 @@
       "fullFamilySource": "collection-family-other.v1.json",
       "currentEditoriallyCoveredBeforeNewReview": true
     }
-  ]
+  ],
+  "publicationEnabled": false
 }
