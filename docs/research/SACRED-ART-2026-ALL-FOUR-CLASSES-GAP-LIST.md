@@ -7,9 +7,9 @@ The new four-class reverse index now connects 178 distinct 383-registry artwork 
 Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Earlier all383-artwork-reverse-index.v1.json remains historical I/II-only evidence, and never classifies the 205 unmatched artworks as needing replacement.
 
 ---
-## Latest matching checkpoint — Batch 4 (31 October 2026)
+## Latest matching checkpoint — Batch 5 (31 October 2026)
 
-**Current researched Class III subject identification: 52/165 dates (52/131 observed sanctoral dates).** This is 7 more than the previous 45, and leaves **79 sanctoral dates with no exact subject lead** across the three already reviewed corpora (383 canonical IDs, 856 previously accepted source cards, and W60/W72 historic named-file and scored art sources). The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
+**Current researched Class III subject identification: 53/165 dates (53/131 observed sanctoral dates).** This is 1 more than Batch 4's 52, and leaves **78 sanctoral dates with no exact subject lead** across the three already reviewed corpora (383 canonical IDs, 856 previously accepted source cards, and W60/W72 historic named-file and scored art sources). The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
 
 | Feast | Observation | Existing painting(s) | Safeguard |
 | --- | --- | --- | --- |
@@ -23,7 +23,13 @@ Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Ear
 
 Seven distinct dates, nine registered source relationships. All remain not certified for Homepage rotation. Do not interpret two Reni photo records as two physical paintings until accession comparison; keep human five-star W72 ratings separate from canonical 383 reviewer states.
 
-### Current 79 unlinked Class III sanctoral dates
+### Batch 5 — recovered St Clare of Assisi (12 August 2026)
+
+Existing accepted source cards **walters:18326** (Benedetto Coda, *Saint Claire of Assisi*, Walters accession **37.1084**) and **rijks:200110753** (Joseph Désiré Court, *De heilige Clara*, Rijksmuseum object **SK-C-303**) both name the observed saint. This adds one **research-only** subject date and two already accepted archive source records; Class III **52→53/131 sanctoral**, **79→78** unmatched. Neither is yet a canonical 383 artwork, date-approved hero, vetted photo or release-ready rotation option. Museum accessions, originals and native crops need release verification, but no new external search or paid permission is authorized.
+
+Other title collisions are *not* new exact matches: Sebastian without Fabian, John the Baptist versus de la Salle, William of Aquitaine versus William of Vercelli, Jerome of Stridon versus Jerome Emiliani, Clare versus Claret, St Nicholas of Myra versus Tolentino, Martin of Tours versus Pope Martin I, Pius VI versus Pius X, and apostle portraits versus dedications of their basilicas. See `data/calendar/sacred-art-2026-existing-source-matches-batch5.v1.json`.
+
+### Current 78 unlinked Class III sanctoral dates
 
 **01 (9)** — 16 St. Marcellus I; 20 Sts. Fabian & Sebastian; 22 Sts. Vincent & Anastasius; 23 St. Raymond of Peñafort; 24 St. Timothy; 26 St. Polycarp; 28 St. Peter Nolasco; 30 St. Martina; 31 St. John Bosco.
 **02 (4)** — 06 St. Titus; 07 St. Romuald; 10 St. Scholastica; 11 Our Lady of Lourdes.
@@ -31,13 +37,13 @@ Seven distinct dates, nine registered source relationships. All remain not certi
 **05 (9)** — 04 St. Monica; 05 St. Pius V; 07 St. Stanislaus; 12 Sts. Nereus, Achilleus, Domitilla, & Pancras; 15 St. John Baptist de la Salle; 16 St. Ubaldus; 18 St. Venantius; 19 St. Peter Celestine; 20 St. Bernardine of Siena.
 **06 (8)** — 01 St. Angela Merici; 10 St. Margaret of Scotland; 11 St. Barnabas; 17 St. Gregory Barbarigo; 19 St. Julia of Falconieri; 22 St. Paulinus of Nola; 25 St. William; 26 Sts. John & Paul.
 **07 (8)** — 03 St. Irenaeus; 07 Sts. Cyril & Methodius; 10 Seven Holy Brothers and Sts. Rufina & Secunda; 15 St. Henry the Emperor; 18 Camillus de Lellis; 20 St. Jerome Emiliani; 23 St. Apollinaris; 28 Sts. Nazarius & Celsus, St. Victor I & St. Innocent I.
-**08 (8)** — 05 Dedication of the Basilica of St. Mary Major; 07 St. Cajetan; 12 St. Clare; 17 St. Hyacinth; 19 St. John Eudes; 21 St. Jane Frances de Chantal; 27 St. Joseph Calasance; 31 St. Raymond Nonnatus.
+**08 (7)** — 05 Dedication of the Basilica of St. Mary Major; 07 St. Cajetan; 17 St. Hyacinth; 19 St. John Eudes; 21 St. Jane Frances de Chantal; 27 St. Joseph Calasance; 31 St. Raymond Nonnatus.
 **09 (8)** — 02 St. Stephen of Hungary; 03 St. Pius X; 05 St. Lawrence Justinian; 10 St. Nicholas of Tolentino; 12 Most Holy Name of Mary; 16 Sts. Cornelius & Cyprian; 22 St. Thomas of Villanova; 28 St. Wenceslaus.
 **10 (9)** — 08 St. Bridget of Sweden; 09 St. John Leonardi; 10 St. Francis Borgia; 13 St. Edward; 14 St. Callistus I; 16 St. Hedwig; 19 St. Peter of Alcantara; 20 St. John Cantius; 23 St. Anthony Mary Claret.
 **11 (9)** — 10 St. Andrew Avellino; 12 St. Martin I; 13 St. Didacus; 14 St. Josaphat; 17 St. Gregory the Wonderworker; 18 Dedication of the Basilicas of Sts. Peter & Paul; 19 St. Elizabeth of Hungary; 20 St. Felix of Valois; 26 St. Sylvester.
 **12 (3)** — 02 St. Vivian; 04 St. Peter Chrysologus; 11 St. Damasus I.
 
-**Historical baseline:** The 98-gap Class III table farther down this document is the previous strict-383-only snapshot. It is not an updated list of physically missing paintings. New source match records are in data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json, and dates remain grounded in data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json.
+**Historical baseline:** The 98-gap Class III table farther down this document is the previous strict-383-only snapshot. It is not an updated list of physically missing paintings. New source match records are in data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json and data/calendar/sacred-art-2026-existing-source-matches-batch5.v1.json, and dates remain grounded in data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json.
 
 ---
 
