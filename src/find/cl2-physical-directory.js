@@ -43,6 +43,83 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-14C05BCC015B":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-3F0F660D197",name:"Basílica de Santa Maria d'Alacant",country:"ES",addressNeedle:"Alicante",placeId:null,
+  lat:38.3462,lng:-0.47922,sourceRef:"osm:way:22560738",
+  sourceUrl:"https://www.openstreetmap.org/way/22560738",correctedAddress:"Plaza Santa María, Alicante, Spain",
+  precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/W22560738","https://pares.cultura.gob.es/ParesBusquedas20/catalogo/autoridad/134519"]),
+ }),
+ "RG-3B5F15EA02ED":Object.freeze({
+  sourceId:"AO-B38-LOC-BE-97765C5D89C",name:"Heilig-Bloedbasiliek",country:"BE",addressNeedle:"Brugge",placeId:null,
+  lat:51.20812,lng:3.22667,sourceRef:"osm:way:39262789",
+  sourceUrl:"https://www.openstreetmap.org/way/39262789",correctedAddress:"Burg 13, 8000 Brugge, Belgium",
+  precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/W39262789"]),
+ }),
+ "RG-DF3BA1A9A39C":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-4FEB6B1C9A5",name:"Concatedral de Santa María de Cáceres",country:"ES",addressNeedle:"Cáceres",placeId:null,
+  lat:39.47454,lng:-6.37002,sourceRef:"osm:way:385037723",
+  sourceUrl:"https://www.openstreetmap.org/way/385037723",correctedAddress:"Concatedral de Santa María, Cáceres, Spain",
+  precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/es/W385037723"]),
+ }),
+ "RG-3EE76EFE0DC3":Object.freeze({
+  sourceId:"AO-B38-LOC-NL-D7C692A1473",name:"St.-Andreaskerk",country:"NL",addressNeedle:"Steenwijkerwold",placeId:null,
+  lat:52.80061,lng:6.05811,sourceRef:"osm:way:269912643",
+  sourceUrl:"https://www.openstreetmap.org/way/269912643",correctedAddress:"St.-Andreaskerk, Steenwijkerwold, Netherlands",
+  precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/W269912643"]),
+ }),
+ "RG-270210292F78":Object.freeze({
+  sourceId:"AO-B38-LOC-NL-B7C2C6728E5",name:"Onze Lieve Vrouw ter Nood Bedevaartkapel",country:"NL",addressNeedle:"Heiloo",placeId:null,
+  lat:52.58319,lng:4.68817,sourceRef:"osm:way:44665187",
+  sourceUrl:"https://www.openstreetmap.org/way/44665187",correctedAddress:"Kapellaan 144, 1851 PE Heiloo, Netherlands",
+  precision:"site",reviewScope:"BEDEVAART_CHURCH_NOT_SEPARATE_GENADKAPEL",
+  evidence:Object.freeze(["https://mapcarta.com/W44665187","https://olvternood.nl/contact/"]),
+ }),
+ "RG-AA00B3C74515":Object.freeze({
+  sourceId:"AO-B38-LOC-NL-37690D7D21D",name:"Sint-Petrus'-Bandenkerk",country:"NL",addressNeedle:"Bladel",placeId:null,
+  lat:51.36839,lng:5.22087,sourceRef:"osm:way:278352768",
+  sourceUrl:"https://www.openstreetmap.org/way/278352768",correctedAddress:"Sint-Petrus'-Bandenkerk, Bladel, Netherlands",
+  precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/W278352768"]),
+ }),
+ "RG-77CC30491D1E":Object.freeze({
+  sourceId:"AO-B38-LOC-NL-15C79B5490C",name:"Heilige Lodewijkkerk",country:"NL",addressNeedle:"Leiden",placeId:null,
+  lat:52.156028,lng:4.491611,sourceRef:"rijksmonument:25593",
+  sourceUrl:"https://commons.wikimedia.org/wiki/Category:Heilige_Lodewijkkerk_(Leiden)",correctedAddress:"Steenschuur 19, 2311 ES Leiden, Netherlands",
+  precision:"site",
+  evidence:Object.freeze(["https://www.lodewijkparochie.nl/homepage/contact/","https://www.wikidata.org/wiki/Q2520298"]),
+ }),
+ "RG-769233567FB2":Object.freeze({
+  sourceId:"AO-B39-LOC-SK-E4BB98A95578",name:"Kaplnka Panny Márie Fatimskej",country:"SK",addressNeedle:"Hollého 10",placeId:null,
+  lat:48.3789569,lng:17.5891077,sourceRef:"osm:node:7811161449",
+  sourceUrl:"https://www.openstreetmap.org/node/7811161449",correctedAddress:"Jána Hollého 10, 917 01 Trnava, Slovakia",
+  precision:"site",
+  evidence:Object.freeze(["https://poi.oma.sk/n7811161449"]),
+ }),
+ "RG-A9687EEF16FC":Object.freeze({
+  sourceId:"AO-B39-LOC-SK-393C9FE0F607",name:"Kostol Mena Panny Márie",country:"SK",addressNeedle:"Bratislava",placeId:null,
+  lat:48.1472,lng:17.20745,sourceRef:"osm:way:64977390",
+  sourceUrl:"https://www.openstreetmap.org/way/64977390",correctedAddress:"Poľnohospodárska 4, Vrakuňa, Bratislava, Slovakia",
+  precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/pt/W64977390"]),
+ }),
+ "RG-5A52F4C1379D":Object.freeze({
+  sourceId:"AO-B39-LOC-HU-0EF092BCC855",name:"Szent István-Templom",country:"HU",addressNeedle:"Nagyvázsony",placeId:null,
+  lat:46.98846,lng:17.70316,sourceRef:"miserend:1932",
+  sourceUrl:"https://miserend.hu/templom/1932",correctedAddress:"Rákóczi u. 27, Nagyvázsony, Hungary",
+  precision:"site",
+  evidence:Object.freeze(["https://sematizmus.vefleveltar.hu/en/node/32465","https://nagyvazsony.hu/turizmus/latnivalok/szent-istvan-templom-2/"]),
+ }),
+ "RG-B68-086D5372D517":Object.freeze({
+  sourceId:"AO-RSCH-B68-086D5372D517",name:"St. Laurentius — St Joseph altar",country:"DE",addressNeedle:"Jägerstrasse 16",placeId:null,
+  lat:49.377453,lng:8.377311,sourceRef:"kirchbau:50267",
+  sourceUrl:"https://www.kirchbau.de/300_datenblatt.php?id=50267&name=keiner",correctedAddress:"Jägerstraße 16, 67105 Schifferstadt, Germany",
+  precision:"site",reviewScope:"CHURCH_SITE_NOT_SPECIFIC_SIDE_ALTAR",
+  evidence:Object.freeze(["https://www.pfarrei-schifferstadt.de/glaube-seelsorge/gottesdienstvielfalt-bei-uns/heilige-messe/"]),
+ }),
  "RG-A39E87B5A30C":Object.freeze({
   sourceId:"AO-EUR-GB-008",name:"Brompton Oratory (The London Oratory)",
   country:"GB",addressNeedle:"Brompton Road",placeId:null,
@@ -450,7 +527,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
@@ -520,7 +597,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     source_links:Object.freeze(source_links),
     note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+
      (newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":"")+
-     (newPin?.correctedAddress?" The research-master address is a mailing address; church location follows the independently verified church street address.":""),
+     (newPin?.correctedAddress?(anchor==="RG-16C25083C6C7"?" The research-master address is a mailing address; church location follows the independently verified church street address.":" The incomplete research-master address is supplemented by independently corroborated building-location evidence."):""),
     search_text,
    }));
   }
