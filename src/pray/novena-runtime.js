@@ -306,7 +306,7 @@ function restoreAppBackHandoff(receipt){
  if(!["overview","weekly","detail","day"].includes(screen))return false;
  const id=screen==="detail"||screen==="day"?String(receipt.id||""):null;
  if(id&&!ALL_NOVENAS[id])return false;
- const day=Number(receipt.day),stage=Number(receipt.stage);
+ const day=Number(receipt.day),stage=id?Number(receipt.stage):0;
  if(!Number.isInteger(day)||day<1||day>9)return false;
  const count=id?stages(ALL_NOVENAS[id]):1;
  if(!Number.isInteger(stage)||stage<0||stage>=count)return false;
