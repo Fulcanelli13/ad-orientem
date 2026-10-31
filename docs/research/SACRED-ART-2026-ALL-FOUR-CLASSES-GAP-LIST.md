@@ -7,9 +7,9 @@ The new four-class reverse index now connects 178 distinct 383-registry artwork 
 Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Earlier all383-artwork-reverse-index.v1.json remains historical I/II-only evidence, and never classifies the 205 unmatched artworks as needing replacement.
 
 ---
-## Latest matching checkpoint — Batch 10 (31 October 2026)
+## Latest matching checkpoint — Batch 11 (31 October 2026)
 
-**Current researched Class III subject identification: 107/165 dates (107/131 observed sanctoral dates).** Batch 10 adds 23 exact-subject research date relationships with 36 provisional source artworks, leaving **24 sanctoral dates without a named exact-subject painting lead**. Batch 8 adds a *separate new-research catalogue* of 12 paintings from public museum, national heritage and Commons documentation; none is an accepted original or editorially approved date hero. The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
+**Current researched Class III subject identification: 123/165 dates (123/131 observed sanctoral dates).** Batch 11 adds 16 exact-subject research relationships with 23 provisional painted visual-source records, leaving **8 sanctoral dates without a full named exact-subject artwork lead**. Manuscript painting and architectural frescoes are flagged as such, not misrepresented as oil canvases. Batch 8 adds a *separate new-research catalogue* of 12 paintings from public museum, national heritage and Commons documentation; none is an accepted original or editorially approved date hero. The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
 
 | Feast | Observation | Existing painting(s) | Safeguard |
 | --- | --- | --- | --- |
@@ -129,36 +129,47 @@ Key high-value work: Scarsellino, *Martyrdom of Saint Venantius of Camerino* (MF
 
 Counts: Class III subject research coverage **84 → 107 of 131**; unmatched **47 → 24**; new paintings **36**; original files downloaded **0**; user approvals **0**; 383 canonical ID and 186 all-class date-link totals **unchanged**. Details in `data/calendar/sacred-art-2026-exact-sanctoral-research-batch10.v1.json`.
 
-### Current 24 unlinked Class III sanctoral dates
+### Batch 11 — 16 more exact feast dates, 23 provisional named painting/painted-surface originals (31 October 2026)
 
-After Batches 1–10, strict observed 1962 principal subjects remain unmatched on these dates. Partial multi-saint group figures do not count as complete original matches. By month: 10: 3; 11: 2; 12: 2; 01: 4; 02: 1; 04: 2; 05: 1; 06: 2; 07: 5; 08: 1; 09: 1.
+This pass uses original museum records, cultural heritage object entries and associated Commons pages. **These are research-only physical-subject candidates, not licensed app images, editorial selections or proof of photograph readiness.** No files acquired and no production images changed.
 
-| 2026 Date | Principal observed Class III feast |
-| --- | --- |
-| 2026-01-16 | St. Marcellus I |
-| 2026-01-20 | Sts. Fabian & Sebastian |
-| 2026-01-22 | Sts. Vincent & Anastasius |
-| 2026-01-24 | St. Timothy |
-| 2026-02-06 | St. Titus |
-| 2026-04-14 | St. Justin |
-| 2026-04-22 | Sts. Soter & Caius |
-| 2026-05-12 | Sts. Nereus, Achilleus, Domitilla, & Pancras |
-| 2026-06-25 | St. William |
-| 2026-06-26 | Sts. John & Paul |
-| 2026-07-03 | St. Irenaeus |
-| 2026-07-10 | Seven Holy Brothers and Sts. Rufina & Secunda |
-| 2026-07-15 | St. Henry the Emperor |
-| 2026-07-23 | St. Apollinaris |
-| 2026-07-28 | Sts. Nazarius & Celsus, St. Victor I & St. Innocent I |
-| 2026-08-05 | Dedication of the Basilica of St. Mary Major |
-| 2026-09-12 | Most Holy Name of Mary |
-| 2026-10-09 | St. John Leonardi |
-| 2026-10-16 | St. Hedwig |
-| 2026-10-23 | St. Anthony Mary Claret |
-| 2026-11-13 | St. Didacus |
-| 2026-11-18 | Dedication of the Basilicas of Sts. Peter & Paul |
-| 2026-12-02 | St. Vivian |
-| 2026-12-11 | St. Damasus I |
+| Observed date | Feast | Named painted original(s) | Research limitation |
+| --- | --- | --- | --- |
+| 2026-01-20 | Sts. Fabian & Sebastian | Giovanni di Paolo — *Saints Fabian and Sebastian*; Miguel Ximénez — *Saint John the Baptist, Saint Fabian and Saint Sebastian* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-01-24 | St. Timothy | Byzantine illuminated manuscript painter — *Martyrdom of Saint Timothy* | Includes fresco, manuscript or enconchado, not only oil easel painting |
+| 2026-04-14 | St. Justin | Theophanes the Cretan — *Saint Justin Martyr* | Includes fresco, manuscript or enconchado, not only oil easel painting |
+| 2026-06-25 | St. William | Domenico Antonio Vaccaro — *Saint William of Vercelli Adoring the Cross*; Domenico Antonio Vaccaro — *Saint William of Vercelli and the Wolf* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-06-26 | Sts. John & Paul | Niccolò Circignani and Matteo da Siena — *Martyrdom of Saints John and Paul (with Bibiana, Artemius, Pigmenius and other martyrs)* | Includes fresco, manuscript or enconchado, not only oil easel painting |
+| 2026-07-03 | St. Irenaeus | Sébastien Cornu — *Saint Irenaeus*; Claude Soulary — *Saint Irenaeus Choosing Martyrdom by the Cross* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-07-15 | St. Henry the Emperor | Hans Kemmer, workshop of Lucas Cranach the Elder — *Emperor Henry II (verso Saint John the Baptist)* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-07-23 | St. Apollinaris | Andrea Barbiani — *Martyrdom of Saint Apollinaris of Ravenna* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-08-05 | Dedication of the Basilica of St. Mary Major | Masolino da Panicale — *Foundation of Santa Maria Maggiore (Miracle of the Snow)*; Jacopo Zucchi — *Miracle of the Snow, Foundation of Santa Maria Maggiore* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-09-12 | Most Holy Name of Mary | Cristóbal de Villalpando — *The Holy Name of Mary (El Dulcísimo Nombre de María)* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-10-09 | St. John Leonardi | Marcello Sozzi — *Saint John Leonardi in Glory with the Virgin and Saint John Baptist* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-10-16 | St. Hedwig | Szymon Czechowicz — *Saint Hedwig of Silesia Adoring the Crucifix* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-10-23 | St. Anthony Mary Claret | Luis de Madrazo — *Portrait of Archbishop Anthony Mary Claret*; Unidentified historical painter — *Saint Anthony Mary Claret* | Photograph rights, framing, quality and user acceptance unverified |
+| 2026-11-13 | St. Didacus | Francisco de Zurbarán — *Saint Didacus of Alcalá (Miracle of the Roses)*; Unidentified painter, New Spain — *Saint Didacus of Alcalá* | Includes fresco, manuscript or enconchado, not only oil easel painting |
+| 2026-12-02 | St. Vivian | Pietro da Cortona — *Flagellation of Saint Bibiana* | Includes fresco, manuscript or enconchado, not only oil easel painting |
+| 2026-12-11 | St. Damasus I | Unknown sixteenth-century Portuguese painter — *Pope Saint Damasus I*; Florentine school, fourteenth century — *Pope Saint Damasus I and Annunciate Madonna (polyptych fragment)* | Photograph rights, framing, quality and user acceptance unverified |
+
+Further **partial research only**: 12 May, Cristoforo Roncalli/Pomarancio *St Domitilla with Nereus and Achilleus* (1598–99, Santi Nereo e Achilleo, Rome) depicts **three of four** observance saints. Pancras absent, date stays unmatched. Do **not** substitute the Seven Sleepers, Roman Rufina with Seville's Justa and Rufina, or the unrelated Rubens *Miracle of Saint Justus* for the Justin Martyr feast. The original image of the Villalpando *Holy Name of Mary* comes through a secondary photo, even though the physical oil painting is securely identified by the Metropolitan Museum's 2017 exhibition.
+
+**New batch effect:** researched Class III sanctoral subjects **107→123/131**, exact-subject gaps **24→8**, 23 new painting or painted-surface research records, one new partial multi-saint record. Canonical 383 works, 186 date links, prior rejections and production releases unchanged. Batch ledger: `data/calendar/sacred-art-2026-exact-sanctoral-research-batch11.v1.json`.
+
+### Current 8 unlinked Class III sanctoral dates
+
+The following dates do **not** have complete exact-feast iconography linked, after Batches 1–11. Group paintings depicting only some martyrs remain in partial-research records and do not close these gaps.
+
+| Date | Observed 1962 principal feast | Reason or next source |
+| --- | --- | --- |
+| 2026-01-16 | St. Marcellus I | Still no accepted exact painting original |
+| 2026-01-22 | Sts. Vincent & Anastasius | Vincent identity unsettled and Anastasius absent |
+| 2026-02-06 | St. Titus | Still no accepted exact painting original |
+| 2026-04-22 | Sts. Soter & Caius | Still no accepted exact painting original |
+| 2026-05-12 | Sts. Nereus, Achilleus, Domitilla, & Pancras | Pomarancio depicts Nereus, Achilleus and Domitilla, but no Pancras |
+| 2026-07-10 | Seven Holy Brothers and Sts. Rufina & Secunda | Seven-brothers identity unsettled; no Rufina and Secunda |
+| 2026-07-28 | Sts. Nazarius & Celsus, St. Victor I & St. Innocent I | Nazarius and Celsus partial only; both popes absent |
+| 2026-11-18 | Dedication of the Basilicas of Sts. Peter & Paul | Needs basilicas' actual dedication iconography, not portraits of Peter and Paul |
 
 **Historical baseline:** The 98-gap Class III table farther down this document is the previous strict-383-only snapshot. It is not an updated list of physically missing paintings. New source match records are in data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json and data/calendar/sacred-art-2026-existing-source-matches-batch5.v1.json, and dates remain grounded in data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json.
 
