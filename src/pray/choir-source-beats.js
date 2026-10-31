@@ -63,6 +63,13 @@ function sourceLinePieces(line,id,kind,stanza){
  if(chunks.join("")!==whole)return [{raw:whole,kind:"prose",stanza,uncertified:true}];
  return chunks.map(raw=>({raw,kind:kind==="litany"?"invocation":kind==="praises"?"praise":"verse",stanza}));
 }
+/** Holy Name and Saints' Litany are distinct source-owned readers. */
+export function choirLitanyLineParts(line){
+ const original=String(line??"");
+ if(!original.trim())return Object.freeze([]);
+ const parts=sourceLinePieces(original,"external-litany","litany",0);
+ return Object.freeze(parts.map(x=>Object.freeze(x)));
+}
 export function choirSourceBeats(id,language,source){
  if(!CHOIR_SOURCE_IDS.includes(id)||!["en","fr","la"].includes(language)||
   typeof source!=="string"||!source.trim())return null;
