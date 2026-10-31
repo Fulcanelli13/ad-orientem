@@ -43,6 +43,18 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-783CD50DD217":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-EA168B0ACA4A",name:"Kościół Matki Bożej Śnieżnej",country:"PL",addressNeedle:"Mikołów",placeId:null,
+  lat:50.1705,lng:18.90754,sourceRef:"osm:way:169044576",sourceUrl:"https://www.openstreetmap.org/way/169044576",
+  correctedAddress:"ul. Świętego Wojciecha 11, 43-190 Mikołów, Poland",precision:"site",reviewScope:"HISTORIC_FILIAL_CHURCH_NOT_NEARBY_BASILICA",
+  evidence:Object.freeze(["https://mapcarta.com/fr/W169044576","https://www.slaskie.travel/culturalheritage/15729/kosciol-matki-bozej-snieznej-w-mikolowie","https://mojmikolow.pl/o-miescie/koscioly-msze-swiete-parafie"]),
+ }),
+ "RG-0BB62E04774C":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-83A0BDB437C1",name:"Kościół Ducha Świętego",country:"PL",addressNeedle:"Krakowska 19",placeId:null,
+  lat:50.3461,lng:18.9278,sourceRef:"wikidata:Q11746238",sourceUrl:"https://www.wikidata.org/wiki/Q11746238",
+  correctedAddress:"ul. Krakowska 19, 41-902 Bytom, Poland",precision:"site",reviewScope:"CHURCH_FILIAL_NOT_MAIN_PARISH_SITE",
+  evidence:Object.freeze(["https://fotopolska.eu/Bytom/b34897,Kosciol_kaplica_Swietego_Ducha_.html","https://commons.wikimedia.org/wiki/Category:Holy_Spirit_Church_in_Bytom","https://tradycja.org/"]),
+ }),
  "RG-BBB3789ADB9A":Object.freeze({
   sourceId:"AO-B39-LOC-IT-6FC8D0881AF4",name:"Chiesa dei Santi Simone e Giuda",country:"IT",addressNeedle:"Mantova",placeId:null,
   lat:45.1604,lng:10.79139,sourceRef:"osm:way:245105097",
@@ -611,7 +623,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|wikidata:Q\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
