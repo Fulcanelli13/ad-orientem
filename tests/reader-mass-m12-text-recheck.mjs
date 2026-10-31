@@ -30,7 +30,7 @@ function blocked(changed){
 }
 {const l=cloned(ledger);l.scoreWitnesses[0].gabcSha256="0".repeat(64);blocked({ledger:l});}
 {const l=cloned(ledger);l.scoreWitnesses[0].archiveBlobSha="0".repeat(40);blocked({ledger:l});}
-{const l=cloned(ledger);l.scoreWitnesses[0].normalizedScoreText+=" fabricated";blocked({ledger:l});}
+{const l=cloned(ledger);l.scoreWitnesses[0].normalizedScoreText="fabricated "+l.scoreWitnesses[0].normalizedScoreText;blocked({ledger:l});}
 {const l=cloned(ledger);l.occurrences[0].commonText.words=12;blocked({ledger:l});}
 {const l=cloned(ledger);l.occurrences[3].occurrenceOrdinal=2;blocked({ledger:l});}
 {const l=cloned(ledger);l.occurrences[0].roleConflict=false;blocked({ledger:l});}
