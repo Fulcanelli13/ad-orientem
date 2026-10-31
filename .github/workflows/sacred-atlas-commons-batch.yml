@@ -1,4 +1,4 @@
-name: Sacred Atlas Commons 100-photo research batch
+name: Sacred Atlas Commons sourced-photo acquisition batches
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
     paths:
       - tools/sacred-atlas-commons-batch.mjs
       - data/geography/research/sacred-atlas-commons-batch-001.manifest.json
+      - data/geography/research/sacred-atlas-commons-batch-002.manifest.json
+      - data/geography/research/sacred-atlas-commons-batch-003.manifest.json
       - .github/workflows/sacred-atlas-commons-batch.yml
   workflow_dispatch:
 
@@ -14,13 +16,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: atlas-commons-batch-001
+  group: atlas-commons-source-evidence
   cancel-in-progress: false
 
 jobs:
-  commons-batch-001:
+  commons-batches:
     runs-on: ubuntu-latest
-    timeout-minutes: 29
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,22 +31,28 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Retrieve Commons source, free-license and photo metadata for 100 targets
-        run: node tools/sacred-atlas-commons-batch.mjs
-      - name: Validate 100 records and unchanged editorial approvals
+      - name: Scan batch 001 (100 sacred subjects)
+        run: node tools/sacred-atlas-commons-batch.mjs 001
+      - name: Scan batch 002 (100 sacred subjects)
+        run: node tools/sacred-atlas-commons-batch.mjs 002
+      - name: Scan batch 003 (47 additional sourced subjects)
+        run: node tools/sacred-atlas-commons-batch.mjs 003
+      - name: Validate all 247 results and preserve previous approvals
         run: |
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
-            const x=JSON.parse(readFileSync("data/geography/research/sacred-atlas-commons-batch-001.results.json"));
-            if(x.results.length!==100||x.stats.round1_user_keeps_preserved!==20)process.exit(1);
-            if(x.results.some(r=>r.publication_approved||r.candidates.some(c=>c.publishable||c.published||c.underlying_artwork_rights_cleared)))process.exit(1);
-            console.log(x.stats);
+            for(const [id,n,keeps] of [["001",100,20],["002",100,0],["003",47,0]]){
+              const x=JSON.parse(readFileSync("data/geography/research/sacred-atlas-commons-batch-"+id+".results.json"));
+              if(x.results.length!==n||x.stats.targets!==n||x.stats.round1_user_keeps_preserved!==keeps)process.exit(1);
+              if(x.results.some(r=>r.publication_approved||r.candidates.some(c=>c.publishable||c.published||c.underlying_artwork_rights_cleared)))process.exit(1);
+              console.log(id,JSON.stringify(x.stats));
+            }
           '
-      - name: Commit permanent result metadata to research branch (never media binaries)
+      - name: Commit all metadata permanently without image binaries
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/geography/research/sacred-atlas-commons-batch-001.results.json
+          git add data/geography/research/sacred-atlas-commons-batch-00*.results.json
           if git diff --cached --quiet; then echo "No updated results"; exit 0; fi
-          git commit -m "research(atlas): persist Commons 100-target candidate and licence results"
+          git commit -m "research(atlas): persist 247 source-linked photo metadata and rights candidates"
           git push origin HEAD:research/explore-precise-sacred-subject-photo-search-20261031
