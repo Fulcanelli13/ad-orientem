@@ -1,0 +1,2193 @@
+{
+  "schema": "AO_PRAYER_ARTWORK_INHERITANCE_OVERLAY_V1",
+  "date": "2026-10-31",
+  "source": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "sourceRevision": "GitHub research branch #2110",
+  "masterName": "Ad_Orientem_Art_Matching_Map_Mapped_2026-10-31_v2.xlsx",
+  "policy": {
+    "noNewApprovals": true,
+    "exactSceneOrDevotionalSameSubjectCanInherit": true,
+    "contextualReviewIsNotApproval": true,
+    "onlyPublicDomainOrCC0ExactImageFiles": true,
+    "noFees": true,
+    "userRejectionsOverrideOlderApproval": true,
+    "unverifiedPhotosNotPublished": true
+  },
+  "excludedHistoricalArtwork": {
+    "artworkId": "CANONICAL::met-459131",
+    "work": "The Last Supper",
+    "artist": "Ugolino da Siena",
+    "reason": "LATER_EXPLICIT_USER_REJECTION",
+    "historicalPlacementEdges": 6
+  },
+  "summary": {
+    "canonicalEditorialSlots": 267,
+    "noneditorialMasterPositions": 8,
+    "historicApprovedSlots": 162,
+    "currentApprovedSlots": 160,
+    "currentGaps": 107,
+    "newSafeReuseSlots": 32,
+    "contextualProposals": 38,
+    "remainingGapsAfterSafeReuse": 75,
+    "newUnpublishedRelationships": 118,
+    "rules": 72,
+    "productionClearedImages": 0,
+    "tiers": {
+      "EXACT_SCENE": 14,
+      "DEVOTIONAL_SUBJECT": 18,
+      "CONTEXTUAL_REVIEW": 38,
+      "RESEARCH_REQUIRED": 1,
+      "PROTECTED_LOCK": 1
+    }
+  },
+  "finalLocksRequiringIdentity": [
+    "COV-pray.rosary",
+    "COV-prayer.seven_sorrows_chaplet",
+    "COV-pray.confession"
+  ],
+  "stageGuardrails": [
+    "Stations III, V, VII, VIII, IX, X, XI: exact events not supplied by generic Crucifixion image",
+    "Benediction blessing not equivalent to Madonna adoring Host",
+    "Seven Last Words stage-specific Gospel words are not generic interchangeable Crucifixions",
+    "Luminous semantic Rosary scenes are separate from canonical 267 editorial slots"
+  ],
+  "rules": [
+    {
+      "slot": "HERO-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "PRAYER::angelus--caravaggio",
+        "PRAYER::angelus--gentileschi"
+      ],
+      "groups": [
+        "ANNUNCIATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "HERO-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:161200952"
+      ],
+      "groups": [
+        "PRODIGAL"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "HERO-09",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "REVIEW::commons:48577448"
+      ],
+      "groups": [
+        "LAST_SUPPER"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "HERO-10",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "REVIEW::commons:4965555",
+        "REVIEW::commons:45227477",
+        "REVIEW::met:437172"
+      ],
+      "groups": [
+        "CRUCIFIXION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "HERO-16",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-438434"
+      ],
+      "groups": [
+        "BLESSED_SACRAMENT"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "HERO-17",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "groups": [
+        "HEART_JESUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "HERO-18",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-436199"
+      ],
+      "groups": [
+        "HEALING"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "HERO-19",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "REVIEW::commons:15973724"
+      ],
+      "groups": [
+        "ASSUMPTION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "HERO-21",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "CANONICAL::met-437542"
+      ],
+      "groups": [
+        "PURGATORY"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "HERO-23",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::cma-135659",
+        "CANONICAL::met-437423",
+        "CANONICAL::ART-eter-aul-ubens-mmaculate-onception"
+      ],
+      "groups": [
+        "IMMACULATE"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "DOOR-D4",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:50072987"
+      ],
+      "groups": [
+        "EMMAUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "DOOR-D6",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "PRAYER::king--primary",
+        "PRAYER::king--previtali",
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "groups": [
+        "KING",
+        "HEART_JESUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "DOOR-D7",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:65493548",
+        "REVIEW::cma:143761",
+        "REVIEW::met:436261",
+        "REVIEW::met:437175"
+      ],
+      "groups": [
+        "CORONATION",
+        "MADONNA"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "DOOR-D9",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-436199",
+        "CANONICAL::cma-160143",
+        "CANONICAL::met-437458"
+      ],
+      "groups": [
+        "HEALING",
+        "HOLY_FAMILY"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-foundations_morning_offering",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "groups": [
+        "HEART_JESUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-pray.angelus",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "PRAYER::angelus--caravaggio",
+        "PRAYER::angelus--gentileschi"
+      ],
+      "groups": [
+        "ANNUNCIATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.angelus-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "PRAYER::angelus--caravaggio",
+        "PRAYER::angelus--gentileschi"
+      ],
+      "groups": [
+        "ANNUNCIATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.angelus-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "PRAYER::angelus--caravaggio",
+        "PRAYER::angelus--gentileschi"
+      ],
+      "groups": [
+        "ANNUNCIATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.angelus-03",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "PRAYER::angelus--caravaggio",
+        "PRAYER::angelus--gentileschi"
+      ],
+      "groups": [
+        "ANNUNCIATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.angelus-04",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "PRAYER::angelus--caravaggio",
+        "PRAYER::angelus--gentileschi"
+      ],
+      "groups": [
+        "ANNUNCIATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-daily.nightly_examen",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-436839"
+      ],
+      "groups": [
+        "PENITENT"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-foundations_hail_mary",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+        "PRAYER::angelus--caravaggio",
+        "PRAYER::angelus--gentileschi",
+        "APPROVED_REVIEW::STG-pray.rosary-03::01"
+      ],
+      "groups": [
+        "ANNUNCIATION",
+        "VISITATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-sacrament_act_of_contrition",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:161200952",
+        "CANONICAL::met-436839"
+      ],
+      "groups": [
+        "PRODIGAL",
+        "PENITENT"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-foundations_act_of_faith",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:36519834",
+        "REVIEW::commons:1755068"
+      ],
+      "groups": [
+        "THOMAS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-foundations_act_of_love",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "groups": [
+        "HEART_JESUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-foundations_prayer_of_adoration",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:36519834",
+        "REVIEW::commons:1755068"
+      ],
+      "groups": [
+        "THOMAS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-mass_confiteor",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-436839"
+      ],
+      "groups": [
+        "PENITENT"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.rosary-10",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::ART-itian-hrist-arrying-the-ross",
+        "REVIEW::commons:22178536"
+      ],
+      "groups": [
+        "CHRIST_CARRYING"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:65493548",
+        "REVIEW::cma:143761"
+      ],
+      "groups": [
+        "CORONATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-novena.christmas",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::cma-143644",
+        "REVIEW::met:436966"
+      ],
+      "groups": [
+        "NATIVITY"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-novena.st_therese",
+      "relationship": "RESEARCH_REQUIRED",
+      "artworkIds": [],
+      "groups": [],
+      "sourceSlotStatus": "TITLE_FOUND_PHOTO_AND_REUSE_RIGHTS_MISSING"
+    },
+    {
+      "slot": "COV-novena.seven_sorrows",
+      "relationship": "PROTECTED_LOCK",
+      "artworkIds": [],
+      "groups": [],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-novena.holy_face_1887",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:78990209"
+      ],
+      "groups": [
+        "VERONICA"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-436839"
+      ],
+      "groups": [
+        "PENITENT"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-05",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:65493548",
+        "REVIEW::cma:143761"
+      ],
+      "groups": [
+        "CORONATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-programme.first_friday",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "groups": [
+        "HEART_JESUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-adoration_anima_christi",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+      ],
+      "groups": [
+        "SIDE_OF_CHRIST"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-adoration_spiritual_communion",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:50072987"
+      ],
+      "groups": [
+        "EMMAUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-benediction_o_salutaris",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-438434"
+      ],
+      "groups": [
+        "BLESSED_SACRAMENT"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-benediction_tantum_ergo",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-438434"
+      ],
+      "groups": [
+        "BLESSED_SACRAMENT"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-benediction_versicles",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-438434"
+      ],
+      "groups": [
+        "BLESSED_SACRAMENT"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-436199"
+      ],
+      "groups": [
+        "HEALING"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-pray.adoration.night",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::cma-160143",
+        "CANONICAL::met-437458"
+      ],
+      "groups": [
+        "HOLY_FAMILY"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.adoration.night-02",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::met-442488",
+        "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+      ],
+      "groups": [
+        "AGONY"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.adoration.night-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:50072987"
+      ],
+      "groups": [
+        "EMMAUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.adoration.night-06",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "PRAYER::angel--strozzi",
+        "PRAYER::angel--franceschini"
+      ],
+      "groups": [
+        "GUARDIAN"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.adoration-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-438434"
+      ],
+      "groups": [
+        "BLESSED_SACRAMENT"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-pray.adoration.four_ends",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-438434"
+      ],
+      "groups": [
+        "BLESSED_SACRAMENT"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::met-438434"
+      ],
+      "groups": [
+        "BLESSED_SACRAMENT"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-03",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:20637285"
+      ],
+      "groups": [
+        "CHRIST_THORNS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-prayer.communion-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:50072987"
+      ],
+      "groups": [
+        "EMMAUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-sacred_heart_short_prayer",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "groups": [
+        "HEART_JESUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-sacred_heart_aspiration_trust",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "groups": [
+        "HEART_JESUS"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-pray.stations",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "CANONICAL::ART-itian-hrist-arrying-the-ross",
+        "REVIEW::commons:22178536"
+      ],
+      "groups": [
+        "CHRIST_CARRYING"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "REVIEW::commons:4965555",
+        "REVIEW::commons:45227477",
+        "REVIEW::met:437172"
+      ],
+      "groups": [
+        "CRUCIFIXION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.seven_words-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:4965555",
+        "REVIEW::commons:45227477",
+        "REVIEW::met:437172"
+      ],
+      "groups": [
+        "CRUCIFIXION"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.seven_words-04",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:4965555",
+        "REVIEW::commons:45227477",
+        "REVIEW::met:437172"
+      ],
+      "groups": [
+        "CRUCIFIXION"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "STG-pray.tenebrae-02",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "REVIEW::commons:4965555",
+        "REVIEW::commons:45227477",
+        "REVIEW::met:437172"
+      ],
+      "groups": [
+        "CRUCIFIXION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:65493548",
+        "REVIEW::cma:143761"
+      ],
+      "groups": [
+        "CORONATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-marian_memorare",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:87865020"
+      ],
+      "groups": [
+        "VIRGIN_PRAYING"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-weekday_magnificat",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "APPROVED_REVIEW::STG-pray.rosary-03::01"
+      ],
+      "groups": [
+        "VISITATION"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-sub_tuum",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:87865020"
+      ],
+      "groups": [
+        "VIRGIN_PRAYING"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-devotion_memorare_st_joseph",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:124722400",
+        "REVIEW::commons:77218157"
+      ],
+      "groups": [
+        "JOSEPH_CHILD"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-devotion_litany_st_joseph",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:124722400",
+        "REVIEW::commons:77218157"
+      ],
+      "groups": [
+        "JOSEPH_CHILD"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-devotion_ad_te_beate_ioseph",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+      ],
+      "groups": [
+        "JOSEPH_DREAM"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-pray.penitential_psalms",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:161200952"
+      ],
+      "groups": [
+        "PRODIGAL"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:161200952"
+      ],
+      "groups": [
+        "PRODIGAL"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:48577448"
+      ],
+      "groups": [
+        "LAST_SUPPER"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-pray.occasional_intercessions",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "CANONICAL::met-436199"
+      ],
+      "groups": [
+        "HEALING"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-prayer.lection",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "artworkIds": [
+        "REVIEW::commons:85666930"
+      ],
+      "groups": [
+        "SAINT_JEROME"
+      ],
+      "sourceSlotStatus": "CONTEXTUAL_ONLY_VISUAL_QA_REQUIRED"
+    },
+    {
+      "slot": "COV-adoration_litany_blessed_sacrament",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:48577448"
+      ],
+      "groups": [
+        "LAST_SUPPER"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "artworkIds": [
+        "REVIEW::commons:48577448"
+      ],
+      "groups": [
+        "LAST_SUPPER"
+      ],
+      "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    }
+  ],
+  "relationships": [
+    {
+      "slot": "HERO-01",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-01",
+      "artworkId": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-01",
+      "artworkId": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-05",
+      "artworkId": "REVIEW::commons:161200952",
+      "title": "The return of the prodigal son",
+      "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+      "approvedDonor": "STG-pray.confession-04",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-09",
+      "artworkId": "REVIEW::commons:48577448",
+      "title": "The Last Supper",
+      "artist": "Giovanni Lanfranco",
+      "approvedDonor": "COV-novena.corpus_christi",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-10",
+      "artworkId": "REVIEW::commons:4965555",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-10",
+      "artworkId": "REVIEW::commons:45227477",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-10",
+      "artworkId": "REVIEW::met:437172",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-16",
+      "artworkId": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "approvedDonor": "DOOR-D5",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-17",
+      "artworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "approvedDonor": "COV-novena.sacred_heart",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-18",
+      "artworkId": "CANONICAL::met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "approvedDonor": "STG-pray.adoration.four_ends-04",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-19",
+      "artworkId": "REVIEW::commons:15973724",
+      "title": "Assumption of Mary \"",
+      "artist": "Charles de La Fosse",
+      "approvedDonor": "STG-pray.rosary-15",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-21",
+      "artworkId": "CANONICAL::met-437542",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artist": "Peter Paul Rubens",
+      "approvedDonor": "COV-novena.holy_souls",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-23",
+      "artworkId": "CANONICAL::cma-135659",
+      "title": "The Immaculate Conception",
+      "artist": "Bartolomé Esteban Murillo",
+      "approvedDonor": "COV-novena.immaculate_conception",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-23",
+      "artworkId": "CANONICAL::met-437423",
+      "title": "The Immaculate Conception",
+      "artist": "Guido Reni",
+      "approvedDonor": "COV-novena.immaculate_conception",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "HERO-23",
+      "artworkId": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+      "title": "Immaculate Conception",
+      "artist": "Peter Paul Rubens",
+      "approvedDonor": "COV-novena.immaculate_conception",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D4",
+      "artworkId": "REVIEW::commons:50072987",
+      "title": "Jesus in Emmaus.",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D6",
+      "artworkId": "PRAYER::king--primary",
+      "title": "Salvator Mundi",
+      "artist": "Ambrosius Benson",
+      "approvedDonor": "HERO-22",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D6",
+      "artworkId": "PRAYER::king--previtali",
+      "title": "Salvator Mundi",
+      "artist": "Andrea Previtali",
+      "approvedDonor": "COV-novena.christ_the_king",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D6",
+      "artworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "approvedDonor": "COV-novena.sacred_heart",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D7",
+      "artworkId": "REVIEW::commons:65493548",
+      "title": "The coronation of the Virgin",
+      "artist": "Peter Paul Rubens",
+      "approvedDonor": "STG-pray.rosary-16",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D7",
+      "artworkId": "REVIEW::cma:143761",
+      "title": "The Virgin Crowned by Angels",
+      "artist": "Stefan Lochner (German, 1400-c. 1452)",
+      "approvedDonor": "STG-pray.angelus_regina-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D7",
+      "artworkId": "REVIEW::met:436261",
+      "title": "Virgin and Child",
+      "artist": "Anthony van Dyck",
+      "approvedDonor": "STG-litany_loreto_1962-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D7",
+      "artworkId": "REVIEW::met:437175",
+      "title": "Virgin and Child",
+      "artist": "Bartolomé Estebán Murillo",
+      "approvedDonor": "STG-litany_loreto_1962-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D9",
+      "artworkId": "CANONICAL::met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "approvedDonor": "STG-pray.adoration.four_ends-04",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D9",
+      "artworkId": "CANONICAL::cma-160143",
+      "title": "The Holy Family",
+      "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "approvedDonor": "STG-pray.adoration.night-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "DOOR-D9",
+      "artworkId": "CANONICAL::met-437458",
+      "title": "The Holy Family with Angels",
+      "artist": "Sebastiano Ricci",
+      "approvedDonor": "STG-pray.adoration.night-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_morning_offering",
+      "artworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "approvedDonor": "COV-novena.sacred_heart",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.angelus",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.angelus",
+      "artworkId": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.angelus",
+      "artworkId": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-01",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-01",
+      "artworkId": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-01",
+      "artworkId": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-02",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-02",
+      "artworkId": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-02",
+      "artworkId": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-03",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-03",
+      "artworkId": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-03",
+      "artworkId": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-04",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-04",
+      "artworkId": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.angelus-04",
+      "artworkId": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-daily.nightly_examen",
+      "artworkId": "CANONICAL::met-436839",
+      "title": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "approvedDonor": "STG-pray.confession-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_hail_mary",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_hail_mary",
+      "artworkId": "PRAYER::angelus--caravaggio",
+      "title": "The Annunciation",
+      "artist": "Caravaggio",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_hail_mary",
+      "artworkId": "PRAYER::angelus--gentileschi",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "approvedDonor": "STG-pray.angelus-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_hail_mary",
+      "artworkId": "APPROVED_REVIEW::STG-pray.rosary-03::01",
+      "title": "The Visitation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.rosary-03",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-sacrament_act_of_contrition",
+      "artworkId": "REVIEW::commons:161200952",
+      "title": "The return of the prodigal son",
+      "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+      "approvedDonor": "STG-pray.confession-04",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-sacrament_act_of_contrition",
+      "artworkId": "CANONICAL::met-436839",
+      "title": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "approvedDonor": "STG-pray.confession-02",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_act_of_faith",
+      "artworkId": "REVIEW::commons:36519834",
+      "title": "The Doubting Thomas",
+      "artist": "Attributed to Abraham Janssens I",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_act_of_faith",
+      "artworkId": "REVIEW::commons:1755068",
+      "title": "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+      "artist": "Wouter Crabeth II",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_act_of_love",
+      "artworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "approvedDonor": "COV-novena.sacred_heart",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_prayer_of_adoration",
+      "artworkId": "REVIEW::commons:36519834",
+      "title": "The Doubting Thomas",
+      "artist": "Attributed to Abraham Janssens I",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-foundations_prayer_of_adoration",
+      "artworkId": "REVIEW::commons:1755068",
+      "title": "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+      "artist": "Wouter Crabeth II",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-mass_confiteor",
+      "artworkId": "CANONICAL::met-436839",
+      "title": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "approvedDonor": "STG-pray.confession-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.rosary-10",
+      "artworkId": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+      "title": "Christ Carrying the Cross",
+      "artist": "Titian",
+      "approvedDonor": "STG-pray.precious_blood-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.rosary-10",
+      "artworkId": "REVIEW::commons:22178536",
+      "title": "The Way to Calvary",
+      "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+      "approvedDonor": "STG-pray.precious_blood-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "artworkId": "REVIEW::commons:65493548",
+      "title": "The coronation of the Virgin",
+      "artist": "Peter Paul Rubens",
+      "approvedDonor": "STG-pray.rosary-16",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "artworkId": "REVIEW::cma:143761",
+      "title": "The Virgin Crowned by Angels",
+      "artist": "Stefan Lochner (German, 1400-c. 1452)",
+      "approvedDonor": "STG-pray.angelus_regina-01",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-novena.christmas",
+      "artworkId": "CANONICAL::cma-143644",
+      "title": "Adoration of the Shepherds",
+      "artist": "Bernardo Cavallino",
+      "approvedDonor": "STG-pray.angelus-07",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-novena.christmas",
+      "artworkId": "REVIEW::met:436966",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Andrea Mantegna",
+      "approvedDonor": "STG-pray.angelus-07",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-novena.holy_face_1887",
+      "artworkId": "REVIEW::commons:78990209",
+      "title": "Veil of Veronica",
+      "artist": "Francisco de Zurbarán",
+      "approvedDonor": "STG-pray.stations-06",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-02",
+      "artworkId": "CANONICAL::met-436839",
+      "title": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "approvedDonor": "STG-pray.confession-02",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-05",
+      "artworkId": "REVIEW::commons:65493548",
+      "title": "The coronation of the Virgin",
+      "artist": "Peter Paul Rubens",
+      "approvedDonor": "STG-pray.rosary-16",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-05",
+      "artworkId": "REVIEW::cma:143761",
+      "title": "The Virgin Crowned by Angels",
+      "artist": "Stefan Lochner (German, 1400-c. 1452)",
+      "approvedDonor": "STG-pray.angelus_regina-01",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-programme.first_friday",
+      "artworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "approvedDonor": "COV-novena.sacred_heart",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-adoration_anima_christi",
+      "artworkId": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "title": "The Lance Thrust",
+      "artist": "Anthony van Dyck",
+      "approvedDonor": "COV-pray.precious_blood",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-adoration_spiritual_communion",
+      "artworkId": "REVIEW::commons:50072987",
+      "title": "Jesus in Emmaus.",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-benediction_o_salutaris",
+      "artworkId": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "approvedDonor": "DOOR-D5",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-benediction_tantum_ergo",
+      "artworkId": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "approvedDonor": "DOOR-D5",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-benediction_versicles",
+      "artworkId": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "approvedDonor": "DOOR-D5",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "artworkId": "CANONICAL::met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "approvedDonor": "STG-pray.adoration.four_ends-04",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.adoration.night",
+      "artworkId": "CANONICAL::cma-160143",
+      "title": "The Holy Family",
+      "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "approvedDonor": "STG-pray.adoration.night-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.adoration.night",
+      "artworkId": "CANONICAL::met-437458",
+      "title": "The Holy Family with Angels",
+      "artist": "Sebastiano Ricci",
+      "approvedDonor": "STG-pray.adoration.night-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-02",
+      "artworkId": "CANONICAL::met-442488",
+      "title": "The Agony in the Garden",
+      "artist": "Nicolas Poussin",
+      "approvedDonor": "HERO-06",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-02",
+      "artworkId": "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "artist": "David Teniers the Elder",
+      "approvedDonor": "HERO-06",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-05",
+      "artworkId": "REVIEW::commons:50072987",
+      "title": "Jesus in Emmaus.",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-06",
+      "artworkId": "PRAYER::angel--strozzi",
+      "title": "The Guardian Angel",
+      "artist": "Bernardo Strozzi",
+      "approvedDonor": "DOOR-D8",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-06",
+      "artworkId": "PRAYER::angel--franceschini",
+      "title": "The Guardian Angel",
+      "artist": "Marcantonio Franceschini",
+      "approvedDonor": "DOOR-D8",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration-02",
+      "artworkId": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "approvedDonor": "DOOR-D5",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.adoration.four_ends",
+      "artworkId": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "approvedDonor": "DOOR-D5",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-01",
+      "artworkId": "CANONICAL::met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "approvedDonor": "DOOR-D5",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-03",
+      "artworkId": "REVIEW::commons:20637285",
+      "title": "Christ Crowned with Thorns",
+      "artist": "Dirck van Baburen",
+      "approvedDonor": "STG-pray.rosary-09",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-prayer.communion-02",
+      "artworkId": "REVIEW::commons:50072987",
+      "title": "Jesus in Emmaus.",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "approvedDonor": "STG-pray.angelus_regina-03",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-sacred_heart_short_prayer",
+      "artworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "approvedDonor": "COV-novena.sacred_heart",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-sacred_heart_aspiration_trust",
+      "artworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "approvedDonor": "COV-novena.sacred_heart",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.stations",
+      "artworkId": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+      "title": "Christ Carrying the Cross",
+      "artist": "Titian",
+      "approvedDonor": "STG-pray.precious_blood-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.stations",
+      "artworkId": "REVIEW::commons:22178536",
+      "title": "The Way to Calvary",
+      "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+      "approvedDonor": "STG-pray.precious_blood-05",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "artworkId": "REVIEW::commons:4965555",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "artworkId": "REVIEW::commons:45227477",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "artworkId": "REVIEW::met:437172",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.seven_words-01",
+      "artworkId": "REVIEW::commons:4965555",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.seven_words-01",
+      "artworkId": "REVIEW::commons:45227477",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.seven_words-01",
+      "artworkId": "REVIEW::met:437172",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.seven_words-04",
+      "artworkId": "REVIEW::commons:4965555",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.seven_words-04",
+      "artworkId": "REVIEW::commons:45227477",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.seven_words-04",
+      "artworkId": "REVIEW::met:437172",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.tenebrae-02",
+      "artworkId": "REVIEW::commons:4965555",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.tenebrae-02",
+      "artworkId": "REVIEW::commons:45227477",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.tenebrae-02",
+      "artworkId": "REVIEW::met:437172",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "approvedDonor": "STG-pray.rosary-11",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "artworkId": "REVIEW::commons:65493548",
+      "title": "The coronation of the Virgin",
+      "artist": "Peter Paul Rubens",
+      "approvedDonor": "STG-pray.rosary-16",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "artworkId": "REVIEW::cma:143761",
+      "title": "The Virgin Crowned by Angels",
+      "artist": "Stefan Lochner (German, 1400-c. 1452)",
+      "approvedDonor": "STG-pray.angelus_regina-01",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-marian_memorare",
+      "artworkId": "REVIEW::commons:87865020",
+      "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "artist": "Giovanni Battista Salvi da Sassoferrato",
+      "approvedDonor": "STG-litany_loreto_1962-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-weekday_magnificat",
+      "artworkId": "APPROVED_REVIEW::STG-pray.rosary-03::01",
+      "title": "The Visitation",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-pray.rosary-03",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-sub_tuum",
+      "artworkId": "REVIEW::commons:87865020",
+      "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "artist": "Giovanni Battista Salvi da Sassoferrato",
+      "approvedDonor": "STG-litany_loreto_1962-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-devotion_memorare_st_joseph",
+      "artworkId": "REVIEW::commons:124722400",
+      "title": "Reni - and Studio - St. Joseph and the Christ Child, lot.55",
+      "artist": "Guido Reni",
+      "approvedDonor": "COV-novena.st_joseph",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-devotion_memorare_st_joseph",
+      "artworkId": "REVIEW::commons:77218157",
+      "title": "Saint Joseph with the Flowering Rod",
+      "artist": "Guercino",
+      "approvedDonor": "COV-novena.st_joseph",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-devotion_litany_st_joseph",
+      "artworkId": "REVIEW::commons:124722400",
+      "title": "Reni - and Studio - St. Joseph and the Christ Child, lot.55",
+      "artist": "Guido Reni",
+      "approvedDonor": "COV-novena.st_joseph",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-devotion_litany_st_joseph",
+      "artworkId": "REVIEW::commons:77218157",
+      "title": "Saint Joseph with the Flowering Rod",
+      "artist": "Guercino",
+      "approvedDonor": "COV-novena.st_joseph",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-devotion_ad_te_beate_ioseph",
+      "artworkId": "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "approvedDonor": "STG-novena.christmas-01",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.penitential_psalms",
+      "artworkId": "REVIEW::commons:161200952",
+      "title": "The return of the prodigal son",
+      "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+      "approvedDonor": "STG-pray.confession-04",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-02",
+      "artworkId": "REVIEW::commons:161200952",
+      "title": "The return of the prodigal son",
+      "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+      "approvedDonor": "STG-pray.confession-04",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "artworkId": "REVIEW::commons:48577448",
+      "title": "The Last Supper",
+      "artist": "Giovanni Lanfranco",
+      "approvedDonor": "COV-novena.corpus_christi",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-pray.occasional_intercessions",
+      "artworkId": "CANONICAL::met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "approvedDonor": "STG-pray.adoration.four_ends-04",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-prayer.lection",
+      "artworkId": "REVIEW::commons:85666930",
+      "title": "Jacques Blanchard - Saint Jérôme écrivant",
+      "artist": "Jvillafruela",
+      "approvedDonor": "STG-pray.confession-01",
+      "relationship": "DEVOTIONAL_SUBJECT",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-adoration_litany_blessed_sacrament",
+      "artworkId": "REVIEW::commons:48577448",
+      "title": "The Last Supper",
+      "artist": "Giovanni Lanfranco",
+      "approvedDonor": "COV-novena.corpus_christi",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "artworkId": "REVIEW::commons:48577448",
+      "title": "The Last Supper",
+      "artist": "Giovanni Lanfranco",
+      "approvedDonor": "COV-novena.corpus_christi",
+      "relationship": "CONTEXTUAL_REVIEW",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false
+    }
+  ]
+}
