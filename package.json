@@ -322,9 +322,10 @@
     "test:dyk-r34-h4": "node tests/dyk-r34-pilot-source-folio.mjs && node tests/dyk-r34-h4-review-e2e.mjs",
     "test:dyk-priority24": "node tests/dyk-r34-priority24-editorial-readiness.mjs",
     "test:dyk-released-feed": "node tests/dyk-h7-released-feed-contract.mjs",
-    "test:dyk-growth-500": "node tests/dyk-500-growth-310-contract.mjs && node tests/dyk-500-growth-364-contract.mjs && node tests/dyk-500-growth-414-contract.mjs && node tests/dyk-500-composed-research-contract.mjs && node tests/dyk-r50-repaired-sample-contract.mjs && node tests/dyk-r33-500-612-overlap-contract.mjs && npm run test:dyk-next-520 && node tests/dyk-600-effective-research-contract.mjs && node tests/dyk-600-random20-audit-contract.mjs",
+    "test:dyk-growth-500": "node tests/dyk-500-growth-310-contract.mjs && node tests/dyk-500-growth-364-contract.mjs && node tests/dyk-500-growth-414-contract.mjs && node tests/dyk-500-composed-research-contract.mjs && node tests/dyk-r50-repaired-sample-contract.mjs && node tests/dyk-r33-500-612-overlap-contract.mjs && npm run test:dyk-next-520 && node tests/dyk-600-effective-research-contract.mjs && node tests/dyk-600-random20-audit-contract.mjs && npm run test:dyk-growth-640",
     "test:dyk-next-520": "node tests/dyk-next-501-520-contract.mjs",
-    "test:dyk-growth-600": "node tests/dyk-600-effective-research-contract.mjs && node tests/dyk-600-random20-audit-contract.mjs"
+    "test:dyk-growth-600": "node tests/dyk-600-effective-research-contract.mjs && node tests/dyk-600-random20-audit-contract.mjs",
+    "test:dyk-growth-640": "node tests/dyk-640-effective-research-contract.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
