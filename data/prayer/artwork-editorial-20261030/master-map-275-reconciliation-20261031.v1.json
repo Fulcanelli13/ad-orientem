@@ -120,6 +120,36 @@
       "mustNotBeAutomaticallyMatched": true,
       "licenseDoesNotOverrideRejection": true,
       "detailLedger": "data/prayer/artwork-editorial-20261030/stations-seven-pd-photo-source-candidates-20261031.v1.json"
+    },
+    {
+      "artist": "El Greco",
+      "workFamily": "ALL_ARTWORK",
+      "userDecision": "EXCLUDED_ARTIST_FROM_AD_ORIENTEM_ART",
+      "scope": "ALL_ARTWORK_SUGGESTIONS_AND_PLACEMENTS",
+      "mustNotBeSuggested": true,
+      "mustNotBeAutomaticallyMatched": true,
+      "licenseDoesNotOverrideRejection": true,
+      "notes": "Older illustrative Slot Map suggestions removed from editable master."
+    },
+    {
+      "artist": "Fra Angelico",
+      "workFamily": "ALL_ARTWORK",
+      "userDecision": "EXCLUDED_ARTIST_FROM_AD_ORIENTEM_ART",
+      "scope": "ALL_ARTWORK_SUGGESTIONS_AND_PLACEMENTS",
+      "mustNotBeSuggested": true,
+      "mustNotBeAutomaticallyMatched": true,
+      "licenseDoesNotOverrideRejection": true,
+      "notes": "Older illustrative Slot Map suggestions removed from editable master."
+    },
+    {
+      "artist": "Ugolino da Siena",
+      "workFamily": "The Last Supper",
+      "userDecision": "EXPLICIT_SPECIFIC_WORK_REJECTION",
+      "scope": "SPECIFIC_WORK_ONLY_NOT_ARTIST_WIDE",
+      "mustNotBeSuggested": true,
+      "mustNotBeAutomaticallyMatched": true,
+      "licenseDoesNotOverrideRejection": true,
+      "notes": "Six historical placement edges remain provenance-only; not active art."
     }
   ],
   "priorToExplicitLybaertRejection": {
@@ -127,5 +157,27 @@
     "distinct_concrete_work_ids": 224,
     "recordedAt": "2026-10-31",
     "meaning": "Historical count before user rejected entire Lybaert Stations cycle; not the currently eligible mapping."
+  },
+  "editorialExampleAudit": {
+    "date": "2026-10-31",
+    "workbook": "Ad_Orientem_Art_Matching_Map_2026-10-31_Station_V_Reconciled.xlsx",
+    "oldIllustrativeSlotMapRowsCorrected": 78,
+    "excludedArtists": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "note": "These old illustration examples were not approved placements. Historical provenance remains immutable, but no excluded artist may be resurfaced."
+  },
+  "currentCrossModuleCoverage": {
+    "canonicalSlots": 267,
+    "covered": 200,
+    "gaps": 67,
+    "source": "approved-artwork-inheritance-overlay-20261031.v1.json",
+    "productionReadyNewPhotos": 0,
+    "latestSourceStage": "STG-pray.stations-05",
+    "artist": "Domenichino",
+    "sourceArtwork": "The Way to Calvary",
+    "imageLicense": "Getty Open Content CC0",
+    "exactPhotoQAPassed": false
   }
 }
