@@ -80,5 +80,15 @@ const nd=gallery.places.find(x=>x.place_id==="place:FR:notre-dame-paris");
 assert.deepEqual(new Set(nd.subjects.filter(s=>s.photographs.length).map(s=>s.kind)),new Set(["exterior","interior","relic","reliquary"]));
 assert.ok(subjectids.has("ndp-holy-crown")&&subjectids.has("ndp-dubuisson-2024-reliquary"));
 assert.ok(gallery.places.find(x=>x.place_id==="place:FR:notre-dame-paris").subjects.find(x=>x.subject_id==="ndp-true-cross"));
-assert.ok(!media.items.some(x=>x.place_id==="place:FR:notre-dame-paris"));
-console.log("PASS P62: 26 adjudications, rejected Lateran merge, protected two-basilica hold, 13 multi-subject records, 6 unapproved Commons photo candidates; current Places and 31 approved media unchanged.");
+// The physical cathedral now has its own vetted photo, independently of
+// P62's sacred-object, interior and reliquary candidate approval gates.
+const notreCover=media.items.filter(x=>x.place_id==="place:FR:notre-dame-paris");
+assert.equal(notreCover.length,1);
+assert.equal(notreCover[0].source_place_ref,"COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE");
+assert.equal(notreCover[0].source_sha1,"6524c0f5eaf0f0ddaae7d669a8cdf7d1123cf3c5");
+assert.equal(notreCover[0].asset_path,"assets/approved/place-media/FR-notre-dame-paris-2026.webp");
+assert.equal(notreCover[0].rights_verified,true);
+assert.equal(notreCover[0].subject_verified,true);
+assert.ok(nd.subjects.flatMap(s=>s.photographs).every(x=>!x.approved&&!x.publish_authorized&&x.asset_path===null),
+  "A cathedral exterior approval must never promote distinct P62 interior/relic/reliquary subjects");
+console.log("PASS P62: 26 adjudications, rejected Lateran merge, protected two-basilica hold, 13 multi-subject records, 6 unapproved Commons photo candidates; original P62 sacred-object research stays unpublished while Notre-Dame exterior has its own verified cover.");
