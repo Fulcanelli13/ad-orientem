@@ -55,6 +55,12 @@ try{
     assert.equal(await article.getAttribute("role"),"dialog");
     assert.equal(await article.getAttribute("aria-modal"),"true");
     assert.equal(await article.locator("a[data-dyk-original-source]").count(),1);
+    const expectedSource=await page.evaluate(sourceId=>{
+      const row=window.__R34_REVIEW__.data.records.find(x=>x.id===sourceId);
+      return row.pilot_source_folio.url+"#page="+row.pilot_source_folio.pdf_pages_1based[0];
+    },id);
+    assert.equal(await article.locator("a[data-dyk-original-source]").getAttribute("href"),expectedSource,
+      "Each fact should link to its exact source PDF page");
     assert.ok((await article.locator(".aoDykSourceMeta").innerText()).includes(" · "));
     const bounds=await article.evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,width:innerWidth};});
     assert.ok(bounds.left>=-1&&bounds.right<=bounds.width+1,"Overflow "+JSON.stringify({width,language,id,bounds}));
