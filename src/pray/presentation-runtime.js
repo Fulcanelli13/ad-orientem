@@ -3570,6 +3570,10 @@ function onClick(e){
   if(e.target.closest?.('.aoP435930EssentialBeat'))return;
   CLAUDE_HOLY_PREF.flipped=!b.classList.contains('flip');
   b.classList.toggle('flip',CLAUDE_HOLY_PREF.flipped);
+  // The two card faces remain mounted for the 500ms Y-flip. Only the face
+  // currently visible may be read by assistive technology.
+  card?.querySelector('.aoClaudeHolyFront')?.setAttribute('aria-hidden',String(CLAUDE_HOLY_PREF.flipped));
+  card?.querySelector('.aoClaudeHolyBack')?.setAttribute('aria-hidden',String(!CLAUDE_HOLY_PREF.flipped));
   b.setAttribute('aria-label',CLAUDE_HOLY_PREF.flipped?L('Turn to front of card','Retourner la carte'):L('Turn to prayer text','Voir la prière'));
   const hint=card?.querySelector('.aoClaudeHolyHint');
   if(hint)hint.textContent=CLAUDE_HOLY_PREF.flipped?L('Tap to turn back · swipe for the next card','Touchez pour retourner · balayez pour la suivante'):L('Tap to turn the card over','Touchez pour retourner la carte');
