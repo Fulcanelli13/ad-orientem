@@ -60,7 +60,7 @@ export function resolveArtworkRuntimeIdentity(input={}){
       :/Ecce ancilla Domini/i.test(first)?"STG-pray.angelus-06"
       :/Et Verbum caro factum est/i.test(first)?"STG-pray.angelus-07"
       :/Ora pro nobis, sancta Dei Genetrix/i.test(first)?"STG-pray.angelus-08":null)
-    :(/Regina c[æa]eli,? lætare/i.test(first)?"STG-pray.angelus_regina-01"
+    :(/Regina c(?:æ|ae)li,? lætare/i.test(first)?"STG-pray.angelus_regina-01"
       :/Resurrexit|Gaude et lætare/i.test(first)?"STG-pray.angelus_regina-02":null);
   if(kind==="collect")return result(key,form==="regina"?"STG-pray.angelus_regina-04":"STG-pray.angelus-09","CANONICAL_COLLECT_STAGE");
   if(kind==="vr")return result(key,exact||cover,exact?"EXACT_LATIN_INVOCATION_STAGE":"UNMATCHED_VERSE_COVER_CONTEXTUAL");
