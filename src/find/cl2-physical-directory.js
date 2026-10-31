@@ -43,6 +43,30 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-2CFE11950F95":Object.freeze({
+  sourceId:"AO-B38-LOC-BE-68ECD274D85",name:"Église Saint-Sauveur",country:"BE",addressNeedle:"Grâce-Hollogne",placeId:null,
+  lat:50.62438,lng:5.39712,sourceRef:"osm:way:369175503",sourceUrl:"https://www.openstreetmap.org/way/369175503",
+  correctedAddress:"Place du Doyenné, Hozémont, Grâce-Hollogne, Belgium",precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/W369175503","https://www.cirkwi.com/fr/point-interet/1168002-eglise-saint-sauveur"]),
+ }),
+ "RG-4E6E8B55676B":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-08241A64B37C",name:"Kościół Świętego Bartłomieja Stary",country:"PL",addressNeedle:"Toszecka 38",placeId:null,
+  lat:50.31106,lng:18.66963,sourceRef:"osm:way:266470146",sourceUrl:"https://www.openstreetmap.org/way/266470146",
+  correctedAddress:"Toszecka 38, Gliwice, Poland",precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/de/W266470146","https://zabytek.pl/pl/obiekty/gliwice-kosciol-fil-pw-sw-bartlomieja"]),
+ }),
+ "RG-EE22A08568B9":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-539E5EDAC4B",name:"Sant Jordi de Vallcarca",country:"ES",addressNeedle:"",placeId:null,
+  lat:41.41319,lng:2.1441,sourceRef:"osm:way:233311642",sourceUrl:"https://www.openstreetmap.org/way/233311642",
+  correctedAddress:"Viaducte de Vallcarca 7-13, 08023 Barcelona, Spain",precision:"site",
+  evidence:Object.freeze(["https://mapcarta.com/es/W233311642","https://sacristan.io/en/church/es/barcelona/parroquia-de-sant-jordi"]),
+ }),
+ "RG-48A5E9F09178":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-2622F5C3F4E5",name:"Kościół Opatrzności Bożej",country:"PL",addressNeedle:"Poznańska 332",placeId:null,
+  lat:52.755082,lng:18.255326,sourceRef:"odtur:8550",sourceUrl:"https://odtur.pl/atrakcje/inowroclaw-kosciol-pw-opatrznosci-bozej-8550.html",
+  correctedAddress:"ul. Poznańska 332, 88-100 Inowrocław, Poland",precision:"site",
+  evidence:Object.freeze(["https://archidiecezja.pl/kuria_parafie/rejon-inowroclawski/dekanat-inowroclawski-i/inowroclaw-matwy-par-pw-opatrznosci-bozej/","https://odtur.pl/atrakcje/inowroclaw-kosciol-pw-opatrznosci-bozej-8550.html"]),
+ }),
  "RG-14C05BCC015B":Object.freeze({
   sourceId:"AO-B38-LOC-ES-3F0F660D197",name:"Basílica de Santa Maria d'Alacant",country:"ES",addressNeedle:"Alicante",placeId:null,
   lat:38.3462,lng:-0.47922,sourceRef:"osm:way:22560738",
@@ -527,7 +551,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
