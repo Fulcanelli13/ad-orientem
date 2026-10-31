@@ -8,9 +8,11 @@ on:
       - "src/app/host-adapter.js"
       - "src/settings/browser-entry.js"
       - "src/learn/browser-entry.js"
+      - "src/learn/latin-course-v2.js"
       - "tests/navigation-settings-return-phone.mjs"
       - "tests/navigation-native-back-phone.mjs"
       - "tests/navigation-native-back-mass.mjs"
+      - "tests/navigation-latin-settings-return-phone.mjs"
       - ".github/workflows/navigation-native-back-phone.yml"
 permissions:
   contents: read
@@ -31,3 +33,5 @@ jobs:
         run: node tests/navigation-settings-return-phone.mjs
       - name: Android browser Back, book navigation and Formation restoration
         run: node tests/navigation-native-back-phone.mjs
+      - name: P3 Latin exact return at 320px/390px in English and French
+        run: node tests/navigation-latin-settings-return-phone.mjs
