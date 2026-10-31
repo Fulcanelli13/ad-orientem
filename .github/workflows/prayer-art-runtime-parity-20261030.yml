@@ -13,6 +13,7 @@ on:
       - 'tests/prayer-master-map-reconciliation.mjs'
       - 'tests/prayer-art-inheritance-overlay.mjs'
       - 'tests/prayer-prior-keeps-mapping.mjs'
+      - 'tests/prayer-stations-source-research.mjs'
       - 'src/pray/**'
       - 'data/prayer/artwork-editorial-20261030/**'
   workflow_dispatch:
@@ -38,5 +39,7 @@ jobs:
         run: node tests/prayer-art-inheritance-overlay.mjs
       - name: Protect previously approved module placements and final 199/68 global counts
         run: node tests/prayer-prior-keeps-mapping.mjs
+      - name: Validate seven exact Stations source leads without artwork or photo release
+        run: node tests/prayer-stations-source-research.mjs
       - name: Inspect live Prayer owners without claiming photograph release
         run: node tests/prayer-art-dom-evidence.mjs && node --check src/pray/presentation-runtime.js && node --check src/pray/novena-runtime.js && node --check src/pray/traditional-pray-runtime.js
