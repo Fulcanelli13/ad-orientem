@@ -115,7 +115,17 @@ function optionalMusicWindowForEvent(spec,cards){
   });
 }
 
-const sourceId=card=>String(card?.sourceSectionId??card?.sectionId??"");
+// The curated Canon preserves its underlying 30-card macro in
+// sourceSectionId; its certified 14-step Canon identity survives separately
+// in provenance.canonSegmentId. Using the macro for event lookup loses the
+// exact Host/Chalice source sections (and delayed Benedictus) in LIVE.
+// Only trust the explicit source-first Canon provenance, never the title.
+const sourceId=card=>String(
+  card?.provenance?.liveStructure==="SOURCE_FIRST_CANON" &&
+  /^AO\.CANON\.(?:0[1-9]|1[0-4])$/.test(String(card?.provenance?.canonSegmentId??""))
+    ?card.provenance.canonSegmentId
+    :card?.sourceSectionId??card?.sectionId??""
+);
 const blockOwned=(card,id)=>(card?.blocks??[]).some(b=>b.blockId===id&&
    b.omittedByRite==null && (b.paragraphCount==null || b.paragraphCount>0));
 
