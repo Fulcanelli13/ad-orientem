@@ -29,6 +29,190 @@ export const CONFESSION_PATHS=Object.freeze({
   situationEn:"I wish to prepare a general Confession",situationFr:"Je souhaite préparer une confession générale"
  })
 });
+/** Original editorial extension of the Ten Commandments examination for
+ * Returning and General Confession. Not a transcription of the 1905 Compendio.
+ * Preserve the inherited concise canonical prompts verbatim for Quick Confession.
+ * Nothing here is a selection field, saved user confession, diagnosis of guilt,
+ * or a substitute for discernment with the priest.
+ * Sources: CCC 1454-1458, 1857-1859, 1862; Pius X catechism, Examination 25-29.
+ */
+export const CONFESSION_EXTENDED_EXAM_WITNESS=Object.freeze({
+ editorialStatus:"ORIGINAL_EDITORIAL_PASTORAL_QUESTIONS_NOT_HISTORICAL_VERBATIM",
+ doctrinal:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.html",
+ mortalSinConditions:"https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/iv_the_gravity_of_sin_mortal_and_venial_sin.index.html",
+ catechismPiusX:"https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286"
+});
+export const CONFESSION_EXTENDED_QUESTIONS=Object.freeze([
+ {
+  "en": [
+   "Have I deliberately neglected prayer or the worship I owe God?",
+   "Have I knowingly rejected an essential teaching of the Catholic faith?",
+   "Have I sought occult practices, divination, or superstitious substitutes for trust in God?",
+   "Have I approached the sacraments irreverently or knowingly concealed a grave sin in Confession?",
+   "Have I deliberately given in to despair of God's mercy or presumed upon it without repentance?"
+  ],
+  "fr": [
+   "Ai-je délibérément négligé la prière ou le culte dû à Dieu ?",
+   "Ai-je rejeté sciemment un enseignement essentiel de la foi catholique ?",
+   "Ai-je recouru à l'occultisme, à la divination ou à des pratiques superstitieuses au lieu de me confier en Dieu ?",
+   "Ai-je reçu les sacrements sans respect ou caché sciemment un péché grave en confession ?",
+   "Ai-je volontairement désespéré de la miséricorde divine ou présumé de celle-ci sans repentir ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I knowingly spoken God's name with contempt or blasphemy?",
+   "Have I made a false or rash oath, or broken a serious promise made to God?",
+   "Have I deliberately mocked the sacraments, sacred objects, the saints, or religious worship?",
+   "Have I used religious words to deceive, threaten, or manipulate another person?",
+   "Have I failed to repair harm caused by a serious false oath or promise?"
+  ],
+  "fr": [
+   "Ai-je prononcé sciemment le nom de Dieu avec mépris ou blasphème ?",
+   "Ai-je prêté un serment faux ou téméraire, ou rompu une promesse grave faite à Dieu ?",
+   "Ai-je délibérément tourné en dérision les sacrements, les objets sacrés, les saints ou le culte ?",
+   "Ai-je employé des paroles religieuses pour tromper, menacer ou manipuler autrui ?",
+   "Ai-je omis de réparer le tort causé par un faux serment ou une promesse grave ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I deliberately missed Sunday Mass or an obligatory holy day without a serious reason?",
+   "Have I prevented someone under my care from fulfilling a religious obligation without just cause?",
+   "Have I deliberately treated the church or the Holy Eucharist with irreverence?",
+   "Have I neglected reasonable Sunday rest or compelled unnecessary work without regard for others?",
+   "Have I failed to prepare responsibly for Holy Communion when aware of unconfessed grave sin?"
+  ],
+  "fr": [
+   "Ai-je délibérément manqué la messe dominicale ou une fête d'obligation sans motif grave ?",
+   "Ai-je empêché sans juste raison une personne dont j'ai la charge d'accomplir son devoir religieux ?",
+   "Ai-je volontairement manqué de respect dans l'église ou envers la sainte Eucharistie ?",
+   "Ai-je négligé le repos dominical raisonnable ou imposé sans nécessité du travail à autrui ?",
+   "Ai-je omis de me préparer dignement à la sainte communion tout en ayant conscience d'un péché grave non confessé ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I neglected serious responsibilities to parents, children, spouse, or dependents?",
+   "Have I refused needed care or respect to an elderly or vulnerable family member?",
+   "Have I misused authority, manipulated, or humiliated those entrusted to me?",
+   "Have I knowingly neglected the moral or religious formation of children in my care?",
+   "Have I violated a just duty in family, professional, or civic life?"
+  ],
+  "fr": [
+   "Ai-je négligé des responsabilités graves envers mes parents, mes enfants, mon conjoint ou mes proches à charge ?",
+   "Ai-je refusé une aide ou un respect nécessaire à un parent âgé ou vulnérable ?",
+   "Ai-je abusé de mon autorité, manipulé ou humilié les personnes confiées à mes soins ?",
+   "Ai-je négligé sciemment la formation morale ou religieuse des enfants dont j'ai la charge ?",
+   "Ai-je manqué à un juste devoir familial, professionnel ou civique ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I deliberately injured, threatened, or endangered another person's life or health?",
+   "Have I cherished deliberate hatred, serious revenge, or refused a reasonable opportunity for reconciliation?",
+   "Have I knowingly exposed other people to serious avoidable danger?",
+   "Have I neglected a duty to protect or assist someone seriously vulnerable?",
+   "Have I abused alcohol, drugs, or anger in a way that seriously harmed others?"
+  ],
+  "fr": [
+   "Ai-je volontairement blessé, menacé ou mis en danger la vie ou la santé d'autrui ?",
+   "Ai-je entretenu volontairement une haine, une vengeance grave ou refusé une réconciliation raisonnablement possible ?",
+   "Ai-je exposé sciemment autrui à un danger grave et évitable ?",
+   "Ai-je négligé mon devoir de protéger ou de secourir une personne gravement vulnérable ?",
+   "Ai-je abusé de l'alcool, de drogues ou de la colère au point de nuire gravement à autrui ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I deliberately been unfaithful to my spouse or disregarded serious duties of marital fidelity?",
+   "Have I freely chosen pornography or deliberately entertained sexual actions contrary to chastity?",
+   "Have I pressured, coerced, exploited, or failed to respect another person's dignity and consent?",
+   "Have I deliberately placed myself or another in a foreseeable near occasion of serious sexual wrongdoing?",
+   "Have I been uncharitable in discussing another person's intimate life or reputation?"
+  ],
+  "fr": [
+   "Ai-je délibérément manqué à la fidélité conjugale ou négligé un devoir grave envers mon conjoint ?",
+   "Ai-je librement choisi la pornographie ou des actes délibérément contraires à la chasteté ?",
+   "Ai-je fait pression sur autrui, abusé de quelqu'un ou méprisé sa dignité et son consentement ?",
+   "Me suis-je volontairement placé, ou ai-je placé autrui, dans une occasion prochaine prévisible de faute sexuelle grave ?",
+   "Ai-je manqué à la charité en évoquant la vie intime ou la réputation d'une autre personne ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I stolen, cheated, defrauded, or deliberately withheld what I owe to another?",
+   "Have I failed to pay a just wage, repay a debt when able, or respect another person's property?",
+   "Have I used my professional position, entrusted money, or public resources dishonestly?",
+   "Have I caused material harm through deceit or serious negligence without making reasonable restitution?",
+   "Have I knowingly taken advantage of someone else's vulnerability in a transaction?"
+  ],
+  "fr": [
+   "Ai-je volé, triché, fraudé ou volontairement retenu ce que je dois à autrui ?",
+   "Ai-je omis de verser un juste salaire, de rembourser une dette selon mes moyens ou de respecter le bien d'autrui ?",
+   "Ai-je employé malhonnêtement ma fonction, des fonds confiés ou des ressources publiques ?",
+   "Ai-je causé un dommage matériel par tromperie ou négligence grave sans réparation raisonnable ?",
+   "Ai-je sciemment profité de la vulnérabilité d'autrui dans un échange ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I deliberately lied in a serious matter or falsely accused someone?",
+   "Have I spread an unverified accusation, calumny, or harmful gossip without sufficient reason?",
+   "Have I betrayed a confidence or disclosed another person's private information unjustly?",
+   "Have I given false testimony, distorted facts, or concealed truth where justice required it?",
+   "Have I refused to correct a harmful falsehood when I reasonably could?"
+  ],
+  "fr": [
+   "Ai-je délibérément menti sur une matière grave ou accusé faussement quelqu'un ?",
+   "Ai-je répandu une accusation non vérifiée, une calomnie ou des médisances nuisibles sans raison suffisante ?",
+   "Ai-je trahi un secret ou révélé injustement des informations privées sur autrui ?",
+   "Ai-je porté un faux témoignage, déformé les faits ou dissimulé la vérité quand la justice l'exigeait ?",
+   "Ai-je refusé de corriger une fausseté nuisible alors que je le pouvais raisonnablement ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I deliberately fostered a desire to violate another person's marriage or fidelity?",
+   "Have I knowingly dwelt on lustful fantasies that I freely chose to entertain?",
+   "Have I tried to seduce another person into betraying serious commitments?",
+   "Have I treated another person primarily as an object rather than respecting their dignity?",
+   "Have I distinguished involuntary thoughts or temptations from freely chosen consent?"
+  ],
+  "fr": [
+   "Ai-je volontairement nourri le désir de porter atteinte au mariage ou à la fidélité d'autrui ?",
+   "Me suis-je complu sciemment dans des pensées impures auxquelles j'ai librement consenti ?",
+   "Ai-je tenté d'entraîner quelqu'un à trahir un engagement grave ?",
+   "Ai-je traité une personne comme un objet plutôt que de respecter sa dignité ?",
+   "Ai-je distingué les pensées ou tentations involontaires du consentement librement donné ?"
+  ]
+ },
+ {
+  "en": [
+   "Have I deliberately nourished envy or resentment at another person's legitimate possessions or success?",
+   "Have I desired to obtain another person's goods through injustice or deception?",
+   "Have greed or material ambition led me to neglect serious obligations to God or neighbor?",
+   "Have I refused reasonable generosity despite a clear duty of care or justice?",
+   "Have I fostered bitterness rather than gratitude for the good rightly enjoyed by others?"
+  ],
+  "fr": [
+   "Ai-je volontairement entretenu l'envie ou le ressentiment devant les biens ou la réussite légitime d'autrui ?",
+   "Ai-je désiré acquérir injustement ou par tromperie les biens d'une autre personne ?",
+   "La cupidité ou l'ambition matérielle m'ont-elles conduit à négliger des devoirs graves envers Dieu ou autrui ?",
+   "Ai-je refusé une générosité raisonnable malgré un devoir clair de charité ou de justice ?",
+   "Ai-je nourri l'amertume au lieu de la gratitude pour le bien dont autrui jouit légitimement ?"
+  ]
+ }
+]);
+export function confessionExtendedSections(sections,{path="regular",french=false}={}){
+ if(path==="regular")return sections;
+ if(!["returning","general"].includes(path))throw Error("Unknown Confession path");
+ if(!Array.isArray(sections)||sections.length!==10)throw Error("Ten original commandment sections required");
+ return Object.freeze(sections.map((section,index)=>Object.freeze([
+  section[0],Object.freeze([...section[1],...CONFESSION_EXTENDED_QUESTIONS[index][french?"fr":"en"]])
+ ])));
+}
+
 export const CONFESSION_HISTORICAL_SOURCE_POLICY=Object.freeze({
  piusX:Object.freeze({
   name:"St Pius X · Compendio della dottrina cristiana (1905)",
