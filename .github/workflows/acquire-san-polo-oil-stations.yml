@@ -1,0 +1,63 @@
+name: Acquire 14 San Polo oil-painting Stations — research-only
+
+on:
+  push:
+    branches:
+      - research/stations-san-polo-oil-paintings-20261031
+    paths:
+      - 'data/prayer/stations/san-polo-tiepolo-oils-1747/manifest.v1.json'
+      - 'scripts/acquire_san_polo_oil_stations.py'
+      - '.github/workflows/acquire-san-polo-oil-stations.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: acquire-san-polo-oils-1747
+  cancel-in-progress: false
+
+jobs:
+  archive-14-oil-painting-photos:
+    if: github.ref == 'refs/heads/research/stations-san-polo-oil-paintings-20261031'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image processing
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Acquire exact Commons files, check each licence, archive 14 oil photographs
+        run: python scripts/acquire_san_polo_oil_stations.py
+      - name: Check 14 unique real-oil image derivatives, rights and research-only guard
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('data/prayer/stations/san-polo-tiepolo-oils-1747')
+          x=json.loads((root/'acquisition-results.v1.json').read_text())
+          assert x['photographsAcquired']==14 and x['artworkMedium']=='oil on canvas'
+          assert x['productionImagesEnabled']==0 and x['artworksNewlyApproved']==0
+          assert x['researchOnly'] and x['photographsLicense'].startswith('CC BY-SA')
+          assert len(x['files'])==len({q['derivativeSHA256'] for q in x['files']})==14
+          for f in x['files']:
+              p=Path(f['file'])
+              assert p.exists() and p.stat().st_size>70000
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==f['derivativeSHA256']
+              assert f['artMedium']=='oil on canvas' and f['productionRightsGate']=='NOT_PD_CC0'
+              assert f['artworkApproved'] is False and f['runtimeEnabled'] is False
+          print('PASS: 14 actual oil paintings archived, CC BY-SA photographic licence recorded, zero published')
+          PY
+      - name: Commit durable research archive and licence attribution, not ephemeral Actions zip
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/prayer/stations/san-polo-tiepolo-oils-1747/images data/prayer/stations/san-polo-tiepolo-oils-1747/acquisition-results.v1.json data/prayer/stations/san-polo-tiepolo-oils-1747/ATTRIBUTION.md
+          if git diff --cached --quiet; then
+            echo 'Already archived'
+          else
+            git commit -m 'Archive fourteen oil-painting Station photo derivatives with CC BY-SA credits'
+            git push origin HEAD:research/stations-san-polo-oil-paintings-20261031
+          fi
