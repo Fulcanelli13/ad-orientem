@@ -31,30 +31,32 @@ jobs:
         run: python -m pip install --disable-pip-version-check Pillow==11.3.0
       - name: Acquire exact Commons files, check each licence, archive 14 oil photographs
         run: python scripts/acquire_san_polo_oil_stations.py
-      - name: Check 14 unique real-oil image derivatives, rights and research-only guard
+      - name: Check 0–14 unique preserved photographs, exact failures, attribution and research-only guard
         run: |
           python - <<'PY'
           import hashlib,json
           from pathlib import Path
           root=Path('data/prayer/stations/san-polo-tiepolo-oils-1747')
           x=json.loads((root/'acquisition-results.v1.json').read_text())
-          assert x['photographsAcquired']==14 and x['artworkMedium']=='oil on canvas'
+          assert 0 <= x['photographsAcquired'] <= 14 and x['artworkMedium']=='oil on canvas'
           assert x['productionImagesEnabled']==0 and x['artworksNewlyApproved']==0
           assert x['researchOnly'] and x['photographsLicense'].startswith('CC BY-SA')
-          assert len(x['files'])==len({q['derivativeSHA256'] for q in x['files']})==14
+          assert len(x['files'])==len({q['derivativeSHA256'] for q in x['files']})==x['photographsAcquired']
+          assert len(x['files'])+len(x['failedStations'])==14
+          assert x['fullyAcquired'] == (x['photographsAcquired']==14)
           for f in x['files']:
               p=Path(f['file'])
               assert p.exists() and p.stat().st_size>70000
               assert hashlib.sha256(p.read_bytes()).hexdigest()==f['derivativeSHA256']
               assert f['artMedium']=='oil on canvas' and f['productionRightsGate']=='NOT_PD_CC0'
               assert f['artworkApproved'] is False and f['runtimeEnabled'] is False
-          print('PASS: 14 actual oil paintings archived, CC BY-SA photographic licence recorded, zero published')
+          print(f\"RESEARCH ARCHIVE: {x['photographsAcquired']}/14 oil paintings, blocked={x['failedCount']}; 0 published\")
           PY
-      - name: Commit durable research archive and licence attribution, not ephemeral Actions zip
+      - name: Commit every successfully acquired painting, even if other source files are rate-limited
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/prayer/stations/san-polo-tiepolo-oils-1747/images data/prayer/stations/san-polo-tiepolo-oils-1747/acquisition-results.v1.json data/prayer/stations/san-polo-tiepolo-oils-1747/ATTRIBUTION.md
+          git add -A data/prayer/stations/san-polo-tiepolo-oils-1747
           if git diff --cached --quiet; then
             echo 'Already archived'
           else
