@@ -33,7 +33,7 @@
     "sourceFileReproduction": "Original 2D public-domain works; Commons PD-Art and institutional CC0 claims"
   },
   "acquisition": {
-    "mode": "Github Actions bulk fetch; 14 originals from Commons, generate 14 webp 2400px long edge, verify SHA256, commit images in this research branch",
+    "mode": "HISTORICAL_ARCHIVE_COMPLETE__DISABLED_FOR_NEW_RUNS",
     "maxLongEdge": 2400,
     "webpQuality": 87,
     "webpMethod": 5,
@@ -295,5 +295,10 @@
       "editorialState": "UNIFIED_MUSEUM_SERIES_SOURCE_SELECTION_NOT_PRODUCTION_APPROVAL",
       "runtimeDisplayEnabled": false
     }
-  ]
+  ],
+  "archiveStatus": "REJECTED_FOR_ARTWORK_MEDIA_TYPE__ETCHING_NOT_PAINTING",
+  "displayInAdOrientem": false,
+  "productionApprovalProhibited": true,
+  "supersededBy": "Full 14 oil-on-canvas paintings, Giandomenico Tiepolo, Church of San Polo, Venice, 1747–1749",
+  "editorialDecisionSource": "User, 2026-10-31: 'no these are sketches. i need paintings'"
 }
