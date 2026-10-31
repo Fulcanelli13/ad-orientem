@@ -1,5 +1,6 @@
 import "./traditional-pray-styles.js";
 import {choirLitanyLineParts} from "./choir-source-beats.js";
+import {installChoirContinuousFocus} from "./choir-continuous-focus.js";
 import "./choir-family-styles.js";
 import {dailyUxPilotEnabled,renderDailyUxContinuous,renderDailyBookPills,renderDailyReaderOptions} from "./daily-ux-pilot.js";
 import "./traditional-pray-direct-b16-styles.js";
@@ -121,6 +122,7 @@ function prayerRows(rows){
 
 const DAILY_UX_PILOT_ENABLED=dailyUxPilotEnabled(globalThis.location?.search);
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null,MASS_HANDOFF_BUSY=false;
+let CHOIR_FULL_FOCUS_DISPOSE=null;
 let S={dailyTimerOpen:false,dailyLength:"standard",litanyMode:"full",litanyStep:0,mealStep:0,mealForm:"short",examenContrition:"standard",hopeFrenchEdition:"published",route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,goodDeathJosephEdition:"1909",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
 
 
@@ -836,6 +838,7 @@ function render(){
   // A route change or Full Text mode must not inherit another reader’s stage owner.
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
+  CHOIR_FULL_FOCUS_DISPOSE?.();CHOIR_FULL_FOCUS_DISPOSE=null;
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
@@ -929,6 +932,9 @@ function render(){
   }
   injectGlossaryAction();
   m.scrollTop=0;
+  if(S.screen==="module"&&S.route==="pray.holy_name_litany"&&S.litanyMode!=="guided")
+    CHOIR_FULL_FOCUS_DISPOSE=installChoirContinuousFocus(m);
+
   queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.({preventScroll:true})});
   return true;
 }
