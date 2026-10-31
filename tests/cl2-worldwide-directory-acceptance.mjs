@@ -130,7 +130,7 @@ const raritanGate=diocesanQualityByGroup.get("RG-18659A3C6ECE");
 assert.equal(raritanGate.photo_gate,"OPERATOR_EXCLUDED");
 assert.equal(raritanGate.operator_scope,"ORATORY_OF_ST_PHILIP_NERI_PASTORAL_CARE_CONFIRMED");
 assert.ok(raritanGate.operator_evidence.every(url=>url.startsWith("https://")));
-assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,14);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,15);
 for(const [id,lat,lng,ref,scope] of [["RG-3935C183A2BA",40.31467,-79.3817,"osm:way:432365179","HOLY_FAMILY_LATROBE_CHURCH_BUILDING_NOT_NEIGHBORING_PARISH"],["RG-7A75E8D68125",37.46075,-122.18033,"osm:way:114158255","NATIVITY_MENLO_PARK_HISTORIC_CHURCH_NOT_RECTORY"],["RG-DB7556C0C980",36.17539,-86.79166,"osm:way:893977074","ASSUMPTION_NASHVILLE_CHURCH_BUILDING_NOT_OFFICE"],["RG-9CF80257612A",41.83575,-87.65242,"osm:way:210167509","PERPETUAL_HELP_CHICAGO_PARISH_CHURCH_NOT_SCHOOL"],["RG-BE23723D6B4A",45.44299,10.9953,"osm:way:138811441","VERONA_SAN_GIOVANNI_IN_FORO_CHURCH_NOT_ANOTHER_PARISH"],["RG-63BC2CF66C4B",45.539346,10.226049,"independent:outdooractive-san-zeno-brescia","BRESCIA_SAN_ZENO_AL_FORO_CHURCH_NOT_ROMAN_FORUM"],["RG-0AD2B2092E4E",42.285056,-83.741389,"independent:st-thomas-ann-arbor-building","ANN_ARBOR_HISTORIC_PARISH_CHURCH_NOT_SCHOOL_OR_OFFICE"]]){
  const item=world.find(x=>x.physical_group_id===id),q=diocesanQualityByGroup.get(id),pin=photoPins.pins.find(p=>p.physical_group_id===id);
  assert.ok(item&&q&&pin,"Reviewed site must have a matching source-owned runtime church");
@@ -147,7 +147,7 @@ for(const [id,scope] of [["RG-B95EC4107AE0","CINCINNATI_ORATORY_OLD_ST_MARY_MINI
  assert.equal(q.operator_scope,scope);
  assert.equal(q.photo_research_started,false);
 }
-assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,14);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,15);
 for(const [id,scope] of [["RG-04C900D93BC2","BOURNEMOUTH_ORATORY_CONGREGATION_MINISTRY"],["RG-A39E87B5A30C","LONDON_ORATORY_CONGREGATION_CHURCH"],["RG-C3C6FBC2EB32","HOLY_LAND_FRANCISCAN_FRIARS_MONASTERY"],["RG-CCD4ECF228D3","ST_ANTHONY_FRANCISCAN_FRIARS_MONASTERY"],["RG-D108C0D7C168","DISCALCED_CARMELITE_NUNS_INFANT_JESUS_OF_PRAGUE"],["RG-DCA9FF61B20D","BENEDICTINES_OF_MARY_OUR_LADY_OF_EPHESUS_ABBEY"]]){
  const row=diocesanQualityByGroup.get(id);
  assert.equal(row.photo_gate,"OPERATOR_EXCLUDED");
@@ -195,6 +195,15 @@ assert.equal(osmReviewQueue.rows.length,442);
 assert.equal(new Set(osmReviewQueue.rows.map(r=>r.physical_group_id)).size,442);
 assert.ok(osmReviewQueue.rows.every(r=>!r.photo_approved&&r.review_status==="OSM_CANDIDATES_NOT_YET_FETCHED"));
 
+for(const [id,scope,gate] of [["RG-90591ACAA073","DIOCESAN_HOLY_TRINITY_PARISH_ORATORY","INHERITED_POINT_UNASSESSED"],["RG-C64D549D0587","COVINGTON_DIOCESAN_HOLY_FAMILY_ORATORY","INHERITED_POINT_UNASSESSED"],["RG-E1B1D68CCBC1","BRIDGEPORT_DIOCESAN_GEORGETOWN_ORATORY","INHERITED_POINT_UNASSESSED"],["RG-13C11CB31E3F","FLORENCE_SAN_GIROLAMO_SAN_FRANCESCO_POVERINO_CONFRATERNITY","OPERATOR_EXCLUDED"]]){
+ const r=diocesanQualityByGroup.get(id);
+ assert.equal(r.operator_scope,scope);
+ assert.equal(r.photo_gate,gate);
+ assert.equal(r.photo_research_started,false);
+ assert.ok(r.operator_evidence.every(x=>x.startsWith("https://")));
+}
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_REQUIRES_REVIEW,9);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,15);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);

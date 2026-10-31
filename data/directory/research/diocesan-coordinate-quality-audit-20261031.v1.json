@@ -29,9 +29,9 @@
     },
     "photo_gates": {
       "REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL": 61,
-      "INHERITED_POINT_UNASSESSED": 490,
-      "OPERATOR_REQUIRES_REVIEW": 13,
-      "OPERATOR_EXCLUDED": 14,
+      "INHERITED_POINT_UNASSESSED": 493,
+      "OPERATOR_REQUIRES_REVIEW": 9,
+      "OPERATOR_EXCLUDED": 15,
       "MISSING_COORDINATE": 4,
       "DISTINCT_BUILDING_OR_INTERIOR_PENDING": 2,
       "PUBLISHED_PROVISIONAL_NEEDS_EXACT_SITE_PHOTO_GATE": 3
@@ -1059,9 +1059,14 @@
       "coordinate_ref": "independent:firenze-loggiato-san-francesco-poverino",
       "coordinate_evidence_url": "https://www.feelflorence.it/it/punti-di-interesse/oratorio-di-san-francesco-poverino",
       "review_scope": "ORATORY_WITHIN_LOGGIA_NOT_INDEPENDENT_DOOR",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "FLORENCE_SAN_GIROLAMO_SAN_FRANCESCO_POVERINO_CONFRATERNITY",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "Oratory associated with the distinct Venerable lay confraternity, not an ordinary diocesan parish photo subject.",
+      "operator_evidence": [
+        "https://www.museionline.info/tipologie-museo/oratorio-di-san-girolamo-e-san-francesco-poverino",
+        "https://www.ilgranchioinfrack.it/viaggi/oratorio-di-san-girolamo-e-san-francesco-poverino/"
+      ]
     },
     {
       "physical_group_id": "RG-143B6D0503FF",
@@ -6687,9 +6692,14 @@
       "coordinate_ref": "AO-AMER-R28-US-24-15",
       "coordinate_evidence_url": "https://adorientem.church/find/st-augustine-oratory-south-st-paul-e63cf959",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "DIOCESAN_HOLY_TRINITY_PARISH_ORATORY",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "photo_research_started": false,
+      "operator_note": "St Augustine Oratory is explicitly the second Holy Trinity Parish campus; no religious-order operator inference.",
+      "operator_evidence": [
+        "https://www.holytrinitysspmn.org/join",
+        "https://www.holytrinitysspmn.org/contact"
+      ]
     },
     {
       "physical_group_id": "RG-90A7DDBAE26A",
@@ -9180,9 +9190,14 @@
       "coordinate_ref": "AO-AMER-R27-US-06-05",
       "coordinate_evidence_url": "https://adorientem.church/find/holy-family-oratory-union-651367ab",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "COVINGTON_DIOCESAN_HOLY_FAMILY_ORATORY",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "photo_research_started": false,
+      "operator_note": "Diocese of Covington records the separate Holy Family Oratory at Union; not a separate institute site.",
+      "operator_evidence": [
+        "https://covdio.org/wp-content/uploads/2025/08/DIRECTORY06042025.pdf",
+        "https://www.ololparish.org/"
+      ]
     },
     {
       "physical_group_id": "RG-C7DE02E84E31",
@@ -10553,9 +10568,14 @@
       "coordinate_ref": "AO-AMER-R27-US-11-15",
       "coordinate_evidence_url": "https://adorientem.church/find/oratory-of-the-most-sacred-heart-of-jesus-redding-9937f3a5",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "BRIDGEPORT_DIOCESAN_GEORGETOWN_ORATORY",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "photo_research_started": false,
+      "operator_note": "Georgetown Oratory was erected by the diocesan bishop after parish consolidation; ecclesial Oratory here is not evidence of an Oratorian institute.",
+      "operator_evidence": [
+        "https://www.georgetownoratory.org/",
+        "https://www.reddingsentinel.org/_files/ugd/48d01b_b6e32dfb3c9c4e37bc31ac2697b3ad79.pdf"
+      ]
     },
     {
       "physical_group_id": "RG-E26C95EA7FAE",
