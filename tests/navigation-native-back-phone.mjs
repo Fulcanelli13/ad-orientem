@@ -45,8 +45,19 @@ try{
     await page.waitForFunction(f=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="learn"&&
       globalThis.AO_LEARN_APP_V1?.status?.().family===f&&!globalThis.AO_SETTINGS_APP_V1?.status?.().open,chosen,{timeout:20000});
     assert.equal(await page.locator("#ao-learn-modular-root").count(),1);
+    const beforeBack=await page.evaluate(()=>({
+      url:location.href,length:history.length,entry:history.state?.__aoNavigationV1??null,
+      surface:globalThis.AO_APP_SHELL_V1?.getActive?.(),back:globalThis.AO_APP_SHELL_V1?.status?.().nativeBack
+    }));
+    console.log("NATIVE BACK DEBUG before Formation -> Home",JSON.stringify(beforeBack));
     await page.evaluate(()=>history.back());
-    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",{timeout:18000});
+    await page.waitForTimeout(1200);
+    const afterBack=await page.evaluate(()=>({
+      url:location.href,length:history.length,entry:history.state?.__aoNavigationV1??null,
+      surface:globalThis.AO_APP_SHELL_V1?.getActive?.(),back:globalThis.AO_APP_SHELL_V1?.status?.().nativeBack
+    }));
+    console.log("NATIVE BACK DEBUG after Formation -> Home",JSON.stringify(afterBack));
+    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:7000});
     assert.equal(await page.locator(".homeScreen").count()>0,true);
 
     assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray"))).ok,true);
