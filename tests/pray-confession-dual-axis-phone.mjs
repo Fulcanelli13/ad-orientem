@@ -148,6 +148,20 @@ try{
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,"320px Confession overflows document");
  assert.equal((await state()).overflow,"auto");
  await page.screenshot({path:resolve(captures,"after-confession-320.png"),animations:"disabled"});
+ // Match the shortest supported phone as well as the roomy 320x720 case.
+ // Confession must not regress to horizontal overflow or trapped focus.
+ await page.setViewportSize({width:320,height:568});
+ const compact=await page.evaluate(()=>{
+  const root=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader");
+  const current=root?.querySelector(".aoDevoParagraph[data-ao-devo-active='true']");
+  const sc=root?.querySelector(".aoDevoCardScroll");
+  return {overflow:document.documentElement.scrollWidth-innerWidth,
+   hasFocus:!!current,scrollClient:sc?.clientHeight||0,scrollHeight:sc?.scrollHeight||0};
+ });
+ assert.ok(compact.overflow<=1,"Confession overflows 320x568: "+JSON.stringify(compact));
+ assert.ok(compact.hasFocus,"Confession loses active paragraph on 320x568");
+ assert.ok(compact.scrollClient>0,"Confession reading region collapsed on 320x568");
+ await page.screenshot({path:resolve(captures,"after-confession-320x568.png"),animations:"disabled"});
  // Restart clears session-local path; never save, mark, type or check off sins.
  await open();
  assert.equal(await page.locator(sel+" [data-p435930-conf-path][aria-pressed='true']").count(),0);
