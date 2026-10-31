@@ -18,7 +18,7 @@ export const CLAUDE_ALTAR_CARD_CSS=String.raw`
 /* Claude has ONE stage navigation: the Roman I–VII margin. Keep the underlying
    source-owned timeline mounted for focus/progress events, but do not show a
    redundant horizontal strip or expose duplicate navigation to assistive tech. */
-#aoPray435930 [data-ao-rite-owner="benediction"] .aoDevoSequenceTimeline{
+#aoPray435930 [data-ao-rite-owner="benediction"][data-ao-ben-extended="false"] .aoDevoSequenceTimeline{
  display:none!important;
 }
 #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeRiteLayout{
