@@ -44,6 +44,11 @@ export function userApprovedMassGestureArt({cueId=null,matrixAction=null,priestA
 }
 export function resolveUserApprovedMassGestureArt(key,baseResolver){
  const name=String(key??"");
+ // Block direct-key callers too: withholding a cue binding alone is not
+ // sufficient if an old saved icon key is passed straight to the resolver.
+ if(name==="ao_1962_priest_c0169" ||
+    Object.keys(USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS)
+      .some(cue=>CUES[cue]===name))return null;
  if(Object.prototype.hasOwnProperty.call(USER_APPROVED_MASS_GESTURE_ASSETS,name))
    return USER_APPROVED_MASS_GESTURE_ASSETS[name];
  return typeof baseResolver==="function" ? baseResolver(name) : null;
