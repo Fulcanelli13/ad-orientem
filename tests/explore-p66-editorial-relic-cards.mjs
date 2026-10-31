@@ -119,6 +119,20 @@ assert.ok(paray.sacred_treasures.some(x=>x.id==="relic:FR:margaret-mary-paray"))
 assert.ok(paray.site_customs.some(x=>x.id==="DOM-006"));
 const parayHtml=render(paray.place_id);
 assert.ok(parayHtml.includes("aoExploreEditorialOpening"));
+
+// The published guide supplies the same original paragraph used as the opening.
+// Preserve it once, not twice on the same expanded Place page.
+const encodeText=value=>String(value).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+})[c]);
+const openingEnglish=encodeText(paray.editorial_intro.introduction.en);
+assert.equal(parayHtml.split(openingEnglish).length-1,1,
+  "The shared sourced sanctuary opening must not repeat inside the full guide");
+const frenchOnce=render(paray.place_id,"fr");
+const openingFrench=encodeText(paray.editorial_intro.introduction.fr);
+assert.equal(frenchOnce.split(openingFrench).length-1,1,
+  "French must not duplicate the original source paragraph either");
+
 assert.ok(parayHtml.includes("aoExplorePlaceCustoms"));
 assert.ok(parayHtml.includes("Family consecration"));
 assert.ok(parayHtml.includes('data-explore-place-jump="treasures"'));
