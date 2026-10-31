@@ -242,13 +242,19 @@ def verify_and_stage(tasks,out_dir,*,apply=False,metadata_loader=None,downloader
  return report
 
 def frozen_original_schedule(covers,gallery):
- """Keep b1/b2/... slices aligned to the original user export and 40-cover baseline.
+ """Keep b1/b2/... slices aligned to the original 40-cover review baseline.
 
- Existing independently approved covers must never be overwritten; only remove
- photo-Finder-produced items from the snapshot used for indexing.
+ Later releases must not shift the frozen editorial search windows. They are
+ filtered only from *scheduling*, never from actual approved publication;
+ already_released() still consults all current covers before acquisition.
  """
+ later_cover_sources={
+    "PHOTO_FINDER_2026-10-30_R1",
+    "APPROVED_GALLERY_COVER_REUSE_20261031",
+    "COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE",
+ }
  base_covers={**covers,"items":[i for i in covers["items"]
-   if i.get("source_place_ref")!="PHOTO_FINDER_2026-10-30_R1"]}
+   if i.get("source_place_ref") not in later_cover_sources]}
  base_gallery={**gallery,"items":[i for i in gallery["items"]
    if not (str(i.get("media_id") or "").startswith("pf-")
      and "Photo Finder editorial selection" in str(i.get("review_method") or ""))]}
