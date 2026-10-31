@@ -1424,7 +1424,19 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    // Preserve the historical closing prayer as a separate nonvisual art identity.
    const appendix=m.querySelector('.aoP435930SevenClosing');
    if(appendix)stampArtworkRuntimeIdentity(appendix,{owner:'presentation',view:'sevenWords',section:'historicalConclusion'});
-  }stampPrayerArtworkDomEvidence(m);lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
+  }stampPrayerArtworkDomEvidence(m);if(view==='angelus'){
+   // Per-utterance semantic identity: date/time contextual slots are not
+   // automatically assigned to dynamic Angelus prayer cards.
+   const form=angelusChoice().form;
+   let precedingInvocation=null;
+   m.querySelectorAll('.aoP435930PrayerUnit').forEach((unit,i)=>{
+    const type=unit.dataset.aoAngelusUnit||'';
+    const latinText=unit.querySelector('[data-face-la]')?.textContent||'';
+    const identity=stampArtworkRuntimeIdentity(unit,{owner:'angelusUnit',form,type,latinText,unitIndex:i,previousSlot:precedingInvocation});
+    if(type==='vr'&&identity.fit==='EXACT_LATIN_INVOCATION_STAGE')precedingInvocation=identity.slot;
+    stampPrayerArtworkDomEvidence(unit);
+   });
+  }lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
 function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
