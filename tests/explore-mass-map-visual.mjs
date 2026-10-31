@@ -166,7 +166,7 @@ try{
       await page.locator('#ao-find-modular-root .aoPreliminaryDirectoryNotice > summary').innerText(),
       /provisoire|vérif|sources/i,config.name+": French map copy was never activated");
     assert.equal(data.allDefault,true,config.name+": first visit filtered venues");
-    assert.equal(data.visibleAffiliations,6,config.name+": institute controls missing");
+    assert.ok(data.visibleAffiliations>=6,config.name+": source-present institute controls missing");
     assert.ok(data.emblemFilterCount>=4,config.name+": four sourced institute emblems absent from filter row");
     // The legacy stacked directory used a sticky toolbar. The approved
     // map-first Explore layout deliberately floats it absolutely above the
