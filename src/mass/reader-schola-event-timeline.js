@@ -121,7 +121,7 @@ function optionalMusicWindowForEvent(spec,cards){
 // Only trust the explicit source-first Canon provenance, never the title.
 const sourceId=card=>String(
   card?.provenance?.liveStructure==="SOURCE_FIRST_CANON" &&
-  /^AO\\.CANON\\.(?:0[1-9]|1[0-4])$/.test(String(card?.provenance?.canonSegmentId??""))
+  /^AO\.CANON\.(?:0[1-9]|1[0-4])$/.test(String(card?.provenance?.canonSegmentId??""))
     ?card.provenance.canonSegmentId
     :card?.sourceSectionId??card?.sectionId??""
 );
