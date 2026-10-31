@@ -1,0 +1,21 @@
+name: Sacred Art Class I-II Multiwork Research Guard
+on:
+  pull_request:
+    paths:
+      - "data/calendar/sacred-art-2026-class-i-ii-multiwork-crosswalk.v1.json"
+      - "src/home/sacred-art-visit-rotation.js"
+      - "tests/sacred-art-class-i-ii-multiwork-rotation.mjs"
+      - ".github/workflows/ao-sacred-art-class-i-ii-multiwork.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-mapping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/sacred-art-class-i-ii-multiwork-rotation.mjs
