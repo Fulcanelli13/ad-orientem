@@ -41,13 +41,17 @@ const GROUPS=Object.freeze({
     after:[{cue:90},{cue:94},{cue:98}],
   }),
   "AO.CARD.010":Object.freeze({
-    titles:["Offertory · Invitation and Antiphon",
-      "Offertory · Offering of the Bread",
+    // The Offertory antiphon C0109 is the first default Sung sitting cue,
+    // after the standing Dominus vobiscum/Oremus C0106-C0108. Start a new
+    // prayer card THERE, not after the antiphon: no extra cards or source
+    // movements, and the current posture icon changes with the card.
+    titles:["Offertory · Invitation and Oremus",
+      "Offertory · Antiphon and Offering of the Bread",
        "Offertory · Preparing and Offering the Chalice",
       "Offertory · Humility and Invocation",
       "Offertory · Incensation",
       "Offertory · Lavabo and Offering to the Trinity"],
-    after:[{block:"B030"},{block:"B031"},{block:"B033"},{block:"B035"},{block:"B036"}],
+    after:[{block:"B029"},{block:"B031"},{block:"B033"},{block:"B035"},{block:"B036"}],
   }),
   "AO.CARD.011":Object.freeze({
     titles:["Orate, fratres · Prayer and Response",
