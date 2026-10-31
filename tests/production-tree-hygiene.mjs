@@ -62,6 +62,21 @@ for(const name of workflows){
       name+" review-branch promotion requires explicit contents: write");
     assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
       name+" must push only back to the triggering review branch");
+  }else if([
+    "sacred-atlas-commons-batch.yml",
+    "sacred-atlas-commons-autoselect.yml",
+    "sacred-atlas-site-cover-batch.yml"
+  ].includes(name)){
+    // Source research only. These metadata collectors cannot approve images,
+    // change app assets, write to main, or escape the one pinned research branch.
+    assert.match(source,/branches:\s*\n\s*-\s*research\/explore-precise-sacred-subject-photo-search-20261031/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/);
+    assert.match(source,/git add data\/geography\/research\/sacred-atlas-/);
+    assert.match(source,/git push origin HEAD:research\/explore-precise-sacred-subject-photo-search-20261031/);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery|assets\/approved/);
+    assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
   }else if(name==="directory-open-photo-discovery-batch.yml"){
     // Only this explicitly dispatched *metadata-only* collector may write one
     // fixed research branch. Never allow research-batch automation to push main,
