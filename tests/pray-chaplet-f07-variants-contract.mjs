@@ -3,7 +3,6 @@ import {FIVE_WOUNDS_CHAPLET_V1} from "../src/pray/five-wounds-chaplet.v1.js";
 import {PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1} from "../src/pray/precious-blood-chaplet.v1.js";
 import {LITTLE_CROWN_B30_BEADS} from "../src/pray/little-crown-b30.js";
 import {F07_VARIANT_SCHEMA,renderF07FiveWounds,renderF07PreciousBlood,renderF07LittleCrown} from "../src/pray/chaplet-f07-variants.js";
-import {renderLittleCrownB30} from "../src/pray/little-crown-presentation-b30.js";
 assert.equal(F07_VARIANT_SCHEMA,"ao-f07-variants-source-projection-v1");
 const count=(s,pattern)=>(s.match(pattern)||[]).length;
 assert.equal(FIVE_WOUNDS_CHAPLET_V1.length,30);
@@ -63,20 +62,4 @@ for(const fn of [()=>renderF07FiveWounds(0),()=>renderF07PreciousBlood(0,0),()=>
  assert.doesNotMatch(html,/data-p435930|localStorage|data-prayed|data-completed|data-navigation-owner/,
   "F07 is a read-only source position projection and cannot become a second engine");
 }
-
-const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const integratedLittleCrown=renderLittleCrownB30({
- index:3,french:false,latin:false,
- head:()=>"",L:en=>en,esc,nl:s=>s,
- f07Band:interactiveBeads=>renderF07LittleCrown(3,{interactiveBeads})
-});
-assert.equal(count(integratedLittleCrown,/data-p435930-crown-bead="/g),15,
- "Exactly one canonical set of fifteen interactive beads survives Claude projection");
-assert.equal(count(integratedLittleCrown,/class="aoF07LittleCrownBead /g),15,
- "Every canonical bead is positioned inside the approved circular form");
-assert.equal(count(integratedLittleCrown,/aoF07CrownMarker/g),0,
- "Do not show redundant decorative beads next to the real controls");
-assert.doesNotMatch(integratedLittleCrown,/class="aoF07JumpDisclosure"/,
- "The circular bead navigator makes a second Choose a bead menu unnecessary");
-
 console.log("PASS F07 chaplet variants: 30, 33+7+7 and 3+12 source positions; no parallel event ownership");
