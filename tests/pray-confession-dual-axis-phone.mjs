@@ -117,12 +117,18 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-conf-prev]").count(),0);
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),1);
  await page.locator(sel+" [data-p435930-conf-next]").tap();
- st=await state();assert.equal(st.stage,2);assert.equal(st.stops,3);assert.equal(st.id,"at-priest");
+ st=await state();assert.equal(st.stage,2);assert.equal(st.stops,9);assert.equal(st.id,"at-priest");
  assert.match(await page.locator(sel+" .aoDevoCardScroll").innerText(),/phone away/i);
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),0,
   "Before entering rehearsal starts as a swipe-only card");
- await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  assert.equal((await state()).id,"contrition-penance");
+ assert.equal(await page.locator(sel+" [data-ao-confession-act]").count(),1);
+ await page.locator(timeline+" [data-ao-devo-chapter='7']").tap();
+ assert.equal((await state()).id,"priest-absolution");
+ assert.equal(await page.locator(sel+" [data-ao-confession-latin-excerpt='priest-only']").count(),1);
+ await page.locator(timeline+" [data-ao-devo-chapter='8']").tap();
+ assert.equal((await state()).id,"leave-confessional");
  await page.locator(sel+" [data-p435930-conf-next]").tap();
  st=await state();assert.equal(st.stage,3);assert.equal(st.stops,3);assert.equal(st.id,"thanksgiving");
  await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
@@ -153,6 +159,6 @@ try{
   await open();
  }
  assert.deepEqual(errors,[],"Browser errors: "+errors.join(" | "));
- console.log("PASS 390/320px Confession: 5/13/14 source examination steps, 3+3 rite/after, local gestures, consent and session privacy");
+ console.log("PASS 390/320px Confession: 5/13/14 source examination steps, 9+3 rite/after, local gestures, consent and session privacy");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done));}
