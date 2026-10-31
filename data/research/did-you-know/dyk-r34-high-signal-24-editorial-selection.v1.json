@@ -1,0 +1,388 @@
+{
+  "schema": "AO_DYK_R34_HIGH_SIGNAL_24_REVIEW_SELECTION_V1",
+  "date": "2026-10-31",
+  "status": "EDITORIAL_SELECTION_NOT_LIVE",
+  "owner_pr": 2096,
+  "purpose": "Select high-signal existing bilingual source-backed discoveries for focused review, beginning with the November 2 All Souls/Requiem pilot. No new facts, source research, or publication approvals.",
+  "canonical_review_packs": [
+    {
+      "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+      "sha": "fbacb2e6067eaed66496267a4448570f7a68242b"
+    },
+    {
+      "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+      "sha": "0b8054979b385a73422e9c577509c03d5be23314"
+    }
+  ],
+  "prior_Pitre_witness": {
+    "path": "data/research/did-you-know/dyk-r33-recover-existing-49-pitre-witnesses-and-close-false-research-queue.v1.json",
+    "sha": "443b22c7389173ffeeded96b661cec9c40396187"
+  },
+  "private_612_bank": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028 (separate unpublished preview; not additive)",
+  "lanes": [
+    {
+      "id": "all-souls-november-2",
+      "rank": 1,
+      "selected": 7,
+      "review_note": "November 2 pilot priority; preserve localized historical scope and distinguish popular devotion from the liturgical rite"
+    },
+    {
+      "id": "advent-christmas",
+      "rank": 2,
+      "selected": 6,
+      "review_note": "High-visual-interest Advent/Christmas customs; do not generalize beyond places and historical periods"
+    },
+    {
+      "id": "roman-canon",
+      "rank": 3,
+      "selected": 3,
+      "review_note": "Action-specific 1962 Mass facts, never replace the distinct liturgical moments or claim an unverified LIVE jump"
+    },
+    {
+      "id": "regional-customs",
+      "rank": 4,
+      "selected": 5,
+      "review_note": "Unusual historical details with recovered original Pitrè folio witnesses; not current customs or universal rites"
+    },
+    {
+      "id": "seasonal-extra",
+      "rank": 5,
+      "selected": 3,
+      "review_note": "Visual seasonal discoveries; historical descriptions only, not prescriptions for current practice"
+    }
+  ],
+  "counts": {
+    "review_selected": 24,
+    "all_souls_pilot": 7,
+    "advent_christmas": 6,
+    "roman_canon": 3,
+    "regional_customs": 5,
+    "seasonal_extra": 3,
+    "original_189_review_count": 189,
+    "source_first_master_candidates": 1001,
+    "existing_private_preview": 612,
+    "independently_signed_off": 0,
+    "published_from_selection": 0
+  },
+  "review_gates": [
+    "Independent English and French accuracy and factual curiosity signoff",
+    "Maintain localized historical qualifiers and precise original citation folios",
+    "Semantic novelty check against 612 private previews and 189 review drafts",
+    "Use actual functioning Calendar/Customs/Glossary/Mass routes, no invented deep links",
+    "November 2 reader/browser phone acceptance and source link verification"
+  ],
+  "records": [
+    {
+      "id": "DYK-UM02-014",
+      "lane": "all-souls-november-2",
+      "rank_within_lane": 1,
+      "source_family": "WEISER_1958",
+      "source_id": "BULK150-032",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM03-009",
+      "lane": "all-souls-november-2",
+      "rank_within_lane": 2,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-26-020",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-133",
+      "lane": "all-souls-november-2",
+      "rank_within_lane": 3,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-26-013",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM03-012",
+      "lane": "all-souls-november-2",
+      "rank_within_lane": 4,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-26-026",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-147",
+      "lane": "all-souls-november-2",
+      "rank_within_lane": 5,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-26-028",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM01-018",
+      "lane": "all-souls-november-2",
+      "rank_within_lane": 6,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-26-027",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-047",
+      "lane": "all-souls-november-2",
+      "rank_within_lane": 7,
+      "source_family": "ROMAN_MASS_1962",
+      "source_id": "AO.CANON.R62.047",
+      "source_check_tier": "ROMAN_MASS_SOURCE_REVIEW_RECORDED",
+      "original_review_pack": "dyk-r22-21-added-review-cards.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM01-003",
+      "lane": "advent-christmas",
+      "rank_within_lane": 1,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-05-008",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM01-004",
+      "lane": "advent-christmas",
+      "rank_within_lane": 2,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-05-010",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM01-001",
+      "lane": "advent-christmas",
+      "rank_within_lane": 3,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-09-001",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-035",
+      "lane": "advent-christmas",
+      "rank_within_lane": 4,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-06-013",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-051",
+      "lane": "advent-christmas",
+      "rank_within_lane": 5,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-08-010",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM02-007",
+      "lane": "advent-christmas",
+      "rank_within_lane": 6,
+      "source_family": "WEISER_1958",
+      "source_id": "BULK150-024",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-021",
+      "lane": "roman-canon",
+      "rank_within_lane": 1,
+      "source_family": "ROMAN_MASS_1962",
+      "source_id": "AO.CANON.R62.021",
+      "source_check_tier": "ROMAN_MASS_SOURCE_REVIEW_RECORDED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-058",
+      "lane": "roman-canon",
+      "rank_within_lane": 2,
+      "source_family": "ROMAN_MASS_1962",
+      "source_id": "AO.CANON.R62.058",
+      "source_check_tier": "ROMAN_MASS_SOURCE_REVIEW_RECORDED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-022",
+      "lane": "roman-canon",
+      "rank_within_lane": 3,
+      "source_family": "ROMAN_MASS_1962",
+      "source_id": "AO.CANON.R62.022",
+      "source_check_tier": "ROMAN_MASS_SOURCE_REVIEW_RECORDED",
+      "original_review_pack": "dyk-r22-21-added-review-cards.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM02-028",
+      "lane": "regional-customs",
+      "rank_within_lane": 1,
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-018",
+      "source_check_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM02-036",
+      "lane": "regional-customs",
+      "rank_within_lane": 2,
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-054",
+      "source_check_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM02-048",
+      "lane": "regional-customs",
+      "rank_within_lane": 3,
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-095",
+      "source_check_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM03-048",
+      "lane": "regional-customs",
+      "rank_within_lane": 4,
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-NEW-111",
+      "source_check_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM01-021",
+      "lane": "regional-customs",
+      "rank_within_lane": 5,
+      "source_family": "PITRE_1900",
+      "source_id": "PIT1900-IT-008",
+      "source_check_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-UM03-023",
+      "lane": "seasonal-extra",
+      "rank_within_lane": 1,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-19-014",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-004",
+      "lane": "seasonal-extra",
+      "rank_within_lane": 2,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-15-008",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-018",
+      "lane": "seasonal-extra",
+      "rank_within_lane": 3,
+      "source_family": "WEISER_1958",
+      "source_id": "WEI58-15-037",
+      "source_check_tier": "WEISER_ORIGINAL_PAGE_REVIEWED",
+      "original_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+      "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
+      "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
+      "editorial_approval": false,
+      "release_authorized": false
+    }
+  ]
+}
