@@ -8,8 +8,24 @@ const providers={
   sspx:{minVenues:100},
 };
 
+// Default remains the strict four-provider quality gate. A workflow may
+// explicitly validate a smaller, accurately labelled acquisition artifact;
+// unselected providers are NOT assumed acquired or certified.
+const args=process.argv.slice(2);
+const providerArgs=args.filter(arg=>arg.startsWith("--providers="));
+if(providerArgs.length>1 || args.some(arg=>!arg.startsWith("--providers="))){
+  console.error("Usage: validate-runtime-snapshots.mjs [--providers=fssp,icksp,ibp,sspx]");
+  process.exit(2);
+}
+const names=providerArgs.length ? providerArgs[0].slice("--providers=".length).split(",") : Object.keys(providers);
+if(!names.length || names.some(name=>!Object.hasOwn(providers,name)) || new Set(names).size!==names.length){
+  console.error("Invalid providers: "+names.join(","));
+  process.exit(2);
+}
+
 let failed=false;
-for(const [provider,rule] of Object.entries(providers)){
+for(const provider of names){
+  const rule=providers[provider];
   const base=path.resolve("data/directory/generated",provider);
   const report=JSON.parse(fs.readFileSync(path.join(base,"import-report.v1.json"),"utf8"));
   const issues=JSON.parse(fs.readFileSync(path.join(base,"validation-issues.v1.json"),"utf8")).issues??[];
@@ -30,4 +46,4 @@ for(const [provider,rule] of Object.entries(providers)){
   }
 }
 if(failed)process.exitCode=1;
-else console.log("Directory runtime snapshot quality: PASS");
+else console.log("Directory runtime snapshot quality ("+names.join(", ")+"): PASS");
