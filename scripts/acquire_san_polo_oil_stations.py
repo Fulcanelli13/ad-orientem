@@ -59,15 +59,32 @@ def main():
             raise RuntimeError(f"Unanticipated file licence {key}: {license!r}")
         if not license_url.startswith("https://creativecommons.org/licenses/by-sa/"):
             raise RuntimeError("Unexpected licence URL for file "+key+": "+license_url)
-        photo=fetch(info["url"])
+        # Wikimedia shared-runner IPs can be 429-throttled. Use an independent
+        # caching/resize origin to make ONE responsible request per source.
+        # The license remains the uploader's CC BY-SA; a proxy does not grant rights.
+        original_url=info["url"].split("?")[0]
+        image_source="WIKIMEDIA_DIRECT"
+        try:
+            photo=fetch(original_url,n=1)
+        except RuntimeError as exc:
+            print(f"Direct file throttled for {record['roman']}: {str(exc)[:130]}; using free cached source derivative",flush=True)
+            proxy="https://wsrv.nl/?" + urllib.parse.urlencode({
+                "url":original_url,"w":2400,"output":"webp","q":87,
+            })
+            photo=fetch(proxy,n=3)
+            image_source="WESERV_CACHED_RESEARCH_DERIVATIVE"
         digest=hashlib.sha256(photo).hexdigest()
         if digest in seen: raise RuntimeError("Duplicate oil photo bytes")
         seen.add(digest)
         with Image.open(io.BytesIO(photo)) as im:
             width,height=im.size
-            if abs(width-record["originalDimensions"][0])>4 or abs(height-record["originalDimensions"][1])>4:
-                raise RuntimeError(f"Image dimensions changed for {record['roman']}: {im.size}")
-            if width<3000 or height<3000: raise RuntimeError("Low-resolution oil photograph")
+            native_width,native_height=info["width"],info["height"]
+            if abs(native_width-record["originalDimensions"][0])>4 or abs(native_height-record["originalDimensions"][1])>4:
+                raise RuntimeError(f"Commons source metadata changed for {record['roman']}: {(native_width,native_height)}")
+            if image_source=="WIKIMEDIA_DIRECT" and (width<3000 or height<3000):
+                raise RuntimeError("Low-resolution original oil photograph")
+            if image_source!="WIKIMEDIA_DIRECT" and max(width,height)<2000:
+                raise RuntimeError("Insufficient cached museum photo derivative quality")
             canvas=ImageOps.exif_transpose(im).convert("RGB")
             canvas.thumbnail((2400,2400),Image.Resampling.LANCZOS)
             buf=io.BytesIO()
@@ -78,7 +95,11 @@ def main():
                 "station":record["station"],"roman":record["roman"],"subject":record["subject"],
                 "file":record["targetPath"],"sourceTitle":record["commonsTitle"],
                 "sourcePage":record["commonsPage"],"sourceDownloadURL":info["url"],
-                "originalSHA256":digest,"originalCommonsSHA1":info.get("sha1"),
+                "originalSHA256":digest if image_source=="WIKIMEDIA_DIRECT" else None,
+                "originalCommonsSHA1":info.get("sha1"),
+                "receivedMediaSHA256":digest,
+                "retrieval":image_source,
+                "sourceOriginalDimensionsFromCommons":[native_width,native_height],
                 "sourceBytes":len(photo),"sourceDimensions":[width,height],
                 "derivativeSHA256":hashlib.sha256(pixels).hexdigest(),
                 "derivativeBytes":len(pixels),"derivativeDimensions":list(canvas.size),
