@@ -61,6 +61,13 @@ try{
     },id);
     assert.equal(await article.locator("a[data-dyk-original-source]").getAttribute("href"),expectedSource,
       "Each fact should link to its exact source PDF page");
+    const extra=article.locator("a[data-dyk-second-source]");
+    if(id==="DYK-M04-CANON-047"){
+      assert.ok(expectedSource.endsWith("#page=13"),"Living Canon citation should open VIII.3");
+      assert.equal(await extra.count(),1);
+      assert.ok((await extra.getAttribute("href")).endsWith("#page=16"),
+        "Departed Canon citation should open IX.2");
+    }else assert.equal(await extra.count(),0);
     assert.ok((await article.locator(".aoDykSourceMeta").innerText()).includes(" · "));
     const bounds=await article.evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,width:innerWidth};});
     assert.ok(bounds.left>=-1&&bounds.right<=bounds.width+1,"Overflow "+JSON.stringify({width,language,id,bounds}));

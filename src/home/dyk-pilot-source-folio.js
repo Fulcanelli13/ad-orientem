@@ -22,7 +22,7 @@ export function dykPilotSourceFolioModel(selection,id,language="en"){
      !["HISTORICAL_WEISER","ROMAN_RITUS"].includes(s.type))return null;
   const mass=s.type==="ROMAN_RITUS";
   if(mass){
-    if(!/^[IVX]+\.\d+$/.test(clean(s.ritus_locator)))return null;
+    if(!/^[IVX]+\.\d+(; [IVX]+\.\d+)*$/.test(clean(s.ritus_locator)))return null;
   }else{
     if(!Array.isArray(s.printed_pages)||!s.printed_pages.length||
        !s.printed_pages.every(Number.isInteger)||
@@ -32,7 +32,7 @@ export function dykPilotSourceFolioModel(selection,id,language="en"){
   if(!Array.isArray(s.pdf_pages_1based)||!s.pdf_pages_1based.length||
      !s.pdf_pages_1based.every(x=>Number.isInteger(x)&&x>=1&&x<=5000))return null;
   const fr=language==="fr";
-  const location=mass?"Ritus servandus, § "+s.ritus_locator:
+  const location=mass?"Ritus servandus, §§ "+s.ritus_locator:
     tr(fr,"Printed p. ","Page imprimée ")+s.printed_pages.join(", ")+
     tr(fr," · Source PDF p. "," · PDF p. ")+s.pdf_pages_1based.join(", ");
   return Object.freeze({
@@ -40,6 +40,8 @@ export function dykPilotSourceFolioModel(selection,id,language="en"){
     sourceTitle:s.title?.[fr?"fr":"en"]||"",sourceUrl:s.url,
     sourcePageUrl:s.url+"#page="+s.pdf_pages_1based[0],
     sourcePage:s.pdf_pages_1based[0],
+    secondarySourcePageUrl:mass&&s.pdf_pages_1based.length===2?s.url+"#page="+s.pdf_pages_1based[1]:null,
+    secondarySourcePage:mass&&s.pdf_pages_1based.length===2?s.pdf_pages_1based[1]:null,
     sourceId:row.source_id,sourceLocation:location,
     scope:c.scope,sourceType:s.type,
     reviewOnly:true,readOnly:true,linkedToR34:true
@@ -62,7 +64,11 @@ export function dykPilotSourceFolioMarkup(model){
      !safeUrl(model.sourcePageUrl)||
      !model.sourcePageUrl.startsWith(model.sourceUrl+"#page=")||
      !Number.isInteger(model.sourcePage)||model.sourcePage<1||model.sourcePage>5000||
-     model.sourcePageUrl!==model.sourceUrl+"#page="+model.sourcePage)return "";
+     model.sourcePageUrl!==model.sourceUrl+"#page="+model.sourcePage||
+     (model.secondarySourcePageUrl!==null&&model.secondarySourcePageUrl!==undefined&&
+      (!Number.isInteger(model.secondarySourcePage)||model.secondarySourcePage<1||
+       model.secondarySourcePage>5000||
+       model.secondarySourcePageUrl!==model.sourceUrl+"#page="+model.secondarySourcePage)))return "";
   const fr=model.language==="fr";
   return '<style>'+CSS+'</style>'+
     '<div class="aoDykSourceShade" data-dyk-source-shade>'+
@@ -76,7 +82,12 @@ export function dykPilotSourceFolioMarkup(model){
     '<p>'+esc(model.sourceTitle)+'</p>'+
     '<p class="aoDykSourceMeta">'+esc(model.sourceLocation)+' · '+esc(model.sourceId)+'</p>'+
     '<p><a href="'+esc(model.sourcePageUrl)+'" target="_blank" rel="noopener noreferrer" data-dyk-original-source>'+
-    esc(tr(fr,"Consult original source","Consulter la source originale"))+'</a></p>'+
+    esc(model.secondarySourcePageUrl?
+      tr(fr,"Living · VIII.3 (PDF p. 13)","Vivants · VIII.3 (PDF p. 13)"):
+      tr(fr,"Consult original source","Consulter la source originale"))+'</a></p>'+
+    (model.secondarySourcePageUrl?'<p><a href="'+esc(model.secondarySourcePageUrl)+
+      '" target="_blank" rel="noopener noreferrer" data-dyk-second-source>'+
+      esc(tr(fr,"Departed · IX.2 (PDF p. 16)","Défunts · IX.2 (PDF p. 16)"))+'</a></p>':"")+
     '<p class="aoDykSourceScope">'+esc(tr(fr,
       "Historical or liturgical source context only; not proof of a current or universal custom. The external source link is pending browser verification.",
       "Contexte historique ou liturgique seulement ; ne prouve pas un usage actuel ou universel. Le lien externe reste à vérifier dans le navigateur."))+
@@ -107,6 +118,7 @@ export function createDykPilotSourceFolioOwner(win=globalThis,{loadSelection}={}
     const shade=node.querySelector?.("[data-dyk-source-shade]");
     const button=node.querySelector?.("[data-dyk-source-close]");
     const link=node.querySelector?.("[data-dyk-original-source]");
+    const lastLink=node.querySelector?.("[data-dyk-second-source]")||link;
     if(!shade||!button||!link)return false;
     node.addEventListener?.("click",e=>{
       if(e.target===shade||e.target?.closest?.("[data-dyk-source-close]"))close();
@@ -114,8 +126,8 @@ export function createDykPilotSourceFolioOwner(win=globalThis,{loadSelection}={}
     node.addEventListener?.("keydown",e=>{
       if(e.key==="Escape"){e.preventDefault?.();close();return}
       if(e.key!=="Tab")return;
-      if(e.shiftKey&&win.document.activeElement===button){e.preventDefault?.();link.focus?.()}
-      else if(!e.shiftKey&&win.document.activeElement===link){e.preventDefault?.();button.focus?.()}
+      if(e.shiftKey&&win.document.activeElement===button){e.preventDefault?.();lastLink.focus?.()}
+      else if(!e.shiftKey&&win.document.activeElement===lastLink){e.preventDefault?.();button.focus?.()}
     });
     win.document.body.appendChild(node);
     overlay=node;opener=trigger;
