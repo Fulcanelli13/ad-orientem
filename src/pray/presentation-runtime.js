@@ -653,7 +653,7 @@ function prayerBlock(id,opts={}){
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
- if(CHOIR_SOURCE_IDS.includes(id)&&!opts.record){
+ if(CHOIR_SOURCE_IDS.includes(id)&&!opts.record&&(view==='library'||view==='prayerOnly')){
   // The v5.1 family routes share ONE display contract while maintaining
   // source-owned song, psalm, antiphon and litany identities.
   const primary=p[lang()]?lang():p.en?'en':p.la?'la':null;
