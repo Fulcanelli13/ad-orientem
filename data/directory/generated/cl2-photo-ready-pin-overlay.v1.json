@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 37,
+    "new_site_pins": 43,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -545,6 +545,72 @@
       "lng": 18.255326,
       "source_ref": "odtur:8550",
       "source_url": "https://odtur.pl/atrakcje/inowroclaw-kosciol-pw-opatrznosci-bozej-8550.html",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-1EE1D2C9B3EB",
+      "source_id": "AO-B39-LOC-HU-C9750B2A6BCA",
+      "name": "Karolina-kápolna",
+      "lat": 47.7752,
+      "lng": 19.13221,
+      "source_ref": "osm:way:297827179",
+      "source_url": "https://www.openstreetmap.org/way/297827179",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-DE5F8ED4E2F7",
+      "source_id": "AO-B39-LOC-PL-4B4A686B30D2",
+      "name": "Kościół Matki Bożej Bolesnej",
+      "lat": 50.09753,
+      "lng": 18.54209,
+      "source_ref": "osm:way:236882053",
+      "source_url": "https://www.openstreetmap.org/way/236882053",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-322AA8195E65",
+      "source_id": "AO-B39-LOC-PL-A28D536BB19E",
+      "name": "Kościół Świętego Jerzego",
+      "lat": 52.53739,
+      "lng": 17.5931,
+      "source_ref": "osm:way:75000179",
+      "source_url": "https://www.openstreetmap.org/way/75000179",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-C7F25752659D",
+      "source_id": "AO-B38-LOC-NL-19A47E978C1",
+      "name": "Sint Josephkerk",
+      "lat": 52.38331,
+      "lng": 4.63887,
+      "source_ref": "osm:way:265313243",
+      "source_url": "https://www.openstreetmap.org/way/265313243",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-4D09923C6B74",
+      "source_id": "AO-B39-LOC-IT-76322D1DA1C9",
+      "name": "Chiesa del Gesù",
+      "lat": 40.69399,
+      "lng": 14.47883,
+      "source_ref": "osm:way:734893276",
+      "source_url": "https://www.openstreetmap.org/way/734893276",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-8DC436A75526",
+      "source_id": "AO-B39-LOC-PL-CD2D71CC49A0",
+      "name": "Kościół Świętych Jana i Pawła Męczenników",
+      "lat": 50.270021,
+      "lng": 18.996568,
+      "source_ref": "odtur:12019",
+      "source_url": "https://odtur.pl/atrakcje/katowice-kosciol-pw-ss-jana-i-pawla-meczennikow-w-katowicach-12019.html",
       "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
       "place_id": null
     }
