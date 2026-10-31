@@ -570,6 +570,22 @@ const STYLES=`
  font-size:11px!important;color:var(--muted,#aaa394)!important;
  text-decoration:underline;text-underline-offset:3px;
 }
+
+/* F07 Five Wounds: four distinct header cells at phone widths. The default
+   three-cell header placed EN/FR and Home on top of each other. */
+@media(max-width:430px){
+ #aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head{
+  grid-template-columns:44px minmax(0,1fr) 44px 44px!important;
+  column-gap:5px!important;
+ }
+ #aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head>.aoP435930SessionLanguage{
+  grid-column:3;grid-row:1;position:static!important;
+  min-width:44px!important;width:44px!important;height:44px!important;
+ }
+ #aoPray435930:has(.aoFiveWounds[data-ao-f07-variant="five-wounds"]) .aoP435930Head>.aoP435930Home{
+  grid-column:4;grid-row:1;position:static!important;
+ }
+}
 `;
 export function installF07VariantStyles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-f07-variant-style"))return;
