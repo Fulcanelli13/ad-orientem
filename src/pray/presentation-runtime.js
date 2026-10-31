@@ -666,7 +666,7 @@ function prayerBlock(id,opts={}){
     '</small><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
     (availableLatin?'<button type="button" class="aoChoirLanguage" data-p435930-choir-flip aria-pressed="false" aria-label="'+esc(L('Read Latin original','Lire le texte latin'))+'">'+
      esc(isSong?L('Latin · chant','Latin · chant'):'Latin')+'</button>':'')+'</div>'+
-   '<div class="aoP435930Text aoChoirFaces">'+
+   '<div class="aoP435930Text aoChoirFaces" data-ao-pray-semantic="1">'+
     '<div data-face-v>'+face(primary)+'</div>'+
     (availableLatin?'<div data-face-la hidden>'+face('la')+'</div>':'')+'</div>'+
    originCapsule+sourceLine(p)+'</article>';
