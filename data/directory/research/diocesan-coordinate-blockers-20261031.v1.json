@@ -14,13 +14,15 @@
       "country": "PL",
       "site": "Dyrdy, ul. ks. Jana Antosza 1, Woźniki",
       "status": "HOLD_CHURCH_BUILDING_NOT_INDEPENDENTLY_GEOLOCATED",
-      "known_reference": "Papal oak alongside the church at 50.574894,18.985690",
+      "known_reference": "Dyrdy's filial St John Paul II church is at ul. ks. Jana Antosza 1. The source point 50.574894,18.985690 identifies the papal oak adjacent to the church—not a verified church footprint.",
       "not_acceptable_as_pin": "The adjacent papal oak is not the exact church building; the 1875 Marian chapel on Piaskowa is a different worship site",
       "evidence": [
         "https://odtur.pl/atrakcje/wozniki-dab-papieski-w-dyrdach-47183.html",
         "https://diecezja.gliwice.pl/parafia/430",
         "https://www.dyrdytrydencka.pl/",
-        "https://www.tradycja.org/index.php/dokumenty/mszeswiete"
+        "https://www.tradycja.org/index.php/dokumenty/mszeswiete",
+        "https://gliwice.gosc.pl/gal/pokaz/1944384.Kosciol-pw-bl-Jana-Pawla-II-w-Dyrdach/13",
+        "https://www.przymierzemilosci.pl/listamszy.html"
       ]
     },
     {
@@ -30,13 +32,20 @@
       "country": "BR",
       "site": "Avenida Adolfo Pinheiro 235, Santo Amaro, São Paulo, SP",
       "status": "HOLD_PRECISE_CHAPEL_GEO_NOT_CORROBORATED",
-      "known_reference": "Diocese and independent building history agree on street address; map point not yet source-certified",
+      "known_reference": "Diocesan parish, Waze and local history identify the chapel at Av. Adolfo Pinheiro 235. GeoNames identifies the Santa Casa hospital complex at -23.65022,-46.70524, but does not identify the chapel footprint.",
       "not_acceptable_as_pin": "Do not substitute the geographically separate diocesan parish at Rua Artur Nascimento Júnior 95, nor the metro station beside the chapel",
       "evidence": [
         "https://diocesedesantoamaro.org.br/paroquias-da-diocese-de-santo-amaro/paroquia-rainha-santa-isabel-de-portugal/",
         "https://www.descubrasampa.com.br/2021/04/capela-da-santa-casa-de-misericordia-de-santo-amaro.html",
-        "https://www.waze.com/live-map/directions/br/sp/capela-da-santa-casa-de-santo-amaro?to=place.ChIJ5WYP2BVRzpQRPVRu5ueHx4E"
-      ]
+        "https://www.waze.com/live-map/directions/br/sp/capela-da-santa-casa-de-santo-amaro?to=place.ChIJ5WYP2BVRzpQRPVRu5ueHx4E",
+        "https://mapcarta.com/32799932"
+      ],
+      "candidate_nearby_only": {
+        "lat": -23.65022,
+        "lng": -46.70524,
+        "feature": "Santa Casa hospital complex; NOT chapel pin",
+        "source": "https://mapcarta.com/32799932"
+      }
     },
     {
       "physical_group_id": "RG-615FF6835AAE",
@@ -45,11 +54,12 @@
       "country": "SK",
       "site": "Komenského, Poprad (unconfirmed)",
       "status": "HOLD_SOURCE_CITY_CONFLICT",
-      "known_reference": "LatinMassDirectory says Poprad and Komenského but attributes the venue to Trnava and links Farnosť Beckov",
+      "known_reference": "Source labels Kaplnka sv. Terézie z Lisieux on Komenského, Poprad, but the same entry claims Trnava diocese and links Beckov parish. No confirmed chapel building or street number; Komenského 5 in Poprad is a street address only, not corroborated as chapel.",
       "not_acceptable_as_pin": "Do not substitute different St Thérèse chapels in Vyšné Hágy, Hranovnica, Prievidza or other Slovak localities before identity reconciliation",
       "evidence": [
         "https://www.latinmassdir.org/venue/kaplnka-svatej-terezie-z-lisieux-poprad-slovakia/",
-        "https://farabeckov.sk/farske-oznamy/"
+        "https://farabeckov.sk/farske-oznamy/",
+        "https://poprad.oma.sk/u/komenskeho/5"
       ]
     },
     {
@@ -59,13 +69,27 @@
       "country": "PL",
       "site": "ul. Jaskółcza 35, Zabrze, Poland",
       "status": "HOLD_DISTINCT_CHAPEL_FOOTPRINT_NOT_IDENTIFIED",
-      "known_reference": "Parish Holy Cross church is separately listed at Jaskółcza 37; historical St Barbara chapel is associated with the parish site",
+      "known_reference": "The city/parish give Holy Cross church at Jaskółcza 37. Historic accounts and local church inventory identify Saint Barbara chapel on the same Jaskółcza 37 site; CL2's Jaskółcza 35 is probably stale or imprecise.",
       "not_acceptable_as_pin": "Do not substitute Holy Cross church's building pin or its Jaskółcza 37 postal coordinate for the Saint Barbara chapel",
       "evidence": [
         "https://www.tradycja.org/index.php/dokumenty/mszeswiete",
         "https://miastozabrze.pl/miasto/miasto/obiekty-sakralne/",
-        "https://www.dioblina.eu/Kosciol_Krzyza_Swietego_Zabrze"
-      ]
+        "https://www.dioblina.eu/Kosciol_Krzyza_Swietego_Zabrze",
+        "https://fotopolska.eu/Zabrze/b50576%2CKosciol_Swietego_Krzyza.html",
+        "https://wierni.net/msze/zabrze"
+      ],
+      "address_correction_candidate": "Jaskółcza 37, Zabrze — complex-level address, chapel footprint not independently determined",
+      "candidate_nearby_only": {
+        "lat": 50.28579,
+        "lng": 18.78274,
+        "feature": "Holy Cross church; NOT distinct St Barbara chapel pin",
+        "source": "https://www.dioblina.eu/Kosciol_Krzyza_Swietego_Zabrze"
+      }
     }
-  ]
+  ],
+  "integrity": {
+    "missing_pin_count": 4,
+    "never_promote_nearby_landmark_to_church_pin": true,
+    "photographic_search_blocked": true
+  }
 }
