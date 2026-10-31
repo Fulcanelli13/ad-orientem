@@ -150,6 +150,21 @@ export function buildOfflineNotationResearchPayload({
   targetEventId:handoff.eventId
  });
 }
+/** Standalone editorial-review bridge for the EXISTING Exsurge viewer from
+ * draft #2111. This deliberately requires an already instantiated viewer:
+ * no second renderer is imported or created. It should only be invoked from
+ * a separate editorial UI after an explicit reviewer click. The production
+ * reader never calls this research helper.
+ */
+export async function openOfflineResearchScoreInExistingViewer({
+ viewer,handoff,record,sourceScreen,editorialReview=false,trigger=null
+}={}){
+ const score=buildOfflineNotationResearchPayload({
+   handoff,record,sourceScreen,editorialReview
+ });
+ if(!score||typeof viewer?.open!=="function")return false;
+ return viewer.open(score,{trigger});
+}
 /** Always closed until user approvals and printed music verification exist.
  * The existing Kyriale research viewer is not a public publication route.
  */
