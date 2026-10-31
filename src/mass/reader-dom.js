@@ -1295,6 +1295,20 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action{
   display:block;margin:1px 0;
 }
+/* An exact approved source-gesture pictogram is the LIVE instruction.
+   Preserve the original published rubric as accessible text (and show it in
+   the red-ink MISSAL), but do not print a duplicate caption beside the icon.
+   Only tagged original-rubric artwork receives this treatment. */
+.ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[data-approved-inline-icon="true"]{
+  display:inline-flex;align-items:center;min-height:31px;
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[data-approved-inline-icon="true"]
+  .ao-approved-inline-rubric-copy{
+  position:absolute!important;width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;white-space:nowrap!important;
+  border:0!important;
+}
 /* Four exact, current-actor, current-subaction icons may replace their
    duplicate short line in LIVE only. The complete sourced rubric remains
    in MISSAL and the same source-linked node remains in the LIVE DOM. */
@@ -4782,7 +4796,17 @@ export function createReaderDomAdapter({
                   icon.setAttribute("aria-hidden","true");
                   icon.style.webkitMaskImage=`url("${art.imageUrl}")`;
                   icon.style.maskImage=`url("${art.imageUrl}")`;
-                  text.prepend(icon);
+                  // In LIVE the approved pictogram replaces the visible short
+                  // duplicate, never the underlying certified source rubric.
+                  // Missal continues to print the exact translated direction.
+                  const copy=doc.createElement("span");
+                  copy.className="ao-approved-inline-rubric-copy";
+                  copy.textContent=short;
+                  text.textContent="";
+                  text.dataset.approvedInlineIcon="true";
+                  text.setAttribute("aria-label",short);
+                  text.title=short;
+                  text.append(icon,copy);
                 }
                 if(isFingerStart && event.sourceUrl){
                   const detail=doc.createElement("details");
