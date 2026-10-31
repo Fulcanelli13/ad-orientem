@@ -11,6 +11,7 @@ import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
+import "./horarium-hours-styles.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import "./adoration-folio-styles.js";
@@ -825,14 +826,19 @@ function angelusGuideMarkup(form){
  const related=`<section class="aoAngelusGuideSection" data-ao-b01-august-queen><h3>${esc(L("Related Marian devotion","Dévotion mariale associée"))}</h3><p>${esc(L("August Queen of Heaven is a separate prayer, not an Angelus or Regina Cæli response.","L’Auguste Reine des Cieux est une prière distincte, et non un répons de l’Angélus ou du Regina Cæli."))} <a href="${esc(B01_AUGUST_QUEEN_SOURCE.url)}" target="_blank" rel="noopener noreferrer">${esc(L("ICKSP · August Queen prayer","ICKSP · Prière de l’Auguste Reine"))} ↗</a></p></section>`;
  return `<details class="aoP435930GuideInfo aoAngelusGuide" data-ao-devotional-guide="${esc(form)}"><summary>${esc(L('Guide · history, meaning & practice','Guide · histoire, sens et pratique'))}</summary><div class="aoAngelusGuideBody">${sections.map(entry=>`<section class="aoAngelusGuideSection"><h3>${esc(entry.heading)}</h3><p>${esc(entry.body)} <a href="${esc(entry.source.url)}" target="_blank" rel="noopener noreferrer">${esc(entry.source.label)} ↗</a></p></section>`).join('')}${related}</div></details>`;
 }
-function angelusDialogueHTML(parts){
- return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+function angelusDialogueHTML(parts,{sourceVersicles=false,collective=false}={}){
+ // Only authentic source versicles receive ℣/℟. A familiar prayer's
+ // communal continuation is indented and independently illuminated.
+ return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}${collective&&part.role==='response'?' aoHoursCollective':''}" data-ao-angelus-voice="${part.role}">${sourceVersicles?`<span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span>`:''}<span>${esc(part.text)}</span></span>`).join('')}</span>`;
 }
 function angelusUtterance(text,type){
- if(S.rosary.recitation!=='group')return nl(text);
- if(type==='hail'||type==='collect'){
-  const prayer=angelusCommunalParts(text,type);
-  if(prayer)return angelusDialogueHTML(prayer);
+ if(type==='hail'){
+  const prayer=angelusCommunalParts(text,'hail');
+  if(prayer)return angelusDialogueHTML(prayer,{collective:S.rosary.recitation==='group'});
+ }
+ if(type==='collect'&&S.rosary.recitation==='group'){
+  const prayer=angelusCommunalParts(text,'collect');
+  if(prayer)return angelusDialogueHTML(prayer,{collective:true});
  }
  if(type!=='vr')return nl(text);
  const lines=String(text||'').replace(/\r/g,'').split('\n').map(x=>x.trim()).filter(Boolean);
@@ -841,7 +847,7 @@ function angelusUtterance(text,type){
    role:i===0?'leader':'response',
    text:line.replace(i===0?/^(?:℣|V)\.?\s*/i:/^(?:℟|R)\.?\s*/i,'').trim()
  })):[];
- return parts.length===2?angelusDialogueHTML(parts):nl(text);
+ return parts.length===2?angelusDialogueHTML(parts,{sourceVersicles:true}):nl(text);
 }
 function renderAngelus(){
  if(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY){
@@ -865,7 +871,7 @@ function renderAngelus(){
   const incarnation=form==='angelus'&&u.type==='vr'&&/(Word was made flesh|Verbum caro factum est|Verbe s[’']est fait chair)/i.test(u.text+' '+la);
   return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${angelusUtterance(u.text,u.type)}</span><span data-face-la hidden>${angelusUtterance(la,u.type)}</span></button></article>`;
  }).join('');
- return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
+ return `${head(form==='regina'?'Regina Cæli':'Angelus','')}<main class="aoP435930Body aoP435930AngelusReader aoFolioReader" data-ao-hours-family="ritual" data-ao-hours-owner="${form}" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${authority}<div class="aoHoursBellLine" aria-label="${esc(L("Traditional prayer hours: six, noon, six","Heures traditionnelles : six heures, midi, dix-huit heures"))}"><span aria-hidden="true">✣</span> 6 · 12 · 18 <span aria-hidden="true">✣</span></div><details id="aoAngelusOptions" class="aoP435930PrayerOptions aoFolioOptions" data-ao-angelus-options ${angelusOptionsOpen?'open':''}><summary>${esc(L('Prayer parameters','Paramètres de prière'))}</summary><div class="aoP435930PrayerOptionsBody">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${guideMode}${vespersToggle}${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}><span><b>${esc(L('Closing prayers','Prières finales'))}</b></span></label>`:''}${angelusGuideMarkup(form)}</div></details>${postureNote}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix" hidden><button type="button" class="aoP435930AppendixFlip" data-p435930-flip><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
 }
 function normalizeRosaryPrefs(raw=S.rosary){
  return Object.freeze({
