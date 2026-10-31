@@ -63,7 +63,15 @@
     "existing_private_preview": 612,
     "independently_signed_off": 0,
     "published_from_selection": 0,
-    "all_souls_bilingual_pilot_rewrites": 7
+    "all_souls_bilingual_pilot_rewrites": 7,
+    "priority_24_bilingual_copy_collected": 24,
+    "priority_17_copies_recovered_from_existing_189": 17,
+    "priority_24_source_identifiers_preserved": 24,
+    "priority_24_independent_signoff": 0,
+    "priority_24_release_authorized": 0,
+    "priority_24_recorded_pdf_pages": 24,
+    "priority_24_pdf_deep_link_browser_verified": 0,
+    "priority_24_612_lexically_screened": 24
   },
   "review_gates": [
     "Independent English and French accuracy and factual curiosity signoff",
@@ -132,6 +140,18 @@
         "source_url_retrieved_2026_10_31": true,
         "in_app_click_acceptance": false,
         "source_page_fragment_status": "SOURCE_PDF_PAGE_OBSERVED_BROWSER_FRAGMENT_NOT_YET_TESTED"
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.087,
+        "highest_french_token_jaccard": 0.2,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
       }
     },
     {
@@ -193,6 +213,18 @@
         "source_url_retrieved_2026_10_31": true,
         "in_app_click_acceptance": false,
         "source_page_fragment_status": "SOURCE_PDF_PAGE_OBSERVED_BROWSER_FRAGMENT_NOT_YET_TESTED"
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.1034,
+        "highest_french_token_jaccard": 0.125,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
       }
     },
     {
@@ -254,6 +286,18 @@
         "source_url_retrieved_2026_10_31": true,
         "in_app_click_acceptance": false,
         "source_page_fragment_status": "SOURCE_PDF_PAGE_OBSERVED_BROWSER_FRAGMENT_NOT_YET_TESTED"
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0645,
+        "highest_french_token_jaccard": 0.1389,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
       }
     },
     {
@@ -315,6 +359,18 @@
         "source_url_retrieved_2026_10_31": true,
         "in_app_click_acceptance": false,
         "source_page_fragment_status": "SOURCE_PDF_PAGE_OBSERVED_BROWSER_FRAGMENT_NOT_YET_TESTED"
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0769,
+        "highest_french_token_jaccard": 0.1667,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
       }
     },
     {
@@ -376,6 +432,18 @@
         "source_url_retrieved_2026_10_31": true,
         "in_app_click_acceptance": false,
         "source_page_fragment_status": "SOURCE_PDF_PAGE_OBSERVED_BROWSER_FRAGMENT_NOT_YET_TESTED"
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0909,
+        "highest_french_token_jaccard": 0.0769,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
       }
     },
     {
@@ -437,6 +505,18 @@
         "source_url_retrieved_2026_10_31": true,
         "in_app_click_acceptance": false,
         "source_page_fragment_status": "SOURCE_PDF_PAGE_OBSERVED_BROWSER_FRAGMENT_NOT_YET_TESTED"
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0667,
+        "highest_french_token_jaccard": 0.1026,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
       }
     },
     {
@@ -497,6 +577,18 @@
         "source_url_retrieved_2026_10_31": true,
         "in_app_click_acceptance": false,
         "source_page_fragment_status": "TWO_SOURCE_PDF_PAGES_IDENTIFIED_BROWSER_FRAGMENT_PENDING_VERIFICATION"
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.1765,
+        "highest_french_token_jaccard": 0.12,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
       }
     },
     {
@@ -510,7 +602,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In Alpine regions, an image of Our Lady was carried from house to house with prayers and lanterns during the nine evenings before Christmas.",
+        "fr": "Dans les Alpes, une image de Notre-Dame était portée de maison en maison, avec prières et lanternes, durant les neuf soirées précédant Noël.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM01-003",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-05-008",
+        "original_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          57
+        ],
+        "pdf_pages_1based": [
+          75
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-05-008",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.1739,
+        "highest_french_token_jaccard": 0.1724,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM01-004",
@@ -523,7 +660,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In the German Advent play Herbergsuchen, Mary and Joseph knocked at doors seeking shelter; the often-sung scene ended at a stable.",
+        "fr": "Dans le jeu de l'Avent allemand Herbergsuchen, Marie et Joseph frappaient aux portes pour demander l'hospitalité ; cette scène souvent chantée s'achevait dans une étable.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM01-004",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-05-010",
+        "original_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          57
+        ],
+        "pdf_pages_1based": [
+          75
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-05-010",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.087,
+        "highest_french_token_jaccard": 0.1071,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM01-001",
@@ -536,7 +718,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In Ukrainian Christmas Eve customs, a grain sheaf called a didukh (‘Forefather’) was brought into the home to remember earlier generations.",
+        "fr": "Dans les coutumes ukrainiennes de la veille de Noël, on apportait à la maison une gerbe de céréales appelée didukh (« l'Ancêtre »), en souvenir des générations passées.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM01-001",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-09-001",
+        "original_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          116
+        ],
+        "pdf_pages_1based": [
+          134
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-09-001",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0526,
+        "highest_french_token_jaccard": 0.1333,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-H04-W-A-035",
@@ -549,7 +776,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "Weiser describes Alpine worshippers carrying lanterns down mountain paths to Christmas Midnight Mass.",
+        "fr": "Weiser décrit des fidèles des Alpes descendant les sentiers de montagne avec des lanternes pour se rendre à la messe de minuit de Noël.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-H04-W-A-035",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-06-013",
+        "original_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          75
+        ],
+        "pdf_pages_1based": [
+          93
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-06-013",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": "home.historical-source",
+        "candidate_type": "route",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.08,
+        "highest_french_token_jaccard": 0.1212,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-H04-W-A-051",
@@ -562,7 +834,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "Medieval Paradise plays portrayed Eden with a fir tree hung with apples, a custom later adapted in Christmas decorations.",
+        "fr": "Les jeux médiévaux du Paradis figuraient l'Éden par un sapin garni de pommes, une coutume reprise ensuite dans des décorations de Noël.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-H04-W-A-051",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-08-010",
+        "original_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          99
+        ],
+        "pdf_pages_1based": [
+          117
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-08-010",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": "home.historical-source",
+        "candidate_type": "route",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0625,
+        "highest_french_token_jaccard": 0.1282,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM02-007",
@@ -575,7 +892,54 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In 1851, children from Holy Trinity Church in Boston dressed as shepherds and brought food, clothing and other gifts before the Christmas crib; the parish priest distributed the offerings to the poor.",
+        "fr": "En 1851, des enfants de l'église de la Sainte-Trinité à Boston, vêtus en bergers, apportèrent nourriture, vêtements et autres présents devant la crèche ; le curé les distribua aux pauvres.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM02-007",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "BULK150-024",
+        "original_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          109,
+          110
+        ],
+        "pdf_pages_1based": [
+          127,
+          128
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "BULK150-024",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0571,
+        "highest_french_token_jaccard": 0.125,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-M04-CANON-021",
@@ -588,7 +952,53 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "During the account of the Last Supper, the priest says fregit ('he broke') while holding the Host; he does not actually break it until the Fraction later in Mass.",
+        "fr": "Dans le récit de la Cène, le prêtre dit fregit (« il rompit ») en tenant l'hostie, sans la rompre à ce moment : la fraction a lieu plus tard dans la messe.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-M04-CANON-021",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "AO.CANON.R62.021",
+        "original_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "printed_pages": [],
+        "pdf_pages_1based": [
+          15
+        ],
+        "ritus_locator": "VIII.4",
+        "original_page_viewer": null,
+        "source_record_id": "AO.CANON.R62.021",
+        "original_witness_status": "ROMAN_MASS_SOURCE_REVIEW_RECORDED",
+        "source_book": "ROMAN_MASS_1962",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true,
+        "source_location_check": "RITUS_ORIGINAL_PDF_TEXT_PAGE_INDEX_LOCATED_NOT_PDF_FRAGMENT_BROWSER_CHECKED",
+        "source_text_anchor": "Bene + dixit, fregit",
+        "text_index_link": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+      },
+      "editorial_destination_audit": {
+        "candidate_route": "home.mass-source",
+        "candidate_type": "route",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.087,
+        "highest_french_token_jaccard": 0.1154,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-M04-CANON-058",
@@ -601,7 +1011,53 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "At omnis honor et gloria, the priest slightly raises the chalice with the consecrated Host above it; this small elevation differs from the major elevations after the Consecrations.",
+        "fr": "Aux mots omnis honor et gloria, le prêtre élève légèrement le calice en tenant l'hostie consacrée au-dessus ; cette petite élévation diffère des grandes élévations après les consécrations.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-M04-CANON-058",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "AO.CANON.R62.058",
+        "original_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "printed_pages": [],
+        "pdf_pages_1based": [
+          17
+        ],
+        "ritus_locator": "IX.3",
+        "original_page_viewer": null,
+        "source_record_id": "AO.CANON.R62.058",
+        "original_witness_status": "ROMAN_MASS_SOURCE_REVIEW_RECORDED",
+        "source_book": "ROMAN_MASS_1962",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true,
+        "source_location_check": "RITUS_ORIGINAL_PDF_TEXT_PAGE_INDEX_LOCATED_NOT_PDF_FRAGMENT_BROWSER_CHECKED",
+        "source_text_anchor": "omnis honor et gloria",
+        "text_index_link": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+      },
+      "editorial_destination_audit": {
+        "candidate_route": "home.mass-source",
+        "candidate_type": "route",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0952,
+        "highest_french_token_jaccard": 0.1,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-M04-CANON-022",
@@ -614,7 +1070,53 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In the 1962 Roman Mass, the priest pronounces the words of consecration over the Host quietly, before elevating it.",
+        "fr": "Dans la messe romaine de 1962, le prêtre prononce à voix basse les paroles de consécration sur l'hostie avant de l'élever.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-M04-CANON-022",
+        "original_review_file": "dyk-r22-21-added-review-cards.v1.json",
+        "original_record_source_id": "AO.CANON.R62.022",
+        "original_copy_method": "EARLIER_REVIEW_DRAFT",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "printed_pages": [],
+        "pdf_pages_1based": [
+          15
+        ],
+        "ritus_locator": "VIII.5",
+        "original_page_viewer": null,
+        "source_record_id": "AO.CANON.R62.022",
+        "original_witness_status": "ROMAN_MASS_SOURCE_REVIEW_RECORDED",
+        "source_book": "ROMAN_MASS_1962",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true,
+        "source_location_check": "RITUS_ORIGINAL_PDF_TEXT_PAGE_INDEX_LOCATED_NOT_PDF_FRAGMENT_BROWSER_CHECKED",
+        "source_text_anchor": "HOC EST ENIM CORPUS MEUM",
+        "text_index_link": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+      },
+      "editorial_destination_audit": {
+        "candidate_route": "home.mass-source",
+        "candidate_type": "route",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.2,
+        "highest_french_token_jaccard": 0.1739,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM02-028",
@@ -627,7 +1129,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In historical Palermo, spectators watched fireworks for Saint Rosalia from boats decorated with lanterns.",
+        "fr": "À Palerme, des spectateurs regardaient autrefois les feux d'artifice de sainte Rosalie depuis des bateaux ornés de lanternes.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM02-028",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "PIT1900-NEW-018",
+        "original_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "printed_pages": [
+          31
+        ],
+        "pdf_pages_1based": [
+          93
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=93",
+        "source_record_id": "PIT1900-NEW-018",
+        "original_witness_status": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_book": "PITRE_1900",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0667,
+        "highest_french_token_jaccard": 0.0968,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM02-036",
@@ -640,7 +1187,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "The bearers of Saints Cosmas and Damian's statues spun their litter rapidly in circles in Palermo's Kalsa quarter.",
+        "fr": "Les porteurs des statues des saints Côme et Damien faisaient tournoyer leur brancard dans le quartier de la Kalsa, à Palerme.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM02-036",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "PIT1900-NEW-054",
+        "original_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "printed_pages": [
+          84
+        ],
+        "pdf_pages_1based": [
+          146
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=146",
+        "source_record_id": "PIT1900-NEW-054",
+        "original_witness_status": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_book": "PITRE_1900",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0476,
+        "highest_french_token_jaccard": 0.1429,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM02-048",
@@ -653,7 +1245,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "Young shepherds once carried ribboned frames decorated with small animal-shaped caciocavalli cheeses in Geraci Siculo.",
+        "fr": "De jeunes bergers portaient autrefois à Geraci Siculo des armatures ornées de rubans et de petits fromages caciocavalli en forme d'animaux.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM02-048",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "PIT1900-NEW-095",
+        "original_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "printed_pages": [
+          128
+        ],
+        "pdf_pages_1based": [
+          190
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=190",
+        "source_record_id": "PIT1900-NEW-095",
+        "original_witness_status": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_book": "PITRE_1900",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0455,
+        "highest_french_token_jaccard": 0.087,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM03-048",
@@ -666,7 +1303,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "At a historical Saint Cyrus festival in Marineo, a child dressed as an angel descended on a rope to recite a prayer before the saint's statue.",
+        "fr": "Lors d'une ancienne fête de saint Cyr à Marineo, un enfant déguisé en ange descendait le long d'une corde pour réciter une prière devant la statue du saint.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM03-048",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "PIT1900-NEW-111",
+        "original_copy_method": "HUMAN_DRAFT_REWRITE_NOT_SOURCE_SIGNOFF",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "printed_pages": [
+          135
+        ],
+        "pdf_pages_1based": [
+          197
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=197",
+        "source_record_id": "PIT1900-NEW-111",
+        "original_witness_status": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_book": "PITRE_1900",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0952,
+        "highest_french_token_jaccard": 0.1143,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM01-021",
@@ -679,7 +1361,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "At Saint Joseph's feast in Ribera, Pitrè described a household table where three poor guests represented the Holy Family.",
+        "fr": "Pour la fête de saint Joseph à Ribera, Pitrè décrit une table familiale où trois hôtes pauvres représentaient la Sainte Famille.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM01-021",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "PIT1900-IT-008",
+        "original_copy_method": "R21_COMBINED_CLAIM_SOURCE_AWARE_REVIEW",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "printed_pages": [
+          443
+        ],
+        "pdf_pages_1based": [
+          501
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": "https://commons.wikimedia.org/w/index.php?title=File%3ABiblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf&page=501",
+        "source_record_id": "PIT1900-IT-008",
+        "original_witness_status": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_book": "PITRE_1900",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0968,
+        "highest_french_token_jaccard": 0.1071,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-UM03-023",
@@ -692,7 +1419,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In a medieval Pentecost pageant, a disc bearing the figure of a white dove descended through the church roof's 'Holy Ghost Hole' during the Veni Sancte Spiritus sequence.",
+        "fr": "Dans une représentation médiévale de la Pentecôte, un disque portant la figure d'une colombe blanche descendait par une ouverture du toit de l'église, dite « trou du Saint-Esprit », pendant la séquence Veni Sancte Spiritus.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-UM03-023",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-19-014",
+        "original_copy_method": "MECHANICAL_QUESTION_TO_STATEMENT_NEEDS_EDITOR",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          252
+        ],
+        "pdf_pages_1based": [
+          270
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-19-014",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": null,
+        "candidate_type": "NONE",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.1111,
+        "highest_french_token_jaccard": 0.0952,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-H04-W-B-004",
@@ -705,7 +1477,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "In Italy, offering a blessed Palm Sunday branch to someone after a quarrel could be a gesture of peace and reconciliation.",
+        "fr": "En Italie, offrir un rameau béni des Rameaux à une personne avec laquelle on s'était querellé pouvait être un geste de paix et de réconciliation.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-H04-W-B-004",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-15-008",
+        "original_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          192
+        ],
+        "pdf_pages_1based": [
+          210
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-15-008",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": "home.historical-source",
+        "candidate_type": "route",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.08,
+        "highest_french_token_jaccard": 0.129,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     },
     {
       "id": "DYK-H04-W-B-018",
@@ -718,7 +1535,52 @@
       "copy_status": "EXISTING_BILINGUAL_REVIEW_COPY_NOT_FINAL",
       "gate": "SOURCE_BOUND_EDITORIAL_REVIEW_ONLY",
       "editorial_approval": false,
-      "release_authorized": false
+      "release_authorized": false,
+      "editorial_review_copy": {
+        "en": "Weiser describes regions where priests went from house to house on Holy Saturday to bless Easter food arranged on flower-decorated tables.",
+        "fr": "Weiser décrit des régions où les prêtres passaient de maison en maison le Samedi saint pour bénir les mets de Pâques disposés sur des tables ornées de fleurs.",
+        "review_status": "RECOVERED_EXISTING_BILINGUAL_COPY_NOT_FINAL_SIGNOFF",
+        "original_record_id": "DYK-H04-W-B-018",
+        "original_review_file": "dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_source_id": "WEI58-15-037",
+        "original_copy_method": "BILINGUAL_R19_EDITORIAL_COPY_STAGED",
+        "final_english_signoff": false,
+        "final_french_signoff": false
+      },
+      "editorial_source_reference": {
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          208
+        ],
+        "pdf_pages_1based": [
+          226
+        ],
+        "ritus_locator": null,
+        "original_page_viewer": null,
+        "source_record_id": "WEI58-15-037",
+        "original_witness_status": "WEISER_ORIGINAL_PAGE_REVIEWED",
+        "source_book": "WEISER_1958",
+        "browser_deep_link_checked": false,
+        "existing_research_provenance_only": true
+      },
+      "editorial_destination_audit": {
+        "candidate_route": "home.historical-source",
+        "candidate_type": "route",
+        "verified_in_app": false,
+        "publishable": false
+      },
+      "priority_lexical_screen": {
+        "preview_bank_size": 612,
+        "reviewed_copy_only": true,
+        "exact_english_collision_count": 0,
+        "exact_french_collision_count": 0,
+        "exact_source_id_collision_count": 0,
+        "highest_english_token_jaccard": 0.0909,
+        "highest_french_token_jaccard": 0.1111,
+        "manual_semantic_novelty_approved": false,
+        "publication_authorized": false,
+        "note": "PRIVATE_PREVIEW_TEXT_AND_IDS_NOT_IMPORTED; lexical proximity is not semantic originality"
+      }
     }
   ],
   "pilot_note": "November 2 proposed rewrites are prepared in this selection overlay, not published to the running Home. Strictly distinguish the All Saints evening Candlemas candle from the November 2 liturgical date.",
@@ -742,5 +1604,36 @@
     "in_app_pilot_links_accepted": 0,
     "external_pdf_bases_retrieved": 2,
     "source_inspection_note": "Weiser PDF pages 329-332 (printed 311-314), and Ritus servandus IX.2 (source PDF p.16), visually checked directly on 2026-10-31. Independent bilingual signoff and actual in-app link activation are separate release gates."
+  },
+  "priority_review_completion": {
+    "stage": "BILINGUAL_COPY_REUNITED_FROM_EXISTING_CANONICAL_REVIEW_NOT_APPROVED",
+    "path_owner": "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json",
+    "prior_bilingual_review_owner": "research/dyk-source-first-batch01-20261030",
+    "original_review_168_blob_sha": "fbacb2e6067eaed66496267a4448570f7a68242b",
+    "original_review_21_blob_sha": "0b8054979b385a73422e9c577509c03d5be23314",
+    "copied_records": 17,
+    "existing_pilot_copy_records": 7,
+    "total_priority": 24,
+    "contents_final_approved": 0,
+    "publication_authorized": false,
+    "destination_gate": "NO_FACT_RELEASE_UNLESS_EXISTING_ROUTE_IS_BROWSER_VERIFIED",
+    "duplication_gate": "R31_189_VS_612_LEXICAL_SCREEN_ONLY_NO_SEMANTIC_APPROVAL",
+    "source_gate": "24_SOURCE_PDF_TEXT_OR_PRIOR_RESEARCH_PAGE_LOCATIONS_RECORDED_NO_EXTERNAL_BROWSER_FRAGMENT_ACCEPTANCE"
+  },
+  "priority_lexical_screen_summary": {
+    "schema": "AO_DYK_R34_PRIORITY24_BY_PRIVATE_612_AGGREGATES_V1",
+    "source_scope": "24 CURRENT EN/FR priority review statements against separate 612 private historical previews",
+    "screened": 24,
+    "private_preview_count": 612,
+    "language_pairs": "EN_AND_FR",
+    "normalized_exact_en_collisions": 0,
+    "normalized_exact_fr_collisions": 0,
+    "source_id_collisions": 0,
+    "highest_english_token_jaccard": 0.2,
+    "english_neighbours_at_least_0_3": 0,
+    "english_neighbours_0_2_to_under_0_3": 1,
+    "independent_semantic_approvals": 0,
+    "source_private_text_disclosed": false,
+    "warning": "Text overlap is not semantic approval. Manual cross-bank meaning review and editorial approval still required."
   }
 }
