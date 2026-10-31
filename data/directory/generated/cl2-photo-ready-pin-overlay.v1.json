@@ -6,7 +6,7 @@
   "counts": {
     "new_site_pins": 67,
     "refined_existing_site_pins": 16,
-    "corrected_existing_site_pins": 6
+    "corrected_existing_site_pins": 13
   },
   "pins": [
     {
@@ -986,6 +986,83 @@
       "source_ref": "osm:way:392483318",
       "source_url": "https://www.openstreetmap.org/way/392483318",
       "review_scope": "CATHOLIC_PARISH_CHURCH_BUILDING_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-3935C183A2BA",
+      "source_id": "AO-AMER-R26-US-05-16",
+      "name": "Holy Family",
+      "lat": 40.31467,
+      "lon": -79.3817,
+      "source_ref": "osm:way:432365179",
+      "source_url": "https://www.openstreetmap.org/way/432365179",
+      "review_scope": "HOLY_FAMILY_LATROBE_CHURCH_BUILDING_NOT_NEIGHBORING_PARISH",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-7A75E8D68125",
+      "source_id": "AO-AMER-R26-US-04-07",
+      "name": "Church of the Nativity",
+      "lat": 37.46075,
+      "lon": -122.18033,
+      "source_ref": "osm:way:114158255",
+      "source_url": "https://www.openstreetmap.org/way/114158255",
+      "review_scope": "NATIVITY_MENLO_PARK_HISTORIC_CHURCH_NOT_RECTORY",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-DB7556C0C980",
+      "source_id": "AO-AMER-R26-US-04-05",
+      "name": "Church of the Assumption",
+      "lat": 36.17539,
+      "lon": -86.79166,
+      "source_ref": "osm:way:893977074",
+      "source_url": "https://www.openstreetmap.org/way/893977074",
+      "review_scope": "ASSUMPTION_NASHVILLE_CHURCH_BUILDING_NOT_OFFICE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-9CF80257612A",
+      "source_id": "AO-AMER-R28-US-37-11",
+      "name": "St. Mary of Perpetual Help",
+      "lat": 41.83575,
+      "lon": -87.65242,
+      "source_ref": "osm:way:210167509",
+      "source_url": "https://www.openstreetmap.org/way/210167509",
+      "review_scope": "PERPETUAL_HELP_CHICAGO_PARISH_CHURCH_NOT_SCHOOL",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-BE23723D6B4A",
+      "source_id": "AO-EUR-IT-032",
+      "name": "Chiesa di San Giovanni in Foro",
+      "lat": 45.44299,
+      "lon": 10.9953,
+      "source_ref": "osm:way:138811441",
+      "source_url": "https://www.openstreetmap.org/way/138811441",
+      "review_scope": "VERONA_SAN_GIOVANNI_IN_FORO_CHURCH_NOT_ANOTHER_PARISH",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-63BC2CF66C4B",
+      "source_id": "AO-EUR-IT-038",
+      "name": "Chiesa di San Zeno al Foro",
+      "lat": 45.539346,
+      "lon": 10.226049,
+      "source_ref": "independent:outdooractive-san-zeno-brescia",
+      "source_url": "https://www.outdooractive.com/en/poi/brescia/chiesa-di-san-zeno-al-foro/807827253/",
+      "review_scope": "BRESCIA_SAN_ZENO_AL_FORO_CHURCH_NOT_ROMAN_FORUM",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0AD2B2092E4E",
+      "source_id": "AO-AMER-R28-US-35-18",
+      "name": "St Thomas the Apostle, Ann Arbor",
+      "lat": 42.285056,
+      "lon": -83.741389,
+      "source_ref": "independent:st-thomas-ann-arbor-building",
+      "source_url": "https://en.wikipedia.org/wiki/St._Thomas_the_Apostle_Catholic_Church_(Ann_Arbor,_Michigan)",
+      "review_scope": "ANN_ARBOR_HISTORIC_PARISH_CHURCH_NOT_SCHOOL_OR_OFFICE",
       "place_id": null
     }
   ]

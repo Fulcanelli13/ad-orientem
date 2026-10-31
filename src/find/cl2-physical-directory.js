@@ -43,6 +43,27 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+  "RG-3935C183A2BA":Object.freeze({sourceId:"AO-AMER-R26-US-05-16",name:"Holy Family",country:"US",addressNeedle:"1200 Ligonier",placeId:null,
+   lat:40.31467,lng:-79.3817,precision:"site",sourceRef:"osm:way:432365179",sourceUrl:"https://www.openstreetmap.org/way/432365179",correctedAddress:"Holy Family Catholic Church, 1200 Ligonier St, Latrobe, PA 15650, USA",
+   reviewScope:"HOLY_FAMILY_LATROBE_CHURCH_BUILDING_NOT_NEIGHBORING_PARISH",evidence:Object.freeze(["https://mapcarta.com/W432365179","https://www.holyfamilylatrobe.org/contact-us"])}),
+  "RG-7A75E8D68125":Object.freeze({sourceId:"AO-AMER-R26-US-04-07",name:"Church of the Nativity",country:"US",addressNeedle:"210 Oak Grove",placeId:null,
+   lat:37.46075,lng:-122.18033,precision:"site",sourceRef:"osm:way:114158255",sourceUrl:"https://www.openstreetmap.org/way/114158255",correctedAddress:"Church of the Nativity, 210 Oak Grove Ave, Menlo Park, CA 94025, USA",
+   reviewScope:"NATIVITY_MENLO_PARK_HISTORIC_CHURCH_NOT_RECTORY",evidence:Object.freeze(["https://mapcarta.com/23020332","https://www.nativitymenlo.org/directions"])}),
+  "RG-DB7556C0C980":Object.freeze({sourceId:"AO-AMER-R26-US-04-05",name:"Church of the Assumption",country:"US",addressNeedle:"1227 7th Ave",placeId:null,
+   lat:36.17539,lng:-86.79166,precision:"site",sourceRef:"osm:way:893977074",sourceUrl:"https://www.openstreetmap.org/way/893977074",correctedAddress:"Church of the Assumption, 1227 7th Ave N, Nashville, TN 37208, USA",
+   reviewScope:"ASSUMPTION_NASHVILLE_CHURCH_BUILDING_NOT_OFFICE",evidence:Object.freeze(["https://mapcarta.com/21572926","https://www.assumptionnashville.org/about"])}),
+  "RG-9CF80257612A":Object.freeze({sourceId:"AO-AMER-R28-US-37-11",name:"St. Mary of Perpetual Help",country:"US",addressNeedle:"1039 W 32nd",placeId:null,
+   lat:41.83575,lng:-87.65242,precision:"site",sourceRef:"osm:way:210167509",sourceUrl:"https://www.openstreetmap.org/way/210167509",correctedAddress:"St. Mary of Perpetual Help Church, 1039 W 32nd St, Chicago, IL 60608, USA",
+   reviewScope:"PERPETUAL_HELP_CHICAGO_PARISH_CHURCH_NOT_SCHOOL",evidence:Object.freeze(["https://mapcarta.com/W210167509","https://stmaryofperpetualhelp.com/about/"])}),
+  "RG-BE23723D6B4A":Object.freeze({sourceId:"AO-EUR-IT-032",name:"Chiesa di San Giovanni in Foro",country:"IT",addressNeedle:"Corso Porta Borsari",placeId:null,
+   lat:45.44299,lng:10.9953,precision:"site",sourceRef:"osm:way:138811441",sourceUrl:"https://www.openstreetmap.org/way/138811441",correctedAddress:"San Giovanni in Foro, Corso Porta Borsari 20, 37121 Verona, Italy",
+   reviewScope:"VERONA_SAN_GIOVANNI_IN_FORO_CHURCH_NOT_ANOTHER_PARISH",evidence:Object.freeze(["https://mapcarta.com/W138811441","https://www.chiesadiverona.it/wd-annuario-enti/vicariato-verona-centro-1711/","https://www.sanremigioverona.org/"])}),
+  "RG-63BC2CF66C4B":Object.freeze({sourceId:"AO-EUR-IT-038",name:"Chiesa di San Zeno al Foro",country:"IT",addressNeedle:"Piazza del Foro",placeId:null,
+   lat:45.539346,lng:10.226049,precision:"site",sourceRef:"independent:outdooractive-san-zeno-brescia",sourceUrl:"https://www.outdooractive.com/en/poi/brescia/chiesa-di-san-zeno-al-foro/807827253/",correctedAddress:"San Zeno al Foro, Piazza del Foro, 25121 Brescia, Italy",
+   reviewScope:"BRESCIA_SAN_ZENO_AL_FORO_CHURCH_NOT_ROMAN_FORUM",evidence:Object.freeze(["https://www.outdooractive.com/en/poi/brescia/chiesa-di-san-zeno-al-foro/807827253/","https://www.comune.brescia.it/it/vivere/chiesa-di-san-zeno-al-foro"])}),
+  "RG-0AD2B2092E4E":Object.freeze({sourceId:"AO-AMER-R28-US-35-18",name:"St Thomas the Apostle, Ann Arbor",country:"US",addressNeedle:"530 Elizabeth",placeId:null,
+   lat:42.285056,lng:-83.741389,precision:"site",sourceRef:"independent:st-thomas-ann-arbor-building",sourceUrl:"https://en.wikipedia.org/wiki/St._Thomas_the_Apostle_Catholic_Church_(Ann_Arbor,_Michigan)",correctedAddress:"St Thomas the Apostle Church, 530 Elizabeth St, Ann Arbor, MI 48104, USA",
+   reviewScope:"ANN_ARBOR_HISTORIC_PARISH_CHURCH_NOT_SCHOOL_OR_OFFICE",evidence:Object.freeze(["https://en.wikipedia.org/wiki/St._Thomas_the_Apostle_Catholic_Church_(Ann_Arbor,_Michigan)","https://sta2.org/church/contact-us/","https://www.dioceseoflansing.org/parish/st-thomas-apostle-ann-arbor"])}),
   "RG-3235F2E6494F":Object.freeze({
    sourceId:"AO-AMER-R28-US-38-01",name:"St. Monica",country:"US",
    addressNeedle:"1700 Buford Hwy",placeId:null,
@@ -838,7 +859,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|nrhp:\d+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:[a-z0-9-]+|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|nrhp:\d+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
