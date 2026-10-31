@@ -6,7 +6,7 @@ import "./precious-blood-chaplet-styles.js";
 import "./priestly-intercessions-styles.js";
 import "./occasional-intercessions-styles.js";
 import "./first-monthly-direct-prayers-styles.js";
-import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY, CONFESSION_TRADITIONAL_PASTORAL_WITNESSES } from "./confession-paths.js";
+import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY, CONFESSION_TRADITIONAL_PASTORAL_WITNESSES, CONFESSION_EXTENDED_EXAM_WITNESS, confessionExtendedSections } from "./confession-paths.js";
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
@@ -1527,11 +1527,11 @@ function confessionContritionPicker(kicker){
    '<h3>'+esc(L("Act of Contrition · private preparation","Acte de contrition · préparation personnelle"))+'</h3>'+chooser+note+prayer+'</section>';
 }
 function confessionExaminationView(ex){
- const cards=confessionExaminationCards(CONF.path,ex?.sections);
+ const cards=confessionExaminationCards(CONF.path,confessionExtendedSections(ex?.sections,{path:CONF.path,french:isFr()}));
  const pos=confessionStepAt(CONF.examStep,cards.length);
  const note=CONF.path==="regular"
   ?L("Four short groups cover all Ten Commandments. Pause to recall what you need to confess; no answers or sins are recorded.","Quatre groupes brefs couvrent les dix commandements. Prenez le temps de vous souvenir de ce que vous devez confesser ; aucune réponse ni aucun péché n'est enregistré.")
-  :L("Read one step at a time. A diligent but reasonable examination is enough; the confessor can help with uncertainty.","Avancez étape par étape. Un examen diligent mais raisonnable suffit ; le confesseur peut vous aider en cas de doute.");
+  :L("Read one step at a time. These additional questions are original editorial aids, not a verbatim historical catechism. Serious sin requires grave matter, full knowledge and deliberate consent; the confessor can help with uncertainty. Do not record answers.","Avancez étape par étape. Ces questions complémentaires sont une aide éditoriale, non la reproduction littérale d’un catéchisme historique. Le péché mortel suppose matière grave, pleine connaissance et consentement délibéré ; le confesseur peut éclairer vos doutes. N’enregistrez aucune réponse.");
  return `${guideNow(L('Examine your conscience','Examinez votre conscience'),note)}
  ${confessionSingleCard(cards[pos],pos,cards.length,"exam")}
  ${pos===cards.length-1?confessionContritionPicker(L("Act of Contrition","Acte de contrition")):""}`;
@@ -1570,13 +1570,15 @@ function renderConfession(){
  const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
    <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
    ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(isFr()&&src.urlFr?src.urlFr:src.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&src.labelFr?src.labelFr:src.label)} ↗</a>`).join('')}
-   ${CONFESSION_TRADITIONAL_PASTORAL_WITNESSES.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer">${esc(src.label)} ↗</a>`).join('')}</details>`;
+   ${CONFESSION_TRADITIONAL_PASTORAL_WITNESSES.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer">${esc(src.label)} ↗</a>`).join('')}
+   <a href="${esc(CONFESSION_EXTENDED_EXAM_WITNESS.doctrinal)}" target="_blank" rel="noopener noreferrer">${esc(L('Catechism · Examination of conscience','Catéchisme · Examen de conscience'))} ↗</a>
+   <a href="${esc(CONFESSION_EXTENDED_EXAM_WITNESS.mortalSinConditions)}" target="_blank" rel="noopener noreferrer">${esc(L('Grave matter, knowledge and consent','Matière grave, connaissance et consentement'))} ↗</a></details>`;
  // Preserve all three canonical Confession paths and their original private
  // question texts. The source model owns the step sequence; this wrapper
  // supplies only the shared card shell and local paragraph-focus viewport.
  let cardSequence=null,cardIndex=0;
  if(CONF.stage===1&&path){
-  cardSequence=confessionExaminationCards(CONF.path,ex?.sections);
+  cardSequence=confessionExaminationCards(CONF.path,confessionExtendedSections(ex?.sections,{path:CONF.path,french:isFr()}));
   cardIndex=confessionStepAt(CONF.examStep,cardSequence.length);
  }else if(CONF.stage===2&&path){
   cardSequence=confessionRiteCards(CONF.path);
@@ -3055,7 +3057,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  });
  if(view==='confession'&&CONF.path&&CONF.stage>=1)queueMicrotask(()=>{
   const stage=CONF.stage,path=CONF.path;
-  const cards=stage===1?confessionExaminationCards(path,(isFr()?DATA.examFr:DATA.exam)?.sections):
+  const cards=stage===1?confessionExaminationCards(path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path,french:isFr()})):
     stage===2?confessionRiteCards(path):confessionAfterCards();
   const index=stage===1?CONF.examStep:stage===2?CONF.riteStep:CONF.afterStep;
   const chapters=cards.map(card=>({
@@ -3494,7 +3496,7 @@ function onClick(e){
    const selected=b.dataset.p435930ConfContrition;
    if(selected!=="standard"&&selected!=="piusx")return;
    const last=CONF.stage===1
-     ?confessionExaminationCards(CONF.path,(isFr()?DATA.examFr:DATA.exam)?.sections).length-1
+     ?confessionExaminationCards(CONF.path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path:CONF.path,french:isFr()})).length-1
      :confessionRiteCards(CONF.path).length-1;
    if((CONF.stage===1?CONF.examStep:CONF.riteStep)!==last)return;
    if(CONF.contrition===selected)return;
@@ -3526,7 +3528,7 @@ function onClick(e){
  if(b.matches('[data-p435930-conf-next]')){
    if(!CONF.path)return;
    if(CONF.stage===1){
-     const count=confessionExaminationCards(CONF.path,(isFr()?DATA.examFr:DATA.exam)?.sections).length;
+     const count=confessionExaminationCards(CONF.path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path:CONF.path,french:isFr()})).length;
      if(CONF.examStep<count-1){CONF.examStep++;return render();}
    }
    if(CONF.stage===2){
