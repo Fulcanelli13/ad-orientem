@@ -6,6 +6,8 @@ on:
       - "src/app/native-back.js"
       - "src/pray/browser-entry.js"
       - "src/pray/presentation-runtime.js"
+      - "src/pray/novena-runtime.js"
+      - "tests/navigation-prayer-novena-rosary-return-phone.mjs"
       - "tests/navigation-prayer-return-phone.mjs"
       - "src/app/browser-entry.js"
       - "src/app/host-adapter.js"
@@ -40,3 +42,5 @@ jobs:
         run: node tests/navigation-latin-settings-return-phone.mjs
       - name: P4 Prayer browser Back exact card and paragraph restoration
         run: node tests/navigation-prayer-return-phone.mjs
+      - name: P5 Rosary and Novena canonical-owner exact Back on phones
+        run: node tests/navigation-prayer-novena-rosary-return-phone.mjs
