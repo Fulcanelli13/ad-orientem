@@ -39,4 +39,43 @@ assert.ok(map.get("2026-09-15").additionalStudy.some(a=>a.title.includes("Seven 
 assert.ok(map.get("2026-10-07").additionalStudy.some(a=>a.title.includes("Madonna del Rosario")),"Preserve selected Lotto Rosary artwork");
 assert.ok(map.get("2026-10-03").linkedCatalogueArt.some(a=>a.status==="PAINTING_COPYRIGHT_RIGHTS_HOLD"),"Celine Martin identity is preserved but artwork rights remain held");
 assert.ok(j.days.filter(x=>x.rank==="IV").every(x=>!x.dateSelectedArt&&!x.linkedCatalogueArt.length),"No unapproved seasonal paintings auto-assigned");
+const selected=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-accepted-source-match-batch1.v1.json",import.meta.url),"utf8"));
+const institutional=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-museum-multiwork-match-batch2.v1.json",import.meta.url),"utf8"));
+assert.equal(selected.statistics.acceptedSourceLedgerTotal,856);
+assert.equal(selected.statistics.newStrictClassIIIDates,12);
+assert.equal(selected.statistics.newStrictAcceptedSourceLeads,17);
+assert.equal(selected.strictExactSaintResearch.reduce((n,x)=>n+x.entries.length,0),17);
+assert.equal(new Set(selected.strictExactSaintResearch.map(x=>x.date)).size,12);
+for(const row of selected.strictExactSaintResearch){
+  const d=map.get(row.date);
+  assert.equal(d.rank,"III");
+  assert.equal(d.observedPrincipalId,row.principalId);
+  assert.ok(!d.linkedCatalogueArt.length,"must close a previous 383 catalogue gap");
+  assert.deepEqual(d.additionalAcceptedSourceLeads.map(x=>x.sourceCardId),row.entries.map(x=>x.sourceCardId));
+  for(const a of row.entries){
+    assert.equal(a.canonicalArtworkId,null,"must not fabricate canonical IDs");
+    assert.equal(a.editorialApprovalForFeast,false);
+    assert.equal(a.imageRightsForProductionVerified,false);
+    assert.equal(a.homepageRotationApproved,false);
+  }
+}
+assert.equal(j.summary.III.additionalUnlinked856ExactSubjectDateCandidates,12);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,45);
+assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,120);
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length).length,86);
+assert.equal(selected.partialOrExcludedGroupOrDifferentSaint.find(x=>x.date==="2026-07-10").entries.length,1);
+assert.ok(!map.get("2026-07-10").additionalAcceptedSourceLeads,"Seville Rufina is not Roman Rufina or Secunda");
+assert.ok(map.get("2026-01-20").partialOrExcludedAcceptedSourceLeads.length>=4);
+assert.equal(institutional.totals.museumStudyLinks,9);
+assert.equal(institutional.totals.groupPartialLinks,2);
+assert.equal(institutional.totals.tentativeUnconfirmedSubjectLinks,1);
+assert.equal(new Set(institutional.workDateLinks.map(x=>x.date)).size,8);
+for(const x of institutional.workDateLinks){
+  assert.equal(map.get(x.date).observedPrincipalId,x.principalId);
+  assert.equal(x.editorialDateApproved,false);
+  assert.equal(x.rotationEligible,false);
+}
+assert.ok(institutional.workDateLinks.find(x=>x.entryId==="B20-01")?.acceptedSourceCardAlias==="nga:72037","deduplicate Ribera martyrdom against accepted 856");
+assert.ok(institutional.workDateLinks.find(x=>x.entryId==="B20-02")?.acceptedSourceCardAlias==="cma:111479","deduplicate Coypel against accepted 856");
+assert.ok(institutional.workDateLinks.find(x=>x.entryId==="B22-03")?.role.startsWith("TENTATIVE"),"Matthias is not exact");
 console.log("Sacred Art 2026: 365 exact dates, four-class reporting, anti-confusion and external reuse gates PASS");
