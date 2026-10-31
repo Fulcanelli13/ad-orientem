@@ -31,9 +31,9 @@ assert.equal(world.filter(x=>x.map_publishable).length,1914);
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:9,corrected_existing_site_pins:3});
-assert.equal(photoPins.pins.length,79);
-assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,79);
+assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:11,corrected_existing_site_pins:3});
+assert.equal(photoPins.pins.length,81);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,81);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
  assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
@@ -44,6 +44,20 @@ for(const pin of photoPins.pins){
  assert.ok(pin.review_scope,"Photo Finder requires explicit site/entrance precision disclosure");
 }
 
+
+for(const [group,sourceId,lat,lng,ref,street] of [
+ ["RG-014B017E0591","DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",51.287381,-0.08646362,"historicengland:1294941","Essendene Road"],
+ ["RG-1A015C23D5BA","AO-AMER-R28-US-25-03",42.50055,-96.41809,"osm:node:354389668","703 West 5th Street"],
+]){
+ const item=world.find(x=>x.physical_group_id===group);
+ assert.ok(item,"Required corrected diocesan church building");
+ assert.ok(item.source_ids.includes(sourceId));
+ assert.equal(item.geo.lat,lat);
+ assert.equal(item.geo.lng,lng);
+ assert.equal(item.geo.source_ref,ref);
+ assert.ok(item.address.formatted.includes(street));
+ assert.ok(item.geo.review_scope,"The specific physical-site identity must remain visible");
+}
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
