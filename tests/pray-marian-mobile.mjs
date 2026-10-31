@@ -243,10 +243,17 @@ try{
   .filter(x=>x.getClientRects().length).some(x=>x.dataset.aoDevoActive==="true"),null,{timeout:9000});
  const paragraphEnergy=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>
   nodes.filter(x=>x.getClientRects().length).map(x=>({active:x.dataset.aoDevoActive,opacity:Number(getComputedStyle(x).opacity)})));
- assert.equal(paragraphEnergy.length,2,"Individual Angelus presents one V/R unit and one continuous Hail Mary");
- assert.ok(paragraphEnergy[0].opacity>paragraphEnergy[1].opacity,
-  "Active V. must be brighter than its muted R.: "+JSON.stringify(paragraphEnergy));
- assert.ok(paragraphEnergy[1].opacity<1,"Upcoming Hail Mary must be muted: "+JSON.stringify(paragraphEnergy));
+ // Approved Hours rule: every paragraph (including a collective response)
+ // owns an independent illumination stop. In the Announcement, two V/R
+ // halves and the two Hail Mary halves yield four source-owned stops.
+ assert.equal(paragraphEnergy.length,4,"Angelus Announcement must expose the V/R and Hail Mary halves independently");
+ assert.equal(paragraphEnergy.filter(x=>x.active==="true").length,1,
+  "Exactly one current Angelus paragraph must be fully illuminated");
+ assert.equal(paragraphEnergy[0].opacity,1,"The current source versicle must be fully lit");
+ assert.ok(paragraphEnergy.slice(1).every(x=>x.opacity<1&&x.opacity>=.5),
+  "Upcoming response and Hail Mary text must mute legibly: "+JSON.stringify(paragraphEnergy));
+ const authenticMarkers=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .ao-liturgical-speaker").count();
+ assert.equal(authenticMarkers,2,"Only the source V/R pair may carry liturgical speaker markers");
  // The retired Latin-cross overlay must not obscure or compete with prayer.
  assert.equal(await page.locator("#aoPray435930 .aoCrossPad").count(),0,
   "Angelus must use the shared navigation, not crosses");
