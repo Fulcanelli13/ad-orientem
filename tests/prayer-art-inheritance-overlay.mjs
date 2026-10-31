@@ -18,13 +18,22 @@ assert.equal(original.scope.canonical_editorial_slots,267);
 assert.equal(m.summary.historicApprovedSlots,162);
 assert.equal(m.summary.currentApprovedSlots,160);
 assert.equal(m.summary.currentGaps,107);
-assert.equal(m.summary.newSafeReuseSlots,32);
-assert.equal(m.summary.remainingGapsAfterSafeReuse,75);
+assert.equal(m.summary.newSafeReuseSlots,33);
+assert.equal(m.summary.remainingGapsAfterSafeReuse,74);
 assert.equal(m.summary.contextualProposals,38);
-assert.equal(m.summary.newUnpublishedRelationships,118);
+assert.equal(m.summary.newUnpublishedRelationships,119);
 assert.equal(m.summary.productionClearedImages,0);
-assert.equal(m.rules.length,72);
-assert.equal(m.relationships.length,118);
+const simon=m.relationships.find(x=>x.slot==="STG-pray.stations-05");
+assert.ok(simon,"Approved scene inheritance must cover Simon of Cyrene");
+assert.equal(simon.artworkId,"REVIEW::commons:22178536");
+assert.equal(simon.approvedDonor,"STG-pray.stations-02");
+assert.equal(simon.relationship,"EXACT_SCENE");
+assert.equal(simon.sourceEvidence?.nativeFileQA,false);
+assert.equal(simon.sourceEvidence?.sourceClaim,"GETTY_OPEN_CONTENT_CC0_AND_COMMONS_PD_MARK");
+assert.equal(simon.publishable,false);
+
+assert.equal(m.rules.length,73);
+assert.equal(m.relationships.length,119);
 const kinds=new Set(["EXACT_SCENE","DEVOTIONAL_SUBJECT","CONTEXTUAL_REVIEW","RESEARCH_REQUIRED","PROTECTED_LOCK"]);
 const keys=new Set(),perSlot=new Map();
 for(const r of m.rules){
@@ -48,12 +57,12 @@ for(const e of m.relationships){
  const k=e.slot+"::"+e.artworkId;assert.ok(!seen.has(k),"duplicate crosswalk edge");seen.add(k);
 }
 const count=(kind)=>m.rules.filter(r=>r.relationship===kind).length;
-assert.equal(count("EXACT_SCENE"),14);
+assert.equal(count("EXACT_SCENE"),15);
 assert.equal(count("DEVOTIONAL_SUBJECT"),18);
 assert.equal(count("CONTEXTUAL_REVIEW"),38);
 assert.equal(count("PROTECTED_LOCK"),1);
 assert.equal(count("RESEARCH_REQUIRED"),1);
-for(const slot of ["STG-pray.stations-03","STG-pray.stations-05","STG-pray.stations-07","STG-pray.stations-08","STG-pray.stations-09","STG-pray.stations-10","STG-pray.stations-11","STG-pray.benediction-03"]){
+for(const slot of ["STG-pray.stations-03","STG-pray.stations-07","STG-pray.stations-08","STG-pray.stations-09","STG-pray.stations-10","STG-pray.stations-11","STG-pray.benediction-03"]){
  assert.ok(!m.rules.some(r=>r.slot===slot&&["EXACT_SCENE","DEVOTIONAL_SUBJECT"].includes(r.relationship)),"Stage-specific artwork cannot be invented: "+slot);
 }
 const affected=slots.filter(s=>s.works.some(w=>allowed(w)&&w.id===excluded));
@@ -63,4 +72,4 @@ assert.deepEqual(m.policy.onlyPublicDomainOrCC0ExactImageFiles,true);
 assert.deepEqual(m.policy.unverifiedPhotosNotPublished,true);
 assert.deepEqual(m.policy.contextualReviewIsNotApproval,true);
 assert.equal(m.finalLocksRequiringIdentity.length,3);
-console.log(JSON.stringify({status:"PASS",historicalSlots:267,activeWithExisting:160,safeReuseTargets:32,remainingGaps:75,contextualOnly:38,unreleasedLinks:118,rejectedOlderEdges:6,photosPublished:0},null,2));
+console.log(JSON.stringify({status:"PASS",historicalSlots:267,activeWithExisting:160,safeReuseTargets:33,remainingGaps:74,contextualOnly:38,unreleasedLinks:119,rejectedOlderEdges:6,photosPublished:0},null,2));
