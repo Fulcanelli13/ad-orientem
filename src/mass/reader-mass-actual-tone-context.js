@@ -34,9 +34,23 @@ function sourceKind(main,stem,origin,rank,date){
   EASTER_VIGIL_MASS:"EASTER_VIGIL_MASS",
  };
  if(kind){
-  // A selected principal's classified 'Sunday' must agree with the day.
   if(!Object.hasOwn(map,kind))return null;
-  if(kind==="SUNDAY"&&!sameDayOfWeek(date,0))return null;
+  const temporalDay=origin==="tempora"?/-([0-6])$/.exec(stem):null;
+  // Typed resolver facts must agree with the same principal's SOURCE ID.
+  // A fabricated FERIA tag on a Sunday, or vice versa, cannot select music.
+  if(kind==="SUNDAY"&&
+     (!sameDayOfWeek(date,0)||(temporalDay&&temporalDay[1]!=="0")))return null;
+  if(kind==="FERIA"&&
+     (origin==="sancti"||!temporalDay||temporalDay[1]==="0"||
+      !sameDayOfWeek(date,Number(temporalDay[1]))||
+      /^(?:Quad6-4|Quad6-6|Pasc0-[1-6]|Pent01-[1-6])$/i.test(stem)))
+    return null;
+  if(kind==="HOLY_THURSDAY_MASS"&&
+     !(origin==="tempora"&&/^Quad6-4$/i.test(stem)))return null;
+  if(kind==="EASTER_VIGIL_MASS"&&origin!=="tempora")return null;
+  if(kind==="OCTAVE_DAY"&&
+     !(origin==="tempora"&&/^(?:Pasc0|Pent01)-[1-6]$/i.test(stem)&&rank===1))
+    return null;
   return map[kind];
  }
  if(origin==="tempora"){
