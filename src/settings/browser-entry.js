@@ -216,6 +216,11 @@ export function createSettingsOwner(win=globalThis){
       if(button.dataset.prefToggle){event.preventDefault();mutate(()=>donor.togglePath(button.dataset.prefToggle));return;}
       if(button.dataset.profileDefault!==undefined){event.preventDefault();mutate(()=>donor.setPath("mass.defaultProfileId",null));return;}
       if(button.dataset.profileAdd!==undefined){event.preventDefault();const id=donor.createProfile(donor.snapshot().preferences.general.uiLanguage==="fr"?"Profil d’église":"Church profile");go("/settings/local-customs/"+encodeURIComponent(id));return;}
+      if(button.dataset.profileId&&button.dataset.profileKey&&button.dataset.profileValue!==undefined){
+        event.preventDefault();
+        mutate(()=>donor.updateProfile(button.dataset.profileId,button.dataset.profileKey,button.dataset.profileValue));
+        return;
+      }
       if(button.dataset.profileUseDefault){event.preventDefault();const snap=donor.snapshot(),id=button.dataset.profileUseDefault;mutate(()=>donor.setPath("mass.defaultProfileId",snap.preferences.mass.defaultProfileId===id?null:id));return;}
       if(button.dataset.profileDelete){event.preventDefault();if(confirmAction(donor.snapshot().preferences.general.uiLanguage==="fr"?"Supprimer ce profil ?":"Delete this profile?")){donor.deleteProfile(button.dataset.profileDelete);go("/settings/local-customs");}return;}
       if(button.dataset.dataAction){event.preventDefault();if(!confirmAction(donor.snapshot().preferences.general.uiLanguage==="fr"?"Êtes-vous sûr ?":"Are you sure?"))return;mutate(()=>donor.clearData(button.dataset.dataAction));return;}
