@@ -51,13 +51,15 @@ export function auditM11SourceRoleRecovery({
    return denied("MANDATORY_PROVENANCE_MISSING");
  const catalogue=new Map(m07Batches.flatMap(b=>b.candidates??[]).map(x=>[x.id,x]));
  if(catalogue.size!==1195)return denied("ORIGINAL_SCORE_CATALOGUE_INVALID");
- const sourceFiles=new Map(),seen=new Set(),prior=new Map();
+ const sourceFiles=new Map(),seen=new Map(),prior=new Map();
  for(const x of priorResidual45.records){
   const id=x.id+"|"+x.sourcePath+"|"+x.sourceBlobSha+"|"+x.normalizedLatinWitness;
-  if(prior.has(id))return denied("NONUNIQUE_RESIDUAL_PROVENANCE");
-  prior.set(id,x);
+  const list=prior.get(id)??[];
+  list.push(x);
+  prior.set(id,list);
  }
- if(prior.size!==45)return denied("ORIGINAL_RESIDUAL_INCOMPLETE");
+ if([...prior.values()].reduce((n,a)=>n+a.length,0)!==45)
+   return denied("ORIGINAL_RESIDUAL_INCOMPLETE");
  for(let i=0;i<4;i++){
   const s=segments[i];
   if(s?.schema!=="ao-mass-music-m11-1962-pre-gospel-segment-v1"||
@@ -73,19 +75,20 @@ export function auditM11SourceRoleRecovery({
    sourceFiles.set(f.path,f);
    for(const m of f.matches){
     const id=m.id+"|"+f.path+"|"+f.sourceBlobSha+"|"+m.donor;
-    if(seen.has(id)||!prior.has(id)||
+    if(!prior.has(id)||(seen.get(id)??0)>=prior.get(id).length||
        !Number.isInteger(m.sourceTextMatches)||
        m.sourceTextMatches!==1||
        m.sourceSegments?.length!==1||
        !Object.hasOwn(roles,m.classification)||
        m.sourceSegments[0].role!==m.classification||
-       m.originalRole!==prior.get(id).sourceRole)
+       m.originalRole!==prior.get(id)[0].sourceRole)
       return denied("ORIGINAL_DONOR_LINE_ROLE_RECONCILIATION_FAILED");
-    seen.add(id);
+    seen.set(id,(seen.get(id)??0)+1);
    }
   }
  }
- if(sourceFiles.size!==28||seen.size!==45)
+ if(sourceFiles.size!==28||
+    [...seen.values()].reduce((n,a)=>n+a,0)!==45)
    return denied("PINNED_28_SOURCE_FILES_NOT_COMPLETE");
  if(!Array.isArray(sourceCorrected.records)||
     sourceCorrected.records.length!==45||
@@ -99,10 +102,11 @@ export function auditM11SourceRoleRecovery({
  const latest=new Map(),countRoles={};
  for(const row of sourceCorrected.records){
   const origin=prior.get(row.originalScoreId+"|"+row.sourcePath+"|"+
-    row.sourceSha+"|"+row.donorLatin);
+    row.sourceSha+"|"+row.donorLatin)?.[0];
   const m=sourceFiles.get(row.sourcePath)?.matches?.find(y=>
     y.id===row.originalScoreId&&y.donor===row.donorLatin);
-  if(!origin||!m||latest.has(key(row))||
+  if(!origin||!m||
+     (latest.get(key(row))?.length??0)>=(prior.get(key(row))?.length??0)||
      row.sourceSha!==origin.sourceBlobSha||
      row.originalScorePart!==origin.sourceRole||
      row.originalGabcSha256!==origin.originalScoreSha256||
@@ -135,7 +139,9 @@ export function auditM11SourceRoleRecovery({
      return denied("SCORE_ROLE_OR_TEXT_LEAD_SPOOF");
    unique.add(c.id);
   }
-  latest.set(key(row),row);
+  const versions=latest.get(key(row))??[];
+  versions.push(row);
+  latest.set(key(row),versions);
   countRoles[row.sourceSegment]=(countRoles[row.sourceSegment]??0)+1;
   if(row.roleConflict)changes++;
   if(row.candidates.length)withCandidate++;else none++;
@@ -147,20 +153,21 @@ export function auditM11SourceRoleRecovery({
     JSON.stringify(countRoles)!==JSON.stringify({
       GRADUAL:36,ALLELUIA:4,TRACT:3,OFFERTORY:1,COMMUNION:1
     }))return denied("ACTUAL_ROLE_REASSIGNMENT_COUNTS_CHANGED");
- const remaining=new Set();
+ const remaining=new Map();
  for(const r of residual15.stillUnresolved){
-  const found=[...latest.values()].find(x=>x.originalScoreId===r.originalScoreId&&
+  const found=[...latest.values()].flat().find(x=>x.originalScoreId===r.originalScoreId&&
     x.sourcePath===r.sourcePath&&x.sourceSha===r.sourceSha&&
     x.candidates.length===0);
   const id=r.originalScoreId+"|"+r.sourcePath+"|"+r.sourceSha+"|"+r.donorLatin;
   if(!found||r.sourceRole!==found.correctedRoleCandidate||
      r.roleConflict!==found.roleConflict||
      r.rejected!==false||r.releaseApproved!==false||
-     r.notFoundInPrintedBook!==false||remaining.has(id))
+     r.notFoundInPrintedBook!==false||
+     (remaining.get(id)??0)>=(latest.get(id)?.filter(x=>x.candidates.length===0).length??0))
     return denied("RESIDUAL15_SOURCE_OR_STATUS_INVALID");
-  remaining.add(id);
+  remaining.set(id,(remaining.get(id)??0)+1);
  }
- if(remaining.size!==15||
+ if([...remaining.values()].reduce((n,a)=>n+a,0)!==15||
     JSON.stringify(residual15.roles)!==JSON.stringify({
       GRADUAL:11,ALLELUIA:2,OFFERTORY:1,COMMUNION:1
     }))return denied("RESIDUAL15_CLASSIFICATION_CHANGED");
