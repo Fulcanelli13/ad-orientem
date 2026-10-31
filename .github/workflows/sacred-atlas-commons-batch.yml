@@ -17,7 +17,7 @@ permissions:
 
 concurrency:
   group: atlas-commons-source-evidence
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   commons-batches:
@@ -31,6 +31,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Regression-test photo matching and licensing state
+        run: node tools/sacred-atlas-commons-batch.mjs --selftest
       - name: Diagnose Wikimedia access before search
         run: node tools/sacred-atlas-commons-diagnostic.mjs
       - name: Scan batch 001 (100 sacred subjects)
