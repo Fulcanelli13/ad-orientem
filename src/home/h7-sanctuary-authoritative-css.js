@@ -81,6 +81,8 @@ body.light .hero .sh{background:linear-gradient(180deg,rgba(5,6,8,.6) 0%,rgba(5,
 .hero .cred{position:absolute;right:var(--g);top:50px;z-index:2;font:italic 11.5px/1.2 var(--serif);color:rgba(244,238,228,.72);border:0;background:transparent;cursor:pointer}
 .hero .tx{position:absolute;left:var(--g);right:var(--g);bottom:14px;z-index:2}
 .hero .date{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#F4EEE4;padding:0;cursor:pointer;min-height:36px}
+/* 44px hit area with the approved 36px visual flow retained. */
+.aoH7Screens .hero .date{min-height:44px;margin-block:-4px}
 .hero .date .eb{color:#9FD39A}.hero .date b{font:italic 17px/1 var(--serif)}
 .hero .rb{color:#E8A79B;display:block;margin-top:2px}
 .hero h1{margin:6px 0 6px;font:500 50px/1 var(--serif);letter-spacing:-.01em;text-wrap:balance}
