@@ -8,6 +8,8 @@ on:
       - 'data/prayer/stations/rauth-edinburgh/series-photo-rights-research.v1.json'
       - 'scripts/rauth_edinburgh_ephemeral_photo_qa.py'
       - 'scripts/rauth_edinburgh_visual_diagnostics.py'
+      - 'tests/prayer-rauth-14-original-photo-qa-gates.mjs'
+      - 'data/prayer/stations/rauth-edinburgh/native-14-photo-visual-diagnostics-20261031.v1.json'
       - '.github/workflows/rauth-edinburgh-photo-source-qa.yml'
   pull_request:
     branches:
@@ -16,6 +18,8 @@ on:
       - 'data/prayer/stations/rauth-edinburgh/series-photo-rights-research.v1.json'
       - 'scripts/rauth_edinburgh_ephemeral_photo_qa.py'
       - 'scripts/rauth_edinburgh_visual_diagnostics.py'
+      - 'tests/prayer-rauth-14-original-photo-qa-gates.mjs'
+      - 'data/prayer/stations/rauth-edinburgh/native-14-photo-visual-diagnostics-20261031.v1.json'
       - '.github/workflows/rauth-edinburgh-photo-source-qa.yml'
   workflow_dispatch:
 
@@ -38,3 +42,5 @@ jobs:
         run: python scripts/rauth_edinburgh_ephemeral_photo_qa.py
       - name: Analyze exact 2019 original bytes for edge, exposure, colour and detail warnings without storing photos
         run: python scripts/rauth_edinburgh_visual_diagnostics.py
+      - name: Verify fourteen distinct photographs and all publication-rights locks
+        run: node tests/prayer-rauth-14-original-photo-qa-gates.mjs
