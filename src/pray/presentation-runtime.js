@@ -11,6 +11,8 @@ import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
+import {CHOIR_SOURCE_IDS,choirKind,choirSourceBeats} from "./choir-source-beats.js";
+import "./choir-family-styles.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import "./adoration-folio-styles.js";
@@ -637,6 +639,38 @@ function prayerBlock(id,opts={}){
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
+ if(CHOIR_SOURCE_IDS.includes(id)&&!opts.record){
+  // The v5.1 family routes share ONE display contract while maintaining
+  // source-owned song, psalm, antiphon and litany identities.
+  const primary=p[lang()]?lang():p.en?'en':p.la?'la':null;
+  if(!primary)return callout(esc(L('Source text unavailable.','Texte source indisponible.')),'warn');
+  const availableLatin=!!p.la&&primary!=='la';
+  const kind=choirKind(id),isSong=['antiphon','hymn','canticle','psalm','sequence','responsory'].includes(kind);
+  const face=language=>{
+   const beats=choirSourceBeats(id,language,p[language]);
+   if(!beats)return '';
+   return '<div class="aoP435930SemanticFace aoChoirFace" data-ao-pray-semantic="1" lang="'+language+'">'+
+    beats.map((beat,index)=>{
+     if(beat.kind==='space')return '<div class="aoChoirStanzaSpace" aria-hidden="true"></div>';
+     return '<p class="aoChoirBeat aoChoir'+beat.kind.charAt(0).toUpperCase()+beat.kind.slice(1)+
+      '" data-ao-choir-beat="'+index+'">'+esc(beat.raw.trim())+'</p>';
+    }).join('')+'</div>';
+  };
+  return '<article class="aoP435930Prayer aoChoirPrayer" data-ao-choir-prayer="'+esc(id)+
+   '" data-ao-choir-kind="'+esc(kind)+'">'+languageNotice+
+   '<div class="aoP435930PrayerHead"><div><small class="aoChoirType">'+esc(
+    kind==='litany'?L('Litany','Litanies'):kind==='praises'?L('Divine Praises','Louanges divines'):
+    kind==='canticle'?L('Canticle','Cantique'):kind==='psalm'?L('Psalm','Psaume'):
+    kind==='responsory'?L('Responsory','Répons'):kind==='antiphon'?L('Antiphon','Antienne'):
+    kind==='sequence'?L('Sequence','Séquence'):L('Hymn','Hymne'))+
+    '</small><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
+    (availableLatin?'<button type="button" class="aoChoirLanguage" data-p435930-choir-flip aria-pressed="false" aria-label="'+esc(L('Read Latin original','Lire le texte latin'))+'">'+
+     esc(isSong?L('Latin · chant','Latin · chant'):'Latin')+'</button>':'')+'</div>'+
+   '<div class="aoP435930Text aoChoirFaces">'+
+    '<div data-face-v>'+face(primary)+'</div>'+
+    (availableLatin?'<div data-face-la hidden>'+face('la')+'</div>':'')+'</div>'+
+   originCapsule+sourceLine(p)+'</article>';
+ }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
 }
 function selectedDateKey(){
@@ -2924,7 +2958,8 @@ function installLibraryParagraphFocus(m,id){
  // versicles, responses and stanza breaks. Reuse its semantic output instead
  // of reparsing the prayer and erasing V./R. ownership.
  window.AO_PRAY_COHERENCE_V435930?.decorate?.();
- const lines=card.querySelectorAll(
+ const choir=!!card.querySelector("[data-ao-choir-prayer]");
+ const lines=card.querySelectorAll(choir?".aoChoirBeat":
   ".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
  );
  lines.forEach(line=>line.classList.add("aoLibraryLine"));
@@ -2932,7 +2967,7 @@ function installLibraryParagraphFocus(m,id){
  const title=p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière');
  const reader=installSequentialDevotionalReader({
   mount:m,kind:"library",chapters:[{id,title}],
-  activeIndex:0,paragraphSelector:".aoLibraryLine",
+  activeIndex:0,paragraphSelector:choir?".aoChoirBeat":".aoLibraryLine",
   timelineLabel:L('Prayer timeline','Parcours de la prière')
  });
  // A one-card prayer has no meaningful chapter navigation or positional
@@ -3476,6 +3511,28 @@ function onClick(e){
  if(b.dataset.p435930External){
   e.preventDefault?.();
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
+  return;
+ }
+ if(b.matches('[data-p435930-choir-flip]')){
+  const card=b.closest('[data-ao-choir-prayer]');
+  const vern=card?.querySelector('[data-face-v]'),latin=card?.querySelector('[data-face-la]');
+  if(!vern||!latin)return;
+  const before=latin.hidden?vern:latin,after=latin.hidden?latin:vern;
+  const source=[...before.querySelectorAll('.aoChoirBeat')];
+  const active=source.find(x=>x.dataset.aoDevoActive==='true')||source[0];
+  const idx=Math.max(0,source.indexOf(active));
+  const scroll=card.closest('.aoDevoCardScroll');
+  const oldTop=active?.getBoundingClientRect().top;
+  before.hidden=true;after.hidden=false;
+  const destination=[...after.querySelectorAll('.aoChoirBeat')];
+  const mapped=Math.min(destination.length-1,Math.round(idx/Math.max(1,source.length-1)*Math.max(0,destination.length-1)));
+  const target=destination[mapped];
+  if(scroll&&target&&oldTop!=null)scroll.scrollTop+=target.getBoundingClientRect().top-oldTop;
+  const showingLatin=after===latin;
+  const choral=['antiphon','hymn','canticle','psalm','sequence','responsory'].includes(card.dataset.aoChoirKind);
+  b.textContent=showingLatin?(isFr()?'Français':'English'):(choral?'Latin · chant':'Latin');
+  b.setAttribute('aria-pressed',String(showingLatin));
+  b.setAttribute('aria-label',showingLatin?L('Read in vernacular','Lire en langue vernaculaire'):L('Read Latin original','Lire le texte latin'));
   return;
  }
  if(b.matches('[data-p435930-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
