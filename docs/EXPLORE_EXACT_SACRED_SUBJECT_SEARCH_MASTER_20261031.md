@@ -89,3 +89,16 @@ Two concrete errors corrected:
 Implementation priorities following this triage: verify candidate equality with originally shown previews; evaluate underlying original work/artwork rights for each; independently confirm Commons image bytes and hashes (do not persist expiring CI artifact links as permanent archive); verify photographic quality and avoid cropped framing; then promote exact cleared assets through existing approved-media schema with correct photographer attribution and licence URL. No source claims alone certify production readiness.
 
 All original 20 KEEP votes remain preserved. Source investigation and legal review should not be confused with a new editorial approval round.
+
+## 31 October 2026 — explicit editorial delegation for bulk photographs (later instruction supersedes individual reapproval requirement)
+
+The user requires throughput in **batches of 100 exact sacred subjects**, repeated without demanding individual photograph approvals. The user's already-recorded 20 Round-1 KEEP selections and all earlier rejects remain historical/editorial facts; they are **not discarded**. For any future source-verified image, including necessary replacements for an incorrect site or unusable licence, the acquisition team is now **authorized to choose the best image without returning to the user for another visual vote**. This is an editorial delegation, **not** a copyright waiver. Original file identity, exact object and shrine, authorship, free commercial reuse licence, attribution, underlying sculptural/architectural/mosaic rights, image quality, crop, and original bytes/integrity must still be verified before any production publication. Unverifiable or rights-blocked subjects remain gaps and the batch moves forward without a user interruption.
+
+Initial bulk queue: 247 source-linked targets in three manifests:
+- \`data/geography/research/sacred-atlas-commons-batch-001.manifest.json\` (100; 20 prior KEEP + 12 further precisely sourced subjects + 68 specific relics);
+- \`data/geography/research/sacred-atlas-commons-batch-002.manifest.json\` (100; 59 further relics + 41 source-described guide stops);
+- \`data/geography/research/sacred-atlas-commons-batch-003.manifest.json\` (47 source-described guide stops).
+- \`tools/sacred-atlas-commons-batch.mjs\` and the single zero-fee GitHub Actions workflow attempt metadata retrieval and persist separate research results. A returned Commons page, licence string, name-matching score or listed image size does **not** mean a photo has been visually/legally validated.
+- Source-described guide stops carry physical-subsite verification holds, while a relic owner's name alone cannot certify that the pictured object is a relic rather than an adjacent tomb, altar or reproduction.
+
+When exact-subject inventory is exhausted, acquire more human-checkable physical subject definitions from existing authoritative sources, with canonical Place IDs and existing coordinates. Do not start searching the 530 Place names generically, invent subsite pins, or treat an exterior cover as an original devotional image. Avoid duplicating the other Explore branch's approved production covers.
