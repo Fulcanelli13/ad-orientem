@@ -11,7 +11,9 @@
     "originalSourceEdges": 146,
     "deduplicatedReviewOptions": 139,
     "excludedDoNotSuggest": 11,
-    "candidatesWithExplicitNoPublicationGate": 139
+    "candidatesWithExplicitNoPublicationGate": 139,
+    "sourceLinksRecoveredByExactID": 4,
+    "sourceLinkSuggestionsUnverified": 0
   },
   "slots": [
     {
@@ -200,7 +202,7 @@
           ],
           "title": "Adoration of the Magi",
           "artist": "Workshop of Peter Paul Rubens",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "historicallyApprovedInOriginalLedger": true,
@@ -209,7 +211,15 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:34140055"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -217,7 +227,7 @@
           ],
           "title": "Adoration of the Magi",
           "artist": "Anton Kern",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "historicallyApprovedInOriginalLedger": true,
@@ -226,7 +236,15 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:28933083"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -234,7 +252,7 @@
           ],
           "title": "Adoration of the Magi",
           "artist": "Denys Calvaert",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "historicallyApprovedInOriginalLedger": true,
@@ -243,7 +261,15 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:115220164"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -251,7 +277,7 @@
           ],
           "title": "Adoration of the Magi",
           "artist": "Jean-Baptiste de Faudran",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
           "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "historicallyApprovedInOriginalLedger": true,
@@ -260,7 +286,15 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:56890177"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1345,7 +1379,8 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         },
         {
           "sourceIDs": [
@@ -1754,7 +1789,8 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
         }
       ],
       "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
