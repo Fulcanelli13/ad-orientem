@@ -1,0 +1,54 @@
+name: Sacred Atlas — first 100 missing canonical Place covers
+
+on:
+  push:
+    branches:
+      - research/explore-precise-sacred-subject-photo-search-20261031
+    paths:
+      - "tools/sacred-atlas-site-cover-batch.mjs"
+      - "data/geography/research/sacred-atlas-site-covers-batch-001.v1.json"
+      - ".github/workflows/sacred-atlas-site-cover-batch.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atlas-site-cover-batch-001
+  cancel-in-progress: true
+
+jobs:
+  missing-place-covers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/explore-precise-sacred-subject-photo-search-20261031
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Contract tests for source and location identity
+        run: node tools/sacred-atlas-site-cover-batch.mjs --selftest
+      - name: Read exact Commons files and source licensing for 100 missing covers
+        run: node tools/sacred-atlas-site-cover-batch.mjs
+      - name: Verify research output is complete and non-public
+        run: |
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const x=JSON.parse(readFileSync("data/geography/research/sacred-atlas-site-covers-batch-001.results.json"));
+            if(x.records.length!==100||x.summary.locations!==100||x.summary.app_cover_published!==0)process.exit(1);
+            if(x.records.some(r=>r.candidates.some(c=>c.publishable||c.published||c.exact_physical_site_visually_verified)))process.exit(1);
+            if(x.records.some(r=>r.place_id==="place:CD:notre-dame-du-congo-cathedral-kinshasa"&&r.candidates.some(c=>/Bukavu/i.test(c.commons_title))))process.exit(1);
+            console.log(x.summary);
+          '
+      - name: Persist source metadata on research branch; never publish binaries
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/geography/research/sacred-atlas-site-covers-batch-001.results.json
+          if git diff --cached --quiet; then echo "No differences"; exit 0; fi
+          git commit -m "research(atlas): persist 100 exact-site Commons cover source checks"
+          git fetch origin research/explore-precise-sacred-subject-photo-search-20261031
+          git rebase origin/research/explore-precise-sacred-subject-photo-search-20261031
+          git push origin HEAD:research/explore-precise-sacred-subject-photo-search-20261031
