@@ -5,7 +5,8 @@ import { absoluteUrl, emailAddresses, extractAnchors, extractTagBlocks, fetchTex
 import { writeDirectoryDataset } from "./lib/write-directory-dataset.mjs";
 import { selectOfficialGeoFromHtml } from "./lib/official-geo-utils.mjs";
 
-// The www host intermittently fails DNS in CI; use the verified canonical host.\nexport const ICKSP_US_URL="https://institute-christ-king.org/";
+// Avoid an unresolvable www alias; the canonical institute origin is non-www.
+export const ICKSP_US_URL="https://institute-christ-king.org/";
 export const ICKSP_INTL_URL="https://institute-christ-king.org/international-home";
 
 function slugify(v){return String(v??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");}
