@@ -152,9 +152,19 @@ async function openSurface(page,surface,width){
     await page.locator("[data-ao-app-surface='home']").first().click();
     await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
     const month=page.locator('.homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view="picker"]');
-    assert.equal(await month.count(),1,width+"px H4 lost its dated Calendar entry");
-    assert.ok(await month.evaluate(el=>el.getBoundingClientRect().height)>=44,
-      width+"px H4 Calendar opener is below the phone touch target");
+    assert.equal(await month.count(),1,width+"px H7 lost its dated Calendar entry");
+    // Home can still be finishing its source repaint after shell navigation.
+    // Test the actual visible date button, never a hidden former DOM instance.
+    await month.waitFor({state:"visible",timeout:15000});
+    const dateHitArea=await month.evaluate(el=>{
+      const style=getComputedStyle(el),box=el.getBoundingClientRect();
+      return {height:box.height,width:box.width,cssMinHeight:style.minHeight,
+        display:style.display,visibility:style.visibility,
+        hiddenAncestor:Boolean(el.closest("[hidden]")),
+        activeScreen:document.querySelector(".homeScreen")?.dataset.aoHomeCalendarView||"home"};
+    });
+    assert.ok(dateHitArea.height>=44,
+      width+"px H7 Calendar date touch area below 44px: "+JSON.stringify(dateHitArea));
     await month.click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
