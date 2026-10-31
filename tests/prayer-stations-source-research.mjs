@@ -10,7 +10,11 @@ assert.deepEqual(entries.entries.map(e=>e.editorialSlot),expected);
 assert.deepEqual(entries.rejectedHistoricalCandidates.map(e=>e.editorialSlot),expected);
 assert.equal(entries.context.previousEditorialCovered,global.global.editoriallyCovered);
 assert.equal(entries.context.remainingEditorialGaps,global.global.editoriallyUncovered);
-assert.equal(entries.context.remainingEditorialGaps,68);
+assert.equal(entries.context.remainingEditorialGaps,67);
+assert.equal(entries.context.currentEditorialCovered,200);
+assert.equal(entries.context.inheritedAlreadyApprovedPaintingSlots,1);
+assert.equal(entries.context.unmappedStationSlots,6);
+assert.equal(entries.context.newlyApproved,0);
 assert.equal(entries.context.activePaintingCandidates,0);
 assert.equal(entries.context.unapprovedEtchingAlternatives,7);
 assert.equal(entries.context.lybaertArtworksExcluded,7);
@@ -20,8 +24,17 @@ assert.equal(entries.hardExclusion.status,"USER_REJECTED_PERMANENT_EXCLUDE");
 assert.equal(entries.hardExclusion.mayOnlyReverseByNewExplicitUserApproval,true);
 for(const e of entries.entries){
  assert.ok(registry.slots.some(s=>s.slot_id===e.editorialSlot));
- assert.equal(e.actualPaintingSelection,"NONE");
- assert.equal(e.artisticApproval,"NOT_REQUESTED_OR_GRANTED");
+ if(e.editorialSlot==="STG-pray.stations-05"){
+   assert.match(e.actualPaintingSelection,/Domenichino/);
+   assert.equal(e.inheritance.artworkId,"REVIEW::commons:22178536");
+   assert.equal(e.inheritance.rightsBasis,"Getty Open Content CC0 and Commons PD-Art");
+   assert.equal(e.inheritance.stillNeedsNativePhotoQA,true);
+   assert.equal(e.inheritance.publicationAllowed,false);
+ }else{
+   assert.equal(e.actualPaintingSelection,"NONE");
+   assert.equal(e.inheritance,null);
+ }
+ assert.equal(e.artisticApproval,e.editorialSlot==="STG-pray.stations-05"?"SAME_SCENE_REUSE_OF_EXISTING_USER_APPROVAL_NOT_NEW_SELECTION":"NOT_REQUESTED_OR_GRANTED");
  assert.equal(e.unapprovedEtchingResearch.length,1);
  assert.equal(e.unapprovedEtchingResearch[0].artist,"Giovanni Domenico Tiepolo");
  assert.equal(e.unapprovedEtchingResearch[0].approvedByUser,false);
@@ -44,4 +57,4 @@ const benediction=entries.guardrails.find(x=>x.id==="BENEDICTION_BLESSING_EXACTN
 assert.equal(benediction.publicationAllowed,false);
 const therese=entries.guardrails.find(x=>x.id==="THERESA_PHOTOGRAPH_REUSE");
 assert.equal(therese.publicationAllowed,false);
-console.log("PASS: Lybaert rejected and unselectable in all 7 Station slots; 7 etchings research-only; 68 unchanged editorial gaps; no new photo release.");
+console.log("PASS: Lybaert rejected and unselectable in all 7 Station slots; 7 etchings research-only; 67 current editorial gaps; no new photo release.");
