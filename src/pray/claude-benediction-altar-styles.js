@@ -15,6 +15,91 @@ export const CLAUDE_ALTAR_CARD_CSS=String.raw`
  --claude-serif:var(--ao-font-liturgical,"Sorts Mill Goudy",Georgia,serif);
  --claude-init:var(--ao-font-initial,"IM Fell French Canon",Georgia,serif);
 }
+/* Running head: original Claude uses one compact manuscript bar, and Aa
+   owns local options instead of two large source/settings cards. */
+#aoPray435930:has(.aoP435930BenedictionReader) .aoP435930Head{
+ padding-top:7px;padding-bottom:7px;
+ border-bottom:3px double var(--rubric-red,#d4705f);
+}
+#aoPray435930:has(.aoP435930BenedictionReader) .aoP435930Head p{display:none}
+#aoPray435930:has(.aoP435930BenedictionReader) .aoP435930Head h1{
+ font-size:clamp(18px,4.7vw,22px);
+}
+#aoPray435930 .aoClaudeBenAa{
+ min-width:40px;min-height:40px;
+ border:0;border-radius:0;background:transparent;
+ color:var(--claude-ink2,#bfb4a1);
+ font:italic 17px/1 Georgia,serif;
+ cursor:pointer;
+}
+#aoPray435930 .aoClaudeBenAa[aria-expanded="true"]{
+ color:var(--liturgical,#d6b47d);
+ text-decoration:underline;text-underline-offset:5px;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"].aoP435930BenedictionReader{
+ position:relative;padding-top:0;gap:0;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeBenSettings{
+ position:absolute;top:1px;right:10px;left:45px;
+ z-index:18;max-width:625px;max-height:min(67dvh,550px);
+ overflow-y:auto;background:var(--claude-pg2,#18150f);
+ border:3px double var(--claude-rule,#3a3228);
+ padding:10px;margin:0;box-shadow:0 12px 28px rgba(0,0,0,.42);
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeBenSettings[hidden]{
+ display:none!important;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeBenSettings>*{
+ min-width:0;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeRiteLayout{
+ padding-top:7px;
+}
+/* The framed miniature and two-line caption are Claude's original .hd/.plate
+   geometry. This is deliberately a CSS study plate, not unapproved sacred art. */
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarHead{
+ display:flex;gap:10px;align-items:center;min-height:73px;
+ padding:10px 12px 8px;border-bottom:1px solid var(--claude-rule);
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarPlate{
+ flex:0 0 44px;width:44px;height:56px;padding:2px;
+ border:1px solid var(--claude-rule);background:var(--claude-pg,#0f0d0b);
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarPlateArt{
+ height:100%;min-height:0;
+ background-image:radial-gradient(70% 60% at 45% 35%,rgba(220,197,144,.37),transparent 70%),
+ repeating-linear-gradient(118deg,rgba(0,0,0,.22) 0 1px,transparent 1px 4px),
+ linear-gradient(170deg,#5a4630,#1a130c);
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarHeading{
+ min-width:0;flex:1;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarHead .aoDevoCardNumber{
+ display:block;margin:0 0 2px;padding:0;background:transparent;border:0;
+ letter-spacing:0;text-transform:none;
+ font:400 13px/1.2 var(--ao-font-display,Georgia,serif);
+ color:var(--claude-ink2);
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteChantPrayer{
+ padding:0 4px;margin:0 0 12px;max-width:none;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteChantPrayer .aoP435930PrayerHead{
+ display:none;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteChantStanza{
+ font-size:clamp(16px,4.2vw,18px);line-height:1.45;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteChantStanza .aoRiteChantLatin{
+ font-size:inherit;line-height:1.45;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteChantStanza .aoRiteChantVernacular{
+ font-size:.88em;line-height:1.45;
+}
+@media(max-width:359px){
+ #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeBenSettings{left:36px;right:6px;padding:7px}
+ #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarHead{gap:8px;padding:8px}
+ #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeAltarPlate{flex-basis:38px;width:38px;height:50px}
+}
 /* Claude has ONE stage navigation: the Roman I–VII margin. Keep the underlying
    source-owned timeline mounted for focus/progress events, but do not show a
    redundant horizontal strip or expose duplicate navigation to assistive tech. */
