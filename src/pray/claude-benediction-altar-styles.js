@@ -15,6 +15,12 @@ export const CLAUDE_ALTAR_CARD_CSS=String.raw`
  --claude-serif:var(--ao-font-liturgical,"Sorts Mill Goudy",Georgia,serif);
  --claude-init:var(--ao-font-initial,"IM Fell French Canon",Georgia,serif);
 }
+/* Claude has ONE stage navigation: the Roman I–VII margin. Keep the underlying
+   source-owned timeline mounted for focus/progress events, but do not show a
+   redundant horizontal strip or expose duplicate navigation to assistive tech. */
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoDevoSequenceTimeline{
+ display:none!important;
+}
 #aoPray435930 [data-ao-rite-owner="benediction"] .aoClaudeRiteLayout{
  flex:1 1 auto;display:flex;min-height:0;
  padding:12px 12px 12px 0;width:100%;max-width:680px;margin:0 auto;
