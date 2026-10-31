@@ -171,6 +171,20 @@ for(const [group,view] of [
     assert.equal(actual.publicationReady,false);
   }
 }
+// Seven Gospel sayings remain exactly seven. The separate historical-source
+// conclusion has an eighth editorial art slot, but is not a navigable Word.
+const sevenWordAppendix=presentationResolve('sevenWords',6,{section:'historicalConclusion'});
+assert.equal(sevenWordAppendix.key,'presentation:seven-words:historical-conclusion');
+assert.equal(sevenWordAppendix.slot,'STG-pray.seven_words-08');
+assert.equal(sevenWordAppendix.fit,'SEPARATE_HISTORICAL_CONCLUSION_NOT_GOSPEL_SAYING');
+assert.equal(sevenWordAppendix.publicationReady,false);
+assert.equal(sevenWordAppendix.assetUrl,null);
+assert.ok(slots.get(sevenWordAppendix.slot)?.works.some(w=>w.eligible&&w.editorial==='USER_APPROVED'),
+  'Historical conclusion must retain its approved painting pool');
+assert.equal(presentationResolve('sevenWords',7).slot,null,
+  'The historical conclusion must never become an eighth Gospel saying');
+assert.ok(presentation.includes("if(appendix)stampArtworkRuntimeIdentity(appendix,{owner:'presentation',view:'sevenWords',section:'historicalConclusion'});"),
+  'Visible historical conclusion must carry a separate nonvisual artwork identity');
 for(const [group,mode] of [
   ['adoration_visit','visit'],['adoration_holy_hour','holy'],['adoration_four_ends','four']
 ]){
