@@ -9,6 +9,7 @@ const b02=read("sacred-atlas-source-first-b02-relics-127-20261031.v1.json").item
 const b03=read("sacred-atlas-source-first-b03-marian-118-20261031.v1.json").items;
 const b04=read("sacred-atlas-source-first-b04-guide-stops-88-20261031.v1.json").items;
 const b05=read("sacred-atlas-source-first-b05-precise-20-20261031.v1.json").items;
+const b06=read("sacred-atlas-source-first-b06-nonmarian-shrines-139-20261031.v1.json").items;
 const apparitions=read("sacred-atlas-source-first-apparition-contexts-33-20261031.v1.json").items;
 assert.equal(m.schema,"AO_SACRED_ATLAS_SOURCE_FIRST_BULK_530_V1");
 assert.equal(owners.length,530);
@@ -16,26 +17,28 @@ assert.equal(b02.length,127);
 assert.equal(b03.length,118);
 assert.equal(b04.length,88);
 assert.equal(b05.length,20);
+assert.equal(b06.length,139);
 assert.equal(apparitions.length,33);
-const all=[...b02,...b03,...b04,...b05],idSet=new Set(all.map(x=>x.subject_id));
-assert.equal(all.length,353);
+const all=[...b02,...b03,...b04,...b05,...b06],idSet=new Set(all.map(x=>x.subject_id));
+assert.equal(all.length,492);
 assert.equal(idSet.size,all.length,"No source-first reference collision");
 assert.equal(new Set(owners.map(x=>x.place_id)).size,530);
 const placeSet=new Set(rawPlaces.map(x=>x.place_id));
 assert.deepEqual(new Set(owners.map(x=>x.place_id)),placeSet,"All owners must be canonical");
 assert(all.every(x=>placeSet.has(x.place_id)),"Every subject must have a canonical place");
 assert(apparitions.every(x=>placeSet.has(x.place_id)&&x.photographable_event===false&&x.photosearch_enabled===false));
-assert(all.every(x=>x.photo_selected===false&&x.photo_file_url===null&&x.photo_downloaded===false&&
+assert([...b02,...b03,...b04,...b05].every(x=>x.photo_selected===false&&x.photo_file_url===null&&x.photo_downloaded===false&&
 x.photo_quality_approved===false&&x.underlying_rights_approved===false&&x.editorial_approved===false&&
 x.published===false&&x.prior_user_votes==="UNCHANGED"),"Research must not preapprove or publish images");
 assert(b03.every(x=>x.external_photo_web_search_enabled===false&&x.primary_shrine_source_references.length),"Marian object cannot be inferred from shrine dedication");
+assert(b06.every(x=>x.photo_file_url===null&&x.photo_downloaded===false&&x.identity_approved===false&&x.published===false&&x.user_approval_status==="UNCHANGED"));
 assert(b04.every(x=>x.external_photo_web_search_enabled===false&&
 x.precise_object_state==="NO_EXACT_OBJECT_AUTOMATCH_SOURCE_STOP_ONLY"),"Guide stops require site containment");
 assert(b05.every(x=>x.proof_urls.length>0&&x.exact_search_queries.length>0&&x.publication_hold===true));
 assert(b02.every(x=>x.canonical_relic_id.startsWith("relic:")&&/^https:\/\//.test(x.original_custody_source_url)));
 assert.equal(b02.filter(x=>x.web_verified_source).length,19);
-assert.equal(owners.filter(x=>x.source_first_record_count>0).length,214);
-assert.equal(owners.filter(x=>x.source_first_record_count===0).length,316);
+assert.equal(owners.filter(x=>x.source_first_record_count>0).length,259);
+assert.equal(owners.filter(x=>x.source_first_record_count===0).length,271);
 for(const owner of owners){
  const refs=Object.values(owner.source_first_subjects||{}).flat();
  assert.equal(refs.length,owner.source_first_record_count);
@@ -43,8 +46,8 @@ for(const owner of owners){
  assert(owner.new_media_published===false);
 }
 assert.equal(owners.reduce((sum,x)=>sum+x.source_first_record_count,0),all.length);
-assert.equal(m.stats.source_first_reference_rows,353);
-assert.equal(m.stats.unique_places_with_evidence,214);
+assert.equal(m.stats.source_first_reference_rows,492);
+assert.equal(m.stats.unique_places_with_evidence,259);
 assert.equal(m.stats.pub_approved,0);
 assert.equal(m.stats.images_downloaded,0);
 const shroud=b02.find(x=>x.canonical_relic_id==="relic:IT:duomo-torino-sindone");
@@ -52,4 +55,4 @@ assert(shroud.web_verified_object_distinction.includes("NOT VISIBLE"),"Shroud pu
 const nda=b02.filter(x=>["relic:FR:crown-of-thorns-paris","relic:FR:cross-paris","relic:FR:holy-nail-paris"].includes(x.canonical_relic_id));
 assert.equal(nda.length,3);
 assert(nda.every(x=>x.web_verified_group==="NOTRE_DAME_PASSION"));
-console.log("PASS: 530 canonical Places; 127 relics, 118 Marian shrine owners, 88 guide stops, 20 exact photo targets; 353 source-first records, 33 apparition contexts, 19 custodian-checked relic records, 0 publication approvals.");
+console.log("PASS: 530 canonical Places; 127 relics, 118 Marian shrine owners, 88 guide stops, 20 exact photo targets, 139 non-Marian shrines; 492 source-first records plus 33 apparition contexts, 19 custodian-checked relic records, 0 publication approvals.");
