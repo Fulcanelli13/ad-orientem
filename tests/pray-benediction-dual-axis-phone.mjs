@@ -35,6 +35,10 @@ try{
  const roman=rootSel+" .aoClaudeRiteRail";
  await page.waitForSelector(roman,{timeout:12000});
  const navigateStep=async index=>{
+  // Claude's Aa sheet is a modal-like control panel; a real reader closes
+  // it before selecting a public-rite stage.
+  const aa=page.locator("#aoPray435930 .aoClaudeBenAa");
+  if(await aa.getAttribute("aria-expanded")==="true")await aa.click();
   const extended=await page.locator(rootSel).getAttribute("data-ao-ben-extended")==="true";
   const target=extended
    ?timeline+" [data-ao-devo-chapter='"+index+"']"
@@ -227,11 +231,14 @@ try{
  await page.setViewportSize({width:390,height:844});
  await settings.click();
  assert.equal(await options.evaluate(el=>el.hidden),false);
+ const ensureSettings=async()=>{
+  if(await settings.getAttribute("aria-expanded")!=="true")await settings.click();
+ };
  const feastDetails=page.locator(rootSel+" [data-ao-ben-feast-options]");
  assert.equal(await feastDetails.count(),1);
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast]").isChecked(),false,
    "Feast material was silently forced into ordinary Benediction");
- await feastDetails.locator("summary").tap();
+ await ensureSettings();\n await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").check();
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Feast options close during configuration");
  assert.equal((await snapshot()).stops,7,"Selecting the feast must not assume optional local ceremonies");
@@ -298,12 +305,12 @@ try{
    "Latin consecration does not replace the French text");
  await navigateStep(5);
  assert.equal((await snapshot()).card,"hymn","Consecration must lead to canonical Tantum Ergo");
- await feastDetails.locator("summary").tap();
+ await ensureSettings();\n await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").check();
  assert.equal((await snapshot()).stops,11,"Explicit litany inclusion must add one optional card");
  assert.equal((await snapshot()).card,"hymn","Changing optional elements may not discard the current canonical stage");
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Optional cards configuration collapsed");
- await feastDetails.locator("summary").tap();
+ await ensureSettings();\n await feastDetails.locator("summary").tap();
  await navigateStep(4);
  assert.equal((await snapshot()).card,"king-sacred-heart-litany");
  const litanyVern=page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]");
@@ -326,7 +333,7 @@ try{
  await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-latin.png"),animations:"disabled"});
  await navigateStep(6);
  assert.equal((await snapshot()).card,"hymn","The complete optional litany must precede Consecration and Tantum Ergo");
- await feastDetails.locator("summary").tap();
+ await ensureSettings();\n await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").uncheck();
  assert.equal((await snapshot()).stops,10);
  await navigateStep(9);
@@ -334,7 +341,7 @@ try{
  assert.equal(await page.locator(rootSel).getAttribute("data-ao-benediction-final"),"true");
  assert.ok(await page.locator(rootSel+" .aoP435930GuideNav").evaluate(x=>getComputedStyle(x).display)!=="none",
    "The optional celebration must not hide the final Reposition exit");
- await feastDetails.locator("summary").tap();
+ await ensureSettings();\n await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").uncheck();
  assert.equal((await snapshot()).stops,7,"Ordinary Benediction was not restored on disabling feast");
  await navigateStep(2);
