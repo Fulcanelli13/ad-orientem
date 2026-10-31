@@ -21,14 +21,14 @@
     "historicApprovedSlots": 162,
     "currentApprovedSlots": 160,
     "currentGaps": 107,
-    "newSafeReuseSlots": 32,
+    "newSafeReuseSlots": 33,
     "contextualProposals": 38,
-    "remainingGapsAfterSafeReuse": 75,
-    "newUnpublishedRelationships": 118,
-    "rules": 72,
+    "remainingGapsAfterSafeReuse": 74,
+    "newUnpublishedRelationships": 119,
+    "rules": 73,
     "productionClearedImages": 0,
     "tiers": {
-      "EXACT_SCENE": 14,
+      "EXACT_SCENE": 15,
       "DEVOTIONAL_SUBJECT": 18,
       "CONTEXTUAL_REVIEW": 38,
       "RESEARCH_REQUIRED": 1,
@@ -39,13 +39,15 @@
   "global": {
     "canonicalSlots": 267,
     "activePriorApproved": 160,
-    "exactSceneReuse": 14,
+    "exactSceneReuse": 15,
     "devotionalSubjectReuse": 18,
     "additionalExplicitKeepSlots": 7,
-    "editoriallyCovered": 199,
-    "editoriallyUncovered": 68,
+    "editoriallyCovered": 200,
+    "editoriallyUncovered": 67,
     "contextualProposalsNotApproved": 38,
-    "certifiedPhotos": 0
+    "certifiedPhotos": 0,
+    "sourceNewInheritedStation": "STG-pray.stations-05",
+    "newImagePublications": 0
   },
   "placements": [
     {
@@ -136,5 +138,8 @@
       "photoQuality": "NOT_VERIFIED",
       "publicationAllowed": false
     }
+  ],
+  "notes": [
+    "Added 31 October: Getty Domenichino's The Way to Calvary is already user-approved in Station II and visibly depicts Simon helping fallen Christ, so the exact scene is inherited by Station V. Original Station II artwork approval remains pending scene audit."
   ]
 }
