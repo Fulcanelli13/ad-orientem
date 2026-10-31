@@ -9,7 +9,9 @@
     "slots": 12,
     "originalSourceEdges": 98,
     "deduplicatedReviewOptions": 88,
-    "excludedDoNotSuggest": 9
+    "excludedDoNotSuggest": 9,
+    "sourceLinksRecoveredByExactID": 10,
+    "sourceLinkSuggestionsUnverified": 0
   },
   "slots": [
     {
@@ -896,14 +898,22 @@
           ],
           "artist": "Giovanni Battista Salvi da Sassoferrato",
           "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:87865020"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -911,14 +921,22 @@
           ],
           "artist": "Giovanni Bellini",
           "title": "Madonna and Child",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435641",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:435641"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -971,14 +989,22 @@
           ],
           "artist": "Michele da Verona (Michele di Zenone)",
           "title": "Madonna and Child with the Infant Saint John the Baptist",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437081",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437081"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -986,14 +1012,22 @@
           ],
           "artist": "Annibale Carracci",
           "title": "The Coronation of the Virgin",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:435853"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1001,14 +1035,22 @@
           ],
           "artist": "Stefan Lochner (German, 1400-c. 1452)",
           "title": "The Virgin Crowned by Angels",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1968.20",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::cma:143761"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1016,14 +1058,22 @@
           ],
           "artist": "William-Adolphe Bouguereau",
           "title": "The Virgin of Consolation",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:18589500"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1031,14 +1081,22 @@
           ],
           "artist": "Francisco de Zurbarán",
           "title": "The Virgin of the Immaculate Conception",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:160399"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1046,14 +1104,22 @@
           ],
           "artist": "Bartolomé Estebán Murillo",
           "title": "Virgin and Child",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437175",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437175"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1061,14 +1127,22 @@
           ],
           "artist": "Anthony van Dyck",
           "title": "Virgin and Child",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436261",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:436261"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1293,14 +1367,22 @@
           ],
           "artist": "Francisco de Zurbarán",
           "title": "The Virgin of the Immaculate Conception",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:160399"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
