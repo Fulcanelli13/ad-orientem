@@ -19,6 +19,7 @@ export const HOME_C3_CSS=String.raw`/* C3 Living Gallery extends (does not repla
 .aoH7Screens .aoC3PrayerAction small{font:13px/1.35 var(--sans)!important;color:#f0e9dc!important}
 .aoH7Screens .aoC3PrayerRole{font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.11em;color:#bcd9bd}
 .aoH7Screens .aoC3Arrow{position:absolute;right:19px;bottom:20px;font:26px/1 var(--serif)}
+.aoH7Screens .aoC3PrayerSlide>.aoC3Info{position:absolute;top:7px;right:7px;z-index:6}
 .aoH7Screens .aoC3PrayerPager{height:36px;display:flex;justify-content:center;align-items:center;background:var(--sf)}
 .aoH7Screens .aoC3PrayerPager button{min-width:44px;height:36px;display:grid;place-items:center;border:0;background:transparent;cursor:pointer}
 .aoH7Screens .aoC3PrayerPager button span{width:7px;height:7px;border-radius:50%;background:var(--mu);opacity:.65}
