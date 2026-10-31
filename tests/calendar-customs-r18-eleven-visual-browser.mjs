@@ -62,8 +62,8 @@ try{
     await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.close?.());
     await page.locator(".homeScreen.aoTodayV2").waitFor({state:"visible",timeout:20000});
    }
-   await page.locator(".aoTodayV2Tabs [data-home-calendar-today]").click();
-   await page.locator('[data-home-calendar-view="day"]').first().click();
+   await page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]').click();
+   await page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
    const cal=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await cal.locator(".aoCalCustomCatalogue").waitFor({state:"attached",timeout:45000});
    await cal.locator(".aoCalCustomCatalogue > summary").click();
