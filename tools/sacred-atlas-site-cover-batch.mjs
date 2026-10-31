@@ -104,8 +104,12 @@ async function worker(){
    }else{
     let pages=[];
     if(site.action==="HOLD_WRONG_CITY_RESEARCH_CORRECT_SITE"){
-     record.state="WRONG_CITY_SOURCE_HELD";
-     // Explicit prior Bukavu file is NOT queried, never approved.
+     const term="Cathédrale Notre Dame du Congo Kinshasa";
+     record.candidate_searches.push({kind:"RESEARCH_EXACT_KINSHASA_REPLACEMENT",query:term});
+     // Never reuse the old Bukavu selection. New results are identity leads.
+     pages=await query({...props,generator:"search",gsrsearch:term,gsrnamespace:6,gsrlimit:10,gsrwhat:"text"});
+     pages=pages.filter(p=>!/(Bukavu|Notre-Dame de la paix de Bukavu)/i.test(p.title||""));
+     record.state="CORRECT_CITY_RESEARCH_NEEDS_PHYSICAL_SITE_QA";
     }else if(site.candidate_override?.commons_title){
      const title=site.candidate_override.commons_title;
      record.candidate_searches.push({kind:"PINNED_EXACT_SOURCE",query:title});
@@ -124,7 +128,11 @@ async function worker(){
     record.candidates=record.candidates.slice(0,7);
     if(site.candidate_override?.source_sha1 && record.candidates[0]?.source_sha1!==site.candidate_override.source_sha1)
      throw Error("Pinned source SHA1 mismatch; no acquisition");
-    if(record.state!=="WRONG_CITY_SOURCE_HELD"){
+    if(site.action==="HOLD_WRONG_CITY_RESEARCH_CORRECT_SITE"){
+     // Even a Kinshasa-titled photograph is not independently identified yet.
+     record.state=record.candidates.some(c=>c.metadata_preflight_passed&&/Kinshasa/i.test(c.commons_title||""))
+       ?"CORRECT_CITY_FREE_PHOTO_LEAD_NOT_VERIFIED":"CORRECT_CITY_SOURCE_STILL_UNRESOLVED";
+    }else{
      const acceptable=record.candidates.some(c=>c.metadata_preflight_passed&&(site.prior_selected_commons_file||site.candidate_override||c.text_match_score>=0.4));
      record.state=acceptable?"COMMONS_LICENSED_PHOTO_CANDIDATE_NEEDS_IMAGE_AND_SITE_QA":"NO_USABLE_EXACT_SOURCE_FOUND";
     }
@@ -141,7 +149,7 @@ const summary={
  source_file_candidates:records.reduce((n,x)=>n+x.candidates.length,0),
  locations_with_compatible_photo_metadata:records.filter(x=>x.candidates.some(z=>z.metadata_preflight_passed)).length,
  pinned_current_source_sha_changed:records.filter(x=>x.error?.includes("SHA1 mismatch")).length,
- wrong_city_hold:records.filter(x=>x.state==="WRONG_CITY_SOURCE_HELD").length,
+ wrong_city_hold:records.filter(x=>x.action==="HOLD_WRONG_CITY_RESEARCH_CORRECT_SITE").length,
  errors:records.filter(x=>x.state==="SOURCE_LOOKUP_FAILED_OR_CHANGED").length,
  original_image_bytes_acquired:0,app_cover_published:0
 };
