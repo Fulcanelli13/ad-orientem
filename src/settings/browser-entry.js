@@ -96,6 +96,28 @@ export function createSettingsOwner(win=globalThis){
     const target=reader?.querySelector?.("button,[href],[tabindex]:not([tabindex='-1'])");if(target)try{target.focus?.();return true;}catch{}
     return false;
   }
+  // Learn, Explore and Apostolate are deliberately torn down before Settings
+  // opens. Changing the active ribbon label on Close is NOT a return: the
+  // original screen no longer exists. Re-enter its canonical owner, and only
+  // mark the destination active after its real open operation succeeds.
+  function restoreClosedModule(target){
+    const owners={learn:win?.AO_LEARN_APP_V1,find:win?.AO_FIND_APP_V1,
+      apostolate:win?.AO_APOSTOLATE_APP_V1};
+    const owner=owners[target];
+    if(owner?.status?.()?.open===true){
+      shell()?.syncSurface?.(target);
+      return;
+    }
+    void Promise.resolve().then(()=>shell()?.navigate?.(target)).then(result=>{
+      if((result===true||result?.ok===true)&&owner?.status?.()?.open===true)return;
+      throw new Error("Settings could not restore "+target+"; returning Home");
+    }).catch(error=>{
+      try{win?.console?.error?.("Settings return failed",error)}catch{}
+      // Never leave a highlighted tab with no module behind it.
+      void Promise.resolve().then(()=>shell()?.navigate?.("home"))
+        .catch(e=>win?.console?.error?.("Settings Home recovery failed",e));
+    });
+  }
   function closeInternal({restoreSurface=false,surface=null}={}){
     const r=root();if(r){
       if(win.document.activeElement&&r.contains(win.document.activeElement))try{win.document.activeElement.blur?.();}catch{}
@@ -105,10 +127,20 @@ export function createSettingsOwner(win=globalThis){
     if(win.document?.documentElement?.dataset){delete win.document.documentElement.dataset.aoSettingsSurface;win.document.documentElement.dataset.aoSettingsOwner="AO_SETTINGS_APP_V1";}
     if(restoreSurface){
       const target=surface||returnSurface||"home";
+      if(["learn","find","apostolate"].includes(target)){
+        // Previous focus belongs to an unmounted module. The reopened owner
+        // supplies its own keyboard focus (and visible hub) instead.
+        previousFocus=null;
+        restoreClosedModule(target);
+        return true;
+      }
+      // A LIVE Mass MUST NOT be reopened: Settings is merely an overlay and
+      // the exact R17 reader/card stays mounted. Same for the Pray/Calendar host.
       try{shell()?.syncSurface?.(target);}catch{}
       try{win?.AO_GLOBAL_RIBBON_V4323?.setActive?.(target);}catch{}
+      restoreFocus();
     }
-    restoreFocus();previousFocus=null;return true;
+    previousFocus=null;return true;
   }
   function close(){return closeInternal({restoreSurface:true});}
   function dismiss(){return closeInternal({restoreSurface:false});}
