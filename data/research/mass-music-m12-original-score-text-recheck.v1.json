@@ -10,7 +10,7 @@
     "scoreArchiveStatus": "UNMERGED_DRAFT_RESEARCH",
     "originalM11ResidualPath": "data/research/mass-music-m11-residual15.v1.json"
   },
-  "method": "Re-inspect original GABC 1961 research archive, discard pitch notation and nontext tags, longest contiguous shared Latin word passage; preserve donor occurrence cardinality and score SHA. A long text overlap is not an approved Gregorian melody or verified 1962 Mass assignment.",
+  "method": "Re-inspect original GABC 1961 research archive, discard pitch notation and nontext tags without splitting typographically tagged words, find longest contiguous shared Latin word passage; preserve donor occurrence cardinality and score SHA. A long text overlap is not an approved Gregorian melody or verified 1962 Mass assignment.",
   "scope": {
     "originalArchiveScores": 1195,
     "residualOccurrences": 15,
@@ -125,7 +125,7 @@
       "sourceFolio": "81",
       "sourceRole": "gr",
       "incipit": "Tu es Deus",
-      "normalizedScoreText": "t u es deus qui facis mirabilia solus notam fecisti in gentibus virtutem tuam liberasti in brachio tuo populum tuum filios israel et ioseph",
+      "normalizedScoreText": "tu es deus qui facis mirabilia solus notam fecisti in gentibus virtutem tuam liberasti in brachio tuo populum tuum filios israel et ioseph",
       "noteFidelity": "NOT_CHECKED"
     },
     {
@@ -481,10 +481,10 @@
       "originalScoreRole": "gr",
       "roleConflict": false,
       "commonText": {
-        "words": 12,
-        "donorStartWord": 1,
-        "scoreStartWord": 2,
-        "text": "es deus qui facis mirabilia solus notam fecisti in gentibus virtutem tuam"
+        "words": 13,
+        "donorStartWord": 0,
+        "scoreStartWord": 0,
+        "text": "tu es deus qui facis mirabilia solus notam fecisti in gentibus virtutem tuam"
       },
       "evidenceClass": "SUBSTANTIAL_SHARED_PASSAGE",
       "notA1962MusicalAssignment": true,
