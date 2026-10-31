@@ -131,7 +131,19 @@ for(const [id,card] of integratedById){
   const proposal=proposals.proposals.find(x=>x.id===card.r21_provenance.source_proposal_id);
   assert.ok(proposal,id);
   assert.equal(proposal.updates_existing_candidate_id,id);
-  assert.deepEqual(card.statement,proposal.statement);
+  // R21 prepared composites for review, not a permanently frozen wording.
+  // Later original-folio reviews can narrow an over-broad merger (notably
+  // Ribera vs Santa Croce/Canicattini) or improve the source-exact description.
+  // Revisions must retain the nine original identities and later provenance.
+  if(JSON.stringify(card.statement)!==JSON.stringify(proposal.statement)){
+    const laterReviews=Object.keys(card).filter(key=>/^r(?:2[4-9]|3[0-3])_/.test(key));
+    assert.ok(laterReviews.length>0,"Edited R21 composite lacks subsequent source review: "+id);
+    for(const lang of ["en","fr"])
+      assert.ok(card.statement?.[lang]?.trim()?.length>40,"Edited composite lost "+lang+": "+id);
+    assert.equal(card.gates.publication_authorized,false);
+    assert.equal(card.gates.claim_editorial_approved,false);
+    assert.equal(card.gates.french_editorial_approved,false);
+  }
   assert.deepEqual(card.prior_statement_for_editorial_comparison,older.statement);
   assert.deepEqual(card.r21_provenance.original_fact_ids,proposal.originating_fact_ids);
   assert.equal(card.r21_provenance.new_fact_generated,false);
