@@ -1,0 +1,706 @@
+{
+  "schema": "AO_DYK_R21_MERGE_COPY_12_NONPUBLISHING_V1",
+  "date": "2026-10-30",
+  "status": "TWELVE_SOURCE_AWARE_EDITORIAL_COPY_PROPOSALS_NOT_TWELVE_NEW_FACTS",
+  "counts": {
+    "proposed_lead_revisions": 12,
+    "added_to_1001_source_record_total": 0,
+    "approved": 0,
+    "published": 0
+  },
+  "policy": "Candidates replace or enrich the named lead only if approved. Every supporting observation remains distinct in provenance. No modern-continuity claim, no universal rubrics based on folklore; do not infer cross-country equivalence.",
+  "proposals": [
+    {
+      "id": "AO-DYK-R21-COPY-001",
+      "updates_existing_candidate_id": "DYK-UM01-021",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Saint Joseph tables in Sicilian towns",
+      "statement": {
+        "en": "In Sicily, Saint Joseph's tables welcomed three poor guests in Ribera and Santa Croce Camerina; in Canicattini, an older man, a woman and a child represented the Holy Family.",
+        "fr": "En Sicile, les tables de saint Joseph accueillaient trois hôtes pauvres à Ribera et Santa Croce Camerina ; à Canicattini, un homme âgé, une femme et un enfant représentaient la Sainte Famille."
+      },
+      "originating_fact_ids": [
+        "DYK-UM01-021",
+        "DYK-UM01-022",
+        "DYK-UM01-023",
+        "DYK-UM01-029"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-UM01-021",
+          "file": "dyk-ultramaster-batch01.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-IT-008"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [],
+          "book": "Feste patronali in Sicilia",
+          "original_page_image_flag_in_research": true
+        },
+        {
+          "record_id": "DYK-UM01-022",
+          "file": "dyk-ultramaster-batch01.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-IT-026"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [],
+          "book": "Feste patronali in Sicilia",
+          "original_page_image_flag_in_research": true
+        },
+        {
+          "record_id": "DYK-UM01-023",
+          "file": "dyk-ultramaster-batch01.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-IT-036"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [],
+          "book": "Feste patronali in Sicilia",
+          "original_page_image_flag_in_research": true
+        },
+        {
+          "record_id": "DYK-UM01-029",
+          "file": "dyk-ultramaster-batch01.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-IT-046"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [],
+          "book": "Feste patronali in Sicilia",
+          "original_page_image_flag_in_research": true
+        }
+      ],
+      "editorial_boundary": "Several different towns documented by one 1900 author; do not treat them as one ceremony or imply every household followed the same custom.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-002",
+      "updates_existing_candidate_id": "DYK-UM02-027",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Saint Rosalia's Palermo triumphal cart",
+      "statement": {
+        "en": "In historical Palermo, the monumental festival cart built for Saint Rosalia over several weeks bore a white-robed, crowned figure of the saint.",
+        "fr": "À Palerme, le grand char préparé pendant plusieurs semaines pour la fête de sainte Rosalie portait une figure de la sainte vêtue de blanc et couronnée."
+      },
+      "originating_fact_ids": [
+        "DYK-UM03-026",
+        "DYK-UM02-027"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-UM03-026",
+          "file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-NEW-005"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            13
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": true
+        },
+        {
+          "record_id": "DYK-UM02-027",
+          "file": "dyk-ultramaster-batch02b-pitre.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-NEW-009"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            14
+          ],
+          "book": "Feste patronali in Sicilia",
+          "original_page_image_flag_in_research": null
+        }
+      ],
+      "editorial_boundary": "Cart construction and appearance; not a claim about current Palermo festivities.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-003",
+      "updates_existing_candidate_id": "DYK-H04-P-061",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Saint Conrad's Noto procession",
+      "statement": {
+        "en": "In old Noto, a drummer summoned votive candle-bearers for Saint Conrad's procession; some devotees wore white as the reliquary passed rows of lighted offerings.",
+        "fr": "À Noto, un tambour appelait autrefois les porteurs de cierges votifs pour la procession de saint Conrad ; certains fidèles étaient vêtus de blanc tandis que le reliquaire passait entre des rangées d'offrandes lumineuses."
+      },
+      "originating_fact_ids": [
+        "DYK-H04-P-060",
+        "DYK-H04-P-061",
+        "DYK-H04-P-062"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-H04-P-060",
+          "file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-W05-OBS-060"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            301
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": false
+        },
+        {
+          "record_id": "DYK-H04-P-061",
+          "file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-W05-OBS-061"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            302
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": false
+        },
+        {
+          "record_id": "DYK-H04-P-062",
+          "file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-W05-OBS-062"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            302
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": false
+        }
+      ],
+      "editorial_boundary": "1900 historical local testimony; do not assume this remains modern usage or a universal liturgical rubric.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-004",
+      "updates_existing_candidate_id": "DYK-H04-P-122",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Racalmuto's costly votive display",
+      "statement": {
+        "en": "At old Marian processions in Racalmuto, elaborate candle structures called cilii appeared; a contest winner had to pay to have one illuminated.",
+        "fr": "Dans les anciennes processions mariales de Racalmuto figuraient de grandes structures à cierges, les cilii ; le gagnant d'un concours devait payer lui-même leur illumination."
+      },
+      "originating_fact_ids": [
+        "DYK-H04-P-122",
+        "DYK-H04-P-123"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-H04-P-122",
+          "file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-W05-OBS-122"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            430
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": false
+        },
+        {
+          "record_id": "DYK-H04-P-123",
+          "file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-W05-OBS-123"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            430
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": false
+        }
+      ],
+      "editorial_boundary": "One local Pitrè festival report; page scan image of wave05 is not yet certified.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-005",
+      "updates_existing_candidate_id": "DYK-H04-P-129",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Sambuca's river of lights",
+      "statement": {
+        "en": "Pitrè recorded a three-day Marian festival at Sambuca, where pilgrims' procession lights were likened to a river of fire.",
+        "fr": "Pitrè a décrit à Sambuca une fête mariale de trois jours, dont les lumières portées en procession par les pèlerins évoquaient un fleuve de feu."
+      },
+      "originating_fact_ids": [
+        "DYK-H04-P-127",
+        "DYK-H04-P-129"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-H04-P-127",
+          "file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-W05-OBS-127"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            435
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": false
+        },
+        {
+          "record_id": "DYK-H04-P-129",
+          "file": "dyk-customs-pitre-new-feasts-04c.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-W05-OBS-129"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            436
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": false
+        }
+      ],
+      "editorial_boundary": "Literary image drawn from a specific historical account; no claim about modern practice.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-006",
+      "updates_existing_candidate_id": "DYK-UM03-049",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Marineo's living Saint Cyrus drama",
+      "statement": {
+        "en": "In Marineo, the historical Saint Cyrus street drama, called the Dimostranza, featured townspeople acting as soldiers, hermits, angels and even personified virtues and vices.",
+        "fr": "À Marineo, l'ancienne représentation de rue consacrée à saint Cyr, la Dimostranza, réunissait des habitants jouant des soldats, des ermites, des anges et même des vertus et des vices personnifiés."
+      },
+      "originating_fact_ids": [
+        "DYK-UM03-049",
+        "DYK-UM03-050"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-UM03-049",
+          "file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-NEW-116"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            136
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": true
+        },
+        {
+          "record_id": "DYK-UM03-050",
+          "file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-NEW-119"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            137
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": true
+        }
+      ],
+      "editorial_boundary": "Describes the 1900-documented staged drama, not a Catholic liturgical ceremony.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-007",
+      "updates_existing_candidate_id": "DYK-UM02-029",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Saint Rosalia's relic procession",
+      "statement": {
+        "en": "At a historical Saint Rosalia procession in Palermo, figures of other patron saints preceded her silver reliquary amid confraternities, clergy and civic representatives.",
+        "fr": "Dans une ancienne procession de sainte Rosalie à Palerme, des figures d'autres saints patrons précédaient son reliquaire d'argent parmi les confréries, le clergé et les représentants de la cité."
+      },
+      "originating_fact_ids": [
+        "DYK-UM02-029",
+        "DYK-UM03-029"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-UM02-029",
+          "file": "dyk-ultramaster-batch02b-pitre.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-NEW-021"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            33
+          ],
+          "book": "Feste patronali in Sicilia",
+          "original_page_image_flag_in_research": null
+        },
+        {
+          "record_id": "DYK-UM03-029",
+          "file": "dyk-ultramaster-batch03-wider-corpus.v1.json",
+          "source_family": "PITRE_1900",
+          "observations": [
+            "PIT1900-NEW-022"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            34
+          ],
+          "book": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "original_page_image_flag_in_research": true
+        }
+      ],
+      "editorial_boundary": "Describes procession ordering and attendance in the historical record; not perpetual local rite.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-008",
+      "updates_existing_candidate_id": "DYK-H04-W-B-076",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Corpus Christi house-front decorations",
+      "statement": {
+        "en": "Along some historical Corpus Christi procession routes, houses displayed sacred images and candles in their windows while birch branches decorated the surrounding streets.",
+        "fr": "Le long de certains anciens parcours de procession de la Fête-Dieu, des images saintes et des cierges ornaient les fenêtres, tandis que des branches de bouleau décoraient les rues."
+      },
+      "originating_fact_ids": [
+        "DYK-H04-W-B-076",
+        "DYK-H04-W-B-077"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-H04-W-B-076",
+          "file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-21-007"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            262
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "original_page_image_flag_in_research": null
+        },
+        {
+          "record_id": "DYK-H04-W-B-077",
+          "file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-21-008"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            262
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "original_page_image_flag_in_research": null
+        }
+      ],
+      "editorial_boundary": "Varied regional customs are not uniform, obligatory 1962 Corpus Christi rubric.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-009",
+      "updates_existing_candidate_id": "DYK-H04-W-A-059",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Christmas family prayer before gifts",
+      "statement": {
+        "en": "In some Christmas households, families read the Gospel, prayed at the crib and sang a hymn before opening gifts attributed to the Christ Child.",
+        "fr": "Dans certains foyers à Noël, on lisait l'Évangile, priait près de la crèche et chantait un cantique avant d'ouvrir les cadeaux attribués à l'Enfant Jésus."
+      },
+      "originating_fact_ids": [
+        "DYK-H04-W-A-032",
+        "DYK-H04-W-A-059"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-H04-W-A-032",
+          "file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-06-007"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            74
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "original_page_image_flag_in_research": null
+        },
+        {
+          "record_id": "DYK-H04-W-A-059",
+          "file": "dyk-customs-weiser-folio-expansion-04a.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-08-026"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            111
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "original_page_image_flag_in_research": null
+        }
+      ],
+      "editorial_boundary": "Local household devotional custom, not a compulsory Christmas liturgical sequence.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-010",
+      "updates_existing_candidate_id": "DYK-H04-W-B-179",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Saint Lucy's Scandinavian candle wreath",
+      "statement": {
+        "en": "In a Scandinavian Saint Lucy household custom, a girl in white wore a candle wreath and served breakfast, turning the December feast into a procession of light at home.",
+        "fr": "Selon une coutume scandinave de sainte Lucie, une jeune fille vêtue de blanc, couronnée de cierges, servait le petit déjeuner, apportant la lumière de la fête dans le foyer."
+      },
+      "originating_fact_ids": [
+        "DYK-UM02-002",
+        "DYK-H04-W-B-179"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-UM02-002",
+          "file": "dyk-ultramaster-batch02a-weiser.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-28-024"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            341
+          ],
+          "book": "Handbook of Christian Feasts and Customs",
+          "original_page_image_flag_in_research": null
+        },
+        {
+          "record_id": "DYK-H04-W-B-179",
+          "file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-28-025"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            342
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "original_page_image_flag_in_research": null
+        }
+      ],
+      "editorial_boundary": "Historical household custom, not part of the universal 1962 Roman liturgy.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-011",
+      "updates_existing_candidate_id": "DYK-H04-W-B-093",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Martinmas roast goose",
+      "statement": {
+        "en": "In parts of Europe, Saint Martin's Day once combined Mass with festive harvest dinners, at which roast goose was a traditional dish.",
+        "fr": "Dans certaines régions d'Europe, la Saint-Martin associait autrefois la messe à des repas festifs de fin des récoltes, où l'on servait traditionnellement de l'oie rôtie."
+      },
+      "originating_fact_ids": [
+        "DYK-UM02-003",
+        "DYK-H04-W-B-093"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-UM02-003",
+          "file": "dyk-ultramaster-batch02a-weiser.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-22-008"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            270
+          ],
+          "book": "Handbook of Christian Feasts and Customs",
+          "original_page_image_flag_in_research": null
+        },
+        {
+          "record_id": "DYK-H04-W-B-093",
+          "file": "dyk-customs-weiser-folio-expansion-04b.v1.json",
+          "source_family": "WEISER_1958",
+          "observations": [
+            "WEI58-22-009"
+          ],
+          "action_id": null,
+          "cue_id": null,
+          "original_page": [
+            271
+          ],
+          "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "original_page_image_flag_in_research": null
+        }
+      ],
+      "editorial_boundary": "Local historical feast-day food custom; do not treat goose as religious obligation.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    },
+    {
+      "id": "AO-DYK-R21-COPY-012",
+      "updates_existing_candidate_id": "DYK-M04-CANON-014",
+      "content_type": "PROPOSED_ENRICHED_LEAD_COPY_NOT_NEW_RESEARCH_RECORD",
+      "subject": "Corpus and Sanguis signs of the Cross",
+      "statement": {
+        "en": "In Quam oblationem, the priest traces a cross over the Host at Corpus and another over the chalice at Sanguis—two distinct actions in the Roman Canon.",
+        "fr": "Dans le Quam oblationem, le prêtre trace une croix sur l'hostie au mot Corpus, puis une autre sur le calice au mot Sanguis : deux gestes distincts du Canon romain."
+      },
+      "originating_fact_ids": [
+        "DYK-M04-CANON-014",
+        "DYK-M04-CANON-015"
+      ],
+      "evidence": [
+        {
+          "record_id": "DYK-M04-CANON-014",
+          "file": "dyk-mass-canon-discoveries-04d.v1.json",
+          "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+          "observations": [],
+          "action_id": "AO.CANON.R62.014",
+          "cue_id": "AO.SM.C0165",
+          "original_page": [],
+          "book": null,
+          "original_page_image_flag_in_research": null
+        },
+        {
+          "record_id": "DYK-M04-CANON-015",
+          "file": "dyk-mass-canon-discoveries-04d.v1.json",
+          "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+          "observations": [],
+          "action_id": "AO.CANON.R62.015",
+          "cue_id": "AO.SM.C0166",
+          "original_page": [],
+          "book": null,
+          "original_page_image_flag_in_research": null
+        }
+      ],
+      "editorial_boundary": "Preserve Ritus VIII.4 and two source cue IDs; priestly gestures do not determine an automatic posture for the faithful.",
+      "signoff": {
+        "source_claim_verified_this_pass": false,
+        "original_page_images_reverified_this_pass": false,
+        "language_editor_approved": false,
+        "distinctness_editor_approved": false,
+        "publication_authorized": false
+      },
+      "release": "UNPUBLISHED_EDITORIAL_OPTION"
+    }
+  ]
+}

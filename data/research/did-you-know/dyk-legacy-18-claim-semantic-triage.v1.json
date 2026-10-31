@@ -1,0 +1,303 @@
+{
+  "schema": "AO_DYK_LEGACY_CLAIM_SEMANTIC_TRIAGE_V1",
+  "review_date": "2026-10-30",
+  "status": "RESEARCH_TRIAGE_REQUIRES_EDITORIAL_APPROVAL",
+  "source_owner_note": "Compared privately held legacy fact text without copying any verbatim legacy body or private source IDs into public research; original fact ownership remains in folio-core.",
+  "method": "Compare source-specific factual proposition and distinguishing details, not mere glossary ID or lexical similarity. Source-level matches do not themselves justify deletion. Reversible defer when same fact was already authored.",
+  "counts": {
+    "same_source_pairs_reviewed": 18,
+    "defer_same_fact": 9,
+    "retain_distinct_claim": 9,
+    "human_approved": 0,
+    "published": 0
+  },
+  "editorial_boundaries": {
+    "same_glossary_record_can_support_distinct_dyk": true,
+    "legacy_pilot_not_publication_approved": true,
+    "no_private_legacy_text_or_ids_copied": true,
+    "no_legacy_data_modified": true,
+    "deferred_new_drafts_preserved": true,
+    "not_an_authoritative_ceremonial_audit": true
+  },
+  "records": [
+    {
+      "draft_id": "DYK-SF01-017",
+      "canonical_source_record_id": "G049",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "Same identifying distinction; no substantially additional discovery.",
+      "private_source_summary_not_verbatim": "Existing statement already distinguishes Solemn Mass by sacred ministers rather than amount of singing.",
+      "prior_cohort_family_summary": "R05 and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-018",
+      "canonical_source_record_id": "G059",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R04",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Same prayer but different temporal versus etymological claim.",
+      "private_source_summary_not_verbatim": "The new statement locates the quiet Secret prayer before the Preface; earlier pilot explains why it is named Secret.",
+      "prior_cohort_family_summary": "R04 pilot and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-019",
+      "canonical_source_record_id": "G066",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Specific ordinary Gospel differs from exception-focused treatment.",
+      "private_source_summary_not_verbatim": "The new statement identifies the ordinary text as John's prologue; earlier item focuses on exceptions and liturgical status.",
+      "prior_cohort_family_summary": "R06 screened",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-021",
+      "canonical_source_record_id": "G088",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Distinct calendar structure versus Mass readings.",
+      "private_source_summary_not_verbatim": "The new statement identifies four seasonal Wednesday-Friday-Saturday sets; earlier item focuses on Mass formularies and supplementary lessons.",
+      "prior_cohort_family_summary": "R06 screened",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-022",
+      "canonical_source_record_id": "G182",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Placement is a distinct physical detail.",
+      "private_source_summary_not_verbatim": "The new statement gives the maniple's physical position on the left forearm; earlier material explains its 1962 and modern normativity.",
+      "prior_cohort_family_summary": "R05 and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-023",
+      "canonical_source_record_id": "G185",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R04_CONVERSION_195"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "Same object comparison and functional distinction.",
+      "private_source_summary_not_verbatim": "Existing archived statement already distinguishes sedilia for ministers from the bishop's cathedra.",
+      "prior_cohort_family_summary": "R04 archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-024",
+      "canonical_source_record_id": "G187",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Construction/placement versus care and sacred function.",
+      "private_source_summary_not_verbatim": "The new statement defines the corporal as a square altar linen beneath sacred vessels; earlier screened statement concerns handling and species context.",
+      "prior_cohort_family_summary": "R06 screened",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-025",
+      "canonical_source_record_id": "G188",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R04",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "New statement is less informative than earlier functional distinction.",
+      "private_source_summary_not_verbatim": "The earlier pilot explains that the purificator and corporal are distinct linens with different uses.",
+      "prior_cohort_family_summary": "R04 pilot and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-026",
+      "canonical_source_record_id": "G189",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Physical construction is an additional concise observation.",
+      "private_source_summary_not_verbatim": "The new statement identifies the pall as a stiff square cover for the chalice; earlier screened text emphasizes protection and terminology.",
+      "prior_cohort_family_summary": "R06 screened",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-027",
+      "canonical_source_record_id": "G193",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R06",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "Same distinction with older version adding offertory and lavabo.",
+      "private_source_summary_not_verbatim": "Older statements already distinguish the service cruets for wine and water from the consecrated chalice.",
+      "prior_cohort_family_summary": "R06 screened and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-028",
+      "canonical_source_record_id": "G194",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R04"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "Same two-object comparison.",
+      "private_source_summary_not_verbatim": "Existing pilot already states that the incense boat holds incense before it enters the thurible.",
+      "prior_cohort_family_summary": "R04 pilot",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-029",
+      "canonical_source_record_id": "G195",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R06",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "Same specific physical details.",
+      "private_source_summary_not_verbatim": "Existing screened statement already describes the boat shape, thurible and use of a spoon.",
+      "prior_cohort_family_summary": "R06 screened and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-030",
+      "canonical_source_record_id": "G197",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Different placement versus spiritual-symbolic fact.",
+      "private_source_summary_not_verbatim": "New item locates the amice at neck and shoulders under the alb; earlier screened text concerns vesting prayer and symbolism.",
+      "prior_cohort_family_summary": "R05 and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-031",
+      "canonical_source_record_id": "G201",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R04",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "Same vestment identity; existing material is more differentiated.",
+      "private_source_summary_not_verbatim": "Existing pilot contrasts the deacon's dalmatic with the subdeacon's tunicle, and archived text with the priest's chasuble.",
+      "prior_cohort_family_summary": "R04 pilot and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-032",
+      "canonical_source_record_id": "G212",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R05"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "Purpose and physical content versus location on chalice set.",
+      "private_source_summary_not_verbatim": "New statement defines the burse as a rigid container for the folded corporal; prior text describes where it sits over the veiled chalice.",
+      "prior_cohort_family_summary": "R05 screened",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-033",
+      "canonical_source_record_id": "G213",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R05"
+      ],
+      "classification": "KEEP_AS_DISTINCT_FACT",
+      "public_reason": "The number three is a distinct specific discovery.",
+      "private_source_summary_not_verbatim": "New statement supplies the number of traditional altar cards; earlier text discusses their prayer contents and not functioning as separate books.",
+      "prior_cohort_family_summary": "R05 screened",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-034",
+      "canonical_source_record_id": "G219",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R05",
+        "R04_CONVERSION_195"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "No additional historically qualified detail in new version.",
+      "private_source_summary_not_verbatim": "Earlier archival statement already says an altar stone can be consecrated and contain relics in older Latin practice.",
+      "prior_cohort_family_summary": "R05 screened and archived conversion",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    },
+    {
+      "draft_id": "DYK-SF01-035",
+      "canonical_source_record_id": "G416",
+      "prior_private_material_reviewed": true,
+      "prior_cohort_source_overlap": [
+        "R06"
+      ],
+      "classification": "DEFER_AS_SEMANTIC_DUPLICATE",
+      "public_reason": "Same two senses of the term.",
+      "private_source_summary_not_verbatim": "Earlier screened material already disambiguates the architectural canopy ciborium from the Eucharistic vessel.",
+      "prior_cohort_family_summary": "R06 screened",
+      "source_identity_decision_scope": "CLAIM_LEVEL_WITHIN_DYK_NOT_CUSTOMS_IDENTITY",
+      "approval_status": "RESEARCH_TRIAGE_NOT_HUMAN_APPROVAL",
+      "reversible": true
+    }
+  ]
+}
