@@ -1,0 +1,1801 @@
+{
+  "schema": "ao-mass-music-m09-source-line-qa-v1",
+  "batch": "003",
+  "sourceArchiveSha": "7d1d3e3ce9583a2faa114082f22d01ef0246129f",
+  "originalArchivePath": "data/mass/chant-corpus/gr1961-proper-003.json",
+  "sourceRichTriageBlobSha": "114dd9e6883276ab4e143302a936dee61e651d56",
+  "recordCount": 53,
+  "occurrenceCount": 76,
+  "comparisonCounts": {
+    "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS": 16,
+    "NORMALIZED_DONOR_LINE_CONTIGUOUS": 37,
+    "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS": 12,
+    "NO_SECURE_FOUR_WORD_PREFIX": 11
+  },
+  "scope": "NORMALIZED_LATIN_SOURCE_DONOR_LINE_VS_SCORE_TEXT_NOT_PRINTED_NEUMES_OR_APPROVED_1962_MASS",
+  "records": [
+    {
+      "id": "GREGOBASE-458",
+      "part": "in",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "b825b9fdb12d42d35525bc853e8c65aee8d06d979df0bbd5cac59928a673e9d8",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=458",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 13,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent09-0",
+          "sourceBlobSha": "183c70f49d62b4f796bac2425405676633894a70",
+          "sourceSection": "Introitus",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-464",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "06331b6515a280bbfd4e1e74eaeedeca380758514fbb0d77cde8d417142d3514",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=464",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 13,
+          "initialMatchingWords": 13,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent22-0",
+          "sourceBlobSha": "3d817ff7d32eb61a606a96bddfa94193427941ae",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-466",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "d260825b70643f9a7e7f03c50d5e828fd89f3afce36106d5632d7fa78efb3b3c",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=466",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 16,
+          "initialMatchingWords": 15,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/01-25",
+          "sourceBlobSha": "91ac84254b24ddcc3003dae689cb324e9eb54d29",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-478",
+      "part": "in",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "50564a8a4bd0dc71da00569e8313f332e51da038eed92f4db3226ff90e2e84bf",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=478",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 20,
+          "initialMatchingWords": 20,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/06-29",
+          "sourceBlobSha": "98eace8b348a1743e090420a42ced72a548cc0fc",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 20,
+          "initialMatchingWords": 20,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/06-29",
+          "sourceBlobSha": "98eace8b348a1743e090420a42ced72a548cc0fc",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-479",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "e3789d709f353ade870ef3d1eeb31b5ab528079c4465c1ba077b0f4af95b898f",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=479",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 14,
+          "initialMatchingWords": 14,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent19-0",
+          "sourceBlobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-480",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "396865b30715a8ef958a144e293c5b778c39a1fd065f5da2d90c384ac4aa4bb3",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=480",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/09-29",
+          "sourceBlobSha": "f47b9ddbea58cf6da4c6d8c1f998cc850e4326f5",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-481",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "ffa0948871583dc6b125a57c6479fdae05d64835dc82480380db7fed3970f4e7",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=481",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 20,
+          "initialMatchingWords": 19,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/07-02",
+          "sourceBlobSha": "cfe76120e041d6134a0cb7acea9146e342c756ac",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-483",
+      "part": "tr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "f51233d9382d0610e591afc3331d945c6b2d2d084790af2c953deed11d363b3c",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=483",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 13,
+          "initialMatchingWords": 13,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/10-DU",
+          "sourceBlobSha": "a1ca57155d564dd18f00b2e9b36d73f0a55c0c89",
+          "sourceSection": "Tractus",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-485",
+      "part": "tr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "46d7da85249cf1f7327bff0e03a95f6b127b4132ba71e7268cfece2616be415a",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=485",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 10,
+          "initialMatchingWords": 10,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/02-11",
+          "sourceBlobSha": "531e88caf016824e493ff4027e767e5b6934e3fa",
+          "sourceSection": "Tractus",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 10,
+          "initialMatchingWords": 10,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/12-08",
+          "sourceBlobSha": "a3e4862cd0eab54cafcb7e543f4fabd22cf97b78",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-487",
+      "part": "of",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "a27759a0e1cc6d3f80e65307cb173795382c11cf1af54c108d9ad3e8e4f1c38a",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=487",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 17,
+          "initialMatchingWords": 13,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/09-21",
+          "sourceBlobSha": "e469538a7559c3c4f5676d547961d52eacaeca94",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-494",
+      "part": "of",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "390b53ac2596a13f56931b8ec60d92ef3069452f2c66b318c9392424d0218bec",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=494",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 22,
+          "initialMatchingWords": 22,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/10-07",
+          "sourceBlobSha": "bcc36edae80c74ebbaa28ca96dfa0d62abd048f3",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-499",
+      "part": "of",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "9a024718ffe041f26ae9674bac1606cb93a37001cafd41efb44b4f77a9a0f541",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=499",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 13,
+          "initialMatchingWords": 13,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/01-25",
+          "sourceBlobSha": "91ac84254b24ddcc3003dae689cb324e9eb54d29",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-501",
+      "part": "in",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "f58f55816c8e334c8955b43a7de4b3222114973061b13b3babb0bbc41f3cf42d",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=501",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 19,
+          "initialMatchingWords": 19,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent12-0",
+          "sourceBlobSha": "83f334b8cfaa68f3db52d659074b1e2a0ffb26f9",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 19,
+          "initialMatchingWords": 19,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent12-0",
+          "sourceBlobSha": "83f334b8cfaa68f3db52d659074b1e2a0ffb26f9",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-503",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "132a44c04d0cc96a01fd2217a1ba4f56358e176ebe8953232b3c6643a96296f1",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=503",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 9,
+          "initialMatchingWords": 9,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/03-19",
+          "sourceBlobSha": "1d74084bac51845b47663157d120295b31e16c2b",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 9,
+          "initialMatchingWords": 9,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/09-21",
+          "sourceBlobSha": "e469538a7559c3c4f5676d547961d52eacaeca94",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-506",
+      "part": "gr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "f39a285245ea9555222f7dab955c812d3b3c8eb5ebdccd98bca4709b0eb412a1",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=506",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 10,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Adv3-0",
+          "sourceBlobSha": "de744967d1d6e9ae6a3ccdff81360c8b5565e873",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-512",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "6a1424c2bfcebf572159964fe05a93998fe0aae94482bfd1dfe6276bb660a8e8",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=512",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 13,
+          "initialMatchingWords": 13,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent04-0",
+          "sourceBlobSha": "bb3f6bc65d635934faf7cf20092d1bfb38a2db86",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-522",
+      "part": "in",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "33ee955e2216d79d1e3fd1a3549d5e03d7536782381153eb7888ea51b9fc102c",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=522",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 25,
+          "initialMatchingWords": 16,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent06-0",
+          "sourceBlobSha": "69bee3bc296f2f371b1091967a14c4bb07b12d2b",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 25,
+          "initialMatchingWords": 16,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent06-0",
+          "sourceBlobSha": "69bee3bc296f2f371b1091967a14c4bb07b12d2b",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-524",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "165cfa4cb7774d335d275e775bf2157d6a29358dd84d2b1a44295c39ff0b6134",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=524",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 12,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/01-06",
+          "sourceBlobSha": "14ecd813980527a8e8180d51153b16e1c115d1d7",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-536",
+      "part": "in",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "88a6058b92a31a6f632ac92e8ed72b2da05d96e0b1f8013b5b0faa751570df92",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=536",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 12,
+          "initialMatchingWords": 4,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Epi2-0",
+          "sourceBlobSha": "ef91014e4a791e5c777a8c07494d5355f95807f1",
+          "sourceSection": "Introitus",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 7,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc1-0",
+          "sourceBlobSha": "92c5d80537dcb09b97ed567f57b47383fc3aa090",
+          "sourceSection": "Introitus",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 17,
+          "initialMatchingWords": 17,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc3-0",
+          "sourceBlobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 17,
+          "initialMatchingWords": 17,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc3-0",
+          "sourceBlobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 12,
+          "initialMatchingWords": 4,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc5-0",
+          "sourceBlobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+          "sourceSection": "Introitus",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 9,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent07-0",
+          "sourceBlobSha": "cd63373d6ad1fac0015b09f084c9634f585066c6",
+          "sourceSection": "Introitus",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 9,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent07-0",
+          "sourceBlobSha": "cd63373d6ad1fac0015b09f084c9634f585066c6",
+          "sourceSection": "Introitus",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-539",
+      "part": "al",
+      "tier": "DIVERGENT_EARLY_TEXT",
+      "gabcSha256": "ce9b0712bf4d4b87070cb7a462dfcfe9e53fdee6691899601aec4f5d6839c546",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=539",
+      "occurrences": [
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 7,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent05-0",
+          "sourceBlobSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+          "sourceSection": "Graduale",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "DIVERGENT_EARLY_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-547",
+      "part": "gr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "7479d82da79850e9c97d2eef9081b0a703ffa2c7e9e651905f5c6e1e9b3f2b3e",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=547",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 9,
+          "initialMatchingWords": 9,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent14-0",
+          "sourceBlobSha": "b199299c3e7c9cdaa03ff6a6595717a00e909a07",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-548",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "59bc5dcc1d7df2db6040e7f7cce9c5628bcc75d7fbb23f93e638354dda832b8a",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=548",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/06-29",
+          "sourceBlobSha": "98eace8b348a1743e090420a42ced72a548cc0fc",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/07-25",
+          "sourceBlobSha": "d7734361cc54d526e15daf912164df31c10fd861",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/08-24",
+          "sourceBlobSha": "17cf0bbb8580fb799941fa52c283b4240da322ce",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/11-30",
+          "sourceBlobSha": "6a95f42d67006609eb7b9e3797fbb7177ce3d707",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-551",
+      "part": "in",
+      "tier": "DIVERGENT_EARLY_TEXT",
+      "gabcSha256": "1dc172af4b85e1783e081a81327c74e0c5584e28cf012c93a177df05b4204789",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=551",
+      "occurrences": [
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 14,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent22-0",
+          "sourceBlobSha": "3d817ff7d32eb61a606a96bddfa94193427941ae",
+          "sourceSection": "Introitus",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "DIVERGENT_EARLY_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 14,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent22-0",
+          "sourceBlobSha": "3d817ff7d32eb61a606a96bddfa94193427941ae",
+          "sourceSection": "Introitus",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "DIVERGENT_EARLY_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 25,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quad2-0",
+          "sourceBlobSha": "6395d06415fc32f8c163cfeec0cc333edf7f252f",
+          "sourceSection": "Introitus",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "DIVERGENT_EARLY_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 25,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quad2-0",
+          "sourceBlobSha": "6395d06415fc32f8c163cfeec0cc333edf7f252f",
+          "sourceSection": "Introitus",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "DIVERGENT_EARLY_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-552",
+      "part": "co",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "a0870acd9a9ea6f64e86e00f64795a41400db2402d970c3e278152206a8e42d8",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=552",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 16,
+          "initialMatchingWords": 5,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/11-30",
+          "sourceBlobSha": "6a95f42d67006609eb7b9e3797fbb7177ce3d707",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-556",
+      "part": "co",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "d04b3522e531cfdd2f748139ca1b0faa92980ec2f60d23d1ef7d90f50c6d44b7",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=556",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 15,
+          "initialMatchingWords": 4,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc2-0",
+          "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-559",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "2ec6ef1b9c3d049873188a3d285e18676bf7de870e6034c11cf417d40086a176",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=559",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 24,
+          "initialMatchingWords": 21,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/05-13",
+          "sourceBlobSha": "ad4cc8726cb92b05050f3d50ae0ce003ed2ea637",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-568",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "be487cd367f8bedd4f05e0f049b7805c5a559432857f3f1a632f5b222f0e6549",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=568",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 10,
+          "initialMatchingWords": 10,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc0-0",
+          "sourceBlobSha": "1a60124f36969cce967c154ec66a6ac7f43b15e4",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-574",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "39f91b6beb6a766c89c859ff0cd730f81f803beee5100e8a72dedfd0f196979c",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=574",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 15,
+          "initialMatchingWords": 15,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent05-0",
+          "sourceBlobSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-579",
+      "part": "co",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "91d2d751862209d86b4f153b881afd8e5f55e3b2d88654223d4944bcf8ed6d3a",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=579",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 19,
+          "initialMatchingWords": 5,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc5-0",
+          "sourceBlobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-580",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "20595d58a447e1ca65b4189b6903eed666a89ded9ef8f69dbaa3c6c70da77b2f",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=580",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 13,
+          "initialMatchingWords": 12,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent11-0",
+          "sourceBlobSha": "da5b4cd6cfad7938787fac5b2bd15e3748586288",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-585",
+      "part": "in",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "ff83483525bd8d38556d4dbb980cf2ceeb3262c27fdc65833a91c32d6f3cc98b",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=585",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 17,
+          "initialMatchingWords": 6,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc5-0",
+          "sourceBlobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        },
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 17,
+          "initialMatchingWords": 6,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc5-0",
+          "sourceBlobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-589",
+      "part": "co",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "84fab74ca4790a21a887dbc841bcb8e88677b3638a8ea158878d2a724f376eb0",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=589",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 16,
+          "initialMatchingWords": 7,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc1-0",
+          "sourceBlobSha": "92c5d80537dcb09b97ed567f57b47383fc3aa090",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-591",
+      "part": "of",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "458b0affcd3983fa6193c5cba7acc9a864175c7065f4786d77b983d4e1ef52ec",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=591",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 19,
+          "initialMatchingWords": 6,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent09-0",
+          "sourceBlobSha": "183c70f49d62b4f796bac2425405676633894a70",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-592",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "b70ddf62094e1c0b3f6519c34dd2622b77c91bd6d733f89e3eed6c809fb1e814",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=592",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 12,
+          "initialMatchingWords": 12,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent23-0",
+          "sourceBlobSha": "469c4a2799dc76d814731250361cd6d1a831ffc6",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-595",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "6cb25d24c05620a7b7f65e8fce01b3baf6d0c9d18fc3ba55de8895b98a538303",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=595",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 9,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent17-0",
+          "sourceBlobSha": "305356033d88b59493897818cd2760d13ebd863f",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 11,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent23-0",
+          "sourceBlobSha": "469c4a2799dc76d814731250361cd6d1a831ffc6",
+          "sourceSection": "Graduale",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 10,
+          "initialMatchingWords": 0,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quadp1-0",
+          "sourceBlobSha": "20b73707547659737a86b142145f41c12fdc53c9",
+          "sourceSection": "Graduale",
+          "sourcePosition": "EMBEDDED",
+          "sourceRisk": "EMBEDDED_TEXT_NOT_OPENING",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-596",
+      "part": "gr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "9db4cc14c7350f59b8f51fe7d35472492a267b262f328c27d67b8b384e8a98cf",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=596",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quad2-0",
+          "sourceBlobSha": "6395d06415fc32f8c163cfeec0cc333edf7f252f",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-600",
+      "part": "gr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "358dfa8c6dc169aa2ed1a105ba24dd40dfc2f77deb5a330a4350fe85d0817e57",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=600",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 14,
+          "initialMatchingWords": 14,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/03-19",
+          "sourceBlobSha": "1d74084bac51845b47663157d120295b31e16c2b",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-609",
+      "part": "gr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "aa86770bc1e3e66a470f87110f64a595ec0d418cffc5bb334d0077866f520b7f",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=609",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/09-29",
+          "sourceBlobSha": "f47b9ddbea58cf6da4c6d8c1f998cc850e4326f5",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-614",
+      "part": "gr",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "deb6785a3c90bf27cc7506e25d4b84b443b0992d9efff81562d640c97a5a23ce",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=614",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 10,
+          "initialMatchingWords": 10,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent22-0",
+          "sourceBlobSha": "3d817ff7d32eb61a606a96bddfa94193427941ae",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-616",
+      "part": "of",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "056962848b15d52e55ad7b89dcfdde380b394dc967717cdec6ef4d70e1525520",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=616",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 22,
+          "initialMatchingWords": 19,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent19-0",
+          "sourceBlobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-626",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "feba832d5a594fdfae66606df1a15e076a81938f2f1e59d09e2f0af18f729f38",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=626",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 11,
+          "initialMatchingWords": 11,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Epi1-0",
+          "sourceBlobSha": "1ebc53e4c7ca02c8d8d075f5a3281ef7a6f63532",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-627",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "741328a7692282e345d93a43a54c85cdf25685da2b061fb59e1fd419cb1f5733",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=627",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 9,
+          "initialMatchingWords": 8,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/05-03",
+          "sourceBlobSha": "753648391c5b2fe8eb4868643de6178cd12381c7",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-633",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "40e2abeec7fa4d52535fdca582494e7db21375a6be097bd8e7897fb02306bdf2",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=633",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 10,
+          "initialMatchingWords": 9,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc5-0",
+          "sourceBlobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-635",
+      "part": "al",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "97760261550d481730e334e63be965663865c2eeeba65bb9497e224c51558a96",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=635",
+      "occurrences": [
+        {
+          "comparisonClass": "NO_SECURE_FOUR_WORD_PREFIX",
+          "donorWordCount": 14,
+          "initialMatchingWords": 2,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent17-0",
+          "sourceBlobSha": "305356033d88b59493897818cd2760d13ebd863f",
+          "sourceSection": "Graduale",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-640",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "7b9846edfbaca89128f6cc2701aee3e74227ff07022981b81e3992643dda359a",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=640",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 19,
+          "initialMatchingWords": 19,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quadp1-0",
+          "sourceBlobSha": "20b73707547659737a86b142145f41c12fdc53c9",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-648",
+      "part": "of",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "480b076a45af4f8298e05347c7dc7bdf4bd0eeca6e8dcc9d377774a6c2e8aa0c",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=648",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 19,
+          "initialMatchingWords": 19,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent11-0",
+          "sourceBlobSha": "da5b4cd6cfad7938787fac5b2bd15e3748586288",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-650",
+      "part": "co",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "ed3e70cc5f69360fe864e46a01aecb1ee7c23dd0012ce037084705df53deba44",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=650",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 13,
+          "initialMatchingWords": 13,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quad6-0",
+          "sourceBlobSha": "9d0de35b80e978aa01d8b194ae7068a7ee14714b",
+          "sourceSection": "Communio",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-652",
+      "part": "of",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "482567086c6b3d4d2d0272d9505f69e3908a45f84cd3e708ba051ecda00b9d3b",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=652",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 29,
+          "initialMatchingWords": 29,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pent17-0",
+          "sourceBlobSha": "305356033d88b59493897818cd2760d13ebd863f",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-653",
+      "part": "in",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "04f8e446e2340577439818159e73387d3c71158a59ae314247306da8256c0793",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=653",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 24,
+          "initialMatchingWords": 24,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quad4-0",
+          "sourceBlobSha": "5d15228d8cec83752d131693110f34aef89aaed1",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 24,
+          "initialMatchingWords": 24,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Quad4-0",
+          "sourceBlobSha": "5d15228d8cec83752d131693110f34aef89aaed1",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-655",
+      "part": "in",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "74b2eaafd824eb306f6324d025bca935f2988a2c82674a022f18d99b536ae47a",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=655",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 26,
+          "initialMatchingWords": 21,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/12-08",
+          "sourceBlobSha": "a3e4862cd0eab54cafcb7e543f4fabd22cf97b78",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        },
+        {
+          "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+          "donorWordCount": 26,
+          "initialMatchingWords": 21,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/12-08",
+          "sourceBlobSha": "a3e4862cd0eab54cafcb7e543f4fabd22cf97b78",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-659",
+      "part": "in",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "0669c8ba1e6c348aca624e7f974a50a9d461b2e564e2922127dcd8127d550b77",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=659",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 29,
+          "initialMatchingWords": 7,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/06-24",
+          "sourceBlobSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        },
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 29,
+          "initialMatchingWords": 7,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/06-24",
+          "sourceBlobSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+          "sourceSection": "Introitus",
+          "sourcePosition": "VERSE_MARKED_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-661",
+      "part": "al",
+      "tier": "PARTIAL_TEXT",
+      "gabcSha256": "d0e75c4e50b3ddda9d42b59bcbd3ea9cfcc8c46ddc844fff7fd705964375ef71",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=661",
+      "occurrences": [
+        {
+          "comparisonClass": "SOURCE_PREFIX_FOUR_TO_SEVEN_WORDS",
+          "donorWordCount": 7,
+          "initialMatchingWords": 6,
+          "normalizedDonorLineContained": false,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Sancti/12-28",
+          "sourceBlobSha": "9e41240b7c8a143f87d76cccf0ea1db47f81d9b5",
+          "sourceSection": "Graduale",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "PARTIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "id": "GREGOBASE-668",
+      "part": "of",
+      "tier": "STRONG_INITIAL_TEXT",
+      "gabcSha256": "86c4102b450f841864e58f054294ebd3091e45e7b20022e2c6e7f0717fbf1425",
+      "originalSourceBatch": "003",
+      "sourceIdentity": "GREGOBASE_GR1961_ARCHIVE_NOT_USER_APPROVAL",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=668",
+      "occurrences": [
+        {
+          "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+          "donorWordCount": 15,
+          "initialMatchingWords": 15,
+          "normalizedDonorLineContained": true,
+          "editorialTextStatus": "AUTOMATED_SCREEN_NOT_VERIFIED",
+          "sourcePath": "Tempora/Pasc3-0",
+          "sourceBlobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+          "sourceSection": "Offertorium",
+          "sourcePosition": "LINE_OPENING",
+          "sourceRisk": "UNADJUDICATED",
+          "preExistingLeadTier": "STRONG_INITIAL_TEXT"
+        }
+      ],
+      "selectedMass1962": "NOT_VERIFIED",
+      "printedMusicNoteParity": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false
+    }
+  ]
+}
