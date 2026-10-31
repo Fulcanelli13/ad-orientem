@@ -43,6 +43,64 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-00D589BAB16C":Object.freeze({
+  sourceId:"ao-fssp-church-of-st-mary-538-broadway-providence-ri-02909-usa",
+  name:"Church of St Mary",country:"US",addressNeedle:"538 Broadway",
+  placeId:null,lat:41.81761,lng:-71.4367,sourceRef:"osm:way:314290719",
+  sourceUrl:"https://www.openstreetmap.org/way/314290719",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W314290719",
+   "https://stmarypvdri.org/contact/",
+  ]),
+ }),
+ "RG-04C900D93BC2":Object.freeze({
+  sourceId:"AO-EUR-GB-006",name:"Bournemouth Oratory",
+  country:"GB",addressNeedle:"1 Albert Road",placeId:null,
+  lat:50.72097,lng:-1.87861,sourceRef:"osm:way:128316070",
+  sourceUrl:"https://www.openstreetmap.org/way/128316070",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W128316070",
+   "https://www.bournemouthoratory.org.uk/contact-us/",
+  ]),
+ }),
+ "RG-4D711E72B9F0":Object.freeze({
+  sourceId:"DIO-GB-EASTANGLIA-NORWICH-CATHEDRAL",
+  name:"Cathedral of St John the Baptist, Norwich",
+  country:"GB",addressNeedle:"Earlham Road",placeId:null,
+  lat:52.62902,lng:1.28381,sourceRef:"osm:way:97370578",
+  sourceUrl:"https://www.openstreetmap.org/way/97370578",
+  evidence:Object.freeze([
+   "https://mapcarta.com/es/W97370578",
+   "https://historicengland.org.uk/listing/the-list/list-entry/1051299",
+  ]),
+ }),
+ "RG-40584CA8DAE1":Object.freeze({
+  sourceId:"AO-B33-L-US-D5047631A0B7",
+  name:"Our Lady of Clear Creek Abbey",
+  country:"US",addressNeedle:"5804 W Monastery Rd",placeId:null,
+  lat:36.03363,lng:-95.19587,sourceRef:"osm:way:242465722",
+  sourceUrl:"https://www.openstreetmap.org/way/242465722",
+  precision:"site",reviewScope:"MONASTERY_COMPLEX_NOT_CHURCH_ENTRANCE",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W242465722",
+   "https://clearcreekmonks.org/contact/",
+  ]),
+ }),
+ "RG-16C25083C6C7":Object.freeze({
+  sourceId:"ao-icksp-st-mary-oratory-517-elm-st-rockford-il-61102-6",
+  name:"St. Mary Oratory",country:"US",addressNeedle:"517 Elm St",
+  placeId:null,lat:42.27224,lng:-89.09816,sourceRef:"geonames:4909682",
+  sourceUrl:"https://mapcarta.com/22165042",
+  correctedAddress:"126 S Winnebago St, Rockford, IL 61102",
+  precision:"site",reviewScope:"CHURCH_SITE_NOT_VERIFIED_ENTRANCE",
+  attribution:"GeoNames named church site · church location independently checked",
+  evidence:Object.freeze([
+   "https://www.rockforddiocese.org/parishes/parish-information/?parish=80",
+   "https://mapcarta.com/22165042",
+   "https://gcatholic.org/churches/usa-07/30865",
+  ]),
+ }),
+
  "RG-2E1FB8361143":Object.freeze({
   sourceId:"AO-B35-L-GB-BF86E1483C54",name:"St Mary's Church",
   country:"GB",addressNeedle:"Smith Street",placeId:null,
@@ -350,7 +408,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
    const affiliationName=T(affiliation)||"Source affiliation not established";
@@ -361,9 +419,9 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     physical_site_source:"CL2_MASTER",lens:"tlm",kind:"TLM_VENUE",
     community_id,preliminary_group:"UNKNOWN",affiliation_scope:"SOURCE_LABEL_ONLY",
     eyebrow:affiliationName,status:"RESEARCH-LISTED · MASS UNVERIFIED",
-    title:T(name),subtitle:[T(description),country].filter(Boolean).join(" · "),
+    title:T(name),subtitle:[newPin?.correctedAddress||T(description),country].filter(Boolean).join(" · "),
     summary:"Physical site recorded in the research master. Current traditional Mass use, the minister, liturgical books and timetable have not been independently verified.",
-    address:{formatted:T(description)||country},
+    address:{formatted:newPin?.correctedAddress||T(description)||country},
     geo:newPin?Object.freeze({
      lat:newPin.lat,lng:newPin.lng,precision:newPin.precision||"site",approximate:true,
      attribution:newPin.attribution||"© OpenStreetMap contributors · ODbL 1.0",
@@ -373,13 +431,16 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     map_publishable:Boolean(newPin),
     map_state:newPin?"PROVISIONAL":"ADDRESS_ONLY",facts:Object.freeze([
      {label:"Source identity",value:"CL2 physical-site master · "+anchor},
-     ...(newPin?[{label:"Map position",value:"Reviewed church building · entrance not independently verified"}]:[]),
+     ...(newPin?[{label:"Map position",value:newPin.reviewScope==="MONASTERY_COMPLEX_NOT_CHURCH_ENTRANCE"?
+       "Reviewed monastery complex · church entrance not independently verified":
+       "Reviewed church site · entrance not independently verified"}]:[]),
      {label:"Affiliation",value:affiliationName+" (source label only)"},
      {label:"Mass times",value:"Unverified · no timetable published"},
     ]),sections:Object.freeze([]),actions:Object.freeze([]),
     source_links:Object.freeze(source_links),
     note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+
-     (newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":""),
+     (newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":"")+
+     (newPin?.correctedAddress?" The research-master address is a mailing address; church location follows the independently verified church street address.":""),
     search_text,
    }));
   }
