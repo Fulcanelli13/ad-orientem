@@ -67,10 +67,11 @@
     "precise_targets": 20,
     "source_first_reference_rows": 353,
     "apparition_contexts_excluded_from_photographic_objects": 33,
-    "source_directness_currently_web_checked_relic_records": 13,
+    "source_directness_currently_web_checked_relic_records": 19,
     "b01_precise_source_first_reuse": 5,
     "pub_approved": 0,
-    "images_downloaded": 0
+    "images_downloaded": 0,
+    "note": "19 canonical relic records in independently rechecked custodian groups; other entries preserve registered URLs without a fresh web verification. Site-only/subject-unspecified rows are unresolved research, not achieved image matches."
   },
   "web_reviewed_original_sources": [
     {
@@ -207,5 +208,43 @@
     "Source registry links are research starting points, not proof a website page still resolves or grants image copyright.",
     "Wikimedia categories do not grant licences, and visual rights/photo quality still need individual review.",
     "No automated object-media publication, no overwrite of site heroes, no new payment or rights-holder contact."
+  ],
+  "new_custodian_verified_this_batch": [
+    {
+      "ids": [
+        "relic:FR:curé-ars"
+      ],
+      "url": "https://www.arsnet.org/plan-du-sanctuaire/",
+      "distinction": "Body glass shrine in basilica right chapel, not saint statue/presbytery."
+    },
+    {
+      "ids": [
+        "relic:IT:francis-assisi",
+        "relic:IT:francis-first-companions"
+      ],
+      "url": "https://basilica.sanfrancesco.org/en/explore-the-basilica/tomb",
+      "distinction": "Saint's central stone sarcophagus versus four companions in surrounding niches."
+    },
+    {
+      "ids": [
+        "relic:ES:james-compostela"
+      ],
+      "url": "https://catedraldesantiago.es/en/pilgrimage/",
+      "distinction": "Silver reliquary of James below high altar versus accessible statue above."
+    },
+    {
+      "ids": [
+        "relic:IT:duomo-torino-sindone"
+      ],
+      "url": "https://sindone.org/la-sindone/dove-la-sindone/",
+      "distinction": "Shroud currently hidden inside conservation casing/metal box; no contemporary public-view photograph."
+    },
+    {
+      "ids": [
+        "relic:FR:basilique-saint-denys-argenteuil"
+      ],
+      "url": "https://saintetunique.com/",
+      "distinction": "Holy Tunic in usual chapel reliquary, not necessarily visible unfolded; 2025 exposition was temporary."
+    }
   ]
 }
