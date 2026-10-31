@@ -342,12 +342,17 @@ try{
                    mode:shell?.dataset?.mode??null,
                    paragraphText:paragraph?.innerText?.trim()?.slice(0,140)??"",
                    paragraphCount:root?.querySelectorAll(".ao-reader-paragraph")?.length??0,
+                   unscopedSequenceNote:root?.querySelector(".ao-prayer-body")
+                     ?.innerText?.includes("May be omitted at Daily Mass")===true,
+                   hasHymnOpening:root?.querySelector(".ao-prayer-body")
+                     ?.innerText?.includes("Dreaded day, that day of ire")===true,
                  };
                });
                if(visual.width!==width||visual.overflow>1||
                   visual.mode!==mode||visual.paragraphCount<1||
-                  !visual.paragraphText)
-                 throw Error("NOV02_NATIVE_READER_PHONE_VISUAL_INVALID:"+JSON.stringify({real,visual}));
+                  !visual.paragraphText||visual.unscopedSequenceNote||
+                  (language==="en"&&!visual.hasHymnOpening))
+                 throw Error("NOV02_NATIVE_DIES_IRAE_TRANSLATION_ALIGNMENT_FAILED:"+JSON.stringify({real,visual}));
                const filename="all-souls-m"+massNumber+"-"+mode.toLowerCase()+
                  "-"+language+"-"+width+".png";
                await page.screenshot({path:resolve(dir,filename),fullPage:false});
